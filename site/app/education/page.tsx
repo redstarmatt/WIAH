@@ -210,8 +210,8 @@ export default function EducationPage() {
           topic="Education"
           question="What's Actually Happening in Schools?"
           finding={
-            latestAbsence
-              ? `1 in 5 pupils is persistently absent. The SEND system is overwhelmed — EHCPs have nearly tripled in a decade. The attainment gap between disadvantaged pupils and their peers has widened since the pandemic.`
+            latestAbsence && latestEhcp && firstEhcp
+              ? `${latestAbsence.persistentAbsencePct.toFixed(0)}% of pupils are persistently absent — nearly double pre-pandemic levels. EHCPs have grown from ${(firstEhcp.total / 1000).toFixed(0)}k to ${(latestEhcp.total / 1000).toFixed(0)}k in a decade, and the attainment gap between disadvantaged pupils and their peers has widened since COVID.`
               : 'Persistent absence has doubled since before the pandemic.'
           }
           colour="#2A9D8F"

@@ -119,6 +119,30 @@ const TOPICS = [
     ],
   },
   {
+    topic: 'Immigration',
+    href: '/immigration',
+    colour: '#6B7280',
+    preposition: 'with',
+    metrics: [
+      {
+        label: 'Net migration',
+        value: '204K',
+        unit: '/yr',
+        direction: 'down' as const,
+        polarity: 'up-is-bad' as const,
+        sparklineData: [184, 329, 239, 226, 173, 672, 764, 906, 728, 204],
+      },
+      {
+        label: 'Small boat crossings',
+        value: '41K',
+        unit: '2025',
+        direction: 'up' as const,
+        polarity: 'up-is-bad' as const,
+        sparklineData: [0.3, 1.8, 8.5, 28.5, 45.8, 29.4, 36.8, 41.5],
+      },
+    ],
+  },
+  {
     topic: 'Education',
     href: '/education',
     colour: '#2A9D8F',

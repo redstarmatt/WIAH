@@ -1,0 +1,2622 @@
+{
+  "topic": "immigration",
+  "lastUpdated": "2026-03-02",
+  "headlines": {
+    "netMigration": 204000,
+    "netMigrationPeriod": "2025-06",
+    "asylumBacklog": 64426,
+    "asylumBacklogYear": 2025,
+    "asylumGrantRate": 0.4,
+    "smallBoats2025": 41472,
+    "smallBoatsTotal": 194819
+  },
+  "netMigration": [
+    {
+      "period": "2012-06",
+      "flow": "immigration",
+      "all": 639000,
+      "british": 74000,
+      "eu": 327000,
+      "nonEu": 238000
+    },
+    {
+      "period": "2012-09",
+      "flow": "immigration",
+      "all": 630000,
+      "british": 76000,
+      "eu": 322000,
+      "nonEu": 232000
+    },
+    {
+      "period": "2012-12",
+      "flow": "immigration",
+      "all": 643000,
+      "british": 79000,
+      "eu": 334000,
+      "nonEu": 230000
+    },
+    {
+      "period": "2013-03",
+      "flow": "immigration",
+      "all": 649000,
+      "british": 75000,
+      "eu": 350000,
+      "nonEu": 224000
+    },
+    {
+      "period": "2013-06",
+      "flow": "immigration",
+      "all": 669000,
+      "british": 75000,
+      "eu": 373000,
+      "nonEu": 222000
+    },
+    {
+      "period": "2013-09",
+      "flow": "immigration",
+      "all": 720000,
+      "british": 78000,
+      "eu": 410000,
+      "nonEu": 233000
+    },
+    {
+      "period": "2013-12",
+      "flow": "immigration",
+      "all": 713000,
+      "british": 76000,
+      "eu": 402000,
+      "nonEu": 234000
+    },
+    {
+      "period": "2014-03",
+      "flow": "immigration",
+      "all": 731000,
+      "british": 80000,
+      "eu": 414000,
+      "nonEu": 236000
+    },
+    {
+      "period": "2014-06",
+      "flow": "immigration",
+      "all": 737000,
+      "british": 82000,
+      "eu": 420000,
+      "nonEu": 236000
+    },
+    {
+      "period": "2014-09",
+      "flow": "immigration",
+      "all": 761000,
+      "british": 81000,
+      "eu": 441000,
+      "nonEu": 239000
+    },
+    {
+      "period": "2014-12",
+      "flow": "immigration",
+      "all": 778000,
+      "british": 81000,
+      "eu": 457000,
+      "nonEu": 241000
+    },
+    {
+      "period": "2015-03",
+      "flow": "immigration",
+      "all": 780000,
+      "british": 83000,
+      "eu": 457000,
+      "nonEu": 240000
+    },
+    {
+      "period": "2015-06",
+      "flow": "immigration",
+      "all": 778000,
+      "british": 83000,
+      "eu": 454000,
+      "nonEu": 241000
+    },
+    {
+      "period": "2015-09",
+      "flow": "immigration",
+      "all": 774000,
+      "british": 81000,
+      "eu": 453000,
+      "nonEu": 240000
+    },
+    {
+      "period": "2015-12",
+      "flow": "immigration",
+      "all": 797000,
+      "british": 78000,
+      "eu": 481000,
+      "nonEu": 238000
+    },
+    {
+      "period": "2016-03",
+      "flow": "immigration",
+      "all": 803000,
+      "british": 78000,
+      "eu": 490000,
+      "nonEu": 235000
+    },
+    {
+      "period": "2016-06",
+      "flow": "immigration",
+      "all": 832000,
+      "british": 74000,
+      "eu": 521000,
+      "nonEu": 237000
+    },
+    {
+      "period": "2016-09",
+      "flow": "immigration",
+      "all": 804000,
+      "british": 70000,
+      "eu": 496000,
+      "nonEu": 238000
+    },
+    {
+      "period": "2016-12",
+      "flow": "immigration",
+      "all": 772000,
+      "british": 70000,
+      "eu": 465000,
+      "nonEu": 237000
+    },
+    {
+      "period": "2017-03",
+      "flow": "immigration",
+      "all": 759000,
+      "british": 72000,
+      "eu": 447000,
+      "nonEu": 239000
+    },
+    {
+      "period": "2017-06",
+      "flow": "immigration",
+      "all": 718000,
+      "british": 78000,
+      "eu": 399000,
+      "nonEu": 241000
+    },
+    {
+      "period": "2017-09",
+      "flow": "immigration",
+      "all": 754000,
+      "british": 78000,
+      "eu": 425000,
+      "nonEu": 251000
+    },
+    {
+      "period": "2017-12",
+      "flow": "immigration",
+      "all": 752000,
+      "british": 84000,
+      "eu": 411000,
+      "nonEu": 257000
+    },
+    {
+      "period": "2018-03",
+      "flow": "immigration",
+      "all": 736000,
+      "british": 76000,
+      "eu": 399000,
+      "nonEu": 261000
+    },
+    {
+      "period": "2018-06",
+      "flow": "immigration",
+      "all": 757000,
+      "british": 81000,
+      "eu": 407000,
+      "nonEu": 269000
+    },
+    {
+      "period": "2018-09",
+      "flow": "immigration",
+      "all": 766000,
+      "british": 85000,
+      "eu": 397000,
+      "nonEu": 284000
+    },
+    {
+      "period": "2018-12",
+      "flow": "immigration",
+      "all": 825000,
+      "british": 74000,
+      "eu": 421000,
+      "nonEu": 330000
+    },
+    {
+      "period": "2019-03",
+      "flow": "immigration",
+      "all": 849000,
+      "british": 74000,
+      "eu": 429000,
+      "nonEu": 346000
+    },
+    {
+      "period": "2019-06",
+      "flow": "immigration",
+      "all": 821000,
+      "british": 61000,
+      "eu": 413000,
+      "nonEu": 347000
+    },
+    {
+      "period": "2019-09",
+      "flow": "immigration",
+      "all": 793000,
+      "british": 66000,
+      "eu": 376000,
+      "nonEu": 351000
+    },
+    {
+      "period": "2019-12",
+      "flow": "immigration",
+      "all": 788000,
+      "british": 71000,
+      "eu": 349000,
+      "nonEu": 368000
+    },
+    {
+      "period": "2020-03",
+      "flow": "immigration",
+      "all": 815000,
+      "british": 80000,
+      "eu": 347000,
+      "nonEu": 388000
+    },
+    {
+      "period": "2020-06",
+      "flow": "immigration",
+      "all": 736000,
+      "british": 72000,
+      "eu": 333000,
+      "nonEu": 331000
+    },
+    {
+      "period": "2020-09",
+      "flow": "immigration",
+      "all": 606000,
+      "british": 53000,
+      "eu": 293000,
+      "nonEu": 260000
+    },
+    {
+      "period": "2020-12",
+      "flow": "immigration",
+      "all": 662000,
+      "british": 52000,
+      "eu": 316000,
+      "nonEu": 294000
+    },
+    {
+      "period": "2021-03",
+      "flow": "immigration",
+      "all": 629000,
+      "british": 44000,
+      "eu": 287000,
+      "nonEu": 297000
+    },
+    {
+      "period": "2021-06",
+      "flow": "immigration",
+      "all": 818000,
+      "british": 176000,
+      "eu": 280000,
+      "nonEu": 363000
+    },
+    {
+      "period": "2021-09",
+      "flow": "immigration",
+      "all": 937000,
+      "british": 170000,
+      "eu": 236000,
+      "nonEu": 531000
+    },
+    {
+      "period": "2021-12",
+      "flow": "immigration",
+      "all": 947000,
+      "british": 164000,
+      "eu": 173000,
+      "nonEu": 610000
+    },
+    {
+      "period": "2022-03",
+      "flow": "immigration",
+      "all": 1069000,
+      "british": 167000,
+      "eu": 184000,
+      "nonEu": 719000
+    },
+    {
+      "period": "2022-06",
+      "flow": "immigration",
+      "all": 1167000,
+      "british": 172000,
+      "eu": 157000,
+      "nonEu": 838000
+    },
+    {
+      "period": "2022-09",
+      "flow": "immigration",
+      "all": 1317000,
+      "british": 169000,
+      "eu": 150000,
+      "nonEu": 999000
+    },
+    {
+      "period": "2022-12",
+      "flow": "immigration",
+      "all": 1398000,
+      "british": 166000,
+      "eu": 141000,
+      "nonEu": 1091000
+    },
+    {
+      "period": "2023-03",
+      "flow": "immigration",
+      "all": 1469000,
+      "british": 166000,
+      "eu": 133000,
+      "nonEu": 1170000
+    },
+    {
+      "period": "2023-06",
+      "flow": "immigration",
+      "all": 1466000,
+      "british": 161000,
+      "eu": 124000,
+      "nonEu": 1182000
+    },
+    {
+      "period": "2023-09",
+      "flow": "immigration",
+      "all": 1461000,
+      "british": 156000,
+      "eu": 112000,
+      "nonEu": 1193000
+    },
+    {
+      "period": "2023-12",
+      "flow": "immigration",
+      "all": 1441000,
+      "british": 150000,
+      "eu": 103000,
+      "nonEu": 1188000
+    },
+    {
+      "period": "2024-03",
+      "flow": "immigration",
+      "all": 1359000,
+      "british": 146000,
+      "eu": 99000,
+      "nonEu": 1115000
+    },
+    {
+      "period": "2024-06",
+      "flow": "immigration",
+      "all": 1299000,
+      "british": 142000,
+      "eu": 94000,
+      "nonEu": 1063000
+    },
+    {
+      "period": "2024-09",
+      "flow": "immigration",
+      "all": 1168000,
+      "british": 143000,
+      "eu": 89000,
+      "nonEu": 937000
+    },
+    {
+      "period": "2024-12",
+      "flow": "immigration",
+      "all": 1015000,
+      "british": 143000,
+      "eu": 82000,
+      "nonEu": 790000
+    },
+    {
+      "period": "2025-03",
+      "flow": "immigration",
+      "all": 942000,
+      "british": 143000,
+      "eu": 80000,
+      "nonEu": 719000
+    },
+    {
+      "period": "2025-06",
+      "flow": "immigration",
+      "all": 898000,
+      "british": 143000,
+      "eu": 85000,
+      "nonEu": 670000
+    },
+    {
+      "period": "2012-06",
+      "flow": "emigration",
+      "all": 477000,
+      "british": 156000,
+      "eu": 140000,
+      "nonEu": 181000
+    },
+    {
+      "period": "2012-09",
+      "flow": "emigration",
+      "all": 473000,
+      "british": 156000,
+      "eu": 139000,
+      "nonEu": 178000
+    },
+    {
+      "period": "2012-12",
+      "flow": "emigration",
+      "all": 448000,
+      "british": 151000,
+      "eu": 128000,
+      "nonEu": 169000
+    },
+    {
+      "period": "2013-03",
+      "flow": "emigration",
+      "all": 446000,
+      "british": 154000,
+      "eu": 127000,
+      "nonEu": 164000
+    },
+    {
+      "period": "2013-06",
+      "flow": "emigration",
+      "all": 454000,
+      "british": 157000,
+      "eu": 131000,
+      "nonEu": 166000
+    },
+    {
+      "period": "2013-09",
+      "flow": "emigration",
+      "all": 461000,
+      "british": 158000,
+      "eu": 135000,
+      "nonEu": 169000
+    },
+    {
+      "period": "2013-12",
+      "flow": "emigration",
+      "all": 469000,
+      "british": 157000,
+      "eu": 141000,
+      "nonEu": 171000
+    },
+    {
+      "period": "2014-03",
+      "flow": "emigration",
+      "all": 475000,
+      "british": 154000,
+      "eu": 151000,
+      "nonEu": 170000
+    },
+    {
+      "period": "2014-06",
+      "flow": "emigration",
+      "all": 489000,
+      "british": 157000,
+      "eu": 161000,
+      "nonEu": 171000
+    },
+    {
+      "period": "2014-09",
+      "flow": "emigration",
+      "all": 497000,
+      "british": 160000,
+      "eu": 171000,
+      "nonEu": 166000
+    },
+    {
+      "period": "2014-12",
+      "flow": "emigration",
+      "all": 494000,
+      "british": 161000,
+      "eu": 180000,
+      "nonEu": 154000
+    },
+    {
+      "period": "2015-03",
+      "flow": "emigration",
+      "all": 484000,
+      "british": 156000,
+      "eu": 182000,
+      "nonEu": 146000
+    },
+    {
+      "period": "2015-06",
+      "flow": "emigration",
+      "all": 482000,
+      "british": 154000,
+      "eu": 187000,
+      "nonEu": 141000
+    },
+    {
+      "period": "2015-09",
+      "flow": "emigration",
+      "all": 481000,
+      "british": 153000,
+      "eu": 191000,
+      "nonEu": 137000
+    },
+    {
+      "period": "2015-12",
+      "flow": "emigration",
+      "all": 494000,
+      "british": 151000,
+      "eu": 193000,
+      "nonEu": 150000
+    },
+    {
+      "period": "2016-03",
+      "flow": "emigration",
+      "all": 506000,
+      "british": 155000,
+      "eu": 196000,
+      "nonEu": 155000
+    },
+    {
+      "period": "2016-06",
+      "flow": "emigration",
+      "all": 511000,
+      "british": 157000,
+      "eu": 199000,
+      "nonEu": 155000
+    },
+    {
+      "period": "2016-09",
+      "flow": "emigration",
+      "all": 514000,
+      "british": 157000,
+      "eu": 202000,
+      "nonEu": 155000
+    },
+    {
+      "period": "2016-12",
+      "flow": "emigration",
+      "all": 523000,
+      "british": 163000,
+      "eu": 213000,
+      "nonEu": 147000
+    },
+    {
+      "period": "2017-03",
+      "flow": "emigration",
+      "all": 519000,
+      "british": 163000,
+      "eu": 213000,
+      "nonEu": 143000
+    },
+    {
+      "period": "2017-06",
+      "flow": "emigration",
+      "all": 518000,
+      "british": 157000,
+      "eu": 212000,
+      "nonEu": 149000
+    },
+    {
+      "period": "2017-09",
+      "flow": "emigration",
+      "all": 549000,
+      "british": 163000,
+      "eu": 233000,
+      "nonEu": 152000
+    },
+    {
+      "period": "2017-12",
+      "flow": "emigration",
+      "all": 544000,
+      "british": 164000,
+      "eu": 235000,
+      "nonEu": 144000
+    },
+    {
+      "period": "2018-03",
+      "flow": "emigration",
+      "all": 543000,
+      "british": 165000,
+      "eu": 240000,
+      "nonEu": 139000
+    },
+    {
+      "period": "2018-06",
+      "flow": "emigration",
+      "all": 541000,
+      "british": 165000,
+      "eu": 249000,
+      "nonEu": 127000
+    },
+    {
+      "period": "2018-09",
+      "flow": "emigration",
+      "all": 539000,
+      "british": 152000,
+      "eu": 259000,
+      "nonEu": 129000
+    },
+    {
+      "period": "2018-12",
+      "flow": "emigration",
+      "all": 549000,
+      "british": 147000,
+      "eu": 250000,
+      "nonEu": 152000
+    },
+    {
+      "period": "2019-03",
+      "flow": "emigration",
+      "all": 575000,
+      "british": 146000,
+      "eu": 274000,
+      "nonEu": 155000
+    },
+    {
+      "period": "2019-06",
+      "flow": "emigration",
+      "all": 597000,
+      "british": 143000,
+      "eu": 287000,
+      "nonEu": 167000
+    },
+    {
+      "period": "2019-09",
+      "flow": "emigration",
+      "all": 591000,
+      "british": 150000,
+      "eu": 262000,
+      "nonEu": 180000
+    },
+    {
+      "period": "2019-12",
+      "flow": "emigration",
+      "all": 605000,
+      "british": 153000,
+      "eu": 269000,
+      "nonEu": 182000
+    },
+    {
+      "period": "2020-03",
+      "flow": "emigration",
+      "all": 645000,
+      "british": 157000,
+      "eu": 266000,
+      "nonEu": 222000
+    },
+    {
+      "period": "2020-06",
+      "flow": "emigration",
+      "all": 625000,
+      "british": 146000,
+      "eu": 263000,
+      "nonEu": 216000
+    },
+    {
+      "period": "2020-09",
+      "flow": "emigration",
+      "all": 571000,
+      "british": 123000,
+      "eu": 249000,
+      "nonEu": 199000
+    },
+    {
+      "period": "2020-12",
+      "flow": "emigration",
+      "all": 569000,
+      "british": 130000,
+      "eu": 247000,
+      "nonEu": 192000
+    },
+    {
+      "period": "2021-03",
+      "flow": "emigration",
+      "all": 496000,
+      "british": 123000,
+      "eu": 226000,
+      "nonEu": 147000
+    },
+    {
+      "period": "2021-06",
+      "flow": "emigration",
+      "all": 567000,
+      "british": 262000,
+      "eu": 184000,
+      "nonEu": 120000
+    },
+    {
+      "period": "2021-09",
+      "flow": "emigration",
+      "all": 552000,
+      "british": 283000,
+      "eu": 172000,
+      "nonEu": 98000
+    },
+    {
+      "period": "2021-12",
+      "flow": "emigration",
+      "all": 480000,
+      "british": 233000,
+      "eu": 159000,
+      "nonEu": 88000
+    },
+    {
+      "period": "2022-03",
+      "flow": "emigration",
+      "all": 495000,
+      "british": 254000,
+      "eu": 156000,
+      "nonEu": 85000
+    },
+    {
+      "period": "2022-06",
+      "flow": "emigration",
+      "all": 486000,
+      "british": 240000,
+      "eu": 159000,
+      "nonEu": 88000
+    },
+    {
+      "period": "2022-09",
+      "flow": "emigration",
+      "all": 496000,
+      "british": 244000,
+      "eu": 153000,
+      "nonEu": 98000
+    },
+    {
+      "period": "2022-12",
+      "flow": "emigration",
+      "all": 508000,
+      "british": 247000,
+      "eu": 151000,
+      "nonEu": 110000
+    },
+    {
+      "period": "2023-03",
+      "flow": "emigration",
+      "all": 525000,
+      "british": 249000,
+      "eu": 154000,
+      "nonEu": 122000
+    },
+    {
+      "period": "2023-06",
+      "flow": "emigration",
+      "all": 543000,
+      "british": 252000,
+      "eu": 153000,
+      "nonEu": 137000
+    },
+    {
+      "period": "2023-09",
+      "flow": "emigration",
+      "all": 570000,
+      "british": 253000,
+      "eu": 155000,
+      "nonEu": 163000
+    },
+    {
+      "period": "2023-12",
+      "flow": "emigration",
+      "all": 593000,
+      "british": 255000,
+      "eu": 156000,
+      "nonEu": 182000
+    },
+    {
+      "period": "2024-03",
+      "flow": "emigration",
+      "all": 625000,
+      "british": 257000,
+      "eu": 156000,
+      "nonEu": 212000
+    },
+    {
+      "period": "2024-06",
+      "flow": "emigration",
+      "all": 650000,
+      "british": 257000,
+      "eu": 155000,
+      "nonEu": 238000
+    },
+    {
+      "period": "2024-09",
+      "flow": "emigration",
+      "all": 661000,
+      "british": 259000,
+      "eu": 153000,
+      "nonEu": 249000
+    },
+    {
+      "period": "2024-12",
+      "flow": "emigration",
+      "all": 669000,
+      "british": 257000,
+      "eu": 150000,
+      "nonEu": 261000
+    },
+    {
+      "period": "2025-03",
+      "flow": "emigration",
+      "all": 685000,
+      "british": 255000,
+      "eu": 150000,
+      "nonEu": 280000
+    },
+    {
+      "period": "2025-06",
+      "flow": "emigration",
+      "all": 693000,
+      "british": 252000,
+      "eu": 155000,
+      "nonEu": 286000
+    },
+    {
+      "period": "2012-06",
+      "flow": "net_migration",
+      "all": 162000,
+      "british": -83000,
+      "eu": 187000,
+      "nonEu": 57000
+    },
+    {
+      "period": "2012-09",
+      "flow": "net_migration",
+      "all": 157000,
+      "british": -80000,
+      "eu": 183000,
+      "nonEu": 54000
+    },
+    {
+      "period": "2012-12",
+      "flow": "net_migration",
+      "all": 195000,
+      "british": -72000,
+      "eu": 206000,
+      "nonEu": 61000
+    },
+    {
+      "period": "2013-03",
+      "flow": "net_migration",
+      "all": 204000,
+      "british": -79000,
+      "eu": 223000,
+      "nonEu": 60000
+    },
+    {
+      "period": "2013-06",
+      "flow": "net_migration",
+      "all": 215000,
+      "british": -83000,
+      "eu": 242000,
+      "nonEu": 56000
+    },
+    {
+      "period": "2013-09",
+      "flow": "net_migration",
+      "all": 259000,
+      "british": -80000,
+      "eu": 275000,
+      "nonEu": 64000
+    },
+    {
+      "period": "2013-12",
+      "flow": "net_migration",
+      "all": 244000,
+      "british": -81000,
+      "eu": 262000,
+      "nonEu": 63000
+    },
+    {
+      "period": "2014-03",
+      "flow": "net_migration",
+      "all": 256000,
+      "british": -74000,
+      "eu": 263000,
+      "nonEu": 67000
+    },
+    {
+      "period": "2014-06",
+      "flow": "net_migration",
+      "all": 248000,
+      "british": -75000,
+      "eu": 258000,
+      "nonEu": 65000
+    },
+    {
+      "period": "2014-09",
+      "flow": "net_migration",
+      "all": 264000,
+      "british": -79000,
+      "eu": 270000,
+      "nonEu": 73000
+    },
+    {
+      "period": "2014-12",
+      "flow": "net_migration",
+      "all": 284000,
+      "british": -80000,
+      "eu": 277000,
+      "nonEu": 87000
+    },
+    {
+      "period": "2015-03",
+      "flow": "net_migration",
+      "all": 296000,
+      "british": -73000,
+      "eu": 275000,
+      "nonEu": 94000
+    },
+    {
+      "period": "2015-06",
+      "flow": "net_migration",
+      "all": 296000,
+      "british": -72000,
+      "eu": 267000,
+      "nonEu": 101000
+    },
+    {
+      "period": "2015-09",
+      "flow": "net_migration",
+      "all": 293000,
+      "british": -72000,
+      "eu": 262000,
+      "nonEu": 103000
+    },
+    {
+      "period": "2015-12",
+      "flow": "net_migration",
+      "all": 303000,
+      "british": -73000,
+      "eu": 287000,
+      "nonEu": 88000
+    },
+    {
+      "period": "2016-03",
+      "flow": "net_migration",
+      "all": 298000,
+      "british": -77000,
+      "eu": 294000,
+      "nonEu": 80000
+    },
+    {
+      "period": "2016-06",
+      "flow": "net_migration",
+      "all": 321000,
+      "british": -83000,
+      "eu": 322000,
+      "nonEu": 82000
+    },
+    {
+      "period": "2016-09",
+      "flow": "net_migration",
+      "all": 290000,
+      "british": -87000,
+      "eu": 294000,
+      "nonEu": 83000
+    },
+    {
+      "period": "2016-12",
+      "flow": "net_migration",
+      "all": 249000,
+      "british": -94000,
+      "eu": 253000,
+      "nonEu": 90000
+    },
+    {
+      "period": "2017-03",
+      "flow": "net_migration",
+      "all": 240000,
+      "british": -91000,
+      "eu": 235000,
+      "nonEu": 97000
+    },
+    {
+      "period": "2017-06",
+      "flow": "net_migration",
+      "all": 200000,
+      "british": -79000,
+      "eu": 188000,
+      "nonEu": 91000
+    },
+    {
+      "period": "2017-09",
+      "flow": "net_migration",
+      "all": 205000,
+      "british": -85000,
+      "eu": 192000,
+      "nonEu": 98000
+    },
+    {
+      "period": "2017-12",
+      "flow": "net_migration",
+      "all": 208000,
+      "british": -81000,
+      "eu": 176000,
+      "nonEu": 114000
+    },
+    {
+      "period": "2018-03",
+      "flow": "net_migration",
+      "all": 193000,
+      "british": -89000,
+      "eu": 160000,
+      "nonEu": 122000
+    },
+    {
+      "period": "2018-06",
+      "flow": "net_migration",
+      "all": 216000,
+      "british": -84000,
+      "eu": 158000,
+      "nonEu": 143000
+    },
+    {
+      "period": "2018-09",
+      "flow": "net_migration",
+      "all": 226000,
+      "british": -67000,
+      "eu": 138000,
+      "nonEu": 155000
+    },
+    {
+      "period": "2018-12",
+      "flow": "net_migration",
+      "all": 276000,
+      "british": -72000,
+      "eu": 170000,
+      "nonEu": 178000
+    },
+    {
+      "period": "2019-03",
+      "flow": "net_migration",
+      "all": 274000,
+      "british": -72000,
+      "eu": 155000,
+      "nonEu": 190000
+    },
+    {
+      "period": "2019-06",
+      "flow": "net_migration",
+      "all": 224000,
+      "british": -82000,
+      "eu": 126000,
+      "nonEu": 179000
+    },
+    {
+      "period": "2019-09",
+      "flow": "net_migration",
+      "all": 202000,
+      "british": -83000,
+      "eu": 114000,
+      "nonEu": 171000
+    },
+    {
+      "period": "2019-12",
+      "flow": "net_migration",
+      "all": 184000,
+      "british": -82000,
+      "eu": 80000,
+      "nonEu": 186000
+    },
+    {
+      "period": "2020-03",
+      "flow": "net_migration",
+      "all": 170000,
+      "british": -77000,
+      "eu": 81000,
+      "nonEu": 166000
+    },
+    {
+      "period": "2020-06",
+      "flow": "net_migration",
+      "all": 111000,
+      "british": -74000,
+      "eu": 70000,
+      "nonEu": 115000
+    },
+    {
+      "period": "2020-09",
+      "flow": "net_migration",
+      "all": 35000,
+      "british": -70000,
+      "eu": 45000,
+      "nonEu": 60000
+    },
+    {
+      "period": "2020-12",
+      "flow": "net_migration",
+      "all": 93000,
+      "british": -78000,
+      "eu": 70000,
+      "nonEu": 101000
+    },
+    {
+      "period": "2021-03",
+      "flow": "net_migration",
+      "all": 132000,
+      "british": -79000,
+      "eu": 61000,
+      "nonEu": 150000
+    },
+    {
+      "period": "2021-06",
+      "flow": "net_migration",
+      "all": 251000,
+      "british": -87000,
+      "eu": 95000,
+      "nonEu": 242000
+    },
+    {
+      "period": "2021-09",
+      "flow": "net_migration",
+      "all": 384000,
+      "british": -113000,
+      "eu": 64000,
+      "nonEu": 433000
+    },
+    {
+      "period": "2021-12",
+      "flow": "net_migration",
+      "all": 467000,
+      "british": -69000,
+      "eu": 15000,
+      "nonEu": 522000
+    },
+    {
+      "period": "2022-03",
+      "flow": "net_migration",
+      "all": 575000,
+      "british": -87000,
+      "eu": 28000,
+      "nonEu": 634000
+    },
+    {
+      "period": "2022-06",
+      "flow": "net_migration",
+      "all": 681000,
+      "british": -67000,
+      "eu": -1000,
+      "nonEu": 750000
+    },
+    {
+      "period": "2022-09",
+      "flow": "net_migration",
+      "all": 822000,
+      "british": -75000,
+      "eu": -3000,
+      "nonEu": 901000
+    },
+    {
+      "period": "2022-12",
+      "flow": "net_migration",
+      "all": 891000,
+      "british": -81000,
+      "eu": -9000,
+      "nonEu": 981000
+    },
+    {
+      "period": "2023-03",
+      "flow": "net_migration",
+      "all": 944000,
+      "british": -83000,
+      "eu": -21000,
+      "nonEu": 1047000
+    },
+    {
+      "period": "2023-06",
+      "flow": "net_migration",
+      "all": 924000,
+      "british": -91000,
+      "eu": -30000,
+      "nonEu": 1045000
+    },
+    {
+      "period": "2023-09",
+      "flow": "net_migration",
+      "all": 891000,
+      "british": -97000,
+      "eu": -43000,
+      "nonEu": 1031000
+    },
+    {
+      "period": "2023-12",
+      "flow": "net_migration",
+      "all": 848000,
+      "british": -104000,
+      "eu": -53000,
+      "nonEu": 1005000
+    },
+    {
+      "period": "2024-03",
+      "flow": "net_migration",
+      "all": 734000,
+      "british": -112000,
+      "eu": -57000,
+      "nonEu": 903000
+    },
+    {
+      "period": "2024-06",
+      "flow": "net_migration",
+      "all": 649000,
+      "british": -115000,
+      "eu": -61000,
+      "nonEu": 825000
+    },
+    {
+      "period": "2024-09",
+      "flow": "net_migration",
+      "all": 508000,
+      "british": -116000,
+      "eu": -65000,
+      "nonEu": 688000
+    },
+    {
+      "period": "2024-12",
+      "flow": "net_migration",
+      "all": 345000,
+      "british": -114000,
+      "eu": -69000,
+      "nonEu": 528000
+    },
+    {
+      "period": "2025-03",
+      "flow": "net_migration",
+      "all": 256000,
+      "british": -112000,
+      "eu": -71000,
+      "nonEu": 439000
+    },
+    {
+      "period": "2025-06",
+      "flow": "net_migration",
+      "all": 204000,
+      "british": -109000,
+      "eu": -70000,
+      "nonEu": 383000
+    }
+  ],
+  "migrationByReason": [
+    {
+      "period": "2019-06",
+      "flow": "immigration",
+      "total": 347000,
+      "work": 89000,
+      "study": 126000,
+      "family": 65000,
+      "humanitarian": 6000,
+      "asylum": 39000,
+      "other": 22000
+    },
+    {
+      "period": "2019-09",
+      "flow": "immigration",
+      "total": 351000,
+      "work": 95000,
+      "study": 116000,
+      "family": 71000,
+      "humanitarian": 6000,
+      "asylum": 41000,
+      "other": 22000
+    },
+    {
+      "period": "2019-12",
+      "flow": "immigration",
+      "total": 368000,
+      "work": 99000,
+      "study": 120000,
+      "family": 78000,
+      "humanitarian": 6000,
+      "asylum": 42000,
+      "other": 23000
+    },
+    {
+      "period": "2020-03",
+      "flow": "immigration",
+      "total": 388000,
+      "work": 102000,
+      "study": 135000,
+      "family": 82000,
+      "humanitarian": 5000,
+      "asylum": 42000,
+      "other": 23000
+    },
+    {
+      "period": "2020-06",
+      "flow": "immigration",
+      "total": 331000,
+      "work": 80000,
+      "study": 124000,
+      "family": 68000,
+      "humanitarian": 4000,
+      "asylum": 38000,
+      "other": 17000
+    },
+    {
+      "period": "2020-09",
+      "flow": "immigration",
+      "total": 260000,
+      "work": 68000,
+      "study": 77000,
+      "family": 59000,
+      "humanitarian": 2000,
+      "asylum": 37000,
+      "other": 16000
+    },
+    {
+      "period": "2020-12",
+      "flow": "immigration",
+      "total": 294000,
+      "work": 71000,
+      "study": 112000,
+      "family": 56000,
+      "humanitarian": 1000,
+      "asylum": 35000,
+      "other": 20000
+    },
+    {
+      "period": "2021-03",
+      "flow": "immigration",
+      "total": 297000,
+      "work": 70000,
+      "study": 124000,
+      "family": 51000,
+      "humanitarian": 1000,
+      "asylum": 31000,
+      "other": 21000
+    },
+    {
+      "period": "2021-06",
+      "flow": "immigration",
+      "total": 363000,
+      "work": 95000,
+      "study": 133000,
+      "family": 64000,
+      "humanitarian": 10000,
+      "asylum": 36000,
+      "other": 25000
+    },
+    {
+      "period": "2021-09",
+      "flow": "immigration",
+      "total": 531000,
+      "work": 121000,
+      "study": 225000,
+      "family": 69000,
+      "humanitarian": 44000,
+      "asylum": 43000,
+      "other": 28000
+    },
+    {
+      "period": "2021-12",
+      "flow": "immigration",
+      "total": 610000,
+      "work": 145000,
+      "study": 259000,
+      "family": 68000,
+      "humanitarian": 57000,
+      "asylum": 55000,
+      "other": 26000
+    },
+    {
+      "period": "2022-03",
+      "flow": "immigration",
+      "total": 719000,
+      "work": 179000,
+      "study": 304000,
+      "family": 71000,
+      "humanitarian": 77000,
+      "asylum": 63000,
+      "other": 26000
+    },
+    {
+      "period": "2022-06",
+      "flow": "immigration",
+      "total": 838000,
+      "work": 209000,
+      "study": 315000,
+      "family": 64000,
+      "humanitarian": 151000,
+      "asylum": 70000,
+      "other": 28000
+    },
+    {
+      "period": "2022-09",
+      "flow": "immigration",
+      "total": 999000,
+      "work": 253000,
+      "study": 401000,
+      "family": 62000,
+      "humanitarian": 174000,
+      "asylum": 80000,
+      "other": 28000
+    },
+    {
+      "period": "2022-12",
+      "flow": "immigration",
+      "total": 1091000,
+      "work": 291000,
+      "study": 430000,
+      "family": 67000,
+      "humanitarian": 190000,
+      "asylum": 85000,
+      "other": 27000
+    },
+    {
+      "period": "2023-03",
+      "flow": "immigration",
+      "total": 1170000,
+      "work": 333000,
+      "study": 461000,
+      "family": 76000,
+      "humanitarian": 190000,
+      "asylum": 86000,
+      "other": 25000
+    },
+    {
+      "period": "2023-06",
+      "flow": "immigration",
+      "total": 1182000,
+      "work": 389000,
+      "study": 473000,
+      "family": 88000,
+      "humanitarian": 126000,
+      "asylum": 85000,
+      "other": 21000
+    },
+    {
+      "period": "2023-09",
+      "flow": "immigration",
+      "total": 1193000,
+      "work": 426000,
+      "study": 486000,
+      "family": 93000,
+      "humanitarian": 88000,
+      "asylum": 82000,
+      "other": 18000
+    },
+    {
+      "period": "2023-12",
+      "flow": "immigration",
+      "total": 1188000,
+      "work": 471000,
+      "study": 461000,
+      "family": 89000,
+      "humanitarian": 75000,
+      "asylum": 75000,
+      "other": 16000
+    },
+    {
+      "period": "2024-03",
+      "flow": "immigration",
+      "total": 1115000,
+      "work": 468000,
+      "study": 402000,
+      "family": 84000,
+      "humanitarian": 67000,
+      "asylum": 78000,
+      "other": 15000
+    },
+    {
+      "period": "2024-06",
+      "flow": "immigration",
+      "total": 1063000,
+      "work": 435000,
+      "study": 386000,
+      "family": 84000,
+      "humanitarian": 62000,
+      "asylum": 81000,
+      "other": 15000
+    },
+    {
+      "period": "2024-09",
+      "flow": "immigration",
+      "total": 937000,
+      "work": 371000,
+      "study": 326000,
+      "family": 87000,
+      "humanitarian": 57000,
+      "asylum": 82000,
+      "other": 15000
+    },
+    {
+      "period": "2024-12",
+      "flow": "immigration",
+      "total": 790000,
+      "work": 275000,
+      "study": 277000,
+      "family": 84000,
+      "humanitarian": 51000,
+      "asylum": 89000,
+      "other": 15000
+    },
+    {
+      "period": "2025-03",
+      "flow": "immigration",
+      "total": 719000,
+      "work": 214000,
+      "study": 281000,
+      "family": 73000,
+      "humanitarian": 47000,
+      "asylum": 91000,
+      "other": 13000
+    },
+    {
+      "period": "2025-06",
+      "flow": "immigration",
+      "total": 670000,
+      "work": 171000,
+      "study": 288000,
+      "family": 60000,
+      "humanitarian": 41000,
+      "asylum": 96000,
+      "other": 13000
+    },
+    {
+      "period": "2019-06",
+      "flow": "emigration",
+      "total": 167000,
+      "work": 44000,
+      "study": 103000,
+      "family": 10000,
+      "humanitarian": 0,
+      "asylum": 2000,
+      "other": 8000
+    },
+    {
+      "period": "2019-09",
+      "flow": "emigration",
+      "total": 180000,
+      "work": 52000,
+      "study": 106000,
+      "family": 11000,
+      "humanitarian": 0,
+      "asylum": 2000,
+      "other": 8000
+    },
+    {
+      "period": "2019-12",
+      "flow": "emigration",
+      "total": 182000,
+      "work": 52000,
+      "study": 108000,
+      "family": 11000,
+      "humanitarian": 0,
+      "asylum": 2000,
+      "other": 9000
+    },
+    {
+      "period": "2020-03",
+      "flow": "emigration",
+      "total": 222000,
+      "work": 54000,
+      "study": 142000,
+      "family": 13000,
+      "humanitarian": 0,
+      "asylum": 2000,
+      "other": 11000
+    },
+    {
+      "period": "2020-06",
+      "flow": "emigration",
+      "total": 216000,
+      "work": 48000,
+      "study": 142000,
+      "family": 14000,
+      "humanitarian": 0,
+      "asylum": 1000,
+      "other": 11000
+    },
+    {
+      "period": "2020-09",
+      "flow": "emigration",
+      "total": 199000,
+      "work": 42000,
+      "study": 131000,
+      "family": 16000,
+      "humanitarian": 0,
+      "asylum": 1000,
+      "other": 10000
+    },
+    {
+      "period": "2020-12",
+      "flow": "emigration",
+      "total": 192000,
+      "work": 42000,
+      "study": 122000,
+      "family": 18000,
+      "humanitarian": 0,
+      "asylum": 1000,
+      "other": 9000
+    },
+    {
+      "period": "2021-03",
+      "flow": "emigration",
+      "total": 147000,
+      "work": 38000,
+      "study": 83000,
+      "family": 18000,
+      "humanitarian": 0,
+      "asylum": 1000,
+      "other": 6000
+    },
+    {
+      "period": "2021-06",
+      "flow": "emigration",
+      "total": 120000,
+      "work": 36000,
+      "study": 73000,
+      "family": 9000,
+      "humanitarian": 0,
+      "asylum": 0,
+      "other": 2000
+    },
+    {
+      "period": "2021-09",
+      "flow": "emigration",
+      "total": 98000,
+      "work": 32000,
+      "study": 55000,
+      "family": 9000,
+      "humanitarian": 0,
+      "asylum": 0,
+      "other": 2000
+    },
+    {
+      "period": "2021-12",
+      "flow": "emigration",
+      "total": 88000,
+      "work": 28000,
+      "study": 49000,
+      "family": 9000,
+      "humanitarian": 0,
+      "asylum": 0,
+      "other": 2000
+    },
+    {
+      "period": "2022-03",
+      "flow": "emigration",
+      "total": 85000,
+      "work": 26000,
+      "study": 47000,
+      "family": 10000,
+      "humanitarian": 0,
+      "asylum": 0,
+      "other": 2000
+    },
+    {
+      "period": "2022-06",
+      "flow": "emigration",
+      "total": 88000,
+      "work": 26000,
+      "study": 50000,
+      "family": 10000,
+      "humanitarian": 0,
+      "asylum": 0,
+      "other": 2000
+    },
+    {
+      "period": "2022-09",
+      "flow": "emigration",
+      "total": 98000,
+      "work": 25000,
+      "study": 61000,
+      "family": 11000,
+      "humanitarian": 0,
+      "asylum": 0,
+      "other": 2000
+    },
+    {
+      "period": "2022-12",
+      "flow": "emigration",
+      "total": 110000,
+      "work": 26000,
+      "study": 71000,
+      "family": 10000,
+      "humanitarian": 0,
+      "asylum": 0,
+      "other": 2000
+    },
+    {
+      "period": "2023-03",
+      "flow": "emigration",
+      "total": 122000,
+      "work": 28000,
+      "study": 81000,
+      "family": 10000,
+      "humanitarian": 0,
+      "asylum": 1000,
+      "other": 2000
+    },
+    {
+      "period": "2023-06",
+      "flow": "emigration",
+      "total": 137000,
+      "work": 31000,
+      "study": 91000,
+      "family": 11000,
+      "humanitarian": 1000,
+      "asylum": 1000,
+      "other": 2000
+    },
+    {
+      "period": "2023-09",
+      "flow": "emigration",
+      "total": 163000,
+      "work": 36000,
+      "study": 106000,
+      "family": 13000,
+      "humanitarian": 4000,
+      "asylum": 2000,
+      "other": 3000
+    },
+    {
+      "period": "2023-12",
+      "flow": "emigration",
+      "total": 182000,
+      "work": 41000,
+      "study": 114000,
+      "family": 16000,
+      "humanitarian": 6000,
+      "asylum": 2000,
+      "other": 3000
+    },
+    {
+      "period": "2024-03",
+      "flow": "emigration",
+      "total": 212000,
+      "work": 47000,
+      "study": 130000,
+      "family": 19000,
+      "humanitarian": 8000,
+      "asylum": 3000,
+      "other": 4000
+    },
+    {
+      "period": "2024-06",
+      "flow": "emigration",
+      "total": 238000,
+      "work": 55000,
+      "study": 142000,
+      "family": 23000,
+      "humanitarian": 10000,
+      "asylum": 4000,
+      "other": 5000
+    },
+    {
+      "period": "2024-09",
+      "flow": "emigration",
+      "total": 249000,
+      "work": 58000,
+      "study": 147000,
+      "family": 25000,
+      "humanitarian": 10000,
+      "asylum": 5000,
+      "other": 5000
+    },
+    {
+      "period": "2024-12",
+      "flow": "emigration",
+      "total": 261000,
+      "work": 61000,
+      "study": 150000,
+      "family": 29000,
+      "humanitarian": 10000,
+      "asylum": 5000,
+      "other": 6000
+    },
+    {
+      "period": "2025-03",
+      "flow": "emigration",
+      "total": 280000,
+      "work": 64000,
+      "study": 158000,
+      "family": 35000,
+      "humanitarian": 12000,
+      "asylum": 5000,
+      "other": 7000
+    },
+    {
+      "period": "2025-06",
+      "flow": "emigration",
+      "total": 286000,
+      "work": 64000,
+      "study": 144000,
+      "family": 46000,
+      "humanitarian": 20000,
+      "asylum": 6000,
+      "other": 7000
+    },
+    {
+      "period": "2019-06",
+      "flow": "net_migration",
+      "total": 179000,
+      "work": 45000,
+      "study": 24000,
+      "family": 55000,
+      "humanitarian": 6000,
+      "asylum": 36000,
+      "other": 14000
+    },
+    {
+      "period": "2019-09",
+      "flow": "net_migration",
+      "total": 171000,
+      "work": 43000,
+      "study": 10000,
+      "family": 60000,
+      "humanitarian": 6000,
+      "asylum": 39000,
+      "other": 14000
+    },
+    {
+      "period": "2019-12",
+      "flow": "net_migration",
+      "total": 186000,
+      "work": 47000,
+      "study": 12000,
+      "family": 66000,
+      "humanitarian": 6000,
+      "asylum": 40000,
+      "other": 14000
+    },
+    {
+      "period": "2020-03",
+      "flow": "net_migration",
+      "total": 166000,
+      "work": 48000,
+      "study": -7000,
+      "family": 69000,
+      "humanitarian": 5000,
+      "asylum": 40000,
+      "other": 11000
+    },
+    {
+      "period": "2020-06",
+      "flow": "net_migration",
+      "total": 115000,
+      "work": 32000,
+      "study": -18000,
+      "family": 54000,
+      "humanitarian": 4000,
+      "asylum": 37000,
+      "other": 6000
+    },
+    {
+      "period": "2020-09",
+      "flow": "net_migration",
+      "total": 60000,
+      "work": 26000,
+      "study": -53000,
+      "family": 43000,
+      "humanitarian": 2000,
+      "asylum": 36000,
+      "other": 6000
+    },
+    {
+      "period": "2020-12",
+      "flow": "net_migration",
+      "total": 101000,
+      "work": 29000,
+      "study": -11000,
+      "family": 38000,
+      "humanitarian": 1000,
+      "asylum": 34000,
+      "other": 11000
+    },
+    {
+      "period": "2021-03",
+      "flow": "net_migration",
+      "total": 150000,
+      "work": 32000,
+      "study": 41000,
+      "family": 32000,
+      "humanitarian": 1000,
+      "asylum": 30000,
+      "other": 15000
+    },
+    {
+      "period": "2021-06",
+      "flow": "net_migration",
+      "total": 242000,
+      "work": 59000,
+      "study": 59000,
+      "family": 54000,
+      "humanitarian": 10000,
+      "asylum": 36000,
+      "other": 24000
+    },
+    {
+      "period": "2021-09",
+      "flow": "net_migration",
+      "total": 433000,
+      "work": 89000,
+      "study": 171000,
+      "family": 60000,
+      "humanitarian": 44000,
+      "asylum": 43000,
+      "other": 26000
+    },
+    {
+      "period": "2021-12",
+      "flow": "net_migration",
+      "total": 522000,
+      "work": 117000,
+      "study": 211000,
+      "family": 59000,
+      "humanitarian": 57000,
+      "asylum": 55000,
+      "other": 24000
+    },
+    {
+      "period": "2022-03",
+      "flow": "net_migration",
+      "total": 634000,
+      "work": 153000,
+      "study": 257000,
+      "family": 61000,
+      "humanitarian": 77000,
+      "asylum": 63000,
+      "other": 24000
+    },
+    {
+      "period": "2022-06",
+      "flow": "net_migration",
+      "total": 750000,
+      "work": 184000,
+      "study": 265000,
+      "family": 54000,
+      "humanitarian": 151000,
+      "asylum": 70000,
+      "other": 26000
+    },
+    {
+      "period": "2022-09",
+      "flow": "net_migration",
+      "total": 901000,
+      "work": 228000,
+      "study": 341000,
+      "family": 51000,
+      "humanitarian": 174000,
+      "asylum": 80000,
+      "other": 27000
+    },
+    {
+      "period": "2022-12",
+      "flow": "net_migration",
+      "total": 981000,
+      "work": 266000,
+      "study": 359000,
+      "family": 57000,
+      "humanitarian": 190000,
+      "asylum": 84000,
+      "other": 25000
+    },
+    {
+      "period": "2023-03",
+      "flow": "net_migration",
+      "total": 1047000,
+      "work": 305000,
+      "study": 379000,
+      "family": 66000,
+      "humanitarian": 190000,
+      "asylum": 85000,
+      "other": 23000
+    },
+    {
+      "period": "2023-06",
+      "flow": "net_migration",
+      "total": 1045000,
+      "work": 359000,
+      "study": 382000,
+      "family": 77000,
+      "humanitarian": 125000,
+      "asylum": 84000,
+      "other": 19000
+    },
+    {
+      "period": "2023-09",
+      "flow": "net_migration",
+      "total": 1031000,
+      "work": 391000,
+      "study": 381000,
+      "family": 79000,
+      "humanitarian": 84000,
+      "asylum": 80000,
+      "other": 15000
+    },
+    {
+      "period": "2023-12",
+      "flow": "net_migration",
+      "total": 1005000,
+      "work": 430000,
+      "study": 348000,
+      "family": 73000,
+      "humanitarian": 70000,
+      "asylum": 73000,
+      "other": 12000
+    },
+    {
+      "period": "2024-03",
+      "flow": "net_migration",
+      "total": 903000,
+      "work": 421000,
+      "study": 272000,
+      "family": 65000,
+      "humanitarian": 60000,
+      "asylum": 75000,
+      "other": 11000
+    },
+    {
+      "period": "2024-06",
+      "flow": "net_migration",
+      "total": 825000,
+      "work": 381000,
+      "study": 244000,
+      "family": 61000,
+      "humanitarian": 52000,
+      "asylum": 77000,
+      "other": 10000
+    },
+    {
+      "period": "2024-09",
+      "flow": "net_migration",
+      "total": 688000,
+      "work": 313000,
+      "study": 179000,
+      "family": 62000,
+      "humanitarian": 47000,
+      "asylum": 77000,
+      "other": 10000
+    },
+    {
+      "period": "2024-12",
+      "flow": "net_migration",
+      "total": 528000,
+      "work": 213000,
+      "study": 127000,
+      "family": 55000,
+      "humanitarian": 41000,
+      "asylum": 84000,
+      "other": 9000
+    },
+    {
+      "period": "2025-03",
+      "flow": "net_migration",
+      "total": 439000,
+      "work": 150000,
+      "study": 123000,
+      "family": 38000,
+      "humanitarian": 35000,
+      "asylum": 86000,
+      "other": 7000
+    },
+    {
+      "period": "2025-06",
+      "flow": "net_migration",
+      "total": 383000,
+      "work": 107000,
+      "study": 144000,
+      "family": 14000,
+      "humanitarian": 21000,
+      "asylum": 90000,
+      "other": 6000
+    }
+  ],
+  "visaGrants": [
+    {
+      "year": 2014,
+      "work": 167146,
+      "study": 293648,
+      "studySponsored": 219950,
+      "family": 34852,
+      "visitor": 1878551,
+      "total": 2448563
+    },
+    {
+      "year": 2015,
+      "work": 165900,
+      "study": 272919,
+      "studySponsored": 210274,
+      "family": 37711,
+      "visitor": 1913774,
+      "total": 2468347
+    },
+    {
+      "year": 2016,
+      "work": 163922,
+      "study": 294454,
+      "studySponsored": 207100,
+      "family": 37781,
+      "visitor": 1902728,
+      "total": 2478973
+    },
+    {
+      "year": 2017,
+      "work": 164943,
+      "study": 330101,
+      "studySponsored": 223258,
+      "family": 40123,
+      "visitor": 2095584,
+      "total": 2707867
+    },
+    {
+      "year": 2018,
+      "work": 175812,
+      "study": 354878,
+      "studySponsored": 240801,
+      "family": 43620,
+      "visitor": 2239639,
+      "total": 2901995
+    },
+    {
+      "year": 2019,
+      "work": 192559,
+      "study": 404410,
+      "studySponsored": 284721,
+      "family": 55643,
+      "visitor": 2413461,
+      "total": 3171639
+    },
+    {
+      "year": 2020,
+      "work": 114528,
+      "study": 250121,
+      "studySponsored": 228966,
+      "family": 37087,
+      "visitor": 500596,
+      "total": 961644
+    },
+    {
+      "year": 2021,
+      "work": 239193,
+      "study": 435110,
+      "studySponsored": 430485,
+      "family": 42182,
+      "visitor": 401977,
+      "total": 1299945
+    },
+    {
+      "year": 2022,
+      "work": 421565,
+      "study": 623698,
+      "studySponsored": 618711,
+      "family": 47119,
+      "visitor": 1396161,
+      "total": 2823696
+    },
+    {
+      "year": 2023,
+      "work": 613627,
+      "study": 604253,
+      "studySponsored": 600024,
+      "family": 80083,
+      "visitor": 1954981,
+      "total": 3387452
+    },
+    {
+      "year": 2024,
+      "work": 368139,
+      "study": 418932,
+      "studySponsored": 414731,
+      "family": 85161,
+      "visitor": 2159540,
+      "total": 3127472
+    },
+    {
+      "year": 2025,
+      "work": 261112,
+      "study": 429254,
+      "studySponsored": 426471,
+      "family": 66610,
+      "visitor": 2241336,
+      "total": 3070851
+    }
+  ],
+  "asylum": [
+    {
+      "year": 2010,
+      "applications": 22644,
+      "decisions": 26452,
+      "grants": 6444,
+      "refusals": 20008,
+      "grantRate": 0.3,
+      "backlogPeople": 7240,
+      "backlogCases": 5978
+    },
+    {
+      "year": 2011,
+      "applications": 25898,
+      "decisions": 22794,
+      "grants": 7184,
+      "refusals": 15610,
+      "grantRate": 0.3,
+      "backlogPeople": 8857,
+      "backlogCases": 6800
+    },
+    {
+      "year": 2012,
+      "applications": 27978,
+      "decisions": 21859,
+      "grants": 7797,
+      "refusals": 14062,
+      "grantRate": 0.4,
+      "backlogPeople": 12816,
+      "backlogCases": 9871
+    },
+    {
+      "year": 2013,
+      "applications": 29875,
+      "decisions": 22556,
+      "grants": 8638,
+      "refusals": 13918,
+      "grantRate": 0.4,
+      "backlogPeople": 18172,
+      "backlogCases": 13628
+    },
+    {
+      "year": 2014,
+      "applications": 32344,
+      "decisions": 25883,
+      "grants": 10101,
+      "refusals": 15782,
+      "grantRate": 0.4,
+      "backlogPeople": 22898,
+      "backlogCases": 17067
+    },
+    {
+      "year": 2015,
+      "applications": 39968,
+      "decisions": 38147,
+      "grants": 13945,
+      "refusals": 24202,
+      "grantRate": 0.4,
+      "backlogPeople": 22147,
+      "backlogCases": 18111
+    },
+    {
+      "year": 2016,
+      "applications": 39357,
+      "decisions": 31011,
+      "grants": 9944,
+      "refusals": 21067,
+      "grantRate": 0.3,
+      "backlogPeople": 27857,
+      "backlogCases": 21475
+    },
+    {
+      "year": 2017,
+      "applications": 34435,
+      "decisions": 27850,
+      "grants": 8564,
+      "refusals": 19286,
+      "grantRate": 0.3,
+      "backlogPeople": 29522,
+      "backlogCases": 22234
+    },
+    {
+      "year": 2018,
+      "applications": 38483,
+      "decisions": 28969,
+      "grants": 10097,
+      "refusals": 18872,
+      "grantRate": 0.3,
+      "backlogPeople": 35855,
+      "backlogCases": 27256
+    },
+    {
+      "year": 2019,
+      "applications": 45537,
+      "decisions": 28575,
+      "grants": 15080,
+      "refusals": 13495,
+      "grantRate": 0.5,
+      "backlogPeople": 51228,
+      "backlogCases": 40032
+    },
+    {
+      "year": 2020,
+      "applications": 37603,
+      "decisions": 18477,
+      "grants": 8973,
+      "refusals": 9504,
+      "grantRate": 0.5,
+      "backlogPeople": 64895,
+      "backlogCases": 51321
+    },
+    {
+      "year": 2021,
+      "applications": 57942,
+      "decisions": 17866,
+      "grants": 12953,
+      "refusals": 4913,
+      "grantRate": 0.7,
+      "backlogPeople": 100564,
+      "backlogCases": 81978
+    },
+    {
+      "year": 2022,
+      "applications": 95007,
+      "decisions": 22790,
+      "grants": 17274,
+      "refusals": 5516,
+      "grantRate": 0.8,
+      "backlogPeople": 160919,
+      "backlogCases": 132182
+    },
+    {
+      "year": 2023,
+      "applications": 87427,
+      "decisions": 91556,
+      "grants": 61478,
+      "refusals": 30078,
+      "grantRate": 0.7,
+      "backlogPeople": 128786,
+      "backlogCases": 95252
+    },
+    {
+      "year": 2024,
+      "applications": 104764,
+      "decisions": 86643,
+      "grants": 40754,
+      "refusals": 45889,
+      "grantRate": 0.5,
+      "backlogPeople": 124802,
+      "backlogCases": 90686
+    },
+    {
+      "year": 2025,
+      "applications": 100625,
+      "decisions": 135151,
+      "grants": 54887,
+      "refusals": 80264,
+      "grantRate": 0.4,
+      "backlogPeople": 64426,
+      "backlogCases": 48723
+    }
+  ],
+  "smallBoats": [
+    {
+      "year": 2018,
+      "migrants": 299,
+      "boats": 43,
+      "crossingDays": 29
+    },
+    {
+      "year": 2019,
+      "migrants": 1843,
+      "boats": 164,
+      "crossingDays": 81
+    },
+    {
+      "year": 2020,
+      "migrants": 8462,
+      "boats": 641,
+      "crossingDays": 130
+    },
+    {
+      "year": 2021,
+      "migrants": 28526,
+      "boats": 1034,
+      "crossingDays": 154
+    },
+    {
+      "year": 2022,
+      "migrants": 45755,
+      "boats": 1110,
+      "crossingDays": 162
+    },
+    {
+      "year": 2023,
+      "migrants": 29437,
+      "boats": 602,
+      "crossingDays": 140
+    },
+    {
+      "year": 2024,
+      "migrants": 36816,
+      "boats": 695,
+      "crossingDays": 151
+    },
+    {
+      "year": 2025,
+      "migrants": 41472,
+      "boats": 672,
+      "crossingDays": 139
+    },
+    {
+      "year": 2026,
+      "migrants": 2209,
+      "boats": 35,
+      "crossingDays": 10
+    }
+  ],
+  "returns": [
+    {
+      "year": 2004,
+      "enforced": 21425,
+      "voluntary": 3566,
+      "portRefusals": 36167
+    },
+    {
+      "year": 2005,
+      "enforced": 20808,
+      "voluntary": 7601,
+      "portRefusals": 29807
+    },
+    {
+      "year": 2006,
+      "enforced": 19372,
+      "voluntary": 12599,
+      "portRefusals": 31896
+    },
+    {
+      "year": 2007,
+      "enforced": 13874,
+      "voluntary": 20453,
+      "portRefusals": 31581
+    },
+    {
+      "year": 2008,
+      "enforced": 13433,
+      "voluntary": 24356,
+      "portRefusals": 32665
+    },
+    {
+      "year": 2009,
+      "enforced": 12507,
+      "voluntary": 29765,
+      "portRefusals": 29336
+    },
+    {
+      "year": 2010,
+      "enforced": 13928,
+      "voluntary": 31762,
+      "portRefusals": 18446
+    },
+    {
+      "year": 2011,
+      "enforced": 14566,
+      "voluntary": 30088,
+      "portRefusals": 15969
+    },
+    {
+      "year": 2012,
+      "enforced": 15134,
+      "voluntary": 31002,
+      "portRefusals": 14045
+    },
+    {
+      "year": 2013,
+      "enforced": 14850,
+      "voluntary": 31694,
+      "portRefusals": 14781
+    },
+    {
+      "year": 2014,
+      "enforced": 13541,
+      "voluntary": 27815,
+      "portRefusals": 16559
+    },
+    {
+      "year": 2015,
+      "enforced": 12921,
+      "voluntary": 30210,
+      "portRefusals": 18082
+    },
+    {
+      "year": 2016,
+      "enforced": 11903,
+      "voluntary": 28474,
+      "portRefusals": 17916
+    },
+    {
+      "year": 2017,
+      "enforced": 11741,
+      "voluntary": 20979,
+      "portRefusals": 18520
+    },
+    {
+      "year": 2018,
+      "enforced": 9236,
+      "voluntary": 15702,
+      "portRefusals": 19655
+    },
+    {
+      "year": 2019,
+      "enforced": 7198,
+      "voluntary": 12574,
+      "portRefusals": 18464
+    },
+    {
+      "year": 2020,
+      "enforced": 3383,
+      "voluntary": 5009,
+      "portRefusals": 10136
+    },
+    {
+      "year": 2021,
+      "enforced": 2788,
+      "voluntary": 7352,
+      "portRefusals": 18769
+    },
+    {
+      "year": 2022,
+      "enforced": 3806,
+      "voluntary": 11014,
+      "portRefusals": 23531
+    },
+    {
+      "year": 2023,
+      "enforced": 6362,
+      "voluntary": 20475,
+      "portRefusals": 24742
+    },
+    {
+      "year": 2024,
+      "enforced": 8169,
+      "voluntary": 26589,
+      "portRefusals": 23154
+    },
+    {
+      "year": 2025,
+      "enforced": 9914,
+      "voluntary": 28004,
+      "portRefusals": 18279
+    }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Long-term international migration flows, provisional",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/longterminternationalimmigrationemigrationandnetmigrationflowsprovisional",
+        "retrieved": "2026-03-02",
+        "frequency": "Twice yearly (May, November)"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Asylum summary tables",
+        "url": "https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables",
+        "retrieved": "2026-03-02",
+        "frequency": "Quarterly"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Entry clearance visas summary tables",
+        "url": "https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables",
+        "retrieved": "2026-03-02",
+        "frequency": "Quarterly"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Small boat arrivals time series",
+        "url": "https://www.gov.uk/government/publications/migrants-detected-crossing-the-english-channel-in-small-boats",
+        "retrieved": "2026-03-02",
+        "frequency": "Weekly"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Returns summary tables",
+        "url": "https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables",
+        "retrieved": "2026-03-02",
+        "frequency": "Quarterly"
+      }
+    ],
+    "methodology": "Net migration uses ONS LTIM provisional estimates based on administrative data. Asylum, visa, and returns data from Home Office quarterly immigration statistics. Small boat data is provisional operational data updated weekly. ONS revised its methodology in 2023 \u2014 pre-2012 IPS-based estimates are not directly comparable.",
+    "knownIssues": [
+      "ONS LTIM methodology changed in 2023 \u2014 admin-data estimates from YE Jun 2012 onwards replace older IPS estimates",
+      "Some 2025 figures are provisional [p] and may be revised",
+      "Small boat daily data is operational and subject to revision",
+      "Home Office statistics will move from quarterly to annual publication from August 2026"
+    ]
+  }
+}

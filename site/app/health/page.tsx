@@ -156,7 +156,11 @@ export default function HealthPage() {
         <TopicHeader
           topic="Health"
           question="Can You Actually See a Doctor?"
-          finding="Cat 2 ambulance response times are nearly double their target and haven't recovered since the pandemic."
+          finding={
+            latestAmb && latestGp
+              ? `Category 2 ambulance response times average ${latestAmb.cat2MeanMins?.toFixed(0)} minutes — nearly double the 18-minute target. GP waits average ${latestGp.avgWaitDays.toFixed(1)} days nationally, with sharp autumn spikes above 8 days.`
+              : 'Ambulance response times remain nearly double their target. GP waits spike sharply each autumn.'
+          }
           colour="#E63946"
         />
 

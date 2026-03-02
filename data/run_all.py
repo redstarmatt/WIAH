@@ -34,6 +34,7 @@ PIPELINES = [
     ("crime",      "justice",   DATA_DIR / "pipelines" / "crime"),
     ("education",  "education", DATA_DIR / "pipelines" / "education"),
     ("economy",    "economy",   DATA_DIR / "pipelines" / "economy"),
+    ("immigration","immigration",DATA_DIR / "pipelines" / "immigration"),
 ]
 
 
