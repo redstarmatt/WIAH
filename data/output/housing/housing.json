@@ -1,0 +1,6429 @@
+{
+  "topic": "housing",
+  "lastUpdated": "2026-03-02",
+  "national": {
+    "affordability": {
+      "timeSeries": [
+        {
+          "year": 1997,
+          "ratio": 3.54
+        },
+        {
+          "year": 1998,
+          "ratio": 3.67
+        },
+        {
+          "year": 1999,
+          "ratio": 3.96
+        },
+        {
+          "year": 2000,
+          "ratio": 4.19
+        },
+        {
+          "year": 2001,
+          "ratio": 4.5
+        },
+        {
+          "year": 2002,
+          "ratio": 5.12
+        },
+        {
+          "year": 2003,
+          "ratio": 5.93
+        },
+        {
+          "year": 2004,
+          "ratio": 6.6
+        },
+        {
+          "year": 2005,
+          "ratio": 6.79
+        },
+        {
+          "year": 2006,
+          "ratio": 6.95
+        },
+        {
+          "year": 2007,
+          "ratio": 7.15
+        },
+        {
+          "year": 2008,
+          "ratio": 6.97
+        },
+        {
+          "year": 2009,
+          "ratio": 6.4
+        },
+        {
+          "year": 2010,
+          "ratio": 6.85
+        },
+        {
+          "year": 2011,
+          "ratio": 6.8
+        },
+        {
+          "year": 2012,
+          "ratio": 6.77
+        },
+        {
+          "year": 2013,
+          "ratio": 6.76
+        },
+        {
+          "year": 2014,
+          "ratio": 7.09
+        },
+        {
+          "year": 2015,
+          "ratio": 7.52
+        },
+        {
+          "year": 2016,
+          "ratio": 7.72
+        },
+        {
+          "year": 2017,
+          "ratio": 7.91
+        },
+        {
+          "year": 2018,
+          "ratio": 8.04
+        },
+        {
+          "year": 2019,
+          "ratio": 7.88
+        },
+        {
+          "year": 2020,
+          "ratio": 7.86
+        },
+        {
+          "year": 2021,
+          "ratio": 9.06
+        },
+        {
+          "year": 2022,
+          "ratio": 8.56
+        },
+        {
+          "year": 2023,
+          "ratio": 8.4
+        },
+        {
+          "year": 2024,
+          "ratio": 7.71
+        }
+      ],
+      "priceTimeSeries": [
+        {
+          "year": 1997,
+          "medianPrice": 59995
+        },
+        {
+          "year": 1998,
+          "medianPrice": 65000
+        },
+        {
+          "year": 1999,
+          "medianPrice": 71000
+        },
+        {
+          "year": 2000,
+          "medianPrice": 79995
+        },
+        {
+          "year": 2001,
+          "medianPrice": 89950
+        },
+        {
+          "year": 2002,
+          "medianPrice": 106000
+        },
+        {
+          "year": 2003,
+          "medianPrice": 127500
+        },
+        {
+          "year": 2004,
+          "medianPrice": 148000
+        },
+        {
+          "year": 2005,
+          "medianPrice": 158000
+        },
+        {
+          "year": 2006,
+          "medianPrice": 165000
+        },
+        {
+          "year": 2007,
+          "medianPrice": 175000
+        },
+        {
+          "year": 2008,
+          "medianPrice": 177950
+        },
+        {
+          "year": 2009,
+          "medianPrice": 167342
+        },
+        {
+          "year": 2010,
+          "medianPrice": 180000
+        },
+        {
+          "year": 2011,
+          "medianPrice": 180000
+        },
+        {
+          "year": 2012,
+          "medianPrice": 181500
+        },
+        {
+          "year": 2013,
+          "medianPrice": 185000
+        },
+        {
+          "year": 2014,
+          "medianPrice": 195000
+        },
+        {
+          "year": 2015,
+          "medianPrice": 209500
+        },
+        {
+          "year": 2016,
+          "medianPrice": 220000
+        },
+        {
+          "year": 2017,
+          "medianPrice": 230000
+        },
+        {
+          "year": 2018,
+          "medianPrice": 239950
+        },
+        {
+          "year": 2019,
+          "medianPrice": 242000
+        },
+        {
+          "year": 2020,
+          "medianPrice": 250000
+        },
+        {
+          "year": 2021,
+          "medianPrice": 285000
+        },
+        {
+          "year": 2022,
+          "medianPrice": 285000
+        },
+        {
+          "year": 2023,
+          "medianPrice": 295995
+        },
+        {
+          "year": 2024,
+          "medianPrice": 289995
+        }
+      ],
+      "earningsTimeSeries": [
+        {
+          "year": 1997,
+          "medianEarnings": 16958
+        },
+        {
+          "year": 1998,
+          "medianEarnings": 17709
+        },
+        {
+          "year": 1999,
+          "medianEarnings": 17939
+        },
+        {
+          "year": 2000,
+          "medianEarnings": 19107
+        },
+        {
+          "year": 2001,
+          "medianEarnings": 19997
+        },
+        {
+          "year": 2002,
+          "medianEarnings": 20706
+        },
+        {
+          "year": 2003,
+          "medianEarnings": 21500
+        },
+        {
+          "year": 2004,
+          "medianEarnings": 22418
+        },
+        {
+          "year": 2005,
+          "medianEarnings": 23280
+        },
+        {
+          "year": 2006,
+          "medianEarnings": 23729
+        },
+        {
+          "year": 2007,
+          "medianEarnings": 24480
+        },
+        {
+          "year": 2008,
+          "medianEarnings": 25549
+        },
+        {
+          "year": 2009,
+          "medianEarnings": 26133
+        },
+        {
+          "year": 2010,
+          "medianEarnings": 26265
+        },
+        {
+          "year": 2011,
+          "medianEarnings": 26488
+        },
+        {
+          "year": 2012,
+          "medianEarnings": 26822
+        },
+        {
+          "year": 2013,
+          "medianEarnings": 27372
+        },
+        {
+          "year": 2014,
+          "medianEarnings": 27485
+        },
+        {
+          "year": 2015,
+          "medianEarnings": 27841
+        },
+        {
+          "year": 2016,
+          "medianEarnings": 28496
+        },
+        {
+          "year": 2017,
+          "medianEarnings": 29083
+        },
+        {
+          "year": 2018,
+          "medianEarnings": 29856
+        },
+        {
+          "year": 2019,
+          "medianEarnings": 30704
+        },
+        {
+          "year": 2020,
+          "medianEarnings": 31791
+        },
+        {
+          "year": 2021,
+          "medianEarnings": 31440
+        },
+        {
+          "year": 2022,
+          "medianEarnings": 33280
+        },
+        {
+          "year": 2023,
+          "medianEarnings": 35217
+        },
+        {
+          "year": 2024,
+          "medianEarnings": 37630
+        }
+      ]
+    },
+    "housePrices": {
+      "timeSeries": [
+        {
+          "date": "1995-01",
+          "averagePrice": 50231
+        },
+        {
+          "date": "1995-02",
+          "averagePrice": 50130
+        },
+        {
+          "date": "1995-03",
+          "averagePrice": 50229
+        },
+        {
+          "date": "1995-04",
+          "averagePrice": 50597
+        },
+        {
+          "date": "1995-05",
+          "averagePrice": 50679
+        },
+        {
+          "date": "1995-06",
+          "averagePrice": 50733
+        },
+        {
+          "date": "1995-07",
+          "averagePrice": 50889
+        },
+        {
+          "date": "1995-08",
+          "averagePrice": 50606
+        },
+        {
+          "date": "1995-09",
+          "averagePrice": 50331
+        },
+        {
+          "date": "1995-10",
+          "averagePrice": 49892
+        },
+        {
+          "date": "1995-11",
+          "averagePrice": 49839
+        },
+        {
+          "date": "1995-12",
+          "averagePrice": 49965
+        },
+        {
+          "date": "1996-01",
+          "averagePrice": 49410
+        },
+        {
+          "date": "1996-02",
+          "averagePrice": 49601
+        },
+        {
+          "date": "1996-03",
+          "averagePrice": 49739
+        },
+        {
+          "date": "1996-04",
+          "averagePrice": 50352
+        },
+        {
+          "date": "1996-05",
+          "averagePrice": 50815
+        },
+        {
+          "date": "1996-06",
+          "averagePrice": 51071
+        },
+        {
+          "date": "1996-07",
+          "averagePrice": 51648
+        },
+        {
+          "date": "1996-08",
+          "averagePrice": 52028
+        },
+        {
+          "date": "1996-09",
+          "averagePrice": 51952
+        },
+        {
+          "date": "1996-10",
+          "averagePrice": 51862
+        },
+        {
+          "date": "1996-11",
+          "averagePrice": 52396
+        },
+        {
+          "date": "1996-12",
+          "averagePrice": 52640
+        },
+        {
+          "date": "1997-01",
+          "averagePrice": 52672
+        },
+        {
+          "date": "1997-02",
+          "averagePrice": 53060
+        },
+        {
+          "date": "1997-03",
+          "averagePrice": 53612
+        },
+        {
+          "date": "1997-04",
+          "averagePrice": 54361
+        },
+        {
+          "date": "1997-05",
+          "averagePrice": 55230
+        },
+        {
+          "date": "1997-06",
+          "averagePrice": 55836
+        },
+        {
+          "date": "1997-07",
+          "averagePrice": 56732
+        },
+        {
+          "date": "1997-08",
+          "averagePrice": 57356
+        },
+        {
+          "date": "1997-09",
+          "averagePrice": 57584
+        },
+        {
+          "date": "1997-10",
+          "averagePrice": 57637
+        },
+        {
+          "date": "1997-11",
+          "averagePrice": 58063
+        },
+        {
+          "date": "1997-12",
+          "averagePrice": 58125
+        },
+        {
+          "date": "1998-01",
+          "averagePrice": 58444
+        },
+        {
+          "date": "1998-02",
+          "averagePrice": 58214
+        },
+        {
+          "date": "1998-03",
+          "averagePrice": 58775
+        },
+        {
+          "date": "1998-04",
+          "averagePrice": 60109
+        },
+        {
+          "date": "1998-05",
+          "averagePrice": 60687
+        },
+        {
+          "date": "1998-06",
+          "averagePrice": 61026
+        },
+        {
+          "date": "1998-07",
+          "averagePrice": 61817
+        },
+        {
+          "date": "1998-08",
+          "averagePrice": 62071
+        },
+        {
+          "date": "1998-09",
+          "averagePrice": 61941
+        },
+        {
+          "date": "1998-10",
+          "averagePrice": 61805
+        },
+        {
+          "date": "1998-11",
+          "averagePrice": 61713
+        },
+        {
+          "date": "1998-12",
+          "averagePrice": 61912
+        },
+        {
+          "date": "1999-01",
+          "averagePrice": 62092
+        },
+        {
+          "date": "1999-02",
+          "averagePrice": 61861
+        },
+        {
+          "date": "1999-03",
+          "averagePrice": 62669
+        },
+        {
+          "date": "1999-04",
+          "averagePrice": 63869
+        },
+        {
+          "date": "1999-05",
+          "averagePrice": 64580
+        },
+        {
+          "date": "1999-06",
+          "averagePrice": 65550
+        },
+        {
+          "date": "1999-07",
+          "averagePrice": 66668
+        },
+        {
+          "date": "1999-08",
+          "averagePrice": 67694
+        },
+        {
+          "date": "1999-09",
+          "averagePrice": 68748
+        },
+        {
+          "date": "1999-10",
+          "averagePrice": 69179
+        },
+        {
+          "date": "1999-11",
+          "averagePrice": 70087
+        },
+        {
+          "date": "1999-12",
+          "averagePrice": 70878
+        },
+        {
+          "date": "2000-01",
+          "averagePrice": 71017
+        },
+        {
+          "date": "2000-02",
+          "averagePrice": 71405
+        },
+        {
+          "date": "2000-03",
+          "averagePrice": 72713
+        },
+        {
+          "date": "2000-04",
+          "averagePrice": 75186
+        },
+        {
+          "date": "2000-05",
+          "averagePrice": 75859
+        },
+        {
+          "date": "2000-06",
+          "averagePrice": 76729
+        },
+        {
+          "date": "2000-07",
+          "averagePrice": 77950
+        },
+        {
+          "date": "2000-08",
+          "averagePrice": 78839
+        },
+        {
+          "date": "2000-09",
+          "averagePrice": 78920
+        },
+        {
+          "date": "2000-10",
+          "averagePrice": 78609
+        },
+        {
+          "date": "2000-11",
+          "averagePrice": 78879
+        },
+        {
+          "date": "2000-12",
+          "averagePrice": 79487
+        },
+        {
+          "date": "2001-01",
+          "averagePrice": 79663
+        },
+        {
+          "date": "2001-02",
+          "averagePrice": 79539
+        },
+        {
+          "date": "2001-03",
+          "averagePrice": 80480
+        },
+        {
+          "date": "2001-04",
+          "averagePrice": 82554
+        },
+        {
+          "date": "2001-05",
+          "averagePrice": 83763
+        },
+        {
+          "date": "2001-06",
+          "averagePrice": 84953
+        },
+        {
+          "date": "2001-07",
+          "averagePrice": 86323
+        },
+        {
+          "date": "2001-08",
+          "averagePrice": 88117
+        },
+        {
+          "date": "2001-09",
+          "averagePrice": 88448
+        },
+        {
+          "date": "2001-10",
+          "averagePrice": 88901
+        },
+        {
+          "date": "2001-11",
+          "averagePrice": 89771
+        },
+        {
+          "date": "2001-12",
+          "averagePrice": 90629
+        },
+        {
+          "date": "2002-01",
+          "averagePrice": 90840
+        },
+        {
+          "date": "2002-02",
+          "averagePrice": 91276
+        },
+        {
+          "date": "2002-03",
+          "averagePrice": 93433
+        },
+        {
+          "date": "2002-04",
+          "averagePrice": 95692
+        },
+        {
+          "date": "2002-05",
+          "averagePrice": 98623
+        },
+        {
+          "date": "2002-06",
+          "averagePrice": 100844
+        },
+        {
+          "date": "2002-07",
+          "averagePrice": 103856
+        },
+        {
+          "date": "2002-08",
+          "averagePrice": 106529
+        },
+        {
+          "date": "2002-09",
+          "averagePrice": 107551
+        },
+        {
+          "date": "2002-10",
+          "averagePrice": 109405
+        },
+        {
+          "date": "2002-11",
+          "averagePrice": 112062
+        },
+        {
+          "date": "2002-12",
+          "averagePrice": 113279
+        },
+        {
+          "date": "2003-01",
+          "averagePrice": 114816
+        },
+        {
+          "date": "2003-02",
+          "averagePrice": 114952
+        },
+        {
+          "date": "2003-03",
+          "averagePrice": 116372
+        },
+        {
+          "date": "2003-04",
+          "averagePrice": 119186
+        },
+        {
+          "date": "2003-05",
+          "averagePrice": 121131
+        },
+        {
+          "date": "2003-06",
+          "averagePrice": 122126
+        },
+        {
+          "date": "2003-07",
+          "averagePrice": 124926
+        },
+        {
+          "date": "2003-08",
+          "averagePrice": 126416
+        },
+        {
+          "date": "2003-09",
+          "averagePrice": 126371
+        },
+        {
+          "date": "2003-10",
+          "averagePrice": 128294
+        },
+        {
+          "date": "2003-11",
+          "averagePrice": 129514
+        },
+        {
+          "date": "2003-12",
+          "averagePrice": 131221
+        },
+        {
+          "date": "2004-01",
+          "averagePrice": 131914
+        },
+        {
+          "date": "2004-02",
+          "averagePrice": 132447
+        },
+        {
+          "date": "2004-03",
+          "averagePrice": 134606
+        },
+        {
+          "date": "2004-04",
+          "averagePrice": 139024
+        },
+        {
+          "date": "2004-05",
+          "averagePrice": 141728
+        },
+        {
+          "date": "2004-06",
+          "averagePrice": 144951
+        },
+        {
+          "date": "2004-07",
+          "averagePrice": 147974
+        },
+        {
+          "date": "2004-08",
+          "averagePrice": 149891
+        },
+        {
+          "date": "2004-09",
+          "averagePrice": 150347
+        },
+        {
+          "date": "2004-10",
+          "averagePrice": 150455
+        },
+        {
+          "date": "2004-11",
+          "averagePrice": 151373
+        },
+        {
+          "date": "2004-12",
+          "averagePrice": 150954
+        },
+        {
+          "date": "2005-01",
+          "averagePrice": 149713
+        },
+        {
+          "date": "2005-02",
+          "averagePrice": 149748
+        },
+        {
+          "date": "2005-03",
+          "averagePrice": 150724
+        },
+        {
+          "date": "2005-04",
+          "averagePrice": 152323
+        },
+        {
+          "date": "2005-05",
+          "averagePrice": 153954
+        },
+        {
+          "date": "2005-06",
+          "averagePrice": 154903
+        },
+        {
+          "date": "2005-07",
+          "averagePrice": 156496
+        },
+        {
+          "date": "2005-08",
+          "averagePrice": 157142
+        },
+        {
+          "date": "2005-09",
+          "averagePrice": 156885
+        },
+        {
+          "date": "2005-10",
+          "averagePrice": 156384
+        },
+        {
+          "date": "2005-11",
+          "averagePrice": 157012
+        },
+        {
+          "date": "2005-12",
+          "averagePrice": 157901
+        },
+        {
+          "date": "2006-01",
+          "averagePrice": 157240
+        },
+        {
+          "date": "2006-02",
+          "averagePrice": 157572
+        },
+        {
+          "date": "2006-03",
+          "averagePrice": 158616
+        },
+        {
+          "date": "2006-04",
+          "averagePrice": 161569
+        },
+        {
+          "date": "2006-05",
+          "averagePrice": 163051
+        },
+        {
+          "date": "2006-06",
+          "averagePrice": 164498
+        },
+        {
+          "date": "2006-07",
+          "averagePrice": 166323
+        },
+        {
+          "date": "2006-08",
+          "averagePrice": 167681
+        },
+        {
+          "date": "2006-09",
+          "averagePrice": 168315
+        },
+        {
+          "date": "2006-10",
+          "averagePrice": 168931
+        },
+        {
+          "date": "2006-11",
+          "averagePrice": 169678
+        },
+        {
+          "date": "2006-12",
+          "averagePrice": 171862
+        },
+        {
+          "date": "2007-01",
+          "averagePrice": 171666
+        },
+        {
+          "date": "2007-02",
+          "averagePrice": 172207
+        },
+        {
+          "date": "2007-03",
+          "averagePrice": 173449
+        },
+        {
+          "date": "2007-04",
+          "averagePrice": 176281
+        },
+        {
+          "date": "2007-05",
+          "averagePrice": 178266
+        },
+        {
+          "date": "2007-06",
+          "averagePrice": 180161
+        },
+        {
+          "date": "2007-07",
+          "averagePrice": 182558
+        },
+        {
+          "date": "2007-08",
+          "averagePrice": 183472
+        },
+        {
+          "date": "2007-09",
+          "averagePrice": 183883
+        },
+        {
+          "date": "2007-10",
+          "averagePrice": 183823
+        },
+        {
+          "date": "2007-11",
+          "averagePrice": 183636
+        },
+        {
+          "date": "2007-12",
+          "averagePrice": 183515
+        },
+        {
+          "date": "2008-01",
+          "averagePrice": 181037
+        },
+        {
+          "date": "2008-02",
+          "averagePrice": 179448
+        },
+        {
+          "date": "2008-03",
+          "averagePrice": 178118
+        },
+        {
+          "date": "2008-04",
+          "averagePrice": 178550
+        },
+        {
+          "date": "2008-05",
+          "averagePrice": 179175
+        },
+        {
+          "date": "2008-06",
+          "averagePrice": 176883
+        },
+        {
+          "date": "2008-07",
+          "averagePrice": 175462
+        },
+        {
+          "date": "2008-08",
+          "averagePrice": 171355
+        },
+        {
+          "date": "2008-09",
+          "averagePrice": 167330
+        },
+        {
+          "date": "2008-10",
+          "averagePrice": 163571
+        },
+        {
+          "date": "2008-11",
+          "averagePrice": 158831
+        },
+        {
+          "date": "2008-12",
+          "averagePrice": 156533
+        },
+        {
+          "date": "2009-01",
+          "averagePrice": 153585
+        },
+        {
+          "date": "2009-02",
+          "averagePrice": 151964
+        },
+        {
+          "date": "2009-03",
+          "averagePrice": 150438
+        },
+        {
+          "date": "2009-04",
+          "averagePrice": 151724
+        },
+        {
+          "date": "2009-05",
+          "averagePrice": 153648
+        },
+        {
+          "date": "2009-06",
+          "averagePrice": 155344
+        },
+        {
+          "date": "2009-07",
+          "averagePrice": 158306
+        },
+        {
+          "date": "2009-08",
+          "averagePrice": 160128
+        },
+        {
+          "date": "2009-09",
+          "averagePrice": 161649
+        },
+        {
+          "date": "2009-10",
+          "averagePrice": 162688
+        },
+        {
+          "date": "2009-11",
+          "averagePrice": 163163
+        },
+        {
+          "date": "2009-12",
+          "averagePrice": 164408
+        },
+        {
+          "date": "2010-01",
+          "averagePrice": 164711
+        },
+        {
+          "date": "2010-02",
+          "averagePrice": 165457
+        },
+        {
+          "date": "2010-03",
+          "averagePrice": 165002
+        },
+        {
+          "date": "2010-04",
+          "averagePrice": 166919
+        },
+        {
+          "date": "2010-05",
+          "averagePrice": 167823
+        },
+        {
+          "date": "2010-06",
+          "averagePrice": 168675
+        },
+        {
+          "date": "2010-07",
+          "averagePrice": 170434
+        },
+        {
+          "date": "2010-08",
+          "averagePrice": 170706
+        },
+        {
+          "date": "2010-09",
+          "averagePrice": 170162
+        },
+        {
+          "date": "2010-10",
+          "averagePrice": 168152
+        },
+        {
+          "date": "2010-11",
+          "averagePrice": 166452
+        },
+        {
+          "date": "2010-12",
+          "averagePrice": 166202
+        },
+        {
+          "date": "2011-01",
+          "averagePrice": 164697
+        },
+        {
+          "date": "2011-02",
+          "averagePrice": 164101
+        },
+        {
+          "date": "2011-03",
+          "averagePrice": 163378
+        },
+        {
+          "date": "2011-04",
+          "averagePrice": 165687
+        },
+        {
+          "date": "2011-05",
+          "averagePrice": 164910
+        },
+        {
+          "date": "2011-06",
+          "averagePrice": 165071
+        },
+        {
+          "date": "2011-07",
+          "averagePrice": 167266
+        },
+        {
+          "date": "2011-08",
+          "averagePrice": 167428
+        },
+        {
+          "date": "2011-09",
+          "averagePrice": 166907
+        },
+        {
+          "date": "2011-10",
+          "averagePrice": 165385
+        },
+        {
+          "date": "2011-11",
+          "averagePrice": 165412
+        },
+        {
+          "date": "2011-12",
+          "averagePrice": 165046
+        },
+        {
+          "date": "2012-01",
+          "averagePrice": 164449
+        },
+        {
+          "date": "2012-02",
+          "averagePrice": 164432
+        },
+        {
+          "date": "2012-03",
+          "averagePrice": 164584
+        },
+        {
+          "date": "2012-04",
+          "averagePrice": 166680
+        },
+        {
+          "date": "2012-05",
+          "averagePrice": 167136
+        },
+        {
+          "date": "2012-06",
+          "averagePrice": 168713
+        },
+        {
+          "date": "2012-07",
+          "averagePrice": 169714
+        },
+        {
+          "date": "2012-08",
+          "averagePrice": 170066
+        },
+        {
+          "date": "2012-09",
+          "averagePrice": 169532
+        },
+        {
+          "date": "2012-10",
+          "averagePrice": 168445
+        },
+        {
+          "date": "2012-11",
+          "averagePrice": 168681
+        },
+        {
+          "date": "2012-12",
+          "averagePrice": 168440
+        },
+        {
+          "date": "2013-01",
+          "averagePrice": 166938
+        },
+        {
+          "date": "2013-02",
+          "averagePrice": 167304
+        },
+        {
+          "date": "2013-03",
+          "averagePrice": 168234
+        },
+        {
+          "date": "2013-04",
+          "averagePrice": 169850
+        },
+        {
+          "date": "2013-05",
+          "averagePrice": 170531
+        },
+        {
+          "date": "2013-06",
+          "averagePrice": 171916
+        },
+        {
+          "date": "2013-07",
+          "averagePrice": 173979
+        },
+        {
+          "date": "2013-08",
+          "averagePrice": 175271
+        },
+        {
+          "date": "2013-09",
+          "averagePrice": 175686
+        },
+        {
+          "date": "2013-10",
+          "averagePrice": 175003
+        },
+        {
+          "date": "2013-11",
+          "averagePrice": 175855
+        },
+        {
+          "date": "2013-12",
+          "averagePrice": 178011
+        },
+        {
+          "date": "2014-01",
+          "averagePrice": 177748
+        },
+        {
+          "date": "2014-02",
+          "averagePrice": 178769
+        },
+        {
+          "date": "2014-03",
+          "averagePrice": 179421
+        },
+        {
+          "date": "2014-04",
+          "averagePrice": 183399
+        },
+        {
+          "date": "2014-05",
+          "averagePrice": 185212
+        },
+        {
+          "date": "2014-06",
+          "averagePrice": 186892
+        },
+        {
+          "date": "2014-07",
+          "averagePrice": 189606
+        },
+        {
+          "date": "2014-08",
+          "averagePrice": 192042
+        },
+        {
+          "date": "2014-09",
+          "averagePrice": 192263
+        },
+        {
+          "date": "2014-10",
+          "averagePrice": 191952
+        },
+        {
+          "date": "2014-11",
+          "averagePrice": 191380
+        },
+        {
+          "date": "2014-12",
+          "averagePrice": 191986
+        },
+        {
+          "date": "2015-01",
+          "averagePrice": 191523
+        },
+        {
+          "date": "2015-02",
+          "averagePrice": 192060
+        },
+        {
+          "date": "2015-03",
+          "averagePrice": 191999
+        },
+        {
+          "date": "2015-04",
+          "averagePrice": 194432
+        },
+        {
+          "date": "2015-05",
+          "averagePrice": 196630
+        },
+        {
+          "date": "2015-06",
+          "averagePrice": 198149
+        },
+        {
+          "date": "2015-07",
+          "averagePrice": 201590
+        },
+        {
+          "date": "2015-08",
+          "averagePrice": 203703
+        },
+        {
+          "date": "2015-09",
+          "averagePrice": 204263
+        },
+        {
+          "date": "2015-10",
+          "averagePrice": 204572
+        },
+        {
+          "date": "2015-11",
+          "averagePrice": 206293
+        },
+        {
+          "date": "2015-12",
+          "averagePrice": 207315
+        },
+        {
+          "date": "2016-01",
+          "averagePrice": 208050
+        },
+        {
+          "date": "2016-02",
+          "averagePrice": 208301
+        },
+        {
+          "date": "2016-03",
+          "averagePrice": 210224
+        },
+        {
+          "date": "2016-04",
+          "averagePrice": 211282
+        },
+        {
+          "date": "2016-05",
+          "averagePrice": 213723
+        },
+        {
+          "date": "2016-06",
+          "averagePrice": 215668
+        },
+        {
+          "date": "2016-07",
+          "averagePrice": 217970
+        },
+        {
+          "date": "2016-08",
+          "averagePrice": 218261
+        },
+        {
+          "date": "2016-09",
+          "averagePrice": 217952
+        },
+        {
+          "date": "2016-10",
+          "averagePrice": 217098
+        },
+        {
+          "date": "2016-11",
+          "averagePrice": 218146
+        },
+        {
+          "date": "2016-12",
+          "averagePrice": 218965
+        },
+        {
+          "date": "2017-01",
+          "averagePrice": 218655
+        },
+        {
+          "date": "2017-02",
+          "averagePrice": 219696
+        },
+        {
+          "date": "2017-03",
+          "averagePrice": 218812
+        },
+        {
+          "date": "2017-04",
+          "averagePrice": 221891
+        },
+        {
+          "date": "2017-05",
+          "averagePrice": 223502
+        },
+        {
+          "date": "2017-06",
+          "averagePrice": 225265
+        },
+        {
+          "date": "2017-07",
+          "averagePrice": 227919
+        },
+        {
+          "date": "2017-08",
+          "averagePrice": 229074
+        },
+        {
+          "date": "2017-09",
+          "averagePrice": 228519
+        },
+        {
+          "date": "2017-10",
+          "averagePrice": 228484
+        },
+        {
+          "date": "2017-11",
+          "averagePrice": 227618
+        },
+        {
+          "date": "2017-12",
+          "averagePrice": 228837
+        },
+        {
+          "date": "2018-01",
+          "averagePrice": 227594
+        },
+        {
+          "date": "2018-02",
+          "averagePrice": 228471
+        },
+        {
+          "date": "2018-03",
+          "averagePrice": 226996
+        },
+        {
+          "date": "2018-04",
+          "averagePrice": 228855
+        },
+        {
+          "date": "2018-05",
+          "averagePrice": 229845
+        },
+        {
+          "date": "2018-06",
+          "averagePrice": 231277
+        },
+        {
+          "date": "2018-07",
+          "averagePrice": 234127
+        },
+        {
+          "date": "2018-08",
+          "averagePrice": 234731
+        },
+        {
+          "date": "2018-09",
+          "averagePrice": 234380
+        },
+        {
+          "date": "2018-10",
+          "averagePrice": 233916
+        },
+        {
+          "date": "2018-11",
+          "averagePrice": 233144
+        },
+        {
+          "date": "2018-12",
+          "averagePrice": 232616
+        },
+        {
+          "date": "2019-01",
+          "averagePrice": 230974
+        },
+        {
+          "date": "2019-02",
+          "averagePrice": 230772
+        },
+        {
+          "date": "2019-03",
+          "averagePrice": 229408
+        },
+        {
+          "date": "2019-04",
+          "averagePrice": 230994
+        },
+        {
+          "date": "2019-05",
+          "averagePrice": 231245
+        },
+        {
+          "date": "2019-06",
+          "averagePrice": 232112
+        },
+        {
+          "date": "2019-07",
+          "averagePrice": 234587
+        },
+        {
+          "date": "2019-08",
+          "averagePrice": 235298
+        },
+        {
+          "date": "2019-09",
+          "averagePrice": 235691
+        },
+        {
+          "date": "2019-10",
+          "averagePrice": 234940
+        },
+        {
+          "date": "2019-11",
+          "averagePrice": 234020
+        },
+        {
+          "date": "2019-12",
+          "averagePrice": 234237
+        },
+        {
+          "date": "2020-01",
+          "averagePrice": 234049
+        },
+        {
+          "date": "2020-02",
+          "averagePrice": 232955
+        },
+        {
+          "date": "2020-03",
+          "averagePrice": 235204
+        },
+        {
+          "date": "2020-04",
+          "averagePrice": 232657
+        },
+        {
+          "date": "2020-05",
+          "averagePrice": 233673
+        },
+        {
+          "date": "2020-06",
+          "averagePrice": 236731
+        },
+        {
+          "date": "2020-07",
+          "averagePrice": 239080
+        },
+        {
+          "date": "2020-08",
+          "averagePrice": 241511
+        },
+        {
+          "date": "2020-09",
+          "averagePrice": 243733
+        },
+        {
+          "date": "2020-10",
+          "averagePrice": 245090
+        },
+        {
+          "date": "2020-11",
+          "averagePrice": 247749
+        },
+        {
+          "date": "2020-12",
+          "averagePrice": 250168
+        },
+        {
+          "date": "2021-01",
+          "averagePrice": 249890
+        },
+        {
+          "date": "2021-02",
+          "averagePrice": 251309
+        },
+        {
+          "date": "2021-03",
+          "averagePrice": 254407
+        },
+        {
+          "date": "2021-04",
+          "averagePrice": 250703
+        },
+        {
+          "date": "2021-05",
+          "averagePrice": 251203
+        },
+        {
+          "date": "2021-06",
+          "averagePrice": 266129
+        },
+        {
+          "date": "2021-07",
+          "averagePrice": 250545
+        },
+        {
+          "date": "2021-08",
+          "averagePrice": 259193
+        },
+        {
+          "date": "2021-09",
+          "averagePrice": 268041
+        },
+        {
+          "date": "2021-10",
+          "averagePrice": 259748
+        },
+        {
+          "date": "2021-11",
+          "averagePrice": 265662
+        },
+        {
+          "date": "2021-12",
+          "averagePrice": 267793
+        },
+        {
+          "date": "2022-01",
+          "averagePrice": 270231
+        },
+        {
+          "date": "2022-02",
+          "averagePrice": 271265
+        },
+        {
+          "date": "2022-03",
+          "averagePrice": 272225
+        },
+        {
+          "date": "2022-04",
+          "averagePrice": 274812
+        },
+        {
+          "date": "2022-05",
+          "averagePrice": 278084
+        },
+        {
+          "date": "2022-06",
+          "averagePrice": 281116
+        },
+        {
+          "date": "2022-07",
+          "averagePrice": 286526
+        },
+        {
+          "date": "2022-08",
+          "averagePrice": 289294
+        },
+        {
+          "date": "2022-09",
+          "averagePrice": 290185
+        },
+        {
+          "date": "2022-10",
+          "averagePrice": 289993
+        },
+        {
+          "date": "2022-11",
+          "averagePrice": 290003
+        },
+        {
+          "date": "2022-12",
+          "averagePrice": 288198
+        },
+        {
+          "date": "2023-01",
+          "averagePrice": 285817
+        },
+        {
+          "date": "2023-02",
+          "averagePrice": 283907
+        },
+        {
+          "date": "2023-03",
+          "averagePrice": 279592
+        },
+        {
+          "date": "2023-04",
+          "averagePrice": 280054
+        },
+        {
+          "date": "2023-05",
+          "averagePrice": 279846
+        },
+        {
+          "date": "2023-06",
+          "averagePrice": 281585
+        },
+        {
+          "date": "2023-07",
+          "averagePrice": 284246
+        },
+        {
+          "date": "2023-08",
+          "averagePrice": 285690
+        },
+        {
+          "date": "2023-09",
+          "averagePrice": 284428
+        },
+        {
+          "date": "2023-10",
+          "averagePrice": 283147
+        },
+        {
+          "date": "2023-11",
+          "averagePrice": 281026
+        },
+        {
+          "date": "2023-12",
+          "averagePrice": 278664
+        },
+        {
+          "date": "2024-01",
+          "averagePrice": 278060
+        },
+        {
+          "date": "2024-02",
+          "averagePrice": 276935
+        },
+        {
+          "date": "2024-03",
+          "averagePrice": 276971
+        },
+        {
+          "date": "2024-04",
+          "averagePrice": 277945
+        },
+        {
+          "date": "2024-05",
+          "averagePrice": 280824
+        },
+        {
+          "date": "2024-06",
+          "averagePrice": 281611
+        },
+        {
+          "date": "2024-07",
+          "averagePrice": 284105
+        },
+        {
+          "date": "2024-08",
+          "averagePrice": 287343
+        },
+        {
+          "date": "2024-09",
+          "averagePrice": 287576
+        },
+        {
+          "date": "2024-10",
+          "averagePrice": 287595
+        },
+        {
+          "date": "2024-11",
+          "averagePrice": 286814
+        },
+        {
+          "date": "2024-12",
+          "averagePrice": 287035
+        },
+        {
+          "date": "2025-01",
+          "averagePrice": 287264
+        },
+        {
+          "date": "2025-02",
+          "averagePrice": 287869
+        },
+        {
+          "date": "2025-03",
+          "averagePrice": 292333
+        },
+        {
+          "date": "2025-04",
+          "averagePrice": 281781
+        },
+        {
+          "date": "2025-05",
+          "averagePrice": 286456
+        },
+        {
+          "date": "2025-06",
+          "averagePrice": 289768
+        },
+        {
+          "date": "2025-07",
+          "averagePrice": 292285
+        },
+        {
+          "date": "2025-08",
+          "averagePrice": 294006
+        },
+        {
+          "date": "2025-09",
+          "averagePrice": 292557
+        },
+        {
+          "date": "2025-10",
+          "averagePrice": 292086
+        },
+        {
+          "date": "2025-11",
+          "averagePrice": 293913
+        },
+        {
+          "date": "2025-12",
+          "averagePrice": 291865
+        }
+      ],
+      "ftbTimeSeries": [
+        {
+          "date": "2012-01",
+          "ftbPrice": 137147,
+          "fooPrice": 200587
+        },
+        {
+          "date": "2012-02",
+          "ftbPrice": 137142,
+          "fooPrice": 200575
+        },
+        {
+          "date": "2012-03",
+          "ftbPrice": 138223,
+          "fooPrice": 199863
+        },
+        {
+          "date": "2012-04",
+          "ftbPrice": 139118,
+          "fooPrice": 203207
+        },
+        {
+          "date": "2012-05",
+          "ftbPrice": 139816,
+          "fooPrice": 203468
+        },
+        {
+          "date": "2012-06",
+          "ftbPrice": 141285,
+          "fooPrice": 205250
+        },
+        {
+          "date": "2012-07",
+          "ftbPrice": 141675,
+          "fooPrice": 206882
+        },
+        {
+          "date": "2012-08",
+          "ftbPrice": 142091,
+          "fooPrice": 207198
+        },
+        {
+          "date": "2012-09",
+          "ftbPrice": 141730,
+          "fooPrice": 206469
+        },
+        {
+          "date": "2012-10",
+          "ftbPrice": 140760,
+          "fooPrice": 205202
+        },
+        {
+          "date": "2012-11",
+          "ftbPrice": 141041,
+          "fooPrice": 205411
+        },
+        {
+          "date": "2012-12",
+          "ftbPrice": 140897,
+          "fooPrice": 205064
+        },
+        {
+          "date": "2013-01",
+          "ftbPrice": 139284,
+          "fooPrice": 203567
+        },
+        {
+          "date": "2013-02",
+          "ftbPrice": 139938,
+          "fooPrice": 203677
+        },
+        {
+          "date": "2013-03",
+          "ftbPrice": 140568,
+          "fooPrice": 204953
+        },
+        {
+          "date": "2013-04",
+          "ftbPrice": 142001,
+          "fooPrice": 206842
+        },
+        {
+          "date": "2013-05",
+          "ftbPrice": 142714,
+          "fooPrice": 207532
+        },
+        {
+          "date": "2013-06",
+          "ftbPrice": 143958,
+          "fooPrice": 209136
+        },
+        {
+          "date": "2013-07",
+          "ftbPrice": 145429,
+          "fooPrice": 211893
+        },
+        {
+          "date": "2013-08",
+          "ftbPrice": 146522,
+          "fooPrice": 213453
+        },
+        {
+          "date": "2013-09",
+          "ftbPrice": 146986,
+          "fooPrice": 213847
+        },
+        {
+          "date": "2013-10",
+          "ftbPrice": 146117,
+          "fooPrice": 213301
+        },
+        {
+          "date": "2013-11",
+          "ftbPrice": 147223,
+          "fooPrice": 213961
+        },
+        {
+          "date": "2013-12",
+          "ftbPrice": 149535,
+          "fooPrice": 216101
+        },
+        {
+          "date": "2014-01",
+          "ftbPrice": 148883,
+          "fooPrice": 216192
+        },
+        {
+          "date": "2014-02",
+          "ftbPrice": 149982,
+          "fooPrice": 217194
+        },
+        {
+          "date": "2014-03",
+          "ftbPrice": 150743,
+          "fooPrice": 217776
+        },
+        {
+          "date": "2014-04",
+          "ftbPrice": 153999,
+          "fooPrice": 222689
+        },
+        {
+          "date": "2014-05",
+          "ftbPrice": 155740,
+          "fooPrice": 224676
+        },
+        {
+          "date": "2014-06",
+          "ftbPrice": 157300,
+          "fooPrice": 226571
+        },
+        {
+          "date": "2014-07",
+          "ftbPrice": 159286,
+          "fooPrice": 230153
+        },
+        {
+          "date": "2014-08",
+          "ftbPrice": 161260,
+          "fooPrice": 233181
+        },
+        {
+          "date": "2014-09",
+          "ftbPrice": 161595,
+          "fooPrice": 233302
+        },
+        {
+          "date": "2014-10",
+          "ftbPrice": 161199,
+          "fooPrice": 233057
+        },
+        {
+          "date": "2014-11",
+          "ftbPrice": 160725,
+          "fooPrice": 232356
+        },
+        {
+          "date": "2014-12",
+          "ftbPrice": 161469,
+          "fooPrice": 232861
+        },
+        {
+          "date": "2015-01",
+          "ftbPrice": 160736,
+          "fooPrice": 232636
+        },
+        {
+          "date": "2015-02",
+          "ftbPrice": 161194,
+          "fooPrice": 233281
+        },
+        {
+          "date": "2015-03",
+          "ftbPrice": 161062,
+          "fooPrice": 233292
+        },
+        {
+          "date": "2015-04",
+          "ftbPrice": 163279,
+          "fooPrice": 236063
+        },
+        {
+          "date": "2015-05",
+          "ftbPrice": 165309,
+          "fooPrice": 238542
+        },
+        {
+          "date": "2015-06",
+          "ftbPrice": 166598,
+          "fooPrice": 240373
+        },
+        {
+          "date": "2015-07",
+          "ftbPrice": 169348,
+          "fooPrice": 244695
+        },
+        {
+          "date": "2015-08",
+          "ftbPrice": 171030,
+          "fooPrice": 247356
+        },
+        {
+          "date": "2015-09",
+          "ftbPrice": 171297,
+          "fooPrice": 248249
+        },
+        {
+          "date": "2015-10",
+          "ftbPrice": 171740,
+          "fooPrice": 248432
+        },
+        {
+          "date": "2015-11",
+          "ftbPrice": 173066,
+          "fooPrice": 250646
+        },
+        {
+          "date": "2015-12",
+          "ftbPrice": 174161,
+          "fooPrice": 251641
+        },
+        {
+          "date": "2016-01",
+          "ftbPrice": 174600,
+          "fooPrice": 252719
+        },
+        {
+          "date": "2016-02",
+          "ftbPrice": 175008,
+          "fooPrice": 252818
+        },
+        {
+          "date": "2016-03",
+          "ftbPrice": 176362,
+          "fooPrice": 255424
+        },
+        {
+          "date": "2016-04",
+          "ftbPrice": 178042,
+          "fooPrice": 255886
+        },
+        {
+          "date": "2016-05",
+          "ftbPrice": 180475,
+          "fooPrice": 258455
+        },
+        {
+          "date": "2016-06",
+          "ftbPrice": 181697,
+          "fooPrice": 261242
+        },
+        {
+          "date": "2016-07",
+          "ftbPrice": 183529,
+          "fooPrice": 264141
+        },
+        {
+          "date": "2016-08",
+          "ftbPrice": 183806,
+          "fooPrice": 264460
+        },
+        {
+          "date": "2016-09",
+          "ftbPrice": 183228,
+          "fooPrice": 264414
+        },
+        {
+          "date": "2016-10",
+          "ftbPrice": 182403,
+          "fooPrice": 263491
+        },
+        {
+          "date": "2016-11",
+          "ftbPrice": 183158,
+          "fooPrice": 264892
+        },
+        {
+          "date": "2016-12",
+          "ftbPrice": 184244,
+          "fooPrice": 265474
+        },
+        {
+          "date": "2017-01",
+          "ftbPrice": 183514,
+          "fooPrice": 265585
+        },
+        {
+          "date": "2017-02",
+          "ftbPrice": 185018,
+          "fooPrice": 266070
+        },
+        {
+          "date": "2017-03",
+          "ftbPrice": 183931,
+          "fooPrice": 265423
+        },
+        {
+          "date": "2017-04",
+          "ftbPrice": 186542,
+          "fooPrice": 269130
+        },
+        {
+          "date": "2017-05",
+          "ftbPrice": 188493,
+          "fooPrice": 270349
+        },
+        {
+          "date": "2017-06",
+          "ftbPrice": 189712,
+          "fooPrice": 272811
+        },
+        {
+          "date": "2017-07",
+          "ftbPrice": 191871,
+          "fooPrice": 276119
+        },
+        {
+          "date": "2017-08",
+          "ftbPrice": 192596,
+          "fooPrice": 277823
+        },
+        {
+          "date": "2017-09",
+          "ftbPrice": 191979,
+          "fooPrice": 277337
+        },
+        {
+          "date": "2017-10",
+          "ftbPrice": 191798,
+          "fooPrice": 277480
+        },
+        {
+          "date": "2017-11",
+          "ftbPrice": 191360,
+          "fooPrice": 276071
+        },
+        {
+          "date": "2017-12",
+          "ftbPrice": 192491,
+          "fooPrice": 277419
+        },
+        {
+          "date": "2018-01",
+          "ftbPrice": 191059,
+          "fooPrice": 276391
+        },
+        {
+          "date": "2018-02",
+          "ftbPrice": 191973,
+          "fooPrice": 277220
+        },
+        {
+          "date": "2018-03",
+          "ftbPrice": 190645,
+          "fooPrice": 275548
+        },
+        {
+          "date": "2018-04",
+          "ftbPrice": 192223,
+          "fooPrice": 277781
+        },
+        {
+          "date": "2018-05",
+          "ftbPrice": 192834,
+          "fooPrice": 279277
+        },
+        {
+          "date": "2018-06",
+          "ftbPrice": 194140,
+          "fooPrice": 280878
+        },
+        {
+          "date": "2018-07",
+          "ftbPrice": 196116,
+          "fooPrice": 284891
+        },
+        {
+          "date": "2018-08",
+          "ftbPrice": 196873,
+          "fooPrice": 285291
+        },
+        {
+          "date": "2018-09",
+          "ftbPrice": 196256,
+          "fooPrice": 285294
+        },
+        {
+          "date": "2018-10",
+          "ftbPrice": 196168,
+          "fooPrice": 284330
+        },
+        {
+          "date": "2018-11",
+          "ftbPrice": 195165,
+          "fooPrice": 283864
+        },
+        {
+          "date": "2018-12",
+          "ftbPrice": 195277,
+          "fooPrice": 282486
+        },
+        {
+          "date": "2019-01",
+          "ftbPrice": 193152,
+          "fooPrice": 281482
+        },
+        {
+          "date": "2019-02",
+          "ftbPrice": 193502,
+          "fooPrice": 280487
+        },
+        {
+          "date": "2019-03",
+          "ftbPrice": 192369,
+          "fooPrice": 278813
+        },
+        {
+          "date": "2019-04",
+          "ftbPrice": 193853,
+          "fooPrice": 280519
+        },
+        {
+          "date": "2019-05",
+          "ftbPrice": 193897,
+          "fooPrice": 281064
+        },
+        {
+          "date": "2019-06",
+          "ftbPrice": 194598,
+          "fooPrice": 282155
+        },
+        {
+          "date": "2019-07",
+          "ftbPrice": 197002,
+          "fooPrice": 284691
+        },
+        {
+          "date": "2019-08",
+          "ftbPrice": 196919,
+          "fooPrice": 286535
+        },
+        {
+          "date": "2019-09",
+          "ftbPrice": 197701,
+          "fooPrice": 286358
+        },
+        {
+          "date": "2019-10",
+          "ftbPrice": 196872,
+          "fooPrice": 285733
+        },
+        {
+          "date": "2019-11",
+          "ftbPrice": 195732,
+          "fooPrice": 285148
+        },
+        {
+          "date": "2019-12",
+          "ftbPrice": 196602,
+          "fooPrice": 284417
+        },
+        {
+          "date": "2020-01",
+          "ftbPrice": 196106,
+          "fooPrice": 284677
+        },
+        {
+          "date": "2020-02",
+          "ftbPrice": 195086,
+          "fooPrice": 283494
+        },
+        {
+          "date": "2020-03",
+          "ftbPrice": 197089,
+          "fooPrice": 286060
+        },
+        {
+          "date": "2020-04",
+          "ftbPrice": 194652,
+          "fooPrice": 283397
+        },
+        {
+          "date": "2020-05",
+          "ftbPrice": 195905,
+          "fooPrice": 284057
+        },
+        {
+          "date": "2020-06",
+          "ftbPrice": 198514,
+          "fooPrice": 287710
+        },
+        {
+          "date": "2020-07",
+          "ftbPrice": 200232,
+          "fooPrice": 290923
+        },
+        {
+          "date": "2020-08",
+          "ftbPrice": 201613,
+          "fooPrice": 294824
+        },
+        {
+          "date": "2020-09",
+          "ftbPrice": 203404,
+          "fooPrice": 297627
+        },
+        {
+          "date": "2020-10",
+          "ftbPrice": 204506,
+          "fooPrice": 299328
+        },
+        {
+          "date": "2020-11",
+          "ftbPrice": 206755,
+          "fooPrice": 302533
+        },
+        {
+          "date": "2020-12",
+          "ftbPrice": 208836,
+          "fooPrice": 305397
+        },
+        {
+          "date": "2021-01",
+          "ftbPrice": 209653,
+          "fooPrice": 303552
+        },
+        {
+          "date": "2021-02",
+          "ftbPrice": 211361,
+          "fooPrice": 304544
+        },
+        {
+          "date": "2021-03",
+          "ftbPrice": 214047,
+          "fooPrice": 308185
+        },
+        {
+          "date": "2021-04",
+          "ftbPrice": 210907,
+          "fooPrice": 303731
+        },
+        {
+          "date": "2021-05",
+          "ftbPrice": 211097,
+          "fooPrice": 304663
+        },
+        {
+          "date": "2021-06",
+          "ftbPrice": 224091,
+          "fooPrice": 322129
+        },
+        {
+          "date": "2021-07",
+          "ftbPrice": 210835,
+          "fooPrice": 303454
+        },
+        {
+          "date": "2021-08",
+          "ftbPrice": 216981,
+          "fooPrice": 315534
+        },
+        {
+          "date": "2021-09",
+          "ftbPrice": 225238,
+          "fooPrice": 325096
+        },
+        {
+          "date": "2021-10",
+          "ftbPrice": 216530,
+          "fooPrice": 317520
+        },
+        {
+          "date": "2021-11",
+          "ftbPrice": 221749,
+          "fooPrice": 324334
+        },
+        {
+          "date": "2021-12",
+          "ftbPrice": 223896,
+          "fooPrice": 326407
+        },
+        {
+          "date": "2022-01",
+          "ftbPrice": 225717,
+          "fooPrice": 329691
+        },
+        {
+          "date": "2022-02",
+          "ftbPrice": 227242,
+          "fooPrice": 330229
+        },
+        {
+          "date": "2022-03",
+          "ftbPrice": 227620,
+          "fooPrice": 331864
+        },
+        {
+          "date": "2022-04",
+          "ftbPrice": 229973,
+          "fooPrice": 334808
+        },
+        {
+          "date": "2022-05",
+          "ftbPrice": 232459,
+          "fooPrice": 339072
+        },
+        {
+          "date": "2022-06",
+          "ftbPrice": 235546,
+          "fooPrice": 342163
+        },
+        {
+          "date": "2022-07",
+          "ftbPrice": 239579,
+          "fooPrice": 349296
+        },
+        {
+          "date": "2022-08",
+          "ftbPrice": 241532,
+          "fooPrice": 353067
+        },
+        {
+          "date": "2022-09",
+          "ftbPrice": 242394,
+          "fooPrice": 354024
+        },
+        {
+          "date": "2022-10",
+          "ftbPrice": 242283,
+          "fooPrice": 353736
+        },
+        {
+          "date": "2022-11",
+          "ftbPrice": 242273,
+          "fooPrice": 353769
+        },
+        {
+          "date": "2022-12",
+          "ftbPrice": 241371,
+          "fooPrice": 350903
+        },
+        {
+          "date": "2023-01",
+          "ftbPrice": 238384,
+          "fooPrice": 349094
+        },
+        {
+          "date": "2023-02",
+          "ftbPrice": 236961,
+          "fooPrice": 346487
+        },
+        {
+          "date": "2023-03",
+          "ftbPrice": 233219,
+          "fooPrice": 341446
+        },
+        {
+          "date": "2023-04",
+          "ftbPrice": 233455,
+          "fooPrice": 342251
+        },
+        {
+          "date": "2023-05",
+          "ftbPrice": 233775,
+          "fooPrice": 341202
+        },
+        {
+          "date": "2023-06",
+          "ftbPrice": 235086,
+          "fooPrice": 343550
+        },
+        {
+          "date": "2023-07",
+          "ftbPrice": 236963,
+          "fooPrice": 347353
+        },
+        {
+          "date": "2023-08",
+          "ftbPrice": 238321,
+          "fooPrice": 348868
+        },
+        {
+          "date": "2023-09",
+          "ftbPrice": 237704,
+          "fooPrice": 346625
+        },
+        {
+          "date": "2023-10",
+          "ftbPrice": 236724,
+          "fooPrice": 344917
+        },
+        {
+          "date": "2023-11",
+          "ftbPrice": 234574,
+          "fooPrice": 342941
+        },
+        {
+          "date": "2023-12",
+          "ftbPrice": 233389,
+          "fooPrice": 338794
+        },
+        {
+          "date": "2024-01",
+          "ftbPrice": 232141,
+          "fooPrice": 339252
+        },
+        {
+          "date": "2024-02",
+          "ftbPrice": 231918,
+          "fooPrice": 336768
+        },
+        {
+          "date": "2024-03",
+          "ftbPrice": 231803,
+          "fooPrice": 337036
+        },
+        {
+          "date": "2024-04",
+          "ftbPrice": 232720,
+          "fooPrice": 338064
+        },
+        {
+          "date": "2024-05",
+          "ftbPrice": 235467,
+          "fooPrice": 341047
+        },
+        {
+          "date": "2024-06",
+          "ftbPrice": 236424,
+          "fooPrice": 341542
+        },
+        {
+          "date": "2024-07",
+          "ftbPrice": 237926,
+          "fooPrice": 345483
+        },
+        {
+          "date": "2024-08",
+          "ftbPrice": 240694,
+          "fooPrice": 349331
+        },
+        {
+          "date": "2024-09",
+          "ftbPrice": 240512,
+          "fooPrice": 350201
+        },
+        {
+          "date": "2024-10",
+          "ftbPrice": 240858,
+          "fooPrice": 349710
+        },
+        {
+          "date": "2024-11",
+          "ftbPrice": 240430,
+          "fooPrice": 348411
+        },
+        {
+          "date": "2024-12",
+          "ftbPrice": 240357,
+          "fooPrice": 349080
+        },
+        {
+          "date": "2025-01",
+          "ftbPrice": 240421,
+          "fooPrice": 349556
+        },
+        {
+          "date": "2025-02",
+          "ftbPrice": 241372,
+          "fooPrice": 349528
+        },
+        {
+          "date": "2025-03",
+          "ftbPrice": 246418,
+          "fooPrice": 352726
+        },
+        {
+          "date": "2025-04",
+          "ftbPrice": 234671,
+          "fooPrice": 344896
+        },
+        {
+          "date": "2025-05",
+          "ftbPrice": 239471,
+          "fooPrice": 349045
+        },
+        {
+          "date": "2025-06",
+          "ftbPrice": 242394,
+          "fooPrice": 352815
+        },
+        {
+          "date": "2025-07",
+          "ftbPrice": 244475,
+          "fooPrice": 355923
+        },
+        {
+          "date": "2025-08",
+          "ftbPrice": 246015,
+          "fooPrice": 357845
+        },
+        {
+          "date": "2025-09",
+          "ftbPrice": 244664,
+          "fooPrice": 356320
+        },
+        {
+          "date": "2025-10",
+          "ftbPrice": 245055,
+          "fooPrice": 354397
+        },
+        {
+          "date": "2025-11",
+          "ftbPrice": 246479,
+          "fooPrice": 356799
+        },
+        {
+          "date": "2025-12",
+          "ftbPrice": 244799,
+          "fooPrice": 354250
+        }
+      ]
+    },
+    "rents": {
+      "affordability": [
+        {
+          "year": "2015/16",
+          "rentToIncomePct": 39.4
+        },
+        {
+          "year": "2016/17",
+          "rentToIncomePct": 39.2
+        },
+        {
+          "year": "2017/18",
+          "rentToIncomePct": 39.0
+        },
+        {
+          "year": "2018/19",
+          "rentToIncomePct": 37.0
+        },
+        {
+          "year": "2019/20",
+          "rentToIncomePct": 35.4
+        },
+        {
+          "year": "2020/21",
+          "rentToIncomePct": 38.0
+        },
+        {
+          "year": "2021/22",
+          "rentToIncomePct": 35.7
+        },
+        {
+          "year": "2022/23",
+          "rentToIncomePct": 33.1
+        },
+        {
+          "year": "2023/24",
+          "rentToIncomePct": 36.3
+        }
+      ],
+      "levelTimeSeries": [
+        {
+          "date": "2005-01",
+          "avgMonthlyRent": 775
+        },
+        {
+          "date": "2005-02",
+          "avgMonthlyRent": 775
+        },
+        {
+          "date": "2005-03",
+          "avgMonthlyRent": 776
+        },
+        {
+          "date": "2005-04",
+          "avgMonthlyRent": 777
+        },
+        {
+          "date": "2005-05",
+          "avgMonthlyRent": 779
+        },
+        {
+          "date": "2005-06",
+          "avgMonthlyRent": 780
+        },
+        {
+          "date": "2005-07",
+          "avgMonthlyRent": 782
+        },
+        {
+          "date": "2005-08",
+          "avgMonthlyRent": 784
+        },
+        {
+          "date": "2005-09",
+          "avgMonthlyRent": 786
+        },
+        {
+          "date": "2005-10",
+          "avgMonthlyRent": 787
+        },
+        {
+          "date": "2005-11",
+          "avgMonthlyRent": 789
+        },
+        {
+          "date": "2005-12",
+          "avgMonthlyRent": 791
+        },
+        {
+          "date": "2006-01",
+          "avgMonthlyRent": 794
+        },
+        {
+          "date": "2006-02",
+          "avgMonthlyRent": 795
+        },
+        {
+          "date": "2006-03",
+          "avgMonthlyRent": 796
+        },
+        {
+          "date": "2006-04",
+          "avgMonthlyRent": 798
+        },
+        {
+          "date": "2006-05",
+          "avgMonthlyRent": 799
+        },
+        {
+          "date": "2006-06",
+          "avgMonthlyRent": 800
+        },
+        {
+          "date": "2006-07",
+          "avgMonthlyRent": 802
+        },
+        {
+          "date": "2006-08",
+          "avgMonthlyRent": 803
+        },
+        {
+          "date": "2006-09",
+          "avgMonthlyRent": 805
+        },
+        {
+          "date": "2006-10",
+          "avgMonthlyRent": 806
+        },
+        {
+          "date": "2006-11",
+          "avgMonthlyRent": 807
+        },
+        {
+          "date": "2006-12",
+          "avgMonthlyRent": 809
+        },
+        {
+          "date": "2007-01",
+          "avgMonthlyRent": 811
+        },
+        {
+          "date": "2007-02",
+          "avgMonthlyRent": 813
+        },
+        {
+          "date": "2007-03",
+          "avgMonthlyRent": 815
+        },
+        {
+          "date": "2007-04",
+          "avgMonthlyRent": 817
+        },
+        {
+          "date": "2007-05",
+          "avgMonthlyRent": 819
+        },
+        {
+          "date": "2007-06",
+          "avgMonthlyRent": 820
+        },
+        {
+          "date": "2007-07",
+          "avgMonthlyRent": 823
+        },
+        {
+          "date": "2007-08",
+          "avgMonthlyRent": 825
+        },
+        {
+          "date": "2007-09",
+          "avgMonthlyRent": 828
+        },
+        {
+          "date": "2007-10",
+          "avgMonthlyRent": 830
+        },
+        {
+          "date": "2007-11",
+          "avgMonthlyRent": 833
+        },
+        {
+          "date": "2007-12",
+          "avgMonthlyRent": 836
+        },
+        {
+          "date": "2008-01",
+          "avgMonthlyRent": 841
+        },
+        {
+          "date": "2008-02",
+          "avgMonthlyRent": 842
+        },
+        {
+          "date": "2008-03",
+          "avgMonthlyRent": 844
+        },
+        {
+          "date": "2008-04",
+          "avgMonthlyRent": 845
+        },
+        {
+          "date": "2008-05",
+          "avgMonthlyRent": 847
+        },
+        {
+          "date": "2008-06",
+          "avgMonthlyRent": 850
+        },
+        {
+          "date": "2008-07",
+          "avgMonthlyRent": 851
+        },
+        {
+          "date": "2008-08",
+          "avgMonthlyRent": 853
+        },
+        {
+          "date": "2008-09",
+          "avgMonthlyRent": 855
+        },
+        {
+          "date": "2008-10",
+          "avgMonthlyRent": 858
+        },
+        {
+          "date": "2008-11",
+          "avgMonthlyRent": 861
+        },
+        {
+          "date": "2008-12",
+          "avgMonthlyRent": 863
+        },
+        {
+          "date": "2009-01",
+          "avgMonthlyRent": 865
+        },
+        {
+          "date": "2009-02",
+          "avgMonthlyRent": 866
+        },
+        {
+          "date": "2009-03",
+          "avgMonthlyRent": 866
+        },
+        {
+          "date": "2009-04",
+          "avgMonthlyRent": 867
+        },
+        {
+          "date": "2009-05",
+          "avgMonthlyRent": 867
+        },
+        {
+          "date": "2009-06",
+          "avgMonthlyRent": 867
+        },
+        {
+          "date": "2009-07",
+          "avgMonthlyRent": 866
+        },
+        {
+          "date": "2009-08",
+          "avgMonthlyRent": 865
+        },
+        {
+          "date": "2009-09",
+          "avgMonthlyRent": 864
+        },
+        {
+          "date": "2009-10",
+          "avgMonthlyRent": 862
+        },
+        {
+          "date": "2009-11",
+          "avgMonthlyRent": 861
+        },
+        {
+          "date": "2009-12",
+          "avgMonthlyRent": 859
+        },
+        {
+          "date": "2010-01",
+          "avgMonthlyRent": 858
+        },
+        {
+          "date": "2010-02",
+          "avgMonthlyRent": 856
+        },
+        {
+          "date": "2010-03",
+          "avgMonthlyRent": 856
+        },
+        {
+          "date": "2010-04",
+          "avgMonthlyRent": 856
+        },
+        {
+          "date": "2010-05",
+          "avgMonthlyRent": 856
+        },
+        {
+          "date": "2010-06",
+          "avgMonthlyRent": 856
+        },
+        {
+          "date": "2010-07",
+          "avgMonthlyRent": 857
+        },
+        {
+          "date": "2010-08",
+          "avgMonthlyRent": 858
+        },
+        {
+          "date": "2010-09",
+          "avgMonthlyRent": 860
+        },
+        {
+          "date": "2010-10",
+          "avgMonthlyRent": 861
+        },
+        {
+          "date": "2010-11",
+          "avgMonthlyRent": 863
+        },
+        {
+          "date": "2010-12",
+          "avgMonthlyRent": 865
+        },
+        {
+          "date": "2011-01",
+          "avgMonthlyRent": 869
+        },
+        {
+          "date": "2011-02",
+          "avgMonthlyRent": 870
+        },
+        {
+          "date": "2011-03",
+          "avgMonthlyRent": 872
+        },
+        {
+          "date": "2011-04",
+          "avgMonthlyRent": 873
+        },
+        {
+          "date": "2011-05",
+          "avgMonthlyRent": 875
+        },
+        {
+          "date": "2011-06",
+          "avgMonthlyRent": 877
+        },
+        {
+          "date": "2011-07",
+          "avgMonthlyRent": 879
+        },
+        {
+          "date": "2011-08",
+          "avgMonthlyRent": 881
+        },
+        {
+          "date": "2011-09",
+          "avgMonthlyRent": 884
+        },
+        {
+          "date": "2011-10",
+          "avgMonthlyRent": 886
+        },
+        {
+          "date": "2011-11",
+          "avgMonthlyRent": 888
+        },
+        {
+          "date": "2011-12",
+          "avgMonthlyRent": 891
+        },
+        {
+          "date": "2012-01",
+          "avgMonthlyRent": 893
+        },
+        {
+          "date": "2012-02",
+          "avgMonthlyRent": 895
+        },
+        {
+          "date": "2012-03",
+          "avgMonthlyRent": 896
+        },
+        {
+          "date": "2012-04",
+          "avgMonthlyRent": 899
+        },
+        {
+          "date": "2012-05",
+          "avgMonthlyRent": 901
+        },
+        {
+          "date": "2012-06",
+          "avgMonthlyRent": 903
+        },
+        {
+          "date": "2012-07",
+          "avgMonthlyRent": 905
+        },
+        {
+          "date": "2012-08",
+          "avgMonthlyRent": 907
+        },
+        {
+          "date": "2012-09",
+          "avgMonthlyRent": 909
+        },
+        {
+          "date": "2012-10",
+          "avgMonthlyRent": 912
+        },
+        {
+          "date": "2012-11",
+          "avgMonthlyRent": 913
+        },
+        {
+          "date": "2012-12",
+          "avgMonthlyRent": 915
+        },
+        {
+          "date": "2013-01",
+          "avgMonthlyRent": 916
+        },
+        {
+          "date": "2013-02",
+          "avgMonthlyRent": 918
+        },
+        {
+          "date": "2013-03",
+          "avgMonthlyRent": 919
+        },
+        {
+          "date": "2013-04",
+          "avgMonthlyRent": 920
+        },
+        {
+          "date": "2013-05",
+          "avgMonthlyRent": 922
+        },
+        {
+          "date": "2013-06",
+          "avgMonthlyRent": 923
+        },
+        {
+          "date": "2013-07",
+          "avgMonthlyRent": 925
+        },
+        {
+          "date": "2013-08",
+          "avgMonthlyRent": 926
+        },
+        {
+          "date": "2013-09",
+          "avgMonthlyRent": 927
+        },
+        {
+          "date": "2013-10",
+          "avgMonthlyRent": 928
+        },
+        {
+          "date": "2013-11",
+          "avgMonthlyRent": 930
+        },
+        {
+          "date": "2013-12",
+          "avgMonthlyRent": 931
+        },
+        {
+          "date": "2014-01",
+          "avgMonthlyRent": 932
+        },
+        {
+          "date": "2014-02",
+          "avgMonthlyRent": 932
+        },
+        {
+          "date": "2014-03",
+          "avgMonthlyRent": 934
+        },
+        {
+          "date": "2014-04",
+          "avgMonthlyRent": 935
+        },
+        {
+          "date": "2014-05",
+          "avgMonthlyRent": 936
+        },
+        {
+          "date": "2014-06",
+          "avgMonthlyRent": 937
+        },
+        {
+          "date": "2014-07",
+          "avgMonthlyRent": 939
+        },
+        {
+          "date": "2014-08",
+          "avgMonthlyRent": 940
+        },
+        {
+          "date": "2014-09",
+          "avgMonthlyRent": 941
+        },
+        {
+          "date": "2014-10",
+          "avgMonthlyRent": 943
+        },
+        {
+          "date": "2014-11",
+          "avgMonthlyRent": 945
+        },
+        {
+          "date": "2014-12",
+          "avgMonthlyRent": 947
+        },
+        {
+          "date": "2015-01",
+          "avgMonthlyRent": 950
+        },
+        {
+          "date": "2015-02",
+          "avgMonthlyRent": 952
+        },
+        {
+          "date": "2015-03",
+          "avgMonthlyRent": 955
+        },
+        {
+          "date": "2015-04",
+          "avgMonthlyRent": 959
+        },
+        {
+          "date": "2015-05",
+          "avgMonthlyRent": 963
+        },
+        {
+          "date": "2015-06",
+          "avgMonthlyRent": 965
+        },
+        {
+          "date": "2015-07",
+          "avgMonthlyRent": 967
+        },
+        {
+          "date": "2015-08",
+          "avgMonthlyRent": 971
+        },
+        {
+          "date": "2015-09",
+          "avgMonthlyRent": 975
+        },
+        {
+          "date": "2015-10",
+          "avgMonthlyRent": 977
+        },
+        {
+          "date": "2015-11",
+          "avgMonthlyRent": 979
+        },
+        {
+          "date": "2015-12",
+          "avgMonthlyRent": 981
+        },
+        {
+          "date": "2016-01",
+          "avgMonthlyRent": 983
+        },
+        {
+          "date": "2016-02",
+          "avgMonthlyRent": 985
+        },
+        {
+          "date": "2016-03",
+          "avgMonthlyRent": 989
+        },
+        {
+          "date": "2016-04",
+          "avgMonthlyRent": 992
+        },
+        {
+          "date": "2016-05",
+          "avgMonthlyRent": 996
+        },
+        {
+          "date": "2016-06",
+          "avgMonthlyRent": 999
+        },
+        {
+          "date": "2016-07",
+          "avgMonthlyRent": 1003
+        },
+        {
+          "date": "2016-08",
+          "avgMonthlyRent": 1006
+        },
+        {
+          "date": "2016-09",
+          "avgMonthlyRent": 1009
+        },
+        {
+          "date": "2016-10",
+          "avgMonthlyRent": 1011
+        },
+        {
+          "date": "2016-11",
+          "avgMonthlyRent": 1014
+        },
+        {
+          "date": "2016-12",
+          "avgMonthlyRent": 1016
+        },
+        {
+          "date": "2017-01",
+          "avgMonthlyRent": 1018
+        },
+        {
+          "date": "2017-02",
+          "avgMonthlyRent": 1019
+        },
+        {
+          "date": "2017-03",
+          "avgMonthlyRent": 1021
+        },
+        {
+          "date": "2017-04",
+          "avgMonthlyRent": 1023
+        },
+        {
+          "date": "2017-05",
+          "avgMonthlyRent": 1023
+        },
+        {
+          "date": "2017-06",
+          "avgMonthlyRent": 1025
+        },
+        {
+          "date": "2017-07",
+          "avgMonthlyRent": 1028
+        },
+        {
+          "date": "2017-08",
+          "avgMonthlyRent": 1028
+        },
+        {
+          "date": "2017-09",
+          "avgMonthlyRent": 1027
+        },
+        {
+          "date": "2017-10",
+          "avgMonthlyRent": 1029
+        },
+        {
+          "date": "2017-11",
+          "avgMonthlyRent": 1030
+        },
+        {
+          "date": "2017-12",
+          "avgMonthlyRent": 1030
+        },
+        {
+          "date": "2018-01",
+          "avgMonthlyRent": 1029
+        },
+        {
+          "date": "2018-02",
+          "avgMonthlyRent": 1031
+        },
+        {
+          "date": "2018-03",
+          "avgMonthlyRent": 1029
+        },
+        {
+          "date": "2018-04",
+          "avgMonthlyRent": 1029
+        },
+        {
+          "date": "2018-05",
+          "avgMonthlyRent": 1029
+        },
+        {
+          "date": "2018-06",
+          "avgMonthlyRent": 1030
+        },
+        {
+          "date": "2018-07",
+          "avgMonthlyRent": 1032
+        },
+        {
+          "date": "2018-08",
+          "avgMonthlyRent": 1034
+        },
+        {
+          "date": "2018-09",
+          "avgMonthlyRent": 1035
+        },
+        {
+          "date": "2018-10",
+          "avgMonthlyRent": 1038
+        },
+        {
+          "date": "2018-11",
+          "avgMonthlyRent": 1040
+        },
+        {
+          "date": "2018-12",
+          "avgMonthlyRent": 1042
+        },
+        {
+          "date": "2019-01",
+          "avgMonthlyRent": 1043
+        },
+        {
+          "date": "2019-02",
+          "avgMonthlyRent": 1045
+        },
+        {
+          "date": "2019-03",
+          "avgMonthlyRent": 1045
+        },
+        {
+          "date": "2019-04",
+          "avgMonthlyRent": 1046
+        },
+        {
+          "date": "2019-05",
+          "avgMonthlyRent": 1051
+        },
+        {
+          "date": "2019-06",
+          "avgMonthlyRent": 1051
+        },
+        {
+          "date": "2019-07",
+          "avgMonthlyRent": 1052
+        },
+        {
+          "date": "2019-08",
+          "avgMonthlyRent": 1054
+        },
+        {
+          "date": "2019-09",
+          "avgMonthlyRent": 1058
+        },
+        {
+          "date": "2019-10",
+          "avgMonthlyRent": 1060
+        },
+        {
+          "date": "2019-11",
+          "avgMonthlyRent": 1062
+        },
+        {
+          "date": "2019-12",
+          "avgMonthlyRent": 1064
+        },
+        {
+          "date": "2020-01",
+          "avgMonthlyRent": 1065
+        },
+        {
+          "date": "2020-02",
+          "avgMonthlyRent": 1067
+        },
+        {
+          "date": "2020-03",
+          "avgMonthlyRent": 1068
+        },
+        {
+          "date": "2020-04",
+          "avgMonthlyRent": 1067
+        },
+        {
+          "date": "2020-05",
+          "avgMonthlyRent": 1069
+        },
+        {
+          "date": "2020-06",
+          "avgMonthlyRent": 1069
+        },
+        {
+          "date": "2020-07",
+          "avgMonthlyRent": 1071
+        },
+        {
+          "date": "2020-08",
+          "avgMonthlyRent": 1072
+        },
+        {
+          "date": "2020-09",
+          "avgMonthlyRent": 1073
+        },
+        {
+          "date": "2020-10",
+          "avgMonthlyRent": 1075
+        },
+        {
+          "date": "2020-11",
+          "avgMonthlyRent": 1075
+        },
+        {
+          "date": "2020-12",
+          "avgMonthlyRent": 1075
+        },
+        {
+          "date": "2021-01",
+          "avgMonthlyRent": 1076
+        },
+        {
+          "date": "2021-02",
+          "avgMonthlyRent": 1078
+        },
+        {
+          "date": "2021-03",
+          "avgMonthlyRent": 1079
+        },
+        {
+          "date": "2021-04",
+          "avgMonthlyRent": 1078
+        },
+        {
+          "date": "2021-05",
+          "avgMonthlyRent": 1079
+        },
+        {
+          "date": "2021-06",
+          "avgMonthlyRent": 1081
+        },
+        {
+          "date": "2021-07",
+          "avgMonthlyRent": 1082
+        },
+        {
+          "date": "2021-08",
+          "avgMonthlyRent": 1084
+        },
+        {
+          "date": "2021-09",
+          "avgMonthlyRent": 1087
+        },
+        {
+          "date": "2021-10",
+          "avgMonthlyRent": 1091
+        },
+        {
+          "date": "2021-11",
+          "avgMonthlyRent": 1095
+        },
+        {
+          "date": "2021-12",
+          "avgMonthlyRent": 1100
+        },
+        {
+          "date": "2022-01",
+          "avgMonthlyRent": 1104
+        },
+        {
+          "date": "2022-02",
+          "avgMonthlyRent": 1109
+        },
+        {
+          "date": "2022-03",
+          "avgMonthlyRent": 1112
+        },
+        {
+          "date": "2022-04",
+          "avgMonthlyRent": 1116
+        },
+        {
+          "date": "2022-05",
+          "avgMonthlyRent": 1120
+        },
+        {
+          "date": "2022-06",
+          "avgMonthlyRent": 1124
+        },
+        {
+          "date": "2022-07",
+          "avgMonthlyRent": 1130
+        },
+        {
+          "date": "2022-08",
+          "avgMonthlyRent": 1135
+        },
+        {
+          "date": "2022-09",
+          "avgMonthlyRent": 1142
+        },
+        {
+          "date": "2022-10",
+          "avgMonthlyRent": 1146
+        },
+        {
+          "date": "2022-11",
+          "avgMonthlyRent": 1153
+        },
+        {
+          "date": "2022-12",
+          "avgMonthlyRent": 1160
+        },
+        {
+          "date": "2023-01",
+          "avgMonthlyRent": 1166
+        },
+        {
+          "date": "2023-02",
+          "avgMonthlyRent": 1173
+        },
+        {
+          "date": "2023-03",
+          "avgMonthlyRent": 1179
+        },
+        {
+          "date": "2023-04",
+          "avgMonthlyRent": 1188
+        },
+        {
+          "date": "2023-05",
+          "avgMonthlyRent": 1198
+        },
+        {
+          "date": "2023-06",
+          "avgMonthlyRent": 1207
+        },
+        {
+          "date": "2023-07",
+          "avgMonthlyRent": 1216
+        },
+        {
+          "date": "2023-08",
+          "avgMonthlyRent": 1224
+        },
+        {
+          "date": "2023-09",
+          "avgMonthlyRent": 1232
+        },
+        {
+          "date": "2023-10",
+          "avgMonthlyRent": 1240
+        },
+        {
+          "date": "2023-11",
+          "avgMonthlyRent": 1247
+        },
+        {
+          "date": "2023-12",
+          "avgMonthlyRent": 1255
+        },
+        {
+          "date": "2024-01",
+          "avgMonthlyRent": 1264
+        },
+        {
+          "date": "2024-02",
+          "avgMonthlyRent": 1276
+        },
+        {
+          "date": "2024-03",
+          "avgMonthlyRent": 1285
+        },
+        {
+          "date": "2024-04",
+          "avgMonthlyRent": 1293
+        },
+        {
+          "date": "2024-05",
+          "avgMonthlyRent": 1302
+        },
+        {
+          "date": "2024-06",
+          "avgMonthlyRent": 1311
+        },
+        {
+          "date": "2024-07",
+          "avgMonthlyRent": 1319
+        },
+        {
+          "date": "2024-08",
+          "avgMonthlyRent": 1327
+        },
+        {
+          "date": "2024-09",
+          "avgMonthlyRent": 1336
+        },
+        {
+          "date": "2024-10",
+          "avgMonthlyRent": 1348
+        },
+        {
+          "date": "2024-11",
+          "avgMonthlyRent": 1362
+        },
+        {
+          "date": "2024-12",
+          "avgMonthlyRent": 1370
+        },
+        {
+          "date": "2025-01",
+          "avgMonthlyRent": 1375
+        },
+        {
+          "date": "2025-02",
+          "avgMonthlyRent": 1381
+        }
+      ],
+      "londonTimeSeries": [
+        {
+          "date": "2005-01",
+          "avgMonthlyRent": 1193
+        },
+        {
+          "date": "2005-02",
+          "avgMonthlyRent": 1192
+        },
+        {
+          "date": "2005-03",
+          "avgMonthlyRent": 1193
+        },
+        {
+          "date": "2005-04",
+          "avgMonthlyRent": 1194
+        },
+        {
+          "date": "2005-05",
+          "avgMonthlyRent": 1194
+        },
+        {
+          "date": "2005-06",
+          "avgMonthlyRent": 1194
+        },
+        {
+          "date": "2005-07",
+          "avgMonthlyRent": 1196
+        },
+        {
+          "date": "2005-08",
+          "avgMonthlyRent": 1200
+        },
+        {
+          "date": "2005-09",
+          "avgMonthlyRent": 1203
+        },
+        {
+          "date": "2005-10",
+          "avgMonthlyRent": 1204
+        },
+        {
+          "date": "2005-11",
+          "avgMonthlyRent": 1206
+        },
+        {
+          "date": "2005-12",
+          "avgMonthlyRent": 1208
+        },
+        {
+          "date": "2006-01",
+          "avgMonthlyRent": 1214
+        },
+        {
+          "date": "2006-02",
+          "avgMonthlyRent": 1216
+        },
+        {
+          "date": "2006-03",
+          "avgMonthlyRent": 1217
+        },
+        {
+          "date": "2006-04",
+          "avgMonthlyRent": 1220
+        },
+        {
+          "date": "2006-05",
+          "avgMonthlyRent": 1223
+        },
+        {
+          "date": "2006-06",
+          "avgMonthlyRent": 1225
+        },
+        {
+          "date": "2006-07",
+          "avgMonthlyRent": 1229
+        },
+        {
+          "date": "2006-08",
+          "avgMonthlyRent": 1230
+        },
+        {
+          "date": "2006-09",
+          "avgMonthlyRent": 1231
+        },
+        {
+          "date": "2006-10",
+          "avgMonthlyRent": 1232
+        },
+        {
+          "date": "2006-11",
+          "avgMonthlyRent": 1234
+        },
+        {
+          "date": "2006-12",
+          "avgMonthlyRent": 1236
+        },
+        {
+          "date": "2007-01",
+          "avgMonthlyRent": 1239
+        },
+        {
+          "date": "2007-02",
+          "avgMonthlyRent": 1242
+        },
+        {
+          "date": "2007-03",
+          "avgMonthlyRent": 1245
+        },
+        {
+          "date": "2007-04",
+          "avgMonthlyRent": 1251
+        },
+        {
+          "date": "2007-05",
+          "avgMonthlyRent": 1253
+        },
+        {
+          "date": "2007-06",
+          "avgMonthlyRent": 1258
+        },
+        {
+          "date": "2007-07",
+          "avgMonthlyRent": 1263
+        },
+        {
+          "date": "2007-08",
+          "avgMonthlyRent": 1268
+        },
+        {
+          "date": "2007-09",
+          "avgMonthlyRent": 1274
+        },
+        {
+          "date": "2007-10",
+          "avgMonthlyRent": 1278
+        },
+        {
+          "date": "2007-11",
+          "avgMonthlyRent": 1282
+        },
+        {
+          "date": "2007-12",
+          "avgMonthlyRent": 1290
+        },
+        {
+          "date": "2008-01",
+          "avgMonthlyRent": 1299
+        },
+        {
+          "date": "2008-02",
+          "avgMonthlyRent": 1301
+        },
+        {
+          "date": "2008-03",
+          "avgMonthlyRent": 1305
+        },
+        {
+          "date": "2008-04",
+          "avgMonthlyRent": 1308
+        },
+        {
+          "date": "2008-05",
+          "avgMonthlyRent": 1312
+        },
+        {
+          "date": "2008-06",
+          "avgMonthlyRent": 1317
+        },
+        {
+          "date": "2008-07",
+          "avgMonthlyRent": 1320
+        },
+        {
+          "date": "2008-08",
+          "avgMonthlyRent": 1323
+        },
+        {
+          "date": "2008-09",
+          "avgMonthlyRent": 1327
+        },
+        {
+          "date": "2008-10",
+          "avgMonthlyRent": 1334
+        },
+        {
+          "date": "2008-11",
+          "avgMonthlyRent": 1341
+        },
+        {
+          "date": "2008-12",
+          "avgMonthlyRent": 1346
+        },
+        {
+          "date": "2009-01",
+          "avgMonthlyRent": 1351
+        },
+        {
+          "date": "2009-02",
+          "avgMonthlyRent": 1354
+        },
+        {
+          "date": "2009-03",
+          "avgMonthlyRent": 1353
+        },
+        {
+          "date": "2009-04",
+          "avgMonthlyRent": 1355
+        },
+        {
+          "date": "2009-05",
+          "avgMonthlyRent": 1355
+        },
+        {
+          "date": "2009-06",
+          "avgMonthlyRent": 1354
+        },
+        {
+          "date": "2009-07",
+          "avgMonthlyRent": 1351
+        },
+        {
+          "date": "2009-08",
+          "avgMonthlyRent": 1349
+        },
+        {
+          "date": "2009-09",
+          "avgMonthlyRent": 1348
+        },
+        {
+          "date": "2009-10",
+          "avgMonthlyRent": 1344
+        },
+        {
+          "date": "2009-11",
+          "avgMonthlyRent": 1342
+        },
+        {
+          "date": "2009-12",
+          "avgMonthlyRent": 1339
+        },
+        {
+          "date": "2010-01",
+          "avgMonthlyRent": 1337
+        },
+        {
+          "date": "2010-02",
+          "avgMonthlyRent": 1336
+        },
+        {
+          "date": "2010-03",
+          "avgMonthlyRent": 1335
+        },
+        {
+          "date": "2010-04",
+          "avgMonthlyRent": 1334
+        },
+        {
+          "date": "2010-05",
+          "avgMonthlyRent": 1335
+        },
+        {
+          "date": "2010-06",
+          "avgMonthlyRent": 1335
+        },
+        {
+          "date": "2010-07",
+          "avgMonthlyRent": 1337
+        },
+        {
+          "date": "2010-08",
+          "avgMonthlyRent": 1340
+        },
+        {
+          "date": "2010-09",
+          "avgMonthlyRent": 1343
+        },
+        {
+          "date": "2010-10",
+          "avgMonthlyRent": 1347
+        },
+        {
+          "date": "2010-11",
+          "avgMonthlyRent": 1351
+        },
+        {
+          "date": "2010-12",
+          "avgMonthlyRent": 1356
+        },
+        {
+          "date": "2011-01",
+          "avgMonthlyRent": 1364
+        },
+        {
+          "date": "2011-02",
+          "avgMonthlyRent": 1367
+        },
+        {
+          "date": "2011-03",
+          "avgMonthlyRent": 1371
+        },
+        {
+          "date": "2011-04",
+          "avgMonthlyRent": 1376
+        },
+        {
+          "date": "2011-05",
+          "avgMonthlyRent": 1380
+        },
+        {
+          "date": "2011-06",
+          "avgMonthlyRent": 1385
+        },
+        {
+          "date": "2011-07",
+          "avgMonthlyRent": 1390
+        },
+        {
+          "date": "2011-08",
+          "avgMonthlyRent": 1396
+        },
+        {
+          "date": "2011-09",
+          "avgMonthlyRent": 1403
+        },
+        {
+          "date": "2011-10",
+          "avgMonthlyRent": 1408
+        },
+        {
+          "date": "2011-11",
+          "avgMonthlyRent": 1414
+        },
+        {
+          "date": "2011-12",
+          "avgMonthlyRent": 1422
+        },
+        {
+          "date": "2012-01",
+          "avgMonthlyRent": 1430
+        },
+        {
+          "date": "2012-02",
+          "avgMonthlyRent": 1434
+        },
+        {
+          "date": "2012-03",
+          "avgMonthlyRent": 1438
+        },
+        {
+          "date": "2012-04",
+          "avgMonthlyRent": 1447
+        },
+        {
+          "date": "2012-05",
+          "avgMonthlyRent": 1452
+        },
+        {
+          "date": "2012-06",
+          "avgMonthlyRent": 1458
+        },
+        {
+          "date": "2012-07",
+          "avgMonthlyRent": 1463
+        },
+        {
+          "date": "2012-08",
+          "avgMonthlyRent": 1468
+        },
+        {
+          "date": "2012-09",
+          "avgMonthlyRent": 1477
+        },
+        {
+          "date": "2012-10",
+          "avgMonthlyRent": 1482
+        },
+        {
+          "date": "2012-11",
+          "avgMonthlyRent": 1485
+        },
+        {
+          "date": "2012-12",
+          "avgMonthlyRent": 1491
+        },
+        {
+          "date": "2013-01",
+          "avgMonthlyRent": 1495
+        },
+        {
+          "date": "2013-02",
+          "avgMonthlyRent": 1499
+        },
+        {
+          "date": "2013-03",
+          "avgMonthlyRent": 1502
+        },
+        {
+          "date": "2013-04",
+          "avgMonthlyRent": 1507
+        },
+        {
+          "date": "2013-05",
+          "avgMonthlyRent": 1513
+        },
+        {
+          "date": "2013-06",
+          "avgMonthlyRent": 1517
+        },
+        {
+          "date": "2013-07",
+          "avgMonthlyRent": 1521
+        },
+        {
+          "date": "2013-08",
+          "avgMonthlyRent": 1527
+        },
+        {
+          "date": "2013-09",
+          "avgMonthlyRent": 1528
+        },
+        {
+          "date": "2013-10",
+          "avgMonthlyRent": 1530
+        },
+        {
+          "date": "2013-11",
+          "avgMonthlyRent": 1535
+        },
+        {
+          "date": "2013-12",
+          "avgMonthlyRent": 1535
+        },
+        {
+          "date": "2014-01",
+          "avgMonthlyRent": 1537
+        },
+        {
+          "date": "2014-02",
+          "avgMonthlyRent": 1537
+        },
+        {
+          "date": "2014-03",
+          "avgMonthlyRent": 1540
+        },
+        {
+          "date": "2014-04",
+          "avgMonthlyRent": 1543
+        },
+        {
+          "date": "2014-05",
+          "avgMonthlyRent": 1547
+        },
+        {
+          "date": "2014-06",
+          "avgMonthlyRent": 1549
+        },
+        {
+          "date": "2014-07",
+          "avgMonthlyRent": 1553
+        },
+        {
+          "date": "2014-08",
+          "avgMonthlyRent": 1555
+        },
+        {
+          "date": "2014-09",
+          "avgMonthlyRent": 1558
+        },
+        {
+          "date": "2014-10",
+          "avgMonthlyRent": 1563
+        },
+        {
+          "date": "2014-11",
+          "avgMonthlyRent": 1567
+        },
+        {
+          "date": "2014-12",
+          "avgMonthlyRent": 1572
+        },
+        {
+          "date": "2015-01",
+          "avgMonthlyRent": 1580
+        },
+        {
+          "date": "2015-02",
+          "avgMonthlyRent": 1583
+        },
+        {
+          "date": "2015-03",
+          "avgMonthlyRent": 1590
+        },
+        {
+          "date": "2015-04",
+          "avgMonthlyRent": 1602
+        },
+        {
+          "date": "2015-05",
+          "avgMonthlyRent": 1616
+        },
+        {
+          "date": "2015-06",
+          "avgMonthlyRent": 1620
+        },
+        {
+          "date": "2015-07",
+          "avgMonthlyRent": 1624
+        },
+        {
+          "date": "2015-08",
+          "avgMonthlyRent": 1634
+        },
+        {
+          "date": "2015-09",
+          "avgMonthlyRent": 1643
+        },
+        {
+          "date": "2015-10",
+          "avgMonthlyRent": 1644
+        },
+        {
+          "date": "2015-11",
+          "avgMonthlyRent": 1644
+        },
+        {
+          "date": "2015-12",
+          "avgMonthlyRent": 1648
+        },
+        {
+          "date": "2016-01",
+          "avgMonthlyRent": 1654
+        },
+        {
+          "date": "2016-02",
+          "avgMonthlyRent": 1655
+        },
+        {
+          "date": "2016-03",
+          "avgMonthlyRent": 1664
+        },
+        {
+          "date": "2016-04",
+          "avgMonthlyRent": 1666
+        },
+        {
+          "date": "2016-05",
+          "avgMonthlyRent": 1674
+        },
+        {
+          "date": "2016-06",
+          "avgMonthlyRent": 1679
+        },
+        {
+          "date": "2016-07",
+          "avgMonthlyRent": 1687
+        },
+        {
+          "date": "2016-08",
+          "avgMonthlyRent": 1691
+        },
+        {
+          "date": "2016-09",
+          "avgMonthlyRent": 1695
+        },
+        {
+          "date": "2016-10",
+          "avgMonthlyRent": 1696
+        },
+        {
+          "date": "2016-11",
+          "avgMonthlyRent": 1700
+        },
+        {
+          "date": "2016-12",
+          "avgMonthlyRent": 1702
+        },
+        {
+          "date": "2017-01",
+          "avgMonthlyRent": 1705
+        },
+        {
+          "date": "2017-02",
+          "avgMonthlyRent": 1702
+        },
+        {
+          "date": "2017-03",
+          "avgMonthlyRent": 1704
+        },
+        {
+          "date": "2017-04",
+          "avgMonthlyRent": 1706
+        },
+        {
+          "date": "2017-05",
+          "avgMonthlyRent": 1701
+        },
+        {
+          "date": "2017-06",
+          "avgMonthlyRent": 1705
+        },
+        {
+          "date": "2017-07",
+          "avgMonthlyRent": 1711
+        },
+        {
+          "date": "2017-08",
+          "avgMonthlyRent": 1706
+        },
+        {
+          "date": "2017-09",
+          "avgMonthlyRent": 1698
+        },
+        {
+          "date": "2017-10",
+          "avgMonthlyRent": 1700
+        },
+        {
+          "date": "2017-11",
+          "avgMonthlyRent": 1699
+        },
+        {
+          "date": "2017-12",
+          "avgMonthlyRent": 1697
+        },
+        {
+          "date": "2018-01",
+          "avgMonthlyRent": 1689
+        },
+        {
+          "date": "2018-02",
+          "avgMonthlyRent": 1694
+        },
+        {
+          "date": "2018-03",
+          "avgMonthlyRent": 1683
+        },
+        {
+          "date": "2018-04",
+          "avgMonthlyRent": 1678
+        },
+        {
+          "date": "2018-05",
+          "avgMonthlyRent": 1675
+        },
+        {
+          "date": "2018-06",
+          "avgMonthlyRent": 1676
+        },
+        {
+          "date": "2018-07",
+          "avgMonthlyRent": 1680
+        },
+        {
+          "date": "2018-08",
+          "avgMonthlyRent": 1683
+        },
+        {
+          "date": "2018-09",
+          "avgMonthlyRent": 1681
+        },
+        {
+          "date": "2018-10",
+          "avgMonthlyRent": 1686
+        },
+        {
+          "date": "2018-11",
+          "avgMonthlyRent": 1691
+        },
+        {
+          "date": "2018-12",
+          "avgMonthlyRent": 1696
+        },
+        {
+          "date": "2019-01",
+          "avgMonthlyRent": 1695
+        },
+        {
+          "date": "2019-02",
+          "avgMonthlyRent": 1701
+        },
+        {
+          "date": "2019-03",
+          "avgMonthlyRent": 1700
+        },
+        {
+          "date": "2019-04",
+          "avgMonthlyRent": 1698
+        },
+        {
+          "date": "2019-05",
+          "avgMonthlyRent": 1714
+        },
+        {
+          "date": "2019-06",
+          "avgMonthlyRent": 1712
+        },
+        {
+          "date": "2019-07",
+          "avgMonthlyRent": 1712
+        },
+        {
+          "date": "2019-08",
+          "avgMonthlyRent": 1716
+        },
+        {
+          "date": "2019-09",
+          "avgMonthlyRent": 1723
+        },
+        {
+          "date": "2019-10",
+          "avgMonthlyRent": 1728
+        },
+        {
+          "date": "2019-11",
+          "avgMonthlyRent": 1733
+        },
+        {
+          "date": "2019-12",
+          "avgMonthlyRent": 1737
+        },
+        {
+          "date": "2020-01",
+          "avgMonthlyRent": 1738
+        },
+        {
+          "date": "2020-02",
+          "avgMonthlyRent": 1744
+        },
+        {
+          "date": "2020-03",
+          "avgMonthlyRent": 1748
+        },
+        {
+          "date": "2020-04",
+          "avgMonthlyRent": 1741
+        },
+        {
+          "date": "2020-05",
+          "avgMonthlyRent": 1742
+        },
+        {
+          "date": "2020-06",
+          "avgMonthlyRent": 1741
+        },
+        {
+          "date": "2020-07",
+          "avgMonthlyRent": 1745
+        },
+        {
+          "date": "2020-08",
+          "avgMonthlyRent": 1744
+        },
+        {
+          "date": "2020-09",
+          "avgMonthlyRent": 1745
+        },
+        {
+          "date": "2020-10",
+          "avgMonthlyRent": 1745
+        },
+        {
+          "date": "2020-11",
+          "avgMonthlyRent": 1742
+        },
+        {
+          "date": "2020-12",
+          "avgMonthlyRent": 1737
+        },
+        {
+          "date": "2021-01",
+          "avgMonthlyRent": 1735
+        },
+        {
+          "date": "2021-02",
+          "avgMonthlyRent": 1735
+        },
+        {
+          "date": "2021-03",
+          "avgMonthlyRent": 1731
+        },
+        {
+          "date": "2021-04",
+          "avgMonthlyRent": 1721
+        },
+        {
+          "date": "2021-05",
+          "avgMonthlyRent": 1712
+        },
+        {
+          "date": "2021-06",
+          "avgMonthlyRent": 1713
+        },
+        {
+          "date": "2021-07",
+          "avgMonthlyRent": 1706
+        },
+        {
+          "date": "2021-08",
+          "avgMonthlyRent": 1706
+        },
+        {
+          "date": "2021-09",
+          "avgMonthlyRent": 1709
+        },
+        {
+          "date": "2021-10",
+          "avgMonthlyRent": 1713
+        },
+        {
+          "date": "2021-11",
+          "avgMonthlyRent": 1716
+        },
+        {
+          "date": "2021-12",
+          "avgMonthlyRent": 1724
+        },
+        {
+          "date": "2022-01",
+          "avgMonthlyRent": 1728
+        },
+        {
+          "date": "2022-02",
+          "avgMonthlyRent": 1735
+        },
+        {
+          "date": "2022-03",
+          "avgMonthlyRent": 1739
+        },
+        {
+          "date": "2022-04",
+          "avgMonthlyRent": 1746
+        },
+        {
+          "date": "2022-05",
+          "avgMonthlyRent": 1750
+        },
+        {
+          "date": "2022-06",
+          "avgMonthlyRent": 1754
+        },
+        {
+          "date": "2022-07",
+          "avgMonthlyRent": 1763
+        },
+        {
+          "date": "2022-08",
+          "avgMonthlyRent": 1773
+        },
+        {
+          "date": "2022-09",
+          "avgMonthlyRent": 1785
+        },
+        {
+          "date": "2022-10",
+          "avgMonthlyRent": 1791
+        },
+        {
+          "date": "2022-11",
+          "avgMonthlyRent": 1806
+        },
+        {
+          "date": "2022-12",
+          "avgMonthlyRent": 1818
+        },
+        {
+          "date": "2023-01",
+          "avgMonthlyRent": 1830
+        },
+        {
+          "date": "2023-02",
+          "avgMonthlyRent": 1841
+        },
+        {
+          "date": "2023-03",
+          "avgMonthlyRent": 1850
+        },
+        {
+          "date": "2023-04",
+          "avgMonthlyRent": 1870
+        },
+        {
+          "date": "2023-05",
+          "avgMonthlyRent": 1896
+        },
+        {
+          "date": "2023-06",
+          "avgMonthlyRent": 1915
+        },
+        {
+          "date": "2023-07",
+          "avgMonthlyRent": 1930
+        },
+        {
+          "date": "2023-08",
+          "avgMonthlyRent": 1945
+        },
+        {
+          "date": "2023-09",
+          "avgMonthlyRent": 1957
+        },
+        {
+          "date": "2023-10",
+          "avgMonthlyRent": 1971
+        },
+        {
+          "date": "2023-11",
+          "avgMonthlyRent": 1982
+        },
+        {
+          "date": "2023-12",
+          "avgMonthlyRent": 1994
+        },
+        {
+          "date": "2024-01",
+          "avgMonthlyRent": 2009
+        },
+        {
+          "date": "2024-02",
+          "avgMonthlyRent": 2034
+        },
+        {
+          "date": "2024-03",
+          "avgMonthlyRent": 2056
+        },
+        {
+          "date": "2024-04",
+          "avgMonthlyRent": 2071
+        },
+        {
+          "date": "2024-05",
+          "avgMonthlyRent": 2088
+        },
+        {
+          "date": "2024-06",
+          "avgMonthlyRent": 2100
+        },
+        {
+          "date": "2024-07",
+          "avgMonthlyRent": 2116
+        },
+        {
+          "date": "2024-08",
+          "avgMonthlyRent": 2130
+        },
+        {
+          "date": "2024-09",
+          "avgMonthlyRent": 2147
+        },
+        {
+          "date": "2024-10",
+          "avgMonthlyRent": 2172
+        },
+        {
+          "date": "2024-11",
+          "avgMonthlyRent": 2209
+        },
+        {
+          "date": "2024-12",
+          "avgMonthlyRent": 2221
+        },
+        {
+          "date": "2025-01",
+          "avgMonthlyRent": 2229
+        },
+        {
+          "date": "2025-02",
+          "avgMonthlyRent": 2235
+        }
+      ]
+    }
+  },
+  "regional": {
+    "affordability": {
+      "England": [
+        {
+          "year": 1997,
+          "ratio": 3.54
+        },
+        {
+          "year": 1998,
+          "ratio": 3.67
+        },
+        {
+          "year": 1999,
+          "ratio": 3.96
+        },
+        {
+          "year": 2000,
+          "ratio": 4.19
+        },
+        {
+          "year": 2001,
+          "ratio": 4.5
+        },
+        {
+          "year": 2002,
+          "ratio": 5.12
+        },
+        {
+          "year": 2003,
+          "ratio": 5.93
+        },
+        {
+          "year": 2004,
+          "ratio": 6.6
+        },
+        {
+          "year": 2005,
+          "ratio": 6.79
+        },
+        {
+          "year": 2006,
+          "ratio": 6.95
+        },
+        {
+          "year": 2007,
+          "ratio": 7.15
+        },
+        {
+          "year": 2008,
+          "ratio": 6.97
+        },
+        {
+          "year": 2009,
+          "ratio": 6.4
+        },
+        {
+          "year": 2010,
+          "ratio": 6.85
+        },
+        {
+          "year": 2011,
+          "ratio": 6.8
+        },
+        {
+          "year": 2012,
+          "ratio": 6.77
+        },
+        {
+          "year": 2013,
+          "ratio": 6.76
+        },
+        {
+          "year": 2014,
+          "ratio": 7.09
+        },
+        {
+          "year": 2015,
+          "ratio": 7.52
+        },
+        {
+          "year": 2016,
+          "ratio": 7.72
+        },
+        {
+          "year": 2017,
+          "ratio": 7.91
+        },
+        {
+          "year": 2018,
+          "ratio": 8.04
+        },
+        {
+          "year": 2019,
+          "ratio": 7.88
+        },
+        {
+          "year": 2020,
+          "ratio": 7.86
+        },
+        {
+          "year": 2021,
+          "ratio": 9.06
+        },
+        {
+          "year": 2022,
+          "ratio": 8.56
+        },
+        {
+          "year": 2023,
+          "ratio": 8.4
+        },
+        {
+          "year": 2024,
+          "ratio": 7.71
+        }
+      ],
+      "Wales": [
+        {
+          "year": 1997,
+          "ratio": 3.0
+        },
+        {
+          "year": 1998,
+          "ratio": 3.04
+        },
+        {
+          "year": 1999,
+          "ratio": 3.16
+        },
+        {
+          "year": 2000,
+          "ratio": 3.26
+        },
+        {
+          "year": 2001,
+          "ratio": 3.33
+        },
+        {
+          "year": 2002,
+          "ratio": 3.71
+        },
+        {
+          "year": 2003,
+          "ratio": 4.31
+        },
+        {
+          "year": 2004,
+          "ratio": 5.43
+        },
+        {
+          "year": 2005,
+          "ratio": 6.01
+        },
+        {
+          "year": 2006,
+          "ratio": 6.25
+        },
+        {
+          "year": 2007,
+          "ratio": 6.59
+        },
+        {
+          "year": 2008,
+          "ratio": 6.32
+        },
+        {
+          "year": 2009,
+          "ratio": 5.7
+        },
+        {
+          "year": 2010,
+          "ratio": 5.82
+        },
+        {
+          "year": 2011,
+          "ratio": 5.6
+        },
+        {
+          "year": 2012,
+          "ratio": 5.63
+        },
+        {
+          "year": 2013,
+          "ratio": 5.54
+        },
+        {
+          "year": 2014,
+          "ratio": 5.64
+        },
+        {
+          "year": 2015,
+          "ratio": 5.73
+        },
+        {
+          "year": 2016,
+          "ratio": 5.82
+        },
+        {
+          "year": 2017,
+          "ratio": 5.76
+        },
+        {
+          "year": 2018,
+          "ratio": 5.92
+        },
+        {
+          "year": 2019,
+          "ratio": 5.83
+        },
+        {
+          "year": 2020,
+          "ratio": 5.88
+        },
+        {
+          "year": 2021,
+          "ratio": 6.56
+        },
+        {
+          "year": 2022,
+          "ratio": 6.43
+        },
+        {
+          "year": 2023,
+          "ratio": 6.21
+        },
+        {
+          "year": 2024,
+          "ratio": 5.86
+        }
+      ],
+      "North East": [
+        {
+          "year": 1997,
+          "ratio": 2.98
+        },
+        {
+          "year": 1998,
+          "ratio": 3.01
+        },
+        {
+          "year": 1999,
+          "ratio": 3.07
+        },
+        {
+          "year": 2000,
+          "ratio": 2.98
+        },
+        {
+          "year": 2001,
+          "ratio": 3.02
+        },
+        {
+          "year": 2002,
+          "ratio": 3.29
+        },
+        {
+          "year": 2003,
+          "ratio": 3.95
+        },
+        {
+          "year": 2004,
+          "ratio": 4.78
+        },
+        {
+          "year": 2005,
+          "ratio": 5.18
+        },
+        {
+          "year": 2006,
+          "ratio": 5.68
+        },
+        {
+          "year": 2007,
+          "ratio": 5.79
+        },
+        {
+          "year": 2008,
+          "ratio": 5.56
+        },
+        {
+          "year": 2009,
+          "ratio": 5.2
+        },
+        {
+          "year": 2010,
+          "ratio": 5.4
+        },
+        {
+          "year": 2011,
+          "ratio": 5.12
+        },
+        {
+          "year": 2012,
+          "ratio": 5.0
+        },
+        {
+          "year": 2013,
+          "ratio": 5.02
+        },
+        {
+          "year": 2014,
+          "ratio": 5.02
+        },
+        {
+          "year": 2015,
+          "ratio": 5.15
+        },
+        {
+          "year": 2016,
+          "ratio": 5.22
+        },
+        {
+          "year": 2017,
+          "ratio": 5.21
+        },
+        {
+          "year": 2018,
+          "ratio": 5.31
+        },
+        {
+          "year": 2019,
+          "ratio": 5.21
+        },
+        {
+          "year": 2020,
+          "ratio": 5.21
+        },
+        {
+          "year": 2021,
+          "ratio": 5.81
+        },
+        {
+          "year": 2022,
+          "ratio": 5.25
+        },
+        {
+          "year": 2023,
+          "ratio": 5.3
+        },
+        {
+          "year": 2024,
+          "ratio": 4.85
+        }
+      ],
+      "North West": [
+        {
+          "year": 1997,
+          "ratio": 3.01
+        },
+        {
+          "year": 1998,
+          "ratio": 3.01
+        },
+        {
+          "year": 1999,
+          "ratio": 3.09
+        },
+        {
+          "year": 2000,
+          "ratio": 3.13
+        },
+        {
+          "year": 2001,
+          "ratio": 3.23
+        },
+        {
+          "year": 2002,
+          "ratio": 3.51
+        },
+        {
+          "year": 2003,
+          "ratio": 4.02
+        },
+        {
+          "year": 2004,
+          "ratio": 4.87
+        },
+        {
+          "year": 2005,
+          "ratio": 5.35
+        },
+        {
+          "year": 2006,
+          "ratio": 5.68
+        },
+        {
+          "year": 2007,
+          "ratio": 5.83
+        },
+        {
+          "year": 2008,
+          "ratio": 5.58
+        },
+        {
+          "year": 2009,
+          "ratio": 5.2
+        },
+        {
+          "year": 2010,
+          "ratio": 5.47
+        },
+        {
+          "year": 2011,
+          "ratio": 5.28
+        },
+        {
+          "year": 2012,
+          "ratio": 5.24
+        },
+        {
+          "year": 2013,
+          "ratio": 5.18
+        },
+        {
+          "year": 2014,
+          "ratio": 5.42
+        },
+        {
+          "year": 2015,
+          "ratio": 5.55
+        },
+        {
+          "year": 2016,
+          "ratio": 5.64
+        },
+        {
+          "year": 2017,
+          "ratio": 5.79
+        },
+        {
+          "year": 2018,
+          "ratio": 5.84
+        },
+        {
+          "year": 2019,
+          "ratio": 5.86
+        },
+        {
+          "year": 2020,
+          "ratio": 5.91
+        },
+        {
+          "year": 2021,
+          "ratio": 6.76
+        },
+        {
+          "year": 2022,
+          "ratio": 6.52
+        },
+        {
+          "year": 2023,
+          "ratio": 6.35
+        },
+        {
+          "year": 2024,
+          "ratio": 5.86
+        }
+      ],
+      "Yorkshire and The Humber": [
+        {
+          "year": 1997,
+          "ratio": 3.12
+        },
+        {
+          "year": 1998,
+          "ratio": 3.05
+        },
+        {
+          "year": 1999,
+          "ratio": 3.15
+        },
+        {
+          "year": 2000,
+          "ratio": 3.14
+        },
+        {
+          "year": 2001,
+          "ratio": 3.23
+        },
+        {
+          "year": 2002,
+          "ratio": 3.55
+        },
+        {
+          "year": 2003,
+          "ratio": 4.2
+        },
+        {
+          "year": 2004,
+          "ratio": 5.14
+        },
+        {
+          "year": 2005,
+          "ratio": 5.5
+        },
+        {
+          "year": 2006,
+          "ratio": 5.77
+        },
+        {
+          "year": 2007,
+          "ratio": 6.04
+        },
+        {
+          "year": 2008,
+          "ratio": 5.74
+        },
+        {
+          "year": 2009,
+          "ratio": 5.29
+        },
+        {
+          "year": 2010,
+          "ratio": 5.66
+        },
+        {
+          "year": 2011,
+          "ratio": 5.39
+        },
+        {
+          "year": 2012,
+          "ratio": 5.35
+        },
+        {
+          "year": 2013,
+          "ratio": 5.29
+        },
+        {
+          "year": 2014,
+          "ratio": 5.54
+        },
+        {
+          "year": 2015,
+          "ratio": 5.68
+        },
+        {
+          "year": 2016,
+          "ratio": 5.78
+        },
+        {
+          "year": 2017,
+          "ratio": 5.89
+        },
+        {
+          "year": 2018,
+          "ratio": 5.95
+        },
+        {
+          "year": 2019,
+          "ratio": 5.92
+        },
+        {
+          "year": 2020,
+          "ratio": 5.92
+        },
+        {
+          "year": 2021,
+          "ratio": 6.61
+        },
+        {
+          "year": 2022,
+          "ratio": 6.26
+        },
+        {
+          "year": 2023,
+          "ratio": 6.36
+        },
+        {
+          "year": 2024,
+          "ratio": 5.81
+        }
+      ],
+      "East Midlands": [
+        {
+          "year": 1997,
+          "ratio": 3.17
+        },
+        {
+          "year": 1998,
+          "ratio": 3.26
+        },
+        {
+          "year": 1999,
+          "ratio": 3.42
+        },
+        {
+          "year": 2000,
+          "ratio": 3.46
+        },
+        {
+          "year": 2001,
+          "ratio": 3.72
+        },
+        {
+          "year": 2002,
+          "ratio": 4.18
+        },
+        {
+          "year": 2003,
+          "ratio": 5.04
+        },
+        {
+          "year": 2004,
+          "ratio": 5.94
+        },
+        {
+          "year": 2005,
+          "ratio": 6.07
+        },
+        {
+          "year": 2006,
+          "ratio": 6.15
+        },
+        {
+          "year": 2007,
+          "ratio": 6.43
+        },
+        {
+          "year": 2008,
+          "ratio": 6.1
+        },
+        {
+          "year": 2009,
+          "ratio": 5.42
+        },
+        {
+          "year": 2010,
+          "ratio": 5.8
+        },
+        {
+          "year": 2011,
+          "ratio": 5.71
+        },
+        {
+          "year": 2012,
+          "ratio": 5.58
+        },
+        {
+          "year": 2013,
+          "ratio": 5.62
+        },
+        {
+          "year": 2014,
+          "ratio": 5.94
+        },
+        {
+          "year": 2015,
+          "ratio": 6.28
+        },
+        {
+          "year": 2016,
+          "ratio": 6.48
+        },
+        {
+          "year": 2017,
+          "ratio": 6.84
+        },
+        {
+          "year": 2018,
+          "ratio": 6.96
+        },
+        {
+          "year": 2019,
+          "ratio": 6.86
+        },
+        {
+          "year": 2020,
+          "ratio": 6.89
+        },
+        {
+          "year": 2021,
+          "ratio": 8.04
+        },
+        {
+          "year": 2022,
+          "ratio": 7.78
+        },
+        {
+          "year": 2023,
+          "ratio": 7.8
+        },
+        {
+          "year": 2024,
+          "ratio": 7.06
+        }
+      ],
+      "West Midlands": [
+        {
+          "year": 1997,
+          "ratio": 3.4
+        },
+        {
+          "year": 1998,
+          "ratio": 3.35
+        },
+        {
+          "year": 1999,
+          "ratio": 3.53
+        },
+        {
+          "year": 2000,
+          "ratio": 3.68
+        },
+        {
+          "year": 2001,
+          "ratio": 3.92
+        },
+        {
+          "year": 2002,
+          "ratio": 4.42
+        },
+        {
+          "year": 2003,
+          "ratio": 5.21
+        },
+        {
+          "year": 2004,
+          "ratio": 6.02
+        },
+        {
+          "year": 2005,
+          "ratio": 6.2
+        },
+        {
+          "year": 2006,
+          "ratio": 6.36
+        },
+        {
+          "year": 2007,
+          "ratio": 6.48
+        },
+        {
+          "year": 2008,
+          "ratio": 6.08
+        },
+        {
+          "year": 2009,
+          "ratio": 5.84
+        },
+        {
+          "year": 2010,
+          "ratio": 6.19
+        },
+        {
+          "year": 2011,
+          "ratio": 5.93
+        },
+        {
+          "year": 2012,
+          "ratio": 5.9
+        },
+        {
+          "year": 2013,
+          "ratio": 5.84
+        },
+        {
+          "year": 2014,
+          "ratio": 6.21
+        },
+        {
+          "year": 2015,
+          "ratio": 6.27
+        },
+        {
+          "year": 2016,
+          "ratio": 6.38
+        },
+        {
+          "year": 2017,
+          "ratio": 6.63
+        },
+        {
+          "year": 2018,
+          "ratio": 6.79
+        },
+        {
+          "year": 2019,
+          "ratio": 6.83
+        },
+        {
+          "year": 2020,
+          "ratio": 6.85
+        },
+        {
+          "year": 2021,
+          "ratio": 7.69
+        },
+        {
+          "year": 2022,
+          "ratio": 7.39
+        },
+        {
+          "year": 2023,
+          "ratio": 7.35
+        },
+        {
+          "year": 2024,
+          "ratio": 6.87
+        }
+      ],
+      "East of England": [
+        {
+          "year": 1997,
+          "ratio": 3.68
+        },
+        {
+          "year": 1998,
+          "ratio": 3.85
+        },
+        {
+          "year": 1999,
+          "ratio": 4.11
+        },
+        {
+          "year": 2000,
+          "ratio": 4.42
+        },
+        {
+          "year": 2001,
+          "ratio": 4.78
+        },
+        {
+          "year": 2002,
+          "ratio": 5.78
+        },
+        {
+          "year": 2003,
+          "ratio": 6.51
+        },
+        {
+          "year": 2004,
+          "ratio": 7.19
+        },
+        {
+          "year": 2005,
+          "ratio": 7.39
+        },
+        {
+          "year": 2006,
+          "ratio": 7.44
+        },
+        {
+          "year": 2007,
+          "ratio": 7.77
+        },
+        {
+          "year": 2008,
+          "ratio": 7.62
+        },
+        {
+          "year": 2009,
+          "ratio": 6.86
+        },
+        {
+          "year": 2010,
+          "ratio": 7.45
+        },
+        {
+          "year": 2011,
+          "ratio": 7.32
+        },
+        {
+          "year": 2012,
+          "ratio": 7.27
+        },
+        {
+          "year": 2013,
+          "ratio": 7.43
+        },
+        {
+          "year": 2014,
+          "ratio": 7.83
+        },
+        {
+          "year": 2015,
+          "ratio": 8.42
+        },
+        {
+          "year": 2016,
+          "ratio": 8.96
+        },
+        {
+          "year": 2017,
+          "ratio": 9.66
+        },
+        {
+          "year": 2018,
+          "ratio": 9.78
+        },
+        {
+          "year": 2019,
+          "ratio": 9.47
+        },
+        {
+          "year": 2020,
+          "ratio": 9.51
+        },
+        {
+          "year": 2021,
+          "ratio": 10.57
+        },
+        {
+          "year": 2022,
+          "ratio": 10.27
+        },
+        {
+          "year": 2023,
+          "ratio": 9.98
+        },
+        {
+          "year": 2024,
+          "ratio": 9.07
+        }
+      ],
+      "London": [
+        {
+          "year": 1997,
+          "ratio": 4.0
+        },
+        {
+          "year": 1998,
+          "ratio": 4.34
+        },
+        {
+          "year": 1999,
+          "ratio": 4.94
+        },
+        {
+          "year": 2000,
+          "ratio": 5.54
+        },
+        {
+          "year": 2001,
+          "ratio": 5.95
+        },
+        {
+          "year": 2002,
+          "ratio": 6.57
+        },
+        {
+          "year": 2003,
+          "ratio": 7.1
+        },
+        {
+          "year": 2004,
+          "ratio": 7.55
+        },
+        {
+          "year": 2005,
+          "ratio": 7.66
+        },
+        {
+          "year": 2006,
+          "ratio": 7.91
+        },
+        {
+          "year": 2007,
+          "ratio": 7.94
+        },
+        {
+          "year": 2008,
+          "ratio": 8.08
+        },
+        {
+          "year": 2009,
+          "ratio": 7.42
+        },
+        {
+          "year": 2010,
+          "ratio": 8.24
+        },
+        {
+          "year": 2011,
+          "ratio": 8.52
+        },
+        {
+          "year": 2012,
+          "ratio": 8.53
+        },
+        {
+          "year": 2013,
+          "ratio": 8.96
+        },
+        {
+          "year": 2014,
+          "ratio": 10.08
+        },
+        {
+          "year": 2015,
+          "ratio": 11.05
+        },
+        {
+          "year": 2016,
+          "ratio": 12.03
+        },
+        {
+          "year": 2017,
+          "ratio": 12.38
+        },
+        {
+          "year": 2018,
+          "ratio": 12.26
+        },
+        {
+          "year": 2019,
+          "ratio": 12.05
+        },
+        {
+          "year": 2020,
+          "ratio": 11.83
+        },
+        {
+          "year": 2021,
+          "ratio": 12.88
+        },
+        {
+          "year": 2022,
+          "ratio": 12.38
+        },
+        {
+          "year": 2023,
+          "ratio": 11.81
+        },
+        {
+          "year": 2024,
+          "ratio": 11.06
+        }
+      ],
+      "South East": [
+        {
+          "year": 1997,
+          "ratio": 4.17
+        },
+        {
+          "year": 1998,
+          "ratio": 4.43
+        },
+        {
+          "year": 1999,
+          "ratio": 4.75
+        },
+        {
+          "year": 2000,
+          "ratio": 5.35
+        },
+        {
+          "year": 2001,
+          "ratio": 5.88
+        },
+        {
+          "year": 2002,
+          "ratio": 6.38
+        },
+        {
+          "year": 2003,
+          "ratio": 7.22
+        },
+        {
+          "year": 2004,
+          "ratio": 7.62
+        },
+        {
+          "year": 2005,
+          "ratio": 7.84
+        },
+        {
+          "year": 2006,
+          "ratio": 8.02
+        },
+        {
+          "year": 2007,
+          "ratio": 8.4
+        },
+        {
+          "year": 2008,
+          "ratio": 8.22
+        },
+        {
+          "year": 2009,
+          "ratio": 7.28
+        },
+        {
+          "year": 2010,
+          "ratio": 8.11
+        },
+        {
+          "year": 2011,
+          "ratio": 8.07
+        },
+        {
+          "year": 2012,
+          "ratio": 7.99
+        },
+        {
+          "year": 2013,
+          "ratio": 8.26
+        },
+        {
+          "year": 2014,
+          "ratio": 8.56
+        },
+        {
+          "year": 2015,
+          "ratio": 9.13
+        },
+        {
+          "year": 2016,
+          "ratio": 9.76
+        },
+        {
+          "year": 2017,
+          "ratio": 10.25
+        },
+        {
+          "year": 2018,
+          "ratio": 10.37
+        },
+        {
+          "year": 2019,
+          "ratio": 10.05
+        },
+        {
+          "year": 2020,
+          "ratio": 10.01
+        },
+        {
+          "year": 2021,
+          "ratio": 11.12
+        },
+        {
+          "year": 2022,
+          "ratio": 10.87
+        },
+        {
+          "year": 2023,
+          "ratio": 10.54
+        },
+        {
+          "year": 2024,
+          "ratio": 9.61
+        }
+      ],
+      "South West": [
+        {
+          "year": 1997,
+          "ratio": 3.78
+        },
+        {
+          "year": 1998,
+          "ratio": 3.96
+        },
+        {
+          "year": 1999,
+          "ratio": 4.24
+        },
+        {
+          "year": 2000,
+          "ratio": 4.59
+        },
+        {
+          "year": 2001,
+          "ratio": 5.04
+        },
+        {
+          "year": 2002,
+          "ratio": 5.98
+        },
+        {
+          "year": 2003,
+          "ratio": 7.0
+        },
+        {
+          "year": 2004,
+          "ratio": 7.73
+        },
+        {
+          "year": 2005,
+          "ratio": 7.99
+        },
+        {
+          "year": 2006,
+          "ratio": 8.02
+        },
+        {
+          "year": 2007,
+          "ratio": 8.29
+        },
+        {
+          "year": 2008,
+          "ratio": 8.03
+        },
+        {
+          "year": 2009,
+          "ratio": 7.24
+        },
+        {
+          "year": 2010,
+          "ratio": 7.76
+        },
+        {
+          "year": 2011,
+          "ratio": 7.61
+        },
+        {
+          "year": 2012,
+          "ratio": 7.59
+        },
+        {
+          "year": 2013,
+          "ratio": 7.53
+        },
+        {
+          "year": 2014,
+          "ratio": 7.78
+        },
+        {
+          "year": 2015,
+          "ratio": 8.17
+        },
+        {
+          "year": 2016,
+          "ratio": 8.53
+        },
+        {
+          "year": 2017,
+          "ratio": 8.85
+        },
+        {
+          "year": 2018,
+          "ratio": 8.92
+        },
+        {
+          "year": 2019,
+          "ratio": 8.77
+        },
+        {
+          "year": 2020,
+          "ratio": 8.74
+        },
+        {
+          "year": 2021,
+          "ratio": 10.0
+        },
+        {
+          "year": 2022,
+          "ratio": 9.56
+        },
+        {
+          "year": 2023,
+          "ratio": 9.37
+        },
+        {
+          "year": 2024,
+          "ratio": 8.48
+        }
+      ]
+    },
+    "housePrices": {
+      "North East": {
+        "date": "2025-12",
+        "averagePrice": 165257,
+        "annualChange": 4.6
+      },
+      "North West": {
+        "date": "2025-12",
+        "averagePrice": 217428,
+        "annualChange": 4.5
+      },
+      "Yorkshire and The Humber": {
+        "date": "2025-12",
+        "averagePrice": 208447,
+        "annualChange": 3.3
+      },
+      "East Midlands": {
+        "date": "2025-12",
+        "averagePrice": 243632,
+        "annualChange": 2.4
+      },
+      "West Midlands": {
+        "date": "2025-12",
+        "averagePrice": 232824,
+        "annualChange": 1.4
+      },
+      "East of England": {
+        "date": "2025-12",
+        "averagePrice": 338002,
+        "annualChange": 1.5
+      },
+      "London": {
+        "date": "2025-12",
+        "averagePrice": 551294,
+        "annualChange": -1.0
+      },
+      "South East": {
+        "date": "2025-12",
+        "averagePrice": 378800,
+        "annualChange": 0.0
+      },
+      "South West": {
+        "date": "2025-12",
+        "averagePrice": 301226,
+        "annualChange": 0.3
+      },
+      "Wales": {
+        "date": "2025-12",
+        "averagePrice": 214883,
+        "annualChange": 5.0
+      }
+    },
+    "rentAffordability": {
+      "Wales": [
+        {
+          "year": "2015/16",
+          "rentToIncomePct": 31.5
+        },
+        {
+          "year": "2016/17",
+          "rentToIncomePct": 29.6
+        },
+        {
+          "year": "2017/18",
+          "rentToIncomePct": 26.4
+        },
+        {
+          "year": "2018/19",
+          "rentToIncomePct": 28.4
+        },
+        {
+          "year": "2019/20",
+          "rentToIncomePct": 25.9
+        },
+        {
+          "year": "2020/21",
+          "rentToIncomePct": 25.5
+        },
+        {
+          "year": "2021/22",
+          "rentToIncomePct": 25.6
+        },
+        {
+          "year": "2022/23",
+          "rentToIncomePct": 26.3
+        },
+        {
+          "year": "2023/24",
+          "rentToIncomePct": 25.9
+        }
+      ],
+      "Northern Ireland": [
+        {
+          "year": "2015/16",
+          "rentToIncomePct": 25.6
+        },
+        {
+          "year": "2016/17",
+          "rentToIncomePct": 24.2
+        },
+        {
+          "year": "2017/18",
+          "rentToIncomePct": 23.6
+        },
+        {
+          "year": "2018/19",
+          "rentToIncomePct": 25.0
+        },
+        {
+          "year": "2019/20",
+          "rentToIncomePct": 21.9
+        },
+        {
+          "year": "2020/21",
+          "rentToIncomePct": 22.8
+        },
+        {
+          "year": "2021/22",
+          "rentToIncomePct": 24.0
+        },
+        {
+          "year": "2022/23",
+          "rentToIncomePct": 25.1
+        },
+        {
+          "year": "2023/24",
+          "rentToIncomePct": 25.3
+        }
+      ],
+      "North East": [
+        {
+          "year": "2015/16",
+          "rentToIncomePct": 28.0
+        },
+        {
+          "year": "2016/17",
+          "rentToIncomePct": 27.4
+        },
+        {
+          "year": "2017/18",
+          "rentToIncomePct": 29.4
+        },
+        {
+          "year": "2018/19",
+          "rentToIncomePct": 29.1
+        },
+        {
+          "year": "2019/20",
+          "rentToIncomePct": 28.4
+        },
+        {
+          "year": "2020/21",
+          "rentToIncomePct": 29.6
+        },
+        {
+          "year": "2021/22",
+          "rentToIncomePct": 27.3
+        },
+        {
+          "year": "2022/23",
+          "rentToIncomePct": 24.8
+        },
+        {
+          "year": "2023/24",
+          "rentToIncomePct": 19.8
+        }
+      ],
+      "North West": [
+        {
+          "year": "2015/16",
+          "rentToIncomePct": 30.2
+        },
+        {
+          "year": "2016/17",
+          "rentToIncomePct": 28.1
+        },
+        {
+          "year": "2017/18",
+          "rentToIncomePct": 27.9
+        },
+        {
+          "year": "2018/19",
+          "rentToIncomePct": 24.6
+        },
+        {
+          "year": "2019/20",
+          "rentToIncomePct": 25.8
+        },
+        {
+          "year": "2020/21",
+          "rentToIncomePct": 26.5
+        },
+        {
+          "year": "2021/22",
+          "rentToIncomePct": 28.5
+        },
+        {
+          "year": "2022/23",
+          "rentToIncomePct": 30.6
+        },
+        {
+          "year": "2023/24",
+          "rentToIncomePct": 28.1
+        }
+      ],
+      "Yorkshire and The Humber": [
+        {
+          "year": "2015/16",
+          "rentToIncomePct": 26.3
+        },
+        {
+          "year": "2016/17",
+          "rentToIncomePct": 28.8
+        },
+        {
+          "year": "2017/18",
+          "rentToIncomePct": 30.5
+        },
+        {
+          "year": "2018/19",
+          "rentToIncomePct": 27.8
+        },
+        {
+          "year": "2019/20",
+          "rentToIncomePct": 25.9
+        },
+        {
+          "year": "2020/21",
+          "rentToIncomePct": 34.8
+        },
+        {
+          "year": "2021/22",
+          "rentToIncomePct": 25.4
+        },
+        {
+          "year": "2022/23",
+          "rentToIncomePct": 24.9
+        },
+        {
+          "year": "2023/24",
+          "rentToIncomePct": 27.4
+        }
+      ],
+      "East Midlands": [
+        {
+          "year": "2015/16",
+          "rentToIncomePct": 25.0
+        },
+        {
+          "year": "2016/17",
+          "rentToIncomePct": 27.0
+        },
+        {
+          "year": "2017/18",
+          "rentToIncomePct": 25.1
+        },
+        {
+          "year": "2018/19",
+          "rentToIncomePct": 22.5
+        },
+        {
+          "year": "2019/20",
+          "rentToIncomePct": 24.3
+        },
+        {
+          "year": "2020/21",
+          "rentToIncomePct": 23.3
+        },
+        {
+          "year": "2021/22",
+          "rentToIncomePct": 25.9
+        },
+        {
+          "year": "2022/23",
+          "rentToIncomePct": 25.7
+        },
+        {
+          "year": "2023/24",
+          "rentToIncomePct": 24.4
+        }
+      ],
+      "West Midlands": [
+        {
+          "year": "2015/16",
+          "rentToIncomePct": 27.2
+        },
+        {
+          "year": "2016/17",
+          "rentToIncomePct": 26.5
+        },
+        {
+          "year": "2017/18",
+          "rentToIncomePct": 26.5
+        },
+        {
+          "year": "2018/19",
+          "rentToIncomePct": 29.1
+        },
+        {
+          "year": "2019/20",
+          "rentToIncomePct": 25.7
+        },
+        {
+          "year": "2020/21",
+          "rentToIncomePct": 22.2
+        },
+        {
+          "year": "2021/22",
+          "rentToIncomePct": 30.3
+        },
+        {
+          "year": "2022/23",
+          "rentToIncomePct": 24.7
+        },
+        {
+          "year": "2023/24",
+          "rentToIncomePct": 29.2
+        }
+      ],
+      "East of England": [
+        {
+          "year": "2015/16",
+          "rentToIncomePct": 33.1
+        },
+        {
+          "year": "2016/17",
+          "rentToIncomePct": 32.6
+        },
+        {
+          "year": "2017/18",
+          "rentToIncomePct": 33.3
+        },
+        {
+          "year": "2018/19",
+          "rentToIncomePct": 30.2
+        },
+        {
+          "year": "2019/20",
+          "rentToIncomePct": 30.8
+        },
+        {
+          "year": "2020/21",
+          "rentToIncomePct": 31.6
+        },
+        {
+          "year": "2021/22",
+          "rentToIncomePct": 27.7
+        },
+        {
+          "year": "2022/23",
+          "rentToIncomePct": 27.1
+        },
+        {
+          "year": "2023/24",
+          "rentToIncomePct": 28.9
+        }
+      ],
+      "London": [
+        {
+          "year": "2015/16",
+          "rentToIncomePct": 52.0
+        },
+        {
+          "year": "2016/17",
+          "rentToIncomePct": 57.0
+        },
+        {
+          "year": "2017/18",
+          "rentToIncomePct": 51.3
+        },
+        {
+          "year": "2018/19",
+          "rentToIncomePct": 46.3
+        },
+        {
+          "year": "2019/20",
+          "rentToIncomePct": 45.6
+        },
+        {
+          "year": "2020/21",
+          "rentToIncomePct": 48.5
+        },
+        {
+          "year": "2021/22",
+          "rentToIncomePct": 41.1
+        },
+        {
+          "year": "2022/23",
+          "rentToIncomePct": 38.5
+        },
+        {
+          "year": "2023/24",
+          "rentToIncomePct": 41.6
+        }
+      ],
+      "South East": [
+        {
+          "year": "2015/16",
+          "rentToIncomePct": 33.2
+        },
+        {
+          "year": "2016/17",
+          "rentToIncomePct": 34.3
+        },
+        {
+          "year": "2017/18",
+          "rentToIncomePct": 35.7
+        },
+        {
+          "year": "2018/19",
+          "rentToIncomePct": 35.8
+        },
+        {
+          "year": "2019/20",
+          "rentToIncomePct": 32.1
+        },
+        {
+          "year": "2020/21",
+          "rentToIncomePct": 36.0
+        },
+        {
+          "year": "2021/22",
+          "rentToIncomePct": 33.5
+        },
+        {
+          "year": "2022/23",
+          "rentToIncomePct": 30.9
+        },
+        {
+          "year": "2023/24",
+          "rentToIncomePct": 29.6
+        }
+      ],
+      "South West": [
+        {
+          "year": "2015/16",
+          "rentToIncomePct": 32.1
+        },
+        {
+          "year": "2016/17",
+          "rentToIncomePct": 29.7
+        },
+        {
+          "year": "2017/18",
+          "rentToIncomePct": 34.3
+        },
+        {
+          "year": "2018/19",
+          "rentToIncomePct": 34.0
+        },
+        {
+          "year": "2019/20",
+          "rentToIncomePct": 31.0
+        },
+        {
+          "year": "2020/21",
+          "rentToIncomePct": 31.2
+        },
+        {
+          "year": "2021/22",
+          "rentToIncomePct": 34.3
+        },
+        {
+          "year": "2022/23",
+          "rentToIncomePct": 27.7
+        },
+        {
+          "year": "2023/24",
+          "rentToIncomePct": 31.4
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Housing affordability in England and Wales, 2024",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/housing/datasets/ratioofhousepricetoworkplacebasedearningslowerquartileandmedian",
+        "frequency": "annual"
+      },
+      {
+        "name": "HM Land Registry",
+        "dataset": "UK House Price Index",
+        "url": "https://www.gov.uk/government/collections/uk-house-price-index-reports",
+        "frequency": "monthly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Private rental affordability, England, 2024",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/housing/datasets/privaterentalaffordabilityengland",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Price Index of Private Rents (PIPR), historical series",
+        "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukhistoricalseries",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Affordability ratios divide median house prices (Land Registry price paid, year ending September) by median gross annual workplace-based earnings (ASHE). House prices from Land Registry UK HPI, mix-adjusted. Private rents from ONS PIPR series, chain-linked historical data. Rent affordability from ONS using Family Resources Survey data.",
+    "knownIssues": [
+      "Affordability ratio methodology changed slightly in 2013 (ASHE reweighting).",
+      "Private rent data only covers England from 2005; UK-wide from 2015.",
+      "Rental affordability FRS sample: regional estimates have wider confidence intervals.",
+      "HPI uses mix-adjustment to account for changing composition of sales."
+    ]
+  }
+}

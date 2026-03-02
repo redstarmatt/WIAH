@@ -1,0 +1,35 @@
+# Raw data downloads — large files, never committed
+data/raw/
+
+# Pipeline debug/temporary files
+data/**/_rendered_page.html
+data/**/_column_debug_*.json
+data/_run_results.json
+
+# Next.js build output
+site/.next/
+site/out/
+
+# Dependencies
+node_modules/
+site/node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.local
+.env.production

@@ -1,0 +1,609 @@
+{
+  "topic": "justice",
+  "lastUpdated": "2026-03-02",
+  "national": {
+    "chargeRate": {
+      "timeSeries": [
+        {
+          "date": "2015-03",
+          "pct": 15.5
+        },
+        {
+          "date": "2015-06",
+          "pct": 14.8
+        },
+        {
+          "date": "2015-09",
+          "pct": 14.0
+        },
+        {
+          "date": "2015-12",
+          "pct": 13.3
+        },
+        {
+          "date": "2016-03",
+          "pct": 13.1
+        },
+        {
+          "date": "2016-06",
+          "pct": 12.5
+        },
+        {
+          "date": "2016-09",
+          "pct": 11.8
+        },
+        {
+          "date": "2016-12",
+          "pct": 11.4
+        },
+        {
+          "date": "2017-03",
+          "pct": 11.2
+        },
+        {
+          "date": "2017-06",
+          "pct": 10.1
+        },
+        {
+          "date": "2017-09",
+          "pct": 9.5
+        },
+        {
+          "date": "2017-12",
+          "pct": 9.1
+        },
+        {
+          "date": "2018-03",
+          "pct": 9.1
+        },
+        {
+          "date": "2018-06",
+          "pct": 8.7
+        },
+        {
+          "date": "2018-09",
+          "pct": 8.4
+        },
+        {
+          "date": "2018-12",
+          "pct": 8.2
+        },
+        {
+          "date": "2019-03",
+          "pct": 7.8
+        },
+        {
+          "date": "2019-06",
+          "pct": 7.4
+        },
+        {
+          "date": "2019-09",
+          "pct": 7.3
+        },
+        {
+          "date": "2019-12",
+          "pct": 7.1
+        },
+        {
+          "date": "2020-03",
+          "pct": 7.0
+        },
+        {
+          "date": "2020-06",
+          "pct": 7.4
+        },
+        {
+          "date": "2020-09",
+          "pct": 7.3
+        },
+        {
+          "date": "2020-12",
+          "pct": 7.5
+        },
+        {
+          "date": "2021-03",
+          "pct": 7.3
+        },
+        {
+          "date": "2021-06",
+          "pct": 6.5
+        },
+        {
+          "date": "2021-09",
+          "pct": 6.0
+        },
+        {
+          "date": "2021-12",
+          "pct": 5.8
+        },
+        {
+          "date": "2022-03",
+          "pct": 5.6
+        },
+        {
+          "date": "2022-06",
+          "pct": 5.4
+        },
+        {
+          "date": "2022-09",
+          "pct": 5.5
+        },
+        {
+          "date": "2022-12",
+          "pct": 5.6
+        },
+        {
+          "date": "2023-03",
+          "pct": 5.7
+        },
+        {
+          "date": "2023-06",
+          "pct": 5.7
+        },
+        {
+          "date": "2023-09",
+          "pct": 5.9
+        },
+        {
+          "date": "2023-12",
+          "pct": 6.2
+        },
+        {
+          "date": "2024-03",
+          "pct": 6.4
+        },
+        {
+          "date": "2024-06",
+          "pct": 6.7
+        },
+        {
+          "date": "2024-09",
+          "pct": 6.8
+        },
+        {
+          "date": "2024-12",
+          "pct": 6.9
+        },
+        {
+          "date": "2025-03",
+          "pct": 7.3
+        }
+      ],
+      "byCrimeType": [
+        {
+          "type": "Shoplifting",
+          "pct": 18.5
+        },
+        {
+          "type": "Robbery",
+          "pct": 7.5
+        },
+        {
+          "type": "Theft offences",
+          "pct": 7.3
+        },
+        {
+          "type": "All victim-based crime",
+          "pct": 6.3
+        },
+        {
+          "type": "Violence against the person",
+          "pct": 6.1
+        },
+        {
+          "type": "Residential burglary",
+          "pct": 4.7
+        },
+        {
+          "type": "Sexual offences",
+          "pct": 4.2
+        },
+        {
+          "type": "Rape",
+          "pct": 2.8
+        },
+        {
+          "type": "Vehicle theft",
+          "pct": 2.4
+        }
+      ]
+    },
+    "funnel": {
+      "stages": [
+        {
+          "label": "Crimes experienced (CSEW est.)",
+          "value": 9600000,
+          "per100": 100.0
+        },
+        {
+          "label": "Reported to police",
+          "value": 6700000,
+          "per100": 69.8
+        },
+        {
+          "label": "Recorded by police",
+          "value": 5310000,
+          "per100": 55.3
+        },
+        {
+          "label": "Charged or summonsed",
+          "value": 388000,
+          "per100": 4.0
+        },
+        {
+          "label": "Convicted",
+          "value": 290000,
+          "per100": 3.0
+        }
+      ]
+    },
+    "courtBacklog": {
+      "timeSeries": [
+        {
+          "date": "2016-Q1",
+          "outstanding": 48256
+        },
+        {
+          "date": "2016-Q2",
+          "outstanding": 44859
+        },
+        {
+          "date": "2016-Q3",
+          "outstanding": 43462
+        },
+        {
+          "date": "2016-Q4",
+          "outstanding": 43110
+        },
+        {
+          "date": "2017-Q1",
+          "outstanding": 41703
+        },
+        {
+          "date": "2017-Q2",
+          "outstanding": 41098
+        },
+        {
+          "date": "2017-Q3",
+          "outstanding": 40191
+        },
+        {
+          "date": "2017-Q4",
+          "outstanding": 38972
+        },
+        {
+          "date": "2018-Q1",
+          "outstanding": 36830
+        },
+        {
+          "date": "2018-Q2",
+          "outstanding": 35625
+        },
+        {
+          "date": "2018-Q3",
+          "outstanding": 34629
+        },
+        {
+          "date": "2018-Q4",
+          "outstanding": 33041
+        },
+        {
+          "date": "2019-Q1",
+          "outstanding": 33105
+        },
+        {
+          "date": "2019-Q2",
+          "outstanding": 34218
+        },
+        {
+          "date": "2019-Q3",
+          "outstanding": 35410
+        },
+        {
+          "date": "2019-Q4",
+          "outstanding": 38105
+        },
+        {
+          "date": "2020-Q1",
+          "outstanding": 40951
+        },
+        {
+          "date": "2020-Q2",
+          "outstanding": 43137
+        },
+        {
+          "date": "2020-Q3",
+          "outstanding": 51298
+        },
+        {
+          "date": "2020-Q4",
+          "outstanding": 57038
+        },
+        {
+          "date": "2021-Q1",
+          "outstanding": 59806
+        },
+        {
+          "date": "2021-Q2",
+          "outstanding": 60829
+        },
+        {
+          "date": "2021-Q3",
+          "outstanding": 59902
+        },
+        {
+          "date": "2021-Q4",
+          "outstanding": 58585
+        },
+        {
+          "date": "2022-Q1",
+          "outstanding": 58104
+        },
+        {
+          "date": "2022-Q2",
+          "outstanding": 59411
+        },
+        {
+          "date": "2022-Q3",
+          "outstanding": 62996
+        },
+        {
+          "date": "2022-Q4",
+          "outstanding": 62664
+        },
+        {
+          "date": "2023-Q1",
+          "outstanding": 61997
+        },
+        {
+          "date": "2023-Q2",
+          "outstanding": 64601
+        },
+        {
+          "date": "2023-Q3",
+          "outstanding": 66333
+        },
+        {
+          "date": "2023-Q4",
+          "outstanding": 67163
+        },
+        {
+          "date": "2024-Q1",
+          "outstanding": 68888
+        },
+        {
+          "date": "2024-Q2",
+          "outstanding": 70815
+        },
+        {
+          "date": "2024-Q3",
+          "outstanding": 72849
+        },
+        {
+          "date": "2024-Q4",
+          "outstanding": 74234
+        },
+        {
+          "date": "2025-Q1",
+          "outstanding": 76597
+        },
+        {
+          "date": "2025-Q2",
+          "outstanding": 78096
+        },
+        {
+          "date": "2025-Q3",
+          "outstanding": 79619
+        }
+      ],
+      "target": 53000
+    },
+    "prisonPopulation": {
+      "timeSeries": [
+        {
+          "date": "2000-06",
+          "population": 64602,
+          "capacity": 65000
+        },
+        {
+          "date": "2002-06",
+          "population": 71218,
+          "capacity": 72000
+        },
+        {
+          "date": "2004-06",
+          "population": 75544,
+          "capacity": 76000
+        },
+        {
+          "date": "2006-06",
+          "population": 79023,
+          "capacity": 79500
+        },
+        {
+          "date": "2008-06",
+          "population": 83194,
+          "capacity": 83500
+        },
+        {
+          "date": "2010-06",
+          "population": 85002,
+          "capacity": 85500
+        },
+        {
+          "date": "2011-06",
+          "population": 85374,
+          "capacity": 86500
+        },
+        {
+          "date": "2012-06",
+          "population": 86048,
+          "capacity": 87000
+        },
+        {
+          "date": "2013-06",
+          "population": 83842,
+          "capacity": 87000
+        },
+        {
+          "date": "2014-06",
+          "population": 85509,
+          "capacity": 86700
+        },
+        {
+          "date": "2015-06",
+          "population": 86193,
+          "capacity": 86800
+        },
+        {
+          "date": "2016-06",
+          "population": 85134,
+          "capacity": 86200
+        },
+        {
+          "date": "2017-06",
+          "population": 85863,
+          "capacity": 86400
+        },
+        {
+          "date": "2018-06",
+          "population": 83263,
+          "capacity": 86000
+        },
+        {
+          "date": "2019-06",
+          "population": 82710,
+          "capacity": 85900
+        },
+        {
+          "date": "2020-06",
+          "population": 79724,
+          "capacity": 85500
+        },
+        {
+          "date": "2021-06",
+          "population": 78756,
+          "capacity": 85600
+        },
+        {
+          "date": "2022-06",
+          "population": 80692,
+          "capacity": 86400
+        },
+        {
+          "date": "2023-06",
+          "population": 85851,
+          "capacity": 88700
+        },
+        {
+          "date": "2024-06",
+          "population": 87453,
+          "capacity": 89100
+        },
+        {
+          "date": "2024-12",
+          "population": 85372,
+          "capacity": 89464
+        },
+        {
+          "date": "2025-01",
+          "population": 86358,
+          "capacity": 89464
+        },
+        {
+          "date": "2025-02",
+          "population": 86961,
+          "capacity": 89464
+        },
+        {
+          "date": "2025-03",
+          "population": 87919,
+          "capacity": 89464
+        },
+        {
+          "date": "2025-04",
+          "population": 88142,
+          "capacity": 89464
+        },
+        {
+          "date": "2025-05",
+          "population": 87603,
+          "capacity": 89464
+        },
+        {
+          "date": "2025-06",
+          "population": 87334,
+          "capacity": 89464
+        },
+        {
+          "date": "2025-07",
+          "population": 88040,
+          "capacity": 89464
+        },
+        {
+          "date": "2025-08",
+          "population": 88423,
+          "capacity": 89464
+        },
+        {
+          "date": "2025-09",
+          "population": 87465,
+          "capacity": 89464
+        },
+        {
+          "date": "2025-10",
+          "population": 86430,
+          "capacity": 89464
+        },
+        {
+          "date": "2025-11",
+          "population": 87064,
+          "capacity": 89464
+        },
+        {
+          "date": "2025-12",
+          "population": 85613,
+          "capacity": 89464
+        }
+      ],
+      "currentCapacity": 89464,
+      "currentPopulation": 86596
+    }
+  },
+  "regional": {},
+  "metadata": {
+    "sources": [
+      {
+        "name": "Home Office",
+        "dataset": "Crime Outcomes in England and Wales, year ending March 2025",
+        "url": "https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-2024-to-2025",
+        "frequency": "annual"
+      },
+      {
+        "name": "Ministry of Justice",
+        "dataset": "Criminal Court Statistics Quarterly, Q3 2025",
+        "url": "https://www.gov.uk/government/statistics/criminal-court-statistics-quarterly-july-to-september-2025",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Ministry of Justice",
+        "dataset": "Prison Population Monthly Bulletin, December 2025",
+        "url": "https://www.gov.uk/government/collections/prison-population-statistics",
+        "frequency": "monthly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Crime in England and Wales (CSEW estimates)",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Charge rate is the percentage of police-recorded offences receiving a charge or summons outcome, from Home Office annual outcomes data. Court backlog is outstanding Crown Court cases from MOJ quarterly statistics. Prison population from MOJ monthly bulletins and quarterly snapshot publications. The justice funnel combines CSEW crime estimates, police recorded crime, Home Office outcomes data, and CPS prosecution statistics.",
+    "knownIssues": [
+      "Crime outcomes methodology changed in 2019 with new outcome categories.",
+      "CSEW was suspended during COVID-19 lockdowns \u2014 2020 estimates less reliable.",
+      "Court backlog figures include both new and reopened cases.",
+      "Prison population historical data points (pre-2024) are June snapshots from published annual figures."
+    ]
+  }
+}

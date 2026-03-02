@@ -1,0 +1,336 @@
+{
+  "topic": "education",
+  "lastUpdated": "2026-03-02",
+  "national": {
+    "absence": {
+      "timeSeries": [
+        {
+          "year": "2006-07",
+          "overallAbsencePct": 6.49,
+          "persistentAbsencePct": 19.33
+        },
+        {
+          "year": "2007-08",
+          "overallAbsencePct": 6.29,
+          "persistentAbsencePct": 18.48
+        },
+        {
+          "year": "2008-09",
+          "overallAbsencePct": 6.27,
+          "persistentAbsencePct": 18.49
+        },
+        {
+          "year": "2009-10",
+          "overallAbsencePct": 6.04,
+          "persistentAbsencePct": 17.43
+        },
+        {
+          "year": "2010-11",
+          "overallAbsencePct": 5.79,
+          "persistentAbsencePct": 16.25
+        },
+        {
+          "year": "2011-12",
+          "overallAbsencePct": 5.11,
+          "persistentAbsencePct": 13.51
+        },
+        {
+          "year": "2012-13",
+          "overallAbsencePct": 5.26,
+          "persistentAbsencePct": 13.64
+        },
+        {
+          "year": "2013-14",
+          "overallAbsencePct": 4.51,
+          "persistentAbsencePct": 10.67
+        },
+        {
+          "year": "2014-15",
+          "overallAbsencePct": 4.62,
+          "persistentAbsencePct": 10.96
+        },
+        {
+          "year": "2015-16",
+          "overallAbsencePct": 4.57,
+          "persistentAbsencePct": 10.5
+        },
+        {
+          "year": "2016-17",
+          "overallAbsencePct": 4.65,
+          "persistentAbsencePct": 10.79
+        },
+        {
+          "year": "2017-18",
+          "overallAbsencePct": 4.81,
+          "persistentAbsencePct": 11.17
+        },
+        {
+          "year": "2018-19",
+          "overallAbsencePct": 4.73,
+          "persistentAbsencePct": 10.86
+        },
+        {
+          "year": "2020-21",
+          "overallAbsencePct": 4.62,
+          "persistentAbsencePct": 12.08
+        },
+        {
+          "year": "2021-22",
+          "overallAbsencePct": 7.55,
+          "persistentAbsencePct": 22.51
+        },
+        {
+          "year": "2022-23",
+          "overallAbsencePct": 7.37,
+          "persistentAbsencePct": 21.22
+        },
+        {
+          "year": "2023-24",
+          "overallAbsencePct": 7.15,
+          "persistentAbsencePct": 19.95
+        }
+      ]
+    },
+    "send": {
+      "ehcpCaseload": [
+        {
+          "year": 2015,
+          "total": 240183
+        },
+        {
+          "year": 2016,
+          "total": 256720
+        },
+        {
+          "year": 2017,
+          "total": 282327
+        },
+        {
+          "year": 2018,
+          "total": 319819
+        },
+        {
+          "year": 2019,
+          "total": 354000
+        },
+        {
+          "year": 2020,
+          "total": 390109
+        },
+        {
+          "year": 2021,
+          "total": 430697
+        },
+        {
+          "year": 2022,
+          "total": 473255
+        },
+        {
+          "year": 2023,
+          "total": 517048
+        },
+        {
+          "year": 2024,
+          "total": 576474
+        },
+        {
+          "year": 2025,
+          "total": 631895
+        }
+      ],
+      "timeliness": [
+        {
+          "year": 2014,
+          "withinWeeks20Pct": 61.5,
+          "newEhcps": 1359
+        },
+        {
+          "year": 2015,
+          "withinWeeks20Pct": 54.6,
+          "newEhcps": 24654
+        },
+        {
+          "year": 2016,
+          "withinWeeks20Pct": 55.7,
+          "newEhcps": 36094
+        },
+        {
+          "year": 2017,
+          "withinWeeks20Pct": 61.3,
+          "newEhcps": 42162
+        },
+        {
+          "year": 2018,
+          "withinWeeks20Pct": 58.0,
+          "newEhcps": 48907
+        },
+        {
+          "year": 2019,
+          "withinWeeks20Pct": 58.7,
+          "newEhcps": 53899
+        },
+        {
+          "year": 2020,
+          "withinWeeks20Pct": 55.6,
+          "newEhcps": 60097
+        },
+        {
+          "year": 2021,
+          "withinWeeks20Pct": 57.9,
+          "newEhcps": 62180
+        },
+        {
+          "year": 2022,
+          "withinWeeks20Pct": 47.7,
+          "newEhcps": 68665
+        },
+        {
+          "year": 2023,
+          "withinWeeks20Pct": 49.1,
+          "newEhcps": 85924
+        }
+      ]
+    },
+    "attainment": {
+      "gapIndex": [
+        {
+          "year": "2010-11",
+          "index": 4.07
+        },
+        {
+          "year": "2011-12",
+          "index": 3.89
+        },
+        {
+          "year": "2012-13",
+          "index": 3.8
+        },
+        {
+          "year": "2013-14",
+          "index": 3.74
+        },
+        {
+          "year": "2014-15",
+          "index": 3.79
+        },
+        {
+          "year": "2015-16",
+          "index": 3.78
+        },
+        {
+          "year": "2016-17",
+          "index": 3.66
+        },
+        {
+          "year": "2017-18",
+          "index": 3.68
+        },
+        {
+          "year": "2018-19",
+          "index": 3.7
+        },
+        {
+          "year": "2019-20",
+          "index": 3.66
+        },
+        {
+          "year": "2020-21",
+          "index": 3.79
+        },
+        {
+          "year": "2021-22",
+          "index": 3.84
+        },
+        {
+          "year": "2022-23",
+          "index": 3.94
+        },
+        {
+          "year": "2023-24",
+          "index": 3.93
+        },
+        {
+          "year": "2024-25",
+          "index": 3.92
+        }
+      ],
+      "attainment8": [
+        {
+          "year": "2018-19",
+          "disadvantagedAtt8": 36.7,
+          "otherAtt8": 50.3,
+          "disadvantagedGrade5Pct": 24.7,
+          "otherGrade5Pct": 49.9,
+          "disadvantagedGrade4Pct": 44.7,
+          "otherGrade4Pct": 71.8
+        },
+        {
+          "year": "2019-20",
+          "disadvantagedAtt8": 40.2,
+          "otherAtt8": 53.7,
+          "disadvantagedGrade5Pct": 30.4,
+          "otherGrade5Pct": 56.8,
+          "disadvantagedGrade4Pct": 52.5,
+          "otherGrade4Pct": 77.8
+        },
+        {
+          "year": "2020-21",
+          "disadvantagedAtt8": 40.3,
+          "otherAtt8": 54.7,
+          "disadvantagedGrade5Pct": 31.7,
+          "otherGrade5Pct": 59.2,
+          "disadvantagedGrade4Pct": 53.1,
+          "otherGrade4Pct": 79.0
+        },
+        {
+          "year": "2021-22",
+          "disadvantagedAtt8": 37.6,
+          "otherAtt8": 52.8,
+          "disadvantagedGrade5Pct": 29.6,
+          "otherGrade5Pct": 57.0,
+          "disadvantagedGrade4Pct": 48.4,
+          "otherGrade4Pct": 76.1
+        },
+        {
+          "year": "2022-23",
+          "disadvantagedAtt8": 35.0,
+          "otherAtt8": 50.3,
+          "disadvantagedGrade5Pct": 25.2,
+          "otherGrade5Pct": 52.4,
+          "disadvantagedGrade4Pct": 43.4,
+          "otherGrade4Pct": 72.8
+        }
+      ]
+    }
+  },
+  "regional": {},
+  "metadata": {
+    "sources": [
+      {
+        "name": "Department for Education",
+        "dataset": "Pupil absence in schools in England, 2023/24",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Education",
+        "dataset": "Key stage 4 performance, 2024/25",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Education",
+        "dataset": "Education, health and care plans, 2025",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Persistent absence defined as missing 10%+ of possible sessions. Disadvantage gap index is a composite measure of the attainment gap between disadvantaged pupils (FSM-eligible in past 6 years or looked-after) and all other pupils at Key Stage 4. Attainment 8 measures average achievement across 8 GCSE-level qualifications. EHCP timeliness measures the percentage of new plans issued within the 20-week statutory deadline. EHCP caseload is the total maintained EHCPs from the annual SEN2 return (January census).",
+    "knownIssues": [
+      "2019/20 and 2020/21 KS4 results based on centre/teacher assessed grades due to COVID-19.",
+      "2020/21 absence data unreliable due to partial school closures and different attendance patterns.",
+      "EHCP data collection method changed in 2023 from aggregate to person-level returns.",
+      "Persistent absence definition changed in 2015/16 from 15% to 10% threshold."
+    ]
+  }
+}

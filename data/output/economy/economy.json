@@ -1,0 +1,6096 @@
+{
+  "topic": "economy",
+  "lastUpdated": "2026-03-02",
+  "national": {
+    "inflation": {
+      "timeSeries": [
+        {
+          "date": "2010-01",
+          "cpiPct": 3.5
+        },
+        {
+          "date": "2010-02",
+          "cpiPct": 3.0
+        },
+        {
+          "date": "2010-03",
+          "cpiPct": 3.4
+        },
+        {
+          "date": "2010-04",
+          "cpiPct": 3.7
+        },
+        {
+          "date": "2010-05",
+          "cpiPct": 3.4
+        },
+        {
+          "date": "2010-06",
+          "cpiPct": 3.2
+        },
+        {
+          "date": "2010-07",
+          "cpiPct": 3.1
+        },
+        {
+          "date": "2010-08",
+          "cpiPct": 3.1
+        },
+        {
+          "date": "2010-09",
+          "cpiPct": 3.1
+        },
+        {
+          "date": "2010-10",
+          "cpiPct": 3.2
+        },
+        {
+          "date": "2010-11",
+          "cpiPct": 3.3
+        },
+        {
+          "date": "2010-12",
+          "cpiPct": 3.7
+        },
+        {
+          "date": "2011-01",
+          "cpiPct": 4.0
+        },
+        {
+          "date": "2011-02",
+          "cpiPct": 4.4
+        },
+        {
+          "date": "2011-03",
+          "cpiPct": 4.0
+        },
+        {
+          "date": "2011-04",
+          "cpiPct": 4.5
+        },
+        {
+          "date": "2011-05",
+          "cpiPct": 4.5
+        },
+        {
+          "date": "2011-06",
+          "cpiPct": 4.2
+        },
+        {
+          "date": "2011-07",
+          "cpiPct": 4.4
+        },
+        {
+          "date": "2011-08",
+          "cpiPct": 4.5
+        },
+        {
+          "date": "2011-09",
+          "cpiPct": 5.2
+        },
+        {
+          "date": "2011-10",
+          "cpiPct": 5.0
+        },
+        {
+          "date": "2011-11",
+          "cpiPct": 4.8
+        },
+        {
+          "date": "2011-12",
+          "cpiPct": 4.2
+        },
+        {
+          "date": "2012-01",
+          "cpiPct": 3.6
+        },
+        {
+          "date": "2012-02",
+          "cpiPct": 3.4
+        },
+        {
+          "date": "2012-03",
+          "cpiPct": 3.5
+        },
+        {
+          "date": "2012-04",
+          "cpiPct": 3.0
+        },
+        {
+          "date": "2012-05",
+          "cpiPct": 2.8
+        },
+        {
+          "date": "2012-06",
+          "cpiPct": 2.4
+        },
+        {
+          "date": "2012-07",
+          "cpiPct": 2.6
+        },
+        {
+          "date": "2012-08",
+          "cpiPct": 2.5
+        },
+        {
+          "date": "2012-09",
+          "cpiPct": 2.2
+        },
+        {
+          "date": "2012-10",
+          "cpiPct": 2.7
+        },
+        {
+          "date": "2012-11",
+          "cpiPct": 2.7
+        },
+        {
+          "date": "2012-12",
+          "cpiPct": 2.7
+        },
+        {
+          "date": "2013-01",
+          "cpiPct": 2.7
+        },
+        {
+          "date": "2013-02",
+          "cpiPct": 2.8
+        },
+        {
+          "date": "2013-03",
+          "cpiPct": 2.8
+        },
+        {
+          "date": "2013-04",
+          "cpiPct": 2.4
+        },
+        {
+          "date": "2013-05",
+          "cpiPct": 2.7
+        },
+        {
+          "date": "2013-06",
+          "cpiPct": 2.9
+        },
+        {
+          "date": "2013-07",
+          "cpiPct": 2.8
+        },
+        {
+          "date": "2013-08",
+          "cpiPct": 2.7
+        },
+        {
+          "date": "2013-09",
+          "cpiPct": 2.7
+        },
+        {
+          "date": "2013-10",
+          "cpiPct": 2.2
+        },
+        {
+          "date": "2013-11",
+          "cpiPct": 2.1
+        },
+        {
+          "date": "2013-12",
+          "cpiPct": 2.0
+        },
+        {
+          "date": "2014-01",
+          "cpiPct": 1.9
+        },
+        {
+          "date": "2014-02",
+          "cpiPct": 1.7
+        },
+        {
+          "date": "2014-03",
+          "cpiPct": 1.6
+        },
+        {
+          "date": "2014-04",
+          "cpiPct": 1.8
+        },
+        {
+          "date": "2014-05",
+          "cpiPct": 1.5
+        },
+        {
+          "date": "2014-06",
+          "cpiPct": 1.9
+        },
+        {
+          "date": "2014-07",
+          "cpiPct": 1.6
+        },
+        {
+          "date": "2014-08",
+          "cpiPct": 1.5
+        },
+        {
+          "date": "2014-09",
+          "cpiPct": 1.2
+        },
+        {
+          "date": "2014-10",
+          "cpiPct": 1.3
+        },
+        {
+          "date": "2014-11",
+          "cpiPct": 1.0
+        },
+        {
+          "date": "2014-12",
+          "cpiPct": 0.5
+        },
+        {
+          "date": "2015-01",
+          "cpiPct": 0.3
+        },
+        {
+          "date": "2015-02",
+          "cpiPct": 0.0
+        },
+        {
+          "date": "2015-03",
+          "cpiPct": 0.0
+        },
+        {
+          "date": "2015-04",
+          "cpiPct": -0.1
+        },
+        {
+          "date": "2015-05",
+          "cpiPct": 0.1
+        },
+        {
+          "date": "2015-06",
+          "cpiPct": 0.0
+        },
+        {
+          "date": "2015-07",
+          "cpiPct": 0.1
+        },
+        {
+          "date": "2015-08",
+          "cpiPct": 0.0
+        },
+        {
+          "date": "2015-09",
+          "cpiPct": -0.1
+        },
+        {
+          "date": "2015-10",
+          "cpiPct": -0.1
+        },
+        {
+          "date": "2015-11",
+          "cpiPct": 0.1
+        },
+        {
+          "date": "2015-12",
+          "cpiPct": 0.2
+        },
+        {
+          "date": "2016-01",
+          "cpiPct": 0.3
+        },
+        {
+          "date": "2016-02",
+          "cpiPct": 0.3
+        },
+        {
+          "date": "2016-03",
+          "cpiPct": 0.5
+        },
+        {
+          "date": "2016-04",
+          "cpiPct": 0.3
+        },
+        {
+          "date": "2016-05",
+          "cpiPct": 0.3
+        },
+        {
+          "date": "2016-06",
+          "cpiPct": 0.5
+        },
+        {
+          "date": "2016-07",
+          "cpiPct": 0.6
+        },
+        {
+          "date": "2016-08",
+          "cpiPct": 0.6
+        },
+        {
+          "date": "2016-09",
+          "cpiPct": 1.0
+        },
+        {
+          "date": "2016-10",
+          "cpiPct": 0.9
+        },
+        {
+          "date": "2016-11",
+          "cpiPct": 1.2
+        },
+        {
+          "date": "2016-12",
+          "cpiPct": 1.6
+        },
+        {
+          "date": "2017-01",
+          "cpiPct": 1.8
+        },
+        {
+          "date": "2017-02",
+          "cpiPct": 2.3
+        },
+        {
+          "date": "2017-03",
+          "cpiPct": 2.3
+        },
+        {
+          "date": "2017-04",
+          "cpiPct": 2.7
+        },
+        {
+          "date": "2017-05",
+          "cpiPct": 2.9
+        },
+        {
+          "date": "2017-06",
+          "cpiPct": 2.6
+        },
+        {
+          "date": "2017-07",
+          "cpiPct": 2.6
+        },
+        {
+          "date": "2017-08",
+          "cpiPct": 2.9
+        },
+        {
+          "date": "2017-09",
+          "cpiPct": 3.0
+        },
+        {
+          "date": "2017-10",
+          "cpiPct": 3.0
+        },
+        {
+          "date": "2017-11",
+          "cpiPct": 3.1
+        },
+        {
+          "date": "2017-12",
+          "cpiPct": 3.0
+        },
+        {
+          "date": "2018-01",
+          "cpiPct": 3.0
+        },
+        {
+          "date": "2018-02",
+          "cpiPct": 2.7
+        },
+        {
+          "date": "2018-03",
+          "cpiPct": 2.5
+        },
+        {
+          "date": "2018-04",
+          "cpiPct": 2.4
+        },
+        {
+          "date": "2018-05",
+          "cpiPct": 2.4
+        },
+        {
+          "date": "2018-06",
+          "cpiPct": 2.4
+        },
+        {
+          "date": "2018-07",
+          "cpiPct": 2.5
+        },
+        {
+          "date": "2018-08",
+          "cpiPct": 2.7
+        },
+        {
+          "date": "2018-09",
+          "cpiPct": 2.4
+        },
+        {
+          "date": "2018-10",
+          "cpiPct": 2.4
+        },
+        {
+          "date": "2018-11",
+          "cpiPct": 2.3
+        },
+        {
+          "date": "2018-12",
+          "cpiPct": 2.1
+        },
+        {
+          "date": "2019-01",
+          "cpiPct": 1.8
+        },
+        {
+          "date": "2019-02",
+          "cpiPct": 1.9
+        },
+        {
+          "date": "2019-03",
+          "cpiPct": 1.9
+        },
+        {
+          "date": "2019-04",
+          "cpiPct": 2.1
+        },
+        {
+          "date": "2019-05",
+          "cpiPct": 2.0
+        },
+        {
+          "date": "2019-06",
+          "cpiPct": 2.0
+        },
+        {
+          "date": "2019-07",
+          "cpiPct": 2.1
+        },
+        {
+          "date": "2019-08",
+          "cpiPct": 1.7
+        },
+        {
+          "date": "2019-09",
+          "cpiPct": 1.7
+        },
+        {
+          "date": "2019-10",
+          "cpiPct": 1.5
+        },
+        {
+          "date": "2019-11",
+          "cpiPct": 1.5
+        },
+        {
+          "date": "2019-12",
+          "cpiPct": 1.3
+        },
+        {
+          "date": "2020-01",
+          "cpiPct": 1.8
+        },
+        {
+          "date": "2020-02",
+          "cpiPct": 1.7
+        },
+        {
+          "date": "2020-03",
+          "cpiPct": 1.5
+        },
+        {
+          "date": "2020-04",
+          "cpiPct": 0.8
+        },
+        {
+          "date": "2020-05",
+          "cpiPct": 0.5
+        },
+        {
+          "date": "2020-06",
+          "cpiPct": 0.6
+        },
+        {
+          "date": "2020-07",
+          "cpiPct": 1.0
+        },
+        {
+          "date": "2020-08",
+          "cpiPct": 0.2
+        },
+        {
+          "date": "2020-09",
+          "cpiPct": 0.5
+        },
+        {
+          "date": "2020-10",
+          "cpiPct": 0.7
+        },
+        {
+          "date": "2020-11",
+          "cpiPct": 0.3
+        },
+        {
+          "date": "2020-12",
+          "cpiPct": 0.6
+        },
+        {
+          "date": "2021-01",
+          "cpiPct": 0.7
+        },
+        {
+          "date": "2021-02",
+          "cpiPct": 0.4
+        },
+        {
+          "date": "2021-03",
+          "cpiPct": 0.7
+        },
+        {
+          "date": "2021-04",
+          "cpiPct": 1.5
+        },
+        {
+          "date": "2021-05",
+          "cpiPct": 2.1
+        },
+        {
+          "date": "2021-06",
+          "cpiPct": 2.5
+        },
+        {
+          "date": "2021-07",
+          "cpiPct": 2.0
+        },
+        {
+          "date": "2021-08",
+          "cpiPct": 3.2
+        },
+        {
+          "date": "2021-09",
+          "cpiPct": 3.1
+        },
+        {
+          "date": "2021-10",
+          "cpiPct": 4.2
+        },
+        {
+          "date": "2021-11",
+          "cpiPct": 5.1
+        },
+        {
+          "date": "2021-12",
+          "cpiPct": 5.4
+        },
+        {
+          "date": "2022-01",
+          "cpiPct": 5.5
+        },
+        {
+          "date": "2022-02",
+          "cpiPct": 6.2
+        },
+        {
+          "date": "2022-03",
+          "cpiPct": 7.0
+        },
+        {
+          "date": "2022-04",
+          "cpiPct": 9.0
+        },
+        {
+          "date": "2022-05",
+          "cpiPct": 9.1
+        },
+        {
+          "date": "2022-06",
+          "cpiPct": 9.4
+        },
+        {
+          "date": "2022-07",
+          "cpiPct": 10.1
+        },
+        {
+          "date": "2022-08",
+          "cpiPct": 9.9
+        },
+        {
+          "date": "2022-09",
+          "cpiPct": 10.1
+        },
+        {
+          "date": "2022-10",
+          "cpiPct": 11.1
+        },
+        {
+          "date": "2022-11",
+          "cpiPct": 10.7
+        },
+        {
+          "date": "2022-12",
+          "cpiPct": 10.5
+        },
+        {
+          "date": "2023-01",
+          "cpiPct": 10.1
+        },
+        {
+          "date": "2023-02",
+          "cpiPct": 10.4
+        },
+        {
+          "date": "2023-03",
+          "cpiPct": 10.1
+        },
+        {
+          "date": "2023-04",
+          "cpiPct": 8.7
+        },
+        {
+          "date": "2023-05",
+          "cpiPct": 8.7
+        },
+        {
+          "date": "2023-06",
+          "cpiPct": 7.9
+        },
+        {
+          "date": "2023-07",
+          "cpiPct": 6.8
+        },
+        {
+          "date": "2023-08",
+          "cpiPct": 6.7
+        },
+        {
+          "date": "2023-09",
+          "cpiPct": 6.7
+        },
+        {
+          "date": "2023-10",
+          "cpiPct": 4.6
+        },
+        {
+          "date": "2023-11",
+          "cpiPct": 3.9
+        },
+        {
+          "date": "2023-12",
+          "cpiPct": 4.0
+        },
+        {
+          "date": "2024-01",
+          "cpiPct": 4.0
+        },
+        {
+          "date": "2024-02",
+          "cpiPct": 3.4
+        },
+        {
+          "date": "2024-03",
+          "cpiPct": 3.2
+        },
+        {
+          "date": "2024-04",
+          "cpiPct": 2.3
+        },
+        {
+          "date": "2024-05",
+          "cpiPct": 2.0
+        },
+        {
+          "date": "2024-06",
+          "cpiPct": 2.0
+        },
+        {
+          "date": "2024-07",
+          "cpiPct": 2.2
+        },
+        {
+          "date": "2024-08",
+          "cpiPct": 2.2
+        },
+        {
+          "date": "2024-09",
+          "cpiPct": 1.7
+        },
+        {
+          "date": "2024-10",
+          "cpiPct": 2.3
+        },
+        {
+          "date": "2024-11",
+          "cpiPct": 2.6
+        },
+        {
+          "date": "2024-12",
+          "cpiPct": 2.5
+        },
+        {
+          "date": "2025-01",
+          "cpiPct": 3.0
+        },
+        {
+          "date": "2025-02",
+          "cpiPct": 2.8
+        },
+        {
+          "date": "2025-03",
+          "cpiPct": 2.6
+        },
+        {
+          "date": "2025-04",
+          "cpiPct": 3.5
+        },
+        {
+          "date": "2025-05",
+          "cpiPct": 3.4
+        },
+        {
+          "date": "2025-06",
+          "cpiPct": 3.6
+        },
+        {
+          "date": "2025-07",
+          "cpiPct": 3.8
+        },
+        {
+          "date": "2025-08",
+          "cpiPct": 3.8
+        },
+        {
+          "date": "2025-09",
+          "cpiPct": 3.8
+        },
+        {
+          "date": "2025-10",
+          "cpiPct": 3.6
+        },
+        {
+          "date": "2025-11",
+          "cpiPct": 3.2
+        },
+        {
+          "date": "2025-12",
+          "cpiPct": 3.4
+        },
+        {
+          "date": "2026-01",
+          "cpiPct": 3.0
+        }
+      ]
+    },
+    "wages": {
+      "nominalTimeSeries": [
+        {
+          "date": "2000-01",
+          "weeklyGBP": 305.0
+        },
+        {
+          "date": "2000-02",
+          "weeklyGBP": 300.0
+        },
+        {
+          "date": "2000-03",
+          "weeklyGBP": 311.0
+        },
+        {
+          "date": "2000-04",
+          "weeklyGBP": 309.0
+        },
+        {
+          "date": "2000-05",
+          "weeklyGBP": 311.0
+        },
+        {
+          "date": "2000-06",
+          "weeklyGBP": 311.0
+        },
+        {
+          "date": "2000-07",
+          "weeklyGBP": 313.0
+        },
+        {
+          "date": "2000-08",
+          "weeklyGBP": 315.0
+        },
+        {
+          "date": "2000-09",
+          "weeklyGBP": 317.0
+        },
+        {
+          "date": "2000-10",
+          "weeklyGBP": 318.0
+        },
+        {
+          "date": "2000-11",
+          "weeklyGBP": 320.0
+        },
+        {
+          "date": "2000-12",
+          "weeklyGBP": 323.0
+        },
+        {
+          "date": "2001-01",
+          "weeklyGBP": 321.0
+        },
+        {
+          "date": "2001-02",
+          "weeklyGBP": 325.0
+        },
+        {
+          "date": "2001-03",
+          "weeklyGBP": 326.0
+        },
+        {
+          "date": "2001-04",
+          "weeklyGBP": 326.0
+        },
+        {
+          "date": "2001-05",
+          "weeklyGBP": 327.0
+        },
+        {
+          "date": "2001-06",
+          "weeklyGBP": 328.0
+        },
+        {
+          "date": "2001-07",
+          "weeklyGBP": 328.0
+        },
+        {
+          "date": "2001-08",
+          "weeklyGBP": 331.0
+        },
+        {
+          "date": "2001-09",
+          "weeklyGBP": 331.0
+        },
+        {
+          "date": "2001-10",
+          "weeklyGBP": 333.0
+        },
+        {
+          "date": "2001-11",
+          "weeklyGBP": 334.0
+        },
+        {
+          "date": "2001-12",
+          "weeklyGBP": 334.0
+        },
+        {
+          "date": "2002-01",
+          "weeklyGBP": 333.0
+        },
+        {
+          "date": "2002-02",
+          "weeklyGBP": 334.0
+        },
+        {
+          "date": "2002-03",
+          "weeklyGBP": 334.0
+        },
+        {
+          "date": "2002-04",
+          "weeklyGBP": 338.0
+        },
+        {
+          "date": "2002-05",
+          "weeklyGBP": 339.0
+        },
+        {
+          "date": "2002-06",
+          "weeklyGBP": 340.0
+        },
+        {
+          "date": "2002-07",
+          "weeklyGBP": 341.0
+        },
+        {
+          "date": "2002-08",
+          "weeklyGBP": 341.0
+        },
+        {
+          "date": "2002-09",
+          "weeklyGBP": 342.0
+        },
+        {
+          "date": "2002-10",
+          "weeklyGBP": 342.0
+        },
+        {
+          "date": "2002-11",
+          "weeklyGBP": 343.0
+        },
+        {
+          "date": "2002-12",
+          "weeklyGBP": 343.0
+        },
+        {
+          "date": "2003-01",
+          "weeklyGBP": 339.0
+        },
+        {
+          "date": "2003-02",
+          "weeklyGBP": 341.0
+        },
+        {
+          "date": "2003-03",
+          "weeklyGBP": 349.0
+        },
+        {
+          "date": "2003-04",
+          "weeklyGBP": 347.0
+        },
+        {
+          "date": "2003-05",
+          "weeklyGBP": 348.0
+        },
+        {
+          "date": "2003-06",
+          "weeklyGBP": 349.0
+        },
+        {
+          "date": "2003-07",
+          "weeklyGBP": 351.0
+        },
+        {
+          "date": "2003-08",
+          "weeklyGBP": 352.0
+        },
+        {
+          "date": "2003-09",
+          "weeklyGBP": 355.0
+        },
+        {
+          "date": "2003-10",
+          "weeklyGBP": 356.0
+        },
+        {
+          "date": "2003-11",
+          "weeklyGBP": 357.0
+        },
+        {
+          "date": "2003-12",
+          "weeklyGBP": 357.0
+        },
+        {
+          "date": "2004-01",
+          "weeklyGBP": 364.0
+        },
+        {
+          "date": "2004-02",
+          "weeklyGBP": 352.0
+        },
+        {
+          "date": "2004-03",
+          "weeklyGBP": 361.0
+        },
+        {
+          "date": "2004-04",
+          "weeklyGBP": 362.0
+        },
+        {
+          "date": "2004-05",
+          "weeklyGBP": 363.0
+        },
+        {
+          "date": "2004-06",
+          "weeklyGBP": 364.0
+        },
+        {
+          "date": "2004-07",
+          "weeklyGBP": 365.0
+        },
+        {
+          "date": "2004-08",
+          "weeklyGBP": 367.0
+        },
+        {
+          "date": "2004-09",
+          "weeklyGBP": 369.0
+        },
+        {
+          "date": "2004-10",
+          "weeklyGBP": 372.0
+        },
+        {
+          "date": "2004-11",
+          "weeklyGBP": 372.0
+        },
+        {
+          "date": "2004-12",
+          "weeklyGBP": 373.0
+        },
+        {
+          "date": "2005-01",
+          "weeklyGBP": 379.0
+        },
+        {
+          "date": "2005-02",
+          "weeklyGBP": 371.0
+        },
+        {
+          "date": "2005-03",
+          "weeklyGBP": 376.0
+        },
+        {
+          "date": "2005-04",
+          "weeklyGBP": 379.0
+        },
+        {
+          "date": "2005-05",
+          "weeklyGBP": 380.0
+        },
+        {
+          "date": "2005-06",
+          "weeklyGBP": 380.0
+        },
+        {
+          "date": "2005-07",
+          "weeklyGBP": 383.0
+        },
+        {
+          "date": "2005-08",
+          "weeklyGBP": 386.0
+        },
+        {
+          "date": "2005-09",
+          "weeklyGBP": 387.0
+        },
+        {
+          "date": "2005-10",
+          "weeklyGBP": 388.0
+        },
+        {
+          "date": "2005-11",
+          "weeklyGBP": 390.0
+        },
+        {
+          "date": "2005-12",
+          "weeklyGBP": 390.0
+        },
+        {
+          "date": "2006-01",
+          "weeklyGBP": 391.0
+        },
+        {
+          "date": "2006-02",
+          "weeklyGBP": 392.0
+        },
+        {
+          "date": "2006-03",
+          "weeklyGBP": 398.0
+        },
+        {
+          "date": "2006-04",
+          "weeklyGBP": 395.0
+        },
+        {
+          "date": "2006-05",
+          "weeklyGBP": 397.0
+        },
+        {
+          "date": "2006-06",
+          "weeklyGBP": 401.0
+        },
+        {
+          "date": "2006-07",
+          "weeklyGBP": 401.0
+        },
+        {
+          "date": "2006-08",
+          "weeklyGBP": 401.0
+        },
+        {
+          "date": "2006-09",
+          "weeklyGBP": 402.0
+        },
+        {
+          "date": "2006-10",
+          "weeklyGBP": 405.0
+        },
+        {
+          "date": "2006-11",
+          "weeklyGBP": 407.0
+        },
+        {
+          "date": "2006-12",
+          "weeklyGBP": 412.0
+        },
+        {
+          "date": "2007-01",
+          "weeklyGBP": 415.0
+        },
+        {
+          "date": "2007-02",
+          "weeklyGBP": 419.0
+        },
+        {
+          "date": "2007-03",
+          "weeklyGBP": 416.0
+        },
+        {
+          "date": "2007-04",
+          "weeklyGBP": 412.0
+        },
+        {
+          "date": "2007-05",
+          "weeklyGBP": 416.0
+        },
+        {
+          "date": "2007-06",
+          "weeklyGBP": 418.0
+        },
+        {
+          "date": "2007-07",
+          "weeklyGBP": 420.0
+        },
+        {
+          "date": "2007-08",
+          "weeklyGBP": 422.0
+        },
+        {
+          "date": "2007-09",
+          "weeklyGBP": 424.0
+        },
+        {
+          "date": "2007-10",
+          "weeklyGBP": 423.0
+        },
+        {
+          "date": "2007-11",
+          "weeklyGBP": 426.0
+        },
+        {
+          "date": "2007-12",
+          "weeklyGBP": 426.0
+        },
+        {
+          "date": "2008-01",
+          "weeklyGBP": 429.0
+        },
+        {
+          "date": "2008-02",
+          "weeklyGBP": 435.0
+        },
+        {
+          "date": "2008-03",
+          "weeklyGBP": 437.0
+        },
+        {
+          "date": "2008-04",
+          "weeklyGBP": 432.0
+        },
+        {
+          "date": "2008-05",
+          "weeklyGBP": 434.0
+        },
+        {
+          "date": "2008-06",
+          "weeklyGBP": 433.0
+        },
+        {
+          "date": "2008-07",
+          "weeklyGBP": 435.0
+        },
+        {
+          "date": "2008-08",
+          "weeklyGBP": 435.0
+        },
+        {
+          "date": "2008-09",
+          "weeklyGBP": 435.0
+        },
+        {
+          "date": "2008-10",
+          "weeklyGBP": 437.0
+        },
+        {
+          "date": "2008-11",
+          "weeklyGBP": 436.0
+        },
+        {
+          "date": "2008-12",
+          "weeklyGBP": 436.0
+        },
+        {
+          "date": "2009-01",
+          "weeklyGBP": 421.0
+        },
+        {
+          "date": "2009-02",
+          "weeklyGBP": 409.0
+        },
+        {
+          "date": "2009-03",
+          "weeklyGBP": 433.0
+        },
+        {
+          "date": "2009-04",
+          "weeklyGBP": 438.0
+        },
+        {
+          "date": "2009-05",
+          "weeklyGBP": 437.0
+        },
+        {
+          "date": "2009-06",
+          "weeklyGBP": 438.0
+        },
+        {
+          "date": "2009-07",
+          "weeklyGBP": 437.0
+        },
+        {
+          "date": "2009-08",
+          "weeklyGBP": 438.0
+        },
+        {
+          "date": "2009-09",
+          "weeklyGBP": 439.0
+        },
+        {
+          "date": "2009-10",
+          "weeklyGBP": 439.0
+        },
+        {
+          "date": "2009-11",
+          "weeklyGBP": 440.0
+        },
+        {
+          "date": "2009-12",
+          "weeklyGBP": 440.0
+        },
+        {
+          "date": "2010-01",
+          "weeklyGBP": 439.0
+        },
+        {
+          "date": "2010-02",
+          "weeklyGBP": 446.0
+        },
+        {
+          "date": "2010-03",
+          "weeklyGBP": 441.0
+        },
+        {
+          "date": "2010-04",
+          "weeklyGBP": 442.0
+        },
+        {
+          "date": "2010-05",
+          "weeklyGBP": 443.0
+        },
+        {
+          "date": "2010-06",
+          "weeklyGBP": 442.0
+        },
+        {
+          "date": "2010-07",
+          "weeklyGBP": 443.0
+        },
+        {
+          "date": "2010-08",
+          "weeklyGBP": 445.0
+        },
+        {
+          "date": "2010-09",
+          "weeklyGBP": 446.0
+        },
+        {
+          "date": "2010-10",
+          "weeklyGBP": 447.0
+        },
+        {
+          "date": "2010-11",
+          "weeklyGBP": 448.0
+        },
+        {
+          "date": "2010-12",
+          "weeklyGBP": 449.0
+        },
+        {
+          "date": "2011-01",
+          "weeklyGBP": 458.0
+        },
+        {
+          "date": "2011-02",
+          "weeklyGBP": 453.0
+        },
+        {
+          "date": "2011-03",
+          "weeklyGBP": 453.0
+        },
+        {
+          "date": "2011-04",
+          "weeklyGBP": 451.0
+        },
+        {
+          "date": "2011-05",
+          "weeklyGBP": 453.0
+        },
+        {
+          "date": "2011-06",
+          "weeklyGBP": 456.0
+        },
+        {
+          "date": "2011-07",
+          "weeklyGBP": 456.0
+        },
+        {
+          "date": "2011-08",
+          "weeklyGBP": 454.0
+        },
+        {
+          "date": "2011-09",
+          "weeklyGBP": 454.0
+        },
+        {
+          "date": "2011-10",
+          "weeklyGBP": 456.0
+        },
+        {
+          "date": "2011-11",
+          "weeklyGBP": 457.0
+        },
+        {
+          "date": "2011-12",
+          "weeklyGBP": 457.0
+        },
+        {
+          "date": "2012-01",
+          "weeklyGBP": 457.0
+        },
+        {
+          "date": "2012-02",
+          "weeklyGBP": 457.0
+        },
+        {
+          "date": "2012-03",
+          "weeklyGBP": 457.0
+        },
+        {
+          "date": "2012-04",
+          "weeklyGBP": 460.0
+        },
+        {
+          "date": "2012-05",
+          "weeklyGBP": 460.0
+        },
+        {
+          "date": "2012-06",
+          "weeklyGBP": 461.0
+        },
+        {
+          "date": "2012-07",
+          "weeklyGBP": 463.0
+        },
+        {
+          "date": "2012-08",
+          "weeklyGBP": 464.0
+        },
+        {
+          "date": "2012-09",
+          "weeklyGBP": 462.0
+        },
+        {
+          "date": "2012-10",
+          "weeklyGBP": 462.0
+        },
+        {
+          "date": "2012-11",
+          "weeklyGBP": 463.0
+        },
+        {
+          "date": "2012-12",
+          "weeklyGBP": 461.0
+        },
+        {
+          "date": "2013-01",
+          "weeklyGBP": 462.0
+        },
+        {
+          "date": "2013-02",
+          "weeklyGBP": 462.0
+        },
+        {
+          "date": "2013-03",
+          "weeklyGBP": 454.0
+        },
+        {
+          "date": "2013-04",
+          "weeklyGBP": 478.0
+        },
+        {
+          "date": "2013-05",
+          "weeklyGBP": 468.0
+        },
+        {
+          "date": "2013-06",
+          "weeklyGBP": 466.0
+        },
+        {
+          "date": "2013-07",
+          "weeklyGBP": 466.0
+        },
+        {
+          "date": "2013-08",
+          "weeklyGBP": 466.0
+        },
+        {
+          "date": "2013-09",
+          "weeklyGBP": 466.0
+        },
+        {
+          "date": "2013-10",
+          "weeklyGBP": 466.0
+        },
+        {
+          "date": "2013-11",
+          "weeklyGBP": 466.0
+        },
+        {
+          "date": "2013-12",
+          "weeklyGBP": 468.0
+        },
+        {
+          "date": "2014-01",
+          "weeklyGBP": 469.0
+        },
+        {
+          "date": "2014-02",
+          "weeklyGBP": 472.0
+        },
+        {
+          "date": "2014-03",
+          "weeklyGBP": 461.0
+        },
+        {
+          "date": "2014-04",
+          "weeklyGBP": 469.0
+        },
+        {
+          "date": "2014-05",
+          "weeklyGBP": 469.0
+        },
+        {
+          "date": "2014-06",
+          "weeklyGBP": 470.0
+        },
+        {
+          "date": "2014-07",
+          "weeklyGBP": 468.0
+        },
+        {
+          "date": "2014-08",
+          "weeklyGBP": 469.0
+        },
+        {
+          "date": "2014-09",
+          "weeklyGBP": 473.0
+        },
+        {
+          "date": "2014-10",
+          "weeklyGBP": 475.0
+        },
+        {
+          "date": "2014-11",
+          "weeklyGBP": 475.0
+        },
+        {
+          "date": "2014-12",
+          "weeklyGBP": 478.0
+        },
+        {
+          "date": "2015-01",
+          "weeklyGBP": 476.0
+        },
+        {
+          "date": "2015-02",
+          "weeklyGBP": 478.0
+        },
+        {
+          "date": "2015-03",
+          "weeklyGBP": 480.0
+        },
+        {
+          "date": "2015-04",
+          "weeklyGBP": 481.0
+        },
+        {
+          "date": "2015-05",
+          "weeklyGBP": 482.0
+        },
+        {
+          "date": "2015-06",
+          "weeklyGBP": 481.0
+        },
+        {
+          "date": "2015-07",
+          "weeklyGBP": 484.0
+        },
+        {
+          "date": "2015-08",
+          "weeklyGBP": 484.0
+        },
+        {
+          "date": "2015-09",
+          "weeklyGBP": 483.0
+        },
+        {
+          "date": "2015-10",
+          "weeklyGBP": 484.0
+        },
+        {
+          "date": "2015-11",
+          "weeklyGBP": 484.0
+        },
+        {
+          "date": "2015-12",
+          "weeklyGBP": 487.0
+        },
+        {
+          "date": "2016-01",
+          "weeklyGBP": 489.0
+        },
+        {
+          "date": "2016-02",
+          "weeklyGBP": 486.0
+        },
+        {
+          "date": "2016-03",
+          "weeklyGBP": 490.0
+        },
+        {
+          "date": "2016-04",
+          "weeklyGBP": 495.0
+        },
+        {
+          "date": "2016-05",
+          "weeklyGBP": 493.0
+        },
+        {
+          "date": "2016-06",
+          "weeklyGBP": 493.0
+        },
+        {
+          "date": "2016-07",
+          "weeklyGBP": 496.0
+        },
+        {
+          "date": "2016-08",
+          "weeklyGBP": 494.0
+        },
+        {
+          "date": "2016-09",
+          "weeklyGBP": 495.0
+        },
+        {
+          "date": "2016-10",
+          "weeklyGBP": 497.0
+        },
+        {
+          "date": "2016-11",
+          "weeklyGBP": 498.0
+        },
+        {
+          "date": "2016-12",
+          "weeklyGBP": 496.0
+        },
+        {
+          "date": "2017-01",
+          "weeklyGBP": 497.0
+        },
+        {
+          "date": "2017-02",
+          "weeklyGBP": 499.0
+        },
+        {
+          "date": "2017-03",
+          "weeklyGBP": 501.0
+        },
+        {
+          "date": "2017-04",
+          "weeklyGBP": 502.0
+        },
+        {
+          "date": "2017-05",
+          "weeklyGBP": 503.0
+        },
+        {
+          "date": "2017-06",
+          "weeklyGBP": 508.0
+        },
+        {
+          "date": "2017-07",
+          "weeklyGBP": 504.0
+        },
+        {
+          "date": "2017-08",
+          "weeklyGBP": 507.0
+        },
+        {
+          "date": "2017-09",
+          "weeklyGBP": 509.0
+        },
+        {
+          "date": "2017-10",
+          "weeklyGBP": 509.0
+        },
+        {
+          "date": "2017-11",
+          "weeklyGBP": 510.0
+        },
+        {
+          "date": "2017-12",
+          "weeklyGBP": 512.0
+        },
+        {
+          "date": "2018-01",
+          "weeklyGBP": 510.0
+        },
+        {
+          "date": "2018-02",
+          "weeklyGBP": 513.0
+        },
+        {
+          "date": "2018-03",
+          "weeklyGBP": 513.0
+        },
+        {
+          "date": "2018-04",
+          "weeklyGBP": 515.0
+        },
+        {
+          "date": "2018-05",
+          "weeklyGBP": 516.0
+        },
+        {
+          "date": "2018-06",
+          "weeklyGBP": 519.0
+        },
+        {
+          "date": "2018-07",
+          "weeklyGBP": 521.0
+        },
+        {
+          "date": "2018-08",
+          "weeklyGBP": 523.0
+        },
+        {
+          "date": "2018-09",
+          "weeklyGBP": 523.0
+        },
+        {
+          "date": "2018-10",
+          "weeklyGBP": 530.0
+        },
+        {
+          "date": "2018-11",
+          "weeklyGBP": 526.0
+        },
+        {
+          "date": "2018-12",
+          "weeklyGBP": 528.0
+        },
+        {
+          "date": "2019-01",
+          "weeklyGBP": 530.0
+        },
+        {
+          "date": "2019-02",
+          "weeklyGBP": 532.0
+        },
+        {
+          "date": "2019-03",
+          "weeklyGBP": 525.0
+        },
+        {
+          "date": "2019-04",
+          "weeklyGBP": 534.0
+        },
+        {
+          "date": "2019-05",
+          "weeklyGBP": 537.0
+        },
+        {
+          "date": "2019-06",
+          "weeklyGBP": 540.0
+        },
+        {
+          "date": "2019-07",
+          "weeklyGBP": 542.0
+        },
+        {
+          "date": "2019-08",
+          "weeklyGBP": 541.0
+        },
+        {
+          "date": "2019-09",
+          "weeklyGBP": 544.0
+        },
+        {
+          "date": "2019-10",
+          "weeklyGBP": 543.0
+        },
+        {
+          "date": "2019-11",
+          "weeklyGBP": 543.0
+        },
+        {
+          "date": "2019-12",
+          "weeklyGBP": 542.0
+        },
+        {
+          "date": "2020-01",
+          "weeklyGBP": 546.0
+        },
+        {
+          "date": "2020-02",
+          "weeklyGBP": 547.0
+        },
+        {
+          "date": "2020-03",
+          "weeklyGBP": 529.0
+        },
+        {
+          "date": "2020-04",
+          "weeklyGBP": 529.0
+        },
+        {
+          "date": "2020-05",
+          "weeklyGBP": 532.0
+        },
+        {
+          "date": "2020-06",
+          "weeklyGBP": 532.0
+        },
+        {
+          "date": "2020-07",
+          "weeklyGBP": 541.0
+        },
+        {
+          "date": "2020-08",
+          "weeklyGBP": 552.0
+        },
+        {
+          "date": "2020-09",
+          "weeklyGBP": 558.0
+        },
+        {
+          "date": "2020-10",
+          "weeklyGBP": 563.0
+        },
+        {
+          "date": "2020-11",
+          "weeklyGBP": 568.0
+        },
+        {
+          "date": "2020-12",
+          "weeklyGBP": 570.0
+        },
+        {
+          "date": "2021-01",
+          "weeklyGBP": 570.0
+        },
+        {
+          "date": "2021-02",
+          "weeklyGBP": 569.0
+        },
+        {
+          "date": "2021-03",
+          "weeklyGBP": 551.0
+        },
+        {
+          "date": "2021-04",
+          "weeklyGBP": 576.0
+        },
+        {
+          "date": "2021-05",
+          "weeklyGBP": 582.0
+        },
+        {
+          "date": "2021-06",
+          "weeklyGBP": 577.0
+        },
+        {
+          "date": "2021-07",
+          "weeklyGBP": 580.0
+        },
+        {
+          "date": "2021-08",
+          "weeklyGBP": 584.0
+        },
+        {
+          "date": "2021-09",
+          "weeklyGBP": 585.0
+        },
+        {
+          "date": "2021-10",
+          "weeklyGBP": 589.0
+        },
+        {
+          "date": "2021-11",
+          "weeklyGBP": 590.0
+        },
+        {
+          "date": "2021-12",
+          "weeklyGBP": 606.0
+        },
+        {
+          "date": "2022-01",
+          "weeklyGBP": 602.0
+        },
+        {
+          "date": "2022-02",
+          "weeklyGBP": 603.0
+        },
+        {
+          "date": "2022-03",
+          "weeklyGBP": 608.0
+        },
+        {
+          "date": "2022-04",
+          "weeklyGBP": 606.0
+        },
+        {
+          "date": "2022-05",
+          "weeklyGBP": 607.0
+        },
+        {
+          "date": "2022-06",
+          "weeklyGBP": 614.0
+        },
+        {
+          "date": "2022-07",
+          "weeklyGBP": 614.0
+        },
+        {
+          "date": "2022-08",
+          "weeklyGBP": 620.0
+        },
+        {
+          "date": "2022-09",
+          "weeklyGBP": 619.0
+        },
+        {
+          "date": "2022-10",
+          "weeklyGBP": 628.0
+        },
+        {
+          "date": "2022-11",
+          "weeklyGBP": 633.0
+        },
+        {
+          "date": "2022-12",
+          "weeklyGBP": 635.0
+        },
+        {
+          "date": "2023-01",
+          "weeklyGBP": 639.0
+        },
+        {
+          "date": "2023-02",
+          "weeklyGBP": 643.0
+        },
+        {
+          "date": "2023-03",
+          "weeklyGBP": 644.0
+        },
+        {
+          "date": "2023-04",
+          "weeklyGBP": 652.0
+        },
+        {
+          "date": "2023-05",
+          "weeklyGBP": 655.0
+        },
+        {
+          "date": "2023-06",
+          "weeklyGBP": 670.0
+        },
+        {
+          "date": "2023-07",
+          "weeklyGBP": 665.0
+        },
+        {
+          "date": "2023-08",
+          "weeklyGBP": 665.0
+        },
+        {
+          "date": "2023-09",
+          "weeklyGBP": 670.0
+        },
+        {
+          "date": "2023-10",
+          "weeklyGBP": 665.0
+        },
+        {
+          "date": "2023-11",
+          "weeklyGBP": 670.0
+        },
+        {
+          "date": "2023-12",
+          "weeklyGBP": 672.0
+        },
+        {
+          "date": "2024-01",
+          "weeklyGBP": 676.0
+        },
+        {
+          "date": "2024-02",
+          "weeklyGBP": 680.0
+        },
+        {
+          "date": "2024-03",
+          "weeklyGBP": 684.0
+        },
+        {
+          "date": "2024-04",
+          "weeklyGBP": 688.0
+        },
+        {
+          "date": "2024-05",
+          "weeklyGBP": 691.0
+        },
+        {
+          "date": "2024-06",
+          "weeklyGBP": 692.0
+        },
+        {
+          "date": "2024-07",
+          "weeklyGBP": 693.0
+        },
+        {
+          "date": "2024-08",
+          "weeklyGBP": 697.0
+        },
+        {
+          "date": "2024-09",
+          "weeklyGBP": 704.0
+        },
+        {
+          "date": "2024-10",
+          "weeklyGBP": 705.0
+        },
+        {
+          "date": "2024-11",
+          "weeklyGBP": 707.0
+        },
+        {
+          "date": "2024-12",
+          "weeklyGBP": 713.0
+        },
+        {
+          "date": "2025-01",
+          "weeklyGBP": 711.0
+        },
+        {
+          "date": "2025-02",
+          "weeklyGBP": 718.0
+        },
+        {
+          "date": "2025-03",
+          "weeklyGBP": 725.0
+        },
+        {
+          "date": "2025-04",
+          "weeklyGBP": 720.0
+        },
+        {
+          "date": "2025-05",
+          "weeklyGBP": 723.0
+        },
+        {
+          "date": "2025-06",
+          "weeklyGBP": 725.0
+        },
+        {
+          "date": "2025-07",
+          "weeklyGBP": 728.0
+        },
+        {
+          "date": "2025-08",
+          "weeklyGBP": 733.0
+        },
+        {
+          "date": "2025-09",
+          "weeklyGBP": 734.0
+        },
+        {
+          "date": "2025-10",
+          "weeklyGBP": 740.0
+        },
+        {
+          "date": "2025-11",
+          "weeklyGBP": 740.0
+        },
+        {
+          "date": "2025-12",
+          "weeklyGBP": 735.0
+        }
+      ],
+      "realTimeSeries": [
+        {
+          "date": "2000-01",
+          "weeklyGBP": 420.0
+        },
+        {
+          "date": "2000-02",
+          "weeklyGBP": 411.0
+        },
+        {
+          "date": "2000-03",
+          "weeklyGBP": 425.0
+        },
+        {
+          "date": "2000-04",
+          "weeklyGBP": 423.0
+        },
+        {
+          "date": "2000-05",
+          "weeklyGBP": 426.0
+        },
+        {
+          "date": "2000-06",
+          "weeklyGBP": 425.0
+        },
+        {
+          "date": "2000-07",
+          "weeklyGBP": 427.0
+        },
+        {
+          "date": "2000-08",
+          "weeklyGBP": 430.0
+        },
+        {
+          "date": "2000-09",
+          "weeklyGBP": 431.0
+        },
+        {
+          "date": "2000-10",
+          "weeklyGBP": 431.0
+        },
+        {
+          "date": "2000-11",
+          "weeklyGBP": 433.0
+        },
+        {
+          "date": "2000-12",
+          "weeklyGBP": 438.0
+        },
+        {
+          "date": "2001-01",
+          "weeklyGBP": 438.0
+        },
+        {
+          "date": "2001-02",
+          "weeklyGBP": 441.0
+        },
+        {
+          "date": "2001-03",
+          "weeklyGBP": 440.0
+        },
+        {
+          "date": "2001-04",
+          "weeklyGBP": 441.0
+        },
+        {
+          "date": "2001-05",
+          "weeklyGBP": 439.0
+        },
+        {
+          "date": "2001-06",
+          "weeklyGBP": 440.0
+        },
+        {
+          "date": "2001-07",
+          "weeklyGBP": 441.0
+        },
+        {
+          "date": "2001-08",
+          "weeklyGBP": 443.0
+        },
+        {
+          "date": "2001-09",
+          "weeklyGBP": 443.0
+        },
+        {
+          "date": "2001-10",
+          "weeklyGBP": 445.0
+        },
+        {
+          "date": "2001-11",
+          "weeklyGBP": 446.0
+        },
+        {
+          "date": "2001-12",
+          "weeklyGBP": 447.0
+        },
+        {
+          "date": "2002-01",
+          "weeklyGBP": 445.0
+        },
+        {
+          "date": "2002-02",
+          "weeklyGBP": 446.0
+        },
+        {
+          "date": "2002-03",
+          "weeklyGBP": 443.0
+        },
+        {
+          "date": "2002-04",
+          "weeklyGBP": 449.0
+        },
+        {
+          "date": "2002-05",
+          "weeklyGBP": 449.0
+        },
+        {
+          "date": "2002-06",
+          "weeklyGBP": 451.0
+        },
+        {
+          "date": "2002-07",
+          "weeklyGBP": 452.0
+        },
+        {
+          "date": "2002-08",
+          "weeklyGBP": 451.0
+        },
+        {
+          "date": "2002-09",
+          "weeklyGBP": 451.0
+        },
+        {
+          "date": "2002-10",
+          "weeklyGBP": 451.0
+        },
+        {
+          "date": "2002-11",
+          "weeklyGBP": 452.0
+        },
+        {
+          "date": "2002-12",
+          "weeklyGBP": 451.0
+        },
+        {
+          "date": "2003-01",
+          "weeklyGBP": 447.0
+        },
+        {
+          "date": "2003-02",
+          "weeklyGBP": 449.0
+        },
+        {
+          "date": "2003-03",
+          "weeklyGBP": 455.0
+        },
+        {
+          "date": "2003-04",
+          "weeklyGBP": 454.0
+        },
+        {
+          "date": "2003-05",
+          "weeklyGBP": 456.0
+        },
+        {
+          "date": "2003-06",
+          "weeklyGBP": 457.0
+        },
+        {
+          "date": "2003-07",
+          "weeklyGBP": 459.0
+        },
+        {
+          "date": "2003-08",
+          "weeklyGBP": 460.0
+        },
+        {
+          "date": "2003-09",
+          "weeklyGBP": 462.0
+        },
+        {
+          "date": "2003-10",
+          "weeklyGBP": 463.0
+        },
+        {
+          "date": "2003-11",
+          "weeklyGBP": 463.0
+        },
+        {
+          "date": "2003-12",
+          "weeklyGBP": 464.0
+        },
+        {
+          "date": "2004-01",
+          "weeklyGBP": 473.0
+        },
+        {
+          "date": "2004-02",
+          "weeklyGBP": 457.0
+        },
+        {
+          "date": "2004-03",
+          "weeklyGBP": 467.0
+        },
+        {
+          "date": "2004-04",
+          "weeklyGBP": 468.0
+        },
+        {
+          "date": "2004-05",
+          "weeklyGBP": 468.0
+        },
+        {
+          "date": "2004-06",
+          "weeklyGBP": 469.0
+        },
+        {
+          "date": "2004-07",
+          "weeklyGBP": 470.0
+        },
+        {
+          "date": "2004-08",
+          "weeklyGBP": 473.0
+        },
+        {
+          "date": "2004-09",
+          "weeklyGBP": 475.0
+        },
+        {
+          "date": "2004-10",
+          "weeklyGBP": 477.0
+        },
+        {
+          "date": "2004-11",
+          "weeklyGBP": 476.0
+        },
+        {
+          "date": "2004-12",
+          "weeklyGBP": 476.0
+        },
+        {
+          "date": "2005-01",
+          "weeklyGBP": 484.0
+        },
+        {
+          "date": "2005-02",
+          "weeklyGBP": 474.0
+        },
+        {
+          "date": "2005-03",
+          "weeklyGBP": 477.0
+        },
+        {
+          "date": "2005-04",
+          "weeklyGBP": 480.0
+        },
+        {
+          "date": "2005-05",
+          "weeklyGBP": 480.0
+        },
+        {
+          "date": "2005-06",
+          "weeklyGBP": 480.0
+        },
+        {
+          "date": "2005-07",
+          "weeklyGBP": 482.0
+        },
+        {
+          "date": "2005-08",
+          "weeklyGBP": 486.0
+        },
+        {
+          "date": "2005-09",
+          "weeklyGBP": 486.0
+        },
+        {
+          "date": "2005-10",
+          "weeklyGBP": 486.0
+        },
+        {
+          "date": "2005-11",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2005-12",
+          "weeklyGBP": 487.0
+        },
+        {
+          "date": "2006-01",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2006-02",
+          "weeklyGBP": 490.0
+        },
+        {
+          "date": "2006-03",
+          "weeklyGBP": 495.0
+        },
+        {
+          "date": "2006-04",
+          "weeklyGBP": 489.0
+        },
+        {
+          "date": "2006-05",
+          "weeklyGBP": 491.0
+        },
+        {
+          "date": "2006-06",
+          "weeklyGBP": 494.0
+        },
+        {
+          "date": "2006-07",
+          "weeklyGBP": 493.0
+        },
+        {
+          "date": "2006-08",
+          "weeklyGBP": 491.0
+        },
+        {
+          "date": "2006-09",
+          "weeklyGBP": 492.0
+        },
+        {
+          "date": "2006-10",
+          "weeklyGBP": 495.0
+        },
+        {
+          "date": "2006-11",
+          "weeklyGBP": 496.0
+        },
+        {
+          "date": "2006-12",
+          "weeklyGBP": 501.0
+        },
+        {
+          "date": "2007-01",
+          "weeklyGBP": 504.0
+        },
+        {
+          "date": "2007-02",
+          "weeklyGBP": 509.0
+        },
+        {
+          "date": "2007-03",
+          "weeklyGBP": 503.0
+        },
+        {
+          "date": "2007-04",
+          "weeklyGBP": 497.0
+        },
+        {
+          "date": "2007-05",
+          "weeklyGBP": 502.0
+        },
+        {
+          "date": "2007-06",
+          "weeklyGBP": 503.0
+        },
+        {
+          "date": "2007-07",
+          "weeklyGBP": 506.0
+        },
+        {
+          "date": "2007-08",
+          "weeklyGBP": 507.0
+        },
+        {
+          "date": "2007-09",
+          "weeklyGBP": 509.0
+        },
+        {
+          "date": "2007-10",
+          "weeklyGBP": 505.0
+        },
+        {
+          "date": "2007-11",
+          "weeklyGBP": 508.0
+        },
+        {
+          "date": "2007-12",
+          "weeklyGBP": 505.0
+        },
+        {
+          "date": "2008-01",
+          "weeklyGBP": 510.0
+        },
+        {
+          "date": "2008-02",
+          "weeklyGBP": 515.0
+        },
+        {
+          "date": "2008-03",
+          "weeklyGBP": 515.0
+        },
+        {
+          "date": "2008-04",
+          "weeklyGBP": 506.0
+        },
+        {
+          "date": "2008-05",
+          "weeklyGBP": 506.0
+        },
+        {
+          "date": "2008-06",
+          "weeklyGBP": 502.0
+        },
+        {
+          "date": "2008-07",
+          "weeklyGBP": 502.0
+        },
+        {
+          "date": "2008-08",
+          "weeklyGBP": 501.0
+        },
+        {
+          "date": "2008-09",
+          "weeklyGBP": 499.0
+        },
+        {
+          "date": "2008-10",
+          "weeklyGBP": 501.0
+        },
+        {
+          "date": "2008-11",
+          "weeklyGBP": 500.0
+        },
+        {
+          "date": "2008-12",
+          "weeklyGBP": 502.0
+        },
+        {
+          "date": "2009-01",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2009-02",
+          "weeklyGBP": 470.0
+        },
+        {
+          "date": "2009-03",
+          "weeklyGBP": 497.0
+        },
+        {
+          "date": "2009-04",
+          "weeklyGBP": 502.0
+        },
+        {
+          "date": "2009-05",
+          "weeklyGBP": 499.0
+        },
+        {
+          "date": "2009-06",
+          "weeklyGBP": 499.0
+        },
+        {
+          "date": "2009-07",
+          "weeklyGBP": 496.0
+        },
+        {
+          "date": "2009-08",
+          "weeklyGBP": 497.0
+        },
+        {
+          "date": "2009-09",
+          "weeklyGBP": 498.0
+        },
+        {
+          "date": "2009-10",
+          "weeklyGBP": 497.0
+        },
+        {
+          "date": "2009-11",
+          "weeklyGBP": 497.0
+        },
+        {
+          "date": "2009-12",
+          "weeklyGBP": 497.0
+        },
+        {
+          "date": "2010-01",
+          "weeklyGBP": 489.0
+        },
+        {
+          "date": "2010-02",
+          "weeklyGBP": 501.0
+        },
+        {
+          "date": "2010-03",
+          "weeklyGBP": 496.0
+        },
+        {
+          "date": "2010-04",
+          "weeklyGBP": 494.0
+        },
+        {
+          "date": "2010-05",
+          "weeklyGBP": 495.0
+        },
+        {
+          "date": "2010-06",
+          "weeklyGBP": 493.0
+        },
+        {
+          "date": "2010-07",
+          "weeklyGBP": 493.0
+        },
+        {
+          "date": "2010-08",
+          "weeklyGBP": 494.0
+        },
+        {
+          "date": "2010-09",
+          "weeklyGBP": 495.0
+        },
+        {
+          "date": "2010-10",
+          "weeklyGBP": 493.0
+        },
+        {
+          "date": "2010-11",
+          "weeklyGBP": 493.0
+        },
+        {
+          "date": "2010-12",
+          "weeklyGBP": 491.0
+        },
+        {
+          "date": "2011-01",
+          "weeklyGBP": 495.0
+        },
+        {
+          "date": "2011-02",
+          "weeklyGBP": 491.0
+        },
+        {
+          "date": "2011-03",
+          "weeklyGBP": 491.0
+        },
+        {
+          "date": "2011-04",
+          "weeklyGBP": 486.0
+        },
+        {
+          "date": "2011-05",
+          "weeklyGBP": 487.0
+        },
+        {
+          "date": "2011-06",
+          "weeklyGBP": 489.0
+        },
+        {
+          "date": "2011-07",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2011-08",
+          "weeklyGBP": 484.0
+        },
+        {
+          "date": "2011-09",
+          "weeklyGBP": 482.0
+        },
+        {
+          "date": "2011-10",
+          "weeklyGBP": 483.0
+        },
+        {
+          "date": "2011-11",
+          "weeklyGBP": 483.0
+        },
+        {
+          "date": "2011-12",
+          "weeklyGBP": 482.0
+        },
+        {
+          "date": "2012-01",
+          "weeklyGBP": 481.0
+        },
+        {
+          "date": "2012-02",
+          "weeklyGBP": 481.0
+        },
+        {
+          "date": "2012-03",
+          "weeklyGBP": 481.0
+        },
+        {
+          "date": "2012-04",
+          "weeklyGBP": 482.0
+        },
+        {
+          "date": "2012-05",
+          "weeklyGBP": 482.0
+        },
+        {
+          "date": "2012-06",
+          "weeklyGBP": 484.0
+        },
+        {
+          "date": "2012-07",
+          "weeklyGBP": 483.0
+        },
+        {
+          "date": "2012-08",
+          "weeklyGBP": 483.0
+        },
+        {
+          "date": "2012-09",
+          "weeklyGBP": 481.0
+        },
+        {
+          "date": "2012-10",
+          "weeklyGBP": 478.0
+        },
+        {
+          "date": "2012-11",
+          "weeklyGBP": 479.0
+        },
+        {
+          "date": "2012-12",
+          "weeklyGBP": 476.0
+        },
+        {
+          "date": "2013-01",
+          "weeklyGBP": 475.0
+        },
+        {
+          "date": "2013-02",
+          "weeklyGBP": 475.0
+        },
+        {
+          "date": "2013-03",
+          "weeklyGBP": 465.0
+        },
+        {
+          "date": "2013-04",
+          "weeklyGBP": 489.0
+        },
+        {
+          "date": "2013-05",
+          "weeklyGBP": 479.0
+        },
+        {
+          "date": "2013-06",
+          "weeklyGBP": 477.0
+        },
+        {
+          "date": "2013-07",
+          "weeklyGBP": 475.0
+        },
+        {
+          "date": "2013-08",
+          "weeklyGBP": 474.0
+        },
+        {
+          "date": "2013-09",
+          "weeklyGBP": 474.0
+        },
+        {
+          "date": "2013-10",
+          "weeklyGBP": 473.0
+        },
+        {
+          "date": "2013-11",
+          "weeklyGBP": 473.0
+        },
+        {
+          "date": "2013-12",
+          "weeklyGBP": 473.0
+        },
+        {
+          "date": "2014-01",
+          "weeklyGBP": 474.0
+        },
+        {
+          "date": "2014-02",
+          "weeklyGBP": 477.0
+        },
+        {
+          "date": "2014-03",
+          "weeklyGBP": 465.0
+        },
+        {
+          "date": "2014-04",
+          "weeklyGBP": 473.0
+        },
+        {
+          "date": "2014-05",
+          "weeklyGBP": 473.0
+        },
+        {
+          "date": "2014-06",
+          "weeklyGBP": 472.0
+        },
+        {
+          "date": "2014-07",
+          "weeklyGBP": 470.0
+        },
+        {
+          "date": "2014-08",
+          "weeklyGBP": 471.0
+        },
+        {
+          "date": "2014-09",
+          "weeklyGBP": 474.0
+        },
+        {
+          "date": "2014-10",
+          "weeklyGBP": 476.0
+        },
+        {
+          "date": "2014-11",
+          "weeklyGBP": 476.0
+        },
+        {
+          "date": "2014-12",
+          "weeklyGBP": 480.0
+        },
+        {
+          "date": "2015-01",
+          "weeklyGBP": 478.0
+        },
+        {
+          "date": "2015-02",
+          "weeklyGBP": 482.0
+        },
+        {
+          "date": "2015-03",
+          "weeklyGBP": 483.0
+        },
+        {
+          "date": "2015-04",
+          "weeklyGBP": 483.0
+        },
+        {
+          "date": "2015-05",
+          "weeklyGBP": 483.0
+        },
+        {
+          "date": "2015-06",
+          "weeklyGBP": 482.0
+        },
+        {
+          "date": "2015-07",
+          "weeklyGBP": 484.0
+        },
+        {
+          "date": "2015-08",
+          "weeklyGBP": 484.0
+        },
+        {
+          "date": "2015-09",
+          "weeklyGBP": 483.0
+        },
+        {
+          "date": "2015-10",
+          "weeklyGBP": 484.0
+        },
+        {
+          "date": "2015-11",
+          "weeklyGBP": 484.0
+        },
+        {
+          "date": "2015-12",
+          "weeklyGBP": 486.0
+        },
+        {
+          "date": "2016-01",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2016-02",
+          "weeklyGBP": 486.0
+        },
+        {
+          "date": "2016-03",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2016-04",
+          "weeklyGBP": 494.0
+        },
+        {
+          "date": "2016-05",
+          "weeklyGBP": 491.0
+        },
+        {
+          "date": "2016-06",
+          "weeklyGBP": 490.0
+        },
+        {
+          "date": "2016-07",
+          "weeklyGBP": 492.0
+        },
+        {
+          "date": "2016-08",
+          "weeklyGBP": 490.0
+        },
+        {
+          "date": "2016-09",
+          "weeklyGBP": 489.0
+        },
+        {
+          "date": "2016-10",
+          "weeklyGBP": 490.0
+        },
+        {
+          "date": "2016-11",
+          "weeklyGBP": 491.0
+        },
+        {
+          "date": "2016-12",
+          "weeklyGBP": 487.0
+        },
+        {
+          "date": "2017-01",
+          "weeklyGBP": 487.0
+        },
+        {
+          "date": "2017-02",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2017-03",
+          "weeklyGBP": 489.0
+        },
+        {
+          "date": "2017-04",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2017-05",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2017-06",
+          "weeklyGBP": 493.0
+        },
+        {
+          "date": "2017-07",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2017-08",
+          "weeklyGBP": 489.0
+        },
+        {
+          "date": "2017-09",
+          "weeklyGBP": 490.0
+        },
+        {
+          "date": "2017-10",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2017-11",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2017-12",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2018-01",
+          "weeklyGBP": 486.0
+        },
+        {
+          "date": "2018-02",
+          "weeklyGBP": 488.0
+        },
+        {
+          "date": "2018-03",
+          "weeklyGBP": 491.0
+        },
+        {
+          "date": "2018-04",
+          "weeklyGBP": 491.0
+        },
+        {
+          "date": "2018-05",
+          "weeklyGBP": 490.0
+        },
+        {
+          "date": "2018-06",
+          "weeklyGBP": 492.0
+        },
+        {
+          "date": "2018-07",
+          "weeklyGBP": 492.0
+        },
+        {
+          "date": "2018-08",
+          "weeklyGBP": 494.0
+        },
+        {
+          "date": "2018-09",
+          "weeklyGBP": 493.0
+        },
+        {
+          "date": "2018-10",
+          "weeklyGBP": 497.0
+        },
+        {
+          "date": "2018-11",
+          "weeklyGBP": 493.0
+        },
+        {
+          "date": "2018-12",
+          "weeklyGBP": 493.0
+        },
+        {
+          "date": "2019-01",
+          "weeklyGBP": 494.0
+        },
+        {
+          "date": "2019-02",
+          "weeklyGBP": 495.0
+        },
+        {
+          "date": "2019-03",
+          "weeklyGBP": 495.0
+        },
+        {
+          "date": "2019-04",
+          "weeklyGBP": 500.0
+        },
+        {
+          "date": "2019-05",
+          "weeklyGBP": 501.0
+        },
+        {
+          "date": "2019-06",
+          "weeklyGBP": 502.0
+        },
+        {
+          "date": "2019-07",
+          "weeklyGBP": 502.0
+        },
+        {
+          "date": "2019-08",
+          "weeklyGBP": 502.0
+        },
+        {
+          "date": "2019-09",
+          "weeklyGBP": 504.0
+        },
+        {
+          "date": "2019-10",
+          "weeklyGBP": 502.0
+        },
+        {
+          "date": "2019-11",
+          "weeklyGBP": 501.0
+        },
+        {
+          "date": "2019-12",
+          "weeklyGBP": 498.0
+        },
+        {
+          "date": "2020-01",
+          "weeklyGBP": 500.0
+        },
+        {
+          "date": "2020-02",
+          "weeklyGBP": 498.0
+        },
+        {
+          "date": "2020-03",
+          "weeklyGBP": 494.0
+        },
+        {
+          "date": "2020-04",
+          "weeklyGBP": 492.0
+        },
+        {
+          "date": "2020-05",
+          "weeklyGBP": 493.0
+        },
+        {
+          "date": "2020-06",
+          "weeklyGBP": 491.0
+        },
+        {
+          "date": "2020-07",
+          "weeklyGBP": 496.0
+        },
+        {
+          "date": "2020-08",
+          "weeklyGBP": 509.0
+        },
+        {
+          "date": "2020-09",
+          "weeklyGBP": 512.0
+        },
+        {
+          "date": "2020-10",
+          "weeklyGBP": 516.0
+        },
+        {
+          "date": "2020-11",
+          "weeklyGBP": 522.0
+        },
+        {
+          "date": "2020-12",
+          "weeklyGBP": 520.0
+        },
+        {
+          "date": "2021-01",
+          "weeklyGBP": 516.0
+        },
+        {
+          "date": "2021-02",
+          "weeklyGBP": 513.0
+        },
+        {
+          "date": "2021-03",
+          "weeklyGBP": 509.0
+        },
+        {
+          "date": "2021-04",
+          "weeklyGBP": 527.0
+        },
+        {
+          "date": "2021-05",
+          "weeklyGBP": 528.0
+        },
+        {
+          "date": "2021-06",
+          "weeklyGBP": 522.0
+        },
+        {
+          "date": "2021-07",
+          "weeklyGBP": 522.0
+        },
+        {
+          "date": "2021-08",
+          "weeklyGBP": 522.0
+        },
+        {
+          "date": "2021-09",
+          "weeklyGBP": 521.0
+        },
+        {
+          "date": "2021-10",
+          "weeklyGBP": 521.0
+        },
+        {
+          "date": "2021-11",
+          "weeklyGBP": 518.0
+        },
+        {
+          "date": "2021-12",
+          "weeklyGBP": 527.0
+        },
+        {
+          "date": "2022-01",
+          "weeklyGBP": 520.0
+        },
+        {
+          "date": "2022-02",
+          "weeklyGBP": 518.0
+        },
+        {
+          "date": "2022-03",
+          "weeklyGBP": 527.0
+        },
+        {
+          "date": "2022-04",
+          "weeklyGBP": 514.0
+        },
+        {
+          "date": "2022-05",
+          "weeklyGBP": 511.0
+        },
+        {
+          "date": "2022-06",
+          "weeklyGBP": 513.0
+        },
+        {
+          "date": "2022-07",
+          "weeklyGBP": 508.0
+        },
+        {
+          "date": "2022-08",
+          "weeklyGBP": 510.0
+        },
+        {
+          "date": "2022-09",
+          "weeklyGBP": 507.0
+        },
+        {
+          "date": "2022-10",
+          "weeklyGBP": 507.0
+        },
+        {
+          "date": "2022-11",
+          "weeklyGBP": 508.0
+        },
+        {
+          "date": "2022-12",
+          "weeklyGBP": 507.0
+        },
+        {
+          "date": "2023-01",
+          "weeklyGBP": 508.0
+        },
+        {
+          "date": "2023-02",
+          "weeklyGBP": 508.0
+        },
+        {
+          "date": "2023-03",
+          "weeklyGBP": 510.0
+        },
+        {
+          "date": "2023-04",
+          "weeklyGBP": 512.0
+        },
+        {
+          "date": "2023-05",
+          "weeklyGBP": 511.0
+        },
+        {
+          "date": "2023-06",
+          "weeklyGBP": 521.0
+        },
+        {
+          "date": "2023-07",
+          "weeklyGBP": 516.0
+        },
+        {
+          "date": "2023-08",
+          "weeklyGBP": 514.0
+        },
+        {
+          "date": "2023-09",
+          "weeklyGBP": 515.0
+        },
+        {
+          "date": "2023-10",
+          "weeklyGBP": 514.0
+        },
+        {
+          "date": "2023-11",
+          "weeklyGBP": 516.0
+        },
+        {
+          "date": "2023-12",
+          "weeklyGBP": 515.0
+        },
+        {
+          "date": "2024-01",
+          "weeklyGBP": 515.0
+        },
+        {
+          "date": "2024-02",
+          "weeklyGBP": 518.0
+        },
+        {
+          "date": "2024-03",
+          "weeklyGBP": 522.0
+        },
+        {
+          "date": "2024-04",
+          "weeklyGBP": 525.0
+        },
+        {
+          "date": "2024-05",
+          "weeklyGBP": 524.0
+        },
+        {
+          "date": "2024-06",
+          "weeklyGBP": 523.0
+        },
+        {
+          "date": "2024-07",
+          "weeklyGBP": 523.0
+        },
+        {
+          "date": "2024-08",
+          "weeklyGBP": 523.0
+        },
+        {
+          "date": "2024-09",
+          "weeklyGBP": 527.0
+        },
+        {
+          "date": "2024-10",
+          "weeklyGBP": 527.0
+        },
+        {
+          "date": "2024-11",
+          "weeklyGBP": 525.0
+        },
+        {
+          "date": "2024-12",
+          "weeklyGBP": 529.0
+        },
+        {
+          "date": "2025-01",
+          "weeklyGBP": 522.0
+        },
+        {
+          "date": "2025-02",
+          "weeklyGBP": 528.0
+        },
+        {
+          "date": "2025-03",
+          "weeklyGBP": 534.0
+        },
+        {
+          "date": "2025-04",
+          "weeklyGBP": 527.0
+        },
+        {
+          "date": "2025-05",
+          "weeklyGBP": 527.0
+        },
+        {
+          "date": "2025-06",
+          "weeklyGBP": 527.0
+        },
+        {
+          "date": "2025-07",
+          "weeklyGBP": 527.0
+        },
+        {
+          "date": "2025-08",
+          "weeklyGBP": 529.0
+        },
+        {
+          "date": "2025-09",
+          "weeklyGBP": 528.0
+        },
+        {
+          "date": "2025-10",
+          "weeklyGBP": 531.0
+        },
+        {
+          "date": "2025-11",
+          "weeklyGBP": 530.0
+        },
+        {
+          "date": "2025-12",
+          "weeklyGBP": 527.0
+        }
+      ]
+    },
+    "labourMarket": {
+      "timeSeries": [
+        {
+          "date": "2000-01",
+          "employmentPct": 72.2,
+          "unemploymentPct": 5.8,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2000-02",
+          "employmentPct": 72.3,
+          "unemploymentPct": 5.8,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2000-03",
+          "employmentPct": 72.3,
+          "unemploymentPct": 5.7,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2000-04",
+          "employmentPct": 72.4,
+          "unemploymentPct": 5.6,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2000-05",
+          "employmentPct": 72.5,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2000-06",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.3,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2000-07",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.3,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2000-08",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.3,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2000-09",
+          "employmentPct": 72.5,
+          "unemploymentPct": 5.4,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2000-10",
+          "employmentPct": 72.4,
+          "unemploymentPct": 5.3,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2000-11",
+          "employmentPct": 72.5,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2000-12",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2001-01",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2001-02",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2001-03",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.0,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2001-04",
+          "employmentPct": 72.7,
+          "unemploymentPct": 4.9,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2001-05",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.0,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2001-06",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.0,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2001-07",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2001-08",
+          "employmentPct": 72.5,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2001-09",
+          "employmentPct": 72.5,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2001-10",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2001-11",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2001-12",
+          "employmentPct": 72.5,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2002-01",
+          "employmentPct": 72.5,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.6
+        },
+        {
+          "date": "2002-02",
+          "employmentPct": 72.5,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.6
+        },
+        {
+          "date": "2002-03",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2002-04",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2002-05",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2002-06",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2002-07",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2002-08",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.3,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2002-09",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2002-10",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2002-11",
+          "employmentPct": 72.9,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2002-12",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.0,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2003-01",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2003-02",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2003-03",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2003-04",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.0,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2003-05",
+          "employmentPct": 72.9,
+          "unemploymentPct": 4.9,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2003-06",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2003-07",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2003-08",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.0,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2003-09",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.0,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2003-10",
+          "employmentPct": 72.8,
+          "unemploymentPct": 4.9,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2003-11",
+          "employmentPct": 72.8,
+          "unemploymentPct": 4.9,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2003-12",
+          "employmentPct": 73.0,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2004-01",
+          "employmentPct": 73.0,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2004-02",
+          "employmentPct": 73.0,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2004-03",
+          "employmentPct": 73.0,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2004-04",
+          "employmentPct": 72.9,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2004-05",
+          "employmentPct": 72.9,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2004-06",
+          "employmentPct": 72.8,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2004-07",
+          "employmentPct": 72.8,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2004-08",
+          "employmentPct": 72.9,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2004-09",
+          "employmentPct": 72.9,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2004-10",
+          "employmentPct": 73.0,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2004-11",
+          "employmentPct": 73.0,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2004-12",
+          "employmentPct": 73.1,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2005-01",
+          "employmentPct": 73.2,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 23.1
+        },
+        {
+          "date": "2005-02",
+          "employmentPct": 73.1,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2005-03",
+          "employmentPct": 72.9,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2005-04",
+          "employmentPct": 72.9,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2005-05",
+          "employmentPct": 72.9,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2005-06",
+          "employmentPct": 73.0,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2005-07",
+          "employmentPct": 73.0,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2005-08",
+          "employmentPct": 73.0,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2005-09",
+          "employmentPct": 72.9,
+          "unemploymentPct": 4.9,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2005-10",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2005-11",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2005-12",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2006-01",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2006-02",
+          "employmentPct": 72.9,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.0
+        },
+        {
+          "date": "2006-03",
+          "employmentPct": 72.9,
+          "unemploymentPct": 5.3,
+          "inactivityPct": 22.9
+        },
+        {
+          "date": "2006-04",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.4,
+          "inactivityPct": 23.0
+        },
+        {
+          "date": "2006-05",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 22.9
+        },
+        {
+          "date": "2006-06",
+          "employmentPct": 72.9,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 22.8
+        },
+        {
+          "date": "2006-07",
+          "employmentPct": 73.0,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 22.7
+        },
+        {
+          "date": "2006-08",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 22.9
+        },
+        {
+          "date": "2006-09",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 22.9
+        },
+        {
+          "date": "2006-10",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.4,
+          "inactivityPct": 23.0
+        },
+        {
+          "date": "2006-11",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 23.0
+        },
+        {
+          "date": "2006-12",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 23.1
+        },
+        {
+          "date": "2007-01",
+          "employmentPct": 72.5,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2007-02",
+          "employmentPct": 72.5,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2007-03",
+          "employmentPct": 72.5,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2007-04",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.4,
+          "inactivityPct": 23.1
+        },
+        {
+          "date": "2007-05",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.4,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2007-06",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.3,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2007-07",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.3,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2007-08",
+          "employmentPct": 72.7,
+          "unemploymentPct": 5.3,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2007-09",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.1
+        },
+        {
+          "date": "2007-10",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.1
+        },
+        {
+          "date": "2007-11",
+          "employmentPct": 72.9,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.1
+        },
+        {
+          "date": "2007-12",
+          "employmentPct": 72.9,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.0
+        },
+        {
+          "date": "2008-01",
+          "employmentPct": 73.0,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 22.9
+        },
+        {
+          "date": "2008-02",
+          "employmentPct": 73.0,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 23.0
+        },
+        {
+          "date": "2008-03",
+          "employmentPct": 73.0,
+          "unemploymentPct": 5.3,
+          "inactivityPct": 22.9
+        },
+        {
+          "date": "2008-04",
+          "employmentPct": 73.0,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 22.9
+        },
+        {
+          "date": "2008-05",
+          "employmentPct": 72.9,
+          "unemploymentPct": 5.4,
+          "inactivityPct": 22.9
+        },
+        {
+          "date": "2008-06",
+          "employmentPct": 72.8,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 22.9
+        },
+        {
+          "date": "2008-07",
+          "employmentPct": 72.6,
+          "unemploymentPct": 5.7,
+          "inactivityPct": 23.0
+        },
+        {
+          "date": "2008-08",
+          "employmentPct": 72.4,
+          "unemploymentPct": 5.9,
+          "inactivityPct": 23.0
+        },
+        {
+          "date": "2008-09",
+          "employmentPct": 72.3,
+          "unemploymentPct": 6.0,
+          "inactivityPct": 23.1
+        },
+        {
+          "date": "2008-10",
+          "employmentPct": 72.3,
+          "unemploymentPct": 6.2,
+          "inactivityPct": 22.9
+        },
+        {
+          "date": "2008-11",
+          "employmentPct": 72.2,
+          "unemploymentPct": 6.4,
+          "inactivityPct": 22.9
+        },
+        {
+          "date": "2008-12",
+          "employmentPct": 72.2,
+          "unemploymentPct": 6.5,
+          "inactivityPct": 22.7
+        },
+        {
+          "date": "2009-01",
+          "employmentPct": 71.9,
+          "unemploymentPct": 6.7,
+          "inactivityPct": 22.8
+        },
+        {
+          "date": "2009-02",
+          "employmentPct": 71.7,
+          "unemploymentPct": 7.1,
+          "inactivityPct": 22.8
+        },
+        {
+          "date": "2009-03",
+          "employmentPct": 71.4,
+          "unemploymentPct": 7.3,
+          "inactivityPct": 22.9
+        },
+        {
+          "date": "2009-04",
+          "employmentPct": 71.0,
+          "unemploymentPct": 7.6,
+          "inactivityPct": 23.0
+        },
+        {
+          "date": "2009-05",
+          "employmentPct": 70.8,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 23.1
+        },
+        {
+          "date": "2009-06",
+          "employmentPct": 70.6,
+          "unemploymentPct": 7.9,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2009-07",
+          "employmentPct": 70.7,
+          "unemploymentPct": 7.9,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2009-08",
+          "employmentPct": 70.6,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2009-09",
+          "employmentPct": 70.6,
+          "unemploymentPct": 7.9,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2009-10",
+          "employmentPct": 70.6,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2009-11",
+          "employmentPct": 70.6,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2009-12",
+          "employmentPct": 70.4,
+          "unemploymentPct": 7.7,
+          "inactivityPct": 23.6
+        },
+        {
+          "date": "2010-01",
+          "employmentPct": 70.3,
+          "unemploymentPct": 7.9,
+          "inactivityPct": 23.6
+        },
+        {
+          "date": "2010-02",
+          "employmentPct": 70.2,
+          "unemploymentPct": 8.0,
+          "inactivityPct": 23.6
+        },
+        {
+          "date": "2010-03",
+          "employmentPct": 70.2,
+          "unemploymentPct": 8.0,
+          "inactivityPct": 23.6
+        },
+        {
+          "date": "2010-04",
+          "employmentPct": 70.4,
+          "unemploymentPct": 7.9,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2010-05",
+          "employmentPct": 70.4,
+          "unemploymentPct": 7.9,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2010-06",
+          "employmentPct": 70.6,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2010-07",
+          "employmentPct": 70.6,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2010-08",
+          "employmentPct": 70.7,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2010-09",
+          "employmentPct": 70.5,
+          "unemploymentPct": 7.9,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2010-10",
+          "employmentPct": 70.3,
+          "unemploymentPct": 7.9,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2010-11",
+          "employmentPct": 70.4,
+          "unemploymentPct": 7.9,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2010-12",
+          "employmentPct": 70.5,
+          "unemploymentPct": 7.9,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2011-01",
+          "employmentPct": 70.6,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2011-02",
+          "employmentPct": 70.5,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2011-03",
+          "employmentPct": 70.5,
+          "unemploymentPct": 7.7,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2011-04",
+          "employmentPct": 70.5,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2011-05",
+          "employmentPct": 70.5,
+          "unemploymentPct": 7.9,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2011-06",
+          "employmentPct": 70.2,
+          "unemploymentPct": 8.0,
+          "inactivityPct": 23.5
+        },
+        {
+          "date": "2011-07",
+          "employmentPct": 70.2,
+          "unemploymentPct": 8.2,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2011-08",
+          "employmentPct": 70.1,
+          "unemploymentPct": 8.3,
+          "inactivityPct": 23.4
+        },
+        {
+          "date": "2011-09",
+          "employmentPct": 70.1,
+          "unemploymentPct": 8.4,
+          "inactivityPct": 23.3
+        },
+        {
+          "date": "2011-10",
+          "employmentPct": 70.1,
+          "unemploymentPct": 8.5,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2011-11",
+          "employmentPct": 70.2,
+          "unemploymentPct": 8.4,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2011-12",
+          "employmentPct": 70.2,
+          "unemploymentPct": 8.3,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2012-01",
+          "employmentPct": 70.3,
+          "unemploymentPct": 8.3,
+          "inactivityPct": 23.2
+        },
+        {
+          "date": "2012-02",
+          "employmentPct": 70.5,
+          "unemploymentPct": 8.2,
+          "inactivityPct": 23.1
+        },
+        {
+          "date": "2012-03",
+          "employmentPct": 70.5,
+          "unemploymentPct": 8.2,
+          "inactivityPct": 23.1
+        },
+        {
+          "date": "2012-04",
+          "employmentPct": 70.7,
+          "unemploymentPct": 8.1,
+          "inactivityPct": 23.0
+        },
+        {
+          "date": "2012-05",
+          "employmentPct": 70.9,
+          "unemploymentPct": 8.0,
+          "inactivityPct": 22.8
+        },
+        {
+          "date": "2012-06",
+          "employmentPct": 71.1,
+          "unemploymentPct": 8.0,
+          "inactivityPct": 22.6
+        },
+        {
+          "date": "2012-07",
+          "employmentPct": 71.2,
+          "unemploymentPct": 7.9,
+          "inactivityPct": 22.6
+        },
+        {
+          "date": "2012-08",
+          "employmentPct": 71.1,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 22.7
+        },
+        {
+          "date": "2012-09",
+          "employmentPct": 71.1,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 22.7
+        },
+        {
+          "date": "2012-10",
+          "employmentPct": 71.3,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 22.5
+        },
+        {
+          "date": "2012-11",
+          "employmentPct": 71.4,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 22.4
+        },
+        {
+          "date": "2012-12",
+          "employmentPct": 71.4,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 22.4
+        },
+        {
+          "date": "2013-01",
+          "employmentPct": 71.2,
+          "unemploymentPct": 8.0,
+          "inactivityPct": 22.5
+        },
+        {
+          "date": "2013-02",
+          "employmentPct": 71.2,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 22.6
+        },
+        {
+          "date": "2013-03",
+          "employmentPct": 71.2,
+          "unemploymentPct": 7.8,
+          "inactivityPct": 22.6
+        },
+        {
+          "date": "2013-04",
+          "employmentPct": 71.2,
+          "unemploymentPct": 7.7,
+          "inactivityPct": 22.7
+        },
+        {
+          "date": "2013-05",
+          "employmentPct": 71.3,
+          "unemploymentPct": 7.7,
+          "inactivityPct": 22.5
+        },
+        {
+          "date": "2013-06",
+          "employmentPct": 71.5,
+          "unemploymentPct": 7.7,
+          "inactivityPct": 22.4
+        },
+        {
+          "date": "2013-07",
+          "employmentPct": 71.5,
+          "unemploymentPct": 7.7,
+          "inactivityPct": 22.4
+        },
+        {
+          "date": "2013-08",
+          "employmentPct": 71.6,
+          "unemploymentPct": 7.6,
+          "inactivityPct": 22.3
+        },
+        {
+          "date": "2013-09",
+          "employmentPct": 71.9,
+          "unemploymentPct": 7.4,
+          "inactivityPct": 22.3
+        },
+        {
+          "date": "2013-10",
+          "employmentPct": 72.0,
+          "unemploymentPct": 7.2,
+          "inactivityPct": 22.3
+        },
+        {
+          "date": "2013-11",
+          "employmentPct": 72.0,
+          "unemploymentPct": 7.2,
+          "inactivityPct": 22.3
+        },
+        {
+          "date": "2013-12",
+          "employmentPct": 72.1,
+          "unemploymentPct": 7.1,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2014-01",
+          "employmentPct": 72.4,
+          "unemploymentPct": 6.9,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2014-02",
+          "employmentPct": 72.5,
+          "unemploymentPct": 6.7,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2014-03",
+          "employmentPct": 72.7,
+          "unemploymentPct": 6.6,
+          "inactivityPct": 22.1
+        },
+        {
+          "date": "2014-04",
+          "employmentPct": 72.9,
+          "unemploymentPct": 6.4,
+          "inactivityPct": 22.0
+        },
+        {
+          "date": "2014-05",
+          "employmentPct": 72.8,
+          "unemploymentPct": 6.3,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2014-06",
+          "employmentPct": 72.8,
+          "unemploymentPct": 6.1,
+          "inactivityPct": 22.3
+        },
+        {
+          "date": "2014-07",
+          "employmentPct": 73.0,
+          "unemploymentPct": 6.0,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2014-08",
+          "employmentPct": 73.0,
+          "unemploymentPct": 6.0,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2014-09",
+          "employmentPct": 73.0,
+          "unemploymentPct": 5.9,
+          "inactivityPct": 22.3
+        },
+        {
+          "date": "2014-10",
+          "employmentPct": 73.0,
+          "unemploymentPct": 5.9,
+          "inactivityPct": 22.4
+        },
+        {
+          "date": "2014-11",
+          "employmentPct": 73.2,
+          "unemploymentPct": 5.7,
+          "inactivityPct": 22.3
+        },
+        {
+          "date": "2014-12",
+          "employmentPct": 73.3,
+          "unemploymentPct": 5.6,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2015-01",
+          "employmentPct": 73.4,
+          "unemploymentPct": 5.6,
+          "inactivityPct": 22.1
+        },
+        {
+          "date": "2015-02",
+          "employmentPct": 73.4,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2015-03",
+          "employmentPct": 73.4,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2015-04",
+          "employmentPct": 73.3,
+          "unemploymentPct": 5.6,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2015-05",
+          "employmentPct": 73.4,
+          "unemploymentPct": 5.6,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2015-06",
+          "employmentPct": 73.5,
+          "unemploymentPct": 5.5,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2015-07",
+          "employmentPct": 73.5,
+          "unemploymentPct": 5.4,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2015-08",
+          "employmentPct": 73.7,
+          "unemploymentPct": 5.3,
+          "inactivityPct": 22.0
+        },
+        {
+          "date": "2015-09",
+          "employmentPct": 73.9,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2015-10",
+          "employmentPct": 74.0,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2015-11",
+          "employmentPct": 74.1,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2015-12",
+          "employmentPct": 74.0,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2016-01",
+          "employmentPct": 74.1,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 21.8
+        },
+        {
+          "date": "2016-02",
+          "employmentPct": 74.1,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2016-03",
+          "employmentPct": 74.1,
+          "unemploymentPct": 5.0,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2016-04",
+          "employmentPct": 74.3,
+          "unemploymentPct": 4.9,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2016-05",
+          "employmentPct": 74.4,
+          "unemploymentPct": 4.9,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2016-06",
+          "employmentPct": 74.5,
+          "unemploymentPct": 4.9,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2016-07",
+          "employmentPct": 74.4,
+          "unemploymentPct": 5.0,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2016-08",
+          "employmentPct": 74.4,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2016-09",
+          "employmentPct": 74.4,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2016-10",
+          "employmentPct": 74.4,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 21.8
+        },
+        {
+          "date": "2016-11",
+          "employmentPct": 74.5,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2016-12",
+          "employmentPct": 74.5,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2017-01",
+          "employmentPct": 74.6,
+          "unemploymentPct": 4.6,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2017-02",
+          "employmentPct": 74.7,
+          "unemploymentPct": 4.6,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2017-03",
+          "employmentPct": 74.7,
+          "unemploymentPct": 4.5,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2017-04",
+          "employmentPct": 74.8,
+          "unemploymentPct": 4.4,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2017-05",
+          "employmentPct": 75.0,
+          "unemploymentPct": 4.4,
+          "inactivityPct": 21.4
+        },
+        {
+          "date": "2017-06",
+          "employmentPct": 75.2,
+          "unemploymentPct": 4.3,
+          "inactivityPct": 21.3
+        },
+        {
+          "date": "2017-07",
+          "employmentPct": 75.1,
+          "unemploymentPct": 4.3,
+          "inactivityPct": 21.5
+        },
+        {
+          "date": "2017-08",
+          "employmentPct": 74.9,
+          "unemploymentPct": 4.3,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2017-09",
+          "employmentPct": 75.0,
+          "unemploymentPct": 4.2,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2017-10",
+          "employmentPct": 75.2,
+          "unemploymentPct": 4.3,
+          "inactivityPct": 21.3
+        },
+        {
+          "date": "2017-11",
+          "employmentPct": 75.1,
+          "unemploymentPct": 4.4,
+          "inactivityPct": 21.4
+        },
+        {
+          "date": "2017-12",
+          "employmentPct": 75.2,
+          "unemploymentPct": 4.3,
+          "inactivityPct": 21.3
+        },
+        {
+          "date": "2018-01",
+          "employmentPct": 75.3,
+          "unemploymentPct": 4.2,
+          "inactivityPct": 21.3
+        },
+        {
+          "date": "2018-02",
+          "employmentPct": 75.5,
+          "unemploymentPct": 4.2,
+          "inactivityPct": 21.2
+        },
+        {
+          "date": "2018-03",
+          "employmentPct": 75.5,
+          "unemploymentPct": 4.2,
+          "inactivityPct": 21.1
+        },
+        {
+          "date": "2018-04",
+          "employmentPct": 75.5,
+          "unemploymentPct": 4.2,
+          "inactivityPct": 21.1
+        },
+        {
+          "date": "2018-05",
+          "employmentPct": 75.4,
+          "unemploymentPct": 4.0,
+          "inactivityPct": 21.3
+        },
+        {
+          "date": "2018-06",
+          "employmentPct": 75.4,
+          "unemploymentPct": 4.0,
+          "inactivityPct": 21.4
+        },
+        {
+          "date": "2018-07",
+          "employmentPct": 75.4,
+          "unemploymentPct": 4.0,
+          "inactivityPct": 21.3
+        },
+        {
+          "date": "2018-08",
+          "employmentPct": 75.4,
+          "unemploymentPct": 4.1,
+          "inactivityPct": 21.3
+        },
+        {
+          "date": "2018-09",
+          "employmentPct": 75.6,
+          "unemploymentPct": 4.1,
+          "inactivityPct": 21.1
+        },
+        {
+          "date": "2018-10",
+          "employmentPct": 75.6,
+          "unemploymentPct": 4.0,
+          "inactivityPct": 21.1
+        },
+        {
+          "date": "2018-11",
+          "employmentPct": 75.7,
+          "unemploymentPct": 4.0,
+          "inactivityPct": 21.1
+        },
+        {
+          "date": "2018-12",
+          "employmentPct": 76.0,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 20.9
+        },
+        {
+          "date": "2019-01",
+          "employmentPct": 76.0,
+          "unemploymentPct": 4.0,
+          "inactivityPct": 20.8
+        },
+        {
+          "date": "2019-02",
+          "employmentPct": 75.9,
+          "unemploymentPct": 3.8,
+          "inactivityPct": 21.0
+        },
+        {
+          "date": "2019-03",
+          "employmentPct": 76.0,
+          "unemploymentPct": 3.8,
+          "inactivityPct": 20.9
+        },
+        {
+          "date": "2019-04",
+          "employmentPct": 76.0,
+          "unemploymentPct": 3.8,
+          "inactivityPct": 20.9
+        },
+        {
+          "date": "2019-05",
+          "employmentPct": 76.1,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 20.7
+        },
+        {
+          "date": "2019-06",
+          "employmentPct": 76.0,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 20.8
+        },
+        {
+          "date": "2019-07",
+          "employmentPct": 75.9,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 20.9
+        },
+        {
+          "date": "2019-08",
+          "employmentPct": 76.0,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 20.8
+        },
+        {
+          "date": "2019-09",
+          "employmentPct": 76.0,
+          "unemploymentPct": 3.8,
+          "inactivityPct": 20.9
+        },
+        {
+          "date": "2019-10",
+          "employmentPct": 76.2,
+          "unemploymentPct": 3.8,
+          "inactivityPct": 20.7
+        },
+        {
+          "date": "2019-11",
+          "employmentPct": 76.4,
+          "unemploymentPct": 3.7,
+          "inactivityPct": 20.6
+        },
+        {
+          "date": "2019-12",
+          "employmentPct": 76.4,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 20.5
+        },
+        {
+          "date": "2020-01",
+          "employmentPct": 76.5,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 20.3
+        },
+        {
+          "date": "2020-02",
+          "employmentPct": 75.9,
+          "unemploymentPct": 4.1,
+          "inactivityPct": 20.7
+        },
+        {
+          "date": "2020-03",
+          "employmentPct": 75.7,
+          "unemploymentPct": 4.1,
+          "inactivityPct": 21.0
+        },
+        {
+          "date": "2020-04",
+          "employmentPct": 75.5,
+          "unemploymentPct": 4.1,
+          "inactivityPct": 21.2
+        },
+        {
+          "date": "2020-05",
+          "employmentPct": 75.4,
+          "unemploymentPct": 4.1,
+          "inactivityPct": 21.3
+        },
+        {
+          "date": "2020-06",
+          "employmentPct": 75.3,
+          "unemploymentPct": 4.4,
+          "inactivityPct": 21.2
+        },
+        {
+          "date": "2020-07",
+          "employmentPct": 75.0,
+          "unemploymentPct": 4.6,
+          "inactivityPct": 21.3
+        },
+        {
+          "date": "2020-08",
+          "employmentPct": 74.6,
+          "unemploymentPct": 5.0,
+          "inactivityPct": 21.4
+        },
+        {
+          "date": "2020-09",
+          "employmentPct": 74.5,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 21.4
+        },
+        {
+          "date": "2020-10",
+          "employmentPct": 74.5,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 21.3
+        },
+        {
+          "date": "2020-11",
+          "employmentPct": 74.3,
+          "unemploymentPct": 5.3,
+          "inactivityPct": 21.5
+        },
+        {
+          "date": "2020-12",
+          "employmentPct": 74.3,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 21.5
+        },
+        {
+          "date": "2021-01",
+          "employmentPct": 74.5,
+          "unemploymentPct": 5.0,
+          "inactivityPct": 21.5
+        },
+        {
+          "date": "2021-02",
+          "employmentPct": 74.4,
+          "unemploymentPct": 4.9,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2021-03",
+          "employmentPct": 74.4,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2021-04",
+          "employmentPct": 74.5,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2021-05",
+          "employmentPct": 74.7,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2021-06",
+          "employmentPct": 74.8,
+          "unemploymentPct": 4.6,
+          "inactivityPct": 21.5
+        },
+        {
+          "date": "2021-07",
+          "employmentPct": 74.9,
+          "unemploymentPct": 4.5,
+          "inactivityPct": 21.4
+        },
+        {
+          "date": "2021-08",
+          "employmentPct": 75.0,
+          "unemploymentPct": 4.4,
+          "inactivityPct": 21.4
+        },
+        {
+          "date": "2021-09",
+          "employmentPct": 75.0,
+          "unemploymentPct": 4.3,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2021-10",
+          "employmentPct": 75.0,
+          "unemploymentPct": 4.2,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2021-11",
+          "employmentPct": 75.1,
+          "unemploymentPct": 4.2,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2021-12",
+          "employmentPct": 75.0,
+          "unemploymentPct": 4.1,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2022-01",
+          "employmentPct": 75.0,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 21.8
+        },
+        {
+          "date": "2022-02",
+          "employmentPct": 75.1,
+          "unemploymentPct": 3.8,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2022-03",
+          "employmentPct": 75.2,
+          "unemploymentPct": 3.8,
+          "inactivityPct": 21.8
+        },
+        {
+          "date": "2022-04",
+          "employmentPct": 75.4,
+          "unemploymentPct": 3.7,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2022-05",
+          "employmentPct": 75.1,
+          "unemploymentPct": 3.8,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2022-06",
+          "employmentPct": 75.0,
+          "unemploymentPct": 3.6,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2022-07",
+          "employmentPct": 75.0,
+          "unemploymentPct": 3.6,
+          "inactivityPct": 22.1
+        },
+        {
+          "date": "2022-08",
+          "employmentPct": 75.0,
+          "unemploymentPct": 3.7,
+          "inactivityPct": 22.1
+        },
+        {
+          "date": "2022-09",
+          "employmentPct": 75.0,
+          "unemploymentPct": 3.8,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2022-10",
+          "employmentPct": 75.0,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2022-11",
+          "employmentPct": 75.1,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2022-12",
+          "employmentPct": 75.2,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2023-01",
+          "employmentPct": 75.2,
+          "unemploymentPct": 4.0,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2023-02",
+          "employmentPct": 75.3,
+          "unemploymentPct": 4.0,
+          "inactivityPct": 21.5
+        },
+        {
+          "date": "2023-03",
+          "employmentPct": 75.5,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 21.4
+        },
+        {
+          "date": "2023-04",
+          "employmentPct": 75.4,
+          "unemploymentPct": 4.0,
+          "inactivityPct": 21.3
+        },
+        {
+          "date": "2023-05",
+          "employmentPct": 75.2,
+          "unemploymentPct": 4.2,
+          "inactivityPct": 21.4
+        },
+        {
+          "date": "2023-06",
+          "employmentPct": 74.9,
+          "unemploymentPct": 4.3,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2023-07",
+          "employmentPct": 74.7,
+          "unemploymentPct": 4.3,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2023-08",
+          "employmentPct": 74.9,
+          "unemploymentPct": 4.1,
+          "inactivityPct": 21.8
+        },
+        {
+          "date": "2023-09",
+          "employmentPct": 74.9,
+          "unemploymentPct": 4.0,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2023-10",
+          "employmentPct": 74.9,
+          "unemploymentPct": 4.0,
+          "inactivityPct": 22.0
+        },
+        {
+          "date": "2023-11",
+          "employmentPct": 74.9,
+          "unemploymentPct": 3.9,
+          "inactivityPct": 22.1
+        },
+        {
+          "date": "2023-12",
+          "employmentPct": 74.7,
+          "unemploymentPct": 4.1,
+          "inactivityPct": 22.1
+        },
+        {
+          "date": "2024-01",
+          "employmentPct": 74.6,
+          "unemploymentPct": 4.2,
+          "inactivityPct": 22.1
+        },
+        {
+          "date": "2024-02",
+          "employmentPct": 74.5,
+          "unemploymentPct": 4.3,
+          "inactivityPct": 22.1
+        },
+        {
+          "date": "2024-03",
+          "employmentPct": 74.4,
+          "unemploymentPct": 4.4,
+          "inactivityPct": 22.2
+        },
+        {
+          "date": "2024-04",
+          "employmentPct": 74.4,
+          "unemploymentPct": 4.4,
+          "inactivityPct": 22.1
+        },
+        {
+          "date": "2024-05",
+          "employmentPct": 74.6,
+          "unemploymentPct": 4.2,
+          "inactivityPct": 22.1
+        },
+        {
+          "date": "2024-06",
+          "employmentPct": 74.7,
+          "unemploymentPct": 4.2,
+          "inactivityPct": 21.9
+        },
+        {
+          "date": "2024-07",
+          "employmentPct": 75.0,
+          "unemploymentPct": 4.1,
+          "inactivityPct": 21.8
+        },
+        {
+          "date": "2024-08",
+          "employmentPct": 74.9,
+          "unemploymentPct": 4.3,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2024-09",
+          "employmentPct": 74.9,
+          "unemploymentPct": 4.3,
+          "inactivityPct": 21.7
+        },
+        {
+          "date": "2024-10",
+          "employmentPct": 74.9,
+          "unemploymentPct": 4.4,
+          "inactivityPct": 21.6
+        },
+        {
+          "date": "2024-11",
+          "employmentPct": 75.0,
+          "unemploymentPct": 4.4,
+          "inactivityPct": 21.5
+        },
+        {
+          "date": "2024-12",
+          "employmentPct": 75.0,
+          "unemploymentPct": 4.4,
+          "inactivityPct": 21.5
+        },
+        {
+          "date": "2025-01",
+          "employmentPct": 75.1,
+          "unemploymentPct": 4.4,
+          "inactivityPct": 21.4
+        },
+        {
+          "date": "2025-02",
+          "employmentPct": 75.0,
+          "unemploymentPct": 4.5,
+          "inactivityPct": 21.4
+        },
+        {
+          "date": "2025-03",
+          "employmentPct": 75.1,
+          "unemploymentPct": 4.6,
+          "inactivityPct": 21.3
+        },
+        {
+          "date": "2025-04",
+          "employmentPct": 75.2,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 21.0
+        },
+        {
+          "date": "2025-05",
+          "employmentPct": 75.3,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 21.0
+        },
+        {
+          "date": "2025-06",
+          "employmentPct": 75.2,
+          "unemploymentPct": 4.7,
+          "inactivityPct": 21.1
+        },
+        {
+          "date": "2025-07",
+          "employmentPct": 75.1,
+          "unemploymentPct": 4.8,
+          "inactivityPct": 21.0
+        },
+        {
+          "date": "2025-08",
+          "employmentPct": 75.0,
+          "unemploymentPct": 5.0,
+          "inactivityPct": 21.0
+        },
+        {
+          "date": "2025-09",
+          "employmentPct": 74.9,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 21.0
+        },
+        {
+          "date": "2025-10",
+          "employmentPct": 75.1,
+          "unemploymentPct": 5.1,
+          "inactivityPct": 20.8
+        },
+        {
+          "date": "2025-11",
+          "employmentPct": 75.0,
+          "unemploymentPct": 5.2,
+          "inactivityPct": 20.8
+        }
+      ]
+    },
+    "productivity": {
+      "timeSeries": [
+        {
+          "date": "2000-Q1",
+          "index": 82.3
+        },
+        {
+          "date": "2000-Q2",
+          "index": 81.9
+        },
+        {
+          "date": "2000-Q3",
+          "index": 82.4
+        },
+        {
+          "date": "2000-Q4",
+          "index": 82.3
+        },
+        {
+          "date": "2001-Q1",
+          "index": 83.3
+        },
+        {
+          "date": "2001-Q2",
+          "index": 83.0
+        },
+        {
+          "date": "2001-Q3",
+          "index": 83.5
+        },
+        {
+          "date": "2001-Q4",
+          "index": 83.8
+        },
+        {
+          "date": "2002-Q1",
+          "index": 84.1
+        },
+        {
+          "date": "2002-Q2",
+          "index": 84.9
+        },
+        {
+          "date": "2002-Q3",
+          "index": 84.9
+        },
+        {
+          "date": "2002-Q4",
+          "index": 85.4
+        },
+        {
+          "date": "2003-Q1",
+          "index": 86.1
+        },
+        {
+          "date": "2003-Q2",
+          "index": 86.6
+        },
+        {
+          "date": "2003-Q3",
+          "index": 87.4
+        },
+        {
+          "date": "2003-Q4",
+          "index": 88.5
+        },
+        {
+          "date": "2004-Q1",
+          "index": 87.8
+        },
+        {
+          "date": "2004-Q2",
+          "index": 88.4
+        },
+        {
+          "date": "2004-Q3",
+          "index": 88.4
+        },
+        {
+          "date": "2004-Q4",
+          "index": 87.9
+        },
+        {
+          "date": "2005-Q1",
+          "index": 88.6
+        },
+        {
+          "date": "2005-Q2",
+          "index": 89.5
+        },
+        {
+          "date": "2005-Q3",
+          "index": 89.8
+        },
+        {
+          "date": "2005-Q4",
+          "index": 90.8
+        },
+        {
+          "date": "2006-Q1",
+          "index": 91.0
+        },
+        {
+          "date": "2006-Q2",
+          "index": 91.3
+        },
+        {
+          "date": "2006-Q3",
+          "index": 91.2
+        },
+        {
+          "date": "2006-Q4",
+          "index": 91.1
+        },
+        {
+          "date": "2007-Q1",
+          "index": 92.1
+        },
+        {
+          "date": "2007-Q2",
+          "index": 92.6
+        },
+        {
+          "date": "2007-Q3",
+          "index": 93.2
+        },
+        {
+          "date": "2007-Q4",
+          "index": 94.0
+        },
+        {
+          "date": "2008-Q1",
+          "index": 93.3
+        },
+        {
+          "date": "2008-Q2",
+          "index": 94.0
+        },
+        {
+          "date": "2008-Q3",
+          "index": 92.4
+        },
+        {
+          "date": "2008-Q4",
+          "index": 91.0
+        },
+        {
+          "date": "2009-Q1",
+          "index": 90.7
+        },
+        {
+          "date": "2009-Q2",
+          "index": 90.7
+        },
+        {
+          "date": "2009-Q3",
+          "index": 91.3
+        },
+        {
+          "date": "2009-Q4",
+          "index": 91.6
+        },
+        {
+          "date": "2010-Q1",
+          "index": 92.6
+        },
+        {
+          "date": "2010-Q2",
+          "index": 92.9
+        },
+        {
+          "date": "2010-Q3",
+          "index": 93.0
+        },
+        {
+          "date": "2010-Q4",
+          "index": 92.6
+        },
+        {
+          "date": "2011-Q1",
+          "index": 92.7
+        },
+        {
+          "date": "2011-Q2",
+          "index": 93.6
+        },
+        {
+          "date": "2011-Q3",
+          "index": 93.4
+        },
+        {
+          "date": "2011-Q4",
+          "index": 93.6
+        },
+        {
+          "date": "2012-Q1",
+          "index": 93.6
+        },
+        {
+          "date": "2012-Q2",
+          "index": 92.9
+        },
+        {
+          "date": "2012-Q3",
+          "index": 92.9
+        },
+        {
+          "date": "2012-Q4",
+          "index": 92.5
+        },
+        {
+          "date": "2013-Q1",
+          "index": 92.6
+        },
+        {
+          "date": "2013-Q2",
+          "index": 92.9
+        },
+        {
+          "date": "2013-Q3",
+          "index": 92.4
+        },
+        {
+          "date": "2013-Q4",
+          "index": 92.9
+        },
+        {
+          "date": "2014-Q1",
+          "index": 92.8
+        },
+        {
+          "date": "2014-Q2",
+          "index": 92.8
+        },
+        {
+          "date": "2014-Q3",
+          "index": 93.4
+        },
+        {
+          "date": "2014-Q4",
+          "index": 93.4
+        },
+        {
+          "date": "2015-Q1",
+          "index": 93.3
+        },
+        {
+          "date": "2015-Q2",
+          "index": 93.8
+        },
+        {
+          "date": "2015-Q3",
+          "index": 94.0
+        },
+        {
+          "date": "2015-Q4",
+          "index": 92.7
+        },
+        {
+          "date": "2016-Q1",
+          "index": 93.7
+        },
+        {
+          "date": "2016-Q2",
+          "index": 94.3
+        },
+        {
+          "date": "2016-Q3",
+          "index": 94.6
+        },
+        {
+          "date": "2016-Q4",
+          "index": 94.8
+        },
+        {
+          "date": "2017-Q1",
+          "index": 95.1
+        },
+        {
+          "date": "2017-Q2",
+          "index": 95.5
+        },
+        {
+          "date": "2017-Q3",
+          "index": 97.0
+        },
+        {
+          "date": "2017-Q4",
+          "index": 97.5
+        },
+        {
+          "date": "2018-Q1",
+          "index": 97.1
+        },
+        {
+          "date": "2018-Q2",
+          "index": 97.1
+        },
+        {
+          "date": "2018-Q3",
+          "index": 96.6
+        },
+        {
+          "date": "2018-Q4",
+          "index": 96.8
+        },
+        {
+          "date": "2019-Q1",
+          "index": 95.9
+        },
+        {
+          "date": "2019-Q2",
+          "index": 96.2
+        },
+        {
+          "date": "2019-Q3",
+          "index": 97.3
+        },
+        {
+          "date": "2019-Q4",
+          "index": 97.5
+        },
+        {
+          "date": "2020-Q1",
+          "index": 97.2
+        },
+        {
+          "date": "2020-Q2",
+          "index": 94.7
+        },
+        {
+          "date": "2020-Q3",
+          "index": 102.9
+        },
+        {
+          "date": "2020-Q4",
+          "index": 97.9
+        },
+        {
+          "date": "2021-Q1",
+          "index": 99.0
+        },
+        {
+          "date": "2021-Q2",
+          "index": 100.2
+        },
+        {
+          "date": "2021-Q3",
+          "index": 99.1
+        },
+        {
+          "date": "2021-Q4",
+          "index": 100.0
+        },
+        {
+          "date": "2022-Q1",
+          "index": 100.4
+        },
+        {
+          "date": "2022-Q2",
+          "index": 100.4
+        },
+        {
+          "date": "2022-Q3",
+          "index": 100.4
+        },
+        {
+          "date": "2022-Q4",
+          "index": 100.4
+        },
+        {
+          "date": "2023-Q1",
+          "index": 99.8
+        },
+        {
+          "date": "2023-Q2",
+          "index": 100.1
+        },
+        {
+          "date": "2023-Q3",
+          "index": 100.5
+        },
+        {
+          "date": "2023-Q4",
+          "index": 99.5
+        },
+        {
+          "date": "2024-Q1",
+          "index": 99.4
+        },
+        {
+          "date": "2024-Q2",
+          "index": 99.5
+        },
+        {
+          "date": "2024-Q3",
+          "index": 98.6
+        },
+        {
+          "date": "2024-Q4",
+          "index": 99.5
+        },
+        {
+          "date": "2025-Q1",
+          "index": 99.7
+        },
+        {
+          "date": "2025-Q2",
+          "index": 99.0
+        },
+        {
+          "date": "2025-Q3",
+          "index": 99.6
+        }
+      ]
+    },
+    "livingStandards": {
+      "rhdiTimeSeries": [
+        {
+          "date": "2000-Q1",
+          "gbpPerHead": 4754.0
+        },
+        {
+          "date": "2000-Q2",
+          "gbpPerHead": 4805.0
+        },
+        {
+          "date": "2000-Q3",
+          "gbpPerHead": 4893.0
+        },
+        {
+          "date": "2000-Q4",
+          "gbpPerHead": 4966.0
+        },
+        {
+          "date": "2001-Q1",
+          "gbpPerHead": 4997.0
+        },
+        {
+          "date": "2001-Q2",
+          "gbpPerHead": 4980.0
+        },
+        {
+          "date": "2001-Q3",
+          "gbpPerHead": 4998.0
+        },
+        {
+          "date": "2001-Q4",
+          "gbpPerHead": 5063.0
+        },
+        {
+          "date": "2002-Q1",
+          "gbpPerHead": 5056.0
+        },
+        {
+          "date": "2002-Q2",
+          "gbpPerHead": 5106.0
+        },
+        {
+          "date": "2002-Q3",
+          "gbpPerHead": 5082.0
+        },
+        {
+          "date": "2002-Q4",
+          "gbpPerHead": 5104.0
+        },
+        {
+          "date": "2003-Q1",
+          "gbpPerHead": 5129.0
+        },
+        {
+          "date": "2003-Q2",
+          "gbpPerHead": 5152.0
+        },
+        {
+          "date": "2003-Q3",
+          "gbpPerHead": 5191.0
+        },
+        {
+          "date": "2003-Q4",
+          "gbpPerHead": 5232.0
+        },
+        {
+          "date": "2004-Q1",
+          "gbpPerHead": 5250.0
+        },
+        {
+          "date": "2004-Q2",
+          "gbpPerHead": 5282.0
+        },
+        {
+          "date": "2004-Q3",
+          "gbpPerHead": 5298.0
+        },
+        {
+          "date": "2004-Q4",
+          "gbpPerHead": 5313.0
+        },
+        {
+          "date": "2005-Q1",
+          "gbpPerHead": 5334.0
+        },
+        {
+          "date": "2005-Q2",
+          "gbpPerHead": 5376.0
+        },
+        {
+          "date": "2005-Q3",
+          "gbpPerHead": 5416.0
+        },
+        {
+          "date": "2005-Q4",
+          "gbpPerHead": 5395.0
+        },
+        {
+          "date": "2006-Q1",
+          "gbpPerHead": 5443.0
+        },
+        {
+          "date": "2006-Q2",
+          "gbpPerHead": 5416.0
+        },
+        {
+          "date": "2006-Q3",
+          "gbpPerHead": 5446.0
+        },
+        {
+          "date": "2006-Q4",
+          "gbpPerHead": 5463.0
+        },
+        {
+          "date": "2007-Q1",
+          "gbpPerHead": 5641.0
+        },
+        {
+          "date": "2007-Q2",
+          "gbpPerHead": 5592.0
+        },
+        {
+          "date": "2007-Q3",
+          "gbpPerHead": 5649.0
+        },
+        {
+          "date": "2007-Q4",
+          "gbpPerHead": 5628.0
+        },
+        {
+          "date": "2008-Q1",
+          "gbpPerHead": 5552.0
+        },
+        {
+          "date": "2008-Q2",
+          "gbpPerHead": 5600.0
+        },
+        {
+          "date": "2008-Q3",
+          "gbpPerHead": 5494.0
+        },
+        {
+          "date": "2008-Q4",
+          "gbpPerHead": 5579.0
+        },
+        {
+          "date": "2009-Q1",
+          "gbpPerHead": 5542.0
+        },
+        {
+          "date": "2009-Q2",
+          "gbpPerHead": 5641.0
+        },
+        {
+          "date": "2009-Q3",
+          "gbpPerHead": 5599.0
+        },
+        {
+          "date": "2009-Q4",
+          "gbpPerHead": 5637.0
+        },
+        {
+          "date": "2010-Q1",
+          "gbpPerHead": 5636.0
+        },
+        {
+          "date": "2010-Q2",
+          "gbpPerHead": 5638.0
+        },
+        {
+          "date": "2010-Q3",
+          "gbpPerHead": 5596.0
+        },
+        {
+          "date": "2010-Q4",
+          "gbpPerHead": 5543.0
+        },
+        {
+          "date": "2011-Q1",
+          "gbpPerHead": 5409.0
+        },
+        {
+          "date": "2011-Q2",
+          "gbpPerHead": 5466.0
+        },
+        {
+          "date": "2011-Q3",
+          "gbpPerHead": 5454.0
+        },
+        {
+          "date": "2011-Q4",
+          "gbpPerHead": 5426.0
+        },
+        {
+          "date": "2012-Q1",
+          "gbpPerHead": 5528.0
+        },
+        {
+          "date": "2012-Q2",
+          "gbpPerHead": 5560.0
+        },
+        {
+          "date": "2012-Q3",
+          "gbpPerHead": 5539.0
+        },
+        {
+          "date": "2012-Q4",
+          "gbpPerHead": 5563.0
+        },
+        {
+          "date": "2013-Q1",
+          "gbpPerHead": 5516.0
+        },
+        {
+          "date": "2013-Q2",
+          "gbpPerHead": 5583.0
+        },
+        {
+          "date": "2013-Q3",
+          "gbpPerHead": 5675.0
+        },
+        {
+          "date": "2013-Q4",
+          "gbpPerHead": 5740.0
+        },
+        {
+          "date": "2014-Q1",
+          "gbpPerHead": 5737.0
+        },
+        {
+          "date": "2014-Q2",
+          "gbpPerHead": 5721.0
+        },
+        {
+          "date": "2014-Q3",
+          "gbpPerHead": 5707.0
+        },
+        {
+          "date": "2014-Q4",
+          "gbpPerHead": 5825.0
+        },
+        {
+          "date": "2015-Q1",
+          "gbpPerHead": 5923.0
+        },
+        {
+          "date": "2015-Q2",
+          "gbpPerHead": 6045.0
+        },
+        {
+          "date": "2015-Q3",
+          "gbpPerHead": 6150.0
+        },
+        {
+          "date": "2015-Q4",
+          "gbpPerHead": 6153.0
+        },
+        {
+          "date": "2016-Q1",
+          "gbpPerHead": 6109.0
+        },
+        {
+          "date": "2016-Q2",
+          "gbpPerHead": 6101.0
+        },
+        {
+          "date": "2016-Q3",
+          "gbpPerHead": 6051.0
+        },
+        {
+          "date": "2016-Q4",
+          "gbpPerHead": 6014.0
+        },
+        {
+          "date": "2017-Q1",
+          "gbpPerHead": 5991.0
+        },
+        {
+          "date": "2017-Q2",
+          "gbpPerHead": 6108.0
+        },
+        {
+          "date": "2017-Q3",
+          "gbpPerHead": 6134.0
+        },
+        {
+          "date": "2017-Q4",
+          "gbpPerHead": 6161.0
+        },
+        {
+          "date": "2018-Q1",
+          "gbpPerHead": 6207.0
+        },
+        {
+          "date": "2018-Q2",
+          "gbpPerHead": 6146.0
+        },
+        {
+          "date": "2018-Q3",
+          "gbpPerHead": 6160.0
+        },
+        {
+          "date": "2018-Q4",
+          "gbpPerHead": 6252.0
+        },
+        {
+          "date": "2019-Q1",
+          "gbpPerHead": 6237.0
+        },
+        {
+          "date": "2019-Q2",
+          "gbpPerHead": 6318.0
+        },
+        {
+          "date": "2019-Q3",
+          "gbpPerHead": 6318.0
+        },
+        {
+          "date": "2019-Q4",
+          "gbpPerHead": 6377.0
+        },
+        {
+          "date": "2020-Q1",
+          "gbpPerHead": 6275.0
+        },
+        {
+          "date": "2020-Q2",
+          "gbpPerHead": 6188.0
+        },
+        {
+          "date": "2020-Q3",
+          "gbpPerHead": 6319.0
+        },
+        {
+          "date": "2020-Q4",
+          "gbpPerHead": 6349.0
+        },
+        {
+          "date": "2021-Q1",
+          "gbpPerHead": 6398.0
+        },
+        {
+          "date": "2021-Q2",
+          "gbpPerHead": 6406.0
+        },
+        {
+          "date": "2021-Q3",
+          "gbpPerHead": 6349.0
+        },
+        {
+          "date": "2021-Q4",
+          "gbpPerHead": 6225.0
+        },
+        {
+          "date": "2022-Q1",
+          "gbpPerHead": 6230.0
+        },
+        {
+          "date": "2022-Q2",
+          "gbpPerHead": 6076.0
+        },
+        {
+          "date": "2022-Q3",
+          "gbpPerHead": 6063.0
+        },
+        {
+          "date": "2022-Q4",
+          "gbpPerHead": 6150.0
+        },
+        {
+          "date": "2023-Q1",
+          "gbpPerHead": 6065.0
+        },
+        {
+          "date": "2023-Q2",
+          "gbpPerHead": 6131.0
+        },
+        {
+          "date": "2023-Q3",
+          "gbpPerHead": 6106.0
+        },
+        {
+          "date": "2023-Q4",
+          "gbpPerHead": 6118.0
+        },
+        {
+          "date": "2024-Q1",
+          "gbpPerHead": 6228.0
+        },
+        {
+          "date": "2024-Q2",
+          "gbpPerHead": 6236.0
+        },
+        {
+          "date": "2024-Q3",
+          "gbpPerHead": 6359.0
+        },
+        {
+          "date": "2024-Q4",
+          "gbpPerHead": 6429.0
+        },
+        {
+          "date": "2025-Q1",
+          "gbpPerHead": 6368.0
+        },
+        {
+          "date": "2025-Q2",
+          "gbpPerHead": 6365.0
+        },
+        {
+          "date": "2025-Q3",
+          "gbpPerHead": 6315.0
+        }
+      ],
+      "giniTimeSeries": [
+        {
+          "year": 2010,
+          "gini": 34.0
+        },
+        {
+          "year": 2011,
+          "gini": 33.7
+        },
+        {
+          "year": 2012,
+          "gini": 32.3
+        },
+        {
+          "year": 2013,
+          "gini": 33.2
+        },
+        {
+          "year": 2014,
+          "gini": 34.0
+        },
+        {
+          "year": 2015,
+          "gini": 34.7
+        },
+        {
+          "year": 2016,
+          "gini": 33.6
+        },
+        {
+          "year": 2017,
+          "gini": 34.2
+        },
+        {
+          "year": 2018,
+          "gini": 34.2
+        },
+        {
+          "year": 2019,
+          "gini": 34.6
+        },
+        {
+          "year": 2020,
+          "gini": 35.4
+        },
+        {
+          "year": 2021,
+          "gini": 35.0
+        },
+        {
+          "year": 2022,
+          "gini": 34.4
+        },
+        {
+          "year": 2023,
+          "gini": 33.1
+        },
+        {
+          "year": 2024,
+          "gini": 32.9
+        }
+      ]
+    }
+  },
+  "regional": {},
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Consumer Price Inflation (MM23), D7G7",
+        "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/d7g7/mm23",
+        "frequency": "monthly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Average Weekly Earnings (EARN01), KAB9 / A3WX",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/timeseries/kab9/lms",
+        "frequency": "monthly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Labour Market Statistics (LMS), LF24 / MGSX / LF2S",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/lf24/lms",
+        "frequency": "monthly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Labour Productivity (PRDY), LZVB",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/timeseries/lzvb/prdy",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "UK Economic Accounts (UKEA), CRXX",
+        "url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/crxx/ukea",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Household Income Inequality, FYE 2024",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/householdincomeinequalityfinancial/financialyearending2024",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "CPI is the Consumer Prices Index annual rate (all items). Average Weekly Earnings (AWE) covers the whole economy, seasonally adjusted; real terms adjusted using CPI. Labour market data from the Labour Force Survey (3-month rolling averages) \u2014 ONS notes reduced quality due to falling LFS response rates. Productivity is output per hour worked (whole economy, chained volume measure). RHDI is real household disposable income per head (chained volume, seasonally adjusted). Gini coefficient for equivalised disposable income from ONS annual publication.",
+    "knownIssues": [
+      "Labour Force Survey response rates have declined \u2014 labour market figures are now 'official statistics in development'.",
+      "Real wages series A3WX uses CPI adjustment; CPIH-adjusted figures would be slightly different.",
+      "Gini coefficient for FYE 2020 affected by pandemic \u2014 ONS notes measurement challenges.",
+      "Productivity index rebased to 2023 = 100."
+    ]
+  }
+}

@@ -1,0 +1,919 @@
+{
+  "topic": "health",
+  "lastUpdated": "2026-03-02",
+  "coverage": {
+    "from": "2017-08",
+    "to": "2026-01"
+  },
+  "national": {
+    "timeSeries": [
+      {
+        "date": "2017-08",
+        "cat1MeanMins": 9.2,
+        "cat1P90Mins": 15.2,
+        "cat2MeanMins": 23.9,
+        "cat2P90Mins": 53.1,
+        "cat1Incidents": 10233
+      },
+      {
+        "date": "2017-09",
+        "cat1MeanMins": 8.1,
+        "cat1P90Mins": 14.2,
+        "cat2MeanMins": 22.0,
+        "cat2P90Mins": 46.8,
+        "cat1Incidents": 25533
+      },
+      {
+        "date": "2017-10",
+        "cat1MeanMins": 7.9,
+        "cat1P90Mins": 13.7,
+        "cat2MeanMins": 21.9,
+        "cat2P90Mins": 46.7,
+        "cat1Incidents": 27768
+      },
+      {
+        "date": "2017-11",
+        "cat1MeanMins": 8.0,
+        "cat1P90Mins": 13.8,
+        "cat2MeanMins": 22.8,
+        "cat2P90Mins": 47.7,
+        "cat1Incidents": 50380
+      },
+      {
+        "date": "2017-12",
+        "cat1MeanMins": 8.9,
+        "cat1P90Mins": 15.4,
+        "cat2MeanMins": 29.6,
+        "cat2P90Mins": 63.0,
+        "cat1Incidents": 63476
+      },
+      {
+        "date": "2018-01",
+        "cat1MeanMins": 8.3,
+        "cat1P90Mins": 14.5,
+        "cat2MeanMins": 26.1,
+        "cat2P90Mins": 55.5,
+        "cat1Incidents": 60170
+      },
+      {
+        "date": "2018-02",
+        "cat1MeanMins": 8.3,
+        "cat1P90Mins": 14.3,
+        "cat2MeanMins": 25.6,
+        "cat2P90Mins": 54.0,
+        "cat1Incidents": 52766
+      },
+      {
+        "date": "2018-03",
+        "cat1MeanMins": 8.6,
+        "cat1P90Mins": 14.9,
+        "cat2MeanMins": 27.7,
+        "cat2P90Mins": 59.3,
+        "cat1Incidents": 58932
+      },
+      {
+        "date": "2018-04",
+        "cat1MeanMins": 7.6,
+        "cat1P90Mins": 13.4,
+        "cat2MeanMins": 20.1,
+        "cat2P90Mins": 41.4,
+        "cat1Incidents": 54279
+      },
+      {
+        "date": "2018-05",
+        "cat1MeanMins": 7.7,
+        "cat1P90Mins": 13.5,
+        "cat2MeanMins": 21.2,
+        "cat2P90Mins": 43.7,
+        "cat1Incidents": 58154
+      },
+      {
+        "date": "2018-06",
+        "cat1MeanMins": 7.6,
+        "cat1P90Mins": 13.3,
+        "cat2MeanMins": 21.5,
+        "cat2P90Mins": 44.3,
+        "cat1Incidents": 56481
+      },
+      {
+        "date": "2018-07",
+        "cat1MeanMins": 7.5,
+        "cat1P90Mins": 13.1,
+        "cat2MeanMins": 22.6,
+        "cat2P90Mins": 46.9,
+        "cat1Incidents": 58884
+      },
+      {
+        "date": "2018-08",
+        "cat1MeanMins": 7.1,
+        "cat1P90Mins": 12.6,
+        "cat2MeanMins": 20.6,
+        "cat2P90Mins": 42.3,
+        "cat1Incidents": 53240
+      },
+      {
+        "date": "2018-09",
+        "cat1MeanMins": 7.2,
+        "cat1P90Mins": 12.6,
+        "cat2MeanMins": 21.6,
+        "cat2P90Mins": 44.2,
+        "cat1Incidents": 52568
+      },
+      {
+        "date": "2018-10",
+        "cat1MeanMins": 7.2,
+        "cat1P90Mins": 12.5,
+        "cat2MeanMins": 21.2,
+        "cat2P90Mins": 43.4,
+        "cat1Incidents": 55383
+      },
+      {
+        "date": "2018-11",
+        "cat1MeanMins": 7.2,
+        "cat1P90Mins": 12.5,
+        "cat2MeanMins": 21.9,
+        "cat2P90Mins": 44.9,
+        "cat1Incidents": 56484
+      },
+      {
+        "date": "2018-12",
+        "cat1MeanMins": 7.1,
+        "cat1P90Mins": 12.4,
+        "cat2MeanMins": 22.4,
+        "cat2P90Mins": 46.4,
+        "cat1Incidents": 60238
+      },
+      {
+        "date": "2019-01",
+        "cat1MeanMins": 7.1,
+        "cat1P90Mins": 12.3,
+        "cat2MeanMins": 23.0,
+        "cat2P90Mins": 47.6,
+        "cat1Incidents": 60108
+      },
+      {
+        "date": "2019-02",
+        "cat1MeanMins": 7.3,
+        "cat1P90Mins": 12.7,
+        "cat2MeanMins": 23.6,
+        "cat2P90Mins": 49.0,
+        "cat1Incidents": 54648
+      },
+      {
+        "date": "2019-03",
+        "cat1MeanMins": 7.0,
+        "cat1P90Mins": 12.2,
+        "cat2MeanMins": 21.2,
+        "cat2P90Mins": 43.2,
+        "cat1Incidents": 59560
+      },
+      {
+        "date": "2019-04",
+        "cat1MeanMins": 7.0,
+        "cat1P90Mins": 12.2,
+        "cat2MeanMins": 21.5,
+        "cat2P90Mins": 44.0,
+        "cat1Incidents": 56815
+      },
+      {
+        "date": "2019-05",
+        "cat1MeanMins": 6.9,
+        "cat1P90Mins": 12.1,
+        "cat2MeanMins": 21.0,
+        "cat2P90Mins": 43.0,
+        "cat1Incidents": 57875
+      },
+      {
+        "date": "2019-06",
+        "cat1MeanMins": 7.1,
+        "cat1P90Mins": 12.5,
+        "cat2MeanMins": 22.5,
+        "cat2P90Mins": 46.0,
+        "cat1Incidents": 57805
+      },
+      {
+        "date": "2019-07",
+        "cat1MeanMins": 7.2,
+        "cat1P90Mins": 12.7,
+        "cat2MeanMins": 23.3,
+        "cat2P90Mins": 48.0,
+        "cat1Incidents": 61787
+      },
+      {
+        "date": "2019-08",
+        "cat1MeanMins": 7.1,
+        "cat1P90Mins": 12.5,
+        "cat2MeanMins": 21.3,
+        "cat2P90Mins": 43.5,
+        "cat1Incidents": 57598
+      },
+      {
+        "date": "2019-09",
+        "cat1MeanMins": 7.2,
+        "cat1P90Mins": 12.7,
+        "cat2MeanMins": 22.4,
+        "cat2P90Mins": 45.7,
+        "cat1Incidents": 55753
+      },
+      {
+        "date": "2019-10",
+        "cat1MeanMins": 7.4,
+        "cat1P90Mins": 13.0,
+        "cat2MeanMins": 23.8,
+        "cat2P90Mins": 48.5,
+        "cat1Incidents": 61561
+      },
+      {
+        "date": "2019-11",
+        "cat1MeanMins": 7.5,
+        "cat1P90Mins": 13.2,
+        "cat2MeanMins": 25.9,
+        "cat2P90Mins": 53.3,
+        "cat1Incidents": 63227
+      },
+      {
+        "date": "2019-12",
+        "cat1MeanMins": 7.5,
+        "cat1P90Mins": 13.3,
+        "cat2MeanMins": 27.9,
+        "cat2P90Mins": 58.5,
+        "cat1Incidents": 70459
+      },
+      {
+        "date": "2020-01",
+        "cat1MeanMins": 7.1,
+        "cat1P90Mins": 12.4,
+        "cat2MeanMins": 20.9,
+        "cat2P90Mins": 42.5,
+        "cat1Incidents": 60777
+      },
+      {
+        "date": "2020-02",
+        "cat1MeanMins": 7.3,
+        "cat1P90Mins": 12.9,
+        "cat2MeanMins": 22.1,
+        "cat2P90Mins": 45.1,
+        "cat1Incidents": 56624
+      },
+      {
+        "date": "2020-03",
+        "cat1MeanMins": 8.1,
+        "cat1P90Mins": 14.4,
+        "cat2MeanMins": 32.1,
+        "cat2P90Mins": 69.0,
+        "cat1Incidents": 61693
+      },
+      {
+        "date": "2020-04",
+        "cat1MeanMins": 7.0,
+        "cat1P90Mins": 12.3,
+        "cat2MeanMins": 18.5,
+        "cat2P90Mins": 38.4,
+        "cat1Incidents": 50004
+      },
+      {
+        "date": "2020-05",
+        "cat1MeanMins": 6.5,
+        "cat1P90Mins": 11.3,
+        "cat2MeanMins": 13.5,
+        "cat2P90Mins": 25.2,
+        "cat1Incidents": 45391
+      },
+      {
+        "date": "2020-06",
+        "cat1MeanMins": 6.6,
+        "cat1P90Mins": 11.5,
+        "cat2MeanMins": 14.9,
+        "cat2P90Mins": 28.4,
+        "cat1Incidents": 46146
+      },
+      {
+        "date": "2020-07",
+        "cat1MeanMins": 6.8,
+        "cat1P90Mins": 11.9,
+        "cat2MeanMins": 16.7,
+        "cat2P90Mins": 32.6,
+        "cat1Incidents": 51771
+      },
+      {
+        "date": "2020-08",
+        "cat1MeanMins": 7.1,
+        "cat1P90Mins": 12.6,
+        "cat2MeanMins": 20.1,
+        "cat2P90Mins": 40.6,
+        "cat1Incidents": 56462
+      },
+      {
+        "date": "2020-09",
+        "cat1MeanMins": 7.2,
+        "cat1P90Mins": 12.8,
+        "cat2MeanMins": 22.6,
+        "cat2P90Mins": 46.0,
+        "cat1Incidents": 57918
+      },
+      {
+        "date": "2020-10",
+        "cat1MeanMins": 7.4,
+        "cat1P90Mins": 13.0,
+        "cat2MeanMins": 25.4,
+        "cat2P90Mins": 52.1,
+        "cat1Incidents": 60670
+      },
+      {
+        "date": "2020-11",
+        "cat1MeanMins": 7.2,
+        "cat1P90Mins": 12.6,
+        "cat2MeanMins": 21.3,
+        "cat2P90Mins": 42.8,
+        "cat1Incidents": 54961
+      },
+      {
+        "date": "2020-12",
+        "cat1MeanMins": 7.4,
+        "cat1P90Mins": 13.1,
+        "cat2MeanMins": 27.9,
+        "cat2P90Mins": 59.6,
+        "cat1Incidents": 61091
+      },
+      {
+        "date": "2021-01",
+        "cat1MeanMins": 7.5,
+        "cat1P90Mins": 13.3,
+        "cat2MeanMins": 29.6,
+        "cat2P90Mins": 64.2,
+        "cat1Incidents": 61801
+      },
+      {
+        "date": "2021-02",
+        "cat1MeanMins": 6.8,
+        "cat1P90Mins": 11.9,
+        "cat2MeanMins": 18.3,
+        "cat2P90Mins": 36.1,
+        "cat1Incidents": 49230
+      },
+      {
+        "date": "2021-03",
+        "cat1MeanMins": 6.8,
+        "cat1P90Mins": 12.0,
+        "cat2MeanMins": 18.4,
+        "cat2P90Mins": 36.4,
+        "cat1Incidents": 56780
+      },
+      {
+        "date": "2021-04",
+        "cat1MeanMins": 7.0,
+        "cat1P90Mins": 12.4,
+        "cat2MeanMins": 20.3,
+        "cat2P90Mins": 40.5,
+        "cat1Incidents": 58277
+      },
+      {
+        "date": "2021-05",
+        "cat1MeanMins": 7.4,
+        "cat1P90Mins": 13.2,
+        "cat2MeanMins": 24.6,
+        "cat2P90Mins": 50.0,
+        "cat1Incidents": 67987
+      },
+      {
+        "date": "2021-06",
+        "cat1MeanMins": 7.9,
+        "cat1P90Mins": 14.0,
+        "cat2MeanMins": 30.7,
+        "cat2P90Mins": 63.5,
+        "cat1Incidents": 73499
+      },
+      {
+        "date": "2021-07",
+        "cat1MeanMins": 8.6,
+        "cat1P90Mins": 15.3,
+        "cat2MeanMins": 41.1,
+        "cat2P90Mins": 87.7,
+        "cat1Incidents": 81684
+      },
+      {
+        "date": "2021-08",
+        "cat1MeanMins": 8.5,
+        "cat1P90Mins": 15.1,
+        "cat2MeanMins": 38.6,
+        "cat2P90Mins": 82.3,
+        "cat1Incidents": 74096
+      },
+      {
+        "date": "2021-09",
+        "cat1MeanMins": 9.0,
+        "cat1P90Mins": 16.0,
+        "cat2MeanMins": 45.5,
+        "cat2P90Mins": 98.0,
+        "cat1Incidents": 76123
+      },
+      {
+        "date": "2021-10",
+        "cat1MeanMins": 9.4,
+        "cat1P90Mins": 16.4,
+        "cat2MeanMins": 53.9,
+        "cat2P90Mins": 116.2,
+        "cat1Incidents": 82129
+      },
+      {
+        "date": "2021-11",
+        "cat1MeanMins": 9.2,
+        "cat1P90Mins": 16.1,
+        "cat2MeanMins": 46.6,
+        "cat2P90Mins": 101.0,
+        "cat1Incidents": 78026
+      },
+      {
+        "date": "2021-12",
+        "cat1MeanMins": 9.2,
+        "cat1P90Mins": 16.2,
+        "cat2MeanMins": 53.4,
+        "cat2P90Mins": 119.2,
+        "cat1Incidents": 82359
+      },
+      {
+        "date": "2022-01",
+        "cat1MeanMins": 8.5,
+        "cat1P90Mins": 15.1,
+        "cat2MeanMins": 38.1,
+        "cat2P90Mins": 83.6,
+        "cat1Incidents": 72294
+      },
+      {
+        "date": "2022-02",
+        "cat1MeanMins": 8.8,
+        "cat1P90Mins": 15.7,
+        "cat2MeanMins": 42.1,
+        "cat2P90Mins": 91.9,
+        "cat1Incidents": 67526
+      },
+      {
+        "date": "2022-03",
+        "cat1MeanMins": 9.6,
+        "cat1P90Mins": 16.8,
+        "cat2MeanMins": 61.1,
+        "cat2P90Mins": 137.2,
+        "cat1Incidents": 81857
+      },
+      {
+        "date": "2022-04",
+        "cat1MeanMins": 9.0,
+        "cat1P90Mins": 16.1,
+        "cat2MeanMins": 51.3,
+        "cat2P90Mins": 116.4,
+        "cat1Incidents": 76547
+      },
+      {
+        "date": "2022-05",
+        "cat1MeanMins": 8.6,
+        "cat1P90Mins": 15.3,
+        "cat2MeanMins": 39.9,
+        "cat2P90Mins": 85.8,
+        "cat1Incidents": 77933
+      },
+      {
+        "date": "2022-06",
+        "cat1MeanMins": 9.1,
+        "cat1P90Mins": 16.1,
+        "cat2MeanMins": 51.4,
+        "cat2P90Mins": 113.9,
+        "cat1Incidents": 79436
+      },
+      {
+        "date": "2022-07",
+        "cat1MeanMins": 9.6,
+        "cat1P90Mins": 16.9,
+        "cat2MeanMins": 58.9,
+        "cat2P90Mins": 131.5,
+        "cat1Incidents": 85392
+      },
+      {
+        "date": "2022-08",
+        "cat1MeanMins": 9.1,
+        "cat1P90Mins": 16.3,
+        "cat2MeanMins": 42.6,
+        "cat2P90Mins": 93.2,
+        "cat1Incidents": 72448
+      },
+      {
+        "date": "2022-09",
+        "cat1MeanMins": 9.3,
+        "cat1P90Mins": 16.6,
+        "cat2MeanMins": 48.0,
+        "cat2P90Mins": 105.8,
+        "cat1Incidents": 69454
+      },
+      {
+        "date": "2022-10",
+        "cat1MeanMins": 9.9,
+        "cat1P90Mins": 17.7,
+        "cat2MeanMins": 61.3,
+        "cat2P90Mins": 136.2,
+        "cat1Incidents": 70772
+      },
+      {
+        "date": "2022-11",
+        "cat1MeanMins": 9.4,
+        "cat1P90Mins": 16.9,
+        "cat2MeanMins": 48.2,
+        "cat2P90Mins": 105.3,
+        "cat1Incidents": 68888
+      },
+      {
+        "date": "2022-12",
+        "cat1MeanMins": 11.0,
+        "cat1P90Mins": 19.4,
+        "cat2MeanMins": 92.9,
+        "cat2P90Mins": 221.8,
+        "cat1Incidents": 101090
+      },
+      {
+        "date": "2023-01",
+        "cat1MeanMins": 8.5,
+        "cat1P90Mins": 15.2,
+        "cat2MeanMins": 32.1,
+        "cat2P90Mins": 68.0,
+        "cat1Incidents": 72860
+      },
+      {
+        "date": "2023-02",
+        "cat1MeanMins": 8.5,
+        "cat1P90Mins": 15.1,
+        "cat2MeanMins": 32.3,
+        "cat2P90Mins": 68.8,
+        "cat1Incidents": 66071
+      },
+      {
+        "date": "2023-03",
+        "cat1MeanMins": 8.8,
+        "cat1P90Mins": 15.6,
+        "cat2MeanMins": 39.5,
+        "cat2P90Mins": 86.2,
+        "cat1Incidents": 76949
+      },
+      {
+        "date": "2023-04",
+        "cat1MeanMins": 8.1,
+        "cat1P90Mins": 14.4,
+        "cat2MeanMins": 28.6,
+        "cat2P90Mins": 60.5,
+        "cat1Incidents": 71997
+      },
+      {
+        "date": "2023-05",
+        "cat1MeanMins": 8.3,
+        "cat1P90Mins": 14.8,
+        "cat2MeanMins": 32.4,
+        "cat2P90Mins": 69.7,
+        "cat1Incidents": 76155
+      },
+      {
+        "date": "2023-06",
+        "cat1MeanMins": 8.7,
+        "cat1P90Mins": 15.4,
+        "cat2MeanMins": 36.8,
+        "cat2P90Mins": 78.8,
+        "cat1Incidents": 77093
+      },
+      {
+        "date": "2023-07",
+        "cat1MeanMins": 8.3,
+        "cat1P90Mins": 15.0,
+        "cat2MeanMins": 31.8,
+        "cat2P90Mins": 67.8,
+        "cat1Incidents": 75720
+      },
+      {
+        "date": "2023-08",
+        "cat1MeanMins": 8.3,
+        "cat1P90Mins": 14.8,
+        "cat2MeanMins": 31.5,
+        "cat2P90Mins": 67.3,
+        "cat1Incidents": 73822
+      },
+      {
+        "date": "2023-09",
+        "cat1MeanMins": 8.5,
+        "cat1P90Mins": 15.1,
+        "cat2MeanMins": 37.6,
+        "cat2P90Mins": 81.1,
+        "cat1Incidents": 77548
+      },
+      {
+        "date": "2023-10",
+        "cat1MeanMins": 8.7,
+        "cat1P90Mins": 15.5,
+        "cat2MeanMins": 41.7,
+        "cat2P90Mins": 90.1,
+        "cat1Incidents": 82962
+      },
+      {
+        "date": "2023-11",
+        "cat1MeanMins": 8.5,
+        "cat1P90Mins": 15.1,
+        "cat2MeanMins": 38.5,
+        "cat2P90Mins": 82.1,
+        "cat1Incidents": 79238
+      },
+      {
+        "date": "2023-12",
+        "cat1MeanMins": 8.7,
+        "cat1P90Mins": 15.4,
+        "cat2MeanMins": 46.0,
+        "cat2P90Mins": 101.0,
+        "cat1Incidents": 87691
+      },
+      {
+        "date": "2024-01",
+        "cat1MeanMins": 8.4,
+        "cat1P90Mins": 15.0,
+        "cat2MeanMins": 40.1,
+        "cat2P90Mins": 87.5,
+        "cat1Incidents": 81864
+      },
+      {
+        "date": "2024-02",
+        "cat1MeanMins": 8.4,
+        "cat1P90Mins": 14.9,
+        "cat2MeanMins": 36.3,
+        "cat2P90Mins": 77.7,
+        "cat1Incidents": 76821
+      },
+      {
+        "date": "2024-03",
+        "cat1MeanMins": 8.3,
+        "cat1P90Mins": 14.8,
+        "cat2MeanMins": 33.9,
+        "cat2P90Mins": 71.8,
+        "cat1Incidents": 81790
+      },
+      {
+        "date": "2024-04",
+        "cat1MeanMins": 8.2,
+        "cat1P90Mins": 14.6,
+        "cat2MeanMins": 30.4,
+        "cat2P90Mins": 64.2,
+        "cat1Incidents": 75349
+      },
+      {
+        "date": "2024-05",
+        "cat1MeanMins": 8.3,
+        "cat1P90Mins": 14.7,
+        "cat2MeanMins": 32.7,
+        "cat2P90Mins": 68.8,
+        "cat1Incidents": 81771
+      },
+      {
+        "date": "2024-06",
+        "cat1MeanMins": 8.3,
+        "cat1P90Mins": 14.9,
+        "cat2MeanMins": 34.6,
+        "cat2P90Mins": 73.4,
+        "cat1Incidents": 79553
+      },
+      {
+        "date": "2024-07",
+        "cat1MeanMins": 8.2,
+        "cat1P90Mins": 14.7,
+        "cat2MeanMins": 33.4,
+        "cat2P90Mins": 70.4,
+        "cat1Incidents": 80409
+      },
+      {
+        "date": "2024-08",
+        "cat1MeanMins": 8.1,
+        "cat1P90Mins": 14.4,
+        "cat2MeanMins": 27.4,
+        "cat2P90Mins": 57.5,
+        "cat1Incidents": 73612
+      },
+      {
+        "date": "2024-09",
+        "cat1MeanMins": 8.4,
+        "cat1P90Mins": 14.9,
+        "cat2MeanMins": 36.0,
+        "cat2P90Mins": 76.3,
+        "cat1Incidents": 77638
+      },
+      {
+        "date": "2024-10",
+        "cat1MeanMins": 8.6,
+        "cat1P90Mins": 15.4,
+        "cat2MeanMins": 42.2,
+        "cat2P90Mins": 90.3,
+        "cat1Incidents": 84129
+      },
+      {
+        "date": "2024-11",
+        "cat1MeanMins": 8.6,
+        "cat1P90Mins": 15.4,
+        "cat2MeanMins": 42.4,
+        "cat2P90Mins": 90.8,
+        "cat1Incidents": 84310
+      },
+      {
+        "date": "2024-12",
+        "cat1MeanMins": 8.7,
+        "cat1P90Mins": 15.4,
+        "cat2MeanMins": 47.4,
+        "cat2P90Mins": 101.7,
+        "cat1Incidents": 92658
+      },
+      {
+        "date": "2025-01",
+        "cat1MeanMins": 8.3,
+        "cat1P90Mins": 14.8,
+        "cat2MeanMins": 35.6,
+        "cat2P90Mins": 76.4,
+        "cat1Incidents": 81391
+      },
+      {
+        "date": "2025-02",
+        "cat1MeanMins": 8.1,
+        "cat1P90Mins": 14.3,
+        "cat2MeanMins": 31.4,
+        "cat2P90Mins": 65.2,
+        "cat1Incidents": 71988
+      },
+      {
+        "date": "2025-03",
+        "cat1MeanMins": 7.9,
+        "cat1P90Mins": 13.9,
+        "cat2MeanMins": 28.6,
+        "cat2P90Mins": 58.5,
+        "cat1Incidents": 79181
+      },
+      {
+        "date": "2025-04",
+        "cat1MeanMins": 7.7,
+        "cat1P90Mins": 13.7,
+        "cat2MeanMins": 27.5,
+        "cat2P90Mins": 56.4,
+        "cat1Incidents": 75553
+      },
+      {
+        "date": "2025-05",
+        "cat1MeanMins": 7.8,
+        "cat1P90Mins": 14.0,
+        "cat2MeanMins": 27.8,
+        "cat2P90Mins": 56.6,
+        "cat1Incidents": 78104
+      },
+      {
+        "date": "2025-06",
+        "cat1MeanMins": 7.9,
+        "cat1P90Mins": 14.1,
+        "cat2MeanMins": 29.6,
+        "cat2P90Mins": 60.2,
+        "cat1Incidents": 77737
+      },
+      {
+        "date": "2025-07",
+        "cat1MeanMins": 7.9,
+        "cat1P90Mins": 14.2,
+        "cat2MeanMins": 28.6,
+        "cat2P90Mins": 58.1,
+        "cat1Incidents": 79654
+      },
+      {
+        "date": "2025-08",
+        "cat1MeanMins": 7.8,
+        "cat1P90Mins": 13.9,
+        "cat2MeanMins": 27.0,
+        "cat2P90Mins": 54.7,
+        "cat1Incidents": 74576
+      },
+      {
+        "date": "2025-09",
+        "cat1MeanMins": 8.0,
+        "cat1P90Mins": 14.3,
+        "cat2MeanMins": 30.8,
+        "cat2P90Mins": 63.5,
+        "cat1Incidents": 74474
+      },
+      {
+        "date": "2025-10",
+        "cat1MeanMins": 8.0,
+        "cat1P90Mins": 14.3,
+        "cat2MeanMins": 32.6,
+        "cat2P90Mins": 67.3,
+        "cat1Incidents": 81114
+      },
+      {
+        "date": "2025-11",
+        "cat1MeanMins": 8.0,
+        "cat1P90Mins": 14.2,
+        "cat2MeanMins": 32.8,
+        "cat2P90Mins": 68.0,
+        "cat1Incidents": 80429
+      },
+      {
+        "date": "2025-12",
+        "cat1MeanMins": 8.0,
+        "cat1P90Mins": 14.2,
+        "cat2MeanMins": 32.7,
+        "cat2P90Mins": 68.8,
+        "cat1Incidents": 85557
+      },
+      {
+        "date": "2026-01",
+        "cat1MeanMins": 8.1,
+        "cat1P90Mins": 14.4,
+        "cat2MeanMins": 35.1,
+        "cat2P90Mins": 73.9,
+        "cat1Incidents": 82634
+      }
+    ]
+  },
+  "regional": {
+    "byTrust": [
+      {
+        "code": "RX9",
+        "name": "East Midlands Ambulance NHS Trust",
+        "cat1MeanMins": 9.3,
+        "cat2MeanMins": 49.6
+      },
+      {
+        "code": "RYC",
+        "name": "East of England Ambulance NHS Trust",
+        "cat1MeanMins": 9.2,
+        "cat2MeanMins": 47.1
+      },
+      {
+        "code": "R1F",
+        "name": "Isle of Wight NHS Trust",
+        "cat1MeanMins": 8.8,
+        "cat2MeanMins": 42.7
+      },
+      {
+        "code": "RYF",
+        "name": "South Western Ambulance NHS FT",
+        "cat1MeanMins": 9.3,
+        "cat2MeanMins": 39.3
+      },
+      {
+        "code": "RYE",
+        "name": "South Central Ambulance NHS FT",
+        "cat1MeanMins": 9.0,
+        "cat2MeanMins": 37.5
+      },
+      {
+        "code": "RX7",
+        "name": "North West Ambulance NHS Trust",
+        "cat1MeanMins": 7.0,
+        "cat2MeanMins": 32.8
+      },
+      {
+        "code": "RRU",
+        "name": "London Ambulance NHS Trust",
+        "cat1MeanMins": 7.0,
+        "cat2MeanMins": 32.4
+      },
+      {
+        "code": "RYA",
+        "name": "West Midlands Ambulance University NHS FT",
+        "cat1MeanMins": 8.3,
+        "cat2MeanMins": 31.3
+      },
+      {
+        "code": "RYD",
+        "name": "South East Coast Ambulance NHS FT",
+        "cat1MeanMins": 8.2,
+        "cat2MeanMins": 26.9
+      },
+      {
+        "code": "RX8",
+        "name": "Yorkshire Ambulance NHS Trust",
+        "cat1MeanMins": 7.8,
+        "cat2MeanMins": 24.4
+      },
+      {
+        "code": "RX6",
+        "name": "North East Ambulance NHS FT",
+        "cat1MeanMins": 6.5,
+        "cat2MeanMins": 23.9
+      }
+    ]
+  },
+  "targets": {
+    "cat1MeanMins": 7,
+    "cat2MeanMins": 18
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "Ambulance Quality Indicators \u2014 AmbSYS Timeseries",
+        "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ambulance-quality-indicators/",
+        "retrieved": "2026-03-02",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Mean and 90th percentile response times in minutes, converted from seconds in the NHS England AmbSYS Raw sheet. Category 1: immediately life-threatening calls (target 7 min mean). Category 2: emergency calls (target 18 min mean, 40 min 90th percentile). England-level figures from 'ENG' rows; 11 ambulance trusts shown for latest month.",
+    "knownIssues": [
+      "New category system introduced April 2018 \u2014 pre-April 2018 data uses legacy categories.",
+      "COVID-19 caused a significant spike in Cat 2 mean from March 2020.",
+      "Data for Aug 2017\u2013Mar 2018 uses initial roll-out period figures."
+    ]
+  }
+}

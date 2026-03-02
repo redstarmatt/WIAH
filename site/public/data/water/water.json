@@ -1,0 +1,272 @@
+{
+  "topic": "water",
+  "lastUpdated": "2026-03-02",
+  "national": {
+    "sewage": {
+      "timeSeries": [
+        {
+          "year": 2016,
+          "totalHours": 100533,
+          "totalSpills": 12637,
+          "monitorsReporting": 862,
+          "avgSpillsPerOverflow": 14.7
+        },
+        {
+          "year": 2017,
+          "totalHours": 170269,
+          "totalSpills": 33159,
+          "monitorsReporting": 2515,
+          "avgSpillsPerOverflow": 13.2
+        },
+        {
+          "year": 2018,
+          "totalHours": 898784,
+          "totalSpills": 146930,
+          "monitorsReporting": 6182,
+          "avgSpillsPerOverflow": 23.8
+        },
+        {
+          "year": 2019,
+          "totalHours": 2489167,
+          "totalSpills": 292864,
+          "monitorsReporting": 8276,
+          "avgSpillsPerOverflow": 35.4
+        },
+        {
+          "year": 2020,
+          "totalHours": 3101150,
+          "totalSpills": 403375,
+          "monitorsReporting": 12092,
+          "avgSpillsPerOverflow": 32.6
+        },
+        {
+          "year": 2021,
+          "totalHours": 2667452,
+          "totalSpills": 372533,
+          "monitorsReporting": 12393,
+          "avgSpillsPerOverflow": 29.4
+        },
+        {
+          "year": 2022,
+          "totalHours": 1754921,
+          "totalSpills": 301091,
+          "monitorsReporting": 13080,
+          "avgSpillsPerOverflow": 23.0
+        },
+        {
+          "year": 2023,
+          "totalHours": 3606170,
+          "totalSpills": 464056,
+          "monitorsReporting": 14031,
+          "avgSpillsPerOverflow": 33.1
+        },
+        {
+          "year": 2024,
+          "totalHours": 3614428,
+          "totalSpills": 450398,
+          "monitorsReporting": 14182,
+          "avgSpillsPerOverflow": 31.8
+        }
+      ],
+      "byCompany2024": [
+        {
+          "name": "Anglian Water",
+          "totalSpills": 43919,
+          "totalHours": 448938,
+          "avgSpillsPerOverflow": 30.6
+        },
+        {
+          "name": "Dwr Cymru Welsh Water",
+          "totalSpills": 5101,
+          "totalHours": 31770,
+          "avgSpillsPerOverflow": 41.1
+        },
+        {
+          "name": "Northumbrian Water",
+          "totalSpills": 40792,
+          "totalHours": 246587,
+          "avgSpillsPerOverflow": 26.3
+        },
+        {
+          "name": "Severn Trent Water",
+          "totalSpills": 62085,
+          "totalHours": 454155,
+          "avgSpillsPerOverflow": 25.4
+        },
+        {
+          "name": "South West Water",
+          "totalSpills": 56173,
+          "totalHours": 544439,
+          "avgSpillsPerOverflow": 41.3
+        },
+        {
+          "name": "Southern Water",
+          "totalSpills": 29355,
+          "totalHours": 304537,
+          "avgSpillsPerOverflow": 30.2
+        },
+        {
+          "name": "Thames Water",
+          "totalSpills": 23061,
+          "totalHours": 298081,
+          "avgSpillsPerOverflow": 39.4
+        },
+        {
+          "name": "United Utilities",
+          "totalSpills": 77817,
+          "totalHours": 450778,
+          "avgSpillsPerOverflow": 34.7
+        },
+        {
+          "name": "Wessex Water",
+          "totalSpills": 43931,
+          "totalHours": 404880,
+          "avgSpillsPerOverflow": 33.9
+        },
+        {
+          "name": "Yorkshire Water",
+          "totalSpills": 68164,
+          "totalHours": 430263,
+          "avgSpillsPerOverflow": 31.4
+        }
+      ]
+    },
+    "riverHealth": {
+      "timeSeries": [
+        {
+          "year": 2009,
+          "goodOrBetterPct": 26
+        },
+        {
+          "year": 2012,
+          "goodOrBetterPct": 22
+        },
+        {
+          "year": 2015,
+          "goodOrBetterPct": 17
+        },
+        {
+          "year": 2016,
+          "goodOrBetterPct": 17
+        },
+        {
+          "year": 2019,
+          "goodOrBetterPct": 16
+        }
+      ]
+    },
+    "bathingWater": {
+      "timeSeries": [
+        {
+          "year": 2015,
+          "excellentPct": 65.4,
+          "goodPct": 25.4,
+          "sufficientPct": 5.3,
+          "poorPct": 3.8,
+          "totalSites": 413
+        },
+        {
+          "year": 2016,
+          "excellentPct": 65.3,
+          "goodPct": 24.5,
+          "sufficientPct": 6.5,
+          "poorPct": 3.6,
+          "totalSites": 414
+        },
+        {
+          "year": 2017,
+          "excellentPct": 65.1,
+          "goodPct": 25.8,
+          "sufficientPct": 6.3,
+          "poorPct": 2.9,
+          "totalSites": 413
+        },
+        {
+          "year": 2018,
+          "excellentPct": 65.1,
+          "goodPct": 25.8,
+          "sufficientPct": 5.3,
+          "poorPct": 3.9,
+          "totalSites": 418
+        },
+        {
+          "year": 2019,
+          "excellentPct": 71.1,
+          "goodPct": 19.6,
+          "sufficientPct": 6.3,
+          "poorPct": 3.0,
+          "totalSites": 420
+        },
+        {
+          "year": 2021,
+          "excellentPct": 69.8,
+          "goodPct": 20.0,
+          "sufficientPct": 5.9,
+          "poorPct": 4.3,
+          "totalSites": 442
+        },
+        {
+          "year": 2022,
+          "excellentPct": 72.3,
+          "goodPct": 19.0,
+          "sufficientPct": 5.2,
+          "poorPct": 3.6,
+          "totalSites": 451
+        },
+        {
+          "year": 2023,
+          "excellentPct": 68.6,
+          "goodPct": 21.5,
+          "sufficientPct": 4.4,
+          "poorPct": 5.5,
+          "totalSites": 451
+        },
+        {
+          "year": 2024,
+          "excellentPct": 63.5,
+          "goodPct": 24.7,
+          "sufficientPct": 4.9,
+          "poorPct": 6.9,
+          "totalSites": 451
+        },
+        {
+          "year": 2025,
+          "excellentPct": 66.1,
+          "goodPct": 22.0,
+          "sufficientPct": 4.7,
+          "poorPct": 7.1,
+          "totalSites": 449
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Environment Agency",
+        "dataset": "Event Duration Monitoring \u2014 Storm Overflow Annual Returns, 2024",
+        "url": "https://www.data.gov.uk/dataset/19f6064d-7356-466f-844e-d20ea10ae9fd/event-duration-monitoring-storm-overflows-annual-returns",
+        "frequency": "annual"
+      },
+      {
+        "name": "Environment Agency / Defra",
+        "dataset": "Water Framework Directive classification, B3 indicator",
+        "url": "https://oifdata.defra.gov.uk/themes/water/B3/",
+        "frequency": "periodic (last full classification 2019)"
+      },
+      {
+        "name": "Environment Agency",
+        "dataset": "Bathing water quality statistics (ENV17)",
+        "url": "https://www.gov.uk/government/statistics/bathing-water-quality-statistics",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Sewage discharge data from Environment Agency EDM annual returns. Total hours and spill events are monitored totals \u2014 coverage expanded from ~860 monitors in 2016 to 14,254 (100%) in 2024. Early years significantly under-count actual discharges. River health from WFD classification (last full assessment 2019). Bathing water classifications under revised Bathing Water Directive (rBWD) from 2015. No 2020 data due to COVID.",
+    "knownIssues": [
+      "EDM monitor coverage expanded dramatically: 862 in 2016 vs 14,254 in 2024. Year-on-year comparisons must account for this.",
+      "River health data last fully updated in 2019 \u2014 no reclassification since.",
+      "No bathing water classifications for 2020 (COVID).",
+      "Some spill data includes partial-year monitoring (counted pro-rata)."
+    ]
+  }
+}

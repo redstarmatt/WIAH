@@ -1,0 +1,472 @@
+{
+  "topic": "health",
+  "lastUpdated": "2026-03-02",
+  "coverage": {
+    "from": "2023-07",
+    "to": "2025-12"
+  },
+  "national": {
+    "timeSeries": [
+      {
+        "date": "2023-07",
+        "avgWaitDays": 5.9,
+        "totalAppointments": 25119179,
+        "pctSameOrNextDay": 53.6
+      },
+      {
+        "date": "2023-08",
+        "avgWaitDays": 6.0,
+        "totalAppointments": 25527146,
+        "pctSameOrNextDay": 54.4
+      },
+      {
+        "date": "2023-09",
+        "avgWaitDays": 7.1,
+        "totalAppointments": 27585166,
+        "pctSameOrNextDay": 50.3
+      },
+      {
+        "date": "2023-10",
+        "avgWaitDays": 7.2,
+        "totalAppointments": 30203748,
+        "pctSameOrNextDay": 49.7
+      },
+      {
+        "date": "2023-11",
+        "avgWaitDays": 6.1,
+        "totalAppointments": 28243466,
+        "pctSameOrNextDay": 53.2
+      },
+      {
+        "date": "2023-12",
+        "avgWaitDays": 5.7,
+        "totalAppointments": 23136653,
+        "pctSameOrNextDay": 56.5
+      },
+      {
+        "date": "2024-01",
+        "avgWaitDays": 5.8,
+        "totalAppointments": 29273598,
+        "pctSameOrNextDay": 55.2
+      },
+      {
+        "date": "2024-02",
+        "avgWaitDays": 5.9,
+        "totalAppointments": 27492438,
+        "pctSameOrNextDay": 53.8
+      },
+      {
+        "date": "2024-03",
+        "avgWaitDays": 6.0,
+        "totalAppointments": 26586892,
+        "pctSameOrNextDay": 53.8
+      },
+      {
+        "date": "2024-04",
+        "avgWaitDays": 6.3,
+        "totalAppointments": 27165245,
+        "pctSameOrNextDay": 54.3
+      },
+      {
+        "date": "2024-05",
+        "avgWaitDays": 6.2,
+        "totalAppointments": 27106688,
+        "pctSameOrNextDay": 54.2
+      },
+      {
+        "date": "2024-06",
+        "avgWaitDays": 6.2,
+        "totalAppointments": 25345063,
+        "pctSameOrNextDay": 53.6
+      },
+      {
+        "date": "2024-07",
+        "avgWaitDays": 6.1,
+        "totalAppointments": 27778363,
+        "pctSameOrNextDay": 54.3
+      },
+      {
+        "date": "2024-08",
+        "avgWaitDays": 6.2,
+        "totalAppointments": 24833263,
+        "pctSameOrNextDay": 54.5
+      },
+      {
+        "date": "2024-09",
+        "avgWaitDays": 6.3,
+        "totalAppointments": 26856710,
+        "pctSameOrNextDay": 52.8
+      },
+      {
+        "date": "2024-10",
+        "avgWaitDays": 8.2,
+        "totalAppointments": 33950680,
+        "pctSameOrNextDay": 48.0
+      },
+      {
+        "date": "2024-11",
+        "avgWaitDays": 6.6,
+        "totalAppointments": 28122079,
+        "pctSameOrNextDay": 52.5
+      },
+      {
+        "date": "2024-12",
+        "avgWaitDays": 5.9,
+        "totalAppointments": 25330771,
+        "pctSameOrNextDay": 55.8
+      },
+      {
+        "date": "2025-01",
+        "avgWaitDays": 6.1,
+        "totalAppointments": 29689465,
+        "pctSameOrNextDay": 54.9
+      },
+      {
+        "date": "2025-02",
+        "avgWaitDays": 6.0,
+        "totalAppointments": 26637237,
+        "pctSameOrNextDay": 53.8
+      },
+      {
+        "date": "2025-03",
+        "avgWaitDays": 6.2,
+        "totalAppointments": 28202976,
+        "pctSameOrNextDay": 53.5
+      },
+      {
+        "date": "2025-04",
+        "avgWaitDays": 6.5,
+        "totalAppointments": 26283347,
+        "pctSameOrNextDay": 54.1
+      },
+      {
+        "date": "2025-05",
+        "avgWaitDays": 6.4,
+        "totalAppointments": 26207708,
+        "pctSameOrNextDay": 53.8
+      },
+      {
+        "date": "2025-06",
+        "avgWaitDays": 6.3,
+        "totalAppointments": 27420446,
+        "pctSameOrNextDay": 53.3
+      },
+      {
+        "date": "2025-07",
+        "avgWaitDays": 6.3,
+        "totalAppointments": 29207112,
+        "pctSameOrNextDay": 53.5
+      },
+      {
+        "date": "2025-08",
+        "avgWaitDays": 6.4,
+        "totalAppointments": 24406537,
+        "pctSameOrNextDay": 54.0
+      },
+      {
+        "date": "2025-09",
+        "avgWaitDays": 6.3,
+        "totalAppointments": 28777394,
+        "pctSameOrNextDay": 53.6
+      },
+      {
+        "date": "2025-10",
+        "avgWaitDays": 8.2,
+        "totalAppointments": 34608491,
+        "pctSameOrNextDay": 48.6
+      },
+      {
+        "date": "2025-11",
+        "avgWaitDays": 6.5,
+        "totalAppointments": 27792224,
+        "pctSameOrNextDay": 52.9
+      },
+      {
+        "date": "2025-12",
+        "avgWaitDays": 6.0,
+        "totalAppointments": 27578155,
+        "pctSameOrNextDay": 56.0
+      }
+    ],
+    "latestMonth": {
+      "date": "2025-12",
+      "avgWaitDays": 6.0,
+      "totalAppointments": 27578155,
+      "pctSameOrNextDay": 56.0
+    }
+  },
+  "regional": {
+    "latestMonth": "2025-12",
+    "byICB": [
+      {
+        "code": "E54000043",
+        "name": "Gloucestershire",
+        "fullName": "NHS Gloucestershire Integrated Care Board",
+        "avgWaitDays": 8.1
+      },
+      {
+        "code": "E54000022",
+        "name": "Norfolk and Waveney",
+        "fullName": "NHS Norfolk and Waveney Integrated Care Board",
+        "avgWaitDays": 7.7
+      },
+      {
+        "code": "E54000058",
+        "name": "Derby and Derbyshire",
+        "fullName": "NHS Derby and Derbyshire Integrated Care Board",
+        "avgWaitDays": 7.5
+      },
+      {
+        "code": "E54000041",
+        "name": "Dorset",
+        "fullName": "NHS Dorset Integrated Care Board",
+        "avgWaitDays": 7.5
+      },
+      {
+        "code": "E54000040",
+        "name": "Bath and North East Somerset, Swindon and Wiltshire",
+        "fullName": "NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",
+        "avgWaitDays": 7.3
+      },
+      {
+        "code": "E54000032",
+        "name": "Kent and Medway",
+        "fullName": "NHS Kent and Medway Integrated Care Board",
+        "avgWaitDays": 7.2
+      },
+      {
+        "code": "E54000038",
+        "name": "Somerset",
+        "fullName": "NHS Somerset Integrated Care Board",
+        "avgWaitDays": 7.2
+      },
+      {
+        "code": "E54000039",
+        "name": "Bristol, North Somerset and South Gloucestershire",
+        "fullName": "NHS Bristol, North Somerset and South Gloucestershire Integrated Care Board",
+        "avgWaitDays": 7.0
+      },
+      {
+        "code": "E54000053",
+        "name": "Sussex",
+        "fullName": "NHS Sussex Integrated Care Board",
+        "avgWaitDays": 7.0
+      },
+      {
+        "code": "E54000013",
+        "name": "Lincolnshire",
+        "fullName": "NHS Lincolnshire Integrated Care Board",
+        "avgWaitDays": 6.9
+      },
+      {
+        "code": "E54000042",
+        "name": "Hampshire and the Isle of Wight",
+        "fullName": "NHS Hampshire and the Isle of Wight Integrated Care Board",
+        "avgWaitDays": 6.7
+      },
+      {
+        "code": "E54000048",
+        "name": "Lancashire and South Cumbria",
+        "fullName": "NHS Lancashire and South Cumbria Integrated Care Board",
+        "avgWaitDays": 6.7
+      },
+      {
+        "code": "E54000061",
+        "name": "South Yorkshire",
+        "fullName": "NHS South Yorkshire Integrated Care Board",
+        "avgWaitDays": 6.6
+      },
+      {
+        "code": "E54000036",
+        "name": "Cornwall and the Isles of Scilly",
+        "fullName": "NHS Cornwall and the Isles of Scilly Integrated Care Board",
+        "avgWaitDays": 6.5
+      },
+      {
+        "code": "E54000019",
+        "name": "Herefordshire and Worcestershire",
+        "fullName": "NHS Herefordshire and Worcestershire Integrated Care Board",
+        "avgWaitDays": 6.5
+      },
+      {
+        "code": "E54000051",
+        "name": "Humber and North Yorkshire",
+        "fullName": "NHS Humber and North Yorkshire Integrated Care Board",
+        "avgWaitDays": 6.5
+      },
+      {
+        "code": "E54000015",
+        "name": "Leicester, Leicestershire and Rutland",
+        "fullName": "NHS Leicester, Leicestershire and Rutland Integrated Care Board",
+        "avgWaitDays": 6.5
+      },
+      {
+        "code": "E54000050",
+        "name": "North East and North Cumbria",
+        "fullName": "NHS North East and North Cumbria Integrated Care Board",
+        "avgWaitDays": 6.5
+      },
+      {
+        "code": "E54000060",
+        "name": "Nottingham and Nottinghamshire",
+        "fullName": "NHS Nottingham and Nottinghamshire Integrated Care Board",
+        "avgWaitDays": 6.5
+      },
+      {
+        "code": "E54000044",
+        "name": "Buckinghamshire, Oxfordshire and Berkshire West",
+        "fullName": "NHS Buckinghamshire, Oxfordshire and Berkshire West Integrated Care Board",
+        "avgWaitDays": 6.2
+      },
+      {
+        "code": "E54000023",
+        "name": "Suffolk and North East Essex",
+        "fullName": "NHS Suffolk and North East Essex Integrated Care Board",
+        "avgWaitDays": 6.2
+      },
+      {
+        "code": "E54000037",
+        "name": "Devon",
+        "fullName": "NHS Devon Integrated Care Board",
+        "avgWaitDays": 6.1
+      },
+      {
+        "code": "E54000052",
+        "name": "Surrey Heartlands",
+        "fullName": "NHS Surrey Heartlands Integrated Care Board",
+        "avgWaitDays": 6.0
+      },
+      {
+        "code": "E54000054",
+        "name": "West Yorkshire",
+        "fullName": "NHS West Yorkshire Integrated Care Board",
+        "avgWaitDays": 6.0
+      },
+      {
+        "code": "E54000025",
+        "name": "Hertfordshire and West Essex",
+        "fullName": "NHS Hertfordshire and West Essex Integrated Care Board",
+        "avgWaitDays": 5.9
+      },
+      {
+        "code": "E54000056",
+        "name": "Cambridgeshire and Peterborough",
+        "fullName": "NHS Cambridgeshire and Peterborough Integrated Care Board",
+        "avgWaitDays": 5.8
+      },
+      {
+        "code": "E54000057",
+        "name": "Greater Manchester",
+        "fullName": "NHS Greater Manchester Integrated Care Board",
+        "avgWaitDays": 5.8
+      },
+      {
+        "code": "E54000011",
+        "name": "Shropshire, Telford and Wrekin",
+        "fullName": "NHS Shropshire, Telford and Wrekin Integrated Care Board",
+        "avgWaitDays": 5.8
+      },
+      {
+        "code": "E54000059",
+        "name": "Northamptonshire",
+        "fullName": "NHS Northamptonshire Integrated Care Board",
+        "avgWaitDays": 5.6
+      },
+      {
+        "code": "E54000024",
+        "name": "Bedfordshire, Luton and Milton Keynes",
+        "fullName": "NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",
+        "avgWaitDays": 5.4
+      },
+      {
+        "code": "E54000034",
+        "name": "Frimley",
+        "fullName": "NHS Frimley Integrated Care Board",
+        "avgWaitDays": 5.4
+      },
+      {
+        "code": "E54000026",
+        "name": "Mid and South Essex",
+        "fullName": "NHS Mid and South Essex Integrated Care Board",
+        "avgWaitDays": 5.4
+      },
+      {
+        "code": "E54000008",
+        "name": "Cheshire and Merseyside",
+        "fullName": "NHS Cheshire and Merseyside Integrated Care Board",
+        "avgWaitDays": 5.2
+      },
+      {
+        "code": "E54000010",
+        "name": "Staffordshire and Stoke-on-Trent",
+        "fullName": "NHS Staffordshire and Stoke-on-Trent Integrated Care Board",
+        "avgWaitDays": 5.1
+      },
+      {
+        "code": "E54000031",
+        "name": "South West London",
+        "fullName": "NHS South West London Integrated Care Board",
+        "avgWaitDays": 5.0
+      },
+      {
+        "code": "E54000030",
+        "name": "South East London",
+        "fullName": "NHS South East London Integrated Care Board",
+        "avgWaitDays": 4.9
+      },
+      {
+        "code": "E54000062",
+        "name": "Black Country",
+        "fullName": "NHS Black Country Integrated Care Board",
+        "avgWaitDays": 4.7
+      },
+      {
+        "code": "E54000029",
+        "name": "North East London",
+        "fullName": "NHS North East London Integrated Care Board",
+        "avgWaitDays": 4.3
+      },
+      {
+        "code": "E54000027",
+        "name": "North West London",
+        "fullName": "NHS North West London Integrated Care Board",
+        "avgWaitDays": 4.3
+      },
+      {
+        "code": "E54000055",
+        "name": "Birmingham and Solihull",
+        "fullName": "NHS Birmingham and Solihull Integrated Care Board",
+        "avgWaitDays": 4.2
+      },
+      {
+        "code": "E54000018",
+        "name": "Coventry and Warwickshire",
+        "fullName": "NHS Coventry and Warwickshire Integrated Care Board",
+        "avgWaitDays": 4.2
+      },
+      {
+        "code": "E54000028",
+        "name": "North Central London",
+        "fullName": "NHS North Central London Integrated Care Board",
+        "avgWaitDays": 3.6
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "Appointments in General Practice",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/appointments-in-general-practice",
+        "retrieved": "2026-03-02",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Weighted average wait days calculated from NHS England time-between-booking-and-appointment buckets. Bucket midpoints: Same Day=0, 1 Day=1, 2-7 Days=4.5, 8-14=11, 15-21=18, 22-28=25, >28=35. Attended appointments only, all GP practices in England. Aggregated from 42 ICB-level regional CSVs.",
+    "knownIssues": [
+      "Data coverage begins July 2023 (regional CSV format). Pre-2023 available via older national publication.",
+      "Regional CSVs use double spaces in some bucket labels (normalised in processing)."
+    ],
+    "releaseSlug": "december-2025"
+  }
+}

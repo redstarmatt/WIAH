@@ -1,0 +1,488 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import SiteName from '@/components/SiteName';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import MetricDetailModal from '@/components/MetricDetailModal';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import FunnelChart, { FunnelStage } from '@/components/charts/FunnelChart';
+
+// ── Types ────────────────────────────────────────────────────────────────────
+
+interface ChargeRatePoint {
+  date: string;
+  pct: number;
+}
+
+interface CrimeTypeRate {
+  type: string;
+  pct: number;
+}
+
+interface CourtBacklogPoint {
+  date: string;
+  outstanding: number;
+}
+
+interface PrisonPoint {
+  date: string;
+  population: number;
+  capacity: number;
+}
+
+interface JusticeData {
+  national: {
+    chargeRate: {
+      timeSeries: ChargeRatePoint[];
+      byCrimeType: CrimeTypeRate[];
+    };
+    funnel: {
+      stages: FunnelStage[];
+    };
+    courtBacklog: {
+      timeSeries: CourtBacklogPoint[];
+      target: number;
+    };
+    prisonPopulation: {
+      timeSeries: PrisonPoint[];
+      currentCapacity: number;
+      currentPopulation: number;
+    };
+  };
+  metadata: {
+    sources: { name: string; dataset: string; url: string; frequency: string }[];
+  };
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+
+function isoToDate(s: string): Date {
+  return new Date(s + '-01');
+}
+
+function quarterToDate(s: string): Date {
+  // "2016-Q1" → Jan 2016, Q2 → Apr, Q3 → Jul, Q4 → Oct
+  const [year, q] = s.split('-Q');
+  const month = (parseInt(q) - 1) * 3;
+  return new Date(parseInt(year), month, 1);
+}
+
+function sparkFrom(arr: number[], n = 12) {
+  return arr.slice(-n);
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
+
+export default function JusticePage() {
+  const [data, setData] = useState<JusticeData | null>(null);
+  const [expanded, setExpanded] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch('/data/justice/justice.json')
+      .then(r => r.json())
+      .then(setData)
+      .catch(console.error);
+  }, []);
+
+  // ── Derived series ──────────────────────────────────────────────────────
+
+  const chargeRateSeries: Series[] = data
+    ? [{
+        id: 'charge-rate',
+        label: 'Charge rate (%)',
+        data: data.national.chargeRate.timeSeries.map(d => ({
+          date: isoToDate(d.date),
+          value: d.pct,
+        })),
+      }]
+    : [];
+
+  const chargeAnnotations: Annotation[] = [
+    { date: new Date(2019, 3), label: '2019: Outcomes reform' },
+    { date: new Date(2020, 2), label: '2020: COVID-19' },
+  ];
+
+  const backlogSeries: Series[] = data
+    ? [{
+        id: 'backlog',
+        label: 'Outstanding cases',
+        data: data.national.courtBacklog.timeSeries.map(d => ({
+          date: quarterToDate(d.date),
+          value: d.outstanding,
+        })),
+      }]
+    : [];
+
+  const backlogAnnotations: Annotation[] = [
+    { date: new Date(2020, 2), label: '2020: Courts closed' },
+    { date: new Date(2022, 5), label: '2022: Barristers strike' },
+  ];
+
+  const prisonPopSeries: Series[] = data
+    ? [
+        {
+          id: 'population',
+          label: 'Population',
+          colour: '#0D1117',
+          data: data.national.prisonPopulation.timeSeries.map(d => ({
+            date: isoToDate(d.date),
+            value: d.population,
+          })),
+        },
+        {
+          id: 'capacity',
+          label: 'Capacity',
+          colour: '#E63946',
+          data: data.national.prisonPopulation.timeSeries.map(d => ({
+            date: isoToDate(d.date),
+            value: d.capacity,
+          })),
+        },
+      ]
+    : [];
+
+  const prisonAnnotations: Annotation[] = [
+    { date: new Date(2020, 2), label: 'COVID release' },
+    { date: new Date(2024, 8), label: 'SDS40 release' },
+  ];
+
+  // ── Metric values ────────────────────────────────────────────────────────
+
+  const latestCharge = data?.national.chargeRate.timeSeries.at(-1);
+  const firstCharge = data?.national.chargeRate.timeSeries[0];
+
+  const latestBacklog = data?.national.courtBacklog.timeSeries.at(-1);
+  const preCovidBacklog = data?.national.courtBacklog.timeSeries.find(
+    d => d.date === '2019-Q4'
+  );
+
+  const currentCap = data?.national.prisonPopulation.currentCapacity;
+  const currentPop = data?.national.prisonPopulation.currentPopulation;
+
+  const occupancyPct = currentCap && currentPop
+    ? ((currentPop / currentCap) * 100).toFixed(1)
+    : null;
+
+  // ── Render ────────────────────────────────────────────────────────────────
+
+  return (
+    <>
+      {/* Sticky nav */}
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-wiah-border px-6 py-3">
+        <div className="max-w-5xl mx-auto flex items-center justify-between">
+          <Link href="/"><SiteName size="nav" /></Link>
+          <span className="text-wiah-mid text-sm font-mono">Justice</span>
+          <Link href="/" className="text-sm text-wiah-blue hover:underline">&larr; All topics</Link>
+        </div>
+      </nav>
+
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Justice"
+          question="What Actually Happens When You Report a Crime?"
+          finding={
+            latestCharge
+              ? `Just ${latestCharge.pct}% of recorded crimes lead to a charge — down from ${firstCharge?.pct}% a decade ago. The Crown Court backlog has more than doubled since 2019.`
+              : 'Fewer than 7 in every 100 recorded crimes now result in a charge.'
+          }
+          colour="#6B7280"
+        />
+
+        {/* Metric cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <MetricCard
+            label="Crimes leading to charge"
+            value={latestCharge ? latestCharge.pct.toFixed(1) : '—'}
+            unit="%"
+            direction="down"
+            polarity="up-is-good"
+            changeText={
+              latestCharge && firstCharge
+                ? `Down from ${firstCharge.pct}% in 2015`
+                : 'Loading…'
+            }
+            sparklineData={
+              data
+                ? sparkFrom(data.national.chargeRate.timeSeries.map(d => d.pct))
+                : []
+            }
+            source="Home Office · Crime Outcomes YE Mar 2025"
+            onExpand={chargeRateSeries.length > 0 ? () => setExpanded('charge-rate') : undefined}
+          />
+          <MetricCard
+            label="Crown Court backlog"
+            value={latestBacklog ? `${(latestBacklog.outstanding / 1000).toFixed(1)}K` : '—'}
+            unit="cases"
+            direction="up"
+            polarity="up-is-bad"
+            changeText={
+              latestBacklog && preCovidBacklog
+                ? `+${Math.round(((latestBacklog.outstanding - preCovidBacklog.outstanding) / preCovidBacklog.outstanding) * 100)}% since 2019 · Target: 53K`
+                : 'Target: 53,000 cases'
+            }
+            sparklineData={
+              data
+                ? sparkFrom(data.national.courtBacklog.timeSeries.map(d => d.outstanding))
+                : []
+            }
+            source="MOJ · Criminal Court Statistics Q3 2025"
+            onExpand={backlogSeries.length > 0 ? () => setExpanded('backlog') : undefined}
+          />
+          <MetricCard
+            label="Prison population"
+            value={currentPop ? `${(currentPop / 1000).toFixed(1)}K` : '—'}
+            unit=""
+            direction="up"
+            polarity="up-is-bad"
+            changeText={
+              occupancyPct
+                ? `${occupancyPct}% of capacity`
+                : 'Loading…'
+            }
+            sparklineData={
+              data
+                ? sparkFrom(data.national.prisonPopulation.timeSeries.map(d => d.population))
+                : []
+            }
+            source="MOJ · Prison Population Dec 2025"
+            onExpand={prisonPopSeries.length > 0 ? () => setExpanded('prison') : undefined}
+          />
+        </div>
+
+        {/* Chart 1: Justice Funnel */}
+        {data ? (
+          <FunnelChart
+            title="What happens after a crime, 2024–25"
+            subtitle="For every 100 crimes experienced, how many reach each stage of the justice system."
+            stages={data.national.funnel.stages}
+            source={{
+              name: 'ONS / Home Office / CPS',
+              dataset: 'CSEW, Crime Outcomes, CPS Quarterly Data',
+              frequency: 'annual',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 2: Charge rate trend */}
+        {chargeRateSeries.length > 0 ? (
+          <LineChart
+            title="Charge rate, 2015–2025"
+            subtitle="Percentage of police-recorded offences resulting in a charge or summons, England and Wales."
+            series={chargeRateSeries}
+            annotations={chargeAnnotations}
+            yLabel="Percent"
+            source={{
+              name: 'Home Office',
+              dataset: 'Crime Outcomes in England and Wales, YE March 2025',
+              frequency: 'annual',
+              url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-2024-to-2025',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 3: Charge rate by crime type — inline bar table */}
+        {data && data.national.chargeRate.byCrimeType.length > 0 && (
+          <section className="mb-12">
+            <h3 className="text-lg font-bold text-wiah-black mb-1">
+              Charge rate by crime type
+            </h3>
+            <p className="text-sm text-wiah-mid font-mono mb-6">
+              YE March 2025. Percentage of recorded offences charged or summonsed.
+            </p>
+            <div className="divide-y divide-wiah-border">
+              {data.national.chargeRate.byCrimeType.map(ct => {
+                const pct = Math.min((ct.pct / 25) * 100, 100);
+                const colour = ct.pct < 5 ? '#E63946' : ct.pct < 10 ? '#F4A261' : '#2A9D8F';
+                return (
+                  <div key={ct.type} className="py-3 flex items-center gap-4">
+                    <span className="text-sm text-wiah-black w-56 shrink-0">{ct.type}</span>
+                    <div className="flex-1 bg-wiah-light rounded h-2">
+                      <div
+                        className="h-2 rounded"
+                        style={{ width: `${pct}%`, backgroundColor: colour }}
+                      />
+                    </div>
+                    <span
+                      className="font-mono text-sm font-bold w-16 text-right"
+                      style={{ color: colour }}
+                    >
+                      {ct.pct}%
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+            <p className="font-mono text-[11px] text-wiah-mid mt-3">
+              <a
+                href="https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-2024-to-2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Source: Home Office, Crime Outcomes in England and Wales, YE March 2025
+              </a>
+            </p>
+          </section>
+        )}
+
+        {/* Chart 4: Crown Court backlog */}
+        {backlogSeries.length > 0 ? (
+          <LineChart
+            title="Crown Court backlog, 2016–2025"
+            subtitle="Outstanding cases in the Crown Court, England and Wales. Target: 53,000."
+            series={backlogSeries}
+            annotations={backlogAnnotations}
+            targetLine={{ value: 53000, label: 'Pre-pandemic target: 53K' }}
+            yLabel="Cases"
+            source={{
+              name: 'Ministry of Justice',
+              dataset: 'Criminal Court Statistics Quarterly, Q3 2025',
+              frequency: 'quarterly',
+              url: 'https://www.gov.uk/government/statistics/criminal-court-statistics-quarterly-july-to-september-2025',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 5: Prison population and capacity */}
+        {prisonPopSeries.length > 0 ? (
+          <LineChart
+            title="Prison population and capacity, 2000–2025"
+            subtitle="Total prison population vs operational capacity, England and Wales."
+            series={prisonPopSeries}
+            annotations={prisonAnnotations}
+            yLabel="People"
+            source={{
+              name: 'Ministry of Justice',
+              dataset: 'Prison Population Statistics, December 2025',
+              frequency: 'monthly',
+              url: 'https://www.gov.uk/government/collections/prison-population-statistics',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Context */}
+        <section className="max-w-2xl mt-8 mb-12">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              The charge rate has collapsed over the past decade. In 2015, about 1 in 6 recorded
+              crimes resulted in a charge. By 2025, it is fewer than 1 in 14. The steepest drops
+              are in sexual offences and burglary — crimes that are hardest to investigate and
+              where victims often disengage from the process.
+            </p>
+            <p>
+              The Crown Court backlog has more than doubled since before the pandemic. Courts
+              were closed for months in 2020, and a barristers&apos; strike in 2022 added further
+              delay. Cases now take an average of 18 months from offence to completion in the
+              Crown Court. The government&apos;s pre-pandemic target of 53,000 outstanding cases
+              looks increasingly unreachable.
+            </p>
+            <p>
+              The prison population has risen sharply since 2021, even as overall crime (measured
+              by the Crime Survey) has been falling for decades. The system is running at near
+              capacity. In September 2024, the SDS40 scheme began releasing prisoners at the
+              40% sentence mark rather than the usual 50%, an emergency measure to free up space.
+              Around 38,000 prisoners have been released early under various schemes.
+            </p>
+            <p>
+              The justice funnel captures the overall picture: of an estimated 9.6 million crimes
+              experienced each year, only around 388,000 result in a charge — about 4 in every 100.
+              For many crime types, the effective likelihood of consequences is vanishingly small.
+            </p>
+          </div>
+        </section>
+
+        {/* Sources */}
+        <section className="border-t border-wiah-border pt-8">
+          <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>
+          <ul className="space-y-2 font-mono text-xs text-wiah-mid">
+            {data?.metadata.sources.map((src, i) => (
+              <li key={i}>
+                <a
+                  href={src.url}
+                  className="underline hover:text-wiah-blue"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="font-mono text-xs text-wiah-mid mt-4">
+            Charge rate is the proportion of police-recorded offences assigned a charge or summons
+            outcome. Court backlog is outstanding Crown Court cases. Prison figures from MOJ
+            monthly bulletins; historical points are June snapshots from published annual data.
+            The justice funnel combines CSEW victim survey estimates, police recorded crime totals,
+            Home Office outcomes data, and CPS prosecution/conviction statistics.
+          </p>
+          <p className="font-mono text-xs text-wiah-mid mt-4">
+            Data updated automatically via GitHub Actions. Last pipeline run:{' '}
+            {new Date().toISOString().slice(0, 10)}.
+          </p>
+        </section>
+      </main>
+
+      {/* Expanded metric modals */}
+      {expanded === 'charge-rate' && (
+        <MetricDetailModal
+          title="Charge rate, 2015–2025"
+          subtitle="Percentage of police-recorded offences resulting in a charge or summons, England and Wales."
+          series={chargeRateSeries}
+          annotations={chargeAnnotations}
+          yLabel="Percent"
+          source={{
+            name: 'Home Office',
+            dataset: 'Crime Outcomes in England and Wales, YE March 2025',
+            frequency: 'annual',
+            url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-2024-to-2025',
+          }}
+          onClose={() => setExpanded(null)}
+        />
+      )}
+      {expanded === 'backlog' && (
+        <MetricDetailModal
+          title="Crown Court backlog, 2016–2025"
+          subtitle="Outstanding cases in the Crown Court, England and Wales."
+          series={backlogSeries}
+          annotations={backlogAnnotations}
+          targetLine={{ value: 53000, label: 'Pre-pandemic target: 53K' }}
+          yLabel="Cases"
+          source={{
+            name: 'Ministry of Justice',
+            dataset: 'Criminal Court Statistics Quarterly, Q3 2025',
+            frequency: 'quarterly',
+            url: 'https://www.gov.uk/government/statistics/criminal-court-statistics-quarterly-july-to-september-2025',
+          }}
+          onClose={() => setExpanded(null)}
+        />
+      )}
+      {expanded === 'prison' && (
+        <MetricDetailModal
+          title="Prison population and capacity, 2000–2025"
+          subtitle="Total prison population vs operational capacity, England and Wales."
+          series={prisonPopSeries}
+          annotations={prisonAnnotations}
+          yLabel="People"
+          source={{
+            name: 'Ministry of Justice',
+            dataset: 'Prison Population Statistics, December 2025',
+            frequency: 'monthly',
+            url: 'https://www.gov.uk/government/collections/prison-population-statistics',
+          }}
+          onClose={() => setExpanded(null)}
+        />
+      )}
+    </>
+  );
+}

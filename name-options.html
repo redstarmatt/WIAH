@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WIAH — Name Treatment Options</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #F5F5F5; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 24px;
+  }
+
+  .option-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #6B7280;
+    margin-bottom: 12px;
+  }
+
+  .card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  .hero {
+    background: #0D1117;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 360px;
+    padding: 48px 40px;
+    text-align: center;
+  }
+
+  .sub {
+    font-family: system-ui, sans-serif;
+    font-size: 15px;
+    color: #6B7280;
+    line-height: 1.6;
+  }
+
+  .accent-line {
+    width: 32px;
+    height: 2px;
+    background: #E63946;
+    margin: 20px auto;
+  }
+
+  .mono {
+    font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+  }
+
+  .page-title {
+    text-align: center;
+    padding: 40px 24px 0;
+    font-size: 14px;
+    color: #6B7280;
+    letter-spacing: 0.05em;
+  }
+
+  /* Option A: Quiet confidence */
+  .opt-a h1 {
+    font-family: system-ui, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  /* Option B: Split emphasis */
+  .opt-b .top, .opt-b .bottom {
+    font-family: system-ui, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #6B7280;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+  }
+  .opt-b .actually {
+    font-family: system-ui, sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin: 4px 0;
+  }
+
+  /* Option C: Question form */
+  .opt-c h1 {
+    font-family: system-ui, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .opt-c h1 em {
+    font-style: italic;
+    color: #E63946;
+  }
+
+  /* Option D: Stacked bold */
+  .opt-d h1 {
+    font-family: system-ui, sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.05;
+    text-align: left;
+  }
+  .opt-d h1 .highlight {
+    color: #E63946;
+  }
+
+  /* Option E: Editorial serif */
+  .opt-e h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+  }
+  .opt-e h1 strong {
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  /* Option F: Minimal mono */
+  .opt-f h1 {
+    font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6B7280;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .opt-f .big {
+    font-family: system-ui, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+
+<p class="page-title">Name treatment options — pick the one that feels right</p>
+
+<div class="grid">
+
+  <!-- A: Quiet confidence -->
+  <div>
+    <div class="option-label">A — Quiet confidence</div>
+    <div class="card">
+      <div class="hero opt-a">
+        <div>
+          <h1>What Is Actually Happening</h1>
+          <div class="accent-line"></div>
+          <p class="sub">The state of the nation, made visible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B: Split emphasis -->
+  <div>
+    <div class="option-label">B — Actually is the point</div>
+    <div class="card">
+      <div class="hero opt-b">
+        <div>
+          <div class="top">what is</div>
+          <div class="actually">Actually</div>
+          <div class="bottom">happening</div>
+          <div class="accent-line"></div>
+          <p class="sub">The state of the nation, made visible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C: Question form -->
+  <div>
+    <div class="option-label">C — Ask the question</div>
+    <div class="card">
+      <div class="hero opt-c">
+        <div>
+          <h1>What is <em>actually</em> happening?</h1>
+          <div class="accent-line"></div>
+          <p class="sub">Data-driven answers to the questions<br>that actually matter.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D: Stacked bold -->
+  <div>
+    <div class="option-label">D — Monumental stack</div>
+    <div class="card">
+      <div class="hero opt-d" style="justify-content: flex-start;">
+        <div>
+          <h1>What<br>Is <span class="highlight">Actually</span><br>Happening</h1>
+          <div class="accent-line" style="margin: 20px 0;"></div>
+          <p class="sub" style="text-align: left;">The state of the nation, made visible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- E: Editorial serif -->
+  <div>
+    <div class="option-label">E — Editorial / newspaper</div>
+    <div class="card">
+      <div class="hero opt-e">
+        <div>
+          <h1>What is <strong>actually</strong><br>happening</h1>
+          <div class="accent-line"></div>
+          <p class="sub">The state of the nation, made visible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- F: Minimal + tagline -->
+  <div>
+    <div class="option-label">F — Name above, mission below</div>
+    <div class="card">
+      <div class="hero opt-f">
+        <div>
+          <h1>What Is Actually Happening</h1>
+          <div class="big">The state of the nation,<br>made visible.</div>
+          <div class="accent-line"></div>
+          <p class="sub" style="margin-top: 16px;">Data-driven answers to the questions<br>that actually matter.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

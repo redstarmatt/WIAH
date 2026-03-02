@@ -1,0 +1,75 @@
+name: Update data
+
+on:
+  schedule:
+    # Every Monday at 07:00 UTC — NHS Digital and NHS England publish weekly/monthly
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+    # Allow manual trigger from GitHub UI
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit updated JSON
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('data/requirements.txt') }}
+          restore-keys: pip-${{ runner.os }}-
+
+      - name: Install Python dependencies
+        run: pip install -r data/requirements.txt
+
+      - name: Cache Playwright browser
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}
+
+      - name: Install Playwright Chromium (full)
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: python -m playwright install chromium --with-deps
+
+      - name: Install Playwright system deps (browser cached)
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: python -m playwright install-deps chromium
+
+      - name: Run all pipelines
+        run: python data/run_all.py
+        # continue so we commit whatever succeeded if one pipeline fails
+        continue-on-error: true
+
+      - name: Check for data changes
+        id: changes
+        run: |
+          git diff --quiet site/public/data/ && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit updated data
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name  "WIAH Data Bot"
+          git config user.email "data-bot@whatisactuallyhappening.uk"
+          git add site/public/data/
+          git commit -m "data: auto-update $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: No new data
+        if: steps.changes.outputs.changed == 'false'
+        run: echo "All data up to date — no commit needed."
+
+      - name: Pipeline results
+        if: always()
+        run: cat data/_run_results.json 2>/dev/null || echo "No run results file."
