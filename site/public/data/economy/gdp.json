@@ -1,0 +1,2037 @@
+{
+  "topic": "gdp",
+  "lastUpdated": "2026-03-02",
+  "gdpGrowth": {
+    "timeSeries": [
+      {
+        "date": "2000-01",
+        "growthPct": 1.3
+      },
+      {
+        "date": "2000-04",
+        "growthPct": 0.7
+      },
+      {
+        "date": "2000-07",
+        "growthPct": 0.6
+      },
+      {
+        "date": "2000-10",
+        "growthPct": 0.6
+      },
+      {
+        "date": "2001-01",
+        "growthPct": 0.8
+      },
+      {
+        "date": "2001-04",
+        "growthPct": 0.4
+      },
+      {
+        "date": "2001-07",
+        "growthPct": 0.5
+      },
+      {
+        "date": "2001-10",
+        "growthPct": 0.3
+      },
+      {
+        "date": "2002-01",
+        "growthPct": 0.3
+      },
+      {
+        "date": "2002-04",
+        "growthPct": 0.5
+      },
+      {
+        "date": "2002-07",
+        "growthPct": 0.6
+      },
+      {
+        "date": "2002-10",
+        "growthPct": 0.7
+      },
+      {
+        "date": "2003-01",
+        "growthPct": 0.8
+      },
+      {
+        "date": "2003-04",
+        "growthPct": 0.9
+      },
+      {
+        "date": "2003-07",
+        "growthPct": 1.0
+      },
+      {
+        "date": "2003-10",
+        "growthPct": 0.8
+      },
+      {
+        "date": "2004-01",
+        "growthPct": 0.3
+      },
+      {
+        "date": "2004-04",
+        "growthPct": 0.5
+      },
+      {
+        "date": "2004-07",
+        "growthPct": 0.4
+      },
+      {
+        "date": "2004-10",
+        "growthPct": 0.5
+      },
+      {
+        "date": "2005-01",
+        "growthPct": 0.8
+      },
+      {
+        "date": "2005-04",
+        "growthPct": 0.8
+      },
+      {
+        "date": "2005-07",
+        "growthPct": 0.9
+      },
+      {
+        "date": "2005-10",
+        "growthPct": 1.0
+      },
+      {
+        "date": "2006-01",
+        "growthPct": 0.4
+      },
+      {
+        "date": "2006-04",
+        "growthPct": 0.3
+      },
+      {
+        "date": "2006-07",
+        "growthPct": 0.2
+      },
+      {
+        "date": "2006-10",
+        "growthPct": 0.4
+      },
+      {
+        "date": "2007-01",
+        "growthPct": 1.1
+      },
+      {
+        "date": "2007-04",
+        "growthPct": 0.9
+      },
+      {
+        "date": "2007-07",
+        "growthPct": 0.9
+      },
+      {
+        "date": "2007-10",
+        "growthPct": 0.8
+      },
+      {
+        "date": "2008-01",
+        "growthPct": 0.4
+      },
+      {
+        "date": "2008-04",
+        "growthPct": -0.5
+      },
+      {
+        "date": "2008-07",
+        "growthPct": -1.6
+      },
+      {
+        "date": "2008-10",
+        "growthPct": -2.1
+      },
+      {
+        "date": "2009-01",
+        "growthPct": -2.0
+      },
+      {
+        "date": "2009-04",
+        "growthPct": -0.3
+      },
+      {
+        "date": "2009-07",
+        "growthPct": 0.1
+      },
+      {
+        "date": "2009-10",
+        "growthPct": 0.3
+      },
+      {
+        "date": "2010-01",
+        "growthPct": 0.8
+      },
+      {
+        "date": "2010-04",
+        "growthPct": 1.1
+      },
+      {
+        "date": "2010-07",
+        "growthPct": 0.6
+      },
+      {
+        "date": "2010-10",
+        "growthPct": 0.1
+      },
+      {
+        "date": "2011-01",
+        "growthPct": 0.2
+      },
+      {
+        "date": "2011-04",
+        "growthPct": 0.0
+      },
+      {
+        "date": "2011-07",
+        "growthPct": 0.2
+      },
+      {
+        "date": "2011-10",
+        "growthPct": 0.1
+      },
+      {
+        "date": "2012-01",
+        "growthPct": 0.9
+      },
+      {
+        "date": "2012-04",
+        "growthPct": -0.1
+      },
+      {
+        "date": "2012-07",
+        "growthPct": 1.0
+      },
+      {
+        "date": "2012-10",
+        "growthPct": -0.1
+      },
+      {
+        "date": "2013-01",
+        "growthPct": 0.3
+      },
+      {
+        "date": "2013-04",
+        "growthPct": 0.7
+      },
+      {
+        "date": "2013-07",
+        "growthPct": 0.8
+      },
+      {
+        "date": "2013-10",
+        "growthPct": 0.7
+      },
+      {
+        "date": "2014-01",
+        "growthPct": 0.8
+      },
+      {
+        "date": "2014-04",
+        "growthPct": 0.9
+      },
+      {
+        "date": "2014-07",
+        "growthPct": 0.8
+      },
+      {
+        "date": "2014-10",
+        "growthPct": 0.7
+      },
+      {
+        "date": "2015-01",
+        "growthPct": 0.3
+      },
+      {
+        "date": "2015-04",
+        "growthPct": 0.5
+      },
+      {
+        "date": "2015-07",
+        "growthPct": 0.4
+      },
+      {
+        "date": "2015-10",
+        "growthPct": 0.6
+      },
+      {
+        "date": "2016-01",
+        "growthPct": 0.5
+      },
+      {
+        "date": "2016-04",
+        "growthPct": 0.7
+      },
+      {
+        "date": "2016-07",
+        "growthPct": 0.4
+      },
+      {
+        "date": "2016-10",
+        "growthPct": 0.6
+      },
+      {
+        "date": "2017-01",
+        "growthPct": 1.0
+      },
+      {
+        "date": "2017-04",
+        "growthPct": 0.9
+      },
+      {
+        "date": "2017-07",
+        "growthPct": 0.7
+      },
+      {
+        "date": "2017-10",
+        "growthPct": 0.8
+      },
+      {
+        "date": "2018-01",
+        "growthPct": 0.1
+      },
+      {
+        "date": "2018-04",
+        "growthPct": 0.2
+      },
+      {
+        "date": "2018-07",
+        "growthPct": 0.3
+      },
+      {
+        "date": "2018-10",
+        "growthPct": 0.1
+      },
+      {
+        "date": "2019-01",
+        "growthPct": 0.5
+      },
+      {
+        "date": "2019-04",
+        "growthPct": 0.2
+      },
+      {
+        "date": "2019-07",
+        "growthPct": 0.6
+      },
+      {
+        "date": "2019-10",
+        "growthPct": 0.0
+      },
+      {
+        "date": "2020-01",
+        "growthPct": -2.7
+      },
+      {
+        "date": "2020-04",
+        "growthPct": -19.9
+      },
+      {
+        "date": "2020-07",
+        "growthPct": 17.0
+      },
+      {
+        "date": "2020-10",
+        "growthPct": 1.4
+      },
+      {
+        "date": "2021-01",
+        "growthPct": -1.1
+      },
+      {
+        "date": "2021-04",
+        "growthPct": 7.0
+      },
+      {
+        "date": "2021-07",
+        "growthPct": 1.7
+      },
+      {
+        "date": "2021-10",
+        "growthPct": 1.4
+      },
+      {
+        "date": "2022-01",
+        "growthPct": 1.0
+      },
+      {
+        "date": "2022-04",
+        "growthPct": 0.6
+      },
+      {
+        "date": "2022-07",
+        "growthPct": 0.1
+      },
+      {
+        "date": "2022-10",
+        "growthPct": 0.3
+      },
+      {
+        "date": "2023-01",
+        "growthPct": 0.1
+      },
+      {
+        "date": "2023-04",
+        "growthPct": 0.0
+      },
+      {
+        "date": "2023-07",
+        "growthPct": -0.2
+      },
+      {
+        "date": "2023-10",
+        "growthPct": -0.3
+      },
+      {
+        "date": "2024-01",
+        "growthPct": 0.8
+      },
+      {
+        "date": "2024-04",
+        "growthPct": 0.6
+      },
+      {
+        "date": "2024-07",
+        "growthPct": 0.2
+      },
+      {
+        "date": "2024-10",
+        "growthPct": 0.3
+      },
+      {
+        "date": "2025-01",
+        "growthPct": 0.7
+      },
+      {
+        "date": "2025-04",
+        "growthPct": 0.2
+      },
+      {
+        "date": "2025-07",
+        "growthPct": 0.1
+      },
+      {
+        "date": "2025-10",
+        "growthPct": 0.1
+      }
+    ],
+    "latest": {
+      "date": "2025-10",
+      "growthPct": 0.1
+    }
+  },
+  "publicDebt": {
+    "timeSeries": [
+      {
+        "date": "1993-03",
+        "debtPctGdp": 26.7
+      },
+      {
+        "date": "1993-04",
+        "debtPctGdp": 27.6
+      },
+      {
+        "date": "1993-05",
+        "debtPctGdp": 28.1
+      },
+      {
+        "date": "1993-06",
+        "debtPctGdp": 28.1
+      },
+      {
+        "date": "1993-07",
+        "debtPctGdp": 28.5
+      },
+      {
+        "date": "1993-08",
+        "debtPctGdp": 28.9
+      },
+      {
+        "date": "1993-09",
+        "debtPctGdp": 29.4
+      },
+      {
+        "date": "1993-10",
+        "debtPctGdp": 29.3
+      },
+      {
+        "date": "1993-11",
+        "debtPctGdp": 29.3
+      },
+      {
+        "date": "1993-12",
+        "debtPctGdp": 29.7
+      },
+      {
+        "date": "1994-01",
+        "debtPctGdp": 29.6
+      },
+      {
+        "date": "1994-02",
+        "debtPctGdp": 29.9
+      },
+      {
+        "date": "1994-03",
+        "debtPctGdp": 31.2
+      },
+      {
+        "date": "1994-04",
+        "debtPctGdp": 31.6
+      },
+      {
+        "date": "1994-05",
+        "debtPctGdp": 32.1
+      },
+      {
+        "date": "1994-06",
+        "debtPctGdp": 32.5
+      },
+      {
+        "date": "1994-07",
+        "debtPctGdp": 32.6
+      },
+      {
+        "date": "1994-08",
+        "debtPctGdp": 32.9
+      },
+      {
+        "date": "1994-09",
+        "debtPctGdp": 33.4
+      },
+      {
+        "date": "1994-10",
+        "debtPctGdp": 33.4
+      },
+      {
+        "date": "1994-11",
+        "debtPctGdp": 33.6
+      },
+      {
+        "date": "1994-12",
+        "debtPctGdp": 33.6
+      },
+      {
+        "date": "1995-01",
+        "debtPctGdp": 33.1
+      },
+      {
+        "date": "1995-02",
+        "debtPctGdp": 33.6
+      },
+      {
+        "date": "1995-03",
+        "debtPctGdp": 34.6
+      },
+      {
+        "date": "1995-04",
+        "debtPctGdp": 34.9
+      },
+      {
+        "date": "1995-05",
+        "debtPctGdp": 35.2
+      },
+      {
+        "date": "1995-06",
+        "debtPctGdp": 35.5
+      },
+      {
+        "date": "1995-07",
+        "debtPctGdp": 35.4
+      },
+      {
+        "date": "1995-08",
+        "debtPctGdp": 35.7
+      },
+      {
+        "date": "1995-09",
+        "debtPctGdp": 36.0
+      },
+      {
+        "date": "1995-10",
+        "debtPctGdp": 35.7
+      },
+      {
+        "date": "1995-11",
+        "debtPctGdp": 35.9
+      },
+      {
+        "date": "1995-12",
+        "debtPctGdp": 35.7
+      },
+      {
+        "date": "1996-01",
+        "debtPctGdp": 34.9
+      },
+      {
+        "date": "1996-02",
+        "debtPctGdp": 35.1
+      },
+      {
+        "date": "1996-03",
+        "debtPctGdp": 36.1
+      },
+      {
+        "date": "1996-04",
+        "debtPctGdp": 36.2
+      },
+      {
+        "date": "1996-05",
+        "debtPctGdp": 36.5
+      },
+      {
+        "date": "1996-06",
+        "debtPctGdp": 36.7
+      },
+      {
+        "date": "1996-07",
+        "debtPctGdp": 36.3
+      },
+      {
+        "date": "1996-08",
+        "debtPctGdp": 36.7
+      },
+      {
+        "date": "1996-09",
+        "debtPctGdp": 36.9
+      },
+      {
+        "date": "1996-10",
+        "debtPctGdp": 36.3
+      },
+      {
+        "date": "1996-11",
+        "debtPctGdp": 36.5
+      },
+      {
+        "date": "1996-12",
+        "debtPctGdp": 36.7
+      },
+      {
+        "date": "1997-01",
+        "debtPctGdp": 35.8
+      },
+      {
+        "date": "1997-02",
+        "debtPctGdp": 35.9
+      },
+      {
+        "date": "1997-03",
+        "debtPctGdp": 36.7
+      },
+      {
+        "date": "1997-04",
+        "debtPctGdp": 36.9
+      },
+      {
+        "date": "1997-05",
+        "debtPctGdp": 37.4
+      },
+      {
+        "date": "1997-06",
+        "debtPctGdp": 38.0
+      },
+      {
+        "date": "1997-07",
+        "debtPctGdp": 37.5
+      },
+      {
+        "date": "1997-08",
+        "debtPctGdp": 37.6
+      },
+      {
+        "date": "1997-09",
+        "debtPctGdp": 37.7
+      },
+      {
+        "date": "1997-10",
+        "debtPctGdp": 37.0
+      },
+      {
+        "date": "1997-11",
+        "debtPctGdp": 37.3
+      },
+      {
+        "date": "1997-12",
+        "debtPctGdp": 37.2
+      },
+      {
+        "date": "1998-01",
+        "debtPctGdp": 36.1
+      },
+      {
+        "date": "1998-02",
+        "debtPctGdp": 35.9
+      },
+      {
+        "date": "1998-03",
+        "debtPctGdp": 36.5
+      },
+      {
+        "date": "1998-04",
+        "debtPctGdp": 36.0
+      },
+      {
+        "date": "1998-05",
+        "debtPctGdp": 36.2
+      },
+      {
+        "date": "1998-06",
+        "debtPctGdp": 36.6
+      },
+      {
+        "date": "1998-07",
+        "debtPctGdp": 36.1
+      },
+      {
+        "date": "1998-08",
+        "debtPctGdp": 36.1
+      },
+      {
+        "date": "1998-09",
+        "debtPctGdp": 36.1
+      },
+      {
+        "date": "1998-10",
+        "debtPctGdp": 35.3
+      },
+      {
+        "date": "1998-11",
+        "debtPctGdp": 35.5
+      },
+      {
+        "date": "1998-12",
+        "debtPctGdp": 35.6
+      },
+      {
+        "date": "1999-01",
+        "debtPctGdp": 34.4
+      },
+      {
+        "date": "1999-02",
+        "debtPctGdp": 34.4
+      },
+      {
+        "date": "1999-03",
+        "debtPctGdp": 35.1
+      },
+      {
+        "date": "1999-04",
+        "debtPctGdp": 34.7
+      },
+      {
+        "date": "1999-05",
+        "debtPctGdp": 34.7
+      },
+      {
+        "date": "1999-06",
+        "debtPctGdp": 35.1
+      },
+      {
+        "date": "1999-07",
+        "debtPctGdp": 34.3
+      },
+      {
+        "date": "1999-08",
+        "debtPctGdp": 34.2
+      },
+      {
+        "date": "1999-09",
+        "debtPctGdp": 34.1
+      },
+      {
+        "date": "1999-10",
+        "debtPctGdp": 33.1
+      },
+      {
+        "date": "1999-11",
+        "debtPctGdp": 33.0
+      },
+      {
+        "date": "1999-12",
+        "debtPctGdp": 34.2
+      },
+      {
+        "date": "2000-01",
+        "debtPctGdp": 32.3
+      },
+      {
+        "date": "2000-02",
+        "debtPctGdp": 31.9
+      },
+      {
+        "date": "2000-03",
+        "debtPctGdp": 32.4
+      },
+      {
+        "date": "2000-04",
+        "debtPctGdp": 31.6
+      },
+      {
+        "date": "2000-05",
+        "debtPctGdp": 30.4
+      },
+      {
+        "date": "2000-06",
+        "debtPctGdp": 30.9
+      },
+      {
+        "date": "2000-07",
+        "debtPctGdp": 30.1
+      },
+      {
+        "date": "2000-08",
+        "debtPctGdp": 30.0
+      },
+      {
+        "date": "2000-09",
+        "debtPctGdp": 29.2
+      },
+      {
+        "date": "2000-10",
+        "debtPctGdp": 28.5
+      },
+      {
+        "date": "2000-11",
+        "debtPctGdp": 28.7
+      },
+      {
+        "date": "2000-12",
+        "debtPctGdp": 29.5
+      },
+      {
+        "date": "2001-01",
+        "debtPctGdp": 28.0
+      },
+      {
+        "date": "2001-02",
+        "debtPctGdp": 27.7
+      },
+      {
+        "date": "2001-03",
+        "debtPctGdp": 28.2
+      },
+      {
+        "date": "2001-04",
+        "debtPctGdp": 27.8
+      },
+      {
+        "date": "2001-05",
+        "debtPctGdp": 28.1
+      },
+      {
+        "date": "2001-06",
+        "debtPctGdp": 28.7
+      },
+      {
+        "date": "2001-07",
+        "debtPctGdp": 27.9
+      },
+      {
+        "date": "2001-08",
+        "debtPctGdp": 27.9
+      },
+      {
+        "date": "2001-09",
+        "debtPctGdp": 28.0
+      },
+      {
+        "date": "2001-10",
+        "debtPctGdp": 27.5
+      },
+      {
+        "date": "2001-11",
+        "debtPctGdp": 27.9
+      },
+      {
+        "date": "2001-12",
+        "debtPctGdp": 28.7
+      },
+      {
+        "date": "2002-01",
+        "debtPctGdp": 27.7
+      },
+      {
+        "date": "2002-02",
+        "debtPctGdp": 27.4
+      },
+      {
+        "date": "2002-03",
+        "debtPctGdp": 28.0
+      },
+      {
+        "date": "2002-04",
+        "debtPctGdp": 27.7
+      },
+      {
+        "date": "2002-05",
+        "debtPctGdp": 27.9
+      },
+      {
+        "date": "2002-06",
+        "debtPctGdp": 28.4
+      },
+      {
+        "date": "2002-07",
+        "debtPctGdp": 27.8
+      },
+      {
+        "date": "2002-08",
+        "debtPctGdp": 28.0
+      },
+      {
+        "date": "2002-09",
+        "debtPctGdp": 28.4
+      },
+      {
+        "date": "2002-10",
+        "debtPctGdp": 28.3
+      },
+      {
+        "date": "2002-11",
+        "debtPctGdp": 29.0
+      },
+      {
+        "date": "2002-12",
+        "debtPctGdp": 30.1
+      },
+      {
+        "date": "2003-01",
+        "debtPctGdp": 29.0
+      },
+      {
+        "date": "2003-02",
+        "debtPctGdp": 28.9
+      },
+      {
+        "date": "2003-03",
+        "debtPctGdp": 29.7
+      },
+      {
+        "date": "2003-04",
+        "debtPctGdp": 29.4
+      },
+      {
+        "date": "2003-05",
+        "debtPctGdp": 29.4
+      },
+      {
+        "date": "2003-06",
+        "debtPctGdp": 29.7
+      },
+      {
+        "date": "2003-07",
+        "debtPctGdp": 29.3
+      },
+      {
+        "date": "2003-08",
+        "debtPctGdp": 29.4
+      },
+      {
+        "date": "2003-09",
+        "debtPctGdp": 30.0
+      },
+      {
+        "date": "2003-10",
+        "debtPctGdp": 29.9
+      },
+      {
+        "date": "2003-11",
+        "debtPctGdp": 30.3
+      },
+      {
+        "date": "2003-12",
+        "debtPctGdp": 31.2
+      },
+      {
+        "date": "2004-01",
+        "debtPctGdp": 30.0
+      },
+      {
+        "date": "2004-02",
+        "debtPctGdp": 29.9
+      },
+      {
+        "date": "2004-03",
+        "debtPctGdp": 30.8
+      },
+      {
+        "date": "2004-04",
+        "debtPctGdp": 31.4
+      },
+      {
+        "date": "2004-05",
+        "debtPctGdp": 31.6
+      },
+      {
+        "date": "2004-06",
+        "debtPctGdp": 32.4
+      },
+      {
+        "date": "2004-07",
+        "debtPctGdp": 31.8
+      },
+      {
+        "date": "2004-08",
+        "debtPctGdp": 31.9
+      },
+      {
+        "date": "2004-09",
+        "debtPctGdp": 32.5
+      },
+      {
+        "date": "2004-10",
+        "debtPctGdp": 32.2
+      },
+      {
+        "date": "2004-11",
+        "debtPctGdp": 32.9
+      },
+      {
+        "date": "2004-12",
+        "debtPctGdp": 34.0
+      },
+      {
+        "date": "2005-01",
+        "debtPctGdp": 32.6
+      },
+      {
+        "date": "2005-02",
+        "debtPctGdp": 32.5
+      },
+      {
+        "date": "2005-03",
+        "debtPctGdp": 33.4
+      },
+      {
+        "date": "2005-04",
+        "debtPctGdp": 32.9
+      },
+      {
+        "date": "2005-05",
+        "debtPctGdp": 33.1
+      },
+      {
+        "date": "2005-06",
+        "debtPctGdp": 33.7
+      },
+      {
+        "date": "2005-07",
+        "debtPctGdp": 33.1
+      },
+      {
+        "date": "2005-08",
+        "debtPctGdp": 33.3
+      },
+      {
+        "date": "2005-09",
+        "debtPctGdp": 34.0
+      },
+      {
+        "date": "2005-10",
+        "debtPctGdp": 33.5
+      },
+      {
+        "date": "2005-11",
+        "debtPctGdp": 34.0
+      },
+      {
+        "date": "2005-12",
+        "debtPctGdp": 34.9
+      },
+      {
+        "date": "2006-01",
+        "debtPctGdp": 33.4
+      },
+      {
+        "date": "2006-02",
+        "debtPctGdp": 33.4
+      },
+      {
+        "date": "2006-03",
+        "debtPctGdp": 34.2
+      },
+      {
+        "date": "2006-04",
+        "debtPctGdp": 33.9
+      },
+      {
+        "date": "2006-05",
+        "debtPctGdp": 34.4
+      },
+      {
+        "date": "2006-06",
+        "debtPctGdp": 35.2
+      },
+      {
+        "date": "2006-07",
+        "debtPctGdp": 34.2
+      },
+      {
+        "date": "2006-08",
+        "debtPctGdp": 34.4
+      },
+      {
+        "date": "2006-09",
+        "debtPctGdp": 35.1
+      },
+      {
+        "date": "2006-10",
+        "debtPctGdp": 34.5
+      },
+      {
+        "date": "2006-11",
+        "debtPctGdp": 34.9
+      },
+      {
+        "date": "2006-12",
+        "debtPctGdp": 35.7
+      },
+      {
+        "date": "2007-01",
+        "debtPctGdp": 34.2
+      },
+      {
+        "date": "2007-02",
+        "debtPctGdp": 33.9
+      },
+      {
+        "date": "2007-03",
+        "debtPctGdp": 34.9
+      },
+      {
+        "date": "2007-04",
+        "debtPctGdp": 34.6
+      },
+      {
+        "date": "2007-05",
+        "debtPctGdp": 34.9
+      },
+      {
+        "date": "2007-06",
+        "debtPctGdp": 35.5
+      },
+      {
+        "date": "2007-07",
+        "debtPctGdp": 34.5
+      },
+      {
+        "date": "2007-08",
+        "debtPctGdp": 34.8
+      },
+      {
+        "date": "2007-09",
+        "debtPctGdp": 35.2
+      },
+      {
+        "date": "2007-10",
+        "debtPctGdp": 34.8
+      },
+      {
+        "date": "2007-11",
+        "debtPctGdp": 35.3
+      },
+      {
+        "date": "2007-12",
+        "debtPctGdp": 36.1
+      },
+      {
+        "date": "2008-01",
+        "debtPctGdp": 34.7
+      },
+      {
+        "date": "2008-02",
+        "debtPctGdp": 34.9
+      },
+      {
+        "date": "2008-03",
+        "debtPctGdp": 35.5
+      },
+      {
+        "date": "2008-04",
+        "debtPctGdp": 35.6
+      },
+      {
+        "date": "2008-05",
+        "debtPctGdp": 36.3
+      },
+      {
+        "date": "2008-06",
+        "debtPctGdp": 37.5
+      },
+      {
+        "date": "2008-07",
+        "debtPctGdp": 37.7
+      },
+      {
+        "date": "2008-08",
+        "debtPctGdp": 39.4
+      },
+      {
+        "date": "2008-09",
+        "debtPctGdp": 42.8
+      },
+      {
+        "date": "2008-10",
+        "debtPctGdp": 43.4
+      },
+      {
+        "date": "2008-11",
+        "debtPctGdp": 44.3
+      },
+      {
+        "date": "2008-12",
+        "debtPctGdp": 47.6
+      },
+      {
+        "date": "2009-01",
+        "debtPctGdp": 47.6
+      },
+      {
+        "date": "2009-02",
+        "debtPctGdp": 48.3
+      },
+      {
+        "date": "2009-03",
+        "debtPctGdp": 50.2
+      },
+      {
+        "date": "2009-04",
+        "debtPctGdp": 51.3
+      },
+      {
+        "date": "2009-05",
+        "debtPctGdp": 52.7
+      },
+      {
+        "date": "2009-06",
+        "debtPctGdp": 54.5
+      },
+      {
+        "date": "2009-07",
+        "debtPctGdp": 54.7
+      },
+      {
+        "date": "2009-08",
+        "debtPctGdp": 54.8
+      },
+      {
+        "date": "2009-09",
+        "debtPctGdp": 56.0
+      },
+      {
+        "date": "2009-10",
+        "debtPctGdp": 56.3
+      },
+      {
+        "date": "2009-11",
+        "debtPctGdp": 57.1
+      },
+      {
+        "date": "2009-12",
+        "debtPctGdp": 60.6
+      },
+      {
+        "date": "2010-01",
+        "debtPctGdp": 62.7
+      },
+      {
+        "date": "2010-02",
+        "debtPctGdp": 62.9
+      },
+      {
+        "date": "2010-03",
+        "debtPctGdp": 64.4
+      },
+      {
+        "date": "2010-04",
+        "debtPctGdp": 64.5
+      },
+      {
+        "date": "2010-05",
+        "debtPctGdp": 65.1
+      },
+      {
+        "date": "2010-06",
+        "debtPctGdp": 66.1
+      },
+      {
+        "date": "2010-07",
+        "debtPctGdp": 66.1
+      },
+      {
+        "date": "2010-08",
+        "debtPctGdp": 66.5
+      },
+      {
+        "date": "2010-09",
+        "debtPctGdp": 67.8
+      },
+      {
+        "date": "2010-10",
+        "debtPctGdp": 67.8
+      },
+      {
+        "date": "2010-11",
+        "debtPctGdp": 68.7
+      },
+      {
+        "date": "2010-12",
+        "debtPctGdp": 70.1
+      },
+      {
+        "date": "2011-01",
+        "debtPctGdp": 69.1
+      },
+      {
+        "date": "2011-02",
+        "debtPctGdp": 69.4
+      },
+      {
+        "date": "2011-03",
+        "debtPctGdp": 70.6
+      },
+      {
+        "date": "2011-04",
+        "debtPctGdp": 70.7
+      },
+      {
+        "date": "2011-05",
+        "debtPctGdp": 71.1
+      },
+      {
+        "date": "2011-06",
+        "debtPctGdp": 72.0
+      },
+      {
+        "date": "2011-07",
+        "debtPctGdp": 71.4
+      },
+      {
+        "date": "2011-08",
+        "debtPctGdp": 72.2
+      },
+      {
+        "date": "2011-09",
+        "debtPctGdp": 72.5
+      },
+      {
+        "date": "2011-10",
+        "debtPctGdp": 72.3
+      },
+      {
+        "date": "2011-11",
+        "debtPctGdp": 72.7
+      },
+      {
+        "date": "2011-12",
+        "debtPctGdp": 73.8
+      },
+      {
+        "date": "2012-01",
+        "debtPctGdp": 72.6
+      },
+      {
+        "date": "2012-02",
+        "debtPctGdp": 72.8
+      },
+      {
+        "date": "2012-03",
+        "debtPctGdp": 73.9
+      },
+      {
+        "date": "2012-04",
+        "debtPctGdp": 73.6
+      },
+      {
+        "date": "2012-05",
+        "debtPctGdp": 74.0
+      },
+      {
+        "date": "2012-06",
+        "debtPctGdp": 74.9
+      },
+      {
+        "date": "2012-07",
+        "debtPctGdp": 74.8
+      },
+      {
+        "date": "2012-08",
+        "debtPctGdp": 74.7
+      },
+      {
+        "date": "2012-09",
+        "debtPctGdp": 75.5
+      },
+      {
+        "date": "2012-10",
+        "debtPctGdp": 75.8
+      },
+      {
+        "date": "2012-11",
+        "debtPctGdp": 76.3
+      },
+      {
+        "date": "2012-12",
+        "debtPctGdp": 77.3
+      },
+      {
+        "date": "2013-01",
+        "debtPctGdp": 76.0
+      },
+      {
+        "date": "2013-02",
+        "debtPctGdp": 76.0
+      },
+      {
+        "date": "2013-03",
+        "debtPctGdp": 77.2
+      },
+      {
+        "date": "2013-04",
+        "debtPctGdp": 77.1
+      },
+      {
+        "date": "2013-05",
+        "debtPctGdp": 77.6
+      },
+      {
+        "date": "2013-06",
+        "debtPctGdp": 78.1
+      },
+      {
+        "date": "2013-07",
+        "debtPctGdp": 77.6
+      },
+      {
+        "date": "2013-08",
+        "debtPctGdp": 77.6
+      },
+      {
+        "date": "2013-09",
+        "debtPctGdp": 78.1
+      },
+      {
+        "date": "2013-10",
+        "debtPctGdp": 77.8
+      },
+      {
+        "date": "2013-11",
+        "debtPctGdp": 78.3
+      },
+      {
+        "date": "2013-12",
+        "debtPctGdp": 79.2
+      },
+      {
+        "date": "2014-01",
+        "debtPctGdp": 78.2
+      },
+      {
+        "date": "2014-02",
+        "debtPctGdp": 78.3
+      },
+      {
+        "date": "2014-03",
+        "debtPctGdp": 78.8
+      },
+      {
+        "date": "2014-04",
+        "debtPctGdp": 78.8
+      },
+      {
+        "date": "2014-05",
+        "debtPctGdp": 79.2
+      },
+      {
+        "date": "2014-06",
+        "debtPctGdp": 79.9
+      },
+      {
+        "date": "2014-07",
+        "debtPctGdp": 79.5
+      },
+      {
+        "date": "2014-08",
+        "debtPctGdp": 79.5
+      },
+      {
+        "date": "2014-09",
+        "debtPctGdp": 80.2
+      },
+      {
+        "date": "2014-10",
+        "debtPctGdp": 80.3
+      },
+      {
+        "date": "2014-11",
+        "debtPctGdp": 80.5
+      },
+      {
+        "date": "2014-12",
+        "debtPctGdp": 81.5
+      },
+      {
+        "date": "2015-01",
+        "debtPctGdp": 80.2
+      },
+      {
+        "date": "2015-02",
+        "debtPctGdp": 80.3
+      },
+      {
+        "date": "2015-03",
+        "debtPctGdp": 81.1
+      },
+      {
+        "date": "2015-04",
+        "debtPctGdp": 80.9
+      },
+      {
+        "date": "2015-05",
+        "debtPctGdp": 81.3
+      },
+      {
+        "date": "2015-06",
+        "debtPctGdp": 81.8
+      },
+      {
+        "date": "2015-07",
+        "debtPctGdp": 81.3
+      },
+      {
+        "date": "2015-08",
+        "debtPctGdp": 81.0
+      },
+      {
+        "date": "2015-09",
+        "debtPctGdp": 81.5
+      },
+      {
+        "date": "2015-10",
+        "debtPctGdp": 81.6
+      },
+      {
+        "date": "2015-11",
+        "debtPctGdp": 81.6
+      },
+      {
+        "date": "2015-12",
+        "debtPctGdp": 81.7
+      },
+      {
+        "date": "2016-01",
+        "debtPctGdp": 80.4
+      },
+      {
+        "date": "2016-02",
+        "debtPctGdp": 80.1
+      },
+      {
+        "date": "2016-03",
+        "debtPctGdp": 80.6
+      },
+      {
+        "date": "2016-04",
+        "debtPctGdp": 80.7
+      },
+      {
+        "date": "2016-05",
+        "debtPctGdp": 80.7
+      },
+      {
+        "date": "2016-06",
+        "debtPctGdp": 80.8
+      },
+      {
+        "date": "2016-07",
+        "debtPctGdp": 80.0
+      },
+      {
+        "date": "2016-08",
+        "debtPctGdp": 80.2
+      },
+      {
+        "date": "2016-09",
+        "debtPctGdp": 80.3
+      },
+      {
+        "date": "2016-10",
+        "debtPctGdp": 80.6
+      },
+      {
+        "date": "2016-11",
+        "debtPctGdp": 81.2
+      },
+      {
+        "date": "2016-12",
+        "debtPctGdp": 82.5
+      },
+      {
+        "date": "2017-01",
+        "debtPctGdp": 80.7
+      },
+      {
+        "date": "2017-02",
+        "debtPctGdp": 81.5
+      },
+      {
+        "date": "2017-03",
+        "debtPctGdp": 82.7
+      },
+      {
+        "date": "2017-04",
+        "debtPctGdp": 82.3
+      },
+      {
+        "date": "2017-05",
+        "debtPctGdp": 82.7
+      },
+      {
+        "date": "2017-06",
+        "debtPctGdp": 83.4
+      },
+      {
+        "date": "2017-07",
+        "debtPctGdp": 83.2
+      },
+      {
+        "date": "2017-08",
+        "debtPctGdp": 83.0
+      },
+      {
+        "date": "2017-09",
+        "debtPctGdp": 83.9
+      },
+      {
+        "date": "2017-10",
+        "debtPctGdp": 82.9
+      },
+      {
+        "date": "2017-11",
+        "debtPctGdp": 82.2
+      },
+      {
+        "date": "2017-12",
+        "debtPctGdp": 81.7
+      },
+      {
+        "date": "2018-01",
+        "debtPctGdp": 80.7
+      },
+      {
+        "date": "2018-02",
+        "debtPctGdp": 81.6
+      },
+      {
+        "date": "2018-03",
+        "debtPctGdp": 81.6
+      },
+      {
+        "date": "2018-04",
+        "debtPctGdp": 81.9
+      },
+      {
+        "date": "2018-05",
+        "debtPctGdp": 81.8
+      },
+      {
+        "date": "2018-06",
+        "debtPctGdp": 82.0
+      },
+      {
+        "date": "2018-07",
+        "debtPctGdp": 80.9
+      },
+      {
+        "date": "2018-08",
+        "debtPctGdp": 81.1
+      },
+      {
+        "date": "2018-09",
+        "debtPctGdp": 81.1
+      },
+      {
+        "date": "2018-10",
+        "debtPctGdp": 81.1
+      },
+      {
+        "date": "2018-11",
+        "debtPctGdp": 81.1
+      },
+      {
+        "date": "2018-12",
+        "debtPctGdp": 81.3
+      },
+      {
+        "date": "2019-01",
+        "debtPctGdp": 79.8
+      },
+      {
+        "date": "2019-02",
+        "debtPctGdp": 79.7
+      },
+      {
+        "date": "2019-03",
+        "debtPctGdp": 79.6
+      },
+      {
+        "date": "2019-04",
+        "debtPctGdp": 79.9
+      },
+      {
+        "date": "2019-05",
+        "debtPctGdp": 80.0
+      },
+      {
+        "date": "2019-06",
+        "debtPctGdp": 80.3
+      },
+      {
+        "date": "2019-07",
+        "debtPctGdp": 79.5
+      },
+      {
+        "date": "2019-08",
+        "debtPctGdp": 79.3
+      },
+      {
+        "date": "2019-09",
+        "debtPctGdp": 79.9
+      },
+      {
+        "date": "2019-10",
+        "debtPctGdp": 81.5
+      },
+      {
+        "date": "2019-11",
+        "debtPctGdp": 82.8
+      },
+      {
+        "date": "2019-12",
+        "debtPctGdp": 84.2
+      },
+      {
+        "date": "2020-01",
+        "debtPctGdp": 83.5
+      },
+      {
+        "date": "2020-02",
+        "debtPctGdp": 83.7
+      },
+      {
+        "date": "2020-03",
+        "debtPctGdp": 84.5
+      },
+      {
+        "date": "2020-04",
+        "debtPctGdp": 89.6
+      },
+      {
+        "date": "2020-05",
+        "debtPctGdp": 93.3
+      },
+      {
+        "date": "2020-06",
+        "debtPctGdp": 95.3
+      },
+      {
+        "date": "2020-07",
+        "debtPctGdp": 96.0
+      },
+      {
+        "date": "2020-08",
+        "debtPctGdp": 97.7
+      },
+      {
+        "date": "2020-09",
+        "debtPctGdp": 98.1
+      },
+      {
+        "date": "2020-10",
+        "debtPctGdp": 98.0
+      },
+      {
+        "date": "2020-11",
+        "debtPctGdp": 97.9
+      },
+      {
+        "date": "2020-12",
+        "debtPctGdp": 97.6
+      },
+      {
+        "date": "2021-01",
+        "debtPctGdp": 96.0
+      },
+      {
+        "date": "2021-02",
+        "debtPctGdp": 96.2
+      },
+      {
+        "date": "2021-03",
+        "debtPctGdp": 95.4
+      },
+      {
+        "date": "2021-04",
+        "debtPctGdp": 96.1
+      },
+      {
+        "date": "2021-05",
+        "debtPctGdp": 96.4
+      },
+      {
+        "date": "2021-06",
+        "debtPctGdp": 95.8
+      },
+      {
+        "date": "2021-07",
+        "debtPctGdp": 95.3
+      },
+      {
+        "date": "2021-08",
+        "debtPctGdp": 93.9
+      },
+      {
+        "date": "2021-09",
+        "debtPctGdp": 93.2
+      },
+      {
+        "date": "2021-10",
+        "debtPctGdp": 95.9
+      },
+      {
+        "date": "2021-11",
+        "debtPctGdp": 96.4
+      },
+      {
+        "date": "2021-12",
+        "debtPctGdp": 96.2
+      },
+      {
+        "date": "2022-01",
+        "debtPctGdp": 94.8
+      },
+      {
+        "date": "2022-02",
+        "debtPctGdp": 94.0
+      },
+      {
+        "date": "2022-03",
+        "debtPctGdp": 94.3
+      },
+      {
+        "date": "2022-04",
+        "debtPctGdp": 93.8
+      },
+      {
+        "date": "2022-05",
+        "debtPctGdp": 93.7
+      },
+      {
+        "date": "2022-06",
+        "debtPctGdp": 94.0
+      },
+      {
+        "date": "2022-07",
+        "debtPctGdp": 93.2
+      },
+      {
+        "date": "2022-08",
+        "debtPctGdp": 92.9
+      },
+      {
+        "date": "2022-09",
+        "debtPctGdp": 92.8
+      },
+      {
+        "date": "2022-10",
+        "debtPctGdp": 92.6
+      },
+      {
+        "date": "2022-11",
+        "debtPctGdp": 92.9
+      },
+      {
+        "date": "2022-12",
+        "debtPctGdp": 93.1
+      },
+      {
+        "date": "2023-01",
+        "debtPctGdp": 92.2
+      },
+      {
+        "date": "2023-02",
+        "debtPctGdp": 92.6
+      },
+      {
+        "date": "2023-03",
+        "debtPctGdp": 93.2
+      },
+      {
+        "date": "2023-04",
+        "debtPctGdp": 93.2
+      },
+      {
+        "date": "2023-05",
+        "debtPctGdp": 94.0
+      },
+      {
+        "date": "2023-06",
+        "debtPctGdp": 94.8
+      },
+      {
+        "date": "2023-07",
+        "debtPctGdp": 93.7
+      },
+      {
+        "date": "2023-08",
+        "debtPctGdp": 93.9
+      },
+      {
+        "date": "2023-09",
+        "debtPctGdp": 93.5
+      },
+      {
+        "date": "2023-10",
+        "debtPctGdp": 94.7
+      },
+      {
+        "date": "2023-11",
+        "debtPctGdp": 95.3
+      },
+      {
+        "date": "2023-12",
+        "debtPctGdp": 95.6
+      },
+      {
+        "date": "2024-01",
+        "debtPctGdp": 93.8
+      },
+      {
+        "date": "2024-02",
+        "debtPctGdp": 94.0
+      },
+      {
+        "date": "2024-03",
+        "debtPctGdp": 94.2
+      },
+      {
+        "date": "2024-04",
+        "debtPctGdp": 93.4
+      },
+      {
+        "date": "2024-05",
+        "debtPctGdp": 94.5
+      },
+      {
+        "date": "2024-06",
+        "debtPctGdp": 94.5
+      },
+      {
+        "date": "2024-07",
+        "debtPctGdp": 94.2
+      },
+      {
+        "date": "2024-08",
+        "debtPctGdp": 94.5
+      },
+      {
+        "date": "2024-09",
+        "debtPctGdp": 94.0
+      },
+      {
+        "date": "2024-10",
+        "debtPctGdp": 94.3
+      },
+      {
+        "date": "2024-11",
+        "debtPctGdp": 95.1
+      },
+      {
+        "date": "2024-12",
+        "debtPctGdp": 94.6
+      },
+      {
+        "date": "2025-01",
+        "debtPctGdp": 92.9
+      },
+      {
+        "date": "2025-02",
+        "debtPctGdp": 93.3
+      },
+      {
+        "date": "2025-03",
+        "debtPctGdp": 93.2
+      },
+      {
+        "date": "2025-04",
+        "debtPctGdp": 93.6
+      },
+      {
+        "date": "2025-05",
+        "debtPctGdp": 94.7
+      },
+      {
+        "date": "2025-06",
+        "debtPctGdp": 94.4
+      },
+      {
+        "date": "2025-07",
+        "debtPctGdp": 94.9
+      },
+      {
+        "date": "2025-08",
+        "debtPctGdp": 95.3
+      },
+      {
+        "date": "2025-09",
+        "debtPctGdp": 95.3
+      },
+      {
+        "date": "2025-10",
+        "debtPctGdp": 94.5
+      },
+      {
+        "date": "2025-11",
+        "debtPctGdp": 95.3
+      },
+      {
+        "date": "2025-12",
+        "debtPctGdp": 95.0
+      },
+      {
+        "date": "2026-01",
+        "debtPctGdp": 92.9
+      }
+    ],
+    "latest": {
+      "date": "2026-01",
+      "debtPctGdp": 92.9
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Gross Domestic Product: Quarter on Quarter growth (IHYQ)",
+        "url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/ihyq/pn2",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Public Sector Net Debt (exc banks) as % of GDP (HF6X)",
+        "url": "https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicsectorfinance/timeseries/hf6x/pusf",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "GDP growth is the quarter-on-quarter percentage change in chained volume measure, seasonally adjusted. Public sector net debt excludes public sector banks and is expressed as a percentage of GDP, not seasonally adjusted.",
+    "knownIssues": [
+      "GDP Q2 2020 shows -19.9% \u2014 COVID lockdown outlier",
+      "Debt methodology revised in Sep 2024 \u2014 caused upward revision to historical series"
+    ]
+  }
+}

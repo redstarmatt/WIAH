@@ -42,6 +42,21 @@ interface GiniPoint {
   gini: number;
 }
 
+interface GdpPoint {
+  date: string;
+  growthPct: number;
+}
+
+interface DebtPoint {
+  date: string;
+  debtPctGdp: number;
+}
+
+interface GdpData {
+  gdpGrowth: { timeSeries: GdpPoint[]; latest: GdpPoint | null };
+  publicDebt: { timeSeries: DebtPoint[]; latest: DebtPoint | null };
+}
+
 interface EconomyData {
   national: {
     inflation: { timeSeries: InflationPoint[] };
@@ -87,12 +102,17 @@ function sparkFrom(arr: number[], n = 12) {
 
 export default function EconomyPage() {
   const [data, setData] = useState<EconomyData | null>(null);
+  const [gdpData, setGdpData] = useState<GdpData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/data/economy/economy.json')
       .then(r => r.json())
       .then(setData)
+      .catch(console.error);
+    fetch('/data/economy/gdp.json')
+      .then(r => r.json())
+      .then(setGdpData)
       .catch(console.error);
   }, []);
 
@@ -232,6 +252,45 @@ export default function EconomyPage() {
       }]
     : [];
 
+  // 7. GDP quarterly growth
+  const gdpGrowthSeries: Series[] = gdpData
+    ? [{
+        id: 'gdp-qoq',
+        label: 'GDP quarter-on-quarter (%)',
+        colour: '#264653',
+        data: gdpData.gdpGrowth.timeSeries.map(d => ({
+          date: isoToDate(d.date),
+          value: d.growthPct,
+        })),
+      }]
+    : [];
+
+  const gdpAnnotations: Annotation[] = [
+    { date: new Date(2008, 8), label: '2008: Financial crisis' },
+    { date: new Date(2016, 5), label: '2016: Brexit vote' },
+    { date: new Date(2020, 2), label: '2020: COVID (-19.9%)' },
+  ];
+
+  // 8. Public sector net debt as % of GDP
+  const debtSeries: Series[] = gdpData
+    ? [{
+        id: 'debt-pct',
+        label: 'Net debt (% of GDP)',
+        colour: '#E63946',
+        data: gdpData.publicDebt.timeSeries
+          .filter((_, i) => i % 3 === 0) // quarterly samples from monthly data for readability
+          .map(d => ({
+            date: isoToDate(d.date),
+            value: d.debtPctGdp,
+          })),
+      }]
+    : [];
+
+  const debtAnnotations: Annotation[] = [
+    { date: new Date(2008, 8), label: '2008: Financial crisis' },
+    { date: new Date(2020, 2), label: '2020: COVID borrowing' },
+  ];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestInflation = data?.national.inflation.timeSeries.at(-1);
@@ -260,9 +319,9 @@ export default function EconomyPage() {
           topic="Economy"
           question="Are You Actually Better Off?"
           finding={
-            latestReal
-              ? `Real wages have finally recovered to pre-financial crisis levels after 16 years — but inflation at ${latestInflation?.cpiPct}% is still above the Bank of England's 2% target, and productivity remains essentially flat.`
-              : 'Real wages took 16 years to recover to their 2008 peak. Productivity growth has flatlined since the financial crisis.'
+            latestReal && latestInflation && latestLabour
+              ? `Real wages have finally recovered to pre-financial crisis levels after 16 years — averaging £${latestReal.weeklyGBP} per week. Inflation at ${latestInflation.cpiPct}% is still above the Bank of England's 2% target. Economic inactivity stands at ${latestLabour.inactivityPct}% — over one in five working-age adults are neither employed nor looking for work — and productivity has been essentially flat for 15 years.`
+              : 'Real wages took 16 years to recover to their 2008 peak. Productivity growth has flatlined since the financial crisis and economic inactivity remains elevated.'
           }
           colour="#264653"
         />
@@ -478,6 +537,90 @@ export default function EconomyPage() {
           />
         ) : (
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 8: GDP quarterly growth */}
+        {gdpGrowthSeries.length > 0 ? (
+          <LineChart
+            title="GDP quarterly growth, 2000–2025"
+            subtitle="Quarter-on-quarter percentage change in GDP, chained volume measure, seasonally adjusted."
+            series={gdpGrowthSeries}
+            annotations={gdpAnnotations}
+            targetLine={{ value: 0, label: '' }}
+            yLabel="% change"
+            source={{
+              name: 'ONS',
+              dataset: 'GDP quarter on quarter growth (IHYQ)',
+              frequency: 'quarterly',
+              url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/ihyq/pn2',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 9: Public sector net debt */}
+        {debtSeries.length > 0 ? (
+          <LineChart
+            title="Public sector net debt as % of GDP, 1993–2026"
+            subtitle="Excluding public sector banks. Has risen from 22% (2002) to 93% — the highest since the 1960s."
+            series={debtSeries}
+            annotations={debtAnnotations}
+            yLabel="% of GDP"
+            source={{
+              name: 'ONS',
+              dataset: 'Public Sector Net Debt (exc banks) as % of GDP (HF6X)',
+              frequency: 'monthly',
+              url: 'https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicsectorfinance/timeseries/hf6x/pusf',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Key indicators summary table */}
+        {data && (
+          <section className="mb-12">
+            <h3 className="text-lg font-bold text-wiah-black mb-1">
+              Key economic indicators at a glance
+            </h3>
+            <p className="text-sm text-wiah-mid font-mono mb-4">
+              Latest available values from ONS.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-wiah-border">
+                    <th className="text-left py-2 pr-4 font-mono text-xs text-wiah-mid">Indicator</th>
+                    <th className="text-right py-2 px-3 font-mono text-xs text-wiah-mid">Latest</th>
+                    <th className="text-right py-2 px-3 font-mono text-xs text-wiah-mid">Period</th>
+                    <th className="text-right py-2 pl-3 font-mono text-xs text-wiah-mid">Target / benchmark</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { name: 'CPI inflation', val: `${latestInflation?.cpiPct.toFixed(1)}%`, period: latestInflation?.date ?? '', bench: '2.0% (BoE target)' },
+                    { name: 'Real weekly earnings', val: latestReal ? `£${latestReal.weeklyGBP.toFixed(0)}` : '—', period: latestReal?.date ?? '', bench: '£492 (2008 peak)' },
+                    { name: 'Employment rate (16-64)', val: latestLabour ? `${latestLabour.employmentPct}%` : '—', period: latestLabour?.date ?? '', bench: '76.2% (2019 peak)' },
+                    { name: 'Unemployment rate', val: latestLabour ? `${latestLabour.unemploymentPct}%` : '—', period: latestLabour?.date ?? '', bench: '3.8% (2023 low)' },
+                    { name: 'Economic inactivity', val: latestLabour ? `${latestLabour.inactivityPct}%` : '—', period: latestLabour?.date ?? '', bench: '20.2% (2019)' },
+                    { name: 'Productivity index', val: data.national.productivity.timeSeries.at(-1)?.index.toFixed(1) ?? '—', period: data.national.productivity.timeSeries.at(-1)?.date ?? '', bench: '2023 = 100' },
+                    { name: 'Income inequality (Gini)', val: data.national.livingStandards.giniTimeSeries.at(-1) ? `${data.national.livingStandards.giniTimeSeries.at(-1)!.gini}%` : '—', period: data.national.livingStandards.giniTimeSeries.at(-1) ? String(data.national.livingStandards.giniTimeSeries.at(-1)!.year) : '', bench: '34.3% (2020 peak)' },
+                  ].map(row => (
+                    <tr key={row.name} className="border-b border-wiah-border/50 hover:bg-wiah-light/50">
+                      <td className="py-2 pr-4 text-sm">{row.name}</td>
+                      <td className="py-2 px-3 font-mono text-sm text-right font-bold">{row.val}</td>
+                      <td className="py-2 px-3 font-mono text-xs text-right text-wiah-mid">{row.period}</td>
+                      <td className="py-2 pl-3 font-mono text-xs text-right text-wiah-mid">{row.bench}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="font-mono text-[11px] text-wiah-mid mt-3">
+              Sources: ONS Consumer Price Inflation, Average Weekly Earnings, Labour Force Survey, Labour Productivity, Household Income Inequality.
+            </p>
+          </section>
         )}
 
         {/* Context */}

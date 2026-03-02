@@ -1,0 +1,1284 @@
+{
+  "topic": "crime-trends",
+  "lastUpdated": "2026-03-02",
+  "crimeTrends": {
+    "violence": {
+      "label": "TOTAL VIOLENCE AGAINST THE PERSON",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 708742
+        },
+        {
+          "period": "2003/04",
+          "count": 799247
+        },
+        {
+          "period": "2004/05",
+          "count": 845673
+        },
+        {
+          "period": "2005/06",
+          "count": 838674
+        },
+        {
+          "period": "2006/07",
+          "count": 814865
+        },
+        {
+          "period": "2007/08",
+          "count": 748779
+        },
+        {
+          "period": "2008/09",
+          "count": 709008
+        },
+        {
+          "period": "2009/10",
+          "count": 699011
+        },
+        {
+          "period": "2010/11",
+          "count": 665486
+        },
+        {
+          "period": "2011/12",
+          "count": 626720
+        },
+        {
+          "period": "2012/13",
+          "count": 601141
+        },
+        {
+          "period": "2013/14",
+          "count": 634625
+        },
+        {
+          "period": "2014/15",
+          "count": 778198
+        },
+        {
+          "period": "2015/16",
+          "count": 991687
+        },
+        {
+          "period": "2016/17",
+          "count": 1158172
+        },
+        {
+          "period": "2017/18",
+          "count": 1397735
+        },
+        {
+          "period": "2018/19",
+          "count": 1673490
+        },
+        {
+          "period": "2019/20",
+          "count": 1763867
+        },
+        {
+          "period": "2020/21",
+          "count": 1775986
+        },
+        {
+          "period": "2021/22",
+          "count": 2094328
+        },
+        {
+          "period": "2022/23",
+          "count": 2108860
+        },
+        {
+          "period": "2023/24",
+          "count": 2014062
+        },
+        {
+          "period": "2024/25",
+          "count": 1938063
+        }
+      ]
+    },
+    "sexual": {
+      "label": "TOTAL SEXUAL OFFENCES",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 56652
+        },
+        {
+          "period": "2003/04",
+          "count": 60412
+        },
+        {
+          "period": "2004/05",
+          "count": 60924
+        },
+        {
+          "period": "2005/06",
+          "count": 60287
+        },
+        {
+          "period": "2006/07",
+          "count": 56042
+        },
+        {
+          "period": "2007/08",
+          "count": 52166
+        },
+        {
+          "period": "2008/09",
+          "count": 50185
+        },
+        {
+          "period": "2009/10",
+          "count": 53006
+        },
+        {
+          "period": "2010/11",
+          "count": 53940
+        },
+        {
+          "period": "2011/12",
+          "count": 52760
+        },
+        {
+          "period": "2012/13",
+          "count": 53599
+        },
+        {
+          "period": "2013/14",
+          "count": 64232
+        },
+        {
+          "period": "2014/15",
+          "count": 88576
+        },
+        {
+          "period": "2015/16",
+          "count": 107334
+        },
+        {
+          "period": "2016/17",
+          "count": 123056
+        },
+        {
+          "period": "2017/18",
+          "count": 152839
+        },
+        {
+          "period": "2018/19",
+          "count": 164390
+        },
+        {
+          "period": "2019/20",
+          "count": 163316
+        },
+        {
+          "period": "2020/21",
+          "count": 147717
+        },
+        {
+          "period": "2021/22",
+          "count": 193026
+        },
+        {
+          "period": "2022/23",
+          "count": 194735
+        },
+        {
+          "period": "2023/24",
+          "count": 188614
+        },
+        {
+          "period": "2024/25",
+          "count": 209073
+        }
+      ]
+    },
+    "robbery": {
+      "label": "TOTAL ROBBERY",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 110271
+        },
+        {
+          "period": "2003/04",
+          "count": 103736
+        },
+        {
+          "period": "2004/05",
+          "count": 91010
+        },
+        {
+          "period": "2005/06",
+          "count": 98198
+        },
+        {
+          "period": "2006/07",
+          "count": 101376
+        },
+        {
+          "period": "2007/08",
+          "count": 84773
+        },
+        {
+          "period": "2008/09",
+          "count": 80130
+        },
+        {
+          "period": "2009/10",
+          "count": 75105
+        },
+        {
+          "period": "2010/11",
+          "count": 76189
+        },
+        {
+          "period": "2011/12",
+          "count": 74688
+        },
+        {
+          "period": "2012/13",
+          "count": 65155
+        },
+        {
+          "period": "2013/14",
+          "count": 57828
+        },
+        {
+          "period": "2014/15",
+          "count": 50154
+        },
+        {
+          "period": "2015/16",
+          "count": 51235
+        },
+        {
+          "period": "2016/17",
+          "count": 59418
+        },
+        {
+          "period": "2017/18",
+          "count": 77252
+        },
+        {
+          "period": "2018/19",
+          "count": 85933
+        },
+        {
+          "period": "2019/20",
+          "count": 90196
+        },
+        {
+          "period": "2020/21",
+          "count": 59650
+        },
+        {
+          "period": "2021/22",
+          "count": 66167
+        },
+        {
+          "period": "2022/23",
+          "count": 75011
+        },
+        {
+          "period": "2023/24",
+          "count": 81021
+        },
+        {
+          "period": "2024/25",
+          "count": 79196
+        }
+      ]
+    },
+    "burglary": {
+      "label": "Burglary",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 890099
+        },
+        {
+          "period": "2003/04",
+          "count": 820013
+        },
+        {
+          "period": "2004/05",
+          "count": 680358
+        },
+        {
+          "period": "2005/06",
+          "count": 645068
+        },
+        {
+          "period": "2006/07",
+          "count": 622012
+        },
+        {
+          "period": "2007/08",
+          "count": 583710
+        },
+        {
+          "period": "2008/09",
+          "count": 581584
+        },
+        {
+          "period": "2009/10",
+          "count": 540645
+        },
+        {
+          "period": "2010/11",
+          "count": 522683
+        },
+        {
+          "period": "2011/12",
+          "count": 501048
+        },
+        {
+          "period": "2012/13",
+          "count": 459795
+        },
+        {
+          "period": "2013/14",
+          "count": 443212
+        },
+        {
+          "period": "2014/15",
+          "count": 410866
+        },
+        {
+          "period": "2015/16",
+          "count": 401768
+        },
+        {
+          "period": "2016/17",
+          "count": 412220
+        },
+        {
+          "period": "2017/18",
+          "count": 437546
+        },
+        {
+          "period": "2018/19",
+          "count": 421200
+        },
+        {
+          "period": "2019/20",
+          "count": 384014
+        },
+        {
+          "period": "2020/21",
+          "count": 267577
+        },
+        {
+          "period": "2021/22",
+          "count": 265343
+        },
+        {
+          "period": "2022/23",
+          "count": 275605
+        },
+        {
+          "period": "2023/24",
+          "count": 266156
+        },
+        {
+          "period": "2024/25",
+          "count": 245086
+        }
+      ]
+    },
+    "vehicleOffences": {
+      "label": "Vehicle offences",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 1074659
+        },
+        {
+          "period": "2003/04",
+          "count": 985006
+        },
+        {
+          "period": "2004/05",
+          "count": 820096
+        },
+        {
+          "period": "2005/06",
+          "count": 792821
+        },
+        {
+          "period": "2006/07",
+          "count": 765015
+        },
+        {
+          "period": "2007/08",
+          "count": 656453
+        },
+        {
+          "period": "2008/09",
+          "count": 591853
+        },
+        {
+          "period": "2009/10",
+          "count": 494873
+        },
+        {
+          "period": "2010/11",
+          "count": 449616
+        },
+        {
+          "period": "2011/12",
+          "count": 417442
+        },
+        {
+          "period": "2012/13",
+          "count": 387359
+        },
+        {
+          "period": "2013/14",
+          "count": 372041
+        },
+        {
+          "period": "2014/15",
+          "count": 349522
+        },
+        {
+          "period": "2015/16",
+          "count": 366692
+        },
+        {
+          "period": "2016/17",
+          "count": 407516
+        },
+        {
+          "period": "2017/18",
+          "count": 457041
+        },
+        {
+          "period": "2018/19",
+          "count": 467235
+        },
+        {
+          "period": "2019/20",
+          "count": 466677
+        },
+        {
+          "period": "2020/21",
+          "count": 336824
+        },
+        {
+          "period": "2021/22",
+          "count": 360681
+        },
+        {
+          "period": "2022/23",
+          "count": 405618
+        },
+        {
+          "period": "2023/24",
+          "count": 379893
+        },
+        {
+          "period": "2024/25",
+          "count": 350036
+        }
+      ]
+    },
+    "shoplifting": {
+      "label": "Shoplifting",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 310881
+        },
+        {
+          "period": "2003/04",
+          "count": 303235
+        },
+        {
+          "period": "2004/05",
+          "count": 281127
+        },
+        {
+          "period": "2005/06",
+          "count": 295999
+        },
+        {
+          "period": "2006/07",
+          "count": 294282
+        },
+        {
+          "period": "2007/08",
+          "count": 290653
+        },
+        {
+          "period": "2008/09",
+          "count": 320739
+        },
+        {
+          "period": "2009/10",
+          "count": 307823
+        },
+        {
+          "period": "2010/11",
+          "count": 305896
+        },
+        {
+          "period": "2011/12",
+          "count": 308326
+        },
+        {
+          "period": "2012/13",
+          "count": 300623
+        },
+        {
+          "period": "2013/14",
+          "count": 321065
+        },
+        {
+          "period": "2014/15",
+          "count": 326053
+        },
+        {
+          "period": "2015/16",
+          "count": 337262
+        },
+        {
+          "period": "2016/17",
+          "count": 370300
+        },
+        {
+          "period": "2017/18",
+          "count": 382660
+        },
+        {
+          "period": "2018/19",
+          "count": 374812
+        },
+        {
+          "period": "2019/20",
+          "count": 359264
+        },
+        {
+          "period": "2020/21",
+          "count": 228114
+        },
+        {
+          "period": "2021/22",
+          "count": 274880
+        },
+        {
+          "period": "2022/23",
+          "count": 342406
+        },
+        {
+          "period": "2023/24",
+          "count": 444004
+        },
+        {
+          "period": "2024/25",
+          "count": 530457
+        }
+      ]
+    },
+    "theft": {
+      "label": "TOTAL THEFT OFFENCES",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 3413319
+        },
+        {
+          "period": "2003/04",
+          "count": 3249647
+        },
+        {
+          "period": "2004/05",
+          "count": 2837862
+        },
+        {
+          "period": "2005/06",
+          "count": 2739231
+        },
+        {
+          "period": "2006/07",
+          "count": 2638784
+        },
+        {
+          "period": "2007/08",
+          "count": 2422728
+        },
+        {
+          "period": "2008/09",
+          "count": 2321580
+        },
+        {
+          "period": "2009/10",
+          "count": 2132620
+        },
+        {
+          "period": "2010/11",
+          "count": 2107446
+        },
+        {
+          "period": "2011/12",
+          "count": 2074779
+        },
+        {
+          "period": "2012/13",
+          "count": 1900944
+        },
+        {
+          "period": "2013/14",
+          "count": 1845169
+        },
+        {
+          "period": "2014/15",
+          "count": 1750607
+        },
+        {
+          "period": "2015/16",
+          "count": 1762965
+        },
+        {
+          "period": "2016/17",
+          "count": 1881346
+        },
+        {
+          "period": "2017/18",
+          "count": 2012544
+        },
+        {
+          "period": "2018/19",
+          "count": 2013652
+        },
+        {
+          "period": "2019/20",
+          "count": 1928382
+        },
+        {
+          "period": "2020/21",
+          "count": 1301442
+        },
+        {
+          "period": "2021/22",
+          "count": 1496032
+        },
+        {
+          "period": "2022/23",
+          "count": 1722692
+        },
+        {
+          "period": "2023/24",
+          "count": 1780486
+        },
+        {
+          "period": "2024/25",
+          "count": 1777970
+        }
+      ]
+    },
+    "criminalDamage": {
+      "label": "TOTAL CRIMINAL DAMAGE AND ARSON",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 1114472
+        },
+        {
+          "period": "2003/04",
+          "count": 1209912
+        },
+        {
+          "period": "2004/05",
+          "count": 1187477
+        },
+        {
+          "period": "2005/06",
+          "count": 1173848
+        },
+        {
+          "period": "2006/07",
+          "count": 1177151
+        },
+        {
+          "period": "2007/08",
+          "count": 1030038
+        },
+        {
+          "period": "2008/09",
+          "count": 930327
+        },
+        {
+          "period": "2009/10",
+          "count": 800645
+        },
+        {
+          "period": "2010/11",
+          "count": 695084
+        },
+        {
+          "period": "2011/12",
+          "count": 626008
+        },
+        {
+          "period": "2012/13",
+          "count": 529712
+        },
+        {
+          "period": "2013/14",
+          "count": 506012
+        },
+        {
+          "period": "2014/15",
+          "count": 503259
+        },
+        {
+          "period": "2015/16",
+          "count": 540819
+        },
+        {
+          "period": "2016/17",
+          "count": 565080
+        },
+        {
+          "period": "2017/18",
+          "count": 590993
+        },
+        {
+          "period": "2018/19",
+          "count": 573227
+        },
+        {
+          "period": "2019/20",
+          "count": 560476
+        },
+        {
+          "period": "2020/21",
+          "count": 480450
+        },
+        {
+          "period": "2021/22",
+          "count": 534067
+        },
+        {
+          "period": "2022/23",
+          "count": 530384
+        },
+        {
+          "period": "2023/24",
+          "count": 496473
+        },
+        {
+          "period": "2024/25",
+          "count": 463151
+        }
+      ]
+    },
+    "drugOffences": {
+      "label": "TOTAL DRUG OFFENCES",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 143320
+        },
+        {
+          "period": "2003/04",
+          "count": 143511
+        },
+        {
+          "period": "2004/05",
+          "count": 145837
+        },
+        {
+          "period": "2005/06",
+          "count": 178479
+        },
+        {
+          "period": "2006/07",
+          "count": 194233
+        },
+        {
+          "period": "2007/08",
+          "count": 229913
+        },
+        {
+          "period": "2008/09",
+          "count": 243536
+        },
+        {
+          "period": "2009/10",
+          "count": 235584
+        },
+        {
+          "period": "2010/11",
+          "count": 232922
+        },
+        {
+          "period": "2011/12",
+          "count": 229099
+        },
+        {
+          "period": "2012/13",
+          "count": 208003
+        },
+        {
+          "period": "2013/14",
+          "count": 198216
+        },
+        {
+          "period": "2014/15",
+          "count": 170689
+        },
+        {
+          "period": "2015/16",
+          "count": 149726
+        },
+        {
+          "period": "2016/17",
+          "count": 139222
+        },
+        {
+          "period": "2017/18",
+          "count": 138521
+        },
+        {
+          "period": "2018/19",
+          "count": 154378
+        },
+        {
+          "period": "2019/20",
+          "count": 183908
+        },
+        {
+          "period": "2020/21",
+          "count": 211131
+        },
+        {
+          "period": "2021/22",
+          "count": 179446
+        },
+        {
+          "period": "2022/23",
+          "count": 179847
+        },
+        {
+          "period": "2023/24",
+          "count": 182585
+        },
+        {
+          "period": "2024/25",
+          "count": 205065
+        }
+      ]
+    },
+    "publicOrder": {
+      "label": "TOTAL PUBLIC ORDER OFFENCES",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 129517
+        },
+        {
+          "period": "2003/04",
+          "count": 158178
+        },
+        {
+          "period": "2004/05",
+          "count": 191872
+        },
+        {
+          "period": "2005/06",
+          "count": 222581
+        },
+        {
+          "period": "2006/07",
+          "count": 236661
+        },
+        {
+          "period": "2007/08",
+          "count": 218380
+        },
+        {
+          "period": "2008/09",
+          "count": 204289
+        },
+        {
+          "period": "2009/10",
+          "count": 188254
+        },
+        {
+          "period": "2010/11",
+          "count": 173081
+        },
+        {
+          "period": "2011/12",
+          "count": 150858
+        },
+        {
+          "period": "2012/13",
+          "count": 132205
+        },
+        {
+          "period": "2013/14",
+          "count": 134400
+        },
+        {
+          "period": "2014/15",
+          "count": 159217
+        },
+        {
+          "period": "2015/16",
+          "count": 205248
+        },
+        {
+          "period": "2016/17",
+          "count": 284577
+        },
+        {
+          "period": "2017/18",
+          "count": 386664
+        },
+        {
+          "period": "2018/19",
+          "count": 449357
+        },
+        {
+          "period": "2019/20",
+          "count": 460550
+        },
+        {
+          "period": "2020/21",
+          "count": 483298
+        },
+        {
+          "period": "2021/22",
+          "count": 598767
+        },
+        {
+          "period": "2022/23",
+          "count": 590416
+        },
+        {
+          "period": "2023/24",
+          "count": 486526
+        },
+        {
+          "period": "2024/25",
+          "count": 453411
+        }
+      ]
+    },
+    "total": {
+      "label": "TOTAL RECORDED CRIME - ALL OFFENCES EXCLUDING FRAUD AND COMPUTER MISUSE",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 5791277
+        },
+        {
+          "period": "2003/04",
+          "count": 5843549
+        },
+        {
+          "period": "2004/05",
+          "count": 5476771
+        },
+        {
+          "period": "2005/06",
+          "count": 5425691
+        },
+        {
+          "period": "2006/07",
+          "count": 5322377
+        },
+        {
+          "period": "2007/08",
+          "count": 4881140
+        },
+        {
+          "period": "2008/09",
+          "count": 4630383
+        },
+        {
+          "period": "2009/10",
+          "count": 4265036
+        },
+        {
+          "period": "2010/11",
+          "count": 4078475
+        },
+        {
+          "period": "2011/12",
+          "count": 3903581
+        },
+        {
+          "period": "2012/13",
+          "count": 3553168
+        },
+        {
+          "period": "2013/14",
+          "count": 3506545
+        },
+        {
+          "period": "2014/15",
+          "count": 3574552
+        },
+        {
+          "period": "2015/16",
+          "count": 3898668
+        },
+        {
+          "period": "2016/17",
+          "count": 4321702
+        },
+        {
+          "period": "2017/18",
+          "count": 4890425
+        },
+        {
+          "period": "2018/19",
+          "count": 5266170
+        },
+        {
+          "period": "2019/20",
+          "count": 5305095
+        },
+        {
+          "period": "2020/21",
+          "count": 4615925
+        },
+        {
+          "period": "2021/22",
+          "count": 5324853
+        },
+        {
+          "period": "2022/23",
+          "count": 5578549
+        },
+        {
+          "period": "2023/24",
+          "count": 5402551
+        },
+        {
+          "period": "2024/25",
+          "count": 5307003
+        }
+      ]
+    },
+    "fraudAndCyber": {
+      "label": "TOTAL FRAUD  AND COMPUTER MISUSE OFFENCES",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 183683
+        },
+        {
+          "period": "2003/04",
+          "count": 170210
+        },
+        {
+          "period": "2004/05",
+          "count": 160740
+        },
+        {
+          "period": "2005/06",
+          "count": 129481
+        },
+        {
+          "period": "2006/07",
+          "count": 105181
+        },
+        {
+          "period": "2007/08",
+          "count": 71137
+        },
+        {
+          "period": "2008/09",
+          "count": 72314
+        },
+        {
+          "period": "2009/10",
+          "count": 73259
+        },
+        {
+          "period": "2010/11",
+          "count": 72441
+        },
+        {
+          "period": "2011/12",
+          "count": 476403
+        },
+        {
+          "period": "2012/13",
+          "count": 510403
+        },
+        {
+          "period": "2013/14",
+          "count": 521918
+        },
+        {
+          "period": "2014/15",
+          "count": 593067
+        },
+        {
+          "period": "2015/16",
+          "count": 619152
+        },
+        {
+          "period": "2016/17",
+          "count": 652362
+        },
+        {
+          "period": "2017/18",
+          "count": 638358
+        },
+        {
+          "period": "2018/19",
+          "count": 693421
+        },
+        {
+          "period": "2019/20",
+          "count": 774537
+        },
+        {
+          "period": "2020/21",
+          "count": 828365
+        },
+        {
+          "period": "2021/22",
+          "count": 1012436
+        },
+        {
+          "period": "2022/23",
+          "count": 1158550
+        },
+        {
+          "period": "2023/24",
+          "count": 1255471
+        },
+        {
+          "period": "2024/25",
+          "count": 1281354
+        }
+      ]
+    },
+    "totalIncFraud": {
+      "label": "TOTAL RECORDED CRIME \u2013 ALL OFFENCES INCLUDING FRAUD AND COMPUTER MISUSE",
+      "timeSeries": [
+        {
+          "period": "2002/03",
+          "count": 5974960
+        },
+        {
+          "period": "2003/04",
+          "count": 6013759
+        },
+        {
+          "period": "2004/05",
+          "count": 5637511
+        },
+        {
+          "period": "2005/06",
+          "count": 5555172
+        },
+        {
+          "period": "2006/07",
+          "count": 5427558
+        },
+        {
+          "period": "2007/08",
+          "count": 4952277
+        },
+        {
+          "period": "2008/09",
+          "count": 4702697
+        },
+        {
+          "period": "2009/10",
+          "count": 4338295
+        },
+        {
+          "period": "2010/11",
+          "count": 4150916
+        },
+        {
+          "period": "2011/12",
+          "count": 4379984
+        },
+        {
+          "period": "2012/13",
+          "count": 4063571
+        },
+        {
+          "period": "2013/14",
+          "count": 4028463
+        },
+        {
+          "period": "2014/15",
+          "count": 4167619
+        },
+        {
+          "period": "2015/16",
+          "count": 4517820
+        },
+        {
+          "period": "2016/17",
+          "count": 4974064
+        },
+        {
+          "period": "2017/18",
+          "count": 5528783
+        },
+        {
+          "period": "2018/19",
+          "count": 5959591
+        },
+        {
+          "period": "2019/20",
+          "count": 6079632
+        },
+        {
+          "period": "2020/21",
+          "count": 5444290
+        },
+        {
+          "period": "2021/22",
+          "count": 6337289
+        },
+        {
+          "period": "2022/23",
+          "count": 6737099
+        },
+        {
+          "period": "2023/24",
+          "count": 6658022
+        },
+        {
+          "period": "2024/25",
+          "count": 6588357
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS / Home Office",
+        "dataset": "Crime in England and Wales, Appendix Tables (Table A5a)",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/crimeinenglandandwalesappendixtables",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Police recorded crime by offence category, annual financial years (April to March). Crime recording practices have changed significantly over this period \u2014 particularly in 2014 when the National Crime Recording Standard was tightened, leading to apparent increases in violence and sexual offences. Figures are not directly comparable across the full time period.",
+    "knownIssues": [
+      "Recording practice changes in 2014 inflated violence and sexual offence figures",
+      "Fraud reporting changed with Action Fraud in 2013-14",
+      "COVID-19 affected crime patterns in 2020/21",
+      "Burglary definition changed in April 2017 (domestic \u2192 residential)"
+    ]
+  }
+}

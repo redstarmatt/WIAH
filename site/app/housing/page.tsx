@@ -279,9 +279,9 @@ export default function HousingPage() {
           preposition="with"
           question="Can You Actually Afford to Live Here?"
           finding={
-            latestAff
-              ? `The average house in England costs ${latestAff.ratio.toFixed(1)}× the median annual salary — more than double the ratio in 1997. Average monthly rent in England has hit £${latestRent?.avgMonthlyRent.toLocaleString()}.`
-              : 'House prices have more than doubled relative to earnings since 1997. Rents are rising at record rates.'
+            latestAff && latestRent && latestHpi && rentGrowth !== null
+              ? `The average house in England costs ${latestAff.ratio.toFixed(1)}× the median annual salary — more than double the ${firstAff?.ratio.toFixed(1)}× ratio in ${firstAff?.year}. The average property price is now £${latestHpi.averagePrice.toLocaleString('en-GB')}. Rents have risen ${rentGrowth}% since ${firstRent?.date.slice(0, 4)}, reaching £${latestRent.avgMonthlyRent.toLocaleString('en-GB')} per month — more than a third of median income for private renters.`
+              : 'House prices have more than doubled relative to earnings since 1997. Rents have risen nearly 80%, consuming over a third of median income for private renters.'
           }
           colour="#F4A261"
         />
@@ -508,6 +508,53 @@ export default function HousingPage() {
                 className="hover:underline"
               >
                 Source: ONS, Housing affordability in England and Wales, 2024
+              </a>
+            </p>
+          </section>
+        )}
+
+        {/* Regional rent affordability table */}
+        {data && Object.keys(data.regional.rentAffordability).length > 0 && (
+          <section className="mb-12">
+            <h3 className="text-lg font-bold text-wiah-black mb-1">
+              Rent as share of income by region, 2023/24
+            </h3>
+            <p className="text-sm text-wiah-mid font-mono mb-6">
+              Average private rent as a percentage of median monthly income. Higher = less affordable.
+            </p>
+            <div className="divide-y divide-wiah-border">
+              {Object.entries(data.regional.rentAffordability)
+                .map(([name, ts]) => ({ name, latest: ts.at(-1) }))
+                .filter(r => r.latest)
+                .sort((a, b) => (b.latest!.rentToIncomePct) - (a.latest!.rentToIncomePct))
+                .map(({ name, latest }) => {
+                  const pct = latest!.rentToIncomePct;
+                  const barWidth = Math.min((pct / 45) * 100, 100);
+                  const colour = pct > 35 ? '#E63946' : pct > 28 ? '#F4A261' : '#2A9D8F';
+                  return (
+                    <div key={name} className="py-3 flex items-center gap-4">
+                      <span className="text-sm text-wiah-black w-52 shrink-0">{name}</span>
+                      <div className="flex-1 bg-wiah-light rounded h-2">
+                        <div
+                          className="h-2 rounded"
+                          style={{ width: `${barWidth}%`, backgroundColor: colour }}
+                        />
+                      </div>
+                      <span className="font-mono text-sm font-bold w-14 text-right" style={{ color: colour }}>
+                        {pct}%
+                      </span>
+                    </div>
+                  );
+                })}
+            </div>
+            <p className="font-mono text-[11px] text-wiah-mid mt-3">
+              <a
+                href="https://www.ons.gov.uk/peoplepopulationandcommunity/housing/datasets/privaterentalaffordabilityengland"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Source: ONS, Private rental affordability, England, 2024
               </a>
             </p>
           </section>

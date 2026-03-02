@@ -32,6 +32,20 @@ interface PrisonPoint {
   capacity: number;
 }
 
+interface CrimeTrendPoint {
+  period: string;
+  count: number;
+}
+
+interface CrimeTrendCategory {
+  label: string;
+  timeSeries: CrimeTrendPoint[];
+}
+
+interface CrimeTrendsData {
+  crimeTrends: Record<string, CrimeTrendCategory>;
+}
+
 interface JusticeData {
   national: {
     chargeRate: {
@@ -62,6 +76,12 @@ function isoToDate(s: string): Date {
   return new Date(s + '-01');
 }
 
+function fyToDate(fy: string): Date {
+  // "2002/03" → mid-year of ending year (Oct 2002)
+  const start = parseInt(fy.split('/')[0]);
+  return new Date(start, 9, 1);
+}
+
 function quarterToDate(s: string): Date {
   // "2016-Q1" → Jan 2016, Q2 → Apr, Q3 → Jul, Q4 → Oct
   const [year, q] = s.split('-Q');
@@ -77,12 +97,17 @@ function sparkFrom(arr: number[], n = 12) {
 
 export default function JusticePage() {
   const [data, setData] = useState<JusticeData | null>(null);
+  const [crimeData, setCrimeData] = useState<CrimeTrendsData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/data/justice/justice.json')
       .then(r => r.json())
       .then(setData)
+      .catch(console.error);
+    fetch('/data/justice/crime_trends.json')
+      .then(r => r.json())
+      .then(setCrimeData)
       .catch(console.error);
   }, []);
 
@@ -148,6 +173,76 @@ export default function JusticePage() {
     { date: new Date(2024, 8), label: 'SDS40 release' },
   ];
 
+  // Prison occupancy rate (population / capacity × 100)
+  const occupancySeries: Series[] = data
+    ? [{
+        id: 'occupancy',
+        label: 'Occupancy rate (%)',
+        colour: '#E63946',
+        data: data.national.prisonPopulation.timeSeries
+          .filter(d => d.capacity > 0)
+          .map(d => ({
+            date: isoToDate(d.date),
+            value: Math.round((d.population / d.capacity) * 1000) / 10,
+          })),
+      }]
+    : [];
+
+  // Crime trend series
+  const totalCrimeSeries: Series[] = crimeData?.crimeTrends?.total
+    ? [{
+        id: 'total-crime',
+        label: 'Total recorded crime (exc. fraud)',
+        colour: '#0D1117',
+        data: crimeData.crimeTrends.total.timeSeries.map(d => ({
+          date: fyToDate(d.period),
+          value: d.count,
+        })),
+      }]
+    : [];
+
+  const crimeTypeSeries: Series[] = crimeData
+    ? [
+        ...(crimeData.crimeTrends.violence ? [{
+          id: 'violence',
+          label: 'Violence against the person',
+          colour: '#E63946',
+          data: crimeData.crimeTrends.violence.timeSeries.map(d => ({
+            date: fyToDate(d.period), value: d.count,
+          })),
+        }] : []),
+        ...(crimeData.crimeTrends.theft ? [{
+          id: 'theft',
+          label: 'Theft offences',
+          colour: '#264653',
+          data: crimeData.crimeTrends.theft.timeSeries.map(d => ({
+            date: fyToDate(d.period), value: d.count,
+          })),
+        }] : []),
+        ...(crimeData.crimeTrends.fraudAndCyber ? [{
+          id: 'fraud',
+          label: 'Fraud & computer misuse',
+          colour: '#F4A261',
+          data: crimeData.crimeTrends.fraudAndCyber.timeSeries.map(d => ({
+            date: fyToDate(d.period), value: d.count,
+          })),
+        }] : []),
+        ...(crimeData.crimeTrends.burglary ? [{
+          id: 'burglary',
+          label: 'Burglary',
+          colour: '#2A9D8F',
+          data: crimeData.crimeTrends.burglary.timeSeries.map(d => ({
+            date: fyToDate(d.period), value: d.count,
+          })),
+        }] : []),
+      ]
+    : [];
+
+  const crimeAnnotations: Annotation[] = [
+    { date: new Date(2014, 0), label: '2014: NCRS tightened' },
+    { date: new Date(2020, 2), label: '2020: COVID-19' },
+  ];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestCharge = data?.national.chargeRate.timeSeries.at(-1);
@@ -183,9 +278,9 @@ export default function JusticePage() {
           topic="Justice"
           question="What Actually Happens When You Report a Crime?"
           finding={
-            latestCharge
-              ? `Just ${latestCharge.pct}% of recorded crimes lead to a charge — down from ${firstCharge?.pct}% a decade ago. The Crown Court backlog has more than doubled since 2019.`
-              : 'Fewer than 7 in every 100 recorded crimes now result in a charge.'
+            latestCharge && latestBacklog && occupancyPct
+              ? `Just ${latestCharge.pct}% of recorded crimes lead to a charge — down from ${firstCharge?.pct}% a decade ago. Of an estimated 9.6 million offences each year, only around 3 in 100 end in a conviction. The Crown Court backlog stands at ${latestBacklog.outstanding.toLocaleString('en-GB')} cases — nearly 50% above the government's own target — and prisons are at ${occupancyPct}% capacity.`
+              : 'Fewer than 7 in every 100 recorded crimes now result in a charge. The court backlog and prison population continue to grow.'
           }
           colour="#6B7280"
         />
@@ -364,6 +459,64 @@ export default function JusticePage() {
               dataset: 'Prison Population Statistics, December 2025',
               frequency: 'monthly',
               url: 'https://www.gov.uk/government/collections/prison-population-statistics',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 6: Prison occupancy rate */}
+        {occupancySeries.length > 0 ? (
+          <LineChart
+            title="Prison occupancy rate, 2000–2025"
+            subtitle="Prison population as a percentage of operational capacity. 100% = full."
+            series={occupancySeries}
+            annotations={prisonAnnotations}
+            targetLine={{ value: 100, label: 'Full capacity' }}
+            yLabel="Percent"
+            source={{
+              name: 'Ministry of Justice',
+              dataset: 'Prison Population Statistics, December 2025',
+              frequency: 'monthly',
+              url: 'https://www.gov.uk/government/collections/prison-population-statistics',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 7: Total recorded crime */}
+        {totalCrimeSeries.length > 0 ? (
+          <LineChart
+            title="Total police-recorded crime, 2002/03–2024/25"
+            subtitle="All offences recorded by police forces in England and Wales, excluding fraud and computer misuse."
+            series={totalCrimeSeries}
+            annotations={crimeAnnotations}
+            yLabel="Offences"
+            source={{
+              name: 'ONS / Home Office',
+              dataset: 'Crime in England and Wales, Appendix Tables (A5a)',
+              frequency: 'annual (financial year)',
+              url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/crimeinenglandandwalesappendixtables',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 8: Crime by type — divergent trends */}
+        {crimeTypeSeries.length > 0 ? (
+          <LineChart
+            title="Recorded crime by type, 2002/03–2024/25"
+            subtitle="Divergent trends: violence and fraud rising sharply; theft and burglary falling. Recording practice changes in 2014 inflated violence figures."
+            series={crimeTypeSeries}
+            annotations={crimeAnnotations}
+            yLabel="Offences"
+            source={{
+              name: 'ONS / Home Office',
+              dataset: 'Crime in England and Wales, Appendix Tables (A5a)',
+              frequency: 'annual (financial year)',
+              url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/crimeinenglandandwalesappendixtables',
             }}
           />
         ) : (

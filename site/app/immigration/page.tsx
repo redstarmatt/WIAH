@@ -231,6 +231,66 @@ export default function ImmigrationPage() {
       ]
     : [];
 
+  // 3b. Asylum decisions breakdown (grants vs refusals)
+  const asylumDecisionsSeries: Series[] = data
+    ? [
+        {
+          id: 'asylum-grants',
+          label: 'Grants of protection',
+          colour: '#2A9D8F',
+          data: data.asylum
+            .filter(r => r.grants != null)
+            .map(r => ({ date: yearToDate(r.year), value: r.grants! })),
+        },
+        {
+          id: 'asylum-refusals',
+          label: 'Refusals',
+          colour: '#E63946',
+          data: data.asylum
+            .filter(r => r.refusals != null)
+            .map(r => ({ date: yearToDate(r.year), value: r.refusals! })),
+        },
+        {
+          id: 'asylum-decisions-total',
+          label: 'Total decisions',
+          colour: '#0D1117',
+          data: data.asylum
+            .filter(r => r.decisions != null)
+            .map(r => ({ date: yearToDate(r.year), value: r.decisions! })),
+        },
+      ]
+    : [];
+
+  // 3c. Visa grants line chart (visual complement to table)
+  const visaLineSeries: Series[] = data && data.visaGrants.length > 0
+    ? [
+        {
+          id: 'visa-work',
+          label: 'Work',
+          colour: '#264653',
+          data: data.visaGrants.filter(r => r.work != null).map(r => ({ date: yearToDate(r.year), value: r.work! })),
+        },
+        {
+          id: 'visa-study',
+          label: 'Study',
+          colour: '#E63946',
+          data: data.visaGrants.filter(r => r.study != null).map(r => ({ date: yearToDate(r.year), value: r.study! })),
+        },
+        {
+          id: 'visa-family',
+          label: 'Family',
+          colour: '#F4A261',
+          data: data.visaGrants.filter(r => r.family != null).map(r => ({ date: yearToDate(r.year), value: r.family! })),
+        },
+        {
+          id: 'visa-visitor',
+          label: 'Visitor',
+          colour: '#2A9D8F',
+          data: data.visaGrants.filter(r => r.visitor != null).map(r => ({ date: yearToDate(r.year), value: r.visitor! })),
+        },
+      ]
+    : [];
+
   // 4. Small boats
   const smallBoatsSeries: Series[] = data
     ? [{
@@ -262,6 +322,14 @@ export default function ImmigrationPage() {
           data: data.returns
             .filter(r => r.voluntary != null)
             .map(r => ({ date: yearToDate(r.year), value: r.voluntary! })),
+        },
+        {
+          id: 'returns-port',
+          label: 'Port refusals',
+          colour: '#F4A261',
+          data: data.returns
+            .filter(r => r.portRefusals != null)
+            .map(r => ({ date: yearToDate(r.year), value: r.portRefusals! })),
         },
       ]
     : [];
@@ -300,8 +368,8 @@ export default function ImmigrationPage() {
           question="What Are the Actual Numbers on Immigration?"
           finding={
             data
-              ? `Net migration was ${fmtK(data.headlines.netMigration)} in the year to June 2025 — down from a peak of 906K in 2023 but still far above pre-Brexit levels. ${fmtK(data.headlines.asylumBacklog)} people are waiting for an asylum decision. ${fmtK(data.headlines.smallBoatsTotal)} have crossed the Channel in small boats since 2018.`
-              : 'Net migration remains historically high despite falling from its 2023 peak.'
+              ? `Net migration was ${fmtK(data.headlines.netMigration)} in the year to ${new Date(data.headlines.netMigrationPeriod + '-01').toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })} — down from a peak of 906K in 2023 but still far above pre-Brexit levels of around 200K. ${fmtK(data.headlines.asylumBacklog)} people are waiting for an initial asylum decision, with a grant rate of ${Math.round(data.headlines.asylumGrantRate * 100)}%. ${fmtK(data.headlines.smallBoatsTotal)} people have crossed the Channel in small boats since 2018, including ${fmtK(data.headlines.smallBoats2025)} so far in 2025.`
+              : 'Net migration remains historically high despite falling from its 2023 peak. The asylum backlog persists and Channel crossings continue to rise.'
           }
           colour="#6B7280"
           preposition="with"
@@ -393,6 +461,24 @@ export default function ImmigrationPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        {/* Chart 2b: Visa grants by route (line chart) */}
+        {visaLineSeries.length > 0 ? (
+          <LineChart
+            title="Visa grants by route, 2014–2025"
+            subtitle="Entry clearance visas granted by main category, year ending December."
+            series={visaLineSeries}
+            yLabel="Visas granted"
+            source={{
+              name: 'Home Office',
+              dataset: 'Entry clearance visas summary tables',
+              frequency: 'quarterly',
+              url: 'https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
         {/* Inline table: Visa grants by route */}
         {data && data.visaGrants.length > 0 && (
           <section className="mb-12">
@@ -448,6 +534,24 @@ export default function ImmigrationPage() {
             subtitle="Annual asylum applications vs people awaiting an initial decision at year-end."
             series={asylumAppsSeries}
             yLabel="People"
+            source={{
+              name: 'Home Office',
+              dataset: 'Asylum summary tables (Asy_00a)',
+              frequency: 'quarterly',
+              url: 'https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 3b: Asylum decisions breakdown */}
+        {asylumDecisionsSeries.length > 0 ? (
+          <LineChart
+            title="Asylum decisions: grants vs refusals, 2010–2025"
+            subtitle="Initial asylum decisions showing grants of protection, refusals, and total decisions."
+            series={asylumDecisionsSeries}
+            yLabel="Decisions"
             source={{
               name: 'Home Office',
               dataset: 'Asylum summary tables (Asy_00a)',
@@ -520,11 +624,59 @@ export default function ImmigrationPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        {/* Small boats detail table */}
+        {data && data.smallBoats.length > 0 && (
+          <section className="mb-12">
+            <h3 className="text-lg font-bold text-wiah-black mb-1">
+              Small boat crossings: year-by-year breakdown
+            </h3>
+            <p className="text-sm text-wiah-mid font-mono mb-4">
+              People, boats, crossing days, and average people per boat.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-wiah-border">
+                    <th className="text-left py-2 pr-3 font-mono text-xs text-wiah-mid">Year</th>
+                    <th className="text-right py-2 px-2 font-mono text-xs text-wiah-mid">People</th>
+                    <th className="text-right py-2 px-2 font-mono text-xs text-wiah-mid">Boats</th>
+                    <th className="text-right py-2 px-2 font-mono text-xs text-wiah-mid">Crossing days</th>
+                    <th className="text-right py-2 pl-2 font-mono text-xs text-wiah-mid">Avg/boat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.smallBoats.map(row => (
+                    <tr key={row.year} className="border-b border-wiah-border/50 hover:bg-wiah-light/50">
+                      <td className="py-2 pr-3 font-mono text-sm font-bold">{row.year}</td>
+                      <td className="py-2 px-2 font-mono text-sm text-right">{row.migrants.toLocaleString()}</td>
+                      <td className="py-2 px-2 font-mono text-sm text-right">{row.boats.toLocaleString()}</td>
+                      <td className="py-2 px-2 font-mono text-sm text-right">{row.crossingDays}</td>
+                      <td className="py-2 pl-2 font-mono text-sm text-right font-bold">
+                        {row.boats > 0 ? (row.migrants / row.boats).toFixed(1) : '—'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="font-mono text-[11px] text-wiah-mid mt-3">
+              <a
+                href="https://www.gov.uk/government/publications/migrants-detected-crossing-the-english-channel-in-small-boats"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Source: Home Office, Small boat arrivals time series, Feb 2026
+              </a>
+            </p>
+          </section>
+        )}
+
         {/* Chart 5: Returns */}
         {returnsSeries.length > 0 ? (
           <LineChart
-            title="Enforced returns and voluntary departures, 2004–2025"
-            subtitle="People returned from the UK through enforced or voluntary routes."
+            title="Returns from the UK, 2004–2025"
+            subtitle="Enforced returns, voluntary departures, and port refusals."
             series={returnsSeries}
             yLabel="People"
             source={{

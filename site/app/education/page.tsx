@@ -42,6 +42,24 @@ interface EhcpTimeliness {
   newEhcps?: number;
 }
 
+interface VacancyPoint {
+  period: string;
+  vacancyRate: number;
+  vacancies: number | null;
+}
+
+interface PtrPoint {
+  period: string;
+  pupilTeacherRatio: number;
+  pupilsFte: number | null;
+  teachersFte: number | null;
+}
+
+interface TeacherData {
+  vacancies: { timeSeries: VacancyPoint[]; latest: VacancyPoint | null };
+  pupilTeacherRatio: { timeSeries: PtrPoint[]; latest: PtrPoint | null };
+}
+
 interface EducationData {
   national: {
     absence: { timeSeries: AbsencePoint[] };
@@ -76,6 +94,12 @@ function calendarYearToDate(y: number): Date {
   return new Date(y, 0, 1);
 }
 
+function fyToDate(fy: string): Date {
+  // "2010/11" → Oct 2010 (midpoint of academic year)
+  const start = parseInt(fy.split('/')[0]);
+  return new Date(start, 9, 1);
+}
+
 function sparkFrom(arr: number[], n = 12) {
   return arr.slice(-n);
 }
@@ -84,6 +108,7 @@ function sparkFrom(arr: number[], n = 12) {
 
 export default function EducationPage() {
   const [data, setData] = useState<EducationData | null>(null);
+  const [teacherData, setTeacherData] = useState<TeacherData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -91,20 +116,38 @@ export default function EducationPage() {
       .then(r => r.json())
       .then(setData)
       .catch(console.error);
+    fetch('/data/education/teacher_workforce.json')
+      .then(r => r.json())
+      .then(setTeacherData)
+      .catch(console.error);
   }, []);
 
   // ── Derived series ──────────────────────────────────────────────────────
 
-  // 1. Persistent absence
+  // 1. Persistent absence + overall absence (dual series)
   const absenceSeries: Series[] = data
-    ? [{
-        id: 'persistent-absence',
-        label: 'Persistent absence (%)',
-        data: data.national.absence.timeSeries.map(d => ({
-          date: academicYearToDate(d.year),
-          value: d.persistentAbsencePct,
-        })),
-      }]
+    ? [
+        {
+          id: 'persistent-absence',
+          label: 'Persistent absence (10%+ sessions)',
+          colour: '#E63946',
+          data: data.national.absence.timeSeries.map(d => ({
+            date: academicYearToDate(d.year),
+            value: d.persistentAbsencePct,
+          })),
+        },
+        {
+          id: 'overall-absence',
+          label: 'Overall absence rate',
+          colour: '#0D1117',
+          data: data.national.absence.timeSeries
+            .filter(d => d.overallAbsencePct > 0)
+            .map(d => ({
+              date: academicYearToDate(d.year),
+              value: d.overallAbsencePct,
+            })),
+        },
+      ]
     : [];
 
   const absenceAnnotations: Annotation[] = [
@@ -133,6 +176,21 @@ export default function EducationPage() {
           date: calendarYearToDate(d.year),
           value: d.withinWeeks20Pct,
         })),
+      }]
+    : [];
+
+  // 3b. New EHCP applications volume
+  const ehcpNewAppsSeries: Series[] = data
+    ? [{
+        id: 'ehcp-new',
+        label: 'New EHCPs issued',
+        colour: '#E63946',
+        data: data.national.send.timeliness
+          .filter(d => d.newEhcps != null && d.newEhcps > 0)
+          .map(d => ({
+            date: calendarYearToDate(d.year),
+            value: d.newEhcps!,
+          })),
       }]
     : [];
 
@@ -176,6 +234,32 @@ export default function EducationPage() {
       ]
     : [];
 
+  // 6. Teacher vacancy rate
+  const vacancySeries: Series[] = teacherData
+    ? [{
+        id: 'vacancy-rate',
+        label: 'Vacancy rate (%)',
+        colour: '#E63946',
+        data: teacherData.vacancies.timeSeries.map(d => ({
+          date: fyToDate(d.period),
+          value: d.vacancyRate,
+        })),
+      }]
+    : [];
+
+  // 7. Pupil-teacher ratio
+  const ptrSeries: Series[] = teacherData
+    ? [{
+        id: 'ptr',
+        label: 'Pupils per teacher (FTE)',
+        colour: '#264653',
+        data: teacherData.pupilTeacherRatio.timeSeries.map(d => ({
+          date: fyToDate(d.period),
+          value: d.pupilTeacherRatio,
+        })),
+      }]
+    : [];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestAbsence = data?.national.absence.timeSeries.at(-1);
@@ -210,9 +294,9 @@ export default function EducationPage() {
           topic="Education"
           question="What's Actually Happening in Schools?"
           finding={
-            latestAbsence && latestEhcp && firstEhcp
-              ? `${latestAbsence.persistentAbsencePct.toFixed(0)}% of pupils are persistently absent — nearly double pre-pandemic levels. EHCPs have grown from ${(firstEhcp.total / 1000).toFixed(0)}k to ${(latestEhcp.total / 1000).toFixed(0)}k in a decade, and the attainment gap between disadvantaged pupils and their peers has widened since COVID.`
-              : 'Persistent absence has doubled since before the pandemic.'
+            latestAbsence && preCovidAbsence && latestEhcp && firstEhcp && latestGap
+              ? `${latestAbsence.persistentAbsencePct.toFixed(0)}% of pupils are persistently absent — up from ${preCovidAbsence.persistentAbsencePct.toFixed(0)}% before the pandemic. The SEND system is overwhelmed: ${(latestEhcp.total / 1000).toFixed(0)}k children now have EHCPs, up from ${(firstEhcp.total / 1000).toFixed(0)}k in ${firstEhcp.year}, and fewer than half are issued within the 20-week deadline. The disadvantage gap index stands at ${latestGap.index.toFixed(2)} — progress made over the last decade was wiped out by COVID and hasn't recovered.`
+              : 'Persistent absence has doubled since before the pandemic. The SEND system is overwhelmed and the attainment gap has widened.'
           }
           colour="#2A9D8F"
         />
@@ -281,8 +365,8 @@ export default function EducationPage() {
         {/* Chart 1: Persistent absence */}
         {absenceSeries.length > 0 ? (
           <LineChart
-            title="Persistent absence, 2006–2024"
-            subtitle="Percentage of pupils missing 10% or more of possible school sessions, England."
+            title="Pupil absence rates, 2006–2024"
+            subtitle="Overall absence and persistent absence (10%+ sessions missed), England."
             series={absenceSeries}
             annotations={absenceAnnotations}
             yLabel="Percent"
@@ -333,6 +417,24 @@ export default function EducationPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        {/* Chart 3b: New EHCP applications volume */}
+        {ehcpNewAppsSeries.length > 0 ? (
+          <LineChart
+            title="New EHCPs issued per year, 2014–2023"
+            subtitle="Number of new Education, Health and Care Plans finalised each calendar year, England."
+            series={ehcpNewAppsSeries}
+            yLabel="New EHCPs"
+            source={{
+              name: 'Department for Education',
+              dataset: 'Education, health and care plans, SEN2 return',
+              frequency: 'annual',
+              url: 'https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
         {/* Chart 4: Disadvantage gap index */}
         {gapIndexSeries.length > 0 ? (
           <LineChart
@@ -370,45 +472,43 @@ export default function EducationPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
-        {/* Inline table: Grade 5+ pass rates by FSM */}
+        {/* Inline table: GCSE pass rates by disadvantage (Grade 5+ and Grade 4+) */}
         {data && data.national.attainment.attainment8.length > 0 && (
           <section className="mb-12">
             <h3 className="text-lg font-bold text-wiah-black mb-1">
-              Grade 5+ in English and maths by disadvantage
+              GCSE English and maths pass rates by disadvantage
             </h3>
             <p className="text-sm text-wiah-mid font-mono mb-6">
-              Percentage achieving grade 5 or above in English and maths GCSE.
+              Percentage achieving grade 5+ (strong pass) and grade 4+ (standard pass) in English and maths.
             </p>
-            <div className="divide-y divide-wiah-border">
-              {data.national.attainment.attainment8.map(row => (
-                <div key={row.year} className="py-3">
-                  <div className="font-mono text-sm text-wiah-black mb-2">{row.year}</div>
-                  <div className="flex items-center gap-4 mb-1">
-                    <span className="text-xs text-wiah-mid w-36 shrink-0">All other pupils</span>
-                    <div className="flex-1 bg-wiah-light rounded h-2">
-                      <div
-                        className="h-2 rounded"
-                        style={{ width: `${row.otherGrade5Pct}%`, backgroundColor: '#0D1117' }}
-                      />
-                    </div>
-                    <span className="font-mono text-sm font-bold w-14 text-right">
-                      {row.otherGrade5Pct}%
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <span className="text-xs text-wiah-mid w-36 shrink-0">Disadvantaged</span>
-                    <div className="flex-1 bg-wiah-light rounded h-2">
-                      <div
-                        className="h-2 rounded"
-                        style={{ width: `${row.disadvantagedGrade5Pct}%`, backgroundColor: '#E63946' }}
-                      />
-                    </div>
-                    <span className="font-mono text-sm font-bold w-14 text-right" style={{ color: '#E63946' }}>
-                      {row.disadvantagedGrade5Pct}%
-                    </span>
-                  </div>
-                </div>
-              ))}
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-wiah-border">
+                    <th className="text-left py-2 pr-3 font-mono text-xs text-wiah-mid">Year</th>
+                    <th className="text-right py-2 px-2 font-mono text-xs text-wiah-mid" colSpan={2}>Grade 5+ (strong pass)</th>
+                    <th className="text-right py-2 px-2 font-mono text-xs text-wiah-mid" colSpan={2}>Grade 4+ (standard pass)</th>
+                  </tr>
+                  <tr className="border-b border-wiah-border/50">
+                    <th className="py-1 pr-3"></th>
+                    <th className="py-1 px-2 font-mono text-[10px] text-wiah-mid text-right">Other</th>
+                    <th className="py-1 px-2 font-mono text-[10px] text-right" style={{ color: '#E63946' }}>Disadv.</th>
+                    <th className="py-1 px-2 font-mono text-[10px] text-wiah-mid text-right">Other</th>
+                    <th className="py-1 px-2 font-mono text-[10px] text-right" style={{ color: '#E63946' }}>Disadv.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.national.attainment.attainment8.map(row => (
+                    <tr key={row.year} className="border-b border-wiah-border/50 hover:bg-wiah-light/50">
+                      <td className="py-2 pr-3 font-mono text-sm font-bold">{row.year}</td>
+                      <td className="py-2 px-2 font-mono text-sm text-right">{row.otherGrade5Pct}%</td>
+                      <td className="py-2 px-2 font-mono text-sm text-right font-bold" style={{ color: '#E63946' }}>{row.disadvantagedGrade5Pct}%</td>
+                      <td className="py-2 px-2 font-mono text-sm text-right">{row.otherGrade4Pct}%</td>
+                      <td className="py-2 px-2 font-mono text-sm text-right font-bold" style={{ color: '#E63946' }}>{row.disadvantagedGrade4Pct}%</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
             <p className="font-mono text-[11px] text-wiah-mid mt-3">
               <a
@@ -421,6 +521,45 @@ export default function EducationPage() {
               </a>
             </p>
           </section>
+        )}
+
+        {/* Chart 6: Teacher vacancy rate */}
+        {vacancySeries.length > 0 ? (
+          <LineChart
+            title="Teacher vacancy rate, 2010–2025"
+            subtitle="Advertised vacancies as a percentage of teachers in post, state-funded schools, England."
+            series={vacancySeries}
+            yLabel="Percent"
+            annotations={[
+              { date: new Date(2020, 2), label: '2020: COVID-19' },
+            ]}
+            source={{
+              name: 'Department for Education',
+              dataset: 'School Workforce in England — Teacher Vacancies',
+              frequency: 'annual',
+              url: 'https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 7: Pupil-teacher ratio */}
+        {ptrSeries.length > 0 ? (
+          <LineChart
+            title="Pupil-teacher ratio, 2010–2025"
+            subtitle="FTE pupils per FTE teacher (qualified + unqualified), state-funded schools, England."
+            series={ptrSeries}
+            yLabel="Pupils per teacher"
+            source={{
+              name: 'Department for Education',
+              dataset: 'School Workforce in England — Pupil-Teacher Ratios',
+              frequency: 'annual',
+              url: 'https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
         {/* Context */}
@@ -473,6 +612,18 @@ export default function EducationPage() {
                 </a>
               </li>
             ))}
+            {teacherData && (
+              <li>
+                <a
+                  href="https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england"
+                  className="underline hover:text-wiah-blue"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  DfE &mdash; School Workforce in England: Vacancies &amp; Pupil-Teacher Ratios (annual)
+                </a>
+              </li>
+            )}
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             Persistent absence defined as missing 10%+ of possible sessions (threshold changed

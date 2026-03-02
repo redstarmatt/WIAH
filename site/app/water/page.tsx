@@ -171,6 +171,26 @@ export default function WaterPage() {
 
   const bathingCombined: Series[] = [...bathingExcellentSeries, ...bathingPoorSeries];
 
+  // 6. Monitor coverage growth
+  const monitorSeries: Series[] = data
+    ? [{
+        id: 'monitors',
+        label: 'Monitors reporting',
+        colour: '#264653',
+        data: data.national.sewage.timeSeries.map(d => ({
+          date: yearToDate(d.year),
+          value: d.monitorsReporting,
+        })),
+      }]
+    : [];
+
+  // Sort companies by avg spills per overflow for the spills intensity table
+  const companiesBySpills = data
+    ? [...data.national.sewage.byCompany2024].sort((a, b) => b.avgSpillsPerOverflow - a.avgSpillsPerOverflow)
+    : [];
+
+  const maxAvgSpills = companiesBySpills.length > 0 ? companiesBySpills[0].avgSpillsPerOverflow : 1;
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestSewage = data?.national.sewage.timeSeries.at(-1);
@@ -203,9 +223,9 @@ export default function WaterPage() {
           topic="Water"
           question="Is Your Water Actually Clean?"
           finding={
-            latestSewage
-              ? `In 2024, water companies discharged sewage into England's rivers and seas for ${(latestSewage.totalHours / 1_000_000).toFixed(1)} million hours across ${latestSewage.totalSpills.toLocaleString('en-GB')} monitored spill events. Only ${latestRiver?.goodOrBetterPct ?? 16}% of rivers are in good ecological health — down from 26% in 2009.`
-              : "England's water companies discharged sewage for over 3.6 million hours in 2024. Only 16% of rivers are in good ecological health."
+            latestSewage && latestBathing
+              ? `In ${latestSewage.year}, water companies discharged sewage into England's rivers and seas for ${(latestSewage.totalHours / 1_000_000).toFixed(1)} million hours across ${latestSewage.totalSpills.toLocaleString('en-GB')} monitored spill events — an average of ${latestSewage.avgSpillsPerOverflow.toFixed(0)} spills per overflow. Only ${latestRiver?.goodOrBetterPct ?? 16}% of rivers are in good ecological health — down from ${firstRiver?.goodOrBetterPct ?? 26}% in ${firstRiver?.year ?? 2009}. ${latestBathing.poorPct.toFixed(1)}% of bathing waters are now rated poor, nearly double the level a decade ago.`
+              : "England's water companies discharged sewage for over 3.6 million hours in 2024. Only 16% of rivers are in good ecological health and bathing water quality is deteriorating."
           }
           colour="#264653"
         />
@@ -326,6 +346,24 @@ export default function WaterPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        {/* Chart 4: Monitor coverage growth */}
+        {monitorSeries.length > 0 ? (
+          <LineChart
+            title="Storm overflow monitor coverage, 2016–2024"
+            subtitle="Number of storm overflows with Event Duration Monitors reporting. Full 100% coverage reached in 2024."
+            series={monitorSeries}
+            yLabel="Monitors"
+            source={{
+              name: 'Environment Agency',
+              dataset: 'EDM Storm Overflow Annual Returns',
+              frequency: 'annual',
+              url: 'https://www.data.gov.uk/dataset/19f6064d-7356-466f-844e-d20ea10ae9fd/event-duration-monitoring-storm-overflows-annual-returns',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
         {/* Water company comparison table */}
         {companiesByHours.length > 0 && (
           <div className="mb-12">
@@ -378,7 +416,42 @@ export default function WaterPage() {
           </div>
         )}
 
-        {/* Chart 4: River health */}
+        {/* Spills per overflow by company — sorted worst-first */}
+        {companiesBySpills.length > 0 && (
+          <div className="mb-12">
+            <h3 className="text-lg font-bold text-wiah-black mb-1">Average spills per overflow by company, 2024</h3>
+            <p className="text-sm text-wiah-mid mb-4">
+              Average number of spill events per monitored storm overflow. Higher = more frequent sewage discharges. Sorted worst-first.
+            </p>
+            <div className="divide-y divide-wiah-border">
+              {companiesBySpills.map(c => {
+                const pct = (c.avgSpillsPerOverflow / maxAvgSpills) * 100;
+                const colour = c.avgSpillsPerOverflow >= 35 ? '#E63946' : c.avgSpillsPerOverflow >= 28 ? '#F4A261' : '#2A9D8F';
+                return (
+                  <div key={c.name} className="py-3 flex items-center gap-4">
+                    <span className="text-sm text-wiah-black w-48 shrink-0">{c.name}</span>
+                    <div className="flex-1 bg-wiah-light rounded h-3">
+                      <div
+                        className="h-3 rounded"
+                        style={{ width: `${pct}%`, backgroundColor: colour }}
+                      />
+                    </div>
+                    <span className="font-mono text-sm font-bold w-16 text-right" style={{ color: colour }}>
+                      {c.avgSpillsPerOverflow.toFixed(1)}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+            <p className="font-mono text-[11px] text-wiah-mid mt-2">
+              <a href="https://www.data.gov.uk/dataset/19f6064d-7356-466f-844e-d20ea10ae9fd/event-duration-monitoring-storm-overflows-annual-returns" target="_blank" rel="noreferrer" className="hover:underline">
+                Source: Environment Agency, EDM Storm Overflow Annual Returns, 2024. Updated annually.
+              </a>
+            </p>
+          </div>
+        )}
+
+        {/* Chart 5: River health */}
         {riverSeries.length > 0 ? (
           <LineChart
             title="Rivers at good ecological status, 2009–2019"
