@@ -11,10 +11,9 @@ export default function SiteName({ size = 'hero', topic, preposition = 'in' }: S
 
   return (
     <span className={`font-editorial ${fontSize} leading-tight`}>
-      What is <strong><em>actually</em></strong> happening
-      {topic && (
-        <span className="font-normal not-italic"> {preposition} {topic}</span>
-      )}
+      What is <strong><em>actually</em></strong> happening{topic ? (
+        <span className="font-normal not-italic"> {preposition} {topic}?</span>
+      ) : '?'}
     </span>
   );
 }

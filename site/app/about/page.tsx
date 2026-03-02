@@ -14,7 +14,7 @@ export default function AboutPage() {
         <h1 className="text-4xl font-extrabold text-wiah-black mb-6">About</h1>
         <div className="max-w-2xl text-base text-wiah-black leading-[1.7] space-y-4">
           <p>
-            <strong>What is <em>actually</em> happening</strong> is a curated national data platform
+            <strong>What is <em>actually</em> happening?</strong> is a curated national data platform
             that makes the real state of the UK visible, understandable, and shareable.
           </p>
           <p>
