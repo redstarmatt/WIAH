@@ -250,6 +250,12 @@ export default function HomePage() {
             The real state of the UK — visible, understandable, shareable.
             Data-driven stories on the things that matter.
           </p>
+          <a
+            href="/dashboard"
+            className="inline-block mt-6 px-5 py-2.5 rounded-full font-mono text-sm bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/20"
+          >
+            View all 20 metrics →
+          </a>
         </div>
       </section>
 
