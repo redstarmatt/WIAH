@@ -1,0 +1,238 @@
+{
+  "topic": "social-care",
+  "lastUpdated": "2026-03-03",
+  "national": {
+    "dischargeDelays": {
+      "timeSeries": [
+        {
+          "date": "2021-06",
+          "avgDailyDelayed": 9200,
+          "lostBedDaysK": 276
+        },
+        {
+          "date": "2021-09",
+          "avgDailyDelayed": 10600,
+          "lostBedDaysK": 318
+        },
+        {
+          "date": "2021-12",
+          "avgDailyDelayed": 12800,
+          "lostBedDaysK": 397
+        },
+        {
+          "date": "2022-03",
+          "avgDailyDelayed": 12400,
+          "lostBedDaysK": 384
+        },
+        {
+          "date": "2022-06",
+          "avgDailyDelayed": 13100,
+          "lostBedDaysK": 393
+        },
+        {
+          "date": "2022-09",
+          "avgDailyDelayed": 13500,
+          "lostBedDaysK": 405
+        },
+        {
+          "date": "2022-12",
+          "avgDailyDelayed": 14200,
+          "lostBedDaysK": 440
+        },
+        {
+          "date": "2023-03",
+          "avgDailyDelayed": 13800,
+          "lostBedDaysK": 428
+        },
+        {
+          "date": "2023-06",
+          "avgDailyDelayed": 13400,
+          "lostBedDaysK": 402
+        },
+        {
+          "date": "2023-09",
+          "avgDailyDelayed": 13100,
+          "lostBedDaysK": 393
+        },
+        {
+          "date": "2023-12",
+          "avgDailyDelayed": 14300,
+          "lostBedDaysK": 443
+        },
+        {
+          "date": "2024-03",
+          "avgDailyDelayed": 13700,
+          "lostBedDaysK": 425
+        },
+        {
+          "date": "2024-06",
+          "avgDailyDelayed": 12900,
+          "lostBedDaysK": 387
+        },
+        {
+          "date": "2024-09",
+          "avgDailyDelayed": 12600,
+          "lostBedDaysK": 378
+        },
+        {
+          "date": "2024-12",
+          "avgDailyDelayed": 13500,
+          "lostBedDaysK": 419
+        },
+        {
+          "date": "2025-01",
+          "avgDailyDelayed": 13200,
+          "lostBedDaysK": 409
+        }
+      ],
+      "latestAvgDaily": 13200,
+      "reasons": [
+        {
+          "reason": "Awaiting care package (home)",
+          "pct": 28.4
+        },
+        {
+          "reason": "Awaiting nursing/residential home",
+          "pct": 20.1
+        },
+        {
+          "reason": "Awaiting further NHS care",
+          "pct": 17.3
+        },
+        {
+          "reason": "Awaiting assessment",
+          "pct": 12.5
+        },
+        {
+          "reason": "Awaiting community equipment/adaptations",
+          "pct": 8.2
+        },
+        {
+          "reason": "Patient or family choice",
+          "pct": 7.8
+        },
+        {
+          "reason": "Other / housing",
+          "pct": 5.7
+        }
+      ]
+    },
+    "cqcRatings": {
+      "totalLocations": 27500,
+      "outstandingPct": 4.4,
+      "goodPct": 79.8,
+      "requiresImprovementPct": 13.2,
+      "inadequatePct": 1.5,
+      "outstanding": 1210,
+      "good": 21945,
+      "requiresImprovement": 3630,
+      "inadequate": 413
+    },
+    "spending": [
+      {
+        "year": 2010,
+        "realTermsBn": 21.2
+      },
+      {
+        "year": 2011,
+        "realTermsBn": 20.4
+      },
+      {
+        "year": 2012,
+        "realTermsBn": 19.6
+      },
+      {
+        "year": 2013,
+        "realTermsBn": 19.0
+      },
+      {
+        "year": 2014,
+        "realTermsBn": 18.5
+      },
+      {
+        "year": 2015,
+        "realTermsBn": 18.0
+      },
+      {
+        "year": 2016,
+        "realTermsBn": 17.8
+      },
+      {
+        "year": 2017,
+        "realTermsBn": 17.7
+      },
+      {
+        "year": 2018,
+        "realTermsBn": 17.9
+      },
+      {
+        "year": 2019,
+        "realTermsBn": 18.3
+      },
+      {
+        "year": 2020,
+        "realTermsBn": 19.5
+      },
+      {
+        "year": 2021,
+        "realTermsBn": 20.1
+      },
+      {
+        "year": 2022,
+        "realTermsBn": 20.8
+      },
+      {
+        "year": 2023,
+        "realTermsBn": 21.5
+      },
+      {
+        "year": 2024,
+        "realTermsBn": 22.0
+      }
+    ],
+    "unpaidCarers": {
+      "totalCarers": 4960000,
+      "carers50PlusHrsWk": 1060000,
+      "pctPopulation": 8.9,
+      "censuYear": 2021,
+      "economicValueBn": 162
+    }
+  },
+  "regional": {},
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "Daily Discharge Situation Report (timeseries)",
+        "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/discharge-delays/acute-discharge-situation-report/",
+        "frequency": "monthly"
+      },
+      {
+        "name": "Care Quality Commission",
+        "dataset": "Care directory with latest ratings",
+        "url": "https://www.cqc.org.uk/about-us/transparency/using-cqc-data",
+        "frequency": "monthly"
+      },
+      {
+        "name": "NHS Digital",
+        "dataset": "Adult Social Care Activity and Finance Report",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/adult-social-care-activity-and-finance-report",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS / Carers UK",
+        "dataset": "Census 2021 \u2014 Unpaid care / State of Caring 2024",
+        "url": "https://www.ons.gov.uk/census/maps/choropleth/health/unpaid-care/unpaid-care-19a/provides-no-unpaid-care",
+        "frequency": "decennial (Census) / annual (Carers UK)"
+      }
+    ],
+    "methodology": "Discharge delay figures are from the NHS England Daily Discharge Situation Report. The data covers patients in acute trusts who do not meet the criteria to reside (i.e. are medically fit but cannot be discharged). The methodology was expanded in May 2024 to include all patients delayed by at least one day (previously 7+ days only). CQC ratings are the latest overall rating for each adult social care location in England. Spending figures are in 2023-24 prices (real terms), covering local authority adult social care net current expenditure. Unpaid carers data is from the 2021 Census.",
+    "knownIssues": [
+      "Discharge delays methodology changed May 2024 \u2014 pre/post figures are not directly comparable.",
+      "CQC ratings are a snapshot of the latest inspection \u2014 they do not show historical trends.",
+      "Under the new CQC assessment framework, locations with multiple service types may show 'Not Rated'.",
+      "Spending figures exclude NHS-funded social care and self-funded care.",
+      "Unpaid carer numbers likely undercount \u2014 many carers do not identify as such."
+    ]
+  }
+}

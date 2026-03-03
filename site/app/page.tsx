@@ -189,6 +189,30 @@ const TOPICS = [
     ],
   },
   {
+    topic: 'Social Care',
+    href: '/social-care',
+    colour: '#6B7280',
+    preposition: 'with',
+    metrics: [
+      {
+        label: 'Patients delayed daily',
+        value: '13.2K',
+        unit: '',
+        direction: 'up' as const,
+        polarity: 'up-is-bad' as const,
+        sparklineData: [9.2, 10.6, 12.8, 12.4, 13.1, 13.5, 14.2, 13.8, 13.4, 13.1, 14.3, 13.7, 12.9, 12.6, 13.5, 13.2],
+      },
+      {
+        label: 'CQC rated Good+',
+        value: '84',
+        unit: '%',
+        direction: 'flat' as const,
+        polarity: 'up-is-good' as const,
+        sparklineData: [],
+      },
+    ],
+  },
+  {
     topic: 'Education',
     href: '/education',
     colour: '#2A9D8F',
