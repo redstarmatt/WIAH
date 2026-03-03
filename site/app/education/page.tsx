@@ -383,6 +383,7 @@ export default function EducationPage() {
                 : []
             }
             source="DfE · Pupil absence 2023/24"
+            baseline="1 in 5 pupils misses at least 10% of school — up from 1 in 10 before the pandemic"
             onExpand={absenceSeries.length > 0 ? () => setExpanded('absence') : undefined}
           />
           <MetricCard
@@ -402,6 +403,7 @@ export default function EducationPage() {
                 : []
             }
             source="DfE · SEN2 return, Jan 2025"
+            baseline="Families wait an average of 38 weeks — nearly 10 months — for an EHCP assessment"
             onExpand={ehcpCaseloadSeries.length > 0 ? () => setExpanded('ehcp') : undefined}
           />
           <MetricCard
@@ -421,6 +423,7 @@ export default function EducationPage() {
                 : []
             }
             source="DfE · KS4 performance 2024/25"
+            baseline="By age 16, children from poorer families are 18 months behind their better-off peers"
             onExpand={gapIndexSeries.length > 0 ? () => setExpanded('gap') : undefined}
           />
         </div>

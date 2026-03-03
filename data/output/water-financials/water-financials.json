@@ -1,0 +1,2819 @@
+{
+  "topic": "water",
+  "subtopic": "financials",
+  "lastUpdated": "2026-03-03",
+  "summary": {
+    "totalDividendsSincePrivatisation_m": 52815.2,
+    "latestTotex_m": 17238.4,
+    "latestCapex_m": 10718.7,
+    "latestCostYear": "2024-25",
+    "recent5yrAvgDividends_m": 1057.6,
+    "dividendYearRange": "1990-91 to 2023-24",
+    "costYearRange": "1985-86 to 2024-25"
+  },
+  "national": {
+    "timeSeries": [
+      {
+        "year": "1985-86",
+        "capex_water_m": null,
+        "capex_wastewater_m": null,
+        "capex_total_m": 3418.1,
+        "opex_water_m": null,
+        "opex_wastewater_m": null,
+        "opex_total_m": null,
+        "totex_water_m": null,
+        "totex_wastewater_m": null,
+        "totex_total_m": null
+      },
+      {
+        "year": "1986-87",
+        "capex_water_m": null,
+        "capex_wastewater_m": null,
+        "capex_total_m": 3821.9,
+        "opex_water_m": null,
+        "opex_wastewater_m": null,
+        "opex_total_m": null,
+        "totex_water_m": null,
+        "totex_wastewater_m": null,
+        "totex_total_m": null
+      },
+      {
+        "year": "1987-88",
+        "capex_water_m": null,
+        "capex_wastewater_m": null,
+        "capex_total_m": 4206.2,
+        "opex_water_m": null,
+        "opex_wastewater_m": null,
+        "opex_total_m": null,
+        "totex_water_m": null,
+        "totex_wastewater_m": null,
+        "totex_total_m": null
+      },
+      {
+        "year": "1988-89",
+        "capex_water_m": null,
+        "capex_wastewater_m": null,
+        "capex_total_m": 4447.2,
+        "opex_water_m": null,
+        "opex_wastewater_m": null,
+        "opex_total_m": null,
+        "totex_water_m": null,
+        "totex_wastewater_m": null,
+        "totex_total_m": null
+      },
+      {
+        "year": "1989-90",
+        "capex_water_m": 2591.7,
+        "capex_wastewater_m": 2845.3,
+        "capex_total_m": 5436.9,
+        "opex_water_m": 3627.0,
+        "opex_wastewater_m": 2434.4,
+        "opex_total_m": 6061.4,
+        "totex_water_m": 6218.6,
+        "totex_wastewater_m": 5279.7,
+        "totex_total_m": 11498.3
+      },
+      {
+        "year": "1990-91",
+        "capex_water_m": 3302.3,
+        "capex_wastewater_m": 3704.9,
+        "capex_total_m": 7007.2,
+        "opex_water_m": 3550.9,
+        "opex_wastewater_m": 2454.5,
+        "opex_total_m": 6005.4,
+        "totex_water_m": 6853.2,
+        "totex_wastewater_m": 6159.4,
+        "totex_total_m": 13012.6,
+        "dividends_m": 790.54
+      },
+      {
+        "year": "1991-92",
+        "capex_water_m": 4059.8,
+        "capex_wastewater_m": 4325.8,
+        "capex_total_m": 8385.5,
+        "opex_water_m": 3872.1,
+        "opex_wastewater_m": 2416.0,
+        "opex_total_m": 6288.1,
+        "totex_water_m": 7931.9,
+        "totex_wastewater_m": 6741.8,
+        "totex_total_m": 14673.7,
+        "dividends_m": 717.67
+      },
+      {
+        "year": "1992-93",
+        "capex_water_m": 3893.2,
+        "capex_wastewater_m": 3553.2,
+        "capex_total_m": 7446.4,
+        "opex_water_m": 3873.2,
+        "opex_wastewater_m": 2548.8,
+        "opex_total_m": 6422.0,
+        "totex_water_m": 7766.5,
+        "totex_wastewater_m": 6102.0,
+        "totex_total_m": 13868.4,
+        "dividends_m": 1358.81
+      },
+      {
+        "year": "1993-94",
+        "capex_water_m": 3512.6,
+        "capex_wastewater_m": 3038.8,
+        "capex_total_m": 6551.4,
+        "opex_water_m": 3910.3,
+        "opex_wastewater_m": 2665.2,
+        "opex_total_m": 6575.5,
+        "totex_water_m": 7422.9,
+        "totex_wastewater_m": 5704.1,
+        "totex_total_m": 13126.9,
+        "dividends_m": 825.47
+      },
+      {
+        "year": "1994-95",
+        "capex_water_m": 2842.9,
+        "capex_wastewater_m": 2683.2,
+        "capex_total_m": 5526.1,
+        "opex_water_m": 3908.3,
+        "opex_wastewater_m": 2755.7,
+        "opex_total_m": 6664.1,
+        "totex_water_m": 6751.2,
+        "totex_wastewater_m": 5438.9,
+        "totex_total_m": 12190.1,
+        "dividends_m": 1364.07
+      },
+      {
+        "year": "1995-96",
+        "capex_water_m": 2865.4,
+        "capex_wastewater_m": 2848.6,
+        "capex_total_m": 5714.0,
+        "opex_water_m": 3842.2,
+        "opex_wastewater_m": 2390.6,
+        "opex_total_m": 6232.8,
+        "totex_water_m": 6707.7,
+        "totex_wastewater_m": 5239.2,
+        "totex_total_m": 11946.9,
+        "dividends_m": 2090.53
+      },
+      {
+        "year": "1996-97",
+        "capex_water_m": 3558.9,
+        "capex_wastewater_m": 3491.0,
+        "capex_total_m": 7049.8,
+        "opex_water_m": 3652.6,
+        "opex_wastewater_m": 2396.6,
+        "opex_total_m": 6049.2,
+        "totex_water_m": 7211.4,
+        "totex_wastewater_m": 5887.6,
+        "totex_total_m": 13099.0,
+        "dividends_m": 1311.54
+      },
+      {
+        "year": "1997-98",
+        "capex_water_m": 3654.6,
+        "capex_wastewater_m": 4157.6,
+        "capex_total_m": 7812.2,
+        "opex_water_m": 3510.4,
+        "opex_wastewater_m": 2313.7,
+        "opex_total_m": 5824.1,
+        "totex_water_m": 7165.0,
+        "totex_wastewater_m": 6471.2,
+        "totex_total_m": 13636.3,
+        "dividends_m": 3098.86
+      },
+      {
+        "year": "1998-99",
+        "capex_water_m": 3224.0,
+        "capex_wastewater_m": 4363.2,
+        "capex_total_m": 7587.2,
+        "opex_water_m": 3422.6,
+        "opex_wastewater_m": 2375.0,
+        "opex_total_m": 5797.6,
+        "totex_water_m": 6646.6,
+        "totex_wastewater_m": 6738.2,
+        "totex_total_m": 13384.8,
+        "dividends_m": 2087.39
+      },
+      {
+        "year": "1999-00",
+        "capex_water_m": 3137.7,
+        "capex_wastewater_m": 4326.1,
+        "capex_total_m": 7463.9,
+        "opex_water_m": 3513.9,
+        "opex_wastewater_m": 2527.6,
+        "opex_total_m": 6041.5,
+        "totex_water_m": 6651.6,
+        "totex_wastewater_m": 6853.7,
+        "totex_total_m": 13505.3,
+        "dividends_m": 1172.5
+      },
+      {
+        "year": "2000-01",
+        "capex_water_m": 2349.0,
+        "capex_wastewater_m": 3053.7,
+        "capex_total_m": 5402.7,
+        "opex_water_m": 3154.0,
+        "opex_wastewater_m": 2314.0,
+        "opex_total_m": 5468.0,
+        "totex_water_m": 5503.0,
+        "totex_wastewater_m": 5367.7,
+        "totex_total_m": 10870.8,
+        "dividends_m": 1835.22
+      },
+      {
+        "year": "2001-02",
+        "capex_water_m": 2818.2,
+        "capex_wastewater_m": 2940.1,
+        "capex_total_m": 5758.3,
+        "opex_water_m": 3112.1,
+        "opex_wastewater_m": 2367.7,
+        "opex_total_m": 5479.8,
+        "totex_water_m": 5930.3,
+        "totex_wastewater_m": 5307.8,
+        "totex_total_m": 11238.1,
+        "dividends_m": 852.61
+      },
+      {
+        "year": "2002-03",
+        "capex_water_m": 3205.9,
+        "capex_wastewater_m": 3351.9,
+        "capex_total_m": 6557.7,
+        "opex_water_m": 3103.8,
+        "opex_wastewater_m": 2457.7,
+        "opex_total_m": 5561.5,
+        "totex_water_m": 6309.6,
+        "totex_wastewater_m": 5809.6,
+        "totex_total_m": 12119.2,
+        "dividends_m": 650.54
+      },
+      {
+        "year": "2003-04",
+        "capex_water_m": 3043.9,
+        "capex_wastewater_m": 3783.7,
+        "capex_total_m": 6827.6,
+        "opex_water_m": 3143.1,
+        "opex_wastewater_m": 2519.5,
+        "opex_total_m": 5662.5,
+        "totex_water_m": 6187.0,
+        "totex_wastewater_m": 6303.1,
+        "totex_total_m": 12490.1,
+        "dividends_m": 1170.44
+      },
+      {
+        "year": "2004-05",
+        "capex_water_m": 2867.3,
+        "capex_wastewater_m": 3478.0,
+        "capex_total_m": 6345.3,
+        "opex_water_m": 3110.6,
+        "opex_wastewater_m": 2606.0,
+        "opex_total_m": 5716.6,
+        "totex_water_m": 5977.9,
+        "totex_wastewater_m": 6084.0,
+        "totex_total_m": 12061.9,
+        "dividends_m": 1074.17
+      },
+      {
+        "year": "2005-06",
+        "capex_water_m": 2773.6,
+        "capex_wastewater_m": 3046.1,
+        "capex_total_m": 5819.8,
+        "opex_water_m": 3282.7,
+        "opex_wastewater_m": 2674.7,
+        "opex_total_m": 5957.4,
+        "totex_water_m": 6056.3,
+        "totex_wastewater_m": 5720.8,
+        "totex_total_m": 11777.1,
+        "dividends_m": 1657.87
+      },
+      {
+        "year": "2006-07",
+        "capex_water_m": 3639.6,
+        "capex_wastewater_m": 3652.5,
+        "capex_total_m": 7292.0,
+        "opex_water_m": 3430.3,
+        "opex_wastewater_m": 2780.4,
+        "opex_total_m": 6210.7,
+        "totex_water_m": 7069.9,
+        "totex_wastewater_m": 6432.8,
+        "totex_total_m": 13502.7,
+        "dividends_m": 3138.78
+      },
+      {
+        "year": "2007-08",
+        "capex_water_m": 3946.3,
+        "capex_wastewater_m": 4047.1,
+        "capex_total_m": 7993.4,
+        "opex_water_m": 3326.6,
+        "opex_wastewater_m": 2744.4,
+        "opex_total_m": 6071.0,
+        "totex_water_m": 7272.9,
+        "totex_wastewater_m": 6791.5,
+        "totex_total_m": 14064.4,
+        "dividends_m": 1466.84
+      },
+      {
+        "year": "2008-09",
+        "capex_water_m": 3692.9,
+        "capex_wastewater_m": 3826.6,
+        "capex_total_m": 7519.6,
+        "opex_water_m": 3343.2,
+        "opex_wastewater_m": 2731.6,
+        "opex_total_m": 6074.8,
+        "totex_water_m": 7036.2,
+        "totex_wastewater_m": 6558.3,
+        "totex_total_m": 13594.4,
+        "dividends_m": 2274.99
+      },
+      {
+        "year": "2009-10",
+        "capex_water_m": 3166.5,
+        "capex_wastewater_m": 3245.8,
+        "capex_total_m": 6412.2,
+        "opex_water_m": 3465.0,
+        "opex_wastewater_m": 2743.3,
+        "opex_total_m": 6208.3,
+        "totex_water_m": 6631.4,
+        "totex_wastewater_m": 5989.1,
+        "totex_total_m": 12620.5,
+        "dividends_m": 1726.32
+      },
+      {
+        "year": "2010-11",
+        "capex_water_m": 2667.9,
+        "capex_wastewater_m": 3334.0,
+        "capex_total_m": 6001.9,
+        "opex_water_m": 3427.8,
+        "opex_wastewater_m": 2726.5,
+        "opex_total_m": 6154.2,
+        "totex_water_m": 6095.6,
+        "totex_wastewater_m": 6060.5,
+        "totex_total_m": 12156.1,
+        "dividends_m": 1473.27
+      },
+      {
+        "year": "2011-12",
+        "capex_water_m": 3080.1,
+        "capex_wastewater_m": 3805.3,
+        "capex_total_m": 6885.3,
+        "opex_water_m": 2610.8,
+        "opex_wastewater_m": 2103.8,
+        "opex_total_m": 4714.6,
+        "totex_water_m": 5690.9,
+        "totex_wastewater_m": 5909.1,
+        "totex_total_m": 11599.9,
+        "dividends_m": 2187.39
+      },
+      {
+        "year": "2012-13",
+        "capex_water_m": 3016.5,
+        "capex_wastewater_m": 3874.3,
+        "capex_total_m": 6890.7,
+        "opex_water_m": 2632.8,
+        "opex_wastewater_m": 2263.9,
+        "opex_total_m": 4896.7,
+        "totex_water_m": 5649.3,
+        "totex_wastewater_m": 6138.2,
+        "totex_total_m": 11787.5,
+        "dividends_m": 1784.38
+      },
+      {
+        "year": "2013-14",
+        "capex_water_m": 2918.8,
+        "capex_wastewater_m": 3914.6,
+        "capex_total_m": 6833.4,
+        "opex_water_m": 2667.5,
+        "opex_wastewater_m": 2301.1,
+        "opex_total_m": 4968.5,
+        "totex_water_m": 5586.3,
+        "totex_wastewater_m": 6215.7,
+        "totex_total_m": 11801.9,
+        "dividends_m": 1751.14
+      },
+      {
+        "year": "2014-15",
+        "capex_water_m": 2939.1,
+        "capex_wastewater_m": 3621.6,
+        "capex_total_m": 6560.7,
+        "opex_water_m": 2733.5,
+        "opex_wastewater_m": 2274.0,
+        "opex_total_m": 5007.6,
+        "totex_water_m": 5672.6,
+        "totex_wastewater_m": 5895.6,
+        "totex_total_m": 11568.3,
+        "dividends_m": 1784.58
+      },
+      {
+        "year": "2015-16",
+        "capex_water_m": 2700.1,
+        "capex_wastewater_m": 3500.4,
+        "capex_total_m": 6200.6,
+        "opex_water_m": 2717.1,
+        "opex_wastewater_m": 2197.9,
+        "opex_total_m": 4915.0,
+        "totex_water_m": 5417.3,
+        "totex_wastewater_m": 5698.3,
+        "totex_total_m": 11115.6,
+        "dividends_m": 1856.34
+      },
+      {
+        "year": "2016-17",
+        "capex_water_m": 3141.0,
+        "capex_wastewater_m": 3851.3,
+        "capex_total_m": 6992.3,
+        "opex_water_m": 2853.8,
+        "opex_wastewater_m": 2316.0,
+        "opex_total_m": 5169.7,
+        "totex_water_m": 5994.8,
+        "totex_wastewater_m": 6167.2,
+        "totex_total_m": 12162.0,
+        "dividends_m": 1777.71
+      },
+      {
+        "year": "2017-18",
+        "capex_water_m": 3333.0,
+        "capex_wastewater_m": 4205.6,
+        "capex_total_m": 7538.7,
+        "opex_water_m": 2996.6,
+        "opex_wastewater_m": 2242.7,
+        "opex_total_m": 5239.3,
+        "totex_water_m": 6329.6,
+        "totex_wastewater_m": 6448.4,
+        "totex_total_m": 12778.0,
+        "dividends_m": 3053.76
+      },
+      {
+        "year": "2018-19",
+        "capex_water_m": 3606.9,
+        "capex_wastewater_m": 4327.2,
+        "capex_total_m": 7934.1,
+        "opex_water_m": 3257.3,
+        "opex_wastewater_m": 2280.5,
+        "opex_total_m": 5537.8,
+        "totex_water_m": 6864.3,
+        "totex_wastewater_m": 6607.7,
+        "totex_total_m": 13471.9,
+        "dividends_m": 1193.58
+      },
+      {
+        "year": "2019-20",
+        "capex_water_m": 3802.1,
+        "capex_wastewater_m": 4193.7,
+        "capex_total_m": 7995.8,
+        "opex_water_m": 3040.6,
+        "opex_wastewater_m": 2278.3,
+        "opex_total_m": 5318.9,
+        "totex_water_m": 6842.8,
+        "totex_wastewater_m": 6472.0,
+        "totex_total_m": 13314.7,
+        "dividends_m": 1396.61
+      },
+      {
+        "year": "2020-21",
+        "capex_water_m": 3226.8,
+        "capex_wastewater_m": 3649.5,
+        "capex_total_m": 6876.2,
+        "opex_water_m": 3110.7,
+        "opex_wastewater_m": 2334.1,
+        "opex_total_m": 5444.7,
+        "totex_water_m": 6337.4,
+        "totex_wastewater_m": 5983.5,
+        "totex_total_m": 12321.0,
+        "dividends_m": 449.43
+      },
+      {
+        "year": "2021-22",
+        "capex_water_m": 3445.9,
+        "capex_wastewater_m": 4099.0,
+        "capex_total_m": 7544.9,
+        "opex_water_m": 3097.0,
+        "opex_wastewater_m": 2479.9,
+        "opex_total_m": 5576.9,
+        "totex_water_m": 6542.9,
+        "totex_wastewater_m": 6578.9,
+        "totex_total_m": 13121.8,
+        "dividends_m": 1000.8
+      },
+      {
+        "year": "2022-23",
+        "capex_water_m": 3833.7,
+        "capex_wastewater_m": 4138.5,
+        "capex_total_m": 7972.1,
+        "opex_water_m": 3457.1,
+        "opex_wastewater_m": 2514.4,
+        "opex_total_m": 5971.5,
+        "totex_water_m": 7290.8,
+        "totex_wastewater_m": 6652.9,
+        "totex_total_m": 13943.6,
+        "dividends_m": 1421.8
+      },
+      {
+        "year": "2023-24",
+        "capex_water_m": 4421.0,
+        "capex_wastewater_m": 5039.8,
+        "capex_total_m": 9460.8,
+        "opex_water_m": 3450.9,
+        "opex_wastewater_m": 2848.8,
+        "opex_total_m": 6299.7,
+        "totex_water_m": 7871.9,
+        "totex_wastewater_m": 7888.6,
+        "totex_total_m": 15760.5,
+        "dividends_m": 1019.2
+      },
+      {
+        "year": "2024-25",
+        "capex_water_m": 4690.2,
+        "capex_wastewater_m": 6028.5,
+        "capex_total_m": 10718.7,
+        "opex_water_m": 3446.8,
+        "opex_wastewater_m": 3072.9,
+        "opex_total_m": 6519.7,
+        "totex_water_m": 8137.0,
+        "totex_wastewater_m": 9101.4,
+        "totex_total_m": 17238.4
+      }
+    ]
+  },
+  "byCompany": {
+    "dividends": {
+      "AFW": {
+        "name": "Affinity Water",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 6.87
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 11.1
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 14.99
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 17.37
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 20.65
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 22.28
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 23.49
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 27.13
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 29.98
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 40.32
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 27.49
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 29.75
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 31.24
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 31.97
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 32.43
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 35.45
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 34.32
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 37.44
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 42.86
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 194.03
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 37.86
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 36.1
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 153.62
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 41.76
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 26.38
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 31.96
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 42.98
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 50.53
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 0.0
+          }
+        ]
+      },
+      "ANH": {
+        "name": "Anglian Water",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 69.11
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 76.27
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 81.7
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 84.84
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 96.98
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 298.84
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 117.37
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 198.0
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 336.0
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 148.9
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 910.18
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": -512.85
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 247.74
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 251.0
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 301.2
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 440.46
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 285.53
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 289.51
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 276.38
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 443.68
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 478.6
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 351.2
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 389.1
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 366.52
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 338.4
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 313.9
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 1935.86
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 61.54
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 60.24
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 83.02
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 161.25
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 72.6
+          }
+        ]
+      },
+      "WSH": {
+        "name": "Welsh Water (Dwr Cymru)",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 74.5
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 108.4
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 74.7
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 98.0
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 65.0
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 67.0
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 79.0
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 434.0
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 44.0
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 15.0
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 33.5
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 50.0
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 320.5
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 30.23
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 0.0
+          }
+        ]
+      },
+      "HDD": {
+        "name": "Hafren Dyfrdwy",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 0.3
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 0.7
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 1.6
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 1.4
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 1.5
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 4.2
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 8.4
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 2.0
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 2.25
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 2.61
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 2.72
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 9.17
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 1.25
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 1.29
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 1.29
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 1.27
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 1.27
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 1.32
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 1.41
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 1.32
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 1.44
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 1.57
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 1.58
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 1.57
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 1.42
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 1.38
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 1.95
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 0.0
+          }
+        ]
+      },
+      "NES": {
+        "name": "Northumbrian Water",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 133.55
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 33.98
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 39.39
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 16.98
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 18.26
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 57.93
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 56.5
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 45.12
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 63.4
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 69.59
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 65.0
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 72.8
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 74.9
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 98.0
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 63.9
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 33.4
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 68.6
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 72.6
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 76.9
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 78.93
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 358.3
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 140.1
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 144.0
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 297.2
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 200.0
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 200.75
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 119.4
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 130.0
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 65.0
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 181.5
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 110.8
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 65.8
+          }
+        ]
+      },
+      "PRT": {
+        "name": "Portsmouth Water",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 0.4
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 1.2
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 1.5
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 3.7
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 2.2
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 2.3
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 9.4
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 2.3
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 2.62
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 2.9
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 2.89
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 4.97
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 6.96
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 4.19
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 3.78
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 3.59
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 4.37
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 4.05
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 4.62
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 4.61
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 2.86
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 2.46
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 1.37
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 1.1
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 0.8
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 1.2
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 1.2
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 1.1
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 2.78
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 3.54
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 1.1
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 5.12
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 3.4
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 2.3
+          }
+        ]
+      },
+      "SVT": {
+        "name": "Severn Trent",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 96.0
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 100.0
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 724.4
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 135.0
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 140.0
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 506.0
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 275.0
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 439.6
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 138.0
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 270.0
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 135.5
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 139.1
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 141.9
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 158.0
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 147.1
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 152.8
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 651.9
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 260.9
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 151.9
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 166.4
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 149.8
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 260.3
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 65.8
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 332.1
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 196.8
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 306.0
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 190.35
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 199.62
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 217.01
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 237.49
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 58.6
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 145.88
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 425.92
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 297.6
+          }
+        ]
+      },
+      "SEW": {
+        "name": "South East Water",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 2.87
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 6.25
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 7.78
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 7.76
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 8.71
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 11.28
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 16.64
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 32.37
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 12.33
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 14.9
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 17.16
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 15.63
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 41.8
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 14.0
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 17.41
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 51.85
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 50.52
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 28.9
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 11.68
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 23.6
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 29.82
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 29.97
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 29.78
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 28.05
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 24.65
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 7.16
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 14.47
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 15.34
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 22.93
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 7.37
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 143.6
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 5.9
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 6.46
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 0.0
+          }
+        ]
+      },
+      "SSC": {
+        "name": "South Staffs / Cambridge",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 0.53
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 2.9
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 3.19
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 3.46
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 4.54
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 6.65
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 6.62
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 6.25
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 6.64
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 6.7
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 6.61
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 10.3
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 7.05
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 6.56
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 34.01
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 6.02
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 20.72
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 14.29
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 9.79
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 11.98
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 17.23
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 12.2
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 15.17
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 12.92
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 11.84
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 6.06
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 8.52
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 15.4
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 6.03
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 6.16
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 4.64
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 9.04
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 7.66
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 4.6
+          }
+        ]
+      },
+      "SBB": {
+        "name": "South West Water (Pennon)",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 32.65
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 39.54
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 42.6
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 46.3
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 150.23
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 52.5
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 58.7
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 168.92
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 64.68
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 69.5
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 66.5
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 73.5
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 89.89
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 83.38
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 87.26
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 212.0
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 86.67
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 86.09
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 117.48
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 69.66
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 67.44
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 90.95
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 159.72
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 128.0
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 272.3
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 82.07
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 221.82
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 127.23
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 129.09
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 255.79
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 107.48
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 96.64
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 73.22
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 42.8
+          }
+        ]
+      },
+      "SRN": {
+        "name": "Southern Water",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 26.8
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 29.3
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 31.7
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 33.8
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 36.3
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 38.2
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 39.8
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 42.0
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 43.76
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 45.77
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 47.76
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 68.0
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 49.4
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 39.5
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 41.82
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 59.13
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 64.8
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 116.08
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 37.47
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 74.42
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 39.4
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 36.3
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 40.1
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 40.9
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 121.7
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 167.07
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 50.96
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 31.94
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 4.5
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 1.6
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 0.0
+          }
+        ]
+      },
+      "SES": {
+        "name": "SES Water",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 1.17
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 2.8
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 4.22
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 2.67
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 6.4
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 7.1
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 7.5
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 7.5
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 4.9
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 4.3
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 4.0
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 5.0
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 5.0
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 5.0
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 14.6
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 5.4
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 3.1
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 2.2
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 4.78
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 4.85
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 5.15
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 5.12
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 1.0
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 3.0
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 2.8
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 3.0
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 3.08
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 6.1
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 4.31
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 2.92
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 3.1
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 0.0
+          }
+        ]
+      },
+      "TMS": {
+        "name": "Thames Water",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 88.0
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 98.9
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 109.8
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 120.8
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 131.6
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 641.1
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 135.1
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 641.9
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 890.2
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 115.3
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 118.6
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 124.2
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 127.1
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 131.1
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 41.7
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 270.2
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 525.7
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 93.7
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 215.1
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 281.2
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 262.3
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 269.7
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 218.4
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 194.3
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 162.6
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 82.4
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 109.16
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 43.41
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 46.56
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 47.86
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 32.9
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 20.98
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 45.2
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 195.8
+          }
+        ]
+      },
+      "UUW": {
+        "name": "United Utilities",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 135.06
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 93.3
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 99.84
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 116.28
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 518.62
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 135.14
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 351.81
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 295.17
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 310.4
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 183.9
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 188.7
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 193.9
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 193.1
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 197.1
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 202.0
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 222.77
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 266.01
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 296.6
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 841.85
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 228.6
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 259.18
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 338.5
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 218.3
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 148.21
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 174.98
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 180.37
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 242.69
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 311.06
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 372.11
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 504.52
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 0.0
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 333.74
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 451.85
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 187.1
+          }
+        ]
+      },
+      "WSX": {
+        "name": "Wessex Water",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 56.0
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 60.0
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 65.0
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 77.0
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 54.6
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 59.5
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 62.0
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 161.1
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 49.0
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 85.5
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 47.7
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 43.2
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 275.4
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 42.4
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 42.1
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 52.2
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 87.6
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 104.0
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 81.1
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 138.9
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 75.6
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 151.1
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 131.3
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 119.3
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 113.6
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 84.0
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 94.0
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 92.0
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 91.0
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 88.0
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 50.0
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 63.5
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 70.6
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 66.5
+          }
+        ]
+      },
+      "YKY": {
+        "name": "Yorkshire Water",
+        "timeSeries": [
+          {
+            "year": "1990-91",
+            "dividends_m": 66.73
+          },
+          {
+            "year": "1991-92",
+            "dividends_m": 53.05
+          },
+          {
+            "year": "1992-93",
+            "dividends_m": 56.4
+          },
+          {
+            "year": "1993-94",
+            "dividends_m": 60.1
+          },
+          {
+            "year": "1994-95",
+            "dividends_m": 114.9
+          },
+          {
+            "year": "1995-96",
+            "dividends_m": 187.6
+          },
+          {
+            "year": "1996-97",
+            "dividends_m": 65.3
+          },
+          {
+            "year": "1997-98",
+            "dividends_m": 595.9
+          },
+          {
+            "year": "1998-99",
+            "dividends_m": 86.64
+          },
+          {
+            "year": "1999-00",
+            "dividends_m": 94.1
+          },
+          {
+            "year": "2000-01",
+            "dividends_m": 193.5
+          },
+          {
+            "year": "2001-02",
+            "dividends_m": 98.3
+          },
+          {
+            "year": "2002-03",
+            "dividends_m": 100.8
+          },
+          {
+            "year": "2003-04",
+            "dividends_m": 100.3
+          },
+          {
+            "year": "2004-05",
+            "dividends_m": 105.7
+          },
+          {
+            "year": "2005-06",
+            "dividends_m": 268.31
+          },
+          {
+            "year": "2006-07",
+            "dividends_m": 826.9
+          },
+          {
+            "year": "2007-08",
+            "dividends_m": 111.21
+          },
+          {
+            "year": "2008-09",
+            "dividends_m": 311.6
+          },
+          {
+            "year": "2009-10",
+            "dividends_m": 211.04
+          },
+          {
+            "year": "2010-11",
+            "dividends_m": 46.85
+          },
+          {
+            "year": "2011-12",
+            "dividends_m": 63.4
+          },
+          {
+            "year": "2012-13",
+            "dividends_m": 256.6
+          },
+          {
+            "year": "2013-14",
+            "dividends_m": 165.5
+          },
+          {
+            "year": "2014-15",
+            "dividends_m": 93.6
+          },
+          {
+            "year": "2015-16",
+            "dividends_m": 90.14
+          },
+          {
+            "year": "2016-17",
+            "dividends_m": 135.84
+          },
+          {
+            "year": "2017-18",
+            "dividends_m": 88.86
+          },
+          {
+            "year": "2018-19",
+            "dividends_m": 79.5
+          },
+          {
+            "year": "2019-20",
+            "dividends_m": 110.03
+          },
+          {
+            "year": "2020-21",
+            "dividends_m": 45.2
+          },
+          {
+            "year": "2021-22",
+            "dividends_m": 52.56
+          },
+          {
+            "year": "2022-23",
+            "dividends_m": 62.34
+          },
+          {
+            "year": "2023-24",
+            "dividends_m": 84.1
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ofwat",
+        "dataset": "Historic dividends since privatisation",
+        "url": "https://www.ofwat.gov.uk/wp-content/uploads/2024/12/Historic-dividends-since-privatisation.xlsx",
+        "retrieved": "2026-03-03",
+        "frequency": "annual",
+        "notes": "Appointed business dividends in nominal GBP millions. Covers 1990-91 to 2023-24."
+      },
+      {
+        "name": "Ofwat",
+        "dataset": "Long-term data series \u2014 company costs (v5, Nov 2025)",
+        "url": "https://www.ofwat.gov.uk/wp-content/uploads/2022/11/Long-term-data-series-v5-Nov-2025-Published.xlsx",
+        "retrieved": "2026-03-03",
+        "frequency": "annual",
+        "notes": "Industry total capex, opex, totex in real terms (2024-25 prices, CPIH-adjusted). Covers 1985-86 to 2024-25."
+      }
+    ],
+    "methodology": "Dividends are nominal (not inflation-adjusted). Costs are real (inflation-adjusted to 2024-25 prices using RPI to 2019-20, then CPIH). Capex includes renewals expenditure for comparability across the totex regime change in 2015. Thames Tideway Tunnel costs included from 2015-16.",
+    "knownIssues": [
+      "Dividends are nominal; costs are real (inflation-adjusted). Direct comparison requires caution.",
+      "Company structures have changed over time through mergers and acquisitions.",
+      "Pre-2015 capex/opex split is not directly comparable to post-2015 due to totex regime change. Ofwat has adjusted for consistency.",
+      "Some negative dividend values exist (e.g. Anglian 2002-03) representing capital returns or adjustments."
+    ]
+  }
+}

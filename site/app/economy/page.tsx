@@ -337,6 +337,7 @@ export default function EconomyPage() {
             unit="%"
             direction={latestInflation && latestInflation.cpiPct > 2 ? 'up' : 'down'}
             polarity="up-is-bad"
+            baseline="Still above the Bank of England's 2% target — cumulative prices up 24% since 2021"
             changeText={
               latestInflation
                 ? `BoE target: 2% · Peak: 11.1% (Oct 2022)`
@@ -361,6 +362,7 @@ export default function EconomyPage() {
             unit="/wk"
             direction={latestReal && preCrisisReal && latestReal.weeklyGBP > preCrisisReal.weeklyGBP ? 'up' : 'flat'}
             polarity="up-is-good"
+            baseline="Real wages only recovered to their 2008 peak in 2024 — 16 years of no growth"
             changeText={
               latestReal
                 ? `Finally above 2008 peak · 16 years to recover`
@@ -389,6 +391,7 @@ export default function EconomyPage() {
                 : 'flat'
             }
             polarity="up-is-bad"
+            baseline="1 in 5 working-age adults neither in work nor looking — many due to long-term sickness"
             changeText={
               latestLabour
                 ? `Employment: ${latestLabour.employmentPct}% · Unemployment: ${latestLabour.unemploymentPct}%`

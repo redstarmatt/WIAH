@@ -11,6 +11,7 @@ interface Metric {
   unit?: string;
   direction: Direction;
   polarity: Polarity;
+  context?: string;
   sparklineData?: number[];
 }
 
@@ -36,40 +37,62 @@ function getSparklineColour(direction: Direction, polarity: Polarity): string {
   return isBad ? SIGNAL_COLOURS.bad : SIGNAL_COLOURS.good;
 }
 
+function getStatusColour(direction: Direction, polarity: Polarity): string {
+  return getSparklineColour(direction, polarity);
+}
+
 export default function CategoryCard({ topic, href, colour, metrics, preposition }: CategoryCardProps) {
   return (
     <Link
       href={href}
-      className="block border border-wiah-border rounded-lg p-6 bg-white hover:shadow-sm transition-shadow"
+      className="block border border-wiah-border rounded-lg overflow-hidden bg-white hover:shadow-md transition-shadow group"
     >
-      <p className="mb-4" style={{ color: colour }}>
-        <SiteName size="nav" topic={topic} preposition={preposition} />
-      </p>
-      <div className="space-y-3">
-        {metrics.map((m) => (
-          <div key={m.label} className="flex items-center justify-between gap-3">
-            <div className="flex-1 min-w-0">
-              <p className="text-xs text-wiah-mid truncate">{m.label}</p>
-              <div className="flex items-baseline gap-1.5">
-                <span className="font-mono text-lg font-bold text-wiah-black">
-                  {m.value}
-                </span>
-                {m.unit && (
-                  <span className="font-mono text-xs text-wiah-mid">{m.unit}</span>
-                )}
-                <DirectionArrow direction={m.direction} polarity={m.polarity} size={14} />
+      {/* Coloured top accent */}
+      <div className="h-1" style={{ backgroundColor: colour }} />
+
+      <div className="p-6">
+        <p className="mb-5" style={{ color: colour }}>
+          <SiteName size="nav" topic={topic} preposition={preposition} />
+        </p>
+
+        <div className="space-y-5">
+          {metrics.map((m) => {
+            const sparkColour = getSparklineColour(m.direction, m.polarity);
+            const statusColour = getStatusColour(m.direction, m.polarity);
+
+            return (
+              <div key={m.label}>
+                <p className="text-xs text-wiah-mid font-mono mb-1.5">{m.label}</p>
+                <div className="flex items-end justify-between gap-3">
+                  <div>
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="font-mono text-2xl font-bold text-wiah-black">
+                        {m.value}
+                      </span>
+                      {m.unit && (
+                        <span className="font-mono text-xs text-wiah-mid">{m.unit}</span>
+                      )}
+                      <DirectionArrow direction={m.direction} polarity={m.polarity} size={15} />
+                    </div>
+                    {m.context && (
+                      <p className="font-mono text-xs mt-1" style={{ color: statusColour }}>
+                        {m.context}
+                      </p>
+                    )}
+                  </div>
+                  {m.sparklineData && m.sparklineData.length > 1 && (
+                    <Sparkline
+                      data={m.sparklineData}
+                      colour={sparkColour}
+                      width={80}
+                      height={28}
+                    />
+                  )}
+                </div>
               </div>
-            </div>
-            {m.sparklineData && m.sparklineData.length > 1 && (
-              <Sparkline
-                data={m.sparklineData}
-                colour={getSparklineColour(m.direction, m.polarity)}
-                width={60}
-                height={16}
-              />
-            )}
-          </div>
-        ))}
+            );
+          })}
+        </div>
       </div>
     </Link>
   );

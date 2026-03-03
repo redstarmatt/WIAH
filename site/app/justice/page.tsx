@@ -345,6 +345,7 @@ export default function JusticePage() {
                 : []
             }
             source="Home Office · Crime Outcomes YE Mar 2025"
+            baseline="92 in every 100 recorded crimes lead to no charge — halved from already-low levels in 2012"
             onExpand={chargeRateSeries.length > 0 ? () => setExpanded('charge-rate') : undefined}
           />
           <MetricCard
@@ -364,6 +365,7 @@ export default function JusticePage() {
                 : []
             }
             source="MOJ · Criminal Court Statistics Q3 2025"
+            baseline="At current court throughput, many defendants wait over 2 years for trial"
             onExpand={backlogSeries.length > 0 ? () => setExpanded('backlog') : undefined}
           />
           <MetricCard
@@ -383,6 +385,7 @@ export default function JusticePage() {
                 : []
             }
             source="MOJ · Prison Population Dec 2025"
+            baseline="7 in 10 released prisoners are convicted of a new offence within 9 years"
             onExpand={prisonPopSeries.length > 0 ? () => setExpanded('prison') : undefined}
           />
         </div>

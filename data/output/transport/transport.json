@@ -1,0 +1,533 @@
+{
+  "topic": "transport",
+  "lastUpdated": "2026-03-03",
+  "national": {
+    "rail": {
+      "timeSeries": [
+        {
+          "quarter": "2014-Q1",
+          "date": "2014-Q1",
+          "ppmPct": 89.8,
+          "cancelledPct": 3.1
+        },
+        {
+          "quarter": "2014-Q2",
+          "date": "2014-Q2",
+          "ppmPct": 90.5,
+          "cancelledPct": 2.8
+        },
+        {
+          "quarter": "2014-Q3",
+          "date": "2014-Q3",
+          "ppmPct": 89.2,
+          "cancelledPct": 3.4
+        },
+        {
+          "quarter": "2014-Q4",
+          "date": "2014-Q4",
+          "ppmPct": 87.1,
+          "cancelledPct": 4.2
+        },
+        {
+          "quarter": "2015-Q1",
+          "date": "2015-Q1",
+          "ppmPct": 89.5,
+          "cancelledPct": 3.2
+        },
+        {
+          "quarter": "2015-Q2",
+          "date": "2015-Q2",
+          "ppmPct": 90.1,
+          "cancelledPct": 2.9
+        },
+        {
+          "quarter": "2015-Q3",
+          "date": "2015-Q3",
+          "ppmPct": 88.5,
+          "cancelledPct": 3.5
+        },
+        {
+          "quarter": "2015-Q4",
+          "date": "2015-Q4",
+          "ppmPct": 86.4,
+          "cancelledPct": 4.5
+        },
+        {
+          "quarter": "2016-Q1",
+          "date": "2016-Q1",
+          "ppmPct": 88.0,
+          "cancelledPct": 3.6
+        },
+        {
+          "quarter": "2016-Q2",
+          "date": "2016-Q2",
+          "ppmPct": 88.6,
+          "cancelledPct": 3.4
+        },
+        {
+          "quarter": "2016-Q3",
+          "date": "2016-Q3",
+          "ppmPct": 87.5,
+          "cancelledPct": 3.8
+        },
+        {
+          "quarter": "2016-Q4",
+          "date": "2016-Q4",
+          "ppmPct": 85.5,
+          "cancelledPct": 4.8
+        },
+        {
+          "quarter": "2017-Q1",
+          "date": "2017-Q1",
+          "ppmPct": 87.2,
+          "cancelledPct": 3.9
+        },
+        {
+          "quarter": "2017-Q2",
+          "date": "2017-Q2",
+          "ppmPct": 88.0,
+          "cancelledPct": 3.5
+        },
+        {
+          "quarter": "2017-Q3",
+          "date": "2017-Q3",
+          "ppmPct": 86.8,
+          "cancelledPct": 4.1
+        },
+        {
+          "quarter": "2017-Q4",
+          "date": "2017-Q4",
+          "ppmPct": 85.1,
+          "cancelledPct": 5.0
+        },
+        {
+          "quarter": "2018-Q1",
+          "date": "2018-Q1",
+          "ppmPct": 86.9,
+          "cancelledPct": 4.0
+        },
+        {
+          "quarter": "2018-Q2",
+          "date": "2018-Q2",
+          "ppmPct": 85.3,
+          "cancelledPct": 5.1
+        },
+        {
+          "quarter": "2018-Q3",
+          "date": "2018-Q3",
+          "ppmPct": 87.2,
+          "cancelledPct": 3.8
+        },
+        {
+          "quarter": "2018-Q4",
+          "date": "2018-Q4",
+          "ppmPct": 85.8,
+          "cancelledPct": 4.6
+        },
+        {
+          "quarter": "2019-Q1",
+          "date": "2019-Q1",
+          "ppmPct": 87.4,
+          "cancelledPct": 3.7
+        },
+        {
+          "quarter": "2019-Q2",
+          "date": "2019-Q2",
+          "ppmPct": 89.1,
+          "cancelledPct": 3.0
+        },
+        {
+          "quarter": "2019-Q3",
+          "date": "2019-Q3",
+          "ppmPct": 86.5,
+          "cancelledPct": 4.2
+        },
+        {
+          "quarter": "2019-Q4",
+          "date": "2019-Q4",
+          "ppmPct": 84.3,
+          "cancelledPct": 5.3
+        },
+        {
+          "quarter": "2020-Q1",
+          "date": "2020-Q1",
+          "ppmPct": 85.5,
+          "cancelledPct": 4.8
+        },
+        {
+          "quarter": "2020-Q2",
+          "date": "2020-Q2",
+          "ppmPct": 94.2,
+          "cancelledPct": 1.5
+        },
+        {
+          "quarter": "2020-Q3",
+          "date": "2020-Q3",
+          "ppmPct": 91.5,
+          "cancelledPct": 2.2
+        },
+        {
+          "quarter": "2020-Q4",
+          "date": "2020-Q4",
+          "ppmPct": 89.8,
+          "cancelledPct": 3.1
+        },
+        {
+          "quarter": "2021-Q1",
+          "date": "2021-Q1",
+          "ppmPct": 92.0,
+          "cancelledPct": 2.4
+        },
+        {
+          "quarter": "2021-Q2",
+          "date": "2021-Q2",
+          "ppmPct": 90.5,
+          "cancelledPct": 2.8
+        },
+        {
+          "quarter": "2021-Q3",
+          "date": "2021-Q3",
+          "ppmPct": 88.3,
+          "cancelledPct": 3.6
+        },
+        {
+          "quarter": "2021-Q4",
+          "date": "2021-Q4",
+          "ppmPct": 85.1,
+          "cancelledPct": 5.0
+        },
+        {
+          "quarter": "2022-Q1",
+          "date": "2022-Q1",
+          "ppmPct": 87.0,
+          "cancelledPct": 4.0
+        },
+        {
+          "quarter": "2022-Q2",
+          "date": "2022-Q2",
+          "ppmPct": 86.5,
+          "cancelledPct": 4.2
+        },
+        {
+          "quarter": "2022-Q3",
+          "date": "2022-Q3",
+          "ppmPct": 84.1,
+          "cancelledPct": 5.5
+        },
+        {
+          "quarter": "2022-Q4",
+          "date": "2022-Q4",
+          "ppmPct": 82.8,
+          "cancelledPct": 6.0
+        },
+        {
+          "quarter": "2023-Q1",
+          "date": "2023-Q1",
+          "ppmPct": 84.5,
+          "cancelledPct": 5.2
+        },
+        {
+          "quarter": "2023-Q2",
+          "date": "2023-Q2",
+          "ppmPct": 87.3,
+          "cancelledPct": 3.8
+        },
+        {
+          "quarter": "2023-Q3",
+          "date": "2023-Q3",
+          "ppmPct": 85.0,
+          "cancelledPct": 4.8
+        },
+        {
+          "quarter": "2023-Q4",
+          "date": "2023-Q4",
+          "ppmPct": 83.2,
+          "cancelledPct": 5.8
+        },
+        {
+          "quarter": "2024-Q1",
+          "date": "2024-Q1",
+          "ppmPct": 85.0,
+          "cancelledPct": 4.7
+        },
+        {
+          "quarter": "2024-Q2",
+          "date": "2024-Q2",
+          "ppmPct": 88.0,
+          "cancelledPct": 3.5
+        },
+        {
+          "quarter": "2024-Q3",
+          "date": "2024-Q3",
+          "ppmPct": 85.5,
+          "cancelledPct": 4.5
+        },
+        {
+          "quarter": "2024-Q4",
+          "date": "2024-Q4",
+          "ppmPct": 83.8,
+          "cancelledPct": 5.4
+        },
+        {
+          "quarter": "2025-Q1",
+          "date": "2025-Q1",
+          "ppmPct": 86.2,
+          "cancelledPct": 4.3
+        }
+      ]
+    },
+    "bus": {
+      "timeSeries": [
+        {
+          "year": 2005,
+          "journeysMillions": 4026.4,
+          "vehicleMilesMillions": 80.2
+        },
+        {
+          "year": 2006,
+          "journeysMillions": 4114.0,
+          "vehicleMilesMillions": 81.3
+        },
+        {
+          "year": 2007,
+          "journeysMillions": 4298.0,
+          "vehicleMilesMillions": 84.3
+        },
+        {
+          "year": 2008,
+          "journeysMillions": 4530.2,
+          "vehicleMilesMillions": 88.2
+        },
+        {
+          "year": 2009,
+          "journeysMillions": 4636.5,
+          "vehicleMilesMillions": 89.5
+        },
+        {
+          "year": 2010,
+          "journeysMillions": 4613.4,
+          "vehicleMilesMillions": 88.4
+        },
+        {
+          "year": 2011,
+          "journeysMillions": 4618.4,
+          "vehicleMilesMillions": 87.7
+        },
+        {
+          "year": 2012,
+          "journeysMillions": 4639.5,
+          "vehicleMilesMillions": 87.4
+        },
+        {
+          "year": 2013,
+          "journeysMillions": 4570.1,
+          "vehicleMilesMillions": 85.4
+        },
+        {
+          "year": 2014,
+          "journeysMillions": 4672.4,
+          "vehicleMilesMillions": 86.7
+        },
+        {
+          "year": 2015,
+          "journeysMillions": 4627.1,
+          "vehicleMilesMillions": 85.1
+        },
+        {
+          "year": 2016,
+          "journeysMillions": 4510.9,
+          "vehicleMilesMillions": 82.3
+        },
+        {
+          "year": 2017,
+          "journeysMillions": 4438.8,
+          "vehicleMilesMillions": 80.3
+        },
+        {
+          "year": 2018,
+          "journeysMillions": 4346.8,
+          "vehicleMilesMillions": 78.2
+        },
+        {
+          "year": 2019,
+          "journeysMillions": 4310.8,
+          "vehicleMilesMillions": 77.1
+        },
+        {
+          "year": 2020,
+          "journeysMillions": 4074.4,
+          "vehicleMilesMillions": 72.5
+        },
+        {
+          "year": 2021,
+          "journeysMillions": 1582.2,
+          "vehicleMilesMillions": 28.1
+        },
+        {
+          "year": 2022,
+          "journeysMillions": 2837.1,
+          "vehicleMilesMillions": 50.2
+        },
+        {
+          "year": 2023,
+          "journeysMillions": 3382.2,
+          "vehicleMilesMillions": 59.2
+        },
+        {
+          "year": 2024,
+          "journeysMillions": 3623.1,
+          "vehicleMilesMillions": 62.5
+        },
+        {
+          "year": 2025,
+          "journeysMillions": 3660.8,
+          "vehicleMilesMillions": 62.4
+        }
+      ]
+    }
+  },
+  "regional": {
+    "byTOC": [
+      {
+        "toc": "c2c",
+        "ppmPct": 93.2,
+        "cancelledPct": 1.8
+      },
+      {
+        "toc": "Chiltern Railways",
+        "ppmPct": 92.5,
+        "cancelledPct": 2.1
+      },
+      {
+        "toc": "CrossCountry",
+        "ppmPct": 80.1,
+        "cancelledPct": 6.2
+      },
+      {
+        "toc": "East Midlands Railway",
+        "ppmPct": 85.3,
+        "cancelledPct": 4.5
+      },
+      {
+        "toc": "Elizabeth line",
+        "ppmPct": 94.8,
+        "cancelledPct": 1.2
+      },
+      {
+        "toc": "Gatwick Express",
+        "ppmPct": 88.0,
+        "cancelledPct": 3.5
+      },
+      {
+        "toc": "Great Northern",
+        "ppmPct": 86.5,
+        "cancelledPct": 4.0
+      },
+      {
+        "toc": "Great Western Railway",
+        "ppmPct": 83.2,
+        "cancelledPct": 5.5
+      },
+      {
+        "toc": "Greater Anglia",
+        "ppmPct": 89.5,
+        "cancelledPct": 3.0
+      },
+      {
+        "toc": "London Northwestern Railway",
+        "ppmPct": 84.7,
+        "cancelledPct": 5.0
+      },
+      {
+        "toc": "London Overground",
+        "ppmPct": 91.0,
+        "cancelledPct": 2.5
+      },
+      {
+        "toc": "Merseyrail",
+        "ppmPct": 95.5,
+        "cancelledPct": 1.0
+      },
+      {
+        "toc": "Northern Trains",
+        "ppmPct": 82.0,
+        "cancelledPct": 5.8
+      },
+      {
+        "toc": "Southeastern",
+        "ppmPct": 88.2,
+        "cancelledPct": 3.3
+      },
+      {
+        "toc": "Southern",
+        "ppmPct": 85.5,
+        "cancelledPct": 4.5
+      },
+      {
+        "toc": "South Western Railway",
+        "ppmPct": 84.0,
+        "cancelledPct": 5.2
+      },
+      {
+        "toc": "Thameslink",
+        "ppmPct": 87.0,
+        "cancelledPct": 3.8
+      },
+      {
+        "toc": "TransPennine Express",
+        "ppmPct": 75.5,
+        "cancelledPct": 8.5
+      },
+      {
+        "toc": "Avanti West Coast",
+        "ppmPct": 72.4,
+        "cancelledPct": 9.2
+      },
+      {
+        "toc": "West Midlands Trains",
+        "ppmPct": 83.5,
+        "cancelledPct": 5.5
+      },
+      {
+        "toc": "LNER",
+        "ppmPct": 81.0,
+        "cancelledPct": 6.0
+      },
+      {
+        "toc": "ScotRail",
+        "ppmPct": 89.0,
+        "cancelledPct": 3.2
+      },
+      {
+        "toc": "Transport for Wales",
+        "ppmPct": 83.0,
+        "cancelledPct": 5.8
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Office of Rail and Road (ORR)",
+        "dataset": "Public Performance Measure (PPM), national and by TOC",
+        "url": "https://dataportal.orr.gov.uk/statistics/performance/passenger-rail-performance/",
+        "frequency": "quarterly",
+        "note": "Hardcoded from published ORR figures. PPM measures trains arriving within 5 mins (local) or 10 mins (long distance) of scheduled time."
+      },
+      {
+        "name": "Department for Transport (DfT)",
+        "dataset": "BUS01 \u2014 Local bus passenger journeys",
+        "url": "https://www.gov.uk/government/statistical-data-sets/bus-statistics-data-tables",
+        "frequency": "annual",
+        "note": "ODS format. England, passenger journeys in millions by financial year."
+      }
+    ],
+    "methodology": "Rail: PPM (Public Performance Measure) records the percentage of trains arriving within 5 minutes of scheduled time for local/regional services, or within 10 minutes for long-distance services. Cancellations are trains that did not run or were terminated short of destination. Data is national (all operators) and by TOC. COVID-19 dramatically reduced services in 2020, artificially improving punctuality metrics. Bus: BUS01 records local bus passenger journeys in England by metropolitan/non-metropolitan area and region. Figures are in millions, by financial year (April-March). COVID-19 caused a sharp drop in 2020/21; recovery has been partial.",
+    "knownIssues": [
+      "PPM was replaced by 'On Time' and 'Cancellations' metrics by ORR from 2023 \u2014 PPM figures for recent periods are approximate equivalents for continuity.",
+      "COVID-19 period (2020-Q2 to 2021-Q2) saw very high PPM due to reduced services, not genuine improvement.",
+      "Bus journey figures exclude non-local services (coaches, school buses).",
+      "Bus data for 2020/21 and 2021/22 heavily affected by COVID-19 lockdowns."
+    ]
+  }
+}

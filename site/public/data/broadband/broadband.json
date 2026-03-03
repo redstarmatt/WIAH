@@ -1,0 +1,344 @@
+{
+  "topic": "broadband",
+  "lastUpdated": "2026-03-03",
+  "national": {
+    "speeds": {
+      "medianTimeSeries": [
+        {
+          "year": 2013,
+          "medianMbps": 15.0
+        },
+        {
+          "year": 2014,
+          "medianMbps": 18.5
+        },
+        {
+          "year": 2015,
+          "medianMbps": 22.8
+        },
+        {
+          "year": 2016,
+          "medianMbps": 29.0
+        },
+        {
+          "year": 2017,
+          "medianMbps": 36.2
+        },
+        {
+          "year": 2018,
+          "medianMbps": 46.2
+        },
+        {
+          "year": 2019,
+          "medianMbps": 64.0
+        },
+        {
+          "year": 2020,
+          "medianMbps": 80.2
+        },
+        {
+          "year": 2021,
+          "medianMbps": 88.0
+        },
+        {
+          "year": 2022,
+          "medianMbps": 94.0
+        },
+        {
+          "year": 2023,
+          "medianMbps": 108.0
+        },
+        {
+          "year": 2024,
+          "medianMbps": 126.0
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "medianMbps": 126.0
+      },
+      "note": "Median download speed, UK residential broadband (Ofcom SamKnows panel)"
+    },
+    "coverage": {
+      "fullFibreTimeSeries": [
+        {
+          "year": 2017,
+          "pct": 2.0
+        },
+        {
+          "year": 2018,
+          "pct": 4.0
+        },
+        {
+          "year": 2019,
+          "pct": 8.0
+        },
+        {
+          "year": 2020,
+          "pct": 14.0
+        },
+        {
+          "year": 2021,
+          "pct": 27.0
+        },
+        {
+          "year": 2022,
+          "pct": 42.0
+        },
+        {
+          "year": 2023,
+          "pct": 57.0
+        },
+        {
+          "year": 2024,
+          "pct": 68.0
+        }
+      ],
+      "gigabitTimeSeries": [
+        {
+          "year": 2019,
+          "pct": 8.0
+        },
+        {
+          "year": 2020,
+          "pct": 14.0
+        },
+        {
+          "year": 2021,
+          "pct": 30.0
+        },
+        {
+          "year": 2022,
+          "pct": 51.0
+        },
+        {
+          "year": 2023,
+          "pct": 70.0
+        },
+        {
+          "year": 2024,
+          "pct": 81.0
+        }
+      ],
+      "byTechnology": [
+        {
+          "technology": "Superfast (30Mbps+)",
+          "pct": 98.0
+        },
+        {
+          "technology": "Ultrafast (100Mbps+)",
+          "pct": 87.0
+        },
+        {
+          "technology": "Gigabit-capable",
+          "pct": 81.0
+        },
+        {
+          "technology": "Full fibre (FTTP)",
+          "pct": 68.0
+        },
+        {
+          "technology": "5G outdoor (any operator)",
+          "pct": 91.0
+        }
+      ],
+      "latestFullFibre": {
+        "year": 2024,
+        "pct": 68.0
+      },
+      "latestGigabit": {
+        "year": 2024,
+        "pct": 81.0
+      },
+      "governmentTarget": "All premises: gigabit-capable by 2030"
+    },
+    "ruralUrbanGap": {
+      "timeSeries": [
+        {
+          "year": 2019,
+          "urbanNot30MbpsPct": 4.0,
+          "ruralNot30MbpsPct": 29.0
+        },
+        {
+          "year": 2020,
+          "urbanNot30MbpsPct": 3.0,
+          "ruralNot30MbpsPct": 24.0
+        },
+        {
+          "year": 2021,
+          "urbanNot30MbpsPct": 2.0,
+          "ruralNot30MbpsPct": 18.0
+        },
+        {
+          "year": 2022,
+          "urbanNot30MbpsPct": 1.5,
+          "ruralNot30MbpsPct": 12.0
+        },
+        {
+          "year": 2023,
+          "urbanNot30MbpsPct": 1.2,
+          "ruralNot30MbpsPct": 9.0
+        },
+        {
+          "year": 2024,
+          "urbanNot30MbpsPct": 1.0,
+          "ruralNot30MbpsPct": 6.5
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "urbanNot30MbpsPct": 1.0,
+        "ruralNot30MbpsPct": 6.5
+      },
+      "note": "% premises unable to receive 30Mbps (Ofcom decent broadband standard)"
+    },
+    "fiveG": {
+      "timeSeries": [
+        {
+          "year": 2019,
+          "premisesPct": 10.0,
+          "landmassPct": 2.0
+        },
+        {
+          "year": 2020,
+          "premisesPct": 37.0,
+          "landmassPct": 5.0
+        },
+        {
+          "year": 2021,
+          "premisesPct": 52.0,
+          "landmassPct": 9.0
+        },
+        {
+          "year": 2022,
+          "premisesPct": 70.0,
+          "landmassPct": 15.0
+        },
+        {
+          "year": 2023,
+          "premisesPct": 84.0,
+          "landmassPct": 22.0
+        },
+        {
+          "year": 2024,
+          "premisesPct": 91.0,
+          "landmassPct": 30.0
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "premisesPct": 91.0,
+        "landmassPct": 30.0
+      }
+    },
+    "digitalInclusion": {
+      "internetUsageTimeSeries": [
+        {
+          "year": 2011,
+          "usedInternetPct": 77.0,
+          "neverUsedPct": 16.3
+        },
+        {
+          "year": 2012,
+          "usedInternetPct": 80.0,
+          "neverUsedPct": 14.7
+        },
+        {
+          "year": 2013,
+          "usedInternetPct": 83.6,
+          "neverUsedPct": 12.1
+        },
+        {
+          "year": 2014,
+          "usedInternetPct": 84.1,
+          "neverUsedPct": 10.3
+        },
+        {
+          "year": 2015,
+          "usedInternetPct": 85.9,
+          "neverUsedPct": 9.0
+        },
+        {
+          "year": 2016,
+          "usedInternetPct": 88.5,
+          "neverUsedPct": 7.7
+        },
+        {
+          "year": 2017,
+          "usedInternetPct": 89.0,
+          "neverUsedPct": 6.7
+        },
+        {
+          "year": 2018,
+          "usedInternetPct": 90.0,
+          "neverUsedPct": 6.7
+        },
+        {
+          "year": 2019,
+          "usedInternetPct": 92.0,
+          "neverUsedPct": 5.9
+        },
+        {
+          "year": 2020,
+          "usedInternetPct": 95.4,
+          "neverUsedPct": 5.4
+        },
+        {
+          "year": 2021,
+          "usedInternetPct": 96.0,
+          "neverUsedPct": 4.7
+        },
+        {
+          "year": 2022,
+          "usedInternetPct": 96.2,
+          "neverUsedPct": 4.5
+        },
+        {
+          "year": 2023,
+          "usedInternetPct": 96.5,
+          "neverUsedPct": 4.3
+        },
+        {
+          "year": 2024,
+          "usedInternetPct": 97.0,
+          "neverUsedPct": 3.8
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "usedInternetPct": 97.0,
+        "neverUsedPct": 3.8
+      },
+      "neverOnlineMillions": 2.0,
+      "note": "Approx 2M adults have never used the internet (ONS 2024)"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ofcom",
+        "dataset": "Connected Nations \u2014 UK broadband coverage and speeds",
+        "url": "https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations",
+        "frequency": "annual"
+      },
+      {
+        "name": "Ofcom",
+        "dataset": "Home Broadband Performance \u2014 median speeds (SamKnows panel)",
+        "url": "https://www.ofcom.org.uk/research-and-data/telecoms-research/broadband-research/broadband-speeds",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Internet users, Great Britain",
+        "url": "https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Median download speeds are from Ofcom's SamKnows broadband performance testing panel (residential fixed-line). Coverage figures are from Ofcom Connected Nations annual reports \u2014 'premises' means residential and business addresses. Internet usage data is from the ONS annual survey of individuals.",
+    "knownIssues": [
+      "SamKnows panel may oversample engaged users \u2014 actual median speeds may be slightly lower.",
+      "5G coverage measured as outdoor signal; indoor coverage is lower.",
+      "Rural definition varies between Ofcom and ONS publications."
+    ]
+  }
+}

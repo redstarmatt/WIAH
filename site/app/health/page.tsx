@@ -407,6 +407,7 @@ export default function HealthPage() {
                 : []
             }
             source="NHS England · RTT Waiting Times"
+            baseline="More than 1 in 8 people in England waiting for hospital treatment"
             onExpand={rttTotalSeries.length > 0 ? () => setExpanded('rtt') : undefined}
           />
           <MetricCard
@@ -426,6 +427,7 @@ export default function HealthPage() {
                 : []
             }
             source="NHS England · Appointments in General Practice"
+            baseline="A typical GP appointment used to be booked for the same week — now it's 3 weeks away"
             onExpand={gpWaitSeries.length > 0 ? () => setExpanded('gp-wait') : undefined}
           />
           <MetricCard
@@ -449,6 +451,7 @@ export default function HealthPage() {
                 : []
             }
             source="NHS England · Ambulance Quality Indicators"
+            baseline="Nearly double the 18-minute target — and longer than driving to most A&E departments"
             onExpand={ambulanceSeries.length > 0 ? () => setExpanded('ambulance') : undefined}
           />
           <MetricCard

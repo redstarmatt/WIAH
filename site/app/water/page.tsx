@@ -301,6 +301,7 @@ export default function WaterPage() {
                 : []
             }
             source="Environment Agency · EDM Annual Returns"
+            baseline="That's 410 years' worth of sewage flowing into rivers and seas annually"
             onExpand={sewageHoursSeries.length > 0 ? () => setExpanded('sewage') : undefined}
           />
           <MetricCard
@@ -320,6 +321,7 @@ export default function WaterPage() {
                 : []
             }
             source="Defra · WFD classification (B3)"
+            baseline="Only 1 in 6 rivers is in good ecological condition — the worst rate since monitoring began"
             onExpand={riverSeries.length > 0 ? () => setExpanded('river') : undefined}
           />
           <MetricCard
@@ -339,6 +341,7 @@ export default function WaterPage() {
                 : []
             }
             source="Environment Agency · Bathing water quality (ENV17)"
+            baseline="Beaches declared 'excellent' have fallen from 55% in 2015 to 45% today"
             onExpand={bathingCombined.length > 0 ? () => setExpanded('bathing') : undefined}
           />
         </div>

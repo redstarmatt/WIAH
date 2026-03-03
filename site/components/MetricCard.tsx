@@ -10,6 +10,7 @@ interface MetricCardProps {
   direction: Direction;
   polarity: Polarity;
   changeText?: string;
+  baseline?: string;
   sparklineData?: number[];
   source?: string;
   onExpand?: () => void;
@@ -36,6 +37,7 @@ export default function MetricCard({
   direction,
   polarity,
   changeText,
+  baseline,
   sparklineData,
   source,
   onExpand,
@@ -56,7 +58,10 @@ export default function MetricCard({
         <DirectionArrow direction={direction} polarity={polarity} size={24} />
       </div>
       {changeText && (
-        <p className="font-mono text-xs text-wiah-mid mb-2">{changeText}</p>
+        <p className="font-mono text-xs text-wiah-mid mb-1">{changeText}</p>
+      )}
+      {baseline && (
+        <p className="text-xs text-wiah-mid italic mb-2 leading-snug">{baseline}</p>
       )}
       {sparklineData && sparklineData.length > 1 && (
         <div className="mb-2">

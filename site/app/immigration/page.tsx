@@ -385,6 +385,7 @@ export default function ImmigrationPage() {
             unit="/yr"
             direction="down"
             polarity="up-is-bad"
+            baseline="Equivalent to a city the size of Southampton arriving and settling in the UK every year"
             changeText={
               data
                 ? `YE Jun 2025 · Down from 906K peak (2023)`
@@ -415,6 +416,7 @@ export default function ImmigrationPage() {
             unit={boatsLatest ? String(boatsLatest.year) : ''}
             direction="up"
             polarity="up-is-bad"
+            baseline="Over 100 people per day crossing the Channel in small boats"
             changeText={
               data
                 ? `${fmtK(data.headlines.smallBoatsTotal)} total since 2018`

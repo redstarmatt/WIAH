@@ -244,6 +244,7 @@ export default function EnergyPage() {
               unit="%"
               direction="up"
               polarity="up-is-good"
+              baseline="Almost half of UK electricity now from wind, solar, and hydro — up from 3% in 2000"
               changeText={
                 latestRenewable
                   ? `${latestRenewable.year} \u00b7 Up from 2.8% in 2000`
@@ -263,6 +264,7 @@ export default function EnergyPage() {
               unit="(2015=100)"
               direction={elecDirection}
               polarity="up-is-bad"
+              baseline="Average household electricity bills have doubled in real terms since 2015"
               changeText={
                 latestElecPrice
                   ? `${latestElecPrice.date} \u00b7 Doubled since 2015`
@@ -282,6 +284,7 @@ export default function EnergyPage() {
               unit="% of homes"
               direction="up"
               polarity="up-is-bad"
+              baseline="1 in 8 households spends more than 10% of income on energy"
               changeText={
                 latestFuelPoverty
                   ? `${latestFuelPoverty.year} \u00b7 LILEE metric, England`

@@ -186,6 +186,7 @@ export default function SocialCarePage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
+            baseline="13,200 hospital beds occupied every day by people waiting for social care to be arranged"
             changeText={
               latestDelay && earliestDelay
                 ? `Up from ${(earliestDelay.avgDailyDelayed / 1000).toFixed(1)}K in ${earliestDelay.date.slice(0, 7)}`
@@ -205,6 +206,7 @@ export default function SocialCarePage() {
             unit="%"
             direction="flat"
             polarity="up-is-good"
+            baseline="5 in 6 care providers rated Good or Outstanding — despite decade-long funding pressures"
             changeText={
               cqc
                 ? `${cqc.totalLocations.toLocaleString()} adult social care locations rated`
@@ -219,6 +221,7 @@ export default function SocialCarePage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
+            baseline="More unpaid carers than the entire NHS workforce — providing £162bn of care a year"
             changeText={
               carers
                 ? `${(carers.carers50PlusHrsWk / 1e6).toFixed(1)}M provide 50+ hrs/week`
