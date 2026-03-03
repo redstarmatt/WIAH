@@ -46,6 +46,7 @@ PIPELINES = [
     ("water-financials","water",    DATA_DIR / "pipelines" / "water-financials"),
     ("social-housing", "housing",   DATA_DIR / "pipelines" / "social-housing"),
     ("transport",      "transport",  DATA_DIR / "pipelines" / "transport"),
+    ("energy",         "energy",     DATA_DIR / "pipelines" / "energy"),
 ]
 
 

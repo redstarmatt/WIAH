@@ -143,6 +143,29 @@ const TOPICS = [
     ],
   },
   {
+    topic: 'Energy',
+    href: '/energy',
+    colour: '#E63946',
+    metrics: [
+      {
+        label: 'Renewable share',
+        value: '45',
+        unit: '%',
+        direction: 'up' as const,
+        polarity: 'up-is-good' as const,
+        sparklineData: [2.8, 6.9, 11.3, 14.9, 19.1, 24.6, 24.5, 29.3, 33.1, 37.1, 43.1, 41.4, 41.5, 40.8, 45.2],
+      },
+      {
+        label: 'Electricity price index',
+        value: '201',
+        unit: '2015=100',
+        direction: 'up' as const,
+        polarity: 'up-is-bad' as const,
+        sparklineData: [86, 90, 94, 97, 100, 103, 107, 110, 119, 122, 127, 143, 201, 186, 180, 201],
+      },
+    ],
+  },
+  {
     topic: 'Transport',
     href: '/transport',
     colour: '#F4A261',
