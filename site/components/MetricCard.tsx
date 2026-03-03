@@ -23,6 +23,7 @@ const SIGNAL_COLOURS: Record<string, string> = {
 };
 
 function getSparklineColour(direction: Direction, polarity: Polarity): string {
+  if (polarity === 'neutral') return SIGNAL_COLOURS.flat;
   if (direction === 'flat') return SIGNAL_COLOURS.flat;
   const isBad =
     (direction === 'up' && polarity === 'up-is-bad') ||

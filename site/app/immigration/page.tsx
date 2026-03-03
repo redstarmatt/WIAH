@@ -429,8 +429,8 @@ export default function ImmigrationPage() {
             value={latestNet != null ? fmtK(latestNet) : '—'}
             unit="/yr"
             direction="down"
-            polarity="up-is-bad"
-            baseline="204,000 net arrivals in 2024 — down from a record 906,000 in 2023"
+            polarity="neutral"
+            baseline="Down from a record 906,000 in 2023. No official government target exists."
             changeText={
               data
                 ? `YE Jun 2025 · Down from 906K peak (2023)`
