@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import SiteName from '@/components/SiteName';
+import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
@@ -431,14 +430,7 @@ export default function HousingPage() {
 
   return (
     <>
-      {/* Sticky nav */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-wiah-border px-6 py-3">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Link href="/"><SiteName size="nav" /></Link>
-          <span className="text-wiah-mid text-sm font-mono">Housing</span>
-          <Link href="/" className="text-sm text-wiah-blue hover:underline">&larr; All topics</Link>
-        </div>
-      </nav>
+      <TopicNav topic="Housing" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
