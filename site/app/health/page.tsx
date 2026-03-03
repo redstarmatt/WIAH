@@ -11,6 +11,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import RegionalMap from '@/components/charts/RegionalMap';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -387,9 +388,18 @@ export default function HealthPage() {
           colour="#E63946"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-waiting', label: 'Waiting Lists' },
+          { id: 'sec-ambulance', label: 'Ambulance' },
+          { id: 'sec-gp', label: 'GP Access' },
+          { id: 'sec-map', label: 'Regional Map' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           <MetricCard
             label="NHS waiting list"
             value={rttListMillions ? `${rttListMillions}M` : '—'}
@@ -493,6 +503,7 @@ export default function HealthPage() {
         </ScrollReveal>
 
         {/* RTT Chart 1: Total waiting list size */}
+        <div id="sec-waiting">
         {rttTotalSeries.length > 0 ? (
           <LineChart
             title="NHS waiting list size, 2012–2025"
@@ -548,7 +559,10 @@ export default function HealthPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
         )}
 
+        </div>{/* end sec-waiting */}
+
         {/* Chart 4: Ambulance response times */}
+        <div id="sec-ambulance">
         {ambulanceSeries.length > 0 ? (
           <LineChart
             title="Ambulance response times, 2017–2026"
@@ -568,7 +582,10 @@ export default function HealthPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
         )}
 
+        </div>{/* end sec-ambulance */}
+
         {/* Chart 2: GP appointment wait */}
+        <div id="sec-gp">
         {gpWaitSeries.length > 0 ? (
           <LineChart
             title="GP appointment wait times, Jul 2023–Dec 2025"
@@ -753,7 +770,10 @@ export default function HealthPage() {
           </section>
         )}
 
+        </div>{/* end sec-gp */}
+
         {/* Regional map: GP wait by ICB */}
+        <div id="sec-map">
         {gpData && gpData.regional.byICB.length > 0 && (
           <ScrollReveal>
             <RegionalMap
@@ -777,6 +797,8 @@ export default function HealthPage() {
             />
           </ScrollReveal>
         )}
+
+        </div>{/* end sec-map */}
 
         {/* Cancer survival trend chart */}
         {cancerTrendSeries.length > 0 ? (
@@ -881,7 +903,7 @@ export default function HealthPage() {
         </ScrollReveal>
 
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>

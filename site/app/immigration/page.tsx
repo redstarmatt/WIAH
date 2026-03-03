@@ -8,6 +8,7 @@ import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -292,16 +293,20 @@ export default function ImmigrationPage() {
       ]
     : [];
 
-  // 4. Small boats
+  // 4. Small boats — exclude partial years (≥ current year) from chart series
+  const currentYear = new Date().getFullYear();
+  const smallBoats2026 = data?.smallBoats.find(r => r.year >= currentYear);
   const smallBoatsSeries: Series[] = data
     ? [{
         id: 'small-boats',
         label: 'Channel crossings',
         colour: '#E63946',
-        data: data.smallBoats.map(r => ({
-          date: yearToDate(r.year),
-          value: r.migrants,
-        })),
+        data: data.smallBoats
+          .filter(r => r.year < currentYear)
+          .map(r => ({
+            date: yearToDate(r.year),
+            value: r.migrants,
+          })),
       }]
     : [];
 
@@ -376,9 +381,19 @@ export default function ImmigrationPage() {
           preposition="with"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-net-migration', label: 'Net Migration' },
+          { id: 'sec-visas', label: 'Visas' },
+          { id: 'sec-asylum', label: 'Asylum' },
+          { id: 'sec-small-boats', label: 'Small Boats' },
+          { id: 'sec-returns', label: 'Returns' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Net migration"
             value={latestNet != null ? fmtK(latestNet) : '—'}
@@ -430,6 +445,7 @@ export default function ImmigrationPage() {
         </ScrollReveal>
 
         {/* Chart 1: Net migration by nationality */}
+        <div id="sec-net-migration">
         {netMigSeries.length > 0 ? (
           <LineChart
             title="Net migration by nationality, 2012–2025"
@@ -466,7 +482,10 @@ export default function ImmigrationPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-net-migration */}
+
         {/* Chart 2b: Visa grants by route (line chart) */}
+        <div id="sec-visas">
         {visaLineSeries.length > 0 ? (
           <LineChart
             title="Visa grants by route, 2014–2025"
@@ -532,7 +551,10 @@ export default function ImmigrationPage() {
           </section>
         )}
 
+        </div>{/* end sec-visas */}
+
         {/* Chart 3: Asylum applications + backlog */}
+        <div id="sec-asylum">
         {asylumAppsSeries.length > 0 ? (
           <LineChart
             title="Asylum applications and backlog, 2010–2025"
@@ -611,11 +633,14 @@ export default function ImmigrationPage() {
           </section>
         )}
 
+        </div>{/* end sec-asylum */}
+
         {/* Chart 4: Small boat crossings */}
+        <div id="sec-small-boats">
         {smallBoatsSeries.length > 0 ? (
           <LineChart
             title="Small boat Channel crossings, 2018–2025"
-            subtitle="People detected crossing the English Channel in small boats, by year."
+            subtitle={`People detected crossing the English Channel in small boats, by year (complete years only).${smallBoats2026 ? ` ${currentYear} year-to-date: ${smallBoats2026.migrants.toLocaleString()} people across ${smallBoats2026.crossingDays} crossing days (partial — data to early ${currentYear}).` : ''}`}
             series={smallBoatsSeries}
             yLabel="People"
             source={{
@@ -650,9 +675,14 @@ export default function ImmigrationPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.smallBoats.map(row => (
-                    <tr key={row.year} className="border-b border-wiah-border/50 hover:bg-wiah-light/50">
-                      <td className="py-2 pr-3 font-mono text-sm font-bold">{row.year}</td>
+                  {data.smallBoats.map(row => {
+                    const isPartial = row.year >= currentYear;
+                    return (
+                    <tr key={row.year} className={`border-b border-wiah-border/50 hover:bg-wiah-light/50 ${isPartial ? 'opacity-60' : ''}`}>
+                      <td className="py-2 pr-3 font-mono text-sm font-bold">
+                        {row.year}
+                        {isPartial && <span className="font-normal text-wiah-mid text-[10px] ml-1.5">(partial)</span>}
+                      </td>
                       <td className="py-2 px-2 font-mono text-sm text-right">{row.migrants.toLocaleString()}</td>
                       <td className="py-2 px-2 font-mono text-sm text-right">{row.boats.toLocaleString()}</td>
                       <td className="py-2 px-2 font-mono text-sm text-right">{row.crossingDays}</td>
@@ -660,7 +690,8 @@ export default function ImmigrationPage() {
                         {row.boats > 0 ? (row.migrants / row.boats).toFixed(1) : '—'}
                       </td>
                     </tr>
-                  ))}
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -677,7 +708,10 @@ export default function ImmigrationPage() {
           </section>
         )}
 
+        </div>{/* end sec-small-boats */}
+
         {/* Chart 5: Returns */}
+        <div id="sec-returns">
         {returnsSeries.length > 0 ? (
           <LineChart
             title="Returns from the UK, 2004–2025"
@@ -695,8 +729,10 @@ export default function ImmigrationPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-returns */}
+
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>

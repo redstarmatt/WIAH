@@ -10,6 +10,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import FunnelChart, { FunnelStage } from '@/components/charts/FunnelChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -325,9 +326,18 @@ export default function JusticePage() {
           colour="#6B7280"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-crime', label: 'Crime Trends' },
+          { id: 'sec-outcomes', label: 'Outcomes' },
+          { id: 'sec-courts', label: 'Courts' },
+          { id: 'sec-prison', label: 'Prison' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Crimes leading to charge"
             value={latestCharge ? latestCharge.pct.toFixed(1) : '—'}
@@ -392,6 +402,7 @@ export default function JusticePage() {
         </ScrollReveal>
 
         {/* Chart 1: Justice Funnel */}
+        <div id="sec-outcomes">
         {data ? (
           <FunnelChart
             title="What happens after a crime, 2024–25"
@@ -471,7 +482,10 @@ export default function JusticePage() {
           </section>
         )}
 
+        </div>{/* end sec-outcomes */}
+
         {/* Chart 4: Crown Court backlog */}
+        <div id="sec-courts">
         {backlogSeries.length > 0 ? (
           <LineChart
             title="Crown Court backlog, 2016–2025"
@@ -491,7 +505,10 @@ export default function JusticePage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-courts */}
+
         {/* Chart 5: Prison population and capacity */}
+        <div id="sec-prison">
         {prisonPopSeries.length > 0 ? (
           <LineChart
             title="Prison population and capacity, 2000–2025"
@@ -530,7 +547,10 @@ export default function JusticePage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-prison */}
+
         {/* Chart 7: Total recorded crime */}
+        <div id="sec-crime">
         {totalCrimeSeries.length > 0 ? (
           <LineChart
             title="Total police-recorded crime, 2002/03–2024/25"
@@ -620,6 +640,8 @@ export default function JusticePage() {
           </section>
         )}
 
+        </div>{/* end sec-crime */}
+
         {/* Positive story */}
         <ScrollReveal>
         <PositiveCallout
@@ -631,7 +653,7 @@ export default function JusticePage() {
         </ScrollReveal>
 
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>

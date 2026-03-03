@@ -9,6 +9,7 @@ import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,9 +195,16 @@ export default function TransportPage() {
           colour="#F4A261"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-rail', label: 'Rail' },
+          { id: 'sec-bus', label: 'Bus & Roads' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Rail punctuality"
             value={latestRail ? latestRail.ppmPct.toFixed(1) : '—'}
@@ -260,6 +268,7 @@ export default function TransportPage() {
         </ScrollReveal>
 
         {/* Chart 1: Rail punctuality (PPM) */}
+        <div id="sec-rail">
         {ppmSeries.length > 0 ? (
           <LineChart
             title="Rail punctuality (PPM), 2014–2025"
@@ -298,7 +307,10 @@ export default function TransportPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
         )}
 
+        </div>{/* end sec-rail */}
+
         {/* Chart 3: Bus passenger journeys */}
+        <div id="sec-bus">
         {busJourneySeries.length > 0 ? (
           <LineChart
             title="Bus passenger journeys, 2005–2025"
@@ -400,8 +412,10 @@ export default function TransportPage() {
         />
         </ScrollReveal>
 
+        </div>{/* end sec-bus */}
+
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>

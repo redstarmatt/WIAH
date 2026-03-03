@@ -9,6 +9,7 @@ import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -177,9 +178,17 @@ export default function SocialCarePage() {
           preposition="with"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-discharge', label: 'Hospital Discharge' },
+          { id: 'sec-quality', label: 'Care Quality' },
+          { id: 'sec-carers', label: 'Unpaid Carers' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Patients delayed daily"
             value={latestDelay ? `${(latestDelay.avgDailyDelayed / 1000).toFixed(1)}K` : '—'}
@@ -235,6 +244,7 @@ export default function SocialCarePage() {
         </ScrollReveal>
 
         {/* Chart 1: Discharge delays over time */}
+        <div id="sec-discharge">
         {delaySeries.length > 0 ? (
           <LineChart
             title="Hospital discharge delays, 2021–2025"
@@ -318,10 +328,12 @@ export default function SocialCarePage() {
           </ScrollReveal>
         )}
 
+        </div>{/* end sec-discharge */}
+
         {/* Chart 4: CQC Ratings distribution — stacked horizontal bar */}
         {cqc && (
           <ScrollReveal>
-          <section className="mb-12">
+          <section id="sec-quality" className="mb-12">
             <h3 className="text-lg font-bold text-wiah-black mb-1">
               CQC ratings for adult social care, 2025
             </h3>
@@ -406,7 +418,7 @@ export default function SocialCarePage() {
         {/* Unpaid carers summary card */}
         {carers && (
           <ScrollReveal>
-          <section className="mb-12 bg-wiah-light rounded-lg p-8">
+          <section id="sec-carers" className="mb-12 bg-wiah-light rounded-lg p-8">
             <h3 className="text-lg font-bold text-wiah-black mb-4">
               The hidden workforce: unpaid carers
             </h3>
@@ -462,7 +474,7 @@ export default function SocialCarePage() {
         </ScrollReveal>
 
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>

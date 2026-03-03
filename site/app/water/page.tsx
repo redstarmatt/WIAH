@@ -9,6 +9,7 @@ import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -281,9 +282,17 @@ export default function WaterPage() {
           colour="#264653"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-sewage', label: 'Sewage' },
+          { id: 'sec-rivers', label: 'Rivers & Bathing' },
+          { id: 'sec-financials', label: 'Company Finances' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Sewage discharge hours"
             value={latestSewage ? fmtHours(latestSewage.totalHours) : '—'}
@@ -346,6 +355,9 @@ export default function WaterPage() {
           />
         </div>
         </ScrollReveal>
+
+        {/* ── Sewage ────────────────────────────────────────────────────── */}
+        <div id="sec-sewage">
 
         {/* Chart 1: Sewage discharge hours */}
         {sewageHoursSeries.length > 0 ? (
@@ -507,6 +519,11 @@ export default function WaterPage() {
           </div>
         )}
 
+        </div>{/* end sec-sewage */}
+
+        {/* ── Rivers & Bathing ──────────────────────────────────────────── */}
+        <div id="sec-rivers">
+
         {/* Chart 5: River health */}
         {riverSeries.length > 0 ? (
           <LineChart
@@ -584,6 +601,11 @@ export default function WaterPage() {
           </div>
         )}
 
+        </div>{/* end sec-rivers */}
+
+        {/* ── Company Finances ──────────────────────────────────────────── */}
+        <div id="sec-financials">
+
         {/* Chart: Dividends vs Capital Investment */}
         {capexDividendSeries.length > 0 ? (
           <LineChart
@@ -613,8 +635,10 @@ export default function WaterPage() {
         />
         </ScrollReveal>
 
+        </div>{/* end sec-financials */}
+
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>

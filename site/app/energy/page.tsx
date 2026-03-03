@@ -9,6 +9,7 @@ import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -235,9 +236,17 @@ export default function EnergyPage() {
           colour="#E63946"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-prices', label: 'Energy Prices' },
+          { id: 'sec-generation', label: 'Generation Mix' },
+          { id: 'sec-renewables', label: 'Renewables' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Renewable share"
               value={latestRenewable ? latestRenewable.pct.toFixed(1) : '\u2014'}
@@ -301,6 +310,7 @@ export default function EnergyPage() {
         </ScrollReveal>
 
         {/* Chart 1: Renewable electricity by source */}
+        <div id="sec-renewables">
         {renewableSourceSeries.length > 0 ? (
           <LineChart
             title="Renewable electricity by source, 2010\u20132024"
@@ -336,7 +346,10 @@ export default function EnergyPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
         )}
 
+        </div>{/* end sec-renewables */}
+
         {/* Chart 3: Electricity and gas price indices */}
+        <div id="sec-prices">
         {priceSeries.length > 0 ? (
           <LineChart
             title="Electricity and gas price indices, 2015\u20132026"
@@ -374,10 +387,12 @@ export default function EnergyPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
         )}
 
+        </div>{/* end sec-prices */}
+
         {/* Chart 5: Generation mix bar table for latest year */}
         {latestGeneration && (
           <ScrollReveal>
-            <section className="mb-16">
+            <section id="sec-generation" className="mb-16">
               <h2 className="text-xl font-bold text-wiah-black mb-1">
                 Generation mix, {latestGeneration.year}
               </h2>
@@ -449,7 +464,7 @@ export default function EnergyPage() {
         </ScrollReveal>
 
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>

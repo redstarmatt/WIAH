@@ -8,6 +8,7 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -190,9 +191,17 @@ export default function EnvironmentPage() {
           colour="#2A9D8F"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-emissions', label: 'Emissions' },
+          { id: 'sec-nature', label: 'Nature' },
+          { id: 'sec-air', label: 'Air Quality' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="GHG emissions"
             value={latestGhg ? latestGhg.mtCO2e.toFixed(0) : '—'}
@@ -250,6 +259,7 @@ export default function EnvironmentPage() {
         </ScrollReveal>
 
         {/* Chart 1: GHG with net-zero pathway */}
+        <div id="sec-emissions">
         {ghgSeries.length > 0 ? (
           <LineChart
             title="UK greenhouse gas emissions vs net-zero pathway, 1990–2050"
@@ -300,7 +310,10 @@ export default function EnvironmentPage() {
           </section>
         )}
 
+        </div>{/* end sec-emissions */}
+
         {/* Chart 2: Biodiversity */}
+        <div id="sec-nature">
         {biodiversitySeries.length > 0 ? (
           <LineChart
             title="UK species abundance index, 1970–2023"
@@ -320,7 +333,10 @@ export default function EnvironmentPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-nature */}
+
         {/* Chart 3: Air quality */}
+        <div id="sec-air">
         {pm25Series.length > 0 ? (
           <LineChart
             title="Air quality — PM2.5 concentrations, 2009–2023"
@@ -387,8 +403,10 @@ export default function EnvironmentPage() {
         />
         </ScrollReveal>
 
+        </div>{/* end sec-air */}
+
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>

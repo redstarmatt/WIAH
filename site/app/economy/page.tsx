@@ -9,6 +9,7 @@ import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation, TargetLine } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -328,9 +329,18 @@ export default function EconomyPage() {
           colour="#264653"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-prices', label: 'Prices & Wages' },
+          { id: 'sec-employment', label: 'Employment' },
+          { id: 'sec-productivity', label: 'Productivity' },
+          { id: 'sec-gdp', label: 'GDP & Debt' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="CPI inflation"
             value={latestInflation ? latestInflation.cpiPct.toFixed(1) : '—'}
@@ -414,6 +424,7 @@ export default function EconomyPage() {
         </ScrollReveal>
 
         {/* Chart 1: Inflation */}
+        <div id="sec-prices">
         {inflationSeries.length > 0 ? (
           <LineChart
             title="CPI annual inflation rate, 2010–2026"
@@ -452,7 +463,10 @@ export default function EconomyPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-prices */}
+
         {/* Chart 3: Employment rate */}
+        <div id="sec-employment">
         {employmentSeries.length > 0 ? (
           <LineChart
             title="Employment rate, 2010–2025"
@@ -490,7 +504,10 @@ export default function EconomyPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-employment */}
+
         {/* Chart 5: Productivity */}
+        <div id="sec-productivity">
         {productivitySeries.length > 0 ? (
           <LineChart
             title="Labour productivity, 2007–2025"
@@ -546,7 +563,10 @@ export default function EconomyPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-productivity */}
+
         {/* Chart 8: GDP quarterly growth */}
+        <div id="sec-gdp">
         {gdpGrowthSeries.length > 0 ? (
           <LineChart
             title="GDP quarterly growth, 2000–2025"
@@ -630,6 +650,8 @@ export default function EconomyPage() {
           </section>
         )}
 
+        </div>{/* end sec-gdp */}
+
         {/* Positive story */}
         <ScrollReveal>
         <PositiveCallout
@@ -642,7 +664,7 @@ export default function EconomyPage() {
         </ScrollReveal>
 
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>

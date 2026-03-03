@@ -9,6 +9,7 @@ import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -363,9 +364,18 @@ export default function EducationPage() {
           colour="#2A9D8F"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-attainment', label: 'Attainment' },
+          { id: 'sec-send', label: 'SEND' },
+          { id: 'sec-absence', label: 'Absence' },
+          { id: 'sec-workforce', label: 'Workforce' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Persistent absence"
             value={latestAbsence ? latestAbsence.persistentAbsencePct.toFixed(1) : '—'}
@@ -430,6 +440,7 @@ export default function EducationPage() {
         </ScrollReveal>
 
         {/* Chart 1: Persistent absence */}
+        <div id="sec-absence">
         {absenceSeries.length > 0 ? (
           <LineChart
             title="Pupil absence rates, 2006–2024"
@@ -448,7 +459,10 @@ export default function EducationPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-absence */}
+
         {/* Chart 2: EHCP caseload growth */}
+        <div id="sec-send">
         {ehcpCaseloadSeries.length > 0 ? (
           <LineChart
             title="Education, health and care plans, 2015–2025"
@@ -502,7 +516,10 @@ export default function EducationPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-send */}
+
         {/* Chart 4: Disadvantage gap index */}
+        <div id="sec-attainment">
         {gapIndexSeries.length > 0 ? (
           <LineChart
             title="Disadvantage gap index, 2010–2025"
@@ -590,7 +607,10 @@ export default function EducationPage() {
           </section>
         )}
 
+        </div>{/* end sec-attainment */}
+
         {/* Chart 6: Teacher vacancy rate */}
+        <div id="sec-workforce">
         {vacancySeries.length > 0 ? (
           <LineChart
             title="Teacher vacancy rate, 2010–2025"
@@ -717,6 +737,8 @@ export default function EducationPage() {
           </section>
         )}
 
+        </div>{/* end sec-workforce */}
+
         {/* Positive story */}
         <ScrollReveal>
         <PositiveCallout
@@ -728,7 +750,7 @@ export default function EducationPage() {
         </ScrollReveal>
 
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>

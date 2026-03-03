@@ -8,6 +8,7 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -159,9 +160,16 @@ export default function BroadbandPage() {
           colour="#264653"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-speeds', label: 'Speeds & Coverage' },
+          { id: 'sec-digital-divide', label: 'Digital Divide' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Median download speed"
             value={latestSpeed ? latestSpeed.medianMbps.toFixed(0) : '—'}
@@ -223,6 +231,7 @@ export default function BroadbandPage() {
         </ScrollReveal>
 
         {/* Chart 1: Speeds */}
+        <div id="sec-speeds">
         {speedSeries.length > 0 ? (
           <LineChart
             title="UK median broadband download speed, 2013–2024"
@@ -285,7 +294,10 @@ export default function BroadbandPage() {
           </section>
         )}
 
+        </div>{/* end sec-speeds */}
+
         {/* Chart 3: Rural vs urban */}
+        <div id="sec-digital-divide">
         {ruralUrbanSeries.length > 0 ? (
           <LineChart
             title="Rural vs urban broadband gap, 2019–2024"
@@ -332,8 +344,10 @@ export default function BroadbandPage() {
         />
         </ScrollReveal>
 
+        </div>{/* end sec-digital-divide */}
+
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>

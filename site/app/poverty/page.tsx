@@ -8,6 +8,7 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -130,9 +131,16 @@ export default function PovertyPage() {
           colour="#E63946"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-poverty-rates', label: 'Poverty Rates' },
+          { id: 'sec-food', label: 'Food & Destitution' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="People in relative poverty"
             value={latestPoverty ? `${latestPoverty.millionsPeople}M` : '—'}
@@ -194,6 +202,7 @@ export default function PovertyPage() {
         </ScrollReveal>
 
         {/* Chart 1: Relative poverty */}
+        <div id="sec-poverty-rates">
         {relativeSeries.length > 0 ? (
           <LineChart
             title="People in relative poverty, 2003–2023"
@@ -231,7 +240,10 @@ export default function PovertyPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-poverty-rates */}
+
         {/* Chart 3: Food banks */}
+        <div id="sec-food">
         {foodBankSeries.length > 0 ? (
           <LineChart
             title="Trussell Trust food parcels, 2013–2024"
@@ -303,8 +315,10 @@ export default function PovertyPage() {
         />
         </ScrollReveal>
 
+        </div>{/* end sec-food */}
+
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>

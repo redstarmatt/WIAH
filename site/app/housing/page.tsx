@@ -11,6 +11,7 @@ import RegionalMap from '@/components/charts/RegionalMap';
 import AreaLookup from '@/components/AreaLookup';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -379,9 +380,18 @@ export default function HousingPage() {
           colour="#F4A261"
         />
 
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-prices', label: 'House Prices' },
+          { id: 'sec-rent', label: 'Rents' },
+          { id: 'sec-by-region', label: 'By Region' },
+          { id: 'sec-stock', label: 'Housing Stock' },
+          { id: 'sec-context', label: 'Context' },
+        ]} />
+
         {/* Metric cards */}
         <ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="House price to earnings"
             value={latestAff ? latestAff.ratio.toFixed(1) : '—'}
@@ -498,6 +508,7 @@ export default function HousingPage() {
         )}
 
         {/* Chart 1: Affordability ratio — England, London, North East */}
+        <div id="sec-prices">
         {affordabilitySeries.length > 0 ? (
           <LineChart
             title="House price to earnings ratio, 1997–2024"
@@ -571,7 +582,10 @@ export default function HousingPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-prices */}
+
         {/* Chart 5: Monthly rents — England + London */}
+        <div id="sec-rent">
         {rentSeries.length > 0 ? (
           <LineChart
             title="Average monthly private rent, 2005–2025"
@@ -607,7 +621,10 @@ export default function HousingPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-rent */}
+
         {/* Regional affordability table */}
+        <div id="sec-by-region">
         {data && Object.keys(data.regional.affordability).length > 0 && (
           <section className="mb-12">
             <h3 className="text-lg font-bold text-wiah-black mb-1">
@@ -727,7 +744,10 @@ export default function HousingPage() {
           </section>
         )}
 
+        </div>{/* end sec-by-region */}
+
         {/* Chart: Housing stock by tenure */}
+        <div id="sec-stock">
         {tenureSeries.length > 0 ? (
           <LineChart
             title="Housing stock by tenure, 1991–2024"
@@ -766,6 +786,8 @@ export default function HousingPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        </div>{/* end sec-stock */}
+
         {/* Positive story */}
         <ScrollReveal>
         <PositiveCallout
@@ -777,7 +799,7 @@ export default function HousingPage() {
         </ScrollReveal>
 
         {/* Context */}
-        <section className="max-w-2xl mt-8 mb-12">
+        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
