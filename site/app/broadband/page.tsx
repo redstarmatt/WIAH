@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import SiteName from '@/components/SiteName';
+import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
@@ -139,32 +138,52 @@ export default function BroadbandPage() {
 
   return (
     <>
-      {/* Sticky nav */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-wiah-border px-6 py-3">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Link href="/"><SiteName size="nav" /></Link>
-          <span className="text-wiah-mid text-sm font-mono">Broadband & Digital</span>
-          <Link href="/" className="text-sm text-wiah-blue hover:underline">&larr; All topics</Link>
-        </div>
-      </nav>
+      <TopicNav topic="Broadband & Digital" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Broadband & Digital"
           question="Are You Actually Connected?"
           finding={
-            latestSpeed && latestFibre && latestUsage
-              ? `Median broadband speeds have risen eightfold since 2013 to ${latestSpeed.medianMbps} Mbps. ${latestFibre.pct}% of premises now have full fibre — up from just 2% in 2017. But ${latestRural?.ruralNot30MbpsPct}% of rural premises still can't receive 30 Mbps, and an estimated 2 million adults have never used the internet.`
-              : 'Median broadband speed has risen 8× since 2013. Full fibre reaches 68% of homes. But rural Britain lags far behind and 2 million adults remain offline.'
+            latestFibre && latestRural
+              ? `Full fibre broadband has reached ${latestFibre.pct}% of UK premises — but ${latestRural.ruralNot30MbpsPct}% of rural homes still can't get the minimum 30 Mbps standard.`
+              : 'Full fibre reaches 68% of UK homes — but rural Britain is still waiting.'
           }
           colour="#264653"
         />
+
+        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              UK broadband infrastructure has transformed in the past decade. The arrival of full fibre
+              — a physical optical cable to the premises, replacing the old copper telephone line —
+              has driven an eightfold increase in median speeds since 2013. BT Openreach, Virgin Media O2,
+              and a wave of smaller &apos;altnet&apos; providers have collectively reached 68% of premises with
+              full fibre by 2024, up from just 2% in 2017.
+            </p>
+            <p>
+              The rural gap is the persistent problem. While urban premises are almost universally connected,
+              6.5% of rural homes still cannot receive 30 Mbps — the minimum Ofcom considers decent for
+              modern use. In remote areas of Scotland, Wales, and Northern Ireland, the figure can exceed
+              20%. The government&apos;s Project Gigabit aims to close this gap with subsidised rollout,
+              but rural roll-out remains behind schedule.
+            </p>
+            <p>
+              Digital exclusion matters because more and more services — banking, benefits claims,
+              job applications, GP appointments — are moving online. An estimated 2 million adults have
+              never used the internet. This group is heavily skewed towards the over-75s, people with
+              disabilities, and those in the lowest income quintile. For them, digital exclusion compounds
+              other disadvantages. 5G is rolling out rapidly in urban areas but remains sparse across
+              the countryside — and indoor coverage, which actually matters for most usage, lags well
+              behind the headline figures.
+            </p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-speeds', label: 'Speeds & Coverage' },
           { id: 'sec-digital-divide', label: 'Digital Divide' },
-          { id: 'sec-context', label: 'Context' },
         ]} />
 
         {/* Metric cards */}
@@ -345,40 +364,6 @@ export default function BroadbandPage() {
         </ScrollReveal>
 
         </div>{/* end sec-digital-divide */}
-
-        {/* Context */}
-        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              UK broadband infrastructure has transformed in the past decade. The arrival of full fibre
-              — a physical optical cable to the premises, replacing the old copper telephone line —
-              has driven an eightfold increase in median speeds since 2013. BT Openreach, Virgin Media O2,
-              and a wave of smaller &apos;altnet&apos; providers have collectively reached 68% of premises with
-              full fibre by 2024, up from just 2% in 2017.
-            </p>
-            <p>
-              The rural gap is the persistent problem. While urban premises are almost universally connected,
-              6.5% of rural homes still cannot receive 30 Mbps — the minimum Ofcom considers decent for
-              modern use. In remote areas of Scotland, Wales, and Northern Ireland, the figure can exceed
-              20%. The government&apos;s Project Gigabit aims to close this gap with subsidised rollout,
-              but rural roll-out remains behind schedule.
-            </p>
-            <p>
-              Digital exclusion matters because more and more services — banking, benefits claims,
-              job applications, GP appointments — are moving online. An estimated 2 million adults have
-              never used the internet. This group is heavily skewed towards the over-75s, people with
-              disabilities, and those in the lowest income quintile. For them, digital exclusion compounds
-              other disadvantages.
-            </p>
-            <p>
-              5G is rolling out rapidly in urban areas but remains sparse across the countryside. While
-              91% of premises can get some outdoor 5G signal from at least one operator, the UK&apos;s
-              mountainous regions have large coverage gaps. Indoor 5G coverage — which actually matters
-              for most usage — lags significantly behind the headline figures.
-            </p>
-          </div>
-        </section>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">
