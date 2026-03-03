@@ -1,5 +1,18 @@
 import type { Metadata } from 'next';
+import { Lora, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
+
+const lora = Lora({
+  subsets: ['latin'],
+  variable: '--font-editorial',
+  display: 'swap',
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://whatisactuallyhappening.uk'),
@@ -19,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${lora.variable} ${jakarta.variable}`}>
       <body className="antialiased bg-white text-wiah-black">
         {children}
       </body>

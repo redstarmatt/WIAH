@@ -22,7 +22,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        editorial: ['Georgia', 'Times New Roman', 'serif'],
+        editorial: ['var(--font-editorial)', 'Georgia', 'serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
         mono: ['SF Mono', 'Fira Code', 'Consolas', 'monospace'],
       },
     },
