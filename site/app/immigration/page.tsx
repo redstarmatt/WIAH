@@ -7,6 +7,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -376,6 +377,7 @@ export default function ImmigrationPage() {
         />
 
         {/* Metric cards */}
+        <ScrollReveal>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Net migration"
@@ -423,6 +425,7 @@ export default function ImmigrationPage() {
             onExpand={smallBoatsSeries.length > 0 ? () => setExpanded('boats') : undefined}
           />
         </div>
+        </ScrollReveal>
 
         {/* Chart 1: Net migration by nationality */}
         {netMigSeries.length > 0 ? (

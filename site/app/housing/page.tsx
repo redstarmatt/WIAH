@@ -7,6 +7,8 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -287,6 +289,7 @@ export default function HousingPage() {
         />
 
         {/* Metric cards */}
+        <ScrollReveal>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="House price to earnings"
@@ -356,6 +359,7 @@ export default function HousingPage() {
             onExpand={rentSeries.length > 0 ? () => setExpanded('rents') : undefined}
           />
         </div>
+        </ScrollReveal>
 
         {/* Chart 1: Affordability ratio — England, London, North East */}
         {affordabilitySeries.length > 0 ? (
@@ -559,6 +563,16 @@ export default function HousingPage() {
             </p>
           </section>
         )}
+
+        {/* Positive story */}
+        <ScrollReveal>
+        <PositiveCallout
+          title="What's improving"
+          value="7.7x"
+          description="The house price to earnings ratio fell from its 2021 peak of 9.1x to 7.7x in 2024 — the biggest sustained improvement in a decade. Earnings growth has finally outpaced house prices for three consecutive years."
+          source="Source: ONS — Housing affordability in England and Wales, 2024."
+        />
+        </ScrollReveal>
 
         {/* Context */}
         <section className="max-w-2xl mt-8 mb-12">

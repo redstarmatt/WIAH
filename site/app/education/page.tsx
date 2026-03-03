@@ -7,6 +7,8 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -362,6 +364,7 @@ export default function EducationPage() {
         />
 
         {/* Metric cards */}
+        <ScrollReveal>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Persistent absence"
@@ -421,6 +424,7 @@ export default function EducationPage() {
             onExpand={gapIndexSeries.length > 0 ? () => setExpanded('gap') : undefined}
           />
         </div>
+        </ScrollReveal>
 
         {/* Chart 1: Persistent absence */}
         {absenceSeries.length > 0 ? (
@@ -709,6 +713,16 @@ export default function EducationPage() {
             </p>
           </section>
         )}
+
+        {/* Positive story */}
+        <ScrollReveal>
+        <PositiveCallout
+          title="What's improving"
+          value="+21%"
+          description="Median graduate earnings five years after graduation have risen from £25,900 to £31,400 over seven years. More than 86% of graduates are in sustained employment or further study, a rate that has remained stable even through the pandemic."
+          source="Source: DfE — LEO Graduate and Postgraduate Outcomes, tax year 2022/23."
+        />
+        </ScrollReveal>
 
         {/* Context */}
         <section className="max-w-2xl mt-8 mb-12">

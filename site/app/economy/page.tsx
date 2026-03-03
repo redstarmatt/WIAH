@@ -7,6 +7,8 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation, TargetLine } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -327,6 +329,7 @@ export default function EconomyPage() {
         />
 
         {/* Metric cards */}
+        <ScrollReveal>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="CPI inflation"
@@ -405,6 +408,7 @@ export default function EconomyPage() {
             onExpand={labourDetailSeries.length > 0 ? () => setExpanded('labour') : undefined}
           />
         </div>
+        </ScrollReveal>
 
         {/* Chart 1: Inflation */}
         {inflationSeries.length > 0 ? (
@@ -622,6 +626,17 @@ export default function EconomyPage() {
             </p>
           </section>
         )}
+
+        {/* Positive story */}
+        <ScrollReveal>
+        <PositiveCallout
+          title="What's improving"
+          value="-7%"
+          unit="inequality"
+          description="Income inequality has fallen steadily since its 2020 pandemic peak. The Gini coefficient dropped from 35.4 to 32.9 — four consecutive years of declining inequality. Real weekly wages have reached £527, recovering to their highest level in over a decade."
+          source="Source: ONS — Household income inequality, 2024."
+        />
+        </ScrollReveal>
 
         {/* Context */}
         <section className="max-w-2xl mt-8 mb-12">

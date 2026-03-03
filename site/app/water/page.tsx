@@ -7,6 +7,8 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -231,6 +233,7 @@ export default function WaterPage() {
         />
 
         {/* Metric cards */}
+        <ScrollReveal>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Sewage discharge hours"
@@ -290,6 +293,7 @@ export default function WaterPage() {
             onExpand={bathingCombined.length > 0 ? () => setExpanded('bathing') : undefined}
           />
         </div>
+        </ScrollReveal>
 
         {/* Chart 1: Sewage discharge hours */}
         {sewageHoursSeries.length > 0 ? (
@@ -527,6 +531,17 @@ export default function WaterPage() {
             </p>
           </div>
         )}
+
+        {/* Positive story */}
+        <ScrollReveal>
+        <PositiveCallout
+          title="What's improving"
+          value="100%"
+          unit="monitored"
+          description="For the first time, all 14,182 storm overflows in England are now monitored — up from just 862 in 2016. The true scale of sewage discharge is finally visible, creating accountability that was previously impossible."
+          source="Source: Environment Agency — Event Duration Monitoring data, 2024."
+        />
+        </ScrollReveal>
 
         {/* Context */}
         <section className="max-w-2xl mt-8 mb-12">

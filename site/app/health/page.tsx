@@ -8,6 +8,8 @@ import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
 import PostcodeLookup from '@/components/PostcodeLookup';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -385,6 +387,7 @@ export default function HealthPage() {
         />
 
         {/* Metric cards */}
+        <ScrollReveal>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           <MetricCard
             label="NHS waiting list"
@@ -467,8 +470,10 @@ export default function HealthPage() {
             onExpand={ambulanceSeries.length > 0 ? () => setExpanded('cat1') : undefined}
           />
         </div>
+        </ScrollReveal>
 
         {/* Postcode lookup */}
+        <ScrollReveal>
         <div className="mb-16 p-6 bg-wiah-light rounded-lg">
           <h2 className="text-lg font-bold text-wiah-black mb-2">How is your area doing?</h2>
           <p className="text-sm text-wiah-mid mb-4">
@@ -481,6 +486,7 @@ export default function HealthPage() {
             nationalCat2={latestAmb?.cat2MeanMins}
           />
         </div>
+        </ScrollReveal>
 
         {/* RTT Chart 1: Total waiting list size */}
         {rttTotalSeries.length > 0 ? (
@@ -834,6 +840,16 @@ export default function HealthPage() {
         ) : (
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
         )}
+
+        {/* Positive story */}
+        <ScrollReveal>
+        <PositiveCallout
+          title="What's improving"
+          value="+56%"
+          description="Five-year lung cancer survival has risen from 10.4% to 16.2% over the past decade. Breast cancer five-year survival now exceeds 85%, and melanoma exceeds 91%. Earlier diagnosis and better treatments are saving thousands more lives each year."
+          source="Source: ONS — Cancer survival in England, adults diagnosed 2013–2017."
+        />
+        </ScrollReveal>
 
         {/* Context */}
         <section className="max-w-2xl mt-8 mb-12">

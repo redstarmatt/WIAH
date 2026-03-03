@@ -8,6 +8,8 @@ import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import FunnelChart, { FunnelStage } from '@/components/charts/FunnelChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -324,6 +326,7 @@ export default function JusticePage() {
         />
 
         {/* Metric cards */}
+        <ScrollReveal>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Crimes leading to charge"
@@ -383,6 +386,7 @@ export default function JusticePage() {
             onExpand={prisonPopSeries.length > 0 ? () => setExpanded('prison') : undefined}
           />
         </div>
+        </ScrollReveal>
 
         {/* Chart 1: Justice Funnel */}
         {data ? (
@@ -612,6 +616,16 @@ export default function JusticePage() {
             </p>
           </section>
         )}
+
+        {/* Positive story */}
+        <ScrollReveal>
+        <PositiveCallout
+          title="What's improving"
+          value="-4.9%"
+          description="Total recorded crime (excluding fraud) fell from 5.58 million offences in 2022/23 to 5.31 million in 2024/25. Burglary is down 11%, criminal damage down 13%, and violent crime down 8% from their recent peaks."
+          source="Source: ONS — Crime in England and Wales, year ending December 2024."
+        />
+        </ScrollReveal>
 
         {/* Context */}
         <section className="max-w-2xl mt-8 mb-12">
