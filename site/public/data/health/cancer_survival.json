@@ -1,0 +1,484 @@
+{
+  "byCancerSite": [
+    {
+      "site": "Testis",
+      "sex": "Men",
+      "oneYearSurvival": 96.5,
+      "fiveYearSurvival": 95.3,
+      "patients": 9466
+    },
+    {
+      "site": "Melanoma of Skin",
+      "sex": "Persons",
+      "oneYearSurvival": 98.2,
+      "fiveYearSurvival": 91.3,
+      "patients": 62656
+    },
+    {
+      "site": "Thyroid",
+      "sex": "Persons",
+      "oneYearSurvival": 91.4,
+      "fiveYearSurvival": 87.4,
+      "patients": 14922
+    },
+    {
+      "site": "Prostate",
+      "sex": "Men",
+      "oneYearSurvival": 96.6,
+      "fiveYearSurvival": 86.6,
+      "patients": 204175
+    },
+    {
+      "site": "Breast",
+      "sex": "Women",
+      "oneYearSurvival": 95.8,
+      "fiveYearSurvival": 85.0,
+      "patients": 210338
+    },
+    {
+      "site": "Hodgkin Lymphoma",
+      "sex": "Persons",
+      "oneYearSurvival": 90.6,
+      "fiveYearSurvival": 82.2,
+      "patients": 8390
+    },
+    {
+      "site": "Uterus",
+      "sex": "Women",
+      "oneYearSurvival": 89.5,
+      "fiveYearSurvival": 75.6,
+      "patients": 38096
+    },
+    {
+      "site": "Vulva",
+      "sex": "Women",
+      "oneYearSurvival": 86.1,
+      "fiveYearSurvival": 67.1,
+      "patients": 5287
+    },
+    {
+      "site": "Non-Hodgkin Lymphoma",
+      "sex": "Persons",
+      "oneYearSurvival": 79.4,
+      "fiveYearSurvival": 65.6,
+      "patients": 56350
+    },
+    {
+      "site": "Kidney",
+      "sex": "Persons",
+      "oneYearSurvival": 79.3,
+      "fiveYearSurvival": 63.8,
+      "patients": 44019
+    },
+    {
+      "site": "Cervix",
+      "sex": "Women",
+      "oneYearSurvival": 81.1,
+      "fiveYearSurvival": 61.4,
+      "patients": 12849
+    },
+    {
+      "site": "Kidney and Urinary Tract",
+      "sex": "Persons",
+      "oneYearSurvival": 78.3,
+      "fiveYearSurvival": 61.1,
+      "patients": 51041
+    },
+    {
+      "site": "Rectal",
+      "sex": "Persons",
+      "oneYearSurvival": 83.1,
+      "fiveYearSurvival": 59.8,
+      "patients": 56512
+    },
+    {
+      "site": "Anus",
+      "sex": "Persons",
+      "oneYearSurvival": 84.8,
+      "fiveYearSurvival": 58.7,
+      "patients": 5836
+    },
+    {
+      "site": "Colorectal",
+      "sex": "Persons",
+      "oneYearSurvival": 78.3,
+      "fiveYearSurvival": 58.4,
+      "patients": 166013
+    },
+    {
+      "site": "Colon",
+      "sex": "Persons",
+      "oneYearSurvival": 76.0,
+      "fiveYearSurvival": 57.4,
+      "patients": 111803
+    },
+    {
+      "site": "Leukaemia",
+      "sex": "Persons",
+      "oneYearSurvival": 72.4,
+      "fiveYearSurvival": 53.5,
+      "patients": 39534
+    },
+    {
+      "site": "Bladder",
+      "sex": "Persons",
+      "oneYearSurvival": 74.1,
+      "fiveYearSurvival": 52.6,
+      "patients": 42642
+    },
+    {
+      "site": "Myeloma",
+      "sex": "Persons",
+      "oneYearSurvival": 82.7,
+      "fiveYearSurvival": 52.3,
+      "patients": 24019
+    },
+    {
+      "site": "Urinary Tract",
+      "sex": "Persons",
+      "oneYearSurvival": 70.8,
+      "fiveYearSurvival": 44.5,
+      "patients": 7141
+    },
+    {
+      "site": "Ovary",
+      "sex": "Women",
+      "oneYearSurvival": 71.7,
+      "fiveYearSurvival": 42.6,
+      "patients": 30601
+    },
+    {
+      "site": "Stomach",
+      "sex": "Persons",
+      "oneYearSurvival": 47.4,
+      "fiveYearSurvival": 21.6,
+      "patients": 26763
+    },
+    {
+      "site": "Oesophagus",
+      "sex": "Persons",
+      "oneYearSurvival": 46.5,
+      "fiveYearSurvival": 17.0,
+      "patients": 37169
+    },
+    {
+      "site": "Lung",
+      "sex": "Persons",
+      "oneYearSurvival": 40.6,
+      "fiveYearSurvival": 16.2,
+      "patients": 183627
+    },
+    {
+      "site": "Liver",
+      "sex": "Persons",
+      "oneYearSurvival": 38.1,
+      "fiveYearSurvival": 12.7,
+      "patients": 23651
+    },
+    {
+      "site": "Brain",
+      "sex": "Persons",
+      "oneYearSurvival": 39.9,
+      "fiveYearSurvival": 12.2,
+      "patients": 20490
+    },
+    {
+      "site": "Pancreas",
+      "sex": "Persons",
+      "oneYearSurvival": 25.4,
+      "fiveYearSurvival": 7.3,
+      "patients": 41399
+    },
+    {
+      "site": "Mesothelioma",
+      "sex": "Persons",
+      "oneYearSurvival": 44.5,
+      "fiveYearSurvival": 6.5,
+      "patients": 11610
+    }
+  ],
+  "trends": {
+    "Lung": [
+      {
+        "period": "2006-2010",
+        "midYear": 2008,
+        "oneYearSurvival": 31.9,
+        "fiveYearSurvival": 10.4
+      },
+      {
+        "period": "2007-2011",
+        "midYear": 2009,
+        "oneYearSurvival": 33.4,
+        "fiveYearSurvival": 11.0
+      },
+      {
+        "period": "2008-2012",
+        "midYear": 2010,
+        "oneYearSurvival": 34.7,
+        "fiveYearSurvival": 12.4
+      },
+      {
+        "period": "2009-2013",
+        "midYear": 2011,
+        "oneYearSurvival": 36.0,
+        "fiveYearSurvival": 13.0
+      },
+      {
+        "period": "2010-2014",
+        "midYear": 2012,
+        "oneYearSurvival": 37.0,
+        "fiveYearSurvival": 13.5
+      },
+      {
+        "period": "2011-2015",
+        "midYear": 2013,
+        "oneYearSurvival": 38.4,
+        "fiveYearSurvival": 14.2
+      },
+      {
+        "period": "2013-2017",
+        "midYear": 2015,
+        "oneYearSurvival": 40.6,
+        "fiveYearSurvival": 16.2
+      }
+    ],
+    "Colorectal": [
+      {
+        "period": "2006-2010",
+        "midYear": 2008,
+        "oneYearSurvival": 76.4,
+        "fiveYearSurvival": 57.9
+      },
+      {
+        "period": "2007-2011",
+        "midYear": 2009,
+        "oneYearSurvival": 77.2,
+        "fiveYearSurvival": 58.3
+      },
+      {
+        "period": "2008-2012",
+        "midYear": 2010,
+        "oneYearSurvival": 78.0,
+        "fiveYearSurvival": 59.6
+      },
+      {
+        "period": "2009-2013",
+        "midYear": 2011,
+        "oneYearSurvival": 78.5,
+        "fiveYearSurvival": 59.6
+      },
+      {
+        "period": "2010-2014",
+        "midYear": 2012,
+        "oneYearSurvival": 78.4,
+        "fiveYearSurvival": 59.4
+      },
+      {
+        "period": "2011-2015",
+        "midYear": 2013,
+        "oneYearSurvival": 78.5,
+        "fiveYearSurvival": 59.0
+      },
+      {
+        "period": "2013-2017",
+        "midYear": 2015,
+        "oneYearSurvival": 78.3,
+        "fiveYearSurvival": 58.4
+      }
+    ],
+    "Breast": [
+      {
+        "period": "2006-2010",
+        "midYear": 2008,
+        "oneYearSurvival": 94.5,
+        "fiveYearSurvival": 83.6
+      },
+      {
+        "period": "2007-2011",
+        "midYear": 2009,
+        "oneYearSurvival": 94.9,
+        "fiveYearSurvival": 82.8
+      },
+      {
+        "period": "2008-2012",
+        "midYear": 2010,
+        "oneYearSurvival": 95.1,
+        "fiveYearSurvival": 84.1
+      },
+      {
+        "period": "2009-2013",
+        "midYear": 2011,
+        "oneYearSurvival": 95.7,
+        "fiveYearSurvival": 85.6
+      },
+      {
+        "period": "2010-2014",
+        "midYear": 2012,
+        "oneYearSurvival": 95.5,
+        "fiveYearSurvival": 85.0
+      },
+      {
+        "period": "2011-2015",
+        "midYear": 2013,
+        "oneYearSurvival": 95.7,
+        "fiveYearSurvival": 85.0
+      },
+      {
+        "period": "2013-2017",
+        "midYear": 2015,
+        "oneYearSurvival": 95.8,
+        "fiveYearSurvival": 85.0
+      }
+    ],
+    "Prostate": [
+      {
+        "period": "2006-2010",
+        "midYear": 2008,
+        "oneYearSurvival": 94.6,
+        "fiveYearSurvival": 84.9
+      },
+      {
+        "period": "2007-2011",
+        "midYear": 2009,
+        "oneYearSurvival": 95.1,
+        "fiveYearSurvival": 84.6
+      },
+      {
+        "period": "2008-2012",
+        "midYear": 2010,
+        "oneYearSurvival": 95.5,
+        "fiveYearSurvival": 86.6
+      },
+      {
+        "period": "2009-2013",
+        "midYear": 2011,
+        "oneYearSurvival": 96.0,
+        "fiveYearSurvival": 87.3
+      },
+      {
+        "period": "2010-2014",
+        "midYear": 2012,
+        "oneYearSurvival": 96.1,
+        "fiveYearSurvival": 86.8
+      },
+      {
+        "period": "2011-2015",
+        "midYear": 2013,
+        "oneYearSurvival": 96.3,
+        "fiveYearSurvival": 86.6
+      },
+      {
+        "period": "2013-2017",
+        "midYear": 2015,
+        "oneYearSurvival": 96.6,
+        "fiveYearSurvival": 86.6
+      }
+    ],
+    "Pancreas": [
+      {
+        "period": "2006-2010",
+        "midYear": 2008,
+        "oneYearSurvival": 20.0,
+        "fiveYearSurvival": 4.8
+      },
+      {
+        "period": "2007-2011",
+        "midYear": 2009,
+        "oneYearSurvival": 20.9,
+        "fiveYearSurvival": 5.4
+      },
+      {
+        "period": "2008-2012",
+        "midYear": 2010,
+        "oneYearSurvival": 21.2,
+        "fiveYearSurvival": 5.8
+      },
+      {
+        "period": "2009-2013",
+        "midYear": 2011,
+        "oneYearSurvival": 22.3,
+        "fiveYearSurvival": 5.7
+      },
+      {
+        "period": "2010-2014",
+        "midYear": 2012,
+        "oneYearSurvival": 23.0,
+        "fiveYearSurvival": 5.9
+      },
+      {
+        "period": "2011-2015",
+        "midYear": 2013,
+        "oneYearSurvival": 23.6,
+        "fiveYearSurvival": 6.3
+      },
+      {
+        "period": "2013-2017",
+        "midYear": 2015,
+        "oneYearSurvival": 25.4,
+        "fiveYearSurvival": 7.3
+      }
+    ],
+    "Melanoma": [
+      {
+        "period": "2006-2010",
+        "midYear": 2008,
+        "oneYearSurvival": 96.7,
+        "fiveYearSurvival": 88.5
+      },
+      {
+        "period": "2007-2011",
+        "midYear": 2009,
+        "oneYearSurvival": 97.0,
+        "fiveYearSurvival": 88.9
+      },
+      {
+        "period": "2008-2012",
+        "midYear": 2010,
+        "oneYearSurvival": 97.2,
+        "fiveYearSurvival": 89.8
+      },
+      {
+        "period": "2009-2013",
+        "midYear": 2011,
+        "oneYearSurvival": 97.6,
+        "fiveYearSurvival": 90.1
+      },
+      {
+        "period": "2010-2014",
+        "midYear": 2012,
+        "oneYearSurvival": 97.6,
+        "fiveYearSurvival": 90.1
+      },
+      {
+        "period": "2011-2015",
+        "midYear": 2013,
+        "oneYearSurvival": 97.9,
+        "fiveYearSurvival": 90.8
+      },
+      {
+        "period": "2013-2017",
+        "midYear": 2015,
+        "oneYearSurvival": 98.2,
+        "fiveYearSurvival": 91.3
+      }
+    ]
+  },
+  "latestPeriod": "2013-2017",
+  "metadata": {
+    "sources": [
+      {
+        "name": "Office for National Statistics",
+        "dataset": "Cancer survival in England \u2014 adults diagnosed 2013\u20132017",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/cancersurvivalratescancersurvivalinenglandadultsdiagnosed",
+        "frequency": "annual (with ~2yr publication lag)",
+        "retrieved": "2026-03-03T07:34:00.740120"
+      }
+    ],
+    "methodology": "Net survival (age-standardised) using the Pohar Perme estimator. 5-year rolling cohort periods. Persons where available; sex-specific for Breast (Women), Prostate (Men), etc.",
+    "knownIssues": [
+      "Methodology changed in 2016 (back-series recalculated from 2006-2010 onwards)",
+      "Publication lag: latest data covers patients diagnosed 2013-2017",
+      "':' in source data means insufficient data for robust estimate"
+    ]
+  }
+}

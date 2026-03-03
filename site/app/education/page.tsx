@@ -60,6 +60,34 @@ interface TeacherData {
   pupilTeacherRatio: { timeSeries: PtrPoint[]; latest: PtrPoint | null };
 }
 
+interface GradEarningsPoint {
+  taxYear: string;
+  median1yr: number | null;
+  median3yr: number | null;
+  median5yr: number | null;
+  median10yr: number | null;
+}
+
+interface GradEmploymentPoint {
+  taxYear: string;
+  employment1yr: number | null;
+  employment5yr: number | null;
+}
+
+interface GradSubject {
+  subject: string;
+  medianEarnings5yr: number;
+  employmentPct: number | null;
+  graduates: number;
+}
+
+interface GradData {
+  earnings: { timeSeries: GradEarningsPoint[] };
+  employment: { timeSeries: GradEmploymentPoint[] };
+  bySubject: GradSubject[];
+  latestTaxYear: string;
+}
+
 interface EducationData {
   national: {
     absence: { timeSeries: AbsencePoint[] };
@@ -109,6 +137,7 @@ function sparkFrom(arr: number[], n = 12) {
 export default function EducationPage() {
   const [data, setData] = useState<EducationData | null>(null);
   const [teacherData, setTeacherData] = useState<TeacherData | null>(null);
+  const [gradData, setGradData] = useState<GradData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -119,6 +148,10 @@ export default function EducationPage() {
     fetch('/data/education/teacher_workforce.json')
       .then(r => r.json())
       .then(setTeacherData)
+      .catch(console.error);
+    fetch('/data/education/graduate_outcomes.json')
+      .then(r => r.json())
+      .then(setGradData)
       .catch(console.error);
   }, []);
 
@@ -258,6 +291,33 @@ export default function EducationPage() {
           value: d.pupilTeacherRatio,
         })),
       }]
+    : [];
+
+  // 8. Graduate median earnings (1yr, 3yr, 5yr post-graduation)
+  function taxYearToDate(ty: string): Date {
+    const start = parseInt(ty.split('/')[0]);
+    return new Date(start, 6, 1); // July of start year
+  }
+
+  const gradEarningsSeries: Series[] = gradData
+    ? [
+        { id: 'earn-1yr', label: '1 year after graduation', colour: '#F4A261',
+          data: gradData.earnings.timeSeries.filter(d => d.median1yr).map(d => ({ date: taxYearToDate(d.taxYear), value: d.median1yr! })) },
+        { id: 'earn-3yr', label: '3 years after', colour: '#264653',
+          data: gradData.earnings.timeSeries.filter(d => d.median3yr).map(d => ({ date: taxYearToDate(d.taxYear), value: d.median3yr! })) },
+        { id: 'earn-5yr', label: '5 years after', colour: '#2A9D8F',
+          data: gradData.earnings.timeSeries.filter(d => d.median5yr).map(d => ({ date: taxYearToDate(d.taxYear), value: d.median5yr! })) },
+      ]
+    : [];
+
+  // 9. Graduate employment rate
+  const gradEmploymentSeries: Series[] = gradData
+    ? [
+        { id: 'emp-1yr', label: '1 year after graduation', colour: '#F4A261',
+          data: gradData.employment.timeSeries.filter(d => d.employment1yr).map(d => ({ date: taxYearToDate(d.taxYear), value: d.employment1yr! })) },
+        { id: 'emp-5yr', label: '5 years after', colour: '#2A9D8F',
+          data: gradData.employment.timeSeries.filter(d => d.employment5yr).map(d => ({ date: taxYearToDate(d.taxYear), value: d.employment5yr! })) },
+      ]
     : [];
 
   // ── Metric values ────────────────────────────────────────────────────────
@@ -562,6 +622,94 @@ export default function EducationPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        {/* Chart 8: Median graduate earnings */}
+        {gradEarningsSeries.length > 0 ? (
+          <LineChart
+            title="Median graduate earnings by years after graduation, 2016–2023"
+            subtitle="Median annualised earnings (£, nominal) for UK-domiciled first degree graduates, England."
+            series={gradEarningsSeries}
+            yLabel="Median earnings (£)"
+            source={{
+              name: 'Department for Education',
+              dataset: 'LEO Graduate and Postgraduate Outcomes',
+              frequency: 'annual',
+              url: 'https://explore-education-statistics.service.gov.uk/find-statistics/leo-graduate-and-postgraduate-outcomes',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 9: Graduate employment rate */}
+        {gradEmploymentSeries.length > 0 ? (
+          <LineChart
+            title="Sustained graduate employment rate, 2016–2023"
+            subtitle="Share of graduates in sustained employment or further study (%), England."
+            series={gradEmploymentSeries}
+            yLabel="Employment rate (%)"
+            source={{
+              name: 'Department for Education',
+              dataset: 'LEO Graduate and Postgraduate Outcomes',
+              frequency: 'annual',
+              url: 'https://explore-education-statistics.service.gov.uk/find-statistics/leo-graduate-and-postgraduate-outcomes',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 10: Graduate earnings by subject */}
+        {gradData && gradData.bySubject.length > 0 && (
+          <section className="mb-12">
+            <h3 className="text-lg font-bold text-wiah-black mb-1">
+              Graduate earnings by subject, 5 years after graduation
+            </h3>
+            <p className="text-sm text-wiah-mid mb-4">
+              Median annualised earnings (£, nominal) for first degree graduates, England.
+              Latest cohort: tax year {gradData.bySubject[0] ? gradData.latestTaxYear : ''}.
+            </p>
+            <div className="space-y-1">
+              {gradData.bySubject.map((s, i) => {
+                const maxEarn = gradData.bySubject[0]?.medianEarnings5yr ?? 1;
+                const pct = (s.medianEarnings5yr / maxEarn) * 100;
+                const barColour =
+                  s.medianEarnings5yr >= 40000
+                    ? 'bg-[#2A9D8F]'
+                    : s.medianEarnings5yr >= 28000
+                    ? 'bg-[#F4A261]'
+                    : 'bg-[#E63946]';
+                return (
+                  <div key={i} className="flex items-center gap-2 text-xs">
+                    <span className="w-48 text-right text-wiah-black truncate flex-shrink-0">
+                      {s.subject}
+                    </span>
+                    <div className="flex-1 bg-gray-100 rounded h-5 relative">
+                      <div
+                        className={`${barColour} h-5 rounded`}
+                        style={{ width: `${pct}%` }}
+                      />
+                    </div>
+                    <span className="font-mono text-wiah-black w-16 text-right flex-shrink-0">
+                      £{s.medianEarnings5yr.toLocaleString()}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+            <p className="font-mono text-[11px] text-wiah-mid mt-3">
+              Source: DfE — LEO Graduate and Postgraduate Outcomes (annual).{' '}
+              <a
+                href="https://explore-education-statistics.service.gov.uk/find-statistics/leo-graduate-and-postgraduate-outcomes"
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:text-wiah-blue"
+              >
+                Dataset ↗
+              </a>
+            </p>
+          </section>
+        )}
+
         {/* Context */}
         <section className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
@@ -621,6 +769,18 @@ export default function EducationPage() {
                   rel="noreferrer"
                 >
                   DfE &mdash; School Workforce in England: Vacancies &amp; Pupil-Teacher Ratios (annual)
+                </a>
+              </li>
+            )}
+            {gradData && (
+              <li>
+                <a
+                  href="https://explore-education-statistics.service.gov.uk/find-statistics/leo-graduate-and-postgraduate-outcomes"
+                  className="underline hover:text-wiah-blue"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  DfE &mdash; LEO Graduate and Postgraduate Outcomes: Earnings &amp; Employment (annual)
                 </a>
               </li>
             )}

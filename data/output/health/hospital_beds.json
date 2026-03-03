@@ -1,0 +1,646 @@
+{
+  "timeSeries": [
+    {
+      "quarter": "Q1 2010/11",
+      "date": "2010-04",
+      "availableBeds": 144455,
+      "availableGA": 110568,
+      "occupiedBeds": 122551,
+      "occupiedGA": 95430,
+      "occupancyPct": 84.8,
+      "occupancyGaPct": 86.3
+    },
+    {
+      "quarter": "Q2 2010/11",
+      "date": "2010-07",
+      "availableBeds": 141477,
+      "availableGA": 108349,
+      "occupiedBeds": 119298,
+      "occupiedGA": 92775,
+      "occupancyPct": 84.3,
+      "occupancyGaPct": 85.6
+    },
+    {
+      "quarter": "Q3 2010/11",
+      "date": "2010-10",
+      "availableBeds": 141630,
+      "availableGA": 108023,
+      "occupiedBeds": 121497,
+      "occupiedGA": 94741,
+      "occupancyPct": 85.8,
+      "occupancyGaPct": 87.7
+    },
+    {
+      "quarter": "Q4 2010/11",
+      "date": "2011-01",
+      "availableBeds": 142319,
+      "availableGA": 108890,
+      "occupiedBeds": 123279,
+      "occupiedGA": 96566,
+      "occupancyPct": 86.6,
+      "occupancyGaPct": 88.7
+    },
+    {
+      "quarter": "Q1 2011/12",
+      "date": "2011-04",
+      "availableBeds": 137354,
+      "availableGA": 104574,
+      "occupiedBeds": 116452,
+      "occupiedGA": 90317,
+      "occupancyPct": 84.8,
+      "occupancyGaPct": 86.4
+    },
+    {
+      "quarter": "Q2 2011/12",
+      "date": "2011-07",
+      "availableBeds": 138525,
+      "availableGA": 105545,
+      "occupiedBeds": 116372,
+      "occupiedGA": 89981,
+      "occupancyPct": 84.0,
+      "occupancyGaPct": 85.2
+    },
+    {
+      "quarter": "Q3 2011/12",
+      "date": "2011-10",
+      "availableBeds": 137963,
+      "availableGA": 105245,
+      "occupiedBeds": 117708,
+      "occupiedGA": 91448,
+      "occupancyPct": 85.3,
+      "occupancyGaPct": 86.9
+    },
+    {
+      "quarter": "Q4 2011/12",
+      "date": "2012-01",
+      "availableBeds": 140454,
+      "availableGA": 107449,
+      "occupiedBeds": 122105,
+      "occupiedGA": 95633,
+      "occupancyPct": 86.9,
+      "occupancyGaPct": 89.0
+    },
+    {
+      "quarter": "Q1 2012/13",
+      "date": "2012-04",
+      "availableBeds": 137287,
+      "availableGA": 104888,
+      "occupiedBeds": 118064,
+      "occupiedGA": 92145,
+      "occupancyPct": 86.0,
+      "occupancyGaPct": 87.8
+    },
+    {
+      "quarter": "Q2 2012/13",
+      "date": "2012-07",
+      "availableBeds": 135559,
+      "availableGA": 103730,
+      "occupiedBeds": 115730,
+      "occupiedGA": 89917,
+      "occupancyPct": 85.4,
+      "occupancyGaPct": 86.7
+    },
+    {
+      "quarter": "Q3 2012/13",
+      "date": "2012-10",
+      "availableBeds": 136044,
+      "availableGA": 103956,
+      "occupiedBeds": 116974,
+      "occupiedGA": 91347,
+      "occupancyPct": 86.0,
+      "occupancyGaPct": 87.9
+    },
+    {
+      "quarter": "Q4 2012/13",
+      "date": "2013-01",
+      "availableBeds": 138178,
+      "availableGA": 106374,
+      "occupiedBeds": 121108,
+      "occupiedGA": 95516,
+      "occupancyPct": 87.6,
+      "occupancyGaPct": 89.8
+    },
+    {
+      "quarter": "Q1 2013/14",
+      "date": "2013-04",
+      "availableBeds": 136459,
+      "availableGA": 104855,
+      "occupiedBeds": 118056,
+      "occupiedGA": 92750,
+      "occupancyPct": 86.5,
+      "occupancyGaPct": 88.5
+    },
+    {
+      "quarter": "Q2 2013/14",
+      "date": "2013-07",
+      "availableBeds": 135037,
+      "availableGA": 103643,
+      "occupiedBeds": 115146,
+      "occupiedGA": 89614,
+      "occupancyPct": 85.3,
+      "occupancyGaPct": 86.5
+    },
+    {
+      "quarter": "Q3 2013/14",
+      "date": "2013-10",
+      "availableBeds": 135489,
+      "availableGA": 104244,
+      "occupiedBeds": 116488,
+      "occupiedGA": 91353,
+      "occupancyPct": 86.0,
+      "occupancyGaPct": 87.6
+    },
+    {
+      "quarter": "Q4 2013/14",
+      "date": "2014-01",
+      "availableBeds": 136811,
+      "availableGA": 105581,
+      "occupiedBeds": 119663,
+      "occupiedGA": 94571,
+      "occupancyPct": 87.5,
+      "occupancyGaPct": 89.6
+    },
+    {
+      "quarter": "Q1 2014/15",
+      "date": "2014-04",
+      "availableBeds": 135754,
+      "availableGA": 104738,
+      "occupiedBeds": 117510,
+      "occupiedGA": 92315,
+      "occupancyPct": 86.6,
+      "occupancyGaPct": 88.1
+    },
+    {
+      "quarter": "Q2 2014/15",
+      "date": "2014-07",
+      "availableBeds": 134753,
+      "availableGA": 103758,
+      "occupiedBeds": 116300,
+      "occupiedGA": 90948,
+      "occupancyPct": 86.3,
+      "occupancyGaPct": 87.6
+    },
+    {
+      "quarter": "Q3 2014/15",
+      "date": "2014-10",
+      "availableBeds": 134573,
+      "availableGA": 103865,
+      "occupiedBeds": 117827,
+      "occupiedGA": 92905,
+      "occupancyPct": 87.6,
+      "occupancyGaPct": 89.5
+    },
+    {
+      "quarter": "Q4 2014/15",
+      "date": "2015-01",
+      "availableBeds": 136946,
+      "availableGA": 106250,
+      "occupiedBeds": 121202,
+      "occupiedGA": 96343,
+      "occupancyPct": 88.5,
+      "occupancyGaPct": 90.7
+    },
+    {
+      "quarter": "Q1 2015/16",
+      "date": "2015-04",
+      "availableBeds": 131812,
+      "availableGA": 104096,
+      "occupiedBeds": 114509,
+      "occupiedGA": 92007,
+      "occupancyPct": 86.9,
+      "occupancyGaPct": 88.4
+    },
+    {
+      "quarter": "Q2 2015/16",
+      "date": "2015-07",
+      "availableBeds": 130619,
+      "availableGA": 102271,
+      "occupiedBeds": 112010,
+      "occupiedGA": 89036,
+      "occupancyPct": 85.8,
+      "occupancyGaPct": 87.1
+    },
+    {
+      "quarter": "Q3 2015/16",
+      "date": "2015-10",
+      "availableBeds": 130298,
+      "availableGA": 101974,
+      "occupiedBeds": 113668,
+      "occupiedGA": 90857,
+      "occupancyPct": 87.2,
+      "occupancyGaPct": 89.1
+    },
+    {
+      "quarter": "Q4 2015/16",
+      "date": "2016-01",
+      "availableBeds": 131561,
+      "availableGA": 103422,
+      "occupiedBeds": 117125,
+      "occupiedGA": 94364,
+      "occupancyPct": 89.0,
+      "occupancyGaPct": 91.2
+    },
+    {
+      "quarter": "Q1 2016/17",
+      "date": "2016-04",
+      "availableBeds": 131282,
+      "availableGA": 103249,
+      "occupiedBeds": 115842,
+      "occupiedGA": 93101,
+      "occupancyPct": 88.2,
+      "occupancyGaPct": 90.2
+    },
+    {
+      "quarter": "Q2 2016/17",
+      "date": "2016-07",
+      "availableBeds": 129972,
+      "availableGA": 102061,
+      "occupiedBeds": 113798,
+      "occupiedGA": 91030,
+      "occupancyPct": 87.6,
+      "occupancyGaPct": 89.2
+    },
+    {
+      "quarter": "Q3 2016/17",
+      "date": "2016-10",
+      "availableBeds": 129557,
+      "availableGA": 101827,
+      "occupiedBeds": 114438,
+      "occupiedGA": 92167,
+      "occupancyPct": 88.3,
+      "occupancyGaPct": 90.5
+    },
+    {
+      "quarter": "Q4 2016/17",
+      "date": "2017-01",
+      "availableBeds": 131016,
+      "availableGA": 103622,
+      "occupiedBeds": 116545,
+      "occupiedGA": 94720,
+      "occupancyPct": 88.9,
+      "occupancyGaPct": 91.4
+    },
+    {
+      "quarter": "Q1 2017/18",
+      "date": "2017-04",
+      "availableBeds": 130297,
+      "availableGA": 102898,
+      "occupiedBeds": 113618,
+      "occupiedGA": 91724,
+      "occupancyPct": 87.2,
+      "occupancyGaPct": 89.1
+    },
+    {
+      "quarter": "Q2 2017/18",
+      "date": "2017-07",
+      "availableBeds": 128139,
+      "availableGA": 100945,
+      "occupiedBeds": 111688,
+      "occupiedGA": 89830,
+      "occupancyPct": 87.1,
+      "occupancyGaPct": 89.0
+    },
+    {
+      "quarter": "Q3 2017/18",
+      "date": "2017-10",
+      "availableBeds": 128289,
+      "availableGA": 101222,
+      "occupiedBeds": 113328,
+      "occupiedGA": 91798,
+      "occupancyPct": 88.3,
+      "occupancyGaPct": 90.7
+    },
+    {
+      "quarter": "Q4 2017/18",
+      "date": "2018-01",
+      "availableBeds": 130194,
+      "availableGA": 103335,
+      "occupiedBeds": 117144,
+      "occupiedGA": 95672,
+      "occupancyPct": 90.0,
+      "occupancyGaPct": 92.6
+    },
+    {
+      "quarter": "Q1 2018/19",
+      "date": "2018-04",
+      "availableBeds": 128589,
+      "availableGA": 101398,
+      "occupiedBeds": 112887,
+      "occupiedGA": 91056,
+      "occupancyPct": 87.8,
+      "occupancyGaPct": 89.8
+    },
+    {
+      "quarter": "Q2 2018/19",
+      "date": "2018-07",
+      "availableBeds": 127378,
+      "availableGA": 100454,
+      "occupiedBeds": 111004,
+      "occupiedGA": 89268,
+      "occupancyPct": 87.2,
+      "occupancyGaPct": 88.9
+    },
+    {
+      "quarter": "Q3 2018/19",
+      "date": "2018-10",
+      "availableBeds": 127571,
+      "availableGA": 100535,
+      "occupiedBeds": 112209,
+      "occupiedGA": 90706,
+      "occupancyPct": 88.0,
+      "occupancyGaPct": 90.2
+    },
+    {
+      "quarter": "Q4 2018/19",
+      "date": "2019-01",
+      "availableBeds": 129992,
+      "availableGA": 103021,
+      "occupiedBeds": 115874,
+      "occupiedGA": 94460,
+      "occupancyPct": 89.1,
+      "occupancyGaPct": 91.7
+    },
+    {
+      "quarter": "Q1 2019/20",
+      "date": "2019-04",
+      "availableBeds": 128407,
+      "availableGA": 101565,
+      "occupiedBeds": 113262,
+      "occupiedGA": 91730,
+      "occupancyPct": 88.2,
+      "occupancyGaPct": 90.3
+    },
+    {
+      "quarter": "Q2 2019/20",
+      "date": "2019-07",
+      "availableBeds": 127186,
+      "availableGA": 100370,
+      "occupiedBeds": 111938,
+      "occupiedGA": 90377,
+      "occupancyPct": 88.0,
+      "occupancyGaPct": 90.0
+    },
+    {
+      "quarter": "Q3 2019/20",
+      "date": "2019-10",
+      "availableBeds": 128326,
+      "availableGA": 101598,
+      "occupiedBeds": 114757,
+      "occupiedGA": 93432,
+      "occupancyPct": 89.4,
+      "occupancyGaPct": 92.0
+    },
+    {
+      "quarter": "Q4 2019/20",
+      "date": "2020-01",
+      "availableBeds": 128943,
+      "availableGA": 102194,
+      "occupiedBeds": 111321,
+      "occupiedGA": 90309,
+      "occupancyPct": 86.3,
+      "occupancyGaPct": 88.4
+    },
+    {
+      "quarter": "Q1 2020/21",
+      "date": "2020-04",
+      "availableBeds": 118473,
+      "availableGA": 92559,
+      "occupiedBeds": 76641,
+      "occupiedGA": 58420,
+      "occupancyPct": 64.7,
+      "occupancyGaPct": 63.1
+    },
+    {
+      "quarter": "Q2 2020/21",
+      "date": "2020-07",
+      "availableBeds": 120791,
+      "availableGA": 94787,
+      "occupiedBeds": 93091,
+      "occupiedGA": 73321,
+      "occupancyPct": 77.1,
+      "occupancyGaPct": 77.3
+    },
+    {
+      "quarter": "Q3 2020/21",
+      "date": "2020-10",
+      "availableBeds": 121487,
+      "availableGA": 95649,
+      "occupiedBeds": 98597,
+      "occupiedGA": 79520,
+      "occupancyPct": 81.2,
+      "occupancyGaPct": 83.1
+    },
+    {
+      "quarter": "Q4 2020/21",
+      "date": "2021-01",
+      "availableBeds": 122269,
+      "availableGA": 96298,
+      "occupiedBeds": 98927,
+      "occupiedGA": 79888,
+      "occupancyPct": 80.9,
+      "occupancyGaPct": 83.0
+    },
+    {
+      "quarter": "Q1 2021/22",
+      "date": "2021-04",
+      "availableBeds": 123922,
+      "availableGA": 97094,
+      "occupiedBeds": 103804,
+      "occupiedGA": 82848,
+      "occupancyPct": 83.8,
+      "occupancyGaPct": 85.3
+    },
+    {
+      "quarter": "Q2 2021/22",
+      "date": "2021-07",
+      "availableBeds": 124878,
+      "availableGA": 97954,
+      "occupiedBeds": 107069,
+      "occupiedGA": 85836,
+      "occupancyPct": 85.7,
+      "occupancyGaPct": 87.6
+    },
+    {
+      "quarter": "Q3 2021/22",
+      "date": "2021-10",
+      "availableBeds": 126669,
+      "availableGA": 100019,
+      "occupiedBeds": 109451,
+      "occupiedGA": 88584,
+      "occupancyPct": 86.4,
+      "occupancyGaPct": 88.6
+    },
+    {
+      "quarter": "Q4 2021/22",
+      "date": "2022-01",
+      "availableBeds": 128657,
+      "availableGA": 101975,
+      "occupiedBeds": 111944,
+      "occupiedGA": 91108,
+      "occupancyPct": 87.0,
+      "occupancyGaPct": 89.3
+    },
+    {
+      "quarter": "Q1 2022/23",
+      "date": "2022-04",
+      "availableBeds": 129575,
+      "availableGA": 103057,
+      "occupiedBeds": 113736,
+      "occupiedGA": 92560,
+      "occupancyPct": 87.8,
+      "occupancyGaPct": 89.8
+    },
+    {
+      "quarter": "Q2 2022/23",
+      "date": "2022-07",
+      "availableBeds": 128743,
+      "availableGA": 102305,
+      "occupiedBeds": 113514,
+      "occupiedGA": 92184,
+      "occupancyPct": 88.2,
+      "occupancyGaPct": 90.1
+    },
+    {
+      "quarter": "Q3 2022/23",
+      "date": "2022-10",
+      "availableBeds": 129851,
+      "availableGA": 103523,
+      "occupiedBeds": 116500,
+      "occupiedGA": 95274,
+      "occupancyPct": 89.7,
+      "occupancyGaPct": 92.0
+    },
+    {
+      "quarter": "Q4 2022/23",
+      "date": "2023-01",
+      "availableBeds": 130863,
+      "availableGA": 104543,
+      "occupiedBeds": 117598,
+      "occupiedGA": 96500,
+      "occupancyPct": 89.9,
+      "occupancyGaPct": 92.3
+    },
+    {
+      "quarter": "Q1 2023/24",
+      "date": "2023-04",
+      "availableBeds": 130048,
+      "availableGA": 103818,
+      "occupiedBeds": 115245,
+      "occupiedGA": 94109,
+      "occupancyPct": 88.6,
+      "occupancyGaPct": 90.6
+    },
+    {
+      "quarter": "Q2 2023/24",
+      "date": "2023-07",
+      "availableBeds": 129023,
+      "availableGA": 102922,
+      "occupiedBeds": 113498,
+      "occupiedGA": 92371,
+      "occupancyPct": 88.0,
+      "occupancyGaPct": 89.8
+    },
+    {
+      "quarter": "Q3 2023/24",
+      "date": "2023-10",
+      "availableBeds": 130528,
+      "availableGA": 104455,
+      "occupiedBeds": 116831,
+      "occupiedGA": 95692,
+      "occupancyPct": 89.5,
+      "occupancyGaPct": 91.6
+    },
+    {
+      "quarter": "Q4 2023/24",
+      "date": "2024-01",
+      "availableBeds": 132520,
+      "availableGA": 106475,
+      "occupiedBeds": 119635,
+      "occupiedGA": 98492,
+      "occupancyPct": 90.3,
+      "occupancyGaPct": 92.5
+    },
+    {
+      "quarter": "Q1 2024/25",
+      "date": "2024-04",
+      "availableBeds": 131875,
+      "availableGA": 105645,
+      "occupiedBeds": 117315,
+      "occupiedGA": 96361,
+      "occupancyPct": 89.0,
+      "occupancyGaPct": 91.2
+    },
+    {
+      "quarter": "Q2 2024/25",
+      "date": "2024-07",
+      "availableBeds": 129760,
+      "availableGA": 103656,
+      "occupiedBeds": 114640,
+      "occupiedGA": 93664,
+      "occupancyPct": 88.3,
+      "occupancyGaPct": 90.4
+    },
+    {
+      "quarter": "Q3 2024/25",
+      "date": "2024-10",
+      "availableBeds": 132886,
+      "availableGA": 106432,
+      "occupiedBeds": 116857,
+      "occupiedGA": 96109,
+      "occupancyPct": 87.9,
+      "occupancyGaPct": 90.3
+    },
+    {
+      "quarter": "Q4 2024/25",
+      "date": "2025-01",
+      "availableBeds": 132178,
+      "availableGA": 106068,
+      "occupiedBeds": 119190,
+      "occupiedGA": 98146,
+      "occupancyPct": 90.2,
+      "occupancyGaPct": 92.5
+    },
+    {
+      "quarter": "Q1 2025/26",
+      "date": "2025-04",
+      "availableBeds": 129716,
+      "availableGA": 104260,
+      "occupiedBeds": 115713,
+      "occupiedGA": 95350,
+      "occupancyPct": 89.2,
+      "occupancyGaPct": 91.5
+    },
+    {
+      "quarter": "Q2 2025/26",
+      "date": "2025-07",
+      "availableBeds": 129378,
+      "availableGA": 103120,
+      "occupiedBeds": 114956,
+      "occupiedGA": 93756,
+      "occupancyPct": 88.8,
+      "occupancyGaPct": 90.9
+    },
+    {
+      "quarter": "Q3 2025/26",
+      "date": "2025-10",
+      "availableBeds": 129905,
+      "availableGA": 103824,
+      "occupiedBeds": 115983,
+      "occupiedGA": 94969,
+      "occupancyPct": 89.3,
+      "occupancyGaPct": 91.5
+    }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "KH03 Bed Availability and Occupancy",
+        "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/bed-availability-and-occupancy-kh03/",
+        "frequency": "quarterly",
+        "retrieved": "2026-03-03T07:30:50.618158"
+      }
+    ],
+    "methodology": "Average daily number of available and occupied overnight beds. Occupancy = occupied/available \u00d7 100. General & Acute beds are the primary measure."
+  }
+}

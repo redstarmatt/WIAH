@@ -1,0 +1,209 @@
+{
+  "timeSeries": [
+    {
+      "cohort": "2012/13",
+      "date": "2012-04",
+      "offenders": 628761,
+      "reoffenders": 194500,
+      "reoffences": 668502,
+      "reoffendingRate": 30.9,
+      "avgReoffences": 3.44
+    },
+    {
+      "cohort": "2013/14",
+      "date": "2013-04",
+      "offenders": 599297,
+      "reoffenders": 186582,
+      "reoffences": 663973,
+      "reoffendingRate": 31.1,
+      "avgReoffences": 3.56
+    },
+    {
+      "cohort": "2014/15",
+      "date": "2014-04",
+      "offenders": 557726,
+      "reoffenders": 167316,
+      "reoffences": 614038,
+      "reoffendingRate": 30.0,
+      "avgReoffences": 3.67
+    },
+    {
+      "cohort": "2015/16",
+      "date": "2015-04",
+      "offenders": 523366,
+      "reoffenders": 154375,
+      "reoffences": 584231,
+      "reoffendingRate": 29.5,
+      "avgReoffences": 3.78
+    },
+    {
+      "cohort": "2016/17",
+      "date": "2016-04",
+      "offenders": 475135,
+      "reoffenders": 139611,
+      "reoffences": 559659,
+      "reoffendingRate": 29.4,
+      "avgReoffences": 4.01
+    },
+    {
+      "cohort": "2017/18",
+      "date": "2017-04",
+      "offenders": 431391,
+      "reoffenders": 125829,
+      "reoffences": 508151,
+      "reoffendingRate": 29.2,
+      "avgReoffences": 4.04
+    },
+    {
+      "cohort": "2018/19",
+      "date": "2018-04",
+      "offenders": 401404,
+      "reoffenders": 112507,
+      "reoffences": 447872,
+      "reoffendingRate": 28.0,
+      "avgReoffences": 3.98
+    },
+    {
+      "cohort": "2019/20",
+      "date": "2019-04",
+      "offenders": 375226,
+      "reoffenders": 95951,
+      "reoffences": 357053,
+      "reoffendingRate": 25.6,
+      "avgReoffences": 3.72
+    },
+    {
+      "cohort": "2020/21",
+      "date": "2020-04",
+      "offenders": 304835,
+      "reoffenders": 74262,
+      "reoffences": 266250,
+      "reoffendingRate": 24.4,
+      "avgReoffences": 3.59
+    },
+    {
+      "cohort": "2021/22",
+      "date": "2021-04",
+      "offenders": 331110,
+      "reoffenders": 83451,
+      "reoffences": 307862,
+      "reoffendingRate": 25.2,
+      "avgReoffences": 3.69
+    },
+    {
+      "cohort": "2022/23",
+      "date": "2022-04",
+      "offenders": 322330,
+      "reoffenders": 84757,
+      "reoffences": 340465,
+      "reoffendingRate": 26.3,
+      "avgReoffences": 4.02
+    },
+    {
+      "cohort": "2023/24",
+      "date": "2023-04",
+      "offenders": 331356,
+      "reoffenders": 93413,
+      "reoffences": 441946,
+      "reoffendingRate": 28.2,
+      "avgReoffences": 4.73
+    }
+  ],
+  "byOffenceGroup": [
+    {
+      "group": "Theft",
+      "offenders": 38725,
+      "reoffenders": 22041,
+      "reoffendingRate": 56.9
+    },
+    {
+      "group": "Other",
+      "offenders": 35240,
+      "reoffenders": 13533,
+      "reoffendingRate": 38.4
+    },
+    {
+      "group": "Public Order",
+      "offenders": 12870,
+      "reoffenders": 3977,
+      "reoffendingRate": 30.9
+    },
+    {
+      "group": "Possession of Weapons",
+      "offenders": 12186,
+      "reoffenders": 3497,
+      "reoffendingRate": 28.7
+    },
+    {
+      "group": "Summary Non-motoring",
+      "offenders": 69440,
+      "reoffenders": 19343,
+      "reoffendingRate": 27.9
+    },
+    {
+      "group": "Criminal Damage and Arson",
+      "offenders": 1561,
+      "reoffenders": 431,
+      "reoffendingRate": 27.6
+    },
+    {
+      "group": "Fraud",
+      "offenders": 4425,
+      "reoffenders": 1174,
+      "reoffendingRate": 26.5
+    },
+    {
+      "group": "Robbery",
+      "offenders": 3104,
+      "reoffenders": 800,
+      "reoffendingRate": 25.8
+    },
+    {
+      "group": "Miscellaneous Crimes Against Society",
+      "offenders": 14396,
+      "reoffenders": 3396,
+      "reoffendingRate": 23.6
+    },
+    {
+      "group": "Drug",
+      "offenders": 39772,
+      "reoffenders": 9250,
+      "reoffendingRate": 23.3
+    },
+    {
+      "group": "Violence Against the Person",
+      "offenders": 26563,
+      "reoffenders": 5544,
+      "reoffendingRate": 20.9
+    },
+    {
+      "group": "Sexual",
+      "offenders": 5943,
+      "reoffenders": 877,
+      "reoffendingRate": 14.8
+    },
+    {
+      "group": "Summary Motoring",
+      "offenders": 67131,
+      "reoffenders": 9550,
+      "reoffendingRate": 14.2
+    }
+  ],
+  "latestCohort": "2023/24",
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ministry of Justice",
+        "dataset": "Proven Reoffending Statistics",
+        "url": "https://www.gov.uk/government/collections/proven-reoffending-statistics",
+        "frequency": "quarterly (annual cohorts)",
+        "retrieved": "2026-03-03T07:35:58.002470"
+      }
+    ],
+    "methodology": "A proven reoffence is any offence committed in a one-year follow-up period that results in a court conviction, caution, reprimand or warning within a further six-month waiting period. Rate = reoffenders / offenders \u00d7 100.",
+    "knownIssues": [
+      "COVID-19 caused a significant drop in offenders entering the cohort in 2020/21",
+      "From October 2015, data based on individual-level Police National Computer data rather than aggregate counts"
+    ]
+  }
+}

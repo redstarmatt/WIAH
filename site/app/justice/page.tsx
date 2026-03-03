@@ -46,6 +46,26 @@ interface CrimeTrendsData {
   crimeTrends: Record<string, CrimeTrendCategory>;
 }
 
+interface ReoffendingPoint {
+  cohort: string;
+  date: string;
+  reoffendingRate: number;
+  avgReoffences: number | null;
+}
+
+interface OffenceGroupPoint {
+  group: string;
+  offenders: number;
+  reoffenders: number;
+  reoffendingRate: number;
+}
+
+interface ReoffendingData {
+  timeSeries: ReoffendingPoint[];
+  byOffenceGroup: OffenceGroupPoint[];
+  latestCohort: string;
+}
+
 interface JusticeData {
   national: {
     chargeRate: {
@@ -98,6 +118,7 @@ function sparkFrom(arr: number[], n = 12) {
 export default function JusticePage() {
   const [data, setData] = useState<JusticeData | null>(null);
   const [crimeData, setCrimeData] = useState<CrimeTrendsData | null>(null);
+  const [reoffData, setReoffData] = useState<ReoffendingData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -108,6 +129,10 @@ export default function JusticePage() {
     fetch('/data/justice/crime_trends.json')
       .then(r => r.json())
       .then(setCrimeData)
+      .catch(console.error);
+    fetch('/data/justice/reoffending.json')
+      .then(r => r.json())
+      .then(setReoffData)
       .catch(console.error);
   }, []);
 
@@ -242,6 +267,19 @@ export default function JusticePage() {
     { date: new Date(2014, 0), label: '2014: NCRS tightened' },
     { date: new Date(2020, 2), label: '2020: COVID-19' },
   ];
+
+  // Proven reoffending rate
+  const reoffSeries: Series[] = reoffData
+    ? [{
+        id: 'reoff-rate',
+        label: 'Proven reoffending rate (%)',
+        colour: '#E63946',
+        data: reoffData.timeSeries.map(d => ({
+          date: isoToDate(d.date),
+          value: d.reoffendingRate,
+        })),
+      }]
+    : [];
 
   // ── Metric values ────────────────────────────────────────────────────────
 
@@ -523,6 +561,58 @@ export default function JusticePage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        {/* Proven reoffending rate chart */}
+        {reoffSeries.length > 0 ? (
+          <LineChart
+            title="Proven reoffending rate, 2012–2024"
+            subtitle="Percentage of offenders who reoffend within one year, England and Wales. Adult and juvenile combined."
+            series={reoffSeries}
+            yLabel="Percent"
+            annotations={[
+              { date: new Date(2020, 2), label: '2020: COVID-19' },
+            ]}
+            source={{
+              name: 'Ministry of Justice',
+              dataset: 'Proven Reoffending Statistics',
+              frequency: 'quarterly (annual cohorts)',
+              url: 'https://www.gov.uk/government/collections/proven-reoffending-statistics',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Reoffending by offence group — bar table */}
+        {reoffData && reoffData.byOffenceGroup.length > 0 && (
+          <section className="mb-12">
+            <h3 className="text-lg font-bold text-wiah-black mb-1">
+              Reoffending rate by offence type ({reoffData.latestCohort})
+            </h3>
+            <p className="text-sm text-wiah-mid font-mono mb-6">
+              Percentage of offenders who reoffend within one year, by index offence. Sorted worst-first.
+            </p>
+            <div className="space-y-2">
+              {reoffData.byOffenceGroup.map(g => {
+                const colour = g.reoffendingRate > 40 ? '#E63946' : g.reoffendingRate > 25 ? '#F4A261' : '#2A9D8F';
+                return (
+                  <div key={g.group} className="flex items-center gap-3">
+                    <span className="text-xs text-wiah-black w-52 shrink-0 truncate">{g.group}</span>
+                    <div className="flex-1 bg-wiah-light rounded h-3">
+                      <div className="h-3 rounded" style={{ width: `${g.reoffendingRate}%`, backgroundColor: colour }} />
+                    </div>
+                    <span className="font-mono text-xs font-bold w-12 text-right" style={{ color: colour }}>
+                      {g.reoffendingRate}%
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+            <p className="font-mono text-[11px] text-wiah-mid mt-3">
+              Source: Ministry of Justice, Proven Reoffending Statistics, {reoffData.latestCohort} cohort.
+            </p>
+          </section>
+        )}
+
         {/* Context */}
         <section className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
@@ -571,6 +661,18 @@ export default function JusticePage() {
                 </a>
               </li>
             ))}
+            {reoffData && (
+              <li>
+                <a
+                  href="https://www.gov.uk/government/collections/proven-reoffending-statistics"
+                  className="underline hover:text-wiah-blue"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ministry of Justice &mdash; Proven Reoffending Statistics (quarterly)
+                </a>
+              </li>
+            )}
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             Charge rate is the proportion of police-recorded offences assigned a charge or summons

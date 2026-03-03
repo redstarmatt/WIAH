@@ -1,0 +1,332 @@
+{
+  "earnings": {
+    "timeSeries": [
+      {
+        "taxYear": "2016/17",
+        "median1yr": 19700,
+        "median3yr": 23000,
+        "median5yr": 25900,
+        "median10yr": 30300
+      },
+      {
+        "taxYear": "2017/18",
+        "median10yr": 31000,
+        "median1yr": 20100,
+        "median3yr": 23700,
+        "median5yr": 26500
+      },
+      {
+        "taxYear": "2018/19",
+        "median10yr": 31400,
+        "median3yr": 24500,
+        "median1yr": 20800,
+        "median5yr": 27400
+      },
+      {
+        "taxYear": "2019/20",
+        "median3yr": 24900,
+        "median1yr": 21600,
+        "median10yr": 32200,
+        "median5yr": 28200
+      },
+      {
+        "taxYear": "2020/21",
+        "median1yr": 21200,
+        "median3yr": 25200,
+        "median5yr": 28800,
+        "median10yr": 32800
+      },
+      {
+        "taxYear": "2021/22",
+        "median3yr": 26300,
+        "median1yr": 22600,
+        "median5yr": 29900,
+        "median10yr": 34300
+      },
+      {
+        "taxYear": "2022/23",
+        "median3yr": 28100,
+        "median1yr": 24800,
+        "median5yr": 31400,
+        "median10yr": 36100
+      }
+    ]
+  },
+  "employment": {
+    "timeSeries": [
+      {
+        "taxYear": "2016/17",
+        "employment1yr": 82.9,
+        "employment3yr": 85.7,
+        "employment5yr": 86.1,
+        "employment10yr": 85.3
+      },
+      {
+        "taxYear": "2017/18",
+        "employment10yr": 85.4,
+        "employment1yr": 83.2,
+        "employment3yr": 86.1,
+        "employment5yr": 86.6
+      },
+      {
+        "taxYear": "2018/19",
+        "employment10yr": 85.9,
+        "employment3yr": 86.6,
+        "employment1yr": 83.7,
+        "employment5yr": 86.9
+      },
+      {
+        "taxYear": "2019/20",
+        "employment3yr": 86.2,
+        "employment1yr": 82.7,
+        "employment10yr": 85.2,
+        "employment5yr": 86.4
+      },
+      {
+        "taxYear": "2020/21",
+        "employment1yr": 80.1,
+        "employment3yr": 85.2,
+        "employment5yr": 86.0,
+        "employment10yr": 84.7
+      },
+      {
+        "taxYear": "2021/22",
+        "employment3yr": 86.7,
+        "employment1yr": 83.4,
+        "employment5yr": 87.1,
+        "employment10yr": 85.3
+      },
+      {
+        "taxYear": "2022/23",
+        "employment3yr": 85.7,
+        "employment1yr": 82.8,
+        "employment5yr": 86.6,
+        "employment10yr": 85.1
+      }
+    ]
+  },
+  "bySubject": [
+    {
+      "subject": "Medicine and dentistry",
+      "medianEarnings5yr": 53300,
+      "employmentPct": 91.9,
+      "graduates": 6955
+    },
+    {
+      "subject": "Economics",
+      "medianEarnings5yr": 50400,
+      "employmentPct": 87.9,
+      "graduates": 5480
+    },
+    {
+      "subject": "Physics and astronomy",
+      "medianEarnings5yr": 42000,
+      "employmentPct": 83.6,
+      "graduates": 3060
+    },
+    {
+      "subject": "Engineering",
+      "medianEarnings5yr": 41600,
+      "employmentPct": 88.0,
+      "graduates": 13010
+    },
+    {
+      "subject": "Mathematical sciences",
+      "medianEarnings5yr": 41600,
+      "employmentPct": 87.5,
+      "graduates": 6230
+    },
+    {
+      "subject": "Veterinary sciences",
+      "medianEarnings5yr": 40200,
+      "employmentPct": 91.5,
+      "graduates": 920
+    },
+    {
+      "subject": "Pharmacology, toxicology and pharmacy",
+      "medianEarnings5yr": 39100,
+      "employmentPct": 86.4,
+      "graduates": 2890
+    },
+    {
+      "subject": "Medical sciences",
+      "medianEarnings5yr": 38700,
+      "employmentPct": 88.4,
+      "graduates": 3110
+    },
+    {
+      "subject": "Computing",
+      "medianEarnings5yr": 38000,
+      "employmentPct": 85.6,
+      "graduates": 11560
+    },
+    {
+      "subject": "Architecture, building and planning",
+      "medianEarnings5yr": 36900,
+      "employmentPct": 86.8,
+      "graduates": 4610
+    },
+    {
+      "subject": "Chemistry",
+      "medianEarnings5yr": 35400,
+      "employmentPct": 87.1,
+      "graduates": 3365
+    },
+    {
+      "subject": "Politics",
+      "medianEarnings5yr": 35400,
+      "employmentPct": 82.9,
+      "graduates": 5190
+    },
+    {
+      "subject": "Nursing and midwifery",
+      "medianEarnings5yr": 34300,
+      "employmentPct": 92.2,
+      "graduates": 20390
+    },
+    {
+      "subject": "Languages and area studies",
+      "medianEarnings5yr": 33900,
+      "employmentPct": 81.9,
+      "graduates": 5285
+    },
+    {
+      "subject": "Geography, earth and environmental studies",
+      "medianEarnings5yr": 33600,
+      "employmentPct": 88.9,
+      "graduates": 7460
+    },
+    {
+      "subject": "Business and management",
+      "medianEarnings5yr": 33200,
+      "employmentPct": 85.6,
+      "graduates": 35265
+    },
+    {
+      "subject": "Allied health",
+      "medianEarnings5yr": 32100,
+      "employmentPct": 87.5,
+      "graduates": 9950
+    },
+    {
+      "subject": "Law",
+      "medianEarnings5yr": 32100,
+      "employmentPct": 86.2,
+      "graduates": 11270
+    },
+    {
+      "subject": "Biosciences",
+      "medianEarnings5yr": 31400,
+      "employmentPct": 84.5,
+      "graduates": 10430
+    },
+    {
+      "subject": "Philosophy and religious studies",
+      "medianEarnings5yr": 31300,
+      "employmentPct": 81.3,
+      "graduates": 3475
+    },
+    {
+      "subject": "History and archaeology",
+      "medianEarnings5yr": 31000,
+      "employmentPct": 85.7,
+      "graduates": 11225
+    },
+    {
+      "subject": "Materials and technology",
+      "medianEarnings5yr": 30700,
+      "employmentPct": 83.8,
+      "graduates": 1495
+    },
+    {
+      "subject": "Combined and general studies",
+      "medianEarnings5yr": 29200,
+      "employmentPct": 77.4,
+      "graduates": 4520
+    },
+    {
+      "subject": "English studies",
+      "medianEarnings5yr": 28800,
+      "employmentPct": 85.0,
+      "graduates": 11570
+    },
+    {
+      "subject": "General, applied and forensic sciences",
+      "medianEarnings5yr": 28800,
+      "employmentPct": 86.3,
+      "graduates": 1565
+    },
+    {
+      "subject": "Sport and exercise sciences",
+      "medianEarnings5yr": 28500,
+      "employmentPct": 89.7,
+      "graduates": 9325
+    },
+    {
+      "subject": "Psychology",
+      "medianEarnings5yr": 28100,
+      "employmentPct": 86.0,
+      "graduates": 13340
+    },
+    {
+      "subject": "Health and social care",
+      "medianEarnings5yr": 28100,
+      "employmentPct": 89.1,
+      "graduates": 6130
+    },
+    {
+      "subject": "Sociology, social policy and anthropology",
+      "medianEarnings5yr": 28100,
+      "employmentPct": 86.3,
+      "graduates": 11010
+    },
+    {
+      "subject": "Media, journalism and communications",
+      "medianEarnings5yr": 27700,
+      "employmentPct": 86.0,
+      "graduates": 7985
+    },
+    {
+      "subject": "Education and teaching",
+      "medianEarnings5yr": 27400,
+      "employmentPct": 88.4,
+      "graduates": 15485
+    },
+    {
+      "subject": "Agriculture, food and related studies",
+      "medianEarnings5yr": 26600,
+      "employmentPct": 87.6,
+      "graduates": 2390
+    },
+    {
+      "subject": "Creative arts and design",
+      "medianEarnings5yr": 25600,
+      "employmentPct": 83.8,
+      "graduates": 21055
+    },
+    {
+      "subject": "Performing arts",
+      "medianEarnings5yr": 24500,
+      "employmentPct": 86.6,
+      "graduates": 12480
+    }
+  ],
+  "latestTaxYear": "2022/23",
+  "metadata": {
+    "sources": [
+      {
+        "name": "Department for Education",
+        "dataset": "LEO Graduate and Postgraduate Outcomes (Tax year 2022-23)",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/leo-graduate-and-postgraduate-outcomes",
+        "frequency": "annual (by tax year)",
+        "retrieved": "2026-03-03T07:38:21.245115"
+      }
+    ],
+    "methodology": "Longitudinal Education Outcomes (LEO) data links education records to HMRC tax and DWP benefits data. Sustained employment = employed/self-employed for at least 1 day in 5 of 6 months. Earnings are median annualised gross pay.",
+    "knownIssues": [
+      "2020/21 tax year affected by COVID-19 furlough and reduced economic activity",
+      "Subjects with <50 graduates suppressed for data protection",
+      "Only UK-domiciled first-degree graduates included in these figures"
+    ]
+  }
+}

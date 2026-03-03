@@ -51,6 +51,39 @@ interface RttPoint {
   p92WaitWks: number | null;
 }
 
+interface CancerTrendPoint {
+  period: string;
+  midYear: number;
+  oneYearSurvival: number;
+  fiveYearSurvival: number | null;
+}
+
+interface CancerSitePoint {
+  site: string;
+  sex: string;
+  oneYearSurvival: number;
+  fiveYearSurvival: number | null;
+  patients: number | null;
+}
+
+interface CancerData {
+  byCancerSite: CancerSitePoint[];
+  trends: Record<string, CancerTrendPoint[]>;
+  latestPeriod: string;
+}
+
+interface BedPoint {
+  quarter: string;
+  date: string;
+  availableBeds: number | null;
+  occupancyPct: number | null;
+  occupancyGaPct: number | null;
+}
+
+interface BedData {
+  timeSeries: BedPoint[];
+}
+
 interface RttData {
   national: { timeSeries: RttPoint[] };
   headlines: {
@@ -80,6 +113,8 @@ export default function HealthPage() {
   const [gpData, setGpData] = useState<GpData | null>(null);
   const [ambData, setAmbData] = useState<AmbData | null>(null);
   const [rttData, setRttData] = useState<RttData | null>(null);
+  const [cancerData, setCancerData] = useState<CancerData | null>(null);
+  const [bedData, setBedData] = useState<BedData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -94,6 +129,14 @@ export default function HealthPage() {
     fetch('/data/health/rtt_waiting.json')
       .then(r => r.json())
       .then(setRttData)
+      .catch(console.error);
+    fetch('/data/health/cancer_survival.json')
+      .then(r => r.json())
+      .then(setCancerData)
+      .catch(console.error);
+    fetch('/data/health/hospital_beds.json')
+      .then(r => r.json())
+      .then(setBedData)
       .catch(console.error);
   }, []);
 
@@ -197,6 +240,45 @@ export default function HealthPage() {
           date: isoToDate(d.date),
           value: d.totalAppointments,
         })),
+      }]
+    : [];
+
+  // ── Cancer survival trend series ─────────────────────────────────────────
+
+  const cancerTrendSeries: Series[] = cancerData
+    ? [
+        { id: 'lung', label: 'Lung', colour: '#E63946',
+          data: (cancerData.trends['Lung'] || []).map(d => ({ date: new Date(d.midYear, 0, 1), value: d.oneYearSurvival })) },
+        { id: 'colorectal', label: 'Colorectal', colour: '#F4A261',
+          data: (cancerData.trends['Colorectal'] || []).map(d => ({ date: new Date(d.midYear, 0, 1), value: d.oneYearSurvival })) },
+        { id: 'breast', label: 'Breast (women)', colour: '#2A9D8F',
+          data: (cancerData.trends['Breast'] || []).map(d => ({ date: new Date(d.midYear, 0, 1), value: d.oneYearSurvival })) },
+        { id: 'prostate', label: 'Prostate (men)', colour: '#264653',
+          data: (cancerData.trends['Prostate'] || []).map(d => ({ date: new Date(d.midYear, 0, 1), value: d.oneYearSurvival })) },
+      ]
+    : [];
+
+  // ── Hospital bed series ────────────────────────────────────────────────
+
+  const bedOccupancySeries: Series[] = bedData
+    ? [{
+        id: 'bed-occupancy',
+        label: 'Overnight bed occupancy (%)',
+        colour: '#E63946',
+        data: bedData.timeSeries
+          .filter(d => d.occupancyPct !== null)
+          .map(d => ({ date: isoToDate(d.date), value: d.occupancyPct! })),
+      }]
+    : [];
+
+  const bedCountSeries: Series[] = bedData
+    ? [{
+        id: 'bed-count',
+        label: 'Available overnight beds',
+        colour: '#264653',
+        data: bedData.timeSeries
+          .filter(d => d.availableBeds !== null)
+          .map(d => ({ date: isoToDate(d.date), value: d.availableBeds! })),
       }]
     : [];
 
@@ -661,6 +743,98 @@ export default function HealthPage() {
           </section>
         )}
 
+        {/* Cancer survival trend chart */}
+        {cancerTrendSeries.length > 0 ? (
+          <LineChart
+            title="Cancer 1-year survival rates by type, 2008–2015"
+            subtitle="Age-standardised net survival (%), rolling 5-year cohorts. Midpoint year shown. England, adults 15-99."
+            series={cancerTrendSeries}
+            yLabel="Percent"
+            source={{
+              name: 'Office for National Statistics',
+              dataset: 'Cancer survival in England — adults diagnosed 2013–2017',
+              frequency: 'annual (~2yr publication lag)',
+              url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/cancersurvivalratescancersurvivalinenglandadultsdiagnosed',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+        )}
+
+        {/* Cancer survival by type — horizontal bar table */}
+        {cancerData && cancerData.byCancerSite.length > 0 && (
+          <section className="mb-16">
+            <h3 className="text-lg font-bold text-wiah-black mb-1">
+              Cancer survival by type ({cancerData.latestPeriod})
+            </h3>
+            <p className="text-sm text-wiah-mid font-mono mb-6">
+              5-year age-standardised net survival (%). England, adults 15-99. Sorted by 5-year survival rate.
+            </p>
+            <div className="space-y-2">
+              {cancerData.byCancerSite
+                .filter(c => c.fiveYearSurvival !== null)
+                .map(c => {
+                  const pct = c.fiveYearSurvival!;
+                  const colour = pct >= 80 ? '#2A9D8F' : pct >= 50 ? '#F4A261' : '#E63946';
+                  return (
+                    <div key={c.site} className="flex items-center gap-3">
+                      <span className="text-xs text-wiah-black w-44 shrink-0 truncate">{c.site}</span>
+                      <div className="flex-1 bg-wiah-light rounded h-3">
+                        <div className="h-3 rounded" style={{ width: `${pct}%`, backgroundColor: colour }} />
+                      </div>
+                      <span className="font-mono text-xs font-bold w-12 text-right" style={{ color: colour }}>
+                        {pct.toFixed(0)}%
+                      </span>
+                    </div>
+                  );
+                })}
+            </div>
+            <p className="font-mono text-[11px] text-wiah-mid mt-3">
+              Source: ONS, Cancer survival in England, adults diagnosed {cancerData.latestPeriod}. Green ≥80%, amber ≥50%, red &lt;50%.
+            </p>
+          </section>
+        )}
+
+        {/* Hospital bed occupancy chart */}
+        {bedOccupancySeries.length > 0 ? (
+          <LineChart
+            title="NHS overnight bed occupancy, 2010–2026"
+            subtitle="Quarterly average, all overnight beds, England. 85% is considered the safe maximum."
+            series={bedOccupancySeries}
+            targetLine={{ value: 85, label: 'Safe occupancy: 85%' }}
+            yLabel="Percent"
+            annotations={[
+              { date: new Date(2020, 2), label: 'Mar 2020: COVID-19' },
+            ]}
+            source={{
+              name: 'NHS England',
+              dataset: 'KH03 Bed Availability and Occupancy',
+              frequency: 'quarterly',
+              url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/bed-availability-and-occupancy-kh03/',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+        )}
+
+        {/* Total overnight beds chart */}
+        {bedCountSeries.length > 0 ? (
+          <LineChart
+            title="Total overnight NHS beds, 2010–2026"
+            subtitle="Average daily available overnight beds, England. Long-term capacity decline."
+            series={bedCountSeries}
+            yLabel="Beds"
+            source={{
+              name: 'NHS England',
+              dataset: 'KH03 Bed Availability and Occupancy',
+              frequency: 'quarterly',
+              url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/bed-availability-and-occupancy-kh03/',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+        )}
+
         {/* Context */}
         <section className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
@@ -719,6 +893,26 @@ export default function HealthPage() {
                 NHS England — Ambulance Quality Indicators (monthly)
               </a>
               {' '}— AmbSYS timeseries, Raw sheet, England national rows, seconds converted to minutes.
+            </li>
+            <li>
+              <a
+                href="https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/cancersurvivalratescancersurvivalinenglandadultsdiagnosed"
+                className="underline hover:text-wiah-blue"
+                target="_blank" rel="noreferrer"
+              >
+                ONS — Cancer Survival in England, adults diagnosed (annual, ~2yr lag)
+              </a>
+              {' '}— age-standardised net survival, 5-year rolling cohorts, 29 cancer sites.
+            </li>
+            <li>
+              <a
+                href="https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/bed-availability-and-occupancy-kh03/"
+                className="underline hover:text-wiah-blue"
+                target="_blank" rel="noreferrer"
+              >
+                NHS England — KH03 Bed Availability and Occupancy (quarterly)
+              </a>
+              {' '}— overnight beds, available and occupied, by trust and nationally.
             </li>
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">

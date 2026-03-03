@@ -39,6 +39,10 @@ PIPELINES = [
     ("gdp",        "economy",   DATA_DIR / "pipelines" / "gdp"),
     ("crime-trends","justice",   DATA_DIR / "pipelines" / "crime-trends"),
     ("teacher-workforce","education",DATA_DIR / "pipelines" / "teacher-workforce"),
+    ("cancer-survival","health",    DATA_DIR / "pipelines" / "cancer-survival"),
+    ("hospital-beds",  "health",    DATA_DIR / "pipelines" / "hospital-beds"),
+    ("reoffending",    "justice",   DATA_DIR / "pipelines" / "reoffending"),
+    ("graduate-outcomes","education",DATA_DIR / "pipelines" / "graduate-outcomes"),
 ]
 
 
