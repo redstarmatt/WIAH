@@ -7,6 +7,8 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import RegionalMap from '@/components/charts/RegionalMap';
+import AreaLookup from '@/components/AreaLookup';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 
@@ -450,6 +452,49 @@ export default function HousingPage() {
         </div>
         </ScrollReveal>
 
+        {/* Postcode lookup */}
+        {data && (
+          <ScrollReveal>
+            <div className="mb-16 p-6 bg-wiah-light rounded-lg">
+              <h2 className="text-lg font-bold text-wiah-black mb-2">How affordable is your area?</h2>
+              <p className="text-sm text-wiah-mid mb-4">
+                Enter your postcode to see your region&apos;s house price to earnings ratio and rent affordability.
+              </p>
+              <AreaLookup
+                metrics={[
+                  {
+                    label: 'Your region — house price to earnings',
+                    apiField: 'region',
+                    data: Object.entries(data.regional.affordability)
+                      .filter(([name]) => name !== 'England' && name !== 'Wales')
+                      .map(([name, ts]) => ({
+                        name,
+                        value: ts.at(-1)?.ratio ?? 0,
+                      }))
+                      .filter(d => d.value > 0),
+                    nationalValue: latestAff?.ratio,
+                    unit: '×',
+                    thresholds: { bad: 8, warning: 6 },
+                  },
+                  {
+                    label: 'Your region — rent as % of income',
+                    apiField: 'region',
+                    data: Object.entries(data.regional.rentAffordability)
+                      .map(([name, ts]) => ({
+                        name,
+                        value: ts.at(-1)?.rentToIncomePct ?? 0,
+                      }))
+                      .filter(d => d.value > 0),
+                    nationalValue: data.national.rents.affordability.at(-1)?.rentToIncomePct,
+                    unit: '%',
+                    thresholds: { bad: 35, warning: 28 },
+                  },
+                ]}
+              />
+            </div>
+          </ScrollReveal>
+        )}
+
         {/* Chart 1: Affordability ratio — England, London, North East */}
         {affordabilitySeries.length > 0 ? (
           <LineChart
@@ -604,6 +649,33 @@ export default function HousingPage() {
               </a>
             </p>
           </section>
+        )}
+
+        {/* Regional affordability map */}
+        {data && Object.keys(data.regional.affordability).length > 0 && (
+          <ScrollReveal>
+            <RegionalMap
+              title="Housing affordability by region, 2024"
+              subtitle="Median house price to median earnings ratio. Higher = less affordable."
+              geoUrl="/geo/regions.geojson"
+              data={Object.entries(data.regional.affordability)
+                .filter(([name]) => name !== 'England' && name !== 'Wales')
+                .map(([name, ts]) => ({
+                  name,
+                  value: ts.at(-1)?.ratio ?? 0,
+                }))
+                .filter(d => d.value > 0)}
+              nameField="RGN24NM"
+              valueLabel="× earnings"
+              colourDirection="low-is-good"
+              source={{
+                name: 'ONS',
+                dataset: 'Housing affordability in England and Wales, 2024',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/housing/datasets/ratioofhousepricetoworkplacebasedearningslowerquartileandmedian',
+                frequency: 'annual',
+              }}
+            />
+          </ScrollReveal>
         )}
 
         {/* Regional rent affordability table */}

@@ -8,6 +8,7 @@ import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
 import PostcodeLookup from '@/components/PostcodeLookup';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import RegionalMap from '@/components/charts/RegionalMap';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 
@@ -22,7 +23,7 @@ interface GpTimeSeries {
 
 interface GpData {
   national: { timeSeries: GpTimeSeries[] };
-  regional: { byICB: { code: string; name: string; avgWaitDays: number }[] };
+  regional: { byICB: { code: string; name: string; fullName?: string; avgWaitDays: number }[] };
 }
 
 interface AmbTimeSeries {
@@ -747,6 +748,31 @@ export default function HealthPage() {
               Source: NHS England, Appointments in General Practice
             </p>
           </section>
+        )}
+
+        {/* Regional map: GP wait by ICB */}
+        {gpData && gpData.regional.byICB.length > 0 && (
+          <ScrollReveal>
+            <RegionalMap
+              title="GP wait times by ICB area"
+              subtitle="Average days from booking to appointment. 42 Integrated Care Boards, England."
+              geoUrl="/geo/icb.geojson"
+              data={gpData.regional.byICB.map(icb => {
+                // Normalise: GeoJSON uses "Hampshire and Isle of Wight" (no "the")
+                const raw = icb.fullName || `NHS ${icb.name} Integrated Care Board`;
+                return { name: raw.replace(' and the Isle', ' and Isle'), value: icb.avgWaitDays };
+              })}
+              nameField="ICB23NM"
+              valueLabel="days"
+              colourDirection="low-is-good"
+              source={{
+                name: 'NHS England',
+                dataset: 'Appointments in General Practice',
+                url: 'https://digital.nhs.uk/data-and-information/publications/statistical/appointments-in-general-practice',
+                frequency: 'monthly',
+              }}
+            />
+          </ScrollReveal>
         )}
 
         {/* Cancer survival trend chart */}
