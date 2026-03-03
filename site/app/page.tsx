@@ -143,6 +143,29 @@ const TOPICS = [
     ],
   },
   {
+    topic: 'Transport',
+    href: '/transport',
+    colour: '#F4A261',
+    metrics: [
+      {
+        label: 'Rail punctuality',
+        value: '86',
+        unit: '% on time',
+        direction: 'down' as const,
+        polarity: 'up-is-good' as const,
+        sparklineData: [89.8, 88.0, 87.2, 86.9, 87.4, 85.5, 92.0, 87.0, 84.5, 85.0, 86.2],
+      },
+      {
+        label: 'Bus journeys',
+        value: '3.7',
+        unit: 'bn/yr',
+        direction: 'down' as const,
+        polarity: 'up-is-good' as const,
+        sparklineData: [4.6, 4.5, 4.4, 4.4, 4.3, 1.6, 3.2, 3.5, 3.7],
+      },
+    ],
+  },
+  {
     topic: 'Education',
     href: '/education',
     colour: '#2A9D8F',
