@@ -763,7 +763,7 @@ export default function HealthPage() {
               data={gpData.regional.byICB.map(icb => {
                 // Normalise: GeoJSON uses "Hampshire and Isle of Wight" (no "the")
                 const raw = icb.fullName || `NHS ${icb.name} Integrated Care Board`;
-                return { name: raw.replace(' and the Isle', ' and Isle'), value: icb.avgWaitDays };
+                return { name: raw.replace(' and the Isle of Wight', ' and Isle of Wight'), value: icb.avgWaitDays };
               })}
               nameField="ICB23NM"
               valueLabel="days"

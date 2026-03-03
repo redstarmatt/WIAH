@@ -63,6 +63,7 @@ export default function RegionalMap({
 
   // Render map
   useEffect(() => {
+    try {
     const svg = d3.select(svgRef.current);
     const tooltip = d3.select(tooltipRef.current);
     if (!geo || !data.length || dimensions.width === 0) return;
@@ -70,6 +71,52 @@ export default function RegionalMap({
     svg.selectAll('*').remove();
 
     const { width, height } = dimensions;
+
+    // Strip degenerate geometry: rings with ≤3 points cannot form a valid polygon
+    // and trip D3-geo's ring-clipping algorithm (ringEnd crash in d3-geo/src/clip).
+    // This is common in official UK boundary files with tiny island sub-polygons.
+    //
+    // Correct approach:
+    //   MultiPolygon — skip sub-polygons whose OUTER ring is degenerate;
+    //                  strip degenerate HOLE rings from surviving sub-polygons.
+    //   Polygon      — skip the feature if its outer ring is degenerate;
+    //                  strip any degenerate hole rings.
+    const safeGeo: GeoJSON.FeatureCollection = {
+      ...geo,
+      features: geo.features
+        .map(f => {
+          if (!f.geometry) return null;
+          const g = f.geometry as GeoJSON.Polygon | GeoJSON.MultiPolygon;
+
+          if (g.type === 'MultiPolygon') {
+            // For a national choropleth, keep only the largest sub-polygon (the mainland).
+            // The ONS boundary files include hundreds of tiny coastal fragments per ICB;
+            // rendering them all paints scattered pixels across neighbouring ICB areas.
+            const validPolys = (g.coordinates as GeoJSON.Position[][][])
+              .filter(poly => poly[0] && poly[0].length > 3);
+            if (validPolys.length === 0) return null;
+            // Pick the sub-polygon whose outer ring has the most points (≈ largest area).
+            const mainlandPoly = validPolys.reduce((best, poly) =>
+              poly[0].length > best[0].length ? poly : best
+            );
+            // Strip degenerate hole rings from the chosen sub-polygon.
+            const cleanPoly = mainlandPoly.filter(ring => ring.length > 3);
+            return { ...f, geometry: { type: 'Polygon', coordinates: cleanPoly } as GeoJSON.Polygon };
+          }
+
+          if (g.type === 'Polygon') {
+            const rings = g.coordinates as GeoJSON.Position[][];
+            // Skip feature entirely if outer ring is degenerate
+            if (rings[0].length <= 3) return null;
+            // Strip degenerate hole rings, keep outer ring intact
+            const filteredRings = rings.filter(ring => ring.length > 3);
+            return { ...f, geometry: { ...g, coordinates: filteredRings } as GeoJSON.Polygon };
+          }
+
+          return f;
+        })
+        .filter((f): f is GeoJSON.Feature => f !== null),
+    };
 
     // Build lookup: lowercase name → value
     const lookup = new Map<string, number>();
@@ -93,14 +140,49 @@ export default function RegionalMap({
       )
       .interpolate(d3.interpolateRgb);
 
-    // Projection
-    const projection = d3.geoMercator().fitSize([width, height - 60], geo);
+    // d3.geoMercator().fitSize() calls geoBounds() internally, which uses D3's winding-order
+    // convention to determine sphere vs polygon interior. The ONS boundary files have many
+    // tiny sub-polygons whose winding confuses geoBounds() into returning the full globe
+    // [[-180,-90],[180,90]], causing fitSize to compute scale ≈ 70 (globe scale) instead of
+    // ~2500 (England scale).
+    //
+    // Fix: scan coordinates directly to get the true extent, then compute the Mercator
+    // scale and translate manually — no geoBounds() call needed.
+    const allLons: number[] = [], allLats: number[] = [];
+    safeGeo.features.forEach(f => {
+      const g = f.geometry as GeoJSON.Polygon | GeoJSON.MultiPolygon;
+      const rings = g.type === 'Polygon'
+        ? (g.coordinates as GeoJSON.Position[][])
+        : (g.coordinates as GeoJSON.Position[][][]).flat();
+      rings.forEach(ring => ring.forEach(([lon, lat]) => {
+        allLons.push(lon);
+        allLats.push(lat);
+      }));
+    });
+    const lonMin = d3.min(allLons) ?? -7;
+    const lonMax = d3.max(allLons) ?? 2;
+    const latMin = d3.min(allLats) ?? 49;
+    const latMax = d3.max(allLats) ?? 61;
+
+    // Mercator y at scale=1: y = -log(tan(π/4 + lat_rad/2))
+    const mercY = (lat: number) => -Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360));
+    const lonRangeRad = (lonMax - lonMin) * Math.PI / 180;
+    const yMercRange = mercY(latMin) - mercY(latMax); // south has larger y in Mercator
+
+    const mapHeight = height - 60; // reserve 60px for legend
+    const geoScale = Math.min(width / lonRangeRad, mapHeight / yMercRange);
+
+    const projection = d3.geoMercator()
+      .center([(lonMin + lonMax) / 2, (latMin + latMax) / 2])
+      .scale(geoScale)
+      .translate([width / 2, mapHeight / 2]);
+
     const path = d3.geoPath().projection(projection);
 
     // Draw regions
     svg
       .selectAll('path')
-      .data(geo.features)
+      .data(safeGeo.features)
       .join('path')
       .attr('d', d => path(d) ?? '')
       .attr('fill', d => {
@@ -180,6 +262,9 @@ export default function RegionalMap({
       .attr('font-size', '10px')
       .attr('fill', '#6B7280')
       .text(valueLabel);
+    } catch (err) {
+      console.warn('RegionalMap render error:', err);
+    }
   }, [geo, data, dimensions, nameField, valueLabel, colourDirection]);
 
   return (
