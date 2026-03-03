@@ -188,7 +188,7 @@ export default function PovertyPage() {
                 : []
             }
             source="Trussell Trust · Annual statistics 2024"
-            baseline="8,500 emergency food parcels distributed every single day of the year"
+            baseline="3.1M parcels last year — up from 350,000 in 2013, a ninefold rise in a decade"
           />
         </div>
         </ScrollReveal>

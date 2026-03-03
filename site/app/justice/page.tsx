@@ -345,7 +345,7 @@ export default function JusticePage() {
                 : []
             }
             source="Home Office · Crime Outcomes YE Mar 2025"
-            baseline="92 in every 100 recorded crimes lead to no charge — halved from already-low levels in 2012"
+            baseline="Only 7 in 100 recorded crimes end in a charge — down from 15 in 100 a decade ago"
             onExpand={chargeRateSeries.length > 0 ? () => setExpanded('charge-rate') : undefined}
           />
           <MetricCard

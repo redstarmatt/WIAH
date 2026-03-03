@@ -427,7 +427,7 @@ export default function HealthPage() {
                 : []
             }
             source="NHS England · Appointments in General Practice"
-            baseline="A typical GP appointment used to be booked for the same week — now it's 3 weeks away"
+            baseline="21 days to see a GP now — was under 7 days in 2013"
             onExpand={gpWaitSeries.length > 0 ? () => setExpanded('gp-wait') : undefined}
           />
           <MetricCard
@@ -451,7 +451,7 @@ export default function HealthPage() {
                 : []
             }
             source="NHS England · Ambulance Quality Indicators"
-            baseline="Nearly double the 18-minute target — and longer than driving to most A&E departments"
+            baseline="Ambulances now take 34 minutes on average — nearly twice the 18-minute target set in 2017"
             onExpand={ambulanceSeries.length > 0 ? () => setExpanded('ambulance') : undefined}
           />
           <MetricCard

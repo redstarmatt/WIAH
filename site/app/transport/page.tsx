@@ -203,7 +203,7 @@ export default function TransportPage() {
             unit="% on time"
             direction="down"
             polarity="up-is-good"
-            baseline="1 in 7 trains arrives late — against a 92% target the industry has not hit since 2019"
+            baseline="Only 86% of trains run on time — 6 points below the 92% target, and the gap hasn't closed since 2019"
             changeText={
               latestRail
                 ? `${latestRail.quarter} · PPM (Public Performance Measure)`
@@ -223,7 +223,7 @@ export default function TransportPage() {
             unit="/yr"
             direction="down"
             polarity="up-is-good"
-            baseline="Nearly 1 billion fewer bus journeys a year than before the pandemic"
+            baseline="Down from 4.6 billion trips in 2019 — public transport use never fully recovered after COVID"
             changeText={
               latestBus && busPre
                 ? `${latestBus.year} · Down from ${busPre}bn in 2019`
@@ -243,7 +243,7 @@ export default function TransportPage() {
             unit="%"
             direction="up"
             polarity="up-is-bad"
-            baseline="Around 1 in 30 scheduled trains is cancelled before departure"
+            baseline="Around 3% of trains are cancelled outright — on top of those that run but arrive late"
             changeText={
               latestRail
                 ? `${latestRail.quarter} · Industry target: 2%`

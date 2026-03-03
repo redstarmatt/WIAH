@@ -210,7 +210,7 @@ export default function EnvironmentPage() {
                 : []
             }
             source="DESNZ · UK provisional GHG estimates 2023"
-            baseline="Still equivalent to France's entire annual emissions — though down 50% from 1990"
+            baseline="395 MtCO₂e today — down from 792 MtCO₂e in 1990, the steepest fall in the G7"
           />
           <MetricCard
             label="Species abundance"
@@ -244,7 +244,7 @@ export default function EnvironmentPage() {
                 : []
             }
             source="DEFRA · AURN air quality monitoring network"
-            baseline="Still 68% above the WHO safe limit of 5 µg/m³, despite decades of improvement"
+            baseline="8.4 µg/m³ today — still nearly double the WHO safe limit of 5 µg/m³"
           />
         </div>
         </ScrollReveal>

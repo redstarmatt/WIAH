@@ -383,7 +383,7 @@ export default function EducationPage() {
                 : []
             }
             source="DfE · Pupil absence 2023/24"
-            baseline="1 in 5 pupils misses at least 10% of school — up from 1 in 10 before the pandemic"
+            baseline="20% of pupils now persistently absent — double the 10.5% rate before the pandemic"
             onExpand={absenceSeries.length > 0 ? () => setExpanded('absence') : undefined}
           />
           <MetricCard

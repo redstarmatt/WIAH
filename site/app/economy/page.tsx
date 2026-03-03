@@ -337,7 +337,7 @@ export default function EconomyPage() {
             unit="%"
             direction={latestInflation && latestInflation.cpiPct > 2 ? 'up' : 'down'}
             polarity="up-is-bad"
-            baseline="Still above the Bank of England's 2% target — cumulative prices up 24% since 2021"
+            baseline="3% inflation now — down from a 40-year peak of 11.1% in October 2022, but still above the 2% target"
             changeText={
               latestInflation
                 ? `BoE target: 2% · Peak: 11.1% (Oct 2022)`

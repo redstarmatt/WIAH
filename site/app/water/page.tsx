@@ -321,7 +321,7 @@ export default function WaterPage() {
                 : []
             }
             source="Defra · WFD classification (B3)"
-            baseline="Only 1 in 6 rivers is in good ecological condition — the worst rate since monitoring began"
+            baseline="Only 16% of rivers meet ecological standards today — the target was 75% by 2027"
             onExpand={riverSeries.length > 0 ? () => setExpanded('river') : undefined}
           />
           <MetricCard

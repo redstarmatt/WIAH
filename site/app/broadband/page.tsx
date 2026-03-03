@@ -217,7 +217,7 @@ export default function BroadbandPage() {
                 : []
             }
             source="Ofcom · Connected Nations 2024"
-            baseline="6× worse than urban areas — 6.5% of rural homes still can't get decent broadband"
+            baseline="6.5% of rural homes can't get 30 Mbps — six times worse than urban areas (1%)"
           />
         </div>
         </ScrollReveal>

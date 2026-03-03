@@ -385,7 +385,7 @@ export default function ImmigrationPage() {
             unit="/yr"
             direction="down"
             polarity="up-is-bad"
-            baseline="Equivalent to a city the size of Southampton arriving and settling in the UK every year"
+            baseline="204,000 net arrivals in 2024 — down from a record 906,000 in 2023"
             changeText={
               data
                 ? `YE Jun 2025 · Down from 906K peak (2023)`
