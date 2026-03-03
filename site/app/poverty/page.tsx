@@ -169,12 +169,47 @@ export default function PovertyPage() {
           topic="Poverty"
           question="Who Is Actually Struggling to Get By?"
           finding={
-            latestPoverty && latestChild && latestFoodBank
-              ? `${latestPoverty.pct}% of the UK population — ${latestPoverty.millionsPeople} million people — live in relative poverty. ${latestChild.pct}% of children, ${latestChild.millions} million, grow up poor. The Trussell Trust distributed ${latestFoodBank.parcelsM} million emergency food parcels in the last year — up from 350,000 a decade ago.`
-              : '11.9 million people live in relative poverty. 3.4 million children. Food bank use has risen ninefold in a decade.'
+            data
+              ? `${latestPoverty?.millionsPeople ?? 11.9} million people live in relative poverty, including ${latestChild?.millions ?? 3.4} million children — and food bank use has risen ninefold in a decade.`
+              : '11.9 million people live in relative poverty, including 3.4 million children — and food bank use has risen ninefold in a decade.'
           }
           colour="#E63946"
         />
+
+        <section className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              The defining feature of UK poverty is that employment no longer prevents it.
+              In 2023, 68% of people in poverty lived in a working family &mdash; up from 46%
+              in 2005. Rising rents, high childcare costs, and insecure hours mean a job is
+              necessary but no longer sufficient. Child poverty has risen since 2012, driven
+              by the benefit cap, the two-child limit, and eroding housing support. An
+              estimated 3.4 million children now grow up poor &mdash; the highest level in
+              25 years and the highest rate among large Western European countries.
+            </p>
+            <p>
+              At the sharpest end, 3.8 million people experienced destitution in 2022 &mdash;
+              unable to afford two or more essentials including food, heating, and shelter &mdash;
+              more than double the 2017 figure. One million of them were children. Food bank
+              use has risen ninefold in a decade: the Trussell Trust distributed over
+              3 million parcels in the last year, and its network covers only part of the
+              total. Benefit delays, sanctions, and periods of zero income remain the most
+              common triggers.
+            </p>
+            <p>
+              Beneath income poverty sits a structural wealth divide that no recent policy has
+              narrowed. The richest 10% of households hold 43% of all wealth; the poorest
+              10% have negative net wealth, their debts exceeding their assets. The wealth
+              Gini has risen from 0.61 to 0.65 since 2006. Age compounds this: median
+              household wealth for 16&ndash;24-year-olds is £7,000, against £490,000 for those
+              aged 65&ndash;74 &mdash; a gap driven by property and pension accumulation that
+              is structurally inaccessible to younger cohorts. Income inequality has
+              improved recently (the Gini fell for four consecutive years), but income and
+              wealth are different things. The wealth gap is where advantage compounds
+              across generations.
+            </p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
@@ -182,7 +217,6 @@ export default function PovertyPage() {
           { id: 'sec-food', label: 'Food & Destitution' },
           { id: 'sec-wealth-inequality', label: 'Wealth Inequality' },
           { id: 'sec-wealth-by-age', label: 'Wealth by Age' },
-          { id: 'sec-context', label: 'Context' },
         ]} />
 
         {/* Metric cards */}
@@ -476,43 +510,6 @@ export default function PovertyPage() {
             </a>
           </p>
         </div>{/* end sec-wealth-by-age */}
-
-        {/* Context */}
-        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              The defining feature of UK poverty is that employment no longer prevents it.
-              In 2023, 68% of people in poverty lived in a working family &mdash; up from 46%
-              in 2005. Rising rents, high childcare costs, and insecure hours mean a job is
-              necessary but no longer sufficient. Child poverty has risen since 2012, driven
-              by the benefit cap, the two-child limit, and eroding housing support. An
-              estimated 3.4 million children now grow up poor &mdash; the highest level in
-              25 years and the highest rate among large Western European countries.
-            </p>
-            <p>
-              At the sharpest end, 3.8 million people experienced destitution in 2022 &mdash;
-              unable to afford two or more essentials including food, heating, and shelter &mdash;
-              more than double the 2017 figure. One million of them were children. Food bank
-              use has risen ninefold in a decade: the Trussell Trust distributed over
-              3 million parcels in the last year, and its network covers only part of the
-              total. Benefit delays, sanctions, and periods of zero income remain the most
-              common triggers.
-            </p>
-            <p>
-              Beneath income poverty sits a structural wealth divide that no recent policy has
-              narrowed. The richest 10% of households hold 43% of all wealth; the poorest
-              10% have negative net wealth, their debts exceeding their assets. The wealth
-              Gini has risen from 0.61 to 0.65 since 2006. Age compounds this: median
-              household wealth for 16&ndash;24-year-olds is £7,000, against £490,000 for those
-              aged 65&ndash;74 &mdash; a gap driven by property and pension accumulation that
-              is structurally inaccessible to younger cohorts. Income inequality has
-              improved recently (the Gini fell for four consecutive years), but income and
-              wealth are different things. The wealth gap is where advantage compounds
-              across generations.
-            </p>
-          </div>
-        </section>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

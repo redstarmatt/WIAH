@@ -274,10 +274,7 @@ export default function EnergyPage() {
     ? (latestElecPrice.index > elecOneYearAgo.index ? 'up' as const : 'down' as const)
     : ('up' as const);
 
-  // Dynamic finding
-  const finding = latestRenewable && latestElecPrice
-    ? `Renewable sources now generate ${latestRenewable.pct}% of Britain\u2019s electricity, up from just 2.8% in 2000. But electricity prices have doubled since 2015 \u2014 the CPI electricity index stands at ${latestElecPrice.index.toFixed(0)} against a 2015 baseline of 100 \u2014 and ${latestFuelPoverty ? `${latestFuelPoverty.pct}% of English households` : 'millions of households'} remain in fuel poverty.`
-    : 'Energy prices have surged while Britain\u2019s electricity grid has transformed. Renewables now generate nearly half of all electricity, but affordability remains a crisis for millions of households.';
+  // Dynamic finding — unused, replaced with inline prop
 
   // ── Render ────────────────────────────────────────────────────────────────
 
@@ -296,9 +293,46 @@ export default function EnergyPage() {
         <TopicHeader
           topic="Energy"
           question="Can You Actually Afford to Heat Your Home?"
-          finding={finding}
+          finding={
+            data
+              ? `Renewables now generate ${latestRenewable?.pct ?? 45}% of Britain\u2019s electricity — but prices have doubled since 2015 and ${latestFuelPoverty ? `${latestFuelPoverty.pct}%` : '13%'} of households are in fuel poverty.`
+              : 'Renewables now generate 45% of Britain\u2019s electricity — but prices have doubled since 2015 and 13% of households are in fuel poverty.'
+          }
           colour="#E63946"
         />
+
+        <section className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              Britain&apos;s electricity grid has been transformed at a pace few predicted. Renewables
+              went from under 3% of generation in 2000 to over 45% by 2024 &mdash; surpassing 50% for
+              the first time in 2023. Coal, which supplied roughly 30% of electricity at the millennium,
+              fell to zero when Ratcliffe-on-Soar closed in September 2024, ending 142 years of
+              coal-fired power. Gas has declined from its peak but still provides a significant share.
+              The generation mix chart shows one of the most dramatic energy transitions in any major
+              economy, driven largely by the rapid scaling of offshore wind.
+            </p>
+            <p>
+              A cleaner grid has not meant cheaper bills. Because gas-fired plants still set the marginal
+              electricity price, the 2021&ndash;22 wholesale gas shock hit consumers directly. The Ofgem
+              price cap rose 54% in April 2022 and again in October, pushing typical bills above
+              &pound;2,500. The CPI electricity index more than doubled, peaking at 241 in January 2023.
+              The Energy Price Guarantee and a &pound;400 bills support scheme blunted the worst of it,
+              but prices have not returned to normal: the index still sits at around 201, double the
+              2015 level. Until market design catches up with the generation mix, renewable growth
+              alone will not deliver lower bills.
+            </p>
+            <p>
+              The cost falls hardest on those least able to absorb it. Under the LILEE metric, 13.8% of
+              English households were in fuel poverty in 2023, up from 10.3% in 2018. That is roughly
+              3.3 million homes where energy costs consume a disproportionate share of income. The
+              methodology changed in 2019, making longer-term comparison difficult, but the direction
+              since then is unambiguous. Britain is building one of Europe&apos;s cleanest electricity
+              grids while a growing share of its population cannot afford to heat their homes &mdash; a
+              paradox that infrastructure investment alone will not resolve.
+            </p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
@@ -306,7 +340,6 @@ export default function EnergyPage() {
           { id: 'sec-generation-mix', label: 'Generation Mix' },
           { id: 'sec-generation', label: 'Mix Table' },
           { id: 'sec-renewables', label: 'Renewables' },
-          { id: 'sec-context', label: 'Context' },
         ]} />
 
         {/* Metric cards */}
@@ -548,41 +581,6 @@ export default function EnergyPage() {
             source="Source: DESNZ &mdash; Energy Trends, 2024."
           />
         </ScrollReveal>
-
-        {/* Context */}
-        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              Britain&apos;s electricity grid has been transformed at a pace few predicted. Renewables
-              went from under 3% of generation in 2000 to over 45% by 2024 &mdash; surpassing 50% for
-              the first time in 2023. Coal, which supplied roughly 30% of electricity at the millennium,
-              fell to zero when Ratcliffe-on-Soar closed in September 2024, ending 142 years of
-              coal-fired power. Gas has declined from its peak but still provides a significant share.
-              The generation mix chart shows one of the most dramatic energy transitions in any major
-              economy, driven largely by the rapid scaling of offshore wind.
-            </p>
-            <p>
-              A cleaner grid has not meant cheaper bills. Because gas-fired plants still set the marginal
-              electricity price, the 2021&ndash;22 wholesale gas shock hit consumers directly. The Ofgem
-              price cap rose 54% in April 2022 and again in October, pushing typical bills above
-              &pound;2,500. The CPI electricity index more than doubled, peaking at 241 in January 2023.
-              The Energy Price Guarantee and a &pound;400 bills support scheme blunted the worst of it,
-              but prices have not returned to normal: the index still sits at around 201, double the
-              2015 level. Until market design catches up with the generation mix, renewable growth
-              alone will not deliver lower bills.
-            </p>
-            <p>
-              The cost falls hardest on those least able to absorb it. Under the LILEE metric, 13.8% of
-              English households were in fuel poverty in 2023, up from 10.3% in 2018. That is roughly
-              3.3 million homes where energy costs consume a disproportionate share of income. The
-              methodology changed in 2019, making longer-term comparison difficult, but the direction
-              since then is unambiguous. Britain is building one of Europe&apos;s cleanest electricity
-              grids while a growing share of its population cannot afford to heat their homes &mdash; a
-              paradox that infrastructure investment alone will not resolve.
-            </p>
-          </div>
-        </section>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

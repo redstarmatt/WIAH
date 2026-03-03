@@ -320,12 +320,47 @@ export default function WaterPage() {
           topic="Water"
           question="Is Your Water Actually Clean?"
           finding={
-            latestSewage && latestBathing
-              ? `In ${latestSewage.year}, water companies discharged sewage into England's rivers and seas for ${(latestSewage.totalHours / 1_000_000).toFixed(1)} million hours across ${latestSewage.totalSpills.toLocaleString('en-GB')} monitored spill events — an average of ${latestSewage.avgSpillsPerOverflow.toFixed(0)} spills per overflow. Only ${latestRiver?.goodOrBetterPct ?? 16}% of rivers are in good ecological health — down from ${firstRiver?.goodOrBetterPct ?? 26}% in ${firstRiver?.year ?? 2009}. ${latestBathing.poorPct.toFixed(1)}% of bathing waters are now rated poor, nearly double the level a decade ago.`
-              : "England's water companies discharged sewage for over 3.6 million hours in 2024. Only 16% of rivers are in good ecological health and bathing water quality is deteriorating."
+            data
+              ? `Water companies discharged sewage for ${(latestSewage?.totalHours ? latestSewage.totalHours / 1_000_000 : 3.6).toFixed(1)} million hours last year — and only ${latestRiver?.goodOrBetterPct ?? 16}% of England's rivers are in good ecological health.`
+              : "Water companies discharged sewage for 3.6 million hours last year — and only 16% of England's rivers are in good ecological health."
           }
           colour="#264653"
         />
+
+        <section className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              The 3.6 million hours of sewage discharge recorded in 2024 demand careful reading. Monitor
+              coverage expanded from 862 overflows in 2016 to 14,182 (100%) in 2024, so much of the
+              headline increase reflects better measurement, not more sewage. The more telling metric
+              &mdash; average spills per overflow, which controls for that expansion &mdash; peaked at
+              35 in 2019 and sat at around 32 in 2024. Each overflow still discharges, on average, once
+              every 11 days. These were designed as emergency valves; the data shows they operate
+              routinely. Meanwhile, only 16% of English surface waters meet good ecological status,
+              down from 26% in 2009, and no full reclassification has been done since 2019 despite a
+              legal 2027 deadline.
+            </p>
+            <p>
+              Bathing water tells a similar story of recent reversal. Sites rated &ldquo;excellent&rdquo;
+              peaked at 72% in 2022 but fell to 66% by 2025, while &ldquo;poor&rdquo; sites nearly
+              doubled from 3.8% to 7.1% over the past decade. Heavier rainfall from climate change is
+              part of the explanation, but the financial data points to something structural: water
+              companies paid out billions in dividends while infrastructure deteriorated. Ofwat has now
+              approved record investment plans for 2025&ndash;2030, but the gap between shareholder
+              returns and capital spending over the past three decades is difficult to overlook.
+            </p>
+            <p>
+              Leakage reveals how deep the infrastructure deficit runs. The industry loses 2,963
+              megalitres per day &mdash; enough to fill over 1,000 Olympic swimming pools &mdash; and
+              every one of the 13 water companies is above its individual Ofwat target. Thames Water is
+              the worst, leaking 665 Ml/d against a target of 540. Total leakage has fallen from 3,238
+              Ml/d in 2017/18, but not fast enough: the industry target of 2,500 Ml/d by 2025 will be
+              missed by a wide margin. Full monitoring coverage means the scale of the sewage problem
+              is finally visible. Whether the same transparency can drive improvement on leakage and
+              river health remains an open question.
+            </p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
@@ -333,7 +368,6 @@ export default function WaterPage() {
           { id: 'sec-rivers', label: 'Rivers & Bathing' },
           { id: 'sec-financials', label: 'Company Finances' },
           { id: 'sec-leakage', label: 'Leakage' },
-          { id: 'sec-context', label: 'Context' },
         ]} />
 
         {/* Metric cards */}
@@ -749,43 +783,6 @@ export default function WaterPage() {
         )}
 
         </div>{/* end sec-leakage */}
-
-        {/* Context */}
-        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              The 3.6 million hours of sewage discharge recorded in 2024 demand careful reading. Monitor
-              coverage expanded from 862 overflows in 2016 to 14,182 (100%) in 2024, so much of the
-              headline increase reflects better measurement, not more sewage. The more telling metric
-              &mdash; average spills per overflow, which controls for that expansion &mdash; peaked at
-              35 in 2019 and sat at around 32 in 2024. Each overflow still discharges, on average, once
-              every 11 days. These were designed as emergency valves; the data shows they operate
-              routinely. Meanwhile, only 16% of English surface waters meet good ecological status,
-              down from 26% in 2009, and no full reclassification has been done since 2019 despite a
-              legal 2027 deadline.
-            </p>
-            <p>
-              Bathing water tells a similar story of recent reversal. Sites rated &ldquo;excellent&rdquo;
-              peaked at 72% in 2022 but fell to 66% by 2025, while &ldquo;poor&rdquo; sites nearly
-              doubled from 3.8% to 7.1% over the past decade. Heavier rainfall from climate change is
-              part of the explanation, but the financial data points to something structural: water
-              companies paid out billions in dividends while infrastructure deteriorated. Ofwat has now
-              approved record investment plans for 2025&ndash;2030, but the gap between shareholder
-              returns and capital spending over the past three decades is difficult to overlook.
-            </p>
-            <p>
-              Leakage reveals how deep the infrastructure deficit runs. The industry loses 2,963
-              megalitres per day &mdash; enough to fill over 1,000 Olympic swimming pools &mdash; and
-              every one of the 13 water companies is above its individual Ofwat target. Thames Water is
-              the worst, leaking 665 Ml/d against a target of 540. Total leakage has fallen from 3,238
-              Ml/d in 2017/18, but not fast enough: the industry target of 2,500 Ml/d by 2025 will be
-              missed by a wide margin. Full monitoring coverage means the scale of the sewage problem
-              is finally visible. Whether the same transparency can drive improvement on leakage and
-              river health remains an open question.
-            </p>
-          </div>
-        </section>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

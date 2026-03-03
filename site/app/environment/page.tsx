@@ -233,12 +233,48 @@ export default function EnvironmentPage() {
           topic="Environment"
           question="What Are We Actually Doing to the Planet?"
           finding={
-            latestGhg && latestBio
-              ? `UK greenhouse gas emissions have fallen ${reductionPct}% since 1990 — one of the fastest declines in the G7. But the biodiversity picture tells a different story: UK wildlife has declined to just ${latestBio.index}% of its 1970 abundance. Over half of UK species have declined in the last 50 years.`
-              : 'UK emissions have halved since 1990. But biodiversity has collapsed — UK species at 68% of 1970 abundance, one of the worst records in Europe.'
+            data
+              ? `UK emissions have fallen ${reductionPct}% since 1990, but wildlife abundance has dropped to ${latestBio?.index ?? 68}% of 1970 levels — one of the worst biodiversity records in Europe.`
+              : 'UK emissions have halved since 1990, but wildlife abundance has dropped to 68% of 1970 levels — one of the worst biodiversity records in Europe.'
           }
           colour="#2A9D8F"
         />
+
+        <section className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              The UK&apos;s environmental record splits sharply in two. On emissions, it is a genuine
+              success: greenhouse gases are down over 50% since 1990, one of the steepest falls in the
+              G7, driven largely by replacing coal with renewables in electricity generation. But on
+              nature, the picture is dire. The UK ranks in the bottom 10% globally on the Natural
+              History Museum&apos;s Biodiversity Intactness Index. Wildlife abundance has fallen to 68%
+              of 1970 levels; 56% of British species declined between 1970 and 2013, and 15% are
+              threatened with extinction. Intensified agriculture, urban expansion, and pesticide use
+              are the primary drivers. Britain has decarbonised its grid while continuing to deplete
+              its natural systems.
+            </p>
+            <p>
+              Air quality has improved steadily &mdash; PM2.5 concentrations are down 31% since 2009
+              &mdash; but still causes an estimated 30,000 deaths per year. Average concentrations
+              remain nearly double the WHO&apos;s 5 &micro;g/m&sup3; guideline, and roughly 2 million
+              people live in areas exceeding the UK legal limit of 20 &micro;g/m&sup3;. On flooding,
+              3.7 million properties are now at significant risk in England, a 54% increase since 2008.
+              The Climate Change Committee consistently rates the UK&apos;s adaptation plans as
+              inadequate. The gap between the pace of climate change and the pace of preparation
+              continues to widen.
+            </p>
+            <p>
+              Waste policy tells a quieter story of stalled ambition. Household recycling rates rose
+              rapidly through the 2000s &mdash; from roughly 10% in 2000 to a peak of around 44% by
+              2014 &mdash; then flatlined. England&apos;s rate has since slipped to approximately 41%.
+              The government&apos;s target of 65% by 2035 would require the fastest sustained increase
+              on record, starting from a decade of no progress. Landfill rates have fallen, but the
+              plateau in recycling suggests the easy gains from kerbside collection are exhausted. What
+              comes next &mdash; reducing packaging, tackling food waste, reforming producer
+              responsibility &mdash; requires structural policy changes that have not yet materialised.
+            </p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
@@ -246,7 +282,6 @@ export default function EnvironmentPage() {
           { id: 'sec-nature', label: 'Nature' },
           { id: 'sec-air', label: 'Air Quality' },
           { id: 'sec-recycling', label: 'Waste & Recycling' },
-          { id: 'sec-context', label: 'Context' },
         ]} />
 
         {/* Metric cards */}
@@ -476,44 +511,6 @@ export default function EnvironmentPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
         </div>{/* end sec-recycling */}
-
-        {/* Context */}
-        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              The UK&apos;s environmental record splits sharply in two. On emissions, it is a genuine
-              success: greenhouse gases are down over 50% since 1990, one of the steepest falls in the
-              G7, driven largely by replacing coal with renewables in electricity generation. But on
-              nature, the picture is dire. The UK ranks in the bottom 10% globally on the Natural
-              History Museum&apos;s Biodiversity Intactness Index. Wildlife abundance has fallen to 68%
-              of 1970 levels; 56% of British species declined between 1970 and 2013, and 15% are
-              threatened with extinction. Intensified agriculture, urban expansion, and pesticide use
-              are the primary drivers. Britain has decarbonised its grid while continuing to deplete
-              its natural systems.
-            </p>
-            <p>
-              Air quality has improved steadily &mdash; PM2.5 concentrations are down 31% since 2009
-              &mdash; but still causes an estimated 30,000 deaths per year. Average concentrations
-              remain nearly double the WHO&apos;s 5 &micro;g/m&sup3; guideline, and roughly 2 million
-              people live in areas exceeding the UK legal limit of 20 &micro;g/m&sup3;. On flooding,
-              3.7 million properties are now at significant risk in England, a 54% increase since 2008.
-              The Climate Change Committee consistently rates the UK&apos;s adaptation plans as
-              inadequate. The gap between the pace of climate change and the pace of preparation
-              continues to widen.
-            </p>
-            <p>
-              Waste policy tells a quieter story of stalled ambition. Household recycling rates rose
-              rapidly through the 2000s &mdash; from roughly 10% in 2000 to a peak of around 44% by
-              2014 &mdash; then flatlined. England&apos;s rate has since slipped to approximately 41%.
-              The government&apos;s target of 65% by 2035 would require the fastest sustained increase
-              on record, starting from a decade of no progress. Landfill rates have fallen, but the
-              plateau in recycling suggests the easy gains from kerbside collection are exhausted. What
-              comes next &mdash; reducing packaging, tackling food waste, reforming producer
-              responsibility &mdash; requires structural policy changes that have not yet materialised.
-            </p>
-          </div>
-        </section>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

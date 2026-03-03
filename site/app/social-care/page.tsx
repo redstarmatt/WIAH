@@ -243,13 +243,55 @@ export default function SocialCarePage() {
           topic="Social Care"
           question="What Actually Happens When You Need Care?"
           finding={
-            latestDelay && cqc && carers
-              ? `An average of ${(latestDelay.avgDailyDelayed / 1000).toFixed(1)}k patients sit in hospital beds each day despite being medically fit to leave — they're waiting for social care that isn't available. ${goodPlusPct}% of care providers are rated Good or Outstanding by the CQC, but the system depends on ${(carers.totalCarers / 1e6).toFixed(1)} million unpaid carers whose contribution is worth an estimated £${carers.economicValueBn}bn a year.`
-              : 'Thousands of patients are stuck in hospital each day waiting for social care. The system depends on nearly 5 million unpaid carers.'
+            data
+              ? `Over ${(latestDelay ? latestDelay.avgDailyDelayed / 1000 : 13).toFixed(0)},000 patients sit in hospital every day waiting for social care — and the system depends on ${carers ? (carers.totalCarers / 1e6).toFixed(1) : '4.7'} million unpaid carers.`
+              : 'Over 13,000 patients sit in hospital every day waiting for social care — and the system depends on 4.7 million unpaid carers.'
           }
           colour="#6B7280"
           preposition="with"
         />
+
+        <section className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              The core problem is a mismatch between rising demand and constrained funding.
+              England&apos;s population aged 85 and over &mdash; the group most likely to
+              need care &mdash; is growing steadily, but local authority spending fell 16%
+              in real terms between 2010 and 2016 and has only just recovered to 2010 levels.
+              The consequences surface in hospitals: over 13,000 patients occupy acute beds
+              each day despite being medically fit to leave, nearly 30% of them waiting for
+              a home care package that does not yet exist. Every occupied bed means a longer
+              A&amp;E wait, a cancelled operation, or an ambulance circling outside. Despite
+              this pressure, care quality holds up &mdash; over 84% of CQC-rated locations
+              are Good or Outstanding &mdash; a credit to frontline staff working within a
+              system that gives them very little margin.
+            </p>
+            <p>
+              The workforce crisis sits at the heart of the capacity problem. Vacancy rates
+              peaked at 10.6% in 2021/22 &mdash; over 165,000 unfilled posts &mdash; and
+              have since fallen to 8.3%, but annual turnover still runs at roughly 28%.
+              The reason is straightforward: mean hourly pay is &pound;10.54, barely above
+              the National Living Wage, for work that carries significant physical and
+              emotional responsibility. Registered nurses face a 12.4% vacancy rate,
+              reflecting direct competition with NHS employers who can offer better pay
+              and pensions. International recruitment has plugged some gaps, but when
+              one in three workers leaves each year, recruitment alone cannot solve the
+              problem. Retention is the structural issue.
+            </p>
+            <p>
+              Behind the formal system lies a hidden infrastructure of unpaid care. Nearly
+              5 million people provide unpaid care in England, and over 1 million of them
+              do so for 50 or more hours a week &mdash; the equivalent of a full-time job
+              with overtime. Carers UK estimates the economic value of this work at
+              &pound;162 billion a year, more than the entire NHS budget. Many unpaid
+              carers are themselves elderly, managing their own health conditions while
+              supporting a partner or parent. If even a fraction stepped back, the formal
+              system &mdash; already unable to fill its vacancies &mdash; could not absorb
+              the demand. The sustainability of social care depends on people it largely
+              does not pay.
+            </p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
@@ -257,7 +299,6 @@ export default function SocialCarePage() {
           { id: 'sec-quality', label: 'Care Quality' },
           { id: 'sec-carers', label: 'Unpaid Carers' },
           { id: 'sec-workforce', label: 'Workforce' },
-          { id: 'sec-context', label: 'Context' },
         ]} />
 
         {/* Metric cards */}
@@ -676,50 +717,6 @@ export default function SocialCarePage() {
             </ScrollReveal>
           )}
         </div>{/* end sec-workforce */}
-
-        {/* Context */}
-        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              The core problem is a mismatch between rising demand and constrained funding.
-              England&apos;s population aged 85 and over &mdash; the group most likely to
-              need care &mdash; is growing steadily, but local authority spending fell 16%
-              in real terms between 2010 and 2016 and has only just recovered to 2010 levels.
-              The consequences surface in hospitals: over 13,000 patients occupy acute beds
-              each day despite being medically fit to leave, nearly 30% of them waiting for
-              a home care package that does not yet exist. Every occupied bed means a longer
-              A&amp;E wait, a cancelled operation, or an ambulance circling outside. Despite
-              this pressure, care quality holds up &mdash; over 84% of CQC-rated locations
-              are Good or Outstanding &mdash; a credit to frontline staff working within a
-              system that gives them very little margin.
-            </p>
-            <p>
-              The workforce crisis sits at the heart of the capacity problem. Vacancy rates
-              peaked at 10.6% in 2021/22 &mdash; over 165,000 unfilled posts &mdash; and
-              have since fallen to 8.3%, but annual turnover still runs at roughly 28%.
-              The reason is straightforward: mean hourly pay is &pound;10.54, barely above
-              the National Living Wage, for work that carries significant physical and
-              emotional responsibility. Registered nurses face a 12.4% vacancy rate,
-              reflecting direct competition with NHS employers who can offer better pay
-              and pensions. International recruitment has plugged some gaps, but when
-              one in three workers leaves each year, recruitment alone cannot solve the
-              problem. Retention is the structural issue.
-            </p>
-            <p>
-              Behind the formal system lies a hidden infrastructure of unpaid care. Nearly
-              5 million people provide unpaid care in England, and over 1 million of them
-              do so for 50 or more hours a week &mdash; the equivalent of a full-time job
-              with overtime. Carers UK estimates the economic value of this work at
-              &pound;162 billion a year, more than the entire NHS budget. Many unpaid
-              carers are themselves elderly, managing their own health conditions while
-              supporting a partner or parent. If even a fraction stepped back, the formal
-              system &mdash; already unable to fill its vacancies &mdash; could not absorb
-              the demand. The sustainability of social care depends on people it largely
-              does not pay.
-            </p>
-          </div>
-        </section>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

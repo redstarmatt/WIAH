@@ -380,12 +380,46 @@ export default function JusticePage() {
           topic="Justice"
           question="What Actually Happens When You Report a Crime?"
           finding={
-            latestCharge && latestBacklog && occupancyPct
-              ? `Just ${latestCharge.pct}% of recorded crimes lead to a charge — down from ${firstCharge?.pct}% a decade ago. Of an estimated 9.6 million offences each year, only around 3 in 100 end in a conviction. The Crown Court backlog stands at ${latestBacklog.outstanding.toLocaleString('en-GB')} cases — nearly 50% above the government's own target — and prisons are at ${occupancyPct}% capacity.`
-              : 'Fewer than 7 in every 100 recorded crimes now result in a charge. The court backlog and prison population continue to grow.'
+            data
+              ? `Fewer than 1 in 14 recorded crimes results in a charge — and for sexual offences and burglary, the figure is closer to 1 in 20.`
+              : 'Fewer than 1 in 14 recorded crimes leads to a charge or summons.'
           }
           colour="#6B7280"
         />
+
+        <section className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              The justice system has quietly hollowed out. Of an estimated 9.6 million crimes experienced
+              each year, just 388,000 result in a charge &mdash; roughly 4 in every 100. A decade ago,
+              about 1 in 6 recorded crimes led to a charge; today it is fewer than 1 in 14. The collapse
+              is steepest where it matters most: sexual offences and burglary both have charge rates below
+              5%, and fraud &mdash; now the most common crime type &mdash; is barely investigated at all.
+              Police forces cite growing complexity, digital evidence backlogs, and victim attrition, but
+              the scale of the decline points to something structural: a system that has not kept pace with
+              the volume and nature of modern crime.
+            </p>
+            <p>
+              The institutions downstream are equally strained. The Crown Court backlog exceeds 70,000
+              cases, nearly 50% above the government&apos;s own target of 53,000. Courts were shuttered
+              for months in 2020, a barristers&apos; strike in 2022 compounded delays, and the average
+              case now takes 18 months from offence to Crown Court completion. Meanwhile, the prison
+              population sits at around 88,000 &mdash; near operational capacity &mdash; despite overall
+              crime falling for decades. In September 2024, the government began releasing prisoners at
+              the 40% sentence mark under the emergency SDS40 scheme, freeing roughly 38,000 early. The
+              system is simultaneously too slow to process cases and too full to house the convicted.
+            </p>
+            <p>
+              Domestic abuse exposes the gap between victimisation and justice most starkly. The Crime
+              Survey estimates 1.7 million victims each year &mdash; 7.1% of women, 3.8% of men &mdash;
+              yet only 1 in 5 report to police. Of the offences that are recorded, just 7% lead to a
+              charge and 5.1% to a conviction. Nearly half of cases end with no further action; almost
+              a quarter close because the victim withdrew &mdash; often through fear, financial dependence,
+              or loss of confidence in the process. For the most common serious crime in England and Wales,
+              the justice system offers most victims no meaningful outcome at all.
+            </p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
@@ -394,7 +428,6 @@ export default function JusticePage() {
           { id: 'sec-courts', label: 'Courts' },
           { id: 'sec-prison', label: 'Prison' },
           { id: 'sec-domestic-abuse', label: 'Domestic Abuse' },
-          { id: 'sec-context', label: 'Context' },
         ]} />
 
         {/* Metric cards */}
@@ -839,42 +872,6 @@ export default function JusticePage() {
           source="Source: ONS — Crime in England and Wales, year ending December 2024."
         />
         </ScrollReveal>
-
-        {/* Context */}
-        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              The justice system has quietly hollowed out. Of an estimated 9.6 million crimes experienced
-              each year, just 388,000 result in a charge &mdash; roughly 4 in every 100. A decade ago,
-              about 1 in 6 recorded crimes led to a charge; today it is fewer than 1 in 14. The collapse
-              is steepest where it matters most: sexual offences and burglary both have charge rates below
-              5%, and fraud &mdash; now the most common crime type &mdash; is barely investigated at all.
-              Police forces cite growing complexity, digital evidence backlogs, and victim attrition, but
-              the scale of the decline points to something structural: a system that has not kept pace with
-              the volume and nature of modern crime.
-            </p>
-            <p>
-              The institutions downstream are equally strained. The Crown Court backlog exceeds 70,000
-              cases, nearly 50% above the government&apos;s own target of 53,000. Courts were shuttered
-              for months in 2020, a barristers&apos; strike in 2022 compounded delays, and the average
-              case now takes 18 months from offence to Crown Court completion. Meanwhile, the prison
-              population sits at around 88,000 &mdash; near operational capacity &mdash; despite overall
-              crime falling for decades. In September 2024, the government began releasing prisoners at
-              the 40% sentence mark under the emergency SDS40 scheme, freeing roughly 38,000 early. The
-              system is simultaneously too slow to process cases and too full to house the convicted.
-            </p>
-            <p>
-              Domestic abuse exposes the gap between victimisation and justice most starkly. The Crime
-              Survey estimates 1.7 million victims each year &mdash; 7.1% of women, 3.8% of men &mdash;
-              yet only 1 in 5 report to police. Of the offences that are recorded, just 7% lead to a
-              charge and 5.1% to a conviction. Nearly half of cases end with no further action; almost
-              a quarter close because the victim withdrew &mdash; often through fear, financial dependence,
-              or loss of confidence in the process. For the most common serious crime in England and Wales,
-              the justice system offers most victims no meaningful outcome at all.
-            </p>
-          </div>
-        </section>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

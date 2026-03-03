@@ -284,12 +284,55 @@ export default function TransportPage() {
           topic="Transport"
           question="Can You Actually Get Around?"
           finding={
-            latestRail && latestBus
-              ? `Rail punctuality stands at ${latestRail.ppmPct.toFixed(1)}% — meaning roughly 1 in ${Math.round(100 / (100 - latestRail.ppmPct))} trains arrive late or are cancelled. Bus passenger journeys have fallen to ${busBillions} billion per year${busPre ? `, down from ${busPre}bn before the pandemic` : ''}. Cancellation rates remain at ${latestRail.cancelledPct.toFixed(1)}%, well above the industry target of 2%.`
-              : 'Rail punctuality has declined steadily over the past decade, while bus services have been cut across much of the country. Public transport in England is getting harder to rely on.'
+            data
+              ? `Rail punctuality stands at ${latestRail?.ppmPct.toFixed(1) ?? '86'}% and bus journeys have fallen to ${busBillions ?? '3.8'} billion a year — public transport is getting harder to rely on.`
+              : 'Rail punctuality stands at 86% and bus journeys have fallen to 3.8 billion a year — public transport is getting harder to rely on.'
           }
           colour="#F4A261"
         />
+
+        <section className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              Rail and bus share the same underlying problem: decades of underinvestment
+              compounded by short-term shocks. Rail punctuality has been falling since
+              2014, with the botched 2018 timetable change across Northern and Thameslink
+              services exposing how little margin the network had. COVID-19 then collapsed
+              demand, and while passenger numbers recovered to roughly 95% of pre-pandemic
+              levels, performance did not follow &mdash; ageing signalling, capacity
+              bottlenecks, and the 2022 RMT/ASLEF strikes all took their toll. Buses tell
+              a parallel story outside London: local authority funding for supported routes
+              has fallen over 40% in real terms since 2010, services have been withdrawn,
+              and ridership has never fully recovered from the pandemic. The &pound;2 fare
+              cap sustained demand but could not replace the routes that had already gone.
+              Greater Manchester&apos;s Bee Network re-regulation is the first serious
+              attempt to reverse this model.
+            </p>
+            <p>
+              Road safety is one of British public policy&apos;s genuine long-run
+              successes. Fatalities fell 73% between 1979 and 2023 &mdash; from 6,352
+              killed to 1,695 &mdash; driven by compulsory seat belts in 1983, tougher
+              drink-drive enforcement, and successive improvements to vehicle safety
+              standards. But the improvement has stalled. Since 2010, deaths have
+              plateaued at around 1,700 a year, and the seriously injured count has edged
+              upward from a 2013 low of 21,657 to 30,124 in 2023 &mdash; partly a result
+              of better recording, but enough to raise questions about whether further
+              gains require new interventions such as lower urban speed limits and
+              better-designed junctions.
+            </p>
+            <p>
+              The transition to electric vehicles is moving fast at the headline level:
+              battery EVs went from 0.06% of new car sales in 2011 to nearly 20% in 2024,
+              with over 1.4 million now on UK roads. The ZEV mandate requires manufacturers
+              to hit 22% zero-emission sales in 2024, rising to 100% by 2035. Infrastructure,
+              however, is not keeping pace &mdash; roughly 60,000 public chargers serve
+              1.4 million EVs, a ratio of about 23 vehicles per charger. And the benefits
+              are unevenly distributed: average EV purchase prices remain well above
+              petrol equivalents, meaning lower-income households are largely locked out
+              of the transition despite facing the highest fuel costs.
+            </p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
@@ -297,7 +340,6 @@ export default function TransportPage() {
           { id: 'sec-bus', label: 'Bus & Roads' },
           { id: 'sec-road-safety', label: 'Road Safety' },
           { id: 'sec-ev', label: 'Electric Vehicles' },
-          { id: 'sec-context', label: 'Context' },
         ]} />
 
         {/* Metric cards */}
@@ -637,51 +679,6 @@ export default function TransportPage() {
             <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
           )}
         </div>{/* end sec-ev */}
-
-        {/* Context */}
-        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              Rail and bus share the same underlying problem: decades of underinvestment
-              compounded by short-term shocks. Rail punctuality has been falling since
-              2014, with the botched 2018 timetable change across Northern and Thameslink
-              services exposing how little margin the network had. COVID-19 then collapsed
-              demand, and while passenger numbers recovered to roughly 95% of pre-pandemic
-              levels, performance did not follow &mdash; ageing signalling, capacity
-              bottlenecks, and the 2022 RMT/ASLEF strikes all took their toll. Buses tell
-              a parallel story outside London: local authority funding for supported routes
-              has fallen over 40% in real terms since 2010, services have been withdrawn,
-              and ridership has never fully recovered from the pandemic. The &pound;2 fare
-              cap sustained demand but could not replace the routes that had already gone.
-              Greater Manchester&apos;s Bee Network re-regulation is the first serious
-              attempt to reverse this model.
-            </p>
-            <p>
-              Road safety is one of British public policy&apos;s genuine long-run
-              successes. Fatalities fell 73% between 1979 and 2023 &mdash; from 6,352
-              killed to 1,695 &mdash; driven by compulsory seat belts in 1983, tougher
-              drink-drive enforcement, and successive improvements to vehicle safety
-              standards. But the improvement has stalled. Since 2010, deaths have
-              plateaued at around 1,700 a year, and the seriously injured count has edged
-              upward from a 2013 low of 21,657 to 30,124 in 2023 &mdash; partly a result
-              of better recording, but enough to raise questions about whether further
-              gains require new interventions such as lower urban speed limits and
-              better-designed junctions.
-            </p>
-            <p>
-              The transition to electric vehicles is moving fast at the headline level:
-              battery EVs went from 0.06% of new car sales in 2011 to nearly 20% in 2024,
-              with over 1.4 million now on UK roads. The ZEV mandate requires manufacturers
-              to hit 22% zero-emission sales in 2024, rising to 100% by 2035. Infrastructure,
-              however, is not keeping pace &mdash; roughly 60,000 public chargers serve
-              1.4 million EVs, a ratio of about 23 vehicles per charger. And the benefits
-              are unevenly distributed: average EV purchase prices remain well above
-              petrol equivalents, meaning lower-income households are largely locked out
-              of the transition despite facing the highest fuel costs.
-            </p>
-          </div>
-        </section>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

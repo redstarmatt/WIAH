@@ -437,11 +437,45 @@ export default function EconomyPage() {
           question="Are You Actually Better Off?"
           finding={
             latestReal && latestInflation && latestLabour
-              ? `Real wages have finally recovered to pre-financial crisis levels after 16 years — averaging £${latestReal.weeklyGBP} per week. Inflation at ${latestInflation.cpiPct}% is still above the Bank of England's 2% target. Economic inactivity stands at ${latestLabour.inactivityPct}% — over one in five working-age adults are neither employed nor looking for work — and productivity has been essentially flat for 15 years.`
-              : 'Real wages took 16 years to recover to their 2008 peak. Productivity growth has flatlined since the financial crisis and economic inactivity remains elevated.'
+              ? `Real wages have finally recovered their 2008 peak after 16 years — but productivity has been essentially flat for the same period, and one in five working-age adults is not in the workforce.`
+              : 'Real wages took 16 years to recover to their 2008 peak, even as productivity flatlined.'
           }
           colour="#264653"
         />
+
+        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              Real wages took 16 years to recover their 2008 peak &mdash; the longest squeeze
+              on living standards since records began. At the root is a productivity crisis:
+              output per hour grew at roughly 2% a year before the financial crisis, then
+              flatlined. Without productivity growth, wages cannot sustainably rise. The
+              2022&ndash;23 cost-of-living shock &mdash; CPI hitting 11.1% in October 2022 &mdash;
+              compounded the damage, though inflation has since fallen to around 3%. Meanwhile,
+              over a fifth of working-age adults remain economically inactive, elevated since
+              COVID and driven largely by long-term sickness. The economy is growing again,
+              but the foundations are brittle.
+            </p>
+            <p>
+              Within the earnings distribution, two forces pull in opposite directions. The
+              National Living Wage, introduced in 2015, compressed the bottom: P10 weekly
+              earnings (£227) grew faster than the median through the late 2010s. But the top
+              kept pulling away. At P90 (£1,336 per week), earners take home nearly six times
+              as much as those at P10 &mdash; a ratio that has barely moved in a decade. The
+              fan chart of earnings tells a story of a floor being raised while the ceiling
+              lifts further out of reach.
+            </p>
+            <p>
+              Geography compounds the divide. London&apos;s GVA per head (£47,705) sits at
+              174% of the UK average; the North East manages 67%. That gap has widened every
+              decade since the 1990s, and no levelling-up policy has reversed it in the data.
+              One genuine bright spot: the income Gini coefficient has fallen for four
+              consecutive years, from 35.4 in 2020 to 32.9, its lowest level in over a decade.
+              Incomes are becoming more equal &mdash; but against a backdrop where productivity,
+              regional convergence, and inactivity remain unresolved.
+            </p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
@@ -451,7 +485,6 @@ export default function EconomyPage() {
           { id: 'sec-gdp', label: 'GDP & Debt' },
           { id: 'sec-earnings-inequality', label: 'Earnings Inequality' },
           { id: 'sec-regional-divide', label: 'Regional Divide' },
-          { id: 'sec-context', label: 'Context' },
         ]} />
 
         {/* Metric cards */}
@@ -915,42 +948,6 @@ export default function EconomyPage() {
           source="Source: ONS — Household income inequality, 2024."
         />
         </ScrollReveal>
-
-        {/* Context */}
-        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              Real wages took 16 years to recover their 2008 peak &mdash; the longest squeeze
-              on living standards since records began. At the root is a productivity crisis:
-              output per hour grew at roughly 2% a year before the financial crisis, then
-              flatlined. Without productivity growth, wages cannot sustainably rise. The
-              2022&ndash;23 cost-of-living shock &mdash; CPI hitting 11.1% in October 2022 &mdash;
-              compounded the damage, though inflation has since fallen to around 3%. Meanwhile,
-              over a fifth of working-age adults remain economically inactive, elevated since
-              COVID and driven largely by long-term sickness. The economy is growing again,
-              but the foundations are brittle.
-            </p>
-            <p>
-              Within the earnings distribution, two forces pull in opposite directions. The
-              National Living Wage, introduced in 2015, compressed the bottom: P10 weekly
-              earnings (£227) grew faster than the median through the late 2010s. But the top
-              kept pulling away. At P90 (£1,336 per week), earners take home nearly six times
-              as much as those at P10 &mdash; a ratio that has barely moved in a decade. The
-              fan chart of earnings tells a story of a floor being raised while the ceiling
-              lifts further out of reach.
-            </p>
-            <p>
-              Geography compounds the divide. London&apos;s GVA per head (£47,705) sits at
-              174% of the UK average; the North East manages 67%. That gap has widened every
-              decade since the 1990s, and no levelling-up policy has reversed it in the data.
-              One genuine bright spot: the income Gini coefficient has fallen for four
-              consecutive years, from 35.4 in 2020 to 32.9, its lowest level in over a decade.
-              Incomes are becoming more equal &mdash; but against a backdrop where productivity,
-              regional convergence, and inactivity remain unresolved.
-            </p>
-          </div>
-        </section>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

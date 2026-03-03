@@ -426,11 +426,44 @@ export default function HealthPage() {
           question="Can You Actually See a Doctor?"
           finding={
             latestAmb && latestGp && preCovid && rttLatest
-              ? `${rttListMillions} million people are on the NHS waiting list — up from ${rttLatest.prePandemicList ? (rttLatest.prePandemicList / 1_000_000).toFixed(1) : '4.4'}M before the pandemic. Category 2 ambulance response times average ${latestAmb.cat2MeanMins?.toFixed(0)} minutes — nearly double the 18-minute target. Only ${latestGp.pctSameOrNextDay.toFixed(0)}% of GP appointments are same or next day, and ${(rttLatest.over52wk ?? 0).toLocaleString('en-GB')} people have been waiting over a year for treatment.`
-              : 'Over 7 million people are on the NHS waiting list. Ambulance response times remain nearly double their target, and GP waits spike sharply each autumn.'
+              ? `${rttListMillions} million people are waiting for NHS treatment — more than at any point in the health service's history.`
+              : 'Over 7 million people are on the NHS waiting list — the highest ever recorded.'
           }
           colour="#E63946"
         />
+
+        <section className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              The NHS is caught in a system-wide capacity squeeze. The waiting list has grown from 4.4 million
+              before the pandemic to 7.64 million, with over 300,000 people waiting more than a year for
+              treatment. Behind that backlog lies a chain of bottlenecks: hospitals running at 92% bed
+              occupancy (above the 85% safe maximum) with roughly 100,000 beds &mdash; down from 145,000 in
+              2010 &mdash; which means ambulances queue outside full A&amp;E departments, pushing Cat 2 response
+              times to 35 minutes against an 18-minute target. At the front door of the system, average GP
+              waits have tripled from under 7 days in 2013 to 21 days, while each GP now covers around 2,300
+              patients. The NHS is delivering 76 million appointments a month. The problem is not effort but
+              arithmetic: demand has outgrown capacity at every stage.
+            </p>
+            <p>
+              Life expectancy reveals something deeper than an operational crisis. For decades, the UK added
+              roughly 0.2 years of life per year &mdash; steady, predictable progress. After 2011, that
+              improvement stalled almost completely. Male life expectancy sits at 79.0 years, female at
+              83.0. COVID caused a visible dip, but the flatlining began nearly a decade earlier and has not
+              recovered. The UK is not alone in this &mdash; similar slowdowns have appeared across wealthy
+              nations &mdash; but the stall coincided with a period of austerity-driven cuts to public health,
+              social care, and local government services. The causes remain debated; the trend does not.
+            </p>
+            <p>
+              Not everything is deteriorating. Cancer survival has improved markedly: five-year lung cancer
+              survival has risen from 10.4% to 16.2%, breast cancer survival exceeds 85%, and melanoma
+              survival tops 91%. These gains reflect genuine advances in screening, diagnostics, and treatment.
+              Life expectancy, at 79 and 83 years, remains high by historical standards. The picture is one
+              of a health system producing better clinical outcomes within an infrastructure that can no longer
+              absorb the volume of demand placed on it.
+            </p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
@@ -439,7 +472,6 @@ export default function HealthPage() {
           { id: 'sec-life-expectancy', label: 'Life Expectancy' },
           { id: 'sec-gp', label: 'GP Access' },
           { id: 'sec-map', label: 'Regional Map' },
-          { id: 'sec-context', label: 'Context' },
         ]} />
 
         {/* Metric cards */}
@@ -986,41 +1018,6 @@ export default function HealthPage() {
           source="Source: ONS — Cancer survival in England, adults diagnosed 2013–2017."
         />
         </ScrollReveal>
-
-        {/* Context */}
-        <section id="sec-context" className="max-w-2xl mt-8 mb-12">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              The NHS is caught in a system-wide capacity squeeze. The waiting list has grown from 4.4 million
-              before the pandemic to 7.64 million, with over 300,000 people waiting more than a year for
-              treatment. Behind that backlog lies a chain of bottlenecks: hospitals running at 92% bed
-              occupancy (above the 85% safe maximum) with roughly 100,000 beds &mdash; down from 145,000 in
-              2010 &mdash; which means ambulances queue outside full A&amp;E departments, pushing Cat 2 response
-              times to 35 minutes against an 18-minute target. At the front door of the system, average GP
-              waits have tripled from under 7 days in 2013 to 21 days, while each GP now covers around 2,300
-              patients. The NHS is delivering 76 million appointments a month. The problem is not effort but
-              arithmetic: demand has outgrown capacity at every stage.
-            </p>
-            <p>
-              Life expectancy reveals something deeper than an operational crisis. For decades, the UK added
-              roughly 0.2 years of life per year &mdash; steady, predictable progress. After 2011, that
-              improvement stalled almost completely. Male life expectancy sits at 79.0 years, female at
-              83.0. COVID caused a visible dip, but the flatlining began nearly a decade earlier and has not
-              recovered. The UK is not alone in this &mdash; similar slowdowns have appeared across wealthy
-              nations &mdash; but the stall coincided with a period of austerity-driven cuts to public health,
-              social care, and local government services. The causes remain debated; the trend does not.
-            </p>
-            <p>
-              Not everything is deteriorating. Cancer survival has improved markedly: five-year lung cancer
-              survival has risen from 10.4% to 16.2%, breast cancer survival exceeds 85%, and melanoma
-              survival tops 91%. These gains reflect genuine advances in screening, diagnostics, and treatment.
-              Life expectancy, at 79 and 83 years, remains high by historical standards. The picture is one
-              of a health system producing better clinical outcomes within an infrastructure that can no longer
-              absorb the volume of demand placed on it.
-            </p>
-          </div>
-        </section>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">
