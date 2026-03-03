@@ -48,6 +48,33 @@ interface HousingData {
   };
 }
 
+interface StockYear {
+  year: number;
+  ownerOccupied: number;
+  privateRented: number;
+  socialRented: number;
+  allDwellings: number;
+}
+
+interface CompletionYear {
+  financialYear: string;
+  startYear: number;
+  privateCompletions: number;
+  socialCompletions: number;
+  allCompletions: number;
+}
+
+interface SocialHousingData {
+  dwellingStock: StockYear[];
+  newBuildCompletions: CompletionYear[];
+  summary: {
+    peakSocialYear: number;
+    peakSocialStock: number;
+    socialRentedStock: number;
+    socialSharePct: number;
+  };
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function yearToDate(y: number): Date {
@@ -72,12 +99,17 @@ function sparkFrom(arr: number[], n = 12) {
 
 export default function HousingPage() {
   const [data, setData] = useState<HousingData | null>(null);
+  const [socialData, setSocialData] = useState<SocialHousingData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/data/housing/housing.json')
       .then(r => r.json())
       .then(setData)
+      .catch(console.error);
+    fetch('/data/housing/social_housing.json')
+      .then(r => r.json())
+      .then(setSocialData)
       .catch(console.error);
   }, []);
 
@@ -246,6 +278,63 @@ export default function HousingPage() {
               })),
             }]
           : []),
+      ]
+    : [];
+
+  // Dwelling stock by tenure
+  const tenureSeries: Series[] = socialData
+    ? [
+        {
+          id: 'owner-occ',
+          label: 'Owner occupied',
+          colour: '#264653',
+          data: socialData.dwellingStock.map(d => ({
+            date: yearToDate(d.year),
+            value: d.ownerOccupied / 1_000_000,
+          })),
+        },
+        {
+          id: 'private-rent',
+          label: 'Private rented',
+          colour: '#E63946',
+          data: socialData.dwellingStock.map(d => ({
+            date: yearToDate(d.year),
+            value: d.privateRented / 1_000_000,
+          })),
+        },
+        {
+          id: 'social-rent',
+          label: 'Social rented',
+          colour: '#2A9D8F',
+          data: socialData.dwellingStock.map(d => ({
+            date: yearToDate(d.year),
+            value: d.socialRented / 1_000_000,
+          })),
+        },
+      ]
+    : [];
+
+  // New build completions by tenure
+  const completionSeries: Series[] = socialData
+    ? [
+        {
+          id: 'private-builds',
+          label: 'Private enterprise',
+          colour: '#0D1117',
+          data: socialData.newBuildCompletions.map(d => ({
+            date: yearToDate(d.startYear),
+            value: d.privateCompletions / 1_000,
+          })),
+        },
+        {
+          id: 'social-builds',
+          label: 'Social (HA + LA)',
+          colour: '#2A9D8F',
+          data: socialData.newBuildCompletions.map(d => ({
+            date: yearToDate(d.startYear),
+            value: d.socialCompletions / 1_000,
+          })),
+        },
       ]
     : [];
 
@@ -564,6 +653,45 @@ export default function HousingPage() {
           </section>
         )}
 
+        {/* Chart: Housing stock by tenure */}
+        {tenureSeries.length > 0 ? (
+          <LineChart
+            title="Housing stock by tenure, 1991–2024"
+            subtitle="Millions of dwellings in England, by tenure type."
+            series={tenureSeries}
+            yLabel="Dwellings (millions)"
+            annotations={[
+              { date: new Date(2003, 0), label: '2003: Buy-to-let boom' },
+            ]}
+            source={{
+              name: 'DLUHC',
+              dataset: 'Live Table 104 — Dwelling stock by tenure',
+              frequency: 'annual',
+              url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-dwelling-stock-including-vacants',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart: New build completions by tenure */}
+        {completionSeries.length > 0 ? (
+          <LineChart
+            title="New build completions by tenure, 2000–2025"
+            subtitle="Thousands of permanent dwellings completed per year in England."
+            series={completionSeries}
+            yLabel="Completions (thousands)"
+            source={{
+              name: 'DLUHC',
+              dataset: 'Live Table 213 — Permanent dwellings by tenure',
+              frequency: 'annual',
+              url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-house-building',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
         {/* Positive story */}
         <ScrollReveal>
         <PositiveCallout
@@ -623,6 +751,18 @@ export default function HousingPage() {
                 </a>
               </li>
             ))}
+            {socialData && (
+              <li>
+                <a
+                  href="https://www.gov.uk/government/statistical-data-sets/live-tables-on-dwelling-stock-including-vacants"
+                  className="underline hover:text-wiah-blue"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  DLUHC &mdash; Live Tables 104 &amp; 213: Dwelling stock &amp; new build completions by tenure (annual)
+                </a>
+              </li>
+            )}
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             {data?.metadata.methodology}

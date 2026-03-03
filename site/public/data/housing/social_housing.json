@@ -1,0 +1,609 @@
+{
+  "topic": "housing",
+  "subtopic": "social-housing",
+  "lastUpdated": "2026-03-03",
+  "summary": {
+    "latestYear": 2024,
+    "socialRentedStock": 4205365,
+    "socialSharePct": 16.4,
+    "allDwellings": 25617413,
+    "peakSocialYear": 1991,
+    "peakSocialStock": 4673691,
+    "latestCompletionYear": "2024-25",
+    "socialCompletions": 37630,
+    "allCompletions": 152040
+  },
+  "dwellingStock": [
+    {
+      "year": 1991,
+      "ownerOccupied": 13230309,
+      "privateRented": 1767000,
+      "housingAssociation": 608000,
+      "localAuthority": 3899000,
+      "otherPublic": 166691,
+      "socialRented": 4673691,
+      "allDwellings": 19671000
+    },
+    {
+      "year": 1992,
+      "ownerOccupied": 13388359,
+      "privateRented": 1806000,
+      "housingAssociation": 646000,
+      "localAuthority": 3844000,
+      "otherPublic": 150641,
+      "socialRented": 4640641,
+      "allDwellings": 19836000
+    },
+    {
+      "year": 1993,
+      "ownerOccupied": 13492543,
+      "privateRented": 1867000,
+      "housingAssociation": 714000,
+      "localAuthority": 3760000,
+      "otherPublic": 153457,
+      "socialRented": 4627457,
+      "allDwellings": 19987000
+    },
+    {
+      "year": 1994,
+      "ownerOccupied": 13616489,
+      "privateRented": 1929000,
+      "housingAssociation": 779000,
+      "localAuthority": 3666000,
+      "otherPublic": 149511,
+      "socialRented": 4594511,
+      "allDwellings": 20139000
+    },
+    {
+      "year": 1995,
+      "ownerOccupied": 13740503,
+      "privateRented": 1998000,
+      "housingAssociation": 857000,
+      "localAuthority": 3565000,
+      "otherPublic": 145497,
+      "socialRented": 4567497,
+      "allDwellings": 20305000
+    },
+    {
+      "year": 1996,
+      "ownerOccupied": 13842360,
+      "privateRented": 2073000,
+      "housingAssociation": 942000,
+      "localAuthority": 3470000,
+      "otherPublic": 140640,
+      "socialRented": 4552640,
+      "allDwellings": 20468000
+    },
+    {
+      "year": 1997,
+      "ownerOccupied": 13979104,
+      "privateRented": 2125000,
+      "housingAssociation": 985000,
+      "localAuthority": 3401000,
+      "otherPublic": 131896,
+      "socialRented": 4517896,
+      "allDwellings": 20622000
+    },
+    {
+      "year": 1998,
+      "ownerOccupied": 14186777,
+      "privateRented": 2121000,
+      "housingAssociation": 1040000,
+      "localAuthority": 3309000,
+      "otherPublic": 121223,
+      "socialRented": 4470223,
+      "allDwellings": 20778000
+    },
+    {
+      "year": 1999,
+      "ownerOccupied": 14407966,
+      "privateRented": 2086000,
+      "housingAssociation": 1146000,
+      "localAuthority": 3178000,
+      "otherPublic": 110034,
+      "socialRented": 4434034,
+      "allDwellings": 20927000
+    },
+    {
+      "year": 2000,
+      "ownerOccupied": 14599629,
+      "privateRented": 2089000,
+      "housingAssociation": 1273000,
+      "localAuthority": 3012000,
+      "otherPublic": 101371,
+      "socialRented": 4386371,
+      "allDwellings": 21075000
+    },
+    {
+      "year": 2001,
+      "ownerOccupied": 14735000,
+      "privateRented": 2133000,
+      "housingAssociation": 1424000,
+      "localAuthority": 2812000,
+      "otherPublic": 103000,
+      "socialRented": 4339000,
+      "allDwellings": 21207000
+    },
+    {
+      "year": 2002,
+      "ownerOccupied": 14846264,
+      "privateRented": 2197000,
+      "housingAssociation": 1492000,
+      "localAuthority": 2706000,
+      "otherPublic": 112252,
+      "socialRented": 4310252,
+      "allDwellings": 21353516
+    },
+    {
+      "year": 2003,
+      "ownerOccupied": 14769031,
+      "privateRented": 2549295,
+      "housingAssociation": 1651000,
+      "localAuthority": 2440143,
+      "otherPublic": 103923,
+      "socialRented": 4195066,
+      "allDwellings": 21513391
+    },
+    {
+      "year": 2004,
+      "ownerOccupied": 14986538,
+      "privateRented": 2578382,
+      "housingAssociation": 1702000,
+      "localAuthority": 2334631,
+      "otherPublic": 82810,
+      "socialRented": 4119441,
+      "allDwellings": 21684360
+    },
+    {
+      "year": 2005,
+      "ownerOccupied": 15100126,
+      "privateRented": 2720055,
+      "housingAssociation": 1802000,
+      "localAuthority": 2165526,
+      "otherPublic": 82206,
+      "socialRented": 4049732,
+      "allDwellings": 21869913
+    },
+    {
+      "year": 2006,
+      "ownerOccupied": 15050561,
+      "privateRented": 2986706,
+      "housingAssociation": 1865386,
+      "localAuthority": 2087456,
+      "otherPublic": 82457,
+      "socialRented": 4035299,
+      "allDwellings": 22072566
+    },
+    {
+      "year": 2007,
+      "ownerOccupied": 15092527,
+      "privateRented": 3181991,
+      "housingAssociation": 1950924,
+      "localAuthority": 1987343,
+      "otherPublic": 74716,
+      "socialRented": 4012983,
+      "allDwellings": 22287502
+    },
+    {
+      "year": 2008,
+      "ownerOccupied": 15066597,
+      "privateRented": 3443465,
+      "housingAssociation": 2056474,
+      "localAuthority": 1870366,
+      "otherPublic": 74134,
+      "socialRented": 4000974,
+      "allDwellings": 22511036
+    },
+    {
+      "year": 2009,
+      "ownerOccupied": 14968169,
+      "privateRented": 3704729,
+      "housingAssociation": 2127510,
+      "localAuthority": 1819696,
+      "otherPublic": 73698,
+      "socialRented": 4020904,
+      "allDwellings": 22693802
+    },
+    {
+      "year": 2010,
+      "ownerOccupied": 14895637,
+      "privateRented": 3911601,
+      "housingAssociation": 2180026,
+      "localAuthority": 1786427,
+      "otherPublic": 64982,
+      "socialRented": 4031435,
+      "allDwellings": 22838672
+    },
+    {
+      "year": 2011,
+      "ownerOccupied": 14827632,
+      "privateRented": 4105117,
+      "housingAssociation": 2255000,
+      "localAuthority": 1725912,
+      "otherPublic": 62405,
+      "socialRented": 4043317,
+      "allDwellings": 22976066
+    },
+    {
+      "year": 2012,
+      "ownerOccupied": 14760109,
+      "privateRented": 4285661,
+      "housingAssociation": 2303855,
+      "localAuthority": 1692631,
+      "otherPublic": 74595,
+      "socialRented": 4071081,
+      "allDwellings": 23116851
+    },
+    {
+      "year": 2013,
+      "ownerOccupied": 14702416,
+      "privateRented": 4464838,
+      "housingAssociation": 2330925,
+      "localAuthority": 1681785,
+      "otherPublic": 67498,
+      "socialRented": 4080208,
+      "allDwellings": 23247462
+    },
+    {
+      "year": 2014,
+      "ownerOccupied": 14691190,
+      "privateRented": 4622691,
+      "housingAssociation": 2343095,
+      "localAuthority": 1668685,
+      "otherPublic": 64295,
+      "socialRented": 4076075,
+      "allDwellings": 23389956
+    },
+    {
+      "year": 2015,
+      "ownerOccupied": 14707758,
+      "privateRented": 4773333,
+      "housingAssociation": 2387054,
+      "localAuthority": 1643262,
+      "otherPublic": 55131,
+      "socialRented": 4085447,
+      "allDwellings": 23566538
+    },
+    {
+      "year": 2016,
+      "ownerOccupied": 14830132,
+      "privateRented": 4832078,
+      "housingAssociation": 2430173,
+      "localAuthority": 1612329,
+      "otherPublic": 57360,
+      "socialRented": 4099862,
+      "allDwellings": 23762072
+    },
+    {
+      "year": 2017,
+      "ownerOccupied": 15085608,
+      "privateRented": 4797971,
+      "housingAssociation": 2443781,
+      "localAuthority": 1601573,
+      "otherPublic": 56374,
+      "socialRented": 4101728,
+      "allDwellings": 23985307
+    },
+    {
+      "year": 2018,
+      "ownerOccupied": 15352670,
+      "privateRented": 4773156,
+      "housingAssociation": 2452432,
+      "localAuthority": 1592008,
+      "otherPublic": 43210,
+      "socialRented": 4087650,
+      "allDwellings": 24213477
+    },
+    {
+      "year": 2019,
+      "ownerOccupied": 15591258,
+      "privateRented": 4762266,
+      "housingAssociation": 2478680,
+      "localAuthority": 1587164,
+      "otherPublic": 41874,
+      "socialRented": 4107718,
+      "allDwellings": 24461243
+    },
+    {
+      "year": 2020,
+      "ownerOccupied": 15775577,
+      "privateRented": 4812719,
+      "housingAssociation": 2504894,
+      "localAuthority": 1582946,
+      "otherPublic": 33698,
+      "socialRented": 4121538,
+      "allDwellings": 24709834
+    },
+    {
+      "year": 2021,
+      "ownerOccupied": 15914124,
+      "privateRented": 4874777,
+      "housingAssociation": 2523939,
+      "localAuthority": 1581554,
+      "otherPublic": 33194,
+      "socialRented": 4138687,
+      "allDwellings": 24927588
+    },
+    {
+      "year": 2022,
+      "ownerOccupied": 16107514,
+      "privateRented": 4903871,
+      "housingAssociation": 2541501,
+      "localAuthority": 1575709,
+      "otherPublic": 33456,
+      "socialRented": 4150666,
+      "allDwellings": 25162050
+    },
+    {
+      "year": 2023,
+      "ownerOccupied": 16287795,
+      "privateRented": 4934570,
+      "housingAssociation": 2571221,
+      "localAuthority": 1571939,
+      "otherPublic": 30817,
+      "socialRented": 4173977,
+      "allDwellings": 25396342
+    },
+    {
+      "year": 2024,
+      "ownerOccupied": 16462434,
+      "privateRented": 4949614,
+      "housingAssociation": 2602251,
+      "localAuthority": 1574098,
+      "otherPublic": 29016,
+      "socialRented": 4205365,
+      "allDwellings": 25617413
+    }
+  ],
+  "newBuildCompletions": [
+    {
+      "financialYear": "2000-01",
+      "startYear": 2000,
+      "privateCompletions": 116640,
+      "housingAssocCompletions": 16430,
+      "localAuthorityCompletions": 180,
+      "socialCompletions": 16610,
+      "allCompletions": 133260
+    },
+    {
+      "financialYear": "2001-02",
+      "startYear": 2001,
+      "privateCompletions": 115700,
+      "housingAssocCompletions": 14100,
+      "localAuthorityCompletions": 60,
+      "socialCompletions": 14160,
+      "allCompletions": 129870
+    },
+    {
+      "financialYear": "2002-03",
+      "startYear": 2002,
+      "privateCompletions": 124460,
+      "housingAssocCompletions": 13080,
+      "localAuthorityCompletions": 200,
+      "socialCompletions": 13280,
+      "allCompletions": 137740
+    },
+    {
+      "financialYear": "2003-04",
+      "startYear": 2003,
+      "privateCompletions": 130100,
+      "housingAssocCompletions": 13670,
+      "localAuthorityCompletions": 190,
+      "socialCompletions": 13860,
+      "allCompletions": 143960
+    },
+    {
+      "financialYear": "2004-05",
+      "startYear": 2004,
+      "privateCompletions": 139130,
+      "housingAssocCompletions": 16660,
+      "localAuthorityCompletions": 100,
+      "socialCompletions": 16760,
+      "allCompletions": 155890
+    },
+    {
+      "financialYear": "2005-06",
+      "startYear": 2005,
+      "privateCompletions": 144940,
+      "housingAssocCompletions": 18160,
+      "localAuthorityCompletions": 300,
+      "socialCompletions": 18460,
+      "allCompletions": 163400
+    },
+    {
+      "financialYear": "2006-07",
+      "startYear": 2006,
+      "privateCompletions": 145680,
+      "housingAssocCompletions": 21750,
+      "localAuthorityCompletions": 250,
+      "socialCompletions": 22000,
+      "allCompletions": 167680
+    },
+    {
+      "financialYear": "2007-08",
+      "startYear": 2007,
+      "privateCompletions": 147170,
+      "housingAssocCompletions": 23220,
+      "localAuthorityCompletions": 220,
+      "socialCompletions": 23440,
+      "allCompletions": 170610
+    },
+    {
+      "financialYear": "2008-09",
+      "startYear": 2008,
+      "privateCompletions": 113800,
+      "housingAssocCompletions": 26690,
+      "localAuthorityCompletions": 490,
+      "socialCompletions": 27180,
+      "allCompletions": 140990
+    },
+    {
+      "financialYear": "2009-10",
+      "startYear": 2009,
+      "privateCompletions": 93030,
+      "housingAssocCompletions": 26520,
+      "localAuthorityCompletions": 370,
+      "socialCompletions": 26890,
+      "allCompletions": 119910
+    },
+    {
+      "financialYear": "2010-11",
+      "startYear": 2010,
+      "privateCompletions": 83180,
+      "housingAssocCompletions": 23550,
+      "localAuthorityCompletions": 1140,
+      "socialCompletions": 24690,
+      "allCompletions": 107870
+    },
+    {
+      "financialYear": "2011-12",
+      "startYear": 2011,
+      "privateCompletions": 89120,
+      "housingAssocCompletions": 27460,
+      "localAuthorityCompletions": 1960,
+      "socialCompletions": 29420,
+      "allCompletions": 118510
+    },
+    {
+      "financialYear": "2012-13",
+      "startYear": 2012,
+      "privateCompletions": 84550,
+      "housingAssocCompletions": 22060,
+      "localAuthorityCompletions": 1360,
+      "socialCompletions": 23420,
+      "allCompletions": 107980
+    },
+    {
+      "financialYear": "2013-14",
+      "startYear": 2013,
+      "privateCompletions": 89630,
+      "housingAssocCompletions": 21790,
+      "localAuthorityCompletions": 910,
+      "socialCompletions": 22700,
+      "allCompletions": 112330
+    },
+    {
+      "financialYear": "2014-15",
+      "startYear": 2014,
+      "privateCompletions": 96270,
+      "housingAssocCompletions": 27020,
+      "localAuthorityCompletions": 1360,
+      "socialCompletions": 28380,
+      "allCompletions": 124640
+    },
+    {
+      "financialYear": "2015-16",
+      "startYear": 2015,
+      "privateCompletions": 111350,
+      "housingAssocCompletions": 26470,
+      "localAuthorityCompletions": 1900,
+      "socialCompletions": 28370,
+      "allCompletions": 139710
+    },
+    {
+      "financialYear": "2016-17",
+      "startYear": 2016,
+      "privateCompletions": 120450,
+      "housingAssocCompletions": 25230,
+      "localAuthorityCompletions": 1830,
+      "socialCompletions": 27060,
+      "allCompletions": 147520
+    },
+    {
+      "financialYear": "2017-18",
+      "startYear": 2017,
+      "privateCompletions": 131730,
+      "housingAssocCompletions": 27160,
+      "localAuthorityCompletions": 2020,
+      "socialCompletions": 29180,
+      "allCompletions": 160910
+    },
+    {
+      "financialYear": "2018-19",
+      "startYear": 2018,
+      "privateCompletions": 138270,
+      "housingAssocCompletions": 28230,
+      "localAuthorityCompletions": 2560,
+      "socialCompletions": 30790,
+      "allCompletions": 169060
+    },
+    {
+      "financialYear": "2019-20",
+      "startYear": 2019,
+      "privateCompletions": 141200,
+      "housingAssocCompletions": 32290,
+      "localAuthorityCompletions": 1850,
+      "socialCompletions": 34140,
+      "allCompletions": 175330
+    },
+    {
+      "financialYear": "2020-21",
+      "startYear": 2020,
+      "privateCompletions": 127200,
+      "housingAssocCompletions": 25860,
+      "localAuthorityCompletions": 1610,
+      "socialCompletions": 27470,
+      "allCompletions": 154660
+    },
+    {
+      "financialYear": "2021-22",
+      "startYear": 2021,
+      "privateCompletions": 139050,
+      "housingAssocCompletions": 30880,
+      "localAuthorityCompletions": 1300,
+      "socialCompletions": 32180,
+      "allCompletions": 171240
+    },
+    {
+      "financialYear": "2022-23",
+      "startYear": 2022,
+      "privateCompletions": 139540,
+      "housingAssocCompletions": 33330,
+      "localAuthorityCompletions": 1980,
+      "socialCompletions": 35310,
+      "allCompletions": 174840
+    },
+    {
+      "financialYear": "2023-24",
+      "startYear": 2023,
+      "privateCompletions": 122150,
+      "housingAssocCompletions": 35320,
+      "localAuthorityCompletions": 2850,
+      "socialCompletions": 38170,
+      "allCompletions": 160330
+    },
+    {
+      "financialYear": "2024-25",
+      "startYear": 2024,
+      "privateCompletions": 114420,
+      "housingAssocCompletions": 35370,
+      "localAuthorityCompletions": 2260,
+      "socialCompletions": 37630,
+      "allCompletions": 152040
+    }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DLUHC",
+        "dataset": "Live Table 104: Dwelling stock by tenure, England",
+        "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-dwelling-stock-including-vacants",
+        "retrieved": "2026-03-03",
+        "frequency": "annual"
+      },
+      {
+        "name": "DLUHC",
+        "dataset": "Live Table 213: House building completions by tenure, England",
+        "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-house-building",
+        "retrieved": "2026-03-03",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Dwelling stock figures are from DLUHC Live Table 104, measured at 31 March each year. Social rented is the sum of local authority, private registered provider (housing association), and other public sector dwellings. New build completions are from Live Table 213, by financial year. Recent years may be provisional [p] or revised [r].",
+    "knownIssues": [
+      "Pre-1991 tenure breakdowns are incomplete \u2014 series starts at 1991.",
+      "Latest year (2024) stock figures are provisional.",
+      "2024-25 completions figures are provisional and cover only part of the year."
+    ]
+  }
+}

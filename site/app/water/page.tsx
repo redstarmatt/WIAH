@@ -57,6 +57,23 @@ interface WaterData {
   };
 }
 
+interface FinancialYear {
+  year: string;
+  capex_total_m: number | null;
+  totex_total_m: number | null;
+  dividends_m: number | null;
+}
+
+interface FinancialData {
+  national: { timeSeries: FinancialYear[] };
+  summary: {
+    totalDividendsSincePrivatisation_m: number;
+    latestCapex_m: number;
+    latestTotex_m: number;
+    recent5yrAvgDividends_m: number;
+  };
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function yearToDate(y: number): Date {
@@ -79,12 +96,17 @@ function fmtHours(n: number): string {
 
 export default function WaterPage() {
   const [data, setData] = useState<WaterData | null>(null);
+  const [finData, setFinData] = useState<FinancialData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/data/water/water.json')
       .then(r => r.json())
       .then(setData)
+      .catch(console.error);
+    fetch('/data/water/water-financials.json')
+      .then(r => r.json())
+      .then(setFinData)
       .catch(console.error);
   }, []);
 
@@ -192,6 +214,33 @@ export default function WaterPage() {
     : [];
 
   const maxAvgSpills = companiesBySpills.length > 0 ? companiesBySpills[0].avgSpillsPerOverflow : 1;
+
+  // Financial series: dividends vs capex (from 1990 onwards, where both exist)
+  function fyToDate(fy: string): Date {
+    const start = parseInt(fy.split('-')[0]);
+    return new Date(start, 6, 1);
+  }
+
+  const capexDividendSeries: Series[] = finData
+    ? [
+        {
+          id: 'capex',
+          label: 'Capital investment (£m, real)',
+          colour: '#2A9D8F',
+          data: finData.national.timeSeries
+            .filter(d => d.capex_total_m != null && parseInt(d.year.split('-')[0]) >= 1990)
+            .map(d => ({ date: fyToDate(d.year), value: d.capex_total_m! })),
+        },
+        {
+          id: 'dividends',
+          label: 'Dividends (£m, nominal)',
+          colour: '#E63946',
+          data: finData.national.timeSeries
+            .filter(d => d.dividends_m != null)
+            .map(d => ({ date: fyToDate(d.year), value: d.dividends_m! })),
+        },
+      ]
+    : [];
 
   // ── Metric values ────────────────────────────────────────────────────────
 
@@ -532,6 +581,24 @@ export default function WaterPage() {
           </div>
         )}
 
+        {/* Chart: Dividends vs Capital Investment */}
+        {capexDividendSeries.length > 0 ? (
+          <LineChart
+            title="Water company dividends vs capital investment, 1990–2025"
+            subtitle="Industry totals. Capital investment in real terms (2024-25 prices, £m); dividends in nominal terms (£m)."
+            series={capexDividendSeries}
+            yLabel="£ millions"
+            source={{
+              name: 'Ofwat',
+              dataset: 'Long-term cost data & Historic dividends since privatisation',
+              frequency: 'annual',
+              url: 'https://www.ofwat.gov.uk/publication/long-term-data-series-of-company-costs/',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
         {/* Positive story */}
         <ScrollReveal>
         <PositiveCallout
@@ -603,6 +670,18 @@ export default function WaterPage() {
                 </a>
               </li>
             ))}
+            {finData && (
+              <li>
+                <a
+                  href="https://www.ofwat.gov.uk/publication/long-term-data-series-of-company-costs/"
+                  className="underline hover:text-wiah-blue"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ofwat &mdash; Long-term cost data &amp; Historic dividends since privatisation (annual)
+                </a>
+              </li>
+            )}
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             {data?.metadata.methodology}

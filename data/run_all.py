@@ -43,6 +43,8 @@ PIPELINES = [
     ("hospital-beds",  "health",    DATA_DIR / "pipelines" / "hospital-beds"),
     ("reoffending",    "justice",   DATA_DIR / "pipelines" / "reoffending"),
     ("graduate-outcomes","education",DATA_DIR / "pipelines" / "graduate-outcomes"),
+    ("water-financials","water",    DATA_DIR / "pipelines" / "water-financials"),
+    ("social-housing", "housing",   DATA_DIR / "pipelines" / "social-housing"),
 ]
 
 
