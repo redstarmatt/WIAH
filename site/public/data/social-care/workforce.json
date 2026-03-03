@@ -1,0 +1,60 @@
+{
+  "topic": "social-care",
+  "dataset": "workforce",
+  "lastUpdated": "2026-03-03",
+  "vacancyRate": [
+    {"year": "2012/13", "vacancyRatePct": 3.0, "vacancies": 43000, "totalJobs": 1430000},
+    {"year": "2013/14", "vacancyRatePct": 3.4, "vacancies": 50000, "totalJobs": 1470000},
+    {"year": "2014/15", "vacancyRatePct": 4.1, "vacancies": 60000, "totalJobs": 1460000},
+    {"year": "2015/16", "vacancyRatePct": 5.1, "vacancies": 75000, "totalJobs": 1470000},
+    {"year": "2016/17", "vacancyRatePct": 5.4, "vacancies": 80000, "totalJobs": 1480000},
+    {"year": "2017/18", "vacancyRatePct": 6.2, "vacancies": 91000, "totalJobs": 1470000},
+    {"year": "2018/19", "vacancyRatePct": 7.0, "vacancies": 104000, "totalJobs": 1490000},
+    {"year": "2019/20", "vacancyRatePct": 7.0, "vacancies": 107000, "totalJobs": 1530000},
+    {"year": "2020/21", "vacancyRatePct": 5.8, "vacancies": 90000, "totalJobs": 1560000},
+    {"year": "2021/22", "vacancyRatePct": 10.6, "vacancies": 165000, "totalJobs": 1560000},
+    {"year": "2022/23", "vacancyRatePct": 9.9, "vacancies": 152000, "totalJobs": 1540000},
+    {"year": "2023/24", "vacancyRatePct": 8.3, "vacancies": 131000, "totalJobs": 1580000}
+  ],
+  "turnoverRate": [
+    {"year": "2012/13", "turnoverPct": 26.2},
+    {"year": "2014/15", "turnoverPct": 27.0},
+    {"year": "2016/17", "turnoverPct": 27.8},
+    {"year": "2018/19", "turnoverPct": 30.8},
+    {"year": "2019/20", "turnoverPct": 28.5},
+    {"year": "2020/21", "turnoverPct": 27.8},
+    {"year": "2021/22", "turnoverPct": 28.3},
+    {"year": "2022/23", "turnoverPct": 28.6},
+    {"year": "2023/24", "turnoverPct": 28.3}
+  ],
+  "meanHourlyPay": [
+    {"year": "2012/13", "meanPay": 7.20},
+    {"year": "2014/15", "meanPay": 7.32},
+    {"year": "2016/17", "meanPay": 7.56},
+    {"year": "2018/19", "meanPay": 8.49},
+    {"year": "2019/20", "meanPay": 8.84},
+    {"year": "2020/21", "meanPay": 9.01},
+    {"year": "2021/22", "meanPay": 9.50},
+    {"year": "2022/23", "meanPay": 10.22},
+    {"year": "2023/24", "meanPay": 10.54}
+  ],
+  "roleBreakdown2024": [
+    {"role": "Direct care", "jobs": 905000, "vacancyPct": 9.1},
+    {"role": "Senior care worker", "jobs": 245000, "vacancyPct": 7.8},
+    {"role": "Registered nurse", "jobs": 97000, "vacancyPct": 12.4},
+    {"role": "Social worker", "jobs": 83000, "vacancyPct": 10.2},
+    {"role": "Manager/supervisor", "jobs": 130000, "vacancyPct": 5.8},
+    {"role": "Other", "jobs": 120000, "vacancyPct": 6.5}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Skills for Care",
+        "dataset": "State of the adult social care sector and workforce in England, 2024",
+        "url": "https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx",
+        "frequency": "annual",
+        "notes": "Adult social care, England only. Excludes NHS social care workers."
+      }
+    ]
+  }
+}

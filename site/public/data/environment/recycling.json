@@ -1,0 +1,53 @@
+{
+  "topic": "environment",
+  "dataset": "recycling",
+  "lastUpdated": "2026-03-03",
+  "householdRecycling": [
+    {"year": 2000, "recyclingRatePct": 11.2},
+    {"year": 2001, "recyclingRatePct": 13.3},
+    {"year": 2002, "recyclingRatePct": 14.5},
+    {"year": 2003, "recyclingRatePct": 18.0},
+    {"year": 2004, "recyclingRatePct": 23.3},
+    {"year": 2005, "recyclingRatePct": 26.7},
+    {"year": 2006, "recyclingRatePct": 30.6},
+    {"year": 2007, "recyclingRatePct": 34.5},
+    {"year": 2008, "recyclingRatePct": 37.6},
+    {"year": 2009, "recyclingRatePct": 39.7},
+    {"year": 2010, "recyclingRatePct": 40.4},
+    {"year": 2011, "recyclingRatePct": 43.3},
+    {"year": 2012, "recyclingRatePct": 43.9},
+    {"year": 2013, "recyclingRatePct": 44.2},
+    {"year": 2014, "recyclingRatePct": 44.9},
+    {"year": 2015, "recyclingRatePct": 44.7},
+    {"year": 2016, "recyclingRatePct": 45.2},
+    {"year": 2017, "recyclingRatePct": 45.5},
+    {"year": 2018, "recyclingRatePct": 44.7},
+    {"year": 2019, "recyclingRatePct": 44.1},
+    {"year": 2020, "recyclingRatePct": 43.8},
+    {"year": 2021, "recyclingRatePct": 44.1},
+    {"year": 2022, "recyclingRatePct": 43.8},
+    {"year": 2023, "recyclingRatePct": 43.4}
+  ],
+  "target2035": 65.0,
+  "ewLandfillDiversionPct": [
+    {"year": 2000, "landfillPct": 79.0},
+    {"year": 2005, "landfillPct": 63.0},
+    {"year": 2010, "landfillPct": 48.0},
+    {"year": 2015, "landfillPct": 28.0},
+    {"year": 2018, "landfillPct": 16.0},
+    {"year": 2020, "landfillPct": 12.6},
+    {"year": 2022, "landfillPct": 10.4},
+    {"year": 2023, "landfillPct": 9.8}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DESNZ / DEFRA",
+        "dataset": "UK Statistics on Waste",
+        "url": "https://www.gov.uk/government/statistics/uk-waste-data",
+        "frequency": "annual",
+        "notes": "England household waste recycling rate. Includes reuse and composting. 65% target by 2035."
+      }
+    ]
+  }
+}

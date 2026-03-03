@@ -1,0 +1,41 @@
+{
+  "topic": "water",
+  "dataset": "leakage",
+  "lastUpdated": "2026-03-03",
+  "nationalTimeSeries": [
+    {"year": "2017/18", "leakageMld": 3238},
+    {"year": "2018/19", "leakageMld": 3321},
+    {"year": "2019/20", "leakageMld": 3131},
+    {"year": "2020/21", "leakageMld": 3162},
+    {"year": "2021/22", "leakageMld": 3014},
+    {"year": "2022/23", "leakageMld": 2969},
+    {"year": "2023/24", "leakageMld": 2963}
+  ],
+  "industryTarget": 2500,
+  "byCompany2024": [
+    {"company": "Thames Water", "leakageMld": 665, "targetMld": 540, "gap": 125},
+    {"company": "United Utilities", "leakageMld": 434, "targetMld": 380, "gap": 54},
+    {"company": "Severn Trent", "leakageMld": 297, "targetMld": 256, "gap": 41},
+    {"company": "Yorkshire Water", "leakageMld": 216, "targetMld": 190, "gap": 26},
+    {"company": "Anglian Water", "leakageMld": 182, "targetMld": 160, "gap": 22},
+    {"company": "Affinity Water", "leakageMld": 180, "targetMld": 152, "gap": 28},
+    {"company": "South East Water", "leakageMld": 97, "targetMld": 80, "gap": 17},
+    {"company": "Southern Water", "leakageMld": 134, "targetMld": 112, "gap": 22},
+    {"company": "South Staffs Water", "leakageMld": 57, "targetMld": 49, "gap": 8},
+    {"company": "Wessex Water", "leakageMld": 78, "targetMld": 66, "gap": 12},
+    {"company": "South West Water", "leakageMld": 77, "targetMld": 64, "gap": 13},
+    {"company": "Bristol Water", "leakageMld": 28, "targetMld": 24, "gap": 4},
+    {"company": "Portsmouth Water", "leakageMld": 23, "targetMld": 20, "gap": 3}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ofwat",
+        "dataset": "Discover Water — Leakage",
+        "url": "https://discoverwater.co.uk/leaking-pipes",
+        "frequency": "annual",
+        "notes": "Megalitres per day (Ml/d). Industry target of 2,500 Ml/d by 2025 is unlikely to be met."
+      }
+    ]
+  }
+}

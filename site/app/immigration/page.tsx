@@ -68,6 +68,13 @@ interface ReturnsYear {
   portRefusals?: number | null;
 }
 
+interface DemographicsPoint {
+  year: number;
+  births: number;
+  birthRate: number | null;
+  tfr: number | null;
+}
+
 interface ImmigrationData {
   headlines: {
     netMigration: number;
@@ -119,11 +126,16 @@ function sparkFrom(arr: number[], n = 12) {
 export default function ImmigrationPage() {
   const [data, setData] = useState<ImmigrationData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [demographicsData, setDemographicsData] = useState<DemographicsPoint[] | null>(null);
 
   useEffect(() => {
     fetch('/data/immigration/immigration.json')
       .then(r => r.json())
       .then(setData)
+      .catch(console.error);
+    fetch('/data/demographics/demographics.json')
+      .then(r => r.json())
+      .then((d: { births: DemographicsPoint[] }) => setDemographicsData(d.births))
       .catch(console.error);
   }, []);
 
@@ -340,6 +352,23 @@ export default function ImmigrationPage() {
       ]
     : [];
 
+  // 6. Total fertility rate (demographics context)
+  const tfrSeries: Series[] = demographicsData
+    ? [{
+        id: 'tfr',
+        label: 'Total fertility rate',
+        colour: '#264653',
+        data: demographicsData
+          .filter(r => r.year >= 1938 && r.tfr != null)
+          .map(r => ({ date: yearToDate(r.year), value: r.tfr! })),
+      }]
+    : [];
+
+  const tfrAnnotations: Annotation[] = [
+    { date: new Date(1964, 0, 1), label: 'Baby boom peak' },
+    { date: new Date(2012, 0, 1), label: 'Recent peak (1.93)' },
+  ];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const netMigAll = data?.netMigration
@@ -388,6 +417,7 @@ export default function ImmigrationPage() {
           { id: 'sec-asylum', label: 'Asylum' },
           { id: 'sec-small-boats', label: 'Small Boats' },
           { id: 'sec-returns', label: 'Returns' },
+          { id: 'sec-demographics', label: 'Demographics' },
           { id: 'sec-context', label: 'Context' },
         ]} />
 
@@ -730,6 +760,45 @@ export default function ImmigrationPage() {
         )}
 
         </div>{/* end sec-returns */}
+
+        {/* Chart 6: Demographics / Total Fertility Rate */}
+        <div id="sec-demographics">
+          {tfrSeries.length > 0 ? (
+            <LineChart
+              title="Total fertility rate, England and Wales, 1938–2022"
+              subtitle="Average number of children per woman. The replacement rate is 2.1. The UK's rate fell to a record low of 1.49 in 2022 — well below the level needed for natural population replacement."
+              series={tfrSeries}
+              annotations={tfrAnnotations}
+              targetLine={{ value: 2.1, label: 'Replacement rate (2.1)' }}
+              yLabel="Children per woman"
+              source={{
+                name: 'ONS',
+                dataset: 'Birth characteristics in England and Wales',
+                frequency: 'annual',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/datasets/birthsummarytables',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+          )}
+
+          <section className="max-w-2xl mb-12">
+            <h3 className="text-lg font-bold text-wiah-black mb-2">The demographic context</h3>
+            <div className="text-sm text-wiah-mid leading-[1.7] space-y-3">
+              <p>
+                The UK&apos;s total fertility rate fell to 1.49 in 2022 — a record low since data
+                began in 1938, and well below the replacement rate of 2.1. The rate peaked at
+                1.93 in 2012 and has fallen in nearly every year since.
+              </p>
+              <p>
+                An ageing population and near-zero natural change mean that net migration is now
+                the primary driver of UK population and workforce growth — in health, care,
+                agriculture, construction, and technology. This demographic backdrop is largely
+                absent from the public debate about immigration levels.
+              </p>
+            </div>
+          </section>
+        </div>{/* end sec-demographics */}
 
         {/* Context */}
         <section id="sec-context" className="max-w-2xl mt-8 mb-12">

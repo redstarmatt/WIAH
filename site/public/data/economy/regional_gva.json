@@ -1,0 +1,1266 @@
+{
+  "topic": "regional-gva",
+  "lastUpdated": "2026-03-03",
+  "series": [
+    {
+      "region": "UK",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 14704
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 15273
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 15758
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 16588
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 17175
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 17934
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 18905
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 19696
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 20709
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 21718
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 22640
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 23124
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 22486
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 22779
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 23202
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 23780
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 24541
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 25480
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 25987
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 26749
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 27430
+        }
+      ]
+    },
+    {
+      "region": "North East",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 10743
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 11113
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 11351
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 11774
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 12369
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 13272
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 14027
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 15052
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 15817
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 16479
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 16752
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 17187
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 16748
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 17039
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 17398
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 17643
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 18125
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 18887
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 19441
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 19623
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 20121
+        }
+      ]
+    },
+    {
+      "region": "North West",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 12403
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 13079
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 13626
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 13974
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 14796
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 15641
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 16445
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 17161
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 17761
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 18986
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 19636
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 19838
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 19762
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 19872
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 19792
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 20354
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 21003
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 21593
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 22294
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 23053
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 23563
+        }
+      ]
+    },
+    {
+      "region": "Yorkshire and The Humber",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 12240
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 12778
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 12979
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 13501
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 14012
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 14935
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 15916
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 16653
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 17217
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 17899
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 18806
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 18815
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 18750
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 18592
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 18910
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 19172
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 19655
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 20077
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 20863
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 21375
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 21748
+        }
+      ]
+    },
+    {
+      "region": "East Midlands",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 12946
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 13276
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 13514
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 13950
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 14419
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 14896
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 15626
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 16106
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 16920
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 17765
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 18373
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 18718
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 17905
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 18472
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 18839
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 19272
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 20046
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 20719
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 20911
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 21467
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 21983
+        }
+      ]
+    },
+    {
+      "region": "West Midlands",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 13034
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 13691
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 14156
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 14483
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 14854
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 15385
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 16054
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 16774
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 17425
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 18058
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 18444
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 18672
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 17913
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 18226
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 18638
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 19265
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 19962
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 20794
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 21518
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 22225
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 22815
+        }
+      ]
+    },
+    {
+      "region": "East of England",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 14341
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 14823
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 15167
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 15979
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 16650
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 17261
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 18299
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 18775
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 19582
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 20557
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 21155
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 21710
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 20938
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 21034
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 21207
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 21681
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 22343
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 23309
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 23901
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 24521
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 25217
+        }
+      ]
+    },
+    {
+      "region": "London",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 22583
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 23741
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 24588
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 26339
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 26899
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 27888
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 29649
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 31158
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 33438
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 34565
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 37517
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 38176
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 37161
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 37715
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 39005
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 40319
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 41461
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 44005
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 44165
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 46182
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 47705
+        }
+      ]
+    },
+    {
+      "region": "South East",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 16391
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 17089
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 17798
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 18488
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 19146
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 20199
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 21041
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 21437
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 22347
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 23269
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 24079
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 24935
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 24113
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 24536
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 24802
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 25697
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 26458
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 27118
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 28168
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 28568
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 28988
+        }
+      ]
+    },
+    {
+      "region": "South West",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 13595
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 13894
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 14318
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 14837
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 15504
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 16186
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 17031
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 17721
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 18513
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 19305
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 20011
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 20521
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 20243
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 20539
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 20495
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 20936
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 21656
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 22596
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 22851
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 23571
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 23981
+        }
+      ]
+    },
+    {
+      "region": "Wales",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 10948
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 11245
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 11477
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 12091
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 12326
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 12925
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 13766
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 14541
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 15142
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 15925
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 16338
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 16187
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 15856
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 15927
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 16539
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 17007
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 17647
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 18074
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 18674
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 19259
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 19705
+        }
+      ]
+    },
+    {
+      "region": "Scotland",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 13338
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 13979
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 14047
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 14710
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 15515
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 16143
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 17108
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 18238
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 19236
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 20391
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 21077
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 21490
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 21439
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 21094
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 21494
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 21977
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 22977
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 24110
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 24277
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 25011
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 25685
+        }
+      ]
+    },
+    {
+      "region": "Northern Ireland",
+      "data": [
+        {
+          "year": 1997,
+          "gvaPerHead": 11878
+        },
+        {
+          "year": 1998,
+          "gvaPerHead": 11868
+        },
+        {
+          "year": 1999,
+          "gvaPerHead": 12298
+        },
+        {
+          "year": 2000,
+          "gvaPerHead": 13195
+        },
+        {
+          "year": 2001,
+          "gvaPerHead": 13648
+        },
+        {
+          "year": 2002,
+          "gvaPerHead": 13969
+        },
+        {
+          "year": 2003,
+          "gvaPerHead": 15161
+        },
+        {
+          "year": 2004,
+          "gvaPerHead": 15770
+        },
+        {
+          "year": 2005,
+          "gvaPerHead": 16564
+        },
+        {
+          "year": 2006,
+          "gvaPerHead": 17485
+        },
+        {
+          "year": 2007,
+          "gvaPerHead": 18074
+        },
+        {
+          "year": 2008,
+          "gvaPerHead": 18007
+        },
+        {
+          "year": 2009,
+          "gvaPerHead": 17605
+        },
+        {
+          "year": 2010,
+          "gvaPerHead": 17654
+        },
+        {
+          "year": 2011,
+          "gvaPerHead": 17973
+        },
+        {
+          "year": 2012,
+          "gvaPerHead": 18601
+        },
+        {
+          "year": 2013,
+          "gvaPerHead": 18947
+        },
+        {
+          "year": 2014,
+          "gvaPerHead": 19307
+        },
+        {
+          "year": 2015,
+          "gvaPerHead": 20029
+        },
+        {
+          "year": 2016,
+          "gvaPerHead": 20692
+        },
+        {
+          "year": 2017,
+          "gvaPerHead": 21237
+        }
+      ]
+    }
+  ],
+  "latestRanking": [
+    {
+      "region": "London",
+      "year": 2017,
+      "gvaPerHead": 47705,
+      "ukIndex": 174,
+      "rank": 1
+    },
+    {
+      "region": "South East",
+      "year": 2017,
+      "gvaPerHead": 28988,
+      "ukIndex": 106,
+      "rank": 2
+    },
+    {
+      "region": "Scotland",
+      "year": 2017,
+      "gvaPerHead": 25685,
+      "ukIndex": 94,
+      "rank": 3
+    },
+    {
+      "region": "East of England",
+      "year": 2017,
+      "gvaPerHead": 25217,
+      "ukIndex": 92,
+      "rank": 4
+    },
+    {
+      "region": "South West",
+      "year": 2017,
+      "gvaPerHead": 23981,
+      "ukIndex": 87,
+      "rank": 5
+    },
+    {
+      "region": "North West",
+      "year": 2017,
+      "gvaPerHead": 23563,
+      "ukIndex": 86,
+      "rank": 6
+    },
+    {
+      "region": "West Midlands",
+      "year": 2017,
+      "gvaPerHead": 22815,
+      "ukIndex": 83,
+      "rank": 7
+    },
+    {
+      "region": "East Midlands",
+      "year": 2017,
+      "gvaPerHead": 21983,
+      "ukIndex": 80,
+      "rank": 8
+    },
+    {
+      "region": "Yorkshire and The Humber",
+      "year": 2017,
+      "gvaPerHead": 21748,
+      "ukIndex": 79,
+      "rank": 9
+    },
+    {
+      "region": "Northern Ireland",
+      "year": 2017,
+      "gvaPerHead": 21237,
+      "ukIndex": 77,
+      "rank": 10
+    },
+    {
+      "region": "North East",
+      "year": 2017,
+      "gvaPerHead": 20121,
+      "ukIndex": 73,
+      "rank": 11
+    },
+    {
+      "region": "Wales",
+      "year": 2017,
+      "gvaPerHead": 19705,
+      "ukIndex": 72,
+      "rank": 12
+    }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Regional Gross Value Added (Income Approach), Table 2",
+        "url": "https://www.ons.gov.uk/economy/grossvalueaddedgva/datasets/regionalgrossvalueaddedincomeapproach",
+        "retrieved": "2026-03-03",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "GVA per head at current basic prices, \u00a3 per head. NUTS1 regions: England (9), Wales, Scotland, Northern Ireland. Parsed from gvai_reference_tables.xls. Source: ONS Regional GVA (Income Approach), Table 2.",
+    "knownIssues": [
+      "Current basic prices \u2014 not inflation-adjusted.",
+      "NUTS1 boundaries revised in 2021; pre/post comparisons are approximate.",
+      "Northern Ireland GVA includes cross-border adjustments."
+    ]
+  }
+}

@@ -75,6 +75,24 @@ interface FinancialData {
   };
 }
 
+interface LeakageNationalPoint {
+  year: string;
+  leakageMld: number;
+}
+
+interface LeakageCompanyRow {
+  company: string;
+  leakageMld: number;
+  targetMld: number;
+  gap: number;
+}
+
+interface LeakageData {
+  nationalTimeSeries: LeakageNationalPoint[];
+  industryTarget: number;
+  byCompany2024: LeakageCompanyRow[];
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function yearToDate(y: number): Date {
@@ -99,6 +117,7 @@ export default function WaterPage() {
   const [data, setData] = useState<WaterData | null>(null);
   const [finData, setFinData] = useState<FinancialData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [leakageData, setLeakageData] = useState<LeakageData | null>(null);
 
   useEffect(() => {
     fetch('/data/water/water.json')
@@ -108,6 +127,10 @@ export default function WaterPage() {
     fetch('/data/water/water-financials.json')
       .then(r => r.json())
       .then(setFinData)
+      .catch(console.error);
+    fetch('/data/water/leakage.json')
+      .then(r => r.json())
+      .then(setLeakageData)
       .catch(console.error);
   }, []);
 
@@ -243,6 +266,28 @@ export default function WaterPage() {
       ]
     : [];
 
+  // 7. Leakage national time series
+  function leakageYearToDate(fy: string): Date {
+    const latter = parseInt(fy.split('/')[1]);
+    return new Date(2000 + latter, 0, 1);
+  }
+
+  const leakageSeries: Series[] = leakageData
+    ? [{
+        id: 'leakage',
+        label: 'Total leakage (Ml/d)',
+        colour: '#264653',
+        data: leakageData.nationalTimeSeries.map((d: LeakageNationalPoint) => ({
+          date: leakageYearToDate(d.year),
+          value: d.leakageMld,
+        })),
+      }]
+    : [];
+
+  const companiesByLeakage = leakageData
+    ? [...leakageData.byCompany2024].sort((a, b) => b.leakageMld - a.leakageMld)
+    : [];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestSewage = data?.national.sewage.timeSeries.at(-1);
@@ -287,6 +332,7 @@ export default function WaterPage() {
           { id: 'sec-sewage', label: 'Sewage' },
           { id: 'sec-rivers', label: 'Rivers & Bathing' },
           { id: 'sec-financials', label: 'Company Finances' },
+          { id: 'sec-leakage', label: 'Leakage' },
           { id: 'sec-context', label: 'Context' },
         ]} />
 
@@ -636,6 +682,73 @@ export default function WaterPage() {
         </ScrollReveal>
 
         </div>{/* end sec-financials */}
+
+        {/* ── Leakage ───────────────────────────────────────────────────── */}
+        <div id="sec-leakage">
+
+        {leakageSeries.length > 0 ? (
+          <LineChart
+            title="Water leakage, England and Wales, 2017–2024"
+            subtitle="Total leakage across all water companies. The industry target of 2,500 Ml/day by 2025 is set to be missed by a wide margin."
+            series={leakageSeries}
+            targetLine={{ value: 2500, label: '2025 target' }}
+            yLabel="Megalitres/day"
+            source={{
+              name: 'Ofwat',
+              dataset: 'Discover Water — Leakage',
+              frequency: 'annual',
+              url: 'https://discoverwater.co.uk/leaking-pipes',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Leakage by company table */}
+        {companiesByLeakage.length > 0 && (
+          <ScrollReveal>
+            <section className="mb-16">
+              <h2 className="text-xl font-bold text-wiah-black mb-1">
+                Leakage by water company, 2023/24
+              </h2>
+              <p className="text-sm text-wiah-mid font-mono mb-4">
+                Megalitres per day. Every company is above its Ofwat performance commitment target.
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-wiah-border">
+                      <th className="text-left py-2 pr-4 font-mono text-xs text-wiah-mid">Company</th>
+                      <th className="text-right py-2 px-3 font-mono text-xs text-wiah-mid">Actual (Ml/d)</th>
+                      <th className="text-right py-2 px-3 font-mono text-xs text-wiah-mid">Target (Ml/d)</th>
+                      <th className="text-right py-2 px-3 font-mono text-xs text-wiah-mid">Gap</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {companiesByLeakage.map(row => (
+                      <tr key={row.company} className="border-b border-wiah-border/50 hover:bg-wiah-light/50">
+                        <td className="py-2 pr-4 text-sm font-medium">{row.company}</td>
+                        <td className="py-2 px-3 font-mono text-sm text-right">{row.leakageMld}</td>
+                        <td className="py-2 px-3 font-mono text-sm text-right text-wiah-mid">{row.targetMld}</td>
+                        <td
+                          className="py-2 px-3 font-mono text-sm text-right font-bold"
+                          style={{ color: row.gap > 0 ? '#E63946' : '#2A9D8F' }}
+                        >
+                          +{row.gap}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="font-mono text-xs text-wiah-mid mt-3">
+                Source: Ofwat / Discover Water, annual. Data for 2023/24.
+              </p>
+            </section>
+          </ScrollReveal>
+        )}
+
+        </div>{/* end sec-leakage */}
 
         {/* Context */}
         <section id="sec-context" className="max-w-2xl mt-8 mb-12">

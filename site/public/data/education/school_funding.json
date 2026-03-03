@@ -1,0 +1,65 @@
+{
+  "topic": "education",
+  "dataset": "school_funding",
+  "lastUpdated": "2026-03-03",
+  "fundingPerPupil": [
+    {"year": 2009, "nominal": 6032, "real2024": 8950},
+    {"year": 2010, "nominal": 6234, "real2024": 9120},
+    {"year": 2011, "nominal": 6320, "real2024": 9040},
+    {"year": 2012, "nominal": 6250, "real2024": 8680},
+    {"year": 2013, "nominal": 6180, "real2024": 8420},
+    {"year": 2014, "nominal": 6150, "real2024": 8260},
+    {"year": 2015, "nominal": 6090, "real2024": 8110},
+    {"year": 2016, "nominal": 6020, "real2024": 7870},
+    {"year": 2017, "nominal": 5990, "real2024": 7630},
+    {"year": 2018, "nominal": 6120, "real2024": 7660},
+    {"year": 2019, "nominal": 6380, "real2024": 7870},
+    {"year": 2020, "nominal": 6690, "real2024": 8140},
+    {"year": 2021, "nominal": 7180, "real2024": 8620},
+    {"year": 2022, "nominal": 7820, "real2024": 8840},
+    {"year": 2023, "nominal": 8640, "real2024": 9120},
+    {"year": 2024, "nominal": 9085, "real2024": 9085}
+  ],
+  "pisaResults": [
+    {"country": "Singapore", "reading": 543, "maths": 575, "science": 561},
+    {"country": "Japan", "reading": 516, "maths": 536, "science": 547},
+    {"country": "South Korea", "reading": 515, "maths": 527, "science": 528},
+    {"country": "Canada", "reading": 507, "maths": 497, "science": 515},
+    {"country": "Australia", "reading": 498, "maths": 487, "science": 507},
+    {"country": "United Kingdom", "reading": 494, "maths": 489, "science": 520},
+    {"country": "OECD Average", "reading": 476, "maths": 472, "science": 485},
+    {"country": "Germany", "reading": 480, "maths": 475, "science": 492},
+    {"country": "France", "reading": 474, "maths": 474, "science": 487},
+    {"country": "United States", "reading": 504, "maths": 465, "science": 499},
+    {"country": "Hungary", "reading": 473, "maths": 473, "science": 481},
+    {"country": "Romania", "reading": 428, "maths": 428, "science": 428}
+  ],
+  "pisaUKTrend": [
+    {"year": 2000, "reading": 523, "maths": null, "science": null},
+    {"year": 2003, "reading": 507, "maths": 508, "science": 516},
+    {"year": 2006, "reading": 495, "maths": 495, "science": 515},
+    {"year": 2009, "reading": 494, "maths": 492, "science": 514},
+    {"year": 2012, "reading": 499, "maths": 494, "science": 514},
+    {"year": 2015, "reading": 498, "maths": 492, "science": 509},
+    {"year": 2018, "reading": 504, "maths": 502, "science": 505},
+    {"year": 2022, "reading": 494, "maths": 489, "science": 520}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DfE",
+        "dataset": "Schools block funding allocations",
+        "url": "https://www.gov.uk/government/publications/national-funding-formula-tables-for-schools-and-high-needs",
+        "frequency": "annual",
+        "notes": "Per pupil funding in £ nominal and real terms (2024 prices using GDP deflator)."
+      },
+      {
+        "name": "OECD",
+        "dataset": "Programme for International Student Assessment (PISA) 2022",
+        "url": "https://www.oecd.org/pisa/",
+        "frequency": "triennial",
+        "notes": "15-year-olds assessed in reading, mathematics and science."
+      }
+    ]
+  }
+}

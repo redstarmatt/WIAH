@@ -33,15 +33,48 @@ interface PovertyData {
   };
 }
 
+interface WealthDecile {
+  decile: number;
+  label: string;
+  meanWealth: number;
+  medianWealth: number;
+  wealthShare: number;
+}
+
+interface WealthByAge {
+  ageGroup: string;
+  medianWealth: number;
+}
+
+interface WealthData {
+  wealthByDecile: WealthDecile[];
+  wealthByAge: WealthByAge[];
+  metadata: {
+    sources: { name: string; dataset: string; url: string; frequency: string }[];
+  };
+}
+
 function yearToDate(y: number): Date { return new Date(y, 0, 1); }
+
+function formatWealth(v: number): string {
+  if (v < 0) return `-£${Math.abs(v).toLocaleString('en-GB')}`;
+  if (v >= 1_000_000) return `£${(v / 1_000_000).toFixed(1)}M`;
+  if (v >= 1_000) return `£${Math.round(v / 1_000)}k`;
+  return `£${v.toLocaleString('en-GB')}`;
+}
 
 export default function PovertyPage() {
   const [data, setData] = useState<PovertyData | null>(null);
+  const [wealthData, setWealthData] = useState<WealthData | null>(null);
 
   useEffect(() => {
     fetch('/data/poverty/poverty.json')
       .then(r => r.json())
       .then(setData)
+      .catch(console.error);
+    fetch('/data/poverty/wealth.json')
+      .then(r => r.json())
+      .then(setWealthData)
       .catch(console.error);
   }, []);
 
@@ -108,6 +141,18 @@ export default function PovertyPage() {
   const latestChild = data?.national.childPoverty.latest;
   const latestFoodBank = data?.national.foodBanks.latest;
 
+  // ── Wealth decile bar chart helpers ──────────────────────────────────────
+  const maxWealthShare = 43.0; // richest decile share
+
+  function decileColour(decile: number): string {
+    if (decile <= 3) return '#2A9D8F';
+    if (decile <= 7) return '#F4A261';
+    return '#E63946';
+  }
+
+  // ── Wealth by age bar chart helpers ──────────────────────────────────────
+  const maxAgeWealth = 490000; // peak at 65–74
+
   return (
     <>
       {/* Sticky nav */}
@@ -135,6 +180,8 @@ export default function PovertyPage() {
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-poverty-rates', label: 'Poverty Rates' },
           { id: 'sec-food', label: 'Food & Destitution' },
+          { id: 'sec-wealth-inequality', label: 'Wealth Inequality' },
+          { id: 'sec-wealth-by-age', label: 'Wealth by Age' },
           { id: 'sec-context', label: 'Context' },
         ]} />
 
@@ -317,6 +364,119 @@ export default function PovertyPage() {
 
         </div>{/* end sec-food */}
 
+        {/* ── Section: Wealth Inequality ────────────────────────────────────── */}
+        <div id="sec-wealth-inequality" className="mb-16">
+          <h3 className="text-lg font-bold text-wiah-black mb-1">
+            Wealth share by household decile, Great Britain, 2018–2020
+          </h3>
+          <p className="text-sm text-wiah-mid font-mono mb-6">
+            The richest 10% of households hold 43% of all wealth. The poorest 10% have negative net wealth.
+          </p>
+
+          {wealthData ? (
+            <div className="space-y-2 mb-6">
+              {wealthData.wealthByDecile.map(d => {
+                const barPct = Math.max(d.wealthShare, 0) / maxWealthShare * 100;
+                const colour = decileColour(d.decile);
+                return (
+                  <div key={d.decile} className="flex items-center gap-3">
+                    <div className="w-28 text-right text-xs font-mono text-wiah-mid shrink-0">
+                      {d.label}
+                    </div>
+                    <div className="flex-1 bg-wiah-light rounded-sm overflow-hidden h-6 relative">
+                      {d.wealthShare > 0 ? (
+                        <div
+                          className="h-full rounded-sm flex items-center pl-2 transition-all duration-500"
+                          style={{ width: `${barPct}%`, backgroundColor: colour }}
+                        />
+                      ) : (
+                        <div className="h-full flex items-center pl-2">
+                          <span className="text-[10px] font-mono text-wiah-mid italic">negative net wealth</span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="w-28 flex items-center gap-2 shrink-0">
+                      <span
+                        className="text-xs font-mono font-bold w-10 text-right"
+                        style={{ color: colour }}
+                      >
+                        {d.wealthShare > 0 ? `${d.wealthShare}%` : `${d.wealthShare}%`}
+                      </span>
+                      <span className="text-[10px] font-mono text-wiah-mid">
+                        {formatWealth(d.medianWealth)} median
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-6" />
+          )}
+
+          <p className="font-mono text-[11px] text-wiah-mid">
+            <a
+              href="https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/wealthingreatbritain/wave7april2018tomarch2020"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Source: ONS — Wealth and Assets Survey (WAS), Wave 7: 2018–2020. Great Britain.
+            </a>
+          </p>
+        </div>{/* end sec-wealth-inequality */}
+
+        {/* ── Section: Wealth by Age ────────────────────────────────────────── */}
+        <div id="sec-wealth-by-age" className="mb-16">
+          <h3 className="text-lg font-bold text-wiah-black mb-1">
+            Median household wealth by age group, Great Britain, 2018–2020
+          </h3>
+          <p className="text-sm text-wiah-mid font-mono mb-6">
+            Wealth accumulates sharply with age, with households aged 55–64 having 60× the wealth of those aged 16–24.
+          </p>
+
+          {wealthData ? (
+            <div className="space-y-2 mb-6">
+              {wealthData.wealthByAge.map(d => {
+                const barPct = (d.medianWealth / maxAgeWealth) * 100;
+                const colour = d.medianWealth >= 400_000 ? '#264653'
+                  : d.medianWealth >= 200_000 ? '#2A9D8F'
+                  : d.medianWealth >= 50_000 ? '#F4A261'
+                  : '#E63946';
+                return (
+                  <div key={d.ageGroup} className="flex items-center gap-3">
+                    <div className="w-16 text-right text-xs font-mono text-wiah-mid shrink-0">
+                      {d.ageGroup}
+                    </div>
+                    <div className="flex-1 bg-wiah-light rounded-sm overflow-hidden h-6">
+                      <div
+                        className="h-full rounded-sm flex items-center pl-2 transition-all duration-500"
+                        style={{ width: `${barPct}%`, backgroundColor: colour }}
+                      />
+                    </div>
+                    <div className="w-20 text-right text-xs font-mono font-bold shrink-0" style={{ color: colour }}>
+                      {formatWealth(d.medianWealth)}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="h-48 bg-wiah-light rounded animate-pulse mb-6" />
+          )}
+
+          <p className="font-mono text-[11px] text-wiah-mid">
+            <a
+              href="https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/wealthingreatbritain/wave7april2018tomarch2020"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Source: ONS — Wealth and Assets Survey (WAS), Wave 7: 2018–2020. Median total household wealth. Great Britain.
+            </a>
+          </p>
+        </div>{/* end sec-wealth-by-age */}
+
         {/* Context */}
         <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
@@ -346,6 +506,15 @@ export default function PovertyPage() {
               experienced destitution in 2022, including 1 million children. This is a rich-country
               failure of the first order.
             </p>
+            <p>
+              Beneath poverty, the wealth inequality picture tells a deeper story. The richest 10% of
+              households hold 43% of all wealth — a share that has grown in every wave of the ONS
+              Wealth and Assets Survey since 2006. The poorest 10% have negative net wealth on average,
+              meaning their debts exceed their assets. The age dimension is striking too: households
+              aged 16–24 have a median wealth of £7,000, while those aged 65–74 have £490,000. Much
+              of this gap is explained by property ownership and pension accumulation — assets
+              structurally inaccessible to younger people locked out of homeownership.
+            </p>
           </div>
         </section>
 
@@ -355,6 +524,13 @@ export default function PovertyPage() {
           <ul className="space-y-2 font-mono text-xs text-wiah-mid">
             {data?.metadata.sources.map((src, i) => (
               <li key={i}>
+                <a href={src.url} className="underline hover:text-wiah-blue" target="_blank" rel="noreferrer">
+                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                </a>
+              </li>
+            ))}
+            {wealthData?.metadata.sources.map((src, i) => (
+              <li key={`wealth-${i}`}>
                 <a href={src.url} className="underline hover:text-wiah-blue" target="_blank" rel="noreferrer">
                   {src.name} &mdash; {src.dataset} ({src.frequency})
                 </a>

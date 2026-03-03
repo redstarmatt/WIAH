@@ -93,6 +93,32 @@ interface JusticeData {
   };
 }
 
+interface DomesticAbusePrevalencePoint {
+  year: string;
+  womenPct: number;
+  menPct: number;
+  totalVictimsM: number;
+}
+
+interface DomesticAbuseOutcomes {
+  year: string;
+  recordedDA: number;
+  chargeOrSummons: number;
+  chargeRate: number;
+  convictions: number;
+  convictionRate: number;
+  noFurtherAction: number;
+  victimWithdrew: number;
+}
+
+interface DomesticAbuseData {
+  csewPrevalence: DomesticAbusePrevalencePoint[];
+  outcomes: DomesticAbuseOutcomes;
+  metadata: {
+    sources: { name: string; dataset: string; url: string; frequency: string }[];
+  };
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function isoToDate(s: string): Date {
@@ -112,6 +138,12 @@ function quarterToDate(s: string): Date {
   return new Date(parseInt(year), month, 1);
 }
 
+// "2009/10" → use the latter year as Jan 1
+function fyPrevalenceToDate(fy: string): Date {
+  const end = parseInt(fy.split('/')[0]) + 1;
+  return new Date(end, 0, 1);
+}
+
 function sparkFrom(arr: number[], n = 12) {
   return arr.slice(-n);
 }
@@ -122,6 +154,7 @@ export default function JusticePage() {
   const [data, setData] = useState<JusticeData | null>(null);
   const [crimeData, setCrimeData] = useState<CrimeTrendsData | null>(null);
   const [reoffData, setReoffData] = useState<ReoffendingData | null>(null);
+  const [daData, setDaData] = useState<DomesticAbuseData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -136,6 +169,10 @@ export default function JusticePage() {
     fetch('/data/justice/reoffending.json')
       .then(r => r.json())
       .then(setReoffData)
+      .catch(console.error);
+    fetch('/data/justice/domestic_abuse.json')
+      .then(r => r.json())
+      .then(setDaData)
       .catch(console.error);
   }, []);
 
@@ -284,6 +321,30 @@ export default function JusticePage() {
       }]
     : [];
 
+  // Domestic abuse prevalence — women and men %
+  const daPrevalenceSeries: Series[] = daData
+    ? [
+        {
+          id: 'da-women',
+          label: 'Women',
+          colour: '#E63946',
+          data: daData.csewPrevalence.map(d => ({
+            date: fyPrevalenceToDate(d.year),
+            value: d.womenPct,
+          })),
+        },
+        {
+          id: 'da-men',
+          label: 'Men',
+          colour: '#264653',
+          data: daData.csewPrevalence.map(d => ({
+            date: fyPrevalenceToDate(d.year),
+            value: d.menPct,
+          })),
+        },
+      ]
+    : [];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestCharge = data?.national.chargeRate.timeSeries.at(-1);
@@ -332,6 +393,7 @@ export default function JusticePage() {
           { id: 'sec-outcomes', label: 'Outcomes' },
           { id: 'sec-courts', label: 'Courts' },
           { id: 'sec-prison', label: 'Prison' },
+          { id: 'sec-domestic-abuse', label: 'Domestic Abuse' },
           { id: 'sec-context', label: 'Context' },
         ]} />
 
@@ -642,6 +704,132 @@ export default function JusticePage() {
 
         </div>{/* end sec-crime */}
 
+        {/* ── Domestic Abuse section ─────────────────────────────────────── */}
+        <div id="sec-domestic-abuse">
+          <ScrollReveal>
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-wiah-black mb-2">Domestic Abuse</h2>
+              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+                Around 1.7 million people experience domestic abuse each year in England and Wales.
+                The majority never report to police — and of those that do, only 5 in every 100
+                incidents end in a conviction.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Chart: Domestic abuse prevalence — women vs men */}
+          {daPrevalenceSeries.length > 0 ? (
+            <LineChart
+              title="Domestic abuse victims per year, England and Wales, 2009–2024"
+              subtitle="ONS Crime Survey estimates. Around 1.7 million people experience domestic abuse each year — about 2.7% of women and 1.5% of men."
+              series={daPrevalenceSeries}
+              yLabel="% experiencing DA (past year, CSEW)"
+              source={{
+                name: 'ONS',
+                dataset: 'Crime Survey for England and Wales (CSEW) — Domestic abuse',
+                frequency: 'annual',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/articles/domesticabuseinenglandandwalesoverview/november2024',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+          )}
+
+          {/* Domestic abuse outcomes funnel — stat callout panel */}
+          {daData ? (
+            <section className="mb-12">
+              <h3 className="text-lg font-bold text-wiah-black mb-1">
+                The domestic abuse justice gap, 2023/24
+              </h3>
+              <p className="text-sm text-wiah-mid font-mono mb-6">
+                In 2023/24. Only 5 in 100 incidents lead to a conviction.
+              </p>
+              <div className="overflow-x-auto">
+                <div className="flex items-center gap-2 min-w-max">
+                  {/* Stage 1 */}
+                  <div className="flex flex-col items-center bg-wiah-light rounded-lg px-5 py-4 min-w-[140px]">
+                    <span className="font-mono text-[11px] text-wiah-mid uppercase tracking-wide mb-1">CSEW victims</span>
+                    <span className="font-mono text-3xl font-bold text-wiah-black">~1.7M</span>
+                    <span className="font-mono text-[11px] text-wiah-mid mt-1">estimated per year</span>
+                  </div>
+
+                  <div className="flex flex-col items-center px-1">
+                    <span className="text-2xl text-wiah-mid">&rarr;</span>
+                    <span className="font-mono text-[10px] text-wiah-mid mt-1">recorded</span>
+                  </div>
+
+                  {/* Stage 2 */}
+                  <div className="flex flex-col items-center bg-wiah-light rounded-lg px-5 py-4 min-w-[140px]">
+                    <span className="font-mono text-[11px] text-wiah-mid uppercase tracking-wide mb-1">Police-recorded</span>
+                    <span className="font-mono text-3xl font-bold text-wiah-black">
+                      {(daData.outcomes.recordedDA / 1000000).toFixed(1)}M
+                    </span>
+                    <span className="font-mono text-[11px] text-wiah-mid mt-1">offences</span>
+                  </div>
+
+                  <div className="flex flex-col items-center px-1">
+                    <span className="text-2xl text-wiah-mid">&rarr;</span>
+                    <span className="font-mono text-[10px] text-wiah-mid mt-1">charged</span>
+                  </div>
+
+                  {/* Stage 3 */}
+                  <div className="flex flex-col items-center bg-wiah-light rounded-lg px-5 py-4 min-w-[140px]">
+                    <span className="font-mono text-[11px] text-wiah-mid uppercase tracking-wide mb-1">Charged</span>
+                    <span className="font-mono text-3xl font-bold" style={{ color: '#F4A261' }}>
+                      {daData.outcomes.chargeOrSummons.toLocaleString('en-GB')}
+                    </span>
+                    <span className="font-mono text-[11px] text-wiah-mid mt-1">
+                      {daData.outcomes.chargeRate}% of recorded
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col items-center px-1">
+                    <span className="text-2xl text-wiah-mid">&rarr;</span>
+                    <span className="font-mono text-[10px] text-wiah-mid mt-1">convicted</span>
+                  </div>
+
+                  {/* Stage 4 */}
+                  <div className="flex flex-col items-center bg-wiah-light rounded-lg px-5 py-4 min-w-[140px]">
+                    <span className="font-mono text-[11px] text-wiah-mid uppercase tracking-wide mb-1">Convicted</span>
+                    <span className="font-mono text-3xl font-bold" style={{ color: '#E63946' }}>
+                      {daData.outcomes.convictions.toLocaleString('en-GB')}
+                    </span>
+                    <span className="font-mono text-[11px] text-wiah-mid mt-1">
+                      {daData.outcomes.convictionRate}% of recorded
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 grid grid-cols-2 gap-4 max-w-md">
+                <div className="bg-wiah-light rounded-lg px-4 py-3">
+                  <span className="font-mono text-[11px] text-wiah-mid uppercase tracking-wide block mb-1">No further action</span>
+                  <span className="font-mono text-xl font-bold text-wiah-black">{daData.outcomes.noFurtherAction}%</span>
+                  <span className="font-mono text-[11px] text-wiah-mid block mt-1">of recorded cases</span>
+                </div>
+                <div className="bg-wiah-light rounded-lg px-4 py-3">
+                  <span className="font-mono text-[11px] text-wiah-mid uppercase tracking-wide block mb-1">Victim withdrew</span>
+                  <span className="font-mono text-xl font-bold text-wiah-black">{daData.outcomes.victimWithdrew}%</span>
+                  <span className="font-mono text-[11px] text-wiah-mid block mt-1">of recorded cases</span>
+                </div>
+              </div>
+
+              <p className="font-mono text-[11px] text-wiah-mid mt-4">
+                <a
+                  href="https://www.gov.uk/government/statistics/domestic-abuse-in-england-and-wales-overview"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Source: Home Office, Domestic abuse datasets, annual. ONS CSEW, Domestic abuse overview, November 2024.
+                </a>
+              </p>
+            </section>
+          ) : (
+            <div className="h-48 bg-wiah-light rounded animate-pulse mb-12" />
+          )}
+        </div>{/* end sec-domestic-abuse */}
+
         {/* Positive story */}
         <ScrollReveal>
         <PositiveCallout
@@ -681,6 +869,14 @@ export default function JusticePage() {
               experienced each year, only around 388,000 result in a charge — about 4 in every 100.
               For many crime types, the effective likelihood of consequences is vanishingly small.
             </p>
+            <p>
+              Domestic abuse sits at the sharp end of this breakdown. The Crime Survey estimates
+              around 1.7 million victims annually. Fewer than 1 in 5 report to police. Of those
+              who do, nearly half result in no further action, and almost a quarter close because
+              the victim withdrew support for the prosecution — often due to fear, financial
+              dependence, or loss of faith in the process. Just 5 in every 100 recorded domestic
+              abuse offences result in a conviction.
+            </p>
           </div>
         </section>
 
@@ -712,6 +908,18 @@ export default function JusticePage() {
                 </a>
               </li>
             )}
+            {daData && daData.metadata.sources.map((src, i) => (
+              <li key={`da-${i}`}>
+                <a
+                  href={src.url}
+                  className="underline hover:text-wiah-blue"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                </a>
+              </li>
+            ))}
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             Charge rate is the proportion of police-recorded offences assigned a charge or summons
@@ -719,6 +927,8 @@ export default function JusticePage() {
             monthly bulletins; historical points are June snapshots from published annual data.
             The justice funnel combines CSEW victim survey estimates, police recorded crime totals,
             Home Office outcomes data, and CPS prosecution/conviction statistics.
+            Domestic abuse prevalence from CSEW self-completion module; the survey does not cover
+            all forms of abuse and excludes under-16s.
           </p>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             Data updated automatically via GitHub Actions. Last pipeline run:{' '}

@@ -1,0 +1,130 @@
+{
+  "topic": "housing",
+  "dataset": "private_rents",
+  "lastUpdated": "2026-03-03",
+  "iphrp": [
+    {
+      "region": "UK",
+      "data": [
+        {"year": 2011, "index": 100.0, "annualChange": null},
+        {"year": 2012, "index": 102.1, "annualChange": 2.1},
+        {"year": 2013, "index": 103.8, "annualChange": 1.7},
+        {"year": 2014, "index": 106.0, "annualChange": 2.1},
+        {"year": 2015, "index": 108.4, "annualChange": 2.3},
+        {"year": 2016, "index": 111.0, "annualChange": 2.4},
+        {"year": 2017, "index": 113.5, "annualChange": 2.3},
+        {"year": 2018, "index": 115.7, "annualChange": 1.9},
+        {"year": 2019, "index": 117.6, "annualChange": 1.6},
+        {"year": 2020, "index": 118.7, "annualChange": 0.9},
+        {"year": 2021, "index": 121.4, "annualChange": 2.3},
+        {"year": 2022, "index": 128.2, "annualChange": 5.6},
+        {"year": 2023, "index": 139.3, "annualChange": 8.7},
+        {"year": 2024, "index": 152.8, "annualChange": 9.7}
+      ]
+    },
+    {
+      "region": "London",
+      "data": [
+        {"year": 2011, "index": 100.0, "annualChange": null},
+        {"year": 2012, "index": 103.5, "annualChange": 3.5},
+        {"year": 2013, "index": 106.8, "annualChange": 3.2},
+        {"year": 2014, "index": 112.3, "annualChange": 5.1},
+        {"year": 2015, "index": 117.9, "annualChange": 5.0},
+        {"year": 2016, "index": 121.4, "annualChange": 3.0},
+        {"year": 2017, "index": 123.1, "annualChange": 1.4},
+        {"year": 2018, "index": 123.8, "annualChange": 0.6},
+        {"year": 2019, "index": 124.5, "annualChange": 0.6},
+        {"year": 2020, "index": 122.3, "annualChange": -1.8},
+        {"year": 2021, "index": 125.6, "annualChange": 2.7},
+        {"year": 2022, "index": 135.7, "annualChange": 8.0},
+        {"year": 2023, "index": 153.4, "annualChange": 13.1},
+        {"year": 2024, "index": 170.2, "annualChange": 11.0}
+      ]
+    },
+    {
+      "region": "South East",
+      "data": [
+        {"year": 2011, "index": 100.0, "annualChange": null},
+        {"year": 2015, "index": 109.2, "annualChange": 2.7},
+        {"year": 2018, "index": 115.4, "annualChange": 1.8},
+        {"year": 2021, "index": 121.3, "annualChange": 2.1},
+        {"year": 2022, "index": 127.8, "annualChange": 5.4},
+        {"year": 2023, "index": 138.9, "annualChange": 8.7},
+        {"year": 2024, "index": 151.2, "annualChange": 8.9}
+      ]
+    },
+    {
+      "region": "North West",
+      "data": [
+        {"year": 2011, "index": 100.0, "annualChange": null},
+        {"year": 2015, "index": 103.4, "annualChange": 0.9},
+        {"year": 2018, "index": 107.6, "annualChange": 1.5},
+        {"year": 2021, "index": 114.2, "annualChange": 2.8},
+        {"year": 2022, "index": 122.1, "annualChange": 6.9},
+        {"year": 2023, "index": 134.5, "annualChange": 10.2},
+        {"year": 2024, "index": 149.3, "annualChange": 11.0}
+      ]
+    },
+    {
+      "region": "Yorkshire and The Humber",
+      "data": [
+        {"year": 2011, "index": 100.0, "annualChange": null},
+        {"year": 2015, "index": 102.1, "annualChange": 0.6},
+        {"year": 2018, "index": 105.3, "annualChange": 1.2},
+        {"year": 2021, "index": 110.7, "annualChange": 2.3},
+        {"year": 2022, "index": 118.9, "annualChange": 7.4},
+        {"year": 2023, "index": 130.4, "annualChange": 9.7},
+        {"year": 2024, "index": 144.2, "annualChange": 10.6}
+      ]
+    }
+  ],
+  "medianRents2024": [
+    {"region": "London", "medianMonthlyRent": 2100},
+    {"region": "South East", "medianMonthlyRent": 1350},
+    {"region": "East of England", "medianMonthlyRent": 1200},
+    {"region": "South West", "medianMonthlyRent": 1050},
+    {"region": "West Midlands", "medianMonthlyRent": 925},
+    {"region": "East Midlands", "medianMonthlyRent": 875},
+    {"region": "North West", "medianMonthlyRent": 900},
+    {"region": "Yorkshire and The Humber", "medianMonthlyRent": 800},
+    {"region": "North East", "medianMonthlyRent": 700},
+    {"region": "Wales", "medianMonthlyRent": 775},
+    {"region": "Scotland", "medianMonthlyRent": 1000}
+  ],
+  "temporaryAccommodation": [
+    {"year": 2000, "quarter": "Q4", "households": 65440},
+    {"year": 2002, "quarter": "Q4", "households": 85940},
+    {"year": 2004, "quarter": "Q4", "households": 101080},
+    {"year": 2006, "quarter": "Q4", "households": 93590},
+    {"year": 2008, "quarter": "Q4", "households": 75810},
+    {"year": 2010, "quarter": "Q4", "households": 64350},
+    {"year": 2012, "quarter": "Q4", "households": 57750},
+    {"year": 2014, "quarter": "Q4", "households": 60480},
+    {"year": 2016, "quarter": "Q4", "households": 72780},
+    {"year": 2018, "quarter": "Q4", "households": 84140},
+    {"year": 2019, "quarter": "Q4", "households": 87410},
+    {"year": 2020, "quarter": "Q4", "households": 95840},
+    {"year": 2021, "quarter": "Q4", "households": 97840},
+    {"year": 2022, "quarter": "Q4", "households": 104560},
+    {"year": 2023, "quarter": "Q4", "households": 117450},
+    {"year": 2024, "quarter": "Q2", "households": 123110}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Index of Private Housing Rental Prices (IPHRP)",
+        "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/indexofprivatehousingrentalprices/latest",
+        "frequency": "monthly",
+        "notes": "Annual average index, 2011=100. Covers Great Britain."
+      },
+      {
+        "name": "DLUHC",
+        "dataset": "Homelessness: Live tables — Temporary accommodation (TA1)",
+        "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness",
+        "frequency": "quarterly",
+        "notes": "England only. Households in temporary accommodation at end of quarter."
+      }
+    ]
+  }
+}

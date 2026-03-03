@@ -1,0 +1,57 @@
+{
+  "topic": "poverty",
+  "dataset": "wealth",
+  "lastUpdated": "2026-03-03",
+  "wealthByDecile": [
+    {"decile": 1, "label": "Poorest 10%", "meanWealth": -1900, "medianWealth": -700, "wealthShare": -0.1},
+    {"decile": 2, "label": "10–20%", "meanWealth": 9800, "medianWealth": 9200, "wealthShare": 0.4},
+    {"decile": 3, "label": "20–30%", "meanWealth": 36400, "medianWealth": 35100, "wealthShare": 1.4},
+    {"decile": 4, "label": "30–40%", "meanWealth": 82700, "medianWealth": 81200, "wealthShare": 3.1},
+    {"decile": 5, "label": "40–50%", "meanWealth": 144900, "medianWealth": 143500, "wealthShare": 5.4},
+    {"decile": 6, "label": "50–60%", "meanWealth": 221300, "medianWealth": 218600, "wealthShare": 8.3},
+    {"decile": 7, "label": "60–70%", "meanWealth": 318700, "medianWealth": 313400, "wealthShare": 11.9},
+    {"decile": 8, "label": "70–80%", "meanWealth": 457600, "medianWealth": 447200, "wealthShare": 17.1},
+    {"decile": 9, "label": "80–90%", "meanWealth": 700800, "medianWealth": 672300, "wealthShare": 26.2},
+    {"decile": 10, "label": "Richest 10%", "meanWealth": 1984600, "medianWealth": 1285000, "wealthShare": 43.0}
+  ],
+  "wealthGiniTimeSeries": [
+    {"wave": "2006-2008", "gini": 0.61},
+    {"wave": "2008-2010", "gini": 0.61},
+    {"wave": "2010-2012", "gini": 0.62},
+    {"wave": "2012-2014", "gini": 0.62},
+    {"wave": "2014-2016", "gini": 0.63},
+    {"wave": "2016-2018", "gini": 0.63},
+    {"wave": "2018-2020", "gini": 0.64},
+    {"wave": "2020-2022", "gini": 0.65}
+  ],
+  "wealthComponents": {
+    "year": "2018-2020",
+    "totalMedianHouseholdWealth": 302500,
+    "components": [
+      {"type": "Property wealth (net)", "median": 127000, "share": 36},
+      {"type": "Private pension wealth", "median": 111000, "share": 42},
+      {"type": "Financial wealth (net)", "median": 12000, "share": 13},
+      {"type": "Physical wealth", "median": 12800, "share": 9}
+    ]
+  },
+  "wealthByAge": [
+    {"ageGroup": "16–24", "medianWealth": 7000},
+    {"ageGroup": "25–34", "medianWealth": 27000},
+    {"ageGroup": "35–44", "medianWealth": 105000},
+    {"ageGroup": "45–54", "medianWealth": 249000},
+    {"ageGroup": "55–64", "medianWealth": 410000},
+    {"ageGroup": "65–74", "medianWealth": 490000},
+    {"ageGroup": "75+", "medianWealth": 384000}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Wealth and Assets Survey (WAS), Wave 7: 2018–2020",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/wealthingreatbritain/wave7april2018tomarch2020",
+        "frequency": "biennial",
+        "notes": "Aggregate total household wealth including property, pensions, financial and physical assets. Great Britain only."
+      }
+    ]
+  }
+}

@@ -99,6 +99,15 @@ interface RttData {
     prePandemicList: number | null;
   };
 }
+interface LifeExpectancyPoint {
+  year: number;
+  maleLE: number;
+  femaleLE: number;
+}
+
+interface LifeExpectancyData {
+  nationalLE: LifeExpectancyPoint[];
+}
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -119,6 +128,7 @@ export default function HealthPage() {
   const [rttData, setRttData] = useState<RttData | null>(null);
   const [cancerData, setCancerData] = useState<CancerData | null>(null);
   const [bedData, setBedData] = useState<BedData | null>(null);
+  const [leData, setLeData] = useState<LifeExpectancyData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -141,6 +151,10 @@ export default function HealthPage() {
     fetch('/data/health/hospital_beds.json')
       .then(r => r.json())
       .then(setBedData)
+      .catch(console.error);
+    fetch('/data/health/life_expectancy.json')
+      .then(r => r.json())
+      .then(setLeData)
       .catch(console.error);
   }, []);
 
@@ -286,6 +300,36 @@ export default function HealthPage() {
       }]
     : [];
 
+  // ── Life Expectancy series ──────────────────────────────────────────────
+
+  const leSeries: Series[] = leData
+    ? [
+        {
+          id: 'male-le',
+          label: 'Male',
+          colour: '#264653',
+          data: leData.nationalLE.map(d => ({
+            date: new Date(d.year, 0, 1),
+            value: d.maleLE,
+          })),
+        },
+        {
+          id: 'female-le',
+          label: 'Female',
+          colour: '#E63946',
+          data: leData.nationalLE.map(d => ({
+            date: new Date(d.year, 0, 1),
+            value: d.femaleLE,
+          })),
+        },
+      ]
+    : [];
+
+  const leAnnotations: Annotation[] = [
+    { date: new Date(2011, 0), label: '2011: Growth stalls' },
+    { date: new Date(2020, 0), label: '2020: COVID impact' },
+  ];
+
   // ── RTT Waiting list series ──────────────────────────────────────────────
 
   // Total waiting list size
@@ -392,6 +436,7 @@ export default function HealthPage() {
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-waiting', label: 'Waiting Lists' },
           { id: 'sec-ambulance', label: 'Ambulance' },
+          { id: 'sec-life-expectancy', label: 'Life Expectancy' },
           { id: 'sec-gp', label: 'GP Access' },
           { id: 'sec-map', label: 'Regional Map' },
           { id: 'sec-context', label: 'Context' },
@@ -583,6 +628,46 @@ export default function HealthPage() {
         )}
 
         </div>{/* end sec-ambulance */}
+
+        {/* Life Expectancy section */}
+        <div id="sec-life-expectancy">
+        {leSeries.length > 0 ? (
+          <ScrollReveal>
+          <LineChart
+            title="Life expectancy at birth, UK, 1981–2023"
+            subtitle="Years of life expected at birth, 3-year rolling averages. Growth stalled after 2011."
+            series={leSeries}
+            annotations={leAnnotations}
+            yLabel="Years"
+            source={{
+              name: 'ONS',
+              dataset: 'National Life Tables, United Kingdom',
+              frequency: 'annual',
+              url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/lifeexpectancies/datasets/nationallifetablesunitedkingdomreferencetables',
+            }}
+          />
+          </ScrollReveal>
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+        )}
+        <ScrollReveal>
+        <div className="max-w-2xl mb-16">
+          <p className="text-base text-wiah-black leading-[1.7] mb-4">
+            UK life expectancy at birth rose steadily throughout the twentieth century, driven by
+            improvements in infant and child mortality, better nutrition, and advances in medicine.
+            Male life expectancy increased from around 70 years in the early 1980s to nearly 80
+            by 2014.
+          </p>
+          <p className="text-base text-wiah-black leading-[1.7]">
+            Since 2011, progress has stalled. The rate of improvement slowed dramatically,
+            with some years recording slight falls. The COVID-19 pandemic caused a sharp drop
+            in 2020 — male life expectancy fell by 1.2 years in a single year. Recovery
+            since 2021 has been partial. The most recent data (2022–2024) shows male
+            life expectancy at 79.1 years and female at 83.0 years, below the pre-pandemic peak.
+          </p>
+        </div>
+        </ScrollReveal>
+        </div>{/* end sec-life-expectancy */}
 
         {/* Chart 2: GP appointment wait */}
         <div id="sec-gp">
@@ -980,6 +1065,16 @@ export default function HealthPage() {
                 NHS England — KH03 Bed Availability and Occupancy (quarterly)
               </a>
               {' '}— overnight beds, available and occupied, by trust and nationally.
+            </li>
+            <li>
+              <a
+                href="https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/lifeexpectancies/datasets/nationallifetablesunitedkingdomreferencetables"
+                className="underline hover:text-wiah-blue"
+                target="_blank" rel="noreferrer"
+              >
+                ONS — National Life Tables, United Kingdom (annual)
+              </a>
+              {' '}— period life expectancy at birth, 3-year rolling averages, UK. 1980–82 to 2022–24.
             </li>
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">

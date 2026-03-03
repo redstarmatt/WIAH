@@ -64,6 +64,30 @@ interface SocialCareData {
   };
 }
 
+interface VacancyPoint {
+  year: string;
+  vacancyRatePct: number;
+  vacancies: number;
+  totalJobs: number;
+}
+
+interface TurnoverPoint {
+  year: string;
+  turnoverPct: number;
+}
+
+interface RoleBreakdownEntry {
+  role: string;
+  jobs: number;
+  vacancyPct: number;
+}
+
+interface WorkforceData {
+  vacancyRate: VacancyPoint[];
+  turnoverRate: TurnoverPoint[];
+  roleBreakdown2024: RoleBreakdownEntry[];
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function dateToDate(d: string): Date {
@@ -79,16 +103,27 @@ function sparkFrom(arr: number[], n = 12) {
   return arr.slice(-n);
 }
 
+// Convert "2012/13" → Date(2013, 0, 1) using the latter year
+const socialCareYearToDate = (s: string) => {
+  const year = parseInt(s.split('/')[0]) + 1;
+  return new Date(year, 0, 1);
+};
+
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function SocialCarePage() {
   const [data, setData] = useState<SocialCareData | null>(null);
+  const [workforce, setWorkforce] = useState<WorkforceData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/data/social-care/social_care.json')
       .then(r => r.json())
       .then(setData)
+      .catch(console.error);
+    fetch('/data/social-care/workforce.json')
+      .then(r => r.json())
+      .then(setWorkforce)
       .catch(console.error);
   }, []);
 
@@ -142,6 +177,41 @@ export default function SocialCarePage() {
     { date: new Date(2020, 0), label: '2020: COVID funding' },
   ];
 
+  // 4. Workforce — vacancy rate + turnover rate
+  const workforceAnnotations: Annotation[] = [
+    { date: new Date(2021, 0), label: 'Post-COVID peak: 165k vacancies' },
+  ];
+
+  // Build a merged timeline for vacancy + turnover (they share year keys)
+  const vacancySeries: Series[] = workforce
+    ? [{
+        id: 'vacancy-rate',
+        label: 'Vacancy rate (%)',
+        colour: '#E63946',
+        data: workforce.vacancyRate.map(d => ({
+          date: socialCareYearToDate(d.year),
+          value: d.vacancyRatePct,
+        })),
+      }]
+    : [];
+
+  // Turnover series — join to vacancy years where available
+  const turnoverSeries: Series[] = workforce
+    ? [{
+        id: 'turnover-rate',
+        label: 'Turnover rate (%)',
+        colour: '#F4A261',
+        data: workforce.turnoverRate.map(d => ({
+          date: socialCareYearToDate(d.year),
+          value: d.turnoverPct,
+        })),
+      }]
+    : [];
+
+  const workforceCombinedSeries: Series[] = workforce
+    ? [...vacancySeries, ...turnoverSeries]
+    : [];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestDelay = data?.national.dischargeDelays.timeSeries.at(-1);
@@ -151,6 +221,9 @@ export default function SocialCarePage() {
   const goodPlusPct = cqc ? (cqc.outstandingPct + cqc.goodPct).toFixed(0) : '—';
 
   const carers = data?.national.unpaidCarers;
+
+  const latestVacancy = workforce?.vacancyRate.at(-1);
+  const peakVacancy = workforce?.vacancyRate.find(d => d.year === '2021/22');
 
   // ── Render ────────────────────────────────────────────────────────────────
 
@@ -183,6 +256,7 @@ export default function SocialCarePage() {
           { id: 'sec-discharge', label: 'Hospital Discharge' },
           { id: 'sec-quality', label: 'Care Quality' },
           { id: 'sec-carers', label: 'Unpaid Carers' },
+          { id: 'sec-workforce', label: 'Workforce' },
           { id: 'sec-context', label: 'Context' },
         ]} />
 
@@ -473,6 +547,136 @@ export default function SocialCarePage() {
         />
         </ScrollReveal>
 
+        {/* ── Workforce ─────────────────────────────────────────────────────── */}
+        <div id="sec-workforce">
+          <ScrollReveal>
+          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Workforce Crisis</h2>
+          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+            The social care workforce has over 130,000 unfilled posts. One in three workers leaves
+            each year. Low pay drives the crisis — many care workers earn close to the minimum wage
+            despite holding significant responsibility.
+          </p>
+          </ScrollReveal>
+
+          {workforceCombinedSeries.length > 0 ? (
+            <LineChart
+              title="Adult social care workforce vacancy rate, England, 2012–2024"
+              subtitle="Vacancy rate hit 10.6% in 2021/22 — over 165,000 unfilled posts. High turnover (28%) compounds the pressure."
+              series={workforceCombinedSeries}
+              annotations={workforceAnnotations}
+              yLabel="%"
+              source={{
+                name: 'Skills for Care',
+                dataset: 'State of the adult social care sector and workforce in England, 2024',
+                frequency: 'annual',
+                url: 'https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+
+          {/* Workforce summary stats */}
+          {workforce && latestVacancy && (
+            <ScrollReveal>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+              <div className="border border-wiah-border rounded-lg p-5">
+                <p className="text-xs font-mono text-wiah-mid mb-1">Current vacancy rate</p>
+                <p className="font-mono text-3xl font-bold" style={{ color: '#E63946' }}>
+                  {latestVacancy.vacancyRatePct}%
+                </p>
+                <p className="text-xs text-wiah-mid mt-1">
+                  {latestVacancy.vacancies.toLocaleString()} unfilled posts ({latestVacancy.year})
+                </p>
+              </div>
+              <div className="border border-wiah-border rounded-lg p-5">
+                <p className="text-xs font-mono text-wiah-mid mb-1">Peak vacancy (2021/22)</p>
+                <p className="font-mono text-3xl font-bold" style={{ color: '#E63946' }}>
+                  {peakVacancy ? `${peakVacancy.vacancyRatePct}%` : '10.6%'}
+                </p>
+                <p className="text-xs text-wiah-mid mt-1">
+                  165,000 unfilled posts at peak
+                </p>
+              </div>
+              <div className="border border-wiah-border rounded-lg p-5">
+                <p className="text-xs font-mono text-wiah-mid mb-1">Annual staff turnover</p>
+                <p className="font-mono text-3xl font-bold" style={{ color: '#F4A261' }}>28%</p>
+                <p className="text-xs text-wiah-mid mt-1">
+                  1 in 3.5 workers leaves each year
+                </p>
+              </div>
+            </div>
+            </ScrollReveal>
+          )}
+
+          {/* Role breakdown table */}
+          {workforce && workforce.roleBreakdown2024.length > 0 && (
+            <ScrollReveal>
+            <section className="mb-12">
+              <h3 className="text-lg font-bold text-wiah-black mb-1">
+                Vacancy rates by role, 2023/24
+              </h3>
+              <p className="text-sm text-wiah-mid font-mono mb-6">
+                Unfilled posts as a percentage of total posts, by job role. Sorted by vacancy rate (highest first).
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-wiah-border">
+                      <th className="text-left py-2 pr-6 font-mono text-xs text-wiah-mid">Role</th>
+                      <th className="text-right py-2 px-4 font-mono text-xs text-wiah-mid">Jobs</th>
+                      <th className="text-right py-2 px-4 font-mono text-xs text-wiah-mid">Vacancy rate</th>
+                      <th className="py-2 pl-4 font-mono text-xs text-wiah-mid w-36">vs 10% benchmark</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[...workforce.roleBreakdown2024]
+                      .sort((a, b) => b.vacancyPct - a.vacancyPct)
+                      .map((row, i) => {
+                        const barPct = Math.min((row.vacancyPct / 15) * 100, 100);
+                        const colour =
+                          row.vacancyPct >= 10 ? '#E63946'
+                          : row.vacancyPct >= 7 ? '#F4A261'
+                          : '#2A9D8F';
+                        return (
+                          <tr key={i} className="border-b border-wiah-border/50 hover:bg-wiah-light/50">
+                            <td className="py-2 pr-6 text-sm text-wiah-black">{row.role}</td>
+                            <td className="py-2 px-4 font-mono text-sm text-right text-wiah-mid">
+                              {row.jobs.toLocaleString()}
+                            </td>
+                            <td className="py-2 px-4 font-mono text-sm text-right font-bold" style={{ color: colour }}>
+                              {row.vacancyPct.toFixed(1)}%
+                            </td>
+                            <td className="py-2 pl-4">
+                              <div className="bg-wiah-light rounded h-2 w-full">
+                                <div
+                                  className="h-2 rounded"
+                                  style={{ width: `${barPct}%`, backgroundColor: colour }}
+                                />
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                  </tbody>
+                </table>
+              </div>
+              <p className="font-mono text-[11px] text-wiah-mid mt-3">
+                Source: Skills for Care — State of the adult social care sector and workforce in England, 2024.{' '}
+                <a
+                  href="https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline hover:text-wiah-blue"
+                >
+                  Dataset ↗
+                </a>
+              </p>
+            </section>
+            </ScrollReveal>
+          )}
+        </div>{/* end sec-workforce */}
+
         {/* Context */}
         <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
@@ -501,10 +705,13 @@ export default function SocialCarePage() {
               contribution is worth £162 billion annually, more than the entire NHS budget.
             </p>
             <p>
-              The workforce challenge is acute. Social care staff turnover runs at around 30%
-              per year, driven by low pay — many care workers earn close to the minimum wage.
-              International recruitment has helped fill gaps, but retention remains the
-              fundamental problem.
+              The workforce challenge is acute. Vacancy rates peaked at 10.6% in 2021/22 —
+              over 165,000 unfilled posts — before falling back to 8.3% in 2023/24. Staff
+              turnover runs at around 28% per year, driven by low pay: mean hourly pay for
+              social care workers reached £10.54 in 2023/24, barely above the National Living
+              Wage. Registered nurses face the highest vacancy rates at 12.4%, reflecting
+              competition with NHS employers. International recruitment has helped fill gaps,
+              but retention remains the fundamental problem.
             </p>
           </div>
         </section>
@@ -525,6 +732,16 @@ export default function SocialCarePage() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href="https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx"
+                className="underline hover:text-wiah-blue"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Skills for Care &mdash; State of the adult social care sector and workforce in England (annual)
+              </a>
+            </li>
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             Discharge delay data from the NHS England Daily Discharge Situation Report. These are
@@ -533,7 +750,8 @@ export default function SocialCarePage() {
             (previously 7+ days only); pre/post figures are not directly comparable. CQC ratings are a
             point-in-time snapshot of the latest inspection. Spending data is in 2023-24 prices (real
             terms). Unpaid carer figures from Census 2021 — likely an undercount as many carers do
-            not identify as such.
+            not identify as such. Workforce data from Skills for Care annual survey; England only,
+            excludes NHS social care workers.
           </p>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             Data updated automatically via GitHub Actions. Last pipeline run:{' '}

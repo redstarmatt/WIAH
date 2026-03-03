@@ -58,17 +58,38 @@ interface EnvironmentData {
   };
 }
 
+interface RecyclingPoint {
+  year: number;
+  recyclingRatePct: number;
+}
+
+interface LandfillPoint {
+  year: number;
+  landfillPct: number;
+}
+
+interface RecyclingData {
+  householdRecycling: RecyclingPoint[];
+  target2035: number;
+  ewLandfillDiversionPct: LandfillPoint[];
+}
+
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1);
 }
 
 export default function EnvironmentPage() {
   const [data, setData] = useState<EnvironmentData | null>(null);
+  const [recyclingData, setRecyclingData] = useState<RecyclingData | null>(null);
 
   useEffect(() => {
     fetch('/data/environment/environment.json')
       .then(r => r.json())
       .then(setData)
+      .catch(console.error);
+    fetch('/data/environment/recycling.json')
+      .then(r => r.json())
+      .then(setRecyclingData)
       .catch(console.error);
   }, []);
 
@@ -163,6 +184,34 @@ export default function EnvironmentPage() {
       }]
     : [];
 
+  // 6. Recycling and landfill series
+  const recyclingSeries: Series[] = recyclingData
+    ? [
+        {
+          id: 'recycling',
+          label: 'Recycling rate (%)',
+          colour: '#2A9D8F',
+          data: recyclingData.householdRecycling.map(d => ({
+            date: yearToDate(d.year),
+            value: d.recyclingRatePct,
+          })),
+        },
+        {
+          id: 'landfill',
+          label: 'Landfill rate (%)',
+          colour: '#E63946',
+          data: recyclingData.ewLandfillDiversionPct.map(d => ({
+            date: yearToDate(d.year),
+            value: d.landfillPct,
+          })),
+        },
+      ]
+    : [];
+
+  const recyclingAnnotations: Annotation[] = [
+    { date: new Date(2013, 0), label: '2013: Progress stalls' },
+  ];
+
   const latestGhg = data?.national.ghgEmissions.latest;
   const latestPm25 = data?.national.airQuality.latest;
   const latestBio = data?.national.biodiversity.latest;
@@ -196,6 +245,7 @@ export default function EnvironmentPage() {
           { id: 'sec-emissions', label: 'Emissions' },
           { id: 'sec-nature', label: 'Nature' },
           { id: 'sec-air', label: 'Air Quality' },
+          { id: 'sec-recycling', label: 'Waste & Recycling' },
           { id: 'sec-context', label: 'Context' },
         ]} />
 
@@ -404,6 +454,28 @@ export default function EnvironmentPage() {
         </ScrollReveal>
 
         </div>{/* end sec-air */}
+
+        {/* ── Waste & Recycling ──────────────────────────────────────────── */}
+        <div id="sec-recycling">
+        {recyclingSeries.length > 0 ? (
+          <LineChart
+            title="UK household recycling rate, 2000–2023"
+            subtitle="Recycling rose rapidly in the 2000s but has flatlined at ~44% since 2013 — far below the government’s 65% target by 2035."
+            series={recyclingSeries}
+            annotations={recyclingAnnotations}
+            targetLine={{ value: 65, label: '2035 target (65%)' }}
+            yLabel="%"
+            source={{
+              name: 'DESNZ / DEFRA',
+              dataset: 'UK Statistics on Waste',
+              frequency: 'annual',
+              url: 'https://www.gov.uk/government/statistics/uk-waste-data',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+        </div>{/* end sec-recycling */}
 
         {/* Context */}
         <section id="sec-context" className="max-w-2xl mt-8 mb-12">

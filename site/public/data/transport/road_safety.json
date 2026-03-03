@@ -1,0 +1,61 @@
+{
+  "topic": "transport",
+  "dataset": "road_safety",
+  "lastUpdated": "2026-03-03",
+  "ksi": [
+    {"year": 1979, "killed": 6352, "seriouslyInjured": 78150, "ksiTotal": 84502, "allCasualties": 324730},
+    {"year": 1980, "killed": 6010, "seriouslyInjured": 74700, "ksiTotal": 80710, "allCasualties": 320279},
+    {"year": 1985, "killed": 5165, "seriouslyInjured": 63000, "ksiTotal": 68165, "allCasualties": 302880},
+    {"year": 1990, "killed": 5217, "seriouslyInjured": 63200, "ksiTotal": 68417, "allCasualties": 340747},
+    {"year": 1995, "killed": 3621, "seriouslyInjured": 44710, "ksiTotal": 48331, "allCasualties": 280031},
+    {"year": 2000, "killed": 3409, "seriouslyInjured": 38155, "ksiTotal": 41564, "allCasualties": 302885},
+    {"year": 2005, "killed": 3201, "seriouslyInjured": 27198, "ksiTotal": 30399, "allCasualties": 271017},
+    {"year": 2010, "killed": 1857, "seriouslyInjured": 20947, "ksiTotal": 22804, "allCasualties": 208648},
+    {"year": 2013, "killed": 1713, "seriouslyInjured": 21657, "ksiTotal": 23370, "allCasualties": 183670},
+    {"year": 2015, "killed": 1732, "seriouslyInjured": 22144, "ksiTotal": 23876, "allCasualties": 186209},
+    {"year": 2017, "killed": 1793, "seriouslyInjured": 24831, "ksiTotal": 26624, "allCasualties": 181384},
+    {"year": 2018, "killed": 1784, "seriouslyInjured": 25511, "ksiTotal": 27295, "allCasualties": 178948},
+    {"year": 2019, "killed": 1748, "seriouslyInjured": 25945, "ksiTotal": 27693, "allCasualties": 153158},
+    {"year": 2020, "killed": 1460, "seriouslyInjured": 19177, "ksiTotal": 20637, "allCasualties": 115584},
+    {"year": 2021, "killed": 1558, "seriouslyInjured": 22402, "ksiTotal": 23960, "allCasualties": 129990},
+    {"year": 2022, "killed": 1711, "seriouslyInjured": 29472, "ksiTotal": 31183, "allCasualties": 135480},
+    {"year": 2023, "killed": 1695, "seriouslyInjured": 30124, "ksiTotal": 31819, "allCasualties": 135440}
+  ],
+  "evRegistrations": [
+    {"year": 2011, "evCount": 1082, "totalNewCars": 1941336, "evSharePct": 0.06},
+    {"year": 2013, "evCount": 3586, "totalNewCars": 2264737, "evSharePct": 0.16},
+    {"year": 2015, "evCount": 28188, "totalNewCars": 2633503, "evSharePct": 1.07},
+    {"year": 2017, "evCount": 46522, "totalNewCars": 2540617, "evSharePct": 1.83},
+    {"year": 2019, "evCount": 37850, "totalNewCars": 2311140, "evSharePct": 1.64},
+    {"year": 2020, "evCount": 108205, "totalNewCars": 1631064, "evSharePct": 6.63},
+    {"year": 2021, "evCount": 190727, "totalNewCars": 1647181, "evSharePct": 11.58},
+    {"year": 2022, "evCount": 267203, "totalNewCars": 1614063, "evSharePct": 16.55},
+    {"year": 2023, "evCount": 314763, "totalNewCars": 1903054, "evSharePct": 16.54},
+    {"year": 2024, "evCount": 381970, "totalNewCars": 1951007, "evSharePct": 19.58}
+  ],
+  "evOnRoad": [
+    {"year": 2019, "totalEVs": 193400},
+    {"year": 2020, "totalEVs": 310000},
+    {"year": 2021, "totalEVs": 477000},
+    {"year": 2022, "totalEVs": 745000},
+    {"year": 2023, "totalEVs": 1030000},
+    {"year": 2024, "totalEVs": 1387000}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DfT",
+        "dataset": "Reported road casualties in Great Britain",
+        "url": "https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023",
+        "frequency": "annual",
+        "notes": "KSI = killed or seriously injured. 2020 affected by COVID lockdowns."
+      },
+      {
+        "name": "SMMT / DVLA",
+        "dataset": "New car registrations and licensed vehicles",
+        "url": "https://www.smmt.co.uk/vehicle-data/car-registrations/",
+        "frequency": "monthly"
+      }
+    ]
+  }
+}

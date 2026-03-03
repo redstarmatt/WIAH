@@ -47,6 +47,32 @@ interface TransportData {
   };
 }
 
+interface KSIPoint {
+  year: number;
+  killed: number;
+  seriouslyInjured: number;
+  ksiTotal: number;
+  allCasualties: number;
+}
+
+interface EVRegPoint {
+  year: number;
+  evCount: number;
+  totalNewCars: number;
+  evSharePct: number;
+}
+
+interface EVOnRoadPoint {
+  year: number;
+  totalEVs: number;
+}
+
+interface RoadSafetyData {
+  ksi: KSIPoint[];
+  evRegistrations: EVRegPoint[];
+  evOnRoad: EVOnRoadPoint[];
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function quarterToDate(q: string): Date {
@@ -68,12 +94,17 @@ function sparkFrom(arr: number[], n = 12) {
 
 export default function TransportPage() {
   const [data, setData] = useState<TransportData | null>(null);
+  const [roadSafety, setRoadSafety] = useState<RoadSafetyData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/data/transport/transport.json')
       .then(r => r.json())
       .then(setData)
+      .catch(console.error);
+    fetch('/data/transport/road_safety.json')
+      .then(r => r.json())
+      .then(setRoadSafety)
       .catch(console.error);
   }, []);
 
@@ -144,6 +175,58 @@ export default function TransportPage() {
       ]
     : [];
 
+  // Road safety series
+  const ksiKilledSeries: Series[] = roadSafety
+    ? [
+        {
+          id: 'ksi-killed',
+          label: 'Killed',
+          colour: '#E63946',
+          data: roadSafety.ksi.map(d => ({
+            date: yearToDate(d.year),
+            value: d.killed,
+          })),
+        },
+      ]
+    : [];
+
+  const ksiSeries: Series[] = roadSafety
+    ? [
+        {
+          id: 'ksi-killed',
+          label: 'Killed',
+          colour: '#E63946',
+          data: roadSafety.ksi.map(d => ({
+            date: yearToDate(d.year),
+            value: d.killed,
+          })),
+        },
+        {
+          id: 'ksi-serious',
+          label: 'Seriously injured',
+          colour: '#F4A261',
+          data: roadSafety.ksi.map(d => ({
+            date: yearToDate(d.year),
+            value: d.seriouslyInjured,
+          })),
+        },
+      ]
+    : [];
+
+  const evShareSeries: Series[] = roadSafety
+    ? [
+        {
+          id: 'ev-share',
+          label: 'BEV share of new registrations (%)',
+          colour: '#2A9D8F',
+          data: roadSafety.evRegistrations.map(d => ({
+            date: yearToDate(d.year),
+            value: d.evSharePct,
+          })),
+        },
+      ]
+    : [];
+
   // ── Annotations ─────────────────────────────────────────────────────────
 
   const railAnnotations: Annotation[] = [
@@ -154,6 +237,16 @@ export default function TransportPage() {
 
   const busAnnotations: Annotation[] = [
     { date: new Date(2020, 2), label: '2020: COVID-19' },
+  ];
+
+  const ksiAnnotations: Annotation[] = [
+    { date: new Date(1983, 0), label: '1983: Seat belts made compulsory' },
+    { date: new Date(2020, 0), label: '2020: COVID lockdowns' },
+  ];
+
+  const evAnnotations: Annotation[] = [
+    { date: new Date(2020, 0), label: '2020: £3k govt grant introduced' },
+    { date: new Date(2022, 0), label: '2022: ZEV mandate passed' },
   ];
 
   // ── Metric values ────────────────────────────────────────────────────────
@@ -169,6 +262,9 @@ export default function TransportPage() {
   const busPre = prePandemicBus
     ? (prePandemicBus.journeysMillions / 1000).toFixed(1)
     : null;
+
+  const latestEVOnRoad = roadSafety?.evOnRoad.at(-1);
+  const latestEVShare = roadSafety?.evRegistrations.at(-1);
 
   // ── Render ────────────────────────────────────────────────────────────────
 
@@ -199,6 +295,8 @@ export default function TransportPage() {
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-rail', label: 'Rail' },
           { id: 'sec-bus', label: 'Bus & Roads' },
+          { id: 'sec-road-safety', label: 'Road Safety' },
+          { id: 'sec-ev', label: 'Electric Vehicles' },
           { id: 'sec-context', label: 'Context' },
         ]} />
 
@@ -414,6 +512,132 @@ export default function TransportPage() {
 
         </div>{/* end sec-bus */}
 
+        {/* ── Road Safety ───────────────────────────────────────────────────── */}
+        <div id="sec-road-safety">
+          <ScrollReveal>
+          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Road Safety</h2>
+          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+            Britain&apos;s roads are dramatically safer than they were four decades ago — but the
+            improvement has stalled since 2010, with around 1,700 people killed each year.
+          </p>
+          </ScrollReveal>
+
+          {ksiSeries.length > 0 ? (
+            <LineChart
+              title="Road killed or seriously injured (KSI), Great Britain, 1979–2023"
+              subtitle="Dramatic improvements in road safety since the 1970s, but progress has plateaued since 2010. 2020 drop reflects COVID lockdowns."
+              series={ksiSeries}
+              annotations={ksiAnnotations}
+              yLabel="People"
+              source={{
+                name: 'DfT',
+                dataset: 'Reported road casualties in Great Britain',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+
+          {/* Road safety metric callout */}
+          {roadSafety && (
+            <ScrollReveal>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+              <div className="border border-wiah-border rounded-lg p-5">
+                <p className="text-xs font-mono text-wiah-mid mb-1">Killed on roads (2023)</p>
+                <p className="font-mono text-3xl font-bold text-wiah-black">1,695</p>
+                <p className="text-xs text-wiah-mid mt-1">Down from 6,352 in 1979</p>
+              </div>
+              <div className="border border-wiah-border rounded-lg p-5">
+                <p className="text-xs font-mono text-wiah-mid mb-1">Seriously injured (2023)</p>
+                <p className="font-mono text-3xl font-bold" style={{ color: '#F4A261' }}>30,124</p>
+                <p className="text-xs text-wiah-mid mt-1">Rising since 2013 low of 21,657</p>
+              </div>
+              <div className="border border-wiah-border rounded-lg p-5">
+                <p className="text-xs font-mono text-wiah-mid mb-1">Progress since 1979</p>
+                <p className="font-mono text-3xl font-bold" style={{ color: '#2A9D8F' }}>−73%</p>
+                <p className="text-xs text-wiah-mid mt-1">Fatalities down 73% over 44 years</p>
+              </div>
+            </div>
+            </ScrollReveal>
+          )}
+        </div>{/* end sec-road-safety */}
+
+        {/* ── Electric Vehicles ─────────────────────────────────────────────── */}
+        <div id="sec-ev">
+          <ScrollReveal>
+          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-4">Electric Vehicles</h2>
+          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+            Battery electric vehicles now account for nearly 1 in 5 new car sales. Over 1.4 million
+            EVs are already on UK roads — a tenfold increase since 2019.
+          </p>
+          </ScrollReveal>
+
+          {/* EV metric cards */}
+          <ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <MetricCard
+              label="EVs on UK roads today"
+              value={
+                latestEVOnRoad
+                  ? `${(latestEVOnRoad.totalEVs / 1e6).toFixed(1)}M`
+                  : '1.4M'
+              }
+              unit=""
+              direction="up"
+              polarity="up-is-good"
+              baseline="Battery EVs licensed on UK roads — up from 193,400 in 2019"
+              changeText={
+                latestEVOnRoad
+                  ? `${latestEVOnRoad.year} · DVLA licensed vehicles`
+                  : '2024 · DVLA licensed vehicles'
+              }
+              sparklineData={roadSafety ? roadSafety.evOnRoad.map(d => d.totalEVs / 1000) : []}
+              source="DVLA · Licensed vehicles, 2024"
+            />
+            <MetricCard
+              label="EV share of new sales 2024"
+              value={
+                latestEVShare
+                  ? `${latestEVShare.evSharePct.toFixed(1)}`
+                  : '19.6'
+              }
+              unit="%"
+              direction="up"
+              polarity="up-is-good"
+              baseline="Nearly 1 in 5 new cars sold in 2024 was battery electric — up from under 2% in 2017"
+              changeText={
+                latestEVShare
+                  ? `${latestEVShare.year} · ${latestEVShare.evCount.toLocaleString()} BEVs registered`
+                  : '2024 · 381,970 BEVs registered'
+              }
+              sparklineData={roadSafety ? roadSafety.evRegistrations.map(d => d.evSharePct) : []}
+              source="SMMT · New car registrations, 2024"
+            />
+          </div>
+          </ScrollReveal>
+
+          {evShareSeries.length > 0 ? (
+            <LineChart
+              title="Electric vehicle share of new car registrations, UK, 2011–2024"
+              subtitle="Battery electric vehicles (BEVs) as a percentage of all new car registrations. The ZEV mandate requires 22% zero-emission share in 2024, rising to 100% by 2035."
+              series={evShareSeries}
+              annotations={evAnnotations}
+              targetLine={{ value: 22, label: 'ZEV mandate 2024: 22%' }}
+              yLabel="%"
+              source={{
+                name: 'SMMT / DVLA',
+                dataset: 'New car registrations and licensed vehicles',
+                frequency: 'annual',
+                url: 'https://www.smmt.co.uk/vehicle-data/car-registrations/',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+        </div>{/* end sec-ev */}
+
         {/* Context */}
         <section id="sec-context" className="max-w-2xl mt-8 mb-12">
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
@@ -445,6 +669,22 @@ export default function TransportPage() {
               Greater Manchester&apos;s move to re-regulate its buses under the Bee Network is
               the first major attempt to change this model.
             </p>
+            <p>
+              Britain&apos;s road safety record is one of the genuine long-run successes of
+              public policy. Fatalities have fallen by 73% since 1979, driven by compulsory
+              seat belts (1983), drink-drive enforcement, catalytic converter mandates, and
+              decades of improvements to vehicle safety standards. The reduction has stalled
+              since 2010, however, and the seriously injured count has edged upward since 2013
+              — partly a result of improved recording rather than worsening outcomes.
+            </p>
+            <p>
+              Electric vehicle uptake has accelerated rapidly, driven by the ZEV mandate which
+              requires manufacturers to hit 22% zero-emission sales in 2024, rising year-on-year
+              to 100% by 2035. Public charging infrastructure remains a constraint, with around
+              60,000 public connectors nationwide — a ratio of roughly 23 EVs per public charger.
+              The transition is underway, but range anxiety and upfront costs continue to slow
+              adoption among lower-income households.
+            </p>
           </div>
         </section>
 
@@ -464,6 +704,26 @@ export default function TransportPage() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href="https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023"
+                className="underline hover:text-wiah-blue"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DfT &mdash; Reported road casualties in Great Britain (annual)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.smmt.co.uk/vehicle-data/car-registrations/"
+                className="underline hover:text-wiah-blue"
+                target="_blank"
+                rel="noreferrer"
+              >
+                SMMT / DVLA &mdash; New car registrations and licensed vehicles (monthly)
+              </a>
+            </li>
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             {data?.metadata.methodology}
@@ -514,6 +774,22 @@ export default function TransportPage() {
             dataset: 'Bus statistics — BUS01',
             frequency: 'annual',
             url: 'https://www.gov.uk/government/statistical-data-sets/bus-statistics-data-tables-bus01',
+          }}
+          onClose={() => setExpanded(null)}
+        />
+      )}
+      {expanded === 'ksi-chart' && (
+        <MetricDetailModal
+          title="Road killed or seriously injured (KSI), Great Britain, 1979–2023"
+          subtitle="Reported road casualties in Great Britain, killed and seriously injured."
+          series={ksiKilledSeries}
+          annotations={ksiAnnotations}
+          yLabel="People"
+          source={{
+            name: 'DfT',
+            dataset: 'Reported road casualties in Great Britain',
+            frequency: 'annual',
+            url: 'https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023',
           }}
           onClose={() => setExpanded(null)}
         />

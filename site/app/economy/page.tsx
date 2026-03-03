@@ -81,10 +81,55 @@ interface EconomyData {
   };
 }
 
+// ── ASHE types ────────────────────────────────────────────────────────────────
+
+interface AshePoint {
+  year: number;
+  p10: number;
+  p25: number;
+  p50: number;
+  p75: number;
+  p90: number;
+}
+
+interface AsheRegional {
+  region: string;
+  medianWeeklyPay: number;
+}
+
+interface AsheData {
+  national: AshePoint[];
+  regional: AsheRegional[];
+}
+
+// ── Regional GVA types ────────────────────────────────────────────────────────
+
+interface GvaPoint {
+  year: number;
+  gvaPerHead: number;
+}
+
+interface GvaSeries {
+  region: string;
+  data: GvaPoint[];
+}
+
+interface GvaRankingRow {
+  rank: number;
+  region: string;
+  year: number;
+  gvaPerHead: number;
+  ukIndex: number;
+}
+
+interface GvaData {
+  series: GvaSeries[];
+  latestRanking: GvaRankingRow[];
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function isoToDate(s: string): Date {
-  // "2024-01" → first of month; "2024-Q1" → start of quarter
   if (s.includes('Q')) {
     const [yr, q] = s.split('-Q');
     const month = (parseInt(q) - 1) * 3;
@@ -106,6 +151,8 @@ function sparkFrom(arr: number[], n = 12) {
 export default function EconomyPage() {
   const [data, setData] = useState<EconomyData | null>(null);
   const [gdpData, setGdpData] = useState<GdpData | null>(null);
+  const [asheData, setAsheData] = useState<AsheData | null>(null);
+  const [gvaData, setGvaData] = useState<GvaData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -116,6 +163,14 @@ export default function EconomyPage() {
     fetch('/data/economy/gdp.json')
       .then(r => r.json())
       .then(setGdpData)
+      .catch(console.error);
+    fetch('/data/economy/ashe.json')
+      .then(r => r.json())
+      .then(setAsheData)
+      .catch(console.error);
+    fetch('/data/economy/regional_gva.json')
+      .then(r => r.json())
+      .then(setGvaData)
       .catch(console.error);
   }, []);
 
@@ -205,7 +260,6 @@ export default function EconomyPage() {
     { date: new Date(2020, 2), label: '2020: COVID-19' },
   ];
 
-  // Combine unemployment + inactivity for a single chart
   const labourDetailSeries: Series[] = [
     ...unemploymentSeries,
     ...inactivitySeries,
@@ -281,7 +335,7 @@ export default function EconomyPage() {
         label: 'Net debt (% of GDP)',
         colour: '#E63946',
         data: gdpData.publicDebt.timeSeries
-          .filter((_, i) => i % 3 === 0) // quarterly samples from monthly data for readability
+          .filter((_, i) => i % 3 === 0)
           .map(d => ({
             date: isoToDate(d.date),
             value: d.debtPctGdp,
@@ -294,13 +348,73 @@ export default function EconomyPage() {
     { date: new Date(2020, 2), label: '2020: COVID borrowing' },
   ];
 
+  // 9. ASHE earnings by percentile
+  const asheSeries: Series[] = asheData
+    ? [
+        {
+          id: 'p10',
+          label: 'P10 (bottom 10%)',
+          colour: '#E63946',
+          data: asheData.national.map(d => ({ date: yearToDate(d.year), value: d.p10 })),
+        },
+        {
+          id: 'p25',
+          label: 'P25 (lower quartile)',
+          colour: '#F4A261',
+          data: asheData.national.map(d => ({ date: yearToDate(d.year), value: d.p25 })),
+        },
+        {
+          id: 'p50',
+          label: 'P50 (median)',
+          colour: '#0D1117',
+          data: asheData.national.map(d => ({ date: yearToDate(d.year), value: d.p50 })),
+        },
+        {
+          id: 'p75',
+          label: 'P75 (upper quartile)',
+          colour: '#264653',
+          data: asheData.national.map(d => ({ date: yearToDate(d.year), value: d.p75 })),
+        },
+        {
+          id: 'p90',
+          label: 'P90 (top 10%)',
+          colour: '#2A9D8F',
+          data: asheData.national.map(d => ({ date: yearToDate(d.year), value: d.p90 })),
+        },
+      ]
+    : [];
+
+  const asheAnnotations: Annotation[] = [
+    { date: new Date(2015, 0), label: '2015: National Living Wage introduced' },
+    { date: new Date(2020, 0), label: '2020: COVID-19' },
+    { date: new Date(2022, 0), label: '2022: Inflation surge' },
+  ];
+
+  // 10. Regional GVA — London, UK, North East
+  const gvaSeries: Series[] = gvaData
+    ? gvaData.series
+        .filter(s => ['London', 'UK', 'North East'].includes(s.region))
+        .map(s => ({
+          id: s.region.toLowerCase().replace(/ /g, '-'),
+          label: s.region === 'UK' ? 'UK average' : s.region,
+          colour:
+            s.region === 'London' ? '#E63946'
+            : s.region === 'UK' ? '#0D1117'
+            : '#2A9D8F',
+          data: s.data.map(d => ({ date: yearToDate(d.year), value: d.gvaPerHead })),
+        }))
+    : [];
+
+  const gvaAnnotations: Annotation[] = [
+    { date: new Date(2008, 0), label: '2008: Financial crisis' },
+    { date: new Date(2014, 0), label: '2014: Northern Powerhouse' },
+  ];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestInflation = data?.national.inflation.timeSeries.at(-1);
-
   const latestReal = data?.national.wages.realTimeSeries.at(-1);
   const preCrisisReal = data?.national.wages.realTimeSeries.find(d => d.date === '2008-01');
-
   const latestLabour = data?.national.labourMarket.timeSeries.at(-1);
   const preCovidLabour = data?.national.labourMarket.timeSeries.find(d => d.date === '2020-01');
 
@@ -335,6 +449,8 @@ export default function EconomyPage() {
           { id: 'sec-employment', label: 'Employment' },
           { id: 'sec-productivity', label: 'Productivity' },
           { id: 'sec-gdp', label: 'GDP & Debt' },
+          { id: 'sec-earnings-inequality', label: 'Earnings Inequality' },
+          { id: 'sec-regional-divide', label: 'Regional Divide' },
           { id: 'sec-context', label: 'Context' },
         ]} />
 
@@ -652,6 +768,143 @@ export default function EconomyPage() {
 
         </div>{/* end sec-gdp */}
 
+        {/* ── Section: Earnings Inequality ─────────────────────────────────── */}
+        <div id="sec-earnings-inequality">
+          <ScrollReveal>
+            <div className="mb-6 pt-4">
+              <h2 className="text-xl font-bold text-wiah-black mb-2">
+                Earnings inequality: the gap that keeps growing
+              </h2>
+              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
+                The top 10% of workers earn nearly six times more per week than the bottom 10%.
+                While the introduction of the National Living Wage in 2015 boosted lower earners,
+                the gap between the top and bottom has continued to widen in cash terms.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {asheSeries.length > 0 ? (
+            <LineChart
+              title="Earnings by percentile, UK, 2002–2025"
+              subtitle="Gross weekly pay for all employees. Real divergence between top and bottom earners."
+              series={asheSeries}
+              annotations={asheAnnotations}
+              yLabel="£ per week"
+              source={{
+                name: 'ONS',
+                dataset: 'Annual Survey of Hours and Earnings (ASHE), Table 1.1a',
+                frequency: 'annual',
+                url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/allemployeesashetable1',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+          )}
+        </div>{/* end sec-earnings-inequality */}
+
+        {/* ── Section: The Regional Divide ──────────────────────────────────── */}
+        <div id="sec-regional-divide">
+          <ScrollReveal>
+            <div className="mb-6 pt-4">
+              <h2 className="text-xl font-bold text-wiah-black mb-2">
+                The regional divide: London vs everywhere else
+              </h2>
+              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
+                London generates 74% more economic output per person than the UK average.
+                The North East produces 27% less. This gap has persisted — and widened —
+                for decades, making the UK one of the most geographically unequal advanced
+                economies in the world.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* GVA trend: London vs UK vs North East */}
+          {gvaSeries.length > 0 ? (
+            <LineChart
+              title="GVA per head by region, 1997–2017"
+              subtitle="Gross Value Added per head at current basic prices, £. The North-South productivity divide."
+              series={gvaSeries}
+              annotations={gvaAnnotations}
+              yLabel="£ per head"
+              source={{
+                name: 'ONS',
+                dataset: 'Regional Gross Value Added (Income Approach), Table 2',
+                frequency: 'annual',
+                url: 'https://www.ons.gov.uk/economy/grossvalueaddedgva/datasets/regionalgrossvalueaddedincomeapproach',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+          )}
+
+          {/* Regional ranking table */}
+          {gvaData && gvaData.latestRanking.length > 0 && (
+            <ScrollReveal>
+              <section className="mb-12">
+                <h3 className="text-lg font-bold text-wiah-black mb-1">
+                  GVA per head by region, {gvaData.latestRanking[0].year} ranking
+                </h3>
+                <p className="text-sm text-wiah-mid font-mono mb-4">
+                  GVA per head at current basic prices. UK average = 100.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-wiah-border">
+                        <th className="text-left py-2 pr-3 font-mono text-xs text-wiah-mid w-8">Rank</th>
+                        <th className="text-left py-2 pr-4 font-mono text-xs text-wiah-mid">Region</th>
+                        <th className="text-right py-2 px-3 font-mono text-xs text-wiah-mid">GVA per head</th>
+                        <th className="text-right py-2 px-3 font-mono text-xs text-wiah-mid">UK = 100</th>
+                        <th className="text-left py-2 pl-3 font-mono text-xs text-wiah-mid w-40">Relative</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {gvaData.latestRanking.map(row => (
+                        <tr key={row.region} className="border-b border-wiah-border/50 hover:bg-wiah-light/50">
+                          <td className="py-2 pr-3 font-mono text-xs text-wiah-mid">{row.rank}</td>
+                          <td className="py-2 pr-4 text-sm font-medium">{row.region}</td>
+                          <td className="py-2 px-3 font-mono text-sm text-right font-bold">
+                            £{row.gvaPerHead.toLocaleString()}
+                          </td>
+                          <td className="py-2 px-3 font-mono text-sm text-right">
+                            <span
+                              className={
+                                row.ukIndex >= 110 ? 'text-wiah-red font-bold'
+                                : row.ukIndex < 90 ? 'text-wiah-green font-bold'
+                                : 'text-wiah-mid'
+                              }
+                            >
+                              {row.ukIndex}
+                            </span>
+                          </td>
+                          <td className="py-2 pl-3">
+                            <div className="flex items-center gap-1">
+                              <div
+                                className="h-2 rounded-sm"
+                                style={{
+                                  width: `${Math.min(100, (row.ukIndex / 180) * 100)}%`,
+                                  maxWidth: '120px',
+                                  backgroundColor:
+                                    row.ukIndex >= 110 ? '#E63946'
+                                    : row.ukIndex >= 95 ? '#264653'
+                                    : '#2A9D8F',
+                                }}
+                              />
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="font-mono text-[11px] text-wiah-mid mt-3">
+                  Source: ONS Regional Gross Value Added (Income Approach), Table 2. GVA at current basic prices.
+                </p>
+              </section>
+            </ScrollReveal>
+          )}
+        </div>{/* end sec-regional-divide */}
+
         {/* Positive story */}
         <ScrollReveal>
         <PositiveCallout
@@ -682,6 +935,21 @@ export default function EconomyPage() {
               working nor looking for work — has risen since COVID. Much of this is driven by
               long-term sickness, particularly among the over-50s. This represents a structural
               shift that simple unemployment figures miss.
+            </p>
+            <p>
+              Within earnings, the picture is mixed. The introduction of the National Living
+              Wage in 2015 meaningfully compressed the bottom of the distribution — P10 earnings
+              rose faster than the median through 2015–2020. But at the top, high earners
+              continued to pull away. By 2025, someone at the 90th percentile earns £1,336 per
+              week; someone at the 10th percentile earns £227. That ratio — nearly 6:1 —
+              has remained stubbornly persistent.
+            </p>
+            <p>
+              The regional dimension is the UK&apos;s most persistent economic challenge.
+              London generates dramatically more per person than any other region, and the gap
+              widened through every decade from the 1990s onwards. The North East, Wales, and
+              Yorkshire consistently sit 20–30% below the UK average. No levelling-up policy
+              has reversed the trend in the data.
             </p>
             <p>
               The productivity puzzle remains the defining economic challenge. Output per hour has
@@ -716,6 +984,26 @@ export default function EconomyPage() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/allemployeesashetable1"
+                className="underline hover:text-wiah-blue"
+                target="_blank"
+                rel="noreferrer"
+              >
+                ONS &mdash; Annual Survey of Hours and Earnings (ASHE), Table 1.1a (annual)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.ons.gov.uk/economy/grossvalueaddedgva/datasets/regionalgrossvalueaddedincomeapproach"
+                className="underline hover:text-wiah-blue"
+                target="_blank"
+                rel="noreferrer"
+              >
+                ONS &mdash; Regional Gross Value Added (Income Approach) (annual)
+              </a>
+            </li>
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             {data?.metadata.methodology}

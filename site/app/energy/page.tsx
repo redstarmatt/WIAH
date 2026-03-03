@@ -56,6 +56,18 @@ interface EnergyData {
   };
 }
 
+interface GenerationMixPoint {
+  year: number;
+  gasPct: number;
+  coalPct: number;
+  nuclearPct: number;
+  renewablesPct: number;
+}
+
+interface GenerationMixData {
+  annual: GenerationMixPoint[];
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function yearToDate(y: number): Date {
@@ -76,11 +88,16 @@ function sparkFrom(arr: number[], n = 12) {
 export default function EnergyPage() {
   const [data, setData] = useState<EnergyData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [generationMixData, setGenerationMixData] = useState<GenerationMixData | null>(null);
 
   useEffect(() => {
     fetch('/data/energy/energy.json')
       .then(r => r.json())
       .then(setData)
+      .catch(console.error);
+    fetch('/data/energy/generation_mix.json')
+      .then(r => r.json())
+      .then(setGenerationMixData)
       .catch(console.error);
   }, []);
 
@@ -185,6 +202,53 @@ export default function EnergyPage() {
       ]
     : [];
 
+  // Chart 5: Generation mix by fuel type (multi-line)
+  const generationMixSeries: Series[] = generationMixData
+    ? [
+        {
+          id: 'renewables-mix',
+          label: 'Renewables',
+          colour: '#2A9D8F',
+          data: generationMixData.annual.map(d => ({
+            date: yearToDate(d.year),
+            value: d.renewablesPct,
+          })),
+        },
+        {
+          id: 'gas-mix',
+          label: 'Gas',
+          colour: '#F4A261',
+          data: generationMixData.annual.map(d => ({
+            date: yearToDate(d.year),
+            value: d.gasPct,
+          })),
+        },
+        {
+          id: 'nuclear-mix',
+          label: 'Nuclear',
+          colour: '#264653',
+          data: generationMixData.annual.map(d => ({
+            date: yearToDate(d.year),
+            value: d.nuclearPct,
+          })),
+        },
+        {
+          id: 'coal-mix',
+          label: 'Coal',
+          colour: '#E63946',
+          data: generationMixData.annual.map(d => ({
+            date: yearToDate(d.year),
+            value: d.coalPct,
+          })),
+        },
+      ]
+    : [];
+
+  const generationMixAnnotations: Annotation[] = [
+    { date: new Date(2016, 0), label: '2016: Last major coal plant closed' },
+    { date: new Date(2023, 0), label: '2023: Renewables >50%' },
+  ];
+
   // ── Annotations ─────────────────────────────────────────────────────────
 
   const priceAnnotations: Annotation[] = [
@@ -239,7 +303,8 @@ export default function EnergyPage() {
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-prices', label: 'Energy Prices' },
-          { id: 'sec-generation', label: 'Generation Mix' },
+          { id: 'sec-generation-mix', label: 'Generation Mix' },
+          { id: 'sec-generation', label: 'Mix Table' },
           { id: 'sec-renewables', label: 'Renewables' },
           { id: 'sec-context', label: 'Context' },
         ]} />
@@ -388,6 +453,27 @@ export default function EnergyPage() {
         )}
 
         </div>{/* end sec-prices */}
+
+        {/* Chart 6: Generation mix by fuel type — positive story */}
+        <div id="sec-generation-mix">
+        {generationMixSeries.length > 0 ? (
+          <LineChart
+            title="UK electricity generation by fuel type, 2000–2024"
+            subtitle="Renewables overtook gas in 2023, and coal has almost disappeared. The UK’s electricity grid has been transformed."
+            series={generationMixSeries}
+            annotations={generationMixAnnotations}
+            yLabel="% of generation"
+            source={{
+              name: 'DESNZ',
+              dataset: 'Energy Trends — Electricity: chapter 5',
+              frequency: 'quarterly',
+              url: 'https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+        </div>{/* end sec-generation-mix */}
 
         {/* Chart 5: Generation mix bar table for latest year */}
         {latestGeneration && (

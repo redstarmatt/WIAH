@@ -108,6 +108,27 @@ interface EducationData {
   };
 }
 
+interface FundingPoint {
+  year: number;
+  nominal: number;
+  real2024: number;
+}
+
+interface PisaCountry {
+  country: string;
+  reading: number;
+  maths: number | null;
+  science: number;
+}
+
+interface SchoolFundingData {
+  fundingPerPupil: FundingPoint[];
+  pisaResults: PisaCountry[];
+  metadata: {
+    sources: { name: string; dataset: string; url: string; frequency: string; notes?: string }[];
+  };
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function academicYearToDate(s: string): Date {
@@ -141,6 +162,7 @@ export default function EducationPage() {
   const [data, setData] = useState<EducationData | null>(null);
   const [teacherData, setTeacherData] = useState<TeacherData | null>(null);
   const [gradData, setGradData] = useState<GradData | null>(null);
+  const [fundingData, setFundingData] = useState<SchoolFundingData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -155,6 +177,10 @@ export default function EducationPage() {
     fetch('/data/education/graduate_outcomes.json')
       .then(r => r.json())
       .then(setGradData)
+      .catch(console.error);
+    fetch('/data/education/school_funding.json')
+      .then(r => r.json())
+      .then(setFundingData)
       .catch(console.error);
   }, []);
 
@@ -323,6 +349,35 @@ export default function EducationPage() {
       ]
     : [];
 
+  // 10. School funding — real and nominal series
+  const fundingRealSeries: Series[] = fundingData
+    ? [
+        {
+          id: 'funding-real',
+          label: 'Real terms (2024 prices)',
+          colour: '#E63946',
+          data: fundingData.fundingPerPupil.map(d => ({
+            date: calendarYearToDate(d.year),
+            value: d.real2024,
+          })),
+        },
+        {
+          id: 'funding-nominal',
+          label: 'Nominal',
+          colour: '#6B7280',
+          data: fundingData.fundingPerPupil.map(d => ({
+            date: calendarYearToDate(d.year),
+            value: d.nominal,
+          })),
+        },
+      ]
+    : [];
+
+  const fundingAnnotations: Annotation[] = [
+    { date: new Date(2017, 0), label: 'Real-terms low point' },
+    { date: new Date(2024, 0), label: 'Recovery but uneven' },
+  ];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestAbsence = data?.national.absence.timeSeries.at(-1);
@@ -370,6 +425,8 @@ export default function EducationPage() {
           { id: 'sec-send', label: 'SEND' },
           { id: 'sec-absence', label: 'Absence' },
           { id: 'sec-workforce', label: 'Workforce' },
+          { id: 'sec-school-funding', label: 'School Funding' },
+          { id: 'sec-pisa', label: 'International Comparison' },
           { id: 'sec-context', label: 'Context' },
         ]} />
 
@@ -739,6 +796,126 @@ export default function EducationPage() {
 
         </div>{/* end sec-workforce */}
 
+        {/* ── School Funding section ─────────────────────────────────────── */}
+        <div id="sec-school-funding">
+          <ScrollReveal>
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-wiah-black mb-2">School Funding</h2>
+              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+                Revenue funding per pupil fell 14% in real terms between 2009 and 2017 before
+                recovering. In nominal terms spending looks like it has risen substantially — but
+                inflation tells a different story.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {fundingRealSeries.length > 0 ? (
+            <LineChart
+              title="School funding per pupil, England, 2009–2024"
+              subtitle="Revenue funding per pupil in real terms (2024 prices). Funding fell 14% in real terms between 2009 and 2017 before recovering."
+              series={fundingRealSeries}
+              annotations={fundingAnnotations}
+              yLabel="£ per pupil"
+              source={{
+                name: 'DfE',
+                dataset: 'Schools block funding allocations',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/publications/national-funding-formula-tables-for-schools-and-high-needs',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+          )}
+        </div>{/* end sec-school-funding */}
+
+        {/* ── PISA International Comparison section ─────────────────────── */}
+        <div id="sec-pisa">
+          <ScrollReveal>
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-wiah-black mb-2">International Comparison</h2>
+              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+                How does the UK compare internationally? PISA 2022 tested 15-year-olds across
+                OECD member countries in reading, mathematics, and science.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {fundingData && fundingData.pisaResults.length > 0 ? (
+            <section className="mb-12">
+              <h3 className="text-lg font-bold text-wiah-black mb-1">
+                PISA 2022: Reading, maths and science scores by country
+              </h3>
+              <p className="text-sm text-wiah-mid font-mono mb-4">
+                UK scores above OECD average across all three subjects, particularly in science (ranked 11th).
+              </p>
+
+              {/* Legend */}
+              <div className="flex items-center gap-6 mb-4">
+                <div className="flex items-center gap-2">
+                  <span className="inline-block w-3 h-3 rounded-sm" style={{ backgroundColor: '#264653' }} />
+                  <span className="font-mono text-xs text-wiah-mid">Reading</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="inline-block w-3 h-3 rounded-sm" style={{ backgroundColor: '#F4A261' }} />
+                  <span className="font-mono text-xs text-wiah-mid">Maths</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="inline-block w-3 h-3 rounded-sm" style={{ backgroundColor: '#2A9D8F' }} />
+                  <span className="font-mono text-xs text-wiah-mid">Science</span>
+                </div>
+              </div>
+
+              <div className="overflow-x-auto mb-4">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-wiah-border">
+                      <th className="text-left py-2 pr-3 font-mono text-xs text-wiah-mid">Country</th>
+                      <th className="text-right py-2 px-2 font-mono text-xs text-wiah-mid" style={{ color: '#264653' }}>Reading</th>
+                      <th className="text-right py-2 px-2 font-mono text-xs text-wiah-mid" style={{ color: '#F4A261' }}>Maths</th>
+                      <th className="text-right py-2 pl-2 font-mono text-xs text-wiah-mid" style={{ color: '#2A9D8F' }}>Science</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {fundingData.pisaResults
+                      .slice()
+                      .sort((a, b) => b.science - a.science)
+                      .map(row => (
+                        <tr
+                          key={row.country}
+                          className={`border-b border-wiah-border/50 ${
+                            row.country === 'United Kingdom'
+                              ? 'bg-wiah-light font-bold'
+                              : row.country === 'OECD Average'
+                              ? 'bg-wiah-border/20 italic'
+                              : 'hover:bg-wiah-light/50'
+                          }`}
+                        >
+                          <td className="py-2 pr-3 font-mono text-sm">{row.country}</td>
+                          <td className="py-2 px-2 font-mono text-sm text-right">{row.reading}</td>
+                          <td className="py-2 px-2 font-mono text-sm text-right">{row.maths ?? '—'}</td>
+                          <td className="py-2 pl-2 font-mono text-sm text-right">{row.science}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <p className="font-mono text-[11px] text-wiah-mid mt-2">
+                <a
+                  href="https://www.oecd.org/pisa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Source: OECD, Programme for International Student Assessment (PISA) 2022, triennial.
+                </a>
+              </p>
+            </section>
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+          )}
+        </div>{/* end sec-pisa */}
+
         {/* Positive story */}
         <ScrollReveal>
         <PositiveCallout
@@ -774,6 +951,13 @@ export default function EducationPage() {
               gap index has risen every year since 2020, and in 2024-25 stands at its highest
               level in over a decade. In concrete terms: just 25% of disadvantaged pupils
               achieve grade 5+ in English and maths, compared with 52% of all other pupils.
+            </p>
+            <p>
+              School funding fell sharply in real terms between 2009 and 2017. Nominal figures
+              disguise a sustained squeeze: per-pupil revenue funding lost over £1,300 in
+              real value during that period. The recovery since 2017 has brought nominal
+              spending to record highs, but the legacy of the squeeze — in deferred maintenance,
+              reduced support staff, and narrowed curricula — takes years to unwind.
             </p>
             <p>
               These three crises are interconnected. Children who are persistently absent
@@ -823,6 +1007,18 @@ export default function EducationPage() {
                 </a>
               </li>
             )}
+            {fundingData && fundingData.metadata.sources.map((src, i) => (
+              <li key={`funding-${i}`}>
+                <a
+                  href={src.url}
+                  className="underline hover:text-wiah-blue"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                </a>
+              </li>
+            ))}
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             Persistent absence defined as missing 10%+ of possible sessions (threshold changed
@@ -830,6 +1026,9 @@ export default function EducationPage() {
             values indicate a smaller gap. Attainment 8 averages across 8 GCSE-level qualifications.
             2019/20 and 2020/21 results based on centre/teacher assessed grades. EHCP caseload from
             annual SEN2 returns (January census); 2023 collection changed from aggregate to person-level.
+            School funding per pupil figures are revenue allocations deflated using the GDP deflator
+            to 2024 prices. PISA scores are for 15-year-olds tested in 2022; the UK figure combines
+            England, Scotland, Wales and Northern Ireland.
           </p>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             Data updated automatically via GitHub Actions. Last pipeline run:{' '}

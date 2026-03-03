@@ -1,0 +1,1130 @@
+{
+  "topic": "demographics",
+  "dataset": "births",
+  "lastUpdated": "2026-03-03",
+  "births": [
+    {
+      "year": 1838,
+      "births": 463787,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1839,
+      "births": 492574,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1840,
+      "births": 502303,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1841,
+      "births": 512158,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1842,
+      "births": 517739,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1843,
+      "births": 527325,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1844,
+      "births": 540763,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1845,
+      "births": 543521,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1846,
+      "births": 572625,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1847,
+      "births": 539965,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1848,
+      "births": 563059,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1849,
+      "births": 578159,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1850,
+      "births": 593422,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1851,
+      "births": 615865,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1852,
+      "births": 624012,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1853,
+      "births": 612391,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1854,
+      "births": 634405,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1855,
+      "births": 635043,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1856,
+      "births": 657453,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1857,
+      "births": 663071,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1858,
+      "births": 655481,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1859,
+      "births": 689881,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1860,
+      "births": 684048,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1861,
+      "births": 696406,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1862,
+      "births": 712684,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1863,
+      "births": 727417,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1864,
+      "births": 740275,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1865,
+      "births": 748069,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1866,
+      "births": 753870,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1867,
+      "births": 768349,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1868,
+      "births": 786858,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1869,
+      "births": 773381,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1870,
+      "births": 792787,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1871,
+      "births": 797428,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1872,
+      "births": 825907,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1873,
+      "births": 829778,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1874,
+      "births": 854956,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1875,
+      "births": 850607,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1876,
+      "births": 887968,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1877,
+      "births": 888200,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1878,
+      "births": 891906,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1879,
+      "births": 880389,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1880,
+      "births": 881643,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1881,
+      "births": 883642,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1882,
+      "births": 889014,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1883,
+      "births": 890722,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1884,
+      "births": 906750,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1885,
+      "births": 894270,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1886,
+      "births": 903760,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1887,
+      "births": 886331,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1888,
+      "births": 879868,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1889,
+      "births": 885944,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1890,
+      "births": 869937,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1891,
+      "births": 914157,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1892,
+      "births": 897957,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1893,
+      "births": 914572,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1894,
+      "births": 890289,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1895,
+      "births": 922291,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1896,
+      "births": 915331,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1897,
+      "births": 921683,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1898,
+      "births": 923165,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1899,
+      "births": 928646,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1900,
+      "births": 927062,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1901,
+      "births": 929807,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1902,
+      "births": 940509,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1903,
+      "births": 948271,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1904,
+      "births": 945389,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1905,
+      "births": 929293,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1906,
+      "births": 935081,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1907,
+      "births": 918042,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1908,
+      "births": 940383,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1909,
+      "births": 914472,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1910,
+      "births": 896962,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1911,
+      "births": 881138,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1912,
+      "births": 872737,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1913,
+      "births": 881890,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1914,
+      "births": 879096,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1915,
+      "births": 814614,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1916,
+      "births": 785520,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1917,
+      "births": 668346,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1918,
+      "births": 662661,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1919,
+      "births": 692438,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1920,
+      "births": 957782,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1921,
+      "births": 848814,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1922,
+      "births": 780124,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1923,
+      "births": 758131,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1924,
+      "births": 729933,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1925,
+      "births": 710582,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1926,
+      "births": 694563,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1927,
+      "births": 654172,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1928,
+      "births": 660267,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1929,
+      "births": 643673,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1930,
+      "births": 648811,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1931,
+      "births": 632081,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1932,
+      "births": 613972,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1933,
+      "births": 580413,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1934,
+      "births": 597642,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1935,
+      "births": 598756,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1936,
+      "births": 605292,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1937,
+      "births": 610557,
+      "birthRate": null,
+      "tfr": null
+    },
+    {
+      "year": 1938,
+      "births": 621204,
+      "birthRate": 15.1,
+      "tfr": 1.84
+    },
+    {
+      "year": 1939,
+      "births": 614479,
+      "birthRate": 14.8,
+      "tfr": 1.82
+    },
+    {
+      "year": 1940,
+      "births": 590120,
+      "birthRate": 14.1,
+      "tfr": 1.75
+    },
+    {
+      "year": 1941,
+      "births": 579091,
+      "birthRate": 13.9,
+      "tfr": 1.73
+    },
+    {
+      "year": 1942,
+      "births": 651503,
+      "birthRate": 15.6,
+      "tfr": 1.94
+    },
+    {
+      "year": 1943,
+      "births": 684334,
+      "birthRate": 16.2,
+      "tfr": 2.02
+    },
+    {
+      "year": 1944,
+      "births": 751478,
+      "birthRate": 17.7,
+      "tfr": 2.24
+    },
+    {
+      "year": 1945,
+      "births": 679937,
+      "birthRate": 15.9,
+      "tfr": 2.04
+    },
+    {
+      "year": 1946,
+      "births": 820719,
+      "birthRate": 19.2,
+      "tfr": 2.47
+    },
+    {
+      "year": 1947,
+      "births": 881026,
+      "birthRate": 20.5,
+      "tfr": 2.68
+    },
+    {
+      "year": 1948,
+      "births": 775306,
+      "birthRate": 17.9,
+      "tfr": 2.38
+    },
+    {
+      "year": 1949,
+      "births": 730518,
+      "birthRate": 16.8,
+      "tfr": 2.27
+    },
+    {
+      "year": 1950,
+      "births": 697097,
+      "birthRate": 15.5,
+      "tfr": 2.18
+    },
+    {
+      "year": 1951,
+      "births": 677529,
+      "birthRate": 15.5,
+      "tfr": 2.14
+    },
+    {
+      "year": 1952,
+      "births": 673735,
+      "birthRate": 15.3,
+      "tfr": 2.16
+    },
+    {
+      "year": 1953,
+      "births": 684372,
+      "birthRate": 15.5,
+      "tfr": 2.22
+    },
+    {
+      "year": 1954,
+      "births": 673651,
+      "birthRate": 15.2,
+      "tfr": 2.21
+    },
+    {
+      "year": 1955,
+      "births": 667811,
+      "birthRate": 15.0,
+      "tfr": 2.22
+    },
+    {
+      "year": 1956,
+      "births": 700335,
+      "birthRate": 15.7,
+      "tfr": 2.35
+    },
+    {
+      "year": 1957,
+      "births": 723381,
+      "birthRate": 16.1,
+      "tfr": 2.45
+    },
+    {
+      "year": 1958,
+      "births": 740715,
+      "birthRate": 16.4,
+      "tfr": 2.52
+    },
+    {
+      "year": 1959,
+      "births": 748501,
+      "birthRate": 16.5,
+      "tfr": 2.56
+    },
+    {
+      "year": 1960,
+      "births": 785005,
+      "birthRate": 17.1,
+      "tfr": 2.68
+    },
+    {
+      "year": 1961,
+      "births": 811281,
+      "birthRate": 17.6,
+      "tfr": 2.77
+    },
+    {
+      "year": 1962,
+      "births": 838736,
+      "birthRate": 18.0,
+      "tfr": 2.85
+    },
+    {
+      "year": 1963,
+      "births": 854055,
+      "birthRate": 18.2,
+      "tfr": 2.88
+    },
+    {
+      "year": 1964,
+      "births": 875972,
+      "birthRate": 18.5,
+      "tfr": 2.93
+    },
+    {
+      "year": 1965,
+      "births": 862725,
+      "birthRate": 18.1,
+      "tfr": 2.85
+    },
+    {
+      "year": 1966,
+      "births": 849823,
+      "birthRate": 17.7,
+      "tfr": 2.75
+    },
+    {
+      "year": 1967,
+      "births": 832164,
+      "birthRate": 17.2,
+      "tfr": 2.65
+    },
+    {
+      "year": 1968,
+      "births": 819272,
+      "birthRate": 16.9,
+      "tfr": 2.57
+    },
+    {
+      "year": 1969,
+      "births": 797538,
+      "birthRate": 16.4,
+      "tfr": 2.47
+    },
+    {
+      "year": 1970,
+      "births": 784486,
+      "birthRate": 16.0,
+      "tfr": 2.4
+    },
+    {
+      "year": 1971,
+      "births": 783155,
+      "birthRate": 15.9,
+      "tfr": 2.37
+    },
+    {
+      "year": 1972,
+      "births": 725440,
+      "birthRate": 14.7,
+      "tfr": 2.17
+    },
+    {
+      "year": 1973,
+      "births": 675953,
+      "birthRate": 13.7,
+      "tfr": 2.0
+    },
+    {
+      "year": 1974,
+      "births": 639885,
+      "birthRate": 12.9,
+      "tfr": 1.89
+    },
+    {
+      "year": 1975,
+      "births": 603445,
+      "birthRate": 12.2,
+      "tfr": 1.78
+    },
+    {
+      "year": 1976,
+      "births": 584270,
+      "birthRate": 11.8,
+      "tfr": 1.71
+    },
+    {
+      "year": 1977,
+      "births": 569259,
+      "birthRate": 11.5,
+      "tfr": 1.66
+    },
+    {
+      "year": 1978,
+      "births": 596418,
+      "birthRate": 12.1,
+      "tfr": 1.73
+    },
+    {
+      "year": 1979,
+      "births": 638028,
+      "birthRate": 12.9,
+      "tfr": 1.84
+    },
+    {
+      "year": 1980,
+      "births": 656234,
+      "birthRate": 13.2,
+      "tfr": 1.88
+    },
+    {
+      "year": 1981,
+      "births": 634492,
+      "birthRate": 12.8,
+      "tfr": 1.8
+    },
+    {
+      "year": 1982,
+      "births": 625931,
+      "birthRate": 12.6,
+      "tfr": 1.76
+    },
+    {
+      "year": 1983,
+      "births": 629134,
+      "birthRate": 12.7,
+      "tfr": 1.76
+    },
+    {
+      "year": 1984,
+      "births": 636818,
+      "birthRate": 12.8,
+      "tfr": 1.75
+    },
+    {
+      "year": 1985,
+      "births": 656417,
+      "birthRate": 13.2,
+      "tfr": 1.78
+    },
+    {
+      "year": 1986,
+      "births": 661018,
+      "birthRate": 13.2,
+      "tfr": 1.77
+    },
+    {
+      "year": 1987,
+      "births": 681511,
+      "birthRate": 13.6,
+      "tfr": 1.81
+    },
+    {
+      "year": 1988,
+      "births": 693577,
+      "birthRate": 13.8,
+      "tfr": 1.82
+    },
+    {
+      "year": 1989,
+      "births": 687725,
+      "birthRate": 13.6,
+      "tfr": 1.8
+    },
+    {
+      "year": 1990,
+      "births": 706140,
+      "birthRate": 14.0,
+      "tfr": 1.84
+    },
+    {
+      "year": 1991,
+      "births": 699217,
+      "birthRate": 13.8,
+      "tfr": 1.82
+    },
+    {
+      "year": 1992,
+      "births": 689656,
+      "birthRate": 13.6,
+      "tfr": 1.8
+    },
+    {
+      "year": 1993,
+      "births": 673467,
+      "birthRate": 13.2,
+      "tfr": 1.76
+    },
+    {
+      "year": 1994,
+      "births": 664726,
+      "birthRate": 13.0,
+      "tfr": 1.75
+    },
+    {
+      "year": 1995,
+      "births": 648138,
+      "birthRate": 12.6,
+      "tfr": 1.72
+    },
+    {
+      "year": 1996,
+      "births": 649485,
+      "birthRate": 12.6,
+      "tfr": 1.74
+    },
+    {
+      "year": 1997,
+      "births": 643095,
+      "birthRate": 12.5,
+      "tfr": 1.73
+    },
+    {
+      "year": 1998,
+      "births": 635901,
+      "birthRate": 12.3,
+      "tfr": 1.73
+    },
+    {
+      "year": 1999,
+      "births": 621872,
+      "birthRate": 12.0,
+      "tfr": 1.7
+    },
+    {
+      "year": 2000,
+      "births": 604441,
+      "birthRate": 11.6,
+      "tfr": 1.65
+    },
+    {
+      "year": 2001,
+      "births": 594634,
+      "birthRate": 11.4,
+      "tfr": 1.63
+    },
+    {
+      "year": 2002,
+      "births": 596122,
+      "birthRate": 11.3,
+      "tfr": 1.64
+    },
+    {
+      "year": 2003,
+      "births": 621469,
+      "birthRate": 11.8,
+      "tfr": 1.72
+    },
+    {
+      "year": 2004,
+      "births": 639721,
+      "birthRate": 12.0,
+      "tfr": 1.77
+    },
+    {
+      "year": 2005,
+      "births": 645835,
+      "birthRate": 12.1,
+      "tfr": 1.77
+    },
+    {
+      "year": 2006,
+      "births": 669601,
+      "birthRate": 12.4,
+      "tfr": 1.83
+    },
+    {
+      "year": 2007,
+      "births": 690013,
+      "birthRate": 12.7,
+      "tfr": 1.88
+    },
+    {
+      "year": 2008,
+      "births": 708711,
+      "birthRate": 12.9,
+      "tfr": 1.92
+    },
+    {
+      "year": 2009,
+      "births": 706248,
+      "birthRate": 12.8,
+      "tfr": 1.9
+    },
+    {
+      "year": 2010,
+      "births": 723165,
+      "birthRate": 13.0,
+      "tfr": 1.94
+    },
+    {
+      "year": 2011,
+      "births": 723913,
+      "birthRate": 12.9,
+      "tfr": 1.93
+    },
+    {
+      "year": 2012,
+      "births": 729674,
+      "birthRate": 12.9,
+      "tfr": 1.93
+    },
+    {
+      "year": 2013,
+      "births": 698512,
+      "birthRate": 12.3,
+      "tfr": 1.83
+    },
+    {
+      "year": 2014,
+      "births": 695233,
+      "birthRate": 12.1,
+      "tfr": 1.8
+    },
+    {
+      "year": 2015,
+      "births": 697852,
+      "birthRate": 12.1,
+      "tfr": 1.79
+    },
+    {
+      "year": 2016,
+      "births": 696271,
+      "birthRate": 11.9,
+      "tfr": 1.77
+    },
+    {
+      "year": 2017,
+      "births": 679106,
+      "birthRate": 11.6,
+      "tfr": 1.71
+    },
+    {
+      "year": 2018,
+      "births": 657076,
+      "birthRate": 11.1,
+      "tfr": 1.65
+    },
+    {
+      "year": 2019,
+      "births": 640370,
+      "birthRate": 10.8,
+      "tfr": 1.59
+    },
+    {
+      "year": 2020,
+      "births": 613936,
+      "birthRate": 10.3,
+      "tfr": 1.53
+    },
+    {
+      "year": 2021,
+      "births": 624828,
+      "birthRate": 10.5,
+      "tfr": 1.55
+    },
+    {
+      "year": 2022,
+      "births": 605479,
+      "birthRate": 10.1,
+      "tfr": 1.49
+    }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Birth Summary Tables, England and Wales",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/datasets/birthsummarytables",
+        "frequency": "annual",
+        "retrieved": "2026-03-03"
+      }
+    ],
+    "methodology": "Live births, crude birth rate per 1,000 population, and total fertility rate (TFR). England and Wales.",
+    "notes": "TFR below 2.1 is sub-replacement. England and Wales record low TFR was 1.44 in 2023."
+  }
+}

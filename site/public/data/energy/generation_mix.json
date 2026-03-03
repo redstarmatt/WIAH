@@ -1,0 +1,35 @@
+{
+  "topic": "energy",
+  "dataset": "generation_mix",
+  "lastUpdated": "2026-03-03",
+  "annual": [
+    {"year": 2000, "gasPct": 38.9, "coalPct": 32.9, "nuclearPct": 21.9, "renewablesPct": 2.8, "otherPct": 3.5},
+    {"year": 2005, "gasPct": 40.1, "coalPct": 33.9, "nuclearPct": 19.8, "renewablesPct": 4.3, "otherPct": 1.9},
+    {"year": 2008, "gasPct": 45.3, "coalPct": 32.1, "nuclearPct": 13.5, "renewablesPct": 5.5, "otherPct": 3.6},
+    {"year": 2010, "gasPct": 46.6, "coalPct": 27.8, "nuclearPct": 15.7, "renewablesPct": 6.9, "otherPct": 3.0},
+    {"year": 2012, "gasPct": 38.6, "coalPct": 37.4, "nuclearPct": 17.8, "renewablesPct": 11.3, "otherPct": 2.9},
+    {"year": 2013, "gasPct": 27.5, "coalPct": 36.5, "nuclearPct": 19.7, "renewablesPct": 14.8, "otherPct": 1.5},
+    {"year": 2014, "gasPct": 29.0, "coalPct": 28.8, "nuclearPct": 18.7, "renewablesPct": 19.5, "otherPct": 4.0},
+    {"year": 2015, "gasPct": 28.6, "coalPct": 22.3, "nuclearPct": 20.5, "renewablesPct": 24.6, "otherPct": 4.0},
+    {"year": 2016, "gasPct": 42.0, "coalPct": 9.2, "nuclearPct": 21.0, "renewablesPct": 24.5, "otherPct": 3.3},
+    {"year": 2017, "gasPct": 39.5, "coalPct": 7.3, "nuclearPct": 20.8, "renewablesPct": 29.3, "otherPct": 3.1},
+    {"year": 2018, "gasPct": 38.7, "coalPct": 5.0, "nuclearPct": 19.3, "renewablesPct": 33.3, "otherPct": 3.7},
+    {"year": 2019, "gasPct": 37.3, "coalPct": 2.1, "nuclearPct": 17.0, "renewablesPct": 37.1, "otherPct": 6.5},
+    {"year": 2020, "gasPct": 35.0, "coalPct": 1.8, "nuclearPct": 16.4, "renewablesPct": 42.0, "otherPct": 4.8},
+    {"year": 2021, "gasPct": 38.5, "coalPct": 1.8, "nuclearPct": 15.6, "renewablesPct": 37.6, "otherPct": 6.5},
+    {"year": 2022, "gasPct": 36.6, "coalPct": 1.4, "nuclearPct": 14.2, "renewablesPct": 43.2, "otherPct": 4.6},
+    {"year": 2023, "gasPct": 31.3, "coalPct": 0.5, "nuclearPct": 12.9, "renewablesPct": 50.3, "otherPct": 5.0},
+    {"year": 2024, "gasPct": 27.1, "coalPct": 0.3, "nuclearPct": 12.9, "renewablesPct": 53.1, "otherPct": 6.6}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DESNZ",
+        "dataset": "Energy Trends — Electricity: chapter 5",
+        "url": "https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes",
+        "frequency": "quarterly",
+        "notes": "UK electricity supplied by fuel type, % share of total generation. Renewables include wind, solar, hydro, bioenergy."
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "topic": "justice",
+  "dataset": "domestic_abuse",
+  "lastUpdated": "2026-03-03",
+  "csewPrevalence": [
+    {"year": "2009/10", "womenPct": 3.8, "menPct": 2.4, "totalVictimsM": 2.2},
+    {"year": "2010/11", "womenPct": 3.6, "menPct": 2.3, "totalVictimsM": 2.1},
+    {"year": "2011/12", "womenPct": 3.3, "menPct": 2.0, "totalVictimsM": 1.9},
+    {"year": "2012/13", "womenPct": 3.0, "menPct": 1.9, "totalVictimsM": 1.8},
+    {"year": "2013/14", "womenPct": 3.0, "menPct": 1.8, "totalVictimsM": 1.7},
+    {"year": "2014/15", "womenPct": 2.8, "menPct": 1.8, "totalVictimsM": 1.7},
+    {"year": "2015/16", "womenPct": 2.8, "menPct": 1.7, "totalVictimsM": 1.7},
+    {"year": "2016/17", "womenPct": 2.5, "menPct": 1.6, "totalVictimsM": 1.6},
+    {"year": "2017/18", "womenPct": 2.5, "menPct": 1.6, "totalVictimsM": 1.6},
+    {"year": "2018/19", "womenPct": 2.5, "menPct": 1.5, "totalVictimsM": 1.6},
+    {"year": "2019/20", "womenPct": 2.5, "menPct": 1.5, "totalVictimsM": 1.6},
+    {"year": "2021/22", "womenPct": 2.7, "menPct": 1.6, "totalVictimsM": 1.7},
+    {"year": "2022/23", "womenPct": 2.8, "menPct": 1.6, "totalVictimsM": 1.8},
+    {"year": "2023/24", "womenPct": 2.7, "menPct": 1.5, "totalVictimsM": 1.7}
+  ],
+  "policeRecorded": [
+    {"year": "2015/16", "offences": 1139460},
+    {"year": "2016/17", "offences": 1246901},
+    {"year": "2017/18", "offences": 1316800},
+    {"year": "2018/19", "offences": 1497731},
+    {"year": "2019/20", "offences": 1585081},
+    {"year": "2020/21", "offences": 1459663},
+    {"year": "2021/22", "offences": 1464765},
+    {"year": "2022/23", "offences": 1386272},
+    {"year": "2023/24", "offences": 1332014}
+  ],
+  "outcomes": {
+    "year": "2023/24",
+    "recordedDA": 1332014,
+    "chargeOrSummons": 93241,
+    "chargeRate": 7.0,
+    "convictions": 67543,
+    "convictionRate": 5.1,
+    "noFurtherAction": 45.2,
+    "victimWithdrew": 24.1
+  },
+  "reportingGap": {
+    "note": "ONS CSEW estimates ~1.7M victims per year. Only ~1.3M offences are police-recorded, implying a 30%+ under-recording rate. Actual under-reporting to police is far higher.",
+    "csewEstimatePctReported": 18.0
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Crime Survey for England and Wales (CSEW) — Domestic abuse",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/articles/domesticabuseinenglandandwalesoverview/november2024",
+        "frequency": "annual"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Domestic abuse datasets",
+        "url": "https://www.gov.uk/government/statistics/domestic-abuse-in-england-and-wales-overview",
+        "frequency": "annual"
+      }
+    ]
+  }
+}

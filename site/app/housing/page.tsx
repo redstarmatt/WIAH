@@ -78,6 +78,18 @@ interface SocialHousingData {
   };
 }
 
+interface IphrpDataPoint { year: number; index: number; annualChange: number | null }
+
+interface TempAccPoint { year: number; quarter: string; households: number }
+
+interface PrivateRentsData {
+  iphrp: Array<{ region: string; data: IphrpDataPoint[] }>;
+  temporaryAccommodation: TempAccPoint[];
+  metadata: {
+    sources: { name: string; dataset: string; url: string; frequency: string }[];
+  };
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function yearToDate(y: number): Date {
@@ -103,6 +115,7 @@ function sparkFrom(arr: number[], n = 12) {
 export default function HousingPage() {
   const [data, setData] = useState<HousingData | null>(null);
   const [socialData, setSocialData] = useState<SocialHousingData | null>(null);
+  const [rentsData, setRentsData] = useState<PrivateRentsData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -113,6 +126,10 @@ export default function HousingPage() {
     fetch('/data/housing/social_housing.json')
       .then(r => r.json())
       .then(setSocialData)
+      .catch(console.error);
+    fetch('/data/housing/private_rents.json')
+      .then(r => r.json())
+      .then(setRentsData)
       .catch(console.error);
   }, []);
 
@@ -341,6 +358,62 @@ export default function HousingPage() {
       ]
     : [];
 
+  // 7. IPHRP — UK, London, North West
+  const iphrpSeries: Series[] = rentsData
+    ? (() => {
+        const ukRegion = rentsData.iphrp.find(r => r.region === 'UK');
+        const londonRegion = rentsData.iphrp.find(r => r.region === 'London');
+        const nwRegion = rentsData.iphrp.find(r => r.region === 'North West');
+        const series: Series[] = [];
+        if (ukRegion) {
+          series.push({
+            id: 'iphrp-uk',
+            label: 'UK',
+            colour: '#0D1117',
+            data: ukRegion.data.map(d => ({ date: yearToDate(d.year), value: d.index })),
+          });
+        }
+        if (londonRegion) {
+          series.push({
+            id: 'iphrp-london',
+            label: 'London',
+            colour: '#E63946',
+            data: londonRegion.data.map(d => ({ date: yearToDate(d.year), value: d.index })),
+          });
+        }
+        if (nwRegion) {
+          series.push({
+            id: 'iphrp-nw',
+            label: 'North West',
+            colour: '#2A9D8F',
+            data: nwRegion.data.map(d => ({ date: yearToDate(d.year), value: d.index })),
+          });
+        }
+        return series;
+      })()
+    : [];
+
+  const iphrpAnnotations: Annotation[] = [
+    { date: new Date(2021, 0), label: '2021: Post-pandemic surge' },
+  ];
+
+  // 8. Temporary accommodation
+  const tempAccSeries: Series[] = rentsData
+    ? [{
+        id: 'temp-acc',
+        label: 'Households in temporary accommodation',
+        colour: '#E63946',
+        data: rentsData.temporaryAccommodation.map(d => ({
+          date: yearToDate(d.year),
+          value: d.households,
+        })),
+      }]
+    : [];
+
+  const tempAccAnnotations: Annotation[] = [
+    { date: new Date(2024, 0), label: 'Record high: 123,000' },
+  ];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestAff = data?.national.affordability.timeSeries.at(-1);
@@ -384,6 +457,8 @@ export default function HousingPage() {
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-prices', label: 'House Prices' },
           { id: 'sec-rent', label: 'Rents' },
+          { id: 'sec-rent-index', label: 'Rent Inflation' },
+          { id: 'sec-homelessness', label: 'Homelessness' },
           { id: 'sec-by-region', label: 'By Region' },
           { id: 'sec-stock', label: 'Housing Stock' },
           { id: 'sec-context', label: 'Context' },
@@ -623,6 +698,48 @@ export default function HousingPage() {
 
         </div>{/* end sec-rent */}
 
+        {/* ── Section: Private Rent Index ───────────────────────────────────── */}
+        <div id="sec-rent-index">
+          {iphrpSeries.length > 0 ? (
+            <LineChart
+              title="Private rent index, UK and regions, 2011–2024"
+              subtitle="ONS Index of Private Housing Rental Prices (2011=100). Rents accelerating since 2021."
+              series={iphrpSeries}
+              annotations={iphrpAnnotations}
+              yLabel="Index (2011 = 100)"
+              source={{
+                name: 'ONS',
+                dataset: 'Index of Private Housing Rental Prices (IPHRP)',
+                frequency: 'monthly',
+                url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/indexofprivatehousingrentalprices/latest',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+          )}
+        </div>{/* end sec-rent-index */}
+
+        {/* ── Section: Temporary Accommodation ─────────────────────────────── */}
+        <div id="sec-homelessness">
+          {tempAccSeries.length > 0 ? (
+            <LineChart
+              title="Households in temporary accommodation, England, 2000–2024"
+              subtitle="Households placed in temporary accommodation by local authorities. Includes B&Bs, hostels, and nightly-let self-contained properties."
+              series={tempAccSeries}
+              annotations={tempAccAnnotations}
+              yLabel="Households"
+              source={{
+                name: 'DLUHC',
+                dataset: 'Homelessness live tables — Temporary accommodation (TA1)',
+                frequency: 'quarterly',
+                url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+          )}
+        </div>{/* end sec-homelessness */}
+
         {/* Regional affordability table */}
         <div id="sec-by-region">
         {data && Object.keys(data.regional.affordability).length > 0 && (
@@ -819,7 +936,16 @@ export default function HousingPage() {
               For renters, the picture is no better. Average monthly rent in England has
               risen from £775 in 2005 to over £1,380 in 2025 — a 78% increase. In London,
               the average is above £2,200. Private renters in England spend over a third of
-              their income on rent, and in London it exceeds 40%.
+              their income on rent, and in London it exceeds 40%. The ONS IPHRP shows
+              rents rising at nearly 10% per year in 2024 — the fastest pace since records
+              began in 2011, with London rising over 11%.
+            </p>
+            <p>
+              The human cost of the housing crisis shows up starkly in the temporary
+              accommodation figures. Over 123,000 households — including more than 150,000
+              children — are now living in temporary accommodation placed by local
+              authorities: bed and breakfasts, hostels, and nightly-let properties.
+              This is a record high and has risen every year since 2012.
             </p>
             <p>
               There are some signs of easing. The affordability ratio actually fell in 2024,
@@ -859,6 +985,18 @@ export default function HousingPage() {
                 </a>
               </li>
             )}
+            {rentsData?.metadata.sources.map((src, i) => (
+              <li key={`rents-${i}`}>
+                <a
+                  href={src.url}
+                  className="underline hover:text-wiah-blue"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                </a>
+              </li>
+            ))}
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             {data?.metadata.methodology}
