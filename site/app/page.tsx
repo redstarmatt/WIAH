@@ -353,6 +353,32 @@ const TOPICS: TopicData[] = [
       },
     ],
   },
+  {
+    topic: 'Universities',
+    href: '/universities',
+    colour: '#264653',
+    preposition: 'at',
+    metrics: [
+      {
+        label: 'Avg. debt at graduation',
+        value: '£44.9K',
+        unit: '',
+        direction: 'up' as const,
+        polarity: 'up-is-bad' as const,
+        context: 'up from £16K in 2012',
+        sparklineData: [16.4, 20.5, 24.2, 32.8, 37.2, 39.4, 40.3, 41.5, 42.6, 43.7, 44.9, 44.8, 44.9, 44.9],
+      },
+      {
+        label: 'First-class degrees',
+        value: '31',
+        unit: '%',
+        direction: 'up' as const,
+        polarity: 'up-is-bad' as const,
+        context: 'was 7% in 1995',
+        sparklineData: [7.2, 11.6, 14.4, 20.0, 24.5, 28.6, 29.2, 35.4, 36.4, 32.1, 31.2, 30.8],
+      },
+    ],
+  },
 ];
 
 // Compute scorecard counts

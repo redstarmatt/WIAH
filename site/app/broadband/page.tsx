@@ -133,7 +133,6 @@ export default function BroadbandPage() {
   const latestSpeed = data?.national.speeds.latest;
   const latestFibre = data?.national.coverage.latestFullFibre;
   const latestGigabit = data?.national.coverage.latestGigabit;
-  const latestUsage = data?.national.digitalInclusion.latest;
   const latestRural = data?.national.ruralUrbanGap.latest;
 
   return (
