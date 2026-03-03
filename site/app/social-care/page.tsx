@@ -682,36 +682,41 @@ export default function SocialCarePage() {
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Adult social care in England operates at the intersection of two pressures: rising
-              demand from an ageing population and a funding model that has barely kept pace.
-              Local authority spending fell by 16% in real terms between 2010 and 2016 as
-              austerity bit hardest. It has since recovered to just above 2010 levels, but
-              the population needing care has grown substantially.
+              The core problem is a mismatch between rising demand and constrained funding.
+              England&apos;s population aged 85 and over &mdash; the group most likely to
+              need care &mdash; is growing steadily, but local authority spending fell 16%
+              in real terms between 2010 and 2016 and has only just recovered to 2010 levels.
+              The consequences surface in hospitals: over 13,000 patients occupy acute beds
+              each day despite being medically fit to leave, nearly 30% of them waiting for
+              a home care package that does not yet exist. Every occupied bed means a longer
+              A&amp;E wait, a cancelled operation, or an ambulance circling outside. Despite
+              this pressure, care quality holds up &mdash; over 84% of CQC-rated locations
+              are Good or Outstanding &mdash; a credit to frontline staff working within a
+              system that gives them very little margin.
             </p>
             <p>
-              The result shows up in hospitals. Over 13,000 patients occupy acute hospital
-              beds each day despite being medically fit to leave. They are waiting for care
-              packages, nursing home places, or assessments that the social care system cannot
-              provide fast enough. The largest single reason — accounting for nearly 30% of
-              delays — is patients awaiting a home care package. This creates a vicious cycle:
-              occupied beds mean longer A&amp;E waits, cancelled operations, and worse outcomes
-              for the patients who are stuck.
+              The workforce crisis sits at the heart of the capacity problem. Vacancy rates
+              peaked at 10.6% in 2021/22 &mdash; over 165,000 unfilled posts &mdash; and
+              have since fallen to 8.3%, but annual turnover still runs at roughly 28%.
+              The reason is straightforward: mean hourly pay is &pound;10.54, barely above
+              the National Living Wage, for work that carries significant physical and
+              emotional responsibility. Registered nurses face a 12.4% vacancy rate,
+              reflecting direct competition with NHS employers who can offer better pay
+              and pensions. International recruitment has plugged some gaps, but when
+              one in three workers leaves each year, recruitment alone cannot solve the
+              problem. Retention is the structural issue.
             </p>
             <p>
-              The quality of care, where it exists, is generally good. Over 84% of CQC-rated
-              adult social care locations achieve a Good or Outstanding rating. But the sector
-              depends heavily on unpaid carers — nearly 5 million people, of whom over a million
-              provide 50 or more hours of care per week. Carers UK estimates this unpaid
-              contribution is worth £162 billion annually, more than the entire NHS budget.
-            </p>
-            <p>
-              The workforce challenge is acute. Vacancy rates peaked at 10.6% in 2021/22 —
-              over 165,000 unfilled posts — before falling back to 8.3% in 2023/24. Staff
-              turnover runs at around 28% per year, driven by low pay: mean hourly pay for
-              social care workers reached £10.54 in 2023/24, barely above the National Living
-              Wage. Registered nurses face the highest vacancy rates at 12.4%, reflecting
-              competition with NHS employers. International recruitment has helped fill gaps,
-              but retention remains the fundamental problem.
+              Behind the formal system lies a hidden infrastructure of unpaid care. Nearly
+              5 million people provide unpaid care in England, and over 1 million of them
+              do so for 50 or more hours a week &mdash; the equivalent of a full-time job
+              with overtime. Carers UK estimates the economic value of this work at
+              &pound;162 billion a year, more than the entire NHS budget. Many unpaid
+              carers are themselves elderly, managing their own health conditions while
+              supporting a partner or parent. If even a fraction stepped back, the formal
+              system &mdash; already unable to fill its vacancies &mdash; could not absorb
+              the demand. The sustainability of social care depends on people it largely
+              does not pay.
             </p>
           </div>
         </section>

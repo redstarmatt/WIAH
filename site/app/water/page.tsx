@@ -755,41 +755,34 @@ export default function WaterPage() {
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The headline numbers on sewage discharge are genuinely shocking &mdash; 3.6 million hours
-              of raw sewage pumped into rivers and seas in 2024 &mdash; but they need careful interpretation.
-              Much of the apparent increase from 2016 reflects dramatically expanded monitoring:
-              only 862 storm overflows had monitors in 2016 compared to 14,182 (100%) in 2024. The
-              problem was always there; we just couldn&apos;t measure it.
+              The 3.6 million hours of sewage discharge recorded in 2024 demand careful reading. Monitor
+              coverage expanded from 862 overflows in 2016 to 14,182 (100%) in 2024, so much of the
+              headline increase reflects better measurement, not more sewage. The more telling metric
+              &mdash; average spills per overflow, which controls for that expansion &mdash; peaked at
+              35 in 2019 and sat at around 32 in 2024. Each overflow still discharges, on average, once
+              every 11 days. These were designed as emergency valves; the data shows they operate
+              routinely. Meanwhile, only 16% of English surface waters meet good ecological status,
+              down from 26% in 2009, and no full reclassification has been done since 2019 despite a
+              legal 2027 deadline.
             </p>
             <p>
-              The more telling metric is the average spills per overflow, which controls for monitor
-              expansion. This peaked at 35 spills per overflow in 2019 and has since fallen somewhat
-              to around 32 in 2024. Each overflow still spills, on average, once every 11 days. Storm
-              overflows are designed as safety valves for exceptional rainfall, but the data shows they
-              operate routinely.
+              Bathing water tells a similar story of recent reversal. Sites rated &ldquo;excellent&rdquo;
+              peaked at 72% in 2022 but fell to 66% by 2025, while &ldquo;poor&rdquo; sites nearly
+              doubled from 3.8% to 7.1% over the past decade. Heavier rainfall from climate change is
+              part of the explanation, but the financial data points to something structural: water
+              companies paid out billions in dividends while infrastructure deteriorated. Ofwat has now
+              approved record investment plans for 2025&ndash;2030, but the gap between shareholder
+              returns and capital spending over the past three decades is difficult to overlook.
             </p>
             <p>
-              River health tells an even starker story. Only 16% of English surface waters meet
-              &ldquo;good ecological status&rdquo; under the Water Framework Directive &mdash; down
-              from 26% in 2009. This has been declining steadily, and crucially, no full reclassification
-              has been done since 2019 despite the legal requirement to reach good status by 2027.
-              Agricultural runoff, sewage pollution, and physical modification of waterways are the
-              main drivers.
-            </p>
-            <p>
-              Bathing water quality has been more stable but shows a worrying recent trend. The
-              proportion of sites rated &ldquo;excellent&rdquo; peaked at 72% in 2022 but has since
-              fallen to 66% in 2025, while &ldquo;poor&rdquo; rated sites have roughly doubled from
-              3.8% in 2015 to 7.1% in 2025. Climate change is a factor &mdash; heavier rainfall
-              events overwhelm sewerage systems &mdash; but so is chronic underinvestment in
-              infrastructure.
-            </p>
-            <p>
-              There are some signs of progress. Ofwat has approved record investment plans for
-              2025&ndash;2030, and water companies face increasing regulatory and public pressure.
-              Full monitoring coverage at 100% of storm overflows means the scale of the problem
-              is now visible for the first time. Whether that translates into meaningful improvement
-              remains to be seen.
+              Leakage reveals how deep the infrastructure deficit runs. The industry loses 2,963
+              megalitres per day &mdash; enough to fill over 1,000 Olympic swimming pools &mdash; and
+              every one of the 13 water companies is above its individual Ofwat target. Thames Water is
+              the worst, leaking 665 Ml/d against a target of 540. Total leakage has fallen from 3,238
+              Ml/d in 2017/18, but not fast enough: the industry target of 2,500 Ml/d by 2025 will be
+              missed by a wide margin. Full monitoring coverage means the scale of the sewage problem
+              is finally visible. Whether the same transparency can drive improvement on leakage and
+              river health remains an open question.
             </p>
           </div>
         </section>

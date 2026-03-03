@@ -921,49 +921,33 @@ export default function EconomyPage() {
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The headline story is one of recovery — but a painfully slow one.
-              Real wages fell sharply after the 2008 financial crisis and didn&apos;t return
-              to their pre-crisis peak until 2024, a lost decade and a half for living
-              standards. The cost of living crisis in 2022–23, driven by energy prices and
-              food inflation, pushed CPI above 11% — the highest in over 40 years. Inflation
-              has since fallen back but remains above the Bank of England&apos;s 2% target.
+              Real wages took 16 years to recover their 2008 peak &mdash; the longest squeeze
+              on living standards since records began. At the root is a productivity crisis:
+              output per hour grew at roughly 2% a year before the financial crisis, then
+              flatlined. Without productivity growth, wages cannot sustainably rise. The
+              2022&ndash;23 cost-of-living shock &mdash; CPI hitting 11.1% in October 2022 &mdash;
+              compounded the damage, though inflation has since fallen to around 3%. Meanwhile,
+              over a fifth of working-age adults remain economically inactive, elevated since
+              COVID and driven largely by long-term sickness. The economy is growing again,
+              but the foundations are brittle.
             </p>
             <p>
-              The labour market tells a more nuanced story. Employment has been remarkably
-              resilient: the UK recovered to near-record employment levels after both the
-              pandemic and the cost of living squeeze. But economic inactivity — people neither
-              working nor looking for work — has risen since COVID. Much of this is driven by
-              long-term sickness, particularly among the over-50s. This represents a structural
-              shift that simple unemployment figures miss.
+              Within the earnings distribution, two forces pull in opposite directions. The
+              National Living Wage, introduced in 2015, compressed the bottom: P10 weekly
+              earnings (£227) grew faster than the median through the late 2010s. But the top
+              kept pulling away. At P90 (£1,336 per week), earners take home nearly six times
+              as much as those at P10 &mdash; a ratio that has barely moved in a decade. The
+              fan chart of earnings tells a story of a floor being raised while the ceiling
+              lifts further out of reach.
             </p>
             <p>
-              Within earnings, the picture is mixed. The introduction of the National Living
-              Wage in 2015 meaningfully compressed the bottom of the distribution — P10 earnings
-              rose faster than the median through 2015–2020. But at the top, high earners
-              continued to pull away. By 2025, someone at the 90th percentile earns £1,336 per
-              week; someone at the 10th percentile earns £227. That ratio — nearly 6:1 —
-              has remained stubbornly persistent.
-            </p>
-            <p>
-              The regional dimension is the UK&apos;s most persistent economic challenge.
-              London generates dramatically more per person than any other region, and the gap
-              widened through every decade from the 1990s onwards. The North East, Wales, and
-              Yorkshire consistently sit 20–30% below the UK average. No levelling-up policy
-              has reversed the trend in the data.
-            </p>
-            <p>
-              The productivity puzzle remains the defining economic challenge. Output per hour has
-              barely grown since 2008. Before the financial crisis, productivity grew at about 2%
-              a year; since then, growth has been close to zero. This matters because productivity
-              is the ultimate driver of wages and living standards. Without productivity growth,
-              the only way to raise incomes is to work more hours.
-            </p>
-            <p>
-              There are genuine positives. Income inequality, measured by the Gini coefficient,
-              has actually fallen since its 2020 pandemic peak and is now at its lowest level
-              in over a decade. Real household disposable income per head has recovered to
-              pre-crisis levels. And nominal wage growth has been outpacing inflation since
-              mid-2023, meaning real pay packets are finally growing again.
+              Geography compounds the divide. London&apos;s GVA per head (£47,705) sits at
+              174% of the UK average; the North East manages 67%. That gap has widened every
+              decade since the 1990s, and no levelling-up policy has reversed it in the data.
+              One genuine bright spot: the income Gini coefficient has fallen for four
+              consecutive years, from 35.4 in 2020 to 32.9, its lowest level in over a decade.
+              Incomes are becoming more equal &mdash; but against a backdrop where productivity,
+              regional convergence, and inactivity remain unresolved.
             </p>
           </div>
         </section>

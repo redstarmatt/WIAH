@@ -554,33 +554,32 @@ export default function EnergyPage() {
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Britain&apos;s electricity system has undergone a remarkable transformation. In 2000,
-              renewable sources provided less than 3% of electricity. By 2024 they generated over
-              45%, driven overwhelmingly by the expansion of offshore and onshore wind. The last coal
-              power station, Ratcliffe-on-Soar, closed in September 2024, ending 142 years of
-              coal-fired generation. This is a genuine success story with few parallels among
-              major economies.
+              Britain&apos;s electricity grid has been transformed at a pace few predicted. Renewables
+              went from under 3% of generation in 2000 to over 45% by 2024 &mdash; surpassing 50% for
+              the first time in 2023. Coal, which supplied roughly 30% of electricity at the millennium,
+              fell to zero when Ratcliffe-on-Soar closed in September 2024, ending 142 years of
+              coal-fired power. Gas has declined from its peak but still provides a significant share.
+              The generation mix chart shows one of the most dramatic energy transitions in any major
+              economy, driven largely by the rapid scaling of offshore wind.
             </p>
             <p>
-              But the energy crisis that began in late 2021 exposed the other side of the picture.
-              When wholesale gas prices surged following Russia&apos;s invasion of Ukraine, electricity
-              prices followed &mdash; because gas-fired plants still set the marginal price. The Ofgem
-              price cap rose by 54% in April 2022 and again in October, pushing average annual
-              bills above &pound;2,500. The CPI electricity index more than doubled from its 2015
-              baseline, peaking at 241 in January 2023.
+              A cleaner grid has not meant cheaper bills. Because gas-fired plants still set the marginal
+              electricity price, the 2021&ndash;22 wholesale gas shock hit consumers directly. The Ofgem
+              price cap rose 54% in April 2022 and again in October, pushing typical bills above
+              &pound;2,500. The CPI electricity index more than doubled, peaking at 241 in January 2023.
+              The Energy Price Guarantee and a &pound;400 bills support scheme blunted the worst of it,
+              but prices have not returned to normal: the index still sits at around 201, double the
+              2015 level. Until market design catches up with the generation mix, renewable growth
+              alone will not deliver lower bills.
             </p>
             <p>
-              The government responded with the Energy Price Guarantee, capping typical bills at
-              &pound;2,500, and the &pound;400 Energy Bills Support Scheme. Prices have since fallen from
-              their peak but remain well above historical norms. As of early 2026, the electricity
-              price index stands at around 201 &mdash; still double the 2015 level.
-            </p>
-            <p>
-              Fuel poverty has increased. Under the LILEE metric, 13.8% of English households were
-              estimated to be in fuel poverty in 2023, up from 10.3% in 2018. The methodology change
-              in 2019 makes direct comparison with earlier figures difficult, but the trend since
-              then is clear: energy costs are taking a larger share of income for the poorest
-              households, even as the grid itself becomes cleaner.
+              The cost falls hardest on those least able to absorb it. Under the LILEE metric, 13.8% of
+              English households were in fuel poverty in 2023, up from 10.3% in 2018. That is roughly
+              3.3 million homes where energy costs consume a disproportionate share of income. The
+              methodology changed in 2019, making longer-term comparison difficult, but the direction
+              since then is unambiguous. Britain is building one of Europe&apos;s cleanest electricity
+              grids while a growing share of its population cannot afford to heat their homes &mdash; a
+              paradox that infrastructure investment alone will not resolve.
             </p>
           </div>
         </section>

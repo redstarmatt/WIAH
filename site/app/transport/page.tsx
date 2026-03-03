@@ -643,47 +643,42 @@ export default function TransportPage() {
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Rail punctuality, measured by the Public Performance Measure (PPM), has been in
-              long-term decline. The 2018 timetable changes caused chaos across Northern and
-              Thameslink services, with cancellation rates spiking sharply. COVID-19 collapsed
-              demand, and while passenger numbers have largely recovered, performance has not
-              returned to pre-pandemic levels.
+              Rail and bus share the same underlying problem: decades of underinvestment
+              compounded by short-term shocks. Rail punctuality has been falling since
+              2014, with the botched 2018 timetable change across Northern and Thameslink
+              services exposing how little margin the network had. COVID-19 then collapsed
+              demand, and while passenger numbers recovered to roughly 95% of pre-pandemic
+              levels, performance did not follow &mdash; ageing signalling, capacity
+              bottlenecks, and the 2022 RMT/ASLEF strikes all took their toll. Buses tell
+              a parallel story outside London: local authority funding for supported routes
+              has fallen over 40% in real terms since 2010, services have been withdrawn,
+              and ridership has never fully recovered from the pandemic. The &pound;2 fare
+              cap sustained demand but could not replace the routes that had already gone.
+              Greater Manchester&apos;s Bee Network re-regulation is the first serious
+              attempt to reverse this model.
             </p>
             <p>
-              The 2022 strike action by RMT and ASLEF members further disrupted services and
-              depressed ridership. Infrastructure constraints — aging signalling, capacity
-              bottlenecks at key junctions, and delayed maintenance — remain the underlying
-              cause of poor performance on many routes.
+              Road safety is one of British public policy&apos;s genuine long-run
+              successes. Fatalities fell 73% between 1979 and 2023 &mdash; from 6,352
+              killed to 1,695 &mdash; driven by compulsory seat belts in 1983, tougher
+              drink-drive enforcement, and successive improvements to vehicle safety
+              standards. But the improvement has stalled. Since 2010, deaths have
+              plateaued at around 1,700 a year, and the seriously injured count has edged
+              upward from a 2013 low of 21,657 to 30,124 in 2023 &mdash; partly a result
+              of better recording, but enough to raise questions about whether further
+              gains require new interventions such as lower urban speed limits and
+              better-designed junctions.
             </p>
             <p>
-              Bus services have been cut dramatically outside London. Since 2010, local authority
-              funding for supported bus routes has fallen by over 40% in real terms. Routes have
-              been withdrawn, frequencies reduced, and evening and weekend services eliminated in
-              many areas. The &pound;2 bus fare cap introduced in 2023 has helped sustain ridership
-              but has not reversed the long-term decline in service provision.
-            </p>
-            <p>
-              The gap between London and the rest of England is stark. Transport for London
-              operates an integrated, frequent network; outside the capital, deregulated bus
-              markets and fragmented rail franchises leave many communities poorly connected.
-              Greater Manchester&apos;s move to re-regulate its buses under the Bee Network is
-              the first major attempt to change this model.
-            </p>
-            <p>
-              Britain&apos;s road safety record is one of the genuine long-run successes of
-              public policy. Fatalities have fallen by 73% since 1979, driven by compulsory
-              seat belts (1983), drink-drive enforcement, catalytic converter mandates, and
-              decades of improvements to vehicle safety standards. The reduction has stalled
-              since 2010, however, and the seriously injured count has edged upward since 2013
-              — partly a result of improved recording rather than worsening outcomes.
-            </p>
-            <p>
-              Electric vehicle uptake has accelerated rapidly, driven by the ZEV mandate which
-              requires manufacturers to hit 22% zero-emission sales in 2024, rising year-on-year
-              to 100% by 2035. Public charging infrastructure remains a constraint, with around
-              60,000 public connectors nationwide — a ratio of roughly 23 EVs per public charger.
-              The transition is underway, but range anxiety and upfront costs continue to slow
-              adoption among lower-income households.
+              The transition to electric vehicles is moving fast at the headline level:
+              battery EVs went from 0.06% of new car sales in 2011 to nearly 20% in 2024,
+              with over 1.4 million now on UK roads. The ZEV mandate requires manufacturers
+              to hit 22% zero-emission sales in 2024, rising to 100% by 2035. Infrastructure,
+              however, is not keeping pace &mdash; roughly 60,000 public chargers serve
+              1.4 million EVs, a ratio of about 23 vehicles per charger. And the benefits
+              are unevenly distributed: average EV purchase prices remain well above
+              petrol equivalents, meaning lower-income households are largely locked out
+              of the transition despite facing the highest fuel costs.
             </p>
           </div>
         </section>

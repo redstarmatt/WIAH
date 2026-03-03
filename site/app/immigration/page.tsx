@@ -805,34 +805,40 @@ export default function ImmigrationPage() {
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Net migration to the UK surged after 2020, peaking at an estimated 906,000 in the
-              year to June 2023. The drivers were distinct and overlapping: post-pandemic recovery
-              in international student numbers, new visa routes for health and care workers,
-              the Hong Kong BN(O) scheme, and Ukrainian and Afghan resettlement programmes. Almost
-              all of the increase was from non-EU nationals — EU net migration has been negative
-              since the Brexit transition ended.
+              Net migration peaked at an estimated 906,000 in the year to June 2023, then
+              fell sharply to 204,000 by June 2025. The surge had specific, identifiable
+              drivers: a post-pandemic rebound in international students, new Health and
+              Care Worker visa routes that brought in tens of thousands of care staff,
+              the Hong Kong BN(O) scheme, and Ukrainian and Afghan resettlement programmes.
+              Almost all of the increase came from non-EU nationals &mdash; EU net migration
+              has been negative since the Brexit transition ended. The correction has been
+              equally specific: the government raised the minimum salary threshold for
+              skilled worker visas, restricted dependants of care workers and students,
+              and reviewed the graduate route. Study and work visa grants both fell sharply
+              in the latest data. There is no official net migration target.
             </p>
             <p>
-              Since 2023 the government has tightened visa rules significantly. The minimum salary
-              threshold for skilled worker visas was raised, dependants of care workers and students
-              were restricted, and the graduate visa route was reviewed. These changes are feeding
-              through: net migration fell to 204,000 by June 2025. Study and work visa grants both
-              dropped sharply in the latest data.
+              The asylum system has improved from its 2023 peak but remains under
+              significant pressure. Around 64,000 people are waiting for an initial
+              decision, down from 128,000 at the worst point. The grant rate has hovered
+              between 50% and 55% in recent years, meaning roughly half of those whose
+              claims are decided receive protection. Small boat Channel crossings
+              continue &mdash; over 195,000 people have arrived this way since 2018,
+              and 2025 is on track to match 2024. Enforced returns remain a fraction
+              of their pre-2017 levels. The Rwanda removal scheme was scrapped without
+              relocating any asylum seekers.
             </p>
             <p>
-              The asylum system remains under severe strain despite the backlog falling from its
-              2023 peak. Around 64,000 people are still waiting for an initial decision. Small
-              boat crossings continue — nearly 195,000 people have arrived this way since 2018,
-              with 2025 on track to match or exceed 2024. Meanwhile, enforced returns remain
-              a fraction of their pre-2017 levels, and the Rwanda scheme was scrapped after
-              removing no asylum seekers.
-            </p>
-            <p>
-              The ONS switched from its long-running International Passenger Survey to
-              administrative data in 2023, making pre-2012 figures not directly comparable. All
-              recent estimates are provisional and subject to revision. Immigration statistics
-              are among the most contested in British public life — the data here is drawn directly
-              from official sources to cut through the noise.
+              These migration figures sit against a demographic backdrop that receives
+              less attention. The UK&apos;s total fertility rate fell to 1.49 in 2022,
+              a record low &mdash; well below the replacement rate of 2.1, and down
+              from a recent peak of 1.93 in 2012. The UK has been below replacement
+              since 1973. With natural population change close to zero, net migration
+              is now the primary driver of population and workforce growth. The ONS
+              methodology also shifted in 2023, switching from the International
+              Passenger Survey to administrative data sources, which means pre-2012
+              figures are not directly comparable to recent estimates. All recent
+              numbers are provisional and subject to revision.
             </p>
           </div>
         </section>

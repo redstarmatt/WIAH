@@ -931,38 +931,35 @@ export default function EducationPage() {
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Persistent absence has roughly doubled since before the pandemic. Before COVID-19,
-              about 1 in 9 pupils missed 10% or more of school. By 2023-24, it was 1 in 5.
-              The causes are complex: anxiety, long COVID, disengagement, and a shift in social
-              norms around attendance. Absence is highest among disadvantaged pupils, widening
-              the attainment gap further.
+              COVID-19 broke something in school attendance that has not yet mended. Before the pandemic,
+              about 1 in 9 pupils were persistently absent &mdash; missing 10% or more of sessions. By
+              2023-24 it was 1 in 5, and the rate has barely improved since. Anxiety, disengagement, and
+              a cultural shift in attitudes to attendance all play a role, but the pattern is not evenly
+              distributed: disadvantaged pupils are absent at far higher rates, and absence feeds directly
+              into attainment. The disadvantage gap index has risen every year since 2020 and now stands
+              at its highest in over a decade. Just 25% of disadvantaged pupils achieve grade 5 or above
+              in English and maths, compared with 52% of their peers. The progress made through the 2010s
+              in narrowing that gap has been erased.
             </p>
             <p>
-              The SEND system is under extraordinary pressure. The number of children with
-              Education, Health and Care Plans has nearly tripled in a decade, from 240,000
-              in 2015 to over 630,000 in 2025. Local authorities cannot keep up: fewer than
-              half of new EHCPs are issued within the 20-week statutory deadline. SEND
-              tribunal appeals have surged, and families win in almost every case — suggesting
-              that initial decisions to refuse support are routinely wrong.
+              The SEND system has moved from strain to statutory failure. The number of children with
+              Education, Health and Care Plans has nearly tripled in a decade &mdash; from around 240,000
+              in 2015 to over 630,000 &mdash; driven by rising identification of autism, ADHD, and
+              speech and language needs. Local authorities cannot keep pace: fewer than half of new EHCPs
+              are issued within the 20-week legal deadline. Families who appeal to the SEND tribunal win
+              in almost every case, which suggests that initial refusals are routinely wrong rather than
+              borderline. The system is generating delay, conflict, and cost while failing the children
+              it was designed to protect.
             </p>
             <p>
-              The attainment gap between disadvantaged pupils and their peers narrowed
-              steadily through the 2010s. COVID-19 reversed that progress. The disadvantage
-              gap index has risen every year since 2020, and in 2024-25 stands at its highest
-              level in over a decade. In concrete terms: just 25% of disadvantaged pupils
-              achieve grade 5+ in English and maths, compared with 52% of all other pupils.
-            </p>
-            <p>
-              School funding fell sharply in real terms between 2009 and 2017. Nominal figures
-              disguise a sustained squeeze: per-pupil revenue funding lost over £1,300 in
-              real value during that period. The recovery since 2017 has brought nominal
-              spending to record highs, but the legacy of the squeeze — in deferred maintenance,
-              reduced support staff, and narrowed curricula — takes years to unwind.
-            </p>
-            <p>
-              These three crises are interconnected. Children who are persistently absent
-              fall behind. Children with unmet SEND needs disengage from school. Disadvantaged
-              children are disproportionately affected by both.
+              Funding and international benchmarks add context to the domestic picture. Per-pupil school
+              spending fell by over &pound;1,300 in real terms between 2009 and 2017 &mdash; from roughly
+              &pound;8,900 to &pound;7,630. Nominal spending has since recovered to record levels, but
+              the legacy of the squeeze in deferred maintenance, lost support staff, and narrowed curricula
+              takes years to reverse. Internationally, the UK&apos;s PISA 2022 scores &mdash; 494 in reading,
+              489 in maths, 520 in science &mdash; sit above the OECD average and roughly mid-table among
+              G7 nations. England&apos;s schools are neither catastrophic nor exceptional: performing
+              respectably overall while struggling to close the gaps within.
             </p>
           </div>
         </section>

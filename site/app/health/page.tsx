@@ -992,22 +992,32 @@ export default function HealthPage() {
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Category 2 ambulance calls — covering emergencies like strokes, chest pain, and
-              serious injuries — have a target mean response time of 18 minutes. In January 2026
-              the actual figure was 35 minutes. At the peak in December 2022 it reached 93 minutes,
-              meaning the average emergency wait was over an hour and a half.
+              The NHS is caught in a system-wide capacity squeeze. The waiting list has grown from 4.4 million
+              before the pandemic to 7.64 million, with over 300,000 people waiting more than a year for
+              treatment. Behind that backlog lies a chain of bottlenecks: hospitals running at 92% bed
+              occupancy (above the 85% safe maximum) with roughly 100,000 beds &mdash; down from 145,000 in
+              2010 &mdash; which means ambulances queue outside full A&amp;E departments, pushing Cat 2 response
+              times to 35 minutes against an 18-minute target. At the front door of the system, average GP
+              waits have tripled from under 7 days in 2013 to 21 days, while each GP now covers around 2,300
+              patients. The NHS is delivering 76 million appointments a month. The problem is not effort but
+              arithmetic: demand has outgrown capacity at every stage.
             </p>
             <p>
-              The primary bottleneck is hospital handover delays: ambulances queuing outside
-              overstretched A&amp;E departments, unable to hand over patients. This keeps crews
-              and vehicles off the road. The number of handover delays exceeding 60 minutes has
-              risen sharply since 2020.
+              Life expectancy reveals something deeper than an operational crisis. For decades, the UK added
+              roughly 0.2 years of life per year &mdash; steady, predictable progress. After 2011, that
+              improvement stalled almost completely. Male life expectancy sits at 79.0 years, female at
+              83.0. COVID caused a visible dip, but the flatlining began nearly a decade earlier and has not
+              recovered. The UK is not alone in this &mdash; similar slowdowns have appeared across wealthy
+              nations &mdash; but the stall coincided with a period of austerity-driven cuts to public health,
+              social care, and local government services. The causes remain debated; the trend does not.
             </p>
             <p>
-              GP appointment data covers July 2023 onwards in this format. Average wait of
-              around 6 days includes large numbers of same-day appointments — the picture for
-              routine care is considerably longer. The GP Patient Survey captures patient
-              experience more directly; that pipeline will be added next.
+              Not everything is deteriorating. Cancer survival has improved markedly: five-year lung cancer
+              survival has risen from 10.4% to 16.2%, breast cancer survival exceeds 85%, and melanoma
+              survival tops 91%. These gains reflect genuine advances in screening, diagnostics, and treatment.
+              Life expectancy, at 79 and 83 years, remains high by historical standards. The picture is one
+              of a health system producing better clinical outcomes within an infrastructure that can no longer
+              absorb the volume of demand placed on it.
             </p>
           </div>
         </section>

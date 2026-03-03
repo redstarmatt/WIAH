@@ -920,39 +920,33 @@ export default function HousingPage() {
           <h2 className="text-xl font-bold text-wiah-black mb-4">What&apos;s driving this</h2>
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              In 1997, the average house in England cost 3.5 times the average salary.
-              Today it costs 7.7 times. That single number explains more about the lived
-              experience of a generation than almost any other statistic. House prices
-              have risen 390% while earnings have risen 90%.
+              In 1997, the average house in England cost 3.5 times the median salary. By
+              2024 the ratio had reached 7.7&times; &mdash; and in London it peaks above
+              11&times;, meaning a typical home costs more than a decade&apos;s gross pay.
+              The raw numbers are stark: house prices have risen roughly 390% since 1997
+              while earnings have risen about 90%. In the North East the ratio sits closer
+              to 5&times;, but even that would have been considered unaffordable a generation
+              ago. First-time buyers now face an average entry price of £245,000, and social
+              housing stock has been declining for decades, narrowing the alternatives.
             </p>
             <p>
-              The regional picture is stark. In London, the ratio peaks above 11× — meaning
-              an average home costs eleven years&apos; average salary before tax. In the North
-              East, it&apos;s closer to 5×. This gap has driven a geographic sorting: young
-              professionals price themselves out of the places with the most jobs, or
-              accept that homeownership is not for them.
+              For the growing share of the population who rent, the squeeze has intensified
+              sharply. Average monthly rent in England reached £1,380 in 2025 &mdash; up 78%
+              since 2005. In London it exceeds £2,200. Private renters now spend more than
+              a third of their income on rent; in London, over 40%. The ONS private rent
+              index (IPHRP) shows rents rising at close to 10% a year in 2024 &mdash; the
+              fastest pace since records began in 2011, with London at 11%. A post-pandemic
+              surge that began in 2021 shows no sign of abating.
             </p>
             <p>
-              For renters, the picture is no better. Average monthly rent in England has
-              risen from £775 in 2005 to over £1,380 in 2025 — a 78% increase. In London,
-              the average is above £2,200. Private renters in England spend over a third of
-              their income on rent, and in London it exceeds 40%. The ONS IPHRP shows
-              rents rising at nearly 10% per year in 2024 — the fastest pace since records
-              began in 2011, with London rising over 11%.
-            </p>
-            <p>
-              The human cost of the housing crisis shows up starkly in the temporary
-              accommodation figures. Over 123,000 households — including more than 150,000
-              children — are now living in temporary accommodation placed by local
-              authorities: bed and breakfasts, hostels, and nightly-let properties.
-              This is a record high and has risen every year since 2012.
-            </p>
-            <p>
-              There are some signs of easing. The affordability ratio actually fell in 2024,
-              from 8.4× to 7.7×, as earnings growth outpaced house price growth for the first
-              time in years. Whether this is a trend or a blip remains to be seen. For
-              first-time buyers, the average purchase price is £245,000 — still a formidable
-              barrier, but no longer rising as fast as it was.
+              The sharpest human cost appears in the homelessness figures. A record 123,000
+              households &mdash; including more than 150,000 children &mdash; are now living in
+              temporary accommodation placed by local authorities: B&amp;Bs, hostels, and
+              nightly-let properties. That number has risen every year since 2012. There is
+              one sign of possible relief: the affordability ratio fell from 8.4&times; to
+              7.7&times; in 2024 as earnings growth outpaced house prices for the first time
+              in years. Whether this marks the start of a correction or a brief pause
+              remains to be seen.
             </p>
           </div>
         </section>
