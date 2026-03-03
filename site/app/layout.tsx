@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://whatisactuallyhappening.uk'),
   title: 'What is actually happening?',
   description: 'A curated national data platform that makes the real state of the UK visible, understandable, and shareable.',
   openGraph: {
