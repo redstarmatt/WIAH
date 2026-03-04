@@ -1,0 +1,29 @@
+{
+  "national": {
+    "maintenanceBacklog": [
+      {"year": 2011, "billionsPounds": 6.7},
+      {"year": 2013, "billionsPounds": 6.1},
+      {"year": 2015, "billionsPounds": 6.8},
+      {"year": 2017, "billionsPounds": 7.2},
+      {"year": 2019, "billionsPounds": 11.4},
+      {"year": 2021, "billionsPounds": 13.8},
+      {"year": 2023, "billionsPounds": 15.0}
+    ],
+    "capitalSpending": [
+      {"year": 2010, "billionsPounds": 6.3},
+      {"year": 2012, "billionsPounds": 4.1},
+      {"year": 2014, "billionsPounds": 3.8},
+      {"year": 2016, "billionsPounds": 4.2},
+      {"year": 2018, "billionsPounds": 4.9},
+      {"year": 2020, "billionsPounds": 5.1},
+      {"year": 2022, "billionsPounds": 5.8},
+      {"year": 2023, "billionsPounds": 6.2}
+    ],
+    "buildingCondition": [
+      {"condition": "Good (A/B)", "pct": 38},
+      {"condition": "Satisfactory (C)", "pct": 41},
+      {"condition": "Poor (D)", "pct": 17},
+      {"condition": "Critical (E)", "pct": 4}
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "national": {
+    "averageCost": [
+      {"year": 2004, "pounds": 1835},
+      {"year": 2006, "pounds": 2050},
+      {"year": 2008, "pounds": 2400},
+      {"year": 2010, "pounds": 2900},
+      {"year": 2012, "pounds": 3284},
+      {"year": 2014, "pounds": 3590},
+      {"year": 2016, "pounds": 3693},
+      {"year": 2018, "pounds": 3916},
+      {"year": 2020, "pounds": 4184},
+      {"year": 2022, "pounds": 4056},
+      {"year": 2023, "pounds": 4141}
+    ],
+    "funeralPayment": [
+      {"year": 2014, "averageAward": 1268},
+      {"year": 2016, "averageAward": 1316},
+      {"year": 2018, "averageAward": 1404},
+      {"year": 2020, "averageAward": 1498},
+      {"year": 2022, "averageAward": 1568},
+      {"year": 2023, "averageAward": 1593}
+    ],
+    "byCost": [
+      {"component": "Funeral director fees", "pct": 54},
+      {"component": "Third-party disbursements", "pct": 21},
+      {"component": "Burial / cremation fees", "pct": 16},
+      {"component": "Cemetery / crematorium", "pct": 9}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "SunLife",
+        "dataset": "Cost of Dying Report",
+        "url": "https://www.sunlife.co.uk/funeral-plans/",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Work and Pensions",
+        "dataset": "Funeral Expenses Payment",
+        "url": "https://www.gov.uk/funeral-expenses-payment",
+        "frequency": "ongoing"
+      }
+    ]
+  }
+}

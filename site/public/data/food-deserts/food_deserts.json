@@ -1,0 +1,38 @@
+{
+  "national": {
+    "accessTrend": [
+      {"year": 2010, "pctLimitedAccess": 14},
+      {"year": 2012, "pctLimitedAccess": 14},
+      {"year": 2014, "pctLimitedAccess": 13},
+      {"year": 2016, "pctLimitedAccess": 13},
+      {"year": 2018, "pctLimitedAccess": 12},
+      {"year": 2020, "pctLimitedAccess": 12},
+      {"year": 2022, "pctLimitedAccess": 13},
+      {"year": 2023, "pctLimitedAccess": 14}
+    ],
+    "supermarketDensity": [
+      {"year": 2012, "perHundredThousand": 4.2},
+      {"year": 2014, "perHundredThousand": 4.4},
+      {"year": 2016, "perHundredThousand": 4.5},
+      {"year": 2018, "perHundredThousand": 4.6},
+      {"year": 2020, "perHundredThousand": 4.3},
+      {"year": 2022, "perHundredThousand": 4.1},
+      {"year": 2023, "perHundredThousand": 4.0}
+    ],
+    "byAreaType": [
+      {"area": "Most deprived (Quintile 1)", "supermarketsPerHundredK": 2.8},
+      {"area": "Quintile 2", "supermarketsPerHundredK": 3.6},
+      {"area": "Quintile 3", "supermarketsPerHundredK": 4.2},
+      {"area": "Quintile 4", "supermarketsPerHundredK": 4.9},
+      {"area": "Least deprived (Quintile 5)", "supermarketsPerHundredK": 6.1}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Consumer Data Research Centre", "dataset": "Food Desert Analysis", "url": "https://www.cdrc.ac.uk/", "frequency": "annual"},
+      {"name": "ONS", "dataset": "Index of Multiple Deprivation", "url": "https://www.ons.gov.uk/", "frequency": "annual"}
+    ],
+    "methodology": "Food deserts defined as areas where >10% of population live >1 mile from nearest supermarket with no car access.",
+    "knownIssues": ["Definition of supermarket excludes convenience stores and online delivery"]
+  }
+}

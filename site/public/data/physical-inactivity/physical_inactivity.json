@@ -1,0 +1,28 @@
+{
+  "activityLevels": [
+    {"year": 2016, "pctMeetingGuidelines": 66},
+    {"year": 2017, "pctMeetingGuidelines": 67},
+    {"year": 2018, "pctMeetingGuidelines": 67},
+    {"year": 2019, "pctMeetingGuidelines": 67},
+    {"year": 2020, "pctMeetingGuidelines": 59},
+    {"year": 2021, "pctMeetingGuidelines": 61},
+    {"year": 2022, "pctMeetingGuidelines": 62}
+  ],
+  "childActivity": [
+    {"year": 2016, "pctActive": 47},
+    {"year": 2018, "pctActive": 48},
+    {"year": 2019, "pctActive": 47},
+    {"year": 2020, "pctActive": 44},
+    {"year": 2021, "pctActive": 45},
+    {"year": 2022, "pctActive": 47}
+  ],
+  "byGroup": [
+    {"group": "Men (18-34)", "pctActive": 78},
+    {"group": "Women (18-34)", "pctActive": 69},
+    {"group": "Men (55-64)", "pctActive": 62},
+    {"group": "Women (55-64)", "pctActive": 55},
+    {"group": "Disabled adults", "pctActive": 41},
+    {"group": "Most deprived quintile", "pctActive": 50},
+    {"group": "Least deprived quintile", "pctActive": 74}
+  ]
+}

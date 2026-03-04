@@ -65,7 +65,7 @@ export const CATEGORIES: Category[] = [
     name: 'Mental Health & Wellbeing',
     slug: 'mental-health-wellbeing',
     featured: ['mental-health', 'mental-health-waits', 'suicide-prevention'],
-    topics: ['mental-health', 'mental-health-waits', 'suicide-prevention', 'adhd-autism', 'wellbeing', 'loneliness', 'gambling', 'gambling-harm', 'eating-disorders', 'drugs', 'drug-misuse', 'alcohol', 'drug-deaths', 'obesity'],
+    topics: ['mental-health', 'mental-health-waits', 'suicide-prevention', 'adhd-autism', 'wellbeing', 'loneliness', 'gambling', 'gambling-harm', 'eating-disorders', 'drugs', 'drug-misuse', 'alcohol', 'drug-deaths', 'obesity', 'physical-inactivity'],
   },
   {
     name: 'Crime & Justice',
@@ -95,7 +95,7 @@ export const CATEGORIES: Category[] = [
     name: 'Poverty & Cost of Living',
     slug: 'poverty-cost-of-living',
     featured: ['child-poverty', 'food-banks', 'energy-bills'],
-    topics: ['child-poverty', 'food-banks', 'energy-bills', 'poverty', 'inequality', 'fuel-poverty', 'personal-debt', 'benefits', 'universal-credit', 'pensions', 'food-insecurity', 'wealth-inequality'],
+    topics: ['child-poverty', 'food-banks', 'energy-bills', 'poverty', 'inequality', 'fuel-poverty', 'personal-debt', 'benefits', 'universal-credit', 'pensions', 'pensioner-poverty', 'food-insecurity', 'wealth-inequality'],
   },
   {
     name: 'Environment & Climate',
@@ -297,6 +297,17 @@ export const TOPICS: Record<string, TopicEntry> = {
     metrics: [
       { label: 'Persistent absence', value: '20.0', unit: '%', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'was 10.5% pre-Covid', sparklineData: [10.5, 10.8, 11.2, 10.9, 12.1, 22.5, 21.2, 20] },
       { label: 'Disadvantage gap index', value: '3.92', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'widening since 2017', sparklineData: [3.78, 3.7, 3.68, 3.66, 3.66, 3.79, 3.84, 3.94, 3.93, 3.92] },
+    ],
+  },
+  'physical-inactivity': {
+    topic: 'Physical Inactivity',
+    slug: 'physical-inactivity',
+    href: '/physical-inactivity',
+    colour: '#2A9D8F',
+    preposition: 'with',
+    metrics: [
+      { label: 'Adults meeting activity guidelines', value: '62', unit: '%', direction: 'down' as const, polarity: 'up-is-good' as const, context: 'was 67% pre-pandemic', sparklineData: [66, 67, 67, 67, 59, 61, 62] },
+      { label: 'Physically inactive adults', value: '11.5M', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '24% of population', sparklineData: [10.2, 10.5, 10.8, 11.2, 11.5] },
     ],
   },
   'environment': {
@@ -1380,6 +1391,17 @@ export const TOPICS: Record<string, TopicEntry> = {
     metrics: [
       { label: 'Child protection referrals (England)', value: '714K', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up 37% since 2011/12', sparklineData: [521, 545, 570, 590, 604, 630, 640, 655, 670, 690, 714] },
       { label: 'Children in care (looked-after)', value: '83.8K', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up 24% since 2011; record high', sparklineData: [65.5, 66.5, 68.1, 69.5, 72.7, 78.2, 80.1, 82.2, 83.8] },
+    ],
+  },
+  'pensioner-poverty': {
+    topic: 'Pensioner Poverty',
+    slug: 'pensioner-poverty',
+    href: '/pensioner-poverty',
+    colour: '#6B7280',
+    preposition: 'in',
+    metrics: [
+      { label: 'Pensioners in poverty', value: '18%', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up from 14% in 2012; 2.1M people', sparklineData: [29, 27, 25, 22, 20, 18, 16, 14, 15, 16, 16, 17, 18, 18] },
+      { label: 'State pension weekly rate', value: '£169', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up from £119 in 2016; Triple Lock', sparklineData: [119, 122, 125, 129, 134, 137, 141, 156, 169] },
     ],
   },
 };

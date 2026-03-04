@@ -1,0 +1,33 @@
+{
+  "national": {
+    "camhsWaiting": [
+      {"year": 2016, "thousands": 42},
+      {"year": 2017, "thousands": 53},
+      {"year": 2018, "thousands": 61},
+      {"year": 2019, "thousands": 70},
+      {"year": 2020, "thousands": 88},
+      {"year": 2021, "thousands": 104},
+      {"year": 2022, "thousands": 115},
+      {"year": 2023, "thousands": 127}
+    ],
+    "selfHarmAdmissions": [
+      {"year": 2013, "per100k": 187},
+      {"year": 2014, "per100k": 198},
+      {"year": 2015, "per100k": 212},
+      {"year": 2016, "per100k": 225},
+      {"year": 2017, "per100k": 238},
+      {"year": 2018, "per100k": 251},
+      {"year": 2019, "per100k": 263},
+      {"year": 2020, "per100k": 248},
+      {"year": 2021, "per100k": 271},
+      {"year": 2022, "per100k": 284}
+    ],
+    "byCondition": [
+      {"condition": "Emotional / anxiety", "pct": 41},
+      {"condition": "Behavioural disorders", "pct": 19},
+      {"condition": "Hyperkinetic (ADHD)", "pct": 13},
+      {"condition": "Self-harm / eating disorders", "pct": 12},
+      {"condition": "Other / unspecified", "pct": 15}
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "national": {
+    "heatDeaths": [
+      {"year": 2014, "excessDeaths": 760},
+      {"year": 2015, "excessDeaths": 1680},
+      {"year": 2016, "excessDeaths": 320},
+      {"year": 2017, "excessDeaths": 210},
+      {"year": 2018, "excessDeaths": 1690},
+      {"year": 2019, "excessDeaths": 900},
+      {"year": 2020, "excessDeaths": 2556},
+      {"year": 2021, "excessDeaths": 1480},
+      {"year": 2022, "excessDeaths": 2803},
+      {"year": 2023, "excessDeaths": 1180}
+    ],
+    "hotDays": [
+      {"year": 2010, "daysAbove28C": 8},
+      {"year": 2012, "daysAbove28C": 4},
+      {"year": 2014, "daysAbove28C": 6},
+      {"year": 2016, "daysAbove28C": 7},
+      {"year": 2018, "daysAbove28C": 14},
+      {"year": 2019, "daysAbove28C": 13},
+      {"year": 2020, "daysAbove28C": 11},
+      {"year": 2021, "daysAbove28C": 9},
+      {"year": 2022, "daysAbove28C": 21},
+      {"year": 2023, "daysAbove28C": 12}
+    ],
+    "byVulnerability": [
+      {"group": "Over 75s", "riskMultiplier": 5.4},
+      {"group": "Cardiovascular disease", "riskMultiplier": 3.8},
+      {"group": "Mental health conditions", "riskMultiplier": 3.1},
+      {"group": "Top-floor residents", "riskMultiplier": 2.6},
+      {"group": "Outdoor workers", "riskMultiplier": 2.2}
+    ]
+  }
+}

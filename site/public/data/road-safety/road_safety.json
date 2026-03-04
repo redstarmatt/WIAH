@@ -1,76 +1,33 @@
 {
-  "topic": "road-safety",
-  "lastUpdated": "2026-03-01",
-  "national": {
-    "fatalitiesAndKSI": {
-      "timeSeries": [
-        {"year": 2010, "fatalitiesCount": 1857, "ksi": 23530},
-        {"year": 2011, "fatalitiesCount": 1901, "ksi": 23122},
-        {"year": 2012, "fatalitiesCount": 1754, "ksi": 22367},
-        {"year": 2013, "fatalitiesCount": 1713, "ksi": 21657},
-        {"year": 2014, "fatalitiesCount": 1775, "ksi": 22807},
-        {"year": 2015, "fatalitiesCount": 1732, "ksi": 22144},
-        {"year": 2016, "fatalitiesCount": 1792, "ksi": 23432},
-        {"year": 2017, "fatalitiesCount": 1793, "ksi": 24831},
-        {"year": 2018, "fatalitiesCount": 1782, "ksi": 25511},
-        {"year": 2019, "fatalitiesCount": 1752, "ksi": 25945},
-        {"year": 2020, "fatalitiesCount": 1460, "ksi": 21623},
-        {"year": 2021, "fatalitiesCount": 1558, "ksi": 24622},
-        {"year": 2022, "fatalitiesCount": 1711, "ksi": 28294},
-        {"year": 2023, "fatalitiesCount": 1695, "ksi": 28294}
-      ],
-      "latestYear": 2023,
-      "latestFatalities": 1695,
-      "latestKSI": 28294,
-      "peakYear1972": 7952
-    },
-    "vulnerableUsers": {
-      "timeSeries": [
-        {"year": 2015, "pedestrianFatalitiesPct": 26, "cyclistFatalitiesPct": 7, "motorcyclistFatalitiesPct": 19},
-        {"year": 2017, "pedestrianFatalitiesPct": 27, "cyclistFatalitiesPct": 7, "motorcyclistFatalitiesPct": 20},
-        {"year": 2019, "pedestrianFatalitiesPct": 25, "cyclistFatalitiesPct": 7, "motorcyclistFatalitiesPct": 20},
-        {"year": 2021, "pedestrianFatalitiesPct": 24, "cyclistFatalitiesPct": 8, "motorcyclistFatalitiesPct": 20},
-        {"year": 2023, "pedestrianFatalitiesPct": 25, "cyclistFatalitiesPct": 8, "motorcyclistFatalitiesPct": 21}
-      ]
-    },
-    "drinkDriving": {
-      "timeSeries": [
-        {"year": 2013, "fatalitiesCount": 260},
-        {"year": 2014, "fatalitiesCount": 240},
-        {"year": 2015, "fatalitiesCount": 210},
-        {"year": 2016, "fatalitiesCount": 230},
-        {"year": 2017, "fatalitiesCount": 250},
-        {"year": 2018, "fatalitiesCount": 240},
-        {"year": 2019, "fatalitiesCount": 230},
-        {"year": 2020, "fatalitiesCount": 200},
-        {"year": 2021, "fatalitiesCount": 230},
-        {"year": 2022, "fatalitiesCount": 220}
-      ],
-      "latestYear": 2022,
-      "latestFatalities": 220
-    },
-    "speedingCompliance": {
-      "timeSeries": [
-        {"year": 2015, "motorwayExceedingLimitPct": 53},
-        {"year": 2016, "motorwayExceedingLimitPct": 51},
-        {"year": 2017, "motorwayExceedingLimitPct": 50},
-        {"year": 2018, "motorwayExceedingLimitPct": 49},
-        {"year": 2019, "motorwayExceedingLimitPct": 47},
-        {"year": 2020, "motorwayExceedingLimitPct": 35},
-        {"year": 2021, "motorwayExceedingLimitPct": 43},
-        {"year": 2022, "motorwayExceedingLimitPct": 46}
-      ],
-      "latestYear": 2022,
-      "latestMotorwayExceedingPct": 46
-    }
-  },
-  "metadata": {
-    "sources": [
-      {"name": "DfT", "dataset": "Reported road casualties Great Britain (STATS19)", "url": "https://www.gov.uk/government/collections/road-accidents-and-safety-statistics", "frequency": "annual"},
-      {"name": "DfT", "dataset": "Drink-drive casualties in Great Britain", "url": "https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-2022", "frequency": "annual"},
-      {"name": "DfT", "dataset": "Vehicle speed compliance statistics", "url": "https://www.gov.uk/government/collections/vehicle-speed-compliance-statistics", "frequency": "annual"}
-    ],
-    "methodology": "Figures from STATS19 — the police reporting system for road accidents and casualties in Great Britain. Excludes Northern Ireland. KSI = Killed or Seriously Injured. Drink-drive casualty figures are estimates based on breath test failures and coroner reports.",
-    "knownIssues": ["STATS19 under-reports serious injuries — hospital data estimates are 3x higher", "COVID-19 reduced traffic in 2020, distorting fatality rates vs vehicle miles", "2022/23 data is provisional and may be revised upward"]
-  }
+  "roadDeaths": [
+    {"year": 1972, "deaths": 7763},
+    {"year": 1980, "deaths": 5953},
+    {"year": 1990, "deaths": 5217},
+    {"year": 2000, "deaths": 3409},
+    {"year": 2005, "deaths": 3201},
+    {"year": 2010, "deaths": 1857},
+    {"year": 2012, "deaths": 1754},
+    {"year": 2014, "deaths": 1775},
+    {"year": 2016, "deaths": 1792},
+    {"year": 2018, "deaths": 1784},
+    {"year": 2020, "deaths": 1460},
+    {"year": 2021, "deaths": 1558},
+    {"year": 2022, "deaths": 1711},
+    {"year": 2023, "deaths": 1695}
+  ],
+  "seriousInjuries": [
+    {"year": 2010, "count": 23551},
+    {"year": 2013, "count": 21657},
+    {"year": 2016, "count": 24101},
+    {"year": 2019, "count": 25945},
+    {"year": 2020, "count": 20235},
+    {"year": 2022, "count": 28380}
+  ],
+  "byRoadUser": [
+    {"type": "Car occupants", "pct": 43},
+    {"type": "Pedestrians", "pct": 24},
+    {"type": "Motorcyclists", "pct": 20},
+    {"type": "Cyclists", "pct": 7},
+    {"type": "Other", "pct": 6}
+  ]
 }

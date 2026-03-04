@@ -1,0 +1,26 @@
+{
+  "national": {
+    "affectedStudents": [
+      {"year": 2017, "pct": 10},
+      {"year": 2018, "pct": 12},
+      {"year": 2019, "pct": 13},
+      {"year": 2020, "pct": 11},
+      {"year": 2021, "pct": 14},
+      {"year": 2022, "pct": 17},
+      {"year": 2023, "pct": 19}
+    ],
+    "schoolsParticipating": [
+      {"year": 2020, "pct": 28},
+      {"year": 2021, "pct": 41},
+      {"year": 2022, "pct": 55},
+      {"year": 2023, "pct": 63}
+    ],
+    "byBarrier": [
+      {"barrier": "Cannot afford products", "pct": 48},
+      {"barrier": "Used inadequate alternatives", "pct": 31},
+      {"barrier": "Missed school / work", "pct": 27},
+      {"barrier": "Too embarrassed to ask for help", "pct": 38},
+      {"barrier": "Did not know help was available", "pct": 52}
+    ]
+  }
+}

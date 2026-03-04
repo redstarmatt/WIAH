@@ -1,0 +1,49 @@
+{
+  "national": {
+    "pharmacyCount": [
+      {"year": 2015, "count": 11683},
+      {"year": 2016, "count": 11620},
+      {"year": 2017, "count": 11510},
+      {"year": 2018, "count": 11380},
+      {"year": 2019, "count": 11225},
+      {"year": 2020, "count": 11053},
+      {"year": 2021, "count": 10958},
+      {"year": 2022, "count": 10734},
+      {"year": 2023, "count": 10575}
+    ],
+    "prescriptionVolume": [
+      {"year": 2015, "millions": 1021},
+      {"year": 2016, "millions": 1051},
+      {"year": 2017, "millions": 1069},
+      {"year": 2018, "millions": 1095},
+      {"year": 2019, "millions": 1128},
+      {"year": 2020, "millions": 1098},
+      {"year": 2021, "millions": 1142},
+      {"year": 2022, "millions": 1183},
+      {"year": 2023, "millions": 1201}
+    ],
+    "byService": [
+      {"service": "NHS prescription dispensing", "pct": 74},
+      {"service": "Over-the-counter advice", "pct": 62},
+      {"service": "Medicines use reviews", "pct": 41},
+      {"service": "Minor ailment services", "pct": 38},
+      {"service": "Vaccination services", "pct": 29}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS Business Services Authority",
+        "dataset": "Community Pharmacy Network",
+        "url": "https://www.nhsbsa.nhs.uk/",
+        "frequency": "annual"
+      },
+      {
+        "name": "Company Chemists&apos; Association",
+        "dataset": "Pharmacy Viability Survey",
+        "url": "https://www.thecca.org.uk/",
+        "frequency": "annual"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "national": {
+    "custodyNumbers": [
+      {"year": 2008, "count": 3006},
+      {"year": 2010, "count": 2481},
+      {"year": 2012, "count": 1944},
+      {"year": 2014, "count": 1311},
+      {"year": 2016, "count": 965},
+      {"year": 2018, "count": 819},
+      {"year": 2020, "count": 619},
+      {"year": 2022, "count": 487},
+      {"year": 2024, "count": 430}
+    ],
+    "reoffendingRate": [
+      {"year": 2013, "pct": 67},
+      {"year": 2015, "pct": 68},
+      {"year": 2017, "pct": 70},
+      {"year": 2019, "pct": 71},
+      {"year": 2021, "pct": 69},
+      {"year": 2023, "pct": 68}
+    ],
+    "byEthnicity": [
+      {"group": "Black", "pctOfCustody": 29},
+      {"group": "White", "pctOfCustody": 46},
+      {"group": "Mixed", "pctOfCustody": 11},
+      {"group": "Asian", "pctOfCustody": 7},
+      {"group": "Other / not stated", "pctOfCustody": 7}
+    ]
+  }
+}

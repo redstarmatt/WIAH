@@ -1,0 +1,37 @@
+{
+  "pensionerPoverty": [
+    {"year": 1997, "pct": 29},
+    {"year": 1999, "pct": 27},
+    {"year": 2001, "pct": 25},
+    {"year": 2003, "pct": 22},
+    {"year": 2005, "pct": 20},
+    {"year": 2007, "pct": 18},
+    {"year": 2009, "pct": 16},
+    {"year": 2011, "pct": 14},
+    {"year": 2013, "pct": 15},
+    {"year": 2015, "pct": 16},
+    {"year": 2017, "pct": 16},
+    {"year": 2019, "pct": 17},
+    {"year": 2021, "pct": 18},
+    {"year": 2023, "pct": 18}
+  ],
+  "statePensionValue": [
+    {"year": 2016, "weeklyPounds": 119},
+    {"year": 2017, "weeklyPounds": 122},
+    {"year": 2018, "weeklyPounds": 125},
+    {"year": 2019, "weeklyPounds": 129},
+    {"year": 2020, "weeklyPounds": 134},
+    {"year": 2021, "weeklyPounds": 137},
+    {"year": 2022, "weeklyPounds": 141},
+    {"year": 2023, "weeklyPounds": 156},
+    {"year": 2024, "weeklyPounds": 169}
+  ],
+  "byCategory": [
+    {"group": "Single female pensioners", "pct": 25},
+    {"group": "Private renters", "pct": 37},
+    {"group": "Age 80+", "pct": 22},
+    {"group": "Disabled pensioners", "pct": 26},
+    {"group": "BME pensioners", "pct": 28},
+    {"group": "All pensioners", "pct": 18}
+  ]
+}

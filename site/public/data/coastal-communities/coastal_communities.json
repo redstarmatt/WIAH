@@ -1,0 +1,39 @@
+{
+  "national": {
+    "wageGap": [
+      {"year": 2010, "coastalVsNational": -12},
+      {"year": 2012, "coastalVsNational": -13},
+      {"year": 2014, "coastalVsNational": -14},
+      {"year": 2016, "coastalVsNational": -15},
+      {"year": 2018, "coastalVsNational": -16},
+      {"year": 2020, "coastalVsNational": -16},
+      {"year": 2022, "coastalVsNational": -17},
+      {"year": 2023, "coastalVsNational": -17}
+    ],
+    "populationChange": [
+      {"year": 2010, "netMigrationThousands": -8},
+      {"year": 2012, "netMigrationThousands": -9},
+      {"year": 2014, "netMigrationThousands": -7},
+      {"year": 2016, "netMigrationThousands": -8},
+      {"year": 2018, "netMigrationThousands": -6},
+      {"year": 2020, "netMigrationThousands": 4},
+      {"year": 2022, "netMigrationThousands": -3},
+      {"year": 2023, "netMigrationThousands": -4}
+    ],
+    "byIndicator": [
+      {"indicator": "Child poverty rate", "coastalPct": 34, "nationalPct": 24},
+      {"indicator": "Adults with no qualifications", "coastalPct": 18, "nationalPct": 12},
+      {"indicator": "Households in fuel poverty", "coastalPct": 16, "nationalPct": 11},
+      {"indicator": "Working-age economic inactivity", "coastalPct": 24, "nationalPct": 19}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Annual Survey of Hours and Earnings", "url": "https://www.ons.gov.uk/", "frequency": "annual"},
+      {"name": "Institute for Fiscal Studies", "dataset": "Coastal Communities Analysis", "url": "https://www.ifs.org.uk/", "frequency": "annual"},
+      {"name": "DLUHC", "dataset": "English Indices of Deprivation", "url": "https://www.gov.uk/government/publications/english-indices-of-deprivation-2019", "frequency": "annual"}
+    ],
+    "methodology": "Coastal areas defined as local authorities with significant seaside towns. Deprivation indicators from English Index of Multiple Deprivation.",
+    "knownIssues": ["Coastal definition varies by source; includes some inland areas near coast"]
+  }
+}

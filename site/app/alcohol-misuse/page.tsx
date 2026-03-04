@@ -94,8 +94,9 @@ export default function AlcoholMisusePage() {
       <TopicNav topic="Alcohol Misuse" />
       <SectionNav sections={[
         { id: 'sec-overview', label: 'Overview' },
-        { id: 'sec-charts', label: 'Charts' },
         { id: 'sec-context', label: 'Context' },
+
+        { id: 'sec-charts', label: 'Charts' },
         { id: 'sec-sources', label: 'Sources' },
       ]} />
 
@@ -150,6 +151,31 @@ export default function AlcoholMisusePage() {
       </section>
 
       {/* Charts section */}
+      <section id="sec-context" className="bg-wiah-light px-6 py-12">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-wiah-black mb-6">The Context</h2>
+          <div className="max-w-2xl mt-4 mb-12">
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Alcohol-specific deaths reached a record 9,641 in 2021, driven by a sharp rise during COVID-19 lockdowns when reduced oversight, disrupted treatment services, and increased home drinking combined to lethal effect. The figure fell to 9,048 in 2022 but remains well above pre-pandemic levels. Three-quarters of these deaths are attributable to alcoholic liver disease &mdash; a condition that is almost entirely preventable and that develops silently over years before becoming acute. The trajectory is not a blip; it is the culmination of two decades of rising consumption among heavy drinkers.</p>
+            <p>The geography and demography of alcohol harm is not evenly distributed. People living in the most deprived areas of England die from alcohol-specific causes at roughly twice the rate of those in the least deprived. Men are twice as likely to die as women. These are not incidental findings &mdash; they reflect patterns of stress, access to treatment, drinking environment, and the accumulated disadvantage of communities that have seen public health infrastructure hollowed out. Late-night alcohol-related hospital admissions run at approximately one million per year, concentrated in urban areas with dense licensed premises.</p>
+            <p>England&apos;s policy record over the past decade is difficult to defend on public health grounds. Alcohol duty was frozen or cut between 2012 and 2022, reducing the real-terms price of alcohol at the same time as deaths were rising. England has no minimum unit pricing. Scotland introduced a 50p minimum unit price in May 2018 after a decade of legal challenge, and England has consistently chosen not to follow &mdash; leaving a natural experiment running in real time with lives on both sides of the border.</p>
+            <p>Scotland&apos;s minimum unit pricing has now generated several years of evaluable evidence. Research published by Public Health Scotland found a 13.4% reduction in alcohol-specific deaths in Scotland relative to a synthetic control in the first full year after introduction. Hospital admissions attributed wholly to alcohol fell by around 4%. The mechanism is straightforward: the policy targets the cheapest, strongest products &mdash; white cider, high-strength lager &mdash; consumed disproportionately by dependent and hazardous drinkers. England&apos;s refusal to adopt an equivalent measure represents an explicit policy choice to accept preventable deaths rather than constrain the drinks industry&apos;s pricing freedom.</p>
+            <p>The data on alcohol harm systematically undercounts its true scale. Death certificates record alcohol as the &ldquo;specific&rdquo; cause only when it is the primary certified cause; alcohol&apos;s contribution to cardiovascular disease, several cancers, and accidents is captured separately and inconsistently. Survey data on consumption relies on self-report and routinely underestimates population drinking by 40&ndash;60% against HMRC duty receipts. The distinction between &ldquo;dependent&rdquo; and &ldquo;harmful&rdquo; drinkers matters for treatment commissioning but is poorly tracked in routine data. What we can measure &mdash; deaths, admissions, liver disease &mdash; already shows a crisis. What we cannot measure well is almost certainly worse.</p>
+            </div>
+          </div>
+
+          {/* Positive callout */}
+          <PositiveCallout
+            title="Scotland&apos;s minimum unit pricing cut alcohol deaths"
+            value="13.4%"
+            unit="reduction"
+            description="Scotland introduced a minimum unit price for alcohol of 50p/unit in May 2018 &mdash; the first such policy in the world. Five-year evaluation data shows alcohol-specific deaths fell 13.4% in Scotland compared to a 4.3% rise in England and Wales over the same period. Wales introduced MUP in 2020. The UK government has not adopted it for England."
+            source="Public Health Scotland, Scottish National Drinking Survey. Retrieved 2025-03-04."
+          />
+        </div>
+      </section>
+
+      {/* Sources section */}
       <section id="sec-charts" className="bg-white px-6 py-12">
         <div className="max-w-3xl mx-auto">
           {/* Chart 1: Deaths */}
@@ -239,29 +265,6 @@ export default function AlcoholMisusePage() {
       </section>
 
       {/* Context section */}
-      <section id="sec-context" className="bg-wiah-light px-6 py-12">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-wiah-black mb-6">The Context</h2>
-          <div className="max-w-2xl mt-4 mb-12">
-            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Alcohol-specific deaths in the UK reached 9,641 in 2021 &mdash; the highest on record &mdash; and fell only slightly to 9,048 in 2022. Three-quarters of those deaths are from alcoholic liver disease. The death rate in Scotland, at 22.3 per 100,000, is nearly double that of England at 12.9 per 100,000. Alcohol drives roughly 900,000 hospital admissions per year in England, one in every fourteen emergency admissions, at a direct cost to the NHS of &pound;3.5 billion. Across the full economy &mdash; healthcare, criminal justice, lost productivity &mdash; the Office for Health Inequalities and Disparities estimates the total cost at &pound;27.4 billion a year.</p>
-              <p>The harm is sharply concentrated by deprivation. People in the most deprived areas of England are twice as likely to die from alcohol as those in the least deprived, and the North of England and Scotland carry a disproportionate share of that burden. The pattern contains an apparent paradox: people in the most deprived communities often drink less in total volume than those in wealthier ones, but when they do drink they do so more intensively and in more harmful patterns. Poverty, stress, poorer underlying health, and less access to early treatment all amplify the damage done by the same unit of alcohol.</p>
-              <p>The policy record on alcohol is difficult to defend on evidence. UK alcohol duty rates were frozen or cut repeatedly between 2012 and 2022, leaving real-terms revenues lower than fifteen years ago. A 2023 reform introduced a strength-based structure, but overall rates remain modest. The contrast with Scotland is instructive: Scotland&apos;s introduction of minimum unit pricing at 50p per unit in 2018 was followed by a 13.4% fall in alcohol-specific deaths, against a 4.3% rise in England and Wales over the same period. Wales adopted MUP in 2020. England has not, despite the evidence &mdash; a gap that public health researchers attribute in part to sustained lobbying by the drinks industry.</p>
-            </div>
-          </div>
-
-          {/* Positive callout */}
-          <PositiveCallout
-            title="Scotland&apos;s minimum unit pricing cut alcohol deaths"
-            value="13.4%"
-            unit="reduction"
-            description="Scotland introduced a minimum unit price for alcohol of 50p/unit in May 2018 &mdash; the first such policy in the world. Five-year evaluation data shows alcohol-specific deaths fell 13.4% in Scotland compared to a 4.3% rise in England and Wales over the same period. Wales introduced MUP in 2020. The UK government has not adopted it for England."
-            source="Public Health Scotland, Scottish National Drinking Survey. Retrieved 2025-03-04."
-          />
-        </div>
-      </section>
-
-      {/* Sources section */}
       <section id="sec-sources" className="bg-white px-6 py-12">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-wiah-black mb-6">Sources &amp; Methodology</h2>

@@ -108,8 +108,9 @@ export default function AntibiticResistancePage() {
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-charts', label: 'Charts' },
           { id: 'sec-context', label: 'Context' },
+
+          { id: 'sec-charts', label: 'Charts' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
@@ -147,6 +148,23 @@ export default function AntibiticResistancePage() {
             />
           </div>
         </section>
+
+        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Antimicrobial resistance (AMR) kills an estimated 7,000 people in the UK every year and was directly responsible for 1.27 million deaths globally in 2019, according to a landmark Lancet study &mdash; more than HIV or malaria. Without concerted action, the O&apos;Neill Review projects that figure will reach 10 million per year by 2050. The mechanism is evolutionary: bacteria exposed to antibiotics that do not kill them entirely develop resistance over generations. In England, the scale is already visible in routine data. Of all E. coli bloodstream infections &mdash; the most common bloodstream infection in the country &mdash; 46&percnt; are now resistant to third-generation cephalosporins, up from 38&percnt; in 2016. MRSA rates fell sharply from their mid-2000s peak but have begun rising again.</p>
+            <p>The drivers of resistance span three interconnected systems. In human medicine, antibiotics have historically been overprescribed &mdash; for viral infections they cannot treat, or as a precaution rather than a diagnosis. In agriculture, an estimated 60&percnt; of global antibiotic use occurs in livestock, often to promote growth rather than treat illness. In the environment, pharmaceutical manufacturing waste &mdash; particularly from drug factories in India and China &mdash; contaminates rivers with antibiotic residues, creating reservoirs of resistant bacteria far from any clinical setting. The pipeline has meanwhile run dry: no new antibiotic class has been successfully developed and commercialised since the 1980s. The reason is commercial. Antibiotics are cheap, used sparingly by design, and rapidly rendered obsolete by resistance &mdash; making them among the least attractive investments in the pharmaceutical sector.</p>
+            <p>The UK has made genuine progress on its own prescribing. Primary care antibiotic prescriptions fell 25&percnt; from a peak of 47 million items in 2014 to 35.5 million in 2023, driven by the NHS &ldquo;Start Smart, Then Focus&rdquo; antimicrobial stewardship programme. But overprescribing persists in some categories, and local reductions are overwhelmed by global overuse. To address the pipeline failure, the UK launched a novel &ldquo;Netflix model&rdquo; in 2022: the NHS pays &pound;10 million per year each to two antibiotic manufacturers &mdash; Pfizer and Shionogi &mdash; regardless of volume used, derisking R&amp;D investment. It is a significant policy innovation, but AMR is a global commons problem. Without equivalent action on agricultural use, manufacturing pollution, and prescribing in low&ndash; and middle-income countries, the resistance clock continues to run.</p>
+            <p>The most dangerous dimension of antibiotic resistance is not overuse but underinvestment. Pharmaceutical companies have largely abandoned antibiotic development because the economics are perverse: a successful new antibiotic is deliberately used as little as possible to preserve its effectiveness, generating minimal revenue compared with drugs for chronic conditions taken daily for decades. Of the 18 major pharmaceutical companies active in antibiotic research in the 1980s, only a handful remain. The UK has attempted to address this market failure through a world-first &ldquo;subscription model,&rdquo; in which NHS England pays an annual fixed fee for access to two critical antibiotics&mdash;cefiderocol and ceftazidime-avibactam&mdash;regardless of the volume used, delinked from sales. This pilot, valued at up to &pound;10 million per antibiotic per year, is being watched internationally as a potential template, though critics argue the sums remain too small to genuinely incentivise pipeline investment. The WHO&apos;s priority pathogens list identifies carbapenem-resistant Enterobacteriaceae and drug-resistant Neisseria gonorrhoeae among the most urgent threats. Meanwhile, an environmental dimension receives insufficient attention: antibiotics enter rivers through pharmaceutical manufacturing discharge, agricultural runoff, and inadequately treated sewage, creating environmental reservoirs where resistance genes develop and spread. Drug-resistant tuberculosis remains a specific concern in parts of London and other cities with high rates of migration from endemic regions.</p>
+            <p>The UK operates one of the world&apos;s strongest AMR surveillance systems, but its data still has significant blind spots. Laboratory-confirmed resistance rates depend on clinicians actually taking cultures before prescribing&mdash;in practice, only a fraction of suspected infections are sent for testing, biasing surveillance toward more severe or treatment-resistant cases. Community prescribing data, collected through the NHS Business Services Authority, is comprehensive and timely, but secondary care prescribing is patchier and harder to attribute to specific clinical indications. The widely cited global figure of 1.27 million deaths attributable to AMR in 2019 carries wide uncertainty intervals and relies on statistical modelling rather than direct enumeration, particularly for low-income countries with limited laboratory capacity. Agricultural antibiotic use data in the UK has improved considerably through the VARSS reporting framework, but not all livestock sectors report with equal granularity, and aquaculture data remains limited. Environmental surveillance&mdash;testing rivers and wastewater for antibiotic residues and resistance genes&mdash;is conducted by research groups rather than through any systematic national programme. Surveillance data cannot distinguish between resistance that evolved domestically and resistance imported through international travel, medical tourism, or the global food trade. There is no validated model for predicting when any specific antibiotic will become clinically ineffective in a given population.</p>
+          </div>
+        </section>
+
+        <PositiveCallout
+          title="UK antibiotic prescribing down 25% since 2014"
+          value="-25%"
+          description="The UK&apos;s 2019&ndash;2024 National Action Plan set targets to reduce inappropriate antibiotic prescriptions in primary care. Prescriptions fell from 47M items in 2014 to 35.5M in 2023 &mdash; one of the sharpest declines in the developed world. But resistance continues to rise because global overuse outpaces local reductions."
+          source="Source: NHS England — Primary Care Prescribing Analysis, 2014&ndash;2023."
+        />
 
         <section id="sec-charts" className="mt-16 mb-16">
           <ScrollReveal>
@@ -197,21 +215,6 @@ export default function AntibiticResistancePage() {
             </div>
           </ScrollReveal>
         </section>
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Antimicrobial resistance (AMR) kills an estimated 7,000 people in the UK every year and was directly responsible for 1.27 million deaths globally in 2019, according to a landmark Lancet study &mdash; more than HIV or malaria. Without concerted action, the O&apos;Neill Review projects that figure will reach 10 million per year by 2050. The mechanism is evolutionary: bacteria exposed to antibiotics that do not kill them entirely develop resistance over generations. In England, the scale is already visible in routine data. Of all E. coli bloodstream infections &mdash; the most common bloodstream infection in the country &mdash; 46&percnt; are now resistant to third-generation cephalosporins, up from 38&percnt; in 2016. MRSA rates fell sharply from their mid-2000s peak but have begun rising again.</p>
-            <p>The drivers of resistance span three interconnected systems. In human medicine, antibiotics have historically been overprescribed &mdash; for viral infections they cannot treat, or as a precaution rather than a diagnosis. In agriculture, an estimated 60&percnt; of global antibiotic use occurs in livestock, often to promote growth rather than treat illness. In the environment, pharmaceutical manufacturing waste &mdash; particularly from drug factories in India and China &mdash; contaminates rivers with antibiotic residues, creating reservoirs of resistant bacteria far from any clinical setting. The pipeline has meanwhile run dry: no new antibiotic class has been successfully developed and commercialised since the 1980s. The reason is commercial. Antibiotics are cheap, used sparingly by design, and rapidly rendered obsolete by resistance &mdash; making them among the least attractive investments in the pharmaceutical sector.</p>
-            <p>The UK has made genuine progress on its own prescribing. Primary care antibiotic prescriptions fell 25&percnt; from a peak of 47 million items in 2014 to 35.5 million in 2023, driven by the NHS &ldquo;Start Smart, Then Focus&rdquo; antimicrobial stewardship programme. But overprescribing persists in some categories, and local reductions are overwhelmed by global overuse. To address the pipeline failure, the UK launched a novel &ldquo;Netflix model&rdquo; in 2022: the NHS pays &pound;10 million per year each to two antibiotic manufacturers &mdash; Pfizer and Shionogi &mdash; regardless of volume used, derisking R&amp;D investment. It is a significant policy innovation, but AMR is a global commons problem. Without equivalent action on agricultural use, manufacturing pollution, and prescribing in low&ndash; and middle-income countries, the resistance clock continues to run.</p>
-          </div>
-        </section>
-
-        <PositiveCallout
-          title="UK antibiotic prescribing down 25% since 2014"
-          value="-25%"
-          description="The UK&apos;s 2019&ndash;2024 National Action Plan set targets to reduce inappropriate antibiotic prescriptions in primary care. Prescriptions fell from 47M items in 2014 to 35.5M in 2023 &mdash; one of the sharpest declines in the developed world. But resistance continues to rise because global overuse outpaces local reductions."
-          source="Source: NHS England — Primary Care Prescribing Analysis, 2014&ndash;2023."
-        />
 
         <section id="sec-sources" className="max-w-2xl mt-12 pt-8 border-t border-wiah-border">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources</h2>

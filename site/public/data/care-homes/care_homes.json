@@ -1,0 +1,30 @@
+{
+  "national": {
+    "cqcRatings": [
+      {"year": 2016, "outstanding": 2, "good": 65, "requiresImprovement": 27, "inadequate": 6},
+      {"year": 2017, "outstanding": 3, "good": 67, "requiresImprovement": 25, "inadequate": 5},
+      {"year": 2018, "outstanding": 4, "good": 69, "requiresImprovement": 22, "inadequate": 5},
+      {"year": 2019, "outstanding": 4, "good": 72, "requiresImprovement": 20, "inadequate": 4},
+      {"year": 2020, "outstanding": 4, "good": 73, "requiresImprovement": 19, "inadequate": 4},
+      {"year": 2021, "outstanding": 3, "good": 71, "requiresImprovement": 22, "inadequate": 4},
+      {"year": 2022, "outstanding": 3, "good": 69, "requiresImprovement": 24, "inadequate": 4},
+      {"year": 2023, "outstanding": 3, "good": 72, "requiresImprovement": 21, "inadequate": 4}
+    ],
+    "staffVacancies": [
+      {"year": 2016, "thousands": 89},
+      {"year": 2017, "thousands": 95},
+      {"year": 2018, "thousands": 102},
+      {"year": 2019, "thousands": 112},
+      {"year": 2020, "thousands": 105},
+      {"year": 2021, "thousands": 118},
+      {"year": 2022, "thousands": 152},
+      {"year": 2023, "thousands": 131}
+    ],
+    "byFundingType": [
+      {"type": "Local authority funded", "pct": 38},
+      {"type": "Self-funded", "pct": 44},
+      {"type": "NHS funded", "pct": 8},
+      {"type": "Other / charity", "pct": 10}
+    ]
+  }
+}
