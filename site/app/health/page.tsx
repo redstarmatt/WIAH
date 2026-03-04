@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
+import { formatDate } from '@/lib/format';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
@@ -837,7 +838,7 @@ export default function HealthPage() {
               Response times by ambulance trust
             </h2>
             <p className="text-sm text-wiah-mid font-mono mb-6">
-              Latest month ({ambData.national.timeSeries.at(-1)?.date}). Cat 1 target: 7 min · Cat 2 target: 18 min.
+              Latest month ({ambData.national.timeSeries.at(-1)?.date ? formatDate(ambData.national.timeSeries.at(-1)!.date) : ''}). Cat 1 target: 7 min · Cat 2 target: 18 min.
             </p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -891,7 +892,7 @@ export default function HealthPage() {
               GP wait by ICB area
             </h2>
             <p className="text-sm text-wiah-mid font-mono mb-6">
-              Latest month ({gpData.national.timeSeries.at(-1)?.date}). 42 Integrated Care Boards.
+              Latest month ({gpData.national.timeSeries.at(-1)?.date ? formatDate(gpData.national.timeSeries.at(-1)!.date) : ''}). 42 Integrated Care Boards.
             </p>
             <div className="divide-y divide-wiah-border">
               {gpData.regional.byICB.slice(0, 15).map(icb => {

@@ -529,7 +529,7 @@ export default function WaterPage() {
             <p className="text-sm text-wiah-mid mb-4">
               Total monitored discharge hours. All 10 water and sewerage companies in England and Wales.
             </p>
-            <div className="border border-wiah-border rounded-lg overflow-hidden">
+            <div className="border border-wiah-border rounded-lg overflow-hidden overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-wiah-light">
