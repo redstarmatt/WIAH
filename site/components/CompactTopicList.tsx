@@ -25,15 +25,16 @@ export default function CompactTopicList({ topics, maxVisible = 6 }: CompactTopi
             <Link
               key={t.slug}
               href={t.href}
-              className="flex items-baseline justify-between gap-2 py-2 border-b border-wiah-border/40 hover:bg-wiah-light/50 transition-colors px-1 -mx-1 rounded-sm group"
+              className="flex items-center justify-between gap-2 py-2.5 border-b border-wiah-border/50 hover:border-wiah-blue/40 transition-colors group"
             >
-              <span className="text-sm font-semibold text-wiah-black group-hover:text-wiah-blue truncate">
+              <span className="text-sm font-semibold text-wiah-black group-hover:text-wiah-blue group-hover:underline underline-offset-2 truncate">
                 {t.topic}
               </span>
-              <span className="flex items-baseline gap-1 flex-shrink-0">
+              <span className="flex items-center gap-1.5 flex-shrink-0">
                 <span className="font-mono text-sm text-wiah-black">{m.value}</span>
                 {m.unit && <span className="font-mono text-xs text-wiah-mid">{m.unit}</span>}
                 <DirectionArrow direction={m.direction} polarity={m.polarity} size={13} />
+                <span className="font-mono text-xs text-wiah-border group-hover:text-wiah-blue transition-colors">→</span>
               </span>
             </Link>
           );

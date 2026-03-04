@@ -56,16 +56,19 @@ export default function HomePage() {
           </div>
 
           {/* Category quick-nav */}
-          <div className="mt-8 flex flex-wrap gap-2">
-            {CATEGORIES.map((cat) => (
-              <a
-                key={cat.slug}
-                href={`#${cat.slug}`}
-                className="px-3 py-1.5 rounded-full font-mono text-xs bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"
-              >
-                {cat.name}
-              </a>
-            ))}
+          <div className="mt-8">
+            <p className="font-mono text-xs text-wiah-mid mb-3">Jump to</p>
+            <div className="flex flex-wrap gap-2">
+              {CATEGORIES.map((cat) => (
+                <a
+                  key={cat.slug}
+                  href={`#${cat.slug}`}
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full font-mono text-xs border border-white/20 text-white/70 hover:bg-white/15 hover:text-white hover:border-white/40 transition-colors"
+                >
+                  {cat.name} <span className="opacity-50">↓</span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
