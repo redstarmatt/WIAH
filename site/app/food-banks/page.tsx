@@ -76,20 +76,17 @@ export default function FoodBanksPage() {
     <main>
       <TopicNav topic="Food Banks" />
 
-      {/* Hero section */}
-      <section className="bg-wiah-dark text-white px-6 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto">
-          <TopicHeader
-            topic="Food Banks"
-            colour="#E63946"
-            question="Why Are So Many People Using Food Banks?"
-            finding="The Trussell Trust distributed 3.1 million food parcels in 2023/24 &mdash; more than triple the 2013/14 total. 1.1 million went to children. The independent food bank sector adds a further 30%. 7.2 million UK households experienced food insecurity in 2022/23."
-          />
-        </div>
-      </section>
+      <div className="max-w-4xl mx-auto px-6 pt-12">
+        <TopicHeader
+          topic="Food Banks"
+          colour="#E63946"
+          question="Why Are So Many People Using Food Banks?"
+          finding="The Trussell Trust distributed 3.1 million food parcels in 2023/24 &mdash; more than triple the 2013/14 total. 1.1 million went to children. The independent food bank sector adds a further 30%. 7.2 million UK households experienced food insecurity in 2022/23."
+        />
+      </div>
 
       {/* Editorial context */}
-      <section id="sec-context" className="max-w-4xl mx-auto px-6 pt-12 pb-0">
+      <section id="sec-context" className="max-w-4xl mx-auto px-6 pt-4 pb-0">
         <div className="max-w-2xl text-base text-wiah-black leading-[1.7] space-y-4">
           <p>
             The Trussell Trust distributed 913,000 emergency food parcels in 2013/14. By 2022/23 that figure had reached 3.13 million &mdash; a 242% increase in a decade. The 2023/24 total eased slightly to 2.99 million but remained three times the 2013/14 level; 1.1 million of those parcels went to children. The Trussell Trust operates around 1,300 centres, yet independent food banks &mdash; coordinated through the IFAN network and others &mdash; add an estimated 30&ndash;50% more provision on top. Referral data for 2022/23 shows low income (32%), benefit delays (21%), and benefit changes (18%) as the three leading causes.

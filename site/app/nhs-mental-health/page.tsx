@@ -214,7 +214,9 @@ export default function MentalHealthPage() {
                       <div className="flex-shrink-0 w-40">
                         <p className="text-sm text-wiah-black font-medium">{item.condition}</p>
                       </div>
-                      <div className="flex-grow h-8 rounded" style={{ width: pct + '%', backgroundColor: colour }} />
+                      <div className="flex-grow">
+                        <div className="h-8 rounded" style={{ width: pct + '%', backgroundColor: colour }} />
+                      </div>
                       <div className="flex-shrink-0 w-16 text-right">
                         <p className="text-sm font-mono text-wiah-black">{item.pctOfCaseload}%</p>
                       </div>
