@@ -1,0 +1,42 @@
+{
+  "topic": "veteran-mental-health",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    { "date": "2017", "opCourageReferrals": 8000,  "opCourageTreated": 6200  },
+    { "date": "2018", "opCourageReferrals": 10000, "opCourageTreated": 7800  },
+    { "date": "2019", "opCourageReferrals": 13000, "opCourageTreated": 10100 },
+    { "date": "2020", "opCourageReferrals": 14000, "opCourageTreated": 10900 },
+    { "date": "2021", "opCourageReferrals": 16000, "opCourageTreated": 12400 },
+    { "date": "2022", "opCourageReferrals": 18000, "opCourageTreated": 14000 },
+    { "date": "2023", "opCourageReferrals": 21000, "opCourageTreated": 16200 },
+    { "date": "2024", "opCourageReferrals": 22000, "opCourageTreated": 17000 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "Op COURAGE Veterans Mental Health and Wellbeing Service statistics",
+        "url": "https://www.england.nhs.uk/mental-health/adults/veterans/",
+        "frequency": "annual"
+      },
+      {
+        "name": "King's Centre for Military Health Research",
+        "dataset": "Mental health of the UK armed forces and veterans",
+        "url": "https://www.kcl.ac.uk/research/centre-for-military-health-research",
+        "frequency": "occasional"
+      },
+      {
+        "name": "Office for Veterans&apos; Affairs",
+        "dataset": "The Veterans Strategy Action Plan 2022&ndash;24",
+        "url": "https://www.gov.uk/government/publications/veterans-strategy-action-plan-2022-to-2024",
+        "frequency": "biennial"
+      }
+    ],
+    "methodology": "Op COURAGE referral and treatment figures are published annually by NHS England. Mental health prevalence estimates (PTSD and CMD rates) draw on King's Centre for Military Health Research cohort studies, which survey both serving and ex-serving personnel at intervals. Wait time figures are from NHS England commissioned service monitoring.",
+    "knownIssues": [
+      "Op COURAGE referrals include self-referrals, GP referrals, and third-sector referrals; changes in referral pathway promotion may inflate apparent treatment growth",
+      "PTSD prevalence estimates from King's Centre studies are from cohort samples that may not represent all veterans, particularly older veterans and those from ethnic minority backgrounds",
+      "Wait time averages mask significant regional variation between the four national Op COURAGE hub areas"
+    ]
+  }
+}

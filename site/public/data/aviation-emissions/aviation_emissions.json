@@ -1,0 +1,36 @@
+{
+  "topic": "aviation-emissions",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2010", "emissionsMt": 35.2, "passengersMillion": 211 },
+      { "date": "2011", "emissionsMt": 34.8, "passengersMillion": 219 },
+      { "date": "2012", "emissionsMt": 34.5, "passengersMillion": 223 },
+      { "date": "2013", "emissionsMt": 34.9, "passengersMillion": 229 },
+      { "date": "2014", "emissionsMt": 35.4, "passengersMillion": 240 },
+      { "date": "2015", "emissionsMt": 35.8, "passengersMillion": 251 },
+      { "date": "2016", "emissionsMt": 36.2, "passengersMillion": 259 },
+      { "date": "2017", "emissionsMt": 36.7, "passengersMillion": 268 },
+      { "date": "2018", "emissionsMt": 37.1, "passengersMillion": 276 },
+      { "date": "2019", "emissionsMt": 37.4, "passengersMillion": 286 },
+      { "date": "2020", "emissionsMt": 14.2, "passengersMillion": 75 },
+      { "date": "2021", "emissionsMt": 18.6, "passengersMillion": 100 },
+      { "date": "2022", "emissionsMt": 30.5, "passengersMillion": 218 },
+      { "date": "2023", "emissionsMt": 34.9, "passengersMillion": 250 },
+      { "date": "2024", "emissionsMt": 35.8, "passengersMillion": 258 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "DESNZ / ONS", "dataset": "UK greenhouse gas emissions by source", "url": "https://www.gov.uk/government/statistics/final-uk-greenhouse-gas-emissions-national-statistics", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "CAA", "dataset": "UK aviation activity statistics", "url": "https://www.caa.co.uk/data-and-analysis/uk-aviation-market/airports/", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "HMRC", "dataset": "Air Passenger Duty statistics", "url": "https://www.gov.uk/government/statistics/air-passenger-duty-statistics", "retrieved": "2026-03-01", "frequency": "annual" }
+    ],
+    "methodology": "CO2 emissions (MtCO2e) are aviation's territorial emissions as reported in UK GHG national statistics. The wider climate impact (radiative forcing) of aviation is estimated at 2–4x the CO2 figure alone, reflecting contrail formation and high-altitude NOx effects. Passenger statistics are from CAA airport statistics. The £7bn tax exemption estimate covers no fuel duty (aviation kerosene exempt) and no VAT on international tickets, based on HMRC duty reconciliation analysis.",
+    "knownIssues": [
+      "Territorial emission statistics only capture emissions within UK airspace. Total lifecycle aviation emissions — including international legs from UK airports — are significantly higher.",
+      "The 7.5% climate impact figure uses a radiative forcing multiplier of approximately 2.7x CO2 alone; this multiplier is scientifically debated and ranges from 1.9x to 4x in different studies.",
+      "COVID-19 caused unprecedented disruption in 2020–2021; the recovery trajectory thereafter reflects pent-up demand, not underlying trend."
+    ]
+  }
+}

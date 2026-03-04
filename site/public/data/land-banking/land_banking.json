@@ -1,0 +1,61 @@
+{
+  "topic": "land-banking",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    { "date": "2010", "permissionsGranted": 192, "startsThousands": 106, "completionsThousands": 115 },
+    { "date": "2011", "permissionsGranted": 178, "startsThousands": 98,  "completionsThousands": 108 },
+    { "date": "2012", "permissionsGranted": 185, "startsThousands": 99,  "completionsThousands": 107 },
+    { "date": "2013", "permissionsGranted": 218, "startsThousands": 112, "completionsThousands": 109 },
+    { "date": "2014", "permissionsGranted": 240, "startsThousands": 131, "completionsThousands": 118 },
+    { "date": "2015", "permissionsGranted": 263, "startsThousands": 143, "completionsThousands": 143 },
+    { "date": "2016", "permissionsGranted": 280, "startsThousands": 153, "completionsThousands": 163 },
+    { "date": "2017", "permissionsGranted": 310, "startsThousands": 163, "completionsThousands": 183 },
+    { "date": "2018", "permissionsGranted": 360, "startsThousands": 165, "completionsThousands": 196 },
+    { "date": "2019", "permissionsGranted": 400, "startsThousands": 173, "completionsThousands": 213 },
+    { "date": "2020", "permissionsGranted": 320, "startsThousands": 123, "completionsThousands": 175 },
+    { "date": "2021", "permissionsGranted": 390, "startsThousands": 152, "completionsThousands": 216 },
+    { "date": "2022", "permissionsGranted": 450, "startsThousands": 163, "completionsThousands": 232 },
+    { "date": "2023", "permissionsGranted": 474, "startsThousands": 158, "completionsThousands": 234 },
+    { "date": "2024", "permissionsGranted": 460, "startsThousands": 140, "completionsThousands": 221 }
+  ],
+  "buildStartLagTimeSeries": [
+    { "date": "2015", "avgWeeksToStart": 84 },
+    { "date": "2016", "avgWeeksToStart": 90 },
+    { "date": "2017", "avgWeeksToStart": 98 },
+    { "date": "2018", "avgWeeksToStart": 112 },
+    { "date": "2019", "avgWeeksToStart": 126 },
+    { "date": "2020", "avgWeeksToStart": 148 },
+    { "date": "2021", "avgWeeksToStart": 155 },
+    { "date": "2022", "avgWeeksToStart": 167 },
+    { "date": "2023", "avgWeeksToStart": 176 },
+    { "date": "2024", "avgWeeksToStart": 179 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Department for Levelling Up, Housing and Communities",
+        "dataset": "House building: new build dwellings (live tables)",
+        "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-house-building",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Lichfields Planning Consultancy",
+        "dataset": "From Permission to Completion analysis",
+        "url": "https://lichfields.uk/content/insights/from-permission-to-completion",
+        "frequency": "annual"
+      },
+      {
+        "name": "Centre for Progressive Policy",
+        "dataset": "Land banking and planning permissions research",
+        "url": "https://www.progressive-policy.net/publications/unlocking-housing-supply",
+        "frequency": "occasional"
+      }
+    ],
+    "methodology": "Permissions granted figures are major residential planning applications approved in England. Build starts and completions are DLUHC live table estimates. Lag time data derives from Lichfields analysis tracking individual planning permissions through to commencement on site.",
+    "knownIssues": [
+      "Planning permissions can lapse; not all granted permissions represent genuinely deliverable sites",
+      "Build start definitions vary: DLUHC uses foundation-laying as the threshold, which some interpret differently",
+      "Large multi-phase sites inflate the permissions-to-starts gap even where development is genuinely progressing"
+    ]
+  }
+}

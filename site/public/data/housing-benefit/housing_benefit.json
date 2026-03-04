@@ -1,0 +1,45 @@
+{
+  "topic": "housing-benefit",
+  "lastUpdated": "2024-01-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2016", "avgShortfall": 0, "recipientsThousands": 1200 },
+      { "date": "2017", "avgShortfall": 10, "recipientsThousands": 1250 },
+      { "date": "2018", "avgShortfall": 30, "recipientsThousands": 1300 },
+      { "date": "2019", "avgShortfall": 60, "recipientsThousands": 1380 },
+      { "date": "2020", "avgShortfall": 90, "recipientsThousands": 1450 },
+      { "date": "2021", "avgShortfall": 130, "recipientsThousands": 1500 },
+      { "date": "2022", "avgShortfall": 160, "recipientsThousands": 1550 },
+      { "date": "2023", "avgShortfall": 190, "recipientsThousands": 1600 },
+      { "date": "2024", "avgShortfall": 40, "recipientsThousands": 1600 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DWP",
+        "dataset": "Housing benefit and LHA statistics",
+        "url": "https://www.gov.uk/government/collections/local-housing-allowance-statistics",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Shelter",
+        "dataset": "LHA shortfall analysis",
+        "url": "https://england.shelter.org.uk/professional_resources/policy_and_research",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Private rental market statistics",
+        "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privaterentandhousepricesuk/latest",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Local Housing Allowance shortfall figures represent the average gap between the LHA rate payable for a given property size and area, and the median market rent for equivalent properties in that area, as calculated by Shelter and JRF using DWP LHA rates and ONS/VOA private rental market data. Recipient figures are DWP benefit units in the private rented sector receiving housing benefit or the housing cost element of Universal Credit.",
+    "knownIssues": [
+      "LHA was reset to the 30th percentile of local rents in April 2024; the 2024 shortfall figure reflects the post-reset average and is not directly comparable to 2016-2023 figures",
+      "Shortfall varies substantially by area: in inner London the pre-2024 shortfall was over £500/month; in some northern towns it was minimal",
+      "Recipient numbers include some households who moved from Housing Benefit to Universal Credit housing costs during 2019-2023; the two systems have slightly different rules, creating a break in the series"
+    ]
+  }
+}

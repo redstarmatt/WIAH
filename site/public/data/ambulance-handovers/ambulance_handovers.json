@@ -1,0 +1,40 @@
+{
+  "topic": "ambulance-handovers",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "handoverHours": {
+      "timeSeries": [
+        {"year": 2018, "hoursLostMillions": 0.42},
+        {"year": 2019, "hoursLostMillions": 0.51},
+        {"year": 2020, "hoursLostMillions": 0.63},
+        {"year": 2021, "hoursLostMillions": 1.12},
+        {"year": 2022, "hoursLostMillions": 1.58},
+        {"year": 2023, "hoursLostMillions": 1.82},
+        {"year": 2024, "hoursLostMillions": 1.64}
+      ]
+    },
+    "handoverDelays": {
+      "timeSeries": [
+        {"year": 2018, "over30minPct": 8.2, "over60minPct": 2.1},
+        {"year": 2019, "over30minPct": 10.5, "over60minPct": 3.4},
+        {"year": 2020, "over30minPct": 14.3, "over60minPct": 5.8},
+        {"year": 2021, "over30minPct": 22.7, "over60minPct": 11.2},
+        {"year": 2022, "over30minPct": 28.4, "over60minPct": 15.9},
+        {"year": 2023, "over30minPct": 30.1, "over60minPct": 18.4},
+        {"year": 2024, "over30minPct": 26.3, "over60minPct": 14.7}
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England", "dataset": "Ambulance Quality Indicators", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ambulance-quality-indicators/", "frequency": "monthly"},
+      {"name": "NHS England", "dataset": "A&E Attendances and Emergency Admissions", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/", "frequency": "monthly"}
+    ],
+    "methodology": "Handover delay hours calculated from ambulance trust returns. A handover is defined as the point at which clinical responsibility transfers from the ambulance crew to the receiving hospital. The 15-minute standard requires handover within 15 minutes of arrival.",
+    "knownIssues": [
+      "Reporting methodology changed in 2019, meaning pre-2019 data may not be directly comparable",
+      "Some trusts have incomplete reporting, particularly during winter surges",
+      "Data does not capture crew stand-down time after handover"
+    ]
+  }
+}

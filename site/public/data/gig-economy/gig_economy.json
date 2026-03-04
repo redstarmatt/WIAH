@@ -1,0 +1,45 @@
+{
+  "topic": "gig-economy",
+  "lastUpdated": "2024-01-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2016", "gigWorkersMillion": 2.8, "gigHourlyPay": 8.10, "employeeHourlyPay": 13.20 },
+      { "date": "2017", "gigWorkersMillion": 3.1, "gigHourlyPay": 8.30, "employeeHourlyPay": 13.60 },
+      { "date": "2018", "gigWorkersMillion": 3.4, "gigHourlyPay": 8.50, "employeeHourlyPay": 14.10 },
+      { "date": "2019", "gigWorkersMillion": 3.6, "gigHourlyPay": 8.70, "employeeHourlyPay": 14.70 },
+      { "date": "2020", "gigWorkersMillion": 3.8, "gigHourlyPay": 8.40, "employeeHourlyPay": 14.50 },
+      { "date": "2021", "gigWorkersMillion": 4.0, "gigHourlyPay": 9.10, "employeeHourlyPay": 15.30 },
+      { "date": "2022", "gigWorkersMillion": 4.2, "gigHourlyPay": 9.60, "employeeHourlyPay": 16.20 },
+      { "date": "2023", "gigWorkersMillion": 4.3, "gigHourlyPay": 10.10, "employeeHourlyPay": 17.40 },
+      { "date": "2024", "gigWorkersMillion": 4.4, "gigHourlyPay": 10.80, "employeeHourlyPay": 18.50 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "TUC / University of Hertfordshire",
+        "dataset": "Living on the Gig Economy Survey",
+        "url": "https://www.tuc.org.uk/research-analysis/reports/gig-economy",
+        "frequency": "periodic"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Labour Force Survey",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/latest",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "CIPD",
+        "dataset": "Good Work Index",
+        "url": "https://www.cipd.org/uk/knowledge/reports/good-work-index/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Gig worker estimates combine ONS Labour Force Survey data on self-employed workers in gig-associated occupations with academic survey estimates. Hourly pay figures for gig workers are net of work-related costs (vehicle, equipment, data) based on TUC/University of Hertfordshire survey methodology. Employee hourly pay uses ONS ASHE median hourly earnings for all employees.",
+    "knownIssues": [
+      "There is no official ONS definition or consistent measurement of 'gig economy' workers; estimates vary substantially between surveys and methodologies",
+      "The 2021 Supreme Court Uber ruling changed the legal status of some gig workers but did not change ONS survey classification",
+      "Net pay calculations depend on cost assumptions that vary by sector and are based on self-reported survey data"
+    ]
+  }
+}

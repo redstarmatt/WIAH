@@ -1,0 +1,61 @@
+{
+  "topic": "national-debt",
+  "lastUpdated": "2024-01-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2000", "debtPctGdp": 36.1, "interestBn": 27 },
+      { "date": "2001", "debtPctGdp": 34.5, "interestBn": 28 },
+      { "date": "2002", "debtPctGdp": 34.8, "interestBn": 27 },
+      { "date": "2003", "debtPctGdp": 36.5, "interestBn": 27 },
+      { "date": "2004", "debtPctGdp": 39.4, "interestBn": 28 },
+      { "date": "2005", "debtPctGdp": 40.8, "interestBn": 30 },
+      { "date": "2006", "debtPctGdp": 40.9, "interestBn": 32 },
+      { "date": "2007", "debtPctGdp": 42.0, "interestBn": 34 },
+      { "date": "2008", "debtPctGdp": 49.7, "interestBn": 38 },
+      { "date": "2009", "debtPctGdp": 62.3, "interestBn": 42 },
+      { "date": "2010", "debtPctGdp": 72.5, "interestBn": 47 },
+      { "date": "2011", "debtPctGdp": 76.4, "interestBn": 49 },
+      { "date": "2012", "debtPctGdp": 80.8, "interestBn": 50 },
+      { "date": "2013", "debtPctGdp": 83.7, "interestBn": 51 },
+      { "date": "2014", "debtPctGdp": 84.0, "interestBn": 52 },
+      { "date": "2015", "debtPctGdp": 84.9, "interestBn": 50 },
+      { "date": "2016", "debtPctGdp": 84.5, "interestBn": 50 },
+      { "date": "2017", "debtPctGdp": 84.8, "interestBn": 52 },
+      { "date": "2018", "debtPctGdp": 84.0, "interestBn": 52 },
+      { "date": "2019", "debtPctGdp": 83.8, "interestBn": 52 },
+      { "date": "2020", "debtPctGdp": 95.0, "interestBn": 49 },
+      { "date": "2021", "debtPctGdp": 93.5, "interestBn": 52 },
+      { "date": "2022", "debtPctGdp": 94.9, "interestBn": 88 },
+      { "date": "2023", "debtPctGdp": 97.3, "interestBn": 106 },
+      { "date": "2024", "debtPctGdp": 98.8, "interestBn": 112 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Public sector finances, UK",
+        "url": "https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicsectorfinance/bulletins/publicsectorfinances/latest",
+        "frequency": "monthly"
+      },
+      {
+        "name": "OBR",
+        "dataset": "Economic and Fiscal Outlook",
+        "url": "https://obr.uk/efo/economic-and-fiscal-outlook-march-2024/",
+        "frequency": "twice yearly"
+      },
+      {
+        "name": "HM Treasury",
+        "dataset": "Debt Management Report",
+        "url": "https://www.gov.uk/government/publications/debt-management-report-2024-25",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Debt as percentage of GDP uses ONS Public Sector Net Debt (PSND) excluding Bank of England, expressed as a percentage of nominal GDP. Annual debt interest figures are central government net interest payments from ONS public sector finances data, calendar-year approximations. Historical figures prior to 2007 are sourced from OBR historical debt database.",
+    "knownIssues": [
+      "COVID-era 2020 figure reflects emergency borrowing; the spike in interest payments from 2022 reflects the switch to index-linked gilts during the inflation surge",
+      "PSND ex-BoE is the preferred OBR metric since 2021; earlier series used PSND including BoE, which can differ by several percentage points",
+      "Debt forecasts are sensitive to growth and inflation assumptions and revise substantially between OBR publications"
+    ]
+  }
+}

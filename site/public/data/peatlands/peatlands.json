@@ -1,0 +1,31 @@
+{
+  "topic": "peatlands",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2015", "restoredHectares": 0, "co2EmittedMt": 23.5 },
+      { "date": "2016", "restoredHectares": 3000, "co2EmittedMt": 23.4 },
+      { "date": "2017", "restoredHectares": 6000, "co2EmittedMt": 23.3 },
+      { "date": "2018", "restoredHectares": 9000, "co2EmittedMt": 23.2 },
+      { "date": "2019", "restoredHectares": 12000, "co2EmittedMt": 23.2 },
+      { "date": "2020", "restoredHectares": 17000, "co2EmittedMt": 23.1 },
+      { "date": "2021", "restoredHectares": 22000, "co2EmittedMt": 23.0 },
+      { "date": "2022", "restoredHectares": 27000, "co2EmittedMt": 22.9 },
+      { "date": "2023", "restoredHectares": 31000, "co2EmittedMt": 22.8 },
+      { "date": "2024", "restoredHectares": 35000, "co2EmittedMt": 22.7 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "IUCN UK Peatland Programme", "dataset": "UK peatland restoration monitoring", "url": "https://www.iucn-uk-peatlandprogramme.org/", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "DESNZ / ONS", "dataset": "UK GHG emissions by source: land use, land-use change and forestry", "url": "https://www.gov.uk/government/statistics/final-uk-greenhouse-gas-emissions-national-statistics", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "NatureScot", "dataset": "Peatland Action programme monitoring", "url": "https://www.nature.scot/professional-advice/land-and-sea-management/managing-land/peatland-action", "retrieved": "2026-03-01", "frequency": "annual" }
+    ],
+    "methodology": "Restored hectares are cumulative peatland restoration completions across UK (primarily Scotland's Peatland ACTION programme and England's Nature for Climate Peatland Grant Scheme). CO2 emitted is LULUCF sector peatland degradation emissions from UK national GHG inventory. The 3.2 billion tonne carbon store figure is from IUCN UK Peatland Programme analysis. 80% degraded figure is IUCN UK assessment. 250,000 ha by 2030 target is Government commitment under England Peat Action Plan plus Scottish and Welsh equivalents.",
+    "knownIssues": [
+      "Restoration completion figures differ across reporting bodies depending on whether 'restoration' means blocking drains, rewetting, or full revegetation — definitions vary.",
+      "The 23 million tonnes CO2 emission figure from degraded peat carries uncertainty of roughly ±5 Mt due to modelling assumptions about peat condition classes.",
+      "Restored peatland takes 10–30 years to fully transition from CO2 source to CO2 sink — early restoration work shows limited near-term climate benefit."
+    ]
+  }
+}

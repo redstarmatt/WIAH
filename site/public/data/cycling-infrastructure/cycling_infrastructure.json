@@ -1,0 +1,29 @@
+{
+  "topic": "cycling-infrastructure",
+  "lastUpdated": "2026-03-04",
+  "timeSeries": [
+    { "date": "2015", "cyclingSharePct": 1.8, "protectedLanesMiles": 300 },
+    { "date": "2016", "cyclingSharePct": 1.9, "protectedLanesMiles": 340 },
+    { "date": "2017", "cyclingSharePct": 2.0, "protectedLanesMiles": 380 },
+    { "date": "2018", "cyclingSharePct": 2.1, "protectedLanesMiles": 420 },
+    { "date": "2019", "cyclingSharePct": 2.2, "protectedLanesMiles": 465 },
+    { "date": "2020", "cyclingSharePct": 2.5, "protectedLanesMiles": 530 },
+    { "date": "2021", "cyclingSharePct": 2.3, "protectedLanesMiles": 580 },
+    { "date": "2022", "cyclingSharePct": 2.2, "protectedLanesMiles": 620 },
+    { "date": "2023", "cyclingSharePct": 2.2, "protectedLanesMiles": 650 },
+    { "date": "2024", "cyclingSharePct": 2.2, "protectedLanesMiles": 680 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Department for Transport", "dataset": "National Travel Survey: England", "url": "https://www.gov.uk/government/collections/national-travel-survey-statistics", "frequency": "annual", "retrieved": "2026-03-04" },
+      { "name": "Active Travel England", "dataset": "Cycling and Walking Investment Strategy: Annual Report", "url": "https://www.gov.uk/government/publications/cycling-and-walking-investment-strategy", "frequency": "annual", "retrieved": "2026-03-04" },
+      { "name": "Department for Transport", "dataset": "Reported Road Casualties Great Britain", "url": "https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023", "frequency": "annual", "retrieved": "2026-03-04" }
+    ],
+    "methodology": "Cycling modal share from National Travel Survey (England), measured as proportion of all trips made by bicycle. Protected cycle lane miles from Active Travel England annual infrastructure audit. Casualties from DfT Stats19 road accident reporting system.",
+    "knownIssues": [
+      "2020 COVID spike in cycling modal share reflects lockdown restrictions on other transport modes, not genuine structural shift",
+      "Protected cycle lane definition varies: some include light-segregation paint lanes, others require physical barrier; Active Travel England uses physical segregation criterion",
+      "Cyclist casualty data covers police-reported incidents only; actual casualties are estimated to be 2-3x higher due to under-reporting"
+    ]
+  }
+}

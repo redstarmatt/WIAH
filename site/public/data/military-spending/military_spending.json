@@ -1,0 +1,35 @@
+{
+  "topic": "military-spending",
+  "lastUpdated": "2026-03-04",
+  "timeSeries": [
+    { "date": "2000", "defencePctGdp": 2.4, "regularPersonnel": 212000 },
+    { "date": "2002", "defencePctGdp": 2.3, "regularPersonnel": 207000 },
+    { "date": "2004", "defencePctGdp": 2.4, "regularPersonnel": 204000 },
+    { "date": "2006", "defencePctGdp": 2.4, "regularPersonnel": 198000 },
+    { "date": "2008", "defencePctGdp": 2.5, "regularPersonnel": 190000 },
+    { "date": "2010", "defencePctGdp": 2.5, "regularPersonnel": 178000 },
+    { "date": "2012", "defencePctGdp": 2.3, "regularPersonnel": 165000 },
+    { "date": "2014", "defencePctGdp": 2.2, "regularPersonnel": 150000 },
+    { "date": "2016", "defencePctGdp": 2.2, "regularPersonnel": 140000 },
+    { "date": "2017", "defencePctGdp": 2.1, "regularPersonnel": 135000 },
+    { "date": "2018", "defencePctGdp": 2.1, "regularPersonnel": 132000 },
+    { "date": "2019", "defencePctGdp": 2.1, "regularPersonnel": 130000 },
+    { "date": "2020", "defencePctGdp": 2.2, "regularPersonnel": 129000 },
+    { "date": "2021", "defencePctGdp": 2.2, "regularPersonnel": 127000 },
+    { "date": "2022", "defencePctGdp": 2.2, "regularPersonnel": 125000 },
+    { "date": "2023", "defencePctGdp": 2.3, "regularPersonnel": 73000 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "NATO", "dataset": "Defence Expenditure of NATO Countries", "url": "https://www.nato.int/cps/en/natohq/news_197050.htm", "frequency": "annual", "retrieved": "2026-03-04" },
+      { "name": "Ministry of Defence", "dataset": "UK Armed Forces Personnel Statistics", "url": "https://www.gov.uk/government/statistics/uk-armed-forces-personnel-numbers", "frequency": "quarterly", "retrieved": "2026-03-04" },
+      { "name": "MOD", "dataset": "UK Defence in Numbers 2023", "url": "https://www.gov.uk/government/publications/uk-defence-in-numbers-2023", "frequency": "annual", "retrieved": "2026-03-04" }
+    ],
+    "methodology": "Defence spending as percentage of GDP uses NATO standardised methodology which includes nuclear, pension, and other costs not in all national definitions. Regular personnel figures from MOD biannual census (April and October). The 73,000 figure for 2023 reflects army regular strength only; total armed forces including RN and RAF is approximately 148,000.",
+    "knownIssues": [
+      "2023 regular personnel figure is Army only (73,000); total UK regular armed forces is approximately 148,000 across all three services",
+      "NATO GDP calculation methodology means UK percentage differs from SIPRI and other sources",
+      "Equipment budget figures include some reclassified civil nuclear costs from 2022 onwards"
+    ]
+  }
+}

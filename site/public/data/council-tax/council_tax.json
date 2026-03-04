@@ -1,0 +1,49 @@
+{
+  "topic": "council-tax",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    { "date": "2010", "bandDCouncilTax": 1439, "govGrantBillionReal": 28.2 },
+    { "date": "2011", "bandDCouncilTax": 1439, "govGrantBillionReal": 26.4 },
+    { "date": "2012", "bandDCouncilTax": 1439, "govGrantBillionReal": 24.8 },
+    { "date": "2013", "bandDCouncilTax": 1440, "govGrantBillionReal": 23.5 },
+    { "date": "2014", "bandDCouncilTax": 1468, "govGrantBillionReal": 22.2 },
+    { "date": "2015", "bandDCouncilTax": 1484, "govGrantBillionReal": 20.8 },
+    { "date": "2016", "bandDCouncilTax": 1530, "govGrantBillionReal": 19.6 },
+    { "date": "2017", "bandDCouncilTax": 1591, "govGrantBillionReal": 18.5 },
+    { "date": "2018", "bandDCouncilTax": 1671, "govGrantBillionReal": 17.8 },
+    { "date": "2019", "bandDCouncilTax": 1756, "govGrantBillionReal": 17.2 },
+    { "date": "2020", "bandDCouncilTax": 1818, "govGrantBillionReal": 17.0 },
+    { "date": "2021", "bandDCouncilTax": 1898, "govGrantBillionReal": 17.4 },
+    { "date": "2022", "bandDCouncilTax": 2065, "govGrantBillionReal": 17.1 },
+    { "date": "2023", "bandDCouncilTax": 2065, "govGrantBillionReal": 16.8 },
+    { "date": "2024", "bandDCouncilTax": 2171, "govGrantBillionReal": 16.5 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Department for Levelling Up, Housing and Communities",
+        "dataset": "Council tax levels set by local authorities",
+        "url": "https://www.gov.uk/government/collections/council-tax-statistics",
+        "frequency": "annual"
+      },
+      {
+        "name": "HM Treasury / DLUHC",
+        "dataset": "Local authority revenue expenditure and financing",
+        "url": "https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing",
+        "frequency": "annual"
+      },
+      {
+        "name": "Institute for Fiscal Studies",
+        "dataset": "Local government funding: the picture in 2024",
+        "url": "https://ifs.org.uk/publications/local-government-funding-picture-2024",
+        "frequency": "occasional"
+      }
+    ],
+    "methodology": "Band D council tax figures are the average charge across all English billing authorities for a Band D property, published annually by DLUHC. Government grant figures are net revenue support grant and other formula grants in real terms (2024 prices, GDP deflator). Figures exclude COVID emergency grants.",
+    "knownIssues": [
+      "Council tax averages mask very large variation between local authorities; some households pay over £3,000 per year while others pay under £1,200 for the same band",
+      "Government grants to local authorities have multiple components that have changed over time; comparing like with like requires adjusting for grant reclassifications",
+      "Real-terms calculations use the GDP deflator; using CPI or RPIJ would give somewhat different figures for the scale of cuts"
+    ]
+  }
+}

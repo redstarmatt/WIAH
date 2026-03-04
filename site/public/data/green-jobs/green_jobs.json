@@ -1,0 +1,31 @@
+{
+  "topic": "green-jobs",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2014", "lowCarbonJobsThousands": 430 },
+      { "date": "2015", "lowCarbonJobsThousands": 455 },
+      { "date": "2016", "lowCarbonJobsThousands": 480 },
+      { "date": "2017", "lowCarbonJobsThousands": 510 },
+      { "date": "2018", "lowCarbonJobsThousands": 545 },
+      { "date": "2019", "lowCarbonJobsThousands": 580 },
+      { "date": "2020", "lowCarbonJobsThousands": 605 },
+      { "date": "2021", "lowCarbonJobsThousands": 640 },
+      { "date": "2022", "lowCarbonJobsThousands": 700 },
+      { "date": "2023", "lowCarbonJobsThousands": 763 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "DESNZ", "dataset": "Low carbon and renewable energy economy (LCREE) survey", "url": "https://www.gov.uk/government/collections/uk-low-carbon-economy", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "ONS", "dataset": "UK Environmental Goods and Services Sector (EGSS)", "url": "https://www.ons.gov.uk/economy/environmentalaccounts/datasets/ukenvironmentalgoodsandservicessector", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "Offshore Wind Industry Council", "dataset": "Offshore wind supply chain employment", "url": "https://www.owic.org.uk/offshore-wind-sector-deal", "retrieved": "2026-03-01", "frequency": "annual" }
+    ],
+    "methodology": "Low-carbon economy employment is measured in the LCREE survey covering: renewable energy generation, energy efficiency products and services, low-carbon heat, carbon capture, environmental consulting, and related supply chains. The 763,000 figure is for 2023 from DESNZ LCREE. The 12% in deprived communities figure is derived from analysis matching LCREE establishment locations to IMD deciles. Green sector wage premium of +8% is from ONS ASHE analysis of LCREE sector SIC codes vs comparable non-green roles.",
+    "knownIssues": [
+      "LCREE survey methodology was revised in 2019, creating a break in the time series — figures before and after 2019 are not directly comparable.",
+      "Definition of 'green job' varies significantly between studies — some include all jobs at companies in green sectors, others only the green-relevant proportion of each worker's role.",
+      "Regional distribution data is based on establishment location which may undercount home-based and remote green workers, who may live in different regions than their employer's registered address."
+    ]
+  }
+}

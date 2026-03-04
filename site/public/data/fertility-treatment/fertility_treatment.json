@@ -1,0 +1,36 @@
+{
+  "topic": "fertility-treatment",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2016", "niceCompliantPct": 60, "avgWaitMonths": 9 },
+      { "date": "2017", "niceCompliantPct": 58, "avgWaitMonths": 10 },
+      { "date": "2018", "niceCompliantPct": 55, "avgWaitMonths": 12 },
+      { "date": "2019", "niceCompliantPct": 52, "avgWaitMonths": 14 },
+      { "date": "2020", "niceCompliantPct": 49, "avgWaitMonths": 16 },
+      { "date": "2021", "niceCompliantPct": 47, "avgWaitMonths": 17 },
+      { "date": "2022", "niceCompliantPct": 46, "avgWaitMonths": 18 },
+      { "date": "2023", "niceCompliantPct": 45, "avgWaitMonths": 18 }
+    ],
+    "nhsVsPrivate": {
+      "timeSeries": [
+        { "date": "2016", "nhsCycles": 22000, "privateCycles": 38000 },
+        { "date": "2017", "nhsCycles": 21000, "privateCycles": 40000 },
+        { "date": "2018", "nhsCycles": 20000, "privateCycles": 43000 },
+        { "date": "2019", "nhsCycles": 19500, "privateCycles": 46000 },
+        { "date": "2020", "nhsCycles": 17000, "privateCycles": 44000 },
+        { "date": "2021", "nhsCycles": 18000, "privateCycles": 50000 },
+        { "date": "2022", "nhsCycles": 17500, "privateCycles": 54000 },
+        { "date": "2023", "nhsCycles": 16500, "privateCycles": 58000 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "HFEA", "dataset": "Fertility Treatment Trends", "url": "https://www.hfea.gov.uk/about-us/publications/", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "NICE", "dataset": "Fertility Guideline CG156", "url": "https://www.nice.org.uk/guidance/cg156", "retrieved": "2026-03-01", "frequency": "periodic" }
+    ],
+    "methodology": "ICS compliance data drawn from annual HFEA surveys of NHS commissioning bodies. NHS cycle counts from HFEA register. Private cycle data from HFEA licensed clinic returns. Wait time estimates from patient charity surveys (Fertility Network UK).",
+    "knownIssues": ["ICS compliance data relies on self-reporting by commissioning bodies; some variation in how 'full compliance' is defined", "Wait time data from patient surveys rather than administrative records — may reflect selection bias"]
+  }
+}

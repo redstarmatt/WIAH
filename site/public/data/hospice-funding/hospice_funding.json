@@ -1,0 +1,45 @@
+{
+  "topic": "hospice-funding",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    { "date": "2014", "nhsFundingPct": 34, "charityFundingPct": 66, "hospicesInDeficitPct": 20 },
+    { "date": "2015", "nhsFundingPct": 33, "charityFundingPct": 67, "hospicesInDeficitPct": 25 },
+    { "date": "2016", "nhsFundingPct": 32, "charityFundingPct": 68, "hospicesInDeficitPct": 30 },
+    { "date": "2017", "nhsFundingPct": 31, "charityFundingPct": 69, "hospicesInDeficitPct": 35 },
+    { "date": "2018", "nhsFundingPct": 30, "charityFundingPct": 70, "hospicesInDeficitPct": 42 },
+    { "date": "2019", "nhsFundingPct": 29, "charityFundingPct": 71, "hospicesInDeficitPct": 50 },
+    { "date": "2020", "nhsFundingPct": 31, "charityFundingPct": 69, "hospicesInDeficitPct": 38 },
+    { "date": "2021", "nhsFundingPct": 30, "charityFundingPct": 70, "hospicesInDeficitPct": 45 },
+    { "date": "2022", "nhsFundingPct": 28, "charityFundingPct": 72, "hospicesInDeficitPct": 55 },
+    { "date": "2023", "nhsFundingPct": 27, "charityFundingPct": 73, "hospicesInDeficitPct": 58 },
+    { "date": "2024", "nhsFundingPct": 27, "charityFundingPct": 73, "hospicesInDeficitPct": 60 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Hospice UK",
+        "dataset": "Hospice Care UK Annual Report and funding analysis",
+        "url": "https://www.hospiceuk.org/about-us/media-centre/press-releases",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Palliative and end-of-life care commissioning data",
+        "url": "https://www.england.nhs.uk/eolc/",
+        "frequency": "annual"
+      },
+      {
+        "name": "Nuffield Trust",
+        "dataset": "Hospice financial sustainability analysis",
+        "url": "https://www.nuffieldtrust.org.uk/research/hospice-financial-sustainability",
+        "frequency": "occasional"
+      }
+    ],
+    "methodology": "NHS funding percentage represents NHS England commissioner payments to independent hospices as a share of total hospice income. Charity funding includes fundraising, legacies, and trading income. Hospices in deficit figures are drawn from Hospice UK annual surveys of members. Bed counts are from CQC registration data.",
+    "knownIssues": [
+      "NHS funding figures include both block contracts and activity-based payments, which are not fully comparable across years due to contracting model changes",
+      "Deficit reporting relies on self-reporting by hospices via Hospice UK survey; response rates vary and financially stressed hospices may under-report",
+      "The 2020 figures reflect emergency NHS support during COVID-19, creating an artificial uplift in NHS funding share that year"
+    ]
+  }
+}

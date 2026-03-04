@@ -1,0 +1,36 @@
+{
+  "topic": "solar-power",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2010", "capacityGW": 0.07, "generationPct": 0.0 },
+      { "date": "2011", "capacityGW": 0.75, "generationPct": 0.1 },
+      { "date": "2012", "capacityGW": 1.75, "generationPct": 0.3 },
+      { "date": "2013", "capacityGW": 2.73, "generationPct": 0.7 },
+      { "date": "2014", "capacityGW": 5.09, "generationPct": 1.2 },
+      { "date": "2015", "capacityGW": 8.09, "generationPct": 2.0 },
+      { "date": "2016", "capacityGW": 11.63, "generationPct": 2.5 },
+      { "date": "2017", "capacityGW": 12.37, "generationPct": 3.0 },
+      { "date": "2018", "capacityGW": 12.97, "generationPct": 3.8 },
+      { "date": "2019", "capacityGW": 13.26, "generationPct": 4.2 },
+      { "date": "2020", "capacityGW": 13.51, "generationPct": 4.6 },
+      { "date": "2021", "capacityGW": 14.00, "generationPct": 4.9 },
+      { "date": "2022", "capacityGW": 14.51, "generationPct": 4.9 },
+      { "date": "2023", "capacityGW": 15.82, "generationPct": 5.0 },
+      { "date": "2024", "capacityGW": 17.30, "generationPct": 5.5 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "DESNZ", "dataset": "Solar photovoltaics deployment", "url": "https://www.gov.uk/government/statistics/solar-photovoltaics-deployment", "retrieved": "2026-03-01", "frequency": "monthly" },
+      { "name": "National Grid ESO", "dataset": "Electricity generation by fuel type", "url": "https://www.nationalgrideso.com/data-portal/historic-generation-mix", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "DESNZ", "dataset": "Energy Trends UK", "url": "https://www.gov.uk/government/collections/energy-trends", "retrieved": "2026-03-01", "frequency": "quarterly" }
+    ],
+    "methodology": "Installed capacity is total operational solar PV capacity registered with DESNZ in GW (AC). Generation percentage is solar as a share of total UK electricity generated in the calendar year. Summer peak generation days can see solar meet over 30% of demand; the annual average is far lower due to UK seasonal daylight hours and cloud cover.",
+    "knownIssues": [
+      "Installed capacity includes domestic, commercial, and utility-scale installations — the mix has shifted significantly toward ground-mounted utility scale since 2016.",
+      "Generation percentage varies significantly by year depending on weather; 2023 was particularly cloudy, suppressing the annual figure.",
+      "Embedded (behind-the-meter) solar generation is estimated, not directly metered, introducing uncertainty into generation statistics."
+    ]
+  }
+}

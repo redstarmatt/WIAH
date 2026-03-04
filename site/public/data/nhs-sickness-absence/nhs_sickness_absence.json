@@ -1,0 +1,46 @@
+{
+  "topic": "nhs-sickness-absence",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "absenceRate": {
+      "timeSeries": [
+        {"year": 2015, "absenceRate": 4.23},
+        {"year": 2016, "absenceRate": 4.16},
+        {"year": 2017, "absenceRate": 4.22},
+        {"year": 2018, "absenceRate": 4.19},
+        {"year": 2019, "absenceRate": 4.58},
+        {"year": 2020, "absenceRate": 4.86},
+        {"year": 2021, "absenceRate": 5.22},
+        {"year": 2022, "absenceRate": 5.64},
+        {"year": 2023, "absenceRate": 5.28},
+        {"year": 2024, "absenceRate": 5.14}
+      ]
+    },
+    "topCauses": {
+      "timeSeries": [
+        {"year": 2015, "mentalHealth": 25.1, "musculoskeletal": 18.4, "respiratory": 12.3},
+        {"year": 2016, "mentalHealth": 25.8, "musculoskeletal": 18.1, "respiratory": 12.1},
+        {"year": 2017, "mentalHealth": 26.3, "musculoskeletal": 17.8, "respiratory": 11.9},
+        {"year": 2018, "mentalHealth": 26.9, "musculoskeletal": 17.5, "respiratory": 11.6},
+        {"year": 2019, "mentalHealth": 27.4, "musculoskeletal": 17.2, "respiratory": 11.3},
+        {"year": 2020, "mentalHealth": 28.8, "musculoskeletal": 16.5, "respiratory": 14.8},
+        {"year": 2021, "mentalHealth": 29.3, "musculoskeletal": 16.1, "respiratory": 13.9},
+        {"year": 2022, "mentalHealth": 30.1, "musculoskeletal": 15.8, "respiratory": 12.7},
+        {"year": 2023, "mentalHealth": 29.8, "musculoskeletal": 15.9, "respiratory": 11.4},
+        {"year": 2024, "mentalHealth": 29.5, "musculoskeletal": 15.6, "respiratory": 10.8}
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS Digital", "dataset": "NHS Sickness Absence Rates", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-sickness-absence-rates", "frequency": "monthly"},
+      {"name": "NHS England", "dataset": "NHS Staff Survey", "url": "https://www.nhsstaffsurveys.com/", "frequency": "annual"}
+    ],
+    "methodology": "Sickness absence rate is calculated as the percentage of available working days lost to sickness absence. Data covers all NHS Hospital & Community Health Service (HCHS) staff in England.",
+    "knownIssues": [
+      "COVID-related absences included from 2020, inflating respiratory and overall rates",
+      "Staff survey response rates vary by trust, affecting representativeness",
+      "Bank and agency staff absences are not captured"
+    ]
+  }
+}

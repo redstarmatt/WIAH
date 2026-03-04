@@ -1,0 +1,44 @@
+{
+  "topic": "creative-industries",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    { "date": "2015", "creativeGvaBn": 84,  "grassrootsVenues": 6800 },
+    { "date": "2016", "creativeGvaBn": 90,  "grassrootsVenues": 6500 },
+    { "date": "2017", "creativeGvaBn": 97,  "grassrootsVenues": 6200 },
+    { "date": "2018", "creativeGvaBn": 105, "grassrootsVenues": 5900 },
+    { "date": "2019", "creativeGvaBn": 112, "grassrootsVenues": 5600 },
+    { "date": "2020", "creativeGvaBn": 95,  "grassrootsVenues": 5100 },
+    { "date": "2021", "creativeGvaBn": 100, "grassrootsVenues": 5000 },
+    { "date": "2022", "creativeGvaBn": 108, "grassrootsVenues": 4800 },
+    { "date": "2023", "creativeGvaBn": 116, "grassrootsVenues": 4600 },
+    { "date": "2024", "creativeGvaBn": 120, "grassrootsVenues": 4450 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Department for Culture, Media and Sport",
+        "dataset": "DCMS Economic estimates: gross value added",
+        "url": "https://www.gov.uk/government/collections/dcms-sectors-economic-estimates",
+        "frequency": "annual"
+      },
+      {
+        "name": "Music Venue Trust",
+        "dataset": "Venues at Risk report",
+        "url": "https://musicvenuetrust.com/venues-at-risk/",
+        "frequency": "annual"
+      },
+      {
+        "name": "UK Interactive Entertainment / Ukie",
+        "dataset": "UK games industry statistics",
+        "url": "https://ukie.org.uk/research",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Creative industries GVA figures are from DCMS annual economic estimates, using the Standard Industrial Classification codes for creative industries. Grassroots music venue numbers are from Music Venue Trust registers, which track venues with a capacity under 350 that primarily programme live music. Both series exclude the COVID emergency year 2020 from trend analysis.",
+    "knownIssues": [
+      "DCMS creative industries SIC codes have been revised over time; pre-2015 figures use a slightly different classification and should be treated as indicative",
+      "Grassroots venue counts are based on Music Venue Trust registers, which are comprehensive but not exhaustive; some venues open and close within a survey year",
+      "GVA figures for 2020 are significantly depressed by COVID-19 lockdowns and should not be used as a baseline for trend calculations"
+    ]
+  }
+}

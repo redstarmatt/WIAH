@@ -1,0 +1,23 @@
+{
+  "topic": "talking-therapies",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2016", "referrals": 1100000, "starts": 850000, "completions": 900000, "recoveryRate": 45.0 },
+      { "date": "2017", "referrals": 1200000, "starts": 950000, "completions": 1000000, "recoveryRate": 47.0 },
+      { "date": "2018", "referrals": 1300000, "starts": 1050000, "completions": 1100000, "recoveryRate": 49.0 },
+      { "date": "2019", "referrals": 1400000, "starts": 1100000, "completions": 1150000, "recoveryRate": 50.0 },
+      { "date": "2020", "referrals": 900000, "starts": 650000, "completions": 700000, "recoveryRate": 48.0 },
+      { "date": "2021", "referrals": 1300000, "starts": 950000, "completions": 1000000, "recoveryRate": 50.0 },
+      { "date": "2022", "referrals": 1500000, "starts": 1100000, "completions": 1100000, "recoveryRate": 52.0 },
+      { "date": "2023", "referrals": 1600000, "starts": 1150000, "completions": 1200000, "recoveryRate": 52.3 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "NHS England", "dataset": "NHS Talking Therapies Monthly Statistics", "url": "https://www.england.nhs.uk/mental-health/adults/nhs-talking-therapies/", "retrieved": "2026-03-01", "frequency": "monthly" }
+    ],
+    "methodology": "Data from NHS Talking Therapies (formerly IAPT) monthly returns. Referrals = total referrals received. Starts = people who entered treatment. Completions = people completing a course of treatment (two or more sessions). Recovery rate = proportion of completers who moved from clinical caseness to below caseness on primary anxiety or depression measure.",
+    "knownIssues": ["2020 data significantly affected by pandemic service closures and rapid pivot to digital delivery", "Recovery rate calculation methodology changed slightly in 2020 — pre-2020 data may not be fully comparable", "Provider-level variation in recovery rates (40%-75%) not visible in national aggregates"]
+  }
+}

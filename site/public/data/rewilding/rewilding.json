@@ -1,0 +1,32 @@
+{
+  "topic": "rewilding",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2010", "protectedLandPct": 7.2, "speciesIndex": 72 },
+      { "date": "2012", "protectedLandPct": 7.4, "speciesIndex": 70 },
+      { "date": "2014", "protectedLandPct": 7.6, "speciesIndex": 68 },
+      { "date": "2016", "protectedLandPct": 7.8, "speciesIndex": 67 },
+      { "date": "2018", "protectedLandPct": 8.0, "speciesIndex": 65 },
+      { "date": "2019", "protectedLandPct": 8.2, "speciesIndex": 64 },
+      { "date": "2020", "protectedLandPct": 8.4, "speciesIndex": 63 },
+      { "date": "2021", "protectedLandPct": 8.5, "speciesIndex": 62 },
+      { "date": "2022", "protectedLandPct": 8.7, "speciesIndex": 61 },
+      { "date": "2023", "protectedLandPct": 8.9, "speciesIndex": 60 },
+      { "date": "2024", "protectedLandPct": 9.2, "speciesIndex": 59 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "JNCC / DEFRA", "dataset": "UK Protected Areas statistics", "url": "https://jncc.gov.uk/our-work/uk-protected-area-statistics/", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "RSPB / JNCC", "dataset": "State of Nature 2023", "url": "https://stateofnature.org.uk/", "retrieved": "2026-03-01", "frequency": "triennial" },
+      { "name": "DEFRA", "dataset": "Biodiversity indicators for the UK", "url": "https://www.gov.uk/government/collections/biodiversity-indicators-for-the-uk", "retrieved": "2026-03-01", "frequency": "annual" }
+    ],
+    "methodology": "Protected land percentage reflects area within statutory protected areas (SSSIs, NNRs, NPs) meeting ecological condition standards under the 30x30 assessment framework. Species index is a composite of over 1,000 monitored UK species trends indexed to 1970=100. The 3.2% meeting 30x30 ecological standards differs from the 9.2% within protected boundaries because most protected land is in unfavourable condition.",
+    "knownIssues": [
+      "The 3.2% meeting 30x30 ecological standards is a Government assessment — methodology disputed by some conservation organisations who use different condition criteria.",
+      "Species index is a composite; individual species trends vary enormously and the aggregate can mask localised recoveries.",
+      "Sea 30x30 figure (8%) reflects Marine Protected Area designations, not ecological condition assessments."
+    ]
+  }
+}

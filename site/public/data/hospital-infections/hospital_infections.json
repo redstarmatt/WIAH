@@ -1,0 +1,26 @@
+{
+  "topic": "hospital-infections",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2014", "cDiffCases": 36000, "mrsaCases": 1200 },
+      { "date": "2015", "cDiffCases": 25000, "mrsaCases": 1150 },
+      { "date": "2016", "cDiffCases": 18000, "mrsaCases": 1100 },
+      { "date": "2017", "cDiffCases": 15000, "mrsaCases": 1050 },
+      { "date": "2018", "cDiffCases": 14000, "mrsaCases": 1000 },
+      { "date": "2019", "cDiffCases": 13000, "mrsaCases": 980 },
+      { "date": "2020", "cDiffCases": 12500, "mrsaCases": 1100 },
+      { "date": "2021", "cDiffCases": 12800, "mrsaCases": 1200 },
+      { "date": "2022", "cDiffCases": 13500, "mrsaCases": 1350 },
+      { "date": "2023", "cDiffCases": 14200, "mrsaCases": 1423 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "UKHSA", "dataset": "C.difficile Infections in England", "url": "https://www.gov.uk/government/collections/clostridium-difficile-guidance-data-and-analysis", "retrieved": "2026-03-01", "frequency": "quarterly" },
+      { "name": "UKHSA", "dataset": "MRSA Bloodstream Infections and Bacteraemia Data for England", "url": "https://www.gov.uk/government/collections/mrsa-mrsp-and-vre-guidance-data-and-analysis", "retrieved": "2026-03-01", "frequency": "quarterly" }
+    ],
+    "methodology": "C.difficile cases from mandatory reporting of healthcare-associated C.difficile infections in NHS acute trusts. MRSA cases from mandatory reporting of MRSA bloodstream infections. Both are mandatory surveillance programmes operated by UKHSA. Figures cover England.",
+    "knownIssues": ["C.difficile data includes cases attributed to the trust (healthcare-associated) and community-onset cases; the split varies by trust and period", "Pandemic period (2020-2021) data may be affected by changed patient pathways and reduced elective activity", "Mandatory surveillance captures reported cases only; true incidence will be higher"]
+  }
+}

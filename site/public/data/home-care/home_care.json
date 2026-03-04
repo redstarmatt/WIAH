@@ -1,0 +1,55 @@
+{
+  "topic": "home-care",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    { "date": "2016", "waitingThousands": 280, "vacancies": 88000 },
+    { "date": "2017", "waitingThousands": 310, "vacancies": 95000 },
+    { "date": "2018", "waitingThousands": 340, "vacancies": 102000 },
+    { "date": "2019", "waitingThousands": 370, "vacancies": 110000 },
+    { "date": "2020", "waitingThousands": 400, "vacancies": 120000 },
+    { "date": "2021", "waitingThousands": 430, "vacancies": 165000 },
+    { "date": "2022", "waitingThousands": 470, "vacancies": 152000 },
+    { "date": "2023", "waitingThousands": 500, "vacancies": 132000 },
+    { "date": "2024", "waitingThousands": 510, "vacancies": 128000 }
+  ],
+  "providerTimeSeries": [
+    { "date": "2015", "providerClosures": 140 },
+    { "date": "2016", "providerClosures": 155 },
+    { "date": "2017", "providerClosures": 188 },
+    { "date": "2018", "providerClosures": 220 },
+    { "date": "2019", "providerClosures": 245 },
+    { "date": "2020", "providerClosures": 210 },
+    { "date": "2021", "providerClosures": 260 },
+    { "date": "2022", "providerClosures": 305 },
+    { "date": "2023", "providerClosures": 360 },
+    { "date": "2024", "providerClosures": 340 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "Community health services waiting times",
+        "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/community-health-services/",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Skills for Care",
+        "dataset": "State of the adult social care sector and workforce",
+        "url": "https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx",
+        "frequency": "annual"
+      },
+      {
+        "name": "Care Quality Commission",
+        "dataset": "State of care annual report",
+        "url": "https://www.cqc.org.uk/publications/major-report/state-of-care",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Waiting figures represent estimates of people awaiting a care needs assessment or home care package commencement, derived from NHS England and local authority delayed transfer data. Vacancy figures are from the Skills for Care annual workforce survey. Provider closures include registered domiciliary care providers that ceased operation or returned council contracts.",
+    "knownIssues": [
+      "There is no single national register of home care waiting lists; figures are modelled from multiple data sources and carry uncertainty",
+      "Vacancy rates pre-2020 used a different survey methodology and are not directly comparable with post-2021 figures",
+      "Provider closure data captures CQC deregistrations but not informal market exits where providers simply decline to take new referrals"
+    ]
+  }
+}

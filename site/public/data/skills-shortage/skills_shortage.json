@@ -1,0 +1,46 @@
+{
+  "topic": "skills-shortage",
+  "lastUpdated": "2024-01-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2015", "hardFillVacanciesThousands": 800, "totalVacanciesThousands": 650 },
+      { "date": "2016", "hardFillVacanciesThousands": 900, "totalVacanciesThousands": 720 },
+      { "date": "2017", "hardFillVacanciesThousands": 1000, "totalVacanciesThousands": 780 },
+      { "date": "2018", "hardFillVacanciesThousands": 1150, "totalVacanciesThousands": 840 },
+      { "date": "2019", "hardFillVacanciesThousands": 1300, "totalVacanciesThousands": 810 },
+      { "date": "2020", "hardFillVacanciesThousands": 900, "totalVacanciesThousands": 530 },
+      { "date": "2021", "hardFillVacanciesThousands": 1500, "totalVacanciesThousands": 1170 },
+      { "date": "2022", "hardFillVacanciesThousands": 2100, "totalVacanciesThousands": 1290 },
+      { "date": "2023", "hardFillVacanciesThousands": 2300, "totalVacanciesThousands": 960 },
+      { "date": "2024", "hardFillVacanciesThousands": 2400, "totalVacanciesThousands": 870 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "CIPD",
+        "dataset": "Employer skills survey &mdash; hard-to-fill vacancies",
+        "url": "https://www.cipd.org/uk/knowledge/reports/labour-market-outlook/",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Vacancy Survey",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/latest",
+        "frequency": "monthly"
+      },
+      {
+        "name": "Department for Education",
+        "dataset": "Employer skills survey (ESS)",
+        "url": "https://www.gov.uk/government/collections/employer-skills-survey",
+        "frequency": "biennial"
+      }
+    ],
+    "methodology": "Hard-to-fill vacancies are derived from the DfE Employer Skills Survey (biennial) and CIPD quarterly employer surveys, extrapolated to national estimates. The ONS Vacancy Survey provides total vacancy counts from employer surveys of approximately 6,000 businesses. Skills shortage vacancies are a subset of hard-to-fill vacancies where the employer reports difficulty due to a lack of skills, qualifications, or experience among applicants.",
+    "knownIssues": [
+      "Hard-to-fill vacancy estimates interpolate between biennial ESS surveys; the 2022 peak reflects post-COVID labour market tightening and should be interpreted with caution",
+      "Total vacancies in ONS data measure the stock of unfilled posts at a point in time, while hard-to-fill is a flow concept from employer surveys; the two series are not directly comparable",
+      "Post-Brexit changes to EU worker availability complicate comparison of pre-2021 and post-2021 figures in sectors heavily dependent on EU nationals"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "topic": "food-inflation",
+  "lastUpdated": "2024-01-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2018-01", "foodInflation": 2.5, "overallInflation": 2.4 },
+      { "date": "2019-01", "foodInflation": 2.8, "overallInflation": 2.1 },
+      { "date": "2020-01", "foodInflation": 1.8, "overallInflation": 0.7 },
+      { "date": "2021-01", "foodInflation": 2.2, "overallInflation": 2.5 },
+      { "date": "2022-01", "foodInflation": 4.2, "overallInflation": 5.1 },
+      { "date": "2022-06", "foodInflation": 9.1, "overallInflation": 9.4 },
+      { "date": "2022-12", "foodInflation": 16.4, "overallInflation": 10.5 },
+      { "date": "2023-03", "foodInflation": 19.2, "overallInflation": 10.1 },
+      { "date": "2023-06", "foodInflation": 17.3, "overallInflation": 7.9 },
+      { "date": "2023-12", "foodInflation": 8.0, "overallInflation": 4.0 },
+      { "date": "2024-06", "foodInflation": 4.0, "overallInflation": 2.0 },
+      { "date": "2025-01", "foodInflation": 2.0, "overallInflation": 2.8 }
+    ],
+    "categoryRises": [
+      { "category": "Olive oil", "rise2022to2023": 49.0 },
+      { "category": "Eggs", "rise2022to2023": 32.0 },
+      { "category": "Sugar", "rise2022to2023": 29.0 },
+      { "category": "Dairy", "rise2022to2023": 25.0 },
+      { "category": "Bread & cereals", "rise2022to2023": 18.5 },
+      { "category": "Meat", "rise2022to2023": 14.0 },
+      { "category": "Vegetables", "rise2022to2023": 12.0 },
+      { "category": "Fruit", "rise2022to2023": 8.5 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Consumer Price Index &mdash; food and non-alcoholic beverages (CPIH)",
+        "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/latest",
+        "frequency": "monthly"
+      },
+      {
+        "name": "Food Foundation",
+        "dataset": "Food Insecurity Tracker",
+        "url": "https://foodfoundation.org.uk/initiatives/food-insecurity-tracking",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Which?",
+        "dataset": "Grocery price analysis",
+        "url": "https://www.which.co.uk/news/article/supermarket-prices",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Food inflation figures are the ONS CPI 12-month rate for the food and non-alcoholic beverages category, which covers approximately 200 food and drink items sampled monthly from supermarkets, convenience stores, and specialist food retailers. Category-level price rises compare March 2023 prices to March 2022 prices for specific product groups within the CPI basket. Overall CPI figures are the headline all-items rate.",
+    "knownIssues": [
+      "CPI measures price changes in a fixed basket of goods; if consumers switch to cheaper products in response to price rises ('quality substitution'), CPI overstates the impact on household budgets",
+      "Supermarket own-label and value ranges have risen more slowly than branded equivalents, benefiting households that switched; the CPI basket weights these at their market share which may understate branded inflation",
+      "Shrinkflation (product size reduction without price change) is not fully captured in official CPI methodology; ONS began publishing a supplementary shrinkflation measure in 2023"
+    ]
+  }
+}

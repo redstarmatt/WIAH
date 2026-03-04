@@ -1,0 +1,36 @@
+{
+  "topic": "onshore-wind",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2010", "ukCapacityGW": 4.0, "englandCapacityGW": 1.5, "scotlandWalesGW": 2.5 },
+      { "date": "2011", "ukCapacityGW": 5.2, "englandCapacityGW": 1.8, "scotlandWalesGW": 3.4 },
+      { "date": "2012", "ukCapacityGW": 6.5, "englandCapacityGW": 2.0, "scotlandWalesGW": 4.5 },
+      { "date": "2013", "ukCapacityGW": 7.8, "englandCapacityGW": 2.1, "scotlandWalesGW": 5.7 },
+      { "date": "2014", "ukCapacityGW": 9.1, "englandCapacityGW": 2.2, "scotlandWalesGW": 6.9 },
+      { "date": "2015", "ukCapacityGW": 10.3, "englandCapacityGW": 2.3, "scotlandWalesGW": 8.0 },
+      { "date": "2016", "ukCapacityGW": 11.4, "englandCapacityGW": 2.3, "scotlandWalesGW": 9.1 },
+      { "date": "2017", "ukCapacityGW": 12.2, "englandCapacityGW": 2.3, "scotlandWalesGW": 9.9 },
+      { "date": "2018", "ukCapacityGW": 13.0, "englandCapacityGW": 2.3, "scotlandWalesGW": 10.7 },
+      { "date": "2019", "ukCapacityGW": 13.5, "englandCapacityGW": 2.3, "scotlandWalesGW": 11.2 },
+      { "date": "2020", "ukCapacityGW": 14.1, "englandCapacityGW": 2.3, "scotlandWalesGW": 11.8 },
+      { "date": "2021", "ukCapacityGW": 14.6, "englandCapacityGW": 2.4, "scotlandWalesGW": 12.2 },
+      { "date": "2022", "ukCapacityGW": 15.1, "englandCapacityGW": 2.4, "scotlandWalesGW": 12.7 },
+      { "date": "2023", "ukCapacityGW": 15.5, "englandCapacityGW": 2.4, "scotlandWalesGW": 13.1 },
+      { "date": "2024", "ukCapacityGW": 15.9, "englandCapacityGW": 2.4, "scotlandWalesGW": 13.5 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "DESNZ", "dataset": "Renewable electricity capacity and generation", "url": "https://www.gov.uk/government/statistics/renewable-electricity-capacity-and-generation", "retrieved": "2026-03-01", "frequency": "quarterly" },
+      { "name": "DESNZ", "dataset": "Onshore wind planning consents", "url": "https://www.gov.uk/government/statistics/energy-trends-section-6-renewables", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "Aurora Energy Research", "dataset": "Cost of onshore wind ban estimate", "url": "https://www.auroraer.com", "retrieved": "2026-03-01", "frequency": "ad hoc" }
+    ],
+    "methodology": "Capacity figures are total operational onshore wind capacity in GW at year end. England capacity is separately tracked from Scotland and Wales. Planning consent data covers England only, from DESNZ renewable energy planning database. The England ban was implemented through the 2015 Written Ministerial Statement requiring all proposals to have community support, interpreted by planning inspectors as an effective ban; it was formally reversed in 2023 via NPPF revision.",
+    "knownIssues": [
+      "Scotland's capacity figures include some projects in the planning pipeline that may be double-counted in different datasets.",
+      "The £13bn cost estimate of the planning ban is from Aurora Energy Research and uses counterfactual modelling — other analysts have produced lower estimates.",
+      "Planning consent numbers count decisions, not projects built; many consented projects take 3–5 years to reach operation."
+    ]
+  }
+}

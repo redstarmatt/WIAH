@@ -1,0 +1,29 @@
+{
+  "topic": "probation",
+  "lastUpdated": "2026-03-04",
+  "timeSeries": [
+    { "date": "2015", "seriousFurtherOffences": 530, "vacancyRatePct": 8.0 },
+    { "date": "2016", "seriousFurtherOffences": 560, "vacancyRatePct": 9.0 },
+    { "date": "2017", "seriousFurtherOffences": 590, "vacancyRatePct": 10.0 },
+    { "date": "2018", "seriousFurtherOffences": 620, "vacancyRatePct": 12.0 },
+    { "date": "2019", "seriousFurtherOffences": 650, "vacancyRatePct": 13.5 },
+    { "date": "2020", "seriousFurtherOffences": 680, "vacancyRatePct": 14.0 },
+    { "date": "2021", "seriousFurtherOffences": 730, "vacancyRatePct": 15.0 },
+    { "date": "2022", "seriousFurtherOffences": 790, "vacancyRatePct": 16.0 },
+    { "date": "2023", "seriousFurtherOffences": 820, "vacancyRatePct": 16.0 },
+    { "date": "2024", "seriousFurtherOffences": 810, "vacancyRatePct": 15.5 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Ministry of Justice", "dataset": "Serious Further Offence Review Statistics", "url": "https://www.gov.uk/government/statistics/serious-further-offence-review-statistics", "frequency": "annual", "retrieved": "2026-03-04" },
+      { "name": "HM Inspectorate of Probation", "dataset": "Annual Report", "url": "https://www.justiceinspectorates.gov.uk/hmiprobation/", "frequency": "annual", "retrieved": "2026-03-04" },
+      { "name": "Ministry of Justice", "dataset": "Offender Management Statistics", "url": "https://www.gov.uk/government/statistics/offender-management-statistics-quarterly", "frequency": "quarterly", "retrieved": "2026-03-04" }
+    ],
+    "methodology": "Serious Further Offences are crimes committed by people on probation supervision that result in a conviction for a specified serious offence. Vacancy rate is from HMPPS workforce statistics. Caseload per officer is calculated from Offender Management Statistics divided by HM Prison and Probation Service staff census.",
+    "knownIssues": [
+      "SFO figures reflect convictions, not offences — delay between offence and conviction means figures may understate current risk",
+      "Vacancy rate definition changed in 2021 following reunification of probation service; pre/post not directly comparable",
+      "Average caseload figures are national means; some officers carry significantly higher caseloads"
+    ]
+  }
+}

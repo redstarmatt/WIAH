@@ -1,0 +1,30 @@
+{
+  "topic": "heat-pumps",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2015", "ukInstallations": 25000, "franceInstallations": 350000, "germanyInstallations": 250000 },
+      { "date": "2016", "ukInstallations": 30000, "franceInstallations": 380000, "germanyInstallations": 270000 },
+      { "date": "2017", "ukInstallations": 35000, "franceInstallations": 420000, "germanyInstallations": 300000 },
+      { "date": "2018", "ukInstallations": 38000, "franceInstallations": 460000, "germanyInstallations": 340000 },
+      { "date": "2019", "ukInstallations": 43000, "franceInstallations": 510000, "germanyInstallations": 380000 },
+      { "date": "2020", "ukInstallations": 49000, "franceInstallations": 580000, "germanyInstallations": 440000 },
+      { "date": "2021", "ukInstallations": 55000, "franceInstallations": 720000, "germanyInstallations": 560000 },
+      { "date": "2022", "ukInstallations": 60000, "franceInstallations": 1100000, "germanyInstallations": 600000 },
+      { "date": "2023", "ukInstallations": 72000, "franceInstallations": 1600000, "germanyInstallations": 600000 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "MCS / DESNZ", "dataset": "Microgeneration Certification Scheme heat pump installations", "url": "https://mcscertified.com/stats/", "retrieved": "2026-03-01", "frequency": "monthly" },
+      { "name": "EHPA", "dataset": "European Heat Pump Association market statistics", "url": "https://www.ehpa.org/market-data/", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "DESNZ", "dataset": "Boiler Upgrade Scheme statistics", "url": "https://www.gov.uk/government/collections/boiler-upgrade-scheme-statistics", "retrieved": "2026-03-01", "frequency": "quarterly" }
+    ],
+    "methodology": "UK installations are MCS-certified heat pump installations per year (ground and air source). French and German figures are from EHPA national market surveys. The UK 600,000/year target for 2028 is from the government's Heat and Buildings Strategy 2021. Average UK installation cost (£10,000–£15,000) is from industry surveys; French post-grant cost (£2,000–£4,000) reflects MaPrimeRenov subsidy. Coefficient of Performance (COP) for modern UK heat pump installations averages 2.5–3.5, meaning 1 unit of electricity produces 2.5–3.5 units of heat.",
+    "knownIssues": [
+      "MCS certification figures undercount total UK heat pump installations as some commercial and self-installed systems are not MCS certified.",
+      "French and German statistics are EHPA estimates based on manufacturer sales data, not independently verified installation surveys.",
+      "The 2022 energy price spike temporarily boosted European installation figures, particularly in France and Germany, creating a data spike that may not represent the underlying trend."
+    ]
+  }
+}

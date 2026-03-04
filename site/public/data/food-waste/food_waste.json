@@ -1,0 +1,30 @@
+{
+  "topic": "food-waste",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2015", "totalWasteMt": 10.2, "householdWasteMt": 7.1 },
+      { "date": "2016", "totalWasteMt": 10.1, "householdWasteMt": 7.0 },
+      { "date": "2017", "totalWasteMt": 10.0, "householdWasteMt": 6.9 },
+      { "date": "2018", "totalWasteMt": 9.9, "householdWasteMt": 6.8 },
+      { "date": "2019", "totalWasteMt": 9.7, "householdWasteMt": 6.6 },
+      { "date": "2020", "totalWasteMt": 9.6, "householdWasteMt": 6.7 },
+      { "date": "2021", "totalWasteMt": 9.5, "householdWasteMt": 6.6 },
+      { "date": "2022", "totalWasteMt": 9.5, "householdWasteMt": 6.5 },
+      { "date": "2023", "totalWasteMt": 9.5, "householdWasteMt": 6.4 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "WRAP", "dataset": "UK food waste estimates", "url": "https://wrap.org.uk/resources/report/food-surplus-and-waste-uk-key-facts", "retrieved": "2026-03-01", "frequency": "biennial" },
+      { "name": "DEFRA", "dataset": "Food statistics pocketbook", "url": "https://www.gov.uk/government/collections/food-statistics-pocketbook", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "WRAP", "dataset": "Household food and drink waste measurement", "url": "https://wrap.org.uk/taking-action/food-drink/topics/food-waste/uk-food-waste", "retrieved": "2026-03-01", "frequency": "biennial" }
+    ],
+    "methodology": "Total food waste covers all stages of the supply chain: household, manufacturing, retail, hospitality and food service, and farm gate (where data available). Household waste (approx 70% of total by weight) is estimated via diary studies, compositional analysis of waste streams, and bin surveys. The £19bn household cost and £700 per household figures are WRAP estimates based on 2023 food prices. The 18% reduction since 2007 is calculated against WRAP's 2007 baseline estimate of 11.5 Mt.",
+    "knownIssues": [
+      "WRAP's food waste measurement methodology was revised in 2018, creating a break in the time series — pre- and post-2018 figures are not directly comparable.",
+      "Farm gate and supply chain waste estimates carry higher uncertainty than household estimates due to limited mandatory reporting.",
+      "COVID-19 affected waste patterns in 2020 (more home cooking, less hospitality waste) creating a non-typical data point."
+    ]
+  }
+}

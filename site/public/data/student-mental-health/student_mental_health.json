@@ -1,0 +1,44 @@
+{
+  "topic": "student-mental-health",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    { "date": "2015", "mentalHealthDisclosurePct": 8,  "counsellingDemandIndex": 100 },
+    { "date": "2016", "mentalHealthDisclosurePct": 10, "counsellingDemandIndex": 112 },
+    { "date": "2017", "mentalHealthDisclosurePct": 13, "counsellingDemandIndex": 122 },
+    { "date": "2018", "mentalHealthDisclosurePct": 16, "counsellingDemandIndex": 134 },
+    { "date": "2019", "mentalHealthDisclosurePct": 19, "counsellingDemandIndex": 145 },
+    { "date": "2020", "mentalHealthDisclosurePct": 20, "counsellingDemandIndex": 138 },
+    { "date": "2021", "mentalHealthDisclosurePct": 21, "counsellingDemandIndex": 148 },
+    { "date": "2022", "mentalHealthDisclosurePct": 23, "counsellingDemandIndex": 158 },
+    { "date": "2023", "mentalHealthDisclosurePct": 25, "counsellingDemandIndex": 150 },
+    { "date": "2024", "mentalHealthDisclosurePct": 26, "counsellingDemandIndex": 155 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "HESA / Student Minds",
+        "dataset": "Student mental health disclosure rates and University Mental Health Survey",
+        "url": "https://www.studentminds.org.uk/research.html",
+        "frequency": "annual"
+      },
+      {
+        "name": "AMOSSHE",
+        "dataset": "University counselling services demand analysis",
+        "url": "https://www.amosshe.org.uk/resources",
+        "frequency": "annual"
+      },
+      {
+        "name": "Office for Students",
+        "dataset": "Mental health in higher education: insights from data",
+        "url": "https://www.officeforstudents.org.uk/advice-and-guidance/student-wellbeing-and-protection/student-mental-health/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Disclosure rates represent students declaring a mental health condition to their university at enrolment or during their studies, from HESA student record data. Counselling demand index is indexed to 2015=100, based on AMOSSHE survey data on counselling session requests vs capacity across UK universities. Suspected suicide figures are from University Mental Health Advisors Network reports.",
+    "knownIssues": [
+      "Disclosure rates reflect students who actively declare a condition; actual prevalence of mental health difficulties is significantly higher based on survey evidence",
+      "Counselling demand data relies on university self-reporting to AMOSSHE; not all universities participate and smaller institutions are under-represented",
+      "Student suicide data is based on suspected cases and subject to coroner findings; the actual number confirmed as suicide will differ from provisional reports"
+    ]
+  }
+}

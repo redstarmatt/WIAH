@@ -1,0 +1,36 @@
+{
+  "topic": "menopause-care",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2016", "hrtPrescriptionsMillion": 5.0 },
+      { "date": "2017", "hrtPrescriptionsMillion": 5.2 },
+      { "date": "2018", "hrtPrescriptionsMillion": 5.4 },
+      { "date": "2019", "hrtPrescriptionsMillion": 5.6 },
+      { "date": "2020", "hrtPrescriptionsMillion": 5.7 },
+      { "date": "2021", "hrtPrescriptionsMillion": 5.8 },
+      { "date": "2022", "hrtPrescriptionsMillion": 7.0 },
+      { "date": "2023", "hrtPrescriptionsMillion": 7.8 }
+    ],
+    "gpConsultations": {
+      "timeSeries": [
+        { "date": "2016", "menopauseConsultationsThousands": 580 },
+        { "date": "2017", "menopauseConsultationsThousands": 600 },
+        { "date": "2018", "menopauseConsultationsThousands": 620 },
+        { "date": "2019", "menopauseConsultationsThousands": 650 },
+        { "date": "2020", "menopauseConsultationsThousands": 590 },
+        { "date": "2021", "menopauseConsultationsThousands": 680 },
+        { "date": "2022", "menopauseConsultationsThousands": 820 },
+        { "date": "2023", "menopauseConsultationsThousands": 950 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "NHS Business Services Authority", "dataset": "Prescription Cost Analysis", "url": "https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "RCGP / CPRD", "dataset": "Clinical Practice Research Datalink Menopause Consultations", "url": "https://www.cprd.com/", "retrieved": "2026-03-01", "frequency": "annual" }
+    ],
+    "methodology": "HRT prescription data from NHS Business Services Authority Prescription Cost Analysis, counting all HRT product items dispensed in England. GP consultation data estimated from CPRD research database extrapolation. Women affected figures from MIMS/Menopause Society surveys.",
+    "knownIssues": ["HRT supply shortage in 2022 affected prescribing patterns; some prescriptions redirected to alternative formulations not captured in HRT-specific counts", "GP consultation data is modelled estimate rather than administrative record", "Women who use private prescriptions not captured in NHS dispensing data"]
+  }
+}

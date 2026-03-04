@@ -1,0 +1,45 @@
+{
+  "topic": "living-wage",
+  "lastUpdated": "2024-01-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2016", "nationalLivingWage": 7.20, "realLivingWage": 8.45, "workersBelowMillion": 5.8 },
+      { "date": "2017", "nationalLivingWage": 7.50, "realLivingWage": 8.75, "workersBelowMillion": 5.5 },
+      { "date": "2018", "nationalLivingWage": 7.83, "realLivingWage": 8.75, "workersBelowMillion": 5.1 },
+      { "date": "2019", "nationalLivingWage": 8.21, "realLivingWage": 9.00, "workersBelowMillion": 4.8 },
+      { "date": "2020", "nationalLivingWage": 8.72, "realLivingWage": 9.30, "workersBelowMillion": 4.4 },
+      { "date": "2021", "nationalLivingWage": 8.91, "realLivingWage": 9.90, "workersBelowMillion": 4.1 },
+      { "date": "2022", "nationalLivingWage": 9.50, "realLivingWage": 10.90, "workersBelowMillion": 3.9 },
+      { "date": "2023", "nationalLivingWage": 10.42, "realLivingWage": 12.00, "workersBelowMillion": 3.8 },
+      { "date": "2024", "nationalLivingWage": 11.44, "realLivingWage": 12.60, "workersBelowMillion": 3.8 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Living Wage Foundation",
+        "dataset": "Real Living Wage rates and employer accreditation",
+        "url": "https://www.livingwage.org.uk",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Annual Survey of Hours and Earnings (ASHE) &mdash; low pay analysis",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2023",
+        "frequency": "annual"
+      },
+      {
+        "name": "Resolution Foundation",
+        "dataset": "Low Pay Britain report",
+        "url": "https://www.resolutionfoundation.org",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "National Living Wage figures are the statutory rate applicable to workers aged 21+ (25+ before 2021), as set by HM Government following Low Pay Commission recommendations. Real Living Wage figures are the independently calculated rate published by the Living Wage Foundation, based on actual living costs in the UK. Workers below Real Living Wage estimates are from ONS ASHE analysis of hourly pay distributions, calculating how many employees earn less than the Real Living Wage rate.",
+    "knownIssues": [
+      "The Real Living Wage is a voluntary rate and is separately calculated for London (higher) and the rest of the UK; figures shown are the rest-of-UK rate",
+      "Workers below Real Living Wage includes part-time workers on an hourly basis; some may choose to work part-time and have other income sources",
+      "ASHE covers employees only, not self-employed workers; gig economy workers on low effective hourly pay are excluded from these figures"
+    ]
+  }
+}

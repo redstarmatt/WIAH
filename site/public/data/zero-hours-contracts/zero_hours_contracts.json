@@ -1,0 +1,58 @@
+{
+  "topic": "zero-hours-contracts",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "workers": {
+      "timeSeries": [
+        { "date": "2013", "workersThousands": 400 },
+        { "date": "2014", "workersThousands": 624 },
+        { "date": "2015", "workersThousands": 744 },
+        { "date": "2016", "workersThousands": 801 },
+        { "date": "2017", "workersThousands": 883 },
+        { "date": "2018", "workersThousands": 780 },
+        { "date": "2019", "workersThousands": 896 },
+        { "date": "2020", "workersThousands": 1004 },
+        { "date": "2021", "workersThousands": 982 },
+        { "date": "2022", "workersThousands": 1028 },
+        { "date": "2023", "workersThousands": 1030 },
+        { "date": "2024", "workersThousands": 1100 }
+      ]
+    },
+    "bySector": {
+      "timeSeries": [
+        { "date": "2016", "hospitality": 220, "retail": 145, "healthSocialCare": 110, "education": 95 },
+        { "date": "2017", "hospitality": 260, "retail": 150, "healthSocialCare": 125, "education": 100 },
+        { "date": "2018", "hospitality": 240, "retail": 130, "healthSocialCare": 115, "education": 90 },
+        { "date": "2019", "hospitality": 280, "retail": 155, "healthSocialCare": 130, "education": 105 },
+        { "date": "2020", "hospitality": 310, "retail": 170, "healthSocialCare": 150, "education": 115 },
+        { "date": "2021", "hospitality": 300, "retail": 165, "healthSocialCare": 145, "education": 110 },
+        { "date": "2022", "hospitality": 330, "retail": 175, "healthSocialCare": 155, "education": 115 },
+        { "date": "2023", "hospitality": 345, "retail": 180, "healthSocialCare": 160, "education": 118 },
+        { "date": "2024", "hospitality": 385, "retail": 190, "healthSocialCare": 170, "education": 120 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Labour Force Survey - People in Employment on Zero-Hours Contracts",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/emp17peopleinemploymentonzerohourscontracts",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "CIPD",
+        "dataset": "Zero-Hours Contracts: Evolution and Current Status",
+        "url": "https://www.cipd.co.uk/knowledge/fundamentals/emp-law/terms-conditions/zero-hours-contracts-guide",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Zero-hours contracts are measured through the ONS Labour Force Survey, which asks respondents about their main employment contract. The ONS definition includes contracts where no minimum hours are guaranteed. Estimates are based on self-reporting and may undercount workers who do not recognise their contract type.",
+    "knownIssues": [
+      "The ONS changed its measurement methodology in 2013, making pre-2013 comparisons unreliable.",
+      "Workers may hold multiple zero-hours contracts simultaneously but are counted only once.",
+      "Seasonal variation is significant, particularly in hospitality and agriculture.",
+      "Some workers on zero-hours contracts report being satisfied with the flexibility, complicating straightforward policy conclusions."
+    ]
+  }
+}

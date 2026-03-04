@@ -1,0 +1,25 @@
+{
+  "topic": "cancer-diagnosis",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2015", "earlyDiagnosisPct": 50, "targetCompliance62Day": 85 },
+      { "date": "2016", "earlyDiagnosisPct": 51, "targetCompliance62Day": 84 },
+      { "date": "2017", "earlyDiagnosisPct": 52, "targetCompliance62Day": 82 },
+      { "date": "2018", "earlyDiagnosisPct": 53, "targetCompliance62Day": 80 },
+      { "date": "2019", "earlyDiagnosisPct": 53, "targetCompliance62Day": 76 },
+      { "date": "2020", "earlyDiagnosisPct": 52, "targetCompliance62Day": 68 },
+      { "date": "2021", "earlyDiagnosisPct": 53, "targetCompliance62Day": 65 },
+      { "date": "2022", "earlyDiagnosisPct": 53, "targetCompliance62Day": 64 },
+      { "date": "2023", "earlyDiagnosisPct": 54, "targetCompliance62Day": 65 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "NHS England", "dataset": "Cancer Waiting Times", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/cancer-waiting-times/", "retrieved": "2026-03-01", "frequency": "monthly" },
+      { "name": "NHS England / NCRAS", "dataset": "Cancer Stage at Diagnosis", "url": "https://www.cancerdata.nhs.uk/", "retrieved": "2026-03-01", "frequency": "annual" }
+    ],
+    "methodology": "Early diagnosis percentage (stages 1 and 2 combined) from National Cancer Registration and Analysis Service (NCRAS) stage at diagnosis data. 62-day compliance = proportion of cancer patients beginning first treatment within 62 days of urgent GP referral. Target 85%. Data covers England.",
+    "knownIssues": ["Stage at diagnosis data lags by approximately 18 months due to registration processes", "Approximately 15-20% of cancers still have unknown stage at diagnosis, affecting the early diagnosis percentage", "62-day target compliance affected significantly by pandemic in 2020-2021; recovery has been slow", "Faster Diagnosis Standard (28-day) introduced 2020 as a new metric; historical data limited"]
+  }
+}

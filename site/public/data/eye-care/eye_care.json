@@ -1,0 +1,24 @@
+{
+  "topic": "eye-care",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2018", "waitingListThousands": 400, "waiting18WeeksThousands": 130 },
+      { "date": "2019", "waitingListThousands": 430, "waiting18WeeksThousands": 145 },
+      { "date": "2020", "waitingListThousands": 460, "waiting18WeeksThousands": 160 },
+      { "date": "2021", "waitingListThousands": 490, "waiting18WeeksThousands": 180 },
+      { "date": "2022", "waitingListThousands": 520, "waiting18WeeksThousands": 200 },
+      { "date": "2023", "waitingListThousands": 560, "waiting18WeeksThousands": 220 },
+      { "date": "2024", "waitingListThousands": 600, "waiting18WeeksThousands": 245 },
+      { "date": "2025", "waitingListThousands": 630, "waiting18WeeksThousands": 250 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "NHS England", "dataset": "Consultant-Led Referral to Treatment Waiting Times", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/", "retrieved": "2026-03-01", "frequency": "monthly" },
+      { "name": "Royal College of Ophthalmologists", "dataset": "The Way Forward: Ophthalmology", "url": "https://www.rcophth.ac.uk/wp-content/uploads/2021/08/The-Way-Forward-Ophthalmology-Summary-Report.pdf", "retrieved": "2026-03-01", "frequency": "periodic" }
+    ],
+    "methodology": "Waiting list data from NHS England RTT incomplete pathway returns for ophthalmology (specialty code 130). Patients waiting 18+ weeks derived from RTT incomplete pathway data. Preventable sight loss estimate from Royal College of Ophthalmologists review of follow-up appointment delays.",
+    "knownIssues": ["RTT data captures referral-to-treatment pathways but does not separately record follow-up appointment waits, which are the primary patient safety concern in ophthalmology", "Preventable sight loss figure is an estimate from clinical audit rather than administrative data", "Pandemic-related suspension of routine appointments (2020-2021) creates a structural break in the time series"]
+  }
+}

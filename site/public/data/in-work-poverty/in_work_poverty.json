@@ -1,0 +1,49 @@
+{
+  "topic": "in-work-poverty",
+  "lastUpdated": "2024-01-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2002", "inWorkPovertyMillions": 4.3, "pctOfPoor": 45 },
+      { "date": "2004", "inWorkPovertyMillions": 4.6, "pctOfPoor": 47 },
+      { "date": "2006", "inWorkPovertyMillions": 4.9, "pctOfPoor": 49 },
+      { "date": "2008", "inWorkPovertyMillions": 5.2, "pctOfPoor": 51 },
+      { "date": "2010", "inWorkPovertyMillions": 5.5, "pctOfPoor": 52 },
+      { "date": "2012", "inWorkPovertyMillions": 5.8, "pctOfPoor": 53 },
+      { "date": "2014", "inWorkPovertyMillions": 6.2, "pctOfPoor": 55 },
+      { "date": "2016", "inWorkPovertyMillions": 6.7, "pctOfPoor": 57 },
+      { "date": "2018", "inWorkPovertyMillions": 7.2, "pctOfPoor": 58 },
+      { "date": "2020", "inWorkPovertyMillions": 6.9, "pctOfPoor": 57 },
+      { "date": "2021", "inWorkPovertyMillions": 7.4, "pctOfPoor": 58 },
+      { "date": "2022", "inWorkPovertyMillions": 7.8, "pctOfPoor": 59 },
+      { "date": "2023", "inWorkPovertyMillions": 8.1, "pctOfPoor": 60 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Joseph Rowntree Foundation",
+        "dataset": "UK Poverty report &mdash; in-work poverty analysis",
+        "url": "https://www.jrf.org.uk/data/uk-poverty-2024",
+        "frequency": "annual"
+      },
+      {
+        "name": "DWP",
+        "dataset": "Households Below Average Income (HBAI)",
+        "url": "https://www.gov.uk/government/collections/households-below-average-income-hbai--2",
+        "frequency": "annual"
+      },
+      {
+        "name": "Resolution Foundation",
+        "dataset": "Earnings Outlook &mdash; in-work poverty analysis",
+        "url": "https://www.resolutionfoundation.org",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "In-work poverty is defined as individuals in households where at least one adult is in paid employment and the household has an equivalised net income below 60% of the contemporary median, using the DWP Households Below Average Income (HBAI) dataset. The percentage of all people in poverty who live in working households is derived from the same source. Employment types are classified using Standard Occupational Classification groups.",
+    "knownIssues": [
+      "Poverty is measured before and after housing costs in HBAI; figures shown use after-housing-costs measure which is considered more meaningful for low-income households",
+      "The 2020 dip reflects COVID furlough payments which temporarily boosted household incomes; this is a measurement artefact rather than a genuine improvement",
+      "Changes to Universal Credit taper rates and work allowances in 2021 affect the relationship between employment income and poverty status, creating a break in the series"
+    ]
+  }
+}

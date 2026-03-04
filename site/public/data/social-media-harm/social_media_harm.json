@@ -1,0 +1,32 @@
+{
+  "topic": "social-media-harm",
+  "lastUpdated": "2026-03-04",
+  "timeSeries": [
+    { "date": "2012", "teenDepressionPct": 7, "cyberbullyingPct": 22 },
+    { "date": "2013", "teenDepressionPct": 8, "cyberbullyingPct": 25 },
+    { "date": "2014", "teenDepressionPct": 9, "cyberbullyingPct": 28 },
+    { "date": "2015", "teenDepressionPct": 10, "cyberbullyingPct": 30 },
+    { "date": "2016", "teenDepressionPct": 11, "cyberbullyingPct": 32 },
+    { "date": "2017", "teenDepressionPct": 12, "cyberbullyingPct": 34 },
+    { "date": "2018", "teenDepressionPct": 12, "cyberbullyingPct": 36 },
+    { "date": "2019", "teenDepressionPct": 13, "cyberbullyingPct": 37 },
+    { "date": "2020", "teenDepressionPct": 13, "cyberbullyingPct": 38 },
+    { "date": "2021", "teenDepressionPct": 14, "cyberbullyingPct": 39 },
+    { "date": "2022", "teenDepressionPct": 14, "cyberbullyingPct": 40 },
+    { "date": "2023", "teenDepressionPct": 14, "cyberbullyingPct": 40 },
+    { "date": "2024", "teenDepressionPct": 14, "cyberbullyingPct": 40 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "NHS Digital", "dataset": "Mental Health of Children and Young People in England", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england", "frequency": "biennial", "retrieved": "2026-03-04" },
+      { "name": "Ofcom", "dataset": "Children and Parents: Media Use and Attitudes Report", "url": "https://www.ofcom.org.uk/research-and-data/telecoms-research/internet-use-and-attitudes", "frequency": "annual", "retrieved": "2026-03-04" },
+      { "name": "Ditch the Label", "dataset": "Annual Bullying Survey", "url": "https://www.ditchthelabel.org/research-papers/the-annual-bullying-survey-2023/", "frequency": "annual", "retrieved": "2026-03-04" }
+    ],
+    "methodology": "Teen depression figures from NHS Digital surveys of 11-16 year olds using validated screening tools (SDQ, PHQ-A). Cyberbullying data combines Ofcom children's media use surveys with Ditch the Label annual reporting. Smartphone ownership trends from Ofcom Technology Tracker.",
+    "knownIssues": [
+      "Causal direction between social media use and mental health is contested in academic literature — correlational evidence is stronger than experimental evidence",
+      "Cyberbullying definitions vary across surveys, affecting year-on-year comparability",
+      "Pre-2017 teen depression data uses different survey instruments, limiting long-run comparison"
+    ]
+  }
+}

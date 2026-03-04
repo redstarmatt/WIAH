@@ -1,0 +1,55 @@
+{
+  "topic": "net-migration",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    { "date": "2004", "netMigrationThousands": 268, "workVisas": 95, "studyVisas": 85 },
+    { "date": "2005", "netMigrationThousands": 215, "workVisas": 98, "studyVisas": 90 },
+    { "date": "2006", "netMigrationThousands": 240, "workVisas": 102, "studyVisas": 95 },
+    { "date": "2007", "netMigrationThousands": 237, "workVisas": 105, "studyVisas": 99 },
+    { "date": "2008", "netMigrationThousands": 209, "workVisas": 110, "studyVisas": 104 },
+    { "date": "2009", "netMigrationThousands": 195, "workVisas": 100, "studyVisas": 108 },
+    { "date": "2010", "netMigrationThousands": 256, "workVisas": 98, "studyVisas": 115 },
+    { "date": "2011", "netMigrationThousands": 216, "workVisas": 95, "studyVisas": 120 },
+    { "date": "2012", "netMigrationThousands": 176, "workVisas": 92, "studyVisas": 112 },
+    { "date": "2013", "netMigrationThousands": 209, "workVisas": 94, "studyVisas": 109 },
+    { "date": "2014", "netMigrationThousands": 313, "workVisas": 100, "studyVisas": 112 },
+    { "date": "2015", "netMigrationThousands": 330, "workVisas": 104, "studyVisas": 118 },
+    { "date": "2016", "netMigrationThousands": 271, "workVisas": 108, "studyVisas": 120 },
+    { "date": "2017", "netMigrationThousands": 282, "workVisas": 112, "studyVisas": 122 },
+    { "date": "2018", "netMigrationThousands": 271, "workVisas": 118, "studyVisas": 124 },
+    { "date": "2019", "netMigrationThousands": 224, "workVisas": 122, "studyVisas": 127 },
+    { "date": "2020", "netMigrationThousands": 184, "workVisas": 72,  "studyVisas": 80  },
+    { "date": "2021", "netMigrationThousands": 488, "workVisas": 145, "studyVisas": 180 },
+    { "date": "2022", "netMigrationThousands": 745, "workVisas": 195, "studyVisas": 280 },
+    { "date": "2023", "netMigrationThousands": 906, "workVisas": 205, "studyVisas": 340 },
+    { "date": "2024", "netMigrationThousands": 350, "workVisas": 145, "studyVisas": 195 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Office for National Statistics",
+        "dataset": "Long-term international migration, provisional estimates",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/longterminternationalmigrationprovisional/yearendingjune2024",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Immigration statistics",
+        "url": "https://www.gov.uk/government/collections/immigration-statistics-quarterly-release",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Migration Observatory (Oxford)",
+        "dataset": "UK migration: the numbers",
+        "url": "https://migrationobservatory.ox.ac.uk/resources/briefings/long-term-international-migration-flows-to-and-from-the-uk/",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Net migration is the difference between immigration and emigration over a 12-month rolling period, published quarterly by ONS. Figures prior to 2021 are based on the International Passenger Survey; from 2021 they incorporate administrative data (Home Office visa records, NHS registrations, HMRC records) and are not directly comparable. Work and study visa breakdowns are from Home Office visa statistics.",
+    "knownIssues": [
+      "ONS revised historical net migration estimates significantly upward in 2023 following the shift to administrative data sources; pre-2021 and post-2021 figures use different methodologies",
+      "The 2024 figure is provisional and subject to revision; visa restrictions introduced in early 2024 affect student dependants and care worker routes",
+      "Net migration does not distinguish between temporary and permanent migration; students and seasonal workers inflate gross flows without representing long-term population change"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "topic": "civil-liberties",
+  "lastUpdated": "2026-03-04",
+  "timeSeries": [
+    { "date": "2010", "cctvsPerThousand": 45, "stopSearchPerThousand": 25 },
+    { "date": "2011", "cctvsPerThousand": 47, "stopSearchPerThousand": 23 },
+    { "date": "2012", "cctvsPerThousand": 49, "stopSearchPerThousand": 20 },
+    { "date": "2013", "cctvsPerThousand": 51, "stopSearchPerThousand": 16 },
+    { "date": "2014", "cctvsPerThousand": 53, "stopSearchPerThousand": 13 },
+    { "date": "2015", "cctvsPerThousand": 55, "stopSearchPerThousand": 11 },
+    { "date": "2016", "cctvsPerThousand": 57, "stopSearchPerThousand": 9 },
+    { "date": "2017", "cctvsPerThousand": 59, "stopSearchPerThousand": 9 },
+    { "date": "2018", "cctvsPerThousand": 61, "stopSearchPerThousand": 10 },
+    { "date": "2019", "cctvsPerThousand": 63, "stopSearchPerThousand": 11 },
+    { "date": "2020", "cctvsPerThousand": 65, "stopSearchPerThousand": 13 },
+    { "date": "2021", "cctvsPerThousand": 67, "stopSearchPerThousand": 14 },
+    { "date": "2022", "cctvsPerThousand": 70, "stopSearchPerThousand": 15 },
+    { "date": "2023", "cctvsPerThousand": 75, "stopSearchPerThousand": 16 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "BSIA", "dataset": "British Security Industry Association CCTV Survey", "url": "https://www.bsia.co.uk/publications", "frequency": "biennial", "retrieved": "2026-03-04" },
+      { "name": "Home Office", "dataset": "Police Powers and Procedures: Stop and Search", "url": "https://www.gov.uk/government/statistics/police-powers-and-procedures-stop-and-search-and-arrests-england-and-wales", "frequency": "annual", "retrieved": "2026-03-04" },
+      { "name": "CIVICUS", "dataset": "State of Civil Society Report &mdash; UK Country Rating", "url": "https://www.civicus.org/index.php/state-of-civil-society-report-2024", "frequency": "annual", "retrieved": "2026-03-04" }
+    ],
+    "methodology": "CCTV camera estimates from BSIA industry survey extrapolated using camera density growth rates. Stop and search rates per 1,000 population from Home Office Stats19 equivalent for policing powers. CIVICUS civic space rating uses 5-point scale (Open, Narrowed, Obstructed, Repressed, Closed).",
+    "knownIssues": [
+      "CCTV estimates are industry estimates with significant uncertainty; no central register exists; actual numbers may be higher",
+      "Stop and search data excludes counter-terrorism powers under Schedule 7 of the Terrorism Act 2000",
+      "CIVICUS ratings combine subjective expert assessment with incident reporting; methodology has changed over time"
+    ]
+  }
+}

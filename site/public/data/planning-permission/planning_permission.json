@@ -1,0 +1,66 @@
+{
+  "topic": "planning-permission",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    { "date": "2010", "permissionsThousands": 580, "completionsThousands": 115, "backlogThousands": 200 },
+    { "date": "2011", "permissionsThousands": 560, "completionsThousands": 108, "backlogThousands": 220 },
+    { "date": "2012", "permissionsThousands": 540, "completionsThousands": 107, "backlogThousands": 245 },
+    { "date": "2013", "permissionsThousands": 530, "completionsThousands": 109, "backlogThousands": 260 },
+    { "date": "2014", "permissionsThousands": 550, "completionsThousands": 118, "backlogThousands": 270 },
+    { "date": "2015", "permissionsThousands": 560, "completionsThousands": 143, "backlogThousands": 280 },
+    { "date": "2016", "permissionsThousands": 580, "completionsThousands": 163, "backlogThousands": 280 },
+    { "date": "2017", "permissionsThousands": 560, "completionsThousands": 183, "backlogThousands": 290 },
+    { "date": "2018", "permissionsThousands": 540, "completionsThousands": 196, "backlogThousands": 300 },
+    { "date": "2019", "permissionsThousands": 520, "completionsThousands": 213, "backlogThousands": 320 },
+    { "date": "2020", "permissionsThousands": 490, "completionsThousands": 175, "backlogThousands": 380 },
+    { "date": "2021", "permissionsThousands": 480, "completionsThousands": 216, "backlogThousands": 420 },
+    { "date": "2022", "permissionsThousands": 470, "completionsThousands": 232, "backlogThousands": 460 },
+    { "date": "2023", "permissionsThousands": 474, "completionsThousands": 234, "backlogThousands": 500 },
+    { "date": "2024", "permissionsThousands": 460, "completionsThousands": 221, "backlogThousands": 520 }
+  ],
+  "staffingTimeSeries": [
+    { "date": "2010", "staffingIndex": 100 },
+    { "date": "2011", "staffingIndex": 94 },
+    { "date": "2012", "staffingIndex": 89 },
+    { "date": "2013", "staffingIndex": 85 },
+    { "date": "2014", "staffingIndex": 82 },
+    { "date": "2015", "staffingIndex": 78 },
+    { "date": "2016", "staffingIndex": 75 },
+    { "date": "2017", "staffingIndex": 73 },
+    { "date": "2018", "staffingIndex": 70 },
+    { "date": "2019", "staffingIndex": 68 },
+    { "date": "2020", "staffingIndex": 66 },
+    { "date": "2021", "staffingIndex": 63 },
+    { "date": "2022", "staffingIndex": 61 },
+    { "date": "2023", "staffingIndex": 60 },
+    { "date": "2024", "staffingIndex": 61 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Department for Levelling Up, Housing and Communities",
+        "dataset": "Planning applications in England",
+        "url": "https://www.gov.uk/government/collections/planning-applications-statistics",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Planning Advisory Service / Local Government Association",
+        "dataset": "Local planning authority staffing and resourcing",
+        "url": "https://www.local.gov.uk/pas",
+        "frequency": "annual"
+      },
+      {
+        "name": "House of Commons Library",
+        "dataset": "Planning permission and housebuilding",
+        "url": "https://commonslibrary.parliament.uk/research-briefings/sn00768/",
+        "frequency": "occasional"
+      }
+    ],
+    "methodology": "Planning permissions figures are major residential applications decided in favour by local planning authorities in England. Completions are from DLUHC house building statistics. Backlog is undecided applications outstanding at year end. Staffing index is indexed to 2010=100, based on Planning Advisory Service data on planning department full-time equivalent staff in English local authorities.",
+    "knownIssues": [
+      "Permissions figures include outline and detailed permissions; outline permissions may not result in development for many years and should not be directly compared with completions",
+      "Planning backlog figures include applications of all sizes; minor applications dominate numerically but are not the primary cause of housing delivery delays",
+      "Staffing data has gaps in coverage for smaller local planning authorities; the index represents a weighted average with some imputation for non-responding authorities"
+    ]
+  }
+}

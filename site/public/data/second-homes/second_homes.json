@@ -1,0 +1,33 @@
+{
+  "topic": "second-homes",
+  "lastUpdated": "2026-03-04",
+  "timeSeries": [
+    { "date": "2010", "secondHomesThousands": 178, "shortTermLetsThousands": 20 },
+    { "date": "2011", "secondHomesThousands": 185, "shortTermLetsThousands": 25 },
+    { "date": "2012", "secondHomesThousands": 192, "shortTermLetsThousands": 30 },
+    { "date": "2013", "secondHomesThousands": 200, "shortTermLetsThousands": 40 },
+    { "date": "2014", "secondHomesThousands": 210, "shortTermLetsThousands": 55 },
+    { "date": "2015", "secondHomesThousands": 218, "shortTermLetsThousands": 75 },
+    { "date": "2016", "secondHomesThousands": 225, "shortTermLetsThousands": 95 },
+    { "date": "2017", "secondHomesThousands": 233, "shortTermLetsThousands": 115 },
+    { "date": "2018", "secondHomesThousands": 241, "shortTermLetsThousands": 135 },
+    { "date": "2019", "secondHomesThousands": 249, "shortTermLetsThousands": 155 },
+    { "date": "2020", "secondHomesThousands": 257, "shortTermLetsThousands": 165 },
+    { "date": "2021", "secondHomesThousands": 265, "shortTermLetsThousands": 195 },
+    { "date": "2022", "secondHomesThousands": 270, "shortTermLetsThousands": 215 },
+    { "date": "2023", "secondHomesThousands": 272, "shortTermLetsThousands": 230 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "DLUHC", "dataset": "Council Tax Statistics for England", "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-council-tax", "frequency": "annual", "retrieved": "2026-03-04" },
+      { "name": "ONS", "dataset": "Short-Term Lets and Airbnb Registrations", "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privatrenterprices/latestrelease", "frequency": "annual", "retrieved": "2026-03-04" },
+      { "name": "AirDNA", "dataset": "UK Short-Term Rental Market Report", "url": "https://www.airdna.co/blog/uk-short-term-rental-market", "frequency": "annual", "retrieved": "2026-03-04" }
+    ],
+    "methodology": "Second homes counted from council tax exemptions and discounts data. Short-term lets estimated from Airbnb and VRBO listings data combined with ONS business survey. Some local authority areas may under-report due to avoidance of second home council tax premiums.",
+    "knownIssues": [
+      "Second home definition varies: DLUHC uses council tax band as proxy, which may include some long-term empty properties",
+      "Short-term let data is platform-dependent and may double-count properties listed on multiple platforms",
+      "Wales and Scotland have separate statutory regimes; figures here cover England only"
+    ]
+  }
+}

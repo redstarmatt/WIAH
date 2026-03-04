@@ -1,0 +1,29 @@
+{
+  "topic": "foreign-aid",
+  "lastUpdated": "2026-03-04",
+  "timeSeries": [
+    { "date": "2015", "odaPctGni": 0.71, "odaTotalBn": 12.2, "asylumDiversionBn": 0.3 },
+    { "date": "2016", "odaPctGni": 0.70, "odaTotalBn": 13.4, "asylumDiversionBn": 0.5 },
+    { "date": "2017", "odaPctGni": 0.70, "odaTotalBn": 14.1, "asylumDiversionBn": 0.5 },
+    { "date": "2018", "odaPctGni": 0.70, "odaTotalBn": 14.6, "asylumDiversionBn": 0.6 },
+    { "date": "2019", "odaPctGni": 0.70, "odaTotalBn": 15.2, "asylumDiversionBn": 0.8 },
+    { "date": "2020", "odaPctGni": 0.70, "odaTotalBn": 14.9, "asylumDiversionBn": 1.0 },
+    { "date": "2021", "odaPctGni": 0.50, "odaTotalBn": 11.4, "asylumDiversionBn": 1.5 },
+    { "date": "2022", "odaPctGni": 0.50, "odaTotalBn": 13.0, "asylumDiversionBn": 2.5 },
+    { "date": "2023", "odaPctGni": 0.50, "odaTotalBn": 15.2, "asylumDiversionBn": 3.5 },
+    { "date": "2024", "odaPctGni": 0.50, "odaTotalBn": 14.8, "asylumDiversionBn": 3.5 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "FCDO / OECD DAC", "dataset": "UK Overseas Development Assistance Statistics", "url": "https://www.gov.uk/government/collections/statistics-on-international-development", "frequency": "annual", "retrieved": "2026-03-04" },
+      { "name": "ICAI", "dataset": "Independent Commission for Aid Impact &mdash; Annual Reviews", "url": "https://icai.independent.gov.uk/", "frequency": "annual", "retrieved": "2026-03-04" },
+      { "name": "Statistics on International Development", "dataset": "SID &mdash; Final UK ODA Tables", "url": "https://www.gov.uk/government/statistics/statistics-on-international-development-final-uk-aid-spend-2023", "frequency": "annual", "retrieved": "2026-03-04" }
+    ],
+    "methodology": "ODA (Official Development Assistance) measured according to OECD DAC criteria. GNI sourced from ONS. Asylum in-donor costs are expenditure within the UK on processing asylum seekers, classified as ODA under DAC rules and reported as part of the UK ODA total.",
+    "knownIssues": [
+      "In-donor asylum costs are classified as ODA under OECD DAC rules and are therefore counted within the official UK aid budget, reducing funds available for programmes overseas",
+      "Figures for 2024 are provisional; FCDO typically revises statistics in the following year",
+      "The 0.7% target is enshrined in the International Development (Official Development Assistance Target) Act 2015 but government has exercised statutory discretion to spend below target"
+    ]
+  }
+}

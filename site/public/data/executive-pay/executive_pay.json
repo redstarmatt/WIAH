@@ -1,0 +1,50 @@
+{
+  "topic": "executive-pay",
+  "lastUpdated": "2024-01-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2010", "ceoPay": 2.1, "workerRatio": 47 },
+      { "date": "2011", "ceoPay": 2.3, "workerRatio": 52 },
+      { "date": "2012", "ceoPay": 2.4, "workerRatio": 55 },
+      { "date": "2013", "ceoPay": 2.5, "workerRatio": 59 },
+      { "date": "2014", "ceoPay": 2.7, "workerRatio": 63 },
+      { "date": "2015", "ceoPay": 2.8, "workerRatio": 67 },
+      { "date": "2016", "ceoPay": 3.0, "workerRatio": 72 },
+      { "date": "2017", "ceoPay": 3.1, "workerRatio": 78 },
+      { "date": "2018", "ceoPay": 3.2, "workerRatio": 83 },
+      { "date": "2019", "ceoPay": 3.4, "workerRatio": 90 },
+      { "date": "2020", "ceoPay": 2.7, "workerRatio": 73 },
+      { "date": "2021", "ceoPay": 3.3, "workerRatio": 95 },
+      { "date": "2022", "ceoPay": 3.7, "workerRatio": 108 },
+      { "date": "2023", "ceoPay": 3.9, "workerRatio": 118 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "High Pay Centre",
+        "dataset": "FTSE 100 CEO Pay Survey",
+        "url": "https://highpaycentre.org",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Annual Survey of Hours and Earnings (ASHE)",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2023",
+        "frequency": "annual"
+      },
+      {
+        "name": "Investment Association",
+        "dataset": "Executive Pay Reporting",
+        "url": "https://www.theia.org",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "CEO pay figures are median total remuneration packages for FTSE 100 chief executives, sourced from High Pay Centre annual surveys of company remuneration reports. The pay ratio compares FTSE 100 CEO median pay to UK median full-time earnings from ONS ASHE. Pre-2020 ratios use retrospectively revised ASHE median earnings figures.",
+    "knownIssues": [
+      "CEO pay figures reflect awarded pay and include long-term incentive plan (LTIP) vestings which can create sharp year-on-year variation",
+      "2020 figure is depressed due to COVID-related pay cuts and LTIP deferrals; recovery in 2021-2023 reflects catch-up vesting",
+      "Pay ratio methodology varies by company; statutory CEO pay ratio disclosures (required since 2020 for large companies) use a different denominator"
+    ]
+  }
+}

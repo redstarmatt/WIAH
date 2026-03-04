@@ -1,0 +1,32 @@
+{
+  "topic": "chalk-streams",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2010", "goodEcologyPct": 8, "sewageEvents": 3200 },
+      { "date": "2012", "goodEcologyPct": 7, "sewageEvents": 3800 },
+      { "date": "2014", "goodEcologyPct": 6, "sewageEvents": 4500 },
+      { "date": "2016", "goodEcologyPct": 6, "sewageEvents": 6000 },
+      { "date": "2017", "goodEcologyPct": 5.5, "sewageEvents": 7000 },
+      { "date": "2018", "goodEcologyPct": 5.5, "sewageEvents": 8500 },
+      { "date": "2019", "goodEcologyPct": 5, "sewageEvents": 9800 },
+      { "date": "2020", "goodEcologyPct": 5, "sewageEvents": 10800 },
+      { "date": "2021", "goodEcologyPct": 5, "sewageEvents": 11500 },
+      { "date": "2022", "goodEcologyPct": 5, "sewageEvents": 12000 },
+      { "date": "2023", "goodEcologyPct": 5, "sewageEvents": 12000 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "Environment Agency", "dataset": "Water Framework Directive river classification", "url": "https://www.data.gov.uk/dataset/d5dc66ee-89e6-476e-9da1-39c34e34e1db/wfd-river-water-bodies-cycle-2", "retrieved": "2026-03-01", "frequency": "triennial" },
+      { "name": "Environment Agency", "dataset": "Event Duration Monitoring — storm overflows", "url": "https://www.gov.uk/government/collections/environment-agency-data-on-storm-overflow-operation-edm", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "Chalk Stream Restoration Group", "dataset": "State of chalk streams assessment", "url": "https://chalkstreams.org/", "retrieved": "2026-03-01", "frequency": "ad hoc" }
+    ],
+    "methodology": "Ecological quality status is Water Framework Directive assessment for chalk-dominated river water bodies in England. Sewage events are storm overflow discharges recorded via Environment Agency Event Duration Monitoring (EDM) on catchments feeding chalk streams. The 95% in poor condition figure comes from the Chalk Stream Restoration Group's 2021 assessment. England holds 85% of world's chalk streams — approximately 160 major chalk rivers covering roughly 4,000 km.",
+    "knownIssues": [
+      "WFD ecological classification uses a 'one out, all out' rule — failure on any one element (chemistry, biology, hydrology) results in classification as less than good, making 100% good status a very high bar.",
+      "EDM sewage event data improved significantly in coverage from 2016 as more monitors were installed — the apparent increase in events partly reflects better measurement, not solely deterioration.",
+      "Chalk stream boundaries are not standardised — different organisations classify slightly different river lengths as chalk streams."
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "topic": "electric-vehicles",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2018", "evSharePct": 0.5, "chargePoints": 12000 },
+      { "date": "2019", "evSharePct": 0.7, "chargePoints": 16000 },
+      { "date": "2020", "evSharePct": 1.6, "chargePoints": 22000 },
+      { "date": "2021", "evSharePct": 3.1, "chargePoints": 30000 },
+      { "date": "2022", "evSharePct": 7.4, "chargePoints": 40000 },
+      { "date": "2023", "evSharePct": 11.6, "chargePoints": 50000 },
+      { "date": "2024", "evSharePct": 14.8, "chargePoints": 55000 },
+      { "date": "2025", "evSharePct": 16.5, "chargePoints": 58000 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "SMMT", "dataset": "New car registrations by fuel type", "url": "https://www.smmt.co.uk/vehicle-data/car-registrations/", "retrieved": "2026-03-01", "frequency": "monthly" },
+      { "name": "DESNZ", "dataset": "Electric vehicle charging device statistics", "url": "https://www.gov.uk/government/collections/electric-vehicle-charging-infrastructure-statistics", "retrieved": "2026-03-01", "frequency": "quarterly" },
+      { "name": "DVLA", "dataset": "Vehicle licensing statistics", "url": "https://www.gov.uk/government/collections/vehicles-statistics", "retrieved": "2026-03-01", "frequency": "quarterly" }
+    ],
+    "methodology": "EV share covers battery electric vehicles (BEVs) only, not plug-in hybrids (PHEVs). Charge points include all public charge points on the DESNZ register, including slow (3–7 kW), fast (7–22 kW), rapid (25–99 kW), and ultra-rapid (100 kW+). The 1-per-54 EVs ratio is calculated using DVLA licensed BEV stock against total public charge points. The ZEV mandate requires 22% of manufacturer sales to be zero-emission in 2024, rising to 80% by 2030 and 100% by 2035.",
+    "knownIssues": [
+      "The 2030 petrol and diesel ban date may be extended to 2035 — government policy was under review as of early 2026.",
+      "Charge point density statistics mask quality differences: a slow 3 kW charger and a 150 kW ultra-rapid charger are counted equally.",
+      "EV share statistics count registrations, not stock; the total BEV fleet on UK roads was around 1.1 million in 2024, or about 4% of all cars."
+    ]
+  }
+}

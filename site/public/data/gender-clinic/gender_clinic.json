@@ -1,0 +1,23 @@
+{
+  "topic": "gender-clinic",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2016", "waitingListSize": 3500, "avgWaitMonths": 18 },
+      { "date": "2017", "waitingListSize": 5000, "avgWaitMonths": 24 },
+      { "date": "2018", "waitingListSize": 7500, "avgWaitMonths": 30 },
+      { "date": "2019", "waitingListSize": 10000, "avgWaitMonths": 36 },
+      { "date": "2020", "waitingListSize": 14000, "avgWaitMonths": 42 },
+      { "date": "2021", "waitingListSize": 18000, "avgWaitMonths": 48 },
+      { "date": "2022", "waitingListSize": 22000, "avgWaitMonths": 60 },
+      { "date": "2023", "waitingListSize": 26000, "avgWaitMonths": 66 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "NHS England", "dataset": "Gender Dysphoria Clinic Waiting Times", "url": "https://www.england.nhs.uk/commissioning/spec-services/npc-crg/gender-dysphoria-clinical-programme/", "retrieved": "2026-03-01", "frequency": "quarterly" }
+    ],
+    "methodology": "Waiting list data from NHS England gender dysphoria programme returns. Average wait calculated as median time from referral to first clinical appointment. Data covers England. Post-2023 data reflects transition from GIDS to new regional service model.",
+    "knownIssues": ["Service redesign from 2023 onward affects comparability of waiting list data", "Under-18 figures held separately from adult services; combined total is approximate", "Some patients referred under old GIDS system re-referred to new regional services"]
+  }
+}

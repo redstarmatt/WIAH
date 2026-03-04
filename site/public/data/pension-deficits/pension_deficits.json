@@ -1,0 +1,58 @@
+{
+  "topic": "pension-deficits",
+  "lastUpdated": "2024-01-01",
+  "national": {
+    "timeSeries": [
+      { "date": "2012", "pensionParticipationPct": 47, "workersNoPensionMillion": 22 },
+      { "date": "2013", "pensionParticipationPct": 52, "workersNoPensionMillion": 21 },
+      { "date": "2014", "pensionParticipationPct": 58, "workersNoPensionMillion": 20 },
+      { "date": "2015", "pensionParticipationPct": 64, "workersNoPensionMillion": 18 },
+      { "date": "2016", "pensionParticipationPct": 68, "workersNoPensionMillion": 17 },
+      { "date": "2017", "pensionParticipationPct": 72, "workersNoPensionMillion": 16 },
+      { "date": "2018", "pensionParticipationPct": 76, "workersNoPensionMillion": 15 },
+      { "date": "2019", "pensionParticipationPct": 79, "workersNoPensionMillion": 14 },
+      { "date": "2020", "pensionParticipationPct": 80, "workersNoPensionMillion": 14 },
+      { "date": "2021", "pensionParticipationPct": 83, "workersNoPensionMillion": 13 },
+      { "date": "2022", "pensionParticipationPct": 86, "workersNoPensionMillion": 13 },
+      { "date": "2023", "pensionParticipationPct": 88, "workersNoPensionMillion": 14 }
+    ],
+    "dbFunding": [
+      { "date": "2012", "fundingBn": -400 },
+      { "date": "2014", "fundingBn": -320 },
+      { "date": "2016", "fundingBn": -250 },
+      { "date": "2018", "fundingBn": -150 },
+      { "date": "2020", "fundingBn": -100 },
+      { "date": "2021", "fundingBn": 10 },
+      { "date": "2022", "fundingBn": 300 },
+      { "date": "2023", "fundingBn": 320 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DWP",
+        "dataset": "Workplace pension participation and savings trends",
+        "url": "https://www.gov.uk/government/statistics/workplace-pension-participation-and-savings-trends",
+        "frequency": "annual"
+      },
+      {
+        "name": "Pensions Regulator",
+        "dataset": "DB scheme funding statistics",
+        "url": "https://www.thepensionsregulator.gov.uk/en/document-library/research-and-analysis/db-landscape-report",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Annual Survey of Hours and Earnings &mdash; pension provision",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2023",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Pension participation rates are from DWP Workplace Pension Participation surveys, measuring the proportion of eligible employees participating in a workplace pension scheme. Auto-enrolment began October 2012 for large employers and was phased in for smaller employers through to 2018. Workers without a workplace pension includes all employees and self-employed not in an occupational or personal pension scheme. DB scheme aggregate funding position is the difference between the value of scheme assets and the present value of promised liabilities, as published by the Pensions Regulator.",
+    "knownIssues": [
+      "Participation rate covers eligible employees only; the self-employed (around 4.8 million) are not subject to auto-enrolment and are substantially excluded from workplace pension saving",
+      "The 2023 uptick in workers without a pension reflects growth in self-employment and gig economy working rather than a decline in auto-enrolment effectiveness",
+      "DB scheme funding improved dramatically from 2022 as rising interest rates reduced the present value of liabilities; this does not mean schemes can necessarily afford to pay out promised benefits, as it depends on asset-liability matching quality"
+    ]
+  }
+}
