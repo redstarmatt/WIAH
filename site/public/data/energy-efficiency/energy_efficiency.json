@@ -1,0 +1,23 @@
+{
+  "national": {
+    "epcRating": [
+      {"year": 2012, "pctAtCOrAbove": 14},
+      {"year": 2014, "pctAtCOrAbove": 19},
+      {"year": 2016, "pctAtCOrAbove": 28},
+      {"year": 2018, "pctAtCOrAbove": 34},
+      {"year": 2020, "pctAtCOrAbove": 40},
+      {"year": 2022, "pctAtCOrAbove": 46},
+      {"year": 2024, "pctAtCOrAbove": 49}
+    ],
+    "heatPumps": [
+      {"year": 2017, "installations": 19000},
+      {"year": 2018, "installations": 22000},
+      {"year": 2019, "installations": 27000},
+      {"year": 2020, "installations": 32000},
+      {"year": 2021, "installations": 43000},
+      {"year": 2022, "installations": 55000},
+      {"year": 2023, "installations": 60000},
+      {"year": 2024, "installations": 72000}
+    ]
+  }
+}

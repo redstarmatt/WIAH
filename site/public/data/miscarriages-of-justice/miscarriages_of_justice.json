@@ -1,0 +1,30 @@
+{
+  "topic": "miscarriages-of-justice",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "ccrcApplications": [
+      { "year": 2015, "applications": 1472 },
+      { "year": 2016, "applications": 1512 },
+      { "year": 2017, "applications": 1415 },
+      { "year": 2018, "applications": 1438 },
+      { "year": 2019, "applications": 1402 },
+      { "year": 2020, "applications": 1214 },
+      { "year": 2021, "applications": 1337 },
+      { "year": 2022, "applications": 1410 },
+      { "year": 2023, "applications": 1356 },
+      { "year": 2024, "applications": 1380 }
+    ],
+    "referrals": [
+      { "year": 2015, "count": 32 },
+      { "year": 2016, "count": 28 },
+      { "year": 2017, "count": 27 },
+      { "year": 2018, "count": 34 },
+      { "year": 2019, "count": 30 },
+      { "year": 2020, "count": 22 },
+      { "year": 2021, "count": 25 },
+      { "year": 2022, "count": 31 },
+      { "year": 2023, "count": 29 },
+      { "year": 2024, "count": 33 }
+    ]
+  }
+}

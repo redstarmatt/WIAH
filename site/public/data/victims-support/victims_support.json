@@ -1,0 +1,30 @@
+{
+  "topic": "victims-support",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "victimSatisfaction": [
+      { "year": 2015, "rate": 73.2 },
+      { "year": 2016, "rate": 71.8 },
+      { "year": 2017, "rate": 70.5 },
+      { "year": 2018, "rate": 68.1 },
+      { "year": 2019, "rate": 66.3 },
+      { "year": 2020, "rate": 64.0 },
+      { "year": 2021, "rate": 61.5 },
+      { "year": 2022, "rate": 59.2 },
+      { "year": 2023, "rate": 57.8 },
+      { "year": 2024, "rate": 56.5 }
+    ],
+    "keptInformed": [
+      { "year": 2015, "rate": 62.5 },
+      { "year": 2016, "rate": 60.2 },
+      { "year": 2017, "rate": 58.8 },
+      { "year": 2018, "rate": 56.1 },
+      { "year": 2019, "rate": 54.0 },
+      { "year": 2020, "rate": 51.3 },
+      { "year": 2021, "rate": 49.5 },
+      { "year": 2022, "rate": 47.2 },
+      { "year": 2023, "rate": 45.8 },
+      { "year": 2024, "rate": 44.1 }
+    ]
+  }
+}

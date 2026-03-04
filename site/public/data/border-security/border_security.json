@@ -1,0 +1,26 @@
+{
+  "topic": "border-security",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "smallBoatCrossings": [
+      { "year": 2018, "arrivals": 299 },
+      { "year": 2019, "arrivals": 1843 },
+      { "year": 2020, "arrivals": 8466 },
+      { "year": 2021, "arrivals": 28526 },
+      { "year": 2022, "arrivals": 45755 },
+      { "year": 2023, "arrivals": 29437 },
+      { "year": 2024, "arrivals": 36816 },
+      { "year": 2025, "arrivals": 4100 }
+    ],
+    "asylumBacklog": [
+      { "year": 2018, "cases": 38200 },
+      { "year": 2019, "cases": 42100 },
+      { "year": 2020, "cases": 52400 },
+      { "year": 2021, "cases": 76900 },
+      { "year": 2022, "cases": 132400 },
+      { "year": 2023, "cases": 175400 },
+      { "year": 2024, "cases": 118300 },
+      { "year": 2025, "cases": 98600 }
+    ]
+  }
+}

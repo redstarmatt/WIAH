@@ -1,0 +1,21 @@
+{
+  "national": {
+    "fishStocks": [
+      {"year": 2010, "pctSustainable": 48},
+      {"year": 2012, "pctSustainable": 51},
+      {"year": 2014, "pctSustainable": 55},
+      {"year": 2016, "pctSustainable": 57},
+      {"year": 2018, "pctSustainable": 54},
+      {"year": 2020, "pctSustainable": 53},
+      {"year": 2022, "pctSustainable": 51},
+      {"year": 2024, "pctSustainable": 49}
+    ],
+    "mpaCondition": [
+      {"year": 2016, "pctFavourable": 44},
+      {"year": 2018, "pctFavourable": 42},
+      {"year": 2020, "pctFavourable": 40},
+      {"year": 2022, "pctFavourable": 38},
+      {"year": 2024, "pctFavourable": 36}
+    ]
+  }
+}

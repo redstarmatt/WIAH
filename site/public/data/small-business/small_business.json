@@ -1,0 +1,46 @@
+{
+  "national": {
+    "insolvencies": {
+      "timeSeries": [
+        { "year": 2015, "totalInsolvencies": 14630 },
+        { "year": 2016, "totalInsolvencies": 15520 },
+        { "year": 2017, "totalInsolvencies": 15080 },
+        { "year": 2018, "totalInsolvencies": 16090 },
+        { "year": 2019, "totalInsolvencies": 17200 },
+        { "year": 2020, "totalInsolvencies": 12550 },
+        { "year": 2021, "totalInsolvencies": 14150 },
+        { "year": 2022, "totalInsolvencies": 22100 },
+        { "year": 2023, "totalInsolvencies": 25158 },
+        { "year": 2024, "totalInsolvencies": 27500 }
+      ]
+    },
+    "survivalRate": {
+      "timeSeries": [
+        { "year": 2015, "fiveYearSurvivalPct": 44.1 },
+        { "year": 2016, "fiveYearSurvivalPct": 43.2 },
+        { "year": 2017, "fiveYearSurvivalPct": 42.5 },
+        { "year": 2018, "fiveYearSurvivalPct": 42.0 },
+        { "year": 2019, "fiveYearSurvivalPct": 41.6 },
+        { "year": 2020, "fiveYearSurvivalPct": 40.8 },
+        { "year": 2021, "fiveYearSurvivalPct": 39.9 },
+        { "year": 2022, "fiveYearSurvivalPct": 39.4 },
+        { "year": 2023, "fiveYearSurvivalPct": 38.7 },
+        { "year": 2024, "fiveYearSurvivalPct": 38.2 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "The Insolvency Service", "dataset": "Company Insolvency Statistics", "url": "https://www.gov.uk/government/collections/company-insolvency-statistics", "frequency": "quarterly" },
+      { "name": "ONS", "dataset": "Business Demography, UK", "url": "https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/latest", "frequency": "annual" },
+      { "name": "BEIS / DBT", "dataset": "Business Population Estimates", "url": "https://www.gov.uk/government/collections/business-population-estimates", "frequency": "annual" }
+    ],
+    "methodology": "Company insolvencies include compulsory liquidations, creditors' voluntary liquidations, administrations, and company voluntary arrangements. Five-year survival rates track the proportion of businesses born in a given year that are still active five years later. Data is from the Insolvency Service and ONS business demography statistics.",
+    "knownIssues": [
+      "Government COVID-19 support (furlough, bounce-back loans, insolvency moratorium) artificially suppressed 2020-21 insolvency figures",
+      "The surge in 2022-24 partly reflects delayed insolvencies catching up",
+      "Survival rates exclude sole traders without PAYE or VAT registration",
+      "Late payment data relies on self-reporting through the Prompt Payment Code and is likely an undercount"
+    ]
+  }
+}

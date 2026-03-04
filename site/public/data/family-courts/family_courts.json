@@ -1,0 +1,30 @@
+{
+  "topic": "family-courts",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "outstandingCases": [
+      { "year": 2015, "cases": 38000 },
+      { "year": 2016, "cases": 37200 },
+      { "year": 2017, "cases": 36800 },
+      { "year": 2018, "cases": 37500 },
+      { "year": 2019, "cases": 39100 },
+      { "year": 2020, "cases": 48200 },
+      { "year": 2021, "cases": 54300 },
+      { "year": 2022, "cases": 56800 },
+      { "year": 2023, "cases": 60200 },
+      { "year": 2024, "cases": 62400 }
+    ],
+    "avgWeeksToDisposal": [
+      { "year": 2015, "weeks": 24 },
+      { "year": 2016, "weeks": 25 },
+      { "year": 2017, "weeks": 27 },
+      { "year": 2018, "weeks": 30 },
+      { "year": 2019, "weeks": 32 },
+      { "year": 2020, "weeks": 41 },
+      { "year": 2021, "weeks": 45 },
+      { "year": 2022, "weeks": 46 },
+      { "year": 2023, "weeks": 48 },
+      { "year": 2024, "weeks": 50 }
+    ]
+  }
+}

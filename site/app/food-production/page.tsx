@@ -1,0 +1,208 @@
+'use client'
+
+import { useEffect, useState } from 'react';
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
+
+// ── Types ────────────────────────────────────────────────────────────────────
+
+interface FoodProductionData {
+  selfSufficiency: Array<{ year: number; pct: number }>;
+  agriculturalOutput: Array<{ year: number; realTermsBillions: number }>;
+  metadata: {
+    sources: { name: string; dataset: string; url: string; frequency: string }[];
+    methodology: string;
+    knownIssues: string[];
+  };
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+
+function yearToDate(y: number): Date {
+  return new Date(y, 5, 1);
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
+
+export default function FoodProductionPage() {
+  const [data, setData] = useState<FoodProductionData | null>(null);
+
+  useEffect(() => {
+    fetch('/data/food-production/food_production.json')
+      .then(r => r.json())
+      .then(setData)
+      .catch(console.error);
+  }, []);
+
+  const sufficiencySeries: Series[] = data
+    ? [{
+        id: 'self-sufficiency',
+        label: 'UK food self-sufficiency',
+        colour: '#2A9D8F',
+        data: data.selfSufficiency.map(d => ({
+          date: yearToDate(d.year),
+          value: d.pct,
+        })),
+      }]
+    : [];
+
+  const outputSeries: Series[] = data
+    ? [{
+        id: 'agricultural-output',
+        label: 'Total agricultural output (real terms)',
+        colour: '#264653',
+        data: data.agriculturalOutput.map(d => ({
+          date: yearToDate(d.year),
+          value: d.realTermsBillions,
+        })),
+      }]
+    : [];
+
+  return (
+    <>
+      <TopicNav topic="Food Production" />
+
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Food Production"
+          question="Can Britain Feed Itself?"
+          finding="The UK produces just 57.8&percnt; of its own food, down from 78&percnt; in 1984 and the lowest level since records began. Import dependency is rising at the same time as global food supply chains face growing disruption from climate change, geopolitical instability, and trade friction."
+          colour="#2A9D8F"
+        />
+
+        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              The UK is one of the least food self-sufficient countries in Western Europe. Defra&apos;s annual Agriculture in the United Kingdom report shows that the ratio of domestic production to total food supply has fallen from around 78&percnt; in the mid-1980s to 57.8&percnt; in 2024. For indigenous-type food &mdash; products that can be grown or raised in the UK climate &mdash; self-sufficiency is higher at around 73&percnt;, but this still means that more than a quarter of food the UK could theoretically produce for itself is instead imported. The UK imports approximately 46&percnt; of its food by value, with the EU (particularly the Netherlands, Ireland, France, and Spain) supplying around 42&percnt; of total food imports by value.
+            </p>
+            <p>
+              Agricultural output has been broadly flat in real terms for a decade, with year-to-year volatility driven primarily by weather. Total output was &pound;27.4 billion in 2024 (in 2023 prices), down from &pound;28.9 billion in 2022 when high commodity prices following the Ukraine invasion temporarily boosted farm incomes. The farming workforce has shrunk by 30&percnt; since 2000, from 540,000 to 380,000, and the average age of a farm holder is 60. Post-Brexit agricultural policy has shifted from the EU&apos;s area-based Basic Payment Scheme (BPS) to the Environmental Land Management scheme (ELMS), which pays farmers for environmental outcomes &mdash; a conceptually sound reform, but the transition has been chaotic. BPS payments are being phased out by 2028, but ELMS uptake has been slower than expected, with only 35&percnt; of eligible farmland enrolled by 2024, creating a funding gap for many smaller farms.
+            </p>
+            <p>
+              The strategic implications of declining self-sufficiency are increasingly debated. The government&apos;s Food Strategy (2022) acknowledged that the UK&apos;s food system is vulnerable to global supply shocks and set a non-binding aspiration to maintain self-sufficiency at or above current levels. The Ukraine crisis demonstrated this vulnerability: wheat prices doubled in early 2022, fertiliser costs tripled, and UK food inflation peaked at 19.2&percnt; in March 2023 &mdash; the highest in over 40 years. The National Farmers&apos; Union (NFU) has argued that food security should be treated as a strategic priority comparable to energy security, with a statutory target for self-sufficiency. Critics counter that comparative advantage and global trade make complete self-sufficiency economically inefficient, and that the UK&apos;s mild climate and limited arable land constrain what can feasibly be produced domestically.
+            </p>
+            <p>
+              The decline in production capacity is not evenly distributed. Horticulture &mdash; fruit and vegetable production &mdash; has contracted most sharply: the UK grows only 54&percnt; of its vegetables and just 16&percnt; of its fruit, down from 78&percnt; and 35&percnt; respectively in 1990. Labour shortages following Brexit have been acute in this sector, with the Seasonal Worker Visa scheme providing only 45,000 visas against an industry demand of 70,000+. Dairy farming has consolidated dramatically, with the number of dairy farms halving from 14,000 to 7,000 since 2005 while total milk production has remained broadly stable, reflecting industrialisation. Upland farmers in Wales, Northern England, and Scotland, who manage marginal land primarily suited to sheep grazing, face the steepest income decline as BPS payments &mdash; which could constitute 80&percnt; of farm income on hill farms &mdash; are withdrawn. Organic farming accounts for just 3.5&percnt; of UK agricultural land, one of the lowest shares in Europe.
+            </p>
+            <p>
+              Measuring food self-sufficiency is more complex than the headline figure suggests. Defra&apos;s ratio measures production value against supply value, meaning it is influenced by commodity prices as much as by volumes &mdash; a year of high global prices can increase the self-sufficiency ratio even if domestic production volumes are flat. The distinction between indigenous and total self-sufficiency is important: the UK will never grow bananas, citrus, or coffee, so including them in the denominator inflates the perceived import dependency. Trade data since January 2021 involves new customs declarations that created temporary disruption in statistical series, and Defra acknowledges potential measurement effects in 2021&ndash;22 data. Agricultural output in real terms depends on the deflator used &mdash; Defra uses the GDP deflator, which may not accurately reflect the specific cost structure of farming. Year-to-year variation of 5&ndash;10&percnt; in arable output is normal due to weather, making any single-year figure a poor basis for trend claims.
+            </p>
+          </div>
+        </section>
+
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Overview' },
+          { id: 'sec-sufficiency', label: 'Self-Sufficiency' },
+          { id: 'sec-output', label: 'Agricultural Output' },
+        ]} />
+
+        <ScrollReveal>
+          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            <MetricCard
+              label="UK food self-sufficiency"
+              value="57.8%"
+              direction="down"
+              polarity="up-is-good"
+              changeText="Down from 78&percnt; in 1984 &middot; Lowest since records began"
+              sparklineData={[61.2, 60.8, 60.5, 61.0, 60.7, 60.2, 59.6, 58.8, 58.2, 57.8]}
+              source="Defra &middot; Agriculture in the UK 2024"
+              onExpand={() => {}}
+            />
+            <MetricCard
+              label="Farm workforce"
+              value="380K"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="Down 30&percnt; since 2000 &middot; Average farmer age: 60"
+              sparklineData={[480, 460, 440, 420, 410, 400, 395, 390, 385, 380]}
+              source="Defra &middot; Agriculture in the UK 2024"
+              onExpand={() => {}}
+            />
+            <MetricCard
+              label="UK-grown fruit"
+              value="16%"
+              direction="down"
+              polarity="up-is-good"
+              changeText="Down from 35&percnt; in 1990 &middot; Labour shortages hit horticulture hardest"
+              sparklineData={[22, 21, 20, 19, 18, 18, 17, 17, 16]}
+              source="Defra &middot; Horticulture Statistics 2024"
+              onExpand={() => {}}
+            />
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-sufficiency" className="mb-12">
+            {sufficiencySeries.length > 0 ? (
+              <LineChart
+                title="UK food self-sufficiency, 2015&ndash;2024"
+                subtitle="Ratio of domestic food production value to total food supply value. Indigenous-type food only."
+                series={sufficiencySeries}
+                yLabel="Percentage (%)"
+                source={{
+                  name: 'Defra',
+                  dataset: 'Agriculture in the United Kingdom',
+                  frequency: 'annual',
+                  url: 'https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom',
+                }}
+              />
+            ) : (
+              <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+            )}
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-output" className="mb-12">
+            {outputSeries.length > 0 ? (
+              <LineChart
+                title="UK total agricultural output, 2015&ndash;2024 (real terms)"
+                subtitle="Gross output of UK agriculture, adjusted to 2023 prices. Weather and commodity price volatility drive year-to-year variation."
+                series={outputSeries}
+                yLabel="Output (&pound; billions)"
+                source={{
+                  name: 'Defra',
+                  dataset: 'Agriculture in the United Kingdom',
+                  frequency: 'annual',
+                  url: 'https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom',
+                }}
+              />
+            ) : (
+              <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+            )}
+          </section>
+        </ScrollReveal>
+
+        {/* Sources */}
+        <section className="border-t border-wiah-border pt-8 mt-12">
+          <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>
+          <div className="text-sm text-wiah-mid space-y-2">
+            {data?.metadata.sources.map((src, i) => (
+              <p key={i}>
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
+                  {src.url}
+                </a>
+              </p>
+            ))}
+          </div>
+          <p className="text-sm text-wiah-mid mt-6">{data?.metadata.methodology}</p>
+          {data?.metadata.knownIssues && data.metadata.knownIssues.length > 0 && (
+            <div className="mt-6 p-4 bg-wiah-light rounded">
+              <p className="font-bold text-wiah-black mb-2">Known issues:</p>
+              <ul className="text-sm text-wiah-mid space-y-1 list-disc list-inside">
+                {data.metadata.knownIssues.map((issue, i) => (
+                  <li key={i}>{issue}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </section>
+      </main>
+    </>
+  );
+}

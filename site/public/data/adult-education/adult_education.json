@@ -1,0 +1,46 @@
+{
+  "national": {
+    "participationRate": {
+      "timeSeries": [
+        { "year": 2015, "pctAdults": 20.1 },
+        { "year": 2016, "pctAdults": 19.4 },
+        { "year": 2017, "pctAdults": 18.7 },
+        { "year": 2018, "pctAdults": 17.3 },
+        { "year": 2019, "pctAdults": 17.0 },
+        { "year": 2020, "pctAdults": 14.2 },
+        { "year": 2021, "pctAdults": 15.5 },
+        { "year": 2022, "pctAdults": 16.1 },
+        { "year": 2023, "pctAdults": 15.8 },
+        { "year": 2024, "pctAdults": 15.4 }
+      ]
+    },
+    "feEnrolments": {
+      "timeSeries": [
+        { "year": 2015, "millionsEnrolments": 3.3 },
+        { "year": 2016, "millionsEnrolments": 3.1 },
+        { "year": 2017, "millionsEnrolments": 2.9 },
+        { "year": 2018, "millionsEnrolments": 2.8 },
+        { "year": 2019, "millionsEnrolments": 2.7 },
+        { "year": 2020, "millionsEnrolments": 2.4 },
+        { "year": 2021, "millionsEnrolments": 2.5 },
+        { "year": 2022, "millionsEnrolments": 2.5 },
+        { "year": 2023, "millionsEnrolments": 2.4 },
+        { "year": 2024, "millionsEnrolments": 2.3 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "DfE", "dataset": "Further Education and Skills Statistics", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/further-education-and-skills", "frequency": "annual" },
+      { "name": "DfE", "dataset": "Adult Education Budget Monitoring", "url": "https://www.gov.uk/government/collections/further-education-and-skills-statistical-first-release-sfr", "frequency": "annual" },
+      { "name": "OECD", "dataset": "Education at a Glance — Adult Learning", "url": "https://www.oecd.org/education/education-at-a-glance/", "frequency": "annual" }
+    ],
+    "methodology": "Adult participation is the proportion of adults aged 19+ who have participated in learning in the past three years, from the National Adult Learning Survey. FE enrolments count all learner starts in further education and skills programmes funded through the Adult Education Budget, advanced learner loans, and apprenticeships.",
+    "knownIssues": [
+      "The National Adult Learning Survey was discontinued after 2010 — recent participation estimates rely on the Annual Population Survey which uses a different methodology",
+      "FE enrolment counts include multiple enrolments by the same learner",
+      "COVID-19 caused a sharp fall in classroom-based learning in 2020 that may be only partially reflected in data",
+      "Adult Education Budget underspend may reflect suppressed demand, not reduced need"
+    ]
+  }
+}

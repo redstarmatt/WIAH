@@ -1,0 +1,47 @@
+{
+  "national": {
+    "taxGap": {
+      "timeSeries": [
+        { "year": 2015, "gapBillions": 33.0 },
+        { "year": 2016, "gapBillions": 33.0 },
+        { "year": 2017, "gapBillions": 33.0 },
+        { "year": 2018, "gapBillions": 35.0 },
+        { "year": 2019, "gapBillions": 35.0 },
+        { "year": 2020, "gapBillions": 32.0 },
+        { "year": 2021, "gapBillions": 36.0 },
+        { "year": 2022, "gapBillions": 36.0 },
+        { "year": 2023, "gapBillions": 39.8 },
+        { "year": 2024, "gapBillions": 39.8 }
+      ]
+    },
+    "hmrcStaff": {
+      "timeSeries": [
+        { "year": 2015, "thousandsFTE": 61.8 },
+        { "year": 2016, "thousandsFTE": 60.2 },
+        { "year": 2017, "thousandsFTE": 59.5 },
+        { "year": 2018, "thousandsFTE": 59.0 },
+        { "year": 2019, "thousandsFTE": 58.2 },
+        { "year": 2020, "thousandsFTE": 57.8 },
+        { "year": 2021, "thousandsFTE": 58.3 },
+        { "year": 2022, "thousandsFTE": 59.5 },
+        { "year": 2023, "thousandsFTE": 60.1 },
+        { "year": 2024, "thousandsFTE": 60.5 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "HMRC", "dataset": "Measuring Tax Gaps", "url": "https://www.gov.uk/government/statistics/measuring-tax-gaps", "frequency": "annual" },
+      { "name": "HMRC", "dataset": "Annual Report and Accounts", "url": "https://www.gov.uk/government/collections/hmrc-annual-report-and-accounts", "frequency": "annual" },
+      { "name": "National Audit Office", "dataset": "HMRC Performance Reports", "url": "https://www.nao.org.uk/search/type/report/?search=HMRC", "frequency": "annual" }
+    ],
+    "methodology": "The tax gap is HMRC's estimate of the difference between the amount of tax that should theoretically be collected under the law and the amount actually collected. It encompasses non-payment, avoidance, evasion, error, and legal interpretation disputes. HMRC staffing is full-time equivalent counts from departmental annual reports.",
+    "knownIssues": [
+      "The tax gap is an estimate with significant uncertainty — HMRC does not publish confidence intervals",
+      "COVID-19 support schemes distorted 2020/21 figures",
+      "Offshore wealth and crypto-asset holdings are particularly hard to estimate",
+      "The distinction between avoidance and evasion is legally complex and not captured precisely in aggregate statistics",
+      "HMRC staffing numbers include all roles, not just compliance and enforcement"
+    ]
+  }
+}

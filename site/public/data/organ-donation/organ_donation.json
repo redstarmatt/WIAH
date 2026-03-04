@@ -1,0 +1,78 @@
+{
+  "topic": "organ-donation",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "waitingList": {
+      "timeSeries": [
+        {"year": 2014, "count": 7026},
+        {"year": 2015, "count": 6943},
+        {"year": 2016, "count": 6744},
+        {"year": 2017, "count": 6434},
+        {"year": 2018, "count": 6174},
+        {"year": 2019, "count": 6147},
+        {"year": 2020, "count": 7048},
+        {"year": 2021, "count": 6866},
+        {"year": 2022, "count": 6728},
+        {"year": 2023, "count": 6527},
+        {"year": 2024, "count": 6342}
+      ]
+    },
+    "transplants": {
+      "timeSeries": [
+        {"year": 2014, "count": 4655},
+        {"year": 2015, "count": 4605},
+        {"year": 2016, "count": 4753},
+        {"year": 2017, "count": 4943},
+        {"year": 2018, "count": 5090},
+        {"year": 2019, "count": 4867},
+        {"year": 2020, "count": 3722},
+        {"year": 2021, "count": 4408},
+        {"year": 2022, "count": 4619},
+        {"year": 2023, "count": 4753},
+        {"year": 2024, "count": 4891}
+      ]
+    },
+    "consentRate": {
+      "timeSeries": [
+        {"year": 2014, "pct": 58.3},
+        {"year": 2015, "pct": 60.1},
+        {"year": 2016, "pct": 62.4},
+        {"year": 2017, "pct": 63.8},
+        {"year": 2018, "pct": 67.1},
+        {"year": 2019, "pct": 67.4},
+        {"year": 2020, "pct": 65.2},
+        {"year": 2021, "pct": 68.1},
+        {"year": 2022, "pct": 69.7},
+        {"year": 2023, "pct": 71.2},
+        {"year": 2024, "pct": 72.8}
+      ]
+    },
+    "deathsOnList": {
+      "timeSeries": [
+        {"year": 2014, "count": 429},
+        {"year": 2015, "count": 457},
+        {"year": 2016, "count": 460},
+        {"year": 2017, "count": 408},
+        {"year": 2018, "count": 398},
+        {"year": 2019, "count": 377},
+        {"year": 2020, "count": 439},
+        {"year": 2021, "count": 406},
+        {"year": 2022, "count": 388},
+        {"year": 2023, "count": 371},
+        {"year": 2024, "count": 354}
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS Blood and Transplant", "dataset": "Organ Donation and Transplantation Activity Report", "url": "https://www.odt.nhs.uk/statistics-and-reports/annual-activity-report/", "frequency": "annual"},
+      {"name": "NHSBT", "dataset": "Organ Donation Register Statistics", "url": "https://www.organdonation.nhs.uk/helping-you-to-decide/about-organ-donation/statistics-about-organ-donation/", "frequency": "quarterly"}
+    ],
+    "methodology": "Transplant figures cover UK-wide activity. Waiting list snapshot taken at 31 March each year. Consent rate is the proportion of families approached who agreed to donation. Max's and Keira's Law (opt-out system) came into effect in England in May 2020.",
+    "knownIssues": [
+      "2020 figures severely affected by COVID — transplant activity fell 27%",
+      "Opt-out system impact difficult to isolate from other factors improving consent rates",
+      "Living donor transplants (kidney, liver) counted separately from deceased donor"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "womenJudges": [
+    {"year": 2015, "pct": 25.2},
+    {"year": 2016, "pct": 26.8},
+    {"year": 2017, "pct": 28.4},
+    {"year": 2018, "pct": 29.5},
+    {"year": 2019, "pct": 31.0},
+    {"year": 2020, "pct": 32.1},
+    {"year": 2021, "pct": 33.6},
+    {"year": 2022, "pct": 34.8},
+    {"year": 2023, "pct": 35.4}
+  ],
+  "ethnicMinorityJudges": [
+    {"year": 2015, "pct": 6.1},
+    {"year": 2016, "pct": 6.4},
+    {"year": 2017, "pct": 6.9},
+    {"year": 2018, "pct": 7.3},
+    {"year": 2019, "pct": 7.6},
+    {"year": 2020, "pct": 8.0},
+    {"year": 2021, "pct": 8.5},
+    {"year": 2022, "pct": 9.1},
+    {"year": 2023, "pct": 9.8}
+  ],
+  "byCourtLevel": [
+    {"level": "Supreme Court", "pctWomen": 33, "pctEthnicMinority": 0},
+    {"level": "Court of Appeal", "pctWomen": 28, "pctEthnicMinority": 6},
+    {"level": "High Court", "pctWomen": 30, "pctEthnicMinority": 7},
+    {"level": "Circuit Judges", "pctWomen": 33, "pctEthnicMinority": 9},
+    {"level": "District Judges", "pctWomen": 38, "pctEthnicMinority": 11},
+    {"level": "Tribunal Judges", "pctWomen": 46, "pctEthnicMinority": 14},
+    {"level": "Magistrates", "pctWomen": 57, "pctEthnicMinority": 13}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "Ministry of Justice", "dataset": "Judicial Diversity Statistics", "url": "https://www.gov.uk/government/statistics/diversity-of-the-judiciary-2023-statistics", "frequency": "annual"},
+      {"name": "Judicial Appointments Commission", "dataset": "Official Statistics on Diversity", "url": "https://judicialappointments.gov.uk/data-and-research/", "frequency": "annual"},
+      {"name": "The Bar Council", "dataset": "Diversity at the Bar Report", "url": "https://www.barcouncil.org.uk/resource/diversity-at-the-bar-report.html", "frequency": "biennial"}
+    ],
+    "methodology": "Judicial diversity figures are sourced from the MOJ's annual Diversity of the Judiciary statistical bulletin, which counts judges in post at 1 April each year. Ethnicity data relies on self-declaration and non-declaration rates of 10-15% introduce uncertainty. Gender is recorded as binary (male/female) in official statistics. Court level breakdowns are for courts in England and Wales only.",
+    "knownIssues": [
+      "Non-declaration rates for ethnicity are 10-15% across the judiciary, meaning ethnic minority representation is likely underestimated",
+      "Statistics do not capture socioeconomic background — the dominant axis of judicial homogeneity",
+      "Magistrates are included in overall figures but have a very different profile to salaried judges, which can skew aggregates",
+      "Disability data has a non-declaration rate above 30% and is not reliably reported"
+    ]
+  }
+}

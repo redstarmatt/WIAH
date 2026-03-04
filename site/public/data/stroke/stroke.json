@@ -1,0 +1,77 @@
+{
+  "topic": "stroke",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "mortalityRate": {
+      "timeSeries": [
+        {"year": 2012, "ratePer100k": 47.2},
+        {"year": 2013, "ratePer100k": 45.8},
+        {"year": 2014, "ratePer100k": 44.1},
+        {"year": 2015, "ratePer100k": 43.5},
+        {"year": 2016, "ratePer100k": 42.0},
+        {"year": 2017, "ratePer100k": 40.8},
+        {"year": 2018, "ratePer100k": 40.1},
+        {"year": 2019, "ratePer100k": 39.4},
+        {"year": 2020, "ratePer100k": 42.6},
+        {"year": 2021, "ratePer100k": 41.3},
+        {"year": 2022, "ratePer100k": 40.9},
+        {"year": 2023, "ratePer100k": 40.2}
+      ]
+    },
+    "thrombolysisRate": {
+      "timeSeries": [
+        {"year": 2012, "pct": 9.8},
+        {"year": 2013, "pct": 10.4},
+        {"year": 2014, "pct": 11.1},
+        {"year": 2015, "pct": 11.5},
+        {"year": 2016, "pct": 11.8},
+        {"year": 2017, "pct": 11.7},
+        {"year": 2018, "pct": 11.3},
+        {"year": 2019, "pct": 11.1},
+        {"year": 2020, "pct": 10.6},
+        {"year": 2021, "pct": 10.2},
+        {"year": 2022, "pct": 10.8},
+        {"year": 2023, "pct": 11.0}
+      ]
+    },
+    "thrombectomyRate": {
+      "timeSeries": [
+        {"year": 2017, "pct": 1.2},
+        {"year": 2018, "pct": 1.8},
+        {"year": 2019, "pct": 2.4},
+        {"year": 2020, "pct": 2.1},
+        {"year": 2021, "pct": 2.9},
+        {"year": 2022, "pct": 3.4},
+        {"year": 2023, "pct": 3.8}
+      ]
+    },
+    "strokeUnitAdmission": {
+      "timeSeries": [
+        {"year": 2012, "pct": 76.5},
+        {"year": 2013, "pct": 79.2},
+        {"year": 2014, "pct": 81.8},
+        {"year": 2015, "pct": 83.1},
+        {"year": 2016, "pct": 84.0},
+        {"year": 2017, "pct": 82.5},
+        {"year": 2018, "pct": 80.9},
+        {"year": 2019, "pct": 79.6},
+        {"year": 2020, "pct": 73.2},
+        {"year": 2021, "pct": 76.1},
+        {"year": 2022, "pct": 77.4},
+        {"year": 2023, "pct": 78.0}
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "SSNAP", "dataset": "Sentinel Stroke National Audit Programme", "url": "https://www.strokeaudit.org/", "frequency": "quarterly"},
+      {"name": "ONS", "dataset": "Death registrations, cerebrovascular diseases", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths", "frequency": "annual"}
+    ],
+    "methodology": "Mortality rates are age-standardised per 100,000 population. Treatment rates from SSNAP clinical audit covering 99% of acute stroke admissions in England, Wales and Northern Ireland.",
+    "knownIssues": [
+      "Thrombectomy provision varies significantly by region due to limited 24/7 neurosurgical centres",
+      "COVID disrupted stroke pathways in 2020, delaying presentations",
+      "Mortality data includes all cerebrovascular disease, not exclusively ischaemic stroke"
+    ]
+  }
+}

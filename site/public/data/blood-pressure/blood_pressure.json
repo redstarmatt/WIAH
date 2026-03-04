@@ -1,0 +1,56 @@
+{
+  "topic": "blood-pressure",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "hypertensionPrevalence": {
+      "timeSeries": [
+        {"year": 2012, "estimatedMillions": 12.5, "diagnosedMillions": 6.8},
+        {"year": 2014, "estimatedMillions": 13.0, "diagnosedMillions": 7.1},
+        {"year": 2016, "estimatedMillions": 13.4, "diagnosedMillions": 7.4},
+        {"year": 2018, "estimatedMillions": 13.9, "diagnosedMillions": 7.6},
+        {"year": 2020, "estimatedMillions": 14.4, "diagnosedMillions": 7.3},
+        {"year": 2022, "estimatedMillions": 14.8, "diagnosedMillions": 7.5},
+        {"year": 2024, "estimatedMillions": 15.2, "diagnosedMillions": 7.8}
+      ]
+    },
+    "controlRate": {
+      "timeSeries": [
+        {"year": 2012, "pct": 62.3},
+        {"year": 2014, "pct": 63.8},
+        {"year": 2016, "pct": 64.1},
+        {"year": 2018, "pct": 63.5},
+        {"year": 2020, "pct": 58.2},
+        {"year": 2022, "pct": 59.8},
+        {"year": 2024, "pct": 60.4}
+      ]
+    },
+    "healthChecksDelivered": {
+      "timeSeries": [
+        {"year": 2014, "thousands": 1482},
+        {"year": 2015, "thousands": 1546},
+        {"year": 2016, "thousands": 1562},
+        {"year": 2017, "thousands": 1603},
+        {"year": 2018, "thousands": 1612},
+        {"year": 2019, "thousands": 1580},
+        {"year": 2020, "thousands": 824},
+        {"year": 2021, "thousands": 1012},
+        {"year": 2022, "thousands": 1283},
+        {"year": 2023, "thousands": 1402},
+        {"year": 2024, "thousands": 1478}
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England / OHID", "dataset": "NHS Health Check programme data", "url": "https://www.gov.uk/government/collections/nhs-health-check-programme", "frequency": "annual"},
+      {"name": "NICE / British Heart Foundation", "dataset": "Hypertension prevalence and treatment estimates", "url": "https://www.bhf.org.uk/what-we-do/our-research/heart-and-circulatory-diseases-in-numbers", "frequency": "annual"},
+      {"name": "QOF", "dataset": "Quality and Outcomes Framework, hypertension register", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/quality-and-outcomes-framework-achievement-prevalence-and-exceptions-data", "frequency": "annual"}
+    ],
+    "methodology": "Estimated prevalence based on Health Survey for England and BHF modelling. Diagnosed figures from GP QOF hypertension registers. Control rate: proportion of diagnosed patients with blood pressure at or below 140/90 mmHg at last review. NHS Health Check figures from OHID programme returns.",
+    "knownIssues": [
+      "Estimated 7.4 million people have undiagnosed hypertension — the 'detection gap'",
+      "Control rates dropped during COVID as face-to-face BP reviews paused",
+      "NHS Health Check uptake varies hugely by local authority area (30%-75%)"
+    ]
+  }
+}

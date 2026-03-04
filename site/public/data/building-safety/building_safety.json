@@ -1,0 +1,40 @@
+{
+  "national": {
+    "buildingsIdentified": {
+      "timeSeries": [
+        { "year": 2018, "buildings": 457 },
+        { "year": 2019, "buildings": 1650 },
+        { "year": 2020, "buildings": 3120 },
+        { "year": 2021, "buildings": 4630 },
+        { "year": 2022, "buildings": 5120 },
+        { "year": 2023, "buildings": 5340 },
+        { "year": 2024, "buildings": 5412 }
+      ]
+    },
+    "remediationComplete": {
+      "timeSeries": [
+        { "year": 2018, "buildings": 15 },
+        { "year": 2019, "buildings": 128 },
+        { "year": 2020, "buildings": 340 },
+        { "year": 2021, "buildings": 612 },
+        { "year": 2022, "buildings": 1015 },
+        { "year": 2023, "buildings": 1420 },
+        { "year": 2024, "buildings": 1780 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "DLUHC", "dataset": "Building Safety Programme Monthly Data Release", "url": "https://www.gov.uk/government/collections/building-safety-programme", "frequency": "monthly" },
+      { "name": "DLUHC", "dataset": "Cladding Remediation Monthly Data Release", "url": "https://www.gov.uk/government/publications/building-safety-remediation-monthly-data-release", "frequency": "monthly" }
+    ],
+    "methodology": "Building counts include all residential buildings over 11 metres identified as having unsafe cladding or other fire safety defects through the Building Safety Programme. Remediation complete means external wall remediation works signed off by the relevant building control body. Data is from DLUHC monthly releases.",
+    "knownIssues": [
+      "The total number of affected buildings is still not fully known — identification is ongoing",
+      "Remediation 'complete' may not include all internal fire safety defects",
+      "Buildings below 11m are largely excluded from government-funded remediation programmes",
+      "Self-reported data from building owners may overstate or understate progress",
+      "Waking watch and interim safety costs borne by leaseholders are not centrally tracked"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "selfSufficiency": [
+    {"year": 2015, "pct": 61.2},
+    {"year": 2016, "pct": 60.8},
+    {"year": 2017, "pct": 60.5},
+    {"year": 2018, "pct": 61.0},
+    {"year": 2019, "pct": 60.7},
+    {"year": 2020, "pct": 60.2},
+    {"year": 2021, "pct": 59.6},
+    {"year": 2022, "pct": 58.8},
+    {"year": 2023, "pct": 58.2},
+    {"year": 2024, "pct": 57.8}
+  ],
+  "agriculturalOutput": [
+    {"year": 2015, "realTermsBillions": 26.8},
+    {"year": 2016, "realTermsBillions": 25.9},
+    {"year": 2017, "realTermsBillions": 27.1},
+    {"year": 2018, "realTermsBillions": 26.4},
+    {"year": 2019, "realTermsBillions": 26.0},
+    {"year": 2020, "realTermsBillions": 25.7},
+    {"year": 2021, "realTermsBillions": 27.3},
+    {"year": 2022, "realTermsBillions": 28.9},
+    {"year": 2023, "realTermsBillions": 28.1},
+    {"year": 2024, "realTermsBillions": 27.4}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "Defra", "dataset": "Agriculture in the United Kingdom", "url": "https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom", "frequency": "annual"},
+      {"name": "Defra", "dataset": "Food Statistics in Your Pocket", "url": "https://www.gov.uk/government/statistics/food-statistics-pocketbook", "frequency": "annual"},
+      {"name": "HMRC", "dataset": "UK Trade Info — Food and Live Animals", "url": "https://www.uktradeinfo.com/", "frequency": "monthly"}
+    ],
+    "methodology": "Food self-sufficiency is drawn from Defra's Agriculture in the United Kingdom publication, calculated as the ratio of UK domestic food production value to total UK food supply value. Agricultural output data is from the same source, presented in real terms (2023 prices). Self-sufficiency includes indigenous-type food only (food that can be produced in the UK climate). Total food self-sufficiency including all food types is lower.",
+    "knownIssues": [
+      "Self-sufficiency varies enormously by product — the UK produces roughly 100% of its milk but less than 10% of its fruit",
+      "Weather-driven year-to-year variation is significant, especially for arable crops — single-year comparisons can be misleading",
+      "Post-Brexit trade data involves new customs declarations that may introduce measurement changes from 2021",
+      "Real-terms conversion is sensitive to the deflator used — Defra uses the GDP deflator while other sources use agricultural-specific price indices"
+    ]
+  }
+}

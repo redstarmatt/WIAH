@@ -1,0 +1,40 @@
+{
+  "possessionClaims": [
+    {"year": 2015, "claims": 153200},
+    {"year": 2016, "claims": 148100},
+    {"year": 2017, "claims": 142800},
+    {"year": 2018, "claims": 139500},
+    {"year": 2019, "claims": 136200},
+    {"year": 2020, "claims": 72400},
+    {"year": 2021, "claims": 89600},
+    {"year": 2022, "claims": 128400},
+    {"year": 2023, "claims": 155800},
+    {"year": 2024, "claims": 164200}
+  ],
+  "arrearsRate": [
+    {"year": 2015, "pctInArrears": 8.5},
+    {"year": 2016, "pctInArrears": 8.1},
+    {"year": 2017, "pctInArrears": 7.8},
+    {"year": 2018, "pctInArrears": 8.2},
+    {"year": 2019, "pctInArrears": 8.6},
+    {"year": 2020, "pctInArrears": 10.4},
+    {"year": 2021, "pctInArrears": 11.1},
+    {"year": 2022, "pctInArrears": 12.3},
+    {"year": 2023, "pctInArrears": 13.2},
+    {"year": 2024, "pctInArrears": 14.1}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "Ministry of Justice", "dataset": "Mortgage and Landlord Possession Statistics", "url": "https://www.gov.uk/government/statistics/mortgage-and-landlord-possession-statistics-quarterly-england-and-wales", "frequency": "quarterly"},
+      {"name": "English Housing Survey", "dataset": "Rent Arrears and Housing Affordability", "url": "https://www.gov.uk/government/collections/english-housing-survey", "frequency": "annual"},
+      {"name": "Citizens Advice", "dataset": "Advice Trends — Housing", "url": "https://www.citizensadvice.org.uk/about-us/our-work/advice-trends/", "frequency": "quarterly"}
+    ],
+    "methodology": "Possession claims data is drawn from MOJ Mortgage and Landlord Possession Statistics, counting landlord possession claims issued in county courts in England and Wales in each calendar year. Arrears rate data combines English Housing Survey estimates of private and social renters in arrears. The 2020 figure reflects a sharp fall in possession claims due to the eviction ban, followed by a rebound as courts cleared the backlog.",
+    "knownIssues": [
+      "The 2020-21 eviction moratorium artificially suppressed possession claims — the post-moratorium surge reflects backlog not a genuine spike",
+      "Arrears rates from the English Housing Survey are based on a sample of approximately 13,000 households and may undercount informal tenancies",
+      "Section 21 'no-fault' evictions do not require arrears as a reason, meaning some evictions driven by arrears are recorded as no-fault",
+      "County court data counts claims issued, not evictions executed — many claims are settled or withdrawn before enforcement"
+    ]
+  }
+}

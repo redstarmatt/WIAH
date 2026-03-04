@@ -1,0 +1,64 @@
+{
+  "topic": "palliative-care",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "hospiceFunding": {
+      "timeSeries": [
+        {"year": 2014, "nhsPct": 32},
+        {"year": 2015, "nhsPct": 31},
+        {"year": 2016, "nhsPct": 30},
+        {"year": 2017, "nhsPct": 29},
+        {"year": 2018, "nhsPct": 28},
+        {"year": 2019, "nhsPct": 28},
+        {"year": 2020, "nhsPct": 34},
+        {"year": 2021, "nhsPct": 31},
+        {"year": 2022, "nhsPct": 29},
+        {"year": 2023, "nhsPct": 28},
+        {"year": 2024, "nhsPct": 27}
+      ]
+    },
+    "deathsInUsualPlace": {
+      "timeSeries": [
+        {"year": 2014, "pct": 45.2},
+        {"year": 2015, "pct": 46.0},
+        {"year": 2016, "pct": 46.8},
+        {"year": 2017, "pct": 47.1},
+        {"year": 2018, "pct": 47.5},
+        {"year": 2019, "pct": 47.6},
+        {"year": 2020, "pct": 52.4},
+        {"year": 2021, "pct": 49.1},
+        {"year": 2022, "pct": 48.3},
+        {"year": 2023, "pct": 47.8},
+        {"year": 2024, "pct": 47.5}
+      ]
+    },
+    "palliativeCareReferrals": {
+      "timeSeries": [
+        {"year": 2014, "thousands": 188},
+        {"year": 2015, "thousands": 195},
+        {"year": 2016, "thousands": 203},
+        {"year": 2017, "thousands": 210},
+        {"year": 2018, "thousands": 218},
+        {"year": 2019, "thousands": 224},
+        {"year": 2020, "thousands": 231},
+        {"year": 2021, "thousands": 242},
+        {"year": 2022, "thousands": 251},
+        {"year": 2023, "thousands": 262},
+        {"year": 2024, "thousands": 274}
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Hospice UK", "dataset": "Hospice Accounts and Funding Data", "url": "https://www.hospiceuk.org/what-we-offer/publications", "frequency": "annual"},
+      {"name": "ONS", "dataset": "Deaths registered by place of occurrence", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths", "frequency": "annual"},
+      {"name": "NHS England", "dataset": "Palliative and end of life care profiles", "url": "https://fingertips.phe.org.uk/profile/end-of-life", "frequency": "annual"}
+    ],
+    "methodology": "NHS funding share as proportion of total hospice income. Preferred place of death data from ONS registrations cross-referenced with community care records. Referral data from NHS England commissioner returns.",
+    "knownIssues": [
+      "2020 saw temporary NHS funding increase for hospices during COVID, not sustained",
+      "Preferred place of death records incomplete for many patients",
+      "Hospice UK survey coverage varies year to year (70-85% of hospices)"
+    ]
+  }
+}

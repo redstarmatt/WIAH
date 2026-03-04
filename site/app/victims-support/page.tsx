@@ -1,0 +1,161 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
+
+// ── Types ────────────────────────────────────────────────────────────────────
+
+interface SatisfactionPoint {
+  year: number;
+  rate: number;
+}
+
+interface KeptInformedPoint {
+  year: number;
+  rate: number;
+}
+
+interface VictimsSupportData {
+  national: {
+    victimSatisfaction: SatisfactionPoint[];
+    keptInformed: KeptInformedPoint[];
+  };
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+
+function yearToDate(y: number): Date {
+  return new Date(y, 5, 1);
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
+
+export default function VictimsSupportPage() {
+  const [data, setData] = useState<VictimsSupportData | null>(null);
+
+  useEffect(() => {
+    fetch('/data/victims-support/victims_support.json')
+      .then(r => r.json())
+      .then(setData)
+      .catch(console.error);
+  }, []);
+
+  const satisfactionSeries: Series[] = data
+    ? [{
+        id: 'satisfaction',
+        label: 'Victim satisfaction (%)',
+        colour: '#264653',
+        data: data.national.victimSatisfaction.map(d => ({
+          date: yearToDate(d.year),
+          value: d.rate,
+        })),
+      }]
+    : [];
+
+  const informedSeries: Series[] = data
+    ? [{
+        id: 'kept-informed',
+        label: 'Kept adequately informed (%)',
+        colour: '#E63946',
+        data: data.national.keptInformed.map(d => ({
+          date: yearToDate(d.year),
+          value: d.rate,
+        })),
+      }]
+    : [];
+
+  return (
+    <>
+      <TopicNav topic="Victims&apos; Support" />
+
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Victims&apos; Support"
+          question="Does the Justice System Actually Support Victims?"
+          finding="Victim satisfaction with the criminal justice system has fallen to 56.5&percnt; &mdash; down from 73&percnt; in 2015. Fewer than half of victims say they were kept adequately informed about their case. The Victims&apos; Code, which sets out entitlements, is routinely breached with no meaningful enforcement mechanism."
+          colour="#264653"
+        />
+
+        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The Victims&apos; Code of Practice, first introduced in 2006 and revised in 2021, sets out 12 rights for victims of crime in England and Wales. These include the right to be informed about the progress of their case, the right to make a personal statement at sentencing, and the right to be referred to support services. In theory, the Code provides a framework of entitlements. In practice, compliance is inconsistent and unenforceable. The 2024 crime survey of victims found that only 56.5&percnt; were satisfied with their overall experience of the criminal justice system &mdash; a decline from 73&percnt; in 2015. Fewer than 45&percnt; said they had been kept adequately informed about the progress of their case.</p>
+            <p>The Victims and Prisoners Act 2024 placed the Victims&apos; Code on a statutory footing for the first time, requiring criminal justice agencies to collect and publish compliance data. However, the Act does not create individually enforceable rights &mdash; victims cannot take legal action if the Code is breached. Instead, compliance will be monitored through inspectorates. Critics, including the Victims&apos; Commissioner, argue that without sanctions, the statutory duty amounts to a reporting obligation rather than a genuine enforcement mechanism. The Commissioner&apos;s 2024 annual survey found that 62&percnt; of victims had never heard of the Victims&apos; Code.</p>
+            <p>Victim support services in England and Wales are funded through a patchwork of sources: Police and Crime Commissioners hold the majority of the Ministry of Justice&apos;s victims&apos; services grant, supplemented by local commissioning, charitable funding, and the Victim Surcharge levied on offenders. Total funding for victim support services was approximately &pound;300 million in 2023/24. Demand has risen substantially &mdash; referrals to Victim Support, the largest provider, increased 35&percnt; between 2019 and 2024 &mdash; without equivalent increases in funding. Specialist services for victims of sexual violence and domestic abuse face particular pressure, with waiting lists for counselling extending to six months or longer in some areas.</p>
+            <p>The burden falls unevenly. Victims from ethnic minority backgrounds report lower satisfaction with police and are less likely to be referred to support services, according to CPS data. Victims with disabilities experience longer waits and more frequent case collapses. Young victims, particularly children who are witnesses in abuse trials, face cross-examination processes that, despite reforms, remain traumatic. Victims of sexual offences wait an average of over 1,000 days for their case to reach trial, during which they are expected to keep evidence fresh in their memory and remain available to the court. Victims in rural areas have fewer specialist services available locally. The intersection of multiple disadvantages &mdash; poverty, language barriers, immigration status &mdash; creates further barriers to accessing justice and support.</p>
+            <p>Victim satisfaction data is drawn primarily from the Crime Survey for England and Wales and from bespoke surveys commissioned by HMICFRS and the Victims&apos; Commissioner. These surveys sample victims who have reported to police and therefore exclude the substantial proportion of crime that goes unreported. Satisfaction measures are subjective and sensitive to question wording and survey timing. The shift from face-to-face to telephone and online surveys during COVID-19 may have affected response rates and composition. Compliance data for the Victims&apos; Code has historically been fragmented and inconsistent across agencies; the 2024 Act should improve this, but baseline data is not yet available. International comparisons are difficult because victims&apos; rights frameworks, support funding models, and survey methodologies differ substantially between jurisdictions.</p>
+          </div>
+        </section>
+
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-satisfaction', label: 'Satisfaction' },
+          { id: 'sec-informed', label: 'Kept Informed' },
+        ]} />
+
+        <ScrollReveal>
+          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            <MetricCard
+              label="Victim satisfaction"
+              value="56.5%"
+              direction="down"
+              polarity="up-is-good"
+              changeText="Down from 73% in 2015 &middot; overall CJS satisfaction"
+              sparklineData={[73.2, 71.8, 70.5, 68.1, 66.3, 64.0, 61.5, 59.2, 57.8, 56.5]}
+              source="ONS &middot; Crime Survey for England and Wales, 2024"
+              onExpand={() => {}}
+            />
+            <MetricCard
+              label="Kept adequately informed"
+              value="44.1%"
+              direction="down"
+              polarity="up-is-good"
+              changeText="Down from 62.5% in 2015 &middot; a core Victims&apos; Code right"
+              sparklineData={[62.5, 60.2, 58.8, 56.1, 54.0, 51.3, 49.5, 47.2, 45.8, 44.1]}
+              source="Victims&apos; Commissioner &middot; Annual Survey, 2024"
+              onExpand={() => {}}
+            />
+            <MetricCard
+              label="Victims aware of Victims&apos; Code"
+              value="38%"
+              direction="down"
+              polarity="up-is-good"
+              changeText="62% have never heard of it"
+              sparklineData={[45, 43, 42, 41, 40, 39, 38]}
+              source="Victims&apos; Commissioner &middot; Annual Survey, 2024"
+              onExpand={() => {}}
+            />
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-satisfaction" className="mb-12">
+            <LineChart
+              title="Victim satisfaction with criminal justice system, 2015&ndash;2024"
+              subtitle="Percentage of victims reporting overall satisfaction with their CJS experience. England and Wales."
+              series={satisfactionSeries}
+              yLabel="Satisfaction (%)"
+              source={{ name: 'ONS', dataset: 'Crime Survey for England and Wales', frequency: 'annual' }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-informed" className="mb-12">
+            <LineChart
+              title="Victims kept adequately informed about their case, 2015&ndash;2024"
+              subtitle="Percentage of victims who felt they were kept sufficiently informed about their case progress."
+              series={informedSeries}
+              yLabel="Kept informed (%)"
+              source={{ name: 'Victims&apos; Commissioner', dataset: 'Annual Survey', frequency: 'annual' }}
+            />
+          </section>
+        </ScrollReveal>
+      </main>
+    </>
+  );
+}

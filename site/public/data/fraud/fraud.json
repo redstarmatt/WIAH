@@ -1,0 +1,30 @@
+{
+  "topic": "fraud",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "timeSeries": [
+      { "year": 2015, "offences": 2460000 },
+      { "year": 2016, "offences": 3200000 },
+      { "year": 2017, "offences": 3400000 },
+      { "year": 2018, "offences": 3600000 },
+      { "year": 2019, "offences": 3800000 },
+      { "year": 2020, "offences": 4100000 },
+      { "year": 2021, "offences": 4500000 },
+      { "year": 2022, "offences": 3700000 },
+      { "year": 2023, "offences": 3500000 },
+      { "year": 2024, "offences": 3800000 }
+    ],
+    "convictionRate": [
+      { "year": 2015, "rate": 3.1 },
+      { "year": 2016, "rate": 2.8 },
+      { "year": 2017, "rate": 2.5 },
+      { "year": 2018, "rate": 2.2 },
+      { "year": 2019, "rate": 1.9 },
+      { "year": 2020, "rate": 1.5 },
+      { "year": 2021, "rate": 1.2 },
+      { "year": 2022, "rate": 1.0 },
+      { "year": 2023, "rate": 0.8 },
+      { "year": 2024, "rate": 1.0 }
+    ]
+  }
+}

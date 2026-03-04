@@ -1,0 +1,63 @@
+{
+  "topic": "sexual-health",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "stiDiagnoses": {
+      "timeSeries": [
+        {"year": 2014, "thousands": 436},
+        {"year": 2015, "thousands": 435},
+        {"year": 2016, "thousands": 420},
+        {"year": 2017, "thousands": 423},
+        {"year": 2018, "thousands": 449},
+        {"year": 2019, "thousands": 468},
+        {"year": 2020, "thousands": 318},
+        {"year": 2021, "thousands": 389},
+        {"year": 2022, "thousands": 401},
+        {"year": 2023, "thousands": 416},
+        {"year": 2024, "thousands": 432}
+      ]
+    },
+    "clinicClosures": {
+      "timeSeries": [
+        {"year": 2014, "clinics": 297},
+        {"year": 2015, "clinics": 285},
+        {"year": 2016, "clinics": 264},
+        {"year": 2017, "clinics": 241},
+        {"year": 2018, "clinics": 228},
+        {"year": 2019, "clinics": 218},
+        {"year": 2020, "clinics": 209},
+        {"year": 2021, "clinics": 198},
+        {"year": 2022, "clinics": 189},
+        {"year": 2023, "clinics": 182},
+        {"year": 2024, "clinics": 176}
+      ]
+    },
+    "gonorrhoeaRate": {
+      "timeSeries": [
+        {"year": 2014, "ratePer100k": 67.2},
+        {"year": 2015, "ratePer100k": 73.4},
+        {"year": 2016, "ratePer100k": 65.1},
+        {"year": 2017, "ratePer100k": 78.2},
+        {"year": 2018, "ratePer100k": 98.5},
+        {"year": 2019, "ratePer100k": 110.3},
+        {"year": 2020, "ratePer100k": 72.8},
+        {"year": 2021, "ratePer100k": 95.6},
+        {"year": 2022, "ratePer100k": 112.7},
+        {"year": 2023, "ratePer100k": 118.4},
+        {"year": 2024, "ratePer100k": 124.1}
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "UK Health Security Agency", "dataset": "Sexually transmitted infections and screening for chlamydia in England", "url": "https://www.gov.uk/government/statistics/sexually-transmitted-infections-stis-annual-data-tables", "frequency": "annual"},
+      {"name": "British Association for Sexual Health and HIV", "dataset": "Clinic survey data", "url": "https://www.bashh.org/", "frequency": "periodic"}
+    ],
+    "methodology": "STI diagnoses from GUMCAD STI Surveillance System covering all sexual health clinics in England. Clinic counts from UKHSA and BASHH surveys. Rates calculated per 100,000 resident population.",
+    "knownIssues": [
+      "2020 data depressed by COVID-related clinic closures and reduced testing",
+      "Online testing services not fully captured in clinic-based data before 2020",
+      "Chlamydia figures affected by changes in screening programme targeting"
+    ]
+  }
+}

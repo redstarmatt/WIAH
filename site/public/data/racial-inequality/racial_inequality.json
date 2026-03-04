@@ -1,0 +1,47 @@
+{
+  "national": {
+    "ethnicPayGap": {
+      "timeSeries": [
+        { "year": 2015, "gapPct": 5.6 },
+        { "year": 2016, "gapPct": 5.7 },
+        { "year": 2017, "gapPct": 5.8 },
+        { "year": 2018, "gapPct": 5.7 },
+        { "year": 2019, "gapPct": 5.8 },
+        { "year": 2020, "gapPct": 5.6 },
+        { "year": 2021, "gapPct": 5.4 },
+        { "year": 2022, "gapPct": 5.3 },
+        { "year": 2023, "gapPct": 5.2 },
+        { "year": 2024, "gapPct": 5.1 }
+      ]
+    },
+    "unemploymentRatio": {
+      "timeSeries": [
+        { "year": 2015, "blackToWhiteRatio": 2.3 },
+        { "year": 2016, "blackToWhiteRatio": 2.2 },
+        { "year": 2017, "blackToWhiteRatio": 2.1 },
+        { "year": 2018, "blackToWhiteRatio": 2.1 },
+        { "year": 2019, "blackToWhiteRatio": 2.0 },
+        { "year": 2020, "blackToWhiteRatio": 2.4 },
+        { "year": 2021, "blackToWhiteRatio": 2.2 },
+        { "year": 2022, "blackToWhiteRatio": 2.1 },
+        { "year": 2023, "blackToWhiteRatio": 2.1 },
+        { "year": 2024, "blackToWhiteRatio": 2.0 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "ONS", "dataset": "Annual Survey of Hours and Earnings (ASHE) — Ethnicity Pay Gap", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/articles/ethnicitypaygapsingreatbritain/latest", "frequency": "annual" },
+      { "name": "ONS", "dataset": "Labour Force Survey — Unemployment by Ethnicity", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment", "frequency": "quarterly" },
+      { "name": "ONS", "dataset": "Wealth and Assets Survey", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth", "frequency": "biennial" }
+    ],
+    "methodology": "The ethnic pay gap is the percentage difference in median hourly earnings between ethnic minority workers and white British workers, from the Annual Survey of Hours and Earnings. Unemployment ratio is Black unemployment rate divided by white unemployment rate from the Labour Force Survey.",
+    "knownIssues": [
+      "Ethnic pay gap estimates vary significantly depending on how ethnic groups are aggregated",
+      "Small sample sizes for some ethnic groups mean estimates have wide confidence intervals",
+      "The Labour Force Survey changed methodology in 2020 from face-to-face to telephone interviews, creating a series break",
+      "Wealth data by ethnicity is only available biennially and has limited geographic granularity",
+      "Self-reported ethnicity classifications changed between Census 2011 and Census 2021"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "topic": "county-lines",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "activeLines": [
+      { "year": 2017, "lines": 2000 },
+      { "year": 2018, "lines": 1500 },
+      { "year": 2019, "lines": 1300 },
+      { "year": 2020, "lines": 800 },
+      { "year": 2021, "lines": 600 },
+      { "year": 2022, "lines": 660 },
+      { "year": 2023, "lines": 720 },
+      { "year": 2024, "lines": 700 }
+    ],
+    "childrenExploited": [
+      { "year": 2017, "count": 4000 },
+      { "year": 2018, "count": 5500 },
+      { "year": 2019, "count": 7000 },
+      { "year": 2020, "count": 6300 },
+      { "year": 2021, "count": 7400 },
+      { "year": 2022, "count": 8200 },
+      { "year": 2023, "count": 9100 },
+      { "year": 2024, "count": 10200 }
+    ]
+  }
+}

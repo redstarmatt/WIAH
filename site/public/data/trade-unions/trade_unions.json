@@ -1,0 +1,45 @@
+{
+  "national": {
+    "membership": {
+      "timeSeries": [
+        { "year": 2015, "millionsMembers": 6.50 },
+        { "year": 2016, "millionsMembers": 6.23 },
+        { "year": 2017, "millionsMembers": 6.23 },
+        { "year": 2018, "millionsMembers": 6.35 },
+        { "year": 2019, "millionsMembers": 6.44 },
+        { "year": 2020, "millionsMembers": 6.56 },
+        { "year": 2021, "millionsMembers": 6.55 },
+        { "year": 2022, "millionsMembers": 6.54 },
+        { "year": 2023, "millionsMembers": 6.67 },
+        { "year": 2024, "millionsMembers": 6.73 }
+      ]
+    },
+    "workingDaysLost": {
+      "timeSeries": [
+        { "year": 2015, "thousandsDays": 170 },
+        { "year": 2016, "thousandsDays": 322 },
+        { "year": 2017, "thousandsDays": 276 },
+        { "year": 2018, "thousandsDays": 273 },
+        { "year": 2019, "thousandsDays": 234 },
+        { "year": 2020, "thousandsDays": 231 },
+        { "year": 2021, "thousandsDays": 390 },
+        { "year": 2022, "thousandsDays": 2470 },
+        { "year": 2023, "thousandsDays": 3872 },
+        { "year": 2024, "thousandsDays": 1840 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "BEIS / DBT", "dataset": "Trade Union Membership Statistics", "url": "https://www.gov.uk/government/collections/trade-union-statistics", "frequency": "annual" },
+      { "name": "ONS", "dataset": "Labour Disputes in the UK", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/workplacedisputesandworkingconditions", "frequency": "monthly" }
+    ],
+    "methodology": "Union membership is from the Labour Force Survey. Working days lost to strikes is from ONS labour disputes statistics. Both private and public sector membership are included. Working days lost includes all stoppages involving 10 or more workers lasting at least one day.",
+    "knownIssues": [
+      "LFS-based membership estimates have a margin of error of approximately +/- 150,000",
+      "Working days lost to unofficial or wildcat action may not be fully captured",
+      "The Trade Union Act 2016 introduced ballot thresholds that may suppress strike action without showing in membership data",
+      "Gig economy and platform workers are largely absent from both union membership and dispute data"
+    ]
+  }
+}

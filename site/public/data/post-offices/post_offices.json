@@ -1,0 +1,23 @@
+{
+  "national": {
+    "branchCount": [
+      {"year": 2000, "branches": 18390},
+      {"year": 2005, "branches": 14376},
+      {"year": 2008, "branches": 12009},
+      {"year": 2012, "branches": 11737},
+      {"year": 2015, "branches": 11634},
+      {"year": 2018, "branches": 11547},
+      {"year": 2020, "branches": 11416},
+      {"year": 2022, "branches": 11302},
+      {"year": 2024, "branches": 11180}
+    ],
+    "ruralAccess": [
+      {"year": 2010, "pctWithin3Miles": 93},
+      {"year": 2013, "pctWithin3Miles": 91},
+      {"year": 2016, "pctWithin3Miles": 89},
+      {"year": 2019, "pctWithin3Miles": 88},
+      {"year": 2022, "pctWithin3Miles": 86},
+      {"year": 2024, "pctWithin3Miles": 85}
+    ]
+  }
+}

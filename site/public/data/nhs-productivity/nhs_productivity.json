@@ -1,0 +1,64 @@
+{
+  "topic": "nhs-productivity",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "productivityIndex": {
+      "timeSeries": [
+        {"year": 2014, "index": 100.0},
+        {"year": 2015, "index": 101.2},
+        {"year": 2016, "index": 101.8},
+        {"year": 2017, "index": 102.1},
+        {"year": 2018, "index": 102.6},
+        {"year": 2019, "index": 103.1},
+        {"year": 2020, "index": 81.4},
+        {"year": 2021, "index": 88.7},
+        {"year": 2022, "index": 93.2},
+        {"year": 2023, "index": 95.1},
+        {"year": 2024, "index": 96.8}
+      ]
+    },
+    "staffGrowth": {
+      "timeSeries": [
+        {"year": 2014, "ftePer1000": 35.2},
+        {"year": 2015, "ftePer1000": 35.5},
+        {"year": 2016, "ftePer1000": 35.8},
+        {"year": 2017, "ftePer1000": 36.1},
+        {"year": 2018, "ftePer1000": 36.4},
+        {"year": 2019, "ftePer1000": 36.8},
+        {"year": 2020, "ftePer1000": 38.2},
+        {"year": 2021, "ftePer1000": 39.4},
+        {"year": 2022, "ftePer1000": 40.1},
+        {"year": 2023, "ftePer1000": 40.8},
+        {"year": 2024, "ftePer1000": 41.2}
+      ]
+    },
+    "outputPerWorker": {
+      "timeSeries": [
+        {"year": 2014, "index": 100.0},
+        {"year": 2015, "index": 100.8},
+        {"year": 2016, "index": 100.4},
+        {"year": 2017, "index": 100.1},
+        {"year": 2018, "index": 99.8},
+        {"year": 2019, "index": 99.4},
+        {"year": 2020, "index": 78.2},
+        {"year": 2021, "index": 85.1},
+        {"year": 2022, "index": 88.6},
+        {"year": 2023, "index": 89.8},
+        {"year": 2024, "index": 90.3}
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England", "dataset": "NHS Productivity and Efficiency data", "url": "https://www.england.nhs.uk/statistics/", "frequency": "quarterly"},
+      {"name": "Office for National Statistics", "dataset": "Public Service Productivity: Healthcare", "url": "https://www.ons.gov.uk/economy/economicoutputandproductivity/publicservicesproductivity", "frequency": "annual"},
+      {"name": "NHS Digital", "dataset": "NHS Workforce Statistics", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics", "frequency": "monthly"}
+    ],
+    "methodology": "Productivity index measures total NHS output (weighted activity across elective, emergency, outpatient, mental health, community) per unit of input (staff, intermediate consumption, capital). Indexed to 2014 = 100. Staff figures are full-time equivalent per 1,000 population. Output per worker adjusts total output index by FTE headcount.",
+    "knownIssues": [
+      "COVID caused a genuine structural drop in output that is only partially explained by infection control measures",
+      "Quality adjustment (e.g. improved survival, patient experience) partially captured but imperfect",
+      "Some productivity gains may reflect coding and counting changes rather than real efficiency"
+    ]
+  }
+}

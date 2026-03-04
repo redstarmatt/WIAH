@@ -1,0 +1,20 @@
+{
+  "national": {
+    "plasticWaste": [
+      {"year": 2014, "millionTonnes": 4.7},
+      {"year": 2016, "millionTonnes": 4.9},
+      {"year": 2018, "millionTonnes": 5.1},
+      {"year": 2020, "millionTonnes": 5.3},
+      {"year": 2022, "millionTonnes": 5.5},
+      {"year": 2024, "millionTonnes": 5.6}
+    ],
+    "recyclingRate": [
+      {"year": 2014, "pct": 44},
+      {"year": 2016, "pct": 44},
+      {"year": 2018, "pct": 46},
+      {"year": 2020, "pct": 43},
+      {"year": 2022, "pct": 44},
+      {"year": 2024, "pct": 44}
+    ]
+  }
+}

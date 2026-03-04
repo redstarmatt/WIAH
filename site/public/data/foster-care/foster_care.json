@@ -1,0 +1,37 @@
+{
+  "fosterCarerHouseholds": [
+    {"year": 2015, "householdsThousands": 45.5},
+    {"year": 2016, "householdsThousands": 44.6},
+    {"year": 2017, "householdsThousands": 44.2},
+    {"year": 2018, "householdsThousands": 43.9},
+    {"year": 2019, "householdsThousands": 43.5},
+    {"year": 2020, "householdsThousands": 42.8},
+    {"year": 2021, "householdsThousands": 42.1},
+    {"year": 2022, "householdsThousands": 41.3},
+    {"year": 2023, "householdsThousands": 40.5}
+  ],
+  "placementBreakdowns": [
+    {"year": 2015, "pctBreakdown": 9.2},
+    {"year": 2016, "pctBreakdown": 9.8},
+    {"year": 2017, "pctBreakdown": 10.1},
+    {"year": 2018, "pctBreakdown": 10.5},
+    {"year": 2019, "pctBreakdown": 10.9},
+    {"year": 2020, "pctBreakdown": 11.3},
+    {"year": 2021, "pctBreakdown": 11.6},
+    {"year": 2022, "pctBreakdown": 12.0},
+    {"year": 2023, "pctBreakdown": 12.4}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "Ofsted", "dataset": "Fostering in England", "url": "https://www.gov.uk/government/statistics/fostering-in-england", "frequency": "annual"},
+      {"name": "Department for Education", "dataset": "Children Looked After in England", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions", "frequency": "annual"},
+      {"name": "The Fostering Network", "dataset": "State of the Nation's Foster Care", "url": "https://www.thefosteringnetwork.org.uk/advice-information/all-about-fostering/fostering-statistics", "frequency": "annual"}
+    ],
+    "methodology": "Foster carer household data is drawn from Ofsted's annual Fostering in England publication, which counts approved fostering households at 31 March each year. Placement breakdown rates are derived from DfE Children Looked After data, measuring children who experienced three or more placements in the reporting year as a proportion of all looked-after children.",
+    "knownIssues": [
+      "Ofsted counts households, not individual carers — the number of individuals fostering is higher",
+      "Placement breakdown definitions changed in 2019 to include short-term planned respite, slightly inflating the rate",
+      "Independent fostering agency data is less complete than local authority data before 2017"
+    ]
+  }
+}

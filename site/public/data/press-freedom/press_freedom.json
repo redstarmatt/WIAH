@@ -1,0 +1,40 @@
+{
+  "pressRanking": [
+    {"year": 2015, "rank": 34},
+    {"year": 2016, "rank": 38},
+    {"year": 2017, "rank": 40},
+    {"year": 2018, "rank": 40},
+    {"year": 2019, "rank": 33},
+    {"year": 2020, "rank": 35},
+    {"year": 2021, "rank": 33},
+    {"year": 2022, "rank": 24},
+    {"year": 2023, "rank": 26},
+    {"year": 2024, "rank": 23}
+  ],
+  "pressScore": [
+    {"year": 2015, "score": 73.5},
+    {"year": 2016, "score": 71.2},
+    {"year": 2017, "score": 70.8},
+    {"year": 2018, "score": 71.0},
+    {"year": 2019, "score": 73.8},
+    {"year": 2020, "score": 72.9},
+    {"year": 2021, "score": 73.6},
+    {"year": 2022, "score": 78.7},
+    {"year": 2023, "score": 77.5},
+    {"year": 2024, "score": 79.1}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "Reporters Without Borders (RSF)", "dataset": "World Press Freedom Index", "url": "https://rsf.org/en/index", "frequency": "annual"},
+      {"name": "Press Recognition Panel", "dataset": "Annual Report on the State of Press Regulation", "url": "https://pressrecognitionpanel.org.uk/reports/", "frequency": "annual"},
+      {"name": "National Union of Journalists", "dataset": "Threats to Journalists Database", "url": "https://www.nuj.org.uk/resource/threats-database.html", "frequency": "ongoing"}
+    ],
+    "methodology": "Press freedom ranking and score data is drawn from Reporters Without Borders' annual World Press Freedom Index. The index evaluates 180 countries across five indicators: political context, legal framework, economic context, sociocultural context, and safety of journalists. The UK's score is on a 0-100 scale where 100 represents the highest press freedom. Rankings changed methodology in 2022, making pre/post comparisons approximate.",
+    "knownIssues": [
+      "RSF methodology changed significantly in 2022, introducing a new scoring framework — pre-2022 and post-2022 rankings are not directly comparable",
+      "The index measures press freedom conditions, not press quality or accuracy",
+      "Ownership concentration data is not included in the RSF index but is a significant structural concern for UK media",
+      "Online media and independent journalists are not as well captured as traditional press outlets"
+    ]
+  }
+}

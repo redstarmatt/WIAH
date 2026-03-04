@@ -1,0 +1,38 @@
+{
+  "adoptionOrders": [
+    {"year": 2015, "orders": 5360},
+    {"year": 2016, "orders": 4690},
+    {"year": 2017, "orders": 4350},
+    {"year": 2018, "orders": 3820},
+    {"year": 2019, "orders": 3570},
+    {"year": 2020, "orders": 3440},
+    {"year": 2021, "orders": 2870},
+    {"year": 2022, "orders": 2960},
+    {"year": 2023, "orders": 2950}
+  ],
+  "averageWaitDays": [
+    {"year": 2015, "days": 487},
+    {"year": 2016, "days": 498},
+    {"year": 2017, "days": 506},
+    {"year": 2018, "days": 512},
+    {"year": 2019, "days": 520},
+    {"year": 2020, "days": 558},
+    {"year": 2021, "days": 574},
+    {"year": 2022, "days": 546},
+    {"year": 2023, "days": 538}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "Department for Education", "dataset": "Children Looked After in England — Adoptions", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions", "frequency": "annual"},
+      {"name": "Adoption and Special Guardianship Leadership Board", "dataset": "Adoption Scorecard", "url": "https://www.gov.uk/government/publications/adoption-scorecard", "frequency": "annual"},
+      {"name": "Ofsted", "dataset": "Adoption Agency Inspection Data", "url": "https://www.gov.uk/government/statistics/adoption-in-england", "frequency": "annual"}
+    ],
+    "methodology": "Adoption orders data is drawn from DfE Children Looked After statistics, counting Adoption Orders granted in England in each reporting year ending 31 March. Average wait is measured from the date a child enters local authority care to the date of the Adoption Order, as published in the Adoption Scorecard. The metric captures the median for all children adopted in the year.",
+    "knownIssues": [
+      "Court delays in 2020-21 artificially depressed adoption numbers due to COVID-19 hearing backlogs",
+      "The shift toward Special Guardianship Orders (SGOs) partially explains the fall in adoption numbers — some children who would have been adopted are now placed under SGOs",
+      "Adoption from care is distinct from intercountry adoption, which is not included in these figures",
+      "Wait time data does not distinguish between children placed quickly and those who waited significantly longer, masking wide variation"
+    ]
+  }
+}

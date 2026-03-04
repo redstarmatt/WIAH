@@ -1,0 +1,22 @@
+{
+  "national": {
+    "leakage": [
+      {"year": 2010, "megalitresPerDay": 3360},
+      {"year": 2012, "megalitresPerDay": 3240},
+      {"year": 2014, "megalitresPerDay": 3110},
+      {"year": 2016, "megalitresPerDay": 3070},
+      {"year": 2018, "megalitresPerDay": 3020},
+      {"year": 2020, "megalitresPerDay": 2923},
+      {"year": 2022, "megalitresPerDay": 2830},
+      {"year": 2024, "megalitresPerDay": 2780}
+    ],
+    "investmentGap": [
+      {"year": 2015, "billionGBP": 4.2},
+      {"year": 2017, "billionGBP": 4.8},
+      {"year": 2019, "billionGBP": 5.6},
+      {"year": 2021, "billionGBP": 6.3},
+      {"year": 2023, "billionGBP": 7.1},
+      {"year": 2025, "billionGBP": 7.8}
+    ]
+  }
+}

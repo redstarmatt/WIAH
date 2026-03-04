@@ -1,0 +1,30 @@
+{
+  "topic": "stalking",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "recordedOffences": [
+      { "year": 2015, "count": 3900 },
+      { "year": 2016, "count": 10200 },
+      { "year": 2017, "count": 20600 },
+      { "year": 2018, "count": 31800 },
+      { "year": 2019, "count": 48800 },
+      { "year": 2020, "count": 79000 },
+      { "year": 2021, "count": 94000 },
+      { "year": 2022, "count": 107000 },
+      { "year": 2023, "count": 120000 },
+      { "year": 2024, "count": 131000 }
+    ],
+    "chargeRate": [
+      { "year": 2015, "rate": 8.2 },
+      { "year": 2016, "rate": 6.5 },
+      { "year": 2017, "rate": 5.1 },
+      { "year": 2018, "rate": 4.3 },
+      { "year": 2019, "rate": 3.8 },
+      { "year": 2020, "rate": 3.2 },
+      { "year": 2021, "rate": 2.9 },
+      { "year": 2022, "rate": 2.6 },
+      { "year": 2023, "rate": 2.4 },
+      { "year": 2024, "rate": 2.5 }
+    ]
+  }
+}

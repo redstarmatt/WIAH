@@ -1,0 +1,38 @@
+{
+  "volunteeringRate": [
+    {"year": 2015, "formalPct": 27.0},
+    {"year": 2016, "formalPct": 26.1},
+    {"year": 2017, "formalPct": 24.8},
+    {"year": 2018, "formalPct": 23.3},
+    {"year": 2019, "formalPct": 23.1},
+    {"year": 2020, "formalPct": 17.2},
+    {"year": 2021, "formalPct": 16.3},
+    {"year": 2022, "formalPct": 19.4},
+    {"year": 2023, "formalPct": 20.1}
+  ],
+  "charityIncome": [
+    {"year": 2015, "realTermsBillions": 54.2},
+    {"year": 2016, "realTermsBillions": 55.1},
+    {"year": 2017, "realTermsBillions": 55.8},
+    {"year": 2018, "realTermsBillions": 56.4},
+    {"year": 2019, "realTermsBillions": 57.0},
+    {"year": 2020, "realTermsBillions": 51.3},
+    {"year": 2021, "realTermsBillions": 53.8},
+    {"year": 2022, "realTermsBillions": 55.2},
+    {"year": 2023, "realTermsBillions": 54.8}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "DCMS", "dataset": "Community Life Survey", "url": "https://www.gov.uk/government/collections/community-life-survey--2", "frequency": "annual"},
+      {"name": "NCVO", "dataset": "UK Civil Society Almanac", "url": "https://www.ncvo.org.uk/research/almanac/", "frequency": "annual"},
+      {"name": "Charity Commission", "dataset": "Charity Register Statistics", "url": "https://www.gov.uk/government/publications/charity-register-statistics", "frequency": "annual"}
+    ],
+    "methodology": "Formal volunteering rate data is drawn from the DCMS Community Life Survey, which measures the proportion of adults who volunteered formally (through a group, club, or organisation) at least once a month. Charity income data is from the NCVO UK Civil Society Almanac and is presented in real terms (2023 prices) using the GDP deflator. The Almanac defines civil society broadly to include charities, social enterprises, and community interest companies.",
+    "knownIssues": [
+      "The Community Life Survey moved to a telephone methodology during 2020-21 due to COVID-19, which may have depressed reported volunteering rates",
+      "Informal volunteering (helping neighbours, friends) is measured separately and shows different trends — it increased during the pandemic",
+      "Charity income figures mask extreme variation: the 50 largest charities account for a disproportionate share of total income",
+      "Self-reported volunteering may overstate actual hours due to social desirability bias"
+    ]
+  }
+}

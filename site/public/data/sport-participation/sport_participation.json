@@ -1,0 +1,38 @@
+{
+  "activeLives": [
+    {"year": 2016, "activePct": 61.8},
+    {"year": 2017, "activePct": 62.3},
+    {"year": 2018, "activePct": 62.6},
+    {"year": 2019, "activePct": 63.3},
+    {"year": 2020, "activePct": 61.4},
+    {"year": 2021, "activePct": 60.9},
+    {"year": 2022, "activePct": 63.1},
+    {"year": 2023, "activePct": 63.7},
+    {"year": 2024, "activePct": 63.5}
+  ],
+  "inactivityRate": [
+    {"year": 2016, "inactivePct": 25.7},
+    {"year": 2017, "inactivePct": 25.2},
+    {"year": 2018, "inactivePct": 25.0},
+    {"year": 2019, "inactivePct": 24.6},
+    {"year": 2020, "inactivePct": 27.1},
+    {"year": 2021, "inactivePct": 27.5},
+    {"year": 2022, "inactivePct": 25.6},
+    {"year": 2023, "inactivePct": 25.0},
+    {"year": 2024, "inactivePct": 25.4}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "Sport England", "dataset": "Active Lives Adult Survey", "url": "https://www.sportengland.org/research-and-data/data/active-lives", "frequency": "biannual"},
+      {"name": "Sport England", "dataset": "Active Lives Children and Young People Survey", "url": "https://www.sportengland.org/research-and-data/data/active-lives/active-lives-children-and-young-people", "frequency": "annual"},
+      {"name": "UK Chief Medical Officers", "dataset": "Physical Activity Guidelines", "url": "https://www.gov.uk/government/publications/physical-activity-guidelines-uk-chief-medical-officers-report", "frequency": "periodic"}
+    ],
+    "methodology": "Active Lives data is drawn from Sport England's Active Lives Adult Survey, which measures activity levels among adults aged 16+ in England. 'Active' is defined as achieving 150+ minutes of moderate intensity activity per week (CMO guidelines). 'Inactive' is defined as fewer than 30 minutes per week. The survey uses a random household sampling methodology with approximately 180,000 respondents per year.",
+    "knownIssues": [
+      "The Active Lives Survey replaced the Active People Survey in 2016 — pre-2016 data is not directly comparable",
+      "Self-reported activity is known to overestimate actual physical activity levels by 30-50%",
+      "The pandemic years (2020-21) saw significant methodology changes including online-only data collection, which may affect comparability",
+      "The survey covers England only — separate surveys exist for Scotland, Wales, and Northern Ireland with different methodologies"
+    ]
+  }
+}

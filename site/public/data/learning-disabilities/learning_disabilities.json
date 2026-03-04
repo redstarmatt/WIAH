@@ -1,0 +1,70 @@
+{
+  "topic": "learning-disabilities",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "inpatientNumbers": {
+      "timeSeries": [
+        {"year": 2015, "count": 3000},
+        {"year": 2016, "count": 2765},
+        {"year": 2017, "count": 2505},
+        {"year": 2018, "count": 2400},
+        {"year": 2019, "count": 2260},
+        {"year": 2020, "count": 2085},
+        {"year": 2021, "count": 2040},
+        {"year": 2022, "count": 2005},
+        {"year": 2023, "count": 1985},
+        {"year": 2024, "count": 1960}
+      ]
+    },
+    "annualHealthChecks": {
+      "timeSeries": [
+        {"year": 2015, "pct": 37.2},
+        {"year": 2016, "pct": 41.8},
+        {"year": 2017, "pct": 49.7},
+        {"year": 2018, "pct": 52.4},
+        {"year": 2019, "pct": 56.1},
+        {"year": 2020, "pct": 47.3},
+        {"year": 2021, "pct": 58.6},
+        {"year": 2022, "pct": 62.0},
+        {"year": 2023, "pct": 66.4},
+        {"year": 2024, "pct": 69.1}
+      ]
+    },
+    "mortalityGap": {
+      "timeSeries": [
+        {"year": 2016, "gapYears": 23},
+        {"year": 2017, "gapYears": 23},
+        {"year": 2018, "gapYears": 22},
+        {"year": 2019, "gapYears": 23},
+        {"year": 2020, "gapYears": 27},
+        {"year": 2021, "gapYears": 25},
+        {"year": 2022, "gapYears": 24},
+        {"year": 2023, "gapYears": 23}
+      ]
+    },
+    "leederReviews": {
+      "timeSeries": [
+        {"year": 2017, "reviews": 103},
+        {"year": 2018, "reviews": 145},
+        {"year": 2019, "reviews": 176},
+        {"year": 2020, "reviews": 142},
+        {"year": 2021, "reviews": 198},
+        {"year": 2022, "reviews": 224},
+        {"year": 2023, "reviews": 247}
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS Digital", "dataset": "Assuring Transformation (Learning Disability) data", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/learning-disability-services-statistics", "frequency": "monthly"},
+      {"name": "NHS Digital", "dataset": "Health and Care of People with Learning Disabilities", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/health-and-care-of-people-with-learning-disabilities", "frequency": "annual"},
+      {"name": "LeDeR Programme", "dataset": "Learning from Lives and Deaths Reviews", "url": "https://leder.nhs.uk/", "frequency": "annual"}
+    ],
+    "methodology": "Inpatient numbers from Assuring Transformation monthly census. Health check rates from QOF and NHS Digital annual report on LD health. Mortality gap from LeDeR programme comparing median age at death for people with learning disabilities against general population. LeDeR review counts from programme annual reports.",
+    "knownIssues": [
+      "Inpatient target of halving from 2015 baseline by 2024 has been missed",
+      "LD mortality gap widened during COVID due to disproportionate death rates",
+      "Annual health check figures based on GP LD registers, which are known to undercount"
+    ]
+  }
+}

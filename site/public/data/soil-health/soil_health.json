@@ -1,0 +1,22 @@
+{
+  "national": {
+    "degradation": [
+      {"year": 2010, "pctDegraded": 12.0},
+      {"year": 2012, "pctDegraded": 12.8},
+      {"year": 2014, "pctDegraded": 13.5},
+      {"year": 2016, "pctDegraded": 14.3},
+      {"year": 2018, "pctDegraded": 15.1},
+      {"year": 2020, "pctDegraded": 15.9},
+      {"year": 2022, "pctDegraded": 16.4},
+      {"year": 2024, "pctDegraded": 17.0}
+    ],
+    "organicCarbon": [
+      {"year": 2007, "pctLow": 38},
+      {"year": 2010, "pctLow": 39},
+      {"year": 2013, "pctLow": 41},
+      {"year": 2016, "pctLow": 42},
+      {"year": 2019, "pctLow": 43},
+      {"year": 2022, "pctLow": 45}
+    ]
+  }
+}

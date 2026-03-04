@@ -1,0 +1,38 @@
+{
+  "maternalMortalityRatio": [
+    {"year": 2015, "blackRatio": 4.1, "asianRatio": 1.8, "whiteRatio": 1.0},
+    {"year": 2016, "blackRatio": 4.2, "asianRatio": 1.9, "whiteRatio": 1.0},
+    {"year": 2017, "blackRatio": 4.3, "asianRatio": 1.8, "whiteRatio": 1.0},
+    {"year": 2018, "blackRatio": 3.9, "asianRatio": 1.7, "whiteRatio": 1.0},
+    {"year": 2019, "blackRatio": 3.7, "asianRatio": 1.8, "whiteRatio": 1.0},
+    {"year": 2020, "blackRatio": 4.0, "asianRatio": 1.9, "whiteRatio": 1.0},
+    {"year": 2021, "blackRatio": 3.7, "asianRatio": 1.8, "whiteRatio": 1.0},
+    {"year": 2022, "blackRatio": 3.5, "asianRatio": 1.7, "whiteRatio": 1.0},
+    {"year": 2023, "blackRatio": 3.4, "asianRatio": 1.6, "whiteRatio": 1.0}
+  ],
+  "workforceProgression": [
+    {"year": 2015, "bameStaffPct": 20.1, "bameSeniorPct": 7.4},
+    {"year": 2016, "bameStaffPct": 20.7, "bameSeniorPct": 7.8},
+    {"year": 2017, "bameStaffPct": 21.2, "bameSeniorPct": 8.1},
+    {"year": 2018, "bameStaffPct": 21.8, "bameSeniorPct": 8.6},
+    {"year": 2019, "bameStaffPct": 22.4, "bameSeniorPct": 9.0},
+    {"year": 2020, "bameStaffPct": 22.9, "bameSeniorPct": 9.3},
+    {"year": 2021, "bameStaffPct": 23.5, "bameSeniorPct": 9.7},
+    {"year": 2022, "bameStaffPct": 24.2, "bameSeniorPct": 10.1},
+    {"year": 2023, "bameStaffPct": 24.8, "bameSeniorPct": 10.5}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "MBRRACE-UK", "dataset": "Saving Lives, Improving Mothers' Care", "url": "https://www.npeu.ox.ac.uk/mbrrace-uk/reports", "frequency": "annual"},
+      {"name": "NHS England", "dataset": "Workforce Race Equality Standard (WRES)", "url": "https://www.england.nhs.uk/about/equality/equality-hub/workforce-race-equality-standard/", "frequency": "annual"},
+      {"name": "NHS Digital", "dataset": "NHS Workforce Statistics", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics", "frequency": "monthly"}
+    ],
+    "methodology": "Maternal mortality disparity ratios are derived from MBRRACE-UK's confidential enquiry reports, which examine all maternal deaths in the UK. The ratio expresses Black and Asian women's mortality relative to White women (set at 1.0). Workforce progression data combines NHS Digital workforce statistics with NHS England's WRES data. 'Senior' is defined as Agenda for Change bands 8a and above plus medical consultant grade.",
+    "knownIssues": [
+      "MBRRACE-UK reports use rolling three-year averages due to small numbers, meaning annual figures involve smoothing",
+      "Ethnicity recording in NHS data has significant gaps — around 10% of patient ethnicity is recorded as 'not stated' or 'not known'",
+      "WRES data relies on self-declared ethnicity from the NHS Electronic Staff Record, with 15% non-declaration",
+      "Aggregating all ethnic minority groups masks significant variation between ethnic categories"
+    ]
+  }
+}

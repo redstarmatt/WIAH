@@ -1,0 +1,46 @@
+{
+  "national": {
+    "leaseholdProperties": {
+      "timeSeries": [
+        { "year": 2015, "millionsLeasehold": 4.3 },
+        { "year": 2016, "millionsLeasehold": 4.4 },
+        { "year": 2017, "millionsLeasehold": 4.5 },
+        { "year": 2018, "millionsLeasehold": 4.5 },
+        { "year": 2019, "millionsLeasehold": 4.6 },
+        { "year": 2020, "millionsLeasehold": 4.6 },
+        { "year": 2021, "millionsLeasehold": 4.7 },
+        { "year": 2022, "millionsLeasehold": 4.8 },
+        { "year": 2023, "millionsLeasehold": 4.9 },
+        { "year": 2024, "millionsLeasehold": 4.98 }
+      ]
+    },
+    "groundRentComplaints": {
+      "timeSeries": [
+        { "year": 2015, "complaints": 3200 },
+        { "year": 2016, "complaints": 3800 },
+        { "year": 2017, "complaints": 5100 },
+        { "year": 2018, "complaints": 6400 },
+        { "year": 2019, "complaints": 7200 },
+        { "year": 2020, "complaints": 6800 },
+        { "year": 2021, "complaints": 8100 },
+        { "year": 2022, "complaints": 9300 },
+        { "year": 2023, "complaints": 10200 },
+        { "year": 2024, "complaints": 10800 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "DLUHC", "dataset": "Leasehold Dwellings in England", "url": "https://www.gov.uk/government/statistics/leasehold-dwellings", "frequency": "annual" },
+      { "name": "HM Land Registry", "dataset": "Price Paid Data and Title Registrations", "url": "https://www.gov.uk/government/collections/price-paid-data", "frequency": "monthly" },
+      { "name": "Competition and Markets Authority", "dataset": "Leasehold Housing Investigation", "url": "https://www.gov.uk/cma-cases/leasehold", "frequency": "one-off" }
+    ],
+    "methodology": "Leasehold dwelling counts are derived from HM Land Registry title registrations and DLUHC estimates. Ground rent complaint data is compiled from the Property Ombudsman and First-Tier Tribunal (Property Chamber) case records. Leasehold properties include both houses and flats sold on a lease basis.",
+    "knownIssues": [
+      "Precise ground rent amounts are not recorded centrally — estimates rely on sample surveys and tribunal cases",
+      "The boundary between lease management fees and ground rent is not consistently defined",
+      "Data on forfeiture and lease extension costs is fragmented across multiple tribunal jurisdictions",
+      "Many leaseholders are unaware of onerous terms until they try to sell, meaning complaint data understates actual harm"
+    ]
+  }
+}

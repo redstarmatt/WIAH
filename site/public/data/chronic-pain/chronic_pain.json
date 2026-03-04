@@ -1,0 +1,53 @@
+{
+  "topic": "chronic-pain",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "prevalence": {
+      "timeSeries": [
+        {"year": 2012, "millionsAffected": 18.2},
+        {"year": 2014, "millionsAffected": 20.1},
+        {"year": 2016, "millionsAffected": 22.4},
+        {"year": 2018, "millionsAffected": 24.6},
+        {"year": 2020, "millionsAffected": 25.8},
+        {"year": 2022, "millionsAffected": 27.1},
+        {"year": 2024, "millionsAffected": 28.0}
+      ]
+    },
+    "workImpact": {
+      "timeSeries": [
+        {"year": 2014, "daysLostMillions": 24.8},
+        {"year": 2016, "daysLostMillions": 26.3},
+        {"year": 2018, "daysLostMillions": 28.1},
+        {"year": 2020, "daysLostMillions": 30.4},
+        {"year": 2022, "daysLostMillions": 34.2},
+        {"year": 2024, "daysLostMillions": 36.8}
+      ]
+    },
+    "painClinicWait": {
+      "timeSeries": [
+        {"year": 2016, "weeks": 18},
+        {"year": 2017, "weeks": 20},
+        {"year": 2018, "weeks": 22},
+        {"year": 2019, "weeks": 24},
+        {"year": 2020, "weeks": 32},
+        {"year": 2021, "weeks": 38},
+        {"year": 2022, "weeks": 34},
+        {"year": 2023, "weeks": 30},
+        {"year": 2024, "weeks": 28}
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Versus Arthritis / NICE", "dataset": "Chronic pain prevalence estimates", "url": "https://www.versusarthritis.org/about-arthritis/data-and-statistics/", "frequency": "periodic"},
+      {"name": "HSE", "dataset": "Health and Safety Executive, Working days lost", "url": "https://www.hse.gov.uk/statistics/dayslost.htm", "frequency": "annual"},
+      {"name": "Faculty of Pain Medicine", "dataset": "National pain audit and workforce survey", "url": "https://fpm.ac.uk/", "frequency": "periodic"}
+    ],
+    "methodology": "Chronic pain prevalence from nationally representative survey data and GP record analysis (pain lasting 3+ months). Work impact from HSE Labour Force Survey. Pain clinic waits from referral-to-treatment data, specialist pain services.",
+    "knownIssues": [
+      "Chronic pain prevalence estimates vary widely depending on definition used (28M is the broadest measure)",
+      "Pain clinic wait data incomplete — some ICBs do not commission standalone services",
+      "Work impact figures likely undercount self-employed and informal economy"
+    ]
+  }
+}

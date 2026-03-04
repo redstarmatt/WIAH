@@ -1,0 +1,44 @@
+{
+  "national": {
+    "gvaPerHead": {
+      "timeSeries": [
+        { "year": 2015, "londonIndex": 170, "northEastIndex": 68 },
+        { "year": 2016, "londonIndex": 172, "northEastIndex": 68 },
+        { "year": 2017, "londonIndex": 173, "northEastIndex": 67 },
+        { "year": 2018, "londonIndex": 174, "northEastIndex": 67 },
+        { "year": 2019, "londonIndex": 175, "northEastIndex": 66 },
+        { "year": 2020, "londonIndex": 168, "northEastIndex": 68 },
+        { "year": 2021, "londonIndex": 172, "northEastIndex": 67 },
+        { "year": 2022, "londonIndex": 176, "northEastIndex": 66 },
+        { "year": 2023, "londonIndex": 178, "northEastIndex": 65 }
+      ]
+    },
+    "healthyLifeExpectancy": {
+      "timeSeries": [
+        { "year": 2015, "richestDecile": 70.5, "poorestDecile": 51.9 },
+        { "year": 2016, "richestDecile": 70.7, "poorestDecile": 52.0 },
+        { "year": 2017, "richestDecile": 70.4, "poorestDecile": 51.4 },
+        { "year": 2018, "richestDecile": 70.6, "poorestDecile": 51.2 },
+        { "year": 2019, "richestDecile": 70.7, "poorestDecile": 51.0 },
+        { "year": 2020, "richestDecile": 70.1, "poorestDecile": 50.2 },
+        { "year": 2021, "richestDecile": 70.3, "poorestDecile": 50.0 },
+        { "year": 2022, "richestDecile": 70.5, "poorestDecile": 49.8 },
+        { "year": 2023, "richestDecile": 70.4, "poorestDecile": 49.5 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "ONS", "dataset": "Regional Gross Value Added (Balanced), UK", "url": "https://www.ons.gov.uk/economy/grossvalueaddedgva", "frequency": "annual" },
+      { "name": "ONS", "dataset": "Health State Life Expectancies, UK", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies", "frequency": "annual" },
+      { "name": "DLUHC", "dataset": "Levelling Up Fund Monitoring Data", "url": "https://www.gov.uk/government/collections/levelling-up-fund", "frequency": "quarterly" }
+    ],
+    "methodology": "GVA per head is from ONS balanced regional accounts, indexed to UK = 100. Healthy life expectancy data from ONS uses the Annual Population Survey and census data. Deprivation deciles are based on the Index of Multiple Deprivation (IMD) 2019.",
+    "knownIssues": [
+      "GVA per head overstates London's productivity due to commuter effects — output is attributed to workplace, not residence",
+      "Healthy life expectancy estimates have wide confidence intervals at small area level",
+      "Levelling Up Fund spend data does not capture outcomes or economic impact",
+      "Regional boundaries changed in 2019, complicating long-run comparisons"
+    ]
+  }
+}

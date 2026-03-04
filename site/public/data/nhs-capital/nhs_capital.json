@@ -1,0 +1,66 @@
+{
+  "topic": "nhs-capital",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "capitalSpending": {
+      "timeSeries": [
+        {"year": 2014, "billionsReal": 5.8},
+        {"year": 2015, "billionsReal": 5.5},
+        {"year": 2016, "billionsReal": 5.2},
+        {"year": 2017, "billionsReal": 5.0},
+        {"year": 2018, "billionsReal": 5.1},
+        {"year": 2019, "billionsReal": 5.3},
+        {"year": 2020, "billionsReal": 7.1},
+        {"year": 2021, "billionsReal": 7.8},
+        {"year": 2022, "billionsReal": 6.4},
+        {"year": 2023, "billionsReal": 6.1},
+        {"year": 2024, "billionsReal": 5.9}
+      ]
+    },
+    "maintenanceBacklog": {
+      "timeSeries": [
+        {"year": 2014, "billions": 4.3},
+        {"year": 2015, "billions": 4.7},
+        {"year": 2016, "billions": 5.0},
+        {"year": 2017, "billions": 5.5},
+        {"year": 2018, "billions": 6.0},
+        {"year": 2019, "billions": 6.5},
+        {"year": 2020, "billions": 7.4},
+        {"year": 2021, "billions": 8.3},
+        {"year": 2022, "billions": 10.2},
+        {"year": 2023, "billions": 11.6},
+        {"year": 2024, "billions": 13.8}
+      ]
+    },
+    "criticalInfrastructureRisk": {
+      "timeSeries": [
+        {"year": 2014, "highRiskPct": 12.4},
+        {"year": 2016, "highRiskPct": 14.1},
+        {"year": 2018, "highRiskPct": 16.8},
+        {"year": 2020, "highRiskPct": 19.2},
+        {"year": 2022, "highRiskPct": 22.6},
+        {"year": 2024, "highRiskPct": 25.1}
+      ]
+    },
+    "raacAffectedTrusts": {
+      "timeSeries": [
+        {"year": 2022, "trusts": 27},
+        {"year": 2023, "trusts": 39},
+        {"year": 2024, "trusts": 42}
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "DHSC / NHS England", "dataset": "ERIC (Estates Returns Information Collection)", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/estates-returns-information-collection", "frequency": "annual"},
+      {"name": "NHS England", "dataset": "Capital expenditure returns", "url": "https://www.england.nhs.uk/financial-accounting-and-reporting/", "frequency": "annual"},
+      {"name": "NAO", "dataset": "NHS capital expenditure and financial management", "url": "https://www.nao.org.uk/", "frequency": "periodic"}
+    ],
+    "methodology": "Capital spending in real terms (2024 prices). Maintenance backlog from ERIC six-facet survey returns covering all NHS trusts in England. High-risk infrastructure defined as condition D or E in the ERIC framework (likely to fail or already failing). RAAC-affected trusts from DHSC survey programme.",
+    "knownIssues": [
+      "Maintenance backlog likely understated — trusts incentivised to underreport",
+      "COVID capital spending (Nightingale hospitals, ventilators) distorts 2020-2021 figures",
+      "RAAC survey incomplete — some trusts have not fully surveyed all buildings"
+    ]
+  }
+}

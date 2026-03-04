@@ -1,0 +1,45 @@
+{
+  "national": {
+    "longTermEmpty": {
+      "timeSeries": [
+        { "year": 2015, "thousandsEmpty": 610 },
+        { "year": 2016, "thousandsEmpty": 605 },
+        { "year": 2017, "thousandsEmpty": 616 },
+        { "year": 2018, "thousandsEmpty": 625 },
+        { "year": 2019, "thousandsEmpty": 635 },
+        { "year": 2020, "thousandsEmpty": 648 },
+        { "year": 2021, "thousandsEmpty": 660 },
+        { "year": 2022, "thousandsEmpty": 672 },
+        { "year": 2023, "thousandsEmpty": 676 },
+        { "year": 2024, "thousandsEmpty": 683 }
+      ]
+    },
+    "allEmpty": {
+      "timeSeries": [
+        { "year": 2015, "thousandsEmpty": 590 },
+        { "year": 2016, "thousandsEmpty": 585 },
+        { "year": 2017, "thousandsEmpty": 605 },
+        { "year": 2018, "thousandsEmpty": 617 },
+        { "year": 2019, "thousandsEmpty": 630 },
+        { "year": 2020, "thousandsEmpty": 648 },
+        { "year": 2021, "thousandsEmpty": 665 },
+        { "year": 2022, "thousandsEmpty": 678 },
+        { "year": 2023, "thousandsEmpty": 689 },
+        { "year": 2024, "thousandsEmpty": 700 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "DLUHC", "dataset": "Council Tax Base: Local Authority Level Data (Table CTB1)", "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-council-tax", "frequency": "annual" },
+      { "name": "ONS", "dataset": "Dwelling Stock Estimates, England", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/housing", "frequency": "annual" }
+    ],
+    "methodology": "Long-term empty homes are defined as properties that have been unoccupied and substantially unfurnished for over six months, as reported through council tax records. Total empty homes include both short- and long-term vacancies. Data is collected annually from local authority council tax base returns.",
+    "knownIssues": [
+      "Council tax records may undercount empty homes where owners claim single-person discounts fraudulently",
+      "Definition of 'long-term empty' varies slightly between local authorities",
+      "Second homes are excluded from empty homes counts but overlap exists in coastal areas",
+      "COVID-19 disrupted council tax reporting in 2020/21"
+    ]
+  }
+}

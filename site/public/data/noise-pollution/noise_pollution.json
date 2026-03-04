@@ -1,0 +1,22 @@
+{
+  "national": {
+    "noiseComplaints": [
+      {"year": 2014, "thousands": 330},
+      {"year": 2016, "thousands": 345},
+      {"year": 2018, "thousands": 365},
+      {"year": 2020, "thousands": 410},
+      {"year": 2021, "thousands": 435},
+      {"year": 2022, "thousands": 420},
+      {"year": 2023, "thousands": 405},
+      {"year": 2024, "thousands": 395}
+    ],
+    "roadTrafficExposure": [
+      {"year": 2012, "millionsExposed": 8.3},
+      {"year": 2014, "millionsExposed": 8.5},
+      {"year": 2017, "millionsExposed": 8.9},
+      {"year": 2019, "millionsExposed": 9.2},
+      {"year": 2022, "millionsExposed": 9.5},
+      {"year": 2024, "millionsExposed": 9.7}
+    ]
+  }
+}

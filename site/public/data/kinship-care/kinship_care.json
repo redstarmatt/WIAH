@@ -1,0 +1,37 @@
+{
+  "kinshipPopulation": [
+    {"year": 2015, "childrenThousands": 128},
+    {"year": 2016, "childrenThousands": 132},
+    {"year": 2017, "childrenThousands": 137},
+    {"year": 2018, "childrenThousands": 141},
+    {"year": 2019, "childrenThousands": 146},
+    {"year": 2020, "childrenThousands": 150},
+    {"year": 2021, "childrenThousands": 154},
+    {"year": 2022, "childrenThousands": 158},
+    {"year": 2023, "childrenThousands": 162}
+  ],
+  "supportRate": [
+    {"year": 2015, "pctReceivingSupport": 45},
+    {"year": 2016, "pctReceivingSupport": 43},
+    {"year": 2017, "pctReceivingSupport": 41},
+    {"year": 2018, "pctReceivingSupport": 39},
+    {"year": 2019, "pctReceivingSupport": 38},
+    {"year": 2020, "pctReceivingSupport": 36},
+    {"year": 2021, "pctReceivingSupport": 34},
+    {"year": 2022, "pctReceivingSupport": 32},
+    {"year": 2023, "pctReceivingSupport": 31}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "Department for Education", "dataset": "Children Looked After in England", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions", "frequency": "annual"},
+      {"name": "Kinship (charity)", "dataset": "State of the Nation Survey 2023", "url": "https://kinship.org.uk/state-of-the-nation", "frequency": "annual"},
+      {"name": "Family Rights Group", "dataset": "Kinship Care Benchmarking Survey", "url": "https://frg.org.uk/policy-and-campaigns/kinship-care/", "frequency": "annual"}
+    ],
+    "methodology": "Kinship care population estimates combine DfE Children Looked After data with household survey estimates from the 2021 Census and Kinship charity research. The 162,000 figure includes children in formal kinship care arrangements (Special Guardianship Orders and kinship foster care) plus estimated informal arrangements. Support rate is derived from Kinship charity surveys of registered kinship carers.",
+    "knownIssues": [
+      "Informal kinship care arrangements are not captured in official statistics — the true number of children raised by relatives is likely significantly higher",
+      "Financial support data relies on charity surveys with self-selection bias",
+      "Pre-2018 estimates use different methodology following Children and Social Work Act 2017 changes"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "topic": "cybercrime",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "computerMisuseOffences": [
+      { "year": 2015, "count": 1100000 },
+      { "year": 2016, "count": 1340000 },
+      { "year": 2017, "count": 1480000 },
+      { "year": 2018, "count": 1580000 },
+      { "year": 2019, "count": 1700000 },
+      { "year": 2020, "count": 2100000 },
+      { "year": 2021, "count": 1890000 },
+      { "year": 2022, "count": 1620000 },
+      { "year": 2023, "count": 1740000 },
+      { "year": 2024, "count": 1900000 }
+    ],
+    "prosecutions": [
+      { "year": 2015, "count": 1240 },
+      { "year": 2016, "count": 1180 },
+      { "year": 2017, "count": 1020 },
+      { "year": 2018, "count": 960 },
+      { "year": 2019, "count": 890 },
+      { "year": 2020, "count": 620 },
+      { "year": 2021, "count": 710 },
+      { "year": 2022, "count": 780 },
+      { "year": 2023, "count": 820 },
+      { "year": 2024, "count": 870 }
+    ]
+  }
+}

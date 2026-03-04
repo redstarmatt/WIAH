@@ -1,0 +1,47 @@
+{
+  "national": {
+    "selfEmployedCount": {
+      "timeSeries": [
+        { "year": 2015, "millionsSelfEmployed": 4.77 },
+        { "year": 2016, "millionsSelfEmployed": 4.80 },
+        { "year": 2017, "millionsSelfEmployed": 4.86 },
+        { "year": 2018, "millionsSelfEmployed": 4.85 },
+        { "year": 2019, "millionsSelfEmployed": 4.93 },
+        { "year": 2020, "millionsSelfEmployed": 4.31 },
+        { "year": 2021, "millionsSelfEmployed": 4.25 },
+        { "year": 2022, "millionsSelfEmployed": 4.24 },
+        { "year": 2023, "millionsSelfEmployed": 4.26 },
+        { "year": 2024, "millionsSelfEmployed": 4.29 }
+      ]
+    },
+    "medianIncome": {
+      "timeSeries": [
+        { "year": 2015, "weeklyMedian": 280 },
+        { "year": 2016, "weeklyMedian": 275 },
+        { "year": 2017, "weeklyMedian": 285 },
+        { "year": 2018, "weeklyMedian": 290 },
+        { "year": 2019, "weeklyMedian": 300 },
+        { "year": 2020, "weeklyMedian": 256 },
+        { "year": 2021, "weeklyMedian": 275 },
+        { "year": 2022, "weeklyMedian": 290 },
+        { "year": 2023, "weeklyMedian": 300 },
+        { "year": 2024, "weeklyMedian": 310 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "ONS", "dataset": "Labour Force Survey — Self-Employment", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes", "frequency": "quarterly" },
+      { "name": "HMRC", "dataset": "Self Assessment Tax Returns", "url": "https://www.gov.uk/government/statistics/self-assessment-tax-returns", "frequency": "annual" },
+      { "name": "IPSE", "dataset": "Freelancer Confidence Index", "url": "https://www.ipse.co.uk/policy/research.html", "frequency": "quarterly" }
+    ],
+    "methodology": "Self-employment counts are from the ONS Labour Force Survey and include anyone who classifies their main job as self-employed. Median weekly income is self-reported through the LFS. HMRC Self Assessment data provides income declarations but only for those who file returns. IPSE surveys supplement official data with sentiment measures.",
+    "knownIssues": [
+      "Self-reported income in the LFS is known to understate actual self-employment earnings",
+      "The LFS experienced a significant response rate decline from 2020, reducing data quality",
+      "IR35 reforms in April 2021 shifted many self-employed workers to PAYE, affecting comparability",
+      "Gig economy workers may not self-classify as self-employed in surveys",
+      "COVID-19 caused a structural break in the series — 700,000 self-employed left the sector in 2020-21"
+    ]
+  }
+}

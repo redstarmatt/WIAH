@@ -1,0 +1,63 @@
+{
+  "topic": "cancer-survival",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "fiveYearSurvival": {
+      "timeSeries": [
+        {"year": 2005, "pct": 46.2},
+        {"year": 2007, "pct": 48.1},
+        {"year": 2009, "pct": 50.3},
+        {"year": 2011, "pct": 52.0},
+        {"year": 2013, "pct": 53.5},
+        {"year": 2015, "pct": 54.8},
+        {"year": 2017, "pct": 55.9},
+        {"year": 2019, "pct": 56.7},
+        {"year": 2021, "pct": 54.1},
+        {"year": 2023, "pct": 55.4}
+      ]
+    },
+    "oneYearSurvival": {
+      "timeSeries": [
+        {"year": 2005, "pct": 64.8},
+        {"year": 2007, "pct": 66.2},
+        {"year": 2009, "pct": 67.9},
+        {"year": 2011, "pct": 69.5},
+        {"year": 2013, "pct": 70.8},
+        {"year": 2015, "pct": 72.0},
+        {"year": 2017, "pct": 72.8},
+        {"year": 2019, "pct": 73.3},
+        {"year": 2021, "pct": 71.2},
+        {"year": 2023, "pct": 72.6}
+      ]
+    },
+    "stageAtDiagnosis": [
+      {"stage": "Stage 1", "pct": 23},
+      {"stage": "Stage 2", "pct": 20},
+      {"stage": "Stage 3", "pct": 18},
+      {"stage": "Stage 4", "pct": 26},
+      {"stage": "Unknown", "pct": 13}
+    ],
+    "europeanComparison": [
+      {"country": "Sweden", "fiveYear": 65.2},
+      {"country": "Germany", "fiveYear": 61.8},
+      {"country": "France", "fiveYear": 60.1},
+      {"country": "Netherlands", "fiveYear": 59.4},
+      {"country": "EU average", "fiveYear": 57.3},
+      {"country": "England", "fiveYear": 55.4},
+      {"country": "Denmark", "fiveYear": 54.9},
+      {"country": "Ireland", "fiveYear": 54.2}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Cancer survival in England", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/cancersurvivalratescancersurvivalinenglandadultsdiagnosed", "frequency": "annual"},
+      {"name": "CONCORD-3", "dataset": "Global surveillance of cancer survival", "url": "https://csg.lshtm.ac.uk/research/themes/concord-programme/", "frequency": "periodic"}
+    ],
+    "methodology": "Five-year net survival estimates based on cancer registrations in England. Age-standardised using International Cancer Survival Standard weights. European comparisons drawn from CONCORD-3 and Eurocare-6 studies.",
+    "knownIssues": [
+      "COVID disrupted screening and diagnosis in 2020-2021, artificially depressing survival figures",
+      "Stage-at-diagnosis data incomplete for 13% of cases",
+      "International comparisons complicated by different registration practices"
+    ]
+  }
+}
