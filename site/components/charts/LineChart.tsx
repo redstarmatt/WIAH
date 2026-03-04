@@ -22,6 +22,7 @@ export interface TargetLine {
 
 interface LineChartProps {
   title: string;
+  showTitle?: boolean;
   subtitle?: string;
   series: Series[];
   annotations?: Annotation[];
@@ -41,6 +42,7 @@ const COLOURS = ['#0D1117', '#E63946', '#2A9D8F', '#F4A261'];
 
 export default function LineChart({
   title,
+  showTitle = false,
   subtitle,
   series,
   annotations,
@@ -334,7 +336,7 @@ export default function LineChart({
 
   return (
     <div className="mb-12">
-      <h3 className="text-lg font-bold text-wiah-black mb-1">{title}</h3>
+      {showTitle && <h3 className="text-lg font-bold text-wiah-black mb-1">{title}</h3>}
       {subtitle && (
         <p className="text-sm text-wiah-mid mb-4">{subtitle}</p>
       )}
