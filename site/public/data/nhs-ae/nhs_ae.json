@@ -1,0 +1,67 @@
+{
+  "national": {
+    "fourHourPerformance": {
+      "timeSeries": [
+        {"year": 2012, "within4HoursPct": 96},
+        {"year": 2013, "within4HoursPct": 96},
+        {"year": 2014, "within4HoursPct": 95},
+        {"year": 2015, "within4HoursPct": 93},
+        {"year": 2016, "within4HoursPct": 91},
+        {"year": 2017, "within4HoursPct": 88},
+        {"year": 2018, "within4HoursPct": 85},
+        {"year": 2019, "within4HoursPct": 83},
+        {"year": 2020, "within4HoursPct": 86},
+        {"year": 2021, "within4HoursPct": 78},
+        {"year": 2022, "within4HoursPct": 74},
+        {"year": 2023, "within4HoursPct": 70},
+        {"year": 2024, "within4HoursPct": 70}
+      ],
+      "latestYear": 2024,
+      "latestPct": 70,
+      "targetPct": 95,
+      "lastMetYear": 2015,
+      "note": "Annual average for Type 1 (major) A&E departments only. NHS England A&E monthly returns."
+    },
+    "twelveHourWaits": {
+      "timeSeries": [
+        {"year": 2018, "annualWaitsThousands": 0.5},
+        {"year": 2019, "annualWaitsThousands": 1.0},
+        {"year": 2020, "annualWaitsThousands": 2.5},
+        {"year": 2021, "annualWaitsThousands": 14.0},
+        {"year": 2022, "annualWaitsThousands": 100.0},
+        {"year": 2023, "annualWaitsThousands": 200.0},
+        {"year": 2024, "annualWaitsThousands": 300.0}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 300,
+      "december2023Monthly": 88000,
+      "note": "12-hour trolley waits (decision to admit to departure). Near-zero pre-2020."
+    },
+    "attendances": {
+      "annualAttendances2023Millions": 24.0,
+      "typeBreakdown": [
+        {"type": "Major A&E (Type 1)", "pct": 45},
+        {"type": "Minor injury unit (Type 2)", "pct": 11},
+        {"type": "Urgent treatment centre (Type 3/4)", "pct": 44}
+      ]
+    },
+    "ambulanceHandover": {
+      "timeSeries": [
+        {"year": 2019, "delayOver30MinPct": 3},
+        {"year": 2020, "delayOver30MinPct": 5},
+        {"year": 2021, "delayOver30MinPct": 15},
+        {"year": 2022, "delayOver30MinPct": 28},
+        {"year": 2023, "delayOver30MinPct": 31}
+      ],
+      "latestYear": 2023,
+      "latestPct": 31
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England", "dataset": "A&E Attendances and Emergency Admissions", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/", "frequency": "monthly"}
+    ],
+    "methodology": "4-hour performance: percentage of all Type 1 A&E attendances meeting the 4-hour standard (arrival to discharge, admission or transfer). 12-hour trolley waits: 12 hours from decision to admit to leaving A&E. Ambulance handover delays from NHSE handover data. Annual figures are annual averages.",
+    "knownIssues": ["4-hour target applies to Type 1 only — 'all type' performance is higher due to inclusion of minor injury units and UTCs", "12-hour wait definition changed in 2021 — data before and after not directly comparable", "Ambulance handover data collection improved in 2022 — earlier figures may undercount"]
+  }
+}

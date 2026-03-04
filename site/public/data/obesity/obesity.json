@@ -1,0 +1,59 @@
+{
+  "national": {
+    "obesityPrevalence": {
+      "timeSeries": [
+        {"year": 2005, "obesePct": 23.1},
+        {"year": 2007, "obesePct": 24.2},
+        {"year": 2009, "obesePct": 22.0},
+        {"year": 2011, "obesePct": 24.8},
+        {"year": 2013, "obesePct": 26.0},
+        {"year": 2015, "obesePct": 27.0},
+        {"year": 2017, "obesePct": 28.7},
+        {"year": 2019, "obesePct": 28.0},
+        {"year": 2021, "obesePct": 25.9},
+        {"year": 2022, "obesePct": 26.9},
+        {"year": 2023, "obesePct": 28.0}
+      ],
+      "latestYear": 2023,
+      "latestPct": 28.0,
+      "overweightPct": 38.0
+    },
+    "childObesity": {
+      "timeSeries": [
+        {"year": 2012, "obesePct": 18.9},
+        {"year": 2013, "obesePct": 19.1},
+        {"year": 2014, "obesePct": 18.9},
+        {"year": 2015, "obesePct": 19.1},
+        {"year": 2016, "obesePct": 19.8},
+        {"year": 2017, "obesePct": 20.1},
+        {"year": 2018, "obesePct": 20.2},
+        {"year": 2019, "obesePct": 20.6},
+        {"year": 2020, "obesePct": 25.5},
+        {"year": 2021, "obesePct": 23.4},
+        {"year": 2022, "obesePct": 22.7},
+        {"year": 2023, "obesePct": 23.0}
+      ],
+      "latestYear": 2023,
+      "latestPct": 23.0
+    },
+    "byDeprivation": [
+      {"quintile": "Most deprived", "obesePct": 35.1},
+      {"quintile": "Q2", "obesePct": 31.5},
+      {"quintile": "Q3", "obesePct": 29.0},
+      {"quintile": "Q4", "obesePct": 26.8},
+      {"quintile": "Least deprived", "obesePct": 19.8}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS Digital", "dataset": "Health Survey for England", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england", "frequency": "annual"},
+      {"name": "NHS Digital", "dataset": "National Child Measurement Programme", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/national-child-measurement-programme", "frequency": "annual"}
+    ],
+    "methodology": "Adult obesity prevalence from Health Survey for England, using BMI ≥30 threshold, measured (not self-reported). Child obesity from National Child Measurement Programme, measuring children in Reception (aged 4-5) and Year 6 (aged 10-11). Year 6 obesity rates used here. BMI adjusted for age and sex in children using UK90 reference population. Deprivation quintile from IMD linked to household address.",
+    "knownIssues": [
+      "BMI is an imperfect measure of obesity — it does not distinguish muscle from fat, and may misclassify some ethnic groups",
+      "COVID-19 disrupted 2020-21 data collection for Health Survey for England — estimates have wider confidence intervals",
+      "Child measurement programme covers maintained schools only — independent school pupils not included"
+    ]
+  }
+}

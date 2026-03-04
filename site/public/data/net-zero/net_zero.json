@@ -1,0 +1,35 @@
+{
+  "emissions": [
+    {"year": 1990, "mtCO2e": 792},
+    {"year": 1995, "mtCO2e": 737},
+    {"year": 2000, "mtCO2e": 703},
+    {"year": 2005, "mtCO2e": 672},
+    {"year": 2010, "mtCO2e": 634},
+    {"year": 2015, "mtCO2e": 527},
+    {"year": 2019, "mtCO2e": 455},
+    {"year": 2020, "mtCO2e": 404},
+    {"year": 2021, "mtCO2e": 424},
+    {"year": 2022, "mtCO2e": 406}
+  ],
+  "renewableElectricity": [
+    {"year": 2010, "pct": 7},
+    {"year": 2012, "pct": 12},
+    {"year": 2014, "pct": 19},
+    {"year": 2016, "pct": 25},
+    {"year": 2018, "pct": 33},
+    {"year": 2019, "pct": 37},
+    {"year": 2020, "pct": 43},
+    {"year": 2021, "pct": 40},
+    {"year": 2022, "pct": 42},
+    {"year": 2023, "pct": 47}
+  ],
+  "bySector": [
+    {"sector": "Transport", "pctOfTotal": 26},
+    {"sector": "Buildings (heating)", "pctOfTotal": 17},
+    {"sector": "Industry", "pctOfTotal": 20},
+    {"sector": "Electricity generation", "pctOfTotal": 12},
+    {"sector": "Agriculture", "pctOfTotal": 11},
+    {"sector": "Waste", "pctOfTotal": 5},
+    {"sector": "Other", "pctOfTotal": 9}
+  ]
+}

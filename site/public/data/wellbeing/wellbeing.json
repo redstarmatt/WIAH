@@ -1,0 +1,103 @@
+{
+  "topic": "wellbeing",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "lifeSatisfaction": {
+      "timeSeries": [
+        { "year": "2011/12", "avgScore": 7.41, "highPct": 71.0 },
+        { "year": "2012/13", "avgScore": 7.43, "highPct": 71.5 },
+        { "year": "2013/14", "avgScore": 7.46, "highPct": 72.7 },
+        { "year": "2014/15", "avgScore": 7.49, "highPct": 73.2 },
+        { "year": "2015/16", "avgScore": 7.52, "highPct": 74.1 },
+        { "year": "2016/17", "avgScore": 7.51, "highPct": 73.9 },
+        { "year": "2017/18", "avgScore": 7.54, "highPct": 74.3 },
+        { "year": "2018/19", "avgScore": 7.56, "highPct": 74.8 },
+        { "year": "2019/20", "avgScore": 7.52, "highPct": 73.9 },
+        { "year": "2020/21", "avgScore": 7.36, "highPct": 70.7 },
+        { "year": "2021/22", "avgScore": 7.51, "highPct": 73.6 },
+        { "year": "2022/23", "avgScore": 7.48, "highPct": 73.0 },
+        { "year": "2023/24", "avgScore": 7.45, "highPct": 72.4 }
+      ],
+      "latestYear": "2023/24",
+      "latestAvg": 7.45,
+      "note": "Mean life satisfaction, 0&ndash;10 scale. Annual Population Survey."
+    },
+    "anxiety": {
+      "timeSeries": [
+        { "year": "2011/12", "avgScore": 2.78, "highPct": 20.0 },
+        { "year": "2012/13", "avgScore": 2.85, "highPct": 21.2 },
+        { "year": "2013/14", "avgScore": 2.87, "highPct": 21.6 },
+        { "year": "2014/15", "avgScore": 2.83, "highPct": 21.1 },
+        { "year": "2015/16", "avgScore": 2.84, "highPct": 21.3 },
+        { "year": "2016/17", "avgScore": 2.92, "highPct": 22.5 },
+        { "year": "2017/18", "avgScore": 2.95, "highPct": 22.9 },
+        { "year": "2018/19", "avgScore": 2.94, "highPct": 22.7 },
+        { "year": "2019/20", "avgScore": 2.98, "highPct": 23.1 },
+        { "year": "2020/21", "avgScore": 3.37, "highPct": 30.4 },
+        { "year": "2021/22", "avgScore": 3.08, "highPct": 24.8 },
+        { "year": "2022/23", "avgScore": 3.14, "highPct": 25.7 },
+        { "year": "2023/24", "avgScore": 3.22, "highPct": 26.5 }
+      ],
+      "latestYear": "2023/24",
+      "latestHighPct": 26.5,
+      "note": "Mean anxiety score, 0&ndash;10 scale (higher = more anxious). Annual Population Survey."
+    },
+    "loneliness": {
+      "timeSeries": [
+        { "year": 2016, "oftenLonelyPct": 5.0 },
+        { "year": 2017, "oftenLonelyPct": 5.0 },
+        { "year": 2018, "oftenLonelyPct": 5.0 },
+        { "year": 2020, "oftenLonelyPct": 7.2 },
+        { "year": 2021, "oftenLonelyPct": 6.3 },
+        { "year": 2022, "oftenLonelyPct": 7.1 },
+        { "year": 2023, "oftenLonelyPct": 7.4 },
+        { "year": 2024, "oftenLonelyPct": 7.8 }
+      ],
+      "latestYear": 2024,
+      "latestPct": 7.8,
+      "note": "Adults reporting feeling lonely often or always. Community Life Survey / DCMS."
+    },
+    "worthwhile": {
+      "timeSeries": [
+        { "year": "2011/12", "avgScore": 7.71 },
+        { "year": "2012/13", "avgScore": 7.74 },
+        { "year": "2013/14", "avgScore": 7.77 },
+        { "year": "2014/15", "avgScore": 7.80 },
+        { "year": "2015/16", "avgScore": 7.82 },
+        { "year": "2016/17", "avgScore": 7.82 },
+        { "year": "2017/18", "avgScore": 7.83 },
+        { "year": "2018/19", "avgScore": 7.85 },
+        { "year": "2019/20", "avgScore": 7.83 },
+        { "year": "2020/21", "avgScore": 7.66 },
+        { "year": "2021/22", "avgScore": 7.79 },
+        { "year": "2022/23", "avgScore": 7.77 },
+        { "year": "2023/24", "avgScore": 7.74 }
+      ],
+      "latestYear": "2023/24",
+      "latestAvg": 7.74,
+      "note": "Mean worthwhile score, 0&ndash;10 scale. Annual Population Survey."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Personal well-being in the UK &mdash; Annual Population Survey",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/bulletins/measuringnationalwellbeing/latest",
+        "frequency": "annual"
+      },
+      {
+        "name": "DCMS",
+        "dataset": "Community Life Survey &mdash; loneliness",
+        "url": "https://www.gov.uk/government/statistics/community-life-survey-202223",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "ONS measures four personal wellbeing questions on a 0&ndash;10 scale: life satisfaction, worthwhile, happiness, and anxiety. The Annual Population Survey asks ~300,000 adults. Figures shown are annual means and % with &lsquo;high&rsquo; scores (7&ndash;10 for positive measures, 6&ndash;10 for anxiety). Loneliness from Community Life Survey.",
+    "knownIssues": [
+      "2020/21 figures include pandemic lockdown period &mdash; not directly comparable",
+      "Loneliness data has methodological changes in 2020 &mdash; trend break",
+      "UK-wide figures mask substantial regional and demographic variation (young adults and elderly score lower)"
+    ]
+  }
+}

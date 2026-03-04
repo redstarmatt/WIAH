@@ -1,0 +1,35 @@
+{
+  "nhsDentists": [
+    {"year": 2015, "dentists": 23900},
+    {"year": 2016, "dentists": 24400},
+    {"year": 2017, "dentists": 24800},
+    {"year": 2018, "dentists": 25100},
+    {"year": 2019, "dentists": 25300},
+    {"year": 2020, "dentists": 22100},
+    {"year": 2021, "dentists": 22800},
+    {"year": 2022, "dentists": 23400},
+    {"year": 2023, "dentists": 24200}
+  ],
+  "coursesTreatment": [
+    {"year": 2015, "courses": 37200000},
+    {"year": 2016, "courses": 37600000},
+    {"year": 2017, "courses": 37900000},
+    {"year": 2018, "courses": 38100000},
+    {"year": 2019, "courses": 38400000},
+    {"year": 2020, "courses": 14200000},
+    {"year": 2021, "courses": 28600000},
+    {"year": 2022, "courses": 31900000},
+    {"year": 2023, "courses": 34100000}
+  ],
+  "byRegion": [
+    {"region": "London", "pctUnableAccess": 51},
+    {"region": "South East", "pctUnableAccess": 47},
+    {"region": "East of England", "pctUnableAccess": 45},
+    {"region": "Yorkshire", "pctUnableAccess": 44},
+    {"region": "South West", "pctUnableAccess": 43},
+    {"region": "East Midlands", "pctUnableAccess": 41},
+    {"region": "North West", "pctUnableAccess": 39},
+    {"region": "West Midlands", "pctUnableAccess": 38},
+    {"region": "North East", "pctUnableAccess": 35}
+  ]
+}

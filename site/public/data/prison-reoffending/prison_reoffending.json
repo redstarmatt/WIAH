@@ -1,0 +1,29 @@
+{
+  "reoffendingRate": [
+    {"year": 2010, "pct": 55},
+    {"year": 2011, "pct": 54},
+    {"year": 2012, "pct": 55},
+    {"year": 2013, "pct": 54},
+    {"year": 2014, "pct": 53},
+    {"year": 2015, "pct": 53},
+    {"year": 2016, "pct": 53},
+    {"year": 2017, "pct": 53},
+    {"year": 2018, "pct": 54},
+    {"year": 2019, "pct": 53},
+    {"year": 2020, "pct": 50},
+    {"year": 2021, "pct": 52},
+    {"year": 2022, "pct": 53}
+  ],
+  "bySentenceLength": [
+    {"sentence": "Under 12 months", "reoffendPct": 64},
+    {"sentence": "12 months to 4 years", "reoffendPct": 55},
+    {"sentence": "4 years to 10 years", "reoffendPct": 38},
+    {"sentence": "10+ years", "reoffendPct": 22}
+  ],
+  "byRehabilitation": [
+    {"activity": "Employment on release", "reoffendPct": 23},
+    {"activity": "Stable accommodation", "reoffendPct": 27},
+    {"activity": "Drug treatment completed", "reoffendPct": 31},
+    {"activity": "No employment, no accommodation", "reoffendPct": 73}
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "national": {
+    "waitingTimes": {
+      "timeSeries": [
+        {"year": 2015, "within62DaysPct": 83.7},
+        {"year": 2016, "within62DaysPct": 82.3},
+        {"year": 2017, "within62DaysPct": 81.3},
+        {"year": 2018, "within62DaysPct": 80.4},
+        {"year": 2019, "within62DaysPct": 79.6},
+        {"year": 2020, "within62DaysPct": 73.4},
+        {"year": 2021, "within62DaysPct": 70.2},
+        {"year": 2022, "within62DaysPct": 68.1},
+        {"year": 2023, "within62DaysPct": 67.4}
+      ],
+      "latestYear": 2023,
+      "latestPct": 67.4,
+      "target": 85.0,
+      "waitingOver104Days": 16200
+    },
+    "survivalRates": {
+      "timeSeries": [
+        {"year": 2010, "fiveYearSurvivalPct": 50.1},
+        {"year": 2012, "fiveYearSurvivalPct": 51.8},
+        {"year": 2014, "fiveYearSurvivalPct": 53.0},
+        {"year": 2016, "fiveYearSurvivalPct": 54.2},
+        {"year": 2018, "fiveYearSurvivalPct": 55.1},
+        {"year": 2020, "fiveYearSurvivalPct": 54.8},
+        {"year": 2022, "fiveYearSurvivalPct": 56.0}
+      ],
+      "latestYear": 2022,
+      "latestPct": 56.0
+    },
+    "byCancerType": [
+      {"cancerType": "Breast", "within62DaysPct": 72},
+      {"cancerType": "Lung", "within62DaysPct": 57},
+      {"cancerType": "Prostate", "within62DaysPct": 61},
+      {"cancerType": "Colorectal", "within62DaysPct": 66},
+      {"cancerType": "Gynaecological", "within62DaysPct": 70},
+      {"cancerType": "Haematological", "within62DaysPct": 80}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England", "dataset": "Cancer Waiting Times Statistics", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/cancer-waiting-times/", "frequency": "monthly"},
+      {"name": "Cancer Research UK", "dataset": "Cancer Incidence and Survival Statistics", "url": "https://www.cancerresearchuk.org/health-professional/cancer-statistics", "frequency": "annual"}
+    ],
+    "methodology": "62-day waiting time standard measures from urgent GP referral (or urgent consultant upgrade or urgent screening referral) to first definitive treatment. Data from NHS England Cancer Waiting Times collection. Five-year survival rates are age-standardised net survival, from Cancer Research UK analysis of ONS cancer registrations.",
+    "knownIssues": [
+      "COVID-19 severely disrupted cancer referrals and diagnostics in 2020, leading to a large drop in 62-day performance",
+      "Five-year survival data lags by 4-6 years due to the follow-up period required",
+      "62-day standard was not formally measured before 2010"
+    ]
+  }
+}

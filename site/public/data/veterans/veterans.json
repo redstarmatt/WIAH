@@ -1,0 +1,90 @@
+{
+  "topic": "veterans",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "armedForcesStrength": {
+      "timeSeries": [
+        {"year": 2010, "regularStrength": 178600},
+        {"year": 2011, "regularStrength": 172700},
+        {"year": 2012, "regularStrength": 164100},
+        {"year": 2013, "regularStrength": 158900},
+        {"year": 2014, "regularStrength": 152400},
+        {"year": 2015, "regularStrength": 149300},
+        {"year": 2016, "regularStrength": 148500},
+        {"year": 2017, "regularStrength": 147500},
+        {"year": 2018, "regularStrength": 145600},
+        {"year": 2022, "regularStrength": 149700},
+        {"year": 2024, "regularStrength": 148000}
+      ],
+      "latestYear": 2024,
+      "latestStrength": 148000,
+      "target": 160000,
+      "note": "Trained strength excluding Gurkhas and full-time reserves"
+    },
+    "veteranPopulation": {
+      "estimatedTotal": 2400000,
+      "byAgeGroup": [
+        {"ageGroup": "16–34", "estimatedThousands": 120},
+        {"ageGroup": "35–54", "estimatedThousands": 380},
+        {"ageGroup": "55–74", "estimatedThousands": 780},
+        {"ageGroup": "75+", "estimatedThousands": 1120}
+      ],
+      "note": "ONS Census 2021 veteran question first asked — 2.4M total across UK"
+    },
+    "mentalHealth": {
+      "ptsdPrevalenceCombatPct": 17,
+      "ptsdPrevalenceAllVeteransPct": 6,
+      "opCourageReferrals": {
+        "timeSeries": [
+          {"year": 2022, "referrals": 5000},
+          {"year": 2023, "referrals": 8000},
+          {"year": 2024, "referrals": 8000}
+        ],
+        "totalSinceLaunch": 21000,
+        "averageWaitWeeks": 7,
+        "note": "Op COURAGE launched April 2021 merging previous NHS veteran mental health pathways"
+      }
+    },
+    "roughSleeping": {
+      "timeSeries": [
+        {"year": 2014, "veteranPctOfRoughSleepers": 15},
+        {"year": 2016, "veteranPctOfRoughSleepers": 13},
+        {"year": 2018, "veteranPctOfRoughSleepers": 11},
+        {"year": 2020, "veteranPctOfRoughSleepers": 9},
+        {"year": 2022, "veteranPctOfRoughSleepers": 7},
+        {"year": 2024, "veteranPctOfRoughSleepers": 6}
+      ],
+      "latestYear": 2024,
+      "latestPct": 6,
+      "estimatedNightlyCount": 250
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "MOD",
+        "dataset": "UK armed forces biannual diversity statistics",
+        "url": "https://www.gov.uk/government/collections/uk-armed-forces-biannual-diversity-statistics",
+        "frequency": "biannual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Census 2021 — veteran population",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/armedforces",
+        "frequency": "decennial"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Op COURAGE — Veterans Mental Health and Wellbeing Service statistics",
+        "url": "https://www.england.nhs.uk/mental-health/adults/veterans/op-courage/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Armed forces strength from MOD biannual diversity statistics (trained strength). Veteran population from ONS Census 2021 (first census to include veteran status question). Mental health data from NHS England Op COURAGE service reports.",
+    "knownIssues": [
+      "ONS Census 2021 is first comprehensive veteran count — older estimates varied widely",
+      "Op COURAGE referral data excludes self-referrals to non-NHS services",
+      "Rough sleeping data relies on local authority single-night counts which undercount"
+    ]
+  }
+}

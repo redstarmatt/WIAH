@@ -1,0 +1,36 @@
+{
+  "prevalence": [
+    {"year": 2012, "estimated": 664000, "diagnosed": 420000},
+    {"year": 2013, "estimated": 690000, "diagnosed": 456000},
+    {"year": 2014, "estimated": 710000, "diagnosed": 495000},
+    {"year": 2015, "estimated": 735000, "diagnosed": 524000},
+    {"year": 2016, "estimated": 755000, "diagnosed": 537000},
+    {"year": 2017, "estimated": 770000, "diagnosed": 545000},
+    {"year": 2018, "estimated": 790000, "diagnosed": 551000},
+    {"year": 2019, "estimated": 808000, "diagnosed": 538000},
+    {"year": 2020, "estimated": 830000, "diagnosed": 462000},
+    {"year": 2021, "estimated": 860000, "diagnosed": 481000},
+    {"year": 2022, "estimated": 900000, "diagnosed": 523000},
+    {"year": 2023, "estimated": 944000, "diagnosed": 598000}
+  ],
+  "diagnosisRate": [
+    {"year": 2012, "rate": 63.3},
+    {"year": 2013, "rate": 66.1},
+    {"year": 2014, "rate": 69.7},
+    {"year": 2015, "rate": 71.3},
+    {"year": 2016, "rate": 71.1},
+    {"year": 2017, "rate": 70.8},
+    {"year": 2018, "rate": 69.8},
+    {"year": 2019, "rate": 66.7},
+    {"year": 2020, "rate": 55.7},
+    {"year": 2021, "rate": 55.9},
+    {"year": 2022, "rate": 58.1},
+    {"year": 2023, "rate": 63.4}
+  ],
+  "byCareType": [
+    {"type": "Home care", "pct": 38},
+    {"type": "Care home (residential)", "pct": 29},
+    {"type": "Care home (nursing)", "pct": 21},
+    {"type": "Unpaid family care", "pct": 12}
+  ]
+}

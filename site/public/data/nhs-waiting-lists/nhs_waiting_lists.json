@@ -1,0 +1,28 @@
+{
+  "waitingListSize": [
+    {"year": 2016, "waiting": 3680000},
+    {"year": 2017, "waiting": 3900000},
+    {"year": 2018, "waiting": 4140000},
+    {"year": 2019, "waiting": 4380000},
+    {"year": 2020, "waiting": 4080000},
+    {"year": 2021, "waiting": 5450000},
+    {"year": 2022, "waiting": 6860000},
+    {"year": 2023, "waiting": 7540000}
+  ],
+  "longWaiters": [
+    {"year": 2019, "over52wk": 1400},
+    {"year": 2020, "over52wk": 2800},
+    {"year": 2021, "over52wk": 387000},
+    {"year": 2022, "over52wk": 400000},
+    {"year": 2023, "over52wk": 312000}
+  ],
+  "bySpecialty": [
+    {"specialty": "Trauma & orthopaedics", "waiting": 690000},
+    {"specialty": "General surgery", "waiting": 510000},
+    {"specialty": "Ophthalmology", "waiting": 490000},
+    {"specialty": "Gynaecology", "waiting": 410000},
+    {"specialty": "ENT", "waiting": 390000},
+    {"specialty": "Urology", "waiting": 280000},
+    {"specialty": "Dermatology", "waiting": 240000}
+  ]
+}

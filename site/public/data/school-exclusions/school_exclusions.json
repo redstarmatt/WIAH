@@ -1,0 +1,43 @@
+{
+  "national": {
+    "permanentExclusions": {
+      "timeSeries": [
+        { "year": "2012/13", "count": 5340 },
+        { "year": "2013/14", "count": 5795 },
+        { "year": "2014/15", "count": 5795 },
+        { "year": "2015/16", "count": 5170 },
+        { "year": "2016/17", "count": 6685 },
+        { "year": "2017/18", "count": 7720 },
+        { "year": "2018/19", "count": 7905 },
+        { "year": "2019/20", "count": 5765 },
+        { "year": "2020/21", "count": 5600 },
+        { "year": "2021/22", "count": 6620 },
+        { "year": "2022/23", "count": 9160 }
+      ],
+      "latestYear": "2022/23",
+      "latestCount": 9160
+    },
+    "byGroup": [
+      { "group": "Boys", "pctOfExclusions": 75 },
+      { "group": "SEND pupils", "pctOfExclusions": 40 },
+      { "group": "Free school meals", "pctOfExclusions": 38 },
+      { "group": "Black Caribbean pupils", "pctOfExclusions": 3.0 },
+      { "group": "Mixed White-Black Caribbean", "pctOfExclusions": 2.1 }
+    ],
+    "topReasons": [
+      { "reason": "Persistent disruptive behaviour", "pct": 34 },
+      { "reason": "Physical assault (pupil)", "pct": 21 },
+      { "reason": "Verbal abuse (adult)", "pct": 12 },
+      { "reason": "Drug/alcohol-related", "pct": 8 },
+      { "reason": "Bullying", "pct": 6 },
+      { "reason": "Other", "pct": 19 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "DfE", "dataset": "Suspensions and permanent exclusions in England", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/suspensions-and-permanent-exclusions-in-england", "frequency": "annual" }
+    ],
+    "methodology": "DfE annual statistics on permanent exclusions and fixed-period suspensions from state-funded primary, secondary and special schools in England. SEND and FSM figures from same source. COVID years (2019/20, 2020/21) show lower figures due to school closures.",
+    "knownIssues": ["COVID-19 school closures caused lower exclusion rates in 2019/20 and 2020/21.", "Some schools use informal 'off-rolling' (removing pupils from school rolls without formal exclusion) to avoid inclusion in official statistics.", "DfE changed terminology in 2023 from 'fixed-term exclusion' to 'suspension'."]
+  }
+}

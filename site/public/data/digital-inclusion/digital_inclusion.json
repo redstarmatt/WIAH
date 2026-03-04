@@ -1,0 +1,74 @@
+{
+  "topic": "digital-inclusion",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "householdAccess": {
+      "timeSeries": [
+        { "year": 2012, "accessPct": 80 },
+        { "year": 2013, "accessPct": 83 },
+        { "year": 2014, "accessPct": 84 },
+        { "year": 2015, "accessPct": 86 },
+        { "year": 2016, "accessPct": 89 },
+        { "year": 2017, "accessPct": 90 },
+        { "year": 2018, "accessPct": 90 },
+        { "year": 2019, "accessPct": 93 },
+        { "year": 2020, "accessPct": 96 },
+        { "year": 2021, "accessPct": 96 },
+        { "year": 2022, "accessPct": 97 },
+        { "year": 2023, "accessPct": 98 }
+      ],
+      "latestYear": 2023,
+      "latestPct": 98
+    },
+    "broadbandSpeed": {
+      "timeSeries": [
+        { "year": 2018, "medianMbps": 27 },
+        { "year": 2019, "medianMbps": 35 },
+        { "year": 2020, "medianMbps": 54 },
+        { "year": 2021, "medianMbps": 77 },
+        { "year": 2022, "medianMbps": 90 },
+        { "year": 2023, "medianMbps": 114 }
+      ],
+      "latestYear": 2023,
+      "latestMbps": 114
+    },
+    "basicDigitalSkillsByAge": [
+      { "ageGroup": "16-24", "lackingPct": 3 },
+      { "ageGroup": "25-34", "lackingPct": 4 },
+      { "ageGroup": "35-44", "lackingPct": 7 },
+      { "ageGroup": "45-54", "lackingPct": 14 },
+      { "ageGroup": "55-64", "lackingPct": 23 },
+      { "ageGroup": "65-74", "lackingPct": 35 },
+      { "ageGroup": "75+", "lackingPct": 51 }
+    ],
+    "adultsLackingSkillsMillions": 8.0
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ofcom",
+        "dataset": "Connected Nations Report",
+        "url": "https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Internet users in the UK",
+        "url": "https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers/2023",
+        "frequency": "annual"
+      },
+      {
+        "name": "Good Things Foundation",
+        "dataset": "Digital Inclusion Insights",
+        "url": "https://www.goodthingsfoundation.org/insights/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Household internet access from ONS Internet Access Survey. Basic digital skills definition uses Lloyds/Good Things Foundation Essential Digital Skills framework (5 skill areas). Broadband speeds from Ofcom Connected Nations fixed-line speed testing data (median download speed). Adults lacking skills excludes those who are not internet users by choice.",
+    "knownIssues": [
+      "Digital skills self-assessment may overestimate actual capability",
+      "Household internet access includes mobile-only access which may be insufficient for many online tasks",
+      "Rural broadband speeds skew the national median upward — median in not-spots significantly lower"
+    ]
+  }
+}

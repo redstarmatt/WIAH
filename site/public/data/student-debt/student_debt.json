@@ -1,0 +1,36 @@
+{
+  "averageDebt": [
+    {"year": 2012, "avgDebt": 17000},
+    {"year": 2013, "avgDebt": 20500},
+    {"year": 2014, "avgDebt": 23800},
+    {"year": 2015, "avgDebt": 27100},
+    {"year": 2016, "avgDebt": 30400},
+    {"year": 2017, "avgDebt": 32900},
+    {"year": 2018, "avgDebt": 35700},
+    {"year": 2019, "avgDebt": 38400},
+    {"year": 2020, "avgDebt": 40100},
+    {"year": 2021, "avgDebt": 41300},
+    {"year": 2022, "avgDebt": 43200},
+    {"year": 2023, "avgDebt": 45600}
+  ],
+  "repaymentExpectation": [
+    {"year": 2015, "pctFullRepay": 40},
+    {"year": 2016, "pctFullRepay": 37},
+    {"year": 2017, "pctFullRepay": 34},
+    {"year": 2018, "pctFullRepay": 31},
+    {"year": 2019, "pctFullRepay": 29},
+    {"year": 2020, "pctFullRepay": 28},
+    {"year": 2021, "pctFullRepay": 26},
+    {"year": 2022, "pctFullRepay": 24},
+    {"year": 2023, "pctFullRepay": 23}
+  ],
+  "bySubjectGroup": [
+    {"subject": "Medicine & dentistry", "avgDebt": 71000},
+    {"subject": "Law", "avgDebt": 52000},
+    {"subject": "Architecture", "avgDebt": 49000},
+    {"subject": "Engineering", "avgDebt": 44000},
+    {"subject": "Arts & humanities", "avgDebt": 43500},
+    {"subject": "Business", "avgDebt": 41000},
+    {"subject": "Education", "avgDebt": 37000}
+  ]
+}

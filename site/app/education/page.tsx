@@ -695,6 +695,41 @@ export default function EducationPage() {
 
         {/* Chart 6: Teacher vacancy rate */}
         <div id="sec-workforce">
+        <ScrollReveal>
+        <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Teacher Workforce</h2>
+        <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+          Teacher vacancies have tripled since 2010. The pupil-teacher ratio has risen steadily,
+          meaning fewer teachers serve more pupils. Workload and pay remain the primary barriers to recruitment.
+        </p>
+        </ScrollReveal>
+
+        <ScrollReveal>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+          <MetricCard
+            label="Teacher vacancy rate"
+            value={teacherData && teacherData.vacancies.latest ? `${teacherData.vacancies.latest.vacancyRate.toFixed(1)}` : '—'}
+            unit="%"
+            direction="up"
+            polarity="up-is-bad"
+            baseline={teacherData && teacherData.vacancies.latest ? `${teacherData.vacancies.latest.vacancies?.toLocaleString()} vacancies in ${teacherData.vacancies.latest.period} — up from 452 in 2010/11` : 'Vacancies have risen sharply since 2010'}
+            changeText={teacherData && teacherData.vacancies.latest ? `${teacherData.vacancies.latest.period} · DfE School Workforce Census` : 'Loading…'}
+            sparklineData={teacherData ? teacherData.vacancies.timeSeries.map(d => d.vacancyRate) : []}
+            source="DfE · School Workforce in England"
+          />
+          <MetricCard
+            label="Pupils per teacher"
+            value={teacherData && teacherData.pupilTeacherRatio.latest ? `${teacherData.pupilTeacherRatio.latest.pupilTeacherRatio.toFixed(1)}` : '—'}
+            unit=":1"
+            direction="up"
+            polarity="up-is-bad"
+            baseline={teacherData && teacherData.pupilTeacherRatio.latest ? `Was 17.1:1 in 2010/11 — each teacher now serves more pupils` : 'Pupil-teacher ratio rising'}
+            changeText={teacherData && teacherData.pupilTeacherRatio.latest ? `${teacherData.pupilTeacherRatio.latest.period}` : 'Loading…'}
+            sparklineData={teacherData ? teacherData.pupilTeacherRatio.timeSeries.map(d => d.pupilTeacherRatio) : []}
+            source="DfE · School Workforce in England"
+          />
+        </div>
+        </ScrollReveal>
+
         {vacancySeries.length > 0 ? (
           <LineChart
             title="Teacher vacancy rate, 2010–2025"

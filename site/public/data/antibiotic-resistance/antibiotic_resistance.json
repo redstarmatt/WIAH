@@ -1,0 +1,29 @@
+{
+  "amrDeaths": [
+    {"year": 2016, "deaths": 4400},
+    {"year": 2017, "deaths": 4800},
+    {"year": 2018, "deaths": 5200},
+    {"year": 2019, "deaths": 5700},
+    {"year": 2020, "deaths": 6100},
+    {"year": 2021, "deaths": 6400},
+    {"year": 2022, "deaths": 6800},
+    {"year": 2023, "deaths": 7000}
+  ],
+  "ecoliResistance": [
+    {"year": 2016, "pct": 38},
+    {"year": 2017, "pct": 39},
+    {"year": 2018, "pct": 40},
+    {"year": 2019, "pct": 42},
+    {"year": 2020, "pct": 43},
+    {"year": 2021, "pct": 44},
+    {"year": 2022, "pct": 45},
+    {"year": 2023, "pct": 46}
+  ],
+  "byPathogen": [
+    {"pathogen": "E. coli (bloodstream)", "resistancePct": 46},
+    {"pathogen": "Klebsiella pneumoniae", "resistancePct": 31},
+    {"pathogen": "Staphylococcus aureus (MRSA)", "resistancePct": 24},
+    {"pathogen": "Pseudomonas aeruginosa", "resistancePct": 18},
+    {"pathogen": "Streptococcus pneumoniae", "resistancePct": 12}
+  ]
+}

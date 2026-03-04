@@ -1,0 +1,33 @@
+{
+  "drugDeaths": [
+    {"year": 2010, "deaths": 2747},
+    {"year": 2011, "deaths": 2652},
+    {"year": 2012, "deaths": 2858},
+    {"year": 2013, "deaths": 2955},
+    {"year": 2014, "deaths": 3346},
+    {"year": 2015, "deaths": 3674},
+    {"year": 2016, "deaths": 3744},
+    {"year": 2017, "deaths": 3756},
+    {"year": 2018, "deaths": 4359},
+    {"year": 2019, "deaths": 4393},
+    {"year": 2020, "deaths": 4561},
+    {"year": 2021, "deaths": 4907},
+    {"year": 2022, "deaths": 4534}
+  ],
+  "treatmentNumbers": [
+    {"year": 2013, "inTreatment": 311000},
+    {"year": 2015, "inTreatment": 289000},
+    {"year": 2017, "inTreatment": 268000},
+    {"year": 2019, "inTreatment": 265000},
+    {"year": 2021, "inTreatment": 275000},
+    {"year": 2022, "inTreatment": 289215}
+  ],
+  "bySubstance": [
+    {"substance": "Heroin/morphine", "pct": 35},
+    {"substance": "Cocaine", "pct": 25},
+    {"substance": "Benzodiazepines", "pct": 14},
+    {"substance": "Other opioids", "pct": 10},
+    {"substance": "MDMA/ecstasy", "pct": 5},
+    {"substance": "Other", "pct": 11}
+  ]
+}

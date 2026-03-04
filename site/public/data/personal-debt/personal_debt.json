@@ -1,0 +1,58 @@
+{
+  "national": {
+    "householdDebt": {
+      "timeSeries": [
+        {"year": 2010, "totalBillionGBP": 1540},
+        {"year": 2012, "totalBillionGBP": 1580},
+        {"year": 2014, "totalBillionGBP": 1620},
+        {"year": 2016, "totalBillionGBP": 1680},
+        {"year": 2018, "totalBillionGBP": 1750},
+        {"year": 2020, "totalBillionGBP": 1790},
+        {"year": 2021, "totalBillionGBP": 1800},
+        {"year": 2022, "totalBillionGBP": 1850},
+        {"year": 2023, "totalBillionGBP": 1900}
+      ],
+      "latestYear": 2023,
+      "latestBillionGBP": 1900,
+      "pctOfIncome": 130
+    },
+    "personalInsolvencies": {
+      "timeSeries": [
+        {"year": 2012, "insolvenciesThousands": 107},
+        {"year": 2013, "insolvenciesThousands": 101},
+        {"year": 2014, "insolvenciesThousands": 100},
+        {"year": 2015, "insolvenciesThousands": 95},
+        {"year": 2016, "insolvenciesThousands": 91},
+        {"year": 2017, "insolvenciesThousands": 99},
+        {"year": 2018, "insolvenciesThousands": 115},
+        {"year": 2019, "insolvenciesThousands": 122},
+        {"year": 2020, "insolvenciesThousands": 80},
+        {"year": 2021, "insolvenciesThousands": 109},
+        {"year": 2022, "insolvenciesThousands": 105},
+        {"year": 2023, "insolvenciesThousands": 110}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 110
+    },
+    "byDebtType": [
+      {"debtType": "Mortgage debt", "billionGBP": 1540},
+      {"debtType": "Consumer credit", "billionGBP": 220},
+      {"debtType": "Student loans", "billionGBP": 100},
+      {"debtType": "Energy arrears", "billionGBP": 3},
+      {"debtType": "Council tax arrears", "billionGBP": 6},
+      {"debtType": "Other", "billionGBP": 31}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Bank of England", "dataset": "Money and Credit Statistics", "url": "https://www.bankofengland.co.uk/statistics/money-and-credit", "frequency": "monthly"},
+      {"name": "Insolvency Service", "dataset": "Insolvency Statistics England and Wales", "url": "https://www.gov.uk/government/collections/insolvency-service-statistics", "frequency": "quarterly"}
+    ],
+    "methodology": "Total household debt from Bank of England Money and Credit Statistics, covering secured (mortgage) and unsecured (consumer credit) debt. Personal insolvency data from Insolvency Service quarterly statistics, including individual voluntary arrangements (IVAs), debt relief orders (DROs), and bankruptcies. Energy arrears from Ofgem supplier data. Council tax arrears from DLUHC.",
+    "knownIssues": [
+      "COVID-19 temporarily reduced insolvencies in 2020 due to government support measures and court disruptions",
+      "IVAs are the largest component of insolvencies and have been criticised for potential over-use by debt management companies",
+      "Student loan debt is excluded from standard household debt measures as it is income-contingent"
+    ]
+  }
+}

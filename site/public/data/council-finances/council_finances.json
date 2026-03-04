@@ -1,0 +1,52 @@
+{
+  "national": {
+    "governmentGrant": {
+      "timeSeries": [
+        {"year": "2010/11", "realTermsIndexed": 100},
+        {"year": "2012/13", "realTermsIndexed": 83},
+        {"year": "2014/15", "realTermsIndexed": 73},
+        {"year": "2016/17", "realTermsIndexed": 65},
+        {"year": "2018/19", "realTermsIndexed": 60},
+        {"year": "2020/21", "realTermsIndexed": 62},
+        {"year": "2022/23", "realTermsIndexed": 63}
+      ],
+      "latestYear": "2022/23",
+      "latestIndexed": 63,
+      "reductionSince2010Pct": 37
+    },
+    "serviceSpending": {
+      "timeSeries": [
+        {"year": "2010/11", "spendingBillionGBP": 98},
+        {"year": "2012/13", "spendingBillionGBP": 90},
+        {"year": "2014/15", "spendingBillionGBP": 84},
+        {"year": "2016/17", "spendingBillionGBP": 80},
+        {"year": "2018/19", "spendingBillionGBP": 77},
+        {"year": "2020/21", "spendingBillionGBP": 82},
+        {"year": "2022/23", "spendingBillionGBP": 80}
+      ],
+      "latestYear": "2022/23",
+      "latestBillionGBP": 80
+    },
+    "byServiceArea": [
+      {"area": "Adult social care", "sharePct": 36},
+      {"area": "Children's services", "sharePct": 19},
+      {"area": "Housing & planning", "sharePct": 10},
+      {"area": "Environment & waste", "sharePct": 9},
+      {"area": "Transport", "sharePct": 7},
+      {"area": "Libraries & culture", "sharePct": 5},
+      {"area": "Other", "sharePct": 14}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "DLUHC", "dataset": "Local Authority Revenue Expenditure and Financing", "url": "https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing", "frequency": "annual"},
+      {"name": "CIPFA", "dataset": "Financial Resilience Index", "url": "https://www.cipfa.org/services/benchmarking/cipfa-financial-resilience-index", "frequency": "annual"}
+    ],
+    "methodology": "Government grant data from DLUHC Revenue Account Statistics, deflated using GDP deflator to produce real-terms index (2010/11 = 100). Service area breakdown from DLUHC Revenue Account Statistics 2022/23.",
+    "knownIssues": [
+      "Real-terms calculations depend on deflator choice",
+      "Spending comparisons affected by service responsibility changes",
+      "Council tax income has offset some grant reductions"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "national": {
+    "completions": {
+      "timeSeries": [
+        {"year": "2012/13", "completionsThousands": 135},
+        {"year": "2013/14", "completionsThousands": 142},
+        {"year": "2014/15", "completionsThousands": 155},
+        {"year": "2015/16", "completionsThousands": 163},
+        {"year": "2016/17", "completionsThousands": 183},
+        {"year": "2017/18", "completionsThousands": 195},
+        {"year": "2018/19", "completionsThousands": 213},
+        {"year": "2019/20", "completionsThousands": 244},
+        {"year": "2020/21", "completionsThousands": 211},
+        {"year": "2021/22", "completionsThousands": 232},
+        {"year": "2022/23", "completionsThousands": 234}
+      ],
+      "latestYear": "2022/23",
+      "latestThousands": 234,
+      "targetThousands": 300
+    },
+    "planningPermissions": {
+      "timeSeries": [
+        {"year": "2016/17", "permissionsThousands": 299},
+        {"year": "2017/18", "permissionsThousands": 323},
+        {"year": "2018/19", "permissionsThousands": 325},
+        {"year": "2019/20", "permissionsThousands": 317},
+        {"year": "2020/21", "permissionsThousands": 269},
+        {"year": "2021/22", "permissionsThousands": 298},
+        {"year": "2022/23", "permissionsThousands": 256}
+      ],
+      "latestYear": "2022/23",
+      "latestThousands": 256
+    },
+    "byTenureType": [
+      {"tenure": "Private enterprise", "pct": 74},
+      {"tenure": "Housing associations", "pct": 19},
+      {"tenure": "Local authority", "pct": 7}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "DLUHC", "dataset": "House Building: New Build Dwellings", "url": "https://www.gov.uk/government/collections/house-building-statistics", "frequency": "quarterly"},
+      {"name": "DLUHC", "dataset": "Planning Applications in England", "url": "https://www.gov.uk/government/collections/planning-applications-statistics", "frequency": "quarterly"}
+    ],
+    "methodology": "Dwelling completions data from DLUHC Housing Supply Statistics. Completions are all new dwellings completed in the relevant financial year, including local authority, housing association, and private sector. Planning permissions data from DLUHC Planning Applications Statistics, covering all major residential planning decisions. The government&apos;s 300,000/year target was set in the 2019 Conservative manifesto.",
+    "knownIssues": [
+      "COVID-19 disrupted construction activity in 2020/21 — completions fell despite permissions remaining high",
+      "The 300,000 target is frequently contested — some analysts argue 340,000-380,000 is needed to address the backlog",
+      "Local authority completions have been suppressed by restrictions on borrowing and right-to-buy replacement requirements"
+    ]
+  }
+}

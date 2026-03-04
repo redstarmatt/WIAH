@@ -1,0 +1,62 @@
+{
+  "national": {
+    "prevalence": {
+      "timeSeries": [
+        {"year": 1998, "diagnosedMillions": 1.4},
+        {"year": 2000, "diagnosedMillions": 1.6},
+        {"year": 2002, "diagnosedMillions": 1.8},
+        {"year": 2004, "diagnosedMillions": 2.0},
+        {"year": 2006, "diagnosedMillions": 2.3},
+        {"year": 2008, "diagnosedMillions": 2.6},
+        {"year": 2010, "diagnosedMillions": 2.9},
+        {"year": 2012, "diagnosedMillions": 3.2},
+        {"year": 2014, "diagnosedMillions": 3.5},
+        {"year": 2016, "diagnosedMillions": 3.7},
+        {"year": 2018, "diagnosedMillions": 3.9},
+        {"year": 2020, "diagnosedMillions": 4.1},
+        {"year": 2022, "diagnosedMillions": 4.3},
+        {"year": 2023, "diagnosedMillions": 4.4}
+      ],
+      "latestYear": 2023,
+      "diagnosedMillions": 4.4,
+      "undiagnosedMillions": 1.2,
+      "atRiskMillions": 5.0,
+      "latestDiagnosedMillions": 4.4
+    },
+    "type1VsType2": [
+      {"diabetesType": "Type 2", "pct": 90},
+      {"diabetesType": "Type 1", "pct": 8},
+      {"diabetesType": "Other/gestational", "pct": 2}
+    ],
+    "complications": [
+      {"complication": "Kidney disease", "annualCases": 24000},
+      {"complication": "Heart attacks", "annualCases": 23000},
+      {"complication": "Strokes", "annualCases": 12000},
+      {"complication": "Amputations", "annualCases": 8000},
+      {"complication": "Blindness (new cases)", "annualCases": 5000}
+    ],
+    "preventionProgramme": {
+      "timeSeries": [
+        {"year": 2016, "enrolledThousands": 10},
+        {"year": 2017, "enrolledThousands": 60},
+        {"year": 2018, "enrolledThousands": 150},
+        {"year": 2019, "enrolledThousands": 250},
+        {"year": 2020, "enrolledThousands": 310},
+        {"year": 2021, "enrolledThousands": 420},
+        {"year": 2022, "enrolledThousands": 550},
+        {"year": 2023, "enrolledThousands": 680}
+      ],
+      "latestYear": 2023,
+      "latestEnrolledThousands": 680
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Diabetes UK", "dataset": "Diabetes Statistics", "url": "https://www.diabetes.org.uk/professionals/position-statements-reports/statistics", "frequency": "annual"},
+      {"name": "NHS England", "dataset": "National Diabetes Audit", "url": "https://digital.nhs.uk/data-and-information/clinical-audits-and-registries/national-diabetes-audit", "frequency": "annual"},
+      {"name": "NHS England", "dataset": "NHS Diabetes Prevention Programme statistics", "url": "https://www.england.nhs.uk/diabetes/diabetes-prevention/", "frequency": "quarterly"}
+    ],
+    "methodology": "Prevalence from QOF (Quality and Outcomes Framework) registered diabetes patients, supplemented by Diabetes UK modelling for undiagnosed. Prevention programme enrolments are cumulative from NHS England reporting. Complications from NHS hospitalisations data (HES) and National Diabetes Audit.",
+    "knownIssues": ["QOF-based prevalence underestimates undiagnosed Type 2 diabetes, estimated at 30% of true prevalence", "Type 2 diagnosis criteria changed in 2011 (lowering HbA1c threshold), causing a step change in recorded prevalence", "Prevention programme data is referrals/enrolments; not all complete the programme"]
+  }
+}

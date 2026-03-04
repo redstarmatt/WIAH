@@ -1,0 +1,49 @@
+{
+  "national": {
+    "applications": {
+      "timeSeries": [
+        { "year": 2017, "applications": 26547 },
+        { "year": 2018, "applications": 29268 },
+        { "year": 2019, "applications": 35566 },
+        { "year": 2020, "applications": 35099 },
+        { "year": 2021, "applications": 56040 },
+        { "year": 2022, "applications": 74751 },
+        { "year": 2023, "applications": 98519 }
+      ],
+      "latestYear": 2023,
+      "latestCount": 98519
+    },
+    "pendingCases": {
+      "timeSeries": [
+        { "year": 2020, "pending": 64000 },
+        { "year": 2021, "pending": 100000 },
+        { "year": 2022, "pending": 130000 },
+        { "year": 2023, "pending": 220000 }
+      ],
+      "latestYear": 2023,
+      "latestCount": 220000,
+      "avgWaitMonths": 26
+    },
+    "decisionOutcomes": [
+      { "outcome": "Asylum granted", "pct": 44 },
+      { "outcome": "Other protection granted", "pct": 17 },
+      { "outcome": "Refused", "pct": 30 },
+      { "outcome": "Withdrawn/other", "pct": 9 }
+    ],
+    "topNationalities": [
+      { "nationality": "Afghan", "applications": 16450 },
+      { "nationality": "Iranian", "applications": 11860 },
+      { "nationality": "Syrian", "applications": 9250 },
+      { "nationality": "Eritrean", "applications": 7340 },
+      { "nationality": "Vietnamese", "applications": 4870 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "Home Office", "dataset": "Asylum and resettlement: summary tables", "url": "https://www.gov.uk/government/statistical-data-sets/asylum-and-resettlement-datasets", "frequency": "quarterly" },
+      { "name": "Home Office", "dataset": "Immigration statistics, year ending December 2023", "url": "https://www.gov.uk/government/publications/immigration-statistics-year-ending-december-2023", "frequency": "quarterly" }
+    ],
+    "methodology": "Application data from Home Office Asylum and Resettlement statistics. Pending cases = applications awaiting initial decision at period end. Accommodation costs from Home Office and IPPR analysis. Decision outcomes from Home Office asylum statistics.",
+    "knownIssues": ["COVID-19 significantly reduced applications in 2020. Home Office processing capacity has not kept pace with post-2020 demand. Hotel costs are estimates combining published per-night costs and bed numbers; actual costs may differ."]
+  }
+}

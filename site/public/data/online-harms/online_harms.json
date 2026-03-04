@@ -1,0 +1,50 @@
+{
+  "national": {
+    "onlineFraud": {
+      "timeSeries": [
+        {"year": 2017, "incidentsMillions": 2.5},
+        {"year": 2018, "incidentsMillions": 2.8},
+        {"year": 2019, "incidentsMillions": 3.0},
+        {"year": 2020, "incidentsMillions": 3.3},
+        {"year": 2021, "incidentsMillions": 3.8},
+        {"year": 2022, "incidentsMillions": 3.7},
+        {"year": 2023, "incidentsMillions": 3.8}
+      ],
+      "latestYear": 2023,
+      "latestMillions": 3.8,
+      "pctOfAllCrime": 41
+    },
+    "csam": {
+      "timeSeries": [
+        {"year": 2018, "reportsThousands": 500},
+        {"year": 2019, "reportsThousands": 650},
+        {"year": 2020, "reportsThousands": 780},
+        {"year": 2021, "reportsThousands": 900},
+        {"year": 2022, "reportsThousands": 1050},
+        {"year": 2023, "reportsThousands": 1200}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 1200
+    },
+    "byCrimeType": [
+      {"crimeType": "Online banking fraud", "incidentsThousands": 1100},
+      {"crimeType": "Shopping & auction fraud", "incidentsThousands": 820},
+      {"crimeType": "Computer misuse", "incidentsThousands": 750},
+      {"crimeType": "Romance fraud", "incidentsThousands": 350},
+      {"crimeType": "Investment fraud", "incidentsThousands": 290},
+      {"crimeType": "Other online fraud", "incidentsThousands": 490}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Crime Survey for England and Wales — Fraud and Cybercrime", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/crimeinenglandandwales", "frequency": "annual"},
+      {"name": "IWF", "dataset": "Internet Watch Foundation Annual Report", "url": "https://www.iwf.org.uk/annual-report/", "frequency": "annual"}
+    ],
+    "methodology": "Online fraud incidents from ONS Crime Survey for England and Wales (CSEW), which captures incidents regardless of whether reported to police. CSEW does not include computer misuse fully — the figure is supplemented by Action Fraud data. Child sexual abuse material (CSAM) reports from Internet Watch Foundation annual report. Crime type breakdown is an estimate combining CSEW and Action Fraud reporting.",
+    "knownIssues": [
+      "Online fraud is severely under-reported — Action Fraud estimates only 17% of victims report to authorities",
+      "CSAM figures reflect reports to IWF, not actual images, and global trends drive UK reporting numbers",
+      "Cybercrime cost estimate (£27bn) is from DCMS and includes indirect costs — methodology is contested"
+    ]
+  }
+}

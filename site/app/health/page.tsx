@@ -335,11 +335,10 @@ export default function HealthPage() {
   const rttTotalSeries: Series[] = rttData
     ? [{
         id: 'rtt-total',
-        label: 'Total waiting list',
+        label: 'Total waiting list (millions)',
         colour: '#E63946',
         data: rttData.national.timeSeries
-          .filter(d => d.date >= '2012-04')
-          .map(d => ({ date: isoToDate(d.date), value: d.totalList })),
+          .map(d => ({ date: isoToDate(d.date), value: d.totalList / 1e6 })),
       }]
     : [];
 
@@ -354,11 +353,11 @@ export default function HealthPage() {
     ? [
         {
           id: 'over-52wk',
-          label: 'Waiting > 52 weeks',
+          label: 'Waiting > 52 weeks (thousands)',
           colour: '#E63946',
           data: rttData.national.timeSeries
-            .filter(d => d.date >= '2012-04' && d.over52wk !== null)
-            .map(d => ({ date: isoToDate(d.date), value: d.over52wk! })),
+            .filter(d => d.over52wk !== null)
+            .map(d => ({ date: isoToDate(d.date), value: d.over52wk! / 1000 })),
         },
         ...(rttData.national.timeSeries.some(d => d.over65wk !== null && d.over65wk > 0)
           ? [{
@@ -380,7 +379,7 @@ export default function HealthPage() {
         label: '% within 18 weeks',
         colour: '#264653',
         data: rttData.national.timeSeries
-          .filter(d => d.date >= '2012-04' && d.pctWithin18wk !== null)
+          .filter(d => d.pctWithin18wk !== null)
           .map(d => ({ date: isoToDate(d.date), value: d.pctWithin18wk! })),
       }]
     : [];
@@ -571,62 +570,107 @@ export default function HealthPage() {
         </div>
         </ScrollReveal>
 
-        {/* RTT Chart 1: Total waiting list size */}
+        {/* ── NHS Waiting Lists ─────────────────────────────────────────── */}
         <div id="sec-waiting">
-        {rttTotalSeries.length > 0 ? (
-          <LineChart
-            title="NHS waiting list size, 2012–2025"
-            subtitle="Total incomplete pathways — the number of people waiting to start consultant-led treatment, England."
-            series={rttTotalSeries}
-            annotations={rttAnnotations}
-            yLabel="Patients"
-            source={{
-              name: 'NHS England',
-              dataset: 'Consultant-led Referral to Treatment Waiting Times',
-              frequency: 'monthly',
-              url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/',
-            }}
-          />
-        ) : (
-          <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
-        )}
+          <ScrollReveal>
+          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">NHS Waiting Lists</h2>
+          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+            7.3 million people are waiting for NHS treatment. The 18-week target — that 92% of patients
+            should be seen within 18 weeks of referral — has not been met since 2016.
+          </p>
+          </ScrollReveal>
 
-        {/* RTT Chart 2: Long waits — over 52 weeks */}
-        {rttBandSeries.length > 0 ? (
-          <LineChart
-            title="Patients waiting over 52 weeks, 2012–2025"
-            subtitle="Number of patients waiting more than one year for treatment. Over 65 weeks tracked from April 2021."
-            series={rttBandSeries}
-            yLabel="Patients"
-            source={{
-              name: 'NHS England',
-              dataset: 'Consultant-led Referral to Treatment Waiting Times',
-              frequency: 'monthly',
-              url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/',
-            }}
-          />
-        ) : (
-          <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
-        )}
+          <ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            <MetricCard
+              label="Total waiting list"
+              value={rttLatest ? `${(rttLatest.totalList / 1e6).toFixed(1)}M` : '—'}
+              unit="patients"
+              direction="up"
+              polarity="up-is-bad"
+              baseline="7.3 million people waiting for NHS treatment — a record high"
+              changeText={rttLatest ? `${rttLatest.latestDate} · 18-week target: 92%` : 'Loading…'}
+              sparklineData={rttData ? rttData.national.timeSeries.slice(-24).map(d => d.totalList / 1e6) : []}
+              source="NHS England · RTT waiting times"
+            />
+            <MetricCard
+              label="Seen within 18 weeks"
+              value={rttLatest ? `${(rttLatest.pctWithin18wk || 0).toFixed(1)}` : '—'}
+              unit="%"
+              direction="down"
+              polarity="up-is-good"
+              baseline="Target is 92% — not met since 2016. Currently around 58%."
+              changeText={rttLatest ? `${rttLatest.latestDate} · Target: 92%` : 'Loading…'}
+              sparklineData={rttData ? rttData.national.timeSeries.slice(-24).map(d => d.pctWithin18wk || 0) : []}
+              source="NHS England · RTT waiting times"
+            />
+            <MetricCard
+              label="Waiting over 52 weeks"
+              value={rttLatest && rttLatest.over52wk ? `${(rttLatest.over52wk / 1000).toFixed(0)}K` : '—'}
+              unit="patients"
+              direction="up"
+              polarity="up-is-bad"
+              baseline="Hundreds of thousands waiting more than a year for treatment"
+              changeText={rttLatest ? `${rttLatest.latestDate}` : 'Loading…'}
+              sparklineData={rttData ? rttData.national.timeSeries.filter(d => d.over52wk !== null).slice(-24).map(d => (d.over52wk || 0) / 1000) : []}
+              source="NHS England · RTT waiting times"
+            />
+          </div>
+          </ScrollReveal>
 
-        {/* RTT Chart 3: % within 18 weeks */}
-        {rttPctSeries.length > 0 ? (
-          <LineChart
-            title="Patients treated within 18 weeks, 2012–2025"
-            subtitle="Percentage of patients on incomplete pathways within the 18-week constitutional standard. Target: 92%."
-            series={rttPctSeries}
-            targetLine={{ value: 92, label: 'Constitutional standard: 92%' }}
-            yLabel="Percent"
-            source={{
-              name: 'NHS England',
-              dataset: 'Consultant-led Referral to Treatment Waiting Times',
-              frequency: 'monthly',
-              url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/',
-            }}
-          />
-        ) : (
-          <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
-        )}
+          {rttTotalSeries.length > 0 ? (
+            <LineChart
+              title="NHS waiting list, 2007–2025"
+              subtitle="Total number of patients on the referral-to-treatment (RTT) incomplete pathway. England."
+              series={rttTotalSeries}
+              annotations={rttAnnotations}
+              yLabel="Millions"
+              source={{
+                name: 'NHS England',
+                dataset: 'Referral to Treatment (RTT) Waiting Times Statistics',
+                frequency: 'monthly',
+                url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+
+          {rttPctSeries.length > 0 ? (
+            <LineChart
+              title="% of patients seen within 18 weeks, 2007–2025"
+              subtitle="Percentage of incomplete pathways where waiting time is within 18 weeks. Target: 92%."
+              series={rttPctSeries}
+              annotations={rttAnnotations}
+              targetLine={{ value: 92, label: '92% target' }}
+              yLabel="Percent"
+              source={{
+                name: 'NHS England',
+                dataset: 'Referral to Treatment (RTT) Waiting Times Statistics',
+                frequency: 'monthly',
+                url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+
+          {rttBandSeries.length > 0 ? (
+            <LineChart
+              title="Patients waiting over 52 weeks, 2007–2025"
+              subtitle="Number of patients waiting more than one year for treatment."
+              series={rttBandSeries}
+              yLabel="Thousands"
+              source={{
+                name: 'NHS England',
+                dataset: 'Referral to Treatment (RTT) Waiting Times Statistics',
+                frequency: 'monthly',
+                url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
 
         </div>{/* end sec-waiting */}
 
@@ -697,8 +741,8 @@ export default function HealthPage() {
         <div id="sec-gp">
         {gpWaitSeries.length > 0 ? (
           <LineChart
-            title="GP appointment wait times, Jul 2023–Dec 2025"
-            subtitle="Average days from booking to appointment, England. All attended appointments."
+            title="Average days to GP appointment, England"
+            subtitle="Days from booking to appointment, all attended appointments. Monthly, Jul 2023&ndash;Dec 2025."
             series={gpWaitSeries}
             yLabel="Days"
             source={{
@@ -715,8 +759,8 @@ export default function HealthPage() {
         {/* Chart 3: Same/next day appointments */}
         {gpSameDaySeries.length > 0 ? (
           <LineChart
-            title="Same or next day GP appointments, Jul 2023–Dec 2025"
-            subtitle="Percentage of attended appointments booked same day or one day prior, England."
+            title="Same-day and next-day GP appointments, England"
+            subtitle="Percentage of attended appointments booked same day or next day. Monthly, Jul 2023&ndash;Dec 2025."
             series={gpSameDaySeries}
             yLabel="Percent"
             source={{
@@ -733,8 +777,8 @@ export default function HealthPage() {
         {/* Chart 4: Total GP appointment volume */}
         {gpVolumeSeries.length > 0 ? (
           <LineChart
-            title="Total GP appointments per month, Jul 2023–Dec 2025"
-            subtitle="All attended appointments across England. Seasonal dips in December, peaks in October."
+            title="Monthly GP appointment volume, England"
+            subtitle="All attended appointments. Seasonal dips in December, peaks in October. Monthly, Jul 2023&ndash;Dec 2025."
             series={gpVolumeSeries}
             yLabel="Appointments"
             source={{
@@ -1102,8 +1146,8 @@ export default function HealthPage() {
       )}
       {expanded === 'gp-wait' && (
         <MetricDetailModal
-          title="GP appointment wait times, Jul 2023–Dec 2025"
-          subtitle="Average days from booking to appointment, England. All attended appointments."
+          title="Average days to GP appointment, England"
+          subtitle="Days from booking to appointment, all attended appointments. Monthly, Jul 2023&ndash;Dec 2025."
           series={gpWaitSeries}
           yLabel="Days"
           source={{

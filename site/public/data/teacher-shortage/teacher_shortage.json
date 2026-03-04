@@ -1,0 +1,54 @@
+{
+  "topic": "teacher-shortage",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "vacancyRate": {
+      "timeSeries": [
+        { "year": "2014/15", "vacancyPct": 1.2 },
+        { "year": "2015/16", "vacancyPct": 1.4 },
+        { "year": "2016/17", "vacancyPct": 1.5 },
+        { "year": "2017/18", "vacancyPct": 1.6 },
+        { "year": "2018/19", "vacancyPct": 1.7 },
+        { "year": "2019/20", "vacancyPct": 1.8 },
+        { "year": "2020/21", "vacancyPct": 1.5 },
+        { "year": "2021/22", "vacancyPct": 2.1 },
+        { "year": "2022/23", "vacancyPct": 3.1 }
+      ],
+      "latestYear": "2022/23",
+      "latestPct": 3.1
+    },
+    "recruitmentVsTarget": {
+      "timeSeries": [
+        { "year": "2014/15", "achievedPct": 98 },
+        { "year": "2015/16", "achievedPct": 95 },
+        { "year": "2016/17", "achievedPct": 92 },
+        { "year": "2017/18", "achievedPct": 90 },
+        { "year": "2018/19", "achievedPct": 88 },
+        { "year": "2019/20", "achievedPct": 85 },
+        { "year": "2020/21", "achievedPct": 90 },
+        { "year": "2021/22", "achievedPct": 78 },
+        { "year": "2022/23", "achievedPct": 72 }
+      ],
+      "latestYear": "2022/23",
+      "latestPct": 72
+    },
+    "shortageBySubject": [
+      { "subject": "Physics", "recruitmentPct": 39 },
+      { "subject": "Computing", "recruitmentPct": 45 },
+      { "subject": "Maths", "recruitmentPct": 60 },
+      { "subject": "Languages", "recruitmentPct": 63 },
+      { "subject": "Chemistry", "recruitmentPct": 68 },
+      { "subject": "Geography", "recruitmentPct": 74 },
+      { "subject": "History", "recruitmentPct": 78 },
+      { "subject": "Biology", "recruitmentPct": 82 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "DfE", "dataset": "School Workforce Census", "url": "https://www.gov.uk/government/collections/statistics-school-workforce", "frequency": "annual" },
+      { "name": "DfE", "dataset": "Initial teacher training census", "url": "https://www.gov.uk/government/collections/statistics-teacher-training", "frequency": "annual" }
+    ],
+    "methodology": "Vacancy rate from DfE School Workforce Census (November census). Recruitment vs target from DfE Initial Teacher Training census. Subject-specific data from DfE secondary school teacher subject data.",
+    "knownIssues": ["Vacancy figures may undercount supply shortages as schools use supply teachers or reduce timetable coverage rather than leaving posts formally vacant.", "COVID-19 caused improved retention in 2020/21 as alternative employment fell; this temporarily reduced the attrition trend.", "Recruitment targets are set by the DfE; methodology has changed over time."]
+  }
+}

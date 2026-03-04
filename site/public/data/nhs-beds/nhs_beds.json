@@ -1,0 +1,54 @@
+{
+  "national": {
+    "bedNumbers": {
+      "timeSeries": [
+        {"year": "2010/11", "bedsThousands": 135},
+        {"year": "2012/13", "bedsThousands": 130},
+        {"year": "2014/15", "bedsThousands": 126},
+        {"year": "2016/17", "bedsThousands": 122},
+        {"year": "2018/19", "bedsThousands": 115},
+        {"year": "2020/21", "bedsThousands": 110},
+        {"year": "2021/22", "bedsThousands": 103},
+        {"year": "2022/23", "bedsThousands": 99}
+      ],
+      "latestYear": "2022/23",
+      "latestThousands": 99,
+      "historicalPeak": 300,
+      "historicalPeakYear": 1987
+    },
+    "bedOccupancy": {
+      "timeSeries": [
+        {"year": "2010/11", "occupancyPct": 87.5},
+        {"year": "2012/13", "occupancyPct": 88.0},
+        {"year": "2014/15", "occupancyPct": 88.5},
+        {"year": "2016/17", "occupancyPct": 89.2},
+        {"year": "2018/19", "occupancyPct": 89.9},
+        {"year": "2020/21", "occupancyPct": 86.5},
+        {"year": "2021/22", "occupancyPct": 91.0},
+        {"year": "2022/23", "occupancyPct": 94.0}
+      ],
+      "latestYear": "2022/23",
+      "latestPct": 94.0,
+      "safetyThresholdPct": 85
+    },
+    "byBedType": [
+      {"bedType": "General &amp; acute", "pct": 64},
+      {"bedType": "Mental health", "pct": 16},
+      {"bedType": "Community", "pct": 14},
+      {"bedType": "Learning disability", "pct": 3},
+      {"bedType": "Maternity", "pct": 3}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England", "dataset": "Bed Availability and Occupancy Data", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/", "frequency": "quarterly"},
+      {"name": "The King&apos;s Fund", "dataset": "NHS Hospital Bed Numbers", "url": "https://www.kingsfund.org.uk/insight-and-analysis/data-and-charts/nhs-hospital-bed-numbers", "frequency": "annual"}
+    ],
+    "methodology": "Bed numbers from NHS England Bed Availability and Occupancy Data, covering NHS trusts in England. Includes all available beds (general and acute, mental health, community, learning disability, maternity). Occupancy rate is average daily occupied beds as a percentage of available beds. The 85% safety threshold is from expert consensus — above this level, infection control and patient safety become harder to maintain. Historical 1987 peak from Department of Health records.",
+    "knownIssues": [
+      "COVID-19 temporarily reduced planned activity and bed use in 2020/21 — occupancy figures are lower than underlying trend",
+      "Day-case beds are not counted — shift from inpatient to day-case procedures means the clinical picture is more complex",
+      "Mental health beds were separately managed and reduced more rapidly than acute beds in some periods"
+    ]
+  }
+}

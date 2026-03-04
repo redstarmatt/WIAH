@@ -1,0 +1,78 @@
+{
+  "national": {
+    "prisonPopulation": {
+      "timeSeries": [
+        {"year": 2014, "populationThousands": 84.5},
+        {"year": 2015, "populationThousands": 85.4},
+        {"year": 2016, "populationThousands": 85.6},
+        {"year": 2017, "populationThousands": 85.0},
+        {"year": 2018, "populationThousands": 82.8},
+        {"year": 2019, "populationThousands": 82.5},
+        {"year": 2020, "populationThousands": 78.8},
+        {"year": 2021, "populationThousands": 78.7},
+        {"year": 2022, "populationThousands": 80.7},
+        {"year": 2023, "populationThousands": 86.1},
+        {"year": 2024, "populationThousands": 88.0}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 88.0,
+      "operationalCapacityThousands": 85.4,
+      "remandPct": 19,
+      "earlyRelease2024": 5500,
+      "note": "HMPPS monthly population bulletin. Population on last Friday of month."
+    },
+    "reoffending": {
+      "timeSeries": [
+        {"year": 2016, "reoffendingWithin12MonthsPct": 27},
+        {"year": 2017, "reoffendingWithin12MonthsPct": 27},
+        {"year": 2018, "reoffendingWithin12MonthsPct": 26},
+        {"year": 2019, "reoffendingWithin12MonthsPct": 25},
+        {"year": 2020, "reoffendingWithin12MonthsPct": 26},
+        {"year": 2021, "reoffendingWithin12MonthsPct": 26},
+        {"year": 2022, "reoffendingWithin12MonthsPct": 26}
+      ],
+      "latestYear": 2022,
+      "latestPct": 26,
+      "under12MonthSentenceReoffendPct": 38,
+      "note": "Ministry of Justice proven reoffending statistics. Proven = received a caution or conviction within the following 12 months."
+    },
+    "assaults": {
+      "timeSeries": [
+        {"year": 2014, "assaultsThousands": 14},
+        {"year": 2016, "assaultsThousands": 19},
+        {"year": 2018, "assaultsThousands": 26},
+        {"year": 2020, "assaultsThousands": 27},
+        {"year": 2022, "assaultsThousands": 30},
+        {"year": 2023, "assaultsThousands": 36.5}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 36.5,
+      "seriousAssaultsThousands": 9.9,
+      "onPrisonersPct": 67
+    },
+    "byOffenceType": [
+      {"offenceType": "Violence against the person", "pct": 33},
+      {"offenceType": "Sexual offences", "pct": 19},
+      {"offenceType": "Drug offences", "pct": 13},
+      {"offenceType": "Robbery", "pct": 8},
+      {"offenceType": "Theft & fraud", "pct": 7},
+      {"offenceType": "Other", "pct": 20}
+    ],
+    "buildingProgramme": {
+      "newPlacesTarget": 20000,
+      "newPlacesDeliveredBy2024": 5800,
+      "targetYear": 2030,
+      "costBillionGBP": 4.0,
+      "note": "Government committed to 20,000 new prison places by 2030. 5,800 delivered as of mid-2024."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "HMPPS", "dataset": "Prison population bulletin", "url": "https://www.gov.uk/government/statistics/prison-population-figures", "frequency": "monthly"},
+      {"name": "Ministry of Justice", "dataset": "Proven reoffending statistics", "url": "https://www.gov.uk/government/statistics/proven-reoffending-statistics-quarterly-bulletin-england-and-wales", "frequency": "quarterly"},
+      {"name": "HMPPS", "dataset": "Safety in custody statistics", "url": "https://www.gov.uk/government/statistics/safety-in-custody-quarterly-update-to-june-2023", "frequency": "quarterly"}
+    ],
+    "methodology": "Prison population: HMPPS monthly count. Reoffending: MOJ proven reoffending — caution or conviction within 12 months of release cohort. Assaults: HMPPS safety in custody returns — all incidents recorded as assault whether or not resulted in injury. Capacity: certified normal accommodation (CNA) vs operational capacity.",
+    "knownIssues": ["Prison population fell during COVID-19 due to reduced court activity — 2020-21 not comparable", "Early release scheme (September 2024) affects population figures — some released after 40% rather than 50% of sentence", "Assault recording practices vary between prisons — comparisons across establishments unreliable"]
+  }
+}

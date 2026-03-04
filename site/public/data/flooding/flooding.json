@@ -1,0 +1,64 @@
+{
+  "national": {
+    "atRiskProperties": {
+      "totalAtRisk": 6300000,
+      "significantRisk": 2400000,
+      "highRisk": 880000
+    },
+    "floodEvents": {
+      "timeSeries": [
+        {"year": 2010, "propertiesFloodedThousands": 6.5},
+        {"year": 2012, "propertiesFloodedThousands": 8.2},
+        {"year": 2013, "propertiesFloodedThousands": 5.8},
+        {"year": 2014, "propertiesFloodedThousands": 5.5},
+        {"year": 2015, "propertiesFloodedThousands": 16.5},
+        {"year": 2016, "propertiesFloodedThousands": 3.2},
+        {"year": 2017, "propertiesFloodedThousands": 2.1},
+        {"year": 2018, "propertiesFloodedThousands": 1.5},
+        {"year": 2019, "propertiesFloodedThousands": 4.7},
+        {"year": 2020, "propertiesFloodedThousands": 4.6},
+        {"year": 2021, "propertiesFloodedThousands": 3.1},
+        {"year": 2022, "propertiesFloodedThousands": 2.8},
+        {"year": 2023, "propertiesFloodedThousands": 7.8}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 7.8
+    },
+    "floodDefenceSpending": {
+      "timeSeries": [
+        {"year": "2010/11", "spendingMillionGBP": 670},
+        {"year": "2012/13", "spendingMillionGBP": 640},
+        {"year": "2014/15", "spendingMillionGBP": 700},
+        {"year": "2015/16", "spendingMillionGBP": 780},
+        {"year": "2016/17", "spendingMillionGBP": 820},
+        {"year": "2017/18", "spendingMillionGBP": 860},
+        {"year": "2018/19", "spendingMillionGBP": 900},
+        {"year": "2019/20", "spendingMillionGBP": 890},
+        {"year": "2020/21", "spendingMillionGBP": 950},
+        {"year": "2021/22", "spendingMillionGBP": 1030},
+        {"year": "2022/23", "spendingMillionGBP": 1100}
+      ],
+      "latestYear": "2022/23",
+      "latestMillionGBP": 1100
+    },
+    "riskByRegion": [
+      {"region": "Yorkshire & Humber", "propertiesAtRiskThousands": 310},
+      {"region": "South East", "propertiesAtRiskThousands": 290},
+      {"region": "South West", "propertiesAtRiskThousands": 260},
+      {"region": "East of England", "propertiesAtRiskThousands": 250},
+      {"region": "Midlands", "propertiesAtRiskThousands": 230},
+      {"region": "North West", "propertiesAtRiskThousands": 220},
+      {"region": "North East", "propertiesAtRiskThousands": 130},
+      {"region": "London", "propertiesAtRiskThousands": 490}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Environment Agency", "dataset": "Long-term flood risk data for England", "url": "https://www.gov.uk/guidance/flood-risk-and-coastal-change", "frequency": "annual"},
+      {"name": "Environment Agency", "dataset": "FCERM Investment Programme", "url": "https://www.gov.uk/government/publications/flood-and-coastal-erosion-risk-management-programme", "frequency": "annual"},
+      {"name": "Flood Re", "dataset": "Annual Report", "url": "https://www.floodre.co.uk/about/results/", "frequency": "annual"}
+    ],
+    "methodology": "Properties at risk from Environment Agency National Flood Risk Assessment 2 (NaFRA2). Properties flooded from EA flood incident data (internal flooding of properties). Defence spending from EA/DEFRA capital programme allocations. Regional data from EA area flood risk registers.",
+    "knownIssues": ["Properties flooded counts internal flooding only — a much larger number experience external flooding or disruption", "At-risk figures from 2023 NaFRA2 update — not directly comparable with pre-2023 figures using old model", "Climate change scenarios not fully incorporated into current at-risk property count"]
+  }
+}

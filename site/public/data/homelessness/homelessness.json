@@ -1,0 +1,94 @@
+{
+  "topic": "homelessness",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "statutoryHomelessness": {
+      "timeSeries": [
+        { "year": "2012/13", "householdsThousands": 53.5, "preventedThousands": 175.6 },
+        { "year": "2013/14", "householdsThousands": 54.5, "preventedThousands": 185.2 },
+        { "year": "2014/15", "householdsThousands": 59.8, "preventedThousands": 205.4 },
+        { "year": "2015/16", "householdsThousands": 58.0, "preventedThousands": 198.6 },
+        { "year": "2016/17", "householdsThousands": 78.1, "preventedThousands": 213.4 },
+        { "year": "2017/18", "householdsThousands": 97.2, "preventedThousands": 248.5 },
+        { "year": "2018/19", "householdsThousands": 74.7, "preventedThousands": 251.3 },
+        { "year": "2019/20", "householdsThousands": 70.0, "preventedThousands": 255.7 },
+        { "year": "2020/21", "householdsThousands": 74.1, "preventedThousands": 265.2 },
+        { "year": "2021/22", "householdsThousands": 94.6, "preventedThousands": 295.8 },
+        { "year": "2022/23", "householdsThousands": 105.4, "preventedThousands": 320.1 },
+        { "year": "2023/24", "householdsThousands": 117.5, "preventedThousands": 338.4 }
+      ],
+      "latestYear": "2023/24",
+      "latestHouseholds": 117500
+    },
+    "roughSleeping": {
+      "timeSeries": [
+        { "year": 2010, "roughSleepersEngland": 1768 },
+        { "year": 2011, "roughSleepersEngland": 2181 },
+        { "year": 2012, "roughSleepersEngland": 2309 },
+        { "year": 2013, "roughSleepersEngland": 2414 },
+        { "year": 2014, "roughSleepersEngland": 2744 },
+        { "year": 2015, "roughSleepersEngland": 3569 },
+        { "year": 2016, "roughSleepersEngland": 4134 },
+        { "year": 2017, "roughSleepersEngland": 4751 },
+        { "year": 2018, "roughSleepersEngland": 4677 },
+        { "year": 2019, "roughSleepersEngland": 4266 },
+        { "year": 2020, "roughSleepersEngland": 2688 },
+        { "year": 2021, "roughSleepersEngland": 2440 },
+        { "year": 2022, "roughSleepersEngland": 3069 },
+        { "year": 2023, "roughSleepersEngland": 3898 },
+        { "year": 2024, "roughSleepersEngland": 4255 }
+      ],
+      "latestYear": 2024,
+      "latestCount": 4255
+    },
+    "temporaryAccommodation": {
+      "timeSeries": [
+        { "year": "2014/15", "householdsThousands": 60.2, "childrenThousands": 82.1 },
+        { "year": "2015/16", "householdsThousands": 62.4, "childrenThousands": 84.5 },
+        { "year": "2016/17", "householdsThousands": 74.8, "childrenThousands": 101.3 },
+        { "year": "2017/18", "householdsThousands": 79.3, "childrenThousands": 124.0 },
+        { "year": "2018/19", "householdsThousands": 82.1, "childrenThousands": 126.2 },
+        { "year": "2019/20", "householdsThousands": 87.4, "childrenThousands": 134.0 },
+        { "year": "2020/21", "householdsThousands": 95.0, "childrenThousands": 138.6 },
+        { "year": "2021/22", "householdsThousands": 98.4, "childrenThousands": 131.4 },
+        { "year": "2022/23", "householdsThousands": 104.5, "childrenThousands": 152.0 },
+        { "year": "2023/24", "householdsThousands": 117.1, "childrenThousands": 159.9 }
+      ],
+      "latestYear": "2023/24",
+      "latestHouseholds": 117100,
+      "latestChildren": 159900
+    },
+    "mainReasons": {
+      "latestYear": "2023/24",
+      "reasons": [
+        { "reason": "End of private rented tenancy", "pct": 22.3 },
+        { "reason": "Family/friends no longer willing", "pct": 18.7 },
+        { "reason": "Domestic abuse", "pct": 12.4 },
+        { "reason": "Lease ended (social housing)", "pct": 8.1 },
+        { "reason": "Other", "pct": 38.5 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "MHCLG",
+        "dataset": "Statutory homelessness in England",
+        "url": "https://www.gov.uk/government/collections/homelessness-statistics",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "MHCLG",
+        "dataset": "Rough sleeping statistics in England",
+        "url": "https://www.gov.uk/government/collections/rough-sleeping-statistics",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Statutory homelessness data covers households accepted as homeless by local authorities under the Homelessness Reduction Act 2017. Rough sleeping counts are annual snapshot counts taken on a single autumn night. Both measures are known to undercount actual homelessness.",
+    "knownIssues": [
+      "Rough sleeping counts are widely regarded as undercounts — actual numbers may be 2-3x higher",
+      "2020-2021 saw sharp drop due to Everyone In hotel programme during COVID — not a real improvement",
+      "Statutory homelessness methodology changed with Homelessness Reduction Act 2017 — pre/post not directly comparable"
+    ]
+  }
+}

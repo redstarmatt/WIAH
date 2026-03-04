@@ -1,0 +1,74 @@
+{
+  "national": {
+    "problemGamblers": {
+      "timeSeries": [
+        {"year": 2017, "problemGamblersThousands": 430},
+        {"year": 2018, "problemGamblersThousands": 440},
+        {"year": 2019, "problemGamblersThousands": 420},
+        {"year": 2020, "problemGamblersThousands": 410},
+        {"year": 2021, "problemGamblersThousands": 430},
+        {"year": 2022, "problemGamblersThousands": 430}
+      ],
+      "latestYear": 2022,
+      "latestThousands": 430,
+      "moderateRiskThousands": 1300,
+      "youngPeopleThousands": 55,
+      "suicideRateMultiplier": 15,
+      "note": "NHS Health Survey for England. Problem gambling defined using Problem Gambling Severity Index (PGSI score 8+)."
+    },
+    "onlineGambling": {
+      "timeSeries": [
+        {"year": 2017, "grossYieldBillionGBP": 3.2},
+        {"year": 2018, "grossYieldBillionGBP": 3.8},
+        {"year": 2019, "grossYieldBillionGBP": 4.2},
+        {"year": 2020, "grossYieldBillionGBP": 4.7},
+        {"year": 2021, "grossYieldBillionGBP": 5.5},
+        {"year": 2022, "grossYieldBillionGBP": 6.0},
+        {"year": 2023, "grossYieldBillionGBP": 7.1}
+      ],
+      "latestYear": 2023,
+      "latestBillionGBP": 7.1,
+      "pctOfTotalGambling": 51,
+      "problemGamblersPctOnline": 80
+    },
+    "bettingShops": {
+      "timeSeries": [
+        {"year": 2013, "shopCount": 9000},
+        {"year": 2015, "shopCount": 8600},
+        {"year": 2017, "shopCount": 8400},
+        {"year": 2019, "shopCount": 8100},
+        {"year": 2020, "shopCount": 7700},
+        {"year": 2021, "shopCount": 7200},
+        {"year": 2022, "shopCount": 6900},
+        {"year": 2023, "shopCount": 6700}
+      ],
+      "latestYear": 2023,
+      "latestCount": 6700,
+      "note": "Fixed Odds Betting Terminal £2 stake limit introduced April 2019 accelerated shop closures."
+    },
+    "byActivity": [
+      {"activity": "Online slots/casino", "problemGamblerPct": 38},
+      {"activity": "Sports betting (online)", "problemGamblerPct": 28},
+      {"activity": "Lotteries", "problemGamblerPct": 14},
+      {"activity": "Betting shops (FOBT)", "problemGamblerPct": 12},
+      {"activity": "Bingo", "problemGamblerPct": 5},
+      {"activity": "Other", "problemGamblerPct": 3}
+    ],
+    "regulation": {
+      "gamblingActYear": 2005,
+      "whitepaperYear": 2023,
+      "stakeLimitOnlineSlotsUnder25GBP": 2,
+      "stakeLimitOnlineSlotsAdultGBP": 5,
+      "levyAnnualMillionGBP": 100,
+      "note": "White Paper on gambling reform published April 2023. Stake limits and affordability checks phased in 2024-25."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Gambling Commission", "dataset": "Industry statistics", "url": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/industry-statistics", "frequency": "annual"},
+      {"name": "NHS Digital", "dataset": "Health Survey for England — gambling", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england", "frequency": "annual"}
+    ],
+    "methodology": "Problem gambling prevalence from NHS Health Survey for England using the Problem Gambling Severity Index (PGSI). Online gambling gross yield from Gambling Commission Industry Statistics — yield is gross gambling revenue (stakes minus winnings). Betting shop counts from Gambling Commission licensed premises data.",
+    "knownIssues": ["Problem gambling prevalence surveys have small sample sizes — estimates have wide confidence intervals", "Online gambling data includes both UK-facing and international revenue for some operators", "FOBT stake limit implementation in April 2019 may distort year-on-year comparisons"]
+  }
+}

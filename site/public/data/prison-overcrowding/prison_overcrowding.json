@@ -1,0 +1,60 @@
+{
+  "national": {
+    "prisonPopulation": {
+      "timeSeries": [
+        {"year": 2012, "population": 86048},
+        {"year": 2013, "population": 84421},
+        {"year": 2014, "population": 85509},
+        {"year": 2015, "population": 85961},
+        {"year": 2016, "population": 85862},
+        {"year": 2017, "population": 86584},
+        {"year": 2018, "population": 83539},
+        {"year": 2019, "population": 82781},
+        {"year": 2020, "population": 78837},
+        {"year": 2021, "population": 79027},
+        {"year": 2022, "population": 84246},
+        {"year": 2023, "population": 88225}
+      ],
+      "latestYear": 2023,
+      "latestPopulation": 88225,
+      "usableCapacity": 79927,
+      "occupancyPct": 110
+    },
+    "remandPopulation": {
+      "timeSeries": [
+        {"year": 2012, "remandCount": 11000},
+        {"year": 2014, "remandCount": 11200},
+        {"year": 2016, "remandCount": 10800},
+        {"year": 2018, "remandCount": 10200},
+        {"year": 2019, "remandCount": 10600},
+        {"year": 2020, "remandCount": 13200},
+        {"year": 2021, "remandCount": 15000},
+        {"year": 2022, "remandCount": 15800},
+        {"year": 2023, "remandCount": 16400}
+      ],
+      "latestYear": 2023,
+      "latestCount": 16400,
+      "pctOfPrisonPop": 24
+    },
+    "byOffenceCategory": [
+      {"category": "Violence against person", "count": 32500},
+      {"category": "Sexual offences", "count": 14800},
+      {"category": "Drug offences", "count": 10200},
+      {"category": "Robbery", "count": 7400},
+      {"category": "Theft", "count": 4100},
+      {"category": "Other", "count": 19225}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Ministry of Justice", "dataset": "Prison Population Statistics", "url": "https://www.gov.uk/government/statistics/prison-population-figures", "frequency": "monthly"},
+      {"name": "HMPPS", "dataset": "Offender Management Statistics", "url": "https://www.gov.uk/government/collections/offender-management-statistics-quarterly", "frequency": "quarterly"}
+    ],
+    "methodology": "Prison population figures from Ministry of Justice monthly Offender Management Statistics. Usable operational capacity is the number of prisoners that can be held without risk to good order, safety and decency. Remand figures include those on remand awaiting trial and sentenced-but-awaiting-trial defendants.",
+    "knownIssues": [
+      "COVID-19 led to significant reductions in prison population in 2020 due to reduced court sittings",
+      "Usable capacity differs from certified normal accommodation (CNA) and is a more conservative measure",
+      "Population data is a snapshot and varies significantly day to day"
+    ]
+  }
+}

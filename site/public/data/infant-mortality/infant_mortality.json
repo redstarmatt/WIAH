@@ -1,0 +1,51 @@
+{
+  "national": {
+    "infantMortality": {
+      "timeSeries": [
+        {"year": 2012, "ratePer1000": 4.1},
+        {"year": 2013, "ratePer1000": 4.0},
+        {"year": 2014, "ratePer1000": 3.9},
+        {"year": 2015, "ratePer1000": 3.9},
+        {"year": 2016, "ratePer1000": 3.8},
+        {"year": 2017, "ratePer1000": 3.8},
+        {"year": 2018, "ratePer1000": 3.8},
+        {"year": 2019, "ratePer1000": 3.7},
+        {"year": 2020, "ratePer1000": 3.6},
+        {"year": 2021, "ratePer1000": 3.6},
+        {"year": 2022, "ratePer1000": 3.6}
+      ],
+      "latestYear": 2022,
+      "latestRate": 3.6,
+      "stillbirthsAnnual": 3000
+    },
+    "internationalComparison": {
+      "timeSeries": [
+        {"year": 2012, "ukRate": 4.1, "franceRate": 3.4, "germanyRate": 3.4},
+        {"year": 2014, "ukRate": 3.9, "franceRate": 3.3, "germanyRate": 3.2},
+        {"year": 2016, "ukRate": 3.8, "franceRate": 3.5, "germanyRate": 3.3},
+        {"year": 2018, "ukRate": 3.8, "franceRate": 3.8, "germanyRate": 3.3},
+        {"year": 2020, "ukRate": 3.6, "franceRate": 3.6, "germanyRate": 3.1},
+        {"year": 2022, "ukRate": 3.6, "franceRate": 3.4, "germanyRate": 3.0}
+      ]
+    },
+    "byDeprivation": [
+      {"quintile": "Most deprived (Q1)", "ratePer1000": 5.4},
+      {"quintile": "Q2", "ratePer1000": 4.2},
+      {"quintile": "Q3", "ratePer1000": 3.7},
+      {"quintile": "Q4", "ratePer1000": 3.0},
+      {"quintile": "Least deprived (Q5)", "ratePer1000": 2.2}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Child Mortality in England and Wales", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/childmortalitystatisticschildhoodinfantandperinatal/2022", "frequency": "annual"},
+      {"name": "MBRRACE-UK", "dataset": "Perinatal Mortality Surveillance Report", "url": "https://www.npeu.ox.ac.uk/mbrrace-uk/reports", "frequency": "annual"}
+    ],
+    "methodology": "Infant mortality rate is deaths under 1 year per 1,000 live births, registered deaths in England and Wales (ONS). Stillbirth figures from ONS, covering babies born at 24+ weeks who showed no signs of life. International comparison from OECD Health Statistics. Deprivation breakdown from ONS using Index of Multiple Deprivation quintiles linked to mother&apos;s lower super output area.",
+    "knownIssues": [
+      "International comparisons are affected by differences in birth registration practices — some countries have higher thresholds for registering live births",
+      "Deprivation quintile data uses mother&apos;s area of residence, not individual socioeconomic status",
+      "COVID-19 may have affected 2020-21 data through reduced antenatal contact and changed care pathways"
+    ]
+  }
+}

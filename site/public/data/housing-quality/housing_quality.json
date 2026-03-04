@@ -1,0 +1,49 @@
+{
+  "national": {
+    "nonDecentHomes": {
+      "timeSeries": [
+        {"year": 2010, "millionsNonDecent": 7.5},
+        {"year": 2012, "millionsNonDecent": 6.5},
+        {"year": 2014, "millionsNonDecent": 5.7},
+        {"year": 2016, "millionsNonDecent": 5.0},
+        {"year": 2018, "millionsNonDecent": 4.7},
+        {"year": 2020, "millionsNonDecent": 4.5},
+        {"year": 2022, "millionsNonDecent": 4.3}
+      ],
+      "latestYear": 2022,
+      "latestMillions": 4.3,
+      "latestPct": 17
+    },
+    "dampAndMould": {
+      "timeSeries": [
+        {"year": 2014, "affectedPct": 3.8},
+        {"year": 2016, "affectedPct": 3.7},
+        {"year": 2018, "affectedPct": 3.9},
+        {"year": 2019, "affectedPct": 4.0},
+        {"year": 2020, "affectedPct": 4.3},
+        {"year": 2021, "affectedPct": 4.2},
+        {"year": 2022, "affectedPct": 4.5}
+      ],
+      "latestYear": 2022,
+      "latestPct": 4.5,
+      "affectedHouseholdsMillions": 1.0
+    },
+    "byTenureType": [
+      {"tenure": "Private rented", "nonDecentPct": 24},
+      {"tenure": "Social rented", "nonDecentPct": 12},
+      {"tenure": "Owner occupied", "nonDecentPct": 16}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "DLUHC", "dataset": "English Housing Survey", "url": "https://www.gov.uk/government/collections/english-housing-survey", "frequency": "annual"},
+      {"name": "Shelter", "dataset": "Housing Quality Research", "url": "https://england.shelter.org.uk/professional_resources/policy_and_research", "frequency": "annual"}
+    ],
+    "methodology": "Decent Homes Standard requires properties to: meet the current statutory minimum for housing (HHSRS); be in reasonable repair; have reasonably modern facilities; provide reasonable degree of thermal comfort. English Housing Survey (EHS) is a continuous survey of households and the condition of housing in England. Damp and mould prevalence from EHS interviewer assessment.",
+    "knownIssues": [
+      "English Housing Survey relies on interviewer assessment of damp/mould — may undercount self-reported cases",
+      "Decent Homes Standard has not been updated since 2006 — may not reflect modern standards for digital connectivity, ventilation, etc.",
+      "Private rented sector is harder to survey — some estimates put non-decent homes higher at 25-27%"
+    ]
+  }
+}

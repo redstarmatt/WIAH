@@ -1,0 +1,54 @@
+{
+  "national": {
+    "inactivity": {
+      "timeSeries": [
+        { "year": 2014, "inactiveMillions": 8.6 },
+        { "year": 2015, "inactiveMillions": 8.5 },
+        { "year": 2016, "inactiveMillions": 8.4 },
+        { "year": 2017, "inactiveMillions": 8.4 },
+        { "year": 2018, "inactiveMillions": 8.4 },
+        { "year": 2019, "inactiveMillions": 8.4 },
+        { "year": 2020, "inactiveMillions": 8.7 },
+        { "year": 2021, "inactiveMillions": 9.2 },
+        { "year": 2022, "inactiveMillions": 9.4 },
+        { "year": 2023, "inactiveMillions": 9.4 }
+      ],
+      "latestYear": 2023,
+      "latestMillions": 9.4,
+      "preCovidMillions": 8.4,
+      "pctOfWorkingAge": 22
+    },
+    "longTermSick": {
+      "timeSeries": [
+        { "year": 2014, "sickMillions": 2.0 },
+        { "year": 2015, "sickMillions": 2.0 },
+        { "year": 2016, "sickMillions": 2.0 },
+        { "year": 2017, "sickMillions": 2.0 },
+        { "year": 2018, "sickMillions": 2.0 },
+        { "year": 2019, "sickMillions": 2.0 },
+        { "year": 2020, "sickMillions": 2.1 },
+        { "year": 2021, "sickMillions": 2.2 },
+        { "year": 2022, "sickMillions": 2.6 },
+        { "year": 2023, "sickMillions": 2.8 }
+      ],
+      "latestYear": 2023,
+      "latestMillions": 2.8
+    },
+    "reasonsBreakdown": [
+      { "reason": "Long-term sickness", "pct": 30 },
+      { "reason": "Looking after family/home", "pct": 25 },
+      { "reason": "Student", "pct": 23 },
+      { "reason": "Retired early", "pct": 10 },
+      { "reason": "Discouraged worker", "pct": 5 },
+      { "reason": "Other", "pct": 7 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "ONS", "dataset": "Labour Force Survey &mdash; Economic Inactivity", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity", "frequency": "quarterly" },
+      { "name": "ONS", "dataset": "Sickness Absence in the UK Labour Market", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/sicknessabsenceinthelabourmarket/2022", "frequency": "annual" }
+    ],
+    "methodology": "Economic inactivity from ONS Labour Force Survey (LFS). Working-age defined as 16-64. Long-term sickness data from LFS inactivity reason. Sickness absence days from ONS Sickness Absence survey.",
+    "knownIssues": ["LFS methodology was revised in 2023 introducing a new survey design; some series show discontinuities.", "COVID-19 furlough scheme temporarily reduced recorded economic inactivity in 2020.", "Long-term sickness figures may include some people whose condition predates COVID but who left work during the pandemic."]
+  }
+}

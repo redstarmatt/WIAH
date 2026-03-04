@@ -1,0 +1,57 @@
+{
+  "national": {
+    "debtAsGDP": {
+      "timeSeries": [
+        { "year": "2007/08", "pctGDP": 35.0 },
+        { "year": "2008/09", "pctGDP": 43.2 },
+        { "year": "2009/10", "pctGDP": 52.4 },
+        { "year": "2010/11", "pctGDP": 62.1 },
+        { "year": "2011/12", "pctGDP": 69.7 },
+        { "year": "2012/13", "pctGDP": 74.0 },
+        { "year": "2013/14", "pctGDP": 78.7 },
+        { "year": "2014/15", "pctGDP": 82.4 },
+        { "year": "2015/16", "pctGDP": 82.6 },
+        { "year": "2016/17", "pctGDP": 83.0 },
+        { "year": "2017/18", "pctGDP": 84.8 },
+        { "year": "2018/19", "pctGDP": 83.0 },
+        { "year": "2019/20", "pctGDP": 83.8 },
+        { "year": "2020/21", "pctGDP": 96.1 },
+        { "year": "2021/22", "pctGDP": 93.8 },
+        { "year": "2022/23", "pctGDP": 94.4 },
+        { "year": "2023/24", "pctGDP": 97.1 }
+      ],
+      "latestYear": "2023/24",
+      "latestPct": 97.1,
+      "nominalBillionGBP": 2650
+    },
+    "interestPayments": {
+      "timeSeries": [
+        { "year": "2010/11", "billionGBP": 43 },
+        { "year": "2012/13", "billionGBP": 49 },
+        { "year": "2014/15", "billionGBP": 52 },
+        { "year": "2016/17", "billionGBP": 50 },
+        { "year": "2018/19", "billionGBP": 48 },
+        { "year": "2020/21", "billionGBP": 47 },
+        { "year": "2021/22", "billionGBP": 60 },
+        { "year": "2022/23", "billionGBP": 116 },
+        { "year": "2023/24", "billionGBP": 111 }
+      ],
+      "latestYear": "2023/24",
+      "latestBillionGBP": 111
+    },
+    "debtByType": [
+      { "type": "Gilts (bonds)", "pctOfTotal": 62 },
+      { "type": "Treasury bills", "pctOfTotal": 8 },
+      { "type": "Index-linked gilts", "pctOfTotal": 25 },
+      { "type": "Other", "pctOfTotal": 5 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "ONS", "dataset": "Public Sector Finances", "url": "https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicsectorfinance/bulletins/publicsectorfinances/latest", "frequency": "monthly" },
+      { "name": "OBR", "dataset": "Economic and Fiscal Outlook", "url": "https://obr.uk/efo/economic-and-fiscal-outlook", "frequency": "twice-yearly" }
+    ],
+    "methodology": "Public sector net debt (PSND) from ONS Public Sector Finances. Includes central government, local authorities, and public corporations, minus liquid assets. GDP deflators from ONS National Accounts. Debt interest from HMRC/OBR.",
+    "knownIssues": ["Bank of England asset purchase facility (QE) is included in some PSND measures and excluded from others — the headline figure here excludes the APF.", "COVID-era borrowing of ~£400 billion is the primary cause of the post-2020 jump.", "Index-linked gilts are sensitive to RPI inflation; high inflation 2021-2023 significantly increased their cost."]
+  }
+}

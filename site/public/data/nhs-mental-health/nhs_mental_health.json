@@ -1,0 +1,65 @@
+{
+  "national": {
+    "talkingTherapies": {
+      "timeSeries": [
+        { "year": 2016, "referralsThousands": 1100, "avgWaitWeeks": 5 },
+        { "year": 2017, "referralsThousands": 1200, "avgWaitWeeks": 5 },
+        { "year": 2018, "referralsThousands": 1300, "avgWaitWeeks": 6 },
+        { "year": 2019, "referralsThousands": 1450, "avgWaitWeeks": 7 },
+        { "year": 2020, "referralsThousands": 1100, "avgWaitWeeks": 8 },
+        { "year": 2021, "referralsThousands": 1400, "avgWaitWeeks": 12 },
+        { "year": 2022, "referralsThousands": 1500, "avgWaitWeeks": 10 },
+        { "year": 2023, "referralsThousands": 1600, "avgWaitWeeks": 11 }
+      ],
+      "latestYear": 2023,
+      "latestReferralsThousands": 1600,
+      "latestAvgWaitWeeks": 11,
+      "targetWaitWeeks": 6
+    },
+    "camhs": {
+      "timeSeries": [
+        { "year": 2016, "avgWaitWeeks": 12 },
+        { "year": 2017, "avgWaitWeeks": 13 },
+        { "year": 2018, "avgWaitWeeks": 14 },
+        { "year": 2019, "avgWaitWeeks": 14 },
+        { "year": 2020, "avgWaitWeeks": 18 },
+        { "year": 2021, "avgWaitWeeks": 22 },
+        { "year": 2022, "avgWaitWeeks": 20 },
+        { "year": 2023, "avgWaitWeeks": 18 }
+      ],
+      "latestYear": 2023,
+      "latestAvgWaitWeeks": 18
+    },
+    "spending": {
+      "timeSeries": [
+        { "year": 2016, "spendingBillionGBP": 11.4 },
+        { "year": 2017, "spendingBillionGBP": 11.7 },
+        { "year": 2018, "spendingBillionGBP": 12.0 },
+        { "year": 2019, "spendingBillionGBP": 12.5 },
+        { "year": 2020, "spendingBillionGBP": 13.0 },
+        { "year": 2021, "spendingBillionGBP": 13.4 },
+        { "year": 2022, "spendingBillionGBP": 13.8 },
+        { "year": 2023, "spendingBillionGBP": 14.1 }
+      ],
+      "latestYear": 2023,
+      "latestBillionGBP": 14.1
+    },
+    "conditionBreakdown": [
+      { "condition": "Depression", "pctOfCaseload": 30 },
+      { "condition": "Anxiety disorders", "pctOfCaseload": 28 },
+      { "condition": "PTSD", "pctOfCaseload": 12 },
+      { "condition": "Psychosis / schizophrenia", "pctOfCaseload": 8 },
+      { "condition": "Eating disorders", "pctOfCaseload": 5 },
+      { "condition": "Other", "pctOfCaseload": 17 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "NHS England", "dataset": "Mental Health Services Monthly Statistics", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/mental-health-statistics/", "frequency": "monthly" },
+      { "name": "NHS England", "dataset": "Talking Therapies (IAPT) Statistics", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/iapt/", "frequency": "monthly" },
+      { "name": "NHS England", "dataset": "Children and Young People Mental Health", "url": "https://www.england.nhs.uk/mental-health/cyp/", "frequency": "quarterly" }
+    ],
+    "methodology": "Talking therapy (IAPT) data from NHS England monthly bulletins. CAMHS waiting times from NHS Digital CYP-MH collection. Spending from NHS England planning round and annual reports.",
+    "knownIssues": ["IAPT was renamed NHS Talking Therapies in 2023; historical data series is comparable.", "CAMHS data quality is variable across trusts; waiting time definitions differ.", "Spending data includes some double-counting between primary and secondary care pathways."]
+  }
+}

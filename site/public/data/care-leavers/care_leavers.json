@@ -1,0 +1,59 @@
+{
+  "national": {
+    "childrenInCare": {
+      "timeSeries": [
+        {"year": 2012, "childrenCount": 67050},
+        {"year": 2013, "childrenCount": 68060},
+        {"year": 2014, "childrenCount": 68840},
+        {"year": 2015, "childrenCount": 69540},
+        {"year": 2016, "childrenCount": 70440},
+        {"year": 2017, "childrenCount": 72670},
+        {"year": 2018, "childrenCount": 75420},
+        {"year": 2019, "childrenCount": 78150},
+        {"year": 2020, "childrenCount": 80850},
+        {"year": 2021, "childrenCount": 82170},
+        {"year": 2022, "childrenCount": 84010},
+        {"year": 2023, "childrenCount": 95000}
+      ],
+      "latestYear": 2023,
+      "latestCount": 95000,
+      "leavingCareAnnually": 10000
+    },
+    "leaverOutcomes": {
+      "timeSeries": [
+        {"year": 2016, "neetPct": 38},
+        {"year": 2017, "neetPct": 38},
+        {"year": 2018, "neetPct": 39},
+        {"year": 2019, "neetPct": 37},
+        {"year": 2020, "neetPct": 41},
+        {"year": 2021, "neetPct": 38},
+        {"year": 2022, "neetPct": 37},
+        {"year": 2023, "neetPct": 37}
+      ],
+      "latestYear": 2023,
+      "latestNeetPct": 37,
+      "universityPct": 13,
+      "homelessWithin2YearsPct": 25
+    },
+    "byOutcomeType": [
+      {"outcome": "Employment / education / training", "pct": 63},
+      {"outcome": "NEET", "pct": 37},
+      {"outcome": "University (within general pop.)", "pct": 43},
+      {"outcome": "University (care leavers)", "pct": 13},
+      {"outcome": "Homeless within 2 years", "pct": 25},
+      {"outcome": "In contact with criminal justice", "pct": 40}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "DfE", "dataset": "Children Looked After in England", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions", "frequency": "annual"},
+      {"name": "DfE", "dataset": "Care Leavers in England", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/care-leavers-in-england", "frequency": "annual"}
+    ],
+    "methodology": "Children in care count from DfE Children Looked After statistics, taken at 31 March each year. NEET (Not in Education, Employment or Training) data from DfE Care Leavers statistics for those aged 17-21 at 31 March. University participation data from HESA linked to care leaver status. Homeless outcome is an estimate from Centrepoint and Crisis research.",
+    "knownIssues": [
+      "Care leaver data only captures those known to local authorities — some care leavers lose contact",
+      "University participation rate is from UCAS data, which may undercount those entering higher education via non-traditional routes",
+      "Criminal justice outcomes are estimates based on HMPPS data linking on care leaver status"
+    ]
+  }
+}

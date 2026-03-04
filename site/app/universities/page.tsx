@@ -692,7 +692,7 @@ export default function UniversitiesPage() {
           <ScrollReveal>
             <div className="mb-6 pt-4">
               <h2 className="text-xl font-bold text-wiah-black mb-2">
-                Grade inflation: when everyone gets a first
+                Degree classifications, 1995&ndash;2024
               </h2>
               <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 In 1995, a first-class degree was rare &mdash; just 7% of graduates achieved one.

@@ -1,0 +1,56 @@
+{
+  "national": {
+    "mmrUptake": {
+      "timeSeries": [
+        {"year": "2012/13", "uptakePct": 92.3},
+        {"year": "2013/14", "uptakePct": 92.7},
+        {"year": "2014/15", "uptakePct": 92.3},
+        {"year": "2015/16", "uptakePct": 91.9},
+        {"year": "2016/17", "uptakePct": 91.6},
+        {"year": "2017/18", "uptakePct": 91.2},
+        {"year": "2018/19", "uptakePct": 90.3},
+        {"year": "2019/20", "uptakePct": 89.8},
+        {"year": "2020/21", "uptakePct": 89.2},
+        {"year": "2021/22", "uptakePct": 89.0},
+        {"year": "2022/23", "uptakePct": 89.3}
+      ],
+      "latestYear": "2022/23",
+      "latestPct": 89.3,
+      "herdImmunityThresholdPct": 95
+    },
+    "otherVaccines": {
+      "timeSeries": [
+        {"year": "2016/17", "dtapPct": 95.2, "menBPct": 92.8},
+        {"year": "2017/18", "dtapPct": 94.8, "menBPct": 93.5},
+        {"year": "2018/19", "dtapPct": 94.3, "menBPct": 93.0},
+        {"year": "2019/20", "dtapPct": 93.7, "menBPct": 92.2},
+        {"year": "2020/21", "dtapPct": 91.8, "menBPct": 90.5},
+        {"year": "2021/22", "dtapPct": 91.5, "menBPct": 90.1},
+        {"year": "2022/23", "dtapPct": 91.7, "menBPct": 90.4}
+      ]
+    },
+    "byRegion": [
+      {"region": "London", "mmrPct": 84.1},
+      {"region": "North East", "mmrPct": 92.8},
+      {"region": "North West", "mmrPct": 91.5},
+      {"region": "Yorkshire & Humber", "mmrPct": 91.0},
+      {"region": "East Midlands", "mmrPct": 90.8},
+      {"region": "West Midlands", "mmrPct": 90.2},
+      {"region": "East of England", "mmrPct": 89.7},
+      {"region": "South East", "mmrPct": 88.5},
+      {"region": "South West", "mmrPct": 90.3}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS Digital", "dataset": "Childhood Vaccination Coverage Statistics", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-immunisation-statistics", "frequency": "annual"},
+      {"name": "UKHSA", "dataset": "Vaccination Coverage Report", "url": "https://www.gov.uk/government/publications/vaccine-update-issue-336-november-2023", "frequency": "annual"}
+    ],
+    "methodology": "MMR vaccine uptake is for first dose at age 2 years, measured as percentage of children turning 2 in the financial year who had received MMR1 by their second birthday. Data from NHS Digital Childhood Vaccination Coverage Statistics, extracted from GP and child health records. DTaP uptake for primary course completion by 12 months. Regional data aggregated from ICB level.",
+    "knownIssues": [
+      "COVID-19 disrupted routine immunisation appointments in 2020/21 — uptake fell across all vaccines",
+      "London figures are significantly lower than rest of England, dragging down the national average",
+      "GP data linkage issues mean some vaccinations administered elsewhere may not be captured"
+    ]
+  }
+}

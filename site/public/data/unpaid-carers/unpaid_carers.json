@@ -1,0 +1,47 @@
+{
+  "topic": "unpaid-carers",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "carerPopulation": {
+      "timeSeries": [
+        { "year": 2011, "carersMillions": 5.8 },
+        { "year": 2016, "carersMillions": 7.3 },
+        { "year": 2019, "carersMillions": 9.1 },
+        { "year": 2021, "carersMillions": 10.6 }
+      ],
+      "latestYear": 2021,
+      "latestMillions": 10.6,
+      "economicValueBillionGBP": 162,
+      "youngCarers": 600000
+    },
+    "carersAllowance": {
+      "timeSeries": [
+        { "year": 2014, "weeklyGBP": 61.35 },
+        { "year": 2016, "weeklyGBP": 62.10 },
+        { "year": 2018, "weeklyGBP": 64.60 },
+        { "year": 2020, "weeklyGBP": 67.25 },
+        { "year": 2022, "weeklyGBP": 69.70 },
+        { "year": 2023, "weeklyGBP": 81.90 }
+      ],
+      "latestYear": 2023,
+      "latestWeeklyGBP": 81.90,
+      "recipientsThousands": 760
+    },
+    "impactOnCarers": [
+      { "impact": "Mental health affected", "pct": 72 },
+      { "impact": "Physical health affected", "pct": 61 },
+      { "impact": "Reduced paid work hours", "pct": 44 },
+      { "impact": "Given up work entirely", "pct": 35 },
+      { "impact": "Financial difficulties", "pct": 58 },
+      { "impact": "Social isolation", "pct": 67 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "ONS", "dataset": "Census 2021 — Unpaid Care in England and Wales", "url": "https://www.ons.gov.uk/releases/unpaidcareinengland2021", "frequency": "decennial" },
+      { "name": "Carers UK", "dataset": "State of Caring Survey", "url": "https://www.carersuk.org/research-and-campaigns/research/state-of-caring-survey/", "frequency": "annual" }
+    ],
+    "methodology": "Carer population from ONS Census 2021 (self-identified unpaid carers). Economic value from Carers UK modelling based on replacement cost. Carers' Allowance data from DWP. Impact on carers from Carers UK State of Caring Survey (n=13,000).",
+    "knownIssues": ["Census under-counts carers as many do not self-identify. True numbers may be 40-50% higher.", "Carers UK survey is self-selected and not nationally representative; impact figures should be treated as indicative upper bounds.", "Economic value estimate is sensitive to assumptions about replacement care cost."]
+  }
+}

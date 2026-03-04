@@ -65,7 +65,7 @@ export const CATEGORIES: Category[] = [
     name: 'Mental Health & Wellbeing',
     slug: 'mental-health-wellbeing',
     featured: ['mental-health', 'mental-health-waits', 'suicide-prevention'],
-    topics: ['mental-health', 'mental-health-waits', 'suicide-prevention', 'adhd-autism', 'wellbeing', 'loneliness', 'gambling', 'gambling-harm', 'drugs', 'drug-misuse', 'alcohol', 'drug-deaths', 'obesity'],
+    topics: ['mental-health', 'mental-health-waits', 'suicide-prevention', 'adhd-autism', 'wellbeing', 'loneliness', 'gambling', 'gambling-harm', 'eating-disorders', 'drugs', 'drug-misuse', 'alcohol', 'drug-deaths', 'obesity'],
   },
   {
     name: 'Crime & Justice',
@@ -95,7 +95,7 @@ export const CATEGORIES: Category[] = [
     name: 'Poverty & Cost of Living',
     slug: 'poverty-cost-of-living',
     featured: ['child-poverty', 'food-banks', 'energy-bills'],
-    topics: ['child-poverty', 'food-banks', 'energy-bills', 'poverty', 'inequality', 'fuel-poverty', 'personal-debt', 'benefits', 'pensions', 'food-insecurity', 'wealth-inequality'],
+    topics: ['child-poverty', 'food-banks', 'energy-bills', 'poverty', 'inequality', 'fuel-poverty', 'personal-debt', 'benefits', 'universal-credit', 'pensions', 'food-insecurity', 'wealth-inequality'],
   },
   {
     name: 'Environment & Climate',
@@ -107,7 +107,7 @@ export const CATEGORIES: Category[] = [
     name: 'Infrastructure & Services',
     slug: 'infrastructure-services',
     featured: ['energy', 'rail', 'broadband'],
-    topics: ['energy', 'rail', 'broadband', 'transport', 'road-safety', 'rural-services', 'libraries', 'digital-inclusion', 'digital-exclusion'],
+    topics: ['energy', 'energy-security', 'rail', 'broadband', 'transport', 'road-safety', 'rural-services', 'libraries', 'digital-inclusion', 'digital-exclusion'],
   },
   {
     name: 'Society & Democracy',
@@ -119,7 +119,7 @@ export const CATEGORIES: Category[] = [
     name: 'Care & Support',
     slug: 'care-support',
     featured: ['social-care', 'unpaid-carers', 'disability-employment'],
-    topics: ['social-care', 'unpaid-carers', 'disability-employment', 'care-leavers', 'veterans'],
+    topics: ['social-care', 'unpaid-carers', 'disability-employment', 'young-carers', 'care-leavers', 'veterans', 'child-protection'],
   },
 ];
 
@@ -237,6 +237,16 @@ export const TOPICS: Record<string, TopicEntry> = {
     metrics: [
       { label: 'Renewable share', value: '45', unit: '%', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up from 3% in 2010', sparklineData: [2.8, 6.9, 11.3, 14.9, 19.1, 24.6, 24.5, 29.3, 33.1, 37.1, 43.1, 41.4, 41.5, 40.8, 45.2] },
       { label: 'Electricity price index', value: '201', unit: '2015=100', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'doubled since 2015', sparklineData: [86, 90, 94, 97, 100, 103, 107, 110, 119, 122, 127, 143, 201, 186, 180, 201] },
+    ],
+  },
+  'energy-security': {
+    topic: 'Energy Security',
+    slug: 'energy-security',
+    href: '/energy-security',
+    colour: '#264653',
+    metrics: [
+      { label: 'UK energy import dependency', value: '36', unit: '%', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up from 26% in 2015', sparklineData: [28, 42, 47, 38, 35, 36, 34, 35, 36] },
+      { label: 'Gas storage capacity', value: '15', unit: 'days', direction: 'flat' as const, polarity: 'up-is-bad' as const, context: 'Germany has 90 days', sparklineData: [15, 15, 15] },
     ],
   },
   'flood-risk': {
@@ -1329,6 +1339,47 @@ export const TOPICS: Record<string, TopicEntry> = {
     metrics: [
       { label: 'Reoffending within 1 year', value: '53%', direction: 'flat' as const, polarity: 'up-is-bad' as const, context: 'unchanged since 2010', sparklineData: [55, 54, 55, 54, 53, 53, 53, 53, 54, 53, 50, 52, 53] },
       { label: 'Cost of reoffending', value: '&pound;18bn', unit: 'per year', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'MOJ estimate; crime costs', sparklineData: [14, 15, 16, 17, 18] },
+    ],
+  },
+  'eating-disorders': {
+    topic: 'Eating Disorders',
+    slug: 'eating-disorders',
+    href: '/eating-disorders',
+    colour: '#264653',
+    metrics: [
+      { label: 'Hospital admissions/year', value: '28K', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'doubled since 2011; 89% female', sparklineData: [14, 16, 18, 20, 23, 25, 27, 28] },
+      { label: 'Average wait for treatment', value: '22 wks', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'target is 4 weeks; some areas 2+ years', sparklineData: [12, 14, 16, 20, 22, 22] },
+    ],
+  },
+  'universal-credit': {
+    topic: 'Universal Credit',
+    slug: 'universal-credit',
+    href: '/universal-credit',
+    colour: '#F4A261',
+    preposition: 'with',
+    metrics: [
+      { label: 'Universal Credit claimants', value: '6.4M', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'was 2.9M before COVID; full rollout by 2024', sparklineData: [0.5, 0.9, 1.6, 2.9, 5.6, 5.9, 6.1, 6.4] },
+      { label: 'Households affected by benefit cap', value: '126K', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'average cap shortfall: £58/week', sparklineData: [85, 95, 105, 115, 120, 122, 125, 126] },
+    ],
+  },
+  'young-carers': {
+    topic: 'Young Carers',
+    slug: 'young-carers',
+    href: '/young-carers',
+    colour: '#264653',
+    metrics: [
+      { label: 'Young carers in UK', value: '800K', direction: 'flat' as const, polarity: 'up-is-bad' as const, context: '1 in 12 secondary school children', sparklineData: [650, 680, 720, 760, 800] },
+      { label: 'Young carers experiencing mental health difficulties', value: '42', unit: '%', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '3x the rate for non-carers', sparklineData: [28, 32, 36, 39, 42] },
+    ],
+  },
+  'child-protection': {
+    topic: 'Child Protection',
+    slug: 'child-protection',
+    href: '/child-protection',
+    colour: '#E63946',
+    metrics: [
+      { label: 'Child protection referrals (England)', value: '714K', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up 37% since 2011/12', sparklineData: [521, 545, 570, 590, 604, 630, 640, 655, 670, 690, 714] },
+      { label: 'Children in care (looked-after)', value: '83.8K', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up 24% since 2011; record high', sparklineData: [65.5, 66.5, 68.1, 69.5, 72.7, 78.2, 80.1, 82.2, 83.8] },
     ],
   },
 };

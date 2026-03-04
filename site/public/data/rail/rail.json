@@ -1,0 +1,81 @@
+{
+  "topic": "rail",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "punctuality": {
+      "timeSeries": [
+        {"year": 2014, "onTimePct": 88.8},
+        {"year": 2015, "onTimePct": 88.8},
+        {"year": 2016, "onTimePct": 89.2},
+        {"year": 2017, "onTimePct": 87.8},
+        {"year": 2018, "onTimePct": 85.2},
+        {"year": 2019, "onTimePct": 84.4},
+        {"year": 2020, "onTimePct": 91.2},
+        {"year": 2021, "onTimePct": 91.3},
+        {"year": 2022, "onTimePct": 84.1},
+        {"year": 2023, "onTimePct": 71.7},
+        {"year": 2024, "onTimePct": 72.2}
+      ],
+      "latestYear": 2024,
+      "latestOnTimePct": 72.2,
+      "note": "On-Time measure (within 1 minute for suburban, 3 minutes for long distance)"
+    },
+    "cancellations": {
+      "timeSeries": [
+        {"year": 2014, "cancellationPct": 1.8},
+        {"year": 2015, "cancellationPct": 1.9},
+        {"year": 2016, "cancellationPct": 1.9},
+        {"year": 2017, "cancellationPct": 2.0},
+        {"year": 2018, "cancellationPct": 2.0},
+        {"year": 2019, "cancellationPct": 2.3},
+        {"year": 2020, "cancellationPct": 2.5},
+        {"year": 2021, "cancellationPct": 2.8},
+        {"year": 2022, "cancellationPct": 4.4},
+        {"year": 2023, "cancellationPct": 3.5},
+        {"year": 2024, "cancellationPct": 3.1}
+      ],
+      "latestYear": 2024,
+      "latestPct": 3.1
+    },
+    "passengerJourneys": {
+      "timeSeries": [
+        {"year": 2014, "journeysBillions": 1.62},
+        {"year": 2015, "journeysBillions": 1.65},
+        {"year": 2016, "journeysBillions": 1.69},
+        {"year": 2017, "journeysBillions": 1.72},
+        {"year": 2018, "journeysBillions": 1.74},
+        {"year": 2019, "journeysBillions": 1.74},
+        {"year": 2020, "journeysBillions": 0.39},
+        {"year": 2021, "journeysBillions": 0.80},
+        {"year": 2022, "journeysBillions": 1.41},
+        {"year": 2023, "journeysBillions": 1.56},
+        {"year": 2024, "journeysBillions": 1.61}
+      ],
+      "latestYear": 2024,
+      "latestBillions": 1.61,
+      "preCOVIDPeak": 1.74
+    },
+    "subsidyPerJourney": {
+      "timeSeries": [
+        {"year": 2019, "subsidyGBP": 0.60},
+        {"year": 2020, "subsidyGBP": 12.20},
+        {"year": 2021, "subsidyGBP": 15.30},
+        {"year": 2022, "subsidyGBP": 8.40},
+        {"year": 2023, "subsidyGBP": 5.20},
+        {"year": 2024, "subsidyGBP": 4.10}
+      ],
+      "latestYear": 2024,
+      "latestSubsidyGBP": 4.10,
+      "totalSubsidy2023BillionGBP": 8.1
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ORR", "dataset": "National rail trends — punctuality and cancellations", "url": "https://www.orr.gov.uk/monitoring-regulation/rail/rail-statistics/national-rail-trends", "frequency": "quarterly"},
+      {"name": "ORR", "dataset": "Passenger rail usage statistics", "url": "https://www.orr.gov.uk/monitoring-regulation/rail/rail-statistics", "frequency": "quarterly"},
+      {"name": "DGRAIL", "dataset": "Rail financial statistics", "url": "https://www.gov.uk/government/collections/rail-passenger-numbers-and-crowding-on-weekdays-in-major-cities-in-england-and-wales", "frequency": "annual"}
+    ],
+    "methodology": "On-Time measure: within 59 seconds of timetable at destination for commuter services, within 3 minutes for long-distance. Cancellations include full and partial cancellations. Passenger journeys from ORR quarterly statistics. Subsidy per journey derived from total public funding divided by total journeys.",
+    "knownIssues": ["2020/21 figures distorted by COVID-19 reduction in services and travel", "On-Time measure changed methodology in 2023 — not directly comparable with pre-2023 figures", "Subsidy figures include Emergency Recovery Measures Agreements payments to TOCs during COVID period"]
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "topic": "teacher-workforce",
+  "lastUpdated": "2026-03-02",
+  "vacancies": {
+    "timeSeries": [
+      {
+        "period": "2010/11",
+        "vacancyRate": 0.1,
+        "vacancies": 452
+      },
+      {
+        "period": "2011/12",
+        "vacancyRate": 0.1,
+        "vacancies": 420
+      },
+      {
+        "period": "2012/13",
+        "vacancyRate": 0.1,
+        "vacancies": 539
+      },
+      {
+        "period": "2013/14",
+        "vacancyRate": 0.2,
+        "vacancies": 895
+      },
+      {
+        "period": "2014/15",
+        "vacancyRate": 0.2,
+        "vacancies": 902
+      },
+      {
+        "period": "2015/16",
+        "vacancyRate": 0.2,
+        "vacancies": 875
+      },
+      {
+        "period": "2016/17",
+        "vacancyRate": 0.2,
+        "vacancies": 1116
+      },
+      {
+        "period": "2017/18",
+        "vacancyRate": 0.3,
+        "vacancies": 1137
+      },
+      {
+        "period": "2018/19",
+        "vacancyRate": 0.3,
+        "vacancies": 1161
+      },
+      {
+        "period": "2019/20",
+        "vacancyRate": 0.3,
+        "vacancies": 1143
+      },
+      {
+        "period": "2020/21",
+        "vacancyRate": 0.2,
+        "vacancies": 1098
+      },
+      {
+        "period": "2021/22",
+        "vacancyRate": 0.3,
+        "vacancies": 1564
+      },
+      {
+        "period": "2022/23",
+        "vacancyRate": 0.5,
+        "vacancies": 2334
+      },
+      {
+        "period": "2023/24",
+        "vacancyRate": 0.6,
+        "vacancies": 2802
+      },
+      {
+        "period": "2024/25",
+        "vacancyRate": 0.5,
+        "vacancies": 2173
+      }
+    ],
+    "latest": {
+      "period": "2024/25",
+      "vacancyRate": 0.5,
+      "vacancies": 2173
+    }
+  },
+  "pupilTeacherRatio": {
+    "timeSeries": [
+      {
+        "period": "2010/11",
+        "pupilTeacherRatio": 17.1,
+        "pupilsFte": 7361880,
+        "teachersFte": 426640
+      },
+      {
+        "period": "2011/12",
+        "pupilTeacherRatio": 17.2,
+        "pupilsFte": 7410940,
+        "teachersFte": 421877
+      },
+      {
+        "period": "2012/13",
+        "pupilTeacherRatio": 17.2,
+        "pupilsFte": 7465390,
+        "teachersFte": 432913
+      },
+      {
+        "period": "2013/14",
+        "pupilTeacherRatio": 17.1,
+        "pupilsFte": 7565650,
+        "teachersFte": 440917
+      },
+      {
+        "period": "2014/15",
+        "pupilTeacherRatio": 17.1,
+        "pupilsFte": 7686690,
+        "teachersFte": 449279
+      },
+      {
+        "period": "2015/16",
+        "pupilTeacherRatio": 17.3,
+        "pupilsFte": 7818960,
+        "teachersFte": 449795
+      },
+      {
+        "period": "2016/17",
+        "pupilTeacherRatio": 17.5,
+        "pupilsFte": 7924360,
+        "teachersFte": 450758
+      },
+      {
+        "period": "2017/18",
+        "pupilTeacherRatio": 17.9,
+        "pupilsFte": 8010740,
+        "teachersFte": 447703
+      },
+      {
+        "period": "2018/19",
+        "pupilTeacherRatio": 18.0,
+        "pupilsFte": 8102650,
+        "teachersFte": 448442
+      },
+      {
+        "period": "2019/20",
+        "pupilTeacherRatio": 18.2,
+        "pupilsFte": 8205390,
+        "teachersFte": 450394
+      },
+      {
+        "period": "2020/21",
+        "pupilTeacherRatio": 18.0,
+        "pupilsFte": 8233450,
+        "teachersFte": 457146
+      },
+      {
+        "period": "2021/22",
+        "pupilTeacherRatio": 18.0,
+        "pupilsFte": 8323460,
+        "teachersFte": 461729
+      },
+      {
+        "period": "2022/23",
+        "pupilTeacherRatio": 18.0,
+        "pupilsFte": 8391180,
+        "teachersFte": 464074
+      },
+      {
+        "period": "2023/24",
+        "pupilTeacherRatio": 18.1,
+        "pupilsFte": 8397270,
+        "teachersFte": 464197
+      },
+      {
+        "period": "2024/25",
+        "pupilTeacherRatio": 18.0,
+        "pupilsFte": 8355520,
+        "teachersFte": 464006
+      }
+    ],
+    "latest": {
+      "period": "2024/25",
+      "pupilTeacherRatio": 18.0,
+      "pupilsFte": 8355520,
+      "teachersFte": 464006
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DfE",
+        "dataset": "School Workforce in England \u2014 Teacher Vacancies",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england",
+        "frequency": "annual"
+      },
+      {
+        "name": "DfE",
+        "dataset": "School Workforce in England \u2014 Pupil-Teacher Ratios",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Teacher vacancies are measured as the number of advertised vacancies on census day (November). Rate is vacancies as a proportion of teachers in post. Pupil-teacher ratio uses FTE pupils divided by FTE qualified + unqualified teachers. All state-funded schools in England.",
+    "knownIssues": [
+      "Vacancy data is a snapshot (census day) not a flow measure",
+      "COVID-19 temporarily reduced vacancies in 2020/21"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "breastScreening": [
+    {"year": 2010, "uptakePct": 72},
+    {"year": 2012, "uptakePct": 73},
+    {"year": 2014, "uptakePct": 72},
+    {"year": 2016, "uptakePct": 71},
+    {"year": 2018, "uptakePct": 70},
+    {"year": 2019, "uptakePct": 70},
+    {"year": 2021, "uptakePct": 63},
+    {"year": 2022, "uptakePct": 65}
+  ],
+  "cervicalScreening": [
+    {"year": 2010, "uptakePct": 79},
+    {"year": 2013, "uptakePct": 78},
+    {"year": 2016, "uptakePct": 77},
+    {"year": 2018, "uptakePct": 74},
+    {"year": 2019, "uptakePct": 73},
+    {"year": 2021, "uptakePct": 70},
+    {"year": 2022, "uptakePct": 71}
+  ],
+  "byDeprivation": [
+    {"quintile": "Least deprived", "cervicalPct": 78},
+    {"quintile": "Second quintile", "cervicalPct": 74},
+    {"quintile": "Middle quintile", "cervicalPct": 72},
+    {"quintile": "Fourth quintile", "cervicalPct": 69},
+    {"quintile": "Most deprived", "cervicalPct": 63}
+  ]
+}

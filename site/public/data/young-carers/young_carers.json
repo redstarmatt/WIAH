@@ -1,0 +1,22 @@
+{
+  "youngCarersMentalHealth": [
+    {"year": 2015, "pctMHDifficulties": 28},
+    {"year": 2017, "pctMHDifficulties": 32},
+    {"year": 2019, "pctMHDifficulties": 36},
+    {"year": 2021, "pctMHDifficulties": 39},
+    {"year": 2023, "pctMHDifficulties": 42}
+  ],
+  "caregivingHours": [
+    {"band": "Under 5 hours/week", "pct": 28},
+    {"band": "5-19 hours/week", "pct": 42},
+    {"band": "20-49 hours/week", "pct": 19},
+    {"band": "50+ hours/week", "pct": 11}
+  ],
+  "byConditionCaredFor": [
+    {"condition": "Physical disability/illness", "pct": 35},
+    {"condition": "Mental health condition", "pct": 28},
+    {"condition": "Substance misuse", "pct": 16},
+    {"condition": "Old age/frailty", "pct": 12},
+    {"condition": "Learning disability", "pct": 9}
+  ]
+}

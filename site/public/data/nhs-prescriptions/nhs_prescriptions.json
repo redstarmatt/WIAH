@@ -1,0 +1,62 @@
+{
+  "national": {
+    "prescriptionVolume": {
+      "timeSeries": [
+        {"year": 2012, "itemsMillions": 900},
+        {"year": 2013, "itemsMillions": 930},
+        {"year": 2014, "itemsMillions": 953},
+        {"year": 2015, "itemsMillions": 971},
+        {"year": 2016, "itemsMillions": 990},
+        {"year": 2017, "itemsMillions": 1016},
+        {"year": 2018, "itemsMillions": 1025},
+        {"year": 2019, "itemsMillions": 1040},
+        {"year": 2020, "itemsMillions": 1001},
+        {"year": 2021, "itemsMillions": 1060},
+        {"year": 2022, "itemsMillions": 1080},
+        {"year": 2023, "itemsMillions": 1100}
+      ],
+      "latestYear": 2023,
+      "latestMillions": 1100,
+      "chargePerItemGBP": 9.90,
+      "freePct": 90
+    },
+    "nhsDrugCost": {
+      "timeSeries": [
+        {"year": 2012, "costBillionGBP": 8.0},
+        {"year": 2013, "costBillionGBP": 8.3},
+        {"year": 2014, "costBillionGBP": 8.7},
+        {"year": 2015, "costBillionGBP": 9.0},
+        {"year": 2016, "costBillionGBP": 9.2},
+        {"year": 2017, "costBillionGBP": 9.0},
+        {"year": 2018, "costBillionGBP": 9.1},
+        {"year": 2019, "costBillionGBP": 9.3},
+        {"year": 2020, "costBillionGBP": 9.5},
+        {"year": 2021, "costBillionGBP": 9.8},
+        {"year": 2022, "costBillionGBP": 10.2},
+        {"year": 2023, "costBillionGBP": 10.8}
+      ],
+      "latestYear": 2023,
+      "latestBillionGBP": 10.8
+    },
+    "byExemptionType": [
+      {"type": "60+ years old", "sharePct": 43},
+      {"type": "Medical exemption", "sharePct": 31},
+      {"type": "Prepayment certificate", "sharePct": 8},
+      {"type": "Income support / UC", "sharePct": 7},
+      {"type": "Under 16 / in education", "sharePct": 6},
+      {"type": "Paid charge", "sharePct": 5}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS Business Services Authority", "dataset": "Prescription Cost Analysis", "url": "https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england", "frequency": "annual"},
+      {"name": "DHSC", "dataset": "Prescription Charges Statistics", "url": "https://www.gov.uk/government/collections/prescription-charges-statistics", "frequency": "annual"}
+    ],
+    "methodology": "Prescription volume and cost from NHS Business Services Authority Prescription Cost Analysis. Volume is counted in prescription items (each individual medicine on a prescription counts as one item). NHS drug cost is the net ingredient cost to the NHS. Exemption data from NHSBSA prescription charge statistics. The 750,000 skipping medication estimate is from a Prescription Charges Coalition / YouGov survey.",
+    "knownIssues": [
+      "NHS drug cost is net ingredient cost and does not include dispensing fees or other pharmacy costs",
+      "Exemption categories are not mutually exclusive — a person may qualify under multiple categories",
+      "The 750,000 skip-medication estimate is survey-based and may undercount or overcount"
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "topic": "university-funding",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "studentDebt": {
+      "timeSeries": [
+        {"year": 2012, "averageDebtThousandsGBP": 16.2},
+        {"year": 2013, "averageDebtThousandsGBP": 18.5},
+        {"year": 2014, "averageDebtThousandsGBP": 20.5},
+        {"year": 2015, "averageDebtThousandsGBP": 23.1},
+        {"year": 2016, "averageDebtThousandsGBP": 25.6},
+        {"year": 2017, "averageDebtThousandsGBP": 29.4},
+        {"year": 2018, "averageDebtThousandsGBP": 33.9},
+        {"year": 2019, "averageDebtThousandsGBP": 36.8},
+        {"year": 2020, "averageDebtThousandsGBP": 38.2},
+        {"year": 2021, "averageDebtThousandsGBP": 41.3},
+        {"year": 2022, "averageDebtThousandsGBP": 43.5},
+        {"year": 2023, "averageDebtThousandsGBP": 45.8}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 45.8,
+      "neverRepayPlanTwoPct": 72,
+      "repaymentTermYearsPlanFive": 40,
+      "note": "Average loan balance at graduation for full-time English-domiciled undergraduates. Plan 2 applies to those starting 2012-2022; Plan 5 (40-year repayment) applies from 2023 entry."
+    },
+    "tuitionFees": {
+      "nominalFeeCapped2023": 9250,
+      "realTerms2023": 6800,
+      "frozenSinceYear": 2017,
+      "providersInDifficulty": 40,
+      "note": "Real terms using CPI deflation. 40% of providers in financial difficulty per OfS 2023 assessment."
+    },
+    "internationalStudents": {
+      "timeSeries": [
+        {"year": 2015, "studentsThousands": 425},
+        {"year": 2016, "studentsThousands": 440},
+        {"year": 2017, "studentsThousands": 460},
+        {"year": 2018, "studentsThousands": 480},
+        {"year": 2019, "studentsThousands": 500},
+        {"year": 2020, "studentsThousands": 530},
+        {"year": 2021, "studentsThousands": 580},
+        {"year": 2022, "studentsThousands": 640},
+        {"year": 2023, "studentsThousands": 680}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 680,
+      "pctOfAllStudents": 26,
+      "economicContributionBillionGBP": 25
+    },
+    "subjectOutcomes": [
+      {"subject": "Medicine &amp; Dentistry", "graduateJobPct": 96},
+      {"subject": "Law", "graduateJobPct": 82},
+      {"subject": "Engineering", "graduateJobPct": 80},
+      {"subject": "Computer Science", "graduateJobPct": 78},
+      {"subject": "Business", "graduateJobPct": 72},
+      {"subject": "Arts &amp; Humanities", "graduateJobPct": 65},
+      {"subject": "Creative Arts", "graduateJobPct": 58}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Student Loans Company", "dataset": "Student loans in England: Financial year 2022-23", "url": "https://www.gov.uk/government/collections/student-loans-in-england", "frequency": "annual"},
+      {"name": "HESA", "dataset": "Higher Education Student Statistics", "url": "https://www.hesa.ac.uk/data-and-analysis/students", "frequency": "annual"},
+      {"name": "Office for Students", "dataset": "Financial sustainability of higher education providers", "url": "https://www.officeforstudents.org.uk/publications/", "frequency": "annual"}
+    ],
+    "methodology": "Student debt: average outstanding loan balance at point of first graduation for English-domiciled full-time undergraduates. International students: HESA non-UK domicile headcount. Graduate employment outcomes: Graduate Outcomes Survey (15 months after graduation), proportion in 'graduate-level' employment.",
+    "knownIssues": ["Plan 2 and Plan 5 are not directly comparable repayment structures", "International student definition changed post-Brexit — some pre-2021 EU students previously counted as home students", "Graduate Outcomes Survey response rates vary by subject"]
+  }
+}

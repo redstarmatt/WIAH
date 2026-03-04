@@ -1,0 +1,108 @@
+{
+  "topic": "benefits",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "universalCredit": {
+      "timeSeries": [
+        { "date": "2016-04", "claimantsM": 0.37 },
+        { "date": "2017-04", "claimantsM": 0.80 },
+        { "date": "2018-04", "claimantsM": 1.35 },
+        { "date": "2019-04", "claimantsM": 2.11 },
+        { "date": "2020-04", "claimantsM": 3.97 },
+        { "date": "2021-04", "claimantsM": 5.74 },
+        { "date": "2022-04", "claimantsM": 5.83 },
+        { "date": "2023-04", "claimantsM": 6.05 },
+        { "date": "2024-04", "claimantsM": 6.37 },
+        { "date": "2024-10", "claimantsM": 6.61 },
+        { "date": "2025-01", "claimantsM": 6.78 }
+      ],
+      "latestClaimants": 6780000,
+      "latestDate": "Jan 2025",
+      "inWork": 3050000,
+      "inWorkPct": 44.9
+    },
+    "pip": {
+      "timeSeries": [
+        { "year": 2013, "awardedThousands": 190 },
+        { "year": 2014, "awardedThousands": 480 },
+        { "year": 2015, "awardedThousands": 800 },
+        { "year": 2016, "awardedThousands": 1050 },
+        { "year": 2017, "awardedThousands": 1320 },
+        { "year": 2018, "awardedThousands": 1670 },
+        { "year": 2019, "awardedThousands": 1980 },
+        { "year": 2020, "awardedThousands": 2220 },
+        { "year": 2021, "awardedThousands": 2490 },
+        { "year": 2022, "awardedThousands": 2870 },
+        { "year": 2023, "awardedThousands": 3350 },
+        { "year": 2024, "awardedThousands": 3660 }
+      ],
+      "latestAwards": 3660000,
+      "latestYear": 2024,
+      "note": "Personal Independence Payment recipients, thousands"
+    },
+    "sanctions": {
+      "timeSeries": [
+        { "year": 2015, "sanctionDecisionsThousands": 511 },
+        { "year": 2016, "sanctionDecisionsThousands": 484 },
+        { "year": 2017, "sanctionDecisionsThousands": 401 },
+        { "year": 2018, "sanctionDecisionsThousands": 447 },
+        { "year": 2019, "sanctionDecisionsThousands": 492 },
+        { "year": 2020, "sanctionDecisionsThousands": 169 },
+        { "year": 2021, "sanctionDecisionsThousands": 243 },
+        { "year": 2022, "sanctionDecisionsThousands": 428 },
+        { "year": 2023, "sanctionDecisionsThousands": 556 },
+        { "year": 2024, "sanctionDecisionsThousands": 612 }
+      ]
+    },
+    "foodBanks": {
+      "timeSeries": [
+        { "year": "2015/16", "parcelsThousands": 1109 },
+        { "year": "2016/17", "parcelsThousands": 1182 },
+        { "year": "2017/18", "parcelsThousands": 1332 },
+        { "year": "2018/19", "parcelsThousands": 1583 },
+        { "year": "2019/20", "parcelsThousands": 1893 },
+        { "year": "2020/21", "parcelsThousands": 2534 },
+        { "year": "2021/22", "parcelsThousands": 2173 },
+        { "year": "2022/23", "parcelsThousands": 3026 },
+        { "year": "2023/24", "parcelsThousands": 3121 }
+      ],
+      "latestYear": "2023/24",
+      "latestParcels": 3121000,
+      "note": "Trussell Trust food bank parcels distributed in UK"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DWP",
+        "dataset": "Universal Credit statistics",
+        "url": "https://www.gov.uk/government/collections/universal-credit-statistics",
+        "frequency": "monthly"
+      },
+      {
+        "name": "DWP",
+        "dataset": "Personal Independence Payment: official statistics",
+        "url": "https://www.gov.uk/government/collections/personal-independence-payment-statistics",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "DWP",
+        "dataset": "Benefit sanctions statistics",
+        "url": "https://www.gov.uk/government/collections/benefit-sanctions-statistics",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Trussell Trust",
+        "dataset": "End of Year Stats &mdash; food bank use",
+        "url": "https://www.trusselltrust.org/news-and-blog/latest-stats/end-year-stats/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Universal Credit data shows claimants receiving payment in the reference month. PIP data covers live awards at the end of each year. Sanctions data covers decisions to apply a sanction. Food bank data is Trussell Trust network only &mdash; actual use is higher.",
+    "knownIssues": [
+      "UC claimant count surged in 2020 due to COVID-19 &mdash; this is a structural break",
+      "PIP replaced DLA from 2013 &mdash; pre-2013 comparison requires disability living allowance data",
+      "Food bank data is Trussell Trust network only; independent food banks not included"
+    ]
+  }
+}

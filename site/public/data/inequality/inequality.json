@@ -1,0 +1,63 @@
+{
+  "topic": "inequality",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "incomeGini": {
+      "timeSeries": [
+        {"year": "2010/11", "giniCoefficient": 0.36},
+        {"year": "2011/12", "giniCoefficient": 0.35},
+        {"year": "2012/13", "giniCoefficient": 0.34},
+        {"year": "2013/14", "giniCoefficient": 0.34},
+        {"year": "2014/15", "giniCoefficient": 0.34},
+        {"year": "2015/16", "giniCoefficient": 0.34},
+        {"year": "2016/17", "giniCoefficient": 0.35},
+        {"year": "2017/18", "giniCoefficient": 0.35},
+        {"year": "2018/19", "giniCoefficient": 0.36},
+        {"year": "2019/20", "giniCoefficient": 0.35},
+        {"year": "2020/21", "giniCoefficient": 0.34},
+        {"year": "2021/22", "giniCoefficient": 0.35},
+        {"year": "2022/23", "giniCoefficient": 0.35}
+      ],
+      "latestYear": "2022/23",
+      "latestGini": 0.35
+    },
+    "incomeShares": {
+      "timeSeries": [
+        {"year": "2010/11", "top10Pct": 30, "bottom50Pct": 23},
+        {"year": "2012/13", "top10Pct": 29, "bottom50Pct": 23},
+        {"year": "2014/15", "top10Pct": 29, "bottom50Pct": 24},
+        {"year": "2016/17", "top10Pct": 29, "bottom50Pct": 24},
+        {"year": "2018/19", "top10Pct": 30, "bottom50Pct": 23},
+        {"year": "2020/21", "top10Pct": 28, "bottom50Pct": 24},
+        {"year": "2022/23", "top10Pct": 29, "bottom50Pct": 23}
+      ],
+      "latestYear": "2022/23",
+      "latestTop10Pct": 29,
+      "latestBottom50Pct": 23
+    },
+    "wealthDistribution": [
+      {"decile": "Top 10%", "wealthSharePct": 43},
+      {"decile": "Next 10% (80-90)", "wealthSharePct": 16},
+      {"decile": "Next 10% (70-80)", "wealthSharePct": 11},
+      {"decile": "Middle 40% (30-70)", "wealthSharePct": 25},
+      {"decile": "Bottom 30%", "wealthSharePct": 5}
+    ],
+    "internationalComparison": [
+      {"country": "UK", "giniCoefficient": 0.35},
+      {"country": "USA", "giniCoefficient": 0.39},
+      {"country": "Germany", "giniCoefficient": 0.29},
+      {"country": "France", "giniCoefficient": 0.30},
+      {"country": "Sweden", "giniCoefficient": 0.27},
+      {"country": "OECD avg", "giniCoefficient": 0.32}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Effects of Taxes and Benefits on UK Household Income", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/theeffectsoftaxesandbenefitsonhouseholdincome", "frequency": "annual"},
+      {"name": "ONS", "dataset": "Wealth and Assets Survey", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/debt/bulletins/wealthingreatbritainwave7/2018to2020", "frequency": "biennial"},
+      {"name": "OECD", "dataset": "Income Distribution Database", "url": "https://stats.oecd.org/index.aspx?DataSetCode=IDD", "frequency": "annual"}
+    ],
+    "methodology": "Gini coefficient from ONS Effects of Taxes and Benefits series using Family Resources Survey. Measures inequality in equivalised disposable household income (post-tax and benefits). Wealth distribution from ONS Wealth and Assets Survey (biennial). International comparisons from OECD IDD (post-tax, post-transfer income).",
+    "knownIssues": ["Household income surveys underrepresent high earners at the top of the distribution", "Wealth survey excludes defined benefit pension rights until 2006; inclusion increases measured wealth inequality significantly", "International Gini comparisons affected by different survey methodologies across countries"]
+  }
+}

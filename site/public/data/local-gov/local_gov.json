@@ -1,0 +1,97 @@
+{
+  "topic": "local-gov",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "fundingReduction": {
+      "timeSeries": [
+        { "year": "2010/11", "realTermsFundingIndexed": 100 },
+        { "year": "2011/12", "realTermsFundingIndexed": 94 },
+        { "year": "2012/13", "realTermsFundingIndexed": 89 },
+        { "year": "2013/14", "realTermsFundingIndexed": 84 },
+        { "year": "2014/15", "realTermsFundingIndexed": 79 },
+        { "year": "2015/16", "realTermsFundingIndexed": 73 },
+        { "year": "2016/17", "realTermsFundingIndexed": 71 },
+        { "year": "2017/18", "realTermsFundingIndexed": 70 },
+        { "year": "2018/19", "realTermsFundingIndexed": 69 },
+        { "year": "2019/20", "realTermsFundingIndexed": 69 },
+        { "year": "2020/21", "realTermsFundingIndexed": 70 },
+        { "year": "2021/22", "realTermsFundingIndexed": 71 },
+        { "year": "2022/23", "realTermsFundingIndexed": 69 },
+        { "year": "2023/24", "realTermsFundingIndexed": 68 }
+      ],
+      "latestYear": "2023/24",
+      "latestIndex": 68,
+      "note": "Real-terms core funding (central government grants + council tax), indexed to 2010/11=100. IFS analysis."
+    },
+    "section114Notices": {
+      "councils": [
+        { "council": "Slough Borough Council", "year": 2021, "estimatedDeficit": 590 },
+        { "council": "Thurrock Council", "year": 2022, "estimatedDeficit": 469 },
+        { "council": "Croydon London Borough", "year": 2020, "estimatedDeficit": 66 },
+        { "council": "Croydon London Borough (2nd)", "year": 2022, "estimatedDeficit": 100 },
+        { "council": "Woking Borough Council", "year": 2023, "estimatedDeficit": 1200 },
+        { "council": "Birmingham City Council", "year": 2023, "estimatedDeficit": 760 },
+        { "council": "Nottingham City Council", "year": 2023, "estimatedDeficit": 54 },
+        { "council": "Nottingham City Council (2nd)", "year": 2024, "estimatedDeficit": 69 }
+      ],
+      "totalDeficitMillions": 3308,
+      "note": "Section 114 notices issued (effective local council insolvency). Deficit in £millions."
+    },
+    "councilTax": {
+      "timeSeries": [
+        { "year": "2010/11", "averageBandDGBP": 1196 },
+        { "year": "2011/12", "averageBandDGBP": 1205 },
+        { "year": "2012/13", "averageBandDGBP": 1205 },
+        { "year": "2013/14", "averageBandDGBP": 1203 },
+        { "year": "2014/15", "averageBandDGBP": 1196 },
+        { "year": "2015/16", "averageBandDGBP": 1199 },
+        { "year": "2016/17", "averageBandDGBP": 1286 },
+        { "year": "2017/18", "averageBandDGBP": 1352 },
+        { "year": "2018/19", "averageBandDGBP": 1407 },
+        { "year": "2019/20", "averageBandDGBP": 1449 },
+        { "year": "2020/21", "averageBandDGBP": 1522 },
+        { "year": "2021/22", "averageBandDGBP": 1584 },
+        { "year": "2022/23", "averageBandDGBP": 1671 },
+        { "year": "2023/24", "averageBandDGBP": 1779 },
+        { "year": "2024/25", "averageBandDGBP": 1900 }
+      ],
+      "latestYear": "2024/25",
+      "latestBandD": 1900,
+      "changeFrom2010": 704
+    },
+    "serviceSpending": {
+      "latestYear": "2022/23",
+      "categories": [
+        { "service": "Adult social care", "realTermsChangeFrom2010Pct": -7 },
+        { "service": "Children's services", "realTermsChangeFrom2010Pct": 12 },
+        { "service": "Highways & transport", "realTermsChangeFrom2010Pct": -41 },
+        { "service": "Planning & development", "realTermsChangeFrom2010Pct": -52 },
+        { "service": "Housing", "realTermsChangeFrom2010Pct": -15 },
+        { "service": "Libraries & culture", "realTermsChangeFrom2010Pct": -37 },
+        { "service": "Environmental services", "realTermsChangeFrom2010Pct": -28 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "MHCLG",
+        "dataset": "Local authority revenue expenditure and financing",
+        "url": "https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing",
+        "frequency": "annual"
+      },
+      {
+        "name": "IFS",
+        "dataset": "English local government funding analysis",
+        "url": "https://ifs.org.uk/publications/local-government-funding-and-service-data",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Funding index from IFS analysis of core spending power (central government grants and council tax). Real-terms deflation uses GDP deflator. Section 114 notices are formal notifications to full council that expenditure will exceed resources. Service spending changes from MHCLG outturn data.",
+    "knownIssues": [
+      "Core spending power includes council tax which councils can raise — masking the scale of central government grant reductions",
+      "Section 114 figure includes notional deficits — actual costs depend on government intervention",
+      "Service spending reductions in non-statutory services (libraries, parks) may be larger than statutory services (adult social care)"
+    ]
+  }
+}

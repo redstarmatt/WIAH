@@ -1,0 +1,58 @@
+{
+  "national": {
+    "averageRent": {
+      "timeSeries": [
+        { "year": 2011, "monthlyGBP": 700 },
+        { "year": 2012, "monthlyGBP": 730 },
+        { "year": 2013, "monthlyGBP": 750 },
+        { "year": 2014, "monthlyGBP": 770 },
+        { "year": 2015, "monthlyGBP": 790 },
+        { "year": 2016, "monthlyGBP": 810 },
+        { "year": 2017, "monthlyGBP": 840 },
+        { "year": 2018, "monthlyGBP": 870 },
+        { "year": 2019, "monthlyGBP": 905 },
+        { "year": 2020, "monthlyGBP": 940 },
+        { "year": 2021, "monthlyGBP": 990 },
+        { "year": 2022, "monthlyGBP": 1160 },
+        { "year": 2023, "monthlyGBP": 1279 }
+      ],
+      "latestYear": 2023,
+      "latestMonthlyGBP": 1279,
+      "londonMonthlyGBP": 2121,
+      "outsideLondonGBP": 1076,
+      "incomeSharePct": 34
+    },
+    "affordability": {
+      "timeSeries": [
+        { "year": 2011, "rentToIncomePct": 28 },
+        { "year": 2013, "rentToIncomePct": 29 },
+        { "year": 2015, "rentToIncomePct": 30 },
+        { "year": 2017, "rentToIncomePct": 31 },
+        { "year": 2019, "rentToIncomePct": 31 },
+        { "year": 2021, "rentToIncomePct": 32 },
+        { "year": 2023, "rentToIncomePct": 34 }
+      ],
+      "latestYear": 2023,
+      "latestPct": 34
+    },
+    "rentByRegion": [
+      { "region": "London", "monthlyGBP": 2121 },
+      { "region": "South East", "monthlyGBP": 1395 },
+      { "region": "East of England", "monthlyGBP": 1180 },
+      { "region": "South West", "monthlyGBP": 1095 },
+      { "region": "East Midlands", "monthlyGBP": 920 },
+      { "region": "West Midlands", "monthlyGBP": 935 },
+      { "region": "Yorkshire", "monthlyGBP": 865 },
+      { "region": "North West", "monthlyGBP": 900 },
+      { "region": "North East", "monthlyGBP": 685 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "ONS", "dataset": "Private rental market statistics", "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/indexofprivatehousingrentalprices/latest", "frequency": "monthly" },
+      { "name": "MHCLG", "dataset": "English Housing Survey", "url": "https://www.gov.uk/government/collections/english-housing-survey", "frequency": "annual" }
+    ],
+    "methodology": "Average rent data from ONS Index of Private Housing Rental Prices (IPHRP). Rent-to-income ratio from English Housing Survey analysis. Regional figures from ONS rental market statistics. Section 21 data from MoJ possession statistics.",
+    "knownIssues": ["Average rent figures include all tenancies, not just new lets; new lets command a significant premium.", "Affordability data from English Housing Survey has a 2-year lag.", "Section 21 data shows notices issued, not actual evictions."]
+  }
+}

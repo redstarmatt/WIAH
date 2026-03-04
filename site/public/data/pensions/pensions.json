@@ -1,0 +1,90 @@
+{
+  "topic": "pensions",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "statePension": {
+      "timeSeries": [
+        {"year": 2010, "weeklyGBP": 97.65},
+        {"year": 2011, "weeklyGBP": 102.15},
+        {"year": 2012, "weeklyGBP": 107.45},
+        {"year": 2013, "weeklyGBP": 110.15},
+        {"year": 2014, "weeklyGBP": 113.10},
+        {"year": 2015, "weeklyGBP": 115.95},
+        {"year": 2016, "weeklyGBP": 119.30},
+        {"year": 2017, "weeklyGBP": 122.30},
+        {"year": 2018, "weeklyGBP": 125.95},
+        {"year": 2019, "weeklyGBP": 129.20},
+        {"year": 2020, "weeklyGBP": 134.25},
+        {"year": 2021, "weeklyGBP": 137.60},
+        {"year": 2022, "weeklyGBP": 141.85},
+        {"year": 2023, "weeklyGBP": 156.20},
+        {"year": 2024, "weeklyGBP": 169.50},
+        {"year": 2025, "weeklyGBP": 221.20}
+      ],
+      "latestYear": 2025,
+      "latestWeeklyGBP": 221.20,
+      "tripleLock": true
+    },
+    "autoEnrolment": {
+      "timeSeries": [
+        {"year": 2012, "enrolledMillions": 0.9},
+        {"year": 2013, "enrolledMillions": 2.1},
+        {"year": 2014, "enrolledMillions": 5.2},
+        {"year": 2015, "enrolledMillions": 8.4},
+        {"year": 2016, "enrolledMillions": 14.3},
+        {"year": 2017, "enrolledMillions": 18.7},
+        {"year": 2018, "enrolledMillions": 20.1},
+        {"year": 2019, "enrolledMillions": 21.1},
+        {"year": 2020, "enrolledMillions": 21.5},
+        {"year": 2021, "enrolledMillions": 22.0},
+        {"year": 2022, "enrolledMillions": 22.3},
+        {"year": 2023, "enrolledMillions": 22.6}
+      ],
+      "latestYear": 2023,
+      "latestEnrolledMillions": 22.6,
+      "eligibleWorkersPct": 88
+    },
+    "pensionerPoverty": {
+      "timeSeries": [
+        {"year": 2010, "afterHousingCostsPct": 20.0},
+        {"year": 2011, "afterHousingCostsPct": 19.2},
+        {"year": 2012, "afterHousingCostsPct": 18.1},
+        {"year": 2013, "afterHousingCostsPct": 17.0},
+        {"year": 2014, "afterHousingCostsPct": 16.2},
+        {"year": 2015, "afterHousingCostsPct": 16.0},
+        {"year": 2016, "afterHousingCostsPct": 15.4},
+        {"year": 2017, "afterHousingCostsPct": 15.9},
+        {"year": 2018, "afterHousingCostsPct": 15.8},
+        {"year": 2019, "afterHousingCostsPct": 17.0},
+        {"year": 2020, "afterHousingCostsPct": 17.6},
+        {"year": 2021, "afterHousingCostsPct": 18.1},
+        {"year": 2022, "afterHousingCostsPct": 18.7},
+        {"year": 2023, "afterHousingCostsPct": 19.1}
+      ],
+      "latestYear": 2023,
+      "latestPct": 19.1,
+      "pensionersInPovertyMillions": 2.1
+    },
+    "genderPensionGap": {
+      "timeSeries": [
+        {"year": 2016, "gapGBP": 7500},
+        {"year": 2018, "gapGBP": 7800},
+        {"year": 2020, "gapGBP": 8100},
+        {"year": 2022, "gapGBP": 7900}
+      ],
+      "latestYear": 2022,
+      "latestGapGBP": 7900,
+      "note": "Annual private pension income gap between men and women"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "DWP", "dataset": "State Pension statistics", "url": "https://www.gov.uk/government/collections/dwp-statistical-summaries", "frequency": "annual"},
+      {"name": "DWP", "dataset": "Automatic enrolment statistics", "url": "https://www.gov.uk/government/collections/automatic-enrolment-statistics", "frequency": "annual"},
+      {"name": "DWP/ONS", "dataset": "Households Below Average Income", "url": "https://www.gov.uk/government/collections/households-below-average-income-hbai--2", "frequency": "annual"},
+      {"name": "ONS", "dataset": "Occupational pension schemes survey", "url": "https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/occupationalpensionscheme", "frequency": "annual"}
+    ],
+    "methodology": "State pension figures are the full new state pension rate. Auto-enrolment figures from DWP annual statistics. Pensioner poverty uses relative low income after housing costs (below 60% of median). Gender pension gap is median annual private pension income difference.",
+    "knownIssues": ["State pension rates pre-2016 are the basic state pension (different from new state pension)", "Auto-enrolment figures include workers who may have opted out (typically 10-12%)", "Pensioner poverty after housing costs may overstate or understate depending on owned outright vs renting"]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "topic": "alcohol",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "hospitalAdmissions": {
+      "timeSeries": [
+        { "year": 2010, "admissionsThousands": 839 },
+        { "year": 2011, "admissionsThousands": 865 },
+        { "year": 2012, "admissionsThousands": 884 },
+        { "year": 2013, "admissionsThousands": 904 },
+        { "year": 2014, "admissionsThousands": 916 },
+        { "year": 2015, "admissionsThousands": 925 },
+        { "year": 2016, "admissionsThousands": 930 },
+        { "year": 2017, "admissionsThousands": 940 },
+        { "year": 2018, "admissionsThousands": 950 },
+        { "year": 2019, "admissionsThousands": 955 },
+        { "year": 2020, "admissionsThousands": 890 },
+        { "year": 2021, "admissionsThousands": 960 },
+        { "year": 2022, "admissionsThousands": 975 },
+        { "year": 2023, "admissionsThousands": 980 }
+      ],
+      "latestYear": 2023,
+      "latestThousands": 980
+    },
+    "deaths": {
+      "timeSeries": [
+        { "year": 2010, "deathsCount": 6669 },
+        { "year": 2011, "deathsCount": 6880 },
+        { "year": 2012, "deathsCount": 6490 },
+        { "year": 2013, "deathsCount": 6592 },
+        { "year": 2014, "deathsCount": 6831 },
+        { "year": 2015, "deathsCount": 7366 },
+        { "year": 2016, "deathsCount": 7327 },
+        { "year": 2017, "deathsCount": 7697 },
+        { "year": 2018, "deathsCount": 7551 },
+        { "year": 2019, "deathsCount": 7565 },
+        { "year": 2020, "deathsCount": 8974 },
+        { "year": 2021, "deathsCount": 9641 },
+        { "year": 2022, "deathsCount": 8209 },
+        { "year": 2023, "deathsCount": 8274 }
+      ],
+      "latestYear": 2023,
+      "latestCount": 8274
+    },
+    "consumptionByType": [
+      { "drinkType": "Beer", "unitsPerWeek": 5.2 },
+      { "drinkType": "Wine", "unitsPerWeek": 4.8 },
+      { "drinkType": "Spirits", "unitsPerWeek": 3.1 },
+      { "drinkType": "Cider", "unitsPerWeek": 1.4 },
+      { "drinkType": "Other", "unitsPerWeek": 0.5 }
+    ],
+    "drinkingAboveGuidelines": {
+      "latestPct": 21
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Alcohol-specific deaths in the UK",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholspecificdeathsintheuk/2023registrations",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS Digital",
+        "dataset": "Statistics on Alcohol England",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/statistics-on-alcohol",
+        "frequency": "annual"
+      },
+      {
+        "name": "OHID",
+        "dataset": "Alcohol treatment statistics",
+        "url": "https://www.gov.uk/government/collections/alcohol-treatment-statistics",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Hospital admissions: NHS Digital SHMI/HES data, all admissions where alcohol was the primary or secondary diagnosis. Deaths: ONS alcohol-specific deaths coding (ICD-10 codes attributable entirely to alcohol). Consumption: Health Survey for England self-reported alcohol consumption data. Units recalculated from ABV.",
+    "knownIssues": [
+      "Self-reported consumption data significantly underestimates actual consumption versus HMRC alcohol clearances data",
+      "Hospital admissions methodology changed in 2016 — narrow vs broad definition; broad measure used throughout",
+      "COVID-19 2020 caused under-recording of hospital admissions and a shift to off-trade consumption"
+    ]
+  }
+}

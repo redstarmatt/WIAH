@@ -1,0 +1,249 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
+
+// ── Types ────────────────────────────────────────────────────────────────────
+
+interface DiabetesData {
+  national: {
+    prevalence: {
+      timeSeries: Array<{ year: number; diagnosedMillions: number }>;
+      latestYear: number;
+      diagnosedMillions: number;
+      undiagnosedMillions: number;
+      atRiskMillions: number;
+    };
+    type1VsType2: Array<{ diabetesType: string; pct: number }>;
+    complications: Array<{ complication: string; annualCases: number }>;
+    preventionProgramme: {
+      timeSeries: Array<{ year: number; enrolledThousands: number }>;
+      latestYear: number;
+      latestEnrolledThousands: number;
+    };
+  };
+  metadata: {
+    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
+    methodology: string;
+    knownIssues: string[];
+  };
+}
+
+// ── Component ────────────────────────────────────────────────────────────────
+
+export default function DiabetesPage() {
+  const [data, setData] = useState<DiabetesData | null>(null);
+
+  useEffect(() => {
+    fetch('/data/diabetes/diabetes.json')
+      .then(r => r.json())
+      .then(setData)
+      .catch(console.error);
+  }, []);
+
+  // Derive series for prevalence chart
+  const prevalenceSeries: Series[] = data
+    ? [
+        {
+          id: 'diagnosed-diabetes',
+          label: 'Diagnosed diabetes',
+          colour: '#F4A261',
+          data: data.national.prevalence.timeSeries.map(d => ({
+            date: new Date(d.year, 0, 1),
+            value: d.diagnosedMillions,
+          })),
+        },
+      ]
+    : [];
+
+  const prevalenceAnnotations: Annotation[] = [
+    {
+      date: new Date(2012, 0, 1),
+      label: '2012: NHS Prevention Programme planning',
+    },
+  ];
+
+  // Derive series for prevention programme chart
+  const preventionSeries: Series[] = data
+    ? [
+        {
+          id: 'prevention-enrolments',
+          label: 'NDPP enrolments',
+          colour: '#2A9D8F',
+          data: data.national.preventionProgramme.timeSeries.map(d => ({
+            date: new Date(d.year, 0, 1),
+            value: d.enrolledThousands,
+          })),
+        },
+      ]
+    : [];
+
+  const preventionAnnotations: Annotation[] = [
+    {
+      date: new Date(2016, 0, 1),
+      label: '2016: NDPP launches',
+    },
+  ];
+
+  return (
+    <>
+      <TopicNav topic="Diabetes" />
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Diabetes"
+          question="Is Britain&apos;s Diabetes Epidemic Under Control?"
+          finding="5.6 million people in the UK have diabetes &mdash; 4.4 million diagnosed, 1.2 million undiagnosed. Type 2 diabetes has tripled since the 1990s. The NHS spends &pound;10 billion a year on diabetes care &mdash; 10% of its total budget. But 1.2 million people are at high risk of developing Type 2 diabetes and are on the NHS Diabetes Prevention Programme."
+          colour="#F4A261"
+          preposition="with"
+        />
+
+        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Diabetes prevalence in the UK has tripled in 25 years. The condition now affects 5.6 million people &mdash; 4.4 million diagnosed, 1.2 million living undiagnosed with elevated blood glucose. Type 2 accounts for 90% of cases; Type 1 (autoimmune) for 8%. The surge reflects an ageing population, rising obesity and increasingly sedentary lifestyles. The NHS spends &pound;10 billion a year on diabetes care &mdash; 10% of its entire budget. Diabetes is the leading cause of preventable blindness, preventable kidney failure and non-traumatic amputation among working-age adults in the UK.</p>
+            <p>The NHS Diabetes Prevention Programme (NDPP), launched in 2016 as the world&apos;s largest national scheme of its kind, has enrolled 680,000 people with prediabetes &mdash; those with fasting glucose of 5.5&ndash;6.9 mmol/L or HbA1c of 42&ndash;47 mmol/mol. Randomised trial evidence shows the programme reduces Type 2 onset by 37% over two years. Yet an estimated 5 million people in England have prediabetes, meaning the NDPP has reached only one in seven of those eligible. Referral and completion rates vary widely by region.</p>
+            <p>Diabetes complications exact a heavy annual toll: 24,000 cases of kidney disease, 23,000 heart attacks, 12,000 strokes, 8,000 amputations and 5,000 new cases of blindness. Amputations have fallen 20% from 10,000 a year in 2018, driven by better glucose control and foot care, yet the UK rate remains 20% above the European average. New weight-loss medicines approved for NHS use in Type 2 patients with comorbid obesity have shown significant cardiovascular benefits, though uptake remains limited by supply and cost.</p>
+          </div>
+        </section>
+
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-prevalence', label: 'Prevalence' },
+          { id: 'sec-prevention', label: 'Prevention' },
+          { id: 'sec-complications', label: 'Complications' },
+        ]} />
+
+        <ScrollReveal>
+          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            <MetricCard
+              label="People with diagnosed diabetes"
+              value="4.4M"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="2023 &middot; Up from 1.4M in 1998 &middot; 1.2M estimated undiagnosed &middot; 5M at risk of Type 2 &middot; NHS cost: &pound;10bn/year"
+              sparklineData={[1.4, 1.6, 1.8, 2.0, 2.3, 2.6, 2.9, 3.2, 3.5, 3.7, 3.9, 4.1, 4.3, 4.4]}
+              onExpand={() => {}}
+            />
+            <MetricCard
+              label="NHS Diabetes Prevention Programme enrolments"
+              value="680K"
+              direction="up"
+              polarity="up-is-good"
+              changeText="2023 cumulative &middot; Programme launched 2016 &middot; Targets high-risk prediabetes &middot; Reduces Type 2 onset by 37%"
+              sparklineData={[10, 60, 150, 250, 310, 420, 550, 680]}
+              onExpand={() => {}}
+            />
+            <MetricCard
+              label="Diabetes-related amputations (annual)"
+              value="8,000"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="2023 &middot; Down from 10,000 in 2018 &middot; Still 20% higher than European average &middot; Preventable with good glucose control"
+              sparklineData={[9800, 9500, 9200, 8800, 8500, 8200, 8000, 8000]}
+              onExpand={() => {}}
+            />
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-prevalence" className="mb-12">
+            <LineChart
+              title="Diagnosed diabetes prevalence, 1998&ndash;2023"
+              subtitle="Registered Type 1 and Type 2 diabetes, England"
+              series={prevalenceSeries}
+              yLabel="Diagnosed diabetes (millions)"
+              annotations={prevalenceAnnotations}
+              source={{
+                name: 'Diabetes UK',
+                dataset: 'Diabetes Statistics',
+                frequency: 'annual',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-prevention" className="mb-12">
+            <LineChart
+              title="NHS Diabetes Prevention Programme enrolments, 2016&ndash;2023"
+              subtitle="Cumulative people enrolled in the NDPP (England)"
+              series={preventionSeries}
+              yLabel="Enrolments (thousands)"
+              annotations={preventionAnnotations}
+              source={{
+                name: 'NHS England',
+                dataset: 'NHS Diabetes Prevention Programme statistics',
+                frequency: 'quarterly',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-complications" className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-2">Annual diabetes-related complications, England</h2>
+            <p className="text-sm text-wiah-mid font-mono mb-6">Estimated annual cases of major complications attributable to diabetes.</p>
+            {data && (
+              <div className="space-y-3">
+                {data.national.complications.map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-4">
+                    <div className="w-40 text-sm text-wiah-black flex-shrink-0">{item.complication}</div>
+                    <div className="flex-1 bg-wiah-border rounded h-5 overflow-hidden">
+                      <div
+                        className="h-full rounded"
+                        style={{ width: `${(item.annualCases / 24000) * 100}%`, backgroundColor: '#E63946' }}
+                      />
+                    </div>
+                    <div className="w-20 text-right text-sm font-mono text-wiah-black">{item.annualCases.toLocaleString()}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England &mdash; National Diabetes Audit 2022/23</p>
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout
+            title="What&apos;s improving"
+            value="680K"
+            unit="people enrolled in the NHS Diabetes Prevention Programme since 2016"
+            description="The NHS Diabetes Prevention Programme (NDPP) &mdash; the world&apos;s largest national diabetes prevention programme &mdash; has enrolled 680,000 high-risk individuals since its 2016 launch. NICE evidence shows the programme reduces Type 2 diabetes onset by 37% over two years. An estimated 5 million people in England are living with prediabetes (blood glucose above normal but below diagnostic threshold) &mdash; the programme targets this group. Diabetes-related amputations have fallen from 10,000 to 8,000 a year. The Libre flash glucose monitoring system has been made available to all Type 1 patients on the NHS, reducing HbA1c levels and emergency admissions."
+            source="Source: Diabetes UK &mdash; Diabetes Statistics 2024; NHS England &mdash; National Diabetes Audit 2022/23."
+          />
+        </ScrollReveal>
+
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid space-y-3 font-mono">
+            {data?.metadata.sources.map((src, i) => (
+              <div key={i}>
+                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
+                  {src.name} &mdash; {src.dataset}
+                </a>
+                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
+              </div>
+            ))}
+          </div>
+          <div className="text-sm text-wiah-mid mt-6 space-y-2">
+            <h3 className="font-bold">Methodology</h3>
+            <p>{data?.metadata.methodology}</p>
+          </div>
+          <div className="text-sm text-wiah-mid mt-6 space-y-2">
+            <h3 className="font-bold">Known issues</h3>
+            <ul className="list-disc list-inside space-y-1">
+              {data?.metadata.knownIssues.map((issue, i) => (
+                <li key={i}>{issue}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}

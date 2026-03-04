@@ -1,0 +1,28 @@
+{
+  "childcareCosts": [
+    {"year": 2013, "annualCostPounds": 9300},
+    {"year": 2015, "annualCostPounds": 10200},
+    {"year": 2017, "annualCostPounds": 11800},
+    {"year": 2019, "annualCostPounds": 13000},
+    {"year": 2021, "annualCostPounds": 13700},
+    {"year": 2022, "annualCostPounds": 14100},
+    {"year": 2023, "annualCostPounds": 14800}
+  ],
+  "nurseryPlaces": [
+    {"year": 2010, "registeredPlaces": 1280000},
+    {"year": 2012, "registeredPlaces": 1250000},
+    {"year": 2014, "registeredPlaces": 1210000},
+    {"year": 2016, "registeredPlaces": 1195000},
+    {"year": 2018, "registeredPlaces": 1170000},
+    {"year": 2020, "registeredPlaces": 1090000},
+    {"year": 2022, "registeredPlaces": 1050000},
+    {"year": 2023, "registeredPlaces": 1010000}
+  ],
+  "byIncomeBand": [
+    {"band": "Top quintile", "pctUsing30hr": 68},
+    {"band": "Second quintile", "pctUsing30hr": 62},
+    {"band": "Middle quintile", "pctUsing30hr": 55},
+    {"band": "Fourth quintile", "pctUsing30hr": 47},
+    {"band": "Bottom quintile", "pctUsing30hr": 38}
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "national": {
+    "suicideRate": {
+      "timeSeries": [
+        {"year": 2012, "ratePer100k": 10.1},
+        {"year": 2013, "ratePer100k": 10.1},
+        {"year": 2014, "ratePer100k": 10.0},
+        {"year": 2015, "ratePer100k": 10.0},
+        {"year": 2016, "ratePer100k": 10.1},
+        {"year": 2017, "ratePer100k": 10.1},
+        {"year": 2018, "ratePer100k": 11.2},
+        {"year": 2019, "ratePer100k": 11.0},
+        {"year": 2020, "ratePer100k": 10.0},
+        {"year": 2021, "ratePer100k": 10.4},
+        {"year": 2022, "ratePer100k": 10.7}
+      ],
+      "latestYear": 2022,
+      "latestRate": 10.7,
+      "latestDeaths": 5642
+    },
+    "selfHarmAE": {
+      "timeSeries": [
+        {"year": 2012, "presentationsThousands": 115},
+        {"year": 2013, "presentationsThousands": 120},
+        {"year": 2014, "presentationsThousands": 128},
+        {"year": 2015, "presentationsThousands": 138},
+        {"year": 2016, "presentationsThousands": 152},
+        {"year": 2017, "presentationsThousands": 165},
+        {"year": 2018, "presentationsThousands": 185},
+        {"year": 2019, "presentationsThousands": 200},
+        {"year": 2020, "presentationsThousands": 172},
+        {"year": 2021, "presentationsThousands": 210},
+        {"year": 2022, "presentationsThousands": 225}
+      ],
+      "latestYear": 2022,
+      "latestThousands": 225
+    },
+    "byAgeGroup": [
+      {"ageGroup": "10-24", "ratePer100k": 5.5},
+      {"ageGroup": "25-34", "ratePer100k": 12.7},
+      {"ageGroup": "35-49", "ratePer100k": 16.3},
+      {"ageGroup": "50-64", "ratePer100k": 14.2},
+      {"ageGroup": "65-74", "ratePer100k": 9.8},
+      {"ageGroup": "75+", "ratePer100k": 11.9}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Suicides in England and Wales", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/suicidesintheunitedkingdom/2022registrations", "frequency": "annual"},
+      {"name": "NHS England", "dataset": "A&E Attendances and Emergency Admissions", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/", "frequency": "monthly"}
+    ],
+    "methodology": "Suicide rates are age-standardised rates per 100,000 population, registered deaths in England and Wales. ONS figures use ICD-10 codes X60-X84 (intentional self-harm) and Y10-Y34 (events of undetermined intent). Self-harm A&E data from NHS England SitReps.",
+    "knownIssues": [
+      "Suicide data lags by 12-18 months due to inquest process",
+      "Under-reporting likely — some road traffic deaths and overdoses not classified as suicide",
+      "Self-harm A&E data excludes primary care and community presentations"
+    ]
+  }
+}

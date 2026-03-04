@@ -1,0 +1,33 @@
+{
+  "foodBankUse": [
+    {"year": 2012, "parcels": 128697},
+    {"year": 2013, "parcels": 346992},
+    {"year": 2014, "parcels": 913138},
+    {"year": 2015, "parcels": 1084604},
+    {"year": 2016, "parcels": 1109309},
+    {"year": 2017, "parcels": 1182954},
+    {"year": 2018, "parcels": 1332952},
+    {"year": 2019, "parcels": 1583668},
+    {"year": 2020, "parcels": 1900000},
+    {"year": 2021, "parcels": 2173158},
+    {"year": 2022, "parcels": 2512970},
+    {"year": 2023, "parcels": 3121515}
+  ],
+  "childFoodInsecurity": [
+    {"year": 2018, "pct": 11},
+    {"year": 2019, "pct": 12},
+    {"year": 2020, "pct": 14},
+    {"year": 2021, "pct": 16},
+    {"year": 2022, "pct": 18},
+    {"year": 2023, "pct": 20}
+  ],
+  "byReason": [
+    {"reason": "Benefit delays/changes", "pct": 28},
+    {"reason": "Low income", "pct": 27},
+    {"reason": "Cost of living", "pct": 18},
+    {"reason": "Debt", "pct": 9},
+    {"reason": "Homelessness/housing", "pct": 8},
+    {"reason": "Domestic abuse", "pct": 5},
+    {"reason": "Other", "pct": 5}
+  ]
+}

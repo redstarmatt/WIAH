@@ -1,0 +1,103 @@
+{
+  "topic": "democracy",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "voterTurnout": {
+      "timeSeries": [
+        { "year": 1992, "generalElection": true, "turnoutPct": 77.7, "label": "1992 GE" },
+        { "year": 1997, "generalElection": true, "turnoutPct": 71.4, "label": "1997 GE" },
+        { "year": 2001, "generalElection": true, "turnoutPct": 59.4, "label": "2001 GE" },
+        { "year": 2005, "generalElection": true, "turnoutPct": 61.4, "label": "2005 GE" },
+        { "year": 2010, "generalElection": true, "turnoutPct": 65.1, "label": "2010 GE" },
+        { "year": 2015, "generalElection": true, "turnoutPct": 66.1, "label": "2015 GE" },
+        { "year": 2016, "generalElection": false, "turnoutPct": 72.2, "label": "2016 EU Ref" },
+        { "year": 2017, "generalElection": true, "turnoutPct": 68.8, "label": "2017 GE" },
+        { "year": 2019, "generalElection": true, "turnoutPct": 67.3, "label": "2019 GE" },
+        { "year": 2024, "generalElection": true, "turnoutPct": 59.9, "label": "2024 GE" }
+      ],
+      "latestYear": 2024,
+      "latestTurnout": 59.9
+    },
+    "trustInParliament": {
+      "timeSeries": [
+        { "year": 2003, "trustPct": 24 },
+        { "year": 2005, "trustPct": 22 },
+        { "year": 2007, "trustPct": 26 },
+        { "year": 2009, "trustPct": 13 },
+        { "year": 2011, "trustPct": 19 },
+        { "year": 2013, "trustPct": 18 },
+        { "year": 2015, "trustPct": 21 },
+        { "year": 2017, "trustPct": 24 },
+        { "year": 2019, "trustPct": 17 },
+        { "year": 2021, "trustPct": 23 },
+        { "year": 2022, "trustPct": 15 },
+        { "year": 2023, "trustPct": 16 },
+        { "year": 2024, "trustPct": 17 }
+      ],
+      "latestYear": 2024,
+      "latestTrustPct": 17
+    },
+    "electoralRegistration": {
+      "timeSeries": [
+        { "year": 2015, "registeredM": 46.5, "estimatedEligibleM": 48.1 },
+        { "year": 2016, "registeredM": 46.9, "estimatedEligibleM": 48.5 },
+        { "year": 2017, "registeredM": 46.8, "estimatedEligibleM": 48.9 },
+        { "year": 2018, "registeredM": 47.1, "estimatedEligibleM": 49.2 },
+        { "year": 2019, "registeredM": 47.6, "estimatedEligibleM": 49.6 },
+        { "year": 2020, "registeredM": 47.9, "estimatedEligibleM": 50.0 },
+        { "year": 2021, "registeredM": 47.2, "estimatedEligibleM": 50.3 },
+        { "year": 2022, "registeredM": 47.8, "estimatedEligibleM": 50.6 },
+        { "year": 2023, "registeredM": 48.1, "estimatedEligibleM": 51.0 },
+        { "year": 2024, "registeredM": 48.3, "estimatedEligibleM": 51.4 }
+      ]
+    },
+    "partyDonations": {
+      "timeSeries": [
+        { "year": 2015, "conservativeM": 41.7, "labourM": 27.6 },
+        { "year": 2016, "conservativeM": 21.2, "labourM": 45.2 },
+        { "year": 2017, "conservativeM": 46.8, "labourM": 55.9 },
+        { "year": 2018, "conservativeM": 19.0, "labourM": 14.2 },
+        { "year": 2019, "conservativeM": 37.0, "labourM": 28.4 },
+        { "year": 2020, "conservativeM": 16.7, "labourM": 12.3 },
+        { "year": 2021, "conservativeM": 19.7, "labourM": 13.7 },
+        { "year": 2022, "conservativeM": 24.1, "labourM": 18.9 },
+        { "year": 2023, "conservativeM": 22.6, "labourM": 26.3 },
+        { "year": 2024, "conservativeM": 14.8, "labourM": 41.2 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Electoral Commission",
+        "dataset": "UK Parliamentary general election results",
+        "url": "https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums",
+        "frequency": "per election"
+      },
+      {
+        "name": "Ipsos",
+        "dataset": "Trust in Professions and Institutions survey",
+        "url": "https://www.ipsos.com/en-uk/trust-polls",
+        "frequency": "annual"
+      },
+      {
+        "name": "Electoral Commission",
+        "dataset": "UK electoral registration statistics",
+        "url": "https://www.electoralcommission.org.uk/research-reports-and-data/electoral-data/electoral-registration-statistics",
+        "frequency": "annual"
+      },
+      {
+        "name": "Electoral Commission",
+        "dataset": "Political party donations and spending",
+        "url": "https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/financial-reporting/donations-and-loans",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Turnout figures are percentage of registered electorate. Trust figures are from Ipsos MORI annual survey asking whether respondents trust politicians to tell the truth. Registration figures are Electoral Commission estimates.",
+    "knownIssues": [
+      "2024 general election had the second lowest turnout since universal suffrage was extended in 1950",
+      "Voter ID was introduced for the 2024 general election, potentially suppressing some turnout",
+      "Party donation figures vary significantly in election years vs non-election years"
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "topic": "nhs-waiting-times",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "waitingList": {
+      "timeSeries": [
+        { "year": 2016, "waitingMillions": 3.7 },
+        { "year": 2017, "waitingMillions": 4.0 },
+        { "year": 2018, "waitingMillions": 4.2 },
+        { "year": 2019, "waitingMillions": 4.4 },
+        { "year": 2020, "waitingMillions": 4.5 },
+        { "year": 2021, "waitingMillions": 5.8 },
+        { "year": 2022, "waitingMillions": 6.9 },
+        { "year": 2023, "waitingMillions": 7.4 },
+        { "year": 2024, "waitingMillions": 7.54 }
+      ],
+      "latestYear": 2024,
+      "latestMillions": 7.54,
+      "preCovidMillions": 4.4
+    },
+    "standardCompliance": {
+      "timeSeries": [
+        { "year": 2016, "within18wksPct": 93 },
+        { "year": 2017, "within18wksPct": 90 },
+        { "year": 2018, "within18wksPct": 87 },
+        { "year": 2019, "within18wksPct": 84 },
+        { "year": 2020, "within18wksPct": 65 },
+        { "year": 2021, "within18wksPct": 61 },
+        { "year": 2022, "within18wksPct": 60 },
+        { "year": 2023, "within18wksPct": 59 },
+        { "year": 2024, "within18wksPct": 58 }
+      ],
+      "latestYear": 2024,
+      "latestPct": 58,
+      "targetPct": 92,
+      "lastMetYear": 2016
+    },
+    "longWaits": {
+      "over52WeeksCount": 302000,
+      "over78WeeksCount": 124000,
+      "over104WeeksCount": 0
+    },
+    "bySpecialty": [
+      { "specialty": "Orthopaedics", "waitingThousands": 830 },
+      { "specialty": "Ophthalmology", "waitingThousands": 620 },
+      { "specialty": "General surgery", "waitingThousands": 510 },
+      { "specialty": "Cardiology", "waitingThousands": 380 },
+      { "specialty": "Gynaecology", "waitingThousands": 340 },
+      { "specialty": "Urology", "waitingThousands": 280 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "NHS England", "dataset": "Referral to Treatment Waiting Times Statistics", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/", "frequency": "monthly" },
+      { "name": "NHS England", "dataset": "Elective Recovery Programme", "url": "https://www.england.nhs.uk/elective-care-transformation/", "frequency": "monthly" }
+    ],
+    "methodology": "Referral to treatment (RTT) statistics measure the time from GP or consultant referral to start of first definitive treatment. The 18-week standard is a legal right under the NHS Constitution. Data includes all incomplete pathways (patients still waiting) at month end.",
+    "knownIssues": ["COVID-19 caused elective care to stop almost entirely in spring 2020 and again in early 2021, creating a large backlog.", "Some 'hidden waits' exist for patients not yet referred from primary care — actual demand may be significantly higher.", "RTT data quality varies by trust."]
+  }
+}

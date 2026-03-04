@@ -1,0 +1,90 @@
+{
+  "topic": "strikes",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "workingDaysLost": {
+      "timeSeries": [
+        { "year": 2010, "daysLostThousands": 365 },
+        { "year": 2011, "daysLostThousands": 1389 },
+        { "year": 2012, "daysLostThousands": 249 },
+        { "year": 2013, "daysLostThousands": 444 },
+        { "year": 2014, "daysLostThousands": 788 },
+        { "year": 2015, "daysLostThousands": 170 },
+        { "year": 2016, "daysLostThousands": 322 },
+        { "year": 2017, "daysLostThousands": 276 },
+        { "year": 2018, "daysLostThousands": 273 },
+        { "year": 2019, "daysLostThousands": 234 },
+        { "year": 2020, "daysLostThousands": 178 },
+        { "year": 2021, "daysLostThousands": 546 },
+        { "year": 2022, "daysLostThousands": 2487 },
+        { "year": 2023, "daysLostThousands": 3749 },
+        { "year": 2024, "daysLostThousands": 784 }
+      ],
+      "latestYear": 2024,
+      "latestDaysLostThousands": 784,
+      "peak2023": 3749000
+    },
+    "workers": {
+      "timeSeries": [
+        { "year": 2010, "workersInvolved": 122000 },
+        { "year": 2011, "workersInvolved": 1452000 },
+        { "year": 2012, "workersInvolved": 173000 },
+        { "year": 2013, "workersInvolved": 444000 },
+        { "year": 2014, "workersInvolved": 432000 },
+        { "year": 2015, "workersInvolved": 81000 },
+        { "year": 2016, "workersInvolved": 144000 },
+        { "year": 2017, "workersInvolved": 90000 },
+        { "year": 2018, "workersInvolved": 145000 },
+        { "year": 2019, "workersInvolved": 64000 },
+        { "year": 2020, "workersInvolved": 53000 },
+        { "year": 2021, "workersInvolved": 244000 },
+        { "year": 2022, "workersInvolved": 843000 },
+        { "year": 2023, "workersInvolved": 1042000 },
+        { "year": 2024, "workersInvolved": 248000 }
+      ]
+    },
+    "bySector": {
+      "latestYear": "2022/23 peak",
+      "sectors": [
+        { "sector": "Transport (rail)", "daysLostThousands": 850 },
+        { "sector": "Health (NHS)", "daysLostThousands": 614 },
+        { "sector": "Education (teachers)", "daysLostThousands": 540 },
+        { "sector": "Transport (Royal Mail)", "daysLostThousands": 210 },
+        { "sector": "Civil service / Border Force", "daysLostThousands": 145 }
+      ]
+    },
+    "realPayGrowth": {
+      "timeSeries": [
+        { "year": 2019, "publicSectorRealPayPctChange": 1.2 },
+        { "year": 2020, "publicSectorRealPayPctChange": 2.1 },
+        { "year": 2021, "publicSectorRealPayPctChange": -1.5 },
+        { "year": 2022, "publicSectorRealPayPctChange": -4.0 },
+        { "year": 2023, "publicSectorRealPayPctChange": 1.8 },
+        { "year": 2024, "publicSectorRealPayPctChange": 3.2 }
+      ],
+      "note": "Public sector real pay growth year-on-year, adjusted for CPI"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Labour disputes: working days lost",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/workplacedisputesandworkingconditions/datasets/labourdisputesinternationalagreementsonworkingdayslostworkersinvolvedanddisputesinprogressuk",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Public sector pay growth",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/averageweeklyearningsingreatbritain/latest",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Working days lost is the ONS standard measure of industrial action. Data includes all strikes and lockouts in the UK. Public sector real pay growth is AWE public sector regular pay deflated by CPI.",
+    "knownIssues": [
+      "2023 was a historical peak driven by public sector pay disputes — the largest wave since the 1970s",
+      "NHS doctors' strike (BMA) lasted unusually long — 6+ months of repeated action throughout 2023",
+      "Real pay growth estimates may vary depending on which inflation measure is used"
+    ]
+  }
+}

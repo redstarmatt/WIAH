@@ -1,0 +1,29 @@
+{
+  "lonelinessPrevalence": [
+    {"year": 2016, "pctOftenAlways": 5},
+    {"year": 2017, "pctOftenAlways": 6},
+    {"year": 2018, "pctOftenAlways": 6},
+    {"year": 2019, "pctOftenAlways": 7},
+    {"year": 2020, "pctOftenAlways": 8},
+    {"year": 2021, "pctOftenAlways": 9},
+    {"year": 2022, "pctOftenAlways": 9},
+    {"year": 2023, "pctOftenAlways": 9}
+  ],
+  "byAgeGroup": [
+    {"ageGroup": "16-24", "pctLonely": 27},
+    {"ageGroup": "25-34", "pctLonely": 20},
+    {"ageGroup": "35-44", "pctLonely": 14},
+    {"ageGroup": "45-54", "pctLonely": 12},
+    {"ageGroup": "55-64", "pctLonely": 10},
+    {"ageGroup": "65-74", "pctLonely": 8},
+    {"ageGroup": "75+", "pctLonely": 12}
+  ],
+  "byLifeCircumstance": [
+    {"circumstance": "Widowed/bereaved", "pctLonely": 38},
+    {"circumstance": "Disabled", "pctLonely": 35},
+    {"circumstance": "Single parent", "pctLonely": 32},
+    {"circumstance": "Unemployed", "pctLonely": 28},
+    {"circumstance": "Lives alone", "pctLonely": 24},
+    {"circumstance": "Renting privately", "pctLonely": 18}
+  ]
+}

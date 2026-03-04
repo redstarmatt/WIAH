@@ -1,0 +1,81 @@
+{
+  "topic": "energy-bills",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "priceCap": {
+      "timeSeries": [
+        {"quarter": "2019 Q1", "annualBillGBP": 1137},
+        {"quarter": "2019 Q3", "annualBillGBP": 1179},
+        {"quarter": "2020 Q1", "annualBillGBP": 1162},
+        {"quarter": "2020 Q3", "annualBillGBP": 1042},
+        {"quarter": "2021 Q1", "annualBillGBP": 1138},
+        {"quarter": "2021 Q3", "annualBillGBP": 1277},
+        {"quarter": "2022 Q1", "annualBillGBP": 1971},
+        {"quarter": "2022 Q2", "annualBillGBP": 1971},
+        {"quarter": "2022 Q3", "annualBillGBP": 3549},
+        {"quarter": "2022 Q4", "annualBillGBP": 2500},
+        {"quarter": "2023 Q1", "annualBillGBP": 2500},
+        {"quarter": "2023 Q2", "annualBillGBP": 2500},
+        {"quarter": "2023 Q3", "annualBillGBP": 2074},
+        {"quarter": "2023 Q4", "annualBillGBP": 1834},
+        {"quarter": "2024 Q1", "annualBillGBP": 1928},
+        {"quarter": "2024 Q2", "annualBillGBP": 1690},
+        {"quarter": "2024 Q3", "annualBillGBP": 1568},
+        {"quarter": "2024 Q4", "annualBillGBP": 1717},
+        {"quarter": "2025 Q1", "annualBillGBP": 1738}
+      ],
+      "latestQuarter": "2025 Q1",
+      "latestAnnualBillGBP": 1738,
+      "peakQuarter": "2022 Q3",
+      "peakAnnualBillGBP": 3549,
+      "note": "Ofgem price cap for typical dual fuel household (2,900kWh gas, 2,700kWh electricity)"
+    },
+    "fuelPoverty": {
+      "timeSeries": [
+        {"year": 2014, "fuelPoorHouseholdsMillions": 2.38},
+        {"year": 2015, "fuelPoorHouseholdsMillions": 2.50},
+        {"year": 2016, "fuelPoorHouseholdsMillions": 2.55},
+        {"year": 2017, "fuelPoorHouseholdsMillions": 2.52},
+        {"year": 2018, "fuelPoorHouseholdsMillions": 2.53},
+        {"year": 2019, "fuelPoorHouseholdsMillions": 2.51},
+        {"year": 2020, "fuelPoorHouseholdsMillions": 2.55},
+        {"year": 2021, "fuelPoorHouseholdsMillions": 2.67},
+        {"year": 2022, "fuelPoorHouseholdsMillions": 3.24},
+        {"year": 2023, "fuelPoorHouseholdsMillions": 3.44}
+      ],
+      "latestYear": 2023,
+      "latestMillions": 3.44,
+      "latestPct": 13.1,
+      "note": "LIHC definition: households spending more than median on energy AND with residual income below poverty threshold"
+    },
+    "governmentSupport": {
+      "timeSeries": [
+        {"year": 2022, "totalSupportBillionGBP": 37.0},
+        {"year": 2023, "totalSupportBillionGBP": 25.0},
+        {"year": 2024, "totalSupportBillionGBP": 5.0}
+      ],
+      "energyPriceGuaranteeNote": "Government capped bills at £2,500 Oct 2022 - Jun 2023 via Energy Price Guarantee"
+    },
+    "standingCharges": {
+      "timeSeries": [
+        {"year": 2019, "electricityStandingChargePencePerDay": 24.1},
+        {"year": 2020, "electricityStandingChargePencePerDay": 25.3},
+        {"year": 2021, "electricityStandingChargePencePerDay": 27.2},
+        {"year": 2022, "electricityStandingChargePencePerDay": 38.7},
+        {"year": 2023, "electricityStandingChargePencePerDay": 53.4},
+        {"year": 2024, "electricityStandingChargePencePerDay": 61.0}
+      ],
+      "latestYear": 2024,
+      "latestPencePerDay": 61.0
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Ofgem", "dataset": "Electricity and gas price cap", "url": "https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you", "frequency": "quarterly"},
+      {"name": "DESNZ", "dataset": "Annual fuel poverty statistics", "url": "https://www.gov.uk/government/collections/fuel-poverty-statistics", "frequency": "annual"},
+      {"name": "HM Treasury", "dataset": "Energy bills support schemes", "url": "https://www.gov.uk/government/publications/energy-bills-support", "frequency": "annual"}
+    ],
+    "methodology": "Price cap is for a typical dual-fuel household (2,900kWh gas + 2,700kWh electricity per year). Fuel poverty uses LIHC (Low Income High Costs) definition: households spending more than median proportion of income on energy AND with residual income below 60% of median. Government support figures include Energy Price Guarantee subsidy, Energy Bills Support Scheme, and targeted payments.",
+    "knownIssues": ["Price cap is not a cap on bills — households using more energy pay more", "Fuel poverty statistics use different definitions in different UK nations", "2022 Q3 cap of £3,549 was never implemented in full — Energy Price Guarantee capped bills at £2,500"]
+  }
+}

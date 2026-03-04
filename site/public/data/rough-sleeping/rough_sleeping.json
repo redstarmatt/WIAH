@@ -1,0 +1,59 @@
+{
+  "topic": "rough-sleeping",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "roughSleeping": {
+      "timeSeries": [
+        { "year": 2010, "count": 1768 },
+        { "year": 2011, "count": 2181 },
+        { "year": 2012, "count": 2309 },
+        { "year": 2013, "count": 2414 },
+        { "year": 2014, "count": 2744 },
+        { "year": 2015, "count": 3569 },
+        { "year": 2016, "count": 4134 },
+        { "year": 2017, "count": 4751 },
+        { "year": 2018, "count": 4677 },
+        { "year": 2019, "count": 4266 },
+        { "year": 2020, "count": 2688 },
+        { "year": 2021, "count": 2440 },
+        { "year": 2022, "count": 3069 },
+        { "year": 2023, "count": 3898 }
+      ],
+      "latestYear": 2023,
+      "latestCount": 3898,
+      "peak2017": 4751
+    },
+    "homelessnessDecisions": {
+      "timeSeries": [
+        { "year": 2019, "householdsThousands": 203 },
+        { "year": 2020, "householdsThousands": 216 },
+        { "year": 2021, "householdsThousands": 231 },
+        { "year": 2022, "householdsThousands": 254 },
+        { "year": 2023, "householdsThousands": 271 }
+      ],
+      "latestYear": 2023,
+      "latestThousands": 271
+    },
+    "temporaryAccommodation": {
+      "latestHouseholds": 104000,
+      "latestChildren": 131000,
+      "annualCostMillionGBP": 1740
+    },
+    "causesByType": [
+      { "cause": "End of private tenancy", "pct": 25 },
+      { "cause": "Family/friend breakdown", "pct": 23 },
+      { "cause": "Domestic abuse", "pct": 14 },
+      { "cause": "Leaving institutions", "pct": 9 },
+      { "cause": "Benefit changes", "pct": 8 },
+      { "cause": "Other", "pct": 21 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "MHCLG", "dataset": "Rough Sleeping Snapshot", "url": "https://www.gov.uk/government/collections/homelessness-statistics", "frequency": "annual" },
+      { "name": "MHCLG", "dataset": "Statutory Homelessness Statistics", "url": "https://www.gov.uk/government/collections/homelessness-statistics", "frequency": "quarterly" }
+    ],
+    "methodology": "Rough sleeping count: single-night autumn estimate by local authorities using street count or evidence-based estimate methodology. Statutory homelessness: households owed a duty under the Homelessness Reduction Act 2017.",
+    "knownIssues": ["Single-night rough sleeping count is a significant undercount; true numbers estimated 3-5x higher by experts.", "COVID-19 'Everyone In' scheme housed most rough sleepers in 2020, causing a temporary fall in counts.", "Temporary accommodation data: some councils have incomplete reporting."]
+  }
+}

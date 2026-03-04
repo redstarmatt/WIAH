@@ -1,0 +1,61 @@
+{
+  "national": {
+    "crownCourtBacklog": {
+      "timeSeries": [
+        { "year": 2012, "outstandingCases": 33000 },
+        { "year": 2013, "outstandingCases": 35000 },
+        { "year": 2014, "outstandingCases": 37000 },
+        { "year": 2015, "outstandingCases": 39000 },
+        { "year": 2016, "outstandingCases": 40000 },
+        { "year": 2017, "outstandingCases": 41000 },
+        { "year": 2018, "outstandingCases": 39000 },
+        { "year": 2019, "outstandingCases": 38000 },
+        { "year": 2020, "outstandingCases": 56000 },
+        { "year": 2021, "outstandingCases": 60000 },
+        { "year": 2022, "outstandingCases": 63000 },
+        { "year": 2023, "outstandingCases": 65000 },
+        { "year": 2024, "outstandingCases": 67573 }
+      ],
+      "latestYear": 2024,
+      "latestCases": 67573,
+      "targetCases": 62000
+    },
+    "completionDays": {
+      "timeSeries": [
+        { "year": 2015, "avgDays": 350 },
+        { "year": 2016, "avgDays": 370 },
+        { "year": 2017, "avgDays": 390 },
+        { "year": 2018, "avgDays": 400 },
+        { "year": 2019, "avgDays": 410 },
+        { "year": 2020, "avgDays": 560 },
+        { "year": 2021, "avgDays": 600 },
+        { "year": 2022, "avgDays": 650 },
+        { "year": 2023, "avgDays": 718 }
+      ],
+      "latestYear": 2023,
+      "latestDays": 718
+    },
+    "remandPrisoners": {
+      "latestCount": 16400,
+      "pctOfPrisonPop": 24
+    },
+    "magistratesBacklog": {
+      "latestCases": 371000
+    },
+    "byOffenceType": [
+      { "offence": "Violence against the person", "outstandingCases": 22000 },
+      { "offence": "Sexual offences", "outstandingCases": 14000 },
+      { "offence": "Drugs offences", "outstandingCases": 8000 },
+      { "offence": "Fraud &amp; forgery", "outstandingCases": 6000 },
+      { "offence": "Other offences", "outstandingCases": 17573 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "Ministry of Justice", "dataset": "Criminal Court Statistics", "url": "https://www.gov.uk/government/collections/criminal-court-statistics", "frequency": "quarterly" },
+      { "name": "Ministry of Justice", "dataset": "Prison Population Statistics", "url": "https://www.gov.uk/government/statistics/prison-population-figures", "frequency": "monthly" }
+    ],
+    "methodology": "Crown Court outstanding cases from MoJ Criminal Court Statistics (cases received minus disposals). Average days from offence to completion from MoJ criminal justice journey data. Remand data from HMPPS prison population bulletin.",
+    "knownIssues": ["COVID-19 caused courts to close for much of 2020, creating a backlog that has not recovered.", "Nightingale courts added some capacity 2020-2023 but have now wound down.", "Legal aid rate data is complex; 40% real-terms cut is indicative based on Law Society analysis."]
+  }
+}

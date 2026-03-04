@@ -1,0 +1,86 @@
+{
+  "topic": "social-housing",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "waitingList": {
+      "timeSeries": [
+        {"year": 2013, "householdsThousands": 1730},
+        {"year": 2014, "householdsThousands": 1450},
+        {"year": 2015, "householdsThousands": 1310},
+        {"year": 2016, "householdsThousands": 1220},
+        {"year": 2017, "householdsThousands": 1160},
+        {"year": 2018, "householdsThousands": 1140},
+        {"year": 2019, "householdsThousands": 1160},
+        {"year": 2020, "householdsThousands": 1200},
+        {"year": 2021, "householdsThousands": 1230},
+        {"year": 2022, "householdsThousands": 1260},
+        {"year": 2023, "householdsThousands": 1290}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 1290,
+      "note": "Households on local authority social housing waiting lists, England"
+    },
+    "socialHomesBuilt": {
+      "timeSeries": [
+        {"year": 2010, "completionsThousands": 39.5},
+        {"year": 2011, "completionsThousands": 46.4},
+        {"year": 2012, "completionsThousands": 42.2},
+        {"year": 2013, "completionsThousands": 31.4},
+        {"year": 2014, "completionsThousands": 30.9},
+        {"year": 2015, "completionsThousands": 26.8},
+        {"year": 2016, "completionsThousands": 28.1},
+        {"year": 2017, "completionsThousands": 27.5},
+        {"year": 2018, "completionsThousands": 22.8},
+        {"year": 2019, "completionsThousands": 16.9},
+        {"year": 2020, "completionsThousands": 17.6},
+        {"year": 2021, "completionsThousands": 10.2},
+        {"year": 2022, "completionsThousands": 7.5},
+        {"year": 2023, "completionsThousands": 7.5}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 7.5,
+      "note": "Social rented homes completed (includes council and housing association)"
+    },
+    "rightToBuy": {
+      "timeSeries": [
+        {"year": 2012, "salesThousands": 2.7},
+        {"year": 2013, "salesThousands": 11.0},
+        {"year": 2014, "salesThousands": 12.3},
+        {"year": 2015, "salesThousands": 13.5},
+        {"year": 2016, "salesThousands": 12.0},
+        {"year": 2017, "salesThousands": 11.3},
+        {"year": 2018, "salesThousands": 11.5},
+        {"year": 2019, "salesThousands": 9.8},
+        {"year": 2020, "salesThousands": 7.4},
+        {"year": 2021, "salesThousands": 9.0},
+        {"year": 2022, "salesThousands": 11.8},
+        {"year": 2023, "salesThousands": 8.4}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 8.4,
+      "totalSoldSince1980Millions": 1.8
+    },
+    "socialHousingStock": {
+      "timeSeries": [
+        {"year": 2000, "socialStockMillions": 4.8},
+        {"year": 2005, "socialStockMillions": 4.6},
+        {"year": 2010, "socialStockMillions": 4.4},
+        {"year": 2015, "socialStockMillions": 4.1},
+        {"year": 2020, "socialStockMillions": 4.0},
+        {"year": 2023, "socialStockMillions": 4.0}
+      ],
+      "latestYear": 2023,
+      "latestMillions": 4.0,
+      "note": "Total social rented stock (council + housing association), England"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "MHCLG", "dataset": "Live tables on social housing sales", "url": "https://www.gov.uk/government/statistical-data-sets/social-housing-sales-including-right-to-buy-sales-and-transfers", "frequency": "annual"},
+      {"name": "MHCLG", "dataset": "Social housing lettings statistics", "url": "https://www.gov.uk/government/collections/social-housing-lettings-statistics", "frequency": "annual"},
+      {"name": "MHCLG", "dataset": "Net supply of affordable housing", "url": "https://www.gov.uk/government/statistical-data-sets/affordable-housing-supply", "frequency": "annual"}
+    ],
+    "methodology": "Waiting list from local authority CORE data returns. Social homes built = social rented completions from MHCLG affordable housing supply statistics. Right to Buy sales from MHCLG. Social housing stock from MHCLG dwelling stock estimates.",
+    "knownIssues": ["Waiting list figures affected by eligibility rule changes — some councils tightened criteria reducing apparent list size", "Social rented completions exclude intermediate affordable housing", "Stock figures exclude temporary accommodation"]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "national": {
+    "autismWaiting": {
+      "timeSeries": [
+        {"year": 2016, "waitingThousands": 65},
+        {"year": 2017, "waitingThousands": 72},
+        {"year": 2018, "waitingThousands": 81},
+        {"year": 2019, "waitingThousands": 92},
+        {"year": 2020, "waitingThousands": 98},
+        {"year": 2021, "waitingThousands": 128},
+        {"year": 2022, "waitingThousands": 158},
+        {"year": 2023, "waitingThousands": 187}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 187,
+      "avgWaitMonths": 36
+    },
+    "adhdReferrals": {
+      "timeSeries": [
+        {"year": 2018, "referralsThousands": 40},
+        {"year": 2019, "referralsThousands": 45},
+        {"year": 2020, "referralsThousands": 52},
+        {"year": 2021, "referralsThousands": 85},
+        {"year": 2022, "referralsThousands": 140},
+        {"year": 2023, "referralsThousands": 200}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 200,
+      "avgWaitMonths": 42
+    },
+    "byAgeGroup": [
+      {"ageGroup": "Children (CAMHS)", "avgWaitMonths": 24},
+      {"ageGroup": "Young adults (18-25)", "avgWaitMonths": 42},
+      {"ageGroup": "Adults (25-49)", "avgWaitMonths": 54},
+      {"ageGroup": "Adults (50+)", "avgWaitMonths": 60}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England", "dataset": "Autism Waiting Times Statistics", "url": "https://www.england.nhs.uk/learning-disabilities/improving-health/autism/autism-waiting-times/", "frequency": "quarterly"},
+      {"name": "NHS Digital", "dataset": "Mental Health Services Dataset", "url": "https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/mental-health-data-hub/mental-health-services-dataset", "frequency": "monthly"}
+    ],
+    "methodology": "Autism waiting time data from NHS England Autism Waiting Times collection, measuring those waiting for an autism diagnostic assessment by NHS-commissioned services. ADHD referral data is estimated from NHS Digital Mental Health Services Dataset and is approximate, as ADHD is not separately reported in all pathways. Average wait times are illustrative estimates based on ICS reporting.",
+    "knownIssues": [
+      "ADHD waiting times are not formally collected nationally — figures are estimates from regional data and freedom of information requests",
+      "The autism waiting times standard (under 13 weeks) was abolished in 2019, so comparison over time is complex",
+      "Private diagnosis figures are not included — an estimated 300,000 private ADHD assessments took place in 2023"
+    ]
+  }
+}

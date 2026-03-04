@@ -1,0 +1,73 @@
+{
+  "national": {
+    "drugPoisoningDeaths": {
+      "timeSeries": [
+        {"year": 2012, "deaths": 2652},
+        {"year": 2013, "deaths": 2732},
+        {"year": 2014, "deaths": 2952},
+        {"year": 2015, "deaths": 3346},
+        {"year": 2016, "deaths": 3744},
+        {"year": 2017, "deaths": 3756},
+        {"year": 2018, "deaths": 4359},
+        {"year": 2019, "deaths": 4393},
+        {"year": 2020, "deaths": 4561},
+        {"year": 2021, "deaths": 4859},
+        {"year": 2022, "deaths": 4907}
+      ],
+      "latestYear": 2022,
+      "latestDeaths": 4907,
+      "note": "ONS drug poisoning deaths — England and Wales only. Includes both drug misuse deaths (intent: abuse) and all drug poisonings."
+    },
+    "scotlandDeathRate": {
+      "timeSeries": [
+        {"year": 2013, "deathsPer100k": 6.8},
+        {"year": 2015, "deathsPer100k": 9.2},
+        {"year": 2017, "deathsPer100k": 12.3},
+        {"year": 2019, "deathsPer100k": 17.5},
+        {"year": 2020, "deathsPer100k": 21.3},
+        {"year": 2021, "deathsPer100k": 22.4},
+        {"year": 2022, "deathsPer100k": 22.4}
+      ],
+      "latestYear": 2022,
+      "latestRate": 22.4,
+      "absoluteDeaths2022": 1051,
+      "euComparison": "Highest in Europe"
+    },
+    "bySubstance": [
+      {"substance": "Heroin/morphine (opioids)", "pct": 48},
+      {"substance": "Cocaine (including crack)", "pct": 18},
+      {"substance": "Benzodiazepines", "pct": 12},
+      {"substance": "Methadone", "pct": 9},
+      {"substance": "Alcohol + drugs (combined)", "pct": 8},
+      {"substance": "Other", "pct": 5}
+    ],
+    "drugTreatment": {
+      "timeSeries": [
+        {"year": 2015, "inTreatmentThousands": 300},
+        {"year": 2017, "inTreatmentThousands": 295},
+        {"year": 2019, "inTreatmentThousands": 280},
+        {"year": 2021, "inTreatmentThousands": 271},
+        {"year": 2022, "inTreatmentThousands": 275}
+      ],
+      "latestYear": 2022,
+      "latestThousands": 275,
+      "recoveryRatePct": 45,
+      "fundingCutSince2013Pct": 30,
+      "newInvestmentBillionGBP": 0.78,
+      "newInvestmentPeriod": "2022-25"
+    },
+    "naloxone": {
+      "distributedDoses2022": 110000,
+      "note": "Naloxone reverses opioid overdose. NHS England expanded community distribution from 2023."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Deaths related to drug poisoning in England and Wales", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoninginenglandandwales/latest", "frequency": "annual"},
+      {"name": "National Records of Scotland", "dataset": "Drug-related deaths in Scotland", "url": "https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/deaths/drug-related-deaths-in-scotland", "frequency": "annual"},
+      {"name": "OHID / UKHSA", "dataset": "Adult substance misuse treatment statistics", "url": "https://www.gov.uk/government/collections/alcohol-and-drug-misuse-treatment-data", "frequency": "annual"}
+    ],
+    "methodology": "Drug poisoning deaths from ONS mortality statistics — deaths where drug poisoning is mentioned on the death certificate. Scotland uses slightly different classification (NRS). Drug treatment data from National Drug Treatment Monitoring System (NDTMS) — all adults in structured community or residential treatment in England.",
+    "knownIssues": ["Drug poisoning deaths lag by 12-18 months due to inquest process — 2022 provisional figures may be revised", "Scotland's classification of drug-related deaths differs from ONS — direct comparison requires care", "Treatment numbers reflect completions not new starts — affected by long-term cases in treatment"]
+  }
+}

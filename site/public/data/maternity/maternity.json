@@ -1,0 +1,54 @@
+{
+  "national": {
+    "maternalMortality": {
+      "timeSeries": [
+        {"year": 2012, "ratePer100k": 8.5},
+        {"year": 2013, "ratePer100k": 8.4},
+        {"year": 2014, "ratePer100k": 8.2},
+        {"year": 2015, "ratePer100k": 8.3},
+        {"year": 2016, "ratePer100k": 9.7},
+        {"year": 2017, "ratePer100k": 9.7},
+        {"year": 2018, "ratePer100k": 9.8},
+        {"year": 2019, "ratePer100k": 9.8},
+        {"year": 2020, "ratePer100k": 9.5},
+        {"year": 2021, "ratePer100k": 10.4},
+        {"year": 2022, "ratePer100k": 9.7}
+      ],
+      "latestYear": 2022,
+      "latestRate": 9.7
+    },
+    "midwifeVacancies": {
+      "timeSeries": [
+        {"year": 2016, "vacancyRatePct": 7.0},
+        {"year": 2017, "vacancyRatePct": 8.2},
+        {"year": 2018, "vacancyRatePct": 8.8},
+        {"year": 2019, "vacancyRatePct": 9.5},
+        {"year": 2020, "vacancyRatePct": 9.8},
+        {"year": 2021, "vacancyRatePct": 10.4},
+        {"year": 2022, "vacancyRatePct": 11.8},
+        {"year": 2023, "vacancyRatePct": 12.3}
+      ],
+      "latestYear": 2023,
+      "latestVacancyRatePct": 12.3,
+      "vacancyCount": 2500
+    },
+    "cqcRatings": [
+      {"rating": "Outstanding", "pct": 4},
+      {"rating": "Good", "pct": 36},
+      {"rating": "Requires Improvement", "pct": 47},
+      {"rating": "Inadequate", "pct": 13}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "MBRRACE-UK", "dataset": "Saving Lives Improving Mothers Care Report", "url": "https://www.npeu.ox.ac.uk/mbrrace-uk", "frequency": "annual"},
+      {"name": "NHS England", "dataset": "NHS Workforce Statistics", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics", "frequency": "monthly"}
+    ],
+    "methodology": "Maternal mortality rate is deaths per 100,000 maternities (pregnancies resulting in a live birth or stillbirth at 24+ weeks). MBRRACE-UK uses a three-year rolling average to account for small numbers. Vacancy data from NHS Workforce Statistics, community and hospital midwives combined. CQC ratings from Care Quality Commission 2023 State of Care report.",
+    "knownIssues": [
+      "Maternal mortality uses 3-year rolling averages — point estimates have wide confidence intervals",
+      "CQC ratings cover the maternity unit within a trust, not standalone births",
+      "Midwife vacancy data may undercount community midwifery shortfalls"
+    ]
+  }
+}

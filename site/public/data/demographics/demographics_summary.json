@@ -1,0 +1,102 @@
+{
+  "topic": "demographics",
+  "lastUpdated": "2026-03-03",
+  "national": {
+    "population": {
+      "timeSeries": [
+        {"year": 2001, "totalMillions": 59.1, "under16Pct": 19.8, "over65Pct": 15.9},
+        {"year": 2005, "totalMillions": 60.4, "under16Pct": 19.1, "over65Pct": 16.0},
+        {"year": 2010, "totalMillions": 62.8, "under16Pct": 18.8, "over65Pct": 16.6},
+        {"year": 2015, "totalMillions": 65.1, "under16Pct": 18.9, "over65Pct": 17.8},
+        {"year": 2020, "totalMillions": 67.1, "under16Pct": 19.0, "over65Pct": 18.6},
+        {"year": 2021, "totalMillions": 67.3, "under16Pct": 19.0, "over65Pct": 18.8},
+        {"year": 2022, "totalMillions": 67.6, "under16Pct": 18.8, "over65Pct": 18.9},
+        {"year": 2023, "totalMillions": 68.3, "under16Pct": 18.5, "over65Pct": 19.0},
+        {"year": 2024, "totalMillions": 68.9, "under16Pct": 18.3, "over65Pct": 19.2}
+      ],
+      "latest": {"year": 2024, "totalMillions": 68.9}
+    },
+    "fertilityRate": {
+      "timeSeries": [
+        {"year": 2000, "tfr": 1.65},
+        {"year": 2005, "tfr": 1.77},
+        {"year": 2010, "tfr": 1.94},
+        {"year": 2011, "tfr": 1.93},
+        {"year": 2012, "tfr": 1.93},
+        {"year": 2013, "tfr": 1.83},
+        {"year": 2014, "tfr": 1.80},
+        {"year": 2015, "tfr": 1.79},
+        {"year": 2016, "tfr": 1.77},
+        {"year": 2017, "tfr": 1.71},
+        {"year": 2018, "tfr": 1.65},
+        {"year": 2019, "tfr": 1.59},
+        {"year": 2020, "tfr": 1.53},
+        {"year": 2021, "tfr": 1.55},
+        {"year": 2022, "tfr": 1.49},
+        {"year": 2023, "tfr": 1.44},
+        {"year": 2024, "tfr": 1.41}
+      ],
+      "latest": {"year": 2024, "tfr": 1.41},
+      "replacementLevel": 2.1
+    },
+    "netMigration": {
+      "timeSeries": [
+        {"year": 2012, "netMigrationK": 176},
+        {"year": 2013, "netMigrationK": 209},
+        {"year": 2014, "netMigrationK": 319},
+        {"year": 2015, "netMigrationK": 331},
+        {"year": 2016, "netMigrationK": 273},
+        {"year": 2017, "netMigrationK": 230},
+        {"year": 2018, "netMigrationK": 270},
+        {"year": 2019, "netMigrationK": 226},
+        {"year": 2020, "netMigrationK": 173},
+        {"year": 2021, "netMigrationK": 478},
+        {"year": 2022, "netMigrationK": 764},
+        {"year": 2023, "netMigrationK": 906},
+        {"year": 2024, "netMigrationK": 204}
+      ],
+      "latest": {"year": 2024, "netMigrationK": 204}
+    },
+    "lifeExpectancy": {
+      "timeSeries": [
+        {"year": 2001, "maleLe": 75.9, "femaleLe": 80.4},
+        {"year": 2005, "maleLe": 77.2, "femaleLe": 81.5},
+        {"year": 2010, "maleLe": 78.7, "femaleLe": 82.6},
+        {"year": 2015, "maleLe": 79.3, "femaleLe": 83.0},
+        {"year": 2018, "maleLe": 79.4, "femaleLe": 83.1},
+        {"year": 2020, "maleLe": 78.7, "femaleLe": 82.6},
+        {"year": 2021, "maleLe": 79.3, "femaleLe": 83.1},
+        {"year": 2022, "maleLe": 78.6, "femaleLe": 82.6},
+        {"year": 2023, "maleLe": 79.0, "femaleLe": 82.9}
+      ],
+      "latest": {"year": 2023, "maleLe": 79.0, "femaleLe": 82.9}
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Mid-year population estimates",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Vital statistics: population and health reference tables",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/vitalstatisticspopulationandhealthreferencetables",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "National life tables — life expectancy in the UK",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/lifeexpectancies/bulletins/nationallifetablesunitedkingdom",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Population figures are mid-year estimates for the UK. Fertility rate is total fertility rate (TFR) for England and Wales. Net migration is long-term international migration (ONS definition). Life expectancy is period life expectancy at birth.",
+    "knownIssues": [
+      "2024 fertility rate is provisional",
+      "2024 net migration figure is provisional and subject to substantial revision"
+    ]
+  }
+}

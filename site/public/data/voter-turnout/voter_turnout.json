@@ -1,0 +1,39 @@
+{
+  "generalElection": [
+    {"year": 1979, "turnout": 76.0},
+    {"year": 1983, "turnout": 72.7},
+    {"year": 1987, "turnout": 75.3},
+    {"year": 1992, "turnout": 77.7},
+    {"year": 1997, "turnout": 71.4},
+    {"year": 2001, "turnout": 59.4},
+    {"year": 2005, "turnout": 61.4},
+    {"year": 2010, "turnout": 65.1},
+    {"year": 2015, "turnout": 66.1},
+    {"year": 2017, "turnout": 68.8},
+    {"year": 2019, "turnout": 67.3},
+    {"year": 2024, "turnout": 59.7}
+  ],
+  "byAge": [
+    {"ageGroup": "18-24", "turnout2024": 43},
+    {"ageGroup": "25-34", "turnout2024": 52},
+    {"ageGroup": "35-44", "turnout2024": 59},
+    {"ageGroup": "45-54", "turnout2024": 64},
+    {"ageGroup": "55-64", "turnout2024": 68},
+    {"ageGroup": "65+", "turnout2024": 71}
+  ],
+  "localElection": [
+    {"year": 2000, "turnout": 32},
+    {"year": 2002, "turnout": 34},
+    {"year": 2004, "turnout": 37},
+    {"year": 2006, "turnout": 37},
+    {"year": 2008, "turnout": 35},
+    {"year": 2010, "turnout": 42},
+    {"year": 2012, "turnout": 32},
+    {"year": 2014, "turnout": 36},
+    {"year": 2016, "turnout": 33},
+    {"year": 2018, "turnout": 34},
+    {"year": 2021, "turnout": 35},
+    {"year": 2022, "turnout": 31},
+    {"year": 2023, "turnout": 32}
+  ]
+}

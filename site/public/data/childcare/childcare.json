@@ -1,0 +1,61 @@
+{
+  "national": {
+    "nurseryCosts": {
+      "timeSeries": [
+        {"year": 2016, "annualCostThousandsGBP": 11.0},
+        {"year": 2017, "annualCostThousandsGBP": 11.5},
+        {"year": 2018, "annualCostThousandsGBP": 12.0},
+        {"year": 2019, "annualCostThousandsGBP": 12.5},
+        {"year": 2020, "annualCostThousandsGBP": 13.0},
+        {"year": 2021, "annualCostThousandsGBP": 13.5},
+        {"year": 2022, "annualCostThousandsGBP": 14.2},
+        {"year": 2023, "annualCostThousandsGBP": 14.7},
+        {"year": 2024, "annualCostThousandsGBP": 15.0}
+      ],
+      "latestYear": 2024,
+      "latestThousandsGBP": 15.0,
+      "londonThousandsGBP": 29.0,
+      "note": "Coram Family and Childcare annual survey. Full-time = 50 hours/week, 50 weeks/year average."
+    },
+    "freeHours": [
+      {"ageGroup": "9 months to 2 years (from Sep 2024)", "hoursPerWeek": 15, "eligibility": "Working parents"},
+      {"ageGroup": "2-year-olds (from April 2024)", "hoursPerWeek": 15, "eligibility": "All 2-year-olds"},
+      {"ageGroup": "3–4-year-olds (standard)", "hoursPerWeek": 15, "eligibility": "All children"},
+      {"ageGroup": "3–4-year-olds (working parents)", "hoursPerWeek": 30, "eligibility": "Working parents"}
+    ],
+    "workforce": {
+      "vacancies2023": 50000,
+      "averageHourlyPayGBP": 10.50,
+      "nationalLivingWage2024": 11.44,
+      "staffTurnoverPct": 26,
+      "note": "Many childcare workers paid below NLW in 2023 — gap closed with NLW rise in April 2024."
+    },
+    "fundingGap": {
+      "governmentFundingRatePerHour": 8.28,
+      "actualCostPerHour": 10.52,
+      "gapPerHour": 2.24,
+      "note": "NDNA and Coram estimate gap between government hourly rate and actual delivery cost for 3-4-year-old free hours."
+    },
+    "providerCount": {
+      "timeSeries": [
+        {"year": 2015, "registeredProviders": 32000},
+        {"year": 2017, "registeredProviders": 31000},
+        {"year": 2019, "registeredProviders": 29500},
+        {"year": 2021, "registeredProviders": 28500},
+        {"year": 2023, "registeredProviders": 27500}
+      ],
+      "latestYear": 2023,
+      "latestCount": 27500,
+      "closuresSince2015": 4500
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Coram Family and Childcare", "dataset": "Childcare Survey", "url": "https://www.coram.org.uk/resource/childcare-survey-2024", "frequency": "annual"},
+      {"name": "DfE", "dataset": "Education provision: children under 5 years of age", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/education-provision-children-under-5", "frequency": "annual"},
+      {"name": "OECD", "dataset": "Family database: childcare and early education", "url": "https://www.oecd.org/els/soc/PF3_1_Public_spending_on_childcare_and_early_education.pdf", "frequency": "biennial"}
+    ],
+    "methodology": "Nursery costs from Coram Family and Childcare annual survey of nursery providers in England. Full-time defined as 50 hours/week, 50 weeks/year. Funding gap analysis by NDNA (National Day Nurseries Association) and Coram comparing DfE hourly rate with actual provision costs. OECD comparisons based on public spending on childcare as % of GDP.",
+    "knownIssues": ["Free hours expansion from 2024 onward significantly changes the landscape — older cost data not directly comparable", "Nursery costs vary enormously by region — national averages mask London premium", "Provider count includes all Ofsted-registered childcare, not just nurseries — includes childminders"]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "national": {
+    "fuelPoverty": {
+      "timeSeries": [
+        {"year": "2012/13", "pctHouseholds": 11.1},
+        {"year": "2013/14", "pctHouseholds": 11.0},
+        {"year": "2014/15", "pctHouseholds": 10.4},
+        {"year": "2015/16", "pctHouseholds": 10.6},
+        {"year": "2016/17", "pctHouseholds": 11.1},
+        {"year": "2017/18", "pctHouseholds": 10.9},
+        {"year": "2018/19", "pctHouseholds": 13.4},
+        {"year": "2019/20", "pctHouseholds": 13.2},
+        {"year": "2020/21", "pctHouseholds": 13.2},
+        {"year": "2021/22", "pctHouseholds": 13.0},
+        {"year": "2022/23", "pctHouseholds": 13.4}
+      ],
+      "latestYear": "2022/23",
+      "latestPct": 13.4,
+      "latestMillions": 3.3
+    },
+    "energyPriceCap": {
+      "timeSeries": [
+        {"year": 2019, "capGBP": 1254},
+        {"year": 2020, "capGBP": 1162},
+        {"year": 2021, "capGBP": 1277},
+        {"year": 2022, "capGBP": 2500},
+        {"year": 2023, "capGBP": 3000},
+        {"year": 2024, "capGBP": 1928}
+      ],
+      "latestYear": 2024,
+      "latestCapGBP": 1928
+    },
+    "byTenureType": [
+      {"tenure": "Private rented", "pctFuelPoor": 18.8},
+      {"tenure": "Social rented", "pctFuelPoor": 16.2},
+      {"tenure": "Owner occupied", "pctFuelPoor": 9.8}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "DESNZ", "dataset": "Annual Fuel Poverty Statistics Report", "url": "https://www.gov.uk/government/collections/fuel-poverty-statistics", "frequency": "annual"},
+      {"name": "Ofgem", "dataset": "Energy Price Cap", "url": "https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you", "frequency": "quarterly"}
+    ],
+    "methodology": "Fuel poverty in England is measured using the Low Income Low Energy Efficiency (LILEE) metric. A household is fuel poor if it has a low income (below the poverty line after energy costs) AND low energy efficiency (below band C on its EPC). This replaced the earlier 10% of income definition in 2014. Energy price cap data represents the annual bill estimate for a typical household (2,900 kWh electricity, 12,000 kWh gas).",
+    "knownIssues": [
+      "Change in definition in 2014 makes pre/post comparison difficult",
+      "LILEE metric does not capture households that ARE energy efficient but cannot afford bills due to very low income",
+      "Price cap data shown is the annual bill estimate, not the unit rate cap"
+    ]
+  }
+}

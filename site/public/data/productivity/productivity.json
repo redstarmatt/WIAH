@@ -1,0 +1,63 @@
+{
+  "national": {
+    "outputPerHour": {
+      "timeSeries": [
+        { "year": 2000, "indexUKEq100": 93 },
+        { "year": 2002, "indexUKEq100": 95 },
+        { "year": 2004, "indexUKEq100": 97 },
+        { "year": 2006, "indexUKEq100": 98 },
+        { "year": 2008, "indexUKEq100": 100 },
+        { "year": 2010, "indexUKEq100": 97 },
+        { "year": 2012, "indexUKEq100": 97 },
+        { "year": 2014, "indexUKEq100": 98 },
+        { "year": 2016, "indexUKEq100": 99 },
+        { "year": 2018, "indexUKEq100": 100 },
+        { "year": 2020, "indexUKEq100": 98 },
+        { "year": 2022, "indexUKEq100": 101 },
+        { "year": 2023, "indexUKEq100": 100 }
+      ],
+      "latestYear": 2023,
+      "latestIndex": 100,
+      "g7AverageIndex": 114,
+      "usaIndex": 118,
+      "germanyIndex": 111,
+      "franceIndex": 118
+    },
+    "businessInvestment": {
+      "timeSeries": [
+        { "year": 2010, "pctGDP": 11.2 },
+        { "year": 2012, "pctGDP": 10.8 },
+        { "year": 2014, "pctGDP": 10.5 },
+        { "year": 2016, "pctGDP": 10.0 },
+        { "year": 2018, "pctGDP": 9.8 },
+        { "year": 2020, "pctGDP": 9.4 },
+        { "year": 2022, "pctGDP": 9.8 },
+        { "year": 2023, "pctGDP": 9.8 }
+      ],
+      "latestYear": 2023,
+      "latestPctGDP": 9.8,
+      "g7AveragePctGDP": 14.0
+    },
+    "byRegion": [
+      { "region": "London", "indexUKEq100": 170 },
+      { "region": "South East", "indexUKEq100": 108 },
+      { "region": "East of England", "indexUKEq100": 103 },
+      { "region": "South West", "indexUKEq100": 90 },
+      { "region": "East Midlands", "indexUKEq100": 84 },
+      { "region": "West Midlands", "indexUKEq100": 85 },
+      { "region": "North West", "indexUKEq100": 87 },
+      { "region": "Yorkshire", "indexUKEq100": 83 },
+      { "region": "North East", "indexUKEq100": 71 },
+      { "region": "Wales", "indexUKEq100": 76 },
+      { "region": "Scotland", "indexUKEq100": 97 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "ONS", "dataset": "Labour Productivity, UK", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity", "frequency": "quarterly" },
+      { "name": "ONS", "dataset": "Regional Labour Productivity", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/regionalandsubregionalproductivityintheuk", "frequency": "annual" }
+    ],
+    "methodology": "Output per hour worked from ONS Productivity measures. UK index set to 100 for comparison. Business investment from ONS National Accounts. Regional productivity from ONS sub-regional productivity publication (GVA per hour).",
+    "knownIssues": ["Productivity data is subject to significant revision. Regional productivity estimates have wide confidence intervals.", "The UK productivity comparison is sensitive to exchange rates when using current prices.", "COVID-19 caused significant disruption to productivity measurement in 2020."]
+  }
+}

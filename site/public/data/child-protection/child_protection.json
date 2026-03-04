@@ -1,0 +1,54 @@
+{
+  "topic": "child-protection",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "referrals": [
+      {"year": 2011, "count": 521000},
+      {"year": 2013, "count": 570000},
+      {"year": 2015, "count": 604000},
+      {"year": 2017, "count": 624000},
+      {"year": 2019, "count": 655000},
+      {"year": 2020, "count": 614000},
+      {"year": 2021, "count": 650000},
+      {"year": 2022, "count": 714000}
+    ],
+    "childrenInCare": [
+      {"year": 2011, "count": 65520},
+      {"year": 2013, "count": 68110},
+      {"year": 2015, "count": 69540},
+      {"year": 2017, "count": 72670},
+      {"year": 2019, "count": 78150},
+      {"year": 2020, "count": 80080},
+      {"year": 2021, "count": 82170},
+      {"year": 2022, "count": 83840}
+    ],
+    "byAbuseCategory": [
+      {"category": "Neglect", "pct": 49},
+      {"category": "Emotional abuse", "pct": 37},
+      {"category": "Physical abuse", "pct": 8},
+      {"category": "Sexual abuse", "pct": 4},
+      {"category": "Multiple/other", "pct": 2}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Department for Education",
+        "dataset": "Children in Need census",
+        "url": "https://www.gov.uk/government/collections/statistics-children-in-need",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Education",
+        "dataset": "Looked-after children statistics",
+        "url": "https://www.gov.uk/government/collections/statistics-looked-after-children",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Referrals sourced from DfE Children in Need census (annual). Children on protection plans and in local authority care from DfE looked-after children statistics. Abuse category based on primary reason for plan (children may experience multiple forms of abuse).",
+    "knownIssues": [
+      "School closures during COVID-19 (2020) significantly reduced referrals as teachers were primary referral source",
+      "Abuse category percentages may exceed 100% due to dual categorization in some cases"
+    ]
+  }
+}

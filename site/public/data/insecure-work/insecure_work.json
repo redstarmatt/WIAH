@@ -1,0 +1,56 @@
+{
+  "national": {
+    "zeroHoursContracts": {
+      "timeSeries": [
+        {"year": 2013, "workersThousands": 250},
+        {"year": 2014, "workersThousands": 580},
+        {"year": 2015, "workersThousands": 747},
+        {"year": 2016, "workersThousands": 903},
+        {"year": 2017, "workersThousands": 883},
+        {"year": 2018, "workersThousands": 789},
+        {"year": 2019, "workersThousands": 974},
+        {"year": 2020, "workersThousands": 886},
+        {"year": 2021, "workersThousands": 920},
+        {"year": 2022, "workersThousands": 1022},
+        {"year": 2023, "workersThousands": 1040}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 1040,
+      "pctOfWorkforce": 3.1
+    },
+    "insecureWorkTotal": {
+      "timeSeries": [
+        {"year": 2016, "insecureMillions": 3.8},
+        {"year": 2017, "insecureMillions": 3.9},
+        {"year": 2018, "insecureMillions": 4.0},
+        {"year": 2019, "insecureMillions": 4.1},
+        {"year": 2020, "insecureMillions": 3.7},
+        {"year": 2021, "insecureMillions": 3.9},
+        {"year": 2022, "insecureMillions": 4.2},
+        {"year": 2023, "insecureMillions": 4.4}
+      ],
+      "latestYear": 2023,
+      "latestMillions": 4.4
+    },
+    "bySector": [
+      {"sector": "Accommodation & food", "zeroHoursPct": 22},
+      {"sector": "Health & social care", "zeroHoursPct": 18},
+      {"sector": "Entertainment & recreation", "zeroHoursPct": 14},
+      {"sector": "Retail", "zeroHoursPct": 8},
+      {"sector": "Transport & logistics", "zeroHoursPct": 6},
+      {"sector": "Education", "zeroHoursPct": 5}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Labour Force Survey — Zero-Hours Contracts", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/contractsthatdonotguaranteeaminimumnumberofhours/", "frequency": "quarterly"},
+      {"name": "TUC", "dataset": "Insecure Work Analysis", "url": "https://www.tuc.org.uk/research-analysis/reports/insecure-work", "frequency": "annual"}
+    ],
+    "methodology": "Zero-hours contract workers from ONS Labour Force Survey. Total insecure work estimate from TUC, including zero-hours, temporary, agency, and low-paid self-employed. Sector breakdown from ONS LFS microdata.",
+    "knownIssues": [
+      "Zero-hours contract data relies on self-reporting",
+      "ONS methodology changed in 2014, causing apparent jump",
+      "Insecure work definition varies between sources"
+    ]
+  }
+}

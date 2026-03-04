@@ -1,0 +1,31 @@
+{
+  "onlineGambling": [
+    {"year": 2012, "grossYieldBn": 1.8},
+    {"year": 2013, "grossYieldBn": 2.3},
+    {"year": 2014, "grossYieldBn": 2.8},
+    {"year": 2015, "grossYieldBn": 3.3},
+    {"year": 2016, "grossYieldBn": 3.9},
+    {"year": 2017, "grossYieldBn": 4.5},
+    {"year": 2018, "grossYieldBn": 5.1},
+    {"year": 2019, "grossYieldBn": 5.6},
+    {"year": 2020, "grossYieldBn": 5.9},
+    {"year": 2021, "grossYieldBn": 6.5},
+    {"year": 2022, "grossYieldBn": 6.9}
+  ],
+  "treatmentAccess": [
+    {"year": 2018, "inTreatment": 2900},
+    {"year": 2019, "inTreatment": 7400},
+    {"year": 2020, "inTreatment": 8200},
+    {"year": 2021, "inTreatment": 9100},
+    {"year": 2022, "inTreatment": 11000},
+    {"year": 2023, "inTreatment": 14000}
+  ],
+  "byGamblingType": [
+    {"type": "Online slots/casino", "pctProblematic": 18},
+    {"type": "Sports betting (online)", "pctProblematic": 12},
+    {"type": "Fixed Odds Betting Terminals", "pctProblematic": 9},
+    {"type": "Lottery & scratchcards", "pctProblematic": 3},
+    {"type": "Bingo", "pctProblematic": 4},
+    {"type": "Poker (online)", "pctProblematic": 11}
+  ]
+}

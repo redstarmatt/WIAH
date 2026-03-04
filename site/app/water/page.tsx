@@ -64,15 +64,33 @@ interface FinancialYear {
   dividends_m: number | null;
 }
 
-interface FinancialData {
-  national: { timeSeries: FinancialYear[] };
+
+interface WaterFinancialsData {
+  topic: string;
+  subtopic: string;
+  lastUpdated: string;
   summary: {
     totalDividendsSincePrivatisation_m: number;
-    latestCapex_m: number;
     latestTotex_m: number;
+    latestCapex_m: number;
+    latestCostYear: string;
     recent5yrAvgDividends_m: number;
+    dividendYearRange: string;
+    costYearRange: string;
+  };
+  national: { timeSeries: FinancialYear[] };
+  byCompany?: {
+    dividends?: {
+      [key: string]: { name: string; timeSeries: Array<{ year: string; dividends_m: number }> };
+    };
+  };
+  metadata?: {
+    sources: { name: string; dataset: string; url: string; frequency: string; notes?: string }[];
+    methodology: string;
+    knownIssues: string[];
   };
 }
+
 
 interface LeakageNationalPoint {
   year: string;
@@ -114,7 +132,7 @@ function fmtHours(n: number): string {
 
 export default function WaterPage() {
   const [data, setData] = useState<WaterData | null>(null);
-  const [finData, setFinData] = useState<FinancialData | null>(null);
+  const [finData, setFinData] = useState<WaterFinancialsData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [leakageData, setLeakageData] = useState<LeakageData | null>(null);
 
@@ -677,6 +695,43 @@ export default function WaterPage() {
 
         {/* ── Company Finances ──────────────────────────────────────────── */}
         <div id="sec-financials">
+
+
+        {/* ── Finance Section: Metric Cards & Context ────────────────── */}
+        <ScrollReveal>
+        <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Company Finances & Investment</h2>
+        <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+          Water companies have paid £52.8 billion in dividends since privatisation in 1989 —
+          while capital investment in infrastructure has often lagged behind need. The scale of this
+          imbalance, and its consequences for sewage and leakage, demands scrutiny.
+        </p>
+        </ScrollReveal>
+
+        <ScrollReveal>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <div className="border border-wiah-border rounded-lg p-5">
+            <p className="text-xs font-mono text-wiah-mid mb-1">Total dividends paid</p>
+            <p className="font-mono text-3xl font-bold text-wiah-red">
+              {finData ? `£${(finData.summary.totalDividendsSincePrivatisation_m / 1000).toFixed(1)}bn` : '£52.8bn'}
+            </p>
+            <p className="text-xs text-wiah-mid mt-1">{finData?.summary.dividendYearRange ?? '1990–2024'}</p>
+          </div>
+          <div className="border border-wiah-border rounded-lg p-5">
+            <p className="text-xs font-mono text-wiah-mid mb-1">Latest total expenditure</p>
+            <p className="font-mono text-3xl font-bold text-wiah-black">
+              {finData ? `£${(finData.summary.latestTotex_m / 1000).toFixed(1)}bn` : '£17.2bn'}
+            </p>
+            <p className="text-xs text-wiah-mid mt-1">{finData?.summary.latestCostYear ?? '2024-25'}</p>
+          </div>
+          <div className="border border-wiah-border rounded-lg p-5">
+            <p className="text-xs font-mono text-wiah-mid mb-1">Recent avg. annual dividends</p>
+            <p className="font-mono text-3xl font-bold text-wiah-red">
+              {finData ? `£${(finData.summary.recent5yrAvgDividends_m / 1000).toFixed(1)}bn` : '£1.1bn'}
+            </p>
+            <p className="text-xs text-wiah-mid mt-1">Last 5 years, per year</p>
+          </div>
+        </div>
+        </ScrollReveal>
 
         {/* Chart: Dividends vs Capital Investment */}
         {capexDividendSeries.length > 0 ? (

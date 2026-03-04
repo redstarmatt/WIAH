@@ -1,0 +1,30 @@
+{
+  "energyImportDependency": [
+    {"year": 2010, "importPct": 28},
+    {"year": 2012, "importPct": 42},
+    {"year": 2014, "importPct": 47},
+    {"year": 2016, "importPct": 38},
+    {"year": 2018, "importPct": 35},
+    {"year": 2019, "importPct": 36},
+    {"year": 2020, "importPct": 34},
+    {"year": 2021, "importPct": 35},
+    {"year": 2022, "importPct": 36}
+  ],
+  "gasPrice": [
+    {"year": 2018, "pencePerTherm": 65},
+    {"year": 2019, "pencePerTherm": 52},
+    {"year": 2020, "pencePerTherm": 39},
+    {"year": 2021, "pencePerTherm": 150},
+    {"year": 2022, "pencePerTherm": 390},
+    {"year": 2023, "pencePerTherm": 105},
+    {"year": 2024, "pencePerTherm": 80}
+  ],
+  "bySource": [
+    {"source": "Gas (domestic)", "pct": 35},
+    {"source": "Gas (imported)", "pct": 29},
+    {"source": "Nuclear", "pct": 14},
+    {"source": "Wind & solar", "pct": 14},
+    {"source": "Other renewables", "pct": 5},
+    {"source": "Coal & other", "pct": 3}
+  ]
+}

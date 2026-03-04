@@ -1,0 +1,67 @@
+{
+  "national": {
+    "talkingTherapies": {
+      "timeSeries": [
+        {"year": 2012, "referralsMillions": 0.85, "completionsMillions": 0.60},
+        {"year": 2013, "referralsMillions": 0.90, "completionsMillions": 0.65},
+        {"year": 2014, "referralsMillions": 0.95, "completionsMillions": 0.72},
+        {"year": 2015, "referralsMillions": 1.00, "completionsMillions": 0.78},
+        {"year": 2016, "referralsMillions": 1.07, "completionsMillions": 0.83},
+        {"year": 2017, "referralsMillions": 1.12, "completionsMillions": 0.88},
+        {"year": 2018, "referralsMillions": 1.18, "completionsMillions": 0.93},
+        {"year": 2019, "referralsMillions": 1.25, "completionsMillions": 0.98},
+        {"year": 2020, "referralsMillions": 1.10, "completionsMillions": 0.85},
+        {"year": 2021, "referralsMillions": 1.19, "completionsMillions": 0.90},
+        {"year": 2022, "referralsMillions": 1.31, "completionsMillions": 1.00},
+        {"year": 2023, "referralsMillions": 1.40, "completionsMillions": 1.09}
+      ],
+      "latestYear": 2023,
+      "latestReferralsMillions": 1.40,
+      "latestCompletionsMillions": 1.09,
+      "recoveryRatePct": 51,
+      "recoveryTarget": 50,
+      "note": "NHS Talking Therapies (formerly IAPT). Recovery defined as moving from caseness to below clinical threshold."
+    },
+    "mentalHealthBeds": {
+      "timeSeries": [
+        {"year": 2010, "bedsPer100kPop": 67},
+        {"year": 2012, "bedsPer100kPop": 65},
+        {"year": 2014, "bedsPer100kPop": 63},
+        {"year": 2016, "bedsPer100kPop": 61},
+        {"year": 2018, "bedsPer100kPop": 57},
+        {"year": 2020, "bedsPer100kPop": 54},
+        {"year": 2022, "bedsPer100kPop": 51},
+        {"year": 2023, "bedsPer100kPop": 50}
+      ],
+      "latestYear": 2023,
+      "latestPer100k": 50,
+      "changePct": -25,
+      "outOfAreaPlacementsPerYear": 1000,
+      "note": "Mental illness beds (non-forensic). KH03 NHS bed availability and occupancy data."
+    },
+    "byAgeGroup": [
+      {"ageGroup": "16–24", "probableDisorderPct": 27},
+      {"ageGroup": "25–34", "probableDisorderPct": 24},
+      {"ageGroup": "35–44", "probableDisorderPct": 20},
+      {"ageGroup": "45–54", "probableDisorderPct": 17},
+      {"ageGroup": "55–64", "probableDisorderPct": 14},
+      {"ageGroup": "65–74", "probableDisorderPct": 10},
+      {"ageGroup": "75+", "probableDisorderPct": 8}
+    ],
+    "camhs": {
+      "averageWaitWeeks": 18,
+      "someAreasWaitWeeks": 40,
+      "referralsRejectedPct": 35,
+      "note": "CAMHS = Child and Adolescent Mental Health Services. Average wait for first appointment after referral acceptance. 35% of GP referrals to CAMHS rejected at triage."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England", "dataset": "NHS Talking Therapies: annual report", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/iapt-monthly-return/", "frequency": "annual"},
+      {"name": "NHS England", "dataset": "KH03 bed availability and occupancy", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/", "frequency": "quarterly"},
+      {"name": "NHS Digital", "dataset": "Adult Psychiatric Morbidity Survey", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/adult-psychiatric-morbidity-survey", "frequency": "periodic"}
+    ],
+    "methodology": "NHS Talking Therapies data from NHSE annual reports. Beds from KH03 quarterly collection — adjusted for population (ONS mid-year estimates). Mental disorder prevalence from Adult Psychiatric Morbidity Survey 2014 (most recent comprehensive survey). CAMHS wait estimates from NHS England MHSDS.",
+    "knownIssues": ["NHS Talking Therapies 18-week standard is not equivalent to RTT — it applies to starting treatment not just assessment", "Bed numbers do not capture private/independent sector capacity", "CAMHS data quality varies significantly across trusts — incomplete MHSDS returns in some areas"]
+  }
+}

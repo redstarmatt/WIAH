@@ -1,0 +1,53 @@
+{
+  "national": {
+    "policeRecordedCrimes": {
+      "timeSeries": [
+        { "year": "2014/15", "crimesThousands": 596 },
+        { "year": "2015/16", "crimesThousands": 663 },
+        { "year": "2016/17", "crimesThousands": 730 },
+        { "year": "2017/18", "crimesThousands": 800 },
+        { "year": "2018/19", "crimesThousands": 858 },
+        { "year": "2019/20", "crimesThousands": 880 },
+        { "year": "2020/21", "crimesThousands": 862 },
+        { "year": "2021/22", "crimesThousands": 870 },
+        { "year": "2022/23", "crimesThousands": 906 }
+      ],
+      "latestYear": "2022/23",
+      "latestThousands": 906,
+      "chargeRatePct": 7.1
+    },
+    "csewPrevalence": {
+      "timeSeries": [
+        { "year": 2016, "adultsMillions": 2.4 },
+        { "year": 2017, "adultsMillions": 2.3 },
+        { "year": 2018, "adultsMillions": 2.2 },
+        { "year": 2019, "adultsMillions": 2.1 },
+        { "year": 2020, "adultsMillions": 2.1 },
+        { "year": 2021, "adultsMillions": 2.0 },
+        { "year": 2022, "adultsMillions": 2.0 },
+        { "year": 2023, "adultsMillions": 2.1 }
+      ],
+      "latestYear": 2023,
+      "latestMillions": 2.1,
+      "womenMillions": 1.4,
+      "menMillions": 0.7
+    },
+    "femicides": {
+      "latestAnnualCount": 103,
+      "avgPerWeek": 2
+    },
+    "supportServices": [
+      { "service": "Refuge places (England)", "capacity": 3900 },
+      { "service": "IDVA services", "capacity": 90000 },
+      { "service": "National DA helpline calls", "capacity": 120000 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "ONS", "dataset": "Domestic abuse in England and Wales overview", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwalesoverview/november2023", "frequency": "annual" },
+      { "name": "Home Office", "dataset": "Domestic abuse: findings from the Crime Survey", "url": "https://www.gov.uk/government/statistics/domestic-abuse-findings-from-the-crime-survey-for-england-and-wales", "frequency": "annual" }
+    ],
+    "methodology": "ONS Crime Survey for England and Wales (CSEW) prevalence estimates cover adults 16-74. Police-recorded figures reflect improved recording practices as well as underlying trends. Femicide data from Femicide Census and ONS Homicide Index.",
+    "knownIssues": ["Domestic abuse is severely under-reported; survey estimates are themselves likely an undercount.", "Police recording improvements since 2016 mean the trend in recorded crimes overstates the rise in actual incidents.", "CSEW was suspended during parts of COVID-19; 2020 and 2021 estimates are less reliable."]
+  }
+}

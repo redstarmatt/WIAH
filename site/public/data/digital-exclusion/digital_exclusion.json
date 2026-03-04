@@ -1,0 +1,50 @@
+{
+  "internetUsers": [
+    {"year": 2011, "pctUsers": 78},
+    {"year": 2013, "pctUsers": 83},
+    {"year": 2015, "pctUsers": 86},
+    {"year": 2017, "pctUsers": 89},
+    {"year": 2019, "pctUsers": 92},
+    {"year": 2020, "pctUsers": 92},
+    {"year": 2021, "pctUsers": 93},
+    {"year": 2022, "pctUsers": 94},
+    {"year": 2023, "pctUsers": 94}
+  ],
+  "nonUsersProfile": [
+    {"group": "Age 75+", "pctNonUser": 28},
+    {"group": "No qualifications", "pctNonUser": 22},
+    {"group": "Disabled", "pctNonUser": 16},
+    {"group": "Low income (bottom quintile)", "pctNonUser": 14},
+    {"group": "Unemployed", "pctNonUser": 8},
+    {"group": "Social renter", "pctNonUser": 7}
+  ],
+  "basicSkills": [
+    {"year": 2018, "pctHaveSkills": 79},
+    {"year": 2019, "pctHaveSkills": 81},
+    {"year": 2020, "pctHaveSkills": 82},
+    {"year": 2021, "pctHaveSkills": 84},
+    {"year": 2022, "pctHaveSkills": 86},
+    {"year": 2023, "pctHaveSkills": 89}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Office for National Statistics",
+        "dataset": "Internet Users Survey",
+        "url": "https://www.ons.gov.uk/",
+        "frequency": "annual"
+      },
+      {
+        "name": "Lloyds Bank",
+        "dataset": "UK Consumer Digital Index",
+        "url": "https://www.lloydsbankinggroup.com/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Internet user data from ONS captures adults who have used the internet in the last 3 months. Basic digital skills measured by Lloyds Bank index include communicating, finding information, managing transactions, and problem-solving online. Non-users profile based on demographic analysis of those who have never used the internet.",
+    "knownIssues": [
+      "Digital skills definitions vary across survey years",
+      "Non-users profile based on multiple sources with slightly different methodologies"
+    ]
+  }
+}

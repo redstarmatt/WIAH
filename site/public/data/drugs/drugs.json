@@ -1,0 +1,108 @@
+{
+  "topic": "drugs",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "drugDeaths": {
+      "timeSeries": [
+        { "year": 2004, "poisoningDeaths": 1843 },
+        { "year": 2005, "poisoningDeaths": 1851 },
+        { "year": 2006, "poisoningDeaths": 1876 },
+        { "year": 2007, "poisoningDeaths": 2022 },
+        { "year": 2008, "poisoningDeaths": 2081 },
+        { "year": 2009, "poisoningDeaths": 2182 },
+        { "year": 2010, "poisoningDeaths": 2147 },
+        { "year": 2011, "poisoningDeaths": 2652 },
+        { "year": 2012, "poisoningDeaths": 2597 },
+        { "year": 2013, "poisoningDeaths": 2955 },
+        { "year": 2014, "poisoningDeaths": 3346 },
+        { "year": 2015, "poisoningDeaths": 3674 },
+        { "year": 2016, "poisoningDeaths": 3744 },
+        { "year": 2017, "poisoningDeaths": 4359 },
+        { "year": 2018, "poisoningDeaths": 4359 },
+        { "year": 2019, "poisoningDeaths": 4393 },
+        { "year": 2020, "poisoningDeaths": 4561 },
+        { "year": 2021, "poisoningDeaths": 4859 },
+        { "year": 2022, "poisoningDeaths": 4907 },
+        { "year": 2023, "poisoningDeaths": 4907 }
+      ],
+      "latestYear": 2023,
+      "latestDeaths": 4907
+    },
+    "alcoholDeaths": {
+      "timeSeries": [
+        { "year": 2004, "alcoholSpecificDeaths": 6276 },
+        { "year": 2006, "alcoholSpecificDeaths": 6773 },
+        { "year": 2008, "alcoholSpecificDeaths": 6905 },
+        { "year": 2010, "alcoholSpecificDeaths": 6669 },
+        { "year": 2012, "alcoholSpecificDeaths": 6515 },
+        { "year": 2014, "alcoholSpecificDeaths": 6831 },
+        { "year": 2016, "alcoholSpecificDeaths": 7327 },
+        { "year": 2018, "alcoholSpecificDeaths": 7551 },
+        { "year": 2019, "alcoholSpecificDeaths": 7423 },
+        { "year": 2020, "alcoholSpecificDeaths": 8974 },
+        { "year": 2021, "alcoholSpecificDeaths": 9641 },
+        { "year": 2022, "alcoholSpecificDeaths": 10048 },
+        { "year": 2023, "alcoholSpecificDeaths": 10048 }
+      ],
+      "latestYear": 2023,
+      "latestDeaths": 10048
+    },
+    "treatmentEngagement": {
+      "timeSeries": [
+        { "year": "2014/15", "inTreatmentThousands": 289.4, "successfullyCompletedThousands": 34.8 },
+        { "year": "2015/16", "inTreatmentThousands": 280.5, "successfullyCompletedThousands": 33.9 },
+        { "year": "2016/17", "inTreatmentThousands": 268.2, "successfullyCompletedThousands": 33.1 },
+        { "year": "2017/18", "inTreatmentThousands": 261.3, "successfullyCompletedThousands": 32.8 },
+        { "year": "2018/19", "inTreatmentThousands": 254.2, "successfullyCompletedThousands": 32.0 },
+        { "year": "2019/20", "inTreatmentThousands": 248.7, "successfullyCompletedThousands": 31.4 },
+        { "year": "2020/21", "inTreatmentThousands": 235.1, "successfullyCompletedThousands": 26.3 },
+        { "year": "2021/22", "inTreatmentThousands": 275.9, "successfullyCompletedThousands": 32.6 },
+        { "year": "2022/23", "inTreatmentThousands": 289.2, "successfullyCompletedThousands": 36.1 },
+        { "year": "2023/24", "inTreatmentThousands": 298.7, "successfullyCompletedThousands": 39.2 }
+      ],
+      "latestYear": "2023/24",
+      "latestInTreatment": 298700
+    },
+    "prevalence": {
+      "timeSeries": [
+        { "year": 2010, "drugUsePast12mPct": 8.6 },
+        { "year": 2012, "drugUsePast12mPct": 8.2 },
+        { "year": 2014, "drugUsePast12mPct": 8.4 },
+        { "year": 2016, "drugUsePast12mPct": 8.4 },
+        { "year": 2018, "drugUsePast12mPct": 9.4 },
+        { "year": 2020, "drugUsePast12mPct": 9.4 },
+        { "year": 2022, "drugUsePast12mPct": 9.3 },
+        { "year": 2023, "drugUsePast12mPct": 9.1 }
+      ],
+      "note": "Adults 16-59 who used any drug in the last 12 months, Crime Survey for England and Wales"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Deaths related to drug poisoning in England and Wales",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoninginenglandandwales/latest",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Alcohol-specific deaths in the UK",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholspecificdeathsintheunitedkingdom/latest",
+        "frequency": "annual"
+      },
+      {
+        "name": "OHID",
+        "dataset": "National Drug Treatment Monitoring System (NDTMS)",
+        "url": "https://www.gov.uk/government/statistics/substance-misuse-treatment-for-adults-statistics-2023-to-2024",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Drug poisoning deaths include all substances. Alcohol-specific deaths cover conditions wholly attributable to alcohol. Treatment figures from NDTMS cover adults accessing structured drug and alcohol treatment. Prevalence from Crime Survey for England and Wales self-report.",
+    "knownIssues": [
+      "Drug death figures for 2023 are provisional — final figure may differ slightly",
+      "Treatment funding was cut significantly 2013–2020, distorting treatment access trends",
+      "Alcohol deaths surged in 2020–21 partly due to COVID (excess deaths, disrupted care)"
+    ]
+  }
+}

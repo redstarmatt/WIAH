@@ -1,0 +1,61 @@
+{
+  "national": {
+    "childPoverty": {
+      "timeSeries": [
+        {"year": 2000, "pctAfterHousingCosts": 30},
+        {"year": 2003, "pctAfterHousingCosts": 27},
+        {"year": 2006, "pctAfterHousingCosts": 28},
+        {"year": 2009, "pctAfterHousingCosts": 29},
+        {"year": 2012, "pctAfterHousingCosts": 27},
+        {"year": 2015, "pctAfterHousingCosts": 28},
+        {"year": 2017, "pctAfterHousingCosts": 29},
+        {"year": 2018, "pctAfterHousingCosts": 30},
+        {"year": 2019, "pctAfterHousingCosts": 31},
+        {"year": 2020, "pctAfterHousingCosts": 31},
+        {"year": 2021, "pctAfterHousingCosts": 31},
+        {"year": 2022, "pctAfterHousingCosts": 31},
+        {"year": 2023, "pctAfterHousingCosts": 31}
+      ],
+      "latestYear": 2023,
+      "latestMillions": 4.3,
+      "latestPct": 31
+    },
+    "inWorkPoverty": {
+      "timeSeries": [
+        {"year": 2010, "pctInWorkPoverty": 14},
+        {"year": 2012, "pctInWorkPoverty": 15},
+        {"year": 2014, "pctInWorkPoverty": 15},
+        {"year": 2016, "pctInWorkPoverty": 17},
+        {"year": 2018, "pctInWorkPoverty": 18},
+        {"year": 2020, "pctInWorkPoverty": 19},
+        {"year": 2022, "pctInWorkPoverty": 20},
+        {"year": 2023, "pctInWorkPoverty": 21}
+      ],
+      "latestYear": 2023,
+      "latestPct": 21
+    },
+    "byRegion": [
+      {"region": "North East", "pctAfterHousingCosts": 38},
+      {"region": "Yorkshire &amp; Humber", "pctAfterHousingCosts": 34},
+      {"region": "West Midlands", "pctAfterHousingCosts": 35},
+      {"region": "North West", "pctAfterHousingCosts": 32},
+      {"region": "London", "pctAfterHousingCosts": 37},
+      {"region": "East Midlands", "pctAfterHousingCosts": 29},
+      {"region": "East of England", "pctAfterHousingCosts": 25},
+      {"region": "South West", "pctAfterHousingCosts": 24},
+      {"region": "South East", "pctAfterHousingCosts": 22}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "DWP", "dataset": "Households Below Average Income", "url": "https://www.gov.uk/government/collections/households-below-average-income-hbai--2", "frequency": "annual"},
+      {"name": "End Child Poverty", "dataset": "Child Poverty Map of the UK", "url": "https://endchildpoverty.org.uk/child-poverty/", "frequency": "annual"}
+    ],
+    "methodology": "Child poverty measured as children in households with income below 60% of median household income, after housing costs (AHC). This is the primary UK measure. DWP HBAI survey data, covering Great Britain. Northern Ireland data from separate NISRA survey. In-work poverty: children in poverty where at least one adult in household is in paid work.",
+    "knownIssues": [
+      "HBAI uses survey data and has a margin of error of approximately +/- 1 percentage point",
+      "Relative poverty measures fall during recessions as median income drops — does not always reflect lived experience",
+      "Regional data has smaller sample sizes and higher uncertainty"
+    ]
+  }
+}

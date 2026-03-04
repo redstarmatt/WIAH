@@ -1,0 +1,66 @@
+{
+  "topic": "biodiversity",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "farmlandBirds": {
+      "timeSeries": [
+        {"year": 1970, "index": 100},
+        {"year": 1975, "index": 88},
+        {"year": 1980, "index": 78},
+        {"year": 1985, "index": 70},
+        {"year": 1990, "index": 62},
+        {"year": 1995, "index": 55},
+        {"year": 2000, "index": 49},
+        {"year": 2005, "index": 47},
+        {"year": 2010, "index": 45},
+        {"year": 2015, "index": 44},
+        {"year": 2020, "index": 43},
+        {"year": 2021, "index": 43}
+      ],
+      "latestYear": 2021,
+      "latestIndex": 43,
+      "note": "Species population trends composite index. 1970 = 100."
+    },
+    "speciesStatus": [
+      {"status": "Stable or increasing", "pct": 59},
+      {"status": "Moderate decline", "pct": 26},
+      {"status": "Strong decline", "pct": 15}
+    ],
+    "riverQuality": {
+      "timeSeries": [
+        {"year": 2016, "goodStatusPct": 26},
+        {"year": 2017, "goodStatusPct": 22},
+        {"year": 2018, "goodStatusPct": 19},
+        {"year": 2019, "goodStatusPct": 17},
+        {"year": 2020, "goodStatusPct": 16},
+        {"year": 2022, "goodStatusPct": 14}
+      ],
+      "latestYear": 2022,
+      "latestPct": 14,
+      "wfdTarget": 100,
+      "note": "Water Framework Directive good ecological status. England only."
+    },
+    "landProtection": {
+      "protectedLandPct": 8.5,
+      "protectedSeasPct": 26,
+      "target30x30LandPct": 30,
+      "target30x30SeasPct": 30,
+      "note": "UK committed to 30x30 target at COP15 (2022). Currently 8.5% land, 26% seas."
+    },
+    "sssisCondition": {
+      "favourablePct": 38,
+      "unfavourablePct": 62,
+      "totalSSSIs": 4100,
+      "note": "Sites of Special Scientific Interest. Natural England assessment 2022."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "JNCC / RSPB", "dataset": "State of Nature Report 2023", "url": "https://stateofnature.org.uk/", "frequency": "triennial"},
+      {"name": "DEFRA", "dataset": "Wild bird populations, UK", "url": "https://www.gov.uk/government/statistics/wild-bird-populations-in-the-uk", "frequency": "annual"},
+      {"name": "Environment Agency", "dataset": "Water Framework Directive river classification", "url": "https://environment.data.gov.uk/catchment-planning/", "frequency": "annual"}
+    ],
+    "methodology": "State of Nature uses population trend data for over 10,000 species to calculate percentage declining, stable, or increasing. Farmland bird index is a composite of 19 farmland specialist species, indexed to 1970=100. River quality assessed under Water Framework Directive ecological status classifications.",
+    "knownIssues": ["Species trend data has different baseline years for different taxa", "SSSI condition assessments are periodic — not all sites assessed in same year", "River classification methodology updated — pre/post 2016 data not fully comparable"]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "neetRate": [
+    {"year": 2010, "pct": 17.8},
+    {"year": 2011, "pct": 17.0},
+    {"year": 2012, "pct": 16.5},
+    {"year": 2013, "pct": 16.0},
+    {"year": 2014, "pct": 14.9},
+    {"year": 2015, "pct": 13.1},
+    {"year": 2016, "pct": 12.4},
+    {"year": 2017, "pct": 11.8},
+    {"year": 2018, "pct": 11.5},
+    {"year": 2019, "pct": 10.8},
+    {"year": 2020, "pct": 13.1},
+    {"year": 2021, "pct": 12.5},
+    {"year": 2022, "pct": 11.6},
+    {"year": 2023, "pct": 12.2}
+  ],
+  "youthUnemployment": [
+    {"year": 2010, "rate": 19.9},
+    {"year": 2012, "rate": 21.2},
+    {"year": 2014, "rate": 17.0},
+    {"year": 2016, "rate": 14.7},
+    {"year": 2018, "rate": 11.4},
+    {"year": 2019, "rate": 11.2},
+    {"year": 2020, "rate": 14.3},
+    {"year": 2021, "rate": 13.6},
+    {"year": 2022, "rate": 11.1},
+    {"year": 2023, "rate": 14.1}
+  ],
+  "byReason": [
+    {"reason": "Long-term sickness/disability", "pct": 34},
+    {"reason": "Looking after family/home", "pct": 18},
+    {"reason": "Discouraged workers", "pct": 14},
+    {"reason": "Awaiting job start", "pct": 12},
+    {"reason": "Full-time education (not seeking work)", "pct": 10},
+    {"reason": "Other", "pct": 12}
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "national": {
+    "policeCrimes": {
+      "timeSeries": [
+        {"year": 2013, "crimesThousands": 534},
+        {"year": 2014, "crimesThousands": 580},
+        {"year": 2015, "crimesThousands": 629},
+        {"year": 2016, "crimesThousands": 679},
+        {"year": 2017, "crimesThousands": 740},
+        {"year": 2018, "crimesThousands": 794},
+        {"year": 2019, "crimesThousands": 851},
+        {"year": 2020, "crimesThousands": 786},
+        {"year": 2021, "crimesThousands": 845},
+        {"year": 2022, "crimesThousands": 906},
+        {"year": 2023, "crimesThousands": 921}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 921,
+      "reportedPct": 18,
+      "chargeRatePct": 6,
+      "note": "Police recorded crime — domestic abuse flag. Includes crimes not just incidents. Figures for England and Wales."
+    },
+    "victims": {
+      "yearToMarch2023": {
+        "totalMillions": 2.4,
+        "womenMillions": 1.4,
+        "menMillions": 0.75,
+        "source": "Crime Survey for England and Wales"
+      },
+      "lifetimePrevalence": {
+        "womenPct": 25,
+        "menPct": 10
+      },
+      "femicideCount2022": 76,
+      "femicideSource": "Femicide Census"
+    },
+    "byType": [
+      {"type": "Non-physical abuse (controlling)", "pct": 36},
+      {"type": "Physical violence", "pct": 29},
+      {"type": "Threats", "pct": 15},
+      {"type": "Sexual assault", "pct": 12},
+      {"type": "Stalking", "pct": 8}
+    ],
+    "refuges": {
+      "bedSpaces": 3700,
+      "estimatedNeed": 7400,
+      "requestsDeclined2022": 18000,
+      "note": "SafeLives/Women&apos;s Aid data. Istanbul Convention standard not met. 18,000 refuge place requests declined in 2022/23."
+    },
+    "marac": {
+      "referrals2022": 88000,
+      "note": "Multi-Agency Risk Assessment Conference — high-risk domestic abuse case reviews. 88,000 referrals in 2022/23, 70% repeat victims."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Domestic abuse in England and Wales overview", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwalesoverview/november2023", "frequency": "annual"},
+      {"name": "Home Office", "dataset": "Crime outcomes in England and Wales", "url": "https://www.gov.uk/government/collections/crime-outcomes-in-england-and-wales-statistics", "frequency": "annual"},
+      {"name": "Femicide Census", "dataset": "UK femicide data", "url": "https://www.femicidecensus.org/", "frequency": "annual"}
+    ],
+    "methodology": "Victim prevalence from Crime Survey for England and Wales (household survey, captures unreported crime). Police recorded crime from Home Office returns. Femicide Census documents all women killed by men in England, Wales and Scotland. Charge rate calculated from Home Office crime outcomes data.",
+    "knownIssues": ["CSEW does not cover people living in communal establishments, under-18s, or those who cannot respond freely", "Police recording of domestic abuse has improved — partly explains rising recorded crime trend", "Femicide Census definition (women killed by men) differs from Home Office homicide statistics"]
+  }
+}

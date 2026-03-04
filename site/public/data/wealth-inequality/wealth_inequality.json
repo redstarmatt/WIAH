@@ -1,0 +1,43 @@
+{
+  "wealthShare": [
+    {"year": 2007, "top10pct": 38, "bottom50pct": 11},
+    {"year": 2009, "top10pct": 39, "bottom50pct": 11},
+    {"year": 2011, "top10pct": 40, "bottom50pct": 10},
+    {"year": 2013, "top10pct": 41, "bottom50pct": 10},
+    {"year": 2015, "top10pct": 42, "bottom50pct": 9},
+    {"year": 2017, "top10pct": 43, "bottom50pct": 9},
+    {"year": 2019, "top10pct": 43, "bottom50pct": 9},
+    {"year": 2021, "top10pct": 43, "bottom50pct": 9}
+  ],
+  "byWealthType": [
+    {"type": "Property (net of mortgage)", "sharePct": 36},
+    {"type": "Private pension", "sharePct": 42},
+    {"type": "Financial wealth", "sharePct": 13},
+    {"type": "Physical wealth (possessions)", "sharePct": 9}
+  ],
+  "byAgeGroup": [
+    {"age": "16-24", "medianWealth": 12000},
+    {"age": "25-34", "medianWealth": 45000},
+    {"age": "35-44", "medianWealth": 128000},
+    {"age": "45-54", "medianWealth": 294000},
+    {"age": "55-64", "medianWealth": 414000},
+    {"age": "65-74", "medianWealth": 462000},
+    {"age": "75+", "medianWealth": 378000}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Office for National Statistics",
+        "dataset": "Wealth and Assets Survey",
+        "url": "https://www.ons.gov.uk/",
+        "frequency": "biennial"
+      }
+    ],
+    "methodology": "Wealth data from ONS Wealth and Assets Survey covers total net wealth including property (net of mortgage), private pensions, financial assets, and physical possessions. Median wealth calculated across household distributions by age group and quintile.",
+    "knownIssues": [
+      "Survey methodology updated in 2017; pre/post not directly comparable",
+      "Wealth measurements exclude public pensions and some illiquid assets",
+      "Young adult wealth heavily influenced by parental transfers and inheritance"
+    ]
+  }
+}

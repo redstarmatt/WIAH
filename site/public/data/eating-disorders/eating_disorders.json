@@ -1,0 +1,27 @@
+{
+  "hospitalAdmissions": [
+    {"year": 2011, "admissions": 14000},
+    {"year": 2013, "admissions": 16000},
+    {"year": 2015, "admissions": 18000},
+    {"year": 2017, "admissions": 20000},
+    {"year": 2019, "admissions": 23000},
+    {"year": 2020, "admissions": 25000},
+    {"year": 2021, "admissions": 27000},
+    {"year": 2022, "admissions": 28000}
+  ],
+  "waitingTimes": [
+    {"year": 2018, "avgWeeks": 12},
+    {"year": 2019, "avgWeeks": 14},
+    {"year": 2020, "avgWeeks": 16},
+    {"year": 2021, "avgWeeks": 20},
+    {"year": 2022, "avgWeeks": 22},
+    {"year": 2023, "avgWeeks": 22}
+  ],
+  "byDiagnosis": [
+    {"diagnosis": "Anorexia nervosa", "pctAdmissions": 45},
+    {"diagnosis": "Bulimia nervosa", "pctAdmissions": 18},
+    {"diagnosis": "Binge eating disorder", "pctAdmissions": 16},
+    {"diagnosis": "ARFID", "pctAdmissions": 12},
+    {"diagnosis": "Other specified", "pctAdmissions": 9}
+  ]
+}

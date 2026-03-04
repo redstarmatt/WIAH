@@ -1,0 +1,104 @@
+{
+  "topic": "high-streets",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "vacancyRates": {
+      "timeSeries": [
+        { "year": "2012 Q1", "vacancyRatePct": 11.3 },
+        { "year": "2013 Q1", "vacancyRatePct": 12.0 },
+        { "year": "2014 Q1", "vacancyRatePct": 12.5 },
+        { "year": "2015 Q1", "vacancyRatePct": 11.8 },
+        { "year": "2016 Q1", "vacancyRatePct": 10.7 },
+        { "year": "2017 Q1", "vacancyRatePct": 10.0 },
+        { "year": "2018 Q1", "vacancyRatePct": 10.2 },
+        { "year": "2019 Q1", "vacancyRatePct": 11.1 },
+        { "year": "2020 Q1", "vacancyRatePct": 12.3 },
+        { "year": "2021 Q1", "vacancyRatePct": 14.5 },
+        { "year": "2022 Q1", "vacancyRatePct": 14.1 },
+        { "year": "2023 Q1", "vacancyRatePct": 13.9 },
+        { "year": "2024 Q1", "vacancyRatePct": 14.2 },
+        { "year": "2024 Q3", "vacancyRatePct": 14.0 }
+      ],
+      "latestPct": 14.0,
+      "latestPeriod": "Q3 2024",
+      "note": "Vacant high street retail units as percentage of total. Local Data Company."
+    },
+    "onlineVsInStore": {
+      "timeSeries": [
+        { "year": 2010, "onlinePctOfRetailSales": 6.4 },
+        { "year": 2011, "onlinePctOfRetailSales": 8.1 },
+        { "year": 2012, "onlinePctOfRetailSales": 10.0 },
+        { "year": 2013, "onlinePctOfRetailSales": 11.6 },
+        { "year": 2014, "onlinePctOfRetailSales": 12.9 },
+        { "year": 2015, "onlinePctOfRetailSales": 13.8 },
+        { "year": 2016, "onlinePctOfRetailSales": 15.6 },
+        { "year": 2017, "onlinePctOfRetailSales": 17.3 },
+        { "year": 2018, "onlinePctOfRetailSales": 18.9 },
+        { "year": 2019, "onlinePctOfRetailSales": 19.9 },
+        { "year": 2020, "onlinePctOfRetailSales": 27.9 },
+        { "year": 2021, "onlinePctOfRetailSales": 26.9 },
+        { "year": 2022, "onlinePctOfRetailSales": 25.6 },
+        { "year": 2023, "onlinePctOfRetailSales": 26.5 },
+        { "year": 2024, "onlinePctOfRetailSales": 27.3 }
+      ],
+      "latestYear": 2024,
+      "latestOnlinePct": 27.3
+    },
+    "storeClosures": {
+      "timeSeries": [
+        { "year": 2015, "netClosures": -1020 },
+        { "year": 2016, "netClosures": -1253 },
+        { "year": 2017, "netClosures": -2496 },
+        { "year": 2018, "netClosures": -2868 },
+        { "year": 2019, "netClosures": -6635 },
+        { "year": 2020, "netClosures": -9092 },
+        { "year": 2021, "netClosures": -8890 },
+        { "year": 2022, "netClosures": -8148 },
+        { "year": 2023, "netClosures": -6145 },
+        { "year": 2024, "netClosures": -5234 }
+      ],
+      "note": "Net store closures (openings minus closures) across UK. Negative = net closures."
+    },
+    "footfall": {
+      "timeSeries": [
+        { "year": 2019, "indexedTo2019": 100 },
+        { "year": 2020, "indexedTo2019": 63 },
+        { "year": 2021, "indexedTo2019": 82 },
+        { "year": 2022, "indexedTo2019": 86 },
+        { "year": 2023, "indexedTo2019": 87 },
+        { "year": 2024, "indexedTo2019": 86 }
+      ],
+      "latestYear": 2024,
+      "latestIndex": 86,
+      "note": "Town centre footfall indexed to 2019=100. Springboard data."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Local Data Company",
+        "dataset": "UK retail vacancy rates &mdash; quarterly",
+        "url": "https://www.localdatacompany.com/research",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Retail sales, internet sales as a percentage of total",
+        "url": "https://www.ons.gov.uk/businessindustryandtrade/retailindustry/bulletins/retailsales/latest",
+        "frequency": "monthly"
+      },
+      {
+        "name": "Springboard",
+        "dataset": "UK Retail Footfall Monitor",
+        "url": "https://springboard.uk.com/resources/retail-footfall-monitor/",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Vacancy rate from Local Data Company census of high street units. Online retail share from ONS Retail Sales inquiry. Store closure data from PwC/Local Data Company annual retail census. Footfall from Springboard sensor network.",
+    "knownIssues": [
+      "Store closure data includes administrative closures and some units that reopened &mdash; net figure is most reliable",
+      "Online retail share includes food delivery which artificially raised the figure from 2020",
+      "Footfall data is based on sensors in a sample of town centres &mdash; not universal coverage"
+    ]
+  }
+}

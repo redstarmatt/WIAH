@@ -1,0 +1,32 @@
+{
+  "vacancies": [
+    {"year": 2015, "total": 64000},
+    {"year": 2016, "total": 72000},
+    {"year": 2017, "total": 82000},
+    {"year": 2018, "total": 95000},
+    {"year": 2019, "total": 103000},
+    {"year": 2020, "total": 85000},
+    {"year": 2021, "total": 93000},
+    {"year": 2022, "total": 133000},
+    {"year": 2023, "total": 112000}
+  ],
+  "nursingNumbers": [
+    {"year": 2015, "registeredNurses": 285000},
+    {"year": 2016, "registeredNurses": 289000},
+    {"year": 2017, "registeredNurses": 288000},
+    {"year": 2018, "registeredNurses": 291000},
+    {"year": 2019, "registeredNurses": 296000},
+    {"year": 2020, "registeredNurses": 315000},
+    {"year": 2021, "registeredNurses": 321000},
+    {"year": 2022, "registeredNurses": 332000},
+    {"year": 2023, "registeredNurses": 344000}
+  ],
+  "byWorkforce": [
+    {"role": "Nursing & midwifery", "vacancies": 47500},
+    {"role": "Mental health nursing", "vacancies": 12000},
+    {"role": "Allied health professionals", "vacancies": 16000},
+    {"role": "Medical & dental", "vacancies": 9800},
+    {"role": "Admin & clerical", "vacancies": 14500},
+    {"role": "Support staff", "vacancies": 12200}
+  ]
+}

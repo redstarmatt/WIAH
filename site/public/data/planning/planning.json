@@ -1,0 +1,82 @@
+{
+  "topic": "planning",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "newHomesBuilt": {
+      "timeSeries": [
+        {"year": 2010, "completionsThousands": 102.6},
+        {"year": 2011, "completionsThousands": 98.3},
+        {"year": 2012, "completionsThousands": 107.0},
+        {"year": 2013, "completionsThousands": 109.4},
+        {"year": 2014, "completionsThousands": 117.7},
+        {"year": 2015, "completionsThousands": 142.9},
+        {"year": 2016, "completionsThousands": 140.6},
+        {"year": 2017, "completionsThousands": 154.7},
+        {"year": 2018, "completionsThousands": 165.1},
+        {"year": 2019, "completionsThousands": 168.9},
+        {"year": 2020, "completionsThousands": 124.3},
+        {"year": 2021, "completionsThousands": 148.6},
+        {"year": 2022, "completionsThousands": 182.0},
+        {"year": 2023, "completionsThousands": 174.5},
+        {"year": 2024, "completionsThousands": 160.4}
+      ],
+      "latestYear": 2024,
+      "latestCompletions": 160.4,
+      "governmentTarget": 300,
+      "note": "Net additional dwellings, England"
+    },
+    "planningApplications": {
+      "timeSeries": [
+        {"year": 2015, "majorApplicationsDecidedThousands": 17.6},
+        {"year": 2016, "majorApplicationsDecidedThousands": 18.1},
+        {"year": 2017, "majorApplicationsDecidedThousands": 18.3},
+        {"year": 2018, "majorApplicationsDecidedThousands": 17.9},
+        {"year": 2019, "majorApplicationsDecidedThousands": 17.2},
+        {"year": 2020, "majorApplicationsDecidedThousands": 15.2},
+        {"year": 2021, "majorApplicationsDecidedThousands": 17.1},
+        {"year": 2022, "majorApplicationsDecidedThousands": 16.4},
+        {"year": 2023, "majorApplicationsDecidedThousands": 14.9},
+        {"year": 2024, "majorApplicationsDecidedThousands": 14.2}
+      ],
+      "latestYear": 2024,
+      "grantedPct": 73
+    },
+    "planningOfficers": {
+      "timeSeries": [
+        {"year": 2010, "officersThousands": 9.5},
+        {"year": 2013, "officersThousands": 8.2},
+        {"year": 2016, "officersThousands": 7.4},
+        {"year": 2019, "officersThousands": 6.9},
+        {"year": 2022, "officersThousands": 6.4},
+        {"year": 2024, "officersThousands": 6.1}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 6.1,
+      "changeFrom2010Pct": -36
+    },
+    "affordability": {
+      "timeSeries": [
+        {"year": 2010, "housepriceToEarningsRatio": 6.8},
+        {"year": 2012, "housepriceToEarningsRatio": 6.1},
+        {"year": 2014, "housepriceToEarningsRatio": 6.7},
+        {"year": 2016, "housepriceToEarningsRatio": 7.7},
+        {"year": 2018, "housepriceToEarningsRatio": 7.8},
+        {"year": 2020, "housepriceToEarningsRatio": 7.9},
+        {"year": 2022, "housepriceToEarningsRatio": 9.1},
+        {"year": 2023, "housepriceToEarningsRatio": 8.3},
+        {"year": 2024, "housepriceToEarningsRatio": 8.0}
+      ],
+      "latestYear": 2024,
+      "latestRatio": 8.0
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "MHCLG", "dataset": "Net additional dwellings statistics", "url": "https://www.gov.uk/government/collections/house-building-statistics", "frequency": "annual"},
+      {"name": "MHCLG", "dataset": "Planning applications statistics", "url": "https://www.gov.uk/government/collections/planning-applications-statistics", "frequency": "quarterly"},
+      {"name": "ONS", "dataset": "House price to earnings ratio", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingaffordabilityinenglandandwales", "frequency": "annual"}
+    ],
+    "methodology": "Net additional dwellings from MHCLG annual house building statistics for England. Includes new builds, conversions, and change of use minus demolitions. Government target is 300,000 new homes per year. Planning applications data from MHCLG quarterly returns from local authorities.",
+    "knownIssues": ["Net additional dwellings includes conversions and change of use, making it higher than purely new-build figures", "Planning officer numbers are estimates from RTPI/LGA surveys, not official census", "House price to earnings ratio uses median house price to median workplace earnings, England and Wales"]
+  }
+}

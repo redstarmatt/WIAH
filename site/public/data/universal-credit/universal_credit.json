@@ -1,0 +1,54 @@
+{
+  "topic": "universal-credit",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "claimants": [
+      {"year": 2016, "millions": 0.5},
+      {"year": 2017, "millions": 0.9},
+      {"year": 2018, "millions": 1.6},
+      {"year": 2019, "millions": 2.9},
+      {"year": 2020, "millions": 5.6},
+      {"year": 2021, "millions": 5.9},
+      {"year": 2022, "millions": 6.1},
+      {"year": 2023, "millions": 6.4}
+    ],
+    "sanctionsRate": [
+      {"year": 2016, "pctSanctioned": 1.8},
+      {"year": 2017, "pctSanctioned": 2.2},
+      {"year": 2018, "pctSanctioned": 2.8},
+      {"year": 2019, "pctSanctioned": 3.1},
+      {"year": 2020, "pctSanctioned": 0.8},
+      {"year": 2021, "pctSanctioned": 1.4},
+      {"year": 2022, "pctSanctioned": 3.2},
+      {"year": 2023, "pctSanctioned": 3.8}
+    ],
+    "byHouseholdType": [
+      {"type": "Single, no children", "pct": 42},
+      {"type": "Couple with children", "pct": 22},
+      {"type": "Single parent", "pct": 18},
+      {"type": "Couple, no children", "pct": 12},
+      {"type": "Other", "pct": 6}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DWP",
+        "dataset": "Universal Credit statistics",
+        "url": "https://www.gov.uk/government/collections/universal-credit-statistics",
+        "frequency": "monthly"
+      },
+      {
+        "name": "Trussell Trust",
+        "dataset": "End of Year Stats",
+        "url": "https://www.trusselltrust.org/news-and-blog/latest-stats/end-year-stats/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Universal Credit claimants sourced from DWP Stat-Xplore. Household type distribution based on latest claimant profile data. Sanctions rate based on DWP sanction decisions as a percentage of average caseload.",
+    "knownIssues": [
+      "Sanctions data suspended during COVID-19 pandemic (2020–2021)",
+      "Household type categories may overlap; some claimants classified under multiple types"
+    ]
+  }
+}

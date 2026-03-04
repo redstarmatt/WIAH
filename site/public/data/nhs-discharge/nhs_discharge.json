@@ -1,0 +1,51 @@
+{
+  "national": {
+    "delayedDischarges": {
+      "timeSeries": [
+        {"year": 2015, "dailyAverage": 5200},
+        {"year": 2016, "dailyAverage": 5800},
+        {"year": 2017, "dailyAverage": 6800},
+        {"year": 2018, "dailyAverage": 7200},
+        {"year": 2019, "dailyAverage": 7400},
+        {"year": 2020, "dailyAverage": 3800},
+        {"year": 2021, "dailyAverage": 9800},
+        {"year": 2022, "dailyAverage": 12500},
+        {"year": 2023, "dailyAverage": 13500}
+      ],
+      "latestYear": 2023,
+      "latestDailyAverage": 13500,
+      "annualCostBillionGBP": 1.0
+    },
+    "byReason": {
+      "timeSeries": [
+        {"year": 2019, "socialCareDelayPct": 35},
+        {"year": 2020, "socialCareDelayPct": 28},
+        {"year": 2021, "socialCareDelayPct": 38},
+        {"year": 2022, "socialCareDelayPct": 41},
+        {"year": 2023, "socialCareDelayPct": 42}
+      ],
+      "latestYear": 2023,
+      "latestSocialCarePct": 42
+    },
+    "byDelayReason": [
+      {"reason": "Social care package", "pct": 42},
+      {"reason": "Awaiting assessment", "pct": 18},
+      {"reason": "Care home placement", "pct": 16},
+      {"reason": "Patient/family decision", "pct": 12},
+      {"reason": "Awaiting equipment", "pct": 7},
+      {"reason": "Other NHS", "pct": 5}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England", "dataset": "Discharge Delays (Acute)", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/discharge-delays-acute-data/", "frequency": "weekly"},
+      {"name": "NHS England", "dataset": "UEC (Urgent and Emergency Care) Performance", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/uec-sitrep/", "frequency": "weekly"}
+    ],
+    "methodology": "Delayed discharge daily average is the number of patients in acute hospital beds who are medically fit for discharge but cannot leave, averaged across reporting days. Data from NHS England Discharge Delays collection, introduced in 2021. Earlier data estimated from NHS England Bed Availability and Occupancy Statistics. Social care delay percentage from NHS England discharge reason coding.",
+    "knownIssues": [
+      "Discharge delay data collection methodology changed in 2021 — pre/post not directly comparable",
+      "COVID-19 period (2020) shows lower delays as many elective patients discharged rapidly to free capacity",
+      "Reason coding is subject to local variation — some areas may code differently"
+    ]
+  }
+}

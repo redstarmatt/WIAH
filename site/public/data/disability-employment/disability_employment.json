@@ -1,0 +1,57 @@
+{
+  "national": {
+    "employmentGap": {
+      "timeSeries": [
+        {"year": 2014, "disabledEmploymentPct": 44.0, "nonDisabledPct": 80.4},
+        {"year": 2015, "disabledEmploymentPct": 45.7, "nonDisabledPct": 80.8},
+        {"year": 2016, "disabledEmploymentPct": 47.4, "nonDisabledPct": 81.0},
+        {"year": 2017, "disabledEmploymentPct": 49.2, "nonDisabledPct": 81.5},
+        {"year": 2018, "disabledEmploymentPct": 51.0, "nonDisabledPct": 81.8},
+        {"year": 2019, "disabledEmploymentPct": 52.6, "nonDisabledPct": 82.2},
+        {"year": 2020, "disabledEmploymentPct": 52.3, "nonDisabledPct": 80.5},
+        {"year": 2021, "disabledEmploymentPct": 52.7, "nonDisabledPct": 81.0},
+        {"year": 2022, "disabledEmploymentPct": 53.3, "nonDisabledPct": 82.0},
+        {"year": 2023, "disabledEmploymentPct": 53.7, "nonDisabledPct": 82.1}
+      ],
+      "latestYear": 2023,
+      "latestDisabledPct": 53.7,
+      "latestNonDisabledPct": 82.1,
+      "latestGapPct": 28.4
+    },
+    "benefitsClaimants": {
+      "timeSeries": [
+        {"year": 2015, "pipClaimantsMillions": 1.5},
+        {"year": 2016, "pipClaimantsMillions": 1.8},
+        {"year": 2017, "pipClaimantsMillions": 2.2},
+        {"year": 2018, "pipClaimantsMillions": 2.5},
+        {"year": 2019, "pipClaimantsMillions": 2.7},
+        {"year": 2020, "pipClaimantsMillions": 2.8},
+        {"year": 2021, "pipClaimantsMillions": 3.0},
+        {"year": 2022, "pipClaimantsMillions": 3.2},
+        {"year": 2023, "pipClaimantsMillions": 3.6}
+      ],
+      "latestYear": 2023,
+      "latestMillions": 3.6
+    },
+    "byDisabilityType": [
+      {"disabilityType": "Mental health", "employmentPct": 46},
+      {"disabilityType": "Autism / ADHD", "employmentPct": 32},
+      {"disabilityType": "Learning disability", "employmentPct": 26},
+      {"disabilityType": "Physical disability", "employmentPct": 59},
+      {"disabilityType": "Sensory impairment", "employmentPct": 61},
+      {"disabilityType": "Chronic illness", "employmentPct": 55}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Labour Force Survey — Disability and Employment", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/disabilityandemploymentuk/2023", "frequency": "annual"},
+      {"name": "DWP", "dataset": "PIP Statistics", "url": "https://www.gov.uk/government/collections/personal-independence-payment-statistics", "frequency": "quarterly"}
+    ],
+    "methodology": "Employment rates from ONS Labour Force Survey, using the Equality Act 2010 definition of disability (substantial and long-term adverse effect on ability to carry out normal day-to-day activities). PIP claimants from DWP administrative data. Employment rates by disability type are estimates from Scope analysis of LFS microdata.",
+    "knownIssues": [
+      "LFS uses self-reported disability — may undercount those who do not identify as disabled",
+      "The disability employment gap target (halving the gap) was abandoned in 2017 — no current formal target",
+      "PIP data includes both new and renewal claimants and does not fully capture severity"
+    ]
+  }
+}

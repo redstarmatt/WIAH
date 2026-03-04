@@ -1,0 +1,95 @@
+{
+  "topic": "nhs-staffing",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "vacancies": {
+      "timeSeries": [
+        { "date": "2016-09", "vacanciesThousands": 78.8 },
+        { "date": "2017-09", "vacanciesThousands": 86.2 },
+        { "date": "2018-09", "vacanciesThousands": 107.7 },
+        { "date": "2019-09", "vacanciesThousands": 103.1 },
+        { "date": "2020-09", "vacanciesThousands": 85.3 },
+        { "date": "2021-09", "vacanciesThousands": 105.7 },
+        { "date": "2022-09", "vacanciesThousands": 133.5 },
+        { "date": "2023-09", "vacanciesThousands": 121.1 },
+        { "date": "2024-09", "vacanciesThousands": 104.3 }
+      ],
+      "latestDate": "Sep 2024",
+      "latestVacancies": 104300
+    },
+    "sicknessBurnout": {
+      "timeSeries": [
+        { "year": "2015/16", "sicknessDaysPerStaff": 11.5, "stressRelatedPct": 29.7 },
+        { "year": "2016/17", "sicknessDaysPerStaff": 11.8, "stressRelatedPct": 30.2 },
+        { "year": "2017/18", "sicknessDaysPerStaff": 12.0, "stressRelatedPct": 31.1 },
+        { "year": "2018/19", "sicknessDaysPerStaff": 12.3, "stressRelatedPct": 31.6 },
+        { "year": "2019/20", "sicknessDaysPerStaff": 12.7, "stressRelatedPct": 32.1 },
+        { "year": "2020/21", "sicknessDaysPerStaff": 17.3, "stressRelatedPct": 28.6 },
+        { "year": "2021/22", "sicknessDaysPerStaff": 16.1, "stressRelatedPct": 32.8 },
+        { "year": "2022/23", "sicknessDaysPerStaff": 14.2, "stressRelatedPct": 33.9 },
+        { "year": "2023/24", "sicknessDaysPerStaff": 13.8, "stressRelatedPct": 34.6 }
+      ],
+      "latestYear": "2023/24",
+      "latestSicknessPerStaff": 13.8,
+      "latestStressRelatedPct": 34.6
+    },
+    "internationalRecruitment": {
+      "timeSeries": [
+        { "year": 2016, "intlNurseJoiners": 6389 },
+        { "year": 2017, "intlNurseJoiners": 3519 },
+        { "year": 2018, "intlNurseJoiners": 6103 },
+        { "year": 2019, "intlNurseJoiners": 10843 },
+        { "year": 2020, "intlNurseJoiners": 17942 },
+        { "year": 2021, "intlNurseJoiners": 22906 },
+        { "year": 2022, "intlNurseJoiners": 35765 },
+        { "year": 2023, "intlNurseJoiners": 40123 },
+        { "year": 2024, "intlNurseJoiners": 26841 }
+      ],
+      "latestYear": 2024,
+      "note": "International nurses joining the NMC register from overseas"
+    },
+    "workforceSize": {
+      "timeSeries": [
+        { "date": "2016-09", "totalFTEThousands": 1121 },
+        { "date": "2017-09", "totalFTEThousands": 1136 },
+        { "date": "2018-09", "totalFTEThousands": 1147 },
+        { "date": "2019-09", "totalFTEThousands": 1161 },
+        { "date": "2020-09", "totalFTEThousands": 1183 },
+        { "date": "2021-09", "totalFTEThousands": 1201 },
+        { "date": "2022-09", "totalFTEThousands": 1236 },
+        { "date": "2023-09", "totalFTEThousands": 1264 },
+        { "date": "2024-09", "totalFTEThousands": 1278 }
+      ],
+      "latestDate": "Sep 2024",
+      "latestFTE": 1278000
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "NHS Workforce Statistics",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics",
+        "frequency": "monthly"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "NHS Sickness Absence Rates",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-sickness-absence-rates",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "NMC",
+        "dataset": "Annual data reports — international nurse recruitment",
+        "url": "https://www.nmc.org.uk/about-us/reports-and-accounts/registration-statistics/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Vacancy data from NHS England workforce vacancy survey. Sickness rates from NHSE sickness absence publication. International nurse joiners from NMC register admissions by country of training. Workforce FTE from NHS Workforce Statistics.",
+    "knownIssues": [
+      "Vacancy data is estimated and may not capture all unfilled posts — methodology updated in 2022",
+      "2020/21 sickness rates include COVID absences — inflated and not directly comparable",
+      "International recruitment slowdown in 2024 partly reflects WHO ethical recruitment concerns and visa restrictions"
+    ]
+  }
+}

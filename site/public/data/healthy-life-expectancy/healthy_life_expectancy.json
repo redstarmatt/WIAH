@@ -1,0 +1,45 @@
+{
+  "topic": "healthy-life-expectancy",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "lifeExpectancy": {
+      "timeSeries": [
+        {"period": "2009-11", "maleLE": 78.4, "femaleLE": 82.4, "maleHLE": 63.3, "femaleHLE": 64.1},
+        {"period": "2011-13", "maleLE": 79.0, "femaleLE": 82.8, "maleHLE": 63.7, "femaleHLE": 64.5},
+        {"period": "2013-15", "maleLE": 79.4, "femaleLE": 83.1, "maleHLE": 63.7, "femaleHLE": 64.0},
+        {"period": "2015-17", "maleLE": 79.5, "femaleLE": 83.1, "maleHLE": 63.4, "femaleHLE": 63.7},
+        {"period": "2017-19", "maleLE": 79.4, "femaleLE": 83.1, "maleHLE": 63.1, "femaleHLE": 63.9},
+        {"period": "2018-20", "maleLE": 78.7, "femaleLE": 82.7, "maleHLE": 62.5, "femaleHLE": 63.3},
+        {"period": "2020-22", "maleLE": 78.6, "femaleLE": 82.6, "maleHLE": 62.2, "femaleHLE": 62.7},
+        {"period": "2021-23", "maleLE": 79.0, "femaleLE": 82.9, "maleHLE": 62.9, "femaleHLE": 63.4}
+      ],
+      "latestPeriod": "2021-23",
+      "latestMaleHLE": 62.9,
+      "latestFemaleHLE": 63.4
+    },
+    "deprivationGap": {
+      "latestPeriod": "2018-20",
+      "data": [
+        {"decile": "Most deprived", "maleHLE": 52.3, "femaleHLE": 52.2},
+        {"decile": "2nd", "maleHLE": 55.8, "femaleHLE": 56.0},
+        {"decile": "3rd", "maleHLE": 58.6, "femaleHLE": 58.8},
+        {"decile": "4th", "maleHLE": 60.4, "femaleHLE": 60.5},
+        {"decile": "5th", "maleHLE": 62.0, "femaleHLE": 62.5},
+        {"decile": "6th", "maleHLE": 63.7, "femaleHLE": 63.8},
+        {"decile": "7th", "maleHLE": 65.1, "femaleHLE": 65.3},
+        {"decile": "8th", "maleHLE": 66.5, "femaleHLE": 66.8},
+        {"decile": "9th", "maleHLE": 67.7, "femaleHLE": 68.1},
+        {"decile": "Least deprived", "maleHLE": 71.4, "femaleHLE": 71.0}
+      ],
+      "gapYears": 19.1
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Health state life expectancies, England", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies/bulletins/healthstatelifeexpectanciesuk/2021to2023", "frequency": "annual"},
+      {"name": "ONS", "dataset": "Health state life expectancies by deprivation", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies", "frequency": "triennial"}
+    ],
+    "methodology": "Healthy life expectancy (HLE) is years in good/very good self-assessed health using the Sullivan method. Deprivation deciles from Index of Multiple Deprivation.",
+    "knownIssues": ["HLE based on self-assessed health", "Deprivation gap is from 2018-20, more recent sub-national data not yet published"]
+  }
+}

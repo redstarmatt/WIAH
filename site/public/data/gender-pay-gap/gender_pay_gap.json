@@ -1,0 +1,58 @@
+{
+  "national": {
+    "genderPayGap": {
+      "timeSeries": [
+        {"year": 2012, "fullTimeGapPct": 19.7},
+        {"year": 2013, "fullTimeGapPct": 19.7},
+        {"year": 2014, "fullTimeGapPct": 19.1},
+        {"year": 2015, "fullTimeGapPct": 18.4},
+        {"year": 2016, "fullTimeGapPct": 18.1},
+        {"year": 2017, "fullTimeGapPct": 17.4},
+        {"year": 2018, "fullTimeGapPct": 17.1},
+        {"year": 2019, "fullTimeGapPct": 17.3},
+        {"year": 2020, "fullTimeGapPct": 15.5},
+        {"year": 2021, "fullTimeGapPct": 15.4},
+        {"year": 2022, "fullTimeGapPct": 14.9},
+        {"year": 2023, "fullTimeGapPct": 14.3}
+      ],
+      "latestYear": 2023,
+      "latestFullTimePct": 14.3,
+      "latestAllWorkersPct": 19.7
+    },
+    "bySector": [
+      {"sector": "Financial services", "gapPct": 28.1},
+      {"sector": "Construction", "gapPct": 24.8},
+      {"sector": "IT & tech", "gapPct": 23.1},
+      {"sector": "Professional services", "gapPct": 21.0},
+      {"sector": "Health & social care", "gapPct": 12.5},
+      {"sector": "Education", "gapPct": 18.3},
+      {"sector": "Retail", "gapPct": 15.4},
+      {"sector": "Public admin", "gapPct": 11.2}
+    ],
+    "boardroomRepresentation": {
+      "timeSeries": [
+        {"year": 2012, "ftse350WomenPct": 13.0},
+        {"year": 2014, "ftse350WomenPct": 19.6},
+        {"year": 2016, "ftse350WomenPct": 24.9},
+        {"year": 2018, "ftse350WomenPct": 28.0},
+        {"year": 2020, "ftse350WomenPct": 33.0},
+        {"year": 2022, "ftse350WomenPct": 38.5},
+        {"year": 2023, "ftse350WomenPct": 40.0}
+      ],
+      "latestYear": 2023,
+      "latestPct": 40.0
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Annual Survey of Hours and Earnings (ASHE)", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/genderpaygapintheuk/2023", "frequency": "annual"},
+      {"name": "FTSE Women Leaders", "dataset": "FTSE Women Leaders Review", "url": "https://ftsewomenleaders.com/", "frequency": "annual"}
+    ],
+    "methodology": "Gender pay gap measured as the difference between men's and women's median hourly earnings (excluding overtime) as a percentage of men's median hourly earnings. 'Full-time' excludes part-time workers. 'All workers' includes part-time. Mandatory GPG reporting (introduced April 2017) requires employers with 250+ employees to report annually. ASHE is a 1% sample survey of employee jobs from PAYE records.",
+    "knownIssues": [
+      "Pay gap measures median earnings, not like-for-like roles — does not fully control for occupational segregation",
+      "COVID-19 furlough scheme distorted 2020 figures as lower-paid workers more likely to be furloughed",
+      "Mandatory reporting covers only ~50% of employees (those in 250+ workplaces)"
+    ]
+  }
+}

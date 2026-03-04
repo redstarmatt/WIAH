@@ -1,0 +1,75 @@
+{
+  "topic": "trade",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "tradeBalance": {
+      "timeSeries": [
+        {"year": 2013, "goodsDeficitBillionGBP": -105, "servicesSuplusBillionGBP": 70},
+        {"year": 2014, "goodsDeficitBillionGBP": -119, "servicesSuplusBillionGBP": 82},
+        {"year": 2015, "goodsDeficitBillionGBP": -122, "servicesSuplusBillionGBP": 87},
+        {"year": 2016, "goodsDeficitBillionGBP": -135, "servicesSuplusBillionGBP": 89},
+        {"year": 2017, "goodsDeficitBillionGBP": -138, "servicesSuplusBillionGBP": 104},
+        {"year": 2018, "goodsDeficitBillionGBP": -138, "servicesSuplusBillionGBP": 112},
+        {"year": 2019, "goodsDeficitBillionGBP": -131, "servicesSuplusBillionGBP": 121},
+        {"year": 2020, "goodsDeficitBillionGBP": -95, "servicesSuplusBillionGBP": 79},
+        {"year": 2021, "goodsDeficitBillionGBP": -117, "servicesSuplusBillionGBP": 95},
+        {"year": 2022, "goodsDeficitBillionGBP": -177, "servicesSuplusBillionGBP": 143},
+        {"year": 2023, "goodsDeficitBillionGBP": -157, "servicesSuplusBillionGBP": 145}
+      ],
+      "latestYear": 2023,
+      "latestGoodsDeficit": -157,
+      "latestServicesSurplus": 145
+    },
+    "euGoodsExports": {
+      "timeSeries": [
+        {"year": 2016, "indexValue": 100},
+        {"year": 2017, "indexValue": 105},
+        {"year": 2018, "indexValue": 107},
+        {"year": 2019, "indexValue": 109},
+        {"year": 2020, "indexValue": 85},
+        {"year": 2021, "indexValue": 87},
+        {"year": 2022, "indexValue": 92},
+        {"year": 2023, "indexValue": 93}
+      ],
+      "latestYear": 2023,
+      "latestIndex": 93,
+      "note": "UK goods exports to EU, volume index (2016=100)"
+    },
+    "euShareOfExports": {
+      "timeSeries": [
+        {"year": 2015, "euSharePct": 44},
+        {"year": 2016, "euSharePct": 43},
+        {"year": 2017, "euSharePct": 44},
+        {"year": 2018, "euSharePct": 43},
+        {"year": 2019, "euSharePct": 43},
+        {"year": 2020, "euSharePct": 39},
+        {"year": 2021, "euSharePct": 40},
+        {"year": 2022, "euSharePct": 41},
+        {"year": 2023, "euSharePct": 41}
+      ],
+      "latestYear": 2023,
+      "latestPct": 41
+    },
+    "foodExports": {
+      "timeSeries": [
+        {"year": 2019, "indexValue": 100},
+        {"year": 2020, "indexValue": 88},
+        {"year": 2021, "indexValue": 67},
+        {"year": 2022, "indexValue": 72},
+        {"year": 2023, "indexValue": 78}
+      ],
+      "latestYear": 2023,
+      "latestIndex": 78,
+      "note": "UK food and drink exports to EU, volume index (2019=100)"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "UK trade in goods and services statistics", "url": "https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/latest", "frequency": "monthly"},
+      {"name": "HMRC", "dataset": "UK trade in goods by partner country", "url": "https://www.gov.uk/government/statistics/uk-overseas-trade-statistics", "frequency": "monthly"},
+      {"name": "OBR", "dataset": "Brexit long-run trade impact analysis", "url": "https://obr.uk/overview/major-analysis-and-reviews/", "frequency": "periodic"}
+    ],
+    "methodology": "Trade balance from ONS Balance of Payments. EU goods exports volume index from ONS trade in goods data. EU share of exports from HMRC overseas trade statistics. Food exports from HMRC. OBR estimates the TCA has reduced UK trade intensity by 15% relative to a counterfactual with EU membership.",
+    "knownIssues": ["COVID-19 significantly distorted 2020 trade flows", "Pre-stockpiling in late 2019 inflated baseline", "Brexit timing effects make 2019-2021 comparisons complex", "Services trade (financial, professional) not fully captured in goods statistics"]
+  }
+}

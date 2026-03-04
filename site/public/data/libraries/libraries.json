@@ -1,0 +1,91 @@
+{
+  "topic": "libraries",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "branches": {
+      "timeSeries": [
+        {"year": 2010, "branchCount": 3583},
+        {"year": 2011, "branchCount": 3509},
+        {"year": 2012, "branchCount": 3450},
+        {"year": 2013, "branchCount": 3392},
+        {"year": 2014, "branchCount": 3341},
+        {"year": 2015, "branchCount": 3268},
+        {"year": 2016, "branchCount": 3210},
+        {"year": 2017, "branchCount": 3150},
+        {"year": 2018, "branchCount": 3100},
+        {"year": 2019, "branchCount": 3050},
+        {"year": 2020, "branchCount": 3100},
+        {"year": 2021, "branchCount": 3050},
+        {"year": 2023, "branchCount": 3000}
+      ],
+      "latestYear": 2023,
+      "latestCount": 3000,
+      "closuresSince2010": 583
+    },
+    "visits": {
+      "timeSeries": [
+        {"year": 2010, "visitMillions": 338},
+        {"year": 2011, "visitMillions": 312},
+        {"year": 2012, "visitMillions": 296},
+        {"year": 2013, "visitMillions": 280},
+        {"year": 2014, "visitMillions": 268},
+        {"year": 2015, "visitMillions": 253},
+        {"year": 2016, "visitMillions": 247},
+        {"year": 2017, "visitMillions": 220},
+        {"year": 2018, "visitMillions": 170},
+        {"year": 2019, "visitMillions": 190},
+        {"year": 2023, "visitMillions": 247}
+      ],
+      "latestYear": 2023,
+      "latestMillions": 247,
+      "declinePercentage": 27
+    },
+    "issues": {
+      "timeSeries": [
+        {"year": 2010, "issuesMillions": 302},
+        {"year": 2011, "issuesMillions": 278},
+        {"year": 2012, "issuesMillions": 251},
+        {"year": 2013, "issuesMillions": 233},
+        {"year": 2014, "issuesMillions": 219},
+        {"year": 2015, "issuesMillions": 206},
+        {"year": 2016, "issuesMillions": 197},
+        {"year": 2017, "issuesMillions": 185},
+        {"year": 2018, "issuesMillions": 162},
+        {"year": 2019, "issuesMillions": 168},
+        {"year": 2023, "issuesMillions": 175}
+      ],
+      "latestYear": 2023,
+      "latestMillions": 175,
+      "digitalPct": 22,
+      "declinePercentage": 42
+    },
+    "staffing": {
+      "paidStaff2010": 24000,
+      "paidStaff2023": 16000,
+      "volunteers2023": 60000,
+      "note": "Volunteers have tripled since 2010 as councils cut paid staff"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "CIPFA",
+        "dataset": "Public library statistics",
+        "url": "https://www.cipfa.org/policy-and-guidance/statistics/cipfa-library-statistics",
+        "frequency": "annual"
+      },
+      {
+        "name": "DCMS",
+        "dataset": "Taking Part Survey — library use",
+        "url": "https://www.gov.uk/government/collections/taking-part-survey",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Branch counts from CIPFA annual library statistics. Visits and issues self-reported by library authorities. Pre-2014 and post-2014 data not directly comparable due to changes in reporting methodology.",
+    "knownIssues": [
+      "Volunteer-run and community libraries inconsistently reported across authorities",
+      "COVID lockdowns caused 2020/21 closures — year not comparable",
+      "E-book and audiobook loans not counted in all authorities pre-2019"
+    ]
+  }
+}

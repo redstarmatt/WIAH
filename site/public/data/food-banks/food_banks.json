@@ -1,0 +1,62 @@
+{
+  "national": {
+    "parcelsDistributed": {
+      "timeSeries": [
+        {"year": 2014, "parcelsMillions": 0.913},
+        {"year": 2015, "parcelsMillions": 1.085},
+        {"year": 2016, "parcelsMillions": 1.182},
+        {"year": 2017, "parcelsMillions": 1.183},
+        {"year": 2018, "parcelsMillions": 1.330},
+        {"year": 2019, "parcelsMillions": 1.600},
+        {"year": 2020, "parcelsMillions": 1.910},
+        {"year": 2021, "parcelsMillions": 2.173},
+        {"year": 2022, "parcelsMillions": 2.578},
+        {"year": 2023, "parcelsMillions": 3.130},
+        {"year": 2024, "parcelsMillions": 2.990}
+      ],
+      "latestYear": 2024,
+      "latestMillions": 2.99,
+      "peakYear": 2023,
+      "peakMillions": 3.13,
+      "childParcelsPct": 35,
+      "note": "Financial year April to March. Independent food banks (IFAN) estimated to add a further 30%."
+    },
+    "foodInsecurity": {
+      "timeSeries": [
+        {"year": 2019, "householdsMillions": 2.4},
+        {"year": 2020, "householdsMillions": 2.6},
+        {"year": 2021, "householdsMillions": 3.2},
+        {"year": 2022, "householdsMillions": 4.7},
+        {"year": 2023, "householdsMillions": 7.2}
+      ],
+      "latestYear": 2023,
+      "latestMillions": 7.2,
+      "pctHouseholds": 24,
+      "note": "UK Food Security Survey definition: inadequate or uncertain access to sufficient, safe, nutritious food"
+    },
+    "referralReasons": [
+      {"reason": "Low income", "pct": 32},
+      {"reason": "Benefit delays", "pct": 21},
+      {"reason": "Benefit changes", "pct": 18},
+      {"reason": "Debt", "pct": 10},
+      {"reason": "Domestic violence", "pct": 7},
+      {"reason": "Unemployment", "pct": 6},
+      {"reason": "Other", "pct": 6}
+    ],
+    "freeMeals": {
+      "eligiblePupilsPct": 24.6,
+      "eligiblePupilsMillions": 2.1,
+      "universalInfantFSMMillions": 1.7,
+      "note": "Universal Infant Free School Meals introduced 2014 for all pupils in reception, Year 1 and Year 2"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Trussell Trust", "dataset": "End of Year Stats", "url": "https://www.trusselltrust.org/news-and-blog/latest-stats/", "frequency": "annual"},
+      {"name": "DEFRA / DHSC", "dataset": "UK Food Security Report", "url": "https://www.gov.uk/government/publications/united-kingdom-food-security-report", "frequency": "biennial"},
+      {"name": "DfE", "dataset": "Schools, pupils and their characteristics", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics", "frequency": "annual"}
+    ],
+    "methodology": "Trussell Trust data covers their network of ~1,300 food bank centres in the UK. Independent food banks (estimated 2,000+ nationwide via IFAN) not included. Food insecurity from UK Food Security Survey using FAO-aligned definitions. Free school meals eligibility based on Universal Credit threshold (net earnings under £7,400).",
+    "knownIssues": ["Trussell Trust represents approximately 40-50% of all UK food bank provision", "Food insecurity surveys vary in methodology — pre-2019 data not fully comparable", "Free school meals eligibility does not capture all food-insecure families"]
+  }
+}

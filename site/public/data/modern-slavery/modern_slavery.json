@@ -1,0 +1,45 @@
+{
+  "topic": "modern-slavery",
+  "lastUpdated": "2026-03-04",
+  "national": {
+    "nrmReferrals": {
+      "timeSeries": [
+        { "year": 2014, "referrals": 2340 },
+        { "year": 2015, "referrals": 3266 },
+        { "year": 2016, "referrals": 3805 },
+        { "year": 2017, "referrals": 5145 },
+        { "year": 2018, "referrals": 6985 },
+        { "year": 2019, "referrals": 7852 },
+        { "year": 2020, "referrals": 10627 },
+        { "year": 2021, "referrals": 12727 },
+        { "year": 2022, "referrals": 15614 },
+        { "year": 2023, "referrals": 17004 }
+      ],
+      "latestYear": 2023,
+      "latestCount": 17004,
+      "trueEstimate": 100000
+    },
+    "exploitationType": [
+      { "type": "Labour exploitation", "pct": 42 },
+      { "type": "Sexual exploitation", "pct": 28 },
+      { "type": "County lines (child)", "pct": 15 },
+      { "type": "Domestic servitude", "pct": 8 },
+      { "type": "Criminal exploitation", "pct": 7 }
+    ],
+    "topNationalities": [
+      { "nationality": "Albanian", "referrals": 2405 },
+      { "nationality": "Vietnamese", "referrals": 1398 },
+      { "nationality": "British", "referrals": 1352 },
+      { "nationality": "Eritrean", "referrals": 987 },
+      { "nationality": "Romanian", "referrals": 876 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      { "name": "Home Office", "dataset": "Modern Slavery: National Referral Mechanism and Duty to Notify Statistics", "url": "https://www.gov.uk/government/collections/modern-slavery-national-referral-mechanism-statistics", "frequency": "quarterly" },
+      { "name": "Crown Prosecution Service", "dataset": "Modern Slavery Prosecutions", "url": "https://www.cps.gov.uk/publication/modern-slavery-strategy-and-annual-reports", "frequency": "annual" }
+    ],
+    "methodology": "NRM referrals from Home Office Modern Slavery statistics. All figures are potential victims; not all are confirmed through the NRM decision process. Exploitation type from Home Office annual statistics. Top nationalities from Home Office data. Conviction data from CPS.",
+    "knownIssues": ["The NRM captures only those who come to official attention — the true number of victims is considerably higher. Estimates of 100,000+ victims are based on Home Office research but have wide uncertainty intervals.", "Post-2020 spike is partly attributable to increased county lines policing operations and better identification during COVID lockdowns.", "Modern Slavery Act 2015 is the primary legislation; prosecutions remain low relative to estimated victim numbers."]
+  }
+}

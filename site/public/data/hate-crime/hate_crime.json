@@ -1,0 +1,31 @@
+{
+  "hateCrime": [
+    {"year": 2013, "offences": 44480},
+    {"year": 2014, "offences": 52528},
+    {"year": 2015, "offences": 62518},
+    {"year": 2016, "offences": 80393},
+    {"year": 2017, "offences": 94098},
+    {"year": 2018, "offences": 103379},
+    {"year": 2019, "offences": 105090},
+    {"year": 2020, "offences": 108045},
+    {"year": 2021, "offences": 124091},
+    {"year": 2022, "offences": 145214},
+    {"year": 2023, "offences": 147000}
+  ],
+  "byStrand": [
+    {"strand": "Race", "pct": 70},
+    {"strand": "Sexual orientation", "pct": 13},
+    {"strand": "Religion", "pct": 9},
+    {"strand": "Disability", "pct": 7},
+    {"strand": "Transgender identity", "pct": 1}
+  ],
+  "prosecutions": [
+    {"year": 2017, "pctProsecuted": 49},
+    {"year": 2018, "pctProsecuted": 48},
+    {"year": 2019, "pctProsecuted": 46},
+    {"year": 2020, "pctProsecuted": 43},
+    {"year": 2021, "pctProsecuted": 43},
+    {"year": 2022, "pctProsecuted": 44},
+    {"year": 2023, "pctProsecuted": 44}
+  ]
+}

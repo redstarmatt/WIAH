@@ -1,0 +1,83 @@
+{
+  "topic": "policing",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "officerNumbers": {
+      "timeSeries": [
+        {"year": 2010, "officersThousands": 143.7},
+        {"year": 2011, "officersThousands": 140.2},
+        {"year": 2012, "officersThousands": 135.8},
+        {"year": 2013, "officersThousands": 130.5},
+        {"year": 2014, "officersThousands": 127.9},
+        {"year": 2015, "officersThousands": 124.1},
+        {"year": 2016, "officersThousands": 122.4},
+        {"year": 2017, "officersThousands": 121.9},
+        {"year": 2018, "officersThousands": 121.7},
+        {"year": 2019, "officersThousands": 123.2},
+        {"year": 2020, "officersThousands": 131.3},
+        {"year": 2021, "officersThousands": 139.8},
+        {"year": 2022, "officersThousands": 149.6},
+        {"year": 2023, "officersThousands": 147.5},
+        {"year": 2024, "officersThousands": 145.7}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 145.7,
+      "peakYear2010": 143.7,
+      "priorPeak2022": 149.6
+    },
+    "chargeRates": {
+      "timeSeries": [
+        {"year": 2014, "chargedOrSummonedPct": 15.5},
+        {"year": 2015, "chargedOrSummonedPct": 14.9},
+        {"year": 2016, "chargedOrSummonedPct": 14.1},
+        {"year": 2017, "chargedOrSummonedPct": 12.7},
+        {"year": 2018, "chargedOrSummonedPct": 10.0},
+        {"year": 2019, "chargedOrSummonedPct": 8.0},
+        {"year": 2020, "chargedOrSummonedPct": 7.0},
+        {"year": 2021, "chargedOrSummonedPct": 6.5},
+        {"year": 2022, "chargedOrSummonedPct": 6.1},
+        {"year": 2023, "chargedOrSummonedPct": 5.6}
+      ],
+      "latestYear": 2023,
+      "latestPct": 5.6,
+      "note": "Crimes resulting in a charge or summons as % of all police-recorded crime"
+    },
+    "publicConfidence": {
+      "timeSeries": [
+        {"year": 2014, "confidencePct": 61.2},
+        {"year": 2015, "confidencePct": 62.1},
+        {"year": 2016, "confidencePct": 62.7},
+        {"year": 2017, "confidencePct": 63.2},
+        {"year": 2018, "confidencePct": 63.0},
+        {"year": 2019, "confidencePct": 63.5},
+        {"year": 2020, "confidencePct": 60.8},
+        {"year": 2021, "confidencePct": 59.4},
+        {"year": 2022, "confidencePct": 55.7},
+        {"year": 2023, "confidencePct": 54.1}
+      ],
+      "latestYear": 2023,
+      "latestPct": 54.1
+    },
+    "stopAndSearch": {
+      "timeSeries": [
+        {"year": 2010, "conductedThousands": 1147},
+        {"year": 2012, "conductedThousands": 1136},
+        {"year": 2014, "conductedThousands": 541},
+        {"year": 2016, "conductedThousands": 304},
+        {"year": 2018, "conductedThousands": 271},
+        {"year": 2020, "conductedThousands": 548},
+        {"year": 2022, "conductedThousands": 760},
+        {"year": 2023, "conductedThousands": 809}
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Home Office", "dataset": "Police workforce, England and Wales", "url": "https://www.gov.uk/government/statistics/police-workforce-england-and-wales", "frequency": "annual"},
+      {"name": "Home Office", "dataset": "Crime outcomes in England and Wales", "url": "https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-statistics", "frequency": "annual"},
+      {"name": "ONS", "dataset": "Crime Survey for England and Wales — police confidence", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice", "frequency": "annual"}
+    ],
+    "methodology": "Officer numbers from Home Office Police Workforce data (headcount, not FTE). Charge/summons rate is crimes resulting in a charge or summons as a percentage of all recorded crimes. Public confidence measures those who agree police do a good job in their area (CSEW). Stop and search figures are Section 1 PACE searches.",
+    "knownIssues": ["Officer numbers include special constables in some series — not all are paid full-time officers", "Charge rate decline partly reflects recording improvements (more crimes now recorded) rather than purely outcome deterioration", "Public confidence question wording changed slightly over the survey period"]
+  }
+}

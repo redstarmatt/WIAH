@@ -1,0 +1,148 @@
+{
+  "topic": "work",
+  "lastUpdated": "2026-03-03",
+  "national": {
+    "realWages": {
+      "timeSeries": [
+        {"year": 2000, "realWeeklyPay": 453},
+        {"year": 2001, "realWeeklyPay": 461},
+        {"year": 2002, "realWeeklyPay": 469},
+        {"year": 2003, "realWeeklyPay": 475},
+        {"year": 2004, "realWeeklyPay": 483},
+        {"year": 2005, "realWeeklyPay": 489},
+        {"year": 2006, "realWeeklyPay": 494},
+        {"year": 2007, "realWeeklyPay": 499},
+        {"year": 2008, "realWeeklyPay": 494},
+        {"year": 2009, "realWeeklyPay": 480},
+        {"year": 2010, "realWeeklyPay": 480},
+        {"year": 2011, "realWeeklyPay": 468},
+        {"year": 2012, "realWeeklyPay": 461},
+        {"year": 2013, "realWeeklyPay": 457},
+        {"year": 2014, "realWeeklyPay": 461},
+        {"year": 2015, "realWeeklyPay": 472},
+        {"year": 2016, "realWeeklyPay": 480},
+        {"year": 2017, "realWeeklyPay": 481},
+        {"year": 2018, "realWeeklyPay": 484},
+        {"year": 2019, "realWeeklyPay": 494},
+        {"year": 2020, "realWeeklyPay": 501},
+        {"year": 2021, "realWeeklyPay": 496},
+        {"year": 2022, "realWeeklyPay": 481},
+        {"year": 2023, "realWeeklyPay": 494},
+        {"year": 2024, "realWeeklyPay": 527}
+      ],
+      "latest": {"year": 2024, "realWeeklyPay": 527},
+      "preFinancialCrisis": {"year": 2008, "realWeeklyPay": 499}
+    },
+    "unemployment": {
+      "timeSeries": [
+        {"year": 2000, "ratePct": 5.4},
+        {"year": 2001, "ratePct": 5.0},
+        {"year": 2002, "ratePct": 5.1},
+        {"year": 2003, "ratePct": 5.0},
+        {"year": 2004, "ratePct": 4.7},
+        {"year": 2005, "ratePct": 4.8},
+        {"year": 2006, "ratePct": 5.4},
+        {"year": 2007, "ratePct": 5.3},
+        {"year": 2008, "ratePct": 5.7},
+        {"year": 2009, "ratePct": 7.6},
+        {"year": 2010, "ratePct": 7.9},
+        {"year": 2011, "ratePct": 8.1},
+        {"year": 2012, "ratePct": 7.9},
+        {"year": 2013, "ratePct": 7.6},
+        {"year": 2014, "ratePct": 6.2},
+        {"year": 2015, "ratePct": 5.3},
+        {"year": 2016, "ratePct": 4.9},
+        {"year": 2017, "ratePct": 4.4},
+        {"year": 2018, "ratePct": 4.1},
+        {"year": 2019, "ratePct": 3.8},
+        {"year": 2020, "ratePct": 4.5},
+        {"year": 2021, "ratePct": 4.5},
+        {"year": 2022, "ratePct": 3.7},
+        {"year": 2023, "ratePct": 4.2},
+        {"year": 2024, "ratePct": 4.4}
+      ],
+      "latest": {"year": 2024, "ratePct": 4.4}
+    },
+    "economicInactivity": {
+      "timeSeries": [
+        {"year": 2019, "inactivePct": 20.8, "sicknessPct": 6.0},
+        {"year": 2020, "inactivePct": 21.0, "sicknessPct": 6.1},
+        {"year": 2021, "inactivePct": 21.3, "sicknessPct": 6.5},
+        {"year": 2022, "inactivePct": 21.5, "sicknessPct": 7.2},
+        {"year": 2023, "inactivePct": 22.1, "sicknessPct": 8.1},
+        {"year": 2024, "inactivePct": 22.0, "sicknessPct": 8.4}
+      ],
+      "latest": {"year": 2024, "inactivePct": 22.0, "sicknessPct": 8.4}
+    },
+    "genderPayGap": {
+      "timeSeries": [
+        {"year": 2012, "gapPct": 19.6},
+        {"year": 2013, "gapPct": 19.8},
+        {"year": 2014, "gapPct": 19.1},
+        {"year": 2015, "gapPct": 19.2},
+        {"year": 2016, "gapPct": 18.1},
+        {"year": 2017, "gapPct": 18.4},
+        {"year": 2018, "gapPct": 17.8},
+        {"year": 2019, "gapPct": 17.3},
+        {"year": 2020, "gapPct": 15.5},
+        {"year": 2021, "gapPct": 15.4},
+        {"year": 2022, "gapPct": 14.9},
+        {"year": 2023, "gapPct": 13.2},
+        {"year": 2024, "gapPct": 13.1}
+      ],
+      "latest": {"year": 2024, "gapPct": 13.1}
+    },
+    "zeroHours": {
+      "timeSeries": [
+        {"year": 2012, "thousands": 252},
+        {"year": 2013, "thousands": 583},
+        {"year": 2014, "thousands": 697},
+        {"year": 2015, "thousands": 801},
+        {"year": 2016, "thousands": 905},
+        {"year": 2017, "thousands": 883},
+        {"year": 2018, "thousands": 786},
+        {"year": 2019, "thousands": 974},
+        {"year": 2020, "thousands": 1049},
+        {"year": 2021, "thousands": 975},
+        {"year": 2022, "thousands": 1057},
+        {"year": 2023, "thousands": 1076},
+        {"year": 2024, "thousands": 1046}
+      ],
+      "latest": {"year": 2024, "thousands": 1046}
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Average weekly earnings — real terms (EARN01)",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/averageweeklyearningsearn01",
+        "frequency": "monthly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Labour Force Survey — unemployment and economic inactivity",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Annual Survey of Hours and Earnings (ASHE) — gender pay gap",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2024",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Zero-hours contracts (EMP17)",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/emp17peopleinemploymentonzerohourscontracts",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Real weekly earnings use CPIH deflator. Unemployment is ILO definition, 16+. Economic inactivity is the share of working-age adults (16-64) not in employment and not seeking work. Gender pay gap is median hourly earnings excluding overtime, full-time employees, from ASHE. Zero-hours figures are from the Labour Force Survey.",
+    "knownIssues": [
+      "Real wage figures use ONS EARN01 series deflated by CPIH — values are approximate and may differ from other sources",
+      "Zero-hours figures are LFS estimates with wide confidence intervals; actual numbers may differ",
+      "Economic inactivity long-term sickness figures are from LFS self-report"
+    ]
+  }
+}

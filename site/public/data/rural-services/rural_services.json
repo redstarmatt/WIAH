@@ -1,0 +1,59 @@
+{
+  "national": {
+    "busRoutes": {
+      "timeSeries": [
+        {"year": 2012, "routesIndexed": 100},
+        {"year": 2013, "routesIndexed": 97},
+        {"year": 2014, "routesIndexed": 94},
+        {"year": 2015, "routesIndexed": 92},
+        {"year": 2016, "routesIndexed": 89},
+        {"year": 2017, "routesIndexed": 86},
+        {"year": 2018, "routesIndexed": 83},
+        {"year": 2019, "routesIndexed": 82},
+        {"year": 2020, "routesIndexed": 70},
+        {"year": 2021, "routesIndexed": 74},
+        {"year": 2022, "routesIndexed": 76},
+        {"year": 2023, "routesIndexed": 77}
+      ],
+      "latestYear": 2023,
+      "latestIndexed": 77,
+      "routesCutSince2010": 1000
+    },
+    "ruralGpAccess": {
+      "timeSeries": [
+        {"year": 2015, "avgMilesToGP": 3.8},
+        {"year": 2016, "avgMilesToGP": 4.0},
+        {"year": 2017, "avgMilesToGP": 4.3},
+        {"year": 2018, "avgMilesToGP": 4.5},
+        {"year": 2019, "avgMilesToGP": 4.7},
+        {"year": 2020, "avgMilesToGP": 5.0},
+        {"year": 2021, "avgMilesToGP": 5.2},
+        {"year": 2022, "avgMilesToGP": 5.5},
+        {"year": 2023, "avgMilesToGP": 5.8}
+      ],
+      "latestYear": 2023,
+      "latestMiles": 5.8,
+      "urbanAvgMiles": 0.8
+    },
+    "byServiceType": [
+      {"service": "Bus services (routes cut)", "changePct": -23},
+      {"service": "GP surgeries (closures)", "changePct": -18},
+      {"service": "Bank branches", "changePct": -45},
+      {"service": "Post offices", "changePct": -14},
+      {"service": "Pubs", "changePct": -28},
+      {"service": "Libraries", "changePct": -30}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {"name": "DfT", "dataset": "Bus Statistics — Annual Bus Route Data", "url": "https://www.gov.uk/government/collections/bus-statistics", "frequency": "annual"},
+      {"name": "NHS Digital", "dataset": "GP Practice Registered Patients Distance", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/patients-registered-at-a-gp-practice", "frequency": "quarterly"}
+    ],
+    "methodology": "Bus route data from DfT Bus Open Data, indexed to 2012=100 to show relative changes. GP distance data from NHS Digital registered patient data linked to practice postcode centroids — rural/urban classification from ONS Rural Urban Classification. Service decline percentages from CPRE and Rural England research, covering the period 2010–2023.",
+    "knownIssues": [
+      "Bus route data uses registered routes, not frequency — a route maintained at half its previous frequency would still count as 1 route",
+      "GP distance data uses postcode centroids and may undercount actual travel distances in dispersed rural areas",
+      "Service decline percentages are estimates from multiple sources with varying methodologies"
+    ]
+  }
+}

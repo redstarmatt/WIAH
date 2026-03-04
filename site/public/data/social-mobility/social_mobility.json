@@ -1,0 +1,33 @@
+{
+  "professionalUptake": [
+    {"year": 2014, "pctWorkingClass": 43},
+    {"year": 2015, "pctWorkingClass": 42},
+    {"year": 2016, "pctWorkingClass": 41},
+    {"year": 2017, "pctWorkingClass": 40},
+    {"year": 2018, "pctWorkingClass": 40},
+    {"year": 2019, "pctWorkingClass": 39},
+    {"year": 2020, "pctWorkingClass": 39},
+    {"year": 2021, "pctWorkingClass": 39},
+    {"year": 2022, "pctWorkingClass": 39}
+  ],
+  "higherEducation": [
+    {"year": 2014, "fsmPct": 22},
+    {"year": 2015, "fsmPct": 24},
+    {"year": 2016, "fsmPct": 25},
+    {"year": 2017, "fsmPct": 26},
+    {"year": 2018, "fsmPct": 27},
+    {"year": 2019, "fsmPct": 27},
+    {"year": 2020, "fsmPct": 28},
+    {"year": 2021, "fsmPct": 28},
+    {"year": 2022, "fsmPct": 29}
+  ],
+  "byProfession": [
+    {"profession": "Medicine", "pctWorkingClass": 20},
+    {"profession": "Finance", "pctWorkingClass": 22},
+    {"profession": "Law", "pctWorkingClass": 26},
+    {"profession": "Journalism", "pctWorkingClass": 28},
+    {"profession": "Architecture", "pctWorkingClass": 30},
+    {"profession": "Engineering", "pctWorkingClass": 38},
+    {"profession": "IT/Tech", "pctWorkingClass": 42}
+  ]
+}

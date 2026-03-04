@@ -1,0 +1,25 @@
+{
+  "apprenticeshipStarts": [
+    {"fy": "2013/14", "starts": 440000},
+    {"fy": "2014/15", "starts": 499000},
+    {"fy": "2015/16", "starts": 509000},
+    {"fy": "2016/17", "starts": 494000},
+    {"fy": "2017/18", "starts": 375000},
+    {"fy": "2018/19", "starts": 393000},
+    {"fy": "2019/20", "starts": 322000},
+    {"fy": "2020/21", "starts": 288000},
+    {"fy": "2021/22", "starts": 349000},
+    {"fy": "2022/23", "starts": 700000}
+  ],
+  "byLevel": [
+    {"level": "Intermediate (Level 2)", "pct": 28},
+    {"level": "Advanced (Level 3)", "pct": 44},
+    {"level": "Higher (Level 4-5)", "pct": 10},
+    {"level": "Degree (Level 6-7)", "pct": 18}
+  ],
+  "byAge": [
+    {"age": "Under 19", "starts2023": 125000},
+    {"age": "19-24", "starts2023": 195000},
+    {"age": "25+", "starts2023": 380000}
+  ]
+}

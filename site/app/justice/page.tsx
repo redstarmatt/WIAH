@@ -302,6 +302,48 @@ export default function JusticePage() {
       ]
     : [];
 
+  // Crime trends by type (in thousands for readability)
+  const crimeTrendsByTypeSeries: Series[] = crimeData
+    ? [
+        ...(crimeData.crimeTrends.violence ? [{
+          id: 'violence-trends',
+          label: 'Violence against the person',
+          colour: '#E63946',
+          data: crimeData.crimeTrends.violence.timeSeries.map(d => ({
+            date: fyToDate(d.period),
+            value: d.count / 1000,
+          })),
+        }] : []),
+        ...(crimeData.crimeTrends.fraudAndCyber ? [{
+          id: 'fraud-trends',
+          label: 'Fraud & computer misuse',
+          colour: '#F4A261',
+          data: crimeData.crimeTrends.fraudAndCyber.timeSeries.map(d => ({
+            date: fyToDate(d.period),
+            value: d.count / 1000,
+          })),
+        }] : []),
+        ...(crimeData.crimeTrends.robbery ? [{
+          id: 'robbery-trends',
+          label: 'Robbery',
+          colour: '#2A9D8F',
+          data: crimeData.crimeTrends.robbery.timeSeries.map(d => ({
+            date: fyToDate(d.period),
+            value: d.count / 1000,
+          })),
+        }] : []),
+        ...(crimeData.crimeTrends.drugOffences ? [{
+          id: 'drugs-trends',
+          label: 'Drug offences',
+          colour: '#264653',
+          data: crimeData.crimeTrends.drugOffences.timeSeries.map(d => ({
+            date: fyToDate(d.period),
+            value: d.count / 1000,
+          })),
+        }] : []),
+      ]
+    : [];
+
   const crimeAnnotations: Annotation[] = [
     { date: new Date(2014, 0), label: '2014: NCRS tightened' },
     { date: new Date(2020, 2), label: '2020: COVID-19' },
@@ -416,6 +458,7 @@ export default function JusticePage() {
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-crime', label: 'Crime Trends' },
+          { id: 'sec-crime-trends', label: 'Crime Trends by Type' },
           { id: 'sec-outcomes', label: 'Outcomes' },
           { id: 'sec-courts', label: 'Courts' },
           { id: 'sec-prison', label: 'Prison' },
@@ -770,6 +813,34 @@ export default function JusticePage() {
                 In 2023/24. Only 5 in 100 incidents lead to a conviction.
               </p>
               <div className="overflow-x-auto">
+
+        {/* ── Crime Trends by Type ─────────────────────────────────────── */}
+        <div id="sec-crime-trends">
+          <ScrollReveal>
+          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Crime Trends by Type</h2>
+          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+            Different crime types have moved in very different directions since 2002. Violence and fraud have risen sharply, while robbery has fallen. Recording practice changes in 2014 may have inflated some categories.
+          </p>
+          </ScrollReveal>
+
+          {crimeTrendsByTypeSeries.length > 0 ? (
+            <LineChart
+              title="Recorded crime by type, England and Wales, 2002/03–2024/25"
+              subtitle="Police recorded crime (thousands of offences) by crime type. Violence and fraud rising; robbery declining."
+              series={crimeTrendsByTypeSeries}
+              annotations={crimeAnnotations}
+              yLabel="Thousands of offences"
+              source={{
+                name: 'Home Office',
+                dataset: 'Police recorded crime, England and Wales',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/collections/police-recorded-crime-statistics',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+        </div>
                 <div className="flex items-center gap-2 min-w-max">
                   {/* Stage 1 */}
                   <div className="flex flex-col items-center bg-wiah-light rounded-lg px-5 py-4 min-w-[140px]">

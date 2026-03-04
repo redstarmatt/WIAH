@@ -1,0 +1,30 @@
+{
+  "waitingList": [
+    {"year": 2016, "waiting": 880000},
+    {"year": 2017, "waiting": 960000},
+    {"year": 2018, "waiting": 1100000},
+    {"year": 2019, "waiting": 1280000},
+    {"year": 2020, "waiting": 1450000},
+    {"year": 2021, "waiting": 1590000},
+    {"year": 2022, "waiting": 1720000},
+    {"year": 2023, "waiting": 1800000}
+  ],
+  "iaptCompliance": [
+    {"year": 2016, "pct18wk": 90},
+    {"year": 2017, "pct18wk": 88},
+    {"year": 2018, "pct18wk": 85},
+    {"year": 2019, "pct18wk": 82},
+    {"year": 2020, "pct18wk": 70},
+    {"year": 2021, "pct18wk": 67},
+    {"year": 2022, "pct18wk": 69},
+    {"year": 2023, "pct18wk": 71}
+  ],
+  "byServiceType": [
+    {"service": "Adult IAPT/talking therapies", "avgWaitWeeks": 16},
+    {"service": "CAMHS (children)", "avgWaitWeeks": 78},
+    {"service": "Eating disorders (adult)", "avgWaitWeeks": 22},
+    {"service": "Eating disorders (under-18)", "avgWaitWeeks": 14},
+    {"service": "Crisis resolution home treatment", "avgWaitWeeks": 0.5},
+    {"service": "Community mental health team", "avgWaitWeeks": 28}
+  ]
+}

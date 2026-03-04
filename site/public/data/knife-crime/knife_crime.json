@@ -1,0 +1,41 @@
+{
+  "knifeCrime": [
+    {"year": 2010, "offences": 28700},
+    {"year": 2011, "offences": 29100},
+    {"year": 2012, "offences": 28200},
+    {"year": 2013, "offences": 26500},
+    {"year": 2014, "offences": 28600},
+    {"year": 2015, "offences": 32300},
+    {"year": 2016, "offences": 36300},
+    {"year": 2017, "offences": 40147},
+    {"year": 2018, "offences": 43516},
+    {"year": 2019, "offences": 46265},
+    {"year": 2020, "offences": 45652},
+    {"year": 2021, "offences": 44958},
+    {"year": 2022, "offences": 49027},
+    {"year": 2023, "offences": 50490}
+  ],
+  "knifeHomicides": [
+    {"year": 2010, "count": 199},
+    {"year": 2012, "count": 174},
+    {"year": 2014, "count": 210},
+    {"year": 2016, "count": 215},
+    {"year": 2017, "count": 224},
+    {"year": 2018, "count": 259},
+    {"year": 2019, "count": 261},
+    {"year": 2020, "count": 218},
+    {"year": 2021, "count": 224},
+    {"year": 2022, "count": 232},
+    {"year": 2023, "count": 244}
+  ],
+  "byRegion": [
+    {"region": "London", "ratePerMillion": 158},
+    {"region": "West Midlands", "ratePerMillion": 112},
+    {"region": "Greater Manchester", "ratePerMillion": 108},
+    {"region": "Merseyside", "ratePerMillion": 98},
+    {"region": "West Yorkshire", "ratePerMillion": 87},
+    {"region": "South Wales", "ratePerMillion": 72},
+    {"region": "Thames Valley", "ratePerMillion": 54},
+    {"region": "Surrey", "ratePerMillion": 28}
+  ]
+}
