@@ -28,6 +28,15 @@ export function formatDate(dateStr: string): string {
 }
 
 /**
+ * Format a quarter string (YYYY-Q#) to a human-readable form, e.g. "Q1 2025".
+ */
+export function formatQuarter(quarterStr: string): string {
+  const match = quarterStr.match(/^(\d{4})-Q(\d)$/);
+  if (!match) return quarterStr;
+  return `Q${match[2]} ${match[1]}`;
+}
+
+/**
  * Format a signed change value (e.g. "+4.2", "−1.3").
  */
 export function formatChange(value: number, decimals = 1): string {

@@ -9,6 +9,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import { formatDate } from '@/lib/format';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -366,7 +367,7 @@ export default function EnergyPage() {
               baseline="Average household electricity bills have doubled in real terms since 2015"
               changeText={
                 latestElecPrice
-                  ? `${latestElecPrice.date} \u00b7 Doubled since 2015`
+                  ? `${formatDate(latestElecPrice.date)} \u00b7 Doubled since 2015`
                   : 'Loading\u2026'
               }
               sparklineData={

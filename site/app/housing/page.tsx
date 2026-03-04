@@ -11,6 +11,7 @@ import AreaLookup from '@/components/AreaLookup';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import { formatDate } from '@/lib/format';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -520,7 +521,7 @@ export default function HousingPage() {
             polarity="up-is-bad"
             changeText={
               latestHpi
-                ? `England, ${latestHpi.date}`
+                ? `England, ${formatDate(latestHpi.date)}`
                 : 'Loading…'
             }
             sparklineData={

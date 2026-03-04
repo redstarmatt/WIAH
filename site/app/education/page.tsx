@@ -654,8 +654,8 @@ export default function EducationPage() {
                 <thead>
                   <tr className="border-b border-wiah-border">
                     <th className="text-left py-2 pr-3 font-mono text-xs text-wiah-mid">Year</th>
-                    <th className="text-right py-2 px-2 font-mono text-xs text-wiah-mid" colSpan={2}>Grade 5+ (strong pass)</th>
-                    <th className="text-right py-2 px-2 font-mono text-xs text-wiah-mid" colSpan={2}>Grade 4+ (standard pass)</th>
+                    <th className="text-center py-2 px-2 font-mono text-xs text-wiah-mid" colSpan={2}>Grade 5+ (strong pass)</th>
+                    <th className="text-center py-2 px-2 font-mono text-xs text-wiah-mid" colSpan={2}>Grade 4+ (standard pass)</th>
                   </tr>
                   <tr className="border-b border-wiah-border/50">
                     <th className="py-1 pr-3"></th>

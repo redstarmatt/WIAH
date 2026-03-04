@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
+import { formatQuarter } from '@/lib/format';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
@@ -346,7 +347,7 @@ export default function TransportPage() {
             baseline="Only 86% of trains run on time — 6 points below the 92% target, and the gap hasn't closed since 2019"
             changeText={
               latestRail
-                ? `${latestRail.quarter} · PPM (Public Performance Measure)`
+                ? `${formatQuarter(latestRail.quarter)} · PPM (Public Performance Measure)`
                 : 'Loading…'
             }
             sparklineData={
@@ -386,7 +387,7 @@ export default function TransportPage() {
             baseline="Around 3% of trains are cancelled outright — on top of those that run but arrive late"
             changeText={
               latestRail
-                ? `${latestRail.quarter} · Industry target: 2%`
+                ? `${formatQuarter(latestRail.quarter)} · Industry target: 2%`
                 : 'Loading…'
             }
             sparklineData={
@@ -468,7 +469,7 @@ export default function TransportPage() {
               Punctuality by train operator
             </h2>
             <p className="text-sm text-wiah-mid font-mono mb-6">
-              Latest available quarter ({latestRail?.quarter}). Sorted by PPM (worst first). Green &ge;90%, amber &ge;85%, red &lt;85%.
+              Latest available quarter ({latestRail?.quarter ? formatQuarter(latestRail.quarter) : ''}). Sorted by PPM (worst first). Green &ge;90%, amber &ge;85%, red &lt;85%.
             </p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
