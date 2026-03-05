@@ -162,34 +162,32 @@ export default function NhsDentistryPage() {
       {/* ── Sources ───────────────────────────────────────────────────────────────── */}
 
       <section id="sec-charts" className="bg-white px-4 sm:px-6 py-12">
-        <div className="max-w-4xl mx-auto space-y-12">
+        <div className="max-w-4xl mx-auto">
           {data && (
             <>
               <ScrollReveal>
-                <div className="h-72">
-                  <LineChart
-                    title="NHS dentists providing treatment, England"
-                    subtitle="Number of dentists delivering NHS dental care in the financial year."
-                    series={dentistsSeries}
-                    annotations={dentistsAnnotations}
-                    yLabel="Dentists"
-                  />
-                </div>
+                <LineChart
+                  title="NHS dentists providing treatment, England"
+                  showTitle
+                  subtitle="Number of dentists delivering NHS dental care in the financial year."
+                  series={dentistsSeries}
+                  annotations={dentistsAnnotations}
+                  yLabel="Dentists"
+                />
               </ScrollReveal>
 
               <ScrollReveal>
-                <div className="h-72">
-                  <LineChart
-                    title="NHS courses of dental treatment, England"
-                    subtitle="Annual courses of treatment completed. Does not include private treatment."
-                    series={coursesSeries}
-                    yLabel="Courses (millions)"
-                  />
-                </div>
+                <LineChart
+                  title="NHS courses of dental treatment, England"
+                  showTitle
+                  subtitle="Annual courses of treatment completed. Does not include private treatment."
+                  series={coursesSeries}
+                  yLabel="Courses (millions)"
+                />
               </ScrollReveal>
 
               <ScrollReveal>
-                <div className="bg-white">
+                <div className="bg-white mb-12">
                   <h3 className="text-lg font-bold text-wiah-black mb-6">
                     Adults unable to access NHS dentist, by region
                   </h3>

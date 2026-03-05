@@ -5396,8 +5396,8 @@ export function getScorecard() {
 
 // ── Infinite scroll ordering ───────────────────────────────────────────────────
 
-// Flat ordered list of topic slugs (category order, deduped, only those with data)
 let _topicOrder: string[] | null = null;
+
 export function getOrderedTopicSlugs(): string[] {
   if (_topicOrder) return _topicOrder;
   const seen = new Set<string>();

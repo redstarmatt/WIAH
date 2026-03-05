@@ -42,7 +42,7 @@ export default function ScrollReveal({
         opacity: visible ? 1 : 0,
         visibility: visible ? 'visible' : 'hidden',
         transform: visible ? 'translateY(0)' : 'translateY(16px)',
-        transition: `opacity 700ms cubic-bezier(0.25, 0.1, 0.25, 1) ${delay}ms, transform 700ms cubic-bezier(0.25, 0.1, 0.25, 1) ${delay}ms`,
+        transition: `opacity 350ms cubic-bezier(0.25, 0.1, 0.25, 1) ${delay}ms, transform 350ms cubic-bezier(0.25, 0.1, 0.25, 1) ${delay}ms`,
       }}
     >
       {children}
