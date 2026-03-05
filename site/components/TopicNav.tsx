@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import SiteName from './SiteName';
+import SearchTrigger from './SearchTrigger';
 
 interface TopicNavProps {
   topic: string;
@@ -19,10 +20,13 @@ export default function TopicNav({ topic }: TopicNavProps) {
         <span className="text-wiah-mid text-sm font-mono truncate">
           {topic}
         </span>
-        {/* Back link — always visible */}
-        <Link href="/" className="text-sm text-wiah-blue hover:underline shrink-0 whitespace-nowrap">
-          ← All topics
-        </Link>
+        {/* Search + back link */}
+        <div className="flex items-center gap-3 shrink-0">
+          <SearchTrigger variant="dark" />
+          <Link href="/" className="text-sm text-wiah-blue hover:underline whitespace-nowrap">
+            ← All topics
+          </Link>
+        </div>
       </div>
     </nav>
   );

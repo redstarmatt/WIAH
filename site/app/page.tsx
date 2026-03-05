@@ -1,6 +1,7 @@
 import SiteName from '@/components/SiteName';
 import FeaturedFindings from '@/components/FeaturedFindings';
 import TopicBrowser from '@/components/TopicBrowser';
+import SearchTrigger from '@/components/SearchTrigger';
 import { getScorecard } from '@/lib/topics';
 
 export default function HomePage() {
@@ -17,6 +18,10 @@ export default function HomePage() {
           <h1>
             <SiteName size="hero" />
           </h1>
+
+          <div className="mt-4">
+            <SearchTrigger variant="light" />
+          </div>
 
           {/* Scorecard — the dominant visual statement */}
           <div className="mt-12 max-w-2xl">
