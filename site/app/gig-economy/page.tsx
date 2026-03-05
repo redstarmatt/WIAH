@@ -99,8 +99,8 @@ export default function GigEconomyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>An estimated 4.4 million people performed gig work as their primary income source in 2024, up from 2.8 million in 2017, with ride-hailing, food delivery, cleaning, care work, and freelance services accounting for the largest categories. The economics are significantly worse than headline rates suggest: TUC research finds that once vehicle costs, fuel, insurance, equipment, and unpaid waiting time are deducted, 38&percnt; of gig workers earn below the National Minimum Wage after costs. Gig workers are classified as self-employed for National Insurance purposes, meaning neither they nor platforms pay employer NI contributions, reducing access to contributory benefits. The Supreme Court&rsquo;s ruling in Uber BV v Aslam [2021] established that Uber drivers are &ldquo;workers&rdquo; entitled to minimum wage and holiday pay &mdash; the most significant employment law ruling of the decade &mdash; and the Employment Rights Bill 2024 proposes to extend those rights further.</p>
-            <p>The gig economy&rsquo;s costs fall disproportionately on younger and migrant workers. Workers aged 18&ndash;30 account for roughly 55&percnt; of participants; in London and other major cities, delivery workers are disproportionately from Black, Asian, and minority ethnic backgrounds, often without the language support or legal literacy to challenge their classification. Around 40&percnt; of all gig economy workers are based in London and the South East. Only 9&percnt; of gig workers have a workplace pension, against 76&percnt; of employees, meaning that low pay and insecurity in the present compounds into poverty in retirement.</p>
+            <p>An estimated 4.4 million people performed gig work as their primary income source in 2024, up from 2.8 million in 2017, with ride-hailing, food delivery, cleaning, care work, and freelance services accounting for the largest categories. The economics are significantly worse than headline rates suggest: TUC research finds that once vehicle costs, fuel, insurance, equipment, and unpaid waiting time are deducted, 38% of gig workers earn below the National Minimum Wage after costs. Gig workers are classified as self-employed for National Insurance purposes, meaning neither they nor platforms pay employer NI contributions, reducing access to contributory benefits. The Supreme Court&rsquo;s ruling in Uber BV v Aslam [2021] established that Uber drivers are &ldquo;workers&rdquo; entitled to minimum wage and holiday pay &mdash; the most significant employment law ruling of the decade &mdash; and the Employment Rights Bill 2024 proposes to extend those rights further.</p>
+            <p>The gig economy&rsquo;s costs fall disproportionately on younger and migrant workers. Workers aged 18&ndash;30 account for roughly 55% of participants; in London and other major cities, delivery workers are disproportionately from Black, Asian, and minority ethnic backgrounds, often without the language support or legal literacy to challenge their classification. Around 40% of all gig economy workers are based in London and the South East. Only 9% of gig workers have a workplace pension, against 76% of employees, meaning that low pay and insecurity in the present compounds into poverty in retirement.</p>
           </div>
         </section>
 
@@ -123,7 +123,7 @@ export default function GigEconomyPage() {
             />
             <MetricCard
               label="Earning below minimum wage after costs"
-              value="38&percnt;"
+              value="38%"
               direction="up"
               polarity="up-is-bad"
               changeText="TUC 2023 &middot; Delivery workers most exposed &middot; Costs include vehicle, fuel, equipment"
@@ -132,10 +132,10 @@ export default function GigEconomyPage() {
             />
             <MetricCard
               label="Gig workers with workplace pension"
-              value="9&percnt;"
+              value="9%"
               direction="flat"
               polarity="up-is-good"
-              changeText="vs 76&percnt; of employees &middot; Auto-enrolment does not apply to self-employed"
+              changeText="vs 76% of employees &middot; Auto-enrolment does not apply to self-employed"
               sparklineData={[7, 8, 8, 8, 9, 9, 9, 9]}
               onExpand={() => {}}
             />

@@ -75,10 +75,10 @@ export default function CreativeIndustriesPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK&apos;s creative industries &mdash; spanning film, television, music, games, publishing, advertising, architecture, and design &mdash; generated &pound;116bn in gross value added in 2023, more than automotive and aerospace combined, and employ 2.4 million people. But Brexit imposed structural costs the sector is still absorbing: navigating 27 national bureaucracies for EU tours now costs the average mid-sized touring act &pound;30,000&ndash;&pound;50,000 per trip, and the UK lost an estimated &pound;40m per year in Creative Europe grants. Artificial intelligence represents a further threat: the Authors&apos; Licensing and Collecting Society found in 2023 that 62&percnt; of authors had had their work used to train AI without consent or payment, while the government&apos;s 2024 consultation on AI and intellectual property closed without producing new legislative protections.
+              The UK&apos;s creative industries &mdash; spanning film, television, music, games, publishing, advertising, architecture, and design &mdash; generated &pound;116bn in gross value added in 2023, more than automotive and aerospace combined, and employ 2.4 million people. But Brexit imposed structural costs the sector is still absorbing: navigating 27 national bureaucracies for EU tours now costs the average mid-sized touring act &pound;30,000&ndash;&pound;50,000 per trip, and the UK lost an estimated &pound;40m per year in Creative Europe grants. Artificial intelligence represents a further threat: the Authors&apos; Licensing and Collecting Society found in 2023 that 62% of authors had had their work used to train AI without consent or payment, while the government&apos;s 2024 consultation on AI and intellectual property closed without producing new legislative protections.
             </p>
             <p>
-              The grassroots music venue crisis is the most visible symptom of wider pipeline pressures. The number of venues with a capacity under 350 fell from approximately 6,800 in 2015 to 4,600 in 2023 &mdash; a loss of 32&percnt; &mdash; driven by rising urban rents, business rates, noise complaints from new residential developments, and the post-COVID collapse in midweek audiences. Music Venue Trust research found that 90&percnt; of acts in the UK&apos;s top 100 venues had played grassroots venues within the previous five years, making them essential infrastructure rather than cultural luxuries. Forty-two percent of creative workers earn below the living wage, concentrated among the self-employed and portfolio workers who dominate the sector&apos;s labour market.
+              The grassroots music venue crisis is the most visible symptom of wider pipeline pressures. The number of venues with a capacity under 350 fell from approximately 6,800 in 2015 to 4,600 in 2023 &mdash; a loss of 32% &mdash; driven by rising urban rents, business rates, noise complaints from new residential developments, and the post-COVID collapse in midweek audiences. Music Venue Trust research found that 90% of acts in the UK&apos;s top 100 venues had played grassroots venues within the previous five years, making them essential infrastructure rather than cultural luxuries. Forty-two percent of creative workers earn below the living wage, concentrated among the self-employed and portfolio workers who dominate the sector&apos;s labour market.
             </p>
           </div>
         </section>
@@ -96,7 +96,7 @@ export default function CreativeIndustriesPage() {
               value="&pound;116bn"
               direction="up"
               polarity="up-is-good"
-              changeText="Up from &pound;84bn in 2015 &middot; 6&percnt; of UK GDP &middot; 2.4 million jobs"
+              changeText="Up from &pound;84bn in 2015 &middot; 6% of UK GDP &middot; 2.4 million jobs"
               sparklineData={[84, 90, 97, 105, 112, 95, 106, 116]}
               source="DCMS &middot; Economic estimates 2023"
               onExpand={() => {}}
@@ -116,7 +116,7 @@ export default function CreativeIndustriesPage() {
               value="42%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Stable at 40&ndash;44&percnt; &middot; Self-employment and portfolio work depress incomes"
+              changeText="Stable at 40&ndash;44% &middot; Self-employment and portfolio work depress incomes"
               sparklineData={[40, 41, 42, 43, 44, 43, 42, 42]}
               source="Creative Industries Policy and Evidence Centre &middot; 2023"
               onExpand={() => {}}
@@ -171,7 +171,7 @@ export default function CreativeIndustriesPage() {
             title="Where the sector thrives"
             value="&pound;7.9bn"
             unit="UK games GVA 2023"
-            description="The UK games industry generated &pound;7.9bn in 2023 &mdash; up 400&percnt; since 2010 &mdash; and UK films regularly top global box offices. The Creative Industries Sector Vision (2023) commits &pound;50m in additional support for grassroots venues and music education, alongside plans to expand the UK&apos;s cultural export programme."
+            description="The UK games industry generated &pound;7.9bn in 2023 &mdash; up 400% since 2010 &mdash; and UK films regularly top global box offices. The Creative Industries Sector Vision (2023) commits &pound;50m in additional support for grassroots venues and music education, alongside plans to expand the UK&apos;s cultural export programme."
             source="Ukie &middot; UK games industry statistics 2023 &middot; DCMS &middot; Creative Industries Sector Vision 2023"
           />
         </ScrollReveal>

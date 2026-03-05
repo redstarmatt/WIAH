@@ -188,7 +188,7 @@ export default function NetMigrationPage() {
             title="What migration makes possible"
             value="143,000"
             unit="health &amp; care visas in 2023"
-            description="Without the 143,000&plus; health and care visas in 2023, NHS waiting lists would be substantially longer and care homes would face catastrophic staffing shortfalls. International workers make up 19&percnt; of all NHS staff and 21&percnt; of care home workers &mdash; a structural dependency that reflects decades of under-investment in domestic training pipelines."
+            description="Without the 143,000&plus; health and care visas in 2023, NHS waiting lists would be substantially longer and care homes would face catastrophic staffing shortfalls. International workers make up 19% of all NHS staff and 21% of care home workers &mdash; a structural dependency that reflects decades of under-investment in domestic training pipelines."
             source="NHS England &middot; Workforce statistics 2023 &middot; Home Office immigration data 2023"
           />
         </ScrollReveal>

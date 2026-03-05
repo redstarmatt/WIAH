@@ -57,7 +57,7 @@ export default function InWorkPovertyPage() {
   const pctSeries: Series[] = data
     ? [{
         id: 'pct-of-poor',
-        label: 'Working households as &percnt; of all people in poverty',
+        label: 'Working households as % of all people in poverty',
         colour: '#F4A261',
         data: data.national.timeSeries.map(d => ({
           date: yearToDate(d.date),
@@ -76,15 +76,15 @@ export default function InWorkPovertyPage() {
         <TopicHeader
           topic="In-Work Poverty"
           question="How Can You Work Full-Time and Still Be Poor?"
-          finding="8.1 million people live in working households below the poverty line &mdash; 60&percnt; of all people in poverty live in households where someone works, up from 45&percnt; in 1997."
+          finding="8.1 million people live in working households below the poverty line &mdash; 60% of all people in poverty live in households where someone works, up from 45% in 1997."
           colour="#E63946"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In-work poverty &mdash; households with at least one adult in paid employment but income below 60&percnt; of the median after housing costs &mdash; has become the dominant form of poverty in Britain. Approximately 8.1 million people were in in-work poverty in 2022/23, representing 60&percnt; of everyone below the poverty line, up from 45&percnt; in 1997. The shift reflects not higher employment but structural changes in the labour market: low wages, insecure hours, and insufficient work, amplified by housing costs that absorb an increasing share of low-income budgets. A worker on &pound;11.44 per hour for 20 hours per week generates around &pound;11,900 a year &mdash; well below the poverty line for a single person. The Universal Credit taper rate was cut from 63p to 55p in 2021, benefiting around 1.9 million working families, but the two-child limit, benefit cap, and local housing allowance freeze have eroded overall entitlements for the poorest households.</p>
-            <p>JRF research identifies lone parents, large families, and households with a disabled member as the highest-risk groups. A &ldquo;poverty premium&rdquo; worth an estimated &pound;500&ndash;&pound;700 a year forces low-income families to pay more per unit for energy (on prepayment meters), insurance, and credit. London has the highest in-work poverty rate &mdash; around 28&percnt; after housing costs &mdash; despite higher average wages, driven entirely by rents. The East Midlands, Yorkshire, and parts of the South West also record high rates, reflecting low-wage economies in retail, logistics, and agriculture with inadequate transport links to better-paid jobs. Single parents are disproportionately concentrated in deprived urban areas where low wages, high childcare costs, and limited childcare availability combine into a poverty trap.</p>
+            <p>In-work poverty &mdash; households with at least one adult in paid employment but income below 60% of the median after housing costs &mdash; has become the dominant form of poverty in Britain. Approximately 8.1 million people were in in-work poverty in 2022/23, representing 60% of everyone below the poverty line, up from 45% in 1997. The shift reflects not higher employment but structural changes in the labour market: low wages, insecure hours, and insufficient work, amplified by housing costs that absorb an increasing share of low-income budgets. A worker on &pound;11.44 per hour for 20 hours per week generates around &pound;11,900 a year &mdash; well below the poverty line for a single person. The Universal Credit taper rate was cut from 63p to 55p in 2021, benefiting around 1.9 million working families, but the two-child limit, benefit cap, and local housing allowance freeze have eroded overall entitlements for the poorest households.</p>
+            <p>JRF research identifies lone parents, large families, and households with a disabled member as the highest-risk groups. A &ldquo;poverty premium&rdquo; worth an estimated &pound;500&ndash;&pound;700 a year forces low-income families to pay more per unit for energy (on prepayment meters), insurance, and credit. London has the highest in-work poverty rate &mdash; around 28% after housing costs &mdash; despite higher average wages, driven entirely by rents. The East Midlands, Yorkshire, and parts of the South West also record high rates, reflecting low-wage economies in retail, logistics, and agriculture with inadequate transport links to better-paid jobs. Single parents are disproportionately concentrated in deprived urban areas where low wages, high childcare costs, and limited childcare availability combine into a poverty trap.</p>
           </div>
         </section>
 
@@ -101,22 +101,22 @@ export default function InWorkPovertyPage() {
               value="8.1M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2022/23 &middot; Up from 4.5M in 2005 &middot; 60&percnt; of all poverty is in-work"
+              changeText="2022/23 &middot; Up from 4.5M in 2005 &middot; 60% of all poverty is in-work"
               sparklineData={[4.5, 5.0, 5.6, 6.2, 6.7, 7.2, 7.8, 8.1]}
               onExpand={() => {}}
             />
             <MetricCard
               label="Working households in poverty"
-              value="60&percnt;"
+              value="60%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 45&percnt; in 1997 &middot; Majority of poverty is now in-work"
+              changeText="Up from 45% in 1997 &middot; Majority of poverty is now in-work"
               sparklineData={[45, 47, 50, 53, 55, 57, 59, 60]}
               onExpand={() => {}}
             />
             <MetricCard
               label="Working single parents in poverty"
-              value="42&percnt;"
+              value="42%"
               direction="up"
               polarity="up-is-bad"
               changeText="2022/23 &middot; Despite employment &middot; Childcare costs and low hours"
@@ -130,7 +130,7 @@ export default function InWorkPovertyPage() {
           <section id="sec-poverty" className="mb-12">
             <LineChart
               title="People in working poverty, UK, 2002&ndash;2023 (millions)"
-              subtitle="People in households where at least one adult works but household income is below 60&percnt; of median, after housing costs (DWP HBAI)."
+              subtitle="People in households where at least one adult works but household income is below 60% of median, after housing costs (DWP HBAI)."
               series={povertySeries}
               yLabel="Millions"
               source={{
@@ -145,10 +145,10 @@ export default function InWorkPovertyPage() {
         <ScrollReveal>
           <section id="sec-share" className="mb-12">
             <LineChart
-              title="Working households as share of all people in poverty, 2002&ndash;2023 (&percnt;)"
-              subtitle="The majority of poverty is now in-work, up from 45&percnt; in the late 1990s. Work no longer guarantees escape from poverty."
+              title="Working households as share of all people in poverty, 2002&ndash;2023 (%)"
+              subtitle="The majority of poverty is now in-work, up from 45% in the late 1990s. Work no longer guarantees escape from poverty."
               series={pctSeries}
-              yLabel="&percnt;"
+              yLabel="%"
               source={{
                 name: 'JRF &amp; DWP',
                 dataset: 'UK Poverty Report &mdash; HBAI analysis',

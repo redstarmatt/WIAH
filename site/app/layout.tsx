@@ -3,6 +3,7 @@ import { Lora, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import SearchProvider from '@/components/SearchProvider';
 import SearchModal from '@/components/SearchModal';
+import CanonicalTag from '@/components/CanonicalTag';
 
 const lora = Lora({
   subsets: ['latin'],
@@ -17,7 +18,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://whatisactuallyhappening.uk'),
+  metadataBase: new URL('https://www.wiah.uk'),
   title: 'What is actually happening?',
   description: 'A curated national data platform that makes the real state of the UK visible, understandable, and shareable.',
   openGraph: {
@@ -37,6 +38,7 @@ export default function RootLayout({
     <html lang="en" className={`${lora.variable} ${jakarta.variable}`}>
       <body className="antialiased bg-white text-wiah-black">
         <SearchProvider>
+          <CanonicalTag />
           {children}
           <SearchModal />
         </SearchProvider>

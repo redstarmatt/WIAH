@@ -60,14 +60,14 @@ export default function PeatlandsPage() {
         <TopicHeader
           topic="Peatlands"
           question="Are Britain&apos;s Carbon Stores Being Protected?"
-          finding="UK peatlands store 3.2 billion tonnes of carbon &mdash; more than all forests in the UK, France, and Germany combined. But 80&percnt; are degraded and currently emit 23 million tonnes of CO&#8322; per year, making damaged peat one of Britain&apos;s largest single sources of greenhouse gas emissions."
+          finding="UK peatlands store 3.2 billion tonnes of carbon &mdash; more than all forests in the UK, France, and Germany combined. But 80% are degraded and currently emit 23 million tonnes of CO&#8322; per year, making damaged peat one of Britain&apos;s largest single sources of greenhouse gas emissions."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK peatlands cover 3 million hectares and store 3.2 billion tonnes of carbon &mdash; more than all forests in the UK, France, and Germany combined. But 80&percnt; of that peat is degraded, primarily through drainage for agriculture, commercial forestry planted from the 1950s to 1980s, and managed burning on grouse moors. Degraded peatlands emit approximately 23 million tonnes of CO&sup2;-equivalent per year &mdash; larger than the UK&apos;s entire aviation sector &mdash; making peat one of Britain&apos;s largest single sources of greenhouse gas. Restoration, primarily through drain blocking to rewet the surface and encourage sphagnum regrowth, has reached around 35,000 hectares since 2020. But the England Peat Action Plan target is 530,000 hectares by 2050, meaning current rates must accelerate dramatically. The Flow Country in Caithness and Sutherland &mdash; the world&apos;s largest blanket bog at 400,000 hectares &mdash; achieved UNESCO World Heritage status in 2023.</p>
-            <p>The consequences of peatland degradation are geographically concentrated but nationally significant. The East Anglian Fens, drained since the 17th century, emit 4&ndash;5 million tonnes of CO&sup2; per year from peat oxidation and are subsiding at a rate that threatens long-term agricultural viability. Northern Ireland&apos;s peatlands, covering 15&percnt; of its land area, are among the most damaged in the UK with limited restoration investment. Scotland&apos;s Peatland ACTION programme has restored over 50,000 hectares since 2012 &mdash; the largest programme in Europe &mdash; demonstrating that restoration is technically feasible at scale, but lowland peat in England and Wales faces continued agricultural pressure and weaker subsidy incentives under the current Environmental Land Management scheme.</p>
+            <p>UK peatlands cover 3 million hectares and store 3.2 billion tonnes of carbon &mdash; more than all forests in the UK, France, and Germany combined. But 80% of that peat is degraded, primarily through drainage for agriculture, commercial forestry planted from the 1950s to 1980s, and managed burning on grouse moors. Degraded peatlands emit approximately 23 million tonnes of CO&sup2;-equivalent per year &mdash; larger than the UK&apos;s entire aviation sector &mdash; making peat one of Britain&apos;s largest single sources of greenhouse gas. Restoration, primarily through drain blocking to rewet the surface and encourage sphagnum regrowth, has reached around 35,000 hectares since 2020. But the England Peat Action Plan target is 530,000 hectares by 2050, meaning current rates must accelerate dramatically. The Flow Country in Caithness and Sutherland &mdash; the world&apos;s largest blanket bog at 400,000 hectares &mdash; achieved UNESCO World Heritage status in 2023.</p>
+            <p>The consequences of peatland degradation are geographically concentrated but nationally significant. The East Anglian Fens, drained since the 17th century, emit 4&ndash;5 million tonnes of CO&sup2; per year from peat oxidation and are subsiding at a rate that threatens long-term agricultural viability. Northern Ireland&apos;s peatlands, covering 15% of its land area, are among the most damaged in the UK with limited restoration investment. Scotland&apos;s Peatland ACTION programme has restored over 50,000 hectares since 2012 &mdash; the largest programme in Europe &mdash; demonstrating that restoration is technically feasible at scale, but lowland peat in England and Wales faces continued agricultural pressure and weaker subsidy incentives under the current Environmental Land Management scheme.</p>
           </div>
         </section>
 
@@ -107,7 +107,7 @@ export default function PeatlandsPage() {
               unit="ha"
               direction="up"
               polarity="up-is-good"
-              changeText="Target: 250,000 ha by 2030 &mdash; less than 15&percnt; of the way there"
+              changeText="Target: 250,000 ha by 2030 &mdash; less than 15% of the way there"
               sparklineData={[0, 5000, 12000, 20000, 28000, 35000]}
               source="IUCN UK / NatureScot &mdash; Peatland ACTION monitoring"
               onExpand={() => {}}

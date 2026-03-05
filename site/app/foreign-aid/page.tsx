@@ -42,7 +42,7 @@ export default function ForeignAidPage() {
     ? [
         {
           id: 'oda-pct-gni',
-          label: 'UK ODA as &percnt; of GNI',
+          label: 'UK ODA as % of GNI',
           colour: '#264653',
           data: data.timeSeries.map(d => ({
             date: yearToDate(d.date),
@@ -55,7 +55,7 @@ export default function ForeignAidPage() {
   const odaAnnotations: Annotation[] = [
     {
       date: new Date(2021, 6, 1),
-      label: '2021: Cut to 0.5&percnt;',
+      label: '2021: Cut to 0.5%',
     },
   ];
 
@@ -93,35 +93,35 @@ export default function ForeignAidPage() {
           topic="Foreign Aid"
           preposition="with"
           question="What Has Happened to Britain&apos;s Foreign Aid?"
-          finding="The UK cut overseas development assistance from 0.7&percnt; to 0.5&percnt; of GNI in 2021, withdrawing approximately &pound;4 billion annually from programmes fighting malaria, famine, and displacement. Simultaneously, the government classified &pound;3.5 billion of the remaining aid budget as &ldquo;in-donor asylum costs&rdquo; &mdash; money spent in the UK on asylum processing &mdash; leaving dramatically less for the world&apos;s poorest."
+          finding="The UK cut overseas development assistance from 0.7% to 0.5% of GNI in 2021, withdrawing approximately &pound;4 billion annually from programmes fighting malaria, famine, and displacement. Simultaneously, the government classified &pound;3.5 billion of the remaining aid budget as &ldquo;in-donor asylum costs&rdquo; &mdash; money spent in the UK on asylum processing &mdash; leaving dramatically less for the world&apos;s poorest."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK legislated for the 0.7&percnt; of GNI aid target in 2015 following decades of cross-party commitment. In April 2021, the cut to 0.5&percnt; of GNI withdrew approximately &pound;4 billion annually from overseas programmes, with immediate consequences: bilateral programmes in sub-Saharan Africa, South Asia, and fragile states were cut or closed. Support for the Global Fund to Fight AIDS, Tuberculosis and Malaria was cut by 60&percnt;; the UK&apos;s contribution to the World Food Programme fell from &pound;300 million to &pound;114 million in the same year that hunger in Yemen, Ethiopia, and South Sudan reached record levels. A second, less-discussed problem compounds the headline cut: in 2023, &pound;3.5 billion of the &pound;15.2 billion ODA budget was classified as in-donor asylum costs &mdash; money spent on hotels, processing, and support for asylum seekers in the UK &mdash; leaving just &pound;11.7 billion for actual overseas programmes.
+              The UK legislated for the 0.7% of GNI aid target in 2015 following decades of cross-party commitment. In April 2021, the cut to 0.5% of GNI withdrew approximately &pound;4 billion annually from overseas programmes, with immediate consequences: bilateral programmes in sub-Saharan Africa, South Asia, and fragile states were cut or closed. Support for the Global Fund to Fight AIDS, Tuberculosis and Malaria was cut by 60%; the UK&apos;s contribution to the World Food Programme fell from &pound;300 million to &pound;114 million in the same year that hunger in Yemen, Ethiopia, and South Sudan reached record levels. A second, less-discussed problem compounds the headline cut: in 2023, &pound;3.5 billion of the &pound;15.2 billion ODA budget was classified as in-donor asylum costs &mdash; money spent on hotels, processing, and support for asylum seekers in the UK &mdash; leaving just &pound;11.7 billion for actual overseas programmes.
             </p>
             <p>
-              The distributional impact is almost entirely felt outside the UK, in some of the world&apos;s most deprived communities. Critics argue the reclassification of domestic asylum costs as ODA distorts the measurement of generosity, allowing ministers to claim a 0.5&percnt; commitment while a growing fraction is spent on domestic bureaucracy. Norway, Sweden, and Germany have imposed domestic caps on in-donor cost claims; the UK has not. The UK remains one of the world&apos;s largest donors in absolute terms, but ICAI found the rapid elimination of established bilateral programmes &mdash; with limited time for partners to secure alternative funding &mdash; destroyed institutional capacity built over years and produced outcomes far worse than a proportional cut would suggest.
+              The distributional impact is almost entirely felt outside the UK, in some of the world&apos;s most deprived communities. Critics argue the reclassification of domestic asylum costs as ODA distorts the measurement of generosity, allowing ministers to claim a 0.5% commitment while a growing fraction is spent on domestic bureaucracy. Norway, Sweden, and Germany have imposed domestic caps on in-donor cost claims; the UK has not. The UK remains one of the world&apos;s largest donors in absolute terms, but ICAI found the rapid elimination of established bilateral programmes &mdash; with limited time for partners to secure alternative funding &mdash; destroyed institutional capacity built over years and produced outcomes far worse than a proportional cut would suggest.
             </p>
           </div>
         </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Overview' },
-          { id: 'sec-oda-pct', label: 'ODA &percnt; of GNI' },
+          { id: 'sec-oda-pct', label: 'ODA % of GNI' },
           { id: 'sec-breakdown', label: 'Aid Breakdown' },
         ]} />
 
         <ScrollReveal>
           <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
-              label="UK ODA as &percnt; of GNI"
+              label="UK ODA as % of GNI"
               value="0.5%"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 0.7&percnt; &middot; Cut in 2021 &middot; &pound;4bn annually withdrawn from overseas programmes"
+              changeText="Down from 0.7% &middot; Cut in 2021 &middot; &pound;4bn annually withdrawn from overseas programmes"
               sparklineData={[0.7, 0.7, 0.7, 0.7, 0.7, 0.5, 0.5, 0.5]}
               source="FCDO &middot; Statistics on International Development 2024"
               onExpand={() => {}}
@@ -141,7 +141,7 @@ export default function ForeignAidPage() {
               value="&pound;3.5bn"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from &pound;300m in 2015 &middot; Classified as ODA under DAC rules &middot; 23&percnt; of total budget"
+              changeText="Up from &pound;300m in 2015 &middot; Classified as ODA under DAC rules &middot; 23% of total budget"
               sparklineData={[0.5, 0.8, 1.2, 1.8, 2.5, 3.0, 3.5, 3.5]}
               source="ICAI &middot; Annual Review 2024"
               onExpand={() => {}}
@@ -154,7 +154,7 @@ export default function ForeignAidPage() {
             title="What is getting better"
             value="Top 5"
             unit="global donors"
-            description="Despite the cut from 0.7&percnt; to 0.5&percnt;, the UK remains one of the world&apos;s largest donors in absolute terms &mdash; ranking in the top 5 globally by ODA volume. The commitment to return to 0.7&percnt; &ldquo;when fiscal conditions allow&rdquo; is embedded in the 2015 legislation. UK multilateral contributions through the World Bank, Global Fund, and UN agencies continue to fund proven life-saving programmes."
+            description="Despite the cut from 0.7% to 0.5%, the UK remains one of the world&apos;s largest donors in absolute terms &mdash; ranking in the top 5 globally by ODA volume. The commitment to return to 0.7% &ldquo;when fiscal conditions allow&rdquo; is embedded in the 2015 legislation. UK multilateral contributions through the World Bank, Global Fund, and UN agencies continue to fund proven life-saving programmes."
             source="OECD DAC &middot; Official Aid Statistics 2023"
           />
         </ScrollReveal>
@@ -163,12 +163,12 @@ export default function ForeignAidPage() {
           <section id="sec-oda-pct" className="mb-12">
             {odaPctSeries.length > 0 ? (
               <LineChart
-                title="UK ODA as &percnt; of GNI, 2015&ndash;2024"
-                subtitle="UK overseas development assistance as a percentage of gross national income. 0.7&percnt; is the UN and statutory target."
+                title="UK ODA as % of GNI, 2015&ndash;2024"
+                subtitle="UK overseas development assistance as a percentage of gross national income. 0.7% is the UN and statutory target."
                 series={odaPctSeries}
                 annotations={odaAnnotations}
                 targetLine={targetLine}
-                yLabel="&percnt; of GNI"
+                yLabel="% of GNI"
                 source={{
                   name: 'FCDO / OECD DAC',
                   dataset: 'UK Overseas Development Assistance Statistics',

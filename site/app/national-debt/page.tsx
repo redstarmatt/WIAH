@@ -45,7 +45,7 @@ export default function NationalDebtPage() {
   const debtSeries: Series[] = data
     ? [{
         id: 'debt-pct-gdp',
-        label: 'Public debt as &percnt; of GDP',
+        label: 'Public debt as % of GDP',
         colour: '#6B7280',
         data: data.national.timeSeries.map(d => ({
           date: yearToDate(d.date),
@@ -81,32 +81,32 @@ export default function NationalDebtPage() {
         <TopicHeader
           topic="National Debt"
           question="How Big Is Britain&apos;s Debt and Does It Matter?"
-          finding="UK public debt reached 98.8&percnt; of GDP in 2024 &mdash; the highest since the 1960s &mdash; with interest payments of &pound;112bn annually, consuming more than &pound;1 in every &pound;9 of tax revenue."
+          finding="UK public debt reached 98.8% of GDP in 2024 &mdash; the highest since the 1960s &mdash; with interest payments of &pound;112bn annually, consuming more than &pound;1 in every &pound;9 of tax revenue."
           colour="#6B7280"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK Public Sector Net Debt stood at approximately 98.8&percnt; of GDP at the end of 2023/24 &mdash; around &pound;2.7 trillion and the highest ratio since the early 1960s. The ratio rose from 36&percnt; before the 2008 financial crisis to over 80&percnt; by 2013 through recession and bank bailouts, remained elevated through the austerity decade, then surged again as the government borrowed an additional &pound;330 billion during the COVID-19 pandemic. Net interest payments reached &pound;112 billion in 2023/24 &mdash; up from &pound;42 billion in 2010 and &pound;52 billion in 2021 &mdash; driven by the RPI-linkage on approximately 25&percnt; of outstanding gilts, which spiked as inflation hit 11&percnt; in 2022, and by the high rates at which new gilts have been issued since late 2021. Debt interest now exceeds the entire defence budget and absorbs 11.6&percnt; of all tax revenue, with the OBR forecasting payments above &pound;100 billion a year through the late 2020s.</p>
-            <p>The costs are distributed unequally. Austerity policies between 2010 and 2019 fell disproportionately on lower-income households through welfare cuts, local government reductions, and public sector pay freezes; the Resolution Foundation found the bottom income decile lost approximately 10&percnt; of disposable income through benefit changes alone. The North East, Wales, and parts of Northern Ireland, most dependent on public sector employment and services, bore the largest share of fiscal consolidation. Conversely, holders of government bonds &mdash; pension funds, insurance companies, and wealthier individuals &mdash; have benefited from the higher interest payments now being made, representing a substantial ongoing transfer from taxpayers to creditors.</p>
+            <p>UK Public Sector Net Debt stood at approximately 98.8% of GDP at the end of 2023/24 &mdash; around &pound;2.7 trillion and the highest ratio since the early 1960s. The ratio rose from 36% before the 2008 financial crisis to over 80% by 2013 through recession and bank bailouts, remained elevated through the austerity decade, then surged again as the government borrowed an additional &pound;330 billion during the COVID-19 pandemic. Net interest payments reached &pound;112 billion in 2023/24 &mdash; up from &pound;42 billion in 2010 and &pound;52 billion in 2021 &mdash; driven by the RPI-linkage on approximately 25% of outstanding gilts, which spiked as inflation hit 11% in 2022, and by the high rates at which new gilts have been issued since late 2021. Debt interest now exceeds the entire defence budget and absorbs 11.6% of all tax revenue, with the OBR forecasting payments above &pound;100 billion a year through the late 2020s.</p>
+            <p>The costs are distributed unequally. Austerity policies between 2010 and 2019 fell disproportionately on lower-income households through welfare cuts, local government reductions, and public sector pay freezes; the Resolution Foundation found the bottom income decile lost approximately 10% of disposable income through benefit changes alone. The North East, Wales, and parts of Northern Ireland, most dependent on public sector employment and services, bore the largest share of fiscal consolidation. Conversely, holders of government bonds &mdash; pension funds, insurance companies, and wealthier individuals &mdash; have benefited from the higher interest payments now being made, representing a substantial ongoing transfer from taxpayers to creditors.</p>
           </div>
         </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-debt', label: 'Debt &percnt; GDP' },
+          { id: 'sec-debt', label: 'Debt % GDP' },
           { id: 'sec-interest', label: 'Interest Payments' },
         ]} />
 
         <ScrollReveal>
           <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
-              label="Debt as &percnt; of GDP"
-              value="98.8&percnt;"
+              label="Debt as % of GDP"
+              value="98.8%"
               direction="up"
               polarity="up-is-bad"
-              changeText="2024 &middot; Highest since the 1960s &middot; Up from 42&percnt; in 2007"
+              changeText="2024 &middot; Highest since the 1960s &middot; Up from 42% in 2007"
               sparklineData={[42, 52, 62, 70, 76, 84, 87, 99]}
               onExpand={() => {}}
             />
@@ -120,8 +120,8 @@ export default function NationalDebtPage() {
               onExpand={() => {}}
             />
             <MetricCard
-              label="Debt interest as &percnt; of tax revenue"
-              value="11.6&percnt;"
+              label="Debt interest as % of tax revenue"
+              value="11.6%"
               direction="up"
               polarity="up-is-bad"
               changeText="2023/24 &middot; &pound;1 in every &pound;9 of tax goes to creditors"
@@ -134,11 +134,11 @@ export default function NationalDebtPage() {
         <ScrollReveal>
           <section id="sec-debt" className="mb-12">
             <LineChart
-              title="UK public debt as &percnt; of GDP, 2000&ndash;2024"
+              title="UK public debt as % of GDP, 2000&ndash;2024"
               subtitle="Public Sector Net Debt excluding Bank of England, as a percentage of nominal GDP. Annotated at key fiscal events."
               series={debtSeries}
               annotations={debtAnnotations}
-              yLabel="&percnt; of GDP"
+              yLabel="% of GDP"
               source={{
                 name: 'ONS',
                 dataset: 'Public sector finances, UK &mdash; PSF1',

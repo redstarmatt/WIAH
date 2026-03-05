@@ -93,17 +93,17 @@ export default function SecondHomesPage() {
           topic="Second Homes"
           preposition="with"
           question="Are Second Homes Hollowing Out Communities?"
-          finding="Over 272,000 second homes and 230,000 short-term lets in England &mdash; concentrated in coastal and rural areas &mdash; are removing properties from local housing markets. Communities like St Ives, the Lake District, and the Norfolk Broads have seen 30&percnt; or more of their housing stock unavailable to permanent residents, driving prices beyond local earnings and depopulating villages."
+          finding="Over 272,000 second homes and 230,000 short-term lets in England &mdash; concentrated in coastal and rural areas &mdash; are removing properties from local housing markets. Communities like St Ives, the Lake District, and the Norfolk Broads have seen 30% or more of their housing stock unavailable to permanent residents, driving prices beyond local earnings and depopulating villages."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England recorded 272,000 second homes in 2023, up 53&percnt; from 178,000 in 2010. Alongside these, an estimated 230,000 properties are now let short-term through platforms including Airbnb and Vrbo &mdash; a market that barely existed before 2015. The combined effect is that in many coastal and rural areas, a substantial share of the housing stock is functionally unavailable to households seeking permanent homes. In the Lake District, up to 35&percnt; of properties in some parishes are registered neither as a primary residence nor as a commercial business. A 2024 ONS analysis found that in local authorities with the highest second-home ratios, median house prices had risen 34&percnt; faster than comparable areas between 2010 and 2023. A mandatory STL registration scheme was introduced in 2024, modelled on Scotland&apos;s 2021 licensing scheme; early data from both schemes suggests some operators have returned properties to long-term letting, but the scale of reversal remains limited.
+              England recorded 272,000 second homes in 2023, up 53% from 178,000 in 2010. Alongside these, an estimated 230,000 properties are now let short-term through platforms including Airbnb and Vrbo &mdash; a market that barely existed before 2015. The combined effect is that in many coastal and rural areas, a substantial share of the housing stock is functionally unavailable to households seeking permanent homes. In the Lake District, up to 35% of properties in some parishes are registered neither as a primary residence nor as a commercial business. A 2024 ONS analysis found that in local authorities with the highest second-home ratios, median house prices had risen 34% faster than comparable areas between 2010 and 2023. A mandatory STL registration scheme was introduced in 2024, modelled on Scotland&apos;s 2021 licensing scheme; early data from both schemes suggests some operators have returned properties to long-term letting, but the scale of reversal remains limited.
             </p>
             <p>
-              The distributional effects are not uniform. Second home ownership is concentrated in the top two income deciles &mdash; 92&percnt; of second home owners have household incomes above &pound;40,000 &mdash; while the communities most affected are those with already constrained local earnings: fishing towns, farming villages, and tourist-dependent areas where a young adult typically earns median wages far below what a local mortgage requires. The hollowing out of year-round residents means schools lose pupils, GP practices lose registered patients, and community organisations lose members &mdash; a slow-motion collapse of community infrastructure that accelerates further as service closures make permanent residency less viable.
+              The distributional effects are not uniform. Second home ownership is concentrated in the top two income deciles &mdash; 92% of second home owners have household incomes above &pound;40,000 &mdash; while the communities most affected are those with already constrained local earnings: fishing towns, farming villages, and tourist-dependent areas where a young adult typically earns median wages far below what a local mortgage requires. The hollowing out of year-round residents means schools lose pupils, GP practices lose registered patients, and community organisations lose members &mdash; a slow-motion collapse of community infrastructure that accelerates further as service closures make permanent residency less viable.
             </p>
           </div>
         </section>
@@ -121,7 +121,7 @@ export default function SecondHomesPage() {
               value="272,000"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 178,000 in 2010 &middot; +53&percnt; in 13 years"
+              changeText="Up from 178,000 in 2010 &middot; +53% in 13 years"
               sparklineData={[178, 195, 210, 225, 238, 250, 262, 272]}
               source="DLUHC &middot; Council Tax Statistics 2023"
               onExpand={() => {}}
@@ -137,7 +137,7 @@ export default function SecondHomesPage() {
               onExpand={() => {}}
             />
             <MetricCard
-              label="LAs where 20&percnt;+ properties are second homes/STLs"
+              label="LAs where 20%+ properties are second homes/STLs"
               value="47"
               direction="up"
               polarity="up-is-bad"
@@ -154,7 +154,7 @@ export default function SecondHomesPage() {
             title="What is getting better"
             value="100&ndash;300%"
             unit="council tax premiums"
-            description="Several councils have introduced 100&ndash;300&percnt; council tax premiums on second homes using powers under the Levelling-up and Regeneration Act 2023. Wales now has a statutory licensing scheme for short-term lets &mdash; early data shows a measurable number of properties returning to long-term rental use in affected communities, providing tentative evidence that financial disincentives can shift behaviour."
+            description="Several councils have introduced 100&ndash;300% council tax premiums on second homes using powers under the Levelling-up and Regeneration Act 2023. Wales now has a statutory licensing scheme for short-term lets &mdash; early data shows a measurable number of properties returning to long-term rental use in affected communities, providing tentative evidence that financial disincentives can shift behaviour."
             source="DLUHC &middot; Welsh Government STL licensing data &middot; 2024"
           />
         </ScrollReveal>

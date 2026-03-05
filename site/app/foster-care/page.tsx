@@ -70,17 +70,17 @@ export default function FosterCarePage() {
         <TopicHeader
           topic="Foster Care"
           question="Where Do the Children Go?"
-          finding="England has lost over 5,000 foster carer households since 2015 &mdash; an 11&percnt; decline &mdash; while the number of children needing placements has risen. One in eight looked-after children now experiences three or more placement moves in a single year, and councils are spending &pound;1.6 billion annually on agency placements at two to three times the cost of in-house foster care."
+          finding="England has lost over 5,000 foster carer households since 2015 &mdash; an 11% decline &mdash; while the number of children needing placements has risen. One in eight looked-after children now experiences three or more placement moves in a single year, and councils are spending &pound;1.6 billion annually on agency placements at two to three times the cost of in-house foster care."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England&apos;s foster care system is caught in a structural crisis of supply and demand. Around 72,000 children are looked after by local authorities &mdash; the highest number since the Children Act 1989 &mdash; yet approved fostering households fell from 45,500 in 2015 to 40,500 in 2023. Ofsted reports that 9,200 new fostering households were approved in 2022/23 but 9,800 ceased fostering in the same year: the system is losing carers faster than it recruits them. In 2023, 12.4&percnt; of looked-after children experienced three or more placement moves within the year, up from 9.2&percnt; in 2015. Rees Centre research demonstrates that each additional placement move reduces a child&apos;s GCSE attainment by the equivalent of half a grade. Local authorities spent &pound;1.6 billion on independent fostering agency placements in 2022/23 &mdash; up 35&percnt; in real terms since 2018 &mdash; because they cannot recruit enough in-house carers; IFA placements cost &pound;900&ndash;&pound;1,200 per week versus &pound;450&ndash;&pound;600 for council-recruited carers.
+              England&apos;s foster care system is caught in a structural crisis of supply and demand. Around 72,000 children are looked after by local authorities &mdash; the highest number since the Children Act 1989 &mdash; yet approved fostering households fell from 45,500 in 2015 to 40,500 in 2023. Ofsted reports that 9,200 new fostering households were approved in 2022/23 but 9,800 ceased fostering in the same year: the system is losing carers faster than it recruits them. In 2023, 12.4% of looked-after children experienced three or more placement moves within the year, up from 9.2% in 2015. Rees Centre research demonstrates that each additional placement move reduces a child&apos;s GCSE attainment by the equivalent of half a grade. Local authorities spent &pound;1.6 billion on independent fostering agency placements in 2022/23 &mdash; up 35% in real terms since 2018 &mdash; because they cannot recruit enough in-house carers; IFA placements cost &pound;900&ndash;&pound;1,200 per week versus &pound;450&ndash;&pound;600 for council-recruited carers.
             </p>
             <p>
-              The shortage hits some children harder than others. Teenagers aged 14&ndash;17 account for the largest group waiting for placements but foster carers disproportionately prefer younger children. Unaccompanied asylum-seeking children, around 5,500 in care in England, face particular placement difficulties due to language barriers, complex trauma, and the concentration of arrivals in south-east local authorities. Black children are over-represented in care at 25&percnt; of the looked-after population versus 6&percnt; of the child population. The government launched the Foster Carer Offer in 2023 including a &pound;2,000 retention payment and expanded training, but local authority representatives have described the investment as insufficient relative to the scale of the challenge.
+              The shortage hits some children harder than others. Teenagers aged 14&ndash;17 account for the largest group waiting for placements but foster carers disproportionately prefer younger children. Unaccompanied asylum-seeking children, around 5,500 in care in England, face particular placement difficulties due to language barriers, complex trauma, and the concentration of arrivals in south-east local authorities. Black children are over-represented in care at 25% of the looked-after population versus 6% of the child population. The government launched the Foster Carer Offer in 2023 including a &pound;2,000 retention payment and expanded training, but local authority representatives have described the investment as insufficient relative to the scale of the challenge.
             </p>
           </div>
         </section>
@@ -98,7 +98,7 @@ export default function FosterCarePage() {
               value="40,500"
               direction="down"
               polarity="up-is-good"
-              changeText="Down 11&percnt; since 2015 &middot; Net loss of 600 households in 2022/23"
+              changeText="Down 11% since 2015 &middot; Net loss of 600 households in 2022/23"
               sparklineData={[45.5, 44.6, 44.2, 43.9, 43.5, 42.8, 42.1, 41.3, 40.5]}
               source="Ofsted &middot; Fostering in England 2023"
               onExpand={() => {}}
@@ -108,7 +108,7 @@ export default function FosterCarePage() {
               value="12.4%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 9.2&percnt; in 2015 &middot; Each move reduces GCSE attainment"
+              changeText="Up from 9.2% in 2015 &middot; Each move reduces GCSE attainment"
               sparklineData={[9.2, 9.8, 10.1, 10.5, 10.9, 11.3, 11.6, 12.0, 12.4]}
               source="DfE &middot; Children Looked After 2023"
               onExpand={() => {}}
@@ -119,7 +119,7 @@ export default function FosterCarePage() {
               unit="/year"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up 35&percnt; in real terms since 2018 &middot; 2&ndash;3&times; the cost of in-house care"
+              changeText="Up 35% in real terms since 2018 &middot; 2&ndash;3&times; the cost of in-house care"
               sparklineData={[1.05, 1.12, 1.18, 1.24, 1.32, 1.41, 1.50, 1.60]}
               source="DfE &middot; Section 251 Returns 2023"
               onExpand={() => {}}

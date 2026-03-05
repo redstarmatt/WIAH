@@ -70,17 +70,17 @@ export default function AdoptionPage() {
         <TopicHeader
           topic="Adoption"
           question="Why Are Fewer Children Being Adopted?"
-          finding="Adoption orders in England have fallen 45&percnt; since their 2015 peak, from 5,360 to 2,950 in 2023. Children who are adopted wait an average of 538 days from entering care to their Adoption Order &mdash; nearly 18 months &mdash; and children from Black and minority ethnic backgrounds wait significantly longer."
+          finding="Adoption orders in England have fallen 45% since their 2015 peak, from 5,360 to 2,950 in 2023. Children who are adopted wait an average of 538 days from entering care to their Adoption Order &mdash; nearly 18 months &mdash; and children from Black and minority ethnic backgrounds wait significantly longer."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Adoption from care in England has fallen 45&percnt; since its 2015 peak of 5,360 orders, reaching 2,950 in 2023. Part of this is deliberate: the Children and Social Work Act 2017 strengthened requirements to consider kinship care and Special Guardianship Orders first, and SGOs rose from 3,530 to 4,480 over the same period. But real capacity constraints also apply &mdash; a shrinking pool of approved adopters, lengthening matching processes, and growing complexity of children&apos;s needs. Delay is the defining challenge: the government target for the average time from entering care to adoption is 426 days, but the actual average in 2023 was 538 days and rising, with children aged five and over waiting more than 800 days. Court care proceedings meet the 26-week target in only 42&percnt; of cases. Post-adoption support through the Adoption Support Fund is capped at &pound;5,000 per child per year, a figure not uprated for inflation, and 65&percnt; of adoptive families have sought mental health support for their child but only 38&percnt; received it in a timely way.
+              Adoption from care in England has fallen 45% since its 2015 peak of 5,360 orders, reaching 2,950 in 2023. Part of this is deliberate: the Children and Social Work Act 2017 strengthened requirements to consider kinship care and Special Guardianship Orders first, and SGOs rose from 3,530 to 4,480 over the same period. But real capacity constraints also apply &mdash; a shrinking pool of approved adopters, lengthening matching processes, and growing complexity of children&apos;s needs. Delay is the defining challenge: the government target for the average time from entering care to adoption is 426 days, but the actual average in 2023 was 538 days and rising, with children aged five and over waiting more than 800 days. Court care proceedings meet the 26-week target in only 42% of cases. Post-adoption support through the Adoption Support Fund is capped at &pound;5,000 per child per year, a figure not uprated for inflation, and 65% of adoptive families have sought mental health support for their child but only 38% received it in a timely way.
             </p>
             <p>
-              Inequality runs through every stage of the adoption process. Black children wait on average 18 months longer than white children from placement order to match, and mixed-heritage children face similar delays. Children aged five and over, sibling groups of three or more, and children with disabilities are the hardest to place &mdash; just 14&percnt; of 2023 adoptions involved children aged five or older despite that age group making up 52&percnt; of those waiting, and sibling groups of three or more represent 6&percnt; of waiting children but only 2&percnt; of placements. Post-adoption outcomes including educational attainment, mental health, and placement stability are not systematically tracked nationally, leaving the long-term effectiveness of adoption as a permanence route largely unmeasured.
+              Inequality runs through every stage of the adoption process. Black children wait on average 18 months longer than white children from placement order to match, and mixed-heritage children face similar delays. Children aged five and over, sibling groups of three or more, and children with disabilities are the hardest to place &mdash; just 14% of 2023 adoptions involved children aged five or older despite that age group making up 52% of those waiting, and sibling groups of three or more represent 6% of waiting children but only 2% of placements. Post-adoption outcomes including educational attainment, mental health, and placement stability are not systematically tracked nationally, leaving the long-term effectiveness of adoption as a permanence route largely unmeasured.
             </p>
           </div>
         </section>
@@ -98,7 +98,7 @@ export default function AdoptionPage() {
               value="2,950"
               direction="down"
               polarity="up-is-good"
-              changeText="Down 45&percnt; from 5,360 peak in 2015 &middot; Some shift to SGOs"
+              changeText="Down 45% from 5,360 peak in 2015 &middot; Some shift to SGOs"
               sparklineData={[5360, 4690, 4350, 3820, 3570, 3440, 2870, 2960, 2950]}
               source="DfE &middot; Children Looked After 2023"
               onExpand={() => {}}
@@ -118,7 +118,7 @@ export default function AdoptionPage() {
               value="65%"
               direction="up"
               polarity="up-is-bad"
-              changeText="65&percnt; sought mental health support &middot; Only 38&percnt; received it timely"
+              changeText="65% sought mental health support &middot; Only 38% received it timely"
               sparklineData={[52, 55, 58, 60, 62, 63, 64, 65]}
               source="Adoption UK &middot; Barometer 2023"
               onExpand={() => {}}

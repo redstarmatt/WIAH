@@ -55,7 +55,7 @@ export default function PlasticPollutionPage() {
         <TopicHeader
           topic="Plastic Pollution"
           question="Is Britain Actually Dealing With Its Plastic Problem?"
-          finding="The UK generates 5.6 million tonnes of plastic waste per year &mdash; the second highest per capita in the world after the United States. The domestic recycling rate has stalled at 44&percnt; for a decade, and almost half of &ldquo;recycled&rdquo; plastic is exported."
+          finding="The UK generates 5.6 million tonnes of plastic waste per year &mdash; the second highest per capita in the world after the United States. The domestic recycling rate has stalled at 44% for a decade, and almost half of &ldquo;recycled&rdquo; plastic is exported."
           colour="#264653"
         />
 

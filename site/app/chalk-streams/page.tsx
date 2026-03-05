@@ -60,13 +60,13 @@ export default function ChalkStreamsPage() {
         <TopicHeader
           topic="Chalk Streams"
           question="Are Britain&apos;s Unique Chalk Streams Being Destroyed?"
-          finding="England holds 85&percnt; of the world&apos;s chalk streams &mdash; rare ecosystems sometimes called &ldquo;the rainforest of the rivers&rdquo; &mdash; yet 95&percnt; are in poor ecological condition. Over-abstraction, sewage discharges, and invasive species have devastated habitats that took millennia to form and cannot be recreated elsewhere on Earth."
+          finding="England holds 85% of the world&apos;s chalk streams &mdash; rare ecosystems sometimes called &ldquo;the rainforest of the rivers&rdquo; &mdash; yet 95% are in poor ecological condition. Over-abstraction, sewage discharges, and invasive species have devastated habitats that took millennia to form and cannot be recreated elsewhere on Earth."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England holds 85&percnt; of the world&apos;s chalk streams &mdash; approximately 160 rivers covering 4,000 kilometres &mdash; yet the Chalk Stream Restoration Group estimated in 2021 that 95&percnt; are in poor ecological condition, failing Water Framework Directive standards. These rivers, including the Test, Itchen, and Kennet, support rare wildlife: wild brown trout, Atlantic salmon, white-clawed crayfish, water voles, and the southern damselfly. Over-abstraction is the most chronic threat: the Environment Agency has classified around 60&percnt; of chalk stream catchments as over-licensed or over-abstracted, and less than 20&percnt; of problematic abstraction licences had been reformed by 2023. Sewage discharges compound the damage &mdash; over 12,000 storm overflow events were recorded on chalk stream catchments in 2022 alone. The Water Act 2024 strengthened enforcement powers, and Ofwat&apos;s 2024 pricing determination allocated &pound;11bn for storm overflow improvement across England and Wales over 2025&ndash;2030.</p>
+            <p>England holds 85% of the world&apos;s chalk streams &mdash; approximately 160 rivers covering 4,000 kilometres &mdash; yet the Chalk Stream Restoration Group estimated in 2021 that 95% are in poor ecological condition, failing Water Framework Directive standards. These rivers, including the Test, Itchen, and Kennet, support rare wildlife: wild brown trout, Atlantic salmon, white-clawed crayfish, water voles, and the southern damselfly. Over-abstraction is the most chronic threat: the Environment Agency has classified around 60% of chalk stream catchments as over-licensed or over-abstracted, and less than 20% of problematic abstraction licences had been reformed by 2023. Sewage discharges compound the damage &mdash; over 12,000 storm overflow events were recorded on chalk stream catchments in 2022 alone. The Water Act 2024 strengthened enforcement powers, and Ofwat&apos;s 2024 pricing determination allocated &pound;11bn for storm overflow improvement across England and Wales over 2025&ndash;2030.</p>
             <p>The consequences fall hardest on rivers in Hertfordshire and Berkshire, where proximity to London&apos;s water supply infrastructure and sewage from growing urban centres have pushed streams to the brink. The Misbourne in Buckinghamshire now runs dry in its upper reaches for most of the year. Hampshire&apos;s Test and Itchen &mdash; where abstraction reductions have been negotiated with Southern Water &mdash; show that targeted intervention can produce measurable recovery, but the national picture remains one of slow decline in habitats that took millennia to form and cannot be recreated.</p>
           </div>
         </section>
@@ -85,7 +85,7 @@ export default function ChalkStreamsPage() {
               unit="%"
               direction="flat"
               polarity="up-is-good"
-              changeText="Target: 100&percnt; &mdash; 95&percnt; failing WFD standards for 15+ years"
+              changeText="Target: 100% &mdash; 95% failing WFD standards for 15+ years"
               sparklineData={[8, 7, 6.5, 6, 5.5, 5.5, 5, 5]}
               source="EA &mdash; WFD river classification; Chalk Stream Restoration Group 2021"
               onExpand={() => {}}
@@ -118,7 +118,7 @@ export default function ChalkStreamsPage() {
           <section id="sec-ecology" className="mb-12">
             <LineChart
               title="Chalk streams in good ecological status, England, 2010&ndash;2023"
-              subtitle="Percentage meeting WFD good ecological status. Target 100&percnt;. EA WFD river classification."
+              subtitle="Percentage meeting WFD good ecological status. Target 100%. EA WFD river classification."
               series={ecologySeries}
               yLabel="% in good ecological status"
             />

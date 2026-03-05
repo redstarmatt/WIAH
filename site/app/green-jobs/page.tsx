@@ -51,14 +51,14 @@ export default function GreenJobsPage() {
         <TopicHeader
           topic="Green Jobs"
           question="Is the Green Economy Actually Creating Jobs?"
-          finding="The low-carbon economy employs 763,000 people in the UK &mdash; up from 430,000 in 2014 &mdash; and pays a wage premium of around 8&percnt; above comparable non-green roles. But green jobs are highly concentrated in the South East, with just 12&percnt; located in the most deprived communities, raising serious questions about who benefits from the transition."
+          finding="The low-carbon economy employs 763,000 people in the UK &mdash; up from 430,000 in 2014 &mdash; and pays a wage premium of around 8% above comparable non-green roles. But green jobs are highly concentrated in the South East, with just 12% located in the most deprived communities, raising serious questions about who benefits from the transition."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK&apos;s low-carbon economy employed 763,000 people in 2023, up from 430,000 in 2014 &mdash; a 77&percnt; increase, roughly six times faster than overall employment growth. The sector spans offshore and onshore wind, solar, energy efficiency, heat pumps, electric vehicle supply chains, and sustainable finance, and pays around 8&percnt; more than comparable non-green roles. Offshore wind is the most dramatic job creator: 32,000 direct jobs in 2023, up from 6,000 in 2012, anchored by new industrial clusters at Teesworks, the Humber, and Scottish port facilities. The Green Jobs Taskforce target of 1.2 million jobs by 2030 requires sustained strong growth &mdash; achievable on current trajectory, though dependent on policy continuity and pipeline investment converting to construction.</p>
-            <p>The geographic distribution is the defining problem for a just transition. Only 12&percnt; of green jobs are located in the most deprived 20&percnt; of areas; London and the South East account for around 35&percnt; of total low-carbon employment. The communities most exposed to transition costs &mdash; higher energy bills, stranded fossil fuel assets, physical climate impacts &mdash; are concentrated in deprived northern and midland areas where green jobs are scarcest. Around 160,000 workers remain in North Sea oil and gas; their route into offshore wind via the Energy Skills Passport has produced mixed results, and workers in ex-coal communities in South Wales, the East Midlands, and Yorkshire face the steepest barriers of geographic isolation and older age profiles.</p>
+            <p>The UK&apos;s low-carbon economy employed 763,000 people in 2023, up from 430,000 in 2014 &mdash; a 77% increase, roughly six times faster than overall employment growth. The sector spans offshore and onshore wind, solar, energy efficiency, heat pumps, electric vehicle supply chains, and sustainable finance, and pays around 8% more than comparable non-green roles. Offshore wind is the most dramatic job creator: 32,000 direct jobs in 2023, up from 6,000 in 2012, anchored by new industrial clusters at Teesworks, the Humber, and Scottish port facilities. The Green Jobs Taskforce target of 1.2 million jobs by 2030 requires sustained strong growth &mdash; achievable on current trajectory, though dependent on policy continuity and pipeline investment converting to construction.</p>
+            <p>The geographic distribution is the defining problem for a just transition. Only 12% of green jobs are located in the most deprived 20% of areas; London and the South East account for around 35% of total low-carbon employment. The communities most exposed to transition costs &mdash; higher energy bills, stranded fossil fuel assets, physical climate impacts &mdash; are concentrated in deprived northern and midland areas where green jobs are scarcest. Around 160,000 workers remain in North Sea oil and gas; their route into offshore wind via the Energy Skills Passport has produced mixed results, and workers in ex-coal communities in South Wales, the East Midlands, and Yorkshire face the steepest barriers of geographic isolation and older age profiles.</p>
           </div>
         </section>
 
@@ -85,7 +85,7 @@ export default function GreenJobsPage() {
               unit="%"
               direction="flat"
               polarity="up-is-good"
-              changeText="Only 12&percnt; in most deprived 20&percnt; of areas &mdash; concentrated in South East"
+              changeText="Only 12% in most deprived 20% of areas &mdash; concentrated in South East"
               sparklineData={[11, 11, 11, 12, 12, 12, 12, 12]}
               source="DESNZ LCREE &mdash; establishment analysis vs IMD deciles"
               onExpand={() => {}}
@@ -120,7 +120,7 @@ export default function GreenJobsPage() {
             title="Offshore Wind: 32,000 Direct Jobs"
             value="5&times;"
             unit="increase in offshore wind employment since 2012"
-            description="Offshore wind alone employs 32,000 people directly &mdash; up from 6,000 in 2012 &mdash; and investment in Teesworks, Humber, and Scottish ports is creating new industrial clusters in historically deprived areas. The UK Offshore Wind Sector Deal targets 70,000 jobs by 2030 with 60&percnt; UK content. Siemens Gamesa&apos;s blade plant in Hull, Vestas in Peterborough, and GE Vernova in Stafford represent the largest new manufacturing investments in their regions in a generation."
+            description="Offshore wind alone employs 32,000 people directly &mdash; up from 6,000 in 2012 &mdash; and investment in Teesworks, Humber, and Scottish ports is creating new industrial clusters in historically deprived areas. The UK Offshore Wind Sector Deal targets 70,000 jobs by 2030 with 60% UK content. Siemens Gamesa&apos;s blade plant in Hull, Vestas in Peterborough, and GE Vernova in Stafford represent the largest new manufacturing investments in their regions in a generation."
             source="Source: OWIC &mdash; Offshore Wind Sector Deal progress report 2024; DESNZ LCREE survey."
           />
         </ScrollReveal>

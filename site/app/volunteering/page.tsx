@@ -70,17 +70,17 @@ export default function VolunteeringPage() {
         <TopicHeader
           topic="Volunteering"
           question="Is Britain Still Willing to Give Its Time?"
-          finding="Formal volunteering has fallen by a quarter since 2015, from 27&percnt; of adults volunteering monthly to just 20&percnt; in 2023. The pandemic accelerated a pre-existing decline, and the charity sector is under growing financial pressure: real-terms income has stagnated while demand for services has surged."
+          finding="Formal volunteering has fallen by a quarter since 2015, from 27% of adults volunteering monthly to just 20% in 2023. The pandemic accelerated a pre-existing decline, and the charity sector is under growing financial pressure: real-terms income has stagnated while demand for services has surged."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Volunteering is a pillar of British civil society, with an estimated 16.3 million adults volunteering formally at least once a year, contributing an estimated &pound;23 billion of economic value annually. But the trend is downward. The DCMS Community Life Survey shows regular formal volunteering &mdash; at least once a month &mdash; fell from 27&percnt; of adults in 2015 to 20&percnt; in 2023. The pandemic was a watershed: lockdowns dismantled the routines that sustain volunteering, and NCVO found 40&percnt; of charities reported a decline in volunteer numbers between 2019 and 2023. The cost-of-living crisis compounded the pressure, with the Charities Aid Foundation finding 34&percnt; of people who stopped volunteering cited financial reasons. Simultaneously, demand for charity services &mdash; food banks, debt advice, mental health support &mdash; has surged, creating a widening gap between what civil society is asked to provide and its capacity to deliver.
+              Volunteering is a pillar of British civil society, with an estimated 16.3 million adults volunteering formally at least once a year, contributing an estimated &pound;23 billion of economic value annually. But the trend is downward. The DCMS Community Life Survey shows regular formal volunteering &mdash; at least once a month &mdash; fell from 27% of adults in 2015 to 20% in 2023. The pandemic was a watershed: lockdowns dismantled the routines that sustain volunteering, and NCVO found 40% of charities reported a decline in volunteer numbers between 2019 and 2023. The cost-of-living crisis compounded the pressure, with the Charities Aid Foundation finding 34% of people who stopped volunteering cited financial reasons. Simultaneously, demand for charity services &mdash; food banks, debt advice, mental health support &mdash; has surged, creating a widening gap between what civil society is asked to provide and its capacity to deliver.
             </p>
             <p>
-              The decline is not evenly distributed. Volunteering rates are 28&percnt; in the least deprived areas against 14&percnt; in the most deprived; time, transport, and social networks required to volunteer are less available to people in precarious economic circumstances. Young people aged 16&ndash;24 have the lowest rates. Black African and Black Caribbean communities have lower formal volunteering rates than the white British average, though informal community support is likely under-measured. Rural areas face particular pressure as 3,000 community buildings &mdash; village halls, churches, community centres &mdash; have closed since 2010, removing the physical infrastructure on which much volunteering depends.
+              The decline is not evenly distributed. Volunteering rates are 28% in the least deprived areas against 14% in the most deprived; time, transport, and social networks required to volunteer are less available to people in precarious economic circumstances. Young people aged 16&ndash;24 have the lowest rates. Black African and Black Caribbean communities have lower formal volunteering rates than the white British average, though informal community support is likely under-measured. Rural areas face particular pressure as 3,000 community buildings &mdash; village halls, churches, community centres &mdash; have closed since 2010, removing the physical infrastructure on which much volunteering depends.
             </p>
           </div>
         </section>
@@ -98,7 +98,7 @@ export default function VolunteeringPage() {
               value="20%"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 27&percnt; in 2015 &middot; Pandemic accelerated pre-existing decline"
+              changeText="Down from 27% in 2015 &middot; Pandemic accelerated pre-existing decline"
               sparklineData={[27.0, 26.1, 24.8, 23.3, 23.1, 17.2, 16.3, 19.4, 20.1]}
               source="DCMS &middot; Community Life Survey 2023"
               onExpand={() => {}}

@@ -68,13 +68,13 @@ export default function CouncilTaxPage() {
         <TopicHeader
           topic="Council Tax"
           question="Why Does Council Tax Keep Rising While Services Are Cut?"
-          finding="Council tax in England has risen 25&percnt; in real terms since 2016 &mdash; with many councils raising bills by the maximum permitted 5&percnt; per year &mdash; yet local authorities are simultaneously closing libraries, cutting bin collections, and reducing adult social care, because government grants have fallen faster than council tax has risen."
+          finding="Council tax in England has risen 25% in real terms since 2016 &mdash; with many councils raising bills by the maximum permitted 5% per year &mdash; yet local authorities are simultaneously closing libraries, cutting bin collections, and reducing adult social care, because government grants have fallen faster than council tax has risen."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The average Band D council tax bill in England reached &pound;2,171 in 2024 &mdash; up from &pound;1,439 in 2010, and up 25&percnt; in real terms since 2016 &mdash; yet local services have deteriorated across almost every area of provision. Central government grants have been cut by over 40&percnt; in real terms since 2010, and referendum limits capping annual rises at 5&percnt; (including a 2&percnt; adult social care precept) mean council tax cannot fill the gap. Nine English councils have issued Section 114 notices since 2018 &mdash; including Thurrock, Woking, and Birmingham &mdash; and the LGA assessed at least 20 more as at significant risk in 2023. Adult social care now consumes a growing share of every council&apos;s budget, alongside children&apos;s services pressures and temporary accommodation costs rising at 20&ndash;30&percnt; annually.</p>
+            <p>The average Band D council tax bill in England reached &pound;2,171 in 2024 &mdash; up from &pound;1,439 in 2010, and up 25% in real terms since 2016 &mdash; yet local services have deteriorated across almost every area of provision. Central government grants have been cut by over 40% in real terms since 2010, and referendum limits capping annual rises at 5% (including a 2% adult social care precept) mean council tax cannot fill the gap. Nine English councils have issued Section 114 notices since 2018 &mdash; including Thurrock, Woking, and Birmingham &mdash; and the LGA assessed at least 20 more as at significant risk in 2023. Adult social care now consumes a growing share of every council&apos;s budget, alongside children&apos;s services pressures and temporary accommodation costs rising at 20&ndash;30% annually.</p>
             <p>The council tax is a per-household charge rather than an income-based tax, making it deeply regressive: a single adult on the national living wage pays the same Band D bill as a high-earning couple. Council Tax Support was localised and cut in 2013, leaving local authorities to set their own reduced rates to manage their own finances. Properties have not been revalued since 1991, meaning a &pound;10 million London mansion pays only three times more than a &pound;150,000 flat. The most deprived areas face the worst combination of high service demand, low property values, and a shrinking council tax base &mdash; a structural inequity that grant formula adjustments have never resolved.</p>
           </div>
         </section>
@@ -92,7 +92,7 @@ export default function CouncilTaxPage() {
               value="&pound;2,171"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from &pound;1,439 in 2010 &middot; +25&percnt; in real terms since 2016"
+              changeText="Up from &pound;1,439 in 2010 &middot; +25% in real terms since 2016"
               sparklineData={[1484, 1530, 1591, 1671, 1756, 1898, 2065, 2171]}
               source="DLUHC &middot; Council tax levels 2024"
               onExpand={() => {}}
@@ -102,7 +102,7 @@ export default function CouncilTaxPage() {
               value="-23%"
               direction="down"
               polarity="up-is-good"
-              changeText="Central government grants cut 40&percnt; &middot; Council tax cannot fill the gap"
+              changeText="Central government grants cut 40% &middot; Council tax cannot fill the gap"
               sparklineData={[100, 95, 90, 86, 83, 80, 79, 79, 78, 78, 77]}
               source="IFS &middot; Local government funding: the picture in 2024"
               onExpand={() => {}}
@@ -146,7 +146,7 @@ export default function CouncilTaxPage() {
             {grantSeries.length > 0 ? (
               <LineChart
                 title="Central government grants to English local authorities, 2010&ndash;2024 (real terms)"
-                subtitle="Net revenue support grant and formula grants in 2024 prices (&pound;bn). Government grants to councils have fallen by over 40&percnt; in real terms since 2010, driving councils to raise council tax to part-compensate."
+                subtitle="Net revenue support grant and formula grants in 2024 prices (&pound;bn). Government grants to councils have fallen by over 40% in real terms since 2010, driving councils to raise council tax to part-compensate."
                 series={grantSeries}
                 yLabel="Government grants (&pound;bn, real)"
                 source={{

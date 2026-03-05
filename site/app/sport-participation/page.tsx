@@ -77,10 +77,10 @@ export default function SportParticipationPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Physical inactivity costs the NHS an estimated &pound;1.2 billion per year and is linked to one in six deaths in the UK. Sport England&apos;s Active Lives Adult Survey shows that 63.5&percnt; of adults meet the Chief Medical Officer&apos;s guideline of 150 minutes of moderate-intensity activity per week, but 25.4&percnt; are classified as &ldquo;inactive&rdquo; &mdash; fewer than 30 minutes weekly &mdash; a figure that has barely moved since 2016. The pandemic caused a sharp dip with inactivity peaking at 27.5&percnt; in 2020/21; recovery has stalled rather than improved. Only 47&percnt; of children aged 5&ndash;16 meet the 60-minute daily guideline, and 38&percnt; of secondary schools reduced PE time between 2018 and 2023. Some 400 public swimming pools have closed since 2010, eroding the infrastructure on which activity programmes depend particularly in deprived areas.
+              Physical inactivity costs the NHS an estimated &pound;1.2 billion per year and is linked to one in six deaths in the UK. Sport England&apos;s Active Lives Adult Survey shows that 63.5% of adults meet the Chief Medical Officer&apos;s guideline of 150 minutes of moderate-intensity activity per week, but 25.4% are classified as &ldquo;inactive&rdquo; &mdash; fewer than 30 minutes weekly &mdash; a figure that has barely moved since 2016. The pandemic caused a sharp dip with inactivity peaking at 27.5% in 2020/21; recovery has stalled rather than improved. Only 47% of children aged 5&ndash;16 meet the 60-minute daily guideline, and 38% of secondary schools reduced PE time between 2018 and 2023. Some 400 public swimming pools have closed since 2010, eroding the infrastructure on which activity programmes depend particularly in deprived areas.
             </p>
             <p>
-              The activity gap mirrors every other dimension of inequality. Adults in the most deprived 20&percnt; of areas are twice as likely to be inactive as those in the least deprived (33&percnt; vs 17&percnt;). Disabled people are twice as likely to be inactive as non-disabled (42&percnt; vs 22&percnt;). People from Black backgrounds have the highest inactivity rate among ethnic groups at 32&percnt;. Adults aged 75&plus; have a rate of 52&percnt;. These disparities widened after the pandemic as community programmes that disproportionately served disadvantaged groups were slower to reopen or did not return at all. Sport England&apos;s &pound;2.3 billion Uniting the Movement strategy has deliberately shifted funding from elite toward underactive populations, but sustained behaviour change has proved more modest than initial awareness gains.
+              The activity gap mirrors every other dimension of inequality. Adults in the most deprived 20% of areas are twice as likely to be inactive as those in the least deprived (33% vs 17%). Disabled people are twice as likely to be inactive as non-disabled (42% vs 22%). People from Black backgrounds have the highest inactivity rate among ethnic groups at 32%. Adults aged 75&plus; have a rate of 52%. These disparities widened after the pandemic as community programmes that disproportionately served disadvantaged groups were slower to reopen or did not return at all. Sport England&apos;s &pound;2.3 billion Uniting the Movement strategy has deliberately shifted funding from elite toward underactive populations, but sustained behaviour change has proved more modest than initial awareness gains.
             </p>
           </div>
         </section>
@@ -98,7 +98,7 @@ export default function SportParticipationPage() {
               value="63.5%"
               direction="flat"
               polarity="up-is-good"
-              changeText="150+ min/week &middot; Barely changed since 2016 (61.8&percnt;)"
+              changeText="150+ min/week &middot; Barely changed since 2016 (61.8%)"
               sparklineData={[61.8, 62.3, 62.6, 63.3, 61.4, 60.9, 63.1, 63.7, 63.5]}
               source="Sport England &middot; Active Lives 2024"
               onExpand={() => {}}
@@ -108,7 +108,7 @@ export default function SportParticipationPage() {
               value="25.4%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Fewer than 30 min/week &middot; Peaked at 27.5&percnt; in 2021"
+              changeText="Fewer than 30 min/week &middot; Peaked at 27.5% in 2021"
               sparklineData={[25.7, 25.2, 25.0, 24.6, 27.1, 27.5, 25.6, 25.0, 25.4]}
               source="Sport England &middot; Active Lives 2024"
               onExpand={() => {}}

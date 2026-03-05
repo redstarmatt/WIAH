@@ -56,7 +56,7 @@ export default function ProbationPage() {
     ? [
         {
           id: 'vacancy-rate',
-          label: 'Probation officer vacancy rate (&percnt;)',
+          label: 'Probation officer vacancy rate (%)',
           colour: '#E63946',
           data: data.timeSeries.map(d => ({
             date: yearToDate(d.date),
@@ -75,17 +75,17 @@ export default function ProbationPage() {
           topic="Probation"
           preposition="in"
           question="Is the Probation Service Keeping the Public Safe?"
-          finding="The Probation Service supervises 232,000 offenders in the community, but a botched part-privatisation in 2014 &mdash; widely regarded as one of the worst public service reforms in a generation &mdash; left the service understaffed, fragmented, and overwhelmed. Serious Further Offences by people on probation rose from 530 in 2015 to 820 in 2023, while officer vacancy rates reached 16&percnt; against a recommended maximum caseload of 35 offenders per officer."
+          finding="The Probation Service supervises 232,000 offenders in the community, but a botched part-privatisation in 2014 &mdash; widely regarded as one of the worst public service reforms in a generation &mdash; left the service understaffed, fragmented, and overwhelmed. Serious Further Offences by people on probation rose from 530 in 2015 to 820 in 2023, while officer vacancy rates reached 16% against a recommended maximum caseload of 35 offenders per officer."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The 2014 Transforming Rehabilitation reforms split probation into a National Probation Service for high-risk offenders and 21 Community Rehabilitation Companies for low and medium-risk offenders, contracted to private providers including Sodexo and Interserve. By 2018, every major inspection had found the CRCs failing; three went into administration. The promised rehabilitation revolution &mdash; private providers reducing reoffending through payment by results &mdash; did not materialise. The government terminated the contracts early and reunified probation under public control in 2021. Serious Further Offences by people on probation rose from approximately 470 in 2014/15 to 820 in 2022/23 &mdash; a 74&percnt; increase. HMIP inspections repeatedly found that preceding supervision was inadequate, with officers carrying caseloads of 80 or more against a recommended maximum of 35.
+              The 2014 Transforming Rehabilitation reforms split probation into a National Probation Service for high-risk offenders and 21 Community Rehabilitation Companies for low and medium-risk offenders, contracted to private providers including Sodexo and Interserve. By 2018, every major inspection had found the CRCs failing; three went into administration. The promised rehabilitation revolution &mdash; private providers reducing reoffending through payment by results &mdash; did not materialise. The government terminated the contracts early and reunified probation under public control in 2021. Serious Further Offences by people on probation rose from approximately 470 in 2014/15 to 820 in 2022/23 &mdash; a 74% increase. HMIP inspections repeatedly found that preceding supervision was inadequate, with officers carrying caseloads of 80 or more against a recommended maximum of 35.
             </p>
             <p>
-              Reunification revealed the extent of the damage: a significant proportion of experienced officers had left during the CRC years, and vacancy rates reached 16&percnt; in 2022/23. Training a new probation officer takes 18&ndash;24 months, meaning recruitment campaigns take years to translate into operational capacity. The burden falls unevenly: Thames and South East regions have the highest vacancy rates; North West and Yorkshire the highest SFO rates, partly reflecting the legacy of CRC underperformance. People from ethnic minority backgrounds account for 27&percnt; of those supervised by probation, against 18&percnt; of the general population, and inspection reports have noted inconsistencies in how the service responds to the cultural and language needs of this group.
+              Reunification revealed the extent of the damage: a significant proportion of experienced officers had left during the CRC years, and vacancy rates reached 16% in 2022/23. Training a new probation officer takes 18&ndash;24 months, meaning recruitment campaigns take years to translate into operational capacity. The burden falls unevenly: Thames and South East regions have the highest vacancy rates; North West and Yorkshire the highest SFO rates, partly reflecting the legacy of CRC underperformance. People from ethnic minority backgrounds account for 27% of those supervised by probation, against 18% of the general population, and inspection reports have noted inconsistencies in how the service responds to the cultural and language needs of this group.
             </p>
           </div>
         </section>
@@ -103,7 +103,7 @@ export default function ProbationPage() {
               value="820"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 530 in 2015 &middot; +74&percnt; &middot; Linked to privatisation-era staffing collapse"
+              changeText="Up from 530 in 2015 &middot; +74% &middot; Linked to privatisation-era staffing collapse"
               sparklineData={[530, 560, 590, 620, 680, 730, 790, 820]}
               source="Ministry of Justice &middot; SFO Statistics 2023"
               onExpand={() => {}}
@@ -136,7 +136,7 @@ export default function ProbationPage() {
             title="What is getting better"
             value="+15%"
             unit="new recruits (2023)"
-            description="Reunification of probation under public control in 2021 ended the failed privatisation experiment and allowed focused workforce investment. Probation officer recruits rose 15&percnt; in 2023 &mdash; the first sustained increase since Transforming Rehabilitation &mdash; and vacancy rates showed a marginal improvement in 2024, suggesting the workforce rebuilding programme is beginning to take effect."
+            description="Reunification of probation under public control in 2021 ended the failed privatisation experiment and allowed focused workforce investment. Probation officer recruits rose 15% in 2023 &mdash; the first sustained increase since Transforming Rehabilitation &mdash; and vacancy rates showed a marginal improvement in 2024, suggesting the workforce rebuilding programme is beginning to take effect."
             source="HMPPS &middot; Probation Workforce Strategy 2025&ndash;2030"
           />
         </ScrollReveal>
@@ -169,7 +169,7 @@ export default function ProbationPage() {
                 title="Probation officer vacancy rate, 2015&ndash;2024"
                 subtitle="Percentage of probation officer posts unfilled. Peaked during CRC era; small improvement following 2021 reunification."
                 series={vacancySeries}
-                yLabel="Vacancy rate (&percnt;)"
+                yLabel="Vacancy rate (%)"
                 source={{
                   name: 'HMPPS',
                   dataset: 'Workforce Statistics',

@@ -75,17 +75,17 @@ export default function LegalAidPage() {
           topic="Legal Aid"
           preposition="in"
           question="Is Justice Still Available to Those Who Can&apos;t Afford a Lawyer?"
-          finding="Legal aid spending fell 36&percnt; in real terms between 2010 and 2024. The number of solicitor firms holding legal aid contracts halved from 2,300 to around 1,150 &mdash; creating legal aid deserts where 1 in 4 English local authority areas has no solicitor offering legally aided services within a reasonable distance. Those without money increasingly face the courts alone."
+          finding="Legal aid spending fell 36% in real terms between 2010 and 2024. The number of solicitor firms holding legal aid contracts halved from 2,300 to around 1,150 &mdash; creating legal aid deserts where 1 in 4 English local authority areas has no solicitor offering legally aided services within a reasonable distance. Those without money increasingly face the courts alone."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO) removed whole categories of civil law from legal aid scope &mdash; most private family law, employment law, housing law (save serious disrepair or homelessness), welfare benefits, and clinical negligence for under-2-year-olds &mdash; with the Ministry of Justice estimating annual savings of &pound;300 million. Criminal legal aid fee rates were frozen from 2011; the 15&percnt; increase in 2023 was the first in 12 years, by which point Law Society analysis found solicitors earning less in real terms than their 2001 equivalents. The number of firms holding legal aid contracts fell from approximately 2,300 in 2010 to around 1,150 by 2024, a 50&percnt; collapse as medium-sized high street practices &mdash; once the backbone of provision &mdash; exited the market. By 2024, 1 in 4 English local authority areas had no housing legal aid provider within a reasonable distance, with equally severe deserts in immigration (35&percnt; of areas), family law (28&percnt;), and crime.
+              The Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO) removed whole categories of civil law from legal aid scope &mdash; most private family law, employment law, housing law (save serious disrepair or homelessness), welfare benefits, and clinical negligence for under-2-year-olds &mdash; with the Ministry of Justice estimating annual savings of &pound;300 million. Criminal legal aid fee rates were frozen from 2011; the 15% increase in 2023 was the first in 12 years, by which point Law Society analysis found solicitors earning less in real terms than their 2001 equivalents. The number of firms holding legal aid contracts fell from approximately 2,300 in 2010 to around 1,150 by 2024, a 50% collapse as medium-sized high street practices &mdash; once the backbone of provision &mdash; exited the market. By 2024, 1 in 4 English local authority areas had no housing legal aid provider within a reasonable distance, with equally severe deserts in immigration (35% of areas), family law (28%), and crime.
             </p>
             <p>
-              The inequality in access to justice is visible in court statistics. The proportion of family court hearings where at least one party is unrepresented has grown from around 20&percnt; in 2011 to over 45&percnt; by 2023. Unrepresented defendants in employment tribunals win approximately 35&percnt; of cases versus 60&percnt; for represented claimants &mdash; a gap directly attributable to legal aid withdrawal from employment law. People from ethnic minority backgrounds are disproportionately affected, being over-represented in immigration, criminal, and welfare benefit proceedings where cuts have been deepest. Legal aid deserts are concentrated in rural areas, coastal towns, and the Midlands, where private practice is least profitable and transport links make travelling to distant providers hardest.
+              The inequality in access to justice is visible in court statistics. The proportion of family court hearings where at least one party is unrepresented has grown from around 20% in 2011 to over 45% by 2023. Unrepresented defendants in employment tribunals win approximately 35% of cases versus 60% for represented claimants &mdash; a gap directly attributable to legal aid withdrawal from employment law. People from ethnic minority backgrounds are disproportionately affected, being over-represented in immigration, criminal, and welfare benefit proceedings where cuts have been deepest. Legal aid deserts are concentrated in rural areas, coastal towns, and the Midlands, where private practice is least profitable and transport links make travelling to distant providers hardest.
             </p>
           </div>
         </section>
@@ -113,7 +113,7 @@ export default function LegalAidPage() {
               value="1,150"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 2,300 in 2010 &middot; 50&percnt; market collapse &middot; Rates frozen 2011&ndash;2023"
+              changeText="Down from 2,300 in 2010 &middot; 50% market collapse &middot; Rates frozen 2011&ndash;2023"
               sparklineData={[2300, 2100, 1900, 1700, 1600, 1500, 1350, 1200]}
               source="Legal Aid Agency &middot; Provider Directory 2024"
               onExpand={() => {}}
@@ -136,7 +136,7 @@ export default function LegalAidPage() {
             title="What is getting better"
             value="15%"
             unit="fee increase (2023)"
-            description="The Criminal Legal Aid Review (2022) recommended a 15&percnt; fee increase for criminal defence solicitors &mdash; the first new rates in a generation, implemented in 2023. While the Law Society and criminal bar argue the increase is insufficient to prevent further market collapse, it represents the first acknowledgment in over a decade that fee rates had fallen to unsustainable levels."
+            description="The Criminal Legal Aid Review (2022) recommended a 15% fee increase for criminal defence solicitors &mdash; the first new rates in a generation, implemented in 2023. While the Law Society and criminal bar argue the increase is insufficient to prevent further market collapse, it represents the first acknowledgment in over a decade that fee rates had fallen to unsustainable levels."
             source="Ministry of Justice &middot; Criminal Legal Aid Review &middot; 2022"
           />
         </ScrollReveal>

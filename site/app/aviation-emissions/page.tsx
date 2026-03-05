@@ -60,14 +60,14 @@ export default function AviationEmissionsPage() {
         <TopicHeader
           topic="Aviation Emissions"
           question="Is Flying Wrecking Britain&apos;s Climate Goals?"
-          finding="Aviation accounts for 7&ndash;8&percnt; of the UK&apos;s total climate impact &mdash; more than rail and buses combined &mdash; yet it benefits from an estimated &pound;7bn per year in tax exemptions: no fuel duty and no VAT on international flights. Passenger numbers have recovered to pre-pandemic levels and continue to grow."
+          finding="Aviation accounts for 7&ndash;8% of the UK&apos;s total climate impact &mdash; more than rail and buses combined &mdash; yet it benefits from an estimated &pound;7bn per year in tax exemptions: no fuel duty and no VAT on international flights. Passenger numbers have recovered to pre-pandemic levels and continue to grow."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Direct CO2 from UK aviation reached around 35 million tonnes in 2023, but contrails, water vapour, and nitrogen oxides emitted at altitude multiply the total warming effect to an estimated 7&ndash;8&percnt; of the UK&rsquo;s climate impact &mdash; more than all UK rail, bus, and domestic shipping combined. Passenger numbers recovered fully to pre-pandemic levels at around 250 million in 2023, and are projected to reach 370 million by 2050. Aviation kerosene pays no fuel duty and international flights are zero-rated for VAT &mdash; exemptions HMRC values at around &pound;7bn per year &mdash; while Air Passenger Duty raised only &pound;3.7bn in 2023&ndash;24. Decarbonisation relies primarily on Sustainable Aviation Fuel: UK law mandates a 10&percnt; SAF blend by 2030, but SAF represented under 1&percnt; of UK aviation fuel as of early 2024 and costs three to five times more than conventional jet fuel.</p>
-            <p>Aviation&rsquo;s emissions burden is highly concentrated: roughly 15&percnt; of adults take more than three return flights per year and account for an estimated 70&percnt; of all flights, while about half the UK population does not fly at all in any given year. The Climate Change Committee has concluded that Heathrow expansion is incompatible with net zero without accompanying demand management, yet total UK airport capacity has continued to grow, with most regional airport expansion proposals proceeding. Frequent fliers &mdash; disproportionately higher-income &mdash; therefore impose a climate cost borne broadly by the public while benefiting from significant fiscal subsidy.</p>
+            <p>Direct CO2 from UK aviation reached around 35 million tonnes in 2023, but contrails, water vapour, and nitrogen oxides emitted at altitude multiply the total warming effect to an estimated 7&ndash;8% of the UK&rsquo;s climate impact &mdash; more than all UK rail, bus, and domestic shipping combined. Passenger numbers recovered fully to pre-pandemic levels at around 250 million in 2023, and are projected to reach 370 million by 2050. Aviation kerosene pays no fuel duty and international flights are zero-rated for VAT &mdash; exemptions HMRC values at around &pound;7bn per year &mdash; while Air Passenger Duty raised only &pound;3.7bn in 2023&ndash;24. Decarbonisation relies primarily on Sustainable Aviation Fuel: UK law mandates a 10% SAF blend by 2030, but SAF represented under 1% of UK aviation fuel as of early 2024 and costs three to five times more than conventional jet fuel.</p>
+            <p>Aviation&rsquo;s emissions burden is highly concentrated: roughly 15% of adults take more than three return flights per year and account for an estimated 70% of all flights, while about half the UK population does not fly at all in any given year. The Climate Change Committee has concluded that Heathrow expansion is incompatible with net zero without accompanying demand management, yet total UK airport capacity has continued to grow, with most regional airport expansion proposals proceeding. Frequent fliers &mdash; disproportionately higher-income &mdash; therefore impose a climate cost borne broadly by the public while benefiting from significant fiscal subsidy.</p>
           </div>
         </section>
 
@@ -85,7 +85,7 @@ export default function AviationEmissionsPage() {
               unit="%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Includes contrail and NOx effects &mdash; CO2 alone is around 4&percnt;"
+              changeText="Includes contrail and NOx effects &mdash; CO2 alone is around 4%"
               sparklineData={[7.1, 7.2, 7.3, 7.4, 7.5, 2.9, 3.8, 6.8, 7.5]}
               source="DESNZ &mdash; UK GHG national statistics (with radiative forcing)"
               onExpand={() => {}}
@@ -138,9 +138,9 @@ export default function AviationEmissionsPage() {
         <ScrollReveal>
           <PositiveCallout
             title="SAF Mandate &amp; Hydrogen Testing"
-            value="10&percnt;"
+            value="10%"
             unit="SAF blend required by 2030"
-            description="Sustainable Aviation Fuel mandates require 10&percnt; SAF by 2030 and 22&percnt; by 2040, giving the UK one of the world&apos;s most ambitious SAF timelines. Rolls-Royce has successfully tested hydrogen-powered jet engines, demonstrating the technical feasibility of zero-emission aviation. Three UK SAF production plants were under development in 2024. SAF can reduce lifecycle emissions by over 70&percnt; compared to conventional jet fuel."
+            description="Sustainable Aviation Fuel mandates require 10% SAF by 2030 and 22% by 2040, giving the UK one of the world&apos;s most ambitious SAF timelines. Rolls-Royce has successfully tested hydrogen-powered jet engines, demonstrating the technical feasibility of zero-emission aviation. Three UK SAF production plants were under development in 2024. SAF can reduce lifecycle emissions by over 70% compared to conventional jet fuel."
             source="Source: DfT &mdash; Jet Zero Strategy 2022; Rolls-Royce hydrogen engine test 2023."
           />
         </ScrollReveal>

@@ -85,7 +85,7 @@ export default function VoterTurnoutPage() {
           <TopicHeader
             topic="Democracy"
             question="Is democracy actually working?"
-            finding="General election turnout has recovered since its 2001 low but remains below the post-war average, while local election participation has collapsed to under 30&percnt; in many areas."
+            finding="General election turnout has recovered since its 2001 low but remains below the post-war average, while local election participation has collapsed to under 30% in many areas."
           />
         </div>
       </section>
@@ -101,7 +101,7 @@ export default function VoterTurnoutPage() {
               unit="%"
               direction="down"
               polarity="up-is-good"
-              changeText="Lowest since 2001 (59.4&percnt;)"
+              changeText="Lowest since 2001 (59.4%)"
               sparklineData={[59.4, 61.4, 65.1, 66.1, 68.8, 67.3, 59.7]}
               onExpand={() => {}}
             />
@@ -111,7 +111,7 @@ export default function VoterTurnoutPage() {
               unit="%"
               direction="down"
               polarity="up-is-good"
-              changeText="vs 71&percnt; for 65&plus; voters"
+              changeText="vs 71% for 65&plus; voters"
               sparklineData={[30, 34, 38, 40, 42, 43]}
               onExpand={() => {}}
             />
@@ -121,7 +121,7 @@ export default function VoterTurnoutPage() {
               unit="%"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 42&percnt; in 2000"
+              changeText="Down from 42% in 2000"
               sparklineData={[42, 34, 37, 37, 35, 42, 32, 36, 33, 34, 35, 31, 32]}
               onExpand={() => {}}
             />
@@ -143,7 +143,7 @@ export default function VoterTurnoutPage() {
       <PositiveCallout
         title="Youth registration surged in 2024"
         value=""
-        description="Over 3.6 million people registered to vote in the six weeks before the 2024 general election, the highest registration surge on record. Two&ndash;thirds were under 35. Whether this translated to votes remains contested &mdash; many experts believe registration improved but turnout among young registrants stayed below 50&percnt;."
+        description="Over 3.6 million people registered to vote in the six weeks before the 2024 general election, the highest registration surge on record. Two&ndash;thirds were under 35. Whether this translated to votes remains contested &mdash; many experts believe registration improved but turnout among young registrants stayed below 50%."
         source=""
       />
 
@@ -192,7 +192,7 @@ export default function VoterTurnoutPage() {
                             style={{ width: `${(a.turnout2024 / 75) * 100}%` }}
                           >
                             <span className="text-xs font-mono text-white">
-                              {a.turnout2024}&percnt;
+                              {a.turnout2024}%
                             </span>
                           </div>
                         </div>

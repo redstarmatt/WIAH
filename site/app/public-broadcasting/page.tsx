@@ -92,17 +92,17 @@ export default function PublicBroadcastingPage() {
           topic="Public Broadcasting"
           preposition="in"
           question="Is the BBC Becoming Unaffordable to Fund?"
-          finding="The BBC licence fee was frozen at &pound;159 and then increased below inflation until 2027, cutting real-terms income by over &pound;1 billion compared with what a CPI-linked fee would have generated. The result: 1,500&plus; redundancies, the closure of BBC4 as a broadcast channel, deep cuts to local radio, and an evasion rate approaching 10&percnt; as younger households treat it as optional."
+          finding="The BBC licence fee was frozen at &pound;159 and then increased below inflation until 2027, cutting real-terms income by over &pound;1 billion compared with what a CPI-linked fee would have generated. The result: 1,500&plus; redundancies, the closure of BBC4 as a broadcast channel, deep cuts to local radio, and an evasion rate approaching 10% as younger households treat it as optional."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The BBC licence fee was frozen at &pound;159 per household per year from April 2022 to March 2024 &mdash; a two-year freeze announced by Culture Secretary Nadine Dorries. In a period when CPI inflation reached 11.1&percnt;, this amounted to a substantial real-terms cut. The subsequent settlement raised the fee to &pound;169.50 from April 2024 and linked future increases to CPI through to 2027, but the BBC&apos;s own analysis estimated the cumulative real-terms gap at over &pound;1 billion across the settlement period. BBC4 ceased broadcasting new content from 2022, 25 local radio stations faced significant format changes, and the BBC announced 1,000 redundancies in 2023 alone &mdash; over 1,500 posts lost since 2020. The evasion rate has risen from around 6&percnt; in 2015 to 9.2&percnt; by 2024, with each percentage point costing the BBC approximately &pound;50 million in annual revenue.
+              The BBC licence fee was frozen at &pound;159 per household per year from April 2022 to March 2024 &mdash; a two-year freeze announced by Culture Secretary Nadine Dorries. In a period when CPI inflation reached 11.1%, this amounted to a substantial real-terms cut. The subsequent settlement raised the fee to &pound;169.50 from April 2024 and linked future increases to CPI through to 2027, but the BBC&apos;s own analysis estimated the cumulative real-terms gap at over &pound;1 billion across the settlement period. BBC4 ceased broadcasting new content from 2022, 25 local radio stations faced significant format changes, and the BBC announced 1,000 redundancies in 2023 alone &mdash; over 1,500 posts lost since 2020. The evasion rate has risen from around 6% in 2015 to 9.2% by 2024, with each percentage point costing the BBC approximately &pound;50 million in annual revenue.
             </p>
             <p>
-              The pressures fall unevenly across the UK&apos;s nations. BBC Scotland, Wales, and Northern Ireland face particular strain maintaining Gaelic, Welsh (S4C), and distinct Northern Irish output while absorbing corporation-wide efficiency targets; S4C receives approximately &pound;74 million annually against a cost base that has not grown in real terms for over a decade. By 2024, Ofcom data showed that 24&percnt; of under-35 households had no live television service and exclusively used streaming &mdash; a structural challenge to the near-universal licence fee model that the mid-term Charter review, due by 2027, will need to address.
+              The pressures fall unevenly across the UK&apos;s nations. BBC Scotland, Wales, and Northern Ireland face particular strain maintaining Gaelic, Welsh (S4C), and distinct Northern Irish output while absorbing corporation-wide efficiency targets; S4C receives approximately &pound;74 million annually against a cost base that has not grown in real terms for over a decade. By 2024, Ofcom data showed that 24% of under-35 households had no live television service and exclusively used streaming &mdash; a structural challenge to the near-universal licence fee model that the mid-term Charter review, due by 2027, will need to address.
             </p>
           </div>
         </section>
@@ -120,7 +120,7 @@ export default function PublicBroadcastingPage() {
               value="&gt;&pound;1bn"
               direction="down"
               polarity="up-is-bad"
-              changeText="Vs CPI-linked equivalent &middot; 2-year freeze at &pound;159 &middot; 11&percnt; inflation peak"
+              changeText="Vs CPI-linked equivalent &middot; 2-year freeze at &pound;159 &middot; 11% inflation peak"
               sparklineData={[0, 0, 0, 0, 150, 300, 500, 700, 900, 1000]}
               source="BBC &middot; Charter Review Evidence &middot; 2023"
               onExpand={() => {}}
@@ -140,7 +140,7 @@ export default function PublicBroadcastingPage() {
               value="9.2%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 6&percnt; in 2015 &middot; Each 1&percnt; = &pound;50m lost revenue"
+              changeText="Up from 6% in 2015 &middot; Each 1% = &pound;50m lost revenue"
               sparklineData={[6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.2]}
               source="TV Licensing &middot; Annual Enforcement Report 2024"
               onExpand={() => {}}

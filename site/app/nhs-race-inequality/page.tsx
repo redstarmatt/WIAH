@@ -92,17 +92,17 @@ export default function NhsRaceInequalityPage() {
         <TopicHeader
           topic="NHS Race Inequality"
           question="Does the NHS Treat Everyone Equally?"
-          finding="Black women in the UK are 3.4 times more likely to die in pregnancy or childbirth than white women. Ethnic minority staff make up 24.8&percnt; of the NHS workforce but just 10.5&percnt; of senior leaders. Despite a decade of the Workforce Race Equality Standard, the gap between staff experience and representation at senior level has barely narrowed."
+          finding="Black women in the UK are 3.4 times more likely to die in pregnancy or childbirth than white women. Ethnic minority staff make up 24.8% of the NHS workforce but just 10.5% of senior leaders. Despite a decade of the Workforce Race Equality Standard, the gap between staff experience and representation at senior level has barely narrowed."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Ethnic disparities in NHS care are extensive, well-documented, and persistent. The starkest is maternal mortality: Black women are 3.4 times more likely to die in pregnancy or within 42 days of childbirth than white women (down from a peak ratio of 4.3 in 2017), and Asian women are approximately 1.6 times more likely &mdash; ratios that have not meaningfully improved in over a decade. Beyond maternity, South Asian people are 2&ndash;4 times more likely to develop type 2 diabetes; Black African and Black Caribbean men are detained under the Mental Health Act at 3 times the rate of white men; and COVID-19 mortality was 1.5&ndash;2 times higher among Black, Pakistani, and Bangladeshi populations after adjusting for age and deprivation. After nine years of mandatory Workforce Race Equality Standard (WRES) reporting, ethnic minority staff make up 24.8&percnt; of the NHS workforce but only 10.5&percnt; of senior leaders &mdash; the &ldquo;snowy white peaks&rdquo; pattern that has barely shifted since monitoring began.
+              Ethnic disparities in NHS care are extensive, well-documented, and persistent. The starkest is maternal mortality: Black women are 3.4 times more likely to die in pregnancy or within 42 days of childbirth than white women (down from a peak ratio of 4.3 in 2017), and Asian women are approximately 1.6 times more likely &mdash; ratios that have not meaningfully improved in over a decade. Beyond maternity, South Asian people are 2&ndash;4 times more likely to develop type 2 diabetes; Black African and Black Caribbean men are detained under the Mental Health Act at 3 times the rate of white men; and COVID-19 mortality was 1.5&ndash;2 times higher among Black, Pakistani, and Bangladeshi populations after adjusting for age and deprivation. After nine years of mandatory Workforce Race Equality Standard (WRES) reporting, ethnic minority staff make up 24.8% of the NHS workforce but only 10.5% of senior leaders &mdash; the &ldquo;snowy white peaks&rdquo; pattern that has barely shifted since monitoring began.
             </p>
             <p>
-              The burden of inequality is concentrated in specific communities. Pakistani and Bangladeshi women have the lowest breast and cervical screening attendance, contributing to later-stage cancer diagnoses. Gypsy, Roma, and Traveller communities have life expectancy 10&ndash;25 years below the national average and are systematically under-counted in NHS data. Internationally educated nurses &mdash; predominantly Black African &mdash; report the highest rates of bullying and harassment at 31&percnt; versus 24&percnt; for white British staff, and face disciplinary proceedings at 1.1 times the rate of white colleagues even after controlling for role and grade. The NHS EDI Improvement Plan (2023) commits to proportional senior representation by 2028, but trajectory analysis suggests that target will take at least another decade to reach.
+              The burden of inequality is concentrated in specific communities. Pakistani and Bangladeshi women have the lowest breast and cervical screening attendance, contributing to later-stage cancer diagnoses. Gypsy, Roma, and Traveller communities have life expectancy 10&ndash;25 years below the national average and are systematically under-counted in NHS data. Internationally educated nurses &mdash; predominantly Black African &mdash; report the highest rates of bullying and harassment at 31% versus 24% for white British staff, and face disciplinary proceedings at 1.1 times the rate of white colleagues even after controlling for role and grade. The NHS EDI Improvement Plan (2023) commits to proportional senior representation by 2028, but trajectory analysis suggests that target will take at least another decade to reach.
             </p>
           </div>
         </section>
@@ -130,7 +130,7 @@ export default function NhsRaceInequalityPage() {
               value="10.5%"
               direction="up"
               polarity="up-is-good"
-              changeText="vs 24.8&percnt; of all staff &middot; Target: proportional by 2028"
+              changeText="vs 24.8% of all staff &middot; Target: proportional by 2028"
               sparklineData={[7.4, 7.8, 8.1, 8.6, 9.0, 9.3, 9.7, 10.1, 10.5]}
               source="NHS England &middot; WRES Report 2023"
               onExpand={() => {}}
@@ -140,7 +140,7 @@ export default function NhsRaceInequalityPage() {
               value="31%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="vs 24&percnt; for white staff &middot; Barely changed since 2015"
+              changeText="vs 24% for white staff &middot; Barely changed since 2015"
               sparklineData={[30, 30, 31, 31, 30, 31, 31, 31]}
               source="NHS Staff Survey 2023"
               onExpand={() => {}}

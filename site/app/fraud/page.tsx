@@ -77,13 +77,13 @@ export default function FraudPage() {
         <TopicHeader
           topic="Fraud"
           question="Why Does Almost No Fraud Get Prosecuted?"
-          finding="Fraud accounts for 41&percnt; of all crime in England and Wales &mdash; an estimated 3.8 million offences per year &mdash; yet fewer than 1&percnt; of reported cases result in a conviction. Action Fraud, the national reporting centre, has been described by its own assessors as not fit for purpose."
+          finding="Fraud accounts for 41% of all crime in England and Wales &mdash; an estimated 3.8 million offences per year &mdash; yet fewer than 1% of reported cases result in a conviction. Action Fraud, the national reporting centre, has been described by its own assessors as not fit for purpose."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Crime Survey estimates 3.8 million fraud and computer misuse offences annually &mdash; more than burglary, robbery, vehicle crime, and violent crime combined. Yet fraud remains the least-policed crime in the country: of 900,000 cases reported to Action Fraud each year, around 80,000 are referred to police and fewer than 8,000 result in charges, giving a conviction rate of approximately 1&percnt;. An HMICFRS inspection in 2019 found Action Fraud &ldquo;not fit for purpose,&rdquo; and a replacement system has been repeatedly delayed. Authorised push payment scams cost UK consumers &pound;485 million in 2023; mandatory bank reimbursement rules were introduced in 2024 capping liability at &pound;85,000 per claim. An estimated 85&percnt; of fraud goes unreported entirely.</p>
+            <p>The Crime Survey estimates 3.8 million fraud and computer misuse offences annually &mdash; more than burglary, robbery, vehicle crime, and violent crime combined. Yet fraud remains the least-policed crime in the country: of 900,000 cases reported to Action Fraud each year, around 80,000 are referred to police and fewer than 8,000 result in charges, giving a conviction rate of approximately 1%. An HMICFRS inspection in 2019 found Action Fraud &ldquo;not fit for purpose,&rdquo; and a replacement system has been repeatedly delayed. Authorised push payment scams cost UK consumers &pound;485 million in 2023; mandatory bank reimbursement rules were introduced in 2024 capping liability at &pound;85,000 per claim. An estimated 85% of fraud goes unreported entirely.</p>
             <p>The burden falls disproportionately on older people and the digitally excluded: over-65s lose an average of &pound;3,800 per incident compared with &pound;1,200 for those aged 25&ndash;34, and fraud targeting pension savings has risen sharply since the 2015 pension freedoms. Ethnic minority communities are more frequently targeted by immigration-related scams and bogus visa services. The emotional impact of fraud is consistently underestimated &mdash; studies report depression, anxiety, and shame at rates comparable to victims of violent crime.</p>
           </div>
         </section>

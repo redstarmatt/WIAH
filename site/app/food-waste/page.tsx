@@ -59,14 +59,14 @@ export default function FoodWastePage() {
         <TopicHeader
           topic="Food Waste"
           question="How Much Food Does Britain Throw Away?"
-          finding="The UK wastes 9.5 million tonnes of food annually &mdash; worth &pound;19bn &mdash; with households responsible for around 70&percnt; by weight. Simultaneously, 7 million people struggle to afford adequate food. The waste is declining slowly but is on track to miss the UN Sustainable Development Goal of halving food waste by 2030."
+          finding="The UK wastes 9.5 million tonnes of food annually &mdash; worth &pound;19bn &mdash; with households responsible for around 70% by weight. Simultaneously, 7 million people struggle to afford adequate food. The waste is declining slowly but is on track to miss the UN Sustainable Development Goal of halving food waste by 2030."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK wastes approximately 9.5 million tonnes of food annually across the whole supply chain &mdash; households account for around 6.4 million tonnes (70&percnt; by weight). WRAP estimates the household food waste bill at &pound;19bn per year, or around &pound;700 per household. Around 50&percnt; of household food waste is food that was still edible when discarded &mdash; bread, salad, and fruit. Environmental impact compounds the economic cost: embedded carbon in wasted food amounts to around 25 million tonnes of CO2-equivalent per year. Total food waste has fallen from an estimated 11.5 million tonnes in 2007 to 9.5 million tonnes in 2023 &mdash; an 18&percnt; reduction &mdash; but over the period 2015&ndash;2023 progress has stalled. The UN SDG 12.3 target requires a 50&percnt; per capita reduction by 2030; at current rates the UK will fall far short. A mandatory food waste reporting requirement for large food businesses was consulted on in 2022 but had not been enacted as of early 2026.</p>
-            <p>This waste coexists with acute food insecurity: around 7 million UK adults lived in food-insecure households in 2023. Higher-income households waste more in absolute terms; lower-income households waste a higher proportion of their budget. Community fridges, OLIO, Too Good To Go, and FareShare redistribute food that would otherwise be wasted while also addressing insecurity &mdash; but these remain fragmented charitable interventions rather than a systematic response. The Courtauld Commitment 2030, signed by retailers accounting for over 80&percnt; of UK grocery sales, targets a further 50&percnt; reduction in food waste; whether voluntary action alone can achieve it, against the backdrop of stalled progress, remains doubtful.</p>
+            <p>The UK wastes approximately 9.5 million tonnes of food annually across the whole supply chain &mdash; households account for around 6.4 million tonnes (70% by weight). WRAP estimates the household food waste bill at &pound;19bn per year, or around &pound;700 per household. Around 50% of household food waste is food that was still edible when discarded &mdash; bread, salad, and fruit. Environmental impact compounds the economic cost: embedded carbon in wasted food amounts to around 25 million tonnes of CO2-equivalent per year. Total food waste has fallen from an estimated 11.5 million tonnes in 2007 to 9.5 million tonnes in 2023 &mdash; an 18% reduction &mdash; but over the period 2015&ndash;2023 progress has stalled. The UN SDG 12.3 target requires a 50% per capita reduction by 2030; at current rates the UK will fall far short. A mandatory food waste reporting requirement for large food businesses was consulted on in 2022 but had not been enacted as of early 2026.</p>
+            <p>This waste coexists with acute food insecurity: around 7 million UK adults lived in food-insecure households in 2023. Higher-income households waste more in absolute terms; lower-income households waste a higher proportion of their budget. Community fridges, OLIO, Too Good To Go, and FareShare redistribute food that would otherwise be wasted while also addressing insecurity &mdash; but these remain fragmented charitable interventions rather than a systematic response. The Courtauld Commitment 2030, signed by retailers accounting for over 80% of UK grocery sales, targets a further 50% reduction in food waste; whether voluntary action alone can achieve it, against the backdrop of stalled progress, remains doubtful.</p>
           </div>
         </section>
 
@@ -83,7 +83,7 @@ export default function FoodWastePage() {
               unit="tonnes"
               direction="down"
               polarity="up-is-bad"
-              changeText="Down 18&percnt; since 2007 but progress has stalled &mdash; SDG target: 50&percnt; by 2030"
+              changeText="Down 18% since 2007 but progress has stalled &mdash; SDG target: 50% by 2030"
               sparklineData={[10.2, 10.0, 9.8, 9.6, 9.4, 9.5, 9.5, 9.5]}
               source="WRAP &mdash; UK food waste estimates 2024"
               onExpand={() => {}}
@@ -93,7 +93,7 @@ export default function FoodWastePage() {
               value="&pound;19bn"
               direction="down"
               polarity="up-is-bad"
-              changeText="Around &pound;700 per household per year &mdash; 50&percnt; of wasted food was still edible"
+              changeText="Around &pound;700 per household per year &mdash; 50% of wasted food was still edible"
               sparklineData={[21, 20, 20, 19, 19, 19, 19, 19]}
               source="WRAP &mdash; Household food waste in the UK 2023"
               onExpand={() => {}}
@@ -124,10 +124,10 @@ export default function FoodWastePage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="18&percnt; Reduction Since 2007"
+            title="18% Reduction Since 2007"
             value="9.5Mt"
             unit="down from 11.5Mt in 2007"
-            description="UK food waste has fallen 18&percnt; since 2007, among the better OECD performances. Too Good To Go, OLIO, and community fridges are redistributing food at scale. The Courtauld Commitment 2030 &mdash; signed by retailers accounting for over 80&percnt; of UK grocery sales &mdash; targets a further 50&percnt; reduction in food waste by 2030. Mandatory food waste reporting for large businesses, if enacted, would drive faster progress through transparency and accountability."
+            description="UK food waste has fallen 18% since 2007, among the better OECD performances. Too Good To Go, OLIO, and community fridges are redistributing food at scale. The Courtauld Commitment 2030 &mdash; signed by retailers accounting for over 80% of UK grocery sales &mdash; targets a further 50% reduction in food waste by 2030. Mandatory food waste reporting for large businesses, if enacted, would drive faster progress through transparency and accountability."
             source="Source: WRAP &mdash; UK food waste estimates; Courtauld Commitment 2030 progress report."
           />
         </ScrollReveal>

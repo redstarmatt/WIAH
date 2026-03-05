@@ -70,17 +70,17 @@ export default function RentArrearsPage() {
         <TopicHeader
           topic="Rent Arrears"
           question="How Many Renters Are Falling Behind?"
-          finding="One in seven renters in England is now behind on their rent, the highest rate on record. Landlord possession claims in county courts hit 164,200 in 2024 &mdash; surpassing pre-pandemic levels &mdash; and evictions are rising sharply as the cost-of-living crisis meets a housing market where rents have increased 30&percnt; in four years."
+          finding="One in seven renters in England is now behind on their rent, the highest rate on record. Landlord possession claims in county courts hit 164,200 in 2024 &mdash; surpassing pre-pandemic levels &mdash; and evictions are rising sharply as the cost-of-living crisis meets a housing market where rents have increased 30% in four years."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Rent arrears in England are at their highest recorded level: 14.1&percnt; of renters &mdash; approximately 1.3 million households &mdash; were behind on payments in 2024, up from 8.5&percnt; in 2015. The crisis is driven by a collision between rents rising 30&percnt; since 2020 and benefits that failed to keep pace &mdash; the Local Housing Allowance was frozen from 2020 to 2024 at the 30th percentile of local rents, progressively covering a smaller share of actual costs. Landlord possession claims reached 164,200 in 2024, surpassing the pre-pandemic level for the first time, while Citizens Advice reported a 42&percnt; increase in people seeking rent arrears help between 2021 and 2023, with the average amount owed rising from &pound;1,200 to &pound;2,100. The LHA was unfrozen in April 2024 and reset to the 30th percentile, providing relief of around &pound;800 per year per claimant &mdash; but rents have continued rising.
+              Rent arrears in England are at their highest recorded level: 14.1% of renters &mdash; approximately 1.3 million households &mdash; were behind on payments in 2024, up from 8.5% in 2015. The crisis is driven by a collision between rents rising 30% since 2020 and benefits that failed to keep pace &mdash; the Local Housing Allowance was frozen from 2020 to 2024 at the 30th percentile of local rents, progressively covering a smaller share of actual costs. Landlord possession claims reached 164,200 in 2024, surpassing the pre-pandemic level for the first time, while Citizens Advice reported a 42% increase in people seeking rent arrears help between 2021 and 2023, with the average amount owed rising from &pound;1,200 to &pound;2,100. The LHA was unfrozen in April 2024 and reset to the 30th percentile, providing relief of around &pound;800 per year per claimant &mdash; but rents have continued rising.
             </p>
             <p>
-              The crisis is concentrated among the most vulnerable. Single parents &mdash; 90&percnt; of whom are women &mdash; have the highest arrears rate of any household type at 22&percnt;, compared with 10&percnt; for couples without children. People from Black African and Black Caribbean backgrounds face arrears rates roughly double the national average, reflecting lower incomes and concentration in high-rent London boroughs. Universal Credit recipients are significantly more likely to be in arrears than non-claimants: the five-week wait for the first payment creates an immediate deficit that many households never recover from, and young renters aged 18&ndash;24 face the most constrained options as the Shared Accommodation Rate covers only a room in a shared house.
+              The crisis is concentrated among the most vulnerable. Single parents &mdash; 90% of whom are women &mdash; have the highest arrears rate of any household type at 22%, compared with 10% for couples without children. People from Black African and Black Caribbean backgrounds face arrears rates roughly double the national average, reflecting lower incomes and concentration in high-rent London boroughs. Universal Credit recipients are significantly more likely to be in arrears than non-claimants: the five-week wait for the first payment creates an immediate deficit that many households never recover from, and young renters aged 18&ndash;24 face the most constrained options as the Shared Accommodation Rate covers only a room in a shared house.
             </p>
           </div>
         </section>
@@ -98,7 +98,7 @@ export default function RentArrearsPage() {
               value="14.1%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Highest on record &middot; Up from 8.5&percnt; in 2015 &middot; ~1.3M households"
+              changeText="Highest on record &middot; Up from 8.5% in 2015 &middot; ~1.3M households"
               sparklineData={[8.5, 8.1, 7.8, 8.2, 8.6, 10.4, 11.1, 12.3, 13.2, 14.1]}
               source="English Housing Survey 2024"
               onExpand={() => {}}
@@ -108,7 +108,7 @@ export default function RentArrearsPage() {
               value="164,200"
               direction="up"
               polarity="up-is-bad"
-              changeText="Surpassed pre-pandemic level &middot; Up 127&percnt; from 2020 low"
+              changeText="Surpassed pre-pandemic level &middot; Up 127% from 2020 low"
               sparklineData={[153200, 148100, 142800, 139500, 136200, 72400, 89600, 128400, 155800, 164200]}
               source="MOJ &middot; Possession Statistics 2024"
               onExpand={() => {}}
@@ -118,7 +118,7 @@ export default function RentArrearsPage() {
               value="&pound;2,100"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from &pound;1,200 in 2021 &middot; 42&percnt; rise in people seeking help"
+              changeText="Up from &pound;1,200 in 2021 &middot; 42% rise in people seeking help"
               sparklineData={[900, 950, 1000, 1050, 1100, 1200, 1500, 1800, 2100]}
               source="Citizens Advice &middot; 2023"
               onExpand={() => {}}

@@ -136,14 +136,14 @@ export default function SkillsShortagesPage() {
         <TopicHeader
           topic="Skills Shortage"
           question="Is Britain Running Out of Skilled Workers?"
-          finding="Skills shortages cost the UK economy &pound;6.6bn a year, with over 80&percnt; of employers reporting difficulty filling vacancies and 2.4 million roles classed as hard to fill."
+          finding="Skills shortages cost the UK economy &pound;6.6bn a year, with over 80% of employers reporting difficulty filling vacancies and 2.4 million roles classed as hard to fill."
           colour="#F4A261"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Hard-to-fill vacancies &mdash; posts remaining open for more than three months where employers cannot attract suitably skilled applicants &mdash; reached approximately 2.4 million by 2024, costing employers &pound;6.6 billion per year in additional recruitment, training, and temporary staffing. Over 80&percnt; of employers reported difficulty filling at least one vacancy in 2023&ndash;24, a figure that remained stubbornly elevated even as total ONS vacancies eased from their record 1.3 million peak in mid-2022. The post-pandemic surge, combined with an estimated 1.3 million EU nationals leaving the workforce after Brexit, created structural shortages that have not resolved even as economic activity slowed. The government&apos;s Skills England programme (2024) aims to reform the apprenticeship levy into a broader Growth and Skills Levy, but training cycles take years &mdash; the pipeline of new workers cannot meet near-term demand even when investment increases.</p>
+            <p>Hard-to-fill vacancies &mdash; posts remaining open for more than three months where employers cannot attract suitably skilled applicants &mdash; reached approximately 2.4 million by 2024, costing employers &pound;6.6 billion per year in additional recruitment, training, and temporary staffing. Over 80% of employers reported difficulty filling at least one vacancy in 2023&ndash;24, a figure that remained stubbornly elevated even as total ONS vacancies eased from their record 1.3 million peak in mid-2022. The post-pandemic surge, combined with an estimated 1.3 million EU nationals leaving the workforce after Brexit, created structural shortages that have not resolved even as economic activity slowed. The government&apos;s Skills England programme (2024) aims to reform the apprenticeship levy into a broader Growth and Skills Levy, but training cycles take years &mdash; the pipeline of new workers cannot meet near-term demand even when investment increases.</p>
             <p>The consequences fall hardest where the shortages are deepest. The NHS carries approximately 112,000 vacancies and adult social care a further 160,000, directly affecting patient care, hospital discharge times, and waiting lists. Construction requires 250,000 additional workers by 2027 to meet housebuilding targets, with bricklaying and groundwork most acute. Digital and IT shortages alone cost the economy an estimated &pound;63 billion per year in lost productivity. Geographically, London faces the sharpest digital and financial skills gaps because demand outpaces supply; the North East, Yorkshire, and East Midlands struggle with engineering and manufacturing shortfalls rooted in decades of industrial decline; and rural areas face multi-sector gaps compounded by poor transport links that limit geographic mobility.</p>
           </div>
         </section>
@@ -167,7 +167,7 @@ export default function SkillsShortagesPage() {
             />
             <MetricCard
               label="Employers reporting skills gaps"
-              value="80&percnt;"
+              value="80%"
               direction="up"
               polarity="up-is-bad"
               changeText="2023/24 &middot; CIPD quarterly survey &middot; Stubbornly elevated post-pandemic"
@@ -221,9 +221,9 @@ export default function SkillsShortagesPage() {
         <ScrollReveal>
           <PositiveCallout
             title="What&apos;s improving"
-            value="Degree apprenticeships &plus;140&percnt; since 2015"
+            value="Degree apprenticeships &plus;140% since 2015"
             unit=""
-            description="Higher and degree apprenticeships &mdash; employer-designed programmes leading to level 4&ndash;7 qualifications &mdash; have grown 140&percnt; since 2015, demonstrating that employer-led training can produce skilled workers at scale when incentives are aligned. Over 250 higher apprenticeship standards are now available, covering areas from nursing to digital engineering to finance. The government&apos;s Skills England programme (2024) aims to rationalise the apprenticeship levy, create a Growth and Skills Levy that allows greater flexibility, and strengthen employer involvement in curriculum design to ensure training meets real employer needs rather than legacy qualification frameworks."
+            description="Higher and degree apprenticeships &mdash; employer-designed programmes leading to level 4&ndash;7 qualifications &mdash; have grown 140% since 2015, demonstrating that employer-led training can produce skilled workers at scale when incentives are aligned. Over 250 higher apprenticeship standards are now available, covering areas from nursing to digital engineering to finance. The government&apos;s Skills England programme (2024) aims to rationalise the apprenticeship levy, create a Growth and Skills Levy that allows greater flexibility, and strengthen employer involvement in curriculum design to ensure training meets real employer needs rather than legacy qualification frameworks."
             source="Source: DfE &mdash; Employer Skills Survey 2022; CIPD &mdash; Labour Market Outlook Q4 2024; ONS &mdash; Vacancy Survey 2024; British Chambers of Commerce &mdash; Digital Skills Gap Report 2024."
           />
         </ScrollReveal>

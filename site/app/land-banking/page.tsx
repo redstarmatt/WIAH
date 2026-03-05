@@ -88,7 +88,7 @@ export default function LandBankingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England granted 474,000 planning permissions in 2023 but started only 158,000 new homes &mdash; a conversion rate of just 33&percnt;. The gap between permissions and starts has widened every year since 2015, from 70,000 unbuilt permissions to over 310,000. The business model of the major listed housebuilders &mdash; Barratt, Taylor Wimpey, Persimmon, Berkeley &mdash; is explicitly designed around margin rather than output: annual reports show these companies target operating margins of 18&ndash;26&percnt; and slow construction during downturns to protect margins rather than sustain completions. Lichfields Planning Consultancy data shows the average gap between permission and build start reached 3.4 years in 2023, up from 1.6 years in 2015, and the ten largest developers hold a combined land bank of approximately 1.06 million plots. DLUHC&apos;s 2023 build-out review found two-thirds of slow sites were commercially held back rather than facing genuine infrastructure barriers.
+              England granted 474,000 planning permissions in 2023 but started only 158,000 new homes &mdash; a conversion rate of just 33%. The gap between permissions and starts has widened every year since 2015, from 70,000 unbuilt permissions to over 310,000. The business model of the major listed housebuilders &mdash; Barratt, Taylor Wimpey, Persimmon, Berkeley &mdash; is explicitly designed around margin rather than output: annual reports show these companies target operating margins of 18&ndash;26% and slow construction during downturns to protect margins rather than sustain completions. Lichfields Planning Consultancy data shows the average gap between permission and build start reached 3.4 years in 2023, up from 1.6 years in 2015, and the ten largest developers hold a combined land bank of approximately 1.06 million plots. DLUHC&apos;s 2023 build-out review found two-thirds of slow sites were commercially held back rather than facing genuine infrastructure barriers.
             </p>
             <p>
               The burden of the housing shortfall falls hardest on younger people, renters, and those in high-demand areas. The South East, London, and East of England consistently show the largest gaps between permissions and starts &mdash; precisely the areas with the highest prices and greatest need. First-time buyer numbers have fallen from 400,000 in 2006 to around 300,000 in 2023, with the average first-time buyer age rising from 29 to 34, and ethnic minorities are disproportionately concentrated in the private rented sector where supply constraints drive rent inflation.
@@ -120,7 +120,7 @@ export default function LandBankingPage() {
               unit="years"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 1.6 years in 2015 &middot; 75&percnt; of permissions not started within 3 years"
+              changeText="Up from 1.6 years in 2015 &middot; 75% of permissions not started within 3 years"
               sparklineData={[1.6, 1.9, 2.1, 2.4, 2.6, 2.9, 3.1, 3.4]}
               source="Lichfields &middot; Build-out rate analysis 2023"
               onExpand={() => {}}
@@ -130,7 +130,7 @@ export default function LandBankingPage() {
               value="18&ndash;26%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Consistently 18&ndash;26&percnt; &middot; Industry target: margin over volume"
+              changeText="Consistently 18&ndash;26% &middot; Industry target: margin over volume"
               sparklineData={[18, 20, 22, 24, 25, 26, 23, 21]}
               source="Company annual reports &middot; Barratt, Taylor Wimpey, Persimmon 2023"
               onExpand={() => {}}

@@ -77,10 +77,10 @@ export default function KinshipCarePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              An estimated 162,000 children in the UK are being raised by relatives &mdash; typically grandparents &mdash; through formal Special Guardianship Orders (SGOs) or informal family agreements, with the true figure potentially closer to 200,000. SGO applications rose 48&percnt; between 2018 and 2023 as children&apos;s services sought alternatives to foster care. Kinship care saves local authorities an estimated &pound;4.4 billion annually compared with equivalent foster placements, yet 69&percnt; of kinship carers receive no financial support from their local authority and carers receive on average &pound;80 per week less than foster carers for the same-age child. The Kinship Care Act 2024 was the first dedicated legislation for kinship carers, requiring local authorities to publish strategies and extending Pupil Premium eligibility to kinship children, but stopped short of the financial parity recommended by the MacAlister review.
+              An estimated 162,000 children in the UK are being raised by relatives &mdash; typically grandparents &mdash; through formal Special Guardianship Orders (SGOs) or informal family agreements, with the true figure potentially closer to 200,000. SGO applications rose 48% between 2018 and 2023 as children&apos;s services sought alternatives to foster care. Kinship care saves local authorities an estimated &pound;4.4 billion annually compared with equivalent foster placements, yet 69% of kinship carers receive no financial support from their local authority and carers receive on average &pound;80 per week less than foster carers for the same-age child. The Kinship Care Act 2024 was the first dedicated legislation for kinship carers, requiring local authorities to publish strategies and extending Pupil Premium eligibility to kinship children, but stopped short of the financial parity recommended by the MacAlister review.
             </p>
             <p>
-              The burden falls disproportionately on grandmothers: 75&percnt; of primary kinship carers are female, with a median age of 56; 42&percnt; report a significant drop in household income and 38&percnt; have fallen behind on bills or taken on debt. Black and mixed-heritage children are over-represented &mdash; 18&percnt; of kinship children are from Black backgrounds compared with 6&percnt; of all children nationally &mdash; reflecting patterns of systemic over-surveillance of Black families by children&apos;s social care. Carers in the most deprived areas are least likely to receive a kinship carer assessment, creating a postcode lottery in support at the point when families are most financially stretched.
+              The burden falls disproportionately on grandmothers: 75% of primary kinship carers are female, with a median age of 56; 42% report a significant drop in household income and 38% have fallen behind on bills or taken on debt. Black and mixed-heritage children are over-represented &mdash; 18% of kinship children are from Black backgrounds compared with 6% of all children nationally &mdash; reflecting patterns of systemic over-surveillance of Black families by children&apos;s social care. Carers in the most deprived areas are least likely to receive a kinship carer assessment, creating a postcode lottery in support at the point when families are most financially stretched.
             </p>
           </div>
         </section>
@@ -98,7 +98,7 @@ export default function KinshipCarePage() {
               value="162K"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up 26&percnt; since 2019 &middot; 48&percnt; rise in SGO applications since 2018"
+              changeText="Up 26% since 2019 &middot; 48% rise in SGO applications since 2018"
               sparklineData={[128, 132, 137, 141, 146, 150, 154, 158, 162]}
               source="DfE &middot; Children Looked After 2023"
               onExpand={() => {}}
@@ -108,7 +108,7 @@ export default function KinshipCarePage() {
               value="31%"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 45&percnt; in 2015 &middot; 69&percnt; receive no local authority support"
+              changeText="Down from 45% in 2015 &middot; 69% receive no local authority support"
               sparklineData={[45, 43, 41, 39, 38, 36, 34, 32, 31]}
               source="Kinship &middot; State of the Nation 2023"
               onExpand={() => {}}

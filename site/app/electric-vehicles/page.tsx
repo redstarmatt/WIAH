@@ -60,14 +60,14 @@ export default function ElectricVehiclesPage() {
         <TopicHeader
           topic="Electric Vehicles"
           question="Is Britain Actually Switching to Electric Cars?"
-          finding="EVs took 16.5&percnt; of new car sales in 2023, but public charging infrastructure is insufficient &mdash; just 1 charger per 54 EVs, against a target of 1 per 10. The 2030 petrol ban may slip to 2035, and range anxiety and upfront cost remain the top barriers for most buyers."
+          finding="EVs took 16.5% of new car sales in 2023, but public charging infrastructure is insufficient &mdash; just 1 charger per 54 EVs, against a target of 1 per 10. The 2030 petrol ban may slip to 2035, and range anxiety and upfront cost remain the top barriers for most buyers."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>BEVs rose from 0.5&percnt; of new car sales in 2018 to 16.5&percnt; in 2023, driven by an expanding model range, falling battery costs, and the Zero Emission Vehicle mandate &mdash; which requires manufacturers to sell 22&percnt; zero-emission vehicles in 2024, rising to 80&percnt; by 2030. Battery costs have fallen 90&percnt; since 2010 to around &pound;100/kWh, making EVs already cheaper over a vehicle&apos;s lifetime for drivers with home charging access. The UK ranks in the global top five for EV adoption by new car share. However, policy consistency has been lacking: the original 2030 petrol ban was weakened to 2035 in September 2023, and the Plug-in Car Grant was axed in June 2022 with 24 hours&apos; notice, removing the only direct consumer subsidy. Around 50&percnt; of new EV registrations are fleet rather than private, suggesting individual consumer uptake is slower than headline figures imply.</p>
-            <p>The charging infrastructure gap is the most pressing barrier. With 58,000 public charge points and 1.1 million BEVs on the road, the ratio is one charger per 54 EVs &mdash; well short of the government&apos;s own target of 1 per 10. Charge point distribution follows socioeconomic lines: London has the highest density while rural areas and deprived communities have the fewest chargers per EV. Wales and Northern Ireland lag the most. Around 10&percnt; of charge point visits result in a failure to charge, according to Which? mystery shopping &mdash; an unreliability that, combined with the charging gap, bears hardest on those without home charging access.</p>
+            <p>BEVs rose from 0.5% of new car sales in 2018 to 16.5% in 2023, driven by an expanding model range, falling battery costs, and the Zero Emission Vehicle mandate &mdash; which requires manufacturers to sell 22% zero-emission vehicles in 2024, rising to 80% by 2030. Battery costs have fallen 90% since 2010 to around &pound;100/kWh, making EVs already cheaper over a vehicle&apos;s lifetime for drivers with home charging access. The UK ranks in the global top five for EV adoption by new car share. However, policy consistency has been lacking: the original 2030 petrol ban was weakened to 2035 in September 2023, and the Plug-in Car Grant was axed in June 2022 with 24 hours&apos; notice, removing the only direct consumer subsidy. Around 50% of new EV registrations are fleet rather than private, suggesting individual consumer uptake is slower than headline figures imply.</p>
+            <p>The charging infrastructure gap is the most pressing barrier. With 58,000 public charge points and 1.1 million BEVs on the road, the ratio is one charger per 54 EVs &mdash; well short of the government&apos;s own target of 1 per 10. Charge point distribution follows socioeconomic lines: London has the highest density while rural areas and deprived communities have the fewest chargers per EV. Wales and Northern Ireland lag the most. Around 10% of charge point visits result in a failure to charge, according to Which? mystery shopping &mdash; an unreliability that, combined with the charging gap, bears hardest on those without home charging access.</p>
           </div>
         </section>
 
@@ -85,7 +85,7 @@ export default function ElectricVehiclesPage() {
               unit="%"
               direction="up"
               polarity="up-is-good"
-              changeText="Up from 0.5&percnt; in 2018 &mdash; ZEV mandate requires 80&percnt; by 2030"
+              changeText="Up from 0.5% in 2018 &mdash; ZEV mandate requires 80% by 2030"
               sparklineData={[0.5, 0.7, 1.6, 3.1, 7.4, 11.6, 14.8, 16.5]}
               source="SMMT &mdash; New car registrations by fuel type"
               onExpand={() => {}}
@@ -140,7 +140,7 @@ export default function ElectricVehiclesPage() {
             title="90% Cost Reduction"
             value="&pound;100/kWh"
             unit="battery cost &mdash; down from &pound;1,000 in 2010"
-            description="UK is top-5 globally for EV adoption, and battery costs have fallen 90&percnt; since 2010 &mdash; making EVs cost-competitive over their full lifetime with petrol cars at current fuel prices for drivers with home charging access. Volkswagen, BMW, and Stellantis all confirmed full transition plans to BEV-only by 2030 in Europe. The ZEV mandate&apos;s credit trading mechanism gives manufacturers flexibility while maintaining the aggregate transition trajectory."
+            description="UK is top-5 globally for EV adoption, and battery costs have fallen 90% since 2010 &mdash; making EVs cost-competitive over their full lifetime with petrol cars at current fuel prices for drivers with home charging access. Volkswagen, BMW, and Stellantis all confirmed full transition plans to BEV-only by 2030 in Europe. The ZEV mandate&apos;s credit trading mechanism gives manufacturers flexibility while maintaining the aggregate transition trajectory."
             source="Source: BloombergNEF &mdash; Battery Price Survey 2024; SMMT &mdash; EV registrations data."
           />
         </ScrollReveal>

@@ -84,7 +84,7 @@ export default function ExecutivePayPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>The median FTSE 100 CEO earned &pound;3.9 million in 2023 &mdash; equivalent to earning the UK median annual salary in under four days. The CEO-to-worker pay ratio stood at 118:1 in 2023, up from 47:1 in 2000 and 20:1 in 1980, according to the High Pay Centre. A 2022 Investment Association review found no statistically significant correlation between CEO pay levels and total shareholder return across FTSE 100 companies over the preceding decade, and the High Pay Centre identifies the structural cause: remuneration consultants benchmark pay against peers, creating an upward ratchet regardless of performance. From 2020, large companies must disclose their CEO pay ratio in annual reports; despite this, real CEO pay has risen substantially faster than worker pay, suggesting governance mechanisms have moderated but not arrested the trend.</p>
-            <p>The sharpest pay ratios are in retailers, hospitality, and diversified financial firms &mdash; those with large numbers of lower-paid frontline workers. The disparity is worst in London and the South East, where FTSE 100 headquarters are concentrated. Gender inequality persists at the top: women represent just 9&percnt; of FTSE 100 chief executives and the median female CEO pay was around 20&percnt; lower than male median pay in 2023, reflecting differences in tenure and sector concentration. Shareholder governance pressure has grown &mdash; 32 FTSE 100 companies faced significant opposition on pay resolutions in 2023, up from 8 in 2015 &mdash; but binding shareholder votes apply only to remuneration policy, not to individual awards, limiting their effect on year-to-year outcomes.</p>
+            <p>The sharpest pay ratios are in retailers, hospitality, and diversified financial firms &mdash; those with large numbers of lower-paid frontline workers. The disparity is worst in London and the South East, where FTSE 100 headquarters are concentrated. Gender inequality persists at the top: women represent just 9% of FTSE 100 chief executives and the median female CEO pay was around 20% lower than male median pay in 2023, reflecting differences in tenure and sector concentration. Shareholder governance pressure has grown &mdash; 32 FTSE 100 companies faced significant opposition on pay resolutions in 2023, up from 8 in 2015 &mdash; but binding shareholder votes apply only to remuneration policy, not to individual awards, limiting their effect on year-to-year outcomes.</p>
           </div>
         </section>
 
@@ -116,7 +116,7 @@ export default function ExecutivePayPage() {
             />
             <MetricCard
               label="Companies with shareholder pay rebellion"
-              value="32&percnt;"
+              value="32%"
               direction="up"
               polarity="up-is-good"
               changeText="2023 &middot; Up from 8 companies in 2015 &middot; Governance pressure growing"
@@ -163,7 +163,7 @@ export default function ExecutivePayPage() {
             title="What&apos;s changing"
             value="Shareholder rebellions rising"
             unit="2023"
-            description="Shareholder rebellions on executive pay have risen sharply &mdash; in 2023, 32 FTSE 100 companies faced significant opposition (20&percnt;+ votes against) on pay resolutions, up from just 8 in 2015. The Investment Association&apos;s public register of companies with substantial opposition has increased board accountability. From 2020, mandatory CEO pay ratio disclosure has made the gap between boardroom and workforce pay visible in annual reports for the first time &mdash; a transparency measure that has begun to shift the narrative in remuneration committee discussions."
+            description="Shareholder rebellions on executive pay have risen sharply &mdash; in 2023, 32 FTSE 100 companies faced significant opposition (20%+ votes against) on pay resolutions, up from just 8 in 2015. The Investment Association&apos;s public register of companies with substantial opposition has increased board accountability. From 2020, mandatory CEO pay ratio disclosure has made the gap between boardroom and workforce pay visible in annual reports for the first time &mdash; a transparency measure that has begun to shift the narrative in remuneration committee discussions."
             source="Source: High Pay Centre &mdash; FTSE 100 CEO Pay Survey 2023; Investment Association &mdash; Shareholder Voting & Engagement Report 2023; ONS &mdash; Annual Survey of Hours and Earnings 2023."
           />
         </ScrollReveal>

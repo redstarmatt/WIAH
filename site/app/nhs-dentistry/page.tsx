@@ -94,7 +94,7 @@ export default function NhsDentistryPage() {
           <TopicHeader
             topic="Health"
             question="Can you still get an NHS dentist?"
-            finding="NHS dental treatment has collapsed since the pandemic, with 42&percnt; of adults unable to access an NHS dentist and children&apos;s tooth extractions becoming the most common childhood hospital procedure."
+            finding="NHS dental treatment has collapsed since the pandemic, with 42% of adults unable to access an NHS dentist and children&apos;s tooth extractions becoming the most common childhood hospital procedure."
           />
         </div>
       </section>
@@ -110,7 +110,7 @@ export default function NhsDentistryPage() {
               unit="%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 25&percnt; in 2019"
+              changeText="Up from 25% in 2019"
               sparklineData={[25, 28, 31, 35, 39, 41, 42]}
               onExpand={() => {}}
             />
@@ -142,8 +142,8 @@ export default function NhsDentistryPage() {
 
       <section id="sec-context" className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
         <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-          <p>By 2023, 42&percnt; of adults in England could not get an NHS dentist appointment when they needed one &mdash; up from 25&percnt; in 2019 &mdash; and the number of NHS dentists has fallen by 1,100 since then. The structural driver is the UDA contract introduced in 2006, which pays the same for a check-up as for complex restorative treatment; as inflation eroded UDA values, NHS work became economically unviable for many practices. Children bear the sharpest consequences: 35,000 had teeth removed under general anaesthetic in hospital in 2022&ndash;23, making tooth extraction the most common childhood hospital procedure. The 2024 Dental Recovery Plan offered &pound;20 per additional UDA for new patients and by October 2024 had generated roughly 1.5 million additional appointments, but the British Dental Association argues full contract renegotiation is the only sustainable fix.</p>
-          <p>The crisis compounds existing inequality. Children in the most deprived areas are three times more likely to need hospital extractions than those in the least deprived; rural dental deserts in Skegness, Scarborough, and Mevagissey leave patients travelling 30 or more miles for NHS care, or paying private fees starting at &pound;60 for a check-up. Five-year-olds in the North West have twice the rate of visible tooth decay as those in the South East. The workforce pipeline provides no short-term relief: dental schools produce roughly 1,200 graduates a year, around 40&percnt; of whom move directly into private or mixed practice.</p>
+          <p>By 2023, 42% of adults in England could not get an NHS dentist appointment when they needed one &mdash; up from 25% in 2019 &mdash; and the number of NHS dentists has fallen by 1,100 since then. The structural driver is the UDA contract introduced in 2006, which pays the same for a check-up as for complex restorative treatment; as inflation eroded UDA values, NHS work became economically unviable for many practices. Children bear the sharpest consequences: 35,000 had teeth removed under general anaesthetic in hospital in 2022&ndash;23, making tooth extraction the most common childhood hospital procedure. The 2024 Dental Recovery Plan offered &pound;20 per additional UDA for new patients and by October 2024 had generated roughly 1.5 million additional appointments, but the British Dental Association argues full contract renegotiation is the only sustainable fix.</p>
+          <p>The crisis compounds existing inequality. Children in the most deprived areas are three times more likely to need hospital extractions than those in the least deprived; rural dental deserts in Skegness, Scarborough, and Mevagissey leave patients travelling 30 or more miles for NHS care, or paying private fees starting at &pound;60 for a check-up. Five-year-olds in the North West have twice the rate of visible tooth decay as those in the South East. The workforce pipeline provides no short-term relief: dental schools produce roughly 1,200 graduates a year, around 40% of whom move directly into private or mixed practice.</p>
         </div>
       </section>
 
@@ -202,7 +202,7 @@ export default function NhsDentistryPage() {
                             style={{ width: `${r.pctUnableAccess}%` }}
                           >
                             <span className="text-xs font-mono text-white">
-                              {r.pctUnableAccess}&percnt;
+                              {r.pctUnableAccess}%
                             </span>
                           </div>
                         </div>

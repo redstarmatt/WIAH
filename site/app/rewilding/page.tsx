@@ -60,13 +60,13 @@ export default function RewildingPage() {
         <TopicHeader
           topic="Rewilding"
           question="Is Britain Actually Bringing Nature Back?"
-          finding="The UK has committed to protecting 30&percnt; of land for nature by 2030 &mdash; the so-called 30x30 pledge &mdash; but only 3.2&percnt; of land currently meets ecological standards. With fewer than four years remaining, the target is almost certainly out of reach without a step-change in both ambition and delivery."
+          finding="The UK has committed to protecting 30% of land for nature by 2030 &mdash; the so-called 30x30 pledge &mdash; but only 3.2% of land currently meets ecological standards. With fewer than four years remaining, the target is almost certainly out of reach without a step-change in both ambition and delivery."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK is one of the most nature-depleted countries in the world: the Natural History Museum&apos;s Biodiversity Intactness Index ranked Britain 189th out of 218 nations in 2021, behind every G7 peer. The State of Nature 2023 report found 41&percnt; of UK species in long-term decline since 1970 and 15&percnt; at risk of extinction. The government signed the Kunming-Montreal 30x30 target in December 2022, committing to protecting 30&percnt; of land and seas in good ecological condition by 2030 &mdash; but DEFRA&apos;s own assessment shows just 3.2&percnt; of England&apos;s land currently meets the standard, despite 8.5&percnt; sitting within statutory protected areas. Environmental Land Management schemes now cover 1.8 million hectares under active SFI agreements, Biodiversity Net Gain became mandatory for major developments in January 2024, and Landscape Recovery has 56 projects covering around 700,000 hectares &mdash; promising but less than 2&percnt; of UK land area. Iconic reintroductions &mdash; white storks breeding in Sussex for the first time in 600 years, European bison returned to Kent woodland in 2022 &mdash; demonstrate what large-scale rewilding can achieve.</p>
+            <p>The UK is one of the most nature-depleted countries in the world: the Natural History Museum&apos;s Biodiversity Intactness Index ranked Britain 189th out of 218 nations in 2021, behind every G7 peer. The State of Nature 2023 report found 41% of UK species in long-term decline since 1970 and 15% at risk of extinction. The government signed the Kunming-Montreal 30x30 target in December 2022, committing to protecting 30% of land and seas in good ecological condition by 2030 &mdash; but DEFRA&apos;s own assessment shows just 3.2% of England&apos;s land currently meets the standard, despite 8.5% sitting within statutory protected areas. Environmental Land Management schemes now cover 1.8 million hectares under active SFI agreements, Biodiversity Net Gain became mandatory for major developments in January 2024, and Landscape Recovery has 56 projects covering around 700,000 hectares &mdash; promising but less than 2% of UK land area. Iconic reintroductions &mdash; white storks breeding in Sussex for the first time in 600 years, European bison returned to Kent woodland in 2022 &mdash; demonstrate what large-scale rewilding can achieve.</p>
             <p>The geography of rewilding is deeply uneven. Scotland hosts the majority of large-scale projects, underpinned by vast upland estates and NatureScot&apos;s peatland restoration programme (over 50,000 hectares since 2012); England lags because higher land values and intensive agriculture reduce the supply of viable rewilding land. The deepest conservation deficits are in lowland England, precisely where rewilding is hardest to achieve. Most Marine Protected Areas offer minimal ecological benefit as damaging activities including bottom trawling remain permitted within their boundaries &mdash; making the gap between designation and genuine protection the central challenge.</p>
           </div>
         </section>
@@ -85,7 +85,7 @@ export default function RewildingPage() {
               unit="%"
               direction="flat"
               polarity="up-is-good"
-              changeText="Target: 30&percnt; by 2030 &mdash; barely moving despite pledges"
+              changeText="Target: 30% by 2030 &mdash; barely moving despite pledges"
               sparklineData={[2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2]}
               source="DEFRA &mdash; 30x30 ecological condition assessment"
               onExpand={() => {}}
@@ -96,7 +96,7 @@ export default function RewildingPage() {
               unit="%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="State of Nature 2023 &mdash; 15&percnt; at risk of extinction"
+              changeText="State of Nature 2023 &mdash; 15% at risk of extinction"
               sparklineData={[26, 28, 30, 33, 35, 37, 39, 41]}
               source="RSPB / JNCC &mdash; State of Nature 2023"
               onExpand={() => {}}
@@ -107,7 +107,7 @@ export default function RewildingPage() {
               unit="%"
               direction="flat"
               polarity="up-is-good"
-              changeText="Target: 30&percnt; by 2030 &mdash; most MPAs lack effective management"
+              changeText="Target: 30% by 2030 &mdash; most MPAs lack effective management"
               sparklineData={[5, 5.5, 6, 6.5, 7, 7.5, 7.8, 8]}
               source="JNCC &mdash; UK Marine Protected Area network 2024"
               onExpand={() => {}}
@@ -119,7 +119,7 @@ export default function RewildingPage() {
           <section id="sec-protected" className="mb-12">
             <LineChart
               title="Land within statutory protected areas, UK, 2010&ndash;2024"
-              subtitle="Percentage of UK land area in SSSIs, NNRs, and National Parks. 30&percnt; target line shown. JNCC / DEFRA."
+              subtitle="Percentage of UK land area in SSSIs, NNRs, and National Parks. 30% target line shown. JNCC / DEFRA."
               series={protectedSeries}
               yLabel="% of land area"
             />

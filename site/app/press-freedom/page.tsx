@@ -70,17 +70,17 @@ export default function PressFreedomPage() {
         <TopicHeader
           topic="Press Freedom"
           question="How Free Is the British Press?"
-          finding="The UK ranks 23rd in the world for press freedom &mdash; behind Jamaica, Namibia, and Costa Rica. While the ranking has improved from a low of 40th in 2017, structural concerns remain: three companies control 90&percnt; of national newspaper circulation, the Official Secrets Act criminalises journalism in the public interest, and the Investigatory Powers Act enables bulk surveillance of journalists&apos; communications."
+          finding="The UK ranks 23rd in the world for press freedom &mdash; behind Jamaica, Namibia, and Costa Rica. While the ranking has improved from a low of 40th in 2017, structural concerns remain: three companies control 90% of national newspaper circulation, the Official Secrets Act criminalises journalism in the public interest, and the Investigatory Powers Act enables bulk surveillance of journalists&apos; communications."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK ranked 40th in the RSF World Press Freedom Index in 2017&ndash;18, a low driven by mass surveillance legislation, anti-terrorism interception of journalists&apos; communications, and a journalist imprisoned for contempt of court. The ranking recovered to 23rd by 2024 following successful human rights challenges to surveillance overreach. But structural problems remain acute: three companies &mdash; News UK, DMG Media, and Reach plc &mdash; control 90&percnt; of national newspaper circulation; 320 local newspapers have closed since 2009; and 58&percnt; of local authority areas in England have no dedicated local news reporter. The Official Secrets Act 1989 contains no public interest defence, making journalism on classified wrongdoing a criminal offence regardless of benefit. Strategic lawsuits against public participation (SLAPPs) caused UK media organisations to withdraw or avoid publishing at least 50 stories between 2018 and 2022, according to the Foreign Affairs Committee.
+              The UK ranked 40th in the RSF World Press Freedom Index in 2017&ndash;18, a low driven by mass surveillance legislation, anti-terrorism interception of journalists&apos; communications, and a journalist imprisoned for contempt of court. The ranking recovered to 23rd by 2024 following successful human rights challenges to surveillance overreach. But structural problems remain acute: three companies &mdash; News UK, DMG Media, and Reach plc &mdash; control 90% of national newspaper circulation; 320 local newspapers have closed since 2009; and 58% of local authority areas in England have no dedicated local news reporter. The Official Secrets Act 1989 contains no public interest defence, making journalism on classified wrongdoing a criminal offence regardless of benefit. Strategic lawsuits against public participation (SLAPPs) caused UK media organisations to withdraw or avoid publishing at least 50 stories between 2018 and 2022, according to the Foreign Affairs Committee.
             </p>
             <p>
-              The pressures are unevenly distributed. Freelance journalists &mdash; a growing share of investigative output &mdash; have no institutional legal defence when threatened. Women journalists experience online abuse at more than twice the rate of men (65&percnt; vs 28&percnt;, International Federation of Journalists, 2021). Regional and Northern Ireland journalists face the combined pressure of fewer outlets, weaker legal resources, and, in some cases, credible personal threats. The government&apos;s anti-SLAPP provisions in the 2023 Economic Crime Act apply only to economic crime reporting, leaving the broader gap unaddressed.
+              The pressures are unevenly distributed. Freelance journalists &mdash; a growing share of investigative output &mdash; have no institutional legal defence when threatened. Women journalists experience online abuse at more than twice the rate of men (65% vs 28%, International Federation of Journalists, 2021). Regional and Northern Ireland journalists face the combined pressure of fewer outlets, weaker legal resources, and, in some cases, credible personal threats. The government&apos;s anti-SLAPP provisions in the 2023 Economic Crime Act apply only to economic crime reporting, leaving the broader gap unaddressed.
             </p>
           </div>
         </section>
@@ -108,7 +108,7 @@ export default function PressFreedomPage() {
               value="90%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Three companies control 90&percnt; of national circulation"
+              changeText="Three companies control 90% of national circulation"
               sparklineData={[88, 89, 89, 90, 90, 90, 90]}
               source="Ofcom &middot; Media Nations 2023"
               onExpand={() => {}}
@@ -118,7 +118,7 @@ export default function PressFreedomPage() {
               value="320"
               direction="up"
               polarity="up-is-bad"
-              changeText="58&percnt; of local authority areas have no dedicated reporter"
+              changeText="58% of local authority areas have no dedicated reporter"
               sparklineData={[120, 155, 190, 225, 255, 280, 300, 310, 320]}
               source="Press Gazette &middot; Local News Tracker 2023"
               onExpand={() => {}}

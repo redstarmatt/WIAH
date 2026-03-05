@@ -42,7 +42,7 @@ export default function CyclingInfrastructurePage() {
     ? [
         {
           id: 'cycling-share',
-          label: 'Cycling modal share (&percnt; of all trips)',
+          label: 'Cycling modal share (% of all trips)',
           colour: '#2A9D8F',
           data: data.timeSeries.map(d => ({
             date: yearToDate(d.date),
@@ -77,17 +77,17 @@ export default function CyclingInfrastructurePage() {
           topic="Cycling Infrastructure"
           preposition="in"
           question="Why Is Britain Still So Dangerous for Cyclists?"
-          finding="Just 2.2&percnt; of all journeys in England are made by bike &mdash; compared with 27&percnt; in the Netherlands &mdash; and the figure has barely moved in a decade despite successive government cycling strategies. England has only 680 miles of protected cycle lanes. There are over 17,000 cyclist casualties every year, and the active travel budget was cut from &pound;3 billion to &pound;1.5 billion in 2024 before the mission was even halfway complete."
+          finding="Just 2.2% of all journeys in England are made by bike &mdash; compared with 27% in the Netherlands &mdash; and the figure has barely moved in a decade despite successive government cycling strategies. England has only 680 miles of protected cycle lanes. There are over 17,000 cyclist casualties every year, and the active travel budget was cut from &pound;3 billion to &pound;1.5 billion in 2024 before the mission was even halfway complete."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Just 2.2&percnt; of all journeys in England are made by bike &mdash; against 27&percnt; in the Netherlands &mdash; and the figure has barely moved in a decade despite successive cycling strategies. The 2017 Cycling and Walking Investment Strategy promised &pound;3 billion and a 10&percnt; modal share target by 2025; neither has been met, and the 2024 Autumn Budget halved the active travel budget to &pound;1.5 billion. England has only 680 miles of physically protected cycle lanes nationally, compared with 35,000 kilometres in the Netherlands, and over 60&percnt; of English cycling infrastructure consists of painted lanes or shared footways that studies show generate cycling rates 4&ndash;6 times lower than physically segregated routes. Over 17,000 cyclist casualties occurred in England in 2023, of which approximately 880 were killed or seriously injured &mdash; a figure Cycling UK estimates is 2&ndash;3 times higher in reality due to under-reporting.
+              Just 2.2% of all journeys in England are made by bike &mdash; against 27% in the Netherlands &mdash; and the figure has barely moved in a decade despite successive cycling strategies. The 2017 Cycling and Walking Investment Strategy promised &pound;3 billion and a 10% modal share target by 2025; neither has been met, and the 2024 Autumn Budget halved the active travel budget to &pound;1.5 billion. England has only 680 miles of physically protected cycle lanes nationally, compared with 35,000 kilometres in the Netherlands, and over 60% of English cycling infrastructure consists of painted lanes or shared footways that studies show generate cycling rates 4&ndash;6 times lower than physically segregated routes. Over 17,000 cyclist casualties occurred in England in 2023, of which approximately 880 were killed or seriously injured &mdash; a figure Cycling UK estimates is 2&ndash;3 times higher in reality due to under-reporting.
             </p>
             <p>
-              The cycling gap is structured by geography and income. London&apos;s modal share has reached 4&ndash;5&percnt; &mdash; with Hackney exceeding 20&percnt; for commuting &mdash; while Northern cities remain in the low single figures. Cambridge and Oxford are outliers with flat topography and established cycling cultures. HGV lorries cause approximately 20&percnt; of cyclist fatalities despite making up 5&percnt; of traffic, with the highest risk at urban junctions lacking segregated infrastructure. Mini-Holland schemes in Waltham Forest and Enfield demonstrate that Dutch-style cycling rates are achievable in English urban neighbourhoods, but replication requires sustained investment that the 2024 budget cuts have made significantly less likely.
+              The cycling gap is structured by geography and income. London&apos;s modal share has reached 4&ndash;5% &mdash; with Hackney exceeding 20% for commuting &mdash; while Northern cities remain in the low single figures. Cambridge and Oxford are outliers with flat topography and established cycling cultures. HGV lorries cause approximately 20% of cyclist fatalities despite making up 5% of traffic, with the highest risk at urban junctions lacking segregated infrastructure. Mini-Holland schemes in Waltham Forest and Enfield demonstrate that Dutch-style cycling rates are achievable in English urban neighbourhoods, but replication requires sustained investment that the 2024 budget cuts have made significantly less likely.
             </p>
           </div>
         </section>
@@ -105,7 +105,7 @@ export default function CyclingInfrastructurePage() {
               value="2.2%"
               direction="flat"
               polarity="up-is-good"
-              changeText="Barely moved since 2015 &middot; Netherlands: 27&percnt; &middot; 2030 target: 10&percnt;"
+              changeText="Barely moved since 2015 &middot; Netherlands: 27% &middot; 2030 target: 10%"
               sparklineData={[1.8, 1.9, 2.0, 2.1, 2.2, 2.5, 2.3, 2.2]}
               source="DfT &middot; National Travel Survey 2024"
               onExpand={() => {}}
@@ -138,7 +138,7 @@ export default function CyclingInfrastructurePage() {
             title="What is getting better"
             value="4&ndash;5%"
             unit="London modal share"
-            description="London&apos;s cycling modal share has risen to 4&ndash;5&percnt; &mdash; double the national average &mdash; with inner-borough hotspots reaching 20&percnt;. Cycling to work across all settings generates &pound;2.1 billion in NHS savings annually through improved cardiovascular and mental health. Mini-Holland schemes in Waltham Forest and Enfield show it is possible to achieve Dutch-style cycling rates in English urban neighbourhoods with the right investment."
+            description="London&apos;s cycling modal share has risen to 4&ndash;5% &mdash; double the national average &mdash; with inner-borough hotspots reaching 20%. Cycling to work across all settings generates &pound;2.1 billion in NHS savings annually through improved cardiovascular and mental health. Mini-Holland schemes in Waltham Forest and Enfield show it is possible to achieve Dutch-style cycling rates in English urban neighbourhoods with the right investment."
             source="TfL &middot; Cycling Data 2024 &middot; Cycling UK NHS Savings Analysis"
           />
         </ScrollReveal>
@@ -151,7 +151,7 @@ export default function CyclingInfrastructurePage() {
                 subtitle="Percentage of all trips made by bicycle. 2020 spike reflects COVID lockdowns; subsequent return to baseline confirms structural not behavioural shift."
                 series={modalShareSeries}
                 targetLine={targetLine}
-                yLabel="&percnt; of all trips"
+                yLabel="% of all trips"
                 source={{
                   name: 'Department for Transport',
                   dataset: 'National Travel Survey: England',
