@@ -17,7 +17,7 @@ export default function HomePage() {
           </h1>
 
           <p className="font-editorial italic text-white/70 text-base md:text-lg mb-6 leading-relaxed">
-            Public data. Public understanding.
+            Public data. Public understanding. No noise, just signal.
           </p>
 
           {/* Hero search + chips */}
