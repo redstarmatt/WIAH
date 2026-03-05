@@ -1,0 +1,20 @@
+{
+  "selfHarmIncidents": [
+    {"year":2012,"incidents":24000},{"year":2014,"incidents":30000},{"year":2016,"incidents":40161},
+    {"year":2018,"incidents":57968},{"year":2019,"incidents":60584},{"year":2020,"incidents":55760},
+    {"year":2021,"incidents":61461},{"year":2022,"incidents":74590},{"year":2023,"incidents":74000}
+  ],
+  "deathsInCustody": [
+    {"year":2013,"apparentSelfInflicted":52},{"year":2015,"apparentSelfInflicted":89},
+    {"year":2017,"apparentSelfInflicted":70},{"year":2019,"apparentSelfInflicted":62},
+    {"year":2021,"apparentSelfInflicted":67},{"year":2022,"apparentSelfInflicted":83},
+    {"year":2023,"apparentSelfInflicted":86}
+  ],
+  "mentalHealthPrevalence": [
+    {"condition":"Any mental health diagnosis","percent":70},
+    {"condition":"Personality disorder","percent":47},
+    {"condition":"Depression","percent":42},
+    {"condition":"Anxiety","percent":38},
+    {"condition":"Psychosis","percent":10}
+  ]
+}

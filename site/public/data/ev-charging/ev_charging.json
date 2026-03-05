@@ -1,0 +1,16 @@
+{
+  "chargePoints": [
+    {"year":2017,"total":8400,"rapid":1100},{"year":2018,"total":13700,"rapid":1800},
+    {"year":2019,"total":20000,"rapid":2900},{"year":2020,"total":25400,"rapid":3800},
+    {"year":2021,"total":31000,"rapid":5200},{"year":2022,"total":47000,"rapid":8900},
+    {"year":2023,"total":65000,"rapid":14200}
+  ],
+  "evRegistrations": [
+    {"year":2018,"batteryEV":59911},{"year":2019,"batteryEV":74196},{"year":2020,"batteryEV":108205},
+    {"year":2021,"batteryEV":190727},{"year":2022,"batteryEV":267203},{"year":2023,"batteryEV":314963}
+  ],
+  "ruralUrbanGap": [
+    {"area":"Urban","chargePointsPer100kPop":66},{"area":"Suburban","chargePointsPer100kPop":38},
+    {"area":"Rural","chargePointsPer100kPop":8}
+  ]
+}

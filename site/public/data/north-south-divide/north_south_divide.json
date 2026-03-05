@@ -1,0 +1,19 @@
+{
+  "gvaPerHead": [
+    {"region":"London","gva":56378,"indexUKAvg":181},
+    {"region":"South East","gva":37422,"indexUKAvg":120},
+    {"region":"East","gva":34891,"indexUKAvg":112},
+    {"region":"South West","gva":29847,"indexUKAvg":96},
+    {"region":"East Midlands","gva":27563,"indexUKAvg":89},
+    {"region":"West Midlands","gva":26847,"indexUKAvg":86},
+    {"region":"Yorks & Humber","gva":25392,"indexUKAvg":82},
+    {"region":"North West","gva":26104,"indexUKAvg":84},
+    {"region":"North East","gva":22843,"indexUKAvg":74}
+  ],
+  "gapTimeSeries": [
+    {"year":1997,"londonIndex":151,"neIndex":86},{"year":2000,"londonIndex":158,"neIndex":84},
+    {"year":2005,"londonIndex":162,"neIndex":82},{"year":2010,"londonIndex":167,"neIndex":79},
+    {"year":2015,"londonIndex":172,"neIndex":76},{"year":2019,"londonIndex":179,"neIndex":74},
+    {"year":2022,"londonIndex":181,"neIndex":74}
+  ]
+}

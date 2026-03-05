@@ -1,0 +1,15 @@
+{
+  "formalVolunteering": [
+    {"year":2010,"percent":28},{"year":2013,"percent":27},{"year":2016,"percent":26},
+    {"year":2018,"percent":25},{"year":2020,"percent":23},{"year":2022,"percent":24},
+    {"year":2023,"percent":24}
+  ],
+  "informalHelping": [
+    {"year":2010,"percent":35},{"year":2014,"percent":33},{"year":2018,"percent":31},
+    {"year":2020,"percent":39},{"year":2022,"percent":34},{"year":2023,"percent":33}
+  ],
+  "foodBankVolunteers": [
+    {"year":2015,"volunteers":22000},{"year":2018,"volunteers":28000},
+    {"year":2020,"volunteers":36000},{"year":2022,"volunteers":39000}
+  ]
+}

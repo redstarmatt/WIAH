@@ -1,0 +1,17 @@
+{
+  "year6Obesity": [
+    {"year":2006,"rate":17.3},{"year":2008,"rate":18.2},{"year":2010,"rate":19.1},
+    {"year":2012,"rate":19.2},{"year":2014,"rate":19.5},{"year":2015,"rate":19.8},
+    {"year":2017,"rate":20.1},{"year":2019,"rate":20.2},{"year":2020,"rate":21.0},
+    {"year":2021,"rate":21.9},{"year":2022,"rate":23.4},{"year":2023,"rate":22.7}
+  ],
+  "receptionObesity": [
+    {"year":2006,"rate":9.5},{"year":2010,"rate":9.8},{"year":2014,"rate":9.4},
+    {"year":2017,"rate":9.6},{"year":2019,"rate":9.7},{"year":2020,"rate":9.9},
+    {"year":2021,"rate":9.7},{"year":2022,"rate":9.7},{"year":2023,"rate":9.2}
+  ],
+  "byDeprivation": [
+    {"quintile":"Least deprived","rate":11.2},{"quintile":"2","rate":15.4},
+    {"quintile":"3","rate":19.8},{"quintile":"4","rate":24.1},{"quintile":"Most deprived","rate":35.7}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "shortTermLetCount": [
+    {"year":2015,"listings":70000},{"year":2017,"listings":110000},
+    {"year":2019,"listings":180000},{"year":2021,"listings":235000},
+    {"year":2022,"listings":257000}
+  ],
+  "localImpact": [
+    {"area":"Cornwall","stlAsPercentHousing":36},{"area":"Lake District","stlAsPercentHousing":29},
+    {"area":"Isle of Wight","stlAsPercentHousing":22},{"area":"North Devon","stlAsPercentHousing":24},
+    {"area":"Peak District","stlAsPercentHousing":18}
+  ],
+  "housingAffordabilityCorrelation": [
+    {"year":2015,"cornwallHPE":9.1},{"year":2017,"cornwallHPE":10.3},
+    {"year":2019,"cornwallHPE":11.2},{"year":2021,"cornwallHPE":14.4},
+    {"year":2022,"cornwallHPE":15.1}
+  ]
+}

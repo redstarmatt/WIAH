@@ -1,0 +1,15 @@
+{
+  "medianFullTimePay2023": [
+    {"region":"London","medianPay":46100},{"region":"South East","medianPay":39200},
+    {"region":"East","medianPay":37800},{"region":"South West","medianPay":33400},
+    {"region":"East Midlands","medianPay":32700},{"region":"West Midlands","medianPay":32900},
+    {"region":"North West","medianPay":33100},{"region":"Yorks & Humber","medianPay":31800},
+    {"region":"North East","medianPay":30200},{"region":"Wales","medianPay":30200},
+    {"region":"Scotland","medianPay":34900}
+  ],
+  "gapTimeSeries": [
+    {"year":1997,"londonMinusNE":4200},{"year":2003,"londonMinusNE":7800},
+    {"year":2008,"londonMinusNE":10500},{"year":2013,"londonMinusNE":12400},
+    {"year":2018,"londonMinusNE":14100},{"year":2023,"londonMinusNE":15900}
+  ]
+}

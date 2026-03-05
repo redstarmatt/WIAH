@@ -1,0 +1,17 @@
+{
+  "misconductHearings": [
+    {"year":2016,"hearings":1240,"dismissed":78},{"year":2017,"hearings":1320,"dismissed":84},
+    {"year":2018,"hearings":1410,"dismissed":96},{"year":2019,"hearings":1520,"dismissed":102},
+    {"year":2020,"hearings":1580,"dismissed":110},{"year":2021,"hearings":1640,"dismissed":108},
+    {"year":2022,"hearings":1710,"dismissed":119},{"year":2023,"hearings":1738,"dismissed":122}
+  ],
+  "stopSearchByEthnicity": [
+    {"year":2018,"blackToWhiteRatio":9.7},{"year":2019,"blackToWhiteRatio":9.4},
+    {"year":2020,"blackToWhiteRatio":6.3},{"year":2021,"blackToWhiteRatio":6.7},
+    {"year":2022,"blackToWhiteRatio":5.1},{"year":2023,"blackToWhiteRatio":4.1}
+  ],
+  "ioplcCasesOutstanding": [
+    {"year":2019,"cases":1240},{"year":2020,"cases":1580},{"year":2021,"cases":1890},
+    {"year":2022,"cases":2010},{"year":2023,"cases":2057}
+  ]
+}

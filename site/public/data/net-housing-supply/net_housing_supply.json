@@ -1,0 +1,13 @@
+{
+  "netAdditions": [
+    {"year":2010,"dwellings":124360},{"year":2012,"dwellings":115350},{"year":2014,"dwellings":141980},
+    {"year":2016,"dwellings":189750},{"year":2018,"dwellings":221090},{"year":2019,"dwellings":234820},
+    {"year":2020,"dwellings":243770},{"year":2021,"dwellings":216490},{"year":2022,"dwellings":232820},
+    {"year":2023,"dwellings":234400}
+  ],
+  "targetLine": 300000,
+  "cumulativeShortfall": [
+    {"year":2015,"shortfall":350000},{"year":2018,"shortfall":850000},
+    {"year":2021,"shortfall":1600000},{"year":2023,"shortfall":2100000}
+  ]
+}

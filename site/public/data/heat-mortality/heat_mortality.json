@@ -1,0 +1,17 @@
+{
+  "heatwaveDeaths": [
+    {"year":2003,"excessDeaths":2139},{"year":2006,"excessDeaths":680},
+    {"year":2009,"excessDeaths":622},{"year":2013,"excessDeaths":760},
+    {"year":2018,"excessDeaths":863},{"year":2019,"excessDeaths":892},
+    {"year":2020,"excessDeaths":1062},{"year":2022,"excessDeaths":2985}
+  ],
+  "projectedDeaths": [
+    {"scenario":"Current trajectory (1.5°C)","annualDeathsBy2050":2400},
+    {"scenario":"Moderate warming (2°C)","annualDeathsBy2050":7000},
+    {"scenario":"High warming (3°C+)","annualDeathsBy2050":12000}
+  ],
+  "temperatureRecords": [
+    {"year":2003,"maxTempEngland":38.1},{"year":2019,"maxTempEngland":38.7},
+    {"year":2022,"maxTempEngland":40.3}
+  ]
+}

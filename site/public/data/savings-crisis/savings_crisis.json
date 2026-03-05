@@ -1,0 +1,17 @@
+{
+  "savingsDistribution": [
+    {"year":2020,"percentWithLessThan100":22},{"year":2021,"percentWithLessThan100":20},
+    {"year":2022,"percentWithLessThan100":24},{"year":2023,"percentWithLessThan100":25}
+  ],
+  "medianSavingsByQuintile": [
+    {"quintile":"Bottom 20%","medianSavings":170},{"quintile":"20-40%","medianSavings":1200},
+    {"quintile":"Middle","medianSavings":6000},{"quintile":"60-80%","medianSavings":18000},
+    {"quintile":"Top 20%","medianSavings":89000}
+  ],
+  "savingsRateTimeSeries": [
+    {"year":2010,"householdSavingsRate":9.1},{"year":2012,"householdSavingsRate":8.3},
+    {"year":2015,"householdSavingsRate":6.7},{"year":2018,"householdSavingsRate":4.8},
+    {"year":2020,"householdSavingsRate":16.3},{"year":2021,"householdSavingsRate":7.0},
+    {"year":2022,"householdSavingsRate":4.2},{"year":2023,"householdSavingsRate":5.9}
+  ]
+}

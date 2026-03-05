@@ -1,0 +1,19 @@
+{
+  "recyclingRate": [
+    {"year":2010,"percent":40.4},{"year":2012,"percent":43.0},{"year":2014,"percent":44.8},
+    {"year":2016,"percent":45.7},{"year":2018,"percent":44.7},{"year":2020,"percent":44.0},
+    {"year":2022,"percent":43.5}
+  ],
+  "wasteByDestination": [
+    {"year":2010,"landfill":38,"recycling":40,"recovery":22},
+    {"year":2014,"landfill":23,"recycling":45,"recovery":32},
+    {"year":2018,"landfill":8,"recycling":45,"recovery":47},
+    {"year":2022,"landfill":6,"recycling":44,"recovery":50}
+  ],
+  "euComparison2021": [
+    {"country":"Germany","rate":66.7},{"country":"Austria","rate":57.7},
+    {"country":"Belgium","rate":54.0},{"country":"Netherlands","rate":53.4},
+    {"country":"UK","rate":44.0},{"country":"France","rate":45.6},
+    {"country":"EU average","rate":48.0}
+  ]
+}

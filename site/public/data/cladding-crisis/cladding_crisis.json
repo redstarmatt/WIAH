@@ -1,0 +1,18 @@
+{
+  "remediationProgress": [
+    {"year":2021,"identified":4603,"fullyRemediated":394,"percent":8.6},
+    {"year":2022,"identified":4603,"fullyRemediated":742,"percent":16.1},
+    {"year":2023,"identified":4603,"fullyRemediated":1013,"percent":22.0},
+    {"year":2024,"identified":4603,"fullyRemediated":1380,"percent":30.0}
+  ],
+  "buildingsByType": [
+    {"type":"Private residential 11–18m","count":1831},{"type":"Private residential 18m+","count":1204},
+    {"type":"Social housing","count":971},{"type":"Other residential","count":597}
+  ],
+  "wrapRoundCostEstimate": [
+    {"category":"Total estimated cost (£bn)","value":17.6},
+    {"category":"Developer funded (£bn)","value":5.1},
+    {"category":"Gov. Building Safety Fund (£bn)","value":5.1},
+    {"category":"Unresolved/leaseholder at risk (£bn)","value":7.4}
+  ]
+}

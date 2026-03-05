@@ -1,0 +1,13 @@
+{
+  "prevalence": [
+    {"year":2000,"millionPeople":8.2},{"year":2005,"millionPeople":9.4},{"year":2010,"millionPeople":11.2},
+    {"year":2015,"millionPeople":13.1},{"year":2018,"millionPeople":14.3},{"year":2021,"millionPeople":15.4},
+    {"year":2025,"millionPeople":16.2,"projected":true},{"year":2030,"millionPeople":17.2,"projected":true},
+    {"year":2035,"millionPeople":17.9,"projected":true}
+  ],
+  "topConditions": [
+    {"condition":"Hypertension","millions":12.4},{"condition":"Depression","millions":8.1},
+    {"condition":"Diabetes","millions":4.4},{"condition":"Asthma","millions":5.4},
+    {"condition":"COPD","millions":1.2},{"condition":"Heart failure","millions":0.9}
+  ]
+}

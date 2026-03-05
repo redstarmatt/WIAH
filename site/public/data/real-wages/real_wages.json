@@ -1,0 +1,15 @@
+{
+  "realWageIndex": [
+    {"year":2007,"index":100},{"year":2008,"index":99.2},{"year":2009,"index":96.8},
+    {"year":2010,"index":96.1},{"year":2011,"index":93.4},{"year":2012,"index":91.7},
+    {"year":2013,"index":91.2},{"year":2014,"index":91.8},{"year":2015,"index":93.4},
+    {"year":2016,"index":94.6},{"year":2017,"index":94.1},{"year":2018,"index":95.2},
+    {"year":2019,"index":97.4},{"year":2020,"index":98.1},{"year":2021,"index":98.9},
+    {"year":2022,"index":96.3},{"year":2023,"index":97.4},{"year":2024,"index":99.1}
+  ],
+  "byDecile": [
+    {"decile":"Bottom 10%","growth2008_2024":3.2},{"decile":"Bottom 20%","growth2008_2024":5.1},
+    {"decile":"Median","growth2008_2024":-0.9},{"decile":"Top 20%","growth2008_2024":4.8},
+    {"decile":"Top 10%","growth2008_2024":7.2}
+  ]
+}

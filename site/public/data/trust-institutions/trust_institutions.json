@@ -1,0 +1,18 @@
+{
+  "veracityIndex2023": [
+    {"profession":"Nurses","trustPercent":94},{"profession":"Doctors","trustPercent":91},
+    {"profession":"Scientists","trustPercent":87},{"profession":"Teachers","trustPercent":85},
+    {"profession":"Judges","trustPercent":72},{"profession":"Police","trustPercent":61},
+    {"profession":"Civil servants","trustPercent":50},{"profession":"Business leaders","trustPercent":35},
+    {"profession":"Journalists","trustPercent":26},{"profession":"Politicians","trustPercent":12}
+  ],
+  "nhsTrustTimeSeries": [
+    {"year":2010,"trustPercent":72},{"year":2013,"trustPercent":70},{"year":2016,"trustPercent":66},
+    {"year":2018,"trustPercent":62},{"year":2020,"trustPercent":68},{"year":2021,"trustPercent":71},
+    {"year":2022,"trustPercent":54},{"year":2023,"trustPercent":51}
+  ],
+  "parliamentTrust": [
+    {"year":2010,"trustPercent":21},{"year":2013,"trustPercent":18},{"year":2016,"trustPercent":20},
+    {"year":2019,"trustPercent":17},{"year":2021,"trustPercent":19},{"year":2023,"trustPercent":15}
+  ]
+}

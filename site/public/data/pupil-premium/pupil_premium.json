@@ -1,0 +1,15 @@
+{
+  "attainmentGap": [
+    {"year":2011,"gapGrades":19.4},{"year":2013,"gapGrades":18.7},{"year":2015,"gapGrades":17.9},
+    {"year":2017,"gapGrades":17.2},{"year":2019,"gapGrades":17.1},{"year":2021,"gapGrades":null},
+    {"year":2022,"gapGrades":18.4},{"year":2023,"gapGrades":18.0}
+  ],
+  "pupilPremiumSpend": [
+    {"year":2012,"totalBn":0.6},{"year":2015,"totalBn":2.3},{"year":2018,"totalBn":2.5},
+    {"year":2021,"totalBn":2.6},{"year":2023,"totalBn":2.7},{"year":2024,"totalBn":2.9}
+  ],
+  "perPupilAmount": [
+    {"year":2011,"amount":488},{"year":2014,"amount":935},{"year":2018,"amount":1320},
+    {"year":2022,"amount":1385},{"year":2024,"amount":1480}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "employmentOutcomes": [
+    {"year":2018,"professionalManagerial":72.1},{"year":2019,"professionalManagerial":74.3},
+    {"year":2020,"professionalManagerial":73.8},{"year":2021,"professionalManagerial":75.2},
+    {"year":2022,"professionalManagerial":76.9}
+  ],
+  "salaryBySubject": [
+    {"subject":"Medicine","medianSalary5yr":55000},{"subject":"Economics","medianSalary5yr":42000},
+    {"subject":"Engineering","medianSalary5yr":38000},{"subject":"Law","medianSalary5yr":36000},
+    {"subject":"Nursing","medianSalary5yr":34000},{"subject":"Business","medianSalary5yr":32000},
+    {"subject":"History","medianSalary5yr":29000},{"subject":"Arts","medianSalary5yr":27000},
+    {"subject":"Performing Arts","medianSalary5yr":24000}
+  ],
+  "degreePremium": [
+    {"year":2005,"lifetimePremium":130000},{"year":2010,"lifetimePremium":135000},
+    {"year":2015,"lifetimePremium":140000},{"year":2020,"lifetimePremium":140000},
+    {"year":2023,"lifetimePremium":140000}
+  ]
+}

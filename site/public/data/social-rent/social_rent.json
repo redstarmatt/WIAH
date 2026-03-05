@@ -1,0 +1,17 @@
+{
+  "newSocialRentBuilt": [
+    {"year":1975,"homes":152000},{"year":1980,"homes":88000},{"year":1985,"homes":28000},
+    {"year":1990,"homes":17000},{"year":1995,"homes":14000},{"year":2000,"homes":9800},
+    {"year":2005,"homes":7600},{"year":2010,"homes":8200},{"year":2015,"homes":7400},
+    {"year":2019,"homes":5900},{"year":2021,"homes":6400},{"year":2022,"homes":6400}
+  ],
+  "rentLevels2023": [
+    {"type":"Social rent average","weeklyRent":100},{"type":"Affordable rent average","weeklyRent":155},
+    {"type":"Private market average","weeklyRent":230}
+  ],
+  "waitingList": [
+    {"year":2012,"households":1850000},{"year":2015,"households":1260000},
+    {"year":2018,"households":1151000},{"year":2020,"households":1162000},
+    {"year":2022,"households":1208000}
+  ]
+}

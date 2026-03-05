@@ -1,0 +1,18 @@
+{
+  "nationalTimeSeries": [
+    {"year":2010,"ratePercent":27},{"year":2012,"ratePercent":27},{"year":2014,"ratePercent":28},
+    {"year":2016,"ratePercent":28},{"year":2018,"ratePercent":29},{"year":2020,"ratePercent":28},
+    {"year":2022,"ratePercent":29},{"year":2023,"ratePercent":30}
+  ],
+  "byRegion2023": [
+    {"region":"Inner London","ratePercent":37},{"region":"Yorkshire & Humber","ratePercent":31},
+    {"region":"West Midlands","ratePercent":32},{"region":"North East","ratePercent":33},
+    {"region":"North West","ratePercent":31},{"region":"East Midlands","ratePercent":28},
+    {"region":"South West","ratePercent":22},{"region":"South East","ratePercent":20},
+    {"region":"East of England","ratePercent":21}
+  ],
+  "inWorkingFamilies": [
+    {"year":2010,"percent":57},{"year":2013,"percent":61},{"year":2016,"percent":64},
+    {"year":2019,"percent":66},{"year":2022,"percent":67},{"year":2023,"percent":67}
+  ]
+}

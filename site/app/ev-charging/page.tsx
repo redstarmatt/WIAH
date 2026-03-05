@@ -1,0 +1,240 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
+
+// ── Types ────────────────────────────────────────────────────────────────────
+
+interface ChargePointPoint {
+  year: number;
+  total: number;
+  rapid: number;
+}
+
+interface EvRegistrationPoint {
+  year: number;
+  batteryEV: number;
+}
+
+interface RuralUrbanPoint {
+  area: string;
+  chargePointsPer100kPop: number;
+}
+
+interface EvChargingData {
+  chargePoints: ChargePointPoint[];
+  evRegistrations: EvRegistrationPoint[];
+  ruralUrbanGap: RuralUrbanPoint[];
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+
+function yearToDate(y: number): Date {
+  return new Date(y, 5, 1);
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
+
+export default function EvChargingPage() {
+  const [data, setData] = useState<EvChargingData | null>(null);
+
+  useEffect(() => {
+    fetch('/data/ev-charging/ev_charging.json')
+      .then(r => r.json())
+      .then(setData)
+      .catch(console.error);
+  }, []);
+
+  const chargePointSeries: Series[] = data
+    ? [{
+        id: 'total-charge-points',
+        label: 'Total public charge points',
+        colour: '#2A9D8F',
+        data: data.chargePoints.map(d => ({
+          date: yearToDate(d.year),
+          value: d.total,
+        })),
+      }, {
+        id: 'rapid-charge-points',
+        label: 'Rapid charge points',
+        colour: '#264653',
+        data: data.chargePoints.map(d => ({
+          date: yearToDate(d.year),
+          value: d.rapid,
+        })),
+      }]
+    : [];
+
+  const latest = data?.chargePoints[data.chargePoints.length - 1];
+  const earliest = data?.chargePoints[0];
+  const latestEv = data?.evRegistrations[data.evRegistrations.length - 1];
+  const urbanArea = data?.ruralUrbanGap.find(a => a.area === 'Urban');
+  const ruralArea = data?.ruralUrbanGap.find(a => a.area === 'Rural');
+
+  const gapMultiple = urbanArea && ruralArea
+    ? Math.round(urbanArea.chargePointsPer100kPop / ruralArea.chargePointsPer100kPop)
+    : 8;
+
+  return (
+    <>
+      <TopicNav topic="Infrastructure & Services" />
+
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="EV Charging Infrastructure"
+          question="Is the charging network keeping up with electric vehicles?"
+          finding="The UK now has 65,000 public charge points — growing fast. But EV registrations are outpacing infrastructure: there is 1 rapid charger for every 22 EVs, against a government target of 1:10. Rural areas have 8x fewer charge points per capita than cities."
+          colour="#2A9D8F"
+        />
+
+        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The UK public EV charging network has grown from 8,400 devices in 2017 to 65,000 in early 2024 — an 8-fold increase in seven years. This is a genuine infrastructure achievement, and the pace of installation is accelerating: 2022 and 2023 saw the largest year-on-year increases in the programme's history. On this measure, the UK compares favourably with most EU nations in charge point density relative to its current EV fleet. But the picture is complicated by where those charge points are, how reliable they are, and how fast the fleet they need to serve is growing.</p>
+            <p>The EV fleet is growing faster than the charging infrastructure. In 2023, over 314,000 pure battery-electric vehicles were registered in the UK, bringing the total fleet to over 1 million. The ratio of rapid chargers to EVs — the metric that most matters for drivers who don't have home charging — has fallen from around 1:6 in 2017 to approximately 1:22 in 2023. The government's target is 1:10. The direction of travel is moving away from the target, not towards it. Unless rapid charger installation accelerates substantially, the ratio will worsen as EV adoption increases.</p>
+            <p>The rural charging gap is the most serious distributional concern. Urban areas have approximately 66 public charge points per 100,000 people; rural areas have 8. This is not merely an inconvenience; for households without off-street parking and without access to a workplace charger — which describes a large majority of rural households — it represents a genuine barrier to EV adoption. The consequence is that the transition to electric vehicles risks reproducing the inequalities of the current transport system: those with large houses, driveways, and money for home chargers transition easily; those without are left dependent on patchy public infrastructure.</p>
+            <p>Reliability is an under-reported dimension of the charging challenge. The Zap-Map fault reporting data consistently shows that a significant proportion of public charge points are out of service at any given time, with the situation particularly acute at motorway service areas and destinations rather than home or workplace charging. A driver who plans a journey relying on a specific charge point has no guarantee it will be working. Unlike petrol stations, where a non-functioning pump is visible and drivers can move to the next, a broken EV charger may not announce its fault status until the driver has already waited in a queue. Reliability standards, not just installation numbers, are the metric that will determine public confidence.</p>
+            <p>The government's target of 300,000 public charge points by 2030 would require installations to roughly quadruple in five years — plausible but demanding. The grid capacity questions are different: connecting large numbers of high-power chargers to the distribution grid requires network upgrades that take years to plan and deliver. Distribution network operators are working on this, but the scale of the challenge is substantial. The EV transition is a success story so far, but the harder work — reaching rural areas, improving reliability, managing grid demand — lies ahead.</p>
+          </div>
+        </section>
+
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-growth', label: 'Network growth' },
+          { id: 'sec-rural-urban', label: 'Rural vs urban' },
+        ]} />
+
+        {/* Metric cards */}
+        <ScrollReveal>
+          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            <MetricCard
+              label="Public charge points installed"
+              value={latest ? latest.total.toLocaleString() : '65,000'}
+              unit=""
+              direction="up"
+              polarity="up-is-good"
+              changeText={earliest ? `Up from ${earliest.total.toLocaleString()} in ${earliest.year} · growing at 35%/year` : 'Up from 8,400 in 2017 · growing at 35%/year'}
+              sparklineData={[8400, 13700, 20000, 25400, 31000, 47000, 65000]}
+              source="OZEV / Zap-Map · Jan 2024"
+              onExpand={() => {}}
+            />
+            <MetricCard
+              label="Rapid chargers per 10 EVs on road"
+              value="0.45"
+              unit=""
+              direction="down"
+              polarity="up-is-good"
+              changeText="Government target is 1.0 · falling behind as EV fleet grows faster"
+              sparklineData={[1.8, 1.5, 1.2, 0.9, 0.7, 0.5, 0.45]}
+              source="OZEV · 2023"
+              onExpand={() => {}}
+            />
+            <MetricCard
+              label="Rural vs urban charge point gap"
+              value={gapMultiple.toString()}
+              unit="×"
+              direction="up"
+              polarity="up-is-bad"
+              changeText={`Urban ${urbanArea?.chargePointsPer100kPop ?? 66} per 100k pop vs rural ${ruralArea?.chargePointsPer100kPop ?? 8} · 'charging deserts'`}
+              sparklineData={[4, 5, 5, 6, 7, 8]}
+              source="RAC Foundation · 2023"
+              onExpand={() => {}}
+            />
+          </div>
+        </ScrollReveal>
+
+        {/* Positive callout */}
+        <ScrollReveal>
+          <PositiveCallout
+            title="65,000 public charge points installed"
+            value="65k"
+            unit=""
+            description="Public charge point coverage has grown nearly 8-fold since 2017. The UK has more public charging infrastructure per EV than most EU nations. Rapid charger installation accelerated significantly in 2022 and 2023, with the government's 300,000 by 2030 target still plausibly achievable if the current pace is maintained."
+            source="Source: OZEV / Zap-Map, January 2024."
+          />
+        </ScrollReveal>
+
+        {/* Chart: charge points growth */}
+        <ScrollReveal>
+          <div id="sec-growth" className="mb-12 mt-8">
+            <LineChart
+              series={chargePointSeries}
+              title="UK public EV charge points, 2017–2023"
+              subtitle="Total devices and rapid chargers (50kW+). Both growing rapidly, but lagging EV registrations."
+              yLabel="Number of charge points"
+              source={{
+                name: 'OZEV / Zap-Map',
+                dataset: 'National EV Charging Infrastructure Statistics',
+                frequency: 'quarterly',
+              }}
+            />
+          </div>
+        </ScrollReveal>
+
+        {/* Rural/urban gap */}
+        <ScrollReveal>
+          <div id="sec-rural-urban" className="mb-12">
+            <div className="bg-white rounded-lg border border-wiah-border p-8">
+              <h2 className="text-lg font-bold text-wiah-black mb-1">
+                Public charge points per 100,000 people: urban vs rural, 2023
+              </h2>
+              <p className="text-sm text-wiah-mid mb-6">Rural areas have 8x fewer charge points per capita — a major barrier to EV adoption for households without off-street parking.</p>
+              <div className="mt-4 space-y-4">
+                {data?.ruralUrbanGap.map((a) => {
+                  const pct = (a.chargePointsPer100kPop / 75) * 100;
+                  const colour = a.area === 'Urban' ? '#2A9D8F' : a.area === 'Suburban' ? '#F4A261' : '#E63946';
+                  return (
+                    <div key={a.area}>
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm font-medium text-wiah-black">{a.area}</span>
+                        <span className="font-mono text-sm font-bold" style={{ color: colour }}>
+                          {a.chargePointsPer100kPop} per 100k
+                        </span>
+                      </div>
+                      <div className="h-6 bg-wiah-light rounded-sm overflow-hidden">
+                        <div
+                          className="h-full rounded-sm transition-all"
+                          style={{ width: `${pct}%`, backgroundColor: colour }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="font-mono text-xs text-wiah-mid mt-4">Source: RAC Foundation — EV Infrastructure Coverage Report · 2023</p>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Sources */}
+        <ScrollReveal>
+          <div className="border-t border-wiah-border pt-8 mt-8">
+            <h2 className="text-base font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+            <ul className="space-y-2 font-mono text-xs text-wiah-mid">
+              <li>
+                <a href="https://www.gov.uk/government/collections/electric-vehicle-charging-infrastructure-statistics" className="underline hover:text-wiah-black" target="_blank" rel="noopener noreferrer">
+                  OZEV National EV Charging Infrastructure Statistics
+                </a>
+                {' '}— total and rapid public charge points installed, quarterly
+              </li>
+              <li>
+                <a href="https://www.zap-map.com/ev-stats/how-many-charging-points/" className="underline hover:text-wiah-black" target="_blank" rel="noopener noreferrer">
+                  Zap-Map EV Charging Statistics
+                </a>
+                {' '}— network growth and reliability data
+              </li>
+              <li>
+                RAC Foundation — EV Infrastructure Coverage Report · geographic coverage analysis by area type
+              </li>
+            </ul>
+          </div>
+        </ScrollReveal>
+      </main>
+    </>
+  );
+}

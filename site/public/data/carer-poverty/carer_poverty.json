@@ -1,0 +1,14 @@
+{
+  "carersAllowanceTimeSeries": [
+    {"year":2010,"weeklyRate":53.90},{"year":2013,"weeklyRate":59.75},{"year":2016,"weeklyRate":62.70},
+    {"year":2019,"weeklyRate":66.15},{"year":2021,"weeklyRate":67.60},{"year":2023,"weeklyRate":76.75}
+  ],
+  "unpaidCarerNumbers": [
+    {"year":2001,"millions":6.0},{"year":2011,"millions":6.5},{"year":2021,"millions":5.0},
+    {"year":2023,"millions":6.5}
+  ],
+  "carerFinancialImpact": [
+    {"metric":"Carers in poverty","percent":35},{"metric":"Reduced hours or quit work","percent":55},
+    {"metric":"Have had to draw on savings","percent":62},{"metric":"In debt due to caring role","percent":36}
+  ]
+}

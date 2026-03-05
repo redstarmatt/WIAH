@@ -1,0 +1,13 @@
+{
+  "placeOfDeath": [
+    {"year":2010,"hospital":53.0,"home":21.3,"careHome":20.5,"hospice":5.2},
+    {"year":2013,"hospital":51.2,"home":22.7,"careHome":21.3,"hospice":4.8},
+    {"year":2016,"hospital":48.0,"home":24.0,"careHome":22.4,"hospice":5.6},
+    {"year":2019,"hospital":46.3,"home":26.9,"careHome":21.3,"hospice":5.5},
+    {"year":2022,"hospital":45.8,"home":28.1,"careHome":21.0,"hospice":5.1}
+  ],
+  "hospiceFunding": [
+    {"year":2018,"nhsPercent":32},{"year":2019,"nhsPercent":33},
+    {"year":2020,"nhsPercent":30},{"year":2021,"nhsPercent":34},{"year":2023,"nhsPercent":34}
+  ]
+}

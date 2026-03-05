@@ -1,0 +1,16 @@
+{
+  "stillbirthRate": [
+    {"year":2010,"ratePer1000":5.1},{"year":2012,"ratePer1000":4.9},{"year":2014,"ratePer1000":4.7},
+    {"year":2016,"ratePer1000":4.4},{"year":2018,"ratePer1000":4.2},{"year":2019,"ratePer1000":4.0},
+    {"year":2020,"ratePer1000":3.8},{"year":2021,"ratePer1000":3.7},{"year":2022,"ratePer1000":3.53}
+  ],
+  "maternalMortality": [
+    {"period":"2009-11","ratePer100k":10.1},{"period":"2012-14","ratePer100k":9.6},
+    {"period":"2015-17","ratePer100k":9.7},{"period":"2018-20","ratePer100k":8.79},
+    {"period":"2019-21","ratePer100k":9.7}
+  ],
+  "ethnicDisparities": [
+    {"group":"White","riskRatio":1.0},{"group":"Asian","riskRatio":1.8},
+    {"group":"Mixed","riskRatio":2.5},{"group":"Black","riskRatio":3.7}
+  ]
+}

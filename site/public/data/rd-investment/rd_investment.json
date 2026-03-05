@@ -1,0 +1,13 @@
+{
+  "ukRdGdp": [
+    {"year":2010,"percentGDP":1.62},{"year":2012,"percentGDP":1.61},{"year":2014,"percentGDP":1.67},
+    {"year":2016,"percentGDP":1.67},{"year":2018,"percentGDP":1.71},{"year":2020,"percentGDP":1.73},
+    {"year":2021,"percentGDP":1.73}
+  ],
+  "internationalComparison2021": [
+    {"country":"South Korea","percentGDP":4.93},{"country":"Japan","percentGDP":3.27},
+    {"country":"Germany","percentGDP":3.14},{"country":"USA","percentGDP":3.46},
+    {"country":"France","percentGDP":2.21},{"country":"UK","percentGDP":1.73},
+    {"country":"Italy","percentGDP":1.51},{"country":"Canada","percentGDP":1.72}
+  ]
+}

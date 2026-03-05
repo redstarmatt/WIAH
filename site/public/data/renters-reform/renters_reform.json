@@ -1,0 +1,16 @@
+{
+  "section21Notices": [
+    {"year":2016,"notices":20400},{"year":2017,"notices":22100},{"year":2018,"notices":23700},
+    {"year":2019,"notices":24100},{"year":2020,"notices":7400},{"year":2021,"notices":13200},
+    {"year":2022,"notices":24700},{"year":2023,"notices":26000}
+  ],
+  "homelessnessViaSect21": [
+    {"year":2018,"households":20000},{"year":2019,"households":21000},
+    {"year":2021,"households":16000},{"year":2022,"households":21000},{"year":2023,"households":22000}
+  ],
+  "rentIncreases": [
+    {"year":2019,"avgIncreasePercent":2.1},{"year":2020,"avgIncreasePercent":1.4},
+    {"year":2021,"avgIncreasePercent":2.3},{"year":2022,"avgIncreasePercent":4.1},
+    {"year":2023,"avgIncreasePercent":8.9}
+  ]
+}

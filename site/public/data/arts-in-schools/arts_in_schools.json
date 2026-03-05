@@ -1,0 +1,16 @@
+{
+  "gcseEntries": [
+    {"year":2010,"artDesign":191500,"music":65200,"drama":82300,"dance":26400},
+    {"year":2013,"artDesign":177300,"music":57800,"drama":73400,"dance":22100},
+    {"year":2016,"artDesign":155600,"music":47900,"drama":67200,"dance":18700},
+    {"year":2019,"artDesign":133200,"music":42700,"drama":59800,"dance":16300},
+    {"year":2022,"artDesign":117800,"music":40100,"drama":55200,"dance":14900},
+    {"year":2023,"artDesign":113200,"music":38700,"drama":54100,"dance":14800}
+  ],
+  "artsTeacherNumbers": [
+    {"year":2010,"artTeachers":15800,"musicTeachers":9400},
+    {"year":2014,"artTeachers":14700,"musicTeachers":8600},
+    {"year":2018,"artTeachers":13200,"musicTeachers":7800},
+    {"year":2022,"artTeachers":11900,"musicTeachers":7100}
+  ]
+}

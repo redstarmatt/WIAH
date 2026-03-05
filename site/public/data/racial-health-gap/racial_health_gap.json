@@ -1,0 +1,16 @@
+{
+  "maternalMortalityRatio": [
+    {"group":"White","riskRatio":1.0},{"group":"Mixed","riskRatio":1.4},
+    {"group":"Asian","riskRatio":1.8},{"group":"Black","riskRatio":3.7}
+  ],
+  "diabetesRisk": [
+    {"group":"White","riskMultiplier":1.0},{"group":"Black Caribbean","riskMultiplier":2.1},
+    {"group":"Pakistani","riskMultiplier":3.5},{"group":"Bangladeshi","riskMultiplier":3.8}
+  ],
+  "mentalHealthActDetentions": [
+    {"year":2016,"blackRatePerMillion":300,"whiteRatePerMillion":75},
+    {"year":2018,"blackRatePerMillion":318,"whiteRatePerMillion":79},
+    {"year":2020,"blackRatePerMillion":335,"whiteRatePerMillion":83},
+    {"year":2022,"blackRatePerMillion":347,"whiteRatePerMillion":87}
+  ]
+}

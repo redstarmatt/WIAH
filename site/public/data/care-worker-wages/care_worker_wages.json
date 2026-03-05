@@ -1,0 +1,14 @@
+{
+  "medianHourlyPay": [
+    {"year":2015,"pay":7.42},{"year":2017,"pay":7.91},{"year":2019,"pay":9.12},
+    {"year":2021,"pay":9.50},{"year":2022,"pay":10.08},{"year":2023,"pay":10.66}
+  ],
+  "vacancyRate": [
+    {"year":2019,"percent":6.3},{"year":2020,"percent":6.4},{"year":2021,"percent":9.5},
+    {"year":2022,"percent":10.6},{"year":2023,"percent":9.9}
+  ],
+  "turnoverRate": [
+    {"year":2019,"percent":30.8},{"year":2020,"percent":28.5},{"year":2021,"percent":29.1},
+    {"year":2022,"percent":28.9},{"year":2023,"percent":28.3}
+  ]
+}

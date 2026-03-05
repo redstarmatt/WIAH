@@ -1,0 +1,14 @@
+{
+  "practiceCount": [
+    {"year":2013,"practices":8221},{"year":2015,"practices":7989},{"year":2017,"practices":7672},
+    {"year":2019,"practices":7394},{"year":2021,"practices":7128},{"year":2023,"practices":6581}
+  ],
+  "patientsPerPractice": [
+    {"year":2013,"patients":6900},{"year":2015,"patients":7200},{"year":2017,"patients":7600},
+    {"year":2019,"patients":8100},{"year":2021,"patients":8700},{"year":2023,"patients":9600}
+  ],
+  "closuresByYear": [
+    {"year":2014,"closures":145},{"year":2016,"closures":189},{"year":2018,"closures":201},
+    {"year":2020,"closures":178},{"year":2022,"closures":234},{"year":2023,"closures":268}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "sssiFavourableCondition": [
+    {"year":2003,"percent":58.2},{"year":2006,"percent":52.4},{"year":2009,"percent":51.1},
+    {"year":2012,"percent":52.6},{"year":2015,"percent":53.0},{"year":2018,"percent":53.2},
+    {"year":2021,"percent":53.4},{"year":2023,"percent":53.6}
+  ],
+  "habitatTimeSeries": [
+    {"type":"Ancient woodland (ha)","current":643000,"historical":2500000},
+    {"type":"Lowland meadows (ha)","current":15000,"historical":3700000},
+    {"type":"Hedgerows (000km)","current":390,"historical":800}
+  ],
+  "priorityHabitatCondition": [
+    {"habitat":"Blanket bog","percentFavourable":30},{"habitat":"Lowland heathland","percentFavourable":49},
+    {"habitat":"Lowland meadow","percentFavourable":4},{"habitat":"Upland heath","percentFavourable":48},
+    {"habitat":"Coastal saltmarsh","percentFavourable":51}
+  ]
+}

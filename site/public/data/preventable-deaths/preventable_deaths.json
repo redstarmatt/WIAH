@@ -1,0 +1,14 @@
+{
+  "avoidableMortality": [
+    {"year":2010,"ratePer100k":293},{"year":2012,"ratePer100k":275},{"year":2014,"ratePer100k":258},
+    {"year":2016,"ratePer100k":242},{"year":2018,"ratePer100k":231},{"year":2020,"ratePer100k":243},
+    {"year":2021,"ratePer100k":218}
+  ],
+  "byRegion": [
+    {"region":"London","ratePer100k":166},{"region":"South East","ratePer100k":174},
+    {"region":"East","ratePer100k":183},{"region":"South West","ratePer100k":187},
+    {"region":"East Midlands","ratePer100k":221},{"region":"West Midlands","ratePer100k":229},
+    {"region":"Yorks & Humber","ratePer100k":238},{"region":"North West","ratePer100k":252},
+    {"region":"North East","ratePer100k":276}
+  ]
+}

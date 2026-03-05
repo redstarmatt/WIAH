@@ -1,0 +1,20 @@
+{
+  "bpsPayments": [
+    {"year":2014,"totalBn":2.4},{"year":2016,"totalBn":1.9},{"year":2018,"totalBn":1.8},
+    {"year":2020,"totalBn":1.9},{"year":2022,"totalBn":1.5},{"year":2024,"totalBn":0.8}
+  ],
+  "elmsUptake": [
+    {"year":2022,"percent":0.5},{"year":2023,"percent":2.0},{"year":2024,"percent":8.0}
+  ],
+  "farmIncomeRealTerms": [
+    {"year":2010,"index":100},{"year":2013,"index":92},{"year":2016,"index":81},
+    {"year":2018,"index":86},{"year":2020,"index":89},{"year":2022,"index":79},
+    {"year":2023,"index":71}
+  ],
+  "bpsDistribution": [
+    {"band":"Under £10k","percentFarms":41,"percentValue":8},
+    {"band":"£10k–£50k","percentFarms":45,"percentValue":44},
+    {"band":"£50k–£150k","percentFarms":12,"percentValue":32},
+    {"band":"Over £150k","percentFarms":2,"percentValue":16}
+  ]
+}

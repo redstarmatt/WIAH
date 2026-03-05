@@ -1,0 +1,14 @@
+{
+  "ehcpCount": [
+    {"year":2014,"thousands":237},{"year":2016,"thousands":267},{"year":2018,"thousands":316},
+    {"year":2020,"thousands":390},{"year":2022,"thousands":489},{"year":2023,"thousands":576}
+  ],
+  "waitTimesWeeks": [
+    {"year":2018,"avgWeeks":23},{"year":2019,"avgWeeks":24},{"year":2020,"avgWeeks":25},
+    {"year":2021,"avgWeeks":26},{"year":2022,"avgWeeks":27},{"year":2023,"avgWeeks":28}
+  ],
+  "tribunalOutcomes": [
+    {"year":2018,"parentsWin":73},{"year":2019,"parentsWin":79},{"year":2020,"parentsWin":80},
+    {"year":2021,"parentsWin":84},{"year":2022,"parentsWin":88},{"year":2023,"parentsWin":88}
+  ]
+}

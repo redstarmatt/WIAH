@@ -1,0 +1,19 @@
+{
+  "riverEcologicalStatus": [
+    {"year":2009,"goodOrAbove":25.5},{"year":2013,"goodOrAbove":17.3},
+    {"year":2016,"goodOrAbove":15.7},{"year":2019,"goodOrAbove":14.1},
+    {"year":2022,"goodOrAbove":14.0}
+  ],
+  "bathingWaterQuality": [
+    {"year":2018,"excellent":39,"good":24,"sufficient":14,"poor":23},
+    {"year":2019,"excellent":40,"good":25,"sufficient":13,"poor":22},
+    {"year":2020,"excellent":37,"good":26,"sufficient":15,"poor":22},
+    {"year":2021,"excellent":41,"good":24,"sufficient":14,"poor":21},
+    {"year":2022,"excellent":38,"good":25,"sufficient":15,"poor":22},
+    {"year":2023,"excellent":35,"good":24,"sufficient":17,"poor":24}
+  ],
+  "designatedSites": [
+    {"year":2015,"riverSites":8},{"year":2018,"riverSites":15},
+    {"year":2021,"riverSites":42},{"year":2023,"riverSites":70}
+  ]
+}

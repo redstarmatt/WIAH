@@ -1,0 +1,18 @@
+{
+  "averageWeeklyFee": [
+    {"year":2015,"residential":635,"nursing":815},{"year":2017,"residential":680,"nursing":860},
+    {"year":2019,"residential":750,"nursing":940},{"year":2021,"residential":850,"nursing":1060},
+    {"year":2022,"residential":980,"nursing":1120},{"year":2023,"residential":1100,"nursing":1300}
+  ],
+  "selfFunderVsCouncilRate": [
+    {"year":2018,"selfFunderWeekly":900,"councilWeekly":640},
+    {"year":2019,"selfFunderWeekly":980,"councilWeekly":670},
+    {"year":2021,"selfFunderWeekly":1050,"councilWeekly":720},
+    {"year":2023,"selfFunderWeekly":1240,"councilWeekly":880}
+  ],
+  "capacityTrend": [
+    {"year":2012,"bedsThousands":452},{"year":2015,"bedsThousands":446},
+    {"year":2018,"bedsThousands":437},{"year":2021,"bedsThousands":418},
+    {"year":2023,"bedsThousands":412}
+  ]
+}

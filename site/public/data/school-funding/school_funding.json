@@ -1,0 +1,15 @@
+{
+  "perPupilFunding": [
+    {"year":2009,"realTerms":6500},{"year":2011,"realTerms":6200},{"year":2013,"realTerms":5900},
+    {"year":2015,"realTerms":5700},{"year":2017,"realTerms":5600},{"year":2019,"realTerms":5800},
+    {"year":2021,"realTerms":6100},{"year":2023,"realTerms":5915}
+  ],
+  "sendFundingDeficit": [
+    {"year":2018,"deficitBn":0.3},{"year":2019,"deficitBn":0.6},{"year":2020,"deficitBn":0.9},
+    {"year":2021,"deficitBn":1.3},{"year":2022,"deficitBn":1.7},{"year":2023,"deficitBn":2.1}
+  ],
+  "sixthFormFundingIndex": [
+    {"year":2010,"index":100},{"year":2013,"index":94},{"year":2016,"index":88},
+    {"year":2019,"index":84},{"year":2022,"index":80}
+  ]
+}

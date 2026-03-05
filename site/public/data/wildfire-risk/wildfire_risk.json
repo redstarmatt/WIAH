@@ -1,0 +1,16 @@
+{
+  "areasBurned": [
+    {"year":2010,"hectares":1800},{"year":2013,"hectares":2100},{"year":2016,"hectares":3200},
+    {"year":2018,"hectares":4100},{"year":2019,"hectares":5200},{"year":2020,"hectares":3800},
+    {"year":2022,"hectares":26000},{"year":2023,"hectares":2800}
+  ],
+  "incidentsByYear": [
+    {"year":2018,"incidents":210},{"year":2019,"incidents":280},{"year":2020,"incidents":195},
+    {"year":2021,"incidents":240},{"year":2022,"incidents":530},{"year":2023,"incidents":160}
+  ],
+  "byRegion2022": [
+    {"region":"South East","hectares":8200},{"region":"South West","hectares":5400},
+    {"region":"Yorkshire/Pennines","hectares":6800},{"region":"Scotland","hectares":3100},
+    {"region":"Wales","hectares":1900}
+  ]
+}

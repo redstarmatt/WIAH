@@ -1,0 +1,17 @@
+{
+  "armyStrength": [
+    {"year":1990,"trained":152000},{"year":2000,"trained":111000},{"year":2005,"trained":102000},
+    {"year":2010,"trained":98000},{"year":2015,"trained":82000},{"year":2018,"trained":78000},
+    {"year":2021,"trained":76000},{"year":2023,"trained":72520}
+  ],
+  "allServicesTarget": [
+    {"service":"Army","target":73000,"actual":72520},
+    {"service":"Royal Navy","target":33450,"actual":32910},
+    {"service":"Royal Air Force","target":31750,"actual":31380}
+  ],
+  "recruitmentApplications": [
+    {"year":2018,"applications":76000,"joiners":9400},{"year":2019,"applications":82000,"joiners":10200},
+    {"year":2020,"applications":68000,"joiners":8700},{"year":2021,"applications":78000,"joiners":9100},
+    {"year":2022,"applications":91000,"joiners":9600},{"year":2023,"applications":94000,"joiners":9200}
+  ]
+}

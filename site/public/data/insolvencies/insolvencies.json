@@ -1,0 +1,18 @@
+{
+  "companyInsolvencies": [
+    {"year":2010,"count":19077},{"year":2012,"count":17435},{"year":2014,"count":15385},
+    {"year":2016,"count":14637},{"year":2018,"count":16090},{"year":2019,"count":17196},
+    {"year":2020,"count":12557},{"year":2021,"count":14049},{"year":2022,"count":22109},
+    {"year":2023,"count":25158}
+  ],
+  "personalInsolvencies": [
+    {"year":2010,"count":135045},{"year":2013,"count":99196},{"year":2016,"count":90928},
+    {"year":2019,"count":122009},{"year":2020,"count":80000},{"year":2021,"count":119932},
+    {"year":2022,"count":106820},{"year":2023,"count":99825}
+  ],
+  "bySector2023": [
+    {"sector":"Construction","count":4214},{"sector":"Hospitality","count":3891},
+    {"sector":"Retail","count":3567},{"sector":"Manufacturing","count":2103},
+    {"sector":"Transport","count":1874}
+  ]
+}

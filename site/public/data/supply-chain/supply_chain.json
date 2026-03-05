@@ -1,0 +1,16 @@
+{
+  "foodImportDependency": [
+    {"year":2000,"percent":37},{"year":2005,"percent":39},{"year":2010,"percent":42},
+    {"year":2015,"percent":44},{"year":2019,"percent":46},{"year":2022,"percent":46}
+  ],
+  "tradeDeficit": [
+    {"year":2015,"goodsDeficitBn":120},{"year":2017,"goodsDeficitBn":141},
+    {"year":2019,"goodsDeficitBn":148},{"year":2021,"goodsDeficitBn":172},
+    {"year":2022,"goodsDeficitBn":186},{"year":2023,"goodsDeficitBn":162}
+  ],
+  "ukEuTradeShare": [
+    {"year":2016,"euShareExports":44},{"year":2018,"euShareExports":45},
+    {"year":2020,"euShareExports":43},{"year":2021,"euShareExports":42},
+    {"year":2022,"euShareExports":42},{"year":2023,"euShareExports":42}
+  ]
+}

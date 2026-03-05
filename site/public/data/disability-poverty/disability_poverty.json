@@ -1,0 +1,17 @@
+{
+  "povertyRates": [
+    {"year":2016,"disabled":28,"nonDisabled":15},{"year":2017,"disabled":28,"nonDisabled":15},
+    {"year":2018,"disabled":29,"nonDisabled":16},{"year":2019,"disabled":29,"nonDisabled":16},
+    {"year":2020,"disabled":29,"nonDisabled":16},{"year":2021,"disabled":29,"nonDisabled":16},
+    {"year":2022,"disabled":29,"nonDisabled":16}
+  ],
+  "extraCosts": [
+    {"category":"Specialist equipment","monthlyAvg":120},{"category":"Higher energy bills","monthlyAvg":95},
+    {"category":"Transport","monthlyAvg":85},{"category":"Care/support","monthlyAvg":180},
+    {"category":"Adapted food/clothing","monthlyAvg":90}
+  ],
+  "shareOfPoverty": [
+    {"year":2015,"disabledShareOfPoverty":42},{"year":2018,"disabledShareOfPoverty":44},
+    {"year":2022,"disabledShareOfPoverty":45}
+  ]
+}

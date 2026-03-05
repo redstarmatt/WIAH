@@ -1,0 +1,16 @@
+{
+  "lnrsProgress": [
+    {"year":2023,"published":12,"total":48},{"year":2024,"published":46,"total":48}
+  ],
+  "biodiversityNetGain": [
+    {"year":2024,"mandatory":true,"minimumGain":10}
+  ],
+  "conservationCovenants": [
+    {"year":2022,"registered":50},{"year":2023,"registered":180},{"year":2024,"registered":280}
+  ],
+  "protectedLandPercent": [
+    {"year":2010,"percentEngland":26.4},{"year":2015,"percentEngland":27.1},
+    {"year":2020,"percentEngland":28.2},{"year":2023,"percentEngland":28.8},
+    {"year":2030,"percentEngland":30.0,"target":true}
+  ]
+}

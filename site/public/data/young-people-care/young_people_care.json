@@ -1,0 +1,19 @@
+{
+  "childrenInCare": [
+    {"year":2009,"children":60900},{"year":2012,"children":67050},{"year":2015,"children":69540},
+    {"year":2018,"children":75420},{"year":2020,"children":80080},{"year":2022,"children":82170},
+    {"year":2023,"children":83840}
+  ],
+  "careLeaverOutcomes": [
+    {"outcome":"Not in EET at 19\u201321","percent":34},
+    {"outcome":"University at 19","percent":6},
+    {"outcome":"Known to DWP (benefits)","percent":44},
+    {"outcome":"Known to criminal justice","percent":25},
+    {"outcome":"Homeless by 21","percent":20}
+  ],
+  "placementTypes2023": [
+    {"type":"Foster care","percent":46},{"type":"Placed with parents","percent":7},
+    {"type":"Residential care","percent":11},{"type":"Kinship care","percent":18},
+    {"type":"Other","percent":18}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "waitingForCare": [
+    {"year":2019,"thousands":298},{"year":2020,"thousands":340},{"year":2021,"thousands":380},
+    {"year":2022,"thousands":410},{"year":2023,"thousands":415}
+  ],
+  "waitingOver6Months": [
+    {"year":2020,"percent":25},{"year":2021,"percent":28},{"year":2022,"percent":31},
+    {"year":2023,"percent":33}
+  ],
+  "unmetNeed": [
+    {"year":2019,"millions":1.1},{"year":2020,"millions":1.2},{"year":2021,"millions":1.3},
+    {"year":2022,"millions":1.4},{"year":2023,"millions":1.5}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "ukGdpGrowth": [
+    {"year":2010,"growth":1.9},{"year":2011,"growth":1.6},{"year":2012,"growth":0.3},
+    {"year":2013,"growth":2.1},{"year":2014,"growth":3.0},{"year":2015,"growth":2.4},
+    {"year":2016,"growth":1.8},{"year":2017,"growth":1.9},{"year":2018,"growth":1.3},
+    {"year":2019,"growth":1.6},{"year":2020,"growth":-11.0},{"year":2021,"growth":8.7},
+    {"year":2022,"growth":4.1},{"year":2023,"growth":0.1}
+  ],
+  "g7Comparison": [
+    {"country":"USA","avgGrowth2010_2023":2.3},{"country":"Canada","avgGrowth2010_2023":2.1},
+    {"country":"Japan","avgGrowth2010_2023":0.8},{"country":"Germany","avgGrowth2010_2023":1.3},
+    {"country":"France","avgGrowth2010_2023":1.2},{"country":"Italy","avgGrowth2010_2023":0.4},
+    {"country":"UK","avgGrowth2010_2023":1.1}
+  ]
+}
