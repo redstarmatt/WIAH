@@ -94,8 +94,11 @@ export default function LineChart({
       .domain(d3.extent(allDates) as [Date, Date])
       .range([0, innerWidth]);
 
+    const hasNegativeValues = allValues.some(v => v < 0);
+    const lowerBound = hasNegativeValues ? yMin - yPadding : Math.max(0, yMin - yPadding);
+
     const y = d3.scaleLinear()
-      .domain([Math.max(0, yMin - yPadding), yMax + yPadding])
+      .domain([lowerBound, yMax + yPadding])
       .range([innerHeight, 0])
       .nice();
 
