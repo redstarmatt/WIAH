@@ -282,15 +282,11 @@ export default function WellbeingPage() {
       {/* Context */}
       <section id="sec-context" className="max-w-4xl mx-auto px-6 py-16 space-y-6 text-wiah-black leading-relaxed">
         <p>
-          The ONS surveys roughly 300,000 adults each year across four dimensions &mdash; life satisfaction, worthwhile, happiness, and anxiety &mdash; scored on a 0&ndash;10 scale. Life satisfaction rose from 7.41 in 2011/12 to 7.56 in 2018/19, fell to 7.36 during COVID, and sat at 7.45 in 2023/24 &mdash; still below its pre-pandemic peak. The worthwhile measure followed a near-identical arc: 7.71 to 7.85 to 7.66 to 7.74. Anxiety moved in the opposite direction. The average anxiety score climbed from 2.78 in 2011/12 to 3.37 during the pandemic; by 2023/24 it had only eased to 3.22, with 26.5% of adults &mdash; one in four &mdash; scoring 6&ndash;10, classified as high anxiety.
+          The ONS surveys roughly 300,000 adults each year across four dimensions scored on a 0&ndash;10 scale. Life satisfaction rose from 7.41 in 2011/12 to a peak of 7.56 in 2018/19, fell to 7.36 during COVID, and sat at 7.45 in 2023/24 &mdash; still below its pre-pandemic peak. Anxiety moved in the opposite direction: the share of adults classified as high anxiety rose from 20% before the pandemic to 30.4% at its COVID peak, and by 2023/24 had only eased to 26.5% &mdash; one in four adults. The 2022 cost-of-living crisis compounded the damage, pushing the average anxiety score from 3.08 in 2021/22 to 3.22 in 2023/24 as energy bills doubled.
         </p>
 
         <p>
-          Loneliness has worsened despite dedicated policy attention. The share of adults reporting they often or always feel lonely rose from 5% in 2016&ndash;2019 to 7.8% in 2024 &mdash; roughly 4 million people. Young adults aged 16&ndash;24 and those over 75 record the highest rates, a pattern the DCMS Community Life Survey has tracked consistently. The government appointed a Minister for Loneliness in 2018 and launched a social prescribing programme to route patients toward community activities rather than medication. The Campaign to End Loneliness estimates the annual cost at &pound;6.4 billion in lost productivity and NHS demand. So far, the trajectory has not changed.
-        </p>
-
-        <p>
-          The 2010s produced a paradox: life satisfaction rose steadily through austerity and the slowest wage growth in two centuries. COVID broke that resilience. The pandemic drove anxiety to 3.37 and satisfaction below 7.4; neither has fully recovered. The 2022 cost-of-living crisis compounded the damage &mdash; anxiety climbed from 3.08 in 2021/22 to 3.22 in 2023/24 as energy bills doubled. These are small movements on a 10-point scale, but in a sample of 300,000 they are statistically robust, and the direction across all four measures is consistently downward since 2019.
+          Loneliness has worsened despite dedicated policy attention. The share of adults reporting they often or always feel lonely rose from 5% in 2016&ndash;2019 to 7.8% in 2024 &mdash; roughly 4 million people &mdash; with young adults aged 16&ndash;24 and those over 75 recording the highest rates. The government appointed a Minister for Loneliness in 2018 and expanded social prescribing, yet the trajectory has not changed; the Campaign to End Loneliness estimates the annual cost at &pound;6.4 billion in lost productivity and NHS demand. The direction across all four wellbeing measures has been consistently downward since 2019.
         </p>
       </section>
 
