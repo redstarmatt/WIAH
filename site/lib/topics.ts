@@ -59,73 +59,73 @@ export const CATEGORIES: Category[] = [
     name: 'NHS & Healthcare',
     slug: 'nhs-healthcare',
     featured: ['health', 'nhs-waiting-lists', 'nhs-ae'],
-    topics: ['health', 'nhs-waiting-lists', 'nhs-ae', 'nhs-beds', 'nhs-cancer', 'nhs-dentistry', 'nhs-discharge', 'nhs-mental-health', 'nhs-prescriptions', 'nhs-screening', 'nhs-staffing', 'nhs-vaccination', 'nhs-waiting-times', 'nhs-workforce', 'dental', 'maternity', 'long-covid', 'healthy-life-expectancy', 'infant-mortality', 'diabetes', 'dementia', 'antibiotic-resistance', 'community-pharmacies', 'cancer-survival', 'sexual-health', 'stroke', 'smoking', 'organ-donation', 'palliative-care', 'chronic-pain', 'blood-pressure', 'nhs-productivity', 'nhs-capital', 'learning-disabilities', 'nhs-sickness-absence', 'ambulance-handovers', 'fertility-treatment', 'gender-clinic', 'menopause-care', 'talking-therapies', 'hospital-infections', 'eye-care', 'cancer-diagnosis', 'childhood-obesity', 'maternity-safety', 'health-inequalities', 'gp-closures', 'preventable-deaths', 'long-term-conditions', 'nhs-dentistry-access', 'racial-health-gap', 'end-of-life', 'ambulance-response-times', 'cancer-screening-uptake', 'nhs-agency-spend', 'medication-shortages', 'clinical-negligence-costs', 'pharmacy-first-service', 'patient-safety-incidents', 'nhs-health-checks', 'nhs-international-workers', 'gp-list-size', 'nhs-111-pressures', 'diagnostic-imaging-waits', 'weight-loss-drug-access', 'nhs-estate-backlog', 'liver-disease-deaths', 'sepsis-outcomes', 'violence-against-nhs-staff', 'health-tech-adoption', 'personal-health-budgets', 'cancer-one-year-survival'],
+    topics: ['health', 'nhs-waiting-lists', 'nhs-ae', 'nhs-beds', 'nhs-cancer', 'nhs-dentistry', 'nhs-discharge', 'nhs-mental-health', 'nhs-prescriptions', 'nhs-screening', 'nhs-staffing', 'nhs-vaccination', 'nhs-waiting-times', 'nhs-workforce', 'dental', 'maternity', 'long-covid', 'healthy-life-expectancy', 'infant-mortality', 'diabetes', 'dementia', 'antibiotic-resistance', 'community-pharmacies', 'cancer-survival', 'sexual-health', 'stroke', 'smoking', 'organ-donation', 'palliative-care', 'chronic-pain', 'blood-pressure', 'nhs-productivity', 'nhs-capital', 'learning-disabilities', 'nhs-sickness-absence', 'ambulance-handovers', 'fertility-treatment', 'gender-clinic', 'menopause-care', 'talking-therapies', 'hospital-infections', 'eye-care', 'cancer-diagnosis', 'childhood-obesity', 'maternity-safety', 'health-inequalities', 'gp-closures', 'preventable-deaths', 'long-term-conditions', 'nhs-dentistry-access', 'racial-health-gap', 'end-of-life', 'ambulance-response-times', 'cancer-screening-uptake', 'nhs-agency-spend', 'medication-shortages', 'clinical-negligence-costs', 'pharmacy-first-service', 'patient-safety-incidents', 'nhs-health-checks', 'nhs-international-workers', 'gp-list-size', 'nhs-111-pressures', 'diagnostic-imaging-waits', 'weight-loss-drug-access', 'nhs-estate-backlog', 'liver-disease-deaths', 'sepsis-outcomes', 'violence-against-nhs-staff', 'health-tech-adoption', 'personal-health-budgets', 'cancer-one-year-survival', 'ambulance-rural-response', 'birth-trauma', 'nhs-waiting-list-inequality'],
   },
   {
     name: 'Mental Health & Wellbeing',
     slug: 'mental-health-wellbeing',
     featured: ['mental-health', 'mental-health-waits', 'suicide-prevention'],
-    topics: ['mental-health', 'mental-health-waits', 'suicide-prevention', 'adhd-autism', 'wellbeing', 'loneliness', 'gambling', 'gambling-harm', 'eating-disorders', 'drugs', 'drug-misuse', 'alcohol', 'drug-deaths', 'obesity', 'physical-inactivity', 'child-mental-health', 'sport-participation', 'student-mental-health', 'addiction-services', 'talking-therapies', 'camhs-access', 'eating-disorder-waiting', 'workplace-stress-sickness', 'perinatal-mental-health', 'addiction-treatment-outcomes', 'social-prescribing', 'exercise-prescription', 'gambling-harm-treatment', 'antidepressant-prescribing', 'mental-health-crisis-beds', 'self-harm-hospital-admissions', 'men-mental-health-gap', 'screen-time-wellbeing', 'postnatal-depression-care', 'sleep-disorder-prevalence', 'adhd-waiting-times', 'loneliness-young-people'],
+    topics: ['mental-health', 'mental-health-waits', 'suicide-prevention', 'adhd-autism', 'wellbeing', 'loneliness', 'gambling', 'gambling-harm', 'eating-disorders', 'drugs', 'drug-misuse', 'alcohol', 'drug-deaths', 'obesity', 'physical-inactivity', 'child-mental-health', 'sport-participation', 'student-mental-health', 'addiction-services', 'talking-therapies', 'camhs-access', 'eating-disorder-waiting', 'workplace-stress-sickness', 'perinatal-mental-health', 'addiction-treatment-outcomes', 'social-prescribing', 'exercise-prescription', 'gambling-harm-treatment', 'antidepressant-prescribing', 'mental-health-crisis-beds', 'self-harm-hospital-admissions', 'men-mental-health-gap', 'screen-time-wellbeing', 'postnatal-depression-care', 'sleep-disorder-prevalence', 'adhd-waiting-times', 'loneliness-young-people', 'compulsive-gambling-youth'],
   },
   {
     name: 'Crime & Justice',
     slug: 'crime-justice',
     featured: ['justice', 'knife-crime', 'prisons'],
-    topics: ['justice', 'knife-crime', 'prisons', 'prison-reoffending', 'court-backlog', 'policing', 'prison-overcrowding', 'domestic-abuse', 'domestic-violence', 'hate-crime', 'modern-slavery', 'online-harms', 'youth-justice', 'fraud', 'rape-prosecution', 'county-lines', 'stalking', 'family-courts', 'youth-violence', 'cybercrime', 'miscarriages-of-justice', 'victims-support', 'border-security', 'probation', 'legal-aid', 'prison-mental-health', 'police-misconduct', 'domestic-abuse-outcomes', 'anti-social-behaviour-crisis', 'knife-crime-geography', 'violence-against-women', 'police-officer-numbers', 'prisoner-recall', 'drug-supply-operations', 'drink-drive-deaths', 'fraud-prosecution-gap', 'terrorism-prosecutions', 'asset-recovery-rates', 'facial-recognition-policing', 'community-sentence-outcomes', 'youth-diversion-outcomes', 'court-interpreter-services', 'immigration-detention', 'civil-legal-aid-deserts', 'misogyny-policing'],
+    topics: ['justice', 'knife-crime', 'prisons', 'prison-reoffending', 'court-backlog', 'policing', 'prison-overcrowding', 'domestic-abuse', 'domestic-violence', 'hate-crime', 'modern-slavery', 'online-harms', 'youth-justice', 'fraud', 'rape-prosecution', 'county-lines', 'stalking', 'family-courts', 'youth-violence', 'cybercrime', 'miscarriages-of-justice', 'victims-support', 'border-security', 'probation', 'legal-aid', 'prison-mental-health', 'police-misconduct', 'domestic-abuse-outcomes', 'anti-social-behaviour-crisis', 'knife-crime-geography', 'violence-against-women', 'police-officer-numbers', 'prisoner-recall', 'drug-supply-operations', 'drink-drive-deaths', 'fraud-prosecution-gap', 'terrorism-prosecutions', 'asset-recovery-rates', 'facial-recognition-policing', 'community-sentence-outcomes', 'youth-diversion-outcomes', 'court-interpreter-services', 'immigration-detention', 'civil-legal-aid-deserts', 'misogyny-policing', 'spiking-reports', 'shoplifting-surge'],
   },
   {
     name: 'Economy & Work',
     slug: 'economy-work',
     featured: ['economy', 'work', 'economic-inactivity'],
-    topics: ['economy', 'work', 'economic-inactivity', 'youth-unemployment', 'productivity', 'trade', 'insecure-work', 'gender-pay-gap', 'strikes', 'high-streets', 'apprenticeships', 'small-business', 'tax-evasion', 'trade-unions', 'self-employment', 'food-production', 'executive-pay', 'national-debt', 'gig-economy', 'living-wage', 'in-work-poverty', 'skills-shortage', 'food-inflation', 'pension-deficits', 'creative-industries', 'zero-hours-contracts', 'insolvencies', 'real-wages', 'rd-investment', 'economic-growth', 'north-south-divide', 'housing-costs-workers', 'regional-pay', 'savings-crisis', 'supply-chain', 'uk-eu-trade', 'startup-investment', 'profit-shifting', 'automation-displacement', 'export-goods-services', 'high-street-vacancy', 'pension-savings-gap', 'ethnicity-pay-gap', 'disability-pay-gap', 'youth-wages', 'workplace-fatalities', 'sick-leave-costs', 'flexible-working-access', 'hybrid-work-geography', 'sickness-benefit-claimants', 'uk-productivity-gap', 'business-investment-rate', 'ai-adoption-business', 'financial-inclusion', 'wage-theft', 'female-entrepreneurship', 'care-economy-value', 'trade-deficit', 'redundancy-rates', 'regional-gdp-gap', 'inflation-by-income', 'public-sector-pay-gap'],
+    topics: ['economy', 'work', 'economic-inactivity', 'youth-unemployment', 'productivity', 'trade', 'insecure-work', 'gender-pay-gap', 'strikes', 'high-streets', 'apprenticeships', 'small-business', 'tax-evasion', 'trade-unions', 'self-employment', 'food-production', 'executive-pay', 'national-debt', 'gig-economy', 'living-wage', 'in-work-poverty', 'skills-shortage', 'food-inflation', 'pension-deficits', 'creative-industries', 'zero-hours-contracts', 'insolvencies', 'real-wages', 'rd-investment', 'economic-growth', 'north-south-divide', 'housing-costs-workers', 'regional-pay', 'savings-crisis', 'supply-chain', 'uk-eu-trade', 'startup-investment', 'profit-shifting', 'automation-displacement', 'export-goods-services', 'high-street-vacancy', 'pension-savings-gap', 'ethnicity-pay-gap', 'disability-pay-gap', 'youth-wages', 'workplace-fatalities', 'sick-leave-costs', 'flexible-working-access', 'hybrid-work-geography', 'sickness-benefit-claimants', 'uk-productivity-gap', 'business-investment-rate', 'ai-adoption-business', 'financial-inclusion', 'wage-theft', 'female-entrepreneurship', 'care-economy-value', 'trade-deficit', 'redundancy-rates', 'regional-gdp-gap', 'inflation-by-income', 'public-sector-pay-gap', 'public-sector-staffing', 'returnerships'],
   },
   {
     name: 'Housing',
     slug: 'housing',
     featured: ['housing', 'homelessness', 'housebuilding'],
-    topics: ['housing', 'homelessness', 'housebuilding', 'housing-quality', 'private-renting', 'social-housing', 'rough-sleeping', 'planning', 'empty-homes', 'leasehold', 'building-safety', 'second-homes', 'evictions', 'land-banking', 'planning-permission', 'housing-costs-workers', 'cladding-crisis', 'holiday-lets', 'renters-reform', 'net-housing-supply', 'social-rent', 'property-transactions', 'construction-housebuilding', 'flood-insurance-gaps', 'concealed-homelessness', 'mortgage-affordability-shock', 'private-rented-conditions', 'multigenerational-living', 'supported-housing-shortage', 'urban-rural-price-gap', 'build-to-rent-sector', 'social-housing-waiting-lists', 'housing-disrepair-claims', 'short-term-lets-impact', 'traveller-site-provision', 'cohabitation-rights-gap'],
+    topics: ['housing', 'homelessness', 'housebuilding', 'housing-quality', 'private-renting', 'social-housing', 'rough-sleeping', 'planning', 'empty-homes', 'leasehold', 'building-safety', 'second-homes', 'evictions', 'land-banking', 'planning-permission', 'housing-costs-workers', 'cladding-crisis', 'holiday-lets', 'renters-reform', 'net-housing-supply', 'social-rent', 'property-transactions', 'construction-housebuilding', 'flood-insurance-gaps', 'concealed-homelessness', 'mortgage-affordability-shock', 'private-rented-conditions', 'multigenerational-living', 'supported-housing-shortage', 'urban-rural-price-gap', 'build-to-rent-sector', 'social-housing-waiting-lists', 'housing-disrepair-claims', 'short-term-lets-impact', 'traveller-site-provision', 'cohabitation-rights-gap', 'modular-housing', 'green-belt-pressure'],
   },
   {
     name: 'Education & Skills',
     slug: 'education-skills',
     featured: ['education', 'universities', 'teacher-shortage'],
-    topics: ['education', 'universities', 'teacher-shortage', 'university-funding', 'school-exclusions', 'childcare', 'student-debt', 'early-years', 'school-buildings', 'adult-education', 'school-funding', 'send-crisis', 'graduate-outcomes', 'pupil-premium', 'arts-in-schools', 'oxbridge-state-access', 'fe-college-funding', 'adult-literacy-levels', 'neet-young-people', 'teacher-real-pay', 'vocational-pathways', 'school-absence-trends', 'school-mental-health-support', 'university-dropout-rates', 'private-school-charity-status', 'digital-skills-gap', 'stem-gender-gap', 'special-school-places', 'looked-after-children-education', 'postgraduate-funding', 'school-overcrowding', 'youth-social-action'],
+    topics: ['education', 'universities', 'teacher-shortage', 'university-funding', 'school-exclusions', 'childcare', 'student-debt', 'early-years', 'school-buildings', 'adult-education', 'school-funding', 'send-crisis', 'graduate-outcomes', 'pupil-premium', 'arts-in-schools', 'oxbridge-state-access', 'fe-college-funding', 'adult-literacy-levels', 'neet-young-people', 'teacher-real-pay', 'vocational-pathways', 'school-absence-trends', 'school-mental-health-support', 'university-dropout-rates', 'private-school-charity-status', 'digital-skills-gap', 'stem-gender-gap', 'special-school-places', 'looked-after-children-education', 'postgraduate-funding', 'school-overcrowding', 'youth-social-action', 'alternative-provision', 'school-building-condition', 'school-meals-procurement'],
   },
   {
     name: 'Poverty & Cost of Living',
     slug: 'poverty-cost-of-living',
     featured: ['child-poverty', 'food-banks', 'energy-bills'],
-    topics: ['child-poverty', 'food-banks', 'energy-bills', 'poverty', 'inequality', 'fuel-poverty', 'personal-debt', 'benefits', 'universal-credit', 'pensions', 'pensioner-poverty', 'food-insecurity', 'wealth-inequality', 'food-deserts', 'funeral-poverty', 'period-poverty', 'rent-arrears', 'in-work-poverty', 'housing-benefit', 'council-tax', 'child-poverty-regions', 'disability-poverty', 'carer-poverty', 'water-affordability', 'transport-cost-poverty', 'debt-enforcement-hardship', 'inheritance-inequality', 'benefit-sanction-impact', 'winter-fuel-payment-reform', 'geographic-wealth-inequality', 'childcare-cost-barrier', 'holiday-hunger', 'payday-loan-decline', 'energy-disconnections', 'council-tax-debt', 'pension-credit-take-up', 'car-insurance-poverty', 'emergency-dental-access', 'financial-abuse-elderly', 'over-the-counter-medicine-costs'],
+    topics: ['child-poverty', 'food-banks', 'energy-bills', 'poverty', 'inequality', 'fuel-poverty', 'personal-debt', 'benefits', 'universal-credit', 'pensions', 'pensioner-poverty', 'food-insecurity', 'wealth-inequality', 'food-deserts', 'funeral-poverty', 'period-poverty', 'rent-arrears', 'in-work-poverty', 'housing-benefit', 'council-tax', 'child-poverty-regions', 'disability-poverty', 'carer-poverty', 'water-affordability', 'transport-cost-poverty', 'debt-enforcement-hardship', 'inheritance-inequality', 'benefit-sanction-impact', 'winter-fuel-payment-reform', 'geographic-wealth-inequality', 'childcare-cost-barrier', 'holiday-hunger', 'payday-loan-decline', 'energy-disconnections', 'council-tax-debt', 'pension-credit-take-up', 'car-insurance-poverty', 'emergency-dental-access', 'financial-abuse-elderly', 'over-the-counter-medicine-costs', 'pet-food-banks', 'uniform-cost-burden'],
   },
   {
     name: 'Environment & Climate',
     slug: 'environment-climate',
     featured: ['water', 'net-zero', 'air-quality'],
-    topics: ['water', 'net-zero', 'air-quality', 'environment', 'biodiversity', 'flooding', 'waste', 'flood-risk', 'urban-heat', 'soil-health', 'marine-environment', 'energy-efficiency', 'plastic-pollution', 'trees-and-forests', 'noise-pollution', 'rewilding', 'solar-power', 'onshore-wind', 'aviation-emissions', 'peatlands', 'food-waste', 'chalk-streams', 'green-jobs', 'river-bathing', 'heat-mortality', 'habitat-condition', 'farming-subsidies', 'offshore-wind', 'circular-economy', 'wildfire-risk', 'nature-recovery', 'clean-energy-investment', 'uk-carbon-budget', 'coastal-erosion-risk', 'pesticide-reduction', 'water-stress-regions', 'urban-canopy-cover', 'microplastics-contamination', 'nitrogen-water-pollution', 'grid-battery-storage', 'fishing-catch-quotas', 'retrofit-insulation', 'agricultural-emissions', 'ancient-woodland-loss', 'air-quality-schools', 'heat-network-rollout', 'packaging-waste-recycling', 'carbon-capture-progress', 'nature-based-solutions', 'ocean-acidification', 'light-pollution', 'e-waste-recycling'],
+    topics: ['water', 'net-zero', 'air-quality', 'environment', 'biodiversity', 'flooding', 'waste', 'flood-risk', 'urban-heat', 'soil-health', 'marine-environment', 'energy-efficiency', 'plastic-pollution', 'trees-and-forests', 'noise-pollution', 'rewilding', 'solar-power', 'onshore-wind', 'aviation-emissions', 'peatlands', 'food-waste', 'chalk-streams', 'green-jobs', 'river-bathing', 'heat-mortality', 'habitat-condition', 'farming-subsidies', 'offshore-wind', 'circular-economy', 'wildfire-risk', 'nature-recovery', 'clean-energy-investment', 'uk-carbon-budget', 'coastal-erosion-risk', 'pesticide-reduction', 'water-stress-regions', 'urban-canopy-cover', 'microplastics-contamination', 'nitrogen-water-pollution', 'grid-battery-storage', 'fishing-catch-quotas', 'retrofit-insulation', 'agricultural-emissions', 'ancient-woodland-loss', 'air-quality-schools', 'heat-network-rollout', 'packaging-waste-recycling', 'carbon-capture-progress', 'nature-based-solutions', 'ocean-acidification', 'light-pollution', 'e-waste-recycling', 'wildfire-risk-uk', 'water-lead-pipes'],
   },
   {
     name: 'Infrastructure & Services',
     slug: 'infrastructure-services',
     featured: ['energy', 'rail', 'broadband'],
-    topics: ['energy', 'energy-security', 'rail', 'broadband', 'transport', 'road-safety', 'rural-services', 'libraries', 'digital-inclusion', 'digital-exclusion', 'pothole-roads', 'post-offices', 'public-toilets', 'water-infrastructure', 'electric-vehicles', 'heat-pumps', 'cycling-infrastructure', 'ev-charging', 'train-punctuality', 'bus-service-cuts', 'active-travel-investment', 'airport-capacity-utilisation', 'smart-meter-rollout'],
+    topics: ['energy', 'energy-security', 'rail', 'broadband', 'transport', 'road-safety', 'rural-services', 'libraries', 'digital-inclusion', 'digital-exclusion', 'pothole-roads', 'post-offices', 'public-toilets', 'water-infrastructure', 'electric-vehicles', 'heat-pumps', 'cycling-infrastructure', 'ev-charging', 'train-punctuality', 'bus-service-cuts', 'active-travel-investment', 'airport-capacity-utilisation', 'smart-meter-rollout', '5g-coverage-inequality', 'pavement-parking'],
   },
   {
     name: 'Society & Democracy',
     slug: 'society-democracy',
     featured: ['immigration', 'democracy', 'demographics'],
-    topics: ['immigration', 'democracy', 'demographics', 'asylum-system', 'social-mobility', 'public-debt', 'local-gov', 'council-finances', 'voter-turnout', 'coastal-communities', 'regional-inequality', 'racial-inequality', 'judicial-diversity', 'press-freedom', 'volunteering', 'social-media-harm', 'arts-funding', 'public-broadcasting', 'civil-liberties', 'military-spending', 'foreign-aid', 'net-migration', 'council-tax', 'creative-industries', 'health-inequalities', 'racial-health-gap', 'north-south-divide', 'regional-pay', 'birth-rate', 'trust-institutions', 'civic-participation', 'military-recruitment', 'local-press-closures', 'electoral-registration-gap', 'community-cohesion-survey', 'marriage-cohabitation-trends', 'protest-policing', 'charity-sector-finances', 'social-enterprise-growth', 'faith-community-trends', 'ethnic-minority-poverty', 'disability-hate-crime'],
+    topics: ['immigration', 'democracy', 'demographics', 'asylum-system', 'social-mobility', 'public-debt', 'local-gov', 'council-finances', 'voter-turnout', 'coastal-communities', 'regional-inequality', 'racial-inequality', 'judicial-diversity', 'press-freedom', 'volunteering', 'social-media-harm', 'arts-funding', 'public-broadcasting', 'civil-liberties', 'military-spending', 'foreign-aid', 'net-migration', 'council-tax', 'creative-industries', 'health-inequalities', 'racial-health-gap', 'north-south-divide', 'regional-pay', 'birth-rate', 'trust-institutions', 'civic-participation', 'military-recruitment', 'local-press-closures', 'electoral-registration-gap', 'community-cohesion-survey', 'marriage-cohabitation-trends', 'protest-policing', 'charity-sector-finances', 'social-enterprise-growth', 'faith-community-trends', 'ethnic-minority-poverty', 'disability-hate-crime', 'voter-id-impact'],
   },
   {
     name: 'Care & Support',
     slug: 'care-support',
     featured: ['social-care', 'unpaid-carers', 'disability-employment'],
-    topics: ['social-care', 'unpaid-carers', 'disability-employment', 'young-carers', 'care-leavers', 'veterans', 'child-protection', 'care-homes', 'learning-disabilities', 'kinship-care', 'foster-care', 'adoption', 'nhs-race-inequality', 'home-care', 'hospice-funding', 'veteran-mental-health', 'end-of-life', 'care-home-fees', 'social-care-waiting', 'young-people-care', 'care-worker-wages', 'dementia-support-gaps', 'pip-assessment-backlog', 'care-home-cqc-quality', 'social-care-workforce-crisis', 'carer-mental-health', 'disabled-children-care', 'hospice-capacity-gap', 'learning-disability-inpatient', 'autism-adult-diagnosis', 'respite-care-shortage', 'prison-reentry-support', 'bereavement-support', 'loneliness-elderly', 'refugee-mental-health-support'],
+    topics: ['social-care', 'unpaid-carers', 'disability-employment', 'young-carers', 'care-leavers', 'veterans', 'child-protection', 'care-homes', 'learning-disabilities', 'kinship-care', 'foster-care', 'adoption', 'nhs-race-inequality', 'home-care', 'hospice-funding', 'veteran-mental-health', 'end-of-life', 'care-home-fees', 'social-care-waiting', 'young-people-care', 'care-worker-wages', 'dementia-support-gaps', 'pip-assessment-backlog', 'care-home-cqc-quality', 'social-care-workforce-crisis', 'carer-mental-health', 'disabled-children-care', 'hospice-capacity-gap', 'learning-disability-inpatient', 'autism-adult-diagnosis', 'respite-care-shortage', 'prison-reentry-support', 'bereavement-support', 'loneliness-elderly', 'refugee-mental-health-support', 'kinship-care-support'],
   },
   {
     name: 'Children & Families',
     slug: 'children-families',
     featured: ['children-in-care', 'free-school-meals-gap', 'early-years-quality'],
-    topics: ['children-in-care', 'foster-placement-shortage', 'child-criminal-exploitation', 'special-guardianship-use', 'teen-conception-rates', 'school-uniform-costs', 'free-school-meals-gap', 'shared-parental-leave', 'child-maintenance-enforcement', 'early-years-quality', 'school-meals-standards', 'infant-food-poverty'],
+    topics: ['children-in-care', 'foster-placement-shortage', 'child-criminal-exploitation', 'special-guardianship-use', 'teen-conception-rates', 'school-uniform-costs', 'free-school-meals-gap', 'shared-parental-leave', 'child-maintenance-enforcement', 'early-years-quality', 'school-meals-standards', 'infant-food-poverty', 'baby-loss-support'],
   },
 ];
 
@@ -5149,6 +5149,227 @@ export const TOPICS: Record<string, TopicEntry> = {
     metrics: [
       { label: 'Rape charge rate', value: '3.3%', unit: '', direction: 'flat' as const, polarity: 'up-is-good' as const, context: 'of reported rapes result in a charge', sparklineData: [7, 6, 5.5, 5, 4.5, 4, 3.5, 3.3, 3.3] },
       { label: 'Cases reaching court', value: '6%', unit: '', direction: 'flat' as const, polarity: 'up-is-good' as const, context: 'of reported rapes reach Crown Court', sparklineData: [15, 13, 11, 10, 9, 8, 7, 6, 6] },
+    ],
+  },
+
+  'ambulance-rural-response': {
+    topic: 'Ambulance Rural Response',
+    slug: 'ambulance-rural-response',
+    href: '/ambulance-rural-response',
+    colour: '#E63946',
+    metrics: [
+      { label: 'Rural Cat 2 response time', value: '48 min', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '+8 min vs urban average', sparklineData: [32,34,36,38,40,42,44,46,48] },
+      { label: 'Rural ambulance stations closed since 2010', value: '42', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'consolidation continues', sparklineData: [12,16,20,24,28,32,35,38,42] },
+    ],
+  },
+  'birth-trauma': {
+    topic: 'Birth Trauma',
+    slug: 'birth-trauma',
+    href: '/birth-trauma',
+    colour: '#E63946',
+    metrics: [
+      { label: 'Women reporting birth trauma', value: '30%', unit: '', direction: 'flat' as const, polarity: 'up-is-bad' as const, context: 'approximately 1 in 3', sparklineData: [28,28,29,29,29,30,30,30,30] },
+      { label: 'Access to birth reflections service', value: '52%', unit: '', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'trusts offering the service', sparklineData: [30,33,36,39,42,44,46,49,52] },
+    ],
+  },
+  'nhs-waiting-list-inequality': {
+    topic: 'NHS Waiting List Inequality',
+    slug: 'nhs-waiting-list-inequality',
+    href: '/nhs-waiting-list-inequality',
+    colour: '#E63946',
+    metrics: [
+      { label: 'Deprivation wait gap', value: '20%', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'most vs least deprived quintile', sparklineData: [12,13,14,15,16,17,18,19,20] },
+      { label: 'Longest average wait region', value: '22 weeks', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'North West England', sparklineData: [14,15,16,17,18,19,20,21,22] },
+    ],
+  },
+  'compulsive-gambling-youth': {
+    topic: 'Youth Gambling Harm',
+    slug: 'compulsive-gambling-youth',
+    href: '/compulsive-gambling-youth',
+    colour: '#F4A261',
+    metrics: [
+      { label: 'Problem gamblers aged 11-16', value: '55,000', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'Gambling Commission youth survey', sparklineData: [30,35,38,40,42,45,48,52,55] },
+      { label: 'Children gambling online weekly', value: '7%', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up from 4% in 2019', sparklineData: [4.0,4.5,5.0,5.5,6.0,6.2,6.5,6.8,7.0] },
+    ],
+  },
+  'spiking-reports': {
+    topic: 'Spiking Reports',
+    slug: 'spiking-reports',
+    href: '/spiking-reports',
+    colour: '#6B7280',
+    metrics: [
+      { label: 'Recorded spiking incidents', value: '6,700', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '+110% since 2019', sparklineData: [3200,3500,3800,4200,4800,5200,5600,6200,6700] },
+      { label: 'Estimated reporting rate', value: '15%', unit: '', direction: 'flat' as const, polarity: 'up-is-good' as const, context: 'vast majority unreported', sparklineData: [14,14,14,15,15,15,15,15,15] },
+    ],
+  },
+  'shoplifting-surge': {
+    topic: 'Shoplifting Surge',
+    slug: 'shoplifting-surge',
+    href: '/shoplifting-surge',
+    colour: '#6B7280',
+    metrics: [
+      { label: 'Recorded shoplifting offences', value: '469,000', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '+30% in one year', sparklineData: [300,310,320,290,340,350,360,400,469] },
+      { label: 'Charge rate for shoplifting', value: '12%', unit: '', direction: 'down' as const, polarity: 'up-is-good' as const, context: 'down from 18% in 2015', sparklineData: [18,17,16,15,15,14,13,13,12] },
+    ],
+  },
+  'public-sector-staffing': {
+    topic: 'Public Sector Staffing',
+    slug: 'public-sector-staffing',
+    href: '/public-sector-staffing',
+    colour: '#6B7280',
+    metrics: [
+      { label: 'Civil service vacancy rate', value: '4.8%', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'highest on record', sparklineData: [2.5,2.8,3.0,3.2,3.5,3.8,4.2,4.5,4.8] },
+      { label: 'Average civil service turnover', value: '14%', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up from 9% in 2018', sparklineData: [9,10,10,11,11,12,13,13,14] },
+    ],
+  },
+  'returnerships': {
+    topic: 'Returnerships & Over-50s Work',
+    slug: 'returnerships',
+    href: '/returnerships',
+    colour: '#6B7280',
+    metrics: [
+      { label: 'Economically inactive 50-64s', value: '3.5m', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '+400k since 2020', sparklineData: [2.9,3.0,3.0,3.1,3.2,3.3,3.3,3.4,3.5] },
+      { label: 'Employers offering returnerships', value: '8%', unit: '', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up from 3% in 2020', sparklineData: [3,3,4,4,5,6,6,7,8] },
+    ],
+  },
+  'modular-housing': {
+    topic: 'Modular Housing',
+    slug: 'modular-housing',
+    href: '/modular-housing',
+    colour: '#F4A261',
+    metrics: [
+      { label: 'Annual modular completions', value: '8,200', unit: '', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'target: 30,000+', sparklineData: [3000,3500,4200,5000,5800,6400,7000,7600,8200] },
+      { label: 'Modular share of new builds', value: '3.5%', unit: '', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'still a small fraction', sparklineData: [1.2,1.4,1.7,2.0,2.3,2.6,2.9,3.2,3.5] },
+    ],
+  },
+  'green-belt-pressure': {
+    topic: 'Green Belt Pressure',
+    slug: 'green-belt-pressure',
+    href: '/green-belt-pressure',
+    colour: '#2A9D8F',
+    metrics: [
+      { label: 'Green belt planning applications', value: '12,400', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '+40% since 2018', sparklineData: [8800,9200,9600,10000,10400,10800,11200,11800,12400] },
+      { label: 'Green belt land released (hectares)', value: '4,500', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'in 2023-24', sparklineData: [1500,1800,2200,2600,3000,3400,3800,4200,4500] },
+    ],
+  },
+  'alternative-provision': {
+    topic: 'Alternative Provision',
+    slug: 'alternative-provision',
+    href: '/alternative-provision',
+    colour: '#2A9D8F',
+    metrics: [
+      { label: 'Children in alternative provision', value: '41,000', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'rising due to exclusions', sparklineData: [32000,33500,35000,36000,37000,38000,39000,40000,41000] },
+      { label: 'AP pupils achieving grade 4+ English & Maths', value: '4%', unit: '', direction: 'flat' as const, polarity: 'up-is-good' as const, context: 'vs 65% mainstream', sparklineData: [3,3,3,4,4,4,4,4,4] },
+    ],
+  },
+  'school-building-condition': {
+    topic: 'School Building Condition',
+    slug: 'school-building-condition',
+    href: '/school-building-condition',
+    colour: '#2A9D8F',
+    metrics: [
+      { label: 'Schools with critical condition ratings', value: '1,100', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'RAAC and structural issues', sparklineData: [500,550,600,650,700,800,850,950,1100] },
+      { label: 'Maintenance backlog', value: '£11.4bn', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up from £6.6bn in 2017', sparklineData: [6.6,7.0,7.5,8.0,8.5,9.0,9.8,10.6,11.4] },
+    ],
+  },
+  'school-meals-procurement': {
+    topic: 'School Meals Quality',
+    slug: 'school-meals-procurement',
+    href: '/school-meals-procurement',
+    colour: '#2A9D8F',
+    metrics: [
+      { label: 'Average cost per primary meal', value: '£2.30', unit: '', direction: 'up' as const, polarity: 'up-is-good' as const, context: '+15% in 10 years vs 40% food inflation', sparklineData: [2.0,2.02,2.05,2.08,2.1,2.14,2.18,2.24,2.3] },
+      { label: 'Schools failing food standards checks', value: '18%', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up from 12% in 2019', sparklineData: [12,13,13,14,15,16,16,17,18] },
+    ],
+  },
+  'pet-food-banks': {
+    topic: 'Pet Poverty',
+    slug: 'pet-food-banks',
+    href: '/pet-food-banks',
+    colour: '#F4A261',
+    metrics: [
+      { label: 'Pet food bank parcels distributed', value: '320,000', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '+500% since 2020', sparklineData: [50,55,80,120,160,200,240,280,320] },
+      { label: 'Pet owners unable to afford vet care', value: '2m', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'estimated', sparklineData: [0.8,0.9,1.0,1.2,1.4,1.5,1.7,1.8,2.0] },
+    ],
+  },
+  'uniform-cost-burden': {
+    topic: 'School Uniform Costs',
+    slug: 'uniform-cost-burden',
+    href: '/uniform-cost-burden',
+    colour: '#F4A261',
+    metrics: [
+      { label: 'Average secondary uniform cost', value: '£337', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '+25% since 2020', sparklineData: [240,252,265,278,290,305,315,326,337] },
+      { label: 'Families cutting other spending for uniform', value: '23%', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up from 16% in 2019', sparklineData: [16,17,18,19,20,21,21,22,23] },
+    ],
+  },
+  'wildfire-risk-uk': {
+    topic: 'UK Wildfire Risk',
+    slug: 'wildfire-risk-uk',
+    href: '/wildfire-risk-uk',
+    colour: '#264653',
+    metrics: [
+      { label: 'Annual wildfire incidents', value: '73,000', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '+50% in a decade', sparklineData: [48,50,52,55,58,61,64,68,73] },
+      { label: 'Hectares burned per year', value: '79,000', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'three-year rolling average', sparklineData: [50,53,56,59,62,65,70,74,79] },
+    ],
+  },
+  'water-lead-pipes': {
+    topic: 'Lead Water Pipes',
+    slug: 'water-lead-pipes',
+    href: '/water-lead-pipes',
+    colour: '#264653',
+    metrics: [
+      { label: 'Homes with lead pipes', value: '8m', unit: '', direction: 'flat' as const, polarity: 'up-is-bad' as const, context: 'no national replacement programme', sparklineData: [9.5,9.3,9.1,8.9,8.7,8.5,8.3,8.1,8.0] },
+      { label: 'Schools with lead pipes tested', value: '12%', unit: '', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'most untested', sparklineData: [2,3,4,5,6,7,8,10,12] },
+    ],
+  },
+  '5g-coverage-inequality': {
+    topic: '5G Coverage Inequality',
+    slug: '5g-coverage-inequality',
+    href: '/5g-coverage-inequality',
+    colour: '#264653',
+    metrics: [
+      { label: 'UK population 5G coverage', value: '50%', unit: '', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up from 0% in 2019', sparklineData: [0,5,12,20,28,35,40,45,50] },
+      { label: 'Rural 5G coverage', value: '12%', unit: '', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'vs 65% urban', sparklineData: [0,0,1,2,4,6,7,9,12] },
+    ],
+  },
+  'pavement-parking': {
+    topic: 'Pavement Parking',
+    slug: 'pavement-parking',
+    href: '/pavement-parking',
+    colour: '#6B7280',
+    metrics: [
+      { label: 'Wheelchair users affected', value: '80%', unit: '', direction: 'flat' as const, polarity: 'up-is-bad' as const, context: 'reporting pavement access issues', sparklineData: [78,78,79,79,79,80,80,80,80] },
+      { label: 'Councils with pavement parking enforcement', value: '18%', unit: '', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up from 8% in 2019', sparklineData: [8,9,10,11,12,13,14,16,18] },
+    ],
+  },
+  'voter-id-impact': {
+    topic: 'Voter ID Impact',
+    slug: 'voter-id-impact',
+    href: '/voter-id-impact',
+    colour: '#6B7280',
+    metrics: [
+      { label: 'Voters turned away at polls', value: '14,000', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'first elections with ID requirement', sparklineData: [0,0,0,0,0,0,0,0,14] },
+      { label: 'Adults without accepted photo ID', value: '3.5m', unit: '', direction: 'flat' as const, polarity: 'up-is-bad' as const, context: 'disproportionately young and minority', sparklineData: [4.0,4.0,3.8,3.8,3.7,3.6,3.6,3.5,3.5] },
+    ],
+  },
+  'kinship-care-support': {
+    topic: 'Kinship Care Support',
+    slug: 'kinship-care-support',
+    href: '/kinship-care-support',
+    colour: '#2A9D8F',
+    metrics: [
+      { label: 'Children in kinship care', value: '180,000', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'rising as fostering declines', sparklineData: [140,145,150,155,160,165,170,175,180] },
+      { label: 'Kinship carers receiving allowance', value: '22%', unit: '', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up from 15% in 2019', sparklineData: [15,16,17,17,18,19,19,20,22] },
+    ],
+  },
+  'baby-loss-support': {
+    topic: 'Baby Loss Support',
+    slug: 'baby-loss-support',
+    href: '/baby-loss-support',
+    colour: '#E63946',
+    metrics: [
+      { label: 'Pregnancies ending in loss', value: '1 in 4', unit: '', direction: 'flat' as const, polarity: 'up-is-bad' as const, context: 'miscarriage, stillbirth, neonatal death', sparklineData: [25,25,25,25,25,25,25,25,25] },
+      { label: 'Trusts with bereavement midwife', value: '72%', unit: '', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up from 55% in 2019', sparklineData: [55,58,60,62,64,66,68,70,72] },
     ],
   },
 
