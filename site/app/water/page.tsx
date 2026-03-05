@@ -110,6 +110,42 @@ interface LeakageData {
   byCompany2024: LeakageCompanyRow[];
 }
 
+interface NitrogenDataPoint {
+  year: number;
+  riverFailingNitratePct: number;
+  nitrateVulnerableZonePct?: number;
+}
+
+interface NitrogenData {
+  topic: string;
+  lastUpdated: string;
+  timeSeries: NitrogenDataPoint[];
+}
+
+interface DrinkingWaterCompliancePoint {
+  year: number;
+  compliancePct: number;
+}
+
+interface DrinkingWaterCompanyRow {
+  company: string;
+  compliancePct: number;
+}
+
+interface DrinkingWaterData {
+  topic: string;
+  lastUpdated: string;
+  national: {
+    complianceTimeSeries: DrinkingWaterCompliancePoint[];
+    byCompany: DrinkingWaterCompanyRow[];
+  };
+  metadata: {
+    sources: { name: string; dataset: string; url: string; frequency: string; retrieved: string }[];
+    methodology: string;
+    knownIssues: string[];
+  };
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function yearToDate(y: number): Date {
@@ -135,6 +171,8 @@ export default function WaterPage() {
   const [finData, setFinData] = useState<WaterFinancialsData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [leakageData, setLeakageData] = useState<LeakageData | null>(null);
+  const [nitrogenData, setNitrogenData] = useState<NitrogenData | null>(null);
+  const [drinkingWaterData, setDrinkingWaterData] = useState<DrinkingWaterData | null>(null);
 
   useEffect(() => {
     fetch('/data/water/water.json')
@@ -148,6 +186,14 @@ export default function WaterPage() {
     fetch('/data/water/leakage.json')
       .then(r => r.json())
       .then(setLeakageData)
+      .catch(console.error);
+    fetch('/data/nitrogen-water-pollution/nitrogen_water_pollution.json')
+      .then(r => r.json())
+      .then((d: NitrogenData) => setNitrogenData(d))
+      .catch(console.error);
+    fetch('/data/drinking-water-quality/drinking_water_quality.json')
+      .then(r => r.json())
+      .then((d: DrinkingWaterData) => setDrinkingWaterData(d))
       .catch(console.error);
   }, []);
 
@@ -305,6 +351,54 @@ export default function WaterPage() {
     ? [...leakageData.byCompany2024].sort((a, b) => b.leakageMld - a.leakageMld)
     : [];
 
+  // 8. Nitrogen pollution — rivers failing nitrate standards
+  const nitrogenFailingSeries: Series[] = nitrogenData
+    ? [{
+        id: 'nitrate-failing',
+        label: '% of rivers failing nitrate standards',
+        colour: '#E63946',
+        data: nitrogenData.timeSeries.map(d => ({
+          date: yearToDate(d.year),
+          value: d.riverFailingNitratePct,
+        })),
+      }]
+    : [];
+
+  const nitrogenNVZSeries: Series[] = nitrogenData
+    ? nitrogenData.timeSeries.some(d => d.nitrateVulnerableZonePct !== undefined)
+      ? [{
+          id: 'nvz-coverage',
+          label: 'Nitrate Vulnerable Zone coverage (%)',
+          colour: '#F4A261',
+          data: nitrogenData.timeSeries
+            .filter(d => d.nitrateVulnerableZonePct !== undefined)
+            .map(d => ({
+              date: yearToDate(d.year),
+              value: d.nitrateVulnerableZonePct!,
+            })),
+        }]
+      : []
+    : [];
+
+  const nitrogenCombinedSeries: Series[] = [...nitrogenFailingSeries, ...nitrogenNVZSeries];
+
+  // 9. Drinking water quality compliance
+  const drinkingWaterSeries: Series[] = drinkingWaterData
+    ? [{
+        id: 'dwq-compliance',
+        label: 'Samples meeting regulatory standards (%)',
+        colour: '#0D1117',
+        data: drinkingWaterData.national.complianceTimeSeries.map(d => ({
+          date: yearToDate(d.year),
+          value: d.compliancePct,
+        })),
+      }]
+    : [];
+
+  const drinkingWaterByCompany = drinkingWaterData
+    ? [...drinkingWaterData.national.byCompany].sort((a, b) => a.compliancePct - b.compliancePct)
+    : [];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestSewage = data?.national.sewage.timeSeries.at(-1);
@@ -378,6 +472,8 @@ export default function WaterPage() {
           { id: 'sec-rivers', label: 'Rivers & Bathing' },
           { id: 'sec-financials', label: 'Company Finances' },
           { id: 'sec-leakage', label: 'Leakage' },
+          { id: 'sec-nitrogen', label: 'Nitrogen Pollution' },
+          { id: 'sec-drinking-water', label: 'Drinking Water' },
         ]} />
 
         {/* Metric cards */}
@@ -830,6 +926,122 @@ export default function WaterPage() {
         )}
 
         </div>{/* end sec-leakage */}
+
+        {/* ── Nitrogen Pollution ────────────────────────────────────────── */}
+        <div id="sec-nitrogen">
+
+        <ScrollReveal>
+          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Nitrogen Pollution in Rivers</h2>
+          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+            Agricultural run-off is the leading source of nitrate pollution in England&apos;s waterways.
+            Over 83% of rivers now fail nitrate standards — a steady rise from 78% in 2015. Designated
+            Nitrate Vulnerable Zones, covering 55–60% of England, are intended to restrict fertiliser use
+            near watercourses, but river quality continues to worsen. Nitrogen and phosphorus from farming
+            fuel algal blooms that deplete oxygen and destroy aquatic life.
+          </p>
+        </ScrollReveal>
+
+        {nitrogenCombinedSeries.length > 0 ? (
+          <ScrollReveal>
+            <LineChart
+              title="Rivers failing nitrate standards, 2015–2023"
+              subtitle="Percentage of monitored rivers in England failing nitrate water quality standards. Source: Environment Agency / Defra."
+              series={nitrogenCombinedSeries}
+              yLabel="Percent (%)"
+              source={{
+                name: 'Environment Agency / Defra',
+                dataset: 'River and coastal water quality indicators — nitrate compliance',
+                frequency: 'annual',
+                url: 'https://oifdata.defra.gov.uk/themes/water/',
+              }}
+            />
+          </ScrollReveal>
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        </div>{/* end sec-nitrogen */}
+
+        {/* ── Drinking Water Quality ────────────────────────────────────── */}
+        <div id="sec-drinking-water">
+
+        <ScrollReveal>
+          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Drinking Water Quality</h2>
+          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+            Tap water in England is among the cleanest in the world. The Drinking Water Inspectorate
+            reports compliance of 99.9% or above every year — meaning the vast majority of samples meet
+            all regulatory standards at the point of supply. This is a genuine success story of water
+            treatment infrastructure. Variation between companies is small, though South West Water
+            consistently performs below the national average.
+          </p>
+        </ScrollReveal>
+
+        {drinkingWaterSeries.length > 0 ? (
+          <ScrollReveal>
+            <LineChart
+              title="Tap water quality compliance, 2010–2023"
+              subtitle="% of samples meeting regulatory standards at point of supply, England. High compliance throughout — y-axis zoomed to show variation. Source: Drinking Water Inspectorate."
+              series={drinkingWaterSeries}
+              yLabel="% compliant"
+              source={{
+                name: 'Drinking Water Inspectorate',
+                dataset: 'Annual Drinking Water Quality Reports',
+                frequency: 'annual',
+                url: 'https://www.dwi.gov.uk/drinking-water-quality/annual-statistics/',
+              }}
+            />
+          </ScrollReveal>
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Drinking water compliance by company table */}
+        {drinkingWaterByCompany.length > 0 && (
+          <ScrollReveal>
+            <section className="mb-16">
+              <h2 className="text-xl font-bold text-wiah-black mb-1">
+                Tap water compliance by company, 2023
+              </h2>
+              <p className="text-sm text-wiah-mid font-mono mb-4">
+                Mean zonal compliance (%). All companies above 99.9% — variation is small but meaningful at scale.
+              </p>
+              <div className="divide-y divide-wiah-border">
+                {drinkingWaterByCompany.map(c => {
+                  const minVal = 99.90;
+                  const maxVal = 100.00;
+                  const pct = Math.max(0, ((c.compliancePct - minVal) / (maxVal - minVal)) * 100);
+                  const colour = c.compliancePct >= 99.97 ? '#2A9D8F' : c.compliancePct >= 99.95 ? '#264653' : '#F4A261';
+                  return (
+                    <div key={c.company} className="py-3 flex items-center gap-4">
+                      <span className="text-sm text-wiah-black w-48 shrink-0">{c.company}</span>
+                      <div className="flex-1 bg-wiah-light rounded h-3">
+                        <div
+                          className="h-3 rounded"
+                          style={{ width: `${pct}%`, backgroundColor: colour }}
+                        />
+                      </div>
+                      <span className="font-mono text-sm font-bold w-16 text-right" style={{ color: colour }}>
+                        {c.compliancePct.toFixed(2)}%
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="font-mono text-[11px] text-wiah-mid mt-2">
+                <a
+                  href="https://www.dwi.gov.uk/drinking-water-quality/annual-statistics/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:underline"
+                >
+                  Source: Drinking Water Inspectorate, Annual Drinking Water Quality Reports, 2023. Updated annually.
+                </a>
+              </p>
+            </section>
+          </ScrollReveal>
+        )}
+
+        </div>{/* end sec-drinking-water */}
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

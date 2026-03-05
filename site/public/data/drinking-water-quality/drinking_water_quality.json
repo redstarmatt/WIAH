@@ -1,0 +1,47 @@
+{
+  "topic": "drinking-water-quality",
+  "lastUpdated": "2026-03-05",
+  "national": {
+    "complianceTimeSeries": [
+      {"year": 2010, "compliancePct": 99.96},
+      {"year": 2011, "compliancePct": 99.97},
+      {"year": 2012, "compliancePct": 99.96},
+      {"year": 2013, "compliancePct": 99.96},
+      {"year": 2014, "compliancePct": 99.97},
+      {"year": 2015, "compliancePct": 99.97},
+      {"year": 2016, "compliancePct": 99.97},
+      {"year": 2017, "compliancePct": 99.96},
+      {"year": 2018, "compliancePct": 99.95},
+      {"year": 2019, "compliancePct": 99.94},
+      {"year": 2020, "compliancePct": 99.93},
+      {"year": 2021, "compliancePct": 99.93},
+      {"year": 2022, "compliancePct": 99.97},
+      {"year": 2023, "compliancePct": 99.96}
+    ],
+    "byCompany": [
+      {"company": "Severn Trent", "compliancePct": 99.98},
+      {"company": "Thames Water", "compliancePct": 99.95},
+      {"company": "Anglian Water", "compliancePct": 99.97},
+      {"company": "Yorkshire Water", "compliancePct": 99.97},
+      {"company": "Southern Water", "compliancePct": 99.94},
+      {"company": "South West Water", "compliancePct": 99.92},
+      {"company": "Wessex Water", "compliancePct": 99.98},
+      {"company": "United Utilities", "compliancePct": 99.96},
+      {"company": "Affinity Water", "compliancePct": 99.95},
+      {"company": "Bristol Water", "compliancePct": 99.97}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Drinking Water Inspectorate",
+        "dataset": "Drinking Water Quality Regulator for England and Wales — Annual Reports",
+        "url": "https://www.dwi.gov.uk/drinking-water-quality/annual-statistics/",
+        "frequency": "annual",
+        "retrieved": "2026-03-05"
+      }
+    ],
+    "methodology": "Mean zonal compliance (MZC) — the standard regulatory measure of drinking water quality in England and Wales. A sample passes if it meets the prescribed concentration or value (PCV) for all parameters tested. National figure is weighted average across water company supply zones.",
+    "knownIssues": ["Compliance is measured at the point of supply — lead in old household pipes can affect tap water quality without appearing in these figures", "Perchlorate contamination in some areas not fully reflected in pre-2020 data"]
+  }
+}

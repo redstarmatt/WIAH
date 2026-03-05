@@ -118,6 +118,48 @@ interface DomesticAbuseData {
   };
 }
 
+interface PoliceOfficerPoint {
+  year: number;
+  officersFTE: number;
+}
+
+interface PoliceOfficerData {
+  topic: string;
+  lastUpdated: string;
+  timeSeries: PoliceOfficerPoint[];
+}
+
+interface LegalAidPoint {
+  date: string;
+  legalAidBnReal: number;
+  legalAidFirms: number;
+}
+
+interface LegalAidData {
+  timeSeries: LegalAidPoint[];
+}
+
+interface KnifeCrimePoint {
+  year: number;
+  offences: number;
+}
+
+interface KnifeHomicidePoint {
+  year: number;
+  count: number;
+}
+
+interface YouthKnifeCrimePoint {
+  year: number;
+  offences: number;
+}
+
+interface KnifeCrimeData {
+  knifeCrime: KnifeCrimePoint[];
+  knifeHomicides: KnifeHomicidePoint[];
+  youthKnifeCrime: YouthKnifeCrimePoint[];
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function isoToDate(s: string): Date {
@@ -154,6 +196,9 @@ export default function JusticePage() {
   const [crimeData, setCrimeData] = useState<CrimeTrendsData | null>(null);
   const [reoffData, setReoffData] = useState<ReoffendingData | null>(null);
   const [daData, setDaData] = useState<DomesticAbuseData | null>(null);
+  const [policeData, setPoliceData] = useState<PoliceOfficerData | null>(null);
+  const [legalAidData, setLegalAidData] = useState<LegalAidData | null>(null);
+  const [knifeCrimeData, setKnifeCrimeData] = useState<KnifeCrimeData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -172,6 +217,18 @@ export default function JusticePage() {
     fetch('/data/justice/domestic_abuse.json')
       .then(r => r.json())
       .then(setDaData)
+      .catch(console.error);
+    fetch('/data/police-officer-numbers/police_officer_numbers.json')
+      .then(r => r.json())
+      .then(setPoliceData)
+      .catch(console.error);
+    fetch('/data/legal-aid/legal_aid.json')
+      .then(r => r.json())
+      .then(setLegalAidData)
+      .catch(console.error);
+    fetch('/data/knife-crime/knife_crime.json')
+      .then(r => r.json())
+      .then(setKnifeCrimeData)
       .catch(console.error);
   }, []);
 
@@ -386,6 +443,83 @@ export default function JusticePage() {
       ]
     : [];
 
+  // Police officer numbers series
+  const policeOfficerSeries: Series[] = policeData
+    ? [{
+        id: 'police-officers',
+        label: 'Police officers (FTE)',
+        colour: '#0D1117',
+        data: policeData.timeSeries.map(d => ({
+          date: new Date(d.year, 0, 1),
+          value: d.officersFTE,
+        })),
+      }]
+    : [];
+
+  const policeAnnotations: Annotation[] = [
+    { date: new Date(2010, 0, 1), label: '2010: 143,734 officers (peak)' },
+    { date: new Date(2018, 0, 1), label: 'Post-austerity low' },
+    { date: new Date(2022, 0, 1), label: 'Uplift programme ends' },
+  ];
+
+  // Legal aid series — expenditure (dark) and firms/1000 (red)
+  const legalAidSpendSeries: Series[] = legalAidData
+    ? [{
+        id: 'legal-aid-spend',
+        label: 'Legal aid spend (£bn, 2010 prices)',
+        colour: '#0D1117',
+        data: legalAidData.timeSeries.map(d => ({
+          date: new Date(parseInt(d.date), 0, 1),
+          value: d.legalAidBnReal,
+        })),
+      }]
+    : [];
+
+  const legalAidFirmsSeries: Series[] = legalAidData
+    ? [{
+        id: 'legal-aid-firms',
+        label: 'Legal aid firms (thousands)',
+        colour: '#E63946',
+        data: legalAidData.timeSeries.map(d => ({
+          date: new Date(parseInt(d.date), 0, 1),
+          value: d.legalAidFirms / 1000,
+        })),
+      }]
+    : [];
+
+  const legalAidAnnotations: Annotation[] = [
+    { date: new Date(2013, 0, 1), label: '2013: LASPO removes civil categories' },
+  ];
+
+  // Knife crime series
+  const knifeCrimeSeries: Series[] = knifeCrimeData
+    ? [{
+        id: 'knife-offences',
+        label: 'Knife and offensive weapon offences',
+        colour: '#E63946',
+        data: knifeCrimeData.knifeCrime.map(d => ({
+          date: new Date(d.year, 0, 1),
+          value: d.offences,
+        })),
+      }]
+    : [];
+
+  const knifeHomicideSeries: Series[] = knifeCrimeData
+    ? [{
+        id: 'knife-homicides',
+        label: 'Knife homicides',
+        colour: '#264653',
+        data: knifeCrimeData.knifeHomicides.map(d => ({
+          date: new Date(d.year, 0, 1),
+          value: d.count,
+        })),
+      }]
+    : [];
+
+  const knifeAnnotations: Annotation[] = [
+    { date: new Date(2021, 0, 1), label: 'Pandemic rebound' },
+  ];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestCharge = data?.national.chargeRate.timeSeries.at(-1);
@@ -463,6 +597,9 @@ export default function JusticePage() {
           { id: 'sec-courts', label: 'Courts' },
           { id: 'sec-prison', label: 'Prison' },
           { id: 'sec-domestic-abuse', label: 'Domestic Abuse' },
+          { id: 'sec-police-numbers', label: 'Police Numbers' },
+          { id: 'sec-legal-aid', label: 'Legal Aid' },
+          { id: 'sec-knife-crime', label: 'Knife Crime' },
         ]} />
 
         {/* Metric cards */}
@@ -925,6 +1062,109 @@ export default function JusticePage() {
             <div className="h-48 bg-wiah-light rounded animate-pulse mb-12" />
           )}
         </div>{/* end sec-domestic-abuse */}
+
+        {/* ── Police Officer Numbers section ──────────────────────────────── */}
+        <div id="sec-police-numbers">
+          <ScrollReveal>
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-wiah-black mb-2">Police Officer Numbers</h2>
+              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+                England and Wales lost over 21,000 officers between 2010 and 2018 as austerity cuts
+                reduced forces. A government uplift programme then added back roughly 20,000 officers
+                by 2023, but numbers remain broadly flat since the programme concluded.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {policeOfficerSeries.length > 0 ? (
+            <ScrollReveal>
+              <LineChart
+                title="Police officer numbers, England and Wales, 2010–2024"
+                subtitle="Full-time equivalent police officers. Numbers fell by 21,000 between 2010 and 2018 before a government recruitment drive."
+                series={policeOfficerSeries}
+                annotations={policeAnnotations}
+                yLabel="Officers (FTE)"
+                source={{
+                  name: 'Home Office',
+                  dataset: 'Police Workforce, England and Wales',
+                  frequency: 'annual',
+                  url: 'https://www.gov.uk/government/collections/police-workforce-england-and-wales',
+                }}
+              />
+            </ScrollReveal>
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+          )}
+        </div>{/* end sec-police-numbers */}
+
+        {/* ── Legal Aid section ───────────────────────────────────────────── */}
+        <div id="sec-legal-aid">
+          <ScrollReveal>
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-wiah-black mb-2">Legal Aid</h2>
+              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+                Real-terms legal aid spending has fallen by over 30% since 2010, from around £2.1bn
+                to £1.4bn. The number of firms holding legal aid contracts has fallen by half, reducing
+                access to legal representation across England and Wales.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {legalAidSpendSeries.length > 0 ? (
+            <ScrollReveal>
+              <LineChart
+                title="Legal aid expenditure and provider firms, 2010–2024"
+                subtitle="Real-terms legal aid spend (£bn, 2010 prices) and number of firms holding legal aid contracts (thousands), England and Wales."
+                series={[...legalAidSpendSeries, ...legalAidFirmsSeries]}
+                annotations={legalAidAnnotations}
+                yLabel="£bn / thousands of firms"
+                source={{
+                  name: 'Legal Aid Agency',
+                  dataset: 'Legal Aid Statistics, England and Wales',
+                  frequency: 'annual',
+                  url: 'https://www.gov.uk/government/collections/legal-aid-statistics',
+                }}
+              />
+            </ScrollReveal>
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+          )}
+        </div>{/* end sec-legal-aid */}
+
+        {/* ── Knife Crime section ─────────────────────────────────────────── */}
+        <div id="sec-knife-crime">
+          <ScrollReveal>
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-wiah-black mb-2">Knife Crime</h2>
+              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+                Knife and offensive weapon offences have risen sharply since 2014, reaching over
+                51,000 in 2024 — nearly double the 2010 figure. Knife homicides have fluctuated
+                but remain persistently high. Youth knife crime has fallen somewhat from its 2019
+                peak but remains a serious concern.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {knifeCrimeSeries.length > 0 ? (
+            <ScrollReveal>
+              <LineChart
+                title="Knife and offensive weapon offences, 2010–2024"
+                subtitle="Police recorded knife offences, England and Wales. All ages."
+                series={[...knifeCrimeSeries, ...knifeHomicideSeries]}
+                annotations={knifeAnnotations}
+                yLabel="Offences"
+                source={{
+                  name: 'Home Office',
+                  dataset: 'Knife and Offensive Weapon Statistics, England and Wales',
+                  frequency: 'annual',
+                  url: 'https://www.gov.uk/government/collections/knife-and-offensive-weapon-statistics',
+                }}
+              />
+            </ScrollReveal>
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+          )}
+        </div>{/* end sec-knife-crime */}
 
         {/* Positive story */}
         <ScrollReveal>
