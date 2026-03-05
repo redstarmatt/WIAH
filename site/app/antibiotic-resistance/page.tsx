@@ -168,25 +168,23 @@ export default function AntibiticResistancePage() {
 
         <section id="sec-charts" className="mt-16 mb-16">
           <ScrollReveal>
-            <div className="h-72">
-              <LineChart
-                title="Estimated deaths attributable to antimicrobial resistance, UK"
-                subtitle="Annual estimates. Includes deaths where AMR was a direct or contributing cause."
-                series={amrDeathsSeries}
-                yLabel="Deaths"
-              />
-            </div>
+            <LineChart
+              title="Estimated deaths attributable to antimicrobial resistance, UK"
+              subtitle="Annual estimates. Includes deaths where AMR was a direct or contributing cause."
+              series={amrDeathsSeries}
+              yLabel="Deaths"
+              showTitle
+            />
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="h-72 mt-12">
-              <LineChart
-                title="E. coli bloodstream infection resistance to 3rd-generation cephalosporins, UK"
-                subtitle="Percentage of isolates resistant to standard first-line antibiotics."
-                series={ecoliSeries}
-                yLabel="Percentage"
-              />
-            </div>
+            <LineChart
+              title="E. coli bloodstream infection resistance to 3rd-generation cephalosporins, UK"
+              subtitle="Percentage of isolates resistant to standard first-line antibiotics."
+              series={ecoliSeries}
+              yLabel="Percentage"
+              showTitle
+            />
           </ScrollReveal>
 
           <ScrollReveal>

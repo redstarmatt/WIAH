@@ -157,25 +157,23 @@ export default function VoterTurnoutPage() {
           {data && (
             <>
               <ScrollReveal>
-                <div className="h-72">
-                  <LineChart
-                    title="UK general election turnout, 1979&ndash;2024"
-                    subtitle="Percentage of registered electorate who voted. England, Scotland, Wales and Northern Ireland."
-                    series={generalElectionSeries}
-                    yLabel="Turnout (%)"
-                  />
-                </div>
+                <LineChart
+                  title="UK general election turnout, 1979&ndash;2024"
+                  subtitle="Percentage of registered electorate who voted. England, Scotland, Wales and Northern Ireland."
+                  series={generalElectionSeries}
+                  yLabel="Turnout (%)"
+                  showTitle
+                />
               </ScrollReveal>
 
               <ScrollReveal>
-                <div className="h-72">
-                  <LineChart
-                    title="English local election turnout, 2000&ndash;2023"
-                    subtitle="Average turnout in English local government elections."
-                    series={localElectionSeries}
-                    yLabel="Turnout (%)"
-                  />
-                </div>
+                <LineChart
+                  title="English local election turnout, 2000&ndash;2023"
+                  subtitle="Average turnout in English local government elections."
+                  series={localElectionSeries}
+                  yLabel="Turnout (%)"
+                  showTitle
+                />
               </ScrollReveal>
 
               <ScrollReveal>

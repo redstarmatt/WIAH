@@ -61,9 +61,18 @@ export default function SectionNav({ sections }: SectionNavProps) {
     e.stopPropagation();
     const el = document.getElementById(id);
     if (!el) return;
-    // Offset for both sticky navs (~96px total)
-    const y = el.getBoundingClientRect().top + window.scrollY - 96;
-    window.scrollTo({ top: y, behavior: 'smooth' });
+    const target = el.getBoundingClientRect().top + window.scrollY - 96;
+    const start = window.scrollY;
+    const delta = target - start;
+    const duration = 300;
+    const startTime = performance.now();
+    const ease = (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    const step = (now: number) => {
+      const t = Math.min((now - startTime) / duration, 1);
+      window.scrollTo(0, start + delta * ease(t));
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
   };
 
   return (

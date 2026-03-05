@@ -182,26 +182,24 @@ export default function FoodInsecurityPage() {
 
         <section id="sec-charts" className="mt-16 mb-16">
           <ScrollReveal>
-            <div className="h-72">
-              <LineChart
-                title="Trussell Trust food bank parcels distributed, England"
-                subtitle="Annual totals. Trussell Trust network only &mdash; independent banks not included."
-                series={foodBankSeries}
-                annotations={foodBankAnnotations}
-                yLabel="Parcels (millions)"
-              />
-            </div>
+            <LineChart
+              title="Trussell Trust food bank parcels distributed, England"
+              subtitle="Annual totals. Trussell Trust network only &mdash; independent banks not included."
+              series={foodBankSeries}
+              annotations={foodBankAnnotations}
+              yLabel="Parcels (millions)"
+              showTitle
+            />
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="h-72 mt-12">
-              <LineChart
-                title="Children in food-insecure households, England"
-                subtitle="Percentage. Food insecurity defined as irregular access to enough food."
-                series={childFoodSeries}
-                yLabel="Percentage"
-              />
-            </div>
+            <LineChart
+              title="Children in food-insecure households, England"
+              subtitle="Percentage. Food insecurity defined as irregular access to enough food."
+              series={childFoodSeries}
+              yLabel="Percentage"
+              showTitle
+            />
           </ScrollReveal>
 
           <ScrollReveal>
