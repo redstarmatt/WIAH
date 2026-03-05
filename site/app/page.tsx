@@ -17,9 +17,7 @@ export default function HomePage() {
           </h1>
 
           <p className="font-editorial italic text-white/70 text-base md:text-lg mb-6 leading-relaxed">
-            Unpacking official data to show you what&rsquo;s actually happening.
-            <br className="hidden sm:block" />
-            AI-powered. Fact-driven. Source-linked.
+            Public data. Public understanding.
           </p>
 
           {/* Hero search + chips */}
