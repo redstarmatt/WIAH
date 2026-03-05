@@ -1,0 +1,16 @@
+{
+  "topic": "gp-list-size",
+  "lastUpdated": "2026-01-01",
+  "timeSeries": [
+    {"year": 2015, "avgListSize": 1891, "pctOver3000": 7.2, "consultationsPerDay": 31},
+    {"year": 2016, "avgListSize": 1943, "pctOver3000": 8.1},
+    {"year": 2017, "avgListSize": 1987, "pctOver3000": 9.3},
+    {"year": 2018, "avgListSize": 2031, "pctOver3000": 10.4},
+    {"year": 2019, "avgListSize": 2078, "pctOver3000": 11.8},
+    {"year": 2020, "avgListSize": 2134, "pctOver3000": 13.2},
+    {"year": 2021, "avgListSize": 2178, "pctOver3000": 15.0},
+    {"year": 2022, "avgListSize": 2224, "pctOver3000": 16.6},
+    {"year": 2023, "avgListSize": 2271, "pctOver3000": 18.1},
+    {"year": 2024, "avgListSize": 2290, "pctOver3000": 18.8}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "topic": "nhs-international-workers",
+  "lastUpdated": "2026-01-01",
+  "timeSeries": [
+    {"year": 2015, "internationalNursesPct": 18.2, "internationalDoctorsPct": 27.3},
+    {"year": 2017, "internationalNursesPct": 20.1, "internationalDoctorsPct": 28.1},
+    {"year": 2019, "internationalNursesPct": 22.4, "internationalDoctorsPct": 28.9},
+    {"year": 2021, "internationalNursesPct": 26.3, "internationalDoctorsPct": 29.8},
+    {"year": 2022, "internationalNursesPct": 29.1, "internationalDoctorsPct": 30.4},
+    {"year": 2023, "internationalNursesPct": 31.8, "internationalDoctorsPct": 31.2},
+    {"year": 2024, "internationalNursesPct": 33.4, "internationalDoctorsPct": 31.9}
+  ],
+  "topSourceCountries": ["India", "Philippines", "Nigeria", "Zimbabwe", "Pakistan"]
+}

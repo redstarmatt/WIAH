@@ -1,0 +1,13 @@
+{
+  "topic": "patient-safety-incidents",
+  "lastUpdated": "2026-01-01",
+  "timeSeries": [
+    {"year": 2018, "neverEvents": 413, "seriousIncidents": 10800, "maternityIncidents": 2700},
+    {"year": 2019, "neverEvents": 487, "seriousIncidents": 11200, "maternityIncidents": 2900},
+    {"year": 2020, "neverEvents": 358, "seriousIncidents": 9900, "maternityIncidents": 2600},
+    {"year": 2021, "neverEvents": 349, "seriousIncidents": 10100, "maternityIncidents": 2900},
+    {"year": 2022, "neverEvents": 378, "seriousIncidents": 11600, "maternityIncidents": 3200},
+    {"year": 2023, "neverEvents": 392, "seriousIncidents": 12400, "maternityIncidents": 3500},
+    {"year": 2024, "neverEvents": 367, "seriousIncidents": 11800, "maternityIncidents": 3300}
+  ]
+}

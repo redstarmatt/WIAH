@@ -1,0 +1,13 @@
+{
+  "topic": "clinical-negligence-costs",
+  "lastUpdated": "2026-01-01",
+  "timeSeries": [
+    {"year": 2014, "annualCostBn": 1.1, "outstandingLiabilityBn": 26.1},
+    {"year": 2016, "annualCostBn": 1.5, "outstandingLiabilityBn": 36.4},
+    {"year": 2018, "annualCostBn": 1.8, "outstandingLiabilityBn": 56.1},
+    {"year": 2020, "annualCostBn": 2.2, "outstandingLiabilityBn": 65.0},
+    {"year": 2022, "annualCostBn": 2.4, "outstandingLiabilityBn": 78.2},
+    {"year": 2023, "annualCostBn": 2.6, "outstandingLiabilityBn": 83.4},
+    {"year": 2024, "annualCostBn": 2.8, "outstandingLiabilityBn": 86.1}
+  ]
+}

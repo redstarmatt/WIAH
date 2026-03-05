@@ -1,0 +1,16 @@
+{
+  "topic": "cancer-screening-uptake",
+  "lastUpdated": "2026-01-01",
+  "timeSeries": [
+    {"year": 2015, "cervical": 74.2, "breast": 76.8, "bowel": 58.4},
+    {"year": 2016, "cervical": 73.1, "breast": 75.9, "bowel": 58.9},
+    {"year": 2017, "cervical": 72.0, "breast": 75.4, "bowel": 59.4},
+    {"year": 2018, "cervical": 71.4, "breast": 74.9, "bowel": 60.4},
+    {"year": 2019, "cervical": 70.1, "breast": 74.2, "bowel": 61.2},
+    {"year": 2020, "cervical": 65.0, "breast": 65.0, "bowel": 55.0},
+    {"year": 2021, "cervical": 68.3, "breast": 70.1, "bowel": 60.1},
+    {"year": 2022, "cervical": 68.4, "breast": 74.4, "bowel": 66.4},
+    {"year": 2023, "cervical": 68.5, "breast": 74.4, "bowel": 66.4}
+  ],
+  "targets": {"cervical": 80, "breast": 80, "bowel": 75}
+}

@@ -1,0 +1,15 @@
+{
+  "topic": "nhs-agency-spend",
+  "lastUpdated": "2026-01-01",
+  "timeSeries": [
+    {"year": 2015, "agencySpendBn": 2.8, "pctOfPayBill": 6.2},
+    {"year": 2016, "agencySpendBn": 3.2, "pctOfPayBill": 7.1},
+    {"year": 2017, "agencySpendBn": 2.9, "pctOfPayBill": 6.3},
+    {"year": 2018, "agencySpendBn": 2.6, "pctOfPayBill": 5.5},
+    {"year": 2019, "agencySpendBn": 2.4, "pctOfPayBill": 4.9},
+    {"year": 2020, "agencySpendBn": 2.2, "pctOfPayBill": 4.3},
+    {"year": 2021, "agencySpendBn": 2.9, "pctOfPayBill": 5.5},
+    {"year": 2022, "agencySpendBn": 3.3, "pctOfPayBill": 6.8},
+    {"year": 2023, "agencySpendBn": 3.7, "pctOfPayBill": 8.2}
+  ]
+}

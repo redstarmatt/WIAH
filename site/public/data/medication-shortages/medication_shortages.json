@@ -1,0 +1,14 @@
+{
+  "topic": "medication-shortages",
+  "lastUpdated": "2026-01-01",
+  "timeSeries": [
+    {"year": 2018, "shortagesCount": 34, "patientComplaints": 85000},
+    {"year": 2019, "shortagesCount": 42, "patientComplaints": 110000},
+    {"year": 2020, "shortagesCount": 67, "patientComplaints": 160000},
+    {"year": 2021, "shortagesCount": 71, "patientComplaints": 190000},
+    {"year": 2022, "shortagesCount": 89, "patientComplaints": 250000},
+    {"year": 2023, "shortagesCount": 121, "patientComplaints": 340000},
+    {"year": 2024, "shortagesCount": 108, "patientComplaints": 290000}
+  ],
+  "topShortages": ["HRT", "ADHD medication", "Antibiotics", "Diabetes drugs", "Epilepsy medication"]
+}

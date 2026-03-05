@@ -1,0 +1,16 @@
+{
+  "topic": "nhs-health-checks",
+  "lastUpdated": "2026-01-01",
+  "timeSeries": [
+    {"year": 2015, "invited": 1680000, "completed": 980000, "uptakePct": 58.3},
+    {"year": 2016, "invited": 1620000, "completed": 940000, "uptakePct": 58.0},
+    {"year": 2017, "invited": 1580000, "completed": 910000, "uptakePct": 57.6},
+    {"year": 2018, "invited": 1520000, "completed": 880000, "uptakePct": 57.9},
+    {"year": 2019, "invited": 1480000, "completed": 820000, "uptakePct": 55.4},
+    {"year": 2020, "invited": 710000, "completed": 310000, "uptakePct": 43.7},
+    {"year": 2021, "invited": 1010000, "completed": 530000, "uptakePct": 52.5},
+    {"year": 2022, "invited": 1180000, "completed": 560000, "uptakePct": 47.5},
+    {"year": 2023, "invited": 1300000, "completed": 624000, "uptakePct": 48.0}
+  ],
+  "deprivationGap": 18
+}

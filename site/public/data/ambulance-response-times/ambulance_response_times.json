@@ -1,0 +1,16 @@
+{
+  "topic": "ambulance-response-times",
+  "lastUpdated": "2026-01-01",
+  "timeSeries": [
+    {"year": 2017, "cat1Minutes": 7.0, "cat2Minutes": 18.0},
+    {"year": 2018, "cat1Minutes": 7.2, "cat2Minutes": 21.4},
+    {"year": 2019, "cat1Minutes": 7.3, "cat2Minutes": 22.9},
+    {"year": 2020, "cat1Minutes": 7.8, "cat2Minutes": 29.1},
+    {"year": 2021, "cat1Minutes": 8.0, "cat2Minutes": 32.4},
+    {"year": 2022, "cat1Minutes": 8.7, "cat2Minutes": 48.3},
+    {"year": 2023, "cat1Minutes": 8.4, "cat2Minutes": 41.3},
+    {"year": 2024, "cat1Minutes": 8.2, "cat2Minutes": 38.6}
+  ],
+  "targets": {"cat1": 7, "cat2": 18},
+  "trustVariation": {"best": 7.1, "worst": 12.3}
+}

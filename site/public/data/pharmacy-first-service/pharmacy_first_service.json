@@ -1,0 +1,13 @@
+{
+  "topic": "pharmacy-first-service",
+  "lastUpdated": "2026-01-01",
+  "timeSeries": [
+    {"year": 2024, "consultations": 1400000, "resolutionRate": 89, "avgWaitDays": 0.5, "gpWaitDays": 2.4}
+  ],
+  "conditions": [
+    {"condition": "UTI", "resolutionRate": 92},
+    {"condition": "Sinusitis", "resolutionRate": 87},
+    {"condition": "Shingles", "resolutionRate": 91},
+    {"condition": "Earache", "resolutionRate": 88}
+  ]
+}
