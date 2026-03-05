@@ -102,44 +102,8 @@ export default function GamblingPage() {
 
       <section id="sec-context" className="max-w-2xl mx-auto px-6 mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              The Gambling Act 2005, drafted in the pre-smartphone era, permitted remote gambling,
-              expanded casinos, and allowed fixed-odds betting terminals with stakes up to
-              &pound;100 per spin. The consequences have been structural. Online gambling gross
-              yield rose from &pound;3.2 billion in 2016/17 to &pound;7.1 billion in 2022/23
-              &mdash; a 121% increase &mdash; and now accounts for 51% of all gambling revenue.
-              Some 430,000 people in England meet the clinical threshold for problem gambling
-              (PGSI score 8+, NHS Health Survey), with a further 1.3 million at moderate risk.
-              Public Health England found the suicide rate among problem gamblers is 15 times
-              the national average. Of those with the most severe habits, 80% gamble primarily online.
-            </p>
-            <p>
-              The high street has borne a visible cost. Fixed-odds betting terminal stakes were
-              cut from &pound;100 to &pound;2 in April 2019, after years of campaigning, and the
-              reduction contributed directly to the closure of roughly 1,400 betting shops. Total
-              shop numbers fell from over 9,000 in 2013 to 6,700 by 2023 &mdash; with the
-              remaining outlets disproportionately concentrated in deprived areas. Online slots
-              have largely filled the demand gap left by FOBTs. The Gambling Commission, which
-              licences over 3,000 operators, received 4,200 complaints in 2022/23 and levied
-              &pound;19.2 million in fines against William Hill entities in 2023 alone. The
-              industry spent &pound;1.5 billion per year on advertising, including Premier League
-              shirt sponsorships &mdash; a practice banned from 2026 onward.
-            </p>
-            <p>
-              The Gambling Act White Paper (April 2023) represents the first major reform in
-              18 years. Key measures include online slot stake limits of &pound;2 for under-25s
-              and &pound;5 for adults, plus a mandatory statutory levy of &pound;100 million
-              per year on operators &mdash; replacing voluntary contributions of just &pound;10 million.
-              Affordability checks for high-spending customers, the most contested proposal, remain
-              delayed. The GamStop national self-exclusion scheme has 480,000 registered users.
-              Separately, the Gambling Commission&apos;s 2022 Youth Survey found 55,000 children
-              and young people are problem gamblers, and GamCare&apos;s helpline received
-              55,000 contacts in 2022/23 &mdash; a 25% increase year-on-year. The National
-              Lottery, now operated by Allwyn since February 2024, generated &pound;8.1 billion
-              in sales in 2022/23, of which &pound;1.8 billion went to good causes.
-            </p>
-            <p>Problem gambling does not affect the population equally. Rates of gambling harm are roughly three times higher in the most deprived quintile of neighbourhoods compared with the least deprived, a pattern reinforced by the physical concentration of betting shops, which are approximately three times more numerous per capita in the poorest areas according to National Audit Office analysis. Men remain twice as likely to experience problem gambling, though the gap is narrowing as online platforms expand their reach among women. Under-35s are disproportionately affected by online slots, the product category associated with the most acute harm relative to its share of industry revenue. Research from the University of Bristol has identified a significant co-occurrence between gambling harm and domestic abuse, while debt charities consistently report that gambling-related financial distress frequently intersects with illegal lending. The advertising landscape compounds these inequalities: gambling marketing exposure is concentrated in deprived and ethnic minority communities through both broadcast and digital channels. Perhaps the most important structural fact about the industry is that an estimated 60% of gross gambling yield derives from just 5% of customers &mdash; those who are already at risk or experiencing harm. This revenue concentration means the commercial model is fundamentally dependent on heavy and problem gamblers, a dynamic that voluntary harm reduction measures have proven insufficient to disrupt without regulatory compulsion.</p>
-            <p>Measuring the true prevalence and impact of gambling harm is considerably more difficult than headline figures suggest. The Problem Gambling Severity Index score of 8 or above, used to define &ldquo;problem gambling,&rdquo; is a screening tool designed for population surveys, not a clinical diagnosis, and different survey methodologies produce significantly different estimates. The NHS Health Survey for England, generally considered the most methodologically rigorous instrument, consistently returns lower prevalence figures than industry-commissioned research. National prevalence surveys are conducted only every two to three years, meaning estimates can be substantially outdated by the time they inform policy. Operator-held consumption data &mdash; which would reveal exactly how losses are distributed across customer segments &mdash; is not publicly available and is shared with researchers only under restrictive confidentiality agreements. The dark figure of unreported harm is substantial: most problem gamblers never contact GamCare or any support service, and those who do are self-selected and unrepresentative. Gambling-related suicide is almost certainly undercounted because gambling is rarely recorded on death certificates or in coroner narratives unless explicitly flagged by families. Enforcement data published by the Gambling Commission understates actual regulatory breaches, as compliance monitoring covers only a fraction of operator activity. There is no reliable method for estimating children&apos;s real exposure to gambling advertising across social media platforms, where age verification remains largely ineffective.</p>
+            <p>The Gambling Act 2005, drafted in the pre-smartphone era, permitted remote gambling and allowed fixed-odds betting terminals with stakes up to &pound;100 per spin. Online gambling gross yield has since risen from &pound;3.2 billion in 2016/17 to &pound;7.1 billion in 2022/23 &mdash; a 121% increase &mdash; and now accounts for 51% of all gambling revenue. Some 430,000 people in England meet the clinical threshold for problem gambling, with a further 1.3 million at moderate risk; the suicide rate among problem gamblers is 15 times the national average, and 80% of the most severely affected gamble primarily online. FOBT stake limits cut from &pound;100 to &pound;2 in April 2019 drove roughly 1,400 betting shop closures, with total shop numbers falling from over 9,000 in 2013 to 6,700 by 2023; online slots have largely replaced that demand. The Gambling Act White Paper (April 2023) &mdash; the first major reform in 18 years &mdash; introduced online slot stake limits of &pound;2 for under-25s and &pound;5 for adults, and replaced voluntary industry contributions of &pound;10 million with a mandatory &pound;100 million statutory levy. Affordability checks for high-spending customers, the most contested proposal, remain delayed.</p>
+            <p>Gambling harm does not affect the population equally. Problem gambling rates are roughly three times higher in the most deprived neighbourhoods, and betting shops are approximately three times more numerous per capita in the poorest areas. Men remain twice as likely to experience problem gambling, though the gap is narrowing as online platforms expand among women. An estimated 60% of gross gambling yield derives from just 5% of customers &mdash; those already at risk or experiencing harm &mdash; meaning the commercial model is structurally dependent on problem gamblers in a way that voluntary harm reduction has proven insufficient to disrupt. The 55,000 children and young people identified as problem gamblers by the Gambling Commission&apos;s Youth Survey, and the 25% year-on-year rise in GamCare helpline contacts, indicate that the 2023 White Paper reforms, while substantive, address an industry that expanded for two decades largely without constraint.</p>
           </div>
         </section>
 
