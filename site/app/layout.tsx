@@ -4,6 +4,7 @@ import './globals.css';
 import dynamic from 'next/dynamic';
 import SearchProvider from '@/components/SearchProvider';
 import SearchModal from '@/components/SearchModal';
+import CanonicalTag from '@/components/CanonicalTag';
 
 const NextTopicBar = dynamic(() => import('@/components/NextTopicBar'), { ssr: false });
 
@@ -26,9 +27,6 @@ export const metadata: Metadata = {
     template: '%s — What is actually happening?',
   },
   description: 'A curated national data platform that makes the real state of the UK visible, understandable, and shareable.',
-  alternates: {
-    canonical: 'https://www.wiah.uk',
-  },
   openGraph: {
     title: 'What is actually happening?',
     description: 'The real state of the UK — visible, understandable, shareable.',
@@ -47,6 +45,7 @@ export default function RootLayout({
     <html lang="en" className={`${lora.variable} ${jakarta.variable}`}>
       <body className="antialiased bg-white text-wiah-black">
         <SearchProvider>
+          <CanonicalTag />
           {children}
           <SearchModal />
           <NextTopicBar />
