@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Lora, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
+import SearchProvider from '@/components/SearchProvider';
+import SearchModal from '@/components/SearchModal';
 
 const lora = Lora({
   subsets: ['latin'],
@@ -34,7 +36,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lora.variable} ${jakarta.variable}`}>
       <body className="antialiased bg-white text-wiah-black">
-        {children}
+        <SearchProvider>
+          {children}
+          <SearchModal />
+        </SearchProvider>
       </body>
     </html>
   );
