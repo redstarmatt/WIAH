@@ -1,0 +1,15 @@
+{
+  "topic": "personal-health-budgets",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    {"year": 2015, "holdersK": 10},
+    {"year": 2016, "holdersK": 15},
+    {"year": 2017, "holdersK": 22},
+    {"year": 2018, "holdersK": 35},
+    {"year": 2019, "holdersK": 55},
+    {"year": 2020, "holdersK": 58},
+    {"year": 2021, "holdersK": 72},
+    {"year": 2022, "holdersK": 88},
+    {"year": 2023, "holdersK": 110}
+  ]
+}

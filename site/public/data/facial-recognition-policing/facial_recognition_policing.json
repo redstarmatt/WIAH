@@ -1,0 +1,21 @@
+{
+  "topic": "facial-recognition-policing",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2019, "deployments": 8, "identifications": 42, "falsePositivesPer1000": 4.2 },
+    { "year": 2020, "deployments": 12, "identifications": 68, "falsePositivesPer1000": 3.8 },
+    { "year": 2021, "deployments": 23, "identifications": 121, "falsePositivesPer1000": 3.4 },
+    { "year": 2022, "deployments": 47, "identifications": 226, "falsePositivesPer1000": 2.9 },
+    { "year": 2023, "deployments": 72, "identifications": 348, "falsePositivesPer1000": 2.4 },
+    { "year": 2024, "deployments": 97, "identifications": 454, "falsePositivesPer1000": 2.0 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Metropolitan Police", "dataset": "Live facial recognition deployment reports", "url": "https://www.met.police.uk/advice/advice-and-information/facial-recognition/", "retrieved": "2024-10-01", "frequency": "ad hoc" },
+      { "name": "Biometrics Commissioner", "dataset": "Annual report", "url": "https://www.gov.uk/government/organisations/biometrics-commissioner", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "ICO", "dataset": "Facial recognition technology guidance", "url": "https://ico.org.uk/", "retrieved": "2024-10-01", "frequency": "ad hoc" }
+    ],
+    "methodology": "Deployments refer to live facial recognition operations by the Metropolitan Police Service only. False positive rate is individuals incorrectly flagged as a person of interest per 1,000 faces scanned, based on Met Police self-reported figures. Independent audits suggest rates may be higher.",
+    "knownIssues": ["Data primarily covers Metropolitan Police — other forces publish inconsistently", "False positive rates are self-reported and methodology varies between deployments", "Data pre-2019 is sparse as deployments were in trial phase"]
+  }
+}

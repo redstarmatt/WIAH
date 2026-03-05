@@ -1,0 +1,26 @@
+{
+  "topic": "loneliness-elderly",
+  "lastUpdated": "2024-09-01",
+  "timeSeries": [
+    { "year": 2015, "chronicallyLonelyM": 1.2, "rarelySeeFamilyPct": 9, "prematureDeathRiskIncreasePct": 26 },
+    { "year": 2016, "chronicallyLonelyM": 1.22, "rarelySeeFamilyPct": 9, "prematureDeathRiskIncreasePct": 26 },
+    { "year": 2017, "chronicallyLonelyM": 1.25, "rarelySeeFamilyPct": 9, "prematureDeathRiskIncreasePct": 26 },
+    { "year": 2018, "chronicallyLonelyM": 1.28, "rarelySeeFamilyPct": 10, "prematureDeathRiskIncreasePct": 26 },
+    { "year": 2019, "chronicallyLonelyM": 1.3, "rarelySeeFamilyPct": 10, "prematureDeathRiskIncreasePct": 26 },
+    { "year": 2020, "chronicallyLonelyM": 1.4, "rarelySeeFamilyPct": 11, "prematureDeathRiskIncreasePct": 26 },
+    { "year": 2021, "chronicallyLonelyM": 1.42, "rarelySeeFamilyPct": 10, "prematureDeathRiskIncreasePct": 26 },
+    { "year": 2022, "chronicallyLonelyM": 1.39, "rarelySeeFamilyPct": 10, "prematureDeathRiskIncreasePct": 26 },
+    { "year": 2023, "chronicallyLonelyM": 1.4, "rarelySeeFamilyPct": 10, "prematureDeathRiskIncreasePct": 26 },
+    { "year": 2024, "chronicallyLonelyM": 1.4, "rarelySeeFamilyPct": 10, "prematureDeathRiskIncreasePct": 26 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Age UK", "dataset": "Loneliness in Later Life", "url": "https://www.ageuk.org.uk/information-advice/health-wellbeing/loneliness/loneliness-and-isolation-evidence-review/", "retrieved": "2024-09-01", "frequency": "periodic" },
+      { "name": "Campaign to End Loneliness", "dataset": "Loneliness Measurement for the UK", "url": "https://www.campaigntoendloneliness.org/loneliness-research/", "retrieved": "2024-09-01", "frequency": "annual" },
+      { "name": "ELSA", "dataset": "English Longitudinal Study of Ageing", "url": "https://www.elsa-project.ac.uk/", "retrieved": "2024-09-01", "frequency": "biennial" },
+      { "name": "ONS", "dataset": "Loneliness, what characteristics and circumstances are associated with feeling lonely", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/articles/lonelinesswhatcharacteristicsandcircumstancesareassociatedwithfeelinglonely/2018-04-10", "retrieved": "2024-09-01", "frequency": "periodic" }
+    ],
+    "methodology": "Chronically lonely defined as experiencing loneliness often or always for 3+ months. Figures derived from ELSA biennial surveys and ONS Community Life Survey. Risk increase from meta-analysis of Holt-Lunstad et al studies on loneliness and mortality.",
+    "knownIssues": ["Loneliness is self-reported and subject to social desirability bias. Chronic loneliness estimates interpolated between survey years."]
+  }
+}

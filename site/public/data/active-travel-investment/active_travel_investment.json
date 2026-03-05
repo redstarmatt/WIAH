@@ -1,0 +1,23 @@
+{
+  "topic": "active-travel-investment",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "investmentBn": 0.20, "cyclingTripsBn": 1.9 },
+    { "year": 2017, "investmentBn": 0.25, "cyclingTripsBn": 2.0 },
+    { "year": 2018, "investmentBn": 0.35, "cyclingTripsBn": 2.1 },
+    { "year": 2019, "investmentBn": 0.45, "cyclingTripsBn": 2.3 },
+    { "year": 2020, "investmentBn": 0.48, "cyclingTripsBn": 2.3 },
+    { "year": 2021, "investmentBn": 0.50, "cyclingTripsBn": 2.5 },
+    { "year": 2022, "investmentBn": 0.70, "cyclingTripsBn": 2.8 },
+    { "year": 2023, "investmentBn": 0.90, "cyclingTripsBn": 3.1 },
+    { "year": 2024, "investmentBn": 1.10, "cyclingTripsBn": 3.4 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Active Travel England", "dataset": "Investment Report", "url": "https://www.gov.uk/government/organisations/active-travel-england", "retrieved": "2024-12-01", "frequency": "annual" },
+      { "name": "Department for Transport", "dataset": "Cycling and Walking Investment Strategy Metrics", "url": "https://www.gov.uk/government/publications/cycling-and-walking-investment-strategy", "retrieved": "2024-12-01", "frequency": "annual" }
+    ],
+    "methodology": "Investment figures cover walking, cycling and wheeling infrastructure combined. Cycling trips from National Travel Survey.",
+    "knownIssues": ["Cycling trips may be undercounted in survey data as short trips and e-bike journeys are less reliably captured"]
+  }
+}

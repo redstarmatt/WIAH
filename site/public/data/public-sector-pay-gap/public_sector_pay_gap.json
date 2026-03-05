@@ -1,0 +1,15 @@
+{
+  "topic": "public-sector-pay-gap",
+  "lastUpdated": "2025-01-01",
+  "timeSeries": [
+    { "year": 2016, "publicPrivatePayGapPct": 0.5, "strikesDaysM": 0.1 },
+    { "year": 2017, "publicPrivatePayGapPct": 0.2, "strikesDaysM": 0.1 },
+    { "year": 2018, "publicPrivatePayGapPct": -0.3, "strikesDaysM": 0.1 },
+    { "year": 2019, "publicPrivatePayGapPct": -0.8, "strikesDaysM": 0.1 },
+    { "year": 2020, "publicPrivatePayGapPct": -1.2, "strikesDaysM": 0.2 },
+    { "year": 2021, "publicPrivatePayGapPct": -2.0, "strikesDaysM": 0.1 },
+    { "year": 2022, "publicPrivatePayGapPct": -3.2, "strikesDaysM": 0.3 },
+    { "year": 2023, "publicPrivatePayGapPct": -1.8, "strikesDaysM": 4.2 },
+    { "year": 2024, "publicPrivatePayGapPct": -0.8, "strikesDaysM": 0.4 }
+  ]
+}

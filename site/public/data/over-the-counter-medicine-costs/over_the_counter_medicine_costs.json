@@ -1,0 +1,24 @@
+{
+  "topic": "over-the-counter-medicine-costs",
+  "lastUpdated": "2026-03-05",
+  "timeSeries": [
+    { "year": 2016, "otcPriceIndexVs2021": 0, "prescriptionCharge": 8.60 },
+    { "year": 2017, "otcPriceIndexVs2021": 2, "prescriptionCharge": 8.80 },
+    { "year": 2018, "otcPriceIndexVs2021": 4, "prescriptionCharge": 8.80 },
+    { "year": 2019, "otcPriceIndexVs2021": 5, "prescriptionCharge": 9.15 },
+    { "year": 2020, "otcPriceIndexVs2021": 8, "prescriptionCharge": 9.35 },
+    { "year": 2021, "otcPriceIndexVs2021": 30, "prescriptionCharge": 9.35 },
+    { "year": 2022, "otcPriceIndexVs2021": 45, "prescriptionCharge": 9.35 },
+    { "year": 2023, "otcPriceIndexVs2021": 50, "prescriptionCharge": 9.65 },
+    { "year": 2024, "otcPriceIndexVs2021": 55, "prescriptionCharge": 9.90 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "PAGB", "dataset": "OTC Medicine Price Tracker", "url": "https://www.pagb.co.uk/publications/", "retrieved": "2026-03-05", "frequency": "annual" },
+      { "name": "NHS Business Services Authority", "dataset": "Prescription Charge History", "url": "https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/prescription-charge-information", "retrieved": "2026-03-05", "frequency": "annual" },
+      { "name": "Healthwatch England", "dataset": "Medicines Access Survey", "url": "https://www.healthwatch.co.uk/", "retrieved": "2026-03-05", "frequency": "annual" }
+    ],
+    "methodology": "OTC price index uses 2021 as baseline (0%). Figures represent average price change across common analgesics, antihistamines, and cold remedies. Prescription charge from NHS BSAS annual schedule.",
+    "knownIssues": ["OTC prices vary significantly between retailers — index uses average across major pharmacy and supermarket chains", "Price index rebased to 2021 for comparability — pre-2021 changes are illustrative"]
+  }
+}

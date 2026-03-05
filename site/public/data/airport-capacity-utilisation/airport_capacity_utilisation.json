@@ -1,0 +1,22 @@
+{
+  "topic": "airport-capacity-utilisation",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "heathrowUtilPct": 91, "ukPassengersM": 225 },
+    { "year": 2017, "heathrowUtilPct": 92, "ukPassengersM": 232 },
+    { "year": 2018, "heathrowUtilPct": 93, "ukPassengersM": 238 },
+    { "year": 2019, "heathrowUtilPct": 95, "ukPassengersM": 244 },
+    { "year": 2020, "heathrowUtilPct": 97, "ukPassengersM": 252 },
+    { "year": 2021, "heathrowUtilPct": 40, "ukPassengersM": 74 },
+    { "year": 2022, "heathrowUtilPct": 75, "ukPassengersM": 166 },
+    { "year": 2023, "heathrowUtilPct": 88, "ukPassengersM": 210 },
+    { "year": 2024, "heathrowUtilPct": 97, "ukPassengersM": 266 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Civil Aviation Authority", "dataset": "Airport Statistics", "url": "https://www.caa.co.uk/data-and-analysis/uk-aviation-market/airports/", "retrieved": "2024-12-01", "frequency": "annual" }
+    ],
+    "methodology": "Heathrow capacity utilisation is total passengers as a percentage of declared operational capacity. UK airport passengers is total passengers handled at all UK airports.",
+    "knownIssues": ["2020-21 data reflects pandemic disruption — capacity utilisation figure for 2020 is pre-pandemic (measured against pre-restriction year)"]
+  }
+}

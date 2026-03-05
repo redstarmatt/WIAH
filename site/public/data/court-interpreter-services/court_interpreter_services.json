@@ -1,0 +1,24 @@
+{
+  "topic": "court-interpreter-services",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2015, "bookingFailures": 14200, "delayedCasesPct": 11, "avgCostPerFailure": 980 },
+    { "year": 2016, "bookingFailures": 13100, "delayedCasesPct": 10, "avgCostPerFailure": 1000 },
+    { "year": 2017, "bookingFailures": 12400, "delayedCasesPct": 9, "avgCostPerFailure": 1020 },
+    { "year": 2018, "bookingFailures": 11800, "delayedCasesPct": 9, "avgCostPerFailure": 1050 },
+    { "year": 2019, "bookingFailures": 11200, "delayedCasesPct": 9, "avgCostPerFailure": 1080 },
+    { "year": 2020, "bookingFailures": 8400, "delayedCasesPct": 7, "avgCostPerFailure": 1100 },
+    { "year": 2021, "bookingFailures": 9100, "delayedCasesPct": 7, "avgCostPerFailure": 1130 },
+    { "year": 2022, "bookingFailures": 9700, "delayedCasesPct": 8, "avgCostPerFailure": 1180 },
+    { "year": 2023, "bookingFailures": 10200, "delayedCasesPct": 8, "avgCostPerFailure": 1250 },
+    { "year": 2024, "bookingFailures": 10500, "delayedCasesPct": 8, "avgCostPerFailure": 1290 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Ministry of Justice", "dataset": "HMCTS interpreter services data", "url": "https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "National Audit Office", "dataset": "Language services in the justice system", "url": "https://www.nao.org.uk/", "retrieved": "2024-10-01", "frequency": "ad hoc" }
+    ],
+    "methodology": "Booking failures are instances where a requested interpreter was not provided at the time required. Delayed cases are hearings adjourned or delayed as a direct result of interpreter unavailability as a proportion of all hearings requiring an interpreter. Average cost per failed hearing includes court time costs, legal representation, and rescheduling overheads.",
+    "knownIssues": ["2020 figures affected by COVID-19 court closures reducing absolute hearing volumes", "Cost per failure is an estimate based on NAO methodology; actual costs vary significantly by case type"]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "topic": "digital-skills-gap",
+  "lastUpdated": "2025-03-01",
+  "timeSeries": [
+    { "year": 2016, "adultsLackingSkillsM": 14.5, "jobsRequiringDigitalPct": 67 },
+    { "year": 2017, "adultsLackingSkillsM": 14.2, "jobsRequiringDigitalPct": 68 },
+    { "year": 2018, "adultsLackingSkillsM": 13.9, "jobsRequiringDigitalPct": 70 },
+    { "year": 2019, "adultsLackingSkillsM": 13.7, "jobsRequiringDigitalPct": 71 },
+    { "year": 2020, "adultsLackingSkillsM": 13.5, "jobsRequiringDigitalPct": 73 },
+    { "year": 2021, "adultsLackingSkillsM": 13.3, "jobsRequiringDigitalPct": 75 },
+    { "year": 2022, "adultsLackingSkillsM": 13.1, "jobsRequiringDigitalPct": 77 },
+    { "year": 2023, "adultsLackingSkillsM": 12.9, "jobsRequiringDigitalPct": 80 },
+    { "year": 2024, "adultsLackingSkillsM": 12.6, "jobsRequiringDigitalPct": 82 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Lloyds Bank",
+        "dataset": "UK Consumer Digital Index",
+        "url": "https://www.lloydsbank.com/banking-with-us/whats-happening/consumer-digital-index.html",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "DCMS",
+        "dataset": "UK Digital Strategy Evaluation",
+        "url": "https://www.gov.uk/government/publications/uk-digital-strategy",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Adults lacking essential digital skills are those who cannot perform one or more of the five essential digital tasks (communicate, handle information, transact, problem-solve, stay safe online) as defined by the Essential Digital Skills framework. Job vacancy digital requirements are based on analysis of job postings by Burning Glass Technologies for DCMS.",
+    "knownIssues": [
+      "The Essential Digital Skills framework was updated in 2021, creating a slight discontinuity in the time series."
+    ]
+  }
+}

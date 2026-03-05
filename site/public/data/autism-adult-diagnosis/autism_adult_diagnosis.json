@@ -1,0 +1,23 @@
+{
+  "topic": "autism-adult-diagnosis",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2018, "waitingListK": 22, "avgWaitYears": 1.8, "newDiagnosesK": 45 },
+    { "year": 2019, "waitingListK": 34, "avgWaitYears": 2.1, "newDiagnosesK": 52 },
+    { "year": 2020, "waitingListK": 48, "avgWaitYears": 2.4, "newDiagnosesK": 41 },
+    { "year": 2021, "waitingListK": 64, "avgWaitYears": 2.7, "newDiagnosesK": 58 },
+    { "year": 2022, "waitingListK": 84, "avgWaitYears": 3.1, "newDiagnosesK": 68 },
+    { "year": 2023, "waitingListK": 105, "avgWaitYears": 3.4, "newDiagnosesK": 74 },
+    { "year": 2024, "waitingListK": 116, "avgWaitYears": 3.6, "newDiagnosesK": 78 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "NHS England", "dataset": "Autism Waiting Times Statistics", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/autism-statistics/", "retrieved": "2024-10-01", "frequency": "quarterly" },
+      { "name": "NHSBSA", "dataset": "Prescription Cost Analysis", "url": "https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "Autistica", "dataset": "Autism Research and Evidence", "url": "https://www.autistica.org.uk/research/research-strategy", "retrieved": "2024-10-01", "frequency": "periodic" },
+      { "name": "ONS", "dataset": "Disability and Health Scotland and England", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare", "retrieved": "2024-10-01", "frequency": "periodic" }
+    ],
+    "methodology": "Waiting list figures are those awaiting first appointment with autism assessment service. Average wait calculated from referral to first assessment appointment. New diagnoses estimated from NHS Digital data and NHSBSA prescribing records.",
+    "knownIssues": ["NHS England only began systematic autism waiting time data collection in 2018. Waiting list figures may under-count as not all providers submit complete data."]
+  }
+}

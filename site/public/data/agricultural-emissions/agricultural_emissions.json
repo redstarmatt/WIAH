@@ -1,0 +1,28 @@
+{
+  "topic": "agricultural-emissions",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "agriEmissionsSharePct": 11.2, "livestockMethaneMt": 51 },
+    { "year": 2017, "agriEmissionsSharePct": 11.1, "livestockMethaneMt": 51 },
+    { "year": 2018, "agriEmissionsSharePct": 11.0, "livestockMethaneMt": 50 },
+    { "year": 2019, "agriEmissionsSharePct": 11.0, "livestockMethaneMt": 50 },
+    { "year": 2020, "agriEmissionsSharePct": 11.0, "livestockMethaneMt": 49 },
+    { "year": 2021, "agriEmissionsSharePct": 11.1, "livestockMethaneMt": 49 },
+    { "year": 2022, "agriEmissionsSharePct": 11.0, "livestockMethaneMt": 49 },
+    { "year": 2023, "agriEmissionsSharePct": 11.0, "livestockMethaneMt": 49 },
+    { "year": 2024, "agriEmissionsSharePct": 11.0, "livestockMethaneMt": 49 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DESNZ",
+        "dataset": "UK Greenhouse Gas Emissions Statistics",
+        "url": "https://www.gov.uk/government/statistics/provisional-uk-greenhouse-gas-emissions-national-statistics",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Agriculture's share of total UK territorial greenhouse gas emissions, IPCC category Agriculture. Livestock methane is enteric fermentation plus manure management, MtCO2e.",
+    "knownIssues": ["Two-year publication lag in DESNZ inventory data"]
+  }
+}

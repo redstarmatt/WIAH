@@ -1,0 +1,18 @@
+{
+  "topic": "liver-disease-deaths",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    {"year": 2001, "deathsK": 9.2},
+    {"year": 2005, "deathsK": 11.4},
+    {"year": 2010, "deathsK": 13.8},
+    {"year": 2015, "deathsK": 14.4},
+    {"year": 2016, "deathsK": 14.6},
+    {"year": 2017, "deathsK": 14.7},
+    {"year": 2018, "deathsK": 15.0},
+    {"year": 2019, "deathsK": 15.2},
+    {"year": 2020, "deathsK": 16.8},
+    {"year": 2021, "deathsK": 17.4},
+    {"year": 2022, "deathsK": 17.1},
+    {"year": 2023, "deathsK": 16.8}
+  ]
+}

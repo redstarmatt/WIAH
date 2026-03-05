@@ -1,0 +1,15 @@
+{
+  "topic": "care-economy-value",
+  "lastUpdated": "2025-01-01",
+  "timeSeries": [
+    { "year": 2016, "unpaidCareValueBn": 57, "carersAllowanceK": 760 },
+    { "year": 2017, "unpaidCareValueBn": 60, "carersAllowanceK": 780 },
+    { "year": 2018, "unpaidCareValueBn": 64, "carersAllowanceK": 800 },
+    { "year": 2019, "unpaidCareValueBn": 68, "carersAllowanceK": 820 },
+    { "year": 2020, "unpaidCareValueBn": 72, "carersAllowanceK": 840 },
+    { "year": 2021, "unpaidCareValueBn": 74, "carersAllowanceK": 850 },
+    { "year": 2022, "unpaidCareValueBn": 80, "carersAllowanceK": 870 },
+    { "year": 2023, "unpaidCareValueBn": 87, "carersAllowanceK": 880 },
+    { "year": 2024, "unpaidCareValueBn": 93, "carersAllowanceK": 900 }
+  ]
+}

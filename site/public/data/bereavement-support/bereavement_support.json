@@ -1,0 +1,26 @@
+{
+  "topic": "bereavement-support",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2015, "bereavedAnnuallyK": 570, "accessingSpecialistPct": 12, "avgWaitWeeks": 7 },
+    { "year": 2016, "bereavedAnnuallyK": 575, "accessingSpecialistPct": 11, "avgWaitWeeks": 8 },
+    { "year": 2017, "bereavedAnnuallyK": 578, "accessingSpecialistPct": 11, "avgWaitWeeks": 8 },
+    { "year": 2018, "bereavedAnnuallyK": 580, "accessingSpecialistPct": 10, "avgWaitWeeks": 9 },
+    { "year": 2019, "bereavedAnnuallyK": 582, "accessingSpecialistPct": 10, "avgWaitWeeks": 9 },
+    { "year": 2020, "bereavedAnnuallyK": 640, "accessingSpecialistPct": 9, "avgWaitWeeks": 12 },
+    { "year": 2021, "bereavedAnnuallyK": 610, "accessingSpecialistPct": 9, "avgWaitWeeks": 11 },
+    { "year": 2022, "bereavedAnnuallyK": 595, "accessingSpecialistPct": 9, "avgWaitWeeks": 11 },
+    { "year": 2023, "bereavedAnnuallyK": 600, "accessingSpecialistPct": 9, "avgWaitWeeks": 11 },
+    { "year": 2024, "bereavedAnnuallyK": 600, "accessingSpecialistPct": 9, "avgWaitWeeks": 11 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Cruse Bereavement Support", "dataset": "Annual Report and service activity data", "url": "https://www.cruse.org.uk/about-us/annual-report/", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "ONS", "dataset": "Death registrations summary tables", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathregistrationssummarytablesenglandandwalesreferencetables", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "NHS England", "dataset": "Talking Therapies (IAPT) annual report", "url": "https://www.england.nhs.uk/mental-health/adults/iapt/", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "Marie Curie", "dataset": "Understanding Grief in the UK", "url": "https://www.mariecurie.org.uk/globalassets/media/documents/research/publications/the-grief-report.pdf", "retrieved": "2024-10-01", "frequency": "periodic" }
+    ],
+    "methodology": "Bereaved annually estimated as 5 close bereaved people per death based on bereavement research. Accessing specialist support counts referrals to community bereavement services and Cruse as share of total bereaved. Wait time is average referral-to-assessment gap.",
+    "knownIssues": ["Specialist bereavement support access is likely undercounted as private therapy and peer support groups are excluded. 2020 figure reflects excess mortality from COVID-19."]
+  }
+}

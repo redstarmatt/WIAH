@@ -1,0 +1,15 @@
+{
+  "topic": "violence-against-nhs-staff",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    {"year": 2015, "physicalAssaultsK": 56.4},
+    {"year": 2016, "physicalAssaultsK": 57.9},
+    {"year": 2017, "physicalAssaultsK": 60.0},
+    {"year": 2018, "physicalAssaultsK": 62.9},
+    {"year": 2019, "physicalAssaultsK": 63.6},
+    {"year": 2020, "physicalAssaultsK": 67.9},
+    {"year": 2021, "physicalAssaultsK": 72.3},
+    {"year": 2022, "physicalAssaultsK": 77.1},
+    {"year": 2023, "physicalAssaultsK": 83.6}
+  ]
+}

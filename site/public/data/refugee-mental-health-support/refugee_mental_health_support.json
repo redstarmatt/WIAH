@@ -1,0 +1,25 @@
+{
+  "topic": "refugee-mental-health-support",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2016, "traumaHistoryPct": 65, "accessingSpecialistPct": 18, "avgIaptWaitWeeks": 10 },
+    { "year": 2017, "traumaHistoryPct": 66, "accessingSpecialistPct": 17, "avgIaptWaitWeeks": 11 },
+    { "year": 2018, "traumaHistoryPct": 66, "accessingSpecialistPct": 16, "avgIaptWaitWeeks": 12 },
+    { "year": 2019, "traumaHistoryPct": 67, "accessingSpecialistPct": 16, "avgIaptWaitWeeks": 13 },
+    { "year": 2020, "traumaHistoryPct": 67, "accessingSpecialistPct": 15, "avgIaptWaitWeeks": 16 },
+    { "year": 2021, "traumaHistoryPct": 68, "accessingSpecialistPct": 15, "avgIaptWaitWeeks": 17 },
+    { "year": 2022, "traumaHistoryPct": 68, "accessingSpecialistPct": 15, "avgIaptWaitWeeks": 18 },
+    { "year": 2023, "traumaHistoryPct": 68, "accessingSpecialistPct": 15, "avgIaptWaitWeeks": 18 },
+    { "year": 2024, "traumaHistoryPct": 68, "accessingSpecialistPct": 15, "avgIaptWaitWeeks": 18 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Refugee Council", "dataset": "Mental health and wellbeing research", "url": "https://www.refugeecouncil.org.uk/our-work/research/mental-health/", "retrieved": "2024-10-01", "frequency": "periodic" },
+      { "name": "NHS Digital", "dataset": "Improving Access to Psychological Therapies Dataset", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/psychological-therapies-report-on-the-use-of-iapt-services", "retrieved": "2024-10-01", "frequency": "quarterly" },
+      { "name": "Mind", "dataset": "Refugees and mental health", "url": "https://www.mind.org.uk/information-support/tips-for-everyday-living/how-to-be-mentally-healthy-at-work/refugees-and-mental-health/", "retrieved": "2024-10-01", "frequency": "periodic" },
+      { "name": "British Red Cross", "dataset": "Access to services for people seeking asylum", "url": "https://www.redcross.org.uk/about-us/what-we-do/uk-services/", "retrieved": "2024-10-01", "frequency": "periodic" }
+    ],
+    "methodology": "Trauma history prevalence from systematic review of studies on refugee mental health in the UK. Specialist support access includes IAPT, CMHT, and specialist refugee mental health services. IAPT wait is referral-to-first-treatment for clients from asylum-seeking and refugee backgrounds.",
+    "knownIssues": ["Trauma history prevalence is modelled from clinical and survey research; administrative recording of refugee status in NHS systems is incomplete. IAPT access figures for refugee populations specifically are not separately published."]
+  }
+}

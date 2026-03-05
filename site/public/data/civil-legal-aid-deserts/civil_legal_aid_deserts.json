@@ -1,0 +1,31 @@
+{
+  "topic": "civil-legal-aid-deserts",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2010, "totalCases": 968000, "housingDesertsPct": 21, "litigantsInPersonPct": 17 },
+    { "year": 2011, "totalCases": 924000, "housingDesertsPct": 24, "litigantsInPersonPct": 19 },
+    { "year": 2012, "totalCases": 876000, "housingDesertsPct": 27, "litigantsInPersonPct": 21 },
+    { "year": 2013, "totalCases": 598000, "housingDesertsPct": 33, "litigantsInPersonPct": 25 },
+    { "year": 2014, "totalCases": 527000, "housingDesertsPct": 36, "litigantsInPersonPct": 27 },
+    { "year": 2015, "totalCases": 489000, "housingDesertsPct": 38, "litigantsInPersonPct": 28 },
+    { "year": 2016, "totalCases": 467000, "housingDesertsPct": 40, "litigantsInPersonPct": 29 },
+    { "year": 2017, "totalCases": 445000, "housingDesertsPct": 43, "litigantsInPersonPct": 30 },
+    { "year": 2018, "totalCases": 421000, "housingDesertsPct": 46, "litigantsInPersonPct": 31 },
+    { "year": 2019, "totalCases": 402000, "housingDesertsPct": 49, "litigantsInPersonPct": 33 },
+    { "year": 2020, "totalCases": 376000, "housingDesertsPct": 51, "litigantsInPersonPct": 34 },
+    { "year": 2021, "totalCases": 365000, "housingDesertsPct": 52, "litigantsInPersonPct": 35 },
+    { "year": 2022, "totalCases": 390000, "housingDesertsPct": 53, "litigantsInPersonPct": 35 },
+    { "year": 2023, "totalCases": 385000, "housingDesertsPct": 54, "litigantsInPersonPct": 36 },
+    { "year": 2024, "totalCases": 380000, "housingDesertsPct": 54, "litigantsInPersonPct": 36 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Ministry of Justice", "dataset": "Legal aid statistics", "url": "https://www.gov.uk/government/collections/legal-aid-statistics", "retrieved": "2024-10-01", "frequency": "quarterly" },
+      { "name": "Legal Aid Agency", "dataset": "Legal aid provider data", "url": "https://www.gov.uk/government/organisations/legal-aid-agency", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "Law Society", "dataset": "Legal aid deserts report", "url": "https://www.lawsociety.org.uk/", "retrieved": "2024-10-01", "frequency": "ad hoc" },
+      { "name": "Access to Justice Foundation", "dataset": "Civil legal need research", "url": "https://atjf.org.uk/", "retrieved": "2024-10-01", "frequency": "ad hoc" }
+    ],
+    "methodology": "Legal aid deserts are local authority areas with no registered legal aid provider for a given area of law. Housing legal aid deserts are areas with no housing legal aid provider under the Legal Aid, Sentencing and Punishment of Offenders Act 2012 framework. Litigants in person figures are from HMCTS family court statistics. The large drop in total cases in 2013 reflects the LASPO Act coming into force.",
+    "knownIssues": ["LASPO 2012 fundamentally changed legal aid scope from 2013, breaking comparability with earlier years", "Desert classification depends on whether a registered provider is physically accessible — some registered providers are concentrated in urban centres"]
+  }
+}

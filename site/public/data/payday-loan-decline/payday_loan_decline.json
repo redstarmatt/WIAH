@@ -1,0 +1,23 @@
+{
+  "topic": "payday-loan-decline",
+  "lastUpdated": "2026-03-05",
+  "timeSeries": [
+    { "year": 2016, "paydayLoansM": 8.0, "bnplArrearsM": 0.0 },
+    { "year": 2017, "paydayLoansM": 6.0, "bnplArrearsM": 0.0 },
+    { "year": 2018, "paydayLoansM": 4.0, "bnplArrearsM": 0.1 },
+    { "year": 2019, "paydayLoansM": 3.0, "bnplArrearsM": 0.2 },
+    { "year": 2020, "paydayLoansM": 2.5, "bnplArrearsM": 0.4 },
+    { "year": 2021, "paydayLoansM": 2.0, "bnplArrearsM": 0.7 },
+    { "year": 2022, "paydayLoansM": 2.0, "bnplArrearsM": 1.0 },
+    { "year": 2023, "paydayLoansM": 2.0, "bnplArrearsM": 1.1 },
+    { "year": 2024, "paydayLoansM": 1.8, "bnplArrearsM": 1.2 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "FCA", "dataset": "Consumer Credit Market Study", "url": "https://www.fca.org.uk/publications/market-studies/ms14-3-consumer-credit-market-study", "retrieved": "2026-03-05", "frequency": "annual" },
+      { "name": "FCA", "dataset": "Financial Lives Survey", "url": "https://www.fca.org.uk/publications/research/financial-lives", "retrieved": "2026-03-05", "frequency": "biennial" }
+    ],
+    "methodology": "Payday loan volumes from FCA regulatory data. BNPL arrears estimated from FCA Financial Lives survey and provider data.",
+    "knownIssues": ["BNPL arrears data requires estimation as sector was unregulated until 2024", "Pre-2015 payday loan data may not be directly comparable following definitional changes"]
+  }
+}

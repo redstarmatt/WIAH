@@ -1,0 +1,24 @@
+{
+  "topic": "prison-reentry-support",
+  "lastUpdated": "2024-09-01",
+  "timeSeries": [
+    { "year": 2015, "reoffendingPct": 46, "dischargeGrantGBP": 46, "noAccommodationPct": 11 },
+    { "year": 2016, "reoffendingPct": 47, "dischargeGrantGBP": 46, "noAccommodationPct": 12 },
+    { "year": 2017, "reoffendingPct": 47, "dischargeGrantGBP": 46, "noAccommodationPct": 12 },
+    { "year": 2018, "reoffendingPct": 46, "dischargeGrantGBP": 46, "noAccommodationPct": 12 },
+    { "year": 2019, "reoffendingPct": 46, "dischargeGrantGBP": 46, "noAccommodationPct": 13 },
+    { "year": 2020, "reoffendingPct": 44, "dischargeGrantGBP": 46, "noAccommodationPct": 14 },
+    { "year": 2021, "reoffendingPct": 45, "dischargeGrantGBP": 46, "noAccommodationPct": 14 },
+    { "year": 2022, "reoffendingPct": 46, "dischargeGrantGBP": 46, "noAccommodationPct": 15 },
+    { "year": 2023, "reoffendingPct": 46, "dischargeGrantGBP": 46, "noAccommodationPct": 15 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Ministry of Justice", "dataset": "Proven Reoffending Statistics", "url": "https://www.gov.uk/government/collections/proven-reoffending-statistics", "retrieved": "2024-09-01", "frequency": "annual" },
+      { "name": "HMPPS", "dataset": "Prison Population Data", "url": "https://www.gov.uk/government/statistics/prison-population-figures-2024", "retrieved": "2024-09-01", "frequency": "monthly" },
+      { "name": "Prison Reform Trust", "dataset": "Bromley Briefings Prison Factfile", "url": "https://prisonreformtrust.org.uk/publication/bromley-briefings-prison-factfile/", "retrieved": "2024-09-01", "frequency": "annual" }
+    ],
+    "methodology": "Reoffending rate is proven reoffending within one year of release (adults). Discharge grant has remained at £46 since 2008 with no inflation adjustment. Accommodation figure is proportion of releases recorded as having no settled accommodation arranged at point of release.",
+    "knownIssues": ["Proven reoffending excludes crimes not resulting in conviction. Discharge grant figure is nominal and has fallen significantly in real terms since 2008."]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "topic": "traveller-site-provision",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "shortfallEstimate": 3500, "unauthorisedEncampments": 2400 },
+    { "year": 2017, "shortfallEstimate": 3700, "unauthorisedEncampments": 2500 },
+    { "year": 2018, "shortfallEstimate": 3900, "unauthorisedEncampments": 2600 },
+    { "year": 2019, "shortfallEstimate": 4100, "unauthorisedEncampments": 2700 },
+    { "year": 2020, "shortfallEstimate": 4300, "unauthorisedEncampments": 2800 },
+    { "year": 2021, "shortfallEstimate": 4500, "unauthorisedEncampments": 2900 },
+    { "year": 2022, "shortfallEstimate": 4600, "unauthorisedEncampments": 3000 },
+    { "year": 2023, "shortfallEstimate": 4800, "unauthorisedEncampments": 3100 },
+    { "year": 2024, "shortfallEstimate": 5000, "unauthorisedEncampments": 3200 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Friends Families and Travellers", "dataset": "Site Provision Analysis", "url": "https://www.gypsy-traveller.org", "retrieved": "2024-12-01", "frequency": "annual" },
+      { "name": "DLUHC", "dataset": "Traveller Caravan Count", "url": "https://www.gov.uk/government/collections/traveller-caravan-count", "retrieved": "2024-12-01", "frequency": "biannual" }
+    ],
+    "methodology": "Pitch shortfall estimates based on Gypsy and Traveller Accommodation Needs Assessments versus allocated supply in adopted local plans. Unauthorised encampment figures from DLUHC Traveller Caravan Count.",
+    "knownIssues": ["Shortfall estimates are modelled — actual figures depend on local GTANA methodology and quality"]
+  }
+}

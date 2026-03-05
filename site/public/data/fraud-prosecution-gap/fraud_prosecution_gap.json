@@ -1,0 +1,26 @@
+{
+  "topic": "fraud-prosecution-gap",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2015, "fraudShareOfCrimePct": 32, "policeResourcesPct": 1.2, "chargeRatePct": 5.1 },
+    { "year": 2016, "fraudShareOfCrimePct": 34, "policeResourcesPct": 1.1, "chargeRatePct": 4.8 },
+    { "year": 2017, "fraudShareOfCrimePct": 35, "policeResourcesPct": 1.1, "chargeRatePct": 4.5 },
+    { "year": 2018, "fraudShareOfCrimePct": 36, "policeResourcesPct": 1.0, "chargeRatePct": 4.2 },
+    { "year": 2019, "fraudShareOfCrimePct": 37, "policeResourcesPct": 1.0, "chargeRatePct": 3.9 },
+    { "year": 2020, "fraudShareOfCrimePct": 38, "policeResourcesPct": 0.9, "chargeRatePct": 3.6 },
+    { "year": 2021, "fraudShareOfCrimePct": 39, "policeResourcesPct": 0.9, "chargeRatePct": 3.4 },
+    { "year": 2022, "fraudShareOfCrimePct": 40, "policeResourcesPct": 1.0, "chargeRatePct": 3.2 },
+    { "year": 2023, "fraudShareOfCrimePct": 40, "policeResourcesPct": 1.0, "chargeRatePct": 3.0 },
+    { "year": 2024, "fraudShareOfCrimePct": 41, "policeResourcesPct": 1.0, "chargeRatePct": 3.0 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "ONS", "dataset": "Crime Survey for England and Wales", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "Home Office", "dataset": "Police recorded crime", "url": "https://www.gov.uk/government/statistics/police-recorded-crime-open-data-tables", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "Action Fraud", "dataset": "Fraud and cybercrime statistics", "url": "https://www.actionfraud.police.uk/", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "National Fraud Intelligence Bureau", "dataset": "NFIB fraud referral data", "url": "https://www.cityoflondon.police.uk/police-forces/city-of-london-police/areas/city-of-london/about-us/about-us/fraud/national-fraud-intelligence-bureau/", "retrieved": "2024-10-01", "frequency": "annual" }
+    ],
+    "methodology": "Fraud share of crime is derived from the Crime Survey for England and Wales total crime estimates. Police resources figure is an estimate based on dedicated fraud officer headcount as a proportion of total officer headcount. Charge rate is charges as a proportion of fraud offences referred to the Crown Prosecution Service.",
+    "knownIssues": ["Fraud is significantly under-reported; actual volumes are likely higher than survey estimates", "Police resource figures are estimates based on HMICFRS inspections, not centrally reported data"]
+  }
+}

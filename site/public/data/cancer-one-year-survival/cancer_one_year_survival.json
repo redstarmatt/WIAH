@@ -1,0 +1,17 @@
+{
+  "topic": "cancer-one-year-survival",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    {"year": 2000, "oneYearSurvivalPct": 61.2},
+    {"year": 2005, "oneYearSurvivalPct": 63.8},
+    {"year": 2010, "oneYearSurvivalPct": 67.1},
+    {"year": 2015, "oneYearSurvivalPct": 70.3},
+    {"year": 2016, "oneYearSurvivalPct": 71.2},
+    {"year": 2017, "oneYearSurvivalPct": 72.0},
+    {"year": 2018, "oneYearSurvivalPct": 72.8},
+    {"year": 2019, "oneYearSurvivalPct": 73.5},
+    {"year": 2020, "oneYearSurvivalPct": 71.0},
+    {"year": 2021, "oneYearSurvivalPct": 72.4},
+    {"year": 2022, "oneYearSurvivalPct": 73.2}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "topic": "disabled-children-care",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2015, "childrenNeedingSupport": 225000, "childrenReceivingSupport": 98000, "avgEhcpWaitWeeks": 19 },
+    { "year": 2016, "childrenNeedingSupport": 228000, "childrenReceivingSupport": 97000, "avgEhcpWaitWeeks": 20 },
+    { "year": 2017, "childrenNeedingSupport": 230000, "childrenReceivingSupport": 96000, "avgEhcpWaitWeeks": 21 },
+    { "year": 2018, "childrenNeedingSupport": 232000, "childrenReceivingSupport": 95000, "avgEhcpWaitWeeks": 22 },
+    { "year": 2019, "childrenNeedingSupport": 235000, "childrenReceivingSupport": 93000, "avgEhcpWaitWeeks": 23 },
+    { "year": 2020, "childrenNeedingSupport": 237000, "childrenReceivingSupport": 91000, "avgEhcpWaitWeeks": 25 },
+    { "year": 2021, "childrenNeedingSupport": 238000, "childrenReceivingSupport": 90000, "avgEhcpWaitWeeks": 26 },
+    { "year": 2022, "childrenNeedingSupport": 239000, "childrenReceivingSupport": 90000, "avgEhcpWaitWeeks": 27 },
+    { "year": 2023, "childrenNeedingSupport": 240000, "childrenReceivingSupport": 89000, "avgEhcpWaitWeeks": 28 },
+    { "year": 2024, "childrenNeedingSupport": 240000, "childrenReceivingSupport": 89000, "avgEhcpWaitWeeks": 28 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "DfE", "dataset": "SEND and AP Insights", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "NHS Digital", "dataset": "Children and Young People's Mental Health Services", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "Contact", "dataset": "Disabled Children Research", "url": "https://contact.org.uk/research-and-policy/", "retrieved": "2024-10-01", "frequency": "periodic" }
+    ],
+    "methodology": "Estimates of children needing support based on population prevalence studies and DfE administrative data. Children receiving support counts those with an active EHCP or receiving assessed social care support. EHCP wait calculated from EHC needs assessment request to final plan issue.",
+    "knownIssues": ["EHCP process reformed in 2014; data from 2015 reflects the new system. Estimates of unmet need are modelled figures with confidence intervals."]
+  }
+}

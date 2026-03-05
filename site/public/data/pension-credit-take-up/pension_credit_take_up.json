@@ -1,0 +1,23 @@
+{
+  "topic": "pension-credit-take-up",
+  "lastUpdated": "2026-03-05",
+  "timeSeries": [
+    { "year": 2016, "nonClaimingK": 900, "takeUpPct": 61 },
+    { "year": 2017, "nonClaimingK": 900, "takeUpPct": 61 },
+    { "year": 2018, "nonClaimingK": 870, "takeUpPct": 62 },
+    { "year": 2019, "nonClaimingK": 860, "takeUpPct": 62 },
+    { "year": 2020, "nonClaimingK": 860, "takeUpPct": 63 },
+    { "year": 2021, "nonClaimingK": 850, "takeUpPct": 63 },
+    { "year": 2022, "nonClaimingK": 840, "takeUpPct": 63 },
+    { "year": 2023, "nonClaimingK": 820, "takeUpPct": 63 },
+    { "year": 2024, "nonClaimingK": 800, "takeUpPct": 63 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "DWP", "dataset": "Pension Credit Take-Up Statistics", "url": "https://www.gov.uk/government/collections/pension-credit-take-up", "retrieved": "2026-03-05", "frequency": "annual" },
+      { "name": "DWP", "dataset": "Pension Credit Statistics", "url": "https://www.gov.uk/government/collections/pension-credit-statistics", "retrieved": "2026-03-05", "frequency": "quarterly" }
+    ],
+    "methodology": "Take-up rate from DWP modelling of eligible population vs actual claimants. Non-claiming estimates based on DWP Pensioners' Incomes Series and benefit unit modelling.",
+    "knownIssues": ["Take-up estimates involve modelling uncertainty in the eligible population", "2024 figures may not capture full effect of Winter Fuel Payment policy change take-up campaigns"]
+  }
+}

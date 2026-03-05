@@ -1,0 +1,38 @@
+{
+  "topic": "school-overcrowding",
+  "lastUpdated": "2025-03-01",
+  "timeSeries": [
+    { "year": 2016, "pupilsOvercrowdedK": 200, "secondaryOverCapacityPct": 14 },
+    { "year": 2017, "pupilsOvercrowdedK": 220, "secondaryOverCapacityPct": 15 },
+    { "year": 2018, "pupilsOvercrowdedK": 240, "secondaryOverCapacityPct": 16 },
+    { "year": 2019, "pupilsOvercrowdedK": 270, "secondaryOverCapacityPct": 17 },
+    { "year": 2020, "pupilsOvercrowdedK": 290, "secondaryOverCapacityPct": 18 },
+    { "year": 2021, "pupilsOvercrowdedK": 310, "secondaryOverCapacityPct": 19 },
+    { "year": 2022, "pupilsOvercrowdedK": 340, "secondaryOverCapacityPct": 20 },
+    { "year": 2023, "pupilsOvercrowdedK": 370, "secondaryOverCapacityPct": 21 },
+    { "year": 2024, "pupilsOvercrowdedK": 400, "secondaryOverCapacityPct": 22 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DfE",
+        "dataset": "School Capacity Survey",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/school-capacity",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "DfE",
+        "dataset": "Education and Skills Funding Agency — Capital Programmes",
+        "url": "https://www.gov.uk/government/organisations/education-and-skills-funding-agency",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Pupils in overcrowded schools are those attending schools where pupil numbers exceed the school's net capacity as reported in the DfE School Capacity (SCAP) survey. Secondary over-capacity percentage is the proportion of state-funded secondary schools with pupils on roll exceeding net capacity.",
+    "knownIssues": [
+      "Net capacity is a DfE-defined measure based on usable teaching space — schools may use different definitions locally.",
+      "Temporary buildings count toward net capacity if approved, potentially understating true overcrowding in some schools."
+    ]
+  }
+}

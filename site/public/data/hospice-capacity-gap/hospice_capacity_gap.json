@@ -1,0 +1,25 @@
+{
+  "topic": "hospice-capacity-gap",
+  "lastUpdated": "2024-09-01",
+  "timeSeries": [
+    { "year": 2015, "hospiceBedsTotal": 3450, "bedsPer100k": 6.1, "pctDyingWithoutCare": 20 },
+    { "year": 2016, "hospiceBedsTotal": 3420, "bedsPer100k": 6.0, "pctDyingWithoutCare": 21 },
+    { "year": 2017, "hospiceBedsTotal": 3400, "bedsPer100k": 5.9, "pctDyingWithoutCare": 21 },
+    { "year": 2018, "hospiceBedsTotal": 3380, "bedsPer100k": 5.9, "pctDyingWithoutCare": 22 },
+    { "year": 2019, "hospiceBedsTotal": 3360, "bedsPer100k": 5.8, "pctDyingWithoutCare": 23 },
+    { "year": 2020, "hospiceBedsTotal": 3310, "bedsPer100k": 5.7, "pctDyingWithoutCare": 24 },
+    { "year": 2021, "hospiceBedsTotal": 3320, "bedsPer100k": 5.7, "pctDyingWithoutCare": 24 },
+    { "year": 2022, "hospiceBedsTotal": 3310, "bedsPer100k": 5.7, "pctDyingWithoutCare": 25 },
+    { "year": 2023, "hospiceBedsTotal": 3300, "bedsPer100k": 5.6, "pctDyingWithoutCare": 25 },
+    { "year": 2024, "hospiceBedsTotal": 3300, "bedsPer100k": 5.6, "pctDyingWithoutCare": 25 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Hospice UK", "dataset": "Hospice Care UK Annual Monitoring Data", "url": "https://www.hospiceuk.org/information-and-resources/facts-and-figures", "retrieved": "2024-09-01", "frequency": "annual" },
+      { "name": "NHS England", "dataset": "Palliative and End of Life Care Statistics", "url": "https://www.england.nhs.uk/eolc/", "retrieved": "2024-09-01", "frequency": "annual" },
+      { "name": "Public Health England", "dataset": "National End of Life Care Intelligence Network", "url": "https://www.gov.uk/guidance/national-end-of-life-care-intelligence-network", "retrieved": "2024-09-01", "frequency": "annual" }
+    ],
+    "methodology": "Bed count includes specialist palliative care inpatient beds in both NHS and voluntary sector hospices. Beds per 100,000 calculated against mid-year population estimates. Percentage dying without palliative care estimated from death registration data matched to palliative care contacts.",
+    "knownIssues": ["Hospice bed count excludes community palliative care nurse caseloads. Estimated shortfall of 1,200 beds is modelled against projected need from ageing population."]
+  }
+}

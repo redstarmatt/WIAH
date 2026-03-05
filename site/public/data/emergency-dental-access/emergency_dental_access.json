@@ -1,0 +1,24 @@
+{
+  "topic": "emergency-dental-access",
+  "lastUpdated": "2026-03-05",
+  "timeSeries": [
+    { "year": 2016, "cannotAccessM": 7.0, "aeVisitsK": 95 },
+    { "year": 2017, "cannotAccessM": 7.5, "aeVisitsK": 100 },
+    { "year": 2018, "cannotAccessM": 8.0, "aeVisitsK": 105 },
+    { "year": 2019, "cannotAccessM": 9.0, "aeVisitsK": 110 },
+    { "year": 2020, "cannotAccessM": 10.0, "aeVisitsK": 128 },
+    { "year": 2021, "cannotAccessM": 10.0, "aeVisitsK": 110 },
+    { "year": 2022, "cannotAccessM": 11.0, "aeVisitsK": 130 },
+    { "year": 2023, "cannotAccessM": 12.5, "aeVisitsK": 155 },
+    { "year": 2024, "cannotAccessM": 14.0, "aeVisitsK": 180 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Healthwatch England", "dataset": "Dental Access Survey", "url": "https://www.healthwatch.co.uk/report/2023-06-14/what-people-told-us-about-nhs-dentistry", "retrieved": "2026-03-05", "frequency": "annual" },
+      { "name": "NHS England", "dataset": "Hospital Episode Statistics", "url": "https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics", "retrieved": "2026-03-05", "frequency": "annual" },
+      { "name": "NHS Business Services Authority", "dataset": "NHS Dental Statistics", "url": "https://www.nhsbsa.nhs.uk/statistical-collections/nhs-dental-statistics-england", "retrieved": "2026-03-05", "frequency": "annual" }
+    ],
+    "methodology": "Adults unable to access NHS dentist estimated from Healthwatch survey data and NHS dental workforce analysis. A&E visits for dental pain from HES primary diagnosis codes.",
+    "knownIssues": ["Access estimates are survey-based and subject to methodological variation", "2021 figures affected by pandemic service recovery patterns"]
+  }
+}

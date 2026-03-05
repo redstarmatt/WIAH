@@ -1,0 +1,35 @@
+{
+  "topic": "loneliness-young-people",
+  "lastUpdated": "2024-09-01",
+  "timeSeries": [
+    { "year": 2016, "oftenLonelyPct": 22, "hasCloseFriendsPct": 79 },
+    { "year": 2017, "oftenLonelyPct": 23, "hasCloseFriendsPct": 78 },
+    { "year": 2018, "oftenLonelyPct": 24, "hasCloseFriendsPct": 76 },
+    { "year": 2019, "oftenLonelyPct": 25, "hasCloseFriendsPct": 75 },
+    { "year": 2020, "oftenLonelyPct": 26, "hasCloseFriendsPct": 74 },
+    { "year": 2021, "oftenLonelyPct": 30, "hasCloseFriendsPct": 70 },
+    { "year": 2022, "oftenLonelyPct": 29, "hasCloseFriendsPct": 69 },
+    { "year": 2023, "oftenLonelyPct": 31, "hasCloseFriendsPct": 68 },
+    { "year": 2024, "oftenLonelyPct": 34, "hasCloseFriendsPct": 68 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DCMS",
+        "dataset": "Community Life Survey",
+        "url": "https://www.gov.uk/government/collections/community-life-survey--2",
+        "retrieved": "2024-09-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "British Red Cross",
+        "dataset": "Loneliness Research",
+        "url": "https://www.redcross.org.uk/get-help/get-help-with-loneliness",
+        "retrieved": "2024-09-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Often lonely defined as reporting feeling lonely often or always. Close friends data from British Red Cross YouGov polling.",
+    "knownIssues": ["Survey methodology changes in 2020 may affect comparability with earlier years"]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "topic": "terrorism-prosecutions",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2015, "arrests": 280, "charged": 102, "convicted": 76, "convictionRatePct": 74 },
+    { "year": 2016, "arrests": 299, "charged": 110, "convicted": 82, "convictionRatePct": 75 },
+    { "year": 2017, "arrests": 412, "charged": 145, "convicted": 108, "convictionRatePct": 74 },
+    { "year": 2018, "arrests": 351, "charged": 125, "convicted": 93, "convictionRatePct": 74 },
+    { "year": 2019, "arrests": 296, "charged": 108, "convicted": 80, "convictionRatePct": 74 },
+    { "year": 2020, "arrests": 256, "charged": 93, "convicted": 69, "convictionRatePct": 74 },
+    { "year": 2021, "arrests": 290, "charged": 105, "convicted": 78, "convictionRatePct": 74 },
+    { "year": 2022, "arrests": 312, "charged": 112, "convicted": 83, "convictionRatePct": 74 },
+    { "year": 2023, "arrests": 350, "charged": 126, "convicted": 93, "convictionRatePct": 74 },
+    { "year": 2024, "arrests": 340, "charged": 122, "convicted": 90, "convictionRatePct": 74 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Home Office", "dataset": "Operation of police powers under the Terrorism Act 2000", "url": "https://www.gov.uk/government/collections/operation-of-police-powers-under-the-terrorism-act-2000-quarterly-updates", "retrieved": "2024-10-01", "frequency": "quarterly" },
+      { "name": "Crown Prosecution Service", "dataset": "CPS terrorism statistics", "url": "https://www.cps.gov.uk/publication/cps-data-summary", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "Counter Terrorism Policing", "dataset": "Annual review statistics", "url": "https://www.counterterrorism.police.uk/", "retrieved": "2024-10-01", "frequency": "annual" }
+    ],
+    "methodology": "Arrests are terrorism-related arrests under the Terrorism Act 2000 and related legislation. Conviction rate is convictions as a proportion of completed trials, not of all charged defendants. Some cases span multiple years between charge and conviction.",
+    "knownIssues": ["Conviction rate reflects completed trials only — cases awaiting trial not included", "2017 figure elevated by Manchester Arena and London Bridge attacks"]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "topic": "housing-disrepair-claims",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "claimsK": 28 },
+    { "year": 2017, "claimsK": 30 },
+    { "year": 2018, "claimsK": 33 },
+    { "year": 2019, "claimsK": 35 },
+    { "year": 2020, "claimsK": 38 },
+    { "year": 2021, "claimsK": 48 },
+    { "year": 2022, "claimsK": 65 },
+    { "year": 2023, "claimsK": 80 },
+    { "year": 2024, "claimsK": 92 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Ministry of Justice", "dataset": "Civil Justice Statistics", "url": "https://www.gov.uk/government/collections/civil-justice-statistics-quarterly", "retrieved": "2024-12-01", "frequency": "annual" }
+    ],
+    "methodology": "Claims filed at county courts under the Landlord and Tenant Act 1985 and Homes (Fitness for Human Habitation) Act 2018.",
+    "knownIssues": ["Claims data may undercount actual disrepair incidence as many tenants do not pursue legal action"]
+  }
+}

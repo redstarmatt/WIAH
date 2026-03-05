@@ -1,0 +1,24 @@
+{
+  "topic": "financial-abuse-elderly",
+  "lastUpdated": "2026-03-05",
+  "timeSeries": [
+    { "year": 2016, "victimsK": 130, "lossesEstBn": 2.0 },
+    { "year": 2017, "victimsK": 140, "lossesEstBn": 2.2 },
+    { "year": 2018, "victimsK": 150, "lossesEstBn": 2.4 },
+    { "year": 2019, "victimsK": 155, "lossesEstBn": 2.6 },
+    { "year": 2020, "victimsK": 160, "lossesEstBn": 2.8 },
+    { "year": 2021, "victimsK": 165, "lossesEstBn": 3.0 },
+    { "year": 2022, "victimsK": 170, "lossesEstBn": 3.1 },
+    { "year": 2023, "victimsK": 180, "lossesEstBn": 3.3 },
+    { "year": 2024, "victimsK": 190, "lossesEstBn": 3.6 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Age UK", "dataset": "Later Life in the UK", "url": "https://www.ageuk.org.uk/globalassets/age-uk/documents/reports-and-publications/later_life_uk_factsheet.pdf", "retrieved": "2026-03-05", "frequency": "annual" },
+      { "name": "Action on Elder Abuse", "dataset": "Elder Abuse Statistics", "url": "https://www.elderabuse.org.uk/", "retrieved": "2026-03-05", "frequency": "annual" },
+      { "name": "UK Finance", "dataset": "Annual Fraud Report", "url": "https://www.ukfinance.org.uk/policy-and-guidance/reports-publications/annual-fraud-report", "retrieved": "2026-03-05", "frequency": "annual" }
+    ],
+    "methodology": "Victim estimates based on Age UK and Action on Elder Abuse survey modelling applied to older adult population. Financial losses from UK Finance fraud data supplemented by academic survey estimates for unreported cases.",
+    "knownIssues": ["The very low reporting rate means all figures require significant upward adjustment from official recorded crime data", "Digital fraud categorisation varies between reporting bodies"]
+  }
+}

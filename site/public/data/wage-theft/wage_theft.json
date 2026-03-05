@@ -1,0 +1,15 @@
+{
+  "topic": "wage-theft",
+  "lastUpdated": "2025-01-01",
+  "timeSeries": [
+    { "year": 2016, "workersUnderpaid": 215000, "arrearsRecoveredM": 9.2 },
+    { "year": 2017, "workersUnderpaid": 230000, "arrearsRecoveredM": 10.4 },
+    { "year": 2018, "workersUnderpaid": 245000, "arrearsRecoveredM": 11.8 },
+    { "year": 2019, "workersUnderpaid": 260000, "arrearsRecoveredM": 12.7 },
+    { "year": 2020, "workersUnderpaid": 270000, "arrearsRecoveredM": 12.8 },
+    { "year": 2021, "workersUnderpaid": 295000, "arrearsRecoveredM": 14.1 },
+    { "year": 2022, "workersUnderpaid": 320000, "arrearsRecoveredM": 15.2 },
+    { "year": 2023, "workersUnderpaid": 340000, "arrearsRecoveredM": 15.9 },
+    { "year": 2024, "workersUnderpaid": 355000, "arrearsRecoveredM": 16.8 }
+  ]
+}

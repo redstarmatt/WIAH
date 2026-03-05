@@ -1,0 +1,38 @@
+{
+  "topic": "looked-after-children-education",
+  "lastUpdated": "2025-03-01",
+  "timeSeries": [
+    { "year": 2016, "lacGcsePct": 11, "lacNeetPct": 42 },
+    { "year": 2017, "lacGcsePct": 11, "lacNeetPct": 41 },
+    { "year": 2018, "lacGcsePct": 12, "lacNeetPct": 41 },
+    { "year": 2019, "lacGcsePct": 12, "lacNeetPct": 40 },
+    { "year": 2020, "lacGcsePct": 12, "lacNeetPct": 40 },
+    { "year": 2021, "lacGcsePct": 13, "lacNeetPct": 39 },
+    { "year": 2022, "lacGcsePct": 13, "lacNeetPct": 39 },
+    { "year": 2023, "lacGcsePct": 13, "lacNeetPct": 38 },
+    { "year": 2024, "lacGcsePct": 14, "lacNeetPct": 38 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DfE",
+        "dataset": "Outcomes for Children Looked After by Local Authorities in England",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/outcomes-for-children-in-need-including-children-looked-after-by-local-authorities-in-england",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "DfE",
+        "dataset": "Care Leavers in England",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/care-leavers-in-england",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "GCSE attainment measured as percentage of looked-after children continuously looked after for at least 12 months achieving grade 4 or above in both English and mathematics GCSE. NEET rate measured at age 19 for young people who were in care at age 16.",
+    "knownIssues": [
+      "2020 GCSE data was affected by teacher-assessed grades — year-on-year comparison with 2019 and 2021 requires caution.",
+      "The looked-after population changes in composition each year — comparisons are of the cohort in care, not the same individuals."
+    ]
+  }
+}

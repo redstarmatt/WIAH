@@ -1,0 +1,28 @@
+{
+  "topic": "air-quality-schools",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "childrenHighPollutionK": 1150, "schoolsExceedingWHO": 10200 },
+    { "year": 2017, "childrenHighPollutionK": 1120, "schoolsExceedingWHO": 10000 },
+    { "year": 2018, "childrenHighPollutionK": 1100, "schoolsExceedingWHO": 9800 },
+    { "year": 2019, "childrenHighPollutionK": 1080, "schoolsExceedingWHO": 9500 },
+    { "year": 2020, "childrenHighPollutionK": 1060, "schoolsExceedingWHO": 9200 },
+    { "year": 2021, "childrenHighPollutionK": 1050, "schoolsExceedingWHO": 9100 },
+    { "year": 2022, "childrenHighPollutionK": 1030, "schoolsExceedingWHO": 8900 },
+    { "year": 2023, "childrenHighPollutionK": 1000, "schoolsExceedingWHO": 8700 },
+    { "year": 2024, "childrenHighPollutionK": 970, "schoolsExceedingWHO": 8500 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DEFRA",
+        "dataset": "Air Quality in Schools Analysis",
+        "url": "https://www.gov.uk/government/publications/clean-air-strategy-2019",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "childrenHighPollutionK: estimated children (thousands) attending schools in areas exceeding WHO annual mean NO2 guideline of 10 ug/m3. schoolsExceedingWHO: number of school sites above WHO guideline.",
+    "knownIssues": ["WHO guideline tightened in 2021 from 40 to 10 ug/m3; pre-2021 figures restated against new guideline for comparability"]
+  }
+}

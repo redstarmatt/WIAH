@@ -1,0 +1,23 @@
+{
+  "topic": "short-term-lets-impact",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "stlPropertiesK": 90 },
+    { "year": 2017, "stlPropertiesK": 110 },
+    { "year": 2018, "stlPropertiesK": 130 },
+    { "year": 2019, "stlPropertiesK": 150 },
+    { "year": 2020, "stlPropertiesK": 170 },
+    { "year": 2021, "stlPropertiesK": 160 },
+    { "year": 2022, "stlPropertiesK": 200 },
+    { "year": 2023, "stlPropertiesK": 245 },
+    { "year": 2024, "stlPropertiesK": 280 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "AirDNA", "dataset": "Short Term Rental Market Report", "url": "https://www.airdna.co", "retrieved": "2024-12-01", "frequency": "annual" },
+      { "name": "Short Term Accommodation Association", "dataset": "UK Market Report", "url": "https://www.staa.org.uk", "retrieved": "2024-12-01", "frequency": "annual" }
+    ],
+    "methodology": "Estimated active short-term rental listings across all platforms including Airbnb, VRBO and similar services.",
+    "knownIssues": ["Platform data is estimated — precise totals not publicly disclosed by operators"]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "topic": "financial-inclusion",
+  "lastUpdated": "2025-01-01",
+  "timeSeries": [
+    { "year": 2016, "branchClosuresTotal": 200, "unbankedM": 1.5 },
+    { "year": 2017, "branchClosuresTotal": 450, "unbankedM": 1.48 },
+    { "year": 2018, "branchClosuresTotal": 800, "unbankedM": 1.45 },
+    { "year": 2019, "branchClosuresTotal": 1200, "unbankedM": 1.42 },
+    { "year": 2020, "branchClosuresTotal": 1800, "unbankedM": 1.38 },
+    { "year": 2021, "branchClosuresTotal": 2600, "unbankedM": 1.32 },
+    { "year": 2022, "branchClosuresTotal": 3500, "unbankedM": 1.25 },
+    { "year": 2023, "branchClosuresTotal": 4600, "unbankedM": 1.22 },
+    { "year": 2024, "branchClosuresTotal": 6200, "unbankedM": 1.2 }
+  ]
+}

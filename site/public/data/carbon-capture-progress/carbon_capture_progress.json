@@ -1,0 +1,28 @@
+{
+  "topic": "carbon-capture-progress",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "ccsCapacityMt": 0, "publicInvestmentBn": 0 },
+    { "year": 2017, "ccsCapacityMt": 0, "publicInvestmentBn": 0 },
+    { "year": 2018, "ccsCapacityMt": 0, "publicInvestmentBn": 1 },
+    { "year": 2019, "ccsCapacityMt": 0, "publicInvestmentBn": 2 },
+    { "year": 2020, "ccsCapacityMt": 0, "publicInvestmentBn": 4 },
+    { "year": 2021, "ccsCapacityMt": 0, "publicInvestmentBn": 6 },
+    { "year": 2022, "ccsCapacityMt": 0, "publicInvestmentBn": 10 },
+    { "year": 2023, "ccsCapacityMt": 0, "publicInvestmentBn": 15 },
+    { "year": 2024, "ccsCapacityMt": 0, "publicInvestmentBn": 22 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DESNZ",
+        "dataset": "CCUS Programme Update",
+        "url": "https://www.gov.uk/government/publications/carbon-capture-usage-and-storage-ccus-programme",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "ccsCapacityMt: operational commercial CCS capacity in UK in Mt CO2/yr. publicInvestmentBn: cumulative government investment committed to CCUS in GBP billions.",
+    "knownIssues": ["Investment figures represent commitments, not expenditure. No commercial CCS is operational in the UK as of 2026."]
+  }
+}

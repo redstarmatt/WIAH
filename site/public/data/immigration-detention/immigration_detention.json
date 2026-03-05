@@ -1,0 +1,25 @@
+{
+  "topic": "immigration-detention",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2015, "dailyPopulation": 3235, "heldOver28DaysPct": 38, "releasedWithoutRemovalPct": 54 },
+    { "year": 2016, "dailyPopulation": 3167, "heldOver28DaysPct": 39, "releasedWithoutRemovalPct": 55 },
+    { "year": 2017, "dailyPopulation": 3095, "heldOver28DaysPct": 40, "releasedWithoutRemovalPct": 56 },
+    { "year": 2018, "dailyPopulation": 2997, "heldOver28DaysPct": 41, "releasedWithoutRemovalPct": 57 },
+    { "year": 2019, "dailyPopulation": 2872, "heldOver28DaysPct": 42, "releasedWithoutRemovalPct": 58 },
+    { "year": 2020, "dailyPopulation": 1533, "heldOver28DaysPct": 36, "releasedWithoutRemovalPct": 72 },
+    { "year": 2021, "dailyPopulation": 1642, "heldOver28DaysPct": 38, "releasedWithoutRemovalPct": 68 },
+    { "year": 2022, "dailyPopulation": 2184, "heldOver28DaysPct": 42, "releasedWithoutRemovalPct": 63 },
+    { "year": 2023, "dailyPopulation": 2743, "heldOver28DaysPct": 44, "releasedWithoutRemovalPct": 61 },
+    { "year": 2024, "dailyPopulation": 2900, "heldOver28DaysPct": 45, "releasedWithoutRemovalPct": 60 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Home Office", "dataset": "Immigration statistics: detention tables", "url": "https://www.gov.uk/government/collections/immigration-statistics-quarterly-release", "retrieved": "2024-10-01", "frequency": "quarterly" },
+      { "name": "Refugee Council", "dataset": "Immigration detention briefings", "url": "https://www.refugeecouncil.org.uk/", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "UNHCR", "dataset": "UK detention monitoring", "url": "https://www.unhcr.org/uk/", "retrieved": "2024-10-01", "frequency": "annual" }
+    ],
+    "methodology": "Daily population is the average number of people held in immigration removal centres and short-term holding facilities on any given day. The 28-day threshold is used as a benchmark because it is the time limit proposed in multiple parliamentary reform bills. Released without removal includes those granted bail, granted leave to remain, or released on immigration bail.",
+    "knownIssues": ["2020 figures significantly reduced due to COVID-19 restrictions on detention operations", "Hotel accommodation used during COVID is not included in IRC population figures"]
+  }
+}

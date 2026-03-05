@@ -1,0 +1,25 @@
+{
+  "topic": "carer-mental-health",
+  "lastUpdated": "2024-11-01",
+  "timeSeries": [
+    { "year": 2015, "poorMentalHealthPct": 61, "accessingSupportPct": 34, "quitWorkPct": 11 },
+    { "year": 2016, "poorMentalHealthPct": 63, "accessingSupportPct": 32, "quitWorkPct": 11 },
+    { "year": 2017, "poorMentalHealthPct": 64, "accessingSupportPct": 31, "quitWorkPct": 12 },
+    { "year": 2018, "poorMentalHealthPct": 65, "accessingSupportPct": 30, "quitWorkPct": 12 },
+    { "year": 2019, "poorMentalHealthPct": 66, "accessingSupportPct": 28, "quitWorkPct": 13 },
+    { "year": 2020, "poorMentalHealthPct": 69, "accessingSupportPct": 26, "quitWorkPct": 14 },
+    { "year": 2021, "poorMentalHealthPct": 70, "accessingSupportPct": 25, "quitWorkPct": 14 },
+    { "year": 2022, "poorMentalHealthPct": 71, "accessingSupportPct": 25, "quitWorkPct": 14 },
+    { "year": 2023, "poorMentalHealthPct": 72, "accessingSupportPct": 24, "quitWorkPct": 14 },
+    { "year": 2024, "poorMentalHealthPct": 72, "accessingSupportPct": 24, "quitWorkPct": 14 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Carers UK", "dataset": "State of Caring Survey", "url": "https://www.carersuk.org/research-and-policy/state-of-caring-report/", "retrieved": "2024-11-01", "frequency": "annual" },
+      { "name": "NHS Digital", "dataset": "Adult Psychiatric Morbidity Survey", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/adult-psychiatric-morbidity-survey", "retrieved": "2024-11-01", "frequency": "periodic" },
+      { "name": "DWP", "dataset": "Carer's Allowance Statistics", "url": "https://www.gov.uk/government/collections/carers-allowance-statistics", "retrieved": "2024-11-01", "frequency": "quarterly" }
+    ],
+    "methodology": "Poor mental health percentage derived from Carers UK State of Caring survey annual responses. Access to professional support includes GP, IAPT, and community mental health team contacts. Quit work figure represents share of full-time employed carers who left employment primarily due to caring responsibilities.",
+    "knownIssues": ["Survey methodology changed slightly in 2020; pre/post figures broadly comparable but not strictly identical"]
+  }
+}

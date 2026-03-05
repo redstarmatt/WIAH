@@ -1,0 +1,28 @@
+{
+  "topic": "ocean-acidification",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "pHChangeFromPreIndustrial": -0.03, "ratePHPerYear": 0.001 },
+    { "year": 2017, "pHChangeFromPreIndustrial": -0.04, "ratePHPerYear": 0.001 },
+    { "year": 2018, "pHChangeFromPreIndustrial": -0.05, "ratePHPerYear": 0.001 },
+    { "year": 2019, "pHChangeFromPreIndustrial": -0.06, "ratePHPerYear": 0.0015 },
+    { "year": 2020, "pHChangeFromPreIndustrial": -0.07, "ratePHPerYear": 0.0015 },
+    { "year": 2021, "pHChangeFromPreIndustrial": -0.07, "ratePHPerYear": 0.002 },
+    { "year": 2022, "pHChangeFromPreIndustrial": -0.08, "ratePHPerYear": 0.002 },
+    { "year": 2023, "pHChangeFromPreIndustrial": -0.09, "ratePHPerYear": 0.002 },
+    { "year": 2024, "pHChangeFromPreIndustrial": -0.1, "ratePHPerYear": 0.002 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "CEFAS",
+        "dataset": "Ocean Acidification Monitoring Programme",
+        "url": "https://www.cefas.co.uk/cefas-data-hub/ocean-acidification/",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "pHChangeFromPreIndustrial: change in UK coastal seawater pH from estimated pre-industrial baseline of 8.2. ratePHPerYear: average annual rate of pH decline in UK waters.",
+    "knownIssues": ["Pre-industrial baseline is modelled estimate with uncertainty range of +/- 0.02 pH units. Spatial variability between monitoring sites is significant."]
+  }
+}

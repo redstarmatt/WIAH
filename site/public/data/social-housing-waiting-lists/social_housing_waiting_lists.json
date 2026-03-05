@@ -1,0 +1,23 @@
+{
+  "topic": "social-housing-waiting-lists",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "waitingListK": 980, "socialHomesBuiltK": 42 },
+    { "year": 2017, "waitingListK": 1010, "socialHomesBuiltK": 38 },
+    { "year": 2018, "waitingListK": 1030, "socialHomesBuiltK": 35 },
+    { "year": 2019, "waitingListK": 1050, "socialHomesBuiltK": 34 },
+    { "year": 2020, "waitingListK": 1090, "socialHomesBuiltK": 33 },
+    { "year": 2021, "waitingListK": 1100, "socialHomesBuiltK": 28 },
+    { "year": 2022, "waitingListK": 1140, "socialHomesBuiltK": 31 },
+    { "year": 2023, "waitingListK": 1200, "socialHomesBuiltK": 30 },
+    { "year": 2024, "waitingListK": 1290, "socialHomesBuiltK": 29 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "DLUHC", "dataset": "Local Authority Housing Statistics", "url": "https://www.gov.uk/government/collections/local-authority-housing-data", "retrieved": "2024-12-01", "frequency": "annual" },
+      { "name": "DLUHC", "dataset": "Housebuilding Statistics", "url": "https://www.gov.uk/government/collections/house-building-statistics", "retrieved": "2024-12-01", "frequency": "annual" }
+    ],
+    "methodology": "Waiting list figures are households on local authority social housing registers. Social homes built figures include all social rent and affordable rent completions.",
+    "knownIssues": ["Eligibility criteria vary between local authorities — some operate restrictive criteria that exclude many households in need"]
+  }
+}

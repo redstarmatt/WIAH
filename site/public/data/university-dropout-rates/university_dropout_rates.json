@@ -1,0 +1,30 @@
+{
+  "topic": "university-dropout-rates",
+  "lastUpdated": "2025-03-01",
+  "timeSeries": [
+    { "year": 2016, "dropoutRatePct": 4.8, "disadvantagedDropoutPct": 8.5 },
+    { "year": 2017, "dropoutRatePct": 4.9, "disadvantagedDropoutPct": 8.8 },
+    { "year": 2018, "dropoutRatePct": 5.0, "disadvantagedDropoutPct": 9.0 },
+    { "year": 2019, "dropoutRatePct": 5.1, "disadvantagedDropoutPct": 9.2 },
+    { "year": 2020, "dropoutRatePct": 5.2, "disadvantagedDropoutPct": 9.5 },
+    { "year": 2021, "dropoutRatePct": 5.5, "disadvantagedDropoutPct": 10.0 },
+    { "year": 2022, "dropoutRatePct": 5.8, "disadvantagedDropoutPct": 10.8 },
+    { "year": 2023, "dropoutRatePct": 6.0, "disadvantagedDropoutPct": 11.4 },
+    { "year": 2024, "dropoutRatePct": 6.3, "disadvantagedDropoutPct": 12.0 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "HESA",
+        "dataset": "Higher Education Student Statistics",
+        "url": "https://www.hesa.ac.uk/data-and-analysis/students/non-continuation",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Non-continuation rate measures the percentage of first-year full-time undergraduate students who do not continue into their second year. Disadvantaged students are those from the most deprived POLAR4 quintile. Data covers UK-domiciled students at English HE providers.",
+    "knownIssues": [
+      "POLAR4 deprivation quintile methodology may slightly undercount disadvantage in urban areas compared with IMD-based measures."
+    ]
+  }
+}

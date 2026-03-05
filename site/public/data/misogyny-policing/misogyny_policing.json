@@ -1,0 +1,26 @@
+{
+  "topic": "misogyny-policing",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2015, "reportsK": 34.1, "chargeRatePct": 6.2, "caseReachingCourtPct": 9.1, "monthsToTrialAvg": 29 },
+    { "year": 2016, "reportsK": 41.2, "chargeRatePct": 5.7, "caseReachingCourtPct": 8.8, "monthsToTrialAvg": 31 },
+    { "year": 2017, "reportsK": 53.6, "chargeRatePct": 5.3, "caseReachingCourtPct": 8.4, "monthsToTrialAvg": 33 },
+    { "year": 2018, "reportsK": 58.7, "chargeRatePct": 4.8, "caseReachingCourtPct": 7.9, "monthsToTrialAvg": 35 },
+    { "year": 2019, "reportsK": 61.9, "chargeRatePct": 4.4, "caseReachingCourtPct": 7.3, "monthsToTrialAvg": 36 },
+    { "year": 2020, "reportsK": 55.1, "chargeRatePct": 3.9, "caseReachingCourtPct": 6.8, "monthsToTrialAvg": 38 },
+    { "year": 2021, "reportsK": 67.1, "chargeRatePct": 3.6, "caseReachingCourtPct": 6.4, "monthsToTrialAvg": 40 },
+    { "year": 2022, "reportsK": 70.6, "chargeRatePct": 3.4, "caseReachingCourtPct": 6.2, "monthsToTrialAvg": 41 },
+    { "year": 2023, "reportsK": 72.1, "chargeRatePct": 3.3, "caseReachingCourtPct": 6.0, "monthsToTrialAvg": 42 },
+    { "year": 2024, "reportsK": 73.4, "chargeRatePct": 3.3, "caseReachingCourtPct": 6.0, "monthsToTrialAvg": 42 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Crown Prosecution Service", "dataset": "Violence against women and girls report", "url": "https://www.cps.gov.uk/publication/cps-violence-against-women-and-girls-report", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "ONS", "dataset": "Sexual offences in England and Wales", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/sexualoffencesinenglandandwales/latest", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "Rape Crisis England & Wales", "dataset": "Statistics and data", "url": "https://rapecrisis.org.uk/get-informed/statistics-sexual-violence/", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "Home Office", "dataset": "Police recorded sexual offences", "url": "https://www.gov.uk/government/statistics/police-recorded-crime-open-data-tables", "retrieved": "2024-10-01", "frequency": "annual" }
+    ],
+    "methodology": "Reports are police recorded rape offences in thousands. Charge rate is charges as a proportion of recorded offences, not of completed investigations. Cases reaching court includes those resulting in charge where a court hearing has been listed. Months to trial is average time from offence date to first Crown Court hearing. 2020 affected by COVID-19 court suspensions.",
+    "knownIssues": ["Rape is severely under-reported — only an estimated 1 in 6 rapes is reported to police", "2020 dip in reports reflects COVID-19 lockdown period, not a genuine reduction in offending", "Attrition tracking is complex — cases may be dropped at multiple stages for different reasons"]
+  }
+}

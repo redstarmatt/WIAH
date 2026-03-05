@@ -1,0 +1,15 @@
+{
+  "topic": "redundancy-rates",
+  "lastUpdated": "2025-01-01",
+  "timeSeries": [
+    { "year": 2016, "notificationsK": 70, "redundancyRatePer1000": 3.2 },
+    { "year": 2017, "notificationsK": 75, "redundancyRatePer1000": 3.1 },
+    { "year": 2018, "notificationsK": 72, "redundancyRatePer1000": 3.0 },
+    { "year": 2019, "notificationsK": 80, "redundancyRatePer1000": 3.3 },
+    { "year": 2020, "notificationsK": 85, "redundancyRatePer1000": 3.4 },
+    { "year": 2021, "notificationsK": 130, "redundancyRatePer1000": 5.1 },
+    { "year": 2022, "notificationsK": 82, "redundancyRatePer1000": 2.9 },
+    { "year": 2023, "notificationsK": 88, "redundancyRatePer1000": 2.9 },
+    { "year": 2024, "notificationsK": 175, "redundancyRatePer1000": 4.1 }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "topic": "e-waste-recycling",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "eWasteGeneratedMt": 1.3, "formalRecyclingPct": 33 },
+    { "year": 2017, "eWasteGeneratedMt": 1.35, "formalRecyclingPct": 33 },
+    { "year": 2018, "eWasteGeneratedMt": 1.4, "formalRecyclingPct": 34 },
+    { "year": 2019, "eWasteGeneratedMt": 1.42, "formalRecyclingPct": 34 },
+    { "year": 2020, "eWasteGeneratedMt": 1.45, "formalRecyclingPct": 35 },
+    { "year": 2021, "eWasteGeneratedMt": 1.5, "formalRecyclingPct": 36 },
+    { "year": 2022, "eWasteGeneratedMt": 1.52, "formalRecyclingPct": 36 },
+    { "year": 2023, "eWasteGeneratedMt": 1.55, "formalRecyclingPct": 37 },
+    { "year": 2024, "eWasteGeneratedMt": 1.6, "formalRecyclingPct": 38 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DEFRA",
+        "dataset": "WEEE Statistics",
+        "url": "https://www.gov.uk/government/statistical-data-sets/waste-electrical-and-electronic-equipment-weee-in-the-uk",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "eWasteGeneratedMt: total WEEE arising in the UK in million tonnes. formalRecyclingPct: percentage of WEEE collected and processed through authorised treatment facilities.",
+    "knownIssues": ["Total generation is modelled from equipment put on market minus estimated stock; direct measurement not possible. Informal collection and illegal exports not captured in formal recycling figures."]
+  }
+}

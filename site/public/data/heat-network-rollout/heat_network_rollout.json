@@ -1,0 +1,28 @@
+{
+  "topic": "heat-network-rollout",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "marketSharePct": 1.7, "homesConnectedK": 200 },
+    { "year": 2017, "marketSharePct": 1.8, "homesConnectedK": 220 },
+    { "year": 2018, "marketSharePct": 2.0, "homesConnectedK": 250 },
+    { "year": 2019, "marketSharePct": 2.1, "homesConnectedK": 280 },
+    { "year": 2020, "marketSharePct": 2.2, "homesConnectedK": 310 },
+    { "year": 2021, "marketSharePct": 2.3, "homesConnectedK": 340 },
+    { "year": 2022, "marketSharePct": 2.4, "homesConnectedK": 380 },
+    { "year": 2023, "marketSharePct": 2.6, "homesConnectedK": 430 },
+    { "year": 2024, "marketSharePct": 2.8, "homesConnectedK": 480 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DESNZ",
+        "dataset": "Heat Networks in Great Britain",
+        "url": "https://www.gov.uk/government/statistics/heat-networks-in-great-britain",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "marketSharePct: heat networks as percentage of total UK heat demand. homesConnectedK: cumulative residential connections to heat networks in thousands.",
+    "knownIssues": ["Data collected via industry survey; smaller networks may be under-represented"]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "topic": "ancient-woodland-loss",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "sitesAtRisk": 850, "hs2LossHa": 0 },
+    { "year": 2017, "sitesAtRisk": 900, "hs2LossHa": 0 },
+    { "year": 2018, "sitesAtRisk": 950, "hs2LossHa": 50 },
+    { "year": 2019, "sitesAtRisk": 1000, "hs2LossHa": 150 },
+    { "year": 2020, "sitesAtRisk": 1050, "hs2LossHa": 300 },
+    { "year": 2021, "sitesAtRisk": 1080, "hs2LossHa": 450 },
+    { "year": 2022, "sitesAtRisk": 1050, "hs2LossHa": 550 },
+    { "year": 2023, "sitesAtRisk": 1020, "hs2LossHa": 650 },
+    { "year": 2024, "sitesAtRisk": 1000, "hs2LossHa": 700 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Woodland Trust",
+        "dataset": "Ancient Woodland Threat Register",
+        "url": "https://www.woodlandtrust.org.uk/protecting-trees-and-woods/ancient-woodland-inventory/",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Sites at risk: number of ancient woodland sites in England with live planning applications. hs2LossHa: cumulative ancient woodland lost to HS2 construction in hectares.",
+    "knownIssues": ["Threat Register reflects active planning applications only; post-consent losses may not be captured in same reporting year"]
+  }
+}

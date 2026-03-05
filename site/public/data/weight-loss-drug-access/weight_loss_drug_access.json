@@ -1,0 +1,10 @@
+{
+  "topic": "weight-loss-drug-access",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    {"year": 2021, "glp1PrescriptionsK": 12},
+    {"year": 2022, "glp1PrescriptionsK": 45},
+    {"year": 2023, "glp1PrescriptionsK": 180},
+    {"year": 2024, "glp1PrescriptionsK": 420}
+  ]
+}

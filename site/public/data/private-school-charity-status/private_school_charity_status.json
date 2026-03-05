@@ -1,0 +1,38 @@
+{
+  "topic": "private-school-charity-status",
+  "lastUpdated": "2025-03-01",
+  "timeSeries": [
+    { "year": 2016, "taxReliefM": 450, "perPupilGap": 7500 },
+    { "year": 2017, "taxReliefM": 460, "perPupilGap": 7800 },
+    { "year": 2018, "taxReliefM": 470, "perPupilGap": 8000 },
+    { "year": 2019, "taxReliefM": 480, "perPupilGap": 8200 },
+    { "year": 2020, "taxReliefM": 490, "perPupilGap": 8500 },
+    { "year": 2021, "taxReliefM": 500, "perPupilGap": 8700 },
+    { "year": 2022, "taxReliefM": 510, "perPupilGap": 9000 },
+    { "year": 2023, "taxReliefM": 515, "perPupilGap": 9500 },
+    { "year": 2024, "taxReliefM": 522, "perPupilGap": 10300 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Charity Commission",
+        "dataset": "Independent School Charitable Relief Analysis",
+        "url": "https://www.gov.uk/government/organisations/charity-commission",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Independent Schools Council",
+        "dataset": "ISC Annual Census",
+        "url": "https://www.isc.co.uk/research/",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Tax relief value includes estimated mandatory business rates relief (80%), Gift Aid benefit, and corporation tax exemption on surpluses, as estimated by the Independent Schools Council and Charity Commission. Per-pupil gap is the difference between average independent school day fees and DfE state school per-pupil funding (£).",
+    "knownIssues": [
+      "Tax relief estimates are modelled from available accounts data and may understate total relief where schools have complex charitable structures.",
+      "VAT on independent school fees was introduced from January 2025 — data reflects the pre-VAT position."
+    ]
+  }
+}

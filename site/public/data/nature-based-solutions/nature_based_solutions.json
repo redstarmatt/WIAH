@@ -1,0 +1,35 @@
+{
+  "topic": "nature-based-solutions",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "peatlandRestorationHa": 13000, "newWoodlandHa": 3500 },
+    { "year": 2017, "peatlandRestorationHa": 15000, "newWoodlandHa": 4200 },
+    { "year": 2018, "peatlandRestorationHa": 19000, "newWoodlandHa": 5000 },
+    { "year": 2019, "peatlandRestorationHa": 25000, "newWoodlandHa": 6100 },
+    { "year": 2020, "peatlandRestorationHa": 32000, "newWoodlandHa": 7200 },
+    { "year": 2021, "peatlandRestorationHa": 40000, "newWoodlandHa": 4800 },
+    { "year": 2022, "peatlandRestorationHa": 47000, "newWoodlandHa": 5500 },
+    { "year": 2023, "peatlandRestorationHa": 52000, "newWoodlandHa": 5300 },
+    { "year": 2024, "peatlandRestorationHa": 57000, "newWoodlandHa": 8500 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DESNZ",
+        "dataset": "Peatland Action Programme",
+        "url": "https://www.gov.uk/government/publications/peatland-grant-scheme",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Forestry Commission",
+        "dataset": "Woodland Statistics",
+        "url": "https://www.forestresearch.gov.uk/tools-and-resources/statistics/statistics-by-topic/woodland-statistics/",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "peatlandRestorationHa: cumulative hectares of UK peatland under active restoration including rewetting. newWoodlandHa: new woodland created in England that year.",
+    "knownIssues": ["Peatland restoration data from multiple schemes may have counting methodology differences"]
+  }
+}

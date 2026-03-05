@@ -1,0 +1,22 @@
+{
+  "topic": "smart-meter-rollout",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "installedM": 5.1, "dumbModeM": 2.0 },
+    { "year": 2017, "installedM": 8.2, "dumbModeM": 4.1 },
+    { "year": 2018, "installedM": 12.0, "dumbModeM": 7.8 },
+    { "year": 2019, "installedM": 16.3, "dumbModeM": 10.2 },
+    { "year": 2020, "installedM": 21.0, "dumbModeM": 11.5 },
+    { "year": 2021, "installedM": 24.5, "dumbModeM": 12.0 },
+    { "year": 2022, "installedM": 27.8, "dumbModeM": 11.0 },
+    { "year": 2023, "installedM": 31.0, "dumbModeM": 10.0 },
+    { "year": 2024, "installedM": 35.7, "dumbModeM": 8.9 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "DESNZ", "dataset": "Smart Meters Statistical Release", "url": "https://www.gov.uk/government/collections/smart-meters-statistics", "retrieved": "2024-12-01", "frequency": "quarterly" }
+    ],
+    "methodology": "Installed meters are cumulative smart and advanced meters in operation. Dumb mode meters are SMETS1 installations not communicating via DCC network.",
+    "knownIssues": ["SMETS1 dumb mode migration ongoing — figures change as remote enrolment proceeds"]
+  }
+}

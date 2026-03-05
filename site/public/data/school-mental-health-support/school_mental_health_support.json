@@ -1,0 +1,37 @@
+{
+  "topic": "school-mental-health-support",
+  "lastUpdated": "2025-03-01",
+  "timeSeries": [
+    { "year": 2016, "mhstCoveragePct": 7, "counsellorSchools": 1200 },
+    { "year": 2017, "mhstCoveragePct": 9, "counsellorSchools": 1400 },
+    { "year": 2018, "mhstCoveragePct": 12, "counsellorSchools": 1600 },
+    { "year": 2019, "mhstCoveragePct": 16, "counsellorSchools": 1900 },
+    { "year": 2020, "mhstCoveragePct": 20, "counsellorSchools": 1900 },
+    { "year": 2021, "mhstCoveragePct": 25, "counsellorSchools": 1800 },
+    { "year": 2022, "mhstCoveragePct": 28, "counsellorSchools": 2100 },
+    { "year": 2023, "mhstCoveragePct": 31, "counsellorSchools": 2600 },
+    { "year": 2024, "mhstCoveragePct": 35, "counsellorSchools": 3100 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "Mental Health Support Teams in Education",
+        "url": "https://www.england.nhs.uk/mental-health/cyp/trailblazers/",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "DfE",
+        "dataset": "School Workforce Census",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "MHST coverage is measured as the percentage of pupils in schools and colleges covered by a Mental Health Support Team under the NHS Long Term Plan programme. Counsellor schools count refers to maintained secondary schools with at least one qualified school counsellor per the DfE school workforce census.",
+    "knownIssues": [
+      "MHST coverage figures for 2016–2018 are estimates based on pilot data prior to national programme rollout."
+    ]
+  }
+}

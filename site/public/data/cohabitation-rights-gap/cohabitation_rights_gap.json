@@ -1,0 +1,23 @@
+{
+  "topic": "cohabitation-rights-gap",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "cohabitingCouplesM": 2.6, "believeCommonLawPct": 55 },
+    { "year": 2017, "cohabitingCouplesM": 2.7, "believeCommonLawPct": 54 },
+    { "year": 2018, "cohabitingCouplesM": 2.8, "believeCommonLawPct": 53 },
+    { "year": 2019, "cohabitingCouplesM": 2.9, "believeCommonLawPct": 53 },
+    { "year": 2020, "cohabitingCouplesM": 3.0, "believeCommonLawPct": 52 },
+    { "year": 2021, "cohabitingCouplesM": 3.1, "believeCommonLawPct": 52 },
+    { "year": 2022, "cohabitingCouplesM": 3.2, "believeCommonLawPct": 51 },
+    { "year": 2023, "cohabitingCouplesM": 3.4, "believeCommonLawPct": 51 },
+    { "year": 2024, "cohabitingCouplesM": 3.6, "believeCommonLawPct": 51 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "ONS", "dataset": "Families and Households", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/datasets/familiesandhouseholds", "retrieved": "2024-12-01", "frequency": "annual" },
+      { "name": "Resolution Foundation", "dataset": "Cohabitation Survey", "url": "https://www.resolutionfoundation.org", "retrieved": "2024-12-01", "frequency": "periodic" }
+    ],
+    "methodology": "Cohabiting couples from ONS Families and Households dataset. Common law marriage belief from public attitude surveys.",
+    "knownIssues": ["Survey figures on legal beliefs are estimates from periodic polls, not continuous tracking"]
+  }
+}

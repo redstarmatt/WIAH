@@ -1,0 +1,37 @@
+{
+  "topic": "stem-gender-gap",
+  "lastUpdated": "2025-03-01",
+  "timeSeries": [
+    { "year": 2016, "girlsPhysicsPct": 19, "girlsComputingPct": 9 },
+    { "year": 2017, "girlsPhysicsPct": 19, "girlsComputingPct": 10 },
+    { "year": 2018, "girlsPhysicsPct": 20, "girlsComputingPct": 10 },
+    { "year": 2019, "girlsPhysicsPct": 20, "girlsComputingPct": 11 },
+    { "year": 2020, "girlsPhysicsPct": 20, "girlsComputingPct": 12 },
+    { "year": 2021, "girlsPhysicsPct": 21, "girlsComputingPct": 13 },
+    { "year": 2022, "girlsPhysicsPct": 21, "girlsComputingPct": 14 },
+    { "year": 2023, "girlsPhysicsPct": 22, "girlsComputingPct": 15 },
+    { "year": 2024, "girlsPhysicsPct": 22, "girlsComputingPct": 16 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "JCQ",
+        "dataset": "A-level Results by Subject and Gender",
+        "url": "https://www.jcq.org.uk/examination-results/",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "HESA",
+        "dataset": "Higher Education Graduate Outcomes",
+        "url": "https://www.hesa.ac.uk/data-and-analysis/students/what-do",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Girls' participation is measured as the percentage of total A-level entries in each subject that were from female candidates, based on JCQ entry data. Data excludes international exam board entries.",
+    "knownIssues": [
+      "2020 data was affected by teacher-assessed grades replacing exams — gender share figures for 2020 are estimated."
+    ]
+  }
+}

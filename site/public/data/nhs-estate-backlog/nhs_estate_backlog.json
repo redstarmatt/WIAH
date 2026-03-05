@@ -1,0 +1,15 @@
+{
+  "topic": "nhs-estate-backlog",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    {"year": 2015, "backlogBn": 4.8},
+    {"year": 2016, "backlogBn": 5.5},
+    {"year": 2017, "backlogBn": 6.1},
+    {"year": 2018, "backlogBn": 6.5},
+    {"year": 2019, "backlogBn": 6.5},
+    {"year": 2020, "backlogBn": 7.1},
+    {"year": 2021, "backlogBn": 7.6},
+    {"year": 2022, "backlogBn": 9.2},
+    {"year": 2023, "backlogBn": 11.6}
+  ]
+}

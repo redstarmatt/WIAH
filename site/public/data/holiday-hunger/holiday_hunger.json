@@ -1,0 +1,24 @@
+{
+  "topic": "holiday-hunger",
+  "lastUpdated": "2026-03-05",
+  "timeSeries": [
+    { "year": 2016, "childrenAtRiskM": 1.8, "hafReachK": 0 },
+    { "year": 2017, "childrenAtRiskM": 1.9, "hafReachK": 0 },
+    { "year": 2018, "childrenAtRiskM": 2.0, "hafReachK": 0 },
+    { "year": 2019, "childrenAtRiskM": 2.0, "hafReachK": 0 },
+    { "year": 2020, "childrenAtRiskM": 2.1, "hafReachK": 50 },
+    { "year": 2021, "childrenAtRiskM": 2.2, "hafReachK": 200 },
+    { "year": 2022, "childrenAtRiskM": 2.3, "hafReachK": 400 },
+    { "year": 2023, "childrenAtRiskM": 2.4, "hafReachK": 550 },
+    { "year": 2024, "childrenAtRiskM": 2.5, "hafReachK": 650 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Food Foundation", "dataset": "Child Food Insecurity Tracker", "url": "https://foodfoundation.org.uk/initiatives/food-insecurity-tracking", "retrieved": "2026-03-05", "frequency": "annual" },
+      { "name": "DfE", "dataset": "Holiday Activities and Food Programme Statistics", "url": "https://www.gov.uk/government/collections/holiday-activities-and-food-programme", "retrieved": "2026-03-05", "frequency": "annual" },
+      { "name": "Trussell Trust", "dataset": "End of Year Statistics", "url": "https://www.trusselltrust.org/news-and-blog/latest-stats/", "retrieved": "2026-03-05", "frequency": "annual" }
+    ],
+    "methodology": "Children at risk estimated from free school meal eligibility figures plus additional food insecurity survey data. HAF reach from DfE programme returns.",
+    "knownIssues": ["Holiday hunger estimates require combining multiple data sources with different methodologies", "HAF participation data may undercount informal provision"]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "topic": "postgraduate-funding",
+  "lastUpdated": "2025-03-01",
+  "timeSeries": [
+    { "year": 2016, "pgEnrolmentsK": 180, "combinedDebtK": 22 },
+    { "year": 2017, "pgEnrolmentsK": 185, "combinedDebtK": 24 },
+    { "year": 2018, "pgEnrolmentsK": 190, "combinedDebtK": 26 },
+    { "year": 2019, "pgEnrolmentsK": 195, "combinedDebtK": 28 },
+    { "year": 2020, "pgEnrolmentsK": 198, "combinedDebtK": 30 },
+    { "year": 2021, "pgEnrolmentsK": 202, "combinedDebtK": 32 },
+    { "year": 2022, "pgEnrolmentsK": 210, "combinedDebtK": 35 },
+    { "year": 2023, "pgEnrolmentsK": 215, "combinedDebtK": 38 },
+    { "year": 2024, "pgEnrolmentsK": 198, "combinedDebtK": 42 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "HESA",
+        "dataset": "Higher Education Student Statistics",
+        "url": "https://www.hesa.ac.uk/data-and-analysis/students",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "SLC",
+        "dataset": "Student Loans Company — Student Loans Outstanding",
+        "url": "https://www.gov.uk/government/organisations/student-loans-company",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "IFS",
+        "dataset": "Graduate Repayment Analysis",
+        "url": "https://ifs.org.uk/education-and-skills",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Postgraduate enrolments cover all taught and research postgraduate students at English HE providers (thousands). Combined debt represents average total outstanding student loan balance (undergraduate plus postgraduate) for graduates with both loan types (thousands of pounds).",
+    "knownIssues": [
+      "Postgraduate loan scheme launched in 2016 for master's and 2018 for doctoral — pre-scheme comparison for combined debt uses modelled estimates.",
+      "Combined marginal tax rate calculation assumes Plan 2 undergraduate loan combined with postgraduate master's loan at standard rates."
+    ]
+  }
+}

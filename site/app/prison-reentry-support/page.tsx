@@ -1,0 +1,157 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import TopicNav from '@/components/TopicNav'
+import TopicHeader from '@/components/TopicHeader'
+import MetricCard from '@/components/MetricCard'
+import LineChart, { Series } from '@/components/charts/LineChart'
+import ScrollReveal from '@/components/ScrollReveal'
+import SectionNav from '@/components/SectionNav'
+
+// -- Types ------------------------------------------------------------------
+
+interface PrisonReentrySupportData {
+  topic: string
+  lastUpdated: string
+  timeSeries: Array<{
+    year: number
+    reoffendingPct: number
+    dischargeGrantGBP: number
+    noAccommodationPct: number
+  }>
+}
+
+function yearToDate(y: number): Date {
+  return new Date(y, 0, 1)
+}
+
+// -- Page -------------------------------------------------------------------
+
+export default function PrisonReentrySupportPage() {
+  const [data, setData] = useState<PrisonReentrySupportData | null>(null)
+
+  useEffect(() => {
+    fetch('/data/prison-reentry-support/prison_reentry_support.json')
+      .then(res => res.json())
+      .then(setData)
+      .catch(console.error)
+  }, [])
+
+  const reentrySeries: Series[] = data
+    ? [
+        {
+          id: 'reoffending',
+          label: 'Reoffending within 1 year (%)',
+          colour: '#E63946',
+          data: data.timeSeries.map(d => ({
+            date: yearToDate(d.year),
+            value: d.reoffendingPct,
+          })),
+        },
+        {
+          id: 'noAccommodation',
+          label: 'Released with no accommodation (%)',
+          colour: '#F4A261',
+          data: data.timeSeries.map(d => ({
+            date: yearToDate(d.year),
+            value: d.noAccommodationPct,
+          })),
+        },
+      ]
+    : []
+
+  return (
+    <>
+      <TopicNav topic="Prison Reentry Support" />
+
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Prison Reentry Support"
+          question="What support do people get when they leave prison?"
+          finding="46% of adults reoffend within one year of release. Those released with less than &pound;50 are nearly twice as likely to reoffend."
+          colour="#6B7280"
+        />
+
+        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Every year around 55,000 adults are released from prison in England and Wales. Nearly half of them will commit a proven further offence within twelve months. The reoffending rate has barely shifted over the past decade, hovering between 44% and 47%, despite decades of policy commitments to rehabilitation and successive probation service reforms. The stability of this figure is itself a form of evidence: the conditions that drive reoffending &mdash; homelessness, unemployment, poverty, addiction, and poor mental health &mdash; are being reproduced at release rather than addressed during or after sentence.</p>
+            <p>The discharge grant &mdash; the lump sum given to people leaving prison with no other financial support &mdash; has remained at &pound;46 since 2008, meaning it has lost around a third of its real value to inflation. A person released on a Friday afternoon with &pound;46, no accommodation arranged, and no immediate benefit payments available is in an acute crisis of basic needs within hours of leaving the prison gate. Research consistently shows that accommodation insecurity is the single strongest predictor of reoffending, and that the first 24&ndash;72 hours after release are the highest risk period. The discharge grant was recognised as inadequate in 2008. Seventeen years on, it has not changed.</p>
+            <p>Accommodation at point of release has improved somewhat under the &lsquo;Accommodation, Substance Misuse and Employment&rsquo; (ASE) programme, but 15% of people are still released without settled housing confirmed. For this group, the National Probation Service is the primary point of contact, but probation officers carry high caseloads and are focused on public protection compliance rather than welfare support. The intersection of homelessness and reoffending is well evidenced: rough sleepers who have served prison sentences are far more likely to be recalled or reconvicted within months of release.</p>
+            <p>Employment reduces reoffending significantly. People who secure employment after release are between a third and half as likely to reoffend as those who do not. Yet the barriers to employment with a criminal record are substantial: employer attitudes, DBS check requirements across a range of sectors, and the gaps in employment history created by imprisonment combine to make job search after release extremely difficult. Ban the Box initiatives &mdash; asking employers not to require criminal record disclosure at application stage &mdash; have made progress in the public sector but voluntary uptake in the private sector remains limited.</p>
+            <p>Substance misuse services in prison have been progressively contracted and have never been systematically linked to community treatment services at the point of release. The period immediately after release is a high-risk time for drug overdose, particularly from opioids, as tolerance drops during a custodial sentence. Post-release drug deaths represent a significant and preventable mortality burden. Naloxone provision at release has been extended but take-up and coverage remain incomplete.</p>
+          </div>
+        </section>
+
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart', label: 'Reoffending Rates' },
+          { id: 'sec-sources', label: 'Sources' },
+        ]} />
+
+        <ScrollReveal>
+          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            <MetricCard
+              label="Reoffending within 1 year"
+              value="46%"
+              unit=""
+              direction={'flat' as const}
+              polarity={'up-is-bad' as const}
+              changeText="Unchanged for a decade"
+              sparklineData={[46, 47, 47, 46, 46, 44, 45, 46, 46]}
+              onExpand={() => {}}
+              source="Ministry of Justice &middot; Proven Reoffending Statistics"
+            />
+            <MetricCard
+              label="Discharge grant"
+              value="&pound;46"
+              unit=""
+              direction={'flat' as const}
+              polarity={'up-is-good' as const}
+              changeText="Unchanged since 2008"
+              sparklineData={[46, 46, 46, 46, 46, 46, 46, 46, 46]}
+              onExpand={() => {}}
+              source="HMPPS &middot; Prison Discharge Rules"
+            />
+            <MetricCard
+              label="Released with no accommodation"
+              value="15%"
+              unit=""
+              direction={'up' as const}
+              polarity={'up-is-bad' as const}
+              changeText="Up from 11% in 2015"
+              sparklineData={[11, 12, 12, 12, 13, 14, 14, 15, 15]}
+              onExpand={() => {}}
+              source="HMPPS &middot; Prison Population Data"
+            />
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-chart" className="mb-12">
+            <LineChart
+              title="Reoffending rates post-release, 2015&ndash;2023"
+              subtitle="Proven reoffending within one year of release and percentage released without settled accommodation, England &amp; Wales."
+              series={reentrySeries}
+              yLabel="Percentage (%)"
+              source={{
+                name: 'Ministry of Justice',
+                dataset: 'Proven Reoffending Statistics',
+                frequency: 'annual',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid space-y-3 font-mono">
+            <p>Ministry of Justice &mdash; Proven Reoffending Statistics. Annual data on reoffending within one year. gov.uk/government/collections/proven-reoffending-statistics</p>
+            <p>HMPPS &mdash; Prison Population Data. Monthly statistics. gov.uk/government/statistics/prison-population-figures-2024</p>
+            <p>Prison Reform Trust &mdash; Bromley Briefings Prison Factfile. Annual factfile on the prison population. prisonreformtrust.org.uk/publication/bromley-briefings-prison-factfile/</p>
+            <p>Proven reoffending is defined as a caution or conviction in the 12 months following release, excluding reoffences from the index period. Discharge grant figure is the standard rate for adult prisoners with no other financial support. Accommodation figure is recorded at point of release. Data covers England and Wales.</p>
+          </div>
+        </section>
+      </main>
+    </>
+  )
+}

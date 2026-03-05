@@ -1,0 +1,25 @@
+{
+  "topic": "learning-disability-inpatient",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2015, "inpatientCount": 3230, "avgStayYears": 5.1, "restraintIncidents": 62000 },
+    { "year": 2016, "inpatientCount": 2990, "avgStayYears": 5.2, "restraintIncidents": 59000 },
+    { "year": 2017, "inpatientCount": 2780, "avgStayYears": 5.2, "restraintIncidents": 56000 },
+    { "year": 2018, "inpatientCount": 2630, "avgStayYears": 5.3, "restraintIncidents": 55000 },
+    { "year": 2019, "inpatientCount": 2490, "avgStayYears": 5.3, "restraintIncidents": 53000 },
+    { "year": 2020, "inpatientCount": 2380, "avgStayYears": 5.3, "restraintIncidents": 50000 },
+    { "year": 2021, "inpatientCount": 2290, "avgStayYears": 5.4, "restraintIncidents": 51000 },
+    { "year": 2022, "inpatientCount": 2210, "avgStayYears": 5.4, "restraintIncidents": 51000 },
+    { "year": 2023, "inpatientCount": 2150, "avgStayYears": 5.4, "restraintIncidents": 51000 },
+    { "year": 2024, "inpatientCount": 2150, "avgStayYears": 5.4, "restraintIncidents": 51000 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "NHS Digital", "dataset": "Learning Disability Services Data Set (LDSS)", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/learning-disability-services-statistics", "retrieved": "2024-10-01", "frequency": "monthly" },
+      { "name": "NHS England", "dataset": "Assuring Transformation Data", "url": "https://www.england.nhs.uk/learning-disabilities/care/progress/assuring-transformation/", "retrieved": "2024-10-01", "frequency": "monthly" },
+      { "name": "CQC", "dataset": "Restraint and seclusion in mental health settings", "url": "https://www.cqc.org.uk/publications/major-report/out-sight-out-mind", "retrieved": "2024-10-01", "frequency": "annual" }
+    ],
+    "methodology": "Inpatient count is snapshot figure from Assuring Transformation monthly data. Average length of stay calculated for those discharged in reference year. Restraint incidents include physical, mechanical, and chemical restraint reported under the Mental Health Units (Use of Force) Act reporting.",
+    "knownIssues": ["Assuring Transformation covers England only. Some providers have historically under-reported. Data before 2015 uses a different counting methodology."]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "topic": "youth-social-action",
+  "lastUpdated": "2025-03-01",
+  "timeSeries": [
+    { "year": 2016, "youthVolunteeringPct": 42, "regularVolunteersM": 3.8 },
+    { "year": 2017, "youthVolunteeringPct": 41, "regularVolunteersM": 3.7 },
+    { "year": 2018, "youthVolunteeringPct": 40, "regularVolunteersM": 3.6 },
+    { "year": 2019, "youthVolunteeringPct": 39, "regularVolunteersM": 3.5 },
+    { "year": 2020, "youthVolunteeringPct": 38, "regularVolunteersM": 3.4 },
+    { "year": 2021, "youthVolunteeringPct": 36, "regularVolunteersM": 3.2 },
+    { "year": 2022, "youthVolunteeringPct": 34, "regularVolunteersM": 3.0 },
+    { "year": 2023, "youthVolunteeringPct": 33, "regularVolunteersM": 3.0 },
+    { "year": 2024, "youthVolunteeringPct": 34, "regularVolunteersM": 3.2 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DCMS",
+        "dataset": "Community Life Survey",
+        "url": "https://www.gov.uk/government/collections/community-life-survey",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "NCVO",
+        "dataset": "UK Civil Society Almanac",
+        "url": "https://ncvo.org.uk/report/uk-civil-society-almanac-2024/",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Youth volunteering rate is the percentage of 16–25 year olds who report giving unpaid help through a group, club or organisation at least once in the past 12 months (formal volunteering), from the DCMS Community Life Survey. Regular volunteers are those volunteering monthly or more frequently.",
+    "knownIssues": [
+      "The Community Life Survey methodology changed in 2018, creating a slight discontinuity — volunteer rates before and after 2018 may not be fully comparable.",
+      "2020 and 2021 pandemic years saw reduced formal volunteering but increased informal mutual aid not fully captured in formal survey data."
+    ]
+  }
+}

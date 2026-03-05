@@ -1,0 +1,15 @@
+{
+  "topic": "trade-deficit",
+  "lastUpdated": "2025-01-01",
+  "timeSeries": [
+    { "year": 2016, "goodsDeficitBn": 100, "servicesSurplusBn": 83 },
+    { "year": 2017, "goodsDeficitBn": 110, "servicesSurplusBn": 88 },
+    { "year": 2018, "goodsDeficitBn": 118, "servicesSurplusBn": 92 },
+    { "year": 2019, "goodsDeficitBn": 122, "servicesSurplusBn": 95 },
+    { "year": 2020, "goodsDeficitBn": 125, "servicesSurplusBn": 107 },
+    { "year": 2021, "goodsDeficitBn": 145, "servicesSurplusBn": 98 },
+    { "year": 2022, "goodsDeficitBn": 160, "servicesSurplusBn": 108 },
+    { "year": 2023, "goodsDeficitBn": 162, "servicesSurplusBn": 115 },
+    { "year": 2024, "goodsDeficitBn": 165, "servicesSurplusBn": 125 }
+  ]
+}

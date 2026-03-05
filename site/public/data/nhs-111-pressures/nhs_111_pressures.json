@@ -1,0 +1,15 @@
+{
+  "topic": "nhs-111-pressures",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    {"year": 2015, "callsM": 12.1, "abandonedPct": 8.2},
+    {"year": 2016, "callsM": 13.4, "abandonedPct": 7.9},
+    {"year": 2017, "callsM": 14.8, "abandonedPct": 8.5},
+    {"year": 2018, "callsM": 16.2, "abandonedPct": 9.1},
+    {"year": 2019, "callsM": 17.9, "abandonedPct": 9.8},
+    {"year": 2020, "callsM": 22.4, "abandonedPct": 14.2},
+    {"year": 2021, "callsM": 21.8, "abandonedPct": 12.6},
+    {"year": 2022, "callsM": 24.1, "abandonedPct": 13.8},
+    {"year": 2023, "callsM": 26.3, "abandonedPct": 15.2}
+  ]
+}

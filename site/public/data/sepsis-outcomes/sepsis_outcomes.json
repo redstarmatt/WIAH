@@ -1,0 +1,15 @@
+{
+  "topic": "sepsis-outcomes",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    {"year": 2015, "sepsisDeathsK": 37},
+    {"year": 2016, "sepsisDeathsK": 37},
+    {"year": 2017, "sepsisDeathsK": 36},
+    {"year": 2018, "sepsisDeathsK": 36},
+    {"year": 2019, "sepsisDeathsK": 35},
+    {"year": 2020, "sepsisDeathsK": 48},
+    {"year": 2021, "sepsisDeathsK": 44},
+    {"year": 2022, "sepsisDeathsK": 40},
+    {"year": 2023, "sepsisDeathsK": 38}
+  ]
+}

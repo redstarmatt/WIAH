@@ -1,0 +1,35 @@
+{
+  "topic": "disability-hate-crime",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2016, "recordedCrimes": 6800, "estimatedIncidents": 52000 },
+    { "year": 2017, "recordedCrimes": 7400, "estimatedIncidents": 55000 },
+    { "year": 2018, "recordedCrimes": 8100, "estimatedIncidents": 58000 },
+    { "year": 2019, "recordedCrimes": 8700, "estimatedIncidents": 61000 },
+    { "year": 2020, "recordedCrimes": 9300, "estimatedIncidents": 63000 },
+    { "year": 2021, "recordedCrimes": 9800, "estimatedIncidents": 65000 },
+    { "year": 2022, "recordedCrimes": 10500, "estimatedIncidents": 67000 },
+    { "year": 2023, "recordedCrimes": 11500, "estimatedIncidents": 68000 },
+    { "year": 2024, "recordedCrimes": 12300, "estimatedIncidents": 70000 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Home Office",
+        "dataset": "Hate Crime in England and Wales",
+        "url": "https://www.gov.uk/government/statistics/hate-crime-england-and-wales-2022-to-2023",
+        "retrieved": "2024-10-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Crime Survey for England and Wales",
+        "url": "https://www.ons.gov.uk/surveys/informationforhouseholdsandindividuals/householdandindividualsurveys/crimesurveyforenglandandwales",
+        "retrieved": "2024-10-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Recorded crimes from police-recorded data. Estimated incidents from CSEW self-report data. Charge rate calculated from outcomes data.",
+    "knownIssues": ["Recording improvements mean historical comparisons may reflect genuine crimes previously unrecorded rather than new offending"]
+  }
+}

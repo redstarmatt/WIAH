@@ -1,0 +1,29 @@
+{
+  "topic": "youth-diversion-outcomes",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2010, "firstTimeEntrants": 80400, "inCustody": 2970, "reoffendingPct": 38 },
+    { "year": 2011, "firstTimeEntrants": 69200, "inCustody": 2592, "reoffendingPct": 37 },
+    { "year": 2012, "firstTimeEntrants": 57800, "inCustody": 2187, "reoffendingPct": 36 },
+    { "year": 2013, "firstTimeEntrants": 47300, "inCustody": 1782, "reoffendingPct": 35 },
+    { "year": 2014, "firstTimeEntrants": 36900, "inCustody": 1296, "reoffendingPct": 34 },
+    { "year": 2015, "firstTimeEntrants": 29200, "inCustody": 1053, "reoffendingPct": 33 },
+    { "year": 2016, "firstTimeEntrants": 22800, "inCustody": 864, "reoffendingPct": 32 },
+    { "year": 2017, "firstTimeEntrants": 18600, "inCustody": 720, "reoffendingPct": 30 },
+    { "year": 2018, "firstTimeEntrants": 15200, "inCustody": 621, "reoffendingPct": 29 },
+    { "year": 2019, "firstTimeEntrants": 12800, "inCustody": 567, "reoffendingPct": 28 },
+    { "year": 2020, "firstTimeEntrants": 10900, "inCustody": 486, "reoffendingPct": 27 },
+    { "year": 2021, "firstTimeEntrants": 9600, "inCustody": 459, "reoffendingPct": 27 },
+    { "year": 2022, "firstTimeEntrants": 8700, "inCustody": 445, "reoffendingPct": 26 },
+    { "year": 2023, "firstTimeEntrants": 8100, "inCustody": 437, "reoffendingPct": 26 },
+    { "year": 2024, "firstTimeEntrants": 7800, "inCustody": 430, "reoffendingPct": 25 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Ministry of Justice", "dataset": "Youth Justice Statistics", "url": "https://www.gov.uk/government/statistics/youth-justice-statistics", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "Youth Justice Board", "dataset": "YJB quarterly and annual statistics", "url": "https://www.gov.uk/government/organisations/youth-justice-board-for-england-and-wales", "retrieved": "2024-10-01", "frequency": "annual" }
+    ],
+    "methodology": "First-time entrants are young people (aged 10–17) receiving their first reprimand, warning, caution, or conviction. Custody figures are the average daily population in youth custody. Reoffending rate is the proportion of young people with a proven reoffence within 12 months.",
+    "knownIssues": ["COVID-19 affected court throughput in 2020–2021, influencing first-time entrant figures", "Changes to diversion policy and out-of-court disposal thresholds affect comparability over time"]
+  }
+}

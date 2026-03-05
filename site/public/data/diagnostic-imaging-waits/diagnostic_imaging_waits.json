@@ -1,0 +1,16 @@
+{
+  "topic": "diagnostic-imaging-waits",
+  "lastUpdated": "2026-03-01",
+  "timeSeries": [
+    {"year": 2015, "waiting6wksPct": 0.9},
+    {"year": 2016, "waiting6wksPct": 1.1},
+    {"year": 2017, "waiting6wksPct": 1.4},
+    {"year": 2018, "waiting6wksPct": 2.0},
+    {"year": 2019, "waiting6wksPct": 3.2},
+    {"year": 2020, "waiting6wksPct": 18.7},
+    {"year": 2021, "waiting6wksPct": 12.4},
+    {"year": 2022, "waiting6wksPct": 8.9},
+    {"year": 2023, "waiting6wksPct": 6.8},
+    {"year": 2024, "waiting6wksPct": 5.1}
+  ]
+}

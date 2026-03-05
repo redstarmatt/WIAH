@@ -1,0 +1,38 @@
+{
+  "topic": "special-school-places",
+  "lastUpdated": "2025-03-01",
+  "timeSeries": [
+    { "year": 2016, "childrenWaitingK": 1.5, "perPupilCost": 18000 },
+    { "year": 2017, "childrenWaitingK": 1.8, "perPupilCost": 19000 },
+    { "year": 2018, "childrenWaitingK": 2.0, "perPupilCost": 20000 },
+    { "year": 2019, "childrenWaitingK": 2.2, "perPupilCost": 21000 },
+    { "year": 2020, "childrenWaitingK": 2.4, "perPupilCost": 22000 },
+    { "year": 2021, "childrenWaitingK": 2.8, "perPupilCost": 23000 },
+    { "year": 2022, "childrenWaitingK": 3.5, "perPupilCost": 24500 },
+    { "year": 2023, "childrenWaitingK": 4.2, "perPupilCost": 26000 },
+    { "year": 2024, "childrenWaitingK": 5.2, "perPupilCost": 27800 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DfE",
+        "dataset": "SEND Statistics England",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "DfE",
+        "dataset": "Local Authority Revenue Expenditure and Financing",
+        "url": "https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing",
+        "retrieved": "2025-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Children waiting for special school placement is an estimate based on Freedom of Information requests to local authorities and SEND advocacy organisation data, as there is no single DfE metric for this figure. Per-pupil cost is the average per-pupil revenue expenditure in maintained special schools from DfE local authority spending data.",
+    "knownIssues": [
+      "The waiting list figure is an estimate from FoI responses and may not capture all children waiting across all local authorities.",
+      "Per-pupil cost figures vary significantly between authorities and need types — the figure shown is a national average."
+    ]
+  }
+}

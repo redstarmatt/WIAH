@@ -1,0 +1,28 @@
+{
+  "topic": "packaging-waste-recycling",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "overallRecyclingPct": 63, "plasticRecyclingPct": 43 },
+    { "year": 2017, "overallRecyclingPct": 63, "plasticRecyclingPct": 44 },
+    { "year": 2018, "overallRecyclingPct": 64, "plasticRecyclingPct": 45 },
+    { "year": 2019, "overallRecyclingPct": 64, "plasticRecyclingPct": 46 },
+    { "year": 2020, "overallRecyclingPct": 65, "plasticRecyclingPct": 47 },
+    { "year": 2021, "overallRecyclingPct": 65, "plasticRecyclingPct": 48 },
+    { "year": 2022, "overallRecyclingPct": 66, "plasticRecyclingPct": 48 },
+    { "year": 2023, "overallRecyclingPct": 67, "plasticRecyclingPct": 50 },
+    { "year": 2024, "overallRecyclingPct": 68, "plasticRecyclingPct": 51 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DEFRA",
+        "dataset": "Packaging Recycling Statistics",
+        "url": "https://www.gov.uk/government/statistical-data-sets/env23-uk-waste-data-and-management",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Recycling rates measured as percentage of packaging placed on market that is recycled through compliance schemes. Plastic figures cover rigid and flexible plastic packaging.",
+    "knownIssues": ["PRN system data has known coverage gaps for smaller obligated producers"]
+  }
+}

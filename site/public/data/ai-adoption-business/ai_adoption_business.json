@@ -1,0 +1,15 @@
+{
+  "topic": "ai-adoption-business",
+  "lastUpdated": "2025-01-01",
+  "timeSeries": [
+    { "year": 2016, "largeBusinessPct": 8, "smePct": 3 },
+    { "year": 2017, "largeBusinessPct": 12, "smePct": 4 },
+    { "year": 2018, "largeBusinessPct": 18, "smePct": 5 },
+    { "year": 2019, "largeBusinessPct": 24, "smePct": 6 },
+    { "year": 2020, "largeBusinessPct": 31, "smePct": 7 },
+    { "year": 2021, "largeBusinessPct": 38, "smePct": 9 },
+    { "year": 2022, "largeBusinessPct": 42, "smePct": 11 },
+    { "year": 2023, "largeBusinessPct": 44, "smePct": 13 },
+    { "year": 2024, "largeBusinessPct": 46, "smePct": 15 }
+  ]
+}

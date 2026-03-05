@@ -1,0 +1,15 @@
+{
+  "topic": "inflation-by-income",
+  "lastUpdated": "2025-01-01",
+  "timeSeries": [
+    { "year": 2016, "poorestQuintileInflation": 2.1, "richestQuintileInflation": 2.0 },
+    { "year": 2017, "poorestQuintileInflation": 2.3, "richestQuintileInflation": 2.1 },
+    { "year": 2018, "poorestQuintileInflation": 1.8, "richestQuintileInflation": 1.7 },
+    { "year": 2019, "poorestQuintileInflation": 1.5, "richestQuintileInflation": 1.4 },
+    { "year": 2020, "poorestQuintileInflation": 1.8, "richestQuintileInflation": 1.7 },
+    { "year": 2021, "poorestQuintileInflation": 5.2, "richestQuintileInflation": 4.8 },
+    { "year": 2022, "poorestQuintileInflation": 10.1, "richestQuintileInflation": 8.9 },
+    { "year": 2023, "poorestQuintileInflation": 12.8, "richestQuintileInflation": 10.4 },
+    { "year": 2024, "poorestQuintileInflation": 3.2, "richestQuintileInflation": 2.9 }
+  ]
+}

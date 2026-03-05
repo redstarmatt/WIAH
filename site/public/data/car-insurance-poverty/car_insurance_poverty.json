@@ -1,0 +1,23 @@
+{
+  "topic": "car-insurance-poverty",
+  "lastUpdated": "2026-03-05",
+  "timeSeries": [
+    { "year": 2016, "avgPremium": 465, "youngDriverPremium": 1500 },
+    { "year": 2017, "avgPremium": 470, "youngDriverPremium": 1550 },
+    { "year": 2018, "avgPremium": 475, "youngDriverPremium": 1600 },
+    { "year": 2019, "avgPremium": 490, "youngDriverPremium": 1650 },
+    { "year": 2020, "avgPremium": 515, "youngDriverPremium": 1700 },
+    { "year": 2021, "avgPremium": 500, "youngDriverPremium": 1700 },
+    { "year": 2022, "avgPremium": 520, "youngDriverPremium": 1800 },
+    { "year": 2023, "avgPremium": 585, "youngDriverPremium": 1900 },
+    { "year": 2024, "avgPremium": 924, "youngDriverPremium": 2800 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "ABI", "dataset": "Motor Insurance Premium Tracker", "url": "https://www.abi.org.uk/data-and-research/reports-and-publications/motor-insurance-premium-tracker/", "retrieved": "2026-03-05", "frequency": "quarterly" },
+      { "name": "Confused.com", "dataset": "Car Insurance Price Index", "url": "https://www.confused.com/car-insurance/prices", "retrieved": "2026-03-05", "frequency": "quarterly" }
+    ],
+    "methodology": "Average premium from ABI Motor Insurance Premium Tracker (comprehensive cover, annual figure). Young driver premium from price comparison site composite data for 18-year-old male drivers.",
+    "knownIssues": ["Average premium masks significant variation by area, vehicle type, and driver profile", "Young driver figures are indicative — actual premiums vary widely"]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "topic": "light-pollution",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "lightPollutionIncreasePct": 30, "darkSkyLandPct": 26 },
+    { "year": 2017, "lightPollutionIncreasePct": 33, "darkSkyLandPct": 25 },
+    { "year": 2018, "lightPollutionIncreasePct": 36, "darkSkyLandPct": 24 },
+    { "year": 2019, "lightPollutionIncreasePct": 39, "darkSkyLandPct": 23 },
+    { "year": 2020, "lightPollutionIncreasePct": 42, "darkSkyLandPct": 22 },
+    { "year": 2021, "lightPollutionIncreasePct": 44, "darkSkyLandPct": 22 },
+    { "year": 2022, "lightPollutionIncreasePct": 45, "darkSkyLandPct": 21 },
+    { "year": 2023, "lightPollutionIncreasePct": 47, "darkSkyLandPct": 21 },
+    { "year": 2024, "lightPollutionIncreasePct": 49, "darkSkyLandPct": 20 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "CPRE",
+        "dataset": "Night Blight Report",
+        "url": "https://www.cpre.org.uk/resources/night-blight/",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "lightPollutionIncreasePct: cumulative percentage increase in artificial sky brightness from 1993 baseline using satellite radiance data. darkSkyLandPct: percentage of England land area classified as dark enough to reliably see the Milky Way.",
+    "knownIssues": ["Satellite measurement methodology changed in 2014; series adjusted for comparability. darkSkyLandPct is modelled from radiance thresholds, not direct sky quality measurement."]
+  }
+}

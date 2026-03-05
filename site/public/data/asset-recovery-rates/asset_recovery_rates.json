@@ -1,0 +1,25 @@
+{
+  "topic": "asset-recovery-rates",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2015, "recoveredMillions": 142, "estimatedLaunderedBillions": 10, "recoveryRatePct": 1.4 },
+    { "year": 2016, "recoveredMillions": 168, "estimatedLaunderedBillions": 10, "recoveryRatePct": 1.7 },
+    { "year": 2017, "recoveredMillions": 199, "estimatedLaunderedBillions": 11, "recoveryRatePct": 1.8 },
+    { "year": 2018, "recoveredMillions": 226, "estimatedLaunderedBillions": 11, "recoveryRatePct": 2.1 },
+    { "year": 2019, "recoveredMillions": 264, "estimatedLaunderedBillions": 12, "recoveryRatePct": 2.2 },
+    { "year": 2020, "recoveredMillions": 298, "estimatedLaunderedBillions": 12, "recoveryRatePct": 2.5 },
+    { "year": 2021, "recoveredMillions": 312, "estimatedLaunderedBillions": 12, "recoveryRatePct": 2.6 },
+    { "year": 2022, "recoveredMillions": 341, "estimatedLaunderedBillions": 12, "recoveryRatePct": 2.8 },
+    { "year": 2023, "recoveredMillions": 378, "estimatedLaunderedBillions": 12, "recoveryRatePct": 3.1 },
+    { "year": 2024, "recoveredMillions": 390, "estimatedLaunderedBillions": 12, "recoveryRatePct": 3.2 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Home Office", "dataset": "Asset recovery statistics", "url": "https://www.gov.uk/government/statistics/asset-recovery-statistical-bulletin", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "National Crime Agency", "dataset": "UK Financial Intelligence Unit annual report", "url": "https://www.nationalcrimeagency.gov.uk/", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "HMCTS", "dataset": "Confiscation order data", "url": "https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service", "retrieved": "2024-10-01", "frequency": "annual" }
+    ],
+    "methodology": "Recovered assets include confiscation orders, civil recovery orders, cash seizures, and account freezing orders. Estimated laundered figure is the HM Treasury / NCA midpoint estimate; the true figure is inherently uncertain. Recovery rate is recovered amounts as a share of estimated laundered amounts.",
+    "knownIssues": ["Laundering estimate is highly uncertain — actual figure could be higher or lower", "Confiscation order enforcement gap: many orders remain unenforced due to hidden assets"]
+  }
+}

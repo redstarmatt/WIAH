@@ -1,0 +1,23 @@
+{
+  "topic": "community-sentence-outcomes",
+  "lastUpdated": "2024-10-01",
+  "timeSeries": [
+    { "year": 2015, "communityReoffendingPct": 34, "shortCustodialReoffendingPct": 47, "completionRatePct": 65 },
+    { "year": 2016, "communityReoffendingPct": 33, "shortCustodialReoffendingPct": 47, "completionRatePct": 66 },
+    { "year": 2017, "communityReoffendingPct": 33, "shortCustodialReoffendingPct": 46, "completionRatePct": 66 },
+    { "year": 2018, "communityReoffendingPct": 33, "shortCustodialReoffendingPct": 46, "completionRatePct": 67 },
+    { "year": 2019, "communityReoffendingPct": 32, "shortCustodialReoffendingPct": 46, "completionRatePct": 67 },
+    { "year": 2020, "communityReoffendingPct": 32, "shortCustodialReoffendingPct": 45, "completionRatePct": 66 },
+    { "year": 2021, "communityReoffendingPct": 32, "shortCustodialReoffendingPct": 45, "completionRatePct": 67 },
+    { "year": 2022, "communityReoffendingPct": 32, "shortCustodialReoffendingPct": 45, "completionRatePct": 68 },
+    { "year": 2023, "communityReoffendingPct": 32, "shortCustodialReoffendingPct": 45, "completionRatePct": 68 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Ministry of Justice", "dataset": "Proven reoffending statistics", "url": "https://www.gov.uk/government/collections/proven-reoffending-statistics", "retrieved": "2024-10-01", "frequency": "annual" },
+      { "name": "HMPPS", "dataset": "Community performance annual digest", "url": "https://www.gov.uk/government/organisations/her-majestys-prison-and-probation-service", "retrieved": "2024-10-01", "frequency": "annual" }
+    ],
+    "methodology": "Reoffending rate is the proportion of offenders who committed at least one proven reoffence within a one-year follow-up period. Short custodial sentences are defined as sentences of less than 12 months. Completion rate is community orders successfully completed as a proportion of those commencing.",
+    "knownIssues": ["Proven reoffending underestimates true reoffending as it only captures recorded crime", "Comparison between community and custodial groups is not a randomised trial — selection effects apply"]
+  }
+}

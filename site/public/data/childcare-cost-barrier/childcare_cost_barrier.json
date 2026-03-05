@@ -1,0 +1,23 @@
+{
+  "topic": "childcare-cost-barrier",
+  "lastUpdated": "2026-03-05",
+  "timeSeries": [
+    { "year": 2016, "annualCostUnder2": 8500, "parentsReducingWorkPct": 21 },
+    { "year": 2017, "annualCostUnder2": 9000, "parentsReducingWorkPct": 22 },
+    { "year": 2018, "annualCostUnder2": 9500, "parentsReducingWorkPct": 23 },
+    { "year": 2019, "annualCostUnder2": 10000, "parentsReducingWorkPct": 24 },
+    { "year": 2020, "annualCostUnder2": 10500, "parentsReducingWorkPct": 25 },
+    { "year": 2021, "annualCostUnder2": 11000, "parentsReducingWorkPct": 28 },
+    { "year": 2022, "annualCostUnder2": 11800, "parentsReducingWorkPct": 29 },
+    { "year": 2023, "annualCostUnder2": 13000, "parentsReducingWorkPct": 31 },
+    { "year": 2024, "annualCostUnder2": 14000, "parentsReducingWorkPct": 33 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Coram Family and Childcare", "dataset": "Childcare Survey", "url": "https://www.coram.org.uk/our-work/coram-family-and-childcare/childcare-survey", "retrieved": "2026-03-05", "frequency": "annual" },
+      { "name": "Pregnant Then Screwed", "dataset": "Cost of Childcare Survey", "url": "https://pregnantthenscrewed.com/cost-of-childcare-report/", "retrieved": "2026-03-05", "frequency": "annual" }
+    ],
+    "methodology": "Average annual cost of full-time nursery for a child under 2 years in England. Parents reducing work figure from survey data on parents citing childcare costs as reason for reducing hours or leaving employment.",
+    "knownIssues": ["Costs vary significantly by region — London costs are approximately 30% above national average", "Survey methodologies differ between providers"]
+  }
+}

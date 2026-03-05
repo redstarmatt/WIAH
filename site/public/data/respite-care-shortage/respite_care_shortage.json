@@ -1,0 +1,26 @@
+{
+  "topic": "respite-care-shortage",
+  "lastUpdated": "2024-11-01",
+  "timeSeries": [
+    { "year": 2015, "accessRespitePct": 56, "unpaidCarersM": 5.4, "annualValueBn": 119 },
+    { "year": 2016, "accessRespitePct": 54, "unpaidCarersM": 5.5, "annualValueBn": 125 },
+    { "year": 2017, "accessRespitePct": 52, "unpaidCarersM": 5.5, "annualValueBn": 130 },
+    { "year": 2018, "accessRespitePct": 50, "unpaidCarersM": 5.6, "annualValueBn": 135 },
+    { "year": 2019, "accessRespitePct": 49, "unpaidCarersM": 5.6, "annualValueBn": 140 },
+    { "year": 2020, "accessRespitePct": 43, "unpaidCarersM": 5.7, "annualValueBn": 145 },
+    { "year": 2021, "accessRespitePct": 43, "unpaidCarersM": 5.7, "annualValueBn": 150 },
+    { "year": 2022, "accessRespitePct": 42, "unpaidCarersM": 5.8, "annualValueBn": 156 },
+    { "year": 2023, "accessRespitePct": 41, "unpaidCarersM": 5.8, "annualValueBn": 162 },
+    { "year": 2024, "accessRespitePct": 41, "unpaidCarersM": 5.8, "annualValueBn": 162 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Carers UK", "dataset": "State of Caring Survey", "url": "https://www.carersuk.org/research-and-policy/state-of-caring-report/", "retrieved": "2024-11-01", "frequency": "annual" },
+      { "name": "NHS England", "dataset": "Carer assessments data", "url": "https://www.england.nhs.uk/publication/adult-social-care-activity-and-finance-report/", "retrieved": "2024-11-01", "frequency": "annual" },
+      { "name": "ADASS", "dataset": "Adult Social Care Survey", "url": "https://www.adass.org.uk/surveys", "retrieved": "2024-11-01", "frequency": "annual" },
+      { "name": "Local Government Association", "dataset": "Adult Social Care Funding Data", "url": "https://www.local.gov.uk/topics/social-care-health-and-integration", "retrieved": "2024-11-01", "frequency": "annual" }
+    ],
+    "methodology": "Respite access rate from Carers UK State of Caring survey. Unpaid carer count derived from DWP Carer's Allowance claimants uplifted using census-based estimates of non-claiming carers. Annual value estimate based on replacement cost method (equivalent home care agency hours).",
+    "knownIssues": ["Respite access question wording changed slightly in 2016; trend broadly consistent. Unpaid carer total is an estimate; 2021 census data is the most recent definitive count."]
+  }
+}

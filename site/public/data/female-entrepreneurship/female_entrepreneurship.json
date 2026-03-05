@@ -1,0 +1,15 @@
+{
+  "topic": "female-entrepreneurship",
+  "lastUpdated": "2025-01-01",
+  "timeSeries": [
+    { "year": 2016, "femaleFoundedPct": 17, "vcFemaleSharePence": 1 },
+    { "year": 2017, "femaleFoundedPct": 18, "vcFemaleSharePence": 1 },
+    { "year": 2018, "femaleFoundedPct": 18, "vcFemaleSharePence": 1 },
+    { "year": 2019, "femaleFoundedPct": 19, "vcFemaleSharePence": 1 },
+    { "year": 2020, "femaleFoundedPct": 20, "vcFemaleSharePence": 1 },
+    { "year": 2021, "femaleFoundedPct": 21, "vcFemaleSharePence": 1.2 },
+    { "year": 2022, "femaleFoundedPct": 22, "vcFemaleSharePence": 1.5 },
+    { "year": 2023, "femaleFoundedPct": 23, "vcFemaleSharePence": 1.8 },
+    { "year": 2024, "femaleFoundedPct": 24, "vcFemaleSharePence": 2 }
+  ]
+}

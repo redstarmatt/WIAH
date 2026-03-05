@@ -1,0 +1,23 @@
+{
+  "topic": "bus-service-cuts",
+  "lastUpdated": "2024-12-01",
+  "timeSeries": [
+    { "year": 2016, "busMilesIndexVs2010": 97, "passengerJourneysBn": 4.2 },
+    { "year": 2017, "busMilesIndexVs2010": 94, "passengerJourneysBn": 4.1 },
+    { "year": 2018, "busMilesIndexVs2010": 91, "passengerJourneysBn": 3.9 },
+    { "year": 2019, "busMilesIndexVs2010": 88, "passengerJourneysBn": 3.8 },
+    { "year": 2020, "busMilesIndexVs2010": 85, "passengerJourneysBn": 3.7 },
+    { "year": 2021, "busMilesIndexVs2010": 80, "passengerJourneysBn": 1.8 },
+    { "year": 2022, "busMilesIndexVs2010": 76, "passengerJourneysBn": 2.9 },
+    { "year": 2023, "busMilesIndexVs2010": 74, "passengerJourneysBn": 3.1 },
+    { "year": 2024, "busMilesIndexVs2010": 72, "passengerJourneysBn": 3.2 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "Department for Transport", "dataset": "Bus Statistics Annual Report", "url": "https://www.gov.uk/government/collections/bus-statistics", "retrieved": "2024-12-01", "frequency": "annual" },
+      { "name": "Campaign for Better Transport", "dataset": "Bus Report", "url": "https://www.bettertransport.org.uk", "retrieved": "2024-12-01", "frequency": "annual" }
+    ],
+    "methodology": "Bus miles index uses 2010 as baseline of 100, excluding London. Passenger journeys in billions from DfT Bus Statistics Table BUS0101.",
+    "knownIssues": ["2021 data reflects pandemic disruption — anomaly in passenger journeys series"]
+  }
+}
