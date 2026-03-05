@@ -15,10 +15,11 @@
         {"year": 2020, "annualMeanUgM3": 8.1},
         {"year": 2021, "annualMeanUgM3": 8.8},
         {"year": 2022, "annualMeanUgM3": 8.5},
-        {"year": 2023, "annualMeanUgM3": 8.2}
+        {"year": 2023, "annualMeanUgM3": 8.2},
+        {"year": 2024, "annualMeanUgM3": 7.2}
       ],
-      "latestYear": 2023,
-      "latestMean": 8.2,
+      "latestYear": 2024,
+      "latestMean": 7.2,
       "whoLimit": 5,
       "ukLimit": 12
     },
@@ -37,10 +38,11 @@
         {"year": 2020, "annualMeanUgM3": 28.0},
         {"year": 2021, "annualMeanUgM3": 31.0},
         {"year": 2022, "annualMeanUgM3": 30.5},
-        {"year": 2023, "annualMeanUgM3": 27.8}
+        {"year": 2023, "annualMeanUgM3": 27.8},
+        {"year": 2024, "annualMeanUgM3": 26.1}
       ],
-      "latestYear": 2023,
-      "latestMean": 27.8,
+      "latestYear": 2024,
+      "latestMean": 26.1,
       "legalLimit": 40
     },
     "prematureDeaths": {

@@ -10,10 +10,11 @@
     {"year": 2017, "offences": 40147},
     {"year": 2018, "offences": 43516},
     {"year": 2019, "offences": 46265},
-    {"year": 2020, "offences": 45652},
-    {"year": 2021, "offences": 44958},
-    {"year": 2022, "offences": 49027},
-    {"year": 2023, "offences": 50490}
+    {"year": 2020, "offences": 40526},
+    {"year": 2021, "offences": 47835},
+    {"year": 2022, "offences": 50489},
+    {"year": 2023, "offences": 54067},
+    {"year": 2024, "offences": 51527}
   ],
   "knifeHomicides": [
     {"year": 2010, "count": 199},
@@ -26,7 +27,26 @@
     {"year": 2020, "count": 218},
     {"year": 2021, "count": 224},
     {"year": 2022, "count": 232},
-    {"year": 2023, "count": 244}
+    {"year": 2023, "count": 244},
+    {"year": 2024, "count": 231}
+  ],
+  "youthKnifeCrime": [
+    {"year": 2018, "offences": 11240, "note": "under-18s"},
+    {"year": 2019, "offences": 10870},
+    {"year": 2020, "offences": 9120},
+    {"year": 2021, "offences": 9780},
+    {"year": 2022, "offences": 9410},
+    {"year": 2023, "offences": 8850},
+    {"year": 2024, "offences": 8319}
+  ],
+  "hospitalAdmissions": [
+    {"year": 2018, "admissions": 4830},
+    {"year": 2019, "admissions": 4570},
+    {"year": 2020, "admissions": 3890},
+    {"year": 2021, "admissions": 4210},
+    {"year": 2022, "admissions": 4050},
+    {"year": 2023, "admissions": 3882},
+    {"year": 2024, "admissions": 3494}
   ],
   "byRegion": [
     {"region": "London", "ratePerMillion": 158},

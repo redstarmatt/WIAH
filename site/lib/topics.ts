@@ -59,7 +59,7 @@ export const CATEGORIES: Category[] = [
     name: 'NHS & Healthcare',
     slug: 'nhs-healthcare',
     featured: ['health', 'nhs-waiting-lists', 'nhs-ae'],
-    topics: ['health', 'nhs-waiting-lists', 'nhs-ae', 'nhs-beds', 'nhs-cancer', 'nhs-dentistry', 'nhs-discharge', 'nhs-mental-health', 'nhs-prescriptions', 'nhs-screening', 'nhs-staffing', 'nhs-vaccination', 'nhs-waiting-times', 'nhs-workforce', 'dental', 'maternity', 'long-covid', 'healthy-life-expectancy', 'infant-mortality', 'diabetes', 'dementia', 'antibiotic-resistance', 'community-pharmacies', 'cancer-survival', 'sexual-health', 'stroke', 'organ-donation', 'palliative-care', 'chronic-pain', 'blood-pressure', 'nhs-productivity', 'nhs-capital', 'learning-disabilities', 'nhs-sickness-absence', 'ambulance-handovers', 'fertility-treatment', 'gender-clinic', 'menopause-care', 'talking-therapies', 'hospital-infections', 'eye-care', 'cancer-diagnosis'],
+    topics: ['health', 'nhs-waiting-lists', 'nhs-ae', 'nhs-beds', 'nhs-cancer', 'nhs-dentistry', 'nhs-discharge', 'nhs-mental-health', 'nhs-prescriptions', 'nhs-screening', 'nhs-staffing', 'nhs-vaccination', 'nhs-waiting-times', 'nhs-workforce', 'dental', 'maternity', 'long-covid', 'healthy-life-expectancy', 'infant-mortality', 'diabetes', 'dementia', 'antibiotic-resistance', 'community-pharmacies', 'cancer-survival', 'sexual-health', 'stroke', 'smoking', 'organ-donation', 'palliative-care', 'chronic-pain', 'blood-pressure', 'nhs-productivity', 'nhs-capital', 'learning-disabilities', 'nhs-sickness-absence', 'ambulance-handovers', 'fertility-treatment', 'gender-clinic', 'menopause-care', 'talking-therapies', 'hospital-infections', 'eye-care', 'cancer-diagnosis'],
   },
   {
     name: 'Mental Health & Wellbeing',
@@ -173,8 +173,8 @@ export const TOPICS: Record<string, TopicEntry> = {
     href: '/knife-crime',
     colour: '#E63946',
     metrics: [
-      { label: 'Knife crime offences', value: '50,489', direction: 'flat' as const, polarity: 'up-is-bad' as const, context: '2022/23, up 77% since 2014/15', sparklineData: [28588, 30741, 31987, 37443, 43516, 46265, 40526, 47835, 50489] },
-      { label: 'Knife homicides (annual)', value: '272', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '40% of all homicides', sparklineData: [206, 224, 226, 235, 285, 283, 241, 265, 272] },
+      { label: 'Knife crime offences', value: '51,527', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'down 5% from 2023/24 peak · youth offending falling 6 years', sparklineData: [43516, 46265, 40526, 47835, 50489, 54067, 51527] },
+      { label: 'Hospital admissions (knife assault)', value: '3,494', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'down 10% in 2024/25 · 6-year low', sparklineData: [4830, 4570, 3890, 4210, 4050, 3882, 3494] },
     ],
   },
   'maternity': {
@@ -235,7 +235,7 @@ export const TOPICS: Record<string, TopicEntry> = {
     href: '/energy',
     colour: '#E63946',
     metrics: [
-      { label: 'Renewable share', value: '45', unit: '%', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up from 3% in 2010', sparklineData: [2.8, 6.9, 11.3, 14.9, 19.1, 24.6, 24.5, 29.3, 33.1, 37.1, 43.1, 41.4, 41.5, 40.8, 45.2] },
+      { label: 'Renewable share', value: '50.8', unit: '%', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'first time >50% in 2024 · up from 7% in 2010', sparklineData: [7, 11.3, 14.9, 19.1, 24.6, 29.3, 33.1, 37.1, 43.1, 40.2, 41.5, 47.0, 50.8] },
       { label: 'Electricity price index', value: '201', unit: '2015=100', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'doubled since 2015', sparklineData: [86, 90, 94, 97, 100, 103, 107, 110, 119, 122, 127, 143, 201, 186, 180, 201] },
     ],
   },
@@ -523,8 +523,8 @@ export const TOPICS: Record<string, TopicEntry> = {
     colour: '#2A9D8F',
     preposition: 'toward',
     metrics: [
-      { label: 'UK GHG emissions (MtCO2e)', value: '389', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'down 52% since 1990', sparklineData: [796, 727, 696, 658, 593, 567, 526, 470, 450, 435, 390, 424, 415, 389] },
-      { label: 'EV share of new cars', value: '16.5%', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up from 0.6% in 2018', sparklineData: [0.6, 1.6, 6.6, 11.6, 16.6, 16.5] },
+      { label: 'UK GHG emissions (MtCO2e)', value: '371', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'lowest since 1872 · down 53% since 1990', sparklineData: [792, 727, 703, 634, 527, 455, 404, 424, 406, 385, 371] },
+      { label: 'Renewable electricity share', value: '50.8', unit: '%', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'first time >50% · coal closed 2024', sparklineData: [7, 9.4, 11.3, 14.9, 19.1, 24.6, 29.3, 33.1, 37.1, 43.1, 40.2, 41.5, 47.0, 50.8] },
     ],
   },
   'high-streets': {
@@ -644,8 +644,8 @@ export const TOPICS: Record<string, TopicEntry> = {
     href: '/air-quality',
     colour: '#2A9D8F',
     metrics: [
-      { label: 'PM2.5 concentration', value: '8.1 μg/m³', direction: 'down' as const, polarity: 'up-is-bad' as const, sparklineData: [11.4, 10.3, 9.5, 9.2, 8.7, 8.2, 8.5, 8.1] },
-      { label: 'Premature deaths', value: '29K', direction: 'down' as const, polarity: 'up-is-bad' as const, sparklineData: [40000, 38000, 36000, 34000, 29000] },
+      { label: 'PM2.5 concentration', value: '7.2 μg/m³', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'lowest ever recorded — 2024 DEFRA · down 37% from 2010', sparklineData: [11.4, 10.3, 9.5, 9.2, 8.7, 8.2, 8.5, 8.1, 7.2] },
+      { label: 'Premature deaths (air pollution)', value: '29K', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'down from 40K in 2010', sparklineData: [40000, 38000, 36000, 34000, 29000] },
     ],
   },
   'healthy-life-expectancy': {
@@ -777,8 +777,8 @@ export const TOPICS: Record<string, TopicEntry> = {
     href: '/biodiversity',
     colour: '#2A9D8F',
     metrics: [
-      { label: 'UK species in decline since 1970', value: '41%', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '15% at risk of extinction', sparklineData: [26, 28, 30, 33, 35, 37, 38, 39, 40, 41] },
-      { label: 'Farmland bird index', value: '43', unit: '1970=100', direction: 'down' as const, polarity: 'up-is-good' as const, context: 'down 57% since 1970', sparklineData: [100, 75, 60, 52, 48, 45, 44, 43, 43] },
+      { label: 'UK species in decline since 1970', value: '41%', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '15% at risk · but red kites: 0 → 10,000 in 30 years', sparklineData: [26, 28, 30, 33, 35, 37, 38, 39, 40, 41] },
+      { label: 'Red kites in the UK', value: '10,000', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up from near-extinction in 1990 · RSPB\'s biggest species success', sparklineData: [10, 80, 250, 600, 1200, 2200, 3800, 6000, 8000, 10000] },
     ],
   },
   'nhs-waiting-lists': {
@@ -1520,10 +1520,10 @@ export const TOPICS: Record<string, TopicEntry> = {
     topic: 'Cancer Survival',
     slug: 'cancer-survival',
     href: '/cancer-survival',
-    colour: '#E63946',
+    colour: '#2A9D8F',
     preposition: 'in',
     metrics: [
-      { label: '5-year cancer survival rate', value: '55.4', unit: '%', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'Up from 46% in 2005 but below EU average of 57%', sparklineData: [46.2, 48.1, 50.3, 52.0, 53.5, 54.8, 55.9, 56.7, 54.1, 55.4] },
+      { label: '5-year cancer survival rate', value: '55.4', unit: '%', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up +9.2pp since 2005 · one of NHS\'s biggest-ever improvements', sparklineData: [46.2, 48.1, 50.3, 52.0, 53.5, 54.8, 55.9, 56.7, 54.1, 55.4] },
       { label: 'Cancers diagnosed at stage 4', value: '26', unit: '%', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'Target: 75% at stage 1-2 by 2028', sparklineData: [22, 23, 23, 24, 24, 25, 25, 27, 26, 26] },
     ],
   },
@@ -1545,8 +1545,19 @@ export const TOPICS: Record<string, TopicEntry> = {
     colour: '#E63946',
     preposition: 'in',
     metrics: [
-      { label: 'Stroke mortality rate', value: '40.2', unit: 'per 100K', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'Down from 47 in 2012 but improvement flattening', sparklineData: [47.2, 45.8, 44.1, 43.5, 42.0, 40.8, 40.1, 39.4, 42.6, 41.3, 40.9, 40.2] },
+      { label: 'Stroke mortality rate', value: '40.2', unit: 'per 100K', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'Down from 47 in 2012 · CVD deaths down 75% since 1969', sparklineData: [47.2, 45.8, 44.1, 43.5, 42.0, 40.8, 40.1, 39.4, 42.6, 41.3, 40.9, 40.2] },
       { label: 'Thrombectomy rate', value: '3.8', unit: '%', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'Target: 10% of ischaemic strokes', sparklineData: [1.2, 1.8, 2.4, 2.1, 2.9, 3.4, 3.8] },
+    ],
+  },
+  'smoking': {
+    topic: 'Smoking',
+    slug: 'smoking',
+    href: '/smoking',
+    colour: '#2A9D8F',
+    preposition: 'in',
+    metrics: [
+      { label: 'Adults who smoke', value: '10.6', unit: '%', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'Lowest ever — down from 20.2% in 2011', sparklineData: [20.2, 19.5, 18.7, 17.2, 15.5, 14.9, 14.4, 13.9, 12.7, 13.3, 12.7, 11.6, 10.6] },
+      { label: '18–24 year olds smoking', value: '8.1', unit: '%', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'Down from 25.7% in 2011 · −17.6pp in 13 years', sparklineData: [25.7, 24.8, 23.6, 20.5, 18.4, 17.1, 15.8, 14.4, 13.1, 12.7, 11.3, 10.2, 8.1] },
     ],
   },
   'organ-donation': {
@@ -1925,7 +1936,7 @@ export const TOPICS: Record<string, TopicEntry> = {
     colour: '#2A9D8F',
     preposition: 'in',
     metrics: [
-      { label: 'New woodland planted (2024)', value: '10,540 ha', direction: 'down' as const, polarity: 'up-is-good' as const, context: 'Target: 30,000 ha/yr — less than a third of what\'s needed', sparklineData: [6800, 8100, 9400, 13460, 13720, 14260, 13080, 11890, 10540] },
+      { label: 'New trees planted in England (2024/25)', value: '7,164 ha', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'highest in 20+ years · up 156% since 2021/22', sparklineData: [2800, 2100, 2400, 3200, 3600, 4200, 3800, 4540, 7164] },
       { label: 'UK woodland cover', value: '13.2%', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'European average: 38%; target: 16.5% by 2050', sparklineData: [12, 12.2, 12.4, 12.6, 12.8, 13, 13.1, 13.2] },
     ],
   },

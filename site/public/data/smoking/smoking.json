@@ -1,0 +1,101 @@
+{
+  "topic": "smoking",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "prevalence": {
+      "timeSeries": [
+        { "year": 2011, "pct": 20.2, "millionSmokers": 9.6 },
+        { "year": 2012, "pct": 19.5, "millionSmokers": 9.3 },
+        { "year": 2013, "pct": 18.7, "millionSmokers": 9.0 },
+        { "year": 2014, "pct": 18.0, "millionSmokers": 8.7 },
+        { "year": 2015, "pct": 17.2, "millionSmokers": 8.4 },
+        { "year": 2016, "pct": 15.5, "millionSmokers": 7.7 },
+        { "year": 2017, "pct": 14.9, "millionSmokers": 7.4 },
+        { "year": 2018, "pct": 14.4, "millionSmokers": 7.2 },
+        { "year": 2019, "pct": 13.9, "millionSmokers": 7.0 },
+        { "year": 2020, "pct": 12.7, "millionSmokers": 6.4 },
+        { "year": 2021, "pct": 13.3, "millionSmokers": 6.6 },
+        { "year": 2022, "pct": 12.7, "millionSmokers": 6.3 },
+        { "year": 2023, "pct": 11.6, "millionSmokers": 5.8 },
+        { "year": 2024, "pct": 10.6, "millionSmokers": 5.3 }
+      ],
+      "latestYear": 2024,
+      "latestPct": 10.6,
+      "latestMillionSmokers": 5.3,
+      "baselineYear": 2011,
+      "baselinePct": 20.2
+    },
+    "byAgeGroup": {
+      "latestYear": 2024,
+      "groups": [
+        { "group": "18–24", "pct2011": 25.7, "pct2024": 8.1, "changePp": -17.6 },
+        { "group": "25–34", "pct2011": 27.3, "pct2024": 14.2, "changePp": -13.1 },
+        { "group": "35–49", "pct2011": 22.8, "pct2024": 13.1, "changePp": -9.7 },
+        { "group": "50–59", "pct2011": 19.1, "pct2024": 12.3, "changePp": -6.8 },
+        { "group": "60+",   "pct2011": 11.2, "pct2024": 7.4,  "changePp": -3.8 }
+      ]
+    },
+    "youngAdultsTimeSeries": [
+      { "year": 2011, "pct18to24": 25.7, "pct25to34": 27.3 },
+      { "year": 2012, "pct18to24": 24.8, "pct25to34": 26.2 },
+      { "year": 2013, "pct18to24": 23.6, "pct25to34": 25.3 },
+      { "year": 2014, "pct18to24": 22.1, "pct25to34": 24.1 },
+      { "year": 2015, "pct18to24": 20.5, "pct25to34": 23.0 },
+      { "year": 2016, "pct18to24": 18.4, "pct25to34": 21.4 },
+      { "year": 2017, "pct18to24": 17.1, "pct25to34": 20.2 },
+      { "year": 2018, "pct18to24": 15.8, "pct25to34": 18.8 },
+      { "year": 2019, "pct18to24": 14.4, "pct25to34": 17.5 },
+      { "year": 2020, "pct18to24": 13.1, "pct25to34": 16.3 },
+      { "year": 2021, "pct18to24": 12.7, "pct25to34": 16.8 },
+      { "year": 2022, "pct18to24": 11.3, "pct25to34": 15.7 },
+      { "year": 2023, "pct18to24": 10.2, "pct25to34": 15.1 },
+      { "year": 2024, "pct18to24": 8.1,  "pct25to34": 14.2 }
+    ],
+    "quitRatio": {
+      "latestYear": 2024,
+      "exSmokersPct": 74.2,
+      "currentSmokersPct": 10.6,
+      "neverSmokedPct": 53.1,
+      "vapingMillions": 5.4,
+      "smokingMillions": 4.9
+    },
+    "nrtAndVaping": {
+      "timeSeries": [
+        { "year": 2012, "vapingPct": 0.5 },
+        { "year": 2014, "vapingPct": 2.1 },
+        { "year": 2016, "vapingPct": 3.8 },
+        { "year": 2018, "vapingPct": 5.5 },
+        { "year": 2019, "vapingPct": 6.3 },
+        { "year": 2020, "vapingPct": 7.1 },
+        { "year": 2021, "vapingPct": 7.7 },
+        { "year": 2022, "vapingPct": 8.3 },
+        { "year": 2023, "vapingPct": 9.1 },
+        { "year": 2024, "vapingPct": 10.8 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Adult Smoking Habits in the UK: 2024",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies/bulletins/adultsmokinghabitsingreatbritain/2024",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS Digital",
+        "dataset": "Statistics on Smoking, England",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/statistics-on-smoking",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Prevalence figures from the ONS Annual Population Survey (APS), which surveys approximately 320,000 adults per year. Figures represent current smokers (including occasional smokers) as a percentage of adults aged 18+. Vaping data from the ONS Opinions and Lifestyle Survey (OPN). Age-group breakdowns from APS.",
+    "knownIssues": [
+      "APS methodology changed in 2020 due to COVID-19 telephone-only interviewing — small discontinuity in series",
+      "Under-reporting of smoking in surveys may mean true prevalence is slightly higher than recorded figures",
+      "Vaping data available from 2012 onwards only"
+    ]
+  }
+}

@@ -115,8 +115,8 @@ export default function BiodiversityPage() {
 
       <TopicHeader
         topic="Biodiversity"
-        question="Is British Wildlife Actually Disappearing?"
-        finding="41% of UK species have declined since 1970. The UK is one of the most nature-depleted countries in the world, ranking 189th out of 218 nations for biodiversity intactness. Farmland birds have fallen 57%. Just 14% of English rivers are in good ecological status."
+        question="Is British Wildlife Actually Coming Back?"
+        finding="The UK biodiversity picture is more complicated than &lsquo;crisis only&rsquo;. 41% of species have declined since 1970 &mdash; but red kites went from near-extinction to 10,000 birds in three decades. Beavers, pine martens, and white-tailed eagles are returning. Wildlife can recover when conditions change."
         colour="#2A9D8F"
       />
 
@@ -151,6 +151,16 @@ export default function BiodiversityPage() {
               polarity="up-is-good"
               changeText="2022 · WFD target: 100% by 2027 · Was 16% in 2019 · Sewage, agriculture, and invasive species main causes"
               sparklineData={[26, 22, 19, 17, 16, 14]}
+              onExpand={() => {}}
+            />
+            <MetricCard
+              label="Red kites in the UK"
+              value="10,000"
+              unit="birds"
+              direction="up"
+              polarity="up-is-good"
+              changeText="Up from ~10 breeding pairs in 1990 · RSPB&rsquo;s biggest species success"
+              sparklineData={[10, 80, 250, 600, 1200, 2200, 3800, 6000, 8000, 10000]}
               onExpand={() => {}}
             />
           </div>
@@ -227,14 +237,23 @@ export default function BiodiversityPage() {
           </ScrollReveal>
         )}
 
-        {/* Positive Callout */}
+        {/* Positive Callouts */}
         <ScrollReveal>
           <PositiveCallout
-            title="Global Commitment"
+            title="Red kites: from near-extinction to 10,000 birds"
+            value="10,000"
+            unit="red kites now in the UK"
+            description="In 1990, red kites were functionally extinct in England — a handful of pairs clung on in mid-Wales. A reintroduction programme starting in the Chilterns in 1990 has produced approximately 10,000 birds across the UK, including 6,000 breeding pairs. British-bred kites are now being exported to rewilding projects in Spain and Ireland. The RSPB describes it as the biggest species recovery in UK conservation history. It has been followed by successful beaver reintroductions in at least 15 locations in England and Scotland, pine marten recovery in Wales and southern England, and white-tailed eagle reintroductions in England, reaching 33 breeding pairs by 2024."
+            source="Source: Natural England — Red Kite Reintroduction Programme; RSPB — State of Nature 2023."
+          />
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="Global Commitment: 30×30"
             value="30×30"
             unit="land &amp; seas protected by 2030"
-            description="The UK signed the Kunming-Montreal Global Biodiversity Framework at COP15 (Montreal, December 2022), committing to protect 30% of land and seas by 2030. The Environment Act 2021 introduced Biodiversity Net Gain (BNG) &mdash; mandatory from January 2024 for major developments, requiring a 10% net gain in biodiversity value. The Environmental Land Management (ELM) scheme replaces EU CAP payments, rewarding farmers for nature-friendly practices. ELMS &mdash; including Sustainable Farming Incentive (SFI), Countryside Stewardship, and Landscape Recovery &mdash; is the largest reform of English farming in 50 years."
-            source="Source: JNCC / RSPB &mdash; State of Nature 2023; DEFRA &mdash; Environmental Land Management Schemes 2024."
+            description="The UK signed the Kunming-Montreal Global Biodiversity Framework at COP15, committing to protect 30% of land and seas by 2030. The Environment Act 2021 introduced mandatory Biodiversity Net Gain (BNG) from January 2024 — requiring a 10% biodiversity gain for all major developments. The Environmental Land Management schemes (SFI, Countryside Stewardship, Landscape Recovery) redirect farming subsidies toward nature. These are the largest reforms of English farming in 50 years. The trajectory of species decline may be worse than the trajectory of recovery — but the direction of policy is, for the first time in decades, firmly toward nature."
+            source="Source: JNCC / RSPB — State of Nature 2023; DEFRA — Environmental Land Management Schemes 2024."
           />
         </ScrollReveal>
 
@@ -251,6 +270,9 @@ export default function BiodiversityPage() {
               </p>
               <p>
                 The Environment Act 2021 set legally binding targets including halting net species decline by 2030 and mandating 10% Biodiversity Net Gain for new developments from January 2024. The 30&times;30 commitment, signed at COP15 in Montreal in December 2022, requires 30% of land and seas to be protected by 2030 &mdash; up from 8.5% and 26% respectively. Environmental Land Management schemes &mdash; Sustainable Farming Incentive, Countryside Stewardship, and Landscape Recovery &mdash; are replacing EU Common Agricultural Policy payments, directing funds toward environmental outcomes. Rewilding projects such as Knepp Estate&apos;s 3,500 acres in West Sussex and Alladale Wilderness Reserve in Scotland offer proof of concept, though scaling remains the central challenge.
+              </p>
+              <p>
+                Against the bleak backdrop of species loss, rewilding is producing genuinely remarkable results. The red kite, white-tailed eagle, beaver, pine marten, and large blue butterfly have all been successfully reintroduced to parts of England and Wales. Knepp Estate in West Sussex has demonstrated that returning land to natural processes produces extraordinary biodiversity outcomes within a decade. The Environment Act 2021&apos;s mandatory Biodiversity Net Gain requirement, the Landscape Recovery tier of Environmental Land Management, and the 30&times;30 commitment represent the most ambitious legislative framework for nature recovery Britain has ever attempted. The State of Nature 2023 report is honest: the aggregate picture is still deteriorating. But the direction of travel is changing, and the evidence from specific reintroductions shows that the damage is not permanent.
               </p>
             </div>
           </section>

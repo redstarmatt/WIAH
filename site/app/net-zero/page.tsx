@@ -79,7 +79,7 @@ export default function NetZeroPage() {
         <TopicHeader
           topic="Net Zero"
           question="Is Britain Actually Decarbonising?"
-          finding="UK greenhouse gas emissions have fallen 49% since 1990, but the pace of reduction has slowed and the government&apos;s own advisers say current policies are insufficient to meet legally binding 2030 and 2035 targets."
+          finding="UK greenhouse gas emissions fell to 371 million tonnes CO2-equivalent in 2024 &mdash; the lowest level since 1872. The UK has cut emissions 53% since 1990 while GDP grew 84%. Renewables generated 50.8% of UK electricity in 2024 &mdash; the first time they have crossed 50%."
           colour="#2A9D8F"
         />
 
@@ -118,7 +118,7 @@ export default function NetZeroPage() {
           />
           <MetricCard
             label="Electricity from renewables (2023)"
-            value={latestRenewable?.pct.toString() || '47'}
+            value={latestRenewable?.pct.toString() || '50.8'}
             unit="%"
             direction="up"
             polarity="up-is-good"

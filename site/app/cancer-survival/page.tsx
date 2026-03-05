@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import PositiveCallout from '@/components/PositiveCallout'
 
 // -- Types ------------------------------------------------------------------
 
@@ -74,18 +75,18 @@ export default function CancerSurvivalPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Cancer Survival"
-          question="Are Cancer Patients in England Surviving?"
-          finding="England&rsquo;s five-year cancer survival rate is 55% &mdash; below the European average of 57% and far behind Sweden at 65%. Late-stage diagnosis remains the central problem: a quarter of cancers are caught at stage 4."
-          colour="#E63946"
+          question="Cancer survival has risen by 10 percentage points in 15 years."
+          finding="Five-year cancer survival in England rose from 46% in 2005 to 55.4% in 2023 &mdash; a 9.4 percentage-point improvement. This is one of the biggest sustained improvements in any health outcome in NHS history."
+          colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Cancer is the leading cause of death in people under 75 in England. Around 390,000 new cases are diagnosed every year, and approximately 167,000 people die from the disease annually. Five-year survival &mdash; the standard international measure of cancer system performance &mdash; has improved steadily from 46% in 2005 to around 55% in 2023. That trajectory is real and reflects genuine advances in treatment, earlier detection for some cancers, and investment in specialist oncology services. But England still lags behind comparable European countries, and the survival gap is not closing.</p>
-            <p>The primary driver of England&rsquo;s relative underperformance is stage at diagnosis. Twenty-six per cent of cancers are diagnosed at stage 4, when the disease has already spread. For many common cancers &mdash; lung, bowel, ovarian &mdash; the difference in five-year survival between stage 1 and stage 4 diagnosis is the difference between 80&ndash;90% survival and 5&ndash;15%. COVID disrupted the diagnostic pipeline severely: 40,000 fewer cancers were diagnosed in 2020 than expected. Many of those missing diagnoses eventually presented at later stages, producing a measurable dip in survival statistics that will persist for several years.</p>
-            <p>The NHS Long-Term Plan set a target of 75% of cancers diagnosed at stage 1 or 2 by 2028. Current performance sits at around 43%. The gap between ambition and reality reflects workforce shortages in radiology and pathology, endoscopy capacity constraints, and the slow rollout of community diagnostic centres. The Faster Diagnosis Standard &mdash; 28 days from urgent referral to diagnosis or exclusion &mdash; was met for 71% of patients in 2024, meaning nearly three in ten patients waited longer than a month for a diagnosis after their GP flagged concern.</p>
-            <p>Survival varies significantly by cancer type and by geography. Breast cancer five-year survival exceeds 85%; pancreatic cancer survival remains below 8%. Patients in the most deprived areas of England have consistently lower survival than those in the least deprived areas, a gap that has not narrowed over two decades. Part of this is late presentation, part is comorbidity, and part is differential access to treatment. The National Cancer Audit shows persistent variation in treatment rates between NHS trusts that cannot be explained by case mix alone.</p>
-            <p>International comparisons should be read carefully. Registry completeness, stage-coding practices, and lead-time bias all affect headline figures. But the consistent finding across CONCORD-3, Eurocare-6, and ICBP studies &mdash; that England underperforms northern European peers on survival for the most common cancers &mdash; is robust and persistent. The gap is largest for cancers where early detection makes the biggest difference: lung, bowel, and ovarian. This is a system that treats cancer well once it is found, but finds it too late too often.</p>
+            <p>Five-year cancer survival in England has risen from 46.2% for patients diagnosed in 2005 to 55.4% for those diagnosed in 2021 &mdash; a 9.2 percentage-point improvement over 15 years. This is not a small statistical fluctuation: it represents tens of thousands of people alive who, diagnosed a decade earlier with the same cancer, would not have survived five years. It is one of the most significant improvements in any health outcome tracked by the NHS, and it is almost never described as such.</p>
+            <p>What drove the improvement? Broadly equal contributions from better treatment and earlier detection. Targeted therapies for breast, lung, and bowel cancers have transformed survival for specific subtypes. Immunotherapy has produced durable remissions in melanoma and lung cancer that were unimaginable in 2005. Improved surgical techniques, specialist multidisciplinary teams, and the rollout of cancer networks all raised the floor of treatment quality. For some cancers &mdash; testicular cancer, Hodgkin lymphoma, thyroid cancer &mdash; five-year survival now exceeds 90%.</p>
+            <p>The international comparison is more complex. England&rsquo;s 55.4% five-year survival still lags behind the European average of 57% and far behind Sweden at 65%. The gap is largest for cancers where early detection is most decisive &mdash; lung, bowel, ovarian. England&rsquo;s record on late-stage diagnosis remains a genuine weakness: 26% of cancers are still caught at stage 4, when treatment options are limited. The NHS Long-Term Plan set a target of 75% diagnosed at stage 1 or 2 by 2028; current performance is around 43%.</p>
+            <p>COVID disrupted cancer pathways severely: 40,000 fewer cancers were diagnosed in 2020 than expected, and the dip in survival data for 2020&ndash;2021 reflects delayed presentation rather than deteriorating treatment quality. As that cohort works through the system, survival statistics in the near term will remain affected. The recovery in diagnostic activity since 2022 has been strong &mdash; over 3 million cancer checks were carried out in 2023, a record &mdash; but catching up a backlog accumulated over a pandemic is a different challenge from routine earlier detection.</p>
+            <p>The trajectory since 2005 is remarkable. Breast cancer: up from 79% to 86% five-year survival. Prostate cancer: up from 77% to 88%. Bowel cancer: up from 52% to 62%. These are not small gains. They represent genuine, compounding progress in one of the most difficult domains in medicine. The honest account of cancer in England holds both truths: a system that has achieved something extraordinary over two decades, and one that still diagnoses too many cancers too late to give patients the best possible chance.</p>
           </div>
         </section>
 
@@ -106,7 +107,7 @@ export default function CancerSurvivalPage() {
               unit="%"
               direction="up"
               polarity="up-is-good"
-              changeText="2023 &middot; Up from 46% in 2005 &middot; Below EU average of 57%"
+              changeText="Up +9.2pp since 2005 &middot; one of NHS&rsquo;s biggest-ever improvements"
               sparklineData={[46.2, 48.1, 50.3, 52.0, 53.5, 54.8, 55.9, 56.7, 54.1, 55.4]}
               onExpand={() => {}}
             />
@@ -218,6 +219,16 @@ export default function CancerSurvivalPage() {
             )}
             <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England &mdash; Cancer Outcomes and Services Dataset (COSD)</p>
           </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout
+            title="One of the NHS&rsquo;s biggest-ever improvements"
+            value="+9.2pp"
+            unit="5-year survival since 2005"
+            description="Five-year cancer survival rising from 46.2% to 55.4% over 15 years represents roughly 20,000 additional people alive five years after diagnosis each year — compared to what would have happened under 2005 survival rates. The improvement reflects genuine advances in treatment (targeted therapies, immunotherapy, better surgery) and earlier detection for some cancers. Breast, prostate, testicular, and thyroid cancers all now have five-year survival rates above 85%."
+            source="Source: ONS — Cancer survival in England, patients diagnosed 2005–2021, follow-up to 2023."
+          />
         </ScrollReveal>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

@@ -9,19 +9,26 @@
     {"year": 2019, "mtCO2e": 455},
     {"year": 2020, "mtCO2e": 404},
     {"year": 2021, "mtCO2e": 424},
-    {"year": 2022, "mtCO2e": 406}
+    {"year": 2022, "mtCO2e": 406},
+    {"year": 2023, "mtCO2e": 385},
+    {"year": 2024, "mtCO2e": 371}
   ],
   "renewableElectricity": [
-    {"year": 2010, "pct": 7},
-    {"year": 2012, "pct": 12},
-    {"year": 2014, "pct": 19},
-    {"year": 2016, "pct": 25},
-    {"year": 2018, "pct": 33},
-    {"year": 2019, "pct": 37},
-    {"year": 2020, "pct": 43},
-    {"year": 2021, "pct": 40},
-    {"year": 2022, "pct": 42},
-    {"year": 2023, "pct": 47}
+    {"year": 2010, "pct": 7.0},
+    {"year": 2011, "pct": 9.4},
+    {"year": 2012, "pct": 11.3},
+    {"year": 2013, "pct": 14.9},
+    {"year": 2014, "pct": 19.1},
+    {"year": 2015, "pct": 24.6},
+    {"year": 2016, "pct": 24.5},
+    {"year": 2017, "pct": 29.3},
+    {"year": 2018, "pct": 33.1},
+    {"year": 2019, "pct": 37.1},
+    {"year": 2020, "pct": 43.1},
+    {"year": 2021, "pct": 40.2},
+    {"year": 2022, "pct": 41.5},
+    {"year": 2023, "pct": 47.0},
+    {"year": 2024, "pct": 50.8}
   ],
   "bySector": [
     {"sector": "Transport", "pctOfTotal": 26},

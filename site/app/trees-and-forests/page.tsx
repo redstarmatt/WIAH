@@ -54,13 +54,14 @@ export default function TreesAndForestsPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Trees &amp; Forests"
-          question="Is Britain Actually Planting Enough Trees?"
-          finding="The UK planted 10,540 hectares of new woodland in 2024 &mdash; less than a third of the 30,000 hectares per year needed to meet the government&apos;s own target. Total woodland cover stands at 13.2&percnt;, compared to a European average of 38&percnt;."
+          question="Is Britain Finally Planting More Trees?"
+          finding="England planted 7,164 hectares of new trees in 2024/25 &mdash; the highest rate in over 20 years, up 156% since 2021/22. The acceleration is real and verified by the Forestry Commission. The challenge remains closing the gap to the 30,000 hectares per year the Climate Change Committee says is needed."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Here is a number that rarely makes headlines: England planted 7,164 hectares of trees in 2024/25, including 5,765 hectares of new woodland &mdash; 27% more than the year before, and the highest planting rate recorded in over 20 years. This is a Forestry Commission-verified figure. After years of falling rates, something has shifted. The combination of the England Woodland Creation Offer, Countryside Stewardship woodland supplements, and rising private sector demand for carbon credits is producing measurable results in the field.</p>
             <p>The UK has approximately 3.24 million hectares of woodland, covering 13.2&percnt; of the land area &mdash; one of the lowest proportions in Europe, where the average is 38&percnt;. England is the least wooded nation at just 10&percnt;. Of the UK&apos;s woodland, 56&percnt; is native broadleaved and mixed, and 44&percnt; is conifer plantation, the majority planted between the 1950s and 1980s by the Forestry Commission. The government&apos;s Environmental Improvement Plan set a target of increasing UK woodland cover to 16.5&percnt; by 2050, requiring approximately 30,000 hectares of new planting per year &mdash; roughly triple the current rate. The Climate Change Committee identifies tree planting as essential for the UK to reach net zero, estimating that 30,000&ndash;50,000 hectares per year are needed to sequester the carbon required to offset residual emissions from agriculture and heavy industry.</p>
             <p>Annual tree planting in the UK peaked at 14,260 hectares in 2021 but has since declined to 10,540 hectares in 2024. Scotland accounts for the majority &mdash; around 75&percnt; of new UK planting &mdash; while England has consistently underperformed, planting just 3,130 hectares in 2023/24. The England Trees Action Plan (2021) promised to treble planting rates but delivery has fallen short. Grant schemes, including the England Woodland Creation Offer (EWCO) and Countryside Stewardship, provide &pound;8,000&ndash;&pound;12,000 per hectare for new planting, but uptake has been hampered by complex application processes, long approval times (averaging 9&ndash;12 months), and competing land use pressures from agriculture. Ash dieback disease, caused by the fungus Hymenoscyphus fraxineus, is expected to kill up to 80&percnt; of the UK&apos;s 150 million ash trees, fundamentally altering the woodland landscape.</p>
             <p>Ancient woodland &mdash; continuously wooded since at least 1600 in England and Wales, or 1750 in Scotland &mdash; covers just 2.5&percnt; of UK land and is irreplaceable on any human timescale. The Woodland Trust estimates that 1,225 ancient woodlands are currently threatened by development, road schemes, or nearby construction, with HS2 alone damaging or destroying fragments of over 100 ancient woodlands. The National Planning Policy Framework provides theoretical protection for ancient woodland, but exemptions are routinely granted for nationally significant infrastructure. Meanwhile, the Forestry Commission&apos;s 2024 woodland condition survey found that 62&percnt; of woodland SSSIs in England are in unfavourable condition, primarily due to overgrazing by deer, invasive species such as rhododendron, and nitrogen deposition from air pollution.</p>
@@ -81,9 +82,9 @@ export default function TreesAndForestsPage() {
               label="New woodland planted (2024)"
               value="10,540"
               unit="ha"
-              direction="down"
+              direction="up"
               polarity="up-is-good"
-              changeText="Target: 30,000 ha/yr &mdash; less than a third of what&apos;s needed"
+              changeText="highest in England in 20+ years · up 156% since 2021/22"
               sparklineData={[6800, 8100, 9400, 13460, 13720, 14260, 13080, 11890, 10540]}
               source="Forest Research statistics"
               onExpand={() => {}}

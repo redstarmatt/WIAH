@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import PositiveCallout from '@/components/PositiveCallout'
 
 // -- Types ------------------------------------------------------------------
 
@@ -99,6 +100,7 @@ export default function SexualHealthPage() {
             <p>Online testing services have partially compensated for clinic closures, particularly for chlamydia and HIV. Over 3.5 million online STI tests were ordered in 2024, up from fewer than 200,000 in 2016. This shift has improved access for some groups but created gaps for others: people who need physical examination, treatment for symptomatic infections, or complex care such as post-exposure prophylaxis for HIV are still dependent on clinic capacity that is shrinking.</p>
             <p>The burden is not evenly distributed. Young people aged 15&ndash;24 account for nearly half of all STI diagnoses despite representing 12% of the population. Men who have sex with men face disproportionate rates of syphilis, gonorrhoea, and new HIV diagnoses. Black ethnic groups have chlamydia and gonorrhoea rates two to three times the national average. These disparities reflect both structural factors in access and the consequences of targeted screening programmes that have been scaled back.</p>
             <p>HIV remains the area of greatest progress. New HIV diagnoses have fallen by 35% since 2014, driven by PrEP availability, treatment as prevention, and expanded testing. England is close to meeting the UNAIDS 95-95-95 targets. But this success story coexists with a testing infrastructure under strain: late HIV diagnosis &mdash; where the virus has already damaged the immune system &mdash; still accounts for 42% of new diagnoses, predominantly among heterosexual men and women and communities with lower engagement with sexual health services.</p>
+            <p>One of the most significant unreported successes in sexual health is the collapse in teenage pregnancy. The under-18 conception rate in England and Wales fell from 42 per 1,000 women aged 15&ndash;17 in 2007 to 14 per 1,000 in 2022 &mdash; a two-thirds reduction in 15 years. Against the 1999 baseline, when the government launched its Teenage Pregnancy Strategy, the fall is 72%. The absolute number of under-18 conceptions has fallen from around 40,000 per year in the late 1990s to 14,233 in 2022. The 2022 figure is the lowest since ONS records began. This 23-year sustained decline reflects better sex education, improved contraception access &mdash; including the rollout of long-acting reversible contraception &mdash; and changing social norms among young people. It is one of the longest-running positive trends in UK public health.</p>
           </div>
         </section>
 
@@ -190,6 +192,16 @@ export default function SexualHealthPage() {
               }}
             />
           </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout
+            title="Teenage pregnancy: 72% fall since 1999"
+            value="−72%"
+            unit="under-18 conceptions since 1999"
+            description="The under-18 conception rate fell from 42 per 1,000 women aged 15–17 in 1999 — when the UK had one of the highest rates in Western Europe — to 14 per 1,000 in 2022. That is 14,233 conceptions, down from around 40,000 at the peak. The 2022 figure is the lowest since ONS records began. The 23-year decline is the result of sustained investment in sex education, improved access to long-acting reversible contraception, and — most significantly — a generational shift in attitudes among young people. The UK has gone from an outlier to a comparative success story on this measure."
+            source="Source: ONS — Conceptions in England and Wales 2022, published 2024. Nuffield Trust — Teenage Pregnancy indicator."
+          />
         </ScrollReveal>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

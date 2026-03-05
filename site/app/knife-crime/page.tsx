@@ -21,6 +21,16 @@ interface KnifeHomicidePoint {
   count: number;
 }
 
+interface YouthKnifeCrimePoint {
+  year: number;
+  offences: number;
+}
+
+interface HospitalAdmissionPoint {
+  year: number;
+  admissions: number;
+}
+
 interface RegionData {
   region: string;
   ratePerMillion: number;
@@ -29,6 +39,8 @@ interface RegionData {
 interface KnifeCrimeData {
   knifeCrime: KnifeCrimePoint[];
   knifeHomicides: KnifeHomicidePoint[];
+  youthKnifeCrime: YouthKnifeCrimePoint[];
+  hospitalAdmissions: HospitalAdmissionPoint[];
   byRegion: RegionData[];
 }
 
@@ -59,8 +71,8 @@ export default function KnifeCrimePage() {
   const knifeCrimeSeries: Series[] = data
     ? [{
         id: 'knife-crime',
-        label: 'Offences',
-        colour: '#E63946',
+        label: 'Total offences',
+        colour: '#6B7280',
         data: data.knifeCrime.map(d => ({
           date: yearToDate(d.year),
           value: d.offences,
@@ -68,22 +80,40 @@ export default function KnifeCrimePage() {
       }]
     : [];
 
-  const knifeHomicideSeries: Series[] = data
+  const youthSeries: Series[] = data
     ? [{
-        id: 'knife-homicides',
-        label: 'Homicides',
-        colour: '#E63946',
-        data: data.knifeHomicides.map(d => ({
+        id: 'youth',
+        label: 'Under-18 offences',
+        colour: '#2A9D8F',
+        data: data.youthKnifeCrime.map(d => ({
           date: yearToDate(d.year),
-          value: d.count,
+          value: d.offences,
         })),
       }]
     : [];
 
-  // Extract latest values for metric cards
-  const latestOffence = data?.knifeCrime[data.knifeCrime.length - 1];
-  const firstOffence = data?.knifeCrime[0];
-  const latestHomicide = data?.knifeHomicides[data.knifeHomicides.length - 1];
+  const hospitalSeries: Series[] = data
+    ? [{
+        id: 'hospital',
+        label: 'Hospital admissions (knife assault)',
+        colour: '#2A9D8F',
+        data: data.hospitalAdmissions.map(d => ({
+          date: yearToDate(d.year),
+          value: d.admissions,
+        })),
+      }]
+    : [];
+
+  const latestOffences = data?.knifeCrime[data.knifeCrime.length - 1];
+  const peakOffences = data?.knifeCrime.reduce((a, b) => a.offences > b.offences ? a : b);
+  const latestAdmissions = data?.hospitalAdmissions[data.hospitalAdmissions.length - 1];
+  const prevAdmissions = data?.hospitalAdmissions[data.hospitalAdmissions.length - 2];
+  const latestYouth = data?.youthKnifeCrime[data.youthKnifeCrime.length - 1];
+  const peakYouth = data?.youthKnifeCrime[0];
+
+  const admissionsChange = latestAdmissions && prevAdmissions
+    ? Math.round(((latestAdmissions.admissions - prevAdmissions.admissions) / prevAdmissions.admissions) * 100)
+    : -10;
 
   return (
     <>
@@ -92,139 +122,172 @@ export default function KnifeCrimePage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Justice"
-          question="Is knife crime getting worse?"
-          finding={
-            data
-              ? `Police-recorded knife crime in England and Wales reached a record 50,490 offences in 2023, with homicides involving a sharp instrument at their highest level since records began.`
-              : 'Police-recorded knife crime in England and Wales reached a record 50,490 offences in 2023.'
-          }
-          colour="#E63946"
+          question="Is knife crime actually falling?"
+          finding="After peaking in 2023/24, knife crime is now falling. Youth knife offending has declined for six consecutive years. Hospital admissions for knife assaults — the most reliable indicator — fell 10% in 2024/25 to their lowest level since 2018."
+          colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Police in England and Wales recorded 50,490 knife crime offences in the year to March 2023 &mdash; a record high, up 77 percent since 2014. There were 244 knife homicides, the most since records began in 1946. More than half of all victims were under 25. The geography is concentrated: rates in London, the West Midlands, and parts of Greater Manchester are three to four times the national average, but no major urban area is unaffected. These are not abstract statistics; each represents a person stabbed, threatened, or killed.</p>
-            <p>The long-run picture is more complicated than headlines suggest. The Crime Survey for England and Wales &mdash; which captures offences not reported to police &mdash; shows overall violent crime has fallen substantially since the mid-1990s. The specific rise in knife crime is real and distinct. Researchers point to the expansion of county lines drug markets, which draw younger and younger recruits into distribution networks structured around coercion and violence. Adverse childhood experiences, school exclusions &mdash; which increased 50 percent in a decade &mdash; and the erosion of youth services budgets by around 70 percent since 2010 have all been identified as structural contributors.</p>
-            <p>Stop and search remains contested. Research suggests approximately 1,000 searches prevent one or two serious injuries &mdash; a modest return on a high-impact intervention. Black people are searched at seven times the rate of white people, a disparity that has persisted across decades and forces, corroding trust in policing in precisely the communities where cooperation matters most. The Glasgow Violence Reduction Unit, founded in 2005, took a public health approach &mdash; treating violence as a communicable condition with identifiable risk factors &mdash; and achieved a 60 percent reduction in violence-related admissions. Eighteen Violence Reduction Units now operate across England, but without sustained ring-fenced funding, their reach remains uneven.</p>
-            <p>The boundary between victim and perpetrator is far more permeable than public debate acknowledges. Studies of young people involved in knife crime consistently find that most have themselves experienced violence &mdash; from peers, caregivers, or communities. Carrying a knife is often a rational response to perceived threat in an environment where protection cannot be expected from adults or institutions. Trauma-informed diversion programmes &mdash; hospital-based intervention, mentoring by credible messengers with lived experience, and wrap-around support for young people on the edge of gang involvement &mdash; show consistent evidence of effectiveness. They are also consistently underfunded relative to enforcement.</p>
-            <p>Knife crime statistics have real limitations. Police-recorded crime reflects reporting rates and recording practice as much as underlying violence: changes in how forces classify offences, and greater willingness by some communities to report, can inflate apparent trends. The Crime Survey excludes children under 16 and those not in private households &mdash; precisely the groups most at risk. It also cannot capture the chronic, low-level fear of violence that shapes behaviour in high-risk areas: the routes not taken, the parks avoided, the hours kept indoors. What the data measures is serious and demands response. What it does not measure may be equally important for understanding what is actually happening.</p>
+            <p>The headline picture of knife crime in England and Wales is more complicated than either "crisis" or "solved" suggests. Total police-recorded knife offences peaked at around 54,000 in the year to March 2024 and have since fallen 5% to 51,527 in the year to June 2025 — now 7% below pre-pandemic levels. But the story most worth telling is what has happened to young people. Youth knife offending — crimes committed by under-18s — has fallen for six consecutive years. And the most independent indicator of all, NHS hospital admissions for knife assault injuries, fell 10% in 2024/25 to 3,494: their lowest level in six years.</p>
+            <p>Hospital admissions matter because they are not subject to the same recording variations as police data. They represent actual people treated for stab wounds, and they have been falling. The peak — around 4,800 admissions per year in 2018/19 — has reduced by more than a quarter. This is not a change in how crime is counted; it is a change in how many people are being cut.</p>
+            <p>What is driving the improvement? Violence Reduction Units (VRUs), now operating in 18 areas of England, have brought a public health approach to knife crime — mapping violence like an epidemiologist maps a contagious disease, identifying transmission vectors, and intervening upstream. Early evaluations show that areas with VRUs have seen larger reductions in hospital admissions for assault than comparable areas without them. The Glasgow Violence Reduction Unit, which pioneered the approach in 2005, oversaw a 60% reduction in violence-related hospital admissions over a decade.</p>
+            <p>The long-run picture is still sobering. Total knife crime remains far higher than it was in 2014, when 28,600 offences were recorded. The rise that occurred between 2014 and 2019 was real and devastating: researchers link it to the expansion of county lines drug networks, mass youth service cuts (around 70% of funding was removed between 2010 and 2020), and a wave of school exclusions that left vulnerable young people without structure or support. The recovery is real, but it is a recovery from a crisis that did not need to happen.</p>
+            <p>The boundary between victim and perpetrator is more permeable than public debate acknowledges. Studies of young people involved in knife crime consistently find that most have themselves experienced violence — from peers, caregivers, or communities. Carrying a knife is often a rational response to perceived threat in an environment where protection cannot be expected from adults or institutions. Hospital-based intervention programmes, credible messenger mentoring, and wrap-around youth support show consistent evidence of effectiveness. The falling data reflects, in part, their quiet success.</p>
           </div>
         </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-offences', label: 'Offences' },
-          { id: 'sec-homicides', label: 'Homicides' },
+          { id: 'sec-offences', label: 'Total offences' },
+          { id: 'sec-youth', label: 'Youth offending' },
+          { id: 'sec-hospital', label: 'Hospital data' },
           { id: 'sec-regional', label: 'Regional' },
         ]} />
 
         {/* Metric cards */}
         <ScrollReveal>
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="Knife crime offences"
-            value={latestOffence ? latestOffence.offences.toLocaleString() : '—'}
-            unit="2023"
-            direction="up"
-            polarity="up-is-bad"
-            changeText={
-              latestOffence && firstOffence
-                ? `Up ${Math.round(((latestOffence.offences - firstOffence.offences) / firstOffence.offences) * 100)}% since ${firstOffence.year}`
-                : 'Record high'
-            }
-            sparklineData={
-              data ? sparkFrom(data.knifeCrime.map(d => d.offences)) : []
-            }
-            source="Home Office · Police Recorded Crime, 2023/24"
-            onExpand={() => {}}
-          />
-          <MetricCard
-            label="Knife homicides"
-            value={latestHomicide ? latestHomicide.count.toString() : '—'}
-            unit="2023"
-            direction="up"
-            polarity="up-is-bad"
-            changeText="Highest since records began in 1946"
-            sparklineData={
-              data ? sparkFrom(data.knifeHomicides.map(d => d.count)) : []
-            }
-            source="ONS · Homicide Index, 2023"
-            onExpand={() => {}}
-          />
-          <MetricCard
-            label="Under-25 knife fatalities"
-            value="98"
-            unit="2023"
-            direction="up"
-            polarity="up-is-bad"
-            changeText="53% of all knife homicide victims"
-            sparklineData={[98, 95, 92, 88, 85, 82, 78, 75, 72, 98]}
-            source="ONS · Homicide Index, 2023"
-            onExpand={() => {}}
-          />
-        </div>
+          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            <MetricCard
+              label="Hospital admissions (knife assault)"
+              value={latestAdmissions ? latestAdmissions.admissions.toLocaleString() : '3,494'}
+              unit="2024/25"
+              direction="down"
+              polarity="up-is-bad"
+              changeText={`${admissionsChange}% change · lowest since 2018 · down from 4,830 at peak`}
+              sparklineData={
+                data ? sparkFrom(data.hospitalAdmissions.map(d => d.admissions)) : []
+              }
+              source="NHS England · Hospital Episode Statistics, 2024/25"
+              onExpand={() => {}}
+            />
+            <MetricCard
+              label="Youth knife offences (under-18)"
+              value={latestYouth ? latestYouth.offences.toLocaleString() : '8,319'}
+              unit="2023/24"
+              direction="down"
+              polarity="up-is-bad"
+              changeText={
+                latestYouth && peakYouth
+                  ? `6th consecutive annual fall · down ${Math.round(((peakYouth.offences - latestYouth.offences) / peakYouth.offences) * 100)}% from ${peakYouth.year} peak`
+                  : '6th consecutive annual fall'
+              }
+              sparklineData={
+                data ? data.youthKnifeCrime.map(d => d.offences) : []
+              }
+              source="Home Office · Police Recorded Crime, 2023/24"
+              onExpand={() => {}}
+            />
+            <MetricCard
+              label="Total knife offences"
+              value={latestOffences ? latestOffences.offences.toLocaleString() : '51,527'}
+              unit="year to Jun 2025"
+              direction="down"
+              polarity="up-is-bad"
+              changeText={
+                latestOffences && peakOffences
+                  ? `Down 5% · down from ${peakOffences.offences.toLocaleString()} peak in ${peakOffences.year}`
+                  : 'down 5% from 2023/24 peak'
+              }
+              sparklineData={
+                data ? sparkFrom(data.knifeCrime.map(d => d.offences)) : []
+              }
+              source="Home Office · Police Recorded Crime, year to Jun 2025"
+              onExpand={() => {}}
+            />
+          </div>
         </ScrollReveal>
 
-        {/* Chart 1: Knife crime offences */}
+        {/* Chart 1: Total knife crime */}
         <ScrollReveal>
-        <div id="sec-offences" className="mb-12">
-          <LineChart
-            series={knifeCrimeSeries}
-            title="Police-recorded knife crime offences, England &amp; Wales"
-            subtitle="Annual offences involving a knife or sharp instrument. Home Office police recorded crime data."
-          />
-        </div>
+          <div id="sec-offences" className="mb-12">
+            <LineChart
+              series={knifeCrimeSeries}
+              title="Police-recorded knife crime offences, England &amp; Wales, 2010–2024"
+              subtitle="Annual offences involving a knife or sharp instrument. Peaked 2023/24, now falling."
+              yLabel="Offences"
+              source={{
+                name: 'Home Office',
+                dataset: 'Police Recorded Crime',
+                frequency: 'annual',
+              }}
+            />
+          </div>
         </ScrollReveal>
 
-        {/* Chart 2: Knife homicides */}
+        {/* Chart 2: Youth knife crime */}
         <ScrollReveal>
-        <div id="sec-homicides" className="mb-12">
-          <LineChart
-            series={knifeHomicideSeries}
-            title="Homicides involving a knife or sharp instrument, England &amp; Wales"
-            subtitle="Annual count. ONS Homicide Index."
-          />
-        </div>
+          <div id="sec-youth" className="mb-12">
+            <LineChart
+              series={youthSeries}
+              title="Youth knife offending (under-18s), 2018–2024"
+              subtitle="Six consecutive years of decline in knife offences by people under 18."
+              yLabel="Offences"
+              source={{
+                name: 'Home Office',
+                dataset: 'Police Recorded Crime — Youth Offending',
+                frequency: 'annual',
+              }}
+            />
+          </div>
         </ScrollReveal>
 
-        {/* Chart 3: Regional variation */}
+        {/* Chart 3: Hospital admissions */}
         <ScrollReveal>
-        <div id="sec-regional" className="mb-12">
-          <div className="bg-white rounded-lg border border-wiah-border p-8">
-            <h2 className="text-lg font-bold text-wiah-black mb-2">
-              Knife crime rate by police force area (offences per million people)
-            </h2>
-            <div className="mt-6 space-y-4">
-              {data?.byRegion.map((r) => {
-                const pct = (r.ratePerMillion / 160) * 100;
-                return (
-                  <div key={r.region}>
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-sm font-medium text-wiah-black">{r.region}</span>
-                      <span className="font-mono text-sm font-bold text-wiah-black">{r.ratePerMillion}</span>
+          <div id="sec-hospital" className="mb-12">
+            <LineChart
+              series={hospitalSeries}
+              title="NHS hospital admissions for knife assault injuries, 2018–2024/25"
+              subtitle="Independent of police recording practices. Down 28% from 2018/19 peak."
+              yLabel="Admissions"
+              source={{
+                name: 'NHS England',
+                dataset: 'Hospital Episode Statistics',
+                frequency: 'annual',
+              }}
+            />
+          </div>
+        </ScrollReveal>
+
+        {/* Chart 4: Regional variation */}
+        <ScrollReveal>
+          <div id="sec-regional" className="mb-12">
+            <div className="bg-white rounded-lg border border-wiah-border p-8">
+              <h2 className="text-lg font-bold text-wiah-black mb-2">
+                Knife crime rate by police force area (offences per million people)
+              </h2>
+              <div className="mt-6 space-y-4">
+                {data?.byRegion.map((r) => {
+                  const pct = (r.ratePerMillion / 160) * 100;
+                  return (
+                    <div key={r.region}>
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm font-medium text-wiah-black">{r.region}</span>
+                        <span className="font-mono text-sm font-bold text-wiah-black">{r.ratePerMillion}</span>
+                      </div>
+                      <div className="h-6 bg-wiah-light rounded-sm overflow-hidden">
+                        <div
+                          className="h-full rounded-sm transition-all"
+                          style={{ width: `${pct}%`, backgroundColor: '#6B7280' }}
+                        />
+                      </div>
                     </div>
-                    <div className="h-6 bg-wiah-light rounded-sm overflow-hidden">
-                      <div
-                        className="h-full rounded-sm transition-all"
-                        style={{ width: `${pct}%`, backgroundColor: '#E63946' }}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
+              <p className="font-mono text-xs text-wiah-mid mt-4">Source: Home Office — Police Recorded Crime by Force Area, 2023/24</p>
             </div>
           </div>
-        </div>
         </ScrollReveal>
 
         {/* Positive callout */}
         <ScrollReveal>
-        <PositiveCallout
-          title="Violence Reduction Units showing results"
-          value="18 areas"
-          description="Violence Reduction Units (VRUs), modelled on the Glasgow public health approach, are now operating in 18 areas in England and Wales. Early evidence shows reductions in hospital admissions for assault in areas with VRUs, compared to control areas. The approach treats serious violence as a public health problem rather than a criminal justice one."
-          source="Source: Public Health England — Violence Reduction Unit evaluations."
-        />
+          <PositiveCallout
+            title="Violence Reduction Units showing sustained results"
+            value="18 areas"
+            description="Violence Reduction Units (VRUs), modelled on the Glasgow public health approach, operate in 18 areas of England and Wales. Independent evaluation by Nottingham Trent University found that areas with VRUs saw greater reductions in hospital admissions for assault than comparable areas without them. The approach — treating violence as a preventable public health problem, not just a criminal justice one — is now embedded in national policy. NHS hospital admissions for knife injuries are at their lowest since 2018, providing independent confirmation that recorded crime falls are real."
+            source="Source: Home Office — Violence Reduction Unit evaluations, 2024. NHS England — Hospital Episode Statistics 2024/25."
+          />
         </ScrollReveal>
       </main>
     </>

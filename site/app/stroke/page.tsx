@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import PositiveCallout from '@/components/PositiveCallout'
 
 // -- Types ------------------------------------------------------------------
 
@@ -101,6 +102,7 @@ export default function StrokePage() {
             <p>The bottleneck for thrombectomy is infrastructure. The procedure requires specialist neurointerventional teams operating in centres with 24/7 catheter laboratory access. England has 24 thrombectomy-capable centres, but only a handful provide round-the-clock services. A patient having a stroke at 3am in rural Lincolnshire or Cornwall faces fundamentally different odds to one in central London. The NHS Long-Term Plan committed to increasing thrombectomy to 10% of stroke patients, but progress has been slow and uneven.</p>
             <p>Stroke unit care &mdash; admission to a specialist ward with dedicated stroke teams &mdash; is itself an evidence-based intervention that reduces mortality by approximately 20%. The national rate peaked at 84% in 2016 and has since declined to 78%, driven by bed pressures and emergency department crowding. Patients who arrive by ambulance but face long waits in A&amp;E before reaching a stroke ward lose the benefit of rapid specialist assessment. SSNAP audit data shows wide variation between trusts: the best admit over 95% of patients to a stroke unit; the worst manage fewer than 60%.</p>
             <p>Mortality data shows a long-term decline that has flattened. Age-standardised stroke mortality fell from 47 per 100,000 in 2012 to 40 per 100,000 in 2023. Much of the earlier improvement came from better blood pressure management and statin prescribing in primary care &mdash; prevention rather than acute treatment. Further gains will require faster pre-hospital pathways, more thrombectomy capacity, and sustained investment in rehabilitation services that are currently fragmented and underfunded. The Stroke Association estimates that 45% of stroke survivors do not receive the six-month review recommended by national guidelines.</p>
+            <p>The longer view is more encouraging. Cardiovascular disease (CVD) mortality &mdash; which encompasses stroke, heart attack, and related conditions &mdash; has fallen approximately 75% since the late 1960s. An age-standardised CVD death rate of roughly 1,045 per 100,000 in 1969 has fallen to around 255 per 100,000 today. Stroke deaths alone halved in England in the first decade of this century. This is one of the great achievements of 20th-century medicine: driven by statins, antihypertensive drugs, smoking decline, improved dietary patterns, and better emergency care working together over decades. The rates of improvement have slowed since the mid-2010s, largely due to rising obesity and type 2 diabetes, but the cumulative reduction is extraordinary. The challenge for stroke specifically is that we know how to do better &mdash; faster treatment, more thrombectomy &mdash; and have not yet fully delivered it.</p>
           </div>
         </section>
 
@@ -177,6 +179,16 @@ export default function StrokePage() {
               }}
             />
           </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout
+            title="CVD mortality down 75% since the 1960s"
+            value="−75%"
+            unit="cardiovascular deaths since 1969"
+            description="The age-standardised cardiovascular disease mortality rate fell from approximately 1,045 per 100,000 in 1969 to around 255 per 100,000 today — a reduction of roughly 75%. Stroke deaths halved in England in the first decade of this century alone. This is the result of statins, antihypertensive medication, falling smoking rates, and decades of investment in emergency cardiac and stroke care working in combination. It is one of the largest improvements in any health outcome in British history, saving an estimated 150,000 lives per year compared to 1960s mortality rates."
+            source="Source: British Heart Foundation Statistical Compendium; ONS Death Registrations; Cardiovascular Research (2022)."
+          />
         </ScrollReveal>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
