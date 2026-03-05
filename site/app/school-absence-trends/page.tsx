@@ -5,6 +5,7 @@ import TopicNav from '@/components/TopicNav'
 import TopicHeader from '@/components/TopicHeader'
 import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
+import MetricDetailModal from '@/components/MetricDetailModal'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 
@@ -27,10 +28,14 @@ function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
 
+// Sparkline years (academic years, 2020 skipped due to COVID closures)
+const SPARKLINE_YEARS = [2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024]
+
 // -- Page -------------------------------------------------------------------
 
 export default function SchoolAbsenceTrendsPage() {
   const [data, setData] = useState<SchoolAbsenceTrendsData | null>(null)
+  const [openModal, setOpenModal] = useState<'persistent' | 'severe' | 'illness' | null>(null)
 
   useEffect(() => {
     fetch('/data/school-absence-trends/school_absence_trends.json')
@@ -54,6 +59,34 @@ export default function SchoolAbsenceTrendsPage() {
         },
       ]
     : []
+
+  const severeAbsentSeries: Series[] = [
+    {
+      id: 'severeAbsent',
+      label: 'Severely absent pupils',
+      colour: '#E63946',
+      data: [35000, 40000, 40000, 40000, 50000, 96000, 136000, 124000].map((v, i) => ({
+        date: yearToDate(SPARKLINE_YEARS[i]),
+        value: v,
+      })),
+    },
+  ]
+
+  const illnessSeries: Series[] = [
+    {
+      id: 'illnessRate',
+      label: 'Authorised illness rate (%)',
+      colour: '#E63946',
+      data: [4.9, 5.0, 5.1, 5.1, 5.9, 7.2, 7.7, 7.5].map((v, i) => ({
+        date: yearToDate(SPARKLINE_YEARS[i]),
+        value: v,
+      })),
+    },
+  ]
+
+  const covidAnnotation = [
+    { date: new Date(2020, 0, 1), label: 'COVID-19 school closures' },
+  ]
 
   return (
     <>
@@ -90,7 +123,7 @@ export default function SchoolAbsenceTrendsPage() {
               polarity="up-is-bad"
               changeText="improving from 22.5% peak &middot; still double pre-COVID"
               sparklineData={[10.3, 10.8, 10.9, 10.9, 13.6, 22.5, 21.2, 19.8]}
-              onExpand={() => {}}
+              onExpand={() => setOpenModal('persistent')}
               source="DfE &middot; Pupil Absence in Schools 2024"
             />
             <MetricCard
@@ -101,7 +134,7 @@ export default function SchoolAbsenceTrendsPage() {
               polarity="up-is-bad"
               changeText="falling but 3x pre-pandemic level"
               sparklineData={[35000, 40000, 40000, 40000, 50000, 96000, 136000, 124000]}
-              onExpand={() => {}}
+              onExpand={() => setOpenModal('severe')}
               source="DfE &middot; Attendance Data 2024"
             />
             <MetricCard
@@ -112,7 +145,7 @@ export default function SchoolAbsenceTrendsPage() {
               polarity="up-is-bad"
               changeText="illness as reason doubled &middot; long-COVID, anxiety, post-viral"
               sparklineData={[4.9, 5.0, 5.1, 5.1, 5.9, 7.2, 7.7, 7.5]}
-              onExpand={() => {}}
+              onExpand={() => setOpenModal('illness')}
               source="DfE &middot; Pupil Absence Statistics 2023"
             />
           </div>
@@ -143,6 +176,54 @@ export default function SchoolAbsenceTrendsPage() {
           </div>
         </section>
       </main>
+
+      {openModal === 'persistent' && (
+        <MetricDetailModal
+          title="Persistent school absence rate, 2016–2024"
+          subtitle="Percentage of pupils missing 10% or more of sessions. England, all state-funded schools."
+          series={persistentAbsentSeries}
+          annotations={covidAnnotation}
+          yLabel="Persistent absence (%)"
+          source={{
+            name: 'Department for Education',
+            dataset: 'Pupil Absence in Schools in England',
+            frequency: 'annual',
+          }}
+          onClose={() => setOpenModal(null)}
+        />
+      )}
+
+      {openModal === 'severe' && (
+        <MetricDetailModal
+          title="Severely absent pupils, 2016–2024"
+          subtitle="Children missing 50% or more of school sessions. England, all state-funded schools."
+          series={severeAbsentSeries}
+          annotations={covidAnnotation}
+          yLabel="Pupils (thousands)"
+          source={{
+            name: 'Department for Education',
+            dataset: 'Attendance in Schools',
+            frequency: 'annual',
+          }}
+          onClose={() => setOpenModal(null)}
+        />
+      )}
+
+      {openModal === 'illness' && (
+        <MetricDetailModal
+          title="Authorised illness absence rate, 2016–2024"
+          subtitle="Sessions authorised as illness as a percentage of all possible sessions. England."
+          series={illnessSeries}
+          annotations={covidAnnotation}
+          yLabel="Illness absence (%)"
+          source={{
+            name: 'Department for Education',
+            dataset: 'Pupil Absence in Schools in England',
+            frequency: 'annual',
+          }}
+          onClose={() => setOpenModal(null)}
+        />
+      )}
     </>
   )
 }
