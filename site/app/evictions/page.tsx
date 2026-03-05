@@ -82,10 +82,19 @@ export default function EvictionsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Section 21 of the Housing Act 1988 &mdash; the &ldquo;no-fault&rdquo; eviction power &mdash; became the leading cause of homelessness in England by the mid-2010s. Landlords were granted over 25,000 Section 21 possession orders in 2023, but Crisis and Shelter estimate the true figure affected is 60,000&ndash;75,000 households annually, as many tenants comply with notices before proceedings reach court. The post-COVID moratorium surge was severe: when the 2020 moratorium lifted in May 2021, notices accelerated sharply, coinciding with rising buy-to-let mortgage rates that pushed 19&percnt; of landlords to reduce their portfolios &mdash; triggering no-fault evictions to sell with vacant possession. Rent affordability deteriorated simultaneously: average private sector rents rose 9.2&percnt; in the year to January 2024, while the Local Housing Allowance was frozen for four years, leaving a widening gap between benefit levels and market rents.
+              Section 21 of the Housing Act 1988 gives landlords in England the power to evict a tenant without giving any reason, provided they have served two months&apos; notice and the fixed-term tenancy has ended. Introduced as a &ldquo;no-fault&rdquo; mechanism to encourage investment in the private rented sector, it became the leading cause of homelessness in England by the mid-2010s. In 2023, landlords were granted over 25,000 Section 21 possession orders by the courts &mdash; a figure that understates the total, since many tenants leave before proceedings reach court. Crisis and Shelter estimate that for every successful Section 21 court claim, roughly two or three notices are served privately and complied with voluntarily, meaning the true figure may be 60,000 to 75,000 households affected annually.
             </p>
             <p>
-              The burden falls hardest on families and renters in high-cost areas. DLUHC data shows 58&percnt; of households accepted as homeless following Section 21 evictions had dependent children. In London, Section 21 accounted for 29&percnt; of all statutory homelessness acceptances in 2023, versus 19&percnt; nationally &mdash; placing acute pressure on already overwhelmed temporary accommodation services. Black and Asian renters are disproportionately represented in the private rented sector and face additional barriers when seeking alternative accommodation. The Renters&apos; Rights Bill progressing through Parliament in 2024&ndash;25 commits to abolishing Section 21, alongside rights to challenge unfair rent increases and access to a private renters&apos; ombudsman &mdash; the biggest reform to renter protections since 1988.
+              The pattern shifted sharply after the COVID-19 evictions moratorium of 2020, which temporarily suspended possession proceedings and drove Section 21 claims to a record low of 8,000. When the moratorium lifted in May 2021, landlords resumed serving notices at pace &mdash; and by 2022 and 2023, both Section 21 notices and overall landlord possession claims had surpassed pre-pandemic levels. This post-moratorium surge coincided with rising mortgage rates that increased pressure on buy-to-let landlords, many of whom chose to sell their properties &mdash; triggering no-fault evictions so they could sell with vacant possession. Between 2022 and 2024, the National Residential Landlords Association reported that 19% of landlords intended to reduce their portfolios, with tenants bearing the cost of that exit.
+            </p>
+            <p>
+              The wider legal architecture of renter protections has remained largely unchanged since 1988. Tenants in the private rented sector have no right of renewal, no protection from rent increases between fixed terms, and no statutory right to keep pets or redecorate. The Decent Homes Standard, which applies to social housing, does not apply to private rentals, meaning 3.4 million private renters &mdash; 14% of all private rented sector households &mdash; live in non-decent homes according to the English Housing Survey 2023. Rent affordability has also deteriorated sharply: average private sector rents rose 9.2% in the year to January 2024, far outpacing wage growth, while the Local Housing Allowance &mdash; the benefit that subsidises private rents for low-income tenants &mdash; was frozen for four years until 2024, leaving a widening gap between what tenants can claim and what landlords charge.
+            </p>
+            <p>
+              The burden of evictions falls most heavily on families with children, households receiving benefits, and renters in London and the South East. Department for Levelling Up, Housing and Communities data shows that 58% of households accepted as homeless following a Section 21 eviction had dependent children &mdash; a figure that has been broadly stable since 2018. Black and Asian renters are disproportionately represented in the private rented sector relative to homeownership, and face additional barriers when challenging evictions or seeking alternative accommodation. In London, where rents are highest and social housing waiting lists longest, Section 21 evictions accounted for 29% of all statutory homelessness acceptances in 2023, compared with 19% nationally &mdash; placing immense pressure on already overwhelmed council temporary accommodation services.
+            </p>
+            <p>
+              Data on evictions has important measurement limitations. The Ministry of Justice landlord possession statistics capture only claims that reach court, missing the large volume of privately served notices that tenants comply with before legal proceedings. Homelessness acceptance data captures only those households who meet the statutory threshold for local authority assistance &mdash; single adults without children are rarely accepted under the main homelessness duty, meaning the figures undercount the true extent of eviction-driven housing instability. The COVID-19 moratorium creates a significant structural break in the time series, making 2020 and 2021 figures non-comparable with earlier years. Regional breakdowns by eviction cause are available only with a 9-to-12-month lag, limiting real-time monitoring of local pressures.
             </p>
           </div>
         </section>
@@ -106,7 +115,8 @@ export default function EvictionsPage() {
               changeText="Up from 8,000 during COVID moratorium &middot; At highest level since 2017"
               sparklineData={[18000, 20000, 19000, 17000, 8000, 16000, 22000, 25000]}
               source="Ministry of Justice &middot; Landlord possession statistics 2023"
-              href="#sec-notices"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Landlord possession claims"
               value="28,400"
@@ -115,17 +125,19 @@ export default function EvictionsPage() {
               changeText="Up from 8,000 in 2020 &middot; Highest since 2017"
               sparklineData={[21000, 22000, 23000, 24000, 8000, 18000, 25000, 28400]}
               source="Ministry of Justice &middot; Civil justice statistics 2023"
-              href="#sec-homeless"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Households made homeless via Section 21"
               value="24,000"
               unit="/yr"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 12,000 in 2015 &middot; 58&percnt; have dependent children"
+              changeText="Up from 12,000 in 2015 &middot; 58% have dependent children"
               sparklineData={[12000, 13500, 15200, 17100, 18400, 7200, 14600, 20300, 24000]}
               source="DLUHC &middot; Statutory homelessness statistics 2023"
-              href="#sec-homeless"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 

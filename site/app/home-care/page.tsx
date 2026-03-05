@@ -76,10 +76,19 @@ export default function HomeCarePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Around 870,000 people in England receive home care support, but an estimated 500,000 are waiting for a care needs assessment or have been assessed but are still awaiting a package to start &mdash; roughly double the number in 2016. The immediate constraint is workforce: 132,000 social care posts stand vacant at a 9.9&percnt; vacancy rate (against 3.8&percnt; economy-wide), with 38&percnt; annual turnover meaning providers must replace more than a third of staff every year simply to stand still. The median home care worker earns &pound;10.80 per hour, barely above the national living wage, and significantly below NHS equivalents doing comparable work. Provider viability is the structural problem underneath: the UK Homecare Association calculated in 2023 that a sustainable rate was &pound;25.95 per hour but the average local authority rate was &pound;19.35 &mdash; a 25&percnt; gap that drove 360 providers to return contracts in 2023.
+              Home care &mdash; also called domiciliary care &mdash; enables older and disabled people to live independently by providing support with washing, dressing, cooking, medication, and personal care in their own homes. It is the largest component of adult social care by volume: around 870,000 people in England receive some form of home care support, making it far larger than residential care. Yet the system is under severe strain. An estimated 500,000 people are waiting for a care needs assessment or have been assessed but are still awaiting a care package to start &mdash; a figure that has roughly doubled since 2016 as demand from an ageing population outstrips the sector&apos;s capacity to respond.
             </p>
             <p>
-              The consequences fall hardest on the oldest and most isolated: the average home care recipient is 80, 60&percnt; have dementia, and 45&percnt; live alone. When packages break down, the burden transfers to unpaid carers &mdash; predominantly women &mdash; with Carers UK estimating 600 people leave work every day to care for a relative. Rural areas, coastal towns, and the North East face the most acute shortages, combining older populations with lower council commissioning rates and fewer alternative employers to compete with for workers. As providers exit and remaining ones absorb more referrals than they can safely staff, CQC inspections increasingly cite staffing as the primary risk factor in inadequate care ratings &mdash; a cycle that will intensify unless commissioning rates rise to cover the real cost of delivery.
+              The workforce crisis is the immediate constraint. Skills for Care estimates that the social care sector has 132,000 vacant posts &mdash; a vacancy rate of 9.9%, compared with 3.8% across the whole economy. Turnover in home care is 38% annually, meaning providers must replace more than a third of their staff every year simply to stand still. Pay is the primary driver: the median home care worker earns &pound;10.80 per hour, barely above the national living wage, and significantly less than NHS equivalents doing comparable work. The sector lost an estimated 50,000 European workers following the end of free movement in 2021, and while international recruitment has partially filled the gap &mdash; 70,000 overseas care workers entered the sector in 2022 and 2023 &mdash; visa restrictions tightened in early 2024 may reverse these gains.
+            </p>
+            <p>
+              Provider viability is the structural problem underneath the workforce crisis. Local authorities commission the vast majority of home care at rates that providers say are below the actual cost of delivery once staff pay, travel time, and management costs are included. The United Kingdom Homecare Association calculated in 2023 that the minimum sustainable rate for home care was &pound;25.95 per hour, but the average local authority rate was &pound;19.35 per hour &mdash; a gap of 25%. As a result, 360 providers returned council contracts in 2023, unable to deliver services at the commissioned price. This creates a vicious cycle: as providers exit, remaining providers take on more referrals than they can safely staff, leading to missed calls, shortened visits, and deteriorating care quality. CQC inspections increasingly cite staffing as the primary risk factor in inadequate ratings.
+            </p>
+            <p>
+              The consequences fall hardest on the oldest and most isolated. The average home care recipient is 80 years old; 60% have dementia or a significant cognitive impairment; 45% live alone. When care packages break down or cannot start, the burden transfers to unpaid carers &mdash; predominantly daughters and daughters-in-law &mdash; who reduce working hours or leave employment entirely. Carers UK estimates that 600 people leave work every day to care for an older or disabled relative. Regional variation is stark: rural areas and coastal towns with older populations and lower council funding face the most acute shortages, while London and major cities have higher vacancy rates due to competition from higher-paying sectors. The North East of England has the highest proportion of older people in home care relative to the population, and some of the lowest local authority commissioning rates.
+            </p>
+            <p>
+              Quantifying the home care crisis accurately is genuinely difficult. England has no national waiting list database equivalent to NHS Referral to Treatment data &mdash; waiting figures are estimated by combining local authority delayed assessments data, NHS community health service waiting times, and charity surveys of carers. The Adult Social Care Finance Return (ASCFR) collects some data annually but with a 12-month lag. Care Quality Commission ratings give a snapshot of quality at the point of inspection but inspections are infrequent and may not reflect current conditions. Vacancy figures from Skills for Care are derived from an employer survey with good but not complete coverage, and the methodology changed in 2021 making pre-pandemic comparisons approximate. International recruitment statistics are drawn from Home Office visa data and do not track whether workers remain in care roles after two years.
             </p>
           </div>
         </section>
@@ -100,16 +109,18 @@ export default function HomeCarePage() {
               changeText="Up from 280,000 in 2016 &middot; Doubled in eight years"
               sparklineData={[280, 310, 340, 370, 400, 430, 470, 500]}
               source="NHS England / Local authorities &middot; Adult social care data 2023"
-              href="#sec-waiting"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Social care vacancies"
               value="132,000"
               direction="up"
               polarity="up-is-bad"
-              changeText="Vacancy rate 9.9&percnt; vs 3.8&percnt; whole-economy average"
+              changeText="Vacancy rate 9.9% vs 3.8% whole-economy average"
               sparklineData={[88000, 95000, 102000, 110000, 165000, 152000, 140000, 132000]}
               source="Skills for Care &middot; State of the Sector 2023"
-              href="#sec-providers"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Home care providers returning contracts"
               value="360"
@@ -119,7 +130,8 @@ export default function HomeCarePage() {
               changeText="Up from 140 in 2015 &middot; Providers exit as rates fall below cost"
               sparklineData={[140, 155, 188, 220, 245, 210, 260, 305, 360]}
               source="UKHCA / CQC &middot; Provider market analysis 2023"
-              href="#sec-providers"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 

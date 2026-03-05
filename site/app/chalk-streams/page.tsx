@@ -60,14 +60,17 @@ export default function ChalkStreamsPage() {
         <TopicHeader
           topic="Chalk Streams"
           question="Are Britain&apos;s Unique Chalk Streams Being Destroyed?"
-          finding="England holds 85&percnt; of the world&apos;s chalk streams &mdash; rare ecosystems sometimes called &ldquo;the rainforest of the rivers&rdquo; &mdash; yet 95&percnt; are in poor ecological condition. Over-abstraction, sewage discharges, and invasive species have devastated habitats that took millennia to form and cannot be recreated elsewhere on Earth."
+          finding="England holds 85% of the world&apos;s chalk streams &mdash; rare ecosystems sometimes called &ldquo;the rainforest of the rivers&rdquo; &mdash; yet 95% are in poor ecological condition. Over-abstraction, sewage discharges, and invasive species have devastated habitats that took millennia to form and cannot be recreated elsewhere on Earth."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England holds 85&percnt; of the world&apos;s chalk streams &mdash; approximately 160 rivers covering 4,000 kilometres &mdash; yet the Chalk Stream Restoration Group estimated in 2021 that 95&percnt; are in poor ecological condition, failing Water Framework Directive standards. These rivers, including the Test, Itchen, and Kennet, support rare wildlife: wild brown trout, Atlantic salmon, white-clawed crayfish, water voles, and the southern damselfly. Over-abstraction is the most chronic threat: the Environment Agency has classified around 60&percnt; of chalk stream catchments as over-licensed or over-abstracted, and less than 20&percnt; of problematic abstraction licences had been reformed by 2023. Sewage discharges compound the damage &mdash; over 12,000 storm overflow events were recorded on chalk stream catchments in 2022 alone. The Water Act 2024 strengthened enforcement powers, and Ofwat&apos;s 2024 pricing determination allocated &pound;11bn for storm overflow improvement across England and Wales over 2025&ndash;2030.</p>
-            <p>The consequences fall hardest on rivers in Hertfordshire and Berkshire, where proximity to London&apos;s water supply infrastructure and sewage from growing urban centres have pushed streams to the brink. The Misbourne in Buckinghamshire now runs dry in its upper reaches for most of the year. Hampshire&apos;s Test and Itchen &mdash; where abstraction reductions have been negotiated with Southern Water &mdash; show that targeted intervention can produce measurable recovery, but the national picture remains one of slow decline in habitats that took millennia to form and cannot be recreated.</p>
+            <p>Chalk streams are among the rarest and most ecologically valuable freshwater habitats on Earth. They form where rainwater percolates through chalk downland, emerging as crystal-clear, mineral-rich springs with a remarkably stable temperature of around 10&ndash;11&deg;C year-round. There are approximately 200 chalk rivers in the world, of which around 85% &mdash; roughly 160 rivers covering 4,000 kilometres &mdash; are in England, concentrated in Hampshire, Wiltshire, Dorset, Berkshire, Hertfordshire, and East Anglia. The Test, Itchen, Kennet, Avon, Ver, and Misbourne are among the best known. These rivers support unique communities of wildlife: water crowfoot meadows, wild brown trout and Atlantic salmon, white-clawed crayfish, water voles, otters, kingfishers, and rare invertebrates including the southern damselfly. The Chalk Stream Restoration Group &mdash; a coalition of conservation organisations, anglers, and scientists &mdash; estimated in 2021 that 95% of England&apos;s chalk streams are in poor condition, failing Water Framework Directive standards. They described chalk streams as &ldquo;the equivalent of the tropical rainforest&rdquo; &mdash; irreplaceable ecosystems suffering from a combination of threats that no single intervention can fix.</p>
+            <p>Over-abstraction of groundwater is the most fundamental and chronic threat. Chalk aquifers &mdash; the geological formations that feed chalk streams &mdash; are among the UK&apos;s most important water sources. Southern Water, Thames Water, and other companies abstract billions of litres from chalk aquifers daily to supply homes and industry, particularly in south-east England where groundwater dominates supply. When abstraction exceeds natural recharge &mdash; as it frequently does in dry summers &mdash; water tables fall, springs cease to flow, and rivers become intermittent. The Environment Agency has classified around 60% of chalk stream catchments as over-licensed or over-abstracted. The Misbourne in Buckinghamshire, once a perennial chalk stream, now runs dry in its upper reaches for most of the year. Reforming abstraction licences to protect minimum ecological flows has been a policy commitment for over two decades but progress has been slow: the EA&apos;s own assessment shows that less than 20% of problematic abstraction licences had been reformed by 2023.</p>
+            <p>Sewage pollution from storm overflows compounds the abstraction problem. Water companies are permitted to release untreated sewage during heavy rainfall when treatment works are overwhelmed, but data from the Environment Agency&apos;s Event Duration Monitoring (EDM) programme has revealed that discharges occur far more frequently than legally permitted. Over 12,000 sewage discharge events were recorded on chalk stream catchments in 2022, lasting a combined total of tens of thousands of hours. Southern Water, Thames Water, and South East Water &mdash; the three companies managing the majority of chalk stream catchments &mdash; have collectively faced hundreds of millions of pounds in fines and enforcement notices since 2019. The Water Act 2024 introduced new criminal liability for water company executives and strengthened enforcement powers for the Environment Agency. But sewage infrastructure improvement is a decades-long process: Ofwat&apos;s 2024 pricing determination allocated &pound;11bn for storm overflow improvement across England and Wales over 2025&ndash;2030. Invasive species &mdash; particularly signal crayfish, which destroy native white-clawed crayfish populations and destabilise stream banks &mdash; and invasive plants like Himalayan balsam add further pressure.</p>
+            <p>The regional variation in chalk stream health reflects differences in local water company practice, abstraction pressure, and land use in surrounding catchments. Hampshire&apos;s Test and Itchen &mdash; two of England&apos;s most famous chalk streams and the heartland of fly fishing &mdash; support recovering Atlantic salmon populations and have benefited from significant conservation investment, including headwater restoration by Wild Trout Trust and abstraction reductions negotiated with Southern Water. Hertfordshire&apos;s chalk streams &mdash; the Ver, Lea, and Mimram &mdash; suffer more acutely from proximity to London&apos;s water supply infrastructure and have been running dry increasingly frequently. Berkshire&apos;s Kennet &mdash; one of the UK&apos;s premier brown trout rivers &mdash; receives sewage discharges from Swindon&apos;s treatment works and has experienced significant water quality deterioration over the past decade. The Dorset Frome and its tributaries maintain relatively better ecological status due to lower abstraction pressure and active management by the Environment Agency and Wessex Water. Norfolk&apos;s chalk streams, including the Wensum (a designated river SSSI), suffer from high agricultural nitrate concentrations that fuel algal growth and reduce biodiversity.</p>
+            <p>Chalk stream data requires careful interpretation. The 95% in poor condition figure is from the Chalk Stream Restoration Group&apos;s 2021 synthesis report, which uses Water Framework Directive ecological quality assessments but applies them specifically to chalk stream water bodies. The WFD classification uses a &ldquo;one out, all out&rdquo; approach, meaning failure on any single quality element results in overall classification as less than good ecological status &mdash; making 100% good status an extremely high bar that no complex river system has ever achieved. The EDM sewage discharge data shows apparent increases in recent years that partly reflect improved monitoring coverage &mdash; more monitors were installed from 2016 onwards, so more events are now recorded that previously went undetected. Abstraction sustainability figures depend on the reference condition used and on how &ldquo;over-abstraction&rdquo; is defined &mdash; some counts include only currently active licenses, while others include all licensed volumes regardless of whether they are being used. Wild Atlantic salmon populations on chalk streams are monitored via rod catch returns, which may not accurately reflect stock trends due to changes in fishing effort and reporting behaviour.</p>
           </div>
         </section>
 
@@ -85,10 +88,11 @@ export default function ChalkStreamsPage() {
               unit="%"
               direction="flat"
               polarity="up-is-good"
-              changeText="Target: 100&percnt; &mdash; 95&percnt; failing WFD standards for 15+ years"
+              changeText="Target: 100% &mdash; 95% failing WFD standards for 15+ years"
               sparklineData={[8, 7, 6.5, 6, 5.5, 5.5, 5, 5]}
               source="EA &mdash; WFD river classification; Chalk Stream Restoration Group 2021"
-              href="#sec-ecology"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Catchments classified as over-abstracted"
               value="60"
@@ -98,7 +102,8 @@ export default function ChalkStreamsPage() {
               changeText="Groundwater levels below ecological minimums in dry years"
               sparklineData={[62, 62, 61, 61, 60, 60, 60, 60]}
               source="Environment Agency &mdash; Water stressed areas assessment 2023"
-              href="#sec-sewage"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Sewage discharges on chalk catchments (2022)"
               value="12,000+"
@@ -107,7 +112,8 @@ export default function ChalkStreamsPage() {
               changeText="Sharply rising since EDM monitoring expanded from 2016"
               sparklineData={[6000, 7000, 8500, 9800, 10800, 11500, 12000, 12000]}
               source="Environment Agency &mdash; Event Duration Monitoring 2022"
-              href="#sec-sewage"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 
@@ -115,7 +121,7 @@ export default function ChalkStreamsPage() {
           <section id="sec-ecology" className="mb-12">
             <LineChart
               title="Chalk streams in good ecological status, England, 2010&ndash;2023"
-              subtitle="Percentage meeting WFD good ecological status. Target 100&percnt;. EA WFD river classification."
+              subtitle="Percentage meeting WFD good ecological status. Target 100%. EA WFD river classification."
               series={ecologySeries}
               yLabel="% in good ecological status"
             />

@@ -138,10 +138,16 @@ export default function PolicingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England and Wales had 143,734 police officers in 2010. Austerity cut 22,000 of them, driving numbers to 121,700 by 2018. The 20,000-officer uplift programme, launched in 2019, pushed headcount to a record 149,566 by March 2022, since slipping to 145,700. The charge rate has collapsed in parallel: in 2014, 15.5% of police-recorded crimes resulted in a charge or summons; by 2023 that figure was 5.6%, meaning 94 in every 100 reported offences produced no criminal proceedings. For rape, the charge rate fell below 2%. Public confidence in the police fell from 63.5% in 2019 to 54.1% in 2023, reaching 44% in London following the Sarah Everard murder in 2021 and the Casey Review in 2023, which found the Metropolitan Police institutionally corrupt, racist, and misogynist. Stop and search surged from 271,000 in 2018 to 809,000 in 2023, with Black people 7 times more likely to be stopped than white.
+              England and Wales had 143,734 police officers in 2010. Austerity cut 22,000 of them, driving numbers to a low of 121,700 by 2018. The government&apos;s 20,000 officer uplift programme, launched in 2019, pushed headcount to a record 149,566 by March 2022 &mdash; but the recovery proved fragile. By 2024, numbers had slipped to 145,700 as forces struggled to retain recruits. The population grew 6% over the same period, meaning even the 2022 record left the officer-to-population ratio below its 2010 level. More officers in absolute terms; fewer per person served.
             </p>
-            <p>The burden of inadequate policing falls most heavily on communities with the highest crime exposure and least capacity to absorb it. Dedicated neighbourhood officers fell from 20,000 in 2015 to under 12,000 by 2023 &mdash; the function most linked to public trust cut most deeply. Rural forces cover vast geographies with fewer than 1,500 officers, generating non-emergency response times exceeding 24 hours. The uplift programme recruited heavily from younger cohorts: 40% of officers now have fewer than five years&apos; service and detective shortfalls persist at 15% nationally, hollowing out capacity for complex cases including fraud, sexual offences, and cybercrime. The IOPC logged a record 35,846 misconduct complaints in 2022/23, concentrated in forces serving the most deprived urban areas.
+            <p>
+              The charge rate has collapsed. In 2014, 15.5% of police-recorded crimes resulted in a charge or summons; by 2023 that figure was 5.6%. Of the 6.8 million crimes recorded in 2022/23, fewer than 400,000 led to a charge &mdash; meaning 94 in every 100 reported offences produced no criminal proceedings. For rape, the charge rate fell below 2%. The CPS raised its evidential threshold under the Full Code Test after the Janner affair, which police blame for the decline; critics counter that forces deprioritised volume crime and allowed investigative capacity to atrophy.
             </p>
+            <p>
+              Public trust has eroded to its lowest recorded level. The Crime Survey for England and Wales found just 54.1% of adults rated their local police as doing a good job in 2023, down from 63.5% in 2019. In London, confidence fell to 44% following the murder of Sarah Everard by serving Metropolitan Police officer Wayne Couzens in 2021 and the 2023 Casey Review, which declared the Met institutionally corrupt, racist, and misogynist. The IOPC logged a record 35,846 misconduct complaints in 2022/23. Meanwhile, stop and search surged from 271,000 in 2018 to 809,000 in 2023, with Black people 7 times more likely to be stopped than white.
+            </p>
+            <p>The burden falls unevenly. Rural forces like Dyfed-Powys and North Yorkshire cover vast geographies with fewer than 1,500 officers, meaning response times for non-emergency calls can exceed 24 hours. In urban areas, neighbourhood policing &mdash; the community-facing function most linked to public trust &mdash; has absorbed the deepest cuts: dedicated neighbourhood officers fell from 20,000 in 2015 to under 12,000 by 2023. The composition of forces has shifted too. The uplift programme recruited heavily from younger, less experienced demographics; 40% of officers now have fewer than five years&apos; service, and detective shortfalls persist at 15% nationally. Experienced investigators retired faster than they could be replaced, hollowing out the capacity to handle complex cases &mdash; fraud, sexual offences, cybercrime &mdash; that demand specialist skills and long-term commitment.</p>
+            <p>Policing data in England and Wales is fragmented across 43 territorial forces, each with different recording practices. The Home Office sets counting rules, but compliance varies: HMICFRS found &ldquo;notable inconsistencies&rdquo; in crime recording accuracy across forces in 2023, with some under-recording violent crime by up to 10%. The charge rate figures exclude out-of-court disposals &mdash; cautions, community resolutions, penalty notices &mdash; which now account for a growing share of outcomes but are not consistently captured. Public confidence surveys rely on the Crime Survey for England and Wales, which excludes under-16s, people in institutions, and the homeless &mdash; groups with disproportionate police contact. Stop and search data depend on officer self-recording of perceived ethnicity, introducing subjectivity. There is no national dataset linking individual cases from report through to court outcome.</p>
           </div>
         </section>
 
@@ -163,7 +169,8 @@ export default function PolicingPage() {
             polarity="up-is-good"
             changeText="2024 · Down from 149,566 record in 2022 · Uplift programme stalling"
             sparklineData={[143.7, 140.2, 135.8, 130.5, 127.9, 124.1, 122.4, 121.9, 121.7, 123.2, 131.3, 139.8, 149.6, 147.5, 145.7]}
-            href="#sec-overview"/>
+            onExpand={() => {}}
+          />
           <MetricCard
             label="Charge/summons rate"
             value="5.6%"
@@ -172,7 +179,8 @@ export default function PolicingPage() {
             polarity="up-is-good"
             changeText="2023 · Down from 15.5% in 2014 · &lt;400K charges from 6.8M recorded crimes"
             sparklineData={[15.5, 14.9, 14.1, 12.7, 10.0, 8.0, 7.0, 6.5, 6.1, 5.6]}
-            href="#sec-officers"/>
+            onExpand={() => {}}
+          />
           <MetricCard
             label="Public confidence in police"
             value="54.1%"
@@ -181,7 +189,8 @@ export default function PolicingPage() {
             polarity="up-is-good"
             changeText="2023 · Down from 63.5% in 2019 · Post-Everard/Casey Review erosion"
             sparklineData={[61.2, 62.1, 62.7, 63.2, 63.0, 63.5, 60.8, 59.4, 55.7, 54.1]}
-            href="#sec-charges"/>
+            onExpand={() => {}}
+          />
         </div>
         </ScrollReveal>
 

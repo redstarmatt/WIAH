@@ -88,8 +88,11 @@ export default function LeaseholdPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Approximately 4.98 million residential properties in England and Wales are held on a leasehold basis &mdash; roughly one in five homes. From the mid-2000s, major housebuilders began selling new-build houses on leasehold terms, selling the freehold to investment companies that then charged escalating ground rents; by 2017 an estimated 100,000 houses had doubling ground rent clauses meaning rents rising from &pound;250 to &pound;8,000 within 50 years. Beyond ground rent, leaseholders face permission fees for alterations (&pound;250&ndash;&pound;500 per request), insurance commissions marked up 30&ndash;50&percnt;, and forfeiture &mdash; the freeholder&apos;s right to reclaim the property for arrears as small as &pound;350. The Leasehold Reform (Ground Rent) Act 2022 capped new lease ground rents at peppercorn, and the Leasehold and Freehold Reform Act 2024 bans new leasehold houses, extends lease extensions to 990 years, and removes marriage value &mdash; but does not cap existing ground rents or introduce commonhold as the default tenure.</p>
-            <p>The burden falls disproportionately on first-time buyers and younger households. In London, where 36&percnt; of homes are leasehold, average service charges reached &pound;2,880 per year in 2023 with some developments charging over &pound;8,000. Shared ownership properties &mdash; designed as an affordable entry to ownership &mdash; are invariably leasehold, meaning the households least able to absorb costs face the most complex tenure arrangements. Ethnic minority households and those on lower incomes are over-represented among leasehold buyers in urban areas, reflecting the concentration of new-build leasehold in city centres marketed to first-time buyers.</p>
+            <p>Approximately 4.98 million residential properties in England and Wales are held on a leasehold basis, representing roughly one in five homes. The system dates to medieval English land law and was originally designed for flats in shared buildings where freehold ownership of individual units was impractical. However, from the mid-2000s, major housebuilders began selling new-build houses on leasehold terms &mdash; a practice that allowed them to sell the freehold to investment companies, which then charged escalating ground rents and service charges. By 2017, an estimated 100,000 leasehold houses had been sold with doubling ground rent clauses, meaning rents that would increase from &pound;250 per year to &pound;8,000 within 50 years. The Competition and Markets Authority investigated the sector and concluded that certain practices were unfair, leading to undertakings from Aviva, Countryside Properties, and Taylor Wimpey.</p>
+            <p>Ground rents are the defining grievance. Before 2022, developers routinely inserted clauses requiring ground rent to double every 10 or 25 years, creating obligations that rapidly outpaced inflation and rendered properties unsaleable &mdash; mortgage lenders will not lend on properties where ground rent exceeds 0.1% of property value. The Leasehold Reform (Ground Rent) Act 2022 capped ground rent on new leases at a peppercorn (effectively zero), but this applies only to leases granted after 30 June 2022 and does nothing for the millions of existing leaseholders with onerous terms. Beyond ground rent, leaseholders face permission fees for alterations (typically &pound;250&ndash;&pound;500 per request), administration charges for routine correspondence, insurance commissions where freeholders mark up buildings insurance by 30&ndash;50%, and the ever-present threat of forfeiture &mdash; the legal right of the freeholder to reclaim the property for unpaid ground rent, with the threshold set at just &pound;350 in arrears.</p>
+            <p>The Leasehold and Freehold Reform Act 2024 represents the most significant legislative intervention in decades. It bans new leasehold houses (with limited exceptions for shared ownership), makes lease extensions cheaper by removing the &ldquo;marriage value&rdquo; calculation, extends the standard lease extension from 90 years to 990 years, and gives leaseholders greater rights to manage their buildings. However, the Act does not abolish leasehold, does not cap existing ground rents, and does not introduce commonhold &mdash; the alternative system of flat ownership used in virtually every other country &mdash; as the default tenure. The Law Commission recommended commonhold as the long-term replacement for leasehold in 2020, but the government has not committed to a transition timetable. Campaigners describe the 2024 Act as a necessary first step that leaves the fundamental power imbalance intact.</p>
+            <p>The burden of leasehold falls disproportionately on first-time buyers, younger households, and those purchasing in areas where new-build flats dominate the affordable end of the market. In London, where roughly 36% of all homes are leasehold, the average service charge reached &pound;2,880 per year in 2023, with some developments charging over &pound;8,000. Shared ownership properties &mdash; designed as an affordable route into homeownership &mdash; are invariably leasehold, meaning the households least able to absorb additional costs face the most complex tenure arrangements. The retirement sector is particularly affected: McCarthy Stone and similar developers sell leasehold retirement flats with event fees (also called exit fees or transfer fees) of 1&ndash;2% of sale price, payable each time the property changes hands. Ethnic minority households and those in lower income brackets are overrepresented among leasehold buyers in urban areas, reflecting the geographic concentration of leasehold new-builds in city centres and suburban developments marketed to first-time buyers.</p>
+            <p>Data on leasehold is fragmented and often opaque. DLUHC&apos;s estimate of 4.98 million leasehold properties is derived from HM Land Registry registrations, but not all leasehold titles are registered &mdash; particularly older leases granted before compulsory registration. Ground rent levels are not recorded in any central database, meaning the total value of ground rent extracted from leaseholders each year is unknown; estimates range from &pound;2 billion to &pound;4 billion. Service charge transparency is minimal: leaseholders have a legal right to inspect accounts, but management companies routinely make this difficult in practice. The Property Tribunal receives approximately 10,800 complaints per year, but this almost certainly understates the true level of dispute since most leaseholders cannot afford tribunal fees or lack awareness of their rights. There is no national register of managing agents, and the regulation of property management is voluntary through the RICS and ARMA codes of practice rather than statutory licensing.</p>
           </div>
         </section>
 
@@ -108,7 +111,8 @@ export default function LeaseholdPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; ~1 in 5 homes &middot; 36% of London homes are leasehold &middot; Rising due to new-build flats"
               sparklineData={[4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 4.98]}
-              href="#sec-overview"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Ground rent &amp; service charge complaints"
               value="10,800"
@@ -116,7 +120,8 @@ export default function LeaseholdPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Tripled since 2015 &middot; Property Tribunal &amp; Ombudsman cases &middot; True disputes far higher"
               sparklineData={[3200, 3800, 5100, 6400, 7200, 8100, 9300, 10200, 10800]}
-              href="#sec-properties"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Average London service charge"
               value="&pound;2,880"
@@ -124,7 +129,8 @@ export default function LeaseholdPage() {
               polarity="up-is-bad"
               changeText="Per year &middot; 2023 &middot; Some developments over &pound;8,000/yr &middot; Charges rising faster than inflation"
               sparklineData={[2100, 2200, 2350, 2450, 2550, 2680, 2790, 2880]}
-              href="#sec-complaints"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 

@@ -55,14 +55,17 @@ export default function PostOfficesPage() {
         <TopicHeader
           topic="Post Offices"
           question="Is the Post Office Network Actually Surviving?"
-          finding="The UK has lost 7,210 post office branches since 2000, a decline of 39&percnt;. Around 11,180 remain, but rural communities have been disproportionately affected, with 15&percnt; of the rural population now more than 3 miles from a branch."
+          finding="The UK has lost 7,210 post office branches since 2000, a decline of 39%. Around 11,180 remain, but rural communities have been disproportionately affected, with 15% of the rural population now more than 3 miles from a branch."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK Post Office network stood at 18,390 branches in 2000; by 2024 it had fallen to approximately 11,180 &mdash; a 39&percnt; reduction. The steepest single decline came between 2005 and 2008, when the Network Change Programme closed 2,367 branches. Since then, 100&ndash;150 closures per year continue, driven by retiring sub-postmasters who cannot find successors and the declining viability of rural outlets. Crown post offices &mdash; directly run by Post Office Ltd &mdash; have been converted to franchise counters in WHSmith stores, falling from 373 in 2013 to fewer than 80 by 2024, reducing both service quality and opening hours. The Horizon IT scandal, in which 900-plus sub-postmasters were wrongly prosecuted between 1999 and 2015, has made recruitment of replacements significantly harder. The government provides &pound;50 million annually to maintain the network, and access criteria require 99&percnt; of the population to live within 3 miles of a branch &mdash; but these standards carry no statutory force.</p>
-            <p>Rural communities bear the sharpest impact. Post Office Ltd data shows 15&percnt; of the rural population now lives more than 3 miles from a branch, up from 7&percnt; in 2010; the Highlands and Islands have lost 34&percnt; of branches since 2005. The consequences extend well beyond postal services: post offices process over 3,400 cash withdrawals per branch per month and in many rural areas are the last remaining community hub for banking access. Scotland and Wales have been hardest hit nationally, with closures clustering in the South West, East Anglia, and East Midlands in England.</p>
+            <p>The UK Post Office network stood at 18,390 branches in 2000 &mdash; the culmination of over 350 years as one of the most extensive retail networks in the country. By 2024, that number had fallen to approximately 11,180, a reduction of 39%. The steepest decline came between 2005 and 2008, when the Labour government&apos;s Network Change Programme closed 2,367 branches in a single consolidation round. The pace of closure has slowed since then, but a steady attrition of 100&ndash;150 branches per year continues, driven primarily by the retirement of sub-postmasters who cannot find successors and the declining commercial viability of rural outlets. Post Office Ltd operates as a government-owned company; sub-postmasters are self-employed agents, not employees &mdash; a distinction that has been central to many of the network&apos;s problems.</p>
+            <p>The shift from Crown offices to franchise operations has accelerated in recent years. Crown post offices &mdash; directly operated by Post Office Ltd on high streets &mdash; have been systematically converted to franchise counters inside WHSmith and other retailers, reducing from 373 Crown offices in 2013 to fewer than 80 by 2024. This saves Post Office Ltd money but often reduces service quality: franchise counters have limited opening hours, smaller premises, and staff less familiar with complex transactions. Meanwhile, the Horizon IT scandal &mdash; in which 900-plus sub-postmasters were wrongly prosecuted between 1999 and 2015 due to a faulty Fujitsu accounting system &mdash; devastated trust in the institution and made recruitment of new sub-postmasters significantly harder.</p>
+            <p>The government provides around &pound;50 million annually to Post Office Ltd to maintain the branch network, supplemented by a &ldquo;Network Subsidy Payment&rdquo; that supports the 3,000 most commercially unviable branches, predominantly in rural areas. The Universal Service Obligation requires Royal Mail to deliver to every UK address six days a week, but there is no equivalent statutory requirement to maintain post office branch access. OFCOM regulates Royal Mail&apos;s delivery service but has no jurisdiction over Post Office Ltd&apos;s branch decisions. Access criteria require 99% of the population to live within 3 miles of a post office and 95% within 1 mile, but these are set by government agreement with Post Office Ltd rather than by statute, and the consequences for breaching them are limited.</p>
+            <p>Rural areas bear a disproportionate share of the closures. Post Office Ltd&apos;s own data shows that 15% of the rural population now lives more than 3 miles from a branch, compared to 7% in 2010. Scotland has been particularly affected: the Highlands and Islands have lost 34% of branches since 2005, with some communities now 20 or more miles from the nearest post office. Wales has seen a 28% decline. In England, rural closures cluster in the South West, East Anglia, and the East Midlands. The impact extends beyond postal services &mdash; post offices serve as banking access points for over 3,400 cash withdrawals per branch per month, and in many rural areas are the last remaining community hub. The Banking Framework agreement allows customers to access basic banking services over the post office counter, but the fees paid to sub-postmasters for these transactions are widely criticised as insufficient to sustain the model.</p>
+            <p>Data on post office branch numbers is published by Post Office Ltd and verified by the Department for Business and Trade, but the level of service at each branch varies enormously and is not reflected in headline counts. A WHSmith franchise counter offering limited hours and services is counted the same as a full-service Crown office. &ldquo;Temporary&rdquo; closures &mdash; branches shut while a new sub-postmaster is sought &mdash; can last months or years and are sometimes not counted as closures in official statistics. The access criteria (99% within 3 miles, 95% within 1 mile) use population-weighted averages that can mask the reality for the most isolated communities. Financial data on individual branch viability is commercially sensitive and not published, making it difficult to assess how many of the remaining 11,180 branches are genuinely sustainable. The Horizon scandal inquiry is ongoing, and its institutional legacy continues to affect the organisation&apos;s ability to recruit and retain sub-postmasters.</p>
           </div>
         </section>
 
@@ -82,7 +85,8 @@ export default function PostOfficesPage() {
               changeText="Down from 18,390 in 2000 &mdash; a 39% decline"
               sparklineData={[18390, 14376, 12009, 11737, 11634, 11547, 11416, 11302, 11180]}
               source="Post Office Ltd annual data"
-              href="#sec-branches"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Branches lost since 2000"
               value="7,210"
@@ -91,7 +95,8 @@ export default function PostOfficesPage() {
               changeText="100&ndash;150 closures per year continue; recruitment of sub-postmasters remains difficult"
               sparklineData={[0, 4014, 6381, 6653, 6756, 6843, 6974, 7088, 7210]}
               source="Post Office Ltd"
-              href="#sec-access"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Rural pop. more than 3 miles from branch"
               value="15"
@@ -101,7 +106,8 @@ export default function PostOfficesPage() {
               changeText="Up from 7% in 2010; Scotland and Wales worst affected"
               sparklineData={[7, 9, 11, 12, 14, 15]}
               source="Post Office Ltd access data"
-              href="#sec-access"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 

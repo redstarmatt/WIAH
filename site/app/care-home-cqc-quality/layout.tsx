@@ -1,0 +1,10 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Care Home Quality',
+  description: '3.7% of care homes are rated Inadequate by the CQC and a further 25% Require Improvement, meaning nearly 1 in 3 homes is not meeting the standard.',
+};
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
+}

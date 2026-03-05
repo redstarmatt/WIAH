@@ -103,15 +103,18 @@ export default function RegionalInequalityPage() {
         <TopicHeader
           topic="Regional Inequality"
           question="Is the North&ndash;South Divide Actually Getting Worse?"
-          finding="London&apos;s economic output per person is 178&percnt; of the UK average; the North East produces 65&percnt;. This 113-point gap has widened, not narrowed, since 2015 despite successive &lsquo;levelling up&rsquo; commitments. People in the poorest areas of England can expect 21 fewer years of healthy life than those in the wealthiest."
+          finding="London&apos;s economic output per person is 178% of the UK average; the North East produces 65%. This 113-point gap has widened, not narrowed, since 2015 despite successive &lsquo;levelling up&rsquo; commitments. People in the poorest areas of England can expect 21 fewer years of healthy life than those in the wealthiest."
           colour="#6B7280"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom has the widest regional economic disparities of any large OECD economy. London&apos;s GVA per head is approximately 178&percnt; of the UK average, while the North East produces just 65&percnt; &mdash; a gap more extreme than between the richest and poorest regions of France, Germany, or Italy. Inner London West produces GVA per head of &pound;137,000, roughly ten times the &pound;14,800 recorded in Blackpool. The Levelling Up programme committed over &pound;11 billion through various funds and devolution deals, but the IFS found no statistically significant narrowing of regional economic gaps between 2019 and 2024, and the cancellation of HS2&apos;s northern leg in October 2023 removed a project explicitly intended to improve connectivity between Birmingham and Manchester. Healthy life expectancy varies by 21 years between the richest and poorest deciles: in the most deprived areas it is just 49.5 years, meaning many residents are in poor health before they reach state pension age.</p>
-            <p>The burden falls hardest on former coalfield communities, coastal towns, and areas with older populations that have never recovered to national average income levels. Per-capita transport spending in London was &pound;902 in 2022/23, compared with &pound;337 in the North East and &pound;296 in Yorkshire. Over 60&percnt; of graduates from northern universities who move for work relocate to London or the South East, sustaining a brain drain that compounds the underlying productivity disadvantage. Devolved mayors now have greater economic development powers than at any point in recent history, but their fiscal tools remain weak relative to the scale of the challenge.</p>
+            <p>The United Kingdom has the widest regional economic disparities of any large OECD economy. London&apos;s gross value added (GVA) per head is approximately 178% of the UK average, while the North East of England produces just 65%. This means that economic output per person in London is nearly three times that of the North East &mdash; a gap more extreme than between the richest and poorest regions of France, Germany, or Italy. The disparity is not new, but it has deepened: ONS regional accounts show the gap between London and every English region outside the South East widening in real terms since 2010. Inner London West (which includes the City of London and Westminster) produces GVA per head of &pound;137,000 &mdash; roughly ten times the &pound;14,800 produced in Blackpool. These are not merely statistical abstractions: they translate directly into wages, employment opportunities, public service quality, and life expectancy.</p>
+            <p>&ldquo;Levelling up&rdquo; became the central domestic policy agenda of the 2019 Conservative government, culminating in the Levelling Up and Regeneration Act 2023. The programme committed &pound;4.8 billion through the Levelling Up Fund, &pound;2.6 billion through the UK Shared Prosperity Fund (replacing EU structural funds), and &pound;3.8 billion through city and devolution deals. Early evaluations are not encouraging: the Institute for Fiscal Studies found no statistically significant narrowing of regional economic gaps between 2019 and 2024. Transport investment remains overwhelmingly concentrated in London and the South East: per capita transport spending in London was &pound;902 in 2022/23, compared with &pound;337 in the North East and &pound;296 in Yorkshire. The cancellation of the northern leg of HS2 in October 2023 &mdash; a project explicitly intended to improve connectivity between Birmingham and Manchester &mdash; was described by northern leaders as a decisive blow to the levelling up agenda.</p>
+            <p>Regional inequality is not solely an economic phenomenon. Healthy life expectancy &mdash; the years a person can expect to live in good health &mdash; varies by 21 years between the richest and poorest deciles of the English population. In the wealthiest areas, people can expect to live in good health until approximately 70.4 years; in the most deprived areas, healthy life expectancy is 49.5 years &mdash; meaning many residents of poor areas are in poor health before they reach state pension age. School attainment, access to healthcare, broadband connectivity, and cultural infrastructure all follow similar geographic gradients. The gap in GCSE attainment between disadvantaged pupils in London and those in the North East or East Midlands widened between 2019 and 2023. University funding per student is roughly equal nationally, but graduate retention is heavily skewed toward London: over 60% of graduates from northern universities who move for work relocate to London or the South East.</p>
+            <p>The burden of regional inequality falls most heavily on post-industrial communities, coastal towns, and areas with older populations. Former coalfield communities in South Yorkshire, County Durham, and Nottinghamshire experienced deindustrialisation in the 1980s and have never recovered to national average income levels. Coastal towns such as Blackpool, Clacton, and Jaywick combine seasonal employment, poor housing stock, and weak transport links. These areas also have higher rates of disability, limiting long-term illness, and economic inactivity. Ethnic minority communities in northern and midland cities face a compound disadvantage: lower regional economic output combined with ethnic pay gaps and discrimination in hiring. The devolution agenda &mdash; mayoral combined authorities in Greater Manchester, West Midlands, West Yorkshire, and other areas &mdash; is intended to give regions greater fiscal autonomy, but devolved budgets remain small relative to the scale of the challenge and the fiscal powers available to English regional mayors are weaker than those of the Scottish Parliament or Welsh Senedd.</p>
+            <p>Measuring regional inequality is methodologically complex. GVA per head &mdash; the standard ONS measure &mdash; overstates London&apos;s advantage because it attributes economic output to the workplace, not the worker&apos;s residence: approximately 900,000 people commute into London from surrounding regions, inflating London&apos;s per-capita figure. Gross disposable household income (GDHI), which measures income where people live, narrows the gap somewhat but still shows London 30% above the UK average and the North East 15% below. Purchasing power adjustments (accounting for lower housing costs outside London) narrow the gap further, but the IFS calculates that even on a cost-adjusted basis, the London&ndash;North East gap is approximately 40%. Healthy life expectancy estimates at local authority level have wide confidence intervals and depend on self-reported health status in the Annual Population Survey, which may systematically differ by region and culture. Transport investment comparisons are sensitive to whether London-based national infrastructure (Crossrail, the Elizabeth line) is classified as regional or national spending. The Levelling Up missions &mdash; 12 quantitative targets set in the 2022 White Paper &mdash; have not been independently evaluated since publication, and several lack baseline data.</p>
           </div>
         </section>
 
@@ -130,7 +133,8 @@ export default function RegionalInequalityPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Gap widening since 2015 &middot; Inner London West: &pound;137K per head &middot; North East: 65"
               sparklineData={[170, 172, 173, 174, 175, 168, 172, 176, 178]}
-              href="#sec-overview"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Healthy life expectancy gap"
               value="21 yrs"
@@ -138,7 +142,8 @@ export default function RegionalInequalityPage() {
               polarity="up-is-bad"
               changeText="Between richest &amp; poorest deciles &middot; 2023 &middot; Poorest: 49.5 yrs &middot; Richest: 70.4 yrs"
               sparklineData={[18.6, 18.7, 19.0, 19.4, 19.7, 19.9, 20.3, 20.7, 20.9]}
-              href="#sec-gva"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Transport spend per head, North East"
               value="&pound;337"
@@ -146,7 +151,8 @@ export default function RegionalInequalityPage() {
               polarity="up-is-good"
               changeText="2022/23 &middot; London: &pound;902 &middot; Yorkshire: &pound;296 &middot; HS2 northern leg cancelled Oct 2023"
               sparklineData={[310, 315, 320, 325, 330, 335, 337]}
-              href="#sec-health"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 

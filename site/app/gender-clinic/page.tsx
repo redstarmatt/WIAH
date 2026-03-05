@@ -90,8 +90,11 @@ export default function GenderClinicPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>NHS gender dysphoria services were small and stable for decades: a few hundred referrals a year nationally, a handful of clinics. From around 2012, referrals began rising rapidly &mdash; accelerating after 2016, with GIDS alone receiving over 5,000 new referrals annually by 2022, a tenfold increase in a decade. Capacity did not move. The waiting list grew from around 3,500 people in 2016 to over 26,000 by 2023. The 2024 Cass Review recommended closing GIDS and replacing it with seven regional hubs; NHS England is implementing this, but the transition has disrupted referral pathways and extended waits further for many patients already on the list.</p>
-            <p>Waiting five to seven years for a first appointment has documented consequences. A 2023 Gendered Intelligence survey found 72% of people waiting reported their mental health had deteriorated during the wait. Many pursue private care in parallel at &pound;200&ndash;&pound;500 per consultation, creating a two-tier system. The burden falls unevenly: waiting lists are longest in the South West, East of England, and parts of the Midlands, where local NHS provision was historically absent. Referrals are concentrated in more affluent areas &mdash; getting onto the pathway requires navigating bureaucracy that not everyone can manage equally.</p>
+            <p>The NHS has provided specialist gender dysphoria services since the 1960s, but has never built capacity in proportion to demand. For most of that period, the Gender Identity Development Service (GIDS) at the Tavistock and Portman NHS Foundation Trust was the sole referral point for young people under 18 in England, while a small number of adult gender identity clinics operated in London, Leeds, Sheffield, and a handful of other cities. Referral numbers to these services were broadly stable through the 1990s and 2000s, fluctuating between a few hundred and a few thousand per year nationally. From around 2012, referrals began to rise rapidly, accelerating further after 2016. By 2022, the GIDS alone was receiving over 5,000 new referrals annually &mdash; a more than tenfold increase from 2012. Adult gender identity clinic referrals showed a similar trajectory. NHS capacity did not remotely keep pace, producing a waiting list that grew from around 3,500 people in 2016 to over 26,000 by 2023.</p>
+            <p>The consequences of waiting five to seven years for a first appointment are severe and well-documented. Untreated gender dysphoria is associated with significantly elevated rates of depression, anxiety, self-harm, and suicidal ideation. A 2023 survey by Gendered Intelligence found that 72% of trans people waiting for NHS gender care reported that their mental health had deteriorated during the wait. Many patients on NHS waiting lists pursue private care in parallel, at costs of &pound;200&ndash;&pound;500 per consultation, creating a two-tier system where those with financial resources can access timely care while those without cannot. Some patients, particularly young adults who began the waiting list as children, have aged out of paediatric services and been transferred to adult waiting lists without being seen, effectively resetting their waiting time. The clinical harm caused by these delays &mdash; including cases where delayed puberty blockers or hormone treatment has affected mental health outcomes &mdash; has been acknowledged by NHS England and was central to the Cass Review&apos;s 2024 findings.</p>
+            <p>The Cass Review, an independent review of gender identity services for children and young people commissioned by NHS England and published in April 2024, represented the most significant examination of NHS gender care in a generation. Its central finding was that the evidence base for medical interventions for gender dysphoric young people &mdash; particularly puberty blockers &mdash; was insufficiently robust to justify the scale of NHS provision. The review recommended a fundamental redesign of services: closing GIDS, replacing it with a network of regional hubs with broader multidisciplinary clinical teams, and establishing a research programme to generate better outcome data. NHS England began implementing these recommendations from late 2023, commissioning seven new regional gender clinics to replace the centralised GIDS model. This restructuring creates both opportunity and additional uncertainty: the new services will, if fully staffed and funded, provide greater geographic reach, but the transition period has disrupted referral pathways and further extended effective wait times for some patients.</p>
+            <p>The waiting list burden falls unevenly across different groups. Adult waiting lists are longest in regions where historical NHS provision was most limited: the South West, the East of England, and parts of the Midlands had no or minimal local gender clinic capacity before the 2023 restructuring, forcing patients to wait for appointments at distant clinics or face even longer delays. Young people from deprived areas are less likely to be referred at all &mdash; referrals are concentrated in more affluent areas, reflecting differential access to knowledge of the pathway, more GP familiarity with referral processes, and greater parental capacity to navigate complex NHS bureaucracy. Non-binary people, who became eligible for NHS gender identity services following updated guidance in 2019, have found in practice that many clinics lack experience with non-binary presentations and are less likely to be offered the specific interventions they seek. Black and South Asian people are significantly under-represented on waiting lists relative to their proportion of the population, a pattern that likely reflects under-referral rather than lower prevalence of gender dysphoria.</p>
+            <p>NHS gender care data has significant limitations. Waiting list figures are collected quarterly by NHS England from individual gender identity clinics, but the methodology has not been consistent across the period of rapid list growth: some clinics have historically recorded patients as on the waiting list from point of referral, others from acceptance of referral, creating variation in reported totals. The transition to new regional services from 2023 makes longitudinal comparison particularly difficult: patients referred under the old GIDS model who were transferred to new regional services appear as new referrals in some returns but not others. There is no national registry of treatment outcomes for gender care, meaning that data on patient wellbeing before and after treatment, rates of regret or detransition, and long-term mental health outcomes is sparse and methodologically contested. The Cass Review noted this data gap as one of its central concerns and called for a national longitudinal outcomes study &mdash; a recommendation that had not been funded at the time of publication. Interpreting trends in referral numbers is also complicated by genuine uncertainty about whether rising referrals reflect rising prevalence, reduced stigma and greater social acceptability, or some combination of both.</p>
           </div>
         </section>
 
@@ -111,7 +114,8 @@ export default function GenderClinicPage() {
               polarity={'up-is-bad' as const}
               changeText="2023 &middot; Up from 3,500 in 2016"
               sparklineData={[3500, 5000, 7500, 10000, 14000, 18000, 22000, 26000]}
-              href="#sec-waiting-list"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Average wait for first appointment"
               value="5.5"
@@ -120,7 +124,8 @@ export default function GenderClinicPage() {
               polarity={'up-is-bad' as const}
               changeText="2023 &middot; Up from 1.5 years in 2016"
               sparklineData={[1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 5.0, 5.5]}
-              href="#sec-wait-time"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Young people waiting (under 18)"
               value="5,000"
@@ -128,7 +133,8 @@ export default function GenderClinicPage() {
               polarity={'up-is-bad' as const}
               changeText="Peak figure &middot; Before GIDS closure"
               sparklineData={[300, 500, 800, 1500, 2500, 4000, 5000, 4800]}
-              href="#sec-wait-time"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 
