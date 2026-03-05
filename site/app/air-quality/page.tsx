@@ -115,8 +115,7 @@ export default function AirQualityPage() {
               polarity="up-is-bad"
               changeText="Per year &middot; More than obesity &middot; Mainly cardiovascular and respiratory &middot; Cross-Government Clean Air Strategy target: reduce PM2.5 by 35% by 2030"
               sparklineData={[45000, 43000, 41000, 40000, 38000, 37000, 36000, 36000]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Urban PM2.5 annual mean (μg/m³)"
               value="8.2"
@@ -124,8 +123,7 @@ export default function AirQualityPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Down from 12.1 in 2010 &middot; WHO limit: 5μg/m³ &middot; UK legal limit: 12μg/m³ &middot; Still 64% above WHO guideline"
               sparklineData={[12.1, 11.8, 11.2, 11.5, 10.8, 10.5, 10.2, 9.8, 9.6, 9.2, 8.1, 8.8, 8.5, 8.2]}
-              onExpand={() => {}}
-            />
+              href="#sec-pollutants"/>
             <MetricCard
               label="Roadside NO₂ annual mean (μg/m³)"
               value="27.8"
@@ -133,8 +131,7 @@ export default function AirQualityPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Legal limit: 40μg/m³ &middot; Down sharply post-ULEZ expansion 2023 &middot; 43% of English LAs still in breach"
               sparklineData={[48.2, 46.8, 45.5, 44.2, 43.0, 41.5, 40.0, 38.5, 37.0, 35.5, 28.0, 31.0, 30.5, 27.8]}
-              onExpand={() => {}}
-            />
+              href="#sec-pollutants"/>
           </div>
         </ScrollReveal>
 

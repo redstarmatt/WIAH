@@ -57,18 +57,28 @@ export default function SectionNav({ sections }: SectionNavProps) {
     }
   }, [active]);
 
-  const scrollTo = (id: string) => {
+  const scrollTo = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
     const el = document.getElementById(id);
     if (!el) return;
-    // Offset for both sticky navs (~96px total)
-    const y = el.getBoundingClientRect().top + window.scrollY - 96;
-    window.scrollTo({ top: y, behavior: 'smooth' });
+    const target = el.getBoundingClientRect().top + window.scrollY - 96;
+    const start = window.scrollY;
+    const delta = target - start;
+    const duration = 300;
+    const startTime = performance.now();
+    const ease = (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    const step = (now: number) => {
+      const t = Math.min((now - startTime) / duration, 1);
+      window.scrollTo(0, start + delta * ease(t));
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
   };
 
   return (
     <div
       ref={navRef}
-      className="sticky top-[48px] z-40 bg-white/95 backdrop-blur border-b border-wiah-border overflow-x-auto"
+      className="sticky top-[48px] z-40 bg-white border-b border-wiah-border overflow-x-auto"
       style={{ scrollbarWidth: 'none' }}
     >
       <div className="flex gap-1 px-4 py-2 min-w-max">
@@ -76,7 +86,7 @@ export default function SectionNav({ sections }: SectionNavProps) {
           <button
             key={id}
             ref={el => { pillRefs.current[id] = el; }}
-            onClick={() => scrollTo(id)}
+            onClick={(e) => scrollTo(id, e)}
             className={`
               px-3 py-1 text-[11px] font-mono rounded-full whitespace-nowrap transition-colors
               ${active === id

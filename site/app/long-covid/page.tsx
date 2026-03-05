@@ -149,8 +149,7 @@ export default function LongCovidPage() {
               polarity="up-is-bad"
               changeText="2024 · Down from 2.1M peak (2022) · 800K with daily limitations · 50K unable to work"
               sparklineData={[1.3, 2.1, 1.8, 1.5]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="NHS Long COVID clinics"
               value="85"
@@ -159,8 +158,7 @@ export default function LongCovidPage() {
               polarity="up-is-good"
               changeText="2024 · Down from 91 peak · 12-week average wait · 91 clinics at peak in 2022-23"
               sparklineData={[60, 91, 91, 85]}
-              onExpand={() => {}}
-            />
+              href="#sec-prevalence"/>
             <MetricCard
               label="Estimated economic cost"
               value="&pound;5bn"
@@ -169,8 +167,7 @@ export default function LongCovidPage() {
               polarity="up-is-bad"
               changeText="2024 · Down from &pound;5.7bn peak · Lost output from work absence · Still one of UK&apos;s largest pandemic legacies"
               sparklineData={[1.5, 3.8, 5.7, 5.0]}
-              onExpand={() => {}}
-            />
+              href="#sec-symptoms"/>
           </div>
         </ScrollReveal>
 

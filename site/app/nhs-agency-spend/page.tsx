@@ -82,8 +82,7 @@ export default function NhsAgencySpendPage() {
               polarity="up-is-bad"
               changeText="+58% since 2019 &middot; could employ 55,000 nurses"
               sparklineData={[2.8, 3.2, 2.9, 2.6, 2.4, 2.2, 2.9, 3.7]}
-              onExpand={() => {}}
-              source="NHS England &middot; NHS Spending Report 2023/24"
+              href="#sec-chart"source="NHS England &middot; NHS Spending Report 2023/24"
             />
             <MetricCard
               label="Agency as % of pay bill"
@@ -93,8 +92,7 @@ export default function NhsAgencySpendPage() {
               polarity="up-is-bad"
               changeText="target &lt;3.5% &middot; doubled in 4 years"
               sparklineData={[6.2, 7.1, 6.3, 5.5, 4.9, 4.3, 5.5, 8.2]}
-              onExpand={() => {}}
-              source="NHS Improvement &middot; Agency Spend 2023/24"
+              href="#sec-chart"source="NHS Improvement &middot; Agency Spend 2023/24"
             />
             <MetricCard
               label="Agency nurse hourly rate"
@@ -104,8 +102,7 @@ export default function NhsAgencySpendPage() {
               polarity="up-is-bad"
               changeText="vs &pound;18 contracted &middot; 2.6&times; premium"
               sparklineData={[32, 35, 36, 38, 38, 41, 44, 47]}
-              onExpand={() => {}}
-              source="NHS Improvement &middot; Rate Cap Data 2024"
+              href="#sec-chart"source="NHS Improvement &middot; Rate Cap Data 2024"
             />
           </div>
         </ScrollReveal>

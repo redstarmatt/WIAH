@@ -88,8 +88,7 @@ export default function WaterStressRegionsPage() {
               polarity="up-is-bad"
               changeText="Up from 6 in 2015 &middot; SE worst affected"
               sparklineData={[6, 7, 7, 8, 9, 9, 10]}
-              onExpand={() => {}}
-              source="Environment Agency &middot; 2024"
+              href="#sec-chart"source="Environment Agency &middot; 2024"
             />
             <MetricCard
               label="Supply deficit by 2050"
@@ -99,8 +98,7 @@ export default function WaterStressRegionsPage() {
               polarity="up-is-bad"
               changeText="No major reservoir built since 1991"
               sparklineData={[3.1, 4.0, 4.8, 5.0, 5.1]}
-              onExpand={() => {}}
-              source="Environment Agency &middot; WRMP 2024"
+              href="#sec-chart"source="Environment Agency &middot; WRMP 2024"
             />
             <MetricCard
               label="Hosepipe bans 2022"
@@ -110,8 +108,7 @@ export default function WaterStressRegionsPage() {
               polarity="up-is-bad"
               changeText="Most widespread since 1976 &middot; drought emergency"
               sparklineData={[0, 0, 0, 0, 0, 0, 9]}
-              onExpand={() => {}}
-              source="Ofwat &middot; 2022"
+              href="#sec-chart"source="Ofwat &middot; 2022"
             />
           </div>
         </ScrollReveal>

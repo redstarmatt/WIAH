@@ -93,8 +93,7 @@ export default function GeographicWealthInequalityPage() {
               polarity="up-is-bad"
               changeText="house price inflation driving wealth accumulation"
               sparklineData={[280, 310, 360, 400, 440, 470, 495, 503, 510]}
-              onExpand={() => {}}
-              source="ONS Wealth and Assets Survey &middot; Wave 7 2022"
+              href="#sec-chart"source="ONS Wealth and Assets Survey &middot; Wave 7 2022"
             />
             <MetricCard
               label="North East median household wealth"
@@ -104,8 +103,7 @@ export default function GeographicWealthInequalityPage() {
               polarity="up-is-good"
               changeText="modest growth but widening gap"
               sparklineData={[130, 132, 140, 148, 155, 160, 162, 165, 168]}
-              onExpand={() => {}}
-              source="ONS Wealth and Assets Survey &middot; Wave 7 2022"
+              href="#sec-chart"source="ONS Wealth and Assets Survey &middot; Wave 7 2022"
             />
             <MetricCard
               label="SE vs NE wealth gap"
@@ -115,8 +113,7 @@ export default function GeographicWealthInequalityPage() {
               polarity="up-is-bad"
               changeText="from 2.2&times; in 2010 &middot; property the key driver"
               sparklineData={[2.2, 2.3, 2.6, 2.7, 2.8, 2.9, 3.0, 3.0, 3.0]}
-              onExpand={() => {}}
-              source="ONS Wealth and Assets Survey &middot; 2022"
+              href="#sec-chart"source="ONS Wealth and Assets Survey &middot; 2022"
             />
           </div>
         </ScrollReveal>

@@ -95,8 +95,7 @@ export default function DisabledChildrenCarePage() {
               polarity={'up-is-bad' as const}
               changeText="Estimated unmet need growing"
               sparklineData={[225, 228, 230, 232, 235, 237, 238, 239, 240]}
-              onExpand={() => {}}
-              source="DfE &middot; SEND and AP Insights"
+              href="#sec-chart"source="DfE &middot; SEND and AP Insights"
             />
             <MetricCard
               label="Children receiving support"
@@ -106,8 +105,7 @@ export default function DisabledChildrenCarePage() {
               polarity={'up-is-good' as const}
               changeText="Down from 98k in 2015"
               sparklineData={[98, 97, 96, 95, 93, 91, 90, 90, 89]}
-              onExpand={() => {}}
-              source="DfE &middot; SEND and AP Insights"
+              href="#sec-chart"source="DfE &middot; SEND and AP Insights"
             />
             <MetricCard
               label="Average EHCP wait"
@@ -117,8 +115,7 @@ export default function DisabledChildrenCarePage() {
               polarity={'up-is-bad' as const}
               changeText="Statutory limit is 20 weeks"
               sparklineData={[19, 20, 21, 22, 23, 25, 26, 27, 28]}
-              onExpand={() => {}}
-              source="DfE &middot; SEND and AP Insights"
+              href="#sec-chart"source="DfE &middot; SEND and AP Insights"
             />
           </div>
         </ScrollReveal>

@@ -92,8 +92,7 @@ export default function CleanEnergyInvestmentPage() {
               polarity="up-is-good"
               changeText="Record high &middot; 88% of total energy investment"
               sparklineData={[19.2, 22.4, 25.1, 27.8, 31.2, 28.4, 36.1, 43.8, 50.3]}
-              onExpand={() => {}}
-              source="BNEF / DESNZ &middot; 2024"
+              href="#sec-chart"source="BNEF / DESNZ &middot; 2024"
             />
             <MetricCard
               label="Behind US IRA"
@@ -103,8 +102,7 @@ export default function CleanEnergyInvestmentPage() {
               polarity="up-is-bad"
               changeText="US deploying $150bn/yr vs UK £50bn"
               sparklineData={[1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.5, 3.0]}
-              onExpand={() => {}}
-              source="BNEF &middot; Global Clean Energy Investment 2024"
+              href="#sec-callout"source="BNEF &middot; Global Clean Energy Investment 2024"
             />
             <MetricCard
               label="vs 2015"
@@ -114,8 +112,7 @@ export default function CleanEnergyInvestmentPage() {
               polarity="up-is-good"
               changeText="2.6x investment in clean energy since 2015"
               sparklineData={[100, 117, 131, 145, 162, 148, 188, 228, 262]}
-              onExpand={() => {}}
-              source="BNEF / DESNZ &middot; 2024"
+              href="#sec-callout"source="BNEF / DESNZ &middot; 2024"
             />
           </div>
         </ScrollReveal>

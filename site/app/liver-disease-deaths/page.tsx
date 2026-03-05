@@ -33,7 +33,6 @@ export default function LiverDiseaseDeathsPage() {
               changeText="+40% since 2001"
               sparklineData={[9000,9500,10000,10500,11000,11500,12000,12400,12800]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Under-65 liver deaths"
@@ -43,7 +42,6 @@ export default function LiverDiseaseDeathsPage() {
               changeText="premature deaths rising fastest"
               sparklineData={[2800,3000,3200,3400,3500,3700,3800,4000,4100]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

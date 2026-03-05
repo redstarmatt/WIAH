@@ -132,8 +132,7 @@ export default function BloodPressurePage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Nearly half of all cases &middot; No symptoms until crisis"
               sparklineData={[5.7, 5.9, 6.0, 6.3, 7.1, 7.3, 7.4]}
-              onExpand={() => {}}
-            />
+              href="#sec-prevalence"/>
             <MetricCard
               label="BP controlled to target"
               value="60.4"
@@ -142,8 +141,7 @@ export default function BloodPressurePage() {
               polarity="up-is-good"
               changeText="2024 &middot; Among diagnosed patients &middot; Down from 64% in 2016"
               sparklineData={[62.3, 63.8, 64.1, 63.5, 58.2, 59.8, 60.4]}
-              onExpand={() => {}}
-            />
+              href="#sec-control"/>
             <MetricCard
               label="NHS Health Checks delivered"
               value="1.48"
@@ -152,8 +150,7 @@ export default function BloodPressurePage() {
               polarity="up-is-good"
               changeText="2024 &middot; Still below 2018 level of 1.61M &middot; Uptake varies 30&ndash;75% by area"
               sparklineData={[1482, 1546, 1562, 1603, 1612, 1580, 824, 1012, 1283, 1402, 1478]}
-              onExpand={() => {}}
-            />
+              href="#sec-checks"/>
           </div>
         </ScrollReveal>
 

@@ -33,7 +33,6 @@ export default function PostnatalDepressionCarePage() {
               changeText="approximately 1 in 5"
               sparklineData={[18,18,19,19,19,20,20,20,20]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Access to specialist PMH services"
@@ -43,7 +42,6 @@ export default function PostnatalDepressionCarePage() {
               changeText="up from 40% in 2018"
               sparklineData={[40,44,48,52,55,58,61,64,66]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

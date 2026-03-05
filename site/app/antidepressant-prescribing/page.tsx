@@ -77,8 +77,7 @@ export default function AntidepressantPrescribingPage() {
               polarity="up-is-bad"
               changeText="More than doubled since 2010"
               sparklineData={[43.4, 50.2, 57.1, 64.7, 67.5, 70.9, 74.0, 78.6, 83.4, 89.7, 92.6]}
-              onExpand={() => {}}
-              source="NHS Business Services Authority &middot; Prescription Cost Analysis"
+              href="#sec-chart"source="NHS Business Services Authority &middot; Prescription Cost Analysis"
             />
             <MetricCard
               label="Long-term users (5yr+)"
@@ -88,8 +87,7 @@ export default function AntidepressantPrescribingPage() {
               polarity="up-is-bad"
               changeText="Chronic use growing &middot; withdrawal problems"
               sparklineData={[0.8, 1.0, 1.2, 1.4, 1.5, 1.6, 1.7, 1.7, 1.8]}
-              onExpand={() => {}}
-              source="NHS Business Services Authority &middot; 2023"
+              href="#sec-chart"source="NHS Business Services Authority &middot; 2023"
             />
             <MetricCard
               label="Adults receiving vs needing treatment"
@@ -99,8 +97,7 @@ export default function AntidepressantPrescribingPage() {
               polarity="up-is-bad"
               changeText="Treatment gap remains despite high prescribing"
               sparklineData={[17, 17, 17, 17, 17, 17, 17]}
-              onExpand={() => {}}
-              source="NHS Digital &middot; IAPT / APMS 2023"
+              href="#sec-chart"source="NHS Digital &middot; IAPT / APMS 2023"
             />
           </div>
         </ScrollReveal>

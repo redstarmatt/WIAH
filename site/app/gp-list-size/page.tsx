@@ -83,8 +83,7 @@ export default function GpListSizePage() {
               polarity="up-is-bad"
               changeText="+21% since 2015 &middot; recommended max: 1,500"
               sparklineData={[1891, 1943, 1987, 2031, 2078, 2134, 2224, 2290]}
-              onExpand={() => {}}
-              source="NHS Digital &middot; GP Workforce Statistics 2024"
+              href="#sec-chart"source="NHS Digital &middot; GP Workforce Statistics 2024"
             />
             <MetricCard
               label="GPs with 3,000+ patients"
@@ -94,8 +93,7 @@ export default function GpListSizePage() {
               polarity="up-is-bad"
               changeText="nearly 1 in 5 GPs over threshold"
               sparklineData={[7.2, 8.1, 9.3, 10.4, 11.8, 13.2, 16.6, 18.8]}
-              onExpand={() => {}}
-              source="NHS Digital &middot; GP Workforce Statistics 2024"
+              href="#sec-chart"source="NHS Digital &middot; GP Workforce Statistics 2024"
             />
             <MetricCard
               label="Daily consultations (avg)"
@@ -105,8 +103,7 @@ export default function GpListSizePage() {
               polarity="up-is-bad"
               changeText="+7 since 2019 &middot; safety threshold: 25 per GMC"
               sparklineData={[31, 32, 33, 34, 35, 36, 37, 38]}
-              onExpand={() => {}}
-              source="BMA &middot; GP Workload Survey 2024"
+              href="#sec-chart"source="BMA &middot; GP Workload Survey 2024"
             />
           </div>
         </ScrollReveal>

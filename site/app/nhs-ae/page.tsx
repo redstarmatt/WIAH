@@ -131,7 +131,6 @@ export default function NhsAePage() {
               changeText="2023/24 · Target: 95% · Last met consistently: 2015 · Dec 2023 worst: 67.3% · 24M A&amp;E visits/year"
               sparklineData={[95, 94, 93, 92, 90, 88, 83, 78, 83, 70, 70]}
               source={`Source: ${mainSource.name}`}
-              onExpand={() => {}}
             />
 
             <MetricCard
@@ -142,7 +141,6 @@ export default function NhsAePage() {
               changeText="2023/24 · Up from near-zero in 2019 · Corridor care · Record 88K in Dec 2023 alone · &lsquo;Unsafe&rsquo; says RCEM"
               sparklineData={[500, 1000, 3000, 5000, 7000, 12000, 40000, 88000]}
               source={`Source: ${mainSource.name}`}
-              onExpand={() => {}}
             />
 
             <MetricCard
@@ -153,7 +151,6 @@ export default function NhsAePage() {
               changeText="2022/23 · Up from &lt;5% in 2020 · Paramedics &lsquo;stacking&rsquo; outside hospitals · 1 in 3 arrivals delayed"
               sparklineData={[3, 4, 5, 8, 15, 25, 28, 31]}
               source={`Source: ${mainSource.name}`}
-              onExpand={() => {}}
             />
           </div>
 

@@ -111,8 +111,7 @@ export default function SocialCarePage() {
               polarity="up-is-bad"
               changeText="2022/23 &middot; 1.5M receiving funded care &middot; Up from 1.6M during COVID &middot; Ageing population driving demand"
               sparklineData={[1790, 1810, 1840, 1870, 1850, 1600, 1720, 1830, 1900]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Social care workforce vacancy rate"
               value="9.9%"
@@ -120,8 +119,7 @@ export default function SocialCarePage() {
               polarity="up-is-bad"
               changeText="2023 &middot; 152,000 vacancies &middot; Down from 10.7% peak &middot; Overseas recruitment filling gap post-Brexit"
               sparklineData={[6.6, 7.0, 8.0, 8.0, 7.0, 10.0, 10.7, 9.9]}
-              onExpand={() => {}}
-            />
+              href="#sec-requests"/>
             <MetricCard
               label="Annual social care funding gap"
               value="&pound;8bn"
@@ -129,8 +127,7 @@ export default function SocialCarePage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Estimated by Association of Directors &middot; Councils cutting services &middot; Health &amp; Care Act 2022 reforms delayed"
               sparklineData={[3, 4, 5, 5.5, 6, 6.5, 7, 7.5, 8]}
-              onExpand={() => {}}
-            />
+              href="#sec-workforce"/>
           </div>
         </ScrollReveal>
 

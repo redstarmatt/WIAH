@@ -79,8 +79,7 @@ export default function DigitalSkillsGapPage() {
               changeText="Down from 14.5m in 2018 · pace slowing"
               sparklineData={[14.5, 14.2, 13.9, 13.7, 13.5, 13.3, 13.1, 12.9, 12.6]}
               source="Lloyds Bank UK Consumer Digital Index 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Jobs requiring digital skills"
               value="82%"
@@ -89,8 +88,7 @@ export default function DigitalSkillsGapPage() {
               changeText="+15pp since 2018 · AI accelerating demand"
               sparklineData={[67, 68, 70, 71, 73, 75, 77, 80, 82]}
               source="DCMS / Burning Glass Labour Insight 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Digital skills salary premium"
               value="29%"
@@ -99,8 +97,7 @@ export default function DigitalSkillsGapPage() {
               changeText="+29% wage premium for high-digital roles"
               sparklineData={[18, 19, 20, 21, 22, 24, 26, 27, 29]}
               source="DCMS · UK Digital Strategy Evaluation 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

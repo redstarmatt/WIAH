@@ -95,8 +95,7 @@ export default function UkCarbonBudgetPage() {
               polarity="up-is-bad"
               changeText="4.7% fall &middot; lowest since 1960s industrialisation"
               sparklineData={[590, 542, 503, 474, 455, 414, 441, 436, 415]}
-              onExpand={() => {}}
-              source="DESNZ &middot; UK GHG Inventory 2024"
+              href="#sec-chart"source="DESNZ &middot; UK GHG Inventory 2024"
             />
             <MetricCard
               label="vs 1990 baseline"
@@ -106,8 +105,7 @@ export default function UkCarbonBudgetPage() {
               polarity="up-is-bad"
               changeText="On track for CB4 compliance &middot; G7 fastest"
               sparklineData={[0, -10, -20, -28, -35, -42, -48, -51, -53]}
-              onExpand={() => {}}
-              source="DESNZ &middot; 2024"
+              href="#sec-callout"source="DESNZ &middot; 2024"
             />
             <MetricCard
               label="Annual reduction needed"
@@ -117,8 +115,7 @@ export default function UkCarbonBudgetPage() {
               polarity="up-is-bad"
               changeText="To reach net zero by 2050 from current level"
               sparklineData={[3, 4, 5, 5, 6, 7, 7, 8, 8]}
-              onExpand={() => {}}
-              source="CCC &middot; Net Zero Pathway 2024"
+              href="#sec-callout"source="CCC &middot; Net Zero Pathway 2024"
             />
           </div>
         </ScrollReveal>

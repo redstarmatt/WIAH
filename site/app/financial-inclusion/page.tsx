@@ -78,8 +78,7 @@ export default function FinancialInclusionPage() {
               polarity={'up-is-bad' as const}
               changeText="Down from 1.5m in 2017 · still 2.4% of adults"
               sparklineData={[1.5, 1.48, 1.45, 1.42, 1.38, 1.32, 1.25, 1.22, 1.2]}
-              onExpand={() => {}}
-              source="FCA · Financial Lives Survey 2024"
+              href="#sec-chart"source="FCA · Financial Lives Survey 2024"
             />
             <MetricCard
               label="Bank branches closed since 2015"
@@ -89,8 +88,7 @@ export default function FinancialInclusionPage() {
               polarity={'up-is-bad' as const}
               changeText="61% of 2015 branch network gone"
               sparklineData={[200, 450, 800, 1200, 1800, 2600, 3500, 4600, 6200]}
-              onExpand={() => {}}
-              source="Which? · Branch Tracker 2024"
+              href="#sec-chart"source="Which? · Branch Tracker 2024"
             />
             <MetricCard
               label="Adults in debt distress"
@@ -100,8 +98,7 @@ export default function FinancialInclusionPage() {
               polarity={'up-is-bad' as const}
               changeText="+3.1pp since 2019 · 6.8m adults"
               sparklineData={[8.1, 8.4, 8.9, 9.2, 9.8, 11.4, 12.1, 12.6, 12.9]}
-              onExpand={() => {}}
-              source="FCA · Financial Lives Survey 2024"
+              href="#sec-chart"source="FCA · Financial Lives Survey 2024"
             />
           </div>
         </ScrollReveal>

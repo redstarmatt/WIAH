@@ -98,8 +98,7 @@ export default function WaterAffordabilityPage() {
               polarity="up-is-bad"
               changeText="+37% since 2015 &middot; Ofwat approved rises"
               sparklineData={[386, 392, 397, 405, 410, 415, 419, 436, 448, 528]}
-              onExpand={() => {}}
-              source="Ofwat &middot; Water Company Performance 2024"
+              href="#sec-chart"source="Ofwat &middot; Water Company Performance 2024"
             />
             <MetricCard
               label="In water poverty"
@@ -109,8 +108,7 @@ export default function WaterAffordabilityPage() {
               polarity="up-is-bad"
               changeText="1 in 4 households &middot; social tariff uptake low"
               sparklineData={[18, 18, 21, 22, 25]}
-              onExpand={() => {}}
-              source="Consumer Council for Water &middot; 2024"
+              href="#sec-chart"source="Consumer Council for Water &middot; 2024"
             />
             <MetricCard
               label="Social tariff coverage"
@@ -120,8 +118,7 @@ export default function WaterAffordabilityPage() {
               polarity="up-is-good"
               changeText="only 8% of struggling customers on reduced rates"
               sparklineData={[6, 7, 7, 8, 8]}
-              onExpand={() => {}}
-              source="Ofwat &middot; Social Tariff Review 2023"
+              href="#sec-chart"source="Ofwat &middot; Social Tariff Review 2023"
             />
           </div>
         </ScrollReveal>

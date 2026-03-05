@@ -90,8 +90,7 @@ export default function CamhsAccessPage() {
               polarity="up-is-bad"
               changeText="Up 72% since 2016 &middot; post-pandemic surge"
               sparklineData={[280, 306, 332, 356, 334, 412, 438, 460, 481]}
-              onExpand={() => {}}
-              source="NHS England &middot; CAMHS Referrals 2024"
+              href="#sec-chart"source="NHS England &middot; CAMHS Referrals 2024"
             />
             <MetricCard
               label="Rejected referrals"
@@ -101,8 +100,7 @@ export default function CamhsAccessPage() {
               polarity="up-is-bad"
               changeText="27% rejected &middot; thresholds too high"
               sparklineData={[68, 74, 82, 87, 91, 106, 114, 122, 128]}
-              onExpand={() => {}}
-              source="NHS England &middot; CAMHS Referrals 2024"
+              href="#sec-chart"source="NHS England &middot; CAMHS Referrals 2024"
             />
             <MetricCard
               label="Wait &gt;18 weeks"
@@ -112,8 +110,7 @@ export default function CamhsAccessPage() {
               polarity="up-is-bad"
               changeText="Nearly half wait 4+ months"
               sparklineData={[38, 40, 42, 44, 48, 50, 51, 52, 49]}
-              onExpand={() => {}}
-              source="NHS England &middot; CAMHS Waiting Times 2024"
+              href="#sec-chart"source="NHS England &middot; CAMHS Waiting Times 2024"
             />
           </div>
         </ScrollReveal>

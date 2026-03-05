@@ -142,8 +142,11 @@ export default function NhsDentistryPage() {
 
       <section id="sec-context" className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
         <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-          <p>By 2023, 42% of adults in England could not get an NHS dentist appointment when they needed one &mdash; up from 25% in 2019 &mdash; and the number of NHS dentists has fallen by 1,100 since then. The structural driver is the UDA contract introduced in 2006, which pays the same for a check-up as for complex restorative treatment; as inflation eroded UDA values, NHS work became economically unviable for many practices. Children bear the sharpest consequences: 35,000 had teeth removed under general anaesthetic in hospital in 2022&ndash;23, making tooth extraction the most common childhood hospital procedure. The 2024 Dental Recovery Plan offered &pound;20 per additional UDA for new patients and by October 2024 had generated roughly 1.5 million additional appointments, but the British Dental Association argues full contract renegotiation is the only sustainable fix.</p>
-          <p>The crisis compounds existing inequality. Children in the most deprived areas are three times more likely to need hospital extractions than those in the least deprived; rural dental deserts in Skegness, Scarborough, and Mevagissey leave patients travelling 30 or more miles for NHS care, or paying private fees starting at &pound;60 for a check-up. Five-year-olds in the North West have twice the rate of visible tooth decay as those in the South East. The workforce pipeline provides no short-term relief: dental schools produce roughly 1,200 graduates a year, around 40% of whom move directly into private or mixed practice.</p>
+          <p>NHS dentistry in England has been in accelerating decline since the pandemic, but the pressures pre-date COVID-19 by years. In 2023, 42% of adults reported being unable to get an NHS dentist appointment when they needed one &mdash; up from roughly 25% in 2019. The consequences are not merely inconvenient. Tooth decay, untreated without access to routine care, has become the leading cause of hospital admissions for children aged 6 to 10 in England. In 2022&ndash;23, 35,000 children had teeth removed under general anaesthetic in hospital settings &mdash; a costly, avoidable intervention that carries real clinical risk. Oral disease that elsewhere would be caught and filled has instead progressed to extraction.</p>
+          <p>The structural cause is a contract that has not worked since it was introduced in 2006. NHS dentists are paid per &ldquo;unit of dental activity&rdquo; (UDA) &mdash; a system that values a single filling identically to a full course of complex restorative treatment. As inflation has eroded the real value of UDA rates, many practices have concluded that NHS work no longer covers its costs. Between 2019 and 2023, 1,100 dentists stopped providing NHS services in England and moved to private practice, which can pay several times more for equivalent clinical time. The inequality this creates is severe: children in the most deprived areas of England are three times more likely to need teeth extracted than those in the least deprived, reflecting both dietary factors and a near-complete collapse of NHS dental access in some communities.</p>
+          <p>The Government&apos;s 2024 Dental Recovery Plan, launched in February of that year, offered dentists &pound;20 per additional UDA for taking on new NHS patients. By October 2024, NHS England reported approximately 1.5 million additional appointments had been delivered under the scheme &mdash; a meaningful number, though modest against a backlog of millions. Critics, including the British Dental Association, argue the plan treats a symptom without addressing the disease: until the UDA contract is fundamentally renegotiated to reflect actual treatment costs, the financial incentive to leave NHS work will persist. A separate intervention &mdash; expanding fluoridation of public water supplies &mdash; is under active consideration following powers granted to the Secretary of State in the Health and Care Act 2022. Fluoridation reduces tooth decay by up to 28% in communities where it is applied, and would be among the most cost-effective public health measures available.</p>
+          <p>The access crisis is sharpest in coastal and rural communities. Towns such as Skegness, Scarborough, and Mevagissey have effectively no NHS dental provision at all &mdash; patients must travel 30 miles or more, or pay private fees that start at &pound;60 for a check-up. Within cities the picture is little better in deprived wards: in parts of Bradford, Oldham, and Tower Hamlets, the ratio of NHS dentists to population is less than half the national average. Children bear the consequences most visibly. Five-year-olds in the North West have twice the rate of visible tooth decay as those in the South East, and children eligible for free school meals are three times more likely to undergo hospital extraction. The workforce pipeline is part of the problem: dental schools produce roughly 1,200 graduates per year in England, but around 40% move directly into private or mixed practice. Overseas-qualified dentists, who fill roughly a quarter of NHS vacancies, face a registration process through the GDC that can take 12&ndash;18 months.</p>
+          <p>NHS dental statistics are among the weakest in the English health system. NHS Business Services Authority publishes activity data based on claims submitted by dental practices, but this captures only NHS-funded treatment &mdash; the growing private market is invisible. There is no national register of practising NHS dentists; the commonly cited figure of 24,200 counts unique performer numbers submitting claims, not headcount or full-time equivalents. A dentist delivering one NHS course of treatment per month is counted identically to one working five NHS days per week. Patient experience data comes primarily from the GP Patient Survey, which includes a handful of dental questions but is not designed to measure dental access comprehensively. The absence of a dedicated NHS dental patient survey means regional variation is poorly quantified. Oral health data for children relies on periodic PHE epidemiological surveys conducted roughly every three years, with the most recent full survey disrupted by the pandemic. Hospital extraction figures from Hospital Episode Statistics capture the sharp end of failure but reveal nothing about the uncounted millions who simply go without routine care.</p>
         </div>
       </section>
 
@@ -159,34 +162,32 @@ export default function NhsDentistryPage() {
       {/* ── Sources ───────────────────────────────────────────────────────────────── */}
 
       <section id="sec-charts" className="bg-white px-4 sm:px-6 py-12">
-        <div className="max-w-4xl mx-auto space-y-12">
+        <div className="max-w-4xl mx-auto">
           {data && (
             <>
               <ScrollReveal>
-                <div className="h-72">
-                  <LineChart
-                    title="NHS dentists providing treatment, England"
-                    subtitle="Number of dentists delivering NHS dental care in the financial year."
-                    series={dentistsSeries}
-                    annotations={dentistsAnnotations}
-                    yLabel="Dentists"
-                  />
-                </div>
+                <LineChart
+                  title="NHS dentists providing treatment, England"
+                  showTitle
+                  subtitle="Number of dentists delivering NHS dental care in the financial year."
+                  series={dentistsSeries}
+                  annotations={dentistsAnnotations}
+                  yLabel="Dentists"
+                />
               </ScrollReveal>
 
               <ScrollReveal>
-                <div className="h-72">
-                  <LineChart
-                    title="NHS courses of dental treatment, England"
-                    subtitle="Annual courses of treatment completed. Does not include private treatment."
-                    series={coursesSeries}
-                    yLabel="Courses (millions)"
-                  />
-                </div>
+                <LineChart
+                  title="NHS courses of dental treatment, England"
+                  showTitle
+                  subtitle="Annual courses of treatment completed. Does not include private treatment."
+                  series={coursesSeries}
+                  yLabel="Courses (millions)"
+                />
               </ScrollReveal>
 
               <ScrollReveal>
-                <div className="bg-white">
+                <div className="bg-white mb-12">
                   <h3 className="text-lg font-bold text-wiah-black mb-6">
                     Adults unable to access NHS dentist, by region
                   </h3>

@@ -124,8 +124,7 @@ export default function AlcoholMisusePage() {
               direction="up"
               polarity="up-is-bad"
               sparklineData={deathsSparkline}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Alcohol-related hospital admissions"
               value="900,000"
@@ -134,8 +133,7 @@ export default function AlcoholMisusePage() {
               direction="up"
               polarity="up-is-bad"
               sparklineData={admissionsSparkline}
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
             <MetricCard
               label="Economic cost of alcohol harm"
               value="&pound;27.4bn"
@@ -144,8 +142,7 @@ export default function AlcoholMisusePage() {
               direction="up"
               polarity="up-is-bad"
               sparklineData={[20, 21, 22, 23, 24, 25, 26, 27.4]}
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
           </div>
         </div>
       </section>

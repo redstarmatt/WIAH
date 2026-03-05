@@ -86,8 +86,7 @@ export default function RespiteCareShortage() {
               polarity={'up-is-good' as const}
               changeText="Down from 56% in 2015"
               sparklineData={[56, 54, 52, 50, 49, 43, 43, 42, 41]}
-              onExpand={() => {}}
-              source="Carers UK &middot; State of Caring Survey"
+              href="#sec-chart"source="Carers UK &middot; State of Caring Survey"
             />
             <MetricCard
               label="Unpaid carers in England"
@@ -97,8 +96,7 @@ export default function RespiteCareShortage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 5.4m in 2015"
               sparklineData={[5.4, 5.5, 5.5, 5.6, 5.6, 5.7, 5.7, 5.8, 5.8]}
-              onExpand={() => {}}
-              source="Carers UK &middot; DWP"
+              href="#sec-chart"source="Carers UK &middot; DWP"
             />
             <MetricCard
               label="Annual value of unpaid care"
@@ -108,8 +106,7 @@ export default function RespiteCareShortage() {
               polarity={'up-is-good' as const}
               changeText="Up from &pound;119bn in 2015"
               sparklineData={[119, 125, 130, 135, 140, 145, 150, 156, 162]}
-              onExpand={() => {}}
-              source="Carers UK &middot; Replacement cost estimate"
+              href="#sec-chart"source="Carers UK &middot; Replacement cost estimate"
             />
           </div>
         </ScrollReveal>

@@ -33,7 +33,6 @@ export default function ReturnershipsPage() {
               changeText="+400k since 2020"
               sparklineData={[2.9,3.0,3.0,3.1,3.2,3.3,3.3,3.4,3.5]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Employers offering returnerships"
@@ -43,7 +42,6 @@ export default function ReturnershipsPage() {
               changeText="up from 3% in 2020"
               sparklineData={[3,3,4,4,5,6,6,7,8]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

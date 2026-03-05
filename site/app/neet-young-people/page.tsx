@@ -85,8 +85,7 @@ export default function NeetYoungPeoplePage() {
               polarity="up-is-bad"
               changeText="slowly improving &middot; but above 2019 pre-pandemic"
               sparklineData={[840, 820, 800, 790, 770, 860, 900, 870, 857, 830]}
-              onExpand={() => {}}
-              source="ONS &middot; Young People Not in Education, Employment or Training 2024"
+              href="#sec-chart"source="ONS &middot; Young People Not in Education, Employment or Training 2024"
             />
             <MetricCard
               label="NEET rate"
@@ -96,8 +95,7 @@ export default function NeetYoungPeoplePage() {
               polarity="up-is-bad"
               changeText="target &lt;8% &middot; still well above"
               sparklineData={[11.2, 10.9, 10.7, 10.5, 10.3, 11.5, 11.9, 11.6, 11.6, 11.1]}
-              onExpand={() => {}}
-              source="ONS &middot; Labour Force Survey 2024"
+              href="#sec-chart"source="ONS &middot; Labour Force Survey 2024"
             />
             <MetricCard
               label="Long-term NEET"
@@ -107,8 +105,7 @@ export default function NeetYoungPeoplePage() {
               polarity="up-is-bad"
               changeText="over 1 year without education or work"
               sparklineData={[150, 155, 160, 162, 160, 180, 195, 192, 190, 190]}
-              onExpand={() => {}}
-              source="DfE &middot; NEET Statistics 2024"
+              href="#sec-chart"source="DfE &middot; NEET Statistics 2024"
             />
           </div>
         </ScrollReveal>

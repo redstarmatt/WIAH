@@ -97,8 +97,7 @@ export default function HousingCostsWorkersPage() {
               changeText="Up from 32% in 2000 · doubled in a generation"
               sparklineData={[32, 38, 45, 54, 62, 65, 68, 71]}
               source="ONS ASHE + Rightmove rental data · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Bristol rent/pay ratio"
               value="55"
@@ -108,8 +107,7 @@ export default function HousingCostsWorkersPage() {
               changeText="Second highest city · Oxford 57%, Cambridge 54%"
               sparklineData={[28, 32, 38, 42, 48, 52, 55]}
               source="ONS/Rightmove · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-london-trend"/>
             <MetricCard
               label="Manchester rent/pay ratio"
               value="48"
@@ -119,8 +117,7 @@ export default function HousingCostsWorkersPage() {
               changeText="Up from c.25% in 2000 · northern cities now unaffordable too"
               sparklineData={[25, 27, 30, 35, 40, 44, 48]}
               source="ONS/Rightmove · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-cities"/>
           </div>
         </ScrollReveal>
 

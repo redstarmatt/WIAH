@@ -79,8 +79,7 @@ export default function SpecialSchoolPlacesPage() {
               changeText="+2,100 since 2020 · some waiting 12+ months"
               sparklineData={[1500, 1800, 2000, 2200, 2400, 2800, 3500, 4200, 5200]}
               source="IPSEA / NAS · SEND Provision Analysis 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Special school demand vs supply"
               value="130%"
@@ -89,8 +88,7 @@ export default function SpecialSchoolPlacesPage() {
               changeText="30% more applications than available places"
               sparklineData={[105, 107, 110, 113, 116, 120, 123, 127, 130]}
               source="DfE · SEND Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Special school per-pupil cost"
               value="£27,800"
@@ -99,8 +97,7 @@ export default function SpecialSchoolPlacesPage() {
               changeText="4× mainstream · rising annually"
               sparklineData={[18000, 19000, 20000, 21000, 22000, 23000, 24500, 26000, 27800]}
               source="DfE · Local Authority Revenue Expenditure 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

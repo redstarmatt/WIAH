@@ -99,8 +99,7 @@ export default function SickLeaveCostsPage() {
               polarity="up-is-bad"
               changeText="35% more than 2015 &middot; mental health biggest cause"
               sparklineData={[137, 141, 141, 141, 146, 130, 155, 176, 185]}
-              onExpand={() => {}}
-              source="ONS / CIPD &middot; 2023"
+              href="#sec-chart"source="ONS / CIPD &middot; 2023"
             />
             <MetricCard
               label="Economic cost"
@@ -110,8 +109,7 @@ export default function SickLeaveCostsPage() {
               polarity="up-is-bad"
               changeText="Up from &pound;24bn in 2015 &middot; productivity + sick pay"
               sparklineData={[24, 25, 25, 25, 26, 23, 27, 30, 32]}
-              onExpand={() => {}}
-              source="Deloitte / ONS &middot; 2023"
+              href="#sec-chart"source="Deloitte / ONS &middot; 2023"
             />
             <MetricCard
               label="Long-term sick (economically inactive)"
@@ -121,8 +119,7 @@ export default function SickLeaveCostsPage() {
               polarity="up-is-bad"
               changeText="Up from 1.9m in 2015 &middot; mental health surge"
               sparklineData={[1.9, 1.9, 1.9, 1.9, 1.9, 2.0, 2.2, 2.5, 2.8]}
-              onExpand={() => {}}
-              source="ONS Labour Force Survey &middot; 2023"
+              href="#sec-chart"source="ONS Labour Force Survey &middot; 2023"
             />
           </div>
         </ScrollReveal>

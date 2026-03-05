@@ -79,8 +79,7 @@ export default function SchoolMentalHealthSupportPage() {
               changeText="+18pp since 2019 · target 100% by 2028"
               sparklineData={[7, 9, 12, 16, 20, 25, 28, 31, 35]}
               source="NHS England · Mental Health Support Teams in Education 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Young people waiting >1yr for help"
               value="75%"
@@ -89,8 +88,7 @@ export default function SchoolMentalHealthSupportPage() {
               changeText="3 in 4 wait 1+ years before receiving help"
               sparklineData={[65, 67, 68, 70, 72, 74, 75, 75, 75]}
               source="Mental Health Foundation · YoungMinds Report 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="School-based counsellors"
               value="3,100"
@@ -99,8 +97,7 @@ export default function SchoolMentalHealthSupportPage() {
               changeText="+1,200 since 2020 · 3,400 schools still without"
               sparklineData={[1200, 1400, 1600, 1900, 1900, 1800, 2100, 2600, 3100]}
               source="DfE · School Workforce Census 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

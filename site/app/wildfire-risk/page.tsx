@@ -95,8 +95,7 @@ export default function WildfireRiskPage() {
             changeText="570% above decade average &middot; July 2022 heatwave drove fires near London"
             sparklineData={[1800, 2100, 3200, 4100, 5200, 3800, 26000]}
             source="Fire &amp; Rescue Services / FRS data &middot; 2022"
-            onExpand={() => {}}
-          />
+            href="#sec-burned"/>
           <MetricCard
             label="Fire incidents in 2022"
             value="530"
@@ -106,8 +105,7 @@ export default function WildfireRiskPage() {
             changeText="Record year &middot; peak days saw 50+ simultaneous wildfires"
             sparklineData={[210, 280, 195, 240, 530]}
             source="National Fire Chiefs Council &middot; 2022"
-            onExpand={() => {}}
-          />
+            href="#sec-incidents"/>
           <MetricCard
             label="Hectares burned 2023 (post-peak)"
             value="2,800"
@@ -117,8 +115,7 @@ export default function WildfireRiskPage() {
             changeText="Returned to near-normal after extreme 2022 &middot; trend still rising"
             sparklineData={[1800, 2100, 3200, 4100, 5200, 3800, 26000, 2800]}
             source="FRS data &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-regional"/>
         </div>
         </ScrollReveal>
 

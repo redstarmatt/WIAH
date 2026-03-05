@@ -33,7 +33,6 @@ export default function CompulsiveGamblingYouthPage() {
               changeText="Gambling Commission youth survey"
               sparklineData={[30,35,38,40,42,45,48,52,55]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Children gambling online weekly"
@@ -43,7 +42,6 @@ export default function CompulsiveGamblingYouthPage() {
               changeText="up from 4% in 2019"
               sparklineData={[4.0,4.5,5.0,5.5,6.0,6.2,6.5,6.8,7.0]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

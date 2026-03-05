@@ -96,8 +96,7 @@ export default function MarriageCohabitationTrendsPage() {
               polarity="up-is-bad"
               changeText="50-year low &middot; back to 2019 level after COVID"
               sparklineData={[244, 243, 247, 249, 245, 236, 169, 218, 236]}
-              onExpand={() => {}}
-              source="ONS &middot; Marriages in England and Wales 2022"
+              href="#sec-chart"source="ONS &middot; Marriages in England and Wales 2022"
             />
             <MetricCard
               label="Cohabiting couples"
@@ -107,8 +106,7 @@ export default function MarriageCohabitationTrendsPage() {
               polarity="up-is-good"
               changeText="fastest-growing family type &middot; but fewer legal protections"
               sparklineData={[2.1, 2.9, 3.2, 3.4, 3.6, 3.8, 3.9, 4.0, 4.2]}
-              onExpand={() => {}}
-              source="ONS &middot; Families and Households 2022"
+              href="#sec-chart"source="ONS &middot; Families and Households 2022"
             />
             <MetricCard
               label="Marriages per 1,000"
@@ -118,8 +116,7 @@ export default function MarriageCohabitationTrendsPage() {
               polarity="up-is-good"
               changeText="vs 14.5 in 1972 &middot; long secular decline"
               sparklineData={[10.2, 9.8, 9.4, 9.0, 8.5, 7.7]}
-              onExpand={() => {}}
-              source="ONS &middot; 2022"
+              href="#sec-chart"source="ONS &middot; 2022"
             />
           </div>
         </ScrollReveal>

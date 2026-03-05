@@ -95,8 +95,7 @@ export default function FacialRecognitionPolicingPage() {
               polarity={'up-is-bad' as const}
               changeText="+1,113% since 2019"
               sparklineData={[2, 4, 8, 12, 23, 47, 72, 88, 97]}
-              onExpand={() => {}}
-              source="Metropolitan Police &middot; LFR deployment reports"
+              href="#sec-chart"source="Metropolitan Police &middot; LFR deployment reports"
             />
             <MetricCard
               label="Identifications made"
@@ -106,8 +105,7 @@ export default function FacialRecognitionPolicingPage() {
               polarity={'up-is-bad' as const}
               changeText="Persons flagged in 2024 deployments"
               sparklineData={[10, 22, 42, 68, 121, 226, 348, 412, 454]}
-              onExpand={() => {}}
-              source="Metropolitan Police &middot; LFR deployment reports"
+              href="#sec-chart"source="Metropolitan Police &middot; LFR deployment reports"
             />
             <MetricCard
               label="False positive rate"
@@ -117,8 +115,7 @@ export default function FacialRecognitionPolicingPage() {
               polarity={'up-is-bad' as const}
               changeText="Innocent faces incorrectly flagged per 1,000 scanned"
               sparklineData={[5.8, 5.2, 4.8, 4.2, 3.8, 3.4, 2.9, 2.4, 2.0]}
-              onExpand={() => {}}
-              source="Metropolitan Police &middot; LFR deployment reports (self-reported)"
+              href="#sec-chart"source="Metropolitan Police &middot; LFR deployment reports (self-reported)"
             />
           </div>
         </ScrollReveal>

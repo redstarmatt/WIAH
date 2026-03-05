@@ -33,7 +33,6 @@ export default function SleepDisorderPrevalencePage() {
               changeText="approximately 1 in 3"
               sparklineData={[28,29,30,31,32,33,34,35,36]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Insomnia prescriptions"
@@ -43,7 +42,6 @@ export default function SleepDisorderPrevalencePage() {
               changeText="+30% in five years"
               sparklineData={[10.5,11.2,12.0,12.8,13.5,14.0,14.5,15.0,15.3]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

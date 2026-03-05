@@ -95,8 +95,7 @@ export default function CourtInterpreterServicesPage() {
               polarity={'up-is-bad' as const}
               changeText="Rising after COVID-period lull"
               sparklineData={[14200, 13100, 12400, 11800, 11200, 8400, 9100, 9700, 10200]}
-              onExpand={() => {}}
-              source="Ministry of Justice &middot; HMCTS interpreter services data"
+              href="#sec-chart"source="Ministry of Justice &middot; HMCTS interpreter services data"
             />
             <MetricCard
               label="Cases delayed by interpreter issues"
@@ -106,8 +105,7 @@ export default function CourtInterpreterServicesPage() {
               polarity={'up-is-bad' as const}
               changeText="Of hearings requiring an interpreter"
               sparklineData={[11, 10, 9, 9, 9, 7, 7, 8, 8]}
-              onExpand={() => {}}
-              source="Ministry of Justice &middot; HMCTS interpreter services data"
+              href="#sec-chart"source="Ministry of Justice &middot; HMCTS interpreter services data"
             />
             <MetricCard
               label="Average cost per failed hearing"
@@ -117,8 +115,7 @@ export default function CourtInterpreterServicesPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from £980 in 2015"
               sparklineData={[980, 1000, 1020, 1050, 1080, 1100, 1130, 1180, 1250]}
-              onExpand={() => {}}
-              source="National Audit Office &middot; Language services in the justice system"
+              href="#sec-chart"source="National Audit Office &middot; Language services in the justice system"
             />
           </div>
         </ScrollReveal>

@@ -85,8 +85,7 @@ export default function UrbanCanopyCoverPage() {
               polarity="up-is-good"
               changeText="Above European avg &middot; but inequitably distributed"
               sparklineData={[20.8, 21.0, 21.2, 21.3, 21.3, 21.4]}
-              onExpand={() => {}}
-              source="Greater London Authority &middot; Urban Forest 2023"
+              href="#sec-chart"source="Greater London Authority &middot; Urban Forest 2023"
             />
             <MetricCard
               label="Deprivation gap"
@@ -96,8 +95,7 @@ export default function UrbanCanopyCoverPage() {
               polarity="up-is-bad"
               changeText="Affluent areas 40m&sup2; vs deprived 19m&sup2; per person"
               sparklineData={[1.9, 2.0, 2.0, 2.1, 2.1, 2.1]}
-              onExpand={() => {}}
-              source="Natural England &middot; MENE Survey 2023"
+              href="#sec-chart"source="Natural England &middot; MENE Survey 2023"
             />
             <MetricCard
               label="Street trees lost/year"
@@ -107,8 +105,7 @@ export default function UrbanCanopyCoverPage() {
               polarity="up-is-bad"
               changeText="Development and disease &middot; urban heat impact"
               sparklineData={[5200, 5800, 6800, 6900, 7000, 7000]}
-              onExpand={() => {}}
-              source="Trees and Design Action Group &middot; 2023"
+              href="#sec-chart"source="Trees and Design Action Group &middot; 2023"
             />
           </div>
         </ScrollReveal>

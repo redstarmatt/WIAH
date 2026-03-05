@@ -146,8 +146,7 @@ export default function MentalHealthPage() {
                 polarity="up-is-good"
                 changeText="Monthly (2023) &middot; Up from 1.4M in 2016 &middot; Increased access &middot; But waits growing faster than capacity"
                 sparklineData={sparkFrom([1400, 1500, 1550, 1600, 1650, 1500, 1700, 1800, 1900])}
-                onExpand={() => {}}
-              />
+                href="#sec-overview"/>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <MetricCard
@@ -157,8 +156,7 @@ export default function MentalHealthPage() {
                 polarity="up-is-bad"
                 changeText="2023 &middot; Target: 6 weeks &middot; Up from 7 weeks in 2019 &middot; 1.6M referrals per year"
                 sparklineData={sparkFrom([5, 6, 7, 7, 8, 12, 10, 9, 11])}
-                onExpand={() => {}}
-              />
+                href="#sec-therapy"/>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <MetricCard
@@ -168,8 +166,7 @@ export default function MentalHealthPage() {
                 polarity="up-is-bad"
                 changeText="2023 &middot; Average CAMHS wait: 18 weeks &middot; Up from 12 weeks in 2019 &middot; 400K children referred annually"
                 sparklineData={sparkFrom([15, 18, 20, 22, 25, 45, 35, 32, 38])}
-                onExpand={() => {}}
-              />
+                href="#sec-camhs"/>
             </ScrollReveal>
           </div>
         </section>

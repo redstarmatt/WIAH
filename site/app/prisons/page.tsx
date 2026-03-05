@@ -114,11 +114,36 @@ export default function PrisonsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The prison population of England and Wales reached 88,000 in 2024 &mdash; the highest ever recorded, exceeding operational capacity of roughly 85,400 certified places. A Crown Court backlog has pushed remand numbers to 15,000, or 19% of all inmates &mdash; double the 2019 figure, with defendants now waiting two years or more for trial. In September 2024, the government introduced an emergency early release scheme, freeing 5,500 prisoners after serving 40% rather than 50% of their sentences. Violence inside prisons reached record levels in 2022/23: 36,500 assaults, including 9,900 serious, and 9,500 attacks on staff. The proven reoffending rate within 12 months stands at 26% overall, rising to 38% for those serving under 12 months, at a total cost to the economy of &pound;18 billion per year.
+              The prison population of England and Wales reached 88,000 in 2024 &mdash; the highest ever
+              recorded, exceeding operational capacity of roughly 85,400 certified places. It had dipped to
+              78,000 during COVID in 2020 before surging on the back of tougher sentencing and a Crown Court
+              backlog that has pushed remand numbers to 15,000, or 19% of all inmates &mdash; double the 2019
+              figure. Defendants now wait two years or more for trial, the longest court delays on record. In
+              September 2024, the government introduced an emergency early release scheme, freeing 5,500
+              prisoners after serving 40% rather than 50% of their sentences &mdash; a measure last used in 1987
+              and 2007.
             </p>
             <p>
-              The prison population is shaped by sentencing policy, not crime rates: recorded crime has fallen 40% since its 2003 peak, yet the prison population grew 25% over the same period. Black men are imprisoned at 5.9 times the rate of white men; 26% of prisoners self-report a diagnosed mental health condition, yet in-prison psychiatric provision was cut 30% between 2010 and 2020. Women make up 4% of the population, with 77% serving sentences of under 12 months &mdash; often for non-violent offences &mdash; while the building programme of 20,000 new places by 2030 will not keep pace with population growth at the current trajectory.
+              The system struggles to reduce reoffending. The proven reoffending rate within 12&nbsp;months
+              stands at 26% overall, but 38% for those serving sentences of under 12&nbsp;months &mdash; and
+              two-thirds of men reoffend within two years, according to the Howard League. The Ministry of
+              Justice estimates the total cost of reoffending at &pound;18&nbsp;billion per year. An IFS study
+              found that immediate custodial sentences of under 12&nbsp;months produce no better reoffending
+              outcomes than community sentences. Intensive Supervision Courts were piloted in 2024 as an
+              alternative for prolific offenders. Women make up 4% of the prison population &mdash; 3,800
+              inmates &mdash; with 77% serving sentences of under 12&nbsp;months, often for non-violent offences.
             </p>
+            <p>
+              Violence inside prisons reached record levels in 2022/23: 36,500 assaults, including 9,900
+              classified as serious, and 9,500 attacks on staff. Synthetic cannabinoids &mdash; primarily
+              spice &mdash; are cited by prison officers as a key driver. Self-harm incidents totalled 68,800 in
+              the same period. The government committed &pound;4&nbsp;billion to build 20,000 new prison places
+              by 2030, of which 5,800 had been delivered by mid-2024, including HMP Five Wells
+              (Wellingborough) and HMP Fosse Way (Glen Parva). But delivery has slipped on several sites,
+              and the building programme will not keep pace with population growth at the current trajectory.
+            </p>
+            <p>The prison population is shaped by sentencing policy, not crime rates. Recorded crime has fallen 40% since its 2003 peak, yet the prison population grew 25% over the same period. Longer sentences, mandatory minimums, recall expansions under the Offender Rehabilitation Act 2014, and Imprisonment for Public Protection (IPP) sentences &mdash; abolished in 2012 but still holding 2,900 people past their tariff &mdash; all contribute. Black men are imprisoned at 5.9 times the rate of white men. Muslim prisoners now comprise 18% of the population, against 6% nationally. Mental health need is pervasive: 26% of prisoners self-report a diagnosed mental health condition, yet in-prison psychiatric provision was cut 30% between 2010 and 2020. The closure of community mental health beds has made prisons a de facto provider of last resort for people the wider system has failed.</p>
+            <p>Prison data is published across multiple Ministry of Justice releases with different reporting periods, definitions, and time lags. The quarterly population bulletin uses a single-day snapshot that misses churn &mdash; roughly 70,000 people pass through the estate annually beyond the standing population. Assault figures rely on prisoner and staff reporting, and HMIP inspections consistently find under-recording, particularly of lower-level violence. Self-harm data count incidents rather than individuals, meaning a small number of highly distressed prisoners account for a disproportionate share. The &pound;4 billion building programme&apos;s cost-per-place figures are not independently verified. Reoffending rates use a binary measure &mdash; any proven reoffence within one year &mdash; that tells nothing about severity, frequency, or the counterfactual. No official dataset tracks long-term outcomes for released prisoners beyond two years.</p>
           </div>
         </section>
 

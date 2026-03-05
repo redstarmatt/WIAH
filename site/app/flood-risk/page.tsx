@@ -120,7 +120,6 @@ export default function FloodRiskPage() {
               changeText="1 in 6 properties; up from 3.8M in 2012"
               sparklineData={propertiesSparkline}
               source="Environment Agency, 2022"
-              onExpand={() => {}}
             />
             <MetricCard
               label="Annual flood damage cost"
@@ -130,7 +129,6 @@ export default function FloodRiskPage() {
               changeText="Up from &pound;500M in 2000"
               sparklineData={costSparkline}
               source="Environment Agency, 2022"
-              onExpand={() => {}}
             />
             <MetricCard
               label="Households without flood insurance"
@@ -139,7 +137,6 @@ export default function FloodRiskPage() {
               polarity="up-is-bad"
               changeText="Uninsurable or unaffordably priced"
               source="Insurance industry, 2023"
-              onExpand={() => {}}
             />
           </div>
         </div>

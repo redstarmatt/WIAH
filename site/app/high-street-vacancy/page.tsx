@@ -84,8 +84,7 @@ export default function HighStreetVacancyPage() {
               polarity="up-is-bad"
               changeText="slow improvement from 17% COVID peak &middot; still above 2015"
               sparklineData={[12.1, 11.8, 12.0, 12.3, 13.3, 17.1, 15.2, 14.8, 13.9, 13.6]}
-              onExpand={() => {}}
-              source="Local Data Company / British Retail Consortium &middot; 2024"
+              href="#sec-chart"source="Local Data Company / British Retail Consortium &middot; 2024"
             />
             <MetricCard
               label="Footfall vs 2019"
@@ -95,8 +94,7 @@ export default function HighStreetVacancyPage() {
               polarity="up-is-good"
               changeText="recovering &middot; online shift permanent but stabilising"
               sparklineData={[100, 100, 100, 100, 100, 65, 78, 87, 88, 90]}
-              onExpand={() => {}}
-              source="Springboard &middot; 2024"
+              href="#sec-chart"source="Springboard &middot; 2024"
             />
             <MetricCard
               label="Retail insolvencies"
@@ -106,8 +104,7 @@ export default function HighStreetVacancyPage() {
               polarity="up-is-bad"
               changeText="highest in a decade &middot; fashion and food hardest hit"
               sparklineData={[1820, 1900, 2000, 2050, 2140, 1800, 1750, 2190, 2315]}
-              onExpand={() => {}}
-              source="Insolvency Service &middot; 2023"
+              href="#sec-chart"source="Insolvency Service &middot; 2023"
             />
           </div>
         </ScrollReveal>

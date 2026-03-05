@@ -33,7 +33,6 @@ export default function BirthTraumaPage() {
               changeText="approximately 1 in 3"
               sparklineData={[28,28,29,29,29,30,30,30,30]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Access to birth reflections service"
@@ -43,7 +42,6 @@ export default function BirthTraumaPage() {
               changeText="trusts offering the service"
               sparklineData={[30,33,36,39,42,44,46,49,52]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

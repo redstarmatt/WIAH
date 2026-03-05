@@ -87,8 +87,7 @@ export default function DementiaSupportGapsPage() {
               polarity="up-is-good"
               changeText="below 67% NHS target &middot; COVID setback not recovered"
               sparklineData={[61.4, 66.1, 67.6, 67.8, 67.4, 62.3, 62.7, 63.3, 64.1]}
-              onExpand={() => {}}
-              source="NHS England &middot; Dementia Assessment 2023"
+              href="#sec-chart"source="NHS England &middot; Dementia Assessment 2023"
             />
             <MetricCard
               label="Receiving post-diagnostic support"
@@ -98,8 +97,7 @@ export default function DementiaSupportGapsPage() {
               polarity="up-is-good"
               changeText="improving &middot; 40% still not receiving structured support"
               sparklineData={[55, 56, 57, 58, 58, 56, 57, 59, 60]}
-              onExpand={() => {}}
-              source="Alzheimer&rsquo;s Society &middot; Dementia APPG 2023"
+              href="#sec-chart"source="Alzheimer&rsquo;s Society &middot; Dementia APPG 2023"
             />
             <MetricCard
               label="Cost of delayed diagnosis"
@@ -109,8 +107,7 @@ export default function DementiaSupportGapsPage() {
               polarity="up-is-bad"
               changeText="per year in avoidable acute care"
               sparklineData={[12500, 12500, 12500, 12500, 12500, 12500]}
-              onExpand={() => {}}
-              source="London School of Economics &middot; Dementia UK Cost Study"
+              href="#sec-chart"source="London School of Economics &middot; Dementia UK Cost Study"
             />
           </div>
         </ScrollReveal>

@@ -94,8 +94,7 @@ export default function RdInvestmentPage() {
               changeText="Barely changed since 2010 · OECD target is 2.4%"
               sparklineData={[1.62, 1.61, 1.67, 1.67, 1.71, 1.73, 1.73]}
               source="ONS GERD · 2021"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Rank among G7"
               value="6th"
@@ -105,8 +104,7 @@ export default function RdInvestmentPage() {
               changeText="Only Italy (1.51%) spends less · US 3.46%, Germany 3.14%"
               sparklineData={[7, 6, 6, 6, 6, 6, 6]}
               source="OECD Main S&T Indicators · 2021"
-              onExpand={() => {}}
-            />
+              href="#sec-trend"/>
             <MetricCard
               label="Gap to OECD target"
               value="−0.67"
@@ -116,8 +114,7 @@ export default function RdInvestmentPage() {
               changeText="Target is 2.4% · gap represents ~£18bn/yr additional investment needed"
               sparklineData={[0.78, 0.79, 0.73, 0.73, 0.69, 0.67, 0.67]}
               source="OECD / ONS"
-              onExpand={() => {}}
-            />
+              href="#sec-international"/>
           </div>
         </ScrollReveal>
 

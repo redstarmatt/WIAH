@@ -33,7 +33,6 @@ export default function UniformCostBurdenPage() {
               changeText="+25% since 2020"
               sparklineData={[240,252,265,278,290,305,315,326,337]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Families cutting other spending for uniform"
@@ -43,7 +42,6 @@ export default function UniformCostBurdenPage() {
               changeText="up from 16% in 2019"
               sparklineData={[16,17,18,19,20,21,21,22,23]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

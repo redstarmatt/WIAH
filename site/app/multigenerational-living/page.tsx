@@ -88,8 +88,7 @@ export default function MultigenerationalLivingPage() {
               polarity="up-is-bad"
               changeText="+33% since 2001 &middot; 6% of all households"
               sparklineData={[1.35, 1.5, 1.62, 1.74, 1.8, 1.82, 1.8]}
-              onExpand={() => {}}
-              source="ONS &middot; Census 2021 / Family Resources Survey"
+              href="#sec-chart"source="ONS &middot; Census 2021 / Family Resources Survey"
             />
             <MetricCard
               label="Housing cost driver"
@@ -99,8 +98,7 @@ export default function MultigenerationalLivingPage() {
               polarity="up-is-bad"
               changeText="of families cite housing unaffordability as reason"
               sparklineData={[65, 67, 68, 70, 71, 72, 72]}
-              onExpand={() => {}}
-              source="ONS &middot; Family Resources Survey 2024"
+              href="#sec-chart"source="ONS &middot; Family Resources Survey 2024"
             />
             <MetricCard
               label="Adult children at home (25&ndash;34)"
@@ -110,8 +108,7 @@ export default function MultigenerationalLivingPage() {
               polarity="up-is-bad"
               changeText="25&ndash;34 living with parents &middot; record high"
               sparklineData={[2.4, 2.6, 2.9, 3.1, 3.3, 3.5, 3.7]}
-              onExpand={() => {}}
-              source="ONS &middot; Labour Force Survey 2024"
+              href="#sec-chart"source="ONS &middot; Labour Force Survey 2024"
             />
           </div>
         </ScrollReveal>

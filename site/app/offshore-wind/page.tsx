@@ -83,8 +83,7 @@ export default function OffshoreWindPage() {
             changeText="Second largest in world &middot; up from 1.3 GW in 2010"
             sparklineData={[1.3, 2.9, 4.5, 5.7, 8.2, 10.4, 13.8, 14.7]}
             source="DESNZ / Wind Europe &middot; 2024"
-            onExpand={() => {}}
-          />
+            href="#sec-capacity"/>
           <MetricCard
             label="Government target 2030"
             value="50"
@@ -94,8 +93,7 @@ export default function OffshoreWindPage() {
             changeText="Current trajectory: 35&ndash;40 GW by 2030 &middot; needs planning reform"
             sparklineData={[1.3, 2.9, 5.7, 8.2, 10.4, 13.8, 14.7, 50]}
             source="UK Government target"
-            onExpand={() => {}}
-          />
+            href="#sec-international"/>
           <MetricCard
             label="Round 5 CfD awards (2023)"
             value="0"
@@ -105,8 +103,7 @@ export default function OffshoreWindPage() {
             changeText="No offshore wind awarded in AR5 &middot; developers said prices too low"
             sparklineData={[0.8, 3.2, 5.9, 7.0, 0.0]}
             source="DESNZ CfD Allocation Round 5 &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-international"/>
         </div>
         </ScrollReveal>
 

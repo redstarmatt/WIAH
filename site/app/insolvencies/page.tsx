@@ -80,8 +80,7 @@ export default function InsolvenciesPage() {
               polarity="up-is-bad"
               changeText="Highest since 1993 &middot; up 50% vs pre-pandemic average"
               sparklineData={[19077, 17435, 15385, 16090, 19196, 12557, 14049, 22109, 25158]}
-              onExpand={() => {}}
-              source="Insolvency Service &middot; 2023"
+              href="#sec-chart"source="Insolvency Service &middot; 2023"
             />
             <MetricCard
               label="Personal insolvencies (2023)"
@@ -91,8 +90,7 @@ export default function InsolvenciesPage() {
               polarity="up-is-bad"
               changeText="Still elevated &middot; cost-of-living and debt pile-up driving rise"
               sparklineData={[135045, 99196, 90928, 122009, 80000, 119932, 106820, 99825]}
-              onExpand={() => {}}
-              source="Insolvency Service &middot; 2023"
+              href="#sec-sectors"source="Insolvency Service &middot; 2023"
             />
             <MetricCard
               label="Hospitality failures"
@@ -102,8 +100,7 @@ export default function InsolvenciesPage() {
               polarity="up-is-bad"
               changeText="2nd highest sector &middot; energy costs + post-COVID debt burden"
               sparklineData={[2100, 2400, 2200, 2600, 1800, 2200, 3100, 3891]}
-              onExpand={() => {}}
-              source="Insolvency Service &middot; 2023"
+              href="#sec-sectors"source="Insolvency Service &middot; 2023"
             />
           </div>
         </ScrollReveal>

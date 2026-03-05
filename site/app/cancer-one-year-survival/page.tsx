@@ -33,7 +33,6 @@ export default function CancerOneYearSurvivalPage() {
               changeText="up from 68% in 2010"
               sparklineData={[68,69,70,70.5,71,71.8,72.3,73,73.7]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Late-stage diagnosis rate"
@@ -43,7 +42,6 @@ export default function CancerOneYearSurvivalPage() {
               changeText="quarter of cancers diagnosed at stage 4"
               sparklineData={[25,25,24.5,24,24,24,24,24,24]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

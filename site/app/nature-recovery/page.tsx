@@ -83,8 +83,7 @@ export default function NatureRecoveryPage() {
               changeText="Near-complete coverage for England in 2024 &middot; legally required framework"
               sparklineData={[12, 46]}
               source="DEFRA LNRS Programme &middot; 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-protected"/>
             <MetricCard
               label="Biodiversity Net Gain minimum required"
               value="10"
@@ -94,8 +93,7 @@ export default function NatureRecoveryPage() {
               changeText="Mandatory since Feb 2024 &middot; first law of its kind in the world"
               sparklineData={[0, 0, 0, 0, 10]}
               source="Environment Act 2021 / DEFRA &middot; 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-protected"/>
             <MetricCard
               label="Protected land in England (% of area)"
               value="28.8"
@@ -105,8 +103,7 @@ export default function NatureRecoveryPage() {
               changeText="Approaching 30&times;30 target &mdash; protect 30% of land by 2030"
               sparklineData={[26.4, 27.1, 28.2, 28.8, 30.0]}
               source="DEFRA / Natural England &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-protected"/>
           </div>
         </ScrollReveal>
 

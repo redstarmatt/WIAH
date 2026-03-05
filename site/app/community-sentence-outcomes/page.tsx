@@ -105,8 +105,7 @@ export default function CommunitySentenceOutcomesPage() {
               polarity={'up-is-bad' as const}
               changeText="Down from 34% in 2015"
               sparklineData={[34, 33, 33, 33, 32, 32, 32, 32, 32]}
-              onExpand={() => {}}
-              source="Ministry of Justice &middot; Proven reoffending statistics"
+              href="#sec-chart"source="Ministry of Justice &middot; Proven reoffending statistics"
             />
             <MetricCard
               label="Short prison sentence reoffending"
@@ -116,8 +115,7 @@ export default function CommunitySentenceOutcomesPage() {
               polarity={'up-is-bad' as const}
               changeText="Down from 47% in 2015 — still 13pp higher"
               sparklineData={[47, 47, 46, 46, 46, 45, 45, 45, 45]}
-              onExpand={() => {}}
-              source="Ministry of Justice &middot; Proven reoffending statistics"
+              href="#sec-chart"source="Ministry of Justice &middot; Proven reoffending statistics"
             />
             <MetricCard
               label="Community orders completed"
@@ -127,8 +125,7 @@ export default function CommunitySentenceOutcomesPage() {
               polarity={'up-is-good' as const}
               changeText="Successfully completed without breach"
               sparklineData={[65, 66, 66, 67, 67, 66, 67, 68, 68]}
-              onExpand={() => {}}
-              source="HMPPS &middot; Community performance annual digest"
+              href="#sec-chart"source="HMPPS &middot; Community performance annual digest"
             />
           </div>
         </ScrollReveal>

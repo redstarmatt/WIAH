@@ -97,8 +97,7 @@ export default function ChildMaintenanceEnforcementPage() {
               polarity="up-is-bad"
               changeText="rising demand &middot; private arrangements breaking down"
               sparklineData={[620, 680, 740, 800, 860, 900, 930, 960, 975]}
-              onExpand={() => {}}
-              source="DWP &middot; Child Maintenance Service Statistics 2023"
+              href="#sec-chart"source="DWP &middot; Child Maintenance Service Statistics 2023"
             />
             <MetricCard
               label="Non-compliance rate"
@@ -108,8 +107,7 @@ export default function ChildMaintenanceEnforcementPage() {
               polarity="up-is-bad"
               changeText="unchanged for years &middot; enforcement weak"
               sparklineData={[29, 29, 30, 30, 30, 31, 31, 31, 31]}
-              onExpand={() => {}}
-              source="DWP &middot; Child Maintenance Service Statistics 2023"
+              href="#sec-chart"source="DWP &middot; Child Maintenance Service Statistics 2023"
             />
             <MetricCard
               label="Total arrears"
@@ -119,8 +117,7 @@ export default function ChildMaintenanceEnforcementPage() {
               polarity="up-is-bad"
               changeText="+64% since 2015 &middot; real harm to single-parent families"
               sparklineData={[240, 270, 290, 310, 330, 350, 365, 380, 394]}
-              onExpand={() => {}}
-              source="DWP &middot; Child Maintenance Service Statistics 2023"
+              href="#sec-chart"source="DWP &middot; Child Maintenance Service Statistics 2023"
             />
           </div>
         </ScrollReveal>

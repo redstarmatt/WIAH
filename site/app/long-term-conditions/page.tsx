@@ -97,8 +97,7 @@ export default function LongTermConditionsPage() {
               polarity="up-is-bad"
               changeText="Up from 8.2m in 2000 &middot; driven by ageing + obesity"
               sparklineData={[8.2, 9.4, 11.2, 13.1, 14.3, 15.4]}
-              onExpand={() => {}}
-              source="NHS England &middot; 2021"
+              href="#sec-chart"source="NHS England &middot; 2021"
             />
             <MetricCard
               label="Share of NHS spending on LTCs"
@@ -108,8 +107,7 @@ export default function LongTermConditionsPage() {
               polarity="up-is-bad"
               changeText="&pound;77bn/year &middot; preventable complications cost &pound;9bn"
               sparklineData={[65, 68, 70, 72, 74, 75, 77]}
-              onExpand={() => {}}
-              source="NHS England Long Term Plan"
+              href="#sec-conditions"source="NHS England Long Term Plan"
             />
             <MetricCard
               label="Projected by 2035"
@@ -119,8 +117,7 @@ export default function LongTermConditionsPage() {
               polarity="up-is-bad"
               changeText="16% increase in 14 years &middot; ageing demographics driving rise"
               sparklineData={[11.2, 13.1, 14.3, 15.4, 16.2, 17.2, 17.9]}
-              onExpand={() => {}}
-              source="NHS England projection"
+              href="#sec-conditions"source="NHS England projection"
             />
           </div>
         </ScrollReveal>

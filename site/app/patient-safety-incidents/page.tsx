@@ -91,8 +91,7 @@ export default function PatientSafetyIncidentsPage() {
               polarity="up-is-bad"
               changeText="down from 487 peak &middot; wrong-site surgery most common"
               sparklineData={[413, 487, 358, 349, 378, 392, 367, 367]}
-              onExpand={() => {}}
-              source="NHS England &middot; Never Events Data 2023/24"
+              href="#sec-chart"source="NHS England &middot; Never Events Data 2023/24"
             />
             <MetricCard
               label="Serious incidents"
@@ -102,8 +101,7 @@ export default function PatientSafetyIncidentsPage() {
               polarity="up-is-bad"
               changeText="+9% since 2018 &middot; maternity highest risk area"
               sparklineData={[10800, 11200, 9900, 10100, 11600, 12400, 11800, 11800]}
-              onExpand={() => {}}
-              source="NHS England &middot; Serious Incidents Report 2023/24"
+              href="#sec-chart"source="NHS England &middot; Serious Incidents Report 2023/24"
             />
             <MetricCard
               label="Maternity incidents"
@@ -113,8 +111,7 @@ export default function PatientSafetyIncidentsPage() {
               polarity="up-is-bad"
               changeText="28% of all serious incidents &middot; Donna Ockenden review"
               sparklineData={[2700, 2900, 2600, 2900, 3200, 3500, 3300, 3300]}
-              onExpand={() => {}}
-              source="NHS England &middot; Maternity Safety Data 2023/24"
+              href="#sec-chart"source="NHS England &middot; Maternity Safety Data 2023/24"
             />
           </div>
         </ScrollReveal>

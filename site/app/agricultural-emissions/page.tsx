@@ -71,8 +71,7 @@ export default function AgriculturalEmissionsPage() {
               changeText="Flat since 2010 · slowest-improving major sector"
               sparklineData={[11.2, 11.1, 11.0, 11.0, 11.0, 11.1, 11.0, 11.0, 11.0]}
               source="DESNZ · UK Greenhouse Gas Emissions Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Livestock methane (MtCO2e)"
               value="49"
@@ -81,8 +80,7 @@ export default function AgriculturalEmissionsPage() {
               changeText="49 MtCO2e/yr · technology solutions not yet scaled"
               sparklineData={[51, 51, 50, 50, 49, 49, 49, 49, 49]}
               source="DESNZ · UK Greenhouse Gas Emissions Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Fertiliser N2O reduction since 2010"
               value="-15%"
@@ -91,8 +89,7 @@ export default function AgriculturalEmissionsPage() {
               changeText="-15% since 2010 · better application techniques"
               sparklineData={[0, -1, -3, -5, -7, -8, -10, -12, -15]}
               source="DESNZ · UK Greenhouse Gas Emissions Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

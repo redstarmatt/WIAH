@@ -83,8 +83,7 @@ export default function WorkplaceStressSicknessPage() {
               polarity="up-is-bad"
               changeText="Highest non-COVID cause &middot; up 73% since 2015"
               sparklineData={[9.9, 11.7, 12.5, 15.4, 17.9, 16.3, 18.0, 17.1, 17.1]}
-              onExpand={() => {}}
-              source="HSE &middot; Work-related Stress Statistics 2023"
+              href="#sec-chart"source="HSE &middot; Work-related Stress Statistics 2023"
             />
             <MetricCard
               label="% workforce affected"
@@ -94,8 +93,7 @@ export default function WorkplaceStressSicknessPage() {
               polarity="up-is-bad"
               changeText="1 in 18 workers &middot; public sector highest"
               sparklineData={[3.7, 4.2, 4.5, 5.4, 6.0, 5.6, 6.1, 5.9, 5.6]}
-              onExpand={() => {}}
-              source="HSE &middot; Work-related Stress Statistics 2023"
+              href="#sec-chart"source="HSE &middot; Work-related Stress Statistics 2023"
             />
             <MetricCard
               label="Economic cost"
@@ -105,8 +103,7 @@ export default function WorkplaceStressSicknessPage() {
               polarity="up-is-bad"
               changeText="Lost productivity annually &middot; HSE estimate"
               sparklineData={[16, 18, 20, 23, 26, 24, 27, 27, 28]}
-              onExpand={() => {}}
-              source="HSE &middot; Cost to Britain 2023"
+              href="#sec-chart"source="HSE &middot; Cost to Britain 2023"
             />
           </div>
         </ScrollReveal>

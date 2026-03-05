@@ -87,8 +87,7 @@ export default function CivicParticipationPage() {
               changeText="Down from 28% in 2010 &middot; long-term secular decline"
               sparklineData={[28, 27, 26, 25, 23, 24, 24]}
               source="NCVO Time Well Spent &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-volunteering"/>
             <MetricCard
               label="Informal helping neighbours/community"
               value="33"
@@ -98,8 +97,7 @@ export default function CivicParticipationPage() {
               changeText="COVID surge (39%) has largely receded &middot; but above 2010 levels"
               sparklineData={[35, 33, 31, 39, 34, 33]}
               source="NCVO / Community Life Survey &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-volunteering"/>
             <MetricCard
               label="Trussell Trust food bank volunteers"
               value="39,000"
@@ -109,8 +107,7 @@ export default function CivicParticipationPage() {
               changeText="Up from 22,000 in 2015 &middot; grassroots civic energy around need"
               sparklineData={[22000, 28000, 36000, 39000]}
               source="Trussell Trust Annual Report &middot; 2022"
-              onExpand={() => {}}
-            />
+              href="#sec-volunteering"/>
           </div>
         </ScrollReveal>
 

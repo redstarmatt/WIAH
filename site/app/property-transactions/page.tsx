@@ -95,8 +95,7 @@ export default function PropertyTransactionsPage() {
               polarity="up-is-good"
               changeText="recovering from 2023 decade-low &middot; still below 2015"
               sparklineData={[1.23, 1.19, 1.22, 1.19, 1.18, 1.04, 1.49, 1.26, 1.02, 1.10]}
-              onExpand={() => {}}
-              source="HMRC &middot; UK Property Transactions 2024"
+              href="#sec-chart"source="HMRC &middot; UK Property Transactions 2024"
             />
             <MetricCard
               label="Mortgage approvals"
@@ -106,8 +105,7 @@ export default function PropertyTransactionsPage() {
               polarity="up-is-good"
               changeText="improving &middot; but -10% vs pre-pandemic"
               sparklineData={[730000, 695000, 740000, 720000, 699000, 618000, 922000, 764000, 612000, 660000]}
-              onExpand={() => {}}
-              source="Bank of England &middot; 2024"
+              href="#sec-chart"source="Bank of England &middot; 2024"
             />
             <MetricCard
               label="First-time buyer market"
@@ -117,8 +115,7 @@ export default function PropertyTransactionsPage() {
               polarity="up-is-bad"
               changeText="first-time buyers down 18% in 2 years"
               sparklineData={[100, 102, 105, 103, 101, 88, 108, 97, 85, 82]}
-              onExpand={() => {}}
-              source="UK Finance &middot; 2024"
+              href="#sec-chart"source="UK Finance &middot; 2024"
             />
           </div>
         </ScrollReveal>

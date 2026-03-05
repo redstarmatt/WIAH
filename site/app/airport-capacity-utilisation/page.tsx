@@ -90,8 +90,7 @@ export default function AirportCapacityUtilisationPage() {
               polarity={'up-is-bad' as const}
               changeText="97% in 2024 &middot; constrained vs Schiphol 72%"
               sparklineData={[91, 92, 93, 95, 97, 40, 75, 88, 97]}
-              onExpand={() => {}}
-              source="CAA &middot; Airport Statistics 2024"
+              href="#sec-chart"source="CAA &middot; Airport Statistics 2024"
             />
             <MetricCard
               label="UK airport passengers 2024"
@@ -101,8 +100,7 @@ export default function AirportCapacityUtilisationPage() {
               polarity={'up-is-good' as const}
               changeText="+12% since 2019 &middot; recovered to pre-pandemic"
               sparklineData={[225, 232, 238, 244, 252, 74, 166, 210, 266]}
-              onExpand={() => {}}
-              source="CAA &middot; Airport Statistics 2024"
+              href="#sec-chart"source="CAA &middot; Airport Statistics 2024"
             />
             <MetricCard
               label="Trade cost of no expansion (est)"
@@ -112,8 +110,7 @@ export default function AirportCapacityUtilisationPage() {
               polarity={'up-is-bad' as const}
               changeText="Estimated trade loss without Heathrow expansion"
               sparklineData={[8, 9, 9, 10, 11, 11, 12, 13, 14]}
-              onExpand={() => {}}
-              source="Airports Commission &middot; Economic Analysis 2015, updated 2024"
+              href="#sec-chart"source="Airports Commission &middot; Economic Analysis 2015, updated 2024"
             />
           </div>
         </ScrollReveal>

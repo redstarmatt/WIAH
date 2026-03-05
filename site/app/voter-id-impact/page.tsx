@@ -33,7 +33,6 @@ export default function VoterIdImpactPage() {
               changeText="first elections with ID requirement"
               sparklineData={[0,0,0,0,0,0,0,0,14]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Adults without accepted photo ID"
@@ -43,7 +42,6 @@ export default function VoterIdImpactPage() {
               changeText="disproportionately young and minority"
               sparklineData={[4.0,4.0,3.8,3.8,3.7,3.6,3.6,3.5,3.5]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

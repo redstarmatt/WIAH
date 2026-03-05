@@ -84,8 +84,7 @@ export default function SchoolUniformCostsPage() {
               polarity="up-is-bad"
               changeText="+38% since 2015 &middot; outpacing general inflation"
               sparklineData={[316, 340, 372, 390, 410, 422, 435]}
-              onExpand={() => {}}
-              source="Which? &middot; School Uniform Survey 2024"
+              href="#sec-chart"source="Which? &middot; School Uniform Survey 2024"
             />
             <MetricCard
               label="As % of lowest incomes"
@@ -95,8 +94,7 @@ export default function SchoolUniformCostsPage() {
               polarity="up-is-bad"
               changeText="approaching 3% of poorest family incomes"
               sparklineData={[2.1, 2.2, 2.4, 2.5, 2.6, 2.8]}
-              onExpand={() => {}}
-              source="Which? / DWP analysis &middot; 2023"
+              href="#sec-chart"source="Which? / DWP analysis &middot; 2023"
             />
             <MetricCard
               label="Schools offering grants"
@@ -106,8 +104,7 @@ export default function SchoolUniformCostsPage() {
               polarity="up-is-good"
               changeText="only 3 in 10 schools offer uniform grants or exchanges"
               sparklineData={[28, 28, 29, 29, 30, 30]}
-              onExpand={() => {}}
-              source="School Uniform Exchange Network &middot; 2023"
+              href="#sec-chart"source="School Uniform Exchange Network &middot; 2023"
             />
           </div>
         </ScrollReveal>

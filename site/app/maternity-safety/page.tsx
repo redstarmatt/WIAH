@@ -81,8 +81,7 @@ export default function MaternitySafetyPage() {
               polarity="up-is-bad"
               changeText="Record low &middot; down from 5.1 in 2010 &middot; target 1.6 by 2025"
               sparklineData={[5.1, 4.9, 4.7, 4.4, 4.2, 4.0, 3.8, 3.7, 3.53]}
-              onExpand={() => {}}
-              source="MBRRACE-UK &middot; 2022"
+              href="#sec-stillbirth"source="MBRRACE-UK &middot; 2022"
             />
             <MetricCard
               label="Maternal mortality rate"
@@ -92,8 +91,7 @@ export default function MaternitySafetyPage() {
               polarity="up-is-bad"
               changeText="Stubbornly high &middot; slight uptick in 2019&ndash;21 period"
               sparklineData={[10.1, 9.6, 9.7, 8.79, 9.7]}
-              onExpand={() => {}}
-              source="MBRRACE-UK &middot; 2019&ndash;21"
+              href="#sec-ethnicity"source="MBRRACE-UK &middot; 2019&ndash;21"
             />
             <MetricCard
               label="Black vs white maternal mortality risk"
@@ -103,8 +101,7 @@ export default function MaternitySafetyPage() {
               polarity="up-is-bad"
               changeText="Unchanged for 20 years &middot; BAME maternal mortality gap persistent"
               sparklineData={[3.5, 3.7, 3.8, 3.7, 3.7, 3.8, 3.7, 3.7, 3.7]}
-              onExpand={() => {}}
-              source="MBRRACE-UK &middot; 2021"
+              href="#sec-ethnicity"source="MBRRACE-UK &middot; 2021"
             />
           </div>
         </ScrollReveal>

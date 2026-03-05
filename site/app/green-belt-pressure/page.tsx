@@ -33,7 +33,6 @@ export default function GreenBeltPressurePage() {
               changeText="+40% since 2018"
               sparklineData={[8800,9200,9600,10000,10400,10800,11200,11800,12400]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Green belt land released (hectares)"
@@ -43,7 +42,6 @@ export default function GreenBeltPressurePage() {
               changeText="in 2023-24"
               sparklineData={[1500,1800,2200,2600,3000,3400,3800,4200,4500]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

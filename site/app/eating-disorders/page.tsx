@@ -107,8 +107,7 @@ export default function EatingDisordersPage() {
             changeText={`Doubled since 2011; 89% female`}
             sparklineData={data ? data.hospitalAdmissions.map(d => d.admissions) : []}
             source="NHS Digital · Hospital Episode Statistics"
-            onExpand={() => {}}
-          />
+            href="#sec-admissions"/>
           <MetricCard
             label="Average wait for eating disorder treatment (adults)"
             value={String(latestWaitTime?.avgWeeks || 22)}
@@ -118,8 +117,7 @@ export default function EatingDisordersPage() {
             changeText="Some areas 2+ years; target 4 weeks"
             sparklineData={data ? data.waitingTimes.map(d => d.avgWeeks) : []}
             source="NHS England · Adult Eating Disorder Services"
-            onExpand={() => {}}
-          />
+            href="#sec-waiting"/>
           <MetricCard
             label="Eating disorder mortality rate"
             value="Highest"
@@ -129,8 +127,7 @@ export default function EatingDisordersPage() {
             changeText="1 in 5 deaths directly eating-disorder related"
             sparklineData={[1, 1.2, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9]}
             source="RANZCP · Mortality in Eating Disorders"
-            onExpand={() => {}}
-          />
+            href="#sec-diagnosis"/>
         </div>
         </ScrollReveal>
 

@@ -107,8 +107,7 @@ export default function AdultLiteracyLevelsPage() {
               polarity="up-is-bad"
               changeText="unchanged since 2011 &middot; no improvement in 13 years"
               sparklineData={[7.1, 7.0, 7.1, 7.1]}
-              onExpand={() => {}}
-              source="OECD &middot; PIAAC Survey / DfE Skills for Life 2024"
+              href="#sec-chart"source="OECD &middot; PIAAC Survey / DfE Skills for Life 2024"
             />
             <MetricCard
               label="Below Level 2 numeracy"
@@ -118,8 +117,7 @@ export default function AdultLiteracyLevelsPage() {
               polarity="up-is-bad"
               changeText="49% of working-age adults &middot; OECD below average"
               sparklineData={[16.8, 16.6, 17.0, 16.8]}
-              onExpand={() => {}}
-              source="OECD &middot; PIAAC Survey 2024"
+              href="#sec-chart"source="OECD &middot; PIAAC Survey 2024"
             />
             <MetricCard
               label="EU literacy ranking"
@@ -129,8 +127,7 @@ export default function AdultLiteracyLevelsPage() {
               polarity="up-is-bad"
               changeText="near bottom of EU literacy rankings &middot; skills emergency"
               sparklineData={[24, 24, 24, 24]}
-              onExpand={() => {}}
-              source="OECD &middot; PIAAC 2023 Survey"
+              href="#sec-chart"source="OECD &middot; PIAAC 2023 Survey"
             />
           </div>
         </ScrollReveal>

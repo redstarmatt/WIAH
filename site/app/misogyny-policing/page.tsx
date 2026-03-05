@@ -96,8 +96,7 @@ export default function MisogynyPolicingPage() {
               polarity={'up-is-good' as const}
               changeText="Down from 6.2% in 2015 — fewer than 1 in 30 reports"
               sparklineData={[6.2, 5.7, 5.3, 4.8, 4.4, 3.9, 3.6, 3.4, 3.3]}
-              onExpand={() => {}}
-              source="Crown Prosecution Service &middot; VAWG report"
+              href="#sec-chart"source="Crown Prosecution Service &middot; VAWG report"
             />
             <MetricCard
               label="Cases reaching court"
@@ -107,8 +106,7 @@ export default function MisogynyPolicingPage() {
               polarity={'up-is-good' as const}
               changeText="Of reported rapes result in a Crown Court hearing"
               sparklineData={[9.1, 8.8, 8.4, 7.9, 7.3, 6.8, 6.4, 6.2, 6.0]}
-              onExpand={() => {}}
-              source="Crown Prosecution Service &middot; VAWG report"
+              href="#sec-chart"source="Crown Prosecution Service &middot; VAWG report"
             />
             <MetricCard
               label="Average time from report to trial"
@@ -118,8 +116,7 @@ export default function MisogynyPolicingPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 29 months in 2015"
               sparklineData={[29, 31, 33, 35, 36, 38, 40, 41, 42]}
-              onExpand={() => {}}
-              source="HMCTS &middot; Criminal court statistics"
+              href="#sec-chart"source="HMCTS &middot; Criminal court statistics"
             />
           </div>
         </ScrollReveal>

@@ -33,7 +33,6 @@ export default function ViolenceAgainstNhsStaffPage() {
               changeText="+18% since 2019"
               sparklineData={[60000,62000,63000,65000,68000,70000,72000,74000,77000]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Staff feeling unsafe"
@@ -43,7 +42,6 @@ export default function ViolenceAgainstNhsStaffPage() {
               changeText="NHS Staff Survey"
               sparklineData={[10,10,11,11,12,12,13,14,15]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

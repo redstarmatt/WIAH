@@ -90,8 +90,7 @@ export default function ConcealedHomelessnessPage() {
               polarity="up-is-bad"
               changeText="10x rough sleeper count &middot; sofa-surfers + overcrowded"
               sparklineData={[320000, 340000, 360000, 370000, 380000, 350000, 360000, 390000, 400000]}
-              onExpand={() => {}}
-              source="Crisis / St Mungo&rsquo;s &middot; Hidden Homelessness 2023"
+              href="#sec-chart"source="Crisis / St Mungo&rsquo;s &middot; Hidden Homelessness 2023"
             />
             <MetricCard
               label="Temp accommodation"
@@ -101,8 +100,7 @@ export default function ConcealedHomelessnessPage() {
               polarity="up-is-bad"
               changeText="Record high &middot; families in B&Bs, hostels"
               sparklineData={[72310, 76440, 79000, 82500, 88000, 97000, 97100, 104000, 112000]}
-              onExpand={() => {}}
-              source="MHCLG &middot; Homelessness Statistics 2023"
+              href="#sec-chart"source="MHCLG &middot; Homelessness Statistics 2023"
             />
             <MetricCard
               label="Rough sleepers"
@@ -112,8 +110,7 @@ export default function ConcealedHomelessnessPage() {
               polarity="up-is-bad"
               changeText="35% rise since 2020 low"
               sparklineData={[3569, 4134, 4751, 4677, 4266, 2688, 2597, 3069, 3898]}
-              onExpand={() => {}}
-              source="MHCLG &middot; Rough Sleeping Snapshot 2023"
+              href="#sec-chart"source="MHCLG &middot; Rough Sleeping Snapshot 2023"
             />
           </div>
         </ScrollReveal>

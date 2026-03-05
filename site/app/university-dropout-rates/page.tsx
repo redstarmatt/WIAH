@@ -85,8 +85,7 @@ export default function UniversityDropoutRatesPage() {
               changeText="+1.2pp since 2020 · cost of living driver"
               sparklineData={[4.8, 4.9, 5.0, 5.1, 5.2, 5.5, 5.8, 6.0, 6.3]}
               source="HESA · Higher Education Student Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Dropout rate, disadvantaged students"
               value="12%"
@@ -95,8 +94,7 @@ export default function UniversityDropoutRatesPage() {
               changeText="12% vs 4.5% advantaged · widening gap"
               sparklineData={[8.5, 8.8, 9.0, 9.2, 9.5, 10.0, 10.8, 11.4, 12.0]}
               source="HESA · Higher Education Student Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Students withdrawn 2023"
               value="32,000"
@@ -105,8 +103,7 @@ export default function UniversityDropoutRatesPage() {
               changeText="+8,000 vs pre-pandemic"
               sparklineData={[20000, 21000, 22000, 24000, 25000, 27000, 28000, 30000, 32000]}
               source="HESA · Higher Education Student Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

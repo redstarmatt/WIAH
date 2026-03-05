@@ -33,7 +33,6 @@ export default function KinshipCareSupportPage() {
               changeText="rising as fostering declines"
               sparklineData={[140,145,150,155,160,165,170,175,180]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Kinship carers receiving allowance"
@@ -43,7 +42,6 @@ export default function KinshipCareSupportPage() {
               changeText="up from 15% in 2019"
               sparklineData={[15,16,17,17,18,19,19,20,22]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

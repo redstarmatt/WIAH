@@ -85,8 +85,7 @@ export default function ExercisePrescriptionPage() {
               polarity="up-is-good"
               changeText="Up 134% since 2018 &middot; NICE recommended"
               sparklineData={[290, 340, 210, 420, 560, 620, 680]}
-              onExpand={() => {}}
-              source="Sport England / NHS England &middot; 2024"
+              href="#sec-chart"source="Sport England / NHS England &middot; 2024"
             />
             <MetricCard
               label="Programme completion rate"
@@ -96,8 +95,7 @@ export default function ExercisePrescriptionPage() {
               polarity="up-is-good"
               changeText="Improving &middot; target 75%"
               sparklineData={[54, 56, 49, 58, 61, 63, 65]}
-              onExpand={() => {}}
-              source="Sport England &middot; Exercise Referral 2024"
+              href="#sec-callout"source="Sport England &middot; Exercise Referral 2024"
             />
             <MetricCard
               label="Cost vs medication"
@@ -107,8 +105,7 @@ export default function ExercisePrescriptionPage() {
               polarity="up-is-bad"
               changeText="vs £480 antidepressant &middot; 3x cheaper"
               sparklineData={[155, 157, 158, 159, 159, 160, 160]}
-              onExpand={() => {}}
-              source="NHS England &middot; Cost Analysis 2024"
+              href="#sec-callout"source="NHS England &middot; Cost Analysis 2024"
             />
           </div>
         </ScrollReveal>

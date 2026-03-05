@@ -33,7 +33,6 @@ export default function FiveGCoverageInequalityPage() {
               changeText="up from 0% in 2019"
               sparklineData={[0,5,12,20,28,35,40,45,50]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Rural 5G coverage"
@@ -43,7 +42,6 @@ export default function FiveGCoverageInequalityPage() {
               changeText="vs 65% urban"
               sparklineData={[0,0,1,2,4,6,7,9,12]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

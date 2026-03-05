@@ -79,8 +79,7 @@ export default function SchoolOvercrowdingPage() {
               changeText="+85k since 2019 · secondary peak approaching"
               sparklineData={[200000, 220000, 240000, 270000, 290000, 310000, 340000, 370000, 400000]}
               source="DfE · School Capacity Survey 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Secondary schools over capacity"
               value="22%"
@@ -89,8 +88,7 @@ export default function SchoolOvercrowdingPage() {
               changeText="22% of secondaries over capacity in 2024"
               sparklineData={[14, 15, 16, 17, 18, 19, 20, 21, 22]}
               source="DfE · School Capacity Survey 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="New school places created 2023"
               value="65,000"
@@ -99,8 +97,7 @@ export default function SchoolOvercrowdingPage() {
               changeText="65,000 new places · below 80,000/yr target"
               sparklineData={[82000, 80000, 78000, 76000, 72000, 55000, 60000, 68000, 65000]}
               source="DfE · Education and Skills Funding Agency 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

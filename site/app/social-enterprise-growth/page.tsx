@@ -99,8 +99,7 @@ export default function SocialEnterpriseGrowthPage() {
               polarity="up-is-good"
               changeText="+43% since 2015 &middot; growing movement"
               sparklineData={[70, 80, 90, 95, 98, 100]}
-              onExpand={() => {}}
-              source="Social Enterprise UK &middot; State of Social Enterprise 2023"
+              href="#sec-callout"source="Social Enterprise UK &middot; State of Social Enterprise 2023"
             />
             <MetricCard
               label="Annual turnover"
@@ -110,8 +109,7 @@ export default function SocialEnterpriseGrowthPage() {
               polarity="up-is-good"
               changeText="+36% since 2015 &middot; scale and impact"
               sparklineData={[44, 50, 55, 57, 59, 60]}
-              onExpand={() => {}}
-              source="Social Enterprise UK &middot; 2023"
+              href="#sec-chart"source="Social Enterprise UK &middot; 2023"
             />
             <MetricCard
               label="Employing disadvantaged workers"
@@ -121,8 +119,7 @@ export default function SocialEnterpriseGrowthPage() {
               polarity="up-is-good"
               changeText="of social enterprises prioritise disadvantaged workers"
               sparklineData={[38, 40, 41, 43, 44, 44]}
-              onExpand={() => {}}
-              source="Social Enterprise UK &middot; State of Social Enterprise 2023"
+              href="#sec-chart"source="Social Enterprise UK &middot; State of Social Enterprise 2023"
             />
           </div>
         </ScrollReveal>

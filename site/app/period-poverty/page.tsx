@@ -130,8 +130,7 @@ export default function PeriodPovertyPage() {
             }
             source="Plan International UK"
             baseline="Cost of living crisis has pushed more students into period poverty"
-            onExpand={() => {}}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="Girls who missed school due to period poverty"
             value="137,000"
@@ -142,8 +141,7 @@ export default function PeriodPovertyPage() {
             sparklineData={[137]}
             source="Plan International UK"
             baseline="Absence due to periods damages educational outcomes and life chances"
-            onExpand={() => {}}
-          />
+            href="#sec-charts"/>
           <MetricCard
             label="Schools participating in Period Products Scheme"
             value={latestSchools ? `${latestSchools.pct}%` : '—'}
@@ -162,8 +160,7 @@ export default function PeriodPovertyPage() {
             }
             source="Menstrual Products Access Scheme monitoring"
             baseline="Scotland: 100% coverage. England uptake remains incomplete."
-            onExpand={() => {}}
-          />
+            href="#sec-charts"/>
         </div>
         </ScrollReveal>
 

@@ -82,8 +82,7 @@ export default function RetrofitInsulationPage() {
               polarity="up-is-good"
               changeText="Steady improvement &middot; target 80% by 2035"
               sparklineData={[38, 39, 40, 41, 42, 44, 45, 46, 48]}
-              onExpand={() => {}}
-              source="DESNZ &middot; Energy Performance of Buildings 2023"
+              href="#sec-chart"source="DESNZ &middot; Energy Performance of Buildings 2023"
             />
             <MetricCard
               label="Retrofits per year"
@@ -93,8 +92,7 @@ export default function RetrofitInsulationPage() {
               polarity="up-is-good"
               changeText="Need 2 million p/a for net zero &middot; 8x shortfall"
               sparklineData={[380, 360, 340, 310, 290, 250, 270, 250, 250]}
-              onExpand={() => {}}
-              source="DESNZ / National Infrastructure Commission &middot; 2023"
+              href="#sec-chart"source="DESNZ / National Infrastructure Commission &middot; 2023"
             />
             <MetricCard
               label="EPC F/G rated homes"
@@ -104,8 +102,7 @@ export default function RetrofitInsulationPage() {
               polarity="up-is-bad"
               changeText="Privately rented sector still worst performing"
               sparklineData={[20, 19, 18, 17, 16, 15, 14, 13, 12]}
-              onExpand={() => {}}
-              source="DESNZ &middot; Energy Performance of Buildings 2023"
+              href="#sec-chart"source="DESNZ &middot; Energy Performance of Buildings 2023"
             />
           </div>
         </ScrollReveal>

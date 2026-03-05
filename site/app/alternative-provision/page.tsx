@@ -33,7 +33,6 @@ export default function AlternativeProvisionPage() {
               changeText="rising due to exclusions"
               sparklineData={[32000,33500,35000,36000,37000,38000,39000,40000,41000]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="AP pupils achieving grade 4+ English and Maths"
@@ -43,7 +42,6 @@ export default function AlternativeProvisionPage() {
               changeText="vs 65% mainstream"
               sparklineData={[3,3,3,4,4,4,4,4,4]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

@@ -95,8 +95,7 @@ export default function RentersReformPage() {
             changeText="Back to pre-COVID highs &middot; renters face no-fault eviction again"
             sparklineData={[20400, 22100, 23700, 24100, 7400, 13200, 24700, 26000]}
             source="MOJ Court Statistics &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-s21"/>
           <MetricCard
             label="Households made homeless via S21/yr"
             value="22,000"
@@ -106,8 +105,7 @@ export default function RentersReformPage() {
             changeText="Largest single driver of homelessness presentations"
             sparklineData={[20000, 21000, 16000, 21000, 22000]}
             source="DLUHC Homelessness Statistics &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-rent"/>
           <MetricCard
             label="Average private rent increase (2023)"
             value="8.9"
@@ -117,8 +115,7 @@ export default function RentersReformPage() {
             changeText="Largest annual increase on record &middot; tenants have no in-tenancy protection"
             sparklineData={[2.1, 1.4, 2.3, 4.1, 8.9]}
             source="ONS Private Rental Market Survey &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-rent"/>
         </div>
         </ScrollReveal>
 

@@ -71,8 +71,7 @@ export default function CarbonCaptureProgressPage() {
               changeText="Zero commercial CCS operational in UK"
               sparklineData={[0, 0, 0, 0, 0, 0, 0, 0, 0]}
               source="DESNZ · Carbon Capture Utilisation and Storage 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="2030 CCS capture target"
               value="20-30 Mt"
@@ -81,8 +80,7 @@ export default function CarbonCaptureProgressPage() {
               changeText="Target 20-30 MtCO2/yr by 2030 · off track"
               sparklineData={[0, 0, 0, 0, 0, 0, 0, 0, 0]}
               source="DESNZ · Net Zero Strategy 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Public investment committed"
               value="£22bn"
@@ -91,8 +89,7 @@ export default function CarbonCaptureProgressPage() {
               changeText="£22bn committed · Track-1 delayed to 2028-29"
               sparklineData={[0, 0, 1, 2, 4, 6, 10, 15, 22]}
               source="DESNZ · CCUS Programme Update 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

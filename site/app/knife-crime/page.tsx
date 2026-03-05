@@ -156,8 +156,7 @@ export default function KnifeCrimePage() {
                 data ? sparkFrom(data.hospitalAdmissions.map(d => d.admissions)) : []
               }
               source="NHS England · Hospital Episode Statistics, 2024/25"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Youth knife offences (under-18)"
               value={latestYouth ? latestYouth.offences.toLocaleString() : '8,319'}
@@ -173,8 +172,7 @@ export default function KnifeCrimePage() {
                 data ? data.youthKnifeCrime.map(d => d.offences) : []
               }
               source="Home Office · Police Recorded Crime, 2023/24"
-              onExpand={() => {}}
-            />
+              href="#sec-offences"/>
             <MetricCard
               label="Total knife offences"
               value={latestOffences ? latestOffences.offences.toLocaleString() : '51,527'}
@@ -190,8 +188,7 @@ export default function KnifeCrimePage() {
                 data ? sparkFrom(data.knifeCrime.map(d => d.offences)) : []
               }
               source="Home Office · Police Recorded Crime, year to Jun 2025"
-              onExpand={() => {}}
-            />
+              href="#sec-youth"/>
           </div>
         </ScrollReveal>
 

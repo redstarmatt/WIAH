@@ -85,8 +85,7 @@ export default function StemGenderGapPage() {
               changeText="+3pp since 2015 · still 28pp below boys"
               sparklineData={[19, 19, 20, 20, 20, 21, 21, 22, 22]}
               source="JCQ · A-level Results by Subject and Gender 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Girls in computing A-level"
               value="16%"
@@ -95,8 +94,7 @@ export default function StemGenderGapPage() {
               changeText="+7pp since 2015 · biggest growth from lowest base"
               sparklineData={[9, 10, 10, 11, 12, 13, 14, 15, 16]}
               source="JCQ · A-level Results by Subject and Gender 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Female STEM graduates"
               value="38%"
@@ -105,8 +103,7 @@ export default function StemGenderGapPage() {
               changeText="+6pp since 2015 · but tech sector 19% female"
               sparklineData={[32, 33, 33, 34, 34, 35, 36, 37, 38]}
               source="HESA · Higher Education Graduate Outcomes 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

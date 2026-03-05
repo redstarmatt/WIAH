@@ -33,7 +33,6 @@ export default function PetFoodBanksPage() {
               changeText="+500% since 2020"
               sparklineData={[50,55,80,120,160,200,240,280,320]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Pet owners unable to afford vet care"
@@ -43,7 +42,6 @@ export default function PetFoodBanksPage() {
               changeText="estimated"
               sparklineData={[0.8,0.9,1.0,1.2,1.4,1.5,1.7,1.8,2.0]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

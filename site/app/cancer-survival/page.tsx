@@ -106,8 +106,7 @@ export default function CancerSurvivalPage() {
               polarity="up-is-good"
               changeText="Up +9.2pp since 2005 &middot; one of NHS&rsquo;s biggest-ever improvements"
               sparklineData={[46.2, 48.1, 50.3, 52.0, 53.5, 54.8, 55.9, 56.7, 54.1, 55.4]}
-              onExpand={() => {}}
-            />
+              href="#sec-survival"/>
             <MetricCard
               label="Cancers diagnosed at stage 4"
               value="26"
@@ -116,8 +115,7 @@ export default function CancerSurvivalPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Target: stage 1&ndash;2 at 75% by 2028 &middot; Currently 43%"
               sparklineData={[22, 23, 23, 24, 24, 25, 25, 27, 26, 26]}
-              onExpand={() => {}}
-            />
+              href="#sec-one-year"/>
             <MetricCard
               label="Survival gap vs Sweden"
               value="9.8"
@@ -126,8 +124,7 @@ export default function CancerSurvivalPage() {
               polarity="up-is-bad"
               changeText="Sweden: 65.2% vs England: 55.4% five-year survival &middot; Gap persistent over 15 years"
               sparklineData={[11.2, 10.8, 10.5, 10.2, 10.0, 9.9, 9.8, 9.5, 10.1, 9.8]}
-              onExpand={() => {}}
-            />
+              href="#sec-europe"/>
           </div>
         </ScrollReveal>
 

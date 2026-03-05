@@ -98,8 +98,7 @@ export default function LocalPressClosuresPage() {
               polarity="up-is-bad"
               changeText="from 1,100 to 760 &middot; local accountability suffering"
               sparklineData={[1100, 1020, 940, 880, 820, 780, 740, 720, 780, 760]}
-              onExpand={() => {}}
-              source="Press Gazette &middot; Local News Index 2024"
+              href="#sec-chart"source="Press Gazette &middot; Local News Index 2024"
             />
             <MetricCard
               label="News desert communities"
@@ -109,8 +108,7 @@ export default function LocalPressClosuresPage() {
               polarity="up-is-bad"
               changeText="no local print or digital news &middot; democracy gap"
               sparklineData={[0, 0, 80, 130, 160, 190, 200, 210]}
-              onExpand={() => {}}
-              source="Reuters Institute &middot; UK Local News 2024"
+              href="#sec-chart"source="Reuters Institute &middot; UK Local News 2024"
             />
             <MetricCard
               label="BBC local stations"
@@ -120,8 +118,7 @@ export default function LocalPressClosuresPage() {
               polarity="up-is-bad"
               changeText="merged to regional hubs 2024 &middot; further local coverage loss"
               sparklineData={[38, 38, 38, 38, 38, 38, 38, 38]}
-              onExpand={() => {}}
-              source="BBC &middot; Local Radio Restructure 2024"
+              href="#sec-chart"source="BBC &middot; Local Radio Restructure 2024"
             />
           </div>
         </ScrollReveal>

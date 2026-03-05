@@ -122,8 +122,7 @@ export default function ImmigrationPage() {
               polarity="up-is-bad"
               changeText="Year to Dec 2023 &middot; Down from record 745K in 2022 &middot; Pre-Brexit average was ~250K &middot; ONS revised upwards significantly in 2023"
               sparklineData={[177, 209, 249, 322, 273, 282, 270, 271, 184, 488, 745, 685]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Asylum backlog (cases awaiting decision)"
               value="133K"
@@ -131,8 +130,7 @@ export default function ImmigrationPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Down from peak but still 3x pre-pandemic &middot; Rwanda policy blocked by courts &middot; Average wait: 2+ years"
               sparklineData={[30, 28, 24, 29, 38, 52, 76, 120, 133]}
-              onExpand={() => {}}
-            />
+              href="#sec-migration"/>
             <MetricCard
               label="Student visas granted"
               value="486K"
@@ -140,8 +138,7 @@ export default function ImmigrationPage() {
               polarity="up-is-bad"
               changeText="2022/23 &middot; Up 3x since 2019 &middot; Dependent visa changes Jan 2024 expected to cut numbers &middot; Universities warn of financial risk"
               sparklineData={[175, 228, 297, 289, 179, 379, 486, 460]}
-              onExpand={() => {}}
-            />
+              href="#sec-visas"/>
           </div>
         </ScrollReveal>
 

@@ -95,8 +95,7 @@ export default function SocialRentPage() {
             changeText="Was 152,000/yr in 1975 &mdash; a 96% collapse in supply"
             sparklineData={[152000, 88000, 28000, 17000, 9800, 7600, 8200, 7400, 5900, 6400]}
             source="DLUHC Housing Supply Statistics &middot; 2022"
-            onExpand={() => {}}
-          />
+            href="#sec-build"/>
           <MetricCard
             label="Average social rent vs market rent"
             value="£100"
@@ -106,8 +105,7 @@ export default function SocialRentPage() {
             changeText="Social rent saves tenants £130/wk vs private renting"
             sparklineData={[60, 65, 70, 75, 80, 85, 90, 95, 100]}
             source="DLUHC / VOA Rent Statistics &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-rents"/>
           <MetricCard
             label="Households on social housing waiting list"
             value="1.2m"
@@ -117,8 +115,7 @@ export default function SocialRentPage() {
             changeText="Average wait: 2.7 years &middot; some local authorities: 10+ years"
             sparklineData={[1850000, 1260000, 1151000, 1162000, 1208000]}
             source="DLUHC Live Tables &middot; 2022"
-            onExpand={() => {}}
-          />
+            href="#sec-waiting"/>
         </div>
         </ScrollReveal>
 

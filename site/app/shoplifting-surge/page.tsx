@@ -33,7 +33,6 @@ export default function ShopliftingSurgePage() {
               changeText="+30% in one year"
               sparklineData={[300,310,320,290,340,350,360,400,469]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Charge rate for shoplifting"
@@ -43,7 +42,6 @@ export default function ShopliftingSurgePage() {
               changeText="down from 18% in 2015"
               sparklineData={[18,17,16,15,15,14,13,13,12]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

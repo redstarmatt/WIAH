@@ -33,7 +33,6 @@ export default function WaterLeadPipesPage() {
               changeText="no national replacement programme"
               sparklineData={[9.5,9.3,9.1,8.9,8.7,8.5,8.3,8.1,8.0]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Schools with lead pipes tested"
@@ -43,7 +42,6 @@ export default function WaterLeadPipesPage() {
               changeText="most untested"
               sparklineData={[2,3,4,5,6,7,8,10,12]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

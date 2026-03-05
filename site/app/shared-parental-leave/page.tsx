@@ -85,8 +85,7 @@ export default function SharedParentalLeavePage() {
               polarity="up-is-good"
               changeText="tripled since 2015 &middot; but still tiny"
               sparklineData={[1.0, 1.5, 2.0, 2.5, 2.8, 2.9, 3.1, 3.4, 3.6]}
-              onExpand={() => {}}
-              source="HMRC &middot; Shared Parental Leave Statistics 2023"
+              href="#sec-chart"source="HMRC &middot; Shared Parental Leave Statistics 2023"
             />
             <MetricCard
               label="Fathers taking nothing"
@@ -96,8 +95,7 @@ export default function SharedParentalLeavePage() {
               polarity="up-is-bad"
               changeText="78% take no leave at all beyond 2 weeks"
               sparklineData={[80, 80, 79, 79, 79, 78, 78, 78, 78]}
-              onExpand={() => {}}
-              source="TUC &middot; Parental Leave Survey 2023"
+              href="#sec-chart"source="TUC &middot; Parental Leave Survey 2023"
             />
             <MetricCard
               label="Statutory pay"
@@ -107,8 +105,7 @@ export default function SharedParentalLeavePage() {
               polarity="up-is-good"
               changeText="same as 2015 in nominal terms &middot; real cut &middot; too low for primary earners"
               sparklineData={[139, 140, 145, 148, 151, 156, 172, 156, 184]}
-              onExpand={() => {}}
-              source="DWP &middot; Statutory Payment Rates 2024"
+              href="#sec-chart"source="DWP &middot; Statutory Payment Rates 2024"
             />
           </div>
         </ScrollReveal>

@@ -33,7 +33,6 @@ export default function NhsEstateBacklogPage() {
               changeText="up from £6bn in 2017"
               sparklineData={[6.0,6.5,7.2,7.9,8.6,9.2,10.0,10.8,11.6]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="High-risk backlog share"
@@ -43,7 +42,6 @@ export default function NhsEstateBacklogPage() {
               changeText="posing patient safety risk"
               sparklineData={[12,13,14,15,16,17,18,19,20]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

@@ -94,8 +94,7 @@ export default function Nhs111PressuresPage() {
               polarity={'up-is-bad' as const}
               changeText="+117% since 2015"
               sparklineData={[12.1, 13.4, 14.8, 16.2, 17.9, 22.4, 21.8, 24.1, 26.3]}
-              onExpand={() => {}}
-              source="NHS England &middot; NHS 111 Statistical Release"
+              href="#sec-chart"source="NHS England &middot; NHS 111 Statistical Release"
             />
             <MetricCard
               label="Abandoned calls"
@@ -105,8 +104,7 @@ export default function Nhs111PressuresPage() {
               polarity={'up-is-bad' as const}
               changeText="1 in 7 hang up before answered"
               sparklineData={[8.2, 7.9, 8.5, 9.1, 9.8, 14.2, 12.6, 13.8, 15.2]}
-              onExpand={() => {}}
-              source="NHS England &middot; NHS 111 Statistical Release"
+              href="#sec-chart"source="NHS England &middot; NHS 111 Statistical Release"
             />
             <MetricCard
               label="Referred to ED"
@@ -116,8 +114,7 @@ export default function Nhs111PressuresPage() {
               polarity={'up-is-bad' as const}
               changeText="111 calls escalating to A&amp;E attendance"
               sparklineData={[6, 6, 7, 7, 7, 8, 8, 8, 8]}
-              onExpand={() => {}}
-              source="NHS England &middot; NHS 111 Statistical Release"
+              href="#sec-chart"source="NHS England &middot; NHS 111 Statistical Release"
             />
           </div>
         </ScrollReveal>

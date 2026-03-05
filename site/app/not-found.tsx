@@ -3,37 +3,34 @@ import SiteName from '@/components/SiteName';
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen flex flex-col">
-      {/* Nav */}
-      <nav className="bg-white border-b border-wiah-border px-4 sm:px-6 py-3">
+    <>
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-wiah-border px-6 py-3">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Link href="/">
-            <SiteName size="nav" />
-          </Link>
-          <Link href="/" className="text-sm text-wiah-blue hover:underline">
-            ← All topics
-          </Link>
+          <Link href="/"><SiteName size="nav" /></Link>
+          <Link href="/" className="text-sm text-wiah-blue hover:underline">← All topics</Link>
         </div>
       </nav>
-
-      {/* Hero */}
-      <section className="bg-wiah-dark text-white px-6 py-20 flex-1 flex items-center">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="font-mono text-wiah-mid text-sm mb-4 tracking-widest uppercase">404</p>
-          <h1 className="font-editorial text-4xl md:text-5xl mb-4 leading-tight">
-            What is <strong><em>actually</em></strong> here?
-          </h1>
-          <p className="text-white/60 text-base leading-relaxed mb-10">
-            This page doesn&apos;t exist &mdash; but the data does. Try searching for what you&apos;re looking for.
-          </p>
-          <Link
-            href="/"
-            className="inline-block font-mono text-sm bg-white text-wiah-dark px-6 py-3 hover:bg-white/90 transition-colors"
-          >
-            ← Back to all topics
-          </Link>
+      <main className="max-w-5xl mx-auto px-6 py-24 text-center">
+        <p className="font-mono text-[13px] text-wiah-mid mb-4">404</p>
+        <h1 className="text-4xl font-extrabold text-wiah-black mb-4">
+          Page not found
+        </h1>
+        <p className="text-base text-wiah-mid leading-[1.7] max-w-md mx-auto mb-10">
+          This page doesn&apos;t exist. The topic may have moved or the URL may be incorrect.
+        </p>
+        <Link
+          href="/"
+          className="inline-block px-6 py-3 bg-wiah-dark text-white text-sm font-mono rounded hover:bg-wiah-black transition-colors"
+        >
+          Browse all topics
+        </Link>
+      </main>
+      <footer className="border-t border-wiah-border py-5 px-6">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-wiah-mid">
+          <SiteName size="nav" />
+          <p className="font-mono text-xs">Open data. No cookies. No agenda.</p>
         </div>
-      </section>
-    </main>
+      </footer>
+    </>
   );
 }

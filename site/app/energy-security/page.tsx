@@ -96,8 +96,7 @@ export default function EnergySecurityPage() {
               changeText="Germany has 90 days; EU average 65 days"
               sparklineData={[15, 15, 15]}
               source="DESNZ, Eurostat"
-              onExpand={() => {}}
-            />
+              href="#sec-trends"/>
             <MetricCard
               label="UK energy imports as % of total supply"
               value="36"
@@ -107,8 +106,7 @@ export default function EnergySecurityPage() {
               changeText="Up from 26% in 2015"
               sparklineData={importSparkline}
               source="DESNZ Energy Trends"
-              onExpand={() => {}}
-            />
+              href="#sec-pricing"/>
             <MetricCard
               label="Government cost of Energy Price Guarantee"
               value="&pound;40bn"
@@ -117,8 +115,7 @@ export default function EnergySecurityPage() {
               changeText="2022/23; largest peacetime energy subsidy"
               sparklineData={[0, 15, 40, 35]}
               source="Office for Budget Responsibility"
-              onExpand={() => {}}
-            />
+              href="#sec-supply"/>
           </div>
         </div>
       </section>

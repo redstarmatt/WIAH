@@ -93,8 +93,7 @@ export default function SocialCareWorkforceCrisisPage() {
               polarity="up-is-bad"
               changeText="slight improvement from 10.6% peak &middot; 152k vacancies"
               sparklineData={[5.8, 6.2, 6.8, 7.1, 7.8, 7.0, 9.5, 10.6, 9.9]}
-              onExpand={() => {}}
-              source="Skills for Care &middot; State of the Workforce 2023"
+              href="#sec-chart"source="Skills for Care &middot; State of the Workforce 2023"
             />
             <MetricCard
               label="Annual turnover rate"
@@ -104,8 +103,7 @@ export default function SocialCareWorkforceCrisisPage() {
               polarity="up-is-bad"
               changeText="nearly 1 in 3 workers leaves annually &middot; workforce instability"
               sparklineData={[27.0, 27.4, 27.6, 27.8, 28.1, 27.5, 28.0, 28.5, 28.3]}
-              onExpand={() => {}}
-              source="Skills for Care &middot; State of the Workforce 2023"
+              href="#sec-chart"source="Skills for Care &middot; State of the Workforce 2023"
             />
             <MetricCard
               label="International recruitment"
@@ -115,8 +113,7 @@ export default function SocialCareWorkforceCrisisPage() {
               polarity="up-is-good"
               changeText="overseas workers filling gap &middot; ethical concerns remain"
               sparklineData={[25000, 26000, 27000, 28000, 30000, 30000, 40000, 70000, 70000]}
-              onExpand={() => {}}
-              source="Home Office / Skills for Care &middot; 2023"
+              href="#sec-chart"source="Home Office / Skills for Care &middot; 2023"
             />
           </div>
         </ScrollReveal>

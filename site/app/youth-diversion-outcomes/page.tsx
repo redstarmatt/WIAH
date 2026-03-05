@@ -105,8 +105,7 @@ export default function YouthDiversionOutcomesPage() {
               polarity={'up-is-good' as const}
               changeText="From 38% reoffending rate in 2010 to 25% in 2024"
               sparklineData={[38, 37, 36, 35, 34, 33, 32, 30, 29]}
-              onExpand={() => {}}
-              source="Ministry of Justice &middot; Youth Justice Statistics"
+              href="#sec-chart"source="Ministry of Justice &middot; Youth Justice Statistics"
             />
             <MetricCard
               label="Young people in custody"
@@ -116,8 +115,7 @@ export default function YouthDiversionOutcomesPage() {
               polarity={'up-is-good' as const}
               changeText="Down from 2,970 in 2010"
               sparklineData={[2970, 2592, 2187, 1782, 1296, 1053, 864, 720, 621]}
-              onExpand={() => {}}
-              source="Youth Justice Board &middot; Youth custody report"
+              href="#sec-chart"source="Youth Justice Board &middot; Youth custody report"
             />
             <MetricCard
               label="First-time entrants to CJS"
@@ -127,8 +125,7 @@ export default function YouthDiversionOutcomesPage() {
               polarity={'up-is-good' as const}
               changeText="Down from 80,400 in 2010"
               sparklineData={[80400, 69200, 57800, 47300, 36900, 29200, 22800, 18600, 15200]}
-              onExpand={() => {}}
-              source="Ministry of Justice &middot; Youth Justice Statistics"
+              href="#sec-chart"source="Ministry of Justice &middot; Youth Justice Statistics"
             />
           </div>
         </ScrollReveal>

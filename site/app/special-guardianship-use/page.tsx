@@ -97,8 +97,7 @@ export default function SpecialGuardianshipUsePage() {
               polarity="up-is-good"
               changeText="growing permanence route &middot; less disruption than care"
               sparklineData={[12000, 17000, 22000, 27000, 31000, 34000, 36000]}
-              onExpand={() => {}}
-              source="DfE &middot; Children Looked After Statistics 2023"
+              href="#sec-chart"source="DfE &middot; Children Looked After Statistics 2023"
             />
             <MetricCard
               label="Adoptions per year"
@@ -108,8 +107,7 @@ export default function SpecialGuardianshipUsePage() {
               polarity="up-is-good"
               changeText="-43% since 2012 &middot; process too slow and risky for carers"
               sparklineData={[5050, 5050, 4690, 3820, 3152, 2985, 2880]}
-              onExpand={() => {}}
-              source="DfE &middot; Children Looked After Statistics 2023"
+              href="#sec-callout"source="DfE &middot; Children Looked After Statistics 2023"
             />
             <MetricCard
               label="Kinship carers with no support"
@@ -119,8 +117,7 @@ export default function SpecialGuardianshipUsePage() {
               polarity="up-is-bad"
               changeText="44% of kinship carers receive no financial or practical support"
               sparklineData={[44, 44, 44, 44, 44, 44]}
-              onExpand={() => {}}
-              source="Kinship &middot; State of Kinship Care Survey 2023"
+              href="#sec-callout"source="Kinship &middot; State of Kinship Care Survey 2023"
             />
           </div>
         </ScrollReveal>

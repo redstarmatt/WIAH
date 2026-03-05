@@ -90,8 +90,7 @@ export default function EatingDisorderWaitingPage() {
               polarity="up-is-good"
               changeText="Target 95% &middot; 38% missing one-week standard"
               sparklineData={[72, 68, 61, 57, 54, 59, 62]}
-              onExpand={() => {}}
-              source="NHS England &middot; Eating Disorder Waiting Times 2024"
+              href="#sec-chart"source="NHS England &middot; Eating Disorder Waiting Times 2024"
             />
             <MetricCard
               label="Routine target met (4 weeks)"
@@ -101,8 +100,7 @@ export default function EatingDisorderWaitingPage() {
               polarity="up-is-good"
               changeText="Target 95% &middot; less than half get timely care"
               sparklineData={[62, 59, 53, 48, 44, 45, 47]}
-              onExpand={() => {}}
-              source="NHS England &middot; Eating Disorder Waiting Times 2024"
+              href="#sec-chart"source="NHS England &middot; Eating Disorder Waiting Times 2024"
             />
             <MetricCard
               label="Inpatient beds per 1m"
@@ -112,8 +110,7 @@ export default function EatingDisorderWaitingPage() {
               polarity="up-is-good"
               changeText="Slight increase &middot; still below 2015 levels"
               sparklineData={[5.8, 5.9, 5.6, 5.8, 6.0, 6.2, 6.3]}
-              onExpand={() => {}}
-              source="NHS England &middot; Mental Health Dashboard 2024"
+              href="#sec-chart"source="NHS England &middot; Mental Health Dashboard 2024"
             />
           </div>
         </ScrollReveal>

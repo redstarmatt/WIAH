@@ -96,8 +96,7 @@ export default function FarmingSubsidiesPage() {
             changeText="Down from £1.9bn/yr peak &middot; phasing out 2021&ndash;2028 transition"
             sparklineData={[2.4, 1.9, 1.8, 1.9, 1.5, 0.8]}
             source="DEFRA Farm Accounts &middot; 2024"
-            onExpand={() => {}}
-          />
+            href="#sec-bps"/>
           <MetricCard
             label="ELMs uptake"
             value="8"
@@ -107,8 +106,7 @@ export default function FarmingSubsidiesPage() {
             changeText="Growing from near-zero in 2022 &middot; government wants rapid expansion"
             sparklineData={[0.5, 2.0, 8.0]}
             source="DEFRA &middot; 2024"
-            onExpand={() => {}}
-          />
+            href="#sec-income"/>
           <MetricCard
             label="Real farm income change since 2010"
             value="-29"
@@ -118,8 +116,7 @@ export default function FarmingSubsidiesPage() {
             changeText="BPS reduction + input cost inflation squeezing margins"
             sparklineData={[100, 92, 81, 86, 89, 79, 71]}
             source="DEFRA Farm Business Survey &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-distribution"/>
         </div>
         </ScrollReveal>
 

@@ -99,8 +99,7 @@ export default function FaithCommunityTrendsPage() {
               polarity="up-is-good"
               changeText="majority non-religious &middot; 2021 census landmark"
               sparklineData={[14.8, 25.1, 38.0, 43.1, 53.3, 55.0]}
-              onExpand={() => {}}
-              source="ONS &middot; Census 2021 / British Social Attitudes 2023"
+              href="#sec-chart"source="ONS &middot; Census 2021 / British Social Attitudes 2023"
             />
             <MetricCard
               label="Weekly attendance"
@@ -110,8 +109,7 @@ export default function FaithCommunityTrendsPage() {
               polarity="up-is-good"
               changeText="from 15% in 2001 &middot; rapid secularisation"
               sparklineData={[15, 10, 8, 7, 6, 6]}
-              onExpand={() => {}}
-              source="Church of England / British Social Attitudes 2023"
+              href="#sec-chart"source="Church of England / British Social Attitudes 2023"
             />
             <MetricCard
               label="Faith charity value"
@@ -121,8 +119,7 @@ export default function FaithCommunityTrendsPage() {
               polarity="up-is-good"
               changeText="faith organisations still major social infrastructure"
               sparklineData={[11, 11, 12, 12, 12, 12]}
-              onExpand={() => {}}
-              source="Church Urban Fund / NCVO &middot; 2023"
+              href="#sec-chart"source="Church Urban Fund / NCVO &middot; 2023"
             />
           </div>
         </ScrollReveal>

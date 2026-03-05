@@ -33,7 +33,6 @@ export default function PavementParkingPage() {
               changeText="reporting pavement access issues"
               sparklineData={[78,78,79,79,79,80,80,80,80]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Councils with pavement parking enforcement"
@@ -43,7 +42,6 @@ export default function PavementParkingPage() {
               changeText="up from 8% in 2019"
               sparklineData={[8,9,10,11,12,13,14,16,18]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

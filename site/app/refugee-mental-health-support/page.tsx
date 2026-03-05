@@ -95,8 +95,7 @@ export default function RefugeeMentalHealthSupportPage() {
               polarity={'up-is-bad' as const}
               changeText="Consistent across clinical studies"
               sparklineData={[65, 66, 66, 67, 67, 67, 68, 68, 68]}
-              onExpand={() => {}}
-              source="Refugee Council &middot; Mind &middot; British Red Cross"
+              href="#sec-chart"source="Refugee Council &middot; Mind &middot; British Red Cross"
             />
             <MetricCard
               label="Accessing specialist support"
@@ -106,8 +105,7 @@ export default function RefugeeMentalHealthSupportPage() {
               polarity={'up-is-good' as const}
               changeText="Down from 18% in 2016"
               sparklineData={[18, 17, 16, 16, 15, 15, 15, 15, 15]}
-              onExpand={() => {}}
-              source="NHS Digital &middot; Refugee Council"
+              href="#sec-chart"source="NHS Digital &middot; Refugee Council"
             />
             <MetricCard
               label="Average wait for IAPT"
@@ -117,8 +115,7 @@ export default function RefugeeMentalHealthSupportPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 10 weeks in 2016"
               sparklineData={[10, 11, 12, 13, 16, 17, 18, 18, 18]}
-              onExpand={() => {}}
-              source="NHS Digital &middot; Talking Therapies report"
+              href="#sec-chart"source="NHS Digital &middot; Talking Therapies report"
             />
           </div>
         </ScrollReveal>

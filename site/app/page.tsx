@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import SiteName from '@/components/SiteName';
 import FeaturedFindings from '@/components/FeaturedFindings';
 import TopicBrowser from '@/components/TopicBrowser';
@@ -17,7 +18,7 @@ export default function HomePage() {
           </h1>
 
           <p className="font-editorial italic text-white/70 text-base md:text-lg mb-6 leading-relaxed">
-            Public data. Public understanding. No noise, just signal.
+            Public data. Public understanding.
           </p>
 
           {/* Hero search + chips */}
@@ -45,9 +46,12 @@ export default function HomePage() {
       <footer className="border-t border-wiah-border py-5 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-wiah-mid">
           <SiteName size="nav" />
-          <p className="font-mono text-xs">
-            Open data. No agenda.
-          </p>
+          <nav className="flex items-center gap-4 font-mono text-xs">
+            <Link href="/about" className="hover:text-wiah-black transition-colors">About</Link>
+            <Link href="/privacy" className="hover:text-wiah-black transition-colors">Privacy</Link>
+            <Link href="/contact" className="hover:text-wiah-black transition-colors">Contact</Link>
+            <span>Open data. No cookies. No agenda.</span>
+          </nav>
         </div>
       </footer>
     </main>

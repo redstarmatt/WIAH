@@ -86,8 +86,7 @@ export default function GamblingHarmTreatmentPage() {
               polarity="up-is-good"
               changeText="From 2 in 2019 &middot; target 15 achieved"
               sparklineData={[2, 3, 7, 11, 15, 15]}
-              onExpand={() => {}}
-              source="NHS England &middot; Gambling Clinics 2024"
+              href="#sec-chart"source="NHS England &middot; Gambling Clinics 2024"
             />
             <MetricCard
               label="Treatment capacity"
@@ -97,8 +96,7 @@ export default function GamblingHarmTreatmentPage() {
               polarity="up-is-good"
               changeText="7.5x expansion since 2019"
               sparklineData={[800, 1200, 2800, 4400, 6000, 6200]}
-              onExpand={() => {}}
-              source="NHS England &middot; Gambling Clinics 2024"
+              href="#sec-callout"source="NHS England &middot; Gambling Clinics 2024"
             />
             <MetricCard
               label="% problem gamblers treated"
@@ -108,8 +106,7 @@ export default function GamblingHarmTreatmentPage() {
               polarity="up-is-good"
               changeText="Still only 1 in 48 getting help"
               sparklineData={[0.2, 0.4, 0.9, 1.5, 2.0, 2.1]}
-              onExpand={() => {}}
-              source="NHS England / Gambling Commission 2024"
+              href="#sec-callout"source="NHS England / Gambling Commission 2024"
             />
           </div>
         </ScrollReveal>

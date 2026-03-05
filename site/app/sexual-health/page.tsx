@@ -117,8 +117,7 @@ export default function SexualHealthPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Returned to pre-COVID levels &middot; Gonorrhoea &amp; syphilis surging"
               sparklineData={[436, 435, 420, 423, 449, 468, 318, 389, 401, 416, 432]}
-              onExpand={() => {}}
-            />
+              href="#sec-sti"/>
             <MetricCard
               label="Sexual health clinics remaining"
               value="176"
@@ -126,8 +125,7 @@ export default function SexualHealthPage() {
               polarity="up-is-good"
               changeText="2024 &middot; Down from 297 in 2014 &middot; 41% reduction in a decade"
               sparklineData={[297, 285, 264, 241, 228, 218, 209, 198, 189, 182, 176]}
-              onExpand={() => {}}
-            />
+              href="#sec-clinics"/>
             <MetricCard
               label="Gonorrhoea rate"
               value="124"
@@ -136,8 +134,7 @@ export default function SexualHealthPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Nearly doubled since 2014 &middot; Antibiotic resistance growing"
               sparklineData={[67, 73, 65, 78, 99, 110, 73, 96, 113, 118, 124]}
-              onExpand={() => {}}
-            />
+              href="#sec-gonorrhoea"/>
           </div>
         </ScrollReveal>
 
