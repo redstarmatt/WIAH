@@ -16,7 +16,7 @@ export default function HomePage() {
             <SiteName size="hero" />
           </h1>
 
-          <p className="font-editorial italic text-white/50 text-base md:text-lg mb-10 leading-relaxed">
+          <p className="font-editorial italic text-white/70 text-base md:text-lg mb-10 leading-relaxed">
             The numbers behind Britain&rsquo;s biggest questions.
             <br className="hidden sm:block" />
             No headlines. No spin. Just ask.
@@ -26,7 +26,7 @@ export default function HomePage() {
           <HeroSearch />
 
           {/* Subtle stats footnote */}
-          <p className="mt-8 font-mono text-xs text-white/20">
+          <p className="mt-8 font-mono text-xs text-white/50">
             {total} indicators · {topicCount} topics · updated weekly
           </p>
         </div>

@@ -13,7 +13,7 @@ const CHIPS = [
 ];
 
 export default function HeroSearch() {
-  const { open } = useSearch();
+  const { openWithQuery } = useSearch();
 
   return (
     <div>
@@ -24,8 +24,8 @@ export default function HeroSearch() {
         {CHIPS.map((q) => (
           <button
             key={q}
-            onClick={open}
-            className="font-mono text-xs text-white/35 hover:text-white/60 px-3 py-1.5 rounded-full border border-white/10 hover:border-white/25 transition-all cursor-pointer"
+            onClick={() => openWithQuery(q)}
+            className="font-mono text-xs text-white/60 hover:text-white/90 px-3 py-1.5 rounded-full border border-white/25 hover:border-white/50 transition-all cursor-pointer"
           >
             {q}
           </button>
