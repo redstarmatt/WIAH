@@ -162,25 +162,45 @@ export default function CoastalCommunitiesPage() {
               <p className="text-sm text-wiah-mid mb-6">Coastal areas consistently show higher deprivation across multiple measures</p>
               <div className="bg-white rounded-lg border border-wiah-border p-6">
                 {data ? (
-                  <div className="space-y-4">
-                    {data.national.byIndicator.map(d => (
-                      <div key={d.indicator}>
-                        <div className="flex justify-between text-sm mb-1">
-                          <span className="text-wiah-black">{d.indicator}</span>
-                          <span className="font-mono text-wiah-mid">Coastal: {d.coastalPct}% / National: {d.nationalPct}%</span>
+                  (() => {
+                    const maxPct = Math.max(...data.national.byIndicator.flatMap(d => [d.coastalPct, d.nationalPct]));
+                    return (
+                      <div className="space-y-5">
+                        <div className="flex gap-5 font-mono text-[11px] text-wiah-mid mb-1">
+                          <span className="flex items-center gap-1.5">
+                            <span className="inline-block w-3 h-2 rounded-sm" style={{ backgroundColor: '#264653' }} />
+                            Coastal
+                          </span>
+                          <span className="flex items-center gap-1.5">
+                            <span className="inline-block w-3 h-2 rounded-sm bg-wiah-mid" style={{ opacity: 0.4 }} />
+                            National
+                          </span>
                         </div>
-                        <div className="relative h-2 bg-wiah-border rounded-full overflow-hidden">
-                          <div
-                            className="h-full rounded-full"
-                            style={{
-                              width: `${d.coastalPct}%`,
-                              backgroundColor: '#264653',
-                            }}
-                          />
-                        </div>
+                        {data.national.byIndicator.map(d => (
+                          <div key={d.indicator}>
+                            <div className="flex justify-between text-sm mb-1.5">
+                              <span className="text-wiah-black">{d.indicator}</span>
+                              <span className="font-mono text-wiah-mid">Coastal: {d.coastalPct}% · National: {d.nationalPct}%</span>
+                            </div>
+                            <div className="space-y-1">
+                              <div className="relative h-2 bg-wiah-border rounded-full overflow-hidden">
+                                <div
+                                  className="h-full rounded-full"
+                                  style={{ width: `${(d.coastalPct / maxPct) * 100}%`, backgroundColor: '#264653' }}
+                                />
+                              </div>
+                              <div className="relative h-2 bg-wiah-border rounded-full overflow-hidden">
+                                <div
+                                  className="h-full rounded-full"
+                                  style={{ width: `${(d.nationalPct / maxPct) * 100}%`, backgroundColor: '#6B7280', opacity: 0.5 }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    );
+                  })()
                 ) : (
                   <div className="text-wiah-mid">Loading...</div>
                 )}
