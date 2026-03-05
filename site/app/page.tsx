@@ -46,7 +46,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-wiah-mid">
           <SiteName size="nav" />
           <p className="font-mono text-xs">
-            Open data. No cookies. No agenda.
+            Open data. No agenda.
           </p>
         </div>
       </footer>
