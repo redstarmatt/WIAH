@@ -1,6 +1,6 @@
 {
   "topic": "crime-trends",
-  "lastUpdated": "2026-03-02",
+  "lastUpdated": "2026-03-03",
   "crimeTrends": {
     "violence": {
       "label": "TOTAL VIOLENCE AGAINST THE PERSON",
@@ -1271,14 +1271,773 @@
         "dataset": "Crime in England and Wales, Appendix Tables (Table A5a)",
         "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/crimeinenglandandwalesappendixtables",
         "frequency": "quarterly"
+      },
+      {
+        "name": "ONS \u2014 Crime Survey for England and Wales (CSEW)",
+        "dataset": "Crime in England and Wales, Appendix Tables (Tables A2a, A3a)",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/crimeinenglandandwalesappendixtables",
+        "frequency": "quarterly"
       }
     ],
-    "methodology": "Police recorded crime by offence category, annual financial years (April to March). Crime recording practices have changed significantly over this period \u2014 particularly in 2014 when the National Crime Recording Standard was tightened, leading to apparent increases in violence and sexual offences. Figures are not directly comparable across the full time period.",
+    "methodology": "Police recorded crime by offence category, annual financial years (April to March). Crime recording practices have changed significantly over this period \u2014 particularly in 2014 when the National Crime Recording Standard was tightened, leading to apparent increases in violence and sexual offences. Figures are not directly comparable across the full time period. CSEW data shows estimated incidents experienced by adults aged 16+ in England and Wales, regardless of whether they were reported to police. Rates are per 1,000 adults.",
     "knownIssues": [
       "Recording practice changes in 2014 inflated violence and sexual offence figures",
       "Fraud reporting changed with Action Fraud in 2013-14",
       "COVID-19 affected crime patterns in 2020/21",
-      "Burglary definition changed in April 2017 (domestic \u2192 residential)"
+      "Burglary definition changed in April 2017 (domestic \u2192 residential)",
+      "CSEW was suspended in 2020/21 and 2021/22 due to COVID \u2014 data gap in those years",
+      "CSEW early years (1981\u20131999) used calendar year surveys; later moved to financial year"
     ]
+  },
+  "csewSurvey": {
+    "total": [
+      {
+        "period": "1981",
+        "incidentsMn": 27.7
+      },
+      {
+        "period": "1983",
+        "incidentsMn": 29.9
+      },
+      {
+        "period": "1987",
+        "incidentsMn": 32.5
+      },
+      {
+        "period": "1991",
+        "incidentsMn": 34.9
+      },
+      {
+        "period": "1993",
+        "incidentsMn": 39.4
+      },
+      {
+        "period": "1995",
+        "incidentsMn": 39.5
+      },
+      {
+        "period": "1997",
+        "incidentsMn": 34.5
+      },
+      {
+        "period": "1999",
+        "incidentsMn": 30.8
+      },
+      {
+        "period": "2001/02",
+        "incidentsMn": 27.7
+      },
+      {
+        "period": "2002/03",
+        "incidentsMn": 26.8
+      },
+      {
+        "period": "2003/04",
+        "incidentsMn": 25.6
+      },
+      {
+        "period": "2004/05",
+        "incidentsMn": 23.9
+      },
+      {
+        "period": "2005/06",
+        "incidentsMn": 23.5
+      },
+      {
+        "period": "2006/07",
+        "incidentsMn": 24.5
+      },
+      {
+        "period": "2007/08",
+        "incidentsMn": 22.2
+      },
+      {
+        "period": "2008/09",
+        "incidentsMn": 23.3
+      },
+      {
+        "period": "2009/10",
+        "incidentsMn": 21.4
+      },
+      {
+        "period": "2010/11",
+        "incidentsMn": 21.4
+      },
+      {
+        "period": "2011/12",
+        "incidentsMn": 21.3
+      },
+      {
+        "period": "2012/13",
+        "incidentsMn": 18.7
+      },
+      {
+        "period": "2013/14",
+        "incidentsMn": 17.0
+      },
+      {
+        "period": "2014/15",
+        "incidentsMn": 15.9
+      },
+      {
+        "period": "2015/16",
+        "incidentsMn": 15.2
+      },
+      {
+        "period": "2016/17",
+        "incidentsMn": 14.0
+      },
+      {
+        "period": "2017/18",
+        "incidentsMn": 14.4
+      },
+      {
+        "period": "2018/19",
+        "incidentsMn": 14.9
+      },
+      {
+        "period": "2019/20",
+        "incidentsMn": 13.3
+      },
+      {
+        "period": "2022/23",
+        "incidentsMn": 10.1
+      },
+      {
+        "period": "2023/24",
+        "incidentsMn": 10.1
+      },
+      {
+        "period": "2024/25",
+        "incidentsMn": 10.2
+      }
+    ],
+    "rates": {
+      "violence": {
+        "label": "Violence",
+        "timeSeries": [
+          {
+            "period": "1981",
+            "ratePer1000": 53.3
+          },
+          {
+            "period": "1983",
+            "ratePer1000": 51.5
+          },
+          {
+            "period": "1987",
+            "ratePer1000": 56.6
+          },
+          {
+            "period": "1991",
+            "ratePer1000": 71.6
+          },
+          {
+            "period": "1993",
+            "ratePer1000": 93.0
+          },
+          {
+            "period": "1995",
+            "ratePer1000": 109.7
+          },
+          {
+            "period": "1997",
+            "ratePer1000": 91.4
+          },
+          {
+            "period": "1999",
+            "ratePer1000": 81.7
+          },
+          {
+            "period": "2001/02",
+            "ratePer1000": 62.4
+          },
+          {
+            "period": "2002/03",
+            "ratePer1000": 62.6
+          },
+          {
+            "period": "2003/04",
+            "ratePer1000": 56.8
+          },
+          {
+            "period": "2004/05",
+            "ratePer1000": 52.5
+          },
+          {
+            "period": "2005/06",
+            "ratePer1000": 52.7
+          },
+          {
+            "period": "2006/07",
+            "ratePer1000": 53.7
+          },
+          {
+            "period": "2007/08",
+            "ratePer1000": 46.0
+          },
+          {
+            "period": "2008/09",
+            "ratePer1000": 43.5
+          },
+          {
+            "period": "2009/10",
+            "ratePer1000": 42.1
+          },
+          {
+            "period": "2010/11",
+            "ratePer1000": 48.2
+          },
+          {
+            "period": "2011/12",
+            "ratePer1000": 43.9
+          },
+          {
+            "period": "2012/13",
+            "ratePer1000": 43.1
+          },
+          {
+            "period": "2013/14",
+            "ratePer1000": 34.5
+          },
+          {
+            "period": "2014/15",
+            "ratePer1000": 37.9
+          },
+          {
+            "period": "2015/16",
+            "ratePer1000": 32.0
+          },
+          {
+            "period": "2016/17",
+            "ratePer1000": 31.0
+          },
+          {
+            "period": "2017/18",
+            "ratePer1000": 30.6
+          },
+          {
+            "period": "2018/19",
+            "ratePer1000": 28.7
+          },
+          {
+            "period": "2019/20",
+            "ratePer1000": 26.3
+          },
+          {
+            "period": "2022/23",
+            "ratePer1000": 20.9
+          },
+          {
+            "period": "2023/24",
+            "ratePer1000": 23.4
+          },
+          {
+            "period": "2024/25",
+            "ratePer1000": 22.8
+          }
+        ]
+      },
+      "robbery": {
+        "label": "Robbery",
+        "timeSeries": [
+          {
+            "period": "1981",
+            "ratePer1000": 4.2
+          },
+          {
+            "period": "1983",
+            "ratePer1000": 3.7
+          },
+          {
+            "period": "1987",
+            "ratePer1000": 4.4
+          },
+          {
+            "period": "1991",
+            "ratePer1000": 4.8
+          },
+          {
+            "period": "1993",
+            "ratePer1000": 6.3
+          },
+          {
+            "period": "1995",
+            "ratePer1000": 7.9
+          },
+          {
+            "period": "1997",
+            "ratePer1000": 8.2
+          },
+          {
+            "period": "1999",
+            "ratePer1000": 9.5
+          },
+          {
+            "period": "2001/02",
+            "ratePer1000": 8.3
+          },
+          {
+            "period": "2002/03",
+            "ratePer1000": 7.1
+          },
+          {
+            "period": "2003/04",
+            "ratePer1000": 6.5
+          },
+          {
+            "period": "2004/05",
+            "ratePer1000": 5.9
+          },
+          {
+            "period": "2005/06",
+            "ratePer1000": 7.1
+          },
+          {
+            "period": "2006/07",
+            "ratePer1000": 7.5
+          },
+          {
+            "period": "2007/08",
+            "ratePer1000": 7.1
+          },
+          {
+            "period": "2008/09",
+            "ratePer1000": 6.1
+          },
+          {
+            "period": "2009/10",
+            "ratePer1000": 7.3
+          },
+          {
+            "period": "2010/11",
+            "ratePer1000": 5.4
+          },
+          {
+            "period": "2011/12",
+            "ratePer1000": 5.5
+          },
+          {
+            "period": "2012/13",
+            "ratePer1000": 4.4
+          },
+          {
+            "period": "2013/14",
+            "ratePer1000": 3.7
+          },
+          {
+            "period": "2014/15",
+            "ratePer1000": 1.9
+          },
+          {
+            "period": "2015/16",
+            "ratePer1000": 3.3
+          },
+          {
+            "period": "2016/17",
+            "ratePer1000": 2.8
+          },
+          {
+            "period": "2017/18",
+            "ratePer1000": 3.4
+          },
+          {
+            "period": "2018/19",
+            "ratePer1000": 4.1
+          },
+          {
+            "period": "2019/20",
+            "ratePer1000": 2.7
+          },
+          {
+            "period": "2022/23",
+            "ratePer1000": 1.5
+          },
+          {
+            "period": "2023/24",
+            "ratePer1000": 2.4
+          },
+          {
+            "period": "2024/25",
+            "ratePer1000": 1.7
+          }
+        ]
+      },
+      "theft_person": {
+        "label": "Theft from the person",
+        "timeSeries": [
+          {
+            "period": "1981",
+            "ratePer1000": 11.2
+          },
+          {
+            "period": "1983",
+            "ratePer1000": 12.9
+          },
+          {
+            "period": "1987",
+            "ratePer1000": 8.2
+          },
+          {
+            "period": "1991",
+            "ratePer1000": 11.1
+          },
+          {
+            "period": "1993",
+            "ratePer1000": 15.1
+          },
+          {
+            "period": "1995",
+            "ratePer1000": 16.7
+          },
+          {
+            "period": "1997",
+            "ratePer1000": 15.0
+          },
+          {
+            "period": "1999",
+            "ratePer1000": 14.3
+          },
+          {
+            "period": "2001/02",
+            "ratePer1000": 14.4
+          },
+          {
+            "period": "2002/03",
+            "ratePer1000": 16.3
+          },
+          {
+            "period": "2003/04",
+            "ratePer1000": 14.7
+          },
+          {
+            "period": "2004/05",
+            "ratePer1000": 13.6
+          },
+          {
+            "period": "2005/06",
+            "ratePer1000": 13.3
+          },
+          {
+            "period": "2006/07",
+            "ratePer1000": 13.1
+          },
+          {
+            "period": "2007/08",
+            "ratePer1000": 13.1
+          },
+          {
+            "period": "2008/09",
+            "ratePer1000": 16.3
+          },
+          {
+            "period": "2009/10",
+            "ratePer1000": 11.8
+          },
+          {
+            "period": "2010/11",
+            "ratePer1000": 12.3
+          },
+          {
+            "period": "2011/12",
+            "ratePer1000": 13.6
+          },
+          {
+            "period": "2012/13",
+            "ratePer1000": 12.1
+          },
+          {
+            "period": "2013/14",
+            "ratePer1000": 12.5
+          },
+          {
+            "period": "2014/15",
+            "ratePer1000": 9.8
+          },
+          {
+            "period": "2015/16",
+            "ratePer1000": 7.9
+          },
+          {
+            "period": "2016/17",
+            "ratePer1000": 8.0
+          },
+          {
+            "period": "2017/18",
+            "ratePer1000": 9.1
+          },
+          {
+            "period": "2018/19",
+            "ratePer1000": 9.5
+          },
+          {
+            "period": "2019/20",
+            "ratePer1000": 7.8
+          },
+          {
+            "period": "2022/23",
+            "ratePer1000": 5.2
+          },
+          {
+            "period": "2023/24",
+            "ratePer1000": 7.2
+          },
+          {
+            "period": "2024/25",
+            "ratePer1000": 9.6
+          }
+        ]
+      },
+      "burglary": {
+        "label": "Domestic burglary",
+        "timeSeries": [
+          {
+            "period": "1981",
+            "ratePer1000": 53.0
+          },
+          {
+            "period": "1983",
+            "ratePer1000": 60.6
+          },
+          {
+            "period": "1987",
+            "ratePer1000": 75.2
+          },
+          {
+            "period": "1991",
+            "ratePer1000": 84.9
+          },
+          {
+            "period": "1993",
+            "ratePer1000": 118.4
+          },
+          {
+            "period": "1995",
+            "ratePer1000": 112.7
+          },
+          {
+            "period": "1997",
+            "ratePer1000": 100.2
+          },
+          {
+            "period": "1999",
+            "ratePer1000": 86.7
+          },
+          {
+            "period": "2001/02",
+            "ratePer1000": 65.6
+          },
+          {
+            "period": "2002/03",
+            "ratePer1000": 62.1
+          },
+          {
+            "period": "2003/04",
+            "ratePer1000": 59.5
+          },
+          {
+            "period": "2004/05",
+            "ratePer1000": 47.7
+          },
+          {
+            "period": "2005/06",
+            "ratePer1000": 45.8
+          },
+          {
+            "period": "2006/07",
+            "ratePer1000": 44.6
+          },
+          {
+            "period": "2007/08",
+            "ratePer1000": 42.3
+          },
+          {
+            "period": "2008/09",
+            "ratePer1000": 43.4
+          },
+          {
+            "period": "2009/10",
+            "ratePer1000": 39.8
+          },
+          {
+            "period": "2010/11",
+            "ratePer1000": 44.5
+          },
+          {
+            "period": "2011/12",
+            "ratePer1000": 39.4
+          },
+          {
+            "period": "2012/13",
+            "ratePer1000": 37.6
+          },
+          {
+            "period": "2013/14",
+            "ratePer1000": 32.9
+          },
+          {
+            "period": "2014/15",
+            "ratePer1000": 32.7
+          },
+          {
+            "period": "2015/16",
+            "ratePer1000": 28.8
+          },
+          {
+            "period": "2016/17",
+            "ratePer1000": 26.5
+          },
+          {
+            "period": "2017/18",
+            "ratePer1000": 27.9
+          },
+          {
+            "period": "2018/19",
+            "ratePer1000": 28.5
+          },
+          {
+            "period": "2019/20",
+            "ratePer1000": 23.5
+          },
+          {
+            "period": "2022/23",
+            "ratePer1000": 16.2
+          },
+          {
+            "period": "2023/24",
+            "ratePer1000": 15.8
+          },
+          {
+            "period": "2024/25",
+            "ratePer1000": 15.6
+          }
+        ]
+      },
+      "criminal_damage": {
+        "label": "Criminal damage",
+        "timeSeries": [
+          {
+            "period": "1981",
+            "ratePer1000": 151.4
+          },
+          {
+            "period": "1983",
+            "ratePer1000": 152.2
+          },
+          {
+            "period": "1987",
+            "ratePer1000": 153.3
+          },
+          {
+            "period": "1991",
+            "ratePer1000": 132.0
+          },
+          {
+            "period": "1993",
+            "ratePer1000": 160.8
+          },
+          {
+            "period": "1995",
+            "ratePer1000": 162.9
+          },
+          {
+            "period": "1997",
+            "ratePer1000": 145.4
+          },
+          {
+            "period": "1999",
+            "ratePer1000": 135.6
+          },
+          {
+            "period": "2001/02",
+            "ratePer1000": 123.2
+          },
+          {
+            "period": "2002/03",
+            "ratePer1000": 118.6
+          },
+          {
+            "period": "2003/04",
+            "ratePer1000": 112.0
+          },
+          {
+            "period": "2004/05",
+            "ratePer1000": 113.8
+          },
+          {
+            "period": "2005/06",
+            "ratePer1000": 119.8
+          },
+          {
+            "period": "2006/07",
+            "ratePer1000": 130.3
+          },
+          {
+            "period": "2007/08",
+            "ratePer1000": 116.0
+          },
+          {
+            "period": "2008/09",
+            "ratePer1000": 117.8
+          },
+          {
+            "period": "2009/10",
+            "ratePer1000": 103.9
+          },
+          {
+            "period": "2010/11",
+            "ratePer1000": 93.6
+          },
+          {
+            "period": "2011/12",
+            "ratePer1000": 86.9
+          },
+          {
+            "period": "2012/13",
+            "ratePer1000": 73.6
+          },
+          {
+            "period": "2013/14",
+            "ratePer1000": 60.9
+          },
+          {
+            "period": "2014/15",
+            "ratePer1000": 55.7
+          },
+          {
+            "period": "2015/16",
+            "ratePer1000": 49.9
+          },
+          {
+            "period": "2016/17",
+            "ratePer1000": 47.7
+          },
+          {
+            "period": "2017/18",
+            "ratePer1000": 43.7
+          },
+          {
+            "period": "2018/19",
+            "ratePer1000": 46.7
+          },
+          {
+            "period": "2019/20",
+            "ratePer1000": 40.4
+          },
+          {
+            "period": "2022/23",
+            "ratePer1000": 26.3
+          },
+          {
+            "period": "2023/24",
+            "ratePer1000": 26.2
+          },
+          {
+            "period": "2024/25",
+            "ratePer1000": 23.8
+          }
+        ]
+      }
+    }
   }
 }

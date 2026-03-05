@@ -33,3 +33,10 @@ venv/
 .env
 .env.local
 .env.production
+
+# Claude worktrees — large, managed separately
+.claude/worktrees/
+
+# Misplaced raw/build artefacts
+data/data/
+data/site/

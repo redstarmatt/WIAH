@@ -51,6 +51,15 @@ PIPELINES = [
     ("poverty",        "poverty",       DATA_DIR / "pipelines" / "poverty"),
     ("broadband",      "broadband",     DATA_DIR / "pipelines" / "broadband"),
     ("social-care",    "social-care", DATA_DIR / "pipelines" / "social-care"),
+    # Economy supplementary (ASHE earnings by percentile + regional GVA)
+    ("ashe",           "economy",       DATA_DIR / "pipelines" / "ashe"),
+    ("regional-gva",   "economy",       DATA_DIR / "pipelines" / "regional-gva"),
+    # Demographics / population
+    ("demographics",   "demographics",  DATA_DIR / "pipelines" / "demographics"),
+    # Health supplementary
+    ("life-expectancy","health",        DATA_DIR / "pipelines" / "life-expectancy"),
+    # Universities
+    ("universities",   "universities",  DATA_DIR / "pipelines" / "universities"),
 ]
 
 
