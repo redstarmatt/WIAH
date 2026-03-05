@@ -355,35 +355,18 @@ export default function UniversitiesPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England&apos;s university funding model is built on a paradox. Students borrow an average
-              of &pound;44,940 to fund their degrees, yet only 23% of Plan 2 borrowers are expected to
-              repay in full before their loans are written off after 30 years. The total student loan
-              book now exceeds &pound;268 billion &mdash; a figure that grows by roughly &pound;20 billion
-              each year &mdash; and the government bears the cost of unrepaid debt as a long-term fiscal
-              liability. Meanwhile, the &pound;9,250 fee cap was frozen for eight years until 2025,
-              eroding its real value by around 17% through inflation. Universities have become
-              increasingly dependent on international student fees to close the gap.
+              England&apos;s university funding model rests on a structural paradox: students borrow an
+              average of &pound;44,940 to fund their degrees, yet only 23% of Plan 2 borrowers are
+              expected to repay in full before loans are written off after 40 years. The total student
+              loan book exceeds &pound;268 billion and grows by roughly &pound;20 billion annually. The
+              &pound;9,250 fee cap was frozen for eight years until 2025, eroding its real value by
+              around 17%, pushing universities to depend increasingly on international student fees
+              &mdash; until visa restrictions in 2024 caused international enrolment to fall sharply
+              from a peak of 762,000. Grade inflation is simultaneously reshaping degree standards:
+              first-class awards rose from 7% in 1995 to 36% in 2021 (post-COVID no-detriment
+              policies) before falling slightly to 31%, still four times the 1995 rate.
             </p>
-            <p>
-              The graduate earnings premium remains real: median graduate earnings are &pound;12,500 per
-              year higher than for non-graduates, a gap that has widened over the past decade. But this
-              average conceals stark variation. Medicine and economics graduates earn more than double
-              those in creative arts five years after graduation. For some subjects and institutions,
-              the financial return on a degree is genuinely questionable &mdash; especially once
-              accumulated interest is factored in. The Office for Students now publishes outcome data
-              by course, forcing a long-overdue reckoning with which degrees deliver value.
-            </p>
-            <p>
-              Grade inflation has reshaped the degree landscape. In 1995, 7% of graduates received a
-              first-class degree. By 2021 &mdash; after COVID-era no-detriment policies &mdash; that
-              figure had reached 36%. It has since fallen slightly to 31%, but remains more than four
-              times the 1995 rate. At the same time, international enrollment surged to 762,000 in
-              2023 before falling sharply after visa restrictions tightened in 2024. Universities that
-              had built their financial models around ever-growing international cohorts now face a
-              funding crisis, with several reporting deficits and planning redundancies.
-            </p>
-            <p>The distributional effects of the system fall hardest on those it was designed to help. Students from lower-income households borrow more in maintenance loans &mdash; up to &pound;13,022 per year in London versus &pound;4,767 for students living at home &mdash; meaning they graduate with significantly higher total debt despite identical tuition fees. Women, who earn less on average than men in their first decade after graduation, repay more slowly, accrue more interest, and are far less likely to clear the balance before the write-off threshold. Students at post-1992 universities, where disadvantaged students are concentrated, have median graduate earnings roughly &pound;8,000 below Russell Group peers five years after graduation, yet carry comparable or higher debt. The result is a system that charges the least advantaged the most in net-present-value terms: a graduate from a low-income family studying social work at a post-1992 institution will pay 9&percnt; of every pound earned above &pound;25,000 for 40 years and still not repay in full, while a privately-educated medical graduate repays faster, pays less interest overall, and retains the full earnings premium. Mature students, who make up 28&percnt; of first-degree entrants, face the additional penalty of a shorter effective earning window and reduced lifetime returns.</p>
-            <p>The &pound;44,940 average debt figure is drawn from Student Loans Company administrative records, which are comprehensive for loan balances but reveal nothing about how that debt is experienced &mdash; whether it deters housing purchases, delays family formation, or pushes graduates toward higher-paying but less socially valued work. Behavioural research suggests debt aversion among students from low-income backgrounds may suppress university participation even though the repayment mechanism is income-contingent and closer to a graduate tax than a commercial loan. The 23&percnt; full-repayment estimate from the Institute for Fiscal Studies depends on earnings projections spanning 40 years, a forecast horizon so distant that small changes in assumed wage growth, inflation, or government policy shift the figure by tens of billions of pounds. Grade inflation statistics from HESA count classifications awarded but cannot distinguish genuine improvement in student ability from lower assessment thresholds or strategic marking practices &mdash; the sector has no agreed external benchmark. International enrollment figures are reported by HESA with a one-year lag, meaning the full impact of the January 2024 visa restrictions will not appear in official data until late 2025. The write-off cost of &pound;8.6 billion per year is a non-cash impairment under resource accounting that reduces the book value of the loan asset without actual money leaving the Treasury in that year.</p>
+            <p>The distributional effects fall hardest on those the system was designed to help. Students from lower-income households borrow more in maintenance loans &mdash; up to &pound;13,022 per year in London versus &pound;4,767 living at home &mdash; graduating with significantly higher total debt despite identical tuition fees. Women repay more slowly, accrue more interest, and are far less likely to clear the balance before write-off. Students at post-1992 universities, where disadvantaged students are concentrated, have median graduate earnings roughly &pound;8,000 below Russell Group peers five years after graduation, yet carry comparable or higher debt. The graduate earnings premium remains real at &pound;12,500 per year more than non-graduates &mdash; but conceals stark variation: medicine and economics graduates earn more than double creative arts graduates within five years.</p>
           </div>
         </section>
 
