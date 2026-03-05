@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import { Lora, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
+import dynamic from 'next/dynamic';
 import SearchProvider from '@/components/SearchProvider';
 import SearchModal from '@/components/SearchModal';
+
+const NextTopicBar = dynamic(() => import('@/components/NextTopicBar'), { ssr: false });
 
 const lora = Lora({
   subsets: ['latin'],
@@ -39,6 +42,7 @@ export default function RootLayout({
         <SearchProvider>
           {children}
           <SearchModal />
+          <NextTopicBar />
         </SearchProvider>
       </body>
     </html>

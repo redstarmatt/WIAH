@@ -5393,3 +5393,30 @@ export function getScorecard() {
   const stable = allMetrics.filter(m => getMetricStatus(m.direction, m.polarity) === 'stable').length;
   return { worse, better, stable, total: allMetrics.length, topicCount: Object.keys(TOPICS).length };
 }
+
+// ── Infinite scroll ordering ───────────────────────────────────────────────────
+
+// Flat ordered list of topic slugs (category order, deduped, only those with data)
+let _topicOrder: string[] | null = null;
+export function getOrderedTopicSlugs(): string[] {
+  if (_topicOrder) return _topicOrder;
+  const seen = new Set<string>();
+  const result: string[] = [];
+  for (const cat of CATEGORIES) {
+    for (const slug of cat.topics) {
+      if (!seen.has(slug) && slug in TOPICS) {
+        seen.add(slug);
+        result.push(slug);
+      }
+    }
+  }
+  _topicOrder = result;
+  return result;
+}
+
+export function getNextTopic(currentSlug: string): TopicEntry | null {
+  const order = getOrderedTopicSlugs();
+  const idx = order.indexOf(currentSlug);
+  if (idx === -1 || idx >= order.length - 1) return null;
+  return TOPICS[order[idx + 1]] ?? null;
+}
