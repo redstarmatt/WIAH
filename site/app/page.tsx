@@ -17,9 +17,9 @@ export default function HomePage() {
           </h1>
 
           <p className="font-editorial italic text-white/70 text-base md:text-lg mb-6 leading-relaxed">
-            The numbers behind Britain&rsquo;s biggest questions.
+            Unpacking official data to show you what&rsquo;s actually happening.
             <br className="hidden sm:block" />
-            No headlines. No spin. Just ask.
+            AI-powered. Fact-driven. Source-linked.
           </p>
 
           {/* Hero search + chips */}
