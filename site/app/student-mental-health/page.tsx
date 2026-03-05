@@ -68,17 +68,26 @@ export default function StudentMentalHealthPage() {
         <TopicHeader
           topic="Student Mental Health"
           question="Is There a Student Mental Health Crisis?"
-          finding="University counselling services are overwhelmed &mdash; demand has risen 50&percnt; in five years while funding has not kept pace &mdash; with 1 in 4 students reporting a mental health condition and 74 student deaths from suspected suicide recorded in 2021&ndash;22."
+          finding="University counselling services are overwhelmed &mdash; demand has risen 50% in five years while funding has not kept pace &mdash; with 1 in 4 students reporting a mental health condition and 74 student deaths from suspected suicide recorded in 2021&ndash;22."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The number of students disclosing a mental health condition to their university has tripled in a decade &mdash; from 8&percnt; in 2015 to 25&percnt; in 2023, according to HESA data &mdash; driven by genuine rises in anxiety and depression among young people, reduced stigma, and the specific pressures of higher education: financial strain, housing insecurity, loneliness, and distance from family support. Research by Student Minds found 64&percnt; of students experience mental health difficulties at some point during their degree. University counselling demand rose 50&percnt; between 2018 and 2023 while staffing grew only 20&percnt;, leaving students with moderate anxiety or depression waiting eight to twelve weeks for an appointment. UMHAN recorded 74 suspected student suicides in 2021&ndash;22, with those from the most deprived backgrounds and those studying medicine or dentistry at significantly higher risk.
+              The number of students disclosing a mental health condition to their university has tripled in a decade &mdash; from 8% in 2015 to 25% in 2023, according to HESA student record data. This extraordinary rise has multiple drivers: genuine increases in the prevalence of mental health difficulties, particularly anxiety and depression among young people; greater awareness and reduced stigma making disclosure more likely; expanded university systems for capturing wellbeing information; and the specific strains of higher education itself &mdash; financial pressure, housing insecurity, academic competition, loneliness, and the transition away from family support. Research by Student Minds found that 64% of students experience mental health difficulties at some point during their degree, with first-year students and those from disadvantaged backgrounds most vulnerable.
             </p>
             <p>
-              The burden falls unevenly across the student population. First-generation students are more likely to experience difficulties and less likely to access support; students from Black and Asian backgrounds report lower satisfaction with university mental health services. International students &mdash; now around 20&percnt; of the UK student population &mdash; face compounding stressors including visa insecurity and cultural isolation, with limited NHS access in their first year. The sector employs a growing cohort of mental health advisers, but institutions compete on metrics that exclude wellbeing outcomes, creating weak structural incentives for the sustained investment that overwhelmed services need.
+              University counselling and mental health services are operating beyond capacity. The Association of Managers of Student Services in Higher Education (AMOSSHE) reported in 2023 that demand for counselling had risen 50% since 2018, while staffing had grown by only 20% and waiting lists had extended from days to weeks at many institutions. Students with acute needs &mdash; those in crisis or at immediate risk &mdash; are triaged to the front, but those with moderate anxiety or depression may wait eight to twelve weeks for an appointment, by which point their academic performance has often been significantly affected. The tension between the university as a pastoral institution and the university as a competitive business is stark: institutions compete on metrics that do not include mental health outcomes, creating weak incentives for the sustained investment the sector needs.
+            </p>
+            <p>
+              Student suicide statistics are among the most sensitive and contested in public policy. The University Mental Health Advisors Network (UMHAN) reported 74 suspected student suicides in 2021&ndash;22 in England and Wales &mdash; a rate of around 5.5 per 100,000 students, lower than the general population rate for the same age group (18&ndash;24) but reflecting a population that should, in theory, be healthier and better supported. Research commissioned by the Office for Students found that students from the most deprived backgrounds were at significantly higher risk, as were those with pre-existing mental health conditions, those who had experienced trauma, and students on certain course types including medicine and dentistry. Inquest, the campaign organisation, has documented cases where universities failed to follow up on students known to be at risk, highlighting gaps in duty-of-care frameworks.
+            </p>
+            <p>
+              Who is most affected reflects wider social inequalities. First-generation students &mdash; those whose parents did not attend university &mdash; are significantly more likely to experience mental health difficulties and less likely to access support, partly because they are less familiar with the systems available and partly because the culture of elite universities can feel alienating. Students from Black and Asian backgrounds report lower satisfaction with university mental health services than their white peers, reflecting cultural barriers and the specific impact of racial discrimination. Students with disabilities, including neurodivergent students, are disproportionately represented in mental health service caseloads. International students &mdash; now approximately 20% of the UK student population &mdash; face additional stressors including visa insecurity, financial pressure, and cultural isolation, with limited recourse to NHS services during their first year of residency.
+            </p>
+            <p>
+              Mental health data in higher education has important limitations. Disclosure rates capture only students who choose to tell their university about a condition &mdash; survey evidence consistently suggests actual prevalence is two to three times higher. Counselling demand data is based on AMOSSHE surveys with variable response rates and self-reported figures that may not be audited. Student suicide data is particularly problematic: university-specific figures are small, making statistical significance difficult to establish; coroner timelines mean confirmed deaths are reported with long lags; and the decision about whether to categorise a death as suicide varies between coroners, affecting comparability across regions. The Office for Students has committed to standardised data collection from 2024 onwards, which should improve the evidence base but will take several years to generate comparable time series.
             </p>
           </div>
         </section>
@@ -96,19 +105,21 @@ export default function StudentMentalHealthPage() {
               value="1 in 4"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 1 in 12 in 2015 &middot; 64&percnt; experience difficulties at some point"
+              changeText="Up from 1 in 12 in 2015 &middot; 64% experience difficulties at some point"
               sparklineData={[8, 10, 13, 16, 19, 21, 23, 25]}
               source="HESA / Student Minds &middot; University Mental Health Survey 2023"
-              href="#sec-disclosure"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="University counselling demand increase (2018&ndash;2023)"
               value="+50%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Demand up 50&percnt; &middot; Staffing grew only 20&percnt; &middot; Waits now 8&ndash;12 weeks"
+              changeText="Demand up 50% &middot; Staffing grew only 20% &middot; Waits now 8&ndash;12 weeks"
               sparklineData={[100, 108, 118, 130, 138, 148, 150]}
               source="AMOSSHE &middot; University counselling demand analysis 2023"
-              href="#sec-demand"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Student suspected suicides (2021&ndash;22)"
               value="74"
@@ -117,7 +128,8 @@ export default function StudentMentalHealthPage() {
               changeText="Up from ~65 in 2018&ndash;19 &middot; Disproportionate among deprived and disabled students"
               sparklineData={[65, 67, 68, 70, 62, 72, 74]}
               source="UMHAN / Office for Students &middot; Student suicide data 2022"
-              href="#sec-demand"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 
@@ -147,7 +159,7 @@ export default function StudentMentalHealthPage() {
             {counsellingSeries.length > 0 ? (
               <LineChart
                 title="University counselling service demand index, 2015&ndash;2024"
-                subtitle="Indexed to 2015 = 100. Based on AMOSSHE survey of counselling session requests across UK universities. Demand has risen 55&percnt; since 2015 while service capacity has grown by around 20&percnt;."
+                subtitle="Indexed to 2015 = 100. Based on AMOSSHE survey of counselling session requests across UK universities. Demand has risen 55% since 2015 while service capacity has grown by around 20%."
                 series={counsellingSeries}
                 yLabel="Demand index (2015 = 100)"
                 source={{

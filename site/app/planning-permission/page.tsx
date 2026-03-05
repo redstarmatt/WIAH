@@ -75,17 +75,26 @@ export default function PlanningPermissionPage() {
         <TopicHeader
           topic="Planning Permission"
           question="Is the Planning System Blocking the Homes Britain Needs?"
-          finding="England granted 474,000 planning permissions in 2023 but only 234,000 new homes were completed &mdash; a completion rate of under 50&percnt; &mdash; while the planning backlog has reached 500,000 undecided applications and planning department staffing has fallen 40&percnt; since 2010 due to budget cuts."
+          finding="England granted 474,000 planning permissions in 2023 but only 234,000 new homes were completed &mdash; a completion rate of under 50% &mdash; while the planning backlog has reached 500,000 undecided applications and planning department staffing has fallen 40% since 2010 due to budget cuts."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England granted 474,000 planning permissions for residential development in 2023 but completed only 234,000 homes &mdash; a conversion rate under 50&percnt;. The planning system is not primarily blocking permissions; it is failing to turn permissions into homes, for reasons spanning developer behaviour, infrastructure constraints, and systematic underfunding of planning departments. English local planning authorities lost approximately 40&percnt; of their planning department staff between 2010 and 2023 &mdash; roughly 12,000 posts &mdash; precisely as caseloads grew more complex. The result: 500,000 applications awaiting a decision at year-end 2023, and fewer than half of major residential applications decided within the statutory 13-week period. Nutrient neutrality rules affecting 74 local authority areas halted tens of thousands of permitted homes from 2022. The government&apos;s 300,000 homes-per-year target &mdash; unmet since the early 1970s &mdash; has been abandoned in practice if not in rhetoric.
+              The planning system is at the centre of Britain&apos;s housing crisis &mdash; but not in the way that is usually assumed. The conventional narrative blames planning refusals for blocking new homes, but the data tells a more complicated story: England grants far more planning permissions than homes are built. In 2023, local authorities approved 474,000 planning applications for residential development, but only 234,000 homes were completed &mdash; a conversion rate of under 50%. The planning system is not primarily blocking permissions; it is struggling to convert permissions into homes, for reasons that span developer behaviour, infrastructure constraints, and the systematic underfunding of planning departments that has left them too understaffed to process applications efficiently or enforce conditions effectively.
             </p>
             <p>
-              The burden of inadequate housing supply falls along clear generational and geographic lines. Home ownership among 25&ndash;34-year-olds fell from 67&percnt; in 2000 to 39&percnt; in 2023, a shift with profound implications for wealth accumulation and retirement security. Renters in high-demand areas pay 40&percnt; of income in London and 30&percnt; in the South East, while housing benefit costs to the public purse rose 40&percnt; in real terms since 2010 as rents outpaced wages. Rural communities in National Parks and Areas of Outstanding Natural Beauty are being priced out by second-home purchases and development restrictions, leaving local residents unable to afford homes in the places where they grew up. Planning reform proposals in the 2025 Planning and Infrastructure Bill aim to designate growth zones with automatic permission, but implementation remains contested.
+              Planning departments have been among the hardest-hit casualties of local government austerity. Between 2010 and 2023, the Planning Advisory Service estimates that English local planning authorities lost approximately 40% of their planning department staff &mdash; roughly 12,000 full-time equivalent posts. The cuts happened precisely as the planning caseload grew more complex: major infrastructure schemes, nutrient neutrality requirements, biodiversity net gain conditions, and the transition to digital planning portals all added administrative burden without additional resources. The result is a system stretched to breaking point: 500,000 planning applications were awaiting a decision in England at the end of 2023, and the proportion of major residential applications decided within the statutory 13-week period fell below 50% for the first time in 2022.
+            </p>
+            <p>
+              The mismatch between permissions and completions has multiple causes beyond the land banking behaviour of large developers (covered separately). Nutrient neutrality rules &mdash; introduced by Natural England in 2022 following a court ruling and affecting 74 local authority areas &mdash; halted tens of thousands of permitted homes pending mitigation solutions. Infrastructure constraints are genuine in many areas: sites with planning permission cannot be built until sufficient water, electricity, transport, and school capacity is in place. Small and medium-sized housebuilders, who once built a significant share of new homes, have largely exited the market following the 2008 financial crisis and have not returned in scale, leaving the market dominated by five large developers who collectively set the pace of completions. Meanwhile, the government&apos;s target of 300,000 new homes per year &mdash; a target no government has met since the early 1970s &mdash; has been largely abandoned in practice if not in rhetoric.
+            </p>
+            <p>
+              The burden of inadequate housing supply falls along clear social lines. Young people are the primary losers: home ownership among 25&ndash;34-year-olds fell from 67% in 2000 to 39% in 2023, a generational shift with profound implications for wealth accumulation, retirement security, and family formation. Renters in high-demand areas pay an increasing share of their income in rent &mdash; 40% of income in London, 30% in the South East &mdash; while housing benefit costs to the public purse have risen 40% in real terms since 2010 because rents have risen faster than wages. Rural communities are being priced out by second-home purchases and planning restrictions that prevent affordable housing development, particularly in National Parks and Areas of Outstanding Natural Beauty where local residents often cannot afford homes in the places where they were born and raised.
+            </p>
+            <p>
+              Planning statistics are collected by DLUHC but their interpretation is contested. The headline permissions-to-completions gap is a real phenomenon, but comparing total permissions with annual completions is methodologically imperfect: permissions have multi-year validity and a single large permission may represent several years of building activity. The backlog of undecided applications includes minor household applications (extensions, outbuildings) that are irrelevant to housing supply alongside the strategic residential applications that matter most. Staffing data from the Planning Advisory Service is the best available but is based on annual surveys with variable response rates and does not always distinguish between planning policy officers, development management officers, and enforcement officers, all of whom play different roles. The government&apos;s housing completions target itself is subject to methodological debate: what counts as a new home, and whether conversions should be included, affects the headline number significantly.
             </p>
           </div>
         </section>
@@ -106,16 +115,18 @@ export default function PlanningPermissionPage() {
               changeText="Down from 580,000 in 2010 &middot; But still 2&times; the number of homes completed"
               sparklineData={[580, 560, 540, 520, 490, 480, 470, 474]}
               source="DLUHC &middot; Planning applications in England 2023"
-              href="#sec-permissions"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Planning department staff reduction since 2010"
               value="-40%"
               direction="down"
               polarity="up-is-good"
-              changeText="~12,000 posts lost &middot; &lt;50&percnt; of major applications decided on time"
+              changeText="~12,000 posts lost &middot; &lt;50% of major applications decided on time"
               sparklineData={[100, 94, 89, 85, 82, 78, 75, 73, 70, 68, 66, 63, 61, 60]}
               source="Planning Advisory Service &middot; LPA staffing survey 2023"
-              href="#sec-staffing"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Undecided planning applications backlog"
               value="500,000"
@@ -124,7 +135,8 @@ export default function PlanningPermissionPage() {
               changeText="Up from 280,000 in 2016 &middot; Record high &middot; Delays add cost and uncertainty"
               sparklineData={[280, 300, 330, 360, 400, 440, 480, 500]}
               source="DLUHC &middot; Planning applications statistics 2023"
-              href="#sec-staffing"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 
@@ -154,7 +166,7 @@ export default function PlanningPermissionPage() {
             {staffingSeries.length > 0 ? (
               <LineChart
                 title="Local planning authority staffing, England, 2010&ndash;2024"
-                subtitle="Indexed to 2010 = 100. Full-time equivalent planning department staff in English local authorities. A 40&percnt; reduction since 2010 has left planning departments unable to process applications within statutory timescales or enforce planning conditions effectively."
+                subtitle="Indexed to 2010 = 100. Full-time equivalent planning department staff in English local authorities. A 40% reduction since 2010 has left planning departments unable to process applications within statutory timescales or enforce planning conditions effectively."
                 series={staffingSeries}
                 yLabel="Staffing index (2010 = 100)"
                 source={{

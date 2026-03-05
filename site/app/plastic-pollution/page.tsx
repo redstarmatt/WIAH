@@ -55,14 +55,17 @@ export default function PlasticPollutionPage() {
         <TopicHeader
           topic="Plastic Pollution"
           question="Is Britain Actually Dealing With Its Plastic Problem?"
-          finding="The UK generates 5.6 million tonnes of plastic waste per year &mdash; the second highest per capita in the world after the United States. The domestic recycling rate has stalled at 44&percnt; for a decade, and almost half of &ldquo;recycled&rdquo; plastic is exported."
+          finding="The UK generates 5.6 million tonnes of plastic waste per year &mdash; the second highest per capita in the world after the United States. The domestic recycling rate has stalled at 44% for a decade, and almost half of &ldquo;recycled&rdquo; plastic is exported."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK produces approximately 5.6 million tonnes of plastic waste per year &mdash; 84 kilograms per person and the second highest per capita rate in the world after the United States. The plastic packaging recycling rate has stalled at 44% since 2014, well below the government&apos;s 65% target for 2035 and the EU average of 48%. Around 46% of plastic collected for recycling in 2023 was exported to Turkey, Malaysia, and Indonesia, where environmental oversight is variable. Greenpeace documented UK plastic bales dumped at Turkish roadsides. The Plastic Packaging Tax (introduced April 2022 at &pound;210.82 per tonne) and Extended Producer Responsibility (effective from 2025, expected to generate &pound;1.4 billion per year for local authority collections) represent meaningful policy steps. A Deposit Return Scheme, delayed to 2027 at the earliest, aims to capture beverage containers outside the household system. The government banned single-use plastic plates, cutlery, and polystyrene containers in October 2023.</p>
-            <p>The burden of plastic pollution falls unevenly across communities and nations. Coastal areas bear the highest visible impact: the Marine Conservation Society&apos;s 2023 beach clean found 385 litter items per 100 metres of UK coastline. Deprived urban areas see higher rates of fly-tipping and overflowing public bins. Wales recycles 65% of household waste &mdash; one of the highest rates in the world &mdash; driven by statutory targets and council investment, while England lags at 44%, reflecting political will and funding differences as much as infrastructure. An estimated 500,000 tonnes of plastic enters the UK environment annually, concentrated in waterways and coastal areas serving the most populated and economically active regions.</p>
+            <p>The UK produces approximately 5.6 million tonnes of plastic waste per year, equivalent to roughly 84 kilograms per person &mdash; the second highest per capita rate in the world, behind only the United States. Of this, around 2.5 million tonnes is packaging. DEFRA&apos;s 2024 statistics show that 44% of plastic packaging waste is collected for recycling, a figure that has barely changed since 2014. The total municipal recycling rate for England &mdash; all materials, not just plastics &mdash; was 44.1% in 2022/23, well below the government&apos;s 65% target for 2035 and the EU average of 48%. The UK incinerates 12 million tonnes of waste annually, and landfilling, while declining, still receives millions of tonnes. Plastic waste that is not recycled, incinerated, or landfilled enters the environment &mdash; an estimated 500,000 tonnes per year, according to a 2023 Eunomia report commissioned by WWF.</p>
+            <p>The recycling system itself is deeply flawed. Around 46% of plastic collected for recycling in 2023 was exported, primarily to Turkey, Malaysia, and Indonesia, where environmental oversight is variable and contamination rates are high. Greenpeace investigations have documented UK plastic bales dumped at roadside sites in Turkey. Domestic reprocessing capacity remains limited: the UK has only 26 plastics reprocessing plants capable of handling post-consumer waste. The Plastic Packaging Tax, introduced in April 2022 at &pound;210.82 per tonne, applies to packaging containing less than 30% recycled content but has not yet demonstrably shifted production patterns. Extended Producer Responsibility (EPR), which was due in 2024 but delayed to 2025, will require producers to cover the full net cost of collecting, sorting, and recycling packaging &mdash; a significant policy shift expected to generate &pound;1.4 billion per year for local authorities.</p>
+            <p>The government banned a range of single-use plastic items in October 2023, including plates, cutlery, polystyrene containers, and balloon sticks. The 5p carrier bag charge, introduced in 2015 and raised to 10p in 2021, reduced single-use bag consumption by 97% from major retailers. A Deposit Return Scheme (DRS) for drinks containers has been repeatedly delayed; Scotland planned to launch in 2023 but postponed to align with England and Wales, now targeting 2027 at the earliest. Consistent collections &mdash; requiring all local authorities to collect the same materials from the kerbside &mdash; is also scheduled for implementation from 2026. The Resources and Waste Strategy (2018) set out a vision for eliminating all avoidable plastic waste by 2042, but interim targets and delivery mechanisms remain largely unquantified.</p>
+            <p>Plastic pollution impacts are distributed unevenly. Coastal communities face the highest visible burden: the Marine Conservation Society&apos;s 2023 beach clean found an average of 385 items of litter per 100 metres of UK coastline. Deprived urban areas are more likely to have overflowing public bins and fly-tipping. Areas with high fast-food outlet density &mdash; which correlates with deprivation &mdash; generate more single-use plastic litter. Rural areas often have less frequent waste collection services. Wales has the highest household recycling rate in the UK (65%) and the third highest in the world, driven by statutory targets and council investment. England lags at 44%. Northern Ireland (50%) and Scotland (42%) fall between the two. The disparity reflects political will and funding as much as infrastructure.</p>
+            <p>Plastic waste data is notoriously unreliable. The &ldquo;recycling rate&rdquo; counts material collected and sent for recycling, not material actually reprocessed into new products &mdash; contamination and rejection rates at sorting facilities mean the real recycling rate is substantially lower. Export data relies on Packaging Recovery Notes (PRNs), a system the National Audit Office criticised in 2018 as open to fraud, with limited verification that exported material is actually recycled. The 5.6 million tonnes headline figure includes commercial, industrial, and household waste but excludes microplastics, which are not systematically measured. Per capita comparisons depend on national reporting methodologies that differ significantly, making the &ldquo;second highest in the world&rdquo; ranking illustrative rather than precise. The 500,000 tonnes entering the environment figure is modelled, not measured. Microplastic monitoring in rivers, soils, and air is still at an early stage, with standardised UK-wide protocols not yet established.</p>
           </div>
         </section>
 
@@ -83,7 +86,8 @@ export default function PlasticPollutionPage() {
               changeText="84kg per person &mdash; 2nd highest globally after the US"
               sparklineData={[4.7, 4.9, 5.1, 5.3, 5.5, 5.6]}
               source="DEFRA UK Statistics on Waste"
-              href="#sec-waste"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Plastic recycling rate"
               value="44"
@@ -93,7 +97,8 @@ export default function PlasticPollutionPage() {
               changeText="Stalled for a decade; 46% of &ldquo;recycled&rdquo; plastic is exported"
               sparklineData={[44, 44, 46, 43, 44, 44]}
               source="DEFRA packaging statistics"
-              href="#sec-recycling"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Single-use bag consumption reduction"
               value="97"
@@ -103,7 +108,8 @@ export default function PlasticPollutionPage() {
               changeText="Since 5p charge in 2015; from 7.6bn to 200m bags/yr at major retailers"
               sparklineData={[100, 85, 40, 20, 8, 3]}
               source="DEFRA carrier bag usage"
-              href="#sec-recycling"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 

@@ -81,15 +81,18 @@ export default function AdultEducationPage() {
         <TopicHeader
           topic="Adult Education"
           question="Why Has Britain Stopped Training Its Adults?"
-          finding="Adult participation in learning has fallen from 20&percnt; to 15&percnt; since 2015. Further education enrolments have declined by 30&percnt; in a decade, from 3.3 million to 2.3 million. The Adult Education Budget has been cut by over 40&percnt; in real terms since 2010 while the UK faces critical skills shortages in construction, digital, and green energy."
+          finding="Adult participation in learning has fallen from 20% to 15% since 2015. Further education enrolments have declined by 30% in a decade, from 3.3 million to 2.3 million. The Adult Education Budget has been cut by over 40% in real terms since 2010 while the UK faces critical skills shortages in construction, digital, and green energy."
           colour="#2A9D8F"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Adult participation in learning has fallen from 20&percnt; to 15.4&percnt; since 2015, and further education enrolments have dropped 30&percnt; &mdash; from 3.3 million to 2.3 million &mdash; over the same period. The Adult Education Budget has been cut over 40&percnt; in real terms since 2010, leaving the UK spending less on adult skills as a proportion of GDP than any comparator OECD economy except Turkey and Mexico. The decline falls at precisely the wrong moment: the Migration Advisory Committee identifies over 40 shortage occupations; the Construction Industry Training Board projects a shortfall of 251,000 workers by 2028; the green transition needs an estimated 480,000 workers in insulation, heat pump installation, and renewables. Apprenticeship starts for adults aged 25 and over have fallen 42&percnt; since the Apprenticeship Levy was introduced in 2017, with employer spending concentrated on management qualifications rather than technical skills. Nine million adults in England still lack Level 2 qualifications equivalent to GCSEs.</p>
-            <p>The decline is not evenly distributed. Participation is lowest among those who would benefit most: adults without Level 2 qualifications, low-paid workers, those aged 55 and over, disabled people, and people in rural areas with poor transport links. Adults with existing qualifications are twice as likely to participate in further learning as those without &mdash; a compounding inequality. Geographic gaps are stark: London&apos;s participation rate of 21&percnt; compares with 12&percnt; in the North East. ESOL funding has been cut 60&percnt; since 2009, limiting access for ethnic minority adults. For workers on zero-hours contracts or in the gig economy, time off for training is economically prohibitive, making the population with the greatest skills need the least able to access provision.</p>
+            <p>The UK is experiencing a structural decline in adult learning at precisely the moment when the economy demands more of it. Adult participation in learning &mdash; defined as the proportion of adults aged 19 and over who have engaged in any form of education or training in the past three years &mdash; has fallen from approximately 20% in 2015 to 15.4% in 2024. Further education (FE) enrolments have declined from 3.3 million in the 2015/16 academic year to 2.3 million in 2023/24, a 30% reduction. The Adult Education Budget (AEB), which funds the majority of classroom-based adult skills provision, was &pound;1.34 billion in 2024/25 &mdash; a real-terms cut of over 40% since 2010. The UK now spends less on adult skills as a proportion of GDP than any comparator OECD economy except Turkey and Mexico.</p>
+            <p>The decline matters because the UK has acute skills shortages. The Migration Advisory Committee identifies over 40 occupations on the Shortage Occupation List, including nurses, electricians, HGV drivers, and software developers. The Construction Industry Training Board estimates a shortfall of 251,000 construction workers by 2028, critical at a time when the government is pursuing an ambitious housebuilding programme. The green transition will require 480,000 workers in insulation, heat pump installation, and renewable energy &mdash; skills that barely exist at scale in the current workforce. Yet apprenticeship starts for adults (25+) have fallen 42% since the introduction of the Apprenticeship Levy in 2017, which shifted training decisions toward employers who have largely concentrated spending on management qualifications rather than technical skills. The proportion of Level 2 (equivalent to GCSEs) qualifications in adult FE has fallen, while Level 3+ (equivalent to A-levels and above) provision has grown &mdash; progress for those who access it, but a narrowing of opportunity for the nine million adults in England who lack basic qualifications.</p>
+            <p>Policy responses have been fragmented. The Lifetime Skills Guarantee, announced in 2020, offers free Level 3 qualifications to adults without one, but take-up has been modest: approximately 42,000 adults started a free Level 3 course in 2023/24, against an eligible population of millions. Skills Bootcamps &mdash; short (12&ndash;16 week), intensive training courses in digital, technical, and green skills &mdash; have grown rapidly and show promising employment outcomes, with 72% of participants reporting positive career progression. The Lifelong Learning Entitlement, legislated in the Lifelong Learning (Higher Education Fee Limits) Act 2023, will from 2025 provide a modular funding system equivalent to four years of student finance for both further and higher education, potentially transforming how adults access and pay for training. However, its success depends on employer recognition of modular qualifications and FE colleges having the capacity to deliver them. Devolution of the Adult Education Budget to mayoral combined authorities (Greater Manchester, West Midlands, London, and others) has produced some locally tailored provision but also created complexity and variation in entitlements.</p>
+            <p>The decline in adult learning is not evenly distributed. Participation rates are lowest among those who would benefit most: adults without Level 2 qualifications, those in low-paid work, older workers (55+), disabled people, and those in rural areas with poor transport links. The Learning and Work Institute&apos;s annual participation survey consistently shows that adults with existing qualifications are twice as likely to participate in further learning as those without &mdash; a &ldquo;Matthew effect&rdquo; in which those who have, get more. Geographic disparities mirror the wider regional inequality picture: London has the highest adult participation rate (21%) and the North East the lowest (12%). Women are slightly more likely to participate than men, but ethnic minority adults face barriers including language provision (ESOL funding has been cut by 60% since 2009), cultural access, and discrimination. For workers in the gig economy and on zero-hours contracts, time away from work for training is economically prohibitive.</p>
+            <p>Measuring adult learning is inherently difficult. The primary source &mdash; the Annual Population Survey &mdash; relies on self-reported participation and uses a broad definition that includes informal learning, workplace training, and online courses alongside formal qualifications. This means participation rates are not directly comparable with FE enrolment data, which counts only funded starts. The National Adult Learner Survey, which provided the most rigorous participation data, was discontinued after 2010 as a cost-saving measure. FE enrolment counts double-count individuals who start multiple courses, and completion rates (as opposed to starts) are not published in a timely or comparable format. The Adult Education Budget underspend &mdash; which has averaged 10&ndash;15% of the allocation since 2018 &mdash; is variously interpreted as evidence of suppressed demand, inadequate marketing, or institutional capacity constraints. International comparisons (OECD Education at a Glance) use different definitions and survey instruments, making precise UK ranking difficult, though the direction of travel &mdash; declining relative to peers &mdash; is clear across all measures.</p>
           </div>
         </section>
 
@@ -108,7 +111,8 @@ export default function AdultEducationPage() {
               polarity="up-is-good"
               changeText="2024 &middot; Down from 20% in 2015 &middot; Lowest among those without Level 2 qualifications"
               sparklineData={[20.1, 19.4, 18.7, 17.3, 17.0, 14.2, 15.5, 16.1, 15.8, 15.4]}
-              href="#sec-overview"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="FE enrolments"
               value="2.3M"
@@ -116,7 +120,8 @@ export default function AdultEducationPage() {
               polarity="up-is-good"
               changeText="2023/24 &middot; Down 30% from 3.3M in 2015 &middot; AEB cut 40% in real terms since 2010"
               sparklineData={[3.3, 3.1, 2.9, 2.8, 2.7, 2.4, 2.5, 2.5, 2.4, 2.3]}
-              href="#sec-participation"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Adults without Level 2 qualifications"
               value="9M"
@@ -124,7 +129,8 @@ export default function AdultEducationPage() {
               polarity="up-is-bad"
               changeText="England &middot; Equivalent to GCSEs &middot; 17% of working-age adults &middot; Limits employment options"
               sparklineData={[10.2, 10.0, 9.8, 9.6, 9.4, 9.2, 9.1, 9.0]}
-              href="#sec-enrolments"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 

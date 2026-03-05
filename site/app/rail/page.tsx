@@ -148,10 +148,16 @@ export default function RailPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Britain&apos;s railways carried 1.74 billion passenger journeys in 2019 &mdash; the highest since the 1920s. COVID-19 cut that by 77%, and demand has recovered to 1.61 billion in 2024 (93% of peak), but pattern has reshaped permanently: season ticket sales remain 30% below 2019 as hybrid working stabilises. Service quality has worsened on almost every measure. The On-Time metric fell to 71.7% in 2023 &mdash; the worst since the statistic was introduced &mdash; with cancellations rising from 1.8% in 2014 to a peak of 4.4% in 2022. Government support reached &pound;8.1 billion in 2023/24, equivalent to &pound;5.20 per journey versus 60p before the pandemic, with fare revenue covering roughly 50% of operating costs. The Williams-Shapps Plan for Rail, committing to consolidate 14 fragmented Train Operating Companies into a single public body (Great British Railways), remains pending in legislation.
+              Britain&apos;s railways carried 1.74 billion passenger journeys in 2019 &mdash; the highest since the 1920s. COVID-19 cut that by 77%, to 390 million in 2020, and the government absorbed all revenue risk through Emergency Recovery Measures Agreements costing over &pound;10 billion between 2020 and 2022. Demand has since recovered to 1.61 billion journeys in 2024, or 93% of the pre-pandemic peak, but the pattern has reshaped permanently: Monday and Friday off-peak volumes now run below Tuesday&ndash;Wednesday levels as hybrid working stabilises. Season ticket sales remain roughly 30% below 2019, while anytime and flexible fares have grown &mdash; a structural shift that undermines the old franchise revenue model.
             </p>
-            <p>The burden of rail dysfunction falls unevenly. London and the South East account for over 60&percnt; of passenger journeys but receive roughly 70&percnt; of total rail investment. Northern Powerhouse Rail was scaled back in the 2021 Integrated Rail Plan from its original &pound;39&ndash;45bn vision to &pound;36bn of upgrades; commuters on Northern and TransPennine Express saw cancellation rates above 6&percnt; through much of 2022&ndash;23, roughly double the national average. Regulated fares &mdash; used disproportionately by lower-paid workers who cannot choose when to travel &mdash; have risen faster than unregulated advance fares, and a part-time worker commuting from Wakefield to Leeds now spends roughly 14&percnt; of gross salary on fares, compared with 7&percnt; in 2010.
+            <p>
+              Service quality has worsened on almost every measure. The On-Time metric &mdash; arrival within 59 seconds for commuter trains, 3 minutes for long-distance &mdash; fell to 71.7% in 2023, the worst since the statistic was introduced in the late 1990s. Cancellations rose from 1.8% in 2014 to 4.4% in 2022, partially recovering to 3.1% in 2024. The May 2018 timetable collapse, when GTR/Thameslink and Northern launched new schedules simultaneously, was catastrophic for northern commuters and wiped out six years of punctuality gains. The Williams-Shapps Plan for Rail aims to consolidate 14 fragmented Train Operating Companies into a single public body, Great British Railways; Labour has committed to the reform, but legislation remains pending.
             </p>
+            <p>
+              The financial architecture is unsustainable. Network Rail owns the infrastructure; 14 TOCs operate services &mdash; a split that generates coordination failures and duplicated costs. Government support reached &pound;8.1 billion in 2023/24, equivalent to &pound;5.20 per journey versus 60p before the pandemic. Fare revenue now covers roughly 50% of operating costs. Rail fares have risen approximately 40% above inflation since privatisation in 1994, yet that has not closed the funding gap. The pre-pandemic model relied on commuter season tickets that no longer sell in volume; replacing that income without either higher subsidy or higher fares is the central challenge facing any reform.
+            </p>
+            <p>The burden of rail dysfunction falls unevenly across the country and the income scale. London and the South East account for over 60% of all passenger journeys but receive roughly 70% of total rail investment, a disparity the Transport Select Committee has flagged repeatedly since 2019. Northern Powerhouse Rail, promised in 2015 to connect Liverpool, Manchester, Leeds and Hull with high-speed services, was scaled back in the 2021 Integrated Rail Plan to a mix of upgrades and new track costing &pound;36bn rather than the original &pound;39&ndash;45bn vision. Commuters on Northern and TransPennine Express services experienced cancellation rates above 6% through much of 2022 and 2023, roughly double the national average. Meanwhile, regulated fares &mdash; the cheaper anytime and season tickets used disproportionately by lower-paid workers who cannot choose when to travel &mdash; have risen faster than unregulated advance fares marketed to flexible travellers. A part-time worker commuting from Wakefield to Leeds now spends roughly 14% of gross salary on rail fares, compared with 7% for the same journey in 2010. The franchising model created perverse incentives: operators could hand back unprofitable routes to the state while retaining profitable intercity services, producing a two-tier network that entrenches regional inequality.</p>
+            <p>Rail performance statistics carry significant measurement caveats that can obscure the passenger experience. The industry&apos;s headline punctuality metric, On-Time, counts a train as punctual if it arrives within one minute of schedule for commuter services and five minutes for long-distance, but this replaced the older Public Performance Measure (PPM) in 2019, which used five- and ten-minute thresholds &mdash; making direct long-run comparisons unreliable without careful rebasing. Cancellation figures exclude &ldquo;planned cancellations&rdquo; for engineering works and operator-initiated timetable reductions, meaning a company which quietly removes 15% of its services from the timetable will appear to have a lower cancellation rate than one attempting to run a full schedule. Passenger satisfaction surveys conducted by Transport Focus shifted from paper to online methodology in 2020, introducing a mode effect the organisation itself estimates at 3&ndash;5 percentage points. Subsidy calculations depend heavily on whether Network Rail&apos;s capital expenditure is allocated per journey or per track-mile, producing dramatically different cost-per-passenger figures for rural versus urban routes. Fare revenue data does not capture the growing volume of split-ticketing and third-party booking workarounds, which the Rail Delivery Group estimates now account for 8&ndash;12% of long-distance journeys.</p>
           </div>
         </section>
 
@@ -173,7 +179,8 @@ export default function RailPage() {
             polarity="up-is-good"
             changeText="2024 · Worst since records began · Was 89% in 2016 · 1 in 4 trains late"
             sparklineData={[88.8, 88.8, 89.2, 87.8, 85.2, 84.4, 91.2, 91.3, 84.1, 71.7, 72.2]}
-            href="#sec-overview"/>
+            onExpand={() => {}}
+          />
           <MetricCard
             label="Cancellation rate"
             value="3.1%"
@@ -182,7 +189,8 @@ export default function RailPage() {
             polarity="up-is-bad"
             changeText="2024 · Improving from 4.4% peak (2022) · Still nearly double pre-COVID 1.8%"
             sparklineData={[1.8, 1.9, 1.9, 2.0, 2.0, 2.3, 2.5, 2.8, 4.4, 3.5, 3.1]}
-            href="#sec-punctuality"/>
+            onExpand={() => {}}
+          />
           <MetricCard
             label="Passenger journeys"
             value="1.61bn"
@@ -191,7 +199,8 @@ export default function RailPage() {
             polarity="up-is-good"
             changeText="2024 · 93% of pre-pandemic peak · Recovery slowing as hybrid working stabilises"
             sparklineData={[1.62, 1.65, 1.69, 1.72, 1.74, 0.39, 0.80, 1.41, 1.56, 1.61]}
-            href="#sec-passengers"/>
+            onExpand={() => {}}
+          />
         </div>
         </ScrollReveal>
 

@@ -57,7 +57,7 @@ export default function InWorkPovertyPage() {
   const pctSeries: Series[] = data
     ? [{
         id: 'pct-of-poor',
-        label: 'Working households as &percnt; of all people in poverty',
+        label: 'Working households as % of all people in poverty',
         colour: '#F4A261',
         data: data.national.timeSeries.map(d => ({
           date: yearToDate(d.date),
@@ -76,15 +76,18 @@ export default function InWorkPovertyPage() {
         <TopicHeader
           topic="In-Work Poverty"
           question="How Can You Work Full-Time and Still Be Poor?"
-          finding="8.1 million people live in working households below the poverty line &mdash; 60&percnt; of all people in poverty live in households where someone works, up from 45&percnt; in 1997."
+          finding="8.1 million people live in working households below the poverty line &mdash; 60% of all people in poverty live in households where someone works, up from 45% in 1997."
           colour="#E63946"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In-work poverty &mdash; households with at least one adult in paid employment but income below 60&percnt; of the median after housing costs &mdash; has become the dominant form of poverty in Britain. Approximately 8.1 million people were in in-work poverty in 2022/23, representing 60&percnt; of everyone below the poverty line, up from 45&percnt; in 1997. The shift reflects not higher employment but structural changes in the labour market: low wages, insecure hours, and insufficient work, amplified by housing costs that absorb an increasing share of low-income budgets. A worker on &pound;11.44 per hour for 20 hours per week generates around &pound;11,900 a year &mdash; well below the poverty line for a single person. The Universal Credit taper rate was cut from 63p to 55p in 2021, benefiting around 1.9 million working families, but the two-child limit, benefit cap, and local housing allowance freeze have eroded overall entitlements for the poorest households.</p>
-            <p>JRF research identifies lone parents, large families, and households with a disabled member as the highest-risk groups. A &ldquo;poverty premium&rdquo; worth an estimated &pound;500&ndash;&pound;700 a year forces low-income families to pay more per unit for energy (on prepayment meters), insurance, and credit. London has the highest in-work poverty rate &mdash; around 28&percnt; after housing costs &mdash; despite higher average wages, driven entirely by rents. The East Midlands, Yorkshire, and parts of the South West also record high rates, reflecting low-wage economies in retail, logistics, and agriculture with inadequate transport links to better-paid jobs. Single parents are disproportionately concentrated in deprived urban areas where low wages, high childcare costs, and limited childcare availability combine into a poverty trap.</p>
+            <p>In-work poverty &mdash; the situation in which a household has at least one adult in paid employment but still has income below 60% of the contemporary median after housing costs &mdash; has become the dominant form of poverty in Britain. According to the DWP&apos;s Households Below Average Income (HBAI) dataset, approximately 8.1 million people were living in in-work poverty in 2022/23, representing 60% of everyone below the poverty line. This is a fundamental change from 1997, when working households represented approximately 45% of people in poverty, and from the 1980s when the majority of poverty was concentrated among workless households &mdash; the unemployed, long-term sick, and retired. The shift is not primarily the result of more people working: employment rates have been high by historical standards for most of the past two decades. Rather, it reflects structural changes in the labour market that have allowed high employment to coexist with low wages, insecure hours, and insufficient work. High housing costs, which absorb an increasing share of low-income households&apos; budgets, amplify the problem: poverty measured before housing costs is significantly lower than the after-housing-costs measure, reflecting the pressure that rent and mortgages place on working families with limited incomes.</p>
+            <p>The mechanisms through which work fails to prevent poverty operate at multiple levels. At the individual level, many low-paid jobs do not provide sufficient hours to generate a living income: a worker earning &pound;11.44 per hour but working only 20 hours per week generates around &pound;11,900 per year before tax, well below the poverty line for a single person and far below what a family with children would need. Zero-hours and part-time contracts concentrated in retail, hospitality, and care mean that many workers cannot access sufficient hours regardless of their willingness to work more. At the household level, the combination of low wages across multiple earners can still fall below the poverty threshold, particularly in large families and in areas with high housing costs. The social security system was designed to top up household income through tax credits and later Universal Credit, but the adequacy of these transfers has been eroded by a decade of real-terms cuts: the two-child limit on child tax credit and the benefit cap have reduced entitlements for larger families, and the local housing allowance freeze until 2024 left housing benefit recipients unable to cover rents in most areas.</p>
+            <p>Research by the Joseph Rowntree Foundation identifies three primary groups at highest risk of in-work poverty: lone parents (particularly single mothers in part-time work), large families (those with three or more children, who face additional costs with limited benefit support since 2017), and households with a disabled member where caring responsibilities limit working hours. The TUC has documented a &ldquo;poverty premium&rdquo; affecting low-income working families &mdash; they typically pay more per unit for essential services including energy (on prepayment meters), insurance, credit, and broadband because they lack the upfront capital or credit history to access the cheapest tariffs. This poverty premium is estimated at approximately &pound;500&ndash;&pound;700 per year for the average low-income household, effectively a tax on being poor. The Resolution Foundation&apos;s work on &ldquo;inadequate work&rdquo; &mdash; employment that is insufficient by reason of hours, pay, or both &mdash; estimates that around 7 million workers are in inadequate work, a wider concept than in-work poverty but capturing a similar set of structural vulnerabilities.</p>
+            <p>In-work poverty is geographically concentrated in areas with high housing costs and high proportions of low-wage employment, but the pattern is more nuanced than a simple North-South divide. London has the highest absolute housing costs, making in-work poverty rates among working families higher than the national average despite higher average wages: the poverty rate in London after housing costs is approximately 28%, higher than any other region of England, driven by rents. Parts of the East Midlands, South West, and Yorkshire have high in-work poverty rates reflecting the combination of low-wage economies dominated by retail, logistics, and agriculture, and inadequate public transport that limits workers&apos; ability to access higher-paid jobs. Single parents are particularly concentrated in deprived urban areas in the North West, West Midlands, and Inner London, where the intersection of low wages, high childcare costs, and limited childcare availability creates a poverty trap. The government&apos;s Levelling Up agenda identified in-work poverty as a key indicator but the policies directed at it &mdash; primarily minimum wage increases &mdash; have not addressed the structural issues of hours, job quality, and housing costs.</p>
+            <p>The poverty statistics used to measure in-work poverty have well-documented limitations that affect interpretation. The 60% of median income threshold is a relative measure &mdash; it moves with median income &mdash; meaning that if overall incomes fall (as happened during the 2008 financial crisis and the 2022 cost-of-living crisis), the poverty line falls with them, potentially masking real increases in material hardship. The HBAI uses imputed rather than actual housing costs for owner-occupiers, which may understate or overstate housing affordability depending on mortgage vintage and local conditions. Income is measured at household level and equivalised for household size, but the equivalisation scales used (the Modified OECD scale) may not accurately reflect the costs of children or the economies of scale in larger households. The HBAI is conducted annually with a sample of approximately 20,000 households and is considered among the most reliable household income surveys in the world, but it can miss the very poorest households who are hardest to reach &mdash; those sleeping rough, in temporary accommodation, or in unstable housing situations. JRF&apos;s alternative Minimum Income Standard measure, which surveys what households need for a socially acceptable standard of living, consistently finds higher rates of inadequacy than the relative income measure, suggesting the official figures may understate the scale of the problem.</p>
           </div>
         </section>
 
@@ -101,25 +104,28 @@ export default function InWorkPovertyPage() {
               value="8.1M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2022/23 &middot; Up from 4.5M in 2005 &middot; 60&percnt; of all poverty is in-work"
+              changeText="2022/23 &middot; Up from 4.5M in 2005 &middot; 60% of all poverty is in-work"
               sparklineData={[4.5, 5.0, 5.6, 6.2, 6.7, 7.2, 7.8, 8.1]}
-              href="#sec-overview"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Working households in poverty"
-              value="60&percnt;"
+              value="60%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 45&percnt; in 1997 &middot; Majority of poverty is now in-work"
+              changeText="Up from 45% in 1997 &middot; Majority of poverty is now in-work"
               sparklineData={[45, 47, 50, 53, 55, 57, 59, 60]}
-              href="#sec-poverty"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Working single parents in poverty"
-              value="42&percnt;"
+              value="42%"
               direction="up"
               polarity="up-is-bad"
               changeText="2022/23 &middot; Despite employment &middot; Childcare costs and low hours"
               sparklineData={[31, 33, 35, 36, 38, 39, 41, 42]}
-              href="#sec-share"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 
@@ -127,7 +133,7 @@ export default function InWorkPovertyPage() {
           <section id="sec-poverty" className="mb-12">
             <LineChart
               title="People in working poverty, UK, 2002&ndash;2023 (millions)"
-              subtitle="People in households where at least one adult works but household income is below 60&percnt; of median, after housing costs (DWP HBAI)."
+              subtitle="People in households where at least one adult works but household income is below 60% of median, after housing costs (DWP HBAI)."
               series={povertySeries}
               yLabel="Millions"
               source={{
@@ -142,10 +148,10 @@ export default function InWorkPovertyPage() {
         <ScrollReveal>
           <section id="sec-share" className="mb-12">
             <LineChart
-              title="Working households as share of all people in poverty, 2002&ndash;2023 (&percnt;)"
-              subtitle="The majority of poverty is now in-work, up from 45&percnt; in the late 1990s. Work no longer guarantees escape from poverty."
+              title="Working households as share of all people in poverty, 2002&ndash;2023 (%)"
+              subtitle="The majority of poverty is now in-work, up from 45% in the late 1990s. Work no longer guarantees escape from poverty."
               series={pctSeries}
-              yLabel="&percnt;"
+              yLabel="%"
               source={{
                 name: 'JRF &amp; DWP',
                 dataset: 'UK Poverty Report &mdash; HBAI analysis',

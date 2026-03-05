@@ -70,17 +70,26 @@ export default function VolunteeringPage() {
         <TopicHeader
           topic="Volunteering"
           question="Is Britain Still Willing to Give Its Time?"
-          finding="Formal volunteering has fallen by a quarter since 2015, from 27&percnt; of adults volunteering monthly to just 20&percnt; in 2023. The pandemic accelerated a pre-existing decline, and the charity sector is under growing financial pressure: real-terms income has stagnated while demand for services has surged."
+          finding="Formal volunteering has fallen by a quarter since 2015, from 27% of adults volunteering monthly to just 20% in 2023. The pandemic accelerated a pre-existing decline, and the charity sector is under growing financial pressure: real-terms income has stagnated while demand for services has surged."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Volunteering is a pillar of British civil society, with an estimated 16.3 million adults volunteering formally at least once a year, contributing an estimated &pound;23 billion of economic value annually. But the trend is downward. The DCMS Community Life Survey shows regular formal volunteering &mdash; at least once a month &mdash; fell from 27&percnt; of adults in 2015 to 20&percnt; in 2023. The pandemic was a watershed: lockdowns dismantled the routines that sustain volunteering, and NCVO found 40&percnt; of charities reported a decline in volunteer numbers between 2019 and 2023. The cost-of-living crisis compounded the pressure, with the Charities Aid Foundation finding 34&percnt; of people who stopped volunteering cited financial reasons. Simultaneously, demand for charity services &mdash; food banks, debt advice, mental health support &mdash; has surged, creating a widening gap between what civil society is asked to provide and its capacity to deliver.
+              Volunteering is a pillar of British civil society. An estimated 16.3 million adults volunteer formally at least once a year through charities, community groups, sports clubs, and religious organisations, contributing an economic value estimated at &pound;23 billion annually. But the trend is downward. The DCMS Community Life Survey shows that regular formal volunteering &mdash; at least once a month &mdash; fell from 27% of adults in 2015 to 20% in 2023. Informal volunteering (helping neighbours, community mutual aid) spiked during the pandemic but has also settled below pre-COVID levels. The charity sector employs 920,000 people directly, making it larger than the agriculture, mining, and utilities sectors combined, yet its workforce and volunteer base are under simultaneous strain.
             </p>
             <p>
-              The decline is not evenly distributed. Volunteering rates are 28&percnt; in the least deprived areas against 14&percnt; in the most deprived; time, transport, and social networks required to volunteer are less available to people in precarious economic circumstances. Young people aged 16&ndash;24 have the lowest rates. Black African and Black Caribbean communities have lower formal volunteering rates than the white British average, though informal community support is likely under-measured. Rural areas face particular pressure as 3,000 community buildings &mdash; village halls, churches, community centres &mdash; have closed since 2010, removing the physical infrastructure on which much volunteering depends.
+              The pandemic was a watershed. Lockdowns dismantled the routines and social connections that sustain volunteering &mdash; weekly sessions at food banks, youth groups, hospital visits &mdash; and many did not return. NCVO analysis found that 40% of charities reported a decline in volunteer numbers between 2019 and 2023, with older volunteers (the backbone of many organisations) disproportionately not returning due to health concerns and changed habits. The cost-of-living crisis compounded the problem: potential volunteers who previously gave time now need to prioritise paid work. The Charities Aid Foundation found that 34% of people who reduced or stopped volunteering cited financial pressures as the primary reason. Simultaneously, demand for charity services &mdash; food banks, debt advice, mental health support &mdash; has surged, creating a widening gap between what civil society is asked to provide and its capacity to deliver.
+            </p>
+            <p>
+              Government policy toward the charity sector has been mixed. Austerity-era cuts to local authority budgets shifted significant service delivery responsibility onto charities and community organisations &mdash; often without accompanying funding. The Civil Society Strategy (2018) committed to supporting social action but was not renewed. The Dormant Assets Act 2022 released an estimated &pound;880 million from dormant bank accounts for social and environmental causes, a significant injection. The charity tax environment provides Gift Aid (effectively a 25% top-up on donations) and business rate relief, but NCVO has argued that the real-terms value of these reliefs has eroded as costs have risen. Community interest companies and social enterprises have grown as an alternative model, but they represent a small share of the total sector.
+            </p>
+            <p>
+              Volunteering patterns reflect deep-seated social inequalities. People in higher socioeconomic groups are significantly more likely to volunteer: 28% of adults in the least deprived areas volunteer monthly, compared with 14% in the most deprived. This mirrors other forms of civic engagement and partly reflects the &ldquo;resource model&rdquo; &mdash; volunteering requires time, transport, and social networks that are less available to people in precarious economic circumstances. Young people aged 16&ndash;24 have the lowest volunteering rates, despite efforts like the National Citizen Service (which has reached 750,000 young people since 2011 but with mixed evidence of sustained engagement). People from Black African and Black Caribbean backgrounds have lower formal volunteering rates than the white British average, though informal community support is likely under-measured. Rural communities face particular challenges as village halls, churches, and community centres close: 3,000 community buildings have been lost since 2010.
+            </p>
+            <p>
+              Measuring volunteering and the health of civil society is fraught with definitional and methodological difficulties. The Community Life Survey defines &ldquo;formal volunteering&rdquo; as unpaid help given through a group, club, or organisation, excluding informal help to individuals &mdash; but the boundary between formal and informal is blurred, and changes in how respondents interpret the question may explain some of the trend. The survey moved to telephone methodology during the pandemic, introducing a mode effect that is acknowledged but not precisely quantified. Charity income figures from the NCVO Almanac cover the registered charity sector and exclude unregistered community groups, social enterprises without charitable status, and mutual aid networks &mdash; exactly the parts of civil society that grew most during the pandemic. The &pound;23 billion economic value of volunteering is modelled using average replacement wage assumptions, a method that is transparent but contested by economists who argue it overstates the true economic impact by assuming all volunteer hours would otherwise need to be purchased.
             </p>
           </div>
         </section>
@@ -98,10 +107,11 @@ export default function VolunteeringPage() {
               value="20%"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 27&percnt; in 2015 &middot; Pandemic accelerated pre-existing decline"
+              changeText="Down from 27% in 2015 &middot; Pandemic accelerated pre-existing decline"
               sparklineData={[27.0, 26.1, 24.8, 23.3, 23.1, 17.2, 16.3, 19.4, 20.1]}
               source="DCMS &middot; Community Life Survey 2023"
-              href="#sec-volunteering"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Charity sector income (real terms)"
               value="&pound;54.8bn"
@@ -110,7 +120,8 @@ export default function VolunteeringPage() {
               changeText="Stagnated in real terms &middot; Demand for services surging"
               sparklineData={[54.2, 55.1, 55.8, 56.4, 57.0, 51.3, 53.8, 55.2, 54.8]}
               source="NCVO &middot; UK Civil Society Almanac 2023"
-              href="#sec-charity"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Charities reporting volunteer decline"
               value="40%"
@@ -119,7 +130,8 @@ export default function VolunteeringPage() {
               changeText="2019&ndash;2023 &middot; Older volunteers disproportionately not returning"
               sparklineData={[15, 18, 22, 28, 35, 40]}
               source="NCVO &middot; Charity Tracker Survey 2023"
-              href="#sec-charity"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 

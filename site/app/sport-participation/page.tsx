@@ -77,10 +77,19 @@ export default function SportParticipationPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Physical inactivity costs the NHS an estimated &pound;1.2 billion per year and is linked to one in six deaths in the UK. Sport England&apos;s Active Lives Adult Survey shows that 63.5&percnt; of adults meet the Chief Medical Officer&apos;s guideline of 150 minutes of moderate-intensity activity per week, but 25.4&percnt; are classified as &ldquo;inactive&rdquo; &mdash; fewer than 30 minutes weekly &mdash; a figure that has barely moved since 2016. The pandemic caused a sharp dip with inactivity peaking at 27.5&percnt; in 2020/21; recovery has stalled rather than improved. Only 47&percnt; of children aged 5&ndash;16 meet the 60-minute daily guideline, and 38&percnt; of secondary schools reduced PE time between 2018 and 2023. Some 400 public swimming pools have closed since 2010, eroding the infrastructure on which activity programmes depend particularly in deprived areas.
+              Physical inactivity costs the NHS an estimated &pound;1.2 billion per year and is linked to one in six deaths in the UK, making it a public health issue of comparable scale to smoking. Sport England&apos;s Active Lives Adult Survey &mdash; the most comprehensive measure of activity in England &mdash; shows that 63.5% of adults meet the Chief Medical Officer&apos;s guideline of 150 minutes of moderate-intensity activity per week. But 25.4% of adults are classified as &ldquo;inactive,&rdquo; doing fewer than 30 minutes per week &mdash; a figure that has barely moved since the survey began in 2016. The pandemic caused a sharp dip, with inactivity peaking at 27.5% in 2020/21, but the recovery to pre-pandemic levels has stalled rather than improved.
             </p>
             <p>
-              The activity gap mirrors every other dimension of inequality. Adults in the most deprived 20&percnt; of areas are twice as likely to be inactive as those in the least deprived (33&percnt; vs 17&percnt;). Disabled people are twice as likely to be inactive as non-disabled (42&percnt; vs 22&percnt;). People from Black backgrounds have the highest inactivity rate among ethnic groups at 32&percnt;. Adults aged 75&plus; have a rate of 52&percnt;. These disparities widened after the pandemic as community programmes that disproportionately served disadvantaged groups were slower to reopen or did not return at all. Sport England&apos;s &pound;2.3 billion Uniting the Movement strategy has deliberately shifted funding from elite toward underactive populations, but sustained behaviour change has proved more modest than initial awareness gains.
+              The government&apos;s Sporting Future strategy (2015) and its successor, Get Active (2023), both set ambitions to reduce inactivity by 500,000 people. Progress has been marginal. Sport England has invested &pound;2.3 billion of National Lottery and government funding since 2017 through its strategy Uniting the Movement, with a deliberate shift from funding elite and traditional sport toward community programmes targeting underactive populations. Early evidence suggests some success in reaching older adults and women through programmes like This Girl Can, which generated measurable increases in awareness but more modest changes in sustained behaviour. Swimming pool and leisure centre closures &mdash; 400 public pools have closed since 2010 &mdash; have eroded the infrastructure on which many activity programmes depend, particularly in deprived areas.
+            </p>
+            <p>
+              Children&apos;s activity levels are a particular concern. The Active Lives Children and Young People Survey found that only 47% of children aged 5&ndash;16 meet the guideline of 60 minutes of daily activity. This represents a decline from the pre-pandemic figure of 47.2% in 2019 to 44.6% in 2021, with only partial recovery to 47.0% by 2023. School sport provision has contracted: 38% of secondary schools reduced the time allocated to PE between 2018 and 2023, citing pressure from the academic curriculum and funding constraints. The School Sport and Activity Action Plan, announced in 2019, was never fully implemented. The 2023 primary PE and sport premium (&pound;320 million per year) is the largest dedicated school sport funding stream, but the National Audit Office found that one in three schools could not demonstrate how the premium had been spent effectively.
+            </p>
+            <p>
+              The activity gap mirrors every other axis of inequality. Adults in the most deprived 20% of areas are twice as likely to be inactive as those in the least deprived 20% (33% vs 17%). Women are less active than men at every age. Disabled people are twice as likely to be inactive as non-disabled people: 42% vs 22%. People from Black backgrounds have the highest inactivity rates among ethnic groups (32%), driven partly by structural factors including lower access to green space and leisure facilities and cultural barriers to participation. Older adults aged 75+ have an inactivity rate of 52%. These disparities have widened since the pandemic, as community programmes that disproportionately served disadvantaged groups were slower to reopen or did not return at all.
+            </p>
+            <p>
+              Self-reported physical activity data is known to overestimate true activity levels by 30&ndash;50% compared with objective accelerometer measurements. The Active Lives Survey is self-reported and therefore almost certainly overstates the proportion of people meeting the 150-minute guideline. The survey covers England only; separate surveys in Scotland (Scottish Health Survey), Wales (National Survey for Wales), and Northern Ireland (Health Survey NI) use different methodologies, making UK-wide comparison difficult. The switch from the Active People Survey to Active Lives in 2016 means there is no directly comparable time series before that date. Children&apos;s activity measurement is particularly unreliable for younger age groups, where self-reporting is supplemented by parental reporting. The cost of inactivity to the NHS (&pound;1.2 billion) is a modelled estimate with wide uncertainty bounds, sensitive to assumptions about the counterfactual activity level.
             </p>
           </div>
         </section>
@@ -98,19 +107,21 @@ export default function SportParticipationPage() {
               value="63.5%"
               direction="flat"
               polarity="up-is-good"
-              changeText="150+ min/week &middot; Barely changed since 2016 (61.8&percnt;)"
+              changeText="150+ min/week &middot; Barely changed since 2016 (61.8%)"
               sparklineData={[61.8, 62.3, 62.6, 63.3, 61.4, 60.9, 63.1, 63.7, 63.5]}
               source="Sport England &middot; Active Lives 2024"
-              href="#sec-active"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Inactive adults"
               value="25.4%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Fewer than 30 min/week &middot; Peaked at 27.5&percnt; in 2021"
+              changeText="Fewer than 30 min/week &middot; Peaked at 27.5% in 2021"
               sparklineData={[25.7, 25.2, 25.0, 24.6, 27.1, 27.5, 25.6, 25.0, 25.4]}
               source="Sport England &middot; Active Lives 2024"
-              href="#sec-inactive"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Public swimming pools closed"
               value="400"
@@ -119,7 +130,8 @@ export default function SportParticipationPage() {
               changeText="Since 2010 &middot; Disproportionately in deprived areas"
               sparklineData={[180, 220, 260, 290, 320, 350, 375, 390, 400]}
               source="Swim England &middot; Facilities Report 2023"
-              href="#sec-inactive"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 

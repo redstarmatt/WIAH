@@ -72,8 +72,11 @@ export default function SocialMobilityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain is one of the least socially mobile countries in the developed world. OECD analysis finds it takes on average five generations for a family from the bottom income decile to reach the national average &mdash; compared with two generations in Denmark or three in Germany. The class pay gap compounds this: people from working-class backgrounds earn on average &pound;6,800 less per year than colleagues from professional families doing the same job at the same level &mdash; a &ldquo;class ceiling&rdquo; driven not by qualification gaps but by accent, networks, and the social capital that elite education provides. In the most selective professions &mdash; law (26&percnt;), medicine (20&percnt;), journalism (28&percnt;) &mdash; people from working-class origins are represented at less than half their share of the wider population. FSM pupils progressing to higher education rose from 22&percnt; in 2014 to 29&percnt; in 2022, but the gap to non-FSM peers (50&percnt;) remains wide, and disadvantaged students are disproportionately concentrated in post-1992 institutions with weaker graduate earnings outcomes.</p>
-            <p>Geography and identity compound the class disadvantage. The Social Mobility Commission identifies persistent &ldquo;cold spots&rdquo; &mdash; coastal towns, former mining communities, rural areas &mdash; where weak labour markets, poor transport, and under-resourced schools make upward mobility structurally harder regardless of individual effort. British Pakistani and Bangladeshi workers face a class pay gap 40&percnt; wider than the white British average; disabled graduates are 15 percentage points less likely to be in professional employment three years after university than non-disabled peers with identical qualifications; working-class women in professional roles earn on average &pound;12,000 less per year than upper-middle-class men in the same occupation. By age five, children from the poorest fifth of families are already 11 months behind their wealthiest peers in vocabulary development &mdash; a gap that current early years provision narrows only marginally.</p>
+            <p>Britain is one of the least socially mobile countries in the developed world. OECD analysis finds it takes on average five generations for a family from the bottom income decile to reach the national average &mdash; compared with two generations in Denmark or three in Germany. The class pay gap compounds this: people from working-class backgrounds earn on average &pound;6,800 less per year than colleagues from professional families doing the same job at the same level. This &ldquo;class ceiling&rdquo; is driven not by formal qualification gaps but by accent, networks, and the social polish that elite education cultivates. In the most selective professions &mdash; law (26%), medicine (20%), journalism (28%) &mdash; people from working-class origins are represented at less than half their share of the wider population.</p>
+            <p>Where you are born matters as much as who you are born to. The Social Mobility Commission has identified persistent &ldquo;cold spots&rdquo; &mdash; coastal towns like Scarborough, Hull, and Blackpool; former mining communities across South Yorkshire and County Durham; and rural coastal areas of the South West &mdash; where the combination of weak labour markets, poor transport links, and under-resourced schools makes upward mobility structurally harder. London and its commuter belt are the dominant &ldquo;hot spots&rdquo;: graduate employers are geographically concentrated, internships and networking opportunities cluster there, and family proximity to high-value professional contacts translates directly into career outcomes. A young person from Blackpool and a young person from Surrey with identical A-level grades do not face the same odds.</p>
+            <p>Education is the primary policy lever, but university entry alone does not equalise outcomes. The share of free school meals pupils progressing to higher education rose from 22% in 2014 to 29% in 2022 &mdash; a real improvement, though the gap to non-FSM peers (50%) remains wide. More importantly, which university a student attends, and what networks it provides, matters enormously. Disadvantaged students are disproportionately concentrated in post-1992 institutions with weaker graduate earnings outcomes. The Social Mobility Commission has recommended shifting focus beyond headline participation rates toward employer practices &mdash; blind recruitment, removing unpaid internships, and socio-economic diversity targets &mdash; as the more direct levers on actual outcomes.</p>
+            <p>Ethnicity, disability, and gender intersect with class in ways the headline figures obscure. British Pakistani and Bangladeshi workers face a class pay gap 40% wider than the white British average, compounding ethnic pay penalties with socioeconomic disadvantage. Disabled graduates are 15 percentage points less likely to be in professional employment three years after university than non-disabled peers with identical qualifications. Women from working-class backgrounds face a double penalty &mdash; the class ceiling and the gender pay gap combine so that a working-class woman in a professional role earns on average &pound;12,000 less per year than an upper-middle-class man in the same occupation. Early childhood is where the trajectory sets: by age five, children from the poorest fifth of families are already 11 months behind their wealthiest peers in vocabulary development, a gap that current early years provision narrows only marginally. The 30 hours of free childcare entitlement does not cover children under nine months, precisely the period when parental return to work is most constrained and the class divergence in cognitive stimulation is sharpest.</p>
+            <p>Social mobility is among the hardest outcomes to measure reliably. The OECD&apos;s five-generation estimate is modelled from cross-sectional earnings elasticity data, not from tracking actual families across 150 years &mdash; it is a statistical projection, not an observation. The class pay gap figure of &pound;6,800 comes from the Social Mobility Commission&apos;s analysis of the Labour Force Survey, which relies on self-reported parental occupation &mdash; a measure subject to recall bias and social desirability effects. Free school meals eligibility is a convenient proxy for disadvantage but misses families just above the threshold, undercounts secondary-age pupils who do not register, and was distorted by the temporary expansion of eligibility during the pandemic. The SMC&apos;s cold spot analysis uses composite indices that weight different factors &mdash; education, employment, housing &mdash; but the weightings are contested and small changes produce significantly different local rankings. International comparisons are further complicated by the fact that countries define &ldquo;working class&rdquo; differently: the UK uses parental occupation (NS-SEC), while Nordic countries often use income deciles, making direct comparison of mobility rates approximate at best.</p>
           </div>
         </section>
 
@@ -93,7 +96,8 @@ export default function SocialMobilityPage() {
               polarity="up-is-good"
               changeText="vs 60% of population from WC backgrounds"
               sparklineData={[43, 42, 41, 40, 40, 39, 39, 39, 39]}
-              href="#sec-overview"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="FSM pupils reaching higher education"
               value="29%"
@@ -101,7 +105,8 @@ export default function SocialMobilityPage() {
               polarity="up-is-good"
               changeText="vs 50% for non-FSM peers"
               sparklineData={[22, 24, 25, 26, 27, 27, 28, 28, 29]}
-              href="#sec-professional"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Class pay gap (professional roles)"
               value="&pound;6,800"
@@ -110,7 +115,8 @@ export default function SocialMobilityPage() {
               polarity="up-is-bad"
               changeText="People from WC backgrounds earn &pound;6.8K less in same role"
               sparklineData={[4000, 4500, 5000, 5500, 6000, 6400, 6800]}
-              href="#sec-higher-ed"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 

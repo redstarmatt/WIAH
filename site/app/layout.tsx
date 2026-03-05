@@ -20,13 +20,20 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://whatisactuallyhappening.uk'),
-  title: 'What is actually happening?',
+  metadataBase: new URL('https://www.wiah.uk'),
+  title: {
+    default: 'What is actually happening?',
+    template: '%s — What is actually happening?',
+  },
   description: 'A curated national data platform that makes the real state of the UK visible, understandable, and shareable.',
+  alternates: {
+    canonical: 'https://www.wiah.uk',
+  },
   openGraph: {
     title: 'What is actually happening?',
     description: 'The real state of the UK — visible, understandable, shareable.',
     siteName: 'What is actually happening?',
+    url: 'https://www.wiah.uk',
     type: 'website',
   },
 };

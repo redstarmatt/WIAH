@@ -82,10 +82,19 @@ export default function CivilLibertiesPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Britain has accumulated one of the world&apos;s most extensive surveillance infrastructures without any single democratic decision. An estimated 5.2 million CCTV cameras &mdash; roughly one per 13 citizens &mdash; have grown through market decisions, planning conditions, and police recommendations rather than legislation. The Investigatory Powers Act 2016 provides a framework for bulk communications interception and mass retention of internet connection records; the European Court of Human Rights found parts of it incompatible with human rights law in 2021. The Police, Crime, Sentencing and Courts Act 2022 and the Public Order Act 2023 introduced new offences of &ldquo;serious disruption&rdquo; and &ldquo;serious disruption prevention orders&rdquo; &mdash; civil pre-emptive bans on named individuals attending protests before any offence has been committed, which the Joint Committee on Human Rights found incompatible with Articles 10 and 11 of the European Convention. CIVICUS downgraded the UK&apos;s civic space rating from &ldquo;Open&rdquo; to &ldquo;Narrowed&rdquo; in 2019.
+              Britain has accumulated one of the world&apos;s most extensive domestic surveillance infrastructures without any single moment of explicit democratic decision. The growth of CCTV cameras &mdash; estimated by the British Security Industry Association at approximately 5.2 million nationwide, roughly one per 13 citizens &mdash; occurred incrementally through decisions by local authorities, transport operators, retailers, housing associations, and private individuals. No government has legislated for this network; it has grown organically through market decisions, planning conditions, and police recommendations. The Investigatory Powers Act 2016 (the &ldquo;Snoopers&apos; Charter&rdquo;) provides a legal framework for bulk interception of communications, mass retention of internet connection records, and equipment interference by intelligence agencies &mdash; powers that the European Court of Human Rights found, in part, to be incompatible with human rights law in 2021. The Home Office&apos;s Biometrics and Surveillance Camera Commissioner was abolished in 2023 and not replaced, removing a layer of independent oversight precisely as the surveillance estate expanded.
             </p>
             <p>
-              Stop and search reached 16 per 1,000 population in 2023 &mdash; up from a post-2014 reform low but below the 25 per 1,000 peak in 2010/11. Black people remain approximately 7 times more likely to be stopped and searched than white people, a ratio unchanged for 20 years and persistent after controlling for area-level crime rates. Ethnic minority communities face disproportionate exposure to Prevent referrals &mdash; Muslim communities account for 65&percnt; of referrals despite being 5&percnt; of the population. Facial recognition technology deployed by the Metropolitan Police has significantly higher error rates for darker-skinned individuals. The Biometrics and Surveillance Camera Commissioner was abolished in 2023 without replacement, removing independent oversight precisely as the surveillance estate expanded.
+              The legislative trajectory since 2014 has expanded police and state powers across a range of domains. The Investigatory Powers Act 2016 gave statutory basis to mass surveillance practices exposed by Edward Snowden in 2013. The Counter-Terrorism and Security Act 2015 introduced Prevent duty on public bodies and powers to seize passports. The Police, Crime, Sentencing and Courts Act 2022 introduced significant restrictions on the right to protest, including new offences of causing &ldquo;serious disruption&rdquo; and expanding police powers to impose conditions on demonstrations. The Public Order Act 2023 went further, introducing &ldquo;serious disruption prevention orders&rdquo; (SDPOs) that can ban named individuals from attending protests before any offence has been committed &mdash; a form of civil pre-emptive restriction. Liberty and Amnesty International challenged several provisions in the courts; the Joint Committee on Human Rights found multiple clauses incompatible with Article 10 (freedom of expression) and Article 11 (freedom of assembly) of the European Convention.
+            </p>
+            <p>
+              Stop and search is the most statistically visible manifestation of disproportionate police power. The Home Office publishes annual data: stop and search reached a peak of 25 per 1,000 population in 2010/11, fell substantially following the 2014 reforms (a direct result of the then Home Secretary Theresa May&apos;s &ldquo;Best Use of Stop and Search&rdquo; scheme), but has risen again from 2019, reaching approximately 16 per 1,000 in 2023. The ethnic disparity in stop and search has remained stubbornly persistent: Black people are approximately 7 times more likely to be stopped and searched than white people, a ratio that has barely changed for 20 years despite multiple reviews, codes of practice revisions, and body-worn video requirements. The disproportionality exists even when controlling for area-level crime rates, suggesting that race itself remains a factor in officer decision-making, a finding acknowledged in successive HMICFRS inspections.
+            </p>
+            <p>
+              The impacts of civil liberties restrictions fall unevenly. The protest restrictions in the PCSC Act 2022 and Public Order Act 2023 have been most visibly applied against climate activists (Just Stop Oil, Extinction Rebellion), who are predominantly middle-class and white. But the same legal powers are available against any protest movement, and civil society organisations have documented cases where powers were applied against trade union picket lines, pro-Palestinian demonstrations, and anti-HS2 campaigners. People from ethnic minority backgrounds face disproportionate exposure to stop and search, counter-terrorism surveillance, and Prevent referrals &mdash; a 2021 review found that Muslim communities account for 65% of Prevent referrals despite being 5% of the population. Facial recognition technology, deployed by the Metropolitan Police and South Wales Police, has error rates that are significantly higher for darker-skinned individuals, raising both effectiveness and discrimination concerns.
+            </p>
+            <p>
+              Measuring the erosion of civil liberties is methodologically challenging because it involves assessing the cumulative and chilling effects of legal changes rather than discrete incidents. CIVICUS&apos;s annual State of Civil Society report uses a combination of incident data (prosecutions, demonstrations disrupted, journalists investigated) and expert assessment to assign a civic space rating; the UK was downgraded from &ldquo;Open&rdquo; to &ldquo;Narrowed&rdquo; in 2019, reflecting the pattern of legislative restrictions on protest, and has remained in this category. The distinction matters: &ldquo;Narrowed&rdquo; places the UK in the same category as Australia, Canada, and France, rather than countries like Hungary or Turkey that are rated &ldquo;Obstructed&rdquo; &mdash; a reminder that the UK&apos;s civil liberties position remains substantially better than authoritarian states. The independent judiciary, parliamentary scrutiny, a free press, and an active civil society all provide meaningful checks. But the trend is toward restriction, not expansion, and each individual law passed is assessed in isolation rather than against the cumulative picture.
             </p>
           </div>
         </section>
@@ -106,7 +115,8 @@ export default function CivilLibertiesPage() {
               changeText="5.2 million total &middot; 1 per 13 people &middot; Highest density of any democracy"
               sparklineData={[45, 50, 55, 58, 62, 66, 70, 75]}
               source="BSIA &middot; CCTV Survey 2023"
-              href="#sec-stop-search"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Police stop and search per 1,000"
               value="16"
@@ -115,7 +125,8 @@ export default function CivilLibertiesPage() {
               changeText="Rising since 2019 &middot; Black people 7&times; more likely to be stopped"
               sparklineData={[25, 20, 14, 11, 9, 10, 13, 16]}
               source="Home Office &middot; Police Powers and Procedures 2023"
-              href="#sec-cctv"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="UK CIVICUS civic space rating"
               value="3/5"
@@ -124,7 +135,8 @@ export default function CivilLibertiesPage() {
               changeText="Narrowed &middot; Downgraded from Open in 2019 &middot; PCSC Act 2022 &amp; Public Order Act 2023 cited"
               sparklineData={[4, 4, 4, 4, 3, 3, 3, 3]}
               source="CIVICUS &middot; State of Civil Society Report 2024"
-              href="#sec-cctv"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 

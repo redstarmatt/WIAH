@@ -60,14 +60,17 @@ export default function SolarPowerPage() {
         <TopicHeader
           topic="Solar Power"
           question="How Far Has Britain&apos;s Solar Revolution Got?"
-          finding="The UK now has 15.8 GW of installed solar &mdash; enough to power 5 million homes &mdash; but solar still generates only 5&percnt; of annual electricity. The technology is proven and the costs are at record lows, yet large-scale deployment faces persistent planning and grid connection barriers."
+          finding="The UK now has 15.8 GW of installed solar &mdash; enough to power 5 million homes &mdash; but solar still generates only 5% of annual electricity. The technology is proven and the costs are at record lows, yet large-scale deployment faces persistent planning and grid connection barriers."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Feed-in Tariff drove one of the fastest solar buildouts per capita in the world between 2012 and 2016, taking UK capacity from under 2 GW to over 11 GW. Then in 2016 the government sharply cut subsidies and effectively ended the tariff for large-scale solar: annual additions collapsed from 3.5 GW in 2015 to under 0.5 GW in 2017&ndash;18. Since 2019, subsidy-free solar has recovered &mdash; solar farms now compete at under &pound;40/MWh without support, cheaper than gas peakers &mdash; and the Contracts for Difference mechanism awarded over 2 GW of new solar contracts in 2023. The British Energy Security Strategy (2022) set a 70 GW target by 2035, requiring annual additions of around 5 GW per year &mdash; roughly three times the current rate. A key bottleneck is not land or technology but grid connection: National Grid ESO has a queue of over 700 GW of projects awaiting connection, the majority solar, with wait times of 10&ndash;15 years in some areas. In summer 2024, solar generated more electricity than coal over the full season for the first time.</p>
-            <p>Solar capacity is distributed unevenly. The South East and South West account for over 40&percnt; of installed capacity; Scotland has around 3 GW; Northern Ireland just 0.5 GW. Only 9&percnt; of suitable public sector roofs in England carry solar panels, representing a missed opportunity of around 3 GW of low-cost, non-contentious generation according to the National Audit Office. Planning constraints add further friction: solar farms above 50 MW require a Development Consent Order averaging three to four years to secure, and some rural councils routinely refuse farms on agricultural land. The 2023 NPPF update clarified that solar on lower-quality agricultural land should generally be approved, partially easing a restriction that had blocked multiple projects.</p>
+            <p>The UK&apos;s solar story is one of extraordinary early momentum followed by a slowdown in ambition. Between 2012 and 2016, the Feed-in Tariff scheme drove an installation boom, taking capacity from under 2 GW to over 11 GW in just four years &mdash; one of the fastest solar buildouts per capita in the world at the time. That growth was largely driven by rooftop domestic and commercial installations, with ground-mounted utility-scale farms concentrating in southern England, particularly the South West and South East. In 2016, the government sharply cut subsidies and effectively ended the Feed-in Tariff for large-scale solar, and annual capacity additions collapsed &mdash; dropping from around 3.5 GW in 2015 to under 0.5 GW in 2017 and 2018. The UK went from solar leader to solar laggard in a single policy cycle. Solar&apos;s share of annual electricity generation, averaging just 5%, understates its summer contribution: on long sunny days, solar can meet 30% or more of UK demand, and in summer 2024 solar generated more electricity than coal over the full season for the first time.</p>
+            <p>Since 2019, subsidy-free solar has begun to recover, with solar farms now competitive at under &pound;40/MWh without government support &mdash; cheaper than gas peakers and comparable to onshore wind. The Contracts for Difference (CfD) auction mechanism, which replaced Feed-in Tariffs, has supported larger utility-scale farms through Allocation Rounds 4 and 5, awarding contracts for over 2 GW of new solar in 2023 alone. The government&apos;s British Energy Security Strategy (2022) set a target of 70 GW of solar by 2035, more than quadrupling current capacity. Reaching that target would require annual additions of around 5 GW per year &mdash; roughly three times the current deployment rate. The Solar Trade Association estimates that 250 to 400 km&sup2; of solar panels would be needed, equivalent to roughly 0.1% of UK land area. A key bottleneck is not land or technology but grid connection: National Grid Electricity System Operator has a queue of over 700 GW of generation projects awaiting connection, the majority of them solar, with wait times of 10 to 15 years in some areas.</p>
+            <p>Planning policy has been a persistent constraint on large-scale ground-mounted solar. In England, solar farms above 50 MW require a Development Consent Order as a Nationally Significant Infrastructure Project, a process that takes on average three to four years. Below 50 MW, local planning authority decisions vary enormously, with some rural councils routinely refusing solar farms on agricultural land. In 2023, the government updated National Planning Policy Framework guidance to make clear that solar on lower-quality agricultural land should generally be approved, partially relaxing restrictions that had blocked projects on Grade 3b and Grade 4 land. Wales and Scotland have more permissive planning frameworks for solar. Rooftop solar on social housing and public buildings remains largely untapped: the National Audit Office estimated in 2023 that only 9% of suitable public sector roofs in England carry solar panels, representing a missed opportunity of around 3 GW of low-cost, non-contentious generation.</p>
+            <p>The distribution of solar capacity across the UK is highly uneven. The South East and South West of England together account for over 40% of installed capacity, reflecting both better irradiation levels and historically faster deployment under the Feed-in Tariff. Scotland has around 3 GW, concentrated in central and southern Scotland where grid connections are easier. Northern Ireland has just 0.5 GW, reflecting smaller population and grid constraints. Within England, northern regions including Yorkshire, the North East, and the North West have substantially less solar per capita than the South, partly due to weather and partly due to planning and grid economics. The Solar Together group-purchasing scheme, offered by a growing number of local councils, has helped increase rooftop deployment in less affluent areas by reducing upfront costs. Community solar &mdash; where local residents invest in and share income from nearby solar farms &mdash; has grown to cover around 250 MW, providing both local economic benefit and increased public support for development.</p>
+            <p>Solar statistics require careful interpretation. The &ldquo;enough to power X million homes&rdquo; framing, used widely including in official communications, is based on peak rated capacity output and does not account for the UK&apos;s average capacity factor of around 10% for solar (meaning actual output is typically a tenth of rated capacity averaged across the year). Annual electricity generation percentage &mdash; around 5% &mdash; is therefore the more accurate measure of solar&apos;s contribution to UK energy supply. The 70 GW by 2035 target is aspirational and not legally binding; the Sixth Carbon Budget pathway assumes 85 GW by 2035. Grid connection wait times are measured from application to connection offer, not to actual operation, and many projects in the queue will never be built. Embedded generation statistics &mdash; covering solar panels connected behind the meter rather than to the grid &mdash; are estimated using a modelling approach and carry significant uncertainty, particularly for commercial rooftop installations.</p>
           </div>
         </section>
 
@@ -88,17 +91,19 @@ export default function SolarPowerPage() {
               changeText="Up from 0.07 GW in 2010 &mdash; target: 70 GW by 2035"
               sparklineData={[4.7, 6.2, 8.1, 10.4, 11.8, 13.0, 14.2, 15.8]}
               source="DESNZ &mdash; Solar photovoltaics deployment statistics"
-              href="#sec-capacity"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="Solar share of annual electricity"
               value="5"
               unit="%"
               direction="up"
               polarity="up-is-good"
-              changeText="Rises to 30&percnt;+ on peak summer days; 5&percnt; annual average"
+              changeText="Rises to 30%+ on peak summer days; 5% annual average"
               sparklineData={[2, 2.5, 3, 3.8, 4.2, 4.6, 4.9, 5]}
               source="DESNZ &mdash; Energy Trends; National Grid ESO"
-              href="#sec-generation"/>
+              onExpand={() => {}}
+            />
             <MetricCard
               label="New solar added in 2023"
               value="1.8"
@@ -108,7 +113,8 @@ export default function SolarPowerPage() {
               changeText="Target deployment rate: ~5 GW/yr to hit 70 GW by 2035"
               sparklineData={[3.5, 0.9, 0.5, 0.5, 0.6, 0.9, 1.2, 1.8]}
               source="DESNZ &mdash; Solar photovoltaics deployment 2024"
-              href="#sec-generation"/>
+              onExpand={() => {}}
+            />
           </div>
         </ScrollReveal>
 
@@ -139,7 +145,7 @@ export default function SolarPowerPage() {
             title="A Summer Milestone"
             value="First time"
             unit="solar beat coal over a full summer season"
-            description="In summer 2024, solar generated more electricity than coal over the full season for the first time &mdash; a symbolic milestone for a country that powered the industrial revolution on coal. Battery costs have fallen 90&percnt; since 2010, making solar-plus-storage increasingly competitive. On peak days, solar met over a third of UK electricity demand. The Contracts for Difference scheme awarded over 2 GW of new solar contracts in 2023, signalling that subsidy-free large-scale solar is now the norm."
+            description="In summer 2024, solar generated more electricity than coal over the full season for the first time &mdash; a symbolic milestone for a country that powered the industrial revolution on coal. Battery costs have fallen 90% since 2010, making solar-plus-storage increasingly competitive. On peak days, solar met over a third of UK electricity demand. The Contracts for Difference scheme awarded over 2 GW of new solar contracts in 2023, signalling that subsidy-free large-scale solar is now the norm."
             source="Source: National Grid ESO &mdash; Historic generation mix data 2024; DESNZ energy statistics."
           />
         </ScrollReveal>
