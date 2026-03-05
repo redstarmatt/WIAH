@@ -6,7 +6,7 @@ import MetricCard from '@/components/MetricCard'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 
-export default function 5gCoverageInequalityPage() {
+export default function FiveGCoverageInequalityPage() {
   return (
     <>
       <TopicNav topic="5G Coverage Inequality" />
