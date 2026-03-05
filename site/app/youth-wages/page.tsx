@@ -97,8 +97,7 @@ export default function YouthWagesPage() {
               polarity="up-is-good"
               changeText="Rising in nominal terms &middot; NLW helping"
               sparklineData={[14800, 14200, 14100, 14800, 16200, 17100, 17000, 17800, 18600, 19200]}
-              onExpand={() => {}}
-              source="ONS ASHE &middot; 2023"
+              href="#sec-chart"source="ONS ASHE &middot; 2023"
             />
             <MetricCard
               label="Youth&ndash;adult wage gap"
@@ -108,8 +107,7 @@ export default function YouthWagesPage() {
               polarity="up-is-bad"
               changeText="Gap barely closed since 2010 &middot; was 43%"
               sparklineData={[43, 46, 47, 46, 45, 44, 45, 44, 44, 42]}
-              onExpand={() => {}}
-              source="ONS ASHE &middot; 2023"
+              href="#sec-chart"source="ONS ASHE &middot; 2023"
             />
             <MetricCard
               label="Real youth wages since 2010"
@@ -119,8 +117,7 @@ export default function YouthWagesPage() {
               polarity="up-is-bad"
               changeText="Inflation-adjusted fall despite NLW growth"
               sparklineData={[100, 97, 95, 95, 97, 101, 98, 97, 94, 93]}
-              onExpand={() => {}}
-              source="ONS ASHE / CPI &middot; 2023"
+              href="#sec-chart"source="ONS ASHE / CPI &middot; 2023"
             />
           </div>
         </ScrollReveal>

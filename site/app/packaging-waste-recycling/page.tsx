@@ -79,8 +79,7 @@ export default function PackagingWasteRecyclingPage() {
               changeText="+5pp since 2019 · meets EU 65% benchmark"
               sparklineData={[63, 63, 64, 64, 65, 65, 66, 67, 68]}
               source="DEFRA / EA · Packaging Recycling Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Plastic packaging recycled"
               value="51%"
@@ -89,8 +88,7 @@ export default function PackagingWasteRecyclingPage() {
               changeText="+8pp since 2019 · target 77% by 2030"
               sparklineData={[43, 44, 45, 46, 47, 48, 48, 50, 51]}
               source="DEFRA / EA · Packaging Recycling Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Contamination rate in collections"
               value="16%"
@@ -99,8 +97,7 @@ export default function PackagingWasteRecyclingPage() {
               changeText="16% of collected material contaminated"
               sparklineData={[21, 20, 19, 19, 18, 18, 17, 17, 16]}
               source="WRAP · Local Authority Recycling Survey 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

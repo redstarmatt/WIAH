@@ -82,8 +82,7 @@ export default function AutomationDisplacementPage() {
               polarity="up-is-bad"
               changeText="21% of workforce &middot; transport and admin most exposed"
               sparklineData={[4200000, 4800000, 5400000, 5900000, 6200000, 6800000, 7400000, 7600000]}
-              onExpand={() => {}}
-              source="IPPR / ONS &middot; 2024"
+              href="#sec-chart"source="IPPR / ONS &middot; 2024"
             />
             <MetricCard
               label="AI-exposed occupations"
@@ -93,8 +92,7 @@ export default function AutomationDisplacementPage() {
               polarity="up-is-bad"
               changeText="of all jobs have significant AI exposure"
               sparklineData={[22, 25, 27, 29, 31, 33, 35, 37]}
-              onExpand={() => {}}
-              source="ONS &middot; Generative AI and UK Employment 2023"
+              href="#sec-chart"source="ONS &middot; Generative AI and UK Employment 2023"
             />
             <MetricCard
               label="New green jobs forecast"
@@ -104,8 +102,7 @@ export default function AutomationDisplacementPage() {
               polarity="up-is-good"
               changeText="net-zero transition offsetting some displacement"
               sparklineData={[200000, 400000, 600000, 900000, 1200000, 1500000, 1800000, 2000000]}
-              onExpand={() => {}}
-              source="CCC / Green Jobs Taskforce &middot; 2024"
+              href="#sec-chart"source="CCC / Green Jobs Taskforce &middot; 2024"
             />
           </div>
         </ScrollReveal>

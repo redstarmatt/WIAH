@@ -104,8 +104,7 @@ export default function VictimsSupportPage() {
               changeText="Down from 73% in 2015 &middot; overall CJS satisfaction"
               sparklineData={[73.2, 71.8, 70.5, 68.1, 66.3, 64.0, 61.5, 59.2, 57.8, 56.5]}
               source="ONS &middot; Crime Survey for England and Wales, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-satisfaction"/>
             <MetricCard
               label="Kept adequately informed"
               value="44.1%"
@@ -114,8 +113,7 @@ export default function VictimsSupportPage() {
               changeText="Down from 62.5% in 2015 &middot; a core Victims&apos; Code right"
               sparklineData={[62.5, 60.2, 58.8, 56.1, 54.0, 51.3, 49.5, 47.2, 45.8, 44.1]}
               source="Victims&apos; Commissioner &middot; Annual Survey, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-informed"/>
             <MetricCard
               label="Victims aware of Victims&apos; Code"
               value="38%"
@@ -124,8 +122,7 @@ export default function VictimsSupportPage() {
               changeText="62% have never heard of it"
               sparklineData={[45, 43, 42, 41, 40, 39, 38]}
               source="Victims&apos; Commissioner &middot; Annual Survey, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-informed"/>
           </div>
         </ScrollReveal>
 

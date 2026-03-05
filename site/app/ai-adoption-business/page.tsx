@@ -84,8 +84,7 @@ export default function AiAdoptionBusinessPage() {
               polarity={'up-is-good' as const}
               changeText="+38pp since 2020 · SMEs: 15%"
               sparklineData={[8, 12, 18, 24, 31, 38, 42, 44, 46]}
-              onExpand={() => {}}
-              source="DSIT · AI Activity in UK Businesses Survey 2024"
+              href="#sec-chart"source="DSIT · AI Activity in UK Businesses Survey 2024"
             />
             <MetricCard
               label="AI investment per worker"
@@ -95,8 +94,7 @@ export default function AiAdoptionBusinessPage() {
               polarity={'up-is-good' as const}
               changeText="+£420 since 2021 · UK below US/Germany"
               sparklineData={[310, 380, 450, 520, 600, 680, 760, 840, 890]}
-              onExpand={() => {}}
-              source="OECD · AI Investment and Productivity"
+              href="#sec-chart"source="OECD · AI Investment and Productivity"
             />
             <MetricCard
               label="Firms citing AI skills gap"
@@ -106,8 +104,7 @@ export default function AiAdoptionBusinessPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 51% in 2021 · biggest barrier"
               sparklineData={[35, 38, 42, 46, 51, 58, 65, 71, 78]}
-              onExpand={() => {}}
-              source="DSIT · AI Activity in UK Businesses Survey 2024"
+              href="#sec-chart"source="DSIT · AI Activity in UK Businesses Survey 2024"
             />
           </div>
         </ScrollReveal>

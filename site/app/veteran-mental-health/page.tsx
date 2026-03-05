@@ -104,8 +104,7 @@ export default function VeteranMentalHealthPage() {
               changeText="~6&percnt; of all UK veterans &middot; 360,000 total with clinical mental health needs"
               sparklineData={[115000, 116000, 117000, 118000, 119000, 120000, 120000]}
               source="King&apos;s Centre for Military Health Research &middot; Veteran cohort study 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-courage"/>
             <MetricCard
               label="Average wait for Op COURAGE referral"
               value="18"
@@ -115,8 +114,7 @@ export default function VeteranMentalHealthPage() {
               changeText="Up from 8 weeks in 2017 &middot; Target is 28 days (4 weeks)"
               sparklineData={[8, 10, 12, 14, 16, 17, 18, 18]}
               source="NHS England &middot; Op COURAGE service monitoring 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-gap"/>
             <MetricCard
               label="Veterans receiving mental health support"
               value="21,000"
@@ -126,8 +124,7 @@ export default function VeteranMentalHealthPage() {
               changeText="Up from 8,000 in 2017 &middot; But only covers ~6&percnt; of estimated need"
               sparklineData={[8000, 10000, 13000, 16000, 18000, 20000, 21000]}
               source="NHS England &middot; Op COURAGE annual statistics 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-gap"/>
           </div>
         </ScrollReveal>
 

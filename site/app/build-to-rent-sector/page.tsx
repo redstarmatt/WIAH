@@ -95,8 +95,7 @@ export default function BuildToRentSectorPage() {
               polarity="up-is-good"
               changeText="quadrupled since 2016 &middot; new supply mode"
               sparklineData={[26, 34, 43, 54, 63, 73, 83, 97, 105]}
-              onExpand={() => {}}
-              source="BPF &middot; Build to Rent Report 2024"
+              href="#sec-chart"source="BPF &middot; Build to Rent Report 2024"
             />
             <MetricCard
               label="Pipeline"
@@ -106,8 +105,7 @@ export default function BuildToRentSectorPage() {
               polarity="up-is-good"
               changeText="significant investor interest &middot; planning key"
               sparklineData={[89, 102, 124, 148, 173, 198, 222, 250, 268]}
-              onExpand={() => {}}
-              source="BPF &middot; Build to Rent Report 2024"
+              href="#sec-chart"source="BPF &middot; Build to Rent Report 2024"
             />
             <MetricCard
               label="BTR rent premium"
@@ -117,8 +115,7 @@ export default function BuildToRentSectorPage() {
               polarity="up-is-bad"
               changeText="above market rate &middot; amenity premium or monopoly rent?"
               sparklineData={[4, 4, 5, 5, 6, 6, 7, 7, 7]}
-              onExpand={() => {}}
-              source="Savills &middot; UK Build to Rent Market Update 2024"
+              href="#sec-chart"source="Savills &middot; UK Build to Rent Market Update 2024"
             />
           </div>
         </ScrollReveal>

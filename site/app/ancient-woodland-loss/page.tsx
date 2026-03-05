@@ -71,8 +71,7 @@ export default function AncientWoodlandLossPage() {
               changeText="1,000+ sites at risk in planning system"
               sparklineData={[850, 900, 950, 1000, 1050, 1080, 1050, 1020, 1000]}
               source="Woodland Trust · Ancient Woodland Threat Register 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Hectares lost to HS2"
               value="700ha"
@@ -81,8 +80,7 @@ export default function AncientWoodlandLossPage() {
               changeText="700ha ancient woodland lost to HS2"
               sparklineData={[0, 0, 50, 150, 300, 450, 550, 650, 700]}
               source="Woodland Trust / HS2 Ltd Environmental Assessment 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Total ancient woodland (England)"
               value="340,000ha"
@@ -91,8 +89,7 @@ export default function AncientWoodlandLossPage() {
               changeText="340,000ha total · 2% of land area · centuries to form"
               sparklineData={[340500, 340400, 340300, 340200, 340100, 340000, 339900, 339800, 340000]}
               source="Natural England · Ancient Woodland Inventory 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

@@ -88,8 +88,7 @@ export default function PeatlandsPage() {
               changeText="2.4M of 3M hectares damaged by drainage, burning, or pollution"
               sparklineData={[83, 83, 82, 82, 81, 81, 80, 80]}
               source="IUCN UK Peatland Programme &mdash; UK peatland assessment"
-              onExpand={() => {}}
-            />
+              href="#sec-restored"/>
             <MetricCard
               label="CO\u2082 emitted by degraded peat annually"
               value="23M"
@@ -99,8 +98,7 @@ export default function PeatlandsPage() {
               changeText="Larger than direct aviation emissions &mdash; barely declining despite restoration"
               sparklineData={[24, 23.8, 23.6, 23.4, 23.2, 23.0, 22.9, 22.7]}
               source="DESNZ &mdash; UK GHG national statistics (LULUCF)"
-              onExpand={() => {}}
-            />
+              href="#sec-emissions"/>
             <MetricCard
               label="Peatland restored since 2020"
               value="35,000"
@@ -110,8 +108,7 @@ export default function PeatlandsPage() {
               changeText="Target: 250,000 ha by 2030 &mdash; less than 15&percnt; of the way there"
               sparklineData={[0, 5000, 12000, 20000, 28000, 35000]}
               source="IUCN UK / NatureScot &mdash; Peatland ACTION monitoring"
-              onExpand={() => {}}
-            />
+              href="#sec-emissions"/>
           </div>
         </ScrollReveal>
 

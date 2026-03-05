@@ -132,8 +132,7 @@ export default function RoadSafetyPage() {
             }
             source="DfT Road Safety Statistics"
             baseline="2023 data"
-            onExpand={() => {}}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="Pedestrian deaths"
             value="413"
@@ -143,8 +142,7 @@ export default function RoadSafetyPage() {
             sparklineData={[82, 91, 104, 112, 118, 130, 145, 168, 189, 207, 413]}
             source="DfT Road Safety Statistics"
             baseline="2023 annual"
-            onExpand={() => {}}
-          />
+            href="#sec-trends"/>
           <MetricCard
             label="Cyclist serious injuries per year"
             value="4,100"
@@ -154,8 +152,7 @@ export default function RoadSafetyPage() {
             sparklineData={[3128, 3234, 3412, 3567, 3689, 3891, 4012, 4100]}
             source="DfT Road Safety Statistics"
             baseline="2022 annual"
-            onExpand={() => {}}
-          />
+            href="#sec-bytype"/>
         </div>
         </ScrollReveal>
 

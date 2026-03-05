@@ -86,8 +86,7 @@ export default function PerinatalMentalHealthPage() {
               polarity="up-is-good"
               changeText="From 135 in 2016 &middot; near-doubled but still short"
               sparklineData={[135, 152, 180, 204, 218, 236, 248, 260]}
-              onExpand={() => {}}
-              source="NHS England &middot; Perinatal Mental Health 2024"
+              href="#sec-chart"source="NHS England &middot; Perinatal Mental Health 2024"
             />
             <MetricCard
               label="MBU units in England"
@@ -97,8 +96,7 @@ export default function PerinatalMentalHealthPage() {
               polarity="up-is-good"
               changeText="Coverage gaps remain in rural areas"
               sparklineData={[13, 14, 16, 18, 19, 20, 21, 22]}
-              onExpand={() => {}}
-              source="NHS England &middot; Perinatal Mental Health 2024"
+              href="#sec-callout"source="NHS England &middot; Perinatal Mental Health 2024"
             />
             <MetricCard
               label="Women receiving specialist care"
@@ -108,8 +106,7 @@ export default function PerinatalMentalHealthPage() {
               polarity="up-is-good"
               changeText="Still 60% without access &middot; deprivation gap"
               sparklineData={[14, 18, 23, 28, 30, 34, 37, 40]}
-              onExpand={() => {}}
-              source="NHS England &middot; Perinatal Mental Health 2024"
+              href="#sec-callout"source="NHS England &middot; Perinatal Mental Health 2024"
             />
           </div>
         </ScrollReveal>

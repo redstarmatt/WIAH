@@ -103,8 +103,7 @@ export default function JudicialDiversityPage() {
               changeText="Up from 25.2&percnt; in 2015 &middot; But just 28&percnt; at Court of Appeal"
               sparklineData={[25.2, 26.8, 28.4, 29.5, 31.0, 32.1, 33.6, 34.8, 35.4]}
               source="MOJ &middot; Judicial Diversity Statistics 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-gender"/>
             <MetricCard
               label="Ethnic minority judges"
               value="9.8%"
@@ -113,8 +112,7 @@ export default function JudicialDiversityPage() {
               changeText="Population: 18&percnt; non-white &middot; 0 ethnic minority Supreme Court justices ever"
               sparklineData={[6.1, 6.4, 6.9, 7.3, 7.6, 8.0, 8.5, 9.1, 9.8]}
               source="MOJ &middot; Judicial Diversity Statistics 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-ethnicity"/>
             <MetricCard
               label="Senior judges from private schools"
               value="65%"
@@ -123,8 +121,7 @@ export default function JudicialDiversityPage() {
               changeText="vs 7&percnt; of population &middot; 75&percnt; Oxbridge-educated at top courts"
               sparklineData={[68, 67, 66, 66, 65, 65, 65]}
               source="Sutton Trust &middot; Elitist Britain 2019"
-              onExpand={() => {}}
-            />
+              href="#sec-court-level"/>
           </div>
         </ScrollReveal>
 

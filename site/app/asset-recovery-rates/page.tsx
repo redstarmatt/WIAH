@@ -95,8 +95,7 @@ export default function AssetRecoveryRatesPage() {
               polarity={'up-is-bad' as const}
               changeText="NCA estimate; true figure likely higher"
               sparklineData={[10, 10, 11, 11, 12, 12, 12, 12, 12]}
-              onExpand={() => {}}
-              source="NCA &middot; UK Financial Intelligence Unit annual report"
+              href="#sec-chart"source="NCA &middot; UK Financial Intelligence Unit annual report"
             />
             <MetricCard
               label="Assets recovered annually"
@@ -106,8 +105,7 @@ export default function AssetRecoveryRatesPage() {
               polarity={'up-is-good' as const}
               changeText="Up from £142m in 2015"
               sparklineData={[142, 168, 199, 226, 264, 298, 312, 341, 378]}
-              onExpand={() => {}}
-              source="Home Office &middot; Asset recovery statistical bulletin"
+              href="#sec-chart"source="Home Office &middot; Asset recovery statistical bulletin"
             />
             <MetricCard
               label="Recovery rate"
@@ -117,8 +115,7 @@ export default function AssetRecoveryRatesPage() {
               polarity={'up-is-bad' as const}
               changeText="Of estimated laundered funds recovered"
               sparklineData={[1.4, 1.7, 1.8, 2.1, 2.2, 2.5, 2.6, 2.8, 3.1]}
-              onExpand={() => {}}
-              source="Home Office &middot; Asset recovery statistical bulletin"
+              href="#sec-chart"source="Home Office &middot; Asset recovery statistical bulletin"
             />
           </div>
         </ScrollReveal>

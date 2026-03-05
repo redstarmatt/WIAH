@@ -92,8 +92,7 @@ export default function PipAssessmentBacklogPage() {
               polarity="up-is-bad"
               changeText="slight improvement from 26-week peak &middot; still 6 months"
               sparklineData={[14, 15, 16, 16, 17, 19, 21, 23, 26, 24]}
-              onExpand={() => {}}
-              source="DWP &middot; PIP Statistics 2024"
+              href="#sec-chart"source="DWP &middot; PIP Statistics 2024"
             />
             <MetricCard
               label="Appeal overturn rate"
@@ -103,8 +102,7 @@ export default function PipAssessmentBacklogPage() {
               polarity="up-is-bad"
               changeText="7 in 10 appeals succeed &middot; original decisions poor quality"
               sparklineData={[58, 58, 62, 62, 62, 62, 62, 68, 72, 71]}
-              onExpand={() => {}}
-              source="HMCTS &middot; Tribunal Statistics 2024"
+              href="#sec-chart"source="HMCTS &middot; Tribunal Statistics 2024"
             />
             <MetricCard
               label="Cases in backlog"
@@ -114,8 +112,7 @@ export default function PipAssessmentBacklogPage() {
               polarity="up-is-bad"
               changeText="uncleared decisions at any one time"
               sparklineData={[80, 90, 100, 110, 130, 160, 190, 210, 220, 216]}
-              onExpand={() => {}}
-              source="DWP &middot; PIP Statistics Q3 2024"
+              href="#sec-chart"source="DWP &middot; PIP Statistics Q3 2024"
             />
           </div>
         </ScrollReveal>

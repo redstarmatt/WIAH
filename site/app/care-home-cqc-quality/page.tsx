@@ -93,8 +93,7 @@ export default function CareHomeCqcQualityPage() {
               polarity="up-is-bad"
               changeText="rising from 2.1% in 2015 &middot; financial pressure driving quality down"
               sparklineData={[2.1, 2.3, 2.5, 2.8, 3.0, 3.2, 3.5, 3.6, 3.7]}
-              onExpand={() => {}}
-              source="CQC &middot; State of Care 2023"
+              href="#sec-chart"source="CQC &middot; State of Care 2023"
             />
             <MetricCard
               label="Requiring Improvement"
@@ -104,8 +103,7 @@ export default function CareHomeCqcQualityPage() {
               polarity="up-is-bad"
               changeText="1 in 4 homes below standard"
               sparklineData={[22.4, 22.8, 23.1, 23.5, 24.2, 24.6, 25.0, 25.1, 25.4]}
-              onExpand={() => {}}
-              source="CQC &middot; State of Care 2023"
+              href="#sec-chart"source="CQC &middot; State of Care 2023"
             />
             <MetricCard
               label="Care homes closed since 2010"
@@ -115,8 +113,7 @@ export default function CareHomeCqcQualityPage() {
               polarity="up-is-bad"
               changeText="market failures driving exit &middot; places lost"
               sparklineData={[800, 900, 1000, 1050, 1100, 1150, 1200, 1300, 1400]}
-              onExpand={() => {}}
-              source="Care Quality Commission &middot; LaingBuisson 2023"
+              href="#sec-chart"source="Care Quality Commission &middot; LaingBuisson 2023"
             />
           </div>
         </ScrollReveal>

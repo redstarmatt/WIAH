@@ -140,8 +140,7 @@ export default function AsylumSystemPage() {
               changeText="2023 &middot; Post-war record &middot; Up from 29K in 2018 &middot; Mainly Afghans, Iranians, Syrians &middot; Channel small boats: 30K+"
               sparklineData={sparkFrom([29268, 35566, 35099, 56040, 74751, 84425, 98519])}
               source="Home Office · Asylum Statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -154,8 +153,7 @@ export default function AsylumSystemPage() {
               changeText="End 2023 &middot; Average wait: 26 months &middot; Up from 64K in 2020 &middot; Home Office missed clearance targets every year"
               sparklineData={sparkFrom([64000, 100000, 130000, 166000, 195000, 220000])}
               source="Home Office · Asylum Statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-applications"/>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -168,8 +166,7 @@ export default function AsylumSystemPage() {
               changeText="2023 annual cost &middot; &pound;150/person/night &middot; 56K in hotels &middot; Up from &pound;300M in 2019 &middot; Hotels due to shortage of dispersal housing"
               sparklineData={sparkFrom([300, 500, 800, 1200, 2000, 3200, 4000])}
               source="Home Office · Asylum Accommodation Statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-backlog"/>
           </ScrollReveal>
         </div>
       </section>

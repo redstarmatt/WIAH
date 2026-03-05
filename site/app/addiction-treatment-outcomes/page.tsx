@@ -90,8 +90,7 @@ export default function AddictionTreatmentOutcomesPage() {
               polarity="up-is-good"
               changeText="Slight improvement &middot; still below 50%"
               sparklineData={[49.2, 48.6, 48.1, 47.9, 46.3, 46.0, 47.1, 47.4]}
-              onExpand={() => {}}
-              source="OHID &middot; Drug and Alcohol Treatment Statistics 2023"
+              href="#sec-chart"source="OHID &middot; Drug and Alcohol Treatment Statistics 2023"
             />
             <MetricCard
               label="Drug misuse deaths 2023"
@@ -101,8 +100,7 @@ export default function AddictionTreatmentOutcomesPage() {
               polarity="up-is-bad"
               changeText="Slight fall but near record levels"
               sparklineData={[3744, 3756, 4359, 4393, 4561, 4859, 4907, 4800]}
-              onExpand={() => {}}
-              source="ONS &middot; Drug Misuse Deaths 2023"
+              href="#sec-chart"source="ONS &middot; Drug Misuse Deaths 2023"
             />
             <MetricCard
               label="Average wait for treatment"
@@ -112,8 +110,7 @@ export default function AddictionTreatmentOutcomesPage() {
               polarity="up-is-bad"
               changeText="Up from 3.1 weeks in 2016"
               sparklineData={[3.1, 3.3, 3.6, 3.8, 4.2, 4.0, 4.3, 4.1]}
-              onExpand={() => {}}
-              source="OHID &middot; Drug and Alcohol Treatment Statistics 2023"
+              href="#sec-chart"source="OHID &middot; Drug and Alcohol Treatment Statistics 2023"
             />
           </div>
         </ScrollReveal>

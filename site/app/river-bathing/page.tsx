@@ -105,8 +105,7 @@ export default function RiverBathingPage() {
               changeText="Target was 60% by 2015 · EA has missed every deadline"
               sparklineData={[25.5, 17.3, 15.7, 14.1, 14.0]}
               source="Environment Agency · 2022"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="River bathing sites classified 'poor'"
               value={latestBathing ? latestBathing.poor.toString() : '24'}
@@ -116,8 +115,7 @@ export default function RiverBathingPage() {
               changeText="Worsening in 2023 · E. coli and sewage discharge failing sites"
               sparklineData={[23, 22, 22, 21, 22, 24]}
               source="EA Bathing Water Quality · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-ecological"/>
             <MetricCard
               label="Designated river bathing sites"
               value={latestSites ? latestSites.riverSites.toString() : '70'}
@@ -127,8 +125,7 @@ export default function RiverBathingPage() {
               changeText="Up from just 8 in 2015 · Dartmouth, River Wharfe, Derwent"
               sparklineData={[8, 15, 42, 70]}
               source="Environment Agency · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-bathing"/>
           </div>
         </ScrollReveal>
 

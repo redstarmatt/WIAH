@@ -88,8 +88,7 @@ export default function TeenConceptionRatesPage() {
               polarity="up-is-bad"
               changeText="record low &middot; 72% fall since 1999"
               sparklineData={[47.1, 42.5, 41.9, 35.5, 27.7, 18.8, 14.4, 13.4, 13.1]}
-              onExpand={() => {}}
-              source="ONS &middot; Conceptions in England and Wales 2022"
+              href="#sec-chart"source="ONS &middot; Conceptions in England and Wales 2022"
             />
             <MetricCard
               label="Since 1999"
@@ -99,8 +98,7 @@ export default function TeenConceptionRatesPage() {
               polarity="up-is-bad"
               changeText="transformation in a generation &middot; sex education + contraception"
               sparklineData={[47.1, 42.5, 35.5, 27.7, 18.8, 14.4, 13.1]}
-              onExpand={() => {}}
-              source="ONS &middot; Conceptions in England and Wales 2022"
+              href="#sec-callout"source="ONS &middot; Conceptions in England and Wales 2022"
             />
             <MetricCard
               label="Deprivation gap"
@@ -110,8 +108,7 @@ export default function TeenConceptionRatesPage() {
               polarity="up-is-bad"
               changeText="most deprived 32 vs least deprived 10 per 1,000"
               sparklineData={[3.0, 3.1, 3.1, 3.2, 3.2, 3.3]}
-              onExpand={() => {}}
-              source="ONS &middot; Conceptions by deprivation decile 2022"
+              href="#sec-callout"source="ONS &middot; Conceptions by deprivation decile 2022"
             />
           </div>
         </ScrollReveal>

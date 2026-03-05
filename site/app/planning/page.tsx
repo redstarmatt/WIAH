@@ -141,8 +141,7 @@ export default function PlanningPage() {
             polarity="up-is-good"
             changeText="2024 · Target 300,000 · 40,000 fewer than 2022 peak · Construction cost squeeze"
             sparklineData={[102.6, 98.3, 107.0, 109.4, 117.7, 142.9, 140.6, 154.7, 165.1, 168.9, 124.3, 148.6, 182.0, 174.5, 160.4]}
-            onExpand={() => {}}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="House price to earnings ratio"
             value="8.0×"
@@ -151,8 +150,7 @@ export default function PlanningPage() {
             polarity="up-is-bad"
             changeText="2024 · Was 6.8× in 2010 · London: 12× · Home ownership under-35s: 28%"
             sparklineData={[6.8, 6.1, 6.7, 7.7, 7.8, 7.9, 9.1, 8.3, 8.0]}
-            onExpand={() => {}}
-          />
+            href="#sec-supply"/>
           <MetricCard
             label="Planning officers in local authorities"
             value="6,100"
@@ -161,8 +159,7 @@ export default function PlanningPage() {
             polarity="up-is-good"
             changeText="2024 · Down 36% since 2010 · Major decisions taking 30+ weeks · System overloaded"
             sparklineData={[9.5, 8.2, 7.4, 6.9, 6.4, 6.1]}
-            onExpand={() => {}}
-          />
+            href="#sec-affordability"/>
         </div>
         </ScrollReveal>
 

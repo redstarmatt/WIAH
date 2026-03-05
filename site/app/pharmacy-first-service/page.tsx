@@ -92,8 +92,7 @@ export default function PharmacyFirstServicePage() {
               polarity="up-is-good"
               changeText="in first year &middot; launched Jan 2024"
               sparklineData={[0, 0, 0, 0, 0, 0, 0, 1400000]}
-              onExpand={() => {}}
-              source="NHS England &middot; Pharmacy First Dashboard 2024"
+              href="#sec-positive"source="NHS England &middot; Pharmacy First Dashboard 2024"
             />
             <MetricCard
               label="Resolution rate"
@@ -103,8 +102,7 @@ export default function PharmacyFirstServicePage() {
               polarity="up-is-good"
               changeText="conditions resolved without GP referral"
               sparklineData={[0, 0, 0, 0, 0, 0, 0, 89]}
-              onExpand={() => {}}
-              source="NHS England &middot; Pharmacy First Dashboard 2024"
+              href="#sec-chart"source="NHS England &middot; Pharmacy First Dashboard 2024"
             />
             <MetricCard
               label="Pharmacy wait time"
@@ -114,8 +112,7 @@ export default function PharmacyFirstServicePage() {
               polarity="up-is-bad"
               changeText="vs 2.4-day GP wait &middot; same-day access"
               sparklineData={[2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 0.5]}
-              onExpand={() => {}}
-              source="NHS England &middot; Pharmacy First Evaluation 2024"
+              href="#sec-chart"source="NHS England &middot; Pharmacy First Evaluation 2024"
             />
           </div>
         </ScrollReveal>

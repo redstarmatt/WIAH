@@ -106,8 +106,7 @@ export default function LegalAidPage() {
               changeText="&pound;2.1bn in 2010 &rarr; &pound;1.44bn in 2024 &middot; LASPO 2012 removed whole categories"
               sparklineData={[2.1, 2.0, 1.9, 1.8, 1.7, 1.6, 1.5, 1.45]}
               source="Legal Aid Agency &middot; Legal Aid Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-spend"/>
             <MetricCard
               label="Solicitor firms with legal aid contracts"
               value="1,150"
@@ -116,8 +115,7 @@ export default function LegalAidPage() {
               changeText="Down from 2,300 in 2010 &middot; 50&percnt; market collapse &middot; Rates frozen 2011&ndash;2023"
               sparklineData={[2300, 2100, 1900, 1700, 1600, 1500, 1350, 1200]}
               source="Legal Aid Agency &middot; Provider Directory 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-firms"/>
             <MetricCard
               label="Legal aid deserts (LAs with no provision)"
               value="25%"
@@ -126,8 +124,7 @@ export default function LegalAidPage() {
               changeText="1 in 4 English local authority areas &middot; Rural, coastal areas worst affected"
               sparklineData={[5, 8, 12, 15, 18, 20, 23, 25]}
               source="Law Society &middot; Legal Aid Desert Research 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-firms"/>
           </div>
         </ScrollReveal>
 

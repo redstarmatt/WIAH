@@ -107,8 +107,7 @@ export default function NetHousingSupplyPage() {
             changeText="Below 300,000 target &middot; best year was 2019/20 at 243,770"
             sparklineData={[124360, 141980, 189750, 221090, 234820, 243770, 216490, 232820, 234400]}
             source="DLUHC Housing Supply Statistics &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-additions"/>
           <MetricCard
             label="Government annual target"
             value="300,000"
@@ -118,8 +117,7 @@ export default function NetHousingSupplyPage() {
             changeText="Years target met since 2010: 0 &middot; closest was 2019/20 (97%)"
             sparklineData={[300000, 300000, 300000, 300000, 300000, 300000, 300000]}
             source="DLUHC Housing Policy"
-            onExpand={() => {}}
-          />
+            href="#sec-shortfall"/>
           <MetricCard
             label="Cumulative shortfall since 2010"
             value="2.1m"
@@ -129,8 +127,7 @@ export default function NetHousingSupplyPage() {
             changeText="Estimated households needing homes that don&apos;t exist"
             sparklineData={[350000, 850000, 1600000, 2100000]}
             source="Shelter / DLUHC estimates &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-shortfall"/>
         </div>
         </ScrollReveal>
 

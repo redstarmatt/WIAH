@@ -118,7 +118,6 @@ export default function GamblingPage() {
               polarity="up-is-bad"
               changeText="2022 · NHS survey · 1.3M at moderate risk · 55,000 young people problem gamblers · Suicide rate 15&times; higher"
               sparklineData={[430, 440, 420, 410, 430, 430]}
-              onExpand={() => {}}
             />
           </ScrollReveal>
           <ScrollReveal>
@@ -129,7 +128,6 @@ export default function GamblingPage() {
               polarity="up-is-bad"
               changeText="2022/23 · Up from &pound;4.7bn in 2016/17 · 51% of all gambling yield · 80% of problem gamblers gamble online"
               sparklineData={[3.2, 3.8, 4.2, 4.7, 5.0, 5.5, 6.0, 7.1]}
-              onExpand={() => {}}
             />
           </ScrollReveal>
           <ScrollReveal>
@@ -140,7 +138,6 @@ export default function GamblingPage() {
               polarity="up-is-bad"
               changeText="2023 · Down from 9,000+ in 2013 · FOBT &pound;2 stake limit (2019) key driver · High street decline accelerating"
               sparklineData={[9000, 8900, 8800, 8600, 8400, 8100, 7700, 7200, 6900, 6700]}
-              onExpand={() => {}}
             />
           </ScrollReveal>
         </div>

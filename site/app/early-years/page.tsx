@@ -120,7 +120,6 @@ export default function EarlyYearsPage() {
               changeText="Up 59% since 2013; more than university fees"
               sparklineData={costSparkline}
               source="Coram Family &amp; Childcare, 2023"
-              onExpand={() => {}}
             />
             <MetricCard
               label="Parents who reduced work due to childcare costs"
@@ -129,7 +128,6 @@ export default function EarlyYearsPage() {
               polarity="up-is-bad"
               changeText="Women disproportionately affected"
               source="TUC, 2023"
-              onExpand={() => {}}
             />
             <MetricCard
               label="Take-up of 15-hour free entitlement (3-4 year olds)"
@@ -138,7 +136,6 @@ export default function EarlyYearsPage() {
               polarity="up-is-good"
               changeText="But only 60% use it full 15 hours"
               source="DfE, 2023"
-              onExpand={() => {}}
             />
           </div>
         </div>

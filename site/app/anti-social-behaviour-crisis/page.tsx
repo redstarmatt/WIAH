@@ -90,8 +90,7 @@ export default function AntiSocialBehaviourCrisisPage() {
               polarity="up-is-bad"
               changeText="slight improvement &middot; but severity worsening"
               sparklineData={[1.72, 1.65, 1.59, 1.57, 1.53, 1.75, 1.74, 1.68, 1.60]}
-              onExpand={() => {}}
-              source="Home Office &middot; Police Recorded ASB 2023"
+              href="#sec-chart"source="Home Office &middot; Police Recorded ASB 2023"
             />
             <MetricCard
               label="Response within 1 hour"
@@ -101,8 +100,7 @@ export default function AntiSocialBehaviourCrisisPage() {
               polarity="up-is-good"
               changeText="was 41% in 2015 &middot; resources stretched"
               sparklineData={[41, 40, 39, 38, 38, 35, 32, 30, 28]}
-              onExpand={() => {}}
-              source="HMICFRS &middot; State of Policing 2023"
+              href="#sec-chart"source="HMICFRS &middot; State of Policing 2023"
             />
             <MetricCard
               label="CBOs/CPNs issued"
@@ -112,8 +110,7 @@ export default function AntiSocialBehaviourCrisisPage() {
               polarity="up-is-good"
               changeText="-43% vs 2015 &middot; enforcement powers underused"
               sparklineData={[3240, 3100, 2900, 2700, 2190, 2000, 1950, 1900, 1850]}
-              onExpand={() => {}}
-              source="Home Office &middot; ASB Powers Statistics 2023"
+              href="#sec-chart"source="Home Office &middot; ASB Powers Statistics 2023"
             />
           </div>
         </ScrollReveal>

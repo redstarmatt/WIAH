@@ -109,8 +109,7 @@ export default function BuildingSafetyPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Identification ongoing &middot; True total likely higher &middot; 40% in London"
               sparklineData={[457, 1650, 3120, 4630, 5120, 5340, 5412]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Remediation completed"
               value="1,780"
@@ -118,8 +117,7 @@ export default function BuildingSafetyPage() {
               polarity="up-is-good"
               changeText="2024 &middot; 33% completion rate &middot; 3,632 buildings still awaiting works &middot; ~300K households affected"
               sparklineData={[15, 128, 340, 612, 1015, 1420, 1780]}
-              onExpand={() => {}}
-            />
+              href="#sec-progress"/>
             <MetricCard
               label="Building Safety Fund disbursed"
               value="&pound;2.3bn"
@@ -127,8 +125,7 @@ export default function BuildingSafetyPage() {
               polarity="up-is-good"
               changeText="Of &pound;5.1bn allocated &middot; 45% disbursed after 4 years &middot; Contractor shortages slowing progress"
               sparklineData={[0.3, 0.6, 1.0, 1.5, 1.9, 2.3]}
-              onExpand={() => {}}
-            />
+              href="#sec-progress"/>
           </div>
         </ScrollReveal>
 

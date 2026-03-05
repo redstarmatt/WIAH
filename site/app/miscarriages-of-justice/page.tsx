@@ -104,8 +104,7 @@ export default function MiscarriagesOfJusticePage() {
               changeText="Broadly stable since 2015 &middot; 30,000+ total since 1997"
               sparklineData={[1472, 1512, 1415, 1438, 1402, 1214, 1337, 1410, 1356, 1380]}
               source="CCRC &middot; Annual Report, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-applications"/>
             <MetricCard
               label="Cases referred to Court of Appeal"
               value="33"
@@ -115,8 +114,7 @@ export default function MiscarriagesOfJusticePage() {
               changeText="~2% referral rate &middot; ~70% of referrals result in quashed conviction"
               sparklineData={[32, 28, 27, 34, 30, 22, 25, 31, 29, 33]}
               source="CCRC &middot; Annual Report, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-referrals"/>
             <MetricCard
               label="Post Office convictions overturned"
               value="983"
@@ -125,8 +123,7 @@ export default function MiscarriagesOfJusticePage() {
               changeText="Largest miscarriage of justice in British legal history"
               sparklineData={[0, 0, 39, 72, 200, 500, 700, 900, 983]}
               source="Post Office Horizon Inquiry, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-referrals"/>
           </div>
         </ScrollReveal>
 

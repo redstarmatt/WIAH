@@ -79,8 +79,7 @@ export default function EmergencyDentalAccessPage() {
               changeText="+4m since 2019 · rural worst affected"
               sparklineData={[7, 7.5, 8, 9, 10, 10, 11, 12.5, 14]}
               source="Healthwatch England / BDA 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="A&E visits for dental pain"
               value="180,000"
@@ -89,8 +88,7 @@ export default function EmergencyDentalAccessPage() {
               changeText="+40% since 2019 · hospital not equipped for dental"
               sparklineData={[95000, 100000, 105000, 110000, 128000, 110000, 130000, 155000, 180000]}
               source="NHS England · Hospital Episode Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="NHS dental extractions share"
               value="45%"
@@ -99,8 +97,7 @@ export default function EmergencyDentalAccessPage() {
               changeText="45% of NHS treatments are extractions"
               sparklineData={[30, 31, 32, 33, 34, 35, 38, 42, 45]}
               source="NHS Business Services Authority · Dental Data 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

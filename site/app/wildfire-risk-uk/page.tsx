@@ -33,7 +33,6 @@ export default function WildfireRiskUkPage() {
               changeText="+50% in a decade"
               sparklineData={[48,50,52,55,58,61,64,68,73]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Hectares burned per year"
@@ -43,7 +42,6 @@ export default function WildfireRiskUkPage() {
               changeText="three-year rolling average"
               sparklineData={[50,53,56,59,62,65,70,74,79]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

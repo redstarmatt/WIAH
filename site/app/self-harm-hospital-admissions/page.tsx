@@ -33,7 +33,6 @@ export default function SelfHarmHospitalAdmissionsPage() {
               changeText="+70% since 2012"
               sparklineData={[8700,9500,10200,11000,11800,12500,13200,14000,14800]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="All-age self-harm admissions"
@@ -43,7 +42,6 @@ export default function SelfHarmHospitalAdmissionsPage() {
               changeText="per year in England"
               sparklineData={[42000,44000,45000,46000,47000,48000,50000,51000,52000]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

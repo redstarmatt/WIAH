@@ -84,8 +84,7 @@ export default function MortgageAffordabilityShockPage() {
               polarity="up-is-bad"
               changeText="Up from 28% in 2015 &middot; 10-year high"
               sparklineData={[28, 29, 30, 30, 33, 39, 41]}
-              onExpand={() => {}}
-              source="Nationwide &middot; Housing Affordability Report 2024"
+              href="#sec-chart"source="Nationwide &middot; Housing Affordability Report 2024"
             />
             <MetricCard
               label="Monthly payment 2024"
@@ -95,8 +94,7 @@ export default function MortgageAffordabilityShockPage() {
               polarity="up-is-bad"
               changeText="Average new mortgage &middot; +68% since 2015"
               sparklineData={[680, 710, 740, 760, 870, 1080, 1140]}
-              onExpand={() => {}}
-              source="Bank of England &middot; Mortgage Lenders &amp; Administrators 2024"
+              href="#sec-chart"source="Bank of England &middot; Mortgage Lenders &amp; Administrators 2024"
             />
             <MetricCard
               label="Remortgaging shock"
@@ -106,8 +104,7 @@ export default function MortgageAffordabilityShockPage() {
               polarity="up-is-bad"
               changeText="Avg extra cost for 800k households remortgaging in 2023&ndash;24"
               sparklineData={[20, 25, 30, 40, 80, 200, 300]}
-              onExpand={() => {}}
-              source="FCA &middot; Consumer Duty Mortgage Review 2024"
+              href="#sec-chart"source="FCA &middot; Consumer Duty Mortgage Review 2024"
             />
           </div>
         </ScrollReveal>

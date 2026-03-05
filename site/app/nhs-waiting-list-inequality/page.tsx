@@ -33,7 +33,6 @@ export default function NhsWaitingListInequalityPage() {
               changeText="most vs least deprived quintile"
               sparklineData={[12,13,14,15,16,17,18,19,20]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Longest average wait region"
@@ -43,7 +42,6 @@ export default function NhsWaitingListInequalityPage() {
               changeText="North West England"
               sparklineData={[14,15,16,17,18,19,20,21,22]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

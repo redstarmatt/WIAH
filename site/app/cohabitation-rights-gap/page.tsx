@@ -81,8 +81,7 @@ export default function CohabitationRightsGapPage() {
               polarity={'up-is-good' as const}
               changeText="+38% since 2002 &middot; fastest-growing family type"
               sparklineData={[2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.4, 3.6]}
-              onExpand={() => {}}
-              source="ONS &middot; Families and Households 2022"
+              href="#sec-chart"source="ONS &middot; Families and Households 2022"
             />
             <MetricCard
               label="Believing in common law marriage"
@@ -92,8 +91,7 @@ export default function CohabitationRightsGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Persistent myth despite campaigns"
               sparklineData={[55, 54, 53, 53, 52, 52, 51, 51, 51]}
-              onExpand={() => {}}
-              source="Resolution Foundation / Citizens Advice Survey 2023"
+              href="#sec-chart"source="Resolution Foundation / Citizens Advice Survey 2023"
             />
             <MetricCard
               label="Separations without legal framework"
@@ -103,8 +101,7 @@ export default function CohabitationRightsGapPage() {
               polarity={'up-is-bad' as const}
               changeText="250k/yr with no equivalent to divorce law"
               sparklineData={[180, 190, 200, 210, 215, 220, 230, 240, 250]}
-              onExpand={() => {}}
-              source="ONS / Law Commission estimate 2023"
+              href="#sec-chart"source="ONS / Law Commission estimate 2023"
             />
           </div>
         </ScrollReveal>

@@ -95,8 +95,7 @@ export default function UrbanRuralPriceGapPage() {
               polarity="up-is-bad"
               changeText="easing from peak &middot; still worse than cities"
               sparklineData={[8.2, 8.9, 9.4, 9.8, 11.1, 10.8, 10.2, 9.9]}
-              onExpand={() => {}}
-              source="ONS &middot; Housing Affordability in England and Wales 2024"
+              href="#sec-chart"source="ONS &middot; Housing Affordability in England and Wales 2024"
             />
             <MetricCard
               label="Rural areas above 10&times; earnings"
@@ -106,8 +105,7 @@ export default function UrbanRuralPriceGapPage() {
               polarity="up-is-bad"
               changeText="of rural LAs now unaffordable &middot; WFH premium"
               sparklineData={[12, 15, 18, 22, 45, 42, 40, 38]}
-              onExpand={() => {}}
-              source="ONS &middot; Local Authority Affordability Ratios 2024"
+              href="#sec-chart"source="ONS &middot; Local Authority Affordability Ratios 2024"
             />
             <MetricCard
               label="Rural wage vs urban"
@@ -117,8 +115,7 @@ export default function UrbanRuralPriceGapPage() {
               polarity="up-is-bad"
               changeText="workers paid less in rural areas &middot; double squeeze"
               sparklineData={[-12, -12, -13, -13, -14, -14, -14, -14]}
-              onExpand={() => {}}
-              source="ONS &middot; ASHE Regional Earnings 2024"
+              href="#sec-chart"source="ONS &middot; ASHE Regional Earnings 2024"
             />
           </div>
         </ScrollReveal>

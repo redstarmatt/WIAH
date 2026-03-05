@@ -33,7 +33,6 @@ export default function EWasteRecyclingPage() {
               changeText="per year in UK"
               sparklineData={[1.1,1.15,1.2,1.25,1.3,1.35,1.4,1.45,1.5]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="E-waste recycling rate"
@@ -43,7 +42,6 @@ export default function EWasteRecyclingPage() {
               changeText="formally collected and recycled"
               sparklineData={[32,33,35,36,38,39,40,41,42]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

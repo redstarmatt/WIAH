@@ -33,7 +33,6 @@ export default function BabyLossSupportPage() {
               changeText="miscarriage, stillbirth, neonatal death"
               sparklineData={[25,25,25,25,25,25,25,25,25]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Trusts with bereavement midwife"
@@ -43,7 +42,6 @@ export default function BabyLossSupportPage() {
               changeText="up from 55% in 2019"
               sparklineData={[55,58,60,62,64,66,68,70,72]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

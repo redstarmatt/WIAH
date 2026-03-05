@@ -84,8 +84,7 @@ export default function PensionSavingsGapPage() {
               polarity="up-is-good"
               changeText="but needs £200k+ for comfortable retirement"
               sparklineData={[61000, 63000, 65000, 67000, 68000, 69000, 70000, 71000, 72000]}
-              onExpand={() => {}}
-              source="Pensions Policy Institute &middot; 2023"
+              href="#sec-chart"source="Pensions Policy Institute &middot; 2023"
             />
             <MetricCard
               label="Self-employed with no pension"
@@ -95,8 +94,7 @@ export default function PensionSavingsGapPage() {
               polarity="up-is-bad"
               changeText="3.3 million people saving nothing"
               sparklineData={[41, 40, 40, 39, 38, 39, 39, 39, 39]}
-              onExpand={() => {}}
-              source="DWP &middot; Family Resources Survey 2023"
+              href="#sec-chart"source="DWP &middot; Family Resources Survey 2023"
             />
             <MetricCard
               label="Aggregate pension savings gap"
@@ -106,8 +104,7 @@ export default function PensionSavingsGapPage() {
               polarity="up-is-bad"
               changeText="aggregate shortfall &middot; growing 5% a year"
               sparklineData={[290, 295, 300, 305, 310, 315, 320, 330, 350]}
-              onExpand={() => {}}
-              source="Pensions Policy Institute &middot; 2023"
+              href="#sec-chart"source="Pensions Policy Institute &middot; 2023"
             />
           </div>
         </ScrollReveal>

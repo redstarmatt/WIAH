@@ -118,8 +118,7 @@ export default function MenopaureCarePage() {
               polarity={'up-is-good' as const}
               changeText="2023 &middot; Record high &middot; Up 37% since 2020"
               sparklineData={[5.0, 5.2, 5.4, 5.6, 5.7, 5.8, 7.0, 7.8]}
-              onExpand={() => {}}
-            />
+              href="#sec-hrt"/>
             <MetricCard
               label="Women seeing GP 3+ times before HRT"
               value="42"
@@ -128,8 +127,7 @@ export default function MenopaureCarePage() {
               polarity={'up-is-bad' as const}
               changeText="2023 &middot; Down from 55% in 2019"
               sparklineData={[55, 53, 51, 50, 48, 45, 43, 42]}
-              onExpand={() => {}}
-            />
+              href="#sec-consultations"/>
             <MetricCard
               label="Women: menopause affected ability to work"
               value="1 in 4"
@@ -137,8 +135,7 @@ export default function MenopaureCarePage() {
               polarity={'up-is-bad' as const}
               changeText="2023 &middot; Fawcett Society survey"
               sparklineData={[25, 25, 26, 26, 25, 25, 25, 25]}
-              onExpand={() => {}}
-            />
+              href="#sec-consultations"/>
           </div>
         </ScrollReveal>
 

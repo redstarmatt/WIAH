@@ -33,7 +33,6 @@ export default function SpikingReportsPage() {
               changeText="+110% since 2019"
               sparklineData={[3200,3500,3800,4200,4800,5200,5600,6200,6700]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Estimated reporting rate"
@@ -43,7 +42,6 @@ export default function SpikingReportsPage() {
               changeText="vast majority unreported"
               sparklineData={[14,14,14,15,15,15,15,15,15]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

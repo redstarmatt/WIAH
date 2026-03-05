@@ -124,8 +124,7 @@ export default function AntibiticResistancePage() {
               polarity="up-is-bad"
               changeText="Forecast 10K by 2035"
               sparklineData={deathsSparkline}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="E. coli bloodstream infections resistant to standard antibiotics"
               value={latestEcoli ? latestEcoli.pct.toString() : '—'}
@@ -134,8 +133,7 @@ export default function AntibiticResistancePage() {
               polarity="up-is-bad"
               changeText="Up from 38% in 2016"
               sparklineData={ecoliSparkline}
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
             <MetricCard
               label="Antibiotic prescribing in primary care"
               value="35.5"
@@ -144,8 +142,7 @@ export default function AntibiticResistancePage() {
               polarity="up-is-good"
               changeText="Down 25% since 2014 peak"
               sparklineData={[47.0, 46.8, 46.2, 45.1, 43.8, 41.2, 38.5, 36.1, 35.5]}
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
           </div>
         </section>
 

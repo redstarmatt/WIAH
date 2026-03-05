@@ -82,8 +82,7 @@ export default function HabitatConditionPage() {
             changeText="Target is 70% &middot; barely moved from 52% since 2010"
             sparklineData={[58.2, 52.4, 51.1, 52.6, 53.0, 53.2, 53.4, 53.6]}
             source="Natural England &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-sssi"/>
           <MetricCard
             label="Ancient woodland remaining"
             value="643k"
@@ -93,8 +92,7 @@ export default function HabitatConditionPage() {
             changeText="Down from 2.5m ha &mdash; a 74% loss over 200 years"
             sparklineData={[2500, 1900, 1400, 1000, 800, 700, 643]}
             source="Woodland Trust &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-habitats"/>
           <MetricCard
             label="Lowland meadow remaining"
             value="15,000"
@@ -104,8 +102,7 @@ export default function HabitatConditionPage() {
             changeText="From 3.7 million ha in 1940 &mdash; 99.6% lost"
             sparklineData={[3700000, 1200000, 400000, 100000, 30000, 15000]}
             source="Wildlife Trusts / Natural England"
-            onExpand={() => {}}
-          />
+            href="#sec-habitats"/>
         </div>
         </ScrollReveal>
 

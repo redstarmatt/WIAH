@@ -79,8 +79,7 @@ export default function GpClosuresPage() {
               polarity="up-is-good"
               changeText="From 8,221 in 2013 to 6,581 in 2023 &middot; accelerating"
               sparklineData={[8221, 7989, 7672, 7394, 7128, 6581]}
-              onExpand={() => {}}
-              source="NHS Digital &middot; GP Workforce 2023"
+              href="#sec-chart"source="NHS Digital &middot; GP Workforce 2023"
             />
             <MetricCard
               label="Average patients per practice"
@@ -90,8 +89,7 @@ export default function GpClosuresPage() {
               polarity="up-is-bad"
               changeText="Up from 6,900 in 2013 &middot; smaller practices merged or closed"
               sparklineData={[6900, 7200, 7600, 8100, 8700, 9600]}
-              onExpand={() => {}}
-              source="NHS Digital &middot; 2023"
+              href="#sec-chart"source="NHS Digital &middot; 2023"
             />
             <MetricCard
               label="Practice closures in 2023"
@@ -101,8 +99,7 @@ export default function GpClosuresPage() {
               polarity="up-is-bad"
               changeText="Highest annual total on record &middot; retirement and financial pressure"
               sparklineData={[145, 189, 201, 178, 234, 268]}
-              onExpand={() => {}}
-              source="NHS Digital &middot; 2023"
+              href="#sec-chart"source="NHS Digital &middot; 2023"
             />
           </div>
         </ScrollReveal>

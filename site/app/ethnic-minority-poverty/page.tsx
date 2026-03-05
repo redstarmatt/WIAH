@@ -94,8 +94,7 @@ export default function EthnicMinorityPovertyPage() {
               polarity={'up-is-bad' as const}
               changeText="Down from 52% in 2015 · still 25pp above white British"
               sparklineData={[52, 51, 50, 49, 48, 47, 47, 46, 46]}
-              onExpand={() => {}}
-              source="JRF / Runnymede Trust · Poverty and Ethnicity 2024"
+              href="#sec-chart"source="JRF / Runnymede Trust · Poverty and Ethnicity 2024"
             />
             <MetricCard
               label="Poverty rate, Bangladeshi households"
@@ -105,8 +104,7 @@ export default function EthnicMinorityPovertyPage() {
               polarity={'up-is-bad' as const}
               changeText="Highest of any group · improving slowly"
               sparklineData={[65, 64, 63, 62, 61, 60, 60, 59, 58]}
-              onExpand={() => {}}
-              source="JRF / Runnymede Trust · Poverty and Ethnicity 2024"
+              href="#sec-chart"source="JRF / Runnymede Trust · Poverty and Ethnicity 2024"
             />
             <MetricCard
               label="Child poverty, ethnic minorities"
@@ -116,8 +114,7 @@ export default function EthnicMinorityPovertyPage() {
               polarity={'up-is-bad' as const}
               changeText="55% vs 22% white British children in poverty"
               sparklineData={[58, 57, 57, 56, 56, 55, 55, 55, 55]}
-              onExpand={() => {}}
-              source="JRF · Child Poverty Analysis 2024"
+              href="#sec-chart"source="JRF · Child Poverty Analysis 2024"
             />
           </div>
         </ScrollReveal>

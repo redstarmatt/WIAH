@@ -142,8 +142,7 @@ export default function PublicDebtPage() {
                 polarity="up-is-bad"
                 changeText="2023/24 &middot; Up from 35% in 2007/08 &middot; Highest since early 1960s &middot; &pound;2.65 trillion nominal"
                 sparklineData={sparkFrom([35, 43, 52, 62, 69, 74, 79, 82, 83, 84, 86, 96, 97])}
-                onExpand={() => {}}
-              />
+                href="#sec-overview"/>
               <MetricCard
                 label="Annual debt interest payments"
                 value="&pound;111bn"
@@ -151,8 +150,7 @@ export default function PublicDebtPage() {
                 polarity="up-is-bad"
                 changeText="2022/23 &middot; More than defence budget &middot; Peaked at &pound;116bn in 2022/23 &middot; Highest since records began"
                 sparklineData={sparkFrom([43, 45, 49, 53, 52, 51, 50, 50, 48, 47, 60, 116, 111])}
-                onExpand={() => {}}
-              />
+                href="#sec-debt"/>
               <MetricCard
                 label="Structural deficit (cyclically adjusted borrowing)"
                 value="3.1%"
@@ -160,8 +158,7 @@ export default function PublicDebtPage() {
                 polarity="up-is-bad"
                 changeText="2023/24 (% GDP) &middot; Down from 10.2% in 2009/10 &middot; Fiscal rules require below 3% by 2028/29"
                 sparklineData={sparkFrom([10.2, 8.4, 6.8, 5.5, 4.4, 3.5, 2.9, 2.6, 3.0, 4.1, 5.4, 4.2, 3.1])}
-                onExpand={() => {}}
-              />
+                href="#sec-interest"/>
             </div>
           </ScrollReveal>
         </div>

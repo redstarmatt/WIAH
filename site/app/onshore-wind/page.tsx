@@ -102,8 +102,7 @@ export default function OnshoreWindPage() {
               changeText="Flatlined since 2015 &mdash; Scotland has 8.5 GW by comparison"
               sparklineData={[2.1, 2.2, 2.3, 2.3, 2.3, 2.4, 2.4, 2.4]}
               source="DESNZ &mdash; Renewable electricity capacity statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-capacity"/>
             <MetricCard
               label="UK total onshore wind"
               value="15.9"
@@ -113,8 +112,7 @@ export default function OnshoreWindPage() {
               changeText="Growth driven almost entirely by Scotland &mdash; target: 35 GW by 2030"
               sparklineData={[8.7, 10.3, 11.8, 13.0, 14.1, 14.9, 15.4, 15.9]}
               source="DESNZ &mdash; Renewable electricity capacity statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-england"/>
             <MetricCard
               label="England planning consents (2023)"
               value="38"
@@ -123,8 +121,7 @@ export default function OnshoreWindPage() {
               changeText="Recovering from near-zero during 2015&ndash;2022 ban &mdash; was 180 in 2012"
               sparklineData={[180, 50, 12, 4, 6, 8, 15, 38]}
               source="DESNZ &mdash; Renewable energy planning database"
-              onExpand={() => {}}
-            />
+              href="#sec-england"/>
           </div>
         </ScrollReveal>
 

@@ -33,7 +33,6 @@ export default function AdhdWaitingTimesPage() {
               changeText="target: 18 weeks"
               sparklineData={[10,12,14,15,17,18,20,22,23]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Adult ADHD referrals"
@@ -43,7 +42,6 @@ export default function AdhdWaitingTimesPage() {
               changeText="+65% since 2020"
               sparklineData={[80,95,110,120,135,150,160,170,180]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

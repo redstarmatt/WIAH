@@ -90,8 +90,7 @@ export default function UrbanHeatPage() {
               polarity="up-is-bad"
               changeText="Summer 2022 · UK record 40.3°C · Up from 760 in 2014"
               source="UKHSA Heat Mortality Monitoring Report"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Days above 28°C in England"
               value="21"
@@ -99,8 +98,7 @@ export default function UrbanHeatPage() {
               polarity="up-is-bad"
               changeText="2022 · Up from 8 in 2010"
               source="Met Office · Urban heat island effect adds 4°C above surrounding area"
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
             <MetricCard
               label="UK homes with no cooling"
               value="95%"
@@ -109,8 +107,7 @@ export default function UrbanHeatPage() {
               polarity="up-is-bad"
               changeText="Estimate · vs 90% EU average · No mandatory UK building regs for maximum indoor temperature"
               source="Building Regulations & Energy Performance Certificate data"
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
           </div>
         </section>
 

@@ -101,8 +101,7 @@ export default function FosterCarePage() {
               changeText="Down 11&percnt; since 2015 &middot; Net loss of 600 households in 2022/23"
               sparklineData={[45.5, 44.6, 44.2, 43.9, 43.5, 42.8, 42.1, 41.3, 40.5]}
               source="Ofsted &middot; Fostering in England 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-households"/>
             <MetricCard
               label="Children with 3+ placements/year"
               value="12.4%"
@@ -111,8 +110,7 @@ export default function FosterCarePage() {
               changeText="Up from 9.2&percnt; in 2015 &middot; Each move reduces GCSE attainment"
               sparklineData={[9.2, 9.8, 10.1, 10.5, 10.9, 11.3, 11.6, 12.0, 12.4]}
               source="DfE &middot; Children Looked After 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-breakdowns"/>
             <MetricCard
               label="Spend on agency placements"
               value="&pound;1.6bn"
@@ -122,8 +120,7 @@ export default function FosterCarePage() {
               changeText="Up 35&percnt; in real terms since 2018 &middot; 2&ndash;3&times; the cost of in-house care"
               sparklineData={[1.05, 1.12, 1.18, 1.24, 1.32, 1.41, 1.50, 1.60]}
               source="DfE &middot; Section 251 Returns 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-breakdowns"/>
           </div>
         </ScrollReveal>
 

@@ -83,8 +83,7 @@ export default function MarineEnvironmentPage() {
               changeText="Down from 57% in 2016; ICES assessment of 57 stocks"
               sparklineData={[48, 51, 55, 57, 54, 53, 51, 49]}
               source="ICES stock assessment 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-fish"/>
             <MetricCard
               label="MPAs in favourable condition"
               value="36"
@@ -94,8 +93,7 @@ export default function MarineEnvironmentPage() {
               changeText="Down from 44% in 2016; bottom trawling continues in 90% of offshore MPAs"
               sparklineData={[44, 42, 40, 38, 36]}
               source="JNCC MPA condition assessment"
-              onExpand={() => {}}
-            />
+              href="#sec-mpa"/>
             <MetricCard
               label="UK waters designated as MPAs"
               value="38"
@@ -105,8 +103,7 @@ export default function MarineEnvironmentPage() {
               changeText="Exceeds 30x30 target on paper; most lack active management"
               sparklineData={[24, 27, 30, 33, 36, 38]}
               source="JNCC protected area statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-mpa"/>
           </div>
         </ScrollReveal>
 

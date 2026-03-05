@@ -150,8 +150,7 @@ export default function TeacherShortagePage() {
                 : []
             }
             source="DfE · School Workforce Census"
-            onExpand={() => {}}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="New teacher training recruitment (% of target)"
             value={latestRecruitment ? latestRecruitment.toFixed(0) : '—'}
@@ -165,8 +164,7 @@ export default function TeacherShortagePage() {
                 : []
             }
             source="DfE · Initial Teacher Training Census"
-            onExpand={() => {}}
-          />
+            href="#sec-vacancies"/>
           <MetricCard
             label="Teachers leaving within 5 years (early career attrition)"
             value="40%"
@@ -176,8 +174,7 @@ export default function TeacherShortagePage() {
             changeText="2023 &middot; Up from 30% in 2010 &middot; Workload and pay cited &middot; Inner London and coastal areas worst affected"
             sparklineData={[30, 31, 32, 32, 33, 34, 35, 36, 38, 40]}
             source="DfE · School Workforce Census"
-            onExpand={() => {}}
-          />
+            href="#sec-recruitment"/>
         </div>
         </ScrollReveal>
 

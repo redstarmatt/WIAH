@@ -124,8 +124,7 @@ export default function DisabilityEmploymentPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; 53.7% disabled in work vs 82.1% non-disabled &middot; Down from 33pp in 2014 &middot; But gap closing slowly"
               sparklineData={[36.4, 35.1, 33.6, 32.3, 30.8, 29.6, 28.2, 28.3, 28.7, 28.4]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="PIP (disability benefit) claimants"
               value="3.6M"
@@ -133,8 +132,7 @@ export default function DisabilityEmploymentPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Up from 1.5M in 2015 &middot; Benefits bill: &pound;64bn &middot; DWP overhauling assessments from 2025"
               sparklineData={[1.5, 1.8, 2.2, 2.5, 2.7, 2.8, 3.0, 3.2, 3.6]}
-              onExpand={() => {}}
-            />
+              href="#sec-gap"/>
             <MetricCard
               label="Out of work due to long-term sickness"
               value="2.5M"
@@ -142,8 +140,7 @@ export default function DisabilityEmploymentPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Up from 2.0M pre-COVID &middot; 25% increase since 2019 &middot; Mental health &amp; musculoskeletal main causes"
               sparklineData={[2000, 2000, 2000, 2050, 2050, 2050, 2100, 2300, 2500]}
-              onExpand={() => {}}
-            />
+              href="#sec-pip"/>
           </div>
         </ScrollReveal>
 

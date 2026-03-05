@@ -83,8 +83,7 @@ export default function SoilHealthPage() {
               changeText="Up from 12% in 2010"
               sparklineData={[12, 12.8, 13.5, 14.3, 15.1, 15.9, 16.4, 17]}
               source="DEFRA Soil Health Monitoring Scheme"
-              onExpand={() => {}}
-            />
+              href="#sec-degradation"/>
             <MetricCard
               label="Topsoil lost per year"
               value="2.9bn"
@@ -94,8 +93,7 @@ export default function SoilHealthPage() {
               changeText="Costs the UK economy an estimated &pound;1.4bn annually"
               sparklineData={[2.5, 2.6, 2.7, 2.8, 2.9]}
               source="Environment Agency"
-              onExpand={() => {}}
-            />
+              href="#sec-carbon"/>
             <MetricCard
               label="Arable soils with low organic carbon"
               value="45"
@@ -105,8 +103,7 @@ export default function SoilHealthPage() {
               changeText="Based on early DEFRA monitoring data"
               sparklineData={[38, 39, 41, 42, 43, 45]}
               source="DEFRA Soil Health Monitoring Scheme"
-              onExpand={() => {}}
-            />
+              href="#sec-carbon"/>
           </div>
         </ScrollReveal>
 

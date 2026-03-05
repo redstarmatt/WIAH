@@ -97,8 +97,7 @@ export default function RegionalPayPage() {
               changeText="53% above UK average of £35,400 · gap growing"
               sparklineData={[28000, 32000, 36000, 40000, 42000, 44000, 46100]}
               source="ONS ASHE · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="North East / Wales median pay"
               value={nePay ? `£${nePay.medianPay.toLocaleString()}` : '£30,200'}
@@ -108,8 +107,7 @@ export default function RegionalPayPage() {
               changeText="34% below UK average · gap to London is £15,900"
               sparklineData={[20000, 22000, 24000, 26000, 28000, 29000, 30200]}
               source="ONS ASHE · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-gap-trend"/>
             <MetricCard
               label="London–North East pay gap since 1997"
               value={latestGap ? `£${latestGap.londonMinusNE.toLocaleString()}` : '£15,900'}
@@ -119,8 +117,7 @@ export default function RegionalPayPage() {
               changeText="Was £4,200 in 1997 · gap nearly quadrupled in 26 years"
               sparklineData={[4200, 7800, 10500, 12400, 14100, 15900]}
               source="ONS ASHE historical"
-              onExpand={() => {}}
-            />
+              href="#sec-regions"/>
           </div>
         </ScrollReveal>
 

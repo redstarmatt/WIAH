@@ -119,8 +119,7 @@ export default function UniversalCreditPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Was 2.9M before COVID; full rollout by 2024"
               sparklineData={[0.5, 0.9, 1.6, 2.9, 5.6, 5.9, 6.1, 6.4]}
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -131,8 +130,7 @@ export default function UniversalCreditPage() {
               polarity="up-is-bad"
               changeText="Average cap shortfall: &pound;58/week"
               sparklineData={[85, 95, 105, 115, 120, 122, 125, 126]}
-              onExpand={() => {}}
-            />
+              href="#sec-positive"/>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -143,8 +141,7 @@ export default function UniversalCreditPage() {
               polarity="up-is-bad"
               changeText="Trussell Trust data; five-week wait driver"
               sparklineData={[18, 20, 24, 28, 30, 31, 33, 34]}
-              onExpand={() => {}}
-            />
+              href="#sec-positive"/>
           </ScrollReveal>
         </div>
       </section>

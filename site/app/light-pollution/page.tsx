@@ -33,7 +33,6 @@ export default function LightPollutionPage() {
               changeText="globally increasing year on year"
               sparklineData={[1.4,1.5,1.6,1.7,1.8,1.9,2,2,2]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Dark sky areas in England"
@@ -43,7 +42,6 @@ export default function LightPollutionPage() {
               changeText="International Dark Sky reserves"
               sparklineData={[3,3,4,4,5,5,6,6,6]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

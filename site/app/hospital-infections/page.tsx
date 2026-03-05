@@ -111,8 +111,7 @@ export default function HospitalInfectionsPage() {
               polarity={'up-is-bad' as const}
               changeText="2023 &middot; Rising for 3rd year &middot; After historic fall"
               sparklineData={[36000, 25000, 18000, 15000, 14000, 13000, 12500, 12800, 13500, 14200]}
-              onExpand={() => {}}
-            />
+              href="#sec-cdiff"/>
             <MetricCard
               label="MRSA bloodstream infections"
               value="1,423"
@@ -120,8 +119,7 @@ export default function HospitalInfectionsPage() {
               polarity={'up-is-bad' as const}
               changeText="2023 &middot; Up 45% from 2018 low of 980"
               sparklineData={[1200, 1150, 1100, 1050, 1000, 980, 1100, 1200, 1350, 1423]}
-              onExpand={() => {}}
-            />
+              href="#sec-mrsa"/>
             <MetricCard
               label="Patients with HAI at any time"
               value="300,000"
@@ -129,8 +127,7 @@ export default function HospitalInfectionsPage() {
               polarity={'up-is-bad' as const}
               changeText="Annual estimate &middot; All healthcare settings"
               sparklineData={[320000, 310000, 305000, 300000, 295000, 300000, 305000, 300000]}
-              onExpand={() => {}}
-            />
+              href="#sec-mrsa"/>
           </div>
         </ScrollReveal>
 

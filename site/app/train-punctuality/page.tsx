@@ -81,8 +81,7 @@ export default function TrainPunctualityPage() {
               polarity={'up-is-good' as const}
               changeText="-16.1pp vs 2019 &middot; worst in Western Europe"
               sparklineData={[83.5, 85.1, 80.2, 79.4, 73.8, 65.9, 72.3, 69.8, 63.3]}
-              onExpand={() => {}}
-              source="Office of Rail and Road &middot; National Rail Trends 2024"
+              href="#sec-chart"source="Office of Rail and Road &middot; National Rail Trends 2024"
             />
             <MetricCard
               label="Train cancellation rate"
@@ -92,8 +91,7 @@ export default function TrainPunctualityPage() {
               polarity={'up-is-bad' as const}
               changeText="+2.1pp since 2019 &middot; compounding delays"
               sparklineData={[1.5, 1.6, 1.8, 1.8, 2.1, 2.9, 2.6, 3.1, 3.9]}
-              onExpand={() => {}}
-              source="Office of Rail and Road &middot; National Rail Trends 2024"
+              href="#sec-chart"source="Office of Rail and Road &middot; National Rail Trends 2024"
             />
             <MetricCard
               label="Delay Repay compensation claims"
@@ -103,8 +101,7 @@ export default function TrainPunctualityPage() {
               polarity={'up-is-bad' as const}
               changeText="+40% since 2019 &middot; rising awareness and delays"
               sparklineData={[1.8, 2.0, 2.2, 2.9, 2.5, 2.8, 3.1, 3.6, 4.1]}
-              onExpand={() => {}}
-              source="Office of Rail and Road &middot; National Rail Trends 2024"
+              href="#sec-chart"source="Office of Rail and Road &middot; National Rail Trends 2024"
             />
           </div>
         </ScrollReveal>

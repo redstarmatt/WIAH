@@ -84,8 +84,7 @@ export default function TradeDeficitPage() {
               polarity={'up-is-bad' as const}
               changeText="+£40bn since 2019 · largest in peacetime"
               sparklineData={[100, 110, 118, 122, 125, 145, 160, 162, 165]}
-              onExpand={() => {}}
-              source="ONS · UK Trade Statistical Bulletin 2024"
+              href="#sec-chart"source="ONS · UK Trade Statistical Bulletin 2024"
             />
             <MetricCard
               label="Services trade surplus"
@@ -95,8 +94,7 @@ export default function TradeDeficitPage() {
               polarity={'up-is-good' as const}
               changeText="+£18bn since 2019 · finance dominates"
               sparklineData={[83, 88, 92, 95, 107, 98, 108, 115, 125]}
-              onExpand={() => {}}
-              source="ONS · UK Trade Statistical Bulletin 2024"
+              href="#sec-chart"source="ONS · UK Trade Statistical Bulletin 2024"
             />
             <MetricCard
               label="Net trade balance"
@@ -106,8 +104,7 @@ export default function TradeDeficitPage() {
               polarity={'up-is-good' as const}
               changeText="Better than 2022 peak of -£60bn"
               sparklineData={[-17, -22, -26, -27, -18, -47, -52, -47, -40]}
-              onExpand={() => {}}
-              source="ONS · UK Trade Statistical Bulletin 2024"
+              href="#sec-chart"source="ONS · UK Trade Statistical Bulletin 2024"
             />
           </div>
         </ScrollReveal>

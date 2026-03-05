@@ -108,8 +108,7 @@ export default function NationalDebtPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Highest since the 1960s &middot; Up from 42&percnt; in 2007"
               sparklineData={[42, 52, 62, 70, 76, 84, 87, 99]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Annual debt interest"
               value="&pound;112bn"
@@ -117,8 +116,7 @@ export default function NationalDebtPage() {
               polarity="up-is-bad"
               changeText="2023/24 &middot; More than the defence budget &middot; Up from &pound;42bn in 2010"
               sparklineData={[42, 45, 48, 50, 52, 60, 88, 112]}
-              onExpand={() => {}}
-            />
+              href="#sec-debt"/>
             <MetricCard
               label="Debt interest as &percnt; of tax revenue"
               value="11.6&percnt;"
@@ -126,8 +124,7 @@ export default function NationalDebtPage() {
               polarity="up-is-bad"
               changeText="2023/24 &middot; &pound;1 in every &pound;9 of tax goes to creditors"
               sparklineData={[6.5, 7.0, 7.5, 7.8, 7.5, 7.2, 10.5, 11.6]}
-              onExpand={() => {}}
-            />
+              href="#sec-interest"/>
           </div>
         </ScrollReveal>
 

@@ -90,8 +90,7 @@ export default function HealthInequalitiesPage() {
               polarity="up-is-bad"
               changeText="Between most and least deprived decile &middot; widened since 2001"
               sparklineData={[16.2, 17.1, 17.8, 18.1, 18.4, 18.6]}
-              onExpand={() => {}}
-              source="ONS Health State Life Expectancies &middot; 2018&ndash;20"
+              href="#sec-gap"source="ONS Health State Life Expectancies &middot; 2018&ndash;20"
             />
             <MetricCard
               label="Life expectancy gap"
@@ -101,8 +100,7 @@ export default function HealthInequalitiesPage() {
               polarity="up-is-bad"
               changeText="Most deprived 74.1 yrs vs least deprived 83.5 yrs"
               sparklineData={[8.9, 9.2, 9.6, 9.9, 10.2, 10.4]}
-              onExpand={() => {}}
-              source="ONS &middot; 2018&ndash;20"
+              href="#sec-deprivation"source="ONS &middot; 2018&ndash;20"
             />
             <MetricCard
               label="North-South LE gap"
@@ -112,8 +110,7 @@ export default function HealthInequalitiesPage() {
               polarity="up-is-bad"
               changeText="NE England 74.1 years vs SE 81.8 years"
               sparklineData={[7.2, 7.4, 7.5, 7.6, 7.7, 7.8, 7.7, 7.7]}
-              onExpand={() => {}}
-              source="ONS &middot; 2020&ndash;22"
+              href="#sec-deprivation"source="ONS &middot; 2020&ndash;22"
             />
           </div>
         </ScrollReveal>

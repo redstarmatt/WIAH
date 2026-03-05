@@ -106,8 +106,7 @@ export default function CivilLibertiesPage() {
               changeText="5.2 million total &middot; 1 per 13 people &middot; Highest density of any democracy"
               sparklineData={[45, 50, 55, 58, 62, 66, 70, 75]}
               source="BSIA &middot; CCTV Survey 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-stop-search"/>
             <MetricCard
               label="Police stop and search per 1,000"
               value="16"
@@ -116,8 +115,7 @@ export default function CivilLibertiesPage() {
               changeText="Rising since 2019 &middot; Black people 7&times; more likely to be stopped"
               sparklineData={[25, 20, 14, 11, 9, 10, 13, 16]}
               source="Home Office &middot; Police Powers and Procedures 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-cctv"/>
             <MetricCard
               label="UK CIVICUS civic space rating"
               value="3/5"
@@ -126,8 +124,7 @@ export default function CivilLibertiesPage() {
               changeText="Narrowed &middot; Downgraded from Open in 2019 &middot; PCSC Act 2022 &amp; Public Order Act 2023 cited"
               sparklineData={[4, 4, 4, 4, 3, 3, 3, 3]}
               source="CIVICUS &middot; State of Civil Society Report 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-cctv"/>
           </div>
         </ScrollReveal>
 

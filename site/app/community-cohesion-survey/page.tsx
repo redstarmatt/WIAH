@@ -98,8 +98,7 @@ export default function CommunityCohesionSurveyPage() {
               polarity="up-is-good"
               changeText="-6pp since 2019 &middot; polarisation and inequality"
               sparklineData={[65, 64, 64, 65, 63, 60, 59, 59]}
-              onExpand={() => {}}
-              source="MHCLG &middot; Community Life Survey 2023"
+              href="#sec-chart"source="MHCLG &middot; Community Life Survey 2023"
             />
             <MetricCard
               label="Trust across backgrounds"
@@ -109,8 +108,7 @@ export default function CommunityCohesionSurveyPage() {
               polarity="up-is-good"
               changeText="lower in deprived areas &middot; cohesion challenge"
               sparklineData={[76, 75, 75, 74, 74, 74]}
-              onExpand={() => {}}
-              source="MHCLG &middot; Community Life Survey 2023"
+              href="#sec-chart"source="MHCLG &middot; Community Life Survey 2023"
             />
             <MetricCard
               label="Deprivation gap"
@@ -120,8 +118,7 @@ export default function CommunityCohesionSurveyPage() {
               polarity="up-is-bad"
               changeText="most deprived areas 15pp less cohesive than wealthiest"
               sparklineData={[15, 15, 15, 15, 15, 15]}
-              onExpand={() => {}}
-              source="MHCLG &middot; Community Life Survey analysis 2023"
+              href="#sec-chart"source="MHCLG &middot; Community Life Survey analysis 2023"
             />
           </div>
         </ScrollReveal>

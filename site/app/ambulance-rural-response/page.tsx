@@ -33,7 +33,6 @@ export default function AmbulanceRuralResponsePage() {
               changeText="+8 min vs urban average"
               sparklineData={[32,34,36,38,40,42,44,46,48]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Rural ambulance stations closed since 2010"
@@ -43,7 +42,6 @@ export default function AmbulanceRuralResponsePage() {
               changeText="consolidation continues"
               sparklineData={[12,16,20,24,28,32,35,38,42]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

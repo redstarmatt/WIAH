@@ -84,8 +84,7 @@ export default function GridBatteryStoragePage() {
               polarity="up-is-good"
               changeText="7x growth since 2017 &middot; but 10x needed"
               sparklineData={[0.6, 0.9, 1.1, 1.5, 2.0, 2.9, 4.2, 5.1]}
-              onExpand={() => {}}
-              source="NESO &middot; Grid Battery Register 2024"
+              href="#sec-chart"source="NESO &middot; Grid Battery Register 2024"
             />
             <MetricCard
               label="2035 target"
@@ -95,8 +94,7 @@ export default function GridBatteryStoragePage() {
               polarity="up-is-bad"
               changeText="Current trajectory reaches 12&ndash;15 GW &middot; gap real"
               sparklineData={[0.6, 1.1, 1.5, 2.0, 2.9, 4.2, 5.1, 6.5]}
-              onExpand={() => {}}
-              source="NESO &middot; Clean Power 2030 Analysis"
+              href="#sec-callout"source="NESO &middot; Clean Power 2030 Analysis"
             />
             <MetricCard
               label="Curtailed renewable"
@@ -106,8 +104,7 @@ export default function GridBatteryStoragePage() {
               polarity="up-is-bad"
               changeText="Slightly improving as storage grows"
               sparklineData={[0.8, 1.0, 1.2, 1.4, 1.6, 1.9, 2.1, 1.8]}
-              onExpand={() => {}}
-              source="NESO &middot; Electricity Market Report 2024"
+              href="#sec-callout"source="NESO &middot; Electricity Market Report 2024"
             />
           </div>
         </ScrollReveal>

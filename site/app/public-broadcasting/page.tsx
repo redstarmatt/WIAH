@@ -123,8 +123,7 @@ export default function PublicBroadcastingPage() {
               changeText="Vs CPI-linked equivalent &middot; 2-year freeze at &pound;159 &middot; 11&percnt; inflation peak"
               sparklineData={[0, 0, 0, 0, 150, 300, 500, 700, 900, 1000]}
               source="BBC &middot; Charter Review Evidence &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-licence"/>
             <MetricCard
               label="BBC redundancies since 2020"
               value="1,500+"
@@ -133,8 +132,7 @@ export default function PublicBroadcastingPage() {
               changeText="BBC4 closed &middot; Local radio cuts &middot; Foreign bureaux reduced"
               sparklineData={[0, 200, 500, 800, 1100, 1500]}
               source="BBC &middot; Annual Report 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-headcount"/>
             <MetricCard
               label="Licence fee evasion rate"
               value="9.2%"
@@ -143,8 +141,7 @@ export default function PublicBroadcastingPage() {
               changeText="Up from 6&percnt; in 2015 &middot; Each 1&percnt; = &pound;50m lost revenue"
               sparklineData={[6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.2]}
               source="TV Licensing &middot; Annual Enforcement Report 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-headcount"/>
           </div>
         </ScrollReveal>
 

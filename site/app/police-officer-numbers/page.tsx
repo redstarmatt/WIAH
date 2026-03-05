@@ -90,8 +90,7 @@ export default function PoliceOfficerNumbersPage() {
               polarity="up-is-good"
               changeText="stable at near 2010 levels"
               sparklineData={[143734, 134000, 127909, 123142, 122404, 130396, 138858, 142526, 147232, 147000]}
-              onExpand={() => {}}
-              source="Home Office &middot; Police Workforce Statistics 2024"
+              href="#sec-callout"source="Home Office &middot; Police Workforce Statistics 2024"
             />
             <MetricCard
               label="Still below 2010"
@@ -101,8 +100,7 @@ export default function PoliceOfficerNumbersPage() {
               polarity="up-is-good"
               changeText="vs 151k peak &middot; and demand much higher now"
               sparklineData={[-7000, -16000, -20000, -21000, -21500, -13500, -5000, -1500, 0, -500]}
-              onExpand={() => {}}
-              source="Home Office &middot; Police Workforce 2024"
+              href="#sec-chart"source="Home Office &middot; Police Workforce 2024"
             />
             <MetricCard
               label="999 response time"
@@ -112,8 +110,7 @@ export default function PoliceOfficerNumbersPage() {
               polarity="up-is-bad"
               changeText="emergency response time rising &middot; capacity stretched"
               sparklineData={[7.0, 7.4, 7.8, 8.1, 8.3, 8.5, 8.8, 9.0, 9.2, 9.4]}
-              onExpand={() => {}}
-              source="HMICFRS &middot; State of Policing 2024"
+              href="#sec-chart"source="HMICFRS &middot; State of Policing 2024"
             />
           </div>
         </ScrollReveal>

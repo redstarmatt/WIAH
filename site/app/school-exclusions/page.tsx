@@ -124,8 +124,7 @@ export default function SchoolExclusionsPage() {
               changeText="2022/23 &middot; Up 77% from 5,170 in 2015/16 &middot; Boys: 75% of exclusions &middot; SEND pupils: 40% of exclusions"
               sparklineData={sparkFrom([5170, 6685, 7720, 8000, 6619, 5620, 9160])}
               source="DfE · Suspensions and Permanent Exclusions"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -138,8 +137,7 @@ export default function SchoolExclusionsPage() {
               changeText="2022/23 &middot; Up from 410K in 2015/16 &middot; Equivalent to 5.1M school days lost &middot; Persistent disruption schools widening"
               sparklineData={sparkFrom([410, 450, 476, 438, 325, 390, 787])}
               source="DfE · Suspensions and Permanent Exclusions"
-              onExpand={() => {}}
-            />
+              href="#sec-trend"/>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -152,8 +150,7 @@ export default function SchoolExclusionsPage() {
               changeText="2022/23 &middot; SEND pupils: 17% of school population &middot; Over-represented by 2.4x &middot; Mental health needs often unmet"
               sparklineData={sparkFrom([32, 33, 34, 35, 36, 37, 38, 40])}
               source="DfE · Suspensions and Permanent Exclusions"
-              onExpand={() => {}}
-            />
+              href="#sec-groups"/>
           </ScrollReveal>
         </div>
       </section>

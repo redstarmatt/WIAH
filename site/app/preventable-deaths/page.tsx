@@ -80,8 +80,7 @@ export default function PreventableDeathsPage() {
               polarity="up-is-bad"
               changeText="Down 27% from 293 in 2010 &middot; progress accelerated 2012&ndash;2019"
               sparklineData={[293, 275, 258, 242, 231, 243, 218]}
-              onExpand={() => {}}
-              source="ONS Avoidable Mortality &middot; 2021"
+              href="#sec-chart"source="ONS Avoidable Mortality &middot; 2021"
             />
             <MetricCard
               label="North East rate"
@@ -91,8 +90,7 @@ export default function PreventableDeathsPage() {
               polarity="up-is-bad"
               changeText="60% higher than London (166) &middot; gap not narrowing"
               sparklineData={[310, 298, 285, 270, 260, 268, 276]}
-              onExpand={() => {}}
-              source="ONS &middot; 2021"
+              href="#sec-regions"source="ONS &middot; 2021"
             />
             <MetricCard
               label="Fall since 2010"
@@ -102,8 +100,7 @@ export default function PreventableDeathsPage() {
               polarity="up-is-bad"
               changeText="293 &rarr; 218 per 100,000 &middot; biggest driver: cardiovascular improvements"
               sparklineData={[293, 275, 258, 242, 231, 243, 218]}
-              onExpand={() => {}}
-              source="ONS &middot; 2021"
+              href="#sec-regions"source="ONS &middot; 2021"
             />
           </div>
         </ScrollReveal>

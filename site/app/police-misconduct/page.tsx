@@ -76,8 +76,7 @@ export default function PoliceMisconductPage() {
               changeText="122 officers dismissed &middot; but critics say too few for scale of complaints"
               sparklineData={[1240, 1320, 1410, 1520, 1580, 1640, 1710, 1738]}
               source="College of Policing / HMICFRS &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-hearings"/>
             <MetricCard
               label="Stop and search: Black to white ratio"
               value="4.1"
@@ -87,8 +86,7 @@ export default function PoliceMisconductPage() {
               changeText="Down from 9.7&times; in 2018 but still 4&times; more likely &middot; deeply disproportionate"
               sparklineData={[9.7, 9.4, 6.3, 6.7, 5.1, 4.1]}
               source="Home Office Stop and Search Statistics &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-hearings"/>
             <MetricCard
               label="Outstanding IOPC investigations"
               value="2,057"
@@ -98,8 +96,7 @@ export default function PoliceMisconductPage() {
               changeText="Up from 1,240 in 2019 &middot; average resolution &gt;3 years"
               sparklineData={[1240, 1580, 1890, 2010, 2057]}
               source="IOPC Annual Report &middot; 2022/23"
-              onExpand={() => {}}
-            />
+              href="#sec-hearings"/>
           </div>
         </ScrollReveal>
 

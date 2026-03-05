@@ -118,8 +118,7 @@ export default function ChildProtectionPage() {
               polarity="up-is-bad"
               changeText="Up 37% since 2011/12"
               sparklineData={[521, 545, 570, 590, 604, 630, 640, 655, 670, 690, 714]}
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -130,8 +129,7 @@ export default function ChildProtectionPage() {
               polarity="up-is-bad"
               changeText="Rate of 46 per 10,000"
               sparklineData={[38, 40, 42, 45, 47, 48, 50, 51, 52]}
-              onExpand={() => {}}
-            />
+              href="#sec-positive"/>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -142,8 +140,7 @@ export default function ChildProtectionPage() {
               polarity="up-is-bad"
               changeText="Up 24% since 2011; record high"
               sparklineData={[65.5, 66.5, 68.1, 69.5, 72.7, 78.2, 80.1, 82.2, 83.8]}
-              onExpand={() => {}}
-            />
+              href="#sec-positive"/>
           </ScrollReveal>
         </div>
       </section>

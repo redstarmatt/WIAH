@@ -118,8 +118,7 @@ export default function EthnicityPayGapPage() {
               polarity="up-is-bad"
               changeText="barely changed in a decade"
               sparklineData={[-21.4, -21.1, -20.9, -20.6, -20.4, -20.3, -20.3, -20.2, -20.2]}
-              onExpand={() => {}}
-              source="ONS &middot; ASHE Ethnicity Analysis 2023"
+              href="#sec-chart"source="ONS &middot; ASHE Ethnicity Analysis 2023"
             />
             <MetricCard
               label="Pakistani–White British pay gap"
@@ -129,8 +128,7 @@ export default function EthnicityPayGapPage() {
               polarity="up-is-good"
               changeText="slight improvement but still deep"
               sparklineData={[-17.8, -17.4, -17.1, -16.8, -16.6, -16.5, -16.3, -16.2, -16.1]}
-              onExpand={() => {}}
-              source="ONS &middot; ASHE Ethnicity Analysis 2023"
+              href="#sec-chart"source="ONS &middot; ASHE Ethnicity Analysis 2023"
             />
             <MetricCard
               label="Indian workers vs White British"
@@ -140,8 +138,7 @@ export default function EthnicityPayGapPage() {
               polarity="up-is-good"
               changeText="Indian workers now earn above White British median"
               sparklineData={[1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 1.4]}
-              onExpand={() => {}}
-              source="ONS &middot; ASHE Ethnicity Analysis 2023"
+              href="#sec-chart"source="ONS &middot; ASHE Ethnicity Analysis 2023"
             />
           </div>
         </ScrollReveal>

@@ -81,8 +81,7 @@ export default function SupplyChainPage() {
               changeText="Up from 37% in 2000 &middot; UK produces 60% of food it can grow domestically"
               sparklineData={[37, 39, 42, 44, 46, 46]}
               source="DEFRA Food Statistics Pocketbook &middot; 2022"
-              onExpand={() => {}}
-            />
+              href="#sec-food"/>
             <MetricCard
               label="Goods trade deficit (2022)"
               value="&pound;186bn"
@@ -92,8 +91,7 @@ export default function SupplyChainPage() {
               changeText="Record high &middot; down to &pound;162bn in 2023 as energy prices fell"
               sparklineData={[120, 141, 148, 172, 186, 162]}
               source="ONS Trade Statistics &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-food"/>
             <MetricCard
               label="UK-EU trade as % of total exports"
               value="42"
@@ -103,8 +101,7 @@ export default function SupplyChainPage() {
               changeText="Stable since Brexit &middot; diversification to US and Asia partly offsetting"
               sparklineData={[44, 45, 43, 42, 42, 42]}
               source="ONS UK Trade (2023)"
-              onExpand={() => {}}
-            />
+              href="#sec-food"/>
           </div>
         </ScrollReveal>
 

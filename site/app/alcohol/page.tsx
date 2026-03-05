@@ -119,8 +119,7 @@ export default function AlcoholPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Up from 6,669 in 2010 &middot; Peaked at 9,641 in 2021 &middot; COVID drove sharp spike"
               sparklineData={[6669, 6880, 6490, 6592, 6831, 7366, 7327, 7697, 7551, 7565, 8974, 9641, 8209, 8274]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Alcohol-related hospital admissions"
               value="980K"
@@ -128,8 +127,7 @@ export default function AlcoholPage() {
               polarity="up-is-bad"
               changeText="2022/23 &middot; Up 17% since 2010 &middot; Alcohol liver disease the primary cause &middot; NHS cost &pound;3.5bn/year"
               sparklineData={[839, 865, 884, 904, 916, 925, 930, 940, 950, 955, 890, 960, 975, 980]}
-              onExpand={() => {}}
-            />
+              href="#sec-admissions"/>
             <MetricCard
               label="Adults drinking above guidelines (weekly)"
               value="21%"
@@ -137,8 +135,7 @@ export default function AlcoholPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Guidelines: 14 units/week &middot; Men 24%, Women 18% &middot; Heaviest 10% drink 60%+ of all alcohol"
               sparklineData={[26, 25, 24, 23, 23, 22, 22, 21, 21, 21, 19, 20, 21, 21]}
-              onExpand={() => {}}
-            />
+              href="#sec-deaths"/>
           </div>
         </ScrollReveal>
 

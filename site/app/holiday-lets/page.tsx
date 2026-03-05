@@ -95,8 +95,7 @@ export default function HolidayLetsPage() {
             changeText="Up from 70,000 in 2015 &middot; concentrated in tourist areas"
             sparklineData={[70000, 110000, 180000, 235000, 257000]}
             source="ONS / Inside Airbnb &middot; 2022"
-            onExpand={() => {}}
-          />
+            href="#sec-listings"/>
           <MetricCard
             label="Cornwall housing as short-term lets"
             value="36"
@@ -106,8 +105,7 @@ export default function HolidayLetsPage() {
             changeText="Lake District 29%, North Devon 24% &middot; communities hollowed out"
             sparklineData={[20, 24, 28, 32, 36]}
             source="Affordable Housing Commission &middot; 2022"
-            onExpand={() => {}}
-          />
+            href="#sec-local"/>
           <MetricCard
             label="Cornwall house price:earnings ratio"
             value="15.1"
@@ -117,8 +115,7 @@ export default function HolidayLetsPage() {
             changeText="Up from 9.1&times; in 2015 &middot; STLs contributing to unaffordability"
             sparklineData={[9.1, 10.3, 11.2, 14.4, 15.1]}
             source="ONS House Price Statistics &middot; 2022"
-            onExpand={() => {}}
-          />
+            href="#sec-affordability"/>
         </div>
         </ScrollReveal>
 

@@ -94,8 +94,7 @@ export default function TeacherRealPayPage() {
               polarity="up-is-bad"
               changeText="experienced teacher pay below 2010 in real terms"
               sparklineData={[36200, 34600, 33800, 33200, 33000, 33100, 33600, 33900, 32800, 33000]}
-              onExpand={() => {}}
-              source="STRB &middot; School Teachers&apos; Pay Review Body 2024"
+              href="#sec-chart"source="STRB &middot; School Teachers&apos; Pay Review Body 2024"
             />
             <MetricCard
               label="Pay gap vs graduate average"
@@ -105,8 +104,7 @@ export default function TeacherRealPayPage() {
               polarity="up-is-bad"
               changeText="teaching now pays 18% less than grad average"
               sparklineData={[-2, -5, -8, -10, -13, -14, -13, -14, -17, -18]}
-              onExpand={() => {}}
-              source="OECD &middot; Education at a Glance 2024"
+              href="#sec-chart"source="OECD &middot; Education at a Glance 2024"
             />
             <MetricCard
               label="OECD pay ranking"
@@ -116,8 +114,7 @@ export default function TeacherRealPayPage() {
               polarity="up-is-bad"
               changeText="teacher pay below OECD average &middot; falling"
               sparklineData={[15, 16, 17, 17, 18, 19, 19, 20, 21, 21]}
-              onExpand={() => {}}
-              source="OECD &middot; Education at a Glance 2024"
+              href="#sec-chart"source="OECD &middot; Education at a Glance 2024"
             />
           </div>
         </ScrollReveal>

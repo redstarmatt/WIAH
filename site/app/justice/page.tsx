@@ -486,8 +486,7 @@ export default function JusticePage() {
             }
             source="Home Office · Crime Outcomes YE Mar 2025"
             baseline="Only 7 in 100 recorded crimes end in a charge — down from 15 in 100 a decade ago"
-            onExpand={chargeRateSeries.length > 0 ? () => setExpanded('charge-rate') : undefined}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="Crown Court backlog"
             value={latestBacklog ? `${(latestBacklog.outstanding / 1000).toFixed(1)}K` : '—'}
@@ -506,8 +505,7 @@ export default function JusticePage() {
             }
             source="MOJ · Criminal Court Statistics Q3 2025"
             baseline="At current court throughput, many defendants wait over 2 years for trial"
-            onExpand={backlogSeries.length > 0 ? () => setExpanded('backlog') : undefined}
-          />
+            href="#sec-crime"/>
           <MetricCard
             label="Prison population"
             value={currentPop ? `${(currentPop / 1000).toFixed(1)}K` : '—'}
@@ -526,8 +524,7 @@ export default function JusticePage() {
             }
             source="MOJ · Prison Population Dec 2025"
             baseline="7 in 10 released prisoners are convicted of a new offence within 9 years"
-            onExpand={prisonPopSeries.length > 0 ? () => setExpanded('prison') : undefined}
-          />
+            href="#sec-crime-trends"/>
         </div>
         </ScrollReveal>
 

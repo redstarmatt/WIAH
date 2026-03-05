@@ -99,7 +99,6 @@ export default function NHSWorkforcePage() {
             polarity="up-is-bad"
             direction="up"
             changeText="8.4% vacancy rate"
-            onExpand={() => {}}
           />
           <MetricCard
             label="Nursing vacancies"
@@ -108,7 +107,6 @@ export default function NHSWorkforcePage() {
             polarity="up-is-bad"
             direction="up"
             changeText="1 in 9 nursing posts unfilled"
-            onExpand={() => {}}
           />
           <MetricCard
             label="Staff leaving NHS each year"
@@ -117,7 +115,6 @@ export default function NHSWorkforcePage() {
             polarity="up-is-bad"
             direction="up"
             changeText="1 in 12; burnout key factor"
-            onExpand={() => {}}
           />
         </div>
       </section>

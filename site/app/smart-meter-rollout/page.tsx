@@ -90,8 +90,7 @@ export default function SmartMeterRolloutPage() {
               polarity={'up-is-good' as const}
               changeText="35.7m &middot; 57% of all meters in Britain"
               sparklineData={[5.1, 8.2, 12.0, 16.3, 21.0, 24.5, 27.8, 31.0, 35.7]}
-              onExpand={() => {}}
-              source="DESNZ &middot; Smart Meters Statistical Release 2024"
+              href="#sec-chart"source="DESNZ &middot; Smart Meters Statistical Release 2024"
             />
             <MetricCard
               label="Meters in &lsquo;dumb mode&rsquo;"
@@ -101,8 +100,7 @@ export default function SmartMeterRolloutPage() {
               polarity={'up-is-bad' as const}
               changeText="25% of installed not communicating"
               sparklineData={[2.0, 4.1, 7.8, 10.2, 11.5, 12.0, 11.0, 10.0, 8.9]}
-              onExpand={() => {}}
-              source="DESNZ &middot; Smart Meters Statistical Release 2024"
+              href="#sec-chart"source="DESNZ &middot; Smart Meters Statistical Release 2024"
             />
             <MetricCard
               label="Estimated annual saving (working)"
@@ -112,8 +110,7 @@ export default function SmartMeterRolloutPage() {
               polarity={'up-is-good' as const}
               changeText="&pound;87/yr avg when meter working properly"
               sparklineData={[45, 50, 55, 60, 65, 70, 75, 80, 87]}
-              onExpand={() => {}}
-              source="DESNZ &middot; Smart Meter Impact Assessment 2024"
+              href="#sec-chart"source="DESNZ &middot; Smart Meter Impact Assessment 2024"
             />
           </div>
         </ScrollReveal>

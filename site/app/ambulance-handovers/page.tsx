@@ -126,8 +126,7 @@ export default function AmbulanceHandoversPage() {
               polarity={'up-is-bad' as const}
               changeText="2023/24 &middot; Up from 420K in 2017/18"
               sparklineData={[0.42, 0.51, 0.63, 1.12, 1.58, 1.82, 1.64]}
-              onExpand={() => {}}
-            />
+              href="#sec-hours-lost"/>
             <MetricCard
               label="Handovers taking 60+ min"
               value="18.4"
@@ -136,8 +135,7 @@ export default function AmbulanceHandoversPage() {
               polarity={'up-is-bad' as const}
               changeText="2023/24 &middot; Up from 2.1% in 2017/18"
               sparklineData={[2.1, 3.4, 5.8, 11.2, 15.9, 18.4, 14.7]}
-              onExpand={() => {}}
-            />
+              href="#sec-delay-pct"/>
             <MetricCard
               label="Cat 2 response time"
               value="40.7"
@@ -146,8 +144,7 @@ export default function AmbulanceHandoversPage() {
               polarity={'up-is-bad' as const}
               changeText="2023/24 &middot; Target: 18 minutes"
               sparklineData={[22, 24, 28, 39, 52, 41, 37]}
-              onExpand={() => {}}
-            />
+              href="#sec-delay-pct"/>
           </div>
         </ScrollReveal>
 

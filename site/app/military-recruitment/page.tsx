@@ -81,8 +81,7 @@ export default function MilitaryRecruitmentPage() {
               changeText="Below 73,000 target &middot; less than half Cold War peak of 152,000"
               sparklineData={[152000, 111000, 102000, 98000, 82000, 78000, 76000, 72520]}
               source="MOD Armed Forces Statistics &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-strength"/>
             <MetricCard
               label="Below establishment strength"
               value="&minus;3,500"
@@ -92,8 +91,7 @@ export default function MilitaryRecruitmentPage() {
               changeText="Army, Navy and RAF all below target headcount"
               sparklineData={[1000, 2000, 2500, 3000, 3200, 3500]}
               source="MOD Quarterly Manning Report &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-strength"/>
             <MetricCard
               label="Recruiter applications (2023)"
               value="94,000"
@@ -103,8 +101,7 @@ export default function MilitaryRecruitmentPage() {
               changeText="Record applications but only 9,200 actually join &middot; 10:1 attrition"
               sparklineData={[76000, 82000, 68000, 78000, 91000, 94000]}
               source="MOD UK Armed Forces Biannual Diversity Statistics &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-strength"/>
           </div>
         </ScrollReveal>
 

@@ -33,7 +33,6 @@ export default function LonelinessYoungPeoplePage() {
               changeText="highest of any age group"
               sparklineData={[10,11,12,13,14,14,15,15,16]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Young people lacking close friends"
@@ -43,7 +42,6 @@ export default function LonelinessYoungPeoplePage() {
               changeText="up from 15% in 2018"
               sparklineData={[15,16,17,18,19,20,21,21,22]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

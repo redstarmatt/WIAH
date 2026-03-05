@@ -33,7 +33,6 @@ export default function PublicSectorStaffingPage() {
               changeText="highest on record"
               sparklineData={[2.5,2.8,3.0,3.2,3.5,3.8,4.2,4.5,4.8]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Average civil service turnover"
@@ -43,7 +42,6 @@ export default function PublicSectorStaffingPage() {
               changeText="up from 9% in 2018"
               sparklineData={[9,10,10,11,11,12,13,13,14]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

@@ -33,7 +33,6 @@ export default function HealthTechAdoptionPage() {
               changeText="up from 41% in 2019"
               sparklineData={[41,45,48,52,55,58,62,65,68]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="GP online consultation rate"
@@ -43,7 +42,6 @@ export default function HealthTechAdoptionPage() {
               changeText="up from 1% pre-pandemic"
               sparklineData={[1,2,5,15,25,30,32,30,28]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

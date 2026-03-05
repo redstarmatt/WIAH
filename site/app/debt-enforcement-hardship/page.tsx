@@ -83,8 +83,7 @@ export default function DebtEnforcementHardshipPage() {
               polarity="up-is-bad"
               changeText="+26% since 2015 &middot; council tax biggest driver"
               sparklineData={[1.9, 2.0, 2.0, 2.1, 2.2, 1.4, 1.8, 2.2, 2.4]}
-              onExpand={() => {}}
-              source="Ministry of Justice &middot; Enforcement Statistics 2023"
+              href="#sec-chart"source="Ministry of Justice &middot; Enforcement Statistics 2023"
             />
             <MetricCard
               label="Average fees charged"
@@ -94,8 +93,7 @@ export default function DebtEnforcementHardshipPage() {
               polarity="up-is-bad"
               changeText="+15% since 2015 &middot; fees compound debt problem"
               sparklineData={[270, 275, 280, 290, 295, 295, 300, 305, 310]}
-              onExpand={() => {}}
-              source="Taking Control of Goods Regulations &middot; 2023"
+              href="#sec-chart"source="Taking Control of Goods Regulations &middot; 2023"
             />
             <MetricCard
               label="Vulnerability not flagged"
@@ -105,8 +103,7 @@ export default function DebtEnforcementHardshipPage() {
               polarity="up-is-bad"
               changeText="44% of visited debtors show vulnerability signs &middot; not identified"
               sparklineData={[44, 44, 44, 44, 44, 44]}
-              onExpand={() => {}}
-              source="Money Advice Trust &middot; Debt Collection Survey 2023"
+              href="#sec-chart"source="Money Advice Trust &middot; Debt Collection Survey 2023"
             />
           </div>
         </ScrollReveal>

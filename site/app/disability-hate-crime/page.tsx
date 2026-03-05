@@ -85,8 +85,7 @@ export default function DisabilityHateCrimePage() {
               polarity={'up-is-bad' as const}
               changeText="+80% since 2015 · online abuse surge"
               sparklineData={[6800, 7400, 8100, 8700, 9300, 9800, 10500, 11500, 12300]}
-              onExpand={() => {}}
-              source="Home Office · Hate Crime Statistics 2024"
+              href="#sec-chart"source="Home Office · Hate Crime Statistics 2024"
             />
             <MetricCard
               label="Charge rate"
@@ -96,8 +95,7 @@ export default function DisabilityHateCrimePage() {
               polarity={'up-is-bad' as const}
               changeText="9% charged · vs 14% race hate crime"
               sparklineData={[9, 9, 9, 9, 9, 9, 9, 9, 9]}
-              onExpand={() => {}}
-              source="Home Office · Hate Crime Outcomes 2024"
+              href="#sec-chart"source="Home Office · Hate Crime Outcomes 2024"
             />
             <MetricCard
               label="Estimated actual incidents"
@@ -107,8 +105,7 @@ export default function DisabilityHateCrimePage() {
               polarity={'up-is-bad' as const}
               changeText="70k estimated · only 17% reported"
               sparklineData={[52000, 55000, 58000, 61000, 63000, 65000, 67000, 68000, 70000]}
-              onExpand={() => {}}
-              source="Crime Survey for England and Wales 2024"
+              href="#sec-chart"source="Crime Survey for England and Wales 2024"
             />
           </div>
         </ScrollReveal>

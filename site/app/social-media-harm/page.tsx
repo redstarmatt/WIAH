@@ -106,8 +106,7 @@ export default function SocialMediaHarmPage() {
               changeText="Up from 22&percnt; in 2012 &middot; Instagram &amp; Snapchat most cited platforms"
               sparklineData={[22, 25, 28, 32, 35, 37, 39, 40]}
               source="Ditch the Label &middot; Annual Bullying Survey 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-depression"/>
             <MetricCard
               label="Teen girls reporting depression vs 2012"
               value="+100%"
@@ -116,8 +115,7 @@ export default function SocialMediaHarmPage() {
               changeText="7&percnt; to 14&percnt; &middot; Tracks smartphone adoption curve"
               sparklineData={[7, 8, 9, 10, 11, 12, 13, 14]}
               source="NHS Digital &middot; Mental Health of Children &amp; Young People 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-cyberbullying"/>
             <MetricCard
               label="Social media platforms fined under OSA"
               value="0"
@@ -126,8 +124,7 @@ export default function SocialMediaHarmPage() {
               changeText="Online Safety Act 2023 &middot; Powers in force &middot; Enforcement pending"
               sparklineData={[0, 0, 0, 0, 0, 0, 0, 0]}
               source="Ofcom &middot; Online Safety Act enforcement register 2026"
-              onExpand={() => {}}
-            />
+              href="#sec-cyberbullying"/>
           </div>
         </ScrollReveal>
 

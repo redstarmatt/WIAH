@@ -82,8 +82,7 @@ export default function FishingCatchQuotasPage() {
               polarity="up-is-good"
               changeText="Long-term decline from 600kt+ in 1990s"
               sparklineData={[442, 449, 461, 447, 445, 404, 425, 433, 430]}
-              onExpand={() => {}}
-              source="MMO &middot; UK Sea Fisheries Statistics 2023"
+              href="#sec-chart"source="MMO &middot; UK Sea Fisheries Statistics 2023"
             />
             <MetricCard
               label="UK quota value"
@@ -93,8 +92,7 @@ export default function FishingCatchQuotasPage() {
               polarity="up-is-good"
               changeText="+&pound;40m post-Brexit &middot; modest gain"
               sparklineData={[740, 750, 760, 750, 748, 720, 772, 785, 780]}
-              onExpand={() => {}}
-              source="MMO &middot; UK Sea Fisheries Statistics 2023"
+              href="#sec-chart"source="MMO &middot; UK Sea Fisheries Statistics 2023"
             />
             <MetricCard
               label="Foreign vessel quota share"
@@ -104,8 +102,7 @@ export default function FishingCatchQuotasPage() {
               polarity="up-is-bad"
               changeText="Of UK quota held/sold to non-UK owners"
               sparklineData={[78, 77, 77, 76, 76, 76, 76, 76, 76]}
-              onExpand={() => {}}
-              source="New Economics Foundation &middot; 2023"
+              href="#sec-chart"source="New Economics Foundation &middot; 2023"
             />
           </div>
         </ScrollReveal>

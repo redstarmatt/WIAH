@@ -98,8 +98,7 @@ export default function OxbridgeStateAccessPage() {
               polarity="up-is-good"
               changeText="record high &middot; up 5.4pp since 2015"
               sparklineData={[55.6, 57.3, 57.8, 58.3, 58.9, 59.5, 60.1, 60.4, 61.0]}
-              onExpand={() => {}}
-              source="Oxford University &middot; Access and Participation Report 2024"
+              href="#sec-chart"source="Oxford University &middot; Access and Participation Report 2024"
             />
             <MetricCard
               label="Cambridge: state school intake"
@@ -109,8 +108,7 @@ export default function OxbridgeStateAccessPage() {
               polarity="up-is-good"
               changeText="70% milestone reached &middot; 2023"
               sparklineData={[61.8, 63.1, 64.4, 65.0, 66.2, 68.7, 69.5, 69.9, 70.0]}
-              onExpand={() => {}}
-              source="Cambridge University &middot; Access and Participation Report 2024"
+              href="#sec-chart"source="Cambridge University &middot; Access and Participation Report 2024"
             />
             <MetricCard
               label="Remaining gap"
@@ -120,8 +118,7 @@ export default function OxbridgeStateAccessPage() {
               polarity="up-is-bad"
               changeText="vs 93% state school A-level share &middot; closing slowly"
               sparklineData={[31, 30, 29, 28, 27, 26, 25, 24, 23]}
-              onExpand={() => {}}
-              source="UCAS &middot; Oxbridge Admissions 2024"
+              href="#sec-chart"source="UCAS &middot; Oxbridge Admissions 2024"
             />
           </div>
         </ScrollReveal>

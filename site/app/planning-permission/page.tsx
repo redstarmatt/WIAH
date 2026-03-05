@@ -106,8 +106,7 @@ export default function PlanningPermissionPage() {
               changeText="Down from 580,000 in 2010 &middot; But still 2&times; the number of homes completed"
               sparklineData={[580, 560, 540, 520, 490, 480, 470, 474]}
               source="DLUHC &middot; Planning applications in England 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-permissions"/>
             <MetricCard
               label="Planning department staff reduction since 2010"
               value="-40%"
@@ -116,8 +115,7 @@ export default function PlanningPermissionPage() {
               changeText="~12,000 posts lost &middot; &lt;50&percnt; of major applications decided on time"
               sparklineData={[100, 94, 89, 85, 82, 78, 75, 73, 70, 68, 66, 63, 61, 60]}
               source="Planning Advisory Service &middot; LPA staffing survey 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-staffing"/>
             <MetricCard
               label="Undecided planning applications backlog"
               value="500,000"
@@ -126,8 +124,7 @@ export default function PlanningPermissionPage() {
               changeText="Up from 280,000 in 2016 &middot; Record high &middot; Delays add cost and uncertainty"
               sparklineData={[280, 300, 330, 360, 400, 440, 480, 500]}
               source="DLUHC &middot; Planning applications statistics 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-staffing"/>
           </div>
         </ScrollReveal>
 

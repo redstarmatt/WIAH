@@ -105,8 +105,7 @@ export default function DrugSupplyOperationsPage() {
               polarity="up-is-good"
               changeText="record disruptions &middot; new lines emerge rapidly"
               sparklineData={[1100, 1400, 2100, 3000, 4200, 5500, 6240, 6500]}
-              onExpand={() => {}}
-              source="Home Office / NCA &middot; County Lines Annual 2024"
+              href="#sec-chart"source="Home Office / NCA &middot; County Lines Annual 2024"
             />
             <MetricCard
               label="Drug deaths 2024"
@@ -116,8 +115,7 @@ export default function DrugSupplyOperationsPage() {
               polarity="up-is-bad"
               changeText="slight fall &middot; but near record level"
               sparklineData={[3744, 4359, 4393, 4561, 4859, 4907, 4800, 4700]}
-              onExpand={() => {}}
-              source="ONS &middot; Deaths Related to Drug Poisoning 2024"
+              href="#sec-chart"source="ONS &middot; Deaths Related to Drug Poisoning 2024"
             />
             <MetricCard
               label="Drug arrests"
@@ -127,8 +125,7 @@ export default function DrugSupplyOperationsPage() {
               polarity="up-is-good"
               changeText="enforcement sustained &middot; but substitution effect"
               sparklineData={[156000, 154000, 151000, 148000, 143000, 138000, 141000, 146000]}
-              onExpand={() => {}}
-              source="Home Office &middot; Drug Misuse Statistical Bulletin 2024"
+              href="#sec-chart"source="Home Office &middot; Drug Misuse Statistical Bulletin 2024"
             />
           </div>
         </ScrollReveal>

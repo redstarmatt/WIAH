@@ -94,8 +94,7 @@ export default function DisabilityPayGapPage() {
               polarity="up-is-bad"
               changeText="largely unchanged since 2015"
               sparklineData={[17.8, 17.5, 17.4, 17.3, 17.2, 17.4, 17.3, 17.2, 17.2]}
-              onExpand={() => {}}
-              source="ONS &middot; ASHE Disability Analysis 2023"
+              href="#sec-chart"source="ONS &middot; ASHE Disability Analysis 2023"
             />
             <MetricCard
               label="Disability employment gap"
@@ -105,8 +104,7 @@ export default function DisabilityPayGapPage() {
               polarity="up-is-bad"
               changeText="slowly closing from 33.2pp peak"
               sparklineData={[33.2, 32.8, 32.4, 31.8, 30.6, 29.1, 28.8, 28.5, 28.4]}
-              onExpand={() => {}}
-              source="DWP &middot; Labour Force Survey 2023"
+              href="#sec-chart"source="DWP &middot; Labour Force Survey 2023"
             />
             <MetricCard
               label="Severe disability pay gap"
@@ -116,8 +114,7 @@ export default function DisabilityPayGapPage() {
               polarity="up-is-bad"
               changeText="progressive conditions face largest pay penalty"
               sparklineData={[25.0, 25.2, 25.4, 25.6, 25.7, 25.8, 25.9, 26.0, 26.1]}
-              onExpand={() => {}}
-              source="ONS / Scope &middot; 2023"
+              href="#sec-chart"source="ONS / Scope &middot; 2023"
             />
           </div>
         </ScrollReveal>

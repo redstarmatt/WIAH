@@ -79,8 +79,7 @@ export default function CarInsurancePovertyPage() {
               changeText="+58% in 2023 · highest in 20 years"
               sparklineData={[465, 470, 475, 490, 515, 500, 520, 585, 924]}
               source="ABI · Motor Insurance Premium Tracker 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Young driver average premium (18yr)"
               value="£2,800"
@@ -89,8 +88,7 @@ export default function CarInsurancePovertyPage() {
               changeText="+£900 in 2023 · often exceeds annual income"
               sparklineData={[1500, 1550, 1600, 1650, 1700, 1700, 1800, 1900, 2800]}
               source="Confused.com / Compare the Market 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Uninsured drivers estimate"
               value="1m+"
@@ -99,8 +97,7 @@ export default function CarInsurancePovertyPage() {
               changeText="1m+ uninsured · cost pressuring compliance"
               sparklineData={[800, 800, 820, 830, 840, 850, 870, 900, 1000]}
               source="Motor Insurers Bureau 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

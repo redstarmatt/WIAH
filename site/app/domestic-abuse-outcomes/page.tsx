@@ -107,8 +107,7 @@ export default function DomesticAbuseOutcomesPage() {
               polarity="up-is-bad"
               changeText="every 30 seconds &middot; biggest demand on police"
               sparklineData={[1.1, 1.2, 1.3, 1.4, 1.3, 1.5, 1.5, 1.5, 1.5]}
-              onExpand={() => {}}
-              source="ONS &middot; Domestic Abuse in England and Wales 2024"
+              href="#sec-chart"source="ONS &middot; Domestic Abuse in England and Wales 2024"
             />
             <MetricCard
               label="Prosecution rate"
@@ -118,8 +117,7 @@ export default function DomesticAbuseOutcomesPage() {
               polarity="up-is-good"
               changeText="of calls resulting in prosecution &middot; slowly rising"
               sparklineData={[8.6, 8.3, 7.8, 7.4, 6.4, 5.6, 5.8, 6.1, 6.3]}
-              onExpand={() => {}}
-              source="CPS &middot; Domestic Abuse Statistics 2023"
+              href="#sec-chart"source="CPS &middot; Domestic Abuse Statistics 2023"
             />
             <MetricCard
               label="Conviction rate"
@@ -129,8 +127,7 @@ export default function DomesticAbuseOutcomesPage() {
               polarity="up-is-good"
               changeText="of prosecuted cases result in conviction"
               sparklineData={[78, 78, 78, 79, 77, 77, 78, 78, 78]}
-              onExpand={() => {}}
-              source="CPS &middot; Violence Against Women and Girls Report 2023"
+              href="#sec-chart"source="CPS &middot; Violence Against Women and Girls Report 2023"
             />
           </div>
         </ScrollReveal>

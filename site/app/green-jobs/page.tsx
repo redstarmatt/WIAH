@@ -77,8 +77,7 @@ export default function GreenJobsPage() {
               changeText="Up from 430K in 2014 &mdash; target 1.2M+ by 2030"
               sparklineData={[430, 475, 520, 570, 610, 660, 720, 763]}
               source="DESNZ &mdash; Low Carbon and Renewable Energy Economy survey 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-jobs"/>
             <MetricCard
               label="Green jobs in deprived communities"
               value="12"
@@ -88,8 +87,7 @@ export default function GreenJobsPage() {
               changeText="Only 12&percnt; in most deprived 20&percnt; of areas &mdash; concentrated in South East"
               sparklineData={[11, 11, 11, 12, 12, 12, 12, 12]}
               source="DESNZ LCREE &mdash; establishment analysis vs IMD deciles"
-              onExpand={() => {}}
-            />
+              href="#sec-jobs"/>
             <MetricCard
               label="Green sector wage premium"
               value="+8"
@@ -99,8 +97,7 @@ export default function GreenJobsPage() {
               changeText="vs comparable non-green roles &mdash; offshore wind engineers earn more"
               sparklineData={[5, 5, 6, 6, 7, 7, 8, 8]}
               source="ONS ASHE &mdash; sectoral earnings analysis 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-jobs"/>
           </div>
         </ScrollReveal>
 

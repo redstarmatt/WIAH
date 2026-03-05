@@ -95,8 +95,7 @@ export default function RealWagesPage() {
               changeText="16-year stagnation · worst performance since Napoleonic era"
               sparklineData={[100, 99.2, 96.8, 93.4, 91.7, 91.2, 93.4, 95.2, 97.4, 96.3, 99.1]}
               source="ONS ASHE, adjusted for CPI · 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Average real wage growth per year since 2008"
               value="0.06"
@@ -106,8 +105,7 @@ export default function RealWagesPage() {
               changeText="Effectively zero real growth for 16 years · vs 2.5%/yr pre-2008"
               sparklineData={[2.5, 2.4, 2.3, 0.5, 0.1, 0.1, 0.0, 0.2, 0.4, 0.06]}
               source="ONS historical"
-              onExpand={() => {}}
-            />
+              href="#sec-wage-index"/>
             <MetricCard
               label="Bottom 20% real wage change 2008–2024"
               value="+5.1"
@@ -117,8 +115,7 @@ export default function RealWagesPage() {
               changeText="National Living Wage increases boosted low earners more than median"
               sparklineData={[0, 1, 2, 3, 4, 4.5, 5.1]}
               source="Resolution Foundation · 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-deciles"/>
           </div>
         </ScrollReveal>
 

@@ -95,8 +95,7 @@ export default function HospiceCapacityGapPage() {
               polarity={'up-is-good' as const}
               changeText="Down from ~3,450 in 2015"
               sparklineData={[3450, 3420, 3400, 3380, 3360, 3310, 3320, 3310, 3300]}
-              onExpand={() => {}}
-              source="Hospice UK &middot; Annual Monitoring Data"
+              href="#sec-chart"source="Hospice UK &middot; Annual Monitoring Data"
             />
             <MetricCard
               label="Estimated shortfall"
@@ -106,8 +105,7 @@ export default function HospiceCapacityGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Against modelled need"
               sparklineData={[800, 850, 900, 950, 1000, 1100, 1100, 1150, 1200]}
-              onExpand={() => {}}
-              source="Hospice UK &middot; NHS England"
+              href="#sec-chart"source="Hospice UK &middot; NHS England"
             />
             <MetricCard
               label="Dying without palliative care"
@@ -117,8 +115,7 @@ export default function HospiceCapacityGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 20% in 2015"
               sparklineData={[20, 21, 21, 22, 23, 24, 24, 25, 25]}
-              onExpand={() => {}}
-              source="Public Health England &middot; NELIC"
+              href="#sec-chart"source="Public Health England &middot; NELIC"
             />
           </div>
         </ScrollReveal>

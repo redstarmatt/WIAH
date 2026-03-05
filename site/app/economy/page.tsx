@@ -482,8 +482,7 @@ export default function EconomyPage() {
                 : []
             }
             source="ONS · CPI annual rate (D7G7)"
-            onExpand={inflationSeries.length > 0 ? () => setExpanded('inflation') : undefined}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="Real weekly earnings"
             value={latestReal ? `£${latestReal.weeklyGBP.toFixed(0)}` : '—'}
@@ -507,8 +506,7 @@ export default function EconomyPage() {
                 : []
             }
             source="ONS · AWE real terms (A3WX)"
-            onExpand={wagesSeries.length > 0 ? () => setExpanded('wages') : undefined}
-          />
+            href="#sec-prices"/>
           <MetricCard
             label="Economic inactivity"
             value={latestLabour ? latestLabour.inactivityPct.toFixed(1) : '—'}
@@ -536,8 +534,7 @@ export default function EconomyPage() {
                 : []
             }
             source="ONS · Labour Force Survey (LF2S)"
-            onExpand={labourDetailSeries.length > 0 ? () => setExpanded('labour') : undefined}
-          />
+            href="#sec-employment"/>
         </div>
         </ScrollReveal>
 

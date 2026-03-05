@@ -91,8 +91,7 @@ export default function ChildhoodObesityPage() {
               polarity="up-is-bad"
               changeText="Up from 17.3% in 2006 &middot; COVID accelerated the rise"
               sparklineData={[17.3, 18.2, 19.1, 19.8, 20.0, 20.2, 21.0, 21.9, 23.4, 22.7]}
-              onExpand={() => {}}
-              source="NHS NCMP &middot; 2023/24"
+              href="#sec-chart"source="NHS NCMP &middot; 2023/24"
             />
             <MetricCard
               label="Reception obesity rate"
@@ -102,8 +101,7 @@ export default function ChildhoodObesityPage() {
               polarity="up-is-bad"
               changeText="Relatively stable but underlying trend upward since 2000s"
               sparklineData={[9.5, 9.8, 9.4, 9.6, 9.7, 9.9, 9.7, 9.7, 9.2]}
-              onExpand={() => {}}
-              source="NHS NCMP &middot; 2023/24"
+              href="#sec-deprivation"source="NHS NCMP &middot; 2023/24"
             />
             <MetricCard
               label="Deprivation gap"
@@ -113,8 +111,7 @@ export default function ChildhoodObesityPage() {
               polarity="up-is-bad"
               changeText="Most deprived 35.7% vs least deprived 11.2%"
               sparklineData={[2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.3, 3.2]}
-              onExpand={() => {}}
-              source="NHS NCMP &middot; 2023/24"
+              href="#sec-deprivation"source="NHS NCMP &middot; 2023/24"
             />
           </div>
         </ScrollReveal>

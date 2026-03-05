@@ -89,8 +89,7 @@ export default function WorkplaceFatalitiesPage() {
               polarity="up-is-bad"
               changeText="Record low rate &middot; long-term improvement"
               sparklineData={[142, 137, 135, 147, 149, 111, 123, 135, 138, 128]}
-              onExpand={() => {}}
-              source="HSE &middot; Fatal injuries 2024"
+              href="#sec-chart"source="HSE &middot; Fatal injuries 2024"
             />
             <MetricCard
               label="Rate per 100k workers"
@@ -100,8 +99,7 @@ export default function WorkplaceFatalitiesPage() {
               polarity="up-is-bad"
               changeText="2.5&times; safer than 1990 &middot; G7 lowest"
               sparklineData={[0.46, 0.43, 0.43, 0.45, 0.45, 0.34, 0.38, 0.41, 0.41, 0.38]}
-              onExpand={() => {}}
-              source="HSE &middot; 2024"
+              href="#sec-callout"source="HSE &middot; 2024"
             />
             <MetricCard
               label="Construction fatalities 2024"
@@ -111,8 +109,7 @@ export default function WorkplaceFatalitiesPage() {
               polarity="up-is-bad"
               changeText="33% of total despite being 7% of workforce"
               sparklineData={[47, 43, 38, 38, 30, 39, 35, 45, 45, 45]}
-              onExpand={() => {}}
-              source="HSE &middot; Construction sector 2024"
+              href="#sec-callout"source="HSE &middot; Construction sector 2024"
             />
           </div>
         </ScrollReveal>

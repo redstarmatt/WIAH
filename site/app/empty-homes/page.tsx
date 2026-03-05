@@ -108,8 +108,7 @@ export default function EmptyHomesPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Equivalent to housing stock of Greater Manchester &middot; Rising every year since 2017"
               sparklineData={[590, 605, 617, 630, 648, 665, 678, 689, 700]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Long-term empty (6+ months)"
               value="261K"
@@ -117,8 +116,7 @@ export default function EmptyHomesPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Up 27% since 2016 &middot; Burnley, Hyndburn, Blackpool worst-affected &middot; 31K in London alone"
               sparklineData={[205, 210, 216, 225, 232, 245, 250, 258, 261]}
-              onExpand={() => {}}
-            />
+              href="#sec-long-term"/>
             <MetricCard
               label="Social housing waiting list"
               value="1.3M"
@@ -126,8 +124,7 @@ export default function EmptyHomesPage() {
               polarity="up-is-bad"
               changeText="Households &middot; 2024 &middot; Empty homes could theoretically house every household on the list"
               sparklineData={[1.16, 1.18, 1.20, 1.22, 1.26, 1.28, 1.29, 1.30]}
-              onExpand={() => {}}
-            />
+              href="#sec-all-empty"/>
           </div>
         </ScrollReveal>
 

@@ -132,8 +132,7 @@ export default function TalkingTherapiesPage() {
               polarity={'up-is-good' as const}
               changeText="2023 &middot; Stable at record levels"
               sparklineData={[0.9, 1.0, 1.1, 1.1, 0.7, 1.0, 1.1, 1.2]}
-              onExpand={() => {}}
-            />
+              href="#sec-throughput"/>
             <MetricCard
               label="Recovery rate"
               value="52.3"
@@ -142,8 +141,7 @@ export default function TalkingTherapiesPage() {
               polarity={'up-is-good' as const}
               changeText="2023 &middot; Target: 50% &middot; Meets target"
               sparklineData={[45, 47, 49, 50, 48, 50, 52, 52]}
-              onExpand={() => {}}
-            />
+              href="#sec-recovery"/>
             <MetricCard
               label="Waiting time to first appointment"
               value="5.8"
@@ -152,8 +150,7 @@ export default function TalkingTherapiesPage() {
               polarity={'up-is-bad' as const}
               changeText="2023 &middot; Up from 3 weeks in 2016"
               sparklineData={[3, 3.5, 4, 4.5, 5, 5.5, 5.7, 5.8]}
-              onExpand={() => {}}
-            />
+              href="#sec-recovery"/>
           </div>
         </ScrollReveal>
 
