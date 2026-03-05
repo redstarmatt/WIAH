@@ -64,7 +64,7 @@ export default function SearchTrigger({ variant = 'dark' }: SearchTriggerProps) 
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-white/35 flex-shrink-0"
+          className="text-white/60 flex-shrink-0"
         >
           <circle cx="11" cy="11" r="8" />
           <path d="M21 21l-4.35-4.35" />
@@ -73,12 +73,12 @@ export default function SearchTrigger({ variant = 'dark' }: SearchTriggerProps) 
           className="flex-1 font-mono text-sm transition-opacity duration-300"
           style={{
             opacity: visible ? 1 : 0,
-            color: 'rgba(255,255,255,0.4)',
+            color: 'rgba(255,255,255,0.65)',
           }}
         >
           {HERO_QUESTIONS[questionIndex]}
         </span>
-        <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-1 rounded bg-white/[8%] border border-white/10 font-mono text-[10px] text-white/25 flex-shrink-0">
+        <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-1 rounded bg-white/[8%] border border-white/20 font-mono text-[10px] text-white/55 flex-shrink-0">
           {kbdHint}
         </kbd>
       </button>

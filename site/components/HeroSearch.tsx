@@ -25,7 +25,7 @@ export default function HeroSearch() {
           <button
             key={q}
             onClick={() => openWithQuery(q)}
-            className="font-mono text-xs text-white/35 hover:text-white/60 px-3 py-1.5 rounded-full border border-white/10 hover:border-white/25 transition-all cursor-pointer"
+            className="font-mono text-xs text-white/60 hover:text-white/90 px-3 py-1.5 rounded-full border border-white/25 hover:border-white/50 transition-all cursor-pointer"
           >
             {q}
           </button>
