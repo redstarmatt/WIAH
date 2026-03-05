@@ -109,6 +109,63 @@ interface LifeExpectancyData {
   nationalLE: LifeExpectancyPoint[];
 }
 
+interface AePerformancePoint {
+  year: number;
+  within4HoursPct: number;
+}
+
+interface AeTwelveHourPoint {
+  year: number;
+  annualWaitsThousands: number;
+}
+
+interface AeData {
+  national: {
+    fourHourPerformance: {
+      timeSeries: AePerformancePoint[];
+      targetPct: number;
+      lastMetYear: number;
+    };
+    twelveHourWaits: {
+      timeSeries: AeTwelveHourPoint[];
+    };
+  };
+}
+
+interface DentalAccessPoint {
+  year: string;
+  adultPct: number;
+  childPct: number;
+}
+
+interface DentalCoursesPoint {
+  year: string;
+  coursesMillions: number;
+}
+
+interface DentalData {
+  national: {
+    accessTimeSeries: DentalAccessPoint[];
+    coursesTreatment: {
+      timeSeries: DentalCoursesPoint[];
+    };
+  };
+}
+
+interface TalkingTherapiesPoint {
+  date: string;
+  referrals: number;
+  starts: number;
+  completions: number;
+  recoveryRate: number;
+}
+
+interface TalkingTherapiesData {
+  national: {
+    timeSeries: TalkingTherapiesPoint[];
+  };
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function isoToDate(s: string): Date {
@@ -129,6 +186,9 @@ export default function HealthPage() {
   const [cancerData, setCancerData] = useState<CancerData | null>(null);
   const [bedData, setBedData] = useState<BedData | null>(null);
   const [leData, setLeData] = useState<LifeExpectancyData | null>(null);
+  const [aeData, setAeData] = useState<AeData | null>(null);
+  const [dentalData, setDentalData] = useState<DentalData | null>(null);
+  const [talkingTherapiesData, setTalkingTherapiesData] = useState<TalkingTherapiesData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -155,6 +215,18 @@ export default function HealthPage() {
     fetch('/data/health/life_expectancy.json')
       .then(r => r.json())
       .then(setLeData)
+      .catch(console.error);
+    fetch('/data/nhs-ae/nhs_ae.json')
+      .then(r => r.json())
+      .then(setAeData)
+      .catch(console.error);
+    fetch('/data/dental/dental.json')
+      .then(r => r.json())
+      .then(setDentalData)
+      .catch(console.error);
+    fetch('/data/talking-therapies/talking_therapies.json')
+      .then(r => r.json())
+      .then(setTalkingTherapiesData)
       .catch(console.error);
   }, []);
 
@@ -395,6 +467,88 @@ export default function HealthPage() {
     { date: new Date(2022, 11), label: 'Dec 2022: Peak (93 min)' },
   ];
 
+  // ── A&E series ───────────────────────────────────────────────────────────
+
+  const aeFourHourSeries: Series[] = aeData
+    ? [{
+        id: 'ae-4hr',
+        label: '% seen within 4 hours',
+        colour: '#0D1117',
+        data: aeData.national.fourHourPerformance.timeSeries.map(d => ({
+          date: new Date(d.year, 0, 1),
+          value: d.within4HoursPct,
+        })),
+      }]
+    : [];
+
+  const aeTwelveHourSeries: Series[] = aeData
+    ? [{
+        id: 'ae-12hr',
+        label: '12-hour waits (thousands)',
+        colour: '#E63946',
+        data: aeData.national.twelveHourWaits.timeSeries.map(d => ({
+          date: new Date(d.year, 0, 1),
+          value: d.annualWaitsThousands,
+        })),
+      }]
+    : [];
+
+  const aeAnnotations: Annotation[] = [
+    { date: new Date(2015, 0), label: '2015: Last year target met' },
+    { date: new Date(2020, 0), label: '2020: COVID-19' },
+  ];
+
+  // ── Dental series ────────────────────────────────────────────────────────
+
+  const dentalAccessSeries: Series[] = dentalData
+    ? [
+        {
+          id: 'dental-adult',
+          label: 'Adult access (%)',
+          colour: '#E63946',
+          data: dentalData.national.accessTimeSeries.map(d => ({
+            date: new Date(parseInt(d.year.split('/')[0]), 6, 1),
+            value: d.adultPct,
+          })),
+        },
+        {
+          id: 'dental-child',
+          label: 'Child access (%)',
+          colour: '#0D1117',
+          data: dentalData.national.accessTimeSeries.map(d => ({
+            date: new Date(parseInt(d.year.split('/')[0]), 6, 1),
+            value: d.childPct,
+          })),
+        },
+      ]
+    : [];
+
+  // ── Talking therapies series ─────────────────────────────────────────────
+
+  const talkingRecoverySeries: Series[] = talkingTherapiesData
+    ? [{
+        id: 'tt-recovery',
+        label: 'Recovery rate (%)',
+        colour: '#2A9D8F',
+        data: talkingTherapiesData.national.timeSeries.map(d => ({
+          date: new Date(parseInt(d.date), 0, 1),
+          value: d.recoveryRate,
+        })),
+      }]
+    : [];
+
+  const talkingReferralsSeries: Series[] = talkingTherapiesData
+    ? [{
+        id: 'tt-referrals',
+        label: 'Referrals (millions)',
+        colour: '#264653',
+        data: talkingTherapiesData.national.timeSeries.map(d => ({
+          date: new Date(parseInt(d.date), 0, 1),
+          value: d.referrals / 1_000_000,
+        })),
+      }]
+    : [];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestGp = gpData?.national.timeSeries.at(-1);
@@ -464,6 +618,9 @@ export default function HealthPage() {
           { id: 'sec-life-expectancy', label: 'Life Expectancy' },
           { id: 'sec-gp', label: 'GP Access' },
           { id: 'sec-map', label: 'Regional Map' },
+          { id: 'sec-ae', label: 'A&E' },
+          { id: 'sec-dental', label: 'Dentistry' },
+          { id: 'sec-talking-therapies', label: 'Mental Health' },
         ]} />
 
         {/* Metric cards */}
@@ -1052,6 +1209,179 @@ export default function HealthPage() {
         />
         </ScrollReveal>
 
+        {/* ── A&E Performance ──────────────────────────────────────────────── */}
+        <section id="sec-ae" className="mb-16">
+          <ScrollReveal>
+            <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">A&amp;E Performance</h2>
+            <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+              The four-hour A&amp;E standard — that 95% of patients should be seen, treated, and
+              discharged or admitted within four hours — has not been met since 2015. In 2024,
+              only 70% of patients were seen within four hours.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+          {aeFourHourSeries.length > 0 ? (
+            <>
+              <div className="mb-2">
+                <p className="text-lg font-bold text-gray-900">
+                  A&amp;E four-hour performance, 2012–2024
+                </p>
+                <p className="text-sm text-gray-500">
+                  % of patients seen within 4 hours, major A&amp;E departments (Type 1), England.
+                </p>
+              </div>
+              <LineChart
+                title="A&E four-hour performance, 2012–2024"
+                subtitle="% of patients seen within 4 hours, major A&E departments (Type 1), England."
+                series={aeFourHourSeries}
+                annotations={aeAnnotations}
+                targetLine={{ value: 95, label: '95% target' }}
+                yLabel="Percent"
+                source={{
+                  name: 'NHS England',
+                  dataset: 'A&E Attendances and Emergency Admissions',
+                  frequency: 'monthly',
+                  url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/',
+                }}
+              />
+            </>
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+          </ScrollReveal>
+
+          <ScrollReveal>
+          {aeTwelveHourSeries.length > 0 ? (
+            <>
+              <div className="mb-2">
+                <p className="text-lg font-bold text-gray-900">
+                  Patients waiting 12+ hours in A&amp;E, 2018–2024
+                </p>
+                <p className="text-sm text-gray-500">
+                  Annual total of patients waiting more than 12 hours from decision to admit, England.
+                </p>
+              </div>
+              <LineChart
+                title="Patients waiting 12+ hours in A&E, 2018–2024"
+                subtitle="Annual total of patients waiting more than 12 hours from decision to admit, England."
+                series={aeTwelveHourSeries}
+                yLabel="Thousands"
+                source={{
+                  name: 'NHS England',
+                  dataset: 'A&E Attendances and Emergency Admissions',
+                  frequency: 'monthly',
+                  url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/',
+                }}
+              />
+            </>
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+          </ScrollReveal>
+        </section>
+
+        {/* ── NHS Dentistry ─────────────────────────────────────────────────── */}
+        <section id="sec-dental" className="mb-16">
+          <ScrollReveal>
+            <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">NHS Dentistry</h2>
+            <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+              The proportion of adults seen by an NHS dentist has fallen from 57% in 2017/18 to 49%
+              in 2024/25. Access for children has also declined, from 73% to 65% over the same period.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+          {dentalAccessSeries.length > 0 ? (
+            <>
+              <div className="mb-2">
+                <p className="text-lg font-bold text-gray-900">
+                  NHS dental access, 2017–2025
+                </p>
+                <p className="text-sm text-gray-500">
+                  % of adults seen by an NHS dentist in the previous 24 months, England.
+                </p>
+              </div>
+              <LineChart
+                title="NHS dental access, 2017–2025"
+                subtitle="% of adults seen by an NHS dentist in the previous 24 months, England."
+                series={dentalAccessSeries}
+                yLabel="Percent"
+                source={{
+                  name: 'NHS Business Services Authority',
+                  dataset: 'NHS Dental Statistics for England',
+                  frequency: 'annual',
+                  url: 'https://www.nhsbsa.nhs.uk/statistical-collections/dental-statistics',
+                }}
+              />
+            </>
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+          </ScrollReveal>
+        </section>
+
+        {/* ── NHS Talking Therapies ─────────────────────────────────────────── */}
+        <section id="sec-talking-therapies" className="mb-16">
+          <ScrollReveal>
+            <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">NHS Talking Therapies</h2>
+            <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+              Referrals to NHS talking therapies (IAPT / NHS Talking Therapies for Anxiety and
+              Depression) have grown from 1.1 million in 2016 to 1.6 million in 2023. The recovery
+              rate — the share of patients who move from above to below clinical caseness — has
+              improved from 45% to 52%.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+          {talkingRecoverySeries.length > 0 ? (
+            <>
+              <div className="mb-2">
+                <p className="text-lg font-bold text-gray-900">
+                  NHS talking therapies — referrals and recovery, 2016–2023
+                </p>
+                <p className="text-sm text-gray-500">
+                  Annual referrals, treatment starts, and recovery rate, England.
+                </p>
+              </div>
+              <LineChart
+                title="NHS talking therapies — referrals and recovery, 2016–2023"
+                subtitle="Annual referrals, treatment starts, and recovery rate, England."
+                series={talkingRecoverySeries}
+                yLabel="Percent"
+                source={{
+                  name: 'NHS England',
+                  dataset: 'NHS Talking Therapies for Anxiety and Depression — annual report',
+                  frequency: 'annual',
+                  url: 'https://www.england.nhs.uk/mental-health/adults/iapt/annual-report/',
+                }}
+              />
+            </>
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+          </ScrollReveal>
+
+          <ScrollReveal>
+          {talkingReferralsSeries.length > 0 ? (
+            <LineChart
+              title="NHS talking therapies — annual referrals, 2016–2023"
+              subtitle="Total annual referrals to NHS Talking Therapies (IAPT), England. Millions."
+              series={talkingReferralsSeries}
+              yLabel="Millions"
+              source={{
+                name: 'NHS England',
+                dataset: 'NHS Talking Therapies for Anxiety and Depression — annual report',
+                frequency: 'annual',
+                url: 'https://www.england.nhs.uk/mental-health/adults/iapt/annual-report/',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+          </ScrollReveal>
+        </section>
+
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>
@@ -1115,6 +1445,36 @@ export default function HealthPage() {
                 ONS — National Life Tables, United Kingdom (annual)
               </a>
               {' '}— period life expectancy at birth, 3-year rolling averages, UK. 1980–82 to 2022–24.
+            </li>
+            <li>
+              <a
+                href="https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/"
+                className="underline hover:text-wiah-blue"
+                target="_blank" rel="noreferrer"
+              >
+                NHS England — A&amp;E Attendances and Emergency Admissions (monthly)
+              </a>
+              {' '}— four-hour performance for Type 1 major A&amp;E departments; 12-hour waits from decision to admit. Annual aggregations.
+            </li>
+            <li>
+              <a
+                href="https://www.nhsbsa.nhs.uk/statistical-collections/dental-statistics"
+                className="underline hover:text-wiah-blue"
+                target="_blank" rel="noreferrer"
+              >
+                NHS Business Services Authority — NHS Dental Statistics for England (annual)
+              </a>
+              {' '}— percentage of adults and children seen by an NHS dentist in the previous 24 months; courses of treatment delivered.
+            </li>
+            <li>
+              <a
+                href="https://www.england.nhs.uk/mental-health/adults/iapt/annual-report/"
+                className="underline hover:text-wiah-blue"
+                target="_blank" rel="noreferrer"
+              >
+                NHS England — NHS Talking Therapies for Anxiety and Depression, annual report (annual)
+              </a>
+              {' '}— referrals, treatment starts, completions, and recovery rate. Formerly IAPT.
             </li>
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">

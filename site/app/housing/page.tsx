@@ -82,6 +82,49 @@ interface IphrpDataPoint { year: number; index: number; annualChange: number | n
 
 interface TempAccPoint { year: number; quarter: string; households: number }
 
+interface StatutoryHomelessnessPoint { year: string; householdsThousands: number }
+interface RoughSleepingPoint { year: number; roughSleepersEngland: number }
+interface TempAccommodationPoint { year: number; households: number }
+
+interface HomelessnessData {
+  national: {
+    statutoryHomelessness: {
+      timeSeries: StatutoryHomelessnessPoint[];
+    };
+    roughSleeping: {
+      timeSeries: RoughSleepingPoint[];
+    };
+    temporaryAccommodation: {
+      timeSeries: TempAccommodationPoint[];
+    };
+  };
+}
+
+interface HousebuildingCompletionPoint { year: string; completionsThousands: number }
+interface PlanningPermissionPoint { year: string; permissionsThousands: number }
+
+interface HousebuildingData {
+  national: {
+    completions: {
+      timeSeries: HousebuildingCompletionPoint[];
+      targetThousands: number;
+    };
+    planningPermissions: {
+      timeSeries: PlanningPermissionPoint[];
+    };
+  };
+}
+
+interface EpcRatingPoint { year: number; pctAtCOrAbove: number }
+interface HeatPumpPoint { year: number; installations: number }
+
+interface EnergyEfficiencyData {
+  national: {
+    epcRating: EpcRatingPoint[];
+    heatPumps: HeatPumpPoint[];
+  };
+}
+
 interface PrivateRentsData {
   iphrp: Array<{ region: string; data: IphrpDataPoint[] }>;
   temporaryAccommodation: TempAccPoint[];
@@ -116,6 +159,9 @@ export default function HousingPage() {
   const [data, setData] = useState<HousingData | null>(null);
   const [socialData, setSocialData] = useState<SocialHousingData | null>(null);
   const [rentsData, setRentsData] = useState<PrivateRentsData | null>(null);
+  const [homelessnessData, setHomelessnessData] = useState<HomelessnessData | null>(null);
+  const [housebuildingData, setHousebuildingData] = useState<HousebuildingData | null>(null);
+  const [energyEfficiencyData, setEnergyEfficiencyData] = useState<EnergyEfficiencyData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -130,6 +176,18 @@ export default function HousingPage() {
     fetch('/data/housing/private_rents.json')
       .then(r => r.json())
       .then(setRentsData)
+      .catch(console.error);
+    fetch('/data/homelessness/homelessness.json')
+      .then(r => r.json())
+      .then(setHomelessnessData)
+      .catch(console.error);
+    fetch('/data/housebuilding/housebuilding.json')
+      .then(r => r.json())
+      .then(setHousebuildingData)
+      .catch(console.error);
+    fetch('/data/energy-efficiency/energy_efficiency.json')
+      .then(r => r.json())
+      .then(setEnergyEfficiencyData)
       .catch(console.error);
   }, []);
 
@@ -414,6 +472,68 @@ export default function HousingPage() {
     { date: new Date(2024, 0), label: 'Record high: 123,000' },
   ];
 
+  // 9. Homelessness — temporary accommodation from homelessness.json
+  const homelessnessTempAccSeries: Series[] = homelessnessData
+    ? [{
+        id: 'homelessness-temp-acc',
+        label: 'Households in temporary accommodation',
+        colour: '#E63946',
+        data: homelessnessData.national.temporaryAccommodation.timeSeries.map(d => ({
+          date: yearToDate(d.year),
+          value: d.households / 1_000,
+        })),
+      }]
+    : [];
+
+  const homelessnessAnnotations: Annotation[] = [
+    { date: new Date(2017, 0), label: '2017: Homelessness Reduction Act' },
+  ];
+
+  // 10. Housebuilding — completions and planning permissions
+  const housebuildingCompletionsSeries: Series[] = housebuildingData
+    ? [
+        {
+          id: 'housebuilding-completions',
+          label: 'Completions',
+          colour: '#0D1117',
+          data: housebuildingData.national.completions.timeSeries.map(d => ({
+            date: new Date(parseInt(d.year.split('/')[0]), 6, 1),
+            value: d.completionsThousands,
+          })),
+        },
+        {
+          id: 'housebuilding-permissions',
+          label: 'Planning permissions',
+          colour: '#F4A261',
+          data: housebuildingData.national.planningPermissions.timeSeries.map(d => ({
+            date: new Date(parseInt(d.year.split('/')[0]), 6, 1),
+            value: d.permissionsThousands,
+          })),
+        },
+      ]
+    : [];
+
+  const housebuildingTargetLine = housebuildingData
+    ? { value: housebuildingData.national.completions.targetThousands, label: '300,000 target' }
+    : undefined;
+
+  // 11. Energy efficiency — EPC Band C or above
+  const epcSeries: Series[] = energyEfficiencyData
+    ? [{
+        id: 'epc-c-or-above',
+        label: '% EPC Band C or above',
+        colour: '#2A9D8F',
+        data: energyEfficiencyData.national.epcRating.map(d => ({
+          date: yearToDate(d.year),
+          value: d.pctAtCOrAbove,
+        })),
+      }]
+    : [];
+
+  const epcAnnotations: Annotation[] = [
+    { date: new Date(2020, 0), label: '2020: Govt target — all homes EPC C by 2035' },
+  ];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestAff = data?.national.affordability.timeSeries.at(-1);
@@ -488,6 +608,9 @@ export default function HousingPage() {
           { id: 'sec-homelessness', label: 'Homelessness' },
           { id: 'sec-by-region', label: 'By Region' },
           { id: 'sec-stock', label: 'Housing Stock' },
+          { id: 'sec-statutory-homelessness', label: 'Statutory Homelessness' },
+          { id: 'sec-housebuilding', label: 'Housebuilding' },
+          { id: 'sec-energy', label: 'Energy Efficiency' },
         ]} />
 
         {/* Metric cards */}
@@ -927,6 +1050,99 @@ export default function HousingPage() {
         )}
 
         </div>{/* end sec-stock */}
+
+        {/* ── Section: Statutory Homelessness ───────────────────────────────── */}
+        <div id="sec-statutory-homelessness">
+          <ScrollReveal>
+            <section className="mb-12">
+              <h3 className="text-lg font-bold text-gray-900 mb-1">
+                Households in temporary accommodation, 2013–2024
+              </h3>
+              <p className="text-sm text-[#6B7280] mb-4">
+                Households in temporary accommodation placed by local authorities, England.
+              </p>
+              {homelessnessTempAccSeries.length > 0 ? (
+                <LineChart
+                  title="Households in temporary accommodation, 2013–2024"
+                  subtitle="Households in temporary accommodation placed by local authorities, England."
+                  series={homelessnessTempAccSeries}
+                  annotations={homelessnessAnnotations}
+                  yLabel="Thousands of households"
+                  source={{
+                    name: 'DLUHC',
+                    dataset: 'Homelessness Statistics',
+                    frequency: 'annual',
+                    url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness',
+                  }}
+                />
+              ) : (
+                <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+              )}
+            </section>
+          </ScrollReveal>
+        </div>{/* end sec-statutory-homelessness */}
+
+        {/* ── Section: Housebuilding ────────────────────────────────────────── */}
+        <div id="sec-housebuilding">
+          <ScrollReveal>
+            <section className="mb-12">
+              <h3 className="text-lg font-bold text-gray-900 mb-1">
+                New homes built vs planning permissions granted, 2012–2023
+              </h3>
+              <p className="text-sm text-[#6B7280] mb-4">
+                New dwelling completions and planning permissions, England. Government target: 300,000 per year.
+              </p>
+              {housebuildingCompletionsSeries.length > 0 ? (
+                <LineChart
+                  title="New homes built vs planning permissions granted, 2012–2023"
+                  subtitle="New dwelling completions and planning permissions, England. Government target: 300,000 per year."
+                  series={housebuildingCompletionsSeries}
+                  targetLine={housebuildingTargetLine}
+                  yLabel="Thousands"
+                  source={{
+                    name: 'DLUHC',
+                    dataset: 'Housing Supply: Indicators of New Supply',
+                    frequency: 'annual',
+                    url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-house-building',
+                  }}
+                />
+              ) : (
+                <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+              )}
+            </section>
+          </ScrollReveal>
+        </div>{/* end sec-housebuilding */}
+
+        {/* ── Section: Energy Efficiency ────────────────────────────────────── */}
+        <div id="sec-energy">
+          <ScrollReveal>
+            <section className="mb-12">
+              <h3 className="text-lg font-bold text-gray-900 mb-1">
+                Share of homes meeting EPC Band C or above, 2012–2024
+              </h3>
+              <p className="text-sm text-[#6B7280] mb-4">
+                % of domestic properties in England with Energy Performance Certificate rating C or better.
+              </p>
+              {epcSeries.length > 0 ? (
+                <LineChart
+                  title="Share of homes meeting EPC Band C or above, 2012–2024"
+                  subtitle="% of domestic properties in England with Energy Performance Certificate rating C or better."
+                  series={epcSeries}
+                  annotations={epcAnnotations}
+                  yLabel="% EPC C or above"
+                  source={{
+                    name: 'DLUHC',
+                    dataset: 'Energy Performance of Buildings Register',
+                    frequency: 'annual',
+                    url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-energy-performance-of-buildings-certificates',
+                  }}
+                />
+              ) : (
+                <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+              )}
+            </section>
+          </ScrollReveal>
+        </div>{/* end sec-energy */}
 
         {/* Positive story */}
         <ScrollReveal>

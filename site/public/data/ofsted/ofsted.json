@@ -1,0 +1,42 @@
+{
+  "topic": "ofsted",
+  "lastUpdated": "2026-03-05",
+  "national": {
+    "overallGrades": {
+      "timeSeries": [
+        {"year": 2012, "outstandingPct": 16, "goodPct": 49, "requiresImprovementPct": 27, "inadequatePct": 8},
+        {"year": 2013, "outstandingPct": 19, "goodPct": 55, "requiresImprovementPct": 21, "inadequatePct": 5},
+        {"year": 2014, "outstandingPct": 20, "goodPct": 59, "requiresImprovementPct": 17, "inadequatePct": 4},
+        {"year": 2015, "outstandingPct": 21, "goodPct": 61, "requiresImprovementPct": 14, "inadequatePct": 4},
+        {"year": 2016, "outstandingPct": 21, "goodPct": 63, "requiresImprovementPct": 12, "inadequatePct": 4},
+        {"year": 2017, "outstandingPct": 21, "goodPct": 66, "requiresImprovementPct": 9, "inadequatePct": 4},
+        {"year": 2018, "outstandingPct": 21, "goodPct": 67, "requiresImprovementPct": 8, "inadequatePct": 4},
+        {"year": 2019, "outstandingPct": 22, "goodPct": 68, "requiresImprovementPct": 7, "inadequatePct": 3},
+        {"year": 2021, "outstandingPct": 22, "goodPct": 68, "requiresImprovementPct": 7, "inadequatePct": 3},
+        {"year": 2022, "outstandingPct": 22, "goodPct": 67, "requiresImprovementPct": 8, "inadequatePct": 3},
+        {"year": 2023, "outstandingPct": 22, "goodPct": 68, "requiresImprovementPct": 7, "inadequatePct": 3},
+        {"year": 2024, "outstandingPct": 21, "goodPct": 68, "requiresImprovementPct": 8, "inadequatePct": 3}
+      ]
+    },
+    "bySchoolType": [
+      {"type": "Academy", "outstandingPct": 23, "goodPct": 70, "requiresImprovementPct": 6, "inadequatePct": 1},
+      {"type": "Community school", "outstandingPct": 17, "goodPct": 65, "requiresImprovementPct": 14, "inadequatePct": 4},
+      {"type": "Free school", "outstandingPct": 27, "goodPct": 63, "requiresImprovementPct": 7, "inadequatePct": 3},
+      {"type": "Grammar school", "outstandingPct": 46, "goodPct": 48, "requiresImprovementPct": 5, "inadequatePct": 1},
+      {"type": "Faith school", "outstandingPct": 24, "goodPct": 67, "requiresImprovementPct": 7, "inadequatePct": 2}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ofsted",
+        "dataset": "Management information — schools",
+        "url": "https://www.gov.uk/government/statistical-data-sets/monthly-management-information-ofsteds-school-inspections-outcomes",
+        "frequency": "monthly (aggregated annually here)",
+        "retrieved": "2026-03-05"
+      }
+    ],
+    "methodology": "Ofsted inspection outcome grades for maintained schools and academies in England. Grade 1 = Outstanding, Grade 2 = Good, Grade 3 = Requires Improvement, Grade 4 = Inadequate. Data shown is the grade distribution of all schools inspected in that year. Note: Ofsted announced in 2024 it would replace single-word judgements with report cards — transition ongoing.",
+    "knownIssues": ["2020 data omitted — Ofsted suspended routine inspections during COVID-19 pandemic", "Grade inflation concern: many schools holding Outstanding grade from inspections conducted 10+ years ago were shielded from re-inspection until 2023 policy change", "Schools receiving an Inadequate grade enter special measures — grade distribution reflects point-in-time inspections not current school quality"]
+  }
+}
