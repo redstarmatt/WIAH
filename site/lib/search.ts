@@ -109,12 +109,51 @@ export function getSearchIndex(): SearchableItem[] {
   return _index;
 }
 
+// ── NLP preprocessing ──────────────────────────────────────────────────────────
+
+const STOP_WORDS = new Set([
+  // Question words
+  'how', 'what', 'when', 'where', 'why', 'which', 'who',
+  // Auxiliaries
+  'is', 'are', 'was', 'were', 'be', 'been', 'being',
+  'do', 'does', 'did', 'have', 'has', 'had',
+  'will', 'would', 'can', 'could', 'should', 'shall', 'may', 'might', 'must',
+  // Articles / prepositions
+  'a', 'an', 'the', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by',
+  'from', 'about', 'as', 'into', 'after', 'before', 'between',
+  // Conjunctions / pronouns
+  'or', 'and', 'but', 'that', 'this', 'these', 'those',
+  'it', 'its', 'there', 'they', 'we', 'you', 'i', 'my', 'your', 'our',
+  // Common filler
+  'many', 'much', 'long', 'fast', 'often', 'still', 'now', 'just',
+  'more', 'less', 'all', 'any', 'some', 'no', 'not', 'ever', 'since',
+  'than', 'also', 'too', 'very',
+  // Noisy verbs / words common in questions but not useful for matching
+  'happen', 'happens', 'happened', 'lead', 'leads', 'leading',
+  'living', 'live', 'lives', 'arrive', 'arrives', 'arriving',
+  'getting', 'got', 'narrowed', 'percentage', 'report', 'reported',
+  'go', 'get', 'up',
+]);
+
+/** Strip question words and stop words, leaving the meaningful keywords. */
+export function preprocessQuery(raw: string): string {
+  const words = raw
+    .toLowerCase()
+    .replace(/[?!.,;:'"]/g, '')
+    .split(/\s+/)
+    .filter((w) => w.length > 1 && !STOP_WORDS.has(w));
+  return words.join(' ');
+}
+
 // ── Search algorithm ───────────────────────────────────────────────────────────
 
 export function search(query: string, limit = 12): SearchResult[] {
   if (!query || query.trim().length === 0) return [];
 
-  const q = query.trim().toLowerCase();
+  const raw = query.trim().toLowerCase().replace(/[?!.,;:'"]/g, '');
+  const processed = preprocessQuery(raw);
+  // Fall back to raw if preprocessing strips everything (e.g. single stop word)
+  const q = processed || raw;
   const index = getSearchIndex();
   const results: SearchResult[] = [];
 
@@ -171,12 +210,15 @@ export function search(query: string, limit = 12): SearchResult[] {
       }
     }
 
-    // Tier 7: all words present in corpus (multi-word queries)
+    // Tier 7: partial word matching — score proportional to matched keywords
     if (bestScore === 0) {
       const words = q.split(/\s+/).filter(Boolean);
-      if (words.length > 0 && words.every((w) => item.corpus.includes(w))) {
-        bestScore = 10;
-        bestMatchType = 'topic-contains';
+      if (words.length > 0) {
+        const matchCount = words.filter((w) => item.corpus.includes(w)).length;
+        if (matchCount > 0) {
+          bestScore = Math.max(1, Math.round((matchCount / words.length) * 10));
+          bestMatchType = 'topic-contains';
+        }
       }
     }
 

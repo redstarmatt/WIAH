@@ -6,7 +6,7 @@ import { useSearch } from './SearchProvider';
 import { search, SearchResult } from '@/lib/search';
 
 export default function SearchModal() {
-  const { isOpen, close } = useSearch();
+  const { isOpen, close, initialQuery } = useSearch();
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -16,7 +16,14 @@ export default function SearchModal() {
 
   useEffect(() => {
     if (isOpen) {
-      requestAnimationFrame(() => inputRef.current?.focus());
+      setQuery(initialQuery);
+      requestAnimationFrame(() => {
+        inputRef.current?.focus();
+        // Place cursor at end of pre-filled text
+        if (initialQuery) {
+          inputRef.current?.setSelectionRange(initialQuery.length, initialQuery.length);
+        }
+      });
       document.body.style.overflow = 'hidden';
     } else {
       setQuery('');
@@ -24,7 +31,7 @@ export default function SearchModal() {
       setActiveIndex(0);
       document.body.style.overflow = '';
     }
-  }, [isOpen]);
+  }, [isOpen, initialQuery]);
 
   useEffect(() => {
     setResults(search(query));

@@ -11,14 +11,18 @@ import {
 
 interface SearchContextValue {
   isOpen: boolean;
+  initialQuery: string;
   open: () => void;
+  openWithQuery: (q: string) => void;
   close: () => void;
   toggle: () => void;
 }
 
 const SearchContext = createContext<SearchContextValue>({
   isOpen: false,
+  initialQuery: '',
   open: () => {},
+  openWithQuery: () => {},
   close: () => {},
   toggle: () => {},
 });
@@ -29,9 +33,11 @@ export function useSearch() {
 
 export default function SearchProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [initialQuery, setInitialQuery] = useState('');
 
-  const open = useCallback(() => setIsOpen(true), []);
-  const close = useCallback(() => setIsOpen(false), []);
+  const open = useCallback(() => { setInitialQuery(''); setIsOpen(true); }, []);
+  const openWithQuery = useCallback((q: string) => { setInitialQuery(q); setIsOpen(true); }, []);
+  const close = useCallback(() => { setIsOpen(false); setInitialQuery(''); }, []);
   const toggle = useCallback(() => setIsOpen((prev) => !prev), []);
 
   useEffect(() => {
@@ -46,7 +52,7 @@ export default function SearchProvider({ children }: { children: ReactNode }) {
   }, [toggle]);
 
   return (
-    <SearchContext.Provider value={{ isOpen, open, close, toggle }}>
+    <SearchContext.Provider value={{ isOpen, initialQuery, open, openWithQuery, close, toggle }}>
       {children}
     </SearchContext.Provider>
   );
