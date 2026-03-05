@@ -108,8 +108,7 @@ export default function MilitarySpendingPage() {
               changeText="Above NATO 2&percnt; target &middot; Commitment to 2.5&percnt; by 2030s &middot; &pound;55bn/yr"
               sparklineData={[2.2, 2.1, 2.0, 2.0, 2.1, 2.2, 2.3, 2.3]}
               source="NATO &middot; Defence Expenditure Report 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-gdp"/>
             <MetricCard
               label="Regular army headcount"
               value="73,000"
@@ -118,8 +117,7 @@ export default function MilitarySpendingPage() {
               changeText="Smallest since Napoleonic Wars &middot; Down from 212,000 in 2000 &middot; Recruiting shortfall: 27&percnt;"
               sparklineData={[178000, 165000, 150000, 140000, 132000, 130000, 127000, 73000]}
               source="Ministry of Defence &middot; Armed Forces Personnel Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-personnel"/>
             <MetricCard
               label="Defence equipment budget"
               value="&pound;21bn"
@@ -128,8 +126,7 @@ export default function MilitarySpendingPage() {
               changeText="Ammunition stockpiles below multi-week conflict threshold &middot; Industrial base rebuilding"
               sparklineData={[16, 17, 18, 18, 19, 20, 21, 21]}
               source="MOD &middot; UK Defence in Numbers 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-personnel"/>
           </div>
         </ScrollReveal>
 

@@ -80,8 +80,7 @@ export default function HousingDisrepairClaimsPage() {
               polarity={'up-is-bad' as const}
               changeText="+180% since 2019 · surge post-pandemic"
               sparklineData={[28000, 30000, 33000, 35000, 38000, 48000, 65000, 80000, 92000]}
-              onExpand={() => {}}
-              source="Ministry of Justice &middot; Civil Justice Statistics 2024"
+              href="#sec-chart"source="Ministry of Justice &middot; Civil Justice Statistics 2024"
             />
             <MetricCard
               label="Homes with category 1 hazards"
@@ -91,8 +90,7 @@ export default function HousingDisrepairClaimsPage() {
               polarity={'up-is-bad' as const}
               changeText="1.1m homes with most serious risks"
               sparklineData={[1.3, 1.3, 1.2, 1.2, 1.2, 1.1, 1.1, 1.1, 1.1]}
-              onExpand={() => {}}
-              source="DLUHC &middot; English Housing Survey 2023"
+              href="#sec-chart"source="DLUHC &middot; English Housing Survey 2023"
             />
             <MetricCard
               label="Average compensation awarded"
@@ -102,8 +100,7 @@ export default function HousingDisrepairClaimsPage() {
               polarity={'up-is-good' as const}
               changeText="+&pound;1,100 since 2020 · rising awards"
               sparklineData={[2100, 2300, 2600, 2800, 3100, 3400, 3700, 4000, 4200]}
-              onExpand={() => {}}
-              source="Ministry of Justice &middot; Civil Justice Statistics 2024"
+              href="#sec-chart"source="Ministry of Justice &middot; Civil Justice Statistics 2024"
             />
           </div>
         </ScrollReveal>

@@ -213,8 +213,7 @@ export default function NHSStaffingPage() {
             polarity="up-is-bad"
             changeText="Sep 2024 · Down from 133,500 peak · Still historically very high"
             sparklineData={[78.8, 86.2, 107.7, 103.1, 85.3, 105.7, 133.5, 121.1, 104.3]}
-            onExpand={() => {}}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="Sickness days per staff"
             value="13.8"
@@ -223,8 +222,7 @@ export default function NHSStaffingPage() {
             polarity="up-is-bad"
             changeText="2023/24 · 34.6% stress-related · High burnout reflects workload pressure"
             sparklineData={[11.5, 11.8, 12.0, 12.3, 12.7, 17.3, 16.1, 14.2, 13.8]}
-            onExpand={() => {}}
-          />
+            href="#sec-vacancies"/>
           <MetricCard
             label="International nurses joining NMC"
             value="26,841"
@@ -233,8 +231,7 @@ export default function NHSStaffingPage() {
             polarity="up-is-good"
             changeText="2024 · Down from record 40,123 in 2023 · Visa changes and WHO restrictions"
             sparklineData={[6389, 3519, 6103, 10843, 17942, 22906, 35765, 40123, 26841].map(v => v / 1000)}
-            onExpand={() => {}}
-          />
+            href="#sec-burnout"/>
         </div>
         </ScrollReveal>
 

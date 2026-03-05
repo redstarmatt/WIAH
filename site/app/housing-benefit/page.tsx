@@ -108,8 +108,7 @@ export default function HousingBenefitPage() {
               polarity="up-is-bad"
               changeText="2023 peak &middot; Inner London shortfall exceeded &pound;500/mo &middot; Reset in April 2024"
               sparklineData={[0, 10, 30, 60, 90, 130, 160, 190]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Housing benefit recipients (private sector)"
               value="1.6M"
@@ -117,8 +116,7 @@ export default function HousingBenefitPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Up from 1.2M in 2016 &middot; Landlords increasingly refusing claimants"
               sparklineData={[1200, 1250, 1300, 1380, 1450, 1500, 1550, 1600]}
-              onExpand={() => {}}
-            />
+              href="#sec-shortfall"/>
             <MetricCard
               label="Households at eviction risk due to shortfall"
               value="186,000"
@@ -126,8 +124,7 @@ export default function HousingBenefitPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Crisis estimate &middot; Rent arrears rising across all tenure types"
               sparklineData={[20000, 40000, 65000, 90000, 120000, 150000, 170000, 186000]}
-              onExpand={() => {}}
-            />
+              href="#sec-recipients"/>
           </div>
         </ScrollReveal>
 

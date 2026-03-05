@@ -80,8 +80,7 @@ export default function ShortTermLetsImpactPage() {
               polarity={'up-is-bad' as const}
               changeText="+65% since 2019 · 250k removed from long-term market"
               sparklineData={[90000, 110000, 130000, 150000, 170000, 160000, 200000, 245000, 280000]}
-              onExpand={() => {}}
-              source="AirDNA / Short Term Accommodation Association 2024"
+              href="#sec-chart"source="AirDNA / Short Term Accommodation Association 2024"
             />
             <MetricCard
               label="STL share in coastal hotspots"
@@ -91,8 +90,7 @@ export default function ShortTermLetsImpactPage() {
               polarity={'up-is-bad' as const}
               changeText="Up to 40% of stock in tourist destinations"
               sparklineData={[15, 17, 19, 22, 25, 26, 30, 36, 40]}
-              onExpand={() => {}}
-              source="ONS / local authority estimates 2024"
+              href="#sec-chart"source="ONS / local authority estimates 2024"
             />
             <MetricCard
               label="Rent premium in high-STL areas"
@@ -102,8 +100,7 @@ export default function ShortTermLetsImpactPage() {
               polarity={'up-is-bad' as const}
               changeText="Rents 15% higher in high-STL areas"
               sparklineData={[4, 5, 6, 7, 8, 9, 10, 12, 15]}
-              onExpand={() => {}}
-              source="Resolution Foundation &middot; Rental Market Analysis 2024"
+              href="#sec-chart"source="Resolution Foundation &middot; Rental Market Analysis 2024"
             />
           </div>
         </ScrollReveal>

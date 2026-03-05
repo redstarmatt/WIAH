@@ -83,8 +83,7 @@ export default function MedicationShortagesPage() {
               polarity="up-is-bad"
               changeText="up from 34 in 2018 &middot; includes ADHD, HRT, antibiotics"
               sparklineData={[34, 42, 67, 71, 89, 121, 108, 108]}
-              onExpand={() => {}}
-              source="DHSC &middot; Medicine Supply Notifications 2024"
+              href="#sec-chart"source="DHSC &middot; Medicine Supply Notifications 2024"
             />
             <MetricCard
               label="Patient complaints"
@@ -94,8 +93,7 @@ export default function MedicationShortagesPage() {
               polarity="up-is-bad"
               changeText="+241% since 2018 &middot; 800 per day"
               sparklineData={[85000, 110000, 160000, 190000, 250000, 340000, 290000, 290000]}
-              onExpand={() => {}}
-              source="NHSBSA &middot; Prescription Issues Data 2024"
+              href="#sec-chart"source="NHSBSA &middot; Prescription Issues Data 2024"
             />
             <MetricCard
               label="Average shortage duration"
@@ -105,8 +103,7 @@ export default function MedicationShortagesPage() {
               polarity="up-is-bad"
               changeText="range 1&ndash;18 months &middot; some chronic"
               sparklineData={[1.2, 1.5, 1.8, 2.1, 2.4, 3.8, 3.6, 3.4]}
-              onExpand={() => {}}
-              source="DHSC &middot; Shortage Assessment Data 2024"
+              href="#sec-chart"source="DHSC &middot; Shortage Assessment Data 2024"
             />
           </div>
         </ScrollReveal>

@@ -356,8 +356,7 @@ export default function EnergyPage() {
                   : []
               }
               source="DESNZ \u00b7 Energy Trends Section 6"
-              onExpand={renewableShareSeries.length > 0 ? () => setExpanded('renewables') : undefined}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Electricity price"
               value={latestElecPrice ? latestElecPrice.index.toFixed(0) : '\u2014'}
@@ -376,8 +375,7 @@ export default function EnergyPage() {
                   : []
               }
               source="ONS \u00b7 CPI electricity index (D7DT)"
-              onExpand={priceSeries.length > 0 ? () => setExpanded('electricity-price') : undefined}
-            />
+              href="#sec-prices"/>
             <MetricCard
               label="Fuel poverty"
               value={latestFuelPoverty ? latestFuelPoverty.pct.toFixed(1) : '\u2014'}

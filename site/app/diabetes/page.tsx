@@ -126,8 +126,7 @@ export default function DiabetesPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Up from 1.4M in 1998 &middot; 1.2M estimated undiagnosed &middot; 5M at risk of Type 2 &middot; NHS cost: &pound;10bn/year"
               sparklineData={[1.4, 1.6, 1.8, 2.0, 2.3, 2.6, 2.9, 3.2, 3.5, 3.7, 3.9, 4.1, 4.3, 4.4]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="NHS Diabetes Prevention Programme enrolments"
               value="680K"
@@ -135,8 +134,7 @@ export default function DiabetesPage() {
               polarity="up-is-good"
               changeText="2023 cumulative &middot; Programme launched 2016 &middot; Targets high-risk prediabetes &middot; Reduces Type 2 onset by 37%"
               sparklineData={[10, 60, 150, 250, 310, 420, 550, 680]}
-              onExpand={() => {}}
-            />
+              href="#sec-prevalence"/>
             <MetricCard
               label="Diabetes-related amputations (annual)"
               value="8,000"
@@ -144,8 +142,7 @@ export default function DiabetesPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Down from 10,000 in 2018 &middot; Still 20% higher than European average &middot; Preventable with good glucose control"
               sparklineData={[9800, 9500, 9200, 8800, 8500, 8200, 8000, 8000]}
-              onExpand={() => {}}
-            />
+              href="#sec-prevention"/>
           </div>
         </ScrollReveal>
 

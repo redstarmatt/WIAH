@@ -95,8 +95,7 @@ export default function FosterPlacementShortagePage() {
               polarity="up-is-bad"
               changeText="doubled since 2015 &middot; recruitment and retention crisis"
               sparklineData={[4200, 4600, 5100, 5600, 6100, 6600, 7100, 7800, 8700]}
-              onExpand={() => {}}
-              source="The Fostering Network &middot; 2023"
+              href="#sec-chart"source="The Fostering Network &middot; 2023"
             />
             <MetricCard
               label="Foster carers in England"
@@ -106,8 +105,7 @@ export default function FosterPlacementShortagePage() {
               polarity="up-is-good"
               changeText="declining despite rising demand"
               sparklineData={[55000, 54800, 54600, 54400, 54200, 54000, 53800, 53600, 53500]}
-              onExpand={() => {}}
-              source="Ofsted &middot; Fostering in England 2023"
+              href="#sec-chart"source="Ofsted &middot; Fostering in England 2023"
             />
             <MetricCard
               label="Emergency placements"
@@ -117,8 +115,7 @@ export default function FosterPlacementShortagePage() {
               polarity="up-is-bad"
               changeText="children placed in emergency &middot; placement instability harms outcomes"
               sparklineData={[8200, 8600, 9000, 9800, 10200, 10600, 11000, 11400]}
-              onExpand={() => {}}
-              source="DfE &middot; Children Looked After Statistics 2023"
+              href="#sec-chart"source="DfE &middot; Children Looked After Statistics 2023"
             />
           </div>
         </ScrollReveal>

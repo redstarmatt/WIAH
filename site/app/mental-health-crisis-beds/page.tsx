@@ -33,7 +33,6 @@ export default function MentalHealthCrisisBedsPage() {
               changeText="down from 33,000 in 1998"
               sparklineData={[33000,30000,27000,25000,23000,21000,20000,19200,18400]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Average bed occupancy"
@@ -43,7 +42,6 @@ export default function MentalHealthCrisisBedsPage() {
               changeText="often exceeds 100% locally"
               sparklineData={[85,86,87,88,89,90,91,91,92]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

@@ -86,7 +86,6 @@ export default function PrisonReoffendingPage() {
                 polarity="up-is-bad"
                 changeText="Has barely changed since 2010"
                 sparklineData={[55, 54, 55, 54, 53, 53, 53, 53, 54, 53, 50, 52, 53]}
-                onExpand={() => {}}
               />
             </ScrollReveal>
 
@@ -99,7 +98,6 @@ export default function PrisonReoffendingPage() {
                 polarity="up-is-bad"
                 changeText="MOJ estimate; includes crime costs"
                 sparklineData={[14, 15, 16, 17, 18]}
-                onExpand={() => {}}
               />
             </ScrollReveal>
 
@@ -111,7 +109,6 @@ export default function PrisonReoffendingPage() {
                 polarity="up-is-bad"
                 changeText="Homelessness on release is primary reoffending driver"
                 sparklineData={[45, 46, 47, 48]}
-                onExpand={() => {}}
               />
             </ScrollReveal>
           </div>

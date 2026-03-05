@@ -33,7 +33,6 @@ export default function ModularHousingPage() {
               changeText="target: 30,000+"
               sparklineData={[3000,3500,4200,5000,5800,6400,7000,7600,8200]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Modular share of new builds"
@@ -43,7 +42,6 @@ export default function ModularHousingPage() {
               changeText="still a small fraction"
               sparklineData={[1.2,1.4,1.7,2.0,2.3,2.6,2.9,3.2,3.5]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

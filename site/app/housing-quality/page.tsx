@@ -116,8 +116,7 @@ export default function HousingQualityPage() {
               polarity="up-is-bad"
               changeText="2022 &middot; 17% of housing stock &middot; Down from 7.5M in 2010 &middot; Private rented sector worst: 24% non-decent"
               sparklineData={[7.5, 6.5, 5.7, 5.0, 4.7, 4.5, 4.3]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Homes with damp or mould problem"
               value="1M"
@@ -125,8 +124,7 @@ export default function HousingQualityPage() {
               polarity="up-is-bad"
               changeText="2022 &middot; 4.5% of all dwellings &middot; Private renters 3x more likely to have damp &middot; Awaab&apos;s Law: new social housing regulations 2024"
               sparklineData={[3.8, 3.7, 3.9, 4.0, 4.3, 4.2, 4.5]}
-              onExpand={() => {}}
-            />
+              href="#sec-decent"/>
             <MetricCard
               label="Cost of cold and damp homes to NHS"
               value="&pound;1.4bn"
@@ -134,8 +132,7 @@ export default function HousingQualityPage() {
               polarity="up-is-bad"
               changeText="Per year &middot; BRE estimate &middot; Respiratory &amp; cardiovascular conditions &middot; Children in damp homes 3x more likely to get asthma"
               sparklineData={[1.1, 1.1, 1.2, 1.2, 1.3, 1.3, 1.4, 1.4, 1.4]}
-              onExpand={() => {}}
-            />
+              href="#sec-damp"/>
           </div>
         </ScrollReveal>
 

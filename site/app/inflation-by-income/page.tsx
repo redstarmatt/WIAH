@@ -84,8 +84,7 @@ export default function InflationByIncomePage() {
               polarity={'up-is-bad' as const}
               changeText="Peak Oct 2022 · now returning to target"
               sparklineData={[2.1, 2.3, 1.8, 1.5, 1.8, 5.2, 10.1, 12.8, 3.2]}
-              onExpand={() => {}}
-              source="Resolution Foundation / ONS · Inflation Analysis 2023"
+              href="#sec-chart"source="Resolution Foundation / ONS · Inflation Analysis 2023"
             />
             <MetricCard
               label="Peak inflation, richest 20%"
@@ -95,8 +94,7 @@ export default function InflationByIncomePage() {
               polarity={'up-is-bad' as const}
               changeText="Peak Oct 2022 · lower energy/food share"
               sparklineData={[2.0, 2.1, 1.7, 1.4, 1.7, 4.8, 8.9, 10.4, 2.9]}
-              onExpand={() => {}}
-              source="Resolution Foundation / ONS · Inflation Analysis 2023"
+              href="#sec-chart"source="Resolution Foundation / ONS · Inflation Analysis 2023"
             />
             <MetricCard
               label="Gap at peak"
@@ -106,8 +104,7 @@ export default function InflationByIncomePage() {
               polarity={'up-is-bad' as const}
               changeText="2.4pp inflation gap · persistent 2022-23"
               sparklineData={[0.1, 0.2, 0.1, 0.1, 0.1, 0.4, 1.2, 2.4, 0.3]}
-              onExpand={() => {}}
-              source="Resolution Foundation / ONS · Inflation Analysis 2023"
+              href="#sec-chart"source="Resolution Foundation / ONS · Inflation Analysis 2023"
             />
           </div>
         </ScrollReveal>

@@ -163,8 +163,7 @@ export default function PolicingPage() {
             polarity="up-is-good"
             changeText="2024 · Down from 149,566 record in 2022 · Uplift programme stalling"
             sparklineData={[143.7, 140.2, 135.8, 130.5, 127.9, 124.1, 122.4, 121.9, 121.7, 123.2, 131.3, 139.8, 149.6, 147.5, 145.7]}
-            onExpand={() => {}}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="Charge/summons rate"
             value="5.6%"
@@ -173,8 +172,7 @@ export default function PolicingPage() {
             polarity="up-is-good"
             changeText="2023 · Down from 15.5% in 2014 · &lt;400K charges from 6.8M recorded crimes"
             sparklineData={[15.5, 14.9, 14.1, 12.7, 10.0, 8.0, 7.0, 6.5, 6.1, 5.6]}
-            onExpand={() => {}}
-          />
+            href="#sec-officers"/>
           <MetricCard
             label="Public confidence in police"
             value="54.1%"
@@ -183,8 +181,7 @@ export default function PolicingPage() {
             polarity="up-is-good"
             changeText="2023 · Down from 63.5% in 2019 · Post-Everard/Casey Review erosion"
             sparklineData={[61.2, 62.1, 62.7, 63.2, 63.0, 63.5, 60.8, 59.4, 55.7, 54.1]}
-            onExpand={() => {}}
-          />
+            href="#sec-charges"/>
         </div>
         </ScrollReveal>
 

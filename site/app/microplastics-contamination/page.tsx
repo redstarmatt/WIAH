@@ -90,8 +90,7 @@ export default function MicroplasticsContaminationPage() {
               polarity="up-is-bad"
               changeText="Most people tested &middot; first detected 2022"
               sparklineData={[0, 0, 0, 0, 77, 77]}
-              onExpand={() => {}}
-              source="Vrije Universiteit Amsterdam &middot; 2022"
+              href="#sec-chart"source="Vrije Universiteit Amsterdam &middot; 2022"
             />
             <MetricCard
               label="Drinking water"
@@ -101,8 +100,7 @@ export default function MicroplasticsContaminationPage() {
               polarity="up-is-bad"
               changeText="Rising trend &middot; from plastic pipes and packaging"
               sparklineData={[4.0, 4.3, 4.6, 4.8, 5.0, 5.0]}
-              onExpand={() => {}}
-              source="DWQR / WHO &middot; 2023"
+              href="#sec-chart"source="DWQR / WHO &middot; 2023"
             />
             <MetricCard
               label="UK seabed density"
@@ -112,8 +110,7 @@ export default function MicroplasticsContaminationPage() {
               polarity="up-is-bad"
               changeText="Up from 800 in 2018 &middot; Arctic spreading"
               sparklineData={[800, 870, 910, 950, 980, 1000]}
-              onExpand={() => {}}
-              source="CEFAS / Plymouth Marine Laboratory &middot; 2023"
+              href="#sec-chart"source="CEFAS / Plymouth Marine Laboratory &middot; 2023"
             />
           </div>
         </ScrollReveal>

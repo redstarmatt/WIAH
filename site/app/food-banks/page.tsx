@@ -105,7 +105,6 @@ export default function FoodBanksPage() {
             polarity="up-is-bad"
             changeText="2023/24 · Up from 913K in 2013/14 · Tripled in a decade · 1.1M parcels to children"
             sparklineData={[913, 1085, 1182, 1183, 1330, 1600, 1910, 2173, 2578, 3130, 2990, 3100]}
-            onExpand={() => {}}
           />
           <MetricCard
             label="Households in food insecurity"
@@ -114,7 +113,6 @@ export default function FoodBanksPage() {
             polarity="up-is-bad"
             changeText="2022/23 · 24% of households · Up from 8% in 2019 · Food insecurity defined as inadequate or uncertain access"
             sparklineData={[2.4, 2.6, 3.2, 4.7, 7.2]}
-            onExpand={() => {}}
           />
           <MetricCard
             label="Children in food insecurity"
@@ -123,7 +121,6 @@ export default function FoodBanksPage() {
             polarity="up-is-bad"
             changeText="2022/23 · 29% of all children · Free school meals: 24.6% of pupils eligible · Up from 15% in 2013"
             sparklineData={[1.4, 1.6, 1.9, 2.7, 4.0]}
-            onExpand={() => {}}
           />
         </div>
       </section>

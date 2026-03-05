@@ -117,8 +117,7 @@ export default function DigitalInclusionPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Down from 11.3M in 2020 &middot; Older adults, low income, disabled most affected &middot; 1.5M households offline"
               sparklineData={[14.3, 13.0, 12.6, 12.1, 11.3, 10.2, 9.1, 8.0]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Median UK broadband speed (Mbps)"
               value="114"
@@ -126,8 +125,7 @@ export default function DigitalInclusionPage() {
               polarity="up-is-good"
               changeText="2023 &middot; Up from 27 Mbps in 2018 &middot; Full fibre rollout accelerating &middot; Rural &lt;10 Mbps still common"
               sparklineData={[27, 35, 54, 77, 90, 114]}
-              onExpand={() => {}}
-            />
+              href="#sec-access"/>
             <MetricCard
               label="Cost of being offline (annual)"
               value="&pound;1,064"
@@ -135,8 +133,7 @@ export default function DigitalInclusionPage() {
               polarity="up-is-bad"
               changeText="Per year &middot; Unable to access cheapest online tariffs &middot; Affects energy, banking, shopping &middot; Good Things Foundation estimate"
               sparklineData={[800, 850, 900, 950, 1000, 1064]}
-              onExpand={() => {}}
-            />
+              href="#sec-speed"/>
           </div>
         </ScrollReveal>
 

@@ -163,8 +163,7 @@ export default function SkillsShortagesPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Up from 0.8M in 2015 &middot; Skills gap, not just labour shortage"
               sparklineData={[0.8, 0.9, 1.0, 1.2, 1.5, 1.8, 2.1, 2.4]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Employers reporting skills gaps"
               value="80&percnt;"
@@ -172,8 +171,7 @@ export default function SkillsShortagesPage() {
               polarity="up-is-bad"
               changeText="2023/24 &middot; CIPD quarterly survey &middot; Stubbornly elevated post-pandemic"
               sparklineData={[62, 65, 67, 69, 71, 73, 77, 80]}
-              onExpand={() => {}}
-            />
+              href="#sec-vacancies"/>
             <MetricCard
               label="Annual cost to UK economy"
               value="&pound;6.6bn"
@@ -181,8 +179,7 @@ export default function SkillsShortagesPage() {
               polarity="up-is-bad"
               changeText="DfE Employer Skills Survey &middot; Recruitment, temp staffing, training costs"
               sparklineData={[3.8, 4.1, 4.4, 4.8, 5.2, 5.6, 6.0, 6.6]}
-              onExpand={() => {}}
-            />
+              href="#sec-sectors"/>
           </div>
         </ScrollReveal>
 

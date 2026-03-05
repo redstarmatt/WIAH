@@ -100,8 +100,7 @@ export default function ChildMentalHealthPage() {
                 sparklineData={data?.national.camhsWaiting.map(d => d.thousands) || []}
                 changeText="2023 · Up from 42K in 2016 · 50% wait >18 weeks"
                 source="NHS Digital, CAMHS activity data"
-                onExpand={() => {}}
-              />
+                href="#sec-overview"/>
             </ScrollReveal>
 
             <ScrollReveal>
@@ -114,8 +113,7 @@ export default function ChildMentalHealthPage() {
                 sparklineData={data?.national.selfHarmAdmissions.map(d => d.per100k) || []}
                 changeText="2022 · Up 52% since 2013 · Girls 3&times; more likely"
                 source="NHS Digital, Hospital Episode Statistics"
-                onExpand={() => {}}
-              />
+                href="#sec-charts"/>
             </ScrollReveal>
 
             <ScrollReveal>
@@ -127,8 +125,7 @@ export default function ChildMentalHealthPage() {
                 polarity="up-is-bad"
                 changeText="2023 · Record high · Up from 1.1M in 2019"
                 source="NHS England, mental health activity"
-                onExpand={() => {}}
-              />
+                href="#sec-charts"/>
             </ScrollReveal>
           </div>
         </section>

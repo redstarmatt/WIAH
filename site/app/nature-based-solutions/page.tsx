@@ -79,8 +79,7 @@ export default function NatureBasedSolutionsPage() {
               changeText="+44,000ha since 2019 · 340% increase"
               sparklineData={[13000, 15000, 19000, 25000, 32000, 40000, 47000, 52000, 57000]}
               source="DESNZ / Natural England · Peatland Action 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="NBS share of net zero contribution"
               value="3%"
@@ -89,8 +88,7 @@ export default function NatureBasedSolutionsPage() {
               changeText="3% of 15% potential · large gap to fill"
               sparklineData={[0.5, 0.7, 0.9, 1.1, 1.4, 1.7, 2.1, 2.5, 3.0]}
               source="Climate Change Committee · 2024 Progress Report"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="New woodland planted 2023"
               value="8,500ha"
@@ -99,8 +97,7 @@ export default function NatureBasedSolutionsPage() {
               changeText="+3,200ha on 2022 · but below 30,000ha target"
               sparklineData={[3500, 4200, 5000, 6100, 7200, 4800, 5500, 5300, 8500]}
               source="Forestry Commission · Woodland Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

@@ -84,8 +84,7 @@ export default function RegionalGdpGapPage() {
               polarity={'up-is-good' as const}
               changeText="3× North East average · gap widening"
               sparklineData={[48000, 50000, 52000, 54000, 55000, 54000, 57000, 62000, 67500]}
-              onExpand={() => {}}
-              source="ONS · Regional GDP Statistics 2024"
+              href="#sec-chart"source="ONS · Regional GDP Statistics 2024"
             />
             <MetricCard
               label="North East GDP per head"
@@ -95,8 +94,7 @@ export default function RegionalGdpGapPage() {
               polarity={'up-is-good' as const}
               changeText="+£3,200 since 2015 · gap with London growing"
               sparklineData={[18500, 19000, 19200, 19500, 19800, 19600, 20100, 21000, 22100]}
-              onExpand={() => {}}
-              source="ONS · Regional GDP Statistics 2024"
+              href="#sec-chart"source="ONS · Regional GDP Statistics 2024"
             />
             <MetricCard
               label="London:North East GDP ratio"
@@ -106,8 +104,7 @@ export default function RegionalGdpGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Widest gap since 1997 · UK far above OECD peers"
               sparklineData={[2.6, 2.6, 2.7, 2.8, 2.8, 2.8, 2.8, 3.0, 3.1]}
-              onExpand={() => {}}
-              source="ONS · Regional GDP Statistics 2024"
+              href="#sec-chart"source="ONS · Regional GDP Statistics 2024"
             />
           </div>
         </ScrollReveal>

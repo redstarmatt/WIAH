@@ -85,8 +85,7 @@ export default function EarlyYearsQualityPage() {
               polarity="up-is-good"
               changeText="near-universal quality &middot; major improvement from 82% in 2015"
               sparklineData={[82, 86, 89, 92, 94, 94, 95, 96, 96]}
-              onExpand={() => {}}
-              source="Ofsted &middot; Early Years Inspection Data 2023"
+              href="#sec-chart"source="Ofsted &middot; Early Years Inspection Data 2023"
             />
             <MetricCard
               label="Inadequate settings"
@@ -96,8 +95,7 @@ export default function EarlyYearsQualityPage() {
               polarity="up-is-bad"
               changeText="very few inadequate providers &middot; down from 1% in 2015"
               sparklineData={[1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.3]}
-              onExpand={() => {}}
-              source="Ofsted &middot; Early Years Inspection Data 2023"
+              href="#sec-callout"source="Ofsted &middot; Early Years Inspection Data 2023"
             />
             <MetricCard
               label="Childcare deserts"
@@ -107,8 +105,7 @@ export default function EarlyYearsQualityPage() {
               polarity="up-is-bad"
               changeText="improving but significant geography gaps remain"
               sparklineData={[1.6, 1.55, 1.5, 1.45, 1.4, 1.38, 1.36, 1.32, 1.3]}
-              onExpand={() => {}}
-              source="Coram Family and Childcare &middot; Childcare Survey 2023"
+              href="#sec-callout"source="Coram Family and Childcare &middot; Childcare Survey 2023"
             />
           </div>
         </ScrollReveal>

@@ -106,8 +106,7 @@ export default function TerrorismProsecutionsPage() {
               polarity={'up-is-bad' as const}
               changeText="+25% since 2015"
               sparklineData={[280, 299, 412, 351, 296, 256, 290, 312, 350]}
-              onExpand={() => {}}
-              source="Home Office &middot; Operation of police powers under Terrorism Act"
+              href="#sec-chart"source="Home Office &middot; Operation of police powers under Terrorism Act"
             />
             <MetricCard
               label="Conviction rate at trial"
@@ -117,8 +116,7 @@ export default function TerrorismProsecutionsPage() {
               polarity={'up-is-good' as const}
               changeText="Stable over the past decade"
               sparklineData={[74, 75, 74, 74, 74, 74, 74, 74, 74]}
-              onExpand={() => {}}
-              source="Crown Prosecution Service &middot; CPS data summary"
+              href="#sec-chart"source="Crown Prosecution Service &middot; CPS data summary"
             />
             <MetricCard
               label="On terrorism-related licence"
@@ -128,8 +126,7 @@ export default function TerrorismProsecutionsPage() {
               polarity={'up-is-bad' as const}
               changeText="Released from custody, under supervision"
               sparklineData={[110, 128, 142, 155, 168, 178, 192, 207, 220]}
-              onExpand={() => {}}
-              source="HMPPS &middot; Offender management caseload statistics"
+              href="#sec-chart"source="HMPPS &middot; Offender management caseload statistics"
             />
           </div>
         </ScrollReveal>

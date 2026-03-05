@@ -76,8 +76,7 @@ export default function YoungPeopleCarePage() {
               changeText="Up 38% since 2009 &middot; poverty, domestic abuse, neglect driving rise"
               sparklineData={[60900, 67050, 69540, 75420, 80080, 82170, 83840]}
               source="DfE Children Looked After Statistics &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-children"/>
             <MetricCard
               label="Care leavers not in EET (age 19&ndash;21)"
               value="34"
@@ -87,8 +86,7 @@ export default function YoungPeopleCarePage() {
               changeText="vs 11% for all young people &middot; education gap starts in care"
               sparklineData={[35, 35, 34, 34, 34]}
               source="DfE Care Leaver Statistics &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-children"/>
             <MetricCard
               label="Care leavers going to university (age 19)"
               value="6"
@@ -98,8 +96,7 @@ export default function YoungPeopleCarePage() {
               changeText="Up from 3% in 2012 &middot; but still vs 43% of all young people"
               sparklineData={[3, 3, 4, 4, 5, 6]}
               source="DfE UCAS Care Leavers Statistics &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-children"/>
           </div>
         </ScrollReveal>
 

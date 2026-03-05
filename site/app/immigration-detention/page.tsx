@@ -95,8 +95,7 @@ export default function ImmigrationDetentionPage() {
               polarity={'up-is-bad' as const}
               changeText="Recovering towards pre-pandemic levels"
               sparklineData={[3235, 3167, 3095, 2997, 2872, 1533, 1642, 2184, 2743]}
-              onExpand={() => {}}
-              source="Home Office &middot; Immigration statistics: detention tables"
+              href="#sec-chart"source="Home Office &middot; Immigration statistics: detention tables"
             />
             <MetricCard
               label="Held for over 28 days"
@@ -106,8 +105,7 @@ export default function ImmigrationDetentionPage() {
               polarity={'up-is-bad' as const}
               changeText="Held beyond proposed time limit"
               sparklineData={[38, 39, 40, 41, 42, 36, 38, 42, 44]}
-              onExpand={() => {}}
-              source="Home Office &middot; Immigration statistics: detention tables"
+              href="#sec-chart"source="Home Office &middot; Immigration statistics: detention tables"
             />
             <MetricCard
               label="Released without removal"
@@ -117,8 +115,7 @@ export default function ImmigrationDetentionPage() {
               polarity={'up-is-bad' as const}
               changeText="Of detainees released, not removed from UK"
               sparklineData={[54, 55, 56, 57, 58, 72, 68, 63, 61]}
-              onExpand={() => {}}
-              source="Home Office &middot; Immigration statistics: detention tables"
+              href="#sec-chart"source="Home Office &middot; Immigration statistics: detention tables"
             />
           </div>
         </ScrollReveal>

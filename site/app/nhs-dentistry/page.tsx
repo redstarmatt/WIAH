@@ -112,8 +112,7 @@ export default function NhsDentistryPage() {
               polarity="up-is-bad"
               changeText="Up from 25&percnt; in 2019"
               sparklineData={[25, 28, 31, 35, 39, 41, 42]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Children&apos;s tooth extractions (hospital)"
               value="35,000"
@@ -122,8 +121,7 @@ export default function NhsDentistryPage() {
               polarity="up-is-bad"
               changeText="Most common childhood hospital procedure"
               sparklineData={[18, 21, 24, 28, 31, 33, 35]}
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
             <MetricCard
               label="NHS dentists (England)"
               value="24,200"
@@ -132,8 +130,7 @@ export default function NhsDentistryPage() {
               polarity="up-is-good"
               changeText="Down 1,100 since 2019"
               sparklineData={[25.3, 22.1, 22.8, 23.4, 24.2]}
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
           </div>
         </div>
       </section>

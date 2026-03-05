@@ -82,8 +82,7 @@ export default function PostOfficesPage() {
               changeText="Down from 18,390 in 2000 &mdash; a 39% decline"
               sparklineData={[18390, 14376, 12009, 11737, 11634, 11547, 11416, 11302, 11180]}
               source="Post Office Ltd annual data"
-              onExpand={() => {}}
-            />
+              href="#sec-branches"/>
             <MetricCard
               label="Branches lost since 2000"
               value="7,210"
@@ -92,8 +91,7 @@ export default function PostOfficesPage() {
               changeText="100&ndash;150 closures per year continue; recruitment of sub-postmasters remains difficult"
               sparklineData={[0, 4014, 6381, 6653, 6756, 6843, 6974, 7088, 7210]}
               source="Post Office Ltd"
-              onExpand={() => {}}
-            />
+              href="#sec-access"/>
             <MetricCard
               label="Rural pop. more than 3 miles from branch"
               value="15"
@@ -103,8 +101,7 @@ export default function PostOfficesPage() {
               changeText="Up from 7% in 2010; Scotland and Wales worst affected"
               sparklineData={[7, 9, 11, 12, 14, 15]}
               source="Post Office Ltd access data"
-              onExpand={() => {}}
-            />
+              href="#sec-access"/>
           </div>
         </ScrollReveal>
 

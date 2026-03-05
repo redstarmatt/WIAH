@@ -155,8 +155,7 @@ export default function ChildcarePage() {
             }
             sparklineData={[8500, 9200, 10100, 11200, 12000, 13000, 14200, 15000]}
             source="Coram Family and Childcare · Childcare Survey"
-            onExpand={() => {}}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="Childcare as % of family income"
             value="33"
@@ -168,8 +167,7 @@ export default function ChildcarePage() {
             }
             sparklineData={[22, 24, 26, 27, 28, 30, 31, 33]}
             source="OECD · Family database"
-            onExpand={() => {}}
-          />
+            href="#sec-costs"/>
           <MetricCard
             label="Nursery providers since 2015"
             value={providerData ? `−${providerData.closuresSince2015.toLocaleString('en-GB')}` : '—'}
@@ -183,8 +181,7 @@ export default function ChildcarePage() {
             }
             sparklineData={[32000, 31500, 31000, 30500, 29000, 28500, 28000, 27500]}
             source="DfE · Education provision census"
-            onExpand={() => {}}
-          />
+            href="#sec-free-hours"/>
         </div>
         </ScrollReveal>
 

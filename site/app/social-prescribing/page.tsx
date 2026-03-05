@@ -96,8 +96,7 @@ export default function SocialPrescribingPage() {
               polarity="up-is-good"
               changeText="5x growth since 2020 &middot; target 900k by 2026"
               sparklineData={[85, 180, 350, 480, 550]}
-              onExpand={() => {}}
-              source="NHS England &middot; Social Prescribing 2024"
+              href="#sec-chart"source="NHS England &middot; Social Prescribing 2024"
             />
             <MetricCard
               label="Link workers"
@@ -107,8 +106,7 @@ export default function SocialPrescribingPage() {
               polarity="up-is-good"
               changeText="From 1,000 in 2020 &middot; all PCNs now covered"
               sparklineData={[1000, 1440, 2800, 3900, 4500]}
-              onExpand={() => {}}
-              source="NHS England &middot; PCN Workforce 2024"
+              href="#sec-callout"source="NHS England &middot; PCN Workforce 2024"
             />
             <MetricCard
               label="GP demand reduction"
@@ -118,8 +116,7 @@ export default function SocialPrescribingPage() {
               polarity="up-is-good"
               changeText="Of referred patients reduce GP visits"
               sparklineData={[12, 15, 18, 21, 23]}
-              onExpand={() => {}}
-              source="NHS England &middot; Social Prescribing Evaluation 2024"
+              href="#sec-callout"source="NHS England &middot; Social Prescribing Evaluation 2024"
             />
           </div>
         </ScrollReveal>

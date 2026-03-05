@@ -82,8 +82,7 @@ export default function PublicToiletsPage() {
               changeText="Down from 5,600 in 2000 &mdash; a 58% decline"
               sparklineData={[5600, 4800, 4200, 3900, 3570, 3290, 3010, 2780, 2610, 2480, 2350]}
               source="BBC FOI research / British Toilet Association"
-              onExpand={() => {}}
-            />
+              href="#sec-count"/>
             <MetricCard
               label="Council spending on public toilets"
               value="&pound;67m"
@@ -92,8 +91,7 @@ export default function PublicToiletsPage() {
               changeText="Down from &pound;120m in 2010; 44% cut in real terms"
               sparklineData={[120, 105, 93, 84, 78, 72, 69, 67]}
               source="DLUHC Revenue Outturn"
-              onExpand={() => {}}
-            />
+              href="#sec-spending"/>
             <MetricCard
               label="Over-65s who limit outings due to lack of toilets"
               value="36"
@@ -103,8 +101,7 @@ export default function PublicToiletsPage() {
               changeText="Age UK 2023 survey; 4 in 10 people restrict time outside"
               sparklineData={[25, 28, 30, 33, 35, 36]}
               source="Age UK / Royal Society for Public Health"
-              onExpand={() => {}}
-            />
+              href="#sec-spending"/>
           </div>
         </ScrollReveal>
 

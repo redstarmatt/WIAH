@@ -111,8 +111,7 @@ export default function GenderClinicPage() {
               polarity={'up-is-bad' as const}
               changeText="2023 &middot; Up from 3,500 in 2016"
               sparklineData={[3500, 5000, 7500, 10000, 14000, 18000, 22000, 26000]}
-              onExpand={() => {}}
-            />
+              href="#sec-waiting-list"/>
             <MetricCard
               label="Average wait for first appointment"
               value="5.5"
@@ -121,8 +120,7 @@ export default function GenderClinicPage() {
               polarity={'up-is-bad' as const}
               changeText="2023 &middot; Up from 1.5 years in 2016"
               sparklineData={[1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 5.0, 5.5]}
-              onExpand={() => {}}
-            />
+              href="#sec-wait-time"/>
             <MetricCard
               label="Young people waiting (under 18)"
               value="5,000"
@@ -130,8 +128,7 @@ export default function GenderClinicPage() {
               polarity={'up-is-bad' as const}
               changeText="Peak figure &middot; Before GIDS closure"
               sparklineData={[300, 500, 800, 1500, 2500, 4000, 5000, 4800]}
-              onExpand={() => {}}
-            />
+              href="#sec-wait-time"/>
           </div>
         </ScrollReveal>
 

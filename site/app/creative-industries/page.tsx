@@ -99,8 +99,7 @@ export default function CreativeIndustriesPage() {
               changeText="Up from &pound;84bn in 2015 &middot; 6&percnt; of UK GDP &middot; 2.4 million jobs"
               sparklineData={[84, 90, 97, 105, 112, 95, 106, 116]}
               source="DCMS &middot; Economic estimates 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-gva"/>
             <MetricCard
               label="Grassroots music venues closed since 2007"
               value="35%"
@@ -109,8 +108,7 @@ export default function CreativeIndustriesPage() {
               changeText="~12 venues closing per month &middot; Down from 7,000&plus; in 2007"
               sparklineData={[6800, 6500, 6200, 5900, 5600, 5300, 5000, 4600]}
               source="Music Venue Trust &middot; Venues at Risk Report 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-venues"/>
             <MetricCard
               label="Creative workers below living wage"
               value="42%"
@@ -119,8 +117,7 @@ export default function CreativeIndustriesPage() {
               changeText="Stable at 40&ndash;44&percnt; &middot; Self-employment and portfolio work depress incomes"
               sparklineData={[40, 41, 42, 43, 44, 43, 42, 42]}
               source="Creative Industries Policy and Evidence Centre &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-venues"/>
           </div>
         </ScrollReveal>
 

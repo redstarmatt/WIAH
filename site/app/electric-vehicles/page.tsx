@@ -88,8 +88,7 @@ export default function ElectricVehiclesPage() {
               changeText="Up from 0.5&percnt; in 2018 &mdash; ZEV mandate requires 80&percnt; by 2030"
               sparklineData={[0.5, 0.7, 1.6, 3.1, 7.4, 11.6, 14.8, 16.5]}
               source="SMMT &mdash; New car registrations by fuel type"
-              onExpand={() => {}}
-            />
+              href="#sec-share"/>
             <MetricCard
               label="Public charge points"
               value="58,000"
@@ -98,8 +97,7 @@ export default function ElectricVehiclesPage() {
               changeText="1 per 54 EVs &mdash; government target: 1 per 10"
               sparklineData={[12000, 16000, 22000, 30000, 40000, 50000, 55000, 58000]}
               source="DESNZ &mdash; EV charging infrastructure statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-charging"/>
             <MetricCard
               label="EVs per public charger"
               value="54"
@@ -108,8 +106,7 @@ export default function ElectricVehiclesPage() {
               changeText="Target: 10 per charger &mdash; gap widening as EVs outpace charger rollout"
               sparklineData={[8, 12, 16, 22, 32, 45, 50, 54]}
               source="DESNZ / DVLA &mdash; calculated from fleet and infrastructure data"
-              onExpand={() => {}}
-            />
+              href="#sec-charging"/>
           </div>
         </ScrollReveal>
 

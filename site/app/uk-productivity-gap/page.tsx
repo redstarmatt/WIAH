@@ -33,7 +33,6 @@ export default function UkProductivityGapPage() {
               changeText="widened since 2008"
               sparklineData={[10,11,12,13,13,14,14,15,16]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Output per hour growth pa"
@@ -43,7 +42,6 @@ export default function UkProductivityGapPage() {
               changeText="well below pre-2008 trend of 2%"
               sparklineData={[2.0,1.8,1.5,1.2,0.9,0.7,0.5,0.4,0.4]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

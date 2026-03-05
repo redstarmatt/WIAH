@@ -123,8 +123,7 @@ export default function SchoolAbsenceTrendsPage() {
               polarity="up-is-bad"
               changeText="improving from 22.5% peak &middot; still double pre-COVID"
               sparklineData={[10.3, 10.8, 10.9, 10.9, 13.6, 22.5, 21.2, 19.8]}
-              onExpand={() => setOpenModal('persistent')}
-              source="DfE &middot; Pupil Absence in Schools 2024"
+              href="#sec-chart"source="DfE &middot; Pupil Absence in Schools 2024"
             />
             <MetricCard
               label="Severe absentees (50%+ missed)"
@@ -134,8 +133,7 @@ export default function SchoolAbsenceTrendsPage() {
               polarity="up-is-bad"
               changeText="falling but 3x pre-pandemic level"
               sparklineData={[35000, 40000, 40000, 40000, 50000, 96000, 136000, 124000]}
-              onExpand={() => setOpenModal('severe')}
-              source="DfE &middot; Attendance Data 2024"
+              href="#sec-chart"source="DfE &middot; Attendance Data 2024"
             />
             <MetricCard
               label="Authorised illness rate"
@@ -145,8 +143,7 @@ export default function SchoolAbsenceTrendsPage() {
               polarity="up-is-bad"
               changeText="illness as reason doubled &middot; long-COVID, anxiety, post-viral"
               sparklineData={[4.9, 5.0, 5.1, 5.1, 5.9, 7.2, 7.7, 7.5]}
-              onExpand={() => setOpenModal('illness')}
-              source="DfE &middot; Pupil Absence Statistics 2023"
+              href="#sec-chart"source="DfE &middot; Pupil Absence Statistics 2023"
             />
           </div>
         </ScrollReveal>

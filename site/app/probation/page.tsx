@@ -106,8 +106,7 @@ export default function ProbationPage() {
               changeText="Up from 530 in 2015 &middot; +74&percnt; &middot; Linked to privatisation-era staffing collapse"
               sparklineData={[530, 560, 590, 620, 680, 730, 790, 820]}
               source="Ministry of Justice &middot; SFO Statistics 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-sfo"/>
             <MetricCard
               label="Probation officer vacancy rate"
               value="16%"
@@ -116,8 +115,7 @@ export default function ProbationPage() {
               changeText="1 in 6 posts unfilled &middot; Recommended max caseload: 35 &middot; Actual: 60&plus;"
               sparklineData={[8, 9, 10, 12, 14, 15, 16, 16]}
               source="HMPPS &middot; Workforce Statistics 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-vacancy"/>
             <MetricCard
               label="Average caseload per officer"
               value="60+"
@@ -126,8 +124,7 @@ export default function ProbationPage() {
               changeText="Recommended maximum: 35 &middot; Some officers carrying 80&plus;"
               sparklineData={[38, 40, 42, 45, 50, 55, 58, 60]}
               source="HM Inspectorate of Probation &middot; Annual Report 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-vacancy"/>
           </div>
         </ScrollReveal>
 

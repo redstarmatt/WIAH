@@ -79,8 +79,7 @@ export default function PrivateSchoolCharityStatusPage() {
               changeText="£522m/yr · removed with Jan 2025 VAT change"
               sparklineData={[450, 460, 470, 480, 490, 500, 510, 515, 522]}
               source="Independent Schools Council / Charity Commission 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Independent school pupils"
               value="7%"
@@ -89,8 +88,7 @@ export default function PrivateSchoolCharityStatusPage() {
               changeText="7% of all pupils · fee-paying"
               sparklineData={[6.9, 6.9, 7.0, 7.0, 7.0, 6.8, 6.9, 7.0, 7.0]}
               source="ISC Annual Census 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="State vs private per-pupil gap"
               value="£10,300"
@@ -99,8 +97,7 @@ export default function PrivateSchoolCharityStatusPage() {
               changeText="£18k private avg vs £7.7k state per pupil"
               sparklineData={[7500, 7800, 8000, 8200, 8500, 8700, 9000, 9500, 10300]}
               source="DfE / ISC Funding Analysis 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

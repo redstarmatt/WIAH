@@ -82,8 +82,7 @@ export default function NoisePollutionPage() {
               changeText="Above WHO 55 dB Lden threshold; up from 8.3m in 2012"
               sparklineData={[8.3, 8.5, 8.9, 9.2, 9.5, 9.7]}
               source="DEFRA strategic noise mapping"
-              onExpand={() => {}}
-            />
+              href="#sec-complaints"/>
             <MetricCard
               label="Noise complaints (2024)"
               value="395,000"
@@ -92,8 +91,7 @@ export default function NoisePollutionPage() {
               changeText="Down from 435k peak in 2021 but still 20% above 2014 levels"
               sparklineData={[330, 345, 365, 410, 435, 420, 405, 395]}
               source="DEFRA noise statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-exposure"/>
             <MetricCard
               label="People exposed to night noise above WHO limit"
               value="2.9m"
@@ -102,8 +100,7 @@ export default function NoisePollutionPage() {
               changeText="Road traffic above 50 dB Lnight; causes significant sleep disturbance"
               sparklineData={[2.3, 2.4, 2.6, 2.7, 2.8, 2.9]}
               source="DEFRA strategic noise mapping"
-              onExpand={() => {}}
-            />
+              href="#sec-exposure"/>
           </div>
         </ScrollReveal>
 

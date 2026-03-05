@@ -98,8 +98,7 @@ export default function ActiveTravelInvestmentPage() {
               polarity={'up-is-good' as const}
               changeText="+&pound;650m since 2020 &middot; dedicated agency created"
               sparklineData={[0.20, 0.25, 0.35, 0.45, 0.48, 0.50, 0.70, 0.90, 1.1]}
-              onExpand={() => {}}
-              source="Active Travel England &middot; Investment Report 2024"
+              href="#sec-chart"source="Active Travel England &middot; Investment Report 2024"
             />
             <MetricCard
               label="Cycling share of all trips"
@@ -109,8 +108,7 @@ export default function ActiveTravelInvestmentPage() {
               polarity={'up-is-good' as const}
               changeText="+0.6pp since 2019 &middot; well below EU peers"
               sparklineData={[1.6, 1.7, 1.8, 1.8, 1.8, 2.0, 2.1, 2.2, 2.4]}
-              onExpand={() => {}}
-              source="DfT &middot; National Travel Survey 2024"
+              href="#sec-chart"source="DfT &middot; National Travel Survey 2024"
             />
             <MetricCard
               label="Cycling trips per year"
@@ -120,8 +118,7 @@ export default function ActiveTravelInvestmentPage() {
               polarity={'up-is-good' as const}
               changeText="+45% since 2019 &middot; e-bikes driving growth"
               sparklineData={[1.9, 2.0, 2.1, 2.3, 2.3, 2.5, 2.8, 3.1, 3.4]}
-              onExpand={() => {}}
-              source="DfT &middot; Cycling and Walking Investment Strategy Metrics 2024"
+              href="#sec-chart"source="DfT &middot; Cycling and Walking Investment Strategy Metrics 2024"
             />
           </div>
         </ScrollReveal>

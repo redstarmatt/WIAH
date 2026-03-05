@@ -113,8 +113,7 @@ export default function PalliativeCarePage() {
               polarity="up-is-good"
               changeText="2024 &middot; Down from 32% in 2014 &middot; 73% funded by charity"
               sparklineData={[32, 31, 30, 29, 28, 28, 34, 31, 29, 28, 27]}
-              onExpand={() => {}}
-            />
+              href="#sec-funding"/>
             <MetricCard
               label="Deaths in usual place of residence"
               value="47.5"
@@ -123,8 +122,7 @@ export default function PalliativeCarePage() {
               polarity="up-is-good"
               changeText="2024 &middot; Peaked at 52% during COVID &middot; Most people want to die at home"
               sparklineData={[45.2, 46.0, 46.8, 47.1, 47.5, 47.6, 52.4, 49.1, 48.3, 47.8, 47.5]}
-              onExpand={() => {}}
-            />
+              href="#sec-place"/>
             <MetricCard
               label="Palliative care referrals"
               value="274K"
@@ -132,8 +130,7 @@ export default function PalliativeCarePage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Up 46% since 2014 &middot; Demand growing faster than capacity"
               sparklineData={[188, 195, 203, 210, 218, 224, 231, 242, 251, 262, 274]}
-              onExpand={() => {}}
-            />
+              href="#sec-referrals"/>
           </div>
         </ScrollReveal>
 

@@ -94,8 +94,7 @@ export default function ProfitShiftingPage() {
               polarity="up-is-bad"
               changeText="up 35% since 2016 &middot; profit shifting largest element"
               sparklineData={[4.8, 5.0, 5.2, 5.6, 5.1, 5.8, 6.2, 6.5]}
-              onExpand={() => {}}
-              source="HMRC &middot; Measuring Tax Gaps 2023"
+              href="#sec-chart"source="HMRC &middot; Measuring Tax Gaps 2023"
             />
             <MetricCard
               label="Large business yield"
@@ -105,8 +104,7 @@ export default function ProfitShiftingPage() {
               polarity="up-is-good"
               changeText="HMRC enforcement up &middot; but gap growing faster"
               sparklineData={[8.9, 9.4, 10.1, 11.2, 9.8, 11.6, 12.8, 13.4]}
-              onExpand={() => {}}
-              source="HMRC &middot; 2023"
+              href="#sec-chart"source="HMRC &middot; 2023"
             />
             <MetricCard
               label="Estimated profit shifted"
@@ -116,8 +114,7 @@ export default function ProfitShiftingPage() {
               polarity="up-is-bad"
               changeText="estimated offshore annually &middot; Action Plan in place"
               sparklineData={[18, 19, 20, 21, 20, 22, 23, 24]}
-              onExpand={() => {}}
-              source="HMRC / OECD estimates &middot; 2023"
+              href="#sec-chart"source="HMRC / OECD estimates &middot; 2023"
             />
           </div>
         </ScrollReveal>

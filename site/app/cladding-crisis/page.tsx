@@ -83,8 +83,7 @@ export default function CladdingCrisisPage() {
             changeText="Identified since Grenfell 2017 &middot; likely more unidentified below 11m"
             sparklineData={[4603, 4603, 4603, 4603]}
             source="DLUHC Building Safety Remediation &middot; 2024"
-            onExpand={() => {}}
-          />
+            href="#sec-progress"/>
           <MetricCard
             label="Buildings fully remediated"
             value="30"
@@ -94,8 +93,7 @@ export default function CladdingCrisisPage() {
             changeText="Up from just 8.6% in 2021 &middot; progress accelerating but slow"
             sparklineData={[8.6, 16.1, 22.0, 30.0]}
             source="DLUHC &middot; 2024"
-            onExpand={() => {}}
-          />
+            href="#sec-buildings"/>
           <MetricCard
             label="Estimated total remediation cost"
             value="£17.6bn"
@@ -105,8 +103,7 @@ export default function CladdingCrisisPage() {
             changeText="£7.4bn still unresolved &middot; leaseholders potentially left liable"
             sparklineData={[10, 12, 15, 17.6]}
             source="DLUHC / RICS estimates &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-costs"/>
         </div>
         </ScrollReveal>
 

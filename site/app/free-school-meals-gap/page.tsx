@@ -95,8 +95,7 @@ export default function FreeSchoolMealsGapPage() {
               polarity="up-is-good"
               changeText="+59% since 2015 &middot; threshold adjusted"
               sparklineData={[1380000, 1390000, 1540000, 1790000, 1970000, 2080000, 2200000]}
-              onExpand={() => {}}
-              source="DfE &middot; Schools, Pupils and their Characteristics 2023"
+              href="#sec-chart"source="DfE &middot; Schools, Pupils and their Characteristics 2023"
             />
             <MetricCard
               label="Uptake of eligible"
@@ -106,8 +105,7 @@ export default function FreeSchoolMealsGapPage() {
               polarity="up-is-good"
               changeText="almost all eligible children now claiming"
               sparklineData={[93, 94, 94, 94, 95, 95, 95]}
-              onExpand={() => {}}
-              source="DfE &middot; Schools, Pupils and their Characteristics 2023"
+              href="#sec-chart"source="DfE &middot; Schools, Pupils and their Characteristics 2023"
             />
             <MetricCard
               label="Poverty gap children"
@@ -117,8 +115,7 @@ export default function FreeSchoolMealsGapPage() {
               polarity="up-is-bad"
               changeText="in poverty but above UC threshold &middot; policy gap"
               sparklineData={[720000, 740000, 800000, 820000, 840000, 860000, 870000]}
-              onExpand={() => {}}
-              source="CPAG / IFS analysis &middot; 2023"
+              href="#sec-chart"source="CPAG / IFS analysis &middot; 2023"
             />
           </div>
         </ScrollReveal>

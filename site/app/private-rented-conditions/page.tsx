@@ -81,8 +81,7 @@ export default function PrivateRentedConditionsPage() {
               polarity="up-is-bad"
               changeText="Slow improvement &middot; 1.1m non-decent homes remain"
               sparklineData={[24.2, 23.8, 23.1, 22.4, 21.9, 21.7, 21.6, 21.4, 21.0]}
-              onExpand={() => {}}
-              source="DLUHC &middot; English Housing Survey 2022&ndash;23"
+              href="#sec-chart"source="DLUHC &middot; English Housing Survey 2022&ndash;23"
             />
             <MetricCard
               label="Damp/mould households"
@@ -92,8 +91,7 @@ export default function PrivateRentedConditionsPage() {
               polarity="up-is-bad"
               changeText="Rising despite improvement trend &middot; Awaab&rsquo;s Law response"
               sparklineData={[1600000, 1620000, 1650000, 1680000, 1700000, 1720000, 1750000, 1800000, 1800000]}
-              onExpand={() => {}}
-              source="DLUHC &middot; English Housing Survey 2022&ndash;23"
+              href="#sec-chart"source="DLUHC &middot; English Housing Survey 2022&ndash;23"
             />
             <MetricCard
               label="HHSRS category 1 hazard rate"
@@ -103,8 +101,7 @@ export default function PrivateRentedConditionsPage() {
               polarity="up-is-bad"
               changeText="Category 1 hazards in 700k private rentals"
               sparklineData={[16, 16, 15, 15, 14, 14, 14, 14, 14]}
-              onExpand={() => {}}
-              source="DLUHC &middot; English Housing Survey 2022&ndash;23"
+              href="#sec-chart"source="DLUHC &middot; English Housing Survey 2022&ndash;23"
             />
           </div>
         </ScrollReveal>

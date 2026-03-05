@@ -79,8 +79,7 @@ export default function PostgraduateFundingPage() {
               changeText="UG + PG loans + income tax + NI combined"
               sparklineData={[55, 56, 58, 60, 61, 62, 63, 65, 68]}
               source="IFS · Graduate Repayment Analysis 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="PG applications declined 2023-24"
               value="-8%"
@@ -89,8 +88,7 @@ export default function PostgraduateFundingPage() {
               changeText="-8% taught PG applications · loan threshold effect"
               sparklineData={[0, 2, 4, 6, 5, 3, 2, 1, -8]}
               source="HESA · Higher Education Student Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Average combined graduate debt"
               value="£42,000"
@@ -99,8 +97,7 @@ export default function PostgraduateFundingPage() {
               changeText="+£14,000 since 2020 · combined UG+PG"
               sparklineData={[22000, 24000, 26000, 28000, 30000, 32000, 35000, 38000, 42000]}
               source="SLC · Student Loans Outstanding 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

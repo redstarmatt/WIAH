@@ -108,8 +108,7 @@ export default function AdultEducationPage() {
               polarity="up-is-good"
               changeText="2024 &middot; Down from 20% in 2015 &middot; Lowest among those without Level 2 qualifications"
               sparklineData={[20.1, 19.4, 18.7, 17.3, 17.0, 14.2, 15.5, 16.1, 15.8, 15.4]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="FE enrolments"
               value="2.3M"
@@ -117,8 +116,7 @@ export default function AdultEducationPage() {
               polarity="up-is-good"
               changeText="2023/24 &middot; Down 30% from 3.3M in 2015 &middot; AEB cut 40% in real terms since 2010"
               sparklineData={[3.3, 3.1, 2.9, 2.8, 2.7, 2.4, 2.5, 2.5, 2.4, 2.3]}
-              onExpand={() => {}}
-            />
+              href="#sec-participation"/>
             <MetricCard
               label="Adults without Level 2 qualifications"
               value="9M"
@@ -126,8 +124,7 @@ export default function AdultEducationPage() {
               polarity="up-is-bad"
               changeText="England &middot; Equivalent to GCSEs &middot; 17% of working-age adults &middot; Limits employment options"
               sparklineData={[10.2, 10.0, 9.8, 9.6, 9.4, 9.2, 9.1, 9.0]}
-              onExpand={() => {}}
-            />
+              href="#sec-enrolments"/>
           </div>
         </ScrollReveal>
 

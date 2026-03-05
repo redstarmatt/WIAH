@@ -83,8 +83,7 @@ export default function EnergyEfficiencyPage() {
               changeText="Up from 14% in 2012; target: 100% by 2035"
               sparklineData={[14, 19, 28, 34, 40, 46, 49]}
               source="English Housing Survey"
-              onExpand={() => {}}
-            />
+              href="#sec-epc"/>
             <MetricCard
               label="Heat pump installations (2024)"
               value="72,000"
@@ -93,8 +92,7 @@ export default function EnergyEfficiencyPage() {
               changeText="Up from 19,000 in 2017 &mdash; but 600,000/yr needed by 2028"
               sparklineData={[19, 22, 27, 32, 43, 55, 60, 72]}
               source="MCS installation data"
-              onExpand={() => {}}
-            />
+              href="#sec-heatpumps"/>
             <MetricCard
               label="Homes still rated EPC D or below"
               value="12.7m"
@@ -103,8 +101,7 @@ export default function EnergyEfficiencyPage() {
               changeText="3.2m at EPC E, F, or G &mdash; the worst categories"
               sparklineData={[17.1, 16.2, 15.4, 14.6, 13.8, 13.2, 12.7]}
               source="English Housing Survey"
-              onExpand={() => {}}
-            />
+              href="#sec-heatpumps"/>
           </div>
         </ScrollReveal>
 

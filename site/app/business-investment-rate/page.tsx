@@ -33,7 +33,6 @@ export default function BusinessInvestmentRatePage() {
               changeText="G7 average: 13.1%"
               sparklineData={[10.5,10.3,10.1,9.8,10.0,10.1,10.0,10.1,10.2]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Annual investment growth"
@@ -43,7 +42,6 @@ export default function BusinessInvestmentRatePage() {
               changeText="well below pre-2016 trend"
               sparklineData={[3.2,2.8,2.4,1.8,1.5,0.8,0.5,0.9,1.2]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

@@ -124,8 +124,7 @@ export default function LearningDisabilitiesPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Median age at death: 60 vs 83 &middot; Widened during COVID"
               sparklineData={[23, 23, 22, 23, 27, 25, 24, 23]}
-              onExpand={() => {}}
-            />
+              href="#sec-inpatients"/>
             <MetricCard
               label="People in inpatient settings"
               value="1,960"
@@ -133,8 +132,7 @@ export default function LearningDisabilitiesPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Target was &lt;1,500 by 2019 &middot; Down from 3,000 in 2015"
               sparklineData={[3000, 2765, 2505, 2400, 2260, 2085, 2040, 2005, 1985, 1960]}
-              onExpand={() => {}}
-            />
+              href="#sec-health-checks"/>
             <MetricCard
               label="Annual health check uptake"
               value="69.1"
@@ -143,8 +141,7 @@ export default function LearningDisabilitiesPage() {
               polarity="up-is-good"
               changeText="2024 &middot; Up from 37% in 2015 &middot; 31% still not checked"
               sparklineData={[37.2, 41.8, 49.7, 52.4, 56.1, 47.3, 58.6, 62.0, 66.4, 69.1]}
-              onExpand={() => {}}
-            />
+              href="#sec-mortality"/>
           </div>
         </ScrollReveal>
 

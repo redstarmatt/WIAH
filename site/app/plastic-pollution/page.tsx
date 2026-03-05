@@ -83,8 +83,7 @@ export default function PlasticPollutionPage() {
               changeText="84kg per person &mdash; 2nd highest globally after the US"
               sparklineData={[4.7, 4.9, 5.1, 5.3, 5.5, 5.6]}
               source="DEFRA UK Statistics on Waste"
-              onExpand={() => {}}
-            />
+              href="#sec-waste"/>
             <MetricCard
               label="Plastic recycling rate"
               value="44"
@@ -94,8 +93,7 @@ export default function PlasticPollutionPage() {
               changeText="Stalled for a decade; 46% of &ldquo;recycled&rdquo; plastic is exported"
               sparklineData={[44, 44, 46, 43, 44, 44]}
               source="DEFRA packaging statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-recycling"/>
             <MetricCard
               label="Single-use bag consumption reduction"
               value="97"
@@ -105,8 +103,7 @@ export default function PlasticPollutionPage() {
               changeText="Since 5p charge in 2015; from 7.6bn to 200m bags/yr at major retailers"
               sparklineData={[100, 85, 40, 20, 8, 3]}
               source="DEFRA carrier bag usage"
-              onExpand={() => {}}
-            />
+              href="#sec-recycling"/>
           </div>
         </ScrollReveal>
 

@@ -78,8 +78,7 @@ export default function RedundancyRatesPage() {
               polarity={'up-is-bad' as const}
               changeText="+45k on 2023 · highest since pandemic"
               sparklineData={[70, 75, 72, 80, 85, 130, 82, 88, 175]}
-              onExpand={() => {}}
-              source="Insolvency Service · HR1 Notifications 2024"
+              href="#sec-chart"source="Insolvency Service · HR1 Notifications 2024"
             />
             <MetricCard
               label="Redundancy rate per 1,000 employees"
@@ -89,8 +88,7 @@ export default function RedundancyRatesPage() {
               polarity={'up-is-bad' as const}
               changeText="+1.2 since 2023 · approaching 2020 levels"
               sparklineData={[3.2, 3.1, 3.0, 3.3, 3.4, 5.1, 2.9, 2.9, 4.1]}
-              onExpand={() => {}}
-              source="ONS · Labour Force Survey 2024"
+              href="#sec-chart"source="ONS · Labour Force Survey 2024"
             />
             <MetricCard
               label="Retail &amp; hospitality share"
@@ -100,8 +98,7 @@ export default function RedundancyRatesPage() {
               polarity={'up-is-bad' as const}
               changeText="31% of all 2024 notifications in two sectors"
               sparklineData={[21, 22, 22, 23, 24, 28, 22, 23, 31]}
-              onExpand={() => {}}
-              source="Insolvency Service · HR1 Notifications 2024"
+              href="#sec-chart"source="Insolvency Service · HR1 Notifications 2024"
             />
           </div>
         </ScrollReveal>

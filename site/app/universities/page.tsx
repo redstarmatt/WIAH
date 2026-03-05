@@ -401,8 +401,7 @@ export default function UniversitiesPage() {
                 : []
             }
             source="SLC · Student Loans in England 2024-25"
-            onExpand={avgDebtSeries.length > 0 ? () => setExpanded('avg-debt') : undefined}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="Graduate premium"
             value={latestEarnings ? fmtGBP(premiumGBP) : '—'}
@@ -425,8 +424,7 @@ export default function UniversitiesPage() {
                 : []
             }
             source="DfE · LEO Graduate Outcomes 2022/23"
-            onExpand={earningsSeries.length > 0 ? () => setExpanded('earnings') : undefined}
-          />
+            href="#sec-debt"/>
           <MetricCard
             label="First-class degrees"
             value={latestDegree ? latestDegree.firstPct.toFixed(0) : '—'}
@@ -447,8 +445,7 @@ export default function UniversitiesPage() {
                 : []
             }
             source="HESA · Degree classifications 2023/24"
-            onExpand={degreeFirstSeries.length > 0 ? () => setExpanded('degrees') : undefined}
-          />
+            href="#sec-outcomes"/>
         </div>
         </ScrollReveal>
 

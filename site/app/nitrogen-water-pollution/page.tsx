@@ -81,8 +81,7 @@ export default function NitrogenWaterPollutionPage() {
               polarity="up-is-bad"
               changeText="Of English rivers &middot; unchanged for years"
               sparklineData={[78, 79, 80, 81, 82, 83]}
-              onExpand={() => {}}
-              source="Environment Agency &middot; Water Framework Directive 2023"
+              href="#sec-chart"source="Environment Agency &middot; Water Framework Directive 2023"
             />
             <MetricCard
               label="NVZ coverage"
@@ -92,8 +91,7 @@ export default function NitrogenWaterPollutionPage() {
               polarity="up-is-bad"
               changeText="Of England now in nitrate vulnerable zones"
               sparklineData={[55, 55, 56, 58, 59, 60]}
-              onExpand={() => {}}
-              source="Defra &middot; NVZ Designation Review 2022"
+              href="#sec-chart"source="Defra &middot; NVZ Designation Review 2022"
             />
             <MetricCard
               label="N leaching rate"
@@ -103,8 +101,7 @@ export default function NitrogenWaterPollutionPage() {
               polarity="up-is-bad"
               changeText="Agricultural runoff from fertiliser application"
               sparklineData={[380, 378, 381, 379, 380, 380]}
-              onExpand={() => {}}
-              source="Defra &middot; Fertiliser Usage Survey 2023"
+              href="#sec-chart"source="Defra &middot; Fertiliser Usage Survey 2023"
             />
           </div>
         </ScrollReveal>

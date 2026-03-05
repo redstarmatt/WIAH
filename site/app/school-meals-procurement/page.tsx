@@ -33,7 +33,6 @@ export default function SchoolMealsProcurementPage() {
               changeText="+15% in 10 years vs 40% food inflation"
               sparklineData={[2.0,2.02,2.05,2.08,2.1,2.14,2.18,2.24,2.3]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Schools failing food standards checks"
@@ -43,7 +42,6 @@ export default function SchoolMealsProcurementPage() {
               changeText="up from 12% in 2019"
               sparklineData={[12,13,13,14,15,16,16,17,18]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

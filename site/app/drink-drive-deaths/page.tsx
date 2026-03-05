@@ -106,8 +106,7 @@ export default function DrinkDriveDeathsPage() {
               polarity="up-is-bad"
               changeText="no long-term progress since 2012"
               sparklineData={[260, 240, 250, 280, 290, 210, 260, 280, 270]}
-              onExpand={() => {}}
-              source="DfT &middot; Reported Road Casualties 2023"
+              href="#sec-chart"source="DfT &middot; Reported Road Casualties 2023"
             />
             <MetricCard
               label="Serious injuries"
@@ -117,8 +116,7 @@ export default function DrinkDriveDeathsPage() {
               polarity="up-is-bad"
               changeText="plateau in casualties since 2012 &middot; limit discussion needed"
               sparklineData={[1200, 1110, 1170, 1330, 1320, 970, 1180, 1360, 1290]}
-              onExpand={() => {}}
-              source="DfT &middot; Reported Road Casualties 2023"
+              href="#sec-chart"source="DfT &middot; Reported Road Casualties 2023"
             />
             <MetricCard
               label="England/Wales limit"
@@ -128,8 +126,7 @@ export default function DrinkDriveDeathsPage() {
               polarity="up-is-bad"
               changeText="vs Scotland&apos;s 50mg &middot; evidence supports lower limit"
               sparklineData={[80, 80, 80, 80, 80, 80, 80, 80, 80]}
-              onExpand={() => {}}
-              source="Road Traffic Act 1988 &middot; unchanged since 1967"
+              href="#sec-chart"source="Road Traffic Act 1988 &middot; unchanged since 1967"
             />
           </div>
         </ScrollReveal>

@@ -101,8 +101,7 @@ export default function KinshipCarePage() {
               changeText="Up 26&percnt; since 2019 &middot; 48&percnt; rise in SGO applications since 2018"
               sparklineData={[128, 132, 137, 141, 146, 150, 154, 158, 162]}
               source="DfE &middot; Children Looked After 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-population"/>
             <MetricCard
               label="Kinship carers receiving financial support"
               value="31%"
@@ -111,8 +110,7 @@ export default function KinshipCarePage() {
               changeText="Down from 45&percnt; in 2015 &middot; 69&percnt; receive no local authority support"
               sparklineData={[45, 43, 41, 39, 38, 36, 34, 32, 31]}
               source="Kinship &middot; State of the Nation 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-support"/>
             <MetricCard
               label="Savings to the state"
               value="&pound;4.4bn"
@@ -122,8 +120,7 @@ export default function KinshipCarePage() {
               changeText="Kinship care saves &pound;4.4bn annually vs equivalent foster placements"
               sparklineData={[3.2, 3.4, 3.6, 3.8, 4.0, 4.2, 4.4]}
               source="Kinship &middot; Cost-Benefit Analysis 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-support"/>
           </div>
         </ScrollReveal>
 

@@ -99,8 +99,7 @@ export default function HateCrimePage() {
               changeText="Record high; doubled since 2013"
               sparklineData={hateCrimeSparkline}
               source="Home Office Hate Crime Statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-trends"/>
             <MetricCard
               label="Race hate crime (% of total)"
               value="70"
@@ -110,8 +109,7 @@ export default function HateCrimePage() {
               changeText="104,000 offences; largest category"
               sparklineData={[70, 70, 70, 70, 70]}
               source="Home Office Hate Crime Statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-prosecution"/>
             <MetricCard
               label="Prosecution rate for hate crime"
               value="44"
@@ -121,8 +119,7 @@ export default function HateCrimePage() {
               changeText="Less than half of offences result in charge"
               sparklineData={prosecutionSparkline}
               source="CPS Hate Crime Report"
-              onExpand={() => {}}
-            />
+              href="#sec-breakdown"/>
           </div>
         </div>
       </section>

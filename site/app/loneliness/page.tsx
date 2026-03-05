@@ -90,7 +90,6 @@ export default function LonelinessPage() {
             polarity="up-is-bad"
             direction="up"
             changeText="9% of adults; up since pandemic"
-            onExpand={() => {}}
           />
           <MetricCard
             label="Young people (16-24) lonely often/always"
@@ -99,7 +98,6 @@ export default function LonelinessPage() {
             polarity="up-is-bad"
             direction="up"
             changeText="Highest of any age group"
-            onExpand={() => {}}
           />
           <MetricCard
             label="Estimated economic cost of loneliness per lonely person"
@@ -108,7 +106,6 @@ export default function LonelinessPage() {
             polarity="up-is-bad"
             direction="up"
             changeText="Total NHS cost: &pound;2.4bn/year"
-            onExpand={() => {}}
           />
         </div>
       </section>

@@ -100,8 +100,7 @@ export default function HomeCarePage() {
               changeText="Up from 280,000 in 2016 &middot; Doubled in eight years"
               sparklineData={[280, 310, 340, 370, 400, 430, 470, 500]}
               source="NHS England / Local authorities &middot; Adult social care data 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-waiting"/>
             <MetricCard
               label="Social care vacancies"
               value="132,000"
@@ -110,8 +109,7 @@ export default function HomeCarePage() {
               changeText="Vacancy rate 9.9&percnt; vs 3.8&percnt; whole-economy average"
               sparklineData={[88000, 95000, 102000, 110000, 165000, 152000, 140000, 132000]}
               source="Skills for Care &middot; State of the Sector 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-providers"/>
             <MetricCard
               label="Home care providers returning contracts"
               value="360"
@@ -121,8 +119,7 @@ export default function HomeCarePage() {
               changeText="Up from 140 in 2015 &middot; Providers exit as rates fall below cost"
               sparklineData={[140, 155, 188, 220, 245, 210, 260, 305, 360]}
               source="UKHCA / CQC &middot; Provider market analysis 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-providers"/>
           </div>
         </ScrollReveal>
 

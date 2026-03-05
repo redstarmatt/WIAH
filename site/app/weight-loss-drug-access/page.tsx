@@ -86,8 +86,7 @@ export default function WeightLossDrugAccessPage() {
               polarity={'up-is-good' as const}
               changeText="rapid growth but demand far outstrips supply"
               sparklineData={[12, 45, 180, 420]}
-              onExpand={() => {}}
-              source="NHS Business Services Authority &middot; Prescription Cost Analysis"
+              href="#sec-chart"source="NHS Business Services Authority &middot; Prescription Cost Analysis"
             />
             <MetricCard
               label="Eligible but not treated"
@@ -97,8 +96,7 @@ export default function WeightLossDrugAccessPage() {
               polarity={'up-is-bad' as const}
               changeText="NICE eligible &middot; NHS capacity absent"
               sparklineData={[3.4, 3.4, 3.4, 3.4]}
-              onExpand={() => {}}
-              source="NICE TA875 &middot; NHS England estimates"
+              href="#sec-callout"source="NICE TA875 &middot; NHS England estimates"
             />
             <MetricCard
               label="Weight-related NHS cost"
@@ -108,8 +106,7 @@ export default function WeightLossDrugAccessPage() {
               polarity={'up-is-bad' as const}
               changeText="obesity-related treatment costs"
               sparklineData={[5.1, 5.3, 5.6, 5.9, 6.1, 6.3, 6.5]}
-              onExpand={() => {}}
-              source="NHS England &middot; Health Economics"
+              href="#sec-callout"source="NHS England &middot; Health Economics"
             />
           </div>
         </ScrollReveal>

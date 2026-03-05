@@ -83,8 +83,7 @@ export default function WinterFuelPaymentReformPage() {
               polarity="up-is-good"
               changeText="down from 11m &middot; means test removes 85% of recipients"
               sparklineData={[11.2, 11.4, 11.3, 11.1, 11.0, 1.5]}
-              onExpand={() => {}}
-              source="DWP &middot; Winter Fuel Payment Statistics 2024"
+              href="#sec-chart"source="DWP &middot; Winter Fuel Payment Statistics 2024"
             />
             <MetricCard
               label="Additional pensioners in poverty"
@@ -94,8 +93,7 @@ export default function WinterFuelPaymentReformPage() {
               polarity="up-is-bad"
               changeText="projected additional pensioners in poverty"
               sparklineData={[0, 0, 0, 0, 0, 200]}
-              onExpand={() => {}}
-              source="JRF / IFS projections &middot; 2024"
+              href="#sec-chart"source="JRF / IFS projections &middot; 2024"
             />
             <MetricCard
               label="Fuel-poor pensioners ineligible"
@@ -105,8 +103,7 @@ export default function WinterFuelPaymentReformPage() {
               polarity="up-is-bad"
               changeText="800k pensioners in fuel poverty now not receiving payment"
               sparklineData={[800, 800, 800, 800, 800, 800]}
-              onExpand={() => {}}
-              source="Age UK / National Energy Action &middot; 2024"
+              href="#sec-chart"source="Age UK / National Energy Action &middot; 2024"
             />
           </div>
         </ScrollReveal>

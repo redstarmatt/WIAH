@@ -83,8 +83,7 @@ export default function FeCollegeFundingPage() {
               polarity="up-is-good"
               changeText="-28% real since 2010 &middot; well below HE funding"
               sparklineData={[5400, 5100, 4700, 4400, 4100, 4050, 4100, 4050, 4000, 3900]}
-              onExpand={() => {}}
-              source="ESFA &middot; FE Funding Allocations 2024"
+              href="#sec-chart"source="ESFA &middot; FE Funding Allocations 2024"
             />
             <MetricCard
               label="Colleges in financial difficulty"
@@ -94,8 +93,7 @@ export default function FeCollegeFundingPage() {
               polarity="up-is-bad"
               changeText="up from 8% in 2010 &middot; merger pressure"
               sparklineData={[8, 10, 12, 13, 14, 16, 18, 20, 21, 22]}
-              onExpand={() => {}}
-              source="ESFA &middot; College Financial Health 2024"
+              href="#sec-chart"source="ESFA &middot; College Financial Health 2024"
             />
             <MetricCard
               label="Adult skills budget"
@@ -105,8 +103,7 @@ export default function FeCollegeFundingPage() {
               polarity="up-is-bad"
               changeText="adult education budget cut by a third since 2010"
               sparklineData={[100, 92, 83, 76, 71, 70, 70, 68, 66, 65]}
-              onExpand={() => {}}
-              source="AELP &middot; Adult Education Budget Analysis 2024"
+              href="#sec-chart"source="AELP &middot; Adult Education Budget Analysis 2024"
             />
           </div>
         </ScrollReveal>

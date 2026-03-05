@@ -82,8 +82,7 @@ export default function FloodInsuranceGapsPage() {
               polarity="up-is-bad"
               changeText="Can only insure via govt-backed pool"
               sparklineData={[200000, 200000, 200000, 200000, 200000, 200000, 200000, 200000]}
-              onExpand={() => {}}
-              source="Flood Re &middot; Annual Report 2023"
+              href="#sec-chart"source="Flood Re &middot; Annual Report 2023"
             />
             <MetricCard
               label="At flood risk"
@@ -93,8 +92,7 @@ export default function FloodInsuranceGapsPage() {
               polarity="up-is-bad"
               changeText="13% of all properties &middot; growing with climate"
               sparklineData={[5000000, 5100000, 5100000, 5200000, 5200000, 5200000, 5200000, 5200000]}
-              onExpand={() => {}}
-              source="Environment Agency &middot; National Flood Risk Assessment 2023"
+              href="#sec-chart"source="Environment Agency &middot; National Flood Risk Assessment 2023"
             />
             <MetricCard
               label="Flood Re liability"
@@ -104,8 +102,7 @@ export default function FloodInsuranceGapsPage() {
               polarity="up-is-bad"
               changeText="Government contingent liability &middot; ends 2039"
               sparklineData={[1.8, 1.9, 2.0, 2.0, 2.1, 2.1, 2.2, 2.2]}
-              onExpand={() => {}}
-              source="HM Treasury &middot; Flood Re Review 2023"
+              href="#sec-chart"source="HM Treasury &middot; Flood Re Review 2023"
             />
           </div>
         </ScrollReveal>

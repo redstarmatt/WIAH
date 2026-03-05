@@ -97,8 +97,7 @@ export default function SupportedHousinShortage() {
               polarity="up-is-good"
               changeText="declining while need rises &middot; 10k lost since 2016"
               sparklineData={[458000, 456000, 454000, 452000, 451000, 450000, 449000, 448000]}
-              onExpand={() => {}}
-              source="DLUHC &middot; Supported Housing Review 2024"
+              href="#sec-chart"source="DLUHC &middot; Supported Housing Review 2024"
             />
             <MetricCard
               label="Waiting list"
@@ -108,8 +107,7 @@ export default function SupportedHousinShortage() {
               polarity="up-is-bad"
               changeText="+81% in 7 years &middot; for older and disabled people"
               sparklineData={[32000, 36000, 40000, 44000, 48000, 52000, 56000, 58000]}
-              onExpand={() => {}}
-              source="DLUHC &middot; Supported Housing Review 2024"
+              href="#sec-chart"source="DLUHC &middot; Supported Housing Review 2024"
             />
             <MetricCard
               label="Shortfall"
@@ -119,8 +117,7 @@ export default function SupportedHousinShortage() {
               polarity="up-is-bad"
               changeText="gap between need and supply &middot; growing annually"
               sparklineData={[20000, 24000, 28000, 32000, 36000, 40000, 43000, 45000]}
-              onExpand={() => {}}
-              source="Housing LIN &middot; Supported Housing Deficit Report 2024"
+              href="#sec-chart"source="Housing LIN &middot; Supported Housing Deficit Report 2024"
             />
           </div>
         </ScrollReveal>

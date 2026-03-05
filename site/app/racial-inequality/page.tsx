@@ -108,8 +108,7 @@ export default function RacialInequalityPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Bangladeshi gap: 20% &middot; Pakistani: 16% &middot; Aggregate masks wide variation"
               sparklineData={[5.6, 5.7, 5.8, 5.7, 5.8, 5.6, 5.4, 5.3, 5.2, 5.1]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Black:White unemployment ratio"
               value="2.0x"
@@ -117,8 +116,7 @@ export default function RacialInequalityPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Barely changed in 30 years &middot; Black unemployment ~7.5% vs white ~3.5%"
               sparklineData={[2.3, 2.2, 2.1, 2.1, 2.0, 2.4, 2.2, 2.1, 2.1, 2.0]}
-              onExpand={() => {}}
-            />
+              href="#sec-pay"/>
             <MetricCard
               label="White:Black African wealth ratio"
               value="9.2x"
@@ -126,8 +124,7 @@ export default function RacialInequalityPage() {
               polarity="up-is-bad"
               changeText="Median household &middot; White British: &pound;314K &middot; Black African: &pound;34K &middot; Homeownership gap: 68% vs 20%"
               sparklineData={[8.0, 8.2, 8.5, 8.7, 8.9, 9.0, 9.1, 9.2]}
-              onExpand={() => {}}
-            />
+              href="#sec-employment"/>
           </div>
         </ScrollReveal>
 

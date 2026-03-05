@@ -78,8 +78,7 @@ export default function PublicSectorPayGapPage() {
               polarity={'up-is-good' as const}
               changeText="Narrowed from -3.2% in 2022 · still negative"
               sparklineData={[0.5, 0.2, -0.3, -0.8, -1.2, -2.0, -3.2, -1.8, -0.8]}
-              onExpand={() => {}}
-              source="ONS · Annual Survey of Hours and Earnings 2024"
+              href="#sec-chart"source="ONS · Annual Survey of Hours and Earnings 2024"
             />
             <MetricCard
               label="Teacher real pay change since 2010"
@@ -89,8 +88,7 @@ export default function PublicSectorPayGapPage() {
               polarity={'up-is-good' as const}
               changeText="Improving from -12% low · still below 2010"
               sparklineData={[-2, -4, -6, -8, -10, -11, -12, -8, -4.1]}
-              onExpand={() => {}}
-              source="IFS / DfE · School Workforce Census 2024"
+              href="#sec-chart"source="IFS / DfE · School Workforce Census 2024"
             />
             <MetricCard
               label="Strike days lost 2022-23"
@@ -100,8 +98,7 @@ export default function PublicSectorPayGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Down sharply after 2023 settlements"
               sparklineData={[0.1, 0.1, 0.1, 0.1, 0.2, 0.1, 0.3, 4.2, 0.4]}
-              onExpand={() => {}}
-              source="ONS · Labour Disputes Statistics 2024"
+              href="#sec-chart"source="ONS · Labour Disputes Statistics 2024"
             />
           </div>
         </ScrollReveal>

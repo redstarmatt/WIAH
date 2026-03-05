@@ -33,7 +33,6 @@ export default function ScreenTimeWellbeingPage() {
               changeText="up from 3.5 hrs in 2018"
               sparklineData={[3.5,3.6,3.7,3.8,4.5,4.5,4.3,4.2,4.2]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Children with problematic use"
@@ -43,7 +42,6 @@ export default function ScreenTimeWellbeingPage() {
               changeText="Ofcom definition"
               sparklineData={[10,11,12,13,14,15,16,16,17]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

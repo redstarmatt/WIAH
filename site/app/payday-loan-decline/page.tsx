@@ -85,8 +85,7 @@ export default function PaydayLoanDeclinePage() {
               changeText="Down 95% from 10.3m in 2013 · FCA cap effective"
               sparklineData={[8, 6, 4, 3, 2.5, 2, 2, 2, 1.8]}
               source="FCA · Consumer Credit Market Study 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="BNPL users in arrears"
               value="1.2m"
@@ -95,8 +94,7 @@ export default function PaydayLoanDeclinePage() {
               changeText="1.2m in BNPL arrears · unregulated until 2024"
               sparklineData={[0, 0, 0.1, 0.2, 0.4, 0.7, 1.0, 1.1, 1.2]}
               source="FCA · Financial Lives Survey 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Illegal lending victims (estimate)"
               value="1.1m"
@@ -105,8 +103,7 @@ export default function PaydayLoanDeclinePage() {
               changeText="1.1m using illegal lenders · post-payday gap"
               sparklineData={[0.6, 0.7, 0.7, 0.8, 0.9, 1.0, 1.0, 1.1, 1.1]}
               source="Illegal Money Lending Teams / Centre for Responsible Credit 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

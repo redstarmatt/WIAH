@@ -95,8 +95,7 @@ export default function AmbulanceResponseTimesPage() {
               polarity="up-is-bad"
               changeText="+1.2 min above 7-min target &middot; 2017: 7.0 min"
               sparklineData={[7.0, 7.2, 7.3, 7.8, 8.0, 8.7, 8.4, 8.2]}
-              onExpand={() => {}}
-              source="NHS England &middot; Ambulance Quality Indicators 2024"
+              href="#sec-chart"source="NHS England &middot; Ambulance Quality Indicators 2024"
             />
             <MetricCard
               label="Cat 2 response time"
@@ -106,8 +105,7 @@ export default function AmbulanceResponseTimesPage() {
               polarity="up-is-bad"
               changeText="+20.6 min above 18-min target &middot; 2017: 18.0 min"
               sparklineData={[18.0, 21.4, 22.9, 29.1, 32.4, 48.3, 41.3, 38.6]}
-              onExpand={() => {}}
-              source="NHS England &middot; Ambulance Quality Indicators 2024"
+              href="#sec-chart"source="NHS England &middot; Ambulance Quality Indicators 2024"
             />
             <MetricCard
               label="Trust variation (Cat 1)"
@@ -117,8 +115,7 @@ export default function AmbulanceResponseTimesPage() {
               polarity="up-is-bad"
               changeText="best trust 7.1 min vs worst 12.3 min"
               sparklineData={[1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.7]}
-              onExpand={() => {}}
-              source="NHS England &middot; Trust-level AQI 2024"
+              href="#sec-chart"source="NHS England &middot; Trust-level AQI 2024"
             />
           </div>
         </ScrollReveal>

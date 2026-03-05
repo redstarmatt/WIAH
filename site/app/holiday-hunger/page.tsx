@@ -79,8 +79,7 @@ export default function HolidayHungerPage() {
               changeText="+300k since 2019 · FSM eligibility threshold"
               sparklineData={[1.8, 1.9, 2.0, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5]}
               source="Food Foundation / Trussell Trust 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="HAF programme reach"
               value="650,000"
@@ -89,8 +88,7 @@ export default function HolidayHungerPage() {
               changeText="650k reached · 34% of eligible children"
               sparklineData={[0, 0, 0, 0, 50000, 200000, 400000, 550000, 650000]}
               source="DfE · Holiday Activities and Food Programme 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Food bank use increase in holidays"
               value="+40%"
@@ -99,8 +97,7 @@ export default function HolidayHungerPage() {
               changeText="+40% food bank use during summer holidays"
               sparklineData={[20, 22, 24, 25, 27, 30, 33, 37, 40]}
               source="Trussell Trust · End of Year Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

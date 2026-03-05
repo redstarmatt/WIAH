@@ -107,8 +107,7 @@ export default function ViolenceAgainstWomenPage() {
               polarity="up-is-good"
               changeText="slight recovery from record low 3.2% &middot; but 10.4% in 2015"
               sparklineData={[10.4, 7.5, 4.9, 4.2, 3.9, 3.5, 3.2, 3.3]}
-              onExpand={() => {}}
-              source="CPS &middot; VAWG Report 2024"
+              href="#sec-chart"source="CPS &middot; VAWG Report 2024"
             />
             <MetricCard
               label="Reports rising"
@@ -118,8 +117,7 @@ export default function ViolenceAgainstWomenPage() {
               polarity="up-is-bad"
               changeText="reports doubled since 2015 &middot; charges flat"
               sparklineData={[39322, 58657, 73542, 63136, 67125, 71000, 74000, 72000]}
-              onExpand={() => {}}
-              source="ONS &middot; Crime Survey 2024"
+              href="#sec-chart"source="ONS &middot; Crime Survey 2024"
             />
             <MetricCard
               label="Days to charge"
@@ -129,8 +127,7 @@ export default function ViolenceAgainstWomenPage() {
               polarity="up-is-bad"
               changeText="slight improvement &middot; still nearly 18 months"
               sparklineData={[274, 274, 410, 450, 490, 547, 574, 550]}
-              onExpand={() => {}}
-              source="Home Office &middot; Rape Review Progress 2024"
+              href="#sec-chart"source="Home Office &middot; Rape Review Progress 2024"
             />
           </div>
         </ScrollReveal>

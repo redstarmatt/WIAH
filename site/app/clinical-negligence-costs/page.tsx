@@ -90,8 +90,7 @@ export default function ClinicalNegligenceCostsPage() {
               polarity="up-is-bad"
               changeText="up from &pound;1.1bn in 2014 &middot; 2.5&times; in a decade"
               sparklineData={[1.1, 1.5, 1.8, 2.2, 2.4, 2.6, 2.8, 2.8]}
-              onExpand={() => {}}
-              source="NHS Resolution &middot; Annual Report 2023/24"
+              href="#sec-chart"source="NHS Resolution &middot; Annual Report 2023/24"
             />
             <MetricCard
               label="Outstanding liability"
@@ -101,8 +100,7 @@ export default function ClinicalNegligenceCostsPage() {
               polarity="up-is-bad"
               changeText="exceeds entire NHS annual budget"
               sparklineData={[26.1, 36.4, 56.1, 65.0, 78.2, 83.4, 86.1, 86.1]}
-              onExpand={() => {}}
-              source="NHS Resolution &middot; Annual Report 2023/24"
+              href="#sec-chart"source="NHS Resolution &middot; Annual Report 2023/24"
             />
             <MetricCard
               label="Obstetric share of claims value"
@@ -112,8 +110,7 @@ export default function ClinicalNegligenceCostsPage() {
               polarity="up-is-bad"
               changeText="of total claim value &middot; birth injuries dominant"
               sparklineData={[48, 51, 54, 57, 59, 61, 63, 63]}
-              onExpand={() => {}}
-              source="NHS Resolution &middot; Maternity Claims Data 2024"
+              href="#sec-chart"source="NHS Resolution &middot; Maternity Claims Data 2024"
             />
           </div>
         </ScrollReveal>

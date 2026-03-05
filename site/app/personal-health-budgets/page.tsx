@@ -33,7 +33,6 @@ export default function PersonalHealthBudgetsPage() {
               changeText="target: 200,000 by 2024"
               sparklineData={[20,30,42,55,68,78,88,96,105]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="ICBs meeting PHB target"
@@ -43,7 +42,6 @@ export default function PersonalHealthBudgetsPage() {
               changeText="wide regional variation"
               sparklineData={[10,14,18,22,25,28,32,35,38]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

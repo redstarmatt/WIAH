@@ -33,7 +33,6 @@ export default function SchoolBuildingConditionPage() {
               changeText="RAAC and structural issues"
               sparklineData={[500,550,600,650,700,800,850,950,1100]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Maintenance backlog"
@@ -43,7 +42,6 @@ export default function SchoolBuildingConditionPage() {
               changeText="up from £6.6bn in 2017"
               sparklineData={[6.6,7.0,7.5,8.0,8.5,9.0,9.8,10.6,11.4]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

@@ -101,8 +101,7 @@ export default function AdoptionPage() {
               changeText="Down 45&percnt; from 5,360 peak in 2015 &middot; Some shift to SGOs"
               sparklineData={[5360, 4690, 4350, 3820, 3570, 3440, 2870, 2960, 2950]}
               source="DfE &middot; Children Looked After 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-orders"/>
             <MetricCard
               label="Average wait (care to adoption)"
               value="538 days"
@@ -111,8 +110,7 @@ export default function AdoptionPage() {
               changeText="Target: 426 days &middot; Children aged 5+ wait 800+ days"
               sparklineData={[487, 498, 506, 512, 520, 558, 574, 546, 538]}
               source="DfE &middot; Adoption Scorecard 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-wait"/>
             <MetricCard
               label="Adoptive families needing support"
               value="65%"
@@ -121,8 +119,7 @@ export default function AdoptionPage() {
               changeText="65&percnt; sought mental health support &middot; Only 38&percnt; received it timely"
               sparklineData={[52, 55, 58, 60, 62, 63, 64, 65]}
               source="Adoption UK &middot; Barometer 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-wait"/>
           </div>
         </ScrollReveal>
 

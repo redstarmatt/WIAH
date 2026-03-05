@@ -78,8 +78,7 @@ export default function NhsDentistryAccessPage() {
               polarity="up-is-bad"
               changeText="Out of 56m adults in England &middot; 77% unable to get NHS appointment"
               sparklineData={[35, 37, 38, 40, 43, 43]}
-              onExpand={() => {}}
-              source="NHS England survey &middot; 2023"
+              href="#sec-chart"source="NHS England survey &middot; 2023"
             />
             <MetricCard
               label="Courses of treatment completed"
@@ -89,8 +88,7 @@ export default function NhsDentistryAccessPage() {
               polarity="up-is-good"
               changeText="Down from 30.1m in 2019/20 &middot; not yet recovered from COVID"
               sparklineData={[29.8, 30.2, 30.5, 30.1, 17.0, 21.3, 23.7, 25.4]}
-              onExpand={() => {}}
-              source="NHS Business Services Authority &middot; 2022/23"
+              href="#sec-chart"source="NHS Business Services Authority &middot; 2022/23"
             />
             <MetricCard
               label="Adults seen in last 2 years"
@@ -100,8 +98,7 @@ export default function NhsDentistryAccessPage() {
               polarity="up-is-good"
               changeText="Down from 54.9% peak in 2018 &middot; COVID wiped out gains"
               sparklineData={[52.7, 54.1, 53.8, 54.9, 38.2, 43.6, 46.1]}
-              onExpand={() => {}}
-              source="NHS Digital &middot; 2022/23"
+              href="#sec-chart"source="NHS Digital &middot; 2022/23"
             />
           </div>
         </ScrollReveal>

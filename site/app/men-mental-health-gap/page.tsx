@@ -33,7 +33,6 @@ export default function MenMentalHealthGapPage() {
               changeText="three-quarters of all UK suicides"
               sparklineData={[76,76,75,75,75,75,75,75,75]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Men accessing IAPT"
@@ -43,7 +42,6 @@ export default function MenMentalHealthGapPage() {
               changeText="up from 32% but still minority"
               sparklineData={[32,33,33,34,34,35,35,36,36]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

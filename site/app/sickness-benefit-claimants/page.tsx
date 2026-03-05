@@ -92,8 +92,7 @@ export default function SicknessBenefitClaimantsPage() {
               polarity="up-is-bad"
               changeText="+45% since 2019 &middot; fastest rise in 30 years"
               sparklineData={[2.3, 2.2, 2.2, 2.2, 2.2, 2.4, 2.5, 2.8, 3.1, 3.2]}
-              onExpand={() => {}}
-              source="DWP stat-xplore &middot; 2024"
+              href="#sec-chart"source="DWP stat-xplore &middot; 2024"
             />
             <MetricCard
               label="Under-35 claimants"
@@ -103,8 +102,7 @@ export default function SicknessBenefitClaimantsPage() {
               polarity="up-is-bad"
               changeText="+87% since 2020 &middot; mental health surge"
               sparklineData={[330, 300, 290, 290, 330, 380, 430, 520, 590, 620]}
-              onExpand={() => {}}
-              source="DWP stat-xplore &middot; 2024"
+              href="#sec-chart"source="DWP stat-xplore &middot; 2024"
             />
             <MetricCard
               label="DWP health/disability cost"
@@ -114,8 +112,7 @@ export default function SicknessBenefitClaimantsPage() {
               polarity="up-is-bad"
               changeText="UC health + PIP &middot; exceeds defence budget"
               sparklineData={[14, 14, 15, 15, 15, 16, 17, 18, 20, 21]}
-              onExpand={() => {}}
-              source="DWP / OBR &middot; 2024"
+              href="#sec-chart"source="DWP / OBR &middot; 2024"
             />
           </div>
         </ScrollReveal>

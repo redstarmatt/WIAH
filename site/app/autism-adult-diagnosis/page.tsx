@@ -106,8 +106,7 @@ export default function AutismAdultDiagnosisPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 1.8 years in 2018"
               sparklineData={[1.8, 2.1, 2.4, 2.7, 3.1, 3.4, 3.6, 3.6, 3.6]}
-              onExpand={() => {}}
-              source="NHS England &middot; Autism Waiting Times"
+              href="#sec-chart"source="NHS England &middot; Autism Waiting Times"
             />
             <MetricCard
               label="On waiting list"
@@ -117,8 +116,7 @@ export default function AutismAdultDiagnosisPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 22k in 2018"
               sparklineData={[22, 34, 48, 64, 84, 105, 116, 116, 116]}
-              onExpand={() => {}}
-              source="NHS England &middot; Autism Waiting Times"
+              href="#sec-chart"source="NHS England &middot; Autism Waiting Times"
             />
             <MetricCard
               label="New diagnoses in past 5 years"
@@ -128,8 +126,7 @@ export default function AutismAdultDiagnosisPage() {
               polarity={'up-is-good' as const}
               changeText="Rising awareness and referrals"
               sparklineData={[45, 52, 41, 58, 68, 74, 78, 78, 78]}
-              onExpand={() => {}}
-              source="NHS England &middot; Autistica"
+              href="#sec-chart"source="NHS England &middot; Autistica"
             />
           </div>
         </ScrollReveal>

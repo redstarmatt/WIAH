@@ -84,8 +84,7 @@ export default function NhsHealthChecksPage() {
               polarity="up-is-good"
               changeText="down from 58% in 2015 &middot; COVID dip not recovered"
               sparklineData={[58.3, 58.0, 57.6, 57.9, 55.4, 43.7, 52.5, 48.0]}
-              onExpand={() => {}}
-              source="NHS England &middot; NHS Health Check Data 2023"
+              href="#sec-chart"source="NHS England &middot; NHS Health Check Data 2023"
             />
             <MetricCard
               label="Deprivation gap"
@@ -95,8 +94,7 @@ export default function NhsHealthChecksPage() {
               polarity="up-is-bad"
               changeText="wealthiest 57% vs most deprived 39%"
               sparklineData={[10, 11, 12, 13, 15, 14, 16, 18]}
-              onExpand={() => {}}
-              source="NHS England &middot; Health Check Inequalities Analysis 2023"
+              href="#sec-chart"source="NHS England &middot; Health Check Inequalities Analysis 2023"
             />
             <MetricCard
               label="Checks completed"
@@ -106,8 +104,7 @@ export default function NhsHealthChecksPage() {
               polarity="up-is-good"
               changeText="vs 980k in 2015 &middot; 360k fewer per year"
               sparklineData={[980000, 940000, 910000, 880000, 820000, 310000, 530000, 624000]}
-              onExpand={() => {}}
-              source="NHS England &middot; NHS Health Check Data 2023"
+              href="#sec-chart"source="NHS England &middot; NHS Health Check Data 2023"
             />
           </div>
         </ScrollReveal>

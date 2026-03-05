@@ -95,8 +95,7 @@ export default function LonelinessElderlyPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 1.2m in 2015"
               sparklineData={[1.2, 1.22, 1.25, 1.28, 1.3, 1.4, 1.42, 1.39, 1.4]}
-              onExpand={() => {}}
-              source="Age UK &middot; ELSA &middot; ONS"
+              href="#sec-chart"source="Age UK &middot; ELSA &middot; ONS"
             />
             <MetricCard
               label="Rarely see family or friends"
@@ -106,8 +105,7 @@ export default function LonelinessElderlyPage() {
               polarity={'up-is-bad' as const}
               changeText="9&ndash;11% over-65s affected"
               sparklineData={[9, 9, 9, 10, 10, 11, 10, 10, 10]}
-              onExpand={() => {}}
-              source="ONS &middot; Community Life Survey"
+              href="#sec-chart"source="ONS &middot; Community Life Survey"
             />
             <MetricCard
               label="Increased premature death risk"
@@ -117,8 +115,7 @@ export default function LonelinessElderlyPage() {
               polarity={'up-is-bad' as const}
               changeText="Meta-analysis of loneliness studies"
               sparklineData={[26, 26, 26, 26, 26, 26, 26, 26, 26]}
-              onExpand={() => {}}
-              source="Holt-Lunstad et al &middot; ELSA"
+              href="#sec-chart"source="Holt-Lunstad et al &middot; ELSA"
             />
           </div>
         </ScrollReveal>

@@ -96,8 +96,7 @@ export default function SchoolMealsStandardsPage() {
               polarity="up-is-good"
               changeText="steady improvement &middot; primary &gt; secondary"
               sparklineData={[87, 88, 89, 88, 89, 89]}
-              onExpand={() => {}}
-              source="DfE &middot; School Food Standards Report 2024"
+              href="#sec-chart"source="DfE &middot; School Food Standards Report 2024"
             />
             <MetricCard
               label="FSM uptake by eligible children"
@@ -107,8 +106,7 @@ export default function SchoolMealsStandardsPage() {
               polarity="up-is-good"
               changeText="of eligible children claiming &middot; up from 84%"
               sparklineData={[84, 85, 85, 86, 87, 88]}
-              onExpand={() => {}}
-              source="DfE &middot; Free School Meals Statistics 2024"
+              href="#sec-chart"source="DfE &middot; Free School Meals Statistics 2024"
             />
             <MetricCard
               label="Universal eligibility"
@@ -118,8 +116,7 @@ export default function SchoolMealsStandardsPage() {
               polarity="up-is-bad"
               changeText="UIFSM ends at Year 2 &middot; children 7+ lose free meal"
               sparklineData={[88, 88, 87, 88, 88, 88]}
-              onExpand={() => {}}
-              source="DfE &middot; UIFSM Programme Statistics 2024"
+              href="#sec-chart"source="DfE &middot; UIFSM Programme Statistics 2024"
             />
           </div>
         </ScrollReveal>

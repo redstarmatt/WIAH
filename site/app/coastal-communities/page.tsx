@@ -102,8 +102,7 @@ export default function CoastalCommunitiesPage() {
               polarity="up-is-good"
               changeText="2023 &middot; Gap widened from &ndash;12% in 2010 &middot; Average wages in coastal communities"
               source="ONS Annual Survey of Hours &amp; Earnings"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Coastal child poverty rate"
               value="34%"
@@ -111,8 +110,7 @@ export default function CoastalCommunitiesPage() {
               polarity="up-is-bad"
               changeText="vs 24% national average &middot; 10 percentage point gap"
               source="DLUHC English Indices of Deprivation"
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
             <MetricCard
               label="Net population migration from coastal towns (2010&ndash;2019 average)"
               value="&ndash;8,000"
@@ -121,8 +119,7 @@ export default function CoastalCommunitiesPage() {
               polarity="up-is-good"
               changeText="Young people leaving for cities &middot; COVID briefly reversed trend in 2020"
               source="ONS Migration Statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
           </div>
         </section>
 

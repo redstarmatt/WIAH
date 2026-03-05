@@ -2,9 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "WIAH goofy-pike",
+      "name": "WIAH sharp-allen",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["--prefix", "site", "run", "dev"],
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "site",
       "port": 3000,
       "autoPort": true
     }

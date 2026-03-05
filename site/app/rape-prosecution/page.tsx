@@ -104,8 +104,7 @@ export default function RapeProsecutionPage() {
               changeText="Down from 7.5% in 2015 &middot; partial recovery from 1.4% low"
               sparklineData={[7.5, 5.6, 4.2, 3.0, 1.6, 1.4, 1.3, 2.1, 2.5, 2.9]}
               source="CPS &middot; Violence Against Women and Girls Report, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-charge-rate"/>
             <MetricCard
               label="Reported rape offences"
               value="68,400"
@@ -115,8 +114,7 @@ export default function RapeProsecutionPage() {
               changeText="Doubled since 2015 &middot; most do not reach court"
               sparklineData={[34292, 41186, 53977, 58657, 58856, 55130, 63136, 70633, 67125, 68400]}
               source="ONS &middot; Police Recorded Crime, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-reported"/>
             <MetricCard
               label="Average days report to trial"
               value="1,033"
@@ -126,8 +124,7 @@ export default function RapeProsecutionPage() {
               changeText="Nearly 3 years from report to Crown Court trial"
               sparklineData={[450, 520, 600, 700, 780, 850, 920, 980, 1033]}
               source="Ministry of Justice &middot; Criminal Court Statistics, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-reported"/>
           </div>
         </ScrollReveal>
 

@@ -85,8 +85,7 @@ export default function StartupInvestmentPage() {
               polarity="up-is-good"
               changeText="recovering from 2023 low &middot; still half 2021 peak"
               sparklineData={[4.8, 6.1, 8.3, 11.9, 14.2, 29.4, 17.2, 13.2, 15.1]}
-              onExpand={() => {}}
-              source="Beauhurst / DCMS Tech Nation &middot; 2024"
+              href="#sec-chart"source="Beauhurst / DCMS Tech Nation &middot; 2024"
             />
             <MetricCard
               label="UK unicorn companies"
@@ -96,8 +95,7 @@ export default function StartupInvestmentPage() {
               polarity="up-is-good"
               changeText="3rd globally behind US and China"
               sparklineData={[29, 38, 53, 72, 98, 118, 133, 147, 154]}
-              onExpand={() => {}}
-              source="Beauhurst / DCMS Tech Nation &middot; 2024"
+              href="#sec-callout"source="Beauhurst / DCMS Tech Nation &middot; 2024"
             />
             <MetricCard
               label="London share of investment"
@@ -107,8 +105,7 @@ export default function StartupInvestmentPage() {
               polarity="up-is-bad"
               changeText="concentration risk &middot; regional gap growing"
               sparklineData={[61, 62, 63, 62, 63, 64, 63, 62, 62]}
-              onExpand={() => {}}
-              source="Beauhurst &middot; 2024"
+              href="#sec-callout"source="Beauhurst &middot; 2024"
             />
           </div>
         </ScrollReveal>

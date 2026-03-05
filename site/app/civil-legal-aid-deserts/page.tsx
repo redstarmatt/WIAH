@@ -95,8 +95,7 @@ export default function CivilLegalAidDesertsPage() {
               polarity={'up-is-bad' as const}
               changeText="Of local authority areas — up from 21% in 2010"
               sparklineData={[21, 24, 27, 33, 36, 38, 40, 43, 46]}
-              onExpand={() => {}}
-              source="Law Society &middot; Legal aid desert mapping"
+              href="#sec-chart"source="Law Society &middot; Legal aid desert mapping"
             />
             <MetricCard
               label="Fall in legal aid cases since 2010"
@@ -106,8 +105,7 @@ export default function CivilLegalAidDesertsPage() {
               polarity={'up-is-bad' as const}
               changeText="From 968,000 to under 400,000 annually"
               sparklineData={[968, 924, 876, 598, 527, 489, 467, 445, 421]}
-              onExpand={() => {}}
-              source="Ministry of Justice &middot; Legal aid statistics"
+              href="#sec-chart"source="Ministry of Justice &middot; Legal aid statistics"
             />
             <MetricCard
               label="Litigants in person in family courts"
@@ -117,8 +115,7 @@ export default function CivilLegalAidDesertsPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 17% in 2010"
               sparklineData={[17, 19, 21, 25, 27, 28, 29, 30, 31]}
-              onExpand={() => {}}
-              source="HMCTS &middot; Family court statistics"
+              href="#sec-chart"source="HMCTS &middot; Family court statistics"
             />
           </div>
         </ScrollReveal>

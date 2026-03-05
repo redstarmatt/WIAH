@@ -111,8 +111,7 @@ export default function EyeCarePage() {
               polarity={'up-is-bad' as const}
               changeText="2024 &middot; Up 57% from 400K in 2018"
               sparklineData={[400, 430, 460, 490, 520, 560, 600, 630]}
-              onExpand={() => {}}
-            />
+              href="#sec-waiting-list"/>
             <MetricCard
               label="Patients at risk of preventable sight loss"
               value="22,000"
@@ -120,8 +119,7 @@ export default function EyeCarePage() {
               polarity={'up-is-bad' as const}
               changeText="Delayed beyond safe clinical intervals"
               sparklineData={[8000, 10000, 12000, 15000, 18000, 20000, 21000, 22000]}
-              onExpand={() => {}}
-            />
+              href="#sec-18-weeks"/>
             <MetricCard
               label="Patients waiting 18+ weeks"
               value="250K"
@@ -129,8 +127,7 @@ export default function EyeCarePage() {
               polarity={'up-is-bad' as const}
               changeText="2024 &middot; Breaching NHS constitution standard"
               sparklineData={[130, 145, 160, 180, 200, 220, 245, 250]}
-              onExpand={() => {}}
-            />
+              href="#sec-18-weeks"/>
           </div>
         </ScrollReveal>
 

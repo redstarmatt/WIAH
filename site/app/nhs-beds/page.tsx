@@ -122,8 +122,7 @@ export default function NHSBedsPage() {
               polarity="up-is-good"
               changeText="2022/23 &middot; Down from 300K in 1987 &middot; Lowest per capita in Western Europe &middot; 10K more beds needed (NHS estimate)"
               sparklineData={[135, 130, 126, 122, 115, 110, 103, 99]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="NHS bed occupancy rate"
               value="94%"
@@ -131,8 +130,7 @@ export default function NHSBedsPage() {
               polarity="up-is-bad"
               changeText="2022/23 &middot; Safety threshold: 85% &middot; Highest ever recorded &middot; Infection risk rises sharply above 85%"
               sparklineData={[87.5, 88.0, 88.5, 89.2, 89.9, 86.5, 91.0, 94.0]}
-              onExpand={() => {}}
-            />
+              href="#sec-beds"/>
             <MetricCard
               label="Beds occupied by discharge-delayed patients"
               value="1 in 5"
@@ -140,8 +138,7 @@ export default function NHSBedsPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; 13,500 daily &middot; Social care vacancies main cause &middot; Costs NHS &pound;1bn per year"
               sparklineData={[5, 6, 7, 7, 8, 5, 15, 18, 20]}
-              onExpand={() => {}}
-            />
+              href="#sec-occupancy"/>
           </div>
         </ScrollReveal>
 

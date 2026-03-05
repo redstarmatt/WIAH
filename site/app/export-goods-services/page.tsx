@@ -97,8 +97,7 @@ export default function ExportGoodsServicesPage() {
               polarity="up-is-good"
               changeText="record high &middot; finance, professional services, tech"
               sparklineData={[284, 291, 297, 308, 322, 271, 306, 368, 400]}
-              onExpand={() => {}}
-              source="ONS &middot; UK Trade in Services 2023"
+              href="#sec-chart"source="ONS &middot; UK Trade in Services 2023"
             />
             <MetricCard
               label="Goods exports 2023"
@@ -108,8 +107,7 @@ export default function ExportGoodsServicesPage() {
               polarity="up-is-good"
               changeText="below 2022 &middot; energy price distortion unwinding"
               sparklineData={[288, 302, 339, 347, 348, 296, 336, 394, 367]}
-              onExpand={() => {}}
-              source="ONS &middot; UK Trade in Goods 2023"
+              href="#sec-callout"source="ONS &middot; UK Trade in Goods 2023"
             />
             <MetricCard
               label="Trade deficit"
@@ -119,8 +117,7 @@ export default function ExportGoodsServicesPage() {
               polarity="up-is-bad"
               changeText="persistent deficit &middot; £13bn in energy alone"
               sparklineData={[36, 38, 31, 33, 28, 34, 42, 31, 36]}
-              onExpand={() => {}}
-              source="ONS &middot; UK Trade Statistics 2023"
+              href="#sec-callout"source="ONS &middot; UK Trade Statistics 2023"
             />
           </div>
         </ScrollReveal>

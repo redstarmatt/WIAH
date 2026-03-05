@@ -88,8 +88,7 @@ export default function CoastalErosionRiskPage() {
               polarity="up-is-bad"
               changeText="25% more than 2010 &middot; no compensation scheme"
               sparklineData={[78000, 84000, 91000, 100000, 116000]}
-              onExpand={() => {}}
-              source="Environment Agency &middot; NFCERMS 2024"
+              href="#sec-chart"source="Environment Agency &middot; NFCERMS 2024"
             />
             <MetricCard
               label="Properties already lost"
@@ -99,8 +98,7 @@ export default function CoastalErosionRiskPage() {
               polarity="up-is-bad"
               changeText="Irreversible &middot; sea has claimed entire streets"
               sparklineData={[820, 980, 1100, 1200, 1200]}
-              onExpand={() => {}}
-              source="Environment Agency &middot; 2024"
+              href="#sec-chart"source="Environment Agency &middot; 2024"
             />
             <MetricCard
               label="Managed retreat sites"
@@ -110,8 +108,7 @@ export default function CoastalErosionRiskPage() {
               polarity="up-is-good"
               changeText="Deliberate flooding of farmland for coastal defence"
               sparklineData={[4, 7, 10, 14, 18]}
-              onExpand={() => {}}
-              source="Environment Agency &middot; 2024"
+              href="#sec-chart"source="Environment Agency &middot; 2024"
             />
           </div>
         </ScrollReveal>

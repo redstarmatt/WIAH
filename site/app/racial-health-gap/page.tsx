@@ -96,8 +96,7 @@ export default function RacialHealthGapPage() {
               polarity="up-is-bad"
               changeText="Unchanged for 20 years &middot; 2019&ndash;21 MBRRACE data"
               sparklineData={[3.5, 3.6, 3.7, 3.7, 3.8, 3.7, 3.7, 3.7]}
-              onExpand={() => {}}
-              source="MBRRACE-UK &middot; 2021"
+              href="#sec-detentions"source="MBRRACE-UK &middot; 2021"
             />
             <MetricCard
               label="Mental Health Act: Black vs white detention rate"
@@ -107,8 +106,7 @@ export default function RacialHealthGapPage() {
               polarity="up-is-bad"
               changeText="Black people detained at 4&times; rate per million vs white &middot; rising"
               sparklineData={[3.5, 3.7, 3.8, 3.9, 4.0, 4.0]}
-              onExpand={() => {}}
-              source="NHS Mental Health Act Stats &middot; 2022/23"
+              href="#sec-maternal"source="NHS Mental Health Act Stats &middot; 2022/23"
             />
             <MetricCard
               label="South Asian T2 diabetes risk vs white"
@@ -118,8 +116,7 @@ export default function RacialHealthGapPage() {
               polarity="up-is-bad"
               changeText="Pakistani-heritage 3.5&times;, Bangladeshi 3.8&times; higher risk"
               sparklineData={[3.2, 3.3, 3.4, 3.5, 3.5, 3.5]}
-              onExpand={() => {}}
-              source="Diabetes UK / NHS Digital"
+              href="#sec-diabetes"source="Diabetes UK / NHS Digital"
             />
           </div>
         </ScrollReveal>

@@ -86,8 +86,7 @@ export default function FemaleEntrepreneurshipPage() {
               polarity={'up-is-good' as const}
               changeText="+7pp since 2014 · target: 33% by 2030"
               sparklineData={[17, 18, 18, 19, 20, 21, 22, 23, 24]}
-              onExpand={() => {}}
-              source="British Business Bank · Invested in Women Report 2024"
+              href="#sec-chart"source="British Business Bank · Invested in Women Report 2024"
             />
             <MetricCard
               label="VC to female founders"
@@ -97,8 +96,7 @@ export default function FemaleEntrepreneurshipPage() {
               polarity={'up-is-good' as const}
               changeText="+1p since 2019 · still far below parity"
               sparklineData={[1, 1, 1, 1, 1, 1.2, 1.5, 1.8, 2]}
-              onExpand={() => {}}
-              source="Dealroom / British Business Bank 2024"
+              href="#sec-chart"source="Dealroom / British Business Bank 2024"
             />
             <MetricCard
               label="Female-founded SME turnover"
@@ -108,8 +106,7 @@ export default function FemaleEntrepreneurshipPage() {
               polarity={'up-is-good' as const}
               changeText="+£32bn since 2017 · growing 2× faster"
               sparklineData={[73, 78, 82, 87, 91, 93, 96, 100, 105]}
-              onExpand={() => {}}
-              source="Rose Review / HMRC Business Survey 2024"
+              href="#sec-chart"source="Rose Review / HMRC Business Survey 2024"
             />
           </div>
         </ScrollReveal>

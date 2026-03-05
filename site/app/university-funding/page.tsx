@@ -124,7 +124,6 @@ export default function UniversityFundingPage() {
               polarity="up-is-bad"
               changeText="2022/23 · Up from &pound;16,200 in 2011/12 · Plan 5 (2023+): repay for 40 years · 72% never repay in full under Plan 2"
               sparklineData={[16200, 20500, 25600, 29400, 33900, 38200, 41300, 43500, 45800]}
-              onExpand={() => {}}
             />
             <MetricCard
               label="Tuition fee (real terms, 2023 prices)"
@@ -134,7 +133,6 @@ export default function UniversityFundingPage() {
               polarity="up-is-good"
               changeText="2023 · Nominal fee &pound;9,250 unchanged since 2017 · Real-terms cut of &pound;2,450 since 2017 · 40% of providers in financial difficulty (OfS)"
               sparklineData={[9000, 9250, 9250, 9250, 9250, 9000, 8600, 8100, 7600, 7100, 6800]}
-              onExpand={() => {}}
             />
             <MetricCard
               label="International students in UK"
@@ -144,7 +142,6 @@ export default function UniversityFundingPage() {
               polarity="up-is-good"
               changeText="2022/23 · 26% of all students · Up from 425K in 2015 · &pound;25bn contribution to UK economy · Govt. sought to reduce post-study work visas"
               sparklineData={[350, 370, 395, 410, 425, 440, 460, 490, 540, 600, 650, 680]}
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

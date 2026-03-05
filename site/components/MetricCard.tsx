@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import DirectionArrow, { Direction, Polarity } from './DirectionArrow';
 import Sparkline from './charts/Sparkline';
 
@@ -13,6 +14,7 @@ interface MetricCardProps {
   baseline?: string;
   sparklineData?: number[];
   source?: string;
+  href?: string;
   onExpand?: () => void;
 }
 
@@ -41,10 +43,11 @@ export default function MetricCard({
   baseline,
   sparklineData,
   source,
+  href,
   onExpand,
 }: MetricCardProps) {
   const sparkColour = getSparklineColour(direction, polarity);
-  const isClickable = !!onExpand;
+  const isClickable = !!href || !!onExpand;
 
   const content = (
     <>
@@ -80,7 +83,18 @@ export default function MetricCard({
     </>
   );
 
-  if (isClickable) {
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className="block border border-wiah-border rounded-lg p-5 bg-white transition-colors hover:border-wiah-blue hover:bg-slate-50"
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  if (onExpand) {
     return (
       <button
         type="button"

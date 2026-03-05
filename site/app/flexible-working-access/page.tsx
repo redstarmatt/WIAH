@@ -99,8 +99,7 @@ export default function FlexibleWorkingAccessPage() {
               polarity="up-is-good"
               changeText="Up from 74% in 2018 &middot; Day 1 right from April 2024"
               sparklineData={[74, 75, 73, 77, 78, 78]}
-              onExpand={() => {}}
-              source="BEIS / Flex Appeal &middot; 2023"
+              href="#sec-chart"source="BEIS / Flex Appeal &middot; 2023"
             />
             <MetricCard
               label="Flex jobs advertised"
@@ -110,8 +109,7 @@ export default function FlexibleWorkingAccessPage() {
               polarity="up-is-good"
               changeText="Doubled since 2018 &middot; up from 16%"
               sparklineData={[16, 19, 24, 27, 29, 31]}
-              onExpand={() => {}}
-              source="Timewise / Flex Appeal &middot; 2023"
+              href="#sec-callout"source="Timewise / Flex Appeal &middot; 2023"
             />
             <MetricCard
               label="Low-income flex access"
@@ -121,8 +119,7 @@ export default function FlexibleWorkingAccessPage() {
               polarity="up-is-bad"
               changeText="vs 68% for high earners &middot; structural inequality"
               sparklineData={[28, 28, 30, 33, 36, 39]}
-              onExpand={() => {}}
-              source="ONS LFS / Timewise &middot; 2023"
+              href="#sec-callout"source="ONS LFS / Timewise &middot; 2023"
             />
           </div>
         </ScrollReveal>

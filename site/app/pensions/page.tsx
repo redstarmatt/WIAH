@@ -162,8 +162,7 @@ export default function PensionsPage() {
             polarity="up-is-good"
             changeText="2025/26 · Up 127% since 2010 · Triple lock: highest of earnings, CPI, or 2.5%"
             sparklineData={[97.65, 102.15, 107.45, 110.15, 113.10, 115.95, 119.30, 122.30, 125.95, 129.20, 134.25, 137.60, 141.85, 156.20, 169.50, 221.20]}
-            onExpand={() => {}}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="Workers auto-enrolled in pension"
             value="22.6M"
@@ -172,8 +171,7 @@ export default function PensionsPage() {
             polarity="up-is-good"
             changeText="2023 · 88% of eligible workers · Up from 0.9M in 2012 · Largest expansion of pension saving in UK history"
             sparklineData={[0.9, 2.1, 5.2, 8.4, 14.3, 18.7, 20.1, 21.1, 21.5, 22.0, 22.3, 22.6]}
-            onExpand={() => {}}
-          />
+            href="#sec-state-pension"/>
           <MetricCard
             label="Pensioners in poverty (AHC)"
             value="19.1%"
@@ -182,8 +180,7 @@ export default function PensionsPage() {
             polarity="up-is-bad"
             changeText="2023 · 2.1 million pensioners · Rising since 2016 low of 15.4% · Cost-of-living crisis reversed progress"
             sparklineData={[20.0, 19.2, 18.1, 17.0, 16.2, 16.0, 15.4, 15.9, 15.8, 17.0, 17.6, 18.1, 18.7, 19.1]}
-            onExpand={() => {}}
-          />
+            href="#sec-auto-enrolment"/>
         </div>
         </ScrollReveal>
 

@@ -106,8 +106,7 @@ export default function EvictionsPage() {
               changeText="Up from 8,000 during COVID moratorium &middot; At highest level since 2017"
               sparklineData={[18000, 20000, 19000, 17000, 8000, 16000, 22000, 25000]}
               source="Ministry of Justice &middot; Landlord possession statistics 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-notices"/>
             <MetricCard
               label="Landlord possession claims"
               value="28,400"
@@ -116,8 +115,7 @@ export default function EvictionsPage() {
               changeText="Up from 8,000 in 2020 &middot; Highest since 2017"
               sparklineData={[21000, 22000, 23000, 24000, 8000, 18000, 25000, 28400]}
               source="Ministry of Justice &middot; Civil justice statistics 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-homeless"/>
             <MetricCard
               label="Households made homeless via Section 21"
               value="24,000"
@@ -127,8 +125,7 @@ export default function EvictionsPage() {
               changeText="Up from 12,000 in 2015 &middot; 58&percnt; have dependent children"
               sparklineData={[12000, 13500, 15200, 17100, 18400, 7200, 14600, 20300, 24000]}
               source="DLUHC &middot; Statutory homelessness statistics 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-homeless"/>
           </div>
         </ScrollReveal>
 

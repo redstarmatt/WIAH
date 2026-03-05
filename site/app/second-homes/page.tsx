@@ -124,8 +124,7 @@ export default function SecondHomesPage() {
               changeText="Up from 178,000 in 2010 &middot; +53&percnt; in 13 years"
               sparklineData={[178, 195, 210, 225, 238, 250, 262, 272]}
               source="DLUHC &middot; Council Tax Statistics 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-stock"/>
             <MetricCard
               label="Short-term lets (Airbnb-style)"
               value="230,000"
@@ -134,8 +133,7 @@ export default function SecondHomesPage() {
               changeText="Up from 50,000 in 2016 &middot; Market barely existed before 2015"
               sparklineData={[50, 80, 110, 140, 160, 175, 210, 230]}
               source="AirDNA &middot; UK Short-Term Rental Market Report 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-prices"/>
             <MetricCard
               label="LAs where 20&percnt;+ properties are second homes/STLs"
               value="47"
@@ -144,8 +142,7 @@ export default function SecondHomesPage() {
               changeText="Includes St Ives, Whitby, Tenby, Ambleside, Padstow"
               sparklineData={[22, 25, 28, 31, 34, 38, 43, 47]}
               source="DLUHC &middot; Local housing statistics 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-prices"/>
           </div>
         </ScrollReveal>
 

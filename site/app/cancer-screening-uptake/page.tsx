@@ -100,8 +100,7 @@ export default function CancerScreeningUptakePage() {
               polarity="up-is-good"
               changeText="target 80% &middot; peak 74.2% in 2015"
               sparklineData={[74.2, 73.1, 72.0, 71.4, 70.1, 65.0, 68.3, 68.5]}
-              onExpand={() => {}}
-              source="NHS England &middot; Cervical Screening Programme 2023"
+              href="#sec-positive"source="NHS England &middot; Cervical Screening Programme 2023"
             />
             <MetricCard
               label="Breast screening uptake"
@@ -111,8 +110,7 @@ export default function CancerScreeningUptakePage() {
               polarity="up-is-good"
               changeText="target 80% &middot; missed since 2008"
               sparklineData={[76.8, 75.9, 75.4, 74.9, 74.2, 65.0, 70.1, 74.4]}
-              onExpand={() => {}}
-              source="NHS England &middot; Breast Screening Programme 2023"
+              href="#sec-chart"source="NHS England &middot; Breast Screening Programme 2023"
             />
             <MetricCard
               label="Bowel screening uptake"
@@ -122,8 +120,7 @@ export default function CancerScreeningUptakePage() {
               polarity="up-is-good"
               changeText="target 75% &middot; improved from 58.4% in 2015"
               sparklineData={[58.4, 58.9, 59.4, 60.4, 61.2, 55.0, 60.1, 66.4]}
-              onExpand={() => {}}
-              source="NHS England &middot; Bowel Cancer Screening Programme 2023"
+              href="#sec-chart"source="NHS England &middot; Bowel Cancer Screening Programme 2023"
             />
           </div>
         </ScrollReveal>

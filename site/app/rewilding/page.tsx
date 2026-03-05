@@ -88,8 +88,7 @@ export default function RewildingPage() {
               changeText="Target: 30&percnt; by 2030 &mdash; barely moving despite pledges"
               sparklineData={[2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2]}
               source="DEFRA &mdash; 30x30 ecological condition assessment"
-              onExpand={() => {}}
-            />
+              href="#sec-protected"/>
             <MetricCard
               label="UK species in long-term decline since 1970"
               value="41"
@@ -99,8 +98,7 @@ export default function RewildingPage() {
               changeText="State of Nature 2023 &mdash; 15&percnt; at risk of extinction"
               sparklineData={[26, 28, 30, 33, 35, 37, 39, 41]}
               source="RSPB / JNCC &mdash; State of Nature 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-species"/>
             <MetricCard
               label="Sea meeting 30x30 standard"
               value="8"
@@ -110,8 +108,7 @@ export default function RewildingPage() {
               changeText="Target: 30&percnt; by 2030 &mdash; most MPAs lack effective management"
               sparklineData={[5, 5.5, 6, 6.5, 7, 7.5, 7.8, 8]}
               source="JNCC &mdash; UK Marine Protected Area network 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-species"/>
           </div>
         </ScrollReveal>
 

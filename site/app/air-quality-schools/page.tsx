@@ -71,8 +71,7 @@ export default function AirQualitySchoolsPage() {
               changeText="-180k since 2019 · ULEZ progress in London"
               sparklineData={[1150, 1120, 1100, 1080, 1060, 1050, 1030, 1000, 970]}
               source="ClientEarth / GLA · Air Quality Schools Analysis 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Schools exceeding WHO NO2 limit"
               value="8,500"
@@ -81,8 +80,7 @@ export default function AirQualitySchoolsPage() {
               changeText="Down from 10,200 · improving but widespread"
               sparklineData={[10200, 10000, 9800, 9500, 9200, 9100, 8900, 8700, 8500]}
               source="DEFRA · Air Quality in Schools 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="London NO2 near schools"
               value="up to 5× WHO"
@@ -91,8 +89,7 @@ export default function AirQualitySchoolsPage() {
               changeText="Improving but still far above safe levels"
               sparklineData={[7, 7, 6, 6, 6, 5.5, 5.5, 5, 5]}
               source="King's College London · Air Quality Monitoring 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

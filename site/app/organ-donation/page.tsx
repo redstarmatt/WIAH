@@ -123,8 +123,7 @@ export default function OrganDonationPage() {
               polarity="up-is-bad"
               changeText="UK, 2024 &middot; Down from 7,048 in 2020 &middot; ~350 die waiting each year"
               sparklineData={[7026, 6943, 6744, 6434, 6174, 6147, 7048, 6866, 6728, 6527, 6342]}
-              onExpand={() => {}}
-            />
+              href="#sec-waiting"/>
             <MetricCard
               label="Transplants performed"
               value="4,891"
@@ -132,8 +131,7 @@ export default function OrganDonationPage() {
               polarity="up-is-good"
               changeText="UK, 2024 &middot; Recovering from COVID low of 3,722 &middot; Pre-COVID peak: 5,090"
               sparklineData={[4655, 4605, 4753, 4943, 5090, 4867, 3722, 4408, 4619, 4753, 4891]}
-              onExpand={() => {}}
-            />
+              href="#sec-transplants"/>
             <MetricCard
               label="Family consent rate"
               value="72.8"
@@ -142,8 +140,7 @@ export default function OrganDonationPage() {
               polarity="up-is-good"
               changeText="2024 &middot; Up from 58% in 2014 &middot; Opt-out law since May 2020"
               sparklineData={[58.3, 60.1, 62.4, 63.8, 67.1, 67.4, 65.2, 68.1, 69.7, 71.2, 72.8]}
-              onExpand={() => {}}
-            />
+              href="#sec-consent"/>
           </div>
         </ScrollReveal>
 

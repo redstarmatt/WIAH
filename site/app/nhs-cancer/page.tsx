@@ -120,8 +120,7 @@ export default function NHSCancerPage() {
               polarity="up-is-good"
               changeText="2023 &middot; Target: 85% &middot; Not met since 2015 &middot; 16,200 waiting over 104 days &middot; Record low"
               sparklineData={[83.7, 82.3, 81.3, 80.4, 79.6, 73.4, 70.2, 68.1, 67.4]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Five-year cancer survival rate"
               value="56%"
@@ -129,8 +128,7 @@ export default function NHSCancerPage() {
               polarity="up-is-good"
               changeText="2022 &middot; Up from 50% in 2010 &middot; Still below EU average (60%) &middot; Late-stage diagnosis delays reducing outcomes"
               sparklineData={[50.1, 51.8, 53.0, 54.2, 55.1, 54.8, 56.0]}
-              onExpand={() => {}}
-            />
+              href="#sec-waits"/>
             <MetricCard
               label="New cancer diagnoses per year (UK)"
               value="376K"
@@ -138,8 +136,7 @@ export default function NHSCancerPage() {
               polarity="up-is-bad"
               changeText="Annual &middot; 1 in 2 people will get cancer &middot; Ageing population driving increase &middot; 167K cancer deaths per year"
               sparklineData={[320, 330, 340, 348, 355, 360, 364, 369, 376]}
-              onExpand={() => {}}
-            />
+              href="#sec-survival"/>
           </div>
         </ScrollReveal>
 

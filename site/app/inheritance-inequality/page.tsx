@@ -83,8 +83,7 @@ export default function InheritanceInequalityPage() {
               polarity="up-is-bad"
               changeText="trebled since 2000 &middot; biggest wealth transfer in history"
               sparklineData={[50, 75, 95, 115, 135, 145, 165, 170]}
-              onExpand={() => {}}
-              source="HMRC Inheritance Tax Statistics &middot; Resolution Foundation 2023"
+              href="#sec-chart"source="HMRC Inheritance Tax Statistics &middot; Resolution Foundation 2023"
             />
             <MetricCard
               label="Top 10% estate share"
@@ -94,8 +93,7 @@ export default function InheritanceInequalityPage() {
               polarity="up-is-bad"
               changeText="half of all inherited value to 10% of estates"
               sparklineData={[48, 49, 49, 50, 50, 50]}
-              onExpand={() => {}}
-              source="ONS Wealth and Assets Survey &middot; 2022"
+              href="#sec-chart"source="ONS Wealth and Assets Survey &middot; 2022"
             />
             <MetricCard
               label="Median inheritance received"
@@ -105,8 +103,7 @@ export default function InheritanceInequalityPage() {
               polarity="up-is-good"
               changeText="half receive nothing &middot; bimodal distribution"
               sparklineData={[7000, 7000, 9000, 9000, 11000, 11000]}
-              onExpand={() => {}}
-              source="ONS Wealth and Assets Survey &middot; 2022"
+              href="#sec-chart"source="ONS Wealth and Assets Survey &middot; 2022"
             />
           </div>
         </ScrollReveal>

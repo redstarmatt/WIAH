@@ -115,8 +115,7 @@ export default function NetMigrationPage() {
               changeText="Record high &middot; Driven by students, health &amp; care workers, Ukraine &amp; HK schemes"
               sparklineData={[168, 248, 184, 260, 129, 488, 745, 906]}
               source="ONS &middot; Long-term international migration 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-trend"/>
             <MetricCard
               label="Net migration (year to mid-2024)"
               value="~350,000"
@@ -125,8 +124,7 @@ export default function NetMigrationPage() {
               changeText="Down from 906,000 peak &middot; Effect of January 2024 visa restrictions"
               sparklineData={[906, 800, 650, 500, 400, 350]}
               source="ONS &middot; Long-term international migration provisional 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-visas"/>
             <MetricCard
               label="Health &amp; care visas issued (2023)"
               value="143,000"
@@ -135,8 +133,7 @@ export default function NetMigrationPage() {
               changeText="Filling NHS &amp; social care vacancies &middot; Restricted from 2024"
               sparklineData={[28000, 45000, 68000, 95000, 130000, 143000]}
               source="Home Office &middot; Immigration statistics 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-visas"/>
           </div>
         </ScrollReveal>
 

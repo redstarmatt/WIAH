@@ -113,8 +113,7 @@ export default function EndOfLifePage() {
               polarity="up-is-good"
               changeText="Up from ~35% in 2010 &middot; home deaths rising slowly"
               sparklineData={[35, 38, 40, 43, 45, 47]}
-              onExpand={() => {}}
-              source="ONS mortality statistics &middot; 2022"
+              href="#sec-chart"source="ONS mortality statistics &middot; 2022"
             />
             <MetricCard
               label="Dying in hospital"
@@ -124,8 +123,7 @@ export default function EndOfLifePage() {
               polarity="up-is-bad"
               changeText="Down from 53% in 2010 but still high &middot; many are avoidable"
               sparklineData={[53, 51.2, 48, 46.3, 45.8]}
-              onExpand={() => {}}
-              source="ONS &middot; 2022"
+              href="#sec-chart"source="ONS &middot; 2022"
             />
             <MetricCard
               label="Hospice NHS funding share"
@@ -135,8 +133,7 @@ export default function EndOfLifePage() {
               polarity="up-is-good"
               changeText="66% from charitable donations &middot; structural underfunding"
               sparklineData={[30, 31, 32, 33, 30, 34, 34]}
-              onExpand={() => {}}
-              source="Hospice UK &middot; 2023"
+              href="#sec-chart"source="Hospice UK &middot; 2023"
             />
           </div>
         </ScrollReveal>

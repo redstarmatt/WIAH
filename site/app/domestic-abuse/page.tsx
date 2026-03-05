@@ -161,8 +161,7 @@ export default function DomesticAbusePage() {
               changeText="2022/23 &middot; 1.4M women, 700K men &middot; Down from 2.4M peak (2016/17) &middot; Under-reporting endemic"
               sparklineData={[2.4, 2.3, 2.2, 2.1, 2.1, 2.0, 2.0, 2.1]}
               source="ONS &mdash; Crime Survey for England and Wales"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Domestic abuse-related crimes recorded by police"
               value={latestRecorded ? latestRecorded.latestThousands.toLocaleString('en-GB') : '—'}
@@ -172,8 +171,7 @@ export default function DomesticAbusePage() {
               changeText="2022/23 &middot; Up from 596K in 2014/15 &middot; Better recording, not just rising incidents &middot; Charge rate only 7.1%"
               sparklineData={[596, 663, 730, 800, 858, 880, 862, 870, 906]}
               source="ONS &mdash; Crime in England and Wales"
-              onExpand={() => {}}
-            />
+              href="#sec-recorded"/>
             <MetricCard
               label="Women killed by partner or ex-partner (annual)"
               value={femicides ? femicides.latestAnnualCount.toString() : '—'}
@@ -182,8 +180,7 @@ export default function DomesticAbusePage() {
               changeText="2022 &middot; 2 per week &middot; 60% of femicides &middot; Often preceded by coercive control &middot; DA = 38% of all homicides"
               sparklineData={[110, 105, 98, 102, 112, 100, 105, 103]}
               source="ONS &mdash; Homicide Index; Femicide Census"
-              onExpand={() => {}}
-            />
+              href="#sec-prevalence"/>
           </div>
         </ScrollReveal>
 

@@ -33,7 +33,6 @@ export default function OceanAcidificationPage() {
               changeText="since pre-industrial era"
               sparklineData={[20,21,22,23,24,25,26,28,30]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="pH change per decade"
@@ -43,7 +42,6 @@ export default function OceanAcidificationPage() {
               changeText="continuing to decline"
               sparklineData={[-0.015,-0.016,-0.017,-0.017,-0.018,-0.018,-0.019,-0.019,-0.02]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

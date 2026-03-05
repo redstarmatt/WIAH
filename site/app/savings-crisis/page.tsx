@@ -102,8 +102,7 @@ export default function SavingsCrisisPage() {
               changeText="Up from 22% in 2020 · cost-of-living crisis eroding buffers"
               sparklineData={[22, 20, 24, 25]}
               source="Money & Pensions Service · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Median savings: bottom quintile"
               value={bottomQuintile ? `£${bottomQuintile.medianSavings}` : '£170'}
@@ -113,8 +112,7 @@ export default function SavingsCrisisPage() {
               changeText="Half of lowest earners have less than £170 saved"
               sparklineData={[250, 230, 210, 190, 180, 170]}
               source="ONS Wealth & Assets Survey · 2022"
-              onExpand={() => {}}
-            />
+              href="#sec-savings-rate"/>
             <MetricCard
               label="Household savings rate (2022)"
               value={latestRate ? latestRate.householdSavingsRate.toString() : '5.9'}
@@ -124,8 +122,7 @@ export default function SavingsCrisisPage() {
               changeText="Near record low before recovering slightly · COVID peak 16.3%"
               sparklineData={[9.1, 8.3, 6.7, 4.8, 16.3, 7.0, 4.2, 5.9]}
               source="ONS · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-distribution"/>
           </div>
         </ScrollReveal>
 

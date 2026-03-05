@@ -95,8 +95,7 @@ export default function CouncilTaxPage() {
               changeText="Up from &pound;1,439 in 2010 &middot; +25&percnt; in real terms since 2016"
               sparklineData={[1484, 1530, 1591, 1671, 1756, 1898, 2065, 2171]}
               source="DLUHC &middot; Council tax levels 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-tax"/>
             <MetricCard
               label="Local authority net revenue expenditure reduction (real terms 2010&ndash;2024)"
               value="-23%"
@@ -105,8 +104,7 @@ export default function CouncilTaxPage() {
               changeText="Central government grants cut 40&percnt; &middot; Council tax cannot fill the gap"
               sparklineData={[100, 95, 90, 86, 83, 80, 79, 79, 78, 78, 77]}
               source="IFS &middot; Local government funding: the picture in 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-grants"/>
             <MetricCard
               label="Councils at risk of s114 (effective bankruptcy)"
               value="20+"
@@ -115,8 +113,7 @@ export default function CouncilTaxPage() {
               changeText="9 councils issued s114 notices since 2018 &middot; 20&plus; more at risk"
               sparklineData={[1, 1, 2, 3, 5, 7, 9, 15, 20]}
               source="LGA &middot; Financial stability assessment 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-grants"/>
           </div>
         </ScrollReveal>
 
