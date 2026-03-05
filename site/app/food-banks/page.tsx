@@ -237,7 +237,7 @@ export default function FoodBanksPage() {
       {/* Footer */}
       <footer className="border-t border-wiah-border py-8 px-6 bg-wiah-light">
         <div className="max-w-4xl mx-auto text-center text-sm text-wiah-mid">
-          <p className="font-mono text-xs">Open data. No cookies. No agenda.</p>
+          <p className="font-mono text-xs">Open data. No agenda.</p>
         </div>
       </footer>
     </main>

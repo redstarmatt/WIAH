@@ -20,7 +20,7 @@ export default function AboutPage() {
           <p>
             Each topic answers one question with 2–3 carefully chosen, data-driven visual stories.
             Every number has a dated, linked source. The methodology is transparent.
-            There are no ads, no cookies, and no agenda.
+            There are no ads and no agenda.
           </p>
           <h2 className="text-xl font-bold pt-4">Principles</h2>
           <ul className="list-disc pl-6 space-y-1">
