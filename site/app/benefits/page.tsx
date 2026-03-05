@@ -292,15 +292,11 @@ export default function BenefitsPage() {
       {/* Context */}
       <section id="sec-context" className="max-w-4xl mx-auto px-6 py-16 space-y-6 text-wiah-black leading-relaxed">
         <p>
-          Universal Credit, launched in 2013, now covers 6.78 million claimants as of January 2025. Its design embeds specific policy choices with measurable consequences. The five-week wait for a first payment &mdash; built into the system, not a bug &mdash; sent over 100,000 people to food banks according to Trussell Trust data. The two-child limit affects roughly 500,000 families, saving the Treasury an estimated &pound;3.6 billion a year. The benefit cap constrains a further 150,000 households. A single person aged 25 or over receives &pound;499.44 a month; under-25s get &pound;393.45. Nearly half of all claimants (44.9%) are in work &mdash; a function of low wages meeting means-tested thresholds.
+          Universal Credit covers 6.78 million claimants as of January 2025, nearly triple the 2018 level. Its design embeds specific policy choices with measurable consequences: the five-week wait for a first payment sent over 100,000 people to food banks; the two-child limit affects roughly 500,000 families and saves the Treasury an estimated &pound;3.6 billion a year; the benefit cap constrains a further 150,000 households. Personal Independence Payment has grown even faster &mdash; 3.66 million recipients in 2024, up 93% since 2019, with DWP spending &pound;26 billion on PIP in 2024/25. The government&apos;s 2025 welfare reform white paper proposes cutting 1.2 million people from PIP by 2030, targeting &pound;5 billion in savings through stricter eligibility criteria.
         </p>
 
         <p>
-          Personal Independence Payment has become the fastest-growing area of welfare spending. The 3.66 million recipients in 2024 represent a 93% increase since 2019. Mental health conditions account for 33% of cases; musculoskeletal conditions make up 23%. DWP spent &pound;26 billion on PIP in 2024/25 &mdash; double the outlay five years earlier. The government&apos;s 2025 welfare reform white paper proposes cutting 1.2 million people from PIP by 2030, targeting &pound;5 billion in savings through stricter eligibility criteria and revised assessments.
-        </p>
-
-        <p>
-          The downstream indicators tell a consistent story. The Trussell Trust distributed 3.1 million emergency food parcels in 2023/24; one in three were first-time emergency referrals, and one million went to children. Benefit sanctions hit 612,000 decisions in 2024 &mdash; restored to pre-COVID levels after the pandemic suspension &mdash; with an average sanction length of four weeks. The Joseph Rowntree Foundation counted 3.8 million people in destitution in 2023, defined as unable to afford food or shelter on two or more days in a month. The safety net is large. Whether it is adequate is a different question.
+          The downstream indicators tell a consistent story of a safety net under strain. The Trussell Trust distributed 3.1 million emergency food parcels in 2023/24 &mdash; one million to children, one in three to first-time users. Benefit sanctions returned to 612,000 decisions in 2024 after the COVID suspension, with an average sanction length of four weeks. The Joseph Rowntree Foundation counted 3.8 million people in destitution in 2023, unable to afford food or shelter on two or more days in a month. The safety net is large; whether it is adequate is a different question.
         </p>
       </section>
 
