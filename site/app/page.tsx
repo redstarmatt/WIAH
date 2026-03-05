@@ -10,13 +10,13 @@ export default function HomePage() {
   return (
     <main>
       {/* ── Dark hero ────────────────────────────────────────────────── */}
-      <section className="bg-wiah-dark text-white px-6 py-20 md:py-28">
+      <section className="bg-wiah-dark text-white px-6 py-14 md:py-20">
         <div className="max-w-2xl mx-auto">
           <h1 className="mb-4">
             <SiteName size="hero" />
           </h1>
 
-          <p className="font-editorial italic text-white/70 text-base md:text-lg mb-10 leading-relaxed">
+          <p className="font-editorial italic text-white/70 text-base md:text-lg mb-6 leading-relaxed">
             The numbers behind Britain&rsquo;s biggest questions.
             <br className="hidden sm:block" />
             No headlines. No spin. Just ask.
@@ -26,7 +26,7 @@ export default function HomePage() {
           <HeroSearch />
 
           {/* Subtle stats footnote */}
-          <p className="mt-8 font-mono text-xs text-white/50">
+          <p className="mt-5 font-mono text-xs text-white/50">
             {total} indicators · {topicCount} topics · updated weekly
           </p>
         </div>
@@ -44,7 +44,7 @@ export default function HomePage() {
       <TopicBrowser />
 
       {/* ── Footer ───────────────────────────────────────────────────── */}
-      <footer className="border-t border-wiah-border py-8 px-6">
+      <footer className="border-t border-wiah-border py-5 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-wiah-mid">
           <SiteName size="nav" />
           <p className="font-mono text-xs">

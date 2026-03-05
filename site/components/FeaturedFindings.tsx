@@ -63,13 +63,13 @@ const FEATURED: Finding[] = [
 
 export default function FeaturedFindings() {
   return (
-    <section className="px-6 py-14 md:py-20">
+    <section className="px-6 py-10 md:py-14">
       <div className="max-w-5xl mx-auto">
-        <p className="font-mono text-xs text-wiah-mid uppercase tracking-wider mb-8">
+        <p className="font-mono text-xs text-wiah-mid uppercase tracking-wider mb-5">
           Right now
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
           {FEATURED.map((f) => {
             const topic = TOPICS[f.topicSlug];
             if (!topic) return null;

@@ -65,17 +65,17 @@ export default function TopicBrowser() {
   const activeCategory = CATEGORIES.find((c) => c.slug === activeSlug) || CATEGORIES[0];
 
   return (
-    <section className="px-6 py-14 md:py-20 bg-wiah-light">
+    <section className="px-6 py-10 md:py-14 bg-wiah-light">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-2xl font-bold text-wiah-black mb-2">
           Browse all topics
         </h2>
-        <p className="font-mono text-xs text-wiah-mid mb-8">
+        <p className="font-mono text-xs text-wiah-mid mb-5">
           {Object.keys(TOPICS).length} topics across {CATEGORIES.length} categories
         </p>
 
         {/* Category pill nav */}
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-5">
           {CATEGORIES.map((cat) => {
             const isActive = cat.slug === activeSlug;
             return (
