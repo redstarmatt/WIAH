@@ -32,6 +32,7 @@ export interface SearchableItem {
   colour: string;
   metrics: SearchableMetric[];
   corpus: string; // pre-lowercased concatenation for fast substring checks
+  corpusWords: Set<string>; // pre-built word set for whole-word matching
 }
 
 export interface SearchResult {
@@ -92,6 +93,9 @@ export function getSearchIndex(): SearchableItem[] {
       ...topic.metrics.map((m) => m.context ?? ''),
     ];
 
+    const corpus = corpusParts.join(' ').toLowerCase();
+    const corpusWords = new Set(corpus.split(/\s+/).filter(Boolean));
+
     return {
       slug: topic.slug,
       href: topic.href,
@@ -102,7 +106,8 @@ export function getSearchIndex(): SearchableItem[] {
       categorySlug,
       colour: topic.colour,
       metrics,
-      corpus: corpusParts.join(' ').toLowerCase(),
+      corpus,
+      corpusWords,
     };
   });
 
@@ -214,7 +219,7 @@ export function search(query: string, limit = 12): SearchResult[] {
     if (bestScore === 0) {
       const words = q.split(/\s+/).filter(Boolean);
       if (words.length > 0) {
-        const matchCount = words.filter((w) => item.corpus.includes(w)).length;
+        const matchCount = words.filter((w) => item.corpusWords.has(w)).length;
         if (matchCount > 0) {
           bestScore = Math.max(1, Math.round((matchCount / words.length) * 10));
           bestMatchType = 'topic-contains';
