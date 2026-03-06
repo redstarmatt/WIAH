@@ -25,11 +25,11 @@ const FEATURED: Finding[] = [
     label: 'NHS England',
   },
   {
-    topicSlug: 'housing',
+    topicSlug: 'smoking',
     metricIndex: 0,
-    headline: '7.7×',
-    context: 'the average salary — a home cost 4× earnings in 1997',
-    label: 'Housing affordability',
+    headline: '10.6%',
+    context: 'of adults smoke — down from 20.2% in 2011, a record low',
+    label: 'Smoking rates',
   },
   {
     topicSlug: 'water',
