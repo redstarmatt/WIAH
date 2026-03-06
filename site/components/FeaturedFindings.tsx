@@ -25,11 +25,11 @@ const FEATURED: Finding[] = [
     label: 'NHS England',
   },
   {
-    topicSlug: 'child-poverty',
+    topicSlug: 'housing',
     metricIndex: 0,
-    headline: '4.3M',
-    context: 'children in poverty — 31% of all children in the UK',
-    label: 'Child poverty',
+    headline: '7.7×',
+    context: 'the average salary — a home cost 4× earnings in 1997',
+    label: 'Housing affordability',
   },
   {
     topicSlug: 'water',
@@ -46,18 +46,18 @@ const FEATURED: Finding[] = [
     label: 'Criminal justice',
   },
   {
-    topicSlug: 'homelessness',
-    metricIndex: 1,
-    headline: '159,900',
-    context: 'children in temporary accommodation — record high',
-    label: 'Homelessness',
-  },
-  {
     topicSlug: 'education',
     metricIndex: 0,
     headline: '20%',
     context: 'of pupils persistently absent — was 10.5% pre-Covid',
     label: 'School absence',
+  },
+  {
+    topicSlug: 'cancer-survival',
+    metricIndex: 0,
+    headline: '55.4%',
+    context: '5-year cancer survival — up 9 points since 2005',
+    label: 'Cancer survival',
   },
 ];
 
