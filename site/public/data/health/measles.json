@@ -1,0 +1,55 @@
+{
+  "topic": "health",
+  "subtopic": "measles",
+  "lastUpdated": "2026-03-06",
+  "national": {
+    "timeSeries": [
+      { "year": "2012", "confirmedCases": 2030, "mmrDose1At5Pct": 94.6, "mmrDose2At5Pct": 85.5 },
+      { "year": "2013", "confirmedCases": 1843, "mmrDose1At5Pct": 94.1, "mmrDose2At5Pct": 86.4 },
+      { "year": "2014", "confirmedCases": 1400, "mmrDose1At5Pct": 94.2, "mmrDose2At5Pct": 87.2 },
+      { "year": "2015", "confirmedCases": 95,   "mmrDose1At5Pct": 94.5, "mmrDose2At5Pct": 87.6 },
+      { "year": "2016", "confirmedCases": 541,  "mmrDose1At5Pct": 94.2, "mmrDose2At5Pct": 87.4 },
+      { "year": "2017", "confirmedCases": 259,  "mmrDose1At5Pct": 94.9, "mmrDose2At5Pct": 87.5 },
+      { "year": "2018", "confirmedCases": 991,  "mmrDose1At5Pct": 95.0, "mmrDose2At5Pct": 88.0 },
+      { "year": "2019", "confirmedCases": 778,  "mmrDose1At5Pct": 94.5, "mmrDose2At5Pct": 87.1 },
+      { "year": "2020", "confirmedCases": 26,   "mmrDose1At5Pct": 93.7, "mmrDose2At5Pct": 85.8 },
+      { "year": "2021", "confirmedCases": 52,   "mmrDose1At5Pct": 93.9, "mmrDose2At5Pct": 85.9 },
+      { "year": "2022", "confirmedCases": 54,   "mmrDose1At5Pct": 94.1, "mmrDose2At5Pct": 86.1 },
+      { "year": "2023", "confirmedCases": 330,  "mmrDose1At5Pct": 94.0, "mmrDose2At5Pct": 86.0 },
+      { "year": "2024", "confirmedCases": 2089, "mmrDose1At5Pct": null,  "mmrDose2At5Pct": null  }
+    ]
+  },
+  "headlines": {
+    "latestYear": "2024",
+    "cases2024": 2089,
+    "mmrDose1Latest": 94.0,
+    "mmrDose2Latest": 86.0,
+    "eliminationStatusLost": 2019,
+    "herdImmunityThreshold": 95.0
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "UK Health Security Agency",
+        "dataset": "Confirmed measles notifications, England",
+        "url": "https://www.gov.uk/government/publications/measles-confirmed-cases/confirmed-cases-of-measles-reported-to-the-hpa",
+        "frequency": "annual",
+        "retrieved": "2026-03-06"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Childhood Vaccination Coverage Statistics",
+        "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/child-health-profiles/",
+        "frequency": "annual",
+        "retrieved": "2026-03-06"
+      }
+    ],
+    "methodology": "Confirmed measles cases are laboratory-confirmed or epidemiologically-linked cases notified to UKHSA (formerly Public Health England). MMR coverage figures are for children who received MMR dose 1 and dose 2 by their 5th birthday, England. The WHO herd immunity threshold for measles is 95% for both doses.",
+    "knownIssues": [
+      "2024 case data is provisional — final confirmed count may differ slightly",
+      "MMR coverage data for 2024/25 birth cohort not yet available",
+      "COVID-19 reduced measles cases in 2020–2021 due to reduced social mixing, not improved population immunity",
+      "UK lost WHO measles elimination status in 2019 after holding it since 2016"
+    ]
+  }
+}

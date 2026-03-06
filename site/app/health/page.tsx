@@ -191,6 +191,27 @@ interface WaitingInequalityData {
   };
 }
 
+interface MeaslesPoint {
+  year: string;
+  confirmedCases: number;
+  mmrDose1At5Pct: number | null;
+  mmrDose2At5Pct: number | null;
+}
+
+interface MeaslesHeadlines {
+  latestYear: string;
+  cases2024: number;
+  mmrDose1Latest: number;
+  mmrDose2Latest: number;
+  eliminationStatusLost: number;
+  herdImmunityThreshold: number;
+}
+
+interface MeaslesData {
+  national: { timeSeries: MeaslesPoint[] };
+  headlines: MeaslesHeadlines;
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function isoToDate(s: string): Date {
@@ -215,6 +236,7 @@ export default function HealthPage() {
   const [dentalData, setDentalData] = useState<DentalData | null>(null);
   const [talkingTherapiesData, setTalkingTherapiesData] = useState<TalkingTherapiesData | null>(null);
   const [inequalityData, setInequalityData] = useState<WaitingInequalityData | null>(null);
+  const [measlesData, setMeaslesData] = useState<MeaslesData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -257,6 +279,10 @@ export default function HealthPage() {
     fetch('/data/nhs-waiting-list-inequality/waiting_inequality.json')
       .then(r => r.json())
       .then(setInequalityData)
+      .catch(console.error);
+    fetch('/data/health/measles.json')
+      .then(r => r.json())
+      .then(setMeaslesData)
       .catch(console.error);
   }, []);
 
@@ -605,6 +631,54 @@ export default function HealthPage() {
       }]
     : [];
 
+  // ── Measles series ───────────────────────────────────────────────────────
+
+  const measlesCasesSeries: Series[] = measlesData
+    ? [{
+        id: 'measles-cases',
+        label: 'Confirmed cases',
+        colour: '#E63946',
+        data: measlesData.national.timeSeries.map(d => ({
+          date: new Date(parseInt(d.year), 0, 1),
+          value: d.confirmedCases,
+        })),
+      }]
+    : [];
+
+  const mmrCoverageSeries: Series[] = measlesData
+    ? [
+        {
+          id: 'mmr-dose1',
+          label: 'MMR dose 1 (by age 5)',
+          colour: '#264653',
+          data: measlesData.national.timeSeries
+            .filter(d => d.mmrDose1At5Pct !== null)
+            .map(d => ({
+              date: new Date(parseInt(d.year), 0, 1),
+              value: d.mmrDose1At5Pct!,
+            })),
+        },
+        {
+          id: 'mmr-dose2',
+          label: 'MMR dose 2 (by age 5)',
+          colour: '#F4A261',
+          data: measlesData.national.timeSeries
+            .filter(d => d.mmrDose2At5Pct !== null)
+            .map(d => ({
+              date: new Date(parseInt(d.year), 0, 1),
+              value: d.mmrDose2At5Pct!,
+            })),
+        },
+      ]
+    : [];
+
+  const measlesAnnotations: Annotation[] = [
+    { date: new Date(2013, 0), label: '2013: Swansea outbreak' },
+    { date: new Date(2019, 0), label: '2019: UK loses elimination status' },
+    { date: new Date(2020, 0), label: '2020: COVID lockdowns' },
+    { date: new Date(2024, 0), label: '2024: West Midlands outbreak' },
+  ];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestGp = gpData?.national.timeSeries.at(-1);
@@ -670,6 +744,7 @@ export default function HealthPage() {
           { id: 'sec-dental', label: 'Dentistry' },
           { id: 'sec-talking-therapies', label: 'Mental Health' },
           { id: 'sec-inequality', label: 'Inequality' },
+          { id: 'sec-measles', label: 'Measles' },
         ]} />
 
         {/* Metric cards */}
@@ -1495,6 +1570,103 @@ export default function HealthPage() {
           </ScrollReveal>
         </section>
 
+        {/* ── Measles & Vaccination ──────────────────────────────────────── */}
+        <section id="sec-measles" className="mb-16">
+          <ScrollReveal>
+            <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Measles &amp; Vaccination</h2>
+            <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+              The UK lost its WHO measles elimination status in 2019 after vaccination rates fell
+              below the 95% herd immunity threshold. In 2024, a major outbreak centred on the West
+              Midlands produced over 2,000 confirmed cases — the highest annual total since the
+              pre-2015 outbreaks. MMR dose 2 coverage has never exceeded 88% nationally.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+            <MetricCard
+              label="Measles cases (2024)"
+              value={measlesData ? measlesData.headlines.cases2024.toLocaleString() : '—'}
+              unit="cases"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="2024 provisional · Highest annual total since 2013"
+              sparklineData={
+                measlesData
+                  ? measlesData.national.timeSeries.map(d => d.confirmedCases)
+                  : []
+              }
+              source="UKHSA · Confirmed measles notifications, England"
+              baseline="2024 West Midlands outbreak pushed cases to a decade-high"
+            />
+            <MetricCard
+              label="MMR dose 2 coverage"
+              value={measlesData ? `${measlesData.headlines.mmrDose2Latest.toFixed(1)}` : '—'}
+              unit="%"
+              direction="down"
+              polarity="up-is-good"
+              changeText={
+                measlesData
+                  ? `Target: 95% · ${(measlesData.headlines.herdImmunityThreshold - measlesData.headlines.mmrDose2Latest).toFixed(1)}pp below herd immunity threshold`
+                  : 'Target: 95%'
+              }
+              sparklineData={
+                measlesData
+                  ? measlesData.national.timeSeries
+                      .filter(d => d.mmrDose2At5Pct !== null)
+                      .map(d => d.mmrDose2At5Pct!)
+                  : []
+              }
+              source="NHS England · Childhood Vaccination Coverage Statistics"
+              baseline="MMR dose 2 has never reached the 95% WHO herd immunity threshold"
+            />
+          </div>
+          </ScrollReveal>
+
+          {measlesCasesSeries.length > 0 ? (
+            <ScrollReveal>
+              <LineChart
+                title="Confirmed measles cases, England, 2012–2024"
+                subtitle="Laboratory-confirmed and epidemiologically-linked cases notified to UKHSA. Annual totals."
+                series={measlesCasesSeries}
+                annotations={measlesAnnotations}
+                yLabel="Cases"
+                source={{
+                  name: 'UK Health Security Agency',
+                  dataset: 'Confirmed measles notifications, England',
+                  frequency: 'annual',
+                  url: 'https://www.gov.uk/government/publications/measles-confirmed-cases/confirmed-cases-of-measles-reported-to-the-hpa',
+                }}
+              />
+            </ScrollReveal>
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+
+          {mmrCoverageSeries.length > 0 ? (
+            <ScrollReveal>
+              <LineChart
+                title="MMR vaccination coverage, England, 2012–2023"
+                subtitle="% of children who received MMR dose 1 and dose 2 by their 5th birthday, England."
+                series={mmrCoverageSeries}
+                annotations={[
+                  { date: new Date(2019, 0), label: '2019: Elimination status lost' },
+                ]}
+                targetLine={{ value: 95, label: '95% herd immunity threshold' }}
+                yLabel="Percent"
+                source={{
+                  name: 'NHS England',
+                  dataset: 'Childhood Vaccination Coverage Statistics',
+                  frequency: 'annual',
+                  url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/child-health-profiles/',
+                }}
+              />
+            </ScrollReveal>
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+        </section>
+
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>
@@ -1588,6 +1760,26 @@ export default function HealthPage() {
                 NHS England — NHS Talking Therapies for Anxiety and Depression, annual report (annual)
               </a>
               {' '}— referrals, treatment starts, completions, and recovery rate. Formerly IAPT.
+            </li>
+            <li>
+              <a
+                href="https://www.gov.uk/government/publications/measles-confirmed-cases/confirmed-cases-of-measles-reported-to-the-hpa"
+                className="underline hover:text-wiah-blue"
+                target="_blank" rel="noreferrer"
+              >
+                UKHSA — Confirmed measles notifications, England (annual)
+              </a>
+              {' '}— laboratory-confirmed and epidemiologically-linked cases. 2024 figures are provisional.
+            </li>
+            <li>
+              <a
+                href="https://www.england.nhs.uk/statistics/statistical-work-areas/child-health-profiles/"
+                className="underline hover:text-wiah-blue"
+                target="_blank" rel="noreferrer"
+              >
+                NHS England — Childhood Vaccination Coverage Statistics (annual)
+              </a>
+              {' '}— MMR dose 1 and dose 2 coverage by 5th birthday, England. WHO herd immunity threshold: 95%.
             </li>
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
