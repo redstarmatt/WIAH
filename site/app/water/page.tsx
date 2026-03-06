@@ -453,17 +453,7 @@ export default function WaterPage() {
               approved record investment plans for 2025&ndash;2030, but the gap between shareholder
               returns and capital spending over the past three decades is difficult to overlook.
             </p>
-            <p>
-              Leakage reveals how deep the infrastructure deficit runs. The industry loses 2,963
-              megalitres per day &mdash; enough to fill over 1,000 Olympic swimming pools &mdash; and
-              every one of the 13 water companies is above its individual Ofwat target. Thames Water is
-              the worst, leaking 665 Ml/d against a target of 540. Total leakage has fallen from 3,238
-              Ml/d in 2017/18, but not fast enough: the industry target of 2,500 Ml/d by 2025 will be
-              missed by a wide margin. Full monitoring coverage means the scale of the sewage problem
-              is finally visible. Whether the same transparency can drive improvement on leakage and
-              river health remains an open question.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

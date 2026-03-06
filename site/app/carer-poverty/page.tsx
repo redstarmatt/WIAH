@@ -94,36 +94,7 @@ export default function CarerPovertyPage() {
               recovery, where carers who had unknowingly exceeded the earnings limit were
               pursued for years for repayments they could not afford.
             </p>
-            <p>
-              The financial impact on carers is severe. Carers UK's annual State of Caring
-              survey consistently finds that around 35% of carers are in poverty — well
-              above the national average of 22%. 55% have reduced their working hours or
-              left employment entirely to care, with permanent consequences for earnings,
-              pension accumulation, and career progression. 62% have drawn on savings to
-              cover care costs or household bills. 36% are in debt as a direct result of
-              their caring role. These are not temporary inconveniences: they are
-              structural financial injuries that follow carers long after the caring role ends.
-            </p>
-            <p>
-              The mental and physical health toll is inseparable from the financial one.
-              Carers who are financially stressed are less able to take breaks, access
-              support, and maintain their own health. Carer breakdown — where the primary
-              carer can no longer provide care — is a leading cause of emergency hospital
-              admissions for the person being cared for, creating acute NHS pressures.
-              Investment in carer support is therefore not purely welfare spending: it
-              is a cost-effective way of sustaining a care workforce that would otherwise
-              need to be replaced at far greater public expense.
-            </p>
-            <p>
-              Reform proposals from Carers UK and the Carers Trust include: raising
-              Carers Allowance to at least the level of Jobseekers Allowance; raising
-              or removing the earnings limit; introducing a Carer Minimum Income Guarantee;
-              and extending Carer's Credit (which protects pension entitlements during
-              caring periods) to a wider range of carers. The current government has
-              committed to review Carers Allowance following the NAO report, but
-              substantive reform has not yet been legislated.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

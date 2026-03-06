@@ -91,35 +91,7 @@ export default function GraduateOutcomesPage() {
               arts do not, though they serve important cultural and civic functions that
               raw salary data does not capture.
             </p>
-            <p>
-              Institution matters too. The LEO data — which links education records to HMRC
-              earnings data — shows that for many subjects, graduates from Russell Group
-              universities earn substantially more than their counterparts from other institutions,
-              even after controlling for subject and prior attainment. Part of this reflects
-              recruitment discrimination; part reflects genuine skill signals; part reflects
-              the social capital networks that elite institutions provide. Prospective students
-              considering the £9,250 per year tuition fee would benefit from subject- and
-              institution-specific outcomes data before choosing.
-            </p>
-            <p>
-              Around 20% of graduates are in non-graduate roles 15 months after finishing —
-              a figure that has persisted even in tight labour markets. For some this is
-              a temporary position; for others, a permanent mismatch. The degree has become
-              a requirement for roles that did not previously require one (credential inflation),
-              crowding out non-graduates while delivering little additional value for the
-              employer. The OECD has noted that England has a higher rate of qualification
-              mismatch than the OECD average.
-            </p>
-            <p>
-              The lifetime earnings premium of approximately £140,000 is a population average
-              that conceals enormous variance. For some combinations of subject, institution,
-              and background, the premium is much higher. For others — particularly those
-              who do not complete their degree, or who study subjects with weak labour market
-              outcomes at lower-ranking institutions, or who accumulate debt they struggle
-              to repay — the premium may be negligible or negative. The case for university
-              is strong on average, but average is not a guide for individual decisions.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

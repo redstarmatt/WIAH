@@ -626,16 +626,7 @@ export default function JusticePage() {
               the 40% sentence mark under the emergency SDS40 scheme, freeing roughly 38,000 early. The
               system is simultaneously too slow to process cases and too full to house the convicted.
             </p>
-            <p>
-              Domestic abuse exposes the gap between victimisation and justice most starkly. The Crime
-              Survey estimates 1.7 million victims each year &mdash; 7.1% of women, 3.8% of men &mdash;
-              yet only 1 in 5 report to police. Of the offences that are recorded, just 7% lead to a
-              charge and 5.1% to a conviction. Nearly half of cases end with no further action; almost
-              a quarter close because the victim withdrew &mdash; often through fear, financial dependence,
-              or loss of confidence in the process. For the most common serious crime in England and Wales,
-              the justice system offers most victims no meaningful outcome at all.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

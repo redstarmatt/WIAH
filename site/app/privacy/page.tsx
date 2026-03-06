@@ -30,23 +30,7 @@ export default function PrivacyPage() {
           <p>
             We use Google Analytics 4 to understand how the site is used in aggregate — which topics are read, how visitors navigate, and where they come from. Google Analytics uses cookies to collect anonymised usage data. We do not use it to identify individual users or build behavioural profiles.
           </p>
-
-          <h2 className="text-xl font-bold pt-4">Third-party services</h2>
-          <p>
-            This site loads fonts from Google Fonts and may load map tiles from third-party providers. These services may log your IP address. We have no control over their privacy practices — please refer to their policies directly.
-          </p>
-
-          <h2 className="text-xl font-bold pt-4">Your rights</h2>
-          <p>
-            We do not hold personal data ourselves. Usage data collected via Google Analytics is subject to <a href="https://policies.google.com/privacy" className="text-wiah-blue hover:underline" target="_blank" rel="noopener noreferrer">Google's privacy policy</a>. You can opt out of GA tracking using the <a href="https://tools.google.com/dlpage/gaoptout" className="text-wiah-blue hover:underline" target="_blank" rel="noopener noreferrer">Google Analytics opt-out browser add-on</a>. If you have questions about our data practices, contact us at the address below.
-          </p>
-
-          <h2 className="text-xl font-bold pt-4">Contact</h2>
-          <p>
-            Questions about this policy?{' '}
-            <Link href="/contact" className="text-wiah-blue hover:underline">Get in touch.</Link>
-          </p>
-        </div>
+            </div>
       </main>
       <footer className="border-t border-wiah-border py-5 px-6 mt-12">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-wiah-mid">

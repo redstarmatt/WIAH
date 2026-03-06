@@ -136,10 +136,7 @@ export default function DomesticAbusePage() {
             <p>
               The criminal justice response remains strikingly weak. The charge rate for domestic abuse offences stands at 7.1%, below the 8.5% rate for all recorded crime. Victims withdrawing support for prosecution accounts for 40% of no-further-action decisions; evidence-gathering in cases of non-physical abuse and CPS resource constraints compound the problem. Domestic homicide reviews, mandatory since 2011, repeatedly identify missed intervention opportunities across police, social services and healthcare. SafeLives&apos; MARAC risk-assessment tool is now used by over 60% of police forces, routing high-risk cases to Multi-Agency Risk Assessment Conferences. But perpetrator programmes expose a 33-to-1 shortfall: roughly 6,000 places exist nationally against an estimated 200,000 or more high-risk perpetrators.
             </p>
-            <p>
-              Support infrastructure falls far short of demand. England has 3,900 refuge places &mdash; approximately one per 16,000 women, against a Council of Europe standard of one per 7,500. Independent Domestic Violence Adviser (IDVA) services support 90,000 people per year and have been consistently shown to reduce re-victimisation by 30&ndash;60%. The Domestic Abuse Act 2021 &mdash; the most significant reform in a generation &mdash; created a statutory definition encompassing economic abuse for the first time, established a domestic abuse commissioner, and made non-fatal strangulation a specific offence. Domestic Abuse Protection Orders, piloted since 2021, combine immediate prohibition with positive requirements on perpetrators. The Tackling Domestic Abuse Plan (2022) committed &pound;230 million over three years, while NICE guidance now recommends routine domestic abuse enquiry across healthcare settings, though compliance remains patchy.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

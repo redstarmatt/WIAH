@@ -588,17 +588,7 @@ export default function HousingPage() {
               fastest pace since records began in 2011, with London at 11%. A post-pandemic
               surge that began in 2021 shows no sign of abating.
             </p>
-            <p>
-              The sharpest human cost appears in the homelessness figures. A record 123,000
-              households &mdash; including more than 150,000 children &mdash; are now living in
-              temporary accommodation placed by local authorities: B&amp;Bs, hostels, and
-              nightly-let properties. That number has risen every year since 2012. There is
-              one sign of possible relief: the affordability ratio fell from 8.4&times; to
-              7.7&times; in 2024 as earnings growth outpaced house prices for the first time
-              in years. Whether this marks the start of a correction or a brief pause
-              remains to be seen.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

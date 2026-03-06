@@ -128,10 +128,7 @@ export default function ChildcarePage() {
             <p>
               The expansion is colliding with a collapsing provider base. Over 4,500 nursery settings &mdash; 14% of all providers &mdash; have closed since 2015, with closures concentrated in deprived areas. The core problem is a &pound;2.24-per-hour funding gap: the DfE pays &pound;8.28 per hour for free entitlement places, but the NDNA estimates actual delivery costs at &pound;10.52. Providers subsidise the shortfall from fee-paying parents or run deficits. The workforce crisis compounds this: 50,000 vacancies remain unfilled, average pay is &pound;10.50 per hour (below the 2024 National Living Wage of &pound;11.44), and annual staff turnover runs at 26% &mdash; the highest of any care sector.
             </p>
-            <p>
-              The consequences extend well beyond nursery gates. DfE estimates the free hours expansion could enable 60,000 parents &mdash; predominantly mothers &mdash; to return to work or increase hours, making subsidised childcare one of the most cost-effective labour market interventions available. But the infrastructure is thinner than a decade ago. Sure Start centres fell from 3,500 at their 2010 peak to 1,100 by 2020 &mdash; a 69% closure rate &mdash; despite IFS evidence showing 11% reductions in hospitalisations and criminal activity in areas they served. Budget 2021 relaunched them as Family Hubs, but with a far smaller footprint.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

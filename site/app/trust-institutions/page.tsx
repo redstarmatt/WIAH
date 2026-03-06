@@ -103,35 +103,7 @@ export default function TrustInstitutionsPage() {
               at 94% and doctors at 91%, figures that have been stable for decades.
               People trust the staff but not the system.
             </p>
-            <p>
-              This distinction matters enormously for policy and public health. Low institutional
-              trust in the NHS has consequences for uptake of screening programmes, vaccination,
-              and preventive care. If people believe the system will not help them, they may
-              not present when they should. But high trust in individual clinicians suggests
-              that the relationship between patient and practitioner remains intact — a
-              significant protective factor that good policy should reinforce, not undermine.
-            </p>
-            <p>
-              Low political trust has more diffuse but equally serious consequences. Democratic
-              institutions depend on some baseline of trust to function. When trust in politicians
-              falls to 12%, it does not merely reflect dissatisfaction — it reflects a withdrawal
-              of legitimacy from the institutions themselves. Voter turnout, compliance with
-              policy, civic participation, and willingness to accept difficult trade-offs all
-              decline when political trust is low. The UK is not unique in this — the Edelman
-              Trust Barometer documents trust declines across most Western democracies — but
-              the depth of the decline here, and the specific triggers, make it a domestic
-              emergency as well as a global trend.
-            </p>
-            <p>
-              Trust in scientists (87%) and teachers (85%) remains high, as does trust in
-              judges (72%). Trust in police (61%) has declined from previous decades,
-              reflecting specific incidents — most acutely the murder of Sarah Everard by
-              a serving Metropolitan Police officer — alongside broader concerns about
-              institutional racism and misconduct. Rebuilding trust requires not just
-              communication but demonstrable performance: clear standards, transparent
-              accountability, and genuine consequences for failure at an institutional level.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

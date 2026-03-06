@@ -104,36 +104,7 @@ export default function ChildPovertyRegionsPage() {
               costs, economic opportunity, and local authority capacity to provide
               supplementary services.
             </p>
-            <p>
-              The most important — and most misunderstood — feature of child poverty in
-              2023 is that it is overwhelmingly about working families. 67% of children
-              in poverty have at least one working parent, up from 57% in 2010. The
-              "working poor" is not a marginal category — it is the norm. Wages have
-              not kept pace with housing costs, childcare costs, and the general cost
-              of living. The National Living Wage has helped at the bottom of the distribution,
-              but it is insufficient on its own when a family in London pays £1,500 per
-              month in rent.
-            </p>
-            <p>
-              The two-child limit on child tax credit — introduced in 2017 and restricting
-              support to the first two children in a family claiming benefits — is estimated
-              by the DWP to have pushed around 250,000 children into poverty who would
-              otherwise not have been. The policy was designed to discourage large family
-              size, but its effect is to impose a financial penalty on children who had
-              no say in the matter. No other comparable welfare state in Western Europe
-              has an equivalent restriction.
-            </p>
-            <p>
-              The evidence on what works is relatively clear. Childcare subsidies that
-              make work pay for parents — particularly second earners, typically mothers —
-              reduce child poverty. Housing cost support that reflects actual market rents
-              reduces child poverty. Raising benefit rates in line with inflation rather
-              than capping them prevents poverty deepening during cost-of-living shocks.
-              The UK has a track record of reducing child poverty when political will exists:
-              the Blair-era policies of 1998–2010 cut child poverty by nearly a third.
-              The same is achievable again, but requires sustained prioritisation.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

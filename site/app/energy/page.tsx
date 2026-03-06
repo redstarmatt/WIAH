@@ -315,16 +315,7 @@ export default function EnergyPage() {
               2015 level. Until market design catches up with the generation mix, renewable growth
               alone will not deliver lower bills.
             </p>
-            <p>
-              The cost falls hardest on those least able to absorb it. Under the LILEE metric, 13.8% of
-              English households were in fuel poverty in 2023, up from 10.3% in 2018. That is roughly
-              3.3 million homes where energy costs consume a disproportionate share of income. The
-              methodology changed in 2019, making longer-term comparison difficult, but the direction
-              since then is unambiguous. Britain is building one of Europe&apos;s cleanest electricity
-              grids while a growing share of its population cannot afford to heat their homes &mdash; a
-              paradox that infrastructure investment alone will not resolve.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

@@ -102,36 +102,7 @@ export default function DisabilityPovertyPage() {
               in standard poverty measures, which compare income to median thresholds
               without adjusting for the higher cost base that disabled households face.
             </p>
-            <p>
-              Personal Independence Payment (PIP) is intended to help meet these extra
-              costs, but the benefit does not keep pace with actual cost increases.
-              The assessment process has been widely criticised for being adversarial,
-              inaccurate, and focused on benefit reduction rather than accurate need
-              identification. Around 60% of PIP decisions challenged at tribunal are
-              overturned. Many disabled people who qualify for support do not receive it
-              because the application process is too arduous, or because they are not
-              aware they are entitled to apply.
-            </p>
-            <p>
-              The employment gap compounds the picture. The employment rate for disabled
-              people of working age is around 53%, compared with 82% for non-disabled
-              people. This 29-percentage-point gap has remained broadly stable for a
-              decade, despite government targets to close it. Barriers include
-              inaccessible workplaces, inflexible working arrangements, inadequate
-              Access to Work funding, employer attitudes, and the benefit trap — where
-              moving into work risks losing disability-related benefit entitlements
-              that are difficult to reinstate if health deteriorates.
-            </p>
-            <p>
-              The 45% figure — that nearly half of all people in poverty are disabled
-              or live with a disabled person — reflects the scale of the intersection.
-              Any serious strategy to reduce poverty in the UK must address disability-related
-              extra costs and employment barriers as central rather than marginal concerns.
-              An extra costs allowance, disregarded from means-tested benefit calculations,
-              has been proposed by a range of organisations as one mechanism. A more
-              accurate and humane disability assessment system is another prerequisite.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

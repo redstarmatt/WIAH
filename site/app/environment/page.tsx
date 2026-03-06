@@ -255,17 +255,7 @@ export default function EnvironmentPage() {
               inadequate. The gap between the pace of climate change and the pace of preparation
               continues to widen.
             </p>
-            <p>
-              Waste policy tells a quieter story of stalled ambition. Household recycling rates rose
-              rapidly through the 2000s &mdash; from roughly 10% in 2000 to a peak of around 44% by
-              2014 &mdash; then flatlined. England&apos;s rate has since slipped to approximately 41%.
-              The government&apos;s target of 65% by 2035 would require the fastest sustained increase
-              on record, starting from a decade of no progress. Landfill rates have fallen, but the
-              plateau in recycling suggests the easy gains from kerbside collection are exhausted. What
-              comes next &mdash; reducing packaging, tackling food waste, reforming producer
-              responsibility &mdash; requires structural policy changes that have not yet materialised.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

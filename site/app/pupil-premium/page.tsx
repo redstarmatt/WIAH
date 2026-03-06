@@ -91,35 +91,7 @@ export default function PupilPremiumPage() {
               high-quality early language work, and targeted reading programmes identified
               by the Education Endowment Foundation (EEF).
             </p>
-            <p>
-              COVID-19 reversed most of that progress in a single academic year. The gap
-              widened back to 18.4 percentage points in 2022, close to 2013 levels.
-              Disadvantaged pupils lost more learning during school closures, had less
-              access to devices and quiet study space, and were more likely to have
-              experienced bereavement, family stress, and economic disruption. The
-              National Tutoring Programme was intended to address the COVID learning
-              loss, but implementation was uneven and uptake among the most disadvantaged
-              schools was lower than hoped.
-            </p>
-            <p>
-              The remaining 18-point gap represents a persistent structural challenge.
-              Disadvantaged pupils are not a homogeneous group: some are from families
-              with temporary financial difficulties; others are from households with
-              sustained poverty, language barriers, housing instability, or complex
-              social needs. The Pupil Premium works best for pupils who have the
-              stability to benefit from good teaching — it cannot substitute for
-              adequate housing, food security, or family mental health support.
-            </p>
-            <p>
-              The EEF's evidence base continues to sharpen understanding of what works.
-              High-quality teaching, targeted academic support, and approaches addressing
-              non-academic barriers to learning (social and emotional skills, attendance,
-              family engagement) each contribute. Schools that use Pupil Premium most
-              effectively tend to align spending with the EEF toolkit, track outcomes
-              rigorously, and deploy experienced staff on targeted interventions rather
-              than supplementary activities at the margins.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

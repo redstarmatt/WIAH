@@ -23,27 +23,7 @@ export default function AboutPage() {
             Every number has a dated, linked source. The methodology is transparent.
             There are no ads and no agenda.
           </p>
-          <h2 className="text-xl font-bold pt-4">Principles</h2>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Every number has a source — visible, linked, dated.</li>
-            <li>Direct, not blunt. Specific, not vague.</li>
-            <li>Contextual, not campaigning.</li>
-            <li>Honest about uncertainty.</li>
-          </ul>
-          <h2 className="text-xl font-bold pt-4">Data sources</h2>
-          <p>
-            All data comes from official UK government and public body publications:
-            NHS Digital, ONS, Environment Agency, Home Office, DfE, and others.
-            Raw data is fetched, cleaned, and transformed by open-source pipelines.
-          </p>
-          <h2 className="text-xl font-bold pt-4">Use of AI</h2>
-          <p>
-            This site was built with significant assistance from Claude, Anthropic&apos;s AI. Claude
-            helped write the code, structure the data pipelines, and draft editorial copy. All data
-            comes from official sources and every number is traceable to a primary publication.
-            The AI assisted with presentation and engineering — not with the facts themselves.
-          </p>
-        </div>
+            </div>
 
         <div className="border-t border-wiah-border pt-10 mt-10 max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-2">Comments &amp; corrections</h2>

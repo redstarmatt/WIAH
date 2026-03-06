@@ -164,19 +164,7 @@ export default function DemographicsPage() {
               the economy needs working-age migrants, but policy treats migration as a tap to be
               turned on and off.
             </p>
-            <p>
-              Ageing sharpens every fiscal pressure. State pension spending already exceeds
-              &pound;124 billion a year and rises with the triple lock. Social care serves 1.5
-              million fewer people than a decade ago despite surging demand from the over-85s, the
-              fastest-growing age group. Life expectancy stands at 79.0 years for men and 82.9 for
-              women&mdash;up from 75.9 and 80.4 in 2001&mdash;but gains stalled after 2011 and
-              flatlined post-COVID. Healthy life expectancy tells a harder story: it peaked around
-              2015 and has since fallen, meaning Britons live longer but spend more years in poor
-              health. The dependency ratio tightens, the workforce shrinks relative to retirees,
-              and no mainstream party has published a plan that reconciles these arithmetic
-              realities.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

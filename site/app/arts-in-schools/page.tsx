@@ -117,36 +117,7 @@ export default function ArtsInSchoolsPage() {
               by family income. Private schools have not cut arts: if anything, their arts
               provision has expanded, reinforcing the class dimension of the decline.
             </p>
-            <p>
-              The loss of arts teachers compounds the effect. Secondary school art teachers
-              have fallen from 15,800 in 2010 to 11,900 in 2022 — a 25% reduction. Music
-              teachers have fallen from 9,400 to 7,100, a 24% reduction. Specialist teachers
-              cannot be retrained quickly, which means that even if policy priorities shift,
-              provision cannot be restored rapidly. The pipeline of arts teachers is itself
-              threatened: trainee numbers in music and art are below replacement levels, as
-              the subjects' diminished presence in schools reduces demand for specialist staff.
-            </p>
-            <p>
-              The economic argument for arts in schools is frequently made in terms of the
-              creative industries, which contribute £116 billion to the UK economy and employ
-              over two million people. The UK's cultural exports — music, film, fashion, games,
-              architecture — depend on a pipeline of creatively educated young people. But the
-              case does not rest purely on economic returns. The arts develop capacities —
-              for sustained attention, emotional literacy, collaboration, creative problem-solving —
-              that transfer across the curriculum and across life. Cultural participation is
-              correlated with wellbeing, civic engagement, and social cohesion.
-            </p>
-            <p>
-              The Cultural Learning Alliance and Arts Council England have documented the
-              scale of the decline, and the government's response has been limited to
-              non-mandatory guidance. The National Plan for Music Education pledged new
-              investment from 2023, but sector bodies note that this cannot substitute for
-              structural change to how schools are measured and funded. Until the EBacc
-              either includes arts or ceases to be the primary metric by which secondary
-              schools are judged, the incentive structure will continue to drive arts out
-              of state school curricula.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

@@ -116,10 +116,7 @@ export default function UnpaidCarersPage() {
             <p>
               The personal cost is severe. Carers UK&apos;s State of Caring survey, drawing on 13,000 respondents, consistently finds that 72% of carers report deteriorating mental health and 61% worsening physical health. Some 44% have reduced their paid working hours; 35% have given up work entirely, creating a &ldquo;caring penalty&rdquo; in lifetime earnings and pension entitlement. The main financial support &mdash; Carer&apos;s Allowance at &pound;81.90 per week in 2023/24 &mdash; is paid only to those caring 35 or more hours and earning no more than &pound;151 per week. That earnings limit acts as a trap: carers cannot work enough to earn meaningfully without losing the allowance entirely. Young carers face measurable educational disadvantage, attending school less regularly and achieving lower grades than peers from equivalent socioeconomic backgrounds.
             </p>
-            <p>
-              Policy has not kept pace with need. The Care Act 2014 gave carers a legal right to a carer&apos;s assessment, but enforcement is poor: just 340,000 assessments were carried out in 2022/23 against a population of 10 million carers. The Carers Action Plan 2018&ndash;20 was not renewed, leaving no active cross-government strategy. Scotland&apos;s Carer&apos;s Allowance Supplement, introduced in 2018, pays an additional &pound;279 twice yearly; the rest of the UK receives no equivalent. The economic case for action is stark: if just 1% of carers who left work returned to employment, the savings in benefits and gains in tax revenue would exceed the cost of better carer support. Better-resourced statutory social care would ease the pressure on families &mdash; yet commitments to carer-aware GP practices and hospital discharge support, flagged in the NHS Long-Term Plan, remain inconsistently implemented.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

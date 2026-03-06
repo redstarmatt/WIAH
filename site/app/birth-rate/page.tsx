@@ -98,39 +98,7 @@ export default function BirthRatePage() {
               will fall significantly over the next half-century, creating structural pressures
               on pension, NHS, and care funding.
             </p>
-            <p>
-              The reasons for the decline are documented in surveys and qualitative research.
-              Childcare costs in the UK are among the highest in the OECD relative to earnings —
-              a typical nursery place costs over £14,800 per year for a child under two.
-              Housing costs mean that many younger adults cannot afford the space that a
-              family requires. Economic insecurity — including insecure work contracts,
-              student debt, and the legacy of post-2008 wage stagnation — has led young
-              adults to delay or foreclose childbearing. Surveys consistently show that
-              many people have fewer children than they want, not more.
-            </p>
-            <p>
-              International comparisons are instructive. France maintains a TFR of around
-              1.80 — substantially higher than the UK — through generous family benefits,
-              affordable childcare, and cultural and legal support for working mothers.
-              Ireland, Sweden, and the Nordic countries all have higher fertility rates
-              associated with comprehensive parental leave, high-quality childcare provision,
-              and housing policies that support family formation. South Korea, at 0.72,
-              shows the endpoint of the opposite policy environment: extreme housing costs,
-              extremely expensive education, long working hours, and a culture that makes
-              family formation economically ruinous.
-            </p>
-            <p>
-              Immigration partially compensates for low birth rates in the short term by
-              adding working-age people to the labour force. But immigration does not
-              substitute for domestic fertility in the long run, since immigrants also age
-              and retire. The children of immigrants also adapt to UK fertility patterns
-              within a generation or two. Addressing the structural barriers to childbearing —
-              childcare cost, housing, parental leave, flexible work — is the only
-              sustainable lever. The question is whether the political costs of the necessary
-              investment are seen as acceptable compared to the long-term fiscal costs of
-              not acting.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[
