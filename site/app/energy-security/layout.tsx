@@ -1,8 +1,22 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Energy Security',
-  description: 'The 2022 energy crisis exposed Britain s dependence on imported gas: with no long-term storage and volatile global markets, household bills quadrupled and the g',
+  title: 'Is Britain&apos;s energy supply secure?',
+  description: 'The 2022 energy crisis exposed Britain&apos;s dependence on imported gas: with no long-term storage and volatile global markets, household bills quadrupled and the government spent &pound;40 billion on the Energy Price Guarantee.',
+  openGraph: {
+    title: 'Is Britain&apos;s energy supply secure?',
+    description: 'The 2022 energy crisis exposed Britain&apos;s dependence on imported gas: with no long-term storage and volatile global markets, household bills quadrupled and the government spent &pound;40 billion on the Energy Price Guarantee.',
+    type: 'article',
+    url: 'https://whatisactuallyhappening.uk/energy-security',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Is Britain&apos;s energy supply secure?',
+    description: 'The 2022 energy crisis exposed Britain&apos;s dependence on imported gas: with no long-term storage and volatile global markets, household bills quadrupled and the government spent &pound;40 billion on the Energy Price Guarantee.',
+  },
+  alternates: {
+    canonical: 'https://whatisactuallyhappening.uk/energy-security',
+  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
