@@ -4,7 +4,7 @@ import SiteName from '@/components/SiteName';
 
 export const metadata: Metadata = {
   title: 'Privacy',
-  description: 'Privacy policy for What is actually happening? — no cookies, no tracking, no personal data collection.',
+  description: 'Privacy policy for What is actually happening? — how we use data, analytics, and your rights.',
 };
 
 export default function PrivacyPage() {
@@ -23,15 +23,12 @@ export default function PrivacyPage() {
 
           <h2 className="text-xl font-bold pt-4">What we collect</h2>
           <p>
-            We do not use cookies. We do not collect personal data. We do not track you across other websites.
-          </p>
-          <p>
-            We may collect basic, anonymised server-level data — such as page request counts — via our hosting provider (Vercel). This data cannot be used to identify individual visitors and is not shared with third parties.
+            We do not collect personal data and we do not track you across other websites. We use Google Analytics 4, which sets cookies to measure aggregate site usage — see the Analytics section below. We also receive basic server-level data via our hosting provider (Vercel), such as page request counts, which cannot be used to identify individual visitors.
           </p>
 
           <h2 className="text-xl font-bold pt-4">Analytics</h2>
           <p>
-            We use Google Analytics 4 to understand how the site is used in aggregate — which topics are read, how visitors navigate, and where they come from. Google Analytics collects anonymised usage data. We do not use it to identify individual users or build behavioural profiles. You can opt out using the <a href="https://tools.google.com/dlpage/gaoptout" className="text-wiah-blue hover:underline" target="_blank" rel="noopener noreferrer">Google Analytics opt-out browser add-on</a>.
+            We use Google Analytics 4 to understand how the site is used in aggregate — which topics are read, how visitors navigate, and where they come from. Google Analytics uses cookies to collect anonymised usage data. We do not use it to identify individual users or build behavioural profiles.
           </p>
 
           <h2 className="text-xl font-bold pt-4">Third-party services</h2>
@@ -41,7 +38,7 @@ export default function PrivacyPage() {
 
           <h2 className="text-xl font-bold pt-4">Your rights</h2>
           <p>
-            As we do not collect personal data, there is no personal data to access, correct, or delete. If you have questions about data practices, contact us at the address below.
+            We do not hold personal data ourselves. Usage data collected via Google Analytics is subject to <a href="https://policies.google.com/privacy" className="text-wiah-blue hover:underline" target="_blank" rel="noopener noreferrer">Google's privacy policy</a>. You can opt out of GA tracking using the <a href="https://tools.google.com/dlpage/gaoptout" className="text-wiah-blue hover:underline" target="_blank" rel="noopener noreferrer">Google Analytics opt-out browser add-on</a>. If you have questions about our data practices, contact us at the address below.
           </p>
 
           <h2 className="text-xl font-bold pt-4">Contact</h2>
