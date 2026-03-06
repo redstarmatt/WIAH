@@ -59,7 +59,7 @@ export const CATEGORIES: Category[] = [
     name: 'NHS & Healthcare',
     slug: 'nhs-healthcare',
     featured: ['health', 'nhs-waiting-lists', 'nhs-ae'],
-    topics: ['health', 'nhs-waiting-lists', 'nhs-ae', 'nhs-beds', 'nhs-cancer', 'nhs-dentistry', 'nhs-discharge', 'nhs-mental-health', 'nhs-prescriptions', 'nhs-screening', 'nhs-staffing', 'nhs-vaccination', 'nhs-waiting-times', 'nhs-workforce', 'dental', 'maternity', 'long-covid', 'healthy-life-expectancy', 'infant-mortality', 'diabetes', 'dementia', 'antibiotic-resistance', 'community-pharmacies', 'cancer-survival', 'sexual-health', 'stroke', 'smoking', 'organ-donation', 'palliative-care', 'chronic-pain', 'blood-pressure', 'nhs-productivity', 'nhs-capital', 'learning-disabilities', 'nhs-sickness-absence', 'ambulance-handovers', 'fertility-treatment', 'gender-clinic', 'menopause-care', 'talking-therapies', 'hospital-infections', 'eye-care', 'cancer-diagnosis', 'childhood-obesity', 'maternity-safety', 'health-inequalities', 'gp-closures', 'preventable-deaths', 'long-term-conditions', 'nhs-dentistry-access', 'racial-health-gap', 'end-of-life', 'ambulance-response-times', 'cancer-screening-uptake', 'nhs-agency-spend', 'medication-shortages', 'clinical-negligence-costs', 'pharmacy-first-service', 'patient-safety-incidents', 'nhs-health-checks', 'nhs-international-workers', 'gp-list-size', 'nhs-111-pressures', 'diagnostic-imaging-waits', 'weight-loss-drug-access', 'nhs-estate-backlog', 'liver-disease-deaths', 'sepsis-outcomes', 'violence-against-nhs-staff', 'health-tech-adoption', 'personal-health-budgets', 'cancer-one-year-survival', 'ambulance-rural-response', 'birth-trauma', 'nhs-waiting-list-inequality'],
+    topics: ['health', 'nhs-waiting-lists', 'nhs-ae', 'nhs-beds', 'nhs-cancer', 'nhs-dentistry', 'nhs-discharge', 'nhs-mental-health', 'nhs-prescriptions', 'nhs-screening', 'nhs-staffing', 'nhs-vaccination', 'nhs-waiting-times', 'nhs-workforce', 'dental', 'maternity', 'long-covid', 'healthy-life-expectancy', 'infant-mortality', 'diabetes', 'dementia', 'antibiotic-resistance', 'community-pharmacies', 'cancer-survival', 'sexual-health', 'stroke', 'smoking', 'organ-donation', 'palliative-care', 'chronic-pain', 'blood-pressure', 'nhs-productivity', 'nhs-capital', 'learning-disabilities', 'nhs-sickness-absence', 'ambulance-handovers', 'fertility-treatment', 'gender-clinic', 'menopause-care', 'talking-therapies', 'hospital-infections', 'eye-care', 'cancer-diagnosis', 'childhood-obesity', 'maternity-safety', 'health-inequalities', 'gp-closures', 'preventable-deaths', 'long-term-conditions', 'nhs-dentistry-access', 'racial-health-gap', 'end-of-life', 'ambulance-response-times', 'cancer-screening-uptake', 'nhs-agency-spend', 'medication-shortages', 'clinical-negligence-costs', 'pharmacy-first-service', 'patient-safety-incidents', 'nhs-health-checks', 'nhs-international-workers', 'gp-list-size', 'nhs-111-pressures', 'diagnostic-imaging-waits', 'weight-loss-drug-access', 'nhs-estate-backlog', 'liver-disease-deaths', 'sepsis-outcomes', 'violence-against-nhs-staff', 'health-tech-adoption', 'personal-health-budgets', 'cancer-one-year-survival', 'ambulance-rural-response', 'birth-trauma', 'nhs-waiting-list-inequality', 'measles'],
   },
   {
     name: 'Mental Health & Wellbeing',
@@ -140,6 +140,16 @@ export const TOPICS: Record<string, TopicEntry> = {
     metrics: [
       { label: 'Average GP wait', value: '21.3', unit: 'days', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'doubled since 2015', sparklineData: [12.1, 13.4, 14.2, 15.8, 16.3, 17.1, 18.9, 19.4, 20.1, 20.8, 21.3] },
       { label: 'Cat 2 ambulance wait', value: '34', unit: 'min', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'target: 18 min', sparklineData: [18, 20, 22, 25, 28, 32, 39, 42, 38, 35, 34] },
+    ],
+  },
+  'measles': {
+    topic: 'Measles & Vaccination',
+    slug: 'measles',
+    href: '/health#sec-measles',
+    colour: '#E63946',
+    metrics: [
+      { label: 'Measles cases (2024)', value: '2,089', unit: 'cases', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'highest since 2013 · West Midlands outbreak', sparklineData: [2030, 1843, 1400, 95, 541, 259, 991, 778, 26, 52, 54, 330, 2089] },
+      { label: 'MMR dose 2 coverage', value: '86.0', unit: '%', direction: 'down' as const, polarity: 'up-is-good' as const, context: '9pp below 95% herd immunity threshold', sparklineData: [85.5, 86.4, 87.2, 87.6, 87.4, 87.5, 88.0, 87.1, 85.8, 85.9, 86.1, 86.0] },
     ],
   },
   'housing': {
