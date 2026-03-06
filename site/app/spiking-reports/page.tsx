@@ -164,7 +164,7 @@ export default function SpikingReportsPage() {
               polarity="up-is-bad"
               changeText="+110% since 2019 &middot; Expert estimate: 47,000+ actual cases &middot; 1 in 7 reported"
               sparklineData={[3200, 2800, 3400, 4200, 5800, 6732]}
-              onExpand={() => {}}
+              href="#sec-incidents"
             />
             <MetricCard
               label="Injection spiking as % of cases"
@@ -174,7 +174,7 @@ export default function SpikingReportsPage() {
               polarity="up-is-bad"
               changeText="Up from near-zero in 2020 &middot; Needles increasingly used &middot; Needle-stick risk"
               sparklineData={[2, 8, 18, 25]}
-              onExpand={() => {}}
+              href="#sec-incidents"
             />
             <MetricCard
               label="Prosecution rate"
@@ -184,7 +184,7 @@ export default function SpikingReportsPage() {
               polarity="up-is-good"
               changeText="Very low conviction rate &middot; Toxicology evidence fades within 24 hours"
               sparklineData={[8, 7, 6, 7, 8]}
-              onExpand={() => {}}
+              href="#sec-incidents"
             />
           </div>
         </ScrollReveal>

@@ -145,7 +145,7 @@ export default function PrisonsPage() {
               polarity="up-is-bad"
               changeText="2024 · Record high · Operational capacity ~85K · 5,500 early releases in Sep 2024 · Remand: 19%"
               sparklineData={[70000, 72000, 74000, 76000, 78000, 80000, 82000, 84000, 86000, 88000]}
-              onExpand={() => {}}
+              href="#sec-chart"
             />
           </ScrollReveal>
           <ScrollReveal>
@@ -156,7 +156,7 @@ export default function PrisonsPage() {
               polarity="up-is-bad"
               changeText="Within 12 months of release · 38% for those serving under 12 months · Unchanged for a decade · Half reoffend within 2 years"
               sparklineData={[26, 27, 26, 25, 25, 26, 26, 26]}
-              onExpand={() => {}}
+              href="#sec-chart"
             />
           </ScrollReveal>
           <ScrollReveal>
@@ -167,13 +167,13 @@ export default function PrisonsPage() {
               polarity="up-is-bad"
               changeText="2022/23 · Record high · Up from 14,000 in 2012 · 67% on prisoners · Serious assaults: 9,900"
               sparklineData={[14000, 16000, 19000, 22000, 26000, 30000, 27000, 30000, 36500]}
-              onExpand={() => {}}
+              href="#sec-chart"
             />
           </ScrollReveal>
         </div>
 
         <ScrollReveal>
-          <div className="mb-12">
+          <div id="sec-chart" className="mb-12">
             <LineChart
               series={populationSeries}
               title="Prison population, England &amp; Wales, 2014&ndash;2024"

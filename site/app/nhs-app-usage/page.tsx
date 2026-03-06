@@ -175,7 +175,7 @@ export default function NHSAppPage() {
               polarity="up-is-good"
               changeText="+997% since 2020 &middot; Largest health app in Europe"
               sparklineData={usersSparkline}
-              onExpand={() => {}}
+              href="#sec-users"
             />
             <MetricCard
               label="GP appointments booked digitally"
@@ -185,7 +185,7 @@ export default function NHSAppPage() {
               polarity="up-is-good"
               changeText="Up from 14% in 2020 &middot; Still 46% booked by phone or in person"
               sparklineData={bookingsSparkline}
-              onExpand={() => {}}
+              href="#sec-users"
             />
             <MetricCard
               label="People unable to access online services"
@@ -195,7 +195,7 @@ export default function NHSAppPage() {
               polarity="up-is-bad"
               changeText="14% of population &middot; Elderly, disabled, and low-income hardest hit"
               sparklineData={exclusionSparkline}
-              onExpand={() => {}}
+              href="#sec-users"
             />
           </div>
         </ScrollReveal>

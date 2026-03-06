@@ -134,7 +134,7 @@ export default function HealthyLifeExpectancyPage() {
             polarity="up-is-good"
             changeText="2021-23 · Life expectancy 79.0 · 16.1 years in poor health · Stalled since 2009"
             sparklineData={[63.3, 63.7, 63.7, 63.4, 63.1, 62.5, 62.2, 62.9]}
-            onExpand={() => {}}
+            href="#sec-trends"
           />
           <MetricCard
             label="Female healthy life expectancy"
@@ -144,7 +144,7 @@ export default function HealthyLifeExpectancyPage() {
             polarity="up-is-good"
             changeText="2021-23 · Life expectancy 82.9 · 19.5 years in poor health"
             sparklineData={[64.1, 64.5, 64.0, 63.7, 63.9, 63.3, 62.7, 63.4]}
-            onExpand={() => {}}
+            href="#sec-trends"
           />
           <MetricCard
             label="Deprivation gap in healthy LE"
@@ -154,7 +154,7 @@ export default function HealthyLifeExpectancyPage() {
             polarity="up-is-bad"
             changeText="Most vs least deprived · 52.3 yrs vs 71.4 yrs · Not narrowing"
             sparklineData={[19.1, 19.1]}
-            onExpand={() => {}}
+            href="#sec-trends"
           />
         </div>
         </ScrollReveal>

@@ -172,7 +172,7 @@ export default function ObesityTreatmentPage() {
               polarity="up-is-good"
               changeText="vs 860,000 eligible &middot; Strict rationing via tier system"
               sparklineData={glp1Sparkline}
-              onExpand={() => {}}
+              href="#sec-drugs"
             />
             <MetricCard
               label="Bariatric surgery wait time"
@@ -182,7 +182,7 @@ export default function ObesityTreatmentPage() {
               polarity="up-is-bad"
               changeText="Up from 8 months in 2018 &middot; Drug success reducing surgery demand"
               sparklineData={bariatricSparkline}
-              onExpand={() => {}}
+              href="#sec-drugs"
             />
             <MetricCard
               label="Adult obesity prevalence"
@@ -192,7 +192,7 @@ export default function ObesityTreatmentPage() {
               polarity="up-is-bad"
               changeText="Up from 26.9% in 2015 &middot; Highest rate on record"
               sparklineData={obesitySparkline}
-              onExpand={() => {}}
+              href="#sec-drugs"
             />
           </div>
         </ScrollReveal>

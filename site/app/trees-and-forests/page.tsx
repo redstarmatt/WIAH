@@ -83,7 +83,7 @@ export default function TreesAndForestsPage() {
               changeText="highest in England in 20+ years · up 156% since 2021/22"
               sparklineData={[6800, 8100, 9400, 13460, 13720, 14260, 13080, 11890, 10540]}
               source="Forest Research statistics"
-              onExpand={() => {}}
+              href="#sec-planting"
             />
             <MetricCard
               label="UK woodland cover"
@@ -94,7 +94,7 @@ export default function TreesAndForestsPage() {
               changeText="European average: 38%; target: 16.5% by 2050"
               sparklineData={[12, 12.2, 12.4, 12.6, 12.8, 13, 13.1, 13.2]}
               source="Forest Research statistics"
-              onExpand={() => {}}
+              href="#sec-planting"
             />
             <MetricCard
               label="Ancient woodlands threatened"
@@ -104,7 +104,7 @@ export default function TreesAndForestsPage() {
               changeText="Irreplaceable habitat; HS2 alone affected 100+ sites"
               sparklineData={[980, 1020, 1070, 1110, 1150, 1190, 1225]}
               source="Woodland Trust"
-              onExpand={() => {}}
+              href="#sec-planting"
             />
           </div>
         </ScrollReveal>

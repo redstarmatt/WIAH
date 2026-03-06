@@ -151,7 +151,7 @@ export default function SchoolCatchmentInequalityPage() {
               polarity="up-is-bad"
               changeText="Average premium to live in best school catchment &middot; Up from &pound;28k in 2015"
               sparklineData={[28, 30, 31, 33, 34, 35, 36, 38, 39, 40]}
-              onExpand={() => {}}
+              href="#sec-premium"
             />
             <MetricCard
               label="FSM pupils at oversubscribed schools"
@@ -161,7 +161,7 @@ export default function SchoolCatchmentInequalityPage() {
               polarity="up-is-bad"
               changeText="Top schools consistently less deprived than their local area"
               sparklineData={[0.62, 0.61, 0.60, 0.59, 0.61, 0.60]}
-              onExpand={() => {}}
+              href="#sec-premium"
             />
             <MetricCard
               label="School admissions appeals upheld"
@@ -171,7 +171,7 @@ export default function SchoolCatchmentInequalityPage() {
               polarity="up-is-bad"
               changeText="Record 2024 &middot; Middle-class families gaming admissions criteria"
               sparklineData={[3.2, 2.9, 3.1, 3.4, 3.6, 3.8]}
-              onExpand={() => {}}
+              href="#sec-premium"
             />
           </div>
         </ScrollReveal>

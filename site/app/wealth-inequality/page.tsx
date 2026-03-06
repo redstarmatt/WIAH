@@ -98,7 +98,7 @@ export default function WealthInequalityPage() {
               polarity="up-is-bad"
               changeText="Up from 38% in 2006/08"
               sparklineData={[38, 39, 40, 41, 42, 42, 43, 43, 43]}
-              onExpand={() => {}}
+              href="#sec-wealth-share"
             />
             <MetricCard
               label="Median household total wealth"
@@ -107,7 +107,7 @@ export default function WealthInequalityPage() {
               polarity="up-is-good"
               changeText="But bottom 10% have zero or negative wealth"
               sparklineData={[280, 290, 295, 300, 305, 310, 312, 310, 302.5]}
-              onExpand={() => {}}
+              href="#sec-wealth-share"
             />
             <MetricCard
               label="Under-35s with no savings"
@@ -116,7 +116,7 @@ export default function WealthInequalityPage() {
               polarity="up-is-bad"
               changeText="Up from 22% in 2015"
               sparklineData={[22, 24, 25, 27, 28, 30, 31, 32, 32]}
-              onExpand={() => {}}
+              href="#sec-wealth-share"
             />
           </div>
         </ScrollReveal>

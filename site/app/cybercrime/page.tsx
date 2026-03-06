@@ -105,7 +105,7 @@ export default function CybercrimePage() {
               changeText="CSEW estimate &middot; excludes cyber-enabled fraud"
               sparklineData={[1.1, 1.34, 1.48, 1.58, 1.7, 2.1, 1.89, 1.62, 1.74, 1.9]}
               source="ONS &middot; Crime Survey for England and Wales, 2024"
-              onExpand={() => {}}
+              href="#sec-offences"
             />
             <MetricCard
               label="Prosecutions"
@@ -116,7 +116,7 @@ export default function CybercrimePage() {
               changeText="Down from 1,240 in 2015 &middot; Computer Misuse Act"
               sparklineData={[1240, 1180, 1020, 960, 890, 620, 710, 780, 820, 870]}
               source="CPS &middot; Annual Report, 2024"
-              onExpand={() => {}}
+              href="#sec-offences"
             />
             <MetricCard
               label="Ransomware losses (est.)"
@@ -127,7 +127,7 @@ export default function CybercrimePage() {
               changeText="UK-wide &middot; includes disruption and recovery costs"
               sparklineData={[0.8, 1.1, 1.4, 1.8, 2.2, 2.7, 3.2]}
               source="NCSC &middot; Annual Review, 2024"
-              onExpand={() => {}}
+              href="#sec-offences"
             />
           </div>
         </ScrollReveal>

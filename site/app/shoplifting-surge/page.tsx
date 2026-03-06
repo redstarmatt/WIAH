@@ -163,7 +163,7 @@ export default function ShopliftingSurgePage() {
               polarity="up-is-bad"
               changeText="+30% in one year &middot; Highest since records began &middot; Organised crime growing"
               sparklineData={[321, 330, 342, 356, 362, 342, 330, 348, 360, 469]}
-              onExpand={() => {}}
+              href="#sec-offences"
             />
             <MetricCard
               label="Charge rate for shoplifting"
@@ -173,7 +173,7 @@ export default function ShopliftingSurgePage() {
               polarity="up-is-good"
               changeText="Down from 18% in 2015 &middot; Police prioritisation declining &middot; &pound;200 threshold abolished"
               sparklineData={[18, 17, 16, 15, 15, 14, 13, 13, 12, 12]}
-              onExpand={() => {}}
+              href="#sec-offences"
             />
             <MetricCard
               label="Annual cost to retailers"
@@ -183,7 +183,7 @@ export default function ShopliftingSurgePage() {
               polarity="up-is-bad"
               changeText="Up from &pound;1.0bn in 2019 &middot; Organised crime a growing factor &middot; Passed to consumers"
               sparklineData={[1.0, 1.1, 0.9, 1.1, 1.4, 1.8]}
-              onExpand={() => {}}
+              href="#sec-offences"
             />
           </div>
         </ScrollReveal>

@@ -105,7 +105,7 @@ export default function StalkingPage() {
               changeText="33x increase since 2015 &middot; mostly improved recording"
               sparklineData={[3900, 10200, 20600, 31800, 48800, 79000, 94000, 107000, 120000, 131000]}
               source="ONS &middot; Police Recorded Crime, 2024"
-              onExpand={() => {}}
+              href="#sec-recorded"
             />
             <MetricCard
               label="Stalking charge rate"
@@ -115,7 +115,7 @@ export default function StalkingPage() {
               changeText="Down from 8.2% in 2015 &middot; 94% of domestic homicides involved stalking"
               sparklineData={[8.2, 6.5, 5.1, 4.3, 3.8, 3.2, 2.9, 2.6, 2.4, 2.5]}
               source="Home Office &middot; Crime Outcomes, 2024"
-              onExpand={() => {}}
+              href="#sec-recorded"
             />
             <MetricCard
               label="Stalking Protection Orders"
@@ -126,7 +126,7 @@ export default function StalkingPage() {
               changeText="Issued in 2023 &middot; far below estimated need"
               sparklineData={[0, 190, 410, 620, 900]}
               source="Ministry of Justice &middot; Family Court Statistics, 2024"
-              onExpand={() => {}}
+              href="#sec-recorded"
             />
           </div>
         </ScrollReveal>

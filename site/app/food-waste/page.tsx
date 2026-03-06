@@ -86,7 +86,7 @@ export default function FoodWastePage() {
               changeText="Down 18% since 2007 but progress has stalled &mdash; SDG target: 50% by 2030"
               sparklineData={[10.2, 10.0, 9.8, 9.6, 9.4, 9.5, 9.5, 9.5]}
               source="WRAP &mdash; UK food waste estimates 2024"
-              onExpand={() => {}}
+              href="#sec-waste"
             />
             <MetricCard
               label="Cost of household food waste"
@@ -96,7 +96,7 @@ export default function FoodWastePage() {
               changeText="Around &pound;700 per household per year &mdash; 50% of wasted food was still edible"
               sparklineData={[21, 20, 20, 19, 19, 19, 19, 19]}
               source="WRAP &mdash; Household food waste in the UK 2023"
-              onExpand={() => {}}
+              href="#sec-waste"
             />
             <MetricCard
               label="Food waste per household per year"
@@ -106,7 +106,7 @@ export default function FoodWastePage() {
               changeText="Equivalent to 20 meals per month per household thrown in the bin"
               sparklineData={[760, 740, 720, 710, 700, 700, 700, 700]}
               source="WRAP &mdash; Household food waste measurement 2023"
-              onExpand={() => {}}
+              href="#sec-waste"
             />
           </div>
         </ScrollReveal>

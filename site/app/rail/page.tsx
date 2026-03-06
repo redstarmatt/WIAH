@@ -174,7 +174,7 @@ export default function RailPage() {
             polarity="up-is-good"
             changeText="2024 · Worst since records began · Was 89% in 2016 · 1 in 4 trains late"
             sparklineData={[88.8, 88.8, 89.2, 87.8, 85.2, 84.4, 91.2, 91.3, 84.1, 71.7, 72.2]}
-            onExpand={() => {}}
+            href="#sec-punctuality"
           />
           <MetricCard
             label="Cancellation rate"
@@ -184,7 +184,7 @@ export default function RailPage() {
             polarity="up-is-bad"
             changeText="2024 · Improving from 4.4% peak (2022) · Still nearly double pre-COVID 1.8%"
             sparklineData={[1.8, 1.9, 1.9, 2.0, 2.0, 2.3, 2.5, 2.8, 4.4, 3.5, 3.1]}
-            onExpand={() => {}}
+            href="#sec-punctuality"
           />
           <MetricCard
             label="Passenger journeys"
@@ -194,7 +194,7 @@ export default function RailPage() {
             polarity="up-is-good"
             changeText="2024 · 93% of pre-pandemic peak · Recovery slowing as hybrid working stabilises"
             sparklineData={[1.62, 1.65, 1.69, 1.72, 1.74, 0.39, 0.80, 1.41, 1.56, 1.61]}
-            onExpand={() => {}}
+            href="#sec-punctuality"
           />
         </div>
         </ScrollReveal>

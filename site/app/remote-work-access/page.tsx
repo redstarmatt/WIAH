@@ -152,7 +152,7 @@ export default function RemoteWorkAccessPage() {
               polarity="up-is-bad"
               changeText="vs 68% top quintile &middot; 56pp gap &middot; Largest class divide in work"
               sparklineData={[12, 18, 28, 45, 68]}
-              onExpand={() => {}}
+              href="#sec-rate"
             />
             <MetricCard
               label="Working from home (at least 1 day/week)"
@@ -162,7 +162,7 @@ export default function RemoteWorkAccessPage() {
               polarity="up-is-good"
               changeText="Up from 5.7% pre-pandemic &middot; Settled at post-pandemic norm"
               sparklineData={[5.7, 25.9, 22.1, 20.4, 21.8, 22.4]}
-              onExpand={() => {}}
+              href="#sec-rate"
             />
             <MetricCard
               label="Would quit without flexibility"
@@ -172,7 +172,7 @@ export default function RemoteWorkAccessPage() {
               polarity="up-is-good"
               changeText="Up from 42% in 2022 &middot; Flexibility now a key retention factor"
               sparklineData={[42, 45, 48]}
-              onExpand={() => {}}
+              href="#sec-rate"
             />
           </div>
         </ScrollReveal>

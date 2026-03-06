@@ -116,7 +116,7 @@ export default function PrisonOvercrowdingPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; 110% of usable capacity &middot; Built for 79,927 &middot; Emergency early-release in September 2023"
               sparklineData={[86048, 84421, 85509, 85961, 85862, 86584, 83539, 82781, 78837, 79027, 84246, 88225]}
-              onExpand={() => {}}
+              href="#sec-population"
             />
             <MetricCard
               label="Prisoners on remand (awaiting trial)"
@@ -125,7 +125,7 @@ export default function PrisonOvercrowdingPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Record high &middot; 24% of prison population &middot; Some held 2+ years pre-trial"
               sparklineData={[11000, 11200, 10800, 10200, 10600, 13200, 15000, 15800, 16400]}
-              onExpand={() => {}}
+              href="#sec-population"
             />
             <MetricCard
               label="Annual reoffending cost to economy"
@@ -134,7 +134,7 @@ export default function PrisonOvercrowdingPage() {
               polarity="up-is-bad"
               changeText="Per year &middot; 60% of those released reoffend within 2 years &middot; Short sentences (&lt;12 months) have highest reoffending rates"
               sparklineData={[15, 15.5, 16, 16.5, 17, 17.5, 18, 18, 18]}
-              onExpand={() => {}}
+              href="#sec-population"
             />
           </div>
         </ScrollReveal>

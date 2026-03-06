@@ -157,7 +157,7 @@ export default function UniformCostBurdenPage() {
               polarity="up-is-bad"
               changeText="+17% since 2019 &middot; Logos and branded items biggest driver"
               sparklineData={[289, 298, 310, 325, 337, 337]}
-              onExpand={() => {}}
+              href="#sec-costs"
             />
             <MetricCard
               label="Average secondary uniform cost"
@@ -167,7 +167,7 @@ export default function UniformCostBurdenPage() {
               polarity="up-is-bad"
               changeText="+19% since 2019 &middot; Specialist PE kit often costs extra &middot; Blazers expensive"
               sparklineData={[372, 380, 398, 418, 435, 442]}
-              onExpand={() => {}}
+              href="#sec-costs"
             />
             <MetricCard
               label="Parents going into debt for uniform"
@@ -177,7 +177,7 @@ export default function UniformCostBurdenPage() {
               polarity="up-is-bad"
               changeText="Up from 22% in 2021 &middot; Credit, overdraft, BNPL &middot; Second-hand markets growing"
               sparklineData={[22, 25, 28, 30]}
-              onExpand={() => {}}
+              href="#sec-costs"
             />
           </div>
         </ScrollReveal>

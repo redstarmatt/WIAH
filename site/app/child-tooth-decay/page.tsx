@@ -152,7 +152,7 @@ export default function ChildToothDecayPage() {
               polarity="up-is-bad"
               changeText="Down from 33% in 2015 but stalling since 2021 &middot; Pandemic regression"
               sparklineData={[33, 31, 28, 24, 23, 20, 22, 24, 26, 26]}
-              onExpand={() => {}}
+              href="#sec-decay"
             />
             <MetricCard
               label="Hospital admissions for tooth decay &lt;18"
@@ -162,7 +162,7 @@ export default function ChildToothDecayPage() {
               polarity="up-is-bad"
               changeText="Almost entirely preventable &middot; #1 reason for child hospital admission"
               sparklineData={[42, 40, 37, 34, 33, 22, 28, 31, 33, 34]}
-              onExpand={() => {}}
+              href="#sec-decay"
             />
             <MetricCard
               label="Deprivation gap in child decay"
@@ -172,7 +172,7 @@ export default function ChildToothDecayPage() {
               polarity="up-is-bad"
               changeText="42% most deprived vs 14% least &middot; Starkest health inequality"
               sparklineData={[42, 33, 26, 18, 14]}
-              onExpand={() => {}}
+              href="#sec-decay"
             />
           </div>
         </ScrollReveal>

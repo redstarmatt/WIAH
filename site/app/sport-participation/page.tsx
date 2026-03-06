@@ -101,7 +101,7 @@ export default function SportParticipationPage() {
               changeText="150+ min/week &middot; Barely changed since 2016 (61.8%)"
               sparklineData={[61.8, 62.3, 62.6, 63.3, 61.4, 60.9, 63.1, 63.7, 63.5]}
               source="Sport England &middot; Active Lives 2024"
-              onExpand={() => {}}
+              href="#sec-active"
             />
             <MetricCard
               label="Inactive adults"
@@ -111,7 +111,7 @@ export default function SportParticipationPage() {
               changeText="Fewer than 30 min/week &middot; Peaked at 27.5% in 2021"
               sparklineData={[25.7, 25.2, 25.0, 24.6, 27.1, 27.5, 25.6, 25.0, 25.4]}
               source="Sport England &middot; Active Lives 2024"
-              onExpand={() => {}}
+              href="#sec-active"
             />
             <MetricCard
               label="Public swimming pools closed"
@@ -121,7 +121,7 @@ export default function SportParticipationPage() {
               changeText="Since 2010 &middot; Disproportionately in deprived areas"
               sparklineData={[180, 220, 260, 290, 320, 350, 375, 390, 400]}
               source="Swim England &middot; Facilities Report 2023"
-              onExpand={() => {}}
+              href="#sec-active"
             />
           </div>
         </ScrollReveal>

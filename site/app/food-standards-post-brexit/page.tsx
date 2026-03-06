@@ -175,7 +175,7 @@ export default function FoodStandardsPage() {
               polarity="up-is-bad"
               changeText="Up from 62 in 2021 · Delayed border checks left gap in protection"
               sparklineData={incidentsSparkline}
-              onExpand={() => {}}
+              href="#sec-incidents"
             />
             <MetricCard
               label="Import border checks completion"
@@ -185,7 +185,7 @@ export default function FoodStandardsPage() {
               polarity="up-is-good"
               changeText="Up from 8% in 2021 · Full checks finally implemented 2024"
               sparklineData={borderSparkline}
-              onExpand={() => {}}
+              href="#sec-incidents"
             />
             <MetricCard
               label="Food standards divergence from EU"
@@ -195,7 +195,7 @@ export default function FoodStandardsPage() {
               polarity="up-is-bad"
               changeText="Cumulative divergences · Affects agri-food exporters to EU"
               sparklineData={divergenceSparkline}
-              onExpand={() => {}}
+              href="#sec-incidents"
             />
           </div>
         </ScrollReveal>

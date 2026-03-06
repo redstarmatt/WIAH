@@ -175,7 +175,7 @@ export default function InfantFeedingPage() {
               polarity="up-is-good"
               changeText="Lowest in developed world &middot; OECD average 46% &middot; UK lowest since 2010"
               sparklineData={breastfeeding6mSparkline}
-              onExpand={() => {}}
+              href="#sec-breastfeeding"
             />
             <MetricCard
               label="Breastfeeding at 6-8 weeks"
@@ -185,7 +185,7 @@ export default function InfantFeedingPage() {
               polarity="up-is-good"
               changeText="Stagnant for a decade &middot; Below PHE 50% target &middot; Steep deprivation gradient"
               sparklineData={breastfeeding6wSparkline}
-              onExpand={() => {}}
+              href="#sec-breastfeeding"
             />
             <MetricCard
               label="Monthly formula cost per baby"
@@ -195,7 +195,7 @@ export default function InfantFeedingPage() {
               polarity="up-is-bad"
               changeText="+32% since 2020 &middot; Some families diluting formula &middot; Food banks stocking it"
               sparklineData={formulaSparkline}
-              onExpand={() => {}}
+              href="#sec-breastfeeding"
             />
           </div>
         </ScrollReveal>

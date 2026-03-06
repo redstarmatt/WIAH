@@ -130,7 +130,7 @@ export default function FertilityTreatmentPage() {
               polarity={'up-is-good' as const}
               changeText="2023 &middot; Down from 60% in 2016"
               sparklineData={[60, 58, 55, 52, 49, 47, 46, 45]}
-              onExpand={() => {}}
+              href="#sec-nice"
             />
             <MetricCard
               label="Average NHS IVF wait"
@@ -140,7 +140,7 @@ export default function FertilityTreatmentPage() {
               polarity={'up-is-bad' as const}
               changeText="2023 &middot; Up from 9 months in 2016"
               sparklineData={[9, 10, 12, 14, 16, 17, 18, 18]}
-              onExpand={() => {}}
+              href="#sec-nice"
             />
             <MetricCard
               label="Private IVF cycle cost"
@@ -149,7 +149,7 @@ export default function FertilityTreatmentPage() {
               polarity={'up-is-bad' as const}
               changeText="Per cycle &middot; No success guarantee"
               sparklineData={[5000, 5500, 6000, 7000, 7500, 8000, 9000, 10000]}
-              onExpand={() => {}}
+              href="#sec-nice"
             />
           </div>
         </ScrollReveal>

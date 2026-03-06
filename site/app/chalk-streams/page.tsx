@@ -88,7 +88,7 @@ export default function ChalkStreamsPage() {
               changeText="Target: 100% &mdash; 95% failing WFD standards for 15+ years"
               sparklineData={[8, 7, 6.5, 6, 5.5, 5.5, 5, 5]}
               source="EA &mdash; WFD river classification; Chalk Stream Restoration Group 2021"
-              onExpand={() => {}}
+              href="#sec-ecology"
             />
             <MetricCard
               label="Catchments classified as over-abstracted"
@@ -99,7 +99,7 @@ export default function ChalkStreamsPage() {
               changeText="Groundwater levels below ecological minimums in dry years"
               sparklineData={[62, 62, 61, 61, 60, 60, 60, 60]}
               source="Environment Agency &mdash; Water stressed areas assessment 2023"
-              onExpand={() => {}}
+              href="#sec-ecology"
             />
             <MetricCard
               label="Sewage discharges on chalk catchments (2022)"
@@ -109,7 +109,7 @@ export default function ChalkStreamsPage() {
               changeText="Sharply rising since EDM monitoring expanded from 2016"
               sparklineData={[6000, 7000, 8500, 9800, 10800, 11500, 12000, 12000]}
               source="Environment Agency &mdash; Event Duration Monitoring 2022"
-              onExpand={() => {}}
+              href="#sec-ecology"
             />
           </div>
         </ScrollReveal>

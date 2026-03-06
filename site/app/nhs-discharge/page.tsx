@@ -120,7 +120,7 @@ export default function NHSDischargePagePage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Up from 5,200 in 2015 &middot; Costs NHS &pound;1bn per year in bed days &middot; Worsening A&amp;E waits"
               sparklineData={[5.2, 5.8, 6.8, 7.2, 7.4, 3.8, 9.8, 12.5, 13.5]}
-              onExpand={() => {}}
+              href="#sec-delays"
             />
             <MetricCard
               label="Discharge delays caused by social care"
@@ -129,7 +129,7 @@ export default function NHSDischargePagePage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Up from 35% in 2019 &middot; Lack of home care packages &middot; Care home shortages &middot; Council funding cuts"
               sparklineData={[35, 28, 38, 41, 42]}
-              onExpand={() => {}}
+              href="#sec-delays"
             />
             <MetricCard
               label="Beds occupied by discharge-delayed patients"
@@ -138,7 +138,7 @@ export default function NHSDischargePagePage() {
               polarity="up-is-bad"
               changeText="2023 &middot; 12.5% of all acute hospital beds &middot; Direct cause of A&amp;E 12-hour waits &middot; Ambulance handover delays"
               sparklineData={[3, 4, 5, 6, 6.5, 3.5, 8, 10, 12.5]}
-              onExpand={() => {}}
+              href="#sec-delays"
             />
           </div>
         </ScrollReveal>

@@ -159,7 +159,7 @@ export default function FiveGCoveragePage() {
               polarity="up-is-good"
               changeText="+38pp since 2021 · Rural coverage: 11%"
               sparklineData={[4, 10, 18, 28, 38, 42]}
-              onExpand={() => {}}
+              href="#sec-coverage"
             />
             <MetricCard
               label="Premises without reliable 4G"
@@ -169,7 +169,7 @@ export default function FiveGCoveragePage() {
               polarity="up-is-bad"
               changeText="Down from 14.2M in 2019 · But rural/deprived areas worst"
               sparklineData={[14.2, 13.8, 13.1, 12.4, 11.8, 10.3]}
-              onExpand={() => {}}
+              href="#sec-coverage"
             />
             <MetricCard
               label="Urban-rural 5G gap"
@@ -179,7 +179,7 @@ export default function FiveGCoveragePage() {
               polarity="up-is-bad"
               changeText="70% urban vs 11% rural · Growing faster in cities"
               sparklineData={[34, 46, 53, 58, 59]}
-              onExpand={() => {}}
+              href="#sec-coverage"
             />
           </div>
         </ScrollReveal>

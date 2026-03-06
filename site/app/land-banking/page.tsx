@@ -112,7 +112,7 @@ export default function LandBankingPage() {
               changeText="Up from ~650,000 in 2016 &middot; 4+ years of supply at current build rate"
               sparklineData={[650, 700, 750, 800, 850, 900, 950, 1000]}
               source="Lichfields &middot; From Permission to Completion 2023"
-              onExpand={() => {}}
+              href="#sec-permissions"
             />
             <MetricCard
               label="Average gap between permission and build start"
@@ -123,7 +123,7 @@ export default function LandBankingPage() {
               changeText="Up from 1.6 years in 2015 &middot; 75% of permissions not started within 3 years"
               sparklineData={[1.6, 1.9, 2.1, 2.4, 2.6, 2.9, 3.1, 3.4]}
               source="Lichfields &middot; Build-out rate analysis 2023"
-              onExpand={() => {}}
+              href="#sec-permissions"
             />
             <MetricCard
               label="Housebuilder profit margins (top 5)"
@@ -133,7 +133,7 @@ export default function LandBankingPage() {
               changeText="Consistently 18&ndash;26% &middot; Industry target: margin over volume"
               sparklineData={[18, 20, 22, 24, 25, 26, 23, 21]}
               source="Company annual reports &middot; Barratt, Taylor Wimpey, Persimmon 2023"
-              onExpand={() => {}}
+              href="#sec-permissions"
             />
           </div>
         </ScrollReveal>

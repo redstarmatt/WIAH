@@ -165,7 +165,7 @@ export default function NightTimeEconomyPage() {
               polarity="up-is-bad"
               changeText="Net closures &middot; 6\u20137 pubs per day &middot; Rural and working-class areas hardest hit"
               sparklineData={[0, 800, 1600, 2400, 3200, 4200, 5400, 6200, 7000]}
-              onExpand={() => {}}
+              href="#sec-pubs"
             />
             <MetricCard
               label="UK nightclubs remaining"
@@ -175,7 +175,7 @@ export default function NightTimeEconomyPage() {
               polarity="up-is-bad"
               changeText="Down from 3,144 in 2005 &middot; 72% decline in 20 years &middot; Energy costs main driver"
               sparklineData={[2800, 2600, 2400, 2200, 2000, 1800, 1600, 1400, 1200, 1100, 1000, 950, 900, 880, 872]}
-              onExpand={() => {}}
+              href="#sec-pubs"
             />
             <MetricCard
               label="Night-time economy employment"
@@ -185,7 +185,7 @@ export default function NightTimeEconomyPage() {
               polarity="up-is-good"
               changeText="Recovered from pandemic trough &middot; But structural decline of venues continues"
               sparklineData={[8.3, 6.2, 7.4, 7.8, 7.9, 8.0]}
-              onExpand={() => {}}
+              href="#sec-pubs"
             />
           </div>
         </ScrollReveal>

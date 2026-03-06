@@ -176,7 +176,7 @@ export default function ClimateAdaptationPage() {
               polarity="up-is-good"
               changeText="vs £78bn needed annually by 2050 at 2°C · 1% of requirement"
               sparklineData={spendingSparkline}
-              onExpand={() => {}}
+              href="#sec-spending"
             />
             <MetricCard
               label="Annual flood insurance payouts (2024)"
@@ -186,7 +186,7 @@ export default function ClimateAdaptationPage() {
               polarity="up-is-bad"
               changeText="Record high · 6.3 million homes in flood risk zones"
               sparklineData={payoutsSparkline}
-              onExpand={() => {}}
+              href="#sec-spending"
             />
             <MetricCard
               label="Uninsured households in flood zones"
@@ -196,7 +196,7 @@ export default function ClimateAdaptationPage() {
               polarity="up-is-bad"
               changeText="Growing as insurers exit or price out · Flood Re covers 300,000"
               sparklineData={uninsuredSparkline}
-              onExpand={() => {}}
+              href="#sec-spending"
             />
           </div>
         </ScrollReveal>

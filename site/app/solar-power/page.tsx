@@ -88,7 +88,7 @@ export default function SolarPowerPage() {
               changeText="Up from 0.07 GW in 2010 &mdash; target: 70 GW by 2035"
               sparklineData={[4.7, 6.2, 8.1, 10.4, 11.8, 13.0, 14.2, 15.8]}
               source="DESNZ &mdash; Solar photovoltaics deployment statistics"
-              onExpand={() => {}}
+              href="#sec-capacity"
             />
             <MetricCard
               label="Solar share of annual electricity"
@@ -99,7 +99,7 @@ export default function SolarPowerPage() {
               changeText="Rises to 30%+ on peak summer days; 5% annual average"
               sparklineData={[2, 2.5, 3, 3.8, 4.2, 4.6, 4.9, 5]}
               source="DESNZ &mdash; Energy Trends; National Grid ESO"
-              onExpand={() => {}}
+              href="#sec-capacity"
             />
             <MetricCard
               label="New solar added in 2023"
@@ -110,7 +110,7 @@ export default function SolarPowerPage() {
               changeText="Target deployment rate: ~5 GW/yr to hit 70 GW by 2035"
               sparklineData={[3.5, 0.9, 0.5, 0.5, 0.6, 0.9, 1.2, 1.8]}
               source="DESNZ &mdash; Solar photovoltaics deployment 2024"
-              onExpand={() => {}}
+              href="#sec-capacity"
             />
           </div>
         </ScrollReveal>

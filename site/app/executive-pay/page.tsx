@@ -103,7 +103,7 @@ export default function ExecutivePayPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; 118&times; the median UK worker salary &middot; up from &pound;1.8M in 2016"
               sparklineData={[1.8, 2.1, 2.5, 2.8, 3.0, 3.2, 3.6, 3.9]}
-              onExpand={() => {}}
+              href="#sec-ceo-pay"
             />
             <MetricCard
               label="CEO-to-worker pay ratio"
@@ -112,7 +112,7 @@ export default function ExecutivePayPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Up from 47&times; in 2000 &middot; OECD average is around 80&times;"
               sparklineData={[47, 55, 65, 75, 85, 95, 108, 118]}
-              onExpand={() => {}}
+              href="#sec-ceo-pay"
             />
             <MetricCard
               label="Companies with shareholder pay rebellion"
@@ -121,7 +121,7 @@ export default function ExecutivePayPage() {
               polarity="up-is-good"
               changeText="2023 &middot; Up from 8 companies in 2015 &middot; Governance pressure growing"
               sparklineData={[8, 10, 12, 14, 17, 20, 26, 32]}
-              onExpand={() => {}}
+              href="#sec-ceo-pay"
             />
           </div>
         </ScrollReveal>

@@ -156,7 +156,7 @@ export default function TradePage() {
               polarity="up-is-bad"
               changeText="2023 · Services surplus &pound;145bn · Net goods deficit persistent and widening · Energy imports drove 2022 spike"
               sparklineData={[105, 119, 122, 135, 138, 138, 131, 95, 117, 177, 157]}
-              onExpand={() => {}}
+              href="#sec-goods"
             />
             <MetricCard
               label="EU goods exports (volume index)"
@@ -166,7 +166,7 @@ export default function TradePage() {
               polarity="up-is-good"
               changeText="2023 · 2016=100 · Still 7% below pre-Brexit trend · OBR: 15% long-run trade intensity reduction"
               sparklineData={[100, 105, 107, 109, 85, 87, 92, 93]}
-              onExpand={() => {}}
+              href="#sec-goods"
             />
             <MetricCard
               label="EU share of UK exports"
@@ -176,7 +176,7 @@ export default function TradePage() {
               polarity="up-is-good"
               changeText="2023 · Was 43% pre-Brexit · Partial diversification to Australia, Japan, CPTPP · Still largest trading partner"
               sparklineData={[44, 43, 44, 43, 43, 39, 40, 41, 41]}
-              onExpand={() => {}}
+              href="#sec-goods"
             />
           </div>
         </ScrollReveal>

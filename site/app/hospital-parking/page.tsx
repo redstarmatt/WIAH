@@ -163,7 +163,7 @@ export default function HospitalParkingPage() {
               polarity="up-is-bad"
               changeText="2022/23 &middot; Up from &pound;188M pre-pandemic &middot; Trust revenue pressure rising"
               sparklineData={[188, 175, 82, 155, 175, 190, 214]}
-              onExpand={() => {}}
+              href="#sec-revenue"
             />
             <MetricCard
               label="Trusts still charging qualifying patients"
@@ -173,7 +173,7 @@ export default function HospitalParkingPage() {
               polarity="up-is-bad"
               changeText="Despite 2019 pledge &middot; NHS England compliance checking weak &middot; Definition disputes"
               sparklineData={[78, 74, 76, 78, 80]}
-              onExpand={() => {}}
+              href="#sec-revenue"
             />
             <MetricCard
               label="Average hourly NHS parking charge"
@@ -183,7 +183,7 @@ export default function HospitalParkingPage() {
               polarity="up-is-bad"
               changeText="+22% since 2019 &middot; Free in Scotland, Wales, Northern Ireland"
               sparklineData={[1.80, 1.85, 1.90, 2.00, 2.10, 2.20]}
-              onExpand={() => {}}
+              href="#sec-revenue"
             />
           </div>
         </ScrollReveal>

@@ -175,7 +175,7 @@ export default function HousingFirstPage() {
               polarity="up-is-good"
               changeText="Cumulative since 2019 &middot; Tiny vs 270,000+ rough sleepers and hidden homeless"
               sparklineData={placementsSparkline}
-              onExpand={() => {}}
+              href="#sec-placements"
             />
             <MetricCard
               label="Housing retention after 2 years"
@@ -185,7 +185,7 @@ export default function HousingFirstPage() {
               polarity="up-is-good"
               changeText="Most successful intervention for complex needs homelessness"
               sparklineData={retentionSparkline}
-              onExpand={() => {}}
+              href="#sec-placements"
             />
             <MetricCard
               label="Cost saving vs traditional routes"
@@ -195,7 +195,7 @@ export default function HousingFirstPage() {
               polarity="up-is-good"
               changeText="Cheaper than hostels &middot; Emergency service cost reductions are larger"
               sparklineData={[12, 14, 16, 18, 20, 20]}
-              onExpand={() => {}}
+              href="#sec-placements"
             />
           </div>
         </ScrollReveal>

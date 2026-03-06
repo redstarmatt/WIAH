@@ -163,7 +163,7 @@ export default function GrassrootsSportPage() {
               polarity="up-is-bad"
               changeText="Austerity-era council cuts &middot; Swimming pools hardest hit"
               sparklineData={[0, 100, 200, 320, 440, 560, 640, 720, 800, 860, 920, 980, 1050, 1120, 1200]}
-              onExpand={() => {}}
+              href="#sec-facilities"
             />
             <MetricCard
               label="Weekly sport participation (adults)"
@@ -173,7 +173,7 @@ export default function GrassrootsSportPage() {
               polarity="up-is-good"
               changeText="Stagnant since 2019 &middot; Pre-pandemic peak was 63%"
               sparklineData={[59.1, 60.3, 61.1, 62.2, 63.0, 60.4, 62.2, 62.8, 61.5, 61.3]}
-              onExpand={() => {}}
+              href="#sec-facilities"
             />
             <MetricCard
               label="Children meeting daily activity guidelines"
@@ -183,7 +183,7 @@ export default function GrassrootsSportPage() {
               polarity="up-is-good"
               changeText="Down from 47% pre-pandemic &middot; Free school sport provision cut"
               sparklineData={[47, 47, 43, 40, 44, 47, 46]}
-              onExpand={() => {}}
+              href="#sec-facilities"
             />
           </div>
         </ScrollReveal>

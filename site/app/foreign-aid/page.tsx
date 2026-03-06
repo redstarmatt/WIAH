@@ -124,7 +124,7 @@ export default function ForeignAidPage() {
               changeText="Down from 0.7% &middot; Cut in 2021 &middot; &pound;4bn annually withdrawn from overseas programmes"
               sparklineData={[0.7, 0.7, 0.7, 0.7, 0.7, 0.5, 0.5, 0.5]}
               source="FCDO &middot; Statistics on International Development 2024"
-              onExpand={() => {}}
+              href="#sec-oda-pct"
             />
             <MetricCard
               label="Total ODA budget 2023"
@@ -134,7 +134,7 @@ export default function ForeignAidPage() {
               changeText="Of which &pound;3.5bn spent in UK on asylum processing &middot; Net overseas: &pound;11.7bn"
               sparklineData={[12.2, 13.4, 14.1, 14.6, 15.2, 11.4, 13.0, 15.2]}
               source="FCDO &middot; ODA Statistics 2023"
-              onExpand={() => {}}
+              href="#sec-oda-pct"
             />
             <MetricCard
               label="Aid diverted to domestic asylum costs"
@@ -144,7 +144,7 @@ export default function ForeignAidPage() {
               changeText="Up from &pound;300m in 2015 &middot; Classified as ODA under DAC rules &middot; 23% of total budget"
               sparklineData={[0.5, 0.8, 1.2, 1.8, 2.5, 3.0, 3.5, 3.5]}
               source="ICAI &middot; Annual Review 2024"
-              onExpand={() => {}}
+              href="#sec-oda-pct"
             />
           </div>
         </ScrollReveal>

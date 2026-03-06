@@ -99,7 +99,7 @@ export default function StudentDebtPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="+£28,000 since 2012 tuition fee rise"
-              onExpand={() => {}}
+              href="#sec-charts"
             />
             <MetricCard
               label="Graduates expected to repay in full"
@@ -107,7 +107,7 @@ export default function StudentDebtPage() {
               direction="down"
               polarity="up-is-good"
               changeText="Was 40% under pre-2012 system"
-              onExpand={() => {}}
+              href="#sec-charts"
             />
             <MetricCard
               label="Unpaid debt written off per year"
@@ -115,7 +115,7 @@ export default function StudentDebtPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="Forecast to reach £12bn by 2040"
-              onExpand={() => {}}
+              href="#sec-charts"
             />
           </div>
         </section>

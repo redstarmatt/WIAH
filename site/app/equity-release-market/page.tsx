@@ -154,7 +154,7 @@ export default function EquityReleaseMarketPage() {
               polarity="up-is-bad"
               changeText="Down from &pound;6.2bn peak in 2022 &middot; Rate rise knocked market"
               sparklineData={[1.8, 2.1, 2.6, 3.4, 3.9, 3.1, 4.8, 6.2, 3.8, 2.6]}
-              onExpand={() => {}}
+              href="#sec-lending"
             />
             <MetricCard
               label="Average lifetime mortgage rate"
@@ -164,7 +164,7 @@ export default function EquityReleaseMarketPage() {
               polarity="up-is-bad"
               changeText="Debt doubles in ~12 years &middot; Compound interest main risk"
               sparklineData={[5.1, 5.2, 5.4, 5.6, 6.8, 7.2, 6.8]}
-              onExpand={() => {}}
+              href="#sec-lending"
             />
             <MetricCard
               label="Equity release plans in force"
@@ -174,7 +174,7 @@ export default function EquityReleaseMarketPage() {
               polarity="up-is-bad"
               changeText="Up from 280,000 in 2018 &middot; Mostly used for debt repayment"
               sparklineData={[280, 310, 340, 360, 390, 400, 415]}
-              onExpand={() => {}}
+              href="#sec-lending"
             />
           </div>
         </ScrollReveal>

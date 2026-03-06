@@ -130,7 +130,7 @@ export default function RegionalInequalityPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Gap widening since 2015 &middot; Inner London West: &pound;137K per head &middot; North East: 65"
               sparklineData={[170, 172, 173, 174, 175, 168, 172, 176, 178]}
-              onExpand={() => {}}
+              href="#sec-gva"
             />
             <MetricCard
               label="Healthy life expectancy gap"
@@ -139,7 +139,7 @@ export default function RegionalInequalityPage() {
               polarity="up-is-bad"
               changeText="Between richest &amp; poorest deciles &middot; 2023 &middot; Poorest: 49.5 yrs &middot; Richest: 70.4 yrs"
               sparklineData={[18.6, 18.7, 19.0, 19.4, 19.7, 19.9, 20.3, 20.7, 20.9]}
-              onExpand={() => {}}
+              href="#sec-gva"
             />
             <MetricCard
               label="Transport spend per head, North East"
@@ -148,7 +148,7 @@ export default function RegionalInequalityPage() {
               polarity="up-is-good"
               changeText="2022/23 &middot; London: &pound;902 &middot; Yorkshire: &pound;296 &middot; HS2 northern leg cancelled Oct 2023"
               sparklineData={[310, 315, 320, 325, 330, 335, 337]}
-              onExpand={() => {}}
+              href="#sec-gva"
             />
           </div>
         </ScrollReveal>

@@ -99,7 +99,7 @@ export default function NHSWorkforcePage() {
             polarity="up-is-bad"
             direction="up"
             changeText="8.4% vacancy rate"
-            onExpand={() => {}}
+            href="#sec-chart"
           />
           <MetricCard
             label="Nursing vacancies"
@@ -108,7 +108,7 @@ export default function NHSWorkforcePage() {
             polarity="up-is-bad"
             direction="up"
             changeText="1 in 9 nursing posts unfilled"
-            onExpand={() => {}}
+            href="#sec-chart"
           />
           <MetricCard
             label="Staff leaving NHS each year"
@@ -117,7 +117,7 @@ export default function NHSWorkforcePage() {
             polarity="up-is-bad"
             direction="up"
             changeText="1 in 12; burnout key factor"
-            onExpand={() => {}}
+            href="#sec-chart"
           />
         </div>
       </section>
@@ -125,7 +125,7 @@ export default function NHSWorkforcePage() {
       {/* Chart 1: Total vacancies */}
       {data && (
         <ScrollReveal>
-          <section className="max-w-5xl mx-auto px-6 py-16">
+          <section id="sec-chart" className="max-w-5xl mx-auto px-6 py-16">
             <LineChart
               title="Total NHS vacancies, England"
               subtitle="Quarterly snapshot of advertised vacancies. NHS England workforce statistics."

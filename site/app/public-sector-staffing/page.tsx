@@ -165,7 +165,7 @@ export default function PublicSectorStaffingPage() {
               polarity="up-is-good"
               changeText="+4% in 2024 &middot; But still 23% below 2010 peak &middot; COVID era expansion ongoing"
               sparklineData={[492, 450, 424, 400, 390, 384, 384, 390, 396, 404, 436, 465, 478, 512, 514]}
-              onExpand={() => {}}
+              href="#sec-civil-service"
             />
             <MetricCard
               label="NHS workforce"
@@ -175,7 +175,7 @@ export default function PublicSectorStaffingPage() {
               polarity="up-is-good"
               changeText="+27% since 2015 &middot; Largest component of public sector growth"
               sparklineData={[1160, 1180, 1210, 1240, 1260, 1280, 1320, 1360, 1420, 1480]}
-              onExpand={() => {}}
+              href="#sec-civil-service"
             />
             <MetricCard
               label="Local government workforce"
@@ -185,7 +185,7 @@ export default function PublicSectorStaffingPage() {
               polarity="up-is-bad"
               changeText="Down 12% from 2010 &middot; Austerity-era cuts not reversed &middot; Social care most affected"
               sparklineData={[2980, 2760, 2620, 2540, 2480, 2450, 2440, 2460, 2490, 2520, 2560, 2580, 2600, 2610, 2620]}
-              onExpand={() => {}}
+              href="#sec-civil-service"
             />
           </div>
         </ScrollReveal>

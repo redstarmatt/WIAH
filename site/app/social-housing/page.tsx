@@ -157,7 +157,7 @@ export default function SocialHousingPage() {
             polarity="up-is-good"
             changeText="2023 · Down from 39,500 in 2010 · Lowest since 1920s · 1.29M households waiting"
             sparklineData={[39.5, 46.4, 42.2, 31.4, 30.9, 26.8, 28.1, 27.5, 22.8, 16.9, 17.6, 10.2, 7.5, 7.5]}
-            onExpand={() => {}}
+            href="#sec-completions"
           />
           <MetricCard
             label="Households on social housing waiting list"
@@ -167,7 +167,7 @@ export default function SocialHousingPage() {
             polarity="up-is-bad"
             changeText="2023 · Up from 1.14M in 2018 · Eligibility tightened but underlying need rising"
             sparklineData={[1730, 1450, 1310, 1220, 1160, 1140, 1160, 1200, 1230, 1260, 1290]}
-            onExpand={() => {}}
+            href="#sec-completions"
           />
           <MetricCard
             label="Council homes sold (Right to Buy)"
@@ -177,7 +177,7 @@ export default function SocialHousingPage() {
             polarity="up-is-bad"
             changeText="2023 · 1.8M sold since 1980 · 1:8 replacement ratio · Labour reviewing the scheme"
             sparklineData={[2.7, 11.0, 12.3, 13.5, 12.0, 11.3, 11.5, 9.8, 7.4, 9.0, 11.8, 8.4]}
-            onExpand={() => {}}
+            href="#sec-completions"
           />
         </div>
         </ScrollReveal>

@@ -105,7 +105,7 @@ export default function HospiceFundingPage() {
               changeText="Down from 34% in 2014 &middot; 73% now from charity fundraising"
               sparklineData={[34, 33, 32, 31, 30, 29, 28, 27]}
               source="Hospice UK &middot; Funding analysis 2023"
-              onExpand={() => {}}
+              href="#sec-funding"
             />
             <MetricCard
               label="Hospices reporting financial deficit"
@@ -115,7 +115,7 @@ export default function HospiceFundingPage() {
               changeText="Up from 20% in 2014 &middot; Sector-wide financial crisis"
               sparklineData={[20, 25, 30, 35, 42, 50, 55, 58]}
               source="Hospice UK &middot; Annual member survey 2023"
-              onExpand={() => {}}
+              href="#sec-funding"
             />
             <MetricCard
               label="Hospice inpatient beds"
@@ -125,7 +125,7 @@ export default function HospiceFundingPage() {
               changeText="Down from 5,400 in 2014 &middot; Beds cut as deficits deepen"
               sparklineData={[5400, 5300, 5200, 5100, 5000, 4950, 4920, 4900]}
               source="CQC &middot; Registered palliative care capacity 2023"
-              onExpand={() => {}}
+              href="#sec-funding"
             />
           </div>
         </ScrollReveal>

@@ -163,7 +163,7 @@ export default function SchoolMealsProcurementPage() {
               polarity="up-is-bad"
               changeText="Dominated by 3 large catering companies &middot; Low local food procurement"
               sparklineData={[0.95, 1.0, 1.05, 0.9, 1.05, 1.1, 1.2]}
-              onExpand={() => {}}
+              href="#sec-market"
             />
             <MetricCard
               label="Contracts specifying local sourcing"
@@ -173,7 +173,7 @@ export default function SchoolMealsProcurementPage() {
               polarity="up-is-good"
               changeText="Up from 4% in 2019 &middot; Far below government aspirations &middot; Scotland leads"
               sparklineData={[4, 5, 5, 6, 6, 7]}
-              onExpand={() => {}}
+              href="#sec-market"
             />
             <MetricCard
               label="Average meal cost (England)"
@@ -183,7 +183,7 @@ export default function SchoolMealsProcurementPage() {
               polarity="up-is-bad"
               changeText="+13% since 2019 &middot; Universal Infant FSM rate unchanged at &pound;2.53 until recently"
               sparklineData={[2.35, 2.40, 2.50, 2.55, 2.60, 2.65]}
-              onExpand={() => {}}
+              href="#sec-market"
             />
           </div>
         </ScrollReveal>

@@ -121,7 +121,7 @@ export default function InequalityPage() {
               polarity="up-is-bad"
               changeText="2022/23 &middot; OECD average: 0.32 &middot; Germany: 0.29, France: 0.30 &middot; USA: 0.39 &middot; Broadly stable since 2010"
               sparklineData={[0.36, 0.35, 0.34, 0.34, 0.34, 0.34, 0.35, 0.35, 0.36, 0.35, 0.34, 0.35, 0.35]}
-              onExpand={() => {}}
+              href="#sec-income"
             />
             <MetricCard
               label="Top 10% income share"
@@ -130,7 +130,7 @@ export default function InequalityPage() {
               polarity="up-is-bad"
               changeText="2022/23 &middot; Bottom 50% receive 23% &middot; Ratio has been stable &middot; COVID temporarily compressed inequality in 2020/21"
               sparklineData={[30, 29, 29, 29, 30, 28, 29]}
-              onExpand={() => {}}
+              href="#sec-income"
             />
             <MetricCard
               label="Wealth held by top 10%"
@@ -139,7 +139,7 @@ export default function InequalityPage() {
               polarity="up-is-bad"
               changeText="2020 &middot; Bottom 30% hold 5% &middot; Housing wealth main driver &middot; Wealth Gini: 0.63 (far more unequal than income)"
               sparklineData={[39, 40, 41, 42, 43]}
-              onExpand={() => {}}
+              href="#sec-income"
             />
           </div>
         </ScrollReveal>

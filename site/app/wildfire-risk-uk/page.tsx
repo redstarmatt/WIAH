@@ -150,7 +150,7 @@ export default function WildfireRiskUKPage() {
               polarity="up-is-bad"
               changeText="3x the 2010\u20132020 annual average &middot; Driven by heat and drought"
               sparklineData={[2.1, 1.8, 2.3, 17.4, 2.8, 3.2, 12.1, 4.5, 9.8]}
-              onExpand={() => {}}
+              href="#sec-area"
             />
             <MetricCard
               label="Wildfire incidents (2023)"
@@ -160,7 +160,7 @@ export default function WildfireRiskUKPage() {
               polarity="up-is-bad"
               changeText="Up from ~1,200 in 2015 &middot; Scotland and England both affected"
               sparklineData={[1200, 1100, 1300, 2200, 1400, 1500, 3400, 1600, 2100]}
-              onExpand={() => {}}
+              href="#sec-area"
             />
             <MetricCard
               label="High fire-risk days per year"
@@ -170,7 +170,7 @@ export default function WildfireRiskUKPage() {
               polarity="up-is-bad"
               changeText="Up from 12 in 2010\u20132020 &middot; Projected 24 by 2050 &middot; Peatland degradation worsens risk"
               sparklineData={[12, 12, 13, 14, 14, 15, 16, 16]}
-              onExpand={() => {}}
+              href="#sec-area"
             />
           </div>
         </ScrollReveal>

@@ -151,7 +151,7 @@ export default function GreenBeltPage() {
               polarity="up-is-bad"
               changeText="+40% since 2018 · Under Labour &lsquo;grey belt&rsquo; policy, could rise"
               sparklineData={[10.6, 11.2, 10.8, 12.4, 13.1, 14.9]}
-              onExpand={() => {}}
+              href="#sec-homes"
             />
             <MetricCard
               label="Green belt land area (England)"
@@ -161,7 +161,7 @@ export default function GreenBeltPage() {
               polarity="up-is-bad"
               changeText="Down from 1.64M ha in 2013 · 130,000 ha lost in a decade"
               sparklineData={[1.64, 1.63, 1.63, 1.62, 1.62, 1.61, 1.61, 1.60, 1.60, 1.60, 1.59]}
-              onExpand={() => {}}
+              href="#sec-homes"
             />
             <MetricCard
               label="Green belt applications refused"
@@ -171,7 +171,7 @@ export default function GreenBeltPage() {
               polarity="up-is-bad"
               changeText="Down from 77% in 2019 · Pressure from housing targets"
               sparklineData={[77, 75, 73, 71, 68, 65]}
-              onExpand={() => {}}
+              href="#sec-homes"
             />
           </div>
         </ScrollReveal>

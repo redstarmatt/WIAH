@@ -152,7 +152,7 @@ export default function WaitingInequalityPage() {
               polarity="up-is-bad"
               changeText="Most vs least deprived · Up from 2.1 weeks in 2019"
               sparklineData={[2.1, 2.4, 3.1, 3.8, 4.0, 4.2]}
-              onExpand={() => {}}
+              href="#sec-gap"
             />
             <MetricCard
               label="% waiting >52 weeks (most deprived)"
@@ -162,7 +162,7 @@ export default function WaitingInequalityPage() {
               polarity="up-is-bad"
               changeText="vs 5.1% least deprived · 60% higher wait burden"
               sparklineData={[3.2, 4.1, 6.8, 8.5, 8.4, 8.2]}
-              onExpand={() => {}}
+              href="#sec-gap"
             />
             <MetricCard
               label="Total NHS waiting list"
@@ -172,7 +172,7 @@ export default function WaitingInequalityPage() {
               polarity="up-is-bad"
               changeText="Down from peak 7.8M · Inequality within total persists"
               sparklineData={[4.4, 4.6, 5.8, 6.8, 7.8, 7.4]}
-              onExpand={() => {}}
+              href="#sec-gap"
             />
           </div>
         </ScrollReveal>

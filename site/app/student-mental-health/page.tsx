@@ -99,7 +99,7 @@ export default function StudentMentalHealthPage() {
               changeText="Up from 1 in 12 in 2015 &middot; 64% experience difficulties at some point"
               sparklineData={[8, 10, 13, 16, 19, 21, 23, 25]}
               source="HESA / Student Minds &middot; University Mental Health Survey 2023"
-              onExpand={() => {}}
+              href="#sec-disclosure"
             />
             <MetricCard
               label="University counselling demand increase (2018&ndash;2023)"
@@ -109,7 +109,7 @@ export default function StudentMentalHealthPage() {
               changeText="Demand up 50% &middot; Staffing grew only 20% &middot; Waits now 8&ndash;12 weeks"
               sparklineData={[100, 108, 118, 130, 138, 148, 150]}
               source="AMOSSHE &middot; University counselling demand analysis 2023"
-              onExpand={() => {}}
+              href="#sec-disclosure"
             />
             <MetricCard
               label="Student suspected suicides (2021&ndash;22)"
@@ -119,7 +119,7 @@ export default function StudentMentalHealthPage() {
               changeText="Up from ~65 in 2018&ndash;19 &middot; Disproportionate among deprived and disabled students"
               sparklineData={[65, 67, 68, 70, 62, 72, 74]}
               source="UMHAN / Office for Students &middot; Student suicide data 2022"
-              onExpand={() => {}}
+              href="#sec-disclosure"
             />
           </div>
         </ScrollReveal>

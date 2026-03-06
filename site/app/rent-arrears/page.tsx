@@ -101,7 +101,7 @@ export default function RentArrearsPage() {
               changeText="Highest on record &middot; Up from 8.5% in 2015 &middot; ~1.3M households"
               sparklineData={[8.5, 8.1, 7.8, 8.2, 8.6, 10.4, 11.1, 12.3, 13.2, 14.1]}
               source="English Housing Survey 2024"
-              onExpand={() => {}}
+              href="#sec-claims"
             />
             <MetricCard
               label="Possession claims"
@@ -111,7 +111,7 @@ export default function RentArrearsPage() {
               changeText="Surpassed pre-pandemic level &middot; Up 127% from 2020 low"
               sparklineData={[153200, 148100, 142800, 139500, 136200, 72400, 89600, 128400, 155800, 164200]}
               source="MOJ &middot; Possession Statistics 2024"
-              onExpand={() => {}}
+              href="#sec-claims"
             />
             <MetricCard
               label="Average rent arrears (advice seekers)"
@@ -121,7 +121,7 @@ export default function RentArrearsPage() {
               changeText="Up from &pound;1,200 in 2021 &middot; 42% rise in people seeking help"
               sparklineData={[900, 950, 1000, 1050, 1100, 1200, 1500, 1800, 2100]}
               source="Citizens Advice &middot; 2023"
-              onExpand={() => {}}
+              href="#sec-claims"
             />
           </div>
         </ScrollReveal>

@@ -82,7 +82,7 @@ export default function PotholeRoadsPage() {
               changeText="Up 63% from &pound;10bn in 2015"
               sparklineData={[10, 10.5, 11.2, 11.8, 12.3, 12.7, 13.2, 14, 14.8, 16.3]}
               source="ALARM Survey 2024"
-              onExpand={() => {}}
+              href="#sec-backlog"
             />
             <MetricCard
               label="RAC pothole breakdowns (2023)"
@@ -92,7 +92,7 @@ export default function PotholeRoadsPage() {
               changeText="Highest since tracking began in 2006; avg repair cost &pound;290"
               sparklineData={[18200, 19100, 21300, 23400, 24800, 26100, 27900, 29377]}
               source="RAC Pothole Index"
-              onExpand={() => {}}
+              href="#sec-backlog"
             />
             <MetricCard
               label="Average road resurfacing cycle"
@@ -103,7 +103,7 @@ export default function PotholeRoadsPage() {
               changeText="Recommended lifecycle: 10&ndash;20 years"
               sparklineData={[44, 48, 53, 58, 63, 68, 72, 77]}
               source="ALARM Survey 2024"
-              onExpand={() => {}}
+              href="#sec-backlog"
             />
           </div>
         </ScrollReveal>

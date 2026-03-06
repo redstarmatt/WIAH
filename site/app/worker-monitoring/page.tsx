@@ -151,7 +151,7 @@ export default function WorkerMonitoringPage() {
               polarity="up-is-bad"
               changeText="Up from 22% in 2019 &middot; Keystroke logging, screen capture, GPS"
               sparklineData={[22, 62, 65, 68, 70, 72]}
-              onExpand={() => {}}
+              href="#sec-adoption"
             />
             <MetricCard
               label="ICO monitoring investigations"
@@ -161,7 +161,7 @@ export default function WorkerMonitoringPage() {
               polarity="up-is-bad"
               changeText="+338% since 2019 &middot; Unlawful covert monitoring main issue"
               sparklineData={[8, 12, 18, 22, 28, 35]}
-              onExpand={() => {}}
+              href="#sec-adoption"
             />
             <MetricCard
               label="Workers citing monitoring harm to wellbeing"
@@ -171,7 +171,7 @@ export default function WorkerMonitoringPage() {
               polarity="up-is-bad"
               changeText="TUC/YouGov 2024 &middot; Anxiety, distrust, chilling effect on work"
               sparklineData={[38, 42, 45]}
-              onExpand={() => {}}
+              href="#sec-adoption"
             />
           </div>
         </ScrollReveal>

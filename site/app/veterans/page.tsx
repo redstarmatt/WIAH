@@ -161,7 +161,7 @@ export default function VeteransPage() {
               polarity="up-is-good"
               changeText="2024 · Target 160,000 · Down from 178,600 in 2010 · Army missed recruitment target for 11 consecutive years"
               sparklineData={[178600, 172700, 164100, 158900, 152400, 149300, 148500, 147500, 145600, 149700, 148000].map(v => v / 1000)}
-              onExpand={() => {}}
+              href="#sec-recruitment"
             />
             <MetricCard
               label="Op COURAGE referrals (NHS veterans mental health)"
@@ -171,7 +171,7 @@ export default function VeteransPage() {
               polarity="up-is-good"
               changeText="2021–24 · 3-year cumulative total · Wait: average 7 weeks · Unmet demand estimated much higher"
               sparklineData={[5000, 8000, 8000]}
-              onExpand={() => {}}
+              href="#sec-recruitment"
             />
             <MetricCard
               label="Veterans rough sleeping (% of all rough sleepers)"
@@ -181,7 +181,7 @@ export default function VeteransPage() {
               polarity="up-is-bad"
               changeText="2024 · ~250 veterans estimated sleeping rough on any night · Down from 15% in 2014 · Progress since 2015 baseline"
               sparklineData={[15, 13, 11, 10, 9, 8, 7, 7, 6, 6]}
-              onExpand={() => {}}
+              href="#sec-recruitment"
             />
           </div>
         </ScrollReveal>

@@ -83,7 +83,7 @@ export default function WaterInfrastructurePage() {
               changeText="Down 17% since 2010 but progress has stalled; 20% of total supply"
               sparklineData={[3360, 3240, 3110, 3070, 3020, 2923, 2830, 2780]}
               source="Ofwat water company performance"
-              onExpand={() => {}}
+              href="#sec-leakage"
             />
             <MetricCard
               label="Annual infrastructure investment gap"
@@ -93,7 +93,7 @@ export default function WaterInfrastructurePage() {
               changeText="Growing gap between actual spending and estimated need"
               sparklineData={[4.2, 4.8, 5.6, 6.3, 7.1, 7.8]}
               source="National Infrastructure Commission"
-              onExpand={() => {}}
+              href="#sec-leakage"
             />
             <MetricCard
               label="Properties with lead pipes"
@@ -103,7 +103,7 @@ export default function WaterInfrastructurePage() {
               changeText="Predominantly pre-1970 housing; no national replacement programme"
               sparklineData={[7, 6.8, 6.5, 6.2, 6, 5.8]}
               source="Drinking Water Inspectorate"
-              onExpand={() => {}}
+              href="#sec-leakage"
             />
           </div>
         </ScrollReveal>

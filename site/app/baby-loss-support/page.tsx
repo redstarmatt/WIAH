@@ -155,7 +155,7 @@ export default function BabyLossSupportPage() {
               polarity="up-is-bad"
               changeText="Rate 3.3/1,000 births · Down from 4.2 in 2013"
               sparklineData={[4.2, 4.1, 4.1, 3.9, 3.8, 3.7, 3.6, 3.5, 3.4, 3.4, 3.3]}
-              onExpand={() => {}}
+              href="#sec-mortality"
             />
             <MetricCard
               label="Trusts with bereavement midwife"
@@ -165,7 +165,7 @@ export default function BabyLossSupportPage() {
               polarity="up-is-good"
               changeText="Up from 28% in 2018 · But 45% still lack provision"
               sparklineData={[28, 33, 38, 42, 48, 52, 55]}
-              onExpand={() => {}}
+              href="#sec-mortality"
             />
             <MetricCard
               label="Annual pregnancy losses"
@@ -175,7 +175,7 @@ export default function BabyLossSupportPage() {
               polarity="up-is-bad"
               changeText="~1 in 4 pregnancies · Majority receive no specialist support"
               sparklineData={[250, 252, 248, 251, 249, 250]}
-              onExpand={() => {}}
+              href="#sec-mortality"
             />
           </div>
         </ScrollReveal>

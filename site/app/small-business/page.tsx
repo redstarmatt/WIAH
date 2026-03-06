@@ -112,7 +112,7 @@ export default function SmallBusinessPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Highest in 30+ years &middot; Up 88% on 2019 &middot; Construction worst sector"
               sparklineData={[14630, 15520, 15080, 16090, 17200, 12550, 14150, 22100, 25158, 27500]}
-              onExpand={() => {}}
+              href="#sec-insolvencies"
             />
             <MetricCard
               label="Five-year business survival rate"
@@ -121,7 +121,7 @@ export default function SmallBusinessPage() {
               polarity="up-is-good"
               changeText="2024 &middot; Down from 44% in 2015 &middot; Retail worst-affected &middot; 17K store closures in 2023"
               sparklineData={[44.1, 43.2, 42.5, 42.0, 41.6, 40.8, 39.9, 39.4, 38.7, 38.2]}
-              onExpand={() => {}}
+              href="#sec-insolvencies"
             />
             <MetricCard
               label="Late payment debt owed to SMEs"
@@ -130,7 +130,7 @@ export default function SmallBusinessPage() {
               polarity="up-is-bad"
               changeText="At any time &middot; Avg SME owed &pound;22K overdue &middot; Avg wait: 52 days vs 30-day terms"
               sparklineData={[18, 19, 19, 20, 21, 20, 21, 22, 23]}
-              onExpand={() => {}}
+              href="#sec-insolvencies"
             />
           </div>
         </ScrollReveal>

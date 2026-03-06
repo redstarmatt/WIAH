@@ -105,7 +105,7 @@ export default function FraudPage() {
               changeText="41% of all crime &middot; CSEW 2024 estimate"
               sparklineData={[2.5, 3.2, 3.4, 3.6, 3.8, 4.1, 4.5, 3.7, 3.5, 3.8]}
               source="ONS &middot; Crime Survey for England and Wales, 2024"
-              onExpand={() => {}}
+              href="#sec-offences"
             />
             <MetricCard
               label="Fraud conviction rate"
@@ -115,7 +115,7 @@ export default function FraudPage() {
               changeText="Of reported cases &middot; down from 3% in 2015"
               sparklineData={[3.1, 2.8, 2.5, 2.2, 1.9, 1.5, 1.2, 1.0, 0.8, 1.0]}
               source="Home Office &middot; Crime Outcomes, 2024"
-              onExpand={() => {}}
+              href="#sec-offences"
             />
             <MetricCard
               label="APP scam losses"
@@ -126,7 +126,7 @@ export default function FraudPage() {
               changeText="Authorised push payment fraud &middot; 2023"
               sparklineData={[236, 354, 355, 479, 485]}
               source="UK Finance &middot; Fraud Report, 2024"
-              onExpand={() => {}}
+              href="#sec-offences"
             />
           </div>
         </ScrollReveal>

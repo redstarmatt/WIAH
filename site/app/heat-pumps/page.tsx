@@ -101,7 +101,7 @@ export default function HeatPumpsPage() {
               changeText="Target: 600,000&ndash;per&ndash;year by 2028 &mdash; France installed 1.6M in 2023"
               sparklineData={[35000, 40000, 43000, 49000, 55000, 60000, 65000, 72000]}
               source="MCS &mdash; Microgeneration Certification Scheme statistics 2024"
-              onExpand={() => {}}
+              href="#sec-uk"
             />
             <MetricCard
               label="Government 2028 installation target"
@@ -112,7 +112,7 @@ export default function HeatPumpsPage() {
               changeText="Currently at 12% of target rate &mdash; requires 8&times; acceleration"
               sparklineData={[25000, 30000, 35000, 43000, 55000, 60000, 72000, 600000]}
               source="DESNZ &mdash; Heat and Buildings Strategy 2021"
-              onExpand={() => {}}
+              href="#sec-uk"
             />
             <MetricCard
               label="Average UK installation cost"
@@ -122,7 +122,7 @@ export default function HeatPumpsPage() {
               changeText="After &pound;7,500 BUS grant: ~&pound;5,000 &mdash; vs &pound;2,500 for a gas boiler"
               sparklineData={[16000, 15500, 15000, 14500, 14000, 13500, 13000, 12500]}
               source="DESNZ &mdash; Heat pump installation cost survey 2023"
-              onExpand={() => {}}
+              href="#sec-uk"
             />
           </div>
         </ScrollReveal>

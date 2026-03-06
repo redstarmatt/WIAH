@@ -152,7 +152,7 @@ export default function PrivateRentingPage() {
             }
             sparklineData={[700, 730, 750, 770, 790, 810, 840, 870, 905, 940, 990, 1160, 1279]}
             source="ONS &mdash; Index of Private Housing Rental Prices"
-            onExpand={() => {}}
+            href="#sec-rents"
           />
           <MetricCard
             label="Renters as share of households"
@@ -165,7 +165,7 @@ export default function PrivateRentingPage() {
             }
             sparklineData={[11, 12, 13, 14, 15, 16, 17, 18, 18, 19, 19]}
             source="MHCLG &mdash; English Housing Survey"
-            onExpand={() => {}}
+            href="#sec-rents"
           />
           <MetricCard
             label="Section 21 &lsquo;no-fault&rsquo; eviction notices"
@@ -178,7 +178,7 @@ export default function PrivateRentingPage() {
             }
             sparklineData={[5000, 5200, 5800, 6500, 7200, 7800, 7000, 7500, 8500, 9578]}
             source="MoJ &mdash; Possession Statistics"
-            onExpand={() => {}}
+            href="#sec-rents"
           />
         </div>
         </ScrollReveal>

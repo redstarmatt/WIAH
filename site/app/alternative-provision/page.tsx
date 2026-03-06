@@ -146,7 +146,7 @@ export default function AlternativeProvisionPage() {
               polarity="up-is-bad"
               changeText="+38% since 2015 · Up from 16,300"
               sparklineData={[16.3, 16.8, 17.4, 18.1, 18.9, 19.2, 18.8, 19.6, 21.2, 22.4]}
-              onExpand={() => {}}
+              href="#sec-pupils"
             />
             <MetricCard
               label="AP schools rated inadequate or RI"
@@ -156,7 +156,7 @@ export default function AlternativeProvisionPage() {
               polarity="up-is-bad"
               changeText="vs 13% of all schools · Quality crisis"
               sparklineData={[38, 40, 41, 42, 43, 44, 44]}
-              onExpand={() => {}}
+              href="#sec-pupils"
             />
             <MetricCard
               label="GCSE pass rate in AP"
@@ -166,7 +166,7 @@ export default function AlternativeProvisionPage() {
               polarity="up-is-good"
               changeText="vs 65% mainstream · Massive attainment gap"
               sparklineData={[10, 11, 10, 11, 11, 11, 11]}
-              onExpand={() => {}}
+              href="#sec-pupils"
             />
           </div>
         </ScrollReveal>

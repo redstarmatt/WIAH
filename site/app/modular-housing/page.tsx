@@ -154,7 +154,7 @@ export default function ModularHousingPage() {
               polarity="up-is-good"
               changeText="+200% since 2018 · But still only 3% of total"
               sparklineData={[4, 5, 6, 7, 8, 10, 12]}
-              onExpand={() => {}}
+              href="#sec-completions"
             />
             <MetricCard
               label="% of new homes using MMC"
@@ -164,7 +164,7 @@ export default function ModularHousingPage() {
               polarity="up-is-good"
               changeText="Up from 1.2% · Government target was 25% by 2025"
               sparklineData={[1.2, 1.4, 1.6, 2.0, 2.2, 2.7, 3.1]}
-              onExpand={() => {}}
+              href="#sec-completions"
             />
             <MetricCard
               label="Major MMC manufacturers collapsed"
@@ -174,7 +174,7 @@ export default function ModularHousingPage() {
               polarity="up-is-bad"
               changeText="2022-2024 · Including Ilke Homes, House by Urban Splash"
               sparklineData={[0, 0, 0, 0, 3, 8]}
-              onExpand={() => {}}
+              href="#sec-completions"
             />
           </div>
         </ScrollReveal>

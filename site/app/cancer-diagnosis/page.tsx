@@ -112,7 +112,7 @@ export default function CancerDiagnosisPage() {
               polarity={'up-is-good' as const}
               changeText="2023 &middot; Target: 75% by 2028 &middot; 21 pts below target"
               sparklineData={[50, 51, 52, 53, 53, 52, 53, 54]}
-              onExpand={() => {}}
+              href="#sec-early-diagnosis"
             />
             <MetricCard
               label="62-day treatment standard met"
@@ -122,7 +122,7 @@ export default function CancerDiagnosisPage() {
               polarity={'up-is-good' as const}
               changeText="2023 &middot; Target: 85% &middot; Not met since 2015"
               sparklineData={[85, 84, 82, 80, 76, 68, 65, 65]}
-              onExpand={() => {}}
+              href="#sec-early-diagnosis"
             />
             <MetricCard
               label="Faster Diagnosis Standard met"
@@ -132,7 +132,7 @@ export default function CancerDiagnosisPage() {
               polarity={'up-is-good' as const}
               changeText="2023 &middot; Target: 95% &middot; Far below target"
               sparklineData={[60, 62, 64, 63, 64, 65, 65, 65]}
-              onExpand={() => {}}
+              href="#sec-early-diagnosis"
             />
           </div>
         </ScrollReveal>
