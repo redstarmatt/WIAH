@@ -196,7 +196,62 @@ def extract_ehcp_timeliness(path: Path) -> list[dict]:
     return series
 
 
-# ── 5. EHCP CASELOAD (hardcoded published figures) ────────────────────────────
+# ── 5. LA-LEVEL ABSENCE ───────────────────────────────────────────────────────
+
+def extract_la_absence(path: Path) -> list[dict]:
+    """
+    Persistent absence and overall absence rate by local authority,
+    latest academic year. Used for regional choropleth on education page.
+    """
+    log.info("Extracting LA-level absence data…")
+    df = pd.read_csv(path, encoding="utf-8-sig")
+
+    la_data = df[
+        (df["geographic_level"] == "Local authority") &
+        (df["education_phase"] == "Total")
+    ].copy()
+
+    if la_data.empty:
+        log.warning("  No 'Local authority' rows found in absence CSV — skipping")
+        return []
+
+    latest_tp = la_data["time_period"].max()
+    la_latest = la_data[la_data["time_period"] == latest_tp]
+
+    result = []
+    for _, row in la_latest.iterrows():
+        # DfE CSVs use new_la_code or old_la_code depending on release
+        code = str(row.get("new_la_code", row.get("la_code", ""))).strip()
+        name = str(row.get("la_name", "")).strip()
+        if not code or code == "nan":
+            continue
+
+        try:
+            persistent = round(float(row["enrolments_pa_10_exact_percent"]), 2)
+            overall = round(float(row["sess_overall_percent"]), 2)
+        except (ValueError, TypeError):
+            continue
+
+        result.append({
+            "code": code,
+            "name": name,
+            "persistentAbsencePct": persistent,
+            "overallAbsencePct": overall,
+            "year": fmt_year(latest_tp),
+        })
+
+    result.sort(key=lambda x: x["name"])
+    log.info(
+        "  → %d local authorities for %s (persistent absence range: %.1f%%–%.1f%%)",
+        len(result),
+        fmt_year(latest_tp),
+        min(r["persistentAbsencePct"] for r in result) if result else 0,
+        max(r["persistentAbsencePct"] for r in result) if result else 0,
+    )
+    return result
+
+
+# ── 6. EHCP CASELOAD (hardcoded published figures) ────────────────────────────
 
 def build_ehcp_caseload() -> list[dict]:
     """
@@ -242,6 +297,7 @@ def main():
 
     # Extract all data
     absence = extract_absence(absence_path)
+    la_absence = extract_la_absence(absence_path)
     gap_index = extract_gap_index(gap_path)
     attainment8 = extract_attainment8(chars_path)
     ehcp_timeliness = extract_ehcp_timeliness(ehcp_path)
@@ -264,7 +320,11 @@ def main():
                 "attainment8": attainment8,
             },
         },
-        "regional": {},
+        "regional": {
+            "byLocalAuthority": {
+                "absence": la_absence,
+            },
+        },
         "metadata": {
             "sources": [
                 {

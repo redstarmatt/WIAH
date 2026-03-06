@@ -37,6 +37,7 @@ interface PrisonPoint {
 interface CrimeTrendPoint {
   period: string;
   count: number;
+  ratePer100k?: number;
 }
 
 interface CrimeTrendCategory {
@@ -319,6 +320,20 @@ export default function JusticePage() {
           date: fyToDate(d.period),
           value: d.count,
         })),
+      }]
+    : [];
+
+  const crimeRatePer100kSeries: Series[] = crimeData?.crimeTrends?.total
+    ? [{
+        id: 'total-crime-rate',
+        label: 'Recorded crime rate (per 100,000 people)',
+        colour: '#0D1117',
+        data: crimeData.crimeTrends.total.timeSeries
+          .filter(d => d.ratePer100k != null)
+          .map(d => ({
+            date: fyToDate(d.period),
+            value: d.ratePer100k!,
+          })),
       }]
     : [];
 
@@ -825,6 +840,25 @@ export default function JusticePage() {
             source={{
               name: 'ONS / Home Office',
               dataset: 'Crime in England and Wales, Appendix Tables (A5a)',
+              frequency: 'annual (financial year)',
+              url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/crimeinenglandandwalesappendixtables',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 7b: Crime rate per 100,000 */}
+        {crimeRatePer100kSeries.length > 0 ? (
+          <LineChart
+            title="Crime rate per 100,000 population, 2002/03–2024/25"
+            subtitle="Population-normalised rate. England's population grew ~18% over this period — the absolute count overstates the decline slightly."
+            series={crimeRatePer100kSeries}
+            annotations={crimeAnnotations}
+            yLabel="Offences per 100k"
+            source={{
+              name: 'ONS / Home Office',
+              dataset: 'Crime in England and Wales, Appendix Tables (A5a); ONS Population Estimates',
               frequency: 'annual (financial year)',
               url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/crimeinenglandandwalesappendixtables',
             }}

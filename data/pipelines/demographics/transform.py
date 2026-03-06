@@ -1,22 +1,32 @@
 #!/usr/bin/env python3
-"""Transform ONS births summary data into demographics.json.
+"""
+Demographics — transform.py
 
-Table_1 structure:
+Transforms ONS demographic downloads into demographics.json:
+  - Live births time series (TFR, crude birth rate), England and Wales
+  - Mid-year population estimates, England and UK (1971–present)
+
+Table_1 (births) structure:
   Row 8:  column headers
   Row 9+: data rows (year descending, 2022 down to 1838)
   Col 0:  Year
   Col 1:  Number of live births (Total)
   Col 6:  Total Fertility Rate (TFR)
   Col 8:  Crude Birth Rate (CBR): all live births per 1,000 population
+
+Population CSV structure (ONS time series generator):
+  Rows 0–7: metadata (title, CDID, source, etc.)
+  Row 8+:   "year","value" (as quoted strings)
 """
 
 import json
+from datetime import date
 from pathlib import Path
 import pandas as pd
 
-ROOT = Path(__file__).parent.parent.parent.parent
-RAW = ROOT / 'data' / 'raw' / 'demographics'
-OUT = ROOT / 'site' / 'public' / 'data' / 'demographics'
+ROOT = Path(__file__).resolve().parents[3]
+RAW  = ROOT / "data" / "raw" / "demographics"
+OUT  = ROOT / "site" / "public" / "data" / "demographics"
 OUT.mkdir(parents=True, exist_ok=True)
 
 FALLBACK_BIRTHS = [
@@ -45,104 +55,143 @@ FALLBACK_BIRTHS = [
     {"year": 2017, "births": 755000, "birthRate": 11.7, "tfr": 1.76},
     {"year": 2018, "births": 731000, "birthRate": 11.3, "tfr": 1.70},
     {"year": 2019, "births": 712000, "birthRate": 11.0, "tfr": 1.65},
-    {"year": 2020, "births": 614000, "birthRate": 9.4, "tfr": 1.58},
-    {"year": 2021, "births": 624000, "birthRate": 9.5, "tfr": 1.62},
-    {"year": 2022, "births": 606000, "birthRate": 9.3, "tfr": 1.49},
-    {"year": 2023, "births": 591000, "birthRate": 9.1, "tfr": 1.44},
+    {"year": 2020, "births": 614000, "birthRate": 9.4,  "tfr": 1.58},
+    {"year": 2021, "births": 624000, "birthRate": 9.5,  "tfr": 1.62},
+    {"year": 2022, "births": 606000, "birthRate": 9.3,  "tfr": 1.49},
+    {"year": 2023, "births": 591000, "birthRate": 9.1,  "tfr": 1.44},
 ]
+
 
 def safe_float(val):
     try:
-        s = str(val).replace(',', '').strip()
-        if s in ('nan', '[x]', '[z]', '', 'NaN'):
+        s = str(val).replace(",", "").strip()
+        if s in ("nan", "[x]", "[z]", "", "NaN"):
             return None
         return float(s)
-    except:
+    except Exception:
         return None
 
-def try_parse_births():
-    xlsx_path = RAW / 'births_summary.xlsx'
+
+# ── Births ────────────────────────────────────────────────────────────────────
+
+def parse_births() -> list[dict]:
+    xlsx_path = RAW / "births_summary.xlsx"
     if not xlsx_path.exists():
-        print('  Births summary file not found, using fallback')
-        return None
+        print("  Births file not found — using fallback")
+        return FALLBACK_BIRTHS
 
     try:
-        xl = pd.ExcelFile(xlsx_path, engine='openpyxl')
-        print(f'  Sheets: {xl.sheet_names}')
+        xl = pd.ExcelFile(xlsx_path, engine="openpyxl")
+        if "Table_1" not in xl.sheet_names:
+            print("  Table_1 not found — using fallback")
+            return FALLBACK_BIRTHS
 
-        if 'Table_1' not in xl.sheet_names:
-            print('  Table_1 not found in sheets')
-            return None
-
-        df = pd.read_excel(xlsx_path, sheet_name='Table_1', header=None, engine='openpyxl')
-        print(f'  Table_1 shape: {df.shape}')
-
-        # Headers at row 8 (0-indexed), data from row 9
-        data_rows = []
+        df = pd.read_excel(xlsx_path, sheet_name="Table_1", header=None, engine="openpyxl")
+        rows = []
         for i in range(9, len(df)):
             row = df.iloc[i]
             yr = safe_float(row.iloc[0])
             if yr is None:
                 continue
-            try:
-                yr_int = int(yr)
-            except:
-                continue
+            yr_int = int(yr)
             if not (1838 <= yr_int <= 2030):
                 continue
-
             births = safe_float(row.iloc[1])
-            tfr = safe_float(row.iloc[6])
-            cbr = safe_float(row.iloc[8])
-
-            if births is not None and births > 1000:
-                data_rows.append({
-                    "year": yr_int,
-                    "births": int(births),
+            tfr    = safe_float(row.iloc[6])
+            cbr    = safe_float(row.iloc[8])
+            if births and births > 1000:
+                rows.append({
+                    "year":      yr_int,
+                    "births":    int(births),
                     "birthRate": round(cbr, 1) if cbr is not None else None,
-                    "tfr": round(tfr, 2) if tfr is not None else None,
+                    "tfr":       round(tfr, 2) if tfr is not None else None,
                 })
-
-        data_rows.sort(key=lambda x: x['year'])
-        print(f'  Extracted {len(data_rows)} rows')
-        if data_rows:
-            print(f'  Sample (last 5): {data_rows[-5:]}')
-
-        return data_rows if len(data_rows) > 10 else None
+        rows.sort(key=lambda x: x["year"])
+        print(f"  Births: {len(rows)} rows  ({rows[0]['year']}–{rows[-1]['year']})")
+        return rows if len(rows) > 10 else FALLBACK_BIRTHS
 
     except Exception as e:
-        print(f'  Error parsing births: {e}')
-        import traceback; traceback.print_exc()
-        return None
+        print(f"  Error parsing births: {e}")
+        return FALLBACK_BIRTHS
 
-if __name__ == '__main__':
-    print('Transforming demographics (births) data...')
 
-    births_data = try_parse_births()
+# ── Population estimates ──────────────────────────────────────────────────────
 
-    if not births_data:
-        print('  Using fallback data')
-        births_data = FALLBACK_BIRTHS
+def parse_population_csv(csv_path: Path, label: str) -> list[dict]:
+    """
+    Parse ONS time series generator CSV.
+    Format: 8 metadata rows, then "year","value" rows as quoted strings.
+    """
+    if not csv_path.exists():
+        print(f"  {label}: file not found — skipping")
+        return []
+
+    rows = []
+    with open(csv_path, encoding="utf-8") as f:
+        for i, line in enumerate(f):
+            if i < 8:
+                continue  # skip metadata
+            parts = line.strip().replace('"', "").split(",")
+            if len(parts) < 2:
+                continue
+            try:
+                year  = int(parts[0].strip())
+                value = int(parts[1].strip().replace(",", ""))
+                if 1900 <= year <= 2100:
+                    rows.append({"year": year, "population": value})
+            except (ValueError, TypeError):
+                continue
+
+    if rows:
+        print(f"  {label}: {len(rows)} rows  ({rows[0]['year']}–{rows[-1]['year']})")
+    return rows
+
+
+# ── Main ──────────────────────────────────────────────────────────────────────
+
+if __name__ == "__main__":
+    print("=== Demographics transform.py ===")
+
+    births = parse_births()
+    pop_england = parse_population_csv(RAW / "population_england.csv", "Population England")
+    pop_uk      = parse_population_csv(RAW / "population_uk.csv",      "Population UK")
 
     output = {
-        "topic": "demographics",
-        "dataset": "births",
-        "lastUpdated": "2026-03-03",
-        "births": births_data,
+        "topic":       "demographics",
+        "lastUpdated": date.today().isoformat(),
+        "births": births,
+        "population": {
+            "england": pop_england,
+            "uk":      pop_uk,
+        },
         "metadata": {
-            "sources": [{
-                "name": "ONS",
-                "dataset": "Birth Summary Tables, England and Wales",
-                "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/datasets/birthsummarytables",
-                "frequency": "annual",
-                "retrieved": "2026-03-03"
-            }],
-            "methodology": "Live births, crude birth rate per 1,000 population, and total fertility rate (TFR). England and Wales.",
-            "notes": "TFR below 2.1 is sub-replacement. England and Wales record low TFR was 1.44 in 2023."
-        }
+            "sources": [
+                {
+                    "name":      "ONS",
+                    "dataset":   "Birth Summary Tables, England and Wales",
+                    "url":       "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/datasets/birthsummarytables",
+                    "frequency": "annual",
+                },
+                {
+                    "name":      "ONS",
+                    "dataset":   "Population estimates time series (ENPOP, UKPOP)",
+                    "url":       "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/timeseries/enpop/pop",
+                    "frequency": "annual",
+                },
+            ],
+            "methodology": (
+                "Live births, crude birth rate per 1,000 population, and total fertility rate (TFR), "
+                "England and Wales. Population estimates are ONS mid-year estimates; England series "
+                "from 1971, UK series from 1971."
+            ),
+            "knownIssues": [
+                "TFR below 2.1 is sub-replacement. England and Wales record low TFR was 1.44 in 2023.",
+                "Births data for pre-1971 uses fallback summary figures; mid-year pop estimates start 1971.",
+            ],
+        },
     }
 
-    out_path = OUT / 'demographics.json'
+    out_path = OUT / "demographics.json"
     out_path.write_text(json.dumps(output, indent=2))
-    print(f'  Written: {out_path}')
-    print('Done.')
+    print(f"  Written: {out_path}")
+    print("Done.")

@@ -1,6 +1,6 @@
 {
   "topic": "housing",
-  "lastUpdated": "2026-03-02",
+  "lastUpdated": "2026-03-06",
   "national": {
     "affordability": {
       "timeSeries": [
@@ -6389,7 +6389,1911 @@
           "rentToIncomePct": 31.4
         }
       ]
-    }
+    },
+    "byLocalAuthority": [
+      {
+        "code": "E06000001",
+        "name": "Hartlepool",
+        "latestRatio": 4.33,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000002",
+        "name": "Middlesbrough",
+        "latestRatio": 4.69,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000003",
+        "name": "Redcar and Cleveland",
+        "latestRatio": 5.22,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000004",
+        "name": "Stockton-on-Tees",
+        "latestRatio": 5.26,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000005",
+        "name": "Darlington",
+        "latestRatio": 4.54,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000047",
+        "name": "County Durham",
+        "latestRatio": 4.14,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000057",
+        "name": "Northumberland",
+        "latestRatio": 6.15,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000021",
+        "name": "Newcastle upon Tyne",
+        "latestRatio": 5.38,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000022",
+        "name": "North Tyneside",
+        "latestRatio": 5.42,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000023",
+        "name": "South Tyneside",
+        "latestRatio": 4.62,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000024",
+        "name": "Sunderland",
+        "latestRatio": 4.25,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000037",
+        "name": "Gateshead",
+        "latestRatio": 4.84,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000006",
+        "name": "Halton",
+        "latestRatio": 4.76,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000007",
+        "name": "Warrington",
+        "latestRatio": 6.11,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000008",
+        "name": "Blackburn with Darwen",
+        "latestRatio": 4.06,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000009",
+        "name": "Blackpool",
+        "latestRatio": 3.92,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000049",
+        "name": "Cheshire East",
+        "latestRatio": 7.95,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000050",
+        "name": "Cheshire West and Chester",
+        "latestRatio": 6.65,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000063",
+        "name": "Cumberland",
+        "latestRatio": 4.42,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000064",
+        "name": "Westmorland and Furness",
+        "latestRatio": 5.95,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000117",
+        "name": "Burnley",
+        "latestRatio": 3.86,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000118",
+        "name": "Chorley",
+        "latestRatio": 6.1,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000119",
+        "name": "Fylde",
+        "latestRatio": 5.56,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000120",
+        "name": "Hyndburn",
+        "latestRatio": 4.29,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000121",
+        "name": "Lancaster",
+        "latestRatio": 5.84,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000122",
+        "name": "Pendle",
+        "latestRatio": 4.71,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000123",
+        "name": "Preston",
+        "latestRatio": 5.19,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000124",
+        "name": "Ribble Valley",
+        "latestRatio": 6.23,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000125",
+        "name": "Rossendale",
+        "latestRatio": 5.8,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000126",
+        "name": "South Ribble",
+        "latestRatio": 5.39,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000127",
+        "name": "West Lancashire",
+        "latestRatio": 6.71,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000128",
+        "name": "Wyre",
+        "latestRatio": 6.09,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000001",
+        "name": "Bolton",
+        "latestRatio": 6.2,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000002",
+        "name": "Bury",
+        "latestRatio": 6.51,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000003",
+        "name": "Manchester",
+        "latestRatio": 6.46,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000004",
+        "name": "Oldham",
+        "latestRatio": 5.69,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000005",
+        "name": "Rochdale",
+        "latestRatio": 6.0,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000006",
+        "name": "Salford",
+        "latestRatio": 5.89,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000007",
+        "name": "Stockport",
+        "latestRatio": 8.58,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000008",
+        "name": "Tameside",
+        "latestRatio": 6.11,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000009",
+        "name": "Trafford",
+        "latestRatio": 10.12,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000010",
+        "name": "Wigan",
+        "latestRatio": 5.83,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000011",
+        "name": "Knowsley",
+        "latestRatio": 4.78,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000012",
+        "name": "Liverpool",
+        "latestRatio": 4.38,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000013",
+        "name": "St. Helens",
+        "latestRatio": 5.43,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000014",
+        "name": "Sefton",
+        "latestRatio": 6.43,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000015",
+        "name": "Wirral",
+        "latestRatio": 6.38,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000010",
+        "name": "Kingston upon Hull, City of",
+        "latestRatio": 4.09,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000011",
+        "name": "East Riding of Yorkshire",
+        "latestRatio": 6.42,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000012",
+        "name": "North East Lincolnshire",
+        "latestRatio": 4.51,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000013",
+        "name": "North Lincolnshire",
+        "latestRatio": 4.93,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000014",
+        "name": "York",
+        "latestRatio": 8.28,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000065",
+        "name": "North Yorkshire",
+        "latestRatio": 7.95,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000016",
+        "name": "Barnsley",
+        "latestRatio": 4.67,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000017",
+        "name": "Doncaster",
+        "latestRatio": 5.07,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000018",
+        "name": "Rotherham",
+        "latestRatio": 5.88,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000019",
+        "name": "Sheffield",
+        "latestRatio": 5.63,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000032",
+        "name": "Bradford",
+        "latestRatio": 5.13,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000033",
+        "name": "Calderdale",
+        "latestRatio": 4.64,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000034",
+        "name": "Kirklees",
+        "latestRatio": 5.87,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000035",
+        "name": "Leeds",
+        "latestRatio": 6.4,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000036",
+        "name": "Wakefield",
+        "latestRatio": 5.59,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000015",
+        "name": "Derby",
+        "latestRatio": 5.2,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000016",
+        "name": "Leicester",
+        "latestRatio": 7.35,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000017",
+        "name": "Rutland",
+        "latestRatio": 10.01,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000018",
+        "name": "Nottingham",
+        "latestRatio": 5.74,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000061",
+        "name": "North Northamptonshire",
+        "latestRatio": 7.33,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000062",
+        "name": "West Northamptonshire",
+        "latestRatio": 7.77,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000032",
+        "name": "Amber Valley",
+        "latestRatio": 6.65,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000033",
+        "name": "Bolsover",
+        "latestRatio": 5.47,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000034",
+        "name": "Chesterfield",
+        "latestRatio": 5.32,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000035",
+        "name": "Derbyshire Dales",
+        "latestRatio": 9.05,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000036",
+        "name": "Erewash",
+        "latestRatio": 5.62,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000037",
+        "name": "High Peak",
+        "latestRatio": 7.97,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000038",
+        "name": "North East Derbyshire",
+        "latestRatio": 6.96,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000039",
+        "name": "South Derbyshire",
+        "latestRatio": 6.63,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000129",
+        "name": "Blaby",
+        "latestRatio": 7.36,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000130",
+        "name": "Charnwood",
+        "latestRatio": 7.76,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000131",
+        "name": "Harborough",
+        "latestRatio": 10.19,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000132",
+        "name": "Hinckley and Bosworth",
+        "latestRatio": 7.69,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000133",
+        "name": "Melton",
+        "latestRatio": 8.42,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000134",
+        "name": "North West Leicestershire",
+        "latestRatio": 7.66,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000135",
+        "name": "Oadby and Wigston",
+        "latestRatio": 9.32,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000136",
+        "name": "Boston",
+        "latestRatio": 6.22,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000137",
+        "name": "East Lindsey",
+        "latestRatio": 6.86,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000138",
+        "name": "Lincoln",
+        "latestRatio": 5.07,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000139",
+        "name": "North Kesteven",
+        "latestRatio": 6.62,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000140",
+        "name": "South Holland",
+        "latestRatio": 7.41,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000141",
+        "name": "South Kesteven",
+        "latestRatio": 7.8,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000142",
+        "name": "West Lindsey",
+        "latestRatio": 6.95,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000170",
+        "name": "Ashfield",
+        "latestRatio": 5.48,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000171",
+        "name": "Bassetlaw",
+        "latestRatio": 6.06,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000172",
+        "name": "Broxtowe",
+        "latestRatio": 7.96,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000173",
+        "name": "Gedling",
+        "latestRatio": 7.09,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000174",
+        "name": "Mansfield",
+        "latestRatio": 5.52,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000175",
+        "name": "Newark and Sherwood",
+        "latestRatio": 6.53,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000176",
+        "name": "Rushcliffe",
+        "latestRatio": 10.08,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000019",
+        "name": "Herefordshire, County of",
+        "latestRatio": 8.78,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000020",
+        "name": "Telford and Wrekin",
+        "latestRatio": 6.14,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000021",
+        "name": "Stoke-on-Trent",
+        "latestRatio": 4.38,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000051",
+        "name": "Shropshire",
+        "latestRatio": 8.15,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000192",
+        "name": "Cannock Chase",
+        "latestRatio": 6.74,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000193",
+        "name": "East Staffordshire",
+        "latestRatio": 6.06,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000194",
+        "name": "Lichfield",
+        "latestRatio": 8.59,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000195",
+        "name": "Newcastle-under-Lyme",
+        "latestRatio": 6.08,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000196",
+        "name": "South Staffordshire",
+        "latestRatio": 7.94,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000197",
+        "name": "Stafford",
+        "latestRatio": 6.73,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000198",
+        "name": "Staffordshire Moorlands",
+        "latestRatio": 7.34,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000199",
+        "name": "Tamworth",
+        "latestRatio": 7.19,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000218",
+        "name": "North Warwickshire",
+        "latestRatio": 6.45,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000219",
+        "name": "Nuneaton and Bedworth",
+        "latestRatio": 6.93,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000220",
+        "name": "Rugby",
+        "latestRatio": 7.4,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000221",
+        "name": "Stratford-on-Avon",
+        "latestRatio": 9.63,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000222",
+        "name": "Warwick",
+        "latestRatio": 9.28,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000234",
+        "name": "Bromsgrove",
+        "latestRatio": 10.53,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000235",
+        "name": "Malvern Hills",
+        "latestRatio": 10.09,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000236",
+        "name": "Redditch",
+        "latestRatio": 7.27,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000237",
+        "name": "Worcester",
+        "latestRatio": 7.0,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000238",
+        "name": "Wychavon",
+        "latestRatio": 9.44,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000239",
+        "name": "Wyre Forest",
+        "latestRatio": 7.25,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000025",
+        "name": "Birmingham",
+        "latestRatio": 6.01,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000026",
+        "name": "Coventry",
+        "latestRatio": 5.86,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000027",
+        "name": "Dudley",
+        "latestRatio": 6.53,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000028",
+        "name": "Sandwell",
+        "latestRatio": 6.39,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000029",
+        "name": "Solihull",
+        "latestRatio": 8.62,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000030",
+        "name": "Walsall",
+        "latestRatio": 6.16,
+        "latestYear": 2024
+      },
+      {
+        "code": "E08000031",
+        "name": "Wolverhampton",
+        "latestRatio": 5.9,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000031",
+        "name": "Peterborough",
+        "latestRatio": 6.92,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000032",
+        "name": "Luton",
+        "latestRatio": 7.94,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000033",
+        "name": "Southend-on-Sea",
+        "latestRatio": 10.43,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000034",
+        "name": "Thurrock",
+        "latestRatio": 9.97,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000055",
+        "name": "Bedford",
+        "latestRatio": 9.35,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000056",
+        "name": "Central Bedfordshire",
+        "latestRatio": 10.07,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000008",
+        "name": "Cambridge",
+        "latestRatio": 11.31,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000009",
+        "name": "East Cambridgeshire",
+        "latestRatio": 10.09,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000010",
+        "name": "Fenland",
+        "latestRatio": 7.34,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000011",
+        "name": "Huntingdonshire",
+        "latestRatio": 8.73,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000012",
+        "name": "South Cambridgeshire",
+        "latestRatio": 9.54,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000066",
+        "name": "Basildon",
+        "latestRatio": 9.06,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000067",
+        "name": "Braintree",
+        "latestRatio": 8.85,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000068",
+        "name": "Brentwood",
+        "latestRatio": 11.01,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000069",
+        "name": "Castle Point",
+        "latestRatio": 9.31,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000070",
+        "name": "Chelmsford",
+        "latestRatio": 9.82,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000071",
+        "name": "Colchester",
+        "latestRatio": 8.55,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000072",
+        "name": "Epping Forest",
+        "latestRatio": 11.84,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000073",
+        "name": "Harlow",
+        "latestRatio": 8.91,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000074",
+        "name": "Maldon",
+        "latestRatio": 11.34,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000075",
+        "name": "Rochford",
+        "latestRatio": 11.02,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000076",
+        "name": "Tendring",
+        "latestRatio": 9.08,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000077",
+        "name": "Uttlesford",
+        "latestRatio": 12.03,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000095",
+        "name": "Broxbourne",
+        "latestRatio": 10.9,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000096",
+        "name": "Dacorum",
+        "latestRatio": 13.17,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000098",
+        "name": "Hertsmere",
+        "latestRatio": 11.64,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000099",
+        "name": "North Hertfordshire",
+        "latestRatio": 11.14,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000102",
+        "name": "Three Rivers",
+        "latestRatio": 12.31,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000103",
+        "name": "Watford",
+        "latestRatio": 10.15,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000143",
+        "name": "Breckland",
+        "latestRatio": 8.23,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000144",
+        "name": "Broadland",
+        "latestRatio": 8.1,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000145",
+        "name": "Great Yarmouth",
+        "latestRatio": 6.7,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000146",
+        "name": "King's Lynn and West Norfolk",
+        "latestRatio": 7.41,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000147",
+        "name": "North Norfolk",
+        "latestRatio": 10.29,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000148",
+        "name": "Norwich",
+        "latestRatio": 6.63,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000149",
+        "name": "South Norfolk",
+        "latestRatio": 8.19,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000200",
+        "name": "Babergh",
+        "latestRatio": 10.0,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000202",
+        "name": "Ipswich",
+        "latestRatio": 7.17,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000203",
+        "name": "Mid Suffolk",
+        "latestRatio": 8.32,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000240",
+        "name": "St Albans",
+        "latestRatio": 15.55,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000241",
+        "name": "Welwyn Hatfield",
+        "latestRatio": 9.66,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000242",
+        "name": "East Hertfordshire",
+        "latestRatio": 10.5,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000243",
+        "name": "Stevenage",
+        "latestRatio": 8.23,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000244",
+        "name": "East Suffolk",
+        "latestRatio": 8.12,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000245",
+        "name": "West Suffolk",
+        "latestRatio": 8.39,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000001",
+        "name": "City of London",
+        "latestRatio": 11.72,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000002",
+        "name": "Barking and Dagenham",
+        "latestRatio": 10.12,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000003",
+        "name": "Barnet",
+        "latestRatio": 16.69,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000004",
+        "name": "Bexley",
+        "latestRatio": 11.07,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000005",
+        "name": "Brent",
+        "latestRatio": 14.67,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000006",
+        "name": "Bromley",
+        "latestRatio": 12.03,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000007",
+        "name": "Camden",
+        "latestRatio": 15.66,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000008",
+        "name": "Croydon",
+        "latestRatio": 9.58,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000009",
+        "name": "Ealing",
+        "latestRatio": 13.13,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000010",
+        "name": "Enfield",
+        "latestRatio": 11.79,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000011",
+        "name": "Greenwich",
+        "latestRatio": 11.76,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000012",
+        "name": "Hackney",
+        "latestRatio": 11.88,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000013",
+        "name": "Hammersmith and Fulham",
+        "latestRatio": 16.61,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000014",
+        "name": "Haringey",
+        "latestRatio": 14.32,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000015",
+        "name": "Harrow",
+        "latestRatio": 14.93,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000016",
+        "name": "Havering",
+        "latestRatio": 10.16,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000017",
+        "name": "Hillingdon",
+        "latestRatio": 12.09,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000018",
+        "name": "Hounslow",
+        "latestRatio": 11.4,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000019",
+        "name": "Islington",
+        "latestRatio": 12.86,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000020",
+        "name": "Kensington and Chelsea",
+        "latestRatio": 27.09,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000021",
+        "name": "Kingston upon Thames",
+        "latestRatio": 13.51,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000022",
+        "name": "Lambeth",
+        "latestRatio": 11.72,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000023",
+        "name": "Lewisham",
+        "latestRatio": 11.25,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000024",
+        "name": "Merton",
+        "latestRatio": 13.94,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000025",
+        "name": "Newham",
+        "latestRatio": 9.2,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000026",
+        "name": "Redbridge",
+        "latestRatio": 13.21,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000027",
+        "name": "Richmond upon Thames",
+        "latestRatio": 17.21,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000028",
+        "name": "Southwark",
+        "latestRatio": 11.09,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000029",
+        "name": "Sutton",
+        "latestRatio": 11.58,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000030",
+        "name": "Tower Hamlets",
+        "latestRatio": 7.31,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000031",
+        "name": "Waltham Forest",
+        "latestRatio": 13.26,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000032",
+        "name": "Wandsworth",
+        "latestRatio": 16.25,
+        "latestYear": 2024
+      },
+      {
+        "code": "E09000033",
+        "name": "Westminster",
+        "latestRatio": 18.04,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000035",
+        "name": "Medway",
+        "latestRatio": 8.41,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000036",
+        "name": "Bracknell Forest",
+        "latestRatio": 8.28,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000037",
+        "name": "West Berkshire",
+        "latestRatio": 8.49,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000038",
+        "name": "Reading",
+        "latestRatio": 7.45,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000039",
+        "name": "Slough",
+        "latestRatio": 9.2,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000040",
+        "name": "Windsor and Maidenhead",
+        "latestRatio": 12.32,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000041",
+        "name": "Wokingham",
+        "latestRatio": 10.63,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000042",
+        "name": "Milton Keynes",
+        "latestRatio": 8.3,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000043",
+        "name": "Brighton and Hove",
+        "latestRatio": 11.31,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000044",
+        "name": "Portsmouth",
+        "latestRatio": 6.56,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000045",
+        "name": "Southampton",
+        "latestRatio": 6.76,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000046",
+        "name": "Isle of Wight",
+        "latestRatio": 8.23,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000060",
+        "name": "Buckinghamshire",
+        "latestRatio": 11.29,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000061",
+        "name": "Eastbourne",
+        "latestRatio": 8.48,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000062",
+        "name": "Hastings",
+        "latestRatio": 8.37,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000063",
+        "name": "Lewes",
+        "latestRatio": 12.09,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000064",
+        "name": "Rother",
+        "latestRatio": 11.07,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000065",
+        "name": "Wealden",
+        "latestRatio": 11.62,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000084",
+        "name": "Basingstoke and Deane",
+        "latestRatio": 8.75,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000085",
+        "name": "East Hampshire",
+        "latestRatio": 12.33,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000086",
+        "name": "Eastleigh",
+        "latestRatio": 9.05,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000087",
+        "name": "Fareham",
+        "latestRatio": 8.81,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000088",
+        "name": "Gosport",
+        "latestRatio": 6.8,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000089",
+        "name": "Hart",
+        "latestRatio": 11.52,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000090",
+        "name": "Havant",
+        "latestRatio": 8.93,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000091",
+        "name": "New Forest",
+        "latestRatio": 11.39,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000092",
+        "name": "Rushmoor",
+        "latestRatio": 8.34,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000093",
+        "name": "Test Valley",
+        "latestRatio": 9.45,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000094",
+        "name": "Winchester",
+        "latestRatio": 12.06,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000105",
+        "name": "Ashford",
+        "latestRatio": 10.15,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000106",
+        "name": "Canterbury",
+        "latestRatio": 9.55,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000107",
+        "name": "Dartford",
+        "latestRatio": 9.3,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000108",
+        "name": "Dover",
+        "latestRatio": 7.41,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000109",
+        "name": "Gravesham",
+        "latestRatio": 8.87,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000110",
+        "name": "Maidstone",
+        "latestRatio": 10.29,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000111",
+        "name": "Sevenoaks",
+        "latestRatio": 13.2,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000112",
+        "name": "Folkestone and Hythe",
+        "latestRatio": 8.63,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000113",
+        "name": "Swale",
+        "latestRatio": 8.95,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000114",
+        "name": "Thanet",
+        "latestRatio": 8.36,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000115",
+        "name": "Tonbridge and Malling",
+        "latestRatio": 11.23,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000116",
+        "name": "Tunbridge Wells",
+        "latestRatio": 11.51,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000177",
+        "name": "Cherwell",
+        "latestRatio": 9.03,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000178",
+        "name": "Oxford",
+        "latestRatio": 11.0,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000179",
+        "name": "South Oxfordshire",
+        "latestRatio": 10.31,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000180",
+        "name": "Vale of White Horse",
+        "latestRatio": 9.07,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000181",
+        "name": "West Oxfordshire",
+        "latestRatio": 9.17,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000207",
+        "name": "Elmbridge",
+        "latestRatio": 16.08,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000208",
+        "name": "Epsom and Ewell",
+        "latestRatio": 15.01,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000209",
+        "name": "Guildford",
+        "latestRatio": 10.83,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000210",
+        "name": "Mole Valley",
+        "latestRatio": 13.4,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000211",
+        "name": "Reigate and Banstead",
+        "latestRatio": 11.6,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000212",
+        "name": "Runnymede",
+        "latestRatio": 10.29,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000213",
+        "name": "Spelthorne",
+        "latestRatio": 10.44,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000214",
+        "name": "Surrey Heath",
+        "latestRatio": 10.42,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000215",
+        "name": "Tandridge",
+        "latestRatio": 12.98,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000216",
+        "name": "Waverley",
+        "latestRatio": 13.42,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000217",
+        "name": "Woking",
+        "latestRatio": 10.57,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000223",
+        "name": "Adur",
+        "latestRatio": 10.06,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000224",
+        "name": "Arun",
+        "latestRatio": 10.18,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000225",
+        "name": "Chichester",
+        "latestRatio": 12.82,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000226",
+        "name": "Crawley",
+        "latestRatio": 7.93,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000227",
+        "name": "Horsham",
+        "latestRatio": 11.68,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000228",
+        "name": "Mid Sussex",
+        "latestRatio": 11.35,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000229",
+        "name": "Worthing",
+        "latestRatio": 9.7,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000022",
+        "name": "Bath and North East Somerset",
+        "latestRatio": 10.72,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000023",
+        "name": "Bristol, City of",
+        "latestRatio": 8.6,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000024",
+        "name": "North Somerset",
+        "latestRatio": 8.7,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000025",
+        "name": "South Gloucestershire",
+        "latestRatio": 7.98,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000026",
+        "name": "Plymouth",
+        "latestRatio": 6.05,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000027",
+        "name": "Torbay",
+        "latestRatio": 8.23,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000030",
+        "name": "Swindon",
+        "latestRatio": 6.79,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000052",
+        "name": "Cornwall",
+        "latestRatio": 8.85,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000054",
+        "name": "Wiltshire",
+        "latestRatio": 8.87,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000058",
+        "name": "Bournemouth, Christchurch and Poole",
+        "latestRatio": 9.43,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000059",
+        "name": "Dorset",
+        "latestRatio": 10.07,
+        "latestYear": 2024
+      },
+      {
+        "code": "E06000066",
+        "name": "Somerset",
+        "latestRatio": 8.1,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000040",
+        "name": "East Devon",
+        "latestRatio": 8.64,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000041",
+        "name": "Exeter",
+        "latestRatio": 8.59,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000042",
+        "name": "Mid Devon",
+        "latestRatio": 8.39,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000043",
+        "name": "North Devon",
+        "latestRatio": 9.07,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000044",
+        "name": "South Hams",
+        "latestRatio": 11.57,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000045",
+        "name": "Teignbridge",
+        "latestRatio": 9.48,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000046",
+        "name": "Torridge",
+        "latestRatio": 9.31,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000047",
+        "name": "West Devon",
+        "latestRatio": 8.41,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000078",
+        "name": "Cheltenham",
+        "latestRatio": 8.17,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000079",
+        "name": "Cotswold",
+        "latestRatio": 13.84,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000080",
+        "name": "Forest of Dean",
+        "latestRatio": 8.88,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000081",
+        "name": "Gloucester",
+        "latestRatio": 7.27,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000082",
+        "name": "Stroud",
+        "latestRatio": 9.55,
+        "latestYear": 2024
+      },
+      {
+        "code": "E07000083",
+        "name": "Tewkesbury",
+        "latestRatio": 7.92,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000001",
+        "name": "Isle of Anglesey",
+        "latestRatio": 6.0,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000002",
+        "name": "Gwynedd",
+        "latestRatio": 6.36,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000003",
+        "name": "Conwy",
+        "latestRatio": 7.05,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000004",
+        "name": "Denbighshire",
+        "latestRatio": 5.75,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000005",
+        "name": "Flintshire",
+        "latestRatio": 5.04,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000006",
+        "name": "Wrexham",
+        "latestRatio": 5.38,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000008",
+        "name": "Ceredigion",
+        "latestRatio": 7.49,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000009",
+        "name": "Pembrokeshire",
+        "latestRatio": 6.74,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000010",
+        "name": "Carmarthenshire",
+        "latestRatio": 5.4,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000011",
+        "name": "Swansea",
+        "latestRatio": 5.4,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000012",
+        "name": "Neath Port Talbot",
+        "latestRatio": 4.17,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000013",
+        "name": "Bridgend",
+        "latestRatio": 6.08,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000014",
+        "name": "Vale of Glamorgan",
+        "latestRatio": 8.38,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000015",
+        "name": "Cardiff",
+        "latestRatio": 7.04,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000016",
+        "name": "Rhondda Cynon Taf",
+        "latestRatio": 4.53,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000018",
+        "name": "Caerphilly",
+        "latestRatio": 5.69,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000019",
+        "name": "Blaenau Gwent",
+        "latestRatio": 3.75,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000020",
+        "name": "Torfaen",
+        "latestRatio": 4.84,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000021",
+        "name": "Monmouthshire",
+        "latestRatio": 8.51,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000022",
+        "name": "Newport",
+        "latestRatio": 6.61,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000023",
+        "name": "Powys",
+        "latestRatio": 7.03,
+        "latestYear": 2024
+      },
+      {
+        "code": "W06000024",
+        "name": "Merthyr Tydfil",
+        "latestRatio": 4.8,
+        "latestYear": 2024
+      }
+    ]
   },
   "metadata": {
     "sources": [

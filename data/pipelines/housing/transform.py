@@ -118,6 +118,62 @@ def extract_affordability():
     return national_ts, regional, prices_ts, earnings_ts
 
 
+# ── 1b. LA-level affordability (sheet 5c) ───────────────────────────────────
+
+def extract_la_affordability():
+    """
+    Extract median affordability ratio (house price / earnings) for each
+    local authority district from sheet 5c of the ONS affordability xlsx.
+    Returns list of {code, name, latestRatio, latestYear} for choropleth.
+    """
+    path = latest_raw("*affordability_ratio*.xlsx")
+    if not path:
+        return []
+
+    df = pd.read_excel(path, sheet_name="5c", header=None)
+
+    # Row 0: title, Row 1: headers, Row 2+: data
+    # Headers: Country/Region code | Country/Region name | LA code | LA name | 1997 | 1998 | …
+    header = df.iloc[1].values
+    years = []
+    for h in header[4:]:
+        try:
+            years.append(int(float(h)))
+        except (ValueError, TypeError):
+            break
+
+    if not years:
+        log.warning("LA affordability: no year columns found in sheet 5c")
+        return []
+
+    latest_year = years[-1]
+    latest_col = 4 + len(years) - 1  # column index of the most recent year
+
+    result = []
+    for _, row in df.iloc[2:].iterrows():
+        la_code = str(row.iloc[2]).strip()
+        la_name = str(row.iloc[3]).strip()
+
+        # LA codes are 9-character ONS geography codes (E06…, E07…, E08…, E09…, W06…)
+        if len(la_code) != 9 or la_code[0] not in ("E", "W"):
+            continue
+
+        try:
+            ratio = float(row.iloc[latest_col])
+        except (ValueError, TypeError):
+            continue  # skip suppressed [x] values
+
+        result.append({
+            "code": la_code,
+            "name": la_name,
+            "latestRatio": round(ratio, 2),
+            "latestYear": latest_year,
+        })
+
+    log.info(f"LA affordability: {len(result)} local authorities, latest year {latest_year}")
+    return result
+
+
 # ── 2. UK HPI (house prices monthly) ────────────────────────────────────────
 
 def extract_hpi():
@@ -319,6 +375,7 @@ def main():
     log.info("=== Housing transform.py ===")
 
     aff_national, aff_regional, prices_ts, earnings_ts = extract_affordability()
+    la_affordability = extract_la_affordability()
     hpi_national, hpi_regional, ftb_ts = extract_hpi()
     rent_aff = extract_rental_affordability()
     rent_nat, rent_london = extract_rent_levels()
@@ -346,6 +403,7 @@ def main():
             "affordability": aff_regional or {},
             "housePrices": hpi_regional or {},
             "rentAffordability": {k: v for k, v in (rent_aff or {}).items() if k != "England"},
+            "byLocalAuthority": la_affordability or [],
         },
         "metadata": {
             "sources": [
