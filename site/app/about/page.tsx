@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteName from '@/components/SiteName';
+import ContactForm from '@/components/ContactForm';
+
 export default function AboutPage() {
   return (
     <>
@@ -49,21 +51,7 @@ export default function AboutPage() {
             If you spot an error, a data source that has moved, or a figure that looks wrong,
             please let us know. We also welcome general feedback and suggestions for topics to cover.
           </p>
-          <p className="font-mono text-sm text-wiah-mid">
-            Open an issue at{' '}
-            <a
-              href="https://github.com/redstarmatt/wiah/issues"
-              target="_blank"
-              rel="noreferrer"
-              className="underline hover:text-wiah-blue"
-            >
-              github.com/redstarmatt/wiah
-            </a>
-            {' '}or email{' '}
-            <a href="mailto:hello@whatisactuallyhappening.uk" className="underline hover:text-wiah-blue">
-              hello@whatisactuallyhappening.uk
-            </a>
-          </p>
+          <ContactForm />
         </div>
       </main>
     </>
