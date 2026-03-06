@@ -109,7 +109,7 @@ export default function NetZeroPage() {
             changeText="On track to 68% by 2030 if pace maintained"
             sparklineData={data ? data.emissions.map(d => d.mtCO2e) : []}
             source="DESNZ · Climate Change Risk Assessment"
-            onExpand={() => {}}
+            href="#sec-emissions"
           />
           <MetricCard
             label="Electricity from renewables (2023)"
@@ -120,7 +120,7 @@ export default function NetZeroPage() {
             changeText="Up from 7% in 2010"
             sparklineData={data ? data.renewableElectricity.map(d => d.pct) : []}
             source="DESNZ · Energy Trends"
-            onExpand={() => {}}
+            href="#sec-emissions"
           />
           <MetricCard
             label="Electric vehicles as % of new car sales (2023)"
@@ -131,7 +131,7 @@ export default function NetZeroPage() {
             changeText="Up from 0.3% in 2019; ZEV mandate target 80% by 2030"
             sparklineData={[0.3, 0.9, 2.8, 6.5, 10.2, 13.4, 16]}
             source="DfT · Vehicle Statistics"
-            onExpand={() => {}}
+            href="#sec-emissions"
           />
         </div>
         </ScrollReveal>

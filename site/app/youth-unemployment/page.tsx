@@ -149,7 +149,7 @@ export default function YouthUnemploymentPage() {
             }
             source="ONS · Labour Force Survey"
             baseline="16–24 year olds not in education, employment or training"
-            onExpand={() => {}}
+            href="#sec-neet"
           />
           <MetricCard
             label="Youth unemployment rate"
@@ -165,7 +165,7 @@ export default function YouthUnemploymentPage() {
             }
             source="ONS · Labour Force Survey"
             baseline="Percent of economically active 16–24 year olds"
-            onExpand={() => {}}
+            href="#sec-neet"
           />
           <MetricCard
             label="Young people economically inactive"
@@ -177,7 +177,7 @@ export default function YouthUnemploymentPage() {
             sparklineData={[19.0, 19.5, 20.1, 20.8, 21.2, 21.8, 22.1, 22.4]}
             source="ONS · Labour Force Survey"
             baseline="Includes those in full-time education not seeking work"
-            onExpand={() => {}}
+            href="#sec-neet"
           />
         </div>
         </ScrollReveal>

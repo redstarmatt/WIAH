@@ -159,7 +159,7 @@ export default function PrivateSchoolVatPage() {
               polarity="up-is-bad"
               changeText="Up 21% since 2022 · VAT pass-through + pre-existing inflation"
               sparklineData={[5.2, 5.5, 5.9, 6.3]}
-              onExpand={() => {}}
+              href="#sec-fees"
             />
             <MetricCard
               label="Pupils moved to state sector (2025)"
@@ -169,7 +169,7 @@ export default function PrivateSchoolVatPage() {
               polarity="up-is-bad"
               changeText="Below government 40,000 projection · Larger schools absorbed cost"
               sparklineData={[5, 12, 21, 28, 35]}
-              onExpand={() => {}}
+              href="#sec-fees"
             />
             <MetricCard
               label="Private schools closed/merged (2025)"
@@ -179,7 +179,7 @@ export default function PrivateSchoolVatPage() {
               polarity="up-is-bad"
               changeText="Mainly smaller prep schools · More at risk in 2026"
               sparklineData={[0, 4, 9]}
-              onExpand={() => {}}
+              href="#sec-fees"
             />
           </div>
         </ScrollReveal>

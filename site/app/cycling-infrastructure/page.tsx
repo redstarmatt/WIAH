@@ -108,7 +108,7 @@ export default function CyclingInfrastructurePage() {
               changeText="Barely moved since 2015 · Netherlands: 27% · 2030 target: 10%"
               sparklineData={[1.8, 1.9, 2.0, 2.1, 2.2, 2.5, 2.3, 2.2]}
               source="DfT · National Travel Survey 2024"
-              onExpand={() => {}}
+              href="#sec-modal"
             />
             <MetricCard
               label="Protected cycle lane miles (England)"
@@ -118,7 +118,7 @@ export default function CyclingInfrastructurePage() {
               changeText="Up from 300 miles in 2015 · Netherlands equivalent: 21,000 miles"
               sparklineData={[300, 350, 400, 460, 520, 600, 650, 680]}
               source="Active Travel England · Infrastructure Audit 2024"
-              onExpand={() => {}}
+              href="#sec-modal"
             />
             <MetricCard
               label="Cyclist casualties per year"
@@ -128,7 +128,7 @@ export default function CyclingInfrastructurePage() {
               changeText="880 killed or seriously injured · True figure estimated 2–3&times; higher"
               sparklineData={[17500, 17200, 16800, 17100, 9800, 15200, 17000, 17200]}
               source="DfT · Reported Road Casualties Great Britain 2023"
-              onExpand={() => {}}
+              href="#sec-modal"
             />
           </div>
         </ScrollReveal>

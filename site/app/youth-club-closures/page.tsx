@@ -176,7 +176,7 @@ export default function YouthClubClosuresPage() {
               polarity="up-is-bad"
               changeText=">50% of all provision · Fastest in deprived urban areas"
               sparklineData={closuresSparkline}
-              onExpand={() => {}}
+              href="#sec-closures"
             />
             <MetricCard
               label="Qualified youth workers remaining"
@@ -186,7 +186,7 @@ export default function YouthClubClosuresPage() {
               polarity="up-is-bad"
               changeText="Down 70% from 68,000 in 2010 · Unqualified volunteers patching gaps"
               sparklineData={workersSparkline}
-              onExpand={() => {}}
+              href="#sec-closures"
             />
             <MetricCard
               label="Local authority youth service spend"
@@ -196,7 +196,7 @@ export default function YouthClubClosuresPage() {
               polarity="up-is-bad"
               changeText="Down 50% in real terms from 2010 · Statutory services protected, youth cut first"
               sparklineData={spendSparkline}
-              onExpand={() => {}}
+              href="#sec-closures"
             />
           </div>
         </ScrollReveal>

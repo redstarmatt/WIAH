@@ -119,7 +119,7 @@ export default function MaternityPage() {
               polarity="up-is-bad"
               changeText="2022 · Double Norway's rate · Up from 8.2 in 2014 · Black women 3.7x more likely to die"
               sparklineData={[8.5, 8.4, 8.2, 8.3, 9.7, 9.7, 9.8, 9.8, 9.5, 10.4, 9.7]}
-              onExpand={() => {}}
+              href="#sec-mortality"
             />
             <MetricCard
               label="NHS midwife vacancies"
@@ -128,7 +128,7 @@ export default function MaternityPage() {
               polarity="up-is-bad"
               changeText="2023 · 12.3% vacancy rate · Up from 7% in 2016 · CQC: staffing cited in 90% of inadequate ratings"
               sparklineData={[7.0, 8.2, 8.8, 9.5, 9.8, 10.4, 11.8, 12.3]}
-              onExpand={() => {}}
+              href="#sec-mortality"
             />
             <MetricCard
               label="Maternity units rated 'requires improvement' or worse"
@@ -137,7 +137,7 @@ export default function MaternityPage() {
               polarity="up-is-bad"
               changeText="2023 · 13% inadequate · Ockenden Report: 1,223 families harmed at Shrewsbury · East Kent: 45 preventable deaths"
               sparklineData={[30, 35, 38, 42, 48, 52, 55, 58, 60]}
-              onExpand={() => {}}
+              href="#sec-mortality"
             />
           </div>
         </ScrollReveal>

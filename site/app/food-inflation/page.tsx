@@ -121,7 +121,7 @@ export default function FoodInflationPage() {
               polarity="up-is-bad"
               changeText="Highest in 45 years · vs 2.5% in 2018 · Now easing back below 2%"
               sparklineData={[2.5, 2.8, 1.8, 2.2, 4.2, 11.8, 19.2, 4.0]}
-              onExpand={() => {}}
+              href="#sec-cpi"
             />
             <MetricCard
               label="Average household food bill rise"
@@ -130,7 +130,7 @@ export default function FoodInflationPage() {
               polarity="up-is-bad"
               changeText="2022–23 vs pre-crisis · Concentrated in bread, dairy, eggs, oil"
               sparklineData={[0, 50, 100, 150, 250, 450, 650, 700]}
-              onExpand={() => {}}
+              href="#sec-cpi"
             />
             <MetricCard
               label="Adults experiencing food insecurity"
@@ -139,7 +139,7 @@ export default function FoodInflationPage() {
               polarity="up-is-bad"
               changeText="2023 peak · Up from 7% to 15% of adults · Skipping meals, reducing portions"
               sparklineData={[3.5, 3.8, 4.2, 4.9, 5.5, 6.2, 7.0, 7.3]}
-              onExpand={() => {}}
+              href="#sec-cpi"
             />
           </div>
         </ScrollReveal>

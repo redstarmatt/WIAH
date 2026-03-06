@@ -160,7 +160,7 @@ export default function BirthTraumaPage() {
               polarity="up-is-bad"
               changeText="~3-4% of births · Up from ~25,000 in 2018"
               sparklineData={[25, 26, 27, 28, 30, 31, 30]}
-              onExpand={() => {}}
+              href="#sec-ptsd"
             />
             <MetricCard
               label="Trusts with birth trauma service"
@@ -170,7 +170,7 @@ export default function BirthTraumaPage() {
               polarity="up-is-good"
               changeText="Up from 12% in 2020 · But 78% have no provision"
               sparklineData={[12, 15, 18, 20, 22]}
-              onExpand={() => {}}
+              href="#sec-ptsd"
             />
             <MetricCard
               label="Perinatal mental health referrals"
@@ -180,7 +180,7 @@ export default function BirthTraumaPage() {
               polarity="up-is-good"
               changeText="+133% since 2019 · Growing awareness driving referrals"
               sparklineData={[18, 20, 25, 32, 38, 42]}
-              onExpand={() => {}}
+              href="#sec-ptsd"
             />
           </div>
         </ScrollReveal>

@@ -116,7 +116,7 @@ export default function CouncilFinancesPage() {
               polarity="up-is-good"
               changeText="2022/23 · From £39bn to £25bn · Council tax raised 40% to compensate · Poorer areas hit hardest"
               sparklineData={[100, 92, 83, 76, 73, 68, 65, 63, 62, 63, 63]}
-              onExpand={() => {}}
+              href="#sec-grants"
             />
             <MetricCard
               label="Councils issuing Section 114 notices since 2018"
@@ -125,7 +125,7 @@ export default function CouncilFinancesPage() {
               polarity="up-is-bad"
               changeText="2024 · Birmingham: £760M deficit · Thurrock: £500M · Woking: £1.2bn · 1 in 6 at risk"
               sparklineData={[0, 0, 1, 2, 3, 4, 6, 9, 12]}
-              onExpand={() => {}}
+              href="#sec-grants"
             />
             <MetricCard
               label="Annual local government funding gap"
@@ -134,7 +134,7 @@ export default function CouncilFinancesPage() {
               polarity="up-is-bad"
               changeText="2024 · LGA estimate · Adult social care main pressure · Libraries, parks, buses cut"
               sparklineData={[1, 1.5, 2, 2.5, 3, 3, 3.5, 3.5, 4]}
-              onExpand={() => {}}
+              href="#sec-grants"
             />
           </div>
         </ScrollReveal>

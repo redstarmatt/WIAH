@@ -174,7 +174,7 @@ export default function SecondJobHoldersPage() {
               polarity="up-is-bad"
               changeText="+22% since 2019 · Gig platforms facilitating side income"
               sparklineData={totalSparkline}
-              onExpand={() => {}}
+              href="#sec-total"
             />
             <MetricCard
               label="NHS staff working second jobs"
@@ -184,7 +184,7 @@ export default function SecondJobHoldersPage() {
               polarity="up-is-bad"
               changeText="Up from 7% in 2019 · Pay stagnation driving moonlighting"
               sparklineData={nhsSparkline}
-              onExpand={() => {}}
+              href="#sec-total"
             />
             <MetricCard
               label="Citing financial necessity"
@@ -194,7 +194,7 @@ export default function SecondJobHoldersPage() {
               polarity="up-is-bad"
               changeText="vs 44% in 2022 · Cost of living crisis primary driver"
               sparklineData={necessitySparkline}
-              onExpand={() => {}}
+              href="#sec-total"
             />
           </div>
         </ScrollReveal>

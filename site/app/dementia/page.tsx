@@ -108,7 +108,7 @@ export default function DementiaPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="+280,000 since 2012"
-              onExpand={() => {}}
+              href="#sec-charts"
             />
             <MetricCard
               label="Diagnosed with dementia"
@@ -116,7 +116,7 @@ export default function DementiaPage() {
               direction="down"
               polarity="up-is-good"
               changeText="Target 66.7% — last met 2019"
-              onExpand={() => {}}
+              href="#sec-charts"
             />
             <MetricCard
               label="Unpaid carer hours/week"
@@ -124,7 +124,7 @@ export default function DementiaPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="+900M since 2015"
-              onExpand={() => {}}
+              href="#sec-charts"
             />
           </div>
         </section>

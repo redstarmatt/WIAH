@@ -119,7 +119,7 @@ export default function LivingWagePage() {
               polarity="up-is-bad"
               changeText="2023 · Down from 5.8M in 2015 · Still £1.16/hr short of Real Living Wage"
               sparklineData={[5.8, 5.5, 5.1, 4.8, 4.4, 4.1, 3.9, 3.8]}
-              onExpand={() => {}}
+              href="#sec-wages"
             />
             <MetricCard
               label="National Living Wage 2024"
@@ -128,7 +128,7 @@ export default function LivingWagePage() {
               polarity="up-is-good"
               changeText="Up from £7.20 in 2016 · Target: two-thirds of median earnings · Now met"
               sparklineData={[7.20, 7.50, 7.83, 8.21, 8.72, 9.50, 10.42, 11.44]}
-              onExpand={() => {}}
+              href="#sec-wages"
             />
             <MetricCard
               label="Real Living Wage accredited employers"
@@ -137,7 +137,7 @@ export default function LivingWagePage() {
               polarity="up-is-good"
               changeText="2024 · Up from 1,000 in 2013 · Covering 460,000 workers"
               sparklineData={[1000, 2000, 3500, 5200, 7000, 9500, 12000, 15000]}
-              onExpand={() => {}}
+              href="#sec-wages"
             />
           </div>
         </ScrollReveal>

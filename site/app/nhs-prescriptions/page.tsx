@@ -116,7 +116,7 @@ export default function PrescriptionsPage() {
               polarity="up-is-good"
               changeText="2023 · 90% free of charge · £10.8bn total cost · 43% dispensed to those aged 60+"
               sparklineData={[900, 930, 953, 971, 990, 1016, 1025, 1040, 1001, 1060, 1080, 1100]}
-              onExpand={() => {}}
+              href="#sec-volume"
             />
             <MetricCard
               label="Prescription charge per item (England)"
@@ -125,7 +125,7 @@ export default function PrescriptionsPage() {
               polarity="up-is-bad"
               changeText="2024 · Up 60% in real terms since 2000 · Scotland, Wales &amp; NI: free · 750K skip medication due to cost"
               sparklineData={[7.65, 7.85, 8.05, 8.20, 8.40, 8.60, 8.80, 9.00, 9.15, 9.35, 9.65, 9.90]}
-              onExpand={() => {}}
+              href="#sec-volume"
             />
             <MetricCard
               label="NHS prescribing cost (annual)"
@@ -134,7 +134,7 @@ export default function PrescriptionsPage() {
               polarity="up-is-bad"
               changeText="2023 · Up 35% since 2012 · Biologics and cancer drugs fastest-growing · NICE cost-effectiveness thresholds £20k–£30k per QALY"
               sparklineData={[8.0, 8.3, 8.7, 9.0, 9.2, 9.0, 9.1, 9.3, 9.5, 9.8, 10.2, 10.8]}
-              onExpand={() => {}}
+              href="#sec-volume"
             />
           </div>
         </ScrollReveal>

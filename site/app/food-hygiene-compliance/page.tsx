@@ -152,7 +152,7 @@ export default function FoodHygieneCompliancePage() {
               polarity="up-is-good"
               changeText="Down from 76% in 2019 · Pandemic and cost pressures"
               sparklineData={[71, 73, 74, 75, 76, 72, 68, 65, 65, 65]}
-              onExpand={() => {}}
+              href="#sec-compliance"
             />
             <MetricCard
               label="Food safety inspectors remaining"
@@ -162,7 +162,7 @@ export default function FoodHygieneCompliancePage() {
               polarity="up-is-bad"
               changeText="Down 33% from 4,800 in 2010 · Risk-based inspection stretched"
               sparklineData={[4.8, 4.4, 4.0, 3.7, 3.5, 3.4, 3.3, 3.2, 3.2, 3.1, 3.1, 3.0, 3.0, 3.1, 3.2]}
-              onExpand={() => {}}
+              href="#sec-compliance"
             />
             <MetricCard
               label="Annual food poisoning hospitalisations"
@@ -172,7 +172,7 @@ export default function FoodHygieneCompliancePage() {
               polarity="up-is-bad"
               changeText="Up from 22,000 in 2018 · Campylobacter and Listeria main causes"
               sparklineData={[22, 23, 18, 21, 23, 24, 25]}
-              onExpand={() => {}}
+              href="#sec-compliance"
             />
           </div>
         </ScrollReveal>

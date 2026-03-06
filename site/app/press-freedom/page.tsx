@@ -101,7 +101,7 @@ export default function PressFreedomPage() {
               changeText="Of 180 countries · Improved from 40th in 2017 · Behind Jamaica, Namibia"
               sparklineData={[34, 38, 40, 40, 33, 35, 33, 24, 26, 23]}
               source="RSF · World Press Freedom Index 2024"
-              onExpand={() => {}}
+              href="#sec-ranking"
             />
             <MetricCard
               label="Newspaper market concentration"
@@ -111,7 +111,7 @@ export default function PressFreedomPage() {
               changeText="Three companies control 90% of national circulation"
               sparklineData={[88, 89, 89, 90, 90, 90, 90]}
               source="Ofcom · Media Nations 2023"
-              onExpand={() => {}}
+              href="#sec-ranking"
             />
             <MetricCard
               label="Local newspapers closed since 2009"
@@ -121,7 +121,7 @@ export default function PressFreedomPage() {
               changeText="58% of local authority areas have no dedicated reporter"
               sparklineData={[120, 155, 190, 225, 255, 280, 300, 310, 320]}
               source="Press Gazette · Local News Tracker 2023"
-              onExpand={() => {}}
+              href="#sec-ranking"
             />
           </div>
         </ScrollReveal>

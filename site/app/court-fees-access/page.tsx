@@ -175,7 +175,7 @@ export default function CourtFeesPage() {
               polarity="up-is-bad"
               changeText="2023/24 · Courts as revenue generators, not public service"
               sparklineData={feeSparkline}
-              onExpand={() => {}}
+              href="#sec-income"
             />
             <MetricCard
               label="Civil claims issued annually"
@@ -185,7 +185,7 @@ export default function CourtFeesPage() {
               polarity="up-is-bad"
               changeText="Down 40% from 2010 peak · Fee hikes suppressing access to justice"
               sparklineData={claimsSparkline}
-              onExpand={() => {}}
+              href="#sec-income"
             />
             <MetricCard
               label="Fee remissions granted"
@@ -195,7 +195,7 @@ export default function CourtFeesPage() {
               polarity="up-is-good"
               changeText="Qualifying low-income claimants · Middle income earners excluded"
               sparklineData={remissionsSparkline}
-              onExpand={() => {}}
+              href="#sec-income"
             />
           </div>
         </ScrollReveal>

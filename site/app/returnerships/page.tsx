@@ -160,7 +160,7 @@ export default function ReturnershipsPage() {
               polarity="up-is-bad"
               changeText="Up 300,000 since pre-pandemic · Long-term illness main driver"
               sparklineData={[3.2, 3.3, 3.6, 3.8, 3.7, 3.5]}
-              onExpand={() => {}}
+              href="#sec-inactivity"
             />
             <MetricCard
               label="Returnership scheme placements"
@@ -170,7 +170,7 @@ export default function ReturnershipsPage() {
               polarity="up-is-good"
               changeText="Since 2022 · Target: 100,000 · Significant under-delivery"
               sparklineData={[0, 6, 15]}
-              onExpand={() => {}}
+              href="#sec-inactivity"
             />
             <MetricCard
               label="50\u201364s citing ill health as reason"
@@ -180,7 +180,7 @@ export default function ReturnershipsPage() {
               polarity="up-is-bad"
               changeText="Up from 34% in 2019 · Post-pandemic health deterioration"
               sparklineData={[34, 33, 38, 42, 44, 45]}
-              onExpand={() => {}}
+              href="#sec-inactivity"
             />
           </div>
         </ScrollReveal>

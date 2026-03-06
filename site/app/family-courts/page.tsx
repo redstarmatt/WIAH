@@ -104,7 +104,7 @@ export default function FamilyCourtsPage() {
               changeText="Up 64% from 38,000 in 2015"
               sparklineData={[38000, 37200, 36800, 37500, 39100, 48200, 54300, 56800, 60200, 62400]}
               source="MoJ · Family Court Statistics Quarterly, 2024"
-              onExpand={() => {}}
+              href="#sec-backlog"
             />
             <MetricCard
               label="Average weeks to disposal"
@@ -115,7 +115,7 @@ export default function FamilyCourtsPage() {
               changeText="Private law cases · up from 24 weeks in 2015"
               sparklineData={[24, 25, 27, 30, 32, 41, 45, 46, 48, 50]}
               source="MoJ · Family Court Statistics Quarterly, 2024"
-              onExpand={() => {}}
+              href="#sec-backlog"
             />
             <MetricCard
               label="Litigants in person"
@@ -125,7 +125,7 @@ export default function FamilyCourtsPage() {
               changeText="At least one unrepresented party · post-LASPO impact"
               sparklineData={[58, 62, 66, 70, 73, 75, 77, 78, 79, 80]}
               source="Cafcass · Annual Report, 2024"
-              onExpand={() => {}}
+              href="#sec-backlog"
             />
           </div>
         </ScrollReveal>

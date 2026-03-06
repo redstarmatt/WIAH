@@ -143,7 +143,7 @@ export default function ZeroHoursContractsPage() {
               polarity="up-is-bad"
               changeText="2024 · Nearly trebled since 2013 · No guaranteed hours, sick pay, or pension"
               sparklineData={[400, 624, 744, 801, 883, 780, 896, 1004, 982, 1028, 1030, 1100]}
-              onExpand={() => {}}
+              href="#sec-workers"
             />
             <MetricCard
               label="Zero-hours workers in hospitality"
@@ -152,7 +152,7 @@ export default function ZeroHoursContractsPage() {
               polarity="up-is-bad"
               changeText="Highest sector share · Tourism and food services dominate"
               sparklineData={[27, 29, 30, 31, 32, 31, 33, 34, 34, 35]}
-              onExpand={() => {}}
+              href="#sec-workers"
             />
             <MetricCard
               label="Average weekly hours (zero-hours)"
@@ -161,7 +161,7 @@ export default function ZeroHoursContractsPage() {
               polarity="up-is-good"
               changeText="Hours vary widely week to week · 25% want more hours but cannot get them"
               sparklineData={[24.8, 25.1, 24.9, 25.0, 25.2, 25.4, 25.1, 25.0, 25.2, 25.3]}
-              onExpand={() => {}}
+              href="#sec-workers"
             />
           </div>
         </ScrollReveal>

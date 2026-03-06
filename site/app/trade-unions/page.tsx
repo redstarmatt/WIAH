@@ -112,7 +112,7 @@ export default function TradeUnionsPage() {
               polarity="up-is-good"
               changeText="2024 · 23% of employees · Peak: 13.2M in 1979 · Public sector: 50% vs private: 12%"
               sparklineData={[6.50, 6.23, 6.23, 6.35, 6.44, 6.56, 6.55, 6.54, 6.67, 6.73]}
-              onExpand={() => {}}
+              href="#sec-membership"
             />
             <MetricCard
               label="Working days lost to strikes (2023)"
@@ -121,7 +121,7 @@ export default function TradeUnionsPage() {
               polarity="up-is-bad"
               changeText="Highest since 1989 · Rail, NHS, postal, teachers · Driven by real-terms pay cuts · 2024: 1.84M (declining)"
               sparklineData={[170, 322, 276, 273, 234, 231, 390, 2470, 3872, 1840]}
-              onExpand={() => {}}
+              href="#sec-membership"
             />
             <MetricCard
               label="Private sector union density"
@@ -130,7 +130,7 @@ export default function TradeUnionsPage() {
               polarity="up-is-good"
               changeText="2024 · Accommodation &amp; food: 3% · Retail: 10% · Gig workers largely unorganised"
               sparklineData={[14.4, 14.0, 13.6, 13.4, 13.2, 12.8, 12.6, 12.4, 12.2, 12.0]}
-              onExpand={() => {}}
+              href="#sec-membership"
             />
           </div>
         </ScrollReveal>

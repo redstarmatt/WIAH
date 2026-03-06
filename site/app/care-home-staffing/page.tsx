@@ -175,7 +175,7 @@ export default function CareHomeStaffingPage() {
               polarity="up-is-bad"
               changeText="30% annual turnover · 1 in 8 posts unfilled · Residents affected"
               sparklineData={vacanciesSparkline}
-              onExpand={() => {}}
+              href="#sec-vacancies"
             />
             <MetricCard
               label="International care workers (visas)"
@@ -185,7 +185,7 @@ export default function CareHomeStaffingPage() {
               polarity="up-is-good"
               changeText="Down from 101k peak · Visa abuse crackdown · Dependency risk"
               sparklineData={visasSparkline}
-              onExpand={() => {}}
+              href="#sec-vacancies"
             />
             <MetricCard
               label="Average care worker hourly pay"
@@ -195,7 +195,7 @@ export default function CareHomeStaffingPage() {
               polarity="up-is-good"
               changeText="+27% since 2019 but below NHS equivalents · Retention crisis persists"
               sparklineData={paySparkline}
-              onExpand={() => {}}
+              href="#sec-vacancies"
             />
           </div>
         </ScrollReveal>

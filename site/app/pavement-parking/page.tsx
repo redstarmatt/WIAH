@@ -150,7 +150,7 @@ export default function PavementParkingPage() {
               polarity="up-is-bad"
               changeText="Estimated by Living Streets 2024 · Outside London: minimal enforcement"
               sparklineData={[20, 22, 24, 26, 27, 28]}
-              onExpand={() => {}}
+              href="#sec-enforcement"
             />
             <MetricCard
               label="Councils with active enforcement"
@@ -160,7 +160,7 @@ export default function PavementParkingPage() {
               polarity="up-is-good"
               changeText="Up from 12% in 2020 · But voluntary, not statutory"
               sparklineData={[12, 14, 18, 22, 28]}
-              onExpand={() => {}}
+              href="#sec-enforcement"
             />
             <MetricCard
               label="Disabled people affected"
@@ -170,7 +170,7 @@ export default function PavementParkingPage() {
               polarity="up-is-bad"
               changeText="Cannot get around due to pavement parking · DfT 2024"
               sparklineData={[52, 54, 55, 56]}
-              onExpand={() => {}}
+              href="#sec-enforcement"
             />
           </div>
         </ScrollReveal>

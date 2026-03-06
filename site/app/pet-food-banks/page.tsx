@@ -151,7 +151,7 @@ export default function PetFoodBanksPage() {
               polarity="up-is-bad"
               changeText="+1,300% since 2019 · Concentrated in deprived areas"
               sparklineData={[20, 25, 60, 120, 200, 280]}
-              onExpand={() => {}}
+              href="#sec-foodbanks"
             />
             <MetricCard
               label="Pet surrenders to rescue charities"
@@ -161,7 +161,7 @@ export default function PetFoodBanksPage() {
               polarity="up-is-bad"
               changeText="+25% since 2019 · Record shelter occupancy"
               sparklineData={[92, 87, 95, 100, 108, 115]}
-              onExpand={() => {}}
+              href="#sec-foodbanks"
             />
             <MetricCard
               label="Pet owners who cannot afford vet care"
@@ -171,7 +171,7 @@ export default function PetFoodBanksPage() {
               polarity="up-is-bad"
               changeText="PDSA Animal Wellbeing Report 2024 · Up from 1.5M in 2020"
               sparklineData={[1.5, 1.6, 1.8, 1.9, 2.0, 2.1]}
-              onExpand={() => {}}
+              href="#sec-foodbanks"
             />
           </div>
         </ScrollReveal>

@@ -119,7 +119,7 @@ export default function GigEconomyPage() {
               polarity="up-is-bad"
               changeText="2024 · Up from 2.8M in 2017 · No sick pay, no pension, no guaranteed hours"
               sparklineData={[2.8, 3.1, 3.4, 3.6, 3.8, 4.0, 4.2, 4.4]}
-              onExpand={() => {}}
+              href="#sec-workers"
             />
             <MetricCard
               label="Earning below minimum wage after costs"
@@ -128,7 +128,7 @@ export default function GigEconomyPage() {
               polarity="up-is-bad"
               changeText="TUC 2023 · Delivery workers most exposed · Costs include vehicle, fuel, equipment"
               sparklineData={[28, 30, 32, 33, 35, 36, 37, 38]}
-              onExpand={() => {}}
+              href="#sec-workers"
             />
             <MetricCard
               label="Gig workers with workplace pension"
@@ -137,7 +137,7 @@ export default function GigEconomyPage() {
               polarity="up-is-good"
               changeText="vs 76% of employees · Auto-enrolment does not apply to self-employed"
               sparklineData={[7, 8, 8, 8, 9, 9, 9, 9]}
-              onExpand={() => {}}
+              href="#sec-workers"
             />
           </div>
         </ScrollReveal>

@@ -138,7 +138,7 @@ export default function FoodInsecurityPage() {
               polarity="up-is-bad"
               changeText={`+${formatNumber(parcelChange)} since 2012`}
               sparklineData={parcelsSparkline}
-              onExpand={() => {}}
+              href="#sec-charts"
             />
             <MetricCard
               label="Children in food-insecure households"
@@ -148,7 +148,7 @@ export default function FoodInsecurityPage() {
               polarity="up-is-bad"
               changeText="of all children"
               sparklineData={childFoodSparkline}
-              onExpand={() => {}}
+              href="#sec-charts"
             />
             <MetricCard
               label="Adults skipping meals"
@@ -158,7 +158,7 @@ export default function FoodInsecurityPage() {
               polarity="up-is-bad"
               changeText="13% of UK adults (Jan 2023)"
               sparklineData={[5.2, 5.8, 6.1, 6.4, 6.8, 7.1, 7.3, 7.4]}
-              onExpand={() => {}}
+              href="#sec-charts"
             />
           </div>
         </section>

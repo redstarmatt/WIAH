@@ -164,7 +164,7 @@ export default function GreenSkillsPage() {
               polarity="up-is-good"
               changeText="vs 130,000 needed by 2028 · Gap widening, not closing"
               sparklineData={heatPumpSparkline}
-              onExpand={() => {}}
+              href="#sec-heatpumps"
             />
             <MetricCard
               label="UK green job vacancies"
@@ -174,7 +174,7 @@ export default function GreenSkillsPage() {
               polarity="up-is-good"
               changeText="+514% since 2020 · But not enough workers to fill them"
               sparklineData={vacanciesSparkline}
-              onExpand={() => {}}
+              href="#sec-heatpumps"
             />
             <MetricCard
               label="Offshore wind workers needed by 2030"
@@ -184,7 +184,7 @@ export default function GreenSkillsPage() {
               polarity="up-is-bad"
               changeText="Current workforce ~20,000 · 80,000 gap in 5 years"
               sparklineData={[20, 28, 38, 52, 68, 80, 100]}
-              onExpand={() => {}}
+              href="#sec-heatpumps"
             />
           </div>
         </ScrollReveal>

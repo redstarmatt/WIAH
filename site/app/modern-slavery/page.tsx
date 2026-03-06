@@ -133,7 +133,7 @@ export default function ModernSlaveryPage() {
                 : []
             }
             source="Home Office · NRM Statistics"
-            onExpand={() => {}}
+            href="#sec-trend"
           />
           <MetricCard
             label="Modern slavery convictions (annual)"
@@ -144,7 +144,7 @@ export default function ModernSlaveryPage() {
             changeText="2022 · Conviction rate ~4% of referrals · Up from 74 in 2014 · Prosecution gap persisting"
             sparklineData={[74, 112, 188, 232, 264, 270, 295, 320, 345, 352]}
             source="CPS · Modern Slavery Prosecutions"
-            onExpand={() => {}}
+            href="#sec-trend"
           />
           <MetricCard
             label="Children referred as potential victims"
@@ -155,7 +155,7 @@ export default function ModernSlaveryPage() {
             changeText="2023 · 32% of all referrals · County lines main driver for children · UK nationals increasingly common"
             sparklineData={[480, 700, 1000, 1500, 2100, 2500, 3100, 3800, 4500, 5509]}
             source="Home Office · NRM Statistics"
-            onExpand={() => {}}
+            href="#sec-trend"
           />
         </div>
         </ScrollReveal>

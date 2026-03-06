@@ -155,7 +155,7 @@ export default function SocialCareTurnoverPage() {
               polarity="up-is-bad"
               changeText="Up from 25% in 2015 · 1 in 3 workers leaves every year"
               sparklineData={[25.2, 25.9, 26.8, 27.1, 27.8, 27.4, 27.1, 27.6, 28.0, 28.3]}
-              onExpand={() => {}}
+              href="#sec-turnover"
             />
             <MetricCard
               label="Unfilled care vacancies"
@@ -165,7 +165,7 @@ export default function SocialCareTurnoverPage() {
               polarity="up-is-bad"
               changeText="Down from peak 155,000 · International recruitment main relief valve"
               sparklineData={[82, 88, 110, 105, 155, 152, 131]}
-              onExpand={() => {}}
+              href="#sec-turnover"
             />
             <MetricCard
               label="Average care worker hourly pay"
@@ -175,7 +175,7 @@ export default function SocialCareTurnoverPage() {
               polarity="up-is-good"
               changeText="+33% since 2018 but barely above minimum wage · Real terms flat"
               sparklineData={[8.20, 8.45, 8.72, 9.10, 9.80, 10.40, 10.89]}
-              onExpand={() => {}}
+              href="#sec-turnover"
             />
           </div>
         </ScrollReveal>

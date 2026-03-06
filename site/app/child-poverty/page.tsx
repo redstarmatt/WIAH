@@ -114,7 +114,7 @@ export default function ChildPovertyPage() {
               polarity="up-is-bad"
               changeText="2023 · 31% of all children · Highest since 1998 · 3.2M in relative poverty"
               sparklineData={[3600, 3500, 3400, 3400, 3500, 3600, 3700, 3800, 3900, 4000, 4100, 4200, 4300]}
-              onExpand={() => {}}
+              href="#sec-poverty"
             />
             <MetricCard
               label="Children in poverty in working households"
@@ -123,7 +123,7 @@ export default function ChildPovertyPage() {
               polarity="up-is-bad"
               changeText="2023 · 21% of children in working families · In-work poverty rose from 14% in 2010 · Low pay + high housing costs"
               sparklineData={[2000, 2100, 2100, 2200, 2300, 2500, 2700, 2800, 3100]}
-              onExpand={() => {}}
+              href="#sec-poverty"
             />
             <MetricCard
               label="Children affected by two-child benefit cap"
@@ -132,7 +132,7 @@ export default function ChildPovertyPage() {
               polarity="up-is-bad"
               changeText="2023 · Introduced 2017 · Limits child element of Universal Credit to 2 children · Disproportionately affects larger families"
               sparklineData={[0, 100, 300, 500, 700, 900, 1100, 1300, 1500]}
-              onExpand={() => {}}
+              href="#sec-poverty"
             />
           </div>
         </ScrollReveal>

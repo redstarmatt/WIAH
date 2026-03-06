@@ -101,7 +101,7 @@ export default function FoodProductionPage() {
               changeText="Down from 78% in 1984 · Lowest since records began"
               sparklineData={[61.2, 60.8, 60.5, 61.0, 60.7, 60.2, 59.6, 58.8, 58.2, 57.8]}
               source="Defra · Agriculture in the UK 2024"
-              onExpand={() => {}}
+              href="#sec-sufficiency"
             />
             <MetricCard
               label="Farm workforce"
@@ -111,7 +111,7 @@ export default function FoodProductionPage() {
               changeText="Down 30% since 2000 · Average farmer age: 60"
               sparklineData={[480, 460, 440, 420, 410, 400, 395, 390, 385, 380]}
               source="Defra · Agriculture in the UK 2024"
-              onExpand={() => {}}
+              href="#sec-sufficiency"
             />
             <MetricCard
               label="UK-grown fruit"
@@ -121,7 +121,7 @@ export default function FoodProductionPage() {
               changeText="Down from 35% in 1990 · Labour shortages hit horticulture hardest"
               sparklineData={[22, 21, 20, 19, 18, 18, 17, 17, 16]}
               source="Defra · Horticulture Statistics 2024"
-              onExpand={() => {}}
+              href="#sec-sufficiency"
             />
           </div>
         </ScrollReveal>

@@ -163,7 +163,7 @@ export default function EmploymentTribunalBacklogPage() {
               polarity="up-is-bad"
               changeText="+135% since pre-pandemic · 2022 peak of 58,000"
               sparklineData={[23, 25, 45, 52, 58, 56, 54]}
-              onExpand={() => {}}
+              href="#sec-backlog"
             />
             <MetricCard
               label="Average wait for final hearing"
@@ -173,7 +173,7 @@ export default function EmploymentTribunalBacklogPage() {
               polarity="up-is-bad"
               changeText="Up from 27 weeks in 2018 · Nearly a year's wait for resolution"
               sparklineData={[27, 29, 36, 42, 48, 51, 51]}
-              onExpand={() => {}}
+              href="#sec-backlog"
             />
             <MetricCard
               label="New ET claims per year"
@@ -183,7 +183,7 @@ export default function EmploymentTribunalBacklogPage() {
               polarity="up-is-bad"
               changeText="Record high · Post-pandemic 2013 fee abolition created permanent rise"
               sparklineData={[109, 121, 143, 107, 119, 126, 131]}
-              onExpand={() => {}}
+              href="#sec-backlog"
             />
           </div>
         </ScrollReveal>

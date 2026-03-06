@@ -162,7 +162,7 @@ export default function Over50sEmploymentPage() {
               polarity="up-is-good"
               changeText="Recovering from pandemic low of 65.8% · But long-term illness rising"
               sparklineData={[67.2, 67.8, 68.4, 69.1, 69.8, 68.2, 65.8, 66.4, 67.1, 67.8]}
-              onExpand={() => {}}
+              href="#sec-employment"
             />
             <MetricCard
               label="Inactive 50–64s citing long-term illness"
@@ -172,7 +172,7 @@ export default function Over50sEmploymentPage() {
               polarity="up-is-bad"
               changeText="+40% since 2019 · NHS waiting list backlog a key driver"
               sparklineData={[680, 720, 820, 940, 980, 950]}
-              onExpand={() => {}}
+              href="#sec-employment"
             />
             <MetricCard
               label="Employment rate 65+ age group"
@@ -182,7 +182,7 @@ export default function Over50sEmploymentPage() {
               polarity="up-is-good"
               changeText="Record high · Financial necessity and flexible working"
               sparklineData={[10.2, 10.5, 10.8, 11.0, 11.2, 9.8, 10.1, 10.4, 10.6, 10.8]}
-              onExpand={() => {}}
+              href="#sec-employment"
             />
           </div>
         </ScrollReveal>

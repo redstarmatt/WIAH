@@ -161,7 +161,7 @@ export default function YouthGamblingPage() {
               polarity="up-is-bad"
               changeText="1.4% prevalence · Up from 0.9% in 2018"
               sparklineData={[0.9, 1.0, 1.0, 1.1, 1.2, 1.3, 1.4]}
-              onExpand={() => {}}
+              href="#sec-prevalence"
             />
             <MetricCard
               label="Online gambling 16-24 age group"
@@ -171,7 +171,7 @@ export default function YouthGamblingPage() {
               polarity="up-is-bad"
               changeText="Doubled since 2018 · Loot boxes and esports betting"
               sparklineData={[14, 16, 18, 22, 25, 27, 28]}
-              onExpand={() => {}}
+              href="#sec-prevalence"
             />
             <MetricCard
               label="Children treated for gambling harm"
@@ -181,7 +181,7 @@ export default function YouthGamblingPage() {
               polarity="up-is-bad"
               changeText="+125% since 2020 · Treatment capacity vastly insufficient"
               sparklineData={[400, 500, 600, 750, 900]}
-              onExpand={() => {}}
+              href="#sec-prevalence"
             />
           </div>
         </ScrollReveal>

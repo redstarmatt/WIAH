@@ -167,7 +167,7 @@ export default function SchoolBuildingConditionPage() {
               polarity="up-is-bad"
               changeText="235 schools across England · Emergency closures Sep 2023 · £1bn remediation"
               sparklineData={[52, 114, 156, 200, 220, 235]}
-              onExpand={() => {}}
+              href="#sec-raac"
             />
             <MetricCard
               label="Schools in poor/very poor condition"
@@ -177,7 +177,7 @@ export default function SchoolBuildingConditionPage() {
               polarity="up-is-bad"
               changeText="Up from 15% in 2019 · £6.7bn maintenance backlog"
               sparklineData={[15, 15, 17, 18, 19, 21]}
-              onExpand={() => {}}
+              href="#sec-raac"
             />
             <MetricCard
               label="School Rebuilding Programme completions"
@@ -187,7 +187,7 @@ export default function SchoolBuildingConditionPage() {
               polarity="up-is-good"
               changeText="Priority School Building Programme · But 500 schools over 10 years is far short of need"
               sparklineData={[18, 20, 22, 24, 26, 28]}
-              onExpand={() => {}}
+              href="#sec-raac"
             />
           </div>
         </ScrollReveal>

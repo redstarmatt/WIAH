@@ -108,7 +108,7 @@ export default function LeaseholdPage() {
               polarity="up-is-bad"
               changeText="2024 · ~1 in 5 homes · 36% of London homes are leasehold · Rising due to new-build flats"
               sparklineData={[4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 4.98]}
-              onExpand={() => {}}
+              href="#sec-properties"
             />
             <MetricCard
               label="Ground rent &amp; service charge complaints"
@@ -117,7 +117,7 @@ export default function LeaseholdPage() {
               polarity="up-is-bad"
               changeText="2024 · Tripled since 2015 · Property Tribunal &amp; Ombudsman cases · True disputes far higher"
               sparklineData={[3200, 3800, 5100, 6400, 7200, 8100, 9300, 10200, 10800]}
-              onExpand={() => {}}
+              href="#sec-properties"
             />
             <MetricCard
               label="Average London service charge"
@@ -126,7 +126,7 @@ export default function LeaseholdPage() {
               polarity="up-is-bad"
               changeText="Per year · 2023 · Some developments over £8,000/yr · Charges rising faster than inflation"
               sparklineData={[2100, 2200, 2350, 2450, 2550, 2680, 2790, 2880]}
-              onExpand={() => {}}
+              href="#sec-properties"
             />
           </div>
         </ScrollReveal>

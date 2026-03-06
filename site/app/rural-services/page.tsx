@@ -120,7 +120,7 @@ export default function RuralServicesPage() {
               polarity="up-is-good"
               changeText="2023 · 23% of rural routes gone · 17% of rural households have no car · Elderly and disabled most affected"
               sparklineData={[100, 97, 94, 92, 89, 86, 83, 82, 70, 74, 76, 77]}
-              onExpand={() => {}}
+              href="#sec-buses"
             />
             <MetricCard
               label="Average miles to GP for rural residents"
@@ -129,7 +129,7 @@ export default function RuralServicesPage() {
               polarity="up-is-bad"
               changeText="2023 · Urban average: 0.8 miles · Rural GP surgeries closing 2x faster than urban · 740K rural premises lack decent broadband"
               sparklineData={[3.8, 4.0, 4.3, 4.5, 4.7, 5.0, 5.2, 5.5, 5.8]}
-              onExpand={() => {}}
+              href="#sec-buses"
             />
             <MetricCard
               label="Bank branches closed in rural areas since 2010"
@@ -138,7 +138,7 @@ export default function RuralServicesPage() {
               polarity="up-is-good"
               changeText="2023 · Pubs down 28% · Libraries down 30% · Post offices down 14% · Digital-only services excluding the digitally excluded"
               sparklineData={[100, 95, 88, 82, 76, 70, 65, 60, 57, 56, 55, 55]}
-              onExpand={() => {}}
+              href="#sec-buses"
             />
           </div>
         </ScrollReveal>

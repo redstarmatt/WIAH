@@ -127,7 +127,7 @@ export default function NHSVaccinationPage() {
               polarity="up-is-good"
               changeText="2022/23 · Below 95% herd immunity threshold · Down from 92.3% in 2012/13 · UK lost measles-free status 2019"
               sparklineData={[92.3, 92.7, 92.3, 91.9, 91.6, 91.2, 90.3, 89.8, 89.2, 89.0, 89.3]}
-              onExpand={() => {}}
+              href="#sec-mmr"
             />
             <MetricCard
               label="MMR uptake in London (lowest region)"
@@ -136,7 +136,7 @@ export default function NHSVaccinationPage() {
               polarity="up-is-good"
               changeText="2022/23 · 11pp below herd immunity threshold · Some boroughs below 80% · Birmingham outbreak 2024: 300+ cases"
               sparklineData={[88, 87, 86, 85, 84, 83, 82, 81, 80, 81, 84.1]}
-              onExpand={() => {}}
+              href="#sec-mmr"
             />
             <MetricCard
               label="DTaP primary course completion"
@@ -145,7 +145,7 @@ export default function NHSVaccinationPage() {
               polarity="up-is-good"
               changeText="2022/23 · Down from 95.2% in 2016/17 · Pertussis (whooping cough) cases rising · COVID disrupted infant vaccination schedules"
               sparklineData={[95.2, 94.8, 94.3, 93.7, 91.8, 91.5, 91.7]}
-              onExpand={() => {}}
+              href="#sec-mmr"
             />
           </div>
         </ScrollReveal>

@@ -105,7 +105,7 @@ export default function YouthViolencePage() {
               changeText="Highest since 2012 · concentrated in urban areas"
               sparklineData={[5820, 5300, 5960, 6400, 6100, 4200, 5500, 6300, 6800, 7100]}
               source="NHS Digital · Hospital Episode Statistics, 2024"
-              onExpand={() => {}}
+              href="#sec-hospital"
             />
             <MetricCard
               label="Serious youth violence offences"
@@ -116,7 +116,7 @@ export default function YouthViolencePage() {
               changeText="Up 57% since 2015 · police-recorded"
               sparklineData={[18200, 19500, 22100, 24800, 25400, 20100, 23300, 26200, 27800, 28500]}
               source="Home Office · Police Recorded Crime, 2024"
-              onExpand={() => {}}
+              href="#sec-hospital"
             />
             <MetricCard
               label="Youth services budget cut"
@@ -126,7 +126,7 @@ export default function YouthViolencePage() {
               changeText="Real-terms cut since 2010 · 750+ youth centres closed"
               sparklineData={[100, 88, 72, 58, 48, 40, 35, 30, 28, 27]}
               source="YMCA · Youth Services Spending Tracker, 2023"
-              onExpand={() => {}}
+              href="#sec-hospital"
             />
           </div>
         </ScrollReveal>

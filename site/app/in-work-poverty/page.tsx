@@ -103,7 +103,7 @@ export default function InWorkPovertyPage() {
               polarity="up-is-bad"
               changeText="2022/23 · Up from 4.5M in 2005 · 60% of all poverty is in-work"
               sparklineData={[4.5, 5.0, 5.6, 6.2, 6.7, 7.2, 7.8, 8.1]}
-              onExpand={() => {}}
+              href="#sec-poverty"
             />
             <MetricCard
               label="Working households in poverty"
@@ -112,7 +112,7 @@ export default function InWorkPovertyPage() {
               polarity="up-is-bad"
               changeText="Up from 45% in 1997 · Majority of poverty is now in-work"
               sparklineData={[45, 47, 50, 53, 55, 57, 59, 60]}
-              onExpand={() => {}}
+              href="#sec-poverty"
             />
             <MetricCard
               label="Working single parents in poverty"
@@ -121,7 +121,7 @@ export default function InWorkPovertyPage() {
               polarity="up-is-bad"
               changeText="2022/23 · Despite employment · Childcare costs and low hours"
               sparklineData={[31, 33, 35, 36, 38, 39, 41, 42]}
-              onExpand={() => {}}
+              href="#sec-poverty"
             />
           </div>
         </ScrollReveal>

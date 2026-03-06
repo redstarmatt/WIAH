@@ -115,7 +115,7 @@ export default function OnlineHarmsPage() {
               polarity="up-is-bad"
               changeText="2023 · 41% of all crime · Only 17% reported to police · Costs economy £27bn per year"
               sparklineData={[2.5, 2.8, 3.0, 3.3, 3.8, 3.7, 3.8]}
-              onExpand={() => {}}
+              href="#sec-fraud"
             />
             <MetricCard
               label="Child sexual abuse image reports (IWF)"
@@ -124,7 +124,7 @@ export default function OnlineHarmsPage() {
               polarity="up-is-bad"
               changeText="2023 · Up 140% since 2018 · AI-generated content growing concern · Online Safety Act: mandatory removal within 24 hours"
               sparklineData={[500, 650, 780, 900, 1050, 1200]}
-              onExpand={() => {}}
+              href="#sec-fraud"
             />
             <MetricCard
               label="Cybercrime cost to UK economy"
@@ -133,7 +133,7 @@ export default function OnlineHarmsPage() {
               polarity="up-is-bad"
               changeText="Annual · DCMS estimate · Online Safety Act 2023: £78K/day fines · Ofcom powers to fine up to 10% of global turnover"
               sparklineData={[18, 19, 20, 22, 24, 25, 27]}
-              onExpand={() => {}}
+              href="#sec-fraud"
             />
           </div>
         </ScrollReveal>

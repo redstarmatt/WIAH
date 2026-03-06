@@ -119,7 +119,7 @@ export default function PersonalDebtPage() {
               polarity="up-is-bad"
               changeText="2023 · 130% of household income · Mortgage debt £1.54tn · Consumer credit £220bn"
               sparklineData={[1540, 1580, 1620, 1680, 1750, 1790, 1800, 1850, 1900]}
-              onExpand={() => {}}
+              href="#sec-debt"
             />
             <MetricCard
               label="People in problem debt (StepChange)"
@@ -128,7 +128,7 @@ export default function PersonalDebtPage() {
               polarity="up-is-bad"
               changeText="2023 · Up from 6.3M in 2019 · Energy &amp; food costs driving crisis · Single parents most affected"
               sparklineData={[6.0, 6.1, 6.2, 6.3, 5.8, 6.5, 7.0, 8.0, 8.9]}
-              onExpand={() => {}}
+              href="#sec-debt"
             />
             <MetricCard
               label="Personal insolvencies (England &amp; Wales)"
@@ -137,7 +137,7 @@ export default function PersonalDebtPage() {
               polarity="up-is-bad"
               changeText="2023 · Highest since 2010 · IVAs most common · Debt Relief Orders rise 30% as energy bills bite"
               sparklineData={[107, 101, 100, 95, 91, 99, 115, 122, 80, 109, 105, 110]}
-              onExpand={() => {}}
+              href="#sec-debt"
             />
           </div>
         </ScrollReveal>

@@ -123,7 +123,7 @@ export default function NhsRaceInequalityPage() {
               changeText="Relative to white women · Down from 4.3&times; peak but still extreme"
               sparklineData={[4.1, 4.2, 4.3, 3.9, 3.7, 4.0, 3.7, 3.5, 3.4]}
               source="MBRRACE-UK · Saving Lives Report 2023"
-              onExpand={() => {}}
+              href="#sec-maternal"
             />
             <MetricCard
               label="Ethnic minority senior NHS leaders"
@@ -133,7 +133,7 @@ export default function NhsRaceInequalityPage() {
               changeText="vs 24.8% of all staff · Target: proportional by 2028"
               sparklineData={[7.4, 7.8, 8.1, 8.6, 9.0, 9.3, 9.7, 10.1, 10.5]}
               source="NHS England · WRES Report 2023"
-              onExpand={() => {}}
+              href="#sec-maternal"
             />
             <MetricCard
               label="Ethnic minority staff bullied/harassed"
@@ -143,7 +143,7 @@ export default function NhsRaceInequalityPage() {
               changeText="vs 24% for white staff · Barely changed since 2015"
               sparklineData={[30, 30, 31, 31, 30, 31, 31, 31]}
               source="NHS Staff Survey 2023"
-              onExpand={() => {}}
+              href="#sec-maternal"
             />
           </div>
         </ScrollReveal>

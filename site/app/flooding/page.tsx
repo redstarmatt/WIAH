@@ -129,7 +129,7 @@ export default function FloodingPage() {
               polarity="up-is-bad"
               changeText="2024 · 1 in 6 homes · 2.4M at significant risk · 880K at high risk · Climate change will increase risk"
               sparklineData={[5200, 5400, 5600, 5800, 5900, 6100, 6200, 6300]}
-              onExpand={() => {}}
+              href="#sec-floods"
             />
             <MetricCard
               label="Properties flooded (latest year)"
@@ -138,7 +138,7 @@ export default function FloodingPage() {
               polarity="up-is-bad"
               changeText="2023 · Storms Babet, Ciaran &amp; Henk · Up sharply from 2022 · Winter 2023/24 most incidents on record"
               sparklineData={[6.5, 8.2, 5.8, 5.5, 16.5, 3.2, 2.1, 1.5, 4.7, 4.6, 3.1, 2.8, 7.8]}
-              onExpand={() => {}}
+              href="#sec-floods"
             />
             <MetricCard
               label="Flood defence capital spending"
@@ -147,7 +147,7 @@ export default function FloodingPage() {
               polarity="up-is-good"
               changeText="2022/23 · Up from £670M in 2010/11 · Real-terms increase · FCERM Investment Plan: £5.6bn to 2027"
               sparklineData={[670, 640, 700, 780, 820, 860, 900, 890, 950, 1030, 1100]}
-              onExpand={() => {}}
+              href="#sec-floods"
             />
           </div>
         </ScrollReveal>
