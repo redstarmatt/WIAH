@@ -102,8 +102,7 @@ export default function HybridWorkGeographyPage() {
               polarity="up-is-bad"
               changeText="Stable but bifurcated &mdash; professional vs manual"
               sparklineData={[5.7, 43.1, 36.2, 30.6, 28.2, 28.0]}
-              onExpand={() => {}}
-              source="ONS LFS &middot; 2024"
+              href="#sec-chart"source="ONS LFS &middot; 2024"
             />
             <MetricCard
               label="London hybrid rate"
@@ -113,8 +112,7 @@ export default function HybridWorkGeographyPage() {
               polarity="up-is-bad"
               changeText="2.4&times; national average &middot; geography matters"
               sparklineData={[8, 61, 55, 47, 44, 44]}
-              onExpand={() => {}}
-              source="ONS LFS &middot; 2024"
+              href="#sec-chart"source="ONS LFS &middot; 2024"
             />
             <MetricCard
               label="Manual worker home rate"
@@ -124,8 +122,7 @@ export default function HybridWorkGeographyPage() {
               polarity="up-is-bad"
               changeText="Structural inequality baked in &middot; commuting costs persist"
               sparklineData={[4, 4, 4, 4, 4, 4]}
-              onExpand={() => {}}
-              source="ONS LFS &middot; 2024"
+              href="#sec-chart"source="ONS LFS &middot; 2024"
             />
           </div>
         </ScrollReveal>

@@ -74,7 +74,7 @@ export default function SocialPrescribingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Social prescribing connects people with community activities, groups, and services that address the social, emotional, and practical needs driving a significant proportion of primary care demand. A person presenting to their GP with loneliness, financial stress, or low-level anxiety may not need medication &mdash; they may need a befriending service, a debt advice charity, or a community garden. Social prescribing link workers &mdash; non-clinical staff embedded within GP practices and Primary Care Networks &mdash; make these connections, taking time with patients that GPs rarely have. The programme has grown rapidly: from approximately 1,000 link workers and 85,000 referrals in 2020 to 4,500 link workers and 550,000 referrals in 2023/24 &mdash; a five-fold increase in four years. The NHS Long Term Plan targets 900,000 referrals a year by 2026; at current growth rates, that is achievable. Studies consistently show a 15&ndash;28&percnt; reduction in GP appointment demand in the three to six months following a social prescribing referral, with NHS England estimating that 23&percnt; of referred patients reduce their GP contact.</p>
+            <p>Social prescribing connects people with community activities, groups, and services that address the social, emotional, and practical needs driving a significant proportion of primary care demand. A person presenting to their GP with loneliness, financial stress, or low-level anxiety may not need medication &mdash; they may need a befriending service, a debt advice charity, or a community garden. Social prescribing link workers &mdash; non-clinical staff embedded within GP practices and Primary Care Networks &mdash; make these connections, taking time with patients that GPs rarely have. The programme has grown rapidly: from approximately 1,000 link workers and 85,000 referrals in 2020 to 4,500 link workers and 550,000 referrals in 2023/24 &mdash; a five-fold increase in four years. The NHS Long Term Plan targets 900,000 referrals a year by 2026; at current growth rates, that is achievable. Studies consistently show a 15&ndash;28% reduction in GP appointment demand in the three to six months following a social prescribing referral, with NHS England estimating that 23% of referred patients reduce their GP contact.</p>
             <p>The quality and reach of social prescribing is uneven. Link worker capacity varies significantly between Primary Care Networks, and the community infrastructure that workers connect patients to is thinner in deprived and rural areas. A link worker in an affluent suburb can draw on a well-funded voluntary sector with diverse offerings; a link worker in a deprived coastal town may find few services still operating following years of charity sector funding cuts. The effectiveness of social prescribing is partly a function of local community assets, which are themselves products of economic geography. The programme is not a substitute for clinical care, but it addresses a real gap &mdash; the social and emotional needs that conventional general practice is poorly designed to meet.</p>
           </div>
         </section>
@@ -96,8 +96,7 @@ export default function SocialPrescribingPage() {
               polarity="up-is-good"
               changeText="5x growth since 2020 &middot; target 900k by 2026"
               sparklineData={[85, 180, 350, 480, 550]}
-              onExpand={() => {}}
-              source="NHS England &middot; Social Prescribing 2024"
+              href="#sec-chart"source="NHS England &middot; Social Prescribing 2024"
             />
             <MetricCard
               label="Link workers"
@@ -107,8 +106,7 @@ export default function SocialPrescribingPage() {
               polarity="up-is-good"
               changeText="From 1,000 in 2020 &middot; all PCNs now covered"
               sparklineData={[1000, 1440, 2800, 3900, 4500]}
-              onExpand={() => {}}
-              source="NHS England &middot; PCN Workforce 2024"
+              href="#sec-callout"source="NHS England &middot; PCN Workforce 2024"
             />
             <MetricCard
               label="GP demand reduction"
@@ -118,8 +116,7 @@ export default function SocialPrescribingPage() {
               polarity="up-is-good"
               changeText="Of referred patients reduce GP visits"
               sparklineData={[12, 15, 18, 21, 23]}
-              onExpand={() => {}}
-              source="NHS England &middot; Social Prescribing Evaluation 2024"
+              href="#sec-callout"source="NHS England &middot; Social Prescribing Evaluation 2024"
             />
           </div>
         </ScrollReveal>

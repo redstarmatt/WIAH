@@ -120,8 +120,7 @@ export default function NhsCapitalPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Tripled from &pound;4.3bn in 2014 &middot; Growing &pound;1bn+ per year"
               sparklineData={[4.3, 4.7, 5.0, 5.5, 6.0, 6.5, 7.4, 8.3, 10.2, 11.6, 13.8]}
-              onExpand={() => {}}
-            />
+              href="#sec-backlog"/>
             <MetricCard
               label="High-risk infrastructure"
               value="25.1"
@@ -130,8 +129,7 @@ export default function NhsCapitalPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; 1 in 4 buildings at risk of failure &middot; Up from 12% in 2014"
               sparklineData={[12.4, 14.1, 16.8, 19.2, 22.6, 25.1]}
-              onExpand={() => {}}
-            />
+              href="#sec-spending"/>
             <MetricCard
               label="RAAC-affected trusts"
               value="42"
@@ -139,8 +137,7 @@ export default function NhsCapitalPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Up from 27 in 2022 &middot; Survey incomplete &mdash; true number likely higher"
               sparklineData={[27, 39, 42]}
-              onExpand={() => {}}
-            />
+              href="#sec-risk"/>
           </div>
         </ScrollReveal>
 

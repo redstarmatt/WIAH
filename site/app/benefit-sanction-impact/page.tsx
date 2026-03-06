@@ -82,8 +82,7 @@ export default function BenefitSanctionImpactPage() {
               polarity="up-is-bad"
               changeText="rising strongly from 2020 low &middot; UC rollout driving surge"
               sparklineData={[1080, 890, 780, 730, 740, 193, 378, 640, 786]}
-              onExpand={() => {}}
-              source="DWP &middot; Universal Credit Sanctions Statistics 2023"
+              href="#sec-chart"source="DWP &middot; Universal Credit Sanctions Statistics 2023"
             />
             <MetricCard
               label="Food bank referrals citing benefits"
@@ -93,8 +92,7 @@ export default function BenefitSanctionImpactPage() {
               polarity="up-is-bad"
               changeText="of food bank referrals cite benefit issues as cause"
               sparklineData={[18, 18, 18, 18, 18, 18]}
-              onExpand={() => {}}
-              source="Trussell Trust &middot; End of Year Stats 2023"
+              href="#sec-chart"source="Trussell Trust &middot; End of Year Stats 2023"
             />
             <MetricCard
               label="Average sanction duration"
@@ -104,8 +102,7 @@ export default function BenefitSanctionImpactPage() {
               polarity="up-is-bad"
               changeText="of sanction &middot; hunger and rent arrears during period"
               sparklineData={[22, 24, 26, 27, 28, 28, 30, 32, 33]}
-              onExpand={() => {}}
-              source="DWP &middot; Benefit Sanctions Statistics 2023"
+              href="#sec-chart"source="DWP &middot; Benefit Sanctions Statistics 2023"
             />
           </div>
         </ScrollReveal>

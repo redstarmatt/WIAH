@@ -73,7 +73,7 @@ export default function EthnicMinorityPovertyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Forty-six percent of people from ethnic minority backgrounds live in poverty &mdash; more than double the 21&percnt; rate for white British people &mdash; a 25 percentage point gap that has persisted for decades without closing significantly, according to the Joseph Rowntree Foundation and Runnymede Trust. Bangladeshi households experience poverty at approximately 58&percnt;, Pakistani households at 50&percnt;, Black African at 45&percnt;, Black Caribbean at 40&percnt;; Indian households are close to the white British average at around 22&percnt;, reflecting different educational and labour market outcomes. Child poverty is starker still: 55&percnt; of children from ethnic minority backgrounds live in poverty versus 22&percnt; of white British children. The ethnicity pay gap stood at 5.8&percnt; in 2024, and CV studies consistently find that applicants with white British-sounding names are approximately 75&percnt; more likely to receive a callback than equally qualified ethnic minority applicants.</p>
+            <p>Forty-six percent of people from ethnic minority backgrounds live in poverty &mdash; more than double the 21% rate for white British people &mdash; a 25 percentage point gap that has persisted for decades without closing significantly, according to the Joseph Rowntree Foundation and Runnymede Trust. Bangladeshi households experience poverty at approximately 58%, Pakistani households at 50%, Black African at 45%, Black Caribbean at 40%; Indian households are close to the white British average at around 22%, reflecting different educational and labour market outcomes. Child poverty is starker still: 55% of children from ethnic minority backgrounds live in poverty versus 22% of white British children. The ethnicity pay gap stood at 5.8% in 2024, and CV studies consistently find that applicants with white British-sounding names are approximately 75% more likely to receive a callback than equally qualified ethnic minority applicants.</p>
             <p>The concentration of poverty in specific communities reflects compounding disadvantage across hiring, pay, and welfare policy. Larger average household sizes increase poverty risk under the two-child limit; restricted benefit eligibility affects some recent migrants; and labour market discrimination at hiring and promotion levels compounds lower initial earnings. The Commission on Race and Ethnic Disparities (2021) contested the centrality of structural racism in driving these outcomes, but its conclusions were strongly disputed by race equality organisations and academics. Ethnicity pay gap reporting remains voluntary, leaving employer incentives insufficient to drive structural change &mdash; and the aggregate &ldquo;ethnic minority&rdquo; figure masks the very different challenges facing Bangladeshi and Indian communities, which a single policy response cannot address.</p>
           </div>
         </section>
@@ -94,8 +94,7 @@ export default function EthnicMinorityPovertyPage() {
               polarity={'up-is-bad' as const}
               changeText="Down from 52% in 2015 · still 25pp above white British"
               sparklineData={[52, 51, 50, 49, 48, 47, 47, 46, 46]}
-              onExpand={() => {}}
-              source="JRF / Runnymede Trust · Poverty and Ethnicity 2024"
+              href="#sec-chart"source="JRF / Runnymede Trust · Poverty and Ethnicity 2024"
             />
             <MetricCard
               label="Poverty rate, Bangladeshi households"
@@ -105,8 +104,7 @@ export default function EthnicMinorityPovertyPage() {
               polarity={'up-is-bad' as const}
               changeText="Highest of any group · improving slowly"
               sparklineData={[65, 64, 63, 62, 61, 60, 60, 59, 58]}
-              onExpand={() => {}}
-              source="JRF / Runnymede Trust · Poverty and Ethnicity 2024"
+              href="#sec-chart"source="JRF / Runnymede Trust · Poverty and Ethnicity 2024"
             />
             <MetricCard
               label="Child poverty, ethnic minorities"
@@ -116,8 +114,7 @@ export default function EthnicMinorityPovertyPage() {
               polarity={'up-is-bad' as const}
               changeText="55% vs 22% white British children in poverty"
               sparklineData={[58, 57, 57, 56, 56, 55, 55, 55, 55]}
-              onExpand={() => {}}
-              source="JRF · Child Poverty Analysis 2024"
+              href="#sec-chart"source="JRF · Child Poverty Analysis 2024"
             />
           </div>
         </ScrollReveal>

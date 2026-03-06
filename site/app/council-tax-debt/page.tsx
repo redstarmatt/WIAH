@@ -79,8 +79,7 @@ export default function CouncilTaxDebtPage() {
               changeText="+£1.8bn since 2019 · 45% increase"
               sparklineData={[3.2, 3.4, 3.6, 3.9, 4.2, 4.5, 5.0, 5.4, 5.7]}
               source="DLUHC · Local Authority Revenue Outturn 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Bailiff visits for council tax"
               value="3.2m"
@@ -89,8 +88,7 @@ export default function CouncilTaxDebtPage() {
               changeText="3.2m visits annually · largest bailiff use sector"
               sparklineData={[2.8, 2.9, 3.0, 3.0, 3.1, 2.8, 3.0, 3.1, 3.2]}
               source="CDER Network / Citizens Advice 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Households with council tax debt"
               value="1.4m"
@@ -99,8 +97,7 @@ export default function CouncilTaxDebtPage() {
               changeText="1.4m households in council tax arrears"
               sparklineData={[0.9, 0.95, 1.0, 1.05, 1.1, 1.15, 1.2, 1.3, 1.4]}
               source="DLUHC / StepChange 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

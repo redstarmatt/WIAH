@@ -77,8 +77,8 @@ export default function ActiveTravelInvestmentPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Active Travel England, established in 2022, received &pound;1.1 billion in 2023 &mdash; roughly four times the level of active travel investment in 2019. Cycling trips in England grew 45&percnt; between 2019 and 2024, driven largely by e-bike adoption, with e-bike sales tripling and their share of new bike sales reaching 34&percnt; in 2023. Yet cycling remains just 2.4&percnt; of all trips, well below the Netherlands (27&percnt;), Denmark (17&percnt;), and Germany (10&percnt;). The UK&apos;s per-capita cycling infrastructure spend of &pound;2.50 compares with &pound;35 in the Netherlands. The Cycling and Walking Investment Strategy target of 55&percnt; of town trips by active modes by 2025 has not been achieved, and much of the historic investment went into sub-standard painted lanes rather than protected infrastructure that changes behaviour.</p>
-            <p>Road danger &mdash; actual and perceived &mdash; remains the primary barrier, cited by 64&percnt; of non-cyclists in the National Travel Attitudes Survey. Women, older people, and parents with children are disproportionately deterred, creating a cycle use profile skewed heavily toward younger men. Geographic inequality is marked: London&apos;s dense network of protected lanes drives cycling rates far above those in regional cities and rural areas where infrastructure investment remains minimal. Planning reforms now require new developments to meet active travel standards, but retrofitting existing streets remains slow and contested.</p>
+            <p>Active Travel England, established in 2022, received &pound;1.1 billion in 2023 &mdash; roughly four times the level of active travel investment in 2019. Cycling trips in England grew 45% between 2019 and 2024, driven largely by e-bike adoption, with e-bike sales tripling and their share of new bike sales reaching 34% in 2023. Yet cycling remains just 2.4% of all trips, well below the Netherlands (27%), Denmark (17%), and Germany (10%). The UK&apos;s per-capita cycling infrastructure spend of &pound;2.50 compares with &pound;35 in the Netherlands. The Cycling and Walking Investment Strategy target of 55% of town trips by active modes by 2025 has not been achieved, and much of the historic investment went into sub-standard painted lanes rather than protected infrastructure that changes behaviour.</p>
+            <p>Road danger &mdash; actual and perceived &mdash; remains the primary barrier, cited by 64% of non-cyclists in the National Travel Attitudes Survey. Women, older people, and parents with children are disproportionately deterred, creating a cycle use profile skewed heavily toward younger men. Geographic inequality is marked: London&apos;s dense network of protected lanes drives cycling rates far above those in regional cities and rural areas where infrastructure investment remains minimal. Planning reforms now require new developments to meet active travel standards, but retrofitting existing streets remains slow and contested.</p>
           </div>
         </section>
 
@@ -98,8 +98,7 @@ export default function ActiveTravelInvestmentPage() {
               polarity={'up-is-good' as const}
               changeText="+&pound;650m since 2020 &middot; dedicated agency created"
               sparklineData={[0.20, 0.25, 0.35, 0.45, 0.48, 0.50, 0.70, 0.90, 1.1]}
-              onExpand={() => {}}
-              source="Active Travel England &middot; Investment Report 2024"
+              href="#sec-chart"source="Active Travel England &middot; Investment Report 2024"
             />
             <MetricCard
               label="Cycling share of all trips"
@@ -109,8 +108,7 @@ export default function ActiveTravelInvestmentPage() {
               polarity={'up-is-good' as const}
               changeText="+0.6pp since 2019 &middot; well below EU peers"
               sparklineData={[1.6, 1.7, 1.8, 1.8, 1.8, 2.0, 2.1, 2.2, 2.4]}
-              onExpand={() => {}}
-              source="DfT &middot; National Travel Survey 2024"
+              href="#sec-chart"source="DfT &middot; National Travel Survey 2024"
             />
             <MetricCard
               label="Cycling trips per year"
@@ -120,8 +118,7 @@ export default function ActiveTravelInvestmentPage() {
               polarity={'up-is-good' as const}
               changeText="+45% since 2019 &middot; e-bikes driving growth"
               sparklineData={[1.9, 2.0, 2.1, 2.3, 2.3, 2.5, 2.8, 3.1, 3.4]}
-              onExpand={() => {}}
-              source="DfT &middot; Cycling and Walking Investment Strategy Metrics 2024"
+              href="#sec-chart"source="DfT &middot; Cycling and Walking Investment Strategy Metrics 2024"
             />
           </div>
         </ScrollReveal>

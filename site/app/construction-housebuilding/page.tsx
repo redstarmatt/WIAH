@@ -86,8 +86,7 @@ export default function ConstructionHousebuildingPage() {
               polarity="up-is-good"
               changeText="78% of 300k target &middot; shortfall 65,600/year"
               sparklineData={[170990, 189650, 217350, 222190, 241130, 215920, 221070, 232820, 234400]}
-              onExpand={() => {}}
-              source="DLUHC &middot; Housing Supply England 2023"
+              href="#sec-chart"source="DLUHC &middot; Housing Supply England 2023"
             />
             <MetricCard
               label="New home completions"
@@ -97,8 +96,7 @@ export default function ConstructionHousebuildingPage() {
               polarity="up-is-good"
               changeText="lowest since 2013 &middot; materials costs hit output"
               sparklineData={[142850, 163940, 183570, 195290, 204590, 178580, 188610, 191010, 187000]}
-              onExpand={() => {}}
-              source="DLUHC &middot; 2023"
+              href="#sec-chart"source="DLUHC &middot; 2023"
             />
             <MetricCard
               label="Planning permissions granted"
@@ -108,8 +106,7 @@ export default function ConstructionHousebuildingPage() {
               polarity="up-is-good"
               changeText="down 18% year-on-year &middot; planning reform needed"
               sparklineData={[350000, 340000, 320000, 330000, 325000, 290000, 310000, 314000, 257000]}
-              onExpand={() => {}}
-              source="DLUHC &middot; 2023"
+              href="#sec-chart"source="DLUHC &middot; 2023"
             />
           </div>
         </ScrollReveal>

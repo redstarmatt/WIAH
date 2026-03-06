@@ -96,8 +96,7 @@ export default function PesticideReductionPage() {
               polarity="up-is-bad"
               changeText="-17% since 2012 &middot; glyphosate still widely used"
               sparklineData={[85.4, 82.1, 78.3, 75.2, 73.1, 72.8, 73.4, 72.1, 71.0]}
-              onExpand={() => {}}
-              source="Defra / CRD &middot; Pesticide Usage Survey 2023"
+              href="#sec-chart"source="Defra / CRD &middot; Pesticide Usage Survey 2023"
             />
             <MetricCard
               label="Neonicotinoids in use"
@@ -107,8 +106,7 @@ export default function PesticideReductionPage() {
               polarity="up-is-bad"
               changeText="Emergency derogations &middot; EU ban not followed"
               sparklineData={[0, 0, 0, 3, 3, 3, 3, 3, 3]}
-              onExpand={() => {}}
-              source="HSE / CRD &middot; 2023"
+              href="#sec-chart"source="HSE / CRD &middot; 2023"
             />
             <MetricCard
               label="Organic farmland"
@@ -118,8 +116,7 @@ export default function PesticideReductionPage() {
               polarity="up-is-good"
               changeText="Slow growth &middot; well below EU avg 9.7%"
               sparklineData={[2.4, 2.5, 2.6, 2.7, 2.7, 2.7, 2.7, 2.8, 2.8]}
-              onExpand={() => {}}
-              source="Defra / Organic Research Centre &middot; 2023"
+              href="#sec-chart"source="Defra / Organic Research Centre &middot; 2023"
             />
           </div>
         </ScrollReveal>

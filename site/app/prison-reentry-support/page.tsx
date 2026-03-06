@@ -95,8 +95,7 @@ export default function PrisonReentrySupportPage() {
               polarity={'up-is-bad' as const}
               changeText="Unchanged for a decade"
               sparklineData={[46, 47, 47, 46, 46, 44, 45, 46, 46]}
-              onExpand={() => {}}
-              source="Ministry of Justice &middot; Proven Reoffending Statistics"
+              href="#sec-chart"source="Ministry of Justice &middot; Proven Reoffending Statistics"
             />
             <MetricCard
               label="Discharge grant"
@@ -106,8 +105,7 @@ export default function PrisonReentrySupportPage() {
               polarity={'up-is-good' as const}
               changeText="Unchanged since 2008"
               sparklineData={[46, 46, 46, 46, 46, 46, 46, 46, 46]}
-              onExpand={() => {}}
-              source="HMPPS &middot; Prison Discharge Rules"
+              href="#sec-chart"source="HMPPS &middot; Prison Discharge Rules"
             />
             <MetricCard
               label="Released with no accommodation"
@@ -117,8 +115,7 @@ export default function PrisonReentrySupportPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 11% in 2015"
               sparklineData={[11, 12, 12, 12, 13, 14, 14, 15, 15]}
-              onExpand={() => {}}
-              source="HMPPS &middot; Prison Population Data"
+              href="#sec-chart"source="HMPPS &middot; Prison Population Data"
             />
           </div>
         </ScrollReveal>

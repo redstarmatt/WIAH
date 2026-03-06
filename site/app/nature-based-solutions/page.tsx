@@ -58,7 +58,7 @@ export default function NatureBasedSolutionsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Climate Change Committee estimates that nature-based solutions &mdash; peatland restoration, woodland creation, wetland recovery, and sustainable soil management &mdash; could contribute approximately 15&percnt; of the UK&apos;s required greenhouse gas reductions by 2035. Peatland is the highest-priority intervention: the UK holds 13&percnt; of the world&apos;s blanket bog, storing 3.2 billion tonnes of carbon, but 3 million hectares of degraded peat currently emits approximately 23 million tonnes of CO2 equivalent per year. By 2024, 57,000 hectares were under active restoration &mdash; a 340&percnt; increase from 13,000 in 2019 &mdash; funded through the Peatland Action programme, the Nature for Climate Grant Scheme, and the Sustainable Farming Incentive. Over 400,000 hectares of English peatland has been identified as restorable. Woodland creation is falling far short: England created approximately 8,500 hectares of new woodland in 2023, less than 30&percnt; of the 30,000-hectare annual target required to reach 17&percnt; woodland cover by 2050.</p>
+            <p>The Climate Change Committee estimates that nature-based solutions &mdash; peatland restoration, woodland creation, wetland recovery, and sustainable soil management &mdash; could contribute approximately 15% of the UK&apos;s required greenhouse gas reductions by 2035. Peatland is the highest-priority intervention: the UK holds 13% of the world&apos;s blanket bog, storing 3.2 billion tonnes of carbon, but 3 million hectares of degraded peat currently emits approximately 23 million tonnes of CO2 equivalent per year. By 2024, 57,000 hectares were under active restoration &mdash; a 340% increase from 13,000 in 2019 &mdash; funded through the Peatland Action programme, the Nature for Climate Grant Scheme, and the Sustainable Farming Incentive. Over 400,000 hectares of English peatland has been identified as restorable. Woodland creation is falling far short: England created approximately 8,500 hectares of new woodland in 2023, less than 30% of the 30,000-hectare annual target required to reach 17% woodland cover by 2050.</p>
             <p>Delivery is constrained across all pathways. Land for woodland competes with food production; large schemes face planning delays; new trees take 20&ndash;30 years to provide meaningful carbon storage. The restoration pipeline for peatland dwarfs current funding. Nature-based climate solutions and biodiversity recovery are largely complementary &mdash; carbon-rich habitats typically support high biodiversity &mdash; but coordinating them across thousands of private landholdings requires sustained long-term payment schemes and planning protections that have repeatedly been eroded or underfunded in previous policy cycles.</p>
           </div>
         </section>
@@ -79,8 +79,7 @@ export default function NatureBasedSolutionsPage() {
               changeText="+44,000ha since 2019 · 340% increase"
               sparklineData={[13000, 15000, 19000, 25000, 32000, 40000, 47000, 52000, 57000]}
               source="DESNZ / Natural England · Peatland Action 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="NBS share of net zero contribution"
               value="3%"
@@ -89,8 +88,7 @@ export default function NatureBasedSolutionsPage() {
               changeText="3% of 15% potential · large gap to fill"
               sparklineData={[0.5, 0.7, 0.9, 1.1, 1.4, 1.7, 2.1, 2.5, 3.0]}
               source="Climate Change Committee · 2024 Progress Report"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="New woodland planted 2023"
               value="8,500ha"
@@ -99,8 +97,7 @@ export default function NatureBasedSolutionsPage() {
               changeText="+3,200ha on 2022 · but below 30,000ha target"
               sparklineData={[3500, 4200, 5000, 6100, 7200, 4800, 5500, 5300, 8500]}
               source="Forestry Commission · Woodland Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

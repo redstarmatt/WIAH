@@ -102,8 +102,7 @@ export default function HeatMortalityPage() {
               changeText="Record England temperature 40.3°C reached July 2022 · most deaths in over-65s"
               sparklineData={[2139, 680, 622, 760, 863, 892, 1062, 2985]}
               source="UKHSA / ONS · 2022"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="First time UK exceeded 40°C"
               value={latestTemp ? latestTemp.year.toString() : '2022'}
@@ -113,8 +112,7 @@ export default function HeatMortalityPage() {
               changeText={`${latestTemp?.maxTempEngland ?? 40.3}°C at Coningsby, Lincolnshire on 19 July 2022`}
               sparklineData={[38.1, 38.7, 40.3]}
               source="Met Office · 2022"
-              onExpand={() => {}}
-            />
+              href="#sec-deaths"/>
             <MetricCard
               label="Projected annual heat deaths by 2050 (2°C)"
               value={moderateScenario ? moderateScenario.annualDeathsBy2050.toLocaleString() : '7,000'}
@@ -124,8 +122,7 @@ export default function HeatMortalityPage() {
               changeText="vs ~1,000/yr baseline today · without adaptation measures"
               sparklineData={[800, 900, 1000, 1200, 2985, 7000]}
               source="UKHSA Climate Change Risk Assessment"
-              onExpand={() => {}}
-            />
+              href="#sec-projections"/>
           </div>
         </ScrollReveal>
 

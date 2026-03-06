@@ -58,7 +58,7 @@ export default function PensionDeficitsPage() {
   const participationSeries: Series[] = data
     ? [{
         id: 'participation',
-        label: 'Pension participation rate (&percnt;)',
+        label: 'Pension participation rate (%)',
         colour: '#2A9D8F',
         data: data.national.timeSeries.map(d => ({
           date: yearToDate(d.date),
@@ -82,15 +82,18 @@ export default function PensionDeficitsPage() {
         <TopicHeader
           topic="Pensions"
           question="Are Britain&apos;s Pensions Actually Secure?"
-          finding="14 million workers have no workplace pension and the UK state pension replacement rate of 28&percnt; of earnings is one of the lowest in the OECD &mdash; despite auto-enrolment bringing 11 million new savers into schemes since 2012."
+          finding="14 million workers have no workplace pension and the UK state pension replacement rate of 28% of earnings is one of the lowest in the OECD &mdash; despite auto-enrolment bringing 11 million new savers into schemes since 2012."
           colour="#F4A261"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK state pension pays approximately &pound;11,500 per year (2024/25) &mdash; equivalent to 28&percnt; of median full-time earnings, among the lowest replacement rates in the OECD where the average is around 50&percnt;. Auto-enrolment, implemented from October 2012, has been the most significant structural reform in UK pensions for a generation: pension participation among eligible employees rose from 47&percnt; to 88&percnt; by 2023, with an estimated 10.9 million people newly saving who would not otherwise have done so. The aggregate funding position of private sector defined benefit schemes swung from a &pound;400 billion deficit in 2012 to a &pound;300 billion surplus by 2023, driven largely by the sharp rise in interest rates from 2022 reducing the present value of liabilities. Despite this, 14 million workers &mdash; predominantly self-employed and low-paid &mdash; have no workplace pension at all.</p>
-            <p>The gaps left by auto-enrolment fall along predictable fault lines. The 4.8 million self-employed are entirely excluded from the scheme; the &pound;10,000 earnings threshold excludes 1.5 million low-paid workers, the majority women in part-time work. Workers with multiple part-time jobs below the threshold face compounded exclusion. The minimum 8&percnt; contribution rate &mdash; set as a floor but treated as a target by most workers and employers &mdash; is estimated by the Pensions and Lifetime Savings Association to be roughly half what is needed for a moderate retirement income. The consequence is a two-tier retirement: those with occupational pension provision enjoy reasonable income security, while those without &mdash; disproportionately women, carers, and the self-employed &mdash; face poverty in old age.</p>
+            <p>The United Kingdom&apos;s pension system consists of three distinct layers that interact in complex ways: the New State Pension (NSP), which provides a flat-rate income to those with sufficient National Insurance records; workplace pensions, which are occupational schemes run by employers; and private or personal pensions. The New State Pension pays approximately &pound;11,500 per year (2024/25) for those with 35 qualifying years of NI contributions &mdash; equivalent to about 28% of median UK full-time earnings, one of the lowest replacement rates among OECD countries where averages are around 50%. This low replacement rate means that British retirees are more dependent on private and workplace pension savings than citizens of most comparable economies, creating a two-tier retirement system where those with adequate workplace pension provision enjoy reasonable income security and those without face significant income poverty. The 2022/23 English Longitudinal Study of Ageing found that approximately 18% of people aged 65 and over in England had weekly incomes below the poverty threshold, despite the pension credit safety net that tops up the income of the poorest pensioners.</p>
+            <p>Auto-enrolment, introduced under the Pensions Act 2008 and implemented from October 2012 to February 2018, has been the most significant structural change to UK pensions provision in a generation. The legislation required all employers to automatically enrol eligible workers (aged 22 to state pension age, earning over &pound;10,000 per year) into a qualifying workplace pension scheme, with minimum combined employer and employee contribution rates phased up from 2% to 8% by April 2019. Workers retain the right to opt out, but the default is inclusion rather than exclusion &mdash; exploiting behavioural inertia to build pension saving as the norm. The results have been transformative: DWP statistics show that pension participation among eligible employees rose from approximately 47% in 2012 to 88% in 2023, with an estimated 10.9 million people newly saving into a workplace pension who would not otherwise have done so. NEST (the National Employment Savings Trust), created as the auto-enrolment default provider for employers without existing schemes, manages over &pound;30 billion in assets and covers approximately 12 million members &mdash; one of the largest pension funds in the world by membership.</p>
+            <p>Despite the success of auto-enrolment, significant pension gaps remain. The 8% minimum contribution rate (which many workers and employers set as their actual rate rather than exceeding it) is estimated by the Pensions and Lifetime Savings Association (PLSA) to be approximately half of what is needed to achieve a &ldquo;moderate&rdquo; retirement income. Workers who are self-employed are excluded from auto-enrolment entirely &mdash; approximately 4.8 million people &mdash; and self-employed pension saving has fallen since 2010 as the gig economy has expanded. The £10,000 earnings threshold for auto-enrolment excludes around 1.5 million low-paid workers, the majority of whom are women in part-time employment. Workers with multiple part-time jobs below the threshold face compounded exclusion. The government has legislated to extend auto-enrolment to younger workers (from age 18) and remove the lower earnings threshold, but implementation has been deferred to the mid-2020s, and even when in place the changes will take decades to build adequate retirement savings for the cohorts affected.</p>
+            <p>Defined benefit (DB) pension schemes &mdash; which promise a fixed income in retirement based on final salary or career average earnings &mdash; have undergone a dramatic transformation in funding status over the past decade. The aggregate deficit of UK private sector DB schemes peaked at approximately &pound;400 billion in 2012, when historically low interest rates inflated the present value of future liabilities. A sustained recovery in funding, driven by employer deficit reduction contributions and, most dramatically, by the sharp rise in interest rates from 2022 which reduced the present value of liabilities, has converted this aggregate deficit into a surplus. The Pensions Regulator reported an aggregate funding surplus of over &pound;300 billion across the DB universe by 2023. This transformation has raised a new set of questions about what to do with surplus assets: whether schemes can reduce employer contributions, enhance member benefits, or transfer assets to insurance buyout providers. However, this aggregate picture masks considerable variation: many smaller and older schemes remain in deficit, particularly those in declining industries, and the Pension Protection Fund continues to provide a safety net for workers in schemes where the employer has become insolvent.</p>
+            <p>Measuring the adequacy of UK pension provision is methodologically complex and contested. The standard measure of replacement rate &mdash; pension income as a percentage of pre-retirement earnings &mdash; depends critically on the time horizon used, the treatment of state versus private pension, and whether means-tested benefits are included. The OECD&apos;s comparison of replacement rates uses a standardised methodology applied consistently across countries, producing the widely cited finding that the UK&apos;s gross replacement rate for an average earner is among the lowest in the developed world. However, the UK system is designed around a universal flat-rate state pension combined with private savings rather than an earnings-related public pension, so direct comparison with earnings-related state pension systems in France, Germany, or Italy requires care. The DWP&apos;s aggregate pension adequacy assessment concludes that a minority of the workforce (particularly self-employed, career-interrupted, and lower-paid workers) are on track for materially inadequate retirement incomes, while the majority are on track for adequate provision if auto-enrolment contributions are maintained. The biggest uncertainties concern the future level of the state pension relative to earnings (subject to the Triple Lock policy), future investment returns on DC savings, and the long-term fiscal sustainability of public sector pension commitments.</p>
           </div>
         </section>
 
@@ -112,20 +115,20 @@ export default function PensionDeficitsPage() {
               onExpand={() => {}}
             />
             <MetricCard
-              label="State pension as &percnt; of earnings"
-              value="28&percnt;"
+              label="State pension as % of earnings"
+              value="28%"
               direction="flat"
               polarity="up-is-good"
-              changeText="OECD average is 50&percnt; &middot; One of the lowest replacement rates in the developed world"
+              changeText="OECD average is 50% &middot; One of the lowest replacement rates in the developed world"
               sparklineData={[26, 26, 27, 27, 28, 28, 28, 28]}
               onExpand={() => {}}
             />
             <MetricCard
               label="Pension participation (auto-enrolled)"
-              value="88&percnt;"
+              value="88%"
               direction="up"
               polarity="up-is-good"
-              changeText="Up from 47&percnt; in 2012 &middot; 11 million newly saving &middot; Historic achievement"
+              changeText="Up from 47% in 2012 &middot; 11 million newly saving &middot; Historic achievement"
               sparklineData={[47, 58, 68, 74, 79, 83, 86, 88]}
               onExpand={() => {}}
             />
@@ -151,11 +154,11 @@ export default function PensionDeficitsPage() {
         <ScrollReveal>
           <section id="sec-participation" className="mb-12">
             <LineChart
-              title="Workplace pension participation rate, UK, 2012&ndash;2023 (&percnt;)"
+              title="Workplace pension participation rate, UK, 2012&ndash;2023 (%)"
               subtitle="Proportion of eligible employees (aged 22&ndash;SPA, earning &pound;10,000+) participating in a workplace pension. Auto-enrolment has transformed pension saving from exceptional to near-universal among eligible workers."
               series={participationSeries}
               annotations={participationAnnotations}
-              yLabel="&percnt;"
+              yLabel="%"
               source={{
                 name: 'DWP',
                 dataset: 'Workplace pension participation &amp; savings trends',
@@ -170,7 +173,7 @@ export default function PensionDeficitsPage() {
             title="What&apos;s transformed"
             value="Auto-enrolment &mdash; 11 million new savers"
             unit="2012&ndash;2023"
-            description="Auto-enrolment has been one of the most successful policy interventions of the past 20 years. Pension participation rose from 47&percnt; to 88&percnt; between 2012 and 2023, meaning that approximately 11 million workers are now saving for retirement who previously had no workplace pension. Opt-out rates have remained below 10&percnt; &mdash; far lower than predicted &mdash; demonstrating the power of default settings in shifting behaviour. The government has legislated to extend auto-enrolment to workers from age 18 (down from 22) and to remove the &pound;10,000 earnings threshold, which will bring an additional 1.5 million low-paid workers, mostly women, into pension saving when implemented."
+            description="Auto-enrolment has been one of the most successful policy interventions of the past 20 years. Pension participation rose from 47% to 88% between 2012 and 2023, meaning that approximately 11 million workers are now saving for retirement who previously had no workplace pension. Opt-out rates have remained below 10% &mdash; far lower than predicted &mdash; demonstrating the power of default settings in shifting behaviour. The government has legislated to extend auto-enrolment to workers from age 18 (down from 22) and to remove the &pound;10,000 earnings threshold, which will bring an additional 1.5 million low-paid workers, mostly women, into pension saving when implemented."
             source="Source: DWP &mdash; Workplace Pension Participation Trends 2023; Pensions Regulator &mdash; DB Landscape Report 2023; ONS &mdash; ASHE pension provision 2023; PLSA &mdash; Retirement Living Standards 2024."
           />
         </ScrollReveal>

@@ -78,8 +78,7 @@ export default function CareEconomyValuePage() {
               polarity={'up-is-good' as const}
               changeText="+£21bn since 2019 · equals NHS England budget"
               sparklineData={[57, 60, 64, 68, 72, 74, 80, 87, 93]}
-              onExpand={() => {}}
-              source="Carers UK · State of Caring Report 2024"
+              href="#sec-chart"source="Carers UK · State of Caring Report 2024"
             />
             <MetricCard
               label="Carers receiving Allowance"
@@ -89,8 +88,7 @@ export default function CareEconomyValuePage() {
               polarity={'up-is-bad' as const}
               changeText="Only 900k of 10.6m eligible · £81.90/week"
               sparklineData={[760, 780, 800, 820, 840, 850, 870, 880, 900]}
-              onExpand={() => {}}
-              source="DWP · Carer's Allowance Statistics 2024"
+              href="#sec-chart"source="DWP · Carer's Allowance Statistics 2024"
             />
             <MetricCard
               label="Carers leaving work per day"
@@ -100,8 +98,7 @@ export default function CareEconomyValuePage() {
               polarity={'up-is-bad' as const}
               changeText="600/day · £1.3bn GDP impact annually"
               sparklineData={[600, 600, 590, 610, 620, 600, 610, 600, 600]}
-              onExpand={() => {}}
-              source="Carers UK · State of Caring Report 2024"
+              href="#sec-chart"source="Carers UK · State of Caring Report 2024"
             />
           </div>
         </ScrollReveal>

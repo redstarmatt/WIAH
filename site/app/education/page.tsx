@@ -128,6 +128,58 @@ interface SchoolFundingData {
   };
 }
 
+interface PerPupilFundingPoint {
+  year: number;
+  realTerms: number;
+}
+
+interface SendFundingDeficitPoint {
+  year: number;
+  deficitBn: number;
+}
+
+interface SixthFormFundingPoint {
+  year: number;
+  index: number;
+}
+
+interface NewSchoolFundingData {
+  perPupilFunding: PerPupilFundingPoint[];
+  sendFundingDeficit: SendFundingDeficitPoint[];
+  sixthFormFundingIndex: SixthFormFundingPoint[];
+}
+
+interface CamhsPoint {
+  year: number;
+  referrals: number;
+  rejected: number;
+  waitOver18Weeks: number;
+}
+
+interface CamhsData {
+  topic: string;
+  lastUpdated: string;
+  timeSeries: CamhsPoint[];
+}
+
+interface OfstedGradePoint {
+  year: number;
+  outstandingPct: number;
+  goodPct: number;
+  requiresImprovementPct: number;
+  inadequatePct: number;
+}
+
+interface OfstedData {
+  topic: string;
+  lastUpdated: string;
+  national: {
+    overallGrades: {
+      timeSeries: OfstedGradePoint[];
+    };
+  };
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function academicYearToDate(s: string): Date {
@@ -162,6 +214,9 @@ export default function EducationPage() {
   const [teacherData, setTeacherData] = useState<TeacherData | null>(null);
   const [gradData, setGradData] = useState<GradData | null>(null);
   const [fundingData, setFundingData] = useState<SchoolFundingData | null>(null);
+  const [newSchoolFundingData, setNewSchoolFundingData] = useState<NewSchoolFundingData | null>(null);
+  const [camhsData, setCamhsData] = useState<CamhsData | null>(null);
+  const [ofstedData, setOfstedData] = useState<OfstedData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -180,6 +235,18 @@ export default function EducationPage() {
     fetch('/data/education/school_funding.json')
       .then(r => r.json())
       .then(setFundingData)
+      .catch(console.error);
+    fetch('/data/school-funding/school_funding.json')
+      .then(r => r.json())
+      .then((d: NewSchoolFundingData) => setNewSchoolFundingData(d))
+      .catch(console.error);
+    fetch('/data/camhs-access/camhs_access.json')
+      .then(r => r.json())
+      .then((d: CamhsData) => setCamhsData(d))
+      .catch(console.error);
+    fetch('/data/ofsted/ofsted.json')
+      .then(r => r.json())
+      .then((d: OfstedData) => setOfstedData(d))
       .catch(console.error);
   }, []);
 
@@ -377,6 +444,69 @@ export default function EducationPage() {
     { date: new Date(2024, 0), label: 'Recovery but uneven' },
   ];
 
+  // 11. New school funding — per pupil real terms
+  const newPerPupilFundingSeries: Series[] = newSchoolFundingData
+    ? [
+        {
+          id: 'new-per-pupil-real',
+          label: 'Per-pupil funding (real terms)',
+          colour: '#0D1117',
+          data: newSchoolFundingData.perPupilFunding.map(d => ({
+            date: new Date(d.year, 0, 1),
+            value: d.realTerms,
+          })),
+        },
+      ]
+    : [];
+
+  const newSchoolFundingAnnotations: Annotation[] = [
+    { date: new Date(2015, 0, 1), label: 'Austerity cuts peak' },
+    { date: new Date(2021, 0, 1), label: 'Recovery begins' },
+  ];
+
+  // 12. CAMHS — referrals (in hundreds of thousands) and wait over 18 weeks %
+  const camhsReferralsSeries: Series[] = camhsData
+    ? [
+        {
+          id: 'camhs-referrals',
+          label: 'Referrals (00s of thousands)',
+          colour: '#0D1117',
+          data: camhsData.timeSeries.map(d => ({
+            date: new Date(d.year, 0, 1),
+            value: d.referrals / 100000,
+          })),
+        },
+        {
+          id: 'camhs-wait',
+          label: '% waiting over 18 weeks',
+          colour: '#E63946',
+          data: camhsData.timeSeries.map(d => ({
+            date: new Date(d.year, 0, 1),
+            value: d.waitOver18Weeks,
+          })),
+        },
+      ]
+    : [];
+
+  const camhsAnnotations: Annotation[] = [
+    { date: new Date(2021, 0, 1), label: 'Post-pandemic surge' },
+  ];
+
+  // 13. Ofsted — good or outstanding combined %
+  const ofstedGoodOrOutstandingSeries: Series[] = ofstedData
+    ? [
+        {
+          id: 'ofsted-good-outstanding',
+          label: '% Good or Outstanding',
+          colour: '#2A9D8F',
+          data: ofstedData.national.overallGrades.timeSeries.map(d => ({
+            date: new Date(d.year, 0, 1),
+            value: d.outstandingPct + d.goodPct,
+          })),
+        },
+      ]
+    : [];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestAbsence = data?.national.absence.timeSeries.at(-1);
@@ -455,6 +585,9 @@ export default function EducationPage() {
           { id: 'sec-workforce', label: 'Workforce' },
           { id: 'sec-school-funding', label: 'School Funding' },
           { id: 'sec-pisa', label: 'International Comparison' },
+          { id: 'sec-new-funding', label: 'Funding Trends' },
+          { id: 'sec-camhs', label: 'Mental Health' },
+          { id: 'sec-ofsted', label: 'Ofsted Grades' },
         ]} />
 
         {/* Metric cards */}
@@ -478,8 +611,7 @@ export default function EducationPage() {
             }
             source="DfE · Pupil absence 2023/24"
             baseline="20% of pupils now persistently absent — double the 10.5% rate before the pandemic"
-            onExpand={absenceSeries.length > 0 ? () => setExpanded('absence') : undefined}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="EHCPs maintained"
             value={latestEhcp ? `${(latestEhcp.total / 1000).toFixed(0)}K` : '—'}
@@ -498,8 +630,7 @@ export default function EducationPage() {
             }
             source="DfE · SEN2 return, Jan 2025"
             baseline="Families wait an average of 38 weeks — nearly 10 months — for an EHCP assessment"
-            onExpand={ehcpCaseloadSeries.length > 0 ? () => setExpanded('ehcp') : undefined}
-          />
+            href="#sec-attainment"/>
           <MetricCard
             label="Disadvantage gap index"
             value={latestGap ? latestGap.index.toFixed(2) : '—'}
@@ -518,8 +649,7 @@ export default function EducationPage() {
             }
             source="DfE · KS4 performance 2024/25"
             baseline="By age 16, children from poorer families are 18 months behind their better-off peers"
-            onExpand={gapIndexSeries.length > 0 ? () => setExpanded('gap') : undefined}
-          />
+            href="#sec-send"/>
         </div>
         </ScrollReveal>
 
@@ -978,6 +1108,111 @@ export default function EducationPage() {
           )}
         </div>{/* end sec-pisa */}
 
+        {/* ── New school funding section ─────────────────────────────────── */}
+        <div id="sec-new-funding">
+          <ScrollReveal>
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-wiah-black mb-2">School Funding per Pupil</h2>
+              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+                Funding per pupil fell steadily through the austerity years, reaching a trough around
+                2017 before partial recovery. In 2023 prices, each pupil now receives less than they
+                did in 2009 — a real-terms cut that has reshaped staffing, curriculum breadth, and
+                support services across English schools.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            {newPerPupilFundingSeries.length > 0 ? (
+              <LineChart
+                title="School funding per pupil in real terms, 2009–2023"
+                subtitle="Average per-pupil funding in 2023 prices, maintained schools and academies, England."
+                series={newPerPupilFundingSeries}
+                annotations={newSchoolFundingAnnotations}
+                yLabel="£ per pupil (2023 prices)"
+                source={{
+                  name: 'Institute for Fiscal Studies, UK Education Spending; DfE Schools Block Funding',
+                  dataset: 'School funding per pupil, real terms',
+                  frequency: 'annual',
+                  url: 'https://ifs.org.uk/education-spending',
+                }}
+              />
+            ) : (
+              <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+            )}
+          </ScrollReveal>
+        </div>{/* end sec-new-funding */}
+
+        {/* ── CAMHS section ──────────────────────────────────────────────── */}
+        <div id="sec-camhs">
+          <ScrollReveal>
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-wiah-black mb-2">Children&rsquo;s Mental Health Services</h2>
+              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+                Referrals to Child and Adolescent Mental Health Services have nearly doubled since 2016,
+                driven by rising rates of anxiety, depression, and eating disorders in young people.
+                The pandemic accelerated demand sharply. More than a quarter of referrals are rejected
+                at the gate, and of those accepted, over half wait more than 18 weeks for treatment.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            {camhsReferralsSeries.length > 0 ? (
+              <LineChart
+                title="Children referred to CAMHS, 2016–2024"
+                subtitle="Annual referrals to Child and Adolescent Mental Health Services (00s of thousands) and % waiting over 18 weeks, England."
+                series={camhsReferralsSeries}
+                annotations={camhsAnnotations}
+                yLabel="Referrals (00s of thousands) / %"
+                source={{
+                  name: 'NHS England',
+                  dataset: 'Mental Health Services Monthly Statistics',
+                  frequency: 'monthly (aggregated annually)',
+                  url: 'https://www.england.nhs.uk/mental-health/resources/mental-health-dashboard/',
+                }}
+              />
+            ) : (
+              <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+            )}
+          </ScrollReveal>
+        </div>{/* end sec-camhs */}
+
+        {/* ── Ofsted grades section ───────────────────────────────────────── */}
+        <div id="sec-ofsted">
+          <ScrollReveal>
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-wiah-black mb-2">Ofsted Inspection Grades</h2>
+              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+                The share of schools rated Good or Outstanding by Ofsted has risen steadily from 65%
+                in 2012 to around 89% in 2024. This is one of the clearest positive trends in English
+                education. Caution is warranted, however: many schools held Outstanding grades from
+                inspections a decade old, and a 2023 policy change finally brought them back into
+                the cycle.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            {ofstedGoodOrOutstandingSeries.length > 0 ? (
+              <LineChart
+                title="School inspection grades, 2012–2024"
+                subtitle="% of schools rated Outstanding or Good by Ofsted, England."
+                series={ofstedGoodOrOutstandingSeries}
+                yLabel="Percent"
+                source={{
+                  name: 'Ofsted',
+                  dataset: 'Management Information — Schools',
+                  frequency: 'monthly (aggregated annually)',
+                  url: 'https://www.gov.uk/government/statistical-data-sets/monthly-management-information-ofsteds-school-inspections-outcomes',
+                }}
+              />
+            ) : (
+              <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+            )}
+          </ScrollReveal>
+        </div>{/* end sec-ofsted */}
+
         {/* Positive story */}
         <ScrollReveal>
         <PositiveCallout
@@ -1040,6 +1275,42 @@ export default function EducationPage() {
                 </a>
               </li>
             ))}
+            {newSchoolFundingData && (
+              <li>
+                <a
+                  href="https://ifs.org.uk/education-spending"
+                  className="underline hover:text-wiah-blue"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Institute for Fiscal Studies &mdash; UK Education Spending; DfE Schools Block Funding (annual)
+                </a>
+              </li>
+            )}
+            {camhsData && (
+              <li>
+                <a
+                  href="https://www.england.nhs.uk/mental-health/resources/mental-health-dashboard/"
+                  className="underline hover:text-wiah-blue"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  NHS England &mdash; Mental Health Services Monthly Statistics (monthly)
+                </a>
+              </li>
+            )}
+            {ofstedData && (
+              <li>
+                <a
+                  href="https://www.gov.uk/government/statistical-data-sets/monthly-management-information-ofsteds-school-inspections-outcomes"
+                  className="underline hover:text-wiah-blue"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ofsted &mdash; Management Information, School Inspections Outcomes (monthly)
+                </a>
+              </li>
+            )}
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             Persistent absence defined as missing 10%+ of possible sessions (threshold changed

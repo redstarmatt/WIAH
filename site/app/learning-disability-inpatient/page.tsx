@@ -86,8 +86,7 @@ export default function LearningDisabilityInpatientPage() {
               polarity={'up-is-bad' as const}
               changeText="Down from 3,230 in 2015"
               sparklineData={[3230, 2990, 2780, 2630, 2490, 2380, 2290, 2210, 2150]}
-              onExpand={() => {}}
-              source="NHS England &middot; Assuring Transformation"
+              href="#sec-chart"source="NHS England &middot; Assuring Transformation"
             />
             <MetricCard
               label="Average length of stay"
@@ -97,8 +96,7 @@ export default function LearningDisabilityInpatientPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 5.1 years in 2015"
               sparklineData={[5.1, 5.2, 5.2, 5.3, 5.3, 5.3, 5.4, 5.4, 5.4]}
-              onExpand={() => {}}
-              source="NHS Digital &middot; LDSS"
+              href="#sec-chart"source="NHS Digital &middot; LDSS"
             />
             <MetricCard
               label="Restraint incidents per year"
@@ -108,8 +106,7 @@ export default function LearningDisabilityInpatientPage() {
               polarity={'up-is-bad' as const}
               changeText="Physical, mechanical, chemical"
               sparklineData={[62000, 59000, 56000, 55000, 53000, 50000, 51000, 51000, 51000]}
-              onExpand={() => {}}
-              source="CQC &middot; Mental health restraint data"
+              href="#sec-chart"source="CQC &middot; Mental health restraint data"
             />
           </div>
         </ScrollReveal>

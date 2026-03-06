@@ -64,7 +64,7 @@ export default function NeetYoungPeoplePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Approximately 830,000 young people in England were NEET &mdash; not in education, employment or training &mdash; in 2024, equivalent to 11.1&percnt; of all 16&ndash;24 year olds. The number peaked at 900,000 in 2021 as employers stopped hiring and training programmes were disrupted during the pandemic, and remains above the 2019 pre-pandemic level of 770,000, suggesting some of the disengagement has become structural rather than cyclical. Around 190,000 have been NEET for over a year. Long-term NEET status is strongly associated with mental health difficulties, which became significantly more prevalent among young people during the pandemic and have not returned to pre-2020 levels. KPMG has estimated the lifetime cost to the exchequer of NEET status at around &pound;45,000 per young person in reduced tax receipts and increased service use.</p>
+            <p>Approximately 830,000 young people in England were NEET &mdash; not in education, employment or training &mdash; in 2024, equivalent to 11.1% of all 16&ndash;24 year olds. The number peaked at 900,000 in 2021 as employers stopped hiring and training programmes were disrupted during the pandemic, and remains above the 2019 pre-pandemic level of 770,000, suggesting some of the disengagement has become structural rather than cyclical. Around 190,000 have been NEET for over a year. Long-term NEET status is strongly associated with mental health difficulties, which became significantly more prevalent among young people during the pandemic and have not returned to pre-2020 levels. KPMG has estimated the lifetime cost to the exchequer of NEET status at around &pound;45,000 per young person in reduced tax receipts and increased service use.</p>
             <p>NEET status is deeply unequal in its distribution. Young women are more likely to be NEET than young men, primarily because of caring responsibilities. Young people with disabilities or mental health conditions are significantly overrepresented. Care leavers, those excluded from school, and those in high-deprivation areas face substantially elevated risks &mdash; and have the fewest informal support structures to draw on during the transition to adulthood. The government&apos;s 2024 Youth Guarantee commits to ensuring every 18&ndash;21 year old has access to education, employment or training; whether it will be resourced sufficiently to re-engage those who have already disengaged once from the system remains to be seen.</p>
           </div>
         </section>
@@ -85,8 +85,7 @@ export default function NeetYoungPeoplePage() {
               polarity="up-is-bad"
               changeText="slowly improving &middot; but above 2019 pre-pandemic"
               sparklineData={[840, 820, 800, 790, 770, 860, 900, 870, 857, 830]}
-              onExpand={() => {}}
-              source="ONS &middot; Young People Not in Education, Employment or Training 2024"
+              href="#sec-chart"source="ONS &middot; Young People Not in Education, Employment or Training 2024"
             />
             <MetricCard
               label="NEET rate"
@@ -96,8 +95,7 @@ export default function NeetYoungPeoplePage() {
               polarity="up-is-bad"
               changeText="target &lt;8% &middot; still well above"
               sparklineData={[11.2, 10.9, 10.7, 10.5, 10.3, 11.5, 11.9, 11.6, 11.6, 11.1]}
-              onExpand={() => {}}
-              source="ONS &middot; Labour Force Survey 2024"
+              href="#sec-chart"source="ONS &middot; Labour Force Survey 2024"
             />
             <MetricCard
               label="Long-term NEET"
@@ -107,8 +105,7 @@ export default function NeetYoungPeoplePage() {
               polarity="up-is-bad"
               changeText="over 1 year without education or work"
               sparklineData={[150, 155, 160, 162, 160, 180, 195, 192, 190, 190]}
-              onExpand={() => {}}
-              source="DfE &middot; NEET Statistics 2024"
+              href="#sec-chart"source="DfE &middot; NEET Statistics 2024"
             />
           </div>
         </ScrollReveal>

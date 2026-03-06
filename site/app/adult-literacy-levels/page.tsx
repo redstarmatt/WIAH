@@ -87,7 +87,7 @@ export default function AdultLiteracyLevelsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>In the sixth-largest economy in the world, 7.1 million adults &mdash; one in nine of the working-age population &mdash; have literacy skills at or below Level 1, broadly equivalent to the expectation for an 11-year-old: able to read simple texts but struggling with medication instructions, utility bills, or benefit claim forms. The numeracy picture is starker still: 16.8 million adults, roughly half the working-age population, have numeracy skills below Level 2, unable to reliably compare loan offers, read payslips, or follow a budget. The OECD&apos;s PIAAC survey ranked the UK 24th out of 27 participating EU nations for adult numeracy, a position that has not materially improved since 2011. The Centre for Economics and Business Research estimates low literacy and numeracy costs the UK economy &pound;81 billion per year in reduced productivity, higher welfare dependency, and increased public service costs.</p>
-            <p>Those with low skills are disproportionately concentrated in deprived communities, among older workers, and in the post-industrial towns and cities of northern England, Wales, and the Midlands. Workers with low literacy earn significantly less, face higher unemployment, and are more likely to be in insecure employment. They are also more likely to have children who themselves struggle &mdash; a cycle the adult education system, cut by 35&percnt; in real terms since 2010, is increasingly unable to break. The previous government&apos;s &pound;560 million Multiply numeracy programme was widely criticised for targeting the wrong population and failing to demonstrate impact before funding was withdrawn; the current government has not yet articulated a specific strategy for basic skills in the existing workforce.</p>
+            <p>Those with low skills are disproportionately concentrated in deprived communities, among older workers, and in the post-industrial towns and cities of northern England, Wales, and the Midlands. Workers with low literacy earn significantly less, face higher unemployment, and are more likely to be in insecure employment. They are also more likely to have children who themselves struggle &mdash; a cycle the adult education system, cut by 35% in real terms since 2010, is increasingly unable to break. The previous government&apos;s &pound;560 million Multiply numeracy programme was widely criticised for targeting the wrong population and failing to demonstrate impact before funding was withdrawn; the current government has not yet articulated a specific strategy for basic skills in the existing workforce.</p>
           </div>
         </section>
 
@@ -107,8 +107,7 @@ export default function AdultLiteracyLevelsPage() {
               polarity="up-is-bad"
               changeText="unchanged since 2011 &middot; no improvement in 13 years"
               sparklineData={[7.1, 7.0, 7.1, 7.1]}
-              onExpand={() => {}}
-              source="OECD &middot; PIAAC Survey / DfE Skills for Life 2024"
+              href="#sec-chart"source="OECD &middot; PIAAC Survey / DfE Skills for Life 2024"
             />
             <MetricCard
               label="Below Level 2 numeracy"
@@ -118,8 +117,7 @@ export default function AdultLiteracyLevelsPage() {
               polarity="up-is-bad"
               changeText="49% of working-age adults &middot; OECD below average"
               sparklineData={[16.8, 16.6, 17.0, 16.8]}
-              onExpand={() => {}}
-              source="OECD &middot; PIAAC Survey 2024"
+              href="#sec-chart"source="OECD &middot; PIAAC Survey 2024"
             />
             <MetricCard
               label="EU literacy ranking"
@@ -129,8 +127,7 @@ export default function AdultLiteracyLevelsPage() {
               polarity="up-is-bad"
               changeText="near bottom of EU literacy rankings &middot; skills emergency"
               sparklineData={[24, 24, 24, 24]}
-              onExpand={() => {}}
-              source="OECD &middot; PIAAC 2023 Survey"
+              href="#sec-chart"source="OECD &middot; PIAAC 2023 Survey"
             />
           </div>
         </ScrollReveal>

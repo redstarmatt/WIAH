@@ -90,8 +90,7 @@ export default function YouthJusticePage() {
               polarity="up-is-bad"
               changeText="2024 · Down 86% from 3,006 in 2008"
               source="Youth Justice Board · Remarkable decline driven by diversion, early intervention"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Reoffending rate within 12 months"
               value="68%"
@@ -100,8 +99,7 @@ export default function YouthJusticePage() {
               polarity="up-is-bad"
               changeText="2023 · Of young people leaving custody · Broadly unchanged for a decade"
               source="Ministry of Justice · 7 in 10 reoffend after custody"
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
             <MetricCard
               label="Black children as % of custody population"
               value="29%"
@@ -110,8 +108,7 @@ export default function YouthJusticePage() {
               polarity="up-is-bad"
               changeText="Black children are 5% of 10&ndash;17 population but 29% of custody population · 6x overrepresentation"
               source="Youth Justice Board Statistics · Disproportionality Analysis"
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
           </div>
         </section>
 

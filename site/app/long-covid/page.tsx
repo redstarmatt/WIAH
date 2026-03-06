@@ -124,7 +124,7 @@ export default function LongCovidPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Long COVID &mdash; defined by NICE as symptoms persisting four or more weeks after infection &mdash; peaked at 2.1 million sufferers across Great Britain in January 2022, with subsequent estimates putting the figure at approximately 1.5 million in 2024. Women are affected more than men, and prevalence concentrates heavily among working-age adults aged 35&ndash;69. Some 800,000 people report long COVID limits their daily activities; 50,000 are unable to work at all. OBR estimates attribute roughly 20% of the rise in long-term sickness inactivity (from 2.1 million to 3.2 million since 2019) to long COVID, with the estimated economic cost running to &pound;5 billion per year. NHS England established 85 long COVID assessment clinics with a 12-week average wait; there is no licensed treatment, with care symptom-based. Vaccination reduces long COVID risk by around 50&percnt;, and the NIHR funded over &pound;50 million of research through the PHOSP-COVID study.
+              Long COVID &mdash; defined by NICE as symptoms persisting four or more weeks after infection &mdash; peaked at 2.1 million sufferers across Great Britain in January 2022, with subsequent estimates putting the figure at approximately 1.5 million in 2024. Women are affected more than men, and prevalence concentrates heavily among working-age adults aged 35&ndash;69. Some 800,000 people report long COVID limits their daily activities; 50,000 are unable to work at all. OBR estimates attribute roughly 20% of the rise in long-term sickness inactivity (from 2.1 million to 3.2 million since 2019) to long COVID, with the estimated economic cost running to &pound;5 billion per year. NHS England established 85 long COVID assessment clinics with a 12-week average wait; there is no licensed treatment, with care symptom-based. Vaccination reduces long COVID risk by around 50%, and the NIHR funded over &pound;50 million of research through the PHOSP-COVID study.
             </p>
             <p>
               Healthcare workers, care home staff, and transport workers unable to work from home were disproportionately affected during the first two waves before vaccination &mdash; mirroring pandemic exposure patterns. Post-exertional malaise, where physical or cognitive effort triggers symptom relapse lasting days, makes conventional rehabilitation counterproductive and traps patients in enforced inactivity. Children were not spared: multisystem inflammatory syndrome (MIS-C and PIMS-TS) hospitalised hundreds, with some experiencing lasting cardiac and neurological effects. Clinical trials in 2024&ndash;25 are testing antivirals, low-dose naltrexone for neuroinflammation, and apheresis, though none has yet produced definitive results.
@@ -149,8 +149,7 @@ export default function LongCovidPage() {
               polarity="up-is-bad"
               changeText="2024 · Down from 2.1M peak (2022) · 800K with daily limitations · 50K unable to work"
               sparklineData={[1.3, 2.1, 1.8, 1.5]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="NHS Long COVID clinics"
               value="85"
@@ -159,8 +158,7 @@ export default function LongCovidPage() {
               polarity="up-is-good"
               changeText="2024 · Down from 91 peak · 12-week average wait · 91 clinics at peak in 2022-23"
               sparklineData={[60, 91, 91, 85]}
-              onExpand={() => {}}
-            />
+              href="#sec-prevalence"/>
             <MetricCard
               label="Estimated economic cost"
               value="&pound;5bn"
@@ -169,8 +167,7 @@ export default function LongCovidPage() {
               polarity="up-is-bad"
               changeText="2024 · Down from &pound;5.7bn peak · Lost output from work absence · Still one of UK&apos;s largest pandemic legacies"
               sparklineData={[1.5, 3.8, 5.7, 5.0]}
-              onExpand={() => {}}
-            />
+              href="#sec-symptoms"/>
           </div>
         </ScrollReveal>
 

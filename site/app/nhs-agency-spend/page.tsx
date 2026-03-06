@@ -61,7 +61,7 @@ export default function NhsAgencySpendPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The NHS spent &pound;3.7 billion on agency and locum workers in 2023/24, representing 8.2&percnt; of the total pay bill &mdash; more than double the NHS Improvement target of 3.5&percnt; and up from a low of 4.3&percnt; in 2020. An agency nurse costs &pound;47 per hour against roughly &pound;18 for a contracted equivalent &mdash; a 2.6-times premium funding agency margins rather than patient care. Agency spend fell between 2016 and 2020 after rate caps were introduced in 2015&ndash;16, but the pandemic reversed that progress: extraordinary staffing demands, followed by burnout-driven attrition as the emergency subsided, drove agency use back upward. Industrial action in 2022&ndash;23 further increased reliance on temporary cover. The cycle is self-reinforcing: burnt-out staff leave for agency work where they earn more with greater flexibility; trusts pay a premium to bring them back; remaining substantive staff face higher workloads and burn out in turn.</p>
+            <p>The NHS spent &pound;3.7 billion on agency and locum workers in 2023/24, representing 8.2% of the total pay bill &mdash; more than double the NHS Improvement target of 3.5% and up from a low of 4.3% in 2020. An agency nurse costs &pound;47 per hour against roughly &pound;18 for a contracted equivalent &mdash; a 2.6-times premium funding agency margins rather than patient care. Agency spend fell between 2016 and 2020 after rate caps were introduced in 2015&ndash;16, but the pandemic reversed that progress: extraordinary staffing demands, followed by burnout-driven attrition as the emergency subsided, drove agency use back upward. Industrial action in 2022&ndash;23 further increased reliance on temporary cover. The cycle is self-reinforcing: burnt-out staff leave for agency work where they earn more with greater flexibility; trusts pay a premium to bring them back; remaining substantive staff face higher workloads and burn out in turn.</p>
             <p>The &pound;3.7 billion annual premium over what the same hours of care would cost from a substantive workforce represents money not spent on additional permanent posts, training, or patient-facing services. The burden falls disproportionately on the trusts with the highest vacancy rates and the most acute recruitment difficulties &mdash; typically those in areas with higher living costs or less attractive working environments &mdash; creating a fiscal inequality between well-staffed trusts that can contain agency costs and struggling trusts that cannot. The NHS Long Term Workforce Plan commits to training more staff over the long term; training pipelines take years to fill, leaving the immediate cycle of churn and premium payments largely unaddressed.</p>
           </div>
         </section>
@@ -82,8 +82,7 @@ export default function NhsAgencySpendPage() {
               polarity="up-is-bad"
               changeText="+58% since 2019 &middot; could employ 55,000 nurses"
               sparklineData={[2.8, 3.2, 2.9, 2.6, 2.4, 2.2, 2.9, 3.7]}
-              onExpand={() => {}}
-              source="NHS England &middot; NHS Spending Report 2023/24"
+              href="#sec-chart"source="NHS England &middot; NHS Spending Report 2023/24"
             />
             <MetricCard
               label="Agency as % of pay bill"
@@ -93,8 +92,7 @@ export default function NhsAgencySpendPage() {
               polarity="up-is-bad"
               changeText="target &lt;3.5% &middot; doubled in 4 years"
               sparklineData={[6.2, 7.1, 6.3, 5.5, 4.9, 4.3, 5.5, 8.2]}
-              onExpand={() => {}}
-              source="NHS Improvement &middot; Agency Spend 2023/24"
+              href="#sec-chart"source="NHS Improvement &middot; Agency Spend 2023/24"
             />
             <MetricCard
               label="Agency nurse hourly rate"
@@ -104,8 +102,7 @@ export default function NhsAgencySpendPage() {
               polarity="up-is-bad"
               changeText="vs &pound;18 contracted &middot; 2.6&times; premium"
               sparklineData={[32, 35, 36, 38, 38, 41, 44, 47]}
-              onExpand={() => {}}
-              source="NHS Improvement &middot; Rate Cap Data 2024"
+              href="#sec-chart"source="NHS Improvement &middot; Rate Cap Data 2024"
             />
           </div>
         </ScrollReveal>

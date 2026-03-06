@@ -71,7 +71,7 @@ export default function SicknessBenefitClaimantsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Working-age people on health-related benefits (PIP, DLA, and the UC health component) rose from 2.2 million in 2019 to 3.2 million in 2024 &mdash; a 45&percnt; increase and the fastest rise in three decades. Mental health is now the most common primary condition cited by new claimants, at around 39&percnt; of all new awards, with anxiety, depression, and a growing contribution from ADHD and autism diagnoses. Musculoskeletal conditions account for a further 18&percnt;; long COVID has added a medically distinct new category. PIP and the UC health element together cost an estimated &pound;21 billion per year in 2024 &mdash; more than the defence budget &mdash; and the OBR projects continued growth absent policy intervention. Under-35 claimants have nearly doubled since 2020. The government&apos;s response has focused on assessment reform and new conditionality requirements for those assessed as able to undertake some work activity.</p>
+            <p>Working-age people on health-related benefits (PIP, DLA, and the UC health component) rose from 2.2 million in 2019 to 3.2 million in 2024 &mdash; a 45% increase and the fastest rise in three decades. Mental health is now the most common primary condition cited by new claimants, at around 39% of all new awards, with anxiety, depression, and a growing contribution from ADHD and autism diagnoses. Musculoskeletal conditions account for a further 18%; long COVID has added a medically distinct new category. PIP and the UC health element together cost an estimated &pound;21 billion per year in 2024 &mdash; more than the defence budget &mdash; and the OBR projects continued growth absent policy intervention. Under-35 claimants have nearly doubled since 2020. The government&apos;s response has focused on assessment reform and new conditionality requirements for those assessed as able to undertake some work activity.</p>
             <p>Critics argue these measures are punitive responses to a genuine health crisis. Achieving the government&apos;s stated goal of bringing 200,000 economically inactive people back into work by 2028 requires not just benefit reform but genuine progress on NHS waiting lists, occupational health access, and the availability of flexible employment for people managing health conditions &mdash; none of which is currently on a sufficient trajectory. The burden falls hardest on people with the most complex and least well-understood conditions: those with mental illness, long COVID, and neurodevelopmental conditions face the most contested assessments and the longest distances to sustainable employment.</p>
           </div>
         </section>
@@ -92,8 +92,7 @@ export default function SicknessBenefitClaimantsPage() {
               polarity="up-is-bad"
               changeText="+45% since 2019 &middot; fastest rise in 30 years"
               sparklineData={[2.3, 2.2, 2.2, 2.2, 2.2, 2.4, 2.5, 2.8, 3.1, 3.2]}
-              onExpand={() => {}}
-              source="DWP stat-xplore &middot; 2024"
+              href="#sec-chart"source="DWP stat-xplore &middot; 2024"
             />
             <MetricCard
               label="Under-35 claimants"
@@ -103,8 +102,7 @@ export default function SicknessBenefitClaimantsPage() {
               polarity="up-is-bad"
               changeText="+87% since 2020 &middot; mental health surge"
               sparklineData={[330, 300, 290, 290, 330, 380, 430, 520, 590, 620]}
-              onExpand={() => {}}
-              source="DWP stat-xplore &middot; 2024"
+              href="#sec-chart"source="DWP stat-xplore &middot; 2024"
             />
             <MetricCard
               label="DWP health/disability cost"
@@ -114,8 +112,7 @@ export default function SicknessBenefitClaimantsPage() {
               polarity="up-is-bad"
               changeText="UC health + PIP &middot; exceeds defence budget"
               sparklineData={[14, 14, 15, 15, 15, 16, 17, 18, 20, 21]}
-              onExpand={() => {}}
-              source="DWP / OBR &middot; 2024"
+              href="#sec-chart"source="DWP / OBR &middot; 2024"
             />
           </div>
         </ScrollReveal>

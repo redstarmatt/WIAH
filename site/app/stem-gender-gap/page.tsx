@@ -64,8 +64,8 @@ export default function StemGenderGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Gender gaps in STEM persist at every stage of the UK education pipeline, but the pattern is nuanced: girls outperform boys in science GCSEs and biology A-level entries are nearly equal by gender. Physics and computing diverge sharply. In 2024, girls represented 22&percnt; of A-level physics entries &mdash; up from 19&percnt; in 2015 but still leaving 78&percnt; of the subject to boys. Computing was 16&percnt; female in 2024, improved from a remarkably low 9&percnt; in 2015. The causes are structural and social rather than cognitive: meta-analyses consistently show no statistically significant ability differences between girls and boys. The divergence begins in secondary school where subject self-concept &mdash; beliefs about whether a field is &ldquo;for me&rdquo; &mdash; separates by gender, reinforced by teaching practices, department composition, career guidance that does not challenge stereotypes, and an overwhelmingly male visible presence in technology. Women now represent 38&percnt; of STEM graduates &mdash; up from 32&percnt; in 2015 &mdash; but women remain only 19&percnt; of the tech workforce and 13&percnt; of professional engineers.</p>
-            <p>The workforce gap is not simply an equity issue but a quality and productivity issue: the UK is not fully utilising 50&percnt; of its population in its highest-value growth sectors, and products designed without female perspectives systematically fail to serve female users. The most effective school interventions combine female role models sharing relatable STEM pathways, project-based learning contextualising concepts in real-world applications, and teacher professional development addressing implicit bias in how subjects are taught and who they are presented as being for. The systemic challenge is that widening university participation requires a school pipeline shaped by experiences that begin in primary school and are well established by the time subject choices are made at 14.</p>
+            <p>Gender gaps in STEM persist at every stage of the UK education pipeline, but the pattern is nuanced: girls outperform boys in science GCSEs and biology A-level entries are nearly equal by gender. Physics and computing diverge sharply. In 2024, girls represented 22% of A-level physics entries &mdash; up from 19% in 2015 but still leaving 78% of the subject to boys. Computing was 16% female in 2024, improved from a remarkably low 9% in 2015. The causes are structural and social rather than cognitive: meta-analyses consistently show no statistically significant ability differences between girls and boys. The divergence begins in secondary school where subject self-concept &mdash; beliefs about whether a field is &ldquo;for me&rdquo; &mdash; separates by gender, reinforced by teaching practices, department composition, career guidance that does not challenge stereotypes, and an overwhelmingly male visible presence in technology. Women now represent 38% of STEM graduates &mdash; up from 32% in 2015 &mdash; but women remain only 19% of the tech workforce and 13% of professional engineers.</p>
+            <p>The workforce gap is not simply an equity issue but a quality and productivity issue: the UK is not fully utilising 50% of its population in its highest-value growth sectors, and products designed without female perspectives systematically fail to serve female users. The most effective school interventions combine female role models sharing relatable STEM pathways, project-based learning contextualising concepts in real-world applications, and teacher professional development addressing implicit bias in how subjects are taught and who they are presented as being for. The systemic challenge is that widening university participation requires a school pipeline shaped by experiences that begin in primary school and are well established by the time subject choices are made at 14.</p>
           </div>
         </section>
 
@@ -85,8 +85,7 @@ export default function StemGenderGapPage() {
               changeText="+3pp since 2015 · still 28pp below boys"
               sparklineData={[19, 19, 20, 20, 20, 21, 21, 22, 22]}
               source="JCQ · A-level Results by Subject and Gender 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Girls in computing A-level"
               value="16%"
@@ -95,8 +94,7 @@ export default function StemGenderGapPage() {
               changeText="+7pp since 2015 · biggest growth from lowest base"
               sparklineData={[9, 10, 10, 11, 12, 13, 14, 15, 16]}
               source="JCQ · A-level Results by Subject and Gender 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Female STEM graduates"
               value="38%"
@@ -105,8 +103,7 @@ export default function StemGenderGapPage() {
               changeText="+6pp since 2015 · but tech sector 19% female"
               sparklineData={[32, 33, 33, 34, 34, 35, 36, 37, 38]}
               source="HESA · Higher Education Graduate Outcomes 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

@@ -56,7 +56,7 @@ export default function HolidayHungerPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>During term time, approximately 1.9 million children in England receive free school meals. When schools close for summer, half-term, Christmas, and Easter, that provision stops &mdash; and for households in severe food insecurity, the loss of a guaranteed meal causes genuine nutritional deprivation. An estimated 2.5 million children are at risk, up 300,000 since 2019. Food bank data provides the clearest evidence: the Trussell Trust records a systematic 40&percnt; spike in parcel distribution during school holidays, with summer generating the highest single monthly totals of the year and families with children as the fastest-growing demographic. The Holiday Activities and Food (HAF) programme, expanded nationally from 2021, reached approximately 650,000 children in 2023&ndash;24 &mdash; around 34&percnt; of the eligible population &mdash; with wide variation in reach and quality between local authorities.</p>
+            <p>During term time, approximately 1.9 million children in England receive free school meals. When schools close for summer, half-term, Christmas, and Easter, that provision stops &mdash; and for households in severe food insecurity, the loss of a guaranteed meal causes genuine nutritional deprivation. An estimated 2.5 million children are at risk, up 300,000 since 2019. Food bank data provides the clearest evidence: the Trussell Trust records a systematic 40% spike in parcel distribution during school holidays, with summer generating the highest single monthly totals of the year and families with children as the fastest-growing demographic. The Holiday Activities and Food (HAF) programme, expanded nationally from 2021, reached approximately 650,000 children in 2023&ndash;24 &mdash; around 34% of the eligible population &mdash; with wide variation in reach and quality between local authorities.</p>
             <p>The free school meal eligibility threshold &mdash; household income below &pound;7,400 after benefits &mdash; excludes many working poor families and has not been uprated for inflation. Marcus Rashford&rsquo;s 2020 campaign successfully extended voucher provision during COVID holidays, demonstrating that targeted universal provision was administratively achievable; the subsequent return to means-tested provision left the policy essentially unchanged. The Child Poverty Strategy published in 2024 included commitments to review FSM thresholds, but the gap between 1.9 million children on free school meals and 2.5 million estimated at risk of holiday hunger during closures illustrates the scale of what remains unaddressed. The burden of that gap falls overwhelmingly on families in the most deprived areas, where food bank reliance is already highest and HAF programme reach is most variable.</p>
           </div>
         </section>
@@ -79,8 +79,7 @@ export default function HolidayHungerPage() {
               changeText="+300k since 2019 · FSM eligibility threshold"
               sparklineData={[1.8, 1.9, 2.0, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5]}
               source="Food Foundation / Trussell Trust 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="HAF programme reach"
               value="650,000"
@@ -89,8 +88,7 @@ export default function HolidayHungerPage() {
               changeText="650k reached · 34% of eligible children"
               sparklineData={[0, 0, 0, 0, 50000, 200000, 400000, 550000, 650000]}
               source="DfE · Holiday Activities and Food Programme 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Food bank use increase in holidays"
               value="+40%"
@@ -99,8 +97,7 @@ export default function HolidayHungerPage() {
               changeText="+40% food bank use during summer holidays"
               sparklineData={[20, 22, 24, 25, 27, 30, 33, 37, 40]}
               source="Trussell Trust · End of Year Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

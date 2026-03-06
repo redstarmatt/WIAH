@@ -79,8 +79,7 @@ export default function OverTheCounterMedicineCostsPage() {
               changeText="+55% avg across common OTC products"
               sparklineData={[0, 2, 4, 5, 8, 30, 45, 50, 55]}
               source="PAGB / ONS · Consumer Price Index 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="NHS prescription charge 2024"
               value="£9.90"
@@ -89,8 +88,7 @@ export default function OverTheCounterMedicineCostsPage() {
               changeText="£9.90 per item · 90% exempt via exemptions"
               sparklineData={[8.60, 8.80, 8.80, 9.15, 9.35, 9.35, 9.35, 9.65, 9.90]}
               source="NHS Business Services Authority 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Patients avoiding OTC treatment"
               value="4.2m"
@@ -99,8 +97,7 @@ export default function OverTheCounterMedicineCostsPage() {
               changeText="4.2m unable to afford OTC treatment"
               sparklineData={[2.0, 2.1, 2.2, 2.3, 2.5, 3.2, 3.8, 4.0, 4.2]}
               source="Healthwatch England / PAGB 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

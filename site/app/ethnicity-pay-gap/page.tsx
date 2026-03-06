@@ -97,7 +97,7 @@ export default function EthnicityPayGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Workers from Bangladeshi and Pakistani backgrounds face pay gaps of around 20&percnt; and 16&percnt; relative to White British workers &mdash; gaps that have barely narrowed over a decade despite sustained attention from equality bodies and the introduction of ethnicity pay gap reporting guidance. Workers of Indian heritage, by contrast, now earn above the White British median, reflecting higher educational attainment and concentration in professional and managerial occupations. These divergences make aggregate &ldquo;BAME pay gap&rdquo; figures almost meaningless. Occupational segregation is a major driver for those groups with the largest gaps: Bangladeshi and Pakistani workers are overrepresented in retail, hospitality, transport, and social care &mdash; a legacy of 1960s and 1970s migration patterns that has persisted across generations. CV audit studies consistently find that applicants with ethnic minority-sounding names are significantly less likely to be called back, confirming that discrimination at hiring stage compounds structural disadvantage.</p>
+            <p>Workers from Bangladeshi and Pakistani backgrounds face pay gaps of around 20% and 16% relative to White British workers &mdash; gaps that have barely narrowed over a decade despite sustained attention from equality bodies and the introduction of ethnicity pay gap reporting guidance. Workers of Indian heritage, by contrast, now earn above the White British median, reflecting higher educational attainment and concentration in professional and managerial occupations. These divergences make aggregate &ldquo;BAME pay gap&rdquo; figures almost meaningless. Occupational segregation is a major driver for those groups with the largest gaps: Bangladeshi and Pakistani workers are overrepresented in retail, hospitality, transport, and social care &mdash; a legacy of 1960s and 1970s migration patterns that has persisted across generations. CV audit studies consistently find that applicants with ethnic minority-sounding names are significantly less likely to be called back, confirming that discrimination at hiring stage compounds structural disadvantage.</p>
             <p>The burden falls hardest where labour market geography and pay combine worst. Bangladeshi-heritage workers are concentrated in London boroughs where living costs are high but access to higher-paying employment difficult; Pakistani-heritage workers are concentrated in Midlands and Northern cities with lower-wage economies. Mandatory ethnicity pay gap reporting &mdash; analogous to the gender pay gap reporting introduced in 2017 &mdash; was proposed but not implemented, leaving employer incentives insufficient to drive structural change. The Sewell Commission (2021) concluded structural racism was not the primary driver of ethnic pay disparities; that finding was contested by equality organisations and researchers who identified discrimination as a measurable, independent factor that observable socioeconomic characteristics alone cannot explain.</p>
           </div>
         </section>
@@ -118,8 +118,7 @@ export default function EthnicityPayGapPage() {
               polarity="up-is-bad"
               changeText="barely changed in a decade"
               sparklineData={[-21.4, -21.1, -20.9, -20.6, -20.4, -20.3, -20.3, -20.2, -20.2]}
-              onExpand={() => {}}
-              source="ONS &middot; ASHE Ethnicity Analysis 2023"
+              href="#sec-chart"source="ONS &middot; ASHE Ethnicity Analysis 2023"
             />
             <MetricCard
               label="Pakistani–White British pay gap"
@@ -129,8 +128,7 @@ export default function EthnicityPayGapPage() {
               polarity="up-is-good"
               changeText="slight improvement but still deep"
               sparklineData={[-17.8, -17.4, -17.1, -16.8, -16.6, -16.5, -16.3, -16.2, -16.1]}
-              onExpand={() => {}}
-              source="ONS &middot; ASHE Ethnicity Analysis 2023"
+              href="#sec-chart"source="ONS &middot; ASHE Ethnicity Analysis 2023"
             />
             <MetricCard
               label="Indian workers vs White British"
@@ -140,8 +138,7 @@ export default function EthnicityPayGapPage() {
               polarity="up-is-good"
               changeText="Indian workers now earn above White British median"
               sparklineData={[1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 1.4]}
-              onExpand={() => {}}
-              source="ONS &middot; ASHE Ethnicity Analysis 2023"
+              href="#sec-chart"source="ONS &middot; ASHE Ethnicity Analysis 2023"
             />
           </div>
         </ScrollReveal>

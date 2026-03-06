@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteName from '@/components/SiteName';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'What is actually happening? is a curated national data platform making the real state of the UK visible. Every number has a dated, linked source. No ads, no cookies, no agenda.',
+};
 
 export default function AboutPage() {
   return (

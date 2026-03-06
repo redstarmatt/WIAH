@@ -69,7 +69,7 @@ export default function MicroplasticsContaminationPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Microplastics are now present in virtually every environment scientists have measured &mdash; Arctic sea ice, deep ocean trenches, and the human body itself. In 2022, the first study confirmed microplastics in human blood, finding particles in 77&percnt; of donors; subsequent research has found them in lung tissue, placenta, and breast milk. UK drinking water contains an estimated 5 particles per litre, rising steadily since systematic measurement began in 2018, with the smallest nanoplastics passing through conventional water treatment entirely. The North Sea seabed particle density has risen from around 800 pieces per square metre in 2018 to 1,000 in 2023, with persistent hotspots around river outflows and shipping lanes. Laboratory studies link microplastics to oxidative stress, inflammation, and endocrine disruption; a 2024 study found higher concentrations in the carotid arteries of people who subsequently had cardiovascular events, though causation has not been established.</p>
+            <p>Microplastics are now present in virtually every environment scientists have measured &mdash; Arctic sea ice, deep ocean trenches, and the human body itself. In 2022, the first study confirmed microplastics in human blood, finding particles in 77% of donors; subsequent research has found them in lung tissue, placenta, and breast milk. UK drinking water contains an estimated 5 particles per litre, rising steadily since systematic measurement began in 2018, with the smallest nanoplastics passing through conventional water treatment entirely. The North Sea seabed particle density has risen from around 800 pieces per square metre in 2018 to 1,000 in 2023, with persistent hotspots around river outflows and shipping lanes. Laboratory studies link microplastics to oxidative stress, inflammation, and endocrine disruption; a 2024 study found higher concentrations in the carotid arteries of people who subsequently had cardiovascular events, though causation has not been established.</p>
             <p>Regulatory responses have addressed only a fraction of input pathways. The UK has banned microbeads in rinse-off cosmetics and introduced extended producer responsibility for packaging, but tyres, synthetic textiles, and the fragmentation of existing plastic waste &mdash; the dominant sources &mdash; remain largely unregulated. The stock of plastic already in the environment will continue breaking down for decades regardless of what is done at source. The burden of contamination falls most heavily on coastal and rural communities dependent on affected fisheries and waterways, and on infants and foetuses whose developmental exposure is greatest through breast milk and placental transfer.</p>
           </div>
         </section>
@@ -90,8 +90,7 @@ export default function MicroplasticsContaminationPage() {
               polarity="up-is-bad"
               changeText="Most people tested &middot; first detected 2022"
               sparklineData={[0, 0, 0, 0, 77, 77]}
-              onExpand={() => {}}
-              source="Vrije Universiteit Amsterdam &middot; 2022"
+              href="#sec-chart"source="Vrije Universiteit Amsterdam &middot; 2022"
             />
             <MetricCard
               label="Drinking water"
@@ -101,8 +100,7 @@ export default function MicroplasticsContaminationPage() {
               polarity="up-is-bad"
               changeText="Rising trend &middot; from plastic pipes and packaging"
               sparklineData={[4.0, 4.3, 4.6, 4.8, 5.0, 5.0]}
-              onExpand={() => {}}
-              source="DWQR / WHO &middot; 2023"
+              href="#sec-chart"source="DWQR / WHO &middot; 2023"
             />
             <MetricCard
               label="UK seabed density"
@@ -112,8 +110,7 @@ export default function MicroplasticsContaminationPage() {
               polarity="up-is-bad"
               changeText="Up from 800 in 2018 &middot; Arctic spreading"
               sparklineData={[800, 870, 910, 950, 980, 1000]}
-              onExpand={() => {}}
-              source="CEFAS / Plymouth Marine Laboratory &middot; 2023"
+              href="#sec-chart"source="CEFAS / Plymouth Marine Laboratory &middot; 2023"
             />
           </div>
         </ScrollReveal>

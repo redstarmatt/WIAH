@@ -87,8 +87,7 @@ export default function ProtestPolicingPage() {
               polarity="up-is-bad"
               changeText="+381% since 2015 &middot; new powers and new movements"
               sparklineData={[890, 1100, 2870, 2200, 2900, 3600, 4278, 3900]}
-              onExpand={() => {}}
-              source="Home Office &middot; Police Powers and Procedures 2023"
+              href="#sec-chart"source="Home Office &middot; Police Powers and Procedures 2023"
             />
             <MetricCard
               label="New offences created"
@@ -98,8 +97,7 @@ export default function ProtestPolicingPage() {
               polarity="up-is-bad"
               changeText="Public Order Act 2023 &middot; serious disruption powers"
               sparklineData={[0, 0, 0, 0, 0, 3, 10]}
-              onExpand={() => {}}
-              source="Home Office &middot; Public Order Act 2023"
+              href="#sec-chart"source="Home Office &middot; Public Order Act 2023"
             />
             <MetricCard
               label="SDPO orders issued"
@@ -109,8 +107,7 @@ export default function ProtestPolicingPage() {
               polarity="up-is-bad"
               changeText="first ever Serious Disruption Prevention Orders issued 2024"
               sparklineData={[0, 0, 0, 0, 0, 0, 4]}
-              onExpand={() => {}}
-              source="Home Office &middot; 2024"
+              href="#sec-chart"source="Home Office &middot; 2024"
             />
           </div>
         </ScrollReveal>

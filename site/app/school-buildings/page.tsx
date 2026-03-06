@@ -103,7 +103,7 @@ export default function SchoolBuildingsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The capital maintenance backlog for English schools stood at &pound;15 billion in 2023, more than double the &pound;6.7 billion recorded in 2011. One in three school buildings was constructed before 1976; around 4&percnt; are rated critical condition and 17&percnt; poor, translating into leaking roofs, broken boilers, and structures that cannot safely be occupied. The RAAC crisis of autumn 2023 made this impossible to ignore: 174 schools were confirmed to contain Reinforced Autoclaved Aerated Concrete &mdash; a material that can fail catastrophically with little warning &mdash; disrupting the education of more than 700,000 pupils at the start of the academic year. Asbestos, present in around 80&percnt; of pre-1985 schools, is estimated to cause more than 170 teacher deaths per year. These hazards have been catalogued in successive government surveys and consistently underfunded: school capital spending was cut around 40&percnt; in real terms between 2010 and 2014, and the School Rebuilding Programme&apos;s commitment to rebuild 500 schools by 2030 has proceeded slowly.</p>
+            <p>The capital maintenance backlog for English schools stood at &pound;15 billion in 2023, more than double the &pound;6.7 billion recorded in 2011. One in three school buildings was constructed before 1976; around 4% are rated critical condition and 17% poor, translating into leaking roofs, broken boilers, and structures that cannot safely be occupied. The RAAC crisis of autumn 2023 made this impossible to ignore: 174 schools were confirmed to contain Reinforced Autoclaved Aerated Concrete &mdash; a material that can fail catastrophically with little warning &mdash; disrupting the education of more than 700,000 pupils at the start of the academic year. Asbestos, present in around 80% of pre-1985 schools, is estimated to cause more than 170 teacher deaths per year. These hazards have been catalogued in successive government surveys and consistently underfunded: school capital spending was cut around 40% in real terms between 2010 and 2014, and the School Rebuilding Programme&apos;s commitment to rebuild 500 schools by 2030 has proceeded slowly.</p>
             <p>The burden of deteriorating buildings falls disproportionately on pupils in deprived areas, where councils squeezed by a decade of funding reductions have had less capacity to supplement central capital allocations. Academy trusts with large portfolios of older buildings face particular challenges, as maintenance liability transferred with the schools but funding did not always follow. Scotland and Wales have both invested more systematically in their school estates in recent years, widening the gap with large parts of England.</p>
           </div>
         </section>
@@ -135,8 +135,7 @@ export default function SchoolBuildingsPage() {
             }
             source="DfE School Condition Survey 2023"
             baseline="Deferred maintenance now exceeds annual school capital spending by 2.4x"
-            onExpand={() => {}}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="Schools with RAAC concrete (risk of collapse)"
             value="174"
@@ -147,8 +146,7 @@ export default function SchoolBuildingsPage() {
             sparklineData={[174]}
             source="DfE RAAC survey"
             baseline="RAAC can collapse without warning. Schools had emergency building surveys."
-            onExpand={() => {}}
-          />
+            href="#sec-charts"/>
           <MetricCard
             label="School buildings pre-1976"
             value="1 in 3"
@@ -159,8 +157,7 @@ export default function SchoolBuildingsPage() {
             sparklineData={[33]}
             source="DfE School Condition Survey"
             baseline="Schools older than 50 years incur exponentially higher maintenance costs"
-            onExpand={() => {}}
-          />
+            href="#sec-charts"/>
         </div>
         </ScrollReveal>
 

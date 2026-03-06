@@ -101,7 +101,7 @@ export default function LearningDisabilitiesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Approximately 1.5 million people in England have a learning disability. The LeDeR programme &mdash; Learning from Lives and Deaths &mdash; found the median age at death is 23 years lower than the general population: 61 for men, 59 for women. During COVID, people with learning disabilities died at 3.7 times the rate of the general population, driven by congregate living and &mdash; as the CQC documented &mdash; the application of blanket DNACPR orders without individual assessment or family consultation. The Winterbourne View scandal in 2012 prompted the Transforming Care programme, which set a target of reducing inpatient numbers by 50&percnt; from the 2015 baseline of 3,000; ten years later, approximately 1,960 remain. Annual health check uptake has improved from 37&percnt; in 2015 to 69&percnt; in 2024, but nearly a third of people on LD registers still receive no check.</p>
+            <p>Approximately 1.5 million people in England have a learning disability. The LeDeR programme &mdash; Learning from Lives and Deaths &mdash; found the median age at death is 23 years lower than the general population: 61 for men, 59 for women. During COVID, people with learning disabilities died at 3.7 times the rate of the general population, driven by congregate living and &mdash; as the CQC documented &mdash; the application of blanket DNACPR orders without individual assessment or family consultation. The Winterbourne View scandal in 2012 prompted the Transforming Care programme, which set a target of reducing inpatient numbers by 50% from the 2015 baseline of 3,000; ten years later, approximately 1,960 remain. Annual health check uptake has improved from 37% in 2015 to 69% in 2024, but nearly a third of people on LD registers still receive no check.</p>
             <p>The consequences of systemic failure fall on some of the most marginalised people in England. Those in inpatient settings are often placed hundreds of miles from their families, with average stays exceeding five years. LeDeR reviews consistently document diagnostic overshadowing &mdash; symptoms attributed to the learning disability rather than investigated as separate conditions &mdash; inadequate reasonable adjustments, and failure to apply the Mental Capacity Act correctly. These findings have been repeated in inquiry after inquiry for decades; the gap between what was promised and what has been delivered is wide, persistent, and consequential.</p>
           </div>
         </section>
@@ -124,8 +124,7 @@ export default function LearningDisabilitiesPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Median age at death: 60 vs 83 &middot; Widened during COVID"
               sparklineData={[23, 23, 22, 23, 27, 25, 24, 23]}
-              onExpand={() => {}}
-            />
+              href="#sec-inpatients"/>
             <MetricCard
               label="People in inpatient settings"
               value="1,960"
@@ -133,8 +132,7 @@ export default function LearningDisabilitiesPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Target was &lt;1,500 by 2019 &middot; Down from 3,000 in 2015"
               sparklineData={[3000, 2765, 2505, 2400, 2260, 2085, 2040, 2005, 1985, 1960]}
-              onExpand={() => {}}
-            />
+              href="#sec-health-checks"/>
             <MetricCard
               label="Annual health check uptake"
               value="69.1"
@@ -143,8 +141,7 @@ export default function LearningDisabilitiesPage() {
               polarity="up-is-good"
               changeText="2024 &middot; Up from 37% in 2015 &middot; 31% still not checked"
               sparklineData={[37.2, 41.8, 49.7, 52.4, 56.1, 47.3, 58.6, 62.0, 66.4, 69.1]}
-              onExpand={() => {}}
-            />
+              href="#sec-mortality"/>
           </div>
         </ScrollReveal>
 

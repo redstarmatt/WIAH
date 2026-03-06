@@ -65,7 +65,7 @@ export default function RespiteCareShortage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has approximately 5.8 million unpaid carers whose replacement value &mdash; the cost of equivalent professional care &mdash; is estimated at &pound;162 billion annually, exceeding total NHS acute spending. Yet the share of carers who can access respite when they need it has fallen from 56&percnt; in 2015 to 41&percnt; in 2024, driven by local authority budget cuts, care sector workforce shortages, and increased complexity of need. The Care Act 2014 gave carers a legal right to an assessment and eligible support, including short breaks, but eligibility thresholds have tightened sharply as council budgets contracted &mdash; the number of carers receiving direct payments for short breaks has fallen despite rising carer numbers. Day centres, particularly vital for carers of people with dementia, were hard hit: many closed permanently during COVID and did not reopen.</p>
+            <p>England has approximately 5.8 million unpaid carers whose replacement value &mdash; the cost of equivalent professional care &mdash; is estimated at &pound;162 billion annually, exceeding total NHS acute spending. Yet the share of carers who can access respite when they need it has fallen from 56% in 2015 to 41% in 2024, driven by local authority budget cuts, care sector workforce shortages, and increased complexity of need. The Care Act 2014 gave carers a legal right to an assessment and eligible support, including short breaks, but eligibility thresholds have tightened sharply as council budgets contracted &mdash; the number of carers receiving direct payments for short breaks has fallen despite rising carer numbers. Day centres, particularly vital for carers of people with dementia, were hard hit: many closed permanently during COVID and did not reopen.</p>
             <p>The consequences fall most heavily on those providing the most intensive care &mdash; typically women in middle age caring for a spouse or parent with dementia. Without reliable respite, burnout accelerates and care breakdown leads to emergency hospital admissions and care home placements that cost far more than preventive support would have. Research consistently shows respite care delays care home admission and reduces unplanned NHS usage, but funding sits with local authorities rather than the NHS, and no sustained national uplift specifically for carer short breaks has been delivered.</p>
           </div>
         </section>
@@ -86,8 +86,7 @@ export default function RespiteCareShortage() {
               polarity={'up-is-good' as const}
               changeText="Down from 56% in 2015"
               sparklineData={[56, 54, 52, 50, 49, 43, 43, 42, 41]}
-              onExpand={() => {}}
-              source="Carers UK &middot; State of Caring Survey"
+              href="#sec-chart"source="Carers UK &middot; State of Caring Survey"
             />
             <MetricCard
               label="Unpaid carers in England"
@@ -97,8 +96,7 @@ export default function RespiteCareShortage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 5.4m in 2015"
               sparklineData={[5.4, 5.5, 5.5, 5.6, 5.6, 5.7, 5.7, 5.8, 5.8]}
-              onExpand={() => {}}
-              source="Carers UK &middot; DWP"
+              href="#sec-chart"source="Carers UK &middot; DWP"
             />
             <MetricCard
               label="Annual value of unpaid care"
@@ -108,8 +106,7 @@ export default function RespiteCareShortage() {
               polarity={'up-is-good' as const}
               changeText="Up from &pound;119bn in 2015"
               sparklineData={[119, 125, 130, 135, 140, 145, 150, 156, 162]}
-              onExpand={() => {}}
-              source="Carers UK &middot; Replacement cost estimate"
+              href="#sec-chart"source="Carers UK &middot; Replacement cost estimate"
             />
           </div>
         </ScrollReveal>

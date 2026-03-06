@@ -73,8 +73,8 @@ export default function FarmingSubsidiesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Basic Payment Scheme paid UK farmers around &pound;1.9 billion per year based on land area, regardless of what they produced or how they farmed it. From 2021, BPS payments began being phased out in annual tranches, reaching zero by 2028. The replacement &mdash; Environmental Land Management schemes (ELMs) &mdash; pays for environmental public goods: cleaner water, better soil health, restored habitats, reduced flooding. In design, it is a fundamental shift from subsidising land ownership to buying public benefit. ELMs uptake reached only 8&percnt; of eligible farms by 2024, far below the pace needed to replace lost BPS income. Real farm incomes fell 29&percnt; between 2010 and 2023, with BPS reductions compounding energy, fertiliser, and labour cost pressures following the 2022 Ukraine war shock. Mid-sized family farms, which typically received &pound;20,000&ndash;&pound;50,000 per year in BPS, have been hardest hit, lacking the capital reserves to absorb a multi-year transition.</p>
-            <p>BPS also illustrated deep inequality in British farming: the largest 2&percnt; of farm businesses, receiving over &pound;150,000 per year, captured 16&percnt; of total payment value, with much flowing to large estates not farming in any conventional sense. ELMs is in theory more egalitarian &mdash; payments for actions taken, not land held &mdash; but smaller farmers face higher proportional bureaucratic costs completing and managing scheme agreements. If farm income pressure drives consolidation and exit, the result will be fewer, larger farms with less incentive to participate in stewardship; the government&apos;s challenge is to make ELMs financially attractive enough to complete the transition without destroying the farming sector the schemes depend upon.</p>
+            <p>The Basic Payment Scheme paid UK farmers around &pound;1.9 billion per year based on land area, regardless of what they produced or how they farmed it. From 2021, BPS payments began being phased out in annual tranches, reaching zero by 2028. The replacement &mdash; Environmental Land Management schemes (ELMs) &mdash; pays for environmental public goods: cleaner water, better soil health, restored habitats, reduced flooding. In design, it is a fundamental shift from subsidising land ownership to buying public benefit. ELMs uptake reached only 8% of eligible farms by 2024, far below the pace needed to replace lost BPS income. Real farm incomes fell 29% between 2010 and 2023, with BPS reductions compounding energy, fertiliser, and labour cost pressures following the 2022 Ukraine war shock. Mid-sized family farms, which typically received &pound;20,000&ndash;&pound;50,000 per year in BPS, have been hardest hit, lacking the capital reserves to absorb a multi-year transition.</p>
+            <p>BPS also illustrated deep inequality in British farming: the largest 2% of farm businesses, receiving over &pound;150,000 per year, captured 16% of total payment value, with much flowing to large estates not farming in any conventional sense. ELMs is in theory more egalitarian &mdash; payments for actions taken, not land held &mdash; but smaller farmers face higher proportional bureaucratic costs completing and managing scheme agreements. If farm income pressure drives consolidation and exit, the result will be fewer, larger farms with less incentive to participate in stewardship; the government&apos;s challenge is to make ELMs financially attractive enough to complete the transition without destroying the farming sector the schemes depend upon.</p>
           </div>
         </section>
 
@@ -96,8 +96,7 @@ export default function FarmingSubsidiesPage() {
             changeText="Down from £1.9bn/yr peak &middot; phasing out 2021&ndash;2028 transition"
             sparklineData={[2.4, 1.9, 1.8, 1.9, 1.5, 0.8]}
             source="DEFRA Farm Accounts &middot; 2024"
-            onExpand={() => {}}
-          />
+            href="#sec-bps"/>
           <MetricCard
             label="ELMs uptake"
             value="8"
@@ -107,8 +106,7 @@ export default function FarmingSubsidiesPage() {
             changeText="Growing from near-zero in 2022 &middot; government wants rapid expansion"
             sparklineData={[0.5, 2.0, 8.0]}
             source="DEFRA &middot; 2024"
-            onExpand={() => {}}
-          />
+            href="#sec-income"/>
           <MetricCard
             label="Real farm income change since 2010"
             value="-29"
@@ -118,8 +116,7 @@ export default function FarmingSubsidiesPage() {
             changeText="BPS reduction + input cost inflation squeezing margins"
             sparklineData={[100, 92, 81, 86, 89, 79, 71]}
             source="DEFRA Farm Business Survey &middot; 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-distribution"/>
         </div>
         </ScrollReveal>
 

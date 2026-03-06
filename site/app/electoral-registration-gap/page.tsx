@@ -97,8 +97,7 @@ export default function ElectoralRegistrationGapPage() {
               polarity="up-is-bad"
               changeText="unchanged for decade &middot; IVR system not working"
               sparklineData={[7.5, 7.8, 8.0, 8.1, 8.0]}
-              onExpand={() => {}}
-              source="Electoral Commission &middot; Annual Report 2023"
+              href="#sec-chart"source="Electoral Commission &middot; Annual Report 2023"
             />
             <MetricCard
               label="Under-25 unregistered"
@@ -108,8 +107,7 @@ export default function ElectoralRegistrationGapPage() {
               polarity="up-is-bad"
               changeText="1 in 3 young people not on register"
               sparklineData={[34, 35, 34, 35, 34]}
-              onExpand={() => {}}
-              source="Electoral Commission &middot; 2023"
+              href="#sec-chart"source="Electoral Commission &middot; 2023"
             />
             <MetricCard
               label="Ethnic minority gap"
@@ -119,8 +117,7 @@ export default function ElectoralRegistrationGapPage() {
               polarity="up-is-bad"
               changeText="lower registration among minority communities &middot; BAME 11pp below White"
               sparklineData={[11, 11, 11, 11, 11]}
-              onExpand={() => {}}
-              source="Electoral Commission &middot; Diversity Report 2023"
+              href="#sec-chart"source="Electoral Commission &middot; Diversity Report 2023"
             />
           </div>
         </ScrollReveal>

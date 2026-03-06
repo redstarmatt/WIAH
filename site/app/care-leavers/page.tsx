@@ -117,8 +117,7 @@ export default function CareLeaversPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Up from 67K in 2012 &middot; 10,000 leave care annually aged 16&ndash;21 &middot; Neglect or abuse main reason for entry"
               sparklineData={[67050, 68060, 68840, 69540, 70440, 72670, 75420, 78150, 80850, 82170, 84010, 95000]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Care leavers who are NEET (aged 17&ndash;21)"
               value="37%"
@@ -126,8 +125,7 @@ export default function CareLeaversPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; General population NEET rate: 11% &middot; 3x higher &middot; Young people leaving care at 16 most at risk"
               sparklineData={[38, 38, 39, 37, 41, 38, 37, 37]}
-              onExpand={() => {}}
-            />
+              href="#sec-care"/>
             <MetricCard
               label="Care leavers going to university"
               value="13%"
@@ -135,8 +133,7 @@ export default function CareLeaversPage() {
               polarity="up-is-good"
               changeText="2023 &middot; General population: 43% &middot; Gap narrowing slowly &middot; Bursaries and guaranteed university accommodation helping"
               sparklineData={[6, 7, 8, 9, 10, 11, 12, 13]}
-              onExpand={() => {}}
-            />
+              href="#sec-outcomes"/>
           </div>
         </ScrollReveal>
 

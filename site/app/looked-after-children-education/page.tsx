@@ -79,8 +79,7 @@ export default function LookedAfterChildrenEducationPage() {
               changeText="+3pp since 2015 · still 34pp below all pupils"
               sparklineData={[11, 11, 12, 12, 12, 13, 13, 13, 14]}
               source="DfE · Outcomes for Children Looked After 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="LAC changing school mid-year"
               value="33%"
@@ -89,8 +88,7 @@ export default function LookedAfterChildrenEducationPage() {
               changeText="1 in 3 disrupted by mid-year school move"
               sparklineData={[35, 35, 34, 33, 33, 34, 33, 33, 33]}
               source="DfE · Outcomes for Children Looked After 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="LAC NEET at age 19"
               value="38%"
@@ -99,8 +97,7 @@ export default function LookedAfterChildrenEducationPage() {
               changeText="38% NEET vs 12% all young people"
               sparklineData={[42, 41, 41, 40, 40, 39, 39, 38, 38]}
               source="DfE · Care Leavers Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

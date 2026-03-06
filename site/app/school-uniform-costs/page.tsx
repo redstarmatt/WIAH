@@ -63,8 +63,8 @@ export default function SchoolUniformCostsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The average cost of a school uniform in England reached &pound;435 per child in 2024 &mdash; a 38&percnt; increase since 2015, outpacing general inflation. The rise reflects the mandatory use of branded school-specific items that cannot be bought from supermarkets, the growing number of academies setting their own requirements without the constraints applied to maintained schools, and post-pandemic clothing cost inflation. The School Uniforms Act 2021 required schools to have regard to cost and consult parents before introducing new items, but compliance has been inconsistent and enforcement mechanisms are weak. Only around 30&percnt; of schools offer uniform grants, second-hand sales, or exchange schemes &mdash; and those that do typically operate them on a discretionary basis with limited advertising.</p>
-            <p>For families in the lowest income quintile, &pound;435 represents approximately 2.8&percnt; of annual income &mdash; the equivalent of two weeks&rsquo; food spending &mdash; and the cost falls in a concentrated burst at the start of each academic year alongside stationery, PE kit, and bags. Families with multiple school-age children can face a total bill exceeding &pound;1,000. Research consistently finds that children who cannot afford the correct uniform experience bullying, social exclusion, and reduced attendance; teachers report children being sent home for wearing incorrect items their families cannot replace. Uniform costs are not a minor issue &mdash; they are one of multiple financial pressures that determine whether children arrive at school ready to learn.</p>
+            <p>The average cost of a school uniform in England reached &pound;435 per child in 2024 &mdash; a 38% increase since 2015, outpacing general inflation. The rise reflects the mandatory use of branded school-specific items that cannot be bought from supermarkets, the growing number of academies setting their own requirements without the constraints applied to maintained schools, and post-pandemic clothing cost inflation. The School Uniforms Act 2021 required schools to have regard to cost and consult parents before introducing new items, but compliance has been inconsistent and enforcement mechanisms are weak. Only around 30% of schools offer uniform grants, second-hand sales, or exchange schemes &mdash; and those that do typically operate them on a discretionary basis with limited advertising.</p>
+            <p>For families in the lowest income quintile, &pound;435 represents approximately 2.8% of annual income &mdash; the equivalent of two weeks&rsquo; food spending &mdash; and the cost falls in a concentrated burst at the start of each academic year alongside stationery, PE kit, and bags. Families with multiple school-age children can face a total bill exceeding &pound;1,000. Research consistently finds that children who cannot afford the correct uniform experience bullying, social exclusion, and reduced attendance; teachers report children being sent home for wearing incorrect items their families cannot replace. Uniform costs are not a minor issue &mdash; they are one of multiple financial pressures that determine whether children arrive at school ready to learn.</p>
           </div>
         </section>
 
@@ -84,8 +84,7 @@ export default function SchoolUniformCostsPage() {
               polarity="up-is-bad"
               changeText="+38% since 2015 &middot; outpacing general inflation"
               sparklineData={[316, 340, 372, 390, 410, 422, 435]}
-              onExpand={() => {}}
-              source="Which? &middot; School Uniform Survey 2024"
+              href="#sec-chart"source="Which? &middot; School Uniform Survey 2024"
             />
             <MetricCard
               label="As % of lowest incomes"
@@ -95,8 +94,7 @@ export default function SchoolUniformCostsPage() {
               polarity="up-is-bad"
               changeText="approaching 3% of poorest family incomes"
               sparklineData={[2.1, 2.2, 2.4, 2.5, 2.6, 2.8]}
-              onExpand={() => {}}
-              source="Which? / DWP analysis &middot; 2023"
+              href="#sec-chart"source="Which? / DWP analysis &middot; 2023"
             />
             <MetricCard
               label="Schools offering grants"
@@ -106,8 +104,7 @@ export default function SchoolUniformCostsPage() {
               polarity="up-is-good"
               changeText="only 3 in 10 schools offer uniform grants or exchanges"
               sparklineData={[28, 28, 29, 29, 30, 30]}
-              onExpand={() => {}}
-              source="School Uniform Exchange Network &middot; 2023"
+              href="#sec-chart"source="School Uniform Exchange Network &middot; 2023"
             />
           </div>
         </ScrollReveal>

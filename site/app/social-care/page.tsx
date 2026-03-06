@@ -90,7 +90,7 @@ export default function SocialCarePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England processes around 1.9 million requests for adult social care support each year, yet only 1.5 million people receive publicly funded care. The gap is largely explained by a means test set in 2010 and never meaningfully uprated: anyone with assets above &pound;23,250 must fund their own care entirely, so a modest terraced house disqualifies someone from all state support. The Dilnot Commission recommended a &pound;35,000 lifetime care cost cap in 2011; the government eventually committed to an &pound;86,000 cap due in 2023, then postponed it indefinitely in September 2022. Families facing dementia or stroke-related care can still spend &pound;100,000 or more before state support begins. The NHS pays the price directly: between 13,500 and 17,900 patients occupy hospital beds on any given day awaiting a social care package, with the sector carrying around 165,000 vacancies and a 30&percnt; annual workforce turnover rate that degrades care quality and makes commissioning unreliable.</p>
+            <p>England processes around 1.9 million requests for adult social care support each year, yet only 1.5 million people receive publicly funded care. The gap is largely explained by a means test set in 2010 and never meaningfully uprated: anyone with assets above &pound;23,250 must fund their own care entirely, so a modest terraced house disqualifies someone from all state support. The Dilnot Commission recommended a &pound;35,000 lifetime care cost cap in 2011; the government eventually committed to an &pound;86,000 cap due in 2023, then postponed it indefinitely in September 2022. Families facing dementia or stroke-related care can still spend &pound;100,000 or more before state support begins. The NHS pays the price directly: between 13,500 and 17,900 patients occupy hospital beds on any given day awaiting a social care package, with the sector carrying around 165,000 vacancies and a 30% annual workforce turnover rate that degrades care quality and makes commissioning unreliable.</p>
             <p>The burden falls on those least able to bear it. Around 5.7 million people in England provide unpaid care to a family member or friend &mdash; often at significant cost to their own employment, health, and finances &mdash; absorbing demand that would otherwise fall on a system already at capacity. Those who do seek formal care face a system stratified by wealth: self-funders subsidise publicly commissioned places, and once private funds are exhausted, access to quality provision becomes uncertain. Visa rule changes in 2024 sharply restricted overseas care worker entry after the sector had become heavily dependent on international recruitment, triggering renewed provider warnings of shortages and leaving the sector with no credible domestic workforce pipeline in place.</p>
           </div>
         </section>
@@ -111,8 +111,7 @@ export default function SocialCarePage() {
               polarity="up-is-bad"
               changeText="2022/23 &middot; 1.5M receiving funded care &middot; Up from 1.6M during COVID &middot; Ageing population driving demand"
               sparklineData={[1790, 1810, 1840, 1870, 1850, 1600, 1720, 1830, 1900]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Social care workforce vacancy rate"
               value="9.9%"
@@ -120,8 +119,7 @@ export default function SocialCarePage() {
               polarity="up-is-bad"
               changeText="2023 &middot; 152,000 vacancies &middot; Down from 10.7% peak &middot; Overseas recruitment filling gap post-Brexit"
               sparklineData={[6.6, 7.0, 8.0, 8.0, 7.0, 10.0, 10.7, 9.9]}
-              onExpand={() => {}}
-            />
+              href="#sec-requests"/>
             <MetricCard
               label="Annual social care funding gap"
               value="&pound;8bn"
@@ -129,8 +127,7 @@ export default function SocialCarePage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Estimated by Association of Directors &middot; Councils cutting services &middot; Health &amp; Care Act 2022 reforms delayed"
               sparklineData={[3, 4, 5, 5.5, 6, 6.5, 7, 7.5, 8]}
-              onExpand={() => {}}
-            />
+              href="#sec-workforce"/>
           </div>
         </ScrollReveal>
 

@@ -83,8 +83,7 @@ export default function CircularEconomyPage() {
             changeText="Peaked at 45.7% in 2016 &middot; stalling and slightly falling"
             sparklineData={[40.4, 43.0, 44.8, 45.7, 44.7, 44.0, 43.5]}
             source="DEFRA Waste Statistics &middot; 2022"
-            onExpand={() => {}}
-          />
+            href="#sec-recycling"/>
           <MetricCard
             label="EU average recycling rate"
             value="48"
@@ -94,8 +93,7 @@ export default function CircularEconomyPage() {
             changeText="Germany 66.7% &middot; England below EU average and falling behind"
             sparklineData={[44, 45, 46, 47, 47, 48]}
             source="Eurostat &middot; 2021"
-            onExpand={() => {}}
-          />
+            href="#sec-eu"/>
           <MetricCard
             label="Waste going to landfill"
             value="6"
@@ -105,8 +103,7 @@ export default function CircularEconomyPage() {
             changeText="Down from 38% in 2010 &mdash; a genuine success story"
             sparklineData={[38, 30, 23, 15, 8, 6]}
             source="DEFRA &middot; 2022"
-            onExpand={() => {}}
-          />
+            href="#sec-eu"/>
         </div>
         </ScrollReveal>
 

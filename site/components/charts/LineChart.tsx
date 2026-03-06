@@ -200,8 +200,9 @@ export default function LineChart({
           .attr('stroke-width', 1)
           .attr('stroke-dasharray', '4,3');
 
-        // Place label to right of line, or left if it would clip
-        const nearRight = ax > innerWidth * 0.7;
+        // Place label to right of line, or left if text would overflow
+        const approxTextWidth = ann.label.length * 6;
+        const nearRight = ax + 4 + approxTextWidth > innerWidth;
         g.append('text')
           .attr('x', nearRight ? ax - 4 : ax + 4)
           .attr('y', labelY)
@@ -230,31 +231,7 @@ export default function LineChart({
         .attr('d', line);
     });
 
-    // Legend (if multiple series)
-    if (series.length > 1) {
-      const legend = g.append('g')
-        .attr('transform', `translate(0, ${-MARGIN.top + 8})`);
-
-      series.forEach((s, i) => {
-        const colour = s.colour || COLOURS[i % COLOURS.length];
-        const lg = legend.append('g')
-          .attr('transform', `translate(${i * 140}, 0)`);
-
-        lg.append('line')
-          .attr('x1', 0).attr('x2', 16)
-          .attr('y1', 4).attr('y2', 4)
-          .attr('stroke', colour)
-          .attr('stroke-width', 2);
-
-        lg.append('text')
-          .attr('x', 20)
-          .attr('y', 8)
-          .attr('font-family', 'SF Mono, Fira Code, Consolas, monospace')
-          .attr('font-size', '10px')
-          .attr('fill', '#6B7280')
-          .text(s.label);
-      });
-    }
+    // Legend drawn in SVG removed — rendered as HTML below the chart instead
 
     // Tooltip overlay
     const bisect = d3.bisector<{ date: Date; value: number }, Date>(d => d.date).left;
@@ -351,6 +328,21 @@ export default function LineChart({
           style={{ opacity: 0, transition: 'opacity 150ms' }}
         />
       </div>
+      {series.length > 1 && (
+        <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-3">
+          {series.map((s, i) => {
+            const colour = s.colour || COLOURS[i % COLOURS.length];
+            return (
+              <div key={s.id} className="flex items-center gap-1.5">
+                <svg width="16" height="8" aria-hidden="true">
+                  <line x1="0" y1="4" x2="16" y2="4" stroke={colour} strokeWidth="2" />
+                </svg>
+                <span className="font-mono text-[10px] text-wiah-mid">{s.label}</span>
+              </div>
+            );
+          })}
+        </div>
+      )}
       {sourceText && (
         <p className="font-mono text-[11px] text-wiah-mid mt-2">
           {source?.url ? (

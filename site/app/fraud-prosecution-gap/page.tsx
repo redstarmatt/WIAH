@@ -95,8 +95,7 @@ export default function FraudProsecutionGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 32% in 2015"
               sparklineData={[32, 34, 35, 36, 37, 38, 39, 40, 41]}
-              onExpand={() => {}}
-              source="ONS &middot; Crime Survey for England and Wales"
+              href="#sec-chart"source="ONS &middot; Crime Survey for England and Wales"
             />
             <MetricCard
               label="Police resources allocated"
@@ -106,8 +105,7 @@ export default function FraudProsecutionGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Of total officer headcount dedicated to fraud"
               sparklineData={[1.2, 1.1, 1.1, 1.0, 1.0, 0.9, 0.9, 1.0, 1.0]}
-              onExpand={() => {}}
-              source="HMICFRS &middot; State of Policing reports"
+              href="#sec-chart"source="HMICFRS &middot; State of Policing reports"
             />
             <MetricCard
               label="Fraud cases charged"
@@ -117,8 +115,7 @@ export default function FraudProsecutionGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Of reported fraud cases resulting in charge"
               sparklineData={[5.1, 4.8, 4.5, 4.2, 3.9, 3.6, 3.4, 3.2, 3.0]}
-              onExpand={() => {}}
-              source="Home Office &middot; Crime outcomes in England and Wales"
+              href="#sec-chart"source="Home Office &middot; Crime outcomes in England and Wales"
             />
           </div>
         </ScrollReveal>

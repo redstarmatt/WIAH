@@ -69,7 +69,7 @@ export default function AddictionTreatmentOutcomesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has the highest rate of drug-related deaths in Europe: 4,800 people died from drug misuse in England and Wales in 2023, near the record 4,907 set in 2022, with Scotland recording an even higher rate per capita. Drug and alcohol treatment services, commissioned by local authorities using public health grant funding, were cut significantly between 2015 and 2022 &mdash; reducing capacity precisely when deaths were rising. The 2021 Dame Carol Black review found services systematically underfunded, with waiting times rising from 3.1 to 4.1 weeks and the successful completion rate &mdash; the proportion leaving treatment free from dependency &mdash; stubbornly below 50&percnt;, at 47.4&percnt; in 2023. The government&apos;s subsequent ten-year drugs strategy committed &pound;780 million over three years to rebuild capacity, with new investment in naloxone distribution and residential rehabilitation &mdash; but workforce erosion from a decade of cuts limits how quickly services can recover.</p>
+            <p>The UK has the highest rate of drug-related deaths in Europe: 4,800 people died from drug misuse in England and Wales in 2023, near the record 4,907 set in 2022, with Scotland recording an even higher rate per capita. Drug and alcohol treatment services, commissioned by local authorities using public health grant funding, were cut significantly between 2015 and 2022 &mdash; reducing capacity precisely when deaths were rising. The 2021 Dame Carol Black review found services systematically underfunded, with waiting times rising from 3.1 to 4.1 weeks and the successful completion rate &mdash; the proportion leaving treatment free from dependency &mdash; stubbornly below 50%, at 47.4% in 2023. The government&apos;s subsequent ten-year drugs strategy committed &pound;780 million over three years to rebuild capacity, with new investment in naloxone distribution and residential rehabilitation &mdash; but workforce erosion from a decade of cuts limits how quickly services can recover.</p>
             <p>The consequences fall hardest on the most deprived. Deaths are concentrated in deprived communities, among middle-aged men, and in post-industrial areas of northern England, the Midlands, and Scotland where heroin use is tied to long-term economic marginalisation. Areas with the highest rates of drug-related harm are often those with the weakest treatment infrastructure, a legacy that additional spending cannot reverse in two or three years. The evidence base for effective treatment &mdash; opiate substitution therapy, naloxone, naltrexone &mdash; is strong; the barrier is resource, workforce capacity, and a discourse that has historically treated addiction as a moral failing rather than a health condition.</p>
           </div>
         </section>
@@ -90,8 +90,7 @@ export default function AddictionTreatmentOutcomesPage() {
               polarity="up-is-good"
               changeText="Slight improvement &middot; still below 50%"
               sparklineData={[49.2, 48.6, 48.1, 47.9, 46.3, 46.0, 47.1, 47.4]}
-              onExpand={() => {}}
-              source="OHID &middot; Drug and Alcohol Treatment Statistics 2023"
+              href="#sec-chart"source="OHID &middot; Drug and Alcohol Treatment Statistics 2023"
             />
             <MetricCard
               label="Drug misuse deaths 2023"
@@ -101,8 +100,7 @@ export default function AddictionTreatmentOutcomesPage() {
               polarity="up-is-bad"
               changeText="Slight fall but near record levels"
               sparklineData={[3744, 3756, 4359, 4393, 4561, 4859, 4907, 4800]}
-              onExpand={() => {}}
-              source="ONS &middot; Drug Misuse Deaths 2023"
+              href="#sec-chart"source="ONS &middot; Drug Misuse Deaths 2023"
             />
             <MetricCard
               label="Average wait for treatment"
@@ -112,8 +110,7 @@ export default function AddictionTreatmentOutcomesPage() {
               polarity="up-is-bad"
               changeText="Up from 3.1 weeks in 2016"
               sparklineData={[3.1, 3.3, 3.6, 3.8, 4.2, 4.0, 4.3, 4.1]}
-              onExpand={() => {}}
-              source="OHID &middot; Drug and Alcohol Treatment Statistics 2023"
+              href="#sec-chart"source="OHID &middot; Drug and Alcohol Treatment Statistics 2023"
             />
           </div>
         </ScrollReveal>

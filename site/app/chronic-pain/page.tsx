@@ -113,8 +113,7 @@ export default function ChronicPainPage() {
               polarity="up-is-bad"
               changeText="UK, 2024 &middot; Up from 18M in 2012 &middot; Leading cause of disability"
               sparklineData={[18.2, 20.1, 22.4, 24.6, 25.8, 27.1, 28.0]}
-              onExpand={() => {}}
-            />
+              href="#sec-prevalence"/>
             <MetricCard
               label="Working days lost per year"
               value="36.8"
@@ -123,8 +122,7 @@ export default function ChronicPainPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; More than any other condition &middot; Key driver of economic inactivity"
               sparklineData={[24.8, 26.3, 28.1, 30.4, 34.2, 36.8]}
-              onExpand={() => {}}
-            />
+              href="#sec-work"/>
             <MetricCard
               label="Average pain clinic wait"
               value="28"
@@ -133,8 +131,7 @@ export default function ChronicPainPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Down from 38-week COVID peak &middot; Some areas have no service"
               sparklineData={[18, 20, 22, 24, 32, 38, 34, 30, 28]}
-              onExpand={() => {}}
-            />
+              href="#sec-waits"/>
           </div>
         </ScrollReveal>
 

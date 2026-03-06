@@ -79,8 +79,7 @@ export default function PensionCreditTakeUpPage() {
               changeText="800k missing out · £1.5bn unclaimed annually"
               sparklineData={[900, 900, 870, 860, 860, 850, 840, 820, 800]}
               source="DWP · Pension Credit Take-Up Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Pension Credit take-up rate"
               value="63%"
@@ -89,8 +88,7 @@ export default function PensionCreditTakeUpPage() {
               changeText="63% take-up · barely moved in 10 years"
               sparklineData={[61, 61, 62, 62, 63, 63, 63, 63, 63]}
               source="DWP · Pension Credit Take-Up Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Average Pension Credit value"
               value="£3,900/yr"
@@ -99,8 +97,7 @@ export default function PensionCreditTakeUpPage() {
               changeText="+£400 since 2022 · includes Winter Fuel gateway"
               sparklineData={[2800, 2900, 3000, 3100, 3200, 3400, 3600, 3800, 3900]}
               source="DWP · Pension Credit Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

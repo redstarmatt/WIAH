@@ -96,8 +96,7 @@ export default function EnergySecurityPage() {
               changeText="Germany has 90 days; EU average 65 days"
               sparklineData={[15, 15, 15]}
               source="DESNZ, Eurostat"
-              onExpand={() => {}}
-            />
+              href="#sec-trends"/>
             <MetricCard
               label="UK energy imports as % of total supply"
               value="36"
@@ -107,8 +106,7 @@ export default function EnergySecurityPage() {
               changeText="Up from 26% in 2015"
               sparklineData={importSparkline}
               source="DESNZ Energy Trends"
-              onExpand={() => {}}
-            />
+              href="#sec-pricing"/>
             <MetricCard
               label="Government cost of Energy Price Guarantee"
               value="&pound;40bn"
@@ -117,8 +115,7 @@ export default function EnergySecurityPage() {
               changeText="2022/23; largest peacetime energy subsidy"
               sparklineData={[0, 15, 40, 35]}
               source="Office for Budget Responsibility"
-              onExpand={() => {}}
-            />
+              href="#sec-supply"/>
           </div>
         </div>
       </section>
@@ -180,8 +177,8 @@ export default function EnergySecurityPage() {
       <section id="sec-context" className="px-6 py-12 bg-white">
         <div className="max-w-2xl mx-auto">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The 2022 energy crisis exposed a structural weakness policymakers had ignored for years. The Rough gas storage facility &mdash; roughly 70 days of supply &mdash; was mothballed in 2017 as uneconomic, leaving the UK with just 15 days of storage against Germany&apos;s 90 and an EU average of 65. When Russia invaded Ukraine, wholesale gas prices rose six-fold and household bills climbed from &pound;1,100 toward a projected &pound;4,279 before government intervention. The Energy Price Guarantee and Energy Bills Support Scheme together cost approximately &pound;40 billion &mdash; the largest peacetime energy subsidy in UK history. Import dependency has since fallen from a peak of 47&percnt; in 2014 to 36&percnt; in 2022, partly through offshore wind expansion, but Norway now supplies around 30&percnt; of UK gas via a single pipeline &mdash; a dependable but single-point exposure. Installed offshore wind reached 14GW by early 2024 with a target of 50GW by 2030, requiring build rates that planning timelines currently threaten.</p>
-            <p>The burden of energy insecurity falls hardest on those with least capacity to absorb it. Low-income renters cannot improve insulation, switch tariffs, or reduce consumption meaningfully, and absorbed the 2022 shock in full before government support arrived &mdash; the approximately 13&percnt; of households already in fuel poverty before the crisis had no margin. The political debate over new North Sea licensing &mdash; 100 licences issued in 2023, with Labour proposing to end approvals &mdash; turns on whether additional domestic production serves near-term security or delays the transition to a renewable supply base immune to geopolitical disruption; the UK&apos;s 19 million gas boiler homes mean that question matters as much for household bills as for national energy strategy.</p>
+            <p>The 2022 energy crisis exposed a structural weakness policymakers had ignored for years. The Rough gas storage facility &mdash; roughly 70 days of supply &mdash; was mothballed in 2017 as uneconomic, leaving the UK with just 15 days of storage against Germany&apos;s 90 and an EU average of 65. When Russia invaded Ukraine, wholesale gas prices rose six-fold and household bills climbed from &pound;1,100 toward a projected &pound;4,279 before government intervention. The Energy Price Guarantee and Energy Bills Support Scheme together cost approximately &pound;40 billion &mdash; the largest peacetime energy subsidy in UK history. Import dependency has since fallen from a peak of 47% in 2014 to 36% in 2022, partly through offshore wind expansion, but Norway now supplies around 30% of UK gas via a single pipeline &mdash; a dependable but single-point exposure. Installed offshore wind reached 14GW by early 2024 with a target of 50GW by 2030, requiring build rates that planning timelines currently threaten.</p>
+            <p>The burden of energy insecurity falls hardest on those with least capacity to absorb it. Low-income renters cannot improve insulation, switch tariffs, or reduce consumption meaningfully, and absorbed the 2022 shock in full before government support arrived &mdash; the approximately 13% of households already in fuel poverty before the crisis had no margin. The political debate over new North Sea licensing &mdash; 100 licences issued in 2023, with Labour proposing to end approvals &mdash; turns on whether additional domestic production serves near-term security or delays the transition to a renewable supply base immune to geopolitical disruption; the UK&apos;s 19 million gas boiler homes mean that question matters as much for household bills as for national energy strategy.</p>
           </div>
         </div>
       </section>

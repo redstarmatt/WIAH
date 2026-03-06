@@ -75,8 +75,8 @@ export default function SpecialGuardianshipUsePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Special guardianship orders (SGOs) have grown from a few thousand when introduced in 2005 to 36,000 in force in England in 2024 &mdash; representing children living with grandparents, aunts and uncles, family friends, or former foster carers who have taken legal responsibility without adopting. This growth has occurred alongside a 43&percnt; fall in adoptions from care, which peaked at 5,050 in 2012 and 2014 before falling to 2,880 in 2023, following Supreme Court case law that raised the bar for adoption and made local authorities more cautious. Kinship care more broadly &mdash; including informal arrangements without a court order &mdash; supports an estimated 162,000 children in England, making it far larger than the formal care system. SGO support payments are means-tested, discretionary, and vary enormously between local authorities: surveys consistently find that around 44&percnt; of kinship carers receive no financial or practical support from their council whatsoever.</p>
-            <p>The consequences of inadequate support are direct and serious. SGOs break down at a rate of 8&ndash;10&percnt;, typically because financial and emotional pressures become unsustainable, at which point the child re-enters the care system often more traumatised than before. The postcode lottery in support means a grandparent in one borough may receive substantial help while an identical arrangement next door receives nothing. The Kinship Care Act 2023 committed to a national strategy, training budgets, and an expectation that local authorities will develop support offers &mdash; but these remain framework commitments rather than funded entitlements, leaving carers who are often older, less financially secure, and managing children with complex needs to absorb costs the state declines to meet.</p>
+            <p>Special guardianship orders (SGOs) have grown from a few thousand when introduced in 2005 to 36,000 in force in England in 2024 &mdash; representing children living with grandparents, aunts and uncles, family friends, or former foster carers who have taken legal responsibility without adopting. This growth has occurred alongside a 43% fall in adoptions from care, which peaked at 5,050 in 2012 and 2014 before falling to 2,880 in 2023, following Supreme Court case law that raised the bar for adoption and made local authorities more cautious. Kinship care more broadly &mdash; including informal arrangements without a court order &mdash; supports an estimated 162,000 children in England, making it far larger than the formal care system. SGO support payments are means-tested, discretionary, and vary enormously between local authorities: surveys consistently find that around 44% of kinship carers receive no financial or practical support from their council whatsoever.</p>
+            <p>The consequences of inadequate support are direct and serious. SGOs break down at a rate of 8&ndash;10%, typically because financial and emotional pressures become unsustainable, at which point the child re-enters the care system often more traumatised than before. The postcode lottery in support means a grandparent in one borough may receive substantial help while an identical arrangement next door receives nothing. The Kinship Care Act 2023 committed to a national strategy, training budgets, and an expectation that local authorities will develop support offers &mdash; but these remain framework commitments rather than funded entitlements, leaving carers who are often older, less financially secure, and managing children with complex needs to absorb costs the state declines to meet.</p>
           </div>
         </section>
 
@@ -97,8 +97,7 @@ export default function SpecialGuardianshipUsePage() {
               polarity="up-is-good"
               changeText="growing permanence route &middot; less disruption than care"
               sparklineData={[12000, 17000, 22000, 27000, 31000, 34000, 36000]}
-              onExpand={() => {}}
-              source="DfE &middot; Children Looked After Statistics 2023"
+              href="#sec-chart"source="DfE &middot; Children Looked After Statistics 2023"
             />
             <MetricCard
               label="Adoptions per year"
@@ -108,8 +107,7 @@ export default function SpecialGuardianshipUsePage() {
               polarity="up-is-good"
               changeText="-43% since 2012 &middot; process too slow and risky for carers"
               sparklineData={[5050, 5050, 4690, 3820, 3152, 2985, 2880]}
-              onExpand={() => {}}
-              source="DfE &middot; Children Looked After Statistics 2023"
+              href="#sec-callout"source="DfE &middot; Children Looked After Statistics 2023"
             />
             <MetricCard
               label="Kinship carers with no support"
@@ -119,8 +117,7 @@ export default function SpecialGuardianshipUsePage() {
               polarity="up-is-bad"
               changeText="44% of kinship carers receive no financial or practical support"
               sparklineData={[44, 44, 44, 44, 44, 44]}
-              onExpand={() => {}}
-              source="Kinship &middot; State of Kinship Care Survey 2023"
+              href="#sec-callout"source="Kinship &middot; State of Kinship Care Survey 2023"
             />
           </div>
         </ScrollReveal>

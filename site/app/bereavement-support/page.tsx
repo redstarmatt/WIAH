@@ -95,8 +95,7 @@ export default function BereavementSupportPage() {
               polarity={'up-is-bad' as const}
               changeText="~3m newly bereaved annually"
               sparklineData={[570, 575, 578, 580, 582, 640, 610, 595, 600]}
-              onExpand={() => {}}
-              source="ONS &middot; Death registrations"
+              href="#sec-chart"source="ONS &middot; Death registrations"
             />
             <MetricCard
               label="Accessing specialist support"
@@ -106,8 +105,7 @@ export default function BereavementSupportPage() {
               polarity={'up-is-good' as const}
               changeText="Down from 12% in 2015"
               sparklineData={[12, 11, 11, 10, 10, 9, 9, 9, 9]}
-              onExpand={() => {}}
-              source="Cruse &middot; NHS England"
+              href="#sec-chart"source="Cruse &middot; NHS England"
             />
             <MetricCard
               label="Average grief support wait"
@@ -117,8 +115,7 @@ export default function BereavementSupportPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 7 weeks in 2015"
               sparklineData={[7, 8, 8, 9, 9, 12, 11, 11, 11]}
-              onExpand={() => {}}
-              source="Cruse Bereavement Support"
+              href="#sec-chart"source="Cruse Bereavement Support"
             />
           </div>
         </ScrollReveal>

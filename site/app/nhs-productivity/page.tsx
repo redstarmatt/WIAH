@@ -117,8 +117,7 @@ export default function NhsProductivityPage() {
               polarity="up-is-good"
               changeText="2024 &middot; Still below pre-COVID level &middot; Despite 17% more staff"
               sparklineData={[100, 101.2, 101.8, 102.1, 102.6, 103.1, 81.4, 88.7, 93.2, 95.1, 96.8]}
-              onExpand={() => {}}
-            />
+              href="#sec-productivity"/>
             <MetricCard
               label="Output per FTE worker"
               value="90.3"
@@ -127,8 +126,7 @@ export default function NhsProductivityPage() {
               polarity="up-is-good"
               changeText="2024 &middot; 2014 = 100 &middot; Nearly 10% below baseline"
               sparklineData={[100, 100.8, 100.4, 100.1, 99.8, 99.4, 78.2, 85.1, 88.6, 89.8, 90.3]}
-              onExpand={() => {}}
-            />
+              href="#sec-output"/>
             <MetricCard
               label="NHS FTE per 1,000 population"
               value="41.2"
@@ -136,8 +134,7 @@ export default function NhsProductivityPage() {
               polarity="up-is-good"
               changeText="2024 &middot; Up from 35.2 in 2014 &middot; 17% rise since 2019"
               sparklineData={[35.2, 35.5, 35.8, 36.1, 36.4, 36.8, 38.2, 39.4, 40.1, 40.8, 41.2]}
-              onExpand={() => {}}
-            />
+              href="#sec-staff"/>
           </div>
         </ScrollReveal>
 

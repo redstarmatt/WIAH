@@ -97,7 +97,6 @@ export default function GamblingHarmPage() {
                 polarity="up-is-bad"
                 changeText="0.5% of adults; 430,000 at moderate risk"
                 sparklineData={[280, 285, 290, 295, 298, 300]}
-                onExpand={() => {}}
               />
             </ScrollReveal>
 
@@ -109,7 +108,6 @@ export default function GamblingHarmPage() {
                 polarity="up-is-bad"
                 changeText="Up from &pound;1.8bn in 2012; now 46% of total"
                 sparklineData={[1.8, 2.3, 2.8, 3.3, 3.9, 4.5, 5.1, 5.6, 5.9, 6.5, 6.9]}
-                onExpand={() => {}}
               />
             </ScrollReveal>
 
@@ -121,7 +119,6 @@ export default function GamblingHarmPage() {
                 polarity="up-is-bad"
                 changeText="1 in 50 suicides associated with gambling"
                 sparklineData={[350, 380, 420, 450, 475, 500]}
-                onExpand={() => {}}
               />
             </ScrollReveal>
           </div>

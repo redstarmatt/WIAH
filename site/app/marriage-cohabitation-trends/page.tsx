@@ -75,7 +75,7 @@ export default function MarriageCohabitationTrendsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Marriages in England and Wales have fallen from 480,000 a year in the early 1970s to 236,000 in 2022 &mdash; a 50-year low, with a crude marriage rate of 7.7 per 1,000 population against 14.5 in 1972. The counterpart is the rise of cohabitation: approximately 4.2 million cohabiting couples now live together, more than double the figure two decades ago, making cohabitation the fastest-growing family type. Around 40&percnt; of cohabiting couples have dependent children, and average relationship duration has lengthened, challenging the assumption that cohabitation is merely a precursor to marriage. Civil ceremonies now dominate as Church of England weddings have fallen to under 10&percnt; of all weddings. Marriage rates remain significantly higher among graduates and homeowners than among those in rented accommodation or precarious employment, meaning marriage has become increasingly associated with affluence as its overall prevalence has fallen.</p>
+            <p>Marriages in England and Wales have fallen from 480,000 a year in the early 1970s to 236,000 in 2022 &mdash; a 50-year low, with a crude marriage rate of 7.7 per 1,000 population against 14.5 in 1972. The counterpart is the rise of cohabitation: approximately 4.2 million cohabiting couples now live together, more than double the figure two decades ago, making cohabitation the fastest-growing family type. Around 40% of cohabiting couples have dependent children, and average relationship duration has lengthened, challenging the assumption that cohabitation is merely a precursor to marriage. Civil ceremonies now dominate as Church of England weddings have fallen to under 10% of all weddings. Marriage rates remain significantly higher among graduates and homeowners than among those in rented accommodation or precarious employment, meaning marriage has become increasingly associated with affluence as its overall prevalence has fallen.</p>
             <p>The most significant gap is legal. Unlike Scotland and most of Europe, cohabiting couples in England and Wales have no automatic rights to inherit, claim pension benefits, or access financial remedies on separation, regardless of how long they have lived together. The &ldquo;common law marriage&rdquo; myth &mdash; the widely held but entirely false belief that cohabitation confers legal protections &mdash; leaves millions of people, disproportionately women with caring responsibilities and lower individual incomes, financially exposed on relationship breakdown or bereavement. The Law Commission recommended reform in 2007. No legislation has followed in nearly two decades.</p>
           </div>
         </section>
@@ -96,8 +96,7 @@ export default function MarriageCohabitationTrendsPage() {
               polarity="up-is-bad"
               changeText="50-year low &middot; back to 2019 level after COVID"
               sparklineData={[244, 243, 247, 249, 245, 236, 169, 218, 236]}
-              onExpand={() => {}}
-              source="ONS &middot; Marriages in England and Wales 2022"
+              href="#sec-chart"source="ONS &middot; Marriages in England and Wales 2022"
             />
             <MetricCard
               label="Cohabiting couples"
@@ -107,8 +106,7 @@ export default function MarriageCohabitationTrendsPage() {
               polarity="up-is-good"
               changeText="fastest-growing family type &middot; but fewer legal protections"
               sparklineData={[2.1, 2.9, 3.2, 3.4, 3.6, 3.8, 3.9, 4.0, 4.2]}
-              onExpand={() => {}}
-              source="ONS &middot; Families and Households 2022"
+              href="#sec-chart"source="ONS &middot; Families and Households 2022"
             />
             <MetricCard
               label="Marriages per 1,000"
@@ -118,8 +116,7 @@ export default function MarriageCohabitationTrendsPage() {
               polarity="up-is-good"
               changeText="vs 14.5 in 1972 &middot; long secular decline"
               sparklineData={[10.2, 9.8, 9.4, 9.0, 8.5, 7.7]}
-              onExpand={() => {}}
-              source="ONS &middot; 2022"
+              href="#sec-chart"source="ONS &middot; 2022"
             />
           </div>
         </ScrollReveal>

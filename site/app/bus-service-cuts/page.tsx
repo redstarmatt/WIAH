@@ -81,8 +81,7 @@ export default function BusServiceCutsPage() {
               polarity={'up-is-good' as const}
               changeText="-40% since 2010 &middot; 3,000 villages with no service"
               sparklineData={[100, 97, 94, 91, 88, 85, 80, 76, 72]}
-              onExpand={() => {}}
-              source="DfT &middot; Bus Statistics Annual Report 2024"
+              href="#sec-chart"source="DfT &middot; Bus Statistics Annual Report 2024"
             />
             <MetricCard
               label="Bus routes cut 2010&ndash;2024"
@@ -92,8 +91,7 @@ export default function BusServiceCutsPage() {
               polarity={'up-is-bad' as const}
               changeText="Cumulative cuts over 14 years"
               sparklineData={[200, 500, 900, 1300, 1700, 2100, 2600, 3200, 3780]}
-              onExpand={() => {}}
-              source="Campaign for Better Transport &middot; Bus Report 2024"
+              href="#sec-chart"source="Campaign for Better Transport &middot; Bus Report 2024"
             />
             <MetricCard
               label="Annual bus passenger journeys"
@@ -103,8 +101,7 @@ export default function BusServiceCutsPage() {
               polarity={'up-is-good' as const}
               changeText="Down from 5bn peak &middot; 30-year low"
               sparklineData={[4.2, 4.1, 3.9, 3.8, 3.7, 1.8, 2.9, 3.1, 3.2]}
-              onExpand={() => {}}
-              source="DfT &middot; Bus Statistics Annual Report 2024"
+              href="#sec-chart"source="DfT &middot; Bus Statistics Annual Report 2024"
             />
           </div>
         </ScrollReveal>

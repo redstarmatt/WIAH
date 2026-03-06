@@ -97,8 +97,7 @@ export default function TransportCostPovertyPage() {
               polarity="up-is-bad"
               changeText="since 2010 &middot; affordability gap growing"
               sparklineData={[100, 111, 119, 126, 136, 140, 141, 143, 148, 154]}
-              onExpand={() => {}}
-              source="ORR / ONS &middot; Rail Fares Index 2023"
+              href="#sec-chart"source="ORR / ONS &middot; Rail Fares Index 2023"
             />
             <MetricCard
               label="Rural bus routes"
@@ -108,8 +107,7 @@ export default function TransportCostPovertyPage() {
               polarity="up-is-good"
               changeText="halved since 2010 &middot; 16k to 8.2k routes cut"
               sparklineData={[16000, 14000, 12500, 11000, 10000, 9200, 8600, 8200]}
-              onExpand={() => {}}
-              source="DfT &middot; Bus Statistics 2023"
+              href="#sec-chart"source="DfT &middot; Bus Statistics 2023"
             />
             <MetricCard
               label="Transport poverty rate"
@@ -119,8 +117,7 @@ export default function TransportCostPovertyPage() {
               polarity="up-is-bad"
               changeText="rural car-free households spending >20% of income"
               sparklineData={[18, 19, 19, 20, 20]}
-              onExpand={() => {}}
-              source="Campaign for Better Transport &middot; 2023"
+              href="#sec-chart"source="Campaign for Better Transport &middot; 2023"
             />
           </div>
         </ScrollReveal>

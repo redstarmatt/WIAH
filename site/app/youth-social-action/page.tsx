@@ -79,8 +79,7 @@ export default function YouthSocialActionPage() {
               changeText="Down from 46% in 2010 · pandemic accelerated"
               sparklineData={[42, 41, 40, 39, 38, 36, 34, 33, 34]}
               source="DCMS · Community Life Survey 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="16-25s doing regular volunteering"
               value="3.2m"
@@ -89,8 +88,7 @@ export default function YouthSocialActionPage() {
               changeText="3.2m regular volunteers · 600k fewer than 2010"
               sparklineData={[3.8, 3.7, 3.6, 3.5, 3.4, 3.2, 3.0, 3.0, 3.2]}
               source="NCVO · UK Civil Society Almanac 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Youth social enterprise employment"
               value="840,000"
@@ -99,8 +97,7 @@ export default function YouthSocialActionPage() {
               changeText="+120k since 2019 · alternative civic pathway"
               sparklineData={[580, 600, 630, 660, 680, 700, 720, 780, 840]}
               source="Social Enterprise UK · State of Social Enterprise 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

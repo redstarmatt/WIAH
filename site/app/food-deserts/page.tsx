@@ -107,8 +107,7 @@ export default function FoodDesertsPage() {
               changeText="2023 estimate &middot; Live more than 1 mile from supermarket &middot; No access to a car"
               source="Consumer Data Research Centre"
               sparklineData={accessSparkline}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Supermarkets per 100,000 in most deprived areas"
               value="2.8"
@@ -116,8 +115,7 @@ export default function FoodDesertsPage() {
               polarity="up-is-good"
               changeText="vs 6.1 in least deprived &middot; 5x gap between richest and poorest areas"
               source="ONS &amp; Consumer Data Research Centre"
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
             <MetricCard
               label="Premium charged by convenience stores vs supermarkets"
               value="15%"
@@ -125,8 +123,7 @@ export default function FoodDesertsPage() {
               polarity="up-is-bad"
               changeText="Average markup on equivalent groceries &middot; Higher for fresh produce"
               source="Which? Consumer Research"
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
           </div>
         </section>
 

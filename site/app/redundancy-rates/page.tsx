@@ -57,7 +57,7 @@ export default function RedundancyRatesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Collective redundancy notifications for 2024 totalled approximately 175,000 proposed job losses &mdash; the highest since the pandemic &mdash; following the October 2023 announcement and April 2024 implementation of employer National Insurance contribution increases combined with a significant National Living Wage rise. Retail and hospitality, the two sectors most exposed to rising employer NIC costs and higher minimum wage floors, account for approximately 31&percnt; of all notifications. These are sectors with thin margins, high labour intensity, and limited ability to absorb cost increases through productivity gains or price rises. The redundancy rate per 1,000 employees reached 4.1 in 2024, up from around 2.9 in 2023 and approaching 2020 pandemic levels.</p>
+            <p>Collective redundancy notifications for 2024 totalled approximately 175,000 proposed job losses &mdash; the highest since the pandemic &mdash; following the October 2023 announcement and April 2024 implementation of employer National Insurance contribution increases combined with a significant National Living Wage rise. Retail and hospitality, the two sectors most exposed to rising employer NIC costs and higher minimum wage floors, account for approximately 31% of all notifications. These are sectors with thin margins, high labour intensity, and limited ability to absorb cost increases through productivity gains or price rises. The redundancy rate per 1,000 employees reached 4.1 in 2024, up from around 2.9 in 2023 and approaching 2020 pandemic levels.</p>
             <p>Redundancy is not evenly distributed geographically. Northern England, the Midlands, and coastal communities &mdash; where retail, hospitality, and labour-intensive manufacturing form a larger share of local employment &mdash; see higher redundancy rates per capita than London and the South East. In areas with limited alternative employment, redundancy translates more directly into long-term worklessness. Approximately 600,000 more people are economically inactive than pre-pandemic trends would predict, concentrated among older workers and those with long-term health conditions; some workers made redundant are re-entering inactivity rather than unemployment, meaning headline unemployment figures understate the true degree of labour market slack.</p>
           </div>
         </section>
@@ -78,8 +78,7 @@ export default function RedundancyRatesPage() {
               polarity={'up-is-bad' as const}
               changeText="+45k on 2023 · highest since pandemic"
               sparklineData={[70, 75, 72, 80, 85, 130, 82, 88, 175]}
-              onExpand={() => {}}
-              source="Insolvency Service · HR1 Notifications 2024"
+              href="#sec-chart"source="Insolvency Service · HR1 Notifications 2024"
             />
             <MetricCard
               label="Redundancy rate per 1,000 employees"
@@ -89,8 +88,7 @@ export default function RedundancyRatesPage() {
               polarity={'up-is-bad' as const}
               changeText="+1.2 since 2023 · approaching 2020 levels"
               sparklineData={[3.2, 3.1, 3.0, 3.3, 3.4, 5.1, 2.9, 2.9, 4.1]}
-              onExpand={() => {}}
-              source="ONS · Labour Force Survey 2024"
+              href="#sec-chart"source="ONS · Labour Force Survey 2024"
             />
             <MetricCard
               label="Retail &amp; hospitality share"
@@ -100,8 +98,7 @@ export default function RedundancyRatesPage() {
               polarity={'up-is-bad' as const}
               changeText="31% of all 2024 notifications in two sectors"
               sparklineData={[21, 22, 22, 23, 24, 28, 22, 23, 31]}
-              onExpand={() => {}}
-              source="Insolvency Service · HR1 Notifications 2024"
+              href="#sec-chart"source="Insolvency Service · HR1 Notifications 2024"
             />
           </div>
         </ScrollReveal>

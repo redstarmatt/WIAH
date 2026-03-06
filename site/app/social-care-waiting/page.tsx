@@ -76,8 +76,7 @@ export default function SocialCareWaitingPage() {
               changeText="Up from 298,000 in 2019 &middot; NHS discharge delays compound problem"
               sparklineData={[298, 340, 380, 410, 415]}
               source="ADASS Autumn Survey &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-waiting"/>
             <MetricCard
               label="Waiting more than 6 months"
               value="33"
@@ -87,8 +86,7 @@ export default function SocialCareWaitingPage() {
               changeText="Up from 25% in 2020 &middot; assessment teams chronically understaffed"
               sparklineData={[25, 28, 31, 33]}
               source="ADASS &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-waiting"/>
             <MetricCard
               label="Estimated unmet social care need"
               value="1.5m"
@@ -98,8 +96,7 @@ export default function SocialCareWaitingPage() {
               changeText="People not receiving care they need &middot; &lsquo;hidden&rsquo; care crisis"
               sparklineData={[1.1, 1.2, 1.3, 1.4, 1.5]}
               source="NHS Confederation / Age UK estimates &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-waiting"/>
           </div>
         </ScrollReveal>
 

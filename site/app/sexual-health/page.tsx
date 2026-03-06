@@ -95,8 +95,8 @@ export default function SexualHealthPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England diagnoses over 430,000 new STIs each year, with gonorrhoea and syphilis surging to levels not seen since the 1970s while chlamydia diagnoses have fallen. The infrastructure for managing sexual health has been systematically reduced: since commissioning transferred to local authorities in 2013, specialist clinics fell from 297 to 176 &mdash; a 41&percnt; reduction &mdash; and the public health grant funding them has been cut over 25&percnt; in real terms since 2015. Online testing grew from fewer than 200,000 orders in 2016 to over 3.5 million in 2024, partially compensating for clinic closures for asymptomatic cases but not for those needing physical examination or complex care. New HIV diagnoses have fallen 35&percnt; since 2014, driven by PrEP, treatment as prevention, and expanded testing &mdash; a genuine success &mdash; though late diagnosis still accounts for 42&percnt; of new cases. The under-18 conception rate fell from 42 per 1,000 in 2007 to 14 per 1,000 in 2022 &mdash; the lowest on record and one of the longest-running positive trends in UK public health.</p>
-            <p>The burden is not evenly distributed. Young people aged 15&ndash;24 account for nearly half of all STI diagnoses despite representing 12&percnt; of the population; Black ethnic groups have chlamydia and gonorrhoea rates two to three times the national average; men who have sex with men face disproportionate rates of syphilis and gonorrhoea. These disparities reflect both structural barriers to access and the consequences of targeted screening programmes that have been scaled back. Rural populations face clinic waits significantly longer than urban areas, and the growing antibiotic resistance in gonorrhoea poses a risk that falls most heavily on those with the fewest alternative testing or treatment options.</p>
+            <p>England diagnoses over 430,000 new STIs each year, with gonorrhoea and syphilis surging to levels not seen since the 1970s while chlamydia diagnoses have fallen. The infrastructure for managing sexual health has been systematically reduced: since commissioning transferred to local authorities in 2013, specialist clinics fell from 297 to 176 &mdash; a 41% reduction &mdash; and the public health grant funding them has been cut over 25% in real terms since 2015. Online testing grew from fewer than 200,000 orders in 2016 to over 3.5 million in 2024, partially compensating for clinic closures for asymptomatic cases but not for those needing physical examination or complex care. New HIV diagnoses have fallen 35% since 2014, driven by PrEP, treatment as prevention, and expanded testing &mdash; a genuine success &mdash; though late diagnosis still accounts for 42% of new cases. The under-18 conception rate fell from 42 per 1,000 in 2007 to 14 per 1,000 in 2022 &mdash; the lowest on record and one of the longest-running positive trends in UK public health.</p>
+            <p>The burden is not evenly distributed. Young people aged 15&ndash;24 account for nearly half of all STI diagnoses despite representing 12% of the population; Black ethnic groups have chlamydia and gonorrhoea rates two to three times the national average; men who have sex with men face disproportionate rates of syphilis and gonorrhoea. These disparities reflect both structural barriers to access and the consequences of targeted screening programmes that have been scaled back. Rural populations face clinic waits significantly longer than urban areas, and the growing antibiotic resistance in gonorrhoea poses a risk that falls most heavily on those with the fewest alternative testing or treatment options.</p>
           </div>
         </section>
 
@@ -117,8 +117,7 @@ export default function SexualHealthPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Returned to pre-COVID levels &middot; Gonorrhoea &amp; syphilis surging"
               sparklineData={[436, 435, 420, 423, 449, 468, 318, 389, 401, 416, 432]}
-              onExpand={() => {}}
-            />
+              href="#sec-sti"/>
             <MetricCard
               label="Sexual health clinics remaining"
               value="176"
@@ -126,8 +125,7 @@ export default function SexualHealthPage() {
               polarity="up-is-good"
               changeText="2024 &middot; Down from 297 in 2014 &middot; 41% reduction in a decade"
               sparklineData={[297, 285, 264, 241, 228, 218, 209, 198, 189, 182, 176]}
-              onExpand={() => {}}
-            />
+              href="#sec-clinics"/>
             <MetricCard
               label="Gonorrhoea rate"
               value="124"
@@ -136,8 +134,7 @@ export default function SexualHealthPage() {
               polarity="up-is-bad"
               changeText="2024 &middot; Nearly doubled since 2014 &middot; Antibiotic resistance growing"
               sparklineData={[67, 73, 65, 78, 99, 110, 73, 96, 113, 118, 124]}
-              onExpand={() => {}}
-            />
+              href="#sec-gonorrhoea"/>
           </div>
         </ScrollReveal>
 

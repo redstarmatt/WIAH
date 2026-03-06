@@ -69,8 +69,8 @@ export default function SmartMeterRolloutPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK smart meter rollout &mdash; the largest energy infrastructure programme since the National Grid &mdash; began in 2012 with a target of universal installation by 2020, revised first to 2024, then 2025. By March 2024, approximately 35.7 million smart meters had been installed, covering 57&percnt; of eligible meters. The first-generation SMETS1 meters, installed between 2014 and 2018, used proprietary communications tied to the original supplier: when a customer switched, the meter lost its smart capability and reverted to a standard &ldquo;dumb&rdquo; meter. An estimated 8.9 million SMETS1 meters remain in dumb mode as of 2024 &mdash; 25&percnt; of all installed devices &mdash; despite an ongoing remote enrolment programme into the national DCC network. DESNZ targets 80&percnt; installation coverage by 2025 and 90&percnt; by 2030, but achieving this requires resolving the SMETS1 backlog, overcoming consumer opt-outs (5&ndash;10&percnt; of contacted households), and reaching hard-to-serve properties in rural and multiple-occupancy buildings.</p>
-            <p>The economic case for smart meters rests on system-level benefits that only materialise at scale. A working smart meter with an in-home display saves the average household an estimated &pound;87 per year through behaviour change and accurate billing. But the larger prize is demand-side flexibility: shifting electricity consumption to periods of high renewable generation and low grid stress, which becomes critical as intermittent renewables approach 50&ndash;70&percnt; of the generation mix. Every meter stuck in dumb mode is infrastructure that cannot participate in that transition, undermining the &pound;13 billion programme&apos;s purpose and delaying the grid balancing the net zero transition depends on.</p>
+            <p>The UK smart meter rollout &mdash; the largest energy infrastructure programme since the National Grid &mdash; began in 2012 with a target of universal installation by 2020, revised first to 2024, then 2025. By March 2024, approximately 35.7 million smart meters had been installed, covering 57% of eligible meters. The first-generation SMETS1 meters, installed between 2014 and 2018, used proprietary communications tied to the original supplier: when a customer switched, the meter lost its smart capability and reverted to a standard &ldquo;dumb&rdquo; meter. An estimated 8.9 million SMETS1 meters remain in dumb mode as of 2024 &mdash; 25% of all installed devices &mdash; despite an ongoing remote enrolment programme into the national DCC network. DESNZ targets 80% installation coverage by 2025 and 90% by 2030, but achieving this requires resolving the SMETS1 backlog, overcoming consumer opt-outs (5&ndash;10% of contacted households), and reaching hard-to-serve properties in rural and multiple-occupancy buildings.</p>
+            <p>The economic case for smart meters rests on system-level benefits that only materialise at scale. A working smart meter with an in-home display saves the average household an estimated &pound;87 per year through behaviour change and accurate billing. But the larger prize is demand-side flexibility: shifting electricity consumption to periods of high renewable generation and low grid stress, which becomes critical as intermittent renewables approach 50&ndash;70% of the generation mix. Every meter stuck in dumb mode is infrastructure that cannot participate in that transition, undermining the &pound;13 billion programme&apos;s purpose and delaying the grid balancing the net zero transition depends on.</p>
           </div>
         </section>
 
@@ -90,8 +90,7 @@ export default function SmartMeterRolloutPage() {
               polarity={'up-is-good' as const}
               changeText="35.7m &middot; 57% of all meters in Britain"
               sparklineData={[5.1, 8.2, 12.0, 16.3, 21.0, 24.5, 27.8, 31.0, 35.7]}
-              onExpand={() => {}}
-              source="DESNZ &middot; Smart Meters Statistical Release 2024"
+              href="#sec-chart"source="DESNZ &middot; Smart Meters Statistical Release 2024"
             />
             <MetricCard
               label="Meters in &lsquo;dumb mode&rsquo;"
@@ -101,8 +100,7 @@ export default function SmartMeterRolloutPage() {
               polarity={'up-is-bad' as const}
               changeText="25% of installed not communicating"
               sparklineData={[2.0, 4.1, 7.8, 10.2, 11.5, 12.0, 11.0, 10.0, 8.9]}
-              onExpand={() => {}}
-              source="DESNZ &middot; Smart Meters Statistical Release 2024"
+              href="#sec-chart"source="DESNZ &middot; Smart Meters Statistical Release 2024"
             />
             <MetricCard
               label="Estimated annual saving (working)"
@@ -112,8 +110,7 @@ export default function SmartMeterRolloutPage() {
               polarity={'up-is-good' as const}
               changeText="&pound;87/yr avg when meter working properly"
               sparklineData={[45, 50, 55, 60, 65, 70, 75, 80, 87]}
-              onExpand={() => {}}
-              source="DESNZ &middot; Smart Meter Impact Assessment 2024"
+              href="#sec-chart"source="DESNZ &middot; Smart Meter Impact Assessment 2024"
             />
           </div>
         </ScrollReveal>

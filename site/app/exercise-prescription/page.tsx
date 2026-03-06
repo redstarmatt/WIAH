@@ -63,7 +63,7 @@ export default function ExercisePrescriptionPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Physical activity referral schemes &mdash; exercise on prescription &mdash; have grown from 290,000 referrals in 2018 to 680,000 in 2024, a 134&percnt; increase. The evidence base is robust: a Cochrane review found significant improvements in activity levels at 12 months with benefits for depression, anxiety, cardiovascular risk, and weight management, and NICE recommends these interventions for conditions where exercise is at least as effective as medication. Completion rates have reached 65&percnt;, up from below 50&percnt; in earlier schemes, against a target of 75&percnt;. The economic case is compelling: a 12-week exercise referral programme costs approximately &pound;160 per person versus &pound;480 for a year of antidepressant medication. Despite this, many GPs still default to medication, partly because prescribing is faster and partly because referral schemes are not consistently available or well-known.</p>
+            <p>Physical activity referral schemes &mdash; exercise on prescription &mdash; have grown from 290,000 referrals in 2018 to 680,000 in 2024, a 134% increase. The evidence base is robust: a Cochrane review found significant improvements in activity levels at 12 months with benefits for depression, anxiety, cardiovascular risk, and weight management, and NICE recommends these interventions for conditions where exercise is at least as effective as medication. Completion rates have reached 65%, up from below 50% in earlier schemes, against a target of 75%. The economic case is compelling: a 12-week exercise referral programme costs approximately &pound;160 per person versus &pound;480 for a year of antidepressant medication. Despite this, many GPs still default to medication, partly because prescribing is faster and partly because referral schemes are not consistently available or well-known.</p>
             <p>The expansion is a genuine success story of NHS preventive medicine, but provision remains patchy and under-systematised. Scheme availability varies significantly across England, with better provision where local authorities and NHS commissioners have invested in leisure infrastructure and community health partnerships. There is no national registry of schemes, no consistent quality standard, and referral pathways are inconsistent. Schemes delivering sessions in community settings with accessible timing achieve higher completion rates than those based in commercial leisure centres &mdash; meaning the design of provision matters as much as the quantity, and the areas with fewest resources tend to run the least accessible schemes.</p>
           </div>
         </section>
@@ -85,8 +85,7 @@ export default function ExercisePrescriptionPage() {
               polarity="up-is-good"
               changeText="Up 134% since 2018 &middot; NICE recommended"
               sparklineData={[290, 340, 210, 420, 560, 620, 680]}
-              onExpand={() => {}}
-              source="Sport England / NHS England &middot; 2024"
+              href="#sec-chart"source="Sport England / NHS England &middot; 2024"
             />
             <MetricCard
               label="Programme completion rate"
@@ -96,8 +95,7 @@ export default function ExercisePrescriptionPage() {
               polarity="up-is-good"
               changeText="Improving &middot; target 75%"
               sparklineData={[54, 56, 49, 58, 61, 63, 65]}
-              onExpand={() => {}}
-              source="Sport England &middot; Exercise Referral 2024"
+              href="#sec-callout"source="Sport England &middot; Exercise Referral 2024"
             />
             <MetricCard
               label="Cost vs medication"
@@ -107,8 +105,7 @@ export default function ExercisePrescriptionPage() {
               polarity="up-is-bad"
               changeText="vs £480 antidepressant &middot; 3x cheaper"
               sparklineData={[155, 157, 158, 159, 159, 160, 160]}
-              onExpand={() => {}}
-              source="NHS England &middot; Cost Analysis 2024"
+              href="#sec-callout"source="NHS England &middot; Cost Analysis 2024"
             />
           </div>
         </ScrollReveal>

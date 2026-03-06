@@ -64,7 +64,7 @@ export default function SharedParentalLeavePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Shared parental leave was introduced in April 2015 with the ambition of transforming the gender dynamics of childcare. Nearly a decade later, just 3.6&percnt; of eligible fathers take it &mdash; up from 1&percnt; in the first year, but far below the rates seen in Sweden, Norway, and Iceland. The fundamental barrier is financial: statutory shared parental pay is &pound;184.03 per week, meaning a father earning the median male wage of around &pound;700 per week accepts a 75&percnt; pay cut to take leave. Enhanced pay exists at some employers but is concentrated in larger, higher-paying organisations. Cultural barriers compound the financial ones &mdash; informal discouragement, career risk perceptions, and peer norms make leave-taking socially costly for men in manual occupations and small businesses in ways that surveys alone cannot capture. Countries with the highest take-up &mdash; Sweden, Norway, Iceland &mdash; use non-transferable &ldquo;daddy months&rdquo; at 80&ndash;90&percnt; pay replacement: the UK system has neither.</p>
+            <p>Shared parental leave was introduced in April 2015 with the ambition of transforming the gender dynamics of childcare. Nearly a decade later, just 3.6% of eligible fathers take it &mdash; up from 1% in the first year, but far below the rates seen in Sweden, Norway, and Iceland. The fundamental barrier is financial: statutory shared parental pay is &pound;184.03 per week, meaning a father earning the median male wage of around &pound;700 per week accepts a 75% pay cut to take leave. Enhanced pay exists at some employers but is concentrated in larger, higher-paying organisations. Cultural barriers compound the financial ones &mdash; informal discouragement, career risk perceptions, and peer norms make leave-taking socially costly for men in manual occupations and small businesses in ways that surveys alone cannot capture. Countries with the highest take-up &mdash; Sweden, Norway, Iceland &mdash; use non-transferable &ldquo;daddy months&rdquo; at 80&ndash;90% pay replacement: the UK system has neither.</p>
             <p>The gender pay gap widens sharply at the point of childbirth and does not recover, because mothers take almost all the leave and fathers do not. Women with children earn substantially less than women without, and the gap grows through their careers. Low paternal involvement in early childcare also has documented consequences for child development: early paternal engagement is associated with better cognitive and emotional outcomes, particularly for boys. The consequence of a policy that is financially prohibitive for most fathers is that these benefits remain unavailable to the majority, and the structural drivers of the gender pay gap remain in place.</p>
           </div>
         </section>
@@ -85,8 +85,7 @@ export default function SharedParentalLeavePage() {
               polarity="up-is-good"
               changeText="tripled since 2015 &middot; but still tiny"
               sparklineData={[1.0, 1.5, 2.0, 2.5, 2.8, 2.9, 3.1, 3.4, 3.6]}
-              onExpand={() => {}}
-              source="HMRC &middot; Shared Parental Leave Statistics 2023"
+              href="#sec-chart"source="HMRC &middot; Shared Parental Leave Statistics 2023"
             />
             <MetricCard
               label="Fathers taking nothing"
@@ -96,8 +95,7 @@ export default function SharedParentalLeavePage() {
               polarity="up-is-bad"
               changeText="78% take no leave at all beyond 2 weeks"
               sparklineData={[80, 80, 79, 79, 79, 78, 78, 78, 78]}
-              onExpand={() => {}}
-              source="TUC &middot; Parental Leave Survey 2023"
+              href="#sec-chart"source="TUC &middot; Parental Leave Survey 2023"
             />
             <MetricCard
               label="Statutory pay"
@@ -107,8 +105,7 @@ export default function SharedParentalLeavePage() {
               polarity="up-is-good"
               changeText="same as 2015 in nominal terms &middot; real cut &middot; too low for primary earners"
               sparklineData={[139, 140, 145, 148, 151, 156, 172, 156, 184]}
-              onExpand={() => {}}
-              source="DWP &middot; Statutory Payment Rates 2024"
+              href="#sec-chart"source="DWP &middot; Statutory Payment Rates 2024"
             />
           </div>
         </ScrollReveal>

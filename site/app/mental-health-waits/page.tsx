@@ -103,8 +103,8 @@ export default function MentalHealthWaitsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England&apos;s NHS mental health waiting lists stood at 1.8 million in early 2024, up 38&percnt; since 2019. One in five children under 18 now has a probable mental health disorder against one in nine in 2017 &mdash; a shift with no obvious precedent in modern public health data. Parliament legislated for parity of esteem between mental and physical health in 2012; in practice the 18-week standard applied routinely to elective surgery is met only by Talking Therapies for mild-to-moderate anxiety and depression. CAMHS waits in some trusts exceed two years. NHS mental health spending rose from &pound;12.1bn to &pound;15.2bn between 2016 and 2023, but rising prevalence, referral rates, and complexity have outpaced investment &mdash; more money has bought more activity without closing the gap between need and provision.</p>
-            <p>Children and young people bear the sharpest burden. The eating disorders emergency target &mdash; treatment within four weeks of urgent referral for under-18s &mdash; is frequently missed, with compliance well below the 95&percnt; standard in the worst-performing regions. A&amp;E presentations for under-18 mental health crises have risen sharply since 2019 as hospitals become the default intervention when community services fail to respond in time. The 1.8 million figure counts only those accepted onto a pathway; it excludes those turned away at triage, those whose GPs judged referral unlikely to succeed, and the many who never sought help at all.</p>
+            <p>England&apos;s NHS mental health waiting lists stood at 1.8 million in early 2024, up 38% since 2019. One in five children under 18 now has a probable mental health disorder against one in nine in 2017 &mdash; a shift with no obvious precedent in modern public health data. Parliament legislated for parity of esteem between mental and physical health in 2012; in practice the 18-week standard applied routinely to elective surgery is met only by Talking Therapies for mild-to-moderate anxiety and depression. CAMHS waits in some trusts exceed two years. NHS mental health spending rose from &pound;12.1bn to &pound;15.2bn between 2016 and 2023, but rising prevalence, referral rates, and complexity have outpaced investment &mdash; more money has bought more activity without closing the gap between need and provision.</p>
+            <p>Children and young people bear the sharpest burden. The eating disorders emergency target &mdash; treatment within four weeks of urgent referral for under-18s &mdash; is frequently missed, with compliance well below the 95% standard in the worst-performing regions. A&amp;E presentations for under-18 mental health crises have risen sharply since 2019 as hospitals become the default intervention when community services fail to respond in time. The 1.8 million figure counts only those accepted onto a pathway; it excludes those turned away at triage, those whose GPs judged referral unlikely to succeed, and the many who never sought help at all.</p>
           </div>
         </section>
 
@@ -133,8 +133,7 @@ export default function MentalHealthWaitsPage() {
               data ? sparkFrom(data.waitingList.map(d => d.waiting / 1000000)) : []
             }
             source="NHS England · Mental Health Services Data, 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="Average CAMHS wait (children)"
             value="18"
@@ -144,8 +143,7 @@ export default function MentalHealthWaitsPage() {
             changeText="Some areas 3+ years"
             sparklineData={[18, 17, 16, 15, 14, 13, 12, 13, 14, 18]}
             source="NHS England · CAMHS Waiting Times, 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-waiting-list"/>
           <MetricCard
             label="IAPT 18-week target met"
             value={latestIAPT ? latestIAPT.pct18wk.toString() : '—'}
@@ -157,8 +155,7 @@ export default function MentalHealthWaitsPage() {
               data ? sparkFrom(data.iaptCompliance.map(d => d.pct18wk)) : []
             }
             source="NHS England · IAPT Performance, 2023"
-            onExpand={() => {}}
-          />
+            href="#sec-iapt"/>
         </div>
         </ScrollReveal>
 

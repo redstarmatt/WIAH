@@ -58,7 +58,7 @@ export default function PostgraduateFundingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Postgraduate master&apos;s loans were introduced in 2016 and doctoral loans in 2018, allowing students to access government-backed funding repaid through the income-contingent loan system alongside undergraduate repayments. The policy expanded access, but the interaction between the two loan plans creates an acute marginal tax problem: a graduate on &pound;40,000 per year with both Plan 2 undergraduate and postgraduate loans faces a combined marginal effective tax rate &mdash; including income tax and National Insurance &mdash; of up to 67&ndash;68&percnt;. Postgraduate enrolments fell approximately 8&percnt; in 2023&ndash;24, concentrated among home students on taught master&apos;s programmes who are most exposed to this combined burden. UKRI doctoral stipends of approximately &pound;19,000 per year have also failed to keep pace with living costs, particularly in London and other high-cost cities.</p>
+            <p>Postgraduate master&apos;s loans were introduced in 2016 and doctoral loans in 2018, allowing students to access government-backed funding repaid through the income-contingent loan system alongside undergraduate repayments. The policy expanded access, but the interaction between the two loan plans creates an acute marginal tax problem: a graduate on &pound;40,000 per year with both Plan 2 undergraduate and postgraduate loans faces a combined marginal effective tax rate &mdash; including income tax and National Insurance &mdash; of up to 67&ndash;68%. Postgraduate enrolments fell approximately 8% in 2023&ndash;24, concentrated among home students on taught master&apos;s programmes who are most exposed to this combined burden. UKRI doctoral stipends of approximately &pound;19,000 per year have also failed to keep pace with living costs, particularly in London and other high-cost cities.</p>
             <p>The disincentive falls hardest on students from lower-income backgrounds, who are more likely to use the full loan facility and more sensitive to marginal effective tax rates when calculating whether postgraduate study is worth it. England&apos;s current structure &mdash; high fees stacked on top of existing undergraduate debt with no effective cap on combined repayment rates &mdash; is unusual among comparable countries and risks channelling advanced qualification into the hands of those who can afford not to borrow.</p>
           </div>
         </section>
@@ -79,8 +79,7 @@ export default function PostgraduateFundingPage() {
               changeText="UG + PG loans + income tax + NI combined"
               sparklineData={[55, 56, 58, 60, 61, 62, 63, 65, 68]}
               source="IFS · Graduate Repayment Analysis 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="PG applications declined 2023-24"
               value="-8%"
@@ -89,8 +88,7 @@ export default function PostgraduateFundingPage() {
               changeText="-8% taught PG applications · loan threshold effect"
               sparklineData={[0, 2, 4, 6, 5, 3, 2, 1, -8]}
               source="HESA · Higher Education Student Statistics 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Average combined graduate debt"
               value="£42,000"
@@ -99,8 +97,7 @@ export default function PostgraduateFundingPage() {
               changeText="+£14,000 since 2020 · combined UG+PG"
               sparklineData={[22000, 24000, 26000, 28000, 30000, 32000, 35000, 38000, 42000]}
               source="SLC · Student Loans Outstanding 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

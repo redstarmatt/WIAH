@@ -74,7 +74,7 @@ export default function RegionalPayPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The median full-time worker in London earned &pound;46,100 in 2023, against &pound;30,200 in the North East or Wales. The gap &mdash; &pound;15,900 per year &mdash; has grown from &pound;4,200 in 1997, nearly quadrupling in 26 years. Financial services, professional services, and technology have concentrated in London and the South East to a degree that has few parallels among comparable economies: the financial sector accounts for roughly 7&percnt; of UK economic output but is overwhelmingly based in one city. Agglomeration effects are self-reinforcing &mdash; the best-paid work gravitates to where talent is already concentrated, increasing productivity and wages further. Remote working after COVID offered brief optimism about pay geography shifting, but by 2023 the regional pay gap was as wide as it had ever been.</p>
+            <p>The median full-time worker in London earned &pound;46,100 in 2023, against &pound;30,200 in the North East or Wales. The gap &mdash; &pound;15,900 per year &mdash; has grown from &pound;4,200 in 1997, nearly quadrupling in 26 years. Financial services, professional services, and technology have concentrated in London and the South East to a degree that has few parallels among comparable economies: the financial sector accounts for roughly 7% of UK economic output but is overwhelmingly based in one city. Agglomeration effects are self-reinforcing &mdash; the best-paid work gravitates to where talent is already concentrated, increasing productivity and wages further. Remote working after COVID offered brief optimism about pay geography shifting, but by 2023 the regional pay gap was as wide as it had ever been.</p>
             <p>Adjusting for housing costs reduces but does not come close to equalising the gap, and workers outside London face constrained routes to wealth accumulation through property. London draws a much higher share of degree-level workers than any other region, sustaining a brain drain from northern and midland areas that have failed to develop equivalent productive local economies. The post-industrial communities of the North and Midlands bear the heaviest burden: decades of below-average wages compound into lower savings, lower pension wealth, and weaker public services funded by a narrower tax base.</p>
           </div>
         </section>
@@ -97,8 +97,7 @@ export default function RegionalPayPage() {
               changeText="53% above UK average of £35,400 · gap growing"
               sparklineData={[28000, 32000, 36000, 40000, 42000, 44000, 46100]}
               source="ONS ASHE · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="North East / Wales median pay"
               value={nePay ? `£${nePay.medianPay.toLocaleString()}` : '£30,200'}
@@ -108,8 +107,7 @@ export default function RegionalPayPage() {
               changeText="34% below UK average · gap to London is £15,900"
               sparklineData={[20000, 22000, 24000, 26000, 28000, 29000, 30200]}
               source="ONS ASHE · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-gap-trend"/>
             <MetricCard
               label="London–North East pay gap since 1997"
               value={latestGap ? `£${latestGap.londonMinusNE.toLocaleString()}` : '£15,900'}
@@ -119,8 +117,7 @@ export default function RegionalPayPage() {
               changeText="Was £4,200 in 1997 · gap nearly quadrupled in 26 years"
               sparklineData={[4200, 7800, 10500, 12400, 14100, 15900]}
               source="ONS ASHE historical"
-              onExpand={() => {}}
-            />
+              href="#sec-regions"/>
           </div>
         </ScrollReveal>
 

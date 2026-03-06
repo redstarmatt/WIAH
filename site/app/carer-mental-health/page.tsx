@@ -95,8 +95,7 @@ export default function CarerMentalHealthPage() {
               polarity={'up-is-bad' as const}
               changeText="+11pp since 2015"
               sparklineData={[61, 63, 64, 65, 66, 69, 70, 71, 72]}
-              onExpand={() => {}}
-              source="Carers UK &middot; State of Caring Survey"
+              href="#sec-chart"source="Carers UK &middot; State of Caring Survey"
             />
             <MetricCard
               label="Accessing professional support"
@@ -106,8 +105,7 @@ export default function CarerMentalHealthPage() {
               polarity={'up-is-good' as const}
               changeText="Down from 34% in 2015"
               sparklineData={[34, 32, 31, 30, 28, 26, 25, 25, 24]}
-              onExpand={() => {}}
-              source="Carers UK &middot; State of Caring Survey"
+              href="#sec-chart"source="Carers UK &middot; State of Caring Survey"
             />
             <MetricCard
               label="Full-time workers who quit to care"
@@ -117,8 +115,7 @@ export default function CarerMentalHealthPage() {
               polarity={'up-is-bad' as const}
               changeText="Mental health primary reason"
               sparklineData={[11, 11, 12, 12, 13, 14, 14, 14, 14]}
-              onExpand={() => {}}
-              source="Carers UK &middot; State of Caring Survey"
+              href="#sec-chart"source="Carers UK &middot; State of Caring Survey"
             />
           </div>
         </ScrollReveal>

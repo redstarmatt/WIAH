@@ -124,7 +124,7 @@ export default function RoughSleepingPage() {
 
           <section id="sec-context" className="max-w-2xl mt-4 mb-12">
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The autumn 2023 rough sleeping snapshot recorded 3,898 people sleeping rough in England &mdash; a 27&percnt; increase in a single year and the highest figure since the pandemic interrupted the series. The &ldquo;Everyone In&rdquo; scheme of March 2020 housed approximately 14,600 people within six weeks, demonstrating that rough sleeping is a policy problem rather than an intractable social condition &mdash; a lesson that housing charities argue has not been built upon. Section 21 no-fault evictions, which account for around a quarter of homelessness presentations to local authorities, continued at scale until the Renters Rights Act passed in spring 2025. Beyond rough sleeping, around 109,000 households &mdash; including approximately 140,000 children &mdash; were in statutory temporary accommodation in late 2023, many in bed-and-breakfast hotels where families share a single room for months.</p>
+              <p>The autumn 2023 rough sleeping snapshot recorded 3,898 people sleeping rough in England &mdash; a 27% increase in a single year and the highest figure since the pandemic interrupted the series. The &ldquo;Everyone In&rdquo; scheme of March 2020 housed approximately 14,600 people within six weeks, demonstrating that rough sleeping is a policy problem rather than an intractable social condition &mdash; a lesson that housing charities argue has not been built upon. Section 21 no-fault evictions, which account for around a quarter of homelessness presentations to local authorities, continued at scale until the Renters Rights Act passed in spring 2025. Beyond rough sleeping, around 109,000 households &mdash; including approximately 140,000 children &mdash; were in statutory temporary accommodation in late 2023, many in bed-and-breakfast hotels where families share a single room for months.</p>
               <p>The burden falls most heavily on people with the fewest options: those with mental illness, drug or alcohol dependency, histories in care, or recent release from prison. Hidden homelessness &mdash; sofa-surfing, overcrowded households, cars and tents &mdash; is several times larger than the visible rough sleeping count but not systematically measured. Temporary accommodation spending has consumed housing budgets that might otherwise fund prevention, and the children placed in B&amp;Bs experience disrupted schooling and instability whose long-term costs do not appear in any official homelessness statistic.</p>
             </div>
           </section>
@@ -151,8 +151,7 @@ export default function RoughSleepingPage() {
                   : []
               }
               source="MHCLG · Rough Sleeping Snapshot"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Households recognised as homeless (annual)"
               value={data?.national.homelessnessDecisions.latestThousands ? `${data.national.homelessnessDecisions.latestThousands}K` : '—'}
@@ -165,8 +164,7 @@ export default function RoughSleepingPage() {
                   : []
               }
               source="MHCLG · Statutory Homelessness Statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-rough"/>
             <MetricCard
               label="Households in temporary accommodation"
               value={data?.national.temporaryAccommodation.latestHouseholds ? `${(data.national.temporaryAccommodation.latestHouseholds / 1000).toFixed(0)}K` : '—'}
@@ -175,8 +173,7 @@ export default function RoughSleepingPage() {
               changeText="March 2023 &middot; Record high &middot; 131K children in temp accommodation &middot; Cost to councils: &pound;1.74bn/year"
               sparklineData={[70, 72, 74, 76, 78, 79, 80, 82, 88, 95, 104]}
               source="MHCLG · Homelessness Statistics"
-              onExpand={() => {}}
-            />
+              href="#sec-homeless"/>
           </div>
           </ScrollReveal>
 

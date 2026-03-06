@@ -81,8 +81,7 @@ export default function TravellerSiteProvisionPage() {
               polarity={'up-is-bad' as const}
               changeText="Growing gap &middot; inadequate local plan allocation"
               sparklineData={[3500, 3700, 3900, 4100, 4300, 4500, 4600, 4800, 5000]}
-              onExpand={() => {}}
-              source="Friends Families and Travellers &middot; Site Provision Analysis 2024"
+              href="#sec-chart"source="Friends Families and Travellers &middot; Site Provision Analysis 2024"
             />
             <MetricCard
               label="Traveller planning refusal rate"
@@ -92,8 +91,7 @@ export default function TravellerSiteProvisionPage() {
               polarity={'up-is-bad' as const}
               changeText="48% vs 21% for settled community applications"
               sparklineData={[46, 47, 47, 48, 49, 50, 48, 48, 48]}
-              onExpand={() => {}}
-              source="DLUHC &middot; Planning Application Statistics 2024"
+              href="#sec-chart"source="DLUHC &middot; Planning Application Statistics 2024"
             />
             <MetricCard
               label="Unauthorised encampments per year"
@@ -103,8 +101,7 @@ export default function TravellerSiteProvisionPage() {
               polarity={'up-is-bad' as const}
               changeText="Result of authorised provision shortage"
               sparklineData={[2400, 2500, 2600, 2700, 2800, 2900, 3000, 3100, 3200]}
-              onExpand={() => {}}
-              source="DLUHC &middot; Traveller Caravan Count 2024"
+              href="#sec-chart"source="DLUHC &middot; Traveller Caravan Count 2024"
             />
           </div>
         </ScrollReveal>

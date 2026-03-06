@@ -119,8 +119,7 @@ export default function StrokePage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Down from 47 in 2012 &middot; Improvement flattening"
               sparklineData={[47.2, 45.8, 44.1, 43.5, 42.0, 40.8, 40.1, 39.4, 42.6, 41.3, 40.9, 40.2]}
-              onExpand={() => {}}
-            />
+              href="#sec-mortality"/>
             <MetricCard
               label="Thrombolysis rate"
               value="11"
@@ -129,8 +128,7 @@ export default function StrokePage() {
               polarity="up-is-good"
               changeText="2023 &middot; Stalled for 5 years &middot; Target: higher than 20%"
               sparklineData={[9.8, 10.4, 11.1, 11.5, 11.8, 11.7, 11.3, 11.1, 10.6, 10.2, 10.8, 11.0]}
-              onExpand={() => {}}
-            />
+              href="#sec-treatment"/>
             <MetricCard
               label="Thrombectomy rate"
               value="3.8"
@@ -139,8 +137,7 @@ export default function StrokePage() {
               polarity="up-is-good"
               changeText="2023 &middot; Up from 1.2% in 2017 &middot; Target: 10% of ischaemic strokes"
               sparklineData={[1.2, 1.8, 2.4, 2.1, 2.9, 3.4, 3.8]}
-              onExpand={() => {}}
-            />
+              href="#sec-treatment"/>
           </div>
         </ScrollReveal>
 

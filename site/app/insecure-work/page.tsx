@@ -120,8 +120,7 @@ export default function InsecureWorkPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; 3.1% of workforce &middot; Up from 250K in 2013 &middot; 22% of accommodation &amp; food sector"
               sparklineData={[250, 580, 747, 903, 883, 789, 974, 886, 920, 1022, 1040]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Workers in insecure employment (total)"
               value="4.4M"
@@ -129,8 +128,7 @@ export default function InsecureWorkPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Zero-hours, temp &amp; agency &middot; 14% hourly pay penalty &middot; 3x more likely to be in poverty"
               sparklineData={[3.8, 3.9, 4.0, 4.1, 3.7, 3.9, 4.2, 4.4]}
-              onExpand={() => {}}
-            />
+              href="#sec-zerohours"/>
             <MetricCard
               label="National Living Wage (April 2024)"
               value="&pound;11.44"
@@ -138,8 +136,7 @@ export default function InsecureWorkPage() {
               polarity="up-is-good"
               changeText="Per hour &middot; Largest ever increase &middot; Employment Rights Bill: day-one rights for all workers &middot; Fire-and-rehire restrictions"
               sparklineData={[6.70, 7.20, 7.50, 7.83, 8.21, 8.72, 8.91, 9.50, 10.42, 11.44]}
-              onExpand={() => {}}
-            />
+              href="#sec-insecure"/>
           </div>
         </ScrollReveal>
 

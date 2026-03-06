@@ -61,7 +61,7 @@ export default function RetrofitInsulationPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has some of the oldest, least energy-efficient housing stock in Europe. Meeting the government&rsquo;s net zero pathway requires retrofitting approximately 2 million homes per year from the late 2020s onward; the current rate is around 250,000 &mdash; an eightfold shortfall. EPC ratings of A&ndash;C have risen from 38&percnt; of English homes in 2015 to 48&percnt; in 2023, driven by cavity wall insulation programmes and the Energy Company Obligation, but at this pace reaching the 80&percnt; target by 2035 would require acceleration that current programmes cannot deliver. Minimum EPC C requirements for the private rented sector were proposed and then dropped in 2023 amid landlord lobbying, leaving 4.5 million rented households in disproportionately poorly insulated homes. The average whole-house retrofit costs &pound;15,000&ndash;&pound;25,000, which most households cannot fund from savings, and a national retrofit financing mechanism remains absent.</p>
+            <p>The UK has some of the oldest, least energy-efficient housing stock in Europe. Meeting the government&rsquo;s net zero pathway requires retrofitting approximately 2 million homes per year from the late 2020s onward; the current rate is around 250,000 &mdash; an eightfold shortfall. EPC ratings of A&ndash;C have risen from 38% of English homes in 2015 to 48% in 2023, driven by cavity wall insulation programmes and the Energy Company Obligation, but at this pace reaching the 80% target by 2035 would require acceleration that current programmes cannot deliver. Minimum EPC C requirements for the private rented sector were proposed and then dropped in 2023 amid landlord lobbying, leaving 4.5 million rented households in disproportionately poorly insulated homes. The average whole-house retrofit costs &pound;15,000&ndash;&pound;25,000, which most households cannot fund from savings, and a national retrofit financing mechanism remains absent.</p>
             <p>The workforce challenge matches the funding gap: retrofitting 2 million homes per year requires an estimated 500,000 trained workers, against a current trained workforce of under 50,000. The burden of cold, expensive-to-heat homes falls hardest on private renters and low-income owner-occupiers, who cannot direct or fund improvements and face the highest energy bills as a share of income. An average household moving from EPC F to EPC C saves around &pound;1,300 per year &mdash; but ECO4 and the Great British Insulation Scheme fund only the lowest-income households, leaving the majority of the retrofit task unfunded at household level.</p>
           </div>
         </section>
@@ -82,8 +82,7 @@ export default function RetrofitInsulationPage() {
               polarity="up-is-good"
               changeText="Steady improvement &middot; target 80% by 2035"
               sparklineData={[38, 39, 40, 41, 42, 44, 45, 46, 48]}
-              onExpand={() => {}}
-              source="DESNZ &middot; Energy Performance of Buildings 2023"
+              href="#sec-chart"source="DESNZ &middot; Energy Performance of Buildings 2023"
             />
             <MetricCard
               label="Retrofits per year"
@@ -93,8 +92,7 @@ export default function RetrofitInsulationPage() {
               polarity="up-is-good"
               changeText="Need 2 million p/a for net zero &middot; 8x shortfall"
               sparklineData={[380, 360, 340, 310, 290, 250, 270, 250, 250]}
-              onExpand={() => {}}
-              source="DESNZ / National Infrastructure Commission &middot; 2023"
+              href="#sec-chart"source="DESNZ / National Infrastructure Commission &middot; 2023"
             />
             <MetricCard
               label="EPC F/G rated homes"
@@ -104,8 +102,7 @@ export default function RetrofitInsulationPage() {
               polarity="up-is-bad"
               changeText="Privately rented sector still worst performing"
               sparklineData={[20, 19, 18, 17, 16, 15, 14, 13, 12]}
-              onExpand={() => {}}
-              source="DESNZ &middot; Energy Performance of Buildings 2023"
+              href="#sec-chart"source="DESNZ &middot; Energy Performance of Buildings 2023"
             />
           </div>
         </ScrollReveal>

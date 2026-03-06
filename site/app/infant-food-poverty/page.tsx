@@ -83,8 +83,7 @@ export default function InfantFoodPovertyPage() {
               polarity="up-is-bad"
               changeText="+344% since 2018 &middot; cost of living crisis"
               sparklineData={[45, 62, 88, 120, 165, 200]}
-              onExpand={() => {}}
-              source="National Baby Bank Network &middot; 2023"
+              href="#sec-chart"source="National Baby Bank Network &middot; 2023"
             />
             <MetricCard
               label="Formula unaffordable"
@@ -94,8 +93,7 @@ export default function InfantFoodPovertyPage() {
               polarity="up-is-bad"
               changeText="1 in 3 low-income parents &middot; infant health impact"
               sparklineData={[18, 18, 20, 22, 28, 33]}
-              onExpand={() => {}}
-              source="First Steps Nutrition Trust &middot; 2023"
+              href="#sec-chart"source="First Steps Nutrition Trust &middot; 2023"
             />
             <MetricCard
               label="Breastfeeding at 6 weeks"
@@ -105,8 +103,7 @@ export default function InfantFoodPovertyPage() {
               polarity="up-is-bad"
               changeText="UK one of lowest in Europe &middot; support gap"
               sparklineData={[49, 49, 48, 48, 48, 48]}
-              onExpand={() => {}}
-              source="OHID &middot; Infant Feeding Statistics 2023"
+              href="#sec-chart"source="OHID &middot; Infant Feeding Statistics 2023"
             />
           </div>
         </ScrollReveal>

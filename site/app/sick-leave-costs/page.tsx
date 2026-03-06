@@ -78,7 +78,7 @@ export default function SickLeaveCostsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>British workers lost an estimated 185 million working days to sickness absence in 2023 &mdash; a 35&percnt; increase on 2015 and the highest level in a decade &mdash; at an economic cost of &pound;32 billion annually. Mental health conditions (anxiety and depression) now account for approximately 17&percnt; of all days lost, up from 11&percnt; in 2015, with pandemic-related trauma persisting well beyond the acute crisis. Musculoskeletal conditions remain the largest single category at around 22&percnt;. The most economically significant trend is the growth of long-term sickness inactivity: working-age people classified as economically inactive due to long-term sickness rose from 1.9 million in 2015 to 2.8 million in 2023 &mdash; a 47&percnt; increase &mdash; as an estimated 200,000&ndash;400,000 people are substantially limited by long COVID. People who leave the labour market entirely represent a permanent reduction in labour supply, with compounded fiscal impacts as they cease paying tax and National Insurance while drawing benefits.</p>
+            <p>British workers lost an estimated 185 million working days to sickness absence in 2023 &mdash; a 35% increase on 2015 and the highest level in a decade &mdash; at an economic cost of &pound;32 billion annually. Mental health conditions (anxiety and depression) now account for approximately 17% of all days lost, up from 11% in 2015, with pandemic-related trauma persisting well beyond the acute crisis. Musculoskeletal conditions remain the largest single category at around 22%. The most economically significant trend is the growth of long-term sickness inactivity: working-age people classified as economically inactive due to long-term sickness rose from 1.9 million in 2015 to 2.8 million in 2023 &mdash; a 47% increase &mdash; as an estimated 200,000&ndash;400,000 people are substantially limited by long COVID. People who leave the labour market entirely represent a permanent reduction in labour supply, with compounded fiscal impacts as they cease paying tax and National Insurance while drawing benefits.</p>
             <p>Occupational health access is deeply unequal: large employers in white-collar sectors are far more likely to offer structured return-to-work support than SMEs or manual sector employers. Workers in low-paid, physically demanding jobs are most likely to develop health conditions and least likely to have access to the occupational health, flexible working arrangements, or statutory sick pay levels that would enable recovery and return. The government&apos;s proposed reforms to statutory sick pay aim to address some of these gaps, but the distance between policy intent and workforce outcomes remains large.</p>
           </div>
         </section>
@@ -99,8 +99,7 @@ export default function SickLeaveCostsPage() {
               polarity="up-is-bad"
               changeText="35% more than 2015 &middot; mental health biggest cause"
               sparklineData={[137, 141, 141, 141, 146, 130, 155, 176, 185]}
-              onExpand={() => {}}
-              source="ONS / CIPD &middot; 2023"
+              href="#sec-chart"source="ONS / CIPD &middot; 2023"
             />
             <MetricCard
               label="Economic cost"
@@ -110,8 +109,7 @@ export default function SickLeaveCostsPage() {
               polarity="up-is-bad"
               changeText="Up from &pound;24bn in 2015 &middot; productivity + sick pay"
               sparklineData={[24, 25, 25, 25, 26, 23, 27, 30, 32]}
-              onExpand={() => {}}
-              source="Deloitte / ONS &middot; 2023"
+              href="#sec-chart"source="Deloitte / ONS &middot; 2023"
             />
             <MetricCard
               label="Long-term sick (economically inactive)"
@@ -121,8 +119,7 @@ export default function SickLeaveCostsPage() {
               polarity="up-is-bad"
               changeText="Up from 1.9m in 2015 &middot; mental health surge"
               sparklineData={[1.9, 1.9, 1.9, 1.9, 1.9, 2.0, 2.2, 2.5, 2.8]}
-              onExpand={() => {}}
-              source="ONS Labour Force Survey &middot; 2023"
+              href="#sec-chart"source="ONS Labour Force Survey &middot; 2023"
             />
           </div>
         </ScrollReveal>

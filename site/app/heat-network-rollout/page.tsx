@@ -50,7 +50,7 @@ export default function HeatNetworkRolloutPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Heat networks &mdash; systems that distribute heat from a central source through insulated pipes to multiple buildings &mdash; currently supply 2.8&percnt; of UK heat demand across approximately 16,000 networks serving 480,000 homes. The Climate Change Committee&rsquo;s Sixth Carbon Budget requires that share to grow to around 20&percnt; by 2050, prioritising dense urban areas where building density makes individual heat pumps less economic. The quality of the existing estate is highly variable: a 2021 survey found 35&percnt; of heat networks had a higher carbon intensity than modern condensing gas boilers, connected to gas CHP plant rather than low-carbon sources. The Heat Network (Regulation) Act 2023 established a new Ofgem-overseen regime from 2024&ndash;25, requiring all networks to register and achieve minimum performance standards &mdash; a significant step given that network customers previously had fewer consumer protections than gas or electricity customers.</p>
+            <p>Heat networks &mdash; systems that distribute heat from a central source through insulated pipes to multiple buildings &mdash; currently supply 2.8% of UK heat demand across approximately 16,000 networks serving 480,000 homes. The Climate Change Committee&rsquo;s Sixth Carbon Budget requires that share to grow to around 20% by 2050, prioritising dense urban areas where building density makes individual heat pumps less economic. The quality of the existing estate is highly variable: a 2021 survey found 35% of heat networks had a higher carbon intensity than modern condensing gas boilers, connected to gas CHP plant rather than low-carbon sources. The Heat Network (Regulation) Act 2023 established a new Ofgem-overseen regime from 2024&ndash;25, requiring all networks to register and achieve minimum performance standards &mdash; a significant step given that network customers previously had fewer consumer protections than gas or electricity customers.</p>
             <p>The economics of expansion are challenging. Distribution infrastructure in urban settings costs &pound;1&ndash;3 million per kilometre before any revenue is generated, and the merchant risk of building ahead of connections deters private finance. Local authorities are the critical enabling actors &mdash; securing planning permissions, providing anchor loads from council buildings and social housing, and managing highway access &mdash; but many lack the capacity or risk appetite for the role. The government&rsquo;s Heat Network Zoning framework, advanced in 2024&ndash;25, would designate areas where heat networks are the preferred heating solution, creating market certainty for investors, and represents the most significant demand-side intervention to date to close the gap between the 480,000 homes currently connected and the several million needed by 2050.</p>
           </div>
         </section>
@@ -71,8 +71,7 @@ export default function HeatNetworkRolloutPage() {
               changeText="+1.1pp since 2015 · target 20% by 2050"
               sparklineData={[1.7, 1.8, 2.0, 2.1, 2.2, 2.3, 2.4, 2.6, 2.8]}
               source="DESNZ · Heat Networks in GB 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Networks delivering higher emissions"
               value="35%"
@@ -81,8 +80,7 @@ export default function HeatNetworkRolloutPage() {
               changeText="35% of networks dirtier than gas boilers"
               sparklineData={[42, 41, 40, 39, 38, 37, 36, 35, 35]}
               source="DESNZ · Heat Network Efficiency Review 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Homes on heat networks"
               value="480,000"
@@ -91,8 +89,7 @@ export default function HeatNetworkRolloutPage() {
               changeText="+130k since 2019 · regulated from 2025"
               sparklineData={[200000, 220000, 250000, 280000, 310000, 340000, 380000, 430000, 480000]}
               source="DESNZ · Heat Networks in GB 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

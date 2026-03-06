@@ -78,7 +78,7 @@ export default function FaithCommunityTrendsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The 2021 census recorded that 53.3&percnt; of people in England and Wales described themselves as having no religion &mdash; the first time a majority had done so &mdash; with polling by 2023 putting the figure at around 55&percnt;. Weekly religious attendance has fallen from 15&percnt; of the population in 2001 to approximately 6&percnt; in 2023. The Church of England has experienced the most dramatic absolute decline, with average Sunday attendance having more than halved since 2000; the Roman Catholic Church, evangelical and Pentecostal churches, and black-majority churches have shown greater resilience, while Islam has grown as a share of religious practice through demographic change. Despite declining affiliation, faith organisations contribute an estimated &pound;12 billion in social value annually &mdash; food banks, debt advice, community cafes, homeless shelters, elderly befriending &mdash; much of it invisible to secular policymakers because it is not contracted or regulated by the state.</p>
+            <p>The 2021 census recorded that 53.3% of people in England and Wales described themselves as having no religion &mdash; the first time a majority had done so &mdash; with polling by 2023 putting the figure at around 55%. Weekly religious attendance has fallen from 15% of the population in 2001 to approximately 6% in 2023. The Church of England has experienced the most dramatic absolute decline, with average Sunday attendance having more than halved since 2000; the Roman Catholic Church, evangelical and Pentecostal churches, and black-majority churches have shown greater resilience, while Islam has grown as a share of religious practice through demographic change. Despite declining affiliation, faith organisations contribute an estimated &pound;12 billion in social value annually &mdash; food banks, debt advice, community cafes, homeless shelters, elderly befriending &mdash; much of it invisible to secular policymakers because it is not contracted or regulated by the state.</p>
             <p>The relationship between secularisation and social provision creates a planning gap that public policy has not addressed. As congregations age and shrink, they become less able to sustain the community services that depend on their buildings, volunteers, and operational capacity. When a congregation closes, the community cafe, the toddler group, and the food bank often close with it. The growth of non-religious identities has not been matched by growth in secular equivalents &mdash; humanist and atheist organisations exist but do not replicate the weekly gathering, lifecycle rituals, mutual support networks, or community service that organised religion provides for its members. How secular society reproduces those social functions remains largely unasked in public policy.</p>
           </div>
         </section>
@@ -99,8 +99,7 @@ export default function FaithCommunityTrendsPage() {
               polarity="up-is-good"
               changeText="majority non-religious &middot; 2021 census landmark"
               sparklineData={[14.8, 25.1, 38.0, 43.1, 53.3, 55.0]}
-              onExpand={() => {}}
-              source="ONS &middot; Census 2021 / British Social Attitudes 2023"
+              href="#sec-chart"source="ONS &middot; Census 2021 / British Social Attitudes 2023"
             />
             <MetricCard
               label="Weekly attendance"
@@ -110,8 +109,7 @@ export default function FaithCommunityTrendsPage() {
               polarity="up-is-good"
               changeText="from 15% in 2001 &middot; rapid secularisation"
               sparklineData={[15, 10, 8, 7, 6, 6]}
-              onExpand={() => {}}
-              source="Church of England / British Social Attitudes 2023"
+              href="#sec-chart"source="Church of England / British Social Attitudes 2023"
             />
             <MetricCard
               label="Faith charity value"
@@ -121,8 +119,7 @@ export default function FaithCommunityTrendsPage() {
               polarity="up-is-good"
               changeText="faith organisations still major social infrastructure"
               sparklineData={[11, 11, 12, 12, 12, 12]}
-              onExpand={() => {}}
-              source="Church Urban Fund / NCVO &middot; 2023"
+              href="#sec-chart"source="Church Urban Fund / NCVO &middot; 2023"
             />
           </div>
         </ScrollReveal>

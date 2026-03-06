@@ -83,8 +83,7 @@ export default function ChildrenInCarePage() {
               polarity="up-is-bad"
               changeText="+30% since 2010 &middot; record high"
               sparklineData={[64400, 67050, 68840, 70440, 75420, 80080, 83840]}
-              onExpand={() => {}}
-              source="DfE &middot; Children Looked After Statistics 2023"
+              href="#sec-chart"source="DfE &middot; Children Looked After Statistics 2023"
             />
             <MetricCard
               label="LA placement cost"
@@ -94,8 +93,7 @@ export default function ChildrenInCarePage() {
               polarity="up-is-bad"
               changeText="residential care avg &pound;6,000+/week"
               sparklineData={[7.2, 8.0, 9.8, 10.5, 11.2, 12.0, 12.1]}
-              onExpand={() => {}}
-              source="DfE &middot; Section 251 Outturn 2023"
+              href="#sec-chart"source="DfE &middot; Section 251 Outturn 2023"
             />
             <MetricCard
               label="Children in residential care"
@@ -105,8 +103,7 @@ export default function ChildrenInCarePage() {
               polarity="up-is-bad"
               changeText="up 42% since 2016 &middot; most expensive, least family-like"
               sparklineData={[4200, 4600, 5100, 5600, 5900, 6200, 6400]}
-              onExpand={() => {}}
-              source="DfE &middot; Children Looked After Statistics 2023"
+              href="#sec-chart"source="DfE &middot; Children Looked After Statistics 2023"
             />
           </div>
         </ScrollReveal>

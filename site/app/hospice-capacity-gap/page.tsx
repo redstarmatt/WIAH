@@ -74,8 +74,8 @@ export default function HospiceCapacityGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has approximately 3,300 specialist palliative care inpatient beds &mdash; down slightly from around 3,450 in 2015 &mdash; against a projected need requiring roughly 1,200 more. The majority are operated by the charitable hospice movement rather than directly by the NHS, and NHS block grant funding has not kept pace with cost inflation, with the shortfall filled by donations, legacies, and commercial income. Following the COVID-19 disruption to fundraising and subsequent energy and staffing cost rises, a significant number of hospices reduced bed capacity, closed day services, or suspended community programmes. An estimated 25&percnt; of people who die each year in England do so without adequate palliative care support, often experiencing preventable pain and distress, up from 20&percnt; in 2015. Hospital remains the most common place of death for around 44&percnt; of people, despite surveys consistently showing that most people prefer to die at home or in a hospice.</p>
-            <p>Access to good palliative care is deeply unequal. People in deprived areas, those from ethnic minority backgrounds, and those with non-cancer diagnoses &mdash; heart failure, COPD, dementia &mdash; are significantly less likely to access specialist services. Hospices historically developed in more affluent areas and the geographic distribution of beds has never been systematically planned against need. Closing the gap between preferred and actual place of death requires investment primarily in community nursing capacity and 24-hour carer support rather than inpatient beds alone, but NHS England&rsquo;s ambition for 90&percnt; of people to have a personalised care plan in their last year of life remains far from achieved, with primary care coding and cross-provider coordination identified as the persistent barriers.</p>
+            <p>England has approximately 3,300 specialist palliative care inpatient beds &mdash; down slightly from around 3,450 in 2015 &mdash; against a projected need requiring roughly 1,200 more. The majority are operated by the charitable hospice movement rather than directly by the NHS, and NHS block grant funding has not kept pace with cost inflation, with the shortfall filled by donations, legacies, and commercial income. Following the COVID-19 disruption to fundraising and subsequent energy and staffing cost rises, a significant number of hospices reduced bed capacity, closed day services, or suspended community programmes. An estimated 25% of people who die each year in England do so without adequate palliative care support, often experiencing preventable pain and distress, up from 20% in 2015. Hospital remains the most common place of death for around 44% of people, despite surveys consistently showing that most people prefer to die at home or in a hospice.</p>
+            <p>Access to good palliative care is deeply unequal. People in deprived areas, those from ethnic minority backgrounds, and those with non-cancer diagnoses &mdash; heart failure, COPD, dementia &mdash; are significantly less likely to access specialist services. Hospices historically developed in more affluent areas and the geographic distribution of beds has never been systematically planned against need. Closing the gap between preferred and actual place of death requires investment primarily in community nursing capacity and 24-hour carer support rather than inpatient beds alone, but NHS England&rsquo;s ambition for 90% of people to have a personalised care plan in their last year of life remains far from achieved, with primary care coding and cross-provider coordination identified as the persistent barriers.</p>
           </div>
         </section>
 
@@ -95,8 +95,7 @@ export default function HospiceCapacityGapPage() {
               polarity={'up-is-good' as const}
               changeText="Down from ~3,450 in 2015"
               sparklineData={[3450, 3420, 3400, 3380, 3360, 3310, 3320, 3310, 3300]}
-              onExpand={() => {}}
-              source="Hospice UK &middot; Annual Monitoring Data"
+              href="#sec-chart"source="Hospice UK &middot; Annual Monitoring Data"
             />
             <MetricCard
               label="Estimated shortfall"
@@ -106,8 +105,7 @@ export default function HospiceCapacityGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Against modelled need"
               sparklineData={[800, 850, 900, 950, 1000, 1100, 1100, 1150, 1200]}
-              onExpand={() => {}}
-              source="Hospice UK &middot; NHS England"
+              href="#sec-chart"source="Hospice UK &middot; NHS England"
             />
             <MetricCard
               label="Dying without palliative care"
@@ -117,8 +115,7 @@ export default function HospiceCapacityGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 20% in 2015"
               sparklineData={[20, 21, 21, 22, 23, 24, 24, 25, 25]}
-              onExpand={() => {}}
-              source="Public Health England &middot; NELIC"
+              href="#sec-chart"source="Public Health England &middot; NELIC"
             />
           </div>
         </ScrollReveal>

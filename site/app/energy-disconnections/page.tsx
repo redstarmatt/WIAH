@@ -79,8 +79,7 @@ export default function EnergyDisconnectionsPage() {
               changeText="Down from 4.8m in 2022 · still very high"
               sparklineData={[2.0, 2.1, 2.2, 2.3, 2.4, 3.8, 4.8, 4.2, 3.2]}
               source="Ofgem · Consumer Vulnerability Report 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Forced PPM installations"
               value="49,000"
@@ -89,8 +88,7 @@ export default function EnergyDisconnectionsPage() {
               changeText="Down after Ofgem ban · 49k in 2023"
               sparklineData={[55000, 58000, 60000, 62000, 65000, 80000, 94000, 70000, 49000]}
               source="Ofgem · Prepayment Meter Installation Data 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Households in fuel debt"
               value="6.2m"
@@ -99,8 +97,7 @@ export default function EnergyDisconnectionsPage() {
               changeText="6.2m in fuel debt · easing from 2022 peak"
               sparklineData={[3.5, 3.6, 3.7, 3.8, 4.0, 5.5, 6.8, 6.5, 6.2]}
               source="Citizens Advice / Ofgem 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

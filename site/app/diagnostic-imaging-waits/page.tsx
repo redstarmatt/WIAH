@@ -84,8 +84,7 @@ export default function DiagnosticImagingWaitsPage() {
               polarity={'up-is-bad' as const}
               changeText="improving but 4&times; pre-pandemic level"
               sparklineData={[0.9, 1.1, 1.4, 2.0, 3.2, 18.7, 12.4, 8.9, 6.8, 5.1]}
-              onExpand={() => {}}
-              source="NHS England &middot; Diagnostics Waiting Times Statistics"
+              href="#sec-chart"source="NHS England &middot; Diagnostics Waiting Times Statistics"
             />
             <MetricCard
               label="Waiting 1m+ for test"
@@ -95,8 +94,7 @@ export default function DiagnosticImagingWaitsPage() {
               polarity={'up-is-bad' as const}
               changeText="down from 590k peak &middot; still 6&times; 2019"
               sparklineData={[45000, 50000, 60000, 85000, 110000, 590000, 450000, 480000, 400000, 380000]}
-              onExpand={() => {}}
-              source="NHS England &middot; Diagnostics Waiting Times Statistics"
+              href="#sec-chart"source="NHS England &middot; Diagnostics Waiting Times Statistics"
             />
             <MetricCard
               label="MRI wait (median)"
@@ -106,8 +104,7 @@ export default function DiagnosticImagingWaitsPage() {
               polarity={'up-is-bad' as const}
               changeText="vs 3.5 week standard"
               sparklineData={[3.2, 3.3, 3.5, 4.0, 4.5, 10.2, 9.8, 8.5, 8.2, 8.0]}
-              onExpand={() => {}}
-              source="NHS England &middot; Diagnostics Waiting Times Statistics"
+              href="#sec-chart"source="NHS England &middot; Diagnostics Waiting Times Statistics"
             />
           </div>
         </ScrollReveal>

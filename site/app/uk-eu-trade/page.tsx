@@ -90,8 +90,7 @@ export default function UkEuTradePage() {
               polarity="up-is-good"
               changeText="15% below pre-Brexit trend &middot; services growing"
               sparklineData={[152, 161, 160, 159, 128, 148, 158, 164, 167]}
-              onExpand={() => {}}
-              source="ONS &middot; UK Trade Statistics 2024"
+              href="#sec-chart"source="ONS &middot; UK Trade Statistics 2024"
             />
             <MetricCard
               label="Trade in goods deficit"
@@ -101,8 +100,7 @@ export default function UkEuTradePage() {
               polarity="up-is-bad"
               changeText="UK imports more goods than it exports"
               sparklineData={[39, 42, 58, 60, 39, 65, 94, 84, 74]}
-              onExpand={() => {}}
-              source="ONS &middot; UK Trade Statistics 2024"
+              href="#sec-chart"source="ONS &middot; UK Trade Statistics 2024"
             />
             <MetricCard
               label="Monthly admin forms"
@@ -112,8 +110,7 @@ export default function UkEuTradePage() {
               polarity="up-is-bad"
               changeText="New since Jan 2021 &middot; cost to exporters est. £7bn/yr"
               sparklineData={[0.2, 0.2, 0.2, 0.2, 0.2, 1.6, 1.7, 1.8, 1.8]}
-              onExpand={() => {}}
-              source="HMRC &middot; Trade Statistics / British Chambers 2024"
+              href="#sec-chart"source="HMRC &middot; Trade Statistics / British Chambers 2024"
             />
           </div>
         </ScrollReveal>

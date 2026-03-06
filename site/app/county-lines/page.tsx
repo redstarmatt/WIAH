@@ -105,8 +105,7 @@ export default function CountyLinesPage() {
               changeText="Up from 4,000 in 2017 &middot; true figure likely higher"
               sparklineData={[4000, 5500, 7000, 6300, 7400, 8200, 9100, 10200]}
               source="Home Office &middot; National Referral Mechanism, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-lines"/>
             <MetricCard
               label="County lines closed since 2019"
               value="3,000+"
@@ -115,8 +114,7 @@ export default function CountyLinesPage() {
               changeText="Op Orochi and successors &middot; but lines re-emerge"
               sparklineData={[400, 800, 1400, 2100, 2600, 3000]}
               source="NCA &middot; County Lines Strategic Assessment, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-children"/>
             <MetricCard
               label="Estimated active lines"
               value="~700"
@@ -125,8 +123,7 @@ export default function CountyLinesPage() {
               changeText="Down from peak of 2,000 &middot; NCA estimate"
               sparklineData={[2000, 1500, 1300, 800, 600, 660, 720, 700]}
               source="NCA &middot; County Lines Strategic Assessment, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-children"/>
           </div>
         </ScrollReveal>
 

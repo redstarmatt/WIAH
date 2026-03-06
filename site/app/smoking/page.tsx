@@ -136,7 +136,7 @@ export default function SmokingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Adult smoking rates in the UK have halved in 13 years: from 20.2&percnt; in 2011 &mdash; around 9.6 million people &mdash; to 10.6&percnt; in 2024, or 5.3 million. Among 18&ndash;24 year olds, prevalence has collapsed from 25.7&percnt; to just 8.1&percnt; over the same period, the most dramatic generational shift on record. Multiple forces converged to produce this outcome: standardised plain packaging introduced in 2017, annual tobacco tax rises pushing a 20-pack above &pound;14, the 2007 workplace ban that denormalised smoking as a social activity, and the rise of vaping from 2012 as a less harmful substitute. By 2024, more adults vape (5.4 million) than smoke cigarettes (4.9 million) in England &mdash; a remarkable inversion. The Tobacco and Vapes Bill will prohibit tobacco sales to anyone born after 2009, targeting the government&apos;s Smokefree 2030 goal of sub-5&percnt; adult prevalence.</p>
+            <p>Adult smoking rates in the UK have halved in 13 years: from 20.2% in 2011 &mdash; around 9.6 million people &mdash; to 10.6% in 2024, or 5.3 million. Among 18&ndash;24 year olds, prevalence has collapsed from 25.7% to just 8.1% over the same period, the most dramatic generational shift on record. Multiple forces converged to produce this outcome: standardised plain packaging introduced in 2017, annual tobacco tax rises pushing a 20-pack above &pound;14, the 2007 workplace ban that denormalised smoking as a social activity, and the rise of vaping from 2012 as a less harmful substitute. By 2024, more adults vape (5.4 million) than smoke cigarettes (4.9 million) in England &mdash; a remarkable inversion. The Tobacco and Vapes Bill will prohibit tobacco sales to anyone born after 2009, targeting the government&apos;s Smokefree 2030 goal of sub-5% adult prevalence.</p>
             <p>The health dividend of declining smoking is already visible and will compound for decades. Lung cancer mortality in men has roughly halved since the 1990s; cardiovascular disease deaths continue their long downward trend; COPD hospital admissions are falling. Because smoking-related diseases take 20&ndash;30 years to manifest, the full benefit of today&apos;s non-smoking young cohort will still be felt in 2050. The remaining burden falls disproportionately on the most deprived communities, where smoking rates remain two to three times higher than in affluent areas, and where the health consequences of past smoking are still playing out in life expectancy gaps that persist even as overall prevalence falls.</p>
           </div>
         </section>
@@ -160,8 +160,7 @@ export default function SmokingPage() {
               changeText={latest ? `Down from ${latest.baselinePct}% in ${latest.baselineYear} · Lowest ever recorded` : 'Lowest ever recorded'}
               sparklineData={data ? data.national.prevalence.timeSeries.map(d => d.pct) : [20.2, 19.5, 18.7, 17.2, 15.5, 14.9, 14.4, 13.9, 12.7, 13.3, 12.7, 11.6, 10.6]}
               source="ONS · Adult Smoking Habits in the UK: 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="18–24 year olds smoking"
               value="8.1"
@@ -171,8 +170,7 @@ export default function SmokingPage() {
               changeText="Down from 25.7% in 2011 · −17.6 percentage points in 13 years"
               sparklineData={data ? data.national.youngAdultsTimeSeries.map(d => d.pct18to24) : [25.7, 24.8, 23.6, 20.5, 18.4, 17.1, 15.8, 14.4, 13.1, 12.7, 11.3, 10.2, 8.1]}
               source="ONS · Annual Population Survey, 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-prevalence"/>
             <MetricCard
               label="Ex-smokers who have quit"
               value={quitRatio ? quitRatio.exSmokersPct.toString() : '74.2'}
@@ -182,8 +180,7 @@ export default function SmokingPage() {
               changeText={quitRatio ? `${quitRatio.vapingMillions}M adults now vape vs ${quitRatio.smokingMillions}M who smoke` : '5.4M adults now vape vs 4.9M who smoke'}
               sparklineData={[55, 58, 61, 64, 66, 68, 70, 71, 72, 73, 74, 74.2]}
               source="ONS · Adult Smoking Habits in the UK: 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-young"/>
           </div>
         </ScrollReveal>
 

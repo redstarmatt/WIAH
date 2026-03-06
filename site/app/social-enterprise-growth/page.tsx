@@ -77,7 +77,7 @@ export default function SocialEnterpriseGrowthPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Social enterprises &mdash; businesses that trade for a social or environmental purpose and reinvest surpluses into their mission rather than distributing them to private shareholders &mdash; have grown from around 70,000 organisations in 2015 to approximately 100,000 in 2023, generating an estimated &pound;60 billion in annual turnover and employing 2.3 million people. That makes the sector larger than UK agriculture and comparable in employment to financial services, yet it remains largely invisible in public and political discourse. The UK has developed one of the world&rsquo;s most supportive ecosystems for this model: the Community Interest Company legal form (2005), the Social Value Act 2012 requiring public bodies to consider social value in procurement, and specialist investors including Big Society Capital. Some 44&percnt; of social enterprises actively prioritise employment of disadvantaged workers &mdash; people with disabilities, ex-offenders, and those leaving care &mdash; a social impact that conventional employment statistics do not capture.</p>
+            <p>Social enterprises &mdash; businesses that trade for a social or environmental purpose and reinvest surpluses into their mission rather than distributing them to private shareholders &mdash; have grown from around 70,000 organisations in 2015 to approximately 100,000 in 2023, generating an estimated &pound;60 billion in annual turnover and employing 2.3 million people. That makes the sector larger than UK agriculture and comparable in employment to financial services, yet it remains largely invisible in public and political discourse. The UK has developed one of the world&rsquo;s most supportive ecosystems for this model: the Community Interest Company legal form (2005), the Social Value Act 2012 requiring public bodies to consider social value in procurement, and specialist investors including Big Society Capital. Some 44% of social enterprises actively prioritise employment of disadvantaged workers &mdash; people with disabilities, ex-offenders, and those leaving care &mdash; a social impact that conventional employment statistics do not capture.</p>
             <p>Access to capital remains the sector&rsquo;s most significant constraint: social enterprises struggle to demonstrate returns to conventional investors when surplus is reinvested in mission rather than distributed to shareholders. Patient capital, blended finance, and social impact bonds exist as alternatives but remain niche. Growth of social enterprise is also partly a response to state withdrawal and market failure: community energy companies, village shops, local news outlets, and community pubs represent social enterprises filling gaps that neither market nor state adequately addresses. That is the sector&rsquo;s greatest contribution and deepest challenge simultaneously &mdash; it should not have to compensate for systematic public sector underfunding, but in many communities it is the only entity willing to try.</p>
           </div>
         </section>
@@ -99,8 +99,7 @@ export default function SocialEnterpriseGrowthPage() {
               polarity="up-is-good"
               changeText="+43% since 2015 &middot; growing movement"
               sparklineData={[70, 80, 90, 95, 98, 100]}
-              onExpand={() => {}}
-              source="Social Enterprise UK &middot; State of Social Enterprise 2023"
+              href="#sec-callout"source="Social Enterprise UK &middot; State of Social Enterprise 2023"
             />
             <MetricCard
               label="Annual turnover"
@@ -110,8 +109,7 @@ export default function SocialEnterpriseGrowthPage() {
               polarity="up-is-good"
               changeText="+36% since 2015 &middot; scale and impact"
               sparklineData={[44, 50, 55, 57, 59, 60]}
-              onExpand={() => {}}
-              source="Social Enterprise UK &middot; 2023"
+              href="#sec-chart"source="Social Enterprise UK &middot; 2023"
             />
             <MetricCard
               label="Employing disadvantaged workers"
@@ -121,8 +119,7 @@ export default function SocialEnterpriseGrowthPage() {
               polarity="up-is-good"
               changeText="of social enterprises prioritise disadvantaged workers"
               sparklineData={[38, 40, 41, 43, 44, 44]}
-              onExpand={() => {}}
-              source="Social Enterprise UK &middot; State of Social Enterprise 2023"
+              href="#sec-chart"source="Social Enterprise UK &middot; State of Social Enterprise 2023"
             />
           </div>
         </ScrollReveal>

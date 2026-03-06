@@ -89,8 +89,7 @@ export default function PrisonerRecallPage() {
               polarity="up-is-bad"
               changeText="+92% since 2015 &middot; recall now 12% of prison population"
               sparklineData={[7400, 8100, 8900, 9800, 10600, 9800, 11200, 12600, 14000, 14200]}
-              onExpand={() => {}}
-              source="HMPPS &middot; Offender Management Statistics 2024"
+              href="#sec-chart"source="HMPPS &middot; Offender Management Statistics 2024"
             />
             <MetricCard
               label="Post-sentence recall growth"
@@ -100,8 +99,7 @@ export default function PrisonerRecallPage() {
               polarity="up-is-bad"
               changeText="vs 2015 &middot; new IPP recall orders driving surge"
               sparklineData={[100, 109, 120, 132, 143, 132, 151, 170, 189, 187]}
-              onExpand={() => {}}
-              source="Ministry of Justice &middot; Prison Population Statistics 2024"
+              href="#sec-chart"source="Ministry of Justice &middot; Prison Population Statistics 2024"
             />
             <MetricCard
               label="Avg recall duration"
@@ -111,8 +109,7 @@ export default function PrisonerRecallPage() {
               polarity="up-is-bad"
               changeText="growing in-custody time &middot; prison places consumed"
               sparklineData={[2.8, 2.9, 3.0, 3.2, 3.4, 3.5, 3.7, 3.9, 4.1, 4.0]}
-              onExpand={() => {}}
-              source="MoJ &middot; Offender Management Statistics Quarterly 2024"
+              href="#sec-chart"source="MoJ &middot; Offender Management Statistics Quarterly 2024"
             />
           </div>
         </ScrollReveal>

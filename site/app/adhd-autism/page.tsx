@@ -99,8 +99,8 @@ export default function ADHDAutismPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Some 187,000 children in England are waiting for an NHS autism diagnostic assessment, with the average wait at 36 months &mdash; against a 13-week standard quietly abandoned in 2019. ADHD waits are similarly severe: most ICBs report adult waits of 3&ndash;5 years, some exceeding 7. Referrals to NHS ADHD services hit 200,000 in 2023, up 400&percnt; since 2020, reflecting genuine expansion in awareness rather than diagnostic fashion. NHS England estimates the adult ADHD population at around 2.5 million; approximately 120,000 currently receive treatment. An estimated 300,000 private ADHD assessments took place in 2023 at between &pound;800 and &pound;3,000 each, with shared care arrangements for subsequent NHS prescribing contested across roughly a third of ICBs. The EHC plan system for children with SEND is simultaneously under pressure: only 50&percnt; of local authorities met the 20-week statutory maximum for assessments in 2023, specialist school places have not kept pace with a 140&percnt; increase in plans since 2015, and tribunal appeal success rates consistently exceed 90&percnt;.</p>
-            <p>Late and missed diagnosis carries measurable consequences that fall unevenly across the population. Women and girls are diagnosed 4&ndash;5 years later than men on average, as diagnostic criteria were developed largely from studies of white boys and many women learn to mask symptoms at significant psychological cost. Undiagnosed autistic adults show substantially elevated rates of anxiety, depression, and suicidal ideation; late ADHD diagnosis is associated with higher rates of substance misuse, unemployment, and criminal justice contact &mdash; around 25&percnt; of prison populations meet ADHD criteria. Black and South Asian children are diagnosed autistic at lower rates than white peers despite similar referral rates, pointing to diagnostic bias. The National Autistic Society estimates 700,000 undiagnosed autistic adults in England, concentrated among women, ethnic minorities, and those who attended mainstream schools without specialist support.</p>
+            <p>Some 187,000 children in England are waiting for an NHS autism diagnostic assessment, with the average wait at 36 months &mdash; against a 13-week standard quietly abandoned in 2019. ADHD waits are similarly severe: most ICBs report adult waits of 3&ndash;5 years, some exceeding 7. Referrals to NHS ADHD services hit 200,000 in 2023, up 400% since 2020, reflecting genuine expansion in awareness rather than diagnostic fashion. NHS England estimates the adult ADHD population at around 2.5 million; approximately 120,000 currently receive treatment. An estimated 300,000 private ADHD assessments took place in 2023 at between &pound;800 and &pound;3,000 each, with shared care arrangements for subsequent NHS prescribing contested across roughly a third of ICBs. The EHC plan system for children with SEND is simultaneously under pressure: only 50% of local authorities met the 20-week statutory maximum for assessments in 2023, specialist school places have not kept pace with a 140% increase in plans since 2015, and tribunal appeal success rates consistently exceed 90%.</p>
+            <p>Late and missed diagnosis carries measurable consequences that fall unevenly across the population. Women and girls are diagnosed 4&ndash;5 years later than men on average, as diagnostic criteria were developed largely from studies of white boys and many women learn to mask symptoms at significant psychological cost. Undiagnosed autistic adults show substantially elevated rates of anxiety, depression, and suicidal ideation; late ADHD diagnosis is associated with higher rates of substance misuse, unemployment, and criminal justice contact &mdash; around 25% of prison populations meet ADHD criteria. Black and South Asian children are diagnosed autistic at lower rates than white peers despite similar referral rates, pointing to diagnostic bias. The National Autistic Society estimates 700,000 undiagnosed autistic adults in England, concentrated among women, ethnic minorities, and those who attended mainstream schools without specialist support.</p>
           </div>
         </section>
 
@@ -120,8 +120,7 @@ export default function ADHDAutismPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Up from 65K in 2016 &middot; Average wait: 36 months &middot; 13-week standard abandoned in 2019"
               sparklineData={[65, 72, 81, 92, 98, 128, 158, 187]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="ADHD referrals to NHS services (annual)"
               value="200K"
@@ -129,8 +128,7 @@ export default function ADHDAutismPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Up 400% since 2020 &middot; Average wait: 3.5 years &middot; Many turning to &pound;800&ndash;&pound;1,500 private assessments"
               sparklineData={[40, 45, 52, 85, 140, 200]}
-              onExpand={() => {}}
-            />
+              href="#sec-autism"/>
             <MetricCard
               label="Average adult wait for ADHD diagnosis"
               value="3.5 yrs"
@@ -138,8 +136,7 @@ export default function ADHDAutismPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Some areas: 5&ndash;7 years &middot; NHS Right to Choose: patients can request provider &middot; Shared care prescribing gaps after private diagnosis"
               sparklineData={[12, 15, 18, 24, 36, 42]}
-              onExpand={() => {}}
-            />
+              href="#sec-adhd"/>
           </div>
         </ScrollReveal>
 

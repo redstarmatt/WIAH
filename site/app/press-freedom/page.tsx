@@ -70,17 +70,26 @@ export default function PressFreedomPage() {
         <TopicHeader
           topic="Press Freedom"
           question="How Free Is the British Press?"
-          finding="The UK ranks 23rd in the world for press freedom &mdash; behind Jamaica, Namibia, and Costa Rica. While the ranking has improved from a low of 40th in 2017, structural concerns remain: three companies control 90&percnt; of national newspaper circulation, the Official Secrets Act criminalises journalism in the public interest, and the Investigatory Powers Act enables bulk surveillance of journalists&apos; communications."
+          finding="The UK ranks 23rd in the world for press freedom &mdash; behind Jamaica, Namibia, and Costa Rica. While the ranking has improved from a low of 40th in 2017, structural concerns remain: three companies control 90% of national newspaper circulation, the Official Secrets Act criminalises journalism in the public interest, and the Investigatory Powers Act enables bulk surveillance of journalists&apos; communications."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK ranked 40th in the RSF World Press Freedom Index in 2017&ndash;18, a low driven by mass surveillance legislation, anti-terrorism interception of journalists&apos; communications, and a journalist imprisoned for contempt of court. The ranking recovered to 23rd by 2024 following successful human rights challenges to surveillance overreach. But structural problems remain acute: three companies &mdash; News UK, DMG Media, and Reach plc &mdash; control 90&percnt; of national newspaper circulation; 320 local newspapers have closed since 2009; and 58&percnt; of local authority areas in England have no dedicated local news reporter. The Official Secrets Act 1989 contains no public interest defence, making journalism on classified wrongdoing a criminal offence regardless of benefit. Strategic lawsuits against public participation (SLAPPs) caused UK media organisations to withdraw or avoid publishing at least 50 stories between 2018 and 2022, according to the Foreign Affairs Committee.
+              The UK&apos;s press freedom position has fluctuated significantly over the past decade. Reporters Without Borders (RSF) ranked the UK 40th out of 180 countries in 2017 and 2018, reflecting concerns about mass surveillance legislation, the imprisonment of a journalist for contempt of court, and the use of anti-terrorism powers to intercept journalists&apos; communications. The ranking improved to 23rd by 2024, partly due to the methodology change RSF introduced in 2022 and partly reflecting genuine improvements in the legal environment following successful challenges to surveillance overreach at the European Court of Human Rights. Nevertheless, the UK sits below all Nordic countries, most of Western Europe, and several developing nations &mdash; a position inconsistent with its self-image as a beacon of free expression.
             </p>
             <p>
-              The pressures are unevenly distributed. Freelance journalists &mdash; a growing share of investigative output &mdash; have no institutional legal defence when threatened. Women journalists experience online abuse at more than twice the rate of men (65&percnt; vs 28&percnt;, International Federation of Journalists, 2021). Regional and Northern Ireland journalists face the combined pressure of fewer outlets, weaker legal resources, and, in some cases, credible personal threats. The government&apos;s anti-SLAPP provisions in the 2023 Economic Crime Act apply only to economic crime reporting, leaving the broader gap unaddressed.
+              Ownership concentration is the structural issue that indices measure poorly. Three companies &mdash; News UK (Murdoch), DMG Media (Rothermere), and Reach plc &mdash; control approximately 90% of national newspaper circulation and significant online readership. Local journalism has contracted sharply: 320 local newspapers have closed since 2009, and the BBC estimates that 58% of local authority areas in England now have no dedicated local news reporter. The Cairncross Review (2019) recommended public funding for local journalism; the government accepted the principle but committed only &pound;2 million to a Future News Fund, which the NUJ described as inadequate. Broadcast media is regulated by Ofcom with statutory impartiality requirements, but print and online media face no equivalent obligation, creating an asymmetric information environment.
+            </p>
+            <p>
+              Legal threats to journalism take multiple forms. The Official Secrets Act 1989 contains no public interest defence, meaning a journalist who publishes classified information that reveals government wrongdoing commits a criminal offence regardless of the public benefit. The Investigatory Powers Act 2016 permits bulk interception of communications, and while judicial commissioner approval is required for access to journalists&apos; sources, the National Union of Journalists has documented cases where this safeguard was circumvented. Strategic lawsuits against public participation (SLAPPs) &mdash; where wealthy claimants use defamation or privacy claims to silence investigative reporting &mdash; are a growing concern: the Foreign Affairs Committee found that SLAPP threats had caused UK media organisations to withdraw or refrain from publishing at least 50 stories between 2018 and 2022. The government introduced anti-SLAPP provisions in the Economic Crime and Corporate Transparency Act 2023, but these apply only to economic crime reporting, leaving a significant gap.
+            </p>
+            <p>
+              The pressures fall unevenly. Freelance journalists, who account for a growing share of investigative work as newsroom staff numbers shrink, have no institutional legal support when threatened with defamation claims. Female journalists face disproportionate online harassment: a 2021 study by the International Federation of Journalists found that 65% of women journalists in the UK had experienced online abuse related to their work, compared with 28% of men. Journalists from ethnic minority backgrounds report higher rates of both online abuse and newsroom discrimination, with 42% saying they had experienced racial discrimination in a UK media workplace. Regional journalists outside London face the dual pressure of fewer outlets and weaker legal resources, meaning that local corruption and public interest stories are increasingly left uncovered. Northern Ireland, where press freedom intersects with legacy conflict issues, has distinct challenges: several journalists investigating paramilitary activity have faced credible death threats.
+            </p>
+            <p>
+              Measuring press freedom is inherently subjective and contested. The RSF index relies on expert questionnaires and incident reporting, with country scores derived from panel assessments that weight qualitative judgement heavily. The 2022 methodology change introduced new indicators and reweighted existing ones, producing ranking shifts that reflect methodological decisions as much as real-world changes &mdash; the UK&apos;s jump from 33rd to 24th in 2022 was partly a recalibration effect. Ownership concentration metrics are well documented by Ofcom&apos;s annual Media Nations report, but measuring the editorial impact of ownership on content is far harder &mdash; concentration of ownership does not automatically mean concentration of editorial line. SLAPP data is particularly difficult: the 50 stories suppressed figure comes from journalist testimony to parliamentary committees and represents a lower bound, since the nature of SLAPPs means many suppressed stories are never publicly known. The closure of local newspapers is well counted, but the replacement of print by digital-only local news sites (which have grown significantly) complicates the narrative of pure decline.
             </p>
           </div>
         </section>
@@ -108,7 +117,7 @@ export default function PressFreedomPage() {
               value="90%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Three companies control 90&percnt; of national circulation"
+              changeText="Three companies control 90% of national circulation"
               sparklineData={[88, 89, 89, 90, 90, 90, 90]}
               source="Ofcom &middot; Media Nations 2023"
               onExpand={() => {}}
@@ -118,7 +127,7 @@ export default function PressFreedomPage() {
               value="320"
               direction="up"
               polarity="up-is-bad"
-              changeText="58&percnt; of local authority areas have no dedicated reporter"
+              changeText="58% of local authority areas have no dedicated reporter"
               sparklineData={[120, 155, 190, 225, 255, 280, 300, 310, 320]}
               source="Press Gazette &middot; Local News Tracker 2023"
               onExpand={() => {}}

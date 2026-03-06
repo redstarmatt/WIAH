@@ -33,7 +33,6 @@ export default function SepsisOutcomesPage() {
               changeText="down from 52,000 in 2018"
               sparklineData={[52000,51000,50500,50000,49500,49000,48800,48500,48000]}
               source=""
-              onExpand={() => {}}
             />
             <MetricCard
               label="Sepsis bundle compliance"
@@ -43,7 +42,6 @@ export default function SepsisOutcomesPage() {
               changeText="target: 90%"
               sparklineData={[50,54,58,62,64,66,68,70,72]}
               source=""
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

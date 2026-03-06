@@ -79,8 +79,7 @@ export default function FinancialAbuseElderlyPage() {
               changeText="+30k since 2019 · digital fraud driving rise"
               sparklineData={[130000, 140000, 150000, 155000, 160000, 165000, 170000, 180000, 190000]}
               source="Age UK / Action on Elder Abuse 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Annual financial losses"
               value="£3.6bn"
@@ -89,8 +88,7 @@ export default function FinancialAbuseElderlyPage() {
               changeText="£3.6bn stolen from older people annually"
               sparklineData={[2.0, 2.2, 2.4, 2.6, 2.8, 3.0, 3.1, 3.3, 3.6]}
               source="UK Finance / Age UK 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Reporting rate"
               value="<5%"
@@ -99,8 +97,7 @@ export default function FinancialAbuseElderlyPage() {
               changeText="<5% reported · shame and capacity barriers"
               sparklineData={[4, 4, 4, 4, 4, 4, 4, 4, 4]}
               source="Action on Elder Abuse / OPG 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

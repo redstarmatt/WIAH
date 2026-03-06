@@ -75,8 +75,8 @@ export default function MisogynyPolicingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The rape charge rate in England and Wales fell from 6.2&percnt; in 2015 to 3.3&percnt; in 2023, even as the number of reports more than doubled from around 34,000 to over 72,000 annually. For every 30 women who reported a rape, only one saw a charge brought. Many cases close before charge because complainants withdraw &mdash; the investigation process is frequently experienced as traumatic and protracted &mdash; with the average time from report to first Crown Court hearing reaching 42 months in 2023. HMICFRS inspections have found that some forces pursue early closure before investigations are complete and make disproportionate demands for complainants&apos; mobile phone data, deterring reporting. Operation Soteria, embedding CPS prosecutors in joint investigation teams focused on suspect behaviour rather than complainant credibility, has shown modest early improvements in charge rates.</p>
-            <p>Cases that reach court face further attrition. Conviction rates in tried rape cases run at around 68&percnt;, below the overall Crown Court conviction rate of approximately 80&percnt;, with rape myths &mdash; false beliefs about how genuine victims behave &mdash; continuing to influence jury outcomes despite judge-directed education. The system&apos;s failures fall almost entirely on women: disproportionately those who are young, those who know their attacker (the majority of rape cases), and those in communities with historically fraught relationships with police who are least likely to report at all.</p>
+            <p>The rape charge rate in England and Wales fell from 6.2% in 2015 to 3.3% in 2023, even as the number of reports more than doubled from around 34,000 to over 72,000 annually. For every 30 women who reported a rape, only one saw a charge brought. Many cases close before charge because complainants withdraw &mdash; the investigation process is frequently experienced as traumatic and protracted &mdash; with the average time from report to first Crown Court hearing reaching 42 months in 2023. HMICFRS inspections have found that some forces pursue early closure before investigations are complete and make disproportionate demands for complainants&apos; mobile phone data, deterring reporting. Operation Soteria, embedding CPS prosecutors in joint investigation teams focused on suspect behaviour rather than complainant credibility, has shown modest early improvements in charge rates.</p>
+            <p>Cases that reach court face further attrition. Conviction rates in tried rape cases run at around 68%, below the overall Crown Court conviction rate of approximately 80%, with rape myths &mdash; false beliefs about how genuine victims behave &mdash; continuing to influence jury outcomes despite judge-directed education. The system&apos;s failures fall almost entirely on women: disproportionately those who are young, those who know their attacker (the majority of rape cases), and those in communities with historically fraught relationships with police who are least likely to report at all.</p>
           </div>
         </section>
 
@@ -96,8 +96,7 @@ export default function MisogynyPolicingPage() {
               polarity={'up-is-good' as const}
               changeText="Down from 6.2% in 2015 — fewer than 1 in 30 reports"
               sparklineData={[6.2, 5.7, 5.3, 4.8, 4.4, 3.9, 3.6, 3.4, 3.3]}
-              onExpand={() => {}}
-              source="Crown Prosecution Service &middot; VAWG report"
+              href="#sec-chart"source="Crown Prosecution Service &middot; VAWG report"
             />
             <MetricCard
               label="Cases reaching court"
@@ -107,8 +106,7 @@ export default function MisogynyPolicingPage() {
               polarity={'up-is-good' as const}
               changeText="Of reported rapes result in a Crown Court hearing"
               sparklineData={[9.1, 8.8, 8.4, 7.9, 7.3, 6.8, 6.4, 6.2, 6.0]}
-              onExpand={() => {}}
-              source="Crown Prosecution Service &middot; VAWG report"
+              href="#sec-chart"source="Crown Prosecution Service &middot; VAWG report"
             />
             <MetricCard
               label="Average time from report to trial"
@@ -118,8 +116,7 @@ export default function MisogynyPolicingPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 29 months in 2015"
               sparklineData={[29, 31, 33, 35, 36, 38, 40, 41, 42]}
-              onExpand={() => {}}
-              source="HMCTS &middot; Criminal court statistics"
+              href="#sec-chart"source="HMCTS &middot; Criminal court statistics"
             />
           </div>
         </ScrollReveal>

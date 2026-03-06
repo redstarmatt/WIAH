@@ -59,7 +59,7 @@ export default function MaternitySafetyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The stillbirth rate in England has fallen from 5.1 per 1,000 births in 2010 to 3.53 in 2022 &mdash; a 31&percnt; reduction driven by the Saving Babies&rsquo; Lives Care Bundle, introduced in 2016, which standardised foetal movement monitoring, growth surveillance, smoking cessation support, and term induction policies. The picture on maternal mortality is far more troubling: the UK rate of 9.7 deaths per 100,000 maternities has barely moved in a decade, and the Ockenden Review (2022) found that hundreds of babies and multiple mothers died or were seriously harmed over 20 years at Shrewsbury and Telford NHS Trust due to understaffing, failure to escalate, and systemic reluctance to listen to women. NHS England&apos;s 2025 ambition &mdash; to halve stillbirth, neonatal death, maternal death, and brain injury rates from a 2010 baseline &mdash; has been partially met only for stillbirths.</p>
+            <p>The stillbirth rate in England has fallen from 5.1 per 1,000 births in 2010 to 3.53 in 2022 &mdash; a 31% reduction driven by the Saving Babies&rsquo; Lives Care Bundle, introduced in 2016, which standardised foetal movement monitoring, growth surveillance, smoking cessation support, and term induction policies. The picture on maternal mortality is far more troubling: the UK rate of 9.7 deaths per 100,000 maternities has barely moved in a decade, and the Ockenden Review (2022) found that hundreds of babies and multiple mothers died or were seriously harmed over 20 years at Shrewsbury and Telford NHS Trust due to understaffing, failure to escalate, and systemic reluctance to listen to women. NHS England&apos;s 2025 ambition &mdash; to halve stillbirth, neonatal death, maternal death, and brain injury rates from a 2010 baseline &mdash; has been partially met only for stillbirths.</p>
             <p>The starkest failure is the persistent racial disparity in maternal mortality: Black women in the UK are 3.7 times more likely to die during or shortly after pregnancy than white women, Asian women 1.8 times more likely &mdash; gaps documented in MBRRACE-UK reports for over 20 years without meaningful narrowing. Unconscious bias in clinical decision-making, higher rates of underlying conditions linked to socioeconomic deprivation, and barriers to antenatal education compound one another. Around 1 in 5 women experience birth as traumatic, with an estimated 30,000 developing PTSD annually &mdash; a burden concentrated among those who already faced the greatest clinical risk.</p>
           </div>
         </section>
@@ -81,8 +81,7 @@ export default function MaternitySafetyPage() {
               polarity="up-is-bad"
               changeText="Record low &middot; down from 5.1 in 2010 &middot; target 1.6 by 2025"
               sparklineData={[5.1, 4.9, 4.7, 4.4, 4.2, 4.0, 3.8, 3.7, 3.53]}
-              onExpand={() => {}}
-              source="MBRRACE-UK &middot; 2022"
+              href="#sec-stillbirth"source="MBRRACE-UK &middot; 2022"
             />
             <MetricCard
               label="Maternal mortality rate"
@@ -92,8 +91,7 @@ export default function MaternitySafetyPage() {
               polarity="up-is-bad"
               changeText="Stubbornly high &middot; slight uptick in 2019&ndash;21 period"
               sparklineData={[10.1, 9.6, 9.7, 8.79, 9.7]}
-              onExpand={() => {}}
-              source="MBRRACE-UK &middot; 2019&ndash;21"
+              href="#sec-ethnicity"source="MBRRACE-UK &middot; 2019&ndash;21"
             />
             <MetricCard
               label="Black vs white maternal mortality risk"
@@ -103,8 +101,7 @@ export default function MaternitySafetyPage() {
               polarity="up-is-bad"
               changeText="Unchanged for 20 years &middot; BAME maternal mortality gap persistent"
               sparklineData={[3.5, 3.7, 3.8, 3.7, 3.7, 3.8, 3.7, 3.7, 3.7]}
-              onExpand={() => {}}
-              source="MBRRACE-UK &middot; 2021"
+              href="#sec-ethnicity"source="MBRRACE-UK &middot; 2021"
             />
           </div>
         </ScrollReveal>

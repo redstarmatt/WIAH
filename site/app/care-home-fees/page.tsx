@@ -87,8 +87,7 @@ export default function CareHomeFessPage() {
               changeText="Up from &pound;635 in 2015 &middot; nursing care &pound;1,300/week"
               sparklineData={[635, 680, 750, 850, 980, 1100]}
               source="LaingBuisson Care of Older People &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-fees"/>
             <MetricCard
               label="Self-funder premium over council-funded"
               value="41"
@@ -98,8 +97,7 @@ export default function CareHomeFessPage() {
               changeText="Self-funders pay &pound;1,240/wk vs council-funded &pound;880/wk"
               sparklineData={[41, 46, 46, 41]}
               source="CMA Care Homes Market Study &middot; 2017 / LaingBuisson 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-fees"/>
             <MetricCard
               label="Care home bed capacity"
               value="412k"
@@ -109,8 +107,7 @@ export default function CareHomeFessPage() {
               changeText="Down from 452,000 in 2012 &middot; 40,000 beds lost as homes closed"
               sparklineData={[452, 446, 437, 418, 412]}
               source="CQC State of Care &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-fees"/>
           </div>
         </ScrollReveal>
 

@@ -90,8 +90,7 @@ export default function KnifeCrimeGeographyPage() {
               polarity="up-is-bad"
               changeText="falling from peak &middot; prevention working in some areas"
               sparklineData={[32832, 35000, 39598, 44076, 46000, 44800, 46975, 49027, 50836, 48400]}
-              onExpand={() => {}}
-              source="Home Office &middot; Crime Outcomes 2024"
+              href="#sec-chart"source="Home Office &middot; Crime Outcomes 2024"
             />
             <MetricCard
               label="London vs national rate"
@@ -101,8 +100,7 @@ export default function KnifeCrimeGeographyPage() {
               polarity="up-is-bad"
               changeText="London still 2.7x national rate &middot; concentrated in deprived areas"
               sparklineData={[2.6, 2.6, 2.7, 2.7, 2.9, 2.8, 2.8, 2.8, 2.7, 2.7]}
-              onExpand={() => {}}
-              source="Home Office &middot; Knife and Offensive Weapon Statistics 2024"
+              href="#sec-chart"source="Home Office &middot; Knife and Offensive Weapon Statistics 2024"
             />
             <MetricCard
               label="Force variation"
@@ -112,8 +110,7 @@ export default function KnifeCrimeGeographyPage() {
               polarity="up-is-bad"
               changeText="range from 8 to 96 per 100k between forces"
               sparklineData={[10, 10, 11, 11, 12, 12, 12, 12, 12, 12]}
-              onExpand={() => {}}
-              source="Home Office &middot; Knife Crime Open Data 2024"
+              href="#sec-chart"source="Home Office &middot; Knife Crime Open Data 2024"
             />
           </div>
         </ScrollReveal>

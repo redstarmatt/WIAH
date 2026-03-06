@@ -438,11 +438,36 @@ export default function EconomyPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Real wages took 16 years to recover their 2008 peak &mdash; the longest squeeze on living standards since records began. At the root is a productivity crisis: output per hour grew at roughly 2% a year before the financial crisis, then flatlined. The 2022&ndash;23 cost-of-living shock &mdash; CPI hitting 11.1% in October 2022 &mdash; compounded the damage, though inflation has since fallen to around 3%. UK business investment as a share of GDP has been the lowest in the G7 for two decades; without investment in equipment, technology, and skills, output per hour cannot rise and real wages cannot sustainably improve. Over a fifth of working-age adults remain economically inactive, elevated since COVID and driven largely by long-term sickness.
+              Real wages took 16 years to recover their 2008 peak &mdash; the longest squeeze
+              on living standards since records began. At the root is a productivity crisis:
+              output per hour grew at roughly 2% a year before the financial crisis, then
+              flatlined. Without productivity growth, wages cannot sustainably rise. The
+              2022&ndash;23 cost-of-living shock &mdash; CPI hitting 11.1% in October 2022 &mdash;
+              compounded the damage, though inflation has since fallen to around 3%. Meanwhile,
+              over a fifth of working-age adults remain economically inactive, elevated since
+              COVID and driven largely by long-term sickness. The economy is growing again,
+              but the foundations are brittle.
             </p>
             <p>
-              Within the earnings distribution, two forces pull in opposite directions. The National Living Wage, introduced in 2015, compressed the bottom: P10 weekly earnings grew faster than the median through the late 2010s. But the top kept pulling away &mdash; at P90 (&pound;1,336 per week), earners take home nearly six times as much as those at P10, a ratio barely changed in a decade. Geography compounds the divide: London&apos;s GVA per head sits at 174% of the UK average while the North East manages 67%, a gap that has widened every decade since the 1990s. The income Gini has fallen for four consecutive years to 32.9 &mdash; its lowest in a decade &mdash; but against a backdrop where productivity, regional convergence, and inactivity remain structurally unresolved.
+              Within the earnings distribution, two forces pull in opposite directions. The
+              National Living Wage, introduced in 2015, compressed the bottom: P10 weekly
+              earnings (£227) grew faster than the median through the late 2010s. But the top
+              kept pulling away. At P90 (£1,336 per week), earners take home nearly six times
+              as much as those at P10 &mdash; a ratio that has barely moved in a decade. The
+              fan chart of earnings tells a story of a floor being raised while the ceiling
+              lifts further out of reach.
             </p>
+            <p>
+              Geography compounds the divide. London&apos;s GVA per head (£47,705) sits at
+              174% of the UK average; the North East manages 67%. That gap has widened every
+              decade since the 1990s, and no levelling-up policy has reversed it in the data.
+              One genuine bright spot: the income Gini coefficient has fallen for four
+              consecutive years, from 35.4 in 2020 to 32.9, its lowest level in over a decade.
+              Incomes are becoming more equal &mdash; but against a backdrop where productivity,
+              regional convergence, and inactivity remain unresolved.
+            </p>
+            <p>The UK&apos;s productivity stagnation is not a mystery without clues&mdash;it is substantially an investment failure. Business investment as a share of GDP has been the lowest in the G7 for two decades running, and the gap has not closed. Without investment in equipment, technology, and skills, output per hour cannot rise, and without productivity growth, real wages cannot sustainably improve. The sectors dragging the aggregate down are precisely those that employ the most people: retail, hospitality, and construction, where capital intensity remains low and margins are thin. Finance and pharmaceuticals perform well by international standards, but they employ a fraction of the workforce. The apprenticeship levy, introduced in 2017 to address the skills gap, has collected more money than it has spent; large employers have redirected funds toward management training for existing staff rather than creating new apprenticeships for young workers. The broader skills and training system is fragmented across multiple agencies with overlapping remits and no coherent national strategy. Meanwhile, the interaction between Universal Credit tapers, income tax thresholds, and housing costs creates effective marginal tax rates above 70% for households around median income&mdash;a poverty trap zone where working more hours or taking a better-paid job delivers negligible additional income. The result is the UK&apos;s distinctive and puzzling combination: unemployment is historically low, yet productivity growth is essentially zero.</p>
+            <p>GDP per hour worked is the standard productivity measure, but it misses dimensions of output that matter increasingly. Public services, non-market production, and digitally delivered value that is hard to price are all poorly captured, meaning productivity in health, education, and the growing platform economy may be systematically mismeasured. Regional GVA data&mdash;the basis for every &ldquo;levelling up&rdquo; comparison&mdash;has a known distortion: London&apos;s financial sector output is allocated to the location of corporate headquarters, not where economic activity actually occurs, inflating the capital&apos;s apparent productivity and deflating that of regions where operational staff are based. Real wage calculations deflate nominal pay against CPI, but CPI may underweight housing and childcare costs that have risen faster than the general price level for working-age households, meaning the squeeze on living standards is likely worse than the headline figures suggest. Household income surveys have suffered declining response rates among high-income households, widening the confidence intervals around top-income estimates. ONS productivity statistics are revised regularly and sometimes significantly; contemporaneous assessments of whether productivity is improving may not survive later revision. Trade data collected since Brexit has known accuracy issues, as new customs declaration requirements changed what is visible to statisticians, introducing a discontinuity that complicates any before-and-after analysis of trade openness.</p>
           </div>
         </section>
 

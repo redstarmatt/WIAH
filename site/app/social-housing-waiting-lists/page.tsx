@@ -81,8 +81,7 @@ export default function SocialHousingWaitingListsPage() {
               polarity={'up-is-bad' as const}
               changeText="+31% since 2016 · 10yr+ wait in London"
               sparklineData={[980, 1010, 1030, 1050, 1090, 1100, 1140, 1200, 1290]}
-              onExpand={() => {}}
-              source="DLUHC &middot; Local Authority Housing Statistics 2024"
+              href="#sec-chart"source="DLUHC &middot; Local Authority Housing Statistics 2024"
             />
             <MetricCard
               label="Social homes built per year"
@@ -92,8 +91,7 @@ export default function SocialHousingWaitingListsPage() {
               polarity={'up-is-good' as const}
               changeText="29,000 in 2023 · vs 100,000/yr in 1970s peak"
               sparklineData={[42000, 38000, 35000, 34000, 33000, 28000, 31000, 30000, 29000]}
-              onExpand={() => {}}
-              source="DLUHC &middot; Housebuilding Statistics 2024"
+              href="#sec-chart"source="DLUHC &middot; Housebuilding Statistics 2024"
             />
             <MetricCard
               label="Average London wait (2-bed)"
@@ -103,8 +101,7 @@ export default function SocialHousingWaitingListsPage() {
               polarity={'up-is-bad' as const}
               changeText="+2.3 years since 2015 · national avg: 5.2 yrs"
               sparklineData={[7.0, 7.4, 7.8, 8.2, 8.5, 8.8, 9.2, 9.7, 10.2]}
-              onExpand={() => {}}
-              source="London Assembly Housing Committee 2024"
+              href="#sec-chart"source="London Assembly Housing Committee 2024"
             />
           </div>
         </ScrollReveal>

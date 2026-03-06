@@ -79,8 +79,7 @@ export default function ChildcareCostBarrierPage() {
               changeText="+£3,200 since 2019 · exceeds average mortgage"
               sparklineData={[8500, 9000, 9500, 10000, 10500, 11000, 11800, 13000, 14000]}
               source="Coram Family and Childcare · Childcare Survey 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Parents reducing work for childcare"
               value="33%"
@@ -89,8 +88,7 @@ export default function ChildcareCostBarrierPage() {
               changeText="33% reduced hours or left work · 2× rate for mothers"
               sparklineData={[21, 22, 23, 24, 25, 28, 29, 31, 33]}
               source="Pregnant Then Screwed · Cost of Childcare Survey 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
             <MetricCard
               label="Government funded hours expansion"
               value="30 hours"
@@ -99,8 +97,7 @@ export default function ChildcareCostBarrierPage() {
               changeText="Expanded from 3yrs to 9 months from 2024"
               sparklineData={[15, 15, 15, 15, 15, 15, 15, 20, 30]}
               source="DfE · Childcare Policy Updates 2024"
-              onExpand={() => {}}
-            />
+              href="#sec-chart"/>
           </div>
         </ScrollReveal>
 

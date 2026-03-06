@@ -82,7 +82,7 @@ export default function RiverBathingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England entered the EU Water Framework Directive in 2000 with a commitment to get 60&percnt; of rivers to good ecological status by 2015. By 2022 the figure stood at 14&percnt;, and the Environment Agency&apos;s own modelling suggests England will not reach 60&percnt; in the foreseeable future. The causes are well-understood: water companies recorded 3.6 million hours of sewage overflow in 2022; agricultural run-off contributes severe phosphate and nitrate pollution (the River Wye is now covered in algae for much of the summer from intensive chicken farming upstream); and abstraction leaves some chalk streams &mdash; globally rare habitats &mdash; dry in summer. Designated river bathing sites grew from 8 in 2015 to 70 by 2023, creating monitoring accountability where none previously existed, but many sites still fail good or excellent standards. Environment Agency enforcement capacity has been reduced by budget cuts over the same period that water quality has deteriorated.</p>
+            <p>England entered the EU Water Framework Directive in 2000 with a commitment to get 60% of rivers to good ecological status by 2015. By 2022 the figure stood at 14%, and the Environment Agency&apos;s own modelling suggests England will not reach 60% in the foreseeable future. The causes are well-understood: water companies recorded 3.6 million hours of sewage overflow in 2022; agricultural run-off contributes severe phosphate and nitrate pollution (the River Wye is now covered in algae for much of the summer from intensive chicken farming upstream); and abstraction leaves some chalk streams &mdash; globally rare habitats &mdash; dry in summer. Designated river bathing sites grew from 8 in 2015 to 70 by 2023, creating monitoring accountability where none previously existed, but many sites still fail good or excellent standards. Environment Agency enforcement capacity has been reduced by budget cuts over the same period that water quality has deteriorated.</p>
             <p>The communities most affected are those who rely on rivers and coastal water for recreation and wellbeing &mdash; a constituency that has widened rapidly as open-water swimming grew into a mass participation activity. Bathing water failures fall disproportionately on communities near combined sewer outfalls and intensive agriculture, and the people least able to travel to safer sites have fewest alternatives. Ofwat&apos;s fines on water companies have been too small to change behaviour, and the regulator has been slow to act on clear violations &mdash; meaning the cost of decades of underinvestment in infrastructure is paid by river users, not shareholders.</p>
           </div>
         </section>
@@ -105,8 +105,7 @@ export default function RiverBathingPage() {
               changeText="Target was 60% by 2015 · EA has missed every deadline"
               sparklineData={[25.5, 17.3, 15.7, 14.1, 14.0]}
               source="Environment Agency · 2022"
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="River bathing sites classified 'poor'"
               value={latestBathing ? latestBathing.poor.toString() : '24'}
@@ -116,8 +115,7 @@ export default function RiverBathingPage() {
               changeText="Worsening in 2023 · E. coli and sewage discharge failing sites"
               sparklineData={[23, 22, 22, 21, 22, 24]}
               source="EA Bathing Water Quality · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-ecological"/>
             <MetricCard
               label="Designated river bathing sites"
               value={latestSites ? latestSites.riverSites.toString() : '70'}
@@ -127,8 +125,7 @@ export default function RiverBathingPage() {
               changeText="Up from just 8 in 2015 · Dartmouth, River Wharfe, Derwent"
               sparklineData={[8, 15, 42, 70]}
               source="Environment Agency · 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-bathing"/>
           </div>
         </ScrollReveal>
 

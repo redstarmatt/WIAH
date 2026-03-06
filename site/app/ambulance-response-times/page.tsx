@@ -74,7 +74,7 @@ export default function AmbulanceResponseTimesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England&apos;s ambulance services operate under two key targets: Category 1 calls &mdash; immediately life-threatening emergencies including cardiac arrests &mdash; should receive a response within 7 minutes on average. Category 2 calls, covering strokes and heart attacks, carry an 18-minute target. Both are being missed. Category 2 deteriorated from exactly on target in 2017 to 48 minutes in 2022, before partial recovery to 38.6 minutes in 2024. For a stroke patient, 1.9 million neurons are lost for each minute without treatment &mdash; a 38-minute average means many patients routinely wait an hour. The primary structural cause is ambulance handover delays: NHS England data shows over 40&percnt; of ambulance time now spent off-road outside A&amp;E departments, with 1.8 million crew-hours lost to queuing in 2023/24. Workforce vacancies and the 2022&ndash;23 industrial action over pay further compressed capacity during the worst winters.</p>
+            <p>England&apos;s ambulance services operate under two key targets: Category 1 calls &mdash; immediately life-threatening emergencies including cardiac arrests &mdash; should receive a response within 7 minutes on average. Category 2 calls, covering strokes and heart attacks, carry an 18-minute target. Both are being missed. Category 2 deteriorated from exactly on target in 2017 to 48 minutes in 2022, before partial recovery to 38.6 minutes in 2024. For a stroke patient, 1.9 million neurons are lost for each minute without treatment &mdash; a 38-minute average means many patients routinely wait an hour. The primary structural cause is ambulance handover delays: NHS England data shows over 40% of ambulance time now spent off-road outside A&amp;E departments, with 1.8 million crew-hours lost to queuing in 2023/24. Workforce vacancies and the 2022&ndash;23 industrial action over pay further compressed capacity during the worst winters.</p>
             <p>Performance variation between trusts is severe. The best-performing trust achieved a Category 1 average of 7.1 minutes in 2024; the worst reached 12.3 minutes &mdash; nearly double the target. Rural ambulance services are disproportionately affected: geography means a crew trapped at a distant hospital for hours can leave hundreds of square miles without emergency cover, and longer individual call times mean the cascading effect of each delay is more pronounced. The national average conceals a postcode lottery in emergency care that is, by definition, life-or-death: a patient in a rural area served by an under-pressure trust faces materially worse outcomes than one in a well-staffed urban area.</p>
           </div>
         </section>
@@ -95,8 +95,7 @@ export default function AmbulanceResponseTimesPage() {
               polarity="up-is-bad"
               changeText="+1.2 min above 7-min target &middot; 2017: 7.0 min"
               sparklineData={[7.0, 7.2, 7.3, 7.8, 8.0, 8.7, 8.4, 8.2]}
-              onExpand={() => {}}
-              source="NHS England &middot; Ambulance Quality Indicators 2024"
+              href="#sec-chart"source="NHS England &middot; Ambulance Quality Indicators 2024"
             />
             <MetricCard
               label="Cat 2 response time"
@@ -106,8 +105,7 @@ export default function AmbulanceResponseTimesPage() {
               polarity="up-is-bad"
               changeText="+20.6 min above 18-min target &middot; 2017: 18.0 min"
               sparklineData={[18.0, 21.4, 22.9, 29.1, 32.4, 48.3, 41.3, 38.6]}
-              onExpand={() => {}}
-              source="NHS England &middot; Ambulance Quality Indicators 2024"
+              href="#sec-chart"source="NHS England &middot; Ambulance Quality Indicators 2024"
             />
             <MetricCard
               label="Trust variation (Cat 1)"
@@ -117,8 +115,7 @@ export default function AmbulanceResponseTimesPage() {
               polarity="up-is-bad"
               changeText="best trust 7.1 min vs worst 12.3 min"
               sparklineData={[1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.7]}
-              onExpand={() => {}}
-              source="NHS England &middot; Trust-level AQI 2024"
+              href="#sec-chart"source="NHS England &middot; Trust-level AQI 2024"
             />
           </div>
         </ScrollReveal>

@@ -76,8 +76,7 @@ export default function CareWorkerWagesPage() {
               changeText="Still below Real Living Wage (&pound;12.00) &middot; NHS Band 2 equivalent gets &pound;12.45"
               sparklineData={[7.42, 7.91, 9.12, 9.50, 10.08, 10.66]}
               source="Skills for Care Workforce Intelligence &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-wages"/>
             <MetricCard
               label="Adult social care vacancy rate"
               value="9.9"
@@ -87,8 +86,7 @@ export default function CareWorkerWagesPage() {
               changeText="152,000 vacancies &middot; down from 10.6% peak in 2022"
               sparklineData={[6.3, 6.4, 9.5, 10.6, 9.9]}
               source="Skills for Care &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-wages"/>
             <MetricCard
               label="Annual staff turnover rate"
               value="28.3"
@@ -98,8 +96,7 @@ export default function CareWorkerWagesPage() {
               changeText="Means entire workforce replaced every 3.5 years &middot; continuity impossible"
               sparklineData={[30.8, 28.5, 29.1, 28.9, 28.3]}
               source="Skills for Care Workforce Intelligence &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-wages"/>
           </div>
         </ScrollReveal>
 

@@ -95,7 +95,7 @@ export default function AirQualityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Air pollution is the largest environmental risk to public health in the UK, responsible for an estimated 28,000&ndash;36,000 premature deaths each year. The national annual mean PM2.5 concentration fell from around 11 &mu;g/m&sup3; in 2010 to approximately 8&ndash;9 by the early 2020s, driven by the long-run decline of coal heating, vehicle fleet improvement, and industrial emissions controls. However, the WHO tightened its annual PM2.5 guideline from 10 to 5 &mu;g/m&sup3; in 2021 &mdash; a threshold now exceeded by virtually all UK urban monitoring sites. London&apos;s ULEZ expansion in August 2023 brought an additional 700,000 vehicles into scope and reduced roadside NO2 by 21&percnt; within its first year. Domestic solid fuel burning now contributes approximately 29&percnt; of UK PM2.5 emissions &mdash; the largest single source &mdash; following growth in wood-burning stoves since 2012, a shift policy has been slow to address. The Environment Act 2021 sets a legally binding target of 10 &mu;g/m&sup3; annual mean PM2.5 by 2040, still twice the WHO guideline.</p>
+            <p>Air pollution is the largest environmental risk to public health in the UK, responsible for an estimated 28,000&ndash;36,000 premature deaths each year. The national annual mean PM2.5 concentration fell from around 11 &mu;g/m&sup3; in 2010 to approximately 8&ndash;9 by the early 2020s, driven by the long-run decline of coal heating, vehicle fleet improvement, and industrial emissions controls. However, the WHO tightened its annual PM2.5 guideline from 10 to 5 &mu;g/m&sup3; in 2021 &mdash; a threshold now exceeded by virtually all UK urban monitoring sites. London&apos;s ULEZ expansion in August 2023 brought an additional 700,000 vehicles into scope and reduced roadside NO2 by 21% within its first year. Domestic solid fuel burning now contributes approximately 29% of UK PM2.5 emissions &mdash; the largest single source &mdash; following growth in wood-burning stoves since 2012, a shift policy has been slow to address. The Environment Act 2021 sets a legally binding target of 10 &mu;g/m&sup3; annual mean PM2.5 by 2040, still twice the WHO guideline.</p>
             <p>The health burden is deeply unequal. People in the most deprived areas are 1.5 times more likely than those in the least deprived to live within 150 metres of a major road. Children in high-pollution areas show measurably smaller lung development by age 8, with deficits persisting into adulthood; Lancet research associates long-term NO2 exposure with reduced cognitive development and educational attainment. An estimated 17,000 deaths annually are attributed to PM2.5-driven cardiovascular disease in England alone, and emerging cohort studies link long-term exposure to dementia risk. The legal framework has been driven significantly by litigation: the 2015 Supreme Court ruling against the government and the 2020 ruling that air pollution contributed to Ella Adoo-Kissi-Debrah&apos;s death were both landmark moments that forced policy change.</p>
           </div>
         </section>
@@ -115,8 +115,7 @@ export default function AirQualityPage() {
               polarity="up-is-bad"
               changeText="Per year &middot; More than obesity &middot; Mainly cardiovascular and respiratory &middot; Cross-Government Clean Air Strategy target: reduce PM2.5 by 35% by 2030"
               sparklineData={[45000, 43000, 41000, 40000, 38000, 37000, 36000, 36000]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Urban PM2.5 annual mean (μg/m³)"
               value="8.2"
@@ -124,8 +123,7 @@ export default function AirQualityPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Down from 12.1 in 2010 &middot; WHO limit: 5μg/m³ &middot; UK legal limit: 12μg/m³ &middot; Still 64% above WHO guideline"
               sparklineData={[12.1, 11.8, 11.2, 11.5, 10.8, 10.5, 10.2, 9.8, 9.6, 9.2, 8.1, 8.8, 8.5, 8.2]}
-              onExpand={() => {}}
-            />
+              href="#sec-pollutants"/>
             <MetricCard
               label="Roadside NO₂ annual mean (μg/m³)"
               value="27.8"
@@ -133,8 +131,7 @@ export default function AirQualityPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Legal limit: 40μg/m³ &middot; Down sharply post-ULEZ expansion 2023 &middot; 43% of English LAs still in breach"
               sparklineData={[48.2, 46.8, 45.5, 44.2, 43.0, 41.5, 40.0, 38.5, 37.0, 35.5, 28.0, 31.0, 30.5, 27.8]}
-              onExpand={() => {}}
-            />
+              href="#sec-pollutants"/>
           </div>
         </ScrollReveal>
 

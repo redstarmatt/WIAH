@@ -153,8 +153,7 @@ export default function DrugMisusePage() {
             }
             source="ONS · Drug poisoning mortality"
             baseline="England &amp; Wales, annual deaths registered"
-            onExpand={() => {}}
-          />
+            href="#sec-overview"/>
           <MetricCard
             label="Heroin/morphine deaths"
             value={latest ? Math.round(latest.deaths * heroinPct / 100).toString() : '—'}
@@ -169,8 +168,7 @@ export default function DrugMisusePage() {
             }
             source="ONS · Opioid-related deaths"
             baseline="Opiates cause over one-third of all drug deaths"
-            onExpand={() => {}}
-          />
+            href="#sec-deaths"/>
           <MetricCard
             label="People in drug treatment"
             value={latestTreatment ? `${(latestTreatment.inTreatment / 1000).toFixed(0)}K` : '—'}
@@ -189,8 +187,7 @@ export default function DrugMisusePage() {
             }
             source="NDTMS · Adults in drug and alcohol treatment"
             baseline="2022 figure. Includes both drug and alcohol treatment."
-            onExpand={() => {}}
-          />
+            href="#sec-treatment"/>
         </div>
         </ScrollReveal>
 

@@ -76,8 +76,7 @@ export default function PrisonMentalHealthPage() {
               changeText="Up 208% since 2012 &middot; record high &middot; equivalent to 203 per day"
               sparklineData={[24000, 30000, 40161, 57968, 60584, 61461, 74590]}
               source="HMPPS Safety in Custody Statistics &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-self-harm"/>
             <MetricCard
               label="Prisoners with 2+ mental health diagnoses"
               value="70"
@@ -87,8 +86,7 @@ export default function PrisonMentalHealthPage() {
               changeText="Personality disorder 47%, depression 42%, anxiety 38%"
               sparklineData={[65, 67, 68, 70, 70, 70]}
               source="National Prison Survey / NHS England"
-              onExpand={() => {}}
-            />
+              href="#sec-self-harm"/>
             <MetricCard
               label="Apparent self-inflicted deaths (2022/23)"
               value="86"
@@ -98,8 +96,7 @@ export default function PrisonMentalHealthPage() {
               changeText="52 in 2013, 86 in 2023 &middot; rising despite multiple inquiries"
               sparklineData={[52, 89, 70, 62, 67, 83, 86]}
               source="HMPPS Safety in Custody Statistics &middot; 2023"
-              onExpand={() => {}}
-            />
+              href="#sec-self-harm"/>
           </div>
         </ScrollReveal>
 

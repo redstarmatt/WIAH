@@ -90,8 +90,7 @@ export default function VocationalPathwaysPage() {
               polarity="up-is-good"
               changeText="worsening &middot; structural undervaluation of vocational routes"
               sparklineData={[-3800, -3900, -4000, -4000, -4100, -4000, -4100, -4200, -4200]}
-              onExpand={() => {}}
-              source="DfE &middot; Longitudinal Education Outcomes 2023"
+              href="#sec-chart"source="DfE &middot; Longitudinal Education Outcomes 2023"
             />
             <MetricCard
               label="BTEC completion rate"
@@ -101,8 +100,7 @@ export default function VocationalPathwaysPage() {
               polarity="up-is-good"
               changeText="declining from 72% &middot; funding cuts bite"
               sparklineData={[72, 71, 71, 70, 70, 69, 69, 68, 68]}
-              onExpand={() => {}}
-              source="DfE &middot; 16-18 Qualifications 2023"
+              href="#sec-chart"source="DfE &middot; 16-18 Qualifications 2023"
             />
             <MetricCard
               label="Employer satisfaction"
@@ -112,8 +110,7 @@ export default function VocationalPathwaysPage() {
               polarity="up-is-good"
               changeText="below half satisfied with vocational leavers &middot; skills mismatch"
               sparklineData={[58, 57, 57, 56, 56, 55, 55, 54, 54]}
-              onExpand={() => {}}
-              source="CBI &middot; Education &amp; Skills Survey 2023"
+              href="#sec-chart"source="CBI &middot; Education &amp; Skills Survey 2023"
             />
           </div>
         </ScrollReveal>

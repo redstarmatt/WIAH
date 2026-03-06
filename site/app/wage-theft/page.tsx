@@ -78,8 +78,7 @@ export default function WageTheftPage() {
               polarity={'up-is-bad' as const}
               changeText="+85k since 2019 · £1.9bn stolen wages/yr"
               sparklineData={[215, 230, 245, 260, 270, 295, 320, 340, 355]}
-              onExpand={() => {}}
-              source="HMRC · NMW Enforcement Statistics 2024"
+              href="#sec-chart"source="HMRC · NMW Enforcement Statistics 2024"
             />
             <MetricCard
               label="Criminal prosecutions per year"
@@ -89,8 +88,7 @@ export default function WageTheftPage() {
               polarity={'up-is-good' as const}
               changeText="Avg 9/yr · unchanged since 2016"
               sparklineData={[8, 10, 9, 8, 9, 10, 8, 9, 9]}
-              onExpand={() => {}}
-              source="HMRC · NMW Enforcement Statistics 2024"
+              href="#sec-chart"source="HMRC · NMW Enforcement Statistics 2024"
             />
             <MetricCard
               label="NMW arrears recovered"
@@ -100,8 +98,7 @@ export default function WageTheftPage() {
               polarity={'up-is-good' as const}
               changeText="+£4m since 2019 · covers <1% of estimated theft"
               sparklineData={[9.2, 10.4, 11.8, 12.7, 12.8, 14.1, 15.2, 15.9, 16.8]}
-              onExpand={() => {}}
-              source="HMRC · NMW Enforcement Statistics 2024"
+              href="#sec-chart"source="HMRC · NMW Enforcement Statistics 2024"
             />
           </div>
         </ScrollReveal>

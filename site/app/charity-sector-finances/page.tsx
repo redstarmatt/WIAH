@@ -98,8 +98,7 @@ export default function CharitySectorFinancesPage() {
               polarity="up-is-bad"
               changeText="+19% since 2015 &middot; demand outstripping resources"
               sparklineData={[5200, 5100, 5100, 5200, 5300, 5800, 5600, 5900, 6200]}
-              onExpand={() => {}}
-              source="Charity Commission &middot; Register of Charities 2023"
+              href="#sec-chart"source="Charity Commission &middot; Register of Charities 2023"
             />
             <MetricCard
               label="Govt income share"
@@ -109,8 +108,7 @@ export default function CharitySectorFinancesPage() {
               polarity="up-is-bad"
               changeText="charity sector increasingly govt-funded &middot; independence at risk"
               sparklineData={[34, 35, 35, 37, 37]}
-              onExpand={() => {}}
-              source="NCVO &middot; UK Civil Society Almanac 2023"
+              href="#sec-chart"source="NCVO &middot; UK Civil Society Almanac 2023"
             />
             <MetricCard
               label="Unmet demand"
@@ -120,8 +118,7 @@ export default function CharitySectorFinancesPage() {
               polarity="up-is-bad"
               changeText="of charities cannot serve everyone who needs them &middot; state gap"
               sparklineData={[65, 67, 68, 70, 70]}
-              onExpand={() => {}}
-              source="NCVO &middot; State of the Sector 2023"
+              href="#sec-chart"source="NCVO &middot; State of the Sector 2023"
             />
           </div>
         </ScrollReveal>

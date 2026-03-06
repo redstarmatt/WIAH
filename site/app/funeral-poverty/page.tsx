@@ -95,8 +95,7 @@ export default function FuneralPovertyPage() {
               polarity="up-is-bad"
               changeText="2023 &middot; Up 130% since 2004 &middot; UK average &middot; Sun Life Cost of Dying Report 2023"
               sparklineData={[1835, 2050, 2400, 2900, 3284, 3590, 3693, 3916, 4184, 4056, 4141]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Funeral Expenses Payment (average award)"
               value="&pound;1,593"
@@ -104,8 +103,7 @@ export default function FuneralPovertyPage() {
               polarity="up-is-good"
               changeText="2023 &middot; Government benefit for low-income households &middot; Covers &lt;40% of average funeral cost &middot; Max &pound;700 for burial costs"
               sparklineData={[1268, 1316, 1404, 1498, 1568, 1593]}
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
             <MetricCard
               label="Families in funeral poverty"
               value="110,000"
@@ -113,8 +111,7 @@ export default function FuneralPovertyPage() {
               polarity="up-is-bad"
               changeText="Per year &middot; Cannot afford funeral without financial help &middot; SunLife estimate &middot; Burial costs rising fastest"
               sparklineData={[75000, 82000, 88000, 93000, 98000, 105000, 110000]}
-              onExpand={() => {}}
-            />
+              href="#sec-charts"/>
           </div>
         </ScrollReveal>
 

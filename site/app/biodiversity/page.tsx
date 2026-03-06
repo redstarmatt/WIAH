@@ -131,7 +131,6 @@ export default function BiodiversityPage() {
               polarity="up-is-bad"
               changeText="State of Nature 2023 · 15% at risk of extinction · Up from 26% declining in 1970 baseline assessment"
               sparklineData={[26, 28, 30, 33, 35, 37, 38, 39, 40, 41]}
-              onExpand={() => {}}
             />
             <MetricCard
               label="Farmland bird index (1970=100)"
@@ -141,7 +140,6 @@ export default function BiodiversityPage() {
               polarity="up-is-good"
               changeText="2021 · Down 57% since 1970 · Grey partridge down 93% · Lapwing down 66% · Corn bunting down 91%"
               sparklineData={[100, 75, 60, 52, 48, 45, 44, 43, 43]}
-              onExpand={() => {}}
             />
             <MetricCard
               label="English rivers in good ecological status"
@@ -151,7 +149,6 @@ export default function BiodiversityPage() {
               polarity="up-is-good"
               changeText="2022 · WFD target: 100% by 2027 · Was 16% in 2019 · Sewage, agriculture, and invasive species main causes"
               sparklineData={[26, 22, 19, 17, 16, 14]}
-              onExpand={() => {}}
             />
             <MetricCard
               label="Red kites in the UK"
@@ -161,7 +158,6 @@ export default function BiodiversityPage() {
               polarity="up-is-good"
               changeText="Up from ~10 breeding pairs in 1990 · RSPB&rsquo;s biggest species success"
               sparklineData={[10, 80, 250, 600, 1200, 2200, 3800, 6000, 8000, 10000]}
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>

@@ -118,8 +118,7 @@ export default function SuicidePreventionPage() {
               polarity="up-is-bad"
               changeText="2022 &middot; Highest since 1999 &middot; 75% male &middot; Leading cause of death aged 20&ndash;34"
               sparklineData={[4800, 4900, 5000, 5100, 5200, 5400, 5250, 5300, 4912, 5224, 5642]}
-              onExpand={() => {}}
-            />
+              href="#sec-overview"/>
             <MetricCard
               label="Suicide rate (per 100,000 population)"
               value="10.7"
@@ -127,8 +126,7 @@ export default function SuicidePreventionPage() {
               polarity="up-is-bad"
               changeText="2022 &middot; Above EU average &middot; Men: 16.3 per 100,000 &middot; Women: 5.1 per 100,000"
               sparklineData={[10.1, 10.1, 10.0, 10.0, 10.1, 10.1, 11.2, 11.0, 10.0, 10.4, 10.7]}
-              onExpand={() => {}}
-            />
+              href="#sec-rate"/>
             <MetricCard
               label="A&amp;E self-harm presentations (annual)"
               value="225K"
@@ -136,8 +134,7 @@ export default function SuicidePreventionPage() {
               polarity="up-is-bad"
               changeText="2022 &middot; Doubled since 2010 &middot; Young women worst affected &middot; Waits for crisis beds average 24 hours"
               sparklineData={[115, 120, 128, 138, 152, 165, 185, 200, 172, 210, 225]}
-              onExpand={() => {}}
-            />
+              href="#sec-selfharm"/>
           </div>
         </ScrollReveal>
 

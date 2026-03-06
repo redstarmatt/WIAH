@@ -91,8 +91,7 @@ export default function NhsInternationalWorkersPage() {
               polarity="up-is-bad"
               changeText="record high &middot; up from 18.2% in 2015"
               sparklineData={[18.2, 20.1, 22.4, 26.3, 29.1, 31.8, 33.4, 33.4]}
-              onExpand={() => {}}
-              source="NHS Digital &middot; NHS Workforce Statistics 2024"
+              href="#sec-chart"source="NHS Digital &middot; NHS Workforce Statistics 2024"
             />
             <MetricCard
               label="International doctors"
@@ -102,8 +101,7 @@ export default function NhsInternationalWorkersPage() {
               polarity="up-is-bad"
               changeText="nearly 1 in 3 doctors trained abroad"
               sparklineData={[27.3, 28.1, 28.9, 29.8, 30.4, 31.2, 31.9, 31.9]}
-              onExpand={() => {}}
-              source="NHS Digital &middot; NHS Workforce Statistics 2024"
+              href="#sec-chart"source="NHS Digital &middot; NHS Workforce Statistics 2024"
             />
             <MetricCard
               label="WHO red-list countries"
@@ -113,8 +111,7 @@ export default function NhsInternationalWorkersPage() {
               polarity="up-is-bad"
               changeText="countries on WHO ethical recruitment red list &middot; NHS still recruits from 13"
               sparklineData={[47, 47, 47, 47, 47, 47, 47, 47]}
-              onExpand={() => {}}
-              source="WHO &middot; Global Code of Practice 2024"
+              href="#sec-chart"source="WHO &middot; Global Code of Practice 2024"
             />
           </div>
         </ScrollReveal>

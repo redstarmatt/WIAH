@@ -119,7 +119,6 @@ export default function DrugDeathsPage() {
               polarity="up-is-bad"
               changeText="2022 · Record high · Up from 2,652 in 2012 · Opioids: 48% of all drug deaths · Cocaine: rising fast"
               sparklineData={[2652, 2732, 2952, 3346, 3744, 3756, 4359, 4393, 4561, 4859, 4907]}
-              onExpand={() => {}}
             />
             <MetricCard
               label="Scotland drug death rate per 100K"
@@ -128,7 +127,6 @@ export default function DrugDeathsPage() {
               polarity="up-is-bad"
               changeText="2022 · Highest in Europe · 3× England rate · 1,051 deaths · Crack cocaine &amp; opioids · Crisis in deprived areas"
               sparklineData={[6.8, 9.2, 12.3, 17.5, 21.3, 22.4]}
-              onExpand={() => {}}
             />
             <MetricCard
               label="People in drug treatment (England)"
@@ -137,7 +135,6 @@ export default function DrugDeathsPage() {
               polarity="up-is-good"
               changeText="2022/23 · 45% complete treatment &apos;free from dependence&apos; · Treatment funding cut 30% real-terms since 2013 · New investment: &pound;780M 2022&ndash;25"
               sparklineData={[300, 310, 295, 280, 273, 270, 271, 275]}
-              onExpand={() => {}}
             />
           </div>
         </ScrollReveal>
