@@ -16,6 +16,7 @@ interface ChildPovertyPoint { year: number; pct: number; millions: number; }
 interface FoodBankPoint { year: number; parcelsM: number; }
 interface InWorkPoint { year: number; pct: number; }
 interface DestitutionPoint { year: number; millions: number; }
+interface BenefitsReceiptPoint { year: number; pct: number; }
 
 interface PovertyData {
   national: {
@@ -24,6 +25,7 @@ interface PovertyData {
     foodBanks: { timeSeries: FoodBankPoint[]; latest: FoodBankPoint };
     inWorkPoverty: { timeSeries: InWorkPoint[]; latest: InWorkPoint };
     destitution: { timeSeries: DestitutionPoint[]; latest: DestitutionPoint };
+    benefitsReceipt: { timeSeries: BenefitsReceiptPoint[]; latest: BenefitsReceiptPoint };
   };
   metadata: {
     sources: { name: string; dataset: string; url: string; frequency: string }[];
@@ -142,6 +144,19 @@ export default function PovertyPage() {
       }]
     : [];
 
+  // 5. Benefits receipt
+  const benefitsReceiptSeries: Series[] = data
+    ? [{
+        id: 'benefits-receipt',
+        label: 'Households receiving benefits (%)',
+        colour: '#264653',
+        data: data.national.benefitsReceipt.timeSeries.map(d => ({
+          date: new Date(d.year, 0, 1),
+          value: d.pct,
+        })),
+      }]
+    : [];
+
   const latestPoverty = data?.national.relativePoverty.latest;
   const latestChild = data?.national.childPoverty.latest;
   const latestFoodBank = data?.national.foodBanks.latest;
@@ -226,6 +241,7 @@ export default function PovertyPage() {
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-poverty-rates', label: 'Poverty Rates' },
           { id: 'sec-food', label: 'Food & Destitution' },
+          { id: 'sec-benefits', label: 'Benefits Receipt' },
           { id: 'sec-wealth-inequality', label: 'Wealth Inequality' },
           { id: 'sec-wealth-by-age', label: 'Wealth by Age' },
         ]} />
@@ -408,6 +424,32 @@ export default function PovertyPage() {
         </ScrollReveal>
 
         </div>{/* end sec-food */}
+
+        {/* ── Section: Benefits Receipt ─────────────────────────────────────── */}
+        <div id="sec-benefits" className="mb-16">
+          <ScrollReveal>
+            {benefitsReceiptSeries.length > 0 ? (
+              <LineChart
+                title="Households receiving benefits, 2010&ndash;2023"
+                subtitle="Percentage of UK households receiving at least one state benefit or tax credit."
+                series={benefitsReceiptSeries}
+                annotations={[
+                  { date: new Date(2013, 0), label: '2013: Universal Credit rollout' },
+                  { date: new Date(2020, 0), label: '2020: COVID uplift (+£20/wk UC)' },
+                  { date: new Date(2021, 0), label: '2021: Uplift withdrawn' },
+                ]}
+                yLabel="% of households"
+                source={{
+                  name: 'DWP',
+                  dataset: 'Family Resources Survey',
+                  frequency: 'annual',
+                }}
+              />
+            ) : (
+              <div className="h-64 bg-wiah-light rounded animate-pulse" />
+            )}
+          </ScrollReveal>
+        </div>{/* end sec-benefits */}
 
         {/* ── Section: Wealth Inequality ────────────────────────────────────── */}
         <div id="sec-wealth-inequality" className="mb-16">
