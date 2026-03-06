@@ -42,13 +42,13 @@ export default function ClinicalNegligenceCostsPage() {
     ? [
         {
           id: 'annual-cost',
-          label: 'Annual negligence cost (&pound;bn)',
+          label: 'Annual negligence cost (£bn)',
           colour: '#E63946',
           data: data.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.annualCostBn })),
         },
         {
           id: 'outstanding-liability',
-          label: 'Outstanding liability (&pound;bn)',
+          label: 'Outstanding liability (£bn)',
           colour: '#0D1117',
           data: data.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.outstandingLiabilityBn })),
         },
@@ -63,14 +63,14 @@ export default function ClinicalNegligenceCostsPage() {
         <TopicHeader
           topic="Clinical Negligence Costs"
           question="What Are NHS Medical Errors Costing?"
-          finding="NHS negligence liability has reached &pound;83 billion &mdash; more than the NHS&apos;s entire annual budget."
+          finding="NHS negligence liability has reached £83 billion — more than the NHS's entire annual budget."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>NHS Resolution&apos;s outstanding clinical negligence liability reached &pound;86.1 billion in 2024 &mdash; exceeding the NHS&apos;s entire annual budget &mdash; while annual payments hit &pound;2.8 billion in 2023/24, up from &pound;1.1 billion a decade earlier. Obstetric claims dominate: birth injury cases represent around 63% of total claim value despite being a small fraction by volume, as a single case of birth-related brain damage can generate a claim of &pound;20&ndash;30 million for lifetime care. The Donna Ockenden review into Shrewsbury and Telford NHS Trust found systematic and repeated maternity failures over two decades that could have been avoided. Annual payments consume resources that would otherwise fund clinical services and have more than doubled in a decade.</p>
-            <p>The adversarial claims process requires families to pursue litigation for years before receiving compensation, is traumatic for claimants, expensive for the NHS, and generates limited learning. A significant share of claims is settled without admission of liability. The duty of candour introduced by the Health and Social Care Act 2022 and the Rapid Resolution and Redress scheme for maternity cases are partial responses. The liability figure is ultimately a measure of preventable harm: hospitals where staff are reluctant to report near misses or speak up about safety concerns generate the incidents that, years later, appear as liability on Resolution&apos;s balance sheet.</p>
+            <p>NHS Resolution's outstanding clinical negligence liability reached £86.1 billion in 2024 — exceeding the NHS's entire annual budget — while annual payments hit £2.8 billion in 2023/24, up from £1.1 billion a decade earlier. Obstetric claims dominate: birth injury cases represent around 63% of total claim value despite being a small fraction by volume, as a single case of birth-related brain damage can generate a claim of £20–30 million for lifetime care. The Donna Ockenden review into Shrewsbury and Telford NHS Trust found systematic and repeated maternity failures over two decades that could have been avoided. Annual payments consume resources that would otherwise fund clinical services and have more than doubled in a decade.</p>
+            <p>The adversarial claims process requires families to pursue litigation for years before receiving compensation, is traumatic for claimants, expensive for the NHS, and generates limited learning. A significant share of claims is settled without admission of liability. The duty of candour introduced by the Health and Social Care Act 2022 and the Rapid Resolution and Redress scheme for maternity cases are partial responses. The liability figure is ultimately a measure of preventable harm: hospitals where staff are reluctant to report near misses or speak up about safety concerns generate the incidents that, years later, appear as liability on Resolution's balance sheet.</p>
           </div>
         </section>
 
@@ -84,23 +84,23 @@ export default function ClinicalNegligenceCostsPage() {
           <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Annual negligence cost"
-              value="&pound;2.8bn"
+              value="£2.8bn"
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="up from &pound;1.1bn in 2014 &middot; 2.5&times; in a decade"
+              changeText="up from £1.1bn in 2014 · 2.5&times; in a decade"
               sparklineData={[1.1, 1.5, 1.8, 2.2, 2.4, 2.6, 2.8, 2.8]}
-              href="#sec-chart"source="NHS Resolution &middot; Annual Report 2023/24"
+              href="#sec-chart"source="NHS Resolution · Annual Report 2023/24"
             />
             <MetricCard
               label="Outstanding liability"
-              value="&pound;86.1bn"
+              value="£86.1bn"
               unit=""
               direction="up"
               polarity="up-is-bad"
               changeText="exceeds entire NHS annual budget"
               sparklineData={[26.1, 36.4, 56.1, 65.0, 78.2, 83.4, 86.1, 86.1]}
-              href="#sec-chart"source="NHS Resolution &middot; Annual Report 2023/24"
+              href="#sec-chart"source="NHS Resolution · Annual Report 2023/24"
             />
             <MetricCard
               label="Obstetric share of claims value"
@@ -108,9 +108,9 @@ export default function ClinicalNegligenceCostsPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="of total claim value &middot; birth injuries dominant"
+              changeText="of total claim value · birth injuries dominant"
               sparklineData={[48, 51, 54, 57, 59, 61, 63, 63]}
-              href="#sec-chart"source="NHS Resolution &middot; Maternity Claims Data 2024"
+              href="#sec-chart"source="NHS Resolution · Maternity Claims Data 2024"
             />
           </div>
         </ScrollReveal>
@@ -118,10 +118,10 @@ export default function ClinicalNegligenceCostsPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="NHS clinical negligence costs, England, 2014&ndash;2024"
-              subtitle="Annual payments (&pound;bn) and outstanding total liability (&pound;bn). Outstanding liability includes estimated future costs of settled and anticipated claims."
+              title="NHS clinical negligence costs, England, 2014–2024"
+              subtitle="Annual payments (£bn) and outstanding total liability (£bn). Outstanding liability includes estimated future costs of settled and anticipated claims."
               series={allSeries}
-              yLabel="&pound;bn"
+              yLabel="£bn"
               source={{
                 name: 'NHS Resolution',
                 dataset: 'Annual Report and Accounts',
@@ -134,8 +134,8 @@ export default function ClinicalNegligenceCostsPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>NHS Resolution &mdash; Annual Report and Accounts. Published annually. resolution.nhs.uk/resources/nhsr-annual-report-and-accounts/</p>
-            <p>Donna Ockenden &mdash; Findings, Conclusions and Essential Actions from the Independent Review of Maternity Services at Shrewsbury and Telford NHS Trust. March 2022.</p>
+            <p>NHS Resolution — Annual Report and Accounts. Published annually. resolution.nhs.uk/resources/nhsr-annual-report-and-accounts/</p>
+            <p>Donna Ockenden — Findings, Conclusions and Essential Actions from the Independent Review of Maternity Services at Shrewsbury and Telford NHS Trust. March 2022.</p>
             <p>Annual cost represents total claims payments made by NHS Resolution in the financial year. Outstanding liability is the actuarially assessed present value of all known and estimated future claims. Figures are at nominal prices. The change in Ogden discount rate (from &minus;0.75% to &minus;0.25% in 2019) increased headline liability figures independently of underlying claim volumes.</p>
           </div>
         </section>

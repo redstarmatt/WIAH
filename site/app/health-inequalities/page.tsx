@@ -68,8 +68,8 @@ export default function HealthInequalitiesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Healthy life expectancy &mdash; years lived without disability or chronic illness &mdash; varies by 18.4 years between England&rsquo;s most and least deprived areas, up from a 16.2-year gap in 2001. A woman born in Blackpool&rsquo;s most deprived neighbourhoods can expect just 52 years of good health; one born in Hart, Hampshire can expect 70.7. People in deprived areas are not just dying younger; they are suffering more for longer, spending a far higher proportion of shorter lives in poor health. The North-South divide reinforces this: men in the North East live 74.1 years against 81.8 in the South East &mdash; a 7.7-year gap that widened after the 2008 financial crisis as austerity disproportionately cut public services and welfare in already-deprived communities. The 2020 Marmot Review found that for the first time in over a century, life expectancy in England had stopped improving &mdash; and in the most deprived communities was actually declining.</p>
-            <p>The NHS can treat the consequences of inequality but cannot address its causes, which are material: income, housing quality, employment conditions, and early childhood environment. NHS England&rsquo;s Core20PLUS5 framework targets the most deprived 20% across five clinical areas, but the health gap took decades to widen and will take decades to close even under optimistic scenarios. Public health spending fell 24% in real terms between 2015 and 2023, reducing the investment in prevention that could compress morbidity and narrow the gap. The burden of poor health falls heaviest on those least able to bear it &mdash; lower-income households face higher rates of long-term illness, are less likely to be in work, and draw more heavily on NHS and social care services at exactly the point those services face the most pressure.</p>
+            <p>Healthy life expectancy — years lived without disability or chronic illness — varies by 18.4 years between England&rsquo;s most and least deprived areas, up from a 16.2-year gap in 2001. A woman born in Blackpool&rsquo;s most deprived neighbourhoods can expect just 52 years of good health; one born in Hart, Hampshire can expect 70.7. People in deprived areas are not just dying younger; they are suffering more for longer, spending a far higher proportion of shorter lives in poor health. The North-South divide reinforces this: men in the North East live 74.1 years against 81.8 in the South East — a 7.7-year gap that widened after the 2008 financial crisis as austerity disproportionately cut public services and welfare in already-deprived communities. The 2020 Marmot Review found that for the first time in over a century, life expectancy in England had stopped improving — and in the most deprived communities was actually declining.</p>
+            <p>The NHS can treat the consequences of inequality but cannot address its causes, which are material: income, housing quality, employment conditions, and early childhood environment. NHS England&rsquo;s Core20PLUS5 framework targets the most deprived 20% across five clinical areas, but the health gap took decades to widen and will take decades to close even under optimistic scenarios. Public health spending fell 24% in real terms between 2015 and 2023, reducing the investment in prevention that could compress morbidity and narrow the gap. The burden of poor health falls heaviest on those least able to bear it — lower-income households face higher rates of long-term illness, are less likely to be in work, and draw more heavily on NHS and social care services at exactly the point those services face the most pressure.</p>
           </div>
         </section>
 
@@ -88,9 +88,9 @@ export default function HealthInequalitiesPage() {
               unit="years"
               direction="up"
               polarity="up-is-bad"
-              changeText="Between most and least deprived decile &middot; widened since 2001"
+              changeText="Between most and least deprived decile · widened since 2001"
               sparklineData={[16.2, 17.1, 17.8, 18.1, 18.4, 18.6]}
-              href="#sec-gap"source="ONS Health State Life Expectancies &middot; 2018&ndash;20"
+              href="#sec-gap"source="ONS Health State Life Expectancies · 2018–20"
             />
             <MetricCard
               label="Life expectancy gap"
@@ -100,7 +100,7 @@ export default function HealthInequalitiesPage() {
               polarity="up-is-bad"
               changeText="Most deprived 74.1 yrs vs least deprived 83.5 yrs"
               sparklineData={[8.9, 9.2, 9.6, 9.9, 10.2, 10.4]}
-              href="#sec-deprivation"source="ONS &middot; 2018&ndash;20"
+              href="#sec-deprivation"source="ONS · 2018–20"
             />
             <MetricCard
               label="North-South LE gap"
@@ -110,7 +110,7 @@ export default function HealthInequalitiesPage() {
               polarity="up-is-bad"
               changeText="NE England 74.1 years vs SE 81.8 years"
               sparklineData={[7.2, 7.4, 7.5, 7.6, 7.7, 7.8, 7.7, 7.7]}
-              href="#sec-deprivation"source="ONS &middot; 2020&ndash;22"
+              href="#sec-deprivation"source="ONS · 2020–22"
             />
           </div>
         </ScrollReveal>
@@ -118,7 +118,7 @@ export default function HealthInequalitiesPage() {
         <ScrollReveal>
           <section id="sec-gap" className="mb-12">
             <LineChart
-              title="Health inequality gap, 2001&ndash;2020"
+              title="Health inequality gap, 2001–2020"
               subtitle="Difference in healthy life expectancy and life expectancy between most and least deprived deciles, England."
               series={gapSeries}
               yLabel="Years between most/least deprived"
@@ -134,7 +134,7 @@ export default function HealthInequalitiesPage() {
         <ScrollReveal>
           <section id="sec-deprivation" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-2">Healthy life expectancy by deprivation decile</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">Years of healthy life expected at birth, by deprivation decile. England, 2018&ndash;20.</p>
+            <p className="text-sm text-wiah-mid font-mono mb-6">Years of healthy life expected at birth, by deprivation decile. England, 2018–20.</p>
             {data && (
               <div className="space-y-3">
                 {data.hleByDeprivation.map((item, idx) => (
@@ -154,15 +154,15 @@ export default function HealthInequalitiesPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS &mdash; Health State Life Expectancies, UK: 2018 to 2020</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS — Health State Life Expectancies, UK: 2018 to 2020</p>
           </section>
         </ScrollReveal>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>ONS &mdash; Health State Life Expectancies by national deprivation deciles for England. Published 2022. ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthinequalities</p>
-            <p>The Health Foundation &mdash; Marmot Review 10 Years On. 2020. health.org.uk/publications/reports/the-marmot-review-10-years-on</p>
+            <p>ONS — Health State Life Expectancies by national deprivation deciles for England. Published 2022. ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthinequalities</p>
+            <p>The Health Foundation — Marmot Review 10 Years On. 2020. health.org.uk/publications/reports/the-marmot-review-10-years-on</p>
             <p>Healthy life expectancy uses self-reported general health from the Annual Population Survey to classify years as &ldquo;in good health&rdquo;. Deprivation deciles are based on the Index of Multiple Deprivation 2019, applied at Lower Super Output Area level. Life expectancy uses the Sullivan method.</p>
           </div>
         </section>

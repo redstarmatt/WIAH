@@ -66,14 +66,14 @@ export default function HolidayLetsPage() {
         <TopicHeader
           topic="Short-Term Holiday Lets"
           question="How many homes have been turned into Airbnbs?"
-          finding="257,000 properties in England are listed as short-term lets &mdash; a near-fourfold increase since 2015. In Cornwall, 36% of housing stock is let short-term. Teachers, nurses and local workers are being priced out of the communities they serve."
+          finding="257,000 properties in England are listed as short-term lets — a near-fourfold increase since 2015. In Cornwall, 36% of housing stock is let short-term. Teachers, nurses and local workers are being priced out of the communities they serve."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The number of short-term let listings in England grew from approximately 70,000 in 2015 to 257,000 by 2022 &mdash; a near-fourfold increase concentrated in coastal and rural tourist destinations. In Cornwall, 36% of all housing stock is now listed on short-term let platforms at any point in the year; the Lake District sits at 29%, North Devon at 24%. Landlords converting long-term tenancies to holiday lets typically earn two to three times more per year without the regulatory obligations of an assured shorthold tenancy, an economic calculation that overwhelms local housing supply wherever tourist demand is strong. Cornwall&rsquo;s house price-to-earnings ratio rose from 9.1 in 2015 to 15.1 in 2022, making it one of the least affordable places in England relative to local incomes. NHS trusts and schools in tourist areas report persistent recruitment failure because housing is neither available nor affordable for key workers on public-sector salaries.</p>
-            <p>The policy response has been cautious. The Levelling Up and Regeneration Act 2023 created mandatory registration powers for local authorities and a new C5 use class for short-term lets, allowing councils to require planning permission for conversions. Council tax reform removed the 100% business rate relief for properties let fewer than 70 days per year. But authorities cannot yet cap numbers &mdash; unlike Amsterdam, which reduced Airbnb listings from 22,000 to 7,800 through a 30-night annual cap &mdash; and registration alone will not meaningfully reduce displacement. The burden falls on communities that generate a tourist economy partly through the quality of their public services, which are then undermined by the housing consequences of the tourism they sustain.</p>
+            <p>The number of short-term let listings in England grew from approximately 70,000 in 2015 to 257,000 by 2022 — a near-fourfold increase concentrated in coastal and rural tourist destinations. In Cornwall, 36% of all housing stock is now listed on short-term let platforms at any point in the year; the Lake District sits at 29%, North Devon at 24%. Landlords converting long-term tenancies to holiday lets typically earn two to three times more per year without the regulatory obligations of an assured shorthold tenancy, an economic calculation that overwhelms local housing supply wherever tourist demand is strong. Cornwall&rsquo;s house price-to-earnings ratio rose from 9.1 in 2015 to 15.1 in 2022, making it one of the least affordable places in England relative to local incomes. NHS trusts and schools in tourist areas report persistent recruitment failure because housing is neither available nor affordable for key workers on public-sector salaries.</p>
+            <p>The policy response has been cautious. The Levelling Up and Regeneration Act 2023 created mandatory registration powers for local authorities and a new C5 use class for short-term lets, allowing councils to require planning permission for conversions. Council tax reform removed the 100% business rate relief for properties let fewer than 70 days per year. But authorities cannot yet cap numbers — unlike Amsterdam, which reduced Airbnb listings from 22,000 to 7,800 through a 30-night annual cap — and registration alone will not meaningfully reduce displacement. The burden falls on communities that generate a tourist economy partly through the quality of their public services, which are then undermined by the housing consequences of the tourism they sustain.</p>
           </div>
         </section>
 
@@ -92,9 +92,9 @@ export default function HolidayLetsPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Up from 70,000 in 2015 &middot; concentrated in tourist areas"
+            changeText="Up from 70,000 in 2015 · concentrated in tourist areas"
             sparklineData={[70000, 110000, 180000, 235000, 257000]}
-            source="ONS / Inside Airbnb &middot; 2022"
+            source="ONS / Inside Airbnb · 2022"
             href="#sec-listings"/>
           <MetricCard
             label="Cornwall housing as short-term lets"
@@ -102,9 +102,9 @@ export default function HolidayLetsPage() {
             unit="%"
             direction="up"
             polarity="up-is-bad"
-            changeText="Lake District 29%, North Devon 24% &middot; communities hollowed out"
+            changeText="Lake District 29%, North Devon 24% · communities hollowed out"
             sparklineData={[20, 24, 28, 32, 36]}
-            source="Affordable Housing Commission &middot; 2022"
+            source="Affordable Housing Commission · 2022"
             href="#sec-local"/>
           <MetricCard
             label="Cornwall house price:earnings ratio"
@@ -112,9 +112,9 @@ export default function HolidayLetsPage() {
             unit="&times;"
             direction="up"
             polarity="up-is-bad"
-            changeText="Up from 9.1&times; in 2015 &middot; STLs contributing to unaffordability"
+            changeText="Up from 9.1&times; in 2015 · STLs contributing to unaffordability"
             sparklineData={[9.1, 10.3, 11.2, 14.4, 15.1]}
-            source="ONS House Price Statistics &middot; 2022"
+            source="ONS House Price Statistics · 2022"
             href="#sec-affordability"/>
         </div>
         </ScrollReveal>
@@ -122,7 +122,7 @@ export default function HolidayLetsPage() {
         <ScrollReveal>
         <section id="sec-listings" className="mb-12">
           <LineChart
-            title="Short-term rental listings in England, 2015&ndash;2022"
+            title="Short-term rental listings in England, 2015–2022"
             subtitle="Estimated number of active short-term let listings. ONS / Inside Airbnb."
             series={listingsSeries}
             annotations={[
@@ -161,7 +161,7 @@ export default function HolidayLetsPage() {
         <ScrollReveal>
         <section id="sec-affordability" className="mb-12">
           <LineChart
-            title="Cornwall house price:earnings ratio, 2015&ndash;2022"
+            title="Cornwall house price:earnings ratio, 2015–2022"
             subtitle="Median house price divided by median annual earnings, Cornwall. ONS House Price Statistics."
             series={affordabilitySeries}
             yLabel="House price:earnings ratio"
@@ -171,7 +171,7 @@ export default function HolidayLetsPage() {
             <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingaffordabilityinenglandandwales/previousReleases" className="underline" target="_blank" rel="noopener noreferrer">
               ONS Short-Term Lets Statistics
             </a>
-            {' '}&middot; Affordable Housing Commission &middot; DLUHC
+            {' '}· Affordable Housing Commission · DLUHC
           </p>
         </section>
         </ScrollReveal>

@@ -69,18 +69,18 @@ export default function KinshipCarePage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Kinship Care"
-          question="Who Steps In When Parents Can&apos;t?"
-          finding="An estimated 162,000 children in the UK are being raised by grandparents, aunts, uncles, and other relatives &mdash; yet 69% of kinship carers receive no financial support from their local authority. The number has risen 26% since 2019, driven by rising child protection referrals and a severe shortage of foster carers."
+          question="Who Steps In When Parents Can't?"
+          finding="An estimated 162,000 children in the UK are being raised by grandparents, aunts, uncles, and other relatives — yet 69% of kinship carers receive no financial support from their local authority. The number has risen 26% since 2019, driven by rising child protection referrals and a severe shortage of foster carers."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Kinship care is the most common alternative to parental care in the UK, yet it sits in a policy blind spot. Around 162,000 children are being raised by relatives &mdash; typically grandparents &mdash; either through formal legal arrangements such as Special Guardianship Orders (SGOs) or informal family agreements. The charity Kinship estimates the true figure may be closer to 200,000 once unregistered informal arrangements are included. These families prevent children from entering the care system: without kinship carers, the looked-after children population would be roughly double its current size, at enormous cost to the state.
+              Kinship care is the most common alternative to parental care in the UK, yet it sits in a policy blind spot. Around 162,000 children are being raised by relatives — typically grandparents — either through formal legal arrangements such as Special Guardianship Orders (SGOs) or informal family agreements. The charity Kinship estimates the true figure may be closer to 200,000 once unregistered informal arrangements are included. These families prevent children from entering the care system: without kinship carers, the looked-after children population would be roughly double its current size, at enormous cost to the state.
             </p>
             <p>
-              The trajectory is sharply upward. SGO applications rose 48% between 2018 and 2023, reflecting both increased demand from children&apos;s services seeking alternatives to foster care and a growing preference among courts for placing children within their extended family. The Children and Families Act 2014 introduced a duty on local authorities to consider kinship placement before foster care, but this legal priority has not been matched by financial support. The Independent Review of Children&apos;s Social Care (2022) recommended a comprehensive financial allowance for kinship carers equivalent to the foster care rate &mdash; the government accepted the principle but has not yet implemented it. A pilot programme in 2024 covers just 12 local authorities.
+              The trajectory is sharply upward. SGO applications rose 48% between 2018 and 2023, reflecting both increased demand from children's services seeking alternatives to foster care and a growing preference among courts for placing children within their extended family. The Children and Families Act 2014 introduced a duty on local authorities to consider kinship placement before foster care, but this legal priority has not been matched by financial support. The Independent Review of Children's Social Care (2022) recommended a comprehensive financial allowance for kinship carers equivalent to the foster care rate — the government accepted the principle but has not yet implemented it. A pilot programme in 2024 covers just 12 local authorities.
             </p>
             </div>
         </section>
@@ -98,9 +98,9 @@ export default function KinshipCarePage() {
               value="162K"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up 26% since 2019 &middot; 48% rise in SGO applications since 2018"
+              changeText="Up 26% since 2019 · 48% rise in SGO applications since 2018"
               sparklineData={[128, 132, 137, 141, 146, 150, 154, 158, 162]}
-              source="DfE &middot; Children Looked After 2023"
+              source="DfE · Children Looked After 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -108,20 +108,20 @@ export default function KinshipCarePage() {
               value="31%"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 45% in 2015 &middot; 69% receive no local authority support"
+              changeText="Down from 45% in 2015 · 69% receive no local authority support"
               sparklineData={[45, 43, 41, 39, 38, 36, 34, 32, 31]}
-              source="Kinship &middot; State of the Nation 2023"
+              source="Kinship · State of the Nation 2023"
               onExpand={() => {}}
             />
             <MetricCard
               label="Savings to the state"
-              value="&pound;4.4bn"
+              value="£4.4bn"
               unit="/year"
               direction="up"
               polarity="up-is-good"
-              changeText="Kinship care saves &pound;4.4bn annually vs equivalent foster placements"
+              changeText="Kinship care saves £4.4bn annually vs equivalent foster placements"
               sparklineData={[3.2, 3.4, 3.6, 3.8, 4.0, 4.2, 4.4]}
-              source="Kinship &middot; Cost-Benefit Analysis 2023"
+              source="Kinship · Cost-Benefit Analysis 2023"
               onExpand={() => {}}
             />
           </div>
@@ -131,7 +131,7 @@ export default function KinshipCarePage() {
           <section id="sec-population" className="mb-12">
             {populationSeries.length > 0 ? (
               <LineChart
-                title="Children in kinship care, England, 2015&ndash;2023"
+                title="Children in kinship care, England, 2015–2023"
                 subtitle="Estimated number of children being raised by relatives (thousands). Includes formal SGO, Child Arrangements Order, and estimated informal arrangements."
                 series={populationSeries}
                 yLabel="Children (thousands)"
@@ -152,7 +152,7 @@ export default function KinshipCarePage() {
           <section id="sec-support" className="mb-12">
             {supportSeries.length > 0 ? (
               <LineChart
-                title="Kinship carers receiving financial support, 2015&ndash;2023"
+                title="Kinship carers receiving financial support, 2015–2023"
                 subtitle="Percentage of kinship carers receiving any financial allowance from their local authority. The majority receive no support."
                 series={supportSeries}
                 yLabel="Percentage (%)"
@@ -175,7 +175,7 @@ export default function KinshipCarePage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

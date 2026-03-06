@@ -42,7 +42,7 @@ export default function PublicBroadcastingPage() {
     ? [
         {
           id: 'licence-nominal',
-          label: 'Licence fee &mdash; nominal (&pound;/yr)',
+          label: 'Licence fee — nominal (£/yr)',
           colour: '#264653',
           data: data.timeSeries.map(d => ({
             date: yearToDate(d.date),
@@ -51,7 +51,7 @@ export default function PublicBroadcastingPage() {
         },
         {
           id: 'licence-real',
-          label: 'Licence fee &mdash; real terms, 2010 prices (&pound;/yr)',
+          label: 'Licence fee — real terms, 2010 prices (£/yr)',
           colour: '#E63946',
           data: data.timeSeries.map(d => ({
             date: yearToDate(d.date),
@@ -92,17 +92,17 @@ export default function PublicBroadcastingPage() {
           topic="Public Broadcasting"
           preposition="in"
           question="Is the BBC Becoming Unaffordable to Fund?"
-          finding="The BBC licence fee was frozen at &pound;159 and then increased below inflation until 2027, cutting real-terms income by over &pound;1 billion compared with what a CPI-linked fee would have generated. The result: 1,500&plus; redundancies, the closure of BBC4 as a broadcast channel, deep cuts to local radio, and an evasion rate approaching 10% as younger households treat it as optional."
+          finding="The BBC licence fee was frozen at £159 and then increased below inflation until 2027, cutting real-terms income by over £1 billion compared with what a CPI-linked fee would have generated. The result: 1,500&plus; redundancies, the closure of BBC4 as a broadcast channel, deep cuts to local radio, and an evasion rate approaching 10% as younger households treat it as optional."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The BBC licence fee was frozen at &pound;159 per household per year from April 2022 to March 2024 &mdash; a two-year freeze announced by Culture Secretary Nadine Dorries in a move that caught BBC leadership off guard. In a period when CPI inflation reached 11.1%, this amounted to a substantial real-terms cut. The subsequent settlement, reached in early 2024, raised the fee to &pound;169.50 from April 2024 and linked future increases to CPI through to 2027, but this came after two years of significant real-terms erosion. The BBC&apos;s own analysis estimated the cumulative real-terms gap between the frozen fee and an inflation-linked fee at over &pound;1 billion across the settlement period. This shortfall required structural savings that materialised as redundancies, closures, and programme cuts across the corporation.
+              The BBC licence fee was frozen at £159 per household per year from April 2022 to March 2024 — a two-year freeze announced by Culture Secretary Nadine Dorries in a move that caught BBC leadership off guard. In a period when CPI inflation reached 11.1%, this amounted to a substantial real-terms cut. The subsequent settlement, reached in early 2024, raised the fee to £169.50 from April 2024 and linked future increases to CPI through to 2027, but this came after two years of significant real-terms erosion. The BBC's own analysis estimated the cumulative real-terms gap between the frozen fee and an inflation-linked fee at over £1 billion across the settlement period. This shortfall required structural savings that materialised as redundancies, closures, and programme cuts across the corporation.
             </p>
             <p>
-              The consequences have been concrete and measurable. BBC4, once described as &ldquo;the home of ideas television,&rdquo; ceased broadcasting new content and became a repeats channel from 2022. Twenty-five local radio stations faced significant format changes, with several moving to shared programming, automated music, or networked speech. The BBC&apos;s journalism workforce &mdash; correspondents, investigators, and foreign bureau staff &mdash; has contracted: the Foreign Affairs Select Committee noted in 2023 that BBC foreign bureau closures had reduced the Corporation&apos;s ability to report from countries where UK policy interests are directly engaged. The BBC announced 1,000 redundancies in 2023 alone, on top of earlier rounds, bringing the total reduction since 2020 to over 1,500 posts. The corporation has also sought to reduce costs through increased repeats, less original drama, and greater reliance on co-productions.
+              The consequences have been concrete and measurable. BBC4, once described as &ldquo;the home of ideas television,&rdquo; ceased broadcasting new content and became a repeats channel from 2022. Twenty-five local radio stations faced significant format changes, with several moving to shared programming, automated music, or networked speech. The BBC's journalism workforce — correspondents, investigators, and foreign bureau staff — has contracted: the Foreign Affairs Select Committee noted in 2023 that BBC foreign bureau closures had reduced the Corporation's ability to report from countries where UK policy interests are directly engaged. The BBC announced 1,000 redundancies in 2023 alone, on top of earlier rounds, bringing the total reduction since 2020 to over 1,500 posts. The corporation has also sought to reduce costs through increased repeats, less original drama, and greater reliance on co-productions.
             </p>
             </div>
         </section>
@@ -116,13 +116,13 @@ export default function PublicBroadcastingPage() {
         <ScrollReveal>
           <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
-              label="BBC real-terms income loss 2022&ndash;2027"
-              value="&gt;&pound;1bn"
+              label="BBC real-terms income loss 2022–2027"
+              value="&gt;£1bn"
               direction="down"
               polarity="up-is-bad"
-              changeText="Vs CPI-linked equivalent &middot; 2-year freeze at &pound;159 &middot; 11% inflation peak"
+              changeText="Vs CPI-linked equivalent · 2-year freeze at £159 · 11% inflation peak"
               sparklineData={[0, 0, 0, 0, 150, 300, 500, 700, 900, 1000]}
-              source="BBC &middot; Charter Review Evidence &middot; 2023"
+              source="BBC · Charter Review Evidence · 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -130,9 +130,9 @@ export default function PublicBroadcastingPage() {
               value="1,500+"
               direction="up"
               polarity="up-is-bad"
-              changeText="BBC4 closed &middot; Local radio cuts &middot; Foreign bureaux reduced"
+              changeText="BBC4 closed · Local radio cuts · Foreign bureaux reduced"
               sparklineData={[0, 200, 500, 800, 1100, 1500]}
-              source="BBC &middot; Annual Report 2024"
+              source="BBC · Annual Report 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -140,9 +140,9 @@ export default function PublicBroadcastingPage() {
               value="9.2%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 6% in 2015 &middot; Each 1% = &pound;50m lost revenue"
+              changeText="Up from 6% in 2015 · Each 1% = £50m lost revenue"
               sparklineData={[6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.2]}
-              source="TV Licensing &middot; Annual Enforcement Report 2024"
+              source="TV Licensing · Annual Enforcement Report 2024"
               onExpand={() => {}}
             />
           </div>
@@ -153,8 +153,8 @@ export default function PublicBroadcastingPage() {
             title="What is getting better"
             value="492M"
             unit="weekly listeners"
-            description="BBC World Service reaches 492 million people weekly &mdash; the world&apos;s largest international broadcaster &mdash; providing a globally trusted source of English and non-English language journalism in 42 languages. BBC iPlayer has 40 million&plus; registered users, more than Netflix&apos;s UK subscriber base, demonstrating that public broadcasting retains mass relevance in the streaming era."
-            source="BBC &middot; Annual Report 2024 &middot; Ofcom Media Nations 2024"
+            description="BBC World Service reaches 492 million people weekly — the world's largest international broadcaster — providing a globally trusted source of English and non-English language journalism in 42 languages. BBC iPlayer has 40 million&plus; registered users, more than Netflix's UK subscriber base, demonstrating that public broadcasting retains mass relevance in the streaming era."
+            source="BBC · Annual Report 2024 · Ofcom Media Nations 2024"
           />
         </ScrollReveal>
 
@@ -162,10 +162,10 @@ export default function PublicBroadcastingPage() {
           <section id="sec-licence" className="mb-12">
             {licenceFeeSeries.length > 0 ? (
               <LineChart
-                title="BBC licence fee: nominal vs real terms, 2010&ndash;2024"
-                subtitle="Nominal fee (&pound;/household/year) and real-terms equivalent at 2010 prices. Gap shows erosion of purchasing power."
+                title="BBC licence fee: nominal vs real terms, 2010–2024"
+                subtitle="Nominal fee (£/household/year) and real-terms equivalent at 2010 prices. Gap shows erosion of purchasing power."
                 series={licenceFeeSeries}
-                yLabel="&pound; per household per year"
+                yLabel="£ per household per year"
                 source={{
                   name: 'DCMS / BBC',
                   dataset: 'BBC Charter and Licence Fee Settlement',
@@ -183,7 +183,7 @@ export default function PublicBroadcastingPage() {
           <section id="sec-headcount" className="mb-12">
             {headcountSeries.length > 0 ? (
               <LineChart
-                title="BBC full-time equivalent headcount, 2015&ndash;2024"
+                title="BBC full-time equivalent headcount, 2015–2024"
                 subtitle="Workforce reductions across BBC news, sport, local radio, and creative content divisions."
                 series={headcountSeries}
                 yLabel="Full-time equivalent staff"
@@ -205,7 +205,7 @@ export default function PublicBroadcastingPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

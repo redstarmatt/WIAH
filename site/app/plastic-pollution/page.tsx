@@ -55,14 +55,14 @@ export default function PlasticPollutionPage() {
         <TopicHeader
           topic="Plastic Pollution"
           question="Is Britain Actually Dealing With Its Plastic Problem?"
-          finding="The UK generates 5.6 million tonnes of plastic waste per year &mdash; the second highest per capita in the world after the United States. The domestic recycling rate has stalled at 44% for a decade, and almost half of &ldquo;recycled&rdquo; plastic is exported."
+          finding="The UK generates 5.6 million tonnes of plastic waste per year — the second highest per capita in the world after the United States. The domestic recycling rate has stalled at 44% for a decade, and almost half of &ldquo;recycled&rdquo; plastic is exported."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK produces approximately 5.6 million tonnes of plastic waste per year, equivalent to roughly 84 kilograms per person &mdash; the second highest per capita rate in the world, behind only the United States. Of this, around 2.5 million tonnes is packaging. DEFRA&apos;s 2024 statistics show that 44% of plastic packaging waste is collected for recycling, a figure that has barely changed since 2014. The total municipal recycling rate for England &mdash; all materials, not just plastics &mdash; was 44.1% in 2022/23, well below the government&apos;s 65% target for 2035 and the EU average of 48%. The UK incinerates 12 million tonnes of waste annually, and landfilling, while declining, still receives millions of tonnes. Plastic waste that is not recycled, incinerated, or landfilled enters the environment &mdash; an estimated 500,000 tonnes per year, according to a 2023 Eunomia report commissioned by WWF.</p>
-            <p>The recycling system itself is deeply flawed. Around 46% of plastic collected for recycling in 2023 was exported, primarily to Turkey, Malaysia, and Indonesia, where environmental oversight is variable and contamination rates are high. Greenpeace investigations have documented UK plastic bales dumped at roadside sites in Turkey. Domestic reprocessing capacity remains limited: the UK has only 26 plastics reprocessing plants capable of handling post-consumer waste. The Plastic Packaging Tax, introduced in April 2022 at &pound;210.82 per tonne, applies to packaging containing less than 30% recycled content but has not yet demonstrably shifted production patterns. Extended Producer Responsibility (EPR), which was due in 2024 but delayed to 2025, will require producers to cover the full net cost of collecting, sorting, and recycling packaging &mdash; a significant policy shift expected to generate &pound;1.4 billion per year for local authorities.</p>
+            <p>The UK produces approximately 5.6 million tonnes of plastic waste per year, equivalent to roughly 84 kilograms per person — the second highest per capita rate in the world, behind only the United States. Of this, around 2.5 million tonnes is packaging. DEFRA's 2024 statistics show that 44% of plastic packaging waste is collected for recycling, a figure that has barely changed since 2014. The total municipal recycling rate for England — all materials, not just plastics — was 44.1% in 2022/23, well below the government's 65% target for 2035 and the EU average of 48%. The UK incinerates 12 million tonnes of waste annually, and landfilling, while declining, still receives millions of tonnes. Plastic waste that is not recycled, incinerated, or landfilled enters the environment — an estimated 500,000 tonnes per year, according to a 2023 Eunomia report commissioned by WWF.</p>
+            <p>The recycling system itself is deeply flawed. Around 46% of plastic collected for recycling in 2023 was exported, primarily to Turkey, Malaysia, and Indonesia, where environmental oversight is variable and contamination rates are high. Greenpeace investigations have documented UK plastic bales dumped at roadside sites in Turkey. Domestic reprocessing capacity remains limited: the UK has only 26 plastics reprocessing plants capable of handling post-consumer waste. The Plastic Packaging Tax, introduced in April 2022 at £210.82 per tonne, applies to packaging containing less than 30% recycled content but has not yet demonstrably shifted production patterns. Extended Producer Responsibility (EPR), which was due in 2024 but delayed to 2025, will require producers to cover the full net cost of collecting, sorting, and recycling packaging — a significant policy shift expected to generate £1.4 billion per year for local authorities.</p>
             </div>
         </section>
 
@@ -80,7 +80,7 @@ export default function PlasticPollutionPage() {
               unit="tonnes"
               direction="up"
               polarity="up-is-bad"
-              changeText="84kg per person &mdash; 2nd highest globally after the US"
+              changeText="84kg per person — 2nd highest globally after the US"
               sparklineData={[4.7, 4.9, 5.1, 5.3, 5.5, 5.6]}
               source="DEFRA UK Statistics on Waste"
               onExpand={() => {}}
@@ -113,7 +113,7 @@ export default function PlasticPollutionPage() {
         <ScrollReveal>
           <section id="sec-waste" className="mb-12">
             <LineChart
-              title="UK plastic waste generated, 2014&ndash;2024"
+              title="UK plastic waste generated, 2014–2024"
               subtitle="Million tonnes of plastic waste per year across household, commercial, and industrial sources. DEFRA."
               series={wasteSeries}
               yLabel="Million tonnes"
@@ -124,7 +124,7 @@ export default function PlasticPollutionPage() {
         <ScrollReveal>
           <section id="sec-recycling" className="mb-12">
             <LineChart
-              title="Plastic packaging recycling rate, UK, 2014&ndash;2024"
+              title="Plastic packaging recycling rate, UK, 2014–2024"
               subtitle="Percentage of plastic packaging waste collected for recycling. Counts material sent, not verified as reprocessed."
               series={recyclingSeries}
               yLabel="% recycled"

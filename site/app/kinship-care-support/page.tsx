@@ -100,7 +100,7 @@ export default function KinshipCareSupportPage() {
     : [];
 
   const povertyAnnotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: '2020: COVID &mdash; kinship carers excluded from furlough' },
+    { date: new Date(2020, 5, 1), label: '2020: COVID — kinship carers excluded from furlough' },
     { date: new Date(2023, 5, 1), label: '2023: Kinship Care Strategy published' },
   ];
 
@@ -118,18 +118,18 @@ export default function KinshipCareSupportPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Children &amp; Families"
-          question="Are Britain&apos;s Hidden Carers Being Left Behind?"
-          finding="180,000 children live in kinship care in England, raised by grandparents, aunts, uncles or family friends. They receive almost no financial support &mdash; just 2% of kinship carers qualify for foster carer payments."
+          question="Are Britain's Hidden Carers Being Left Behind?"
+          finding="180,000 children live in kinship care in England, raised by grandparents, aunts, uncles or family friends. They receive almost no financial support — just 2% of kinship carers qualify for foster carer payments."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Kinship care is the invisible backbone of the children&apos;s social care system. When a child cannot safely live with their parents, the first choice should be family &mdash; grandparents, aunts, uncles, older siblings, family friends. Around 180,000 children in England are raised this way, three times as many as are in foster care, yet kinship carers receive almost no financial or practical support compared with foster carers, who receive allowances averaging &pound;450&ndash;&pound;700 per week.
+              Kinship care is the invisible backbone of the children's social care system. When a child cannot safely live with their parents, the first choice should be family — grandparents, aunts, uncles, older siblings, family friends. Around 180,000 children in England are raised this way, three times as many as are in foster care, yet kinship carers receive almost no financial or practical support compared with foster carers, who receive allowances averaging £450–£700 per week.
             </p>
             <p>
-              The poverty consequences are severe. Kinship carers are typically older &mdash; often grandparents who have already retired &mdash; and their income is disrupted by taking on an unplanned caring role. Forty-four per cent live in poverty. They often take on children who have experienced neglect, abuse or parental addiction, yet receive none of the training, supervision or therapeutic support that foster carers are entitled to. The result is hidden hardship behind closed doors, absorbing a family crisis with no safety net.
+              The poverty consequences are severe. Kinship carers are typically older — often grandparents who have already retired — and their income is disrupted by taking on an unplanned caring role. Forty-four per cent live in poverty. They often take on children who have experienced neglect, abuse or parental addiction, yet receive none of the training, supervision or therapeutic support that foster carers are entitled to. The result is hidden hardship behind closed doors, absorbing a family crisis with no safety net.
             </p>
           </div>
         </section>
@@ -180,7 +180,7 @@ export default function KinshipCareSupportPage() {
         <ScrollReveal>
           <section id="sec-numbers" className="mb-12">
             <LineChart
-              title="Children in kinship care, England, 2015&ndash;2024"
+              title="Children in kinship care, England, 2015–2024"
               subtitle="Estimated number of children living in kinship arrangements. The true number may be higher as many informal arrangements are invisible to official data. Growth driven by rising care referrals, reduced foster placement availability, and court preference for family placements."
               series={kinshipSeries}
               annotations={povertyAnnotations}
@@ -192,7 +192,7 @@ export default function KinshipCareSupportPage() {
         <ScrollReveal>
           <section id="sec-sgo" className="mb-12">
             <LineChart
-              title="Special Guardianship Orders granted annually, England and Wales, 2015&ndash;2024"
+              title="Special Guardianship Orders granted annually, England and Wales, 2015–2024"
               subtitle="SGOs give kinship carers legal parental responsibility without the child entering local authority care. Courts have increasingly preferred SGOs over adoption, particularly for older children and those from minority ethnic backgrounds."
               series={sgoSeries}
               annotations={sgoAnnotations}
@@ -204,11 +204,11 @@ export default function KinshipCareSupportPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Kinship Care"
             unit="Strategy 2023"
-            description="The Kinship Care Strategy 2023 commits to piloting a kinship care allowance to bring financial support closer to foster carer rates. Ofsted now inspects the quality of support that kinship carers receive from local authorities. The Children and Families Act 2014 strengthened courts&apos; duty to consider family placement before external foster care. Kinship charity provides free legal advice and peer support to kinship families."
-            source="Source: DfE &mdash; Kinship Care Strategy, 2023. Kinship charity &mdash; State of Kinship Care, 2024."
+            description="The Kinship Care Strategy 2023 commits to piloting a kinship care allowance to bring financial support closer to foster carer rates. Ofsted now inspects the quality of support that kinship carers receive from local authorities. The Children and Families Act 2014 strengthened courts' duty to consider family placement before external foster care. Kinship charity provides free legal advice and peer support to kinship families."
+            source="Source: DfE — Kinship Care Strategy, 2023. Kinship charity — State of Kinship Care, 2024."
           />
         </ScrollReveal>
 
@@ -219,7 +219,7 @@ export default function KinshipCareSupportPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

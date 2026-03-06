@@ -89,7 +89,7 @@ export default function StudentDebtPage() {
             topic="Student Debt"
             colour={COLOUR}
             question="What does a degree actually cost?"
-            finding="The average English student now graduates with &pound;45,000 of debt, a system that transfers cost from the state to individuals &mdash; most of whom will never fully repay it."
+            finding="The average English student now graduates with £45,000 of debt, a system that transfers cost from the state to individuals — most of whom will never fully repay it."
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
@@ -124,8 +124,8 @@ export default function StudentDebtPage() {
           <h2 className="text-xl font-bold text-wiah-black mb-6">Context</h2>
           <div className="max-w-2xl mt-4 mb-12">
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England&apos;s student loan system is, by design, a graduate contribution scheme rather than a conventional debt. Since 2012, undergraduates have paid up to &pound;9,000 a year in tuition fees &mdash; raised to &pound;9,250 in 2017 and to &pound;9,535 from 2025. The average English graduate now leaves university owing &pound;45,600. Repayments are structured as 9% of earnings above a &pound;25,000 threshold, and any balance unpaid after 40 years is written off. The total cost of that write-off currently runs to &pound;8.6bn a year and is rising.</p>
-              <p>The central paradox is that a system designed to reduce public subsidy has increased it. Analysis by the Institute for Fiscal Studies found that only 23% of graduates will repay their loans in full &mdash; compared with 40% under the pre-2012 system. The 2023 reforms, which lowered annual repayments by extending the term from 30 to 40 years, made this worse: the expected government subsidy per student increased, because graduates now carry debt for longer and accrue more interest, but repay less each year. The system redistributes cost by earnings: high earners in medicine, law and finance repay in full and at market-rate interest; median earners pay more in total over a longer period; lower earners repay the least but carry the debt for their entire working lives.</p>
+              <p>England's student loan system is, by design, a graduate contribution scheme rather than a conventional debt. Since 2012, undergraduates have paid up to £9,000 a year in tuition fees — raised to £9,250 in 2017 and to £9,535 from 2025. The average English graduate now leaves university owing £45,600. Repayments are structured as 9% of earnings above a £25,000 threshold, and any balance unpaid after 40 years is written off. The total cost of that write-off currently runs to £8.6bn a year and is rising.</p>
+              <p>The central paradox is that a system designed to reduce public subsidy has increased it. Analysis by the Institute for Fiscal Studies found that only 23% of graduates will repay their loans in full — compared with 40% under the pre-2012 system. The 2023 reforms, which lowered annual repayments by extending the term from 30 to 40 years, made this worse: the expected government subsidy per student increased, because graduates now carry debt for longer and accrue more interest, but repay less each year. The system redistributes cost by earnings: high earners in medicine, law and finance repay in full and at market-rate interest; median earners pay more in total over a longer period; lower earners repay the least but carry the debt for their entire working lives.</p>
             </div>
           </div>
         </section>
@@ -133,7 +133,7 @@ export default function StudentDebtPage() {
         <PositiveCallout
           title="2023 reforms extended repayment terms"
           value="10 years"
-          description="The government&apos;s 2023 reforms extended the repayment period from 30 to 40 years and lowered the repayment threshold. While this reduces annual repayments, it increases total interest paid &mdash; and leaves most graduates paying for their entire working lives."
+          description="The government's 2023 reforms extended the repayment period from 30 to 40 years and lowered the repayment threshold. While this reduces annual repayments, it increases total interest paid — and leaves most graduates paying for their entire working lives."
           source="Source: Department for Education"
         />
 

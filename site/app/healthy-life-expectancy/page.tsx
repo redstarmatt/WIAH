@@ -108,10 +108,10 @@ export default function HealthyLifeExpectancyPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Life expectancy in England stands at 79.0 years for men and 82.9 for women (2021&ndash;23), but healthy life expectancy &mdash; years lived without disability or chronic illness &mdash; is just 62.9 and 63.4 respectively. Men spend their final 16.1 years in poor health; women 19.5 years. The critical trend is stagnation: male HLE was 63.3 years in 2009&ndash;11 and has barely shifted since, even as total life expectancy grew modestly before COVID reversed it. The result is morbidity expansion &mdash; a growing share of each life spent managing illness rather than living without it.
+              Life expectancy in England stands at 79.0 years for men and 82.9 for women (2021–23), but healthy life expectancy — years lived without disability or chronic illness — is just 62.9 and 63.4 respectively. Men spend their final 16.1 years in poor health; women 19.5 years. The critical trend is stagnation: male HLE was 63.3 years in 2009–11 and has barely shifted since, even as total life expectancy grew modestly before COVID reversed it. The result is morbidity expansion — a growing share of each life spent managing illness rather than living without it.
             </p>
             <p>
-              Deprivation produces the starkest gradient. In England&apos;s most deprived decile, male healthy life expectancy is 52.3 years; female 52.2 years. In the least deprived decile it reaches 71.4 years for men &mdash; a 19.1-year gap. This mortality gradient is driven primarily by material conditions: housing quality, income insecurity, environmental exposures, and occupational hazards, not principally by behavioural differences. The NHS Core20PLUS5 programme now targets the most deprived 20% across five clinical areas, but the gap has shown no meaningful narrowing over the decade for which data exist.
+              Deprivation produces the starkest gradient. In England's most deprived decile, male healthy life expectancy is 52.3 years; female 52.2 years. In the least deprived decile it reaches 71.4 years for men — a 19.1-year gap. This mortality gradient is driven primarily by material conditions: housing quality, income insecurity, environmental exposures, and occupational hazards, not principally by behavioural differences. The NHS Core20PLUS5 programme now targets the most deprived 20% across five clinical areas, but the gap has shown no meaningful narrowing over the decade for which data exist.
             </p>
             </div>
         </section>
@@ -189,7 +189,7 @@ export default function HealthyLifeExpectancyPage() {
               ))}
             </div>
           )}
-          <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS &mdash; Health state life expectancies by deprivation 2018–20.</p>
+          <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS — Health state life expectancies by deprivation 2018–20.</p>
         </section>
         </ScrollReveal>
 
@@ -197,11 +197,11 @@ export default function HealthyLifeExpectancyPage() {
         <ScrollReveal>
         <section id="sec-regions" className="mb-12">
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="63.4"
             unit="female healthy life expectancy — recovering after COVID-era dip"
-            description="Healthy life expectancy for both men and women has partially recovered from the COVID-era dip. Prevention programmes — NHS Health Checks, cancer screening, cardiovascular disease ambitions — aim to extend healthy years. The NHS&apos;s Core20PLUS5 programme targets the most deprived 20% for five clinical areas. GLP-1 weight-loss drugs approved by NICE in 2024 may reduce obesity-related morbidity."
-            source="Source: ONS &mdash; Health state life expectancies, England, 2021 to 2023."
+            description="Healthy life expectancy for both men and women has partially recovered from the COVID-era dip. Prevention programmes — NHS Health Checks, cancer screening, cardiovascular disease ambitions — aim to extend healthy years. The NHS's Core20PLUS5 programme targets the most deprived 20% for five clinical areas. GLP-1 weight-loss drugs approved by NICE in 2024 may reduce obesity-related morbidity."
+            source="Source: ONS — Health state life expectancies, England, 2021 to 2023."
           />
         </section>
         </ScrollReveal>
@@ -213,7 +213,7 @@ export default function HealthyLifeExpectancyPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

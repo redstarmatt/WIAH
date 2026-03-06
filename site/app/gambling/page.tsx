@@ -93,17 +93,19 @@ export default function GamblingPage() {
     <main>
       <TopicNav topic="Gambling" />
 
-      <TopicHeader
-        topic="Gambling"
-        colour="#6B7280"
-        question="How Big Is Britain&apos;s Gambling Problem?"
-        finding="430,000 people in England are problem gamblers. Online gambling gross yield has grown to &pound;7.1 billion. Betting shops have halved since 2010. The 2023 White Paper introduced stake limits on online slots &mdash; but affordability checks remain contentious and delayed."
-      />
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <TopicHeader
+          topic="Gambling"
+          colour="#6B7280"
+          question="How Big Is Britain's Gambling Problem?"
+          finding="430,000 people in England are problem gamblers. Online gambling gross yield has grown to £7.1 billion. Betting shops have halved since 2010. The 2023 White Paper introduced stake limits on online slots — but affordability checks remain contentious and delayed."
+        />
+      </div>
 
       <section id="sec-context" className="max-w-2xl mx-auto px-6 mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Gambling Act 2005, drafted in the pre-smartphone era, permitted remote gambling and allowed fixed-odds betting terminals with stakes up to &pound;100 per spin. Online gambling gross yield has since risen from &pound;3.2 billion in 2016/17 to &pound;7.1 billion in 2022/23 &mdash; a 121% increase &mdash; and now accounts for 51% of all gambling revenue. Some 430,000 people in England meet the clinical threshold for problem gambling, with a further 1.3 million at moderate risk; the suicide rate among problem gamblers is 15 times the national average, and 80% of the most severely affected gamble primarily online. FOBT stake limits cut from &pound;100 to &pound;2 in April 2019 drove roughly 1,400 betting shop closures, with total shop numbers falling from over 9,000 in 2013 to 6,700 by 2023; online slots have largely replaced that demand. The Gambling Act White Paper (April 2023) &mdash; the first major reform in 18 years &mdash; introduced online slot stake limits of &pound;2 for under-25s and &pound;5 for adults, and replaced voluntary industry contributions of &pound;10 million with a mandatory &pound;100 million statutory levy. Affordability checks for high-spending customers, the most contested proposal, remain delayed.</p>
-            <p>Gambling harm does not affect the population equally. Problem gambling rates are roughly three times higher in the most deprived neighbourhoods, and betting shops are approximately three times more numerous per capita in the poorest areas. Men remain twice as likely to experience problem gambling, though the gap is narrowing as online platforms expand among women. An estimated 60% of gross gambling yield derives from just 5% of customers &mdash; those already at risk or experiencing harm &mdash; meaning the commercial model is structurally dependent on problem gamblers in a way that voluntary harm reduction has proven insufficient to disrupt. The 55,000 children and young people identified as problem gamblers by the Gambling Commission&apos;s Youth Survey, and the 25% year-on-year rise in GamCare helpline contacts, indicate that the 2023 White Paper reforms, while substantive, address an industry that expanded for two decades largely without constraint.</p>
+            <p>The Gambling Act 2005, drafted in the pre-smartphone era, permitted remote gambling and allowed fixed-odds betting terminals with stakes up to £100 per spin. Online gambling gross yield has since risen from £3.2 billion in 2016/17 to £7.1 billion in 2022/23 — a 121% increase — and now accounts for 51% of all gambling revenue. Some 430,000 people in England meet the clinical threshold for problem gambling, with a further 1.3 million at moderate risk; the suicide rate among problem gamblers is 15 times the national average, and 80% of the most severely affected gamble primarily online. FOBT stake limits cut from £100 to £2 in April 2019 drove roughly 1,400 betting shop closures, with total shop numbers falling from over 9,000 in 2013 to 6,700 by 2023; online slots have largely replaced that demand. The Gambling Act White Paper (April 2023) — the first major reform in 18 years — introduced online slot stake limits of £2 for under-25s and £5 for adults, and replaced voluntary industry contributions of £10 million with a mandatory £100 million statutory levy. Affordability checks for high-spending customers, the most contested proposal, remain delayed.</p>
+            <p>Gambling harm does not affect the population equally. Problem gambling rates are roughly three times higher in the most deprived neighbourhoods, and betting shops are approximately three times more numerous per capita in the poorest areas. Men remain twice as likely to experience problem gambling, though the gap is narrowing as online platforms expand among women. An estimated 60% of gross gambling yield derives from just 5% of customers — those already at risk or experiencing harm — meaning the commercial model is structurally dependent on problem gamblers in a way that voluntary harm reduction has proven insufficient to disrupt. The 55,000 children and young people identified as problem gamblers by the Gambling Commission's Youth Survey, and the 25% year-on-year rise in GamCare helpline contacts, indicate that the 2023 White Paper reforms, while substantive, address an industry that expanded for two decades largely without constraint.</p>
           </div>
         </section>
 
@@ -123,10 +125,10 @@ export default function GamblingPage() {
           <ScrollReveal>
             <MetricCard
               label="Online gambling gross yield"
-              value="&pound;7.1bn"
+              value="£7.1bn"
               direction="up"
               polarity="up-is-bad"
-              changeText="2022/23 · Up from &pound;4.7bn in 2016/17 · 51% of all gambling yield · 80% of problem gamblers gamble online"
+              changeText="2022/23 · Up from £4.7bn in 2016/17 · 51% of all gambling yield · 80% of problem gamblers gamble online"
               sparklineData={[3.2, 3.8, 4.2, 4.7, 5.0, 5.5, 6.0, 7.1]}
             />
           </ScrollReveal>
@@ -136,7 +138,7 @@ export default function GamblingPage() {
               value="6,700"
               direction="down"
               polarity="up-is-bad"
-              changeText="2023 · Down from 9,000+ in 2013 · FOBT &pound;2 stake limit (2019) key driver · High street decline accelerating"
+              changeText="2023 · Down from 9,000+ in 2013 · FOBT £2 stake limit (2019) key driver · High street decline accelerating"
               sparklineData={[9000, 8900, 8800, 8600, 8400, 8100, 7700, 7200, 6900, 6700]}
             />
           </ScrollReveal>
@@ -146,9 +148,9 @@ export default function GamblingPage() {
         <ScrollReveal>
           <div className="mb-12">
             <LineChart
-              title="Online gambling gross yield, Great Britain, 2016&ndash;2023"
+              title="Online gambling gross yield, Great Britain, 2016–2023"
               series={onlineSeries}
-              yLabel="&pound; billion"
+              yLabel="£ billion"
               source={{
                 name: 'Gambling Commission',
                 dataset: 'Industry Statistics',
@@ -163,7 +165,7 @@ export default function GamblingPage() {
         <ScrollReveal>
           <div className="mb-12">
             <LineChart
-              title="Betting shops in Great Britain, 2013&ndash;2023"
+              title="Betting shops in Great Britain, 2013–2023"
               series={bettingShopsSeries}
               yLabel="Thousands"
               source={{
@@ -203,10 +205,10 @@ export default function GamblingPage() {
         <ScrollReveal>
           <PositiveCallout
             title="Gambling Reform"
-            value="&pound;100M"
-            unit="mandatory gambling levy from 2025 &mdash; replacing voluntary &pound;10M contributions"
-            description="The Gambling Act White Paper (April 2023) announced a mandatory statutory levy on gambling operators, replacing the voluntary GambleAware contribution of &pound;10 million/year with a compulsory &pound;100 million/year. This will fund treatment, prevention, and research. Stake limits on online slots &mdash; &pound;2 for under-25s and &pound;5 for adults &mdash; were phased in from September 2024. The Gambling Commission gained enhanced powers to require operators to implement affordability checks for high-spending customers. GamStop self-exclusion scheme has 480,000 registered users."
-            source="Source: Gambling Commission &mdash; Industry Statistics 2022/23; DCMS &mdash; High Stakes: Gambling Reform White Paper 2023."
+            value="£100M"
+            unit="mandatory gambling levy from 2025 — replacing voluntary £10M contributions"
+            description="The Gambling Act White Paper (April 2023) announced a mandatory statutory levy on gambling operators, replacing the voluntary GambleAware contribution of £10 million/year with a compulsory £100 million/year. This will fund treatment, prevention, and research. Stake limits on online slots — £2 for under-25s and £5 for adults — were phased in from September 2024. The Gambling Commission gained enhanced powers to require operators to implement affordability checks for high-spending customers. GamStop self-exclusion scheme has 480,000 registered users."
+            source="Source: Gambling Commission — Industry Statistics 2022/23; DCMS — High Stakes: Gambling Reform White Paper 2023."
           />
         </ScrollReveal>
 
@@ -234,7 +236,7 @@ export default function GamblingPage() {
                   <a href={source.url} className="text-wiah-blue hover:underline">
                     {source.name}
                   </a>
-                  {' '}&mdash; {source.dataset} ({source.frequency})
+                  {' '}— {source.dataset} ({source.frequency})
                 </div>
               ))}
             </div>

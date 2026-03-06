@@ -297,8 +297,8 @@ export default function EnergyPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Britain&apos;s electricity grid has been transformed at a pace few predicted. Renewables
-              went from under 3% of generation in 2000 to over 45% by 2024 &mdash; surpassing 50% for
+              Britain's electricity grid has been transformed at a pace few predicted. Renewables
+              went from under 3% of generation in 2000 to over 45% by 2024 — surpassing 50% for
               the first time in 2023. Coal, which supplied roughly 30% of electricity at the millennium,
               fell to zero when Ratcliffe-on-Soar closed in September 2024, ending 142 years of
               coal-fired power. Gas has declined from its peak but still provides a significant share.
@@ -307,10 +307,10 @@ export default function EnergyPage() {
             </p>
             <p>
               A cleaner grid has not meant cheaper bills. Because gas-fired plants still set the marginal
-              electricity price, the 2021&ndash;22 wholesale gas shock hit consumers directly. The Ofgem
+              electricity price, the 2021–22 wholesale gas shock hit consumers directly. The Ofgem
               price cap rose 54% in April 2022 and again in October, pushing typical bills above
-              &pound;2,500. The CPI electricity index more than doubled, peaking at 241 in January 2023.
-              The Energy Price Guarantee and a &pound;400 bills support scheme blunted the worst of it,
+              £2,500. The CPI electricity index more than doubled, peaking at 241 in January 2023.
+              The Energy Price Guarantee and a £400 bills support scheme blunted the worst of it,
               but prices have not returned to normal: the index still sits at around 201, double the
               2015 level. Until market design catches up with the generation mix, renewable growth
               alone will not deliver lower bills.
@@ -559,8 +559,8 @@ export default function EnergyPage() {
           <PositiveCallout
             title="What's improving"
             value="45%"
-            description="Renewable sources now generate over 45% of Britain&apos;s electricity, up from just 3% in 2000. Wind power alone provides nearly 90 TWh &mdash; more than the entire renewable sector generated a decade ago. Britain&apos;s last coal power station closed in 2024, ending 142 years of coal-fired electricity."
-            source="Source: DESNZ &mdash; Energy Trends, 2024."
+            description="Renewable sources now generate over 45% of Britain's electricity, up from just 3% in 2000. Wind power alone provides nearly 90 TWh — more than the entire renewable sector generated a decade ago. Britain's last coal power station closed in 2024, ending 142 years of coal-fired electricity."
+            source="Source: DESNZ — Energy Trends, 2024."
           />
         </ScrollReveal>
 
@@ -576,7 +576,7 @@ export default function EnergyPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}

@@ -79,14 +79,14 @@ export default function NetZeroPage() {
         <TopicHeader
           topic="Net Zero"
           question="Is Britain Actually Decarbonising?"
-          finding="UK greenhouse gas emissions fell to 371 million tonnes CO2-equivalent in 2024 &mdash; the lowest level since 1872. The UK has cut emissions 53% since 1990 while GDP grew 84%. Renewables generated 50.8% of UK electricity in 2024 &mdash; the first time they have crossed 50%."
+          finding="UK greenhouse gas emissions fell to 371 million tonnes CO2-equivalent in 2024 — the lowest level since 1872. The UK has cut emissions 53% since 1990 while GDP grew 84%. Renewables generated 50.8% of UK electricity in 2024 — the first time they have crossed 50%."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK greenhouse gas emissions fell 49% between 1990 and 2022 &mdash; one of the fastest reductions among major economies. Almost all of it came from two sectors: electricity generation and heavy industry. The electricity story is a genuine success. Coal supplied 40% of UK power in 2012; by 2024 it had been phased out entirely. Renewables now account for 47% of electricity generation, led by offshore wind, where the UK has built the world&apos;s largest fleet at 14.7 GW. The cost of offshore wind has fallen 70% since 2015. These were the achievable wins. The hard sectors remain largely untouched.</p>
-            <p>Transport produces 26% of UK emissions; 92% of cars on the road are still petrol or diesel. Buildings account for 17%; 24 million homes are heated by gas boilers, and only 60,000 heat pumps were installed in 2023 against the 600,000 per year needed by the mid-2020s to stay on track. Agriculture, at 11% of emissions, has seen almost no reduction in thirty years. The Climate Change Committee &mdash; the statutory body that advises government &mdash; found in its 2023 annual progress report that the UK was &ldquo;off track&rdquo; for a majority of its near-term 2030 milestones. The legally binding target is a 68% reduction by 2030, relative to 1990.</p>
+            <p>UK greenhouse gas emissions fell 49% between 1990 and 2022 — one of the fastest reductions among major economies. Almost all of it came from two sectors: electricity generation and heavy industry. The electricity story is a genuine success. Coal supplied 40% of UK power in 2012; by 2024 it had been phased out entirely. Renewables now account for 47% of electricity generation, led by offshore wind, where the UK has built the world's largest fleet at 14.7 GW. The cost of offshore wind has fallen 70% since 2015. These were the achievable wins. The hard sectors remain largely untouched.</p>
+            <p>Transport produces 26% of UK emissions; 92% of cars on the road are still petrol or diesel. Buildings account for 17%; 24 million homes are heated by gas boilers, and only 60,000 heat pumps were installed in 2023 against the 600,000 per year needed by the mid-2020s to stay on track. Agriculture, at 11% of emissions, has seen almost no reduction in thirty years. The Climate Change Committee — the statutory body that advises government — found in its 2023 annual progress report that the UK was &ldquo;off track&rdquo; for a majority of its near-term 2030 milestones. The legally binding target is a 68% reduction by 2030, relative to 1990.</p>
             </div>
         </section>
 
@@ -140,7 +140,7 @@ export default function NetZeroPage() {
         <ScrollReveal>
         <section id="sec-emissions" className="mb-12">
           <LineChart
-            title="UK greenhouse gas emissions, 1990&ndash;2022"
+            title="UK greenhouse gas emissions, 1990–2022"
             subtitle="MtCO2e (million tonnes CO2 equivalent). DESNZ provisional estimates. 1990 is the legal baseline."
             series={emissionsSeries}
             annotations={[
@@ -155,7 +155,7 @@ export default function NetZeroPage() {
         <ScrollReveal>
         <section id="sec-renewable" className="mb-12">
           <LineChart
-            title="Share of UK electricity from renewables, 2010&ndash;2023"
+            title="Share of UK electricity from renewables, 2010–2023"
             subtitle="Percentage of electricity generation from wind, solar, hydro and other renewables. DESNZ."
             series={renewableSeries}
             yLabel="%"
@@ -191,10 +191,10 @@ export default function NetZeroPage() {
         {/* Positive callout */}
         <ScrollReveal>
         <PositiveCallout
-          title="Wind power now UK&apos;s largest electricity source"
+          title="Wind power now UK's largest electricity source"
           value="14.7"
           unit="GW"
-          description="In 2023, wind power overtook natural gas to become the UK&apos;s largest source of electricity for the first time. Offshore wind capacity reached 14.7 GW &mdash; the largest offshore wind fleet in the world. The UK has cut the cost of offshore wind by 70% since 2015 through competitive auction rounds."
+          description="In 2023, wind power overtook natural gas to become the UK's largest source of electricity for the first time. Offshore wind capacity reached 14.7 GW — the largest offshore wind fleet in the world. The UK has cut the cost of offshore wind by 70% since 2015 through competitive auction rounds."
           source="National Grid ESO · Data Explorer; UK Government · Energy White Paper"
         />
         </ScrollReveal>

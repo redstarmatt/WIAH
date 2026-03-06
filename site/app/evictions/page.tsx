@@ -75,17 +75,17 @@ export default function EvictionsPage() {
         <TopicHeader
           topic="Evictions"
           question="How Many Renters Are Being Forced Out of Their Homes?"
-          finding="Section 21 &ldquo;no-fault&rdquo; eviction notices have risen sharply since 2021 &mdash; landlords served 25,000&plus; notices in 2023 &mdash; and court-ordered evictions are at their highest since 2017, disproportionately affecting low-income renters and families with children in the private rented sector."
+          finding="Section 21 &ldquo;no-fault&rdquo; eviction notices have risen sharply since 2021 — landlords served 25,000&plus; notices in 2023 — and court-ordered evictions are at their highest since 2017, disproportionately affecting low-income renters and families with children in the private rented sector."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Section 21 of the Housing Act 1988 gives landlords in England the power to evict a tenant without giving any reason, provided they have served two months&apos; notice and the fixed-term tenancy has ended. Introduced as a &ldquo;no-fault&rdquo; mechanism to encourage investment in the private rented sector, it became the leading cause of homelessness in England by the mid-2010s. In 2023, landlords were granted over 25,000 Section 21 possession orders by the courts &mdash; a figure that understates the total, since many tenants leave before proceedings reach court. Crisis and Shelter estimate that for every successful Section 21 court claim, roughly two or three notices are served privately and complied with voluntarily, meaning the true figure may be 60,000 to 75,000 households affected annually.
+              Section 21 of the Housing Act 1988 gives landlords in England the power to evict a tenant without giving any reason, provided they have served two months' notice and the fixed-term tenancy has ended. Introduced as a &ldquo;no-fault&rdquo; mechanism to encourage investment in the private rented sector, it became the leading cause of homelessness in England by the mid-2010s. In 2023, landlords were granted over 25,000 Section 21 possession orders by the courts — a figure that understates the total, since many tenants leave before proceedings reach court. Crisis and Shelter estimate that for every successful Section 21 court claim, roughly two or three notices are served privately and complied with voluntarily, meaning the true figure may be 60,000 to 75,000 households affected annually.
             </p>
             <p>
-              The pattern shifted sharply after the COVID-19 evictions moratorium of 2020, which temporarily suspended possession proceedings and drove Section 21 claims to a record low of 8,000. When the moratorium lifted in May 2021, landlords resumed serving notices at pace &mdash; and by 2022 and 2023, both Section 21 notices and overall landlord possession claims had surpassed pre-pandemic levels. This post-moratorium surge coincided with rising mortgage rates that increased pressure on buy-to-let landlords, many of whom chose to sell their properties &mdash; triggering no-fault evictions so they could sell with vacant possession. Between 2022 and 2024, the National Residential Landlords Association reported that 19% of landlords intended to reduce their portfolios, with tenants bearing the cost of that exit.
+              The pattern shifted sharply after the COVID-19 evictions moratorium of 2020, which temporarily suspended possession proceedings and drove Section 21 claims to a record low of 8,000. When the moratorium lifted in May 2021, landlords resumed serving notices at pace — and by 2022 and 2023, both Section 21 notices and overall landlord possession claims had surpassed pre-pandemic levels. This post-moratorium surge coincided with rising mortgage rates that increased pressure on buy-to-let landlords, many of whom chose to sell their properties — triggering no-fault evictions so they could sell with vacant possession. Between 2022 and 2024, the National Residential Landlords Association reported that 19% of landlords intended to reduce their portfolios, with tenants bearing the cost of that exit.
             </p>
             </div>
         </section>
@@ -103,9 +103,9 @@ export default function EvictionsPage() {
               value="25,000+"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 8,000 during COVID moratorium &middot; At highest level since 2017"
+              changeText="Up from 8,000 during COVID moratorium · At highest level since 2017"
               sparklineData={[18000, 20000, 19000, 17000, 8000, 16000, 22000, 25000]}
-              source="Ministry of Justice &middot; Landlord possession statistics 2023"
+              source="Ministry of Justice · Landlord possession statistics 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -113,9 +113,9 @@ export default function EvictionsPage() {
               value="28,400"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 8,000 in 2020 &middot; Highest since 2017"
+              changeText="Up from 8,000 in 2020 · Highest since 2017"
               sparklineData={[21000, 22000, 23000, 24000, 8000, 18000, 25000, 28400]}
-              source="Ministry of Justice &middot; Civil justice statistics 2023"
+              source="Ministry of Justice · Civil justice statistics 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -124,9 +124,9 @@ export default function EvictionsPage() {
               unit="/yr"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 12,000 in 2015 &middot; 58% have dependent children"
+              changeText="Up from 12,000 in 2015 · 58% have dependent children"
               sparklineData={[12000, 13500, 15200, 17100, 18400, 7200, 14600, 20300, 24000]}
-              source="DLUHC &middot; Statutory homelessness statistics 2023"
+              source="DLUHC · Statutory homelessness statistics 2023"
               onExpand={() => {}}
             />
           </div>
@@ -136,7 +136,7 @@ export default function EvictionsPage() {
           <section id="sec-notices" className="mb-12">
             {noticeSeries.length > 0 ? (
               <LineChart
-                title="Section 21 notices and landlord possession claims, 2016&ndash;2023"
+                title="Section 21 notices and landlord possession claims, 2016–2023"
                 subtitle="Annual court-stage figures. Section 21 (&lsquo;no-fault&rsquo;) notices in red; all landlord possession claims in amber. The 2020 dip reflects the COVID evictions moratorium."
                 series={noticeSeries}
                 yLabel="Notices / claims (number)"
@@ -157,7 +157,7 @@ export default function EvictionsPage() {
           <section id="sec-homeless" className="mb-12">
             {homelessnessSeries.length > 0 ? (
               <LineChart
-                title="Households accepted as homeless following eviction, 2015&ndash;2024"
+                title="Households accepted as homeless following eviction, 2015–2024"
                 subtitle="Households accepted by local authorities as homeless where a Section 21 or equivalent eviction was the primary cause. Excludes households not meeting the statutory threshold."
                 series={homelessnessSeries}
                 yLabel="Households (number)"
@@ -177,9 +177,9 @@ export default function EvictionsPage() {
         <ScrollReveal>
           <PositiveCallout
             title="What is changing"
-            value="Renters&apos; Rights Bill"
-            description="The Renters&apos; Rights Bill commits to abolishing Section 21 &lsquo;no-fault&rsquo; evictions &mdash; the biggest reform to renter protections in a generation. Legislation progressed through Parliament in 2024&ndash;25, alongside new measures giving tenants the right to keep pets, challenge unfair rent increases, and access a private renters&apos; ombudsman."
-            source="Ministry of Housing, Communities &amp; Local Government &middot; Renters&apos; Rights Bill 2024"
+            value="Renters' Rights Bill"
+            description="The Renters' Rights Bill commits to abolishing Section 21 &lsquo;no-fault&rsquo; evictions — the biggest reform to renter protections in a generation. Legislation progressed through Parliament in 2024–25, alongside new measures giving tenants the right to keep pets, challenge unfair rent increases, and access a private renters' ombudsman."
+            source="Ministry of Housing, Communities &amp; Local Government · Renters' Rights Bill 2024"
           />
         </ScrollReveal>
 
@@ -188,7 +188,7 @@ export default function EvictionsPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

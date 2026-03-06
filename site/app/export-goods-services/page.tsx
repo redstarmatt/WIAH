@@ -75,8 +75,8 @@ export default function ExportGoodsServicesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK services exports reached a record &pound;400 billion in 2023, surpassing goods exports for the first time. The UK is one of the world&rsquo;s largest services exporters, led by financial services, professional and business services, and technology &mdash; strengths underpinned by London&apos;s role as a global financial centre. Goods exports fell from &pound;394 billion in 2022 to &pound;367 billion in 2023, partly reflecting the unwinding of energy price distortions. Brexit has had a measurable effect on goods trade: UK in a Changing Europe estimates UK goods exports to the EU are 15&ndash;20% below where they would otherwise have been, with the burden concentrated in food and drink, automotive, and chemicals, where customs declarations and rules of origin requirements hit small and medium exporters hardest. The trade deficit stood at &pound;36 billion in 2023, with energy accounting for approximately &pound;13 billion.</p>
-            <p>Post-Brexit trade strategy has prioritised FTAs with non-EU partners &mdash; deals with Australia, New Zealand, and accession to CPTPP &mdash; but the OBR estimates these add only 0.1&ndash;0.2% to GDP over 15 years, given that the UK&apos;s most important trading relationships are with geographically proximate markets. Technology and professional services represent the strongest growth prospects: the UK has established leading positions in AI, cybersecurity, fintech, and life sciences, sectors where English-language advantage and research excellence confer competitive strength. The strategic question is whether services growth can sustain the trade account as goods export weakness persists and the loss of passporting rights continues to relocate financial services activity to Dublin, Paris, and Frankfurt.</p>
+            <p>UK services exports reached a record £400 billion in 2023, surpassing goods exports for the first time. The UK is one of the world&rsquo;s largest services exporters, led by financial services, professional and business services, and technology — strengths underpinned by London's role as a global financial centre. Goods exports fell from £394 billion in 2022 to £367 billion in 2023, partly reflecting the unwinding of energy price distortions. Brexit has had a measurable effect on goods trade: UK in a Changing Europe estimates UK goods exports to the EU are 15–20% below where they would otherwise have been, with the burden concentrated in food and drink, automotive, and chemicals, where customs declarations and rules of origin requirements hit small and medium exporters hardest. The trade deficit stood at £36 billion in 2023, with energy accounting for approximately £13 billion.</p>
+            <p>Post-Brexit trade strategy has prioritised FTAs with non-EU partners — deals with Australia, New Zealand, and accession to CPTPP — but the OBR estimates these add only 0.1–0.2% to GDP over 15 years, given that the UK's most important trading relationships are with geographically proximate markets. Technology and professional services represent the strongest growth prospects: the UK has established leading positions in AI, cybersecurity, fintech, and life sciences, sectors where English-language advantage and research excellence confer competitive strength. The strategic question is whether services growth can sustain the trade account as goods export weakness persists and the loss of passporting rights continues to relocate financial services activity to Dublin, Paris, and Frankfurt.</p>
           </div>
         </section>
 
@@ -95,9 +95,9 @@ export default function ExportGoodsServicesPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="record high &middot; finance, professional services, tech"
+              changeText="record high · finance, professional services, tech"
               sparklineData={[284, 291, 297, 308, 322, 271, 306, 368, 400]}
-              href="#sec-chart"source="ONS &middot; UK Trade in Services 2023"
+              href="#sec-chart"source="ONS · UK Trade in Services 2023"
             />
             <MetricCard
               label="Goods exports 2023"
@@ -105,9 +105,9 @@ export default function ExportGoodsServicesPage() {
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="below 2022 &middot; energy price distortion unwinding"
+              changeText="below 2022 · energy price distortion unwinding"
               sparklineData={[288, 302, 339, 347, 348, 296, 336, 394, 367]}
-              href="#sec-callout"source="ONS &middot; UK Trade in Goods 2023"
+              href="#sec-callout"source="ONS · UK Trade in Goods 2023"
             />
             <MetricCard
               label="Trade deficit"
@@ -115,9 +115,9 @@ export default function ExportGoodsServicesPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="persistent deficit &middot; £13bn in energy alone"
+              changeText="persistent deficit · £13bn in energy alone"
               sparklineData={[36, 38, 31, 33, 28, 34, 42, 31, 36]}
-              href="#sec-callout"source="ONS &middot; UK Trade Statistics 2023"
+              href="#sec-callout"source="ONS · UK Trade Statistics 2023"
             />
           </div>
         </ScrollReveal>
@@ -125,7 +125,7 @@ export default function ExportGoodsServicesPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="UK goods and services exports, 2015&ndash;2023"
+              title="UK goods and services exports, 2015–2023"
               subtitle="Annual export values in £ billions. Services exports crossed above goods exports for the first time in 2023."
               series={exportSeries}
               yLabel="£ billions"
@@ -153,8 +153,8 @@ export default function ExportGoodsServicesPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>ONS &mdash; UK Trade in Goods and Services. Published monthly. ons.gov.uk/businessindustryandtrade/internationaltrade/bulletins/uktrade/latest</p>
-            <p>ONS &mdash; Pink Book (UK Balance of Payments). Published annually. ons.gov.uk/economy/nationalaccounts/balanceofpayments/compendium/unitedkingdombalanceofpaymentsthepinkbook</p>
+            <p>ONS — UK Trade in Goods and Services. Published monthly. ons.gov.uk/businessindustryandtrade/internationaltrade/bulletins/uktrade/latest</p>
+            <p>ONS — Pink Book (UK Balance of Payments). Published annually. ons.gov.uk/economy/nationalaccounts/balanceofpayments/compendium/unitedkingdombalanceofpaymentsthepinkbook</p>
             <p>Trade figures are current prices, not adjusted for inflation. The goods/services breakdown follows the Balance of Payments framework (BPM6). Trade deficit refers to the total trade in goods and services balance. Energy trade includes both crude oil, natural gas, and refined petroleum products. Post-Brexit effects are estimated; the counterfactual is modelled not observed.</p>
           </div>
         </section>

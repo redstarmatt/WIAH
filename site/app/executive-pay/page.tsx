@@ -45,7 +45,7 @@ export default function ExecutivePayPage() {
   const ceoPaySeries: Series[] = data
     ? [{
         id: 'ceo-pay',
-        label: 'FTSE 100 CEO median total pay (&pound;m)',
+        label: 'FTSE 100 CEO median total pay (£m)',
         colour: '#E63946',
         data: data.national.timeSeries.map(d => ({
           date: yearToDate(d.date),
@@ -76,15 +76,15 @@ export default function ExecutivePayPage() {
         <TopicHeader
           topic="Executive Pay"
           question="How Much More Are Bosses Paid Than Workers?"
-          finding="FTSE 100 CEOs earn on average &pound;3.9 million per year &mdash; 118 times the median UK full-time worker salary &mdash; a ratio that has more than doubled since 2000."
+          finding="FTSE 100 CEOs earn on average £3.9 million per year — 118 times the median UK full-time worker salary — a ratio that has more than doubled since 2000."
           colour="#E63946"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The gap between what Britain&apos;s top executives earn and what their workers take home has widened dramatically over the past three decades. In 2023, the median total remuneration for a FTSE 100 chief executive reached &pound;3.9 million &mdash; equivalent to earning the median UK full-time salary of &pound;33,000 in under four days. The High Pay Centre, which tracks executive remuneration through annual analysis of company reports, found that the FTSE 100 CEO-to-worker pay ratio stood at 118:1 in 2023, up from approximately 47:1 in 2000 and from just 20:1 in 1980. Total pay packages combine base salary, annual bonus, and long-term incentive plans (LTIPs) that vest over three-to-five years, typically linked to earnings per share or total shareholder return targets. In boom years, LTIP vestings can dwarf base salary, pushing headline pay figures to multiples that attract significant public attention. In 2019 &mdash; the pre-pandemic peak &mdash; the highest-paid FTSE 100 CEO received over &pound;58 million in total remuneration, more than 1,700 times the UK median wage.</p>
-            <p>Pay governance in the UK has evolved considerably since the first statutory &ldquo;say on pay&rdquo; vote was introduced in 2003. Since 2013, shareholders have had a binding vote on companies&apos; remuneration policies at least every three years, and an advisory vote on the annual remuneration report. The Investment Association, which represents major institutional investors, publishes a public register of companies that have received significant shareholder opposition &mdash; defined as 20% or more votes against &mdash; on pay resolutions. Remuneration committees, composed of independent non-executive directors, are responsible for setting and overseeing executive pay, guided by the UK Corporate Governance Code. From 2020, large UK companies with more than 250 employees have been required to disclose their CEO pay ratio relative to median, 25th percentile, and 75th percentile employee pay. Despite these governance improvements, average CEO pay in real terms has risen substantially faster than worker pay over the same period, suggesting that governance mechanisms have moderated but not arrested the underlying trend.</p>
+            <p>The gap between what Britain's top executives earn and what their workers take home has widened dramatically over the past three decades. In 2023, the median total remuneration for a FTSE 100 chief executive reached £3.9 million — equivalent to earning the median UK full-time salary of £33,000 in under four days. The High Pay Centre, which tracks executive remuneration through annual analysis of company reports, found that the FTSE 100 CEO-to-worker pay ratio stood at 118:1 in 2023, up from approximately 47:1 in 2000 and from just 20:1 in 1980. Total pay packages combine base salary, annual bonus, and long-term incentive plans (LTIPs) that vest over three-to-five years, typically linked to earnings per share or total shareholder return targets. In boom years, LTIP vestings can dwarf base salary, pushing headline pay figures to multiples that attract significant public attention. In 2019 — the pre-pandemic peak — the highest-paid FTSE 100 CEO received over £58 million in total remuneration, more than 1,700 times the UK median wage.</p>
+            <p>Pay governance in the UK has evolved considerably since the first statutory &ldquo;say on pay&rdquo; vote was introduced in 2003. Since 2013, shareholders have had a binding vote on companies' remuneration policies at least every three years, and an advisory vote on the annual remuneration report. The Investment Association, which represents major institutional investors, publishes a public register of companies that have received significant shareholder opposition — defined as 20% or more votes against — on pay resolutions. Remuneration committees, composed of independent non-executive directors, are responsible for setting and overseeing executive pay, guided by the UK Corporate Governance Code. From 2020, large UK companies with more than 250 employees have been required to disclose their CEO pay ratio relative to median, 25th percentile, and 75th percentile employee pay. Despite these governance improvements, average CEO pay in real terms has risen substantially faster than worker pay over the same period, suggesting that governance mechanisms have moderated but not arrested the underlying trend.</p>
             </div>
         </section>
 
@@ -98,10 +98,10 @@ export default function ExecutivePayPage() {
           <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="FTSE 100 CEO average pay"
-              value="&pound;3.9M"
+              value="£3.9M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; 118&times; the median UK worker salary &middot; up from &pound;1.8M in 2016"
+              changeText="2023 · 118&times; the median UK worker salary · up from £1.8M in 2016"
               sparklineData={[1.8, 2.1, 2.5, 2.8, 3.0, 3.2, 3.6, 3.9]}
               onExpand={() => {}}
             />
@@ -110,7 +110,7 @@ export default function ExecutivePayPage() {
               value="118&times;"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; Up from 47&times; in 2000 &middot; OECD average is around 80&times;"
+              changeText="2023 · Up from 47&times; in 2000 · OECD average is around 80&times;"
               sparklineData={[47, 55, 65, 75, 85, 95, 108, 118]}
               onExpand={() => {}}
             />
@@ -119,7 +119,7 @@ export default function ExecutivePayPage() {
               value="32%"
               direction="up"
               polarity="up-is-good"
-              changeText="2023 &middot; Up from 8 companies in 2015 &middot; Governance pressure growing"
+              changeText="2023 · Up from 8 companies in 2015 · Governance pressure growing"
               sparklineData={[8, 10, 12, 14, 17, 20, 26, 32]}
               onExpand={() => {}}
             />
@@ -129,13 +129,13 @@ export default function ExecutivePayPage() {
         <ScrollReveal>
           <section id="sec-ceo-pay" className="mb-12">
             <LineChart
-              title="FTSE 100 CEO median total pay, 2010&ndash;2023 (&pound;m)"
+              title="FTSE 100 CEO median total pay, 2010–2023 (£m)"
               subtitle="Median single total figure remuneration for FTSE 100 chief executives, including salary, bonus, and vested long-term incentives."
               series={ceoPaySeries}
-              yLabel="&pound;m"
+              yLabel="£m"
               source={{
                 name: 'High Pay Centre',
-                dataset: 'FTSE 100 CEO Pay Survey &mdash; annual remuneration reports',
+                dataset: 'FTSE 100 CEO Pay Survey — annual remuneration reports',
                 frequency: 'annual',
               }}
             />
@@ -145,7 +145,7 @@ export default function ExecutivePayPage() {
         <ScrollReveal>
           <section id="sec-ratio" className="mb-12">
             <LineChart
-              title="CEO-to-worker pay ratio, 2010&ndash;2023"
+              title="CEO-to-worker pay ratio, 2010–2023"
               subtitle="FTSE 100 CEO median pay divided by UK median full-time annual earnings (ONS ASHE). Ratio shows how many times more the average FTSE 100 CEO earns than the typical UK worker."
               series={ratioSeries}
               yLabel="Ratio (&times;)"
@@ -160,11 +160,11 @@ export default function ExecutivePayPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s changing"
+            title="What's changing"
             value="Shareholder rebellions rising"
             unit="2023"
-            description="Shareholder rebellions on executive pay have risen sharply &mdash; in 2023, 32 FTSE 100 companies faced significant opposition (20%+ votes against) on pay resolutions, up from just 8 in 2015. The Investment Association&apos;s public register of companies with substantial opposition has increased board accountability. From 2020, mandatory CEO pay ratio disclosure has made the gap between boardroom and workforce pay visible in annual reports for the first time &mdash; a transparency measure that has begun to shift the narrative in remuneration committee discussions."
-            source="Source: High Pay Centre &mdash; FTSE 100 CEO Pay Survey 2023; Investment Association &mdash; Shareholder Voting & Engagement Report 2023; ONS &mdash; Annual Survey of Hours and Earnings 2023."
+            description="Shareholder rebellions on executive pay have risen sharply — in 2023, 32 FTSE 100 companies faced significant opposition (20%+ votes against) on pay resolutions, up from just 8 in 2015. The Investment Association's public register of companies with substantial opposition has increased board accountability. From 2020, mandatory CEO pay ratio disclosure has made the gap between boardroom and workforce pay visible in annual reports for the first time — a transparency measure that has begun to shift the narrative in remuneration committee discussions."
+            source="Source: High Pay Centre — FTSE 100 CEO Pay Survey 2023; Investment Association — Shareholder Voting & Engagement Report 2023; ONS — Annual Survey of Hours and Earnings 2023."
           />
         </ScrollReveal>
 
@@ -174,7 +174,7 @@ export default function ExecutivePayPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

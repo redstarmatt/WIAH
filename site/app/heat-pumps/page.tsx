@@ -74,14 +74,14 @@ export default function HeatPumpsPage() {
         <TopicHeader
           topic="Heat Pumps"
           question="Why Is Britain So Far Behind on Heat Pumps?"
-          finding="The UK installed just 72,000 heat pumps in 2023 &mdash; less than a third of its 600,000&ndash;per&ndash;year target for 2028. France installed 1.6 million in the same year. The UK&apos;s legacy of gas boilers, high installation costs, and poorly insulated homes has made the heat pump transition uniquely slow."
+          finding="The UK installed just 72,000 heat pumps in 2023 — less than a third of its 600,000–per–year target for 2028. France installed 1.6 million in the same year. The UK's legacy of gas boilers, high installation costs, and poorly insulated homes has made the heat pump transition uniquely slow."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK is among the worst performers in Europe on heat pump adoption &mdash; a striking failure given that heating buildings accounts for around 17% of UK greenhouse gas emissions and the government has committed to phasing out new gas boiler installations by 2035. Heat pumps work like refrigerators in reverse, extracting warmth from outside air or ground and delivering it as space heating at a coefficient of performance (COP) of typically 2.5 to 3.5 &mdash; meaning they produce two to three times more heat energy than the electricity they consume. A modern air source heat pump in a well-insulated UK home can reduce heating emissions by 70% or more compared to a gas boiler. Yet in 2023, the UK installed just 72,000 heat pumps &mdash; compared to 1.6 million in France, 600,000 in Germany, and over 3 million in Italy. The European Heat Pump Association recorded a 40% growth in European market sales in 2022, largely driven by energy price anxiety following Russia&apos;s invasion of Ukraine; UK growth was far more modest. With 28 million gas boilers in UK homes, replacing them all with heat pumps at current rates would take over 350 years.</p>
-            <p>The barriers to UK heat pump adoption are multiple and interconnected. Upfront cost is the most commonly cited: a typical UK air source heat pump installation costs &pound;10,000 to &pound;15,000, compared to &pound;2,000 to &pound;3,000 for a replacement gas boiler. The Boiler Upgrade Scheme (BUS), launched in April 2022, offers a &pound;7,500 grant toward heat pump installation &mdash; raised from &pound;5,000 in October 2023. Within six months of the grant increase, BUS applications doubled, demonstrating that cost is the primary barrier rather than lack of interest. But &pound;7,500 still leaves a significant cost gap compared to boiler replacement, particularly for households with older, poorly insulated properties where heat pump performance will be suboptimal. France&apos;s MaPrimeRenov scheme offers up to 90% of installation cost for the lowest-income households, reducing effective costs to &pound;2,000 to &pound;4,000 &mdash; a far more powerful demand signal. UK heat pump installers are also in short supply: around 3,500 MCS-certified heat pump installers were active in 2023, compared to over 130,000 Gas Safe registered engineers. Training new heat pump engineers takes 6 to 12 months, and the pipeline of trainees is not yet remotely sufficient to meet 600,000 annual installations.</p>
+            <p>The UK is among the worst performers in Europe on heat pump adoption — a striking failure given that heating buildings accounts for around 17% of UK greenhouse gas emissions and the government has committed to phasing out new gas boiler installations by 2035. Heat pumps work like refrigerators in reverse, extracting warmth from outside air or ground and delivering it as space heating at a coefficient of performance (COP) of typically 2.5 to 3.5 — meaning they produce two to three times more heat energy than the electricity they consume. A modern air source heat pump in a well-insulated UK home can reduce heating emissions by 70% or more compared to a gas boiler. Yet in 2023, the UK installed just 72,000 heat pumps — compared to 1.6 million in France, 600,000 in Germany, and over 3 million in Italy. The European Heat Pump Association recorded a 40% growth in European market sales in 2022, largely driven by energy price anxiety following Russia's invasion of Ukraine; UK growth was far more modest. With 28 million gas boilers in UK homes, replacing them all with heat pumps at current rates would take over 350 years.</p>
+            <p>The barriers to UK heat pump adoption are multiple and interconnected. Upfront cost is the most commonly cited: a typical UK air source heat pump installation costs £10,000 to £15,000, compared to £2,000 to £3,000 for a replacement gas boiler. The Boiler Upgrade Scheme (BUS), launched in April 2022, offers a £7,500 grant toward heat pump installation — raised from £5,000 in October 2023. Within six months of the grant increase, BUS applications doubled, demonstrating that cost is the primary barrier rather than lack of interest. But £7,500 still leaves a significant cost gap compared to boiler replacement, particularly for households with older, poorly insulated properties where heat pump performance will be suboptimal. France's MaPrimeRenov scheme offers up to 90% of installation cost for the lowest-income households, reducing effective costs to £2,000 to £4,000 — a far more powerful demand signal. UK heat pump installers are also in short supply: around 3,500 MCS-certified heat pump installers were active in 2023, compared to over 130,000 Gas Safe registered engineers. Training new heat pump engineers takes 6 to 12 months, and the pipeline of trainees is not yet remotely sufficient to meet 600,000 annual installations.</p>
             </div>
         </section>
 
@@ -98,9 +98,9 @@ export default function HeatPumpsPage() {
               value="72,000"
               direction="up"
               polarity="up-is-good"
-              changeText="Target: 600,000&ndash;per&ndash;year by 2028 &mdash; France installed 1.6M in 2023"
+              changeText="Target: 600,000–per–year by 2028 — France installed 1.6M in 2023"
               sparklineData={[35000, 40000, 43000, 49000, 55000, 60000, 65000, 72000]}
-              source="MCS &mdash; Microgeneration Certification Scheme statistics 2024"
+              source="MCS — Microgeneration Certification Scheme statistics 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -109,19 +109,19 @@ export default function HeatPumpsPage() {
               unit="/yr"
               direction="flat"
               polarity="up-is-good"
-              changeText="Currently at 12% of target rate &mdash; requires 8&times; acceleration"
+              changeText="Currently at 12% of target rate — requires 8&times; acceleration"
               sparklineData={[25000, 30000, 35000, 43000, 55000, 60000, 72000, 600000]}
-              source="DESNZ &mdash; Heat and Buildings Strategy 2021"
+              source="DESNZ — Heat and Buildings Strategy 2021"
               onExpand={() => {}}
             />
             <MetricCard
               label="Average UK installation cost"
-              value="&pound;12,500"
+              value="£12,500"
               direction="down"
               polarity="up-is-bad"
-              changeText="After &pound;7,500 BUS grant: ~&pound;5,000 &mdash; vs &pound;2,500 for a gas boiler"
+              changeText="After £7,500 BUS grant: ~£5,000 — vs £2,500 for a gas boiler"
               sparklineData={[16000, 15500, 15000, 14500, 14000, 13500, 13000, 12500]}
-              source="DESNZ &mdash; Heat pump installation cost survey 2023"
+              source="DESNZ — Heat pump installation cost survey 2023"
               onExpand={() => {}}
             />
           </div>
@@ -130,7 +130,7 @@ export default function HeatPumpsPage() {
         <ScrollReveal>
           <section id="sec-uk" className="mb-12">
             <LineChart
-              title="Annual heat pump installations, UK, 2015&ndash;2023"
+              title="Annual heat pump installations, UK, 2015–2023"
               subtitle="MCS-certified air and ground source heat pump installations per year. 600,000 target line for 2028. MCS / DESNZ."
               series={ukSeries}
               yLabel="Installations per year"
@@ -141,7 +141,7 @@ export default function HeatPumpsPage() {
         <ScrollReveal>
           <section id="sec-comparison" className="mb-12">
             <LineChart
-              title="Heat pump installations: UK vs France and Germany, 2015&ndash;2023"
+              title="Heat pump installations: UK vs France and Germany, 2015–2023"
               subtitle="Annual residential heat pump installations. France and Germany: EHPA national market surveys. UK: MCS data."
               series={comparisonSeries}
               yLabel="Installations per year"
@@ -152,10 +152,10 @@ export default function HeatPumpsPage() {
         <ScrollReveal>
           <PositiveCallout
             title="Grant Doubled, Applications Doubled"
-            value="&pound;7,500"
-            unit="Boiler Upgrade Scheme grant &mdash; applications doubled in 6 months"
-            description="When the Boiler Upgrade Scheme grant was raised to &pound;7,500 in October 2023, applications doubled within six months &mdash; demonstrating that subsidy level is the key barrier, not consumer indifference. Over 55,000 grants have been issued since the scheme launched. MCS-certified heat pump installers now number over 3,500 and training courses are filling rapidly. The Heat Pump Ready programme is testing innovative tariffs that make heat pump running costs competitive with gas."
-            source="Source: DESNZ &mdash; Boiler Upgrade Scheme statistics Q1 2024; MCS installer register."
+            value="£7,500"
+            unit="Boiler Upgrade Scheme grant — applications doubled in 6 months"
+            description="When the Boiler Upgrade Scheme grant was raised to £7,500 in October 2023, applications doubled within six months — demonstrating that subsidy level is the key barrier, not consumer indifference. Over 55,000 grants have been issued since the scheme launched. MCS-certified heat pump installers now number over 3,500 and training courses are filling rapidly. The Heat Pump Ready programme is testing innovative tariffs that make heat pump running costs competitive with gas."
+            source="Source: DESNZ — Boiler Upgrade Scheme statistics Q1 2024; MCS installer register."
           />
         </ScrollReveal>
 
@@ -169,11 +169,11 @@ export default function HeatPumpsPage() {
                   <ul className="space-y-2">
                     {data.metadata.sources.map((src, idx) => (
                       <li key={idx} className="text-wiah-mid">
-                        <strong className="text-wiah-black">{src.name}:</strong>&nbsp;
+                        <strong className="text-wiah-black">{src.name}:</strong> 
                         <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue">
                           {src.dataset}
                         </a>
-                        &nbsp;({src.frequency})
+                         ({src.frequency})
                       </li>
                     ))}
                   </ul>

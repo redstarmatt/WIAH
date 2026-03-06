@@ -54,15 +54,15 @@ export default function MarineEnvironmentPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Marine Environment"
-          question="Are Britain&apos;s Seas Actually Being Protected?"
-          finding="Only 36% of the UK&apos;s Marine Protected Areas are in favourable condition, and just 49% of assessed fish stocks are being harvested sustainably. Despite designating 38% of UK waters as MPAs, most receive little active management."
+          question="Are Britain's Seas Actually Being Protected?"
+          finding="Only 36% of the UK's Marine Protected Areas are in favourable condition, and just 49% of assessed fish stocks are being harvested sustainably. Despite designating 38% of UK waters as MPAs, most receive little active management."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom manages one of the world&apos;s largest marine estates, covering approximately 900,000 square kilometres &mdash; roughly 3.5 times its land area. Some 38% of UK waters are designated as Marine Protected Areas under a patchwork of national and international frameworks, including Marine Conservation Zones (MCZs), Special Areas of Conservation (SACs), and Sites of Special Scientific Interest (SSSIs). On paper, this exceeds the global 30&times;30 target agreed at COP15 in Montreal. In practice, the picture is far less reassuring. A 2023 assessment by the Joint Nature Conservation Committee (JNCC) found that only 36% of MPA features were in favourable condition. Bottom trawling &mdash; the most destructive fishing method &mdash; continues in 90% of offshore MPAs, according to analysis by Oceana.</p>
-            <p>UK fish stocks present a mixed picture. ICES (the International Council for the Exploration of the Sea) assessed 57 stocks in UK waters in 2024 and found that 49% were being harvested at or below the maximum sustainable yield &mdash; down from a peak of 57% in 2016. Cod in the Celtic Sea is in particularly poor condition, with spawning stock biomass well below safe biological limits. North Sea herring has recovered significantly since its near-collapse in the 1970s but faces renewed pressure from rising sea temperatures. Post-Brexit, the UK sets its own Total Allowable Catches independently from the EU, but negotiations remain politically fraught and quota-setting has sometimes exceeded scientific advice.</p>
+            <p>The United Kingdom manages one of the world's largest marine estates, covering approximately 900,000 square kilometres — roughly 3.5 times its land area. Some 38% of UK waters are designated as Marine Protected Areas under a patchwork of national and international frameworks, including Marine Conservation Zones (MCZs), Special Areas of Conservation (SACs), and Sites of Special Scientific Interest (SSSIs). On paper, this exceeds the global 30&times;30 target agreed at COP15 in Montreal. In practice, the picture is far less reassuring. A 2023 assessment by the Joint Nature Conservation Committee (JNCC) found that only 36% of MPA features were in favourable condition. Bottom trawling — the most destructive fishing method — continues in 90% of offshore MPAs, according to analysis by Oceana.</p>
+            <p>UK fish stocks present a mixed picture. ICES (the International Council for the Exploration of the Sea) assessed 57 stocks in UK waters in 2024 and found that 49% were being harvested at or below the maximum sustainable yield — down from a peak of 57% in 2016. Cod in the Celtic Sea is in particularly poor condition, with spawning stock biomass well below safe biological limits. North Sea herring has recovered significantly since its near-collapse in the 1970s but faces renewed pressure from rising sea temperatures. Post-Brexit, the UK sets its own Total Allowable Catches independently from the EU, but negotiations remain politically fraught and quota-setting has sometimes exceeded scientific advice.</p>
             </div>
         </section>
 
@@ -113,7 +113,7 @@ export default function MarineEnvironmentPage() {
         <ScrollReveal>
           <section id="sec-fish" className="mb-12">
             <LineChart
-              title="UK fish stocks harvested sustainably, 2010&ndash;2024"
+              title="UK fish stocks harvested sustainably, 2010–2024"
               subtitle="Percentage of assessed stocks fished at or below maximum sustainable yield. ICES annual assessment."
               series={fishStocksSeries}
               yLabel="% sustainable"
@@ -124,7 +124,7 @@ export default function MarineEnvironmentPage() {
         <ScrollReveal>
           <section id="sec-mpa" className="mb-12">
             <LineChart
-              title="Marine Protected Areas in favourable condition, 2016&ndash;2024"
+              title="Marine Protected Areas in favourable condition, 2016–2024"
               subtitle="Percentage of MPA features assessed as in favourable condition. JNCC."
               series={mpaSeries}
               yLabel="% favourable"

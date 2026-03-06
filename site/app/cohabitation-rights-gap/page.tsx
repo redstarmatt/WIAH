@@ -54,13 +54,13 @@ export default function CohabitationRightsGapPage() {
         <TopicHeader
           topic="Cohabitation Rights Gap"
           question="Are Cohabiting Couples Actually Protected by Law?"
-          finding="3.6 million cohabiting couples have few automatic legal protections, yet 51% mistakenly believe in &lsquo;common law marriage&rsquo; rights that don&apos;t exist."
+          finding="3.6 million cohabiting couples have few automatic legal protections, yet 51% mistakenly believe in &lsquo;common law marriage&rsquo; rights that don't exist."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Cohabiting couples are the fastest-growing family type in England and Wales, rising from 2.6 million in 2002 to 3.6 million in 2022, yet they have almost none of the automatic legal protections afforded to married couples or civil partners. On separation, there is no right to share property, no right to pension wealth, and no maintenance obligation beyond child support. Around 51% of the population believe in &ldquo;common law marriage&rdquo; &mdash; a myth: no such legal status exists in England and Wales. This persistent misconception means that couples who believe they are protected are less likely to take independent steps &mdash; cohabitation agreements, joint ownership, updated wills &mdash; that would actually protect them. Approximately 250,000 cohabiting couple separations occur each year with no equivalent of divorce law to govern them.</p>
+            <p>Cohabiting couples are the fastest-growing family type in England and Wales, rising from 2.6 million in 2002 to 3.6 million in 2022, yet they have almost none of the automatic legal protections afforded to married couples or civil partners. On separation, there is no right to share property, no right to pension wealth, and no maintenance obligation beyond child support. Around 51% of the population believe in &ldquo;common law marriage&rdquo; — a myth: no such legal status exists in England and Wales. This persistent misconception means that couples who believe they are protected are less likely to take independent steps — cohabitation agreements, joint ownership, updated wills — that would actually protect them. Approximately 250,000 cohabiting couple separations occur each year with no equivalent of divorce law to govern them.</p>
             <p>The Law Commission recommended reform in 2007, proposing an opt-out scheme giving qualifying couples similar financial remedies to those available on divorce. Scotland implemented such a scheme in 2006 with positive results. Successive UK governments have declined to legislate for England and Wales. The burden falls disproportionately on women who have contributed to mortgages, cared for children, and foregone career advancement, but emerge from long relationships with minimal financial security. A Law Commission review commenced in 2023; until reform is enacted, awareness campaigns cannot substitute for the legal rights that 3.6 million households currently lack.</p>
           </div>
         </section>
@@ -79,9 +79,9 @@ export default function CohabitationRightsGapPage() {
               unit=""
               direction={'up' as const}
               polarity={'up-is-good' as const}
-              changeText="+38% since 2002 &middot; fastest-growing family type"
+              changeText="+38% since 2002 · fastest-growing family type"
               sparklineData={[2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.4, 3.6]}
-              href="#sec-chart"source="ONS &middot; Families and Households 2022"
+              href="#sec-chart"source="ONS · Families and Households 2022"
             />
             <MetricCard
               label="Believing in common law marriage"
@@ -109,7 +109,7 @@ export default function CohabitationRightsGapPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Cohabiting couples in England and Wales, 2016&ndash;2024"
+              title="Cohabiting couples in England and Wales, 2016–2024"
               subtitle="Number of opposite-sex and same-sex cohabiting couples (millions)."
               series={series}
               yLabel="Couples (millions)"
@@ -125,9 +125,9 @@ export default function CohabitationRightsGapPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>ONS &mdash; Families and Households. Published annually. ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/datasets/familiesandhouseholds</p>
-            <p>Resolution Foundation / Citizens Advice &mdash; Cohabitation Survey 2023. resolutionfoundation.org</p>
-            <p>Law Commission &mdash; Cohabitation: The Financial Consequences of Relationship Breakdown (2007). lawcom.gov.uk</p>
+            <p>ONS — Families and Households. Published annually. ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/datasets/familiesandhouseholds</p>
+            <p>Resolution Foundation / Citizens Advice — Cohabitation Survey 2023. resolutionfoundation.org</p>
+            <p>Law Commission — Cohabitation: The Financial Consequences of Relationship Breakdown (2007). lawcom.gov.uk</p>
             <p>Cohabiting couple figures from ONS Labour Force Survey. Common law marriage belief from periodic public attitude surveys. Separation figures are ONS estimates modelled from survey data on cohabitation duration and relationship dissolution rates.</p>
           </div>
         </section>

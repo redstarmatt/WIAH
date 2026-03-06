@@ -80,16 +80,16 @@ export default function LeaseholdPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Leasehold"
-          question="Do You Really Own Your Home If You&apos;re a Leaseholder?"
-          finding="Nearly 5 million homes in England and Wales are held on a leasehold basis &mdash; a feudal tenure system that gives freeholders the power to charge escalating ground rents, impose permission fees, and ultimately forfeit properties for arrears as small as &pound;350. Ground rent complaints to the Property Tribunal have tripled since 2015."
+          question="Do You Really Own Your Home If You're a Leaseholder?"
+          finding="Nearly 5 million homes in England and Wales are held on a leasehold basis — a feudal tenure system that gives freeholders the power to charge escalating ground rents, impose permission fees, and ultimately forfeit properties for arrears as small as £350. Ground rent complaints to the Property Tribunal have tripled since 2015."
           colour="#F4A261"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Approximately 4.98 million residential properties in England and Wales are held on a leasehold basis, representing roughly one in five homes. The system dates to medieval English land law and was originally designed for flats in shared buildings where freehold ownership of individual units was impractical. However, from the mid-2000s, major housebuilders began selling new-build houses on leasehold terms &mdash; a practice that allowed them to sell the freehold to investment companies, which then charged escalating ground rents and service charges. By 2017, an estimated 100,000 leasehold houses had been sold with doubling ground rent clauses, meaning rents that would increase from &pound;250 per year to &pound;8,000 within 50 years. The Competition and Markets Authority investigated the sector and concluded that certain practices were unfair, leading to undertakings from Aviva, Countryside Properties, and Taylor Wimpey.</p>
-            <p>Ground rents are the defining grievance. Before 2022, developers routinely inserted clauses requiring ground rent to double every 10 or 25 years, creating obligations that rapidly outpaced inflation and rendered properties unsaleable &mdash; mortgage lenders will not lend on properties where ground rent exceeds 0.1% of property value. The Leasehold Reform (Ground Rent) Act 2022 capped ground rent on new leases at a peppercorn (effectively zero), but this applies only to leases granted after 30 June 2022 and does nothing for the millions of existing leaseholders with onerous terms. Beyond ground rent, leaseholders face permission fees for alterations (typically &pound;250&ndash;&pound;500 per request), administration charges for routine correspondence, insurance commissions where freeholders mark up buildings insurance by 30&ndash;50%, and the ever-present threat of forfeiture &mdash; the legal right of the freeholder to reclaim the property for unpaid ground rent, with the threshold set at just &pound;350 in arrears.</p>
+            <p>Approximately 4.98 million residential properties in England and Wales are held on a leasehold basis, representing roughly one in five homes. The system dates to medieval English land law and was originally designed for flats in shared buildings where freehold ownership of individual units was impractical. However, from the mid-2000s, major housebuilders began selling new-build houses on leasehold terms — a practice that allowed them to sell the freehold to investment companies, which then charged escalating ground rents and service charges. By 2017, an estimated 100,000 leasehold houses had been sold with doubling ground rent clauses, meaning rents that would increase from £250 per year to £8,000 within 50 years. The Competition and Markets Authority investigated the sector and concluded that certain practices were unfair, leading to undertakings from Aviva, Countryside Properties, and Taylor Wimpey.</p>
+            <p>Ground rents are the defining grievance. Before 2022, developers routinely inserted clauses requiring ground rent to double every 10 or 25 years, creating obligations that rapidly outpaced inflation and rendered properties unsaleable — mortgage lenders will not lend on properties where ground rent exceeds 0.1% of property value. The Leasehold Reform (Ground Rent) Act 2022 capped ground rent on new leases at a peppercorn (effectively zero), but this applies only to leases granted after 30 June 2022 and does nothing for the millions of existing leaseholders with onerous terms. Beyond ground rent, leaseholders face permission fees for alterations (typically £250–£500 per request), administration charges for routine correspondence, insurance commissions where freeholders mark up buildings insurance by 30–50%, and the ever-present threat of forfeiture — the legal right of the freeholder to reclaim the property for unpaid ground rent, with the threshold set at just £350 in arrears.</p>
             </div>
         </section>
 
@@ -106,7 +106,7 @@ export default function LeaseholdPage() {
               value="4.98M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2024 &middot; ~1 in 5 homes &middot; 36% of London homes are leasehold &middot; Rising due to new-build flats"
+              changeText="2024 · ~1 in 5 homes · 36% of London homes are leasehold · Rising due to new-build flats"
               sparklineData={[4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 4.98]}
               onExpand={() => {}}
             />
@@ -115,16 +115,16 @@ export default function LeaseholdPage() {
               value="10,800"
               direction="up"
               polarity="up-is-bad"
-              changeText="2024 &middot; Tripled since 2015 &middot; Property Tribunal &amp; Ombudsman cases &middot; True disputes far higher"
+              changeText="2024 · Tripled since 2015 · Property Tribunal &amp; Ombudsman cases · True disputes far higher"
               sparklineData={[3200, 3800, 5100, 6400, 7200, 8100, 9300, 10200, 10800]}
               onExpand={() => {}}
             />
             <MetricCard
               label="Average London service charge"
-              value="&pound;2,880"
+              value="£2,880"
               direction="up"
               polarity="up-is-bad"
-              changeText="Per year &middot; 2023 &middot; Some developments over &pound;8,000/yr &middot; Charges rising faster than inflation"
+              changeText="Per year · 2023 · Some developments over £8,000/yr · Charges rising faster than inflation"
               sparklineData={[2100, 2200, 2350, 2450, 2550, 2680, 2790, 2880]}
               onExpand={() => {}}
             />
@@ -134,7 +134,7 @@ export default function LeaseholdPage() {
         <ScrollReveal>
           <section id="sec-properties" className="mb-12">
             <LineChart
-              title="Leasehold residential properties, England &amp; Wales, 2015&ndash;2024"
+              title="Leasehold residential properties, England &amp; Wales, 2015–2024"
               subtitle="Total number of residential properties held on a leasehold basis (millions)."
               series={leaseholdSeries}
               yLabel="Millions"
@@ -150,7 +150,7 @@ export default function LeaseholdPage() {
         <ScrollReveal>
           <section id="sec-complaints" className="mb-12">
             <LineChart
-              title="Ground rent and leasehold complaints, 2015&ndash;2024"
+              title="Ground rent and leasehold complaints, 2015–2024"
               subtitle="Annual complaints to the Property Tribunal and Property Ombudsman regarding ground rent, service charges, and lease terms."
               series={complaintsSeries}
               yLabel="Complaints"
@@ -165,11 +165,11 @@ export default function LeaseholdPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s changing"
-            value="&pound;0"
+            title="What's changing"
+            value="£0"
             unit="ground rent on all new leases since June 2022"
-            description="The Leasehold Reform (Ground Rent) Act 2022 capped ground rent on new leases at a peppercorn &mdash; effectively zero. The Leasehold and Freehold Reform Act 2024 bans new leasehold houses, extends standard lease extensions to 990 years, and removes the marriage value calculation that inflated extension costs. The Law Commission has recommended commonhold &mdash; the system used in most countries &mdash; as the long-term replacement for leasehold. The CMA secured commitments from developers to remove doubling ground rent clauses from existing contracts."
-            source="Source: DLUHC &mdash; Leasehold Dwellings 2024; HM Land Registry &mdash; Title Registrations; First-Tier Tribunal (Property Chamber)."
+            description="The Leasehold Reform (Ground Rent) Act 2022 capped ground rent on new leases at a peppercorn — effectively zero. The Leasehold and Freehold Reform Act 2024 bans new leasehold houses, extends standard lease extensions to 990 years, and removes the marriage value calculation that inflated extension costs. The Law Commission has recommended commonhold — the system used in most countries — as the long-term replacement for leasehold. The CMA secured commitments from developers to remove doubling ground rent clauses from existing contracts."
+            source="Source: DLUHC — Leasehold Dwellings 2024; HM Land Registry — Title Registrations; First-Tier Tribunal (Property Chamber)."
           />
         </ScrollReveal>
 
@@ -179,7 +179,7 @@ export default function LeaseholdPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

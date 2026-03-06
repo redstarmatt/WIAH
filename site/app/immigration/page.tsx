@@ -94,15 +94,15 @@ export default function ImmigrationPage() {
         <TopicHeader
           topic="Immigration"
           question="What Is Actually Happening with UK Immigration?"
-          finding="Net migration to the UK reached a record 745,000 in the year to December 2022 &mdash; nearly three times pre-Brexit levels. It fell to an estimated 685,000 in 2023. Work visas are the largest category, followed by study. The asylum backlog reached 133,000 in 2023, though it has been cut substantially. Emigration has also risen."
+          finding="Net migration to the UK reached a record 745,000 in the year to December 2022 — nearly three times pre-Brexit levels. It fell to an estimated 685,000 in 2023. Work visas are the largest category, followed by study. The asylum backlog reached 133,000 in 2023, though it has been cut substantially. Emigration has also risen."
           colour="#264653"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Net migration to the UK peaked at 745,000 in the year to December 2022 &mdash; the highest figure since records began and nearly three times the pre-Brexit average of around 250,000 &mdash; before falling to an estimated 685,000 in 2023 as Home Office restrictions took effect. The ONS substantially revised earlier estimates upward in 2023 after incorporating HMRC and DWP administrative data. Work visas accounted for 286,000 grants in 2022/23, with health and care workers the largest skilled-worker group; student visas reached 486,000, triple the 2019 figure, before dependent-visa rules were tightened in January 2024. The asylum backlog grew from 24,000 in 2017 to a peak of 133,000 in 2023; the Home Office processed 112,000 claims in 2023 to cut the queue, though the Rwanda removal scheme was blocked by the Supreme Court in November 2023 and small-boat arrivals fell from 45,000 in 2022 to 29,000 in 2023.</p>
-            <p>The OBR&apos;s 2023 Fiscal Risks report calculated that higher net migration would reduce public debt by around 0.5% of GDP by 2027&ndash;28, because working-age migrants pay tax immediately while drawing less on pension and social care spending. Evidence of aggregate wage displacement for British workers is limited, though some studies find downward pressure in specific low-wage sectors. Emigration has also risen &mdash; 508,000 people left the UK in 2023, up from around 310,000 pre-Brexit. The political gap between the &ldquo;tens of thousands&rdquo; target and the six-figure reality became a defining feature of Brexit politics; critics argue high numbers reflect genuine labour market demand in NHS, social care, and construction that the domestic workforce cannot fill.</p>
+            <p>Net migration to the UK peaked at 745,000 in the year to December 2022 — the highest figure since records began and nearly three times the pre-Brexit average of around 250,000 — before falling to an estimated 685,000 in 2023 as Home Office restrictions took effect. The ONS substantially revised earlier estimates upward in 2023 after incorporating HMRC and DWP administrative data. Work visas accounted for 286,000 grants in 2022/23, with health and care workers the largest skilled-worker group; student visas reached 486,000, triple the 2019 figure, before dependent-visa rules were tightened in January 2024. The asylum backlog grew from 24,000 in 2017 to a peak of 133,000 in 2023; the Home Office processed 112,000 claims in 2023 to cut the queue, though the Rwanda removal scheme was blocked by the Supreme Court in November 2023 and small-boat arrivals fell from 45,000 in 2022 to 29,000 in 2023.</p>
+            <p>The OBR's 2023 Fiscal Risks report calculated that higher net migration would reduce public debt by around 0.5% of GDP by 2027–28, because working-age migrants pay tax immediately while drawing less on pension and social care spending. Evidence of aggregate wage displacement for British workers is limited, though some studies find downward pressure in specific low-wage sectors. Emigration has also risen — 508,000 people left the UK in 2023, up from around 310,000 pre-Brexit. The political gap between the &ldquo;tens of thousands&rdquo; target and the six-figure reality became a defining feature of Brexit politics; critics argue high numbers reflect genuine labour market demand in NHS, social care, and construction that the domestic workforce cannot fill.</p>
           </div>
         </section>
 
@@ -120,7 +120,7 @@ export default function ImmigrationPage() {
               value="685K"
               direction="down"
               polarity="up-is-bad"
-              changeText="Year to Dec 2023 &middot; Down from record 745K in 2022 &middot; Pre-Brexit average was ~250K &middot; ONS revised upwards significantly in 2023"
+              changeText="Year to Dec 2023 · Down from record 745K in 2022 · Pre-Brexit average was ~250K · ONS revised upwards significantly in 2023"
               sparklineData={[177, 209, 249, 322, 273, 282, 270, 271, 184, 488, 745, 685]}
               href="#sec-overview"/>
             <MetricCard
@@ -128,7 +128,7 @@ export default function ImmigrationPage() {
               value="133K"
               direction="down"
               polarity="up-is-bad"
-              changeText="2023 &middot; Down from peak but still 3x pre-pandemic &middot; Rwanda policy blocked by courts &middot; Average wait: 2+ years"
+              changeText="2023 · Down from peak but still 3x pre-pandemic · Rwanda policy blocked by courts · Average wait: 2+ years"
               sparklineData={[30, 28, 24, 29, 38, 52, 76, 120, 133]}
               href="#sec-migration"/>
             <MetricCard
@@ -136,7 +136,7 @@ export default function ImmigrationPage() {
               value="486K"
               direction="flat"
               polarity="up-is-bad"
-              changeText="2022/23 &middot; Up 3x since 2019 &middot; Dependent visa changes Jan 2024 expected to cut numbers &middot; Universities warn of financial risk"
+              changeText="2022/23 · Up 3x since 2019 · Dependent visa changes Jan 2024 expected to cut numbers · Universities warn of financial risk"
               sparklineData={[175, 228, 297, 289, 179, 379, 486, 460]}
               href="#sec-visas"/>
           </div>
@@ -145,7 +145,7 @@ export default function ImmigrationPage() {
         <ScrollReveal>
           <section id="sec-migration" className="mb-12">
             <LineChart
-              title="UK net migration and emigration, 2012&ndash;2023"
+              title="UK net migration and emigration, 2012–2023"
               subtitle="Thousands of people. Net migration is immigration minus emigration. Both have risen since Brexit."
               series={migrationSeries}
               yLabel="Thousands"
@@ -178,14 +178,14 @@ export default function ImmigrationPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Home Office &mdash; Immigration Statistics 2023</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Home Office — Immigration Statistics 2023</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <section id="sec-asylum" className="mb-12">
             <LineChart
-              title="UK asylum backlog, 2015&ndash;2023"
+              title="UK asylum backlog, 2015–2023"
               subtitle="Thousands of cases awaiting an initial decision. Peaked at 133,000 in 2023."
               series={asylumSeries}
               yLabel="Thousands"
@@ -200,11 +200,11 @@ export default function ImmigrationPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
-            value="&ndash;36%"
+            title="What's improving"
+            value="–36%"
             unit="fall in asylum backlog processing time since new fast-track decisions were introduced in 2023"
-            description="The Home Office processed a record 112,000 asylum claims in 2023 &mdash; more than double the 2022 figure &mdash; driven by a &apos;surge&apos; processing model and additional caseworkers. The backlog of cases awaiting an initial decision fell from its peak. The UK Resettlement Scheme and Homes for Ukraine programme have provided legal, managed routes for over 200,000 displaced people since 2022. The points-based immigration system, introduced in January 2021, has simplified routes and added greater transparency to work visa allocations. The Illegal Migration Act 2023 introduced new provisions, though key parts remain subject to legal challenge."
-            source="Source: ONS &mdash; Migration Statistics 2023; Home Office &mdash; Immigration Statistics 2023."
+            description="The Home Office processed a record 112,000 asylum claims in 2023 — more than double the 2022 figure — driven by a 'surge' processing model and additional caseworkers. The backlog of cases awaiting an initial decision fell from its peak. The UK Resettlement Scheme and Homes for Ukraine programme have provided legal, managed routes for over 200,000 displaced people since 2022. The points-based immigration system, introduced in January 2021, has simplified routes and added greater transparency to work visa allocations. The Illegal Migration Act 2023 introduced new provisions, though key parts remain subject to legal challenge."
+            source="Source: ONS — Migration Statistics 2023; Home Office — Immigration Statistics 2023."
           />
         </ScrollReveal>
 
@@ -214,7 +214,7 @@ export default function ImmigrationPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

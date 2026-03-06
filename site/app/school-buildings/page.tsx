@@ -60,7 +60,7 @@ export default function SchoolBuildingsPage() {
   const backlogSeries: Series[] = data
     ? [{
         id: 'backlog',
-        label: 'Maintenance backlog (&pound;bn)',
+        label: 'Maintenance backlog (£bn)',
         colour: '#0D1117',
         data: data.national.maintenanceBacklog.map(d => ({
           date: yearToDate(d.year),
@@ -72,7 +72,7 @@ export default function SchoolBuildingsPage() {
   const spendingSeries: Series[] = data
     ? [{
         id: 'spending',
-        label: 'Annual capital spending (&pound;bn)',
+        label: 'Annual capital spending (£bn)',
         colour: '#264653',
         data: data.national.capitalSpending.map(d => ({
           date: yearToDate(d.year),
@@ -95,15 +95,15 @@ export default function SchoolBuildingsPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="School Buildings"
-          question="Are Britain&apos;s Schools Safe?"
-          finding="The Department for Education identified 174 schools across England with RAAC concrete that posed a risk of collapse in 2023. The school capital maintenance backlog is estimated at &pound;15 billion. One in three school buildings was constructed before 1976. Over 700,000 pupils were in schools with confirmed RAAC in the year it was publicly disclosed."
+          question="Are Britain's Schools Safe?"
+          finding="The Department for Education identified 174 schools across England with RAAC concrete that posed a risk of collapse in 2023. The school capital maintenance backlog is estimated at £15 billion. One in three school buildings was constructed before 1976. Over 700,000 pupils were in schools with confirmed RAAC in the year it was publicly disclosed."
           colour="#F4A261"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The capital maintenance backlog for English schools stood at &pound;15 billion in 2023, more than double the &pound;6.7 billion recorded in 2011. One in three school buildings was constructed before 1976; around 4% are rated critical condition and 17% poor, translating into leaking roofs, broken boilers, and structures that cannot safely be occupied. The RAAC crisis of autumn 2023 made this impossible to ignore: 174 schools were confirmed to contain Reinforced Autoclaved Aerated Concrete &mdash; a material that can fail catastrophically with little warning &mdash; disrupting the education of more than 700,000 pupils at the start of the academic year. Asbestos, present in around 80% of pre-1985 schools, is estimated to cause more than 170 teacher deaths per year. These hazards have been catalogued in successive government surveys and consistently underfunded: school capital spending was cut around 40% in real terms between 2010 and 2014, and the School Rebuilding Programme&apos;s commitment to rebuild 500 schools by 2030 has proceeded slowly.</p>
+            <p>The capital maintenance backlog for English schools stood at £15 billion in 2023, more than double the £6.7 billion recorded in 2011. One in three school buildings was constructed before 1976; around 4% are rated critical condition and 17% poor, translating into leaking roofs, broken boilers, and structures that cannot safely be occupied. The RAAC crisis of autumn 2023 made this impossible to ignore: 174 schools were confirmed to contain Reinforced Autoclaved Aerated Concrete — a material that can fail catastrophically with little warning — disrupting the education of more than 700,000 pupils at the start of the academic year. Asbestos, present in around 80% of pre-1985 schools, is estimated to cause more than 170 teacher deaths per year. These hazards have been catalogued in successive government surveys and consistently underfunded: school capital spending was cut around 40% in real terms between 2010 and 2014, and the School Rebuilding Programme's commitment to rebuild 500 schools by 2030 has proceeded slowly.</p>
             <p>The burden of deteriorating buildings falls disproportionately on pupils in deprived areas, where councils squeezed by a decade of funding reductions have had less capacity to supplement central capital allocations. Academy trusts with large portfolios of older buildings face particular challenges, as maintenance liability transferred with the schools but funding did not always follow. Scotland and Wales have both invested more systematically in their school estates in recent years, widening the gap with large parts of England.</p>
           </div>
         </section>
@@ -119,13 +119,13 @@ export default function SchoolBuildingsPage() {
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Capital maintenance backlog"
-            value={latestBacklog ? `&pound;${latestBacklog.billionsPounds}bn` : '—'}
+            value={latestBacklog ? `£${latestBacklog.billionsPounds}bn` : '—'}
             unit=""
             direction="up"
             polarity="up-is-bad"
             changeText={
               latestBacklog && earliestBacklog
-                ? `Up from &pound;${earliestBacklog.billionsPounds}bn in 2011 · Equivalent to &pound;21,000 per pupil`
+                ? `Up from £${earliestBacklog.billionsPounds}bn in 2011 · Equivalent to £21,000 per pupil`
                 : 'Loading…'
             }
             sparklineData={
@@ -142,7 +142,7 @@ export default function SchoolBuildingsPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Identified Sept 2023 · 700K+ pupils affected · RAAC = Reinforced Autoclaved Aerated Concrete, used 1954&ndash;1990"
+            changeText="Identified Sept 2023 · 700K+ pupils affected · RAAC = Reinforced Autoclaved Aerated Concrete, used 1954–1990"
             sparklineData={[174]}
             source="DfE RAAC survey"
             baseline="RAAC can collapse without warning. Schools had emergency building surveys."
@@ -164,10 +164,10 @@ export default function SchoolBuildingsPage() {
         <div id="sec-charts" className="space-y-12">
           {backlogSeries.length > 0 ? (
             <LineChart
-              title="School capital maintenance backlog, 2011&ndash;2023"
+              title="School capital maintenance backlog, 2011–2023"
               subtitle="Estimated backlog of urgent repairs and improvements, England. Growing despite repeated pledges to address school condition."
               series={backlogSeries}
-              yLabel="&pound; billions"
+              yLabel="£ billions"
               source={{
                 name: 'Department for Education',
                 dataset: 'School Condition Data, 2023',
@@ -181,10 +181,10 @@ export default function SchoolBuildingsPage() {
 
           {spendingSeries.length > 0 ? (
             <LineChart
-              title="Annual school capital spending, 2010&ndash;2023"
-              subtitle="Department for Education capital budget for school improvements and maintenance, England. Real terms (2024 &pound;bn). Spending fell 40% from 2010 to 2014 and has never recovered."
+              title="Annual school capital spending, 2010–2023"
+              subtitle="Department for Education capital budget for school improvements and maintenance, England. Real terms (2024 £bn). Spending fell 40% from 2010 to 2014 and has never recovered."
               series={spendingSeries}
-              yLabel="&pound; billions (real 2024)"
+              yLabel="£ billions (real 2024)"
               source={{
                 name: 'Department for Education',
                 dataset: 'School Capital Investment Budget',
@@ -240,7 +240,7 @@ export default function SchoolBuildingsPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Department for Education &mdash; School Condition Data (annual)
+                Department for Education — School Condition Data (annual)
               </a>
             </li>
             <li>
@@ -250,7 +250,7 @@ export default function SchoolBuildingsPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Department for Education &mdash; RAAC Concrete in Schools Survey (2023)
+                Department for Education — RAAC Concrete in Schools Survey (2023)
               </a>
             </li>
             <li>
@@ -260,12 +260,12 @@ export default function SchoolBuildingsPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Department for Education &mdash; Capital Investment Statistics
+                Department for Education — Capital Investment Statistics
               </a>
             </li>
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
-            The maintenance backlog is the DfE&apos;s own estimate of the cost to bring all school buildings to &apos;good&apos; condition. RAAC was identified through emergency surveys following national publicity in September 2023. Building condition ratings are from the Department&apos;s annual condition surveys of maintained schools in England.
+            The maintenance backlog is the DfE's own estimate of the cost to bring all school buildings to 'good' condition. RAAC was identified through emergency surveys following national publicity in September 2023. Building condition ratings are from the Department's annual condition surveys of maintained schools in England.
           </p>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             Data updated automatically via GitHub Actions. Last pipeline run:{' '}

@@ -134,10 +134,10 @@ export default function FiveGCoveragePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK&apos;s 5G rollout is proceeding at pace in cities but leaving rural, coastal and deprived communities further behind. Urban-rural digital inequality mirrors and amplifies economic geography: the same towns with weak high streets, fewer jobs and poorer public transport now face a widening digital gap. Urban centres with high footfall and dense housing are commercially attractive to mobile operators; sparsely populated areas require government subsidy to reach.
+              The UK's 5G rollout is proceeding at pace in cities but leaving rural, coastal and deprived communities further behind. Urban-rural digital inequality mirrors and amplifies economic geography: the same towns with weak high streets, fewer jobs and poorer public transport now face a widening digital gap. Urban centres with high footfall and dense housing are commercially attractive to mobile operators; sparsely populated areas require government subsidy to reach.
             </p>
             <p>
-              More than 10 million premises remain without reliable indoor 4G from any operator &mdash; a connectivity floor that was supposed to have been met years ago. The Shared Rural Network, signed by all four major operators in 2020, commits to 4G coverage across 95% of the UK landmass by 2026. Progress has been slower than planned. Meanwhile, 5G deployment continues to concentrate investment in the South East and major cities, with Northern Ireland, Wales and the North East receiving proportionally less per premises than London.
+              More than 10 million premises remain without reliable indoor 4G from any operator — a connectivity floor that was supposed to have been met years ago. The Shared Rural Network, signed by all four major operators in 2020, commits to 4G coverage across 95% of the UK landmass by 2026. Progress has been slower than planned. Meanwhile, 5G deployment continues to concentrate investment in the South East and major cities, with Northern Ireland, Wales and the North East receiving proportionally less per premises than London.
             </p>
           </div>
         </section>
@@ -188,7 +188,7 @@ export default function FiveGCoveragePage() {
         <ScrollReveal>
           <section id="sec-coverage" className="mb-12">
             <LineChart
-              title="5G premises coverage by area type, UK, 2021&ndash;2025"
+              title="5G premises coverage by area type, UK, 2021–2025"
               subtitle="Percentage of premises with outdoor 5G signal, by urban, suburban and rural classification. The gap between urban and rural coverage has widened each year."
               series={coverageSeries}
               annotations={coverageAnnotations}
@@ -200,7 +200,7 @@ export default function FiveGCoveragePage() {
         <ScrollReveal>
           <section id="sec-notspots" className="mb-12">
             <LineChart
-              title="Premises without reliable indoor 4G, UK, 2019&ndash;2024"
+              title="Premises without reliable indoor 4G, UK, 2019–2024"
               subtitle="Number of premises (millions) that cannot receive reliable 4G indoor signal from any operator. Improvement has stalled in the hardest-to-reach rural areas."
               series={notspotSeries}
               annotations={notspotAnnotations}
@@ -212,11 +212,11 @@ export default function FiveGCoveragePage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
-            value="&pound;5bn"
+            title="What's improving"
+            value="£5bn"
             unit="Project Gigabit commitment"
-            description="Project Gigabit commits &pound;5 billion to connect the hardest-to-reach premises with gigabit-capable broadband by 2030. The Shared Rural Network, backed by a &pound;500 million government guarantee, requires all four major operators to extend 4G to 95% of the UK&apos;s landmass. Scotland&apos;s R100 programme has connected over 100,000 rural premises with voucher-based funding."
-            source="Source: DSIT &mdash; Project Gigabit programme statistics, 2025. Ofcom Connected Nations, 2025."
+            description="Project Gigabit commits £5 billion to connect the hardest-to-reach premises with gigabit-capable broadband by 2030. The Shared Rural Network, backed by a £500 million government guarantee, requires all four major operators to extend 4G to 95% of the UK's landmass. Scotland's R100 programme has connected over 100,000 rural premises with voucher-based funding."
+            source="Source: DSIT — Project Gigabit programme statistics, 2025. Ofcom Connected Nations, 2025."
           />
         </ScrollReveal>
 
@@ -227,7 +227,7 @@ export default function FiveGCoveragePage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

@@ -116,7 +116,7 @@ export default function BiodiversityPage() {
       <TopicHeader
         topic="Biodiversity"
         question="Is British Wildlife Actually Coming Back?"
-        finding="The UK biodiversity picture is more complicated than &lsquo;crisis only&rsquo;. 41% of species have declined since 1970 &mdash; but red kites went from near-extinction to 10,000 birds in three decades. Beavers, pine martens, and white-tailed eagles are returning. Wildlife can recover when conditions change."
+        finding="The UK biodiversity picture is more complicated than &lsquo;crisis only&rsquo;. 41% of species have declined since 1970 — but red kites went from near-extinction to 10,000 birds in three decades. Beavers, pine martens, and white-tailed eagles are returning. Wildlife can recover when conditions change."
         colour="#2A9D8F"
       />
 
@@ -167,7 +167,7 @@ export default function BiodiversityPage() {
           <ScrollReveal>
             <div className="mb-16">
               <LineChart
-                title="Farmland bird index, UK, 1970&ndash;2021"
+                title="Farmland bird index, UK, 1970–2021"
                 subtitle="Composite trend for 19 specialist farmland species, indexed to 1970 = 100"
                 series={farmlandBirdsSeries}
                 annotations={farmlandBirdsAnnotations}
@@ -208,7 +208,7 @@ export default function BiodiversityPage() {
                     );
                   })}
                 </div>
-                <p className="font-mono text-xs text-wiah-mid mt-6">Source: JNCC/RSPB &mdash; State of Nature 2023</p>
+                <p className="font-mono text-xs text-wiah-mid mt-6">Source: JNCC/RSPB — State of Nature 2023</p>
               </div>
             </div>
           </ScrollReveal>
@@ -219,7 +219,7 @@ export default function BiodiversityPage() {
           <ScrollReveal>
             <div className="mb-16">
               <LineChart
-                title="English rivers in good ecological status, 2016&ndash;2022"
+                title="English rivers in good ecological status, 2016–2022"
                 subtitle="Water Framework Directive assessment. Target: 100% by 2027"
                 series={riverQualitySeries}
                 yLabel="% in good ecological status"
@@ -256,19 +256,19 @@ export default function BiodiversityPage() {
         {/* Context Section */}
         <ScrollReveal>
           <section className="mt-20 pt-12 border-t border-wiah-border">
-            <h2 className="font-sans text-2xl font-bold text-wiah-black mb-6">What&apos;s driving these trends?</h2>
+            <h2 className="font-sans text-2xl font-bold text-wiah-black mb-6">What's driving these trends?</h2>
             <div className="font-sans text-base text-wiah-black leading-relaxed space-y-4">
               <p>
-                The State of Nature 2023 report, compiled by the RSPB, JNCC, and 60-plus wildlife organisations, found that 41% of UK species have declined since 1970 and 15% face extinction. The UK ranks 189th out of 218 nations for biodiversity intactness according to the Natural History Museum&apos;s 2021 assessment &mdash; behind every G7 peer. Farmland birds have been devastated: the composite index has fallen 57% since 1970, with the grey partridge down 93%, corn bunting down 91%, and lapwing down 66%. The hedgehog population has collapsed by an estimated 95% since 1950, with fewer than one million remaining by the People&apos;s Trust for Endangered Species&apos; 2022 count.
+                The State of Nature 2023 report, compiled by the RSPB, JNCC, and 60-plus wildlife organisations, found that 41% of UK species have declined since 1970 and 15% face extinction. The UK ranks 189th out of 218 nations for biodiversity intactness according to the Natural History Museum's 2021 assessment — behind every G7 peer. Farmland birds have been devastated: the composite index has fallen 57% since 1970, with the grey partridge down 93%, corn bunting down 91%, and lapwing down 66%. The hedgehog population has collapsed by an estimated 95% since 1950, with fewer than one million remaining by the People's Trust for Endangered Species' 2022 count.
               </p>
               <p>
-                England&apos;s rivers are in poor condition. The Environment Agency&apos;s 2022 Water Framework Directive assessment found just 14% in good ecological status &mdash; down from 16% in 2019 &mdash; and no river achieved &ldquo;high&rdquo; status. Agricultural runoff is the primary driver: 61% of rivers fail on phosphate levels. Sewage discharges and invasive species compound the decline. The UK holds 13% of global peatland, yet 80% is damaged or degraded, releasing an estimated 23 million tonnes of CO2-equivalent annually. Woodland covers just 13% of UK land &mdash; England only 10% &mdash; against an EU average of 38%. Only 8.5% of UK land sits within statutory protected areas, and 62% of England&apos;s SSSIs were in unfavourable condition in 2022, the highest proportion Natural England has recorded.
+                England's rivers are in poor condition. The Environment Agency's 2022 Water Framework Directive assessment found just 14% in good ecological status — down from 16% in 2019 — and no river achieved &ldquo;high&rdquo; status. Agricultural runoff is the primary driver: 61% of rivers fail on phosphate levels. Sewage discharges and invasive species compound the decline. The UK holds 13% of global peatland, yet 80% is damaged or degraded, releasing an estimated 23 million tonnes of CO2-equivalent annually. Woodland covers just 13% of UK land — England only 10% — against an EU average of 38%. Only 8.5% of UK land sits within statutory protected areas, and 62% of England's SSSIs were in unfavourable condition in 2022, the highest proportion Natural England has recorded.
               </p>
               <p>
-                The Environment Act 2021 set legally binding targets including halting net species decline by 2030 and mandating 10% Biodiversity Net Gain for new developments from January 2024. The 30&times;30 commitment, signed at COP15 in Montreal in December 2022, requires 30% of land and seas to be protected by 2030 &mdash; up from 8.5% and 26% respectively. Environmental Land Management schemes &mdash; Sustainable Farming Incentive, Countryside Stewardship, and Landscape Recovery &mdash; are replacing EU Common Agricultural Policy payments, directing funds toward environmental outcomes. Rewilding projects such as Knepp Estate&apos;s 3,500 acres in West Sussex and Alladale Wilderness Reserve in Scotland offer proof of concept, though scaling remains the central challenge.
+                The Environment Act 2021 set legally binding targets including halting net species decline by 2030 and mandating 10% Biodiversity Net Gain for new developments from January 2024. The 30&times;30 commitment, signed at COP15 in Montreal in December 2022, requires 30% of land and seas to be protected by 2030 — up from 8.5% and 26% respectively. Environmental Land Management schemes — Sustainable Farming Incentive, Countryside Stewardship, and Landscape Recovery — are replacing EU Common Agricultural Policy payments, directing funds toward environmental outcomes. Rewilding projects such as Knepp Estate's 3,500 acres in West Sussex and Alladale Wilderness Reserve in Scotland offer proof of concept, though scaling remains the central challenge.
               </p>
               <p>
-                Against the bleak backdrop of species loss, rewilding is producing genuinely remarkable results. The red kite, white-tailed eagle, beaver, pine marten, and large blue butterfly have all been successfully reintroduced to parts of England and Wales. Knepp Estate in West Sussex has demonstrated that returning land to natural processes produces extraordinary biodiversity outcomes within a decade. The Environment Act 2021&apos;s mandatory Biodiversity Net Gain requirement, the Landscape Recovery tier of Environmental Land Management, and the 30&times;30 commitment represent the most ambitious legislative framework for nature recovery Britain has ever attempted. The State of Nature 2023 report is honest: the aggregate picture is still deteriorating. But the direction of travel is changing, and the evidence from specific reintroductions shows that the damage is not permanent.
+                Against the bleak backdrop of species loss, rewilding is producing genuinely remarkable results. The red kite, white-tailed eagle, beaver, pine marten, and large blue butterfly have all been successfully reintroduced to parts of England and Wales. Knepp Estate in West Sussex has demonstrated that returning land to natural processes produces extraordinary biodiversity outcomes within a decade. The Environment Act 2021's mandatory Biodiversity Net Gain requirement, the Landscape Recovery tier of Environmental Land Management, and the 30&times;30 commitment represent the most ambitious legislative framework for nature recovery Britain has ever attempted. The State of Nature 2023 report is honest: the aggregate picture is still deteriorating. But the direction of travel is changing, and the evidence from specific reintroductions shows that the damage is not permanent.
               </p>
             </div>
           </section>
@@ -285,11 +285,11 @@ export default function BiodiversityPage() {
                   <ul className="space-y-2">
                     {data.metadata.sources.map((src, idx) => (
                       <li key={idx} className="text-wiah-mid">
-                        <strong className="text-wiah-black">{src.name}:</strong>&nbsp;
+                        <strong className="text-wiah-black">{src.name}:</strong> 
                         <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue">
                           {src.dataset}
                         </a>
-                        &nbsp;({src.frequency})
+                         ({src.frequency})
                       </li>
                     ))}
                   </ul>

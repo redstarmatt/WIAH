@@ -78,14 +78,14 @@ export default function DrugSupplyOperationsPage() {
         <TopicHeader
           topic="Drug Supply Operations"
           question="Is the War on Drugs Working?"
-          finding="Thousands of county lines are dismantled each year &mdash; but drug deaths continue to rise, suggesting supply is replaced faster than it is disrupted."
+          finding="Thousands of county lines are dismantled each year — but drug deaths continue to rise, suggesting supply is replaced faster than it is disrupted."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The National Crime Agency&apos;s county lines disruption programme ramped from around 1,100 line disruptions in 2017 to 6,500 in 2024. By any operational measure, enforcement activity has increased substantially. By the most important outcome measure &mdash; drug deaths &mdash; the picture is far less encouraging: drug poisoning deaths rose from 3,744 in 2017 to a peak of 4,907 in 2022, before falling slightly to 4,700 in 2024. Drug deaths remain at near-record levels. The disconnect reflects a well-documented feature of drug markets: supply is elastic and resilient. When a county line is disrupted, demand does not disappear; within weeks or months, a new supply line typically emerges. Disruption removes individual exploiters and prevents specific harm to children used as runners, but does not reduce aggregate supply or demand at the population level. Synthetic opioids &mdash; particularly fentanyl and nitazenes &mdash; are now appearing with increasing frequency in the UK drug supply; both are far more potent than heroin and difficult to detect without drug testing, raising overdose risk at doses that would previously have been considered safe.</p>
-            <p>Treatment services offer the strongest evidence base for reducing drug-related harm. Evidence from heroin-assisted treatment, needle exchange, and naloxone distribution consistently shows that connecting people who use drugs with medical and social support reduces overdose deaths and criminal offending. England&apos;s drug treatment system is recovering from a 35% real-terms funding cut between 2013 and 2021, and the 2021 ten-year drugs strategy committed &pound;780 million to rebuilding it &mdash; but waiting lists remain in many areas and coverage for stimulant users outside traditional opioid-focused services is inadequate. The honest assessment is that enforcement-led responses at current levels have not demonstrably reduced drug deaths; the political obstacles to harm reduction, not its effectiveness, represent the primary barrier to better outcomes.</p>
+            <p>The National Crime Agency's county lines disruption programme ramped from around 1,100 line disruptions in 2017 to 6,500 in 2024. By any operational measure, enforcement activity has increased substantially. By the most important outcome measure — drug deaths — the picture is far less encouraging: drug poisoning deaths rose from 3,744 in 2017 to a peak of 4,907 in 2022, before falling slightly to 4,700 in 2024. Drug deaths remain at near-record levels. The disconnect reflects a well-documented feature of drug markets: supply is elastic and resilient. When a county line is disrupted, demand does not disappear; within weeks or months, a new supply line typically emerges. Disruption removes individual exploiters and prevents specific harm to children used as runners, but does not reduce aggregate supply or demand at the population level. Synthetic opioids — particularly fentanyl and nitazenes — are now appearing with increasing frequency in the UK drug supply; both are far more potent than heroin and difficult to detect without drug testing, raising overdose risk at doses that would previously have been considered safe.</p>
+            <p>Treatment services offer the strongest evidence base for reducing drug-related harm. Evidence from heroin-assisted treatment, needle exchange, and naloxone distribution consistently shows that connecting people who use drugs with medical and social support reduces overdose deaths and criminal offending. England's drug treatment system is recovering from a 35% real-terms funding cut between 2013 and 2021, and the 2021 ten-year drugs strategy committed £780 million to rebuilding it — but waiting lists remain in many areas and coverage for stimulant users outside traditional opioid-focused services is inadequate. The honest assessment is that enforcement-led responses at current levels have not demonstrably reduced drug deaths; the political obstacles to harm reduction, not its effectiveness, represent the primary barrier to better outcomes.</p>
           </div>
         </section>
 
@@ -103,9 +103,9 @@ export default function DrugSupplyOperationsPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="record disruptions &middot; new lines emerge rapidly"
+              changeText="record disruptions · new lines emerge rapidly"
               sparklineData={[1100, 1400, 2100, 3000, 4200, 5500, 6240, 6500]}
-              href="#sec-chart"source="Home Office / NCA &middot; County Lines Annual 2024"
+              href="#sec-chart"source="Home Office / NCA · County Lines Annual 2024"
             />
             <MetricCard
               label="Drug deaths 2024"
@@ -113,9 +113,9 @@ export default function DrugSupplyOperationsPage() {
               unit=""
               direction="down"
               polarity="up-is-bad"
-              changeText="slight fall &middot; but near record level"
+              changeText="slight fall · but near record level"
               sparklineData={[3744, 4359, 4393, 4561, 4859, 4907, 4800, 4700]}
-              href="#sec-chart"source="ONS &middot; Deaths Related to Drug Poisoning 2024"
+              href="#sec-chart"source="ONS · Deaths Related to Drug Poisoning 2024"
             />
             <MetricCard
               label="Drug arrests"
@@ -123,9 +123,9 @@ export default function DrugSupplyOperationsPage() {
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="enforcement sustained &middot; but substitution effect"
+              changeText="enforcement sustained · but substitution effect"
               sparklineData={[156000, 154000, 151000, 148000, 143000, 138000, 141000, 146000]}
-              href="#sec-chart"source="Home Office &middot; Drug Misuse Statistical Bulletin 2024"
+              href="#sec-chart"source="Home Office · Drug Misuse Statistical Bulletin 2024"
             />
           </div>
         </ScrollReveal>
@@ -133,7 +133,7 @@ export default function DrugSupplyOperationsPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="County lines disrupted vs drug deaths, 2017&ndash;2024"
+              title="County lines disrupted vs drug deaths, 2017–2024"
               subtitle="Enforcement activity rising sharply; drug deaths remain near record levels. England and Wales."
               series={[...countyLinesSeries, ...drugDeathsSeries]}
               yLabel="Count"
@@ -149,9 +149,9 @@ export default function DrugSupplyOperationsPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Home Office / National Crime Agency &mdash; County Lines Data and Trends. Annual published data on county line disruptions. gov.uk/government/publications/county-lines-data-and-trends</p>
-            <p>ONS &mdash; Deaths Related to Drug Poisoning in England and Wales. Annual publication. ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoninginenglandandwales</p>
-            <p>Home Office &mdash; Drug Misuse: Findings from the Crime Survey for England and Wales. Annual. gov.uk/government/collections/drug-misuse-declared</p>
+            <p>Home Office / National Crime Agency — County Lines Data and Trends. Annual published data on county line disruptions. gov.uk/government/publications/county-lines-data-and-trends</p>
+            <p>ONS — Deaths Related to Drug Poisoning in England and Wales. Annual publication. ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoninginenglandandwales</p>
+            <p>Home Office — Drug Misuse: Findings from the Crime Survey for England and Wales. Annual. gov.uk/government/collections/drug-misuse-declared</p>
             <p>A county line disruption is defined as an operation that closes down or significantly degrades a drug supply line, typically measured through NCA and regional organised crime unit (ROCU) reporting. Definitions have been refined over time and figures should not be compared directly across all years. Drug deaths are defined as deaths where the underlying cause is drug poisoning, including both accidental and intentional poisoning.</p>
           </div>
         </section>

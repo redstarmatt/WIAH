@@ -55,13 +55,13 @@ export default function BenefitSanctionImpactPage() {
         <TopicHeader
           topic="Benefit Sanction Impact"
           question="What Happens When Benefits Are Stopped?"
-          finding="786,000 Universal Credit sanctions were applied in 2023 &mdash; and research shows sanctions increase food bank referrals and destitution without improving employment."
+          finding="786,000 Universal Credit sanctions were applied in 2023 — and research shows sanctions increase food bank referrals and destitution without improving employment."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Benefit sanctions &mdash; reductions or suspensions of Universal Credit payments for missing appointments or failing job search requirements &mdash; peaked at over a million annually in 2015, collapsed to near zero during the COVID-19 conditionality suspension in 2020, and rebounded sharply to 786,000 in 2023 as Universal Credit rollout continued. The 786,000 figure represents a significant increase on pre-pandemic levels once adjusted for the larger UC caseload; average sanction duration is now 33 days. Around 18% of Trussell Trust food bank referrals cite benefit-related issues &mdash; including sanctions and delays &mdash; as a primary driver, a link the National Audit Office and independent researchers consider well-established. The NAO found in 2016 that DWP could not demonstrate sanctions were achieving their employment goals, a conclusion broadly unchanged by subsequent reviews.</p>
+            <p>Benefit sanctions — reductions or suspensions of Universal Credit payments for missing appointments or failing job search requirements — peaked at over a million annually in 2015, collapsed to near zero during the COVID-19 conditionality suspension in 2020, and rebounded sharply to 786,000 in 2023 as Universal Credit rollout continued. The 786,000 figure represents a significant increase on pre-pandemic levels once adjusted for the larger UC caseload; average sanction duration is now 33 days. Around 18% of Trussell Trust food bank referrals cite benefit-related issues — including sanctions and delays — as a primary driver, a link the National Audit Office and independent researchers consider well-established. The NAO found in 2016 that DWP could not demonstrate sanctions were achieving their employment goals, a conclusion broadly unchanged by subsequent reviews.</p>
             <p>The burden of sanctions falls disproportionately on the most vulnerable claimants: disabled people, those with mental health conditions, and carers are all more likely to miss the appointments that trigger a sanction, and least able to absorb a month without income. UK-specific evidence does not show that sanctions improve sustained employment outcomes; instead, research consistently links them to destitution, food bank use, and rent arrears. The 2023 independent review made partial recommendations on vulnerability safeguards, but critics argue that a conditionality system whose primary tool is income removal is structurally incompatible with protecting claimants who are already struggling.</p>
           </div>
         </section>
@@ -80,9 +80,9 @@ export default function BenefitSanctionImpactPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="rising strongly from 2020 low &middot; UC rollout driving surge"
+              changeText="rising strongly from 2020 low · UC rollout driving surge"
               sparklineData={[1080, 890, 780, 730, 740, 193, 378, 640, 786]}
-              href="#sec-chart"source="DWP &middot; Universal Credit Sanctions Statistics 2023"
+              href="#sec-chart"source="DWP · Universal Credit Sanctions Statistics 2023"
             />
             <MetricCard
               label="Food bank referrals citing benefits"
@@ -92,7 +92,7 @@ export default function BenefitSanctionImpactPage() {
               polarity="up-is-bad"
               changeText="of food bank referrals cite benefit issues as cause"
               sparklineData={[18, 18, 18, 18, 18, 18]}
-              href="#sec-chart"source="Trussell Trust &middot; End of Year Stats 2023"
+              href="#sec-chart"source="Trussell Trust · End of Year Stats 2023"
             />
             <MetricCard
               label="Average sanction duration"
@@ -100,9 +100,9 @@ export default function BenefitSanctionImpactPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="of sanction &middot; hunger and rent arrears during period"
+              changeText="of sanction · hunger and rent arrears during period"
               sparklineData={[22, 24, 26, 27, 28, 28, 30, 32, 33]}
-              href="#sec-chart"source="DWP &middot; Benefit Sanctions Statistics 2023"
+              href="#sec-chart"source="DWP · Benefit Sanctions Statistics 2023"
             />
           </div>
         </ScrollReveal>
@@ -110,7 +110,7 @@ export default function BenefitSanctionImpactPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Universal Credit sanctions applied, 2015&ndash;2023"
+              title="Universal Credit sanctions applied, 2015–2023"
               subtitle="Total UC sanctions per year (thousands). 2020 reflects COVID-19 conditionality suspension."
               series={sanctionsSeries}
               yLabel="Sanctions (thousands)"
@@ -126,11 +126,11 @@ export default function BenefitSanctionImpactPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>DWP &mdash; Benefit Sanctions Statistics. Published quarterly. gov.uk/government/collections/benefit-sanctions-statistics</p>
-            <p>Trussell Trust &mdash; End of Year Statistics. trusselltrust.org/news-and-blog/latest-stats/end-year-stats</p>
-            <p>National Audit Office (2016) &mdash; Benefit Sanctions. nao.org.uk/reports/benefit-sanctions</p>
-            <p>Independent Review of DWP Conditionality &mdash; Matthew Oakley Report (2023). gov.uk</p>
-            <p>Sanctions figures cover Universal Credit standard conditionality sanctions. Pre-2016 figures include legacy benefit sanctions on JSA and ESA converted to UC-equivalent for comparability. 2020 data reflects April&ndash;December enforcement suspension. Food bank referral percentage derived from Trussell Trust case outcome data.</p>
+            <p>DWP — Benefit Sanctions Statistics. Published quarterly. gov.uk/government/collections/benefit-sanctions-statistics</p>
+            <p>Trussell Trust — End of Year Statistics. trusselltrust.org/news-and-blog/latest-stats/end-year-stats</p>
+            <p>National Audit Office (2016) — Benefit Sanctions. nao.org.uk/reports/benefit-sanctions</p>
+            <p>Independent Review of DWP Conditionality — Matthew Oakley Report (2023). gov.uk</p>
+            <p>Sanctions figures cover Universal Credit standard conditionality sanctions. Pre-2016 figures include legacy benefit sanctions on JSA and ESA converted to UC-equivalent for comparability. 2020 data reflects April–December enforcement suspension. Food bank referral percentage derived from Trussell Trust case outcome data.</p>
           </div>
         </section>
       </main>

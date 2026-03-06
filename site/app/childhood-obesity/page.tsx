@@ -63,14 +63,14 @@ export default function ChildhoodObesityPage() {
         <TopicHeader
           topic="Childhood Obesity"
           question="How many children are obese by the time they leave primary school?"
-          finding="22.7% of Year 6 children in England are obese &mdash; more than 1 in 5. Children in the most deprived areas are 3 times more likely to be obese than those in the least deprived."
+          finding="22.7% of Year 6 children in England are obese — more than 1 in 5. Children in the most deprived areas are 3 times more likely to be obese than those in the least deprived."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>22.7% of Year 6 children in England were classified as obese in 2023/24 &mdash; up from 17.3% when measurement began in 2006 and substantially above the 20.2% recorded before the pandemic. Between 2019/20 and 2021/22, Year 6 obesity jumped 3.2 percentage points in two years as school closures, reduced physical activity, and disrupted food environments accelerated a pre-existing trend. The National Child Measurement Programme covers nearly all Reception and Year 6 children each year and provides one of the most consistent public health datasets in the country. The Soft Drinks Industry Levy (2018) and HFSS advertising watershed (2023) are the main policy responses, but their cumulative effect remains modest relative to the scale of deterioration.</p>
-            <p>The deprivation gradient is stark and widening: children in the most deprived fifth of areas have an obesity rate of 35.7%, compared to 11.2% in the least deprived &mdash; a 3.2-times gap. Obese children are more likely to become obese adults, facing higher risks of Type 2 diabetes, cardiovascular disease, certain cancers, and mental health conditions. The NHS Long Term Plan estimates obesity costs the health service &pound;6.5 billion a year in direct treatment costs, with an additional &pound;27 billion in indirect economic costs. A child growing up in a deprived neighbourhood is more than three times as likely to be obese at the end of primary school as a child growing up in an affluent one.</p>
+            <p>22.7% of Year 6 children in England were classified as obese in 2023/24 — up from 17.3% when measurement began in 2006 and substantially above the 20.2% recorded before the pandemic. Between 2019/20 and 2021/22, Year 6 obesity jumped 3.2 percentage points in two years as school closures, reduced physical activity, and disrupted food environments accelerated a pre-existing trend. The National Child Measurement Programme covers nearly all Reception and Year 6 children each year and provides one of the most consistent public health datasets in the country. The Soft Drinks Industry Levy (2018) and HFSS advertising watershed (2023) are the main policy responses, but their cumulative effect remains modest relative to the scale of deterioration.</p>
+            <p>The deprivation gradient is stark and widening: children in the most deprived fifth of areas have an obesity rate of 35.7%, compared to 11.2% in the least deprived — a 3.2-times gap. Obese children are more likely to become obese adults, facing higher risks of Type 2 diabetes, cardiovascular disease, certain cancers, and mental health conditions. The NHS Long Term Plan estimates obesity costs the health service £6.5 billion a year in direct treatment costs, with an additional £27 billion in indirect economic costs. A child growing up in a deprived neighbourhood is more than three times as likely to be obese at the end of primary school as a child growing up in an affluent one.</p>
           </div>
         </section>
 
@@ -89,9 +89,9 @@ export default function ChildhoodObesityPage() {
               unit="%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 17.3% in 2006 &middot; COVID accelerated the rise"
+              changeText="Up from 17.3% in 2006 · COVID accelerated the rise"
               sparklineData={[17.3, 18.2, 19.1, 19.8, 20.0, 20.2, 21.0, 21.9, 23.4, 22.7]}
-              href="#sec-chart"source="NHS NCMP &middot; 2023/24"
+              href="#sec-chart"source="NHS NCMP · 2023/24"
             />
             <MetricCard
               label="Reception obesity rate"
@@ -101,7 +101,7 @@ export default function ChildhoodObesityPage() {
               polarity="up-is-bad"
               changeText="Relatively stable but underlying trend upward since 2000s"
               sparklineData={[9.5, 9.8, 9.4, 9.6, 9.7, 9.9, 9.7, 9.7, 9.2]}
-              href="#sec-deprivation"source="NHS NCMP &middot; 2023/24"
+              href="#sec-deprivation"source="NHS NCMP · 2023/24"
             />
             <MetricCard
               label="Deprivation gap"
@@ -111,7 +111,7 @@ export default function ChildhoodObesityPage() {
               polarity="up-is-bad"
               changeText="Most deprived 35.7% vs least deprived 11.2%"
               sparklineData={[2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.3, 3.2]}
-              href="#sec-deprivation"source="NHS NCMP &middot; 2023/24"
+              href="#sec-deprivation"source="NHS NCMP · 2023/24"
             />
           </div>
         </ScrollReveal>
@@ -119,8 +119,8 @@ export default function ChildhoodObesityPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Childhood obesity rates, 2006&ndash;2023"
-              subtitle="Percentage of children classified obese, England. Year 6 (age 10&ndash;11) and Reception (age 4&ndash;5)."
+              title="Childhood obesity rates, 2006–2023"
+              subtitle="Percentage of children classified obese, England. Year 6 (age 10–11) and Reception (age 4–5)."
               series={obesitySeries}
               yLabel="% obese"
               source={{
@@ -155,14 +155,14 @@ export default function ChildhoodObesityPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS NCMP &mdash; National Child Measurement Programme 2023/24</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS NCMP — National Child Measurement Programme 2023/24</p>
           </section>
         </ScrollReveal>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>NHS Digital &mdash; National Child Measurement Programme (NCMP). Annual measurement of height and weight of children in Reception (ages 4&ndash;5) and Year 6 (ages 10&ndash;11) in state-maintained schools in England. digital.nhs.uk/data-and-information/publications/statistical/national-child-measurement-programme</p>
+            <p>NHS Digital — National Child Measurement Programme (NCMP). Annual measurement of height and weight of children in Reception (ages 4–5) and Year 6 (ages 10–11) in state-maintained schools in England. digital.nhs.uk/data-and-information/publications/statistical/national-child-measurement-programme</p>
             <p>Obesity is defined using the UK90 growth reference charts. Children at or above the 95th centile for their age and sex are classified as obese. The programme covers approximately 95% of eligible children in state schools.</p>
             <p>Deprivation quintiles are based on the Index of Multiple Deprivation (IMD) 2019, assigned to children using their school&rsquo;s Lower Super Output Area.</p>
           </div>

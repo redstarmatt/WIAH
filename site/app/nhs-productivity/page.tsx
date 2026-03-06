@@ -88,14 +88,14 @@ export default function NhsProductivityPage() {
         <TopicHeader
           topic="NHS Productivity"
           question="Why Is the NHS Treating Fewer Patients With More Staff?"
-          finding="NHS productivity remains 3&ndash;4% below its pre-COVID level despite a 17% increase in staff numbers since 2019. Output per worker has fallen by nearly 10% since 2014, creating an efficiency gap that costs the equivalent of tens of thousands of lost operations each year."
+          finding="NHS productivity remains 3–4% below its pre-COVID level despite a 17% increase in staff numbers since 2019. Output per worker has fallen by nearly 10% since 2014, creating an efficiency gap that costs the equivalent of tens of thousands of lost operations each year."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>NHS England employed 1.3 million FTE staff in 2024 &mdash; up 17% from 1.1 million in 2019 &mdash; yet the total productivity index (set at 100 for 2014) stood at just 96.8, and output per worker had fallen to 90.3 on the same index, nearly 10% below 2014 levels. COVID caused a genuine structural break, reducing NHS activity by nearly 20% in 2020 through cancelled elective care, infection control constraints, and staff absence. Four years on, the recovery is incomplete. The Lord Darzi review (2024) identified productivity as the central challenge and estimated that closing the productivity gap to pre-COVID levels would be equivalent to treating 1.5 million additional patients annually without additional spending &mdash; a figure against which the 7.5-million waiting list must be measured.</p>
-            <p>The productivity gap is a system-level phenomenon, not an individual failing. Ageing IT systems, estate constraints, and clinical pathways designed decades ago all contribute; a surgeon whose theatre list is cut from six to four cases by post-COVID cleaning protocols is not personally less productive, but system output falls. Germany, France, and the Netherlands recovered faster from equivalent COVID-era drops, in part because they had higher baseline capital investment in digital infrastructure &mdash; the UK spends significantly less per capita on health capital than the OECD average. Without sustained investment in buildings, technology, and reformed clinical pathways, the arithmetic of the waiting list does not balance.</p>
+            <p>NHS England employed 1.3 million FTE staff in 2024 — up 17% from 1.1 million in 2019 — yet the total productivity index (set at 100 for 2014) stood at just 96.8, and output per worker had fallen to 90.3 on the same index, nearly 10% below 2014 levels. COVID caused a genuine structural break, reducing NHS activity by nearly 20% in 2020 through cancelled elective care, infection control constraints, and staff absence. Four years on, the recovery is incomplete. The Lord Darzi review (2024) identified productivity as the central challenge and estimated that closing the productivity gap to pre-COVID levels would be equivalent to treating 1.5 million additional patients annually without additional spending — a figure against which the 7.5-million waiting list must be measured.</p>
+            <p>The productivity gap is a system-level phenomenon, not an individual failing. Ageing IT systems, estate constraints, and clinical pathways designed decades ago all contribute; a surgeon whose theatre list is cut from six to four cases by post-COVID cleaning protocols is not personally less productive, but system output falls. Germany, France, and the Netherlands recovered faster from equivalent COVID-era drops, in part because they had higher baseline capital investment in digital infrastructure — the UK spends significantly less per capita on health capital than the OECD average. Without sustained investment in buildings, technology, and reformed clinical pathways, the arithmetic of the waiting list does not balance.</p>
           </div>
         </section>
 
@@ -115,7 +115,7 @@ export default function NhsProductivityPage() {
               unit="%"
               direction="down"
               polarity="up-is-good"
-              changeText="2024 &middot; Still below pre-COVID level &middot; Despite 17% more staff"
+              changeText="2024 · Still below pre-COVID level · Despite 17% more staff"
               sparklineData={[100, 101.2, 101.8, 102.1, 102.6, 103.1, 81.4, 88.7, 93.2, 95.1, 96.8]}
               href="#sec-productivity"/>
             <MetricCard
@@ -124,7 +124,7 @@ export default function NhsProductivityPage() {
               unit="index"
               direction="down"
               polarity="up-is-good"
-              changeText="2024 &middot; 2014 = 100 &middot; Nearly 10% below baseline"
+              changeText="2024 · 2014 = 100 · Nearly 10% below baseline"
               sparklineData={[100, 100.8, 100.4, 100.1, 99.8, 99.4, 78.2, 85.1, 88.6, 89.8, 90.3]}
               href="#sec-output"/>
             <MetricCard
@@ -132,7 +132,7 @@ export default function NhsProductivityPage() {
               value="41.2"
               direction="up"
               polarity="up-is-good"
-              changeText="2024 &middot; Up from 35.2 in 2014 &middot; 17% rise since 2019"
+              changeText="2024 · Up from 35.2 in 2014 · 17% rise since 2019"
               sparklineData={[35.2, 35.5, 35.8, 36.1, 36.4, 36.8, 38.2, 39.4, 40.1, 40.8, 41.2]}
               href="#sec-staff"/>
           </div>
@@ -141,7 +141,7 @@ export default function NhsProductivityPage() {
         <ScrollReveal>
           <section id="sec-productivity" className="mb-12">
             <LineChart
-              title="NHS total productivity index, England, 2014&ndash;2024"
+              title="NHS total productivity index, England, 2014–2024"
               subtitle="Weighted output per unit of input (staff, intermediate consumption, capital). 2014 = 100."
               series={productivitySeries}
               annotations={productivityAnnotations}
@@ -158,7 +158,7 @@ export default function NhsProductivityPage() {
         <ScrollReveal>
           <section id="sec-output" className="mb-12">
             <LineChart
-              title="NHS output per FTE worker, England, 2014&ndash;2024"
+              title="NHS output per FTE worker, England, 2014–2024"
               subtitle="Total NHS output divided by full-time equivalent staff. Index: 2014 = 100."
               series={outputPerWorkerSeries}
               annotations={productivityAnnotations}
@@ -175,7 +175,7 @@ export default function NhsProductivityPage() {
         <ScrollReveal>
           <section id="sec-staff" className="mb-12">
             <LineChart
-              title="NHS staff per 1,000 population, England, 2014&ndash;2024"
+              title="NHS staff per 1,000 population, England, 2014–2024"
               subtitle="Full-time equivalent staff in NHS England per 1,000 population."
               series={staffSeries}
               yLabel="FTE per 1,000"
@@ -191,9 +191,9 @@ export default function NhsProductivityPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>ONS &mdash; Public Service Productivity: Healthcare. Measures total output (quality-adjusted weighted activity) per unit of total input. Published annually with considerable lag.</p>
-            <p>NHS Digital &mdash; NHS Workforce Statistics. Monthly FTE headcount data for NHS England trusts and CCGs/ICBs.</p>
-            <p>NHS England &mdash; Activity and performance data, including elective, emergency, outpatient, and community care weighted output.</p>
+            <p>ONS — Public Service Productivity: Healthcare. Measures total output (quality-adjusted weighted activity) per unit of total input. Published annually with considerable lag.</p>
+            <p>NHS Digital — NHS Workforce Statistics. Monthly FTE headcount data for NHS England trusts and CCGs/ICBs.</p>
+            <p>NHS England — Activity and performance data, including elective, emergency, outpatient, and community care weighted output.</p>
             <p>Productivity index set to 2014 = 100 for consistency. Output per worker calculated by dividing total output index by FTE headcount index. Quality adjustment partially captures improved survival and patient experience but is imperfect. The COVID drop reflects genuine reduction in activity, not merely a measurement artefact. Some post-COVID recovery may reflect coding and counting changes rather than real efficiency gains.</p>
           </div>
         </section>

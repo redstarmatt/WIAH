@@ -75,17 +75,17 @@ export default function PlanningPermissionPage() {
         <TopicHeader
           topic="Planning Permission"
           question="Is the Planning System Blocking the Homes Britain Needs?"
-          finding="England granted 474,000 planning permissions in 2023 but only 234,000 new homes were completed &mdash; a completion rate of under 50% &mdash; while the planning backlog has reached 500,000 undecided applications and planning department staffing has fallen 40% since 2010 due to budget cuts."
+          finding="England granted 474,000 planning permissions in 2023 but only 234,000 new homes were completed — a completion rate of under 50% — while the planning backlog has reached 500,000 undecided applications and planning department staffing has fallen 40% since 2010 due to budget cuts."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The planning system is at the centre of Britain&apos;s housing crisis &mdash; but not in the way that is usually assumed. The conventional narrative blames planning refusals for blocking new homes, but the data tells a more complicated story: England grants far more planning permissions than homes are built. In 2023, local authorities approved 474,000 planning applications for residential development, but only 234,000 homes were completed &mdash; a conversion rate of under 50%. The planning system is not primarily blocking permissions; it is struggling to convert permissions into homes, for reasons that span developer behaviour, infrastructure constraints, and the systematic underfunding of planning departments that has left them too understaffed to process applications efficiently or enforce conditions effectively.
+              The planning system is at the centre of Britain's housing crisis — but not in the way that is usually assumed. The conventional narrative blames planning refusals for blocking new homes, but the data tells a more complicated story: England grants far more planning permissions than homes are built. In 2023, local authorities approved 474,000 planning applications for residential development, but only 234,000 homes were completed — a conversion rate of under 50%. The planning system is not primarily blocking permissions; it is struggling to convert permissions into homes, for reasons that span developer behaviour, infrastructure constraints, and the systematic underfunding of planning departments that has left them too understaffed to process applications efficiently or enforce conditions effectively.
             </p>
             <p>
-              Planning departments have been among the hardest-hit casualties of local government austerity. Between 2010 and 2023, the Planning Advisory Service estimates that English local planning authorities lost approximately 40% of their planning department staff &mdash; roughly 12,000 full-time equivalent posts. The cuts happened precisely as the planning caseload grew more complex: major infrastructure schemes, nutrient neutrality requirements, biodiversity net gain conditions, and the transition to digital planning portals all added administrative burden without additional resources. The result is a system stretched to breaking point: 500,000 planning applications were awaiting a decision in England at the end of 2023, and the proportion of major residential applications decided within the statutory 13-week period fell below 50% for the first time in 2022.
+              Planning departments have been among the hardest-hit casualties of local government austerity. Between 2010 and 2023, the Planning Advisory Service estimates that English local planning authorities lost approximately 40% of their planning department staff — roughly 12,000 full-time equivalent posts. The cuts happened precisely as the planning caseload grew more complex: major infrastructure schemes, nutrient neutrality requirements, biodiversity net gain conditions, and the transition to digital planning portals all added administrative burden without additional resources. The result is a system stretched to breaking point: 500,000 planning applications were awaiting a decision in England at the end of 2023, and the proportion of major residential applications decided within the statutory 13-week period fell below 50% for the first time in 2022.
             </p>
             </div>
         </section>
@@ -103,9 +103,9 @@ export default function PlanningPermissionPage() {
               value="474,000"
               direction="down"
               polarity="up-is-bad"
-              changeText="Down from 580,000 in 2010 &middot; But still 2&times; the number of homes completed"
+              changeText="Down from 580,000 in 2010 · But still 2&times; the number of homes completed"
               sparklineData={[580, 560, 540, 520, 490, 480, 470, 474]}
-              source="DLUHC &middot; Planning applications in England 2023"
+              source="DLUHC · Planning applications in England 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -113,9 +113,9 @@ export default function PlanningPermissionPage() {
               value="-40%"
               direction="down"
               polarity="up-is-good"
-              changeText="~12,000 posts lost &middot; &lt;50% of major applications decided on time"
+              changeText="~12,000 posts lost · &lt;50% of major applications decided on time"
               sparklineData={[100, 94, 89, 85, 82, 78, 75, 73, 70, 68, 66, 63, 61, 60]}
-              source="Planning Advisory Service &middot; LPA staffing survey 2023"
+              source="Planning Advisory Service · LPA staffing survey 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -123,9 +123,9 @@ export default function PlanningPermissionPage() {
               value="500,000"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 280,000 in 2016 &middot; Record high &middot; Delays add cost and uncertainty"
+              changeText="Up from 280,000 in 2016 · Record high · Delays add cost and uncertainty"
               sparklineData={[280, 300, 330, 360, 400, 440, 480, 500]}
-              source="DLUHC &middot; Planning applications statistics 2023"
+              source="DLUHC · Planning applications statistics 2023"
               onExpand={() => {}}
             />
           </div>
@@ -135,8 +135,8 @@ export default function PlanningPermissionPage() {
           <section id="sec-permissions" className="mb-12">
             {permissionSeries.length > 0 ? (
               <LineChart
-                title="Planning permissions granted vs homes completed, England, 2010&ndash;2024"
-                subtitle="Permissions granted (dark, thousands) vs new homes completed (green, thousands). The persistent gap between the two series illustrates that the system grants more permissions than are ever built &mdash; driven by land banking, infrastructure constraints, and viability issues."
+                title="Planning permissions granted vs homes completed, England, 2010–2024"
+                subtitle="Permissions granted (dark, thousands) vs new homes completed (green, thousands). The persistent gap between the two series illustrates that the system grants more permissions than are ever built — driven by land banking, infrastructure constraints, and viability issues."
                 series={permissionSeries}
                 yLabel="Homes (thousands)"
                 source={{
@@ -156,7 +156,7 @@ export default function PlanningPermissionPage() {
           <section id="sec-staffing" className="mb-12">
             {staffingSeries.length > 0 ? (
               <LineChart
-                title="Local planning authority staffing, England, 2010&ndash;2024"
+                title="Local planning authority staffing, England, 2010–2024"
                 subtitle="Indexed to 2010 = 100. Full-time equivalent planning department staff in English local authorities. A 40% reduction since 2010 has left planning departments unable to process applications within statutory timescales or enforce planning conditions effectively."
                 series={staffingSeries}
                 yLabel="Staffing index (2010 = 100)"
@@ -177,8 +177,8 @@ export default function PlanningPermissionPage() {
           <PositiveCallout
             title="What the reforms propose"
             value="Planning &amp; Infrastructure Bill"
-            description="The Planning and Infrastructure Bill (2025) proposes automatic planning permission in designated growth areas, mandatory decision timelines with fee refunds for late decisions, and increased planning fees to fund 300 additional planners &mdash; the most significant planning reform in decades. The Bill also introduces mandatory nature recovery strategies to address the nutrient neutrality blockage."
-            source="Ministry of Housing, Communities &amp; Local Government &middot; Planning and Infrastructure Bill 2025"
+            description="The Planning and Infrastructure Bill (2025) proposes automatic planning permission in designated growth areas, mandatory decision timelines with fee refunds for late decisions, and increased planning fees to fund 300 additional planners — the most significant planning reform in decades. The Bill also introduces mandatory nature recovery strategies to address the nutrient neutrality blockage."
+            source="Ministry of Housing, Communities &amp; Local Government · Planning and Infrastructure Bill 2025"
           />
         </ScrollReveal>
 
@@ -187,7 +187,7 @@ export default function PlanningPermissionPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

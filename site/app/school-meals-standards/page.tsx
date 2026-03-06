@@ -69,14 +69,14 @@ export default function SchoolMealsStandardsPage() {
         <TopicHeader
           topic="Education"
           question="Are School Meals Actually Nutritious?"
-          finding="Schools broadly meet nutritional standards &mdash; but free school meal uptake falls well below eligibility, and primary school universality ends at Year 2."
+          finding="Schools broadly meet nutritional standards — but free school meal uptake falls well below eligibility, and primary school universality ends at Year 2."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>School food standards introduced in 2014 prescribe minimum nutritional requirements for school meals, and in 2023 89% of schools met them &mdash; up from 87% in 2015. Approximately 2.1 million pupils (24% of state school pupils) were eligible for free school meals in 2024, of whom 88% were actually claiming &mdash; leaving around 250,000 eligible children not receiving a meal. Universal Infant Free School Meals (UIFSM) provides a free meal to every Reception&ndash;Year 2 child regardless of income and has achieved 88% uptake, with strong evidence it improves attainment and reduces FSM stigma &mdash; but universality ends abruptly at Year 3. Food price inflation has pushed primary school meals to &pound;2.80&ndash;&pound;3.10, making the weekly cost roughly &pound;14&ndash;16 per child for non-eligible families and pushing some toward packed lunches of significantly worse nutritional quality.</p>
-            <p>The 12% non-take-up gap &mdash; around 250,000 children &mdash; reflects stigma, administrative barriers, and low awareness, and is concentrated in the most deprived communities. Extending UIFSM to all primary years would cost approximately &pound;600 million annually; secondary extension would cost over &pound;1 billion. The previous government rejected both on cost grounds. For families with multiple school-age children, school meals represent a meaningful financial pressure that in aggregate determines whether children arrive at school ready to learn, and the children most affected by non-uptake and unaffordability are those whose nutrition matters most.</p>
+            <p>School food standards introduced in 2014 prescribe minimum nutritional requirements for school meals, and in 2023 89% of schools met them — up from 87% in 2015. Approximately 2.1 million pupils (24% of state school pupils) were eligible for free school meals in 2024, of whom 88% were actually claiming — leaving around 250,000 eligible children not receiving a meal. Universal Infant Free School Meals (UIFSM) provides a free meal to every Reception–Year 2 child regardless of income and has achieved 88% uptake, with strong evidence it improves attainment and reduces FSM stigma — but universality ends abruptly at Year 3. Food price inflation has pushed primary school meals to £2.80–£3.10, making the weekly cost roughly £14–16 per child for non-eligible families and pushing some toward packed lunches of significantly worse nutritional quality.</p>
+            <p>The 12% non-take-up gap — around 250,000 children — reflects stigma, administrative barriers, and low awareness, and is concentrated in the most deprived communities. Extending UIFSM to all primary years would cost approximately £600 million annually; secondary extension would cost over £1 billion. The previous government rejected both on cost grounds. For families with multiple school-age children, school meals represent a meaningful financial pressure that in aggregate determines whether children arrive at school ready to learn, and the children most affected by non-uptake and unaffordability are those whose nutrition matters most.</p>
           </div>
         </section>
 
@@ -94,9 +94,9 @@ export default function SchoolMealsStandardsPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="steady improvement &middot; primary &gt; secondary"
+              changeText="steady improvement · primary &gt; secondary"
               sparklineData={[87, 88, 89, 88, 89, 89]}
-              href="#sec-chart"source="DfE &middot; School Food Standards Report 2024"
+              href="#sec-chart"source="DfE · School Food Standards Report 2024"
             />
             <MetricCard
               label="FSM uptake by eligible children"
@@ -104,9 +104,9 @@ export default function SchoolMealsStandardsPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="of eligible children claiming &middot; up from 84%"
+              changeText="of eligible children claiming · up from 84%"
               sparklineData={[84, 85, 85, 86, 87, 88]}
-              href="#sec-chart"source="DfE &middot; Free School Meals Statistics 2024"
+              href="#sec-chart"source="DfE · Free School Meals Statistics 2024"
             />
             <MetricCard
               label="Universal eligibility"
@@ -114,9 +114,9 @@ export default function SchoolMealsStandardsPage() {
               unit=""
               direction="flat"
               polarity="up-is-bad"
-              changeText="UIFSM ends at Year 2 &middot; children 7+ lose free meal"
+              changeText="UIFSM ends at Year 2 · children 7+ lose free meal"
               sparklineData={[88, 88, 87, 88, 88, 88]}
-              href="#sec-chart"source="DfE &middot; UIFSM Programme Statistics 2024"
+              href="#sec-chart"source="DfE · UIFSM Programme Statistics 2024"
             />
           </div>
         </ScrollReveal>
@@ -124,7 +124,7 @@ export default function SchoolMealsStandardsPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="School food standards compliance and FSM uptake, 2015&ndash;2023"
+              title="School food standards compliance and FSM uptake, 2015–2023"
               subtitle="Schools meeting nutritional food standards (green) and uptake by FSM-eligible children (dark). Percentages. England."
               series={mealsSeries}
               yLabel="Percentage (%)"
@@ -150,9 +150,9 @@ export default function SchoolMealsStandardsPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>DfE &mdash; School Food Standards. Compliance monitoring data. gov.uk/government/publications/school-food-standards-resources-for-schools</p>
-            <p>DfE &mdash; Free School Meals: Eligibility and Uptake. Annual statistics. gov.uk/government/collections/statistics-pupils-characteristics</p>
-            <p>Children&apos;s Food Trust &mdash; School Food Plan Impact Assessment. childrensfoodtrust.org.uk</p>
+            <p>DfE — School Food Standards. Compliance monitoring data. gov.uk/government/publications/school-food-standards-resources-for-schools</p>
+            <p>DfE — Free School Meals: Eligibility and Uptake. Annual statistics. gov.uk/government/collections/statistics-pupils-characteristics</p>
+            <p>Children's Food Trust — School Food Plan Impact Assessment. childrensfoodtrust.org.uk</p>
             <p>School food standards apply to all maintained schools in England. Academies were brought under the standards in 2014. Compliance assessed through Ofsted inspections and local authority monitoring. FSM uptake calculated as percentage of children registered for FSM among those eligible under DWP Universal Credit / qualifying benefit criteria.</p>
           </div>
         </section>

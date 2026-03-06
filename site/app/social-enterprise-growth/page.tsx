@@ -77,8 +77,8 @@ export default function SocialEnterpriseGrowthPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Social enterprises &mdash; businesses that trade for a social or environmental purpose and reinvest surpluses into their mission rather than distributing them to private shareholders &mdash; have grown from around 70,000 organisations in 2015 to approximately 100,000 in 2023, generating an estimated &pound;60 billion in annual turnover and employing 2.3 million people. That makes the sector larger than UK agriculture and comparable in employment to financial services, yet it remains largely invisible in public and political discourse. The UK has developed one of the world&rsquo;s most supportive ecosystems for this model: the Community Interest Company legal form (2005), the Social Value Act 2012 requiring public bodies to consider social value in procurement, and specialist investors including Big Society Capital. Some 44% of social enterprises actively prioritise employment of disadvantaged workers &mdash; people with disabilities, ex-offenders, and those leaving care &mdash; a social impact that conventional employment statistics do not capture.</p>
-            <p>Access to capital remains the sector&rsquo;s most significant constraint: social enterprises struggle to demonstrate returns to conventional investors when surplus is reinvested in mission rather than distributed to shareholders. Patient capital, blended finance, and social impact bonds exist as alternatives but remain niche. Growth of social enterprise is also partly a response to state withdrawal and market failure: community energy companies, village shops, local news outlets, and community pubs represent social enterprises filling gaps that neither market nor state adequately addresses. That is the sector&rsquo;s greatest contribution and deepest challenge simultaneously &mdash; it should not have to compensate for systematic public sector underfunding, but in many communities it is the only entity willing to try.</p>
+            <p>Social enterprises — businesses that trade for a social or environmental purpose and reinvest surpluses into their mission rather than distributing them to private shareholders — have grown from around 70,000 organisations in 2015 to approximately 100,000 in 2023, generating an estimated £60 billion in annual turnover and employing 2.3 million people. That makes the sector larger than UK agriculture and comparable in employment to financial services, yet it remains largely invisible in public and political discourse. The UK has developed one of the world&rsquo;s most supportive ecosystems for this model: the Community Interest Company legal form (2005), the Social Value Act 2012 requiring public bodies to consider social value in procurement, and specialist investors including Big Society Capital. Some 44% of social enterprises actively prioritise employment of disadvantaged workers — people with disabilities, ex-offenders, and those leaving care — a social impact that conventional employment statistics do not capture.</p>
+            <p>Access to capital remains the sector&rsquo;s most significant constraint: social enterprises struggle to demonstrate returns to conventional investors when surplus is reinvested in mission rather than distributed to shareholders. Patient capital, blended finance, and social impact bonds exist as alternatives but remain niche. Growth of social enterprise is also partly a response to state withdrawal and market failure: community energy companies, village shops, local news outlets, and community pubs represent social enterprises filling gaps that neither market nor state adequately addresses. That is the sector&rsquo;s greatest contribution and deepest challenge simultaneously — it should not have to compensate for systematic public sector underfunding, but in many communities it is the only entity willing to try.</p>
           </div>
         </section>
 
@@ -97,9 +97,9 @@ export default function SocialEnterpriseGrowthPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="+43% since 2015 &middot; growing movement"
+              changeText="+43% since 2015 · growing movement"
               sparklineData={[70, 80, 90, 95, 98, 100]}
-              href="#sec-callout"source="Social Enterprise UK &middot; State of Social Enterprise 2023"
+              href="#sec-callout"source="Social Enterprise UK · State of Social Enterprise 2023"
             />
             <MetricCard
               label="Annual turnover"
@@ -107,9 +107,9 @@ export default function SocialEnterpriseGrowthPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="+36% since 2015 &middot; scale and impact"
+              changeText="+36% since 2015 · scale and impact"
               sparklineData={[44, 50, 55, 57, 59, 60]}
-              href="#sec-chart"source="Social Enterprise UK &middot; 2023"
+              href="#sec-chart"source="Social Enterprise UK · 2023"
             />
             <MetricCard
               label="Employing disadvantaged workers"
@@ -119,7 +119,7 @@ export default function SocialEnterpriseGrowthPage() {
               polarity="up-is-good"
               changeText="of social enterprises prioritise disadvantaged workers"
               sparklineData={[38, 40, 41, 43, 44, 44]}
-              href="#sec-chart"source="Social Enterprise UK &middot; State of Social Enterprise 2023"
+              href="#sec-chart"source="Social Enterprise UK · State of Social Enterprise 2023"
             />
           </div>
         </ScrollReveal>
@@ -139,7 +139,7 @@ export default function SocialEnterpriseGrowthPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Social enterprise growth, 2015&ndash;2023"
+              title="Social enterprise growth, 2015–2023"
               subtitle="Number of social enterprises in thousands and total annual turnover in billions of pounds."
               series={enterpriseSeries}
               yLabel="Value"
@@ -155,9 +155,9 @@ export default function SocialEnterpriseGrowthPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Social Enterprise UK &mdash; State of Social Enterprise. Biennial survey of the social enterprise sector. socialenterprise.org.uk/state-of-social-enterprise</p>
-            <p>NCVO &mdash; UK Civil Society Almanac. ncvo.org.uk/facts-and-stats/uk-civil-society-almanac</p>
-            <p>Big Society Capital &mdash; Market Sizing Research. bigsocietycapital.com</p>
+            <p>Social Enterprise UK — State of Social Enterprise. Biennial survey of the social enterprise sector. socialenterprise.org.uk/state-of-social-enterprise</p>
+            <p>NCVO — UK Civil Society Almanac. ncvo.org.uk/facts-and-stats/uk-civil-society-almanac</p>
+            <p>Big Society Capital — Market Sizing Research. bigsocietycapital.com</p>
             <p>Social enterprise count is based on SEUK survey extrapolation to the broader population of organisations meeting the social enterprise definition: trading for a social purpose, reinvesting surpluses, and having an asset lock. Turnover figures are SEUK estimates. Figures interpolated between survey years. Intermediate years use linear interpolation.</p>
           </div>
         </section>

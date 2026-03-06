@@ -101,7 +101,7 @@ export default function PetFoodBanksPage() {
 
   const orgAnnotations: Annotation[] = [
     { date: new Date(2021, 5, 1), label: '2021: Cost of living crisis begins' },
-    { date: new Date(2022, 5, 1), label: '2022: Energy bills spike &mdash; pet food banks triple' },
+    { date: new Date(2022, 5, 1), label: '2022: Energy bills spike — pet food banks triple' },
   ];
 
   const surrenderAnnotations: Annotation[] = [
@@ -126,10 +126,10 @@ export default function PetFoodBanksPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The cost of living crisis has created a hidden animal welfare emergency. Pet food banks &mdash; a concept almost unknown five years ago &mdash; now number 280 across the UK. They reflect the arithmetic of poverty: for a family choosing between their electricity bill and their cat&apos;s food, the cat&apos;s food loses. The same families often acquired pets during the 2020 lockdown surge, when millions of people adopted dogs and cats. Those animals are now being surrendered to rescues at record rates.
+              The cost of living crisis has created a hidden animal welfare emergency. Pet food banks — a concept almost unknown five years ago — now number 280 across the UK. They reflect the arithmetic of poverty: for a family choosing between their electricity bill and their cat's food, the cat's food loses. The same families often acquired pets during the 2020 lockdown surge, when millions of people adopted dogs and cats. Those animals are now being surrendered to rescues at record rates.
             </p>
             <p>
-              The PDSA&apos;s Annual Wellbeing Report estimates 2.1 million pet owners cannot afford veterinary care for their animals &mdash; up from 1.5 million in 2020. Pets are not registered with vets, so there is no equivalent of the NHS to catch animals whose owners are struggling. The PDSA and RSPCA provide subsidised and free care for qualifying owners, but capacity is far below demand. Many animals are surrendered to shelters not because owners have stopped caring, but because keeping them has become financially impossible.
+              The PDSA's Annual Wellbeing Report estimates 2.1 million pet owners cannot afford veterinary care for their animals — up from 1.5 million in 2020. Pets are not registered with vets, so there is no equivalent of the NHS to catch animals whose owners are struggling. The PDSA and RSPCA provide subsidised and free care for qualifying owners, but capacity is far below demand. Many animals are surrendered to shelters not because owners have stopped caring, but because keeping them has become financially impossible.
             </p>
           </div>
         </section>
@@ -180,7 +180,7 @@ export default function PetFoodBanksPage() {
         <ScrollReveal>
           <section id="sec-foodbanks" className="mb-12">
             <LineChart
-              title="Pet food bank organisations, UK, 2019&ndash;2024"
+              title="Pet food bank organisations, UK, 2019–2024"
               subtitle="Number of pet food bank organisations operating across the UK. The explosion from 2021 directly tracks the onset of the cost of living crisis and energy price spike. Most are run by volunteers alongside existing food banks."
               series={orgSeries}
               annotations={orgAnnotations}
@@ -192,7 +192,7 @@ export default function PetFoodBanksPage() {
         <ScrollReveal>
           <section id="sec-surrenders" className="mb-12">
             <LineChart
-              title="Annual pet surrenders to rescue charities, UK, 2019&ndash;2024"
+              title="Annual pet surrenders to rescue charities, UK, 2019–2024"
               subtitle="Combined annual pet surrenders to RSPCA, Dogs Trust, Cats Protection and Blue Cross. Numbers fell in 2020 during the pandemic adoption surge, then rose sharply as the cost of living crisis made pet ownership unaffordable for many families."
               series={surrenderSeries}
               annotations={surrenderAnnotations}
@@ -204,11 +204,11 @@ export default function PetFoodBanksPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s helping"
+            title="What's helping"
             value="PDSA &amp; Vets Now"
             unit="subsidised care for low-income owners"
             description="Many food banks now accept pet food donations alongside human food. Vets Now, PDSA, RSPCA and Blue Cross provide subsidised or free veterinary care for qualifying low-income pet owners, collectively treating over 400,000 animals per year. The Pet Theft Reform Act 2022 strengthened protections against the rise in pet theft that accompanied the lockdown adoption surge. Some local authorities now include pet food in emergency welfare payments."
-            source="Source: PDSA &mdash; Animal Wellbeing (PAW) Report, 2024. RSPCA &mdash; Annual Statistics, 2024."
+            source="Source: PDSA — Animal Wellbeing (PAW) Report, 2024. RSPCA — Annual Statistics, 2024."
           />
         </ScrollReveal>
 
@@ -219,7 +219,7 @@ export default function PetFoodBanksPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

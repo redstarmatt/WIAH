@@ -136,10 +136,10 @@ export default function RailPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Rail"
-          question="Is Britain&apos;s Railway Actually Working?"
+          question="Is Britain's Railway Actually Working?"
           finding={
             data
-              ? `Rail punctuality has fallen to ${data.national.punctuality.latestOnTimePct}% &mdash; the worst since records began &mdash; with 1 in 14 trains cancelled. Passenger numbers have recovered to 93% of pre-pandemic levels, but the network costs &pound;8bn a year in public subsidy, four times the pre-pandemic level.`
+              ? `Rail punctuality has fallen to ${data.national.punctuality.latestOnTimePct}% — the worst since records began — with 1 in 14 trains cancelled. Passenger numbers have recovered to 93% of pre-pandemic levels, but the network costs £8bn a year in public subsidy, four times the pre-pandemic level.`
               : 'Rail punctuality and reliability have deteriorated significantly.'
           }
           colour="#264653"
@@ -148,10 +148,10 @@ export default function RailPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Britain&apos;s railways carried 1.74 billion passenger journeys in 2019 &mdash; the highest since the 1920s. COVID-19 cut that by 77%, to 390 million in 2020, and the government absorbed all revenue risk through Emergency Recovery Measures Agreements costing over &pound;10 billion between 2020 and 2022. Demand has since recovered to 1.61 billion journeys in 2024, or 93% of the pre-pandemic peak, but the pattern has reshaped permanently: Monday and Friday off-peak volumes now run below Tuesday&ndash;Wednesday levels as hybrid working stabilises. Season ticket sales remain roughly 30% below 2019, while anytime and flexible fares have grown &mdash; a structural shift that undermines the old franchise revenue model.
+              Britain's railways carried 1.74 billion passenger journeys in 2019 — the highest since the 1920s. COVID-19 cut that by 77%, to 390 million in 2020, and the government absorbed all revenue risk through Emergency Recovery Measures Agreements costing over £10 billion between 2020 and 2022. Demand has since recovered to 1.61 billion journeys in 2024, or 93% of the pre-pandemic peak, but the pattern has reshaped permanently: Monday and Friday off-peak volumes now run below Tuesday–Wednesday levels as hybrid working stabilises. Season ticket sales remain roughly 30% below 2019, while anytime and flexible fares have grown — a structural shift that undermines the old franchise revenue model.
             </p>
             <p>
-              Service quality has worsened on almost every measure. The On-Time metric &mdash; arrival within 59 seconds for commuter trains, 3 minutes for long-distance &mdash; fell to 71.7% in 2023, the worst since the statistic was introduced in the late 1990s. Cancellations rose from 1.8% in 2014 to 4.4% in 2022, partially recovering to 3.1% in 2024. The May 2018 timetable collapse, when GTR/Thameslink and Northern launched new schedules simultaneously, was catastrophic for northern commuters and wiped out six years of punctuality gains. The Williams-Shapps Plan for Rail aims to consolidate 14 fragmented Train Operating Companies into a single public body, Great British Railways; Labour has committed to the reform, but legislation remains pending.
+              Service quality has worsened on almost every measure. The On-Time metric — arrival within 59 seconds for commuter trains, 3 minutes for long-distance — fell to 71.7% in 2023, the worst since the statistic was introduced in the late 1990s. Cancellations rose from 1.8% in 2014 to 4.4% in 2022, partially recovering to 3.1% in 2024. The May 2018 timetable collapse, when GTR/Thameslink and Northern launched new schedules simultaneously, was catastrophic for northern commuters and wiped out six years of punctuality gains. The Williams-Shapps Plan for Rail aims to consolidate 14 fragmented Train Operating Companies into a single public body, Great British Railways; Labour has committed to the reform, but legislation remains pending.
             </p>
             </div>
         </section>
@@ -238,11 +238,11 @@ export default function RailPage() {
         {/* Positive callout */}
         <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="1.61bn"
-          unit="journeys in 2024 &mdash; 93% of pre-pandemic peak, fastest recovery in Europe"
-          description="UK rail passenger numbers have recovered faster than most European networks. From a COVID low of 390 million journeys in 2020, demand has rebounded to 1.61 billion in 2024. The government&apos;s commitment to Great British Railways &mdash; a single public body to own track and co-ordinate services &mdash; promises to end the fragmentation between Network Rail and 14 separate Train Operating Companies. Contactless ticketing and flexible season tickets have improved for passengers who commute part-time."
-          source="Source: ORR &mdash; National rail trends Q4 2023/24."
+          unit="journeys in 2024 — 93% of pre-pandemic peak, fastest recovery in Europe"
+          description="UK rail passenger numbers have recovered faster than most European networks. From a COVID low of 390 million journeys in 2020, demand has rebounded to 1.61 billion in 2024. The government's commitment to Great British Railways — a single public body to own track and co-ordinate services — promises to end the fragmentation between Network Rail and 14 separate Train Operating Companies. Contactless ticketing and flexible season tickets have improved for passengers who commute part-time."
+          source="Source: ORR — National rail trends Q4 2023/24."
         />
         </ScrollReveal>
 
@@ -253,7 +253,7 @@ export default function RailPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

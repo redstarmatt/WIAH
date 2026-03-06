@@ -60,14 +60,14 @@ export default function RewildingPage() {
         <TopicHeader
           topic="Rewilding"
           question="Is Britain Actually Bringing Nature Back?"
-          finding="The UK has committed to protecting 30% of land for nature by 2030 &mdash; the so-called 30x30 pledge &mdash; but only 3.2% of land currently meets ecological standards. With fewer than four years remaining, the target is almost certainly out of reach without a step-change in both ambition and delivery."
+          finding="The UK has committed to protecting 30% of land for nature by 2030 — the so-called 30x30 pledge — but only 3.2% of land currently meets ecological standards. With fewer than four years remaining, the target is almost certainly out of reach without a step-change in both ambition and delivery."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK is one of the most nature-depleted countries in the world. The Natural History Museum&apos;s 2021 Biodiversity Intactness Index ranked Britain 189th out of 218 nations &mdash; behind every G7 peer. The State of Nature 2023 report, compiled by 60-plus wildlife organisations led by the RSPB and JNCC, found that 41% of UK species have declined since 1970 and 15% are at risk of extinction. Against this backdrop, the government signed the Kunming-Montreal Global Biodiversity Framework at COP15 in December 2022, committing to the 30x30 target: protecting 30% of land and 30% of seas in a good ecological condition by 2030. The problem is the gap between designation and reality &mdash; land within a protected boundary is not the same as land genuinely recovering for nature. DEFRA&apos;s own assessment shows just 3.2% of England&apos;s land meets the 30x30 ecological standard, even though 8.5% sits within statutory protected areas. The majority of SSSIs &mdash; the foundation of England&apos;s protected area network &mdash; are in unfavourable condition.</p>
-            <p>Rewilding as a distinct approach &mdash; allowing natural processes to resume rather than actively managing habitat toward a fixed endpoint &mdash; has gained significant momentum since the early 2010s. The Knepp Estate in West Sussex became the emblematic case: 3,500 acres returned to free-roaming cattle, pigs, ponies, and deer since 2001, producing extraordinary results. Purple emperor butterflies, turtle doves, nightingales, and peregrine falcons have returned without deliberate introduction. White storks have bred in Sussex for the first time in 600 years, reintroduced via a partnership between Knepp, the White Stork Project, and the Roy Dennis Wildlife Foundation &mdash; six chicks fledged in 2023. Wolves, lynx, and bison have been proposed for Scottish and Welsh uplands, and European bison were reintroduced to Kent woodland in 2022, the first wild bison in the UK for over 6,000 years. Rewilding Britain estimates that rewilding 30% of UK land could sequester 47 million tonnes of CO2 annually, roughly equivalent to taking all UK cars off the road.</p>
+            <p>The UK is one of the most nature-depleted countries in the world. The Natural History Museum's 2021 Biodiversity Intactness Index ranked Britain 189th out of 218 nations — behind every G7 peer. The State of Nature 2023 report, compiled by 60-plus wildlife organisations led by the RSPB and JNCC, found that 41% of UK species have declined since 1970 and 15% are at risk of extinction. Against this backdrop, the government signed the Kunming-Montreal Global Biodiversity Framework at COP15 in December 2022, committing to the 30x30 target: protecting 30% of land and 30% of seas in a good ecological condition by 2030. The problem is the gap between designation and reality — land within a protected boundary is not the same as land genuinely recovering for nature. DEFRA's own assessment shows just 3.2% of England's land meets the 30x30 ecological standard, even though 8.5% sits within statutory protected areas. The majority of SSSIs — the foundation of England's protected area network — are in unfavourable condition.</p>
+            <p>Rewilding as a distinct approach — allowing natural processes to resume rather than actively managing habitat toward a fixed endpoint — has gained significant momentum since the early 2010s. The Knepp Estate in West Sussex became the emblematic case: 3,500 acres returned to free-roaming cattle, pigs, ponies, and deer since 2001, producing extraordinary results. Purple emperor butterflies, turtle doves, nightingales, and peregrine falcons have returned without deliberate introduction. White storks have bred in Sussex for the first time in 600 years, reintroduced via a partnership between Knepp, the White Stork Project, and the Roy Dennis Wildlife Foundation — six chicks fledged in 2023. Wolves, lynx, and bison have been proposed for Scottish and Welsh uplands, and European bison were reintroduced to Kent woodland in 2022, the first wild bison in the UK for over 6,000 years. Rewilding Britain estimates that rewilding 30% of UK land could sequester 47 million tonnes of CO2 annually, roughly equivalent to taking all UK cars off the road.</p>
             </div>
         </section>
 
@@ -85,9 +85,9 @@ export default function RewildingPage() {
               unit="%"
               direction="flat"
               polarity="up-is-good"
-              changeText="Target: 30% by 2030 &mdash; barely moving despite pledges"
+              changeText="Target: 30% by 2030 — barely moving despite pledges"
               sparklineData={[2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2]}
-              source="DEFRA &mdash; 30x30 ecological condition assessment"
+              source="DEFRA — 30x30 ecological condition assessment"
               onExpand={() => {}}
             />
             <MetricCard
@@ -96,9 +96,9 @@ export default function RewildingPage() {
               unit="%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="State of Nature 2023 &mdash; 15% at risk of extinction"
+              changeText="State of Nature 2023 — 15% at risk of extinction"
               sparklineData={[26, 28, 30, 33, 35, 37, 39, 41]}
-              source="RSPB / JNCC &mdash; State of Nature 2023"
+              source="RSPB / JNCC — State of Nature 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -107,9 +107,9 @@ export default function RewildingPage() {
               unit="%"
               direction="flat"
               polarity="up-is-good"
-              changeText="Target: 30% by 2030 &mdash; most MPAs lack effective management"
+              changeText="Target: 30% by 2030 — most MPAs lack effective management"
               sparklineData={[5, 5.5, 6, 6.5, 7, 7.5, 7.8, 8]}
-              source="JNCC &mdash; UK Marine Protected Area network 2024"
+              source="JNCC — UK Marine Protected Area network 2024"
               onExpand={() => {}}
             />
           </div>
@@ -118,7 +118,7 @@ export default function RewildingPage() {
         <ScrollReveal>
           <section id="sec-protected" className="mb-12">
             <LineChart
-              title="Land within statutory protected areas, UK, 2010&ndash;2024"
+              title="Land within statutory protected areas, UK, 2010–2024"
               subtitle="Percentage of UK land area in SSSIs, NNRs, and National Parks. 30% target line shown. JNCC / DEFRA."
               series={protectedSeries}
               yLabel="% of land area"
@@ -129,7 +129,7 @@ export default function RewildingPage() {
         <ScrollReveal>
           <section id="sec-species" className="mb-12">
             <LineChart
-              title="UK wildlife species abundance index, 2010&ndash;2024"
+              title="UK wildlife species abundance index, 2010–2024"
               subtitle="Composite of over 1,000 monitored UK species, indexed to 1970 = 100. State of Nature 2023."
               series={speciesSeries}
               yLabel="Index (1970=100)"
@@ -142,7 +142,7 @@ export default function RewildingPage() {
             title="Signs of Recovery"
             value="600 years"
             unit="since white storks last bred in Britain"
-            description="Knepp Estate, Cairngorms Connect, and Cambrian Wildwood are demonstrating that rapid nature recovery is possible. White storks bred in Sussex in 2023 for the first time in 600 years. European bison were reintroduced to Kent woodland in 2022 &mdash; the first wild bison in the UK for over 6,000 years. Red kites, once reduced to a single Welsh population, now number over 10,000 across Britain following a three-decade reintroduction programme &mdash; one of Europe&apos;s most successful conservation stories."
+            description="Knepp Estate, Cairngorms Connect, and Cambrian Wildwood are demonstrating that rapid nature recovery is possible. White storks bred in Sussex in 2023 for the first time in 600 years. European bison were reintroduced to Kent woodland in 2022 — the first wild bison in the UK for over 6,000 years. Red kites, once reduced to a single Welsh population, now number over 10,000 across Britain following a three-decade reintroduction programme — one of Europe's most successful conservation stories."
             source="Source: White Stork Project 2023; Rewilding Britain; Roy Dennis Wildlife Foundation."
           />
         </ScrollReveal>
@@ -157,11 +157,11 @@ export default function RewildingPage() {
                   <ul className="space-y-2">
                     {data.metadata.sources.map((src, idx) => (
                       <li key={idx} className="text-wiah-mid">
-                        <strong className="text-wiah-black">{src.name}:</strong>&nbsp;
+                        <strong className="text-wiah-black">{src.name}:</strong> 
                         <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue">
                           {src.dataset}
                         </a>
-                        &nbsp;({src.frequency})
+                         ({src.frequency})
                       </li>
                     ))}
                   </ul>

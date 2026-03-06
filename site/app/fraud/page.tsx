@@ -77,13 +77,13 @@ export default function FraudPage() {
         <TopicHeader
           topic="Fraud"
           question="Why Does Almost No Fraud Get Prosecuted?"
-          finding="Fraud accounts for 41% of all crime in England and Wales &mdash; an estimated 3.8 million offences per year &mdash; yet fewer than 1% of reported cases result in a conviction. Action Fraud, the national reporting centre, has been described by its own assessors as not fit for purpose."
+          finding="Fraud accounts for 41% of all crime in England and Wales — an estimated 3.8 million offences per year — yet fewer than 1% of reported cases result in a conviction. Action Fraud, the national reporting centre, has been described by its own assessors as not fit for purpose."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Crime Survey for England and Wales estimates 3.8 million fraud and computer misuse offences annually &mdash; more than burglary, robbery, vehicle crime, and violent crime combined. Yet fraud remains the least-policed crime in the country. Of the roughly 900,000 cases reported to Action Fraud each year, around 80,000 are referred to police forces for investigation. Fewer than 8,000 result in charges. The conviction rate, measured against reported cases, hovers at approximately 1%. For most victims, reporting fraud is an exercise in documentation rather than an entry point to justice.</p>
+            <p>The Crime Survey for England and Wales estimates 3.8 million fraud and computer misuse offences annually — more than burglary, robbery, vehicle crime, and violent crime combined. Yet fraud remains the least-policed crime in the country. Of the roughly 900,000 cases reported to Action Fraud each year, around 80,000 are referred to police forces for investigation. Fewer than 8,000 result in charges. The conviction rate, measured against reported cases, hovers at approximately 1%. For most victims, reporting fraud is an exercise in documentation rather than an entry point to justice.</p>
             <p>Action Fraud, run by the City of London Police on behalf of all 43 forces in England and Wales, was established in 2009 to centralise fraud reporting. In practice it operates as a call centre and data repository, not an investigative body. An HMICFRS inspection in 2019 found the system &ldquo;not fit for purpose,&rdquo; with victims receiving little or no follow-up. A replacement system, originally promised for 2024, has been repeatedly delayed. Meanwhile the Serious Fraud Office, responsible for the most complex cases, has seen its budget cut by a third in real terms since 2012 and has faced a string of high-profile case collapses.</p>
             </div>
         </section>
@@ -102,9 +102,9 @@ export default function FraudPage() {
               unit="/year"
               direction="up"
               polarity="up-is-bad"
-              changeText="41% of all crime &middot; CSEW 2024 estimate"
+              changeText="41% of all crime · CSEW 2024 estimate"
               sparklineData={[2.5, 3.2, 3.4, 3.6, 3.8, 4.1, 4.5, 3.7, 3.5, 3.8]}
-              source="ONS &middot; Crime Survey for England and Wales, 2024"
+              source="ONS · Crime Survey for England and Wales, 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -112,20 +112,20 @@ export default function FraudPage() {
               value="~1%"
               direction="down"
               polarity="up-is-good"
-              changeText="Of reported cases &middot; down from 3% in 2015"
+              changeText="Of reported cases · down from 3% in 2015"
               sparklineData={[3.1, 2.8, 2.5, 2.2, 1.9, 1.5, 1.2, 1.0, 0.8, 1.0]}
-              source="Home Office &middot; Crime Outcomes, 2024"
+              source="Home Office · Crime Outcomes, 2024"
               onExpand={() => {}}
             />
             <MetricCard
               label="APP scam losses"
-              value="&pound;485M"
+              value="£485M"
               unit="/year"
               direction="up"
               polarity="up-is-bad"
-              changeText="Authorised push payment fraud &middot; 2023"
+              changeText="Authorised push payment fraud · 2023"
               sparklineData={[236, 354, 355, 479, 485]}
-              source="UK Finance &middot; Fraud Report, 2024"
+              source="UK Finance · Fraud Report, 2024"
               onExpand={() => {}}
             />
           </div>
@@ -146,7 +146,7 @@ export default function FraudPage() {
         <ScrollReveal>
           <section id="sec-convictions" className="mb-12">
             <LineChart
-              title="Fraud conviction rate, 2015&ndash;2024"
+              title="Fraud conviction rate, 2015–2024"
               subtitle="Convictions as a percentage of reported fraud cases. England and Wales."
               series={convictionSeries}
               yLabel="Conviction rate (%)"

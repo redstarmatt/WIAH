@@ -114,7 +114,7 @@ export default function ChildcarePage() {
           question="Can British Families Actually Afford Childcare?"
           finding={
             latestCosts
-              ? `A full-time nursery place costs &pound;${(latestCosts.latestThousandsGBP * 1000).toLocaleString('en-GB')} a year on average &mdash; more than a year at a Russell Group university. The UK devotes 0.1% of GDP to childcare subsidies &mdash; below the OECD average of 0.7%. Free hours expansion from 2024 will help &mdash; but a workforce crisis of 50,000 vacancies threatens delivery.`
+              ? `A full-time nursery place costs £${(latestCosts.latestThousandsGBP * 1000).toLocaleString('en-GB')} a year on average — more than a year at a Russell Group university. The UK devotes 0.1% of GDP to childcare subsidies — below the OECD average of 0.7%. Free hours expansion from 2024 will help — but a workforce crisis of 50,000 vacancies threatens delivery.`
               : "A full-time nursery place costs £15,000 a year on average — more than a year at a Russell Group university. The UK devotes 0.1% of GDP to childcare subsidies — below the OECD average of 0.7%. Free hours expansion from 2024 will help — but a workforce crisis of 50,000 vacancies threatens delivery."
           }
           colour="#F4A261"
@@ -123,10 +123,10 @@ export default function ChildcarePage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              A full-time nursery place in England costs &pound;15,000 per year on average (Coram 2024) and &pound;29,000 in London &mdash; absorbing 33% of median household income. Only Switzerland is more expensive in the OECD. The UK spends just 0.1% of GDP on childcare subsidies against an OECD average of 0.7%; Denmark and Iceland invest 1.5&ndash;2%. Free entitlements have expanded &mdash; 15 hours for all three- and four-year-olds since 2010, 30 hours for working parents since 2017, and a phased rollout from April 2024 extending 15 hours to two-year-olds, then to children from nine months by September 2025.
+              A full-time nursery place in England costs £15,000 per year on average (Coram 2024) and £29,000 in London — absorbing 33% of median household income. Only Switzerland is more expensive in the OECD. The UK spends just 0.1% of GDP on childcare subsidies against an OECD average of 0.7%; Denmark and Iceland invest 1.5–2%. Free entitlements have expanded — 15 hours for all three- and four-year-olds since 2010, 30 hours for working parents since 2017, and a phased rollout from April 2024 extending 15 hours to two-year-olds, then to children from nine months by September 2025.
             </p>
             <p>
-              The expansion is colliding with a collapsing provider base. Over 4,500 nursery settings &mdash; 14% of all providers &mdash; have closed since 2015, with closures concentrated in deprived areas. The core problem is a &pound;2.24-per-hour funding gap: the DfE pays &pound;8.28 per hour for free entitlement places, but the NDNA estimates actual delivery costs at &pound;10.52. Providers subsidise the shortfall from fee-paying parents or run deficits. The workforce crisis compounds this: 50,000 vacancies remain unfilled, average pay is &pound;10.50 per hour (below the 2024 National Living Wage of &pound;11.44), and annual staff turnover runs at 26% &mdash; the highest of any care sector.
+              The expansion is colliding with a collapsing provider base. Over 4,500 nursery settings — 14% of all providers — have closed since 2015, with closures concentrated in deprived areas. The core problem is a £2.24-per-hour funding gap: the DfE pays £8.28 per hour for free entitlement places, but the NDNA estimates actual delivery costs at £10.52. Providers subsidise the shortfall from fee-paying parents or run deficits. The workforce crisis compounds this: 50,000 vacancies remain unfilled, average pay is £10.50 per hour (below the 2024 National Living Wage of £11.44), and annual staff turnover runs at 26% — the highest of any care sector.
             </p>
             </div>
         </section>
@@ -141,13 +141,13 @@ export default function ChildcarePage() {
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Average full-time nursery cost"
-            value={latestCosts ? `&pound;${(latestCosts.latestThousandsGBP * 1000).toLocaleString('en-GB')}` : '—'}
+            value={latestCosts ? `£${(latestCosts.latestThousandsGBP * 1000).toLocaleString('en-GB')}` : '—'}
             unit=""
             direction="up"
             polarity="up-is-bad"
             changeText={
               latestCosts
-                ? `2024 · Per year · Up 6% since 2022 · London: &pound;${(latestCosts.londonThousandsGBP * 1000).toLocaleString('en-GB')} · More than most university tuition fees`
+                ? `2024 · Per year · Up 6% since 2022 · London: £${(latestCosts.londonThousandsGBP * 1000).toLocaleString('en-GB')} · More than most university tuition fees`
                 : 'Loading…'
             }
             sparklineData={[8500, 9200, 10100, 11200, 12000, 13000, 14200, 15000]}
@@ -173,7 +173,7 @@ export default function ChildcarePage() {
             polarity="up-is-good"
             changeText={
               providerData
-                ? `2015–2023 · 14% closure rate · Funding rate gap &pound;2.24/hour below costs · Workforce: ${workforce?.vacancies2023 || 50000} vacancies`
+                ? `2015–2023 · 14% closure rate · Funding rate gap £2.24/hour below costs · Workforce: ${workforce?.vacancies2023 || 50000} vacancies`
                 : 'Loading…'
             }
             sparklineData={[32000, 31500, 31000, 30500, 29000, 28500, 28000, 27500]}
@@ -227,17 +227,17 @@ export default function ChildcarePage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="border border-wiah-border rounded-lg p-4 bg-white">
                 <p className="text-xs font-mono text-wiah-mid mb-2">Government funding rate</p>
-                <p className="font-mono text-2xl font-bold text-wiah-black">&pound;{data.national.fundingGap.governmentFundingRatePerHour.toFixed(2)}</p>
+                <p className="font-mono text-2xl font-bold text-wiah-black">£{data.national.fundingGap.governmentFundingRatePerHour.toFixed(2)}</p>
                 <p className="text-xs text-wiah-mid mt-1">Per hour</p>
               </div>
               <div className="border border-wiah-border rounded-lg p-4 bg-white">
                 <p className="text-xs font-mono text-wiah-mid mb-2">Actual cost per hour</p>
-                <p className="font-mono text-2xl font-bold text-wiah-black">&pound;{data.national.fundingGap.actualCostPerHour.toFixed(2)}</p>
+                <p className="font-mono text-2xl font-bold text-wiah-black">£{data.national.fundingGap.actualCostPerHour.toFixed(2)}</p>
                 <p className="text-xs text-wiah-mid mt-1">Providers estimate</p>
               </div>
               <div className="border border-wiah-border rounded-lg p-4 bg-wiah-light">
                 <p className="text-xs font-mono text-wiah-red font-bold mb-2">SHORTFALL PER HOUR</p>
-                <p className="font-mono text-2xl font-bold text-wiah-red">&pound;{data.national.fundingGap.gapPerHour.toFixed(2)}</p>
+                <p className="font-mono text-2xl font-bold text-wiah-red">£{data.national.fundingGap.gapPerHour.toFixed(2)}</p>
                 <p className="text-xs text-wiah-red mt-1">Unsustainable</p>
               </div>
             </div>
@@ -266,12 +266,12 @@ export default function ChildcarePage() {
               </div>
               <div className="border border-wiah-border rounded-lg p-4 bg-white">
                 <p className="text-xs font-mono text-wiah-mid mb-2">Average pay (2023)</p>
-                <p className="font-mono text-2xl font-bold text-wiah-black">&pound;{workforce.averageHourlyPayGBP.toFixed(2)}/hr</p>
+                <p className="font-mono text-2xl font-bold text-wiah-black">£{workforce.averageHourlyPayGBP.toFixed(2)}/hr</p>
                 <p className="text-xs text-wiah-mid mt-1">Below NLW</p>
               </div>
               <div className="border border-wiah-border rounded-lg p-4 bg-white">
                 <p className="text-xs font-mono text-wiah-mid mb-2">National living wage (Apr 2024)</p>
-                <p className="font-mono text-2xl font-bold text-wiah-green">&pound;{workforce.nationalLivingWage2024.toFixed(2)}/hr</p>
+                <p className="font-mono text-2xl font-bold text-wiah-green">£{workforce.nationalLivingWage2024.toFixed(2)}/hr</p>
                 <p className="text-xs text-wiah-mid mt-1">Minimum increased</p>
               </div>
             </div>
@@ -325,11 +325,11 @@ export default function ChildcarePage() {
 
         <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="30hrs"
           unit="free childcare per week for all children aged 9 months to 4 from September 2025"
-          description="The government&apos;s free childcare expansion &mdash; the largest reform in a generation &mdash; extends 15 free hours to all 2-year-olds from April 2024 and to children aged 9 months and above from September 2024, with 30 hours for working parents. By September 2025, all eligible children from 9 months to school age will have access to 30 free hours. An additional &pound;500 million was allocated to raise the funding rate per hour. For parents returning from parental leave, this represents a saving of up to &pound;10,000 per year. Ofsted finds 96% of providers Good or Outstanding."
-          source="Source: DfE &mdash; Education provision: children under 5 years of age 2023; Coram &mdash; Childcare Survey 2024."
+          description="The government's free childcare expansion — the largest reform in a generation — extends 15 free hours to all 2-year-olds from April 2024 and to children aged 9 months and above from September 2024, with 30 hours for working parents. By September 2025, all eligible children from 9 months to school age will have access to 30 free hours. An additional £500 million was allocated to raise the funding rate per hour. For parents returning from parental leave, this represents a saving of up to £10,000 per year. Ofsted finds 96% of providers Good or Outstanding."
+          source="Source: DfE — Education provision: children under 5 years of age 2023; Coram — Childcare Survey 2024."
         />
         </ScrollReveal>
 
@@ -344,7 +344,7 @@ export default function ChildcarePage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}

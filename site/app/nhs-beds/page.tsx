@@ -94,15 +94,15 @@ export default function NHSBedsPage() {
         <TopicHeader
           topic="NHS Beds"
           question="Has the NHS Run Out of Hospital Beds?"
-          finding="England has 99,000 hospital beds &mdash; down from 300,000 in 1987 and the lowest per capita in the developed world. Bed occupancy runs at 94% &mdash; above the 85% safety threshold. The NHS needs 10,000 more beds to meet demand safely. 1 in 5 hospital beds is occupied by a patient fit for discharge but awaiting social care."
+          finding="England has 99,000 hospital beds — down from 300,000 in 1987 and the lowest per capita in the developed world. Bed occupancy runs at 94% — above the 85% safety threshold. The NHS needs 10,000 more beds to meet demand safely. 1 in 5 hospital beds is occupied by a patient fit for discharge but awaiting social care."
           colour="#E63946"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England had 99,000 NHS hospital beds in 2022/23 &mdash; down from 135,000 in 2010 and from a post-war peak of 300,000 in 1987. At 2.1 beds per 1,000 population, England has the lowest density in western Europe: the EU average is 5.4 per 1,000, Germany runs at 8.0, and France at 5.9. The consequences of that gap are visible in the occupancy data. Average bed occupancy reached 94% in 2022/23, well above the 85% threshold above which infection-control protocols become hard to maintain and patient safety outcomes begin to deteriorate. That figure represents a structural condition, not a temporary surge: occupancy has not fallen below 88% since 2012/13.</p>
-            <p>The long-run reduction in beds was not an accident. It was a deliberate policy response to evidence &mdash; broadly correct &mdash; that shorter lengths of stay, day-case surgery, and community-based care produced better outcomes at lower cost than extended inpatient admission. The shift worked well where community infrastructure kept pace. It did not where social care failed to. England&apos;s social care system currently carries a 152,000-vacancy gap, and the result is measurable: 13,500 patients per day occupy acute hospital beds while being clinically fit for discharge, blocked by the absence of a care home place, domiciliary care package, or supported housing arrangement. That single cohort accounts for roughly 1 in 8 acute beds &mdash; de facto wasted capacity that drives the chronic occupancy crisis upstream.</p>
+            <p>England had 99,000 NHS hospital beds in 2022/23 — down from 135,000 in 2010 and from a post-war peak of 300,000 in 1987. At 2.1 beds per 1,000 population, England has the lowest density in western Europe: the EU average is 5.4 per 1,000, Germany runs at 8.0, and France at 5.9. The consequences of that gap are visible in the occupancy data. Average bed occupancy reached 94% in 2022/23, well above the 85% threshold above which infection-control protocols become hard to maintain and patient safety outcomes begin to deteriorate. That figure represents a structural condition, not a temporary surge: occupancy has not fallen below 88% since 2012/13.</p>
+            <p>The long-run reduction in beds was not an accident. It was a deliberate policy response to evidence — broadly correct — that shorter lengths of stay, day-case surgery, and community-based care produced better outcomes at lower cost than extended inpatient admission. The shift worked well where community infrastructure kept pace. It did not where social care failed to. England's social care system currently carries a 152,000-vacancy gap, and the result is measurable: 13,500 patients per day occupy acute hospital beds while being clinically fit for discharge, blocked by the absence of a care home place, domiciliary care package, or supported housing arrangement. That single cohort accounts for roughly 1 in 8 acute beds — de facto wasted capacity that drives the chronic occupancy crisis upstream.</p>
             </div>
         </section>
 
@@ -120,7 +120,7 @@ export default function NHSBedsPage() {
               value="99K"
               direction="down"
               polarity="up-is-good"
-              changeText="2022/23 &middot; Down from 300K in 1987 &middot; Lowest per capita in Western Europe &middot; 10K more beds needed (NHS estimate)"
+              changeText="2022/23 · Down from 300K in 1987 · Lowest per capita in Western Europe · 10K more beds needed (NHS estimate)"
               sparklineData={[135, 130, 126, 122, 115, 110, 103, 99]}
               onExpand={() => {}}
             />
@@ -129,7 +129,7 @@ export default function NHSBedsPage() {
               value="94%"
               direction="up"
               polarity="up-is-bad"
-              changeText="2022/23 &middot; Safety threshold: 85% &middot; Highest ever recorded &middot; Infection risk rises sharply above 85%"
+              changeText="2022/23 · Safety threshold: 85% · Highest ever recorded · Infection risk rises sharply above 85%"
               sparklineData={[87.5, 88.0, 88.5, 89.2, 89.9, 86.5, 91.0, 94.0]}
               onExpand={() => {}}
             />
@@ -138,7 +138,7 @@ export default function NHSBedsPage() {
               value="1 in 5"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; 13,500 daily &middot; Social care vacancies main cause &middot; Costs NHS &pound;1bn per year"
+              changeText="2023 · 13,500 daily · Social care vacancies main cause · Costs NHS £1bn per year"
               sparklineData={[5, 6, 7, 7, 8, 5, 15, 18, 20]}
               onExpand={() => {}}
             />
@@ -148,7 +148,7 @@ export default function NHSBedsPage() {
         <ScrollReveal>
           <section id="sec-beds" className="mb-12">
             <LineChart
-              title="NHS hospital beds, England (thousands), 2010/11&ndash;2022/23"
+              title="NHS hospital beds, England (thousands), 2010/11–2022/23"
               subtitle="Total available beds across all NHS trusts in England."
               series={bedsSeries}
               annotations={bedsAnnotations}
@@ -165,7 +165,7 @@ export default function NHSBedsPage() {
         <ScrollReveal>
           <section id="sec-occupancy" className="mb-12">
             <LineChart
-              title="NHS bed occupancy rate, England, 2010/11&ndash;2022/23"
+              title="NHS bed occupancy rate, England, 2010/11–2022/23"
               subtitle="Average daily occupied beds as a percentage of available beds. The 85% safety threshold marks the point where infection control and patient safety become harder to maintain."
               series={occupancySeries}
               yLabel="Occupancy (%)"
@@ -198,17 +198,17 @@ export default function NHSBedsPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England &mdash; Bed Availability and Occupancy Data</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England — Bed Availability and Occupancy Data</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="40+"
             unit="new Community Diagnostic Centres providing outpatient capacity without using hospital beds"
-            description="The NHS has opened more than 160 Community Diagnostic Centres (CDCs) since 2021, providing MRI, CT, endoscopy, and other diagnostic services outside hospitals &mdash; reducing unnecessary admissions and freeing beds. The Hospital at Home programme now supports 10,000 &apos;virtual beds&apos;, providing acute care in patients&apos; homes and allowing those who would previously have been admitted to avoid hospital entirely. Surgical Hubs &mdash; dedicated elective surgery centres separate from emergency pathways &mdash; are reducing cancellations. The NHS Long-Term Plan committed to increasing the number of same-day emergency care units to prevent unnecessary overnight admissions."
-            source="Source: NHS England &mdash; Bed Availability and Occupancy Data 2022/23; The King&apos;s Fund &mdash; NHS Bed Numbers Analysis 2023."
+            description="The NHS has opened more than 160 Community Diagnostic Centres (CDCs) since 2021, providing MRI, CT, endoscopy, and other diagnostic services outside hospitals — reducing unnecessary admissions and freeing beds. The Hospital at Home programme now supports 10,000 'virtual beds', providing acute care in patients' homes and allowing those who would previously have been admitted to avoid hospital entirely. Surgical Hubs — dedicated elective surgery centres separate from emergency pathways — are reducing cancellations. The NHS Long-Term Plan committed to increasing the number of same-day emergency care units to prevent unnecessary overnight admissions."
+            source="Source: NHS England — Bed Availability and Occupancy Data 2022/23; The King's Fund — NHS Bed Numbers Analysis 2023."
           />
         </ScrollReveal>
 
@@ -218,7 +218,7 @@ export default function NHSBedsPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

@@ -123,7 +123,7 @@ export default function DomesticAbusePage() {
         <TopicHeader
           topic="Domestic Abuse"
           question="How Many People Experience Domestic Abuse in Britain?"
-          finding="2.1 million adults experienced domestic abuse in England and Wales in 2022/23 &mdash; 1.4 million women and 700,000 men. Police recorded 906,535 domestic abuse-related crimes. Conviction rates for domestic abuse are just 7.1%. Around 2 women are killed by a partner or ex-partner each week."
+          finding="2.1 million adults experienced domestic abuse in England and Wales in 2022/23 — 1.4 million women and 700,000 men. Police recorded 906,535 domestic abuse-related crimes. Conviction rates for domestic abuse are just 7.1%. Around 2 women are killed by a partner or ex-partner each week."
           colour="#E63946"
           preposition="with"
         />
@@ -131,10 +131,10 @@ export default function DomesticAbusePage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              An estimated 2.1 million adults experienced domestic abuse in England and Wales in 2022/23 &mdash; 1.4 million women and 700,000 men &mdash; yet the Crime Survey for England and Wales is itself an undercount. SafeLives estimates that only one in five incidents is ever reported to police, falling to one in six for the most serious forms. Police recorded 906,535 domestic abuse-related crimes in 2022/23, the fourth consecutive annual rise and up from 596,000 in 2014/15, though improved recording under the 2015 NPCC definition accounts for part of the increase. Domestic abuse now constitutes 38% of all violent crime. Roughly two women are killed by a current or former partner each week &mdash; about 103 per year. Coercive control, criminalised under the Serious Crime Act 2015, produces just a 4.9% conviction rate despite 24,000 offences recorded annually.
+              An estimated 2.1 million adults experienced domestic abuse in England and Wales in 2022/23 — 1.4 million women and 700,000 men — yet the Crime Survey for England and Wales is itself an undercount. SafeLives estimates that only one in five incidents is ever reported to police, falling to one in six for the most serious forms. Police recorded 906,535 domestic abuse-related crimes in 2022/23, the fourth consecutive annual rise and up from 596,000 in 2014/15, though improved recording under the 2015 NPCC definition accounts for part of the increase. Domestic abuse now constitutes 38% of all violent crime. Roughly two women are killed by a current or former partner each week — about 103 per year. Coercive control, criminalised under the Serious Crime Act 2015, produces just a 4.9% conviction rate despite 24,000 offences recorded annually.
             </p>
             <p>
-              The criminal justice response remains strikingly weak. The charge rate for domestic abuse offences stands at 7.1%, below the 8.5% rate for all recorded crime. Victims withdrawing support for prosecution accounts for 40% of no-further-action decisions; evidence-gathering in cases of non-physical abuse and CPS resource constraints compound the problem. Domestic homicide reviews, mandatory since 2011, repeatedly identify missed intervention opportunities across police, social services and healthcare. SafeLives&apos; MARAC risk-assessment tool is now used by over 60% of police forces, routing high-risk cases to Multi-Agency Risk Assessment Conferences. But perpetrator programmes expose a 33-to-1 shortfall: roughly 6,000 places exist nationally against an estimated 200,000 or more high-risk perpetrators.
+              The criminal justice response remains strikingly weak. The charge rate for domestic abuse offences stands at 7.1%, below the 8.5% rate for all recorded crime. Victims withdrawing support for prosecution accounts for 40% of no-further-action decisions; evidence-gathering in cases of non-physical abuse and CPS resource constraints compound the problem. Domestic homicide reviews, mandatory since 2011, repeatedly identify missed intervention opportunities across police, social services and healthcare. SafeLives' MARAC risk-assessment tool is now used by over 60% of police forces, routing high-risk cases to Multi-Agency Risk Assessment Conferences. But perpetrator programmes expose a 33-to-1 shortfall: roughly 6,000 places exist nationally against an estimated 200,000 or more high-risk perpetrators.
             </p>
             </div>
         </section>
@@ -155,9 +155,9 @@ export default function DomesticAbusePage() {
               unit="M"
               direction="flat"
               polarity="up-is-bad"
-              changeText="2022/23 &middot; 1.4M women, 700K men &middot; Down from 2.4M peak (2016/17) &middot; Under-reporting endemic"
+              changeText="2022/23 · 1.4M women, 700K men · Down from 2.4M peak (2016/17) · Under-reporting endemic"
               sparklineData={[2.4, 2.3, 2.2, 2.1, 2.1, 2.0, 2.0, 2.1]}
-              source="ONS &mdash; Crime Survey for England and Wales"
+              source="ONS — Crime Survey for England and Wales"
               href="#sec-overview"/>
             <MetricCard
               label="Domestic abuse-related crimes recorded by police"
@@ -165,18 +165,18 @@ export default function DomesticAbusePage() {
               unit="K"
               direction="up"
               polarity="up-is-bad"
-              changeText="2022/23 &middot; Up from 596K in 2014/15 &middot; Better recording, not just rising incidents &middot; Charge rate only 7.1%"
+              changeText="2022/23 · Up from 596K in 2014/15 · Better recording, not just rising incidents · Charge rate only 7.1%"
               sparklineData={[596, 663, 730, 800, 858, 880, 862, 870, 906]}
-              source="ONS &mdash; Crime in England and Wales"
+              source="ONS — Crime in England and Wales"
               href="#sec-recorded"/>
             <MetricCard
               label="Women killed by partner or ex-partner (annual)"
               value={femicides ? femicides.latestAnnualCount.toString() : '—'}
               direction="flat"
               polarity="up-is-bad"
-              changeText="2022 &middot; 2 per week &middot; 60% of femicides &middot; Often preceded by coercive control &middot; DA = 38% of all homicides"
+              changeText="2022 · 2 per week · 60% of femicides · Often preceded by coercive control · DA = 38% of all homicides"
               sparklineData={[110, 105, 98, 102, 112, 100, 105, 103]}
-              source="ONS &mdash; Homicide Index; Femicide Census"
+              source="ONS — Homicide Index; Femicide Census"
               href="#sec-prevalence"/>
           </div>
         </ScrollReveal>
@@ -185,7 +185,7 @@ export default function DomesticAbusePage() {
         <div id="sec-recorded">
           {recordedCrimesSeries.length > 0 ? (
             <LineChart
-              title="Domestic abuse crimes recorded by police, 2014&ndash;2023"
+              title="Domestic abuse crimes recorded by police, 2014–2023"
               subtitle="Police-recorded domestic abuse-related crimes, England &amp; Wales. Rise partly reflects better recording, not only rising incidents."
               series={recordedCrimesSeries}
               annotations={recordedAnnotations}
@@ -205,7 +205,7 @@ export default function DomesticAbusePage() {
         <div id="sec-prevalence">
           {prevalenceSeries.length > 0 ? (
             <LineChart
-              title="Adults experiencing domestic abuse (survey estimate), 2016&ndash;2023"
+              title="Adults experiencing domestic abuse (survey estimate), 2016–2023"
               subtitle="Crime Survey for England and Wales estimate of adults experiencing any domestic abuse in the past year."
               series={prevalenceSeries}
               yLabel="Adults (millions)"
@@ -237,7 +237,7 @@ export default function DomesticAbusePage() {
                 ))}
               </div>
               <p className="font-mono text-[11px] text-wiah-mid mt-3">
-                Source: ONS &mdash; Domestic Abuse in England and Wales; Refuge; National Domestic Abuse Helpline.
+                Source: ONS — Domestic Abuse in England and Wales; Refuge; National Domestic Abuse Helpline.
               </p>
             </div>
           )}
@@ -248,9 +248,9 @@ export default function DomesticAbusePage() {
           <PositiveCallout
             title="Legal protections"
             value="2021"
-            unit="Domestic Abuse Act &mdash; the most significant reform in a generation"
-            description="The Domestic Abuse Act 2021 created, for the first time, a statutory definition of domestic abuse encompassing physical, emotional, coercive, and economic abuse. It established a new domestic abuse commissioner role (Nicole Jacobs), made non-fatal strangulation a specific offence, and extended legal protections to children who witness abuse. The Domestic Abuse Protection Order (DAPO), piloted since 2021, combines an immediate prohibition with longer-term positive requirements on perpetrators. The Tackling Domestic Abuse Plan (2022) committed &pound;230 million over three years. NICE guidance now recommends routine domestic abuse enquiry in health settings, recognising the NHS as a key point of disclosure."
-            source="Source: ONS &mdash; Domestic Abuse in England and Wales 2023; Home Office &mdash; Tackling Domestic Abuse Plan 2022."
+            unit="Domestic Abuse Act — the most significant reform in a generation"
+            description="The Domestic Abuse Act 2021 created, for the first time, a statutory definition of domestic abuse encompassing physical, emotional, coercive, and economic abuse. It established a new domestic abuse commissioner role (Nicole Jacobs), made non-fatal strangulation a specific offence, and extended legal protections to children who witness abuse. The Domestic Abuse Protection Order (DAPO), piloted since 2021, combines an immediate prohibition with longer-term positive requirements on perpetrators. The Tackling Domestic Abuse Plan (2022) committed £230 million over three years. NICE guidance now recommends routine domestic abuse enquiry in health settings, recognising the NHS as a key point of disclosure."
+            source="Source: ONS — Domestic Abuse in England and Wales 2023; Home Office — Tackling Domestic Abuse Plan 2022."
           />
         </ScrollReveal>
 
@@ -266,7 +266,7 @@ export default function DomesticAbusePage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}

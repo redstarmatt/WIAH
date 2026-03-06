@@ -77,14 +77,14 @@ export default function FamilyCourtsPage() {
         <TopicHeader
           topic="Family Courts"
           question="How Long Are Families Waiting for Court Decisions?"
-          finding="62,400 cases are outstanding in England&apos;s family courts &mdash; up 64% from pre-pandemic levels. The average private law case now takes 50 weeks to resolve, double the 2015 figure. Children caught in disputed proceedings wait nearly a year for a decision about where and with whom they will live."
+          finding="62,400 cases are outstanding in England's family courts — up 64% from pre-pandemic levels. The average private law case now takes 50 weeks to resolve, double the 2015 figure. Children caught in disputed proceedings wait nearly a year for a decision about where and with whom they will live."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England&apos;s family courts handle two broad categories of work. Public law cases involve local authorities seeking to protect children from harm &mdash; care proceedings, supervision orders, emergency protection. Private law cases involve disputes between individuals, overwhelmingly about child arrangements following separation: where a child will live, how much time they spend with each parent, and whether there are concerns about domestic abuse or welfare. Both categories are in crisis. Outstanding cases across the family court system reached 62,400 in 2024, up from 38,000 in 2015. The average private law case now takes 50 weeks from application to final order.</p>
-            <p>The 26-week statutory limit for care proceedings, introduced in 2014, was designed to prevent children languishing in temporary placements while courts deliberated. It worked initially, reducing average disposal times from 47 weeks to 27 weeks. But the gains have been eroded: by 2024, only 43% of care cases concluded within 26 weeks. Court closures during COVID-19 created a backlog that has never been fully cleared, and rising demand &mdash; driven partly by increased referrals from domestic abuse services and children&apos;s social care &mdash; has overwhelmed a system that was already operating at or beyond capacity.</p>
+            <p>England's family courts handle two broad categories of work. Public law cases involve local authorities seeking to protect children from harm — care proceedings, supervision orders, emergency protection. Private law cases involve disputes between individuals, overwhelmingly about child arrangements following separation: where a child will live, how much time they spend with each parent, and whether there are concerns about domestic abuse or welfare. Both categories are in crisis. Outstanding cases across the family court system reached 62,400 in 2024, up from 38,000 in 2015. The average private law case now takes 50 weeks from application to final order.</p>
+            <p>The 26-week statutory limit for care proceedings, introduced in 2014, was designed to prevent children languishing in temporary placements while courts deliberated. It worked initially, reducing average disposal times from 47 weeks to 27 weeks. But the gains have been eroded: by 2024, only 43% of care cases concluded within 26 weeks. Court closures during COVID-19 created a backlog that has never been fully cleared, and rising demand — driven partly by increased referrals from domestic abuse services and children's social care — has overwhelmed a system that was already operating at or beyond capacity.</p>
             </div>
         </section>
 
@@ -103,7 +103,7 @@ export default function FamilyCourtsPage() {
               polarity="up-is-bad"
               changeText="Up 64% from 38,000 in 2015"
               sparklineData={[38000, 37200, 36800, 37500, 39100, 48200, 54300, 56800, 60200, 62400]}
-              source="MoJ &middot; Family Court Statistics Quarterly, 2024"
+              source="MoJ · Family Court Statistics Quarterly, 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -112,9 +112,9 @@ export default function FamilyCourtsPage() {
               unit="weeks"
               direction="up"
               polarity="up-is-bad"
-              changeText="Private law cases &middot; up from 24 weeks in 2015"
+              changeText="Private law cases · up from 24 weeks in 2015"
               sparklineData={[24, 25, 27, 30, 32, 41, 45, 46, 48, 50]}
-              source="MoJ &middot; Family Court Statistics Quarterly, 2024"
+              source="MoJ · Family Court Statistics Quarterly, 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -122,9 +122,9 @@ export default function FamilyCourtsPage() {
               value="80%"
               direction="up"
               polarity="up-is-bad"
-              changeText="At least one unrepresented party &middot; post-LASPO impact"
+              changeText="At least one unrepresented party · post-LASPO impact"
               sparklineData={[58, 62, 66, 70, 73, 75, 77, 78, 79, 80]}
-              source="Cafcass &middot; Annual Report, 2024"
+              source="Cafcass · Annual Report, 2024"
               onExpand={() => {}}
             />
           </div>

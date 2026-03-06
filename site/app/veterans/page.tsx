@@ -134,10 +134,10 @@ export default function VeteransPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The 2021 Census &mdash; the first to include a veteran status question &mdash; counted 2.4 million veterans in the UK, of whom 2.1 million reside in England. More than 75% are aged 55 or over, but younger cohorts from Iraq and Afghanistan face acute transition challenges. An estimated 50,000 veterans lack a registered GP, according to NHS England analysis. The Office for Veterans&apos; Affairs, established in 2019, coordinates support through the Veterans&apos; Strategy Action Plan 2022&ndash;24, while the Armed Forces Act 2021 placed the Armed Forces Covenant on a statutory footing, requiring public bodies to give due regard to disadvantage faced by service leavers.
+              The 2021 Census — the first to include a veteran status question — counted 2.4 million veterans in the UK, of whom 2.1 million reside in England. More than 75% are aged 55 or over, but younger cohorts from Iraq and Afghanistan face acute transition challenges. An estimated 50,000 veterans lack a registered GP, according to NHS England analysis. The Office for Veterans' Affairs, established in 2019, coordinates support through the Veterans' Strategy Action Plan 2022–24, while the Armed Forces Act 2021 placed the Armed Forces Covenant on a statutory footing, requiring public bodies to give due regard to disadvantage faced by service leavers.
             </p>
             <p>
-              The forces themselves are shrinking. UK regular strength fell from 178,600 in 2010 to approximately 148,000 by 2024, well below the 160,000 trained-strength target. The Army missed its recruitment target for eleven consecutive years from 2012 to 2023; in 2023/24 actual intake was around 5,500 against a target of 6,930. King&apos;s College London research puts PTSD prevalence at roughly 17% among combat veterans, though only 6% of all veterans carry a clinical diagnosis. Op COURAGE, the consolidated NHS veterans&apos; mental health service launched in April 2021, received over 21,000 referrals in its first three years &mdash; but waits average seven weeks, exceeding the NICE recommendation that treatment begin within one month.
+              The forces themselves are shrinking. UK regular strength fell from 178,600 in 2010 to approximately 148,000 by 2024, well below the 160,000 trained-strength target. The Army missed its recruitment target for eleven consecutive years from 2012 to 2023; in 2023/24 actual intake was around 5,500 against a target of 6,930. King's College London research puts PTSD prevalence at roughly 17% among combat veterans, though only 6% of all veterans carry a clinical diagnosis. Op COURAGE, the consolidated NHS veterans' mental health service launched in April 2021, received over 21,000 referrals in its first three years — but waits average seven weeks, exceeding the NICE recommendation that treatment begin within one month.
             </p>
             </div>
         </section>
@@ -147,7 +147,7 @@ export default function VeteransPage() {
           { id: 'sec-recruitment', label: 'Armed forces recruitment' },
           { id: 'sec-population', label: 'Veteran population' },
           { id: 'sec-mental-health', label: 'Op COURAGE' },
-          { id: 'sec-improvement', label: 'What&apos;s improving' },
+          { id: 'sec-improvement', label: "What's improving" },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
@@ -189,7 +189,7 @@ export default function VeteransPage() {
         <ScrollReveal>
           <div id="sec-recruitment" className="mb-12">
             <LineChart
-              title="UK regular armed forces strength, 2010&ndash;2024"
+              title="UK regular armed forces strength, 2010–2024"
               subtitle="Trained strength excluding Gurkhas and full-time reserves. Target: 160,000"
               series={armedForcesSeries}
               annotations={annotations}
@@ -216,7 +216,7 @@ export default function VeteransPage() {
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-wiah-mid mt-6">Note: 75%+ of veterans are aged 55 or over. Younger cohorts (16&ndash;34) are from recent conflicts.</p>
+              <p className="text-xs text-wiah-mid mt-6">Note: 75%+ of veterans are aged 55 or over. Younger cohorts (16–34) are from recent conflicts.</p>
             </div>
           </div>
         </ScrollReveal>
@@ -224,7 +224,7 @@ export default function VeteransPage() {
         <ScrollReveal>
           <div id="sec-mental-health" className="mb-12">
             <LineChart
-              title="Op COURAGE NHS veterans mental health referrals, 2021&ndash;2024"
+              title="Op COURAGE NHS veterans mental health referrals, 2021–2024"
               subtitle="Launched April 2021. 21,000 referrals in first 3 years. Average wait: 7 weeks."
               series={opCourageSeries}
             />
@@ -234,11 +234,11 @@ export default function VeteransPage() {
         <ScrollReveal>
           <div id="sec-improvement" className="mb-12">
             <PositiveCallout
-              title="What&apos;s improving"
+              title="What's improving"
               value="21K"
               unit="veterans referred to Op COURAGE NHS mental health service since 2021"
-              description="Op COURAGE &mdash; launched in April 2021 by consolidating five previous NHS veteran mental health pathways &mdash; has referred 21,000 veterans for specialist mental health support in its first three years. Veterans can self-refer without a GP. The service includes the Veterans Trauma Network for those with complex PTSD from combat, the Veterans&apos; Mental Health Transition, Intervention and Liaison Service (TILS), and community-based support. The Armed Forces Covenant, now on a statutory footing, requires public bodies to give due regard to the needs of veterans."
-              source="Source: NHS England &mdash; Op COURAGE statistics 2024; MOD &mdash; Veterans in the United Kingdom."
+              description="Op COURAGE — launched in April 2021 by consolidating five previous NHS veteran mental health pathways — has referred 21,000 veterans for specialist mental health support in its first three years. Veterans can self-refer without a GP. The service includes the Veterans Trauma Network for those with complex PTSD from combat, the Veterans' Mental Health Transition, Intervention and Liaison Service (TILS), and community-based support. The Armed Forces Covenant, now on a statutory footing, requires public bodies to give due regard to the needs of veterans."
+              source="Source: NHS England — Op COURAGE statistics 2024; MOD — Veterans in the United Kingdom."
             />
           </div>
         </ScrollReveal>
@@ -249,7 +249,7 @@ export default function VeteransPage() {
             {data?.metadata.sources.map((src, idx) => (
               <div key={idx}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">{src.frequency}</div>
               </div>

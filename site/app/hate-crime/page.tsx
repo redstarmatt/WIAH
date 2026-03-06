@@ -81,12 +81,14 @@ export default function HateCrimePage() {
   return (
     <main>
       <TopicNav topic="Hate Crime" />
-      <TopicHeader
-        topic="Hate Crime"
-        question="Is hate crime increasing?"
-        finding="Hate crime in England and Wales more than doubled between 2013 and 2023, reaching a record 147,000 offences, though rises partly reflect improved recording and increasing willingness to report."
-        colour="#E63946"
-      />
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <TopicHeader
+          topic="Hate Crime"
+          question="Is hate crime increasing?"
+          finding="Hate crime in England and Wales more than doubled between 2013 and 2023, reaching a record 147,000 offences, though rises partly reflect improved recording and increasing willingness to report."
+          colour="#E63946"
+        />
+      </div>
 
       <section className="px-6 py-12 bg-white">
         <div className="max-w-5xl mx-auto">
@@ -181,8 +183,8 @@ export default function HateCrimePage() {
       <section id="sec-context" className="px-6 py-12 bg-white">
         <div className="max-w-2xl mx-auto">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Police-recorded hate crime in England and Wales has more than tripled since 2013, rising from 44,480 offences to 147,000 in 2023. Race hate crime accounts for 70% of the total &mdash; 104,000 offences in a single year. Transgender hate crime is the fastest-growing category, reaching 11,000 recorded offences in 2023. Hate crime is acutely sensitive to political climate: a 41% spike followed the Brexit referendum in June 2016, and subsequent peaks tracked terrorist attacks and heightened immigration rhetoric. Online hate crime, measured separately from 2021, now accounts for around a third of all incidents &mdash; a channel supercharged by algorithmic amplification and now designated a priority offence under the Online Safety Act 2023.</p>
-            <p>Reporting does not reliably lead to justice. Only 44% of recorded hate crimes result in a prosecution, with victim withdrawal the central bottleneck &mdash; victims disengage from proceedings citing fear of repeat harassment and distrust of the justice system. The CPS achieves an 86% conviction rate for cases it does bring, but the gap is before charge. Disability hate crime is the most severely underreported strand: victims are often isolated, frequently dependent on their abusers, and face profound barriers to reporting, while CPS charge rates for the strand are the lowest of any category. Dedicated hate crime units remain rare outside London and a few major cities, meaning most offences are investigated by neighbourhood officers with minimal specialist training.</p>
+            <p>Police-recorded hate crime in England and Wales has more than tripled since 2013, rising from 44,480 offences to 147,000 in 2023. Race hate crime accounts for 70% of the total — 104,000 offences in a single year. Transgender hate crime is the fastest-growing category, reaching 11,000 recorded offences in 2023. Hate crime is acutely sensitive to political climate: a 41% spike followed the Brexit referendum in June 2016, and subsequent peaks tracked terrorist attacks and heightened immigration rhetoric. Online hate crime, measured separately from 2021, now accounts for around a third of all incidents — a channel supercharged by algorithmic amplification and now designated a priority offence under the Online Safety Act 2023.</p>
+            <p>Reporting does not reliably lead to justice. Only 44% of recorded hate crimes result in a prosecution, with victim withdrawal the central bottleneck — victims disengage from proceedings citing fear of repeat harassment and distrust of the justice system. The CPS achieves an 86% conviction rate for cases it does bring, but the gap is before charge. Disability hate crime is the most severely underreported strand: victims are often isolated, frequently dependent on their abusers, and face profound barriers to reporting, while CPS charge rates for the strand are the lowest of any category. Dedicated hate crime units remain rare outside London and a few major cities, meaning most offences are investigated by neighbourhood officers with minimal specialist training.</p>
           </div>
         </div>
       </section>
@@ -193,7 +195,7 @@ export default function HateCrimePage() {
             title="Hate crime conviction rates improving"
             value="86"
             unit="%"
-            description="While the number of hate crime offences has risen, the conviction rate for those who are prosecuted has improved. The CPS charged 84% of hate crime suspects referred to it in 2022/23, and the conviction rate for completed prosecutions was 86% &mdash; higher than for overall crime. The challenge is getting more cases to the point of charge."
+            description="While the number of hate crime offences has risen, the conviction rate for those who are prosecuted has improved. The CPS charged 84% of hate crime suspects referred to it in 2022/23, and the conviction rate for completed prosecutions was 86% — higher than for overall crime. The challenge is getting more cases to the point of charge."
             source="CPS Hate Crime Report, 2022/23"
           />
         </div>

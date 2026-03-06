@@ -101,7 +101,7 @@ export default function WaitingInequalityPage() {
     : [];
 
   const gapAnnotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: '2020: COVID elective pause &mdash; gap widens' },
+    { date: new Date(2020, 5, 1), label: '2020: COVID elective pause — gap widens' },
     { date: new Date(2022, 5, 1), label: '2022: Elective recovery programme starts' },
   ];
 
@@ -127,10 +127,10 @@ export default function WaitingInequalityPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The NHS waiting list headline &mdash; 7.4 million people waiting for elective treatment &mdash; conceals a significant inequality. Patients living in the most deprived areas wait, on average, 4.2 weeks longer for the same procedure than those in the least deprived areas. The gap has doubled since 2019. It is not random: people in deprived areas are more likely to have complex conditions requiring longer pathways, are more likely to miss appointments due to transport costs or caring responsibilities, and are more likely to be seen in under-resourced trusts in areas with multiple deprivation.
+              The NHS waiting list headline — 7.4 million people waiting for elective treatment — conceals a significant inequality. Patients living in the most deprived areas wait, on average, 4.2 weeks longer for the same procedure than those in the least deprived areas. The gap has doubled since 2019. It is not random: people in deprived areas are more likely to have complex conditions requiring longer pathways, are more likely to miss appointments due to transport costs or caring responsibilities, and are more likely to be seen in under-resourced trusts in areas with multiple deprivation.
             </p>
             <p>
-              The consequence is that inequality in health outcomes is compounded by inequality in access to treatment. A diabetic patient in a deprived area who waits longer for ophthalmology is more likely to progress to sight loss. A hip replacement delayed for a working-age person in poverty has different consequences to the same delay for a retired person with private means. NHS England&apos;s CORE20PLUS5 programme explicitly targets the five clinical areas where this inequality is largest, but progress is slow.
+              The consequence is that inequality in health outcomes is compounded by inequality in access to treatment. A diabetic patient in a deprived area who waits longer for ophthalmology is more likely to progress to sight loss. A hip replacement delayed for a working-age person in poverty has different consequences to the same delay for a retired person with private means. NHS England's CORE20PLUS5 programme explicitly targets the five clinical areas where this inequality is largest, but progress is slow.
             </p>
           </div>
         </section>
@@ -181,7 +181,7 @@ export default function WaitingInequalityPage() {
         <ScrollReveal>
           <section id="sec-gap" className="mb-12">
             <LineChart
-              title="Deprivation gap in NHS elective waiting times, England, 2019&ndash;2024"
+              title="Deprivation gap in NHS elective waiting times, England, 2019–2024"
               subtitle="Gap in median referral-to-treatment wait between patients in the most and least deprived areas (IMD quintiles). The COVID elective pause disproportionately affected deprived areas and the gap has not recovered."
               series={gapSeries}
               annotations={gapAnnotations}
@@ -193,8 +193,8 @@ export default function WaitingInequalityPage() {
         <ScrollReveal>
           <section id="sec-total" className="mb-12">
             <LineChart
-              title="Total NHS England elective waiting list, 2019&ndash;2024"
-              subtitle="Total number of patients waiting for elective treatment. The list peaked at 7.8 million in 2023 and has begun to fall, but the inequality within the total &mdash; who waits longest &mdash; persists regardless of headline size."
+              title="Total NHS England elective waiting list, 2019–2024"
+              subtitle="Total number of patients waiting for elective treatment. The list peaked at 7.8 million in 2023 and has begun to fall, but the inequality within the total — who waits longest — persists regardless of headline size."
               series={totalListSeries}
               annotations={listAnnotations}
               yLabel="Millions of patients"
@@ -205,11 +205,11 @@ export default function WaitingInequalityPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="CORE20PLUS5"
             unit="NHS England inequality programme"
-            description="NHS England&apos;s CORE20PLUS5 programme targets the most deprived 20% of the population across five clinical areas (cardiovascular, cancer, maternity, severe mental illness, chronic respiratory disease) where inequality gaps are largest. Elective recovery funds include specific measures to prioritise patients who have waited longest regardless of area. The NHS Long Term Plan commits to reducing health inequality as a core objective."
-            source="Source: NHS England &mdash; RTT Waiting Times Statistics, 2024. NHS England &mdash; CORE20PLUS5 Dashboard, 2025."
+            description="NHS England's CORE20PLUS5 programme targets the most deprived 20% of the population across five clinical areas (cardiovascular, cancer, maternity, severe mental illness, chronic respiratory disease) where inequality gaps are largest. Elective recovery funds include specific measures to prioritise patients who have waited longest regardless of area. The NHS Long Term Plan commits to reducing health inequality as a core objective."
+            source="Source: NHS England — RTT Waiting Times Statistics, 2024. NHS England — CORE20PLUS5 Dashboard, 2025."
           />
         </ScrollReveal>
 
@@ -220,7 +220,7 @@ export default function WaitingInequalityPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

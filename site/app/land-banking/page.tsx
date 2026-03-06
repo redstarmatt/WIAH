@@ -81,17 +81,17 @@ export default function LandBankingPage() {
         <TopicHeader
           topic="Land Banking"
           question="Are Developers Sitting on Land Instead of Building Homes?"
-          finding="The UK&apos;s top 10 housebuilders hold planning permission for over 1 million homes they have not yet started building &mdash; a phenomenon known as &ldquo;land banking&rdquo; that critics say is a structural barrier to solving the housing crisis while developers maximise profit by rationing supply."
+          finding="The UK's top 10 housebuilders hold planning permission for over 1 million homes they have not yet started building — a phenomenon known as &ldquo;land banking&rdquo; that critics say is a structural barrier to solving the housing crisis while developers maximise profit by rationing supply."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England granted 474,000 planning permissions in 2023 but started only 158,000 new homes &mdash; a conversion rate of just 33%. The gap between permissions and completions has been widening for over a decade, and it sits at the centre of one of the most contested debates in British politics: are developers deliberately holding back supply to keep prices high, or are viability, infrastructure, and market conditions the real constraint? The major housebuilders argue the latter; campaigners, councils, and an increasing number of economists argue the former is at least part of the story.
+              England granted 474,000 planning permissions in 2023 but started only 158,000 new homes — a conversion rate of just 33%. The gap between permissions and completions has been widening for over a decade, and it sits at the centre of one of the most contested debates in British politics: are developers deliberately holding back supply to keep prices high, or are viability, infrastructure, and market conditions the real constraint? The major housebuilders argue the latter; campaigners, councils, and an increasing number of economists argue the former is at least part of the story.
             </p>
             <p>
-              The mechanics of land banking are structural rather than conspiratorial. Housebuilders typically acquire sites with outline planning permission, then apply for detailed permission before commencing construction. Each stage can be legitimately delayed while developers &ldquo;absorb&rdquo; completed units into the local market at the price point that maximises revenue rather than maximising volume. The business model of the major listed housebuilders &mdash; Barratt, Taylor Wimpey, Persimmon, Berkeley &mdash; is explicitly designed around margin rather than output. Annual reports consistently show that these companies target operating margins of 18&ndash;26% and slow construction during market downturns to protect margins rather than sustain completions. Between 2021 and 2023, as mortgage rates rose and buyer demand fell, all four reduced starts significantly while their land banks grew.
+              The mechanics of land banking are structural rather than conspiratorial. Housebuilders typically acquire sites with outline planning permission, then apply for detailed permission before commencing construction. Each stage can be legitimately delayed while developers &ldquo;absorb&rdquo; completed units into the local market at the price point that maximises revenue rather than maximising volume. The business model of the major listed housebuilders — Barratt, Taylor Wimpey, Persimmon, Berkeley — is explicitly designed around margin rather than output. Annual reports consistently show that these companies target operating margins of 18–26% and slow construction during market downturns to protect margins rather than sustain completions. Between 2021 and 2023, as mortgage rates rose and buyer demand fell, all four reduced starts significantly while their land banks grew.
             </p>
             </div>
         </section>
@@ -109,9 +109,9 @@ export default function LandBankingPage() {
               value="1M+"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from ~650,000 in 2016 &middot; 4+ years of supply at current build rate"
+              changeText="Up from ~650,000 in 2016 · 4+ years of supply at current build rate"
               sparklineData={[650, 700, 750, 800, 850, 900, 950, 1000]}
-              source="Lichfields &middot; From Permission to Completion 2023"
+              source="Lichfields · From Permission to Completion 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -120,19 +120,19 @@ export default function LandBankingPage() {
               unit="years"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 1.6 years in 2015 &middot; 75% of permissions not started within 3 years"
+              changeText="Up from 1.6 years in 2015 · 75% of permissions not started within 3 years"
               sparklineData={[1.6, 1.9, 2.1, 2.4, 2.6, 2.9, 3.1, 3.4]}
-              source="Lichfields &middot; Build-out rate analysis 2023"
+              source="Lichfields · Build-out rate analysis 2023"
               onExpand={() => {}}
             />
             <MetricCard
               label="Housebuilder profit margins (top 5)"
-              value="18&ndash;26%"
+              value="18–26%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Consistently 18&ndash;26% &middot; Industry target: margin over volume"
+              changeText="Consistently 18–26% · Industry target: margin over volume"
               sparklineData={[18, 20, 22, 24, 25, 26, 23, 21]}
-              source="Company annual reports &middot; Barratt, Taylor Wimpey, Persimmon 2023"
+              source="Company annual reports · Barratt, Taylor Wimpey, Persimmon 2023"
               onExpand={() => {}}
             />
           </div>
@@ -142,8 +142,8 @@ export default function LandBankingPage() {
           <section id="sec-permissions" className="mb-12">
             {permissionSeries.length > 0 ? (
               <LineChart
-                title="Planning permissions granted vs homes started vs completions, 2010&ndash;2024"
-                subtitle="All figures in thousands. The widening gap between permissions (dark) and starts (amber) illustrates the land banking effect. Completions (green) lag starts by 12&ndash;24 months."
+                title="Planning permissions granted vs homes started vs completions, 2010–2024"
+                subtitle="All figures in thousands. The widening gap between permissions (dark) and starts (amber) illustrates the land banking effect. Completions (green) lag starts by 12–24 months."
                 series={permissionSeries}
                 yLabel="Homes (thousands)"
                 source={{
@@ -163,7 +163,7 @@ export default function LandBankingPage() {
           <section id="sec-lag" className="mb-12">
             {lagSeries.length > 0 ? (
               <LineChart
-                title="Average time from planning permission to build start, 2015&ndash;2024"
+                title="Average time from planning permission to build start, 2015–2024"
                 subtitle="Average weeks from grant of detailed planning permission to commencement on site, for major residential schemes in England. Rising delay signals increasing strategic land holding."
                 series={lagSeries}
                 yLabel="Weeks"
@@ -184,8 +184,8 @@ export default function LandBankingPage() {
           <PositiveCallout
             title="What is changing"
             value="&ldquo;Use it or lose it&rdquo;"
-            description="The Planning and Infrastructure Bill (2025) proposes &ldquo;use it or lose it&rdquo; powers enabling councils to compulsorily purchase land where developers sit on permissions &mdash; potentially the most significant reform to development pressure since the 1947 Town and Country Planning Act. The Bill also proposes mandatory build-out reporting and new powers to issue completion notices."
-            source="Ministry of Housing, Communities &amp; Local Government &middot; Planning and Infrastructure Bill 2025"
+            description="The Planning and Infrastructure Bill (2025) proposes &ldquo;use it or lose it&rdquo; powers enabling councils to compulsorily purchase land where developers sit on permissions — potentially the most significant reform to development pressure since the 1947 Town and Country Planning Act. The Bill also proposes mandatory build-out reporting and new powers to issue completion notices."
+            source="Ministry of Housing, Communities &amp; Local Government · Planning and Infrastructure Bill 2025"
           />
         </ScrollReveal>
 
@@ -194,7 +194,7 @@ export default function LandBankingPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

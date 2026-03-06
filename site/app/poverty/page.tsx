@@ -206,16 +206,16 @@ export default function PovertyPage() {
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
               The defining feature of UK poverty is that employment no longer prevents it.
-              In 2023, 68% of people in poverty lived in a working family &mdash; up from 46%
+              In 2023, 68% of people in poverty lived in a working family — up from 46%
               in 2005. Rising rents, high childcare costs, and insecure hours mean a job is
               necessary but no longer sufficient. Child poverty has risen since 2012, driven
               by the benefit cap, the two-child limit, and eroding housing support. An
-              estimated 3.4 million children now grow up poor &mdash; the highest level in
+              estimated 3.4 million children now grow up poor — the highest level in
               25 years and the highest rate among large Western European countries.
             </p>
             <p>
-              At the sharpest end, 3.8 million people experienced destitution in 2022 &mdash;
-              unable to afford two or more essentials including food, heating, and shelter &mdash;
+              At the sharpest end, 3.8 million people experienced destitution in 2022 —
+              unable to afford two or more essentials including food, heating, and shelter —
               more than double the 2017 figure. One million of them were children. Food bank
               use has risen ninefold in a decade: the Trussell Trust distributed over
               3 million parcels in the last year, and its network covers only part of the
@@ -418,7 +418,7 @@ export default function PovertyPage() {
           <ScrollReveal>
             {benefitsReceiptSeries.length > 0 ? (
               <LineChart
-                title="Households receiving benefits, 2010&ndash;2023"
+                title="Households receiving benefits, 2010–2023"
                 subtitle="Percentage of UK households receiving at least one state benefit or tax credit."
                 series={benefitsReceiptSeries}
                 annotations={[
@@ -576,14 +576,14 @@ export default function PovertyPage() {
             {data?.metadata.sources.map((src, i) => (
               <li key={i}>
                 <a href={src.url} className="underline hover:text-wiah-blue" target="_blank" rel="noreferrer">
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}
             {wealthData?.metadata.sources.map((src, i) => (
               <li key={`wealth-${i}`}>
                 <a href={src.url} className="underline hover:text-wiah-blue" target="_blank" rel="noreferrer">
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}

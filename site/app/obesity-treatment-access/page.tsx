@@ -146,10 +146,10 @@ export default function ObesityTreatmentPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              GLP-1 receptor agonists &mdash; semaglutide (Wegovy, Ozempic) and tirzepatide (Mounjaro) &mdash; represent the most significant advance in obesity treatment in a generation. Clinical trials show average weight losses of 15&ndash;22%, comparable to bariatric surgery. NICE approved Wegovy for NHS use in 2023, estimating 860,000 people eligible under the criteria. By the end of 2025, approximately 35,000 had received a prescription &mdash; around 4% of those eligible. The NHS has implemented a strict tier system requiring patients to access specialist weight management services first, a bottleneck that has limited uptake to a fraction of potential beneficiaries.
+              GLP-1 receptor agonists — semaglutide (Wegovy, Ozempic) and tirzepatide (Mounjaro) — represent the most significant advance in obesity treatment in a generation. Clinical trials show average weight losses of 15–22%, comparable to bariatric surgery. NICE approved Wegovy for NHS use in 2023, estimating 860,000 people eligible under the criteria. By the end of 2025, approximately 35,000 had received a prescription — around 4% of those eligible. The NHS has implemented a strict tier system requiring patients to access specialist weight management services first, a bottleneck that has limited uptake to a fraction of potential beneficiaries.
             </p>
             <p>
-              While GLP-1 drugs have begun reducing demand for bariatric surgery &mdash; referrals fell 18% in 2024 &mdash; those already waiting have faced dramatically longer delays. The average wait for bariatric surgery reached 30 months in 2024, up from 8 months in 2018. COVID-19 theatre closures created an initial backlog, but the structural underfunding of tier 3 and tier 4 obesity services has meant recovery has been slow. Adult obesity prevalence stands at 29.5%, the highest recorded. England has the third highest obesity rate in Europe. The economic cost to the NHS is estimated at &pound;6.5 billion annually, rising to &pound;9.7 billion by 2050 without intervention.
+              While GLP-1 drugs have begun reducing demand for bariatric surgery — referrals fell 18% in 2024 — those already waiting have faced dramatically longer delays. The average wait for bariatric surgery reached 30 months in 2024, up from 8 months in 2018. COVID-19 theatre closures created an initial backlog, but the structural underfunding of tier 3 and tier 4 obesity services has meant recovery has been slow. Adult obesity prevalence stands at 29.5%, the highest recorded. England has the third highest obesity rate in Europe. The economic cost to the NHS is estimated at £6.5 billion annually, rising to £9.7 billion by 2050 without intervention.
             </p>
           </div>
         </section>
@@ -170,7 +170,7 @@ export default function ObesityTreatmentPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="vs 860,000 eligible &middot; Strict rationing via tier system"
+              changeText="vs 860,000 eligible · Strict rationing via tier system"
               sparklineData={glp1Sparkline}
               onExpand={() => {}}
             />
@@ -180,7 +180,7 @@ export default function ObesityTreatmentPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 8 months in 2018 &middot; Drug success reducing surgery demand"
+              changeText="Up from 8 months in 2018 · Drug success reducing surgery demand"
               sparklineData={bariatricSparkline}
               onExpand={() => {}}
             />
@@ -190,7 +190,7 @@ export default function ObesityTreatmentPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 26.9% in 2015 &middot; Highest rate on record"
+              changeText="Up from 26.9% in 2015 · Highest rate on record"
               sparklineData={obesitySparkline}
               onExpand={() => {}}
             />
@@ -201,7 +201,7 @@ export default function ObesityTreatmentPage() {
         <ScrollReveal>
           <section id="sec-drugs" className="mb-12">
             <LineChart
-              title="NHS GLP-1 weight loss drug prescriptions, 2022&ndash;2025"
+              title="NHS GLP-1 weight loss drug prescriptions, 2022–2025"
               subtitle="Annual NHS prescriptions for GLP-1 receptor agonists (semaglutide, tirzepatide) licensed for weight management, England. Rapid growth from near-zero following 2023 NICE approval for Wegovy."
               series={glp1Series}
               annotations={glp1Annotations}
@@ -214,7 +214,7 @@ export default function ObesityTreatmentPage() {
         <ScrollReveal>
           <section id="sec-surgery" className="mb-12">
             <LineChart
-              title="Bariatric surgery wait time and adult obesity prevalence, 2015&ndash;2025"
+              title="Bariatric surgery wait time and adult obesity prevalence, 2015–2025"
               subtitle="Average wait from referral to bariatric surgery (months) alongside adult obesity prevalence (%), England. Surgery waits tripled as COVID-19 created a backlog in already underfunded services."
               series={bariatricSeries}
               annotations={bariatricAnnotations}
@@ -226,11 +226,11 @@ export default function ObesityTreatmentPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="2024"
             unit="Obesity Strategy"
-            description="NHS England&apos;s Long Term Plan commits to expanding tier 3 specialist weight management services across all ICB areas. The government&apos;s 2024 Obesity Strategy targets reducing obesity prevalence by 2035 through a combination of GLP-1 drug access, reformulation of processed foods, and expanded physical activity programmes. NICE&apos;s 2025 technology appraisal pathway for Mounjaro will enable prescribing through primary care for the first time, removing the tier 3 bottleneck for many eligible patients."
-            source="Source: NHS England Long Term Plan 2019, updated 2024 &mdash; Obesity chapter. NICE TA876 (semaglutide), TA1026 (tirzepatide)."
+            description="NHS England's Long Term Plan commits to expanding tier 3 specialist weight management services across all ICB areas. The government's 2024 Obesity Strategy targets reducing obesity prevalence by 2035 through a combination of GLP-1 drug access, reformulation of processed foods, and expanded physical activity programmes. NICE's 2025 technology appraisal pathway for Mounjaro will enable prescribing through primary care for the first time, removing the tier 3 bottleneck for many eligible patients."
+            source="Source: NHS England Long Term Plan 2019, updated 2024 — Obesity chapter. NICE TA876 (semaglutide), TA1026 (tirzepatide)."
           />
         </ScrollReveal>
 
@@ -241,7 +241,7 @@ export default function ObesityTreatmentPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

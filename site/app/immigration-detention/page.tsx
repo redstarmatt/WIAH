@@ -74,8 +74,8 @@ export default function ImmigrationDetentionPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom is one of the few countries in Europe with no statutory time limit on immigration detention. On any given day in 2024, approximately 2,900 people were held in immigration removal centres &mdash; a figure recovering towards pre-pandemic levels. Detention is authorised by immigration officers and Home Office caseworkers rather than by a court, with judicial oversight available only through bail applications or judicial review. Around 45% of detainees in 2024 had been held for more than 28 days, the threshold frequently cited in reform proposals as the appropriate maximum. The Shaw Reviews of 2016 and 2018 found the detention estate was harming detainees&apos; mental health and recommended greater use of alternatives; implementation has been partial.</p>
-            <p>Approximately 60% of people who leave detention are released without being removed from the UK &mdash; granted bail, left to remain, or having removal directions cancelled &mdash; raising questions about whether detention achieves its stated purpose. Independent inspections by HMIP have documented the detention of people with serious mental illness, torture victims, and those with significant health needs in facilities not equipped to meet them. The Adults at Risk policy and Rule 35 medical reporting exist as safeguards but have not been consistently applied. Legal aid pressures have reduced access to early representation, leaving detainees less able to challenge detention or navigate the bail process.</p>
+            <p>The United Kingdom is one of the few countries in Europe with no statutory time limit on immigration detention. On any given day in 2024, approximately 2,900 people were held in immigration removal centres — a figure recovering towards pre-pandemic levels. Detention is authorised by immigration officers and Home Office caseworkers rather than by a court, with judicial oversight available only through bail applications or judicial review. Around 45% of detainees in 2024 had been held for more than 28 days, the threshold frequently cited in reform proposals as the appropriate maximum. The Shaw Reviews of 2016 and 2018 found the detention estate was harming detainees' mental health and recommended greater use of alternatives; implementation has been partial.</p>
+            <p>Approximately 60% of people who leave detention are released without being removed from the UK — granted bail, left to remain, or having removal directions cancelled — raising questions about whether detention achieves its stated purpose. Independent inspections by HMIP have documented the detention of people with serious mental illness, torture victims, and those with significant health needs in facilities not equipped to meet them. The Adults at Risk policy and Rule 35 medical reporting exist as safeguards but have not been consistently applied. Legal aid pressures have reduced access to early representation, leaving detainees less able to challenge detention or navigate the bail process.</p>
           </div>
         </section>
 
@@ -95,7 +95,7 @@ export default function ImmigrationDetentionPage() {
               polarity={'up-is-bad' as const}
               changeText="Recovering towards pre-pandemic levels"
               sparklineData={[3235, 3167, 3095, 2997, 2872, 1533, 1642, 2184, 2743]}
-              href="#sec-chart"source="Home Office &middot; Immigration statistics: detention tables"
+              href="#sec-chart"source="Home Office · Immigration statistics: detention tables"
             />
             <MetricCard
               label="Held for over 28 days"
@@ -105,7 +105,7 @@ export default function ImmigrationDetentionPage() {
               polarity={'up-is-bad' as const}
               changeText="Held beyond proposed time limit"
               sparklineData={[38, 39, 40, 41, 42, 36, 38, 42, 44]}
-              href="#sec-chart"source="Home Office &middot; Immigration statistics: detention tables"
+              href="#sec-chart"source="Home Office · Immigration statistics: detention tables"
             />
             <MetricCard
               label="Released without removal"
@@ -115,7 +115,7 @@ export default function ImmigrationDetentionPage() {
               polarity={'up-is-bad' as const}
               changeText="Of detainees released, not removed from UK"
               sparklineData={[54, 55, 56, 57, 58, 72, 68, 63, 61]}
-              href="#sec-chart"source="Home Office &middot; Immigration statistics: detention tables"
+              href="#sec-chart"source="Home Office · Immigration statistics: detention tables"
             />
           </div>
         </ScrollReveal>
@@ -123,7 +123,7 @@ export default function ImmigrationDetentionPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Immigration detention population, 2015&ndash;2024"
+              title="Immigration detention population, 2015–2024"
               subtitle="Average daily population in immigration removal centres and short-term holding facilities."
               series={detentionSeries}
               yLabel="Count / %"
@@ -139,9 +139,9 @@ export default function ImmigrationDetentionPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Home Office &mdash; Immigration statistics: detention tables. Published quarterly. gov.uk/government/collections/immigration-statistics-quarterly-release</p>
-            <p>Refugee Council &mdash; Immigration detention briefings. refugeecouncil.org.uk</p>
-            <p>UNHCR &mdash; UK detention monitoring reports. unhcr.org/uk</p>
+            <p>Home Office — Immigration statistics: detention tables. Published quarterly. gov.uk/government/collections/immigration-statistics-quarterly-release</p>
+            <p>Refugee Council — Immigration detention briefings. refugeecouncil.org.uk</p>
+            <p>UNHCR — UK detention monitoring reports. unhcr.org/uk</p>
             <p>Immigration Removal Centre independent monitoring board reports. gov.uk/government/organisations/independent-monitoring-boards</p>
             <p>Daily population is the average number of people held in immigration removal centres and short-term holding facilities. The 28-day threshold is used as a reform benchmark. Released without removal includes bail grants, leave grants, and removal direction cancellations. 2020 figures reflect COVID-19 operational restrictions.</p>
           </div>

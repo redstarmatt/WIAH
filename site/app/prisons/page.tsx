@@ -106,7 +106,7 @@ export default function PrisonsPage() {
         topic="Prisons"
         colour="#6B7280"
         question="Is the British Prison System Actually Working?"
-        finding="The prison population in England and Wales reached 88,000 in 2024 &mdash; the highest ever, above operational capacity. Reoffending within 12 months: 26%. Assaults are at record levels. The government released 5,500 prisoners early in 2024 to prevent system collapse."
+        finding="The prison population in England and Wales reached 88,000 in 2024 — the highest ever, above operational capacity. Reoffending within 12 months: 26%. Assaults are at record levels. The government released 5,500 prisoners early in 2024 to prevent system collapse."
       />
 
       <div className="max-w-5xl mx-auto px-6 py-12">
@@ -114,24 +114,24 @@ export default function PrisonsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The prison population of England and Wales reached 88,000 in 2024 &mdash; the highest ever
+              The prison population of England and Wales reached 88,000 in 2024 — the highest ever
               recorded, exceeding operational capacity of roughly 85,400 certified places. It had dipped to
               78,000 during COVID in 2020 before surging on the back of tougher sentencing and a Crown Court
-              backlog that has pushed remand numbers to 15,000, or 19% of all inmates &mdash; double the 2019
+              backlog that has pushed remand numbers to 15,000, or 19% of all inmates — double the 2019
               figure. Defendants now wait two years or more for trial, the longest court delays on record. In
               September 2024, the government introduced an emergency early release scheme, freeing 5,500
-              prisoners after serving 40% rather than 50% of their sentences &mdash; a measure last used in 1987
+              prisoners after serving 40% rather than 50% of their sentences — a measure last used in 1987
               and 2007.
             </p>
             <p>
-              The system struggles to reduce reoffending. The proven reoffending rate within 12&nbsp;months
-              stands at 26% overall, but 38% for those serving sentences of under 12&nbsp;months &mdash; and
+              The system struggles to reduce reoffending. The proven reoffending rate within 12 months
+              stands at 26% overall, but 38% for those serving sentences of under 12 months — and
               two-thirds of men reoffend within two years, according to the Howard League. The Ministry of
-              Justice estimates the total cost of reoffending at &pound;18&nbsp;billion per year. An IFS study
-              found that immediate custodial sentences of under 12&nbsp;months produce no better reoffending
+              Justice estimates the total cost of reoffending at £18 billion per year. An IFS study
+              found that immediate custodial sentences of under 12 months produce no better reoffending
               outcomes than community sentences. Intensive Supervision Courts were piloted in 2024 as an
-              alternative for prolific offenders. Women make up 4% of the prison population &mdash; 3,800
-              inmates &mdash; with 77% serving sentences of under 12&nbsp;months, often for non-violent offences.
+              alternative for prolific offenders. Women make up 4% of the prison population — 3,800
+              inmates — with 77% serving sentences of under 12 months, often for non-violent offences.
             </p>
             </div>
         </section>
@@ -176,7 +176,7 @@ export default function PrisonsPage() {
           <div className="mb-12">
             <LineChart
               series={populationSeries}
-              title="Prison population, England &amp; Wales, 2014&ndash;2024"
+              title="Prison population, England &amp; Wales, 2014–2024"
               subtitle="Total inmates at end of month"
               yLabel="Population (thousands)"
               annotations={[
@@ -214,7 +214,7 @@ export default function PrisonsPage() {
           <div className="mb-12">
             <LineChart
               series={assaultsSeries}
-              title="Assaults in prisons, 2014&ndash;2023"
+              title="Assaults in prisons, 2014–2023"
               subtitle="All incidents recorded as assault"
               yLabel="Assaults (thousands)"
             />
@@ -225,7 +225,7 @@ export default function PrisonsPage() {
           <div className="mb-12">
             <LineChart
               series={reoffendingSeries}
-              title="Proven reoffending rate, 2016&ndash;2022"
+              title="Proven reoffending rate, 2016–2022"
               subtitle="Caution or conviction within 12 months of release"
               yLabel="Reoffending rate (%)"
             />
@@ -236,9 +236,9 @@ export default function PrisonsPage() {
           <PositiveCallout
             title="Expansion plan"
             value="5,800"
-            unit="new prison places delivered by 2024 &mdash; part of £4 billion 20,000-place expansion"
-            description="The government has committed to building 20,000 new prison places by 2030, with 5,800 delivered by mid-2024 at a cost of &pound;4 billion. New facilities include HMP Five Wells (Wellingborough) and HMP Fosse Way (Glen Parva). New prisons are designed to &ldquo;colocate&rdquo; education and rehabilitation programmes within purpose-built wings. The Independent Monitoring Boards report improved conditions in new builds. The Prison Education Framework contracts with private providers to deliver literacy, numeracy, and vocational training &mdash; recognised by the Farmer Review (2017) as essential to reducing reoffending."
-            source="Source: HMPPS &mdash; Prison Population Bulletin 2024; MOJ &mdash; Proven Reoffending Statistics 2022."
+            unit="new prison places delivered by 2024 — part of £4 billion 20,000-place expansion"
+            description="The government has committed to building 20,000 new prison places by 2030, with 5,800 delivered by mid-2024 at a cost of £4 billion. New facilities include HMP Five Wells (Wellingborough) and HMP Fosse Way (Glen Parva). New prisons are designed to &ldquo;colocate&rdquo; education and rehabilitation programmes within purpose-built wings. The Independent Monitoring Boards report improved conditions in new builds. The Prison Education Framework contracts with private providers to deliver literacy, numeracy, and vocational training — recognised by the Farmer Review (2017) as essential to reducing reoffending."
+            source="Source: HMPPS — Prison Population Bulletin 2024; MOJ — Proven Reoffending Statistics 2022."
           />
         </ScrollReveal>
 
@@ -250,7 +250,7 @@ export default function PrisonsPage() {
               {data.metadata.sources.map((source, idx) => (
                 <div key={idx}>
                   <a href={source.url} className="text-wiah-blue hover:underline" target="_blank" rel="noopener noreferrer">
-                    {source.name} &mdash; {source.dataset}
+                    {source.name} — {source.dataset}
                   </a>
                   {' '}({source.frequency})
                 </div>

@@ -74,8 +74,8 @@ export default function FreeSchoolMealsGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The free school meals (FSM) system in England has a significant structural problem: eligibility is determined by a binary threshold set in 2018 when universal credit was introduced. A family with earned income below &pound;7,400 per year (after tax, excluding benefits) is eligible; above that, they are not. The threshold has not been uprated with inflation, excluding more families in real terms each year. The number of children eligible has risen from 1.54 million in 2020 to 2.2 million in 2023 &mdash; driven partly by threshold adjustments and partly by rising poverty rates &mdash; and uptake among eligible children is high at 95%. But an estimated 870,000 children live in poverty by standard measures yet do not qualify, leaving them in classrooms where other children receive free meals they cannot access.</p>
-            <p>The threshold is also a poverty trap: because eligibility is lost when earned income exceeds &pound;7,400, some parents face a disincentive to increase their working hours, losing FSM entitlement worth around &pound;500 per child per year before their additional earnings compensate. Teachers increasingly report buying food for children who arrive hungry but are not on the FSM register &mdash; an informal safety net that depends on individual goodwill rather than policy design. The Greater London Authority introduced universal free school meals for all primary pupils in 2023; at national level the barrier to universalisation is cost, and the political will to fund reform of the threshold has been absent.</p>
+            <p>The free school meals (FSM) system in England has a significant structural problem: eligibility is determined by a binary threshold set in 2018 when universal credit was introduced. A family with earned income below £7,400 per year (after tax, excluding benefits) is eligible; above that, they are not. The threshold has not been uprated with inflation, excluding more families in real terms each year. The number of children eligible has risen from 1.54 million in 2020 to 2.2 million in 2023 — driven partly by threshold adjustments and partly by rising poverty rates — and uptake among eligible children is high at 95%. But an estimated 870,000 children live in poverty by standard measures yet do not qualify, leaving them in classrooms where other children receive free meals they cannot access.</p>
+            <p>The threshold is also a poverty trap: because eligibility is lost when earned income exceeds £7,400, some parents face a disincentive to increase their working hours, losing FSM entitlement worth around £500 per child per year before their additional earnings compensate. Teachers increasingly report buying food for children who arrive hungry but are not on the FSM register — an informal safety net that depends on individual goodwill rather than policy design. The Greater London Authority introduced universal free school meals for all primary pupils in 2023; at national level the barrier to universalisation is cost, and the political will to fund reform of the threshold has been absent.</p>
           </div>
         </section>
 
@@ -93,9 +93,9 @@ export default function FreeSchoolMealsGapPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="+59% since 2015 &middot; threshold adjusted"
+              changeText="+59% since 2015 · threshold adjusted"
               sparklineData={[1380000, 1390000, 1540000, 1790000, 1970000, 2080000, 2200000]}
-              href="#sec-chart"source="DfE &middot; Schools, Pupils and their Characteristics 2023"
+              href="#sec-chart"source="DfE · Schools, Pupils and their Characteristics 2023"
             />
             <MetricCard
               label="Uptake of eligible"
@@ -105,7 +105,7 @@ export default function FreeSchoolMealsGapPage() {
               polarity="up-is-good"
               changeText="almost all eligible children now claiming"
               sparklineData={[93, 94, 94, 94, 95, 95, 95]}
-              href="#sec-chart"source="DfE &middot; Schools, Pupils and their Characteristics 2023"
+              href="#sec-chart"source="DfE · Schools, Pupils and their Characteristics 2023"
             />
             <MetricCard
               label="Poverty gap children"
@@ -113,9 +113,9 @@ export default function FreeSchoolMealsGapPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="in poverty but above UC threshold &middot; policy gap"
+              changeText="in poverty but above UC threshold · policy gap"
               sparklineData={[720000, 740000, 800000, 820000, 840000, 860000, 870000]}
-              href="#sec-chart"source="CPAG / IFS analysis &middot; 2023"
+              href="#sec-chart"source="CPAG / IFS analysis · 2023"
             />
           </div>
         </ScrollReveal>
@@ -123,7 +123,7 @@ export default function FreeSchoolMealsGapPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Children eligible for and receiving free school meals, England, 2015&ndash;2023"
+              title="Children eligible for and receiving free school meals, England, 2015–2023"
               subtitle="Children eligible for free school meals (dark blue) and those actually receiving them (green). Gap between lines represents non-take-up. The larger gap is children in poverty who do not qualify."
               series={series}
               yLabel="Number of children"
@@ -139,10 +139,10 @@ export default function FreeSchoolMealsGapPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Department for Education &mdash; Schools, Pupils and their Characteristics. Annual statistical release. explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics</p>
-            <p>Child Poverty Action Group &mdash; Free School Meals eligibility and poverty analysis. cpag.org.uk/policy-and-campaigns/briefings/free-school-meals</p>
-            <p>Institute for Fiscal Studies &mdash; Free school meals: eligibility and coverage analysis. ifs.org.uk</p>
-            <p>FSM eligibility is determined by whether a child&rsquo;s family receives qualifying benefits or has earned income below &pound;7,400 per year (net, excluding benefits) under universal credit. Poverty gap estimate uses DWP poverty statistics combined with FSM eligibility data to identify children below 60% median income who do not meet FSM criteria. Receiving figures exclude universal infant free school meals (all reception to Year 2 pupils).</p>
+            <p>Department for Education — Schools, Pupils and their Characteristics. Annual statistical release. explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics</p>
+            <p>Child Poverty Action Group — Free School Meals eligibility and poverty analysis. cpag.org.uk/policy-and-campaigns/briefings/free-school-meals</p>
+            <p>Institute for Fiscal Studies — Free school meals: eligibility and coverage analysis. ifs.org.uk</p>
+            <p>FSM eligibility is determined by whether a child&rsquo;s family receives qualifying benefits or has earned income below £7,400 per year (net, excluding benefits) under universal credit. Poverty gap estimate uses DWP poverty statistics combined with FSM eligibility data to identify children below 60% median income who do not meet FSM criteria. Receiving figures exclude universal infant free school meals (all reception to Year 2 pupils).</p>
           </div>
         </section>
       </main>

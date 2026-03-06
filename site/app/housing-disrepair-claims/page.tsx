@@ -59,8 +59,8 @@ export default function HousingDisrepairClaimsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Housing disrepair claims filed at county courts reached approximately 92,000 in 2024 &mdash; a 180% increase from 33,000 in 2019. The Homes (Fitness for Human Habitation) Act 2018 gave tenants a direct right of action against landlords, and a commercial claims sector &mdash; conditional fee solicitors and claims management companies &mdash; accelerated uptake during and after the pandemic, as households spending more time at home became more aware of damp, mould, and structural defects. The Awaab Ishak case &mdash; a two-year-old who died from black mould exposure in a Rochdale social housing flat in 2020 &mdash; crystallised public awareness. Awaab&apos;s Law, enshrined in the Social Housing (Regulation) Act 2023, now requires social landlords to investigate reports of damp and mould within 14 days and repair emergency hazards within 24 hours. The English Housing Survey 2023 found 4.2 million homes &mdash; 16% of the housing stock &mdash; below the Decent Homes Standard, including 1.1 million with category 1 hazards.</p>
-            <p>The claims concentrate in the social housing sector, where landlords have clearly defined repair obligations. Private renters face higher barriers &mdash; including the risk of retaliatory eviction. The burden falls disproportionately on older tenants, disabled people, and families in overcrowded accommodation, who are least able to pursue legal action and most exposed to health harms from damp and cold. Housing associations and local authorities with poorly maintained legacy stock generate the highest claim rates, in some cases diverting maintenance budgets into legal costs &mdash; the reverse of the intended effect.</p>
+            <p>Housing disrepair claims filed at county courts reached approximately 92,000 in 2024 — a 180% increase from 33,000 in 2019. The Homes (Fitness for Human Habitation) Act 2018 gave tenants a direct right of action against landlords, and a commercial claims sector — conditional fee solicitors and claims management companies — accelerated uptake during and after the pandemic, as households spending more time at home became more aware of damp, mould, and structural defects. The Awaab Ishak case — a two-year-old who died from black mould exposure in a Rochdale social housing flat in 2020 — crystallised public awareness. Awaab's Law, enshrined in the Social Housing (Regulation) Act 2023, now requires social landlords to investigate reports of damp and mould within 14 days and repair emergency hazards within 24 hours. The English Housing Survey 2023 found 4.2 million homes — 16% of the housing stock — below the Decent Homes Standard, including 1.1 million with category 1 hazards.</p>
+            <p>The claims concentrate in the social housing sector, where landlords have clearly defined repair obligations. Private renters face higher barriers — including the risk of retaliatory eviction. The burden falls disproportionately on older tenants, disabled people, and families in overcrowded accommodation, who are least able to pursue legal action and most exposed to health harms from damp and cold. Housing associations and local authorities with poorly maintained legacy stock generate the highest claim rates, in some cases diverting maintenance budgets into legal costs — the reverse of the intended effect.</p>
           </div>
         </section>
 
@@ -80,7 +80,7 @@ export default function HousingDisrepairClaimsPage() {
               polarity={'up-is-bad' as const}
               changeText="+180% since 2019 · surge post-pandemic"
               sparklineData={[28000, 30000, 33000, 35000, 38000, 48000, 65000, 80000, 92000]}
-              href="#sec-chart"source="Ministry of Justice &middot; Civil Justice Statistics 2024"
+              href="#sec-chart"source="Ministry of Justice · Civil Justice Statistics 2024"
             />
             <MetricCard
               label="Homes with category 1 hazards"
@@ -90,17 +90,17 @@ export default function HousingDisrepairClaimsPage() {
               polarity={'up-is-bad' as const}
               changeText="1.1m homes with most serious risks"
               sparklineData={[1.3, 1.3, 1.2, 1.2, 1.2, 1.1, 1.1, 1.1, 1.1]}
-              href="#sec-chart"source="DLUHC &middot; English Housing Survey 2023"
+              href="#sec-chart"source="DLUHC · English Housing Survey 2023"
             />
             <MetricCard
               label="Average compensation awarded"
-              value="&pound;4,200"
+              value="£4,200"
               unit=""
               direction={'up' as const}
               polarity={'up-is-good' as const}
-              changeText="+&pound;1,100 since 2020 · rising awards"
+              changeText="+£1,100 since 2020 · rising awards"
               sparklineData={[2100, 2300, 2600, 2800, 3100, 3400, 3700, 4000, 4200]}
-              href="#sec-chart"source="Ministry of Justice &middot; Civil Justice Statistics 2024"
+              href="#sec-chart"source="Ministry of Justice · Civil Justice Statistics 2024"
             />
           </div>
         </ScrollReveal>
@@ -108,7 +108,7 @@ export default function HousingDisrepairClaimsPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Housing disrepair claims, 2016&ndash;2024"
+              title="Housing disrepair claims, 2016–2024"
               subtitle="Annual housing disrepair claims filed at county courts in England and Wales."
               series={series}
               yLabel="Claims (thousands)"
@@ -124,8 +124,8 @@ export default function HousingDisrepairClaimsPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Ministry of Justice &mdash; Civil Justice Statistics Quarterly. Published quarterly. gov.uk/government/collections/civil-justice-statistics-quarterly</p>
-            <p>DLUHC &mdash; English Housing Survey 2023. Published annually. gov.uk/government/collections/english-housing-survey</p>
+            <p>Ministry of Justice — Civil Justice Statistics Quarterly. Published quarterly. gov.uk/government/collections/civil-justice-statistics-quarterly</p>
+            <p>DLUHC — English Housing Survey 2023. Published annually. gov.uk/government/collections/english-housing-survey</p>
             <p>Claims figures are county court housing disrepair claims under the Landlord and Tenant Act 1985 and Homes (Fitness for Human Habitation) Act 2018. Category 1 hazard data from English Housing Survey. Compensation figures are mean awards in settled and judged cases.</p>
           </div>
         </section>

@@ -60,7 +60,7 @@ export default function TravellerSiteProvisionPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has a shortfall of around 5,000 authorised Traveller pitches, according to the Traveller Movement and Friends Families and Travellers. Planning applications for Traveller sites are refused at approximately double the rate of equivalent settled community applications &mdash; a disparity consistent across decades of data. Gypsy and Traveller Accommodation Needs Assessments require local authorities to identify and allocate sufficient sites in their local plans; in practice, the majority fall short of identified need. The Police, Crime, Sentencing and Courts Act 2022 introduced new powers to direct Travellers off land without permission &mdash; including vehicle seizure &mdash; without addressing the root cause: the shortage of anywhere legal to go. The Equality and Human Rights Commission criticised the powers as disproportionate.</p>
+            <p>England has a shortfall of around 5,000 authorised Traveller pitches, according to the Traveller Movement and Friends Families and Travellers. Planning applications for Traveller sites are refused at approximately double the rate of equivalent settled community applications — a disparity consistent across decades of data. Gypsy and Traveller Accommodation Needs Assessments require local authorities to identify and allocate sufficient sites in their local plans; in practice, the majority fall short of identified need. The Police, Crime, Sentencing and Courts Act 2022 introduced new powers to direct Travellers off land without permission — including vehicle seizure — without addressing the root cause: the shortage of anywhere legal to go. The Equality and Human Rights Commission criticised the powers as disproportionate.</p>
             <p>The consequences of inadequate provision fall across every dimension of life for Gypsy, Roma and Traveller communities. GCSE attainment rates are the lowest of any ethnic group at approximately 13% achieving expected standard; life expectancy is lower than the general population; maternity outcomes are significantly worse; and mental ill health rates are higher. These outcomes are structurally linked to insecure housing, mobility-related barriers to NHS registration, and social exclusion. The Equality Act 2010 protects GRT ethnicity as a protected characteristic, but enforcement of equality duties in housing allocation and site provision has been consistently limited.</p>
           </div>
         </section>
@@ -79,9 +79,9 @@ export default function TravellerSiteProvisionPage() {
               unit=""
               direction={'up' as const}
               polarity={'up-is-bad' as const}
-              changeText="Growing gap &middot; inadequate local plan allocation"
+              changeText="Growing gap · inadequate local plan allocation"
               sparklineData={[3500, 3700, 3900, 4100, 4300, 4500, 4600, 4800, 5000]}
-              href="#sec-chart"source="Friends Families and Travellers &middot; Site Provision Analysis 2024"
+              href="#sec-chart"source="Friends Families and Travellers · Site Provision Analysis 2024"
             />
             <MetricCard
               label="Traveller planning refusal rate"
@@ -91,7 +91,7 @@ export default function TravellerSiteProvisionPage() {
               polarity={'up-is-bad' as const}
               changeText="48% vs 21% for settled community applications"
               sparklineData={[46, 47, 47, 48, 49, 50, 48, 48, 48]}
-              href="#sec-chart"source="DLUHC &middot; Planning Application Statistics 2024"
+              href="#sec-chart"source="DLUHC · Planning Application Statistics 2024"
             />
             <MetricCard
               label="Unauthorised encampments per year"
@@ -101,7 +101,7 @@ export default function TravellerSiteProvisionPage() {
               polarity={'up-is-bad' as const}
               changeText="Result of authorised provision shortage"
               sparklineData={[2400, 2500, 2600, 2700, 2800, 2900, 3000, 3100, 3200]}
-              href="#sec-chart"source="DLUHC &middot; Traveller Caravan Count 2024"
+              href="#sec-chart"source="DLUHC · Traveller Caravan Count 2024"
             />
           </div>
         </ScrollReveal>
@@ -109,7 +109,7 @@ export default function TravellerSiteProvisionPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Estimated authorised Traveller pitch shortfall, 2016&ndash;2024"
+              title="Estimated authorised Traveller pitch shortfall, 2016–2024"
               subtitle="Estimated gap between authorised pitch supply and assessed need in England."
               series={series}
               yLabel="Pitch shortfall (estimate)"
@@ -125,9 +125,9 @@ export default function TravellerSiteProvisionPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Friends Families and Travellers &mdash; Site Provision Analysis 2024. gypsy-traveller.org</p>
-            <p>DLUHC &mdash; Traveller Caravan Count. Published biannually. gov.uk/government/collections/traveller-caravan-count</p>
-            <p>DLUHC &mdash; Planning Application Statistics. gov.uk/government/collections/planning-applications-statistics</p>
+            <p>Friends Families and Travellers — Site Provision Analysis 2024. gypsy-traveller.org</p>
+            <p>DLUHC — Traveller Caravan Count. Published biannually. gov.uk/government/collections/traveller-caravan-count</p>
+            <p>DLUHC — Planning Application Statistics. gov.uk/government/collections/planning-applications-statistics</p>
             <p>Pitch shortfall estimates are modelled from Gypsy and Traveller Accommodation Needs Assessments versus allocated supply. Refusal rates compare Traveller site applications to all other residential applications. Unauthorised encampment figures from biannual Traveller Caravan Count.</p>
           </div>
         </section>

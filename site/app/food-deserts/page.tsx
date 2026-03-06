@@ -75,7 +75,7 @@ export default function FoodDesertsPage() {
         <TopicHeader
           topic="Food Deserts"
           question="Do You Live in a Food Desert?"
-          finding="Around 8 million people in the UK live more than a mile from a supermarket and have limited access to fresh food. Deprived areas have five times fewer supermarkets per person than affluent ones. The cost-of-living crisis has intensified food access inequality: budget supermarkets are largely absent from deprived areas, while convenience stores charge a 10&ndash;20% premium on the same goods."
+          finding="Around 8 million people in the UK live more than a mile from a supermarket and have limited access to fresh food. Deprived areas have five times fewer supermarkets per person than affluent ones. The cost-of-living crisis has intensified food access inequality: budget supermarkets are largely absent from deprived areas, while convenience stores charge a 10–20% premium on the same goods."
           colour="#E63946"
           preposition="in"
         />
@@ -83,8 +83,8 @@ export default function FoodDesertsPage() {
         {/* Context section (MUST come before SectionNav) */}
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 8 million people in the UK live more than a mile from a supermarket without access to a car &mdash; a figure that maps almost exactly onto deprivation. Deprived areas have roughly five times fewer supermarkets per head than affluent ones, and the gap is widening. Major retailers have quietly closed stores in lower-income neighbourhoods over the past decade while opening larger formats in more prosperous suburbs. Aldi and Lidl have grown fast, but their new stores have largely followed car-owning customers into retail parks rather than high streets in high-poverty areas. Convenience stores charge a 10&ndash;20% premium on equivalent goods, with fresh produce running 39% more expensive than in supermarkets. When food inflation peaked at 19% in 2022&ndash;23, this structural penalty fell hardest on those already stretched: the poorest households spend roughly double the share of their income on food compared to the most affluent, so the same price rise hit them with twice the force.</p>
-            <p>Government policy has not kept pace with the scale of the problem. The National Food Strategy, published in 2021, set out a detailed case for reform including a sugar and salt reformulation tax, but the government declined to implement its central recommendations. The Healthy Start voucher scheme remains underused, covering a narrow slice of those affected. Scotland&apos;s Good Food Nation Act 2022 creates a statutory framework for food inequality that has no equivalent in England. Community food hubs, FareShare, and food sharing apps like OLIO and Too Good To Go are expanding, but these remain patchwork &mdash; dependent on charitable funding and local authority capacity rather than structural reform of how food retail operates in the UK&apos;s most deprived communities.</p>
+            <p>Around 8 million people in the UK live more than a mile from a supermarket without access to a car — a figure that maps almost exactly onto deprivation. Deprived areas have roughly five times fewer supermarkets per head than affluent ones, and the gap is widening. Major retailers have quietly closed stores in lower-income neighbourhoods over the past decade while opening larger formats in more prosperous suburbs. Aldi and Lidl have grown fast, but their new stores have largely followed car-owning customers into retail parks rather than high streets in high-poverty areas. Convenience stores charge a 10–20% premium on equivalent goods, with fresh produce running 39% more expensive than in supermarkets. When food inflation peaked at 19% in 2022–23, this structural penalty fell hardest on those already stretched: the poorest households spend roughly double the share of their income on food compared to the most affluent, so the same price rise hit them with twice the force.</p>
+            <p>Government policy has not kept pace with the scale of the problem. The National Food Strategy, published in 2021, set out a detailed case for reform including a sugar and salt reformulation tax, but the government declined to implement its central recommendations. The Healthy Start voucher scheme remains underused, covering a narrow slice of those affected. Scotland's Good Food Nation Act 2022 creates a statutory framework for food inequality that has no equivalent in England. Community food hubs, FareShare, and food sharing apps like OLIO and Too Good To Go are expanding, but these remain patchwork — dependent on charitable funding and local authority capacity rather than structural reform of how food retail operates in the UK's most deprived communities.</p>
           </div>
         </section>
 
@@ -104,7 +104,7 @@ export default function FoodDesertsPage() {
               unit="million"
               direction="flat"
               polarity="up-is-bad"
-              changeText="2023 estimate &middot; Live more than 1 mile from supermarket &middot; No access to a car"
+              changeText="2023 estimate · Live more than 1 mile from supermarket · No access to a car"
               source="Consumer Data Research Centre"
               sparklineData={accessSparkline}
               href="#sec-overview"/>
@@ -113,7 +113,7 @@ export default function FoodDesertsPage() {
               value="2.8"
               direction="down"
               polarity="up-is-good"
-              changeText="vs 6.1 in least deprived &middot; 5x gap between richest and poorest areas"
+              changeText="vs 6.1 in least deprived · 5x gap between richest and poorest areas"
               source="ONS &amp; Consumer Data Research Centre"
               href="#sec-charts"/>
             <MetricCard
@@ -121,7 +121,7 @@ export default function FoodDesertsPage() {
               value="15%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Average markup on equivalent groceries &middot; Higher for fresh produce"
+              changeText="Average markup on equivalent groceries · Higher for fresh produce"
               source="Which? Consumer Research"
               href="#sec-charts"/>
           </div>
@@ -132,7 +132,7 @@ export default function FoodDesertsPage() {
           <ScrollReveal>
             <div className="mb-12">
               <h3 className="text-[18px] font-bold text-wiah-black mb-2">Population with limited food access</h3>
-              <p className="text-sm text-wiah-mid mb-6">Percentage of UK population living more than 1 mile from supermarket with no car access, 2010&ndash;2023</p>
+              <p className="text-sm text-wiah-mid mb-6">Percentage of UK population living more than 1 mile from supermarket with no car access, 2010–2023</p>
               <div className="bg-white rounded-lg border border-wiah-border p-6">
                 {data ? (
                   <LineChart title="Population with limited food access" series={accessSeries} />
@@ -146,7 +146,7 @@ export default function FoodDesertsPage() {
           <ScrollReveal>
             <div className="mb-12">
               <h3 className="text-[18px] font-bold text-wiah-black mb-2">Supermarket density over time</h3>
-              <p className="text-sm text-wiah-mid mb-6">Average number of supermarkets per 100,000 UK population, 2012&ndash;2023</p>
+              <p className="text-sm text-wiah-mid mb-6">Average number of supermarkets per 100,000 UK population, 2012–2023</p>
               <div className="bg-white rounded-lg border border-wiah-border p-6">
                 {data ? (
                   <LineChart title="Supermarket density over time" series={densitySeries} />

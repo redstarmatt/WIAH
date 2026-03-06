@@ -121,18 +121,18 @@ export default function SocialCareTurnoverPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Social Care Workforce Turnover"
-          question="Why Can&apos;t Social Care Keep Its Workers?"
-          finding="Staff turnover in the adult social care sector reached 28.3% in 2024 &mdash; one in three workers leaves every year. 131,000 vacancies go unfilled. Average pay is &pound;10.89/hour, barely above minimum wage."
+          question="Why Can't Social Care Keep Its Workers?"
+          finding="Staff turnover in the adult social care sector reached 28.3% in 2024 — one in three workers leaves every year. 131,000 vacancies go unfilled. Average pay is £10.89/hour, barely above minimum wage."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Adult social care employs approximately 1.52 million people in England &mdash; more than the NHS &mdash; yet it operates with annual staff turnover of 28.3%. In practical terms, this means the sector has to replace one in three of its workers every year. The cost of this churn is staggering: Skills for Care estimates recruitment and induction costs of approximately &pound;3,000 per worker, putting the annual recruitment cost burden at around &pound;1 billion. The toll on care quality is harder to quantify but no less real: continuity of care is the most important determinant of wellbeing for older people with dementia and complex needs.
+              Adult social care employs approximately 1.52 million people in England — more than the NHS — yet it operates with annual staff turnover of 28.3%. In practical terms, this means the sector has to replace one in three of its workers every year. The cost of this churn is staggering: Skills for Care estimates recruitment and induction costs of approximately £3,000 per worker, putting the annual recruitment cost burden at around £1 billion. The toll on care quality is harder to quantify but no less real: continuity of care is the most important determinant of wellbeing for older people with dementia and complex needs.
             </p>
             <p>
-              The fundamental driver is pay. At &pound;10.89 per hour in 2024 &mdash; barely above the National Living Wage of &pound;11.44 &mdash; care worker pay fails to reflect the skill, physical and emotional demands of the role. A supermarket retail assistant or a warehouse picker can earn similar wages with far less relational and clinical complexity. NHS pay rises have compounded the problem by creating a persistent wage gap between NHS healthcare support workers (who do comparable work) and care sector workers, accelerating movement from care into the NHS. International recruitment &mdash; driven by a post-Brexit visa regime that admitted 70,000 overseas care workers in 2023 &mdash; has partially plugged the gap but raised its own concerns about exploitation and sustainability.
+              The fundamental driver is pay. At £10.89 per hour in 2024 — barely above the National Living Wage of £11.44 — care worker pay fails to reflect the skill, physical and emotional demands of the role. A supermarket retail assistant or a warehouse picker can earn similar wages with far less relational and clinical complexity. NHS pay rises have compounded the problem by creating a persistent wage gap between NHS healthcare support workers (who do comparable work) and care sector workers, accelerating movement from care into the NHS. International recruitment — driven by a post-Brexit visa regime that admitted 70,000 overseas care workers in 2023 — has partially plugged the gap but raised its own concerns about exploitation and sustainability.
             </p>
           </div>
         </section>
@@ -153,7 +153,7 @@ export default function SocialCareTurnoverPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 25% in 2015 &middot; 1 in 3 workers leaves every year"
+              changeText="Up from 25% in 2015 · 1 in 3 workers leaves every year"
               sparklineData={[25.2, 25.9, 26.8, 27.1, 27.8, 27.4, 27.1, 27.6, 28.0, 28.3]}
               onExpand={() => {}}
             />
@@ -163,7 +163,7 @@ export default function SocialCareTurnoverPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Down from peak 155,000 &middot; International recruitment main relief valve"
+              changeText="Down from peak 155,000 · International recruitment main relief valve"
               sparklineData={[82, 88, 110, 105, 155, 152, 131]}
               onExpand={() => {}}
             />
@@ -173,7 +173,7 @@ export default function SocialCareTurnoverPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="+33% since 2018 but barely above minimum wage &middot; Real terms flat"
+              changeText="+33% since 2018 but barely above minimum wage · Real terms flat"
               sparklineData={[8.20, 8.45, 8.72, 9.10, 9.80, 10.40, 10.89]}
               onExpand={() => {}}
             />
@@ -184,7 +184,7 @@ export default function SocialCareTurnoverPage() {
         <ScrollReveal>
           <section id="sec-turnover" className="mb-12">
             <LineChart
-              title="Adult social care staff turnover rate, England, 2015&ndash;2024"
+              title="Adult social care staff turnover rate, England, 2015–2024"
               subtitle="Annual turnover as a percentage of the workforce. One in three care workers leaves every year. Turnover costs the sector an estimated £1 billion annually in recruitment and induction."
               series={turnoverSeries}
               annotations={turnoverAnnotations}
@@ -196,7 +196,7 @@ export default function SocialCareTurnoverPage() {
         <ScrollReveal>
           <section id="sec-vacancies" className="mb-12">
             <LineChart
-              title="Unfilled adult social care vacancies, England, 2018&ndash;2024"
+              title="Unfilled adult social care vacancies, England, 2018–2024"
               subtitle="Estimated vacancies on a given day. Peaked at 155,000 in 2022 as post-pandemic demand surged. Fell to 131,000 by 2024 largely due to international recruitment of overseas care workers."
               series={vacanciesAndPaySeries}
               annotations={vacancyAnnotations}
@@ -208,11 +208,11 @@ export default function SocialCareTurnoverPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Care Workforce Pathway 2023"
             unit=""
-            description="The Care Workforce Pathway launched in 2023 introduces a new career structure for care workers with clear progression routes and professional recognition. NHS pay rises have fuelled movement from care to NHS, prompting sector-specific retention strategies including care-specific supplements. Some local authorities are piloting &lsquo;real living wage&rsquo; requirements in their care commissioning contracts. The government&apos;s adult social care reform white paper includes long-term workforce investment commitments."
-            source="Source: Skills for Care &mdash; State of the adult social care sector 2024; DHSC &mdash; People at the Heart of Care workforce strategy."
+            description="The Care Workforce Pathway launched in 2023 introduces a new career structure for care workers with clear progression routes and professional recognition. NHS pay rises have fuelled movement from care to NHS, prompting sector-specific retention strategies including care-specific supplements. Some local authorities are piloting &lsquo;real living wage&rsquo; requirements in their care commissioning contracts. The government's adult social care reform white paper includes long-term workforce investment commitments."
+            source="Source: Skills for Care — State of the adult social care sector 2024; DHSC — People at the Heart of Care workforce strategy."
           />
         </ScrollReveal>
 
@@ -223,7 +223,7 @@ export default function SocialCareTurnoverPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

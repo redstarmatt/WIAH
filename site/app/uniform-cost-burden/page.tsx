@@ -124,17 +124,17 @@ export default function UniformCostBurdenPage() {
         <TopicHeader
           topic="School Uniform Costs"
           question="Can Families Afford the School Uniform?"
-          finding="The average cost of a primary school uniform is &pound;337 per child per year, rising to &pound;442 at secondary. Three in ten parents go into debt to buy school uniforms. The Uniform Cost Regulations 2022 have had limited impact."
+          finding="The average cost of a primary school uniform is £337 per child per year, rising to £442 at secondary. Three in ten parents go into debt to buy school uniforms. The Uniform Cost Regulations 2022 have had limited impact."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              School uniform costs have risen 17% at primary and 19% at secondary since 2019 &mdash; significantly faster than general inflation over the same period. The drivers are well understood: compulsory branded items (logoed polo shirts, blazers, PE kit) that can only be purchased from designated suppliers, often at high margins; specialist equipment requirements that go beyond the DfE&apos;s minimum definition; and the expectation of separate items for different weather, PE, and art activities. A secondary school pupil in full uniform &mdash; blazer, tie, PE kit, specialist shoes, bag, and all required extras &mdash; can cost parents over &pound;600 before any optional items.
+              School uniform costs have risen 17% at primary and 19% at secondary since 2019 — significantly faster than general inflation over the same period. The drivers are well understood: compulsory branded items (logoed polo shirts, blazers, PE kit) that can only be purchased from designated suppliers, often at high margins; specialist equipment requirements that go beyond the DfE's minimum definition; and the expectation of separate items for different weather, PE, and art activities. A secondary school pupil in full uniform — blazer, tie, PE kit, specialist shoes, bag, and all required extras — can cost parents over £600 before any optional items.
             </p>
             <p>
-              The School Uniform (Minimum Requirements) Regulations 2022 introduced requirements for schools to limit branded items to three (down from an unlimited number), ensure at least one affordable high-street alternative for each required item, and publish their uniform policies online. The impact has been modest: the regulations apply only to maintained schools and academies with older uniform policies, enforcement is light, and many schools have found ways to maintain branded requirements within the letter of the rules. Three in ten parents report going into debt &mdash; using credit cards, overdrafts, or buy-now-pay-later services &mdash; to cover uniform costs at the start of the school year.
+              The School Uniform (Minimum Requirements) Regulations 2022 introduced requirements for schools to limit branded items to three (down from an unlimited number), ensure at least one affordable high-street alternative for each required item, and publish their uniform policies online. The impact has been modest: the regulations apply only to maintained schools and academies with older uniform policies, enforcement is light, and many schools have found ways to maintain branded requirements within the letter of the rules. Three in ten parents report going into debt — using credit cards, overdrafts, or buy-now-pay-later services — to cover uniform costs at the start of the school year.
             </p>
           </div>
         </section>
@@ -151,21 +151,21 @@ export default function UniformCostBurdenPage() {
           <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Average primary school uniform cost"
-              value="&pound;337"
+              value="£337"
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+17% since 2019 &middot; Logos and branded items biggest driver"
+              changeText="+17% since 2019 · Logos and branded items biggest driver"
               sparklineData={[289, 298, 310, 325, 337, 337]}
               onExpand={() => {}}
             />
             <MetricCard
               label="Average secondary uniform cost"
-              value="&pound;442"
+              value="£442"
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+19% since 2019 &middot; Specialist PE kit often costs extra &middot; Blazers expensive"
+              changeText="+19% since 2019 · Specialist PE kit often costs extra · Blazers expensive"
               sparklineData={[372, 380, 398, 418, 435, 442]}
               onExpand={() => {}}
             />
@@ -175,7 +175,7 @@ export default function UniformCostBurdenPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 22% in 2021 &middot; Credit, overdraft, BNPL &middot; Second-hand markets growing"
+              changeText="Up from 22% in 2021 · Credit, overdraft, BNPL · Second-hand markets growing"
               sparklineData={[22, 25, 28, 30]}
               onExpand={() => {}}
             />
@@ -186,7 +186,7 @@ export default function UniformCostBurdenPage() {
         <ScrollReveal>
           <section id="sec-costs" className="mb-12">
             <LineChart
-              title="School uniform costs, primary and secondary, England, 2019&ndash;2024"
+              title="School uniform costs, primary and secondary, England, 2019–2024"
               subtitle="Average annual cost to kit out one child in full school uniform including PE kit, bag and all required items. Both primary and secondary costs have risen well above general inflation."
               series={primarySecondarySeries}
               annotations={costAnnotations}
@@ -198,7 +198,7 @@ export default function UniformCostBurdenPage() {
         <ScrollReveal>
           <section id="sec-debt" className="mb-12">
             <LineChart
-              title="Parents going into debt to buy school uniform, 2021&ndash;2024"
+              title="Parents going into debt to buy school uniform, 2021–2024"
               subtitle="Percentage of parents using credit cards, overdrafts, or buy-now-pay-later services to cover school uniform costs. Worsened through cost-of-living crisis despite 2022 regulations intended to limit costs."
               series={debtSeries}
               annotations={[{ date: new Date(2022, 8, 1), label: '2022: Regulations introduced' }]}
@@ -210,11 +210,11 @@ export default function UniformCostBurdenPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Uniform exchange"
             unit="schemes in every council area"
             description="The School Uniform (Minimum Requirements) Regulations 2022 require schools to limit branded items to three per uniform and ensure affordable alternatives exist at high-street retailers for every required item. Many councils now run uniform exchange schemes allowing families to donate and collect good-condition second-hand uniform at no cost. The Labour government is considering extending the scope of uniform regulations to cover pricing directly. Scotland already restricts the number of branded items more strictly and provides uniform grants to low-income families as a right rather than a discretionary payment."
-            source="Source: Child Poverty Action Group Cost of a Child 2024 &middot; Citizens Advice Back to School Costs Survey 2024."
+            source="Source: Child Poverty Action Group Cost of a Child 2024 · Citizens Advice Back to School Costs Survey 2024."
           />
         </ScrollReveal>
 
@@ -225,7 +225,7 @@ export default function UniformCostBurdenPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

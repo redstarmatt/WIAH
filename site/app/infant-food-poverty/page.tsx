@@ -62,8 +62,8 @@ export default function InfantFoodPovertyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Food poverty in infancy causes developmental disadvantage that persists for years: breast milk or formula is the only appropriate food for the first six months of life, making adequate nutrition a non-discretionary necessity. Baby banks &mdash; voluntary organisations providing formula, nappies, and weaning food to families in crisis &mdash; served over 200,000 families in 2023, up from around 45,000 in 2018, a 344% rise driven by the cost-of-living crisis. Infant formula prices rose from around &pound;8 to over &pound;12 per 800g tin between 2021 and 2023 &mdash; more than &pound;50 per month for a formula-fed infant. Research by First Steps Nutrition Trust found parents diluting formula to make it last longer, a practice that is nutritionally dangerous. Healthy Start vouchers provide &pound;4.25 per week to eligible parents &mdash; widely considered insufficient and not keeping pace with formula price inflation.</p>
-            <p>The UK has one of the lowest breastfeeding continuation rates in Europe: while around 80% of babies are breastfed at birth, only 48% receive any breast milk at six weeks and fewer than 1% are exclusively breastfed at six months against WHO guidance. Support for breastfeeding &mdash; health visitor contact, peer support &mdash; has been cut alongside other public health services. 1 in 3 low-income parents report struggling to afford formula. The burden falls disproportionately on lone-parent families, those on Universal Credit, and families in temporary accommodation where feeding routines are hardest to maintain. In a country with a statutory minimum wage and a comprehensive welfare state, the persistence of infant food poverty reflects a structural gap in nutrition policy for the youngest children.</p>
+            <p>Food poverty in infancy causes developmental disadvantage that persists for years: breast milk or formula is the only appropriate food for the first six months of life, making adequate nutrition a non-discretionary necessity. Baby banks — voluntary organisations providing formula, nappies, and weaning food to families in crisis — served over 200,000 families in 2023, up from around 45,000 in 2018, a 344% rise driven by the cost-of-living crisis. Infant formula prices rose from around £8 to over £12 per 800g tin between 2021 and 2023 — more than £50 per month for a formula-fed infant. Research by First Steps Nutrition Trust found parents diluting formula to make it last longer, a practice that is nutritionally dangerous. Healthy Start vouchers provide £4.25 per week to eligible parents — widely considered insufficient and not keeping pace with formula price inflation.</p>
+            <p>The UK has one of the lowest breastfeeding continuation rates in Europe: while around 80% of babies are breastfed at birth, only 48% receive any breast milk at six weeks and fewer than 1% are exclusively breastfed at six months against WHO guidance. Support for breastfeeding — health visitor contact, peer support — has been cut alongside other public health services. 1 in 3 low-income parents report struggling to afford formula. The burden falls disproportionately on lone-parent families, those on Universal Credit, and families in temporary accommodation where feeding routines are hardest to maintain. In a country with a statutory minimum wage and a comprehensive welfare state, the persistence of infant food poverty reflects a structural gap in nutrition policy for the youngest children.</p>
           </div>
         </section>
 
@@ -81,9 +81,9 @@ export default function InfantFoodPovertyPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+344% since 2018 &middot; cost of living crisis"
+              changeText="+344% since 2018 · cost of living crisis"
               sparklineData={[45, 62, 88, 120, 165, 200]}
-              href="#sec-chart"source="National Baby Bank Network &middot; 2023"
+              href="#sec-chart"source="National Baby Bank Network · 2023"
             />
             <MetricCard
               label="Formula unaffordable"
@@ -91,9 +91,9 @@ export default function InfantFoodPovertyPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="1 in 3 low-income parents &middot; infant health impact"
+              changeText="1 in 3 low-income parents · infant health impact"
               sparklineData={[18, 18, 20, 22, 28, 33]}
-              href="#sec-chart"source="First Steps Nutrition Trust &middot; 2023"
+              href="#sec-chart"source="First Steps Nutrition Trust · 2023"
             />
             <MetricCard
               label="Breastfeeding at 6 weeks"
@@ -101,9 +101,9 @@ export default function InfantFoodPovertyPage() {
               unit=""
               direction="flat"
               polarity="up-is-bad"
-              changeText="UK one of lowest in Europe &middot; support gap"
+              changeText="UK one of lowest in Europe · support gap"
               sparklineData={[49, 49, 48, 48, 48, 48]}
-              href="#sec-chart"source="OHID &middot; Infant Feeding Statistics 2023"
+              href="#sec-chart"source="OHID · Infant Feeding Statistics 2023"
             />
           </div>
         </ScrollReveal>
@@ -111,7 +111,7 @@ export default function InfantFoodPovertyPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Families served by baby banks, 2018&ndash;2023"
+              title="Families served by baby banks, 2018–2023"
               subtitle="Total families receiving support from baby banks (thousands). Includes formula, nappies, weaning food, and other essentials."
               series={babyBankSeries}
               yLabel="Families (thousands)"
@@ -127,10 +127,10 @@ export default function InfantFoodPovertyPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>National Baby Bank Network &mdash; Annual Impact Report 2023. littlevillagehq.org and affiliated networks</p>
-            <p>First Steps Nutrition Trust &mdash; Infant feeding in England (2023). firststepsnutrition.org</p>
-            <p>OHID (Office for Health Inequalities and Disparities) &mdash; Infant Feeding Statistics. gov.uk</p>
-            <p>National Food Strategy &mdash; Independent Review (2021). nationalfoodstrategy.org</p>
+            <p>National Baby Bank Network — Annual Impact Report 2023. littlevillagehq.org and affiliated networks</p>
+            <p>First Steps Nutrition Trust — Infant feeding in England (2023). firststepsnutrition.org</p>
+            <p>OHID (Office for Health Inequalities and Disparities) — Infant Feeding Statistics. gov.uk</p>
+            <p>National Food Strategy — Independent Review (2021). nationalfoodstrategy.org</p>
             <p>Baby bank family figures drawn from National Baby Bank Network affiliated organisation reporting. Formula affordability data from First Steps Nutrition Trust survey of low-income parents (n=1,200+). Breastfeeding rates from NHS Digital/OHID annual collection. UK breastfeeding rates are among the lowest in Europe according to WHO/UNICEF tracking data.</p>
           </div>
         </section>

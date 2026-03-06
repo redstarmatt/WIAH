@@ -165,15 +165,15 @@ export default function FoodInsecurityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Trussell Trust distributed 128,697 food parcels in 2012. By 2023 that figure had reached 3.1 million &mdash; a 24-fold increase in a decade. More than one million of those parcels went to children. The Trussell Trust network accounts for roughly 60% of food bank provision; including independent operations, there are an estimated 2,800 or more food bank locations across the UK. That number did not exist in any meaningful sense before 2010. The Trussell Trust itself says it should not be a permanent feature of the welfare state.</p>
-            <p>The benefits system is the single largest driver. Between 27% and 28% of food bank referrals cite benefit delays or changes as the primary reason. The five-week wait at the start of a Universal Credit claim &mdash; a structural feature introduced with the policy &mdash; leaves newly unemployed households without income precisely when they are most vulnerable. Benefit levels have also failed to keep pace with food costs: UK food prices rose 19.1% in the year to March 2023, the sharpest annual increase in 45 years. Lower-income households spend a disproportionately high share of income on food, and are more exposed to these price shocks than wealthier ones who can absorb them through savings or substitution.</p>
+            <p>The Trussell Trust distributed 128,697 food parcels in 2012. By 2023 that figure had reached 3.1 million — a 24-fold increase in a decade. More than one million of those parcels went to children. The Trussell Trust network accounts for roughly 60% of food bank provision; including independent operations, there are an estimated 2,800 or more food bank locations across the UK. That number did not exist in any meaningful sense before 2010. The Trussell Trust itself says it should not be a permanent feature of the welfare state.</p>
+            <p>The benefits system is the single largest driver. Between 27% and 28% of food bank referrals cite benefit delays or changes as the primary reason. The five-week wait at the start of a Universal Credit claim — a structural feature introduced with the policy — leaves newly unemployed households without income precisely when they are most vulnerable. Benefit levels have also failed to keep pace with food costs: UK food prices rose 19.1% in the year to March 2023, the sharpest annual increase in 45 years. Lower-income households spend a disproportionately high share of income on food, and are more exposed to these price shocks than wealthier ones who can absorb them through savings or substitution.</p>
             </div>
         </section>
 
         <PositiveCallout
           title="Free school meals expanded in 2023"
           value="+170K"
-          description="The government extended free school meals eligibility in 2023, adding an estimated 170,000 children. Evidence consistently shows free school meals improve concentration, behaviour, and attainment &mdash; particularly for children in the most deprived areas."
+          description="The government extended free school meals eligibility in 2023, adding an estimated 170,000 children. Evidence consistently shows free school meals improve concentration, behaviour, and attainment — particularly for children in the most deprived areas."
           source="Source: Department for Education, 2023."
         />
 
@@ -181,7 +181,7 @@ export default function FoodInsecurityPage() {
           <ScrollReveal>
             <LineChart
               title="Trussell Trust food bank parcels distributed, England"
-              subtitle="Annual totals. Trussell Trust network only &mdash; independent banks not included."
+              subtitle="Annual totals. Trussell Trust network only — independent banks not included."
               series={foodBankSeries}
               annotations={foodBankAnnotations}
               yLabel="Parcels (millions)"
@@ -229,10 +229,10 @@ export default function FoodInsecurityPage() {
         <section id="sec-sources" className="max-w-2xl mt-12 pt-8 border-t border-wiah-border">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources</h2>
           <div className="text-sm text-wiah-mid space-y-2 font-mono">
-            <p>Trussell Trust Food Bank Network &mdash; Annual food bank statistics, Trussell Trust Food Bank Network 2012&ndash;2023.</p>
-            <p>Food Insecurity &mdash; Child Food Poverty Tracker, Action for Children &amp; Food Foundation, 2018&ndash;2023.</p>
-            <p>Adult Food Insecurity &mdash; Understanding Society: Household Longitudinal Study, Office for National Statistics, Jan 2023.</p>
-            <p>Referral Reasons &mdash; Food Bank Referral Reasons Analysis, Trussell Trust, 2023.</p>
+            <p>Trussell Trust Food Bank Network — Annual food bank statistics, Trussell Trust Food Bank Network 2012–2023.</p>
+            <p>Food Insecurity — Child Food Poverty Tracker, Action for Children &amp; Food Foundation, 2018–2023.</p>
+            <p>Adult Food Insecurity — Understanding Society: Household Longitudinal Study, Office for National Statistics, Jan 2023.</p>
+            <p>Referral Reasons — Food Bank Referral Reasons Analysis, Trussell Trust, 2023.</p>
           </div>
         </section>
       </main>

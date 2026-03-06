@@ -235,23 +235,23 @@ export default function EnvironmentPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK&apos;s environmental record splits sharply in two. On emissions, it is a genuine
+              The UK's environmental record splits sharply in two. On emissions, it is a genuine
               success: greenhouse gases are down over 50% since 1990, one of the steepest falls in the
               G7, driven largely by replacing coal with renewables in electricity generation. But on
               nature, the picture is dire. The UK ranks in the bottom 10% globally on the Natural
-              History Museum&apos;s Biodiversity Intactness Index. Wildlife abundance has fallen to 68%
+              History Museum's Biodiversity Intactness Index. Wildlife abundance has fallen to 68%
               of 1970 levels; 56% of British species declined between 1970 and 2013, and 15% are
               threatened with extinction. Intensified agriculture, urban expansion, and pesticide use
               are the primary drivers. Britain has decarbonised its grid while continuing to deplete
               its natural systems.
             </p>
             <p>
-              Air quality has improved steadily &mdash; PM2.5 concentrations are down 31% since 2009
-              &mdash; but still causes an estimated 30,000 deaths per year. Average concentrations
-              remain nearly double the WHO&apos;s 5 &micro;g/m&sup3; guideline, and roughly 2 million
+              Air quality has improved steadily — PM2.5 concentrations are down 31% since 2009
+              — but still causes an estimated 30,000 deaths per year. Average concentrations
+              remain nearly double the WHO's 5 &micro;g/m&sup3; guideline, and roughly 2 million
               people live in areas exceeding the UK legal limit of 20 &micro;g/m&sup3;. On flooding,
               3.7 million properties are now at significant risk in England, a 54% increase since 2008.
-              The Climate Change Committee consistently rates the UK&apos;s adaptation plans as
+              The Climate Change Committee consistently rates the UK's adaptation plans as
               inadequate. The gap between the pace of climate change and the pace of preparation
               continues to widen.
             </p>
@@ -501,7 +501,7 @@ export default function EnvironmentPage() {
             {data?.metadata.sources.map((src, i) => (
               <li key={i}>
                 <a href={src.url} className="underline hover:text-wiah-blue" target="_blank" rel="noreferrer">
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}

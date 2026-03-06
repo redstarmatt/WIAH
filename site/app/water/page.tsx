@@ -437,7 +437,7 @@ export default function WaterPage() {
               The 3.6 million hours of sewage discharge recorded in 2024 demand careful reading. Monitor
               coverage expanded from 862 overflows in 2016 to 14,182 (100%) in 2024, so much of the
               headline increase reflects better measurement, not more sewage. The more telling metric
-              &mdash; average spills per overflow, which controls for that expansion &mdash; peaked at
+              — average spills per overflow, which controls for that expansion — peaked at
               35 in 2019 and sat at around 32 in 2024. Each overflow still discharges, on average, once
               every 11 days. These were designed as emergency valves; the data shows they operate
               routinely. Meanwhile, only 16% of English surface waters meet good ecological status,
@@ -450,7 +450,7 @@ export default function WaterPage() {
               doubled from 3.8% to 7.1% over the past decade. Heavier rainfall from climate change is
               part of the explanation, but the financial data points to something structural: water
               companies paid out billions in dividends while infrastructure deteriorated. Ofwat has now
-              approved record investment plans for 2025&ndash;2030, but the gap between shareholder
+              approved record investment plans for 2025–2030, but the gap between shareholder
               returns and capital spending over the past three decades is difficult to overlook.
             </p>
             </div>
@@ -920,7 +920,7 @@ export default function WaterPage() {
         <ScrollReveal>
           <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Nitrogen Pollution in Rivers</h2>
           <p className="text-base text-wiah-mid mb-8 max-w-2xl">
-            Agricultural run-off is the leading source of nitrate pollution in England&apos;s waterways.
+            Agricultural run-off is the leading source of nitrate pollution in England's waterways.
             Over 83% of rivers now fail nitrate standards — a steady rise from 78% in 2015. Designated
             Nitrate Vulnerable Zones, covering 55–60% of England, are intended to restrict fertiliser use
             near watercourses, but river quality continues to worsen. Nitrogen and phosphorus from farming
@@ -1042,7 +1042,7 @@ export default function WaterPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}
@@ -1054,7 +1054,7 @@ export default function WaterPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Ofwat &mdash; Long-term cost data &amp; Historic dividends since privatisation (annual)
+                  Ofwat — Long-term cost data &amp; Historic dividends since privatisation (annual)
                 </a>
               </li>
             )}

@@ -71,20 +71,20 @@ export default function VictimsSupportPage() {
 
   return (
     <>
-      <TopicNav topic="Victims&apos; Support" />
+      <TopicNav topic="Victims' Support" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Victims&apos; Support"
+          topic="Victims' Support"
           question="Does the Justice System Actually Support Victims?"
-          finding="Victim satisfaction with the criminal justice system has fallen to 56.5% &mdash; down from 73% in 2015. Fewer than half of victims say they were kept adequately informed about their case. The Victims&apos; Code, which sets out entitlements, is routinely breached with no meaningful enforcement mechanism."
+          finding="Victim satisfaction with the criminal justice system has fallen to 56.5% — down from 73% in 2015. Fewer than half of victims say they were kept adequately informed about their case. The Victims' Code, which sets out entitlements, is routinely breached with no meaningful enforcement mechanism."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Victims&apos; Code of Practice, first introduced in 2006 and revised in 2021, sets out 12 rights for victims of crime in England and Wales. These include the right to be informed about the progress of their case, the right to make a personal statement at sentencing, and the right to be referred to support services. In theory, the Code provides a framework of entitlements. In practice, compliance is inconsistent and unenforceable. The 2024 crime survey of victims found that only 56.5% were satisfied with their overall experience of the criminal justice system &mdash; a decline from 73% in 2015. Fewer than 45% said they had been kept adequately informed about the progress of their case.</p>
-            <p>The Victims and Prisoners Act 2024 placed the Victims&apos; Code on a statutory footing for the first time, requiring criminal justice agencies to collect and publish compliance data. However, the Act does not create individually enforceable rights &mdash; victims cannot take legal action if the Code is breached. Instead, compliance will be monitored through inspectorates. Critics, including the Victims&apos; Commissioner, argue that without sanctions, the statutory duty amounts to a reporting obligation rather than a genuine enforcement mechanism. The Commissioner&apos;s 2024 annual survey found that 62% of victims had never heard of the Victims&apos; Code.</p>
+            <p>The Victims' Code of Practice, first introduced in 2006 and revised in 2021, sets out 12 rights for victims of crime in England and Wales. These include the right to be informed about the progress of their case, the right to make a personal statement at sentencing, and the right to be referred to support services. In theory, the Code provides a framework of entitlements. In practice, compliance is inconsistent and unenforceable. The 2024 crime survey of victims found that only 56.5% were satisfied with their overall experience of the criminal justice system — a decline from 73% in 2015. Fewer than 45% said they had been kept adequately informed about the progress of their case.</p>
+            <p>The Victims and Prisoners Act 2024 placed the Victims' Code on a statutory footing for the first time, requiring criminal justice agencies to collect and publish compliance data. However, the Act does not create individually enforceable rights — victims cannot take legal action if the Code is breached. Instead, compliance will be monitored through inspectorates. Critics, including the Victims' Commissioner, argue that without sanctions, the statutory duty amounts to a reporting obligation rather than a genuine enforcement mechanism. The Commissioner's 2024 annual survey found that 62% of victims had never heard of the Victims' Code.</p>
             </div>
         </section>
 
@@ -101,9 +101,9 @@ export default function VictimsSupportPage() {
               value="56.5%"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 73% in 2015 &middot; overall CJS satisfaction"
+              changeText="Down from 73% in 2015 · overall CJS satisfaction"
               sparklineData={[73.2, 71.8, 70.5, 68.1, 66.3, 64.0, 61.5, 59.2, 57.8, 56.5]}
-              source="ONS &middot; Crime Survey for England and Wales, 2024"
+              source="ONS · Crime Survey for England and Wales, 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -111,19 +111,19 @@ export default function VictimsSupportPage() {
               value="44.1%"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 62.5% in 2015 &middot; a core Victims&apos; Code right"
+              changeText="Down from 62.5% in 2015 · a core Victims' Code right"
               sparklineData={[62.5, 60.2, 58.8, 56.1, 54.0, 51.3, 49.5, 47.2, 45.8, 44.1]}
-              source="Victims&apos; Commissioner &middot; Annual Survey, 2024"
+              source="Victims' Commissioner · Annual Survey, 2024"
               onExpand={() => {}}
             />
             <MetricCard
-              label="Victims aware of Victims&apos; Code"
+              label="Victims aware of Victims' Code"
               value="38%"
               direction="down"
               polarity="up-is-good"
               changeText="62% have never heard of it"
               sparklineData={[45, 43, 42, 41, 40, 39, 38]}
-              source="Victims&apos; Commissioner &middot; Annual Survey, 2024"
+              source="Victims' Commissioner · Annual Survey, 2024"
               onExpand={() => {}}
             />
           </div>
@@ -132,7 +132,7 @@ export default function VictimsSupportPage() {
         <ScrollReveal>
           <section id="sec-satisfaction" className="mb-12">
             <LineChart
-              title="Victim satisfaction with criminal justice system, 2015&ndash;2024"
+              title="Victim satisfaction with criminal justice system, 2015–2024"
               subtitle="Percentage of victims reporting overall satisfaction with their CJS experience. England and Wales."
               series={satisfactionSeries}
               yLabel="Satisfaction (%)"
@@ -144,11 +144,11 @@ export default function VictimsSupportPage() {
         <ScrollReveal>
           <section id="sec-informed" className="mb-12">
             <LineChart
-              title="Victims kept adequately informed about their case, 2015&ndash;2024"
+              title="Victims kept adequately informed about their case, 2015–2024"
               subtitle="Percentage of victims who felt they were kept sufficiently informed about their case progress."
               series={informedSeries}
               yLabel="Kept informed (%)"
-              source={{ name: 'Victims&apos; Commissioner', dataset: 'Annual Survey', frequency: 'annual' }}
+              source={{ name: "Victims' Commissioner", dataset: 'Annual Survey', frequency: 'annual' }}
             />
           </section>
         </ScrollReveal>

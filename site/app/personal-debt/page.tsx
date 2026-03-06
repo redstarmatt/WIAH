@@ -56,7 +56,7 @@ export default function PersonalDebtPage() {
   const debtSeries: Series[] = data
     ? [{
         id: 'debt',
-        label: 'Total household debt (&pound;bn)',
+        label: 'Total household debt (£bn)',
         colour: '#E63946',
         data: data.national.householdDebt.timeSeries.map(d => ({
           date: yearToDate(d.year),
@@ -91,15 +91,15 @@ export default function PersonalDebtPage() {
         <TopicHeader
           topic="Personal Debt"
           question="How Many Households Are Drowning in Debt?"
-          finding="UK households owe &pound;1.9 trillion in total debt &mdash; 130% of household income. 8.9 million people are in &apos;problem debt&apos; (StepChange). Personal insolvencies rose to 110,000 in 2023 &mdash; the highest since 2010. Energy debt reached &pound;3.1 billion in 2023 as the cost-of-living crisis pushed millions beyond their means."
+          finding="UK households owe £1.9 trillion in total debt — 130% of household income. 8.9 million people are in 'problem debt' (StepChange). Personal insolvencies rose to 110,000 in 2023 — the highest since 2010. Energy debt reached £3.1 billion in 2023 as the cost-of-living crisis pushed millions beyond their means."
           colour="#E63946"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK households owe &pound;1.9 trillion in total &mdash; 130% of annual household income and the highest debt-to-income ratio in the G7. Mortgage debt accounts for &pound;1.54 trillion of this; consumer credit &mdash; credit cards, personal loans, and buy-now-pay-later arrangements &mdash; adds a further &pound;220 billion. The burden is not evenly shared: 8.9 million people, one in seven adults, are in &ldquo;problem debt&rdquo; according to StepChange, meaning they are consistently struggling to meet bills and credit commitments. Personal insolvencies in England and Wales reached 110,000 in 2023, the highest since 2010, with Debt Relief Orders &mdash; the insolvency route for people with few assets &mdash; rising 30% as energy costs pushed lower-income households beyond their limits.</p>
-            <p>The cost-of-living crisis of 2021&ndash;23 converted manageable indebtedness into acute distress for millions of households. Energy bills roughly doubling between 2021 and 2023 created &pound;3.1 billion in energy arrears by the end of that period. Council tax arrears rose to &pound;6 billion as households prioritised food and heating over statutory obligations. The buy-now-pay-later sector &mdash; valued at &pound;7 billion and operating largely outside Financial Conduct Authority regulation until its 2022 review &mdash; extended credit to 10 million users, many without a conventional credit history. Simultaneously, the Bank of England raised the base rate from 0.1% in December 2021 to 5.25% by August 2023, the fastest tightening cycle in forty years, adding approximately &pound;270 per month to a typical variable-rate mortgage and forcing millions of fixed-rate borrowers into painful refinancing.</p>
+            <p>UK households owe £1.9 trillion in total — 130% of annual household income and the highest debt-to-income ratio in the G7. Mortgage debt accounts for £1.54 trillion of this; consumer credit — credit cards, personal loans, and buy-now-pay-later arrangements — adds a further £220 billion. The burden is not evenly shared: 8.9 million people, one in seven adults, are in &ldquo;problem debt&rdquo; according to StepChange, meaning they are consistently struggling to meet bills and credit commitments. Personal insolvencies in England and Wales reached 110,000 in 2023, the highest since 2010, with Debt Relief Orders — the insolvency route for people with few assets — rising 30% as energy costs pushed lower-income households beyond their limits.</p>
+            <p>The cost-of-living crisis of 2021–23 converted manageable indebtedness into acute distress for millions of households. Energy bills roughly doubling between 2021 and 2023 created £3.1 billion in energy arrears by the end of that period. Council tax arrears rose to £6 billion as households prioritised food and heating over statutory obligations. The buy-now-pay-later sector — valued at £7 billion and operating largely outside Financial Conduct Authority regulation until its 2022 review — extended credit to 10 million users, many without a conventional credit history. Simultaneously, the Bank of England raised the base rate from 0.1% in December 2021 to 5.25% by August 2023, the fastest tightening cycle in forty years, adding approximately £270 per month to a typical variable-rate mortgage and forcing millions of fixed-rate borrowers into painful refinancing.</p>
             </div>
         </section>
 
@@ -114,10 +114,10 @@ export default function PersonalDebtPage() {
           <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Total UK household debt"
-              value="&pound;1.9tn"
+              value="£1.9tn"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; 130% of household income &middot; Mortgage debt &pound;1.54tn &middot; Consumer credit &pound;220bn"
+              changeText="2023 · 130% of household income · Mortgage debt £1.54tn · Consumer credit £220bn"
               sparklineData={[1540, 1580, 1620, 1680, 1750, 1790, 1800, 1850, 1900]}
               onExpand={() => {}}
             />
@@ -126,7 +126,7 @@ export default function PersonalDebtPage() {
               value="8.9M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; Up from 6.3M in 2019 &middot; Energy &amp; food costs driving crisis &middot; Single parents most affected"
+              changeText="2023 · Up from 6.3M in 2019 · Energy &amp; food costs driving crisis · Single parents most affected"
               sparklineData={[6.0, 6.1, 6.2, 6.3, 5.8, 6.5, 7.0, 8.0, 8.9]}
               onExpand={() => {}}
             />
@@ -135,7 +135,7 @@ export default function PersonalDebtPage() {
               value="110K"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; Highest since 2010 &middot; IVAs most common &middot; Debt Relief Orders rise 30% as energy bills bite"
+              changeText="2023 · Highest since 2010 · IVAs most common · Debt Relief Orders rise 30% as energy bills bite"
               sparklineData={[107, 101, 100, 95, 91, 99, 115, 122, 80, 109, 105, 110]}
               onExpand={() => {}}
             />
@@ -145,11 +145,11 @@ export default function PersonalDebtPage() {
         <ScrollReveal>
           <section id="sec-debt" className="mb-12">
             <LineChart
-              title="UK household debt, &pound; billion, 2010&ndash;2023"
+              title="UK household debt, £ billion, 2010–2023"
               subtitle="Total secured and unsecured household debt including mortgages, consumer credit, and other liabilities."
               series={debtSeries}
               annotations={debtAnnotations}
-              yLabel="&pound; billion"
+              yLabel="£ billion"
               source={{
                 name: 'Bank of England',
                 dataset: 'Money and Credit Statistics',
@@ -162,7 +162,7 @@ export default function PersonalDebtPage() {
         <ScrollReveal>
           <section id="sec-insolvency" className="mb-12">
             <LineChart
-              title="Personal insolvencies, England &amp; Wales, 2012&ndash;2023"
+              title="Personal insolvencies, England &amp; Wales, 2012–2023"
               subtitle="Annual individual insolvencies including bankruptcies, Individual Voluntary Arrangements (IVAs), and Debt Relief Orders (DROs)."
               series={insolvencySeries}
               yLabel="Insolvencies (thousands)"
@@ -178,7 +178,7 @@ export default function PersonalDebtPage() {
         <ScrollReveal>
           <section id="sec-types" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-2">Household debt by type, UK, 2023</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">&pound; billion.</p>
+            <p className="text-sm text-wiah-mid font-mono mb-6">£ billion.</p>
             {data && (
               <div className="space-y-3">
                 {data.national.byDebtType.map((item, idx) => (
@@ -190,22 +190,22 @@ export default function PersonalDebtPage() {
                         style={{ width: `${(item.billionGBP / 1540) * 100}%`, backgroundColor: '#E63946' }}
                       />
                     </div>
-                    <div className="w-16 text-right text-sm font-mono text-wiah-black">&pound;{item.billionGBP}bn</div>
+                    <div className="w-16 text-right text-sm font-mono text-wiah-black">£{item.billionGBP}bn</div>
                   </div>
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Bank of England &mdash; Money and Credit Statistics 2023</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Bank of England — Money and Credit Statistics 2023</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
-            value="&pound;40M"
+            title="What's improving"
+            value="£40M"
             unit="invested in free debt advice through MoneyHelper and StepChange, as Breathing Space gives debtors 60 days of protection"
-            description="The Breathing Space scheme (May 2021) provides a 60-day moratorium on creditor action, giving indebted people time to seek help and arrange a debt solution. In 2023, over 100,000 people entered Breathing Space. MoneyHelper (formerly Money Advice Service) provides free debt guidance online and by phone. The No-Interest Loan Scheme, piloted in 2022, offers loans of up to &pound;2,000 at 0% interest to people in financial difficulty &mdash; an alternative to high-cost credit. The Financial Conduct Authority&apos;s Consumer Duty (2023) requires lenders to treat customers in financial difficulty fairly and proactively offer support."
-            source="Source: Bank of England &mdash; Money and Credit Statistics 2023; Insolvency Service &mdash; Insolvency Statistics 2023."
+            description="The Breathing Space scheme (May 2021) provides a 60-day moratorium on creditor action, giving indebted people time to seek help and arrange a debt solution. In 2023, over 100,000 people entered Breathing Space. MoneyHelper (formerly Money Advice Service) provides free debt guidance online and by phone. The No-Interest Loan Scheme, piloted in 2022, offers loans of up to £2,000 at 0% interest to people in financial difficulty — an alternative to high-cost credit. The Financial Conduct Authority's Consumer Duty (2023) requires lenders to treat customers in financial difficulty fairly and proactively offer support."
+            source="Source: Bank of England — Money and Credit Statistics 2023; Insolvency Service — Insolvency Statistics 2023."
           />
         </ScrollReveal>
 
@@ -215,7 +215,7 @@ export default function PersonalDebtPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

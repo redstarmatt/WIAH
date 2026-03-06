@@ -108,15 +108,15 @@ export default function NHSSicknessAbsencePage() {
         <TopicHeader
           topic="NHS Staff Absence"
           question="How Much Time Are NHS Staff Losing to Sickness?"
-          finding="NHS staff absence hit 5.6% in 2022/23 &mdash; the equivalent of 75,000 full-time staff off sick every day, costing over &pound;3.3 billion annually and compounding existing workforce shortages."
+          finding="NHS staff absence hit 5.6% in 2022/23 — the equivalent of 75,000 full-time staff off sick every day, costing over £3.3 billion annually and compounding existing workforce shortages."
           colour="#F4A261"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The National Health Service employs approximately 1.4 million people in England, making it one of the largest employers in the world. Keeping that workforce healthy and present is fundamental to delivering care. Yet sickness absence in the NHS has been rising steadily for a decade, reaching 5.6% in 2022/23 &mdash; the highest rate since consistent records began in 2009. In practical terms, this means the equivalent of around 75,000 full-time staff were absent on any given day. The direct cost to the NHS exceeded &pound;3.3 billion in that year alone, a figure that does not account for the knock-on costs of agency cover, delayed treatments, or the additional burden placed on colleagues who remain at work. The NHS absence rate is roughly 50% higher than the private sector average of 3.4%, a gap that has widened since the pandemic and reflects both the physical demands of healthcare work and systemic workforce pressures.</p>
-            <p>Mental health conditions and stress have overtaken musculoskeletal problems as the leading cause of NHS absence, accounting for approximately 30% of all days lost. Anxiety, depression, and work-related stress are not distributed evenly across the workforce: nursing staff, healthcare assistants, and ambulance paramedics report the highest rates. The 2023 NHS Staff Survey found that 44% of staff reported feeling unwell as a result of work-related stress in the previous 12 months, and 33% said their organisation did not take positive action on health and wellbeing. Staff working in emergency departments, mental health services, and social care interfaces &mdash; the parts of the system under greatest operational pressure &mdash; consistently show the highest absence rates. The relationship between workforce pressure and absence is self-reinforcing: understaffing increases workload, which increases stress absence, which further reduces available staff.</p>
+            <p>The National Health Service employs approximately 1.4 million people in England, making it one of the largest employers in the world. Keeping that workforce healthy and present is fundamental to delivering care. Yet sickness absence in the NHS has been rising steadily for a decade, reaching 5.6% in 2022/23 — the highest rate since consistent records began in 2009. In practical terms, this means the equivalent of around 75,000 full-time staff were absent on any given day. The direct cost to the NHS exceeded £3.3 billion in that year alone, a figure that does not account for the knock-on costs of agency cover, delayed treatments, or the additional burden placed on colleagues who remain at work. The NHS absence rate is roughly 50% higher than the private sector average of 3.4%, a gap that has widened since the pandemic and reflects both the physical demands of healthcare work and systemic workforce pressures.</p>
+            <p>Mental health conditions and stress have overtaken musculoskeletal problems as the leading cause of NHS absence, accounting for approximately 30% of all days lost. Anxiety, depression, and work-related stress are not distributed evenly across the workforce: nursing staff, healthcare assistants, and ambulance paramedics report the highest rates. The 2023 NHS Staff Survey found that 44% of staff reported feeling unwell as a result of work-related stress in the previous 12 months, and 33% said their organisation did not take positive action on health and wellbeing. Staff working in emergency departments, mental health services, and social care interfaces — the parts of the system under greatest operational pressure — consistently show the highest absence rates. The relationship between workforce pressure and absence is self-reinforcing: understaffing increases workload, which increases stress absence, which further reduces available staff.</p>
             </div>
         </section>
 
@@ -135,7 +135,7 @@ export default function NHSSicknessAbsencePage() {
               unit="%"
               direction={'up' as const}
               polarity={'up-is-bad' as const}
-              changeText="2022/23 &middot; Up from 4.2% in 2015 &middot; Target: 3.5%"
+              changeText="2022/23 · Up from 4.2% in 2015 · Target: 3.5%"
               sparklineData={[4.23, 4.16, 4.22, 4.19, 4.58, 4.86, 5.22, 5.64, 5.28]}
               onExpand={() => {}}
             />
@@ -144,7 +144,7 @@ export default function NHSSicknessAbsencePage() {
               value="27.8M"
               direction={'up' as const}
               polarity={'up-is-bad' as const}
-              changeText="2022/23 &middot; Up from 22M in 2015"
+              changeText="2022/23 · Up from 22M in 2015"
               sparklineData={[22.0, 21.8, 22.4, 22.9, 23.8, 25.1, 26.4, 27.8, 26.9]}
               onExpand={() => {}}
             />
@@ -154,7 +154,7 @@ export default function NHSSicknessAbsencePage() {
               unit="bn"
               direction={'up' as const}
               polarity={'up-is-bad' as const}
-              changeText="2022/23 &middot; Direct cost to NHS England"
+              changeText="2022/23 · Direct cost to NHS England"
               sparklineData={[2.1, 2.2, 2.3, 2.4, 2.6, 2.8, 3.0, 3.3, 3.1]}
               onExpand={() => {}}
             />
@@ -164,7 +164,7 @@ export default function NHSSicknessAbsencePage() {
         <ScrollReveal>
           <section id="sec-absence-rate" className="mb-12">
             <LineChart
-              title="NHS sickness absence rate, England, 2015&ndash;2024"
+              title="NHS sickness absence rate, England, 2015–2024"
               subtitle="Percentage of available working days lost to sickness absence. All HCHS staff."
               series={absenceRateSeries}
               yLabel="Absence rate (%)"
@@ -181,7 +181,7 @@ export default function NHSSicknessAbsencePage() {
         <ScrollReveal>
           <section id="sec-causes" className="mb-12">
             <LineChart
-              title="Top causes of NHS sickness absence, 2015&ndash;2024"
+              title="Top causes of NHS sickness absence, 2015–2024"
               subtitle="Percentage of total absence days by cause category. England."
               series={causesSeries}
               yLabel="Share of absence (%)"
@@ -198,17 +198,17 @@ export default function NHSSicknessAbsencePage() {
           <PositiveCallout
             title="Mental health support reducing absence duration"
             value="15%"
-            description="NHS trusts that have implemented dedicated mental health support programmes &mdash; including staff psychological wellbeing hubs, trauma-informed peer support, and rapid-access counselling &mdash; have reported reductions in average absence episode duration of up to 15%. The NHS England Wellbeing Guardian programme, rolled out nationally in 2021, requires every trust board to have a designated director responsible for staff mental health."
-            source="Source: NHS England &mdash; NHS People Plan, 2023 progress update."
+            description="NHS trusts that have implemented dedicated mental health support programmes — including staff psychological wellbeing hubs, trauma-informed peer support, and rapid-access counselling — have reported reductions in average absence episode duration of up to 15%. The NHS England Wellbeing Guardian programme, rolled out nationally in 2021, requires every trust board to have a designated director responsible for staff mental health."
+            source="Source: NHS England — NHS People Plan, 2023 progress update."
           />
         </ScrollReveal>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>NHS Digital &mdash; NHS Sickness Absence Rates. Monthly publication covering all directly employed NHS Hospital &amp; Community Health Service (HCHS) staff in England. Absence rate calculated as FTE days lost as a proportion of FTE days available.</p>
-            <p>NHS England &mdash; NHS Staff Survey. Annual survey of over 700,000 NHS staff. Covers health and wellbeing, workload, and organisational culture. Response rate approximately 45%.</p>
-            <p>NHS England &mdash; NHS People Plan and Workforce Statistics. Workforce composition, demographics, and supply data.</p>
+            <p>NHS Digital — NHS Sickness Absence Rates. Monthly publication covering all directly employed NHS Hospital &amp; Community Health Service (HCHS) staff in England. Absence rate calculated as FTE days lost as a proportion of FTE days available.</p>
+            <p>NHS England — NHS Staff Survey. Annual survey of over 700,000 NHS staff. Covers health and wellbeing, workload, and organisational culture. Response rate approximately 45%.</p>
+            <p>NHS England — NHS People Plan and Workforce Statistics. Workforce composition, demographics, and supply data.</p>
             <p>Cost estimates based on NHS Employers methodology: direct salary costs of absent staff plus estimated agency and bank cover costs. Does not include productivity losses or delayed treatment impacts. Absence data excludes primary care, social care, and non-directly employed staff (bank, agency, locum).</p>
           </div>
         </section>

@@ -54,8 +54,8 @@ export default function PrisonMentalHealthPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 70% of prisoners have at least two diagnosable mental health conditions at the time of entry, according to NHS England estimates. Self-harm incidents recorded in prisons in England and Wales have risen from approximately 24,000 in 2012 to 74,590 in 2022 &mdash; a 208% increase over a decade &mdash; equivalent to more than 203 incidents every single day. Apparent self-inflicted deaths numbered 86 in 2022/23, unchanged in scale from the 89 deaths in 2015 that prompted multiple official reviews. The Prisons and Probation Ombudsman and successive HMIP inspections have identified systemic failures: inadequate mental health screening on reception, poor follow-through of care plans, understaffed night-time provision, and the use of segregation for people in acute mental health crisis.</p>
-            <p>The high prevalence of mental illness in prison reflects upstream failures rather than prison conditions alone. Street homelessness, substance dependency, poverty, and trauma are risk factors for both offending and mental illness; prison concentrates the consequences of inadequate community mental health, housing, and drug treatment provision. The burden falls hardest on those who arrived already failed by multiple systems, and prison healthcare &mdash; chronically underfunded relative to community equivalents &mdash; is being asked to deliver care in an environment that is by its nature antitherapeutic.</p>
+            <p>Around 70% of prisoners have at least two diagnosable mental health conditions at the time of entry, according to NHS England estimates. Self-harm incidents recorded in prisons in England and Wales have risen from approximately 24,000 in 2012 to 74,590 in 2022 — a 208% increase over a decade — equivalent to more than 203 incidents every single day. Apparent self-inflicted deaths numbered 86 in 2022/23, unchanged in scale from the 89 deaths in 2015 that prompted multiple official reviews. The Prisons and Probation Ombudsman and successive HMIP inspections have identified systemic failures: inadequate mental health screening on reception, poor follow-through of care plans, understaffed night-time provision, and the use of segregation for people in acute mental health crisis.</p>
+            <p>The high prevalence of mental illness in prison reflects upstream failures rather than prison conditions alone. Street homelessness, substance dependency, poverty, and trauma are risk factors for both offending and mental illness; prison concentrates the consequences of inadequate community mental health, housing, and drug treatment provision. The burden falls hardest on those who arrived already failed by multiple systems, and prison healthcare — chronically underfunded relative to community equivalents — is being asked to deliver care in an environment that is by its nature antitherapeutic.</p>
           </div>
         </section>
 
@@ -73,9 +73,9 @@ export default function PrisonMentalHealthPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up 208% since 2012 &middot; record high &middot; equivalent to 203 per day"
+              changeText="Up 208% since 2012 · record high · equivalent to 203 per day"
               sparklineData={[24000, 30000, 40161, 57968, 60584, 61461, 74590]}
-              source="HMPPS Safety in Custody Statistics &middot; 2023"
+              source="HMPPS Safety in Custody Statistics · 2023"
               href="#sec-self-harm"/>
             <MetricCard
               label="Prisoners with 2+ mental health diagnoses"
@@ -93,9 +93,9 @@ export default function PrisonMentalHealthPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="52 in 2013, 86 in 2023 &middot; rising despite multiple inquiries"
+              changeText="52 in 2013, 86 in 2023 · rising despite multiple inquiries"
               sparklineData={[52, 89, 70, 62, 67, 83, 86]}
-              source="HMPPS Safety in Custody Statistics &middot; 2023"
+              source="HMPPS Safety in Custody Statistics · 2023"
               href="#sec-self-harm"/>
           </div>
         </ScrollReveal>
@@ -103,7 +103,7 @@ export default function PrisonMentalHealthPage() {
         <ScrollReveal>
           <section id="sec-self-harm" className="mb-12">
             <LineChart
-              title="Self-harm incidents in prisons, England &amp; Wales, 2012&ndash;2023"
+              title="Self-harm incidents in prisons, England &amp; Wales, 2012–2023"
               subtitle="Total recorded self-harm incidents per year across the prison estate."
               series={selfHarmSeries}
               yLabel="Incidents per year"
@@ -119,10 +119,10 @@ export default function PrisonMentalHealthPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>HMPPS &mdash; Safety in Custody Statistics. Annual publication covering deaths in prison custody, self-harm incidents, and assaults. Published by His Majesty&apos;s Prison and Probation Service.</p>
-            <p>NHS England &mdash; Prison Healthcare Data. Mental health prevalence estimates drawn from the National Prison Survey and NHS screening data.</p>
-            <p>Prison Reform Trust &mdash; Bromley Briefings Prison Factfile. Quarterly factfile summarising key prison statistics with analysis.</p>
-            <p>Self-harm incident counts include all incidents requiring a formal record. They do not equate to individual prisoners &mdash; one person may self-harm multiple times. Deaths in custody are categorised as &apos;apparent self-inflicted&apos; pending coroner determination.</p>
+            <p>HMPPS — Safety in Custody Statistics. Annual publication covering deaths in prison custody, self-harm incidents, and assaults. Published by His Majesty's Prison and Probation Service.</p>
+            <p>NHS England — Prison Healthcare Data. Mental health prevalence estimates drawn from the National Prison Survey and NHS screening data.</p>
+            <p>Prison Reform Trust — Bromley Briefings Prison Factfile. Quarterly factfile summarising key prison statistics with analysis.</p>
+            <p>Self-harm incident counts include all incidents requiring a formal record. They do not equate to individual prisoners — one person may self-harm multiple times. Deaths in custody are categorised as 'apparent self-inflicted' pending coroner determination.</p>
           </div>
         </section>
       </main>

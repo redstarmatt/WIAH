@@ -59,14 +59,14 @@ export default function FoodWastePage() {
         <TopicHeader
           topic="Food Waste"
           question="How Much Food Does Britain Throw Away?"
-          finding="The UK wastes 9.5 million tonnes of food annually &mdash; worth &pound;19bn &mdash; with households responsible for around 70% by weight. Simultaneously, 7 million people struggle to afford adequate food. The waste is declining slowly but is on track to miss the UN Sustainable Development Goal of halving food waste by 2030."
+          finding="The UK wastes 9.5 million tonnes of food annually — worth £19bn — with households responsible for around 70% by weight. Simultaneously, 7 million people struggle to afford adequate food. The waste is declining slowly but is on track to miss the UN Sustainable Development Goal of halving food waste by 2030."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK wastes approximately 9.5 million tonnes of food annually across the whole supply chain &mdash; from farm gate through manufacturing, retail, and hospitality, to the household bin. Of this, households account for around 6.4 million tonnes, or roughly 70% by weight. WRAP &mdash; the Waste and Resources Action Programme &mdash; estimates the household food waste bill at &pound;19bn per year, or around &pound;700 per household, making it among the most significant items in the average household budget after housing, transport, and energy. The food thrown away is not predominantly food past its use-by date: around 50% of household food waste is food that was still edible when discarded, including bread, salad, and fruit. Environmental impact compounds the economic cost: food waste is responsible for approximately 6% of global greenhouse gas emissions when production, transportation, and decomposition are all accounted for. In the UK, the embedded carbon in wasted food amounts to around 25 million tonnes of CO2-equivalent per year. Yet the scale of food waste coexists with acute food insecurity: the Food Foundation estimates that around 7 million UK adults live in households that experienced food insecurity in 2023 &mdash; sometimes going a whole day without eating.</p>
-            <p>Progress on reducing food waste has been made but at a slow and insufficient rate. WRAP data shows total UK food waste fell from an estimated 11.5 million tonnes in 2007 to 9.5 million tonnes in 2023 &mdash; a reduction of around 18% over sixteen years. The headline improvement is partly methodological: WRAP revised its measurement approach in 2018, making the comparison imperfect. Over the more recent period 2015&ndash;2023, total waste has barely moved. The UN Sustainable Development Goal 12.3 requires a 50% reduction in food waste per capita at retail and consumer level by 2030 &mdash; an ambition that would require the UK to cut household waste from around 6.4 million tonnes to around 3.2 million tonnes in seven years. At current rates of progress, the UK will fall far short. The Courtauld Commitment &mdash; a voluntary industry agreement led by WRAP &mdash; has engaged major retailers and food manufacturers in waste reduction targets, but voluntary action has inherent limits and progress has been slower than hoped.</p>
+            <p>The UK wastes approximately 9.5 million tonnes of food annually across the whole supply chain — from farm gate through manufacturing, retail, and hospitality, to the household bin. Of this, households account for around 6.4 million tonnes, or roughly 70% by weight. WRAP — the Waste and Resources Action Programme — estimates the household food waste bill at £19bn per year, or around £700 per household, making it among the most significant items in the average household budget after housing, transport, and energy. The food thrown away is not predominantly food past its use-by date: around 50% of household food waste is food that was still edible when discarded, including bread, salad, and fruit. Environmental impact compounds the economic cost: food waste is responsible for approximately 6% of global greenhouse gas emissions when production, transportation, and decomposition are all accounted for. In the UK, the embedded carbon in wasted food amounts to around 25 million tonnes of CO2-equivalent per year. Yet the scale of food waste coexists with acute food insecurity: the Food Foundation estimates that around 7 million UK adults live in households that experienced food insecurity in 2023 — sometimes going a whole day without eating.</p>
+            <p>Progress on reducing food waste has been made but at a slow and insufficient rate. WRAP data shows total UK food waste fell from an estimated 11.5 million tonnes in 2007 to 9.5 million tonnes in 2023 — a reduction of around 18% over sixteen years. The headline improvement is partly methodological: WRAP revised its measurement approach in 2018, making the comparison imperfect. Over the more recent period 2015–2023, total waste has barely moved. The UN Sustainable Development Goal 12.3 requires a 50% reduction in food waste per capita at retail and consumer level by 2030 — an ambition that would require the UK to cut household waste from around 6.4 million tonnes to around 3.2 million tonnes in seven years. At current rates of progress, the UK will fall far short. The Courtauld Commitment — a voluntary industry agreement led by WRAP — has engaged major retailers and food manufacturers in waste reduction targets, but voluntary action has inherent limits and progress has been slower than hoped.</p>
             </div>
         </section>
 
@@ -83,29 +83,29 @@ export default function FoodWastePage() {
               unit="tonnes"
               direction="down"
               polarity="up-is-bad"
-              changeText="Down 18% since 2007 but progress has stalled &mdash; SDG target: 50% by 2030"
+              changeText="Down 18% since 2007 but progress has stalled — SDG target: 50% by 2030"
               sparklineData={[10.2, 10.0, 9.8, 9.6, 9.4, 9.5, 9.5, 9.5]}
-              source="WRAP &mdash; UK food waste estimates 2024"
+              source="WRAP — UK food waste estimates 2024"
               onExpand={() => {}}
             />
             <MetricCard
               label="Cost of household food waste"
-              value="&pound;19bn"
+              value="£19bn"
               direction="down"
               polarity="up-is-bad"
-              changeText="Around &pound;700 per household per year &mdash; 50% of wasted food was still edible"
+              changeText="Around £700 per household per year — 50% of wasted food was still edible"
               sparklineData={[21, 20, 20, 19, 19, 19, 19, 19]}
-              source="WRAP &mdash; Household food waste in the UK 2023"
+              source="WRAP — Household food waste in the UK 2023"
               onExpand={() => {}}
             />
             <MetricCard
               label="Food waste per household per year"
-              value="&pound;700"
+              value="£700"
               direction="down"
               polarity="up-is-bad"
               changeText="Equivalent to 20 meals per month per household thrown in the bin"
               sparklineData={[760, 740, 720, 710, 700, 700, 700, 700]}
-              source="WRAP &mdash; Household food waste measurement 2023"
+              source="WRAP — Household food waste measurement 2023"
               onExpand={() => {}}
             />
           </div>
@@ -114,7 +114,7 @@ export default function FoodWastePage() {
         <ScrollReveal>
           <section id="sec-waste" className="mb-12">
             <LineChart
-              title="UK food waste by source, 2015&ndash;2023"
+              title="UK food waste by source, 2015–2023"
               subtitle="Total and household food waste in million tonnes. WRAP food surplus and waste estimates."
               series={totalSeries}
               yLabel="Million tonnes"
@@ -127,8 +127,8 @@ export default function FoodWastePage() {
             title="18% Reduction Since 2007"
             value="9.5Mt"
             unit="down from 11.5Mt in 2007"
-            description="UK food waste has fallen 18% since 2007, among the better OECD performances. Too Good To Go, OLIO, and community fridges are redistributing food at scale. The Courtauld Commitment 2030 &mdash; signed by retailers accounting for over 80% of UK grocery sales &mdash; targets a further 50% reduction in food waste by 2030. Mandatory food waste reporting for large businesses, if enacted, would drive faster progress through transparency and accountability."
-            source="Source: WRAP &mdash; UK food waste estimates; Courtauld Commitment 2030 progress report."
+            description="UK food waste has fallen 18% since 2007, among the better OECD performances. Too Good To Go, OLIO, and community fridges are redistributing food at scale. The Courtauld Commitment 2030 — signed by retailers accounting for over 80% of UK grocery sales — targets a further 50% reduction in food waste by 2030. Mandatory food waste reporting for large businesses, if enacted, would drive faster progress through transparency and accountability."
+            source="Source: WRAP — UK food waste estimates; Courtauld Commitment 2030 progress report."
           />
         </ScrollReveal>
 
@@ -142,11 +142,11 @@ export default function FoodWastePage() {
                   <ul className="space-y-2">
                     {data.metadata.sources.map((src, idx) => (
                       <li key={idx} className="text-wiah-mid">
-                        <strong className="text-wiah-black">{src.name}:</strong>&nbsp;
+                        <strong className="text-wiah-black">{src.name}:</strong> 
                         <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue">
                           {src.dataset}
                         </a>
-                        &nbsp;({src.frequency})
+                         ({src.frequency})
                       </li>
                     ))}
                   </ul>

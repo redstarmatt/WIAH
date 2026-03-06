@@ -114,8 +114,8 @@ export default function ProductivityPage() {
         {/* Header */}
         <TopicHeader
           topic="Productivity"
-          question="Why Is Britain&apos;s Productivity So Persistently Low?"
-          finding="UK output per hour worked is 14% below the G7 average and 18% below the United States. Productivity growth flatlined after the 2008 financial crisis &mdash; a decade of near-zero growth economists call the &lsquo;productivity puzzle&rsquo;. Regional inequality is severe: London&apos;s productivity is 70% above the UK average; the North East is 30% below."
+          question="Why Is Britain's Productivity So Persistently Low?"
+          finding="UK output per hour worked is 14% below the G7 average and 18% below the United States. Productivity growth flatlined after the 2008 financial crisis — a decade of near-zero growth economists call the &lsquo;productivity puzzle&rsquo;. Regional inequality is severe: London's productivity is 70% above the UK average; the North East is 30% below."
           colour="#264653"
           preposition="with"
         />
@@ -139,7 +139,7 @@ export default function ProductivityPage() {
                 value="100"
                 direction="flat"
                 polarity="up-is-good"
-                changeText="2023 &middot; G7 average: 114 &middot; USA: 118 &middot; Germany: 111 &middot; France: 118 &middot; UK lags all peers"
+                changeText="2023 · G7 average: 114 · USA: 118 · Germany: 111 · France: 118 · UK lags all peers"
                 sparklineData={sparkFrom([95, 96, 96, 97, 97, 97, 97, 98, 98, 99, 97, 99, 100, 100])}
                 href="#sec-overview"/>
               <MetricCard
@@ -147,7 +147,7 @@ export default function ProductivityPage() {
                 value="0.4%"
                 direction="flat"
                 polarity="up-is-good"
-                changeText="2022/23 &middot; Pre-2008: avg 2.1%/yr &middot; Post-2008: avg 0.3%/yr &middot; &lsquo;Productivity puzzle&rsquo; not solved"
+                changeText="2022/23 · Pre-2008: avg 2.1%/yr · Post-2008: avg 0.3%/yr · &lsquo;Productivity puzzle&rsquo; not solved"
                 sparklineData={sparkFrom([2.4, 2.8, 1.6, -1.2, 0.5, 0.8, 0.2, 0.1, 0.3, 0.4, -0.8, 1.2, 0.4, 0.4])}
                 href="#sec-trend"/>
               <MetricCard
@@ -155,7 +155,7 @@ export default function ProductivityPage() {
                 value="9.8%"
                 direction="down"
                 polarity="up-is-good"
-                changeText="2023 &middot; One of lowest in G7 &middot; Post-Brexit uncertainty a factor &middot; G7 average: 14% &middot; Japan: 17%"
+                changeText="2023 · One of lowest in G7 · Post-Brexit uncertainty a factor · G7 average: 14% · Japan: 17%"
                 sparklineData={sparkFrom([11.2, 11.0, 10.8, 10.5, 10.2, 10.0, 9.8, 9.6, 9.5, 9.8, 9.4, 9.8, 9.8])}
                 href="#sec-investment"/>
             </div>
@@ -165,13 +165,13 @@ export default function ProductivityPage() {
         {/* Context */}
         <div className="mb-12 text-wiah-black leading-relaxed space-y-4">
           <ScrollReveal>
-            <p>UK output per hour worked is approximately 14% below the G7 average, 18% below the United States, 18% below France, and 11% below Germany. From 1948 to 2007, UK productivity grew at roughly 2% per year &mdash; consistent with other advanced economies. Since 2008, growth has averaged 0.3% per year, the weakest sustained period in the historical record. This &lsquo;productivity puzzle&rsquo; is the single most important explanation for why real wages grew so slowly in the 2010s despite record employment. ONS data show UK labour productivity in 2023 remains barely above its 2007 peak &mdash; 16 years of near-stagnation on the aggregate measure. The UK has a &lsquo;long tail&rsquo; of low-productivity businesses: the gap between the most productive and least productive firms is wider than in Germany, France, or the United States.</p>
+            <p>UK output per hour worked is approximately 14% below the G7 average, 18% below the United States, 18% below France, and 11% below Germany. From 1948 to 2007, UK productivity grew at roughly 2% per year — consistent with other advanced economies. Since 2008, growth has averaged 0.3% per year, the weakest sustained period in the historical record. This &lsquo;productivity puzzle&rsquo; is the single most important explanation for why real wages grew so slowly in the 2010s despite record employment. ONS data show UK labour productivity in 2023 remains barely above its 2007 peak — 16 years of near-stagnation on the aggregate measure. The UK has a &lsquo;long tail&rsquo; of low-productivity businesses: the gap between the most productive and least productive firms is wider than in Germany, France, or the United States.</p>
           </ScrollReveal>
           <ScrollReveal>
-            <p>Business investment is the most cited cause. UK fixed capital formation by businesses has averaged 9&ndash;10% of GDP since 2016, against a G7 average of 14%. Post-Brexit uncertainty is part of the explanation: OBR analysis shows business investment was flat from the 2016 referendum until 2022. Management quality matters too &mdash; UK firms have significantly lower average management practice scores than their US or German equivalents according to the World Management Survey, and LSE Centre for Economic Performance research attributes approximately 25% of the UK&ndash;US productivity gap to management. R&amp;D investment, at 1.7% of GDP, is below the 2.4% OECD average. Geographic concentration is extreme: London&apos;s productivity is 70% above the UK average, a level of capital-city dominance unmatched by any other large economy. The North East and Wales produce roughly 70&ndash;76 on an index where the UK equals 100.</p>
+            <p>Business investment is the most cited cause. UK fixed capital formation by businesses has averaged 9–10% of GDP since 2016, against a G7 average of 14%. Post-Brexit uncertainty is part of the explanation: OBR analysis shows business investment was flat from the 2016 referendum until 2022. Management quality matters too — UK firms have significantly lower average management practice scores than their US or German equivalents according to the World Management Survey, and LSE Centre for Economic Performance research attributes approximately 25% of the UK–US productivity gap to management. R&amp;D investment, at 1.7% of GDP, is below the 2.4% OECD average. Geographic concentration is extreme: London's productivity is 70% above the UK average, a level of capital-city dominance unmatched by any other large economy. The North East and Wales produce roughly 70–76 on an index where the UK equals 100.</p>
           </ScrollReveal>
           <ScrollReveal>
-            <p>Full expensing, introduced in 2023 and made permanent, provides 100% first-year capital allowances for plant and machinery investment; the OBR estimates a 1% of GDP increase in business investment by 2028. The government&apos;s new Industrial Strategy targets five sectors &mdash; advanced manufacturing, clean energy, creative industries, defence, and financial services &mdash; though evidence from past sectoral strategies is mixed. The UK&apos;s weak vocational training system is widely cited as a constraint: the productivity gap with Germany is largest in construction, manufacturing and food processing, sectors that depend heavily on intermediate vocational qualifications. The Levelling Up Fund committed &pound;4.8 billion to English regions, but early evaluations show limited aggregate productivity impact. The Productivity Institute identifies five key drivers &mdash; investment, innovation, management, skills, and infrastructure &mdash; none of which has shown sustained improvement since 2010.</p>
+            <p>Full expensing, introduced in 2023 and made permanent, provides 100% first-year capital allowances for plant and machinery investment; the OBR estimates a 1% of GDP increase in business investment by 2028. The government's new Industrial Strategy targets five sectors — advanced manufacturing, clean energy, creative industries, defence, and financial services — though evidence from past sectoral strategies is mixed. The UK's weak vocational training system is widely cited as a constraint: the productivity gap with Germany is largest in construction, manufacturing and food processing, sectors that depend heavily on intermediate vocational qualifications. The Levelling Up Fund committed £4.8 billion to English regions, but early evaluations show limited aggregate productivity impact. The Productivity Institute identifies five key drivers — investment, innovation, management, skills, and infrastructure — none of which has shown sustained improvement since 2010.</p>
           </ScrollReveal>
         </div>
 
@@ -211,7 +211,7 @@ export default function ProductivityPage() {
           <ScrollReveal>
             <div>
               <h2 className="text-xl font-bold text-wiah-black mb-2">Productivity by region (GVA per hour, UK = 100)</h2>
-              <p className="text-sm text-wiah-mid mb-6">Output per hour worked by English region, Wales, and Scotland. London&apos;s productivity is 70% above the UK average.</p>
+              <p className="text-sm text-wiah-mid mb-6">Output per hour worked by English region, Wales, and Scotland. London's productivity is 70% above the UK average.</p>
               <div className="space-y-2">
                 {data?.national.byRegion.map(item => (
                   <div key={item.region} className="flex items-center gap-3">
@@ -233,9 +233,9 @@ export default function ProductivityPage() {
           <PositiveCallout
             title="The opportunity"
             value="+35%"
-            unit="productivity gain if UK matched G7 average — equivalent to an extra &pound;9,000 per worker per year"
-            description="If the UK matched the G7 average productivity level, output per worker would be 35% higher &mdash; equivalent to an extra &pound;9,000 per worker per year. The Productivity Institute estimates that closing the UK&apos;s productivity gap with Germany and France would add &pound;370 billion to annual GDP. The 2023 Autumn Statement introduced full expensing &mdash; 100% first-year capital allowances for plant and machinery &mdash; which the OBR forecasts will increase business investment by 1% of GDP by 2028. The UK&apos;s R&amp;D tax credits system is among the most generous in the OECD, and R&amp;D spending has reached 1.7% of GDP, albeit still below the 2.4% OECD average."
-            source="Source: ONS &mdash; Labour Productivity 2023; The Productivity Institute &mdash; UK Productivity Gap Analysis 2024."
+            unit="productivity gain if UK matched G7 average — equivalent to an extra £9,000 per worker per year"
+            description="If the UK matched the G7 average productivity level, output per worker would be 35% higher — equivalent to an extra £9,000 per worker per year. The Productivity Institute estimates that closing the UK's productivity gap with Germany and France would add £370 billion to annual GDP. The 2023 Autumn Statement introduced full expensing — 100% first-year capital allowances for plant and machinery — which the OBR forecasts will increase business investment by 1% of GDP by 2028. The UK's R&amp;D tax credits system is among the most generous in the OECD, and R&amp;D spending has reached 1.7% of GDP, albeit still below the 2.4% OECD average."
+            source="Source: ONS — Labour Productivity 2023; The Productivity Institute — UK Productivity Gap Analysis 2024."
           />
         </ScrollReveal>
 
@@ -247,7 +247,7 @@ export default function ProductivityPage() {
               {data?.metadata.sources.map((src, idx) => (
                 <p key={idx}>
                   <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                    {src.name} &mdash; {src.dataset}
+                    {src.name} — {src.dataset}
                   </a>
                   {' '} ({src.frequency})
                 </p>

@@ -68,13 +68,13 @@ export default function PrisonReentrySupportPage() {
         <TopicHeader
           topic="Prison Reentry Support"
           question="What support do people get when they leave prison?"
-          finding="46% of adults reoffend within one year of release. Those released with less than &pound;50 are nearly twice as likely to reoffend."
+          finding="46% of adults reoffend within one year of release. Those released with less than £50 are nearly twice as likely to reoffend."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Every year around 55,000 adults are released from prison in England and Wales. Nearly half will commit a proven further offence within twelve months &mdash; a rate that has barely shifted over the past decade, hovering between 44% and 47%. The discharge grant &mdash; the lump sum given to people leaving prison with no other financial support &mdash; has remained at &pound;46 since 2008, losing around a third of its real value to inflation. Fifteen per cent of people are still released without settled housing confirmed. Research consistently shows accommodation insecurity is the single strongest predictor of reoffending, and that the first 24&ndash;72 hours after release are the highest risk period &mdash; a window the current system does almost nothing to support.</p>
+            <p>Every year around 55,000 adults are released from prison in England and Wales. Nearly half will commit a proven further offence within twelve months — a rate that has barely shifted over the past decade, hovering between 44% and 47%. The discharge grant — the lump sum given to people leaving prison with no other financial support — has remained at £46 since 2008, losing around a third of its real value to inflation. Fifteen per cent of people are still released without settled housing confirmed. Research consistently shows accommodation insecurity is the single strongest predictor of reoffending, and that the first 24–72 hours after release are the highest risk period — a window the current system does almost nothing to support.</p>
             <p>The conditions that drive reoffending are being reproduced at release rather than addressed during sentence. People who secure employment after release reoffend at roughly half the rate of those without work, yet employer attitudes and DBS check requirements make job search extremely difficult. The period immediately after release is also a high-risk time for drug overdose, as opioid tolerance drops during custody. These are known, solvable problems; what has been missing is the political will to fund the answer at scale, for a population with limited political voice.</p>
           </div>
         </section>
@@ -95,17 +95,17 @@ export default function PrisonReentrySupportPage() {
               polarity={'up-is-bad' as const}
               changeText="Unchanged for a decade"
               sparklineData={[46, 47, 47, 46, 46, 44, 45, 46, 46]}
-              href="#sec-chart"source="Ministry of Justice &middot; Proven Reoffending Statistics"
+              href="#sec-chart"source="Ministry of Justice · Proven Reoffending Statistics"
             />
             <MetricCard
               label="Discharge grant"
-              value="&pound;46"
+              value="£46"
               unit=""
               direction={'flat' as const}
               polarity={'up-is-good' as const}
               changeText="Unchanged since 2008"
               sparklineData={[46, 46, 46, 46, 46, 46, 46, 46, 46]}
-              href="#sec-chart"source="HMPPS &middot; Prison Discharge Rules"
+              href="#sec-chart"source="HMPPS · Prison Discharge Rules"
             />
             <MetricCard
               label="Released with no accommodation"
@@ -115,7 +115,7 @@ export default function PrisonReentrySupportPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 11% in 2015"
               sparklineData={[11, 12, 12, 12, 13, 14, 14, 15, 15]}
-              href="#sec-chart"source="HMPPS &middot; Prison Population Data"
+              href="#sec-chart"source="HMPPS · Prison Population Data"
             />
           </div>
         </ScrollReveal>
@@ -123,7 +123,7 @@ export default function PrisonReentrySupportPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Reoffending rates post-release, 2015&ndash;2023"
+              title="Reoffending rates post-release, 2015–2023"
               subtitle="Proven reoffending within one year of release and percentage released without settled accommodation, England &amp; Wales."
               series={reentrySeries}
               yLabel="Percentage (%)"
@@ -139,9 +139,9 @@ export default function PrisonReentrySupportPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Ministry of Justice &mdash; Proven Reoffending Statistics. Annual data on reoffending within one year. gov.uk/government/collections/proven-reoffending-statistics</p>
-            <p>HMPPS &mdash; Prison Population Data. Monthly statistics. gov.uk/government/statistics/prison-population-figures-2024</p>
-            <p>Prison Reform Trust &mdash; Bromley Briefings Prison Factfile. Annual factfile on the prison population. prisonreformtrust.org.uk/publication/bromley-briefings-prison-factfile/</p>
+            <p>Ministry of Justice — Proven Reoffending Statistics. Annual data on reoffending within one year. gov.uk/government/collections/proven-reoffending-statistics</p>
+            <p>HMPPS — Prison Population Data. Monthly statistics. gov.uk/government/statistics/prison-population-figures-2024</p>
+            <p>Prison Reform Trust — Bromley Briefings Prison Factfile. Annual factfile on the prison population. prisonreformtrust.org.uk/publication/bromley-briefings-prison-factfile/</p>
             <p>Proven reoffending is defined as a caution or conviction in the 12 months following release, excluding reoffences from the index period. Discharge grant figure is the standard rate for adult prisoners with no other financial support. Accommodation figure is recorded at point of release. Data covers England and Wales.</p>
           </div>
         </section>

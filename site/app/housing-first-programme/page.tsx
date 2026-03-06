@@ -142,17 +142,17 @@ export default function HousingFirstPage() {
         <TopicHeader
           topic="Housing First"
           question="What If You Just Give Homeless People a Home?"
-          finding="Housing First &mdash; giving unconditional homes to the most complex homeless people &mdash; achieves 80% housing retention. England&apos;s pilot reached 1,400 people. Scotland has committed to national rollout. The evidence base is strong but funding is limited."
+          finding="Housing First — giving unconditional homes to the most complex homeless people — achieves 80% housing retention. England's pilot reached 1,400 people. Scotland has committed to national rollout. The evidence base is strong but funding is limited."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Housing First turns conventional homelessness policy on its head. Traditional &ldquo;staircase&rdquo; models require rough sleepers to demonstrate sobriety, mental health stability or other markers before being housed &mdash; a sequence that leaves many cycling through temporary accommodation, shelters, and rough sleeping for years. Housing First provides a permanent home unconditionally and wraps intensive support around the person once housed. The evidence from Finland, which has virtually eliminated rough sleeping using this approach, Denmark, and three large-scale English pilots is consistent: around 80% of even the most complex cases remain housed at two years.
+              Housing First turns conventional homelessness policy on its head. Traditional &ldquo;staircase&rdquo; models require rough sleepers to demonstrate sobriety, mental health stability or other markers before being housed — a sequence that leaves many cycling through temporary accommodation, shelters, and rough sleeping for years. Housing First provides a permanent home unconditionally and wraps intensive support around the person once housed. The evidence from Finland, which has virtually eliminated rough sleeping using this approach, Denmark, and three large-scale English pilots is consistent: around 80% of even the most complex cases remain housed at two years.
             </p>
             <p>
-              The English pilots &mdash; run in Greater Manchester, Liverpool City Region, and the West Midlands &mdash; reached 1,400 people between 2018 and 2024. MHCLG&apos;s evaluation found 81% were still housed after two years, with significant reductions in A&amp;E visits, police contact, and substance use. The cost per person is approximately &pound;12,000 per year &mdash; compared with &pound;32,000 for hostel accommodation and &pound;85,000 for emergency services usage by an unsupported rough sleeper. Despite this evidence, national rollout has not been funded. Rough sleeper numbers returned to near pre-COVID levels by 2024, reaching 4,255 in the annual snapshot count &mdash; with the real figure including hidden homeless considerably higher. Scotland, by contrast, legislated for a Housing First approach in 2018 and has been scaling implementation since 2019.
+              The English pilots — run in Greater Manchester, Liverpool City Region, and the West Midlands — reached 1,400 people between 2018 and 2024. MHCLG's evaluation found 81% were still housed after two years, with significant reductions in A&amp;E visits, police contact, and substance use. The cost per person is approximately £12,000 per year — compared with £32,000 for hostel accommodation and £85,000 for emergency services usage by an unsupported rough sleeper. Despite this evidence, national rollout has not been funded. Rough sleeper numbers returned to near pre-COVID levels by 2024, reaching 4,255 in the annual snapshot count — with the real figure including hidden homeless considerably higher. Scotland, by contrast, legislated for a Housing First approach in 2018 and has been scaling implementation since 2019.
             </p>
           </div>
         </section>
@@ -173,7 +173,7 @@ export default function HousingFirstPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="Cumulative since 2019 &middot; Tiny vs 270,000+ rough sleepers and hidden homeless"
+              changeText="Cumulative since 2019 · Tiny vs 270,000+ rough sleepers and hidden homeless"
               sparklineData={placementsSparkline}
               onExpand={() => {}}
             />
@@ -193,7 +193,7 @@ export default function HousingFirstPage() {
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="Cheaper than hostels &middot; Emergency service cost reductions are larger"
+              changeText="Cheaper than hostels · Emergency service cost reductions are larger"
               sparklineData={[12, 14, 16, 18, 20, 20]}
               onExpand={() => {}}
             />
@@ -204,7 +204,7 @@ export default function HousingFirstPage() {
         <ScrollReveal>
           <section id="sec-placements" className="mb-12">
             <LineChart
-              title="Housing First cumulative placements, England pilot programme, 2019&ndash;2025"
+              title="Housing First cumulative placements, England pilot programme, 2019–2025"
               subtitle="Cumulative Housing First placements in the three English pilots (Greater Manchester, Liverpool City Region, West Midlands). Growth slowed after 2023 as pilot funding was not renewed at scale."
               series={placementsSeries}
               annotations={placementsAnnotations}
@@ -217,7 +217,7 @@ export default function HousingFirstPage() {
         <ScrollReveal>
           <section id="sec-context-chart" className="mb-12">
             <LineChart
-              title="Rough sleeper count and Housing First retention rate, England, 2019&ndash;2025"
+              title="Rough sleeper count and Housing First retention rate, England, 2019–2025"
               subtitle="Annual rough sleeper snapshot count (red) and 2-year housing retention rate from pilot programmes (green). The 2020 Everyone In programme dramatically reduced rough sleeping — numbers returned to near record levels by 2024."
               series={roughSleepersSeries}
               annotations={roughSleepersAnnotations}
@@ -229,11 +229,11 @@ export default function HousingFirstPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Scotland"
             unit="National Housing First rollout"
-            description="Scotland launched its national Housing First programme in 2019 and is expanding towards full implementation. The Welsh government committed to a Housing First-led approach to homelessness by 2026. London has piloted Housing First specifically for women experiencing homelessness. The government&apos;s Rough Sleeping Strategy (2022) acknowledged Housing First evidence and committed to expanding intensive support. The Homelessness Reduction Act&apos;s prevention duty, while not Housing First, shifts focus upstream &mdash; stopping homelessness before it reaches the street."
-            source="Source: MHCLG &mdash; Housing First Pilots Evaluation 2022. Crisis &mdash; Housing First evidence base review 2024."
+            description="Scotland launched its national Housing First programme in 2019 and is expanding towards full implementation. The Welsh government committed to a Housing First-led approach to homelessness by 2026. London has piloted Housing First specifically for women experiencing homelessness. The government's Rough Sleeping Strategy (2022) acknowledged Housing First evidence and committed to expanding intensive support. The Homelessness Reduction Act's prevention duty, while not Housing First, shifts focus upstream — stopping homelessness before it reaches the street."
+            source="Source: MHCLG — Housing First Pilots Evaluation 2022. Crisis — Housing First evidence base review 2024."
           />
         </ScrollReveal>
 
@@ -244,7 +244,7 @@ export default function HousingFirstPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

@@ -67,12 +67,14 @@ export default function PrisonReoffendingPage() {
     <main>
       <TopicNav topic="Prison Reoffending" />
 
-      <TopicHeader
-        topic="Prison Reoffending"
-        colour="#6B7280"
-        question="What happens after prison?"
-        finding="Over half of adults released from prison reoffend within a year, and the reoffending rate for short-sentence prisoners is 64% &mdash; yet the courses, treatment, and post-release support that cut reoffending are chronically underfunded."
-      />
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <TopicHeader
+          topic="Prison Reoffending"
+          colour="#6B7280"
+          question="What happens after prison?"
+          finding="Over half of adults released from prison reoffend within a year, and the reoffending rate for short-sentence prisoners is 64% — yet the courses, treatment, and post-release support that cut reoffending are chronically underfunded."
+        />
+      </div>
 
       {/* ── MetricCards ────────────────────────────────────────────────────── */}
       <section className="bg-wiah-light px-6 py-12">
@@ -92,7 +94,7 @@ export default function PrisonReoffendingPage() {
             <ScrollReveal delay={1}>
               <MetricCard
                 label="Cost of reoffending to society"
-                value="&pound;18bn"
+                value="£18bn"
                 unit="per year"
                 direction="up"
                 polarity="up-is-bad"
@@ -222,8 +224,8 @@ export default function PrisonReoffendingPage() {
         <div className="max-w-2xl mx-auto">
           <ScrollReveal>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>More than half of adults released from prison in England and Wales &mdash; 53% &mdash; commit another proven offence within twelve months, a figure that has barely moved since 2010. Short-sentence prisoners reoffend at a rate of 64% and are the least likely to receive structured help: released with &pound;46 in gate money, no compulsory supervision, and in nearly half of cases nowhere confirmed to live. The Ministry of Justice estimates the total economic cost of reoffending at &pound;18bn per year. Against that, the cost of comprehensive employment support, stable housing on release, and addiction treatment is modest &mdash; the evidence has been settled for decades.</p>
-              <p>The data on what reduces reoffending is unambiguous: prisoners who leave custody with employment reoffend at 23%; those with stable accommodation, 27%; those with neither, 73%. Yet rehabilitation budgets have been cut repeatedly since 2010. The Transforming Rehabilitation reforms of 2014 privatised probation; the Community Rehabilitation Companies failed to deliver, and probation was renationalised in 2021. The DWP&apos;s New Futures Network points in the right direction but reaches only a fraction of those released each year. The constraint is not knowledge but political will to fund the answer at scale.</p>
+              <p>More than half of adults released from prison in England and Wales — 53% — commit another proven offence within twelve months, a figure that has barely moved since 2010. Short-sentence prisoners reoffend at a rate of 64% and are the least likely to receive structured help: released with £46 in gate money, no compulsory supervision, and in nearly half of cases nowhere confirmed to live. The Ministry of Justice estimates the total economic cost of reoffending at £18bn per year. Against that, the cost of comprehensive employment support, stable housing on release, and addiction treatment is modest — the evidence has been settled for decades.</p>
+              <p>The data on what reduces reoffending is unambiguous: prisoners who leave custody with employment reoffend at 23%; those with stable accommodation, 27%; those with neither, 73%. Yet rehabilitation budgets have been cut repeatedly since 2010. The Transforming Rehabilitation reforms of 2014 privatised probation; the Community Rehabilitation Companies failed to deliver, and probation was renationalised in 2021. The DWP's New Futures Network points in the right direction but reaches only a fraction of those released each year. The constraint is not knowledge but political will to fund the answer at scale.</p>
             </div>
           </ScrollReveal>
         </div>
@@ -236,7 +238,7 @@ export default function PrisonReoffendingPage() {
             title="Employment on release cuts reoffending in half"
             value="23%"
             unit="reoffending rate (with work)"
-            description="The evidence is clear: prisoners who leave custody with a job are half as likely to reoffend as those without work. The DWP&apos;s New Futures Network connects prisons with employers, and the prison employment advisory function was introduced in 2021 to support every prison leaver into work. Take-up remains limited by employer confidence and the practical barriers of disclosure."
+            description="The evidence is clear: prisoners who leave custody with a job are half as likely to reoffend as those without work. The DWP's New Futures Network connects prisons with employers, and the prison employment advisory function was introduced in 2021 to support every prison leaver into work. Take-up remains limited by employer confidence and the practical barriers of disclosure."
             source="Source: Ministry of Justice, Reoffending Analysis by Post-Release Circumstances, 2022"
           />
         </ScrollReveal>

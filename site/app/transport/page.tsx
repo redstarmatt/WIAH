@@ -292,23 +292,23 @@ export default function TransportPage() {
               2014, with the botched 2018 timetable change across Northern and Thameslink
               services exposing how little margin the network had. COVID-19 then collapsed
               demand, and while passenger numbers recovered to roughly 95% of pre-pandemic
-              levels, performance did not follow &mdash; ageing signalling, capacity
+              levels, performance did not follow — ageing signalling, capacity
               bottlenecks, and the 2022 RMT/ASLEF strikes all took their toll. Buses tell
               a parallel story outside London: local authority funding for supported routes
               has fallen over 40% in real terms since 2010, services have been withdrawn,
-              and ridership has never fully recovered from the pandemic. The &pound;2 fare
+              and ridership has never fully recovered from the pandemic. The £2 fare
               cap sustained demand but could not replace the routes that had already gone.
-              Greater Manchester&apos;s Bee Network re-regulation is the first serious
+              Greater Manchester's Bee Network re-regulation is the first serious
               attempt to reverse this model.
             </p>
             <p>
-              Road safety is one of British public policy&apos;s genuine long-run
-              successes. Fatalities fell 73% between 1979 and 2023 &mdash; from 6,352
-              killed to 1,695 &mdash; driven by compulsory seat belts in 1983, tougher
+              Road safety is one of British public policy's genuine long-run
+              successes. Fatalities fell 73% between 1979 and 2023 — from 6,352
+              killed to 1,695 — driven by compulsory seat belts in 1983, tougher
               drink-drive enforcement, and successive improvements to vehicle safety
               standards. But the improvement has stalled. Since 2010, deaths have
               plateaued at around 1,700 a year, and the seriously injured count has edged
-              upward from a 2013 low of 21,657 to 30,124 in 2023 &mdash; partly a result
+              upward from a 2013 low of 21,657 to 30,124 in 2023 — partly a result
               of better recording, but enough to raise questions about whether further
               gains require new interventions such as lower urban speed limits and
               better-designed junctions.
@@ -527,7 +527,7 @@ export default function TransportPage() {
         <PositiveCallout
           title="What's improving"
           value="95%"
-          description="Rail passenger numbers have rebounded to approximately 95% of pre-pandemic levels. The Elizabeth Line — Europe&apos;s largest infrastructure project — carried over 200 million passengers in its first full year. New rolling stock across several franchises has improved journey quality, even where punctuality remains mixed."
+          description="Rail passenger numbers have rebounded to approximately 95% of pre-pandemic levels. The Elizabeth Line — Europe's largest infrastructure project — carried over 200 million passengers in its first full year. New rolling stock across several franchises has improved journey quality, even where punctuality remains mixed."
           source="Source: ORR — Passenger rail usage estimates, 2024/25."
         />
         </ScrollReveal>
@@ -539,7 +539,7 @@ export default function TransportPage() {
           <ScrollReveal>
           <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Road Safety</h2>
           <p className="text-base text-wiah-mid mb-8 max-w-2xl">
-            Britain&apos;s roads are dramatically safer than they were four decades ago — but the
+            Britain's roads are dramatically safer than they were four decades ago — but the
             improvement has stalled since 2010, with around 1,700 people killed each year.
           </p>
           </ScrollReveal>
@@ -672,7 +672,7 @@ export default function TransportPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}
@@ -683,7 +683,7 @@ export default function TransportPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                DfT &mdash; Reported road casualties in Great Britain (annual)
+                DfT — Reported road casualties in Great Britain (annual)
               </a>
             </li>
             <li>
@@ -693,7 +693,7 @@ export default function TransportPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                SMMT / DVLA &mdash; New car registrations and licensed vehicles (monthly)
+                SMMT / DVLA — New car registrations and licensed vehicles (monthly)
               </a>
             </li>
           </ul>

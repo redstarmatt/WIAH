@@ -125,10 +125,10 @@ export default function WorkerMonitoringPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              When workforces moved home in 2020, a significant proportion of employers responded by deploying digital monitoring software. Keystroke logging, screen capture at timed intervals, website tracking, email scanning, GPS tracking of delivery workers &mdash; the market for employee surveillance technology grew by an estimated 380% between 2019 and 2020 alone. By 2024, seven in ten UK employers were using at least one form of productivity monitoring, a level that has not declined as workers returned to offices.
+              When workforces moved home in 2020, a significant proportion of employers responded by deploying digital monitoring software. Keystroke logging, screen capture at timed intervals, website tracking, email scanning, GPS tracking of delivery workers — the market for employee surveillance technology grew by an estimated 380% between 2019 and 2020 alone. By 2024, seven in ten UK employers were using at least one form of productivity monitoring, a level that has not declined as workers returned to offices.
             </p>
             <p>
-              The legal framework is clear but widely flouted. The ICO&apos;s Employment Practices Code requires that monitoring be necessary, proportionate, transparent, and lawful under GDPR and the Data Protection Act 2018. Covert monitoring &mdash; of which workers are unaware &mdash; is unlawful except in very limited circumstances. Yet ICO investigations into unlawful monitoring have risen from 8 in 2019 to 35 in 2024, suggesting a significant and growing compliance deficit. The psychological consequences are also measurable: 45% of workers in surveyed companies with monitoring programmes report that it damages their wellbeing, trust, or ability to concentrate, according to TUC/YouGov data.
+              The legal framework is clear but widely flouted. The ICO's Employment Practices Code requires that monitoring be necessary, proportionate, transparent, and lawful under GDPR and the Data Protection Act 2018. Covert monitoring — of which workers are unaware — is unlawful except in very limited circumstances. Yet ICO investigations into unlawful monitoring have risen from 8 in 2019 to 35 in 2024, suggesting a significant and growing compliance deficit. The psychological consequences are also measurable: 45% of workers in surveyed companies with monitoring programmes report that it damages their wellbeing, trust, or ability to concentrate, according to TUC/YouGov data.
             </p>
           </div>
         </section>
@@ -149,7 +149,7 @@ export default function WorkerMonitoringPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 22% in 2019 &middot; Keystroke logging, screen capture, GPS"
+              changeText="Up from 22% in 2019 · Keystroke logging, screen capture, GPS"
               sparklineData={[22, 62, 65, 68, 70, 72]}
               onExpand={() => {}}
             />
@@ -159,7 +159,7 @@ export default function WorkerMonitoringPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+338% since 2019 &middot; Unlawful covert monitoring main issue"
+              changeText="+338% since 2019 · Unlawful covert monitoring main issue"
               sparklineData={[8, 12, 18, 22, 28, 35]}
               onExpand={() => {}}
             />
@@ -169,7 +169,7 @@ export default function WorkerMonitoringPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="TUC/YouGov 2024 &middot; Anxiety, distrust, chilling effect on work"
+              changeText="TUC/YouGov 2024 · Anxiety, distrust, chilling effect on work"
               sparklineData={[38, 42, 45]}
               onExpand={() => {}}
             />
@@ -180,7 +180,7 @@ export default function WorkerMonitoringPage() {
         <ScrollReveal>
           <section id="sec-adoption" className="mb-12">
             <LineChart
-              title="Employers using productivity monitoring software, UK, 2019&ndash;2024"
+              title="Employers using productivity monitoring software, UK, 2019–2024"
               subtitle="Percentage of UK employers with at least one digital productivity monitoring tool deployed. Jumped from 22% to 62% during the 2020 pandemic and has continued rising since."
               series={adoptionSeries}
               annotations={adoptionAnnotations}
@@ -192,7 +192,7 @@ export default function WorkerMonitoringPage() {
         <ScrollReveal>
           <section id="sec-ico" className="mb-12">
             <LineChart
-              title="ICO investigations into employee monitoring, 2019&ndash;2024"
+              title="ICO investigations into employee monitoring, 2019–2024"
               subtitle="Formal ICO investigations and regulatory enquiries relating to unlawful or disproportionate workplace surveillance. More than fourfold increase since 2019."
               series={icoSeries}
               annotations={icoAnnotations}
@@ -204,11 +204,11 @@ export default function WorkerMonitoringPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="ICO Employment Practices Code 2023"
             unit=""
-            description="ICO&apos;s 2023 Employment Practices Code sets out lawful monitoring requirements clearly for employers. The Employment Rights Bill includes new obligations on employers to disclose monitoring practices to workers before deployment. Trade unions are increasingly negotiating &lsquo;monitoring charters&rsquo; as part of collective agreements. The TUC has published model workplace agreements on technological monitoring that provide a template for negotiation."
-            source="Source: ICO &mdash; Employment Practices Code 2023; TUC &mdash; Worker surveillance: your rights 2024."
+            description="ICO's 2023 Employment Practices Code sets out lawful monitoring requirements clearly for employers. The Employment Rights Bill includes new obligations on employers to disclose monitoring practices to workers before deployment. Trade unions are increasingly negotiating &lsquo;monitoring charters&rsquo; as part of collective agreements. The TUC has published model workplace agreements on technological monitoring that provide a template for negotiation."
+            source="Source: ICO — Employment Practices Code 2023; TUC — Worker surveillance: your rights 2024."
           />
         </ScrollReveal>
 
@@ -219,7 +219,7 @@ export default function WorkerMonitoringPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

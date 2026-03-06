@@ -94,17 +94,17 @@ export default function PensionerPovertyPage() {
         <TopicHeader
           topic="Pensioner Poverty"
           question="Are pensioners poor?"
-          finding="Pensioner poverty fell dramatically between 1997 and 2012, but has been creeping back up since, with 2.1 million pensioners now living below the poverty line &mdash; disproportionately women, renters, and those in the oldest age groups."
+          finding="Pensioner poverty fell dramatically between 1997 and 2012, but has been creeping back up since, with 2.1 million pensioners now living below the poverty line — disproportionately women, renters, and those in the oldest age groups."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Pensioner poverty fell dramatically from around 40% in the early 1990s to 13% by 2012, driven by Pension Credit and real-terms state pension increases &mdash; one of the more significant social policy achievements of that era. Since then progress has stalled: the rate has drifted back to 18%, with approximately 2.1 million pensioners living below 60% of median income after housing costs, the highest rate since 2011. The full new state pension reached &pound;221.20 per week in 2024/25 under the triple lock, but around 850,000 eligible pensioners do not claim Pension Credit &mdash; roughly 40% of those entitled &mdash; leaving &pound;1.5 billion unclaimed annually. From autumn 2024, the Winter Fuel Payment was restricted to Pension Credit recipients, further concentrating hardship on those least likely to be claiming it.
+              Pensioner poverty fell dramatically from around 40% in the early 1990s to 13% by 2012, driven by Pension Credit and real-terms state pension increases — one of the more significant social policy achievements of that era. Since then progress has stalled: the rate has drifted back to 18%, with approximately 2.1 million pensioners living below 60% of median income after housing costs, the highest rate since 2011. The full new state pension reached £221.20 per week in 2024/25 under the triple lock, but around 850,000 eligible pensioners do not claim Pension Credit — roughly 40% of those entitled — leaving £1.5 billion unclaimed annually. From autumn 2024, the Winter Fuel Payment was restricted to Pension Credit recipients, further concentrating hardship on those least likely to be claiming it.
             </p>
             <p>
-              The burden of pensioner poverty falls along predictable lines. Single female pensioners face a 24% poverty rate, compared to 14% for couples, reflecting lower lifetime earnings, caring career breaks, and incomplete NI records. Disabled pensioners face 28%. Private renting among pensioners has grown from 5% in 2000 to over 15% today, and private renters face a substantially higher poverty risk than owner-occupiers. Wales records the highest pensioner poverty rate (19%), with elevated rates also in the North East, coastal retirement towns, and former industrial areas. The WASPI cohort &mdash; women born in the 1950s affected by the 2010 Pensions Act &mdash; received an Ombudsman ruling of maladministration in 2024, but the question of compensation remains unresolved.
+              The burden of pensioner poverty falls along predictable lines. Single female pensioners face a 24% poverty rate, compared to 14% for couples, reflecting lower lifetime earnings, caring career breaks, and incomplete NI records. Disabled pensioners face 28%. Private renting among pensioners has grown from 5% in 2000 to over 15% today, and private renters face a substantially higher poverty risk than owner-occupiers. Wales records the highest pensioner poverty rate (19%), with elevated rates also in the North East, coastal retirement towns, and former industrial areas. The WASPI cohort — women born in the 1950s affected by the 2010 Pensions Act — received an Ombudsman ruling of maladministration in 2024, but the question of compensation remains unresolved.
             </p>
           </div>
         </section>
@@ -182,10 +182,10 @@ export default function PensionerPovertyPage() {
         {/* Chart 2: State pension weekly value */}
         {statePensionSeries.length > 0 ? (
           <LineChart
-            title="New State Pension weekly amount, 2016&ndash;2024"
-            subtitle="Weekly rate (&pound;). Triple Lock commits to increases by earnings, CPI inflation, or 2.5% &mdash; whichever is highest."
+            title="New State Pension weekly amount, 2016–2024"
+            subtitle="Weekly rate (£). Triple Lock commits to increases by earnings, CPI inflation, or 2.5% — whichever is highest."
             series={statePensionSeries}
-            yLabel="Weekly amount (&pound;)"
+            yLabel="Weekly amount (£)"
             source={{
               name: 'DWP',
               dataset: 'State Pension rates',
@@ -235,10 +235,10 @@ export default function PensionerPovertyPage() {
         {/* Positive callout */}
         <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="42%"
-          unit="increase 2016&ndash;2024"
-          description="The Triple Lock, introduced in 2010, guarantees the state pension rises each year by the highest of earnings growth, CPI inflation, or 2.5%. It has meant the new state pension rose from &pound;119/week in 2016 to &pound;169/week in 2024. But the Triple Lock&apos;s long-term fiscal cost is contested, and it is suspended when earnings data is distorted."
+          unit="increase 2016–2024"
+          description="The Triple Lock, introduced in 2010, guarantees the state pension rises each year by the highest of earnings growth, CPI inflation, or 2.5%. It has meant the new state pension rose from £119/week in 2016 to £169/week in 2024. But the Triple Lock's long-term fiscal cost is contested, and it is suspended when earnings data is distorted."
           source="Source: DWP State Pension rates, 2024."
         />
         </ScrollReveal>
@@ -254,7 +254,7 @@ export default function PensionerPovertyPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                DWP &mdash; Households Below Average Income (HBAI) (annual)
+                DWP — Households Below Average Income (HBAI) (annual)
               </a>
             </li>
             <li>
@@ -264,7 +264,7 @@ export default function PensionerPovertyPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                DWP &mdash; State Pension rates (annual)
+                DWP — State Pension rates (annual)
               </a>
             </li>
           </ul>

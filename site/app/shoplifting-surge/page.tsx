@@ -116,7 +116,7 @@ export default function ShopliftingSurgePage() {
   ];
 
   const chargeRateAnnotations: Annotation[] = [
-    { date: new Date(2024, 5, 1), label: '2024: &pound;200 threshold removed' },
+    { date: new Date(2024, 5, 1), label: '2024: £200 threshold removed' },
   ];
 
   // ── Render ────────────────────────────────────────────────────────────────
@@ -129,17 +129,17 @@ export default function ShopliftingSurgePage() {
         <TopicHeader
           topic="Shoplifting Surge"
           question="Why Is Shoplifting Out of Control?"
-          finding="Recorded shoplifting offences reached 469,000 in year ending March 2024, a 30% increase on the previous year and the highest since records began. Retail crime costs businesses &pound;1.8 billion annually."
+          finding="Recorded shoplifting offences reached 469,000 in year ending March 2024, a 30% increase on the previous year and the highest since records began. Retail crime costs businesses £1.8 billion annually."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The surge in recorded shoplifting has multiple drivers operating simultaneously. Cost-of-living pressures have pushed more individuals into opportunistic theft for survival goods &mdash; supermarkets report significant increases in small-value food thefts that would previously have gone unrecorded. But organised retail crime &mdash; coordinated gangs systematically targeting stores for resale &mdash; has grown proportionally faster, accounting for an increasing share of total losses. The British Retail Consortium estimates organised crime now accounts for around 30% of total retail theft value, concentrated in high-value electronics, alcohol, and cosmetics.
+              The surge in recorded shoplifting has multiple drivers operating simultaneously. Cost-of-living pressures have pushed more individuals into opportunistic theft for survival goods — supermarkets report significant increases in small-value food thefts that would previously have gone unrecorded. But organised retail crime — coordinated gangs systematically targeting stores for resale — has grown proportionally faster, accounting for an increasing share of total losses. The British Retail Consortium estimates organised crime now accounts for around 30% of total retail theft value, concentrated in high-value electronics, alcohol, and cosmetics.
             </p>
             <p>
-              The charge rate of 12% reflects both a policing prioritisation problem and structural evidentiary challenges. The de facto &pound;200 threshold &mdash; an unofficial police policy under which lower-value thefts were rarely actively investigated &mdash; has now been formally abolished by the Criminal Justice Bill 2024. Whether this will translate into higher enforcement remains to be seen: police capacity is constrained, and retailers themselves often do not report thefts below certain values because the opportunity cost of staff time exceeds the benefit. The &pound;1.8 billion annual cost to retailers &mdash; ultimately passed on in prices &mdash; falls disproportionately on smaller independent retailers who lack the security infrastructure of large chains.
+              The charge rate of 12% reflects both a policing prioritisation problem and structural evidentiary challenges. The de facto £200 threshold — an unofficial police policy under which lower-value thefts were rarely actively investigated — has now been formally abolished by the Criminal Justice Bill 2024. Whether this will translate into higher enforcement remains to be seen: police capacity is constrained, and retailers themselves often do not report thefts below certain values because the opportunity cost of staff time exceeds the benefit. The £1.8 billion annual cost to retailers — ultimately passed on in prices — falls disproportionately on smaller independent retailers who lack the security infrastructure of large chains.
             </p>
           </div>
         </section>
@@ -161,7 +161,7 @@ export default function ShopliftingSurgePage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+30% in one year &middot; Highest since records began &middot; Organised crime growing"
+              changeText="+30% in one year · Highest since records began · Organised crime growing"
               sparklineData={[321, 330, 342, 356, 362, 342, 330, 348, 360, 469]}
               onExpand={() => {}}
             />
@@ -171,17 +171,17 @@ export default function ShopliftingSurgePage() {
               unit=""
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 18% in 2015 &middot; Police prioritisation declining &middot; &pound;200 threshold abolished"
+              changeText="Down from 18% in 2015 · Police prioritisation declining · £200 threshold abolished"
               sparklineData={[18, 17, 16, 15, 15, 14, 13, 13, 12, 12]}
               onExpand={() => {}}
             />
             <MetricCard
               label="Annual cost to retailers"
-              value="&pound;1.8bn"
+              value="£1.8bn"
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from &pound;1.0bn in 2019 &middot; Organised crime a growing factor &middot; Passed to consumers"
+              changeText="Up from £1.0bn in 2019 · Organised crime a growing factor · Passed to consumers"
               sparklineData={[1.0, 1.1, 0.9, 1.1, 1.4, 1.8]}
               onExpand={() => {}}
             />
@@ -192,8 +192,8 @@ export default function ShopliftingSurgePage() {
         <ScrollReveal>
           <section id="sec-offences" className="mb-12">
             <LineChart
-              title="Recorded shoplifting offences, England and Wales, 2015&ndash;2024"
-              subtitle="Police recorded shoplifting offences (year ending March). Hit a record 469,000 in 2024 &mdash; a 30% annual increase driven by cost-of-living pressures and organised retail crime."
+              title="Recorded shoplifting offences, England and Wales, 2015–2024"
+              subtitle="Police recorded shoplifting offences (year ending March). Hit a record 469,000 in 2024 — a 30% annual increase driven by cost-of-living pressures and organised retail crime."
               series={offencesSeries}
               annotations={offencesAnnotations}
               yLabel="Thousands"
@@ -204,8 +204,8 @@ export default function ShopliftingSurgePage() {
         <ScrollReveal>
           <section id="sec-charge-rate" className="mb-12">
             <LineChart
-              title="Shoplifting charge rate, England and Wales, 2015&ndash;2024"
-              subtitle="Percentage of recorded shoplifting offences resulting in charge or summons. Declined from 18% to 12% as offence volumes rose and policing prioritisation shifted. &pound;200 de facto threshold removed by Criminal Justice Bill 2024."
+              title="Shoplifting charge rate, England and Wales, 2015–2024"
+              subtitle="Percentage of recorded shoplifting offences resulting in charge or summons. Declined from 18% to 12% as offence volumes rose and policing prioritisation shifted. £200 de facto threshold removed by Criminal Justice Bill 2024."
               series={chargeRateSeries}
               annotations={chargeRateAnnotations}
               yLabel="Percent (%)"
@@ -216,7 +216,7 @@ export default function ShopliftingSurgePage() {
         <ScrollReveal>
           <section id="sec-cost" className="mb-12">
             <LineChart
-              title="Annual retail crime cost, UK, 2019&ndash;2024"
+              title="Annual retail crime cost, UK, 2019–2024"
               subtitle="Total cost of retail crime including theft, criminal damage, and violence against staff (British Retail Consortium estimate). Rose 80% in five years, with organised crime driving an increasing share."
               series={retailCostSeries}
               annotations={[{ date: new Date(2022, 5, 1), label: '2022: Post-pandemic surge begins' }]}
@@ -228,11 +228,11 @@ export default function ShopliftingSurgePage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
-            value="&pound;700M"
+            title="What's improving"
+            value="£700M"
             unit="retail security investment"
-            description="The Criminal Justice Bill 2024 removed the &pound;200 de facto decriminalisation threshold for shoplifting, making all theft an active policing priority regardless of value. Retailers have collectively invested &pound;700 million in security technology including AI-powered CCTV that can identify known offenders and provide automatic evidence packages. The National Business Crime Centre coordinates intelligence sharing between retailers and police. Several police forces have dedicated retail crime units that have significantly improved local charge rates."
-            source="Source: Home Office Police Recorded Crime 2023/24 &middot; British Retail Consortium Retail Crime Survey 2024."
+            description="The Criminal Justice Bill 2024 removed the £200 de facto decriminalisation threshold for shoplifting, making all theft an active policing priority regardless of value. Retailers have collectively invested £700 million in security technology including AI-powered CCTV that can identify known offenders and provide automatic evidence packages. The National Business Crime Centre coordinates intelligence sharing between retailers and police. Several police forces have dedicated retail crime units that have significantly improved local charge rates."
+            source="Source: Home Office Police Recorded Crime 2023/24 · British Retail Consortium Retail Crime Survey 2024."
           />
         </ScrollReveal>
 
@@ -243,7 +243,7 @@ export default function ShopliftingSurgePage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

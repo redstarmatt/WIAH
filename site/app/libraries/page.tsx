@@ -115,17 +115,17 @@ export default function LibrariesPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Libraries"
-          question="Are Britain&apos;s Public Libraries Disappearing?"
-          finding="England has lost over 770 library branches since 2010 &mdash; a 17% fall. Book issues have dropped 42%. But visits are recovering post-COVID, and libraries have expanded digital services. The question is whether a reimagined library can survive further council budget cuts."
+          question="Are Britain's Public Libraries Disappearing?"
+          finding="England has lost over 770 library branches since 2010 — a 17% fall. Book issues have dropped 42%. But visits are recovering post-COVID, and libraries have expanded digital services. The question is whether a reimagined library can survive further council budget cuts."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England had 4,516 library branches in 2010; by 2022/23 roughly 3,000 remained &mdash; a 33% contraction in twelve years, with over 8,000 library jobs lost. Real-terms local authority spending fell approximately 34% between 2009/10 and 2022/23. Total visits fell from 338 million in 2010 to a COVID-driven low of 170 million in 2020/21, recovering partially to 247 million by 2022/23; book issues dropped 42% from 302 million to 175 million, though e-books and audiobooks now account for 22% of loans. Paid library staff fell from 24,000 in 2010 to 16,000 by 2022 while volunteer numbers tripled to over 60,000. In winter 2022&ndash;23, more than 2,200 libraries registered as warm spaces, illustrating how these institutions have evolved from lending rooms into front-line community infrastructure.
+              England had 4,516 library branches in 2010; by 2022/23 roughly 3,000 remained — a 33% contraction in twelve years, with over 8,000 library jobs lost. Real-terms local authority spending fell approximately 34% between 2009/10 and 2022/23. Total visits fell from 338 million in 2010 to a COVID-driven low of 170 million in 2020/21, recovering partially to 247 million by 2022/23; book issues dropped 42% from 302 million to 175 million, though e-books and audiobooks now account for 22% of loans. Paid library staff fell from 24,000 in 2010 to 16,000 by 2022 while volunteer numbers tripled to over 60,000. In winter 2022–23, more than 2,200 libraries registered as warm spaces, illustrating how these institutions have evolved from lending rooms into front-line community infrastructure.
             </p>
-            <p>Library closures fall hardest on those with fewest alternatives. Older adults lose a social lifeline; children from low-income families lose their only access to books and quiet study space; homeless people lose daytime refuge. Volunteer-run libraries cannot replicate the professional services qualified librarians delivered &mdash; structured job search support, digital skills training, ESOL classes, and mental health signposting. Councils that closed libraries to save &pound;30,000&ndash;&pound;80,000 per branch per year now spend more commissioning fragmented outreach services that reach fewer people.</p>
+            <p>Library closures fall hardest on those with fewest alternatives. Older adults lose a social lifeline; children from low-income families lose their only access to books and quiet study space; homeless people lose daytime refuge. Volunteer-run libraries cannot replicate the professional services qualified librarians delivered — structured job search support, digital skills training, ESOL classes, and mental health signposting. Councils that closed libraries to save £30,000–£80,000 per branch per year now spend more commissioning fragmented outreach services that reach fewer people.</p>
           </div>
         </section>
 
@@ -133,7 +133,7 @@ export default function LibrariesPage() {
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-branches', label: 'Library branches' },
           { id: 'sec-visits', label: 'Library visits' },
-          { id: 'sec-improvement', label: 'What&apos;s improving' },
+          { id: 'sec-improvement', label: "What's improving" },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
@@ -172,7 +172,7 @@ export default function LibrariesPage() {
         <ScrollReveal>
           <div id="sec-branches" className="mb-12">
             <LineChart
-              title="Library branches, England, 2010&ndash;2023"
+              title="Library branches, England, 2010–2023"
               subtitle="Steady contraction from austerity and competition from digital lending and cultural shift"
               series={branchSeries}
             />
@@ -182,7 +182,7 @@ export default function LibrariesPage() {
         <ScrollReveal>
           <div id="sec-visits" className="mb-12">
             <LineChart
-              title="Library visits, England, 2010&ndash;2023"
+              title="Library visits, England, 2010–2023"
               subtitle="Historic decline reversed post-COVID, though below pre-pandemic levels"
               series={visitSeries}
               annotations={annotations}
@@ -193,11 +193,11 @@ export default function LibrariesPage() {
         <ScrollReveal>
           <div id="sec-improvement" className="mb-12">
             <PositiveCallout
-              title="What&apos;s improving"
+              title="What's improving"
               value="+60K"
-              unit="volunteers keeping libraries open &mdash; tripling since 2010"
-              description="The number of library volunteers has tripled from around 20,000 in 2010 to more than 60,000 today, keeping hundreds of branches open that would otherwise have closed. Digital library membership and e-book loans have grown rapidly: digital issues now account for 22% of all loans, up from under 5% a decade ago. Libraries have also diversified into warm-space hubs, digital inclusion support, and NHS signposting. The British Library&apos;s digital newspaper archive is freely accessible through any library card."
-              source="Source: CIPFA &mdash; Public library statistics 2022/23."
+              unit="volunteers keeping libraries open — tripling since 2010"
+              description="The number of library volunteers has tripled from around 20,000 in 2010 to more than 60,000 today, keeping hundreds of branches open that would otherwise have closed. Digital library membership and e-book loans have grown rapidly: digital issues now account for 22% of all loans, up from under 5% a decade ago. Libraries have also diversified into warm-space hubs, digital inclusion support, and NHS signposting. The British Library's digital newspaper archive is freely accessible through any library card."
+              source="Source: CIPFA — Public library statistics 2022/23."
             />
           </div>
         </ScrollReveal>
@@ -208,7 +208,7 @@ export default function LibrariesPage() {
             {data?.metadata.sources.map((src, idx) => (
               <div key={idx}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">{src.frequency}</div>
               </div>

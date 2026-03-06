@@ -85,7 +85,7 @@ export default function FloodRiskPage() {
     : [];
 
   const floodCostAnnotations: Annotation[] = [
-    { date: yearToDate(2007), label: 'Summer floods: &pound;3.2bn damage' },
+    { date: yearToDate(2007), label: 'Summer floods: £3.2bn damage' },
   ];
 
   // ── Metrics ──────────────────────────────────────────────────────────────
@@ -123,10 +123,10 @@ export default function FloodRiskPage() {
             />
             <MetricCard
               label="Annual flood damage cost"
-              value="&pound;1.4bn"
+              value="£1.4bn"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from &pound;500M in 2000"
+              changeText="Up from £500M in 2000"
               sparklineData={costSparkline}
               source="Environment Agency, 2022"
             />
@@ -168,7 +168,7 @@ export default function FloodRiskPage() {
                 <div className="mb-12">
                   <LineChart
                     title="Annual flood damage cost, England"
-                    subtitle="Estimated total cost of flood damage in &pound;bn. Major events drive spikes (e.g. 2007 summer floods)."
+                    subtitle="Estimated total cost of flood damage in £bn. Major events drive spikes (e.g. 2007 summer floods)."
                     series={floodCostSeries}
                     annotations={floodCostAnnotations}
                     source={{
@@ -226,8 +226,8 @@ export default function FloodRiskPage() {
       <section id="sec-context" className="border-b border-wiah-border">
         <div className="max-w-2xl mx-auto px-6 py-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>5.2 million properties in England &mdash; roughly one in six &mdash; sit in flood risk areas, according to the Environment Agency. The threat comes from rivers, coastal inundation, and surface water from overwhelmed drainage after intense rainfall; the last is growing fastest. Urban drainage was largely designed to a one-in-thirty-year standard, but climate projections suggest many areas will now see that level of rainfall every ten years. Surface water flooding now accounts for 34% of at-risk properties and is the dominant threat in major cities. The 2007 summer floods caused &pound;3.2bn of damage; Storm Babet in October 2023 again inundated large parts of Lincolnshire, East Anglia, and Scotland. Approximately 10,000 to 11,000 new homes are built in flood-risk areas each year &mdash; often over Environment Agency objections &mdash; and the government&apos;s FCERM investment plan commits &pound;5.2bn over 2021&ndash;2027, but revenue and maintenance spending was cut in real terms over the same period, leaving ageing defences underfunded.</p>
-            <p>Most at-risk homeowners can still obtain flood insurance through Flood Re, the government-backed reinsurance scheme, but around 1.1 million households have none. Flood Re excludes properties built after 2009, leasehold flats, and small businesses, and is designed to wind down by 2039 &mdash; an assumption increasingly hard to sustain as climate risk rises. The distribution of flood risk maps closely onto deprivation: older housing in floodplain towns, coastal settlements facing managed retreat, and urban areas with Victorian drainage are frequently the communities with fewest resources to fund private adaptation. Deprived households are less likely to hold insurance, less likely to recover quickly after an event, and the same flood inflicts substantially greater long-run harm on lower-income communities than on wealthier ones.</p>
+            <p>5.2 million properties in England — roughly one in six — sit in flood risk areas, according to the Environment Agency. The threat comes from rivers, coastal inundation, and surface water from overwhelmed drainage after intense rainfall; the last is growing fastest. Urban drainage was largely designed to a one-in-thirty-year standard, but climate projections suggest many areas will now see that level of rainfall every ten years. Surface water flooding now accounts for 34% of at-risk properties and is the dominant threat in major cities. The 2007 summer floods caused £3.2bn of damage; Storm Babet in October 2023 again inundated large parts of Lincolnshire, East Anglia, and Scotland. Approximately 10,000 to 11,000 new homes are built in flood-risk areas each year — often over Environment Agency objections — and the government's FCERM investment plan commits £5.2bn over 2021–2027, but revenue and maintenance spending was cut in real terms over the same period, leaving ageing defences underfunded.</p>
+            <p>Most at-risk homeowners can still obtain flood insurance through Flood Re, the government-backed reinsurance scheme, but around 1.1 million households have none. Flood Re excludes properties built after 2009, leasehold flats, and small businesses, and is designed to wind down by 2039 — an assumption increasingly hard to sustain as climate risk rises. The distribution of flood risk maps closely onto deprivation: older housing in floodplain towns, coastal settlements facing managed retreat, and urban areas with Victorian drainage are frequently the communities with fewest resources to fund private adaptation. Deprived households are less likely to hold insurance, less likely to recover quickly after an event, and the same flood inflicts substantially greater long-run harm on lower-income communities than on wealthier ones.</p>
           </div>
         </div>
       </section>
@@ -239,7 +239,7 @@ export default function FloodRiskPage() {
             title="Flood Re scheme protecting vulnerable homes"
             value="350,000"
             unit="households"
-            description="Flood Re, launched in 2016, is a government-backed reinsurance scheme that allows insurance companies to offer affordable flood cover in high-risk areas. Around 350,000 households benefit. The scheme runs until 2039, but its long-term future &mdash; and how it handles climate-driven increases in risk &mdash; remains unresolved."
+            description="Flood Re, launched in 2016, is a government-backed reinsurance scheme that allows insurance companies to offer affordable flood cover in high-risk areas. Around 350,000 households benefit. The scheme runs until 2039, but its long-term future — and how it handles climate-driven increases in risk — remains unresolved."
             source="Flood Re, 2023"
           />
         </div>

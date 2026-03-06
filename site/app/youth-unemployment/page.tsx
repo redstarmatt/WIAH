@@ -59,7 +59,7 @@ export default function YouthUnemploymentPage() {
   const neetSeries: Series[] = data
     ? [{
         id: 'neet-rate',
-        label: 'NEET rate (16&ndash;24)',
+        label: 'NEET rate (16–24)',
         colour: '#F4A261',
         data: data.neetRate.map(d => ({
           date: yearToDate(d.year),
@@ -110,14 +110,14 @@ export default function YouthUnemploymentPage() {
         <TopicHeader
           topic="Youth Unemployment"
           question="What are young people doing instead of working?"
-          finding="One in eight young people aged 16&ndash;24 is NEET &mdash; not in education, employment or training &mdash; with the figure rising since the pandemic and disproportionately affecting young people with disabilities, care leavers, and those without qualifications."
+          finding="One in eight young people aged 16–24 is NEET — not in education, employment or training — with the figure rising since the pandemic and disproportionately affecting young people with disabilities, care leavers, and those without qualifications."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 870,000 young people aged 16&ndash;24 &mdash; 12.2% of the age group &mdash; were NEET in 2023, up from a historic low of 10.8% in 2019. That pre-pandemic figure represented the best outcome in a generation, achieved after years of steady economic growth, apprenticeship expansion, and rising minimum wages. The pandemic reversed much of that progress. Three years on, the rate has not returned to its 2019 level. The UK&apos;s youth NEET share is higher than in Germany, the Netherlands, and most Nordic countries, though comparable to France and below Southern European peaks.</p>
-            <p>The fastest-growing reason for young people being economically inactive is long-term sickness. ONS Labour Force Survey data shows the number of 16&ndash;24 year olds inactive due to illness or disability rose from roughly 120,000 in 2019 to over 230,000 by 2023 &mdash; a near-doubling in four years. Mental health conditions are the primary driver, accounting for the majority of new cases. Geography compounds the problem: NEET rates range from around 7% in London and the South East to 16&ndash;18% in coastal towns and post-industrial areas of South Wales, the North East, and the Midlands. High NEET concentrations correlate with lower life expectancy, higher welfare dependency, and reduced civic participation across generations.</p>
+            <p>Around 870,000 young people aged 16–24 — 12.2% of the age group — were NEET in 2023, up from a historic low of 10.8% in 2019. That pre-pandemic figure represented the best outcome in a generation, achieved after years of steady economic growth, apprenticeship expansion, and rising minimum wages. The pandemic reversed much of that progress. Three years on, the rate has not returned to its 2019 level. The UK's youth NEET share is higher than in Germany, the Netherlands, and most Nordic countries, though comparable to France and below Southern European peaks.</p>
+            <p>The fastest-growing reason for young people being economically inactive is long-term sickness. ONS Labour Force Survey data shows the number of 16–24 year olds inactive due to illness or disability rose from roughly 120,000 in 2019 to over 230,000 by 2023 — a near-doubling in four years. Mental health conditions are the primary driver, accounting for the majority of new cases. Geography compounds the problem: NEET rates range from around 7% in London and the South East to 16–18% in coastal towns and post-industrial areas of South Wales, the North East, and the Midlands. High NEET concentrations correlate with lower life expectancy, higher welfare dependency, and reduced civic participation across generations.</p>
             </div>
         </section>
 
@@ -148,7 +148,7 @@ export default function YouthUnemploymentPage() {
                 : []
             }
             source="ONS · Labour Force Survey"
-            baseline="16&ndash;24 year olds not in education, employment or training"
+            baseline="16–24 year olds not in education, employment or training"
             onExpand={() => {}}
           />
           <MetricCard
@@ -164,7 +164,7 @@ export default function YouthUnemploymentPage() {
                 : []
             }
             source="ONS · Labour Force Survey"
-            baseline="Percent of economically active 16&ndash;24 year olds"
+            baseline="Percent of economically active 16–24 year olds"
             onExpand={() => {}}
           />
           <MetricCard
@@ -187,7 +187,7 @@ export default function YouthUnemploymentPage() {
         {neetSeries.length > 0 ? (
           <LineChart
             title="Young people not in education, employment or training (NEET), UK"
-            subtitle="Percentage of 16&ndash;24 year olds who are NEET. Labour Force Survey, ONS."
+            subtitle="Percentage of 16–24 year olds who are NEET. Labour Force Survey, ONS."
             series={neetSeries}
             annotations={neetAnnotations}
             yLabel="Percent"
@@ -207,8 +207,8 @@ export default function YouthUnemploymentPage() {
         <div id="sec-unemployment">
         {unemploymentSeries.length > 0 ? (
           <LineChart
-            title="Youth unemployment rate (16&ndash;24), UK"
-            subtitle="Percentage unemployed among economically active 16&ndash;24 year olds. Labour Force Survey, ONS."
+            title="Youth unemployment rate (16–24), UK"
+            subtitle="Percentage unemployed among economically active 16–24 year olds. Labour Force Survey, ONS."
             series={unemploymentSeries}
             yLabel="Percent"
             source={{
@@ -225,7 +225,7 @@ export default function YouthUnemploymentPage() {
 
         {/* Chart 3: By reason */}
         <div id="sec-reasons" className="mb-12">
-          <h3 className="text-lg font-bold text-wiah-black mb-4">Why young people are economically inactive (16&ndash;24)</h3>
+          <h3 className="text-lg font-bold text-wiah-black mb-4">Why young people are economically inactive (16–24)</h3>
           {data && data.byReason.length > 0 ? (
             <div className="space-y-3">
               {data.byReason.map((item) => {
@@ -251,10 +251,10 @@ export default function YouthUnemploymentPage() {
 
         {/* Positive callout */}
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="11.2%"
-          description="Before the pandemic, youth unemployment in the UK had fallen to an historic low of 11.2% in 2019 &mdash; the result of sustained economic growth, apprenticeship expansion, and minimum wage increases. The progress made between 2012 and 2019 demonstrates that youth unemployment is not inevitable."
-          source="Source: ONS &mdash; Labour Force Survey, 2019."
+          description="Before the pandemic, youth unemployment in the UK had fallen to an historic low of 11.2% in 2019 — the result of sustained economic growth, apprenticeship expansion, and minimum wage increases. The progress made between 2012 and 2019 demonstrates that youth unemployment is not inevitable."
+          source="Source: ONS — Labour Force Survey, 2019."
         />
       </main>
     </>

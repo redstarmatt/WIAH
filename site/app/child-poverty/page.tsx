@@ -86,15 +86,15 @@ export default function ChildPovertyPage() {
         <TopicHeader
           topic="Child Poverty"
           question="How Many Children in Britain Are Growing Up in Poverty?"
-          finding="4.3 million children in the UK live in poverty &mdash; 31% of all children, the highest rate since 1998. 3.2 million children live in relative poverty after housing costs. The two-child benefit limit affects 1.5 million children. Deprived areas of the North East have child poverty rates exceeding 45%."
+          finding="4.3 million children in the UK live in poverty — 31% of all children, the highest rate since 1998. 3.2 million children live in relative poverty after housing costs. The two-child benefit limit affects 1.5 million children. Deprived areas of the North East have child poverty rates exceeding 45%."
           colour="#E63946"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 4.3 million children in the UK live in relative poverty &mdash; 31 percent of all children, the highest share since 1998. Poverty is not evenly distributed: rates exceed 45 percent in parts of inner London, Birmingham, and Bradford, while affluent commuter counties sit below 15 percent. The two-child limit on Universal Credit, introduced in 2017, directly affects 1.5 million children in larger families, capping support regardless of parental employment status. It is one of the most consequential pieces of welfare policy of the past decade, and remains largely unchanged.</p>
-            <p>The composition of child poverty has shifted dramatically. In the 1990s, around 42 percent of poor children lived in working households; today that figure is 71 percent. In-work poverty has risen from 14 percent to 21 percent over two decades, driven by the growth of zero-hours contracts, stagnant real wages in care, retail, and logistics, and childcare costs that can consume more than a third of take-home pay. The two-child limit&apos;s &ldquo;rape clause&rdquo; &mdash; which requires some women to declare non-consensual conception to claim support for a third child &mdash; has been widely criticised by charities, lawyers, and parliamentary committees.</p>
+            <p>Around 4.3 million children in the UK live in relative poverty — 31 percent of all children, the highest share since 1998. Poverty is not evenly distributed: rates exceed 45 percent in parts of inner London, Birmingham, and Bradford, while affluent commuter counties sit below 15 percent. The two-child limit on Universal Credit, introduced in 2017, directly affects 1.5 million children in larger families, capping support regardless of parental employment status. It is one of the most consequential pieces of welfare policy of the past decade, and remains largely unchanged.</p>
+            <p>The composition of child poverty has shifted dramatically. In the 1990s, around 42 percent of poor children lived in working households; today that figure is 71 percent. In-work poverty has risen from 14 percent to 21 percent over two decades, driven by the growth of zero-hours contracts, stagnant real wages in care, retail, and logistics, and childcare costs that can consume more than a third of take-home pay. The two-child limit's &ldquo;rape clause&rdquo; — which requires some women to declare non-consensual conception to claim support for a third child — has been widely criticised by charities, lawyers, and parliamentary committees.</p>
             </div>
         </section>
 
@@ -112,7 +112,7 @@ export default function ChildPovertyPage() {
               value="4.3M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; 31% of all children &middot; Highest since 1998 &middot; 3.2M in relative poverty"
+              changeText="2023 · 31% of all children · Highest since 1998 · 3.2M in relative poverty"
               sparklineData={[3600, 3500, 3400, 3400, 3500, 3600, 3700, 3800, 3900, 4000, 4100, 4200, 4300]}
               onExpand={() => {}}
             />
@@ -121,7 +121,7 @@ export default function ChildPovertyPage() {
               value="3.1M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; 21% of children in working families &middot; In-work poverty rose from 14% in 2010 &middot; Low pay + high housing costs"
+              changeText="2023 · 21% of children in working families · In-work poverty rose from 14% in 2010 · Low pay + high housing costs"
               sparklineData={[2000, 2100, 2100, 2200, 2300, 2500, 2700, 2800, 3100]}
               onExpand={() => {}}
             />
@@ -130,7 +130,7 @@ export default function ChildPovertyPage() {
               value="1.5M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; Introduced 2017 &middot; Limits child element of Universal Credit to 2 children &middot; Disproportionately affects larger families"
+              changeText="2023 · Introduced 2017 · Limits child element of Universal Credit to 2 children · Disproportionately affects larger families"
               sparklineData={[0, 100, 300, 500, 700, 900, 1100, 1300, 1500]}
               onExpand={() => {}}
             />
@@ -140,7 +140,7 @@ export default function ChildPovertyPage() {
         <ScrollReveal>
           <section id="sec-poverty" className="mb-12">
             <LineChart
-              title="Children in poverty (after housing costs), UK, 2000&ndash;2023"
+              title="Children in poverty (after housing costs), UK, 2000–2023"
               subtitle="Percentage of all children living in households with income below 60% of median household income, after deducting housing costs."
               series={childPovertySeries}
               yLabel="% of children in poverty"
@@ -157,7 +157,7 @@ export default function ChildPovertyPage() {
         <ScrollReveal>
           <section id="sec-inwork" className="mb-12">
             <LineChart
-              title="Children in poverty in working households, UK, 2010&ndash;2023"
+              title="Children in poverty in working households, UK, 2010–2023"
               subtitle="Percentage of children in poverty where at least one adult in the household is in paid work."
               series={inWorkPovertySeries}
               yLabel="% of children in poverty (working households)"
@@ -190,17 +190,17 @@ export default function ChildPovertyPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: DWP &mdash; Households Below Average Income 2023</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: DWP — Households Below Average Income 2023</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
-            value="&pound;2.5bn"
+            title="What's improving"
+            value="£2.5bn"
             unit="commitment to extend free school meals and expand breakfast clubs across England"
-            description="The government&apos;s Child Poverty Taskforce, established in July 2024, is developing a cross-departmental strategy targeting the 4.3 million children in poverty. Universal free school meals now reach all primary school children in Scotland and Wales; England provides them to all infant pupils (Years 1&ndash;2) and those on income-based benefits. Free childcare expansion &mdash; 15 hours rising to 30 hours for working parents of under-5s &mdash; took effect from April 2024. The Household Support Fund (&pound;842 million in 2023/24) provides emergency assistance through local authorities. Holiday Activities and Food programmes fed 600,000 children in summer 2023."
-            source="Source: DWP &mdash; Households Below Average Income 2022/23; Child Poverty Action Group &mdash; Child Poverty Facts and Figures 2024."
+            description="The government's Child Poverty Taskforce, established in July 2024, is developing a cross-departmental strategy targeting the 4.3 million children in poverty. Universal free school meals now reach all primary school children in Scotland and Wales; England provides them to all infant pupils (Years 1–2) and those on income-based benefits. Free childcare expansion — 15 hours rising to 30 hours for working parents of under-5s — took effect from April 2024. The Household Support Fund (£842 million in 2023/24) provides emergency assistance through local authorities. Holiday Activities and Food programmes fed 600,000 children in summer 2023."
+            source="Source: DWP — Households Below Average Income 2022/23; Child Poverty Action Group — Child Poverty Facts and Figures 2024."
           />
         </ScrollReveal>
 
@@ -210,7 +210,7 @@ export default function ChildPovertyPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

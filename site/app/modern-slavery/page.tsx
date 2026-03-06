@@ -99,14 +99,14 @@ export default function ModernSlaveryPage() {
           topic="Modern Slavery"
           preposition="with"
           question="How Many People Are Being Exploited in Britain?"
-          finding="17,004 potential victims of modern slavery were referred to the National Referral Mechanism in 2023 &mdash; up 33% in a single year and 10 times the number in 2014. Experts estimate the true number in the UK exceeds 100,000. The conviction rate for modern slavery offences is just 4%. The UK is both a destination and a transit country."
+          finding="17,004 potential victims of modern slavery were referred to the National Referral Mechanism in 2023 — up 33% in a single year and 10 times the number in 2014. Experts estimate the true number in the UK exceeds 100,000. The conviction rate for modern slavery offences is just 4%. The UK is both a destination and a transit country."
           colour="#0D1117"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The National Referral Mechanism received 17,004 referrals of potential modern slavery victims in 2023 &mdash; a 33% increase on the previous year and ten times the 1,745 recorded in 2014. The Global Slavery Index estimates between 100,000 and 136,000 people are held in conditions of modern slavery across the United Kingdom at any given time, making the NRM figures a fraction of the true scale. Children now account for 5,509 referrals, nearly a third of the total, driven overwhelmingly by county lines drug networks that recruit boys as young as 12 to transport narcotics between urban hubs and provincial towns. Albanian nationals comprise 15% of all referrals, followed by UK nationals at 14% and Vietnamese nationals at 8%.</p>
-            <p>Labour exploitation accounts for 47% of identified cases, ranging from car washes and construction sites to nail bars and agriculture. Sexual exploitation makes up 30%, criminal exploitation 15% &mdash; predominantly county lines &mdash; and domestic servitude 8%. These categories frequently overlap: victims coerced into cannabis cultivation, for instance, may face both criminal and labour exploitation simultaneously. The Section 45 statutory defence, introduced by the Modern Slavery Act 2015, recognises that trafficking victims are often compelled to commit offences, yet courts apply it inconsistently. Many victims also enter the asylum system, creating a complex intersection where trafficking claims and immigration cases run in parallel, with average NRM conclusive-grounds decisions now taking 543 days.</p>
+            <p>The National Referral Mechanism received 17,004 referrals of potential modern slavery victims in 2023 — a 33% increase on the previous year and ten times the 1,745 recorded in 2014. The Global Slavery Index estimates between 100,000 and 136,000 people are held in conditions of modern slavery across the United Kingdom at any given time, making the NRM figures a fraction of the true scale. Children now account for 5,509 referrals, nearly a third of the total, driven overwhelmingly by county lines drug networks that recruit boys as young as 12 to transport narcotics between urban hubs and provincial towns. Albanian nationals comprise 15% of all referrals, followed by UK nationals at 14% and Vietnamese nationals at 8%.</p>
+            <p>Labour exploitation accounts for 47% of identified cases, ranging from car washes and construction sites to nail bars and agriculture. Sexual exploitation makes up 30%, criminal exploitation 15% — predominantly county lines — and domestic servitude 8%. These categories frequently overlap: victims coerced into cannabis cultivation, for instance, may face both criminal and labour exploitation simultaneously. The Section 45 statutory defence, introduced by the Modern Slavery Act 2015, recognises that trafficking victims are often compelled to commit offences, yet courts apply it inconsistently. Many victims also enter the asylum system, creating a complex intersection where trafficking claims and immigration cases run in parallel, with average NRM conclusive-grounds decisions now taking 543 days.</p>
             </div>
         </section>
 
@@ -126,7 +126,7 @@ export default function ModernSlaveryPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="2023 &middot; Up 33% in one year &middot; Up 10x since 2014 &middot; True total est. 100K+ &middot; Albanian and Vietnamese nationals most referred"
+            changeText="2023 · Up 33% in one year · Up 10x since 2014 · True total est. 100K+ · Albanian and Vietnamese nationals most referred"
             sparklineData={
               data
                 ? sparkFrom(data.national.nrmReferrals.timeSeries.map(d => d.referrals), 10)
@@ -141,7 +141,7 @@ export default function ModernSlaveryPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="2022 &middot; Conviction rate ~4% of referrals &middot; Up from 74 in 2014 &middot; Prosecution gap persisting"
+            changeText="2022 · Conviction rate ~4% of referrals · Up from 74 in 2014 · Prosecution gap persisting"
             sparklineData={[74, 112, 188, 232, 264, 270, 295, 320, 345, 352]}
             source="CPS · Modern Slavery Prosecutions"
             onExpand={() => {}}
@@ -152,7 +152,7 @@ export default function ModernSlaveryPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="2023 &middot; 32% of all referrals &middot; County lines main driver for children &middot; UK nationals increasingly common"
+            changeText="2023 · 32% of all referrals · County lines main driver for children · UK nationals increasingly common"
             sparklineData={[480, 700, 1000, 1500, 2100, 2500, 3100, 3800, 4500, 5509]}
             source="Home Office · NRM Statistics"
             onExpand={() => {}}
@@ -243,9 +243,9 @@ export default function ModernSlaveryPage() {
         <PositiveCallout
           title="Legal framework"
           value="2015"
-          unit="Modern Slavery Act &mdash; world-leading legislation now in need of strengthening"
-          description="The Modern Slavery Act 2015 was considered world-leading when enacted: it created specific modern slavery offences, required large businesses to publish annual transparency statements, and established the Independent Anti-Slavery Commissioner. Over 17,000 businesses now publish slavery transparency statements. However, the Independent Review of the Act (2019) found key weaknesses: supply chain transparency statements are largely unenforced; the NRM process is slow (average 543 days for a conclusive grounds decision); and victims lose support when their claim is concluded, increasing vulnerability to re-trafficking. The Nationality and Borders Act 2022 tightened the grounds for modern slavery claims for asylum seekers &mdash; criticised by the Commissioner as likely to reduce reporting."
-          source="Source: Home Office &mdash; Modern Slavery NRM Statistics Q4 2023; CPS &mdash; Modern Slavery and Trafficking Report 2023."
+          unit="Modern Slavery Act — world-leading legislation now in need of strengthening"
+          description="The Modern Slavery Act 2015 was considered world-leading when enacted: it created specific modern slavery offences, required large businesses to publish annual transparency statements, and established the Independent Anti-Slavery Commissioner. Over 17,000 businesses now publish slavery transparency statements. However, the Independent Review of the Act (2019) found key weaknesses: supply chain transparency statements are largely unenforced; the NRM process is slow (average 543 days for a conclusive grounds decision); and victims lose support when their claim is concluded, increasing vulnerability to re-trafficking. The Nationality and Borders Act 2022 tightened the grounds for modern slavery claims for asylum seekers — criticised by the Commissioner as likely to reduce reporting."
+          source="Source: Home Office — Modern Slavery NRM Statistics Q4 2023; CPS — Modern Slavery and Trafficking Report 2023."
         />
         </ScrollReveal>
       </main>

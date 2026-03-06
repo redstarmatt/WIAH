@@ -55,14 +55,14 @@ export default function PublicToiletsPage() {
         <TopicHeader
           topic="Public Toilets"
           question="Has Britain Actually Lost Its Public Toilets?"
-          finding="The number of council-run public toilets in England has fallen from 5,600 in 2000 to around 2,350 in 2024 &mdash; a 58% decline. Local authority spending on public conveniences has nearly halved in real terms since 2010."
+          finding="The number of council-run public toilets in England has fallen from 5,600 in 2000 to around 2,350 in 2024 — a 58% decline. Local authority spending on public conveniences has nearly halved in real terms since 2010."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England had approximately 5,600 council-maintained public toilets in 2000. By 2024, that number had fallen to around 2,350 &mdash; a reduction of 58%. The rate of closure accelerated sharply after 2010 as local authorities faced sustained budget cuts: total central government funding to councils fell 49.1% in real terms between 2010/11 and 2019/20, according to the National Audit Office. Public toilet provision is a discretionary service &mdash; councils may provide them but are not legally required to. When budgets contract, discretionary services are the first to go. The Royal Society for Public Health estimated in 2019 that 4 in 10 people restrict their time outside the home because of inadequate access to public toilets, with the impact heaviest on older people, disabled people, pregnant women, and those with bowel or bladder conditions.</p>
-            <p>The closures have accelerated a shift towards commercial alternatives. Many councils have adopted Community Toilet Schemes, paying local businesses &pound;500&ndash;&pound;1,500 per year to allow public access to their facilities. The National Association of Local Councils estimated that 160 councils operated such schemes by 2023. However, these alternatives have significant limitations: opening hours are restricted to business trading times, access depends on the business&apos;s willingness, and signage is often poor. Public toilets that remain council-operated increasingly charge 20p&ndash;50p per use, with automated facilities costing councils &pound;15,000&ndash;&pound;25,000 per year to maintain. Meanwhile, the use of changing places facilities &mdash; larger, fully accessible rooms with hoists and adjustable benches for severely disabled users &mdash; has grown, with 1,900 now registered across the UK, but coverage remains patchy outside hospitals and shopping centres.</p>
+            <p>England had approximately 5,600 council-maintained public toilets in 2000. By 2024, that number had fallen to around 2,350 — a reduction of 58%. The rate of closure accelerated sharply after 2010 as local authorities faced sustained budget cuts: total central government funding to councils fell 49.1% in real terms between 2010/11 and 2019/20, according to the National Audit Office. Public toilet provision is a discretionary service — councils may provide them but are not legally required to. When budgets contract, discretionary services are the first to go. The Royal Society for Public Health estimated in 2019 that 4 in 10 people restrict their time outside the home because of inadequate access to public toilets, with the impact heaviest on older people, disabled people, pregnant women, and those with bowel or bladder conditions.</p>
+            <p>The closures have accelerated a shift towards commercial alternatives. Many councils have adopted Community Toilet Schemes, paying local businesses £500–£1,500 per year to allow public access to their facilities. The National Association of Local Councils estimated that 160 councils operated such schemes by 2023. However, these alternatives have significant limitations: opening hours are restricted to business trading times, access depends on the business's willingness, and signage is often poor. Public toilets that remain council-operated increasingly charge 20p–50p per use, with automated facilities costing councils £15,000–£25,000 per year to maintain. Meanwhile, the use of changing places facilities — larger, fully accessible rooms with hoists and adjustable benches for severely disabled users — has grown, with 1,900 now registered across the UK, but coverage remains patchy outside hospitals and shopping centres.</p>
             </div>
         </section>
 
@@ -79,17 +79,17 @@ export default function PublicToiletsPage() {
               value="2,350"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 5,600 in 2000 &mdash; a 58% decline"
+              changeText="Down from 5,600 in 2000 — a 58% decline"
               sparklineData={[5600, 4800, 4200, 3900, 3570, 3290, 3010, 2780, 2610, 2480, 2350]}
               source="BBC FOI research / British Toilet Association"
               onExpand={() => {}}
             />
             <MetricCard
               label="Council spending on public toilets"
-              value="&pound;67m"
+              value="£67m"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from &pound;120m in 2010; 44% cut in real terms"
+              changeText="Down from £120m in 2010; 44% cut in real terms"
               sparklineData={[120, 105, 93, 84, 78, 72, 69, 67]}
               source="DLUHC Revenue Outturn"
               onExpand={() => {}}
@@ -111,8 +111,8 @@ export default function PublicToiletsPage() {
         <ScrollReveal>
           <section id="sec-count" className="mb-12">
             <LineChart
-              title="Council-run public toilets in England, 2000&ndash;2024"
-              subtitle="Estimated number of local authority&ndash;maintained public convenience facilities. Compiled from FOI data."
+              title="Council-run public toilets in England, 2000–2024"
+              subtitle="Estimated number of local authority–maintained public convenience facilities. Compiled from FOI data."
               series={toiletSeries}
               yLabel="Facilities"
             />
@@ -122,10 +122,10 @@ export default function PublicToiletsPage() {
         <ScrollReveal>
           <section id="sec-spending" className="mb-12">
             <LineChart
-              title="Local authority spending on public toilets, England, 2010&ndash;2024"
-              subtitle="Millions of pounds (&pound;m) per year. DLUHC Revenue Outturn statistics. Nominal terms."
+              title="Local authority spending on public toilets, England, 2010–2024"
+              subtitle="Millions of pounds (£m) per year. DLUHC Revenue Outturn statistics. Nominal terms."
               series={spendingSeries}
-              yLabel="&pound; million"
+              yLabel="£ million"
             />
           </section>
         </ScrollReveal>

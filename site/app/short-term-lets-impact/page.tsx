@@ -59,8 +59,8 @@ export default function ShortTermLetsImpactPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>An estimated 280,000 short-term let properties were listed across the UK in 2024, up 65% since 2019. Short-term lets can generate two to four times the income of a long-term tenancy, creating strong financial incentives for landlords to withdraw from the residential market &mdash; particularly in coastal towns, rural tourist areas, and central London. In destinations such as St Ives, parts of the Lake District, and the Yorkshire Dales, the share of residential property on short-term letting platforms is estimated at between 20% and 40% of the housing stock. London&apos;s 90-day annual limit on STLs (introduced under the Deregulation Act 2015) has been inconsistently enforced. Scotland introduced a mandatory STL licensing regime in 2023, designating Edinburgh a full STL control area; England launched a registration scheme in 2024 but implementation has lagged the pace of market growth.</p>
-            <p>The impact is concentrated in communities where local earnings are already constrained relative to property prices. Working-age families with children are displaced first, reducing the population that sustains local schools, shops, and services &mdash; a hollowing out that accelerates further service closures and makes permanent residency progressively less viable. The policy challenge is not to eliminate short-term letting but to prevent its concentration where housing supply is most constrained from displacing long-term residents at scale, and the gap between regulatory intent and enforcement capacity remains the central obstacle.</p>
+            <p>An estimated 280,000 short-term let properties were listed across the UK in 2024, up 65% since 2019. Short-term lets can generate two to four times the income of a long-term tenancy, creating strong financial incentives for landlords to withdraw from the residential market — particularly in coastal towns, rural tourist areas, and central London. In destinations such as St Ives, parts of the Lake District, and the Yorkshire Dales, the share of residential property on short-term letting platforms is estimated at between 20% and 40% of the housing stock. London's 90-day annual limit on STLs (introduced under the Deregulation Act 2015) has been inconsistently enforced. Scotland introduced a mandatory STL licensing regime in 2023, designating Edinburgh a full STL control area; England launched a registration scheme in 2024 but implementation has lagged the pace of market growth.</p>
+            <p>The impact is concentrated in communities where local earnings are already constrained relative to property prices. Working-age families with children are displaced first, reducing the population that sustains local schools, shops, and services — a hollowing out that accelerates further service closures and makes permanent residency progressively less viable. The policy challenge is not to eliminate short-term letting but to prevent its concentration where housing supply is most constrained from displacing long-term residents at scale, and the gap between regulatory intent and enforcement capacity remains the central obstacle.</p>
           </div>
         </section>
 
@@ -100,7 +100,7 @@ export default function ShortTermLetsImpactPage() {
               polarity={'up-is-bad' as const}
               changeText="Rents 15% higher in high-STL areas"
               sparklineData={[4, 5, 6, 7, 8, 9, 10, 12, 15]}
-              href="#sec-chart"source="Resolution Foundation &middot; Rental Market Analysis 2024"
+              href="#sec-chart"source="Resolution Foundation · Rental Market Analysis 2024"
             />
           </div>
         </ScrollReveal>
@@ -108,7 +108,7 @@ export default function ShortTermLetsImpactPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Short-term let properties in the UK, 2016&ndash;2024"
+              title="Short-term let properties in the UK, 2016–2024"
               subtitle="Estimated active short-term rental listings across all platforms."
               series={series}
               yLabel="Properties (thousands)"
@@ -124,9 +124,9 @@ export default function ShortTermLetsImpactPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>AirDNA &mdash; Short Term Rental Market Report. Published annually. airdna.co</p>
-            <p>Short Term Accommodation Association &mdash; UK Market Report 2024. staa.org.uk</p>
-            <p>Resolution Foundation &mdash; Rental Market Analysis 2024. resolutionfoundation.org</p>
+            <p>AirDNA — Short Term Rental Market Report. Published annually. airdna.co</p>
+            <p>Short Term Accommodation Association — UK Market Report 2024. staa.org.uk</p>
+            <p>Resolution Foundation — Rental Market Analysis 2024. resolutionfoundation.org</p>
             <p>STL property figures are estimated active listings across all platforms. Coastal hotspot percentages are local authority estimates based on planning and licensing data. Rent premium figures are from econometric analysis of rental prices in high versus low STL concentration areas.</p>
           </div>
         </section>

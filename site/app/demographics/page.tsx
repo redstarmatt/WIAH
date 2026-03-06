@@ -131,11 +131,11 @@ export default function DemographicsPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Demographics"
-          question="What&apos;s Actually Happening to Britain&apos;s Population?"
+          question="What's Actually Happening to Britain's Population?"
           finding={
             data
-              ? `Britain&apos;s population is 68.9 million in 2024, but the fertility rate has fallen to a record low of 1.41 — far below the 2.1 replacement level. Population growth now depends almost entirely on immigration.`
-              : "Britain&apos;s population is 68.9 million in 2024, but the fertility rate has fallen to a record low of 1.41 — far below the 2.1 replacement level. Population growth now depends almost entirely on immigration."
+              ? `Britain's population is 68.9 million in 2024, but the fertility rate has fallen to a record low of 1.41 — far below the 2.1 replacement level. Population growth now depends almost entirely on immigration.`
+              : "Britain's population is 68.9 million in 2024, but the fertility rate has fallen to a record low of 1.41 — far below the 2.1 replacement level. Population growth now depends almost entirely on immigration."
           }
           colour="#6B7280"
         />
@@ -143,8 +143,8 @@ export default function DemographicsPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Britain&apos;s 68.9 million population rests on a demographic model that has fundamentally
-              changed. Since 2001, the country added 9.8 million people&mdash;but natural increase
+              Britain's 68.9 million population rests on a demographic model that has fundamentally
+              changed. Since 2001, the country added 9.8 million people—but natural increase
               (births minus deaths) contributed just 1.3 million. Migration delivered the other
               8.5 million. The total fertility rate has fallen to 1.41 children per woman, a record
               low and far below the 2.1 replacement threshold. Without net inward migration, the
@@ -154,11 +154,11 @@ export default function DemographicsPage() {
             </p>
             <p>
               The fertility collapse is structural, not cyclical. Average house prices exceed eight
-              times median earnings. Full-time childcare costs &pound;14,000&ndash;&pound;15,000 a
+              times median earnings. Full-time childcare costs £14,000–£15,000 a
               year per child. Women delay first births into their thirties, compressing the window
               for larger families. These forces push the TFR further below replacement with each
-              cohort. Migration filled the gap&mdash;net arrivals hit a record 906,000 in 2023,
-              driven by post-Brexit visa schemes and humanitarian routes&mdash;but the political
+              cohort. Migration filled the gap—net arrivals hit a record 906,000 in 2023,
+              driven by post-Brexit visa schemes and humanitarian routes—but the political
               backlash was swift. By 2024, tighter rules cut net migration to 204,000, a 78% drop
               in a single year. That whiplash exposes the tension at the core of UK demography:
               the economy needs working-age migrants, but policy treats migration as a tap to be
@@ -324,7 +324,7 @@ export default function DemographicsPage() {
         {/* Positive callout */}
         <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="3.1 years"
           unit="higher life expectancy since 2001"
           description="Life expectancy has risen from 75.9 years (male) and 80.4 years (female) in 2001 to 79.0 and 82.9 in 2023 — an increase of 3.1 and 2.5 years respectively. This reflects decades of health and living standard improvements. However, progress has stalled since 2020 due to excess deaths, long-term health conditions, and mental health crises."
@@ -341,7 +341,7 @@ export default function DemographicsPage() {
             {data?.metadata.sources.map((src, i) => (
               <li key={i}>
                 <a href={src.url} className="underline hover:text-wiah-blue" target="_blank" rel="noreferrer">
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}

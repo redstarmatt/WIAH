@@ -141,14 +141,14 @@ export default function SecondJobHoldersPage() {
         <TopicHeader
           topic="Second Jobs &amp; Multiple Employment"
           question="How Many People Need Two Jobs to Get By?"
-          finding="1.3 million people in the UK hold a second job, up 22% since 2019. Among public sector workers &mdash; nurses, teachers, police &mdash; the rate has risen sharply since 2022. Real-terms pay cuts are the primary driver."
+          finding="1.3 million people in the UK hold a second job, up 22% since 2019. Among public sector workers — nurses, teachers, police — the rate has risen sharply since 2022. Real-terms pay cuts are the primary driver."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The Office for National Statistics Labour Force Survey has tracked second job holding for three decades. The current figure of 1.3 million is near a record high, up 22% since 2019. Growth in gig economy platforms &mdash; Deliveroo, Uber, TaskRabbit, Fiverr &mdash; has made acquiring a second income stream significantly easier than it was for previous generations. But the CIPD&apos;s analysis suggests the dominant driver is not voluntary portfolio working but financial need: 55% of second job holders in 2025 cite financial necessity as their primary motivation, up from 44% in 2022, tracking the cost of living crisis almost exactly.
+              The Office for National Statistics Labour Force Survey has tracked second job holding for three decades. The current figure of 1.3 million is near a record high, up 22% since 2019. Growth in gig economy platforms — Deliveroo, Uber, TaskRabbit, Fiverr — has made acquiring a second income stream significantly easier than it was for previous generations. But the CIPD's analysis suggests the dominant driver is not voluntary portfolio working but financial need: 55% of second job holders in 2025 cite financial necessity as their primary motivation, up from 44% in 2022, tracking the cost of living crisis almost exactly.
             </p>
             <p>
               The sharpest increases have been in the public sector, where real pay has been eroded most severely. NHS staff holding second jobs rose from 7% in 2019 to 13% in 2024. Nurses working agency shifts at weekends, teachers tutoring privately, police officers moonlighting as security guards: the phenomenon has moved from anecdote to data. The practical consequences extend beyond individual wellbeing. NHS staff working excessive hours across multiple employers risk errors from fatigue. The conflict of interest for police officers working private security is obvious. Teachers tutoring privately exacerbates educational inequality as those who can pay get more teacher time. These are externalities of a pay policy choice, not inevitable features of a modern labour market.
@@ -203,8 +203,8 @@ export default function SecondJobHoldersPage() {
         <ScrollReveal>
           <section id="sec-total" className="mb-12">
             <LineChart
-              title="People holding a second job, UK, 2015&ndash;2025"
-              subtitle="Labour Force Survey estimate of UK employees holding a second job (millions). Broadly flat 2015&ndash;2021 before rising sharply as the cost of living crisis took hold. Gig economy platforms have reduced friction for taking on secondary work."
+              title="People holding a second job, UK, 2015–2025"
+              subtitle="Labour Force Survey estimate of UK employees holding a second job (millions). Broadly flat 2015–2021 before rising sharply as the cost of living crisis took hold. Gig economy platforms have reduced friction for taking on secondary work."
               series={totalSecondJobsSeries}
               annotations={totalAnnotations}
               yLabel="Millions"
@@ -216,7 +216,7 @@ export default function SecondJobHoldersPage() {
         <ScrollReveal>
           <section id="sec-sectors" className="mb-12">
             <LineChart
-              title="NHS staff with second jobs and financial necessity as driver, 2019&ndash;2025"
+              title="NHS staff with second jobs and financial necessity as driver, 2019–2025"
               subtitle="Percentage of NHS staff in England holding a second job (red) and percentage of all second job holders citing financial necessity as primary reason (amber). Both indicators track public sector pay stagnation and the cost of living crisis."
               series={sectorAndNecessitySeries}
               annotations={sectorAnnotations}
@@ -228,11 +228,11 @@ export default function SecondJobHoldersPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="6-7%"
             unit="Public sector pay awards 2023-24"
-            description="Public sector pay awards in 2023&ndash;24 were the largest in two decades, averaging 6&ndash;7% and representing a partial restoration of real pay. The government&apos;s Fair Pay Agreements for adult social care, if fully implemented, will set sector-wide pay floors that may reduce the need for multiple jobs. The Low Pay Commission&apos;s increased National Living Wage (from &pound;10.42 to &pound;11.44 in 2024) raised baseline pay for the lowest-paid second jobs, improving returns. Flexible working rights enacted under the Employment Relations (Flexible Working) Act 2023 make combining multiple part-time roles more manageable."
-            source="Source: ONS &mdash; Labour Force Survey, employee second jobs. NHS Staff Survey 2024 &mdash; secondary employment analysis. CIPD &mdash; Good Work Index 2025."
+            description="Public sector pay awards in 2023–24 were the largest in two decades, averaging 6–7% and representing a partial restoration of real pay. The government's Fair Pay Agreements for adult social care, if fully implemented, will set sector-wide pay floors that may reduce the need for multiple jobs. The Low Pay Commission's increased National Living Wage (from £10.42 to £11.44 in 2024) raised baseline pay for the lowest-paid second jobs, improving returns. Flexible working rights enacted under the Employment Relations (Flexible Working) Act 2023 make combining multiple part-time roles more manageable."
+            source="Source: ONS — Labour Force Survey, employee second jobs. NHS Staff Survey 2024 — secondary employment analysis. CIPD — Good Work Index 2025."
           />
         </ScrollReveal>
 
@@ -243,7 +243,7 @@ export default function SecondJobHoldersPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

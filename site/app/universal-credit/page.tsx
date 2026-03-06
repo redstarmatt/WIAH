@@ -99,13 +99,15 @@ export default function UniversalCreditPage() {
     <main>
       <TopicNav topic="Universal Credit" />
 
-      <TopicHeader
-        topic="Universal Credit"
-        question="Is Universal Credit actually working?"
-        finding="Universal Credit now supports 6.4 million households, but its five-week wait, two-child limit, and benefit cap mean that for many of the most vulnerable claimants, the safety net has significant holes."
-        colour="#F4A261"
-        preposition="with"
-      />
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <TopicHeader
+          topic="Universal Credit"
+          question="Is Universal Credit actually working?"
+          finding="Universal Credit now supports 6.4 million households, but its five-week wait, two-child limit, and benefit cap mean that for many of the most vulnerable claimants, the safety net has significant holes."
+          colour="#F4A261"
+          preposition="with"
+        />
+      </div>
 
       {/* Metric Cards */}
       <section className="max-w-4xl mx-auto px-6 py-8">
@@ -117,7 +119,7 @@ export default function UniversalCreditPage() {
               unit="households"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; Was 2.9M before COVID; full rollout by 2024"
+              changeText="2023 · Was 2.9M before COVID; full rollout by 2024"
               sparklineData={[0.5, 0.9, 1.6, 2.9, 5.6, 5.9, 6.1, 6.4]}
               onExpand={() => {}}
             />
@@ -129,7 +131,7 @@ export default function UniversalCreditPage() {
               value="126K"
               direction="up"
               polarity="up-is-bad"
-              changeText="Average cap shortfall: &pound;58/week"
+              changeText="Average cap shortfall: £58/week"
               sparklineData={[85, 95, 105, 115, 120, 122, 125, 126]}
               onExpand={() => {}}
             />
@@ -152,8 +154,8 @@ export default function UniversalCreditPage() {
       {/* Charts */}
       <section id="sec-context" className="max-w-2xl mt-4 mb-12">
         <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-          <p>Universal Credit replaced six legacy benefits &mdash; Income Support, Jobseeker&apos;s Allowance, Employment and Support Allowance, Working Tax Credit, Child Tax Credit, and Housing Benefit &mdash; with a single monthly payment. The design intention was simplicity and work incentives. The structural problem is the five-week wait before the first payment arrives. No comparable welfare system among developed nations asks newly destitute claimants to wait five weeks before receiving support. Claimants can apply for an advance loan, but it is repaid from future UC payments, creating debt at the point of greatest vulnerability. The Trussell Trust estimates that 34% of new UC claimants access a food bank within a month of making their first claim.</p>
-          <p>The two-child limit, introduced in April 2017, restricts the child element of Universal Credit to the first two children in a family. Children born after that date into families with two or more existing children receive no UC child element. Approximately 450,000 families and around one million children are affected. The Joseph Rowntree Foundation estimates the policy pushes 250,000 children into poverty. Despite sustained cross-party pressure from MPs, charities, and the Church of England, both the Conservative government that introduced the policy and the Labour government elected in 2024 have declined to repeal it. The Treasury saving &mdash; roughly &pound;1.3bn a year &mdash; is the stated reason.</p>
+          <p>Universal Credit replaced six legacy benefits — Income Support, Jobseeker's Allowance, Employment and Support Allowance, Working Tax Credit, Child Tax Credit, and Housing Benefit — with a single monthly payment. The design intention was simplicity and work incentives. The structural problem is the five-week wait before the first payment arrives. No comparable welfare system among developed nations asks newly destitute claimants to wait five weeks before receiving support. Claimants can apply for an advance loan, but it is repaid from future UC payments, creating debt at the point of greatest vulnerability. The Trussell Trust estimates that 34% of new UC claimants access a food bank within a month of making their first claim.</p>
+          <p>The two-child limit, introduced in April 2017, restricts the child element of Universal Credit to the first two children in a family. Children born after that date into families with two or more existing children receive no UC child element. Approximately 450,000 families and around one million children are affected. The Joseph Rowntree Foundation estimates the policy pushes 250,000 children into poverty. Despite sustained cross-party pressure from MPs, charities, and the Church of England, both the Conservative government that introduced the policy and the Labour government elected in 2024 have declined to repeal it. The Treasury saving — roughly £1.3bn a year — is the stated reason.</p>
             </div>
       </section>
 
@@ -163,8 +165,8 @@ export default function UniversalCreditPage() {
           title="UC makes work pay more than legacy benefits"
           value="55%"
           unit="taper rate"
-          description="The Universal Credit taper rate &mdash; the rate at which UC is withdrawn as earnings rise &mdash; was cut from 63% to 55% in October 2021. Combined with increases in the work allowance, this means claimants in work keep more of their UC as they earn more. DWP modelling suggests this incentivises an estimated 200,000 additional hours of work per week."
-          source="Source: DWP &mdash; Universal Credit reform analysis, October 2021."
+          description="The Universal Credit taper rate — the rate at which UC is withdrawn as earnings rise — was cut from 63% to 55% in October 2021. Combined with increases in the work allowance, this means claimants in work keep more of their UC as they earn more. DWP modelling suggests this incentivises an estimated 200,000 additional hours of work per week."
+          source="Source: DWP — Universal Credit reform analysis, October 2021."
         />
       </section>
 
@@ -224,7 +226,7 @@ export default function UniversalCreditPage() {
               })}
             </div>
             <p className="text-xs text-wiah-mid font-mono mt-6">
-              Source: DWP &mdash; Universal Credit statistics. Updated annually.
+              Source: DWP — Universal Credit statistics. Updated annually.
             </p>
           </div>
         </ScrollReveal>
@@ -273,7 +275,7 @@ export default function UniversalCreditPage() {
         { id: 'sec-context', label: 'Context' },
 
         { id: 'sec-charts', label: 'Charts' },
-        { id: 'sec-positive', label: 'What&apos;s improving' },
+        { id: 'sec-positive', label: "What's improving" },
         { id: 'sec-sources', label: 'Sources' },
       ]} />
     </main>

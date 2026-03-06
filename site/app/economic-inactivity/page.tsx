@@ -110,7 +110,7 @@ export default function EconomicInactivityPage() {
           question="Why Are 2.8 Million More People Out of Work Since COVID?"
           finding={
             latestInactivity && latestSick
-              ? `Economic inactivity &mdash; people of working age who are neither working nor seeking work &mdash; has risen by 800,000 since the pandemic to 9.4 million (22% of the working-age population). Long-term sickness is now the largest single reason, overtaking caring responsibilities. The UK is the only G7 country whose employment rate has not recovered to pre-COVID levels.`
+              ? `Economic inactivity — people of working age who are neither working nor seeking work — has risen by 800,000 since the pandemic to 9.4 million (22% of the working-age population). Long-term sickness is now the largest single reason, overtaking caring responsibilities. The UK is the only G7 country whose employment rate has not recovered to pre-COVID levels.`
               : 'Economic inactivity has risen by 800,000 since COVID to 9.4 million.'
           }
           colour="#F4A261"
@@ -120,10 +120,10 @@ export default function EconomicInactivityPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Economic inactivity among working-age adults rose to 9.4 million by late 2023 &mdash; 22% of the working-age population and 800,000 above the pre-pandemic level. The UK is now the only G7 economy whose employment rate has not recovered to pre-COVID levels; the OBR estimates this gap represents a 2% shortfall in potential output. The shift is structural, not cyclical: long-term sickness is the primary driver, with 2.8 million economically inactive due to illness in 2023, up from 2.0 million in 2019. The NHS waiting list of 7.5 million cases is a significant factor &mdash; Resolution Foundation modelling suggests eliminating the backlog could return 170,000 people to employment. Mental health accounts for 38% of all long-term sickness inactivity; musculoskeletal conditions 35%.
+              Economic inactivity among working-age adults rose to 9.4 million by late 2023 — 22% of the working-age population and 800,000 above the pre-pandemic level. The UK is now the only G7 economy whose employment rate has not recovered to pre-COVID levels; the OBR estimates this gap represents a 2% shortfall in potential output. The shift is structural, not cyclical: long-term sickness is the primary driver, with 2.8 million economically inactive due to illness in 2023, up from 2.0 million in 2019. The NHS waiting list of 7.5 million cases is a significant factor — Resolution Foundation modelling suggests eliminating the backlog could return 170,000 people to employment. Mental health accounts for 38% of all long-term sickness inactivity; musculoskeletal conditions 35%.
             </p>
             <p>
-              The burden falls unevenly. Women account for 60% of the economically inactive, with caring responsibilities a major driver. Geographic clustering is pronounced: Wales, the North East, and parts of Yorkshire and the East Midlands have inactivity rates 4&ndash;6 percentage points above the national average, a legacy of deindustrialisation. The 50&ndash;64 cohort has driven the post-pandemic increase most sharply &mdash; many left the workforce during COVID-19 and have not returned &mdash; while the disability employment gap of around 28 percentage points between disabled and non-disabled employment rates has narrowed only marginally over a decade.
+              The burden falls unevenly. Women account for 60% of the economically inactive, with caring responsibilities a major driver. Geographic clustering is pronounced: Wales, the North East, and parts of Yorkshire and the East Midlands have inactivity rates 4–6 percentage points above the national average, a legacy of deindustrialisation. The 50–64 cohort has driven the post-pandemic increase most sharply — many left the workforce during COVID-19 and have not returned — while the disability employment gap of around 28 percentage points between disabled and non-disabled employment rates has narrowed only marginally over a decade.
             </p>
           </div>
         </section>
@@ -146,11 +146,11 @@ export default function EconomicInactivityPage() {
             polarity="up-is-bad"
             changeText={
               latestInactivity
-                ? `2023 Q4 &middot; ${latestInactivity.pctOfWorkingAge}% of working-age adults &middot; Up 800k since COVID &middot; Only G7 country not recovered`
+                ? `2023 Q4 · ${latestInactivity.pctOfWorkingAge}% of working-age adults · Up 800k since COVID · Only G7 country not recovered`
                 : 'Loading…'
             }
             sparklineData={[8.6, 8.5, 8.4, 8.4, 8.4, 8.4, 8.7, 9.2, 9.4, 9.4]}
-            source="ONS &mdash; Labour Force Survey"
+            source="ONS — Labour Force Survey"
             href="#sec-overview"/>
           <MetricCard
             label="Inactive due to long-term sickness"
@@ -160,11 +160,11 @@ export default function EconomicInactivityPage() {
             polarity="up-is-bad"
             changeText={
               latestSick
-                ? `2023 &middot; Up from 2.0M pre-COVID &middot; Now largest reason for inactivity &middot; Musculoskeletal and mental health primary causes`
+                ? `2023 · Up from 2.0M pre-COVID · Now largest reason for inactivity · Musculoskeletal and mental health primary causes`
                 : 'Loading…'
             }
             sparklineData={[2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.1, 2.2, 2.6, 2.8]}
-            source="ONS &mdash; Labour Force Survey"
+            source="ONS — Labour Force Survey"
             href="#sec-inactivity"/>
           <MetricCard
             label="Working days lost to sickness absence"
@@ -173,10 +173,10 @@ export default function EconomicInactivityPage() {
             direction="up"
             polarity="up-is-bad"
             changeText={
-              `2022 &middot; Up 35% since 2019 &middot; NHS: 27 days/year per staff member &middot; Mental health and MSK top causes`
+              `2022 · Up 35% since 2019 · NHS: 27 days/year per staff member · Mental health and MSK top causes`
             }
             sparklineData={[141, 137, 131, 131, 131, 137, 170, 185, 185]}
-            source="ONS &mdash; Sickness Absence Survey"
+            source="ONS — Sickness Absence Survey"
             href="#sec-sickness"/>
         </div>
         </ScrollReveal>
@@ -225,7 +225,7 @@ export default function EconomicInactivityPage() {
           {sickSeries.length > 0 ? (
             <LineChart
               title="Economically inactive due to long-term sickness, UK, 2014–2023"
-              subtitle="Number of working-age people out of work due to long-term illness &mdash; the largest single driver of the rise in inactivity since COVID."
+              subtitle="Number of working-age people out of work due to long-term illness — the largest single driver of the rise in inactivity since COVID."
               series={sickSeries}
               yLabel="People (millions)"
               source={{
@@ -282,7 +282,7 @@ export default function EconomicInactivityPage() {
                 })}
               </div>
               <p className="font-mono text-[11px] text-wiah-mid mt-4">
-                Source: ONS &mdash; Labour Force Survey, 2023 Q4.
+                Source: ONS — Labour Force Survey, 2023 Q4.
               </p>
             </section>
           ) : (
@@ -297,8 +297,8 @@ export default function EconomicInactivityPage() {
           title="Policy response"
           value="£2.5bn"
           unit="committed to the Back to Work Plan (2023)"
-          description="The government&apos;s Back to Work Plan (Autumn Statement 2023) committed &pound;2.5 billion over five years, with the central measure being an extension of Intensive Personalised Employment Support for people with disabilities and health conditions. WorkWell, a pilot programme co-ordinating NHS and employment support, launched in 2024 across 15 areas. Universal Support, linking economically inactive people with tailored employment coaching and in-work health support, targets 100,000 people by 2025. Occupational Health reforms are intended to expand access to employer-funded workplace health assessments, which currently reach only 45% of workers. The OBR estimates getting 200,000 more people into work would add 0.3% to GDP."
-          source="Source: ONS &mdash; Labour Force Survey Q4 2023; DWP &mdash; Inactivity Statistics 2024."
+          description="The government's Back to Work Plan (Autumn Statement 2023) committed £2.5 billion over five years, with the central measure being an extension of Intensive Personalised Employment Support for people with disabilities and health conditions. WorkWell, a pilot programme co-ordinating NHS and employment support, launched in 2024 across 15 areas. Universal Support, linking economically inactive people with tailored employment coaching and in-work health support, targets 100,000 people by 2025. Occupational Health reforms are intended to expand access to employer-funded workplace health assessments, which currently reach only 45% of workers. The OBR estimates getting 200,000 more people into work would add 0.3% to GDP."
+          source="Source: ONS — Labour Force Survey Q4 2023; DWP — Inactivity Statistics 2024."
         />
         </ScrollReveal>
 
@@ -314,7 +314,7 @@ export default function EconomicInactivityPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}

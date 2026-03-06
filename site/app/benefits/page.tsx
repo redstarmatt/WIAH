@@ -178,13 +178,15 @@ export default function BenefitsPage() {
     <main>
       <TopicNav topic="Benefits" />
 
-      <TopicHeader
-        topic="Benefits"
-        question="Is the Safety Net Actually Catching People?"
-        finding="6.78 million people now claim Universal Credit &mdash; nearly three times the 2018 level. Alongside a surge in PIP recipients and food bank use, Britain&apos;s safety net is catching more people, but not necessarily catching them better."
-        colour="#F4A261"
-        preposition="with"
-      />
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <TopicHeader
+          topic="Benefits"
+          question="Is the Safety Net Actually Catching People?"
+          finding="6.78 million people now claim Universal Credit — nearly three times the 2018 level. Alongside a surge in PIP recipients and food bank use, Britain's safety net is catching more people, but not necessarily catching them better."
+          colour="#F4A261"
+          preposition="with"
+        />
+      </div>
 
       {/* Metric Cards */}
       <section className="max-w-4xl mx-auto px-6 py-8">
@@ -195,7 +197,7 @@ export default function BenefitsPage() {
               value="6.78M"
               direction="up"
               polarity="up-is-bad"
-              changeText="Jan 2025 &middot; 44.9% in work &middot; Tripled since 2018"
+              changeText="Jan 2025 · 44.9% in work · Tripled since 2018"
               sparklineData={[0.37, 0.80, 1.35, 2.11, 3.97, 5.74, 5.83, 6.05, 6.37, 6.61, 6.78]}
             />
           </ScrollReveal>
@@ -206,7 +208,7 @@ export default function BenefitsPage() {
               value="3.66M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2024 &middot; Up 93% since 2019 &middot; Driven by mental health and musculoskeletal"
+              changeText="2024 · Up 93% since 2019 · Driven by mental health and musculoskeletal"
               sparklineData={[800, 1050, 1320, 1670, 1980, 2220, 2490, 2870, 3350, 3660]}
             />
           </ScrollReveal>
@@ -217,7 +219,7 @@ export default function BenefitsPage() {
               value="3.1M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023/24 Trussell Trust &middot; Up 65% since 2019/20 &middot; 1 million were children"
+              changeText="2023/24 Trussell Trust · Up 65% since 2019/20 · 1 million were children"
               sparklineData={[1109, 1182, 1332, 1583, 1893, 2534, 2173, 3026, 3121]}
             />
           </ScrollReveal>
@@ -245,7 +247,7 @@ export default function BenefitsPage() {
         <ScrollReveal>
           <LineChart
             title="Personal Independence Payment recipients, 2013–2024"
-            subtitle="Thousands of live PIP awards. Nearly 4 million people now receive PIP &mdash; up from 190,000 when it launched in 2013."
+            subtitle="Thousands of live PIP awards. Nearly 4 million people now receive PIP — up from 190,000 when it launched in 2013."
             series={pipSeries}
             yLabel="Recipients (thousands)"
             source={{
@@ -276,7 +278,7 @@ export default function BenefitsPage() {
         <ScrollReveal>
           <LineChart
             title="Food bank parcels distributed, Trussell Trust, 2015–2024"
-            subtitle="Thousands of emergency food parcels. 3.1 million in 2023/24 &mdash; the highest on record. This is the Trussell Trust network only; total UK use is higher."
+            subtitle="Thousands of emergency food parcels. 3.1 million in 2023/24 — the highest on record. This is the Trussell Trust network only; total UK use is higher."
             series={foodBankSeries}
             yLabel="Parcels (thousands)"
             source={{
@@ -292,22 +294,22 @@ export default function BenefitsPage() {
       {/* Context */}
       <section id="sec-context" className="max-w-4xl mx-auto px-6 py-16 space-y-6 text-wiah-black leading-relaxed">
         <p>
-          Universal Credit covers 6.78 million claimants as of January 2025, nearly triple the 2018 level. Its design embeds specific policy choices with measurable consequences: the five-week wait for a first payment sent over 100,000 people to food banks; the two-child limit affects roughly 500,000 families and saves the Treasury an estimated &pound;3.6 billion a year; the benefit cap constrains a further 150,000 households. Personal Independence Payment has grown even faster &mdash; 3.66 million recipients in 2024, up 93% since 2019, with DWP spending &pound;26 billion on PIP in 2024/25. The government&apos;s 2025 welfare reform white paper proposes cutting 1.2 million people from PIP by 2030, targeting &pound;5 billion in savings through stricter eligibility criteria.
+          Universal Credit covers 6.78 million claimants as of January 2025, nearly triple the 2018 level. Its design embeds specific policy choices with measurable consequences: the five-week wait for a first payment sent over 100,000 people to food banks; the two-child limit affects roughly 500,000 families and saves the Treasury an estimated £3.6 billion a year; the benefit cap constrains a further 150,000 households. Personal Independence Payment has grown even faster — 3.66 million recipients in 2024, up 93% since 2019, with DWP spending £26 billion on PIP in 2024/25. The government's 2025 welfare reform white paper proposes cutting 1.2 million people from PIP by 2030, targeting £5 billion in savings through stricter eligibility criteria.
         </p>
 
         <p>
-          The downstream indicators tell a consistent story of a safety net under strain. The Trussell Trust distributed 3.1 million emergency food parcels in 2023/24 &mdash; one million to children, one in three to first-time users. Benefit sanctions returned to 612,000 decisions in 2024 after the COVID suspension, with an average sanction length of four weeks. The Joseph Rowntree Foundation counted 3.8 million people in destitution in 2023, unable to afford food or shelter on two or more days in a month. The safety net is large; whether it is adequate is a different question.
+          The downstream indicators tell a consistent story of a safety net under strain. The Trussell Trust distributed 3.1 million emergency food parcels in 2023/24 — one million to children, one in three to first-time users. Benefit sanctions returned to 612,000 decisions in 2024 after the COVID suspension, with an average sanction length of four weeks. The Joseph Rowntree Foundation counted 3.8 million people in destitution in 2023, unable to afford food or shelter on two or more days in a month. The safety net is large; whether it is adequate is a different question.
         </p>
       </section>
 
       {/* Positive Callout */}
       <section id="sec-positive" className="max-w-4xl mx-auto px-6 py-12">
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="44.9%"
           unit="of UC claimants are in work"
-          description="Despite UC&apos;s reputation as an out-of-work benefit, nearly half of all 6.78 million claimants were in employment as of January 2025. This reflects a deliberate design choice to extend in-work support to low earners. UC has simplified access to top-up payments for the working poor, and its real-time interface with HMRC&apos;s systems means support adjusts automatically as earnings change."
-          source="Source: DWP &mdash; Universal Credit statistics, January 2025."
+          description="Despite UC's reputation as an out-of-work benefit, nearly half of all 6.78 million claimants were in employment as of January 2025. This reflects a deliberate design choice to extend in-work support to low earners. UC has simplified access to top-up payments for the working poor, and its real-time interface with HMRC's systems means support adjusts automatically as earnings change."
+          source="Source: DWP — Universal Credit statistics, January 2025."
         />
       </section>
 
@@ -353,7 +355,7 @@ export default function BenefitsPage() {
       <SectionNav sections={[
         { id: 'sec-charts', label: 'Charts' },
         { id: 'sec-context', label: 'Context' },
-        { id: 'sec-positive', label: 'What\'s improving' },
+        { id: 'sec-positive', label: "What\'s improving" },
         { id: 'sec-sources', label: 'Sources' },
       ]} />
     </main>

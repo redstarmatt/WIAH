@@ -84,17 +84,17 @@ export default function NetMigrationPage() {
         <TopicHeader
           topic="Net Migration"
           question="What Is Actually Happening to UK Migration Numbers?"
-          finding="Net migration to the UK reached a record 906,000 in the year to June 2023 &mdash; driven largely by students and workers from non-EU countries filling vacancies in health, social care, and hospitality &mdash; before falling sharply to around 350,000 by late 2024 following visa restrictions."
+          finding="Net migration to the UK reached a record 906,000 in the year to June 2023 — driven largely by students and workers from non-EU countries filling vacancies in health, social care, and hospitality — before falling sharply to around 350,000 by late 2024 following visa restrictions."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              UK net migration reached a record 906,000 in the year to June 2023, driven by a post-COVID surge in student visas, NHS and social care recruitment, and emergency humanitarian schemes for Ukraine and Hong Kong. The January 2024 visa restriction package &mdash; the most significant tightening in a generation &mdash; removed the right of international students to bring dependants, raised the skilled worker salary threshold from &pound;26,200 to &pound;38,700, and restricted health and care workers from bringing family members. Early 2024 data suggested net migration was falling towards 350,000 as intended, but at a measurable cost: NHS trusts, care homes, and universities all reported significant recruitment difficulties. Free movement of EU workers ended in January 2021; health and care visa numbers surged from under 30,000 in 2020 to 143,000 in 2023 as social care and NHS employers pivoted to India, the Philippines, Nigeria, and Zimbabwe.
+              UK net migration reached a record 906,000 in the year to June 2023, driven by a post-COVID surge in student visas, NHS and social care recruitment, and emergency humanitarian schemes for Ukraine and Hong Kong. The January 2024 visa restriction package — the most significant tightening in a generation — removed the right of international students to bring dependants, raised the skilled worker salary threshold from £26,200 to £38,700, and restricted health and care workers from bringing family members. Early 2024 data suggested net migration was falling towards 350,000 as intended, but at a measurable cost: NHS trusts, care homes, and universities all reported significant recruitment difficulties. Free movement of EU workers ended in January 2021; health and care visa numbers surged from under 30,000 in 2020 to 143,000 in 2023 as social care and NHS employers pivoted to India, the Philippines, Nigeria, and Zimbabwe.
             </p>
             <p>
-              The distributional effects are highly uneven. London receives a disproportionate share of immigration and bears the highest associated housing cost pressures, while generating the largest fiscal and economic returns from migrant workers. Rural and coastal communities that relied on EU seasonal workers for agriculture and food processing face acute labour shortages since free movement ended. Asylum seekers &mdash; around 40,000 per year in net migration terms &mdash; are concentrated in a small number of local authorities, placing pressure on housing, schools, and GP practices in those areas while other communities bear no equivalent burden. The failure to distribute asylum seekers more evenly across local authorities is a policy choice with visible consequences for the areas that bear the full weight of that choice.
+              The distributional effects are highly uneven. London receives a disproportionate share of immigration and bears the highest associated housing cost pressures, while generating the largest fiscal and economic returns from migrant workers. Rural and coastal communities that relied on EU seasonal workers for agriculture and food processing face acute labour shortages since free movement ended. Asylum seekers — around 40,000 per year in net migration terms — are concentrated in a small number of local authorities, placing pressure on housing, schools, and GP practices in those areas while other communities bear no equivalent burden. The failure to distribute asylum seekers more evenly across local authorities is a policy choice with visible consequences for the areas that bear the full weight of that choice.
             </p>
           </div>
         </section>
@@ -112,27 +112,27 @@ export default function NetMigrationPage() {
               value="906,000"
               direction="up"
               polarity="up-is-bad"
-              changeText="Record high &middot; Driven by students, health &amp; care workers, Ukraine &amp; HK schemes"
+              changeText="Record high · Driven by students, health &amp; care workers, Ukraine &amp; HK schemes"
               sparklineData={[168, 248, 184, 260, 129, 488, 745, 906]}
-              source="ONS &middot; Long-term international migration 2023"
+              source="ONS · Long-term international migration 2023"
               href="#sec-trend"/>
             <MetricCard
               label="Net migration (year to mid-2024)"
               value="~350,000"
               direction="down"
               polarity="neutral"
-              changeText="Down from 906,000 peak &middot; Effect of January 2024 visa restrictions"
+              changeText="Down from 906,000 peak · Effect of January 2024 visa restrictions"
               sparklineData={[906, 800, 650, 500, 400, 350]}
-              source="ONS &middot; Long-term international migration provisional 2024"
+              source="ONS · Long-term international migration provisional 2024"
               href="#sec-visas"/>
             <MetricCard
               label="Health &amp; care visas issued (2023)"
               value="143,000"
               direction="flat"
               polarity="up-is-good"
-              changeText="Filling NHS &amp; social care vacancies &middot; Restricted from 2024"
+              changeText="Filling NHS &amp; social care vacancies · Restricted from 2024"
               sparklineData={[28000, 45000, 68000, 95000, 130000, 143000]}
-              source="Home Office &middot; Immigration statistics 2023"
+              source="Home Office · Immigration statistics 2023"
               href="#sec-visas"/>
           </div>
         </ScrollReveal>
@@ -141,7 +141,7 @@ export default function NetMigrationPage() {
           <section id="sec-trend" className="mb-12">
             {netMigrationSeries.length > 0 ? (
               <LineChart
-                title="UK net migration, 2004&ndash;2024"
+                title="UK net migration, 2004–2024"
                 subtitle="Long-run net migration figures (thousands). Note: 2021 onwards uses revised administrative data methodology; pre-2021 figures use International Passenger Survey and are not directly comparable. Dashed vertical lines mark key policy changes."
                 series={netMigrationSeries}
                 annotations={netMigrationAnnotations}
@@ -163,7 +163,7 @@ export default function NetMigrationPage() {
           <section id="sec-visas" className="mb-12">
             {visaBreakdownSeries.length > 0 ? (
               <LineChart
-                title="Work and study visas granted, 2017&ndash;2024"
+                title="Work and study visas granted, 2017–2024"
                 subtitle="Work visas (dark) and study visas (amber) granted annually in thousands. Both surged post-2020 as EU free movement ended, before visa restrictions in 2024 brought study numbers down sharply."
                 series={visaBreakdownSeries}
                 yLabel="Visas granted (thousands)"
@@ -185,8 +185,8 @@ export default function NetMigrationPage() {
             title="What migration makes possible"
             value="143,000"
             unit="health &amp; care visas in 2023"
-            description="Without the 143,000&plus; health and care visas in 2023, NHS waiting lists would be substantially longer and care homes would face catastrophic staffing shortfalls. International workers make up 19% of all NHS staff and 21% of care home workers &mdash; a structural dependency that reflects decades of under-investment in domestic training pipelines."
-            source="NHS England &middot; Workforce statistics 2023 &middot; Home Office immigration data 2023"
+            description="Without the 143,000&plus; health and care visas in 2023, NHS waiting lists would be substantially longer and care homes would face catastrophic staffing shortfalls. International workers make up 19% of all NHS staff and 21% of care home workers — a structural dependency that reflects decades of under-investment in domestic training pipelines."
+            source="NHS England · Workforce statistics 2023 · Home Office immigration data 2023"
           />
         </ScrollReveal>
 
@@ -195,7 +195,7 @@ export default function NetMigrationPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

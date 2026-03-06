@@ -142,17 +142,17 @@ export default function InfantFeedingPage() {
         <TopicHeader
           topic="Infant Feeding"
           question="Why Do So Few Babies Get the Best Start?"
-          finding="Only 26% of UK babies are breastfed at 6 months &mdash; the lowest rate in the developed world. Formula costs have risen 32% in five years. Breastfeeding rates are directly correlated with maternal income and education."
+          finding="Only 26% of UK babies are breastfed at 6 months — the lowest rate in the developed world. Formula costs have risen 32% in five years. Breastfeeding rates are directly correlated with maternal income and education."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK has one of the lowest breastfeeding continuation rates in the world. While 81% of mothers initiate breastfeeding, by six weeks only 47% are still feeding, and by six months the rate has fallen to 26% &mdash; against an OECD average of 46%. WHO recommendations advise exclusive breastfeeding for the first six months, yet these rates place the UK last among high-income nations. The causes are structural: insufficient post-birth support, early discharge from maternity wards before feeding is established, inadequate peer support networks, and workplace policies that make breastfeeding difficult to sustain on return to work.
+              The UK has one of the lowest breastfeeding continuation rates in the world. While 81% of mothers initiate breastfeeding, by six weeks only 47% are still feeding, and by six months the rate has fallen to 26% — against an OECD average of 46%. WHO recommendations advise exclusive breastfeeding for the first six months, yet these rates place the UK last among high-income nations. The causes are structural: insufficient post-birth support, early discharge from maternity wards before feeding is established, inadequate peer support networks, and workplace policies that make breastfeeding difficult to sustain on return to work.
             </p>
             <p>
-              Deprivation predicts breastfeeding rates with striking consistency. Women in the most deprived decile are half as likely to breastfeed at six weeks as women in the least deprived decile. Black and South Asian women have higher initiation rates than white women but face greater barriers to continuation. The result is that those who would benefit most from the well-documented health advantages of breastfeeding &mdash; reduced rates of infection, obesity, SIDS, and improved cognitive outcomes &mdash; are least likely to receive them. Meanwhile, formula costs have risen 32% since 2020, reaching an average of &pound;50 per month for standard first-stage formula. Reports of formula dilution, food bank formula stocking, and families rationing feeds have emerged from multiple sources including health visitors and charities.
+              Deprivation predicts breastfeeding rates with striking consistency. Women in the most deprived decile are half as likely to breastfeed at six weeks as women in the least deprived decile. Black and South Asian women have higher initiation rates than white women but face greater barriers to continuation. The result is that those who would benefit most from the well-documented health advantages of breastfeeding — reduced rates of infection, obesity, SIDS, and improved cognitive outcomes — are least likely to receive them. Meanwhile, formula costs have risen 32% since 2020, reaching an average of £50 per month for standard first-stage formula. Reports of formula dilution, food bank formula stocking, and families rationing feeds have emerged from multiple sources including health visitors and charities.
             </p>
           </div>
         </section>
@@ -173,7 +173,7 @@ export default function InfantFeedingPage() {
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="Lowest in developed world &middot; OECD average 46% &middot; UK lowest since 2010"
+              changeText="Lowest in developed world · OECD average 46% · UK lowest since 2010"
               sparklineData={breastfeeding6mSparkline}
               onExpand={() => {}}
             />
@@ -183,7 +183,7 @@ export default function InfantFeedingPage() {
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="Stagnant for a decade &middot; Below PHE 50% target &middot; Steep deprivation gradient"
+              changeText="Stagnant for a decade · Below PHE 50% target · Steep deprivation gradient"
               sparklineData={breastfeeding6wSparkline}
               onExpand={() => {}}
             />
@@ -193,7 +193,7 @@ export default function InfantFeedingPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+32% since 2020 &middot; Some families diluting formula &middot; Food banks stocking it"
+              changeText="+32% since 2020 · Some families diluting formula · Food banks stocking it"
               sparklineData={formulaSparkline}
               onExpand={() => {}}
             />
@@ -204,7 +204,7 @@ export default function InfantFeedingPage() {
         <ScrollReveal>
           <section id="sec-breastfeeding" className="mb-12">
             <LineChart
-              title="Breastfeeding rates at 6-8 weeks and 6 months, England, 2015&ndash;2024"
+              title="Breastfeeding rates at 6-8 weeks and 6 months, England, 2015–2024"
               subtitle="Percentage of babies breastfed at 6-8 weeks (health visitor contact) and at 6 months. Rates have been essentially flat for a decade despite investment in Baby Friendly Initiative accreditation. The steep fall between 6-week and 6-month rates reflects abandonment of breastfeeding over the first months."
               series={breastfeedingSeries}
               annotations={breastfeedingAnnotations}
@@ -217,8 +217,8 @@ export default function InfantFeedingPage() {
         <ScrollReveal>
           <section id="sec-formula" className="mb-12">
             <LineChart
-              title="Average monthly formula cost per baby, England, 2020&ndash;2025"
-              subtitle="Average monthly retail cost of standard first-stage infant formula (£ per baby), England. Rose from &pound;38 to &pound;50 between 2020 and 2025 &mdash; a 32% increase. Specialist and follow-on formulas cost considerably more."
+              title="Average monthly formula cost per baby, England, 2020–2025"
+              subtitle="Average monthly retail cost of standard first-stage infant formula (£ per baby), England. Rose from £38 to £50 between 2020 and 2025 — a 32% increase. Specialist and follow-on formulas cost considerably more."
               series={formulaCostSeries}
               annotations={formulaAnnotations}
               yLabel="£ per month"
@@ -229,11 +229,11 @@ export default function InfantFeedingPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="80%"
             unit="NHS trusts Baby Friendly accredited"
-            description="UNICEF UK&apos;s Baby Friendly Initiative accreditation has improved breastfeeding support in 80% of NHS maternity units, introducing training for midwives and peer support programmes. The NHS Healthy Start scheme provides vouchers worth &pound;4.25 per week for formula, fruit and vegetables for eligible low-income pregnant women and families with children under four. The 2024 Healthy Start expansion increased the weekly voucher value. Breastfeeding peer support programmes, where trained volunteers support new mothers in their communities, have shown evidence of improving rates in deprived areas."
-            source="Source: UNICEF UK Baby Friendly Initiative &mdash; accreditation data 2024. NHS England &mdash; Healthy Start scheme statistics."
+            description="UNICEF UK's Baby Friendly Initiative accreditation has improved breastfeeding support in 80% of NHS maternity units, introducing training for midwives and peer support programmes. The NHS Healthy Start scheme provides vouchers worth £4.25 per week for formula, fruit and vegetables for eligible low-income pregnant women and families with children under four. The 2024 Healthy Start expansion increased the weekly voucher value. Breastfeeding peer support programmes, where trained volunteers support new mothers in their communities, have shown evidence of improving rates in deprived areas."
+            source="Source: UNICEF UK Baby Friendly Initiative — accreditation data 2024. NHS England — Healthy Start scheme statistics."
           />
         </ScrollReveal>
 
@@ -244,7 +244,7 @@ export default function InfantFeedingPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

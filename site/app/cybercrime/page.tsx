@@ -83,8 +83,8 @@ export default function CybercrimePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Cybercrime is the fastest-growing category of crime in the UK, yet it remains one of the least-policed. The Crime Survey for England and Wales estimates approximately 1.9 million computer misuse offences per year, including hacking, malware attacks, and denial-of-service incidents. This figure excludes the substantial volume of cyber-enabled fraud, which is counted separately. The National Cyber Security Centre handled 1,957 significant cyber incidents in 2023 &mdash; a record. Ransomware attacks on the NHS, local councils, Royal Mail, and the British Library have made the threat tangible to the public, but the vast majority of cybercrime targets individuals and small businesses who receive little or no support from law enforcement.</p>
-            <p>The enforcement gap is stark. Fewer than 900 prosecutions for computer misuse offences were brought in 2024, down from 1,240 in 2015. The Computer Misuse Act 1990 &mdash; drafted before the world wide web existed &mdash; remains the primary legislative tool, and has been widely criticised as outdated and difficult to apply to modern attack vectors. The National Crime Agency&apos;s National Cyber Crime Unit is the lead enforcement body, but its capacity is limited relative to the scale of the threat. Most of the 43 police forces in England and Wales have small cyber teams, typically consisting of fewer than ten officers, many of whom lack specialist digital forensics training.</p>
+            <p>Cybercrime is the fastest-growing category of crime in the UK, yet it remains one of the least-policed. The Crime Survey for England and Wales estimates approximately 1.9 million computer misuse offences per year, including hacking, malware attacks, and denial-of-service incidents. This figure excludes the substantial volume of cyber-enabled fraud, which is counted separately. The National Cyber Security Centre handled 1,957 significant cyber incidents in 2023 — a record. Ransomware attacks on the NHS, local councils, Royal Mail, and the British Library have made the threat tangible to the public, but the vast majority of cybercrime targets individuals and small businesses who receive little or no support from law enforcement.</p>
+            <p>The enforcement gap is stark. Fewer than 900 prosecutions for computer misuse offences were brought in 2024, down from 1,240 in 2015. The Computer Misuse Act 1990 — drafted before the world wide web existed — remains the primary legislative tool, and has been widely criticised as outdated and difficult to apply to modern attack vectors. The National Crime Agency's National Cyber Crime Unit is the lead enforcement body, but its capacity is limited relative to the scale of the threat. Most of the 43 police forces in England and Wales have small cyber teams, typically consisting of fewer than ten officers, many of whom lack specialist digital forensics training.</p>
             </div>
         </section>
 
@@ -102,9 +102,9 @@ export default function CybercrimePage() {
               unit="/year"
               direction="up"
               polarity="up-is-bad"
-              changeText="CSEW estimate &middot; excludes cyber-enabled fraud"
+              changeText="CSEW estimate · excludes cyber-enabled fraud"
               sparklineData={[1.1, 1.34, 1.48, 1.58, 1.7, 2.1, 1.89, 1.62, 1.74, 1.9]}
-              source="ONS &middot; Crime Survey for England and Wales, 2024"
+              source="ONS · Crime Survey for England and Wales, 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -113,20 +113,20 @@ export default function CybercrimePage() {
               unit="/year"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 1,240 in 2015 &middot; Computer Misuse Act"
+              changeText="Down from 1,240 in 2015 · Computer Misuse Act"
               sparklineData={[1240, 1180, 1020, 960, 890, 620, 710, 780, 820, 870]}
-              source="CPS &middot; Annual Report, 2024"
+              source="CPS · Annual Report, 2024"
               onExpand={() => {}}
             />
             <MetricCard
               label="Ransomware losses (est.)"
-              value="&pound;3.2B"
+              value="£3.2B"
               unit="/year"
               direction="up"
               polarity="up-is-bad"
-              changeText="UK-wide &middot; includes disruption and recovery costs"
+              changeText="UK-wide · includes disruption and recovery costs"
               sparklineData={[0.8, 1.1, 1.4, 1.8, 2.2, 2.7, 3.2]}
-              source="NCSC &middot; Annual Review, 2024"
+              source="NCSC · Annual Review, 2024"
               onExpand={() => {}}
             />
           </div>
@@ -147,7 +147,7 @@ export default function CybercrimePage() {
         <ScrollReveal>
           <section id="sec-prosecutions" className="mb-12">
             <LineChart
-              title="Prosecutions under Computer Misuse Act, 2015&ndash;2024"
+              title="Prosecutions under Computer Misuse Act, 2015–2024"
               subtitle="Annual prosecutions brought under the Computer Misuse Act 1990. England and Wales."
               series={prosecutionSeries}
               yLabel="Prosecutions"

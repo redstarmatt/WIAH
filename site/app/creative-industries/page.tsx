@@ -42,7 +42,7 @@ export default function CreativeIndustriesPage() {
     ? [
         {
           id: 'gva',
-          label: 'Creative industries GVA (&pound;bn)',
+          label: 'Creative industries GVA (£bn)',
           colour: '#264653',
           data: data.timeSeries.map(d => ({ date: yearToDate(d.date), value: d.creativeGvaBn })),
         },
@@ -67,18 +67,18 @@ export default function CreativeIndustriesPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Creative Industries"
-          question="What Is Actually Happening to Britain&apos;s Creative Industries?"
-          finding="The UK&apos;s creative industries contribute &pound;116bn to GDP annually and employ 2.4 million people &mdash; but the sector faces mounting pressures from AI-generated content threatening copyright, Brexit barriers to touring, and the disappearance of grassroots music venues at a rate of 12 per month."
+          question="What Is Actually Happening to Britain's Creative Industries?"
+          finding="The UK's creative industries contribute £116bn to GDP annually and employ 2.4 million people — but the sector faces mounting pressures from AI-generated content threatening copyright, Brexit barriers to touring, and the disappearance of grassroots music venues at a rate of 12 per month."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Britain&apos;s creative industries are simultaneously one of the country&apos;s most remarkable success stories and one of its most underappreciated crises. The sector &mdash; which spans film, television, music, games, publishing, advertising, architecture, design, and the arts &mdash; generated &pound;116bn in gross value added in 2023, more than the automotive and aerospace sectors combined. Employment has grown every year since 2010, reaching 2.4 million jobs &mdash; around 6% of total UK employment &mdash; with a particularly high concentration in London and the South East but significant clusters in Manchester, Bristol, Glasgow, and Leeds. UK creative content reaches global audiences in ways no other sector can match: UK-produced television is watched in 190 countries, British musicians generate 13% of global music streaming revenue, and UK games studios have produced some of the best-selling titles in history.
+              Britain's creative industries are simultaneously one of the country's most remarkable success stories and one of its most underappreciated crises. The sector — which spans film, television, music, games, publishing, advertising, architecture, design, and the arts — generated £116bn in gross value added in 2023, more than the automotive and aerospace sectors combined. Employment has grown every year since 2010, reaching 2.4 million jobs — around 6% of total UK employment — with a particularly high concentration in London and the South East but significant clusters in Manchester, Bristol, Glasgow, and Leeds. UK creative content reaches global audiences in ways no other sector can match: UK-produced television is watched in 190 countries, British musicians generate 13% of global music streaming revenue, and UK games studios have produced some of the best-selling titles in history.
             </p>
             <p>
-              Brexit imposed structural costs that the sector is still absorbing. Before 2021, UK musicians, theatre companies, and film crews could tour across the EU under freedom of movement without visa or work permit requirements. Now they must navigate 27 different national bureaucracies, each with different rules on temporary work permits, equipment carnets, and social security contributions. The Creative Industries Federation estimated in 2022 that the additional administrative burden cost the average mid-sized UK touring act &pound;30,000 to &pound;50,000 per European tour, making many dates economically unviable. The UK was also removed from EU creative funding programmes including Creative Europe, losing an estimated &pound;40m per year in EU grants for arts and culture projects. A bilateral agreement to re-associate with some Creative Europe strands had not been concluded as of early 2025.
+              Brexit imposed structural costs that the sector is still absorbing. Before 2021, UK musicians, theatre companies, and film crews could tour across the EU under freedom of movement without visa or work permit requirements. Now they must navigate 27 different national bureaucracies, each with different rules on temporary work permits, equipment carnets, and social security contributions. The Creative Industries Federation estimated in 2022 that the additional administrative burden cost the average mid-sized UK touring act £30,000 to £50,000 per European tour, making many dates economically unviable. The UK was also removed from EU creative funding programmes including Creative Europe, losing an estimated £40m per year in EU grants for arts and culture projects. A bilateral agreement to re-associate with some Creative Europe strands had not been concluded as of early 2025.
             </p>
             </div>
         </section>
@@ -93,12 +93,12 @@ export default function CreativeIndustriesPage() {
           <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Creative industries GVA"
-              value="&pound;116bn"
+              value="£116bn"
               direction="up"
               polarity="up-is-good"
-              changeText="Up from &pound;84bn in 2015 &middot; 6% of UK GDP &middot; 2.4 million jobs"
+              changeText="Up from £84bn in 2015 · 6% of UK GDP · 2.4 million jobs"
               sparklineData={[84, 90, 97, 105, 112, 95, 106, 116]}
-              source="DCMS &middot; Economic estimates 2023"
+              source="DCMS · Economic estimates 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -106,9 +106,9 @@ export default function CreativeIndustriesPage() {
               value="35%"
               direction="down"
               polarity="up-is-bad"
-              changeText="~12 venues closing per month &middot; Down from 7,000&plus; in 2007"
+              changeText="~12 venues closing per month · Down from 7,000&plus; in 2007"
               sparklineData={[6800, 6500, 6200, 5900, 5600, 5300, 5000, 4600]}
-              source="Music Venue Trust &middot; Venues at Risk Report 2023"
+              source="Music Venue Trust · Venues at Risk Report 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -116,9 +116,9 @@ export default function CreativeIndustriesPage() {
               value="42%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Stable at 40&ndash;44% &middot; Self-employment and portfolio work depress incomes"
+              changeText="Stable at 40–44% · Self-employment and portfolio work depress incomes"
               sparklineData={[40, 41, 42, 43, 44, 43, 42, 42]}
-              source="Creative Industries Policy and Evidence Centre &middot; 2023"
+              source="Creative Industries Policy and Evidence Centre · 2023"
               onExpand={() => {}}
             />
           </div>
@@ -128,10 +128,10 @@ export default function CreativeIndustriesPage() {
           <section id="sec-gva" className="mb-12">
             {gvaSeries.length > 0 ? (
               <LineChart
-                title="Creative industries gross value added, UK, 2015&ndash;2024"
-                subtitle="GVA contribution of the UK&apos;s creative industries sector (&pound;bn, current prices). Includes film, TV, music, games, publishing, advertising, architecture, and design. The 2020 dip reflects COVID-19 lockdowns."
+                title="Creative industries gross value added, UK, 2015–2024"
+                subtitle="GVA contribution of the UK's creative industries sector (£bn, current prices). Includes film, TV, music, games, publishing, advertising, architecture, and design. The 2020 dip reflects COVID-19 lockdowns."
                 series={gvaSeries}
-                yLabel="GVA (&pound;bn)"
+                yLabel="GVA (£bn)"
                 source={{
                   name: 'Department for Culture, Media and Sport',
                   dataset: 'DCMS sectors economic estimates: GVA',
@@ -149,8 +149,8 @@ export default function CreativeIndustriesPage() {
           <section id="sec-venues" className="mb-12">
             {venueSeries.length > 0 ? (
               <LineChart
-                title="Grassroots music venues in the UK, 2015&ndash;2024"
-                subtitle="Number of registered live music venues with capacity under 350 &mdash; the grassroots pipeline that develops emerging talent. Declining at roughly 12 venues per month from a 2007 peak of over 7,000."
+                title="Grassroots music venues in the UK, 2015–2024"
+                subtitle="Number of registered live music venues with capacity under 350 — the grassroots pipeline that develops emerging talent. Declining at roughly 12 venues per month from a 2007 peak of over 7,000."
                 series={venueSeries}
                 yLabel="Venues (number)"
                 source={{
@@ -169,10 +169,10 @@ export default function CreativeIndustriesPage() {
         <ScrollReveal>
           <PositiveCallout
             title="Where the sector thrives"
-            value="&pound;7.9bn"
+            value="£7.9bn"
             unit="UK games GVA 2023"
-            description="The UK games industry generated &pound;7.9bn in 2023 &mdash; up 400% since 2010 &mdash; and UK films regularly top global box offices. The Creative Industries Sector Vision (2023) commits &pound;50m in additional support for grassroots venues and music education, alongside plans to expand the UK&apos;s cultural export programme."
-            source="Ukie &middot; UK games industry statistics 2023 &middot; DCMS &middot; Creative Industries Sector Vision 2023"
+            description="The UK games industry generated £7.9bn in 2023 — up 400% since 2010 — and UK films regularly top global box offices. The Creative Industries Sector Vision (2023) commits £50m in additional support for grassroots venues and music education, alongside plans to expand the UK's cultural export programme."
+            source="Ukie · UK games industry statistics 2023 · DCMS · Creative Industries Sector Vision 2023"
           />
         </ScrollReveal>
 
@@ -181,7 +181,7 @@ export default function CreativeIndustriesPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

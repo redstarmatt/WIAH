@@ -134,7 +134,7 @@ export default function LocalGovPage() {
     value: '8',
     polarity: 'up-is-bad' as const,
     direction: 'up' as const,
-    changeText: 'Since 2020 · Including Birmingham (UK&apos;s largest) · Total estimated deficit £3.3bn',
+    changeText: "Since 2020 · Including Birmingham (UK's largest) · Total estimated deficit £3.3bn",
     sparklineData: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 3, 1],
   };
 
@@ -308,13 +308,13 @@ export default function LocalGovPage() {
       {/* Editorial context */}
       <section className="max-w-3xl mx-auto px-6 py-12 space-y-6">
         <p className="text-base leading-relaxed text-wiah-black">
-          No part of the English state has been cut deeper. IFS analysis shows real-terms council funding fell 32% between 2010/11 and 2023/24 as central grants shrank faster than local revenue could grow. Councils slashed what they legally could: planning spending is down 52% in real terms, highways maintenance 41%, libraries 37%, parks and environmental services 28%. What they could not cut&mdash;adult social care, now consuming more than 40% of average council budgets&mdash;kept growing in cash terms, squeezing everything else. The result is a system that funds statutory obligations and almost nothing beyond them.
+          No part of the English state has been cut deeper. IFS analysis shows real-terms council funding fell 32% between 2010/11 and 2023/24 as central grants shrank faster than local revenue could grow. Councils slashed what they legally could: planning spending is down 52% in real terms, highways maintenance 41%, libraries 37%, parks and environmental services 28%. What they could not cut—adult social care, now consuming more than 40% of average council budgets—kept growing in cash terms, squeezing everything else. The result is a system that funds statutory obligations and almost nothing beyond them.
         </p>
         <p className="text-base leading-relaxed text-wiah-black">
-          Eight councils have issued Section 114 notices since 2020, formally declaring they cannot balance their books. The combined deficit stands at &pound;3.3 billion. Birmingham City Council, the UK&apos;s largest authority, accounts for &pound;760 million of that&mdash;driven partly by an unresolved equal pay liability. Woking Borough Council racked up &pound;1.2 billion in losses from speculative commercial property investments that collapsed as interest rates rose; Thurrock followed a similar path. In each case central government has dispatched commissioners and emergency funding, but the interventions treat symptoms rather than the structural shortfall.
+          Eight councils have issued Section 114 notices since 2020, formally declaring they cannot balance their books. The combined deficit stands at £3.3 billion. Birmingham City Council, the UK's largest authority, accounts for £760 million of that—driven partly by an unresolved equal pay liability. Woking Borough Council racked up £1.2 billion in losses from speculative commercial property investments that collapsed as interest rates rose; Thurrock followed a similar path. In each case central government has dispatched commissioners and emergency funding, but the interventions treat symptoms rather than the structural shortfall.
         </p>
         <p className="text-base leading-relaxed text-wiah-black">
-          Average Band D council tax has climbed from &pound;1,196 to &pound;1,900 since 2010/11&mdash;up &pound;704, or 59% in cash terms&mdash;with councils raising by the maximum 5% a year permitted without a referendum. Even so, the gap keeps widening: SEND-related costs have doubled, homelessness spending has more than doubled, and adult social care demand outpaces inflation. The LGA estimated in 2024 that English councils face a collective &pound;4 billion shortfall by 2026/27. Fundamental reform&mdash;including revaluation of council tax bands, still based on 1991 property prices&mdash;has been deferred by every government for over three decades.
+          Average Band D council tax has climbed from £1,196 to £1,900 since 2010/11—up £704, or 59% in cash terms—with councils raising by the maximum 5% a year permitted without a referendum. Even so, the gap keeps widening: SEND-related costs have doubled, homelessness spending has more than doubled, and adult social care demand outpaces inflation. The LGA estimated in 2024 that English councils face a collective £4 billion shortfall by 2026/27. Fundamental reform—including revaluation of council tax bands, still based on 1991 property prices—has been deferred by every government for over three decades.
         </p>
       </section>
 
@@ -322,11 +322,11 @@ export default function LocalGovPage() {
       <ScrollReveal>
         <section className="max-w-3xl mx-auto px-6 py-12">
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="+12%"
-            unit="real-terms increase in children&apos;s services since 2010"
-            description="Children&apos;s services &mdash; covering safeguarding, looked-after children, and early help &mdash; has seen a 12% real-terms increase in spending since 2010/11, even as most other services have been cut. This reflects statutory protections and political priority given to child protection after high-profile cases. Investment in early intervention and family support has grown, with evidence it reduces the number of children entering the care system."
-            source="Source: MHCLG &mdash; Local authority revenue expenditure and financing 2022/23."
+            unit="real-terms increase in children's services since 2010"
+            description="Children's services — covering safeguarding, looked-after children, and early help — has seen a 12% real-terms increase in spending since 2010/11, even as most other services have been cut. This reflects statutory protections and political priority given to child protection after high-profile cases. Investment in early intervention and family support has grown, with evidence it reduces the number of children entering the care system."
+            source="Source: MHCLG — Local authority revenue expenditure and financing 2022/23."
           />
         </section>
       </ScrollReveal>

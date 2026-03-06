@@ -55,14 +55,14 @@ export default function CircularEconomyPage() {
         <TopicHeader
           topic="Recycling &amp; Circular Economy"
           question="Is Britain actually recycling more?"
-          finding="England&apos;s recycling rate has stalled at around 44% for a decade &mdash; below the EU average of 48% and far short of the 65% target for 2035. The good news: landfill has collapsed from 38% to 6% since 2010."
+          finding="England's recycling rate has stalled at around 44% for a decade — below the EU average of 48% and far short of the 65% target for 2035. The good news: landfill has collapsed from 38% to 6% since 2010."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England&apos;s household recycling rate peaked at around 45.7% in 2016, stalled, and stood at 43.5% in 2022 &mdash; below the EU average of 48% and far short of the 2035 target of 65%. China&apos;s 2018 National Sword policy, which banned imports of contaminated recyclate, partly explains the post-2017 drift: materials previously counted as recycled via export were no longer counted, exposing a genuine domestic processing capacity gap. The counter-narrative is landfill: driven by the Landfill Tax, the share of waste going to landfill fell from 38% in 2010 to just 6% in 2022, replaced largely by energy-from-waste incineration. The UK&apos;s Extended Producer Responsibility system, legislated in 2021 and entering phased implementation from 2024, could generate &pound;1.7 billion per year for local authority recycling services.</p>
-            <p>England&apos;s 317 local authorities operate incompatible recycling collection systems, creating confusion that drives contamination: a resident may be able to recycle plastic film in one borough and not the neighbouring one. Simpler Recycling reforms aim to standardise this by 2026, and Deposit Return Schemes for bottles and cans are planned following Scotland&apos;s 2023 implementation. Germany achieves 66.7% through deep producer responsibility and standardised collection &mdash; a model England has the legislative tools to approach but not yet the delivery infrastructure to match.</p>
+            <p>England's household recycling rate peaked at around 45.7% in 2016, stalled, and stood at 43.5% in 2022 — below the EU average of 48% and far short of the 2035 target of 65%. China's 2018 National Sword policy, which banned imports of contaminated recyclate, partly explains the post-2017 drift: materials previously counted as recycled via export were no longer counted, exposing a genuine domestic processing capacity gap. The counter-narrative is landfill: driven by the Landfill Tax, the share of waste going to landfill fell from 38% in 2010 to just 6% in 2022, replaced largely by energy-from-waste incineration. The UK's Extended Producer Responsibility system, legislated in 2021 and entering phased implementation from 2024, could generate £1.7 billion per year for local authority recycling services.</p>
+            <p>England's 317 local authorities operate incompatible recycling collection systems, creating confusion that drives contamination: a resident may be able to recycle plastic film in one borough and not the neighbouring one. Simpler Recycling reforms aim to standardise this by 2026, and Deposit Return Schemes for bottles and cans are planned following Scotland's 2023 implementation. Germany achieves 66.7% through deep producer responsibility and standardised collection — a model England has the legislative tools to approach but not yet the delivery infrastructure to match.</p>
           </div>
         </section>
 
@@ -80,9 +80,9 @@ export default function CircularEconomyPage() {
             unit="%"
             direction="down"
             polarity="up-is-good"
-            changeText="Peaked at 45.7% in 2016 &middot; stalling and slightly falling"
+            changeText="Peaked at 45.7% in 2016 · stalling and slightly falling"
             sparklineData={[40.4, 43.0, 44.8, 45.7, 44.7, 44.0, 43.5]}
-            source="DEFRA Waste Statistics &middot; 2022"
+            source="DEFRA Waste Statistics · 2022"
             href="#sec-recycling"/>
           <MetricCard
             label="EU average recycling rate"
@@ -90,9 +90,9 @@ export default function CircularEconomyPage() {
             unit="%"
             direction="up"
             polarity="up-is-good"
-            changeText="Germany 66.7% &middot; England below EU average and falling behind"
+            changeText="Germany 66.7% · England below EU average and falling behind"
             sparklineData={[44, 45, 46, 47, 47, 48]}
-            source="Eurostat &middot; 2021"
+            source="Eurostat · 2021"
             href="#sec-eu"/>
           <MetricCard
             label="Waste going to landfill"
@@ -100,9 +100,9 @@ export default function CircularEconomyPage() {
             unit="%"
             direction="down"
             polarity="up-is-bad"
-            changeText="Down from 38% in 2010 &mdash; a genuine success story"
+            changeText="Down from 38% in 2010 — a genuine success story"
             sparklineData={[38, 30, 23, 15, 8, 6]}
-            source="DEFRA &middot; 2022"
+            source="DEFRA · 2022"
             href="#sec-eu"/>
         </div>
         </ScrollReveal>
@@ -112,7 +112,7 @@ export default function CircularEconomyPage() {
           title="Landfill virtually eliminated"
           value="-32 pp"
           unit=""
-          description="Landfill has fallen from 38% of waste in 2010 to just 6% in 2022 &mdash; one of England&apos;s most significant environmental improvements of the past decade."
+          description="Landfill has fallen from 38% of waste in 2010 to just 6% in 2022 — one of England's most significant environmental improvements of the past decade."
           source="DEFRA Waste Statistics, 2022"
         />
         </ScrollReveal>
@@ -120,7 +120,7 @@ export default function CircularEconomyPage() {
         <ScrollReveal>
         <section id="sec-recycling" className="mb-12">
           <LineChart
-            title="England household recycling rate, 2010&ndash;2022"
+            title="England household recycling rate, 2010–2022"
             subtitle="Percentage of local authority collected waste sent for recycling, composting or reuse. DEFRA."
             series={recyclingSeries}
             annotations={[
@@ -161,11 +161,11 @@ export default function CircularEconomyPage() {
             <a href="https://www.gov.uk/government/statistics/uk-waste-data" className="underline" target="_blank" rel="noopener noreferrer">
               DEFRA Waste Statistics (gov.uk)
             </a>
-            {' '}&middot;{' '}
+            {' '}·{' '}
             <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php/Waste_statistics" className="underline" target="_blank" rel="noopener noreferrer">
               Eurostat Waste Statistics
             </a>
-            {' '}&middot;{' '}
+            {' '}·{' '}
             <a href="https://wrap.ngo" className="underline" target="_blank" rel="noopener noreferrer">
               WRAP (wrap.ngo)
             </a>

@@ -62,14 +62,14 @@ export default function PoliceOfficerNumbersPage() {
         <TopicHeader
           topic="Police Officer Numbers"
           question="Are There Enough Police Officers?"
-          finding="England and Wales reached 147,000 officers in 2024 &mdash; but this still leaves a 4,000 shortfall versus 2010 levels, with less experience and more complex demand."
+          finding="England and Wales reached 147,000 officers in 2024 — but this still leaves a 4,000 shortfall versus 2010 levels, with less experience and more complex demand."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Police officer numbers in England and Wales fell from around 143,000 in 2010 to a low of 122,400 by 2018 &mdash; a loss of over 20,000 posts through austerity. The Police Uplift Programme, announced in 2019, met its 20,000 target and pushed numbers to a record 149,566 by March 2022, since falling back to around 147,000 in 2024. On paper this represents near-restoration of 2010 levels. In practice, the comparison misleads: 40% of officers now have fewer than five years&apos; service, detective shortfalls persist at 15% nationally, and demand has changed materially. Mental health-related calls have grown as community services contracted; digital crime investigations require capabilities that barely existed in 2010. Average emergency response time has risen from around 7 minutes in 2010 to 9.4 minutes in 2024.</p>
-            <p>The impact of thin and inexperienced policing falls hardest on communities with the highest needs. Rural forces covering vast geographies with fewer than 1,500 officers face response times exceeding 24 hours for non-emergency calls. Neighbourhood policing &mdash; the function most linked to public trust &mdash; has absorbed the deepest cuts, with dedicated officers falling from 20,000 in 2015 to under 12,000 by 2023. Retention among post-Uplift recruits is poor, particularly in the first two to five years, creating a treadmill: substantial ongoing recruitment is required merely to maintain current numbers, with limited capacity to build the deep experience needed for complex investigations.</p>
+            <p>Police officer numbers in England and Wales fell from around 143,000 in 2010 to a low of 122,400 by 2018 — a loss of over 20,000 posts through austerity. The Police Uplift Programme, announced in 2019, met its 20,000 target and pushed numbers to a record 149,566 by March 2022, since falling back to around 147,000 in 2024. On paper this represents near-restoration of 2010 levels. In practice, the comparison misleads: 40% of officers now have fewer than five years' service, detective shortfalls persist at 15% nationally, and demand has changed materially. Mental health-related calls have grown as community services contracted; digital crime investigations require capabilities that barely existed in 2010. Average emergency response time has risen from around 7 minutes in 2010 to 9.4 minutes in 2024.</p>
+            <p>The impact of thin and inexperienced policing falls hardest on communities with the highest needs. Rural forces covering vast geographies with fewer than 1,500 officers face response times exceeding 24 hours for non-emergency calls. Neighbourhood policing — the function most linked to public trust — has absorbed the deepest cuts, with dedicated officers falling from 20,000 in 2015 to under 12,000 by 2023. Retention among post-Uplift recruits is poor, particularly in the first two to five years, creating a treadmill: substantial ongoing recruitment is required merely to maintain current numbers, with limited capacity to build the deep experience needed for complex investigations.</p>
           </div>
         </section>
 
@@ -90,7 +90,7 @@ export default function PoliceOfficerNumbersPage() {
               polarity="up-is-good"
               changeText="stable at near 2010 levels"
               sparklineData={[143734, 134000, 127909, 123142, 122404, 130396, 138858, 142526, 147232, 147000]}
-              href="#sec-callout"source="Home Office &middot; Police Workforce Statistics 2024"
+              href="#sec-callout"source="Home Office · Police Workforce Statistics 2024"
             />
             <MetricCard
               label="Still below 2010"
@@ -98,9 +98,9 @@ export default function PoliceOfficerNumbersPage() {
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="vs 151k peak &middot; and demand much higher now"
+              changeText="vs 151k peak · and demand much higher now"
               sparklineData={[-7000, -16000, -20000, -21000, -21500, -13500, -5000, -1500, 0, -500]}
-              href="#sec-chart"source="Home Office &middot; Police Workforce 2024"
+              href="#sec-chart"source="Home Office · Police Workforce 2024"
             />
             <MetricCard
               label="999 response time"
@@ -108,9 +108,9 @@ export default function PoliceOfficerNumbersPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="emergency response time rising &middot; capacity stretched"
+              changeText="emergency response time rising · capacity stretched"
               sparklineData={[7.0, 7.4, 7.8, 8.1, 8.3, 8.5, 8.8, 9.0, 9.2, 9.4]}
-              href="#sec-chart"source="HMICFRS &middot; State of Policing 2024"
+              href="#sec-chart"source="HMICFRS · State of Policing 2024"
             />
           </div>
         </ScrollReveal>
@@ -130,7 +130,7 @@ export default function PoliceOfficerNumbersPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Police officer numbers, England and Wales, 2010&ndash;2024"
+              title="Police officer numbers, England and Wales, 2010–2024"
               subtitle="Full-time equivalent officers. Excludes police staff, PCSOs, and specials. Data from Home Office annual workforce statistics."
               series={officersSeries}
               yLabel="Officers (FTE)"
@@ -146,8 +146,8 @@ export default function PoliceOfficerNumbersPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Home Office &mdash; Police Workforce, England and Wales. Annual statistics on officer numbers by force, rank, and function. Published July each year. gov.uk/government/collections/police-workforce-england-and-wales</p>
-            <p>HMICFRS &mdash; State of Policing / PEEL Assessments. Annual report on police effectiveness, efficiency, and legitimacy. justiceinspectorates.gov.uk/hmicfrs/publications/state-of-policing</p>
+            <p>Home Office — Police Workforce, England and Wales. Annual statistics on officer numbers by force, rank, and function. Published July each year. gov.uk/government/collections/police-workforce-england-and-wales</p>
+            <p>HMICFRS — State of Policing / PEEL Assessments. Annual report on police effectiveness, efficiency, and legitimacy. justiceinspectorates.gov.uk/hmicfrs/publications/state-of-policing</p>
             <p>Officer count is full-time equivalent designated police officers. Excludes designated police staff, police community support officers, special constables, and contracted staff. Response time data is sourced from HMICFRS force-level PEEL inspection data and varies in methodology across forces; the figure cited is an approximate national mean for Grade 1 (emergency) responses.</p>
           </div>
         </section>

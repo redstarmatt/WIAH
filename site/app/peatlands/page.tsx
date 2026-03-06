@@ -59,15 +59,15 @@ export default function PeatlandsPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Peatlands"
-          question="Are Britain&apos;s Carbon Stores Being Protected?"
-          finding="UK peatlands store 3.2 billion tonnes of carbon &mdash; more than all forests in the UK, France, and Germany combined. But 80% are degraded and currently emit 23 million tonnes of CO&#8322; per year, making damaged peat one of Britain&apos;s largest single sources of greenhouse gas emissions."
+          question="Are Britain's Carbon Stores Being Protected?"
+          finding="UK peatlands store 3.2 billion tonnes of carbon — more than all forests in the UK, France, and Germany combined. But 80% are degraded and currently emit 23 million tonnes of CO&#8322; per year, making damaged peat one of Britain's largest single sources of greenhouse gas emissions."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Peatlands are the UK&apos;s most important carbon store. Formed over thousands of years by the partial decomposition of sphagnum moss and other plants in waterlogged conditions, peat accumulates at roughly one millimetre per year and can be many metres deep. The UK holds approximately 3 million hectares of peatland, covering around 12% of the land area &mdash; found predominantly in the Scottish Highlands, Northern and Southern Uplands, the Pennines, Dartmoor, the Somerset Levels, and the Flow Country of Caithness and Sutherland. The IUCN UK Peatland Programme estimates that this peat stores 3.2 billion tonnes of carbon &mdash; more than all the forests in the UK, France, and Germany combined. Critically, a healthy, wet peatland is a carbon sink, absorbing CO2 from the atmosphere as new plant material forms. A damaged, drained, or burned peatland reverses this process and becomes a carbon source, releasing millennia of stored carbon into the atmosphere. The UK&apos;s 3.2 billion tonne carbon store represents over 230 years of current UK total greenhouse gas emissions &mdash; making its protection one of the most important single actions available for UK climate policy.</p>
-            <p>The scale of peatland degradation in the UK is extraordinary. IUCN UK estimates that 80% of UK peatland is in a degraded condition, primarily because of drainage for agriculture, forestry planting from the 1950s to 1980s, atmospheric pollution deposition, and managed burning for grouse shooting. Drainage ditch networks &mdash; covering hundreds of thousands of kilometres &mdash; lower the water table, allowing the peat to dry out, oxidise, and release CO2. Agricultural conversion has affected significant areas, particularly in lowland England where the East Anglian Fens &mdash; once one of Europe&apos;s largest wetland complexes &mdash; were drained in the 17th century and are now intensively farmed. The Fens alone are estimated to emit 4&ndash;5 million tonnes of CO2 per year from peat oxidation. Managed burning on grouse moors &mdash; legal in England despite longstanding scientific calls for a ban &mdash; damages the sphagnum moss layer that holds peat together, accelerating erosion and carbon loss. The DESNZ national GHG inventory records peatland degradation as contributing approximately 23 million tonnes of CO2-equivalent per year, making it a larger source than the UK&apos;s entire aviation sector when measured by direct CO2 alone.</p>
+            <p>Peatlands are the UK's most important carbon store. Formed over thousands of years by the partial decomposition of sphagnum moss and other plants in waterlogged conditions, peat accumulates at roughly one millimetre per year and can be many metres deep. The UK holds approximately 3 million hectares of peatland, covering around 12% of the land area — found predominantly in the Scottish Highlands, Northern and Southern Uplands, the Pennines, Dartmoor, the Somerset Levels, and the Flow Country of Caithness and Sutherland. The IUCN UK Peatland Programme estimates that this peat stores 3.2 billion tonnes of carbon — more than all the forests in the UK, France, and Germany combined. Critically, a healthy, wet peatland is a carbon sink, absorbing CO2 from the atmosphere as new plant material forms. A damaged, drained, or burned peatland reverses this process and becomes a carbon source, releasing millennia of stored carbon into the atmosphere. The UK's 3.2 billion tonne carbon store represents over 230 years of current UK total greenhouse gas emissions — making its protection one of the most important single actions available for UK climate policy.</p>
+            <p>The scale of peatland degradation in the UK is extraordinary. IUCN UK estimates that 80% of UK peatland is in a degraded condition, primarily because of drainage for agriculture, forestry planting from the 1950s to 1980s, atmospheric pollution deposition, and managed burning for grouse shooting. Drainage ditch networks — covering hundreds of thousands of kilometres — lower the water table, allowing the peat to dry out, oxidise, and release CO2. Agricultural conversion has affected significant areas, particularly in lowland England where the East Anglian Fens — once one of Europe's largest wetland complexes — were drained in the 17th century and are now intensively farmed. The Fens alone are estimated to emit 4–5 million tonnes of CO2 per year from peat oxidation. Managed burning on grouse moors — legal in England despite longstanding scientific calls for a ban — damages the sphagnum moss layer that holds peat together, accelerating erosion and carbon loss. The DESNZ national GHG inventory records peatland degradation as contributing approximately 23 million tonnes of CO2-equivalent per year, making it a larger source than the UK's entire aviation sector when measured by direct CO2 alone.</p>
             </div>
         </section>
 
@@ -87,7 +87,7 @@ export default function PeatlandsPage() {
               polarity="up-is-bad"
               changeText="2.4M of 3M hectares damaged by drainage, burning, or pollution"
               sparklineData={[83, 83, 82, 82, 81, 81, 80, 80]}
-              source="IUCN UK Peatland Programme &mdash; UK peatland assessment"
+              source="IUCN UK Peatland Programme — UK peatland assessment"
               onExpand={() => {}}
             />
             <MetricCard
@@ -96,9 +96,9 @@ export default function PeatlandsPage() {
               unit="tonnes"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Larger than direct aviation emissions &mdash; barely declining despite restoration"
+              changeText="Larger than direct aviation emissions — barely declining despite restoration"
               sparklineData={[24, 23.8, 23.6, 23.4, 23.2, 23.0, 22.9, 22.7]}
-              source="DESNZ &mdash; UK GHG national statistics (LULUCF)"
+              source="DESNZ — UK GHG national statistics (LULUCF)"
               onExpand={() => {}}
             />
             <MetricCard
@@ -107,9 +107,9 @@ export default function PeatlandsPage() {
               unit="ha"
               direction="up"
               polarity="up-is-good"
-              changeText="Target: 250,000 ha by 2030 &mdash; less than 15% of the way there"
+              changeText="Target: 250,000 ha by 2030 — less than 15% of the way there"
               sparklineData={[0, 5000, 12000, 20000, 28000, 35000]}
-              source="IUCN UK / NatureScot &mdash; Peatland ACTION monitoring"
+              source="IUCN UK / NatureScot — Peatland ACTION monitoring"
               onExpand={() => {}}
             />
           </div>
@@ -118,7 +118,7 @@ export default function PeatlandsPage() {
         <ScrollReveal>
           <section id="sec-restored" className="mb-12">
             <LineChart
-              title="Cumulative peatland restoration, UK, 2015&ndash;2024"
+              title="Cumulative peatland restoration, UK, 2015–2024"
               subtitle="Hectares restored (drain blocked and rewetted). 250,000 ha target by 2030. IUCN UK / NatureScot."
               series={restoredSeries}
               yLabel="Hectares restored"
@@ -129,7 +129,7 @@ export default function PeatlandsPage() {
         <ScrollReveal>
           <section id="sec-emissions" className="mb-12">
             <LineChart
-              title="CO\u2082 emissions from degraded UK peatland, 2015&ndash;2024"
+              title="CO\u2082 emissions from degraded UK peatland, 2015–2024"
               subtitle="Annual CO\u2082-equivalent from peat oxidation and drainage. DESNZ UK GHG national statistics."
               series={emissionsSeries}
               yLabel="MtCO\u2082e per year"
@@ -142,8 +142,8 @@ export default function PeatlandsPage() {
             title="UNESCO World Heritage"
             value="400,000 ha"
             unit="Flow Country now a UNESCO World Heritage Site"
-            description="The Flow Country in Caithness and Sutherland &mdash; the world&apos;s largest blanket bog &mdash; achieved UNESCO World Heritage Site status in July 2023, providing the strongest available international protection for 400,000 hectares of pristine peatland. Scotland&apos;s Peatland ACTION programme has restored over 50,000 hectares since 2012, the largest such programme in Europe. Restored peatland supports rare wildlife including golden plover, greenshank, and dunlin &mdash; as well as absorbing carbon and purifying water."
-            source="Source: UNESCO World Heritage Committee 2023; NatureScot &mdash; Peatland ACTION programme annual report."
+            description="The Flow Country in Caithness and Sutherland — the world's largest blanket bog — achieved UNESCO World Heritage Site status in July 2023, providing the strongest available international protection for 400,000 hectares of pristine peatland. Scotland's Peatland ACTION programme has restored over 50,000 hectares since 2012, the largest such programme in Europe. Restored peatland supports rare wildlife including golden plover, greenshank, and dunlin — as well as absorbing carbon and purifying water."
+            source="Source: UNESCO World Heritage Committee 2023; NatureScot — Peatland ACTION programme annual report."
           />
         </ScrollReveal>
 
@@ -157,11 +157,11 @@ export default function PeatlandsPage() {
                   <ul className="space-y-2">
                     {data.metadata.sources.map((src, idx) => (
                       <li key={idx} className="text-wiah-mid">
-                        <strong className="text-wiah-black">{src.name}:</strong>&nbsp;
+                        <strong className="text-wiah-black">{src.name}:</strong> 
                         <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue">
                           {src.dataset}
                         </a>
-                        &nbsp;({src.frequency})
+                         ({src.frequency})
                       </li>
                     ))}
                   </ul>

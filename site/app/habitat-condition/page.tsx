@@ -53,15 +53,15 @@ export default function HabitatConditionPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Habitat Condition"
-          question="What condition is Britain&apos;s protected natural environment in?"
-          finding="Only 53.6% of England&apos;s Sites of Special Scientific Interest are in favourable condition &mdash; well below the 70% target. Lowland meadows have declined by 99.6% since 1940. Hedgerow length has halved since 1950."
+          question="What condition is Britain's protected natural environment in?"
+          finding="Only 53.6% of England's Sites of Special Scientific Interest are in favourable condition — well below the 70% target. Lowland meadows have declined by 99.6% since 1940. Hedgerow length has halved since 1950."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England&apos;s 4,120 Sites of Special Scientific Interest cover 8% of the land area and represent the best-protected habitats in the country &mdash; yet only 53.6% are in favourable or recovering condition, well below the 70% government target, and the figure has barely moved since 2010. Lowland meadows have declined by 99.6% since 1940, from 3.7 million hectares to around 15,000 hectares, driven by fertiliser use, drainage, and conversion to intensive silage. Ancient woodland &mdash; woodland in continuous existence since 1600 &mdash; has fallen 74% from 2.5 million to 643,000 hectares, and cannot be recreated through new planting. Hedgerow length has roughly halved from 800,000 to 390,000 kilometres since 1950, erasing the wildlife corridors on which species movement between fragmented habitats depends.</p>
-            <p>The mechanisms of decline are well understood; the question is whether the policy response can match the scale required. The Environmental Land Management schemes (ELMs) are designed to pay farmers to restore habitats, but in 2024 only 8% of farms had joined. At current uptake, the Environment Act 2021 targets &mdash; halting species decline and 30&times;30 protected area coverage by 2030 &mdash; will not be met. The loss of lowland meadows is directly connected to the collapse of insect abundance documented since the 1970s, with cascading effects on pollination, bird populations, and the broader food web that no amount of SSSI management can reverse without also transforming the surrounding agricultural landscape.</p>
+            <p>England's 4,120 Sites of Special Scientific Interest cover 8% of the land area and represent the best-protected habitats in the country — yet only 53.6% are in favourable or recovering condition, well below the 70% government target, and the figure has barely moved since 2010. Lowland meadows have declined by 99.6% since 1940, from 3.7 million hectares to around 15,000 hectares, driven by fertiliser use, drainage, and conversion to intensive silage. Ancient woodland — woodland in continuous existence since 1600 — has fallen 74% from 2.5 million to 643,000 hectares, and cannot be recreated through new planting. Hedgerow length has roughly halved from 800,000 to 390,000 kilometres since 1950, erasing the wildlife corridors on which species movement between fragmented habitats depends.</p>
+            <p>The mechanisms of decline are well understood; the question is whether the policy response can match the scale required. The Environmental Land Management schemes (ELMs) are designed to pay farmers to restore habitats, but in 2024 only 8% of farms had joined. At current uptake, the Environment Act 2021 targets — halting species decline and 30&times;30 protected area coverage by 2030 — will not be met. The loss of lowland meadows is directly connected to the collapse of insect abundance documented since the 1970s, with cascading effects on pollination, bird populations, and the broader food web that no amount of SSSI management can reverse without also transforming the surrounding agricultural landscape.</p>
           </div>
         </section>
 
@@ -79,9 +79,9 @@ export default function HabitatConditionPage() {
             unit="%"
             direction="flat"
             polarity="up-is-good"
-            changeText="Target is 70% &middot; barely moved from 52% since 2010"
+            changeText="Target is 70% · barely moved from 52% since 2010"
             sparklineData={[58.2, 52.4, 51.1, 52.6, 53.0, 53.2, 53.4, 53.6]}
-            source="Natural England &middot; 2023"
+            source="Natural England · 2023"
             href="#sec-sssi"/>
           <MetricCard
             label="Ancient woodland remaining"
@@ -89,9 +89,9 @@ export default function HabitatConditionPage() {
             unit="ha"
             direction="flat"
             polarity="up-is-good"
-            changeText="Down from 2.5m ha &mdash; a 74% loss over 200 years"
+            changeText="Down from 2.5m ha — a 74% loss over 200 years"
             sparklineData={[2500, 1900, 1400, 1000, 800, 700, 643]}
-            source="Woodland Trust &middot; 2023"
+            source="Woodland Trust · 2023"
             href="#sec-habitats"/>
           <MetricCard
             label="Lowland meadow remaining"
@@ -99,7 +99,7 @@ export default function HabitatConditionPage() {
             unit="ha"
             direction="flat"
             polarity="up-is-good"
-            changeText="From 3.7 million ha in 1940 &mdash; 99.6% lost"
+            changeText="From 3.7 million ha in 1940 — 99.6% lost"
             sparklineData={[3700000, 1200000, 400000, 100000, 30000, 15000]}
             source="Wildlife Trusts / Natural England"
             href="#sec-habitats"/>
@@ -109,7 +109,7 @@ export default function HabitatConditionPage() {
         <ScrollReveal>
         <section id="sec-sssi" className="mb-12">
           <LineChart
-            title="England&apos;s SSSIs in favourable condition, 2003&ndash;2023"
+            title="England's SSSIs in favourable condition, 2003–2023"
             subtitle="Percentage of total SSSI area meeting favourable or recovering condition assessment. Natural England."
             series={sssitSeries}
             annotations={[
@@ -148,7 +148,7 @@ export default function HabitatConditionPage() {
             <a href="https://www.gov.uk/government/organisations/natural-england" className="underline" target="_blank" rel="noopener noreferrer">
               Natural England SSSI condition reports
             </a>
-            {' '}&middot; Woodland Trust (woodlandtrust.org.uk) &middot; Wildlife Trusts
+            {' '}· Woodland Trust (woodlandtrust.org.uk) · Wildlife Trusts
           </p>
         </section>
         </ScrollReveal>

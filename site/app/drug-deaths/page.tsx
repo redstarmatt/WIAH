@@ -102,8 +102,8 @@ export default function DrugDeathsPage() {
       <TopicNav topic="Drug Deaths" />
       <TopicHeader
         topic="Drug Deaths"
-        question="Why Is Britain&apos;s Drug Death Toll Rising?"
-        finding="Drug poisoning deaths in England and Wales reached 4,907 in 2022 — a record. Scotland&apos;s rate is the highest in Europe at 22.4 deaths per 100,000. Drug treatment funding has been cut 30% in real terms since 2013. Opioids — mainly heroin — account for 48% of all drug deaths."
+        question="Why Is Britain's Drug Death Toll Rising?"
+        finding="Drug poisoning deaths in England and Wales reached 4,907 in 2022 — a record. Scotland's rate is the highest in Europe at 22.4 deaths per 100,000. Drug treatment funding has been cut 30% in real terms since 2013. Opioids — mainly heroin — account for 48% of all drug deaths."
         colour="#E63946"
       />
 
@@ -133,7 +133,7 @@ export default function DrugDeathsPage() {
               value="275K"
               direction="flat"
               polarity="up-is-good"
-              changeText="2022/23 · 45% complete treatment &apos;free from dependence&apos; · Treatment funding cut 30% real-terms since 2013 · New investment: &pound;780M 2022&ndash;25"
+              changeText="2022/23 · 45% complete treatment 'free from dependence' · Treatment funding cut 30% real-terms since 2013 · New investment: £780M 2022–25"
               sparklineData={[300, 310, 295, 280, 273, 270, 271, 275]}
             />
           </div>
@@ -143,7 +143,7 @@ export default function DrugDeathsPage() {
         <ScrollReveal>
           <div className="mb-12">
             <LineChart
-              title="Drug poisoning deaths, England &amp; Wales, 2012&ndash;2022"
+              title="Drug poisoning deaths, England &amp; Wales, 2012–2022"
               subtitle="Includes all drug poisoning deaths where drug mentioned on death certificate"
               series={poisoningSeries}
               annotations={poisoningAnnotations}
@@ -156,7 +156,7 @@ export default function DrugDeathsPage() {
         <ScrollReveal>
           <div className="mb-12">
             <LineChart
-              title="Drug death rate, Scotland, 2013&ndash;2022"
+              title="Drug death rate, Scotland, 2013–2022"
               subtitle="Deaths per 100,000 population. Highest rate in Europe."
               series={scotlandSeries}
               yLabel="Deaths per 100,000"
@@ -183,7 +183,7 @@ export default function DrugDeathsPage() {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-wiah-mid font-mono mt-4">Source: ONS &mdash; Deaths related to drug poisoning 2022</p>
+            <p className="text-xs text-wiah-mid font-mono mt-4">Source: ONS — Deaths related to drug poisoning 2022</p>
           </div>
         </ScrollReveal>
 
@@ -192,9 +192,9 @@ export default function DrugDeathsPage() {
           <PositiveCallout
             title="Life-saving naloxone"
             value="110K"
-            unit="naloxone doses distributed in 2022 &mdash; a life-saving overdose reversal drug"
-            description="Naloxone reverses opioid overdose and saves lives in minutes. NHS England expanded community naloxone distribution in 2023, with 110,000 doses distributed in 2022 through drug services, pharmacies, and community organisations. The Ten-Year Drugs Plan (&ldquo;From Harm to Hope&rdquo;, 2021) committed &pound;780 million over 2022&ndash;25 to rebuild the drug treatment system after a decade of funding cuts &mdash; a 30% real-terms reduction since 2013. Recovery rates have improved: 45% of those completing treatment are recorded as free from dependence. Take-home naloxone programmes have been shown to reduce overdose deaths by 30% in areas with high coverage."
-            source="Source: ONS &mdash; Drug poisoning deaths 2022; OHID &mdash; Adult substance misuse treatment statistics 2022/23."
+            unit="naloxone doses distributed in 2022 — a life-saving overdose reversal drug"
+            description="Naloxone reverses opioid overdose and saves lives in minutes. NHS England expanded community naloxone distribution in 2023, with 110,000 doses distributed in 2022 through drug services, pharmacies, and community organisations. The Ten-Year Drugs Plan (&ldquo;From Harm to Hope&rdquo;, 2021) committed £780 million over 2022–25 to rebuild the drug treatment system after a decade of funding cuts — a 30% real-terms reduction since 2013. Recovery rates have improved: 45% of those completing treatment are recorded as free from dependence. Take-home naloxone programmes have been shown to reduce overdose deaths by 30% in areas with high coverage."
+            source="Source: ONS — Drug poisoning deaths 2022; OHID — Adult substance misuse treatment statistics 2022/23."
           />
         </ScrollReveal>
 
@@ -203,10 +203,10 @@ export default function DrugDeathsPage() {
           <section className="max-w-2xl border-t border-wiah-border pt-12 mt-12">
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
               <p>
-                Drug poisoning deaths in England and Wales rose from 2,652 in 2012 to a record 4,907 in 2022, climbing in every intervening year. Opioids account for 48% of fatalities; cocaine for 18%; benzodiazepines &mdash; increasingly mixed into street heroin &mdash; for 12%. Scotland&apos;s rate of 22.4 deaths per 100,000 is the highest in Europe &mdash; three times England&apos;s &mdash; driven by concentrated poverty in post-industrial communities and an ageing opioid-using population. From 2023, nitazenes and other synthetic opioids were detected in the UK supply, prompting national monitoring alerts.
+                Drug poisoning deaths in England and Wales rose from 2,652 in 2012 to a record 4,907 in 2022, climbing in every intervening year. Opioids account for 48% of fatalities; cocaine for 18%; benzodiazepines — increasingly mixed into street heroin — for 12%. Scotland's rate of 22.4 deaths per 100,000 is the highest in Europe — three times England's — driven by concentrated poverty in post-industrial communities and an ageing opioid-using population. From 2023, nitazenes and other synthetic opioids were detected in the UK supply, prompting national monitoring alerts.
               </p>
               <p>
-                Dame Carol Black&apos;s 2020&ndash;21 review found the treatment system had been &ldquo;deliberately dismantled&rdquo; by cuts: funding fell 30% in real terms from 2013. The Ten-Year Drugs Plan &ldquo;From Harm to Hope&rdquo; (2021) committed &pound;780 million over 2022&ndash;25. By 2022/23, 275,896 adults were in structured treatment, with 45% completing free from dependence. Community naloxone distribution reached 110,000 doses in 2022; in high-coverage areas it has been shown to reduce overdose deaths by 30%.
+                Dame Carol Black's 2020–21 review found the treatment system had been &ldquo;deliberately dismantled&rdquo; by cuts: funding fell 30% in real terms from 2013. The Ten-Year Drugs Plan &ldquo;From Harm to Hope&rdquo; (2021) committed £780 million over 2022–25. By 2022/23, 275,896 adults were in structured treatment, with 45% completing free from dependence. Community naloxone distribution reached 110,000 doses in 2022; in high-coverage areas it has been shown to reduce overdose deaths by 30%.
               </p>
             </div>
           </section>
@@ -220,8 +220,8 @@ export default function DrugDeathsPage() {
               <ul>
                 <li><strong>Drug poisoning deaths:</strong> ONS Deaths related to drug poisoning in England and Wales. Annual publication. Includes all deaths where drug poisoning is mentioned on the death certificate.</li>
                 <li><strong>Scotland rates:</strong> National Records of Scotland drug-related deaths statistics. Uses slightly different classification from ONS.</li>
-                <li><strong>Drug treatment:</strong> OHID / UKHSA Adult substance misuse treatment statistics. Data from National Drug Treatment Monitoring System (NDTMS) &mdash; all adults in structured community or residential treatment in England.</li>
-                <li><strong>Known issues:</strong> Deaths lag by 12&ndash;18 months due to inquest process. Scotland&apos;s classification differs slightly from ONS. Treatment numbers reflect programme completions, not new starts.</li>
+                <li><strong>Drug treatment:</strong> OHID / UKHSA Adult substance misuse treatment statistics. Data from National Drug Treatment Monitoring System (NDTMS) — all adults in structured community or residential treatment in England.</li>
+                <li><strong>Known issues:</strong> Deaths lag by 12–18 months due to inquest process. Scotland's classification differs slightly from ONS. Treatment numbers reflect programme completions, not new starts.</li>
               </ul>
             </div>
           </section>

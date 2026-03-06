@@ -83,8 +83,8 @@ export default function RapeProsecutionPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Police in England and Wales recorded 68,400 rape offences in the year to March 2024 &mdash; double the figure from a decade earlier. Yet the charge rate collapsed from 7.5% in 2015 to just 1.4% in 2020, before a partial recovery to 2.9% in 2024. The Crown Prosecution Service refers to this period as the &ldquo;rape review crisis.&rdquo; At its lowest point, just 843 suspects were charged with rape in a single year &mdash; meaning that for the vast majority of the roughly 68,000 complainants, the criminal justice system delivered no meaningful outcome.</p>
-            <p>The causes are structural, not incidental. Between 2016 and 2020, a shift in CPS policy &mdash; sometimes described as a &ldquo;risk aversion culture&rdquo; &mdash; led prosecutors to decline cases they judged unlikely to secure conviction, rather than testing them before juries. Police disclosure failures, driven by under-resourced digital forensics teams unable to process complainants&apos; phone data within statutory timeframes, compounded the problem. The 2021 government review acknowledged the system had failed victims and committed to restoring charge volumes to 2016 levels by the end of 2024 &mdash; a target that has not been met.</p>
+            <p>Police in England and Wales recorded 68,400 rape offences in the year to March 2024 — double the figure from a decade earlier. Yet the charge rate collapsed from 7.5% in 2015 to just 1.4% in 2020, before a partial recovery to 2.9% in 2024. The Crown Prosecution Service refers to this period as the &ldquo;rape review crisis.&rdquo; At its lowest point, just 843 suspects were charged with rape in a single year — meaning that for the vast majority of the roughly 68,000 complainants, the criminal justice system delivered no meaningful outcome.</p>
+            <p>The causes are structural, not incidental. Between 2016 and 2020, a shift in CPS policy — sometimes described as a &ldquo;risk aversion culture&rdquo; — led prosecutors to decline cases they judged unlikely to secure conviction, rather than testing them before juries. Police disclosure failures, driven by under-resourced digital forensics teams unable to process complainants' phone data within statutory timeframes, compounded the problem. The 2021 government review acknowledged the system had failed victims and committed to restoring charge volumes to 2016 levels by the end of 2024 — a target that has not been met.</p>
             </div>
         </section>
 
@@ -101,9 +101,9 @@ export default function RapeProsecutionPage() {
               value="2.9%"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 7.5% in 2015 &middot; partial recovery from 1.4% low"
+              changeText="Down from 7.5% in 2015 · partial recovery from 1.4% low"
               sparklineData={[7.5, 5.6, 4.2, 3.0, 1.6, 1.4, 1.3, 2.1, 2.5, 2.9]}
-              source="CPS &middot; Violence Against Women and Girls Report, 2024"
+              source="CPS · Violence Against Women and Girls Report, 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -112,9 +112,9 @@ export default function RapeProsecutionPage() {
               unit="/year"
               direction="up"
               polarity="up-is-bad"
-              changeText="Doubled since 2015 &middot; most do not reach court"
+              changeText="Doubled since 2015 · most do not reach court"
               sparklineData={[34292, 41186, 53977, 58657, 58856, 55130, 63136, 70633, 67125, 68400]}
-              source="ONS &middot; Police Recorded Crime, 2024"
+              source="ONS · Police Recorded Crime, 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -125,7 +125,7 @@ export default function RapeProsecutionPage() {
               polarity="up-is-bad"
               changeText="Nearly 3 years from report to Crown Court trial"
               sparklineData={[450, 520, 600, 700, 780, 850, 920, 980, 1033]}
-              source="Ministry of Justice &middot; Criminal Court Statistics, 2024"
+              source="Ministry of Justice · Criminal Court Statistics, 2024"
               onExpand={() => {}}
             />
           </div>
@@ -134,7 +134,7 @@ export default function RapeProsecutionPage() {
         <ScrollReveal>
           <section id="sec-charge-rate" className="mb-12">
             <LineChart
-              title="Rape charge rate, England &amp; Wales, 2015&ndash;2024"
+              title="Rape charge rate, England &amp; Wales, 2015–2024"
               subtitle="Percentage of police-recorded rapes resulting in a suspect being charged."
               series={chargeRateSeries}
               yLabel="Charge rate (%)"

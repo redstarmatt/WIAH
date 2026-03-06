@@ -77,10 +77,10 @@ export default function VolunteeringPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Volunteering is a pillar of British civil society. An estimated 16.3 million adults volunteer formally at least once a year through charities, community groups, sports clubs, and religious organisations, contributing an economic value estimated at &pound;23 billion annually. But the trend is downward. The DCMS Community Life Survey shows that regular formal volunteering &mdash; at least once a month &mdash; fell from 27% of adults in 2015 to 20% in 2023. Informal volunteering (helping neighbours, community mutual aid) spiked during the pandemic but has also settled below pre-COVID levels. The charity sector employs 920,000 people directly, making it larger than the agriculture, mining, and utilities sectors combined, yet its workforce and volunteer base are under simultaneous strain.
+              Volunteering is a pillar of British civil society. An estimated 16.3 million adults volunteer formally at least once a year through charities, community groups, sports clubs, and religious organisations, contributing an economic value estimated at £23 billion annually. But the trend is downward. The DCMS Community Life Survey shows that regular formal volunteering — at least once a month — fell from 27% of adults in 2015 to 20% in 2023. Informal volunteering (helping neighbours, community mutual aid) spiked during the pandemic but has also settled below pre-COVID levels. The charity sector employs 920,000 people directly, making it larger than the agriculture, mining, and utilities sectors combined, yet its workforce and volunteer base are under simultaneous strain.
             </p>
             <p>
-              The pandemic was a watershed. Lockdowns dismantled the routines and social connections that sustain volunteering &mdash; weekly sessions at food banks, youth groups, hospital visits &mdash; and many did not return. NCVO analysis found that 40% of charities reported a decline in volunteer numbers between 2019 and 2023, with older volunteers (the backbone of many organisations) disproportionately not returning due to health concerns and changed habits. The cost-of-living crisis compounded the problem: potential volunteers who previously gave time now need to prioritise paid work. The Charities Aid Foundation found that 34% of people who reduced or stopped volunteering cited financial pressures as the primary reason. Simultaneously, demand for charity services &mdash; food banks, debt advice, mental health support &mdash; has surged, creating a widening gap between what civil society is asked to provide and its capacity to deliver.
+              The pandemic was a watershed. Lockdowns dismantled the routines and social connections that sustain volunteering — weekly sessions at food banks, youth groups, hospital visits — and many did not return. NCVO analysis found that 40% of charities reported a decline in volunteer numbers between 2019 and 2023, with older volunteers (the backbone of many organisations) disproportionately not returning due to health concerns and changed habits. The cost-of-living crisis compounded the problem: potential volunteers who previously gave time now need to prioritise paid work. The Charities Aid Foundation found that 34% of people who reduced or stopped volunteering cited financial pressures as the primary reason. Simultaneously, demand for charity services — food banks, debt advice, mental health support — has surged, creating a widening gap between what civil society is asked to provide and its capacity to deliver.
             </p>
             </div>
         </section>
@@ -98,19 +98,19 @@ export default function VolunteeringPage() {
               value="20%"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 27% in 2015 &middot; Pandemic accelerated pre-existing decline"
+              changeText="Down from 27% in 2015 · Pandemic accelerated pre-existing decline"
               sparklineData={[27.0, 26.1, 24.8, 23.3, 23.1, 17.2, 16.3, 19.4, 20.1]}
-              source="DCMS &middot; Community Life Survey 2023"
+              source="DCMS · Community Life Survey 2023"
               onExpand={() => {}}
             />
             <MetricCard
               label="Charity sector income (real terms)"
-              value="&pound;54.8bn"
+              value="£54.8bn"
               direction="flat"
               polarity="up-is-good"
-              changeText="Stagnated in real terms &middot; Demand for services surging"
+              changeText="Stagnated in real terms · Demand for services surging"
               sparklineData={[54.2, 55.1, 55.8, 56.4, 57.0, 51.3, 53.8, 55.2, 54.8]}
-              source="NCVO &middot; UK Civil Society Almanac 2023"
+              source="NCVO · UK Civil Society Almanac 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -118,9 +118,9 @@ export default function VolunteeringPage() {
               value="40%"
               direction="up"
               polarity="up-is-bad"
-              changeText="2019&ndash;2023 &middot; Older volunteers disproportionately not returning"
+              changeText="2019–2023 · Older volunteers disproportionately not returning"
               sparklineData={[15, 18, 22, 28, 35, 40]}
-              source="NCVO &middot; Charity Tracker Survey 2023"
+              source="NCVO · Charity Tracker Survey 2023"
               onExpand={() => {}}
             />
           </div>
@@ -130,7 +130,7 @@ export default function VolunteeringPage() {
           <section id="sec-volunteering" className="mb-12">
             {volunteeringSeries.length > 0 ? (
               <LineChart
-                title="Regular formal volunteering rate, England, 2015&ndash;2023"
+                title="Regular formal volunteering rate, England, 2015–2023"
                 subtitle="Percentage of adults volunteering at least once a month through a group, club, or organisation."
                 series={volunteeringSeries}
                 yLabel="Percentage (%)"
@@ -151,10 +151,10 @@ export default function VolunteeringPage() {
           <section id="sec-charity" className="mb-12">
             {charityIncomeSeries.length > 0 ? (
               <LineChart
-                title="UK charity sector income, 2015&ndash;2023 (real terms)"
+                title="UK charity sector income, 2015–2023 (real terms)"
                 subtitle="Total income of registered charities in England and Wales, adjusted to 2023 prices using the GDP deflator."
                 series={charityIncomeSeries}
-                yLabel="Income (&pound; billions)"
+                yLabel="Income (£ billions)"
                 source={{
                   name: 'NCVO',
                   dataset: 'UK Civil Society Almanac',
@@ -174,7 +174,7 @@ export default function VolunteeringPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

@@ -142,17 +142,17 @@ export default function CareHomeStaffingPage() {
         <TopicHeader
           topic="Care Home Staffing"
           question="Who Looks After Our Elders?"
-          finding="Care homes face a structural staffing crisis: 165,000 vacancies, a 30% annual turnover rate, and average pay of &pound;11 per hour. International recruitment has plugged gaps but at regulatory cost: 3,000 visa abuses reported in 2024."
+          finding="Care homes face a structural staffing crisis: 165,000 vacancies, a 30% annual turnover rate, and average pay of £11 per hour. International recruitment has plugged gaps but at regulatory cost: 3,000 visa abuses reported in 2024."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The adult social care workforce in England numbers 1.7 million, making it larger than the NHS workforce. It is also among the lowest-paid: average care worker pay of &pound;11.20 per hour sits below the Living Wage Foundation&apos;s real living wage, below NHS healthcare support worker rates, and comparable with retail and hospitality roles that carry far less responsibility. Annual turnover of approximately 30% &mdash; meaning one in three care workers leaves their job each year &mdash; creates perpetual recruitment costs, disrupts continuity of care, and makes quality improvement extremely difficult.
+              The adult social care workforce in England numbers 1.7 million, making it larger than the NHS workforce. It is also among the lowest-paid: average care worker pay of £11.20 per hour sits below the Living Wage Foundation's real living wage, below NHS healthcare support worker rates, and comparable with retail and hospitality roles that carry far less responsibility. Annual turnover of approximately 30% — meaning one in three care workers leaves their job each year — creates perpetual recruitment costs, disrupts continuity of care, and makes quality improvement extremely difficult.
             </p>
             <p>
-              The 2022 extension of the Health and Care Worker visa to social care workers opened international recruitment as a partial solution. Visas granted peaked at 101,000 in 2024 before falling to 82,000 as Home Office crackdowns on visa abuse reduced approvals. The Home Office found 3,000 cases of exploitation &mdash; workers recruited from overseas who had their visas sponsored but were not given the hours promised, or faced illegal deductions from wages. Structural reform requires government decisions on long-term funding. The Andrew Dilnot proposals for a care cost cap were legislated in 2021 but implementation deferred until 2025, then further delayed. Without sustainable funding for providers, wage increases cannot be sustained without fee increases that many local authorities cannot afford.
+              The 2022 extension of the Health and Care Worker visa to social care workers opened international recruitment as a partial solution. Visas granted peaked at 101,000 in 2024 before falling to 82,000 as Home Office crackdowns on visa abuse reduced approvals. The Home Office found 3,000 cases of exploitation — workers recruited from overseas who had their visas sponsored but were not given the hours promised, or faced illegal deductions from wages. Structural reform requires government decisions on long-term funding. The Andrew Dilnot proposals for a care cost cap were legislated in 2021 but implementation deferred until 2025, then further delayed. Without sustainable funding for providers, wage increases cannot be sustained without fee increases that many local authorities cannot afford.
             </p>
           </div>
         </section>
@@ -204,7 +204,7 @@ export default function CareHomeStaffingPage() {
         <ScrollReveal>
           <section id="sec-vacancies" className="mb-12">
             <LineChart
-              title="Adult social care vacancies, England, 2019&ndash;2025"
+              title="Adult social care vacancies, England, 2019–2025"
               subtitle="Total vacancies in the adult social care sector, England (thousands). Fell during COVID-19 as furlough reduced reported vacancies, then surged to 165,000 in 2022 as pandemic staffing pressures peaked. Partially relieved by international recruitment but structurally high."
               series={vacanciesSeries}
               annotations={vacanciesAnnotations}
@@ -217,7 +217,7 @@ export default function CareHomeStaffingPage() {
         <ScrollReveal>
           <section id="sec-visas" className="mb-12">
             <LineChart
-              title="International care worker visas and average hourly pay, 2021&ndash;2025"
+              title="International care worker visas and average hourly pay, 2021–2025"
               subtitle="Health and Care Worker visas granted for social care roles (thousands, blue) alongside average hourly pay for care workers (£, green). Visa route expanded rapidly from 2022, peaked in 2024, then fell as abuse crackdowns tightened approvals."
               series={visasAndPaySeries}
               annotations={visasAnnotations}
@@ -229,11 +229,11 @@ export default function CareHomeStaffingPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Care Workforce Pathway"
             unit="Career progression launched 2023"
-            description="The Care Workforce Pathway 2023 introduces named career levels for care workers for the first time, providing a progression route from care assistant to senior practitioner. The government is consulting on a National Care Service to professionalise the sector and standardise pay. Fair Pay Agreements, piloted in adult social care, aim to set sector-wide minimum pay floors above the National Living Wage. The Dilnot care cost cap &mdash; delayed multiple times &mdash; remains government policy, and if implemented, would stabilise local authority commissioning and enable more sustainable provider contracts."
-            source="Source: DHSC &mdash; Care Workforce Pathway 2023. Skills for Care &mdash; State of the adult social care sector 2024."
+            description="The Care Workforce Pathway 2023 introduces named career levels for care workers for the first time, providing a progression route from care assistant to senior practitioner. The government is consulting on a National Care Service to professionalise the sector and standardise pay. Fair Pay Agreements, piloted in adult social care, aim to set sector-wide minimum pay floors above the National Living Wage. The Dilnot care cost cap — delayed multiple times — remains government policy, and if implemented, would stabilise local authority commissioning and enable more sustainable provider contracts."
+            source="Source: DHSC — Care Workforce Pathway 2023. Skills for Care — State of the adult social care sector 2024."
           />
         </ScrollReveal>
 
@@ -244,7 +244,7 @@ export default function CareHomeStaffingPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

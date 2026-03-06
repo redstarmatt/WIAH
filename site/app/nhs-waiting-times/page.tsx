@@ -117,7 +117,7 @@ export default function NhsWaitingTimesPage() {
         <TopicHeader
           topic="NHS Waiting Times"
           question="How Long Are People Actually Waiting for NHS Treatment?"
-          finding="7.54 million people are waiting for elective treatment &mdash; the highest on record. Over 300,000 have been waiting more than a year. The 18-week standard &mdash; the legal maximum from referral to treatment &mdash; is met for only 58% of patients. The government target is 92%."
+          finding="7.54 million people are waiting for elective treatment — the highest on record. Over 300,000 have been waiting more than a year. The 18-week standard — the legal maximum from referral to treatment — is met for only 58% of patients. The government target is 92%."
           colour="#E63946"
           preposition="in"
         />
@@ -138,7 +138,7 @@ export default function NhsWaitingTimesPage() {
               value={data?.national.waitingList.latestMillions ? `${data.national.waitingList.latestMillions.toFixed(2)}M` : '—'}
               direction="up"
               polarity="up-is-bad"
-              changeText="January 2024 &middot; Up from 4.4M pre-COVID &middot; Record high &middot; Target: reduce significantly by March 2025"
+              changeText="January 2024 · Up from 4.4M pre-COVID · Record high · Target: reduce significantly by March 2025"
               sparklineData={[4400, 4500, 4600, 4400, 4500, 7200, 7500, 7540]}
               source="NHS England · Referral to Treatment Statistics"
               href="#sec-overview"/>
@@ -147,7 +147,7 @@ export default function NhsWaitingTimesPage() {
               value={data?.national.standardCompliance.latestPct ? `${data.national.standardCompliance.latestPct}%` : '—'}
               direction="down"
               polarity="up-is-good"
-              changeText="January 2024 &middot; Standard: 92% within 18 weeks &middot; Last met: 2016 &middot; 300K+ waiting over a year"
+              changeText="January 2024 · Standard: 92% within 18 weeks · Last met: 2016 · 300K+ waiting over a year"
               sparklineData={[93, 92, 90, 88, 85, 61, 58, 58]}
               source="NHS England · Referral to Treatment Statistics"
               href="#sec-list"/>
@@ -156,7 +156,7 @@ export default function NhsWaitingTimesPage() {
               value={data?.national.longWaits.over104WeeksCount === 0 ? '0' : data?.national.longWaits.over104WeeksCount.toLocaleString() || '—'}
               direction="down"
               polarity="up-is-bad"
-              changeText="January 2024 &middot; 2-year waits eliminated by target deadline &middot; But 300K still over 1 year &middot; 18-week standard remains far off"
+              changeText="January 2024 · 2-year waits eliminated by target deadline · But 300K still over 1 year · 18-week standard remains far off"
               sparklineData={[0, 0, 0, 22000, 18000, 6000, 1000, 0]}
               source="NHS England · Referral to Treatment Statistics"
               href="#sec-standard"/>
@@ -167,7 +167,7 @@ export default function NhsWaitingTimesPage() {
           <div id="sec-list">
           {waitingListSeries.length > 0 ? (
             <LineChart
-              title="NHS elective care waiting list, 2016&ndash;2024"
+              title="NHS elective care waiting list, 2016–2024"
               subtitle="Millions of patients with an incomplete referral to treatment pathway, England. Grew 70% since the pandemic."
               series={waitingListSeries}
               annotations={waitingListAnnotations}
@@ -187,7 +187,7 @@ export default function NhsWaitingTimesPage() {
           <div id="sec-standard">
           {standardComplianceSeries.length > 0 ? (
             <LineChart
-              title="% of patients starting treatment within 18 weeks, 2016&ndash;2024"
+              title="% of patients starting treatment within 18 weeks, 2016–2024"
               subtitle="NHS Constitution standard: 92% of patients should start treatment within 18 weeks of referral. Last met in 2016."
               series={standardComplianceSeries}
               annotations={complianceAnnotations}
@@ -234,22 +234,22 @@ export default function NhsWaitingTimesPage() {
 
           {/* Editorial context */}
           <section className="mb-12 bg-wiah-light p-6 rounded">
-            <h2 className="text-lg font-bold text-wiah-black mb-4">What&apos;s happening</h2>
+            <h2 className="text-lg font-bold text-wiah-black mb-4">What's happening</h2>
             <div className="space-y-4 text-base leading-relaxed text-wiah-black">
-              <p>The NHS elective waiting list stands at 7.54 million patients as of January 2024 &mdash; the highest figure ever recorded and a 71% increase from the 4.4 million waiting in February 2020. Those 7.54 million entries represent an estimated 7.2 million separate conditions, since some patients are on multiple pathways simultaneously. Of these, 302,000 have been waiting over 52 weeks and 124,000 over 78 weeks; two-year waits have been eliminated. But the visible list understates the true scale of unmet demand. Analysts at the NHS Confederation estimate that between 7 million and 13 million additional people &mdash; the so-called &ldquo;missing patients&rdquo; who delayed seeking help during the pandemic &mdash; have yet to be formally referred. The NHS spends &pound;35 billion a year on elective care; managing the backlog alone costs an estimated &pound;1 billion in additional administration.</p>
-              <p>The 18-week referral-to-treatment standard is a legal right enshrined in the NHS Constitution since 2012: 92% of patients should begin treatment within 18 weeks of referral. That target was last met across all specialties in 2016, when compliance stood at 93%. By January 2024 only 58% of patients started treatment within the deadline &mdash; the lowest rate ever recorded outside the acute COVID disruption period. The 34-percentage-point gap between the 92% target and the 58% reality means roughly 1.8 million patients are waiting longer than they are legally entitled to. Orthopaedics carries the heaviest burden at 830,000 patients waiting, followed by ophthalmology at 620,000 and general surgery at 510,000. Orthopaedic waits are particularly damaging: patients awaiting joint replacements deteriorate while on the list, requiring more complex procedures and longer recovery times.</p>
-              <p>The NHS Elective Recovery Plan, published in 2022, set a phased approach: eliminate two-year waits first (achieved), then 18-month waits (largely achieved), then restore the 18-week standard. The government&apos;s target of 92% compliance by March 2025 is regarded as unachievable on current trajectory by both the CQC and NHS England. Structural reforms are under way &mdash; more than 160 designated surgical hubs now run single-specialty lists at high volume, delivering 20&ndash;30% productivity gains over general hospitals. The NHS used private hospital capacity worth &pound;2 billion in 2022/23, with some trusts outsourcing over 20% of elective work. Yet the binding constraint remains workforce: the NHS carries 112,000 vacancies, and the number of consultants able to perform elective procedures has not kept pace with list growth.</p>
+              <p>The NHS elective waiting list stands at 7.54 million patients as of January 2024 — the highest figure ever recorded and a 71% increase from the 4.4 million waiting in February 2020. Those 7.54 million entries represent an estimated 7.2 million separate conditions, since some patients are on multiple pathways simultaneously. Of these, 302,000 have been waiting over 52 weeks and 124,000 over 78 weeks; two-year waits have been eliminated. But the visible list understates the true scale of unmet demand. Analysts at the NHS Confederation estimate that between 7 million and 13 million additional people — the so-called &ldquo;missing patients&rdquo; who delayed seeking help during the pandemic — have yet to be formally referred. The NHS spends £35 billion a year on elective care; managing the backlog alone costs an estimated £1 billion in additional administration.</p>
+              <p>The 18-week referral-to-treatment standard is a legal right enshrined in the NHS Constitution since 2012: 92% of patients should begin treatment within 18 weeks of referral. That target was last met across all specialties in 2016, when compliance stood at 93%. By January 2024 only 58% of patients started treatment within the deadline — the lowest rate ever recorded outside the acute COVID disruption period. The 34-percentage-point gap between the 92% target and the 58% reality means roughly 1.8 million patients are waiting longer than they are legally entitled to. Orthopaedics carries the heaviest burden at 830,000 patients waiting, followed by ophthalmology at 620,000 and general surgery at 510,000. Orthopaedic waits are particularly damaging: patients awaiting joint replacements deteriorate while on the list, requiring more complex procedures and longer recovery times.</p>
+              <p>The NHS Elective Recovery Plan, published in 2022, set a phased approach: eliminate two-year waits first (achieved), then 18-month waits (largely achieved), then restore the 18-week standard. The government's target of 92% compliance by March 2025 is regarded as unachievable on current trajectory by both the CQC and NHS England. Structural reforms are under way — more than 160 designated surgical hubs now run single-specialty lists at high volume, delivering 20–30% productivity gains over general hospitals. The NHS used private hospital capacity worth £2 billion in 2022/23, with some trusts outsourcing over 20% of elective work. Yet the binding constraint remains workforce: the NHS carries 112,000 vacancies, and the number of consultants able to perform elective procedures has not kept pace with list growth.</p>
             </div>
           </section>
 
           {/* Positive story */}
           <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Zero"
-            unit="patients waiting over 2 years &mdash; down from 22,000 at the peak in 2021"
-            description="Two-year waits, once thought impossible to eliminate from the NHS backlog, have been reduced to zero. The government&apos;s Elective Recovery Taskforce set a target of eliminating 2-year waits by July 2022, achieved broadly on time. Over 10 million elective procedures were completed in 2022/23, more than any previous year. The NHS Elective Care Reform Programme is expanding patient choice, creating surgical hubs, and using independent sector capacity. NICE has approved a &lsquo;book and choose&rsquo; model allowing patients to self-refer for some services. Waiting list data is now published monthly, improving transparency."
-            source="Source: NHS England &mdash; Referral to Treatment Waiting Times Statistics, January 2024."
+            unit="patients waiting over 2 years — down from 22,000 at the peak in 2021"
+            description="Two-year waits, once thought impossible to eliminate from the NHS backlog, have been reduced to zero. The government's Elective Recovery Taskforce set a target of eliminating 2-year waits by July 2022, achieved broadly on time. Over 10 million elective procedures were completed in 2022/23, more than any previous year. The NHS Elective Care Reform Programme is expanding patient choice, creating surgical hubs, and using independent sector capacity. NICE has approved a &lsquo;book and choose&rsquo; model allowing patients to self-refer for some services. Waiting list data is now published monthly, improving transparency."
+            source="Source: NHS England — Referral to Treatment Waiting Times Statistics, January 2024."
           />
           </ScrollReveal>
 
@@ -265,7 +265,7 @@ export default function NhsWaitingTimesPage() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {src.name} &mdash; {src.dataset} ({src.frequency})
+                    {src.name} — {src.dataset} ({src.frequency})
                   </a>
                 </li>
               ))}

@@ -68,14 +68,14 @@ export default function UrbanRuralPriceGapPage() {
         <TopicHeader
           topic="Housing"
           question="Are Rural Areas Becoming Unaffordable?"
-          finding="Remote working has driven rural house prices up 8% above pre-pandemic trend &mdash; and 38% of rural areas now have price-to-earnings ratios above 10."
+          finding="Remote working has driven rural house prices up 8% above pre-pandemic trend — and 38% of rural areas now have price-to-earnings ratios above 10."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Between 2019 and 2021, pandemic-driven remote working pushed rural house prices up approximately 19% in real terms &mdash; against 11% in urban areas. The rural affordability ratio peaked at 11.1 in 2021 before partially easing; it stood at 9.9 in 2024, still above the urban equivalent of 8.6, and 38% of rural local authorities now have price-to-earnings ratios above 10. The urban&ndash;rural affordability gap, just 0.3 in 2015, had grown to over 1.3 by 2024. The squeeze is compounded by lower rural wages: workers in rural areas earn approximately 14% less than their urban counterparts, meaning rural households face higher price-to-earnings ratios on lower absolute incomes.</p>
-            <p>The consequences are reshaping rural communities. Village schools are closing as family households are displaced; local businesses face labour shortages because workers cannot afford to live nearby. In coastal and rural communities, second homes and Airbnb properties have removed stock from the primary market. Planning constraints &mdash; National Parks, Areas of Outstanding Natural Beauty, Green Belts &mdash; restrict new development in the most affected areas, while council tax premiums on second homes and empty-property surcharges are marginal interventions relative to the scale of displacement.</p>
+            <p>Between 2019 and 2021, pandemic-driven remote working pushed rural house prices up approximately 19% in real terms — against 11% in urban areas. The rural affordability ratio peaked at 11.1 in 2021 before partially easing; it stood at 9.9 in 2024, still above the urban equivalent of 8.6, and 38% of rural local authorities now have price-to-earnings ratios above 10. The urban–rural affordability gap, just 0.3 in 2015, had grown to over 1.3 by 2024. The squeeze is compounded by lower rural wages: workers in rural areas earn approximately 14% less than their urban counterparts, meaning rural households face higher price-to-earnings ratios on lower absolute incomes.</p>
+            <p>The consequences are reshaping rural communities. Village schools are closing as family households are displaced; local businesses face labour shortages because workers cannot afford to live nearby. In coastal and rural communities, second homes and Airbnb properties have removed stock from the primary market. Planning constraints — National Parks, Areas of Outstanding Natural Beauty, Green Belts — restrict new development in the most affected areas, while council tax premiums on second homes and empty-property surcharges are marginal interventions relative to the scale of displacement.</p>
           </div>
         </section>
 
@@ -93,9 +93,9 @@ export default function UrbanRuralPriceGapPage() {
               unit=""
               direction="down"
               polarity="up-is-bad"
-              changeText="easing from peak &middot; still worse than cities"
+              changeText="easing from peak · still worse than cities"
               sparklineData={[8.2, 8.9, 9.4, 9.8, 11.1, 10.8, 10.2, 9.9]}
-              href="#sec-chart"source="ONS &middot; Housing Affordability in England and Wales 2024"
+              href="#sec-chart"source="ONS · Housing Affordability in England and Wales 2024"
             />
             <MetricCard
               label="Rural areas above 10&times; earnings"
@@ -103,9 +103,9 @@ export default function UrbanRuralPriceGapPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="of rural LAs now unaffordable &middot; WFH premium"
+              changeText="of rural LAs now unaffordable · WFH premium"
               sparklineData={[12, 15, 18, 22, 45, 42, 40, 38]}
-              href="#sec-chart"source="ONS &middot; Local Authority Affordability Ratios 2024"
+              href="#sec-chart"source="ONS · Local Authority Affordability Ratios 2024"
             />
             <MetricCard
               label="Rural wage vs urban"
@@ -113,9 +113,9 @@ export default function UrbanRuralPriceGapPage() {
               unit=""
               direction="flat"
               polarity="up-is-bad"
-              changeText="workers paid less in rural areas &middot; double squeeze"
+              changeText="workers paid less in rural areas · double squeeze"
               sparklineData={[-12, -12, -13, -13, -14, -14, -14, -14]}
-              href="#sec-chart"source="ONS &middot; ASHE Regional Earnings 2024"
+              href="#sec-chart"source="ONS · ASHE Regional Earnings 2024"
             />
           </div>
         </ScrollReveal>
@@ -123,7 +123,7 @@ export default function UrbanRuralPriceGapPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="House price to earnings ratios: rural vs urban, 2015&ndash;2024"
+              title="House price to earnings ratios: rural vs urban, 2015–2024"
               subtitle="Rural (amber) and urban (dark) median house price divided by median earnings. Rural affordability worsened sharply after 2020."
               series={ratioSeries}
               yLabel="Price-to-earnings ratio"
@@ -139,9 +139,9 @@ export default function UrbanRuralPriceGapPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>ONS &mdash; Housing Affordability in England and Wales. Annual release. ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingaffordabilityinenglandandwales/latest</p>
-            <p>ONS &mdash; ASHE Regional Earnings. Annual Survey of Hours and Earnings. ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/ashe</p>
-            <p>DEFRA &mdash; Rural-Urban Classification. Methodology for classifying local authorities as rural or urban. gov.uk/government/collections/rural-urban-classification</p>
+            <p>ONS — Housing Affordability in England and Wales. Annual release. ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingaffordabilityinenglandandwales/latest</p>
+            <p>ONS — ASHE Regional Earnings. Annual Survey of Hours and Earnings. ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/ashe</p>
+            <p>DEFRA — Rural-Urban Classification. Methodology for classifying local authorities as rural or urban. gov.uk/government/collections/rural-urban-classification</p>
             <p>Affordability ratio defined as median house price divided by median gross annual earnings for full-time workers in the same local authority. Rural/urban split uses DEFRA Rural-Urban Classification of Local Authority Districts.</p>
           </div>
         </section>

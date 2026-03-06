@@ -131,14 +131,14 @@ export default function PublicSectorStaffingPage() {
         <TopicHeader
           topic="Public Sector Staffing"
           question="Is the State Running Out of Workers?"
-          finding="Public sector employment fell from 5.9 million in 2010 to 5.5 million in 2016, then rose to 5.9 million by 2024 &mdash; but heavily concentrated in NHS headcount. The civil service shrank 23% under austerity and has not recovered."
+          finding="Public sector employment fell from 5.9 million in 2010 to 5.5 million in 2016, then rose to 5.9 million by 2024 — but heavily concentrated in NHS headcount. The civil service shrank 23% under austerity and has not recovered."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK public sector workforce tells three distinct stories that the aggregate headline number obscures. The civil service contracted sharply from 492,000 in 2010 to 384,000 by 2016 under the coalition&apos;s austerity programme, shedding around 110,000 posts &mdash; a 22% reduction. It has since recovered to 514,000, driven largely by pandemic response machinery, post-Brexit border functions, and the growth of arm&apos;s-length bodies, but remains structurally different: younger, more London-concentrated, and with less institutional memory than the service it replaced.
+              The UK public sector workforce tells three distinct stories that the aggregate headline number obscures. The civil service contracted sharply from 492,000 in 2010 to 384,000 by 2016 under the coalition's austerity programme, shedding around 110,000 posts — a 22% reduction. It has since recovered to 514,000, driven largely by pandemic response machinery, post-Brexit border functions, and the growth of arm's-length bodies, but remains structurally different: younger, more London-concentrated, and with less institutional memory than the service it replaced.
             </p>
             <p>
               Local government bore the heaviest cuts proportionally. From 2.98 million workers in 2010, the local government workforce fell to 2.44 million by 2016 as councils absorbed an average 40% real-terms reduction in central government grant. Adult social care, libraries, planning teams, and environmental health departments all contracted. Unlike the civil service, local government has not recovered: at 2.62 million in 2024, it remains 12% below its pre-austerity level. Meanwhile the NHS grew continuously, from 1.16 million in 2015 to 1.48 million in 2024, as demand outpaced the departures that vacancy crisis headlines describe.
@@ -163,7 +163,7 @@ export default function PublicSectorStaffingPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="+4% in 2024 &middot; But still 23% below 2010 peak &middot; COVID era expansion ongoing"
+              changeText="+4% in 2024 · But still 23% below 2010 peak · COVID era expansion ongoing"
               sparklineData={[492, 450, 424, 400, 390, 384, 384, 390, 396, 404, 436, 465, 478, 512, 514]}
               onExpand={() => {}}
             />
@@ -173,7 +173,7 @@ export default function PublicSectorStaffingPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="+27% since 2015 &middot; Largest component of public sector growth"
+              changeText="+27% since 2015 · Largest component of public sector growth"
               sparklineData={[1160, 1180, 1210, 1240, 1260, 1280, 1320, 1360, 1420, 1480]}
               onExpand={() => {}}
             />
@@ -183,7 +183,7 @@ export default function PublicSectorStaffingPage() {
               unit=""
               direction="down"
               polarity="up-is-bad"
-              changeText="Down 12% from 2010 &middot; Austerity-era cuts not reversed &middot; Social care most affected"
+              changeText="Down 12% from 2010 · Austerity-era cuts not reversed · Social care most affected"
               sparklineData={[2980, 2760, 2620, 2540, 2480, 2450, 2440, 2460, 2490, 2520, 2560, 2580, 2600, 2610, 2620]}
               onExpand={() => {}}
             />
@@ -194,8 +194,8 @@ export default function PublicSectorStaffingPage() {
         <ScrollReveal>
           <section id="sec-civil-service" className="mb-12">
             <LineChart
-              title="UK civil service headcount, 2010&ndash;2024"
-              subtitle="Total civil service headcount, all grades and departments. Fell 22% under austerity 2010&ndash;2016, recovering through COVID expansion and post-Brexit functions."
+              title="UK civil service headcount, 2010–2024"
+              subtitle="Total civil service headcount, all grades and departments. Fell 22% under austerity 2010–2016, recovering through COVID expansion and post-Brexit functions."
               series={civilServiceSeries}
               annotations={civilServiceAnnotations}
               yLabel="Thousands"
@@ -206,8 +206,8 @@ export default function PublicSectorStaffingPage() {
         <ScrollReveal>
           <section id="sec-local-gov" className="mb-12">
             <LineChart
-              title="Local government workforce, England, 2010&ndash;2024"
-              subtitle="Local government headcount. Fell 18% 2010&ndash;2016 as councils absorbed central grant cuts. Unlike the civil service, local government has not recovered to pre-austerity levels."
+              title="Local government workforce, England, 2010–2024"
+              subtitle="Local government headcount. Fell 18% 2010–2016 as councils absorbed central grant cuts. Unlike the civil service, local government has not recovered to pre-austerity levels."
               series={localGovSeries}
               annotations={localGovAnnotations}
               yLabel="Thousands"
@@ -218,7 +218,7 @@ export default function PublicSectorStaffingPage() {
         <ScrollReveal>
           <section id="sec-nhs" className="mb-12">
             <LineChart
-              title="NHS workforce headcount, England, 2015&ndash;2024"
+              title="NHS workforce headcount, England, 2015–2024"
               subtitle="All NHS staff in post, including clinical and non-clinical. Grew 27% over nine years, driven by demand, international recruitment, and Workforce Plan commitments."
               series={nhsSeries}
               annotations={[]}
@@ -230,11 +230,11 @@ export default function PublicSectorStaffingPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="60,000"
             unit="more doctors by 2036/37"
-            description="The NHS Long Term Workforce Plan (2023) commits to training 60,000 more doctors and 170,000 more nurses by 2036/37, with medical school places expanded by 50%. Public sector pay rises in 2024 &mdash; averaging 5.5% for NHS and 5% for teachers &mdash; aim to improve retention after years of real-terms pay falls. The civil service&apos;s Places for Growth programme is redistributing 22,000 roles out of London to improve regional representation and reduce London-weighting costs."
-            source="Source: NHS England Long Term Workforce Plan 2023 &middot; Cabinet Office Civil Service Statistics 2024."
+            description="The NHS Long Term Workforce Plan (2023) commits to training 60,000 more doctors and 170,000 more nurses by 2036/37, with medical school places expanded by 50%. Public sector pay rises in 2024 — averaging 5.5% for NHS and 5% for teachers — aim to improve retention after years of real-terms pay falls. The civil service's Places for Growth programme is redistributing 22,000 roles out of London to improve regional representation and reduce London-weighting costs."
+            source="Source: NHS England Long Term Workforce Plan 2023 · Cabinet Office Civil Service Statistics 2024."
           />
         </ScrollReveal>
 
@@ -245,7 +245,7 @@ export default function PublicSectorStaffingPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

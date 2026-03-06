@@ -71,7 +71,7 @@ export default function CoastalCommunitiesPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Coastal Communities"
-          question="Are Britain&apos;s Coastal Towns Being Left Behind?"
+          question="Are Britain's Coastal Towns Being Left Behind?"
           finding="Coastal communities in England are among the most economically deprived in the country: average wages are 17% below the national median, and child poverty rates are 10 percentage points higher than inland areas. Many seaside towns that boomed as Victorian holiday resorts have seen three decades of economic decline as tourism shifted abroad. Health outcomes, school performance, and life expectancy all lag the national average."
           colour="#264653"
           preposition="in"
@@ -80,8 +80,8 @@ export default function CoastalCommunitiesPage() {
         {/* Context section (MUST come before SectionNav) */}
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England&apos;s coastal communities sit outside the city-deal and urban-regeneration frameworks that have shaped most post-industrial policy. Average wages are 17% below the national median &mdash; a gap that has widened from 12% in 2010 &mdash; child poverty runs at 34% against a national average of 24%, and economic inactivity is five percentage points above the national figure. In the most deprived coastal authorities &mdash; Blackpool, Thanet, Torbay, East Lindsey, Hastings &mdash; life expectancy is 8&ndash;10 years below the national average. Second homes and holiday lets have displaced working-age residents in many areas: in parts of the South West, one in five households is a second home, pushing property prices beyond the reach of local earners and accelerating the outflow of young people. Some 40% of coastal areas record GCSE attainment below the national average, and GP patient lists are above average in 67% of coastal areas.</p>
-            <p>The Coastal Communities Fund (&pound;200 million, 2012&ndash;2022) and Levelling Up Fund designations have delivered capital spending without reliably changing the structural conditions that produce persistent deprivation. A few towns &mdash; Margate, Whitstable, parts of Scarborough &mdash; have seen culture-led regeneration shift their trajectories, but these tend to involve proximity to large cities or specific local assets that are not replicable. The burden falls most heavily on older residents with complex health needs and on children in schools losing pupils and funding as working-age families relocate.</p>
+            <p>England's coastal communities sit outside the city-deal and urban-regeneration frameworks that have shaped most post-industrial policy. Average wages are 17% below the national median — a gap that has widened from 12% in 2010 — child poverty runs at 34% against a national average of 24%, and economic inactivity is five percentage points above the national figure. In the most deprived coastal authorities — Blackpool, Thanet, Torbay, East Lindsey, Hastings — life expectancy is 8–10 years below the national average. Second homes and holiday lets have displaced working-age residents in many areas: in parts of the South West, one in five households is a second home, pushing property prices beyond the reach of local earners and accelerating the outflow of young people. Some 40% of coastal areas record GCSE attainment below the national average, and GP patient lists are above average in 67% of coastal areas.</p>
+            <p>The Coastal Communities Fund (£200 million, 2012–2022) and Levelling Up Fund designations have delivered capital spending without reliably changing the structural conditions that produce persistent deprivation. A few towns — Margate, Whitstable, parts of Scarborough — have seen culture-led regeneration shift their trajectories, but these tend to involve proximity to large cities or specific local assets that are not replicable. The burden falls most heavily on older residents with complex health needs and on children in schools losing pupils and funding as working-age families relocate.</p>
           </div>
         </section>
 
@@ -97,10 +97,10 @@ export default function CoastalCommunitiesPage() {
           <div className="grid gap-4 md:grid-cols-3 mb-12">
             <MetricCard
               label="Coastal wage gap vs national median"
-              value="&ndash;17%"
+              value="–17%"
               direction="down"
               polarity="up-is-good"
-              changeText="2023 &middot; Gap widened from &ndash;12% in 2010 &middot; Average wages in coastal communities"
+              changeText="2023 · Gap widened from –12% in 2010 · Average wages in coastal communities"
               source="ONS Annual Survey of Hours &amp; Earnings"
               href="#sec-overview"/>
             <MetricCard
@@ -108,16 +108,16 @@ export default function CoastalCommunitiesPage() {
               value="34%"
               direction="up"
               polarity="up-is-bad"
-              changeText="vs 24% national average &middot; 10 percentage point gap"
+              changeText="vs 24% national average · 10 percentage point gap"
               source="DLUHC English Indices of Deprivation"
               href="#sec-charts"/>
             <MetricCard
-              label="Net population migration from coastal towns (2010&ndash;2019 average)"
-              value="&ndash;8,000"
+              label="Net population migration from coastal towns (2010–2019 average)"
+              value="–8,000"
               unit="per year"
               direction="flat"
               polarity="up-is-good"
-              changeText="Young people leaving for cities &middot; COVID briefly reversed trend in 2020"
+              changeText="Young people leaving for cities · COVID briefly reversed trend in 2020"
               source="ONS Migration Statistics"
               href="#sec-charts"/>
           </div>
@@ -128,7 +128,7 @@ export default function CoastalCommunitiesPage() {
           <ScrollReveal>
             <div className="mb-12">
               <h3 className="text-[18px] font-bold text-wiah-black mb-2">Coastal wage gap over time</h3>
-              <p className="text-sm text-wiah-mid mb-6">Coastal wages as percentage difference from national median, 2010&ndash;2023</p>
+              <p className="text-sm text-wiah-mid mb-6">Coastal wages as percentage difference from national median, 2010–2023</p>
               <div className="bg-white rounded-lg border border-wiah-border p-6">
                 {data ? (
                   <LineChart title="Coastal wage gap over time" series={wageSeries} />
@@ -142,7 +142,7 @@ export default function CoastalCommunitiesPage() {
           <ScrollReveal>
             <div className="mb-12">
               <h3 className="text-[18px] font-bold text-wiah-black mb-2">Net population migration from coastal towns</h3>
-              <p className="text-sm text-wiah-mid mb-6">Annual net migration (thousands), 2010&ndash;2023. Positive 2020 reflects COVID-era move to coast; trend reverting.</p>
+              <p className="text-sm text-wiah-mid mb-6">Annual net migration (thousands), 2010–2023. Positive 2020 reflects COVID-era move to coast; trend reverting.</p>
               <div className="bg-white rounded-lg border border-wiah-border p-6">
                 {data ? (
                   <LineChart title="Net population migration from coastal towns" series={migrationSeries} />

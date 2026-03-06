@@ -74,7 +74,7 @@ export default function PropertyTransactionsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK residential property transactions reached a decade low of 1.02 million in 2023, down from a pandemic-era peak of 1.49 million in 2021. The Bank of England raised its base rate from 0.1% to 5.25% between December 2021 and August 2023 &mdash; the fastest tightening cycle in four decades &mdash; causing average two-year fixed mortgage rates to rise from approximately 2% to over 6%. For a household with a &pound;300,000 mortgage, monthly payments rose by over &pound;900. First-time buyer completions fell approximately 18% over two years; government schemes including Help to Buy had been wound down, and their successors offered partial mitigation at a fraction of the previous scale. A partial recovery in 2024 reached 1.10 million transactions as Bank of England rate cuts unlocked pent-up demand.</p>
+            <p>UK residential property transactions reached a decade low of 1.02 million in 2023, down from a pandemic-era peak of 1.49 million in 2021. The Bank of England raised its base rate from 0.1% to 5.25% between December 2021 and August 2023 — the fastest tightening cycle in four decades — causing average two-year fixed mortgage rates to rise from approximately 2% to over 6%. For a household with a £300,000 mortgage, monthly payments rose by over £900. First-time buyer completions fell approximately 18% over two years; government schemes including Help to Buy had been wound down, and their successors offered partial mitigation at a fraction of the previous scale. A partial recovery in 2024 reached 1.10 million transactions as Bank of England rate cuts unlocked pent-up demand.</p>
             <p>The freeze was not evenly distributed. Cash buyers, representing approximately a third of transactions, were largely insulated. The cohort most affected was the mid-market: households needing to remortgage at higher rates to fund a move, who effectively sat out the market. The longer-term consequences extend beyond housing: labour market mobility depends partly on people being able to move for work, and a frozen transaction market locks people into locations. Rental markets tighten further as potential first-time buyers remain renting for longer, while private landlords facing higher mortgage costs have been exiting the market, reducing supply precisely when demand rises.</p>
           </div>
         </section>
@@ -93,9 +93,9 @@ export default function PropertyTransactionsPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="recovering from 2023 decade-low &middot; still below 2015"
+              changeText="recovering from 2023 decade-low · still below 2015"
               sparklineData={[1.23, 1.19, 1.22, 1.19, 1.18, 1.04, 1.49, 1.26, 1.02, 1.10]}
-              href="#sec-chart"source="HMRC &middot; UK Property Transactions 2024"
+              href="#sec-chart"source="HMRC · UK Property Transactions 2024"
             />
             <MetricCard
               label="Mortgage approvals"
@@ -103,9 +103,9 @@ export default function PropertyTransactionsPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="improving &middot; but -10% vs pre-pandemic"
+              changeText="improving · but -10% vs pre-pandemic"
               sparklineData={[730000, 695000, 740000, 720000, 699000, 618000, 922000, 764000, 612000, 660000]}
-              href="#sec-chart"source="Bank of England &middot; 2024"
+              href="#sec-chart"source="Bank of England · 2024"
             />
             <MetricCard
               label="First-time buyer market"
@@ -115,7 +115,7 @@ export default function PropertyTransactionsPage() {
               polarity="up-is-bad"
               changeText="first-time buyers down 18% in 2 years"
               sparklineData={[100, 102, 105, 103, 101, 88, 108, 97, 85, 82]}
-              href="#sec-chart"source="UK Finance &middot; 2024"
+              href="#sec-chart"source="UK Finance · 2024"
             />
           </div>
         </ScrollReveal>
@@ -123,7 +123,7 @@ export default function PropertyTransactionsPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="UK residential transactions and mortgage approvals, 2015&ndash;2024"
+              title="UK residential transactions and mortgage approvals, 2015–2024"
               subtitle="Annual residential property transactions (millions, left) and mortgage approvals scaled to same axis. Pandemic boom and rate-rise freeze both clearly visible."
               series={transactionsSeries}
               yLabel="Millions / 100k"
@@ -139,9 +139,9 @@ export default function PropertyTransactionsPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>HMRC &mdash; UK Property Transaction Statistics. Published monthly. gov.uk/government/statistics/uk-property-transactions-statistics</p>
-            <p>Bank of England &mdash; Mortgage Lending Statistics. bankofengland.co.uk/statistics/mortgage-lenders-and-administrators</p>
-            <p>UK Finance &mdash; First-Time Buyer Data. ukfinance.org.uk/data-and-research/data</p>
+            <p>HMRC — UK Property Transaction Statistics. Published monthly. gov.uk/government/statistics/uk-property-transactions-statistics</p>
+            <p>Bank of England — Mortgage Lending Statistics. bankofengland.co.uk/statistics/mortgage-lenders-and-administrators</p>
+            <p>UK Finance — First-Time Buyer Data. ukfinance.org.uk/data-and-research/data</p>
             <p>Transaction data covers residential property transactions (including new build) completing with stamp duty land tax. Scotland, Wales, and Northern Ireland use separate land transaction taxes; UK total combines all four nations. Mortgage approvals are Bank of England seasonally-adjusted data covering all lenders.</p>
           </div>
         </section>

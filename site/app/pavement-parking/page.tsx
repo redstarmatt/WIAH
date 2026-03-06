@@ -105,7 +105,7 @@ export default function PavementParkingPage() {
   ];
 
   const complaintsAnnotations: Annotation[] = [
-    { date: new Date(2022, 5, 1), label: '2022: Highway Code updated &mdash; pedestrian priority' },
+    { date: new Date(2022, 5, 1), label: '2022: Highway Code updated — pedestrian priority' },
   ];
 
   // ── Render ────────────────────────────────────────────────────────────────
@@ -117,7 +117,7 @@ export default function PavementParkingPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Streets &amp; Transport"
-          question="Why Can&apos;t You Walk Down Your Street?"
+          question="Why Can't You Walk Down Your Street?"
           finding="28 million pavement parking incidents occur annually in England. Pavement parking is illegal in London but only weakly enforceable elsewhere. 56% of disabled people say pavement parking affects their ability to get around."
           colour="#6B7280"
         />
@@ -128,7 +128,7 @@ export default function PavementParkingPage() {
               Pavement parking is illegal in London under the Greater London Council (General Powers) Act 1974. Across the rest of England, it exists in a grey zone: not illegal by default, but enforceable where councils have specific Traffic Regulation Orders. The result is a postcode lottery in which the same behaviour is a fineable offence in one borough and entirely routine in the next.
             </p>
             <p>
-              The impact falls disproportionately on disabled people, parents with prams and pushchairs, elderly people with limited mobility, and blind and visually impaired pedestrians. A car parked half on the pavement can reduce usable pavement width below 1.5 metres &mdash; the minimum recommended for a wheelchair to pass. Scotland&apos;s Transport (Scotland) Act 2019 introduced a national ban enforced through fixed penalty notices. England&apos;s DfT ran a consultation in 2020&ndash;21 but has yet to legislate nationally.
+              The impact falls disproportionately on disabled people, parents with prams and pushchairs, elderly people with limited mobility, and blind and visually impaired pedestrians. A car parked half on the pavement can reduce usable pavement width below 1.5 metres — the minimum recommended for a wheelchair to pass. Scotland's Transport (Scotland) Act 2019 introduced a national ban enforced through fixed penalty notices. England's DfT ran a consultation in 2020–21 but has yet to legislate nationally.
             </p>
           </div>
         </section>
@@ -179,7 +179,7 @@ export default function PavementParkingPage() {
         <ScrollReveal>
           <section id="sec-enforcement" className="mb-12">
             <LineChart
-              title="English councils with pavement parking enforcement, 2020&ndash;2024"
+              title="English councils with pavement parking enforcement, 2020–2024"
               subtitle="Percentage of English councils with active enforcement powers for pavement parking (via byelaw or Traffic Regulation Orders). Growth reflects voluntary adoption, not a national statutory requirement."
               series={enforcementSeries}
               annotations={enforcementAnnotations}
@@ -191,7 +191,7 @@ export default function PavementParkingPage() {
         <ScrollReveal>
           <section id="sec-complaints" className="mb-12">
             <LineChart
-              title="Pavement parking complaints to councils, England, 2019&ndash;2024"
+              title="Pavement parking complaints to councils, England, 2019–2024"
               subtitle="Total pavement parking complaints reported to local councils and police in England. Complaints have risen by 71% since 2019, but without national legislation, enforcement response is inconsistent."
               series={complaintsSeries}
               annotations={complaintsAnnotations}
@@ -203,11 +203,11 @@ export default function PavementParkingPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s changing"
+            title="What's changing"
             value="Scotland"
             unit="national ban in force 2023"
-            description="Scotland banned pavement parking nationally in 2023 under the Transport (Scotland) Act 2019, with fixed penalty notices of &pound;100. It is the first national pavement parking ban in the UK. England&apos;s Highway Code was updated in 2022 to give pedestrians clearer right of way, but this is not the same as enforcement powers. Individual councils can still apply for Traffic Regulation Orders, and the DfT has indicated it may legislate if voluntary adoption remains insufficient."
-            source="Source: Living Streets &mdash; Pedestrian Pound Report, 2024. DfT &mdash; Pavement Parking Evidence Base, 2024."
+            description="Scotland banned pavement parking nationally in 2023 under the Transport (Scotland) Act 2019, with fixed penalty notices of £100. It is the first national pavement parking ban in the UK. England's Highway Code was updated in 2022 to give pedestrians clearer right of way, but this is not the same as enforcement powers. Individual councils can still apply for Traffic Regulation Orders, and the DfT has indicated it may legislate if voluntary adoption remains insufficient."
+            source="Source: Living Streets — Pedestrian Pound Report, 2024. DfT — Pavement Parking Evidence Base, 2024."
           />
         </ScrollReveal>
 
@@ -218,7 +218,7 @@ export default function PavementParkingPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

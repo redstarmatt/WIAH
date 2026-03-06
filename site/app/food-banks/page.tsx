@@ -81,7 +81,7 @@ export default function FoodBanksPage() {
           topic="Food Banks"
           colour="#E63946"
           question="Why Are So Many People Using Food Banks?"
-          finding="The Trussell Trust distributed 3.1 million food parcels in 2023/24 &mdash; more than triple the 2013/14 total. 1.1 million went to children. The independent food bank sector adds a further 30%. 7.2 million UK households experienced food insecurity in 2022/23."
+          finding="The Trussell Trust distributed 3.1 million food parcels in 2023/24 — more than triple the 2013/14 total. 1.1 million went to children. The independent food bank sector adds a further 30%. 7.2 million UK households experienced food insecurity in 2022/23."
         />
       </div>
 
@@ -89,9 +89,9 @@ export default function FoodBanksPage() {
       <section id="sec-context" className="max-w-4xl mx-auto px-6 pt-4 pb-0">
         <div className="max-w-2xl text-base text-wiah-black leading-[1.7] space-y-4">
           <p>
-            The Trussell Trust distributed 913,000 emergency food parcels in 2013/14. By 2022/23 that figure had reached 3.13 million &mdash; a 242% increase in a decade &mdash; with 1.1 million going to children. Independent food banks coordinated through the IFAN network add an estimated 30&ndash;50% more provision on top. Two policy shocks drove the sharpest increases: the four-year benefits freeze from 2016 to 2020, and Universal Credit&apos;s five-week initial wait, which left newly unemployed households without income precisely when most vulnerable. Food price inflation then peaked at 19.1% in March 2023 &mdash; the fastest rate in 45 years &mdash; pushing 7.2 million UK households (24%) into food insecurity by 2022/23, including 4 million children. The two-child benefit limit affects an estimated 500,000 families; the IFS calculates removing it would lift 300,000 children out of poverty, but as of March 2026 the government had not acted.
+            The Trussell Trust distributed 913,000 emergency food parcels in 2013/14. By 2022/23 that figure had reached 3.13 million — a 242% increase in a decade — with 1.1 million going to children. Independent food banks coordinated through the IFAN network add an estimated 30–50% more provision on top. Two policy shocks drove the sharpest increases: the four-year benefits freeze from 2016 to 2020, and Universal Credit's five-week initial wait, which left newly unemployed households without income precisely when most vulnerable. Food price inflation then peaked at 19.1% in March 2023 — the fastest rate in 45 years — pushing 7.2 million UK households (24%) into food insecurity by 2022/23, including 4 million children. The two-child benefit limit affects an estimated 500,000 families; the IFS calculates removing it would lift 300,000 children out of poverty, but as of March 2026 the government had not acted.
           </p>
-          <p>Food bank use is not evenly distributed. The North East and Yorkshire record the highest per-capita referral rates, reflecting entrenched deprivation that predates the current crisis. Disabled people are roughly twice as likely to need emergency food as the general population; single-parent households account for a disproportionate share of referrals; and a substantial proportion of users are in work, pushed into crisis by low wages, insecure hours, and the gap between pay dates and UC payments. The &pound;421 million Household Support Fund allocated to councils in 2023/24 provides emergency relief, but local funds are frequently exhausted by mid-financial year, leaving the most vulnerable without support in the final months.</p>
+          <p>Food bank use is not evenly distributed. The North East and Yorkshire record the highest per-capita referral rates, reflecting entrenched deprivation that predates the current crisis. Disabled people are roughly twice as likely to need emergency food as the general population; single-parent households account for a disproportionate share of referrals; and a substantial proportion of users are in work, pushed into crisis by low wages, insecure hours, and the gap between pay dates and UC payments. The £421 million Household Support Fund allocated to councils in 2023/24 provides emergency relief, but local funds are frequently exhausted by mid-financial year, leaving the most vulnerable without support in the final months.</p>
         </div>
       </section>
 
@@ -129,14 +129,14 @@ export default function FoodBanksPage() {
       <ScrollReveal>
         <section className="max-w-4xl mx-auto px-6 py-12">
           <LineChart
-            title="Trussell Trust food parcels distributed, 2013&ndash;2024"
+            title="Trussell Trust food parcels distributed, 2013–2024"
             subtitle="UK financial year (April to March), millions"
             series={parcelsSeries}
             annotations={parcelsAnnotations}
             yLabel="Millions of parcels"
           />
           <p className="mt-4 font-mono text-xs text-wiah-mid">
-            Source: Trussell Trust &mdash; End of Year Stats. Updated annually.
+            Source: Trussell Trust — End of Year Stats. Updated annually.
           </p>
         </section>
       </ScrollReveal>
@@ -164,7 +164,7 @@ export default function FoodBanksPage() {
               ))}
             </div>
             <p className="font-mono text-xs text-wiah-mid">
-              Source: Trussell Trust &mdash; End of Year Stats 2023/24.
+              Source: Trussell Trust — End of Year Stats 2023/24.
             </p>
           </div>
         </section>
@@ -176,7 +176,7 @@ export default function FoodBanksPage() {
           <div>
             <h3 className="text-lg font-bold text-wiah-black mb-4">Food insecurity in the UK</h3>
             <p className="text-sm text-wiah-mid leading-relaxed mb-4">
-              Food insecurity &mdash; defined as inadequate or uncertain access to sufficient, safe, nutritious food &mdash; has doubled since 2019. The UK Food Security Report found that 7.2 million households (24%) experienced food insecurity in 2022/23, affecting 4 million children (29% of all children). This represents a sharp acceleration from 8% of households (2.4M) in 2019, driven by inflation, benefit freezes, and increased cost of living.
+              Food insecurity — defined as inadequate or uncertain access to sufficient, safe, nutritious food — has doubled since 2019. The UK Food Security Report found that 7.2 million households (24%) experienced food insecurity in 2022/23, affecting 4 million children (29% of all children). This represents a sharp acceleration from 8% of households (2.4M) in 2019, driven by inflation, benefit freezes, and increased cost of living.
             </p>
             <p className="text-sm text-wiah-mid leading-relaxed">
               The Trussell Trust operates around 1,300 food bank centres, but independent food banks (IFAN estimates 2,000+ nationwide) add a further 30% to the sector total. Meanwhile, free school meals eligibility has expanded: 2.1 million pupils (24.6%) are now eligible under Universal Credit thresholds, up from 15% in 2013.
@@ -192,8 +192,8 @@ export default function FoodBanksPage() {
             title="Support for hungry children"
             value="2.1M"
             unit="children entitled to free school meals"
-            description="The Holiday Activities and Food (HAF) programme, funded at &pound;200 million per year, provides free holiday activities and meals to children eligible for free school meals during Christmas, Easter, and summer holidays &mdash; reaching 600,000 children in 2022. Universal Infant Free School Meals, introduced in 2014, feed 1.7 million children in reception to Year 2 regardless of parental income. The Household Support Fund (HSF) &mdash; &pound;421 million in 2023/24 &mdash; enables councils to provide emergency food vouchers and support to families in crisis."
-            source="Source: Trussell Trust &mdash; End of Year Stats 2023/24; DfE &mdash; Schools, pupils and their characteristics 2023."
+            description="The Holiday Activities and Food (HAF) programme, funded at £200 million per year, provides free holiday activities and meals to children eligible for free school meals during Christmas, Easter, and summer holidays — reaching 600,000 children in 2022. Universal Infant Free School Meals, introduced in 2014, feed 1.7 million children in reception to Year 2 regardless of parental income. The Household Support Fund (HSF) — £421 million in 2023/24 — enables councils to provide emergency food vouchers and support to families in crisis."
+            source="Source: Trussell Trust — End of Year Stats 2023/24; DfE — Schools, pupils and their characteristics 2023."
           />
         </section>
       </ScrollReveal>

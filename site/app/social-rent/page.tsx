@@ -66,14 +66,14 @@ export default function SocialRentPage() {
         <TopicHeader
           topic="Social Housing"
           question="How many social homes are being built?"
-          finding="Just 6,400 social rented homes were built in England in 2021/22 &mdash; compared to 152,000 in 1975. Average social rent is £100 per week vs £230 for market rent. 1.2 million households are on the waiting list."
+          finding="Just 6,400 social rented homes were built in England in 2021/22 — compared to 152,000 in 1975. Average social rent is £100 per week vs £230 for market rent. 1.2 million households are on the waiting list."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In 1975, England built 152,000 social rented homes. In 2021/22, it built 6,400 &mdash; a 96% collapse in supply that is one of the most consequential policy reversals in modern British history. Right to Buy, introduced in 1980, sold approximately 2 million council homes at discounts of up to 60% of market value, with receipts initially prohibited from funding replacement building. The replacements that were built were typically &ldquo;affordable rent&rdquo; at up to 80% of market rate rather than true social rent, which is linked to income levels. The difference matters enormously: average weekly social rent in 2023 was &pound;100; affordable rent averaged &pound;155; market rent averaged &pound;230. With 1.2 million households on waiting lists &mdash; up from 1.85 million in 2012, a fall explained by methodology changes that excluded low-need applicants rather than any real improvement &mdash; the gap between supply and need has never been wider.</p>
-            <p>The distinction between &ldquo;social rent&rdquo; and &ldquo;affordable rent&rdquo; is critical and frequently elided in policy announcements. The Affordable Homes Programme 2021&ndash;2026&apos;s &pound;11.5 billion budget earmarked only a small fraction for true social rent; most output is shared ownership, affordable rent, or market sale. Rebuilding supply at scale &mdash; the 90,000&ndash;100,000 genuinely affordable social rented homes per year needed to address household formation and reduce the backlog &mdash; would require an additional &pound;10&ndash;15 billion per year of public investment above current commitments. The economic case is strong: preventing homelessness and its downstream costs in temporary accommodation, social care, healthcare, and criminal justice saves public money. The barrier is not technical but political will to prioritise people who cannot buy their way into the market.</p>
+            <p>In 1975, England built 152,000 social rented homes. In 2021/22, it built 6,400 — a 96% collapse in supply that is one of the most consequential policy reversals in modern British history. Right to Buy, introduced in 1980, sold approximately 2 million council homes at discounts of up to 60% of market value, with receipts initially prohibited from funding replacement building. The replacements that were built were typically &ldquo;affordable rent&rdquo; at up to 80% of market rate rather than true social rent, which is linked to income levels. The difference matters enormously: average weekly social rent in 2023 was £100; affordable rent averaged £155; market rent averaged £230. With 1.2 million households on waiting lists — up from 1.85 million in 2012, a fall explained by methodology changes that excluded low-need applicants rather than any real improvement — the gap between supply and need has never been wider.</p>
+            <p>The distinction between &ldquo;social rent&rdquo; and &ldquo;affordable rent&rdquo; is critical and frequently elided in policy announcements. The Affordable Homes Programme 2021–2026's £11.5 billion budget earmarked only a small fraction for true social rent; most output is shared ownership, affordable rent, or market sale. Rebuilding supply at scale — the 90,000–100,000 genuinely affordable social rented homes per year needed to address household formation and reduce the backlog — would require an additional £10–15 billion per year of public investment above current commitments. The economic case is strong: preventing homelessness and its downstream costs in temporary accommodation, social care, healthcare, and criminal justice saves public money. The barrier is not technical but political will to prioritise people who cannot buy their way into the market.</p>
           </div>
         </section>
 
@@ -92,9 +92,9 @@ export default function SocialRentPage() {
             unit="/yr"
             direction="flat"
             polarity="up-is-good"
-            changeText="Was 152,000/yr in 1975 &mdash; a 96% collapse in supply"
+            changeText="Was 152,000/yr in 1975 — a 96% collapse in supply"
             sparklineData={[152000, 88000, 28000, 17000, 9800, 7600, 8200, 7400, 5900, 6400]}
-            source="DLUHC Housing Supply Statistics &middot; 2022"
+            source="DLUHC Housing Supply Statistics · 2022"
             href="#sec-build"/>
           <MetricCard
             label="Average social rent vs market rent"
@@ -104,7 +104,7 @@ export default function SocialRentPage() {
             polarity="up-is-good"
             changeText="Social rent saves tenants £130/wk vs private renting"
             sparklineData={[60, 65, 70, 75, 80, 85, 90, 95, 100]}
-            source="DLUHC / VOA Rent Statistics &middot; 2023"
+            source="DLUHC / VOA Rent Statistics · 2023"
             href="#sec-rents"/>
           <MetricCard
             label="Households on social housing waiting list"
@@ -112,9 +112,9 @@ export default function SocialRentPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Average wait: 2.7 years &middot; some local authorities: 10+ years"
+            changeText="Average wait: 2.7 years · some local authorities: 10+ years"
             sparklineData={[1850000, 1260000, 1151000, 1162000, 1208000]}
-            source="DLUHC Live Tables &middot; 2022"
+            source="DLUHC Live Tables · 2022"
             href="#sec-waiting"/>
         </div>
         </ScrollReveal>
@@ -122,7 +122,7 @@ export default function SocialRentPage() {
         <ScrollReveal>
         <section id="sec-build" className="mb-12">
           <LineChart
-            title="New social rented homes built in England, 1975&ndash;2022"
+            title="New social rented homes built in England, 1975–2022"
             subtitle="Annual completions of social rented homes. DLUHC Housing Supply Statistics."
             series={socialBuildSeries}
             annotations={[
@@ -164,7 +164,7 @@ export default function SocialRentPage() {
         <ScrollReveal>
         <section id="sec-waiting" className="mb-12">
           <LineChart
-            title="Households on social housing waiting list, England, 2012&ndash;2022"
+            title="Households on social housing waiting list, England, 2012–2022"
             subtitle="Total households registered on local authority housing waiting lists. DLUHC Live Tables."
             series={waitingListSeries}
             annotations={[
@@ -178,11 +178,11 @@ export default function SocialRentPage() {
             <a href="https://www.gov.uk/government/statistical-data-sets/live-tables-on-rents-lettings-and-tenancies" className="underline" target="_blank" rel="noopener noreferrer">
               DLUHC Housing Supply Statistics (gov.uk)
             </a>
-            {' '}&middot;{' '}
+            {' '}·{' '}
             <a href="https://www.insidehousing.co.uk" className="underline" target="_blank" rel="noopener noreferrer">
               Inside Housing
             </a>
-            {' '}&middot; National Housing Federation
+            {' '}· National Housing Federation
           </p>
         </section>
         </ScrollReveal>

@@ -67,14 +67,14 @@ export default function UkCarbonBudgetPage() {
         <TopicHeader
           topic="UK Carbon Budget"
           question="Is Britain Actually Cutting Emissions?"
-          finding="UK emissions fell 4.7% in 2023 to 415 MtCO2e &mdash; broadly on track for the Fourth Carbon Budget, but needing to accelerate to reach net zero by 2050."
+          finding="UK emissions fell 4.7% in 2023 to 415 MtCO2e — broadly on track for the Fourth Carbon Budget, but needing to accelerate to reach net zero by 2050."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK emissions have fallen from approximately 800 MtCO2e in 1990 to 415 MtCO2e in 2023 &mdash; a 53% reduction, faster than any other G7 nation. The primary driver has been the near-elimination of coal from electricity generation: coal accounted for 80% of electricity in 1990 and under 1% by 2023, with wind, solar and nuclear now providing over 50%. The Fourth Carbon Budget (2023&ndash;2027) sets a limit of 965 MtCO2e and current trajectories are broadly on track, but the Fifth Carbon Budget (2028&ndash;2032) requires average annual reductions of around 8% from today&apos;s level &mdash; significantly more demanding. The Climate Change Committee has warned progress in buildings, transport and agriculture is insufficient to meet CB5 comfortably.</p>
-            <p>The remaining emissions are concentrated in structurally harder sectors. Transport is now the largest emitting sector at around 28% of domestic emissions: EV sales reached 17% of new cars in 2023 but the existing fleet turns over slowly and rural charging infrastructure lags. Heating is the largest remaining challenge &mdash; 29 million homes, mostly gas boilers, with heat pump deployment around 60,000 per year against a target trajectory requiring hundreds of thousands. Agriculture contributes approximately 11% through livestock methane and fertiliser nitrous oxide, and has proved stubbornly resistant to reduction. The burden of transition falls most heavily on rural households dependent on oil heating and older vehicles &mdash; the least connected to the policy levers driving decarbonisation.</p>
+            <p>UK emissions have fallen from approximately 800 MtCO2e in 1990 to 415 MtCO2e in 2023 — a 53% reduction, faster than any other G7 nation. The primary driver has been the near-elimination of coal from electricity generation: coal accounted for 80% of electricity in 1990 and under 1% by 2023, with wind, solar and nuclear now providing over 50%. The Fourth Carbon Budget (2023–2027) sets a limit of 965 MtCO2e and current trajectories are broadly on track, but the Fifth Carbon Budget (2028–2032) requires average annual reductions of around 8% from today's level — significantly more demanding. The Climate Change Committee has warned progress in buildings, transport and agriculture is insufficient to meet CB5 comfortably.</p>
+            <p>The remaining emissions are concentrated in structurally harder sectors. Transport is now the largest emitting sector at around 28% of domestic emissions: EV sales reached 17% of new cars in 2023 but the existing fleet turns over slowly and rural charging infrastructure lags. Heating is the largest remaining challenge — 29 million homes, mostly gas boilers, with heat pump deployment around 60,000 per year against a target trajectory requiring hundreds of thousands. Agriculture contributes approximately 11% through livestock methane and fertiliser nitrous oxide, and has proved stubbornly resistant to reduction. The burden of transition falls most heavily on rural households dependent on oil heating and older vehicles — the least connected to the policy levers driving decarbonisation.</p>
           </div>
         </section>
 
@@ -93,9 +93,9 @@ export default function UkCarbonBudgetPage() {
               unit=""
               direction="down"
               polarity="up-is-bad"
-              changeText="4.7% fall &middot; lowest since 1960s industrialisation"
+              changeText="4.7% fall · lowest since 1960s industrialisation"
               sparklineData={[590, 542, 503, 474, 455, 414, 441, 436, 415]}
-              href="#sec-chart"source="DESNZ &middot; UK GHG Inventory 2024"
+              href="#sec-chart"source="DESNZ · UK GHG Inventory 2024"
             />
             <MetricCard
               label="vs 1990 baseline"
@@ -103,9 +103,9 @@ export default function UkCarbonBudgetPage() {
               unit=""
               direction="down"
               polarity="up-is-bad"
-              changeText="On track for CB4 compliance &middot; G7 fastest"
+              changeText="On track for CB4 compliance · G7 fastest"
               sparklineData={[0, -10, -20, -28, -35, -42, -48, -51, -53]}
-              href="#sec-callout"source="DESNZ &middot; 2024"
+              href="#sec-callout"source="DESNZ · 2024"
             />
             <MetricCard
               label="Annual reduction needed"
@@ -115,7 +115,7 @@ export default function UkCarbonBudgetPage() {
               polarity="up-is-bad"
               changeText="To reach net zero by 2050 from current level"
               sparklineData={[3, 4, 5, 5, 6, 7, 7, 8, 8]}
-              href="#sec-callout"source="CCC &middot; Net Zero Pathway 2024"
+              href="#sec-callout"source="CCC · Net Zero Pathway 2024"
             />
           </div>
         </ScrollReveal>
@@ -123,7 +123,7 @@ export default function UkCarbonBudgetPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="UK greenhouse gas emissions, 2012&ndash;2023"
+              title="UK greenhouse gas emissions, 2012–2023"
               subtitle="Total territorial greenhouse gas emissions in million tonnes of CO2 equivalent (MtCO2e). Excludes international aviation and shipping."
               series={emissionsSeries}
               yLabel="MtCO2e"
@@ -151,9 +151,9 @@ export default function UkCarbonBudgetPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>DESNZ (Department for Energy Security and Net Zero) &mdash; UK Greenhouse Gas Inventory. Published annually. gov.uk/government/collections/uk-greenhouse-gas-inventory</p>
-            <p>Climate Change Committee &mdash; Progress in reducing UK emissions. Published annually. theccc.org.uk/publication/progress-in-reducing-uk-emissions</p>
-            <p>Carbon Brief &mdash; UK emissions analysis. carbonbrief.org</p>
+            <p>DESNZ (Department for Energy Security and Net Zero) — UK Greenhouse Gas Inventory. Published annually. gov.uk/government/collections/uk-greenhouse-gas-inventory</p>
+            <p>Climate Change Committee — Progress in reducing UK emissions. Published annually. theccc.org.uk/publication/progress-in-reducing-uk-emissions</p>
+            <p>Carbon Brief — UK emissions analysis. carbonbrief.org</p>
             <p>Emissions figures are territorial greenhouse gas emissions in CO2-equivalent (using GWP100 conversion factors). The 1990 baseline reflects the internationally agreed reference year for UK commitments. Carbon Budget limits are five-year totals set by the Committee on Climate Change and approved by Parliament.</p>
           </div>
         </section>

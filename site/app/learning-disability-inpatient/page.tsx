@@ -65,8 +65,8 @@ export default function LearningDisabilityInpatientPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>More than 2,000 people with learning disabilities and autism are detained in inpatient psychiatric facilities in England, often hundreds of miles from their families. The NHS committed, following the Winterbourne View scandal in 2012 and the Transforming Care programme, to move the majority into community-based support by 2019; that deadline was missed by a significant margin. The average length of stay is 5.4 years, and BBC Panorama&apos;s 2019 investigation into Whorlton Hall, alongside numerous CQC inspection reports, documented abuse, systematic restraint, and deprivation across private units operating under NHS contract. Over 51,000 restraint incidents &mdash; physical, mechanical, and chemical &mdash; are recorded per year. NHS England&apos;s Assuring Transformation programme has reduced numbers from over 3,200 in 2015, but the remaining cohort is disproportionately those with the most complex needs where community alternatives are fewest.</p>
-            <p>The barriers to discharge are structural: community providers willing to take people with complex autism presentations are in short supply, and local authority funding incentives favour deferring discharge to NHS-funded inpatient settings. Families frequently report being excluded from discharge planning. The right of disabled people to live in the community, enshrined in the UN Convention on the Rights of Persons with Disabilities, is being systematically denied &mdash; advocates argue that continued institutional reliance reflects not a lack of community alternatives but a lack of political will to fund the transformation promised over a decade ago.</p>
+            <p>More than 2,000 people with learning disabilities and autism are detained in inpatient psychiatric facilities in England, often hundreds of miles from their families. The NHS committed, following the Winterbourne View scandal in 2012 and the Transforming Care programme, to move the majority into community-based support by 2019; that deadline was missed by a significant margin. The average length of stay is 5.4 years, and BBC Panorama's 2019 investigation into Whorlton Hall, alongside numerous CQC inspection reports, documented abuse, systematic restraint, and deprivation across private units operating under NHS contract. Over 51,000 restraint incidents — physical, mechanical, and chemical — are recorded per year. NHS England's Assuring Transformation programme has reduced numbers from over 3,200 in 2015, but the remaining cohort is disproportionately those with the most complex needs where community alternatives are fewest.</p>
+            <p>The barriers to discharge are structural: community providers willing to take people with complex autism presentations are in short supply, and local authority funding incentives favour deferring discharge to NHS-funded inpatient settings. Families frequently report being excluded from discharge planning. The right of disabled people to live in the community, enshrined in the UN Convention on the Rights of Persons with Disabilities, is being systematically denied — advocates argue that continued institutional reliance reflects not a lack of community alternatives but a lack of political will to fund the transformation promised over a decade ago.</p>
           </div>
         </section>
 
@@ -86,7 +86,7 @@ export default function LearningDisabilityInpatientPage() {
               polarity={'up-is-bad' as const}
               changeText="Down from 3,230 in 2015"
               sparklineData={[3230, 2990, 2780, 2630, 2490, 2380, 2290, 2210, 2150]}
-              href="#sec-chart"source="NHS England &middot; Assuring Transformation"
+              href="#sec-chart"source="NHS England · Assuring Transformation"
             />
             <MetricCard
               label="Average length of stay"
@@ -96,7 +96,7 @@ export default function LearningDisabilityInpatientPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 5.1 years in 2015"
               sparklineData={[5.1, 5.2, 5.2, 5.3, 5.3, 5.3, 5.4, 5.4, 5.4]}
-              href="#sec-chart"source="NHS Digital &middot; LDSS"
+              href="#sec-chart"source="NHS Digital · LDSS"
             />
             <MetricCard
               label="Restraint incidents per year"
@@ -106,7 +106,7 @@ export default function LearningDisabilityInpatientPage() {
               polarity={'up-is-bad' as const}
               changeText="Physical, mechanical, chemical"
               sparklineData={[62000, 59000, 56000, 55000, 53000, 50000, 51000, 51000, 51000]}
-              href="#sec-chart"source="CQC &middot; Mental health restraint data"
+              href="#sec-chart"source="CQC · Mental health restraint data"
             />
           </div>
         </ScrollReveal>
@@ -114,7 +114,7 @@ export default function LearningDisabilityInpatientPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Long-stay inpatient population, 2015&ndash;2024"
+              title="Long-stay inpatient population, 2015–2024"
               subtitle="People with learning disabilities and autism in inpatient psychiatric settings, England."
               series={inpatientSeries}
               yLabel="People"
@@ -130,9 +130,9 @@ export default function LearningDisabilityInpatientPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>NHS England &mdash; Assuring Transformation. Monthly snapshot of people with learning disabilities and/or autism in inpatient settings. england.nhs.uk/learning-disabilities/care/progress/assuring-transformation/</p>
-            <p>NHS Digital &mdash; Learning Disability Services Data Set (LDSS). Monthly data on inpatient and community contacts. digital.nhs.uk/data-and-information/publications/statistical/learning-disability-services-statistics</p>
-            <p>CQC &mdash; Restraint and seclusion reporting. Mental Health Units (Use of Force) Act reporting. cqc.org.uk</p>
+            <p>NHS England — Assuring Transformation. Monthly snapshot of people with learning disabilities and/or autism in inpatient settings. england.nhs.uk/learning-disabilities/care/progress/assuring-transformation/</p>
+            <p>NHS Digital — Learning Disability Services Data Set (LDSS). Monthly data on inpatient and community contacts. digital.nhs.uk/data-and-information/publications/statistical/learning-disability-services-statistics</p>
+            <p>CQC — Restraint and seclusion reporting. Mental Health Units (Use of Force) Act reporting. cqc.org.uk</p>
             <p>Inpatient count is snapshot figure at end of reference period. Average length of stay is median for those discharged in the reference year. Restraint figures include all recorded incidents under the Mental Health Units (Use of Force) Act 2018 reporting requirements from April 2021; prior years are estimated from CQC inspection data.</p>
           </div>
         </section>

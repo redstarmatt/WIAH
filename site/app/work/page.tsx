@@ -209,23 +209,23 @@ export default function WorkPage() {
 
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Real average weekly pay hit &pound;527 in 2024 &mdash; finally overtaking the
-              &pound;499 recorded before the financial crisis in 2008. That gap took 15 years
+              Real average weekly pay hit £527 in 2024 — finally overtaking the
+              £499 recorded before the financial crisis in 2008. That gap took 15 years
               to close, the longest wage stagnation in modern British history. Two inflation
-              shocks explain why: the first in 2011&ndash;12 eroded the tentative post-crash
-              recovery, and the second in 2022&ndash;23 &mdash; when CPI peaked at 11.1%,
-              the worst since 1981 &mdash; wiped out nominal gains all over again. For the
+              shocks explain why: the first in 2011–12 eroded the tentative post-crash
+              recovery, and the second in 2022–23 — when CPI peaked at 11.1%,
+              the worst since 1981 — wiped out nominal gains all over again. For the
               median worker, the practical effect was a decade and a half in which pay rises
               never outran the cost of living.
             </p>
             <p>
               Unemployment at 4.4% looks reassuring, but the headline masks a composition
               problem. The share of working-age adults economically inactive due to long-term
-              sickness reached 8.4% in 2024, up from 6.0% in 2019 &mdash; roughly 2.8 million
+              sickness reached 8.4% in 2024, up from 6.0% in 2019 — roughly 2.8 million
               people no longer in or seeking work. Mental health conditions, musculoskeletal
               disorders, and the lingering effects of long COVID all contribute, but the
               proximate cause is the NHS backlog: people who cannot get treated cannot return
-              to work. Britain&apos;s health crisis and its labour-market crisis are, in
+              to work. Britain's health crisis and its labour-market crisis are, in
               practice, the same crisis.
             </p>
             </div>
@@ -362,7 +362,7 @@ export default function WorkPage() {
             {data?.metadata.sources.map((src, i) => (
               <li key={i}>
                 <a href={src.url} className="underline hover:text-wiah-blue" target="_blank" rel="noreferrer">
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}

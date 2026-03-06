@@ -74,8 +74,8 @@ export default function FraudProsecutionGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Fraud is the most common crime in England and Wales by volume, yet it receives a vanishingly small share of police resources. The Crime Survey estimates around 4.5 million fraud offences a year &mdash; roughly 40% of all crime &mdash; while a 2023 HMICFRS inspection found just 1% of police resources dedicated to fraud investigation. Action Fraud receives around 800,000 reports annually; most are closed without investigative action because the volume overwhelms the system and individual frauds fall below the threshold for which forces can justify allocating detective time. The charge rate for fraud was approximately 3% in 2023, against 6% for all crimes combined. The National Crime Agency estimates money laundering facilitated by fraud costs the UK economy at least &pound;12 billion a year. The Fraud Strategy published in 2023 committed to a 10% reduction by 2025, and mandatory bank reimbursement for authorised push payment fraud was introduced in 2023.</p>
-            <p>The burden falls disproportionately on older people, who are targeted by telephone and postal fraud at significantly higher rates and lose an average of &pound;3,800 per incident. Fraud victims frequently report psychological harm and loss of trust in institutions comparable to that experienced by victims of violent crime. The structural gap between offending volume and investigative capacity means fraud has become effectively decriminalised in practice, with most victims receiving no meaningful resolution.</p>
+            <p>Fraud is the most common crime in England and Wales by volume, yet it receives a vanishingly small share of police resources. The Crime Survey estimates around 4.5 million fraud offences a year — roughly 40% of all crime — while a 2023 HMICFRS inspection found just 1% of police resources dedicated to fraud investigation. Action Fraud receives around 800,000 reports annually; most are closed without investigative action because the volume overwhelms the system and individual frauds fall below the threshold for which forces can justify allocating detective time. The charge rate for fraud was approximately 3% in 2023, against 6% for all crimes combined. The National Crime Agency estimates money laundering facilitated by fraud costs the UK economy at least £12 billion a year. The Fraud Strategy published in 2023 committed to a 10% reduction by 2025, and mandatory bank reimbursement for authorised push payment fraud was introduced in 2023.</p>
+            <p>The burden falls disproportionately on older people, who are targeted by telephone and postal fraud at significantly higher rates and lose an average of £3,800 per incident. Fraud victims frequently report psychological harm and loss of trust in institutions comparable to that experienced by victims of violent crime. The structural gap between offending volume and investigative capacity means fraud has become effectively decriminalised in practice, with most victims receiving no meaningful resolution.</p>
           </div>
         </section>
 
@@ -95,7 +95,7 @@ export default function FraudProsecutionGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Up from 32% in 2015"
               sparklineData={[32, 34, 35, 36, 37, 38, 39, 40, 41]}
-              href="#sec-chart"source="ONS &middot; Crime Survey for England and Wales"
+              href="#sec-chart"source="ONS · Crime Survey for England and Wales"
             />
             <MetricCard
               label="Police resources allocated"
@@ -105,7 +105,7 @@ export default function FraudProsecutionGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Of total officer headcount dedicated to fraud"
               sparklineData={[1.2, 1.1, 1.1, 1.0, 1.0, 0.9, 0.9, 1.0, 1.0]}
-              href="#sec-chart"source="HMICFRS &middot; State of Policing reports"
+              href="#sec-chart"source="HMICFRS · State of Policing reports"
             />
             <MetricCard
               label="Fraud cases charged"
@@ -115,7 +115,7 @@ export default function FraudProsecutionGapPage() {
               polarity={'up-is-bad' as const}
               changeText="Of reported fraud cases resulting in charge"
               sparklineData={[5.1, 4.8, 4.5, 4.2, 3.9, 3.6, 3.4, 3.2, 3.0]}
-              href="#sec-chart"source="Home Office &middot; Crime outcomes in England and Wales"
+              href="#sec-chart"source="Home Office · Crime outcomes in England and Wales"
             />
           </div>
         </ScrollReveal>
@@ -123,7 +123,7 @@ export default function FraudProsecutionGapPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Fraud charges as share of reported cases, 2015&ndash;2024"
+              title="Fraud charges as share of reported cases, 2015–2024"
               subtitle="Charge rate for fraud offences compared with fraud as a share of total crime, England and Wales."
               series={chargeRateSeries}
               yLabel="Percentage (%)"
@@ -139,10 +139,10 @@ export default function FraudProsecutionGapPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>ONS &mdash; Crime Survey for England and Wales. Published annually. ons.gov.uk/peoplepopulationandcommunity/crimeandjustice</p>
-            <p>Home Office &mdash; Crime outcomes in England and Wales. Charge rate is charges as a proportion of fraud offences referred to the Crown Prosecution Service. Published annually. gov.uk/government/statistics/crime-outcomes-in-england-and-wales-statistics</p>
-            <p>Action Fraud &mdash; Fraud and cybercrime statistics. actionfraud.police.uk</p>
-            <p>National Fraud Intelligence Bureau &mdash; NFIB fraud referral data. cityoflondon.police.uk</p>
+            <p>ONS — Crime Survey for England and Wales. Published annually. ons.gov.uk/peoplepopulationandcommunity/crimeandjustice</p>
+            <p>Home Office — Crime outcomes in England and Wales. Charge rate is charges as a proportion of fraud offences referred to the Crown Prosecution Service. Published annually. gov.uk/government/statistics/crime-outcomes-in-england-and-wales-statistics</p>
+            <p>Action Fraud — Fraud and cybercrime statistics. actionfraud.police.uk</p>
+            <p>National Fraud Intelligence Bureau — NFIB fraud referral data. cityoflondon.police.uk</p>
             <p>Fraud is significantly under-reported. The 40% share of crime figure is based on Crime Survey estimates and reflects a much larger true volume than police recorded figures suggest.</p>
           </div>
         </section>

@@ -73,8 +73,8 @@ export default function TeacherRealPayPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Between 2010 and 2023, experienced teacher pay fell approximately 9% in real terms &mdash; while the median graduate salary across all professions rose, creating an 18% gap. England ranked 21st of 28 OECD countries for teacher pay relative to other graduates in 2023, below the OECD average and falling. ITT recruitment targets have been missed consistently since 2016 in maths, physics, computing, chemistry, and modern foreign languages &mdash; precisely the subjects where private sector alternatives pay most. A 5.5% pay award in 2024 acknowledged the trajectory was unsustainable, but STRB analysis suggests an additional 10&ndash;15% real-terms increase is needed over five years simply to return to 2010 levels.</p>
-            <p>The consequences fall hardest on pupils in shortage subjects and deprived areas. Schools facing vacancies reach for supply teachers, merge classes, or reduce options &mdash; effects rarely captured in aggregate statistics but consistently reported by headteachers and inspectors. Starting salaries have been partially restored in recent years, but the compressed gap between entry and progression pay reduces the financial incentive to stay beyond the early career period: roughly 40% of new teachers leave within five years. Countries consistently outperforming England in pupil attainment &mdash; Finland, South Korea, Singapore &mdash; treat teaching as a high-status, well-compensated profession; the link is not coincidental.</p>
+            <p>Between 2010 and 2023, experienced teacher pay fell approximately 9% in real terms — while the median graduate salary across all professions rose, creating an 18% gap. England ranked 21st of 28 OECD countries for teacher pay relative to other graduates in 2023, below the OECD average and falling. ITT recruitment targets have been missed consistently since 2016 in maths, physics, computing, chemistry, and modern foreign languages — precisely the subjects where private sector alternatives pay most. A 5.5% pay award in 2024 acknowledged the trajectory was unsustainable, but STRB analysis suggests an additional 10–15% real-terms increase is needed over five years simply to return to 2010 levels.</p>
+            <p>The consequences fall hardest on pupils in shortage subjects and deprived areas. Schools facing vacancies reach for supply teachers, merge classes, or reduce options — effects rarely captured in aggregate statistics but consistently reported by headteachers and inspectors. Starting salaries have been partially restored in recent years, but the compressed gap between entry and progression pay reduces the financial incentive to stay beyond the early career period: roughly 40% of new teachers leave within five years. Countries consistently outperforming England in pupil attainment — Finland, South Korea, Singapore — treat teaching as a high-status, well-compensated profession; the link is not coincidental.</p>
           </div>
         </section>
 
@@ -94,7 +94,7 @@ export default function TeacherRealPayPage() {
               polarity="up-is-bad"
               changeText="experienced teacher pay below 2010 in real terms"
               sparklineData={[36200, 34600, 33800, 33200, 33000, 33100, 33600, 33900, 32800, 33000]}
-              href="#sec-chart"source="STRB &middot; School Teachers&apos; Pay Review Body 2024"
+              href="#sec-chart"source="STRB · School Teachers' Pay Review Body 2024"
             />
             <MetricCard
               label="Pay gap vs graduate average"
@@ -104,7 +104,7 @@ export default function TeacherRealPayPage() {
               polarity="up-is-bad"
               changeText="teaching now pays 18% less than grad average"
               sparklineData={[-2, -5, -8, -10, -13, -14, -13, -14, -17, -18]}
-              href="#sec-chart"source="OECD &middot; Education at a Glance 2024"
+              href="#sec-chart"source="OECD · Education at a Glance 2024"
             />
             <MetricCard
               label="OECD pay ranking"
@@ -112,9 +112,9 @@ export default function TeacherRealPayPage() {
               unit=""
               direction="down"
               polarity="up-is-bad"
-              changeText="teacher pay below OECD average &middot; falling"
+              changeText="teacher pay below OECD average · falling"
               sparklineData={[15, 16, 17, 17, 18, 19, 19, 20, 21, 21]}
-              href="#sec-chart"source="OECD &middot; Education at a Glance 2024"
+              href="#sec-chart"source="OECD · Education at a Glance 2024"
             />
           </div>
         </ScrollReveal>
@@ -122,7 +122,7 @@ export default function TeacherRealPayPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Teacher real pay, England, 2010&ndash;2023"
+              title="Teacher real pay, England, 2010–2023"
               subtitle="Experienced teacher (red) and starting salary (amber) in constant 2023 prices. Both below 2010 levels in real terms."
               series={paySeries}
               yLabel="Annual salary (£, real 2023)"
@@ -138,10 +138,10 @@ export default function TeacherRealPayPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>School Teachers&apos; Review Body (STRB) &mdash; Annual Pay Report. gov.uk/government/collections/school-teachers-review-body-strb-reports</p>
-            <p>DfE &mdash; School Workforce in England. Annual statistics. gov.uk/government/collections/statistics-school-workforce</p>
-            <p>OECD &mdash; Education at a Glance. Annual international comparison. oecd.org/education/education-at-a-glance/</p>
-            <p>Real pay calculated using HM Treasury GDP deflator. Experienced teacher pay reflects the top of the main pay range / lower leadership range. Starting salary reflects the minimum of the main pay range (Outside London). OECD ranking based on teacher pay relative to other tertiary-educated workers, 25&ndash;64 age group.</p>
+            <p>School Teachers' Review Body (STRB) — Annual Pay Report. gov.uk/government/collections/school-teachers-review-body-strb-reports</p>
+            <p>DfE — School Workforce in England. Annual statistics. gov.uk/government/collections/statistics-school-workforce</p>
+            <p>OECD — Education at a Glance. Annual international comparison. oecd.org/education/education-at-a-glance/</p>
+            <p>Real pay calculated using HM Treasury GDP deflator. Experienced teacher pay reflects the top of the main pay range / lower leadership range. Starting salary reflects the minimum of the main pay range (Outside London). OECD ranking based on teacher pay relative to other tertiary-educated workers, 25–64 age group.</p>
           </div>
         </section>
       </main>

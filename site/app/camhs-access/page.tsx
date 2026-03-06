@@ -69,8 +69,8 @@ export default function CamhsAccessPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Child and Adolescent Mental Health Services received 481,000 referrals in 2024 &mdash; a 72% increase on the 280,000 referred in 2016, reflecting a well-documented deterioration in children&apos;s mental health driven by the pandemic, social media, and family economic stress. Of those 481,000 referrals, approximately 128,000 &mdash; 27% &mdash; were rejected before assessment, not because clinicians believed these children did not need help, but because capacity is insufficient and thresholds have been raised accordingly. For those who do gain access, 49% wait more than 18 weeks from referral to treatment; for adolescents with eating disorders, where early intervention significantly improves outcomes, such delays carry clinical risk. NHS England&apos;s Long Term Plan target of seeing an additional 345,000 children and young people per year has been partially met, but the number of children needing help has grown faster than service expansion.</p>
-            <p>Access is deeply unequal by geography and income. Children in rural and coastal communities face longer waits and higher rejection rates because specialist services are concentrated in cities and sub-threshold community provision &mdash; school nurses, youth workers, voluntary sector organisations &mdash; is thinner in deprived areas. Children from lower-income families are more likely to be referred but less likely to have parents who can navigate a rejected referral or fund private alternatives. CAMHS accounts for a smaller share of the mental health budget than adult mental health, despite established evidence that early childhood intervention prevents far more costly crises in adulthood.</p>
+            <p>Child and Adolescent Mental Health Services received 481,000 referrals in 2024 — a 72% increase on the 280,000 referred in 2016, reflecting a well-documented deterioration in children's mental health driven by the pandemic, social media, and family economic stress. Of those 481,000 referrals, approximately 128,000 — 27% — were rejected before assessment, not because clinicians believed these children did not need help, but because capacity is insufficient and thresholds have been raised accordingly. For those who do gain access, 49% wait more than 18 weeks from referral to treatment; for adolescents with eating disorders, where early intervention significantly improves outcomes, such delays carry clinical risk. NHS England's Long Term Plan target of seeing an additional 345,000 children and young people per year has been partially met, but the number of children needing help has grown faster than service expansion.</p>
+            <p>Access is deeply unequal by geography and income. Children in rural and coastal communities face longer waits and higher rejection rates because specialist services are concentrated in cities and sub-threshold community provision — school nurses, youth workers, voluntary sector organisations — is thinner in deprived areas. Children from lower-income families are more likely to be referred but less likely to have parents who can navigate a rejected referral or fund private alternatives. CAMHS accounts for a smaller share of the mental health budget than adult mental health, despite established evidence that early childhood intervention prevents far more costly crises in adulthood.</p>
           </div>
         </section>
 
@@ -88,9 +88,9 @@ export default function CamhsAccessPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up 72% since 2016 &middot; post-pandemic surge"
+              changeText="Up 72% since 2016 · post-pandemic surge"
               sparklineData={[280, 306, 332, 356, 334, 412, 438, 460, 481]}
-              href="#sec-chart"source="NHS England &middot; CAMHS Referrals 2024"
+              href="#sec-chart"source="NHS England · CAMHS Referrals 2024"
             />
             <MetricCard
               label="Rejected referrals"
@@ -98,9 +98,9 @@ export default function CamhsAccessPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="27% rejected &middot; thresholds too high"
+              changeText="27% rejected · thresholds too high"
               sparklineData={[68, 74, 82, 87, 91, 106, 114, 122, 128]}
-              href="#sec-chart"source="NHS England &middot; CAMHS Referrals 2024"
+              href="#sec-chart"source="NHS England · CAMHS Referrals 2024"
             />
             <MetricCard
               label="Wait &gt;18 weeks"
@@ -110,7 +110,7 @@ export default function CamhsAccessPage() {
               polarity="up-is-bad"
               changeText="Nearly half wait 4+ months"
               sparklineData={[38, 40, 42, 44, 48, 50, 51, 52, 49]}
-              href="#sec-chart"source="NHS England &middot; CAMHS Waiting Times 2024"
+              href="#sec-chart"source="NHS England · CAMHS Waiting Times 2024"
             />
           </div>
         </ScrollReveal>
@@ -118,7 +118,7 @@ export default function CamhsAccessPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="CAMHS referrals and rejections, 2016&ndash;2024"
+              title="CAMHS referrals and rejections, 2016–2024"
               subtitle="Total referrals to Child and Adolescent Mental Health Services, and referrals rejected before assessment. England."
               series={referralSeries}
               yLabel="Referrals"
@@ -134,8 +134,8 @@ export default function CamhsAccessPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>NHS England &mdash; Mental Health Services Monthly Statistics. england.nhs.uk/statistics/statistical-work-areas/mental-health-statistics/</p>
-            <p>NHS Digital &mdash; Children and Young People&apos;s Mental Health Services. digital.nhs.uk/data-and-information/publications/statistical/mental-health-services-monthly-statistics</p>
+            <p>NHS England — Mental Health Services Monthly Statistics. england.nhs.uk/statistics/statistical-work-areas/mental-health-statistics/</p>
+            <p>NHS Digital — Children and Young People's Mental Health Services. digital.nhs.uk/data-and-information/publications/statistical/mental-health-services-monthly-statistics</p>
             <p>Referral counts include first contact referrals to CAMHS Tier 2 and Tier 3 services. Rejected referrals are those closed before first appointment or assessment. Wait times measure weeks from referral receipt to start of treatment. Data covers England only.</p>
           </div>
         </section>

@@ -104,7 +104,7 @@ export default function BabyLossSupportPage() {
     : [];
 
   const mortalityAnnotations: Annotation[] = [
-    { date: new Date(2015, 5, 1), label: '2015: Saving Babies&apos; Lives Care Bundle launched' },
+    { date: new Date(2015, 5, 1), label: "2015: Saving Babies' Lives Care Bundle launched" },
     { date: new Date(2019, 5, 1), label: '2019: NHS Long Term Plan 50% reduction target' },
   ];
 
@@ -123,17 +123,17 @@ export default function BabyLossSupportPage() {
         <TopicHeader
           topic="Health"
           question="Are Bereaved Parents Getting the Support They Need?"
-          finding="Around 1 in 4 pregnancies end in miscarriage. Over 3,000 stillbirths occur each year in England. Access to specialist bereavement support varies widely &mdash; only 55% of NHS trusts have dedicated bereavement midwives."
+          finding="Around 1 in 4 pregnancies end in miscarriage. Over 3,000 stillbirths occur each year in England. Access to specialist bereavement support varies widely — only 55% of NHS trusts have dedicated bereavement midwives."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Approximately 250,000 pregnancy losses occur each year in the UK, the vast majority miscarriages. The stillbirth rate has fallen significantly since 2013 &mdash; from 4.2 to 3.3 per 1,000 births &mdash; driven by the NHS Saving Babies&apos; Lives Care Bundle, which promotes better monitoring, reduced smoking in pregnancy, and earlier management of risk. The NHS Long Term Plan committed to halving the rates of stillbirth, neonatal death and maternal death by 2025, against 2010 baselines.
+              Approximately 250,000 pregnancy losses occur each year in the UK, the vast majority miscarriages. The stillbirth rate has fallen significantly since 2013 — from 4.2 to 3.3 per 1,000 births — driven by the NHS Saving Babies' Lives Care Bundle, which promotes better monitoring, reduced smoking in pregnancy, and earlier management of risk. The NHS Long Term Plan committed to halving the rates of stillbirth, neonatal death and maternal death by 2025, against 2010 baselines.
             </p>
             <p>
-              But improvements in rates do not automatically translate to better support for bereaved parents. Only 55% of NHS trusts have a dedicated bereavement midwife &mdash; a role shown to reduce long-term psychological harm in parents. Miscarriage, which affects around one in four pregnancies, attracts minimal specialist support in most areas. The inequality in provision means that whether a bereaved parent receives compassionate specialist care depends largely on which trust they happen to deliver at.
+              But improvements in rates do not automatically translate to better support for bereaved parents. Only 55% of NHS trusts have a dedicated bereavement midwife — a role shown to reduce long-term psychological harm in parents. Miscarriage, which affects around one in four pregnancies, attracts minimal specialist support in most areas. The inequality in provision means that whether a bereaved parent receives compassionate specialist care depends largely on which trust they happen to deliver at.
             </p>
           </div>
         </section>
@@ -184,8 +184,8 @@ export default function BabyLossSupportPage() {
         <ScrollReveal>
           <section id="sec-mortality" className="mb-12">
             <LineChart
-              title="Stillbirth and neonatal death rates, England and Wales, 2013&ndash;2023"
-              subtitle="Stillbirths per 1,000 total births and neonatal deaths per 1,000 live births. Both have fallen consistently, but the NHS Long Term Plan&apos;s 50% reduction target by 2025 (against 2010 baseline) will not be fully met."
+              title="Stillbirth and neonatal death rates, England and Wales, 2013–2023"
+              subtitle="Stillbirths per 1,000 total births and neonatal deaths per 1,000 live births. Both have fallen consistently, but the NHS Long Term Plan's 50% reduction target by 2025 (against 2010 baseline) will not be fully met."
               series={mortalitySeries}
               annotations={mortalityAnnotations}
               yLabel="Rate per 1,000 births"
@@ -196,7 +196,7 @@ export default function BabyLossSupportPage() {
         <ScrollReveal>
           <section id="sec-support" className="mb-12">
             <LineChart
-              title="NHS trusts with dedicated bereavement midwife, England, 2018&ndash;2024"
+              title="NHS trusts with dedicated bereavement midwife, England, 2018–2024"
               subtitle="Percentage of maternity trusts with at least one dedicated bereavement midwife. Provision has nearly doubled since 2018 but 45% of trusts still have no dedicated role."
               series={provisionSeries}
               annotations={provisionAnnotations}
@@ -208,11 +208,11 @@ export default function BabyLossSupportPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="50%"
             unit="reduction target for stillbirths"
-            description="The NHS Long Term Plan commits to reducing stillbirths and neonatal deaths by 50% by 2025, against a 2010 baseline. The Saving Babies&apos; Lives Care Bundle, now in its second version, has driven significant improvement. Sands and Tommy&apos;s charities fund specialist bereavement support and advocate for national standards. The National Bereavement Care Pathway provides guidance for trusts on compassionate care following any pregnancy loss."
-            source="Source: MBRRACE-UK &mdash; Perinatal Mortality Surveillance, 2024. Sands &mdash; Bereavement Care Survey, 2024."
+            description="The NHS Long Term Plan commits to reducing stillbirths and neonatal deaths by 50% by 2025, against a 2010 baseline. The Saving Babies' Lives Care Bundle, now in its second version, has driven significant improvement. Sands and Tommy's charities fund specialist bereavement support and advocate for national standards. The National Bereavement Care Pathway provides guidance for trusts on compassionate care following any pregnancy loss."
+            source="Source: MBRRACE-UK — Perinatal Mortality Surveillance, 2024. Sands — Bereavement Care Survey, 2024."
           />
         </ScrollReveal>
 
@@ -223,7 +223,7 @@ export default function BabyLossSupportPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

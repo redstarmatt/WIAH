@@ -137,10 +137,10 @@ export default function EmploymentTribunalBacklogPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              An employment tribunal claim takes an average of 51 weeks from submission to final hearing in 2024. For a worker who has been unfairly dismissed, discriminated against, or denied their statutory rights, this means living in legal limbo for nearly a year &mdash; potentially without income, with the psychological burden of ongoing litigation, and facing an employer that has every financial incentive to delay. The system was designed for resolution in weeks, not a year; it has become a de facto filter that deters all but the most determined claimants.
+              An employment tribunal claim takes an average of 51 weeks from submission to final hearing in 2024. For a worker who has been unfairly dismissed, discriminated against, or denied their statutory rights, this means living in legal limbo for nearly a year — potentially without income, with the psychological burden of ongoing litigation, and facing an employer that has every financial incentive to delay. The system was designed for resolution in weeks, not a year; it has become a de facto filter that deters all but the most determined claimants.
             </p>
             <p>
-              The backlog has structural causes. The 2013 introduction of employment tribunal fees &mdash; later ruled unlawful by the Supreme Court and abolished in 2017 &mdash; suppressed claims for four years; when fees fell, receipts permanently increased as access improved. The pandemic caused a surge in furlough disputes, redundancy claims, and unfair dismissal cases while simultaneously closing tribunal hearing centres. Despite remote hearings and judicial recruitment, the system has not returned to pre-pandemic throughput. The Employment Rights Bill, which extends day-one protection against unfair dismissal and adds several new jurisdictions, is expected to increase new receipts further, potentially pushing the backlog beyond 60,000.
+              The backlog has structural causes. The 2013 introduction of employment tribunal fees — later ruled unlawful by the Supreme Court and abolished in 2017 — suppressed claims for four years; when fees fell, receipts permanently increased as access improved. The pandemic caused a surge in furlough disputes, redundancy claims, and unfair dismissal cases while simultaneously closing tribunal hearing centres. Despite remote hearings and judicial recruitment, the system has not returned to pre-pandemic throughput. The Employment Rights Bill, which extends day-one protection against unfair dismissal and adds several new jurisdictions, is expected to increase new receipts further, potentially pushing the backlog beyond 60,000.
             </p>
           </div>
         </section>
@@ -161,7 +161,7 @@ export default function EmploymentTribunalBacklogPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+135% since pre-pandemic &middot; 2022 peak of 58,000"
+              changeText="+135% since pre-pandemic · 2022 peak of 58,000"
               sparklineData={[23, 25, 45, 52, 58, 56, 54]}
               onExpand={() => {}}
             />
@@ -171,7 +171,7 @@ export default function EmploymentTribunalBacklogPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 27 weeks in 2018 &middot; Nearly a year&apos;s wait for resolution"
+              changeText="Up from 27 weeks in 2018 · Nearly a year's wait for resolution"
               sparklineData={[27, 29, 36, 42, 48, 51, 51]}
               onExpand={() => {}}
             />
@@ -181,7 +181,7 @@ export default function EmploymentTribunalBacklogPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Record high &middot; Post-pandemic 2013 fee abolition created permanent rise"
+              changeText="Record high · Post-pandemic 2013 fee abolition created permanent rise"
               sparklineData={[109, 121, 143, 107, 119, 126, 131]}
               onExpand={() => {}}
             />
@@ -192,7 +192,7 @@ export default function EmploymentTribunalBacklogPage() {
         <ScrollReveal>
           <section id="sec-backlog" className="mb-12">
             <LineChart
-              title="Outstanding employment tribunal cases, Great Britain, 2018&ndash;2024"
+              title="Outstanding employment tribunal cases, Great Britain, 2018–2024"
               subtitle="Total outstanding caseload at year end. Pre-pandemic level was approximately 24,000. The pandemic more than doubled this to a peak of 58,000 in 2022; partial recovery since has left 54,000 unresolved."
               series={backlogSeries}
               annotations={backlogAnnotations}
@@ -204,7 +204,7 @@ export default function EmploymentTribunalBacklogPage() {
         <ScrollReveal>
           <section id="sec-waittimes" className="mb-12">
             <LineChart
-              title="Average time to final hearing and annual new claims, ET, 2018&ndash;2024"
+              title="Average time to final hearing and annual new claims, ET, 2018–2024"
               subtitle="Average weeks from claim submission to final hearing (single claims), alongside annual new claim receipts. Both metrics have risen sharply since 2019. 51 weeks average in 2024."
               series={waitTimeSeries}
               annotations={waitAnnotations}
@@ -216,11 +216,11 @@ export default function EmploymentTribunalBacklogPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="HMCTS digital investment"
             unit=""
             description="The Employment Rights Bill 2024 extends worker protections but may increase caseload further. HMCTS is investing in judicial recruitment and digital systems to reduce the backlog. Early conciliation through Acas resolves approximately 30% of potential claims before they reach tribunal, preventing a significant volume of cases from entering the system. The planned introduction of provisional damages awards is intended to encourage faster settlement. Online claim submission has improved access for unrepresented claimants."
-            source="Source: MOJ &mdash; Tribunal statistics 2024; HMCTS &mdash; Management information 2024."
+            source="Source: MOJ — Tribunal statistics 2024; HMCTS — Management information 2024."
           />
         </ScrollReveal>
 
@@ -231,7 +231,7 @@ export default function EmploymentTribunalBacklogPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>
