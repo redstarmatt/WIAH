@@ -1,101 +1,124 @@
 {
   "topic": "crime-trends",
-  "lastUpdated": "2026-03-03",
+  "lastUpdated": "2026-03-06",
   "crimeTrends": {
     "violence": {
       "label": "TOTAL VIOLENCE AGAINST THE PERSON",
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 708742
+          "count": 708742,
+          "ratePer100k": 1427.0
         },
         {
           "period": "2003/04",
-          "count": 799247
+          "count": 799247,
+          "ratePer100k": 1601.0
         },
         {
           "period": "2004/05",
-          "count": 845673
+          "count": 845673,
+          "ratePer100k": 1685.0
         },
         {
           "period": "2005/06",
-          "count": 838674
+          "count": 838674,
+          "ratePer100k": 1657.0
         },
         {
           "period": "2006/07",
-          "count": 814865
+          "count": 814865,
+          "ratePer100k": 1599.0
         },
         {
           "period": "2007/08",
-          "count": 748779
+          "count": 748779,
+          "ratePer100k": 1457.0
         },
         {
           "period": "2008/09",
-          "count": 709008
+          "count": 709008,
+          "ratePer100k": 1368.0
         },
         {
           "period": "2009/10",
-          "count": 699011
+          "count": 699011,
+          "ratePer100k": 1339.0
         },
         {
           "period": "2010/11",
-          "count": 665486
+          "count": 665486,
+          "ratePer100k": 1264.0
         },
         {
           "period": "2011/12",
-          "count": 626720
+          "count": 626720,
+          "ratePer100k": 1180.0
         },
         {
           "period": "2012/13",
-          "count": 601141
+          "count": 601141,
+          "ratePer100k": 1123.0
         },
         {
           "period": "2013/14",
-          "count": 634625
+          "count": 634625,
+          "ratePer100k": 1177.0
         },
         {
           "period": "2014/15",
-          "count": 778198
+          "count": 778198,
+          "ratePer100k": 1431.0
         },
         {
           "period": "2015/16",
-          "count": 991687
+          "count": 991687,
+          "ratePer100k": 1809.0
         },
         {
           "period": "2016/17",
-          "count": 1158172
+          "count": 1158172,
+          "ratePer100k": 2095.0
         },
         {
           "period": "2017/18",
-          "count": 1397735
+          "count": 1397735,
+          "ratePer100k": 2513.0
         },
         {
           "period": "2018/19",
-          "count": 1673490
+          "count": 1673490,
+          "ratePer100k": 2992.0
         },
         {
           "period": "2019/20",
-          "count": 1763867
+          "count": 1763867,
+          "ratePer100k": 3137.0
         },
         {
           "period": "2020/21",
-          "count": 1775986
+          "count": 1775986,
+          "ratePer100k": 3153.0
         },
         {
           "period": "2021/22",
-          "count": 2094328
+          "count": 2094328,
+          "ratePer100k": 3703.0
         },
         {
           "period": "2022/23",
-          "count": 2108860
+          "count": 2108860,
+          "ratePer100k": 3690.0
         },
         {
           "period": "2023/24",
-          "count": 2014062
+          "count": 2014062,
+          "ratePer100k": 3477.0
         },
         {
           "period": "2024/25",
-          "count": 1938063
+          "count": 1938063,
+          "ratePer100k": 3306.0
         }
       ]
     },
@@ -104,95 +127,118 @@
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 56652
+          "count": 56652,
+          "ratePer100k": 114.0
         },
         {
           "period": "2003/04",
-          "count": 60412
+          "count": 60412,
+          "ratePer100k": 121.0
         },
         {
           "period": "2004/05",
-          "count": 60924
+          "count": 60924,
+          "ratePer100k": 121.0
         },
         {
           "period": "2005/06",
-          "count": 60287
+          "count": 60287,
+          "ratePer100k": 119.0
         },
         {
           "period": "2006/07",
-          "count": 56042
+          "count": 56042,
+          "ratePer100k": 110.0
         },
         {
           "period": "2007/08",
-          "count": 52166
+          "count": 52166,
+          "ratePer100k": 102.0
         },
         {
           "period": "2008/09",
-          "count": 50185
+          "count": 50185,
+          "ratePer100k": 97.0
         },
         {
           "period": "2009/10",
-          "count": 53006
+          "count": 53006,
+          "ratePer100k": 102.0
         },
         {
           "period": "2010/11",
-          "count": 53940
+          "count": 53940,
+          "ratePer100k": 102.0
         },
         {
           "period": "2011/12",
-          "count": 52760
+          "count": 52760,
+          "ratePer100k": 99.0
         },
         {
           "period": "2012/13",
-          "count": 53599
+          "count": 53599,
+          "ratePer100k": 100.0
         },
         {
           "period": "2013/14",
-          "count": 64232
+          "count": 64232,
+          "ratePer100k": 119.0
         },
         {
           "period": "2014/15",
-          "count": 88576
+          "count": 88576,
+          "ratePer100k": 163.0
         },
         {
           "period": "2015/16",
-          "count": 107334
+          "count": 107334,
+          "ratePer100k": 196.0
         },
         {
           "period": "2016/17",
-          "count": 123056
+          "count": 123056,
+          "ratePer100k": 223.0
         },
         {
           "period": "2017/18",
-          "count": 152839
+          "count": 152839,
+          "ratePer100k": 275.0
         },
         {
           "period": "2018/19",
-          "count": 164390
+          "count": 164390,
+          "ratePer100k": 294.0
         },
         {
           "period": "2019/20",
-          "count": 163316
+          "count": 163316,
+          "ratePer100k": 290.0
         },
         {
           "period": "2020/21",
-          "count": 147717
+          "count": 147717,
+          "ratePer100k": 262.0
         },
         {
           "period": "2021/22",
-          "count": 193026
+          "count": 193026,
+          "ratePer100k": 341.0
         },
         {
           "period": "2022/23",
-          "count": 194735
+          "count": 194735,
+          "ratePer100k": 341.0
         },
         {
           "period": "2023/24",
-          "count": 188614
+          "count": 188614,
+          "ratePer100k": 326.0
         },
         {
           "period": "2024/25",
-          "count": 209073
+          "count": 209073,
+          "ratePer100k": 357.0
         }
       ]
     },
@@ -201,95 +247,118 @@
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 110271
+          "count": 110271,
+          "ratePer100k": 222.0
         },
         {
           "period": "2003/04",
-          "count": 103736
+          "count": 103736,
+          "ratePer100k": 208.0
         },
         {
           "period": "2004/05",
-          "count": 91010
+          "count": 91010,
+          "ratePer100k": 181.0
         },
         {
           "period": "2005/06",
-          "count": 98198
+          "count": 98198,
+          "ratePer100k": 194.0
         },
         {
           "period": "2006/07",
-          "count": 101376
+          "count": 101376,
+          "ratePer100k": 199.0
         },
         {
           "period": "2007/08",
-          "count": 84773
+          "count": 84773,
+          "ratePer100k": 165.0
         },
         {
           "period": "2008/09",
-          "count": 80130
+          "count": 80130,
+          "ratePer100k": 155.0
         },
         {
           "period": "2009/10",
-          "count": 75105
+          "count": 75105,
+          "ratePer100k": 144.0
         },
         {
           "period": "2010/11",
-          "count": 76189
+          "count": 76189,
+          "ratePer100k": 145.0
         },
         {
           "period": "2011/12",
-          "count": 74688
+          "count": 74688,
+          "ratePer100k": 141.0
         },
         {
           "period": "2012/13",
-          "count": 65155
+          "count": 65155,
+          "ratePer100k": 122.0
         },
         {
           "period": "2013/14",
-          "count": 57828
+          "count": 57828,
+          "ratePer100k": 107.0
         },
         {
           "period": "2014/15",
-          "count": 50154
+          "count": 50154,
+          "ratePer100k": 92.0
         },
         {
           "period": "2015/16",
-          "count": 51235
+          "count": 51235,
+          "ratePer100k": 93.0
         },
         {
           "period": "2016/17",
-          "count": 59418
+          "count": 59418,
+          "ratePer100k": 107.0
         },
         {
           "period": "2017/18",
-          "count": 77252
+          "count": 77252,
+          "ratePer100k": 139.0
         },
         {
           "period": "2018/19",
-          "count": 85933
+          "count": 85933,
+          "ratePer100k": 154.0
         },
         {
           "period": "2019/20",
-          "count": 90196
+          "count": 90196,
+          "ratePer100k": 160.0
         },
         {
           "period": "2020/21",
-          "count": 59650
+          "count": 59650,
+          "ratePer100k": 106.0
         },
         {
           "period": "2021/22",
-          "count": 66167
+          "count": 66167,
+          "ratePer100k": 117.0
         },
         {
           "period": "2022/23",
-          "count": 75011
+          "count": 75011,
+          "ratePer100k": 131.0
         },
         {
           "period": "2023/24",
-          "count": 81021
+          "count": 81021,
+          "ratePer100k": 140.0
         },
         {
           "period": "2024/25",
-          "count": 79196
+          "count": 79196,
+          "ratePer100k": 135.0
         }
       ]
     },
@@ -298,95 +367,118 @@
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 890099
+          "count": 890099,
+          "ratePer100k": 1792.0
         },
         {
           "period": "2003/04",
-          "count": 820013
+          "count": 820013,
+          "ratePer100k": 1642.0
         },
         {
           "period": "2004/05",
-          "count": 680358
+          "count": 680358,
+          "ratePer100k": 1355.0
         },
         {
           "period": "2005/06",
-          "count": 645068
+          "count": 645068,
+          "ratePer100k": 1275.0
         },
         {
           "period": "2006/07",
-          "count": 622012
+          "count": 622012,
+          "ratePer100k": 1220.0
         },
         {
           "period": "2007/08",
-          "count": 583710
+          "count": 583710,
+          "ratePer100k": 1136.0
         },
         {
           "period": "2008/09",
-          "count": 581584
+          "count": 581584,
+          "ratePer100k": 1122.0
         },
         {
           "period": "2009/10",
-          "count": 540645
+          "count": 540645,
+          "ratePer100k": 1036.0
         },
         {
           "period": "2010/11",
-          "count": 522683
+          "count": 522683,
+          "ratePer100k": 993.0
         },
         {
           "period": "2011/12",
-          "count": 501048
+          "count": 501048,
+          "ratePer100k": 943.0
         },
         {
           "period": "2012/13",
-          "count": 459795
+          "count": 459795,
+          "ratePer100k": 859.0
         },
         {
           "period": "2013/14",
-          "count": 443212
+          "count": 443212,
+          "ratePer100k": 822.0
         },
         {
           "period": "2014/15",
-          "count": 410866
+          "count": 410866,
+          "ratePer100k": 756.0
         },
         {
           "period": "2015/16",
-          "count": 401768
+          "count": 401768,
+          "ratePer100k": 733.0
         },
         {
           "period": "2016/17",
-          "count": 412220
+          "count": 412220,
+          "ratePer100k": 746.0
         },
         {
           "period": "2017/18",
-          "count": 437546
+          "count": 437546,
+          "ratePer100k": 787.0
         },
         {
           "period": "2018/19",
-          "count": 421200
+          "count": 421200,
+          "ratePer100k": 753.0
         },
         {
           "period": "2019/20",
-          "count": 384014
+          "count": 384014,
+          "ratePer100k": 683.0
         },
         {
           "period": "2020/21",
-          "count": 267577
+          "count": 267577,
+          "ratePer100k": 475.0
         },
         {
           "period": "2021/22",
-          "count": 265343
+          "count": 265343,
+          "ratePer100k": 469.0
         },
         {
           "period": "2022/23",
-          "count": 275605
+          "count": 275605,
+          "ratePer100k": 482.0
         },
         {
           "period": "2023/24",
-          "count": 266156
+          "count": 266156,
+          "ratePer100k": 459.0
         },
         {
           "period": "2024/25",
-          "count": 245086
+          "count": 245086,
+          "ratePer100k": 418.0
         }
       ]
     },
@@ -395,95 +487,118 @@
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 1074659
+          "count": 1074659,
+          "ratePer100k": 2163.0
         },
         {
           "period": "2003/04",
-          "count": 985006
+          "count": 985006,
+          "ratePer100k": 1973.0
         },
         {
           "period": "2004/05",
-          "count": 820096
+          "count": 820096,
+          "ratePer100k": 1634.0
         },
         {
           "period": "2005/06",
-          "count": 792821
+          "count": 792821,
+          "ratePer100k": 1567.0
         },
         {
           "period": "2006/07",
-          "count": 765015
+          "count": 765015,
+          "ratePer100k": 1501.0
         },
         {
           "period": "2007/08",
-          "count": 656453
+          "count": 656453,
+          "ratePer100k": 1278.0
         },
         {
           "period": "2008/09",
-          "count": 591853
+          "count": 591853,
+          "ratePer100k": 1142.0
         },
         {
           "period": "2009/10",
-          "count": 494873
+          "count": 494873,
+          "ratePer100k": 948.0
         },
         {
           "period": "2010/11",
-          "count": 449616
+          "count": 449616,
+          "ratePer100k": 854.0
         },
         {
           "period": "2011/12",
-          "count": 417442
+          "count": 417442,
+          "ratePer100k": 786.0
         },
         {
           "period": "2012/13",
-          "count": 387359
+          "count": 387359,
+          "ratePer100k": 724.0
         },
         {
           "period": "2013/14",
-          "count": 372041
+          "count": 372041,
+          "ratePer100k": 690.0
         },
         {
           "period": "2014/15",
-          "count": 349522
+          "count": 349522,
+          "ratePer100k": 643.0
         },
         {
           "period": "2015/16",
-          "count": 366692
+          "count": 366692,
+          "ratePer100k": 669.0
         },
         {
           "period": "2016/17",
-          "count": 407516
+          "count": 407516,
+          "ratePer100k": 737.0
         },
         {
           "period": "2017/18",
-          "count": 457041
+          "count": 457041,
+          "ratePer100k": 822.0
         },
         {
           "period": "2018/19",
-          "count": 467235
+          "count": 467235,
+          "ratePer100k": 835.0
         },
         {
           "period": "2019/20",
-          "count": 466677
+          "count": 466677,
+          "ratePer100k": 830.0
         },
         {
           "period": "2020/21",
-          "count": 336824
+          "count": 336824,
+          "ratePer100k": 598.0
         },
         {
           "period": "2021/22",
-          "count": 360681
+          "count": 360681,
+          "ratePer100k": 638.0
         },
         {
           "period": "2022/23",
-          "count": 405618
+          "count": 405618,
+          "ratePer100k": 710.0
         },
         {
           "period": "2023/24",
-          "count": 379893
+          "count": 379893,
+          "ratePer100k": 656.0
         },
         {
           "period": "2024/25",
-          "count": 350036
+          "count": 350036,
+          "ratePer100k": 597.0
         }
       ]
     },
@@ -492,95 +607,118 @@
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 310881
+          "count": 310881,
+          "ratePer100k": 626.0
         },
         {
           "period": "2003/04",
-          "count": 303235
+          "count": 303235,
+          "ratePer100k": 607.0
         },
         {
           "period": "2004/05",
-          "count": 281127
+          "count": 281127,
+          "ratePer100k": 560.0
         },
         {
           "period": "2005/06",
-          "count": 295999
+          "count": 295999,
+          "ratePer100k": 585.0
         },
         {
           "period": "2006/07",
-          "count": 294282
+          "count": 294282,
+          "ratePer100k": 577.0
         },
         {
           "period": "2007/08",
-          "count": 290653
+          "count": 290653,
+          "ratePer100k": 566.0
         },
         {
           "period": "2008/09",
-          "count": 320739
+          "count": 320739,
+          "ratePer100k": 619.0
         },
         {
           "period": "2009/10",
-          "count": 307823
+          "count": 307823,
+          "ratePer100k": 590.0
         },
         {
           "period": "2010/11",
-          "count": 305896
+          "count": 305896,
+          "ratePer100k": 581.0
         },
         {
           "period": "2011/12",
-          "count": 308326
+          "count": 308326,
+          "ratePer100k": 581.0
         },
         {
           "period": "2012/13",
-          "count": 300623
+          "count": 300623,
+          "ratePer100k": 562.0
         },
         {
           "period": "2013/14",
-          "count": 321065
+          "count": 321065,
+          "ratePer100k": 595.0
         },
         {
           "period": "2014/15",
-          "count": 326053
+          "count": 326053,
+          "ratePer100k": 600.0
         },
         {
           "period": "2015/16",
-          "count": 337262
+          "count": 337262,
+          "ratePer100k": 615.0
         },
         {
           "period": "2016/17",
-          "count": 370300
+          "count": 370300,
+          "ratePer100k": 670.0
         },
         {
           "period": "2017/18",
-          "count": 382660
+          "count": 382660,
+          "ratePer100k": 688.0
         },
         {
           "period": "2018/19",
-          "count": 374812
+          "count": 374812,
+          "ratePer100k": 670.0
         },
         {
           "period": "2019/20",
-          "count": 359264
+          "count": 359264,
+          "ratePer100k": 639.0
         },
         {
           "period": "2020/21",
-          "count": 228114
+          "count": 228114,
+          "ratePer100k": 405.0
         },
         {
           "period": "2021/22",
-          "count": 274880
+          "count": 274880,
+          "ratePer100k": 486.0
         },
         {
           "period": "2022/23",
-          "count": 342406
+          "count": 342406,
+          "ratePer100k": 599.0
         },
         {
           "period": "2023/24",
-          "count": 444004
+          "count": 444004,
+          "ratePer100k": 766.0
         },
         {
           "period": "2024/25",
-          "count": 530457
+          "count": 530457,
+          "ratePer100k": 905.0
         }
       ]
     },
@@ -589,95 +727,118 @@
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 3413319
+          "count": 3413319,
+          "ratePer100k": 6871.0
         },
         {
           "period": "2003/04",
-          "count": 3249647
+          "count": 3249647,
+          "ratePer100k": 6509.0
         },
         {
           "period": "2004/05",
-          "count": 2837862
+          "count": 2837862,
+          "ratePer100k": 5654.0
         },
         {
           "period": "2005/06",
-          "count": 2739231
+          "count": 2739231,
+          "ratePer100k": 5413.0
         },
         {
           "period": "2006/07",
-          "count": 2638784
+          "count": 2638784,
+          "ratePer100k": 5178.0
         },
         {
           "period": "2007/08",
-          "count": 2422728
+          "count": 2422728,
+          "ratePer100k": 4715.0
         },
         {
           "period": "2008/09",
-          "count": 2321580
+          "count": 2321580,
+          "ratePer100k": 4480.0
         },
         {
           "period": "2009/10",
-          "count": 2132620
+          "count": 2132620,
+          "ratePer100k": 4086.0
         },
         {
           "period": "2010/11",
-          "count": 2107446
+          "count": 2107446,
+          "ratePer100k": 4003.0
         },
         {
           "period": "2011/12",
-          "count": 2074779
+          "count": 2074779,
+          "ratePer100k": 3907.0
         },
         {
           "period": "2012/13",
-          "count": 1900944
+          "count": 1900944,
+          "ratePer100k": 3553.0
         },
         {
           "period": "2013/14",
-          "count": 1845169
+          "count": 1845169,
+          "ratePer100k": 3422.0
         },
         {
           "period": "2014/15",
-          "count": 1750607
+          "count": 1750607,
+          "ratePer100k": 3220.0
         },
         {
           "period": "2015/16",
-          "count": 1762965
+          "count": 1762965,
+          "ratePer100k": 3217.0
         },
         {
           "period": "2016/17",
-          "count": 1881346
+          "count": 1881346,
+          "ratePer100k": 3403.0
         },
         {
           "period": "2017/18",
-          "count": 2012544
+          "count": 2012544,
+          "ratePer100k": 3618.0
         },
         {
           "period": "2018/19",
-          "count": 2013652
+          "count": 2013652,
+          "ratePer100k": 3601.0
         },
         {
           "period": "2019/20",
-          "count": 1928382
+          "count": 1928382,
+          "ratePer100k": 3429.0
         },
         {
           "period": "2020/21",
-          "count": 1301442
+          "count": 1301442,
+          "ratePer100k": 2311.0
         },
         {
           "period": "2021/22",
-          "count": 1496032
+          "count": 1496032,
+          "ratePer100k": 2645.0
         },
         {
           "period": "2022/23",
-          "count": 1722692
+          "count": 1722692,
+          "ratePer100k": 3015.0
         },
         {
           "period": "2023/24",
-          "count": 1780486
+          "count": 1780486,
+          "ratePer100k": 3073.0
         },
         {
           "period": "2024/25",
-          "count": 1777970
+          "count": 1777970,
+          "ratePer100k": 3033.0
         }
       ]
     },
@@ -686,95 +847,118 @@
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 1114472
+          "count": 1114472,
+          "ratePer100k": 2243.0
         },
         {
           "period": "2003/04",
-          "count": 1209912
+          "count": 1209912,
+          "ratePer100k": 2423.0
         },
         {
           "period": "2004/05",
-          "count": 1187477
+          "count": 1187477,
+          "ratePer100k": 2366.0
         },
         {
           "period": "2005/06",
-          "count": 1173848
+          "count": 1173848,
+          "ratePer100k": 2320.0
         },
         {
           "period": "2006/07",
-          "count": 1177151
+          "count": 1177151,
+          "ratePer100k": 2310.0
         },
         {
           "period": "2007/08",
-          "count": 1030038
+          "count": 1030038,
+          "ratePer100k": 2005.0
         },
         {
           "period": "2008/09",
-          "count": 930327
+          "count": 930327,
+          "ratePer100k": 1795.0
         },
         {
           "period": "2009/10",
-          "count": 800645
+          "count": 800645,
+          "ratePer100k": 1534.0
         },
         {
           "period": "2010/11",
-          "count": 695084
+          "count": 695084,
+          "ratePer100k": 1320.0
         },
         {
           "period": "2011/12",
-          "count": 626008
+          "count": 626008,
+          "ratePer100k": 1179.0
         },
         {
           "period": "2012/13",
-          "count": 529712
+          "count": 529712,
+          "ratePer100k": 990.0
         },
         {
           "period": "2013/14",
-          "count": 506012
+          "count": 506012,
+          "ratePer100k": 938.0
         },
         {
           "period": "2014/15",
-          "count": 503259
+          "count": 503259,
+          "ratePer100k": 926.0
         },
         {
           "period": "2015/16",
-          "count": 540819
+          "count": 540819,
+          "ratePer100k": 987.0
         },
         {
           "period": "2016/17",
-          "count": 565080
+          "count": 565080,
+          "ratePer100k": 1022.0
         },
         {
           "period": "2017/18",
-          "count": 590993
+          "count": 590993,
+          "ratePer100k": 1063.0
         },
         {
           "period": "2018/19",
-          "count": 573227
+          "count": 573227,
+          "ratePer100k": 1025.0
         },
         {
           "period": "2019/20",
-          "count": 560476
+          "count": 560476,
+          "ratePer100k": 997.0
         },
         {
           "period": "2020/21",
-          "count": 480450
+          "count": 480450,
+          "ratePer100k": 853.0
         },
         {
           "period": "2021/22",
-          "count": 534067
+          "count": 534067,
+          "ratePer100k": 944.0
         },
         {
           "period": "2022/23",
-          "count": 530384
+          "count": 530384,
+          "ratePer100k": 928.0
         },
         {
           "period": "2023/24",
-          "count": 496473
+          "count": 496473,
+          "ratePer100k": 857.0
         },
         {
           "period": "2024/25",
-          "count": 463151
+          "count": 463151,
+          "ratePer100k": 790.0
         }
       ]
     },
@@ -783,95 +967,118 @@
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 143320
+          "count": 143320,
+          "ratePer100k": 288.0
         },
         {
           "period": "2003/04",
-          "count": 143511
+          "count": 143511,
+          "ratePer100k": 287.0
         },
         {
           "period": "2004/05",
-          "count": 145837
+          "count": 145837,
+          "ratePer100k": 291.0
         },
         {
           "period": "2005/06",
-          "count": 178479
+          "count": 178479,
+          "ratePer100k": 353.0
         },
         {
           "period": "2006/07",
-          "count": 194233
+          "count": 194233,
+          "ratePer100k": 381.0
         },
         {
           "period": "2007/08",
-          "count": 229913
+          "count": 229913,
+          "ratePer100k": 447.0
         },
         {
           "period": "2008/09",
-          "count": 243536
+          "count": 243536,
+          "ratePer100k": 470.0
         },
         {
           "period": "2009/10",
-          "count": 235584
+          "count": 235584,
+          "ratePer100k": 451.0
         },
         {
           "period": "2010/11",
-          "count": 232922
+          "count": 232922,
+          "ratePer100k": 442.0
         },
         {
           "period": "2011/12",
-          "count": 229099
+          "count": 229099,
+          "ratePer100k": 431.0
         },
         {
           "period": "2012/13",
-          "count": 208003
+          "count": 208003,
+          "ratePer100k": 389.0
         },
         {
           "period": "2013/14",
-          "count": 198216
+          "count": 198216,
+          "ratePer100k": 368.0
         },
         {
           "period": "2014/15",
-          "count": 170689
+          "count": 170689,
+          "ratePer100k": 314.0
         },
         {
           "period": "2015/16",
-          "count": 149726
+          "count": 149726,
+          "ratePer100k": 273.0
         },
         {
           "period": "2016/17",
-          "count": 139222
+          "count": 139222,
+          "ratePer100k": 252.0
         },
         {
           "period": "2017/18",
-          "count": 138521
+          "count": 138521,
+          "ratePer100k": 249.0
         },
         {
           "period": "2018/19",
-          "count": 154378
+          "count": 154378,
+          "ratePer100k": 276.0
         },
         {
           "period": "2019/20",
-          "count": 183908
+          "count": 183908,
+          "ratePer100k": 327.0
         },
         {
           "period": "2020/21",
-          "count": 211131
+          "count": 211131,
+          "ratePer100k": 375.0
         },
         {
           "period": "2021/22",
-          "count": 179446
+          "count": 179446,
+          "ratePer100k": 317.0
         },
         {
           "period": "2022/23",
-          "count": 179847
+          "count": 179847,
+          "ratePer100k": 315.0
         },
         {
           "period": "2023/24",
-          "count": 182585
+          "count": 182585,
+          "ratePer100k": 315.0
         },
         {
           "period": "2024/25",
-          "count": 205065
+          "count": 205065,
+          "ratePer100k": 350.0
         }
       ]
     },
@@ -880,95 +1087,118 @@
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 129517
+          "count": 129517,
+          "ratePer100k": 261.0
         },
         {
           "period": "2003/04",
-          "count": 158178
+          "count": 158178,
+          "ratePer100k": 317.0
         },
         {
           "period": "2004/05",
-          "count": 191872
+          "count": 191872,
+          "ratePer100k": 382.0
         },
         {
           "period": "2005/06",
-          "count": 222581
+          "count": 222581,
+          "ratePer100k": 440.0
         },
         {
           "period": "2006/07",
-          "count": 236661
+          "count": 236661,
+          "ratePer100k": 464.0
         },
         {
           "period": "2007/08",
-          "count": 218380
+          "count": 218380,
+          "ratePer100k": 425.0
         },
         {
           "period": "2008/09",
-          "count": 204289
+          "count": 204289,
+          "ratePer100k": 394.0
         },
         {
           "period": "2009/10",
-          "count": 188254
+          "count": 188254,
+          "ratePer100k": 361.0
         },
         {
           "period": "2010/11",
-          "count": 173081
+          "count": 173081,
+          "ratePer100k": 329.0
         },
         {
           "period": "2011/12",
-          "count": 150858
+          "count": 150858,
+          "ratePer100k": 284.0
         },
         {
           "period": "2012/13",
-          "count": 132205
+          "count": 132205,
+          "ratePer100k": 247.0
         },
         {
           "period": "2013/14",
-          "count": 134400
+          "count": 134400,
+          "ratePer100k": 249.0
         },
         {
           "period": "2014/15",
-          "count": 159217
+          "count": 159217,
+          "ratePer100k": 293.0
         },
         {
           "period": "2015/16",
-          "count": 205248
+          "count": 205248,
+          "ratePer100k": 374.0
         },
         {
           "period": "2016/17",
-          "count": 284577
+          "count": 284577,
+          "ratePer100k": 515.0
         },
         {
           "period": "2017/18",
-          "count": 386664
+          "count": 386664,
+          "ratePer100k": 695.0
         },
         {
           "period": "2018/19",
-          "count": 449357
+          "count": 449357,
+          "ratePer100k": 804.0
         },
         {
           "period": "2019/20",
-          "count": 460550
+          "count": 460550,
+          "ratePer100k": 819.0
         },
         {
           "period": "2020/21",
-          "count": 483298
+          "count": 483298,
+          "ratePer100k": 858.0
         },
         {
           "period": "2021/22",
-          "count": 598767
+          "count": 598767,
+          "ratePer100k": 1059.0
         },
         {
           "period": "2022/23",
-          "count": 590416
+          "count": 590416,
+          "ratePer100k": 1033.0
         },
         {
           "period": "2023/24",
-          "count": 486526
+          "count": 486526,
+          "ratePer100k": 840.0
         },
         {
           "period": "2024/25",
-          "count": 453411
+          "count": 453411,
+          "ratePer100k": 773.0
         }
       ]
     },
@@ -977,95 +1207,118 @@
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 5791277
+          "count": 5791277,
+          "ratePer100k": 11657.0
         },
         {
           "period": "2003/04",
-          "count": 5843549
+          "count": 5843549,
+          "ratePer100k": 11705.0
         },
         {
           "period": "2004/05",
-          "count": 5476771
+          "count": 5476771,
+          "ratePer100k": 10911.0
         },
         {
           "period": "2005/06",
-          "count": 5425691
+          "count": 5425691,
+          "ratePer100k": 10721.0
         },
         {
           "period": "2006/07",
-          "count": 5322377
+          "count": 5322377,
+          "ratePer100k": 10443.0
         },
         {
           "period": "2007/08",
-          "count": 4881140
+          "count": 4881140,
+          "ratePer100k": 9500.0
         },
         {
           "period": "2008/09",
-          "count": 4630383
+          "count": 4630383,
+          "ratePer100k": 8936.0
         },
         {
           "period": "2009/10",
-          "count": 4265036
+          "count": 4265036,
+          "ratePer100k": 8171.0
         },
         {
           "period": "2010/11",
-          "count": 4078475
+          "count": 4078475,
+          "ratePer100k": 7747.0
         },
         {
           "period": "2011/12",
-          "count": 3903581
+          "count": 3903581,
+          "ratePer100k": 7350.0
         },
         {
           "period": "2012/13",
-          "count": 3553168
+          "count": 3553168,
+          "ratePer100k": 6641.0
         },
         {
           "period": "2013/14",
-          "count": 3506545
+          "count": 3506545,
+          "ratePer100k": 6503.0
         },
         {
           "period": "2014/15",
-          "count": 3574552
+          "count": 3574552,
+          "ratePer100k": 6574.0
         },
         {
           "period": "2015/16",
-          "count": 3898668
+          "count": 3898668,
+          "ratePer100k": 7113.0
         },
         {
           "period": "2016/17",
-          "count": 4321702
+          "count": 4321702,
+          "ratePer100k": 7817.0
         },
         {
           "period": "2017/18",
-          "count": 4890425
+          "count": 4890425,
+          "ratePer100k": 8793.0
         },
         {
           "period": "2018/19",
-          "count": 5266170
+          "count": 5266170,
+          "ratePer100k": 9417.0
         },
         {
           "period": "2019/20",
-          "count": 5305095
+          "count": 5305095,
+          "ratePer100k": 9435.0
         },
         {
           "period": "2020/21",
-          "count": 4615925
+          "count": 4615925,
+          "ratePer100k": 8195.0
         },
         {
           "period": "2021/22",
-          "count": 5324853
+          "count": 5324853,
+          "ratePer100k": 9415.0
         },
         {
           "period": "2022/23",
-          "count": 5578549
+          "count": 5578549,
+          "ratePer100k": 9762.0
         },
         {
           "period": "2023/24",
-          "count": 5402551
+          "count": 5402551,
+          "ratePer100k": 9326.0
         },
         {
           "period": "2024/25",
-          "count": 5307003
+          "count": 5307003,
+          "ratePer100k": 9053.0
         }
       ]
     },
@@ -1074,95 +1327,118 @@
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 183683
+          "count": 183683,
+          "ratePer100k": 370.0
         },
         {
           "period": "2003/04",
-          "count": 170210
+          "count": 170210,
+          "ratePer100k": 341.0
         },
         {
           "period": "2004/05",
-          "count": 160740
+          "count": 160740,
+          "ratePer100k": 320.0
         },
         {
           "period": "2005/06",
-          "count": 129481
+          "count": 129481,
+          "ratePer100k": 256.0
         },
         {
           "period": "2006/07",
-          "count": 105181
+          "count": 105181,
+          "ratePer100k": 206.0
         },
         {
           "period": "2007/08",
-          "count": 71137
+          "count": 71137,
+          "ratePer100k": 138.0
         },
         {
           "period": "2008/09",
-          "count": 72314
+          "count": 72314,
+          "ratePer100k": 140.0
         },
         {
           "period": "2009/10",
-          "count": 73259
+          "count": 73259,
+          "ratePer100k": 140.0
         },
         {
           "period": "2010/11",
-          "count": 72441
+          "count": 72441,
+          "ratePer100k": 138.0
         },
         {
           "period": "2011/12",
-          "count": 476403
+          "count": 476403,
+          "ratePer100k": 897.0
         },
         {
           "period": "2012/13",
-          "count": 510403
+          "count": 510403,
+          "ratePer100k": 954.0
         },
         {
           "period": "2013/14",
-          "count": 521918
+          "count": 521918,
+          "ratePer100k": 968.0
         },
         {
           "period": "2014/15",
-          "count": 593067
+          "count": 593067,
+          "ratePer100k": 1091.0
         },
         {
           "period": "2015/16",
-          "count": 619152
+          "count": 619152,
+          "ratePer100k": 1130.0
         },
         {
           "period": "2016/17",
-          "count": 652362
+          "count": 652362,
+          "ratePer100k": 1180.0
         },
         {
           "period": "2017/18",
-          "count": 638358
+          "count": 638358,
+          "ratePer100k": 1148.0
         },
         {
           "period": "2018/19",
-          "count": 693421
+          "count": 693421,
+          "ratePer100k": 1240.0
         },
         {
           "period": "2019/20",
-          "count": 774537
+          "count": 774537,
+          "ratePer100k": 1377.0
         },
         {
           "period": "2020/21",
-          "count": 828365
+          "count": 828365,
+          "ratePer100k": 1471.0
         },
         {
           "period": "2021/22",
-          "count": 1012436
+          "count": 1012436,
+          "ratePer100k": 1790.0
         },
         {
           "period": "2022/23",
-          "count": 1158550
+          "count": 1158550,
+          "ratePer100k": 2027.0
         },
         {
           "period": "2023/24",
-          "count": 1255471
+          "count": 1255471,
+          "ratePer100k": 2167.0
         },
         {
           "period": "2024/25",
-          "count": 1281354
+          "count": 1281354,
+          "ratePer100k": 2186.0
         }
       ]
     },
@@ -1171,95 +1447,118 @@
       "timeSeries": [
         {
           "period": "2002/03",
-          "count": 5974960
+          "count": 5974960,
+          "ratePer100k": 12027.0
         },
         {
           "period": "2003/04",
-          "count": 6013759
+          "count": 6013759,
+          "ratePer100k": 12045.0
         },
         {
           "period": "2004/05",
-          "count": 5637511
+          "count": 5637511,
+          "ratePer100k": 11231.0
         },
         {
           "period": "2005/06",
-          "count": 5555172
+          "count": 5555172,
+          "ratePer100k": 10977.0
         },
         {
           "period": "2006/07",
-          "count": 5427558
+          "count": 5427558,
+          "ratePer100k": 10650.0
         },
         {
           "period": "2007/08",
-          "count": 4952277
+          "count": 4952277,
+          "ratePer100k": 9638.0
         },
         {
           "period": "2008/09",
-          "count": 4702697
+          "count": 4702697,
+          "ratePer100k": 9076.0
         },
         {
           "period": "2009/10",
-          "count": 4338295
+          "count": 4338295,
+          "ratePer100k": 8311.0
         },
         {
           "period": "2010/11",
-          "count": 4150916
+          "count": 4150916,
+          "ratePer100k": 7885.0
         },
         {
           "period": "2011/12",
-          "count": 4379984
+          "count": 4379984,
+          "ratePer100k": 8247.0
         },
         {
           "period": "2012/13",
-          "count": 4063571
+          "count": 4063571,
+          "ratePer100k": 7594.0
         },
         {
           "period": "2013/14",
-          "count": 4028463
+          "count": 4028463,
+          "ratePer100k": 7471.0
         },
         {
           "period": "2014/15",
-          "count": 4167619
+          "count": 4167619,
+          "ratePer100k": 7665.0
         },
         {
           "period": "2015/16",
-          "count": 4517820
+          "count": 4517820,
+          "ratePer100k": 8243.0
         },
         {
           "period": "2016/17",
-          "count": 4974064
+          "count": 4974064,
+          "ratePer100k": 8996.0
         },
         {
           "period": "2017/18",
-          "count": 5528783
+          "count": 5528783,
+          "ratePer100k": 9940.0
         },
         {
           "period": "2018/19",
-          "count": 5959591
+          "count": 5959591,
+          "ratePer100k": 10656.0
         },
         {
           "period": "2019/20",
-          "count": 6079632
+          "count": 6079632,
+          "ratePer100k": 10812.0
         },
         {
           "period": "2020/21",
-          "count": 5444290
+          "count": 5444290,
+          "ratePer100k": 9666.0
         },
         {
           "period": "2021/22",
-          "count": 6337289
+          "count": 6337289,
+          "ratePer100k": 11206.0
         },
         {
           "period": "2022/23",
-          "count": 6737099
+          "count": 6737099,
+          "ratePer100k": 11790.0
         },
         {
           "period": "2023/24",
-          "count": 6658022
+          "count": 6658022,
+          "ratePer100k": 11493.0
         },
         {
           "period": "2024/25",
-          "count": 6588357
+          "count": 6588357,
+          "ratePer100k": 11239.0
         }
       ]
     }

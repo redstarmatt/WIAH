@@ -6,6 +6,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import RegionalMap from '@/components/charts/RegionalMap';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
@@ -90,6 +91,14 @@ interface GradData {
   latestTaxYear: string;
 }
 
+interface LaAbsencePoint {
+  code: string;
+  name: string;
+  persistentAbsencePct: number;
+  overallAbsencePct: number;
+  year: string;
+}
+
 interface EducationData {
   national: {
     absence: { timeSeries: AbsencePoint[] };
@@ -102,8 +111,19 @@ interface EducationData {
       attainment8: Attainment8Point[];
     };
   };
+  regional: {
+    byLocalAuthority: {
+      absence: LaAbsencePoint[];
+    };
+  };
   metadata: {
     sources: { name: string; dataset: string; url: string; frequency: string }[];
+  };
+}
+
+interface DemographicsData {
+  population: {
+    england: { year: number; population: number }[];
   };
 }
 
@@ -217,9 +237,14 @@ export default function EducationPage() {
   const [newSchoolFundingData, setNewSchoolFundingData] = useState<NewSchoolFundingData | null>(null);
   const [camhsData, setCamhsData] = useState<CamhsData | null>(null);
   const [ofstedData, setOfstedData] = useState<OfstedData | null>(null);
+  const [demogData, setDemogData] = useState<DemographicsData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
+    fetch('/data/demographics/demographics.json')
+      .then(r => r.json())
+      .then(setDemogData)
+      .catch(console.error);
     fetch('/data/education/education.json')
       .then(r => r.json())
       .then(setData)
@@ -292,6 +317,26 @@ export default function EducationPage() {
           date: calendarYearToDate(d.year),
           value: d.total,
         })),
+      }]
+    : [];
+
+  // 2b. EHCP rate per 10,000 population
+  const ehcpRateSeries: Series[] = (data && demogData)
+    ? [{
+        id: 'ehcp-rate',
+        label: 'EHCPs per 10,000 population',
+        colour: '#E63946',
+        data: data.national.send.ehcpCaseload
+          .map(d => {
+            const popEntry = demogData.population.england.find(p => p.year === d.year)
+              ?? demogData.population.england.find(p => p.year === d.year - 1);
+            if (!popEntry) return null;
+            return {
+              date: calendarYearToDate(d.year),
+              value: Math.round((d.total / popEntry.population) * 10_000 * 10) / 10,
+            };
+          })
+          .filter((p): p is { date: Date; value: number } => p !== null),
       }]
     : [];
 
@@ -673,6 +718,30 @@ export default function EducationPage() {
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
         )}
 
+        {/* LA persistent absence map */}
+        {data && (data.regional?.byLocalAuthority?.absence ?? []).length > 0 && (
+          <ScrollReveal>
+            <RegionalMap
+              title="Persistent absence by local authority, 2023/24"
+              subtitle="Percentage of pupils missing 10% or more of sessions. Knowsley: 26.9%. City of London: 8.4%."
+              geoUrl="/geo/local-authorities.geojson"
+              data={(data.regional.byLocalAuthority.absence).map(la => ({
+                name: la.name,
+                value: la.persistentAbsencePct,
+              }))}
+              nameField="LAD23NM"
+              valueLabel="% persistent absence"
+              colourDirection="low-is-good"
+              source={{
+                name: 'Department for Education',
+                dataset: 'Pupil absence in schools in England, 2023/24',
+                url: 'https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england',
+                frequency: 'annual',
+              }}
+            />
+          </ScrollReveal>
+        )}
+
         </div>{/* end sec-absence */}
 
         {/* Chart 2: EHCP caseload growth */}
@@ -686,6 +755,24 @@ export default function EducationPage() {
             source={{
               name: 'Department for Education',
               dataset: 'Education, health and care plans, SEN2 return',
+              frequency: 'annual',
+              url: 'https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 2b: EHCP rate per 10,000 population */}
+        {ehcpRateSeries.length > 0 ? (
+          <LineChart
+            title="EHCP rate per 10,000 population, 2015–2025"
+            subtitle="Total maintained EHCPs as a rate per 10,000 people in England. Controls for population growth — the rise is driven by need, not demographics."
+            series={ehcpRateSeries}
+            yLabel="Per 10,000 people"
+            source={{
+              name: 'DfE / ONS',
+              dataset: 'SEN2 return; ONS Mid-Year Population Estimates',
               frequency: 'annual',
               url: 'https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans',
             }}

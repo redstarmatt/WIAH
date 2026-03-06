@@ -43,6 +43,7 @@ interface HousingData {
   regional: {
     affordability: Record<string, AffordabilityPoint[]>;
     rentAffordability: Record<string, RentAffPoint[]>;
+    byLocalAuthority: { code: string; name: string; latestRatio: number; latestYear: number }[];
   };
   metadata: {
     sources: { name: string; dataset: string; url: string; frequency: string }[];
@@ -691,23 +692,20 @@ export default function HousingPage() {
             <div className="mb-16 p-6 bg-wiah-light rounded-lg">
               <h2 className="text-lg font-bold text-wiah-black mb-2">How affordable is your area?</h2>
               <p className="text-sm text-wiah-mid mb-4">
-                Enter your postcode to see your region&apos;s house price to earnings ratio and rent affordability.
+                Enter your postcode to see your local authority&apos;s house price to earnings ratio and your region&apos;s rent affordability.
               </p>
               <AreaLookup
                 metrics={[
                   {
-                    label: 'Your region — house price to earnings',
-                    apiField: 'region',
-                    data: Object.entries(data.regional.affordability)
-                      .filter(([name]) => name !== 'England' && name !== 'Wales')
-                      .map(([name, ts]) => ({
-                        name,
-                        value: ts.at(-1)?.ratio ?? 0,
-                      }))
-                      .filter(d => d.value > 0),
+                    label: 'Your local authority — house price to earnings ratio, 2024',
+                    apiField: 'admin_district',
+                    data: (data.regional.byLocalAuthority ?? []).map(la => ({
+                      name: la.name,
+                      value: la.latestRatio,
+                    })),
                     nationalValue: latestAff?.ratio,
                     unit: '×',
-                    thresholds: { bad: 8, warning: 6 },
+                    thresholds: { bad: 10, warning: 7 },
                   },
                   {
                     label: 'Your region — rent as % of income',
@@ -933,21 +931,18 @@ export default function HousingPage() {
           </section>
         )}
 
-        {/* Regional affordability map */}
-        {data && Object.keys(data.regional.affordability).length > 0 && (
+        {/* LA-level affordability map */}
+        {data && (data.regional.byLocalAuthority ?? []).length > 0 && (
           <ScrollReveal>
             <RegionalMap
-              title="Housing affordability by region, 2024"
-              subtitle="Median house price to median earnings ratio. Higher = less affordable."
-              geoUrl="/geo/regions.geojson"
-              data={Object.entries(data.regional.affordability)
-                .filter(([name]) => name !== 'England' && name !== 'Wales')
-                .map(([name, ts]) => ({
-                  name,
-                  value: ts.at(-1)?.ratio ?? 0,
-                }))
-                .filter(d => d.value > 0)}
-              nameField="RGN24NM"
+              title="Housing affordability by local authority, 2024"
+              subtitle="Median house price to median earnings ratio. Higher = less affordable. Kensington & Chelsea: 27×. Blaenau Gwent: 3.75×."
+              geoUrl="/geo/local-authorities.geojson"
+              data={(data.regional.byLocalAuthority ?? []).map(la => ({
+                name: la.name,
+                value: la.latestRatio,
+              }))}
+              nameField="LAD23NM"
               valueLabel="× earnings"
               colourDirection="low-is-good"
               source={{

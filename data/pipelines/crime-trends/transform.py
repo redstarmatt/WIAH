@@ -245,6 +245,29 @@ def main():
     else:
         log.warning("  CSEW extraction failed — omitting from output")
 
+    # ── Population normalisation ─────────────────────────────────────────────
+    # Load England population from demographics pipeline output
+    demo_path = ROOT / "site" / "public" / "data" / "demographics" / "demographics.json"
+    pop_lookup: dict[int, int] = {}
+    if demo_path.exists():
+        demo = json.loads(demo_path.read_text())
+        for entry in demo.get("population", {}).get("england", []):
+            pop_lookup[entry["year"]] = entry["population"]
+        log.info("Loaded population data: %d years", len(pop_lookup))
+    else:
+        log.warning("Demographics JSON not found — skipping ratePer100k")
+
+    if pop_lookup:
+        for key, series_obj in crime_data.items():
+            for point in series_obj["timeSeries"]:
+                # '2002/03' → 2002; 'YE Sep 2003' is already skipped above
+                period = point["period"]
+                start_year = int(period.split("/")[0])
+                pop = pop_lookup.get(start_year) or pop_lookup.get(start_year - 1)
+                if pop:
+                    point["ratePer100k"] = round(point["count"] / (pop / 100_000), 0)
+        log.info("Added ratePer100k to %d crime categories", len(crime_data))
+
     # Build output
     output = {
         "topic": "crime-trends",

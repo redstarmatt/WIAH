@@ -1,6 +1,6 @@
 {
   "topic": "education",
-  "lastUpdated": "2026-03-02",
+  "lastUpdated": "2026-03-06",
   "national": {
     "absence": {
       "timeSeries": [
@@ -303,7 +303,1083 @@
       ]
     }
   },
-  "regional": {},
+  "regional": {
+    "byLocalAuthority": {
+      "absence": [
+        {
+          "code": "E09000002",
+          "name": "Barking and Dagenham",
+          "persistentAbsencePct": 18.82,
+          "overallAbsencePct": 6.35,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000003",
+          "name": "Barnet",
+          "persistentAbsencePct": 16.28,
+          "overallAbsencePct": 6.07,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000016",
+          "name": "Barnsley",
+          "persistentAbsencePct": 22.01,
+          "overallAbsencePct": 7.76,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000022",
+          "name": "Bath and North East Somerset",
+          "persistentAbsencePct": 18.28,
+          "overallAbsencePct": 6.93,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000055",
+          "name": "Bedford",
+          "persistentAbsencePct": 18.35,
+          "overallAbsencePct": 6.58,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000004",
+          "name": "Bexley",
+          "persistentAbsencePct": 17.42,
+          "overallAbsencePct": 6.33,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000025",
+          "name": "Birmingham",
+          "persistentAbsencePct": 23.3,
+          "overallAbsencePct": 7.56,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000008",
+          "name": "Blackburn with Darwen",
+          "persistentAbsencePct": 21.66,
+          "overallAbsencePct": 7.2,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000009",
+          "name": "Blackpool",
+          "persistentAbsencePct": 25.65,
+          "overallAbsencePct": 8.08,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000001",
+          "name": "Bolton",
+          "persistentAbsencePct": 18.44,
+          "overallAbsencePct": 6.7,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000058",
+          "name": "Bournemouth, Christchurch and Poole",
+          "persistentAbsencePct": 18.78,
+          "overallAbsencePct": 7.02,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000036",
+          "name": "Bracknell Forest",
+          "persistentAbsencePct": 16.19,
+          "overallAbsencePct": 6.36,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000032",
+          "name": "Bradford",
+          "persistentAbsencePct": 25.59,
+          "overallAbsencePct": 8.59,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000005",
+          "name": "Brent",
+          "persistentAbsencePct": 17.55,
+          "overallAbsencePct": 6.06,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000043",
+          "name": "Brighton and Hove",
+          "persistentAbsencePct": 22.33,
+          "overallAbsencePct": 8.07,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000023",
+          "name": "Bristol, City of",
+          "persistentAbsencePct": 24.79,
+          "overallAbsencePct": 8.37,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000006",
+          "name": "Bromley",
+          "persistentAbsencePct": 16.46,
+          "overallAbsencePct": 6.31,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000060",
+          "name": "Buckinghamshire",
+          "persistentAbsencePct": 19.79,
+          "overallAbsencePct": 6.96,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000002",
+          "name": "Bury",
+          "persistentAbsencePct": 20.06,
+          "overallAbsencePct": 7.29,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000033",
+          "name": "Calderdale",
+          "persistentAbsencePct": 20.51,
+          "overallAbsencePct": 7.09,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000003",
+          "name": "Cambridgeshire",
+          "persistentAbsencePct": 17.89,
+          "overallAbsencePct": 6.92,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000007",
+          "name": "Camden",
+          "persistentAbsencePct": 22.05,
+          "overallAbsencePct": 7.19,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000056",
+          "name": "Central Bedfordshire",
+          "persistentAbsencePct": 18.66,
+          "overallAbsencePct": 6.85,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000049",
+          "name": "Cheshire East",
+          "persistentAbsencePct": 16.87,
+          "overallAbsencePct": 6.45,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000050",
+          "name": "Cheshire West and Chester",
+          "persistentAbsencePct": 20.05,
+          "overallAbsencePct": 7.3,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000001",
+          "name": "City of London",
+          "persistentAbsencePct": 8.43,
+          "overallAbsencePct": 4.3,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000052",
+          "name": "Cornwall",
+          "persistentAbsencePct": 22.97,
+          "overallAbsencePct": 7.97,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000047",
+          "name": "County Durham",
+          "persistentAbsencePct": 22.88,
+          "overallAbsencePct": 7.85,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000026",
+          "name": "Coventry",
+          "persistentAbsencePct": 21.35,
+          "overallAbsencePct": 7.39,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000008",
+          "name": "Croydon",
+          "persistentAbsencePct": 19.98,
+          "overallAbsencePct": 6.78,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000063",
+          "name": "Cumberland",
+          "persistentAbsencePct": 19.68,
+          "overallAbsencePct": 7.23,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000005",
+          "name": "Darlington",
+          "persistentAbsencePct": 22.16,
+          "overallAbsencePct": 7.4,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000015",
+          "name": "Derby",
+          "persistentAbsencePct": 21.3,
+          "overallAbsencePct": 7.24,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000007",
+          "name": "Derbyshire",
+          "persistentAbsencePct": 18.39,
+          "overallAbsencePct": 7.1,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000008",
+          "name": "Devon",
+          "persistentAbsencePct": 20.46,
+          "overallAbsencePct": 7.68,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000017",
+          "name": "Doncaster",
+          "persistentAbsencePct": 21.18,
+          "overallAbsencePct": 7.32,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000059",
+          "name": "Dorset",
+          "persistentAbsencePct": 21.14,
+          "overallAbsencePct": 7.88,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000027",
+          "name": "Dudley",
+          "persistentAbsencePct": 22.28,
+          "overallAbsencePct": 7.56,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000009",
+          "name": "Ealing",
+          "persistentAbsencePct": 16.98,
+          "overallAbsencePct": 6.14,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000011",
+          "name": "East Riding of Yorkshire",
+          "persistentAbsencePct": 19.34,
+          "overallAbsencePct": 6.93,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000011",
+          "name": "East Sussex",
+          "persistentAbsencePct": 23.15,
+          "overallAbsencePct": 8.17,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000010",
+          "name": "Enfield",
+          "persistentAbsencePct": 19.35,
+          "overallAbsencePct": 6.58,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000012",
+          "name": "Essex",
+          "persistentAbsencePct": 18.87,
+          "overallAbsencePct": 7.0,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000037",
+          "name": "Gateshead",
+          "persistentAbsencePct": 20.49,
+          "overallAbsencePct": 7.66,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000013",
+          "name": "Gloucestershire",
+          "persistentAbsencePct": 19.4,
+          "overallAbsencePct": 7.14,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000011",
+          "name": "Greenwich",
+          "persistentAbsencePct": 17.85,
+          "overallAbsencePct": 6.39,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000012",
+          "name": "Hackney",
+          "persistentAbsencePct": 17.56,
+          "overallAbsencePct": 6.23,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000006",
+          "name": "Halton",
+          "persistentAbsencePct": 23.07,
+          "overallAbsencePct": 7.95,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000013",
+          "name": "Hammersmith and Fulham",
+          "persistentAbsencePct": 19.32,
+          "overallAbsencePct": 6.76,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000014",
+          "name": "Hampshire",
+          "persistentAbsencePct": 17.69,
+          "overallAbsencePct": 6.81,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000014",
+          "name": "Haringey",
+          "persistentAbsencePct": 18.87,
+          "overallAbsencePct": 6.54,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000015",
+          "name": "Harrow",
+          "persistentAbsencePct": 16.96,
+          "overallAbsencePct": 6.02,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000001",
+          "name": "Hartlepool",
+          "persistentAbsencePct": 22.54,
+          "overallAbsencePct": 7.75,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000016",
+          "name": "Havering",
+          "persistentAbsencePct": 16.65,
+          "overallAbsencePct": 6.19,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000019",
+          "name": "Herefordshire, County of",
+          "persistentAbsencePct": 19.18,
+          "overallAbsencePct": 6.91,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000015",
+          "name": "Hertfordshire",
+          "persistentAbsencePct": 18.2,
+          "overallAbsencePct": 6.74,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000017",
+          "name": "Hillingdon",
+          "persistentAbsencePct": 18.84,
+          "overallAbsencePct": 6.74,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000018",
+          "name": "Hounslow",
+          "persistentAbsencePct": 18.49,
+          "overallAbsencePct": 6.44,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000046",
+          "name": "Isle of Wight",
+          "persistentAbsencePct": 22.25,
+          "overallAbsencePct": 7.57,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000053",
+          "name": "Isles of Scilly",
+          "persistentAbsencePct": 14.47,
+          "overallAbsencePct": 6.48,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000019",
+          "name": "Islington",
+          "persistentAbsencePct": 22.1,
+          "overallAbsencePct": 7.41,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000020",
+          "name": "Kensington and Chelsea",
+          "persistentAbsencePct": 19.3,
+          "overallAbsencePct": 6.87,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000016",
+          "name": "Kent",
+          "persistentAbsencePct": 21.36,
+          "overallAbsencePct": 7.4,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000010",
+          "name": "Kingston upon Hull, City of",
+          "persistentAbsencePct": 22.39,
+          "overallAbsencePct": 7.59,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000021",
+          "name": "Kingston upon Thames",
+          "persistentAbsencePct": 15.55,
+          "overallAbsencePct": 5.97,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000034",
+          "name": "Kirklees",
+          "persistentAbsencePct": 20.21,
+          "overallAbsencePct": 7.1,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000011",
+          "name": "Knowsley",
+          "persistentAbsencePct": 26.93,
+          "overallAbsencePct": 8.6,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000022",
+          "name": "Lambeth",
+          "persistentAbsencePct": 19.38,
+          "overallAbsencePct": 6.58,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000017",
+          "name": "Lancashire",
+          "persistentAbsencePct": 19.89,
+          "overallAbsencePct": 7.06,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000035",
+          "name": "Leeds",
+          "persistentAbsencePct": 20.66,
+          "overallAbsencePct": 7.44,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000016",
+          "name": "Leicester",
+          "persistentAbsencePct": 20.47,
+          "overallAbsencePct": 7.11,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000018",
+          "name": "Leicestershire",
+          "persistentAbsencePct": 17.05,
+          "overallAbsencePct": 6.71,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000023",
+          "name": "Lewisham",
+          "persistentAbsencePct": 17.34,
+          "overallAbsencePct": 6.02,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000019",
+          "name": "Lincolnshire",
+          "persistentAbsencePct": 20.79,
+          "overallAbsencePct": 7.36,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000012",
+          "name": "Liverpool",
+          "persistentAbsencePct": 23.16,
+          "overallAbsencePct": 8.07,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000032",
+          "name": "Luton",
+          "persistentAbsencePct": 18.93,
+          "overallAbsencePct": 6.53,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000003",
+          "name": "Manchester",
+          "persistentAbsencePct": 20.48,
+          "overallAbsencePct": 7.14,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000035",
+          "name": "Medway",
+          "persistentAbsencePct": 20.91,
+          "overallAbsencePct": 7.0,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000024",
+          "name": "Merton",
+          "persistentAbsencePct": 16.05,
+          "overallAbsencePct": 6.04,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000002",
+          "name": "Middlesbrough",
+          "persistentAbsencePct": 25.35,
+          "overallAbsencePct": 8.46,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000042",
+          "name": "Milton Keynes",
+          "persistentAbsencePct": 18.05,
+          "overallAbsencePct": 6.73,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000021",
+          "name": "Newcastle upon Tyne",
+          "persistentAbsencePct": 22.44,
+          "overallAbsencePct": 8.03,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000025",
+          "name": "Newham",
+          "persistentAbsencePct": 19.84,
+          "overallAbsencePct": 6.56,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000020",
+          "name": "Norfolk",
+          "persistentAbsencePct": 21.38,
+          "overallAbsencePct": 7.63,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000012",
+          "name": "North East Lincolnshire",
+          "persistentAbsencePct": 22.2,
+          "overallAbsencePct": 7.66,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000013",
+          "name": "North Lincolnshire",
+          "persistentAbsencePct": 20.55,
+          "overallAbsencePct": 7.18,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000061",
+          "name": "North Northamptonshire",
+          "persistentAbsencePct": 20.04,
+          "overallAbsencePct": 7.29,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000024",
+          "name": "North Somerset",
+          "persistentAbsencePct": 20.32,
+          "overallAbsencePct": 7.51,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000022",
+          "name": "North Tyneside",
+          "persistentAbsencePct": 19.25,
+          "overallAbsencePct": 7.04,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000065",
+          "name": "North Yorkshire",
+          "persistentAbsencePct": 19.79,
+          "overallAbsencePct": 7.35,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000057",
+          "name": "Northumberland",
+          "persistentAbsencePct": 20.2,
+          "overallAbsencePct": 7.65,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000018",
+          "name": "Nottingham",
+          "persistentAbsencePct": 22.25,
+          "overallAbsencePct": 7.55,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000024",
+          "name": "Nottinghamshire",
+          "persistentAbsencePct": 18.64,
+          "overallAbsencePct": 6.99,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000004",
+          "name": "Oldham",
+          "persistentAbsencePct": 21.85,
+          "overallAbsencePct": 7.4,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000025",
+          "name": "Oxfordshire",
+          "persistentAbsencePct": 19.16,
+          "overallAbsencePct": 7.34,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000031",
+          "name": "Peterborough",
+          "persistentAbsencePct": 19.9,
+          "overallAbsencePct": 6.96,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000026",
+          "name": "Plymouth",
+          "persistentAbsencePct": 23.57,
+          "overallAbsencePct": 8.31,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000044",
+          "name": "Portsmouth",
+          "persistentAbsencePct": 20.56,
+          "overallAbsencePct": 7.88,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000038",
+          "name": "Reading",
+          "persistentAbsencePct": 20.72,
+          "overallAbsencePct": 7.04,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000026",
+          "name": "Redbridge",
+          "persistentAbsencePct": 17.0,
+          "overallAbsencePct": 6.11,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000003",
+          "name": "Redcar and Cleveland",
+          "persistentAbsencePct": 21.28,
+          "overallAbsencePct": 7.64,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000027",
+          "name": "Richmond upon Thames",
+          "persistentAbsencePct": 13.57,
+          "overallAbsencePct": 5.57,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000005",
+          "name": "Rochdale",
+          "persistentAbsencePct": 23.54,
+          "overallAbsencePct": 7.81,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000018",
+          "name": "Rotherham",
+          "persistentAbsencePct": 22.38,
+          "overallAbsencePct": 7.74,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000017",
+          "name": "Rutland",
+          "persistentAbsencePct": 15.69,
+          "overallAbsencePct": 6.15,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000006",
+          "name": "Salford",
+          "persistentAbsencePct": 23.16,
+          "overallAbsencePct": 7.66,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000028",
+          "name": "Sandwell",
+          "persistentAbsencePct": 21.5,
+          "overallAbsencePct": 7.32,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000014",
+          "name": "Sefton",
+          "persistentAbsencePct": 23.31,
+          "overallAbsencePct": 7.92,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000019",
+          "name": "Sheffield",
+          "persistentAbsencePct": 22.67,
+          "overallAbsencePct": 7.95,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000051",
+          "name": "Shropshire",
+          "persistentAbsencePct": 19.88,
+          "overallAbsencePct": 7.15,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000039",
+          "name": "Slough",
+          "persistentAbsencePct": 19.1,
+          "overallAbsencePct": 6.64,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000029",
+          "name": "Solihull",
+          "persistentAbsencePct": 20.22,
+          "overallAbsencePct": 7.31,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000066",
+          "name": "Somerset",
+          "persistentAbsencePct": 21.69,
+          "overallAbsencePct": 8.03,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000025",
+          "name": "South Gloucestershire",
+          "persistentAbsencePct": 18.98,
+          "overallAbsencePct": 7.15,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000023",
+          "name": "South Tyneside",
+          "persistentAbsencePct": 21.93,
+          "overallAbsencePct": 7.63,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000045",
+          "name": "Southampton",
+          "persistentAbsencePct": 22.51,
+          "overallAbsencePct": 8.05,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000033",
+          "name": "Southend-on-Sea",
+          "persistentAbsencePct": 18.41,
+          "overallAbsencePct": 6.7,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000028",
+          "name": "Southwark",
+          "persistentAbsencePct": 16.92,
+          "overallAbsencePct": 6.09,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000013",
+          "name": "St. Helens",
+          "persistentAbsencePct": 20.53,
+          "overallAbsencePct": 7.58,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000028",
+          "name": "Staffordshire",
+          "persistentAbsencePct": 18.54,
+          "overallAbsencePct": 6.81,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000007",
+          "name": "Stockport",
+          "persistentAbsencePct": 18.5,
+          "overallAbsencePct": 6.84,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000004",
+          "name": "Stockton-on-Tees",
+          "persistentAbsencePct": 21.45,
+          "overallAbsencePct": 7.55,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000021",
+          "name": "Stoke-on-Trent",
+          "persistentAbsencePct": 22.18,
+          "overallAbsencePct": 7.71,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000029",
+          "name": "Suffolk",
+          "persistentAbsencePct": 20.63,
+          "overallAbsencePct": 7.51,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000024",
+          "name": "Sunderland",
+          "persistentAbsencePct": 24.05,
+          "overallAbsencePct": 8.22,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000030",
+          "name": "Surrey",
+          "persistentAbsencePct": 16.8,
+          "overallAbsencePct": 6.52,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000029",
+          "name": "Sutton",
+          "persistentAbsencePct": 15.72,
+          "overallAbsencePct": 6.09,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000030",
+          "name": "Swindon",
+          "persistentAbsencePct": 19.07,
+          "overallAbsencePct": 7.05,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000008",
+          "name": "Tameside",
+          "persistentAbsencePct": 18.95,
+          "overallAbsencePct": 7.14,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000020",
+          "name": "Telford and Wrekin",
+          "persistentAbsencePct": 20.38,
+          "overallAbsencePct": 6.73,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000034",
+          "name": "Thurrock",
+          "persistentAbsencePct": 17.53,
+          "overallAbsencePct": 6.2,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000027",
+          "name": "Torbay",
+          "persistentAbsencePct": 24.22,
+          "overallAbsencePct": 8.52,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000030",
+          "name": "Tower Hamlets",
+          "persistentAbsencePct": 17.98,
+          "overallAbsencePct": 6.33,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000009",
+          "name": "Trafford",
+          "persistentAbsencePct": 14.34,
+          "overallAbsencePct": 5.8,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000036",
+          "name": "Wakefield",
+          "persistentAbsencePct": 22.29,
+          "overallAbsencePct": 7.73,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000030",
+          "name": "Walsall",
+          "persistentAbsencePct": 23.0,
+          "overallAbsencePct": 7.82,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000031",
+          "name": "Waltham Forest",
+          "persistentAbsencePct": 18.78,
+          "overallAbsencePct": 6.43,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000032",
+          "name": "Wandsworth",
+          "persistentAbsencePct": 16.62,
+          "overallAbsencePct": 6.09,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000007",
+          "name": "Warrington",
+          "persistentAbsencePct": 16.53,
+          "overallAbsencePct": 6.43,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000031",
+          "name": "Warwickshire",
+          "persistentAbsencePct": 20.33,
+          "overallAbsencePct": 7.61,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000037",
+          "name": "West Berkshire",
+          "persistentAbsencePct": 18.16,
+          "overallAbsencePct": 6.91,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000062",
+          "name": "West Northamptonshire",
+          "persistentAbsencePct": 18.21,
+          "overallAbsencePct": 6.78,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000032",
+          "name": "West Sussex",
+          "persistentAbsencePct": 18.99,
+          "overallAbsencePct": 7.01,
+          "year": "2023-24"
+        },
+        {
+          "code": "E09000033",
+          "name": "Westminster",
+          "persistentAbsencePct": 23.2,
+          "overallAbsencePct": 7.5,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000064",
+          "name": "Westmorland and Furness",
+          "persistentAbsencePct": 18.03,
+          "overallAbsencePct": 6.83,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000010",
+          "name": "Wigan",
+          "persistentAbsencePct": 19.85,
+          "overallAbsencePct": 7.22,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000054",
+          "name": "Wiltshire",
+          "persistentAbsencePct": 18.25,
+          "overallAbsencePct": 6.98,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000040",
+          "name": "Windsor and Maidenhead",
+          "persistentAbsencePct": 19.13,
+          "overallAbsencePct": 6.89,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000015",
+          "name": "Wirral",
+          "persistentAbsencePct": 21.64,
+          "overallAbsencePct": 7.81,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000041",
+          "name": "Wokingham",
+          "persistentAbsencePct": 15.43,
+          "overallAbsencePct": 6.01,
+          "year": "2023-24"
+        },
+        {
+          "code": "E08000031",
+          "name": "Wolverhampton",
+          "persistentAbsencePct": 19.49,
+          "overallAbsencePct": 6.8,
+          "year": "2023-24"
+        },
+        {
+          "code": "E10000034",
+          "name": "Worcestershire",
+          "persistentAbsencePct": 20.44,
+          "overallAbsencePct": 7.38,
+          "year": "2023-24"
+        },
+        {
+          "code": "E06000014",
+          "name": "York",
+          "persistentAbsencePct": 19.16,
+          "overallAbsencePct": 7.45,
+          "year": "2023-24"
+        }
+      ]
+    }
+  },
   "metadata": {
     "sources": [
       {
