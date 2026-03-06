@@ -1,0 +1,61 @@
+{
+  "topic": "climate-adaptation-costs",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "adaptationSpending": {
+      "timeSeries": [
+        {"year": 2018, "spendingBillions": 0.40},
+        {"year": 2019, "spendingBillions": 0.45},
+        {"year": 2020, "spendingBillions": 0.50},
+        {"year": 2021, "spendingBillions": 0.55},
+        {"year": 2022, "spendingBillions": 0.60},
+        {"year": 2023, "spendingBillions": 0.70},
+        {"year": 2024, "spendingBillions": 0.75},
+        {"year": 2025, "spendingBillions": 0.80}
+      ],
+      "latestYear": 2025,
+      "latestBillions": 0.80,
+      "requiredBillionsByMidCentury": 78,
+      "note": "UK government annual spending on climate adaptation (£ billions)"
+    },
+    "floodInsurancePayouts": {
+      "timeSeries": [
+        {"year": 2015, "payoutsBillions": 0.5},
+        {"year": 2016, "payoutsBillions": 0.3},
+        {"year": 2017, "payoutsBillions": 0.6},
+        {"year": 2018, "payoutsBillions": 1.0},
+        {"year": 2019, "payoutsBillions": 0.4},
+        {"year": 2020, "payoutsBillions": 0.4},
+        {"year": 2021, "payoutsBillions": 0.7},
+        {"year": 2022, "payoutsBillions": 0.8},
+        {"year": 2023, "payoutsBillions": 1.0},
+        {"year": 2024, "payoutsBillions": 1.2}
+      ],
+      "latestYear": 2024,
+      "latestBillions": 1.2,
+      "note": "Annual flood insurance claims payouts (£ billions), UK"
+    },
+    "uninsuredFloodHomes": {
+      "timeSeries": [
+        {"year": 2020, "uninsuredMillions": 0.8},
+        {"year": 2021, "uninsuredMillions": 0.9},
+        {"year": 2022, "uninsuredMillions": 1.0},
+        {"year": 2023, "uninsuredMillions": 1.1},
+        {"year": 2024, "uninsuredMillions": 1.2},
+        {"year": 2025, "uninsuredMillions": 1.4}
+      ],
+      "latestYear": 2025,
+      "latestMillions": 1.4,
+      "note": "Estimated uninsured households in flood risk zones (millions)"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Climate Change Committee", "dataset": "UK Climate Risk Assessment 2022 and adaptation spending analysis", "url": "https://www.theccc.org.uk/", "frequency": "annual"},
+      {"name": "Association of British Insurers", "dataset": "Flood claims data — annual weather claims statistics", "url": "https://www.abi.org.uk/data-and-research/", "frequency": "annual"},
+      {"name": "Environment Agency", "dataset": "Long-term flood risk — number of properties at risk", "url": "https://www.gov.uk/government/collections/flood-risk-maps", "frequency": "biennial"}
+    ],
+    "methodology": "Government adaptation spending estimated from HM Treasury public spending data across Environment Agency flood defence, DESNZ adaptation programmes, and MHCLG planning adaptation. Flood insurance payouts from ABI annual weather claims statistics. Uninsured flood risk households estimated from Environment Agency flood risk maps minus Flood Re scheme coverage.",
+    "knownIssues": ["Government adaptation spending figures are estimates — no single consolidated adaptation budget exists", "£78 billion annual requirement is a modelled projection at 2°C warming, from CCC CCRA3", "Uninsured household figures based on modelled flood risk maps which may undercount actual risk"]
+  }
+}

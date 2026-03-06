@@ -1,0 +1,56 @@
+{
+  "topic": "green-skills-gap",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "heatPumpInstallers": {
+      "timeSeries": [
+        {"year": 2019, "trainedThousands": 0.8},
+        {"year": 2020, "trainedThousands": 0.9},
+        {"year": 2021, "trainedThousands": 1.0},
+        {"year": 2022, "trainedThousands": 1.5},
+        {"year": 2023, "trainedThousands": 2.0},
+        {"year": 2024, "trainedThousands": 2.8},
+        {"year": 2025, "trainedThousands": 3.2}
+      ],
+      "latestYear": 2025,
+      "latestThousands": 3.2,
+      "targetThousands": 130,
+      "note": "Heat pump installers trained per year in the UK"
+    },
+    "greenJobVacancies": {
+      "timeSeries": [
+        {"year": 2020, "vacanciesThousands": 35},
+        {"year": 2021, "vacanciesThousands": 58},
+        {"year": 2022, "vacanciesThousands": 98},
+        {"year": 2023, "vacanciesThousands": 155},
+        {"year": 2024, "vacanciesThousands": 198},
+        {"year": 2025, "vacanciesThousands": 215}
+      ],
+      "latestYear": 2025,
+      "latestThousands": 215,
+      "note": "UK green job vacancies per quarter (estimated from job postings analysis)"
+    },
+    "requiredInstallers": {
+      "timeSeries": [
+        {"year": 2023, "neededThousands": 40},
+        {"year": 2024, "neededThousands": 55},
+        {"year": 2025, "neededThousands": 70},
+        {"year": 2026, "neededThousands": 90},
+        {"year": 2027, "neededThousands": 110},
+        {"year": 2028, "neededThousands": 130}
+      ],
+      "latestYear": 2028,
+      "latestThousands": 130,
+      "note": "Cumulative heat pump installers needed to meet government 2028 targets"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "MCS Certification", "dataset": "Heat pump installer certifications", "url": "https://mcscertified.com/", "frequency": "annual"},
+      {"name": "Green Jobs Taskforce", "dataset": "Net Zero workforce requirements report", "url": "https://www.gov.uk/government/groups/green-jobs-taskforce", "frequency": "annual"},
+      {"name": "Indeed / Burning Glass Technologies", "dataset": "UK green job postings analysis", "url": "https://uk.indeed.com/", "frequency": "quarterly"}
+    ],
+    "methodology": "Heat pump installer training numbers from MCS Certification database of accredited installers. Green job vacancies estimated from labour market analytics covering job postings tagged to BEIS green skills taxonomy. Required installer numbers modelled from government heat pump deployment targets (600,000 per year by 2028).",
+    "knownIssues": ["Green job vacancy data based on private sector job postings analysis — not an official statistic", "Heat pump installer figures count certifications not active practitioners", "Required installer projections based on government targets which themselves are subject to revision"]
+  }
+}

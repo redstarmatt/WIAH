@@ -1,0 +1,73 @@
+{
+  "topic": "night-time-economy",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "pubClosures": {
+      "timeSeries": [
+        {"year": 2016, "netClosuresCumulative": 0},
+        {"year": 2017, "netClosuresCumulative": -800},
+        {"year": 2018, "netClosuresCumulative": -1600},
+        {"year": 2019, "netClosuresCumulative": -2400},
+        {"year": 2020, "netClosuresCumulative": -3200},
+        {"year": 2021, "netClosuresCumulative": -4200},
+        {"year": 2022, "netClosuresCumulative": -5400},
+        {"year": 2023, "netClosuresCumulative": -6200},
+        {"year": 2024, "netClosuresCumulative": -7000}
+      ],
+      "latestYear": 2024,
+      "totalClosed": 7000,
+      "closuresPerDay": 6.7,
+      "note": "Cumulative net pub closures in the UK from 2016 baseline. Approximately 6-7 pubs per day closing on a net basis."
+    },
+    "nightclubs": {
+      "timeSeries": [
+        {"year": 2010, "count": 2800},
+        {"year": 2011, "count": 2600},
+        {"year": 2012, "count": 2400},
+        {"year": 2013, "count": 2200},
+        {"year": 2014, "count": 2000},
+        {"year": 2015, "count": 1800},
+        {"year": 2016, "count": 1600},
+        {"year": 2017, "count": 1400},
+        {"year": 2018, "count": 1200},
+        {"year": 2019, "count": 1100},
+        {"year": 2020, "count": 1000},
+        {"year": 2021, "count": 950},
+        {"year": 2022, "count": 900},
+        {"year": 2023, "count": 880},
+        {"year": 2024, "count": 872}
+      ],
+      "latestYear": 2024,
+      "latestCount": 872,
+      "peakCount2005": 3144,
+      "note": "Number of nightclubs/late night venues in the UK. Down from 3,144 in 2005 — a 72% decline in 20 years."
+    },
+    "nightTimeEmployment": {
+      "timeSeries": [
+        {"year": 2019, "millionsEmployed": 8.3},
+        {"year": 2020, "millionsEmployed": 6.2},
+        {"year": 2021, "millionsEmployed": 7.4},
+        {"year": 2022, "millionsEmployed": 7.8},
+        {"year": 2023, "millionsEmployed": 7.9},
+        {"year": 2024, "millionsEmployed": 8.0}
+      ],
+      "latestYear": 2024,
+      "latestMillions": 8.0,
+      "note": "Estimated employment in night-time economy sectors (hospitality, entertainment, night retail, transport, security), UK."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "BBPA", "dataset": "British Beer and Pub Association — Statistical Handbook", "url": "https://www.beerandpub.com/statistics/", "frequency": "annual"},
+      {"name": "Night Time Industries Association", "dataset": "Night Time Economy State of the Industry Report", "url": "https://www.ntia.co.uk/", "frequency": "annual"},
+      {"name": "ONS", "dataset": "Business Register and Employment Survey — Hospitality and Night-Time Sectors", "url": "https://www.ons.gov.uk/surveys/informationforhouseholdsandindividuals/businesssurveys/businessregisterandemploymentsurvey", "frequency": "annual"}
+    ],
+    "methodology": "Pub closure data from BBPA tracking of licensed premises registrations and de-registrations. Nightclub count from NTIA annual census of late-licence venues. Employment estimate from ONS BRES for SIC codes covering hospitality, entertainment, and related night-time economy activities, adjusted for part-time/evening-only workers.",
+    "knownIssues": [
+      "Nightclub definition is contested — some venues classified differently depending on licence type",
+      "Pub closures include permanent closures and conversions to restaurants or other uses — some repurposed buildings remain economically active",
+      "Night-time economy employment estimate methodology varies between NTIA and ONS — figures not directly comparable across different publications",
+      "2005 nightclub peak figure from NTIA census which used a broader definition than current counts"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "topic": "grassroots-sport",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "facilitiesClosed": {
+      "timeSeries": [
+        {"year": 2010, "closedCumulative": 0},
+        {"year": 2011, "closedCumulative": 100},
+        {"year": 2012, "closedCumulative": 200},
+        {"year": 2013, "closedCumulative": 320},
+        {"year": 2014, "closedCumulative": 440},
+        {"year": 2015, "closedCumulative": 560},
+        {"year": 2016, "closedCumulative": 640},
+        {"year": 2017, "closedCumulative": 720},
+        {"year": 2018, "closedCumulative": 800},
+        {"year": 2019, "closedCumulative": 860},
+        {"year": 2020, "closedCumulative": 920},
+        {"year": 2021, "closedCumulative": 980},
+        {"year": 2022, "closedCumulative": 1050},
+        {"year": 2023, "closedCumulative": 1120},
+        {"year": 2024, "closedCumulative": 1200}
+      ],
+      "latestYear": 2024,
+      "latestCumulative": 1200,
+      "note": "Cumulative sports and leisure facilities closed since 2010, UK. Includes swimming pools, leisure centres, public courts. Data: Swim England / Sport England / CBRE."
+    },
+    "adultParticipation": {
+      "timeSeries": [
+        {"year": 2015, "weeklyParticipationPct": 59.1},
+        {"year": 2016, "weeklyParticipationPct": 60.3},
+        {"year": 2017, "weeklyParticipationPct": 61.1},
+        {"year": 2018, "weeklyParticipationPct": 62.2},
+        {"year": 2019, "weeklyParticipationPct": 63.0},
+        {"year": 2020, "weeklyParticipationPct": 60.4},
+        {"year": 2021, "weeklyParticipationPct": 62.2},
+        {"year": 2022, "weeklyParticipationPct": 62.8},
+        {"year": 2023, "weeklyParticipationPct": 61.5},
+        {"year": 2024, "weeklyParticipationPct": 61.3}
+      ],
+      "latestYear": 2024,
+      "latestPct": 61.3,
+      "note": "Adults participating in sport and physical activity at least once a week, England. Sport England Active Lives survey."
+    },
+    "childDailyActivity": {
+      "timeSeries": [
+        {"year": 2018, "meetingGuidelinesPct": 47},
+        {"year": 2019, "meetingGuidelinesPct": 47},
+        {"year": 2020, "meetingGuidelinesPct": 43},
+        {"year": 2021, "meetingGuidelinesPct": 40},
+        {"year": 2022, "meetingGuidelinesPct": 44},
+        {"year": 2023, "meetingGuidelinesPct": 47},
+        {"year": 2024, "meetingGuidelinesPct": 46}
+      ],
+      "latestYear": 2024,
+      "latestPct": 46,
+      "note": "Children aged 5-16 meeting Chief Medical Officer guidelines of 60+ minutes of moderate-to-vigorous physical activity per day, England. Sport England Active Lives Children and Young People survey."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Sport England",
+        "dataset": "Active Lives Adult Survey",
+        "url": "https://www.sportengland.org/research-and-data/data/active-lives",
+        "frequency": "biannual"
+      },
+      {
+        "name": "Sport England",
+        "dataset": "Active Lives Children and Young People Survey",
+        "url": "https://www.sportengland.org/research-and-data/data/active-lives/active-lives-children-and-young-people-survey",
+        "frequency": "annual"
+      },
+      {
+        "name": "Swim England / CBRE",
+        "dataset": "State of the nation — swimming and leisure facility closures",
+        "url": "https://www.swimming.org/swimengland/state-of-the-nation-report/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Facility closure data from Swim England and CBRE annual reviews of public leisure infrastructure. Adult participation from Sport England Active Lives survey (England only). Child activity from Active Lives Children survey — figures show proportion meeting CMO guidelines of 60 minutes MVPA per day on average.",
+    "knownIssues": [
+      "Facility closure data includes some facilities that reopened under different operators — true net closure count may be lower",
+      "2020 and 2021 participation figures affected by lockdown periods and facility closures — not comparable with other years",
+      "Child activity data uses self-reported or parent-reported activity and may overstate actual activity levels"
+    ]
+  }
+}

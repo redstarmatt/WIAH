@@ -1,0 +1,62 @@
+{
+  "topic": "kinship-care-support",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "childrenInKinshipCare": {
+      "timeSeries": [
+        {"year": 2015, "childrenThousands": 152},
+        {"year": 2016, "childrenThousands": 155},
+        {"year": 2017, "childrenThousands": 158},
+        {"year": 2018, "childrenThousands": 161},
+        {"year": 2019, "childrenThousands": 165},
+        {"year": 2020, "childrenThousands": 168},
+        {"year": 2021, "childrenThousands": 170},
+        {"year": 2022, "childrenThousands": 174},
+        {"year": 2023, "childrenThousands": 177},
+        {"year": 2024, "childrenThousands": 180}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 180,
+      "note": "Children living in kinship care arrangements in England (grandparents, aunts, uncles, family friends)"
+    },
+    "specialGuardianshipOrders": {
+      "timeSeries": [
+        {"year": 2015, "ordersGranted": 4200},
+        {"year": 2016, "ordersGranted": 4400},
+        {"year": 2017, "ordersGranted": 4600},
+        {"year": 2018, "ordersGranted": 4800},
+        {"year": 2019, "ordersGranted": 5000},
+        {"year": 2020, "ordersGranted": 5100},
+        {"year": 2021, "ordersGranted": 5200},
+        {"year": 2022, "ordersGranted": 5300},
+        {"year": 2023, "ordersGranted": 5400},
+        {"year": 2024, "ordersGranted": 5500}
+      ],
+      "latestYear": 2024,
+      "latestCount": 5500,
+      "note": "Special Guardianship Orders granted annually in England and Wales"
+    },
+    "kinshipCarerPoverty": {
+      "timeSeries": [
+        {"year": 2019, "inPovertyPct": 35},
+        {"year": 2020, "inPovertyPct": 37},
+        {"year": 2021, "inPovertyPct": 38},
+        {"year": 2022, "inPovertyPct": 40},
+        {"year": 2023, "inPovertyPct": 42},
+        {"year": 2024, "inPovertyPct": 44}
+      ],
+      "latestYear": 2024,
+      "latestPct": 44,
+      "note": "Percentage of kinship carers living in households below 60% median income"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Kinship", "dataset": "State of Kinship Care in England", "url": "https://kinship.org.uk/", "frequency": "biennial"},
+      {"name": "Ministry of Justice", "dataset": "Family Court Statistics", "url": "https://www.gov.uk/government/collections/family-court-statistics", "frequency": "quarterly"},
+      {"name": "DfE", "dataset": "Children Looked After in England", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions", "frequency": "annual"}
+    ],
+    "methodology": "Kinship care numbers from Kinship charity research combined with DfE looked-after children census data. SGO figures from MoJ family court statistics. Poverty rates from Kinship national survey (self-reported household income against HBAI poverty threshold).",
+    "knownIssues": ["Kinship care numbers are estimates; England has no national register of kinship arrangements", "Many informal kinship carers have no legal order and are invisible to statistics", "Poverty survey data is self-reported and may not align with DWP household income definitions"]
+  }
+}

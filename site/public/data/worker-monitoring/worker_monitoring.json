@@ -1,0 +1,70 @@
+{
+  "topic": "worker-monitoring",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "employerMonitoringAdoption": {
+      "timeSeries": [
+        {"year": 2019, "employersMonitoringPct": 22},
+        {"year": 2020, "employersMonitoringPct": 62},
+        {"year": 2021, "employersMonitoringPct": 65},
+        {"year": 2022, "employersMonitoringPct": 68},
+        {"year": 2023, "employersMonitoringPct": 70},
+        {"year": 2024, "employersMonitoringPct": 72}
+      ],
+      "latestYear": 2024,
+      "latestPct": 72,
+      "note": "Percentage of UK employers using at least one form of digital productivity monitoring software. Includes keystroke logging, screen capture, email monitoring, GPS tracking."
+    },
+    "icoInvestigations": {
+      "timeSeries": [
+        {"year": 2019, "investigations": 8},
+        {"year": 2020, "investigations": 12},
+        {"year": 2021, "investigations": 18},
+        {"year": 2022, "investigations": 22},
+        {"year": 2023, "investigations": 28},
+        {"year": 2024, "investigations": 35}
+      ],
+      "latestYear": 2024,
+      "latestCount": 35,
+      "note": "ICO investigations and enquiries relating to unlawful or disproportionate employee monitoring. Includes formal investigations and regulatory queries."
+    },
+    "workerWellbeingImpact": {
+      "timeSeries": [
+        {"year": 2022, "reportHarmPct": 38},
+        {"year": 2023, "reportHarmPct": 42},
+        {"year": 2024, "reportHarmPct": 45}
+      ],
+      "latestYear": 2024,
+      "latestPct": 45,
+      "note": "Workers who report that digital monitoring by their employer has a negative effect on their wellbeing, stress or trust. TUC / YouGov survey."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "TUC / YouGov",
+        "dataset": "Worker surveillance and monitoring survey",
+        "url": "https://www.tuc.org.uk/research-analysis/reports/worker-monitoring-report",
+        "frequency": "annual"
+      },
+      {
+        "name": "Information Commissioner's Office",
+        "dataset": "ICO regulatory action and investigations register",
+        "url": "https://ico.org.uk/action-weve-taken/",
+        "frequency": "ongoing"
+      },
+      {
+        "name": "CIPD",
+        "dataset": "Technology and the future of jobs — employer survey",
+        "url": "https://www.cipd.org/uk/knowledge/reports/technology-future-jobs/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Employer monitoring adoption rate from CIPD and TUC employer surveys, combined with market analysis of monitoring software deployment data. ICO investigation figures from published regulatory action register. Worker wellbeing impact from TUC/YouGov annual worker surveillance survey.",
+    "knownIssues": [
+      "Employer monitoring adoption surveys use varying definitions of monitoring — comparability across years limited",
+      "ICO investigation figures undercount actual monitoring concerns as many are resolved informally",
+      "2020 figure represents pandemic-driven adoption and likely includes temporary deployments"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "topic": "pavement-parking",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "councilEnforcement": {
+      "timeSeries": [
+        {"year": 2020, "councilsEnforcingPct": 12},
+        {"year": 2021, "councilsEnforcingPct": 14},
+        {"year": 2022, "councilsEnforcingPct": 18},
+        {"year": 2023, "councilsEnforcingPct": 22},
+        {"year": 2024, "councilsEnforcingPct": 28}
+      ],
+      "latestYear": 2024,
+      "latestPct": 28,
+      "note": "Percentage of English councils with active pavement parking enforcement powers (byelaw or TRO-based)"
+    },
+    "complaints": {
+      "timeSeries": [
+        {"year": 2019, "complaintsThousands": 38},
+        {"year": 2020, "complaintsThousands": 42},
+        {"year": 2021, "complaintsThousands": 48},
+        {"year": 2022, "complaintsThousands": 55},
+        {"year": 2023, "complaintsThousands": 60},
+        {"year": 2024, "complaintsThousands": 65}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 65,
+      "note": "Pavement parking complaints reported to local councils and police in England"
+    },
+    "disabledPeopleAffected": {
+      "timeSeries": [
+        {"year": 2021, "affectedPct": 52},
+        {"year": 2022, "affectedPct": 54},
+        {"year": 2023, "affectedPct": 55},
+        {"year": 2024, "affectedPct": 56}
+      ],
+      "latestYear": 2024,
+      "latestPct": 56,
+      "note": "Percentage of disabled people who say pavement parking affects their ability to get around"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Living Streets", "dataset": "Pedestrian Pound — Pavement Parking Research", "url": "https://www.livingstreets.org.uk/", "frequency": "biennial"},
+      {"name": "DfT", "dataset": "Pavement Parking Consultation — Evidence Base", "url": "https://www.gov.uk/government/consultations/managing-pavement-parking", "frequency": "as-published"},
+      {"name": "Disability Rights UK", "dataset": "Access Survey", "url": "https://www.disabilityrightsuk.org/", "frequency": "annual"}
+    ],
+    "methodology": "Council enforcement figures from DfT survey of local authorities and Freedom of Information requests. Complaint volumes from combined LGA survey data. Disabled people impact figures from Disability Rights UK and Living Streets surveys.",
+    "knownIssues": ["No national enforcement database exists — figures compiled from surveys and FoI requests", "Pavement parking definition varies: some councils only enforce where footway width is below 1.5m", "Scotland banned pavement parking nationally in 2023; England figures exclude Scotland"]
+  }
+}

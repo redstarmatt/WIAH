@@ -1,0 +1,55 @@
+{
+  "topic": "ambulance-rural-response",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "responseByAreaType": {
+      "timeSeries": [
+        {"year": 2019, "urbanMeanMins": 18, "ruralMeanMins": 35},
+        {"year": 2020, "urbanMeanMins": 19, "ruralMeanMins": 36},
+        {"year": 2021, "urbanMeanMins": 24, "ruralMeanMins": 40},
+        {"year": 2022, "urbanMeanMins": 28, "ruralMeanMins": 45},
+        {"year": 2023, "urbanMeanMins": 26, "ruralMeanMins": 48},
+        {"year": 2024, "urbanMeanMins": 22, "ruralMeanMins": 45}
+      ],
+      "latestYear": 2024,
+      "note": "Category 2 ambulance mean response time by area classification. Category 2 = emergency, 18-minute mean target."
+    },
+    "cat1RuralTargetAchievement": {
+      "timeSeries": [
+        {"year": 2019, "targetAchievementPct": 74},
+        {"year": 2020, "targetAchievementPct": 71},
+        {"year": 2021, "targetAchievementPct": 65},
+        {"year": 2022, "targetAchievementPct": 58},
+        {"year": 2023, "targetAchievementPct": 60},
+        {"year": 2024, "targetAchievementPct": 63}
+      ],
+      "latestYear": 2024,
+      "latestPct": 63,
+      "target": 90,
+      "note": "Category 1 calls responded to within 7 minutes in rural areas. National target is 90%."
+    },
+    "trustPerformance": {
+      "year": 2024,
+      "cat2RuralMeanMins": [
+        {"trust": "South Western (SWAST)", "code": "SWAST", "meanMins": 48},
+        {"trust": "North East (NEAS)", "code": "NEAS", "meanMins": 42},
+        {"trust": "East Midlands (EMAS)", "code": "EMAS", "meanMins": 44},
+        {"trust": "North West (NWAS)", "code": "NWAS", "meanMins": 40},
+        {"trust": "South Central (SCAS)", "code": "SCAS", "meanMins": 38},
+        {"trust": "Yorkshire (YAS)", "code": "YAS", "meanMins": 41},
+        {"trust": "West Midlands (WMAS)", "code": "WMAS", "meanMins": 39},
+        {"trust": "London (LAS)", "code": "LAS", "meanMins": 22}
+      ],
+      "note": "Mean Cat 2 response time for rural incidents by ambulance trust, 2024"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England", "dataset": "Ambulance Quality Indicators", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ambulance-quality-indicators/", "frequency": "monthly"},
+      {"name": "NHS England", "dataset": "Ambulance Systems Indicators — Rural/Urban Split", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ambulance-quality-indicators/", "frequency": "annual"},
+      {"name": "AACE", "dataset": "Ambulance Response Times Report", "url": "https://aace.org.uk/", "frequency": "annual"}
+    ],
+    "methodology": "Response times derived from NHS England AQI data, split by rural-urban classification using ONS rural-urban classification of the incident postcode. Category 2 mean target is 18 minutes. Category 1 target is 90% within 7 minutes. Trust-level rural figures are NHS England AQI trust-level data filtered to rural-classified postcodes.",
+    "knownIssues": ["Rural-urban classification uses 2011 ONS methodology; 2021 reclassification may shift some figures", "2020 figures affected by COVID-19 pandemic demand patterns", "Some trusts cover mixed urban-rural geographies — LAS rural figure covers outer London areas only"]
+  }
+}

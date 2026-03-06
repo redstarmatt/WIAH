@@ -1,0 +1,87 @@
+{
+  "topic": "food-hygiene-compliance",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "highRatedBusinesses": {
+      "timeSeries": [
+        {"year": 2015, "pct4or5": 71},
+        {"year": 2016, "pct4or5": 73},
+        {"year": 2017, "pct4or5": 74},
+        {"year": 2018, "pct4or5": 75},
+        {"year": 2019, "pct4or5": 76},
+        {"year": 2020, "pct4or5": 72},
+        {"year": 2021, "pct4or5": 68},
+        {"year": 2022, "pct4or5": 65},
+        {"year": 2023, "pct4or5": 65},
+        {"year": 2024, "pct4or5": 65}
+      ],
+      "latestYear": 2024,
+      "latestPct": 65,
+      "note": "Proportion of Food Standards Agency rated food businesses achieving rating of 4 or 5 (broadly compliant or very good). England, Wales and Northern Ireland."
+    },
+    "foodInspectors": {
+      "timeSeries": [
+        {"year": 2010, "inspectorsThousands": 4.8},
+        {"year": 2011, "inspectorsThousands": 4.4},
+        {"year": 2012, "inspectorsThousands": 4.0},
+        {"year": 2013, "inspectorsThousands": 3.7},
+        {"year": 2014, "inspectorsThousands": 3.5},
+        {"year": 2015, "inspectorsThousands": 3.4},
+        {"year": 2016, "inspectorsThousands": 3.3},
+        {"year": 2017, "inspectorsThousands": 3.2},
+        {"year": 2018, "inspectorsThousands": 3.2},
+        {"year": 2019, "inspectorsThousands": 3.1},
+        {"year": 2020, "inspectorsThousands": 3.1},
+        {"year": 2021, "inspectorsThousands": 3.0},
+        {"year": 2022, "inspectorsThousands": 3.0},
+        {"year": 2023, "inspectorsThousands": 3.1},
+        {"year": 2024, "inspectorsThousands": 3.2}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 3.2,
+      "note": "Estimated number of local authority food safety officers and inspectors, England."
+    },
+    "hospitalAdmissions": {
+      "timeSeries": [
+        {"year": 2018, "admissionsThousands": 22},
+        {"year": 2019, "admissionsThousands": 23},
+        {"year": 2020, "admissionsThousands": 18},
+        {"year": 2021, "admissionsThousands": 21},
+        {"year": 2022, "admissionsThousands": 23},
+        {"year": 2023, "admissionsThousands": 24},
+        {"year": 2024, "admissionsThousands": 25}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 25,
+      "note": "Hospital admissions for food poisoning and foodborne illness, England. ICD-10 codes A00-A09."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Food Standards Agency",
+        "dataset": "Food Hygiene Rating Scheme statistics",
+        "url": "https://www.food.gov.uk/research-and-surveys/food-hygiene-rating-scheme-statistics",
+        "frequency": "annual"
+      },
+      {
+        "name": "Food Standards Agency",
+        "dataset": "Local authority food law enforcement returns",
+        "url": "https://www.food.gov.uk/research-and-surveys/local-authority-food-law-enforcement-returns",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Hospital Episode Statistics — admitted patient care",
+        "url": "https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "FHRS ratings from FSA open data portal. Inspector numbers from LA enforcement returns, converted to full-time equivalent where possible. Hospital admissions from HES using ICD-10 primary diagnosis codes for foodborne gastrointestinal infections. 2020 hospital admission figures reduced by pandemic effect on healthcare-seeking behaviour.",
+    "knownIssues": [
+      "FHRS is mandatory in Wales but voluntary (display) in England — ratings data may undercount non-compliant businesses that decline to display ratings",
+      "Inspector numbers conflate dedicated food safety officers with environmental health officers who have wider responsibilities",
+      "Hospital admissions substantially undercount true foodborne illness burden — FSA estimates 2.4 million cases annually but most do not present to hospital"
+    ]
+  }
+}

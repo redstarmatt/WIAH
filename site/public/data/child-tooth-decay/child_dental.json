@@ -1,0 +1,79 @@
+{
+  "topic": "child-tooth-decay",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "decayPrevalence5yo": {
+      "timeSeries": [
+        {"year": 2015, "decayPct": 33},
+        {"year": 2016, "decayPct": 31},
+        {"year": 2017, "decayPct": 28},
+        {"year": 2018, "decayPct": 24},
+        {"year": 2019, "decayPct": 23},
+        {"year": 2020, "decayPct": 20},
+        {"year": 2021, "decayPct": 22},
+        {"year": 2022, "decayPct": 24},
+        {"year": 2023, "decayPct": 26},
+        {"year": 2024, "decayPct": 26}
+      ],
+      "latestYear": 2024,
+      "latestPct": 26,
+      "note": "Proportion of 5-year-old children with obvious dental decay experience, England. NDHS/OHID survey."
+    },
+    "hospitalAdmissions": {
+      "timeSeries": [
+        {"year": 2015, "admissionsThousands": 42},
+        {"year": 2016, "admissionsThousands": 40},
+        {"year": 2017, "admissionsThousands": 37},
+        {"year": 2018, "admissionsThousands": 34},
+        {"year": 2019, "admissionsThousands": 33},
+        {"year": 2020, "admissionsThousands": 22},
+        {"year": 2021, "admissionsThousands": 28},
+        {"year": 2022, "admissionsThousands": 31},
+        {"year": 2023, "admissionsThousands": 33},
+        {"year": 2024, "admissionsThousands": 34}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 34,
+      "note": "Hospital admissions for dental extractions under general anaesthesia, under-18s, England. HES data."
+    },
+    "deprivationGap": {
+      "data": [
+        {"quintile": "Most deprived (Q1)", "quintileShort": "Q1", "decayPct": 42},
+        {"quintile": "Q2", "quintileShort": "Q2", "decayPct": 33},
+        {"quintile": "Q3 (middle)", "quintileShort": "Q3", "decayPct": 26},
+        {"quintile": "Q4", "quintileShort": "Q4", "decayPct": 18},
+        {"quintile": "Least deprived (Q5)", "quintileShort": "Q5", "decayPct": 14}
+      ],
+      "year": 2024,
+      "note": "Tooth decay prevalence in 5-year-olds by Index of Multiple Deprivation quintile, England."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "OHID / NHS England",
+        "dataset": "National Dental Epidemiology Programme — oral health survey of 5-year-olds",
+        "url": "https://www.gov.uk/government/statistics/oral-health-survey-of-5-year-old-children",
+        "frequency": "biennial"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Hospital Episode Statistics — dental extractions under GA, under-18s",
+        "url": "https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics",
+        "frequency": "annual"
+      },
+      {
+        "name": "OHID",
+        "dataset": "Child oral health inequalities — deprivation analysis",
+        "url": "https://fingertips.phe.org.uk/profile/child-health-profiles",
+        "frequency": "biennial"
+      }
+    ],
+    "methodology": "Decay prevalence from NDEP surveys of 5-year-olds. Surveys conducted every 2 years — interpolated values used for intervening years. Hospital admissions from HES using OPCS procedure codes for dental extraction (F09, F10) combined with anaesthetic codes. Deprivation analysis uses IMD quintiles based on school postcode.",
+    "knownIssues": [
+      "2020 figure substantially reduced by pandemic suspension of elective dental procedures under GA — not reflective of underlying trend",
+      "NDEP surveys are conducted biennially — odd years are interpolated",
+      "Deprivation quintile analysis uses school-level IMD which may not reflect home address deprivation"
+    ]
+  }
+}

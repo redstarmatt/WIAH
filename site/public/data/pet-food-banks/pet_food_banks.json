@@ -1,0 +1,51 @@
+{
+  "topic": "pet-food-banks",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "petFoodBankOrganisations": {
+      "timeSeries": [
+        {"year": 2019, "organisations": 20},
+        {"year": 2020, "organisations": 25},
+        {"year": 2021, "organisations": 60},
+        {"year": 2022, "organisations": 120},
+        {"year": 2023, "organisations": 200},
+        {"year": 2024, "organisations": 280}
+      ],
+      "latestYear": 2024,
+      "latestCount": 280,
+      "note": "Pet food bank organisations operating across the UK (including dedicated services and food banks accepting pet food)"
+    },
+    "petSurrenders": {
+      "timeSeries": [
+        {"year": 2019, "surrendersThousands": 92},
+        {"year": 2020, "surrendersThousands": 87},
+        {"year": 2021, "surrendersThousands": 95},
+        {"year": 2022, "surrendersThousands": 100},
+        {"year": 2023, "surrendersThousands": 108},
+        {"year": 2024, "surrendersThousands": 115}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 115,
+      "note": "Annual pet surrenders to RSPCA, Dogs Trust, Cats Protection and other rescue charities"
+    },
+    "financialStressPetCare": {
+      "timeSeries": [
+        {"year": 2022, "stressedPct": 28},
+        {"year": 2023, "stressedPct": 34},
+        {"year": 2024, "stressedPct": 38}
+      ],
+      "latestYear": 2024,
+      "latestPct": 38,
+      "note": "Percentage of pet owners reporting financial stress affecting their ability to care for their pets"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "PDSA", "dataset": "Animal Wellbeing (PAW) Report", "url": "https://www.pdsa.org.uk/what-we-do/pdsa-animal-wellbeing-report", "frequency": "annual"},
+      {"name": "RSPCA", "dataset": "Annual Statistics", "url": "https://www.rspca.org.uk/whatwedo/latest/statistics", "frequency": "annual"},
+      {"name": "Dogs Trust", "dataset": "Annual Review — Stray Dogs Survey", "url": "https://www.dogstrust.org.uk/about-us/annual-review", "frequency": "annual"}
+    ],
+    "methodology": "Pet food bank numbers compiled from PDSA PAW Report, charity registers and media monitoring. Pet surrender figures from RSPCA, Dogs Trust, Cats Protection and Blue Cross combined annual statistics. Financial stress figures from PDSA PAW Report annual survey of pet owners.",
+    "knownIssues": ["Pet food bank count is based on known organisations and may undercount informal community schemes", "2020 surrender figures are lower due to pandemic adoption surge temporarily reducing returns", "Pet surrender data covers major charities only — smaller regional rescues not fully captured"]
+  }
+}

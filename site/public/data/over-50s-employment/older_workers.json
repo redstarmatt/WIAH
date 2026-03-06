@@ -1,0 +1,81 @@
+{
+  "topic": "over-50s-employment",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "employmentRate5064": {
+      "timeSeries": [
+        {"year": 2015, "employmentRatePct": 67.2},
+        {"year": 2016, "employmentRatePct": 67.8},
+        {"year": 2017, "employmentRatePct": 68.4},
+        {"year": 2018, "employmentRatePct": 69.1},
+        {"year": 2019, "employmentRatePct": 69.8},
+        {"year": 2020, "employmentRatePct": 68.2},
+        {"year": 2021, "employmentRatePct": 65.8},
+        {"year": 2022, "employmentRatePct": 66.4},
+        {"year": 2023, "employmentRatePct": 67.1},
+        {"year": 2024, "employmentRatePct": 67.8}
+      ],
+      "latestYear": 2024,
+      "latestPct": 67.8,
+      "note": "Employment rate for those aged 50 to 64, UK. Labour Force Survey."
+    },
+    "inactivityLongTermIllness": {
+      "timeSeries": [
+        {"year": 2019, "inactiveThousands": 680},
+        {"year": 2020, "inactiveThousands": 720},
+        {"year": 2021, "inactiveThousands": 820},
+        {"year": 2022, "inactiveThousands": 940},
+        {"year": 2023, "inactiveThousands": 980},
+        {"year": 2024, "inactiveThousands": 950}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 950,
+      "note": "People aged 50-64 economically inactive due to long-term sickness or disability, UK. Labour Force Survey."
+    },
+    "employmentRate65plus": {
+      "timeSeries": [
+        {"year": 2015, "employmentRatePct": 10.2},
+        {"year": 2016, "employmentRatePct": 10.5},
+        {"year": 2017, "employmentRatePct": 10.8},
+        {"year": 2018, "employmentRatePct": 11.0},
+        {"year": 2019, "employmentRatePct": 11.2},
+        {"year": 2020, "employmentRatePct": 9.8},
+        {"year": 2021, "employmentRatePct": 10.1},
+        {"year": 2022, "employmentRatePct": 10.4},
+        {"year": 2023, "employmentRatePct": 10.6},
+        {"year": 2024, "employmentRatePct": 10.8}
+      ],
+      "latestYear": 2024,
+      "latestPct": 10.8,
+      "note": "Employment rate for those aged 65 and over, UK. Labour Force Survey."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Labour Force Survey — employment by age group",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/employmentbyagegroupseasonallyadjustedemplysa01sa",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Economic inactivity by reason — LFS",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity/datasets/economicinactivitybyreasonseasonallyadjustedinac01sa",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "DWP",
+        "dataset": "Older workers and the labour market",
+        "url": "https://www.gov.uk/government/statistics/older-workers-in-the-labour-market",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Employment rates from ONS Labour Force Survey, seasonally adjusted. Economic inactivity figures by reason from the same survey. Long-term illness figures include both those who say their main reason for inactivity is long-term sickness and those who cite disability.",
+    "knownIssues": [
+      "LFS sample sizes for older age groups are smaller — confidence intervals wider than for prime-age workers",
+      "Long-term illness categorisation changed in 2019 — pre and post 2019 not directly comparable",
+      "State Pension Age changes since 2010 directly affect 50-64 employment rate as women formerly below SPA are now counted as working-age"
+    ]
+  }
+}

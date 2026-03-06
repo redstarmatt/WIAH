@@ -1,0 +1,60 @@
+{
+  "topic": "school-meals-procurement",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "marketValue": {
+      "timeSeries": [
+        {"year": 2018, "valueBillions": 0.95},
+        {"year": 2019, "valueBillions": 1.0},
+        {"year": 2020, "valueBillions": 1.05},
+        {"year": 2021, "valueBillions": 0.9},
+        {"year": 2022, "valueBillions": 1.05},
+        {"year": 2023, "valueBillions": 1.1},
+        {"year": 2024, "valueBillions": 1.2}
+      ],
+      "latestYear": 2024,
+      "latestBillions": 1.2,
+      "note": "Estimated annual value of school meals contracts in England. 2021 dip reflects pandemic school closure periods."
+    },
+    "localSourcingContracts": {
+      "timeSeries": [
+        {"year": 2019, "percentWithLocalSpec": 4},
+        {"year": 2020, "percentWithLocalSpec": 5},
+        {"year": 2021, "percentWithLocalSpec": 5},
+        {"year": 2022, "percentWithLocalSpec": 6},
+        {"year": 2023, "percentWithLocalSpec": 6},
+        {"year": 2024, "percentWithLocalSpec": 7}
+      ],
+      "latestYear": 2024,
+      "latestPercent": 7,
+      "note": "Percentage of school meal contracts specifying locally sourced food or farm-to-fork requirements."
+    },
+    "averageMealCost": {
+      "timeSeries": [
+        {"year": 2019, "costPounds": 2.35},
+        {"year": 2020, "costPounds": 2.40},
+        {"year": 2021, "costPounds": 2.50},
+        {"year": 2022, "costPounds": 2.55},
+        {"year": 2023, "costPounds": 2.60},
+        {"year": 2024, "costPounds": 2.65}
+      ],
+      "latestYear": 2024,
+      "latestCostPounds": 2.65,
+      "uifsRatePounds": 2.53,
+      "note": "Average cost of producing one school meal in England. Universal Infant FSM statutory reimbursement rate remained £2.53 until 2024."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "LACA", "dataset": "School Food Survey — Local Authority Caterers Association", "url": "https://www.laca.co.uk/resources/school-food-survey", "frequency": "annual"},
+      {"name": "DfE", "dataset": "Free School Meals — Schools, Pupils and their Characteristics", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics", "frequency": "annual"},
+      {"name": "APSE", "dataset": "APSE Performance Networks — Catering Services", "url": "https://www.apse.org.uk/apse/index.cfm/research/performance-networks/", "frequency": "annual"}
+    ],
+    "methodology": "Market value estimates from LACA annual surveys and APSE benchmarking data. Local sourcing specification rates from LACA survey. Average meal cost from APSE performance networks and DfE impact assessments. Universal Infant FSM reimbursement rate from DfE guidance.",
+    "knownIssues": [
+      "Market concentration data (three-company dominance) is based on contract analysis by school food campaigners rather than official statistics",
+      "Local sourcing definition varies — some contracts count British rather than truly local procurement",
+      "Academies and free schools are not required to use local authority caterers, creating data gaps"
+    ]
+  }
+}

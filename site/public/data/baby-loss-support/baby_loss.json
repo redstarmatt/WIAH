@@ -1,0 +1,65 @@
+{
+  "topic": "baby-loss-support",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "stillbirthRate": {
+      "timeSeries": [
+        {"year": 2013, "ratePer1000": 4.2},
+        {"year": 2014, "ratePer1000": 4.1},
+        {"year": 2015, "ratePer1000": 4.1},
+        {"year": 2016, "ratePer1000": 3.9},
+        {"year": 2017, "ratePer1000": 3.8},
+        {"year": 2018, "ratePer1000": 3.7},
+        {"year": 2019, "ratePer1000": 3.6},
+        {"year": 2020, "ratePer1000": 3.5},
+        {"year": 2021, "ratePer1000": 3.4},
+        {"year": 2022, "ratePer1000": 3.4},
+        {"year": 2023, "ratePer1000": 3.3}
+      ],
+      "latestYear": 2023,
+      "latestRate": 3.3,
+      "note": "Stillbirths per 1,000 total births, England and Wales"
+    },
+    "neonatalDeathRate": {
+      "timeSeries": [
+        {"year": 2013, "ratePer1000": 2.9},
+        {"year": 2014, "ratePer1000": 2.8},
+        {"year": 2015, "ratePer1000": 2.7},
+        {"year": 2016, "ratePer1000": 2.7},
+        {"year": 2017, "ratePer1000": 2.6},
+        {"year": 2018, "ratePer1000": 2.6},
+        {"year": 2019, "ratePer1000": 2.5},
+        {"year": 2020, "ratePer1000": 2.5},
+        {"year": 2021, "ratePer1000": 2.5},
+        {"year": 2022, "ratePer1000": 2.4},
+        {"year": 2023, "ratePer1000": 2.4}
+      ],
+      "latestYear": 2023,
+      "latestRate": 2.4,
+      "note": "Neonatal deaths (within 28 days of birth) per 1,000 live births, England and Wales"
+    },
+    "bereavementMidwifeProvision": {
+      "timeSeries": [
+        {"year": 2018, "trustsWithProvisionPct": 28},
+        {"year": 2019, "trustsWithProvisionPct": 33},
+        {"year": 2020, "trustsWithProvisionPct": 38},
+        {"year": 2021, "trustsWithProvisionPct": 42},
+        {"year": 2022, "trustsWithProvisionPct": 48},
+        {"year": 2023, "trustsWithProvisionPct": 52},
+        {"year": 2024, "trustsWithProvisionPct": 55}
+      ],
+      "latestYear": 2024,
+      "latestPct": 55,
+      "note": "Percentage of NHS maternity trusts with at least one dedicated bereavement midwife"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Child Mortality Statistics, England and Wales", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/childhoodinfantandperinatalmortalityinenglandandwales/", "frequency": "annual"},
+      {"name": "MBRRACE-UK", "dataset": "Perinatal Mortality Surveillance Report", "url": "https://www.npeu.ox.ac.uk/mbrrace-uk/reports", "frequency": "annual"},
+      {"name": "Sands", "dataset": "Bereavement Care Survey", "url": "https://www.sands.org.uk/", "frequency": "biennial"}
+    ],
+    "methodology": "Stillbirth and neonatal death rates from ONS Childhood Mortality Statistics and MBRRACE-UK surveillance. Bereavement midwife provision from Sands annual survey of NHS trusts. Miscarriage figures from RCOG and NHS Digital maternity statistics.",
+    "knownIssues": ["Miscarriage statistics are incomplete — many early losses are not formally registered", "Bereavement midwife provision figures based on self-reported survey data from trusts, response rates vary", "2020 figures may be affected by pandemic-era changes to maternity service configuration"]
+  }
+}

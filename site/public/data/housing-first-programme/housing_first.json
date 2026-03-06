@@ -1,0 +1,54 @@
+{
+  "topic": "housing-first-programme",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "placements": {
+      "timeSeries": [
+        {"year": 2019, "cumulativePlacements": 0},
+        {"year": 2020, "cumulativePlacements": 180},
+        {"year": 2021, "cumulativePlacements": 450},
+        {"year": 2022, "cumulativePlacements": 820},
+        {"year": 2023, "cumulativePlacements": 1100},
+        {"year": 2024, "cumulativePlacements": 1280},
+        {"year": 2025, "cumulativePlacements": 1400}
+      ],
+      "latestYear": 2025,
+      "latestPlacements": 1400,
+      "note": "Cumulative Housing First placements in England (pilot programme)"
+    },
+    "retentionRate": {
+      "timeSeries": [
+        {"year": 2021, "retentionPercent": 78},
+        {"year": 2022, "retentionPercent": 80},
+        {"year": 2023, "retentionPercent": 81},
+        {"year": 2024, "retentionPercent": 82},
+        {"year": 2025, "retentionPercent": 80}
+      ],
+      "latestYear": 2025,
+      "latestPercent": 80,
+      "note": "Housing retention rate at 2 years — percentage still housed"
+    },
+    "roughSleepers": {
+      "timeSeries": [
+        {"year": 2019, "roughSleeperCount": 4266},
+        {"year": 2020, "roughSleeperCount": 2688},
+        {"year": 2021, "roughSleeperCount": 2440},
+        {"year": 2022, "roughSleeperCount": 3069},
+        {"year": 2023, "roughSleeperCount": 3898},
+        {"year": 2024, "roughSleeperCount": 4255}
+      ],
+      "latestYear": 2024,
+      "latestCount": 4255,
+      "note": "Annual rough sleeper count, England (single-night snapshot)"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Ministry of Housing Communities and Local Government", "dataset": "Housing First Pilots Evaluation", "url": "https://www.gov.uk/government/publications/housing-first-pilots-evaluation", "frequency": "annual"},
+      {"name": "MHCLG", "dataset": "Rough sleeping statistics England", "url": "https://www.gov.uk/government/collections/homelessness-statistics", "frequency": "annual"},
+      {"name": "Crisis / Homeless Link", "dataset": "Housing First evidence review", "url": "https://www.crisis.org.uk/ending-homelessness/housing-first/", "frequency": "annual"}
+    ],
+    "methodology": "Housing First placements from MHCLG evaluation of three large-scale pilots (West Midlands, Manchester, Liverpool). Retention rates from supported housing outcome monitoring. Rough sleeper count from annual MHCLG single-night snapshot count conducted in autumn. 2020 figure exceptionally low due to Everyone In emergency programme during COVID-19.",
+    "knownIssues": ["Pilot placements only — national implementation not yet underway in England", "2020 rough sleeper count dramatically reduced by Everyone In emergency — not a sustained improvement", "Retention rates from pilots may not generalise to less well-resourced implementations"]
+  }
+}

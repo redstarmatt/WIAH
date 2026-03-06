@@ -1,0 +1,75 @@
+{
+  "topic": "buy-to-let-exit",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "landlordNumbers": {
+      "timeSeries": [
+        {"year": 2018, "landlordsMillions": 2.66},
+        {"year": 2019, "landlordsMillions": 2.68},
+        {"year": 2020, "landlordsMillions": 2.69},
+        {"year": 2021, "landlordsMillions": 2.64},
+        {"year": 2022, "landlordsMillions": 2.58},
+        {"year": 2023, "landlordsMillions": 2.54},
+        {"year": 2024, "landlordsMillions": 2.53},
+        {"year": 2025, "landlordsMillions": 2.52}
+      ],
+      "latestYear": 2025,
+      "latestMillions": 2.52,
+      "note": "Estimated number of private landlords in the UK. Derived from HMRC property income data."
+    },
+    "mortgageWithdrawals": {
+      "timeSeries": [
+        {"quarterYear": "Q1 2022", "withdrawalsThousands": 2.1},
+        {"quarterYear": "Q2 2022", "withdrawalsThousands": 3.2},
+        {"quarterYear": "Q3 2022", "withdrawalsThousands": 4.8},
+        {"quarterYear": "Q4 2022", "withdrawalsThousands": 6.2},
+        {"quarterYear": "Q1 2023", "withdrawalsThousands": 5.4},
+        {"quarterYear": "Q2 2023", "withdrawalsThousands": 4.8},
+        {"quarterYear": "Q3 2023", "withdrawalsThousands": 4.2},
+        {"quarterYear": "Q4 2023", "withdrawalsThousands": 3.8},
+        {"quarterYear": "Q1 2024", "withdrawalsThousands": 3.5}
+      ],
+      "note": "Buy-to-let mortgage product withdrawals per month. Peaked in late 2022 as the Bank of England raised rates."
+    },
+    "rentalListings": {
+      "timeSeries": [
+        {"year": 2020, "listingsIndex": 100},
+        {"year": 2021, "listingsIndex": 92},
+        {"year": 2022, "listingsIndex": 84},
+        {"year": 2023, "listingsIndex": 78},
+        {"year": 2024, "listingsIndex": 71}
+      ],
+      "latestYear": 2024,
+      "latestIndex": 71,
+      "note": "Private rental property listings in major UK cities, indexed to 100 in 2020. Source: Zoopla / Rightmove analysis."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "HMRC",
+        "dataset": "UK property wealth statistics — rental income",
+        "url": "https://www.gov.uk/government/statistics/income-from-property-and-renting",
+        "frequency": "annual"
+      },
+      {
+        "name": "Bank of England",
+        "dataset": "Mortgage lenders and administrators statistics",
+        "url": "https://www.bankofengland.co.uk/statistics/mortgage-lenders-and-administrators",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Zoopla",
+        "dataset": "Rental market report",
+        "url": "https://www.zoopla.co.uk/discover/property-news/rental-market-report/",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Landlord numbers are estimated from HMRC self-assessment property income returns, adjusted for multiple-property landlords. Mortgage product withdrawals are counts of buy-to-let products removed from the market as tracked by Moneyfacts. Rental listings index is based on available-to-rent listings on major portals, indexed to January 2020.",
+    "knownIssues": [
+      "HMRC data lags by approximately 18 months — 2025 figure is estimated",
+      "Mortgage product withdrawals reflect lender decisions not landlord exits directly",
+      "Rental listings index covers major cities only and may not represent rural markets"
+    ]
+  }
+}

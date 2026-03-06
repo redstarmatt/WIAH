@@ -1,0 +1,79 @@
+{
+  "topic": "social-care-turnover",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "turnoverRate": {
+      "timeSeries": [
+        {"year": 2015, "turnoverPct": 25.2},
+        {"year": 2016, "turnoverPct": 25.9},
+        {"year": 2017, "turnoverPct": 26.8},
+        {"year": 2018, "turnoverPct": 27.1},
+        {"year": 2019, "turnoverPct": 27.8},
+        {"year": 2020, "turnoverPct": 27.4},
+        {"year": 2021, "turnoverPct": 27.1},
+        {"year": 2022, "turnoverPct": 27.6},
+        {"year": 2023, "turnoverPct": 28.0},
+        {"year": 2024, "turnoverPct": 28.3}
+      ],
+      "latestYear": 2024,
+      "latestPct": 28.3,
+      "note": "Annual staff turnover rate in adult social care sector, England. Skills for Care workforce data."
+    },
+    "vacancies": {
+      "timeSeries": [
+        {"year": 2018, "vacanciesThousands": 82},
+        {"year": 2019, "vacanciesThousands": 88},
+        {"year": 2020, "vacanciesThousands": 110},
+        {"year": 2021, "vacanciesThousands": 105},
+        {"year": 2022, "vacanciesThousands": 155},
+        {"year": 2023, "vacanciesThousands": 152},
+        {"year": 2024, "vacanciesThousands": 131}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 131,
+      "note": "Estimated unfilled adult social care vacancies on a given day, England."
+    },
+    "hourlyPay": {
+      "timeSeries": [
+        {"year": 2018, "avgHourlyPay": 8.20},
+        {"year": 2019, "avgHourlyPay": 8.45},
+        {"year": 2020, "avgHourlyPay": 8.72},
+        {"year": 2021, "avgHourlyPay": 9.10},
+        {"year": 2022, "avgHourlyPay": 9.80},
+        {"year": 2023, "avgHourlyPay": 10.40},
+        {"year": 2024, "avgHourlyPay": 10.89}
+      ],
+      "latestYear": 2024,
+      "latestPay": 10.89,
+      "note": "Median hourly pay for care workers (direct care roles), England. Skills for Care. National Living Wage was £11.44 in 2024."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Skills for Care",
+        "dataset": "The state of the adult social care sector and workforce in England",
+        "url": "https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx",
+        "frequency": "annual"
+      },
+      {
+        "name": "Skills for Care",
+        "dataset": "Adult social care workforce data set — vacancies and turnover",
+        "url": "https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/Workforce-intelligence/publications/Topics/Pay/Pay.aspx",
+        "frequency": "annual"
+      },
+      {
+        "name": "DHSC",
+        "dataset": "Adult social care activity and finance statistics",
+        "url": "https://www.gov.uk/government/collections/adult-social-care-activity-and-finance-report",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Turnover and vacancy data from Skills for Care Adult Social Care Workforce Data Set, the most comprehensive employer-level dataset for the sector covering approximately 25,000 organisations. Pay data is median hourly rate for care workers in direct care roles, excluding management. Vacancy rate calculated as vacancies as a proportion of filled posts.",
+    "knownIssues": [
+      "Workforce dataset relies on employer returns — coverage varies by year, affecting comparability",
+      "Turnover figures include moves within the sector as well as exits — true attrition rate is lower",
+      "2022 vacancy spike partly reflects post-pandemic staff shortages and surge in demand post-lockdown"
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "topic": "private-school-vat",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "termlyFees": {
+      "timeSeries": [
+        {"year": 2022, "avgTermlyFeeThousands": 5.2},
+        {"year": 2023, "avgTermlyFeeThousands": 5.5},
+        {"year": 2024, "avgTermlyFeeThousands": 5.9},
+        {"year": 2025, "avgTermlyFeeThousands": 6.3}
+      ],
+      "latestYear": 2025,
+      "latestThousands": 6.3,
+      "note": "Average termly fee across all UK private schools (day pupils). ISC annual census data."
+    },
+    "pupilTransfers": {
+      "timeSeries": [
+        {"month": "Jan 2025", "cumulativeThousands": 5},
+        {"month": "Feb 2025", "cumulativeThousands": 12},
+        {"month": "Mar 2025", "cumulativeThousands": 21},
+        {"month": "Apr 2025", "cumulativeThousands": 28},
+        {"month": "May 2025", "cumulativeThousands": 35}
+      ],
+      "latestMonth": "May 2025",
+      "latestThousands": 35,
+      "note": "Cumulative estimated pupils moved from private to state sector following VAT introduction in January 2025."
+    },
+    "schoolClosures": {
+      "timeSeries": [
+        {"year": 2024, "closedOrMerged": 4},
+        {"year": 2025, "closedOrMerged": 9}
+      ],
+      "latestYear": 2025,
+      "latestCount": 9,
+      "note": "Private schools that have closed or merged since September 2024. Mainly smaller prep schools with under 100 pupils."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Independent Schools Council",
+        "dataset": "Annual census — fee levels and pupil numbers",
+        "url": "https://www.isc.co.uk/research/",
+        "frequency": "annual"
+      },
+      {
+        "name": "MHCLG / DfE",
+        "dataset": "State school pupil numbers — in-year transfers",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/pupil-projections",
+        "frequency": "annual"
+      },
+      {
+        "name": "HMRC",
+        "dataset": "VAT revenue — education sector",
+        "url": "https://www.gov.uk/government/statistics/hmrc-tax-and-nics-receipts-for-the-uk",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Average termly fees from ISC census which covers approximately 80% of private school pupils. Pupil transfers are estimated from state school in-year admission data and DfE school census comparison, adjusted for demographic trends. School closures from ISC membership data and Companies House filings.",
+    "knownIssues": [
+      "VAT introduced January 2025 — data for full academic year impact not yet available",
+      "Pupil transfer estimates subject to significant uncertainty as state school census data lags by 6-12 months",
+      "ISC census does not cover all private schools — smaller independent schools may have higher closure rate"
+    ]
+  }
+}

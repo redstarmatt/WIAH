@@ -1,0 +1,53 @@
+{
+  "topic": "voter-id-impact",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "turnedAway": {
+      "timeSeries": [
+        {"election": "2023 Local Elections", "year": 2023, "turnedAway": 14000},
+        {"election": "2024 General Election", "year": 2024, "turnedAway": 8000}
+      ],
+      "note": "People turned away at polling stations for not having accepted photo ID. 2024 figure lower partly due to greater awareness and Voter Authority Certificate uptake."
+    },
+    "voterAwareness": {
+      "timeSeries": [
+        {"year": 2023, "percentAwareWhichIDAccepted": 48},
+        {"year": 2024, "percentAwareWhichIDAccepted": 62}
+      ],
+      "latestYear": 2024,
+      "latestPercent": 62,
+      "note": "Percentage of registered voters who could correctly identify which forms of photo ID are accepted at polling stations."
+    },
+    "idPossessionGaps": {
+      "demographics": [
+        {"group": "18-24 year olds", "percentWithoutAcceptedID": 14},
+        {"group": "BME voters", "percentWithoutAcceptedID": 11},
+        {"group": "Social renters", "percentWithoutAcceptedID": 12},
+        {"group": "Disabled people", "percentWithoutAcceptedID": 9},
+        {"group": "White British (all ages)", "percentWithoutAcceptedID": 5}
+      ],
+      "note": "Estimated percentage of registered voters in each group lacking any accepted form of photo ID, 2024. Electoral Commission survey."
+    },
+    "voterAuthorityCertificates": {
+      "timeSeries": [
+        {"year": 2023, "certificatesIssued": 75000},
+        {"year": 2024, "certificatesIssued": 140000}
+      ],
+      "note": "Free Voter Authority Certificates issued by councils to those without qualifying photo ID."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Electoral Commission", "dataset": "May 2023 Local Elections — Voter ID Research", "url": "https://www.electoralcommission.org.uk/research-reports-and-data/voter-id-reports", "frequency": "per election"},
+      {"name": "Electoral Commission", "dataset": "2024 UK General Election — Voter ID Monitoring Report", "url": "https://www.electoralcommission.org.uk/research-reports-and-data/voter-id-reports", "frequency": "per election"},
+      {"name": "ONS", "dataset": "Electoral Integrity — Voter ID possession survey", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/elections/electoralregistration", "frequency": "per election"}
+    ],
+    "methodology": "Turned away figures from Electoral Commission post-election monitoring, based on polling station returns. Awareness figures from Electoral Commission pre-election survey. ID possession gaps from ONS electoral integrity survey matched with demographic data. VAC figures from MHCLG local authority returns.",
+    "knownIssues": [
+      "Turned away figures include those who returned with correct ID and voted — net disenfranchisement is lower but unknown",
+      "ID possession surveys are pre-election estimates — not all those without ID would have voted anyway",
+      "2024 general election saw higher turnout among young voters than 2023 locals, complicating like-for-like comparisons",
+      "Voter Authority Certificate take-up concentrated in areas with active council outreach programmes"
+    ]
+  }
+}

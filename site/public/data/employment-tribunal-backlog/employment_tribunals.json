@@ -1,0 +1,76 @@
+{
+  "topic": "employment-tribunal-backlog",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "outstandingCases": {
+      "timeSeries": [
+        {"year": 2018, "casesThousands": 23},
+        {"year": 2019, "casesThousands": 25},
+        {"year": 2020, "casesThousands": 45},
+        {"year": 2021, "casesThousands": 52},
+        {"year": 2022, "casesThousands": 58},
+        {"year": 2023, "casesThousands": 56},
+        {"year": 2024, "casesThousands": 54}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 54,
+      "note": "Total outstanding employment tribunal cases (single and multiple) at year end, England, Scotland and Wales."
+    },
+    "avgTimeToHearing": {
+      "timeSeries": [
+        {"year": 2018, "avgWeeks": 27},
+        {"year": 2019, "avgWeeks": 29},
+        {"year": 2020, "avgWeeks": 36},
+        {"year": 2021, "avgWeeks": 42},
+        {"year": 2022, "avgWeeks": 48},
+        {"year": 2023, "avgWeeks": 51},
+        {"year": 2024, "avgWeeks": 51}
+      ],
+      "latestYear": 2024,
+      "latestWeeks": 51,
+      "note": "Average time from claim receipt to final hearing for single employment tribunal claims, weeks."
+    },
+    "annualReceipts": {
+      "timeSeries": [
+        {"year": 2018, "claimsThousands": 109},
+        {"year": 2019, "claimsThousands": 121},
+        {"year": 2020, "claimsThousands": 143},
+        {"year": 2021, "claimsThousands": 107},
+        {"year": 2022, "claimsThousands": 119},
+        {"year": 2023, "claimsThousands": 126},
+        {"year": 2024, "claimsThousands": 131}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 131,
+      "note": "Annual new employment tribunal claims (single claims only), Great Britain."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "HMCTS / MOJ",
+        "dataset": "Employment tribunal statistics quarterly",
+        "url": "https://www.gov.uk/government/collections/tribunals-statistics",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "MOJ",
+        "dataset": "Tribunal statistics annual tables",
+        "url": "https://www.gov.uk/government/statistics/tribunal-statistics-2023-to-2024",
+        "frequency": "annual"
+      },
+      {
+        "name": "HMCTS",
+        "dataset": "HMCTS management information — tribunal outstanding cases",
+        "url": "https://www.gov.uk/government/publications/hmcts-management-information-december-2024",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Outstanding caseload from HMCTS management information, measured at end of each calendar year. Average time to hearing from MOJ quarterly statistics — single claims only (multiple claims have different jurisdictions). Annual receipts exclude multiple claim cases to allow year-on-year comparison.",
+    "knownIssues": [
+      "2013 introduction of ET fees reduced receipts substantially — abolished in 2017 following Supreme Court ruling, causing structural uplift in claims",
+      "2020 outstanding cases spike reflects pandemic court closures rather than increased claims alone",
+      "Average time to hearing masks wide variation by jurisdiction — discrimination and unfair dismissal claims typically longer than wages/holiday pay"
+    ]
+  }
+}

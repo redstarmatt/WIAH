@@ -1,0 +1,55 @@
+{
+  "topic": "modular-housing",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "modularCompletions": {
+      "timeSeries": [
+        {"year": 2018, "homesThousands": 4},
+        {"year": 2019, "homesThousands": 5},
+        {"year": 2020, "homesThousands": 6},
+        {"year": 2021, "homesThousands": 7},
+        {"year": 2022, "homesThousands": 8},
+        {"year": 2023, "homesThousands": 10},
+        {"year": 2024, "homesThousands": 12}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 12,
+      "note": "Modular and modern methods of construction (MMC) homes completed in the UK"
+    },
+    "mmcShareOfNewHomes": {
+      "timeSeries": [
+        {"year": 2018, "mmcSharePct": 1.2},
+        {"year": 2019, "mmcSharePct": 1.4},
+        {"year": 2020, "mmcSharePct": 1.6},
+        {"year": 2021, "mmcSharePct": 2.0},
+        {"year": 2022, "mmcSharePct": 2.2},
+        {"year": 2023, "mmcSharePct": 2.7},
+        {"year": 2024, "mmcSharePct": 3.1}
+      ],
+      "latestYear": 2024,
+      "latestPct": 3.1,
+      "governmentTarget": 25,
+      "targetYear": 2025,
+      "note": "MMC completions as percentage of total new homes completed"
+    },
+    "mmcCompanyCollapses": {
+      "timeSeries": [
+        {"year": 2022, "cumulativeCollapses": 0},
+        {"year": 2023, "cumulativeCollapses": 3},
+        {"year": 2024, "cumulativeCollapses": 8}
+      ],
+      "latestYear": 2024,
+      "latestCount": 8,
+      "note": "Major MMC/modular housebuilder insolvencies (cumulative from 2022)"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Homes England", "dataset": "MMC Programme Statistics", "url": "https://www.gov.uk/government/organisations/homes-england", "frequency": "annual"},
+      {"name": "MHCLG", "dataset": "Housing Supply: Net Additional Dwellings, England", "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-net-supply-of-housing", "frequency": "annual"},
+      {"name": "NHBC", "dataset": "New Home Statistics Review", "url": "https://www.nhbc.co.uk/builders/nhbc-services/nhbc-accepts/statistics", "frequency": "annual"}
+    ],
+    "methodology": "MMC completions estimated from Homes England programme data, NHBC warranty registrations with MMC designation, and industry surveys. Share of total homes uses MHCLG net additional dwellings as denominator. Company collapse data compiled from Companies House filings and industry press.",
+    "knownIssues": ["No single official MMC definition — figures may include volumetric, panelised and hybrid systems differently", "Government 25% by 2025 target was never formally funded or regulated", "Collapse data may miss smaller regional operators"]
+  }
+}

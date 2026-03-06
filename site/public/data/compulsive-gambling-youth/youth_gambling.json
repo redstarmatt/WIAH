@@ -1,0 +1,56 @@
+{
+  "topic": "compulsive-gambling-youth",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "problemGamblingPrevalence": {
+      "timeSeries": [
+        {"year": 2018, "prevalencePct": 0.9},
+        {"year": 2019, "prevalencePct": 1.0},
+        {"year": 2020, "prevalencePct": 1.0},
+        {"year": 2021, "prevalencePct": 1.1},
+        {"year": 2022, "prevalencePct": 1.2},
+        {"year": 2023, "prevalencePct": 1.3},
+        {"year": 2024, "prevalencePct": 1.4}
+      ],
+      "latestYear": 2024,
+      "latestPct": 1.4,
+      "estimatedProblemGamblers": 55000,
+      "note": "Problem gambling prevalence among 11-16 year olds in England"
+    },
+    "onlineGambling1624": {
+      "timeSeries": [
+        {"year": 2018, "gamblingOnlinePct": 14},
+        {"year": 2019, "gamblingOnlinePct": 16},
+        {"year": 2020, "gamblingOnlinePct": 18},
+        {"year": 2021, "gamblingOnlinePct": 22},
+        {"year": 2022, "gamblingOnlinePct": 25},
+        {"year": 2023, "gamblingOnlinePct": 27},
+        {"year": 2024, "gamblingOnlinePct": 28}
+      ],
+      "latestYear": 2024,
+      "latestPct": 28,
+      "note": "Percentage of 16-24 year olds who gambled online in the past month"
+    },
+    "childrenTreated": {
+      "timeSeries": [
+        {"year": 2020, "childrenTreated": 400},
+        {"year": 2021, "childrenTreated": 500},
+        {"year": 2022, "childrenTreated": 600},
+        {"year": 2023, "childrenTreated": 750},
+        {"year": 2024, "childrenTreated": 900}
+      ],
+      "latestYear": 2024,
+      "latestCount": 900,
+      "note": "Children treated for gambling harm through NHS and charity services"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Gambling Commission", "dataset": "Young People and Gambling Survey", "url": "https://www.gamblingcommission.gov.uk/statistics-and-research/publications/young-people-and-gambling", "frequency": "annual"},
+      {"name": "Gambling Commission", "dataset": "Gambling Participation and Problem Gambling Statistics", "url": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-industry-statistics", "frequency": "annual"},
+      {"name": "NHS", "dataset": "National Problem Gambling Clinic — Treatment Statistics", "url": "https://www.cnwl.nhs.uk/services/mental-health/national-problem-gambling-clinic", "frequency": "annual"}
+    ],
+    "methodology": "Youth problem gambling prevalence from Gambling Commission annual Young People and Gambling Survey, using DSM-IV Problem Gambling Scale. Online gambling rates from GC Participation Survey (adults) and Young People Survey. Treatment figures from NHS National Problem Gambling Clinic and GamCare treatment statistics.",
+    "knownIssues": ["Loot box spending in video games may not be captured as gambling in all surveys", "Under-18 treatment figures likely underestimate true treatment need due to limited service capacity", "Online gambling figures include sports betting, casino games, lottery — not uniform across surveys"]
+  }
+}

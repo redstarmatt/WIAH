@@ -1,0 +1,79 @@
+{
+  "topic": "planning-appeals",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "appealSuccessRate": {
+      "timeSeries": [
+        {"year": 2015, "successRatePct": 33},
+        {"year": 2016, "successRatePct": 34},
+        {"year": 2017, "successRatePct": 35},
+        {"year": 2018, "successRatePct": 36},
+        {"year": 2019, "successRatePct": 36},
+        {"year": 2020, "successRatePct": 37},
+        {"year": 2021, "successRatePct": 38},
+        {"year": 2022, "successRatePct": 40},
+        {"year": 2023, "successRatePct": 42},
+        {"year": 2024, "successRatePct": 43}
+      ],
+      "latestYear": 2024,
+      "latestPct": 43,
+      "note": "Housing planning appeal success rate, England. Proportion of housing refusal appeals upheld by Planning Inspectorate."
+    },
+    "unpermittedHomes": {
+      "timeSeries": [
+        {"year": 2018, "homesThousands": 180},
+        {"year": 2019, "homesThousands": 200},
+        {"year": 2020, "homesThousands": 220},
+        {"year": 2021, "homesThousands": 240},
+        {"year": 2022, "homesThousands": 250},
+        {"year": 2023, "homesThousands": 255},
+        {"year": 2024, "homesThousands": 260}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 260,
+      "note": "Homes with extant planning permission granted but not yet started or under construction, England."
+    },
+    "decisionTime": {
+      "timeSeries": [
+        {"year": 2018, "avgWeeks": 9.2},
+        {"year": 2019, "avgWeeks": 9.5},
+        {"year": 2020, "avgWeeks": 10.1},
+        {"year": 2021, "avgWeeks": 10.8},
+        {"year": 2022, "avgWeeks": 11.2},
+        {"year": 2023, "avgWeeks": 11.5},
+        {"year": 2024, "avgWeeks": 11.8}
+      ],
+      "latestYear": 2024,
+      "latestWeeks": 11.8,
+      "note": "Average time for local planning authorities to determine major housing applications, England."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Planning Inspectorate",
+        "dataset": "Planning appeals statistical release",
+        "url": "https://www.gov.uk/government/collections/planning-inspectorate-statistical-releases",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "MHCLG",
+        "dataset": "Land use change statistics and housing supply",
+        "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-planning-application-statistics",
+        "frequency": "annual"
+      },
+      {
+        "name": "MHCLG",
+        "dataset": "Net supply of housing: England 2023/24",
+        "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-housing-supply",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Appeal success rate is the proportion of householder and major housing appeals decided in favour of the appellant (developer). Permitted but unbuilt homes are derived from MHCLG housing supply pipeline statistics. Average decision time is measured from valid application date to decision date for major applications.",
+    "knownIssues": [
+      "Appeal success rates vary significantly by appeal type (written reps, hearing, inquiry) — these figures represent all housing appeals combined",
+      "Permitted but unbuilt homes figures include schemes at various stages of pre-commencement; some may have legitimate reasons for delay such as infrastructure requirements",
+      "Decision time figures affected by pandemic backlogs 2020-2021"
+    ]
+  }
+}

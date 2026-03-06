@@ -1,0 +1,80 @@
+{
+  "topic": "public-sector-staffing",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "civilService": {
+      "timeSeries": [
+        {"year": 2010, "headcountThousands": 492},
+        {"year": 2011, "headcountThousands": 450},
+        {"year": 2012, "headcountThousands": 424},
+        {"year": 2013, "headcountThousands": 400},
+        {"year": 2014, "headcountThousands": 390},
+        {"year": 2015, "headcountThousands": 384},
+        {"year": 2016, "headcountThousands": 384},
+        {"year": 2017, "headcountThousands": 390},
+        {"year": 2018, "headcountThousands": 396},
+        {"year": 2019, "headcountThousands": 404},
+        {"year": 2020, "headcountThousands": 436},
+        {"year": 2021, "headcountThousands": 465},
+        {"year": 2022, "headcountThousands": 478},
+        {"year": 2023, "headcountThousands": 512},
+        {"year": 2024, "headcountThousands": 514}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 514,
+      "note": "UK civil service headcount, all grades. Austerity cuts 2010-2016, recovery phase post-2020."
+    },
+    "nhsWorkforce": {
+      "timeSeries": [
+        {"year": 2015, "headcountThousands": 1160},
+        {"year": 2016, "headcountThousands": 1180},
+        {"year": 2017, "headcountThousands": 1210},
+        {"year": 2018, "headcountThousands": 1240},
+        {"year": 2019, "headcountThousands": 1260},
+        {"year": 2020, "headcountThousands": 1280},
+        {"year": 2021, "headcountThousands": 1320},
+        {"year": 2022, "headcountThousands": 1360},
+        {"year": 2023, "headcountThousands": 1420},
+        {"year": 2024, "headcountThousands": 1480}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 1480,
+      "note": "NHS England workforce headcount including all staff groups. Excludes GP practices."
+    },
+    "localGovernment": {
+      "timeSeries": [
+        {"year": 2010, "headcountThousands": 2980},
+        {"year": 2011, "headcountThousands": 2760},
+        {"year": 2012, "headcountThousands": 2620},
+        {"year": 2013, "headcountThousands": 2540},
+        {"year": 2014, "headcountThousands": 2480},
+        {"year": 2015, "headcountThousands": 2450},
+        {"year": 2016, "headcountThousands": 2440},
+        {"year": 2017, "headcountThousands": 2460},
+        {"year": 2018, "headcountThousands": 2490},
+        {"year": 2019, "headcountThousands": 2520},
+        {"year": 2020, "headcountThousands": 2560},
+        {"year": 2021, "headcountThousands": 2580},
+        {"year": 2022, "headcountThousands": 2600},
+        {"year": 2023, "headcountThousands": 2610},
+        {"year": 2024, "headcountThousands": 2620}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 2620,
+      "note": "Local government workforce headcount, England. Fell 12% from 2010 peak under austerity."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Cabinet Office", "dataset": "Civil Service Statistics", "url": "https://www.gov.uk/government/collections/civil-service-statistics", "frequency": "annual"},
+      {"name": "NHS England", "dataset": "NHS Workforce Statistics", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics", "frequency": "monthly"},
+      {"name": "ONS", "dataset": "Public Sector Employment, UK", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/publicsectorpersonnel", "frequency": "quarterly"}
+    ],
+    "methodology": "Civil service headcount from Cabinet Office annual statistics, headcount basis (not FTE). NHS workforce from NHS England Digital, all staff in post. Local government from ONS public sector employment survey. All figures for September of each year where available.",
+    "knownIssues": [
+      "Civil service figures include some arm's length bodies, definitions have changed over time",
+      "NHS workforce includes bank and agency staff in some counts — time series may not be fully consistent",
+      "Local government figures affected by transfer of functions between tiers and to other bodies"
+    ]
+  }
+}

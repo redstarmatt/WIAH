@@ -1,0 +1,54 @@
+{
+  "topic": "birth-trauma",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "ptsdEstimates": {
+      "timeSeries": [
+        {"year": 2018, "estimatedCasesThousands": 25},
+        {"year": 2019, "estimatedCasesThousands": 26},
+        {"year": 2020, "estimatedCasesThousands": 27},
+        {"year": 2021, "estimatedCasesThousands": 28},
+        {"year": 2022, "estimatedCasesThousands": 30},
+        {"year": 2023, "estimatedCasesThousands": 31},
+        {"year": 2024, "estimatedCasesThousands": 30}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 30,
+      "note": "Estimated annual cases of birth-related PTSD (post-traumatic stress disorder) in England"
+    },
+    "birthTraumaClinics": {
+      "timeSeries": [
+        {"year": 2020, "trustsWithClinicPct": 12},
+        {"year": 2021, "trustsWithClinicPct": 15},
+        {"year": 2022, "trustsWithClinicPct": 18},
+        {"year": 2023, "trustsWithClinicPct": 20},
+        {"year": 2024, "trustsWithClinicPct": 22}
+      ],
+      "latestYear": 2024,
+      "latestPct": 22,
+      "note": "Percentage of NHS maternity trusts with a dedicated birth trauma or birth reflections clinic"
+    },
+    "perinatalMhReferrals": {
+      "timeSeries": [
+        {"year": 2019, "referralsThousands": 18},
+        {"year": 2020, "referralsThousands": 20},
+        {"year": 2021, "referralsThousands": 25},
+        {"year": 2022, "referralsThousands": 32},
+        {"year": 2023, "referralsThousands": 38},
+        {"year": 2024, "referralsThousands": 42}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 42,
+      "note": "Annual referrals to NHS perinatal mental health services in England"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England", "dataset": "Perinatal Mental Health Services — MHMDS", "url": "https://www.england.nhs.uk/mental-health/perinatal/", "frequency": "annual"},
+      {"name": "Birth Trauma Association", "dataset": "Birth Trauma Inquiry Evidence", "url": "https://www.birthtraumaassociation.org.uk/", "frequency": "biennial"},
+      {"name": "NICE", "dataset": "Antenatal and Postnatal Mental Health (NG201)", "url": "https://www.nice.org.uk/guidance/ng201", "frequency": "as-updated"}
+    ],
+    "methodology": "PTSD estimates derived from Birth Trauma Association prevalence surveys (3-4% of births) applied to ONS live birth counts. Birth trauma clinic provision from NHS England maternity transformation programme survey data. Perinatal MH referrals from NHS Mental Health Mission MHMDS quarterly returns.",
+    "knownIssues": ["PTSD prevalence estimates based on survey data; clinical diagnosis rates are likely lower due to underdiagnosis", "Birth trauma clinic definition varies — some trusts count informal 'birth reflections' services", "Referral growth partly reflects capacity expansion, not solely increased need"]
+  }
+}
