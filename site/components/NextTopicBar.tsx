@@ -6,7 +6,8 @@ import { TOPICS, getNextTopic, getMetricStatus, STATUS_COLOUR } from '@/lib/topi
 
 const SHOW_THRESHOLD = 0.90;
 const HIDE_THRESHOLD = 0.84;
-const AUTO_ADVANCE_MS = 2000;
+const AUTO_ADVANCE_MS = 6000;
+const SCROLL_IDLE_MS = 1500;
 
 export default function NextTopicBar() {
   const pathname = usePathname();
@@ -20,6 +21,8 @@ export default function NextTopicBar() {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startTimeRef = useRef<number | null>(null);
   const prevPathnameRef = useRef(pathname);
+  const scrollIdleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isScrollIdle, setIsScrollIdle] = useState(false);
 
   const currentSlug = pathname.replace(/^\//, '').split('/')[0];
   const isTopicPage = Boolean(currentSlug && currentSlug in TOPICS);
@@ -33,10 +36,11 @@ export default function NextTopicBar() {
       setIsVisible(false);
       setProgress(0);
       setIsFadingOut(false);
+      setIsScrollIdle(false);
     }
   }, [pathname]);
 
-  // Scroll listener
+  // Scroll listener — also tracks idle state so countdown only starts after user stops scrolling
   useEffect(() => {
     if (!nextTopic || isDismissed) return;
 
@@ -50,11 +54,19 @@ export default function NextTopicBar() {
         if (prev && ratio < HIDE_THRESHOLD) return false;
         return prev;
       });
+
+      // Reset idle state on every scroll event
+      setIsScrollIdle(false);
+      if (scrollIdleTimerRef.current) clearTimeout(scrollIdleTimerRef.current);
+      scrollIdleTimerRef.current = setTimeout(() => setIsScrollIdle(true), SCROLL_IDLE_MS);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollIdleTimerRef.current) clearTimeout(scrollIdleTimerRef.current);
+    };
   }, [nextTopic, isDismissed, currentSlug]);
 
   const navigateTo = useCallback((href: string) => {
@@ -62,9 +74,9 @@ export default function NextTopicBar() {
     setTimeout(() => router.push(href), 180);
   }, [router]);
 
-  // Progress timer
+  // Progress timer — only counts down once the user has stopped scrolling
   useEffect(() => {
-    if (isVisible && nextTopic && !isDismissed) {
+    if (isVisible && nextTopic && !isDismissed && isScrollIdle) {
       startTimeRef.current = Date.now();
 
       intervalRef.current = setInterval(() => {
@@ -86,7 +98,7 @@ export default function NextTopicBar() {
       setProgress(0);
       startTimeRef.current = null;
     }
-  }, [isVisible, nextTopic, isDismissed, navigateTo]);
+  }, [isVisible, nextTopic, isDismissed, navigateTo, isScrollIdle]);
 
   const handleContinue = useCallback(() => {
     if (nextTopic) navigateTo(nextTopic.href);
