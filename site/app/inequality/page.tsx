@@ -74,6 +74,15 @@ export default function InequalityPage() {
             value: d.top10Pct / 100,
           })),
         },
+        {
+          id: 'bottom50',
+          label: 'Bottom 50% income share (%)',
+          colour: '#2A9D8F',
+          data: data.national.incomeShares.timeSeries.map(d => ({
+            date: fyToDate(d.year),
+            value: d.bottom50Pct / 100,
+          })),
+        },
       ]
     : [];
 
@@ -141,8 +150,8 @@ export default function InequalityPage() {
         <ScrollReveal>
           <section id="sec-income" className="mb-12">
             <LineChart
-              title="UK income Gini coefficient and top 10% income share, 2010&ndash;2023"
-              subtitle="Gini coefficient of 0 = perfect equality; 1 = complete inequality. Top 10% share shown at 1/100 scale."
+              title="UK income inequality: Gini, top 10% share and bottom 50% share, 2010&ndash;2023"
+              subtitle="Gini coefficient (0 = equality, 1 = inequality). Income shares divided by 100 to share the same axis."
               series={giniAndShareSeries}
               yLabel="Value"
               source={{
