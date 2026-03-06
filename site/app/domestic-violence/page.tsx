@@ -225,18 +225,14 @@ export default function DomesticViolencePage() {
       </ScrollReveal>
 
       {/* Editorial context */}
-      <section className="max-w-3xl mx-auto px-6 py-12 border-b border-wiah-border text-wiah-black">
-        <div className="prose prose-sm max-w-none space-y-6 text-base leading-relaxed">
+      <section className="max-w-2xl mx-auto px-6 py-12 border-b border-wiah-border text-wiah-black">
+        <div className="text-base leading-[1.7] space-y-4">
           <p>
-            The Crime Survey for England and Wales (CSEW) &mdash; which captures unreported crime through household interviews &mdash; found 2.4 million adults experienced domestic abuse in the year to March 2023: 1.4 million women and 750,000 men. Lifetime prevalence runs to 1 in 4 women and 1 in 10 men. Yet only 18% of incidents are reported to police. The Femicide Census recorded 76 women killed by a male partner or ex-partner in 2022 &mdash; roughly two per week. Of those, 62% were killed in their own home, and there had been an average of 12 prior police contacts before the fatal incident.
+            The Crime Survey for England and Wales found 2.4 million adults experienced domestic abuse in the year to March 2023 &mdash; yet only 18% of incidents are reported to police. The Femicide Census recorded 76 women killed by a male partner or ex-partner in 2022, with an average of 12 prior police contacts before the fatal incident. Of over 900,000 domestic abuse crimes recorded in 2022/23, only 6% resulted in a charge &mdash; down from 14% in 2015. Victim withdrawal accounts for 48% of discontinued cases.
           </p>
 
           <p>
-            Police recording has tripled since 2013/14, partly due to the criminalisation of coercive control under the Serious Crime Act 2015, but the justice response has weakened. Of over 900,000 domestic abuse crimes recorded in 2022/23, only 6% resulted in a charge &mdash; down from 14% in 2015. Victim withdrawal accounts for 48% of discontinued cases; those that do proceed take an average of 18 months from report to Crown Court completion. Clare&apos;s Law, introduced in 2014 to let people check a partner&apos;s history, has generated over 70,000 disclosures, yet systemic barriers to prosecution persist.
-          </p>
-
-          <p>
-            The Domestic Abuse Act 2021 created the first statutory definition, established the Domestic Abuse Commissioner (Nicole Jacobs), introduced Domestic Abuse Protection Orders, and ended direct cross-examination by perpetrators in court. But infrastructure lags behind legislation. England has roughly 3,700 refuge beds &mdash; half the 7,400 the Istanbul Convention standard requires. Women&apos;s Aid reports 18,000 refuge requests were declined in 2022/23. Multi-Agency Risk Assessment Conferences (MARACs) handled 88,000 high-risk referrals that year, 70% involving repeat victims &mdash; evidence that intervention is coming too late.
+            The Domestic Abuse Act 2021 introduced new protections, but infrastructure lags far behind. England has roughly 3,700 refuge beds &mdash; half the 7,400 the Istanbul Convention requires. Women&apos;s Aid reports 18,000 refuge requests were declined in 2022/23. Multi-Agency Risk Assessment Conferences (MARACs) handled 88,000 high-risk referrals, 70% involving repeat victims &mdash; evidence that intervention is coming too late.
           </p>
         </div>
       </section>
