@@ -504,12 +504,24 @@ export default function EducationPage() {
       ]
     : [];
 
+  const sendFundingDeficitSeries: Series[] = newSchoolFundingData?.sendFundingDeficit
+    ? [{
+        id: 'send-deficit',
+        label: 'SEND funding deficit (£bn)',
+        colour: '#E63946',
+        data: newSchoolFundingData.sendFundingDeficit.map(d => ({
+          date: new Date(d.year, 0, 1),
+          value: d.deficitBn,
+        })),
+      }]
+    : [];
+
   const newSchoolFundingAnnotations: Annotation[] = [
     { date: new Date(2015, 0, 1), label: 'Austerity cuts peak' },
     { date: new Date(2021, 0, 1), label: 'Recovery begins' },
   ];
 
-  // 12. CAMHS — referrals (in hundreds of thousands) and wait over 18 weeks %
+  // 12. CAMHS — referrals (in hundreds of thousands), rejections, and wait over 18 weeks %
   const camhsReferralsSeries: Series[] = camhsData
     ? [
         {
@@ -522,15 +534,27 @@ export default function EducationPage() {
           })),
         },
         {
-          id: 'camhs-wait',
-          label: '% waiting over 18 weeks',
+          id: 'camhs-rejected',
+          label: 'Rejected referrals (00s of thousands)',
           colour: '#E63946',
           data: camhsData.timeSeries.map(d => ({
             date: new Date(d.year, 0, 1),
-            value: d.waitOver18Weeks,
+            value: d.rejected / 100000,
           })),
         },
       ]
+    : [];
+
+  const camhsWaitSeries: Series[] = camhsData
+    ? [{
+        id: 'camhs-wait',
+        label: '% waiting over 18 weeks',
+        colour: '#F4A261',
+        data: camhsData.timeSeries.map(d => ({
+          date: new Date(d.year, 0, 1),
+          value: d.waitOver18Weeks,
+        })),
+      }]
     : [];
 
   const camhsAnnotations: Annotation[] = [
@@ -1228,6 +1252,25 @@ export default function EducationPage() {
               <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
             )}
           </ScrollReveal>
+
+          <ScrollReveal>
+            {sendFundingDeficitSeries.length > 0 ? (
+              <LineChart
+                title="SEND funding deficit, 2018–2023"
+                subtitle="Cumulative deficit in local authority high-needs budgets (special educational needs), England. £bn."
+                series={sendFundingDeficitSeries}
+                yLabel="Deficit (£bn)"
+                source={{
+                  name: 'Institute for Fiscal Studies; DfE High Needs Block data',
+                  dataset: 'Local authority SEND funding deficit',
+                  frequency: 'annual',
+                  url: 'https://ifs.org.uk/education-spending',
+                }}
+              />
+            ) : (
+              <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+            )}
+          </ScrollReveal>
         </div>{/* end sec-new-funding */}
 
         {/* ── CAMHS section ──────────────────────────────────────────────── */}
@@ -1247,11 +1290,31 @@ export default function EducationPage() {
           <ScrollReveal>
             {camhsReferralsSeries.length > 0 ? (
               <LineChart
-                title="Children referred to CAMHS, 2016–2024"
-                subtitle="Annual referrals to Child and Adolescent Mental Health Services (00s of thousands) and % waiting over 18 weeks, England."
+                title="CAMHS referrals and rejections, 2016–2024"
+                subtitle="Annual referrals and rejected referrals to Child and Adolescent Mental Health Services (00s of thousands), England. Over a quarter of children referred are turned away."
                 series={camhsReferralsSeries}
                 annotations={camhsAnnotations}
-                yLabel="Referrals (00s of thousands) / %"
+                yLabel="Referrals (00s of thousands)"
+                source={{
+                  name: 'NHS England',
+                  dataset: 'Mental Health Services Monthly Statistics',
+                  frequency: 'monthly (aggregated annually)',
+                  url: 'https://www.england.nhs.uk/mental-health/resources/mental-health-dashboard/',
+                }}
+              />
+            ) : (
+              <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+            )}
+          </ScrollReveal>
+
+          <ScrollReveal>
+            {camhsWaitSeries.length > 0 ? (
+              <LineChart
+                title="CAMHS: children waiting over 18 weeks, 2016–2024"
+                subtitle="Percentage of accepted referrals waiting more than 18 weeks for treatment to begin, England."
+                series={camhsWaitSeries}
+                annotations={camhsAnnotations}
+                yLabel="Percent"
                 source={{
                   name: 'NHS England',
                   dataset: 'Mental Health Services Monthly Statistics',
