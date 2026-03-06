@@ -45,8 +45,16 @@ interface CrimeTrendCategory {
   timeSeries: CrimeTrendPoint[];
 }
 
+interface CsewTotalPoint {
+  period: string;
+  incidentsMn: number;
+}
+
 interface CrimeTrendsData {
   crimeTrends: Record<string, CrimeTrendCategory>;
+  csewSurvey?: {
+    total: CsewTotalPoint[];
+  };
 }
 
 interface ReoffendingPoint {
@@ -335,6 +343,32 @@ export default function JusticePage() {
             value: d.ratePer100k!,
           })),
       }]
+    : [];
+
+  // CSEW survey vs recorded crime — both in millions, financial years only
+  const csewVsRecordedSeries: Series[] = crimeData
+    ? [
+        ...(crimeData.csewSurvey?.total ? [{
+          id: 'csew-total',
+          label: 'CSEW estimated crimes (millions)',
+          colour: '#264653',
+          data: crimeData.csewSurvey.total
+            .filter(d => d.period.includes('/'))
+            .map(d => ({
+              date: fyToDate(d.period),
+              value: d.incidentsMn,
+            })),
+        }] : []),
+        ...(crimeData.crimeTrends.total ? [{
+          id: 'recorded-crime-mn',
+          label: 'Police recorded crime (millions)',
+          colour: '#0D1117',
+          data: crimeData.crimeTrends.total.timeSeries.map(d => ({
+            date: fyToDate(d.period),
+            value: Math.round((d.count / 1_000_000) * 10) / 10,
+          })),
+        }] : []),
+      ]
     : [];
 
   const crimeTypeSeries: Series[] = crimeData
@@ -859,6 +893,28 @@ export default function JusticePage() {
             source={{
               name: 'ONS / Home Office',
               dataset: 'Crime in England and Wales, Appendix Tables (A5a); ONS Population Estimates',
+              frequency: 'annual (financial year)',
+              url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/crimeinenglandandwalesappendixtables',
+            }}
+          />
+        ) : (
+          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
+        )}
+
+        {/* Chart 7c: CSEW survey vs recorded crime */}
+        {csewVsRecordedSeries.length > 0 ? (
+          <LineChart
+            title="Estimated vs recorded crime, 2002/03–2024/25"
+            subtitle="The Crime Survey (CSEW) captures crimes not reported to police. Recorded crime is a fraction of actual victimisation. CSEW was suspended during COVID (2020/21–2021/22)."
+            series={csewVsRecordedSeries}
+            annotations={[
+              { date: new Date(2014, 0), label: '2014: NCRS tightened' },
+              { date: new Date(2020, 2), label: '2020: CSEW suspended' },
+            ]}
+            yLabel="Incidents (millions)"
+            source={{
+              name: 'ONS — Crime Survey for England and Wales; Home Office',
+              dataset: 'Crime in England and Wales, Appendix Tables (A3a, A5a)',
               frequency: 'annual (financial year)',
               url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/crimeinenglandandwalesappendixtables',
             }}
