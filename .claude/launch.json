@@ -3,11 +3,14 @@
   "configurations": [
     {
       "name": "site",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeExecutable": "/Users/mlewsey/Desktop/WIAH/site/node_modules/.bin/next",
+      "runtimeArgs": ["dev"],
       "cwd": "site",
       "port": 3000,
-      "autoPort": true
+      "autoPort": true,
+      "env": {
+        "NODE_PATH": "/Users/mlewsey/Desktop/WIAH/site/node_modules"
+      }
     }
   ]
 }
