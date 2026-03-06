@@ -222,19 +222,7 @@ export default function PovertyPage() {
               total. Benefit delays, sanctions, and periods of zero income remain the most
               common triggers.
             </p>
-            <p>
-              Beneath income poverty sits a structural wealth divide that no recent policy has
-              narrowed. The richest 10% of households hold 43% of all wealth; the poorest
-              10% have negative net wealth, their debts exceeding their assets. The wealth
-              Gini has risen from 0.61 to 0.65 since 2006. Age compounds this: median
-              household wealth for 16&ndash;24-year-olds is £7,000, against £490,000 for those
-              aged 65&ndash;74 &mdash; a gap driven by property and pension accumulation that
-              is structurally inaccessible to younger cohorts. Income inequality has
-              improved recently (the Gini fell for four consecutive years), but income and
-              wealth are different things. The wealth gap is where advantage compounds
-              across generations.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

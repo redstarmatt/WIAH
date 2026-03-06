@@ -313,18 +313,7 @@ export default function TransportPage() {
               gains require new interventions such as lower urban speed limits and
               better-designed junctions.
             </p>
-            <p>
-              The transition to electric vehicles is moving fast at the headline level:
-              battery EVs went from 0.06% of new car sales in 2011 to nearly 20% in 2024,
-              with over 1.4 million now on UK roads. The ZEV mandate requires manufacturers
-              to hit 22% zero-emission sales in 2024, rising to 100% by 2035. Infrastructure,
-              however, is not keeping pace &mdash; roughly 60,000 public chargers serve
-              1.4 million EVs, a ratio of about 23 vehicles per charger. And the benefits
-              are unevenly distributed: average EV purchase prices remain well above
-              petrol equivalents, meaning lower-income households are largely locked out
-              of the transition despite facing the highest fuel costs.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

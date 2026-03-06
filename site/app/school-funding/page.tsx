@@ -88,34 +88,7 @@ export default function SchoolFundingPage() {
               disadvantaged pupils who lack the family resources to compensate, yet they are
               precisely what squeezed budgets cut first.
             </p>
-            <p>
-              The SEND funding crisis is a discrete emergency layered on top of the general
-              squeeze. The high-needs block — the funding pot for pupils with the most complex
-              needs — has been overwhelmed by rising demand. Councils collectively carry a
-              deficit of £2.1 billion on their SEND budgets, a figure that has grown every
-              year since 2018. Councils are legally required to provide support but are
-              structurally underfunded to do so. Several have issued Section 114 notices
-              or come close to it partly as a result of SEND pressures.
-            </p>
-            <p>
-              Sixth-form funding has been cut more steeply than any other phase. Funding
-              per 16–18 student has fallen by roughly 20% in real terms since 2010.
-              The consequence is visible in curriculum: schools and colleges have dropped
-              less popular A-level subjects — languages, sciences, arts — because they
-              cannot afford to run small-group classes. This restricts pupil choice and
-              deepens inequality, because private schools and sixth-form colleges with
-              reserves can maintain breadth while state schools cannot.
-            </p>
-            <p>
-              Partial recovery since 2019 — driven by the National Funding Formula and
-              additional SEND investment — has improved the picture. But restoring the
-              2009 real-terms peak requires sustained above-inflation increases over
-              several years, not one-off injections. Meanwhile, teaching remains under-paid
-              relative to comparable graduate professions, recruitment and retention are
-              under pressure, and the infrastructure backlog in school buildings stands
-              at an estimated £14.4 billion.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

@@ -88,34 +88,7 @@ export default function SendCrisisPage() {
               to meet deadlines but is actively resistant to requests: refusal rates have
               increased as councils try to manage demand within constrained budgets.
             </p>
-            <p>
-              The tribunal data exposes the scale of the failure. When parents challenge
-              a council's decision on EHCP provision at the SEND tribunal, they win 88%
-              of cases. This is not the profile of a system making borderline decisions
-              in hard cases: it is a system routinely refusing lawful provision, forcing
-              families through adversarial legal processes at significant financial and
-              emotional cost. The families who cannot afford to appeal, or who do not know
-              they can, go without.
-            </p>
-            <p>
-              The financial picture is a key part of the explanation. Councils collectively
-              carry a high-needs budget deficit of over £2 billion, and the gap grows every
-              year. The high-needs block was not uplifted to match the rise in demand, so
-              councils have been rationing by definition, not by need. The result is a
-              generation of children with legally recognised needs who are not receiving
-              the support the law entitles them to — some out of school entirely, some
-              in placements far from home, some waiting years for an appropriate setting.
-            </p>
-            <p>
-              The government's 2023 SEND Review acknowledged the system was failing and
-              proposed a new national framework, but sector bodies have warned that
-              without significant new funding the proposals will not close the gap between
-              entitlement and provision. Demand shows no signs of slowing: referrals for
-              autism assessment and ADHD diagnosis are at record levels in both children's
-              and adult services. The structural mismatch between need and resource
-              will worsen unless funding keeps pace.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

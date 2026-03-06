@@ -161,18 +161,7 @@ export default function WastePage() {
               bins, and 525,000 tonnes are rejected at sorting facilities each year. Public
               willingness is not the bottleneck &mdash; infrastructure and end-markets are.
             </p>
-            <p>
-              Fly-tipping runs at roughly one million incidents a year, peaking at 1.14 million in
-              2020/21 and settling at 964,000 in 2023/24 while enforcement actions have declined
-              relative to the volume. Food waste is equally stubborn: UK households discard
-              6 million tonnes annually, 73% of it edible, worth an estimated &pound;17 billion
-              &mdash; around &pound;1,000 for a family of four. Two policy shifts may start to
-              move the needle. Extended Producer Responsibility begins in 2025, forcing packaging
-              producers to bear disposal costs for the first time. And from March 2026, all
-              English councils must offer separate food-waste collections &mdash; a measure that
-              Wales adopted years ago and which helped push its recycling rate above 65%.
-            </p>
-          </div>
+            </div>
         </section>
 
         {/* Metric Cards */}

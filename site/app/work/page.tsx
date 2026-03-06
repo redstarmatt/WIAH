@@ -228,18 +228,7 @@ export default function WorkPage() {
               to work. Britain&apos;s health crisis and its labour-market crisis are, in
               practice, the same crisis.
             </p>
-            <p>
-              Structural shifts are reshaping the quality of work itself. Zero-hours contracts
-              have quadrupled from 252,000 workers in 2012 to 1.05 million in 2024; those on
-              them typically earn 40% less than comparable workers with guaranteed hours. The
-              gender pay gap, by contrast, is a genuine success &mdash; down from 19.6% to
-              13.1% over the same period, driven partly by mandatory reporting since 2017 and
-              partly by women moving into higher-paid roles. The Employment Rights Bill,
-              expected in 2025, gives zero-hours workers the right to request guaranteed hours
-              &mdash; the first serious legislative attempt to address insecure work since the
-              gig economy emerged.
-            </p>
-          </div>
+            </div>
         </div>
 
         {/* ── Section: Real Wages ──────────────────────────────────────────── */}

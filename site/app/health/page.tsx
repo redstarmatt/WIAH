@@ -656,15 +656,7 @@ export default function HealthPage() {
               nations &mdash; but the stall coincided with a period of austerity-driven cuts to public health,
               social care, and local government services. The causes remain debated; the trend does not.
             </p>
-            <p>
-              Not everything is deteriorating. Cancer survival has improved markedly: five-year lung cancer
-              survival has risen from 10.4% to 16.2%, breast cancer survival exceeds 85%, and melanoma
-              survival tops 91%. These gains reflect genuine advances in screening, diagnostics, and treatment.
-              Life expectancy, at 79 and 83 years, remains high by historical standards. The picture is one
-              of a health system producing better clinical outcomes within an infrastructure that can no longer
-              absorb the volume of demand placed on it.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

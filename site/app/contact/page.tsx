@@ -29,28 +29,7 @@ export default function ContactPage() {
             If a number looks wrong or a source has been updated, please let us know. Include the topic page,
             the specific figure, and the correct source if you have it.
           </p>
-
-          <h2 className="text-xl font-bold pt-4">Suggest a topic</h2>
-          <p>
-            We prioritise topics that are: measurable with official data, relevant to large numbers of people,
-            and poorly understood by the general public. If you have a suggestion that meets these criteria,
-            we&apos;d like to hear it.
-          </p>
-
-          <h2 className="text-xl font-bold pt-4">Get in touch</h2>
-          <p>
-            Email us at{' '}
-            <a
-              href="mailto:hello@wiah.uk"
-              className="text-wiah-blue hover:underline font-mono"
-            >
-              hello@wiah.uk
-            </a>
-          </p>
-          <p className="font-mono text-sm text-wiah-mid">
-            We read every message. We aim to respond within a week.
-          </p>
-        </div>
+            </div>
       </main>
       <footer className="border-t border-wiah-border py-5 px-6 mt-12">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-wiah-mid">

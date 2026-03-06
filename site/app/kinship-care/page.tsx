@@ -82,16 +82,7 @@ export default function KinshipCarePage() {
             <p>
               The trajectory is sharply upward. SGO applications rose 48% between 2018 and 2023, reflecting both increased demand from children&apos;s services seeking alternatives to foster care and a growing preference among courts for placing children within their extended family. The Children and Families Act 2014 introduced a duty on local authorities to consider kinship placement before foster care, but this legal priority has not been matched by financial support. The Independent Review of Children&apos;s Social Care (2022) recommended a comprehensive financial allowance for kinship carers equivalent to the foster care rate &mdash; the government accepted the principle but has not yet implemented it. A pilot programme in 2024 covers just 12 local authorities.
             </p>
-            <p>
-              The Kinship Care Act, passed in 2024, represented the first dedicated legislation for kinship carers, requiring local authorities to publish a kinship care strategy and extending school admission priority and Pupil Premium eligibility to children in kinship care. Campaigners welcomed the Act but noted it stopped short of the financial parity recommended by the MacAlister review. The cost-benefit analysis is stark: kinship care saves local authorities an estimated &pound;4.4 billion annually compared with the cost of equivalent foster placements, yet kinship carers receive an average of &pound;80 per week less than foster carers caring for children of the same age.
-            </p>
-            <p>
-              The burden falls disproportionately on grandmothers. Research from the University of Bristol found that 75% of primary kinship carers are female, with a median age of 56. Many have given up work to care for grandchildren: 42% report a significant drop in household income, and 38% have fallen behind on bills or taken on debt. Black and mixed-heritage children are over-represented in kinship care relative to their share of the child population &mdash; 18% of kinship children are from Black backgrounds compared with 6% of children nationally &mdash; reflecting patterns of systemic over-surveillance of Black families by children&apos;s social care. Carers in the most deprived areas are least likely to receive a kinship carer assessment, creating a postcode lottery in support.
-            </p>
-            <p>
-              Measuring kinship care accurately is inherently difficult. Official DfE statistics capture only children in formal arrangements known to local authorities &mdash; those on SGOs, Child Arrangements Orders, or kinship foster placements. The far larger group of children in informal kinship care &mdash; where a grandparent simply takes over without court involvement &mdash; is invisible in administrative data. Census data and household surveys offer estimates, but these are acknowledged to under-count. Financial support data relies on charity surveys with self-selection bias, meaning the 31% receiving support figure may overstate the true rate, since carers who engage with charities are more likely to have sought and received help. The 2021 Census introduced a new question on kinship care for the first time, but its wording captured only those who self-identified as a kinship carer &mdash; a term many informal carers do not use.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

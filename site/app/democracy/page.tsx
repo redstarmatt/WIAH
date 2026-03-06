@@ -193,10 +193,7 @@ export default function DemocracyPage() {
             <p>
               Trust in politicians to tell the truth sits at 17%, according to Ipsos&apos;s annual survey running since 1983. That figure is level with the post-expenses-scandal trough of 2009 and only marginally above the 15% recorded after Partygate in 2022. For context, 95% of Britons trust nurses and 91% trust doctors; politicians rank below estate agents, at 26%. The 2016 EU referendum &mdash; held amid similar distrust &mdash; drew 72.2% turnout, suggesting disillusionment with politicians does not automatically suppress participation when the stakes feel direct.
             </p>
-            <p>
-              Roughly 3.1 million eligible voters remain unregistered, concentrated in London, large cities, and among younger renters; registration is highest in Scotland. The 2024 election was the first general election to require voter ID &mdash; the Electoral Commission found approximately 800,000 people arrived at polling stations without valid identification, and around 4% of would-be voters did not cast a ballot as a result. Party funding, meanwhile, reversed sharply: Labour declared &pound;41.2 million in donations in 2024 versus the Conservatives&apos; &pound;14.8 million. In 2019, the positions were inverted &mdash; Conservatives &pound;37 million, Labour &pound;28.4 million.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

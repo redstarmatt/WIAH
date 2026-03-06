@@ -93,16 +93,7 @@ export default function LandBankingPage() {
             <p>
               The mechanics of land banking are structural rather than conspiratorial. Housebuilders typically acquire sites with outline planning permission, then apply for detailed permission before commencing construction. Each stage can be legitimately delayed while developers &ldquo;absorb&rdquo; completed units into the local market at the price point that maximises revenue rather than maximising volume. The business model of the major listed housebuilders &mdash; Barratt, Taylor Wimpey, Persimmon, Berkeley &mdash; is explicitly designed around margin rather than output. Annual reports consistently show that these companies target operating margins of 18&ndash;26% and slow construction during market downturns to protect margins rather than sustain completions. Between 2021 and 2023, as mortgage rates rose and buyer demand fell, all four reduced starts significantly while their land banks grew.
             </p>
-            <p>
-              The data from Lichfields Planning Consultancy, which tracks individual planning permissions through to commencement on site, shows that the average gap between permission and build start reached 3.4 years (176 weeks) in 2023, up from 1.6 years (84 weeks) in 2015. The ten largest developers hold a combined land bank of approximately 1.06 million plots with detailed planning permission &mdash; enough to build more than four years&apos; worth of completions at the current rate. Government analysis in 2023 found that 75% of detailed planning permissions for residential development were not implemented within the statutory three-year window, requiring renewal or lapsing entirely.
-            </p>
-            <p>
-              The burden of the housing shortfall falls most heavily on younger people, renters, and those in high-demand areas. The South East, London, and the East of England consistently have the largest gaps between permissions and starts &mdash; precisely the areas with the highest prices and the greatest need. First-time buyer numbers have fallen from 400,000 in 2006 to around 300,000 in 2023, with the average first-time buyer age rising from 29 to 34. Ethnic minorities are disproportionately concentrated in the private rented sector, where supply constraints drive rent inflation. Rural areas face different pressures: second-home ownership and holiday let conversions have inflated land values and pushed local workers out of communities where their families have lived for generations.
-            </p>
-            <p>
-              Measuring land banking is genuinely difficult. There is no statutory requirement for developers to report their land bank size or the status of individual permissions, making aggregate estimates reliant on company accounts and planning authority data. Permissions-to-starts ratios can be distorted by large multi-phase schemes where construction is genuinely progressing on earlier phases while later phases remain unstarted. Infrastructure constraints &mdash; lack of roads, sewers, and utilities capacity &mdash; account for a real portion of the delay, and not all stalled sites reflect developer choice. DLUHC&apos;s build-out rate review data (published 2023) found that around one-third of slow sites faced genuine viability or infrastructure barriers, while two-thirds were assessed as commercially held back.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[

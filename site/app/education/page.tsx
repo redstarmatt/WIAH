@@ -633,17 +633,7 @@ export default function EducationPage() {
               borderline. The system is generating delay, conflict, and cost while failing the children
               it was designed to protect.
             </p>
-            <p>
-              Funding and international benchmarks add context to the domestic picture. Per-pupil school
-              spending fell by over &pound;1,300 in real terms between 2009 and 2017 &mdash; from roughly
-              &pound;8,900 to &pound;7,630. Nominal spending has since recovered to record levels, but
-              the legacy of the squeeze in deferred maintenance, lost support staff, and narrowed curricula
-              takes years to reverse. Internationally, the UK&apos;s PISA 2022 scores &mdash; 494 in reading,
-              489 in maths, 520 in science &mdash; sit above the OECD average and roughly mid-table among
-              G7 nations. England&apos;s schools are neither catastrophic nor exceptional: performing
-              respectably overall while struggling to close the gaps within.
-            </p>
-          </div>
+            </div>
         </section>
 
         <SectionNav sections={[
