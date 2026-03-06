@@ -31,7 +31,7 @@ export default function PrivacyPage() {
 
           <h2 className="text-xl font-bold pt-4">Analytics</h2>
           <p>
-            If we use analytics, we use only privacy-respecting, cookieless tools (such as Plausible Analytics) that do not track individual users, do not build behavioural profiles, and are compliant with GDPR without requiring cookie consent banners.
+            We use Google Analytics 4 to understand how the site is used in aggregate — which topics are read, how visitors navigate, and where they come from. Google Analytics collects anonymised usage data. We do not use it to identify individual users or build behavioural profiles. You can opt out using the <a href="https://tools.google.com/dlpage/gaoptout" className="text-wiah-blue hover:underline" target="_blank" rel="noopener noreferrer">Google Analytics opt-out browser add-on</a>.
           </p>
 
           <h2 className="text-xl font-bold pt-4">Third-party services</h2>
