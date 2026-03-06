@@ -256,18 +256,14 @@ export default function MentalHealthPage() {
       </ScrollReveal>
 
       {/* Editorial context */}
-      <section className="max-w-3xl mx-auto px-6 py-12 border-b border-wiah-border text-wiah-black">
-        <div className="prose prose-sm max-w-none space-y-6 text-base leading-relaxed">
+      <section className="max-w-2xl mx-auto px-6 py-12 border-b border-wiah-border text-wiah-black">
+        <div className="text-base leading-[1.7] space-y-4">
           <p>
-            One in six adults experiences a mental health problem in any given week, yet the system built to treat them is buckling under volume. NHS Talking Therapies &mdash; created in 2008 as IAPT &mdash; received 1.4 million referrals in 2022/23, of which 1.09 million completed treatment and 51% achieved clinical recovery, narrowly clearing the 50% target. Waiting-time standards are broadly met: 83% were seen within six weeks and 96% within 18 weeks against targets of 75% and 95%. But these headline figures mask severe strain elsewhere &mdash; an estimated 1.9 million people are now waiting for NHS mental health care of all kinds.
+            One in six adults experiences a mental health problem in any given week, yet an estimated 1.9 million people are now waiting for NHS mental health care of all kinds. NHS Talking Therapies received 1.4 million referrals in 2022/23 and 51% achieved clinical recovery &mdash; but that headline masks severe strain in CAMHS, where 35% of GP referrals are rejected at triage and those accepted wait an average of 18 weeks. Among 16&ndash;24-year-olds, 27% have a probable mental disorder &mdash; nearly double the rate recorded in 2000.
           </p>
 
           <p>
-            Children&apos;s services face the sharpest bottleneck. CAMHS rejects 35% of GP referrals at triage, and those accepted wait an average of 18 weeks for a first appointment &mdash; rising above 40 weeks in the worst areas. Among 16&ndash;24-year-olds, 27% now have a probable mental disorder according to the 2023 NHS survey, nearly double the rate recorded in 2000. The pandemic accelerated deterioration in youth mental health, but capacity has not kept pace. Inpatient beds have been cut 25% since 2010 &mdash; from 67 to 50 per 100,000 population &mdash; forcing over 1,000 patients annually into out-of-area placements at a cost of &pound;6 million per month.
-          </p>
-
-          <p>
-            Policy has oscillated between expansion and underfunding. The NHS Long-Term Plan (2019) committed &pound;2.3 billion for mental health services, targeting 1.9 million talking therapy patients by 2023/24 and pledging 10,000 additional staff. The Mental Health Investment Standard requires each ICS to grow mental health spending faster than its overall NHS budget. Yet the Mental Health Act &mdash; last substantively reformed in 1983 &mdash; awaits replacement: the 2018 Wessely Review recommended sweeping changes, and a Mental Health Bill introduced to Parliament in 2024 proposes ending indefinite detention for personality disorder and curbing police use of Section 136.
+            Inpatient beds have been cut 25% since 2010, forcing over 1,000 patients annually into out-of-area placements at a cost of &pound;6 million per month. The NHS Long-Term Plan (2019) committed &pound;2.3 billion and 10,000 additional staff. The Mental Health Act &mdash; last substantively reformed in 1983 &mdash; awaits replacement: a Mental Health Bill introduced in 2024 proposes ending indefinite detention for personality disorder and curbing police use of Section 136.
           </p>
         </div>
       </section>
