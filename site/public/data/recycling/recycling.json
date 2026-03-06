@@ -1,0 +1,131 @@
+{
+  "topic": "recycling",
+  "lastUpdated": "2026-01-01",
+  "national": {
+    "recyclingRate": {
+      "timeSeries": [
+        { "year": 2000, "rate": 14.0 },
+        { "year": 2001, "rate": 18.0 },
+        { "year": 2002, "rate": 22.0 },
+        { "year": 2003, "rate": 24.0 },
+        { "year": 2004, "rate": 27.1 },
+        { "year": 2005, "rate": 29.1 },
+        { "year": 2006, "rate": 31.8 },
+        { "year": 2007, "rate": 34.3 },
+        { "year": 2008, "rate": 36.9 },
+        { "year": 2009, "rate": 38.6 },
+        { "year": 2010, "rate": 40.4 },
+        { "year": 2011, "rate": 43.0 },
+        { "year": 2012, "rate": 43.6 },
+        { "year": 2013, "rate": 43.8 },
+        { "year": 2014, "rate": 44.2 },
+        { "year": 2015, "rate": 44.8 },
+        { "year": 2016, "rate": 45.2 },
+        { "year": 2017, "rate": 45.7 },
+        { "year": 2018, "rate": 44.7 },
+        { "year": 2019, "rate": 44.4 },
+        { "year": 2020, "rate": 43.9 },
+        { "year": 2021, "rate": 44.1 },
+        { "year": 2022, "rate": 44.6 },
+        { "year": 2023, "rate": 43.8 }
+      ],
+      "target2035": 65.0,
+      "wales2023": 56.4,
+      "scotland2023": 42.6
+    },
+    "wasteExports": {
+      "timeSeries": [
+        { "year": 2012, "totalKt": 1580 },
+        { "year": 2013, "totalKt": 1620 },
+        { "year": 2014, "totalKt": 1720 },
+        { "year": 2015, "totalKt": 1860 },
+        { "year": 2016, "totalKt": 1980 },
+        { "year": 2017, "totalKt": 2060 },
+        { "year": 2018, "totalKt": 1540 },
+        { "year": 2019, "totalKt": 1280 },
+        { "year": 2020, "totalKt": 1090 },
+        { "year": 2021, "totalKt": 980 },
+        { "year": 2022, "totalKt": 940 }
+      ],
+      "chinaBanYear": 2018,
+      "chinaBanLabel": "2018: China's National Sword policy bans mixed waste imports"
+    },
+    "materialFate": [
+      { "material": "Paper & card", "recycledPct": 87, "colour": "#264653" },
+      { "material": "Garden waste", "recycledPct": 96, "colour": "#2A9D8F" },
+      { "material": "Metals", "recycledPct": 76, "colour": "#F4A261" },
+      { "material": "Glass", "recycledPct": 74, "colour": "#6B7280" },
+      { "material": "Food waste", "recycledPct": 52, "colour": "#5C7A4E" },
+      { "material": "Plastic", "recycledPct": 44, "colour": "#E63946" }
+    ],
+    "plasticTypes": [
+      { "code": "1 (PET)", "example": "Bottles, food trays", "recycled": true },
+      { "code": "2 (HDPE)", "example": "Milk bottles, shampoo", "recycled": true },
+      { "code": "3 (PVC)", "example": "Window frames, pipes", "recycled": false },
+      { "code": "4 (LDPE)", "example": "Carrier bags, cling film", "recycled": false },
+      { "code": "5 (PP)", "example": "Yoghurt pots, bottle caps", "recycled": true },
+      { "code": "6 (PS)", "example": "Foam packaging, disposable cups", "recycled": false },
+      { "code": "7 (Other)", "example": "Multi-layer laminates, sachets", "recycled": false }
+    ]
+  },
+  "localAuthority": {
+    "englandAverage": 43.8,
+    "bestPerformers": [
+      { "name": "South Oxfordshire", "region": "South East", "rate": 66.3 },
+      { "name": "Torridge", "region": "South West", "rate": 63.8 },
+      { "name": "Rutland", "region": "East Midlands", "rate": 62.1 },
+      { "name": "Three Rivers", "region": "East of England", "rate": 60.4 },
+      { "name": "Vale of White Horse", "region": "South East", "rate": 59.7 },
+      { "name": "South Hams", "region": "South West", "rate": 58.9 },
+      { "name": "Stroud", "region": "South West", "rate": 57.8 },
+      { "name": "West Devon", "region": "South West", "rate": 56.4 },
+      { "name": "North Devon", "region": "South West", "rate": 55.6 },
+      { "name": "New Forest", "region": "South East", "rate": 54.9 }
+    ],
+    "worstPerformers": [
+      { "name": "Tower Hamlets", "region": "London", "rate": 19.2 },
+      { "name": "Newham", "region": "London", "rate": 21.0 },
+      { "name": "Southwark", "region": "London", "rate": 22.3 },
+      { "name": "Lewisham", "region": "London", "rate": 23.1 },
+      { "name": "Hackney", "region": "London", "rate": 24.4 },
+      { "name": "Westminster", "region": "London", "rate": 25.8 },
+      { "name": "Haringey", "region": "London", "rate": 26.2 },
+      { "name": "Lambeth", "region": "London", "rate": 27.1 },
+      { "name": "Islington", "region": "London", "rate": 28.0 },
+      { "name": "Kensington & Chelsea", "region": "London", "rate": 29.4 }
+    ],
+    "distribution": {
+      "under30": 8,
+      "30to40": 22,
+      "40to50": 134,
+      "50to60": 146,
+      "above60": 22
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DEFRA",
+        "dataset": "Local authority collected waste management statistics (WasteDataFlow)",
+        "url": "https://www.gov.uk/government/statistical-data-sets/env18-local-authority-collected-waste-annual-results-tables",
+        "retrieved": "2026-01-01",
+        "frequency": "Annual"
+      },
+      {
+        "name": "Environment Agency / DEFRA",
+        "dataset": "UK Statistics on Waste — overseas waste shipments",
+        "url": "https://www.gov.uk/government/statistical-data-sets/waste-statistics",
+        "retrieved": "2026-01-01",
+        "frequency": "Annual"
+      }
+    ],
+    "methodology": "Recycling rates represent the weight of household waste sent for recycling, composting or reuse as a proportion of total local authority collected household waste. Local authority figures are for 2022/23. Material fate percentages are estimates of the fraction of each collected material stream that is successfully processed into secondary materials rather than rejected, contaminated or sent to alternative disposal. Plastic type recyclability reflects collection acceptance in England as of 2024; 'recycled' does not guarantee domestic processing. Export figures cover all waste streams sent overseas for recycling.",
+    "knownIssues": [
+      "Recycling rates include composting and reuse alongside traditional material recycling — these are not directly comparable",
+      "Material fate figures are estimates: no single national dataset tracks individual material streams from bin to end market",
+      "London boroughs have structurally lower recycling rates due to population density, flat-dwelling and smaller bin capacity — comparing with rural areas overstates underperformance",
+      "Export data covers all waste for recycling, not plastic alone",
+      "Plastic type recyclability varies by council — type 5 (PP) is accepted by some but not all authorities"
+    ]
+  }
+}

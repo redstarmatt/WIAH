@@ -101,7 +101,7 @@ export const CATEGORIES: Category[] = [
     name: 'Environment & Climate',
     slug: 'environment-climate',
     featured: ['water', 'net-zero', 'air-quality'],
-    topics: ['water', 'net-zero', 'air-quality', 'environment', 'biodiversity', 'flooding', 'waste', 'flood-risk', 'urban-heat', 'soil-health', 'marine-environment', 'energy-efficiency', 'plastic-pollution', 'trees-and-forests', 'noise-pollution', 'rewilding', 'solar-power', 'onshore-wind', 'aviation-emissions', 'peatlands', 'food-waste', 'chalk-streams', 'green-jobs', 'river-bathing', 'heat-mortality', 'habitat-condition', 'farming-subsidies', 'offshore-wind', 'circular-economy', 'wildfire-risk', 'nature-recovery', 'clean-energy-investment', 'uk-carbon-budget', 'coastal-erosion-risk', 'pesticide-reduction', 'water-stress-regions', 'urban-canopy-cover', 'microplastics-contamination', 'nitrogen-water-pollution', 'grid-battery-storage', 'fishing-catch-quotas', 'retrofit-insulation', 'agricultural-emissions', 'ancient-woodland-loss', 'air-quality-schools', 'heat-network-rollout', 'packaging-waste-recycling', 'carbon-capture-progress', 'nature-based-solutions', 'ocean-acidification', 'light-pollution', 'e-waste-recycling', 'wildfire-risk-uk', 'water-lead-pipes'],
+    topics: ['water', 'net-zero', 'air-quality', 'environment', 'biodiversity', 'flooding', 'waste', 'recycling', 'flood-risk', 'urban-heat', 'soil-health', 'marine-environment', 'energy-efficiency', 'plastic-pollution', 'trees-and-forests', 'noise-pollution', 'rewilding', 'solar-power', 'onshore-wind', 'aviation-emissions', 'peatlands', 'food-waste', 'chalk-streams', 'green-jobs', 'river-bathing', 'heat-mortality', 'habitat-condition', 'farming-subsidies', 'offshore-wind', 'circular-economy', 'wildfire-risk', 'nature-recovery', 'clean-energy-investment', 'uk-carbon-budget', 'coastal-erosion-risk', 'pesticide-reduction', 'water-stress-regions', 'urban-canopy-cover', 'microplastics-contamination', 'nitrogen-water-pollution', 'grid-battery-storage', 'fishing-catch-quotas', 'retrofit-insulation', 'agricultural-emissions', 'ancient-woodland-loss', 'air-quality-schools', 'heat-network-rollout', 'packaging-waste-recycling', 'carbon-capture-progress', 'nature-based-solutions', 'ocean-acidification', 'light-pollution', 'e-waste-recycling', 'wildfire-risk-uk', 'water-lead-pipes'],
   },
   {
     name: 'Infrastructure & Services',
@@ -2197,6 +2197,17 @@ export const TOPICS: Record<string, TopicEntry> = {
       { label: 'Workers without workplace pension', value: '14M', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'down from 22M in 2012', sparklineData: [22, 20, 18, 16, 14, 13, 13, 14] },
       { label: 'State pension as % of earnings', value: '28%', direction: 'flat' as const, polarity: 'up-is-good' as const, context: 'OECD average is 50%', sparklineData: [26, 26, 27, 27, 28, 28, 28, 28] },
       { label: 'Pension participation (auto-enrolled)', value: '88%', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up from 47% in 2012', sparklineData: [47, 58, 68, 74, 79, 83, 86, 88] },
+    ],
+  },
+  'recycling': {
+    topic: 'Recycling',
+    slug: 'recycling',
+    href: '/recycling',
+    colour: '#5C7A4E',
+    preposition: 'in',
+    metrics: [
+      { label: 'England recycling rate', value: '43.8', unit: '%', direction: 'down' as const, polarity: 'up-is-good' as const, context: 'stalled since 2011 · target: 65% by 2035', sparklineData: [40.4, 43.0, 43.8, 44.2, 45.7, 44.7, 43.9, 44.1, 44.6, 43.8] },
+      { label: 'Best vs worst council', value: '66% vs 19%', direction: 'flat' as const, polarity: 'neutral' as const, context: 'South Oxfordshire vs Tower Hamlets', sparklineData: [] },
     ],
   },
   'rewilding': {
