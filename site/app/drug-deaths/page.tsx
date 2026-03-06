@@ -200,17 +200,13 @@ export default function DrugDeathsPage() {
 
         {/* Context section */}
         <ScrollReveal>
-          <section className="border-t border-wiah-border pt-12 mt-12">
-            <h2 className="text-2xl font-bold text-wiah-black mb-4">What&apos;s driving this?</h2>
-            <div className="prose prose-sm max-w-none text-wiah-black">
+          <section className="max-w-2xl border-t border-wiah-border pt-12 mt-12">
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
               <p>
-                Drug poisoning deaths in England and Wales rose from 2,652 in 2012 to a record 4,907 in 2022, climbing in every intervening year. Heroin and other opioids account for 48% of fatalities, cocaine for 18%, and benzodiazepines &mdash; increasingly mixed into street heroin &mdash; for 12%. Rising cocaine deaths reflect crack cocaine&apos;s spread beyond traditional urban markets into smaller towns and coastal areas. From 2023, nitazenes and other synthetic opioids far more potent than heroin were detected in the UK drug supply, prompting UKHSA and OHID to issue monitoring alerts amid UNODC warnings about spillover from North America&apos;s fentanyl crisis.
+                Drug poisoning deaths in England and Wales rose from 2,652 in 2012 to a record 4,907 in 2022, climbing in every intervening year. Opioids account for 48% of fatalities; cocaine for 18%; benzodiazepines &mdash; increasingly mixed into street heroin &mdash; for 12%. Scotland&apos;s rate of 22.4 deaths per 100,000 is the highest in Europe &mdash; three times England&apos;s &mdash; driven by concentrated poverty in post-industrial communities and an ageing opioid-using population. From 2023, nitazenes and other synthetic opioids were detected in the UK supply, prompting national monitoring alerts.
               </p>
               <p>
-                Scotland recorded 1,051 drug-related deaths in 2022 &mdash; a rate of 22.4 per 100,000, the highest in Europe and three times England&apos;s. Public Health Scotland identified a pattern of &ldquo;double deprivation&rdquo;: concentrated poverty in post-industrial communities such as Glasgow and Dundee combined with an ageing opioid-using population whose physical health is deteriorating after decades of use. The SNP/Green coalition lobbied Westminster for a supervised injection facility trial in Glasgow, but the UK Government blocked the proposal. Portugal&apos;s decriminalisation model is frequently cited in academic debate, though Scotland lacks devolved powers over drug classification.
-              </p>
-              <p>
-                Dame Carol Black&apos;s 2020&ndash;21 review found the drug treatment system had been &ldquo;deliberately dismantled&rdquo; by cuts: funding fell 30% in real terms from 2013, and an estimated 300,000 problem drug users were not in treatment. The Ten-Year Drugs Plan &ldquo;From Harm to Hope&rdquo; (December 2021) committed &pound;780 million over 2022&ndash;25, ring-fenced local authority funding, and targeted 500 additional treatment workers. By 2022/23, 275,896 adults were in structured treatment, with 45% completing free from dependence &mdash; up from 40% in 2016/17. Community naloxone distribution reached 110,000 doses in 2022; in high-coverage areas the opioid-antagonist has been shown to reduce overdose deaths by 30%.
+                Dame Carol Black&apos;s 2020&ndash;21 review found the treatment system had been &ldquo;deliberately dismantled&rdquo; by cuts: funding fell 30% in real terms from 2013. The Ten-Year Drugs Plan &ldquo;From Harm to Hope&rdquo; (2021) committed &pound;780 million over 2022&ndash;25. By 2022/23, 275,896 adults were in structured treatment, with 45% completing free from dependence. Community naloxone distribution reached 110,000 doses in 2022; in high-coverage areas it has been shown to reduce overdose deaths by 30%.
               </p>
             </div>
           </section>

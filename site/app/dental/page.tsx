@@ -265,18 +265,14 @@ export default function DentalPage() {
       </ScrollReveal>
 
       {/* Editorial context */}
-      <section className="max-w-3xl mx-auto px-6 py-12 border-b border-wiah-border text-wiah-black">
-        <div className="prose prose-sm max-w-none space-y-6 text-base leading-relaxed">
+      <section className="max-w-2xl mx-auto px-6 py-12 border-b border-wiah-border text-wiah-black">
+        <div className="text-base leading-[1.7] space-y-4">
           <p>
-            Only 49.1% of adults in England saw an NHS dentist in the two years to March 2025, down from 57.3% before the pandemic &mdash; a gap equivalent to roughly 8 million people losing access to routine care. Children&apos;s access fell even harder during COVID, bottoming at 42% in 2020/21, though it has since recovered to 65.2%. The human cost of delayed treatment is measured in hospital theatres: 35,156 children underwent tooth extractions under general anaesthetic in 2022/23. Dental decay is the leading cause of hospital admission for children aged 5&ndash;9, and it is almost entirely preventable.
+            Only 49.1% of adults in England saw an NHS dentist in the two years to March 2025, down from 57.3% before the pandemic &mdash; roughly 8 million people losing access to routine care. The human cost shows up in hospital theatres: 35,156 children underwent tooth extractions under general anaesthetic in 2022/23. Dental decay is the leading cause of hospital admission for children aged 5&ndash;9, and it is almost entirely preventable.
           </p>
 
           <p>
-            The structural cause is the 2006 NHS dental contract, which pays by &ldquo;units of dental activity&rdquo; &mdash; each unit worth roughly &pound;28, whether the work is a simple filling or a complex crown. The incentive is to treat simple cases fast and avoid difficult ones entirely. Combined with years of below-inflation fee uplifts, the result has been predictable: 1,800 dentists have left NHS practice since 2018, leaving 22,056. The government&apos;s dental recovery plan, announced in February 2024 with &pound;200 incentive payments for returning practitioners, has not yet reversed the decline.
-          </p>
-
-          <p>
-            Geography compounds the problem. Access rates range from 36% in the worst-served areas to 61% in the best, with rural and coastal communities hit hardest. Patients who cannot find an NHS dentist face a stark choice: pay privately (&pound;50&ndash;&pound;100 for a check-up, against &pound;26.80 on the NHS), travel long distances, or go without. Many choose the last option. When half a population cannot access a basic health service &mdash; one where early intervention is cheap and neglect is expensive &mdash; the cost falls not on dentists or contracts but on emergency wards and children under anaesthetic.
+            The structural cause is the 2006 NHS dental contract, which pays per &ldquo;unit of dental activity&rdquo; regardless of complexity. The incentive is to treat simple cases fast and avoid difficult ones. Combined with below-inflation fee uplifts, 1,800 dentists have left NHS practice since 2018. Access rates range from 36% in the worst-served areas to 61% in the best, with rural and coastal communities hit hardest. A 2024 recovery plan offering &pound;200 incentive payments for returning practitioners has not yet reversed the decline.
           </p>
         </div>
       </section>
