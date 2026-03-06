@@ -56,14 +56,14 @@ export default function GridBatteryStoragePage() {
         <TopicHeader
           topic="Grid Battery Storage"
           question="Can the Grid Store Renewable Energy?"
-          finding="UK grid battery capacity has grown from near-zero to 4.2 GW &mdash; but needs to reach 50 GW by 2035 to manage renewable intermittency."
+          finding="UK grid battery capacity has grown from near-zero to 4.2 GW — but needs to reach 50 GW by 2035 to manage renewable intermittency."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK&rsquo;s grid-scale battery fleet grew from less than 1 GW in 2017 to 5.1 GW by end-2024 &mdash; more than a sevenfold increase driven by falling lithium-ion costs, frequency response revenues, and relatively fast planning consents. But National Energy System Operator modelling for a net zero grid by 2035 requires approximately 50 GW of storage capacity, roughly ten times current levels. On the current growth trajectory, the UK reaches 12&ndash;15 GW by 2035 &mdash; a substantial shortfall at exactly the moment the grid will be most dependent on intermittent wind and solar. In 2023, 2.1 TWh of renewable energy was curtailed &mdash; switched off and wasted, enough to power 600,000 homes &mdash; with the cost of constraint payments falling on bill payers rather than on the platforms that failed to build enough storage.</p>
-            <p>The economics of battery storage are evolving in ways that complicate the build-out. Frequency response revenues &mdash; the primary income stream for current 1&ndash;2 hour batteries &mdash; are falling as more assets compete for the same market. Longer-duration storage (8&ndash;24 hours) is needed to unlock arbitrage value as renewable intermittency increases, but the technology choices between flow batteries, compressed air, gravity, and hydrogen are not yet settled, and the government&rsquo;s cap-and-floor support mechanism for long-duration projects has been slow to reach commercial scale. A 30+ GW pipeline exists in planning, but converting consented capacity to construction requires revenue certainty the current policy framework has not yet provided.</p>
+            <p>The UK&rsquo;s grid-scale battery fleet grew from less than 1 GW in 2017 to 5.1 GW by end-2024 — more than a sevenfold increase driven by falling lithium-ion costs, frequency response revenues, and relatively fast planning consents. But National Energy System Operator modelling for a net zero grid by 2035 requires approximately 50 GW of storage capacity, roughly ten times current levels. On the current growth trajectory, the UK reaches 12–15 GW by 2035 — a substantial shortfall at exactly the moment the grid will be most dependent on intermittent wind and solar. In 2023, 2.1 TWh of renewable energy was curtailed — switched off and wasted, enough to power 600,000 homes — with the cost of constraint payments falling on bill payers rather than on the platforms that failed to build enough storage.</p>
+            <p>The economics of battery storage are evolving in ways that complicate the build-out. Frequency response revenues — the primary income stream for current 1–2 hour batteries — are falling as more assets compete for the same market. Longer-duration storage (8–24 hours) is needed to unlock arbitrage value as renewable intermittency increases, but the technology choices between flow batteries, compressed air, gravity, and hydrogen are not yet settled, and the government&rsquo;s cap-and-floor support mechanism for long-duration projects has been slow to reach commercial scale. A 30+ GW pipeline exists in planning, but converting consented capacity to construction requires revenue certainty the current policy framework has not yet provided.</p>
           </div>
         </section>
 
@@ -82,9 +82,9 @@ export default function GridBatteryStoragePage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="7x growth since 2017 &middot; but 10x needed"
+              changeText="7x growth since 2017 · but 10x needed"
               sparklineData={[0.6, 0.9, 1.1, 1.5, 2.0, 2.9, 4.2, 5.1]}
-              href="#sec-chart"source="NESO &middot; Grid Battery Register 2024"
+              href="#sec-chart"source="NESO · Grid Battery Register 2024"
             />
             <MetricCard
               label="2035 target"
@@ -92,9 +92,9 @@ export default function GridBatteryStoragePage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Current trajectory reaches 12&ndash;15 GW &middot; gap real"
+              changeText="Current trajectory reaches 12–15 GW · gap real"
               sparklineData={[0.6, 1.1, 1.5, 2.0, 2.9, 4.2, 5.1, 6.5]}
-              href="#sec-callout"source="NESO &middot; Clean Power 2030 Analysis"
+              href="#sec-callout"source="NESO · Clean Power 2030 Analysis"
             />
             <MetricCard
               label="Curtailed renewable"
@@ -104,7 +104,7 @@ export default function GridBatteryStoragePage() {
               polarity="up-is-bad"
               changeText="Slightly improving as storage grows"
               sparklineData={[0.8, 1.0, 1.2, 1.4, 1.6, 1.9, 2.1, 1.8]}
-              href="#sec-callout"source="NESO &middot; Electricity Market Report 2024"
+              href="#sec-callout"source="NESO · Electricity Market Report 2024"
             />
           </div>
         </ScrollReveal>
@@ -112,7 +112,7 @@ export default function GridBatteryStoragePage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="UK grid battery storage capacity, 2017&ndash;2024"
+              title="UK grid battery storage capacity, 2017–2024"
               subtitle="Total connected grid-scale battery storage capacity in gigawatts (GW). Excludes behind-the-meter and residential batteries."
               series={capacitySeries}
               yLabel="Capacity (GW)"
@@ -140,9 +140,9 @@ export default function GridBatteryStoragePage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>National Energy System Operator (NESO) &mdash; Electricity Ten Year Statement and Clean Power 2030 analysis. nationalgrideso.com</p>
-            <p>DESNZ &mdash; Renewable Energy Planning Database. Operational battery storage projects. gov.uk/government/collections/renewable-energy-planning-data</p>
-            <p>NESO &mdash; Electricity Market Report. Curtailment and constraint data. nationalgrideso.com/data-portal</p>
+            <p>National Energy System Operator (NESO) — Electricity Ten Year Statement and Clean Power 2030 analysis. nationalgrideso.com</p>
+            <p>DESNZ — Renewable Energy Planning Database. Operational battery storage projects. gov.uk/government/collections/renewable-energy-planning-data</p>
+            <p>NESO — Electricity Market Report. Curtailment and constraint data. nationalgrideso.com/data-portal</p>
             <p>Capacity figures represent total connected operational grid-scale battery storage (BESS) in Great Britain, excluding Northern Ireland. Curtailment figures include wind constraint payments and solar curtailment; not all curtailment is directly substitutable by storage. 2035 target is from NESO&rsquo;s Clean Power 2030 pathway; the actual requirement will depend on the future generation mix. Pipeline projections are based on pre-application and consented capacity in the REPD as of late 2024.</p>
           </div>
         </section>

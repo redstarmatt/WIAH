@@ -95,15 +95,15 @@ export default function PeriodPovertyPage() {
         <TopicHeader
           topic="Period Poverty"
           question="Can Every Girl in Britain Afford to Have a Period?"
-          finding="One in five girls aged 14&ndash;21 has struggled to afford period products in the past year, according to Plan International. Period poverty affects school attendance: around 137,000 girls in the UK missed school due to period poverty in 2017. The government&apos;s Period Products Scheme provides free products in schools and colleges, but uptake remains patchy and many are still going without."
+          finding="One in five girls aged 14–21 has struggled to afford period products in the past year, according to Plan International. Period poverty affects school attendance: around 137,000 girls in the UK missed school due to period poverty in 2017. The government's Period Products Scheme provides free products in schools and colleges, but uptake remains patchy and many are still going without."
           colour="#E63946"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Period poverty &mdash; the inability to afford or access period products &mdash; affected 1 in 10 girls aged 14&ndash;21 in 2017, according to Plan International; by 2023 that figure had risen to 1 in 5, driven by the cost-of-living crisis compounding underlying income inadequacy. Around 137,000 girls missed school because of period poverty in 2017 alone, using improvised alternatives or staying home in environments with inadequate provision or privacy. Scotland passed the Period Products (Free Provision) Act in 2021 &mdash; the first legal right to free period products in the world &mdash; achieving near-universal school uptake. England&apos;s voluntary Period Products Scheme, launched the same year, reached only 63% of eligible institutions by 2023. VAT on period products was cut to zero in January 2021, but the saving is modest relative to the affordability gap for the lowest-income households.</p>
-            <p>The problem is sharpest at the margins and least visible in the data. Girls in the most deprived areas, care-experienced young people, asylum seekers in Home Office accommodation, and those in prisons face the most acute shortfalls with the least consistent provision. Survey estimates rely on self-reporting a stigmatised experience, meaning the figures likely understate the true scale: 52% of those experiencing period poverty said they did not know help was available, and 38% cited embarrassment as a barrier to seeking it. The educational disruption &mdash; lessons missed without formal absence records, improvised management across years &mdash; accumulates in ways that aggregate statistics cannot fully capture.</p>
+            <p>Period poverty — the inability to afford or access period products — affected 1 in 10 girls aged 14–21 in 2017, according to Plan International; by 2023 that figure had risen to 1 in 5, driven by the cost-of-living crisis compounding underlying income inadequacy. Around 137,000 girls missed school because of period poverty in 2017 alone, using improvised alternatives or staying home in environments with inadequate provision or privacy. Scotland passed the Period Products (Free Provision) Act in 2021 — the first legal right to free period products in the world — achieving near-universal school uptake. England's voluntary Period Products Scheme, launched the same year, reached only 63% of eligible institutions by 2023. VAT on period products was cut to zero in January 2021, but the saving is modest relative to the affordability gap for the lowest-income households.</p>
+            <p>The problem is sharpest at the margins and least visible in the data. Girls in the most deprived areas, care-experienced young people, asylum seekers in Home Office accommodation, and those in prisons face the most acute shortfalls with the least consistent provision. Survey estimates rely on self-reporting a stigmatised experience, meaning the figures likely understate the true scale: 52% of those experiencing period poverty said they did not know help was available, and 38% cited embarrassment as a barrier to seeking it. The educational disruption — lessons missed without formal absence records, improvised management across years — accumulates in ways that aggregate statistics cannot fully capture.</p>
           </div>
         </section>
 
@@ -167,8 +167,8 @@ export default function PeriodPovertyPage() {
         <div id="sec-charts" className="space-y-12">
           {affectedSeries.length > 0 ? (
             <LineChart
-              title="Girls who struggled to afford period products, 2017&ndash;2023"
-              subtitle="Percentage of girls aged 14&ndash;21 who reported struggling to afford or access period products in the past year, UK."
+              title="Girls who struggled to afford period products, 2017–2023"
+              subtitle="Percentage of girls aged 14–21 who reported struggling to afford or access period products in the past year, UK."
               series={affectedSeries}
               yLabel="Percent"
               source={{
@@ -184,8 +184,8 @@ export default function PeriodPovertyPage() {
 
           {schoolsSeries.length > 0 ? (
             <LineChart
-              title="Schools participating in Period Products Scheme, 2020&ndash;2023"
-              subtitle="Percentage of schools in England participating in the government&apos;s Menstrual Products Access Scheme. Scotland achieved 100% coverage in 2020."
+              title="Schools participating in Period Products Scheme, 2020–2023"
+              subtitle="Percentage of schools in England participating in the government's Menstrual Products Access Scheme. Scotland achieved 100% coverage in 2020."
               series={schoolsSeries}
               yLabel="Percent of schools"
               source={{
@@ -205,7 +205,7 @@ export default function PeriodPovertyPage() {
                 Barriers reported by those experiencing period poverty
               </h3>
               <p className="text-sm text-wiah-mid font-mono mb-6">
-                Percentage of girls who reported each barrier. Multi-select &mdash; totals exceed 100%.
+                Percentage of girls who reported each barrier. Multi-select — totals exceed 100%.
               </p>
               <div className="space-y-3">
                 {data.national.byBarrier.map(item => {
@@ -243,7 +243,7 @@ export default function PeriodPovertyPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Plan International UK &mdash; Making the Grade: Period poverty and menstrual health survey
+                Plan International UK — Making the Grade: Period poverty and menstrual health survey
               </a>
             </li>
             <li>
@@ -253,7 +253,7 @@ export default function PeriodPovertyPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Department for Levelling Up, Housing and Communities &mdash; Period Products Scheme (annual)
+                Department for Levelling Up, Housing and Communities — Period Products Scheme (annual)
               </a>
             </li>
             <li>
@@ -263,12 +263,12 @@ export default function PeriodPovertyPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                House of Commons Library &mdash; Period Poverty in the UK (briefing)
+                House of Commons Library — Period Poverty in the UK (briefing)
               </a>
             </li>
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
-            The Plan International survey of 1,000+ young people aged 14&ndash;21 is the most comprehensive UK data on period poverty. The estimate of 137,000 girls missing school was from a 2017 survey. The Period Products Access Scheme began in Scotland in August 2020 and in England in January 2021, with schools and colleges applying to participate. Barrier data is multi-select and reflects respondents&apos; reported experiences.
+            The Plan International survey of 1,000+ young people aged 14–21 is the most comprehensive UK data on period poverty. The estimate of 137,000 girls missing school was from a 2017 survey. The Period Products Access Scheme began in Scotland in August 2020 and in England in January 2021, with schools and colleges applying to participate. Barrier data is multi-select and reflects respondents' reported experiences.
           </p>
           <p className="font-mono text-xs text-wiah-mid mt-4">
             Data updated automatically via GitHub Actions. Last pipeline run:{' '}

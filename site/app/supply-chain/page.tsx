@@ -53,14 +53,14 @@ export default function SupplyChainPage() {
         <TopicHeader
           topic="Supply Chain Resilience"
           question="How dependent is Britain on imports?"
-          finding="The UK imports 46% of its food &mdash; one of the highest ratios in the G7. The goods trade deficit hit &pound;186 billion in 2022. Supply chain disruptions since 2020 (COVID, Brexit, Ukraine) have revealed structural vulnerabilities in energy, medicines and food."
+          finding="The UK imports 46% of its food — one of the highest ratios in the G7. The goods trade deficit hit £186 billion in 2022. Supply chain disruptions since 2020 (COVID, Brexit, Ukraine) have revealed structural vulnerabilities in energy, medicines and food."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK imports approximately 46% of its total food supply &mdash; up from 37% in 2000, and one of the highest food import ratios in the G7. The goods trade deficit reached &pound;186 billion in 2022, a record driven partly by Russia&apos;s invasion of Ukraine pushing up energy import costs, before falling to &pound;162 billion in 2023. The NHS relies on imports for approximately 86% of its active pharmaceutical ingredients, predominantly from India and China &mdash; a concentration identified by the Lords Science and Technology Committee in 2021 as a strategic vulnerability. The government&apos;s Critical Imports and Supply Chains Strategy (2023) identified over 50 categories of concern, and the 2023 vegetable shortages &mdash; empty shelves for tomatoes and peppers &mdash; illustrated the real-world consequences of food import dependency.</p>
-            <p>The supply chain vulnerabilities exposed since 2020 fall hardest on communities with limited substitution options. Brexit added administrative friction that disproportionately affects SMEs and perishable goods exporters, while medicine shortages &mdash; ADHD medication, antibiotics, HRT &mdash; cluster in conditions where alternatives are limited. The structural goods deficit reflects decades of deindustrialisation and is partially offset by a services surplus, but services surpluses cannot compensate when physical goods fail to arrive. Investment in domestic renewable energy reduces fossil fuel import exposure over time; the gap between strategic risk identification and funded mitigation at the required scale remains wide.</p>
+            <p>The UK imports approximately 46% of its total food supply — up from 37% in 2000, and one of the highest food import ratios in the G7. The goods trade deficit reached £186 billion in 2022, a record driven partly by Russia's invasion of Ukraine pushing up energy import costs, before falling to £162 billion in 2023. The NHS relies on imports for approximately 86% of its active pharmaceutical ingredients, predominantly from India and China — a concentration identified by the Lords Science and Technology Committee in 2021 as a strategic vulnerability. The government's Critical Imports and Supply Chains Strategy (2023) identified over 50 categories of concern, and the 2023 vegetable shortages — empty shelves for tomatoes and peppers — illustrated the real-world consequences of food import dependency.</p>
+            <p>The supply chain vulnerabilities exposed since 2020 fall hardest on communities with limited substitution options. Brexit added administrative friction that disproportionately affects SMEs and perishable goods exporters, while medicine shortages — ADHD medication, antibiotics, HRT — cluster in conditions where alternatives are limited. The structural goods deficit reflects decades of deindustrialisation and is partially offset by a services surplus, but services surpluses cannot compensate when physical goods fail to arrive. Investment in domestic renewable energy reduces fossil fuel import exposure over time; the gap between strategic risk identification and funded mitigation at the required scale remains wide.</p>
           </div>
         </section>
 
@@ -78,19 +78,19 @@ export default function SupplyChainPage() {
               unit="%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 37% in 2000 &middot; UK produces 60% of food it can grow domestically"
+              changeText="Up from 37% in 2000 · UK produces 60% of food it can grow domestically"
               sparklineData={[37, 39, 42, 44, 46, 46]}
-              source="DEFRA Food Statistics Pocketbook &middot; 2022"
+              source="DEFRA Food Statistics Pocketbook · 2022"
               href="#sec-food"/>
             <MetricCard
               label="Goods trade deficit (2022)"
-              value="&pound;186bn"
+              value="£186bn"
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Record high &middot; down to &pound;162bn in 2023 as energy prices fell"
+              changeText="Record high · down to £162bn in 2023 as energy prices fell"
               sparklineData={[120, 141, 148, 172, 186, 162]}
-              source="ONS Trade Statistics &middot; 2023"
+              source="ONS Trade Statistics · 2023"
               href="#sec-food"/>
             <MetricCard
               label="UK-EU trade as % of total exports"
@@ -98,7 +98,7 @@ export default function SupplyChainPage() {
               unit="%"
               direction="flat"
               polarity="up-is-good"
-              changeText="Stable since Brexit &middot; diversification to US and Asia partly offsetting"
+              changeText="Stable since Brexit · diversification to US and Asia partly offsetting"
               sparklineData={[44, 45, 43, 42, 42, 42]}
               source="ONS UK Trade (2023)"
               href="#sec-food"/>
@@ -108,7 +108,7 @@ export default function SupplyChainPage() {
         <ScrollReveal>
           <section id="sec-food" className="mb-12">
             <LineChart
-              title="UK food import dependency, 2000&ndash;2022"
+              title="UK food import dependency, 2000–2022"
               subtitle="Total food supply imported as a % of total food supply available. Source: DEFRA Food Statistics Pocketbook."
               series={foodImportSeries}
               annotations={foodAnnotations}
@@ -125,9 +125,9 @@ export default function SupplyChainPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>DEFRA &mdash; Food Statistics Pocketbook. Annual statistical publication covering food security, supply, and import dependency. Available at gov.uk/government/statistics/food-statistics-pocketbook.</p>
-            <p>ONS &mdash; UK Trade in Goods. Monthly and annual statistics on UK imports and exports by commodity and partner country. Available at ons.gov.uk/economy/nationalaccounts/balanceofpayments.</p>
-            <p>House of Lords Food, Diet and Obesity Committee &mdash; Recipe for Health (2024). Analysis of food system resilience, import dependency, and domestic production. Available at committees.parliament.uk.</p>
+            <p>DEFRA — Food Statistics Pocketbook. Annual statistical publication covering food security, supply, and import dependency. Available at gov.uk/government/statistics/food-statistics-pocketbook.</p>
+            <p>ONS — UK Trade in Goods. Monthly and annual statistics on UK imports and exports by commodity and partner country. Available at ons.gov.uk/economy/nationalaccounts/balanceofpayments.</p>
+            <p>House of Lords Food, Diet and Obesity Committee — Recipe for Health (2024). Analysis of food system resilience, import dependency, and domestic production. Available at committees.parliament.uk.</p>
             <p>Food import dependency is measured as imports as a share of total food supply (domestic production plus imports minus exports). The goods trade deficit is measured in current prices. UK-EU trade share uses HMRC trade data and covers goods only; services are excluded.</p>
           </div>
         </section>

@@ -66,14 +66,14 @@ export default function WildfireRiskPage() {
         <TopicHeader
           topic="Wildfire Risk"
           question="Is wildfire becoming a UK problem?"
-          finding="Wildfires burned over 26,000 hectares in England in 2022 &mdash; a 570% increase on the previous decade&apos;s average. The record temperatures of July 2022 saw fires within the M25. Climate change is extending the fire season and increasing severity."
+          finding="Wildfires burned over 26,000 hectares in England in 2022 — a 570% increase on the previous decade's average. The record temperatures of July 2022 saw fires within the M25. Climate change is extending the fire season and increasing severity."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Wildfire has historically been seen as a problem for southern Europe or Australia &mdash; not Britain. That perception changed in 2022. Record temperatures of 40.3&deg;C on 19 July created conditions previously unmodelled in risk assessments: fires broke out simultaneously in Lincolnshire, Essex, and Suffolk; homes burned in Wennington within the M25; the London Fire Brigade declared a major incident. The national total &mdash; 26,000 hectares burned &mdash; was 570% above the previous decade&apos;s average and overwhelmed fire services across England. The decade-long trend beneath this shock is itself significant: wildfires burned around 1,800 hectares annually in 2010, rising to 5,200 hectares by 2019 &mdash; a near-trebling before the extreme year. Drained peatlands in upland northern England, Wales, and Scotland are particularly flammable; when peat burns it releases centuries of stored carbon, creating a climate feedback loop. The National Fire Chiefs Council published a wildfire strategy in 2023 recommending dedicated response capacity and cross-boundary coordination, and most English services have since established specialist wildfire teams.</p>
-            <p>UK fire services are not resourced on the assumption of wildfire at scale: equipment, training, and operational frameworks were designed primarily for structure fires. The 2022 events exposed gaps in specialist PPE, aerial suppression capacity, and land manager coordination that have only partially been closed. Rewetting drained peatlands is the highest-impact available intervention &mdash; wet peat does not burn &mdash; and Natural England&apos;s England Peat Action Plan has increased investment in restoration, but approximately 80% of England&apos;s upland peat remains in degraded condition. Climate change means the UK will experience more extreme fire years regardless of mitigation; adapting land management and fire service capacity is not optional.</p>
+            <p>Wildfire has historically been seen as a problem for southern Europe or Australia — not Britain. That perception changed in 2022. Record temperatures of 40.3&deg;C on 19 July created conditions previously unmodelled in risk assessments: fires broke out simultaneously in Lincolnshire, Essex, and Suffolk; homes burned in Wennington within the M25; the London Fire Brigade declared a major incident. The national total — 26,000 hectares burned — was 570% above the previous decade's average and overwhelmed fire services across England. The decade-long trend beneath this shock is itself significant: wildfires burned around 1,800 hectares annually in 2010, rising to 5,200 hectares by 2019 — a near-trebling before the extreme year. Drained peatlands in upland northern England, Wales, and Scotland are particularly flammable; when peat burns it releases centuries of stored carbon, creating a climate feedback loop. The National Fire Chiefs Council published a wildfire strategy in 2023 recommending dedicated response capacity and cross-boundary coordination, and most English services have since established specialist wildfire teams.</p>
+            <p>UK fire services are not resourced on the assumption of wildfire at scale: equipment, training, and operational frameworks were designed primarily for structure fires. The 2022 events exposed gaps in specialist PPE, aerial suppression capacity, and land manager coordination that have only partially been closed. Rewetting drained peatlands is the highest-impact available intervention — wet peat does not burn — and Natural England's England Peat Action Plan has increased investment in restoration, but approximately 80% of England's upland peat remains in degraded condition. Climate change means the UK will experience more extreme fire years regardless of mitigation; adapting land management and fire service capacity is not optional.</p>
           </div>
         </section>
 
@@ -92,9 +92,9 @@ export default function WildfireRiskPage() {
             unit="ha"
             direction="up"
             polarity="up-is-bad"
-            changeText="570% above decade average &middot; July 2022 heatwave drove fires near London"
+            changeText="570% above decade average · July 2022 heatwave drove fires near London"
             sparklineData={[1800, 2100, 3200, 4100, 5200, 3800, 26000]}
-            source="Fire &amp; Rescue Services / FRS data &middot; 2022"
+            source="Fire &amp; Rescue Services / FRS data · 2022"
             href="#sec-burned"/>
           <MetricCard
             label="Fire incidents in 2022"
@@ -102,9 +102,9 @@ export default function WildfireRiskPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Record year &middot; peak days saw 50+ simultaneous wildfires"
+            changeText="Record year · peak days saw 50+ simultaneous wildfires"
             sparklineData={[210, 280, 195, 240, 530]}
-            source="National Fire Chiefs Council &middot; 2022"
+            source="National Fire Chiefs Council · 2022"
             href="#sec-incidents"/>
           <MetricCard
             label="Hectares burned 2023 (post-peak)"
@@ -112,9 +112,9 @@ export default function WildfireRiskPage() {
             unit="ha"
             direction="down"
             polarity="up-is-bad"
-            changeText="Returned to near-normal after extreme 2022 &middot; trend still rising"
+            changeText="Returned to near-normal after extreme 2022 · trend still rising"
             sparklineData={[1800, 2100, 3200, 4100, 5200, 3800, 26000, 2800]}
-            source="FRS data &middot; 2023"
+            source="FRS data · 2023"
             href="#sec-regional"/>
         </div>
         </ScrollReveal>
@@ -122,7 +122,7 @@ export default function WildfireRiskPage() {
         <ScrollReveal>
         <section id="sec-burned" className="mb-12">
           <LineChart
-            title="Hectares burned in UK wildfires, 2010&ndash;2023"
+            title="Hectares burned in UK wildfires, 2010–2023"
             subtitle="Total area burned per year as reported by Fire &amp; Rescue Services. National Fire Chiefs Council."
             series={burnedSeries}
             annotations={[
@@ -136,7 +136,7 @@ export default function WildfireRiskPage() {
         <ScrollReveal>
         <section id="sec-incidents" className="mb-12">
           <LineChart
-            title="Wildfire incidents per year, 2018&ndash;2023"
+            title="Wildfire incidents per year, 2018–2023"
             subtitle="Number of wildfire incidents attended by fire and rescue services."
             series={incidentSeries}
             yLabel="Incidents"
@@ -171,7 +171,7 @@ export default function WildfireRiskPage() {
             <a href="https://nfcc.org.uk" className="underline" target="_blank" rel="noopener noreferrer">
               National Fire Chiefs Council (nfcc.org.uk)
             </a>
-            {' '}&middot; Forest Research &middot; Met Office
+            {' '}· Forest Research · Met Office
           </p>
         </section>
         </ScrollReveal>

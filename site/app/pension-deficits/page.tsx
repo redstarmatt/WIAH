@@ -46,7 +46,7 @@ export default function PensionDeficitsPage() {
   const fundingSeries: Series[] = data
     ? [{
         id: 'db-funding',
-        label: 'DB scheme aggregate funding position (&pound;bn)',
+        label: 'DB scheme aggregate funding position (£bn)',
         colour: '#F4A261',
         data: (data.national.dbFunding ?? []).map(d => ({
           date: yearToDate(d.date),
@@ -69,7 +69,7 @@ export default function PensionDeficitsPage() {
 
   const participationAnnotations: Annotation[] = [
     { date: new Date(2012, 9, 1), label: 'Auto-enrolment begins (large employers)' },
-    { date: new Date(2018, 2, 1), label: 'Phase complete &mdash; all employers' },
+    { date: new Date(2018, 2, 1), label: 'Phase complete — all employers' },
   ];
 
   // ── Render ────────────────────────────────────────────────────────────────
@@ -81,16 +81,16 @@ export default function PensionDeficitsPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Pensions"
-          question="Are Britain&apos;s Pensions Actually Secure?"
-          finding="14 million workers have no workplace pension and the UK state pension replacement rate of 28% of earnings is one of the lowest in the OECD &mdash; despite auto-enrolment bringing 11 million new savers into schemes since 2012."
+          question="Are Britain's Pensions Actually Secure?"
+          finding="14 million workers have no workplace pension and the UK state pension replacement rate of 28% of earnings is one of the lowest in the OECD — despite auto-enrolment bringing 11 million new savers into schemes since 2012."
           colour="#F4A261"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom&apos;s pension system consists of three distinct layers that interact in complex ways: the New State Pension (NSP), which provides a flat-rate income to those with sufficient National Insurance records; workplace pensions, which are occupational schemes run by employers; and private or personal pensions. The New State Pension pays approximately &pound;11,500 per year (2024/25) for those with 35 qualifying years of NI contributions &mdash; equivalent to about 28% of median UK full-time earnings, one of the lowest replacement rates among OECD countries where averages are around 50%. This low replacement rate means that British retirees are more dependent on private and workplace pension savings than citizens of most comparable economies, creating a two-tier retirement system where those with adequate workplace pension provision enjoy reasonable income security and those without face significant income poverty. The 2022/23 English Longitudinal Study of Ageing found that approximately 18% of people aged 65 and over in England had weekly incomes below the poverty threshold, despite the pension credit safety net that tops up the income of the poorest pensioners.</p>
-            <p>Auto-enrolment, introduced under the Pensions Act 2008 and implemented from October 2012 to February 2018, has been the most significant structural change to UK pensions provision in a generation. The legislation required all employers to automatically enrol eligible workers (aged 22 to state pension age, earning over &pound;10,000 per year) into a qualifying workplace pension scheme, with minimum combined employer and employee contribution rates phased up from 2% to 8% by April 2019. Workers retain the right to opt out, but the default is inclusion rather than exclusion &mdash; exploiting behavioural inertia to build pension saving as the norm. The results have been transformative: DWP statistics show that pension participation among eligible employees rose from approximately 47% in 2012 to 88% in 2023, with an estimated 10.9 million people newly saving into a workplace pension who would not otherwise have done so. NEST (the National Employment Savings Trust), created as the auto-enrolment default provider for employers without existing schemes, manages over &pound;30 billion in assets and covers approximately 12 million members &mdash; one of the largest pension funds in the world by membership.</p>
+            <p>The United Kingdom's pension system consists of three distinct layers that interact in complex ways: the New State Pension (NSP), which provides a flat-rate income to those with sufficient National Insurance records; workplace pensions, which are occupational schemes run by employers; and private or personal pensions. The New State Pension pays approximately £11,500 per year (2024/25) for those with 35 qualifying years of NI contributions — equivalent to about 28% of median UK full-time earnings, one of the lowest replacement rates among OECD countries where averages are around 50%. This low replacement rate means that British retirees are more dependent on private and workplace pension savings than citizens of most comparable economies, creating a two-tier retirement system where those with adequate workplace pension provision enjoy reasonable income security and those without face significant income poverty. The 2022/23 English Longitudinal Study of Ageing found that approximately 18% of people aged 65 and over in England had weekly incomes below the poverty threshold, despite the pension credit safety net that tops up the income of the poorest pensioners.</p>
+            <p>Auto-enrolment, introduced under the Pensions Act 2008 and implemented from October 2012 to February 2018, has been the most significant structural change to UK pensions provision in a generation. The legislation required all employers to automatically enrol eligible workers (aged 22 to state pension age, earning over £10,000 per year) into a qualifying workplace pension scheme, with minimum combined employer and employee contribution rates phased up from 2% to 8% by April 2019. Workers retain the right to opt out, but the default is inclusion rather than exclusion — exploiting behavioural inertia to build pension saving as the norm. The results have been transformative: DWP statistics show that pension participation among eligible employees rose from approximately 47% in 2012 to 88% in 2023, with an estimated 10.9 million people newly saving into a workplace pension who would not otherwise have done so. NEST (the National Employment Savings Trust), created as the auto-enrolment default provider for employers without existing schemes, manages over £30 billion in assets and covers approximately 12 million members — one of the largest pension funds in the world by membership.</p>
             </div>
         </section>
 
@@ -107,7 +107,7 @@ export default function PensionDeficitsPage() {
               value="14M"
               direction="down"
               polarity="up-is-bad"
-              changeText="Down from 22M in 2012 &middot; Auto-enrolment works &middot; Self-employed still excluded"
+              changeText="Down from 22M in 2012 · Auto-enrolment works · Self-employed still excluded"
               sparklineData={[22, 20, 18, 16, 14, 13, 13, 14]}
               onExpand={() => {}}
             />
@@ -116,7 +116,7 @@ export default function PensionDeficitsPage() {
               value="28%"
               direction="flat"
               polarity="up-is-good"
-              changeText="OECD average is 50% &middot; One of the lowest replacement rates in the developed world"
+              changeText="OECD average is 50% · One of the lowest replacement rates in the developed world"
               sparklineData={[26, 26, 27, 27, 28, 28, 28, 28]}
               onExpand={() => {}}
             />
@@ -125,7 +125,7 @@ export default function PensionDeficitsPage() {
               value="88%"
               direction="up"
               polarity="up-is-good"
-              changeText="Up from 47% in 2012 &middot; 11 million newly saving &middot; Historic achievement"
+              changeText="Up from 47% in 2012 · 11 million newly saving · Historic achievement"
               sparklineData={[47, 58, 68, 74, 79, 83, 86, 88]}
               onExpand={() => {}}
             />
@@ -135,13 +135,13 @@ export default function PensionDeficitsPage() {
         <ScrollReveal>
           <section id="sec-db-funding" className="mb-12">
             <LineChart
-              title="DB pension scheme aggregate funding position, UK, 2012&ndash;2023 (&pound;bn)"
+              title="DB pension scheme aggregate funding position, UK, 2012–2023 (£bn)"
               subtitle="Combined surplus or deficit of all UK private sector defined benefit pension schemes. A deficit means schemes owe more in future pension promises than their assets can cover. The 2022 swing to surplus was driven by rising interest rates reducing the present value of liabilities."
               series={fundingSeries}
-              yLabel="&pound;bn"
+              yLabel="£bn"
               source={{
                 name: 'Pensions Regulator',
-                dataset: 'DB landscape report &mdash; aggregate scheme funding',
+                dataset: 'DB landscape report — aggregate scheme funding',
                 frequency: 'annual',
               }}
             />
@@ -151,8 +151,8 @@ export default function PensionDeficitsPage() {
         <ScrollReveal>
           <section id="sec-participation" className="mb-12">
             <LineChart
-              title="Workplace pension participation rate, UK, 2012&ndash;2023 (%)"
-              subtitle="Proportion of eligible employees (aged 22&ndash;SPA, earning &pound;10,000+) participating in a workplace pension. Auto-enrolment has transformed pension saving from exceptional to near-universal among eligible workers."
+              title="Workplace pension participation rate, UK, 2012–2023 (%)"
+              subtitle="Proportion of eligible employees (aged 22–SPA, earning £10,000+) participating in a workplace pension. Auto-enrolment has transformed pension saving from exceptional to near-universal among eligible workers."
               series={participationSeries}
               annotations={participationAnnotations}
               yLabel="%"
@@ -167,11 +167,11 @@ export default function PensionDeficitsPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s transformed"
-            value="Auto-enrolment &mdash; 11 million new savers"
-            unit="2012&ndash;2023"
-            description="Auto-enrolment has been one of the most successful policy interventions of the past 20 years. Pension participation rose from 47% to 88% between 2012 and 2023, meaning that approximately 11 million workers are now saving for retirement who previously had no workplace pension. Opt-out rates have remained below 10% &mdash; far lower than predicted &mdash; demonstrating the power of default settings in shifting behaviour. The government has legislated to extend auto-enrolment to workers from age 18 (down from 22) and to remove the &pound;10,000 earnings threshold, which will bring an additional 1.5 million low-paid workers, mostly women, into pension saving when implemented."
-            source="Source: DWP &mdash; Workplace Pension Participation Trends 2023; Pensions Regulator &mdash; DB Landscape Report 2023; ONS &mdash; ASHE pension provision 2023; PLSA &mdash; Retirement Living Standards 2024."
+            title="What's transformed"
+            value="Auto-enrolment — 11 million new savers"
+            unit="2012–2023"
+            description="Auto-enrolment has been one of the most successful policy interventions of the past 20 years. Pension participation rose from 47% to 88% between 2012 and 2023, meaning that approximately 11 million workers are now saving for retirement who previously had no workplace pension. Opt-out rates have remained below 10% — far lower than predicted — demonstrating the power of default settings in shifting behaviour. The government has legislated to extend auto-enrolment to workers from age 18 (down from 22) and to remove the £10,000 earnings threshold, which will bring an additional 1.5 million low-paid workers, mostly women, into pension saving when implemented."
+            source="Source: DWP — Workplace Pension Participation Trends 2023; Pensions Regulator — DB Landscape Report 2023; ONS — ASHE pension provision 2023; PLSA — Retirement Living Standards 2024."
           />
         </ScrollReveal>
 
@@ -181,7 +181,7 @@ export default function PensionDeficitsPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

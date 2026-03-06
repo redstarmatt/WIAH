@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'What is actually happening?',
     description: 'The real state of the UK — visible, understandable, shareable.',
     siteName: 'What is actually happening?',
-    url: 'https://www.wiah.uk',
+    url: 'https://whatisactuallyhappening.uk',
     type: 'website',
     locale: 'en_GB',
   },
@@ -69,6 +69,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lora.variable} ${jakarta.variable}`}>
       <body className="antialiased bg-white text-wiah-black">
+        {/* Plausible — privacy-respecting analytics, no cookies */}
+        <Script
+          defer
+          data-domain="whatisactuallyhappening.uk"
+          src="https://plausible.io/js/script.js"
+          strategy="afterInteractive"
+        />
         {gaId && (
           <>
             <Script

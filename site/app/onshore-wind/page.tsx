@@ -73,15 +73,15 @@ export default function OnshoreWindPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Onshore Wind"
-          question="Why Did Britain Stop Building the World&apos;s Cheapest Energy?"
-          finding="A de facto ban on onshore wind in England between 2015 and 2023 cost an estimated &pound;13bn in higher energy bills over 8 years. England&apos;s capacity flatlined while Scotland and Wales continued to build. The ban was lifted in 2023 but the planning pipeline remains slow to translate into turbines."
+          question="Why Did Britain Stop Building the World's Cheapest Energy?"
+          finding="A de facto ban on onshore wind in England between 2015 and 2023 cost an estimated £13bn in higher energy bills over 8 years. England's capacity flatlined while Scotland and Wales continued to build. The ban was lifted in 2023 but the planning pipeline remains slow to translate into turbines."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Onshore wind is the UK&apos;s cheapest form of electricity generation at under &pound;50 per megawatt-hour &mdash; cheaper than new gas, nuclear, and offshore wind. Yet between 2015 and 2023, England effectively banned it. A Written Ministerial Statement in June 2015 changed the planning rules so that local communities could veto any onshore wind proposal, and planning inspectors interpreted this as an outright ban. In the eight years that followed, barely a single new turbine was consented in England. The consequences were measurable: Aurora Energy Research estimated in 2023 that UK households paid &pound;13bn more for energy over those eight years than they would have if the cheapest available technology had been permitted to build at the same rate as before the ban. Scotland and Wales, where planning devolution meant different rules applied, continued building throughout &mdash; Scotland now accounts for around 8.5 GW of the UK&apos;s 15.9 GW total onshore wind capacity, nearly 55% of the total from a nation with 8% of the UK&apos;s population. The disparity is stark: parts of northern Scotland have more wind capacity per head than Denmark.</p>
-            <p>The ban was formally lifted in September 2023, when the government revised the National Planning Policy Framework to allow onshore wind proposals on the same basis as other infrastructure. Planning consents in England jumped from a handful per year to 38 in 2023, and the early signs from 2024 are that the pipeline is beginning to recover. The government set a target of 35 GW of onshore wind by 2030, up from under 16 GW in 2024, requiring roughly 3 GW of new capacity per year &mdash; roughly double the current deployment rate. The Contracts for Difference mechanism has been reopened to onshore wind in England, with the first CfD-supported English projects beginning construction in 2024. However, the time from planning consent to grid connection averages three to four years for onshore wind, meaning projects consented in 2023 and 2024 will not generate electricity until 2026 at the earliest. National Grid&apos;s grid connection queue bottleneck affects onshore wind as it does solar.</p>
+            <p>Onshore wind is the UK's cheapest form of electricity generation at under £50 per megawatt-hour — cheaper than new gas, nuclear, and offshore wind. Yet between 2015 and 2023, England effectively banned it. A Written Ministerial Statement in June 2015 changed the planning rules so that local communities could veto any onshore wind proposal, and planning inspectors interpreted this as an outright ban. In the eight years that followed, barely a single new turbine was consented in England. The consequences were measurable: Aurora Energy Research estimated in 2023 that UK households paid £13bn more for energy over those eight years than they would have if the cheapest available technology had been permitted to build at the same rate as before the ban. Scotland and Wales, where planning devolution meant different rules applied, continued building throughout — Scotland now accounts for around 8.5 GW of the UK's 15.9 GW total onshore wind capacity, nearly 55% of the total from a nation with 8% of the UK's population. The disparity is stark: parts of northern Scotland have more wind capacity per head than Denmark.</p>
+            <p>The ban was formally lifted in September 2023, when the government revised the National Planning Policy Framework to allow onshore wind proposals on the same basis as other infrastructure. Planning consents in England jumped from a handful per year to 38 in 2023, and the early signs from 2024 are that the pipeline is beginning to recover. The government set a target of 35 GW of onshore wind by 2030, up from under 16 GW in 2024, requiring roughly 3 GW of new capacity per year — roughly double the current deployment rate. The Contracts for Difference mechanism has been reopened to onshore wind in England, with the first CfD-supported English projects beginning construction in 2024. However, the time from planning consent to grid connection averages three to four years for onshore wind, meaning projects consented in 2023 and 2024 will not generate electricity until 2026 at the earliest. National Grid's grid connection queue bottleneck affects onshore wind as it does solar.</p>
             </div>
         </section>
 
@@ -99,9 +99,9 @@ export default function OnshoreWindPage() {
               unit="GW"
               direction="flat"
               polarity="up-is-good"
-              changeText="Flatlined since 2015 &mdash; Scotland has 8.5 GW by comparison"
+              changeText="Flatlined since 2015 — Scotland has 8.5 GW by comparison"
               sparklineData={[2.1, 2.2, 2.3, 2.3, 2.3, 2.4, 2.4, 2.4]}
-              source="DESNZ &mdash; Renewable electricity capacity statistics"
+              source="DESNZ — Renewable electricity capacity statistics"
               onExpand={() => {}}
             />
             <MetricCard
@@ -110,9 +110,9 @@ export default function OnshoreWindPage() {
               unit="GW"
               direction="up"
               polarity="up-is-good"
-              changeText="Growth driven almost entirely by Scotland &mdash; target: 35 GW by 2030"
+              changeText="Growth driven almost entirely by Scotland — target: 35 GW by 2030"
               sparklineData={[8.7, 10.3, 11.8, 13.0, 14.1, 14.9, 15.4, 15.9]}
-              source="DESNZ &mdash; Renewable electricity capacity statistics"
+              source="DESNZ — Renewable electricity capacity statistics"
               onExpand={() => {}}
             />
             <MetricCard
@@ -120,9 +120,9 @@ export default function OnshoreWindPage() {
               value="38"
               direction="up"
               polarity="up-is-good"
-              changeText="Recovering from near-zero during 2015&ndash;2022 ban &mdash; was 180 in 2012"
+              changeText="Recovering from near-zero during 2015–2022 ban — was 180 in 2012"
               sparklineData={[180, 50, 12, 4, 6, 8, 15, 38]}
-              source="DESNZ &mdash; Renewable energy planning database"
+              source="DESNZ — Renewable energy planning database"
               onExpand={() => {}}
             />
           </div>
@@ -131,8 +131,8 @@ export default function OnshoreWindPage() {
         <ScrollReveal>
           <section id="sec-capacity" className="mb-12">
             <LineChart
-              title="UK onshore wind capacity: England vs Scotland &amp; Wales, 2010&ndash;2024"
-              subtitle="Gigawatts of installed onshore wind. England flatlined under planning ban 2015&ndash;2023. DESNZ."
+              title="UK onshore wind capacity: England vs Scotland &amp; Wales, 2010–2024"
+              subtitle="Gigawatts of installed onshore wind. England flatlined under planning ban 2015–2023. DESNZ."
               series={capacitySeries}
               yLabel="GW installed"
             />
@@ -142,7 +142,7 @@ export default function OnshoreWindPage() {
         <ScrollReveal>
           <section id="sec-england" className="mb-12">
             <LineChart
-              title="England onshore wind capacity, 2010&ndash;2024"
+              title="England onshore wind capacity, 2010–2024"
               subtitle="England capacity only, showing the eight-year freeze under the de facto planning ban. DESNZ."
               series={englandSeries}
               yLabel="GW installed"
@@ -152,10 +152,10 @@ export default function OnshoreWindPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="Under &pound;50/MWh"
+            title="Under £50/MWh"
             value="Cheapest"
             unit="electricity source in the UK"
-            description="Onshore wind is now the cheapest form of electricity in the UK, at under &pound;50 per megawatt-hour without subsidy &mdash; below new gas, offshore wind, and nuclear. With the planning ban lifted, Scotland has 10 GW in the pipeline &mdash; enough to power every Scottish home twice over. England saw 38 planning consents in 2023, up from near-zero during the ban years. Contracts for Difference have reopened to English projects for the first time in a decade."
+            description="Onshore wind is now the cheapest form of electricity in the UK, at under £50 per megawatt-hour without subsidy — below new gas, offshore wind, and nuclear. With the planning ban lifted, Scotland has 10 GW in the pipeline — enough to power every Scottish home twice over. England saw 38 planning consents in 2023, up from near-zero during the ban years. Contracts for Difference have reopened to English projects for the first time in a decade."
             source="Source: Aurora Energy Research 2023; DESNZ renewable energy planning database 2024."
           />
         </ScrollReveal>
@@ -170,11 +170,11 @@ export default function OnshoreWindPage() {
                   <ul className="space-y-2">
                     {data.metadata.sources.map((src, idx) => (
                       <li key={idx} className="text-wiah-mid">
-                        <strong className="text-wiah-black">{src.name}:</strong>&nbsp;
+                        <strong className="text-wiah-black">{src.name}:</strong> 
                         <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue">
                           {src.dataset}
                         </a>
-                        &nbsp;({src.frequency})
+                         ({src.frequency})
                       </li>
                     ))}
                   </ul>

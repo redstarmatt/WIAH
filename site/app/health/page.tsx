@@ -373,7 +373,7 @@ export default function HealthPage() {
           data: (cancerData.trends['Colorectal'] || []).map(d => ({ date: new Date(d.midYear, 0, 1), value: d.oneYearSurvival })) },
         { id: 'breast', label: 'Breast (women)', colour: '#2A9D8F',
           data: (cancerData.trends['Breast'] || []).map(d => ({ date: new Date(d.midYear, 0, 1), value: d.oneYearSurvival })) },
-        { id: 'prostate', label: 'Prostate (men)', colour: '#264653',
+        { id: 'prostate', label: 'Prostate (men)', colour: '#7B2FBE',
           data: (cancerData.trends['Prostate'] || []).map(d => ({ date: new Date(d.midYear, 0, 1), value: d.oneYearSurvival })) },
       ]
     : [];
@@ -640,8 +640,8 @@ export default function HealthPage() {
               The NHS is caught in a system-wide capacity squeeze. The waiting list has grown from 4.4 million
               before the pandemic to 7.64 million, with over 300,000 people waiting more than a year for
               treatment. Behind that backlog lies a chain of bottlenecks: hospitals running at 92% bed
-              occupancy (above the 85% safe maximum) with roughly 100,000 beds &mdash; down from 145,000 in
-              2010 &mdash; which means ambulances queue outside full A&amp;E departments, pushing Cat 2 response
+              occupancy (above the 85% safe maximum) with roughly 100,000 beds — down from 145,000 in
+              2010 — which means ambulances queue outside full A&amp;E departments, pushing Cat 2 response
               times to 35 minutes against an 18-minute target. At the front door of the system, average GP
               waits have tripled from under 7 days in 2013 to 21 days, while each GP now covers around 2,300
               patients. The NHS is delivering 76 million appointments a month. The problem is not effort but
@@ -649,11 +649,11 @@ export default function HealthPage() {
             </p>
             <p>
               Life expectancy reveals something deeper than an operational crisis. For decades, the UK added
-              roughly 0.2 years of life per year &mdash; steady, predictable progress. After 2011, that
+              roughly 0.2 years of life per year — steady, predictable progress. After 2011, that
               improvement stalled almost completely. Male life expectancy sits at 79.0 years, female at
               83.0. COVID caused a visible dip, but the flatlining began nearly a decade earlier and has not
-              recovered. The UK is not alone in this &mdash; similar slowdowns have appeared across wealthy
-              nations &mdash; but the stall coincided with a period of austerity-driven cuts to public health,
+              recovered. The UK is not alone in this — similar slowdowns have appeared across wealthy
+              nations — but the stall coincided with a period of austerity-driven cuts to public health,
               social care, and local government services. The causes remain debated; the trend does not.
             </p>
             </div>
@@ -945,7 +945,7 @@ export default function HealthPage() {
         {gpWaitSeries.length > 0 ? (
           <LineChart
             title="Average days to GP appointment, England"
-            subtitle="Days from booking to appointment, all attended appointments. Monthly, Jul 2023&ndash;Dec 2025."
+            subtitle="Days from booking to appointment, all attended appointments. Monthly, Jul 2023–Dec 2025."
             series={gpWaitSeries}
             yLabel="Days"
             source={{
@@ -963,7 +963,7 @@ export default function HealthPage() {
         {gpSameDaySeries.length > 0 ? (
           <LineChart
             title="Same-day and next-day GP appointments, England"
-            subtitle="Percentage of attended appointments booked same day or next day. Monthly, Jul 2023&ndash;Dec 2025."
+            subtitle="Percentage of attended appointments booked same day or next day. Monthly, Jul 2023–Dec 2025."
             series={gpSameDaySeries}
             yLabel="Percent"
             source={{
@@ -981,7 +981,7 @@ export default function HealthPage() {
         {gpVolumeSeries.length > 0 ? (
           <LineChart
             title="Monthly GP appointment volume, England"
-            subtitle="All attended appointments. Seasonal dips in December, peaks in October. Monthly, Jul 2023&ndash;Dec 2025."
+            subtitle="All attended appointments. Seasonal dips in December, peaks in October. Monthly, Jul 2023–Dec 2025."
             series={gpVolumeSeries}
             yLabel="Appointments"
             source={{
@@ -1272,15 +1272,8 @@ export default function HealthPage() {
           <ScrollReveal>
           {aeFourHourSeries.length > 0 ? (
             <>
-              <div className="mb-2">
-                <p className="text-lg font-bold text-gray-900">
-                  A&amp;E four-hour performance, 2012–2024
-                </p>
-                <p className="text-sm text-gray-500">
-                  % of patients seen within 4 hours, major A&amp;E departments (Type 1), England.
-                </p>
-              </div>
               <LineChart
+                showTitle={true}
                 title="A&E four-hour performance, 2012–2024"
                 subtitle="% of patients seen within 4 hours, major A&E departments (Type 1), England."
                 series={aeFourHourSeries}
@@ -1303,15 +1296,8 @@ export default function HealthPage() {
           <ScrollReveal>
           {aeTwelveHourSeries.length > 0 ? (
             <>
-              <div className="mb-2">
-                <p className="text-lg font-bold text-gray-900">
-                  Patients waiting 12+ hours in A&amp;E, 2018–2024
-                </p>
-                <p className="text-sm text-gray-500">
-                  Annual total of patients waiting more than 12 hours from decision to admit, England.
-                </p>
-              </div>
               <LineChart
+                showTitle={true}
                 title="Patients waiting 12+ hours in A&E, 2018–2024"
                 subtitle="Annual total of patients waiting more than 12 hours from decision to admit, England."
                 series={aeTwelveHourSeries}
@@ -1343,15 +1329,8 @@ export default function HealthPage() {
           <ScrollReveal>
           {dentalAccessSeries.length > 0 ? (
             <>
-              <div className="mb-2">
-                <p className="text-lg font-bold text-gray-900">
-                  NHS dental access, 2017–2025
-                </p>
-                <p className="text-sm text-gray-500">
-                  % of adults seen by an NHS dentist in the previous 24 months, England.
-                </p>
-              </div>
               <LineChart
+                showTitle={true}
                 title="NHS dental access, 2017–2025"
                 subtitle="% of adults seen by an NHS dentist in the previous 24 months, England."
                 series={dentalAccessSeries}
@@ -1385,15 +1364,8 @@ export default function HealthPage() {
           <ScrollReveal>
           {talkingRecoverySeries.length > 0 ? (
             <>
-              <div className="mb-2">
-                <p className="text-lg font-bold text-gray-900">
-                  NHS talking therapies — referrals and recovery, 2016–2023
-                </p>
-                <p className="text-sm text-gray-500">
-                  Annual referrals, treatment starts, and recovery rate, England.
-                </p>
-              </div>
               <LineChart
+                showTitle={true}
                 title="NHS talking therapies — referrals and recovery, 2016–2023"
                 subtitle="Annual referrals, treatment starts, and recovery rate, England."
                 series={talkingRecoverySeries}
@@ -1617,7 +1589,7 @@ export default function HealthPage() {
       {expanded === 'gp-wait' && (
         <MetricDetailModal
           title="Average days to GP appointment, England"
-          subtitle="Days from booking to appointment, all attended appointments. Monthly, Jul 2023&ndash;Dec 2025."
+          subtitle="Days from booking to appointment, all attended appointments. Monthly, Jul 2023–Dec 2025."
           series={gpWaitSeries}
           yLabel="Days"
           source={{

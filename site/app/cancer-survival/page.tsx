@@ -76,14 +76,14 @@ export default function CancerSurvivalPage() {
         <TopicHeader
           topic="Cancer Survival"
           question="Cancer survival has risen by 10 percentage points in 15 years."
-          finding="Five-year cancer survival in England rose from 46% in 2005 to 55.4% in 2023 &mdash; a 9.4 percentage-point improvement. This is one of the biggest sustained improvements in any health outcome in NHS history."
+          finding="Five-year cancer survival in England rose from 46% in 2005 to 55.4% in 2023 — a 9.4 percentage-point improvement. This is one of the biggest sustained improvements in any health outcome in NHS history."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Five-year cancer survival in England rose from 46.2% for patients diagnosed in 2005 to 55.4% for those diagnosed in 2021 &mdash; a 9.2 percentage-point improvement representing tens of thousands of additional people alive who would not have survived five years under 2005 survival rates. Breast cancer five-year survival rose from 79% to 86%; prostate cancer from 77% to 88%; bowel cancer from 52% to 62%. The gains reflect broadly equal contributions from better treatment &mdash; targeted therapies, immunotherapy, improved surgery, specialist multidisciplinary teams &mdash; and earlier detection for some cancer types. For testicular, Hodgkin lymphoma, and thyroid cancer, five-year survival now exceeds 90%. COVID disrupted pathways severely, with 40,000 fewer diagnoses than expected in 2020; the dip in survival data for 2020&ndash;21 reflects delayed presentation rather than deteriorating treatment quality.</p>
-            <p>Despite the progress, England&rsquo;s 55.4% five-year survival still lags the European average of 57% and Sweden&rsquo;s 65.2% &mdash; a persistent gap largest for cancers where early detection is most decisive. Twenty-six percent of cancers are still caught at stage 4, when treatment options are most limited; the NHS Long-Term Plan target of 75% diagnosed at stage 1 or 2 by 2028 is far from current performance of around 43%. The honest account holds both truths: an extraordinary two-decade improvement, and a system that still diagnoses too many cancers too late.</p>
+            <p>Five-year cancer survival in England rose from 46.2% for patients diagnosed in 2005 to 55.4% for those diagnosed in 2021 — a 9.2 percentage-point improvement representing tens of thousands of additional people alive who would not have survived five years under 2005 survival rates. Breast cancer five-year survival rose from 79% to 86%; prostate cancer from 77% to 88%; bowel cancer from 52% to 62%. The gains reflect broadly equal contributions from better treatment — targeted therapies, immunotherapy, improved surgery, specialist multidisciplinary teams — and earlier detection for some cancer types. For testicular, Hodgkin lymphoma, and thyroid cancer, five-year survival now exceeds 90%. COVID disrupted pathways severely, with 40,000 fewer diagnoses than expected in 2020; the dip in survival data for 2020–21 reflects delayed presentation rather than deteriorating treatment quality.</p>
+            <p>Despite the progress, England&rsquo;s 55.4% five-year survival still lags the European average of 57% and Sweden&rsquo;s 65.2% — a persistent gap largest for cancers where early detection is most decisive. Twenty-six percent of cancers are still caught at stage 4, when treatment options are most limited; the NHS Long-Term Plan target of 75% diagnosed at stage 1 or 2 by 2028 is far from current performance of around 43%. The honest account holds both truths: an extraordinary two-decade improvement, and a system that still diagnoses too many cancers too late.</p>
           </div>
         </section>
 
@@ -104,7 +104,7 @@ export default function CancerSurvivalPage() {
               unit="%"
               direction="up"
               polarity="up-is-good"
-              changeText="Up +9.2pp since 2005 &middot; one of NHS&rsquo;s biggest-ever improvements"
+              changeText="Up +9.2pp since 2005 · one of NHS&rsquo;s biggest-ever improvements"
               sparklineData={[46.2, 48.1, 50.3, 52.0, 53.5, 54.8, 55.9, 56.7, 54.1, 55.4]}
               href="#sec-survival"/>
             <MetricCard
@@ -113,7 +113,7 @@ export default function CancerSurvivalPage() {
               unit="%"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; Target: stage 1&ndash;2 at 75% by 2028 &middot; Currently 43%"
+              changeText="2023 · Target: stage 1–2 at 75% by 2028 · Currently 43%"
               sparklineData={[22, 23, 23, 24, 24, 25, 25, 27, 26, 26]}
               href="#sec-one-year"/>
             <MetricCard
@@ -122,7 +122,7 @@ export default function CancerSurvivalPage() {
               unit="pp"
               direction="up"
               polarity="up-is-bad"
-              changeText="Sweden: 65.2% vs England: 55.4% five-year survival &middot; Gap persistent over 15 years"
+              changeText="Sweden: 65.2% vs England: 55.4% five-year survival · Gap persistent over 15 years"
               sparklineData={[11.2, 10.8, 10.5, 10.2, 10.0, 9.9, 9.8, 9.5, 10.1, 9.8]}
               href="#sec-europe"/>
           </div>
@@ -131,7 +131,7 @@ export default function CancerSurvivalPage() {
         <ScrollReveal>
           <section id="sec-survival" className="mb-12">
             <LineChart
-              title="Five-year net cancer survival, England, 2005&ndash;2023"
+              title="Five-year net cancer survival, England, 2005–2023"
               subtitle="All cancers combined, age-standardised. Percentage surviving five years after diagnosis."
               series={fiveYearSeries}
               annotations={survivalAnnotations}
@@ -148,7 +148,7 @@ export default function CancerSurvivalPage() {
         <ScrollReveal>
           <section id="sec-one-year" className="mb-12">
             <LineChart
-              title="One-year net cancer survival, England, 2005&ndash;2023"
+              title="One-year net cancer survival, England, 2005–2023"
               subtitle="All cancers combined. One-year survival is the most sensitive indicator of diagnostic delay."
               series={oneYearSeries}
               yLabel="Survival (%)"
@@ -184,7 +184,7 @@ export default function CancerSurvivalPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: CONCORD-3 / Eurocare-6 &mdash; International cancer survival comparisons</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: CONCORD-3 / Eurocare-6 — International cancer survival comparisons</p>
           </section>
         </ScrollReveal>
 
@@ -211,7 +211,7 @@ export default function CancerSurvivalPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England &mdash; Cancer Outcomes and Services Dataset (COSD)</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England — Cancer Outcomes and Services Dataset (COSD)</p>
           </section>
         </ScrollReveal>
 
@@ -228,10 +228,10 @@ export default function CancerSurvivalPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>ONS &mdash; Cancer survival in England: adults diagnosed between 2005 and 2019, follow-up to 2023. Age-standardised net survival using the Pohar Perme estimator.</p>
-            <p>CONCORD-3 programme, London School of Hygiene &amp; Tropical Medicine &mdash; Global surveillance of cancer survival. European comparison figures.</p>
-            <p>NHS England &mdash; Cancer Outcomes and Services Dataset (COSD). Stage-at-diagnosis data from cancer registrations.</p>
-            <p>Five-year survival estimates are net survival: the probability of surviving at least five years after diagnosis, accounting for background mortality. COVID disrupted screening and referral pathways in 2020&ndash;2021, creating a measurable dip in survival that reflects delayed diagnosis rather than deteriorating treatment quality.</p>
+            <p>ONS — Cancer survival in England: adults diagnosed between 2005 and 2019, follow-up to 2023. Age-standardised net survival using the Pohar Perme estimator.</p>
+            <p>CONCORD-3 programme, London School of Hygiene &amp; Tropical Medicine — Global surveillance of cancer survival. European comparison figures.</p>
+            <p>NHS England — Cancer Outcomes and Services Dataset (COSD). Stage-at-diagnosis data from cancer registrations.</p>
+            <p>Five-year survival estimates are net survival: the probability of surviving at least five years after diagnosis, accounting for background mortality. COVID disrupted screening and referral pathways in 2020–2021, creating a measurable dip in survival that reflects delayed diagnosis rather than deteriorating treatment quality.</p>
           </div>
         </section>
       </main>

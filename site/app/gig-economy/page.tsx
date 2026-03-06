@@ -63,7 +63,7 @@ export default function GigEconomyPage() {
     ? [
         {
           id: 'gig-pay',
-          label: 'Gig workers (net of costs, &pound;/hr)',
+          label: 'Gig workers (net of costs, £/hr)',
           colour: '#E63946',
           data: data.national.timeSeries.map(d => ({
             date: yearToDate(d.date),
@@ -72,7 +72,7 @@ export default function GigEconomyPage() {
         },
         {
           id: 'employee-pay',
-          label: 'Employees &mdash; median hourly (&pound;/hr)',
+          label: 'Employees — median hourly (£/hr)',
           colour: '#2A9D8F',
           data: data.national.timeSeries.map(d => ({
             date: yearToDate(d.date),
@@ -92,7 +92,7 @@ export default function GigEconomyPage() {
         <TopicHeader
           topic="Gig Economy"
           question="What Is the Gig Economy Actually Doing to Workers?"
-          finding="An estimated 4.4 million people work in the gig economy &mdash; typically earning below minimum wage once costs are deducted &mdash; with no sick pay, no pension, and no guaranteed hours."
+          finding="An estimated 4.4 million people work in the gig economy — typically earning below minimum wage once costs are deducted — with no sick pay, no pension, and no guaranteed hours."
           colour="#F4A261"
           preposition="in the"
         />
@@ -100,7 +100,7 @@ export default function GigEconomyPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>The UK gig economy encompasses a range of work arrangements in which people are engaged on a task-by-task basis, typically through a digital platform, without a guaranteed minimum wage, fixed hours, or an employment contract. Estimates of its size vary significantly by methodology: TUC and University of Hertfordshire surveys suggest approximately 4.4 million people performed gig work as their primary income source in 2024, while broader definitions that include occasional or secondary gig income could encompass up to 9 million people. Ride-hailing, food delivery, cleaning, care work, and freelance professional services account for the largest categories. The sector grew rapidly from around 2015 as smartphone penetration, algorithmic matching, and investor-subsidised pricing made platform labour economically viable for a critical mass of workers. During the COVID-19 pandemic, delivery platform worker numbers surged as lockdowns collapsed demand for in-person services while driving demand for food and grocery delivery; many of these workers remained after restrictions lifted, and the delivery economy consolidated around a smaller number of dominant platforms.</p>
-            <p>The economics of gig work are significantly worse than headline rates suggest. TUC research based on worker surveys consistently finds that once vehicle costs, fuel, insurance, equipment, data, and unpaid waiting time are factored in, effective hourly earnings for delivery and ride-hailing workers fall substantially below the National Minimum Wage. The platform pays per task or per mile, but workers bear all the capital costs of the work &mdash; typically a vehicle, bicycle, or scooter &mdash; and spend significant unpaid time waiting for jobs, navigating, and managing platform apps. A 2021 TUC survey found that 38% of gig workers earned less than &pound;8.72 per hour (then the National Living Wage) after costs, with delivery workers most exposed. Gig workers are also classified as self-employed for National Insurance purposes, meaning neither they nor their engagers pay employer NI contributions, reducing their access to contributory benefits and lowering the tax base for state services.</p>
+            <p>The economics of gig work are significantly worse than headline rates suggest. TUC research based on worker surveys consistently finds that once vehicle costs, fuel, insurance, equipment, data, and unpaid waiting time are factored in, effective hourly earnings for delivery and ride-hailing workers fall substantially below the National Minimum Wage. The platform pays per task or per mile, but workers bear all the capital costs of the work — typically a vehicle, bicycle, or scooter — and spend significant unpaid time waiting for jobs, navigating, and managing platform apps. A 2021 TUC survey found that 38% of gig workers earned less than £8.72 per hour (then the National Living Wage) after costs, with delivery workers most exposed. Gig workers are also classified as self-employed for National Insurance purposes, meaning neither they nor their engagers pay employer NI contributions, reducing their access to contributory benefits and lowering the tax base for state services.</p>
             </div>
         </section>
 
@@ -117,7 +117,7 @@ export default function GigEconomyPage() {
               value="4.4M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2024 &middot; Up from 2.8M in 2017 &middot; No sick pay, no pension, no guaranteed hours"
+              changeText="2024 · Up from 2.8M in 2017 · No sick pay, no pension, no guaranteed hours"
               sparklineData={[2.8, 3.1, 3.4, 3.6, 3.8, 4.0, 4.2, 4.4]}
               onExpand={() => {}}
             />
@@ -126,7 +126,7 @@ export default function GigEconomyPage() {
               value="38%"
               direction="up"
               polarity="up-is-bad"
-              changeText="TUC 2023 &middot; Delivery workers most exposed &middot; Costs include vehicle, fuel, equipment"
+              changeText="TUC 2023 · Delivery workers most exposed · Costs include vehicle, fuel, equipment"
               sparklineData={[28, 30, 32, 33, 35, 36, 37, 38]}
               onExpand={() => {}}
             />
@@ -135,7 +135,7 @@ export default function GigEconomyPage() {
               value="9%"
               direction="flat"
               polarity="up-is-good"
-              changeText="vs 76% of employees &middot; Auto-enrolment does not apply to self-employed"
+              changeText="vs 76% of employees · Auto-enrolment does not apply to self-employed"
               sparklineData={[7, 8, 8, 8, 9, 9, 9, 9]}
               onExpand={() => {}}
             />
@@ -145,7 +145,7 @@ export default function GigEconomyPage() {
         <ScrollReveal>
           <section id="sec-workers" className="mb-12">
             <LineChart
-              title="Estimated gig economy workers, UK, 2016&ndash;2024 (millions)"
+              title="Estimated gig economy workers, UK, 2016–2024 (millions)"
               subtitle="People performing gig work as a primary income source, combining platform delivery, ride-hailing, freelance, and care platform work."
               series={workersSeries}
               yLabel="Millions"
@@ -161,10 +161,10 @@ export default function GigEconomyPage() {
         <ScrollReveal>
           <section id="sec-pay" className="mb-12">
             <LineChart
-              title="Gig worker net hourly pay vs employee median hourly pay, 2016&ndash;2024"
+              title="Gig worker net hourly pay vs employee median hourly pay, 2016–2024"
               subtitle="Gig worker figures are net of work-related costs. Employee figures are ONS ASHE median hourly earnings. The gap has widened as employee wages grew faster than gig income."
               series={paySeries}
-              yLabel="&pound; per hour"
+              yLabel="£ per hour"
               source={{
                 name: 'TUC &amp; ONS',
                 dataset: 'Gig Economy Survey &amp; Annual Survey of Hours and Earnings',
@@ -176,11 +176,11 @@ export default function GigEconomyPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s changing"
+            title="What's changing"
             value="Supreme Court Uber ruling"
             unit="2021"
-            description="The Supreme Court&apos;s unanimous ruling in Uber BV v Aslam (2021) established that app-based drivers are &ldquo;workers&rdquo; &mdash; not self-employed &mdash; entitling them to minimum wage and holiday pay. It was the most significant employment law ruling of the decade. Uber subsequently settled with thousands of drivers for back-pay and has implemented minimum earnings guarantees. The ruling set a precedent that other platforms must consider when structuring their engagements. The Employment Rights Bill (2024) proposes to simplify the worker/employee/self-employed distinction, potentially extending rights to a further estimated 1.5 million people."
-            source="Source: TUC &mdash; Living on the Gig Economy 2024; ONS &mdash; Labour Force Survey 2024; CIPD &mdash; Good Work Index 2024; Supreme Court &mdash; Uber BV v Aslam [2021] UKSC 5."
+            description="The Supreme Court's unanimous ruling in Uber BV v Aslam (2021) established that app-based drivers are &ldquo;workers&rdquo; — not self-employed — entitling them to minimum wage and holiday pay. It was the most significant employment law ruling of the decade. Uber subsequently settled with thousands of drivers for back-pay and has implemented minimum earnings guarantees. The ruling set a precedent that other platforms must consider when structuring their engagements. The Employment Rights Bill (2024) proposes to simplify the worker/employee/self-employed distinction, potentially extending rights to a further estimated 1.5 million people."
+            source="Source: TUC — Living on the Gig Economy 2024; ONS — Labour Force Survey 2024; CIPD — Good Work Index 2024; Supreme Court — Uber BV v Aslam [2021] UKSC 5."
           />
         </ScrollReveal>
 
@@ -190,7 +190,7 @@ export default function GigEconomyPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

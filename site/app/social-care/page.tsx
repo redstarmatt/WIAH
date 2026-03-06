@@ -82,16 +82,16 @@ export default function SocialCarePage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Social Care"
-          question="Who Is Actually Caring for Britain&apos;s Elderly and Disabled?"
-          finding="1.5 million people in England receive publicly funded social care. 532,000 care home places are available but 165,000 beds are unfilled due to staff shortages. Adult social care has a funding gap of &pound;8 billion. 17,900 delayed discharges from hospital daily are due to lack of social care packages."
+          question="Who Is Actually Caring for Britain's Elderly and Disabled?"
+          finding="1.5 million people in England receive publicly funded social care. 532,000 care home places are available but 165,000 beds are unfilled due to staff shortages. Adult social care has a funding gap of £8 billion. 17,900 delayed discharges from hospital daily are due to lack of social care packages."
           colour="#F4A261"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England processes around 1.9 million requests for adult social care support each year, yet only 1.5 million people receive publicly funded care. The gap is largely explained by a means test set in 2010 and never meaningfully uprated: anyone with assets above &pound;23,250 must fund their own care entirely, so a modest terraced house disqualifies someone from all state support. The Dilnot Commission recommended a &pound;35,000 lifetime care cost cap in 2011; the government eventually committed to an &pound;86,000 cap due in 2023, then postponed it indefinitely in September 2022. Families facing dementia or stroke-related care can still spend &pound;100,000 or more before state support begins. The NHS pays the price directly: between 13,500 and 17,900 patients occupy hospital beds on any given day awaiting a social care package, with the sector carrying around 165,000 vacancies and a 30% annual workforce turnover rate that degrades care quality and makes commissioning unreliable.</p>
-            <p>The burden falls on those least able to bear it. Around 5.7 million people in England provide unpaid care to a family member or friend &mdash; often at significant cost to their own employment, health, and finances &mdash; absorbing demand that would otherwise fall on a system already at capacity. Those who do seek formal care face a system stratified by wealth: self-funders subsidise publicly commissioned places, and once private funds are exhausted, access to quality provision becomes uncertain. Visa rule changes in 2024 sharply restricted overseas care worker entry after the sector had become heavily dependent on international recruitment, triggering renewed provider warnings of shortages and leaving the sector with no credible domestic workforce pipeline in place.</p>
+            <p>England processes around 1.9 million requests for adult social care support each year, yet only 1.5 million people receive publicly funded care. The gap is largely explained by a means test set in 2010 and never meaningfully uprated: anyone with assets above £23,250 must fund their own care entirely, so a modest terraced house disqualifies someone from all state support. The Dilnot Commission recommended a £35,000 lifetime care cost cap in 2011; the government eventually committed to an £86,000 cap due in 2023, then postponed it indefinitely in September 2022. Families facing dementia or stroke-related care can still spend £100,000 or more before state support begins. The NHS pays the price directly: between 13,500 and 17,900 patients occupy hospital beds on any given day awaiting a social care package, with the sector carrying around 165,000 vacancies and a 30% annual workforce turnover rate that degrades care quality and makes commissioning unreliable.</p>
+            <p>The burden falls on those least able to bear it. Around 5.7 million people in England provide unpaid care to a family member or friend — often at significant cost to their own employment, health, and finances — absorbing demand that would otherwise fall on a system already at capacity. Those who do seek formal care face a system stratified by wealth: self-funders subsidise publicly commissioned places, and once private funds are exhausted, access to quality provision becomes uncertain. Visa rule changes in 2024 sharply restricted overseas care worker entry after the sector had become heavily dependent on international recruitment, triggering renewed provider warnings of shortages and leaving the sector with no credible domestic workforce pipeline in place.</p>
           </div>
         </section>
 
@@ -109,7 +109,7 @@ export default function SocialCarePage() {
               value="1.9M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2022/23 &middot; 1.5M receiving funded care &middot; Up from 1.6M during COVID &middot; Ageing population driving demand"
+              changeText="2022/23 · 1.5M receiving funded care · Up from 1.6M during COVID · Ageing population driving demand"
               sparklineData={[1790, 1810, 1840, 1870, 1850, 1600, 1720, 1830, 1900]}
               href="#sec-overview"/>
             <MetricCard
@@ -117,15 +117,15 @@ export default function SocialCarePage() {
               value="9.9%"
               direction="down"
               polarity="up-is-bad"
-              changeText="2023 &middot; 152,000 vacancies &middot; Down from 10.7% peak &middot; Overseas recruitment filling gap post-Brexit"
+              changeText="2023 · 152,000 vacancies · Down from 10.7% peak · Overseas recruitment filling gap post-Brexit"
               sparklineData={[6.6, 7.0, 8.0, 8.0, 7.0, 10.0, 10.7, 9.9]}
               href="#sec-requests"/>
             <MetricCard
               label="Annual social care funding gap"
-              value="&pound;8bn"
+              value="£8bn"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; Estimated by Association of Directors &middot; Councils cutting services &middot; Health &amp; Care Act 2022 reforms delayed"
+              changeText="2023 · Estimated by Association of Directors · Councils cutting services · Health &amp; Care Act 2022 reforms delayed"
               sparklineData={[3, 4, 5, 5.5, 6, 6.5, 7, 7.5, 8]}
               href="#sec-workforce"/>
           </div>
@@ -134,7 +134,7 @@ export default function SocialCarePage() {
         <ScrollReveal>
           <section id="sec-requests" className="mb-12">
             <LineChart
-              title="Adult social care service requests, England, 2015&ndash;2023"
+              title="Adult social care service requests, England, 2015–2023"
               subtitle="Annual number of people requesting adult social care support (millions)."
               series={requestsSeries}
               yLabel="Requests (millions)"
@@ -150,7 +150,7 @@ export default function SocialCarePage() {
         <ScrollReveal>
           <section id="sec-workforce" className="mb-12">
             <LineChart
-              title="Adult social care vacancy rate, England, 2016&ndash;2023"
+              title="Adult social care vacancy rate, England, 2016–2023"
               subtitle="Percentage of filled and unfilled care worker posts that are currently vacant."
               series={vacancySeries}
               yLabel="Vacancy rate (%)"
@@ -183,17 +183,17 @@ export default function SocialCarePage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England &mdash; Adult Social Care Activity and Finance Report 2023</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England — Adult Social Care Activity and Finance Report 2023</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
-            value="&pound;500M"
+            title="What's improving"
+            value="£500M"
             unit="workforce fund to improve social care pay and training over 3 years"
-            description="The People at the Heart of Care white paper (December 2021) committed to a &pound;500 million workforce development fund over three years to improve pay, training and career pathways in adult social care. From February 2022, overseas care workers became eligible for the Health and Care Worker visa, enabling international recruitment &mdash; 70,000 visas issued in 2022/23, stabilising the workforce. The NHS Discharge Taskforce has reduced delayed discharges by 15% since its 2022 launch through improved social care commissioning. Local authorities in Scotland and Wales provide free personal care to eligible adults, reducing out-of-pocket costs compared with the means-tested system in England."
-            source="Source: NHS England &mdash; Adult Social Care Activity Report 2022/23; Skills for Care &mdash; State of the Social Care Workforce 2023."
+            description="The People at the Heart of Care white paper (December 2021) committed to a £500 million workforce development fund over three years to improve pay, training and career pathways in adult social care. From February 2022, overseas care workers became eligible for the Health and Care Worker visa, enabling international recruitment — 70,000 visas issued in 2022/23, stabilising the workforce. The NHS Discharge Taskforce has reduced delayed discharges by 15% since its 2022 launch through improved social care commissioning. Local authorities in Scotland and Wales provide free personal care to eligible adults, reducing out-of-pocket costs compared with the means-tested system in England."
+            source="Source: NHS England — Adult Social Care Activity Report 2022/23; Skills for Care — State of the Social Care Workforce 2023."
           />
         </ScrollReveal>
 
@@ -203,7 +203,7 @@ export default function SocialCarePage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

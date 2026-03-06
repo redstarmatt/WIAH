@@ -89,14 +89,14 @@ export default function PrisonOvercrowdingPage() {
         <TopicHeader
           topic="Prison Overcrowding"
           question="Are British Prisons at Breaking Point?"
-          finding="England and Wales have 88,225 prisoners in jails built for 79,927 &mdash; 110% of usable capacity. In September 2023, a temporary early-release scheme freed 1,700 prisoners to avert collapse. The remand population has hit a record 16,400 &mdash; 24% of all prisoners. Reoffending costs the economy &pound;18 billion a year."
+          finding="England and Wales have 88,225 prisoners in jails built for 79,927 — 110% of usable capacity. In September 2023, a temporary early-release scheme freed 1,700 prisoners to avert collapse. The remand population has hit a record 16,400 — 24% of all prisoners. Reoffending costs the economy £18 billion a year."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England and Wales hold 88,225 prisoners in an estate built for 79,927 usable places &mdash; an occupancy rate of 110%. The prison population has roughly doubled since 1990, when it stood at 45,000, driven by a sentencing ratchet that shows no sign of reversing. The average custodial sentence rose from 14.5 months in 2012 to 20 months in 2023. Recall prisoners &mdash; those returned to custody after breaching licence conditions &mdash; now account for 16% of the total population. In September 2023, the government activated an emergency early-release scheme, freeing 1,700 prisoners weeks before their scheduled dates to avert operational collapse.</p>
-            <p>Much of the pressure traces to the court system. Between 2010 and 2019, 107 court buildings were closed across England and Wales, concentrating caseloads into fewer sites. The Crown Court backlog, already chronic before Covid, has pushed the remand population to a record 16,400 &mdash; 24% of all prisoners, some held for more than two years awaiting trial. Inside the walls, the staffing crisis compounds every problem: 4,200 prison officer posts sit vacant (an 8% gap), assaults on staff have risen 33% since 2019, and synthetic cannabinoids circulate in most adult male prisons. There were 61 self-inflicted deaths in custody in 2022.</p>
+            <p>England and Wales hold 88,225 prisoners in an estate built for 79,927 usable places — an occupancy rate of 110%. The prison population has roughly doubled since 1990, when it stood at 45,000, driven by a sentencing ratchet that shows no sign of reversing. The average custodial sentence rose from 14.5 months in 2012 to 20 months in 2023. Recall prisoners — those returned to custody after breaching licence conditions — now account for 16% of the total population. In September 2023, the government activated an emergency early-release scheme, freeing 1,700 prisoners weeks before their scheduled dates to avert operational collapse.</p>
+            <p>Much of the pressure traces to the court system. Between 2010 and 2019, 107 court buildings were closed across England and Wales, concentrating caseloads into fewer sites. The Crown Court backlog, already chronic before Covid, has pushed the remand population to a record 16,400 — 24% of all prisoners, some held for more than two years awaiting trial. Inside the walls, the staffing crisis compounds every problem: 4,200 prison officer posts sit vacant (an 8% gap), assaults on staff have risen 33% since 2019, and synthetic cannabinoids circulate in most adult male prisons. There were 61 self-inflicted deaths in custody in 2022.</p>
             </div>
         </section>
 
@@ -114,7 +114,7 @@ export default function PrisonOvercrowdingPage() {
               value="88,225"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; 110% of usable capacity &middot; Built for 79,927 &middot; Emergency early-release in September 2023"
+              changeText="2023 · 110% of usable capacity · Built for 79,927 · Emergency early-release in September 2023"
               sparklineData={[86048, 84421, 85509, 85961, 85862, 86584, 83539, 82781, 78837, 79027, 84246, 88225]}
               onExpand={() => {}}
             />
@@ -123,16 +123,16 @@ export default function PrisonOvercrowdingPage() {
               value="16,400"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; Record high &middot; 24% of prison population &middot; Some held 2+ years pre-trial"
+              changeText="2023 · Record high · 24% of prison population · Some held 2+ years pre-trial"
               sparklineData={[11000, 11200, 10800, 10200, 10600, 13200, 15000, 15800, 16400]}
               onExpand={() => {}}
             />
             <MetricCard
               label="Annual reoffending cost to economy"
-              value="&pound;18bn"
+              value="£18bn"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Per year &middot; 60% of those released reoffend within 2 years &middot; Short sentences (&lt;12 months) have highest reoffending rates"
+              changeText="Per year · 60% of those released reoffend within 2 years · Short sentences (&lt;12 months) have highest reoffending rates"
               sparklineData={[15, 15.5, 16, 16.5, 17, 17.5, 18, 18, 18]}
               onExpand={() => {}}
             />
@@ -142,7 +142,7 @@ export default function PrisonOvercrowdingPage() {
         <ScrollReveal>
           <section id="sec-population" className="mb-12">
             <LineChart
-              title="Prison population, England and Wales, 2012&ndash;2023"
+              title="Prison population, England and Wales, 2012–2023"
               subtitle="Total number of sentenced and remand prisoners."
               series={populationSeries}
               yLabel="Number of prisoners"
@@ -158,7 +158,7 @@ export default function PrisonOvercrowdingPage() {
         <ScrollReveal>
           <section id="sec-remand" className="mb-12">
             <LineChart
-              title="Prisoners on remand (awaiting trial), 2012&ndash;2023"
+              title="Prisoners on remand (awaiting trial), 2012–2023"
               subtitle="Number of prisoners held on remand awaiting trial or sentence."
               series={remandSeries}
               yLabel="Remand prisoners"
@@ -191,17 +191,17 @@ export default function PrisonOvercrowdingPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Ministry of Justice &mdash; Prison Population Statistics</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Ministry of Justice — Prison Population Statistics</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="10,000"
-            unit="additional prison places planned &mdash; the largest prison-building programme since the Victorian era"
-            description="The government has committed to building six new prisons as part of a programme to create 10,000 additional prison places by 2026 &mdash; the largest expansion since the Victorian era. HMP Fosse Way in Leicestershire opened in 2023, adding 1,700 places. The Independent Sentencing Review (2025), chaired by David Gauke, is examining alternatives to short custodial sentences to reduce the pressure of recall prisoners &mdash; who account for 16% of the prison population. Electronic monitoring has been extended, with 200,000 tags deployed annually. The Probation Service received a &pound;155 million investment to improve supervision and reduce reoffending post-release."
-            source="Source: Ministry of Justice &mdash; Prison Population Statistics 2024; HMPPS &mdash; Annual Report 2023/24."
+            unit="additional prison places planned — the largest prison-building programme since the Victorian era"
+            description="The government has committed to building six new prisons as part of a programme to create 10,000 additional prison places by 2026 — the largest expansion since the Victorian era. HMP Fosse Way in Leicestershire opened in 2023, adding 1,700 places. The Independent Sentencing Review (2025), chaired by David Gauke, is examining alternatives to short custodial sentences to reduce the pressure of recall prisoners — who account for 16% of the prison population. Electronic monitoring has been extended, with 200,000 tags deployed annually. The Probation Service received a £155 million investment to improve supervision and reduce reoffending post-release."
+            source="Source: Ministry of Justice — Prison Population Statistics 2024; HMPPS — Annual Report 2023/24."
           />
         </ScrollReveal>
 
@@ -211,7 +211,7 @@ export default function PrisonOvercrowdingPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

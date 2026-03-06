@@ -124,17 +124,17 @@ export default function SocialHousingPage() {
         <TopicHeader
           topic="Social Housing"
           question="Why Is Social Housing Disappearing?"
-          finding="Only 7,500 social rent homes were built in 2023 &mdash; a 17-year low. 1.29 million households are on waiting lists. Since 1980, 1.8 million council homes have been sold under Right to Buy. The social housing stock has shrunk from 4.8 million to 4.0 million."
+          finding="Only 7,500 social rent homes were built in 2023 — a 17-year low. 1.29 million households are on waiting lists. Since 1980, 1.8 million council homes have been sold under Right to Buy. The social housing stock has shrunk from 4.8 million to 4.0 million."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England completed 7,500 social rented homes in 2023 &mdash; the lowest annual total since the 1920s and an 81% collapse from 39,500 in 2010. Against that trickle of supply, 1.29 million households sit on council waiting lists, up from 1.14 million in 2018. The supply-to-waiting ratio is roughly 1:170: for every new social let, 170 households queue. Lists did fall between 2013 and 2018, from 1.73 million to 1.14 million, but only because councils tightened eligibility &mdash; not because need shrank. Rough sleeping reached 4,255 and over 100,000 households were in temporary accommodation, confirming that underlying demand never stopped growing.
+              England completed 7,500 social rented homes in 2023 — the lowest annual total since the 1920s and an 81% collapse from 39,500 in 2010. Against that trickle of supply, 1.29 million households sit on council waiting lists, up from 1.14 million in 2018. The supply-to-waiting ratio is roughly 1:170: for every new social let, 170 households queue. Lists did fall between 2013 and 2018, from 1.73 million to 1.14 million, but only because councils tightened eligibility — not because need shrank. Rough sleeping reached 4,255 and over 100,000 households were in temporary accommodation, confirming that underlying demand never stopped growing.
             </p>
             <p>
-              Right to Buy has removed 1.8 million council homes from the social stock since 1980, with discounts of up to 70% of market value. In 2012 the government raised the maximum discount from &pound;75,000 to &pound;96,000, accelerating sales further. Replacement has run at approximately one new social home for every eight sold &mdash; a cumulative shortfall exceeding 1.5 million units. In the worst London boroughs the ratio is 1:31. Labour has proposed mandatory one-for-one replacement with receipts retained locally, but the measure has not yet been legislated and the structural deficit widens each year.
+              Right to Buy has removed 1.8 million council homes from the social stock since 1980, with discounts of up to 70% of market value. In 2012 the government raised the maximum discount from £75,000 to £96,000, accelerating sales further. Replacement has run at approximately one new social home for every eight sold — a cumulative shortfall exceeding 1.5 million units. In the worst London boroughs the ratio is 1:31. Labour has proposed mandatory one-for-one replacement with receipts retained locally, but the measure has not yet been legislated and the structural deficit widens each year.
             </p>
             </div>
         </section>
@@ -186,8 +186,8 @@ export default function SocialHousingPage() {
         <ScrollReveal>
         <section id="sec-completions" className="mb-12">
           <LineChart
-            title="Social rent homes completed, England, 2010&ndash;2023"
-            subtitle="New social rented homes completed per year. Fell from 39,500 in 2010 to 7,500 in 2023 &mdash; the lowest level since the 1920s. Driven by funding cuts, Right to Buy sales, and housing association capacity constraints."
+            title="Social rent homes completed, England, 2010–2023"
+            subtitle="New social rented homes completed per year. Fell from 39,500 in 2010 to 7,500 in 2023 — the lowest level since the 1920s. Driven by funding cuts, Right to Buy sales, and housing association capacity constraints."
             series={completionsSeries}
             annotations={completionsAnnotations}
             yLabel="Thousands"
@@ -198,7 +198,7 @@ export default function SocialHousingPage() {
         <ScrollReveal>
         <section id="sec-waiting" className="mb-12">
           <LineChart
-            title="Households on social housing waiting list, England, 2013&ndash;2023"
+            title="Households on social housing waiting list, England, 2013–2023"
             subtitle="Households registered for social housing. Fell 2013-2018 as councils tightened eligibility, then rose again as homelessness and temporary accommodation pressures mounted."
             series={waitingListSeries}
             annotations={[]}
@@ -210,11 +210,11 @@ export default function SocialHousingPage() {
         {/* Positive callout */}
         <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
-          value="&pound;11.5bn"
-          unit="Affordable Homes Programme 2021&ndash;26"
-          description="The Affordable Homes Programme 2021&ndash;26 has a &pound;11.5 billion budget targeting 180,000 new affordable homes. Labour&apos;s National Planning Policy Framework reforms require councils to prioritise social rent homes in planning decisions. The government has committed to a Renters&apos; Rights Bill to strengthen tenant protections and abolish no-fault Section 21 evictions. Shared ownership and First Homes schemes provide alternative routes to housing for those who cannot access either private ownership or social rent."
-          source="Source: MHCLG &mdash; Affordable housing supply 2022/23 and Homes England programme statistics."
+          title="What's improving"
+          value="£11.5bn"
+          unit="Affordable Homes Programme 2021–26"
+          description="The Affordable Homes Programme 2021–26 has a £11.5 billion budget targeting 180,000 new affordable homes. Labour's National Planning Policy Framework reforms require councils to prioritise social rent homes in planning decisions. The government has committed to a Renters' Rights Bill to strengthen tenant protections and abolish no-fault Section 21 evictions. Shared ownership and First Homes schemes provide alternative routes to housing for those who cannot access either private ownership or social rent."
+          source="Source: MHCLG — Affordable housing supply 2022/23 and Homes England programme statistics."
         />
         </ScrollReveal>
 
@@ -225,7 +225,7 @@ export default function SocialHousingPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

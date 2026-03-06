@@ -106,7 +106,7 @@ export default function GreenBeltPage() {
 
   const areaAnnotations: Annotation[] = [
     { date: new Date(2013, 5, 1), label: '2013: 1.64M ha green belt' },
-    { date: new Date(2023, 5, 1), label: '2023: 1.59M ha &mdash; 130,000 ha lost' },
+    { date: new Date(2023, 5, 1), label: '2023: 1.59M ha — 130,000 ha lost' },
   ];
 
   // ── Render ────────────────────────────────────────────────────────────────
@@ -119,17 +119,17 @@ export default function GreenBeltPage() {
         <TopicHeader
           topic="Housing &amp; Planning"
           question="Is the Green Belt Being Built On?"
-          finding="14,860 homes were built on green belt land in 2023, up 40% since 2018. Yet 1.2 million homes of assessed green belt land has planning permission awaiting development. Labour&apos;s &lsquo;grey belt&rsquo; policy targets lower-value green belt land."
+          finding="14,860 homes were built on green belt land in 2023, up 40% since 2018. Yet 1.2 million homes of assessed green belt land has planning permission awaiting development. Labour's &lsquo;grey belt&rsquo; policy targets lower-value green belt land."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The green belt is both a planning policy tool and a cultural flashpoint. Designated to prevent urban sprawl around major cities, it covers 12.4% of England&apos;s land area. The number of homes built on green belt land has risen 40% since 2018, driven by planning appeals and &ldquo;exceptional circumstances&rdquo; releases. Meanwhile, the total designated area has shrunk from 1.64 million hectares in 2013 to 1.59 million &mdash; a loss of 130,000 hectares over a decade.
+              The green belt is both a planning policy tool and a cultural flashpoint. Designated to prevent urban sprawl around major cities, it covers 12.4% of England's land area. The number of homes built on green belt land has risen 40% since 2018, driven by planning appeals and &ldquo;exceptional circumstances&rdquo; releases. Meanwhile, the total designated area has shrunk from 1.64 million hectares in 2013 to 1.59 million — a loss of 130,000 hectares over a decade.
             </p>
             <p>
-              Labour&apos;s 2024 NPPF reforms introduced the concept of &ldquo;grey belt&rdquo; &mdash; previously developed land within the green belt, and lower-value land that does not fulfil the green belt&apos;s five core purposes. The policy is designed to direct development to land that is less environmentally significant. Critics argue it creates uncertainty about what counts as grey belt; supporters argue it allows necessary housing without touching the highest-quality land.
+              Labour's 2024 NPPF reforms introduced the concept of &ldquo;grey belt&rdquo; — previously developed land within the green belt, and lower-value land that does not fulfil the green belt's five core purposes. The policy is designed to direct development to land that is less environmentally significant. Critics argue it creates uncertainty about what counts as grey belt; supporters argue it allows necessary housing without touching the highest-quality land.
             </p>
           </div>
         </section>
@@ -180,8 +180,8 @@ export default function GreenBeltPage() {
         <ScrollReveal>
           <section id="sec-homes" className="mb-12">
             <LineChart
-              title="Homes completed on green belt land, England, 2018&ndash;2023"
-              subtitle="Number of homes completed on green belt land. The rise reflects both appeal decisions and LPA-initiated boundary reviews to meet housing targets. Labour&apos;s grey belt policy may increase this further from 2025."
+              title="Homes completed on green belt land, England, 2018–2023"
+              subtitle="Number of homes completed on green belt land. The rise reflects both appeal decisions and LPA-initiated boundary reviews to meet housing targets. Labour's grey belt policy may increase this further from 2025."
               series={homesSeries}
               annotations={homesAnnotations}
               yLabel="Thousands of homes"
@@ -192,7 +192,7 @@ export default function GreenBeltPage() {
         <ScrollReveal>
           <section id="sec-area" className="mb-12">
             <LineChart
-              title="Total green belt land area, England, 2013&ndash;2023"
+              title="Total green belt land area, England, 2013–2023"
               subtitle="Designated green belt area in millions of hectares. Falls reflect boundary reviews by local planning authorities. 130,000 hectares has been removed from green belt designation since 2013."
               series={areaSeries}
               annotations={areaAnnotations}
@@ -204,11 +204,11 @@ export default function GreenBeltPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s changing"
+            title="What's changing"
             value="Grey belt"
             unit="NPPF 2024"
-            description="Labour&apos;s National Planning Policy Framework 2024 introduces &lsquo;grey belt&rsquo; &mdash; previously developed or lower-value green belt land &mdash; as a priority release zone for housing. Councils must identify grey belt land in their local plans and give it priority over greenfield releases. New development on grey belt must include at least 50% affordable housing. This represents the most significant reform to green belt policy since its designation."
-            source="Source: MHCLG &mdash; Green Belt Statistics England, 2024. MHCLG &mdash; National Planning Policy Framework, December 2024."
+            description="Labour's National Planning Policy Framework 2024 introduces &lsquo;grey belt&rsquo; — previously developed or lower-value green belt land — as a priority release zone for housing. Councils must identify grey belt land in their local plans and give it priority over greenfield releases. New development on grey belt must include at least 50% affordable housing. This represents the most significant reform to green belt policy since its designation."
+            source="Source: MHCLG — Green Belt Statistics England, 2024. MHCLG — National Planning Policy Framework, December 2024."
           />
         </ScrollReveal>
 
@@ -219,7 +219,7 @@ export default function GreenBeltPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

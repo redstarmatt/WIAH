@@ -74,8 +74,8 @@ export default function BereavementSupportPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 600,000 people die in England each year, leaving an estimated 3 million people newly bereaved annually. Clinical estimates suggest 10&ndash;15% will need specialist support for complicated grief, prolonged grief disorder, or grief-associated depression &mdash; yet fewer than 10% currently access it. Cruse Bereavement Support, the largest national charity, handles over 80,000 contacts per year but is funded primarily through donations rather than NHS contract. Average referral-to-assessment wait times rose sharply during the COVID-19 pandemic, reaching 11 weeks in 2024 &mdash; more than twice the 2015 figure of 7 weeks. NHS Talking Therapies services are theoretically accessible for grief-related conditions, but limited grief-specific training and clinical thresholds leave many bereaved people unserved.</p>
-            <p>Children and people without workplace protections bear a disproportionate share of the support gap. School-based bereavement provision is inconsistent and dependent on individual pastoral capacity; specialist therapy for under-18s is limited in most areas, despite evidence that unaddressed childhood bereavement significantly raises the risk of adult mental health problems. Statutory bereavement leave in England is three days for the death of a dependant &mdash; with no entitlement for the loss of a partner, parent, or sibling &mdash; leaving many workers in acute grief with no protected time and no access to support.</p>
+            <p>Around 600,000 people die in England each year, leaving an estimated 3 million people newly bereaved annually. Clinical estimates suggest 10–15% will need specialist support for complicated grief, prolonged grief disorder, or grief-associated depression — yet fewer than 10% currently access it. Cruse Bereavement Support, the largest national charity, handles over 80,000 contacts per year but is funded primarily through donations rather than NHS contract. Average referral-to-assessment wait times rose sharply during the COVID-19 pandemic, reaching 11 weeks in 2024 — more than twice the 2015 figure of 7 weeks. NHS Talking Therapies services are theoretically accessible for grief-related conditions, but limited grief-specific training and clinical thresholds leave many bereaved people unserved.</p>
+            <p>Children and people without workplace protections bear a disproportionate share of the support gap. School-based bereavement provision is inconsistent and dependent on individual pastoral capacity; specialist therapy for under-18s is limited in most areas, despite evidence that unaddressed childhood bereavement significantly raises the risk of adult mental health problems. Statutory bereavement leave in England is three days for the death of a dependant — with no entitlement for the loss of a partner, parent, or sibling — leaving many workers in acute grief with no protected time and no access to support.</p>
           </div>
         </section>
 
@@ -95,7 +95,7 @@ export default function BereavementSupportPage() {
               polarity={'up-is-bad' as const}
               changeText="~3m newly bereaved annually"
               sparklineData={[570, 575, 578, 580, 582, 640, 610, 595, 600]}
-              href="#sec-chart"source="ONS &middot; Death registrations"
+              href="#sec-chart"source="ONS · Death registrations"
             />
             <MetricCard
               label="Accessing specialist support"
@@ -105,7 +105,7 @@ export default function BereavementSupportPage() {
               polarity={'up-is-good' as const}
               changeText="Down from 12% in 2015"
               sparklineData={[12, 11, 11, 10, 10, 9, 9, 9, 9]}
-              href="#sec-chart"source="Cruse &middot; NHS England"
+              href="#sec-chart"source="Cruse · NHS England"
             />
             <MetricCard
               label="Average grief support wait"
@@ -123,7 +123,7 @@ export default function BereavementSupportPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Bereavement service referrals, 2015&ndash;2024"
+              title="Bereavement service referrals, 2015–2024"
               subtitle="Percentage of bereaved people accessing specialist support and average referral-to-assessment wait in weeks, England."
               series={bereavementSeries}
               yLabel="Value"
@@ -139,10 +139,10 @@ export default function BereavementSupportPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Cruse Bereavement Support &mdash; Annual Report. cruse.org.uk/about-us/annual-report/</p>
-            <p>ONS &mdash; Death registrations summary tables. Annual deaths by age, sex, and cause, England and Wales. ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths</p>
-            <p>NHS England &mdash; Talking Therapies (IAPT) annual report. england.nhs.uk/mental-health/adults/iapt/</p>
-            <p>Marie Curie &mdash; Understanding Grief in the UK. mariecurie.org.uk</p>
+            <p>Cruse Bereavement Support — Annual Report. cruse.org.uk/about-us/annual-report/</p>
+            <p>ONS — Death registrations summary tables. Annual deaths by age, sex, and cause, England and Wales. ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths</p>
+            <p>NHS England — Talking Therapies (IAPT) annual report. england.nhs.uk/mental-health/adults/iapt/</p>
+            <p>Marie Curie — Understanding Grief in the UK. mariecurie.org.uk</p>
             <p>Bereaved annually figure is the annual death count in England. Specialist support access is estimated from Cruse referral volumes and NHS IAPT grief-related contacts as a proportion of total bereaved. Wait time is average referral-to-assessment gap. 2020 figure reflects COVID-19 excess mortality.</p>
           </div>
         </section>

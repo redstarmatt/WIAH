@@ -83,8 +83,8 @@ export default function CountyLinesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>County lines is a model of drug distribution in which urban gangs establish dealing networks in smaller towns and rural areas, exploiting children and vulnerable adults as couriers, dealers, and custodians of cash and drugs. The National Crime Agency estimated around 2,000 lines at peak; Operation Orochi and successor operations have closed over 3,000 lines since 2019, with approximately 700 estimated as still active. NRM referrals of children exploited through criminal activity have risen from around 4,000 in 2017 to over 10,200 in 2024. Gangs target children as young as 10 &mdash; particularly those excluded from school, in care, or with unstable housing &mdash; grooming them before escalating to coercion and violence. &ldquo;Cuckooing&rdquo; of vulnerable adults&apos; homes as local bases remains widespread.</p>
-            <p>Black and mixed-heritage boys are disproportionately represented among identified victims, and children in care are three times more likely to be identified as county lines victims. Rural and coastal towns &mdash; Margate, Hastings, Grimsby, Blackpool &mdash; are hotspots, but networks operate in virtually every county in England and Wales. Girls are increasingly identified as victims, often exploited through sexual violence alongside drug running. Contextual safeguarding &mdash; assessing risk in a child&apos;s wider environment rather than the family alone &mdash; has been adopted by some councils but remains unevenly implemented nationally.</p>
+            <p>County lines is a model of drug distribution in which urban gangs establish dealing networks in smaller towns and rural areas, exploiting children and vulnerable adults as couriers, dealers, and custodians of cash and drugs. The National Crime Agency estimated around 2,000 lines at peak; Operation Orochi and successor operations have closed over 3,000 lines since 2019, with approximately 700 estimated as still active. NRM referrals of children exploited through criminal activity have risen from around 4,000 in 2017 to over 10,200 in 2024. Gangs target children as young as 10 — particularly those excluded from school, in care, or with unstable housing — grooming them before escalating to coercion and violence. &ldquo;Cuckooing&rdquo; of vulnerable adults' homes as local bases remains widespread.</p>
+            <p>Black and mixed-heritage boys are disproportionately represented among identified victims, and children in care are three times more likely to be identified as county lines victims. Rural and coastal towns — Margate, Hastings, Grimsby, Blackpool — are hotspots, but networks operate in virtually every county in England and Wales. Girls are increasingly identified as victims, often exploited through sexual violence alongside drug running. Contextual safeguarding — assessing risk in a child's wider environment rather than the family alone — has been adopted by some councils but remains unevenly implemented nationally.</p>
           </div>
         </section>
 
@@ -102,27 +102,27 @@ export default function CountyLinesPage() {
               unit="/year"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 4,000 in 2017 &middot; true figure likely higher"
+              changeText="Up from 4,000 in 2017 · true figure likely higher"
               sparklineData={[4000, 5500, 7000, 6300, 7400, 8200, 9100, 10200]}
-              source="Home Office &middot; National Referral Mechanism, 2024"
+              source="Home Office · National Referral Mechanism, 2024"
               href="#sec-lines"/>
             <MetricCard
               label="County lines closed since 2019"
               value="3,000+"
               direction="up"
               polarity="up-is-good"
-              changeText="Op Orochi and successors &middot; but lines re-emerge"
+              changeText="Op Orochi and successors · but lines re-emerge"
               sparklineData={[400, 800, 1400, 2100, 2600, 3000]}
-              source="NCA &middot; County Lines Strategic Assessment, 2024"
+              source="NCA · County Lines Strategic Assessment, 2024"
               href="#sec-children"/>
             <MetricCard
               label="Estimated active lines"
               value="~700"
               direction="down"
               polarity="up-is-bad"
-              changeText="Down from peak of 2,000 &middot; NCA estimate"
+              changeText="Down from peak of 2,000 · NCA estimate"
               sparklineData={[2000, 1500, 1300, 800, 600, 660, 720, 700]}
-              source="NCA &middot; County Lines Strategic Assessment, 2024"
+              source="NCA · County Lines Strategic Assessment, 2024"
               href="#sec-children"/>
           </div>
         </ScrollReveal>

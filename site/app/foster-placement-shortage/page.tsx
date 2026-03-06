@@ -68,14 +68,14 @@ export default function FosterPlacementShortagePage() {
         <TopicHeader
           topic="Foster Placement Shortage"
           question="Are There Enough Foster Carers?"
-          finding="England needs 8,700 more foster carers &mdash; meaning one in three children who needs fostering cannot be placed locally, often entering costly residential care instead."
+          finding="England needs 8,700 more foster carers — meaning one in three children who needs fostering cannot be placed locally, often entering costly residential care instead."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has a structural and worsening shortage of foster carers. The number of approved foster carers has declined from around 55,000 in 2015 to 53,500 in 2023 &mdash; while the number of children needing placement has risen sharply. The Fostering Network estimates a shortfall of 8,700 carers nationwide, meaning one in three children who needs a foster placement cannot be matched with a local carer. Recruitment campaigns repeatedly fail to close the gap because low allowances, poor professional recognition, and inadequate support make fostering unattractive for working-age adults. Emergency placements &mdash; where a child is placed at short notice without proper matching &mdash; have risen to 11,400 annually.</p>
-            <p>Children who cannot be matched locally are placed far from their schools, communities, and families, or into residential care costing over &pound;6,000 per week. The shortfall drives a negative spiral: more children in care means more pressure on placements, and the shortage of placements diverts resources into costly residential provision that crowds out prevention. Teenagers with complex needs and unaccompanied asylum-seeking children are hardest to place, and placement instability &mdash; one of the strongest predictors of poor outcomes &mdash; is becoming structurally harder to avoid.</p>
+            <p>England has a structural and worsening shortage of foster carers. The number of approved foster carers has declined from around 55,000 in 2015 to 53,500 in 2023 — while the number of children needing placement has risen sharply. The Fostering Network estimates a shortfall of 8,700 carers nationwide, meaning one in three children who needs a foster placement cannot be matched with a local carer. Recruitment campaigns repeatedly fail to close the gap because low allowances, poor professional recognition, and inadequate support make fostering unattractive for working-age adults. Emergency placements — where a child is placed at short notice without proper matching — have risen to 11,400 annually.</p>
+            <p>Children who cannot be matched locally are placed far from their schools, communities, and families, or into residential care costing over £6,000 per week. The shortfall drives a negative spiral: more children in care means more pressure on placements, and the shortage of placements diverts resources into costly residential provision that crowds out prevention. Teenagers with complex needs and unaccompanied asylum-seeking children are hardest to place, and placement instability — one of the strongest predictors of poor outcomes — is becoming structurally harder to avoid.</p>
           </div>
         </section>
 
@@ -93,9 +93,9 @@ export default function FosterPlacementShortagePage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="doubled since 2015 &middot; recruitment and retention crisis"
+              changeText="doubled since 2015 · recruitment and retention crisis"
               sparklineData={[4200, 4600, 5100, 5600, 6100, 6600, 7100, 7800, 8700]}
-              href="#sec-chart"source="The Fostering Network &middot; 2023"
+              href="#sec-chart"source="The Fostering Network · 2023"
             />
             <MetricCard
               label="Foster carers in England"
@@ -105,7 +105,7 @@ export default function FosterPlacementShortagePage() {
               polarity="up-is-good"
               changeText="declining despite rising demand"
               sparklineData={[55000, 54800, 54600, 54400, 54200, 54000, 53800, 53600, 53500]}
-              href="#sec-chart"source="Ofsted &middot; Fostering in England 2023"
+              href="#sec-chart"source="Ofsted · Fostering in England 2023"
             />
             <MetricCard
               label="Emergency placements"
@@ -113,9 +113,9 @@ export default function FosterPlacementShortagePage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="children placed in emergency &middot; placement instability harms outcomes"
+              changeText="children placed in emergency · placement instability harms outcomes"
               sparklineData={[8200, 8600, 9000, 9800, 10200, 10600, 11000, 11400]}
-              href="#sec-chart"source="DfE &middot; Children Looked After Statistics 2023"
+              href="#sec-chart"source="DfE · Children Looked After Statistics 2023"
             />
           </div>
         </ScrollReveal>
@@ -123,7 +123,7 @@ export default function FosterPlacementShortagePage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Foster carers and shortfall, England, 2015&ndash;2023"
+              title="Foster carers and shortfall, England, 2015–2023"
               subtitle="Approved foster carers (left axis, blue) and estimated shortfall of carers needed (right axis, red). Shortfall has doubled while carer numbers have declined."
               series={series}
               yLabel="Number"
@@ -139,9 +139,9 @@ export default function FosterPlacementShortagePage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Ofsted &mdash; Fostering in England. Annual statistical release covering approved foster carers, households, and placements. gov.uk/government/statistics/fostering-in-england-1-april-2022-to-31-march-2023</p>
-            <p>The Fostering Network &mdash; Annual State of the Nation report on foster carer supply. thefosteringnetwork.org.uk</p>
-            <p>Department for Education &mdash; Children Looked After in England. explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions</p>
+            <p>Ofsted — Fostering in England. Annual statistical release covering approved foster carers, households, and placements. gov.uk/government/statistics/fostering-in-england-1-april-2022-to-31-march-2023</p>
+            <p>The Fostering Network — Annual State of the Nation report on foster carer supply. thefosteringnetwork.org.uk</p>
+            <p>Department for Education — Children Looked After in England. explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions</p>
             <p>Shortfall figures are The Fostering Network estimates based on number of children requiring fostering minus available approved carer households. Emergency placement data from DfE placement type breakdowns.</p>
           </div>
         </section>

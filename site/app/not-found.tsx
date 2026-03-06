@@ -16,7 +16,7 @@ export default function NotFound() {
           Page not found
         </h1>
         <p className="text-base text-wiah-mid leading-[1.7] max-w-md mx-auto mb-10">
-          This page doesn&apos;t exist. The topic may have moved or the URL may be incorrect.
+          This page doesn't exist. The topic may have moved or the URL may be incorrect.
         </p>
         <Link
           href="/"

@@ -125,6 +125,8 @@ export default function RegionalMap({
     const values = data.map(d => d.value);
     const minVal = d3.min(values) ?? 0;
     const maxVal = d3.max(values) ?? 1;
+    // Centre diverging scale on the median so roughly half of regions are each colour
+    const medianVal = d3.median(values) ?? (minVal + maxVal) / 2;
 
     // Colour scale
     const goodColour = '#2A9D8F';
@@ -132,7 +134,7 @@ export default function RegionalMap({
     const badColour = '#E63946';
 
     const colorScale = d3.scaleLinear<string>()
-      .domain([minVal, (minVal + maxVal) / 2, maxVal])
+      .domain([minVal, medianVal, maxVal])
       .range(
         colourDirection === 'low-is-good'
           ? [goodColour, midColour, badColour]
@@ -227,7 +229,7 @@ export default function RegionalMap({
       .append('linearGradient')
       .attr('id', 'map-legend-grad');
     gradient.append('stop').attr('offset', '0%').attr('stop-color', colorScale(minVal));
-    gradient.append('stop').attr('offset', '50%').attr('stop-color', colorScale((minVal + maxVal) / 2));
+    gradient.append('stop').attr('offset', '50%').attr('stop-color', colorScale(medianVal));
     gradient.append('stop').attr('offset', '100%').attr('stop-color', colorScale(maxVal));
 
     const lg = svg.append('g').attr('transform', `translate(${legendX},${legendY})`);

@@ -137,10 +137,10 @@ export default function SpikingReportsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Spiking &mdash; the deliberate administration of substances to a person without their knowledge or consent &mdash; is substantially under-reported. The 6,732 police-recorded incidents in 2024 represent a fraction of actual cases: NPCC analysis and academic research suggest a reporting rate of approximately one in seven, implying around 47,000 incidents per year. Victims frequently do not report because they are uncertain about what happened, fear not being believed, were intoxicated themselves, or because the rapid fading of toxicological evidence (typically 12&ndash;24 hours) makes them doubt prosecution is possible.
+              Spiking — the deliberate administration of substances to a person without their knowledge or consent — is substantially under-reported. The 6,732 police-recorded incidents in 2024 represent a fraction of actual cases: NPCC analysis and academic research suggest a reporting rate of approximately one in seven, implying around 47,000 incidents per year. Victims frequently do not report because they are uncertain about what happened, fear not being believed, were intoxicated themselves, or because the rapid fading of toxicological evidence (typically 12–24 hours) makes them doubt prosecution is possible.
             </p>
             <p>
-              The emergence of injection spiking from 2021 onwards represents a qualitatively different threat. Previously almost exclusively involving drinks &mdash; alcohol, GHB, ketamine, and more recently synthetic opioids &mdash; spiking now involves hypodermic needles in 25% of recorded cases. This shift presents greater physical risks (needle-stick injury, potential blood-borne virus transmission) and greater psychological impact on victims. The Spiking Prevention Act 2023 created spiking as a specific criminal offence, clarifying what had previously required prosecution under the Offences Against the Person Act, but the prosecution rate of 8% reflects persistent evidential barriers that legislation alone cannot resolve.
+              The emergence of injection spiking from 2021 onwards represents a qualitatively different threat. Previously almost exclusively involving drinks — alcohol, GHB, ketamine, and more recently synthetic opioids — spiking now involves hypodermic needles in 25% of recorded cases. This shift presents greater physical risks (needle-stick injury, potential blood-borne virus transmission) and greater psychological impact on victims. The Spiking Prevention Act 2023 created spiking as a specific criminal offence, clarifying what had previously required prosecution under the Offences Against the Person Act, but the prosecution rate of 8% reflects persistent evidential barriers that legislation alone cannot resolve.
             </p>
           </div>
         </section>
@@ -162,7 +162,7 @@ export default function SpikingReportsPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+110% since 2019 &middot; Expert estimate: 47,000+ actual cases &middot; 1 in 7 reported"
+              changeText="+110% since 2019 · Expert estimate: 47,000+ actual cases · 1 in 7 reported"
               sparklineData={[3200, 2800, 3400, 4200, 5800, 6732]}
               onExpand={() => {}}
             />
@@ -172,7 +172,7 @@ export default function SpikingReportsPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from near-zero in 2020 &middot; Needles increasingly used &middot; Needle-stick risk"
+              changeText="Up from near-zero in 2020 · Needles increasingly used · Needle-stick risk"
               sparklineData={[2, 8, 18, 25]}
               onExpand={() => {}}
             />
@@ -182,7 +182,7 @@ export default function SpikingReportsPage() {
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="Very low conviction rate &middot; Toxicology evidence fades within 24 hours"
+              changeText="Very low conviction rate · Toxicology evidence fades within 24 hours"
               sparklineData={[8, 7, 6, 7, 8]}
               onExpand={() => {}}
             />
@@ -193,7 +193,7 @@ export default function SpikingReportsPage() {
         <ScrollReveal>
           <section id="sec-incidents" className="mb-12">
             <LineChart
-              title="Recorded spiking incidents, England and Wales, 2019&ndash;2024"
+              title="Recorded spiking incidents, England and Wales, 2019–2024"
               subtitle="Police recorded spiking incidents. Spiking became a separately recorded offence in 2022; earlier figures estimated from poisoning and assault records. Experts estimate actual incidence is 7x higher than recorded."
               series={incidentsSeries}
               annotations={incidentAnnotations}
@@ -205,7 +205,7 @@ export default function SpikingReportsPage() {
         <ScrollReveal>
           <section id="sec-injection" className="mb-12">
             <LineChart
-              title="Injection spiking as percentage of all spiking incidents, 2021&ndash;2024"
+              title="Injection spiking as percentage of all spiking incidents, 2021–2024"
               subtitle="Spiking using hypodermic needles emerged from 2021 and now accounts for 25% of recorded incidents. Presents additional risks of needle-stick injury and potential blood-borne virus transmission."
               series={injectionSeries}
               annotations={injectionAnnotations}
@@ -217,7 +217,7 @@ export default function SpikingReportsPage() {
         <ScrollReveal>
           <section id="sec-prosecution" className="mb-12">
             <LineChart
-              title="Spiking prosecution rate, 2020&ndash;2024"
+              title="Spiking prosecution rate, 2020–2024"
               subtitle="Percentage of recorded spiking incidents resulting in prosecution. Remains stubbornly low due to rapid disappearance of toxicological evidence, difficulty in proving intent, and victim reluctance to engage with criminal justice process."
               series={prosecutionSeries}
               annotations={[]}
@@ -229,11 +229,11 @@ export default function SpikingReportsPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Spiking Prevention Act"
             unit="2023 — specific offence created"
             description="The Spiking Prevention Act 2023 created a specific offence of spiking, carrying up to 10 years imprisonment, making prosecutions clearer and removing the need to rely on general assault legislation. The Home Office funds specialist training for bar staff and university security teams. Many venues have introduced spiking detection nail varnish, drink covers, and rapid toxicology testing kits. Some police forces have fast-track toxicology services to collect evidence within the critical window. Student Unions have run effective bystander intervention campaigns."
-            source="Source: Home Office Police Recorded Crime 2023/24 &middot; NPCC Spiking National Problem Profile 2024."
+            source="Source: Home Office Police Recorded Crime 2023/24 · NPCC Spiking National Problem Profile 2024."
           />
         </ScrollReveal>
 
@@ -244,7 +244,7 @@ export default function SpikingReportsPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

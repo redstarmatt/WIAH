@@ -88,8 +88,8 @@ export default function AdultEducationPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK is experiencing a structural decline in adult learning at precisely the moment when the economy demands more of it. Adult participation in learning &mdash; defined as the proportion of adults aged 19 and over who have engaged in any form of education or training in the past three years &mdash; has fallen from approximately 20% in 2015 to 15.4% in 2024. Further education (FE) enrolments have declined from 3.3 million in the 2015/16 academic year to 2.3 million in 2023/24, a 30% reduction. The Adult Education Budget (AEB), which funds the majority of classroom-based adult skills provision, was &pound;1.34 billion in 2024/25 &mdash; a real-terms cut of over 40% since 2010. The UK now spends less on adult skills as a proportion of GDP than any comparator OECD economy except Turkey and Mexico.</p>
-            <p>The decline matters because the UK has acute skills shortages. The Migration Advisory Committee identifies over 40 occupations on the Shortage Occupation List, including nurses, electricians, HGV drivers, and software developers. The Construction Industry Training Board estimates a shortfall of 251,000 construction workers by 2028, critical at a time when the government is pursuing an ambitious housebuilding programme. The green transition will require 480,000 workers in insulation, heat pump installation, and renewable energy &mdash; skills that barely exist at scale in the current workforce. Yet apprenticeship starts for adults (25+) have fallen 42% since the introduction of the Apprenticeship Levy in 2017, which shifted training decisions toward employers who have largely concentrated spending on management qualifications rather than technical skills. The proportion of Level 2 (equivalent to GCSEs) qualifications in adult FE has fallen, while Level 3+ (equivalent to A-levels and above) provision has grown &mdash; progress for those who access it, but a narrowing of opportunity for the nine million adults in England who lack basic qualifications.</p>
+            <p>The UK is experiencing a structural decline in adult learning at precisely the moment when the economy demands more of it. Adult participation in learning — defined as the proportion of adults aged 19 and over who have engaged in any form of education or training in the past three years — has fallen from approximately 20% in 2015 to 15.4% in 2024. Further education (FE) enrolments have declined from 3.3 million in the 2015/16 academic year to 2.3 million in 2023/24, a 30% reduction. The Adult Education Budget (AEB), which funds the majority of classroom-based adult skills provision, was £1.34 billion in 2024/25 — a real-terms cut of over 40% since 2010. The UK now spends less on adult skills as a proportion of GDP than any comparator OECD economy except Turkey and Mexico.</p>
+            <p>The decline matters because the UK has acute skills shortages. The Migration Advisory Committee identifies over 40 occupations on the Shortage Occupation List, including nurses, electricians, HGV drivers, and software developers. The Construction Industry Training Board estimates a shortfall of 251,000 construction workers by 2028, critical at a time when the government is pursuing an ambitious housebuilding programme. The green transition will require 480,000 workers in insulation, heat pump installation, and renewable energy — skills that barely exist at scale in the current workforce. Yet apprenticeship starts for adults (25+) have fallen 42% since the introduction of the Apprenticeship Levy in 2017, which shifted training decisions toward employers who have largely concentrated spending on management qualifications rather than technical skills. The proportion of Level 2 (equivalent to GCSEs) qualifications in adult FE has fallen, while Level 3+ (equivalent to A-levels and above) provision has grown — progress for those who access it, but a narrowing of opportunity for the nine million adults in England who lack basic qualifications.</p>
             </div>
         </section>
 
@@ -106,7 +106,7 @@ export default function AdultEducationPage() {
               value="15.4%"
               direction="down"
               polarity="up-is-good"
-              changeText="2024 &middot; Down from 20% in 2015 &middot; Lowest among those without Level 2 qualifications"
+              changeText="2024 · Down from 20% in 2015 · Lowest among those without Level 2 qualifications"
               sparklineData={[20.1, 19.4, 18.7, 17.3, 17.0, 14.2, 15.5, 16.1, 15.8, 15.4]}
               onExpand={() => {}}
             />
@@ -115,7 +115,7 @@ export default function AdultEducationPage() {
               value="2.3M"
               direction="down"
               polarity="up-is-good"
-              changeText="2023/24 &middot; Down 30% from 3.3M in 2015 &middot; AEB cut 40% in real terms since 2010"
+              changeText="2023/24 · Down 30% from 3.3M in 2015 · AEB cut 40% in real terms since 2010"
               sparklineData={[3.3, 3.1, 2.9, 2.8, 2.7, 2.4, 2.5, 2.5, 2.4, 2.3]}
               onExpand={() => {}}
             />
@@ -124,7 +124,7 @@ export default function AdultEducationPage() {
               value="9M"
               direction="flat"
               polarity="up-is-bad"
-              changeText="England &middot; Equivalent to GCSEs &middot; 17% of working-age adults &middot; Limits employment options"
+              changeText="England · Equivalent to GCSEs · 17% of working-age adults · Limits employment options"
               sparklineData={[10.2, 10.0, 9.8, 9.6, 9.4, 9.2, 9.1, 9.0]}
               onExpand={() => {}}
             />
@@ -134,7 +134,7 @@ export default function AdultEducationPage() {
         <ScrollReveal>
           <section id="sec-participation" className="mb-12">
             <LineChart
-              title="Adult participation in learning, UK, 2015&ndash;2024"
+              title="Adult participation in learning, UK, 2015–2024"
               subtitle="Proportion of adults aged 19+ who have participated in learning in the past three years."
               series={participationSeries}
               yLabel="%"
@@ -150,7 +150,7 @@ export default function AdultEducationPage() {
         <ScrollReveal>
           <section id="sec-enrolments" className="mb-12">
             <LineChart
-              title="Further education enrolments, England, 2015&ndash;2024"
+              title="Further education enrolments, England, 2015–2024"
               subtitle="Total learner starts in FE and skills programmes funded through the Adult Education Budget, advanced learner loans, and apprenticeships (millions)."
               series={enrolmentSeries}
               yLabel="Millions"
@@ -165,11 +165,11 @@ export default function AdultEducationPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s being built"
+            title="What's being built"
             value="72%"
             unit="of Skills Bootcamp participants reporting positive career progression"
-            description="Skills Bootcamps &mdash; intensive 12&ndash;16 week courses in digital, technical, and green skills &mdash; have shown strong employment outcomes. The Lifelong Learning Entitlement (from 2025) will provide modular funding equivalent to four years of student finance for FE and HE. The Lifetime Skills Guarantee offers free Level 3 qualifications to adults without one. Devolution of the Adult Education Budget to mayoral combined authorities allows locally tailored provision. T-Levels are expanding technical education routes for younger adults."
-            source="Source: DfE &mdash; Further Education and Skills Statistics 2024; Learning and Work Institute &mdash; Adult Participation Survey 2024; OECD &mdash; Education at a Glance 2024."
+            description="Skills Bootcamps — intensive 12–16 week courses in digital, technical, and green skills — have shown strong employment outcomes. The Lifelong Learning Entitlement (from 2025) will provide modular funding equivalent to four years of student finance for FE and HE. The Lifetime Skills Guarantee offers free Level 3 qualifications to adults without one. Devolution of the Adult Education Budget to mayoral combined authorities allows locally tailored provision. T-Levels are expanding technical education routes for younger adults."
+            source="Source: DfE — Further Education and Skills Statistics 2024; Learning and Work Institute — Adult Participation Survey 2024; OECD — Education at a Glance 2024."
           />
         </ScrollReveal>
 
@@ -179,7 +179,7 @@ export default function AdultEducationPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

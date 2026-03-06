@@ -69,8 +69,8 @@ export default function UkEuTradePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK&apos;s departure from the EU single market on 1 January 2021 introduced customs formalities and regulatory checks between Great Britain and its largest trading partner for the first time since 1993. Academic studies consistently find UK goods exports to the EU were 15&ndash;25% lower by 2023 than they would have been under continued single market membership, with the negative effect concentrated in food and agricultural products, SME exporters, and just-in-time supply chains. UK goods exports were &pound;167 billion in 2024 &mdash; below the pre-Brexit trend &mdash; while goods imports from the EU reached &pound;241 billion, producing a &pound;74 billion bilateral deficit. The UK introduced approximately 1.8 million new customs declarations per month from January 2021, with compliance costs estimated at &pound;7 billion per year by industry groups; many smaller businesses have withdrawn from EU markets entirely.</p>
-            <p>The impact of Brexit trade barriers falls asymmetrically. Goods exporters face customs declarations, rules of origin requirements, and sector-specific compliance costs that are absent for service exporters &mdash; meaning London&apos;s financial services sector has been relatively insulated while food processing, automotive, and agricultural exporters in Leave-voting regions have borne the highest costs. The TCA&apos;s rules of origin requirements have driven supply chain restructuring in automotive and aerospace. Services trade has been more resilient, though the loss of financial services passporting resulted in significant relocation of EU-facing business to Dublin, Amsterdam, Frankfurt, and Paris.</p>
+            <p>The UK's departure from the EU single market on 1 January 2021 introduced customs formalities and regulatory checks between Great Britain and its largest trading partner for the first time since 1993. Academic studies consistently find UK goods exports to the EU were 15–25% lower by 2023 than they would have been under continued single market membership, with the negative effect concentrated in food and agricultural products, SME exporters, and just-in-time supply chains. UK goods exports were £167 billion in 2024 — below the pre-Brexit trend — while goods imports from the EU reached £241 billion, producing a £74 billion bilateral deficit. The UK introduced approximately 1.8 million new customs declarations per month from January 2021, with compliance costs estimated at £7 billion per year by industry groups; many smaller businesses have withdrawn from EU markets entirely.</p>
+            <p>The impact of Brexit trade barriers falls asymmetrically. Goods exporters face customs declarations, rules of origin requirements, and sector-specific compliance costs that are absent for service exporters — meaning London's financial services sector has been relatively insulated while food processing, automotive, and agricultural exporters in Leave-voting regions have borne the highest costs. The TCA's rules of origin requirements have driven supply chain restructuring in automotive and aerospace. Services trade has been more resilient, though the loss of financial services passporting resulted in significant relocation of EU-facing business to Dublin, Amsterdam, Frankfurt, and Paris.</p>
           </div>
         </section>
 
@@ -88,9 +88,9 @@ export default function UkEuTradePage() {
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="15% below pre-Brexit trend &middot; services growing"
+              changeText="15% below pre-Brexit trend · services growing"
               sparklineData={[152, 161, 160, 159, 128, 148, 158, 164, 167]}
-              href="#sec-chart"source="ONS &middot; UK Trade Statistics 2024"
+              href="#sec-chart"source="ONS · UK Trade Statistics 2024"
             />
             <MetricCard
               label="Trade in goods deficit"
@@ -100,7 +100,7 @@ export default function UkEuTradePage() {
               polarity="up-is-bad"
               changeText="UK imports more goods than it exports"
               sparklineData={[39, 42, 58, 60, 39, 65, 94, 84, 74]}
-              href="#sec-chart"source="ONS &middot; UK Trade Statistics 2024"
+              href="#sec-chart"source="ONS · UK Trade Statistics 2024"
             />
             <MetricCard
               label="Monthly admin forms"
@@ -108,9 +108,9 @@ export default function UkEuTradePage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="New since Jan 2021 &middot; cost to exporters est. £7bn/yr"
+              changeText="New since Jan 2021 · cost to exporters est. £7bn/yr"
               sparklineData={[0.2, 0.2, 0.2, 0.2, 0.2, 1.6, 1.7, 1.8, 1.8]}
-              href="#sec-chart"source="HMRC &middot; Trade Statistics / British Chambers 2024"
+              href="#sec-chart"source="HMRC · Trade Statistics / British Chambers 2024"
             />
           </div>
         </ScrollReveal>
@@ -118,7 +118,7 @@ export default function UkEuTradePage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="UK goods trade with the EU, 2016&ndash;2024"
+              title="UK goods trade with the EU, 2016–2024"
               subtitle="UK goods exports to and imports from the European Union. Current prices, £ billions. Data covers Great Britain only from 2021."
               series={tradeSeries}
               yLabel="£ billions"
@@ -138,10 +138,10 @@ export default function UkEuTradePage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>ONS &mdash; UK Trade Statistics. Published monthly. ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade</p>
-            <p>Centre for European Reform &mdash; The hit to UK trade from Brexit. cer.eu/publications</p>
-            <p>HMRC &mdash; UK trade in goods by all countries and commodities. uktradeinfo.com</p>
-            <p>Goods trade figures include all merchandise trade between the UK and EU-27 member states. Trade deficit is calculated as imports minus exports for goods only; services are excluded. Monthly form estimate derived from HMRC customs declaration data and British Chambers of Commerce survey evidence. Pre-Brexit trend estimated using OLS regression on 2010&ndash;2019 trade data.</p>
+            <p>ONS — UK Trade Statistics. Published monthly. ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade</p>
+            <p>Centre for European Reform — The hit to UK trade from Brexit. cer.eu/publications</p>
+            <p>HMRC — UK trade in goods by all countries and commodities. uktradeinfo.com</p>
+            <p>Goods trade figures include all merchandise trade between the UK and EU-27 member states. Trade deficit is calculated as imports minus exports for goods only; services are excluded. Monthly form estimate derived from HMRC customs declaration data and British Chambers of Commerce survey evidence. Pre-Brexit trend estimated using OLS regression on 2010–2019 trade data.</p>
           </div>
         </section>
       </main>

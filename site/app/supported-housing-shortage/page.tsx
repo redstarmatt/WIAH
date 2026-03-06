@@ -76,8 +76,8 @@ export default function SupportedHousinShortage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Supported housing stock has contracted from approximately 458,000 units in 2016 to 448,000 today &mdash; a loss of 10,000 units at exactly the moment when an ageing population is driving demand upward. The waiting list has more than doubled over the same period, from 32,000 to 58,000 people. Local housing allowance rates have repeatedly failed to keep pace with actual rents, making it financially unviable to build or maintain supported units in high-cost areas; the specialised construction requirements &mdash; en-suite, wider corridors, staff facilities &mdash; add further cost. The Supported Housing (Regulatory Oversight) Act 2023 improved quality standards but did nothing to increase supply.</p>
-            <p>The shortage cascades across other public services. NHS England estimates around 13,000 people are stuck in hospital because no appropriate supported housing exists for them &mdash; at over &pound;300 per unnecessary hospital day. Adult social care routinely places people with learning disabilities in residential care settings at greater cost and worse outcomes because local supported housing is unavailable. The burden falls on older people with complex needs, young adults with learning disabilities, and those leaving mental health inpatient care &mdash; the groups with the fewest options when the system fails.</p>
+            <p>Supported housing stock has contracted from approximately 458,000 units in 2016 to 448,000 today — a loss of 10,000 units at exactly the moment when an ageing population is driving demand upward. The waiting list has more than doubled over the same period, from 32,000 to 58,000 people. Local housing allowance rates have repeatedly failed to keep pace with actual rents, making it financially unviable to build or maintain supported units in high-cost areas; the specialised construction requirements — en-suite, wider corridors, staff facilities — add further cost. The Supported Housing (Regulatory Oversight) Act 2023 improved quality standards but did nothing to increase supply.</p>
+            <p>The shortage cascades across other public services. NHS England estimates around 13,000 people are stuck in hospital because no appropriate supported housing exists for them — at over £300 per unnecessary hospital day. Adult social care routinely places people with learning disabilities in residential care settings at greater cost and worse outcomes because local supported housing is unavailable. The burden falls on older people with complex needs, young adults with learning disabilities, and those leaving mental health inpatient care — the groups with the fewest options when the system fails.</p>
           </div>
         </section>
 
@@ -95,9 +95,9 @@ export default function SupportedHousinShortage() {
               unit=""
               direction="down"
               polarity="up-is-good"
-              changeText="declining while need rises &middot; 10k lost since 2016"
+              changeText="declining while need rises · 10k lost since 2016"
               sparklineData={[458000, 456000, 454000, 452000, 451000, 450000, 449000, 448000]}
-              href="#sec-chart"source="DLUHC &middot; Supported Housing Review 2024"
+              href="#sec-chart"source="DLUHC · Supported Housing Review 2024"
             />
             <MetricCard
               label="Waiting list"
@@ -105,9 +105,9 @@ export default function SupportedHousinShortage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+81% in 7 years &middot; for older and disabled people"
+              changeText="+81% in 7 years · for older and disabled people"
               sparklineData={[32000, 36000, 40000, 44000, 48000, 52000, 56000, 58000]}
-              href="#sec-chart"source="DLUHC &middot; Supported Housing Review 2024"
+              href="#sec-chart"source="DLUHC · Supported Housing Review 2024"
             />
             <MetricCard
               label="Shortfall"
@@ -115,9 +115,9 @@ export default function SupportedHousinShortage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="gap between need and supply &middot; growing annually"
+              changeText="gap between need and supply · growing annually"
               sparklineData={[20000, 24000, 28000, 32000, 36000, 40000, 43000, 45000]}
-              href="#sec-chart"source="Housing LIN &middot; Supported Housing Deficit Report 2024"
+              href="#sec-chart"source="Housing LIN · Supported Housing Deficit Report 2024"
             />
           </div>
         </ScrollReveal>
@@ -125,7 +125,7 @@ export default function SupportedHousinShortage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Supported housing: units and waiting list, 2016&ndash;2023"
+              title="Supported housing: units and waiting list, 2016–2023"
               subtitle="Units in supply (red) contracting while waiting list (amber) grows. England."
               series={combinedSeries}
               yLabel="Count"
@@ -141,9 +141,9 @@ export default function SupportedHousinShortage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>DLUHC &mdash; Supported Housing Review. gov.uk/government/publications/supported-housing-review</p>
-            <p>Housing LIN &mdash; Supported Housing Deficit Report 2024. housinglin.org.uk</p>
-            <p>NHS England &mdash; Delayed Transfers of Care statistics. england.nhs.uk/statistics/statistical-work-areas/delayed-transfers-of-care/</p>
+            <p>DLUHC — Supported Housing Review. gov.uk/government/publications/supported-housing-review</p>
+            <p>Housing LIN — Supported Housing Deficit Report 2024. housinglin.org.uk</p>
+            <p>NHS England — Delayed Transfers of Care statistics. england.nhs.uk/statistics/statistical-work-areas/delayed-transfers-of-care/</p>
             <p>Supported housing defined as housing where housing, care, and support are provided together to help vulnerable people live as independently as possible. Includes sheltered housing, extra care, and specialist supported accommodation.</p>
           </div>
         </section>

@@ -109,7 +109,7 @@ export default function ModularHousingPage() {
 
   const shareAnnotations: Annotation[] = [
     { date: new Date(2021, 5, 1), label: '2021: Homes England MMC mandate' },
-    { date: new Date(2025, 5, 1), label: '2025: Govt target &mdash; 25% of new homes' },
+    { date: new Date(2025, 5, 1), label: '2025: Govt target — 25% of new homes' },
   ];
 
   // ── Render ────────────────────────────────────────────────────────────────
@@ -129,10 +129,10 @@ export default function ModularHousingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Modern Methods of Construction &mdash; factory-built homes that arrive on site largely pre-assembled &mdash; promised to transform UK housebuilding. Faster, cheaper, more consistent quality, lower carbon. The government set a target in 2019 that 25% of homes funded through Homes England would use MMC by 2025. That target will not be met. MMC accounts for just 3.1% of completions.
+              Modern Methods of Construction — factory-built homes that arrive on site largely pre-assembled — promised to transform UK housebuilding. Faster, cheaper, more consistent quality, lower carbon. The government set a target in 2019 that 25% of homes funded through Homes England would use MMC by 2025. That target will not be met. MMC accounts for just 3.1% of completions.
             </p>
             <p>
-              The sector has been hit by a wave of high-profile insolvencies. Ilke Homes &mdash; backed by &pound;100 million of Homes England funding &mdash; went into administration in 2023 with hundreds of jobs lost and half-built developments abandoned. House by Urban Splash, L&amp;G Modular and others followed. The causes vary: capital-intensive factory setup, planning delays, resistance from mortgage lenders and valuers, and the difficulty of competing against traditional housebuilders with established supply chains.
+              The sector has been hit by a wave of high-profile insolvencies. Ilke Homes — backed by £100 million of Homes England funding — went into administration in 2023 with hundreds of jobs lost and half-built developments abandoned. House by Urban Splash, L&amp;G Modular and others followed. The causes vary: capital-intensive factory setup, planning delays, resistance from mortgage lenders and valuers, and the difficulty of competing against traditional housebuilders with established supply chains.
             </p>
           </div>
         </section>
@@ -183,7 +183,7 @@ export default function ModularHousingPage() {
         <ScrollReveal>
           <section id="sec-completions" className="mb-12">
             <LineChart
-              title="Modular and MMC homes completed, UK, 2018&ndash;2024"
+              title="Modular and MMC homes completed, UK, 2018–2024"
               subtitle="Annual completions of homes built using modern methods of construction (volumetric, panelised and hybrid systems). Growth has been consistent but absolute numbers remain small relative to total housing need."
               series={completionsSeries}
               annotations={completionsAnnotations}
@@ -195,8 +195,8 @@ export default function ModularHousingPage() {
         <ScrollReveal>
           <section id="sec-share" className="mb-12">
             <LineChart
-              title="MMC as share of total new homes, UK, 2018&ndash;2024"
-              subtitle="Modern Methods of Construction as a percentage of total new homes completed. The government target of 25% by 2025 (from Homes England&apos;s capital programme) is shown for reference. Actual progress is far behind."
+              title="MMC as share of total new homes, UK, 2018–2024"
+              subtitle="Modern Methods of Construction as a percentage of total new homes completed. The government target of 25% by 2025 (from Homes England's capital programme) is shown for reference. Actual progress is far behind."
               series={shareSeries}
               annotations={shareAnnotations}
               yLabel="% of total completions"
@@ -207,11 +207,11 @@ export default function ModularHousingPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="NHBC MMC"
             unit="warranty framework"
-            description="Homes England&apos;s MMC programme continues to invest in factory capacity and de-risk procurement for registered providers. The NHBC&apos;s MMC framework provides warranty assurance to address buyer and lender uncertainty. Social housing providers are increasingly specifying MMC &mdash; L&amp;G Affordable Homes has committed to 100% MMC for new schemes. The social housing sector&apos;s longer contracts and stable demand are better suited to the MMC business model than speculative market sale."
-            source="Source: Homes England &mdash; MMC Programme Statistics, 2025. NHBC &mdash; New Home Statistics Review, 2025."
+            description="Homes England's MMC programme continues to invest in factory capacity and de-risk procurement for registered providers. The NHBC's MMC framework provides warranty assurance to address buyer and lender uncertainty. Social housing providers are increasingly specifying MMC — L&amp;G Affordable Homes has committed to 100% MMC for new schemes. The social housing sector's longer contracts and stable demand are better suited to the MMC business model than speculative market sale."
+            source="Source: Homes England — MMC Programme Statistics, 2025. NHBC — New Home Statistics Review, 2025."
           />
         </ScrollReveal>
 
@@ -222,7 +222,7 @@ export default function ModularHousingPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

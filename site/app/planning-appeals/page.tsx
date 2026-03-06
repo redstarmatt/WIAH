@@ -130,17 +130,17 @@ export default function PlanningAppealsPage() {
         <TopicHeader
           topic="Planning Appeals"
           question="Who Actually Controls Where Homes Get Built?"
-          finding="Planning inspectors overturned 43% of housing planning refusals on appeal in 2024. Developers win &pound;1 billion in planning permission through appeals annually. Meanwhile, 260,000 homes with planning permission remain unbuilt."
+          finding="Planning inspectors overturned 43% of housing planning refusals on appeal in 2024. Developers win £1 billion in planning permission through appeals annually. Meanwhile, 260,000 homes with planning permission remain unbuilt."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England&apos;s planning system operates on a presumption in favour of sustainable development &mdash; yet in practice, the planning appeal process has become a second decision-making tier dominated by developer resources and planning inspector discretion. When a local planning authority refuses a housing application, developers can appeal to the Planning Inspectorate. In 2024, 43% of housing appeals succeeded, meaning planning inspectors overruled locally elected councils in nearly half of all contested housing decisions. The financial stakes are substantial: industry estimates put the annual value of permissions won on appeal at over &pound;1 billion.
+              England's planning system operates on a presumption in favour of sustainable development — yet in practice, the planning appeal process has become a second decision-making tier dominated by developer resources and planning inspector discretion. When a local planning authority refuses a housing application, developers can appeal to the Planning Inspectorate. In 2024, 43% of housing appeals succeeded, meaning planning inspectors overruled locally elected councils in nearly half of all contested housing decisions. The financial stakes are substantial: industry estimates put the annual value of permissions won on appeal at over £1 billion.
             </p>
             <p>
-              The planning pipeline paradox compounds the picture. Despite 260,000 homes sitting with extant planning permission but not yet started, the homebuilding industry argues permissions are constrained by viability, infrastructure costs, and market absorption rates. Critics, including the Competition and Markets Authority in its 2024 report, point to land banking &mdash; the practice of holding permissions until conditions improve &mdash; as a structural feature of the speculative land model that underpins major housebuilders. Average planning decision times have risen to 11.8 weeks for major applications, a direct consequence of local authority planning department cuts that removed nearly a third of planning officers between 2010 and 2023.
+              The planning pipeline paradox compounds the picture. Despite 260,000 homes sitting with extant planning permission but not yet started, the homebuilding industry argues permissions are constrained by viability, infrastructure costs, and market absorption rates. Critics, including the Competition and Markets Authority in its 2024 report, point to land banking — the practice of holding permissions until conditions improve — as a structural feature of the speculative land model that underpins major housebuilders. Average planning decision times have risen to 11.8 weeks for major applications, a direct consequence of local authority planning department cuts that removed nearly a third of planning officers between 2010 and 2023.
             </p>
           </div>
         </section>
@@ -161,7 +161,7 @@ export default function PlanningAppealsPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 33% in 2015 &middot; Developers win &pound;1bn in permissions pa"
+              changeText="Up from 33% in 2015 · Developers win £1bn in permissions pa"
               sparklineData={[33, 34, 35, 36, 36, 37, 38, 40, 42, 43]}
               onExpand={() => {}}
             />
@@ -171,7 +171,7 @@ export default function PlanningAppealsPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Planning permission granted but not built &middot; Land banking debate"
+              changeText="Planning permission granted but not built · Land banking debate"
               sparklineData={[180, 200, 220, 240, 250, 255, 260]}
               onExpand={() => {}}
             />
@@ -181,7 +181,7 @@ export default function PlanningAppealsPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 9.2 weeks in 2018 &middot; LPA capacity shortfall"
+              changeText="Up from 9.2 weeks in 2018 · LPA capacity shortfall"
               sparklineData={[9.2, 9.5, 10.1, 10.8, 11.2, 11.5, 11.8]}
               onExpand={() => {}}
             />
@@ -192,7 +192,7 @@ export default function PlanningAppealsPage() {
         <ScrollReveal>
           <section id="sec-appeals" className="mb-12">
             <LineChart
-              title="Housing planning appeal success rate, England, 2015&ndash;2024"
+              title="Housing planning appeal success rate, England, 2015–2024"
               subtitle="Proportion of housing planning refusal appeals decided in favour of the developer by the Planning Inspectorate. A rising rate means councils are being overruled more often."
               series={appealSuccessSeries}
               annotations={appealAnnotations}
@@ -204,7 +204,7 @@ export default function PlanningAppealsPage() {
         <ScrollReveal>
           <section id="sec-pipeline" className="mb-12">
             <LineChart
-              title="Homes with planning permission but not yet built, England, 2018&ndash;2024"
+              title="Homes with planning permission but not yet built, England, 2018–2024"
               subtitle="Dwellings with extant planning permission that have not started construction. The &lsquo;planning pipeline&rsquo; has grown steadily despite housing undersupply."
               series={unbuiltSeries}
               annotations={unbuiltAnnotations}
@@ -216,11 +216,11 @@ export default function PlanningAppealsPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Planning &amp; Infrastructure Bill 2025"
             unit=""
-            description="The Planning and Infrastructure Bill 2025 aims to streamline the planning system, introduce national development management policies, and speed up decision-making. New planning fee increases are funding additional planning officer capacity. The government&apos;s mandatory local housing targets and reformed NPPF seek to reduce council refusals and therefore the appeal burden. Skills England is developing a pipeline of planning professionals to address the LPA capacity crisis."
-            source="Source: MHCLG &mdash; Planning and Infrastructure Bill 2025 impact assessment; Planning Inspectorate annual report 2024."
+            description="The Planning and Infrastructure Bill 2025 aims to streamline the planning system, introduce national development management policies, and speed up decision-making. New planning fee increases are funding additional planning officer capacity. The government's mandatory local housing targets and reformed NPPF seek to reduce council refusals and therefore the appeal burden. Skills England is developing a pipeline of planning professionals to address the LPA capacity crisis."
+            source="Source: MHCLG — Planning and Infrastructure Bill 2025 impact assessment; Planning Inspectorate annual report 2024."
           />
         </ScrollReveal>
 
@@ -231,7 +231,7 @@ export default function PlanningAppealsPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

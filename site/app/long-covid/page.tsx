@@ -99,7 +99,7 @@ export default function LongCovidPage() {
     ? [
         {
           id: 'economic',
-          label: 'Estimated economic cost (&pound;bn)',
+          label: 'Estimated economic cost (£bn)',
           colour: '#F4A261',
           data: data.national.economicImpact.timeSeries.map(d => ({
             date: yearToDate(d.year),
@@ -117,17 +117,17 @@ export default function LongCovidPage() {
         <TopicHeader
           topic="Long COVID"
           question="How Many People Are Still Ill from COVID?"
-          finding="An estimated 1.5 million people in the UK have long COVID, down from a peak of 2.1 million in 2022. 800,000 report limitations on daily activities. 50,000 are unable to work. The estimated economic cost is &pound;5 billion a year."
+          finding="An estimated 1.5 million people in the UK have long COVID, down from a peak of 2.1 million in 2022. 800,000 report limitations on daily activities. 50,000 are unable to work. The estimated economic cost is £5 billion a year."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Long COVID &mdash; defined by NICE as symptoms persisting four or more weeks after infection &mdash; peaked at 2.1 million sufferers across Great Britain in January 2022, with subsequent estimates putting the figure at approximately 1.5 million in 2024. Women are affected more than men, and prevalence concentrates heavily among working-age adults aged 35&ndash;69. Some 800,000 people report long COVID limits their daily activities; 50,000 are unable to work at all. OBR estimates attribute roughly 20% of the rise in long-term sickness inactivity (from 2.1 million to 3.2 million since 2019) to long COVID, with the estimated economic cost running to &pound;5 billion per year. NHS England established 85 long COVID assessment clinics with a 12-week average wait; there is no licensed treatment, with care symptom-based. Vaccination reduces long COVID risk by around 50%, and the NIHR funded over &pound;50 million of research through the PHOSP-COVID study.
+              Long COVID — defined by NICE as symptoms persisting four or more weeks after infection — peaked at 2.1 million sufferers across Great Britain in January 2022, with subsequent estimates putting the figure at approximately 1.5 million in 2024. Women are affected more than men, and prevalence concentrates heavily among working-age adults aged 35–69. Some 800,000 people report long COVID limits their daily activities; 50,000 are unable to work at all. OBR estimates attribute roughly 20% of the rise in long-term sickness inactivity (from 2.1 million to 3.2 million since 2019) to long COVID, with the estimated economic cost running to £5 billion per year. NHS England established 85 long COVID assessment clinics with a 12-week average wait; there is no licensed treatment, with care symptom-based. Vaccination reduces long COVID risk by around 50%, and the NIHR funded over £50 million of research through the PHOSP-COVID study.
             </p>
             <p>
-              Healthcare workers, care home staff, and transport workers unable to work from home were disproportionately affected during the first two waves before vaccination &mdash; mirroring pandemic exposure patterns. Post-exertional malaise, where physical or cognitive effort triggers symptom relapse lasting days, makes conventional rehabilitation counterproductive and traps patients in enforced inactivity. Children were not spared: multisystem inflammatory syndrome (MIS-C and PIMS-TS) hospitalised hundreds, with some experiencing lasting cardiac and neurological effects. Clinical trials in 2024&ndash;25 are testing antivirals, low-dose naltrexone for neuroinflammation, and apheresis, though none has yet produced definitive results.
+              Healthcare workers, care home staff, and transport workers unable to work from home were disproportionately affected during the first two waves before vaccination — mirroring pandemic exposure patterns. Post-exertional malaise, where physical or cognitive effort triggers symptom relapse lasting days, makes conventional rehabilitation counterproductive and traps patients in enforced inactivity. Children were not spared: multisystem inflammatory syndrome (MIS-C and PIMS-TS) hospitalised hundreds, with some experiencing lasting cardiac and neurological effects. Clinical trials in 2024–25 are testing antivirals, low-dose naltrexone for neuroinflammation, and apheresis, though none has yet produced definitive results.
             </p>
           </div>
         </section>
@@ -161,11 +161,11 @@ export default function LongCovidPage() {
               href="#sec-prevalence"/>
             <MetricCard
               label="Estimated economic cost"
-              value="&pound;5bn"
+              value="£5bn"
               unit=""
               direction="down"
               polarity="up-is-bad"
-              changeText="2024 · Down from &pound;5.7bn peak · Lost output from work absence · Still one of UK&apos;s largest pandemic legacies"
+              changeText="2024 · Down from £5.7bn peak · Lost output from work absence · Still one of UK's largest pandemic legacies"
               sparklineData={[1.5, 3.8, 5.7, 5.0]}
               href="#sec-symptoms"/>
           </div>
@@ -188,14 +188,14 @@ export default function LongCovidPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS &mdash; COVID Infection Survey 2023. Multiple symptoms per person.</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS — COVID Infection Survey 2023. Multiple symptoms per person.</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <section id="sec-prevalence" className="mb-12">
             <LineChart
-              title="Long COVID prevalence, Great Britain, 2021&ndash;2024"
+              title="Long COVID prevalence, Great Britain, 2021–2024"
               subtitle="Estimated number of people self-reporting symptoms 4+ weeks after COVID-19 infection. Peaked at 2.1 million in 2022. Declining as population immunity grows but remaining substantial."
               series={prevalenceSeries}
               annotations={prevalenceAnnotations}
@@ -207,22 +207,22 @@ export default function LongCovidPage() {
         <ScrollReveal>
           <section id="sec-response" className="mb-12">
             <LineChart
-              title="Estimated economic cost of long COVID, UK, 2021&ndash;2024"
-              subtitle="Estimated annual output loss from long COVID-related work absence and reduced productivity (&pound;bn). Peaked at &pound;5.7bn in 2023 and is declining slowly as prevalence falls."
+              title="Estimated economic cost of long COVID, UK, 2021–2024"
+              subtitle="Estimated annual output loss from long COVID-related work absence and reduced productivity (£bn). Peaked at £5.7bn in 2023 and is declining slowly as prevalence falls."
               series={economicImpactSeries}
               annotations={[]}
-              yLabel="&pound; billion"
+              yLabel="£ billion"
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
-            value="&ndash;29%"
+            title="What's improving"
+            value="–29%"
             unit="long COVID prevalence falling from 2.1M to 1.5M since 2022 peak"
-            description="Long COVID prevalence has fallen by around 29% from its 2022 peak, driven by growing immunity (prior infection plus vaccination) and changes in circulating variants. Vaccination reduces long COVID risk by an estimated 50%. NIHR has funded &pound;50M+ of research including the PHOSP-COVID study which is tracking long-term recovery. NICE guidelines (NG188) have standardised care. Multiple clinical trials of potential treatments were ongoing in 2024, targeting fatigue, cognitive symptoms, and autonomic dysfunction."
-            source="Source: ONS &mdash; COVID Infection Survey; NHS England &mdash; Long COVID assessment services 2024."
+            description="Long COVID prevalence has fallen by around 29% from its 2022 peak, driven by growing immunity (prior infection plus vaccination) and changes in circulating variants. Vaccination reduces long COVID risk by an estimated 50%. NIHR has funded £50M+ of research including the PHOSP-COVID study which is tracking long-term recovery. NICE guidelines (NG188) have standardised care. Multiple clinical trials of potential treatments were ongoing in 2024, targeting fatigue, cognitive symptoms, and autonomic dysfunction."
+            source="Source: ONS — COVID Infection Survey; NHS England — Long COVID assessment services 2024."
           />
         </ScrollReveal>
 
@@ -232,7 +232,7 @@ export default function LongCovidPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

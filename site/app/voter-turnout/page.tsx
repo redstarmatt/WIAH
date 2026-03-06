@@ -106,7 +106,7 @@ export default function VoterTurnoutPage() {
               onExpand={() => {}}
             />
             <MetricCard
-              label="18&ndash;24 year old turnout (2024)"
+              label="18–24 year old turnout (2024)"
               value="43"
               unit="%"
               direction="down"
@@ -133,8 +133,8 @@ export default function VoterTurnoutPage() {
 
       <section id="sec-context" className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
         <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-          <p>The 2024 general election recorded 59.7% turnout &mdash; the lowest since 2001, when 59.4% voted in the shadow of the Iraq War. Despite a record 47.6 million people on the electoral roll and blanket pre-election coverage, 18.6 million registered voters did not cast a ballot. Post-war participation ran consistently between 76% and 83% through the 1950s and 1960s before a structural decline set in. The partial recovery to 65&ndash;69% between 2010 and 2019 has now been reversed. England&apos;s local elections are starker still: average turnout across English councils stands at around 32%, with some metropolitan wards in Manchester and Birmingham recording figures below 15%.</p>
-          <p>Participation is not falling evenly. YouGov and British Election Study data from 2024 put turnout among 18&ndash;24 year olds at around 43%, against 71% for voters aged 65 and over &mdash; a 28-percentage-point gap that has widened over successive elections. Young people are more likely to be registered than ever before, but less likely to vote once registered. Deprivation compounds the pattern: the lowest-turnout constituencies are concentrated in post-industrial towns and urban peripheries where trust in politicians is lowest. Edelman Trust Barometer surveys consistently place UK politicians among the least trusted in Europe, a trend that accelerated after the Brexit referendum and the Partygate scandal of 2021&ndash;22.</p>
+          <p>The 2024 general election recorded 59.7% turnout — the lowest since 2001, when 59.4% voted in the shadow of the Iraq War. Despite a record 47.6 million people on the electoral roll and blanket pre-election coverage, 18.6 million registered voters did not cast a ballot. Post-war participation ran consistently between 76% and 83% through the 1950s and 1960s before a structural decline set in. The partial recovery to 65–69% between 2010 and 2019 has now been reversed. England's local elections are starker still: average turnout across English councils stands at around 32%, with some metropolitan wards in Manchester and Birmingham recording figures below 15%.</p>
+          <p>Participation is not falling evenly. YouGov and British Election Study data from 2024 put turnout among 18–24 year olds at around 43%, against 71% for voters aged 65 and over — a 28-percentage-point gap that has widened over successive elections. Young people are more likely to be registered than ever before, but less likely to vote once registered. Deprivation compounds the pattern: the lowest-turnout constituencies are concentrated in post-industrial towns and urban peripheries where trust in politicians is lowest. Edelman Trust Barometer surveys consistently place UK politicians among the least trusted in Europe, a trend that accelerated after the Brexit referendum and the Partygate scandal of 2021–22.</p>
             </div>
       </section>
 
@@ -143,7 +143,7 @@ export default function VoterTurnoutPage() {
       <PositiveCallout
         title="Youth registration surged in 2024"
         value=""
-        description="Over 3.6 million people registered to vote in the six weeks before the 2024 general election, the highest registration surge on record. Two&ndash;thirds were under 35. Whether this translated to votes remains contested &mdash; many experts believe registration improved but turnout among young registrants stayed below 50%."
+        description="Over 3.6 million people registered to vote in the six weeks before the 2024 general election, the highest registration surge on record. Two–thirds were under 35. Whether this translated to votes remains contested — many experts believe registration improved but turnout among young registrants stayed below 50%."
         source=""
       />
 
@@ -155,7 +155,7 @@ export default function VoterTurnoutPage() {
             <>
               <ScrollReveal>
                 <LineChart
-                  title="UK general election turnout, 1979&ndash;2024"
+                  title="UK general election turnout, 1979–2024"
                   subtitle="Percentage of registered electorate who voted. England, Scotland, Wales and Northern Ireland."
                   series={generalElectionSeries}
                   yLabel="Turnout (%)"
@@ -165,7 +165,7 @@ export default function VoterTurnoutPage() {
 
               <ScrollReveal>
                 <LineChart
-                  title="English local election turnout, 2000&ndash;2023"
+                  title="English local election turnout, 2000–2023"
                   subtitle="Average turnout in English local government elections."
                   series={localElectionSeries}
                   yLabel="Turnout (%)"

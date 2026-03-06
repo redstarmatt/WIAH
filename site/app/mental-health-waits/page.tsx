@@ -103,8 +103,8 @@ export default function MentalHealthWaitsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England&apos;s NHS mental health waiting lists stood at 1.8 million in early 2024, up 38% since 2019. One in five children under 18 now has a probable mental health disorder against one in nine in 2017 &mdash; a shift with no obvious precedent in modern public health data. Parliament legislated for parity of esteem between mental and physical health in 2012; in practice the 18-week standard applied routinely to elective surgery is met only by Talking Therapies for mild-to-moderate anxiety and depression. CAMHS waits in some trusts exceed two years. NHS mental health spending rose from &pound;12.1bn to &pound;15.2bn between 2016 and 2023, but rising prevalence, referral rates, and complexity have outpaced investment &mdash; more money has bought more activity without closing the gap between need and provision.</p>
-            <p>Children and young people bear the sharpest burden. The eating disorders emergency target &mdash; treatment within four weeks of urgent referral for under-18s &mdash; is frequently missed, with compliance well below the 95% standard in the worst-performing regions. A&amp;E presentations for under-18 mental health crises have risen sharply since 2019 as hospitals become the default intervention when community services fail to respond in time. The 1.8 million figure counts only those accepted onto a pathway; it excludes those turned away at triage, those whose GPs judged referral unlikely to succeed, and the many who never sought help at all.</p>
+            <p>England's NHS mental health waiting lists stood at 1.8 million in early 2024, up 38% since 2019. One in five children under 18 now has a probable mental health disorder against one in nine in 2017 — a shift with no obvious precedent in modern public health data. Parliament legislated for parity of esteem between mental and physical health in 2012; in practice the 18-week standard applied routinely to elective surgery is met only by Talking Therapies for mild-to-moderate anxiety and depression. CAMHS waits in some trusts exceed two years. NHS mental health spending rose from £12.1bn to £15.2bn between 2016 and 2023, but rising prevalence, referral rates, and complexity have outpaced investment — more money has bought more activity without closing the gap between need and provision.</p>
+            <p>Children and young people bear the sharpest burden. The eating disorders emergency target — treatment within four weeks of urgent referral for under-18s — is frequently missed, with compliance well below the 95% standard in the worst-performing regions. A&amp;E presentations for under-18 mental health crises have risen sharply since 2019 as hospitals become the default intervention when community services fail to respond in time. The 1.8 million figure counts only those accepted onto a pathway; it excludes those turned away at triage, those whose GPs judged referral unlikely to succeed, and the many who never sought help at all.</p>
           </div>
         </section>
 
@@ -218,9 +218,9 @@ export default function MentalHealthWaitsPage() {
         <ScrollReveal>
         <PositiveCallout
           title="Mental Health Investment Standard introduced 2016"
-          value="&pound;15.3bn"
+          value="£15.3bn"
           unit="2022/23"
-          description="The NHS Mental Health Investment Standard (MHIS) requires mental health spending to grow at least as fast as the overall NHS budget. Mental health spending rose from &pound;12.1bn in 2016/17 to &pound;15.3bn in 2022/23 &mdash; a 26% increase in real terms. But demand has grown faster, and the workforce gap remains the principal constraint."
+          description="The NHS Mental Health Investment Standard (MHIS) requires mental health spending to grow at least as fast as the overall NHS budget. Mental health spending rose from £12.1bn in 2016/17 to £15.3bn in 2022/23 — a 26% increase in real terms. But demand has grown faster, and the workforce gap remains the principal constraint."
           source="Source: NHS England — Mental Health Investment Standard 2022/23."
         />
         </ScrollReveal>

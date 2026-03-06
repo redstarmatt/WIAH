@@ -138,10 +138,10 @@ export default function PolicingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England and Wales had 143,734 police officers in 2010. Austerity cut 22,000 of them, driving numbers to a low of 121,700 by 2018. The government&apos;s 20,000 officer uplift programme, launched in 2019, pushed headcount to a record 149,566 by March 2022 &mdash; but the recovery proved fragile. By 2024, numbers had slipped to 145,700 as forces struggled to retain recruits. The population grew 6% over the same period, meaning even the 2022 record left the officer-to-population ratio below its 2010 level. More officers in absolute terms; fewer per person served.
+              England and Wales had 143,734 police officers in 2010. Austerity cut 22,000 of them, driving numbers to a low of 121,700 by 2018. The government's 20,000 officer uplift programme, launched in 2019, pushed headcount to a record 149,566 by March 2022 — but the recovery proved fragile. By 2024, numbers had slipped to 145,700 as forces struggled to retain recruits. The population grew 6% over the same period, meaning even the 2022 record left the officer-to-population ratio below its 2010 level. More officers in absolute terms; fewer per person served.
             </p>
             <p>
-              The charge rate has collapsed. In 2014, 15.5% of police-recorded crimes resulted in a charge or summons; by 2023 that figure was 5.6%. Of the 6.8 million crimes recorded in 2022/23, fewer than 400,000 led to a charge &mdash; meaning 94 in every 100 reported offences produced no criminal proceedings. For rape, the charge rate fell below 2%. The CPS raised its evidential threshold under the Full Code Test after the Janner affair, which police blame for the decline; critics counter that forces deprioritised volume crime and allowed investigative capacity to atrophy.
+              The charge rate has collapsed. In 2014, 15.5% of police-recorded crimes resulted in a charge or summons; by 2023 that figure was 5.6%. Of the 6.8 million crimes recorded in 2022/23, fewer than 400,000 led to a charge — meaning 94 in every 100 reported offences produced no criminal proceedings. For rape, the charge rate fell below 2%. The CPS raised its evidential threshold under the Full Code Test after the Janner affair, which police blame for the decline; critics counter that forces deprioritised volume crime and allowed investigative capacity to atrophy.
             </p>
             </div>
         </section>
@@ -228,11 +228,11 @@ export default function PolicingPage() {
         {/* Positive callout */}
         <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="149,566"
-          unit="officers in 2022 &mdash; the highest headcount in the history of England and Wales policing"
-          description="The 20,000 officer uplift programme launched in 2019 succeeded in raising officer numbers to a record 149,566 by March 2022 &mdash; exceeding the pre-austerity 2010 level. Over 8,000 of these were women (a record proportion at 33%). The programme included targeted investment in detective capacity, with 1,000 additional detectives trained. Neighbourhood policing teams were expanded and dedicated Violence Against Women and Girls (VAWG) officers appointed across many forces."
-          source="Source: Home Office &mdash; Police workforce, England and Wales, March 2022."
+          unit="officers in 2022 — the highest headcount in the history of England and Wales policing"
+          description="The 20,000 officer uplift programme launched in 2019 succeeded in raising officer numbers to a record 149,566 by March 2022 — exceeding the pre-austerity 2010 level. Over 8,000 of these were women (a record proportion at 33%). The programme included targeted investment in detective capacity, with 1,000 additional detectives trained. Neighbourhood policing teams were expanded and dedicated Violence Against Women and Girls (VAWG) officers appointed across many forces."
+          source="Source: Home Office — Police workforce, England and Wales, March 2022."
         />
         </ScrollReveal>
 
@@ -243,7 +243,7 @@ export default function PolicingPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

@@ -61,14 +61,14 @@ export default function WorkplaceFatalitiesPage() {
         <TopicHeader
           topic="Workplace Fatalities"
           question="How Dangerous Is Going to Work?"
-          finding="138 workers were killed at work in 2023/24 &mdash; the lowest rate since records began, but construction and agriculture remain disproportionately deadly."
+          finding="138 workers were killed at work in 2023/24 — the lowest rate since records began, but construction and agriculture remain disproportionately deadly."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain has one of the lowest rates of fatal workplace injury in the world, and that rate has fallen dramatically over 35 years: from approximately 500 deaths a year in 1990 to 128 in 2024, a reduction of nearly 75% as the working population grew. The rate per 100,000 workers now stands at 0.38, compared to over 1.0 in the early 1990s &mdash; a genuine achievement of regulation, enforcement, and cultural change. The improvement is not evenly distributed, however. Construction accounted for 45 of those 128 fatal injuries in 2024, around 33% of the total despite employing roughly 7% of the workforce. Agriculture, forestry, and fishing show a fatal injury rate approximately 18 times the all-industry average, with falls from height and contact with moving machinery the dominant causes across both sectors.</p>
-            <p>Non-fatal injuries tell a harder story. Around 600,000 workers sustain non-fatal injuries at work each year, with a further 1.8 million suffering from work-related ill health that has proven more resistant to improvement than the fatal injury rate. Around 1.7 million working days are lost annually to workplace injuries alone, with an economic cost estimated at over &pound;18 billion when ill health is included. HSE&apos;s budget has been constrained for over a decade, and enforcement activity has not kept pace with gig economy logistics and warehouse fulfilment, where injury rates are rising from a low base.</p>
+            <p>Britain has one of the lowest rates of fatal workplace injury in the world, and that rate has fallen dramatically over 35 years: from approximately 500 deaths a year in 1990 to 128 in 2024, a reduction of nearly 75% as the working population grew. The rate per 100,000 workers now stands at 0.38, compared to over 1.0 in the early 1990s — a genuine achievement of regulation, enforcement, and cultural change. The improvement is not evenly distributed, however. Construction accounted for 45 of those 128 fatal injuries in 2024, around 33% of the total despite employing roughly 7% of the workforce. Agriculture, forestry, and fishing show a fatal injury rate approximately 18 times the all-industry average, with falls from height and contact with moving machinery the dominant causes across both sectors.</p>
+            <p>Non-fatal injuries tell a harder story. Around 600,000 workers sustain non-fatal injuries at work each year, with a further 1.8 million suffering from work-related ill health that has proven more resistant to improvement than the fatal injury rate. Around 1.7 million working days are lost annually to workplace injuries alone, with an economic cost estimated at over £18 billion when ill health is included. HSE's budget has been constrained for over a decade, and enforcement activity has not kept pace with gig economy logistics and warehouse fulfilment, where injury rates are rising from a low base.</p>
           </div>
         </section>
 
@@ -87,9 +87,9 @@ export default function WorkplaceFatalitiesPage() {
               unit=""
               direction="down"
               polarity="up-is-bad"
-              changeText="Record low rate &middot; long-term improvement"
+              changeText="Record low rate · long-term improvement"
               sparklineData={[142, 137, 135, 147, 149, 111, 123, 135, 138, 128]}
-              href="#sec-chart"source="HSE &middot; Fatal injuries 2024"
+              href="#sec-chart"source="HSE · Fatal injuries 2024"
             />
             <MetricCard
               label="Rate per 100k workers"
@@ -97,9 +97,9 @@ export default function WorkplaceFatalitiesPage() {
               unit=""
               direction="down"
               polarity="up-is-bad"
-              changeText="2.5&times; safer than 1990 &middot; G7 lowest"
+              changeText="2.5&times; safer than 1990 · G7 lowest"
               sparklineData={[0.46, 0.43, 0.43, 0.45, 0.45, 0.34, 0.38, 0.41, 0.41, 0.38]}
-              href="#sec-callout"source="HSE &middot; 2024"
+              href="#sec-callout"source="HSE · 2024"
             />
             <MetricCard
               label="Construction fatalities 2024"
@@ -109,7 +109,7 @@ export default function WorkplaceFatalitiesPage() {
               polarity="up-is-bad"
               changeText="33% of total despite being 7% of workforce"
               sparklineData={[47, 43, 38, 38, 30, 39, 35, 45, 45, 45]}
-              href="#sec-callout"source="HSE &middot; Construction sector 2024"
+              href="#sec-callout"source="HSE · Construction sector 2024"
             />
           </div>
         </ScrollReveal>
@@ -117,7 +117,7 @@ export default function WorkplaceFatalitiesPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Fatal workplace injuries, 2015&ndash;2024"
+              title="Fatal workplace injuries, 2015–2024"
               subtitle="Worker fatalities reported under RIDDOR. Includes employees and self-employed. Excludes road traffic incidents."
               series={fatalitiesSeries}
               yLabel="Fatal injuries"
@@ -145,9 +145,9 @@ export default function WorkplaceFatalitiesPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Health and Safety Executive &mdash; Fatal injuries in Great Britain. Published annually. hse.gov.uk/statistics/fatals.htm</p>
-            <p>HSE &mdash; RIDDOR (Reporting of Injuries, Diseases and Dangerous Occurrences Regulations 2013) data. hse.gov.uk/riddor</p>
-            <p>Fatal injuries include employees and self-employed workers killed as a result of a work-related accident. Road traffic incidents are excluded unless the fatality occurred in a workplace. Rates are calculated per 100,000 workers using ONS Labour Force Survey employment figures. Construction sector breakdown uses SIC codes 41&ndash;43.</p>
+            <p>Health and Safety Executive — Fatal injuries in Great Britain. Published annually. hse.gov.uk/statistics/fatals.htm</p>
+            <p>HSE — RIDDOR (Reporting of Injuries, Diseases and Dangerous Occurrences Regulations 2013) data. hse.gov.uk/riddor</p>
+            <p>Fatal injuries include employees and self-employed workers killed as a result of a work-related accident. Road traffic incidents are excluded unless the fatality occurred in a workplace. Rates are calculated per 100,000 workers using ONS Labour Force Survey employment figures. Construction sector breakdown uses SIC codes 41–43.</p>
           </div>
         </section>
       </main>

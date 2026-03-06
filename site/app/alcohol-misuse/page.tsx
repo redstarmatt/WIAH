@@ -107,7 +107,7 @@ export default function AlcoholMisusePage() {
             topic="Alcohol Misuse"
             colour="#6B7280"
             question="How much is alcohol actually killing us?"
-            finding="Alcohol-specific deaths in the UK reached a record 9,641 in 2021 and hospital admissions have risen to over 900,000 a year, costing the NHS &pound;3.5 billion &mdash; yet alcohol duty has fallen in real terms for a decade."
+            finding="Alcohol-specific deaths in the UK reached a record 9,641 in 2021 and hospital admissions have risen to over 900,000 a year, costing the NHS £3.5 billion — yet alcohol duty has fallen in real terms for a decade."
           />
         </div>
       </section>
@@ -136,7 +136,7 @@ export default function AlcoholMisusePage() {
               href="#sec-charts"/>
             <MetricCard
               label="Economic cost of alcohol harm"
-              value="&pound;27.4bn"
+              value="£27.4bn"
               unit="/yr"
               changeText="Includes NHS, crime, lost productivity"
               direction="up"
@@ -153,17 +153,17 @@ export default function AlcoholMisusePage() {
           <h2 className="text-2xl font-bold text-wiah-black mb-6">The Context</h2>
           <div className="max-w-2xl mt-4 mb-12">
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Alcohol-specific deaths reached a record 9,641 in 2021, driven by a sharp rise during COVID-19 lockdowns when disrupted treatment services and increased home drinking combined to lethal effect. The figure fell to 9,048 in 2022 but remains well above pre-pandemic levels; three-quarters of these deaths are attributable to alcoholic liver disease, almost entirely preventable. Hospital admissions attributed to alcohol run at approximately one million per year, alcohol duty was frozen or cut between 2012 and 2022, and England has no minimum unit pricing. Scotland introduced a 50p minimum unit price in May 2018 &mdash; Public Health Scotland&apos;s evaluation found a 13.4% reduction in alcohol-specific deaths relative to a synthetic control, with the mechanism targeting cheap, strong products disproportionately consumed by hazardous drinkers. Wales followed in 2020. England has not.</p>
-              <p>The burden falls hardest on the most deprived. People in the most deprived areas of England die from alcohol-specific causes at roughly twice the rate of those in the least deprived; men are twice as likely to die as women. These patterns reflect stress, access to treatment, and the accumulated disadvantage of communities with hollowed-out public health infrastructure. The total economic cost of alcohol harm &mdash; NHS, criminal justice, lost productivity &mdash; is estimated at &pound;27.4 billion annually. England&apos;s refusal to adopt minimum unit pricing while Scotland&apos;s five-year evaluation data accumulates represents an explicit policy choice to accept preventable deaths rather than constrain the drinks industry&apos;s pricing freedom.</p>
+              <p>Alcohol-specific deaths reached a record 9,641 in 2021, driven by a sharp rise during COVID-19 lockdowns when disrupted treatment services and increased home drinking combined to lethal effect. The figure fell to 9,048 in 2022 but remains well above pre-pandemic levels; three-quarters of these deaths are attributable to alcoholic liver disease, almost entirely preventable. Hospital admissions attributed to alcohol run at approximately one million per year, alcohol duty was frozen or cut between 2012 and 2022, and England has no minimum unit pricing. Scotland introduced a 50p minimum unit price in May 2018 — Public Health Scotland's evaluation found a 13.4% reduction in alcohol-specific deaths relative to a synthetic control, with the mechanism targeting cheap, strong products disproportionately consumed by hazardous drinkers. Wales followed in 2020. England has not.</p>
+              <p>The burden falls hardest on the most deprived. People in the most deprived areas of England die from alcohol-specific causes at roughly twice the rate of those in the least deprived; men are twice as likely to die as women. These patterns reflect stress, access to treatment, and the accumulated disadvantage of communities with hollowed-out public health infrastructure. The total economic cost of alcohol harm — NHS, criminal justice, lost productivity — is estimated at £27.4 billion annually. England's refusal to adopt minimum unit pricing while Scotland's five-year evaluation data accumulates represents an explicit policy choice to accept preventable deaths rather than constrain the drinks industry's pricing freedom.</p>
             </div>
           </div>
 
           {/* Positive callout */}
           <PositiveCallout
-            title="Scotland&apos;s minimum unit pricing cut alcohol deaths"
+            title="Scotland's minimum unit pricing cut alcohol deaths"
             value="13.4%"
             unit="reduction"
-            description="Scotland introduced a minimum unit price for alcohol of 50p/unit in May 2018 &mdash; the first such policy in the world. Five-year evaluation data shows alcohol-specific deaths fell 13.4% in Scotland compared to a 4.3% rise in England and Wales over the same period. Wales introduced MUP in 2020. The UK government has not adopted it for England."
+            description="Scotland introduced a minimum unit price for alcohol of 50p/unit in May 2018 — the first such policy in the world. Five-year evaluation data shows alcohol-specific deaths fell 13.4% in Scotland compared to a 4.3% rise in England and Wales over the same period. Wales introduced MUP in 2020. The UK government has not adopted it for England."
             source="Public Health Scotland, Scottish National Drinking Survey. Retrieved 2025-03-04."
           />
         </div>

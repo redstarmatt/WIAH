@@ -90,16 +90,16 @@ export default function MaternityPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Maternity Services"
-          question="Are Britain&apos;s Maternity Services Safe?"
-          finding="The UK maternal mortality rate stands at 9.7 per 100,000 births &mdash; double the rate in Norway. Midwife vacancy rates reached 12.3% in 2023. The Ockenden Report found repeated safety failures in NHS maternity services. 60% of maternity units have been rated &apos;requires improvement&apos; or &apos;inadequate&apos; by the CQC."
+          question="Are Britain's Maternity Services Safe?"
+          finding="The UK maternal mortality rate stands at 9.7 per 100,000 births — double the rate in Norway. Midwife vacancy rates reached 12.3% in 2023. The Ockenden Report found repeated safety failures in NHS maternity services. 60% of maternity units have been rated 'requires improvement' or 'inadequate' by the CQC."
           colour="#E63946"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain&apos;s maternal mortality rate stands at 9.7 per 100,000 maternities as of 2022, up from 8.2 in 2014 and roughly double Norway&apos;s rate of 4.2. The figure places the UK above the EU average for a metric that should, in a well-resourced health system, be falling. Sixty per cent of NHS maternity units are rated &apos;requires improvement&apos; or &apos;inadequate&apos; by the Care Quality Commission. The disparities within those numbers are stark: MBRRACE-UK data show Black women are 3.7 times more likely to die in childbirth than white women, and Asian women 1.8 times more likely &mdash; a gap that has persisted for two decades with minimal improvement despite repeated national commitments to close it.</p>
-            <p>Two landmark investigations exposed the scale of institutional failure. The Ockenden Report (March 2022) examined Shrewsbury and Telford NHS Trust and found 1,223 cases of harm over 20 years, including 201 baby deaths and 9 maternal deaths deemed potentially avoidable. Poor staffing, normalisation of bad outcomes and weak governance ran through every finding. A year later the East Kent maternity inquiry (March 2023) identified 45 babies who died unnecessarily, with a further 40 deaths that may have been avoidable &mdash; the same pattern of understaffing, poor CTG interpretation and a culture of blame rather than learning. These were not isolated trusts; they were systems operating under the same national pressures.</p>
+            <p>Britain's maternal mortality rate stands at 9.7 per 100,000 maternities as of 2022, up from 8.2 in 2014 and roughly double Norway's rate of 4.2. The figure places the UK above the EU average for a metric that should, in a well-resourced health system, be falling. Sixty per cent of NHS maternity units are rated 'requires improvement' or 'inadequate' by the Care Quality Commission. The disparities within those numbers are stark: MBRRACE-UK data show Black women are 3.7 times more likely to die in childbirth than white women, and Asian women 1.8 times more likely — a gap that has persisted for two decades with minimal improvement despite repeated national commitments to close it.</p>
+            <p>Two landmark investigations exposed the scale of institutional failure. The Ockenden Report (March 2022) examined Shrewsbury and Telford NHS Trust and found 1,223 cases of harm over 20 years, including 201 baby deaths and 9 maternal deaths deemed potentially avoidable. Poor staffing, normalisation of bad outcomes and weak governance ran through every finding. A year later the East Kent maternity inquiry (March 2023) identified 45 babies who died unnecessarily, with a further 40 deaths that may have been avoidable — the same pattern of understaffing, poor CTG interpretation and a culture of blame rather than learning. These were not isolated trusts; they were systems operating under the same national pressures.</p>
             </div>
         </section>
 
@@ -117,7 +117,7 @@ export default function MaternityPage() {
               value="9.7"
               direction="up"
               polarity="up-is-bad"
-              changeText="2022 &middot; Double Norway&apos;s rate &middot; Up from 8.2 in 2014 &middot; Black women 3.7x more likely to die"
+              changeText="2022 · Double Norway's rate · Up from 8.2 in 2014 · Black women 3.7x more likely to die"
               sparklineData={[8.5, 8.4, 8.2, 8.3, 9.7, 9.7, 9.8, 9.8, 9.5, 10.4, 9.7]}
               onExpand={() => {}}
             />
@@ -126,16 +126,16 @@ export default function MaternityPage() {
               value="2,500"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; 12.3% vacancy rate &middot; Up from 7% in 2016 &middot; CQC: staffing cited in 90% of inadequate ratings"
+              changeText="2023 · 12.3% vacancy rate · Up from 7% in 2016 · CQC: staffing cited in 90% of inadequate ratings"
               sparklineData={[7.0, 8.2, 8.8, 9.5, 9.8, 10.4, 11.8, 12.3]}
               onExpand={() => {}}
             />
             <MetricCard
-              label="Maternity units rated &apos;requires improvement&apos; or worse"
+              label="Maternity units rated 'requires improvement' or worse"
               value="60%"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; 13% inadequate &middot; Ockenden Report: 1,223 families harmed at Shrewsbury &middot; East Kent: 45 preventable deaths"
+              changeText="2023 · 13% inadequate · Ockenden Report: 1,223 families harmed at Shrewsbury · East Kent: 45 preventable deaths"
               sparklineData={[30, 35, 38, 42, 48, 52, 55, 58, 60]}
               onExpand={() => {}}
             />
@@ -145,7 +145,7 @@ export default function MaternityPage() {
         <ScrollReveal>
           <section id="sec-mortality" className="mb-12">
             <LineChart
-              title="UK maternal mortality rate, 2012&ndash;2022"
+              title="UK maternal mortality rate, 2012–2022"
               subtitle="Deaths per 100,000 maternities. MBRRACE-UK uses three-year rolling average."
               series={mortalitySeries}
               annotations={mortalityAnnotations}
@@ -162,7 +162,7 @@ export default function MaternityPage() {
         <ScrollReveal>
           <section id="sec-workforce" className="mb-12">
             <LineChart
-              title="NHS midwife vacancy rate, England, 2016&ndash;2023"
+              title="NHS midwife vacancy rate, England, 2016–2023"
               subtitle="Community and hospital midwives combined."
               series={vacancySeries}
               yLabel="Vacancy rate (%)"
@@ -195,17 +195,17 @@ export default function MaternityPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Care Quality Commission &mdash; State of Care 2023</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Care Quality Commission — State of Care 2023</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="3,000"
             unit="additional midwives being recruited as part of the NHS Long-Term Workforce Plan"
-            description="The NHS Long-Term Workforce Plan (2023) commits to training 3,000 more midwives over the next decade, doubling the annual intake to NHS midwifery courses. The Maternity Safety Strategy, launched in 2016, set the ambition of halving stillbirths, neonatal and maternal deaths by 2025 &mdash; neonatal deaths have fallen 25% since 2010. The Three-Year Delivery Plan for Maternity and Neonatal Services (2023) provides &pound;165 million for staffing, continuity of carer, and safety improvements. Following the Ockenden and East Kent inquiries, NHS England has introduced standardised safety checklists and mandatory culture programmes for all maternity units."
-            source="Source: MBRRACE-UK &mdash; Saving Lives Improving Mothers Care 2023; NHS England &mdash; Three-Year Delivery Plan for Maternity Services 2023."
+            description="The NHS Long-Term Workforce Plan (2023) commits to training 3,000 more midwives over the next decade, doubling the annual intake to NHS midwifery courses. The Maternity Safety Strategy, launched in 2016, set the ambition of halving stillbirths, neonatal and maternal deaths by 2025 — neonatal deaths have fallen 25% since 2010. The Three-Year Delivery Plan for Maternity and Neonatal Services (2023) provides £165 million for staffing, continuity of carer, and safety improvements. Following the Ockenden and East Kent inquiries, NHS England has introduced standardised safety checklists and mandatory culture programmes for all maternity units."
+            source="Source: MBRRACE-UK — Saving Lives Improving Mothers Care 2023; NHS England — Three-Year Delivery Plan for Maternity Services 2023."
           />
         </ScrollReveal>
 
@@ -215,7 +215,7 @@ export default function MaternityPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

@@ -65,14 +65,14 @@ export default function ChildMentalHealthPage() {
           topic="child-mental-health"
           colour="#E63946"
           question="Are Children Getting the Mental Health Help They Need?"
-          finding="Over 1.8 million under-18s are in contact with NHS mental health services &mdash; a record high &mdash; but half of those referred wait more than 18 weeks. Hospital admissions for self-harm among teenagers have risen 52% in a decade. Child and Adolescent Mental Health Services (CAMHS) in England have 127,000 on waiting lists, with some children waiting over two years."
+          finding="Over 1.8 million under-18s are in contact with NHS mental health services — a record high — but half of those referred wait more than 18 weeks. Hospital admissions for self-harm among teenagers have risen 52% in a decade. Child and Adolescent Mental Health Services (CAMHS) in England have 127,000 on waiting lists, with some children waiting over two years."
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mx-auto px-4 sm:px-6 mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>One in five children aged 8&ndash;16 in England now has a probable mental health condition &mdash; up from one in nine in 2017. Hospital admissions for self-harm among under-18s have risen 52% over the decade, and eating disorder referrals to CAMHS increased 91% during the pandemic years, with girls aged 13&ndash;17 the most affected group. CAMHS waiting lists stood at 127,000 in 2023 &mdash; three times the 42,000 recorded in 2016 &mdash; and half of those referred wait more than 18 weeks, with some waiting over two years. Mental Health Support Teams in schools covered only 35% of England&apos;s schools by 2024, and 30% of trusts are breaching the four-week eating disorder waiting time standard.</p>
-            <p>The Children&apos;s Commissioner estimates 70% of children with mental health problems do not receive the right treatment at the right time. The average age of onset for anxiety disorders is 11; the average wait for treatment in England is three years. The majority of child mental health spending flows to crisis and inpatient services rather than community and early intervention, meaning the system responds to acute breakdown rather than preventing it. Girls are three times more likely than boys to be admitted to hospital for self-harm, and access to services is substantially worse in rural areas and in the most deprived communities.</p>
+            <p>One in five children aged 8–16 in England now has a probable mental health condition — up from one in nine in 2017. Hospital admissions for self-harm among under-18s have risen 52% over the decade, and eating disorder referrals to CAMHS increased 91% during the pandemic years, with girls aged 13–17 the most affected group. CAMHS waiting lists stood at 127,000 in 2023 — three times the 42,000 recorded in 2016 — and half of those referred wait more than 18 weeks, with some waiting over two years. Mental Health Support Teams in schools covered only 35% of England's schools by 2024, and 30% of trusts are breaching the four-week eating disorder waiting time standard.</p>
+            <p>The Children's Commissioner estimates 70% of children with mental health problems do not receive the right treatment at the right time. The average age of onset for anxiety disorders is 11; the average wait for treatment in England is three years. The majority of child mental health spending flows to crisis and inpatient services rather than community and early intervention, meaning the system responds to acute breakdown rather than preventing it. Girls are three times more likely than boys to be admitted to hospital for self-harm, and access to services is substantially worse in rural areas and in the most deprived communities.</p>
           </div>
         </section>
 
@@ -134,7 +134,7 @@ export default function ChildMentalHealthPage() {
           <ScrollReveal>
             <LineChart
               title="CAMHS waiting list size"
-              subtitle="Children on waiting lists in England, 2016&ndash;2023"
+              subtitle="Children on waiting lists in England, 2016–2023"
               series={camhsWaitingSeries}
               yLabel="Thousands"
               source={{
@@ -148,7 +148,7 @@ export default function ChildMentalHealthPage() {
           <ScrollReveal>
             <LineChart
               title="Hospital admissions for self-harm"
-              subtitle="Under-18s admitted to hospital, per 100,000 population, 2013&ndash;2022"
+              subtitle="Under-18s admitted to hospital, per 100,000 population, 2013–2022"
               series={selfHarmSeries}
               yLabel="Rate per 100k"
               source={{
@@ -185,9 +185,9 @@ export default function ChildMentalHealthPage() {
         <section id="sec-sources" className="max-w-5xl mx-auto px-4 sm:px-6 py-12 border-t border-wiah-border">
           <h2 className="text-xl font-bold text-wiah-black mb-6">Sources &amp; Methodology</h2>
           <div className="max-w-2xl space-y-3 font-mono text-sm text-wiah-mid">
-            <p>NHS Digital &mdash; Child and Adolescent Mental Health Services (CAMHS) activity and outcomes data. Published quarterly. Retrieved March 2026.</p>
-            <p>NHS Digital &mdash; Hospital Episode Statistics (HES). Admissions for intentional self-harm (ICD-10 codes X60&ndash;X84) among under-18s. Published quarterly. Retrieved March 2026.</p>
-            <p>NHS England &mdash; Mental Health Services Monthly Activity Data. Total children aged under 18 in contact with specialist mental health services. Published monthly. Retrieved March 2026.</p>
+            <p>NHS Digital — Child and Adolescent Mental Health Services (CAMHS) activity and outcomes data. Published quarterly. Retrieved March 2026.</p>
+            <p>NHS Digital — Hospital Episode Statistics (HES). Admissions for intentional self-harm (ICD-10 codes X60–X84) among under-18s. Published quarterly. Retrieved March 2026.</p>
+            <p>NHS England — Mental Health Services Monthly Activity Data. Total children aged under 18 in contact with specialist mental health services. Published monthly. Retrieved March 2026.</p>
             <p>All data relates to England only. CAMHS includes community-based assessment, brief intervention, and specialist treatment services. Waiting list figures reflect point-in-time snapshots at end of reporting period. Self-harm admission rates per 100,000 population standardised to 2013 mid-year estimates.</p>
           </div>
         </section>

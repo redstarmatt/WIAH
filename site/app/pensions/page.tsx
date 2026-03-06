@@ -129,17 +129,17 @@ export default function PensionsPage() {
         <TopicHeader
           topic="Pensions"
           question="Is the State Pension Actually Enough to Live On?"
-          finding="The state pension has risen 127% since 2010 under the triple lock, reaching £221.20 a week. But 2.1 million pensioners &mdash; 19% &mdash; still live in poverty after housing costs, and auto-enrolment has left 12% of eligible workers without a workplace pension."
+          finding="The state pension has risen 127% since 2010 under the triple lock, reaching £221.20 a week. But 2.1 million pensioners — 19% — still live in poverty after housing costs, and auto-enrolment has left 12% of eligible workers without a workplace pension."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The triple lock has made the state pension one of the fastest-growing items in public spending. Weekly payments rose from &pound;97.65 in 2010 to &pound;221.20 in 2025/26 &mdash; a 127% cash increase &mdash; driven by a formula that uprates each year by the highest of earnings growth, CPI inflation, or 2.5%. The mechanism now costs the Exchequer &pound;124 billion annually, the single largest welfare line item. Its fiscal sustainability is increasingly contested: the share of the UK population aged 65 and over is projected to rise from 19% to 25% by 2050. Hunt and Sunak suspended the earnings component in 2021/22 when a COVID wages anomaly would have triggered an 8% rise, signalling the lock&apos;s political fragility.
+              The triple lock has made the state pension one of the fastest-growing items in public spending. Weekly payments rose from £97.65 in 2010 to £221.20 in 2025/26 — a 127% cash increase — driven by a formula that uprates each year by the highest of earnings growth, CPI inflation, or 2.5%. The mechanism now costs the Exchequer £124 billion annually, the single largest welfare line item. Its fiscal sustainability is increasingly contested: the share of the UK population aged 65 and over is projected to rise from 19% to 25% by 2050. Hunt and Sunak suspended the earnings component in 2021/22 when a COVID wages anomaly would have triggered an 8% rise, signalling the lock's political fragility.
             </p>
             <p>
-              Automatic enrolment, launched in 2012, reversed decades of declining private pension coverage. Before the policy, just 47% of private-sector workers had any workplace pension. By 2023, 22.6 million workers &mdash; 88% of those eligible &mdash; were enrolled, up from 0.9 million at launch. Total contributions now run at &pound;133 billion a year, with a minimum 8% of qualifying earnings split between employer (3%) and employee (5%). The reform disproportionately benefited lower-paid and part-time workers, groups that previously had almost no pension saving.
+              Automatic enrolment, launched in 2012, reversed decades of declining private pension coverage. Before the policy, just 47% of private-sector workers had any workplace pension. By 2023, 22.6 million workers — 88% of those eligible — were enrolled, up from 0.9 million at launch. Total contributions now run at £133 billion a year, with a minimum 8% of qualifying earnings split between employer (3%) and employee (5%). The reform disproportionately benefited lower-paid and part-time workers, groups that previously had almost no pension saving.
             </p>
             </div>
         </section>
@@ -191,8 +191,8 @@ export default function PensionsPage() {
         <ScrollReveal>
         <section id="sec-state-pension" className="mb-12">
           <LineChart
-            title="Full new state pension, 2010&ndash;2025"
-            subtitle="Weekly rate of the full new state pension (£). Has risen 127% since 2010 under the triple lock &mdash; faster than both earnings and inflation. The triple lock commits government to the highest of earnings growth, CPI inflation, or 2.5%."
+            title="Full new state pension, 2010–2025"
+            subtitle="Weekly rate of the full new state pension (£). Has risen 127% since 2010 under the triple lock — faster than both earnings and inflation. The triple lock commits government to the highest of earnings growth, CPI inflation, or 2.5%."
             series={statePensionSeries}
             yLabel="£/week"
           />
@@ -202,8 +202,8 @@ export default function PensionsPage() {
         <ScrollReveal>
         <section id="sec-auto-enrolment" className="mb-12">
           <LineChart
-            title="Workers auto-enrolled in workplace pension, 2012&ndash;2023"
-            subtitle="Millions of workers auto-enrolled in a workplace pension since the policy began in 2012. 22.6 million workers &mdash; 88% of all eligible &mdash; now have a workplace pension, up from just 900,000."
+            title="Workers auto-enrolled in workplace pension, 2012–2023"
+            subtitle="Millions of workers auto-enrolled in a workplace pension since the policy began in 2012. 22.6 million workers — 88% of all eligible — now have a workplace pension, up from just 900,000."
             series={autoEnrolmentSeries}
             yLabel="Millions"
           />
@@ -213,8 +213,8 @@ export default function PensionsPage() {
         <ScrollReveal>
         <section id="sec-poverty" className="mb-12">
           <LineChart
-            title="Pensioners in relative poverty (after housing costs), 2010&ndash;2023"
-            subtitle="Percentage of pensioners with income below 60% of median, after housing costs. Fell steadily until 2016 but has since reversed &mdash; 2.1 million pensioners now in poverty."
+            title="Pensioners in relative poverty (after housing costs), 2010–2023"
+            subtitle="Percentage of pensioners with income below 60% of median, after housing costs. Fell steadily until 2016 but has since reversed — 2.1 million pensioners now in poverty."
             series={povertySeriesSeries}
             yLabel="%"
           />
@@ -224,11 +224,11 @@ export default function PensionsPage() {
         {/* Positive callout */}
         <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="22.6M"
-          unit="workers auto-enrolled &mdash; the largest expansion of pension saving in UK history"
-          description="Automatic enrolment has transformed workplace pension coverage since 2012. Before the policy, only 47% of private sector workers had a pension. By 2023, 88% of eligible workers are enrolled. Annual pension contributions through auto-enrolment are now &pound;133 billion. The minimum contribution rate has been raised to 8% of qualifying earnings. The policy has disproportionately benefited women, younger workers, and lower earners who previously had no pension provision."
-          source="Source: DWP &mdash; Automatic enrolment statistics 2023."
+          unit="workers auto-enrolled — the largest expansion of pension saving in UK history"
+          description="Automatic enrolment has transformed workplace pension coverage since 2012. Before the policy, only 47% of private sector workers had a pension. By 2023, 88% of eligible workers are enrolled. Annual pension contributions through auto-enrolment are now £133 billion. The minimum contribution rate has been raised to 8% of qualifying earnings. The policy has disproportionately benefited women, younger workers, and lower earners who previously had no pension provision."
+          source="Source: DWP — Automatic enrolment statistics 2023."
         />
         </ScrollReveal>
 
@@ -239,7 +239,7 @@ export default function PensionsPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

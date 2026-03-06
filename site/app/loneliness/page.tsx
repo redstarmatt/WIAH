@@ -73,12 +73,14 @@ export default function LonelinessPage() {
     <main>
       <TopicNav topic="Loneliness" />
 
-      <TopicHeader
-        topic="Loneliness"
-        colour="#6B7280"
-        question="How many people are lonely in Britain?"
-        finding="Around 3.8 million adults in England say they are chronically lonely, and loneliness carries health risks equivalent to smoking 15 cigarettes a day &mdash; yet public spending on the problem remains negligible."
-      />
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <TopicHeader
+          topic="Loneliness"
+          colour="#6B7280"
+          question="How many people are lonely in Britain?"
+          finding="Around 3.8 million adults in England say they are chronically lonely, and loneliness carries health risks equivalent to smoking 15 cigarettes a day — yet public spending on the problem remains negligible."
+        />
+      </div>
 
       {/* Metric cards */}
       <section className="max-w-5xl mx-auto px-6 py-10">
@@ -101,11 +103,11 @@ export default function LonelinessPage() {
           />
           <MetricCard
             label="Estimated economic cost of loneliness per lonely person"
-            value="&pound;9,900"
+            value="£9,900"
             unit="per year"
             polarity="up-is-bad"
             direction="up"
-            changeText="Total NHS cost: &pound;2.4bn/year"
+            changeText="Total NHS cost: £2.4bn/year"
           />
         </div>
       </section>
@@ -194,8 +196,8 @@ export default function LonelinessPage() {
       {/* Context section */}
       <section id="sec-context" className="max-w-2xl mx-auto px-6 py-16">
         <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-          <p>Around 3.8 million adults in England &mdash; roughly 9% &mdash; report feeling lonely often or always. Young adults aged 16&ndash;24 have the highest rates at around 27%, far above older age groups, confounding the assumption that loneliness is simply a condition of age. Chronic loneliness is associated with a 26% higher risk of premature death, comparable in effect to smoking 15 cigarettes a day, driving cognitive decline, cardiovascular disease, and depression through measurable physiological pathways; the estimated NHS cost runs to &pound;2.4 billion a year. The UK appointed the world&apos;s first Minister for Loneliness in 2018 and published a national strategy in 2021, and social prescribing is now available in most GP practices &mdash; but structural drivers are harder to address: single-person households account for 31% of all households, and trade union membership, religious attendance, and civic participation have all declined for decades.</p>
-          <p>Loneliness is not evenly distributed. Rural isolation &mdash; driven by poor transport, closed pubs and post offices, and dispersed populations &mdash; differs structurally from urban alienation. Certain groups are consistently overrepresented: unpaid carers who have withdrawn from work and social life, new parents, bereaved people whose networks contract after loss, and disabled people for whom physical access and employment barriers compound social exclusion. Social prescribing works best for the mildly lonely with transport access to activities; it reaches the most chronically isolated &mdash; those facing poverty, disability, and remote geography &mdash; less well.</p>
+          <p>Around 3.8 million adults in England — roughly 9% — report feeling lonely often or always. Young adults aged 16–24 have the highest rates at around 27%, far above older age groups, confounding the assumption that loneliness is simply a condition of age. Chronic loneliness is associated with a 26% higher risk of premature death, comparable in effect to smoking 15 cigarettes a day, driving cognitive decline, cardiovascular disease, and depression through measurable physiological pathways; the estimated NHS cost runs to £2.4 billion a year. The UK appointed the world's first Minister for Loneliness in 2018 and published a national strategy in 2021, and social prescribing is now available in most GP practices — but structural drivers are harder to address: single-person households account for 31% of all households, and trade union membership, religious attendance, and civic participation have all declined for decades.</p>
+          <p>Loneliness is not evenly distributed. Rural isolation — driven by poor transport, closed pubs and post offices, and dispersed populations — differs structurally from urban alienation. Certain groups are consistently overrepresented: unpaid carers who have withdrawn from work and social life, new parents, bereaved people whose networks contract after loss, and disabled people for whom physical access and employment barriers compound social exclusion. Social prescribing works best for the mildly lonely with transport access to activities; it reaches the most chronically isolated — those facing poverty, disability, and remote geography — less well.</p>
         </div>
       </section>
 
@@ -203,11 +205,11 @@ export default function LonelinessPage() {
       <ScrollReveal>
         <section className="max-w-5xl mx-auto px-6 py-12">
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Social prescribing"
             unit="now available in most GP practices"
-            description="Social prescribing &mdash; where GPs refer patients to community activities, befriending services, or support groups rather than medication &mdash; is now available in most GP practices in England. NHS England plans to have a link worker in every PCN. Early evidence shows reduced GP appointments, lower antidepressant prescribing, and improved wellbeing scores."
-            source="Source: NHS England &mdash; Social Prescribing 2024."
+            description="Social prescribing — where GPs refer patients to community activities, befriending services, or support groups rather than medication — is now available in most GP practices in England. NHS England plans to have a link worker in every PCN. Early evidence shows reduced GP appointments, lower antidepressant prescribing, and improved wellbeing scores."
+            source="Source: NHS England — Social Prescribing 2024."
           />
         </section>
       </ScrollReveal>

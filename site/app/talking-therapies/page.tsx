@@ -103,15 +103,15 @@ export default function TalkingTherapiesPage() {
         <TopicHeader
           topic="NHS Talking Therapies"
           question="Can You Actually Access NHS Therapy?"
-          finding="NHS Talking Therapies treats 1.2 million people annually &mdash; but 1 in 3 people referred never start treatment, and recovery rates vary from 40% to 75% between providers, making postcode a significant predictor of outcome."
+          finding="NHS Talking Therapies treats 1.2 million people annually — but 1 in 3 people referred never start treatment, and recovery rates vary from 40% to 75% between providers, making postcode a significant predictor of outcome."
           colour="#2A9D8F"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>NHS Talking Therapies &mdash; formerly known as Improving Access to Psychological Therapies (IAPT) &mdash; was established in 2008 as the world&apos;s first large-scale, population-level psychological therapy programme. It was designed to deliver evidence-based cognitive behavioural therapy (CBT) and related therapies for common mental health conditions, primarily depression and anxiety disorders, using a stepped-care model in which patients are matched to the least intensive effective treatment first. By 2023, the programme had grown to treat over 1.2 million people per year through approximately 60 commissioned services across England, delivered by NHS trusts, social enterprises, and third-sector organisations. Its scale is genuinely without international precedent: no other country has attempted to provide structured psychological therapies at population level through a nationally funded and monitored healthcare system. The programme&apos;s architects &mdash; economists Richard Layard and David Clark &mdash; estimated that effective treatment would largely pay for itself through reduced welfare costs, reduced GP consultations, and reduced absenteeism.</p>
-            <p>The programme&apos;s core metric is the recovery rate: the proportion of people who complete a course of therapy and move from clinical caseness on a validated measure of anxiety or depression to below the clinical threshold. The national recovery rate has improved from around 45% in 2016 to 52.3% in 2023, comfortably above the programme&apos;s 50% target. However, this national figure conceals enormous variation between individual providers: in 2023, recovery rates across the 60 commissioned services ranged from below 40% to above 75%. A person&apos;s chances of recovering through NHS therapy are therefore strongly influenced by geography. The differences are not fully explained by case mix or population characteristics: even after controlling for severity of presenting condition and socioeconomic deprivation, substantial provider-level variation persists. Some of this variation reflects genuine differences in clinical quality; some reflects differences in how providers define and record recovery; and some reflects differences in the populations they serve and the conditions they treat.</p>
+            <p>NHS Talking Therapies — formerly known as Improving Access to Psychological Therapies (IAPT) — was established in 2008 as the world's first large-scale, population-level psychological therapy programme. It was designed to deliver evidence-based cognitive behavioural therapy (CBT) and related therapies for common mental health conditions, primarily depression and anxiety disorders, using a stepped-care model in which patients are matched to the least intensive effective treatment first. By 2023, the programme had grown to treat over 1.2 million people per year through approximately 60 commissioned services across England, delivered by NHS trusts, social enterprises, and third-sector organisations. Its scale is genuinely without international precedent: no other country has attempted to provide structured psychological therapies at population level through a nationally funded and monitored healthcare system. The programme's architects — economists Richard Layard and David Clark — estimated that effective treatment would largely pay for itself through reduced welfare costs, reduced GP consultations, and reduced absenteeism.</p>
+            <p>The programme's core metric is the recovery rate: the proportion of people who complete a course of therapy and move from clinical caseness on a validated measure of anxiety or depression to below the clinical threshold. The national recovery rate has improved from around 45% in 2016 to 52.3% in 2023, comfortably above the programme's 50% target. However, this national figure conceals enormous variation between individual providers: in 2023, recovery rates across the 60 commissioned services ranged from below 40% to above 75%. A person's chances of recovering through NHS therapy are therefore strongly influenced by geography. The differences are not fully explained by case mix or population characteristics: even after controlling for severity of presenting condition and socioeconomic deprivation, substantial provider-level variation persists. Some of this variation reflects genuine differences in clinical quality; some reflects differences in how providers define and record recovery; and some reflects differences in the populations they serve and the conditions they treat.</p>
             </div>
         </section>
 
@@ -130,7 +130,7 @@ export default function TalkingTherapiesPage() {
               unit="/yr"
               direction={'flat' as const}
               polarity={'up-is-good' as const}
-              changeText="2023 &middot; Stable at record levels"
+              changeText="2023 · Stable at record levels"
               sparklineData={[0.9, 1.0, 1.1, 1.1, 0.7, 1.0, 1.1, 1.2]}
               onExpand={() => {}}
             />
@@ -140,7 +140,7 @@ export default function TalkingTherapiesPage() {
               unit="%"
               direction={'flat' as const}
               polarity={'up-is-good' as const}
-              changeText="2023 &middot; Target: 50% &middot; Meets target"
+              changeText="2023 · Target: 50% · Meets target"
               sparklineData={[45, 47, 49, 50, 48, 50, 52, 52]}
               onExpand={() => {}}
             />
@@ -150,7 +150,7 @@ export default function TalkingTherapiesPage() {
               unit="wks"
               direction={'up' as const}
               polarity={'up-is-bad' as const}
-              changeText="2023 &middot; Up from 3 weeks in 2016"
+              changeText="2023 · Up from 3 weeks in 2016"
               sparklineData={[3, 3.5, 4, 4.5, 5, 5.5, 5.7, 5.8]}
               onExpand={() => {}}
             />
@@ -160,7 +160,7 @@ export default function TalkingTherapiesPage() {
         <ScrollReveal>
           <section id="sec-throughput" className="mb-12">
             <LineChart
-              title="NHS Talking Therapies: referrals, starts and completions, 2016&ndash;2023"
+              title="NHS Talking Therapies: referrals, starts and completions, 2016–2023"
               subtitle="Annual totals in thousands. Gap between referrals and starts represents people who did not begin treatment."
               series={throughputSeries}
               yLabel="People (thousands)"
@@ -176,7 +176,7 @@ export default function TalkingTherapiesPage() {
         <ScrollReveal>
           <section id="sec-recovery" className="mb-12">
             <LineChart
-              title="NHS Talking Therapies national recovery rate, 2016&ndash;2023"
+              title="NHS Talking Therapies national recovery rate, 2016–2023"
               subtitle="Proportion of completers moving below clinical caseness threshold on anxiety or depression measure."
               series={recoverySeries}
               yLabel="Recovery rate (%)"
@@ -192,17 +192,17 @@ export default function TalkingTherapiesPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="Internationally recognised as the world&apos;s largest evidence-based therapy programme"
+            title="Internationally recognised as the world's largest evidence-based therapy programme"
             value="1.2M"
-            description="NHS Talking Therapies is internationally recognised as the world&apos;s largest evidence-based psychological therapy programme &mdash; a genuine NHS success story at scale. With a national recovery rate exceeding its 50% target and over 1.2 million people treated annually, it demonstrates that structured psychological therapies can be delivered at population scale within a publicly funded health system. Multiple countries &mdash; including Australia, Canada, and Sweden &mdash; have developed national programmes explicitly modelled on the NHS IAPT approach."
-            source="Source: NHS England &mdash; NHS Talking Therapies Five Year Forward View, 2023 progress report."
+            description="NHS Talking Therapies is internationally recognised as the world's largest evidence-based psychological therapy programme — a genuine NHS success story at scale. With a national recovery rate exceeding its 50% target and over 1.2 million people treated annually, it demonstrates that structured psychological therapies can be delivered at population scale within a publicly funded health system. Multiple countries — including Australia, Canada, and Sweden — have developed national programmes explicitly modelled on the NHS IAPT approach."
+            source="Source: NHS England — NHS Talking Therapies Five Year Forward View, 2023 progress report."
           />
         </ScrollReveal>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>NHS England &mdash; NHS Talking Therapies Monthly Statistics (formerly IAPT). Monthly patient-level returns from all commissioned talking therapy services in England. Covers referrals, starts, completions, waiting times, and recovery rates by provider.</p>
+            <p>NHS England — NHS Talking Therapies Monthly Statistics (formerly IAPT). Monthly patient-level returns from all commissioned talking therapy services in England. Covers referrals, starts, completions, waiting times, and recovery rates by provider.</p>
             <p>Recovery rate: proportion of people completing treatment (attending two or more sessions) who moved from at or above the clinical caseness threshold on the PHQ-9 (depression) or GAD-7 (anxiety) to below that threshold at discharge. Calculated at national and provider level.</p>
             <p>Waiting times measure calendar days from referral date to first treatment session date. Provider-level recovery rates from NHS England published data tables. Self-referral rates from programme annual reports. Data covers England only; Wales, Scotland, and Northern Ireland operate separate programmes.</p>
           </div>

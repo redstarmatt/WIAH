@@ -55,14 +55,14 @@ export default function TreesAndForestsPage() {
         <TopicHeader
           topic="Trees &amp; Forests"
           question="Is Britain Finally Planting More Trees?"
-          finding="England planted 7,164 hectares of new trees in 2024/25 &mdash; the highest rate in over 20 years, up 156% since 2021/22. The acceleration is real and verified by the Forestry Commission. The challenge remains closing the gap to the 30,000 hectares per year the Climate Change Committee says is needed."
+          finding="England planted 7,164 hectares of new trees in 2024/25 — the highest rate in over 20 years, up 156% since 2021/22. The acceleration is real and verified by the Forestry Commission. The challenge remains closing the gap to the 30,000 hectares per year the Climate Change Committee says is needed."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Here is a number that rarely makes headlines: England planted 7,164 hectares of trees in 2024/25, including 5,765 hectares of new woodland &mdash; 27% more than the year before, and the highest planting rate recorded in over 20 years. This is a Forestry Commission-verified figure. After years of falling rates, something has shifted. The combination of the England Woodland Creation Offer, Countryside Stewardship woodland supplements, and rising private sector demand for carbon credits is producing measurable results in the field.</p>
-            <p>The UK has approximately 3.24 million hectares of woodland, covering 13.2% of the land area &mdash; one of the lowest proportions in Europe, where the average is 38%. England is the least wooded nation at just 10%. Of the UK&apos;s woodland, 56% is native broadleaved and mixed, and 44% is conifer plantation, the majority planted between the 1950s and 1980s by the Forestry Commission. The government&apos;s Environmental Improvement Plan set a target of increasing UK woodland cover to 16.5% by 2050, requiring approximately 30,000 hectares of new planting per year &mdash; roughly triple the current rate. The Climate Change Committee identifies tree planting as essential for the UK to reach net zero, estimating that 30,000&ndash;50,000 hectares per year are needed to sequester the carbon required to offset residual emissions from agriculture and heavy industry.</p>
+            <p>Here is a number that rarely makes headlines: England planted 7,164 hectares of trees in 2024/25, including 5,765 hectares of new woodland — 27% more than the year before, and the highest planting rate recorded in over 20 years. This is a Forestry Commission-verified figure. After years of falling rates, something has shifted. The combination of the England Woodland Creation Offer, Countryside Stewardship woodland supplements, and rising private sector demand for carbon credits is producing measurable results in the field.</p>
+            <p>The UK has approximately 3.24 million hectares of woodland, covering 13.2% of the land area — one of the lowest proportions in Europe, where the average is 38%. England is the least wooded nation at just 10%. Of the UK's woodland, 56% is native broadleaved and mixed, and 44% is conifer plantation, the majority planted between the 1950s and 1980s by the Forestry Commission. The government's Environmental Improvement Plan set a target of increasing UK woodland cover to 16.5% by 2050, requiring approximately 30,000 hectares of new planting per year — roughly triple the current rate. The Climate Change Committee identifies tree planting as essential for the UK to reach net zero, estimating that 30,000–50,000 hectares per year are needed to sequester the carbon required to offset residual emissions from agriculture and heavy industry.</p>
             </div>
         </section>
 
@@ -112,7 +112,7 @@ export default function TreesAndForestsPage() {
         <ScrollReveal>
           <section id="sec-planting" className="mb-12">
             <LineChart
-              title="New woodland created per year, UK, 2016&ndash;2024"
+              title="New woodland created per year, UK, 2016–2024"
               subtitle="Hectares of new woodland planting. Includes broadleaf, conifer, and mixed. Forest Research."
               series={plantingSeries}
               yLabel="Hectares"
@@ -123,7 +123,7 @@ export default function TreesAndForestsPage() {
         <ScrollReveal>
           <section id="sec-cover" className="mb-12">
             <LineChart
-              title="UK woodland cover, 2010&ndash;2024"
+              title="UK woodland cover, 2010–2024"
               subtitle="Percentage of UK land area classified as woodland. Forest Research / National Forest Inventory."
               series={coverSeries}
               yLabel="% of land area"

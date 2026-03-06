@@ -104,11 +104,11 @@ export default function PlanningPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Planning"
-          question="Why Can&apos;t Britain Build Enough Homes?"
+          question="Why Can't Britain Build Enough Homes?"
           finding={
             data
-              ? `England built ${Math.round(data.national.newHomesBuilt.latestCompletions)}K homes in ${data.national.newHomesBuilt.latestYear} &mdash; barely half the government&apos;s ${data.national.newHomesBuilt.governmentTarget}K-a-year target. Planning officer numbers have fallen 36% since 2010, house prices are ${data.national.affordability.latestRatio} times earnings, and every year the housing backlog grows by 140,000 unbuilt homes.`
-              : 'England built 160K homes in 2024 — barely half the government\'s 300K-a-year target. Planning officer numbers have fallen 36% since 2010, house prices are 8 times earnings.'
+              ? `England built ${Math.round(data.national.newHomesBuilt.latestCompletions)}K homes in ${data.national.newHomesBuilt.latestYear} — barely half the government's ${data.national.newHomesBuilt.governmentTarget}K-a-year target. Planning officer numbers have fallen 36% since 2010, house prices are ${data.national.affordability.latestRatio} times earnings, and every year the housing backlog grows by 140,000 unbuilt homes.`
+              : "England built 160K homes in 2024 — barely half the government\'s 300K-a-year target. Planning officer numbers have fallen 36% since 2010, house prices are 8 times earnings."
           }
           colour="#F4A261"
         />
@@ -116,10 +116,10 @@ export default function PlanningPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England has not built 300,000 homes in any year since at least 1970. The best recent effort &mdash; 182,000 net additional dwellings in 2022 &mdash; fell 40% short of that target. By 2024, output had dropped further to 160,400 as higher construction costs and elevated mortgage rates squeezed developer viability. Household formation runs at 240,000&ndash;260,000 per year, so net supply has been persistently below demand for over a decade. Various housing bodies estimate the accumulated shortfall at 1.4&ndash;2.0 million homes, a deficit that widens by roughly 100,000 every year that building falls short.
+              England has not built 300,000 homes in any year since at least 1970. The best recent effort — 182,000 net additional dwellings in 2022 — fell 40% short of that target. By 2024, output had dropped further to 160,400 as higher construction costs and elevated mortgage rates squeezed developer viability. Household formation runs at 240,000–260,000 per year, so net supply has been persistently below demand for over a decade. Various housing bodies estimate the accumulated shortfall at 1.4–2.0 million homes, a deficit that widens by roughly 100,000 every year that building falls short.
             </p>
             <p>
-              The planning system that controls this pipeline has been stripped of capacity. Local authority planning departments employed 9,500 officers in 2010; by 2024 that had fallen to 6,100 &mdash; a 36% cut. Contested major applications now average over 30 weeks to decide against a statutory target of 13. The total volume of major applications decided fell from 18,300 in 2017 to 14,200 in 2024, even as the grant rate held at 73%. Over 1 million permissions have been granted but remain unbuilt, reflecting both developer &ldquo;land banking&rdquo; and genuine viability constraints. Labour&apos;s 2025 Planning and Infrastructure Bill proposes zonal planning, binding local targets, and a new infrastructure levy to break the logjam.
+              The planning system that controls this pipeline has been stripped of capacity. Local authority planning departments employed 9,500 officers in 2010; by 2024 that had fallen to 6,100 — a 36% cut. Contested major applications now average over 30 weeks to decide against a statutory target of 13. The total volume of major applications decided fell from 18,300 in 2017 to 14,200 in 2024, even as the grant rate held at 73%. Over 1 million permissions have been granted but remain unbuilt, reflecting both developer &ldquo;land banking&rdquo; and genuine viability constraints. Labour's 2025 Planning and Infrastructure Bill proposes zonal planning, binding local targets, and a new infrastructure levy to break the logjam.
             </p>
             </div>
         </section>
@@ -194,11 +194,11 @@ export default function PlanningPage() {
         {/* Positive callout */}
         <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="73%"
-          unit="of major planning applications approved &mdash; the system does grant most permissions"
-          description="Despite its problems, the planning system approves 73% of all major planning applications — higher than many comparable countries. The government&apos;s Planning and Infrastructure Bill (2025) proposes mandatory housing targets for every local authority, faster decision timelines through a &apos;zonal&apos; approach, and a new planning fee structure to fund more planning officers. Labour&apos;s manifesto commitment to 1.5 million homes over five years is the most ambitious housing target set by any government since the 1970s."
-          source="Source: MHCLG &mdash; Planning applications statistics 2024."
+          unit="of major planning applications approved — the system does grant most permissions"
+          description="Despite its problems, the planning system approves 73% of all major planning applications — higher than many comparable countries. The government's Planning and Infrastructure Bill (2025) proposes mandatory housing targets for every local authority, faster decision timelines through a 'zonal' approach, and a new planning fee structure to fund more planning officers. Labour's manifesto commitment to 1.5 million homes over five years is the most ambitious housing target set by any government since the 1970s."
+          source="Source: MHCLG — Planning applications statistics 2024."
         />
         </ScrollReveal>
 
@@ -209,7 +209,7 @@ export default function PlanningPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

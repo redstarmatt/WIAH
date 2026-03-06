@@ -70,17 +70,17 @@ export default function AdoptionPage() {
         <TopicHeader
           topic="Adoption"
           question="Why Are Fewer Children Being Adopted?"
-          finding="Adoption orders in England have fallen 45% since their 2015 peak, from 5,360 to 2,950 in 2023. Children who are adopted wait an average of 538 days from entering care to their Adoption Order &mdash; nearly 18 months &mdash; and children from Black and minority ethnic backgrounds wait significantly longer."
+          finding="Adoption orders in England have fallen 45% since their 2015 peak, from 5,360 to 2,950 in 2023. Children who are adopted wait an average of 538 days from entering care to their Adoption Order — nearly 18 months — and children from Black and minority ethnic backgrounds wait significantly longer."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Adoption from care in England has been in sustained decline. The number of Adoption Orders granted peaked at 5,360 in 2015, driven by a push from the coalition government to increase adoption as a permanence option. By 2023, that figure had fallen to 2,950 &mdash; a 45% drop. The decline is partly by design: the Children and Social Work Act 2017 strengthened the requirement to consider kinship care and Special Guardianship Orders (SGOs) before adoption, and many children who would previously have been adopted are now placed with relatives under SGOs, which rose from 3,530 in 2015 to 4,480 in 2023. But the fall also reflects real capacity constraints &mdash; a shrinking pool of approved adopters, longer matching processes, and growing complexity of children&apos;s needs.
+              Adoption from care in England has been in sustained decline. The number of Adoption Orders granted peaked at 5,360 in 2015, driven by a push from the coalition government to increase adoption as a permanence option. By 2023, that figure had fallen to 2,950 — a 45% drop. The decline is partly by design: the Children and Social Work Act 2017 strengthened the requirement to consider kinship care and Special Guardianship Orders (SGOs) before adoption, and many children who would previously have been adopted are now placed with relatives under SGOs, which rose from 3,530 in 2015 to 4,480 in 2023. But the fall also reflects real capacity constraints — a shrinking pool of approved adopters, longer matching processes, and growing complexity of children's needs.
             </p>
             <p>
-              Delay is the defining challenge. The government&apos;s target for the average time between a child entering care and being placed with adopters is 426 days (14 months). In 2023, the actual average was 538 days &mdash; nearly 18 months &mdash; and has been rising since 2019. For children aged five and over, the average wait exceeds 800 days. Court processes account for a significant portion of delay: the 26-week target for care proceedings introduced by the Children and Families Act 2014 is met in only 42% of cases, with the average now closer to 44 weeks. The pandemic created an acute backlog &mdash; 2,000 adoption orders were delayed by court closures in 2020&ndash;21 &mdash; and recovery has been slow.
+              Delay is the defining challenge. The government's target for the average time between a child entering care and being placed with adopters is 426 days (14 months). In 2023, the actual average was 538 days — nearly 18 months — and has been rising since 2019. For children aged five and over, the average wait exceeds 800 days. Court processes account for a significant portion of delay: the 26-week target for care proceedings introduced by the Children and Families Act 2014 is met in only 42% of cases, with the average now closer to 44 weeks. The pandemic created an acute backlog — 2,000 adoption orders were delayed by court closures in 2020–21 — and recovery has been slow.
             </p>
             </div>
         </section>
@@ -98,9 +98,9 @@ export default function AdoptionPage() {
               value="2,950"
               direction="down"
               polarity="up-is-good"
-              changeText="Down 45% from 5,360 peak in 2015 &middot; Some shift to SGOs"
+              changeText="Down 45% from 5,360 peak in 2015 · Some shift to SGOs"
               sparklineData={[5360, 4690, 4350, 3820, 3570, 3440, 2870, 2960, 2950]}
-              source="DfE &middot; Children Looked After 2023"
+              source="DfE · Children Looked After 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -108,9 +108,9 @@ export default function AdoptionPage() {
               value="538 days"
               direction="up"
               polarity="up-is-bad"
-              changeText="Target: 426 days &middot; Children aged 5+ wait 800+ days"
+              changeText="Target: 426 days · Children aged 5+ wait 800+ days"
               sparklineData={[487, 498, 506, 512, 520, 558, 574, 546, 538]}
-              source="DfE &middot; Adoption Scorecard 2023"
+              source="DfE · Adoption Scorecard 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -118,9 +118,9 @@ export default function AdoptionPage() {
               value="65%"
               direction="up"
               polarity="up-is-bad"
-              changeText="65% sought mental health support &middot; Only 38% received it timely"
+              changeText="65% sought mental health support · Only 38% received it timely"
               sparklineData={[52, 55, 58, 60, 62, 63, 64, 65]}
-              source="Adoption UK &middot; Barometer 2023"
+              source="Adoption UK · Barometer 2023"
               onExpand={() => {}}
             />
           </div>
@@ -130,7 +130,7 @@ export default function AdoptionPage() {
           <section id="sec-orders" className="mb-12">
             {ordersSeries.length > 0 ? (
               <LineChart
-                title="Adoption orders granted, England, 2015&ndash;2023"
+                title="Adoption orders granted, England, 2015–2023"
                 subtitle="Number of Adoption Orders granted per year. The decline partly reflects a deliberate shift toward kinship care and Special Guardianship Orders."
                 series={ordersSeries}
                 yLabel="Adoption orders"
@@ -151,7 +151,7 @@ export default function AdoptionPage() {
           <section id="sec-wait" className="mb-12">
             {waitSeries.length > 0 ? (
               <LineChart
-                title="Average wait from entering care to Adoption Order, 2015&ndash;2023"
+                title="Average wait from entering care to Adoption Order, 2015–2023"
                 subtitle="Median days from a child entering local authority care to the date of the Adoption Order. Target is 426 days."
                 series={waitSeries}
                 yLabel="Days"
@@ -174,7 +174,7 @@ export default function AdoptionPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

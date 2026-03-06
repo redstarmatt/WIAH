@@ -62,11 +62,11 @@ export default function DisabledChildrenCarePage() {
 
   return (
     <>
-      <TopicNav topic="Disabled Children&apos;s Care" />
+      <TopicNav topic="Disabled Children's Care" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Disabled Children&apos;s Care"
+          topic="Disabled Children's Care"
           question="Are disabled children getting the support they need?"
           finding="240,000 disabled children are estimated to need social care support, but fewer than 90,000 receive it."
           colour="#264653"
@@ -74,8 +74,8 @@ export default function DisabledChildrenCarePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 240,000 disabled children in England are estimated to need some level of social care support, yet only around 89,000 are receiving it &mdash; a gap that has widened over the past decade as demand has grown faster than local authority funding. The Education, Health and Care Plan (EHCP) system, introduced by the Children and Families Act 2014 to integrate support across education, health, and social care, has failed to keep pace: the average wait from request to final EHCP has grown from 19 weeks in 2015 to 28 weeks in 2024, well beyond the statutory 20-week limit. In 2024, over 60% of EHCPs were issued outside the legal timeframe. Tribunal challenges by families have reached record levels, with the SEND Tribunal upholding the majority of parental appeals. NHS children&apos;s therapy services &mdash; speech and language, occupational therapy, physiotherapy &mdash; have become the primary bottleneck, with NHS delays the most frequently cited reason for missed EHCP deadlines. The SEND Review (2023) acknowledged systemic failure and set out a reform programme, but early implementation has been patchy.</p>
-            <p>The consequences of unmet need accumulate across childhood and into adult life. Children with significant disabilities who do not receive timely support are more likely to experience educational exclusion, mental health crises, and family breakdown. Their parents &mdash; disproportionately mothers &mdash; are more likely to reduce or leave employment to fill the gap the system fails to supply, compounding financial hardship that the system does not account for in its costing of inadequate provision. Without significant new investment in both local authority children&apos;s services and NHS therapy capacity, the structural conditions driving the gap between need and support are unlikely to change.</p>
+            <p>Around 240,000 disabled children in England are estimated to need some level of social care support, yet only around 89,000 are receiving it — a gap that has widened over the past decade as demand has grown faster than local authority funding. The Education, Health and Care Plan (EHCP) system, introduced by the Children and Families Act 2014 to integrate support across education, health, and social care, has failed to keep pace: the average wait from request to final EHCP has grown from 19 weeks in 2015 to 28 weeks in 2024, well beyond the statutory 20-week limit. In 2024, over 60% of EHCPs were issued outside the legal timeframe. Tribunal challenges by families have reached record levels, with the SEND Tribunal upholding the majority of parental appeals. NHS children's therapy services — speech and language, occupational therapy, physiotherapy — have become the primary bottleneck, with NHS delays the most frequently cited reason for missed EHCP deadlines. The SEND Review (2023) acknowledged systemic failure and set out a reform programme, but early implementation has been patchy.</p>
+            <p>The consequences of unmet need accumulate across childhood and into adult life. Children with significant disabilities who do not receive timely support are more likely to experience educational exclusion, mental health crises, and family breakdown. Their parents — disproportionately mothers — are more likely to reduce or leave employment to fill the gap the system fails to supply, compounding financial hardship that the system does not account for in its costing of inadequate provision. Without significant new investment in both local authority children's services and NHS therapy capacity, the structural conditions driving the gap between need and support are unlikely to change.</p>
           </div>
         </section>
 
@@ -95,7 +95,7 @@ export default function DisabledChildrenCarePage() {
               polarity={'up-is-bad' as const}
               changeText="Estimated unmet need growing"
               sparklineData={[225, 228, 230, 232, 235, 237, 238, 239, 240]}
-              href="#sec-chart"source="DfE &middot; SEND and AP Insights"
+              href="#sec-chart"source="DfE · SEND and AP Insights"
             />
             <MetricCard
               label="Children receiving support"
@@ -105,7 +105,7 @@ export default function DisabledChildrenCarePage() {
               polarity={'up-is-good' as const}
               changeText="Down from 98k in 2015"
               sparklineData={[98, 97, 96, 95, 93, 91, 90, 90, 89]}
-              href="#sec-chart"source="DfE &middot; SEND and AP Insights"
+              href="#sec-chart"source="DfE · SEND and AP Insights"
             />
             <MetricCard
               label="Average EHCP wait"
@@ -115,7 +115,7 @@ export default function DisabledChildrenCarePage() {
               polarity={'up-is-bad' as const}
               changeText="Statutory limit is 20 weeks"
               sparklineData={[19, 20, 21, 22, 23, 25, 26, 27, 28]}
-              href="#sec-chart"source="DfE &middot; SEND and AP Insights"
+              href="#sec-chart"source="DfE · SEND and AP Insights"
             />
           </div>
         </ScrollReveal>
@@ -123,7 +123,7 @@ export default function DisabledChildrenCarePage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Disabled children receiving care, 2015&ndash;2024"
+              title="Disabled children receiving care, 2015–2024"
               subtitle="Estimated children needing support vs those receiving local authority social care (thousands), England."
               series={supportSeries}
               yLabel="Children (thousands)"
@@ -139,9 +139,9 @@ export default function DisabledChildrenCarePage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>DfE &mdash; SEND and AP Insights. Annual statistical release covering EHCPs, specialist provision, and support. explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans</p>
-            <p>NHS Digital &mdash; Children and Young People&apos;s Mental Health Services dataset. digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england</p>
-            <p>Contact &mdash; Research and policy on disabled children and families. contact.org.uk/research-and-policy/</p>
+            <p>DfE — SEND and AP Insights. Annual statistical release covering EHCPs, specialist provision, and support. explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans</p>
+            <p>NHS Digital — Children and Young People's Mental Health Services dataset. digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england</p>
+            <p>Contact — Research and policy on disabled children and families. contact.org.uk/research-and-policy/</p>
             <p>Estimates of total disabled children needing support are modelled from population prevalence studies and disability benefit claimant data. Children receiving support counts those with an active EHCP or receiving a social care service. EHCP wait time is calculated from EHC needs assessment request to final plan issue date.</p>
           </div>
         </section>

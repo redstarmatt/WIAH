@@ -176,12 +176,14 @@ export default function DentalPage() {
     <main>
       <TopicNav topic="Dental" />
 
-      <TopicHeader
-        topic="Dental"
-        question="Can You Actually Get an NHS Dentist?"
-        finding="NHS dentistry has effectively collapsed for millions. Nearly half of adults cannot access an NHS dentist, and the workforce continues to shrink as practitioners shift to private practice."
-        colour="#E63946"
-      />
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <TopicHeader
+          topic="Dental"
+          question="Can You Actually Get an NHS Dentist?"
+          finding="NHS dentistry has effectively collapsed for millions. Nearly half of adults cannot access an NHS dentist, and the workforce continues to shrink as practitioners shift to private practice."
+          colour="#E63946"
+        />
+      </div>
 
       {/* Metrics row */}
       <section className="max-w-5xl mx-auto px-6 py-10 border-b border-wiah-border">
@@ -256,10 +258,10 @@ export default function DentalPage() {
       {/* Positive callout */}
       <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="65.2%"
           unit="of children seen by NHS dentist"
-          description="Children&apos;s NHS dental access has recovered faster than adults — from a pandemic low of 42% in 2020/21 to 65.2% in 2024/25. Schools and community dental services have helped rebuild routine check-up habits for younger patients."
+          description="Children's NHS dental access has recovered faster than adults — from a pandemic low of 42% in 2020/21 to 65.2% in 2024/25. Schools and community dental services have helped rebuild routine check-up habits for younger patients."
           source="Source: NHS England — NHS Dental Statistics 2024/25."
         />
       </ScrollReveal>
@@ -268,11 +270,11 @@ export default function DentalPage() {
       <section className="max-w-2xl mx-auto px-6 py-12 border-b border-wiah-border text-wiah-black">
         <div className="text-base leading-[1.7] space-y-4">
           <p>
-            Only 49.1% of adults in England saw an NHS dentist in the two years to March 2025, down from 57.3% before the pandemic &mdash; roughly 8 million people losing access to routine care. The human cost shows up in hospital theatres: 35,156 children underwent tooth extractions under general anaesthetic in 2022/23. Dental decay is the leading cause of hospital admission for children aged 5&ndash;9, and it is almost entirely preventable.
+            Only 49.1% of adults in England saw an NHS dentist in the two years to March 2025, down from 57.3% before the pandemic — roughly 8 million people losing access to routine care. The human cost shows up in hospital theatres: 35,156 children underwent tooth extractions under general anaesthetic in 2022/23. Dental decay is the leading cause of hospital admission for children aged 5–9, and it is almost entirely preventable.
           </p>
 
           <p>
-            The structural cause is the 2006 NHS dental contract, which pays per &ldquo;unit of dental activity&rdquo; regardless of complexity. The incentive is to treat simple cases fast and avoid difficult ones. Combined with below-inflation fee uplifts, 1,800 dentists have left NHS practice since 2018. Access rates range from 36% in the worst-served areas to 61% in the best, with rural and coastal communities hit hardest. A 2024 recovery plan offering &pound;200 incentive payments for returning practitioners has not yet reversed the decline.
+            The structural cause is the 2006 NHS dental contract, which pays per &ldquo;unit of dental activity&rdquo; regardless of complexity. The incentive is to treat simple cases fast and avoid difficult ones. Combined with below-inflation fee uplifts, 1,800 dentists have left NHS practice since 2018. Access rates range from 36% in the worst-served areas to 61% in the best, with rural and coastal communities hit hardest. A 2024 recovery plan offering £200 incentive payments for returning practitioners has not yet reversed the decline.
           </p>
         </div>
       </section>

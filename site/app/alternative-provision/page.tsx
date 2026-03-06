@@ -121,10 +121,10 @@ export default function AlternativeProvisionPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Alternative provision &mdash; pupil referral units, AP academies and AP free schools &mdash; serves some of the most vulnerable young people in England: children who have been excluded, who cannot attend mainstream school due to illness or mental health needs, or who have never been in a school at all. The number of pupils in AP has grown by 38% since 2015, driven by rising exclusions, the SEND crisis, and post-COVID attendance pressures.
+              Alternative provision — pupil referral units, AP academies and AP free schools — serves some of the most vulnerable young people in England: children who have been excluded, who cannot attend mainstream school due to illness or mental health needs, or who have never been in a school at all. The number of pupils in AP has grown by 38% since 2015, driven by rising exclusions, the SEND crisis, and post-COVID attendance pressures.
             </p>
             <p>
-              The consequences of poor-quality provision are severe. Only 11% of pupils in AP achieve grade 9&ndash;4 in both English and Maths at GCSE, compared with 65% in mainstream schools. A child placed in inadequate provision at 14 has a dramatically reduced chance of gaining qualifications, and is significantly more likely to enter the youth justice system. The 44% of AP schools rated inadequate or requiring improvement by Ofsted represents a systemic failure of the state&apos;s duty to these young people.
+              The consequences of poor-quality provision are severe. Only 11% of pupils in AP achieve grade 9–4 in both English and Maths at GCSE, compared with 65% in mainstream schools. A child placed in inadequate provision at 14 has a dramatically reduced chance of gaining qualifications, and is significantly more likely to enter the youth justice system. The 44% of AP schools rated inadequate or requiring improvement by Ofsted represents a systemic failure of the state's duty to these young people.
             </p>
           </div>
         </section>
@@ -175,7 +175,7 @@ export default function AlternativeProvisionPage() {
         <ScrollReveal>
           <section id="sec-pupils" className="mb-12">
             <LineChart
-              title="Pupils in alternative provision, England, 2015&ndash;2024"
+              title="Pupils in alternative provision, England, 2015–2024"
               subtitle="Number of pupils in state-funded alternative provision (pupil referral units, AP academies, AP free schools). Numbers fell during COVID then rose sharply as exclusions and SEND pressures increased."
               series={pupilSeries}
               annotations={pupilAnnotations}
@@ -187,7 +187,7 @@ export default function AlternativeProvisionPage() {
         <ScrollReveal>
           <section id="sec-quality" className="mb-12">
             <LineChart
-              title="AP schools rated inadequate or requires improvement by Ofsted, 2018&ndash;2024"
+              title="AP schools rated inadequate or requires improvement by Ofsted, 2018–2024"
               subtitle="Percentage of alternative provision schools receiving the two lowest Ofsted grades. Significantly higher than the national average for all school types."
               series={ofstedSeries}
               annotations={ofstedAnnotations}
@@ -199,11 +199,11 @@ export default function AlternativeProvisionPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="SEND &amp; AP"
             unit="Improvement Plan 2023"
-            description="The SEND and AP Improvement Plan 2023 commits to new AP free schools in areas of greatest need, a new national framework for AP quality, and stronger local authority oversight of unregistered provision. The plan also introduces a new AP&nbsp;&lsquo;national standards&rsquo; framework and requires local authorities to publish data on AP outcomes for the first time."
-            source="Source: DfE &mdash; SEND and AP Improvement Plan, March 2023. Ofsted &mdash; Alternative Provision inspection outcomes, 2024."
+            description="The SEND and AP Improvement Plan 2023 commits to new AP free schools in areas of greatest need, a new national framework for AP quality, and stronger local authority oversight of unregistered provision. The plan also introduces a new AP &lsquo;national standards&rsquo; framework and requires local authorities to publish data on AP outcomes for the first time."
+            source="Source: DfE — SEND and AP Improvement Plan, March 2023. Ofsted — Alternative Provision inspection outcomes, 2024."
           />
         </ScrollReveal>
 
@@ -214,7 +214,7 @@ export default function AlternativeProvisionPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

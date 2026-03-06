@@ -102,14 +102,14 @@ export default function CommunityPharmaciesPage() {
         <TopicHeader
           topic="Community Pharmacies"
           question="Are Community Pharmacies Disappearing?"
-          finding="England has lost over 1,100 community pharmacies since 2015 &mdash; around 10% of the total network. Remaining pharmacies are under intense financial pressure: NHS dispensing fees have not risen in real terms for years while costs have soared. Around 90% of pharmacies report being in financial difficulty. The government&apos;s Pharmacy First scheme launched in 2024, but experts warn closures will continue without adequate funding."
+          finding="England has lost over 1,100 community pharmacies since 2015 — around 10% of the total network. Remaining pharmacies are under intense financial pressure: NHS dispensing fees have not risen in real terms for years while costs have soared. Around 90% of pharmacies report being in financial difficulty. The government's Pharmacy First scheme launched in 2024, but experts warn closures will continue without adequate funding."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England lost more than 1,100 community pharmacies between 2015 and 2023 &mdash; roughly one in ten of the network. Closures have been fastest in deprived high-street locations, the pharmacies most used by people who cannot easily travel or go online. The structural cause is clear: NHS dispensing fees have been frozen in real terms since 2015, a &pound;113 million funding cut in 2016 was never restored, and the average pharmacy now runs at an annual loss of around &pound;50,000. Over the same period, prescriptions dispensed rose from 1.02 billion to 1.2 billion &mdash; more work, less money, fewer outlets. The Pharmacy First scheme, launched in January 2024, authorises pharmacists to treat seven common conditions without GP referral, which in theory could absorb up to 10% of GP appointments; in practice, pharmacists report that reimbursement rates do not cover the additional clinical time.</p>
-            <p>Large multiples and supermarket pharmacies have proved more resilient; it is independent, family-run pharmacies that have closed. The walk-in consultation &mdash; free, no appointment, five minutes &mdash; is one of the most cost-effective primary care interventions, and its erosion shifts demand onto GP surgeries already under acute pressure. Scotland has integrated pharmacies more formally into primary care, with pharmacists salaried through NHS boards; England&apos;s commercially exposed model remains most vulnerable. When a pharmacy closes, some patients simply go without advice, delay prescriptions, or seek care later at greater cost &mdash; unmet need the NHS has no systematic way of measuring.</p>
+            <p>England lost more than 1,100 community pharmacies between 2015 and 2023 — roughly one in ten of the network. Closures have been fastest in deprived high-street locations, the pharmacies most used by people who cannot easily travel or go online. The structural cause is clear: NHS dispensing fees have been frozen in real terms since 2015, a £113 million funding cut in 2016 was never restored, and the average pharmacy now runs at an annual loss of around £50,000. Over the same period, prescriptions dispensed rose from 1.02 billion to 1.2 billion — more work, less money, fewer outlets. The Pharmacy First scheme, launched in January 2024, authorises pharmacists to treat seven common conditions without GP referral, which in theory could absorb up to 10% of GP appointments; in practice, pharmacists report that reimbursement rates do not cover the additional clinical time.</p>
+            <p>Large multiples and supermarket pharmacies have proved more resilient; it is independent, family-run pharmacies that have closed. The walk-in consultation — free, no appointment, five minutes — is one of the most cost-effective primary care interventions, and its erosion shifts demand onto GP surgeries already under acute pressure. Scotland has integrated pharmacies more formally into primary care, with pharmacists salaried through NHS boards; England's commercially exposed model remains most vulnerable. When a pharmacy closes, some patients simply go without advice, delay prescriptions, or seek care later at greater cost — unmet need the NHS has no systematic way of measuring.</p>
           </div>
         </section>
 
@@ -146,9 +146,9 @@ export default function CommunityPharmaciesPage() {
             value="90%"
             direction="up"
             polarity="up-is-bad"
-            changeText="2023 &middot; Company Chemists&apos; Association survey &middot; NHS dispensing fee frozen in real terms since 2015 &middot; Average annual loss: &pound;50,000"
+            changeText="2023 · Company Chemists' Association survey · NHS dispensing fee frozen in real terms since 2015 · Average annual loss: £50,000"
             sparklineData={[85, 87, 88, 89, 90, 90, 90, 90, 90]}
-            source="Company Chemists&apos; Association · Annual survey 2023"
+            source="Company Chemists' Association · Annual survey 2023"
             baseline="Around 9 in 10 independent pharmacies report financial stress"
             href="#sec-charts"/>
           <MetricCard
@@ -158,7 +158,7 @@ export default function CommunityPharmaciesPage() {
             polarity="up-is-bad"
             changeText={
               latestPrescription && data
-                ? `Up from ${data.national.prescriptionVolume[0].millions}m in 2015 &middot; Fewer pharmacies handling more prescriptions`
+                ? `Up from ${data.national.prescriptionVolume[0].millions}m in 2015 · Fewer pharmacies handling more prescriptions`
                 : 'Loading…'
             }
             sparklineData={
@@ -176,7 +176,7 @@ export default function CommunityPharmaciesPage() {
         <section id="sec-charts" className="mt-16">
           <ScrollReveal>
             <div className="mb-12">
-              <h3 className="text-2xl font-bold text-wiah-black mb-6">Community pharmacy closures, 2015&ndash;2023</h3>
+              <h3 className="text-2xl font-bold text-wiah-black mb-6">Community pharmacy closures, 2015–2023</h3>
               {pharmacyCountSeries.length > 0 ? (
                 <LineChart
                   title="Number of community pharmacies in England"
@@ -229,7 +229,7 @@ export default function CommunityPharmaciesPage() {
                 ))}
               </div>
               <p className="text-sm text-wiah-mid font-mono mt-4">
-                Source: Company Chemists&apos; Association · Service availability survey · 2023
+                Source: Company Chemists' Association · Service availability survey · 2023
               </p>
             </div>
           </ScrollReveal>
@@ -250,9 +250,9 @@ export default function CommunityPharmaciesPage() {
               dental). Data updated March 2024.
             </p>
             <p>
-              <strong>Financial difficulty:</strong> Company Chemists&apos; Association (CCA) Annual Survey. Published 2023.
+              <strong>Financial difficulty:</strong> Company Chemists' Association (CCA) Annual Survey. Published 2023.
               Survey of independent and multiples pharmacies on viability, funding pressures, and service delivery. Typically
-              covers 300&ndash;400 responding pharmacies. The CCA publishes annually; 2023 is the most recent publicly available
+              covers 300–400 responding pharmacies. The CCA publishes annually; 2023 is the most recent publicly available
               report.
             </p>
             <p>

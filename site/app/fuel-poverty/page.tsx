@@ -73,7 +73,7 @@ export default function FuelPovertyPage() {
   const energyCapSeries: Series[] = data
     ? [{
         id: 'energy-cap',
-        label: 'Energy price cap (&pound;)',
+        label: 'Energy price cap (£)',
         colour: '#F4A261',
         data: data.national.energyPriceCap.timeSeries.map(d => ({
           date: yearToDate(d.year),
@@ -96,15 +96,15 @@ export default function FuelPovertyPage() {
         <TopicHeader
           topic="Fuel Poverty"
           question="How Many British Homes Cannot Afford to Stay Warm?"
-          finding="13.4% of English households &mdash; 3.3 million homes &mdash; are in fuel poverty. The energy price cap reached &pound;3,549/year in January 2023. Excess winter deaths attributable to cold homes average 9,700 per year. Fuel poverty is highest in the private rented sector, where 18.8% of households cannot afford to heat their homes."
+          finding="13.4% of English households — 3.3 million homes — are in fuel poverty. The energy price cap reached £3,549/year in January 2023. Excess winter deaths attributable to cold homes average 9,700 per year. Fuel poverty is highest in the private rented sector, where 18.8% of households cannot afford to heat their homes."
           colour="#F4A261"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Some 3.3 million English households &mdash; 13.4% of the total &mdash; are classified as fuel poor under the Low Income Low Energy Efficiency (LILEE) metric. Private renters are worst affected at 18.8%, followed by social renters at 16.2%. Fourteen million homes carry an EPC rating below band C, and an estimated 9,700 excess winter deaths each year are attributable to cold housing. Ofgem&apos;s price cap reached &pound;3,549 per year in January 2023, up from &pound;1,277 in October 2021; the government&apos;s Energy Price Guarantee and Energy Bills Support Scheme together cost over &pound;40 billion. The government quietly dropped the Minimum Energy Efficiency Standard requiring private rented homes to reach EPC band C by 2025 in September 2023, and standing charges have risen 45% since 2019.</p>
-            <p>The geography is stark: fuel poverty runs highest in Yorkshire &amp; the Humber (15.4%), the West Midlands (15.2%), and the North East (15.0%), while rural off-gas-grid properties face the sharpest price shocks. Cold homes cost the NHS an estimated &pound;1.36 billion annually; 280,000 children live in consistently cold homes and are three times more likely to develop respiratory illness. The UK&apos;s excess winter mortality ratio remains higher than Norway&apos;s and Sweden&apos;s &mdash; countries with far harsher climates but dramatically better-insulated housing stock.</p>
+            <p>Some 3.3 million English households — 13.4% of the total — are classified as fuel poor under the Low Income Low Energy Efficiency (LILEE) metric. Private renters are worst affected at 18.8%, followed by social renters at 16.2%. Fourteen million homes carry an EPC rating below band C, and an estimated 9,700 excess winter deaths each year are attributable to cold housing. Ofgem's price cap reached £3,549 per year in January 2023, up from £1,277 in October 2021; the government's Energy Price Guarantee and Energy Bills Support Scheme together cost over £40 billion. The government quietly dropped the Minimum Energy Efficiency Standard requiring private rented homes to reach EPC band C by 2025 in September 2023, and standing charges have risen 45% since 2019.</p>
+            <p>The geography is stark: fuel poverty runs highest in Yorkshire &amp; the Humber (15.4%), the West Midlands (15.2%), and the North East (15.0%), while rural off-gas-grid properties face the sharpest price shocks. Cold homes cost the NHS an estimated £1.36 billion annually; 280,000 children live in consistently cold homes and are three times more likely to develop respiratory illness. The UK's excess winter mortality ratio remains higher than Norway's and Sweden's — countries with far harsher climates but dramatically better-insulated housing stock.</p>
           </div>
         </section>
 
@@ -122,15 +122,15 @@ export default function FuelPovertyPage() {
               value="3.3M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2022/23 &middot; 13.4% of households &middot; Private renters worst affected (18.8%) &middot; 9,700 excess winter deaths from cold homes"
+              changeText="2022/23 · 13.4% of households · Private renters worst affected (18.8%) · 9,700 excess winter deaths from cold homes"
               sparklineData={[11.1, 11.0, 10.4, 10.6, 11.1, 10.9, 13.4, 13.2, 13.2, 13.0, 13.4]}
               href="#sec-overview"/>
             <MetricCard
               label="Ofgem energy price cap (typical annual bill)"
-              value="&pound;1,928"
+              value="£1,928"
               direction="down"
               polarity="up-is-bad"
-              changeText="2024 Q1 &middot; Down from &pound;3,549 peak (Jan 2023) &middot; Still 54% above pre-crisis 2019 level &middot; Energy Support Scheme ended April 2023"
+              changeText="2024 Q1 · Down from £3,549 peak (Jan 2023) · Still 54% above pre-crisis 2019 level · Energy Support Scheme ended April 2023"
               sparklineData={[1254, 1162, 1277, 2500, 3000, 1928]}
               href="#sec-fuelpoverty"/>
             <MetricCard
@@ -138,7 +138,7 @@ export default function FuelPovertyPage() {
               value="9,700"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Annual average &middot; Cold homes cost NHS &pound;1.4bn per year &middot; 14% of England&apos;s housing stock has EPC below E &middot; Retrofit gap: 14M homes need upgrading"
+              changeText="Annual average · Cold homes cost NHS £1.4bn per year · 14% of England's housing stock has EPC below E · Retrofit gap: 14M homes need upgrading"
               sparklineData={[9200, 9300, 9400, 9500, 9600, 9700, 9700, 9700, 9700]}
               href="#sec-prices"/>
           </div>
@@ -147,7 +147,7 @@ export default function FuelPovertyPage() {
         <ScrollReveal>
           <section id="sec-fuelpoverty" className="mb-12">
             <LineChart
-              title="Households in fuel poverty, England, 2012/13&ndash;2022/23"
+              title="Households in fuel poverty, England, 2012/13–2022/23"
               subtitle="Percentage of households in fuel poverty using the LILEE (Low Income Low Energy Efficiency) metric."
               series={fuelPovertySeries}
               yLabel="% of households"
@@ -163,11 +163,11 @@ export default function FuelPovertyPage() {
         <ScrollReveal>
           <section id="sec-prices" className="mb-12">
             <LineChart
-              title="Ofgem energy price cap (typical annual bill), 2019&ndash;2024"
+              title="Ofgem energy price cap (typical annual bill), 2019–2024"
               subtitle="Annual bill estimate for a typical household (2,900 kWh electricity, 12,000 kWh gas)."
               series={energyCapSeries}
               annotations={energyAnnotations}
-              yLabel="&pound; per year"
+              yLabel="£ per year"
               source={{
                 name: 'Ofgem',
                 dataset: 'Energy Price Cap',
@@ -197,17 +197,17 @@ export default function FuelPovertyPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: DESNZ &mdash; Annual Fuel Poverty Statistics 2023</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: DESNZ — Annual Fuel Poverty Statistics 2023</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
-            value="&pound;6.3bn"
+            title="What's improving"
+            value="£6.3bn"
             unit="Energy Bills Support Scheme delivered to 28 million households in 2022/23"
-            description="The Energy Bills Support Scheme (2022/23) provided a &pound;400 non-repayable discount to all UK households, costing &pound;6.3 billion. The Warm Home Discount was extended to 3 million households in 2022/23. The Boiler Upgrade Scheme offers &pound;7,500 grants for heat pump installation, though take-up has been slow. The UK Infrastructure Bank has committed &pound;1.6 billion to retrofit social housing. Ofgem&apos;s standing charge review (2024) is examining whether flat daily standing charges disproportionately burden low-income households. The Minimum Energy Efficiency Standard, requiring private rented homes to reach EPC band C by 2025, was quietly dropped by the previous government in September 2023."
-            source="Source: DESNZ &mdash; Annual Fuel Poverty Statistics 2023; Ofgem &mdash; Energy Price Cap 2024 Q1."
+            description="The Energy Bills Support Scheme (2022/23) provided a £400 non-repayable discount to all UK households, costing £6.3 billion. The Warm Home Discount was extended to 3 million households in 2022/23. The Boiler Upgrade Scheme offers £7,500 grants for heat pump installation, though take-up has been slow. The UK Infrastructure Bank has committed £1.6 billion to retrofit social housing. Ofgem's standing charge review (2024) is examining whether flat daily standing charges disproportionately burden low-income households. The Minimum Energy Efficiency Standard, requiring private rented homes to reach EPC band C by 2025, was quietly dropped by the previous government in September 2023."
+            source="Source: DESNZ — Annual Fuel Poverty Statistics 2023; Ofgem — Energy Price Cap 2024 Q1."
           />
         </ScrollReveal>
 
@@ -217,7 +217,7 @@ export default function FuelPovertyPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

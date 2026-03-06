@@ -139,7 +139,7 @@ export default function EnergyBillsPage() {
           question="Are Energy Bills Actually Still Too High?"
           finding={
             data
-              ? `Energy bills hit &pound;${data.national.priceCap.peakAnnualBillGBP.toLocaleString()} in autumn 2022 &mdash; triple their 2019 level. Government intervention capped bills at &pound;2,500, costing &pound;37bn in 2022 alone. Bills have fallen to &pound;1,717 but remain 52% above pre-crisis levels. 3.44 million households are in fuel poverty.`
+              ? `Energy bills hit £${data.national.priceCap.peakAnnualBillGBP.toLocaleString()} in autumn 2022 — triple their 2019 level. Government intervention capped bills at £2,500, costing £37bn in 2022 alone. Bills have fallen to £1,717 but remain 52% above pre-crisis levels. 3.44 million households are in fuel poverty.`
               : 'Energy bills reached record highs during the 2022–23 crisis.'
           }
           colour="#F4A261"
@@ -148,10 +148,10 @@ export default function EnergyBillsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Russia&apos;s invasion of Ukraine in February 2022 exposed Britain&apos;s structural dependence on gas imports. The Ofgem price cap tripled from &pound;1,138 in winter 2020/21 to &pound;3,549 by October 2022; the Energy Price Guarantee capped bills at &pound;2,500, costing &pound;37 billion in 2022 alone. The cap has since fallen to &pound;1,717 in Q4 2024 &mdash; but that remains 52% above the 2019 level. Wholesale prices have normalised; the cost that has not retreated is the standing charge, which rose 153% from 24p/day in 2019 to 61p/day in 2024. Fuel poverty now affects 3.44 million households &mdash; 13.1% of English homes &mdash; up from 2.5 million before the crisis. With 19 million homes still reliant on gas boilers and 27% below EPC band C, Britain&apos;s exposure to the next price shock is largely unchanged.
+              Russia's invasion of Ukraine in February 2022 exposed Britain's structural dependence on gas imports. The Ofgem price cap tripled from £1,138 in winter 2020/21 to £3,549 by October 2022; the Energy Price Guarantee capped bills at £2,500, costing £37 billion in 2022 alone. The cap has since fallen to £1,717 in Q4 2024 — but that remains 52% above the 2019 level. Wholesale prices have normalised; the cost that has not retreated is the standing charge, which rose 153% from 24p/day in 2019 to 61p/day in 2024. Fuel poverty now affects 3.44 million households — 13.1% of English homes — up from 2.5 million before the crisis. With 19 million homes still reliant on gas boilers and 27% below EPC band C, Britain's exposure to the next price shock is largely unchanged.
             </p>
             <p>
-              The energy cost structure is regressive by design. Around 4 million households on prepayment meters pay historically around &pound;100 per year more than equivalent direct debit customers &mdash; a structure that charges the poorest the most. High fixed standing charges penalise low-usage households: pensioners and fuel-poor families who cut consumption find their bills barely fall. Social tariff proposals for the 3&ndash;4 million most vulnerable households have gained traction in Labour&apos;s energy review, and Ofgem opened a consultation on restructuring standing charges in 2024, but ECO4 insulation installation rates are running at roughly half the pace needed to meet the 2026 endpoint, leaving the structural exposure intact.
+              The energy cost structure is regressive by design. Around 4 million households on prepayment meters pay historically around £100 per year more than equivalent direct debit customers — a structure that charges the poorest the most. High fixed standing charges penalise low-usage households: pensioners and fuel-poor families who cut consumption find their bills barely fall. Social tariff proposals for the 3–4 million most vulnerable households have gained traction in Labour's energy review, and Ofgem opened a consultation on restructuring standing charges in 2024, but ECO4 insulation installation rates are running at roughly half the pace needed to meet the 2026 endpoint, leaving the structural exposure intact.
             </p>
           </div>
         </section>
@@ -234,11 +234,11 @@ export default function EnergyBillsPage() {
         {/* Positive callout */}
         <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="£1,717"
-          unit="Q4 2024 bill &mdash; falling from &pound;3,549 peak as wholesale gas prices normalise"
-          description="Wholesale gas prices have fallen from their crisis peak as LNG supply diversified and European storage recovered. The Ofgem price cap in Q4 2024 is &pound;1,717 &mdash; less than half the October 2022 level. Government energy support of &pound;37bn prevented millions more households from falling into fuel poverty. The Energy Price Guarantee and &pound;400 Energy Bills Support Scheme payments reached virtually all households, with targeted &pound;900 payments to those on means-tested benefits."
-          source="Source: Ofgem &mdash; Electricity and gas price cap, 2024."
+          unit="Q4 2024 bill — falling from £3,549 peak as wholesale gas prices normalise"
+          description="Wholesale gas prices have fallen from their crisis peak as LNG supply diversified and European storage recovered. The Ofgem price cap in Q4 2024 is £1,717 — less than half the October 2022 level. Government energy support of £37bn prevented millions more households from falling into fuel poverty. The Energy Price Guarantee and £400 Energy Bills Support Scheme payments reached virtually all households, with targeted £900 payments to those on means-tested benefits."
+          source="Source: Ofgem — Electricity and gas price cap, 2024."
         />
         </ScrollReveal>
 
@@ -249,7 +249,7 @@ export default function EnergyBillsPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

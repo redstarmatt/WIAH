@@ -56,7 +56,7 @@ export default function SocialMediaHarmPage() {
     ? [
         {
           id: 'cyberbullying',
-          label: 'Girls 11&ndash;15 experiencing cyberbullying (%)',
+          label: 'Girls 11–15 experiencing cyberbullying (%)',
           colour: '#E63946',
           data: data.timeSeries.map(d => ({
             date: yearToDate(d.date),
@@ -75,17 +75,17 @@ export default function SocialMediaHarmPage() {
           topic="Social Media Harm"
           preposition="from"
           question="What Is Social Media Actually Doing to Us?"
-          finding="40% of girls aged 11&ndash;15 experience cyberbullying online. Teen girls&apos; rates of depression have doubled since 2012 &mdash; a period that precisely tracks mass smartphone and social media adoption. The Online Safety Act 2023 gives Ofcom powers to fine platforms up to 10% of global revenue, but no major platform has yet faced a meaningful penalty."
+          finding="40% of girls aged 11–15 experience cyberbullying online. Teen girls' rates of depression have doubled since 2012 — a period that precisely tracks mass smartphone and social media adoption. The Online Safety Act 2023 gives Ofcom powers to fine platforms up to 10% of global revenue, but no major platform has yet faced a meaningful penalty."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The correlation between mass smartphone adoption and deteriorating adolescent mental health is one of the most debated findings in contemporary social science. In 2012, fewer than half of UK teenagers owned a smartphone; by 2016, that proportion exceeded 80%. Over the same period, NHS Digital surveys using validated clinical tools found that the proportion of 11&ndash;16 year old girls meeting the threshold for probable depression or anxiety rose from approximately 7% to 14% &mdash; a doubling. Boys&apos; rates also rose, but less sharply. Among 17&ndash;19 year old women, one-in-four now meets the clinical threshold for a probable mental disorder, compared with fewer than one-in-eight in 2004. The mechanism most consistently identified in academic literature is social comparison: platforms designed around image-sharing, likes, and follower counts create constant, inescapable status competitions that are experienced most intensely by adolescent girls during a developmentally vulnerable period.
+              The correlation between mass smartphone adoption and deteriorating adolescent mental health is one of the most debated findings in contemporary social science. In 2012, fewer than half of UK teenagers owned a smartphone; by 2016, that proportion exceeded 80%. Over the same period, NHS Digital surveys using validated clinical tools found that the proportion of 11–16 year old girls meeting the threshold for probable depression or anxiety rose from approximately 7% to 14% — a doubling. Boys' rates also rose, but less sharply. Among 17–19 year old women, one-in-four now meets the clinical threshold for a probable mental disorder, compared with fewer than one-in-eight in 2004. The mechanism most consistently identified in academic literature is social comparison: platforms designed around image-sharing, likes, and follower counts create constant, inescapable status competitions that are experienced most intensely by adolescent girls during a developmentally vulnerable period.
             </p>
             <p>
-              Cyberbullying has been transformed by the architecture of social platforms. Bullying that once ended at the school gate now follows children into their bedrooms. The Ditch the Label Annual Bullying Survey 2023 found that 40% of girls aged 11&ndash;15 had experienced cyberbullying &mdash; up from 22% in 2012. Instagram, Snapchat, and TikTok were the most commonly cited platforms. The 24-hour nature of online harassment, combined with the potential for content to be shared to indefinitely large audiences, means that the psychological impact of cyberbullying is typically more severe than traditional bullying. A 2022 study by University College London tracked 10,000 adolescents and found that those experiencing cyberbullying were 2.5 times more likely to report self-harm than those who had not. Children from lower-income households reported disproportionately higher rates, partly because they are less likely to have parental supervision of screen time.
+              Cyberbullying has been transformed by the architecture of social platforms. Bullying that once ended at the school gate now follows children into their bedrooms. The Ditch the Label Annual Bullying Survey 2023 found that 40% of girls aged 11–15 had experienced cyberbullying — up from 22% in 2012. Instagram, Snapchat, and TikTok were the most commonly cited platforms. The 24-hour nature of online harassment, combined with the potential for content to be shared to indefinitely large audiences, means that the psychological impact of cyberbullying is typically more severe than traditional bullying. A 2022 study by University College London tracked 10,000 adolescents and found that those experiencing cyberbullying were 2.5 times more likely to report self-harm than those who had not. Children from lower-income households reported disproportionately higher rates, partly because they are less likely to have parental supervision of screen time.
             </p>
             </div>
         </section>
@@ -99,13 +99,13 @@ export default function SocialMediaHarmPage() {
         <ScrollReveal>
           <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
-              label="Girls 11&ndash;15 experiencing cyberbullying"
+              label="Girls 11–15 experiencing cyberbullying"
               value="40%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 22% in 2012 &middot; Instagram &amp; Snapchat most cited platforms"
+              changeText="Up from 22% in 2012 · Instagram &amp; Snapchat most cited platforms"
               sparklineData={[22, 25, 28, 32, 35, 37, 39, 40]}
-              source="Ditch the Label &middot; Annual Bullying Survey 2023"
+              source="Ditch the Label · Annual Bullying Survey 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -113,9 +113,9 @@ export default function SocialMediaHarmPage() {
               value="+100%"
               direction="up"
               polarity="up-is-bad"
-              changeText="7% to 14% &middot; Tracks smartphone adoption curve"
+              changeText="7% to 14% · Tracks smartphone adoption curve"
               sparklineData={[7, 8, 9, 10, 11, 12, 13, 14]}
-              source="NHS Digital &middot; Mental Health of Children &amp; Young People 2023"
+              source="NHS Digital · Mental Health of Children &amp; Young People 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -123,9 +123,9 @@ export default function SocialMediaHarmPage() {
               value="0"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Online Safety Act 2023 &middot; Powers in force &middot; Enforcement pending"
+              changeText="Online Safety Act 2023 · Powers in force · Enforcement pending"
               sparklineData={[0, 0, 0, 0, 0, 0, 0, 0]}
-              source="Ofcom &middot; Online Safety Act enforcement register 2026"
+              source="Ofcom · Online Safety Act enforcement register 2026"
               onExpand={() => {}}
             />
           </div>
@@ -136,8 +136,8 @@ export default function SocialMediaHarmPage() {
             title="What is getting better"
             value="OSA 2023"
             unit="in force"
-            description="The Online Safety Act 2023 gives Ofcom power to fine platforms up to 10% of global revenue for systemic child safety failures. Several platforms have already changed default settings for under-18 accounts &mdash; including Instagram restricting DMs from strangers and TikTok limiting screen time for under-16s &mdash; following regulatory pressure ahead of formal enforcement."
-            source="Ofcom &middot; Online Safety Act &middot; Platform accountability reports 2024"
+            description="The Online Safety Act 2023 gives Ofcom power to fine platforms up to 10% of global revenue for systemic child safety failures. Several platforms have already changed default settings for under-18 accounts — including Instagram restricting DMs from strangers and TikTok limiting screen time for under-16s — following regulatory pressure ahead of formal enforcement."
+            source="Ofcom · Online Safety Act · Platform accountability reports 2024"
           />
         </ScrollReveal>
 
@@ -145,8 +145,8 @@ export default function SocialMediaHarmPage() {
           <section id="sec-depression" className="mb-12">
             {depressionSeries.length > 0 ? (
               <LineChart
-                title="Teen girls with probable depression, 2012&ndash;2024"
-                subtitle="Percentage of girls aged 11&ndash;16 meeting clinical threshold for probable depression. Tracks smartphone adoption curve."
+                title="Teen girls with probable depression, 2012–2024"
+                subtitle="Percentage of girls aged 11–16 meeting clinical threshold for probable depression. Tracks smartphone adoption curve."
                 series={depressionSeries}
                 yLabel="% with probable depression"
                 source={{
@@ -166,7 +166,7 @@ export default function SocialMediaHarmPage() {
           <section id="sec-cyberbullying" className="mb-12">
             {cyberbullySeries.length > 0 ? (
               <LineChart
-                title="Girls aged 11&ndash;15 experiencing cyberbullying, 2012&ndash;2024"
+                title="Girls aged 11–15 experiencing cyberbullying, 2012–2024"
                 subtitle="Percentage reporting online harassment, threats, or humiliation. Rises sharply with smartphone penetration."
                 series={cyberbullySeries}
                 yLabel="% experiencing cyberbullying"
@@ -188,7 +188,7 @@ export default function SocialMediaHarmPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

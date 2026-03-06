@@ -73,8 +73,8 @@ export default function RacialHealthGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Black women are 3.7 times more likely to die in childbirth than white women &mdash; a disparity documented in MBRRACE-UK reports for over two decades that has not narrowed. The gap is not explained by socioeconomic factors alone: Black women at all income levels face elevated risk, and the evidence increasingly points to differential treatment within healthcare settings. Black people are detained under the Mental Health Act at approximately four times the rate of white people per million of population, a gap that has been growing; they are more likely to be detained via police or courts rather than clinical pathways and less likely to receive talking therapies. Pakistani-heritage people are 3.5 times, and Bangladeshi-heritage people 3.8 times, more likely to develop Type 2 diabetes than white British people. COVID-19 mortality in the first wave fell disproportionately on Black, Asian, and minority ethnic people even after adjusting for age, reflecting higher occupational exposure, worse housing, higher rates of underlying conditions, and worse outcomes when hospitalised.</p>
-            <p>These disparities are not explained by genetics or individual behaviour; they reflect structural differences in housing quality, employment, income, and access to care. The NHS Race and Health Observatory, established in 2020, has recommended mandatory ethnicity data collection at all healthcare touchpoints and culturally competent service redesign, but implementation has been slow and patchy. The populations most affected &mdash; Black, South Asian, and mixed-heritage communities &mdash; are also more likely to live in deprived areas with fewer GP surgeries per head, longer waits for specialist referrals, and less access to preventive services.</p>
+            <p>Black women are 3.7 times more likely to die in childbirth than white women — a disparity documented in MBRRACE-UK reports for over two decades that has not narrowed. The gap is not explained by socioeconomic factors alone: Black women at all income levels face elevated risk, and the evidence increasingly points to differential treatment within healthcare settings. Black people are detained under the Mental Health Act at approximately four times the rate of white people per million of population, a gap that has been growing; they are more likely to be detained via police or courts rather than clinical pathways and less likely to receive talking therapies. Pakistani-heritage people are 3.5 times, and Bangladeshi-heritage people 3.8 times, more likely to develop Type 2 diabetes than white British people. COVID-19 mortality in the first wave fell disproportionately on Black, Asian, and minority ethnic people even after adjusting for age, reflecting higher occupational exposure, worse housing, higher rates of underlying conditions, and worse outcomes when hospitalised.</p>
+            <p>These disparities are not explained by genetics or individual behaviour; they reflect structural differences in housing quality, employment, income, and access to care. The NHS Race and Health Observatory, established in 2020, has recommended mandatory ethnicity data collection at all healthcare touchpoints and culturally competent service redesign, but implementation has been slow and patchy. The populations most affected — Black, South Asian, and mixed-heritage communities — are also more likely to live in deprived areas with fewer GP surgeries per head, longer waits for specialist referrals, and less access to preventive services.</p>
           </div>
         </section>
 
@@ -94,9 +94,9 @@ export default function RacialHealthGapPage() {
               unit="&times;"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Unchanged for 20 years &middot; 2019&ndash;21 MBRRACE data"
+              changeText="Unchanged for 20 years · 2019–21 MBRRACE data"
               sparklineData={[3.5, 3.6, 3.7, 3.7, 3.8, 3.7, 3.7, 3.7]}
-              href="#sec-detentions"source="MBRRACE-UK &middot; 2021"
+              href="#sec-detentions"source="MBRRACE-UK · 2021"
             />
             <MetricCard
               label="Mental Health Act: Black vs white detention rate"
@@ -104,9 +104,9 @@ export default function RacialHealthGapPage() {
               unit="&times;"
               direction="up"
               polarity="up-is-bad"
-              changeText="Black people detained at 4&times; rate per million vs white &middot; rising"
+              changeText="Black people detained at 4&times; rate per million vs white · rising"
               sparklineData={[3.5, 3.7, 3.8, 3.9, 4.0, 4.0]}
-              href="#sec-maternal"source="NHS Mental Health Act Stats &middot; 2022/23"
+              href="#sec-maternal"source="NHS Mental Health Act Stats · 2022/23"
             />
             <MetricCard
               label="South Asian T2 diabetes risk vs white"
@@ -124,8 +124,8 @@ export default function RacialHealthGapPage() {
         <ScrollReveal>
           <section id="sec-detentions" className="mb-12">
             <LineChart
-              title="Compulsory Mental Health Act detentions by ethnicity, 2016&ndash;2022"
-              subtitle="Detentions per million population. Black people are detained at roughly four times the rate of white people &mdash; a gap that has been widening."
+              title="Compulsory Mental Health Act detentions by ethnicity, 2016–2022"
+              subtitle="Detentions per million population. Black people are detained at roughly four times the rate of white people — a gap that has been widening."
               series={detentionSeries}
               yLabel="Detentions per million population"
               source={{
@@ -140,7 +140,7 @@ export default function RacialHealthGapPage() {
         <ScrollReveal>
           <section id="sec-maternal" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-2">Maternal mortality risk ratio by ethnicity</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">Relative risk of maternal death compared to white women. England &amp; Wales, 2019&ndash;21.</p>
+            <p className="text-sm text-wiah-mid font-mono mb-6">Relative risk of maternal death compared to white women. England &amp; Wales, 2019–21.</p>
             {data && (
               <div className="space-y-3">
                 {[...data.maternalMortalityRatio].sort((a, b) => b.riskRatio - a.riskRatio).map((item, idx) => (
@@ -160,7 +160,7 @@ export default function RacialHealthGapPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: MBRRACE-UK &mdash; Saving Lives, Improving Mothers&rsquo; Care, 2021</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: MBRRACE-UK — Saving Lives, Improving Mothers&rsquo; Care, 2021</p>
           </section>
         </ScrollReveal>
 
@@ -187,17 +187,17 @@ export default function RacialHealthGapPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Diabetes UK &mdash; Diabetes and ethnicity; NHS Digital QOF ethnicity data</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Diabetes UK — Diabetes and ethnicity; NHS Digital QOF ethnicity data</p>
           </section>
         </ScrollReveal>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>MBRRACE-UK &mdash; Saving Lives, Improving Mothers&rsquo; Care. Maternal mortality risk ratios by ethnicity. npeu.ox.ac.uk/mbrrace-uk</p>
-            <p>NHS Race and Health Observatory &mdash; Ethnic inequalities in healthcare. nhsrho.org</p>
-            <p>NHS England &mdash; Mental Health Act Statistics, Annual Figures. england.nhs.uk/mental-health/data</p>
-            <p>Diabetes UK &mdash; Diabetes and ethnicity overview. diabetes.org.uk</p>
+            <p>MBRRACE-UK — Saving Lives, Improving Mothers&rsquo; Care. Maternal mortality risk ratios by ethnicity. npeu.ox.ac.uk/mbrrace-uk</p>
+            <p>NHS Race and Health Observatory — Ethnic inequalities in healthcare. nhsrho.org</p>
+            <p>NHS England — Mental Health Act Statistics, Annual Figures. england.nhs.uk/mental-health/data</p>
+            <p>Diabetes UK — Diabetes and ethnicity overview. diabetes.org.uk</p>
             <p>Ethnic group comparisons are age-standardised where data permits. Maternal mortality risk ratios are adjusted for age. Mental Health Act detention rates are per million population by ethnic group. Diabetes risk multipliers are from population-based studies and may not reflect current clinical population characteristics.</p>
           </div>
         </section>

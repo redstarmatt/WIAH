@@ -355,21 +355,21 @@ export default function UniversitiesPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England&apos;s university funding model is built on a paradox. Students borrow an average
-              of &pound;44,940 to fund their degrees, yet only 23% of Plan 2 borrowers are expected to
+              England's university funding model is built on a paradox. Students borrow an average
+              of £44,940 to fund their degrees, yet only 23% of Plan 2 borrowers are expected to
               repay in full before their loans are written off after 30 years. The total student loan
-              book now exceeds &pound;268 billion &mdash; a figure that grows by roughly &pound;20 billion
-              each year &mdash; and the government bears the cost of unrepaid debt as a long-term fiscal
-              liability. Meanwhile, the &pound;9,250 fee cap was frozen for eight years until 2025,
+              book now exceeds £268 billion — a figure that grows by roughly £20 billion
+              each year — and the government bears the cost of unrepaid debt as a long-term fiscal
+              liability. Meanwhile, the £9,250 fee cap was frozen for eight years until 2025,
               eroding its real value by around 17% through inflation. Universities have become
               increasingly dependent on international student fees to close the gap.
             </p>
             <p>
-              The graduate earnings premium remains real: median graduate earnings are &pound;12,500 per
+              The graduate earnings premium remains real: median graduate earnings are £12,500 per
               year higher than for non-graduates, a gap that has widened over the past decade. But this
               average conceals stark variation. Medicine and economics graduates earn more than double
               those in creative arts five years after graduation. For some subjects and institutions,
-              the financial return on a degree is genuinely questionable &mdash; especially once
+              the financial return on a degree is genuinely questionable — especially once
               accumulated interest is factored in. The Office for Students now publishes outcome data
               by course, forcing a long-overdue reckoning with which degrees deliver value.
             </p>
@@ -466,9 +466,9 @@ export default function UniversitiesPage() {
                 The student debt mountain
               </h2>
               <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-                Total outstanding student debt has grown from &pound;47 billion in 2012 to &pound;269
-                billion in 2025 &mdash; expanding by roughly &pound;20 billion each year. Most of this
-                will never be repaid: the government&apos;s own forecasts suggest 77% of Plan 2
+                Total outstanding student debt has grown from £47 billion in 2012 to £269
+                billion in 2025 — expanding by roughly £20 billion each year. Most of this
+                will never be repaid: the government's own forecasts suggest 77% of Plan 2
                 borrowers will have their remaining balance written off after 30 years.
               </p>
             </div>
@@ -551,13 +551,13 @@ export default function UniversitiesPage() {
                   </div>
                   <div>
                     <p className="font-mono text-2xl font-bold text-wiah-black">
-                      &pound;{data.national.studentDebt.repaymentForecast.plan2ThresholdGBP.toLocaleString()}
+                      £{data.national.studentDebt.repaymentForecast.plan2ThresholdGBP.toLocaleString()}
                     </p>
                     <p className="text-xs text-wiah-mid mt-1">repayment threshold (Plan 2)</p>
                   </div>
                   <div>
                     <p className="font-mono text-2xl font-bold text-wiah-black">
-                      &pound;{data.national.studentDebt.repaymentForecast.plan5ThresholdGBP.toLocaleString()}
+                      £{data.national.studentDebt.repaymentForecast.plan5ThresholdGBP.toLocaleString()}
                     </p>
                     <p className="text-xs text-wiah-mid mt-1">repayment threshold (Plan 5)</p>
                   </div>
@@ -578,7 +578,7 @@ export default function UniversitiesPage() {
                 The graduate premium: real but uneven
               </h2>
               <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-                On average, graduates earn significantly more than non-graduates &mdash; and the gap
+                On average, graduates earn significantly more than non-graduates — and the gap
                 has been widening. But the average conceals enormous variation by subject. Medicine
                 graduates earn more than double those in creative arts five years after graduation.
               </p>
@@ -629,7 +629,7 @@ export default function UniversitiesPage() {
                           <tr key={row.subject} className="border-b border-wiah-border/50 hover:bg-wiah-light/50">
                             <td className="py-2 pr-4 text-sm">{row.subject}</td>
                             <td className="py-2 px-3 font-mono text-sm text-right font-bold">
-                              &pound;{row.medianGBP.toLocaleString()}
+                              £{row.medianGBP.toLocaleString()}
                             </td>
                             <td className="py-2 pl-3">
                               <div className="flex items-center gap-1">
@@ -653,7 +653,7 @@ export default function UniversitiesPage() {
                   </table>
                 </div>
                 <p className="font-mono text-[11px] text-wiah-mid mt-3">
-                  Source: DfE &mdash; Longitudinal Education Outcomes (LEO), Graduate and Postgraduate Outcomes 2022/23.
+                  Source: DfE — Longitudinal Education Outcomes (LEO), Graduate and Postgraduate Outcomes 2022/23.
                 </p>
               </section>
             </ScrollReveal>
@@ -683,10 +683,10 @@ export default function UniversitiesPage() {
           <ScrollReveal>
             <div className="mb-6 pt-4">
               <h2 className="text-xl font-bold text-wiah-black mb-2">
-                Degree classifications, 1995&ndash;2024
+                Degree classifications, 1995–2024
               </h2>
               <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-                In 1995, a first-class degree was rare &mdash; just 7% of graduates achieved one.
+                In 1995, a first-class degree was rare — just 7% of graduates achieved one.
                 By 2021, the figure had reached 36%, propelled by COVID-era no-detriment policies.
                 It has since eased to 31%, but the long-term trend is unmistakable: top grades have
                 become the norm, not the exception.
@@ -773,11 +773,11 @@ export default function UniversitiesPage() {
           <ScrollReveal>
             <div className="mb-6 pt-4">
               <h2 className="text-xl font-bold text-wiah-black mb-2">
-                The international student boom &mdash; and bust
+                The international student boom — and bust
               </h2>
               <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 International student numbers nearly doubled between 2019 and 2023, reaching 762,000.
-                Universities became heavily dependent on the fees they paid &mdash; often two to three
+                Universities became heavily dependent on the fees they paid — often two to three
                 times the domestic rate. Then came the January 2024 visa restrictions. Enrollment fell
                 sharply, and several universities now face serious financial pressure.
               </p>
@@ -863,7 +863,7 @@ export default function UniversitiesPage() {
                   </table>
                 </div>
                 <p className="font-mono text-[11px] text-wiah-mid mt-3">
-                  Source: HESA / Jisc &mdash; Higher Education Student Statistics UK, 2023/24.
+                  Source: HESA / Jisc — Higher Education Student Statistics UK, 2023/24.
                 </p>
               </section>
             </ScrollReveal>
@@ -893,7 +893,7 @@ export default function UniversitiesPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}

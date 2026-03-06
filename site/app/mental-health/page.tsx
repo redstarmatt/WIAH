@@ -152,7 +152,7 @@ export default function MentalHealthPage() {
     unit: '',
     direction: 'down' as const,
     polarity: 'up-is-good' as const,
-    changeText: '2023 · Down from 67 in 2010 · 27% cut · 1,000+ patients sent out-of-area per year · &pound;1M in OOA placements monthly',
+    changeText: '2023 · Down from 67 in 2010 · 27% cut · 1,000+ patients sent out-of-area per year · £1M in OOA placements monthly',
     sparklineData: [67, 65, 63, 61, 59, 57, 55, 53, 51, 50],
     onExpand: () => {},
   };
@@ -161,12 +161,14 @@ export default function MentalHealthPage() {
     <main>
       <TopicNav topic="Mental Health" />
 
-      <TopicHeader
-        topic="Mental Health"
-        question="Can You Actually Get Mental Health Support on the NHS?"
-        finding="1.9 million people are waiting for NHS mental health care. NHS talking therapies (IAPT) see 1.2 million people a year, but only 51% achieve recovery. CAMHS waiting times average 18 weeks for a first appointment. Mental health beds have fallen 27% since 2010."
-        colour="#264653"
-      />
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <TopicHeader
+          topic="Mental Health"
+          question="Can You Actually Get Mental Health Support on the NHS?"
+          finding="1.9 million people are waiting for NHS mental health care. NHS talking therapies (IAPT) see 1.2 million people a year, but only 51% achieve recovery. CAMHS waiting times average 18 weeks for a first appointment. Mental health beds have fallen 27% since 2010."
+          colour="#264653"
+        />
+      </div>
 
       {/* Metrics row */}
       <section className="max-w-5xl mx-auto px-6 py-10 border-b border-wiah-border">
@@ -182,7 +184,7 @@ export default function MentalHealthPage() {
         <section className="max-w-4xl mx-auto px-6 py-12 border-b border-wiah-border">
           {data && therapiesSeries.length > 0 && (
             <LineChart
-              title="NHS talking therapy referrals and completions, 2012&ndash;2023"
+              title="NHS talking therapy referrals and completions, 2012–2023"
               subtitle="NHS Talking Therapies (formerly IAPT) annual referral volume and treatment completions."
               series={therapiesSeries}
               yLabel="People (millions)"
@@ -202,7 +204,7 @@ export default function MentalHealthPage() {
         <section className="max-w-4xl mx-auto px-6 py-12 border-b border-wiah-border">
           {data && bedsSeries.length > 0 && (
             <LineChart
-              title="Mental health beds, England, 2010&ndash;2023"
+              title="Mental health beds, England, 2010–2023"
               subtitle="NHS mental illness beds per 100,000 population. Adjusted for population using ONS mid-year estimates."
               series={bedsSeries}
               yLabel="Beds per 100K"
@@ -247,11 +249,11 @@ export default function MentalHealthPage() {
       {/* Positive callout */}
       <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="1.24M"
-          unit="people completed NHS talking therapy in 2022/23 &mdash; the largest psychological therapy programme in the world"
-          description="NHS Talking Therapies (formerly IAPT &mdash; Improving Access to Psychological Therapies) is the world&apos;s largest publicly funded psychological therapy service. In 2022/23, 1.24 million people completed a course of treatment, with 51% achieving clinical recovery. The NHS Long-Term Plan (2019) committed &pound;2.3 billion for mental health, including expanding talking therapies to 1.9 million people per year by 2023/24. The Mental Health Investment Standard requires ICSs to grow their mental health spending faster than overall NHS funding year-on-year."
-          source="Source: NHS England &mdash; NHS Talking Therapies Annual Report 2022/23."
+          unit="people completed NHS talking therapy in 2022/23 — the largest psychological therapy programme in the world"
+          description="NHS Talking Therapies (formerly IAPT — Improving Access to Psychological Therapies) is the world's largest publicly funded psychological therapy service. In 2022/23, 1.24 million people completed a course of treatment, with 51% achieving clinical recovery. The NHS Long-Term Plan (2019) committed £2.3 billion for mental health, including expanding talking therapies to 1.9 million people per year by 2023/24. The Mental Health Investment Standard requires ICSs to grow their mental health spending faster than overall NHS funding year-on-year."
+          source="Source: NHS England — NHS Talking Therapies Annual Report 2022/23."
         />
       </ScrollReveal>
 
@@ -259,11 +261,11 @@ export default function MentalHealthPage() {
       <section className="max-w-2xl mx-auto px-6 py-12 border-b border-wiah-border text-wiah-black">
         <div className="text-base leading-[1.7] space-y-4">
           <p>
-            One in six adults experiences a mental health problem in any given week, yet an estimated 1.9 million people are now waiting for NHS mental health care of all kinds. NHS Talking Therapies received 1.4 million referrals in 2022/23 and 51% achieved clinical recovery &mdash; but that headline masks severe strain in CAMHS, where 35% of GP referrals are rejected at triage and those accepted wait an average of 18 weeks. Among 16&ndash;24-year-olds, 27% have a probable mental disorder &mdash; nearly double the rate recorded in 2000.
+            One in six adults experiences a mental health problem in any given week, yet an estimated 1.9 million people are now waiting for NHS mental health care of all kinds. NHS Talking Therapies received 1.4 million referrals in 2022/23 and 51% achieved clinical recovery — but that headline masks severe strain in CAMHS, where 35% of GP referrals are rejected at triage and those accepted wait an average of 18 weeks. Among 16–24-year-olds, 27% have a probable mental disorder — nearly double the rate recorded in 2000.
           </p>
 
           <p>
-            Inpatient beds have been cut 25% since 2010, forcing over 1,000 patients annually into out-of-area placements at a cost of &pound;6 million per month. The NHS Long-Term Plan (2019) committed &pound;2.3 billion and 10,000 additional staff. The Mental Health Act &mdash; last substantively reformed in 1983 &mdash; awaits replacement: a Mental Health Bill introduced in 2024 proposes ending indefinite detention for personality disorder and curbing police use of Section 136.
+            Inpatient beds have been cut 25% since 2010, forcing over 1,000 patients annually into out-of-area placements at a cost of £6 million per month. The NHS Long-Term Plan (2019) committed £2.3 billion and 10,000 additional staff. The Mental Health Act — last substantively reformed in 1983 — awaits replacement: a Mental Health Bill introduced in 2024 proposes ending indefinite detention for personality disorder and curbing police use of Section 136.
           </p>
         </div>
       </section>

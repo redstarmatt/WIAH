@@ -98,7 +98,7 @@ export default function PhysicalInactivityPage() {
         <TopicHeader
           topic="Physical Inactivity"
           question="Are We Getting Enough Exercise?"
-          finding="Less than two thirds of adults in England meet the recommended 150 minutes of moderate physical activity per week, and physical inactivity costs the NHS &pound;7.4 billion a year."
+          finding="Less than two thirds of adults in England meet the recommended 150 minutes of moderate physical activity per week, and physical inactivity costs the NHS £7.4 billion a year."
           colour="#2A9D8F"
           preposition="with"
         />
@@ -114,14 +114,14 @@ export default function PhysicalInactivityPage() {
         <ScrollReveal>
           <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
-              label="Adults meeting 150&ndash;min activity guidelines"
+              label="Adults meeting 150–min activity guidelines"
               value={latestAdult ? latestAdult.pctMeetingGuidelines.toString() : '—'}
               unit="%"
               direction="down"
               polarity="up-is-good"
-              changeText="2022 &middot; Was 66% pre-pandemic; recovered slowly"
+              changeText="2022 · Was 66% pre-pandemic; recovered slowly"
               sparklineData={[66, 67, 67, 67, 59, 61, 62]}
-              source="Sport England &mdash; Active Lives Survey"
+              source="Sport England — Active Lives Survey"
               href="#sec-overview"/>
             <MetricCard
               label="Physically inactive adults (under 30 min/week)"
@@ -131,17 +131,17 @@ export default function PhysicalInactivityPage() {
               polarity="up-is-bad"
               changeText="24% of adults; highest in most deprived areas"
               sparklineData={[10.2, 10.5, 10.8, 11.2, 11.5]}
-              source="Sport England &mdash; Active Lives Survey"
+              source="Sport England — Active Lives Survey"
               href="#sec-charts"/>
             <MetricCard
               label="NHS cost of physical inactivity (annual)"
               value="7.4"
-              unit="&pound;bn"
+              unit="£bn"
               direction="up"
               polarity="up-is-bad"
-              changeText="+&pound;5.5bn in wider economy costs"
+              changeText="+£5.5bn in wider economy costs"
               sparklineData={[5.2, 5.8, 6.4, 6.9, 7.4]}
-              source="Sport England &mdash; Sport England Insight"
+              source="Sport England — Sport England Insight"
               href="#sec-charts"/>
           </div>
         </ScrollReveal>
@@ -150,8 +150,8 @@ export default function PhysicalInactivityPage() {
         <section id="sec-context" className="py-12 border-t border-wiah-border">
           <h2 className="text-xl font-bold text-wiah-black mb-6">Context</h2>
           <div className="max-w-2xl text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 38% of adults in England &mdash; approximately 20 million people &mdash; do not meet the Chief Medical Officers&apos; guideline of 150 minutes of moderate activity per week. Physical inactivity costs the NHS &pound;7.4 billion annually and is attributed to roughly 1 in 6 UK deaths, a burden comparable to smoking. Unlike smoking, activity levels have remained stubbornly flat for most of the past decade, with a COVID-related dip in 2020 from which recovery has been only partial. Children&apos;s activity is a particular concern: only 47% of 5&ndash;16 year olds currently meet the 60-minutes-daily guideline, a decline that predates COVID, reflecting reduced PE time in schools, screen-based leisure, and contraction of free outdoor play.</p>
-            <p>The social gradient in physical activity is pronounced and drives long-term health inequality. Adults in the least deprived quintile meet activity guidelines at 67%; in the most deprived, that falls to 56%. Black and South Asian adults are less likely to be sufficiently active (52% and 54% respectively, versus 63% for white adults), reflecting structural factors including built environment quality, cultural programming in sport provision, and income. Women are less likely to meet guidelines than men across all age groups. Inactive children are more likely to become inactive adults; the compounding NHS demand effect is significant. The most effective interventions &mdash; parkrun, This Girl Can, street design that enables walking &mdash; share the feature of removing structural barriers rather than exhorting individual behaviour change.</p>
+            <p>Around 38% of adults in England — approximately 20 million people — do not meet the Chief Medical Officers' guideline of 150 minutes of moderate activity per week. Physical inactivity costs the NHS £7.4 billion annually and is attributed to roughly 1 in 6 UK deaths, a burden comparable to smoking. Unlike smoking, activity levels have remained stubbornly flat for most of the past decade, with a COVID-related dip in 2020 from which recovery has been only partial. Children's activity is a particular concern: only 47% of 5–16 year olds currently meet the 60-minutes-daily guideline, a decline that predates COVID, reflecting reduced PE time in schools, screen-based leisure, and contraction of free outdoor play.</p>
+            <p>The social gradient in physical activity is pronounced and drives long-term health inequality. Adults in the least deprived quintile meet activity guidelines at 67%; in the most deprived, that falls to 56%. Black and South Asian adults are less likely to be sufficiently active (52% and 54% respectively, versus 63% for white adults), reflecting structural factors including built environment quality, cultural programming in sport provision, and income. Women are less likely to meet guidelines than men across all age groups. Inactive children are more likely to become inactive adults; the compounding NHS demand effect is significant. The most effective interventions — parkrun, This Girl Can, street design that enables walking — share the feature of removing structural barriers rather than exhorting individual behaviour change.</p>
           </div>
         </section>
 
@@ -177,7 +177,7 @@ export default function PhysicalInactivityPage() {
           {childActivitySeries.length > 0 ? (
             <LineChart
               title="Children meeting physical activity guidelines, England"
-              subtitle="Percentage of 5&ndash;16 year olds achieving 60 minutes of activity per day. Sport England."
+              subtitle="Percentage of 5–16 year olds achieving 60 minutes of activity per day. Sport England."
               series={childActivitySeries}
               annotations={childActivityAnnotations}
               yLabel="Percentage (%)"
@@ -218,7 +218,7 @@ export default function PhysicalInactivityPage() {
                 })}
               </div>
               <p className="font-mono text-[11px] text-wiah-mid mt-3">
-                Source: Sport England &mdash; Active Lives Survey, 2022.
+                Source: Sport England — Active Lives Survey, 2022.
               </p>
             </div>
           )}
@@ -230,8 +230,8 @@ export default function PhysicalInactivityPage() {
             title="Parkrun: free, weekly, community exercise works"
             value="1,200+"
             unit="UK Parkrun events"
-            description="Parkrun &mdash; free, weekly, timed 5km runs in parks &mdash; now has over 1,200 events in the UK attracting 100,000+ participants each Saturday. Research published in the British Journal of Sports Medicine found that Parkrun participants substantially increased their physical activity, with the largest gains among those who were previously inactive. Participants report improved mental health, sense of community, and social connection. The model is cost-effective, scalable, and accessible across socioeconomic groups, demonstrating that removing barriers (cost, intimidation, structure) enables participation."
-            source="Source: Sport England &mdash; Active Lives Survey; Parkrun &mdash; Research Evidence."
+            description="Parkrun — free, weekly, timed 5km runs in parks — now has over 1,200 events in the UK attracting 100,000+ participants each Saturday. Research published in the British Journal of Sports Medicine found that Parkrun participants substantially increased their physical activity, with the largest gains among those who were previously inactive. Participants report improved mental health, sense of community, and social connection. The model is cost-effective, scalable, and accessible across socioeconomic groups, demonstrating that removing barriers (cost, intimidation, structure) enables participation."
+            source="Source: Sport England — Active Lives Survey; Parkrun — Research Evidence."
           />
         </ScrollReveal>
 
@@ -246,7 +246,7 @@ export default function PhysicalInactivityPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Sport England &mdash; Active Lives Survey (annual)
+                Sport England — Active Lives Survey (annual)
               </a>
             </li>
             <li>
@@ -256,7 +256,7 @@ export default function PhysicalInactivityPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                NHS &mdash; Physical Inactivity and Health Costs
+                NHS — Physical Inactivity and Health Costs
               </a>
             </li>
             <li>
@@ -266,12 +266,12 @@ export default function PhysicalInactivityPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Parkrun &mdash; Weekly 5K Running Events
+                Parkrun — Weekly 5K Running Events
               </a>
             </li>
           </ul>
           <p className="font-mono text-xs text-wiah-mid mt-4">
-            Data is sourced from Sport England&apos;s Active Lives Survey, an annual survey of physical activity participation among adults and children in England. The survey uses a representative sample of approximately 168,000 respondents aged 5+. NHS cost estimates derive from analysis of healthcare spending related to physical inactivity. All figures are for England; UK-wide data may differ.
+            Data is sourced from Sport England's Active Lives Survey, an annual survey of physical activity participation among adults and children in England. The survey uses a representative sample of approximately 168,000 respondents aged 5+. NHS cost estimates derive from analysis of healthcare spending related to physical inactivity. All figures are for England; UK-wide data may differ.
           </p>
           <div className="mt-4">
             <p className="font-mono text-xs text-wiah-mid font-bold mb-1">Known issues:</p>

@@ -37,7 +37,7 @@ interface LineChartProps {
   };
 }
 
-const MARGIN = { top: 24, right: 24, bottom: 40, left: 56 };
+const MARGIN = { top: 24, right: 24, bottom: 40, left: 72 };
 const COLOURS = ['#0D1117', '#E63946', '#2A9D8F', '#F4A261'];
 
 export default function LineChart({
@@ -83,15 +83,22 @@ export default function LineChart({
     const innerHeight = height - MARGIN.top - MARGIN.bottom;
 
     // Scales
-    const allDates = series.flatMap(s => s.data.map(d => d.date));
+    // Filter to valid Date objects only — guards against undefined/null/NaN dates in data
+    const allDates = series
+      .flatMap(s => s.data.map(d => d.date))
+      .filter((d): d is Date => d instanceof Date && !isNaN(d.getTime()));
     const allValues = series.flatMap(s => s.data.map(d => d.value));
     if (targetLine) allValues.push(targetLine.value);
+
+    if (allDates.length === 0) return;
 
     const [yMin, yMax] = d3.extent(allValues) as [number, number];
     const yPadding = (yMax - yMin) * 0.1;
 
+    const dateExtent = d3.extent(allDates) as [Date, Date];
+
     const x = d3.scaleTime()
-      .domain(d3.extent(allDates) as [Date, Date])
+      .domain(dateExtent)
       .range([0, innerWidth]);
 
     const hasNegativeValues = allValues.some(v => v < 0);
@@ -119,12 +126,16 @@ export default function LineChart({
         .attr('stroke-width', 1)
       );
 
-    // X axis
+    // X axis — responsive tick count: fewer ticks on narrow viewports
+    const yearRange = dateExtent[1].getFullYear() - dateExtent[0].getFullYear();
+    const targetTicks = width < 400 ? 4 : width < 700 ? 6 : 8;
+    const tickInterval = Math.max(1, Math.ceil(yearRange / targetTicks));
+
     g.append('g')
       .attr('transform', `translate(0,${innerHeight})`)
       .call(
         d3.axisBottom(x)
-          .ticks(d3.timeYear.every(Math.ceil((d3.extent(allDates) as [Date, Date])[1].getFullYear() - (d3.extent(allDates) as [Date, Date])[0].getFullYear()) / 8) || 1)
+          .ticks(d3.timeYear.every(tickInterval))
           .tickFormat(d3.timeFormat('%Y') as (d: Date | d3.NumberValue, i: number) => string)
           .tickSizeOuter(0)
       )
@@ -186,11 +197,12 @@ export default function LineChart({
         .text(targetLine.label);
     }
 
-    // Annotation lines
+    // Annotation lines — limit to 2 on mobile to avoid label pileup
     if (annotations) {
-      annotations.forEach((ann, annIdx) => {
+      const visibleAnnotations = width < 500 ? annotations.slice(0, 2) : annotations;
+      visibleAnnotations.forEach((ann, annIdx) => {
         const ax = x(ann.date);
-        const labelY = 12 + annIdx * 14; // stagger vertically to avoid overlap
+        const labelY = 12 + annIdx * 16; // stagger vertically to avoid overlap
         g.append('line')
           .attr('x1', ax)
           .attr('x2', ax)

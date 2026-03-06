@@ -66,14 +66,14 @@ export default function NHSWaitingListsPage() {
         <TopicHeader
           topic="NHS Waiting Lists"
           question="How long are NHS waiting lists?"
-          finding="Over 7.5 million people are waiting for elective NHS treatment in England &mdash; equivalent to one in eight of the population &mdash; with over 300,000 waiting more than a year."
+          finding="Over 7.5 million people are waiting for elective NHS treatment in England — equivalent to one in eight of the population — with over 300,000 waiting more than a year."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The NHS elective waiting list peaked at 7.6 million in late 2023, from 4.4 million before the pandemic &mdash; equivalent to one in eight of the population. The 18-week referral-to-treatment standard was met for virtually all patients in 2012; it has been breached consistently since 2014 and never recovered. The pandemic caused an acute shock &mdash; elective procedures were suspended for months &mdash; but the problem predates COVID-19: capacity in beds, theatre time, and diagnostic equipment was already under strain. NHS productivity fell an estimated 20% during and after the pandemic and has not fully recovered. Orthopaedics, ophthalmology, and gastroenterology carry the longest queues; almost no specialty meets its targets. The list has begun to fall slowly from its peak, but median wait has risen from 8.4 weeks in 2019 to 14.5 weeks.</p>
-            <p>Waiting has real clinical consequences. Conditions deteriorate between referral and treatment: a hip that was manageable may worsen; a cancer caught early may progress. Mental health patients unable to access timely support often reach crisis point, generating acute admissions more expensive than earlier intervention. The economic cost of sickness absence from people on waiting lists runs into billions annually, rarely attributed to waiting times in public accounts. An estimated 13,000&ndash;14,000 beds occupied daily by discharge-delayed patients directly reduces capacity to treat new admissions. The headline of 7.6 million understates true unmet need: it counts only those formally referred &mdash; not those who could not get a GP appointment, those who disengaged, or the 1.9 million in mental health services whose waits are tracked separately.</p>
+            <p>The NHS elective waiting list peaked at 7.6 million in late 2023, from 4.4 million before the pandemic — equivalent to one in eight of the population. The 18-week referral-to-treatment standard was met for virtually all patients in 2012; it has been breached consistently since 2014 and never recovered. The pandemic caused an acute shock — elective procedures were suspended for months — but the problem predates COVID-19: capacity in beds, theatre time, and diagnostic equipment was already under strain. NHS productivity fell an estimated 20% during and after the pandemic and has not fully recovered. Orthopaedics, ophthalmology, and gastroenterology carry the longest queues; almost no specialty meets its targets. The list has begun to fall slowly from its peak, but median wait has risen from 8.4 weeks in 2019 to 14.5 weeks.</p>
+            <p>Waiting has real clinical consequences. Conditions deteriorate between referral and treatment: a hip that was manageable may worsen; a cancer caught early may progress. Mental health patients unable to access timely support often reach crisis point, generating acute admissions more expensive than earlier intervention. The economic cost of sickness absence from people on waiting lists runs into billions annually, rarely attributed to waiting times in public accounts. An estimated 13,000–14,000 beds occupied daily by discharge-delayed patients directly reduces capacity to treat new admissions. The headline of 7.6 million understates true unmet need: it counts only those formally referred — not those who could not get a GP appointment, those who disengaged, or the 1.9 million in mental health services whose waits are tracked separately.</p>
           </div>
         </section>
 
@@ -166,7 +166,7 @@ export default function NHSWaitingListsPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England &mdash; Referral to Treatment Statistics 2023</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England — Referral to Treatment Statistics 2023</p>
           </section>
         </ScrollReveal>
 
@@ -175,8 +175,8 @@ export default function NHSWaitingListsPage() {
             title="Elective Recovery Fund delivering results"
             value="Two-year"
             unit="waiters eliminated by early 2023"
-            description="NHS England&apos;s Elective Recovery Plan set a target to eliminate waits of over two years by July 2022, then one year by March 2025. Two-year waiters were effectively eliminated by early 2023. Progress on 52-week waiters has been slower &mdash; but the total list has begun to fall in some months for the first time since 2021."
-            source="Source: NHS England &mdash; Elective Recovery Plan 2023–2025"
+            description="NHS England's Elective Recovery Plan set a target to eliminate waits of over two years by July 2022, then one year by March 2025. Two-year waiters were effectively eliminated by early 2023. Progress on 52-week waiters has been slower — but the total list has begun to fall in some months for the first time since 2021."
+            source="Source: NHS England — Elective Recovery Plan 2023–2025"
           />
         </ScrollReveal>
       </main>

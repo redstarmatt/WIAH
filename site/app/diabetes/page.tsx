@@ -97,16 +97,16 @@ export default function DiabetesPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Diabetes"
-          question="Is Britain&apos;s Diabetes Epidemic Under Control?"
-          finding="5.6 million people in the UK have diabetes &mdash; 4.4 million diagnosed, 1.2 million undiagnosed. Type 2 diabetes has tripled since the 1990s. The NHS spends &pound;10 billion a year on diabetes care &mdash; 10% of its total budget. But 1.2 million people are at high risk of developing Type 2 diabetes and are on the NHS Diabetes Prevention Programme."
+          question="Is Britain's Diabetes Epidemic Under Control?"
+          finding="5.6 million people in the UK have diabetes — 4.4 million diagnosed, 1.2 million undiagnosed. Type 2 diabetes has tripled since the 1990s. The NHS spends £10 billion a year on diabetes care — 10% of its total budget. But 1.2 million people are at high risk of developing Type 2 diabetes and are on the NHS Diabetes Prevention Programme."
           colour="#F4A261"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>4.3 million people in the UK have been diagnosed with diabetes, with an estimated 850,000 more undiagnosed; nine in ten cases are Type 2, driven predominantly by weight, inactivity, and metabolic risk. The NHS spends around &pound;10 billion a year on diabetes &mdash; roughly 10% of its entire budget &mdash; including treatment of complications that adequate management could prevent: 8,000 diabetes-related amputations per year and a leading share of working-age blindness. Nationally, 68% of people with Type 2 diabetes meet their HbA1c target, but the eight annual care processes &mdash; foot examination, retinal screening, kidney function tests &mdash; are completed in full for only 39% of patients. The NHS Diabetes Prevention Programme now reaches around 200,000 high-risk people a year, with evidence that 37% of completers avoid progressing to diagnosis, though the programme reaches only a fraction of those eligible. NICE has recommended hybrid closed-loop insulin systems for all eligible Type 1 patients; the rollout is behind schedule due to supply chain and workforce constraints.</p>
-            <p>Deprivation and ethnicity structure both risk and access. People in the most deprived quintile are twice as likely to develop Type 2 diabetes as those in the least deprived, while South Asian communities develop Type 2 at significantly lower BMI thresholds and a decade earlier on average &mdash; with important implications for screening thresholds that NHS policy has only partially addressed. Referral rates to prevention programmes vary widely by GP practice and region. Type 1 diabetes affects around 400,000 people and carries no lifestyle component, but access to the monitoring and insulin technology that transforms management outcomes correlates strongly with where someone lives and their ability to advocate for themselves within a system that allocates technology inconsistently.</p>
+            <p>4.3 million people in the UK have been diagnosed with diabetes, with an estimated 850,000 more undiagnosed; nine in ten cases are Type 2, driven predominantly by weight, inactivity, and metabolic risk. The NHS spends around £10 billion a year on diabetes — roughly 10% of its entire budget — including treatment of complications that adequate management could prevent: 8,000 diabetes-related amputations per year and a leading share of working-age blindness. Nationally, 68% of people with Type 2 diabetes meet their HbA1c target, but the eight annual care processes — foot examination, retinal screening, kidney function tests — are completed in full for only 39% of patients. The NHS Diabetes Prevention Programme now reaches around 200,000 high-risk people a year, with evidence that 37% of completers avoid progressing to diagnosis, though the programme reaches only a fraction of those eligible. NICE has recommended hybrid closed-loop insulin systems for all eligible Type 1 patients; the rollout is behind schedule due to supply chain and workforce constraints.</p>
+            <p>Deprivation and ethnicity structure both risk and access. People in the most deprived quintile are twice as likely to develop Type 2 diabetes as those in the least deprived, while South Asian communities develop Type 2 at significantly lower BMI thresholds and a decade earlier on average — with important implications for screening thresholds that NHS policy has only partially addressed. Referral rates to prevention programmes vary widely by GP practice and region. Type 1 diabetes affects around 400,000 people and carries no lifestyle component, but access to the monitoring and insulin technology that transforms management outcomes correlates strongly with where someone lives and their ability to advocate for themselves within a system that allocates technology inconsistently.</p>
           </div>
         </section>
 
@@ -124,7 +124,7 @@ export default function DiabetesPage() {
               value="4.4M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; Up from 1.4M in 1998 &middot; 1.2M estimated undiagnosed &middot; 5M at risk of Type 2 &middot; NHS cost: &pound;10bn/year"
+              changeText="2023 · Up from 1.4M in 1998 · 1.2M estimated undiagnosed · 5M at risk of Type 2 · NHS cost: £10bn/year"
               sparklineData={[1.4, 1.6, 1.8, 2.0, 2.3, 2.6, 2.9, 3.2, 3.5, 3.7, 3.9, 4.1, 4.3, 4.4]}
               href="#sec-overview"/>
             <MetricCard
@@ -132,7 +132,7 @@ export default function DiabetesPage() {
               value="680K"
               direction="up"
               polarity="up-is-good"
-              changeText="2023 cumulative &middot; Programme launched 2016 &middot; Targets high-risk prediabetes &middot; Reduces Type 2 onset by 37%"
+              changeText="2023 cumulative · Programme launched 2016 · Targets high-risk prediabetes · Reduces Type 2 onset by 37%"
               sparklineData={[10, 60, 150, 250, 310, 420, 550, 680]}
               href="#sec-prevalence"/>
             <MetricCard
@@ -140,7 +140,7 @@ export default function DiabetesPage() {
               value="8,000"
               direction="down"
               polarity="up-is-bad"
-              changeText="2023 &middot; Down from 10,000 in 2018 &middot; Still 20% higher than European average &middot; Preventable with good glucose control"
+              changeText="2023 · Down from 10,000 in 2018 · Still 20% higher than European average · Preventable with good glucose control"
               sparklineData={[9800, 9500, 9200, 8800, 8500, 8200, 8000, 8000]}
               href="#sec-prevention"/>
           </div>
@@ -149,7 +149,7 @@ export default function DiabetesPage() {
         <ScrollReveal>
           <section id="sec-prevalence" className="mb-12">
             <LineChart
-              title="Diagnosed diabetes prevalence, 1998&ndash;2023"
+              title="Diagnosed diabetes prevalence, 1998–2023"
               subtitle="Registered Type 1 and Type 2 diabetes, England"
               series={prevalenceSeries}
               yLabel="Diagnosed diabetes (millions)"
@@ -166,7 +166,7 @@ export default function DiabetesPage() {
         <ScrollReveal>
           <section id="sec-prevention" className="mb-12">
             <LineChart
-              title="NHS Diabetes Prevention Programme enrolments, 2016&ndash;2023"
+              title="NHS Diabetes Prevention Programme enrolments, 2016–2023"
               subtitle="Cumulative people enrolled in the NDPP (England)"
               series={preventionSeries}
               yLabel="Enrolments (thousands)"
@@ -200,17 +200,17 @@ export default function DiabetesPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England &mdash; National Diabetes Audit 2022/23</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England — National Diabetes Audit 2022/23</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="680K"
             unit="people enrolled in the NHS Diabetes Prevention Programme since 2016"
-            description="The NHS Diabetes Prevention Programme (NDPP) &mdash; the world&apos;s largest national diabetes prevention programme &mdash; has enrolled 680,000 high-risk individuals since its 2016 launch. NICE evidence shows the programme reduces Type 2 diabetes onset by 37% over two years. An estimated 5 million people in England are living with prediabetes (blood glucose above normal but below diagnostic threshold) &mdash; the programme targets this group. Diabetes-related amputations have fallen from 10,000 to 8,000 a year. The Libre flash glucose monitoring system has been made available to all Type 1 patients on the NHS, reducing HbA1c levels and emergency admissions."
-            source="Source: Diabetes UK &mdash; Diabetes Statistics 2024; NHS England &mdash; National Diabetes Audit 2022/23."
+            description="The NHS Diabetes Prevention Programme (NDPP) — the world's largest national diabetes prevention programme — has enrolled 680,000 high-risk individuals since its 2016 launch. NICE evidence shows the programme reduces Type 2 diabetes onset by 37% over two years. An estimated 5 million people in England are living with prediabetes (blood glucose above normal but below diagnostic threshold) — the programme targets this group. Diabetes-related amputations have fallen from 10,000 to 8,000 a year. The Libre flash glucose monitoring system has been made available to all Type 1 patients on the NHS, reducing HbA1c levels and emergency admissions."
+            source="Source: Diabetes UK — Diabetes Statistics 2024; NHS England — National Diabetes Audit 2022/23."
           />
         </ScrollReveal>
 
@@ -220,7 +220,7 @@ export default function DiabetesPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

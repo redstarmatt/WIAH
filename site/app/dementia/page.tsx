@@ -115,7 +115,7 @@ export default function DementiaPage() {
               value="63.4%"
               direction="down"
               polarity="up-is-good"
-              changeText="Target 66.7% &mdash; last met 2019"
+              changeText="Target 66.7% — last met 2019"
               onExpand={() => {}}
             />
             <MetricCard
@@ -133,8 +133,8 @@ export default function DementiaPage() {
           <h2 className="text-xl font-bold text-wiah-black mb-6">Context</h2>
           <div className="max-w-2xl mt-4 mb-12">
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Dementia is the UK&apos;s leading cause of death, responsible for around 66,000 deaths per year and having overtaken heart disease in 2011. An estimated 944,000 people in the UK live with the condition now; by 2040, as the population ages, that figure is projected to reach 1.6 million. The total cost to the UK economy is &pound;34.7 billion per year &mdash; more than cancer, heart disease, and stroke combined, according to the Alzheimer&apos;s Society. Direct NHS costs account for &pound;4.3 billion; social care costs &pound;16.4 billion; and unpaid family carers absorb an estimated &pound;13.9 billion of largely invisible labour. Dementia is not merely a health crisis: it is a fiscal and social one that scales with an ageing society.</p>
-              <p>Only 63.4% of estimated cases carry a formal diagnosis &mdash; below the NHS target of 66.7%, and a level last consistently met before 2019. The COVID-19 pandemic caused diagnosis activity to collapse to 55.7%, creating a backlog that has not fully cleared. Late or absent diagnosis matters because it delays access to treatment, support, and legal planning. Two-thirds of people with dementia live at home rather than in care, supported overwhelmingly by unpaid family carers who provide an average of 71 hours of care per week. This is not a choice made in full knowledge of alternatives: it is the structural consequence of a social care system that cannot absorb the scale of need. The carer burden &mdash; physical, financial, and psychological &mdash; is itself a significant public health issue.</p>
+              <p>Dementia is the UK's leading cause of death, responsible for around 66,000 deaths per year and having overtaken heart disease in 2011. An estimated 944,000 people in the UK live with the condition now; by 2040, as the population ages, that figure is projected to reach 1.6 million. The total cost to the UK economy is £34.7 billion per year — more than cancer, heart disease, and stroke combined, according to the Alzheimer's Society. Direct NHS costs account for £4.3 billion; social care costs £16.4 billion; and unpaid family carers absorb an estimated £13.9 billion of largely invisible labour. Dementia is not merely a health crisis: it is a fiscal and social one that scales with an ageing society.</p>
+              <p>Only 63.4% of estimated cases carry a formal diagnosis — below the NHS target of 66.7%, and a level last consistently met before 2019. The COVID-19 pandemic caused diagnosis activity to collapse to 55.7%, creating a backlog that has not fully cleared. Late or absent diagnosis matters because it delays access to treatment, support, and legal planning. Two-thirds of people with dementia live at home rather than in care, supported overwhelmingly by unpaid family carers who provide an average of 71 hours of care per week. This is not a choice made in full knowledge of alternatives: it is the structural consequence of a social care system that cannot absorb the scale of need. The carer burden — physical, financial, and psychological — is itself a significant public health issue.</p>
             </div>
           </div>
         </section>
@@ -142,7 +142,7 @@ export default function DementiaPage() {
         <PositiveCallout
           title="New drug treatments emerging"
           value="−35%"
-          description="Lecanemab and donanemab &mdash; the first drugs shown to slow Alzheimer&apos;s progression &mdash; received FDA approval in 2023. NICE is currently evaluating both for NHS use. They slow cognitive decline by around 35% in early-stage patients."
+          description="Lecanemab and donanemab — the first drugs shown to slow Alzheimer's progression — received FDA approval in 2023. NICE is currently evaluating both for NHS use. They slow cognitive decline by around 35% in early-stage patients."
           source="Source: FDA &amp; NICE"
         />
 
@@ -209,7 +209,7 @@ export default function DementiaPage() {
             Sources &amp; methodology
           </h2>
           <div className="space-y-2 font-mono text-xs text-wiah-mid">
-            <p>Dementia prevalence and diagnosis rates: Alzheimer&apos;s Society, 2024</p>
+            <p>Dementia prevalence and diagnosis rates: Alzheimer's Society, 2024</p>
             <p>
               Carer hours and care breakdown: Carers UK, 2023 State of Caring Report
             </p>

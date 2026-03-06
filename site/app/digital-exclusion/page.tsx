@@ -78,8 +78,8 @@ export default function DigitalExclusionPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Between 8 and 10 million adults in the UK lack basic digital skills, according to the Lloyds Bank Digital Index; around 1.5 million households have no broadband or mobile internet access at all. Digital exclusion clusters around age &mdash; around half of people over 75 lack the skills to carry out basic online tasks &mdash; but disability, low income, low educational attainment, and rural location are all independent predictors. The practical cost of being offline has risen sharply as GP appointment booking, Universal Credit management, HMRC self-assessment, and banking have all migrated predominantly online: more than 6,000 bank branches have closed since 2015. Libraries serve as de facto digital access infrastructure for many excluded groups, but the library network has contracted significantly since 2010, with around 800 closed. The UK&apos;s digital inclusion strategy dates from 2014 and has not been substantively updated since; provision has been left largely to third-sector organisations.</p>
-            <p>Digital exclusion is not primarily an elderly issue. Working-age adults with learning disabilities, cognitive impairments, or low literacy &mdash; an estimated 7.1 million in England &mdash; face barriers that are structural rather than generational. The NHS App illustrates the tension directly: for the digitally confident it offers improved access to records and services; for those without smartphones, reliable data, or the skills to navigate it, it risks becoming another point at which the health service becomes harder to reach. The same people already facing health inequality, poverty, and limited public service access are disproportionately the population for whom digital migration compounds disadvantage rather than reducing it.</p>
+            <p>Between 8 and 10 million adults in the UK lack basic digital skills, according to the Lloyds Bank Digital Index; around 1.5 million households have no broadband or mobile internet access at all. Digital exclusion clusters around age — around half of people over 75 lack the skills to carry out basic online tasks — but disability, low income, low educational attainment, and rural location are all independent predictors. The practical cost of being offline has risen sharply as GP appointment booking, Universal Credit management, HMRC self-assessment, and banking have all migrated predominantly online: more than 6,000 bank branches have closed since 2015. Libraries serve as de facto digital access infrastructure for many excluded groups, but the library network has contracted significantly since 2010, with around 800 closed. The UK's digital inclusion strategy dates from 2014 and has not been substantively updated since; provision has been left largely to third-sector organisations.</p>
+            <p>Digital exclusion is not primarily an elderly issue. Working-age adults with learning disabilities, cognitive impairments, or low literacy — an estimated 7.1 million in England — face barriers that are structural rather than generational. The NHS App illustrates the tension directly: for the digitally confident it offers improved access to records and services; for those without smartphones, reliable data, or the skills to navigate it, it risks becoming another point at which the health service becomes harder to reach. The same people already facing health inequality, poverty, and limited public service access are disproportionately the population for whom digital migration compounds disadvantage rather than reducing it.</p>
           </div>
         </section>
 
@@ -171,7 +171,7 @@ export default function DigitalExclusionPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Office for National Statistics &mdash; Internet Users Survey</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Office for National Statistics — Internet Users Survey</p>
           </section>
         </ScrollReveal>
 
@@ -180,7 +180,7 @@ export default function DigitalExclusionPage() {
             title="Good Things Foundation reaches 1 million people"
             value="1M"
             unit="people"
-            description="The Good Things Foundation, which runs the Digital Unite and Online Centres Network, has helped over 1 million people develop digital skills through community venues including libraries, housing associations and food banks. Its research consistently shows that supported digital skills training &mdash; not just access provision &mdash; is what gets excluded groups online."
+            description="The Good Things Foundation, which runs the Digital Unite and Online Centres Network, has helped over 1 million people develop digital skills through community venues including libraries, housing associations and food banks. Its research consistently shows that supported digital skills training — not just access provision — is what gets excluded groups online."
             source="Source: Good Things Foundation"
           />
         </ScrollReveal>
@@ -191,7 +191,7 @@ export default function DigitalExclusionPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

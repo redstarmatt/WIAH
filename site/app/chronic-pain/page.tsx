@@ -84,14 +84,14 @@ export default function ChronicPainPage() {
         <TopicHeader
           topic="Chronic Pain"
           question="Why Are 28 Million People in Pain?"
-          finding="Chronic pain affects an estimated 28 million adults in the UK &mdash; more than 40% of the population. It is the leading cause of disability and costs the economy 37 million lost working days per year, yet specialist pain clinic waits average 28 weeks."
+          finding="Chronic pain affects an estimated 28 million adults in the UK — more than 40% of the population. It is the leading cause of disability and costs the economy 37 million lost working days per year, yet specialist pain clinic waits average 28 weeks."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Chronic pain &mdash; pain persisting for three months or more &mdash; affects an estimated 28 million adults in the UK, up from 18 million in 2012, of whom around 8 million have severely disabling pain. It is the leading reason people visit their GP, the largest single cause of work disability, and a primary driver of opioid prescribing and economic inactivity, yet receives a fraction of the research funding of conditions with comparable burden. The average wait for a specialist NHS pain clinic appointment is 28 weeks &mdash; down from a post-COVID peak of 38 weeks but still nearly seven months. The Faculty of Pain Medicine estimates England needs 1,200 pain medicine consultants; it has around 450. Some integrated care boards commission no standalone pain service at all.</p>
-            <p>Chronic pain accounts for 36.8 million lost working days per year &mdash; more than any other health condition &mdash; and costs the economy an estimated &pound;12&ndash;14 billion annually in lost productivity. It is a major driver of the post-COVID rise in economic inactivity, with musculoskeletal and pain conditions the most commonly cited reason for long-term sickness. Prevalence is highest in the most deprived communities, mirroring almost every other health inequality, and women are disproportionately affected. Community pain management programmes with a strong evidence base are patchily available and often have their own waiting lists.</p>
+            <p>Chronic pain — pain persisting for three months or more — affects an estimated 28 million adults in the UK, up from 18 million in 2012, of whom around 8 million have severely disabling pain. It is the leading reason people visit their GP, the largest single cause of work disability, and a primary driver of opioid prescribing and economic inactivity, yet receives a fraction of the research funding of conditions with comparable burden. The average wait for a specialist NHS pain clinic appointment is 28 weeks — down from a post-COVID peak of 38 weeks but still nearly seven months. The Faculty of Pain Medicine estimates England needs 1,200 pain medicine consultants; it has around 450. Some integrated care boards commission no standalone pain service at all.</p>
+            <p>Chronic pain accounts for 36.8 million lost working days per year — more than any other health condition — and costs the economy an estimated £12–14 billion annually in lost productivity. It is a major driver of the post-COVID rise in economic inactivity, with musculoskeletal and pain conditions the most commonly cited reason for long-term sickness. Prevalence is highest in the most deprived communities, mirroring almost every other health inequality, and women are disproportionately affected. Community pain management programmes with a strong evidence base are patchily available and often have their own waiting lists.</p>
           </div>
         </section>
 
@@ -111,7 +111,7 @@ export default function ChronicPainPage() {
               unit="million"
               direction="up"
               polarity="up-is-bad"
-              changeText="UK, 2024 &middot; Up from 18M in 2012 &middot; Leading cause of disability"
+              changeText="UK, 2024 · Up from 18M in 2012 · Leading cause of disability"
               sparklineData={[18.2, 20.1, 22.4, 24.6, 25.8, 27.1, 28.0]}
               href="#sec-prevalence"/>
             <MetricCard
@@ -120,7 +120,7 @@ export default function ChronicPainPage() {
               unit="million"
               direction="up"
               polarity="up-is-bad"
-              changeText="2024 &middot; More than any other condition &middot; Key driver of economic inactivity"
+              changeText="2024 · More than any other condition · Key driver of economic inactivity"
               sparklineData={[24.8, 26.3, 28.1, 30.4, 34.2, 36.8]}
               href="#sec-work"/>
             <MetricCard
@@ -129,7 +129,7 @@ export default function ChronicPainPage() {
               unit="weeks"
               direction="down"
               polarity="up-is-bad"
-              changeText="2024 &middot; Down from 38-week COVID peak &middot; Some areas have no service"
+              changeText="2024 · Down from 38-week COVID peak · Some areas have no service"
               sparklineData={[18, 20, 22, 24, 32, 38, 34, 30, 28]}
               href="#sec-waits"/>
           </div>
@@ -138,7 +138,7 @@ export default function ChronicPainPage() {
         <ScrollReveal>
           <section id="sec-prevalence" className="mb-12">
             <LineChart
-              title="Estimated chronic pain prevalence, UK, 2012&ndash;2024"
+              title="Estimated chronic pain prevalence, UK, 2012–2024"
               subtitle="Adults reporting pain lasting 3 or more months, in millions."
               series={prevalenceSeries}
               yLabel="Millions affected"
@@ -154,7 +154,7 @@ export default function ChronicPainPage() {
         <ScrollReveal>
           <section id="sec-work" className="mb-12">
             <LineChart
-              title="Working days lost to chronic pain, UK, 2014&ndash;2024"
+              title="Working days lost to chronic pain, UK, 2014–2024"
               subtitle="Millions of working days lost per year due to musculoskeletal and pain conditions."
               series={workSeries}
               yLabel="Days lost (millions)"
@@ -170,7 +170,7 @@ export default function ChronicPainPage() {
         <ScrollReveal>
           <section id="sec-waits" className="mb-12">
             <LineChart
-              title="Average wait for specialist pain clinic, England, 2016&ndash;2024"
+              title="Average wait for specialist pain clinic, England, 2016–2024"
               subtitle="Weeks from referral to first appointment at a specialist pain management service."
               series={waitSeries}
               yLabel="Weeks"
@@ -186,9 +186,9 @@ export default function ChronicPainPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Versus Arthritis / NICE &mdash; Chronic pain prevalence estimates, derived from Health Survey for England and GP practice data. Uses the broadest validated definition (pain lasting 3+ months). Retrieved March 2026.</p>
-            <p>Health and Safety Executive &mdash; Working days lost statistics, from the Labour Force Survey. Musculoskeletal conditions including chronic pain. Published annually.</p>
-            <p>Faculty of Pain Medicine &mdash; National pain audit and workforce survey. Pain clinic waiting times and consultant numbers. Published periodically.</p>
+            <p>Versus Arthritis / NICE — Chronic pain prevalence estimates, derived from Health Survey for England and GP practice data. Uses the broadest validated definition (pain lasting 3+ months). Retrieved March 2026.</p>
+            <p>Health and Safety Executive — Working days lost statistics, from the Labour Force Survey. Musculoskeletal conditions including chronic pain. Published annually.</p>
+            <p>Faculty of Pain Medicine — National pain audit and workforce survey. Pain clinic waiting times and consultant numbers. Published periodically.</p>
             <p>Prevalence estimates vary substantially by definition: 28 million uses the broadest measure (any pain 3+ months); severe and disabling chronic pain is estimated at 8 million. Work impact data combines HSE figures for musculoskeletal conditions with DWP data on health-related economic inactivity. Pain clinic wait data is incomplete as some ICBs do not commission standalone pain services.</p>
           </div>
         </section>

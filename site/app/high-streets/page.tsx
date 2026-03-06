@@ -266,27 +266,27 @@ export default function HighStreetsPage() {
                 Britain has the highest retail vacancy rate in Europe: 14%, against an EU average of roughly 8%. More
                 than 50,000 stores have closed on a net basis since 2015, with every single year recording more
                 shuttered shopfronts than new openings. The worst year was 2020, when 9,092 net closures were logged
-                in a single twelve-month period; 2024 still saw 5,234. The carnage of 2019 was emblematic&mdash;Debenhams
+                in a single twelve-month period; 2024 still saw 5,234. The carnage of 2019 was emblematic—Debenhams
                 (2,500 jobs), Arcadia (13,000 jobs), Bonmarch&eacute;, Thomas Cook, and Mothercare all collapsed within
                 months of each other. Footfall has stabilised at 86% of its 2019 level, but the composition has
                 shifted: more leisure visits, fewer shopping trips, shorter dwell times.
               </p>
               <p>
                 The structural driver is digital migration. Online retail accounted for 6.4% of total sales in 2010;
-                by 2024 it was 27.3%&mdash;the highest penetration of any major European economy. The pandemic compressed
+                by 2024 it was 27.3%—the highest penetration of any major European economy. The pandemic compressed
                 years of adoption into months, and the shift proved largely irreversible. Meanwhile, the tax system
-                actively penalises physical presence. Retailers pay roughly &pound;7bn a year in business rates,
+                actively penalises physical presence. Retailers pay roughly £7bn a year in business rates,
                 calculated on 2015 rateable values until a belated 2022 revaluation. Online competitors face a
                 fraction of this burden. The result is a playing field tilted decisively against the shop with a
                 front door and a till.
               </p>
               <p>
-                Government has responded with &pound;12bn in levelling-up fund allocations, business rates relief
+                Government has responded with £12bn in levelling-up fund allocations, business rates relief
                 for small retailers, and new High Street Rental Auction powers introduced in 2024 that let local
                 councils compel landlords to let empty units. None of it has reversed the headline vacancy rate. What
                 is changing is the mix. Coffee shops, gyms, hair salons, food delivery hubs, and community services
                 are replacing the clothing and electrical retailers that once anchored town centres. The high street
-                is not disappearing&mdash;it is being repurposed. Whether that repurposing amounts to renewal or
+                is not disappearing—it is being repurposed. Whether that repurposing amounts to renewal or
                 managed decline depends largely on where you live.
               </p>
             </div>
@@ -295,11 +295,11 @@ export default function HighStreetsPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="86%"
             unit="of pre-pandemic footfall maintained in 2024"
             description="Town centre footfall has stabilised at around 86% of 2019 levels and has held at that level for two years — suggesting the post-pandemic adjustment has largely been made. Hospitality, services, and leisure are replacing closed retail: the number of coffee shops, gyms, hairdressers, and food businesses in town centres is higher than in 2019. The mix is different, not simply smaller."
-            source="Source: Springboard &mdash; UK Retail Footfall Monitor 2024."
+            source="Source: Springboard — UK Retail Footfall Monitor 2024."
           />
         </ScrollReveal>
 

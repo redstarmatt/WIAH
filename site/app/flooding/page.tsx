@@ -82,7 +82,7 @@ export default function FloodingPage() {
   const spendingSeries: Series[] = data
     ? [{
         id: 'spending',
-        label: 'Spending (&pound;m)',
+        label: 'Spending (£m)',
         colour: '#2A9D8F',
         data: data.national.floodDefenceSpending.timeSeries.map(d => ({
           date: fyToDate(d.year),
@@ -101,15 +101,15 @@ export default function FloodingPage() {
         <TopicHeader
           topic="Flooding"
           question="How at Risk Are British Homes from Flooding?"
-          finding="6.3 million properties in England are at risk of flooding &mdash; roughly 1 in 6 homes. 2.4 million are at significant risk. Winter 2023/24 saw the most flood incidents since records began, with Storms Babet, Ciaran, and Henk causing over 2,000 property floods. The Environment Agency&apos;s flood defence budget was cut 8% in real terms between 2010 and 2023."
+          finding="6.3 million properties in England are at risk of flooding — roughly 1 in 6 homes. 2.4 million are at significant risk. Winter 2023/24 saw the most flood incidents since records began, with Storms Babet, Ciaran, and Henk causing over 2,000 property floods. The Environment Agency's flood defence budget was cut 8% in real terms between 2010 and 2023."
           colour="#264653"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Flood risk in England is larger and more pervasive than most people realise. 6.3 million properties face some degree of flood risk &mdash; roughly one in six homes. Of those, 2.4 million are at significant risk and 880,000 at high risk. The National Flood Risk Assessment 2 (NaFRA2), published in 2023, identified 500,000 more properties at risk than previously assessed, largely because improved surface water mapping revealed threats invisible to earlier river-focused models. Surface water flooding &mdash; caused by rainfall overwhelming urban drainage rather than rivers breaching banks &mdash; now accounts for 40% of at-risk properties and is often not covered by standard insurance. Winter 2023/24 saw the highest number of flood incidents on record: Storms Babet, Ciaran and Henk caused 7,800 property floods in 2023 alone. Despite this, 13% of new homes built in 2022 were sited in flood-risk areas, often over Environment Agency objections.</p>
-            <p>Capital spending on flood defences has risen &mdash; from &pound;670 million in 2010/11 to &pound;1.1 billion in 2022/23 &mdash; and the FCERM Investment Plan commits &pound;5.6 billion between 2021 and 2027, protecting an estimated 336,000 additional properties. But revenue and maintenance spending was cut in real terms between 2010 and 2023, leaving existing defences underfunded and ageing. Flood Re, the government-backed reinsurance scheme for high-risk properties, covers 250,000 policies and has kept insurance accessible &mdash; yet it is designed to wind down by 2039, at which point those homes will face open-market pricing. London faces a distinct tidal threat: 1.5 million people live in the Thames tidal floodplain, and the Thames Barrier has been used over 200 times since 1982. It needs replacement or major upgrade by the 2070s, at an estimated cost exceeding &pound;10 billion.</p>
+            <p>Flood risk in England is larger and more pervasive than most people realise. 6.3 million properties face some degree of flood risk — roughly one in six homes. Of those, 2.4 million are at significant risk and 880,000 at high risk. The National Flood Risk Assessment 2 (NaFRA2), published in 2023, identified 500,000 more properties at risk than previously assessed, largely because improved surface water mapping revealed threats invisible to earlier river-focused models. Surface water flooding — caused by rainfall overwhelming urban drainage rather than rivers breaching banks — now accounts for 40% of at-risk properties and is often not covered by standard insurance. Winter 2023/24 saw the highest number of flood incidents on record: Storms Babet, Ciaran and Henk caused 7,800 property floods in 2023 alone. Despite this, 13% of new homes built in 2022 were sited in flood-risk areas, often over Environment Agency objections.</p>
+            <p>Capital spending on flood defences has risen — from £670 million in 2010/11 to £1.1 billion in 2022/23 — and the FCERM Investment Plan commits £5.6 billion between 2021 and 2027, protecting an estimated 336,000 additional properties. But revenue and maintenance spending was cut in real terms between 2010 and 2023, leaving existing defences underfunded and ageing. Flood Re, the government-backed reinsurance scheme for high-risk properties, covers 250,000 policies and has kept insurance accessible — yet it is designed to wind down by 2039, at which point those homes will face open-market pricing. London faces a distinct tidal threat: 1.5 million people live in the Thames tidal floodplain, and the Thames Barrier has been used over 200 times since 1982. It needs replacement or major upgrade by the 2070s, at an estimated cost exceeding £10 billion.</p>
             </div>
         </section>
 
@@ -127,7 +127,7 @@ export default function FloodingPage() {
               value="6.3M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2024 &middot; 1 in 6 homes &middot; 2.4M at significant risk &middot; 880K at high risk &middot; Climate change will increase risk"
+              changeText="2024 · 1 in 6 homes · 2.4M at significant risk · 880K at high risk · Climate change will increase risk"
               sparklineData={[5200, 5400, 5600, 5800, 5900, 6100, 6200, 6300]}
               onExpand={() => {}}
             />
@@ -136,16 +136,16 @@ export default function FloodingPage() {
               value="7,800"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; Storms Babet, Ciaran &amp; Henk &middot; Up sharply from 2022 &middot; Winter 2023/24 most incidents on record"
+              changeText="2023 · Storms Babet, Ciaran &amp; Henk · Up sharply from 2022 · Winter 2023/24 most incidents on record"
               sparklineData={[6.5, 8.2, 5.8, 5.5, 16.5, 3.2, 2.1, 1.5, 4.7, 4.6, 3.1, 2.8, 7.8]}
               onExpand={() => {}}
             />
             <MetricCard
               label="Flood defence capital spending"
-              value="&pound;1.1bn"
+              value="£1.1bn"
               direction="up"
               polarity="up-is-good"
-              changeText="2022/23 &middot; Up from &pound;670M in 2010/11 &middot; Real-terms increase &middot; FCERM Investment Plan: &pound;5.6bn to 2027"
+              changeText="2022/23 · Up from £670M in 2010/11 · Real-terms increase · FCERM Investment Plan: £5.6bn to 2027"
               sparklineData={[670, 640, 700, 780, 820, 860, 900, 890, 950, 1030, 1100]}
               onExpand={() => {}}
             />
@@ -155,7 +155,7 @@ export default function FloodingPage() {
         <ScrollReveal>
           <section id="sec-floods" className="mb-12">
             <LineChart
-              title="Properties flooded, 2010&ndash;2023"
+              title="Properties flooded, 2010–2023"
               subtitle="Thousands of properties experiencing internal flooding from rivers, coastal, and surface water sources."
               series={floodsSeries}
               annotations={floodsAnnotations}
@@ -172,10 +172,10 @@ export default function FloodingPage() {
         <ScrollReveal>
           <section id="sec-spending" className="mb-12">
             <LineChart
-              title="Flood defence capital spending, 2010/11&ndash;2022/23"
-              subtitle="Annual DEFRA and Environment Agency capital investment in flood and coastal risk management (&pound; millions)."
+              title="Flood defence capital spending, 2010/11–2022/23"
+              subtitle="Annual DEFRA and Environment Agency capital investment in flood and coastal risk management (£ millions)."
               series={spendingSeries}
-              yLabel="Spending (&pound;m)"
+              yLabel="Spending (£m)"
               source={{
                 name: 'Environment Agency',
                 dataset: 'FCERM Investment Programme',
@@ -205,17 +205,17 @@ export default function FloodingPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Environment Agency &mdash; National Flood Risk Assessment 2</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Environment Agency — National Flood Risk Assessment 2</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
-            value="&pound;5.6bn"
-            unit="committed to flood and coastal erosion risk management to 2027 &mdash; the largest ever commitment"
-            description="The government&apos;s FCERM (Flood and Coastal Erosion Risk Management) Investment Plan commits &pound;5.6 billion between 2021 and 2027, protecting around 336,000 properties from flooding and coastal erosion. Flood defence spending has grown from &pound;670 million in 2010/11 to &pound;1.1 billion in 2022/23. Surface water flood risk mapping has been extended to cover 70,000 additional locations. The Flood Re reinsurance scheme, which pools risk for high-flood-risk homes, has 250,000 policies, making insurance more affordable. Smart flood warning systems now cover 1.2 million properties registered for alerts."
-            source="Source: Environment Agency &mdash; Flood and Coastal Erosion Risk Management Programme 2023/24; EA &mdash; Long-term flood risk data."
+            title="What's improving"
+            value="£5.6bn"
+            unit="committed to flood and coastal erosion risk management to 2027 — the largest ever commitment"
+            description="The government's FCERM (Flood and Coastal Erosion Risk Management) Investment Plan commits £5.6 billion between 2021 and 2027, protecting around 336,000 properties from flooding and coastal erosion. Flood defence spending has grown from £670 million in 2010/11 to £1.1 billion in 2022/23. Surface water flood risk mapping has been extended to cover 70,000 additional locations. The Flood Re reinsurance scheme, which pools risk for high-flood-risk homes, has 250,000 policies, making insurance more affordable. Smart flood warning systems now cover 1.2 million properties registered for alerts."
+            source="Source: Environment Agency — Flood and Coastal Erosion Risk Management Programme 2023/24; EA — Long-term flood risk data."
           />
         </ScrollReveal>
 
@@ -225,7 +225,7 @@ export default function FloodingPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

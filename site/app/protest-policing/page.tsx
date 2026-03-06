@@ -66,8 +66,8 @@ export default function ProtestPolicingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Public Order Act 2023 and the Police, Crime, Sentencing and Courts Act 2022 together represent the most significant expansion of police powers over protest in England and Wales in a generation. New offences include &ldquo;locking on,&rdquo; tunnelling near infrastructure, and &ldquo;causing serious disruption&rdquo; &mdash; a concept so broad its application has been contested in the courts. Protest-related arrests rose from around 2,870 in 2019 to a peak of 4,278 in 2023, driven by the emergence of Extinction Rebellion and Just Stop Oil, the creation of new offences that criminalise previously lawful activity, and changes in how police respond to planned protests. Serious Disruption Prevention Orders (SDPOs), introduced in the 2023 Act, can ban individuals from attending protests based on past conduct; four had been issued by 2024.</p>
-            <p>The chilling effect on lawful protest activity typically precedes legal challenge. The European Court of Human Rights has found the UK in breach of Article 11 in several protest-related cases; domestic courts have quashed some protest convictions and found parts of police protest guidance unlawful. A significant proportion of arrests do not result in charge &mdash; arrest is sometimes used as a tool to disrupt protest rather than as a precursor to prosecution. Civil liberties organisations including Liberty and Amnesty International have argued that the new powers fundamentally threaten the right to protest as a mechanism of political expression.</p>
+            <p>The Public Order Act 2023 and the Police, Crime, Sentencing and Courts Act 2022 together represent the most significant expansion of police powers over protest in England and Wales in a generation. New offences include &ldquo;locking on,&rdquo; tunnelling near infrastructure, and &ldquo;causing serious disruption&rdquo; — a concept so broad its application has been contested in the courts. Protest-related arrests rose from around 2,870 in 2019 to a peak of 4,278 in 2023, driven by the emergence of Extinction Rebellion and Just Stop Oil, the creation of new offences that criminalise previously lawful activity, and changes in how police respond to planned protests. Serious Disruption Prevention Orders (SDPOs), introduced in the 2023 Act, can ban individuals from attending protests based on past conduct; four had been issued by 2024.</p>
+            <p>The chilling effect on lawful protest activity typically precedes legal challenge. The European Court of Human Rights has found the UK in breach of Article 11 in several protest-related cases; domestic courts have quashed some protest convictions and found parts of police protest guidance unlawful. A significant proportion of arrests do not result in charge — arrest is sometimes used as a tool to disrupt protest rather than as a precursor to prosecution. Civil liberties organisations including Liberty and Amnesty International have argued that the new powers fundamentally threaten the right to protest as a mechanism of political expression.</p>
           </div>
         </section>
 
@@ -85,9 +85,9 @@ export default function ProtestPolicingPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+381% since 2015 &middot; new powers and new movements"
+              changeText="+381% since 2015 · new powers and new movements"
               sparklineData={[890, 1100, 2870, 2200, 2900, 3600, 4278, 3900]}
-              href="#sec-chart"source="Home Office &middot; Police Powers and Procedures 2023"
+              href="#sec-chart"source="Home Office · Police Powers and Procedures 2023"
             />
             <MetricCard
               label="New offences created"
@@ -95,9 +95,9 @@ export default function ProtestPolicingPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Public Order Act 2023 &middot; serious disruption powers"
+              changeText="Public Order Act 2023 · serious disruption powers"
               sparklineData={[0, 0, 0, 0, 0, 3, 10]}
-              href="#sec-chart"source="Home Office &middot; Public Order Act 2023"
+              href="#sec-chart"source="Home Office · Public Order Act 2023"
             />
             <MetricCard
               label="SDPO orders issued"
@@ -107,7 +107,7 @@ export default function ProtestPolicingPage() {
               polarity="up-is-bad"
               changeText="first ever Serious Disruption Prevention Orders issued 2024"
               sparklineData={[0, 0, 0, 0, 0, 0, 4]}
-              href="#sec-chart"source="Home Office &middot; 2024"
+              href="#sec-chart"source="Home Office · 2024"
             />
           </div>
         </ScrollReveal>
@@ -115,7 +115,7 @@ export default function ProtestPolicingPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Protest-related arrests in England and Wales, 2015&ndash;2024"
+              title="Protest-related arrests in England and Wales, 2015–2024"
               subtitle="Annual arrests linked to protest activity. Rise from 2022 coincides with new Public Order Act powers."
               series={arrestsSeries}
               yLabel="Arrests"
@@ -131,9 +131,9 @@ export default function ProtestPolicingPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Home Office &mdash; Police Powers and Procedures, England and Wales. Annual bulletin. gov.uk/government/collections/police-powers-and-procedures-england-and-wales</p>
-            <p>Liberty &mdash; Protest Policing Research. libertyhumanrights.org.uk/issue/protest</p>
-            <p>Amnesty International UK &mdash; Right to Protest. amnesty.org.uk/right-to-protest</p>
+            <p>Home Office — Police Powers and Procedures, England and Wales. Annual bulletin. gov.uk/government/collections/police-powers-and-procedures-england-and-wales</p>
+            <p>Liberty — Protest Policing Research. libertyhumanrights.org.uk/issue/protest</p>
+            <p>Amnesty International UK — Right to Protest. amnesty.org.uk/right-to-protest</p>
             <p>Protest arrest figures are drawn from Home Office police powers data and include arrests under public order, obstruction, and trespass legislation. Not all arrests result in charge or conviction. The definition of &ldquo;protest-related&rdquo; follows the Home Office classification. SDPO figures are from Ministry of Justice civil orders data.</p>
           </div>
         </section>

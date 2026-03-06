@@ -151,16 +151,16 @@ export default function AntibiticResistancePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Antimicrobial resistance (AMR) kills an estimated 7,000 people in the UK every year and was directly responsible for 1.27 million deaths globally in 2019, according to a landmark Lancet study &mdash; more than HIV or malaria. Without concerted action, the O&apos;Neill Review projects that figure will reach 10 million per year by 2050. The mechanism is evolutionary: bacteria exposed to antibiotics that do not kill them entirely develop resistance over generations. In England, the scale is already visible in routine data. Of all E. coli bloodstream infections &mdash; the most common bloodstream infection in the country &mdash; 46% are now resistant to third-generation cephalosporins, up from 38% in 2016. MRSA rates fell sharply from their mid-2000s peak but have begun rising again.</p>
-            <p>The drivers of resistance span three interconnected systems. In human medicine, antibiotics have historically been overprescribed &mdash; for viral infections they cannot treat, or as a precaution rather than a diagnosis. In agriculture, an estimated 60% of global antibiotic use occurs in livestock, often to promote growth rather than treat illness. In the environment, pharmaceutical manufacturing waste &mdash; particularly from drug factories in India and China &mdash; contaminates rivers with antibiotic residues, creating reservoirs of resistant bacteria far from any clinical setting. The pipeline has meanwhile run dry: no new antibiotic class has been successfully developed and commercialised since the 1980s. The reason is commercial. Antibiotics are cheap, used sparingly by design, and rapidly rendered obsolete by resistance &mdash; making them among the least attractive investments in the pharmaceutical sector.</p>
+            <p>Antimicrobial resistance (AMR) kills an estimated 7,000 people in the UK every year and was directly responsible for 1.27 million deaths globally in 2019, according to a landmark Lancet study — more than HIV or malaria. Without concerted action, the O'Neill Review projects that figure will reach 10 million per year by 2050. The mechanism is evolutionary: bacteria exposed to antibiotics that do not kill them entirely develop resistance over generations. In England, the scale is already visible in routine data. Of all E. coli bloodstream infections — the most common bloodstream infection in the country — 46% are now resistant to third-generation cephalosporins, up from 38% in 2016. MRSA rates fell sharply from their mid-2000s peak but have begun rising again.</p>
+            <p>The drivers of resistance span three interconnected systems. In human medicine, antibiotics have historically been overprescribed — for viral infections they cannot treat, or as a precaution rather than a diagnosis. In agriculture, an estimated 60% of global antibiotic use occurs in livestock, often to promote growth rather than treat illness. In the environment, pharmaceutical manufacturing waste — particularly from drug factories in India and China — contaminates rivers with antibiotic residues, creating reservoirs of resistant bacteria far from any clinical setting. The pipeline has meanwhile run dry: no new antibiotic class has been successfully developed and commercialised since the 1980s. The reason is commercial. Antibiotics are cheap, used sparingly by design, and rapidly rendered obsolete by resistance — making them among the least attractive investments in the pharmaceutical sector.</p>
             </div>
         </section>
 
         <PositiveCallout
           title="UK antibiotic prescribing down 25% since 2014"
           value="-25%"
-          description="The UK&apos;s 2019&ndash;2024 National Action Plan set targets to reduce inappropriate antibiotic prescriptions in primary care. Prescriptions fell from 47M items in 2014 to 35.5M in 2023 &mdash; one of the sharpest declines in the developed world. But resistance continues to rise because global overuse outpaces local reductions."
-          source="Source: NHS England — Primary Care Prescribing Analysis, 2014&ndash;2023."
+          description="The UK's 2019–2024 National Action Plan set targets to reduce inappropriate antibiotic prescriptions in primary care. Prescriptions fell from 47M items in 2014 to 35.5M in 2023 — one of the sharpest declines in the developed world. But resistance continues to rise because global overuse outpaces local reductions."
+          source="Source: NHS England — Primary Care Prescribing Analysis, 2014–2023."
         />
 
         <section id="sec-charts" className="mt-16 mb-16">
@@ -214,10 +214,10 @@ export default function AntibiticResistancePage() {
         <section id="sec-sources" className="max-w-2xl mt-12 pt-8 border-t border-wiah-border">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources</h2>
           <div className="text-sm text-wiah-mid space-y-2 font-mono">
-            <p>AMR Deaths &mdash; Global Burden of Disease Study, Institute for Health Metrics and Evaluation, 2016&ndash;2023.</p>
-            <p>E. coli Resistance &mdash; UK Antimicrobial Resistance Report, Health Security Agency &amp; UKHSA, 2016&ndash;2023.</p>
-            <p>Antibiotic Prescribing &mdash; Primary Care Prescribing Analysis, NHS England, 2014&ndash;2023.</p>
-            <p>Resistance by Pathogen &mdash; European Antimicrobial Resistance Surveillance Network, ECDC, 2023.</p>
+            <p>AMR Deaths — Global Burden of Disease Study, Institute for Health Metrics and Evaluation, 2016–2023.</p>
+            <p>E. coli Resistance — UK Antimicrobial Resistance Report, Health Security Agency &amp; UKHSA, 2016–2023.</p>
+            <p>Antibiotic Prescribing — Primary Care Prescribing Analysis, NHS England, 2014–2023.</p>
+            <p>Resistance by Pathogen — European Antimicrobial Resistance Surveillance Network, ECDC, 2023.</p>
           </div>
         </section>
       </main>

@@ -614,7 +614,7 @@ export default function EducationPage() {
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
               COVID-19 broke something in school attendance that has not yet mended. Before the pandemic,
-              about 1 in 9 pupils were persistently absent &mdash; missing 10% or more of sessions. By
+              about 1 in 9 pupils were persistently absent — missing 10% or more of sessions. By
               2023-24 it was 1 in 5, and the rate has barely improved since. Anxiety, disengagement, and
               a cultural shift in attitudes to attendance all play a role, but the pattern is not evenly
               distributed: disadvantaged pupils are absent at far higher rates, and absence feeds directly
@@ -625,8 +625,8 @@ export default function EducationPage() {
             </p>
             <p>
               The SEND system has moved from strain to statutory failure. The number of children with
-              Education, Health and Care Plans has nearly tripled in a decade &mdash; from around 240,000
-              in 2015 to over 630,000 &mdash; driven by rising identification of autism, ADHD, and
+              Education, Health and Care Plans has nearly tripled in a decade — from around 240,000
+              in 2015 to over 630,000 — driven by rising identification of autism, ADHD, and
               speech and language needs. Local authorities cannot keep pace: fewer than half of new EHCPs
               are issued within the 20-week legal deadline. Families who appeal to the SEND tribunal win
               in almost every case, which suggests that initial refusals are routinely wrong rather than
@@ -1375,7 +1375,7 @@ export default function EducationPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}
@@ -1387,7 +1387,7 @@ export default function EducationPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  DfE &mdash; School Workforce in England: Vacancies &amp; Pupil-Teacher Ratios (annual)
+                  DfE — School Workforce in England: Vacancies &amp; Pupil-Teacher Ratios (annual)
                 </a>
               </li>
             )}
@@ -1399,7 +1399,7 @@ export default function EducationPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  DfE &mdash; LEO Graduate and Postgraduate Outcomes: Earnings &amp; Employment (annual)
+                  DfE — LEO Graduate and Postgraduate Outcomes: Earnings &amp; Employment (annual)
                 </a>
               </li>
             )}
@@ -1411,7 +1411,7 @@ export default function EducationPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}
@@ -1423,7 +1423,7 @@ export default function EducationPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Institute for Fiscal Studies &mdash; UK Education Spending; DfE Schools Block Funding (annual)
+                  Institute for Fiscal Studies — UK Education Spending; DfE Schools Block Funding (annual)
                 </a>
               </li>
             )}
@@ -1435,7 +1435,7 @@ export default function EducationPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  NHS England &mdash; Mental Health Services Monthly Statistics (monthly)
+                  NHS England — Mental Health Services Monthly Statistics (monthly)
                 </a>
               </li>
             )}
@@ -1447,7 +1447,7 @@ export default function EducationPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Ofsted &mdash; Management Information, School Inspections Outcomes (monthly)
+                  Ofsted — Management Information, School Inspections Outcomes (monthly)
                 </a>
               </li>
             )}

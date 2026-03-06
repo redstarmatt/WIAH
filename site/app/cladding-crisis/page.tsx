@@ -54,13 +54,13 @@ export default function CladdingCrisisPage() {
         <TopicHeader
           topic="Cladding Crisis"
           question="How many buildings still have dangerous cladding?"
-          finding="4,603 residential buildings over 11 metres have unsafe cladding &mdash; 5 years after Grenfell. Only 30% have been fully remediated by 2024. Around 1 million residents are affected, with buildings taking years to fix."
+          finding="4,603 residential buildings over 11 metres have unsafe cladding — 5 years after Grenfell. Only 30% have been fully remediated by 2024. Around 1 million residents are affected, with buildings taking years to fix."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Inspections triggered by the Grenfell Tower fire (72 deaths, June 2017) identified 4,603 residential buildings over 11 metres with unsafe cladding or fire safety defects in England. By 2021, only 8.6% had been fully remediated; progress has since accelerated to 30% by 2024, driven by a pledge from 49 major developers to fund remediation of their buildings and the government&apos;s Building Safety Fund. At the current pace, completion would not be reached until around 2030 &mdash; thirteen years after Grenfell. The estimated total remediation bill is &pound;17.6 billion: &pound;5.1 billion committed by developers, &pound;5.1 billion from the Building Safety Fund, and &pound;7.4 billion still in dispute or potentially falling on leaseholders. The Building Safety Act 2022 created legal protections limiting leaseholder liability, but protections are not absolute in buildings where developers are insolvent or the original builder untraceable.</p>
+            <p>Inspections triggered by the Grenfell Tower fire (72 deaths, June 2017) identified 4,603 residential buildings over 11 metres with unsafe cladding or fire safety defects in England. By 2021, only 8.6% had been fully remediated; progress has since accelerated to 30% by 2024, driven by a pledge from 49 major developers to fund remediation of their buildings and the government's Building Safety Fund. At the current pace, completion would not be reached until around 2030 — thirteen years after Grenfell. The estimated total remediation bill is £17.6 billion: £5.1 billion committed by developers, £5.1 billion from the Building Safety Fund, and £7.4 billion still in dispute or potentially falling on leaseholders. The Building Safety Act 2022 created legal protections limiting leaseholder liability, but protections are not absolute in buildings where developers are insolvent or the original builder untraceable.</p>
             <p>Before the 2022 Act, flat owners were liable through service charges for remediation costs they could not afford, leaving hundreds of thousands of properties unmortgageable and unsellable. Those affected were predominantly young professionals who had bought under government-backed Help to Buy schemes, trapped in homes they could not sell, with buildings insurance costs soaring and waking fire watches adding thousands of pounds annually. The burden falls unevenly: buildings below 11 metres were excluded from the developer pledge despite having the same fire risk, and EWS1 assessment requirements imposed by mortgage lenders continue to affect sales in buildings not yet on the formal remediation programme.</p>
           </div>
         </section>
@@ -80,9 +80,9 @@ export default function CladdingCrisisPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Identified since Grenfell 2017 &middot; likely more unidentified below 11m"
+            changeText="Identified since Grenfell 2017 · likely more unidentified below 11m"
             sparklineData={[4603, 4603, 4603, 4603]}
-            source="DLUHC Building Safety Remediation &middot; 2024"
+            source="DLUHC Building Safety Remediation · 2024"
             href="#sec-progress"/>
           <MetricCard
             label="Buildings fully remediated"
@@ -90,9 +90,9 @@ export default function CladdingCrisisPage() {
             unit="% (2024)"
             direction="up"
             polarity="up-is-good"
-            changeText="Up from just 8.6% in 2021 &middot; progress accelerating but slow"
+            changeText="Up from just 8.6% in 2021 · progress accelerating but slow"
             sparklineData={[8.6, 16.1, 22.0, 30.0]}
-            source="DLUHC &middot; 2024"
+            source="DLUHC · 2024"
             href="#sec-buildings"/>
           <MetricCard
             label="Estimated total remediation cost"
@@ -100,9 +100,9 @@ export default function CladdingCrisisPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="£7.4bn still unresolved &middot; leaseholders potentially left liable"
+            changeText="£7.4bn still unresolved · leaseholders potentially left liable"
             sparklineData={[10, 12, 15, 17.6]}
-            source="DLUHC / RICS estimates &middot; 2023"
+            source="DLUHC / RICS estimates · 2023"
             href="#sec-costs"/>
         </div>
         </ScrollReveal>
@@ -110,7 +110,7 @@ export default function CladdingCrisisPage() {
         <ScrollReveal>
         <section id="sec-progress" className="mb-12">
           <LineChart
-            title="Proportion of unsafe-cladding buildings fully remediated, 2021&ndash;2024"
+            title="Proportion of unsafe-cladding buildings fully remediated, 2021–2024"
             subtitle="Percentage of 4,603 identified buildings with unsafe cladding fully remediated. DLUHC."
             series={remediationSeries}
             annotations={[
@@ -174,7 +174,7 @@ export default function CladdingCrisisPage() {
             <a href="https://www.gov.uk/government/collections/building-safety-programme" className="underline" target="_blank" rel="noopener noreferrer">
               DLUHC Building Safety Programme (gov.uk)
             </a>
-            {' '}&middot;{' '}
+            {' '}·{' '}
             <a href="https://endourcladdingscandal.co.uk" className="underline" target="_blank" rel="noopener noreferrer">
               End Our Cladding Scandal
             </a>

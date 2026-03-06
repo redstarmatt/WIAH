@@ -109,8 +109,8 @@ export default function BloodPressurePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>An estimated 15.2 million adults in England have blood pressure above the clinical threshold of 140/90 mmHg, making hypertension the most common chronic condition after chronic pain. It causes no symptoms until it causes a heart attack, stroke, kidney failure, or vascular dementia &mdash; and is entirely treatable with medications costing less than &pound;2 per month. Yet approximately 7.4 million people remain undiagnosed. Of the 7.8 million on GP registers, only 60% have their blood pressure controlled to the NICE target &mdash; down from 64% in 2016, with control rates dropping sharply during COVID when face-to-face reviews were paused. The NHS Health Check programme delivered 1.48 million cardiovascular risk assessments in 2024, still below the 1.61 million achieved before the pandemic, with uptake ranging from 30% to 75% across local authorities.</p>
-            <p>The consequences are quantifiable and avoidable. The British Heart Foundation estimates high blood pressure contributes to approximately 75,000 deaths per year through strokes, heart attacks, and kidney disease; NICE modelling suggests matching the best-performing countries would prevent 14,000 cardiovascular events annually. The detection gap is deepest in the most deprived communities, where hypertension prevalence is highest but NHS Health Check uptake is lowest &mdash; a pattern that concentrates preventable cardiovascular harm among those least able to manage its consequences.</p>
+            <p>An estimated 15.2 million adults in England have blood pressure above the clinical threshold of 140/90 mmHg, making hypertension the most common chronic condition after chronic pain. It causes no symptoms until it causes a heart attack, stroke, kidney failure, or vascular dementia — and is entirely treatable with medications costing less than £2 per month. Yet approximately 7.4 million people remain undiagnosed. Of the 7.8 million on GP registers, only 60% have their blood pressure controlled to the NICE target — down from 64% in 2016, with control rates dropping sharply during COVID when face-to-face reviews were paused. The NHS Health Check programme delivered 1.48 million cardiovascular risk assessments in 2024, still below the 1.61 million achieved before the pandemic, with uptake ranging from 30% to 75% across local authorities.</p>
+            <p>The consequences are quantifiable and avoidable. The British Heart Foundation estimates high blood pressure contributes to approximately 75,000 deaths per year through strokes, heart attacks, and kidney disease; NICE modelling suggests matching the best-performing countries would prevent 14,000 cardiovascular events annually. The detection gap is deepest in the most deprived communities, where hypertension prevalence is highest but NHS Health Check uptake is lowest — a pattern that concentrates preventable cardiovascular harm among those least able to manage its consequences.</p>
           </div>
         </section>
 
@@ -130,7 +130,7 @@ export default function BloodPressurePage() {
               unit="million"
               direction="up"
               polarity="up-is-bad"
-              changeText="2024 &middot; Nearly half of all cases &middot; No symptoms until crisis"
+              changeText="2024 · Nearly half of all cases · No symptoms until crisis"
               sparklineData={[5.7, 5.9, 6.0, 6.3, 7.1, 7.3, 7.4]}
               href="#sec-prevalence"/>
             <MetricCard
@@ -139,7 +139,7 @@ export default function BloodPressurePage() {
               unit="%"
               direction="down"
               polarity="up-is-good"
-              changeText="2024 &middot; Among diagnosed patients &middot; Down from 64% in 2016"
+              changeText="2024 · Among diagnosed patients · Down from 64% in 2016"
               sparklineData={[62.3, 63.8, 64.1, 63.5, 58.2, 59.8, 60.4]}
               href="#sec-control"/>
             <MetricCard
@@ -148,7 +148,7 @@ export default function BloodPressurePage() {
               unit="million"
               direction="down"
               polarity="up-is-good"
-              changeText="2024 &middot; Still below 2018 level of 1.61M &middot; Uptake varies 30&ndash;75% by area"
+              changeText="2024 · Still below 2018 level of 1.61M · Uptake varies 30–75% by area"
               sparklineData={[1482, 1546, 1562, 1603, 1612, 1580, 824, 1012, 1283, 1402, 1478]}
               href="#sec-checks"/>
           </div>
@@ -157,7 +157,7 @@ export default function BloodPressurePage() {
         <ScrollReveal>
           <section id="sec-prevalence" className="mb-12">
             <LineChart
-              title="Hypertension: estimated vs diagnosed, England, 2012&ndash;2024"
+              title="Hypertension: estimated vs diagnosed, England, 2012–2024"
               subtitle="Gap between total estimated prevalence and GP-registered diagnoses, in millions."
               series={prevalenceSeries}
               yLabel="Millions"
@@ -173,7 +173,7 @@ export default function BloodPressurePage() {
         <ScrollReveal>
           <section id="sec-control" className="mb-12">
             <LineChart
-              title="Blood pressure control rate, England, 2012&ndash;2024"
+              title="Blood pressure control rate, England, 2012–2024"
               subtitle="% of diagnosed hypertensive patients with BP at or below 140/90 mmHg at last review."
               series={controlSeries}
               annotations={controlAnnotations}
@@ -190,8 +190,8 @@ export default function BloodPressurePage() {
         <ScrollReveal>
           <section id="sec-checks" className="mb-12">
             <LineChart
-              title="NHS Health Checks delivered, England, 2014&ndash;2024"
-              subtitle="Annual cardiovascular risk assessments offered to adults aged 40&ndash;74, in thousands."
+              title="NHS Health Checks delivered, England, 2014–2024"
+              subtitle="Annual cardiovascular risk assessments offered to adults aged 40–74, in thousands."
               series={healthCheckSeries}
               annotations={healthCheckAnnotations}
               yLabel="Checks (thousands)"
@@ -207,9 +207,9 @@ export default function BloodPressurePage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>NHS Digital &mdash; Quality and Outcomes Framework (QOF). GP hypertension registers and blood pressure control indicators. Published annually.</p>
-            <p>OHID &mdash; NHS Health Check programme data. Local authority returns on invitations and checks completed. Published annually.</p>
-            <p>British Heart Foundation / NICE &mdash; Hypertension prevalence modelling based on Health Survey for England. Estimated total prevalence includes undiagnosed cases.</p>
+            <p>NHS Digital — Quality and Outcomes Framework (QOF). GP hypertension registers and blood pressure control indicators. Published annually.</p>
+            <p>OHID — NHS Health Check programme data. Local authority returns on invitations and checks completed. Published annually.</p>
+            <p>British Heart Foundation / NICE — Hypertension prevalence modelling based on Health Survey for England. Estimated total prevalence includes undiagnosed cases.</p>
             <p>The &ldquo;detection gap&rdquo; is calculated as estimated total prevalence minus GP QOF register count. Prevalence estimates rely on survey data and modelling; actual undiagnosed figures are uncertain. Blood pressure control target is 140/90 mmHg per NICE CG136 (or 150/90 for those aged 80+). NHS Health Check figures reflect completed checks, not invitations sent.</p>
           </div>
         </section>

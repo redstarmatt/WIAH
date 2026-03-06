@@ -76,8 +76,8 @@ export default function TerrorismProsecutionsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Counter Terrorism Policing made 350 terrorism-related arrests in 2023, a figure that reflects both the ongoing threat level and the intelligence-led posture developed since the 2005 London bombings. Of cases that reach trial, the conviction rate was 74% &mdash; stable over the past decade &mdash; reflecting the thoroughness of specialist CPS case preparation and the use of intelligence-derived evidence in admissible form. The threat picture has shifted: right-wing terrorism now accounts for around 25% of arrests, up from a marginal category in 2015, while Islamist terrorism remains the largest category. Around 220 people were on terrorism-related licence in 2024, subject to supervision conditions under a framework tightened by the Counter-Terrorism and Sentencing Act 2021 following the Fishmongers&apos; Hall attack.</p>
-            <p>The consequences of terrorism prosecutions fall along predictable demographic lines. Muslim communities have borne a disproportionate share of Terrorism Act stop and search powers and Prevent referrals &mdash; referrals number tens of thousands annually &mdash; raising sustained civil liberties concerns about proportionality and the broad UK definition of terrorism, which is wide enough to capture some politically motivated but non-violent activity. The legal architecture of terrorism prosecution is among the most extensive in any democracy, including pre-charge detention of up to 14 days in exceptional cases and Special Immigration Appeals Commission proceedings for non-citizens; independent review of these powers&apos; necessity and proportionality remains contested.</p>
+            <p>Counter Terrorism Policing made 350 terrorism-related arrests in 2023, a figure that reflects both the ongoing threat level and the intelligence-led posture developed since the 2005 London bombings. Of cases that reach trial, the conviction rate was 74% — stable over the past decade — reflecting the thoroughness of specialist CPS case preparation and the use of intelligence-derived evidence in admissible form. The threat picture has shifted: right-wing terrorism now accounts for around 25% of arrests, up from a marginal category in 2015, while Islamist terrorism remains the largest category. Around 220 people were on terrorism-related licence in 2024, subject to supervision conditions under a framework tightened by the Counter-Terrorism and Sentencing Act 2021 following the Fishmongers' Hall attack.</p>
+            <p>The consequences of terrorism prosecutions fall along predictable demographic lines. Muslim communities have borne a disproportionate share of Terrorism Act stop and search powers and Prevent referrals — referrals number tens of thousands annually — raising sustained civil liberties concerns about proportionality and the broad UK definition of terrorism, which is wide enough to capture some politically motivated but non-violent activity. The legal architecture of terrorism prosecution is among the most extensive in any democracy, including pre-charge detention of up to 14 days in exceptional cases and Special Immigration Appeals Commission proceedings for non-citizens; independent review of these powers' necessity and proportionality remains contested.</p>
           </div>
         </section>
 
@@ -85,8 +85,8 @@ export default function TerrorismProsecutionsPage() {
           <PositiveCallout
             title="High conviction rate"
             value="74%"
-            description="Of terrorism cases that reach trial, 74% result in conviction — reflecting the strength of the Crown&apos;s case preparation and specialist prosecution teams."
-            source="Source: Crown Prosecution Service &mdash; CPS data summary; Home Office terrorism statistics."
+            description="Of terrorism cases that reach trial, 74% result in conviction — reflecting the strength of the Crown's case preparation and specialist prosecution teams."
+            source="Source: Crown Prosecution Service — CPS data summary; Home Office terrorism statistics."
           />
         </ScrollReveal>
 
@@ -106,7 +106,7 @@ export default function TerrorismProsecutionsPage() {
               polarity={'up-is-bad' as const}
               changeText="+25% since 2015"
               sparklineData={[280, 299, 412, 351, 296, 256, 290, 312, 350]}
-              href="#sec-chart"source="Home Office &middot; Operation of police powers under Terrorism Act"
+              href="#sec-chart"source="Home Office · Operation of police powers under Terrorism Act"
             />
             <MetricCard
               label="Conviction rate at trial"
@@ -116,7 +116,7 @@ export default function TerrorismProsecutionsPage() {
               polarity={'up-is-good' as const}
               changeText="Stable over the past decade"
               sparklineData={[74, 75, 74, 74, 74, 74, 74, 74, 74]}
-              href="#sec-chart"source="Crown Prosecution Service &middot; CPS data summary"
+              href="#sec-chart"source="Crown Prosecution Service · CPS data summary"
             />
             <MetricCard
               label="On terrorism-related licence"
@@ -126,7 +126,7 @@ export default function TerrorismProsecutionsPage() {
               polarity={'up-is-bad' as const}
               changeText="Released from custody, under supervision"
               sparklineData={[110, 128, 142, 155, 168, 178, 192, 207, 220]}
-              href="#sec-chart"source="HMPPS &middot; Offender management caseload statistics"
+              href="#sec-chart"source="HMPPS · Offender management caseload statistics"
             />
           </div>
         </ScrollReveal>
@@ -134,7 +134,7 @@ export default function TerrorismProsecutionsPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Terrorism arrests and convictions, 2015&ndash;2024"
+              title="Terrorism arrests and convictions, 2015–2024"
               subtitle="Annual terrorism-related arrests and convictions resulting from completed trials, England and Wales."
               series={terrorismSeries}
               yLabel="Count"
@@ -150,10 +150,10 @@ export default function TerrorismProsecutionsPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Home Office &mdash; Operation of police powers under the Terrorism Act 2000 and subsequent legislation. Published quarterly. gov.uk/government/collections/operation-of-police-powers-under-the-terrorism-act-2000-quarterly-updates</p>
-            <p>Crown Prosecution Service &mdash; CPS data summary. Published annually. cps.gov.uk/publication/cps-data-summary</p>
-            <p>MI5 &mdash; Threat level assessments and annual reporting. mi5.gov.uk</p>
-            <p>Counter Terrorism Policing &mdash; Annual review. counterterrorism.police.uk</p>
+            <p>Home Office — Operation of police powers under the Terrorism Act 2000 and subsequent legislation. Published quarterly. gov.uk/government/collections/operation-of-police-powers-under-the-terrorism-act-2000-quarterly-updates</p>
+            <p>Crown Prosecution Service — CPS data summary. Published annually. cps.gov.uk/publication/cps-data-summary</p>
+            <p>MI5 — Threat level assessments and annual reporting. mi5.gov.uk</p>
+            <p>Counter Terrorism Policing — Annual review. counterterrorism.police.uk</p>
             <p>Conviction rate is convictions as a proportion of completed trials; it excludes cases still awaiting trial. Arrest figures include all terrorism-related arrests under relevant legislation regardless of outcome. Licence population is HMPPS monthly average for terrorism-classified offenders.</p>
           </div>
         </section>

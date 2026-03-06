@@ -70,17 +70,17 @@ export default function RentArrearsPage() {
         <TopicHeader
           topic="Rent Arrears"
           question="How Many Renters Are Falling Behind?"
-          finding="One in seven renters in England is now behind on their rent, the highest rate on record. Landlord possession claims in county courts hit 164,200 in 2024 &mdash; surpassing pre-pandemic levels &mdash; and evictions are rising sharply as the cost-of-living crisis meets a housing market where rents have increased 30% in four years."
+          finding="One in seven renters in England is now behind on their rent, the highest rate on record. Landlord possession claims in county courts hit 164,200 in 2024 — surpassing pre-pandemic levels — and evictions are rising sharply as the cost-of-living crisis meets a housing market where rents have increased 30% in four years."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The scale of rent arrears in England is at its highest recorded level. The English Housing Survey estimates that 14.1% of renters &mdash; private and social combined &mdash; were in arrears in 2024, up from 8.5% in 2015. In absolute terms, this represents approximately 1.3 million renting households falling behind on payments. The crisis is driven by the collision of two forces: rents have risen by an average of 30% since 2020 (with London and the South East seeing even steeper increases), while wages and benefits have not kept pace. The Local Housing Allowance (LHA), which sets the maximum Housing Benefit for private renters, was frozen from 2020 to 2024 at the 30th percentile of local rents, meaning it progressively covered a smaller share of actual rent.
+              The scale of rent arrears in England is at its highest recorded level. The English Housing Survey estimates that 14.1% of renters — private and social combined — were in arrears in 2024, up from 8.5% in 2015. In absolute terms, this represents approximately 1.3 million renting households falling behind on payments. The crisis is driven by the collision of two forces: rents have risen by an average of 30% since 2020 (with London and the South East seeing even steeper increases), while wages and benefits have not kept pace. The Local Housing Allowance (LHA), which sets the maximum Housing Benefit for private renters, was frozen from 2020 to 2024 at the 30th percentile of local rents, meaning it progressively covered a smaller share of actual rent.
             </p>
             <p>
-              The court system tells the story of what happens next. Landlord possession claims &mdash; the legal step that precedes eviction &mdash; fell to 72,400 in 2020 due to the eviction ban introduced during the pandemic, then surged as courts reopened and cleared the backlog. By 2024, claims reached 164,200, exceeding the pre-pandemic level for the first time. Section 21 &ldquo;no-fault&rdquo; evictions, where landlords can evict tenants without giving a reason, account for approximately 32% of all possession claims &mdash; the Renters Reform Bill, introduced in 2023, proposed abolishing Section 21 but at the time of writing had not yet become law. Section 8 claims for rent arrears have also risen sharply, reflecting genuine affordability pressures. Citizens Advice reported a 42% increase in people seeking help with rent arrears between 2021 and 2023, with the average arrears amount rising from &pound;1,200 to &pound;2,100.
+              The court system tells the story of what happens next. Landlord possession claims — the legal step that precedes eviction — fell to 72,400 in 2020 due to the eviction ban introduced during the pandemic, then surged as courts reopened and cleared the backlog. By 2024, claims reached 164,200, exceeding the pre-pandemic level for the first time. Section 21 &ldquo;no-fault&rdquo; evictions, where landlords can evict tenants without giving a reason, account for approximately 32% of all possession claims — the Renters Reform Bill, introduced in 2023, proposed abolishing Section 21 but at the time of writing had not yet become law. Section 8 claims for rent arrears have also risen sharply, reflecting genuine affordability pressures. Citizens Advice reported a 42% increase in people seeking help with rent arrears between 2021 and 2023, with the average arrears amount rising from £1,200 to £2,100.
             </p>
             </div>
         </section>
@@ -98,7 +98,7 @@ export default function RentArrearsPage() {
               value="14.1%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Highest on record &middot; Up from 8.5% in 2015 &middot; ~1.3M households"
+              changeText="Highest on record · Up from 8.5% in 2015 · ~1.3M households"
               sparklineData={[8.5, 8.1, 7.8, 8.2, 8.6, 10.4, 11.1, 12.3, 13.2, 14.1]}
               source="English Housing Survey 2024"
               onExpand={() => {}}
@@ -108,19 +108,19 @@ export default function RentArrearsPage() {
               value="164,200"
               direction="up"
               polarity="up-is-bad"
-              changeText="Surpassed pre-pandemic level &middot; Up 127% from 2020 low"
+              changeText="Surpassed pre-pandemic level · Up 127% from 2020 low"
               sparklineData={[153200, 148100, 142800, 139500, 136200, 72400, 89600, 128400, 155800, 164200]}
-              source="MOJ &middot; Possession Statistics 2024"
+              source="MOJ · Possession Statistics 2024"
               onExpand={() => {}}
             />
             <MetricCard
               label="Average rent arrears (advice seekers)"
-              value="&pound;2,100"
+              value="£2,100"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from &pound;1,200 in 2021 &middot; 42% rise in people seeking help"
+              changeText="Up from £1,200 in 2021 · 42% rise in people seeking help"
               sparklineData={[900, 950, 1000, 1050, 1100, 1200, 1500, 1800, 2100]}
-              source="Citizens Advice &middot; 2023"
+              source="Citizens Advice · 2023"
               onExpand={() => {}}
             />
           </div>
@@ -130,7 +130,7 @@ export default function RentArrearsPage() {
           <section id="sec-claims" className="mb-12">
             {claimsSeries.length > 0 ? (
               <LineChart
-                title="Landlord possession claims, England &amp; Wales, 2015&ndash;2024"
+                title="Landlord possession claims, England &amp; Wales, 2015–2024"
                 subtitle="Claims issued in county courts. The 2020 dip reflects the eviction moratorium; the subsequent surge reflects backlog and rising arrears."
                 series={claimsSeries}
                 yLabel="Claims"
@@ -151,7 +151,7 @@ export default function RentArrearsPage() {
           <section id="sec-arrears" className="mb-12">
             {arrearsSeries.length > 0 ? (
               <LineChart
-                title="Renters in arrears, England, 2015&ndash;2024"
+                title="Renters in arrears, England, 2015–2024"
                 subtitle="Percentage of private and social renters reporting any rent arrears. Record high as rent rises outstrip income growth."
                 series={arrearsSeries}
                 yLabel="Percentage (%)"
@@ -174,7 +174,7 @@ export default function RentArrearsPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

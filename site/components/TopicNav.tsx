@@ -20,7 +20,7 @@ export default function TopicNav({ topic, shareTitle, shareText }: TopicNavProps
           <SiteName size="nav" />
         </Link>
         {/* Topic label — always visible, centered on mobile */}
-        <span className="text-wiah-mid text-sm font-mono truncate">
+        <span className="text-wiah-mid text-sm font-mono truncate flex-1 min-w-0 text-center sm:text-left">
           {topic}
         </span>
         {/* Search + share + back link */}

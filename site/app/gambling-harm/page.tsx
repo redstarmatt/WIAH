@@ -50,7 +50,7 @@ export default function GamblingHarmPage() {
   const onlineYieldSeries: Series[] = [
     {
       id: 'online-yield',
-      label: 'Online gambling gross yield (&pound;bn)',
+      label: 'Online gambling gross yield (£bn)',
       colour: '#E63946',
       data: data.onlineGambling.map((p) => ({
         date: yearToDate(p.year),
@@ -78,12 +78,14 @@ export default function GamblingHarmPage() {
     <main>
       <TopicNav topic="Gambling Harm" />
 
-      <TopicHeader
-        topic="Gambling Harm"
-        colour="#E63946"
-        question="How much harm is gambling causing?"
-        finding="Around 300,000 people in Great Britain are problem gamblers, 1.8 million more are at risk, and online gambling growth has outpaced the regulatory system designed to protect them."
-      />
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <TopicHeader
+          topic="Gambling Harm"
+          colour="#E63946"
+          question="How much harm is gambling causing?"
+          finding="Around 300,000 people in Great Britain are problem gamblers, 1.8 million more are at risk, and online gambling growth has outpaced the regulatory system designed to protect them."
+        />
+      </div>
 
       {/* ── MetricCards ────────────────────────────────────────────────────── */}
       <section className="bg-wiah-light px-6 py-12">
@@ -103,10 +105,10 @@ export default function GamblingHarmPage() {
             <ScrollReveal delay={1}>
               <MetricCard
                 label="Online gambling gross yield"
-                value="&pound;6.9bn"
+                value="£6.9bn"
                 direction="up"
                 polarity="up-is-bad"
-                changeText="Up from &pound;1.8bn in 2012; now 46% of total"
+                changeText="Up from £1.8bn in 2012; now 46% of total"
                 sparklineData={[1.8, 2.3, 2.8, 3.3, 3.9, 4.5, 5.1, 5.6, 5.9, 6.5, 6.9]}
               />
             </ScrollReveal>
@@ -133,11 +135,11 @@ export default function GamblingHarmPage() {
               Online gambling gross yield, Great Britain
             </h2>
             <p className="text-wiah-mid text-sm mb-6 font-mono">
-              Gross gambling yield (&pound;bn): amount retained by operators after paying winnings. Gambling Commission data.
+              Gross gambling yield (£bn): amount retained by operators after paying winnings. Gambling Commission data.
             </p>
             <LineChart
               title="Online gambling gross yield, Great Britain"
-              subtitle="Gross gambling yield (&pound;bn): amount retained by operators after paying winnings. Gambling Commission data."
+              subtitle="Gross gambling yield (£bn): amount retained by operators after paying winnings. Gambling Commission data."
               series={onlineYieldSeries}
               annotations={[{ date: new Date(2020, 2), label: '2020: COVID-19; land-based venues closed' }]}
               source={{
@@ -218,8 +220,8 @@ export default function GamblingHarmPage() {
         <div className="max-w-2xl mx-auto">
           <ScrollReveal>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Around 300,000 adults in Great Britain are problem gamblers, with 1.8 million more at some risk. Online gambling gross yield rose from &pound;1.8bn in 2012 to &pound;6.9bn in 2022, now accounting for 46% of the total market; 18% of online slot gamblers showed problem gambling symptoms &mdash; a rate far higher than for any land-based equivalent. A 2021 study estimated approximately 500 suicides per year in England are associated with problem gambling, around one in fifty of all suicides. The 2023 Gambling Act review introduced a mandatory levy on operators to fund treatment and set online slot stake limits at &pound;5 for adults, replacing a voluntary system that raised just &pound;10 million per year against an industry worth billions.</p>
-              <p>Despite 300,000 estimated problem gamblers, only around 14,000 people are in gambling treatment services at any one time &mdash; a treatment gap of roughly 95%. The pathway to crisis is consistent: escalating debt, concealment from family, shame, and the collapse of ordinary coping mechanisms. Online gambling, accessible 24 hours a day with no social friction, is available precisely during the hours when support services are closed. The industry spent &pound;1.5bn on advertising in 2021 alone, and several of the Gambling Act review&apos;s more stringent proposals were weakened before the final White Paper was published.</p>
+              <p>Around 300,000 adults in Great Britain are problem gamblers, with 1.8 million more at some risk. Online gambling gross yield rose from £1.8bn in 2012 to £6.9bn in 2022, now accounting for 46% of the total market; 18% of online slot gamblers showed problem gambling symptoms — a rate far higher than for any land-based equivalent. A 2021 study estimated approximately 500 suicides per year in England are associated with problem gambling, around one in fifty of all suicides. The 2023 Gambling Act review introduced a mandatory levy on operators to fund treatment and set online slot stake limits at £5 for adults, replacing a voluntary system that raised just £10 million per year against an industry worth billions.</p>
+              <p>Despite 300,000 estimated problem gamblers, only around 14,000 people are in gambling treatment services at any one time — a treatment gap of roughly 95%. The pathway to crisis is consistent: escalating debt, concealment from family, shame, and the collapse of ordinary coping mechanisms. Online gambling, accessible 24 hours a day with no social friction, is available precisely during the hours when support services are closed. The industry spent £1.5bn on advertising in 2021 alone, and several of the Gambling Act review's more stringent proposals were weakened before the final White Paper was published.</p>
             </div>
           </ScrollReveal>
         </div>
@@ -230,9 +232,9 @@ export default function GamblingHarmPage() {
         <ScrollReveal>
           <PositiveCallout
             title="Gambling Act reform introduced stake limits"
-            value="&pound;5"
+            value="£5"
             unit="max stake (adults)"
-            description="The Gambling Act 2005 review, completed in April 2023, introduced online slot stake limits of &pound;5 for adults (or &pound;2 for under-25s), affordability checks for high-spending customers, and a mandatory levy on operators to fund treatment. Critics argue the measures are too modest; the online industry opposed the &pound;2 youth stake limit."
+            description="The Gambling Act 2005 review, completed in April 2023, introduced online slot stake limits of £5 for adults (or £2 for under-25s), affordability checks for high-spending customers, and a mandatory levy on operators to fund treatment. Critics argue the measures are too modest; the online industry opposed the £2 youth stake limit."
             source="Source: Gambling Commission, Gambling Act review outcomes, 2023"
           />
         </ScrollReveal>

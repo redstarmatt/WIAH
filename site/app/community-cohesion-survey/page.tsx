@@ -77,8 +77,8 @@ export default function CommunityCohesionSurveyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Community belonging &mdash; the sense that people in an area belong together &mdash; has fallen from 65% of adults in 2016 to 59% in 2023, with a sharp dip during and after the pandemic. The deprivation gradient is stark: in the wealthiest local authority areas, belonging typically registers at 70% or above; in the most deprived areas it falls to around 55%, a 15 percentage-point gap. Deprivation predicts low cohesion more strongly than diversity or population density, because it correlates with reduced social trust, high residential turnover, and weaker civic infrastructure. Trust between people of different backgrounds has remained relatively stable at around 74%, but is substantially lower in areas where different groups have limited everyday contact.</p>
-            <p>Political polarisation &mdash; Brexit, immigration, and cost-of-living debates &mdash; has sustained high-temperature public discourse that affects willingness to engage across difference in shared spaces. Cohesion programmes run by local authorities and voluntary organisations are typically underfunded, short-term, and difficult to evaluate. The Levelling Up agenda included cohesion rhetoric without sustained investment in the libraries, youth centres, parks, and civic spaces that cohesion actually depends on. Where community infrastructure has been cut most deeply &mdash; disproportionately in deprived areas &mdash; the conditions under which belonging is built have eroded furthest.</p>
+            <p>Community belonging — the sense that people in an area belong together — has fallen from 65% of adults in 2016 to 59% in 2023, with a sharp dip during and after the pandemic. The deprivation gradient is stark: in the wealthiest local authority areas, belonging typically registers at 70% or above; in the most deprived areas it falls to around 55%, a 15 percentage-point gap. Deprivation predicts low cohesion more strongly than diversity or population density, because it correlates with reduced social trust, high residential turnover, and weaker civic infrastructure. Trust between people of different backgrounds has remained relatively stable at around 74%, but is substantially lower in areas where different groups have limited everyday contact.</p>
+            <p>Political polarisation — Brexit, immigration, and cost-of-living debates — has sustained high-temperature public discourse that affects willingness to engage across difference in shared spaces. Cohesion programmes run by local authorities and voluntary organisations are typically underfunded, short-term, and difficult to evaluate. The Levelling Up agenda included cohesion rhetoric without sustained investment in the libraries, youth centres, parks, and civic spaces that cohesion actually depends on. Where community infrastructure has been cut most deeply — disproportionately in deprived areas — the conditions under which belonging is built have eroded furthest.</p>
           </div>
         </section>
 
@@ -96,9 +96,9 @@ export default function CommunityCohesionSurveyPage() {
               unit=""
               direction="down"
               polarity="up-is-good"
-              changeText="-6pp since 2019 &middot; polarisation and inequality"
+              changeText="-6pp since 2019 · polarisation and inequality"
               sparklineData={[65, 64, 64, 65, 63, 60, 59, 59]}
-              href="#sec-chart"source="MHCLG &middot; Community Life Survey 2023"
+              href="#sec-chart"source="MHCLG · Community Life Survey 2023"
             />
             <MetricCard
               label="Trust across backgrounds"
@@ -106,9 +106,9 @@ export default function CommunityCohesionSurveyPage() {
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="lower in deprived areas &middot; cohesion challenge"
+              changeText="lower in deprived areas · cohesion challenge"
               sparklineData={[76, 75, 75, 74, 74, 74]}
-              href="#sec-chart"source="MHCLG &middot; Community Life Survey 2023"
+              href="#sec-chart"source="MHCLG · Community Life Survey 2023"
             />
             <MetricCard
               label="Deprivation gap"
@@ -118,7 +118,7 @@ export default function CommunityCohesionSurveyPage() {
               polarity="up-is-bad"
               changeText="most deprived areas 15pp less cohesive than wealthiest"
               sparklineData={[15, 15, 15, 15, 15, 15]}
-              href="#sec-chart"source="MHCLG &middot; Community Life Survey analysis 2023"
+              href="#sec-chart"source="MHCLG · Community Life Survey analysis 2023"
             />
           </div>
         </ScrollReveal>
@@ -126,7 +126,7 @@ export default function CommunityCohesionSurveyPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Community cohesion indicators, 2016&ndash;2023"
+              title="Community cohesion indicators, 2016–2023"
               subtitle="Percentage feeling their community has a sense of belonging and trusting people from different backgrounds."
               series={cohesionSeries}
               yLabel="Percentage (%)"
@@ -142,8 +142,8 @@ export default function CommunityCohesionSurveyPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Ministry of Housing, Communities and Local Government &mdash; Community Life Survey. Annual household survey of civic participation and cohesion. gov.uk/government/collections/community-life-survey</p>
-            <p>IPPR &mdash; Divided and Connected: Community Cohesion in Britain. ippr.org/research/publications</p>
+            <p>Ministry of Housing, Communities and Local Government — Community Life Survey. Annual household survey of civic participation and cohesion. gov.uk/government/collections/community-life-survey</p>
+            <p>IPPR — Divided and Connected: Community Cohesion in Britain. ippr.org/research/publications</p>
             <p>Community belonging measure: percentage agreeing or strongly agreeing that &ldquo;people in this area belong together.&rdquo; Trust across backgrounds: percentage agreeing or strongly agreeing that &ldquo;people in this area can be trusted.&rdquo; Deprivation gap derived from Index of Multiple Deprivation quintile analysis of Community Life Survey microdata.</p>
           </div>
         </section>

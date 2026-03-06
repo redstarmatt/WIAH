@@ -135,7 +135,7 @@ export default function BirthTraumaPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Birth trauma is a poorly-understood and significantly underdiagnosed condition. Around 3&ndash;4% of women who give birth develop post-traumatic stress disorder; many more experience significant distress that does not meet the diagnostic threshold. The causes include emergency procedures, pain that was inadequately managed, feeling out of control or not listened to, and experiencing the death or serious illness of a baby.
+              Birth trauma is a poorly-understood and significantly underdiagnosed condition. Around 3–4% of women who give birth develop post-traumatic stress disorder; many more experience significant distress that does not meet the diagnostic threshold. The causes include emergency procedures, pain that was inadequately managed, feeling out of control or not listened to, and experiencing the death or serious illness of a baby.
             </p>
             <p>
               Despite this scale, dedicated support is scarce. Only 22% of NHS maternity trusts have a birth trauma or birth reflections clinic. Many women who seek help are told to wait for generic IAPT (talking therapies) services, which often have no specialist perinatal training. The 2024 Birth Trauma Inquiry, commissioned by the All-Party Parliamentary Group, documented systemic failures and called for dedicated funding for birth trauma services in every trust.
@@ -189,7 +189,7 @@ export default function BirthTraumaPage() {
         <ScrollReveal>
           <section id="sec-ptsd" className="mb-12">
             <LineChart
-              title="Estimated annual birth trauma PTSD cases, England, 2018&ndash;2024"
+              title="Estimated annual birth trauma PTSD cases, England, 2018–2024"
               subtitle="Estimated number of women developing PTSD following birth, based on birth counts and prevalence surveys. Actual rates may be higher due to underdiagnosis and women not presenting for help."
               series={ptsdSeries}
               annotations={ptsdAnnotations}
@@ -201,7 +201,7 @@ export default function BirthTraumaPage() {
         <ScrollReveal>
           <section id="sec-services" className="mb-12">
             <LineChart
-              title="Birth trauma clinic provision and perinatal MH referrals, 2019&ndash;2024"
+              title="Birth trauma clinic provision and perinatal MH referrals, 2019–2024"
               subtitle="Percentage of NHS trusts with a dedicated birth trauma clinic (left scale context) and total perinatal mental health referrals. The referral surge reflects service expansion but need exceeds capacity."
               series={clinicSeries}
               annotations={clinicAnnotations}
@@ -213,11 +213,11 @@ export default function BirthTraumaPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="NICE NG201"
             unit="routine birth trauma screening"
             description="The NICE guideline NG201 (2021) recommends routine screening for birth trauma at the six-week postnatal check. The Birth Trauma Inquiry 2024 has driven NHS commitments to expand specialist services. Perinatal mental health referrals have more than doubled since 2019 as new NHS Specialist Perinatal Mental Health Services reach more women. The Birth Trauma Association provides peer support and campaigning."
-            source="Source: NHS England &mdash; Perinatal Mental Health MHMDS, 2024. Birth Trauma Association &mdash; Inquiry Evidence, 2024."
+            source="Source: NHS England — Perinatal Mental Health MHMDS, 2024. Birth Trauma Association — Inquiry Evidence, 2024."
           />
         </ScrollReveal>
 
@@ -228,7 +228,7 @@ export default function BirthTraumaPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

@@ -51,14 +51,14 @@ export default function GreenJobsPage() {
         <TopicHeader
           topic="Green Jobs"
           question="Is the Green Economy Actually Creating Jobs?"
-          finding="The low-carbon economy employs 763,000 people in the UK &mdash; up from 430,000 in 2014 &mdash; and pays a wage premium of around 8% above comparable non-green roles. But green jobs are highly concentrated in the South East, with just 12% located in the most deprived communities, raising serious questions about who benefits from the transition."
+          finding="The low-carbon economy employs 763,000 people in the UK — up from 430,000 in 2014 — and pays a wage premium of around 8% above comparable non-green roles. But green jobs are highly concentrated in the South East, with just 12% located in the most deprived communities, raising serious questions about who benefits from the transition."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK&apos;s low-carbon economy has grown substantially over the past decade. DESNZ&apos;s Low Carbon and Renewable Energy Economy (LCREE) survey estimated 763,000 jobs in the sector in 2023 &mdash; up from around 430,000 in 2014, a 77% increase. The sector spans renewable energy generation (offshore and onshore wind, solar, hydro), energy efficiency products and installation, low-carbon heat (heat pumps, district heating), environmental consulting and monitoring, electric vehicle supply chains, carbon capture and storage, and sustainable finance. Green jobs on average pay around 8% more than comparable roles in other sectors, according to ONS ASHE analysis &mdash; partly reflecting the technical skills demanded and partly reflecting the capital intensity of the energy sector. The sector is growing faster than the overall economy: while total UK employment grew around 4% between 2019 and 2023, low-carbon employment grew by around 25% over the same period. The government&apos;s Green Jobs Taskforce (2021) set a target of 480,000 additional green jobs by 2030 &mdash; implying a total of over 1.2 million, requiring continued strong growth.</p>
-            <p>Offshore wind is the green economy&apos;s most dramatic job-creating sector. The UK&apos;s offshore wind industry employed around 32,000 people directly in 2023 &mdash; up from just 6,000 in 2012 &mdash; and supports an estimated 100,000 jobs in the supply chain including manufacturing, installation, operations, and maintenance. The Offshore Wind Sector Deal (2019) committed to 60% UK content in offshore wind projects by 2030 and a target of 70,000 direct and indirect jobs. Major investments in port infrastructure &mdash; Teesworks in the Tees Valley, the Humber in East Yorkshire, and Nigg Energy Park in the Scottish Highlands &mdash; are creating manufacturing and assembly facilities for turbine components. Siemens Gamesa&apos;s blade manufacturing facility at Hull, Vestas&apos;s nacelle plant in Peterborough, and GE Vernova&apos;s presence in Stafford represent significant industrial investment. Scotland&apos;s offshore wind sector, centred on Montrose, Dundee, and Aberdeen, has emerged as a major employer in a region historically dependent on North Sea oil and gas &mdash; some of the same technical skills are transferable.</p>
+            <p>The UK's low-carbon economy has grown substantially over the past decade. DESNZ's Low Carbon and Renewable Energy Economy (LCREE) survey estimated 763,000 jobs in the sector in 2023 — up from around 430,000 in 2014, a 77% increase. The sector spans renewable energy generation (offshore and onshore wind, solar, hydro), energy efficiency products and installation, low-carbon heat (heat pumps, district heating), environmental consulting and monitoring, electric vehicle supply chains, carbon capture and storage, and sustainable finance. Green jobs on average pay around 8% more than comparable roles in other sectors, according to ONS ASHE analysis — partly reflecting the technical skills demanded and partly reflecting the capital intensity of the energy sector. The sector is growing faster than the overall economy: while total UK employment grew around 4% between 2019 and 2023, low-carbon employment grew by around 25% over the same period. The government's Green Jobs Taskforce (2021) set a target of 480,000 additional green jobs by 2030 — implying a total of over 1.2 million, requiring continued strong growth.</p>
+            <p>Offshore wind is the green economy's most dramatic job-creating sector. The UK's offshore wind industry employed around 32,000 people directly in 2023 — up from just 6,000 in 2012 — and supports an estimated 100,000 jobs in the supply chain including manufacturing, installation, operations, and maintenance. The Offshore Wind Sector Deal (2019) committed to 60% UK content in offshore wind projects by 2030 and a target of 70,000 direct and indirect jobs. Major investments in port infrastructure — Teesworks in the Tees Valley, the Humber in East Yorkshire, and Nigg Energy Park in the Scottish Highlands — are creating manufacturing and assembly facilities for turbine components. Siemens Gamesa's blade manufacturing facility at Hull, Vestas's nacelle plant in Peterborough, and GE Vernova's presence in Stafford represent significant industrial investment. Scotland's offshore wind sector, centred on Montrose, Dundee, and Aberdeen, has emerged as a major employer in a region historically dependent on North Sea oil and gas — some of the same technical skills are transferable.</p>
             </div>
         </section>
 
@@ -74,9 +74,9 @@ export default function GreenJobsPage() {
               value="763K"
               direction="up"
               polarity="up-is-good"
-              changeText="Up from 430K in 2014 &mdash; target 1.2M+ by 2030"
+              changeText="Up from 430K in 2014 — target 1.2M+ by 2030"
               sparklineData={[430, 475, 520, 570, 610, 660, 720, 763]}
-              source="DESNZ &mdash; Low Carbon and Renewable Energy Economy survey 2024"
+              source="DESNZ — Low Carbon and Renewable Energy Economy survey 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -85,9 +85,9 @@ export default function GreenJobsPage() {
               unit="%"
               direction="flat"
               polarity="up-is-good"
-              changeText="Only 12% in most deprived 20% of areas &mdash; concentrated in South East"
+              changeText="Only 12% in most deprived 20% of areas — concentrated in South East"
               sparklineData={[11, 11, 11, 12, 12, 12, 12, 12]}
-              source="DESNZ LCREE &mdash; establishment analysis vs IMD deciles"
+              source="DESNZ LCREE — establishment analysis vs IMD deciles"
               onExpand={() => {}}
             />
             <MetricCard
@@ -96,9 +96,9 @@ export default function GreenJobsPage() {
               unit="%"
               direction="up"
               polarity="up-is-good"
-              changeText="vs comparable non-green roles &mdash; offshore wind engineers earn more"
+              changeText="vs comparable non-green roles — offshore wind engineers earn more"
               sparklineData={[5, 5, 6, 6, 7, 7, 8, 8]}
-              source="ONS ASHE &mdash; sectoral earnings analysis 2023"
+              source="ONS ASHE — sectoral earnings analysis 2023"
               onExpand={() => {}}
             />
           </div>
@@ -107,7 +107,7 @@ export default function GreenJobsPage() {
         <ScrollReveal>
           <section id="sec-jobs" className="mb-12">
             <LineChart
-              title="Low-carbon economy employment, UK, 2014&ndash;2023"
+              title="Low-carbon economy employment, UK, 2014–2023"
               subtitle="Thousands of jobs in renewable energy, energy efficiency, low-carbon heat, and supply chains. DESNZ LCREE survey."
               series={jobsSeries}
               yLabel="Employment (thousands)"
@@ -120,8 +120,8 @@ export default function GreenJobsPage() {
             title="Offshore Wind: 32,000 Direct Jobs"
             value="5&times;"
             unit="increase in offshore wind employment since 2012"
-            description="Offshore wind alone employs 32,000 people directly &mdash; up from 6,000 in 2012 &mdash; and investment in Teesworks, Humber, and Scottish ports is creating new industrial clusters in historically deprived areas. The UK Offshore Wind Sector Deal targets 70,000 jobs by 2030 with 60% UK content. Siemens Gamesa&apos;s blade plant in Hull, Vestas in Peterborough, and GE Vernova in Stafford represent the largest new manufacturing investments in their regions in a generation."
-            source="Source: OWIC &mdash; Offshore Wind Sector Deal progress report 2024; DESNZ LCREE survey."
+            description="Offshore wind alone employs 32,000 people directly — up from 6,000 in 2012 — and investment in Teesworks, Humber, and Scottish ports is creating new industrial clusters in historically deprived areas. The UK Offshore Wind Sector Deal targets 70,000 jobs by 2030 with 60% UK content. Siemens Gamesa's blade plant in Hull, Vestas in Peterborough, and GE Vernova in Stafford represent the largest new manufacturing investments in their regions in a generation."
+            source="Source: OWIC — Offshore Wind Sector Deal progress report 2024; DESNZ LCREE survey."
           />
         </ScrollReveal>
 
@@ -135,11 +135,11 @@ export default function GreenJobsPage() {
                   <ul className="space-y-2">
                     {data.metadata.sources.map((src, idx) => (
                       <li key={idx} className="text-wiah-mid">
-                        <strong className="text-wiah-black">{src.name}:</strong>&nbsp;
+                        <strong className="text-wiah-black">{src.name}:</strong> 
                         <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue">
                           {src.dataset}
                         </a>
-                        &nbsp;({src.frequency})
+                         ({src.frequency})
                       </li>
                     ))}
                   </ul>

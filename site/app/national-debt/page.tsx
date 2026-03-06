@@ -57,7 +57,7 @@ export default function NationalDebtPage() {
   const interestSeries: Series[] = data
     ? [{
         id: 'debt-interest',
-        label: 'Annual debt interest (&pound;bn)',
+        label: 'Annual debt interest (£bn)',
         colour: '#E63946',
         data: data.national.timeSeries.map(d => ({
           date: yearToDate(d.date),
@@ -80,16 +80,16 @@ export default function NationalDebtPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="National Debt"
-          question="How Big Is Britain&apos;s Debt and Does It Matter?"
-          finding="UK public debt reached 98.8% of GDP in 2024 &mdash; the highest since the 1960s &mdash; with interest payments of &pound;112bn annually, consuming more than &pound;1 in every &pound;9 of tax revenue."
+          question="How Big Is Britain's Debt and Does It Matter?"
+          finding="UK public debt reached 98.8% of GDP in 2024 — the highest since the 1960s — with interest payments of £112bn annually, consuming more than £1 in every £9 of tax revenue."
           colour="#6B7280"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom&apos;s national debt &mdash; formally measured as Public Sector Net Debt excluding the Bank of England &mdash; stood at approximately 98.8% of GDP at the end of the 2023/24 financial year, the highest ratio since the early 1960s when the country was still paying off the costs of the Second World War. In cash terms, the outstanding debt is approximately &pound;2.7 trillion. The ONS publishes monthly public sector finance statistics that track borrowing, debt, and interest costs in detail, and the Office for Budget Responsibility (OBR) provides independent forecasts and historical analysis. The debt-to-GDP ratio rose from around 36% before the 2008 financial crisis to over 80% by 2013 as recession and bank bailouts required substantial emergency borrowing, then remained elevated through a decade of austerity before surging again during the COVID-19 pandemic, when the government borrowed an additional &pound;330 billion over two years to fund the furlough scheme, business loans, and emergency health spending. Unlike many European peers, the UK chose not to substantially reduce its debt-to-GDP ratio during the 2010s recovery; fiscal consolidation slowed growth in public spending without reducing the underlying debt stock.</p>
-            <p>The annual cost of servicing the debt has become a significant fiscal constraint. Net interest payments on government debt reached &pound;112 billion in 2023/24 &mdash; up from around &pound;42 billion in 2010 and &pound;52 billion as recently as 2021. The surge was driven by two factors: the RPI-linkage on approximately 25% of the UK&apos;s outstanding gilts, which saw interest payments spike as inflation hit 11% in 2022, and the high base rate of interest at which new gilts have been issued since the Bank of England began tightening monetary policy from late 2021. Debt interest now exceeds the entire defence budget and is larger than the education budget. As a share of tax revenue, interest payments reached approximately 11.6% in 2023/24 &mdash; meaning that more than one pound in every nine collected in taxes went straight to bondholders rather than to public services. The OBR forecasts that interest payments will remain above &pound;100 billion per year through the late 2020s even on optimistic assumptions about inflation and growth.</p>
+            <p>The United Kingdom's national debt — formally measured as Public Sector Net Debt excluding the Bank of England — stood at approximately 98.8% of GDP at the end of the 2023/24 financial year, the highest ratio since the early 1960s when the country was still paying off the costs of the Second World War. In cash terms, the outstanding debt is approximately £2.7 trillion. The ONS publishes monthly public sector finance statistics that track borrowing, debt, and interest costs in detail, and the Office for Budget Responsibility (OBR) provides independent forecasts and historical analysis. The debt-to-GDP ratio rose from around 36% before the 2008 financial crisis to over 80% by 2013 as recession and bank bailouts required substantial emergency borrowing, then remained elevated through a decade of austerity before surging again during the COVID-19 pandemic, when the government borrowed an additional £330 billion over two years to fund the furlough scheme, business loans, and emergency health spending. Unlike many European peers, the UK chose not to substantially reduce its debt-to-GDP ratio during the 2010s recovery; fiscal consolidation slowed growth in public spending without reducing the underlying debt stock.</p>
+            <p>The annual cost of servicing the debt has become a significant fiscal constraint. Net interest payments on government debt reached £112 billion in 2023/24 — up from around £42 billion in 2010 and £52 billion as recently as 2021. The surge was driven by two factors: the RPI-linkage on approximately 25% of the UK's outstanding gilts, which saw interest payments spike as inflation hit 11% in 2022, and the high base rate of interest at which new gilts have been issued since the Bank of England began tightening monetary policy from late 2021. Debt interest now exceeds the entire defence budget and is larger than the education budget. As a share of tax revenue, interest payments reached approximately 11.6% in 2023/24 — meaning that more than one pound in every nine collected in taxes went straight to bondholders rather than to public services. The OBR forecasts that interest payments will remain above £100 billion per year through the late 2020s even on optimistic assumptions about inflation and growth.</p>
             </div>
         </section>
 
@@ -106,16 +106,16 @@ export default function NationalDebtPage() {
               value="98.8%"
               direction="up"
               polarity="up-is-bad"
-              changeText="2024 &middot; Highest since the 1960s &middot; Up from 42% in 2007"
+              changeText="2024 · Highest since the 1960s · Up from 42% in 2007"
               sparklineData={[42, 52, 62, 70, 76, 84, 87, 99]}
               onExpand={() => {}}
             />
             <MetricCard
               label="Annual debt interest"
-              value="&pound;112bn"
+              value="£112bn"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023/24 &middot; More than the defence budget &middot; Up from &pound;42bn in 2010"
+              changeText="2023/24 · More than the defence budget · Up from £42bn in 2010"
               sparklineData={[42, 45, 48, 50, 52, 60, 88, 112]}
               onExpand={() => {}}
             />
@@ -124,7 +124,7 @@ export default function NationalDebtPage() {
               value="11.6%"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023/24 &middot; &pound;1 in every &pound;9 of tax goes to creditors"
+              changeText="2023/24 · £1 in every £9 of tax goes to creditors"
               sparklineData={[6.5, 7.0, 7.5, 7.8, 7.5, 7.2, 10.5, 11.6]}
               onExpand={() => {}}
             />
@@ -134,14 +134,14 @@ export default function NationalDebtPage() {
         <ScrollReveal>
           <section id="sec-debt" className="mb-12">
             <LineChart
-              title="UK public debt as % of GDP, 2000&ndash;2024"
+              title="UK public debt as % of GDP, 2000–2024"
               subtitle="Public Sector Net Debt excluding Bank of England, as a percentage of nominal GDP. Annotated at key fiscal events."
               series={debtSeries}
               annotations={debtAnnotations}
               yLabel="% of GDP"
               source={{
                 name: 'ONS',
-                dataset: 'Public sector finances, UK &mdash; PSF1',
+                dataset: 'Public sector finances, UK — PSF1',
                 frequency: 'monthly',
               }}
             />
@@ -151,13 +151,13 @@ export default function NationalDebtPage() {
         <ScrollReveal>
           <section id="sec-interest" className="mb-12">
             <LineChart
-              title="Annual government debt interest payments, 2010&ndash;2024 (&pound;bn)"
-              subtitle="Central government net interest payments, calendar year approximations. The 2022&ndash;24 surge reflects RPI-linked gilt costs during the inflation crisis."
+              title="Annual government debt interest payments, 2010–2024 (£bn)"
+              subtitle="Central government net interest payments, calendar year approximations. The 2022–24 surge reflects RPI-linked gilt costs during the inflation crisis."
               series={interestSeries}
-              yLabel="&pound;bn"
+              yLabel="£bn"
               source={{
                 name: 'ONS',
-                dataset: 'Public sector finances &mdash; central government interest',
+                dataset: 'Public sector finances — central government interest',
                 frequency: 'monthly',
               }}
             />
@@ -166,11 +166,11 @@ export default function NationalDebtPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s reassuring"
+            title="What's reassuring"
             value="Long average maturity &amp; sterling debt"
             unit=""
-            description="The UK&apos;s debt stock has an average maturity of approximately 15 years &mdash; among the longest of any developed economy &mdash; which limits the risk of a sudden refinancing crisis. Almost all UK government debt is denominated in sterling, meaning the government cannot be forced into default by exchange rate movements. The Debt Management Office has deliberately lengthened maturities over the past two decades to reduce rollover risk. While interest costs are high today, roughly two-thirds of the debt stock was issued at lower rates and will not need refinancing for years &mdash; providing time for fiscal consolidation to take effect."
-            source="Source: ONS &mdash; Public Sector Finances 2024; OBR &mdash; Economic and Fiscal Outlook March 2024; HM Treasury &mdash; Debt Management Report 2024."
+            description="The UK's debt stock has an average maturity of approximately 15 years — among the longest of any developed economy — which limits the risk of a sudden refinancing crisis. Almost all UK government debt is denominated in sterling, meaning the government cannot be forced into default by exchange rate movements. The Debt Management Office has deliberately lengthened maturities over the past two decades to reduce rollover risk. While interest costs are high today, roughly two-thirds of the debt stock was issued at lower rates and will not need refinancing for years — providing time for fiscal consolidation to take effect."
+            source="Source: ONS — Public Sector Finances 2024; OBR — Economic and Fiscal Outlook March 2024; HM Treasury — Debt Management Report 2024."
           />
         </ScrollReveal>
 
@@ -180,7 +180,7 @@ export default function NationalDebtPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

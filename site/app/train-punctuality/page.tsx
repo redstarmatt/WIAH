@@ -60,8 +60,8 @@ export default function TrainPunctualityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Only 63.3% of UK trains arrived on time in 2024 by the Public Performance Measure, down from 79.4% in 2019 and among the worst punctuality rates in Western Europe &mdash; Switzerland achieves 92&ndash;95%, Germany and France 75&ndash;85%. Cancellations reached 3.9% of all scheduled services in 2024, up from 1.8% in 2019. The causes are structural: a network largely built in the Victorian era, analogue signalling technology that creates cascading delay vulnerability, a &pound;7 billion infrastructure maintenance backlog, and the fragmentation of accountability between Network Rail (infrastructure) and train operating companies (operations) that defined the privatisation model from 1994. Delay Repay claims reached 4.1 million in 2023 &mdash; up 40% from 2019.</p>
-            <p>The Passenger Railway Services (Public Ownership) Act 2024 enables direct operation of franchises as they expire, aiming to reintegrate infrastructure and operations under Great British Railways. Whether this translates into measurable punctuality improvement will be the test of the reform. The practical consequences of poor performance fall most heavily on commuters with no viable alternative to rail &mdash; particularly those on corridors without adequate bus or road options &mdash; and on the environment, where passengers switching from rail to car for journey reliability reasons undermine the sector&apos;s sustainability argument.</p>
+            <p>Only 63.3% of UK trains arrived on time in 2024 by the Public Performance Measure, down from 79.4% in 2019 and among the worst punctuality rates in Western Europe — Switzerland achieves 92–95%, Germany and France 75–85%. Cancellations reached 3.9% of all scheduled services in 2024, up from 1.8% in 2019. The causes are structural: a network largely built in the Victorian era, analogue signalling technology that creates cascading delay vulnerability, a £7 billion infrastructure maintenance backlog, and the fragmentation of accountability between Network Rail (infrastructure) and train operating companies (operations) that defined the privatisation model from 1994. Delay Repay claims reached 4.1 million in 2023 — up 40% from 2019.</p>
+            <p>The Passenger Railway Services (Public Ownership) Act 2024 enables direct operation of franchises as they expire, aiming to reintegrate infrastructure and operations under Great British Railways. Whether this translates into measurable punctuality improvement will be the test of the reform. The practical consequences of poor performance fall most heavily on commuters with no viable alternative to rail — particularly those on corridors without adequate bus or road options — and on the environment, where passengers switching from rail to car for journey reliability reasons undermine the sector's sustainability argument.</p>
           </div>
         </section>
 
@@ -79,9 +79,9 @@ export default function TrainPunctualityPage() {
               unit=""
               direction={'down' as const}
               polarity={'up-is-good' as const}
-              changeText="-16.1pp vs 2019 &middot; worst in Western Europe"
+              changeText="-16.1pp vs 2019 · worst in Western Europe"
               sparklineData={[83.5, 85.1, 80.2, 79.4, 73.8, 65.9, 72.3, 69.8, 63.3]}
-              href="#sec-chart"source="Office of Rail and Road &middot; National Rail Trends 2024"
+              href="#sec-chart"source="Office of Rail and Road · National Rail Trends 2024"
             />
             <MetricCard
               label="Train cancellation rate"
@@ -89,9 +89,9 @@ export default function TrainPunctualityPage() {
               unit=""
               direction={'up' as const}
               polarity={'up-is-bad' as const}
-              changeText="+2.1pp since 2019 &middot; compounding delays"
+              changeText="+2.1pp since 2019 · compounding delays"
               sparklineData={[1.5, 1.6, 1.8, 1.8, 2.1, 2.9, 2.6, 3.1, 3.9]}
-              href="#sec-chart"source="Office of Rail and Road &middot; National Rail Trends 2024"
+              href="#sec-chart"source="Office of Rail and Road · National Rail Trends 2024"
             />
             <MetricCard
               label="Delay Repay compensation claims"
@@ -99,9 +99,9 @@ export default function TrainPunctualityPage() {
               unit=""
               direction={'up' as const}
               polarity={'up-is-bad' as const}
-              changeText="+40% since 2019 &middot; rising awareness and delays"
+              changeText="+40% since 2019 · rising awareness and delays"
               sparklineData={[1.8, 2.0, 2.2, 2.9, 2.5, 2.8, 3.1, 3.6, 4.1]}
-              href="#sec-chart"source="Office of Rail and Road &middot; National Rail Trends 2024"
+              href="#sec-chart"source="Office of Rail and Road · National Rail Trends 2024"
             />
           </div>
         </ScrollReveal>
@@ -109,7 +109,7 @@ export default function TrainPunctualityPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Train punctuality rate, 2016&ndash;2024"
+              title="Train punctuality rate, 2016–2024"
               subtitle="Percentage of trains arriving within 5 minutes of scheduled time (PPM measure)."
               series={series}
               yLabel="On-time arrival (%)"
@@ -125,7 +125,7 @@ export default function TrainPunctualityPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Office of Rail and Road &mdash; National Rail Trends. Published quarterly. dataportal.orr.gov.uk/statistics/performance/train-punctuality/</p>
+            <p>Office of Rail and Road — National Rail Trends. Published quarterly. dataportal.orr.gov.uk/statistics/performance/train-punctuality/</p>
             <p>On-time arrival measured by Public Performance Measure (PPM): within 5 minutes of scheduled arrival for regional and commuter services, within 10 minutes for long-distance services. Cancellation rate is percentage of planned services that did not run. Delay Repay claims are compensation applications made by passengers for qualifying delays.</p>
           </div>
         </section>

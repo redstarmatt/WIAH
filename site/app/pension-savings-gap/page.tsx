@@ -63,8 +63,8 @@ export default function PensionSavingsGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The median pension pot for a 55-year-old stands at approximately &pound;72,000 &mdash; well below the &pound;200,000+ required for a comfortable retirement when combined with the state pension. The aggregate savings gap is estimated at &pound;350 billion by the Pensions Policy Institute and is growing at roughly 5% per year. Auto-enrolment has expanded pension participation from 47% to 88% of eligible employees since 2012, but design limitations leave 39% of self-employed workers &mdash; around 1.75 million people &mdash; saving nothing for retirement. The minimum 8% contribution rate (3% employer, 5% employee) is estimated to be roughly half what is needed for a moderate retirement income, and very few workers voluntarily exceed the minimum.</p>
-            <p>The savings gap falls hardest on those with the least capacity to compensate. Women face a particularly acute shortfall because career breaks for caring reduce both savings years and state pension entitlement; the gender pension gap sees women receive around &pound;7,900 less per year in private pension income than men. Workers in low-paid, part-time, or gig economy roles &mdash; disproportionately from minority ethnic backgrounds &mdash; combine low contribution rates with exclusion from the auto-enrolment earnings threshold. The shift from defined benefit to defined contribution schemes over the past three decades has transferred investment risk entirely to individuals, meaning retirement outcomes now depend on market conditions over which savers have no control.</p>
+            <p>The median pension pot for a 55-year-old stands at approximately £72,000 — well below the £200,000+ required for a comfortable retirement when combined with the state pension. The aggregate savings gap is estimated at £350 billion by the Pensions Policy Institute and is growing at roughly 5% per year. Auto-enrolment has expanded pension participation from 47% to 88% of eligible employees since 2012, but design limitations leave 39% of self-employed workers — around 1.75 million people — saving nothing for retirement. The minimum 8% contribution rate (3% employer, 5% employee) is estimated to be roughly half what is needed for a moderate retirement income, and very few workers voluntarily exceed the minimum.</p>
+            <p>The savings gap falls hardest on those with the least capacity to compensate. Women face a particularly acute shortfall because career breaks for caring reduce both savings years and state pension entitlement; the gender pension gap sees women receive around £7,900 less per year in private pension income than men. Workers in low-paid, part-time, or gig economy roles — disproportionately from minority ethnic backgrounds — combine low contribution rates with exclusion from the auto-enrolment earnings threshold. The shift from defined benefit to defined contribution schemes over the past three decades has transferred investment risk entirely to individuals, meaning retirement outcomes now depend on market conditions over which savers have no control.</p>
           </div>
         </section>
 
@@ -84,7 +84,7 @@ export default function PensionSavingsGapPage() {
               polarity="up-is-good"
               changeText="but needs £200k+ for comfortable retirement"
               sparklineData={[61000, 63000, 65000, 67000, 68000, 69000, 70000, 71000, 72000]}
-              href="#sec-chart"source="Pensions Policy Institute &middot; 2023"
+              href="#sec-chart"source="Pensions Policy Institute · 2023"
             />
             <MetricCard
               label="Self-employed with no pension"
@@ -94,7 +94,7 @@ export default function PensionSavingsGapPage() {
               polarity="up-is-bad"
               changeText="3.3 million people saving nothing"
               sparklineData={[41, 40, 40, 39, 38, 39, 39, 39, 39]}
-              href="#sec-chart"source="DWP &middot; Family Resources Survey 2023"
+              href="#sec-chart"source="DWP · Family Resources Survey 2023"
             />
             <MetricCard
               label="Aggregate pension savings gap"
@@ -102,9 +102,9 @@ export default function PensionSavingsGapPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="aggregate shortfall &middot; growing 5% a year"
+              changeText="aggregate shortfall · growing 5% a year"
               sparklineData={[290, 295, 300, 305, 310, 315, 320, 330, 350]}
-              href="#sec-chart"source="Pensions Policy Institute &middot; 2023"
+              href="#sec-chart"source="Pensions Policy Institute · 2023"
             />
           </div>
         </ScrollReveal>
@@ -112,7 +112,7 @@ export default function PensionSavingsGapPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Median pension pot at age 55, 2015&ndash;2023"
+              title="Median pension pot at age 55, 2015–2023"
               subtitle="Median private pension wealth for those aged 55. A comfortable retirement typically requires £200,000+ in addition to the state pension."
               series={medianPotSeries}
               yLabel="Pension pot (£)"
@@ -128,9 +128,9 @@ export default function PensionSavingsGapPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Pensions Policy Institute &mdash; UK Pension Adequacy Research. pensionspolicyinstitute.org.uk</p>
-            <p>DWP &mdash; Family Resources Survey. gov.uk/government/collections/family-resources-survey--2</p>
-            <p>ONS &mdash; Wealth and Assets Survey. ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/debt/bulletins/wealthingreatbritainwave</p>
+            <p>Pensions Policy Institute — UK Pension Adequacy Research. pensionspolicyinstitute.org.uk</p>
+            <p>DWP — Family Resources Survey. gov.uk/government/collections/family-resources-survey--2</p>
+            <p>ONS — Wealth and Assets Survey. ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/debt/bulletins/wealthingreatbritainwave</p>
             <p>Median pension pot is estimated from the Wealth and Assets Survey and Pensions Policy Institute modelling. The savings gap is a modelled estimate of the difference between projected pension wealth and the wealth required to fund a moderate retirement income (as defined by the PLSA Retirement Living Standards). Self-employed pension participation is from the Family Resources Survey; self-employed includes both sole traders and directors of owner-managed companies.</p>
           </div>
         </section>

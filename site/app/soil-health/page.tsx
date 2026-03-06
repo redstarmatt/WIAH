@@ -54,15 +54,15 @@ export default function SoilHealthPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Soil Health"
-          question="Is Britain&apos;s Soil Actually Dying?"
-          finding="An estimated 2.9 billion tonnes of topsoil are lost to erosion across the UK each year, costing the economy &pound;1.4 billion annually. Around 17% of agricultural soils are now classified as degraded, up from 12% in 2010."
+          question="Is Britain's Soil Actually Dying?"
+          finding="An estimated 2.9 billion tonnes of topsoil are lost to erosion across the UK each year, costing the economy £1.4 billion annually. Around 17% of agricultural soils are now classified as degraded, up from 12% in 2010."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has approximately 10.9 million hectares of agricultural land, accounting for 72% of the country&apos;s total land area. The Environment Agency estimated in 2019 that 2.9 billion tonnes of soil are eroded each year, with intensive arable farming &mdash; concentrated in East Anglia, the East Midlands, and Yorkshire &mdash; driving the worst losses. DEFRA&apos;s Soil Health Monitoring Scheme, launched in 2023, aims to provide the first comprehensive baseline assessment. Early results suggest that 45% of arable soils have low organic carbon content, a key indicator of long-term fertility. The Parliamentary Office of Science and Technology estimated that degraded soil costs the UK economy &pound;1.4 billion annually through lost productivity, increased flooding, and water treatment costs.</p>
-            <p>Soil organic matter in England has declined measurably over the past two decades. The Countryside Survey, which ran from 1978 to 2007, documented a significant drop in carbon content across arable and improved grassland soils. Intensive tillage, monoculture cropping, and heavy fertiliser use accelerate the breakdown of organic matter, while compaction from heavy machinery reduces water infiltration. Peat soils, which store an estimated 3.2 billion tonnes of carbon across the UK, are particularly vulnerable &mdash; the International Union for Conservation of Nature found that 80% of UK peatlands are in a damaged or degraded state, releasing an estimated 23 million tonnes of CO2 equivalent per year. The trend is towards further degradation without large-scale intervention.</p>
+            <p>The UK has approximately 10.9 million hectares of agricultural land, accounting for 72% of the country's total land area. The Environment Agency estimated in 2019 that 2.9 billion tonnes of soil are eroded each year, with intensive arable farming — concentrated in East Anglia, the East Midlands, and Yorkshire — driving the worst losses. DEFRA's Soil Health Monitoring Scheme, launched in 2023, aims to provide the first comprehensive baseline assessment. Early results suggest that 45% of arable soils have low organic carbon content, a key indicator of long-term fertility. The Parliamentary Office of Science and Technology estimated that degraded soil costs the UK economy £1.4 billion annually through lost productivity, increased flooding, and water treatment costs.</p>
+            <p>Soil organic matter in England has declined measurably over the past two decades. The Countryside Survey, which ran from 1978 to 2007, documented a significant drop in carbon content across arable and improved grassland soils. Intensive tillage, monoculture cropping, and heavy fertiliser use accelerate the breakdown of organic matter, while compaction from heavy machinery reduces water infiltration. Peat soils, which store an estimated 3.2 billion tonnes of carbon across the UK, are particularly vulnerable — the International Union for Conservation of Nature found that 80% of UK peatlands are in a damaged or degraded state, releasing an estimated 23 million tonnes of CO2 equivalent per year. The trend is towards further degradation without large-scale intervention.</p>
             </div>
         </section>
 
@@ -91,7 +91,7 @@ export default function SoilHealthPage() {
               unit="tonnes"
               direction="up"
               polarity="up-is-bad"
-              changeText="Costs the UK economy an estimated &pound;1.4bn annually"
+              changeText="Costs the UK economy an estimated £1.4bn annually"
               sparklineData={[2.5, 2.6, 2.7, 2.8, 2.9]}
               source="Environment Agency"
               onExpand={() => {}}
@@ -113,7 +113,7 @@ export default function SoilHealthPage() {
         <ScrollReveal>
           <section id="sec-degradation" className="mb-12">
             <LineChart
-              title="UK agricultural soils classified as degraded, 2010&ndash;2024"
+              title="UK agricultural soils classified as degraded, 2010–2024"
               subtitle="Percentage of surveyed agricultural soils showing signs of compaction, erosion, or loss of structure. DEFRA estimates."
               series={degradationSeries}
               yLabel="% degraded"
@@ -124,7 +124,7 @@ export default function SoilHealthPage() {
         <ScrollReveal>
           <section id="sec-carbon" className="mb-12">
             <LineChart
-              title="Arable soils with low organic carbon content, 2007&ndash;2022"
+              title="Arable soils with low organic carbon content, 2007–2022"
               subtitle="Percentage of arable soil samples below the threshold for healthy carbon content. Countryside Survey &amp; DEFRA monitoring."
               series={carbonSeries}
               yLabel="% low carbon"

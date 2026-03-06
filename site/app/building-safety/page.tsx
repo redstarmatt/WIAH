@@ -83,15 +83,15 @@ export default function BuildingSafetyPage() {
         <TopicHeader
           topic="Building Safety"
           question="How Many People Still Live in Buildings With Dangerous Cladding?"
-          finding="Nearly eight years after the Grenfell Tower fire killed 72 people, over 3,600 residential buildings with unsafe cladding have not yet completed remediation. An estimated 300,000 leaseholders remain trapped in flats they cannot sell, with waking watch costs of up to &pound;500 per month per household. The government&apos;s &pound;5.1 billion Building Safety Fund has disbursed less than half its allocation."
+          finding="Nearly eight years after the Grenfell Tower fire killed 72 people, over 3,600 residential buildings with unsafe cladding have not yet completed remediation. An estimated 300,000 leaseholders remain trapped in flats they cannot sell, with waking watch costs of up to £500 per month per household. The government's £5.1 billion Building Safety Fund has disbursed less than half its allocation."
           colour="#E63946"
           preposition="with"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Grenfell Tower fire of 14 June 2017, which killed 72 people, exposed a systemic failure of building safety regulation in England. Combustible aluminium composite material (ACM) cladding on the tower&apos;s exterior was the primary accelerant, but the subsequent investigation revealed that the problem extended far beyond one building. DLUHC&apos;s Building Safety Programme has identified 5,412 residential buildings over 11 metres with some form of unsafe cladding or fire safety defect. Of these, approximately 1,780 have completed remediation as of early 2025 &mdash; a completion rate of 33% after nearly eight years. The remaining 3,632 buildings house an estimated 300,000 households, many of whom cannot sell or remortgage their flats because lenders refuse to advance loans on buildings with known fire safety defects.</p>
-            <p>The financial burden on leaseholders has been immense. Before the Building Safety Act 2022 established the principle that leaseholders in buildings over 11 metres should not pay for cladding remediation, many faced bills of &pound;40,000&ndash;&pound;100,000 per flat. Interim safety measures &mdash; principally waking watches (24-hour fire patrols) and communal alarm systems &mdash; have cost leaseholders up to &pound;500 per household per month. The government&apos;s &pound;5.1 billion Building Safety Fund, announced in 2020, is the primary remediation funding mechanism, but disbursement has been slow: by late 2024, approximately &pound;2.3 billion had been spent. The Cladding Safety Scheme, which replaced the Building Safety Fund in 2023, aims to accelerate progress but relies on building owners to register and apply, and many have not done so. Buildings between 11 and 18 metres face a different regime: the &pound;1 billion Medium Rise Scheme provides limited support, but many mid-rise leaseholders remain liable for non-cladding fire safety defects (compartmentation failures, missing fire breaks, defective fire doors) that can cost &pound;10,000&ndash;&pound;30,000 per flat.</p>
+            <p>The Grenfell Tower fire of 14 June 2017, which killed 72 people, exposed a systemic failure of building safety regulation in England. Combustible aluminium composite material (ACM) cladding on the tower's exterior was the primary accelerant, but the subsequent investigation revealed that the problem extended far beyond one building. DLUHC's Building Safety Programme has identified 5,412 residential buildings over 11 metres with some form of unsafe cladding or fire safety defect. Of these, approximately 1,780 have completed remediation as of early 2025 — a completion rate of 33% after nearly eight years. The remaining 3,632 buildings house an estimated 300,000 households, many of whom cannot sell or remortgage their flats because lenders refuse to advance loans on buildings with known fire safety defects.</p>
+            <p>The financial burden on leaseholders has been immense. Before the Building Safety Act 2022 established the principle that leaseholders in buildings over 11 metres should not pay for cladding remediation, many faced bills of £40,000–£100,000 per flat. Interim safety measures — principally waking watches (24-hour fire patrols) and communal alarm systems — have cost leaseholders up to £500 per household per month. The government's £5.1 billion Building Safety Fund, announced in 2020, is the primary remediation funding mechanism, but disbursement has been slow: by late 2024, approximately £2.3 billion had been spent. The Cladding Safety Scheme, which replaced the Building Safety Fund in 2023, aims to accelerate progress but relies on building owners to register and apply, and many have not done so. Buildings between 11 and 18 metres face a different regime: the £1 billion Medium Rise Scheme provides limited support, but many mid-rise leaseholders remain liable for non-cladding fire safety defects (compartmentation failures, missing fire breaks, defective fire doors) that can cost £10,000–£30,000 per flat.</p>
             </div>
         </section>
 
@@ -107,7 +107,7 @@ export default function BuildingSafetyPage() {
               value="5,412"
               direction="up"
               polarity="up-is-bad"
-              changeText="2024 &middot; Identification ongoing &middot; True total likely higher &middot; 40% in London"
+              changeText="2024 · Identification ongoing · True total likely higher · 40% in London"
               sparklineData={[457, 1650, 3120, 4630, 5120, 5340, 5412]}
               onExpand={() => {}}
             />
@@ -116,16 +116,16 @@ export default function BuildingSafetyPage() {
               value="1,780"
               direction="up"
               polarity="up-is-good"
-              changeText="2024 &middot; 33% completion rate &middot; 3,632 buildings still awaiting works &middot; ~300K households affected"
+              changeText="2024 · 33% completion rate · 3,632 buildings still awaiting works · ~300K households affected"
               sparklineData={[15, 128, 340, 612, 1015, 1420, 1780]}
               onExpand={() => {}}
             />
             <MetricCard
               label="Building Safety Fund disbursed"
-              value="&pound;2.3bn"
+              value="£2.3bn"
               direction="up"
               polarity="up-is-good"
-              changeText="Of &pound;5.1bn allocated &middot; 45% disbursed after 4 years &middot; Contractor shortages slowing progress"
+              changeText="Of £5.1bn allocated · 45% disbursed after 4 years · Contractor shortages slowing progress"
               sparklineData={[0.3, 0.6, 1.0, 1.5, 1.9, 2.3]}
               onExpand={() => {}}
             />
@@ -135,7 +135,7 @@ export default function BuildingSafetyPage() {
         <ScrollReveal>
           <section id="sec-progress" className="mb-12">
             <LineChart
-              title="Cladding remediation progress, England, 2018&ndash;2024"
+              title="Cladding remediation progress, England, 2018–2024"
               subtitle="Cumulative buildings identified with unsafe cladding vs. buildings where remediation has been completed."
               series={combinedSeries}
               yLabel="Buildings"
@@ -150,11 +150,11 @@ export default function BuildingSafetyPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s changing"
+            title="What's changing"
             value="1,780"
             unit="buildings remediated — pace is accelerating"
             description="The Building Safety Act 2022 established the principle that leaseholders should not pay for cladding remediation in buildings over 11 metres. The Building Safety Regulator began operations in April 2023 with new enforcement powers. The Grenfell Tower Inquiry final report (September 2024) recommended sweeping regulatory reform. Remediation completions rose from 1,015 in 2022 to 1,780 in 2024 as contractor capacity expanded. The Cladding Safety Scheme is designed to streamline applications and speed up disbursement."
-            source="Source: DLUHC &mdash; Building Safety Programme Monthly Data Release 2024; Grenfell Tower Inquiry Final Report 2024."
+            source="Source: DLUHC — Building Safety Programme Monthly Data Release 2024; Grenfell Tower Inquiry Final Report 2024."
           />
         </ScrollReveal>
 
@@ -164,7 +164,7 @@ export default function BuildingSafetyPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

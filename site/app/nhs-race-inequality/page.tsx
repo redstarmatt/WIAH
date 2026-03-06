@@ -99,10 +99,10 @@ export default function NhsRaceInequalityPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Ethnic disparities in NHS care and outcomes are extensive, well-documented, and persistent. The most stark example is maternal mortality: MBRRACE-UK&apos;s confidential enquiry consistently shows that Black women are 3&ndash;4 times more likely to die during pregnancy or within 42 days of giving birth than white women, and Asian women are approximately 1.6 times more likely. These ratios have not meaningfully improved in over a decade of monitoring. In 2023, the disparity ratio for Black women was 3.4 &mdash; down from a peak of 4.3 in 2017, but the level of excess risk remains among the worst in Europe. The NHS Race and Health Observatory, established in 2020, identified systemic factors including later booking for antenatal care, implicit bias in clinical decision-making, and lower rates of appropriate escalation when complications arise.
+              Ethnic disparities in NHS care and outcomes are extensive, well-documented, and persistent. The most stark example is maternal mortality: MBRRACE-UK's confidential enquiry consistently shows that Black women are 3–4 times more likely to die during pregnancy or within 42 days of giving birth than white women, and Asian women are approximately 1.6 times more likely. These ratios have not meaningfully improved in over a decade of monitoring. In 2023, the disparity ratio for Black women was 3.4 — down from a peak of 4.3 in 2017, but the level of excess risk remains among the worst in Europe. The NHS Race and Health Observatory, established in 2020, identified systemic factors including later booking for antenatal care, implicit bias in clinical decision-making, and lower rates of appropriate escalation when complications arise.
             </p>
             <p>
-              Beyond maternity, ethnic disparities permeate the system. People from South Asian backgrounds are 2&ndash;4 times more likely to develop type 2 diabetes than the white British population, yet diabetes prevention programmes have lower take-up in South Asian communities. Black African and Black Caribbean men have a 3&times; higher rate of detention under the Mental Health Act compared with white men, reflecting decades of documented over-pathologisation. COVID-19 mortality was 1.5&ndash;2&times; higher among people from Black, Pakistani, and Bangladeshi backgrounds, even after adjusting for age, geography, and deprivation &mdash; a fact that prompted the NHS to commission reviews into its approach to health inequalities. The Sewell Commission (2021) contested the framing of institutional racism but acknowledged that ethnic disparities in health outcomes were real and required action.
+              Beyond maternity, ethnic disparities permeate the system. People from South Asian backgrounds are 2–4 times more likely to develop type 2 diabetes than the white British population, yet diabetes prevention programmes have lower take-up in South Asian communities. Black African and Black Caribbean men have a 3&times; higher rate of detention under the Mental Health Act compared with white men, reflecting decades of documented over-pathologisation. COVID-19 mortality was 1.5–2&times; higher among people from Black, Pakistani, and Bangladeshi backgrounds, even after adjusting for age, geography, and deprivation — a fact that prompted the NHS to commission reviews into its approach to health inequalities. The Sewell Commission (2021) contested the framing of institutional racism but acknowledged that ethnic disparities in health outcomes were real and required action.
             </p>
             </div>
         </section>
@@ -120,9 +120,9 @@ export default function NhsRaceInequalityPage() {
               value="3.4&times;"
               direction="down"
               polarity="up-is-bad"
-              changeText="Relative to white women &middot; Down from 4.3&times; peak but still extreme"
+              changeText="Relative to white women · Down from 4.3&times; peak but still extreme"
               sparklineData={[4.1, 4.2, 4.3, 3.9, 3.7, 4.0, 3.7, 3.5, 3.4]}
-              source="MBRRACE-UK &middot; Saving Lives Report 2023"
+              source="MBRRACE-UK · Saving Lives Report 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -130,9 +130,9 @@ export default function NhsRaceInequalityPage() {
               value="10.5%"
               direction="up"
               polarity="up-is-good"
-              changeText="vs 24.8% of all staff &middot; Target: proportional by 2028"
+              changeText="vs 24.8% of all staff · Target: proportional by 2028"
               sparklineData={[7.4, 7.8, 8.1, 8.6, 9.0, 9.3, 9.7, 10.1, 10.5]}
-              source="NHS England &middot; WRES Report 2023"
+              source="NHS England · WRES Report 2023"
               onExpand={() => {}}
             />
             <MetricCard
@@ -140,7 +140,7 @@ export default function NhsRaceInequalityPage() {
               value="31%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="vs 24% for white staff &middot; Barely changed since 2015"
+              changeText="vs 24% for white staff · Barely changed since 2015"
               sparklineData={[30, 30, 31, 31, 30, 31, 31, 31]}
               source="NHS Staff Survey 2023"
               onExpand={() => {}}
@@ -152,13 +152,13 @@ export default function NhsRaceInequalityPage() {
           <section id="sec-maternal" className="mb-12">
             {maternalSeries.length > 0 ? (
               <LineChart
-                title="Maternal mortality disparity ratios, UK, 2015&ndash;2023"
-                subtitle="Risk of maternal death relative to white women (set at 1.0). Black women face a persistent 3&ndash;4 fold excess risk."
+                title="Maternal mortality disparity ratios, UK, 2015–2023"
+                subtitle="Risk of maternal death relative to white women (set at 1.0). Black women face a persistent 3–4 fold excess risk."
                 series={maternalSeries}
                 yLabel="Risk ratio (vs White = 1.0)"
                 source={{
                   name: 'MBRRACE-UK',
-                  dataset: 'Saving Lives, Improving Mothers&apos; Care',
+                  dataset: "Saving Lives, Improving Mothers' Care",
                   frequency: 'annual',
                   url: 'https://www.npeu.ox.ac.uk/mbrrace-uk/reports',
                 }}
@@ -173,7 +173,7 @@ export default function NhsRaceInequalityPage() {
           <section id="sec-workforce" className="mb-12">
             {workforceSeries.length > 0 ? (
               <LineChart
-                title="Ethnic minority representation in the NHS workforce, 2015&ndash;2023"
+                title="Ethnic minority representation in the NHS workforce, 2015–2023"
                 subtitle="Share of all staff vs senior roles (band 8a+). The gap illustrates the &ldquo;snowy white peaks&rdquo; of NHS leadership."
                 series={workforceSeries}
                 yLabel="Percentage (%)"
@@ -196,7 +196,7 @@ export default function NhsRaceInequalityPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

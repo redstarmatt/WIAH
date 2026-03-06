@@ -67,14 +67,14 @@ export default function RentersReformPage() {
         <TopicHeader
           topic="Renters Reform"
           question="Are renters finally getting more protection?"
-          finding="Section 21 &lsquo;no-fault&rsquo; evictions were used 26,000 times in 2022/23, making over 22,000 households homeless annually. The Renters Rights Act 2024 abolishes Section 21 &mdash; a landmark for England&apos;s 11 million private renters."
+          finding="Section 21 &lsquo;no-fault&rsquo; evictions were used 26,000 times in 2022/23, making over 22,000 households homeless annually. The Renters Rights Act 2024 abolishes Section 21 — a landmark for England's 11 million private renters."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Section 21 of the Housing Act 1988 gave landlords the right to evict assured shorthold tenants without stating any reason, with two months&apos; notice. By 2022/23, over 26,000 Section 21 notices were being served annually, and the end of a private sector tenancy was the single largest cause of homelessness presentations to local authorities &mdash; around 22,000 households per year. The commitment to abolish Section 21 was made in April 2019; six years later, the Renters Rights Act received Royal Assent in spring 2025, having been delayed by sustained landlord lobbying. The Act goes further than abolishing Section 21: it converts all assured shorthold tenancies to periodic (rolling monthly) agreements, introduces a Decent Homes Standard for the private rented sector, creates a mandatory landlord PRS Database, and establishes a new Ombudsman for redress.</p>
-            <p>Significant gaps remain. The Act contains no in-tenancy rent control &mdash; landlords can raise rents annually to market rate, meaning the 8.9% increases recorded in 2023 remain fully permissible. Its effectiveness on homelessness will depend on how courts interpret the new possession grounds and whether legal aid is adequately funded for tenants contesting proceedings. The Act addresses security of tenure; it does not address affordability, which for many private renters is the more acute immediate problem given rents rising faster than wages since 2020.</p>
+            <p>Section 21 of the Housing Act 1988 gave landlords the right to evict assured shorthold tenants without stating any reason, with two months' notice. By 2022/23, over 26,000 Section 21 notices were being served annually, and the end of a private sector tenancy was the single largest cause of homelessness presentations to local authorities — around 22,000 households per year. The commitment to abolish Section 21 was made in April 2019; six years later, the Renters Rights Act received Royal Assent in spring 2025, having been delayed by sustained landlord lobbying. The Act goes further than abolishing Section 21: it converts all assured shorthold tenancies to periodic (rolling monthly) agreements, introduces a Decent Homes Standard for the private rented sector, creates a mandatory landlord PRS Database, and establishes a new Ombudsman for redress.</p>
+            <p>Significant gaps remain. The Act contains no in-tenancy rent control — landlords can raise rents annually to market rate, meaning the 8.9% increases recorded in 2023 remain fully permissible. Its effectiveness on homelessness will depend on how courts interpret the new possession grounds and whether legal aid is adequately funded for tenants contesting proceedings. The Act addresses security of tenure; it does not address affordability, which for many private renters is the more acute immediate problem given rents rising faster than wages since 2020.</p>
           </div>
         </section>
 
@@ -92,9 +92,9 @@ export default function RentersReformPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Back to pre-COVID highs &middot; renters face no-fault eviction again"
+            changeText="Back to pre-COVID highs · renters face no-fault eviction again"
             sparklineData={[20400, 22100, 23700, 24100, 7400, 13200, 24700, 26000]}
-            source="MOJ Court Statistics &middot; 2023"
+            source="MOJ Court Statistics · 2023"
             href="#sec-s21"/>
           <MetricCard
             label="Households made homeless via S21/yr"
@@ -104,7 +104,7 @@ export default function RentersReformPage() {
             polarity="up-is-bad"
             changeText="Largest single driver of homelessness presentations"
             sparklineData={[20000, 21000, 16000, 21000, 22000]}
-            source="DLUHC Homelessness Statistics &middot; 2023"
+            source="DLUHC Homelessness Statistics · 2023"
             href="#sec-rent"/>
           <MetricCard
             label="Average private rent increase (2023)"
@@ -112,9 +112,9 @@ export default function RentersReformPage() {
             unit="%"
             direction="up"
             polarity="up-is-bad"
-            changeText="Largest annual increase on record &middot; tenants have no in-tenancy protection"
+            changeText="Largest annual increase on record · tenants have no in-tenancy protection"
             sparklineData={[2.1, 1.4, 2.3, 4.1, 8.9]}
-            source="ONS Private Rental Market Survey &middot; 2023"
+            source="ONS Private Rental Market Survey · 2023"
             href="#sec-rent"/>
         </div>
         </ScrollReveal>
@@ -124,7 +124,7 @@ export default function RentersReformPage() {
           title="Section 21 abolished by Renters Rights Act 2024"
           value="Abolished"
           unit=""
-          description="The Renters Rights Act 2024 ends no-fault evictions in England &mdash; a reform campaigned for since 2019. Landlords must give reasons for eviction. 11 million renters gain new security."
+          description="The Renters Rights Act 2024 ends no-fault evictions in England — a reform campaigned for since 2019. Landlords must give reasons for eviction. 11 million renters gain new security."
           source="Renters Rights Act 2024"
         />
         </ScrollReveal>
@@ -132,7 +132,7 @@ export default function RentersReformPage() {
         <ScrollReveal>
         <section id="sec-s21" className="mb-12">
           <LineChart
-            title="Section 21 &lsquo;no-fault&rsquo; eviction notices served, England, 2016&ndash;2023"
+            title="Section 21 &lsquo;no-fault&rsquo; eviction notices served, England, 2016–2023"
             subtitle="Number of Section 21 notices issued. Ministry of Justice Court Statistics."
             series={s21Series}
             annotations={[
@@ -147,7 +147,7 @@ export default function RentersReformPage() {
         <ScrollReveal>
         <section id="sec-rent" className="mb-12">
           <LineChart
-            title="Average private rent increase, England, 2019&ndash;2023"
+            title="Average private rent increase, England, 2019–2023"
             subtitle="Year-on-year percentage change in private rents. ONS Private Rental Market Survey."
             series={rentSeries}
             yLabel="% annual increase"
@@ -157,11 +157,11 @@ export default function RentersReformPage() {
             <a href="https://www.gov.uk/government/collections/court-statistics-quarterly" className="underline" target="_blank" rel="noopener noreferrer">
               Ministry of Justice Court Statistics
             </a>
-            {' '}&middot;{' '}
+            {' '}·{' '}
             <a href="https://shelter.org.uk" className="underline" target="_blank" rel="noopener noreferrer">
               Shelter (shelter.org.uk)
             </a>
-            {' '}&middot; DLUHC
+            {' '}· DLUHC
           </p>
         </section>
         </ScrollReveal>

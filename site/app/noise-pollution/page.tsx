@@ -55,14 +55,14 @@ export default function NoisePollutionPage() {
         <TopicHeader
           topic="Noise Pollution"
           question="Is Britain Actually Getting Noisier?"
-          finding="An estimated 9.7 million people in England are exposed to road traffic noise above the WHO&apos;s recommended safety threshold. Noise complaints to local authorities peaked at 435,000 in 2021 and remain well above pre-pandemic levels."
+          finding="An estimated 9.7 million people in England are exposed to road traffic noise above the WHO's recommended safety threshold. Noise complaints to local authorities peaked at 435,000 in 2021 and remain well above pre-pandemic levels."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Environmental noise is the second most harmful environmental health risk in Europe after air pollution, according to the World Health Organization. In England, DEFRA&apos;s strategic noise mapping estimated in 2024 that 9.7 million people are exposed to road traffic noise above 55 dB Lden &mdash; the WHO Environmental Noise Guidelines threshold above which adverse health effects become significant. An additional 2 million are exposed to harmful noise from railways, and 680,000 from major airports, predominantly around Heathrow, Gatwick, Manchester, and Stansted. The WHO estimates that environmental noise causes 12,000 premature deaths and 48,000 new cases of ischaemic heart disease across Europe annually, with sleep disturbance, cardiovascular disease, and cognitive impairment in children as the primary health pathways.</p>
-            <p>Noise complaints to local authorities in England peaked at 435,000 in 2021, a 20% increase on the pre-pandemic baseline, driven by changed working patterns that made daytime neighbourhood noise more intrusive. By 2024, complaints had fallen to 395,000 but remained 20% above the 2014 level of 330,000. Construction noise complaints have risen sharply in London and other major cities where housebuilding targets are increasing activity. Night-time noise &mdash; particularly from hospitality, late-night deliveries, and traffic &mdash; is the most harmful category, as it disrupts sleep. The WHO recommends night-time noise levels below 40 dB Lnight, but DEFRA mapping shows that 2.9 million people in England are exposed to road traffic noise above 50 dB Lnight &mdash; a level associated with significant sleep disturbance.</p>
+            <p>Environmental noise is the second most harmful environmental health risk in Europe after air pollution, according to the World Health Organization. In England, DEFRA's strategic noise mapping estimated in 2024 that 9.7 million people are exposed to road traffic noise above 55 dB Lden — the WHO Environmental Noise Guidelines threshold above which adverse health effects become significant. An additional 2 million are exposed to harmful noise from railways, and 680,000 from major airports, predominantly around Heathrow, Gatwick, Manchester, and Stansted. The WHO estimates that environmental noise causes 12,000 premature deaths and 48,000 new cases of ischaemic heart disease across Europe annually, with sleep disturbance, cardiovascular disease, and cognitive impairment in children as the primary health pathways.</p>
+            <p>Noise complaints to local authorities in England peaked at 435,000 in 2021, a 20% increase on the pre-pandemic baseline, driven by changed working patterns that made daytime neighbourhood noise more intrusive. By 2024, complaints had fallen to 395,000 but remained 20% above the 2014 level of 330,000. Construction noise complaints have risen sharply in London and other major cities where housebuilding targets are increasing activity. Night-time noise — particularly from hospitality, late-night deliveries, and traffic — is the most harmful category, as it disrupts sleep. The WHO recommends night-time noise levels below 40 dB Lnight, but DEFRA mapping shows that 2.9 million people in England are exposed to road traffic noise above 50 dB Lnight — a level associated with significant sleep disturbance.</p>
             </div>
         </section>
 
@@ -110,7 +110,7 @@ export default function NoisePollutionPage() {
         <ScrollReveal>
           <section id="sec-complaints" className="mb-12">
             <LineChart
-              title="Noise complaints to local authorities, England, 2014&ndash;2024"
+              title="Noise complaints to local authorities, England, 2014–2024"
               subtitle="Thousands of complaints per year. DEFRA noise statistics. Includes domestic, commercial, and construction noise."
               series={complaintsSeries}
               yLabel="Thousands"
@@ -121,7 +121,7 @@ export default function NoisePollutionPage() {
         <ScrollReveal>
           <section id="sec-exposure" className="mb-12">
             <LineChart
-              title="Population exposed to harmful road traffic noise, England, 2012&ndash;2024"
+              title="Population exposed to harmful road traffic noise, England, 2012–2024"
               subtitle="Millions of people exposed above 55 dB Lden (WHO threshold). DEFRA strategic noise mapping."
               series={exposureSeries}
               yLabel="Millions exposed"

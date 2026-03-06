@@ -69,16 +69,16 @@ export default function WealthInequalityPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Wealth Inequality"
-          question="Who owns Britain&apos;s wealth?"
-          finding="The richest 10% of households own 43% of all UK wealth, while the bottom 50% own just 9% &mdash; a gap that has widened since 2006 and is driven primarily by property and pension inequality."
+          question="Who owns Britain's wealth?"
+          finding="The richest 10% of households own 43% of all UK wealth, while the bottom 50% own just 9% — a gap that has widened since 2006 and is driven primarily by property and pension inequality."
           colour="#264653"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The ONS Wealth and Assets Survey (2020&ndash;22) found that the richest 10% of households hold 43% of all household wealth in the UK, while the bottom 50% share just 9%. This is not a story about income inequality, which has been broadly stable since the mid-1990s. It is a story about the accumulation of assets &mdash; above all, property and pensions. Homeowners have seen values double or treble in many parts of England since 2000; private renters, who now account for around a fifth of households, accumulate nothing from that appreciation. Those in defined-benefit pension schemes &mdash; concentrated in public sector employment &mdash; hold substantial accrued wealth that is invisible in take-home pay comparisons.</p>
-            <p>The age dimension is stark. Median household wealth for the under-25s stands at around &pound;12,000; for those aged 65&ndash;74, it reaches &pound;462,000. Much of this reflects a natural lifecycle &mdash; people accumulate assets over time &mdash; but the gap between older and younger cohorts has grown significantly. Today&apos;s 30&ndash;35-year-olds hold considerably less wealth than people of the same age did 20 years ago, primarily because homeownership rates among that group have fallen sharply. A generation that bought in the 1990s has benefited from three decades of house price growth. One that could not get onto the ladder has not.</p>
+            <p>The ONS Wealth and Assets Survey (2020–22) found that the richest 10% of households hold 43% of all household wealth in the UK, while the bottom 50% share just 9%. This is not a story about income inequality, which has been broadly stable since the mid-1990s. It is a story about the accumulation of assets — above all, property and pensions. Homeowners have seen values double or treble in many parts of England since 2000; private renters, who now account for around a fifth of households, accumulate nothing from that appreciation. Those in defined-benefit pension schemes — concentrated in public sector employment — hold substantial accrued wealth that is invisible in take-home pay comparisons.</p>
+            <p>The age dimension is stark. Median household wealth for the under-25s stands at around £12,000; for those aged 65–74, it reaches £462,000. Much of this reflects a natural lifecycle — people accumulate assets over time — but the gap between older and younger cohorts has grown significantly. Today's 30–35-year-olds hold considerably less wealth than people of the same age did 20 years ago, primarily because homeownership rates among that group have fallen sharply. A generation that bought in the 1990s has benefited from three decades of house price growth. One that could not get onto the ladder has not.</p>
             </div>
         </section>
 
@@ -153,13 +153,13 @@ export default function WealthInequalityPage() {
                       />
                     </div>
                     <div className="w-32 text-right text-sm font-mono text-wiah-black">
-                      &pound;{Math.round(item.medianWealth / 1000)}K
+                      £{Math.round(item.medianWealth / 1000)}K
                     </div>
                   </div>
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS &mdash; Wealth and Assets Survey 2021</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS — Wealth and Assets Survey 2021</p>
           </section>
         </ScrollReveal>
 
@@ -183,7 +183,7 @@ export default function WealthInequalityPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS &mdash; Wealth and Assets Survey 2021</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS — Wealth and Assets Survey 2021</p>
           </section>
         </ScrollReveal>
 
@@ -192,7 +192,7 @@ export default function WealthInequalityPage() {
             title="Pension auto-enrolment transformed saving"
             value="10M"
             unit="workers enrolled"
-            description="The introduction of auto-enrolment for workplace pensions in 2012 has enrolled over 10 million previously unsaved workers. Private sector pension participation rose from 42% to 85% of eligible employees. It is the most successful wealth-building intervention of the last 30 years &mdash; though contribution rates remain too low for most to achieve comfortable retirement incomes."
+            description="The introduction of auto-enrolment for workplace pensions in 2012 has enrolled over 10 million previously unsaved workers. Private sector pension participation rose from 42% to 85% of eligible employees. It is the most successful wealth-building intervention of the last 30 years — though contribution rates remain too low for most to achieve comfortable retirement incomes."
             source="Source: Pensions Regulator"
           />
         </ScrollReveal>
@@ -203,7 +203,7 @@ export default function WealthInequalityPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

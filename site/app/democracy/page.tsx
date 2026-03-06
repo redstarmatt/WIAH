@@ -188,10 +188,10 @@ export default function DemocracyPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The 2024 general election returned 59.9% turnout &mdash; the second lowest since women were fully enfranchised in 1928, beaten only by 2001&apos;s 59.4%. Labour took 412 seats on 33.7% of the vote; the Conservatives collapsed to 121 seats, their worst showing since 1906. The result laid bare the distortions of first-past-the-post: Reform UK won 14.3% of the national vote but just 5 seats (0.8% of the Commons), while the Liberal Democrats converted 12.2% of the vote into 72 seats. Votes and representation are structurally decoupled.
+              The 2024 general election returned 59.9% turnout — the second lowest since women were fully enfranchised in 1928, beaten only by 2001's 59.4%. Labour took 412 seats on 33.7% of the vote; the Conservatives collapsed to 121 seats, their worst showing since 1906. The result laid bare the distortions of first-past-the-post: Reform UK won 14.3% of the national vote but just 5 seats (0.8% of the Commons), while the Liberal Democrats converted 12.2% of the vote into 72 seats. Votes and representation are structurally decoupled.
             </p>
             <p>
-              Trust in politicians to tell the truth sits at 17%, according to Ipsos&apos;s annual survey running since 1983. That figure is level with the post-expenses-scandal trough of 2009 and only marginally above the 15% recorded after Partygate in 2022. For context, 95% of Britons trust nurses and 91% trust doctors; politicians rank below estate agents, at 26%. The 2016 EU referendum &mdash; held amid similar distrust &mdash; drew 72.2% turnout, suggesting disillusionment with politicians does not automatically suppress participation when the stakes feel direct.
+              Trust in politicians to tell the truth sits at 17%, according to Ipsos's annual survey running since 1983. That figure is level with the post-expenses-scandal trough of 2009 and only marginally above the 15% recorded after Partygate in 2022. For context, 95% of Britons trust nurses and 91% trust doctors; politicians rank below estate agents, at 26%. The 2016 EU referendum — held amid similar distrust — drew 72.2% turnout, suggesting disillusionment with politicians does not automatically suppress participation when the stakes feel direct.
             </p>
             </div>
         </section>
@@ -356,7 +356,7 @@ export default function DemocracyPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}

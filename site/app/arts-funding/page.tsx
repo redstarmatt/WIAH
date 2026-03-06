@@ -42,7 +42,7 @@ export default function ArtsFundingPage() {
     ? [
         {
           id: 'ace-real-terms',
-          label: 'Arts Council England grant-in-aid (&pound;m, 2010 prices)',
+          label: 'Arts Council England grant-in-aid (£m, 2010 prices)',
           colour: '#264653',
           data: data.timeSeries.map(d => ({
             date: yearToDate(d.date),
@@ -56,7 +56,7 @@ export default function ArtsFundingPage() {
     ? [
         {
           id: 'local-auth-culture',
-          label: 'Local authority cultural spending (&pound;bn, real terms)',
+          label: 'Local authority cultural spending (£bn, real terms)',
           colour: '#264653',
           data: data.timeSeries.map(d => ({
             date: yearToDate(d.date),
@@ -74,18 +74,18 @@ export default function ArtsFundingPage() {
         <TopicHeader
           topic="Arts Funding"
           preposition="with"
-          question="What Has Austerity Done to Britain&apos;s Arts?"
-          finding="Arts Council England&apos;s budget fell 36% in real terms between 2010 and 2024. Local authority arts spending fell 57% over the same period. In the 2023 portfolio rebalancing, 140 arts organisations lost all their funding &mdash; including several that had been continuously funded for decades &mdash; while 24 areas received new investment as part of a &ldquo;levelling up&rdquo; reallocation that many in the sector regard as having disrupted established excellence without adequately building new capacity."
+          question="What Has Austerity Done to Britain's Arts?"
+          finding="Arts Council England's budget fell 36% in real terms between 2010 and 2024. Local authority arts spending fell 57% over the same period. In the 2023 portfolio rebalancing, 140 arts organisations lost all their funding — including several that had been continuously funded for decades — while 24 areas received new investment as part of a &ldquo;levelling up&rdquo; reallocation that many in the sector regard as having disrupted established excellence without adequately building new capacity."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The decade of austerity that followed the 2010 Spending Review fell heavily on culture. Arts Council England&apos;s grant-in-aid from DCMS, which funds the ACE&apos;s revenue grants to arts organisations, theatres, museums, and cultural infrastructure, was &pound;700 million in 2010 in real terms. By 2020 it had fallen to approximately &pound;548 million in real terms, and after a brief COVID-era uplift it settled around &pound;520 million by 2024 &mdash; a 36% real-terms reduction over 14 years. This decline translated directly into reduced support for symphony orchestras, touring theatre companies, contemporary dance, visual arts organisations, and the literary sector. The largest established organisations &mdash; the Royal Opera House, National Theatre, Tate, the British Museum &mdash; maintained substantial public funding but are under continuous pressure to increase earned income, which increasingly means catering to wealthier audiences and commercial sponsors.
+              The decade of austerity that followed the 2010 Spending Review fell heavily on culture. Arts Council England's grant-in-aid from DCMS, which funds the ACE's revenue grants to arts organisations, theatres, museums, and cultural infrastructure, was £700 million in 2010 in real terms. By 2020 it had fallen to approximately £548 million in real terms, and after a brief COVID-era uplift it settled around £520 million by 2024 — a 36% real-terms reduction over 14 years. This decline translated directly into reduced support for symphony orchestras, touring theatre companies, contemporary dance, visual arts organisations, and the literary sector. The largest established organisations — the Royal Opera House, National Theatre, Tate, the British Museum — maintained substantial public funding but are under continuous pressure to increase earned income, which increasingly means catering to wealthier audiences and commercial sponsors.
             </p>
             <p>
-              Local authorities have made even deeper cuts to culture and leisure. MHCLG Revenue Outturn data shows that local authority spending on culture, sport, and recreation in England fell from &pound;1.4 billion in 2010/11 to approximately &pound;630 million by 2023/24 in real terms &mdash; a 57% reduction. Libraries, local museums, arts centres, and community cultural facilities have borne much of this reduction. More than 800 library branches have closed since 2010. Local museums have cut opening hours, reduced staff, and in some cases closed entirely. Grass-roots music venues &mdash; the stages where artists develop before they reach larger audiences &mdash; have contracted sharply: the Music Venue Trust estimates that England had approximately 960 small music venues in 2010 and fewer than 600 by 2024. Once a venue closes, it rarely reopens.
+              Local authorities have made even deeper cuts to culture and leisure. MHCLG Revenue Outturn data shows that local authority spending on culture, sport, and recreation in England fell from £1.4 billion in 2010/11 to approximately £630 million by 2023/24 in real terms — a 57% reduction. Libraries, local museums, arts centres, and community cultural facilities have borne much of this reduction. More than 800 library branches have closed since 2010. Local museums have cut opening hours, reduced staff, and in some cases closed entirely. Grass-roots music venues — the stages where artists develop before they reach larger audiences — have contracted sharply: the Music Venue Trust estimates that England had approximately 960 small music venues in 2010 and fewer than 600 by 2024. Once a venue closes, it rarely reopens.
             </p>
             </div>
         </section>
@@ -103,9 +103,9 @@ export default function ArtsFundingPage() {
               value="-36%"
               direction="down"
               polarity="up-is-good"
-              changeText="&pound;700m in 2010 &rarr; &pound;520m in 2024 &middot; 14 years of decline"
+              changeText="£700m in 2010 &rarr; £520m in 2024 · 14 years of decline"
               sparklineData={[700, 680, 650, 620, 595, 570, 545, 530]}
-              source="Arts Council England &middot; Annual Reports 2010&ndash;2024"
+              source="Arts Council England · Annual Reports 2010–2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -113,9 +113,9 @@ export default function ArtsFundingPage() {
               value="-57%"
               direction="down"
               polarity="up-is-good"
-              changeText="&pound;1.4bn in 2010/11 &rarr; &pound;630m in 2023/24 &middot; 800+ libraries closed"
+              changeText="£1.4bn in 2010/11 &rarr; £630m in 2023/24 · 800+ libraries closed"
               sparklineData={[1.4, 1.3, 1.2, 1.1, 1.0, 0.9, 0.75, 0.65]}
-              source="MHCLG &middot; Revenue Outturn (RO) Returns 2024"
+              source="MHCLG · Revenue Outturn (RO) Returns 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -123,9 +123,9 @@ export default function ArtsFundingPage() {
               value="140"
               direction="up"
               polarity="up-is-bad"
-              changeText="Portfolio rebalancing &middot; English Touring Opera, LPO among those affected"
+              changeText="Portfolio rebalancing · English Touring Opera, LPO among those affected"
               sparklineData={[5, 8, 12, 20, 35, 40, 80, 140]}
-              source="Arts Council England &middot; National Portfolio 2023&ndash;2026"
+              source="Arts Council England · National Portfolio 2023–2026"
               onExpand={() => {}}
             />
           </div>
@@ -134,10 +134,10 @@ export default function ArtsFundingPage() {
         <ScrollReveal>
           <PositiveCallout
             title="What is getting better"
-            value="&pound;116bn"
+            value="£116bn"
             unit="creative industries GVA"
-            description="Creative industries contribute &pound;116bn to the UK economy &mdash; roughly 6% of GDP. Independent analysis consistently finds that every &pound;1 in public arts investment generates &pound;4&ndash;&pound;5 in economic activity through tourism, supply chains, and wellbeing. The UK&apos;s global creative reputation remains exceptional, with British film, music, theatre, and games industries among the most successful in the world."
-            source="DCMS &middot; Creative Industries Economic Estimates 2022"
+            description="Creative industries contribute £116bn to the UK economy — roughly 6% of GDP. Independent analysis consistently finds that every £1 in public arts investment generates £4–£5 in economic activity through tourism, supply chains, and wellbeing. The UK's global creative reputation remains exceptional, with British film, music, theatre, and games industries among the most successful in the world."
+            source="DCMS · Creative Industries Economic Estimates 2022"
           />
         </ScrollReveal>
 
@@ -145,10 +145,10 @@ export default function ArtsFundingPage() {
           <section id="sec-ace" className="mb-12">
             {aceSeries.length > 0 ? (
               <LineChart
-                title="Arts Council England grant-in-aid, 2010&ndash;2024 (real terms, &pound;m)"
+                title="Arts Council England grant-in-aid, 2010–2024 (real terms, £m)"
                 subtitle="Grant-in-aid from DCMS deflated to 2010 prices using HM Treasury GDP deflator. Excludes National Lottery distribution."
                 series={aceSeries}
-                yLabel="&pound;m (2010 prices)"
+                yLabel="£m (2010 prices)"
                 source={{
                   name: 'Arts Council England',
                   dataset: 'Annual Report and Accounts',
@@ -166,13 +166,13 @@ export default function ArtsFundingPage() {
           <section id="sec-local" className="mb-12">
             {localAuthSeries.length > 0 ? (
               <LineChart
-                title="Local authority cultural spending, 2010&ndash;2024 (real terms, &pound;bn)"
+                title="Local authority cultural spending, 2010–2024 (real terms, £bn)"
                 subtitle="Revenue expenditure on culture, sport, and recreation. Deflated to 2010 prices. Covers England only."
                 series={localAuthSeries}
-                yLabel="&pound;bn (2010 prices)"
+                yLabel="£bn (2010 prices)"
                 source={{
                   name: 'MHCLG',
-                  dataset: 'Revenue Outturn (RO) Returns &mdash; Culture and Recreation',
+                  dataset: 'Revenue Outturn (RO) Returns — Culture and Recreation',
                   frequency: 'annual',
                   url: 'https://www.local.gov.uk/our-support/research-and-insights/finance-and-funding',
                 }}
@@ -188,7 +188,7 @@ export default function ArtsFundingPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

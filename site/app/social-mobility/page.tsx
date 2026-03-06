@@ -72,8 +72,8 @@ export default function SocialMobilityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain is one of the least socially mobile countries in the developed world. OECD analysis finds it takes on average five generations for a family from the bottom income decile to reach the national average &mdash; compared with two generations in Denmark or three in Germany. The class pay gap compounds this: people from working-class backgrounds earn on average &pound;6,800 less per year than colleagues from professional families doing the same job at the same level. This &ldquo;class ceiling&rdquo; is driven not by formal qualification gaps but by accent, networks, and the social polish that elite education cultivates. In the most selective professions &mdash; law (26%), medicine (20%), journalism (28%) &mdash; people from working-class origins are represented at less than half their share of the wider population.</p>
-            <p>Where you are born matters as much as who you are born to. The Social Mobility Commission has identified persistent &ldquo;cold spots&rdquo; &mdash; coastal towns like Scarborough, Hull, and Blackpool; former mining communities across South Yorkshire and County Durham; and rural coastal areas of the South West &mdash; where the combination of weak labour markets, poor transport links, and under-resourced schools makes upward mobility structurally harder. London and its commuter belt are the dominant &ldquo;hot spots&rdquo;: graduate employers are geographically concentrated, internships and networking opportunities cluster there, and family proximity to high-value professional contacts translates directly into career outcomes. A young person from Blackpool and a young person from Surrey with identical A-level grades do not face the same odds.</p>
+            <p>Britain is one of the least socially mobile countries in the developed world. OECD analysis finds it takes on average five generations for a family from the bottom income decile to reach the national average — compared with two generations in Denmark or three in Germany. The class pay gap compounds this: people from working-class backgrounds earn on average £6,800 less per year than colleagues from professional families doing the same job at the same level. This &ldquo;class ceiling&rdquo; is driven not by formal qualification gaps but by accent, networks, and the social polish that elite education cultivates. In the most selective professions — law (26%), medicine (20%), journalism (28%) — people from working-class origins are represented at less than half their share of the wider population.</p>
+            <p>Where you are born matters as much as who you are born to. The Social Mobility Commission has identified persistent &ldquo;cold spots&rdquo; — coastal towns like Scarborough, Hull, and Blackpool; former mining communities across South Yorkshire and County Durham; and rural coastal areas of the South West — where the combination of weak labour markets, poor transport links, and under-resourced schools makes upward mobility structurally harder. London and its commuter belt are the dominant &ldquo;hot spots&rdquo;: graduate employers are geographically concentrated, internships and networking opportunities cluster there, and family proximity to high-value professional contacts translates directly into career outcomes. A young person from Blackpool and a young person from Surrey with identical A-level grades do not face the same odds.</p>
             </div>
         </section>
 
@@ -106,11 +106,11 @@ export default function SocialMobilityPage() {
             />
             <MetricCard
               label="Class pay gap (professional roles)"
-              value="&pound;6,800"
+              value="£6,800"
               unit="/year"
               direction="up"
               polarity="up-is-bad"
-              changeText="People from WC backgrounds earn &pound;6.8K less in same role"
+              changeText="People from WC backgrounds earn £6.8K less in same role"
               sparklineData={[4000, 4500, 5000, 5500, 6000, 6400, 6800]}
               onExpand={() => {}}
             />
@@ -169,7 +169,7 @@ export default function SocialMobilityPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Social Mobility Commission &mdash; Socio-Economic Diversity in the Professions 2023</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Social Mobility Commission — Socio-Economic Diversity in the Professions 2023</p>
           </section>
         </ScrollReveal>
 
@@ -178,8 +178,8 @@ export default function SocialMobilityPage() {
             title="HE participation by disadvantaged students has risen"
             value="Doubled"
             unit="from 13% in 2006 to 28% in 2022"
-            description="The proportion of students from the most disadvantaged backgrounds (POLAR4 quintile 1) entering higher education doubled from 13% in 2006 to 28% in 2022 &mdash; a real improvement. But participation gaps between the most and least advantaged students remain large, and disadvantaged students are more likely to study at lower-ranked institutions with weaker graduate outcomes."
-            source="Source: HESA &mdash; Higher Education Student Statistics 2006–2022"
+            description="The proportion of students from the most disadvantaged backgrounds (POLAR4 quintile 1) entering higher education doubled from 13% in 2006 to 28% in 2022 — a real improvement. But participation gaps between the most and least advantaged students remain large, and disadvantaged students are more likely to study at lower-ranked institutions with weaker graduate outcomes."
+            source="Source: HESA — Higher Education Student Statistics 2006–2022"
           />
         </ScrollReveal>
       </main>

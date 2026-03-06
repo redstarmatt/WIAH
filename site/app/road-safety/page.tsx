@@ -94,14 +94,14 @@ export default function RoadSafetyPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Road Safety"
-          question="How dangerous are Britain&apos;s roads?"
-          finding="Road deaths in Great Britain fell dramatically from 7,000 in 1972 to 1,695 in 2023 &mdash; but progress stalled after 2010, and cyclists and pedestrians remain significantly more vulnerable than car occupants."
+          question="How dangerous are Britain's roads?"
+          finding="Road deaths in Great Britain fell dramatically from 7,000 in 1972 to 1,695 in 2023 — but progress stalled after 2010, and cyclists and pedestrians remain significantly more vulnerable than car occupants."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The fall in British road deaths from 7,763 in 1972 to 1,695 in 2023 is one of the most significant public health achievements of the past half-century &mdash; a 78% reduction achieved through a combination of vehicle engineering (seat belts made compulsory in 1983, airbags and crumple zones standard in the 1990s), road design, drink-drive enforcement, and improved emergency care. Deaths fell every decade from the 1970s to the 2000s. Then progress stalled. In 2010 there were 1,857 road fatalities; by 2023 there were 1,695. Thirteen years of minimal movement suggests the interventions that produced the long decline &mdash; basic engineering and obvious regulation &mdash; have been largely exhausted. What remains is considerably harder.</p>
+            <p>The fall in British road deaths from 7,763 in 1972 to 1,695 in 2023 is one of the most significant public health achievements of the past half-century — a 78% reduction achieved through a combination of vehicle engineering (seat belts made compulsory in 1983, airbags and crumple zones standard in the 1990s), road design, drink-drive enforcement, and improved emergency care. Deaths fell every decade from the 1970s to the 2000s. Then progress stalled. In 2010 there were 1,857 road fatalities; by 2023 there were 1,695. Thirteen years of minimal movement suggests the interventions that produced the long decline — basic engineering and obvious regulation — have been largely exhausted. What remains is considerably harder.</p>
             <p>The risk is not evenly spread. Pedestrians and cyclists account for 31% of road deaths but travel a small fraction of total miles. A pedestrian is around 14 times more likely to die per mile travelled than a car occupant. Cyclist serious injuries have risen 31% since 2010 as cycling volumes have grown without commensurate infrastructure investment. The evidence on speed in urban areas is clear: 20mph zones reduce pedestrian casualties by around 20%. Wales became the first part of the UK to introduce a 20mph default speed limit in residential areas in September 2023. England has no equivalent national policy, and the Department for Transport has resisted calls for mandatory 20mph zones, leaving implementation to individual local authorities with inconsistent results.</p>
             </div>
         </section>
@@ -163,7 +163,7 @@ export default function RoadSafetyPage() {
         <div id="sec-trends">
         {roadDeathsSeries.length > 0 ? (
           <LineChart
-            title="Road deaths, Great Britain, 1972&ndash;2023"
+            title="Road deaths, Great Britain, 1972–2023"
             subtitle="Annual road fatalities. DfT Road Safety Statistics. Progress has stalled since 2010."
             series={roadDeathsSeries}
             annotations={deathsAnnotations}
@@ -234,10 +234,10 @@ export default function RoadSafetyPage() {
         {/* Positive callout */}
         <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="78%"
           unit="reduction since 1972"
-          description="The dramatic fall in road deaths from 7,763 in 1972 to under 1,700 today was achieved through engineering (motorway barriers, crumple zones), regulation (seatbelts compulsory 1983, drink-drive limits), and enforcement (speed cameras introduced 1991). The remaining challenge &mdash; cycling and pedestrian safety in towns &mdash; requires urban design changes rather than the same tools."
+          description="The dramatic fall in road deaths from 7,763 in 1972 to under 1,700 today was achieved through engineering (motorway barriers, crumple zones), regulation (seatbelts compulsory 1983, drink-drive limits), and enforcement (speed cameras introduced 1991). The remaining challenge — cycling and pedestrian safety in towns — requires urban design changes rather than the same tools."
           source="Source: DfT Road Safety Statistics, 2023."
         />
         </ScrollReveal>
@@ -253,7 +253,7 @@ export default function RoadSafetyPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                DfT &mdash; Road Safety Statistics (annual)
+                DfT — Road Safety Statistics (annual)
               </a>
             </li>
           </ul>

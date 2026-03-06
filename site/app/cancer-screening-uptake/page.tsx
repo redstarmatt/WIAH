@@ -78,8 +78,8 @@ export default function CancerScreeningUptakePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England runs three national cancer screening programmes &mdash; cervical, breast, and bowel &mdash; but none is meeting its uptake target. Cervical screening coverage fell from 74.2% in 2015 to 68.5% in 2023, with a sharp pandemic dip that has not fully recovered; the 80% population-level effectiveness threshold has not been met for over a decade. Breast screening stands at 74.4% against an 80% target; the 2018 disclosure that around 450,000 women were not invited for screening between 2009 and 2018 (with PHE estimating 135&ndash;270 may have died earlier as a result) damaged trust in the programme. Bowel screening, improved by home-testing kits, has risen from 58.4% to 66.4% since 2015 but remains below its 75% target. NHS England estimates improving bowel uptake to 75% would prevent approximately 2,500 cancer deaths per year; achieving 80% cervical coverage is associated with a further one-third reduction in cervical cancer incidence.</p>
-            <p>Access gaps are systematic and persistent. Women from deprived areas are consistently less likely to attend all three programmes; Black and Asian women are significantly underrepresented relative to their population share, reflecting language barriers, cultural factors, practical obstacles, and historical distrust of health services. Young women aged 25&ndash;34 are the least likely group to attend cervical screening &mdash; the age at which early detection has the greatest potential impact. Targeted outreach and community partnerships have shown results in pilots but have not been deployed at national scale, meaning preventable deaths continue to accumulate along predictable socioeconomic and ethnic lines.</p>
+            <p>England runs three national cancer screening programmes — cervical, breast, and bowel — but none is meeting its uptake target. Cervical screening coverage fell from 74.2% in 2015 to 68.5% in 2023, with a sharp pandemic dip that has not fully recovered; the 80% population-level effectiveness threshold has not been met for over a decade. Breast screening stands at 74.4% against an 80% target; the 2018 disclosure that around 450,000 women were not invited for screening between 2009 and 2018 (with PHE estimating 135–270 may have died earlier as a result) damaged trust in the programme. Bowel screening, improved by home-testing kits, has risen from 58.4% to 66.4% since 2015 but remains below its 75% target. NHS England estimates improving bowel uptake to 75% would prevent approximately 2,500 cancer deaths per year; achieving 80% cervical coverage is associated with a further one-third reduction in cervical cancer incidence.</p>
+            <p>Access gaps are systematic and persistent. Women from deprived areas are consistently less likely to attend all three programmes; Black and Asian women are significantly underrepresented relative to their population share, reflecting language barriers, cultural factors, practical obstacles, and historical distrust of health services. Young women aged 25–34 are the least likely group to attend cervical screening — the age at which early detection has the greatest potential impact. Targeted outreach and community partnerships have shown results in pilots but have not been deployed at national scale, meaning preventable deaths continue to accumulate along predictable socioeconomic and ethnic lines.</p>
           </div>
         </section>
 
@@ -98,9 +98,9 @@ export default function CancerScreeningUptakePage() {
               unit=""
               direction="down"
               polarity="up-is-good"
-              changeText="target 80% &middot; peak 74.2% in 2015"
+              changeText="target 80% · peak 74.2% in 2015"
               sparklineData={[74.2, 73.1, 72.0, 71.4, 70.1, 65.0, 68.3, 68.5]}
-              href="#sec-positive"source="NHS England &middot; Cervical Screening Programme 2023"
+              href="#sec-positive"source="NHS England · Cervical Screening Programme 2023"
             />
             <MetricCard
               label="Breast screening uptake"
@@ -108,9 +108,9 @@ export default function CancerScreeningUptakePage() {
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="target 80% &middot; missed since 2008"
+              changeText="target 80% · missed since 2008"
               sparklineData={[76.8, 75.9, 75.4, 74.9, 74.2, 65.0, 70.1, 74.4]}
-              href="#sec-chart"source="NHS England &middot; Breast Screening Programme 2023"
+              href="#sec-chart"source="NHS England · Breast Screening Programme 2023"
             />
             <MetricCard
               label="Bowel screening uptake"
@@ -118,9 +118,9 @@ export default function CancerScreeningUptakePage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="target 75% &middot; improved from 58.4% in 2015"
+              changeText="target 75% · improved from 58.4% in 2015"
               sparklineData={[58.4, 58.9, 59.4, 60.4, 61.2, 55.0, 60.1, 66.4]}
-              href="#sec-chart"source="NHS England &middot; Bowel Cancer Screening Programme 2023"
+              href="#sec-chart"source="NHS England · Bowel Cancer Screening Programme 2023"
             />
           </div>
         </ScrollReveal>
@@ -140,7 +140,7 @@ export default function CancerScreeningUptakePage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="Cancer screening uptake, England, 2015&ndash;2023"
+              title="Cancer screening uptake, England, 2015–2023"
               subtitle="Percentage of eligible population completing screening. Targets: cervical 80%, breast 80%, bowel 75%."
               series={allSeries}
               yLabel="Uptake (%)"
@@ -156,9 +156,9 @@ export default function CancerScreeningUptakePage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>NHS England &mdash; Cervical Screening Programme Statistics. Published annually. digital.nhs.uk/data-and-information/publications/statistical/cervical-screening-programme</p>
-            <p>NHS England &mdash; Breast Screening Programme Statistics. Published annually. digital.nhs.uk/data-and-information/publications/statistical/breast-screening-programme</p>
-            <p>NHS England &mdash; Bowel Cancer Screening Programme. Published annually. digital.nhs.uk/data-and-information/publications/statistical/bowel-cancer-screening-programme</p>
+            <p>NHS England — Cervical Screening Programme Statistics. Published annually. digital.nhs.uk/data-and-information/publications/statistical/cervical-screening-programme</p>
+            <p>NHS England — Breast Screening Programme Statistics. Published annually. digital.nhs.uk/data-and-information/publications/statistical/breast-screening-programme</p>
+            <p>NHS England — Bowel Cancer Screening Programme. Published annually. digital.nhs.uk/data-and-information/publications/statistical/bowel-cancer-screening-programme</p>
             <p>Uptake figures represent the percentage of eligible individuals who completed screening within the programme recall period. COVID-19 disruption in 2020 resulted in significantly reduced activity across all three programmes. Figures have been rounded to one decimal place.</p>
           </div>
         </section>

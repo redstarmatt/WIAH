@@ -84,7 +84,7 @@ export default function UniversityFundingPage() {
     : [];
 
   const studentDebtAnnotations: Annotation[] = [
-    { date: new Date(2012, 5, 1), label: '2012: Fees rise to &pound;9,000' },
+    { date: new Date(2012, 5, 1), label: '2012: Fees rise to £9,000' },
   ];
 
   // International students series (in thousands)
@@ -109,7 +109,7 @@ export default function UniversityFundingPage() {
       <TopicHeader
         topic="University Funding"
         question="Is a Degree Actually Worth the Debt?"
-        finding="Average student loan debt at graduation reached &pound;45,800 in 2022/23. Under Plan 5 (from 2023), graduates repay for 40 years. 72% of graduates under Plan 2 never repay their loan in full. Universities face a real-terms funding cut as the &pound;9,250 fee has been frozen since 2017."
+        finding="Average student loan debt at graduation reached £45,800 in 2022/23. Under Plan 5 (from 2023), graduates repay for 40 years. 72% of graduates under Plan 2 never repay their loan in full. Universities face a real-terms funding cut as the £9,250 fee has been frozen since 2017."
         colour="#264653"
       />
 
@@ -118,20 +118,20 @@ export default function UniversityFundingPage() {
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             <MetricCard
               label="Average student loan debt at graduation"
-              value="&pound;45,800"
+              value="£45,800"
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="2022/23 · Up from &pound;16,200 in 2011/12 · Plan 5 (2023+): repay for 40 years · 72% never repay in full under Plan 2"
+              changeText="2022/23 · Up from £16,200 in 2011/12 · Plan 5 (2023+): repay for 40 years · 72% never repay in full under Plan 2"
               sparklineData={[16200, 20500, 25600, 29400, 33900, 38200, 41300, 43500, 45800]}
             />
             <MetricCard
               label="Tuition fee (real terms, 2023 prices)"
-              value="&pound;6,800"
+              value="£6,800"
               unit=""
               direction="down"
               polarity="up-is-good"
-              changeText="2023 · Nominal fee &pound;9,250 unchanged since 2017 · Real-terms cut of &pound;2,450 since 2017 · 40% of providers in financial difficulty (OfS)"
+              changeText="2023 · Nominal fee £9,250 unchanged since 2017 · Real-terms cut of £2,450 since 2017 · 40% of providers in financial difficulty (OfS)"
               sparklineData={[9000, 9250, 9250, 9250, 9250, 9000, 8600, 8100, 7600, 7100, 6800]}
             />
             <MetricCard
@@ -140,7 +140,7 @@ export default function UniversityFundingPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="2022/23 · 26% of all students · Up from 425K in 2015 · &pound;25bn contribution to UK economy · Govt. sought to reduce post-study work visas"
+              changeText="2022/23 · 26% of all students · Up from 425K in 2015 · £25bn contribution to UK economy · Govt. sought to reduce post-study work visas"
               sparklineData={[350, 370, 395, 410, 425, 440, 460, 490, 540, 600, 650, 680]}
             />
           </div>
@@ -151,11 +151,11 @@ export default function UniversityFundingPage() {
           <ScrollReveal>
             <div className="mb-16">
               <LineChart
-                title="Average student loan debt at graduation, England, 2012&ndash;2023"
+                title="Average student loan debt at graduation, England, 2012–2023"
                 subtitle="Full-time English-domiciled undergraduates"
                 series={studentDebtSeries}
                 annotations={studentDebtAnnotations}
-                yLabel="&pound; thousands (nominal)"
+                yLabel="£ thousands (nominal)"
                 source={{
                   name: 'Student Loans Company',
                   dataset: 'Student loans in England statistics',
@@ -193,7 +193,7 @@ export default function UniversityFundingPage() {
                     );
                   })}
                 </div>
-                <p className="font-mono text-xs text-wiah-mid mt-6">Source: Graduate Outcomes Survey &mdash; DfE. 2022/23 cohort.</p>
+                <p className="font-mono text-xs text-wiah-mid mt-6">Source: Graduate Outcomes Survey — DfE. 2022/23 cohort.</p>
               </div>
             </div>
           </ScrollReveal>
@@ -204,8 +204,8 @@ export default function UniversityFundingPage() {
           <ScrollReveal>
             <div className="mb-16">
               <LineChart
-                title="International students in UK higher education, 2015&ndash;2023"
-                subtitle="Headcount of non-UK domicile students. Contributes &pound;25bn to UK economy annually."
+                title="International students in UK higher education, 2015–2023"
+                subtitle="Headcount of non-UK domicile students. Contributes £25bn to UK economy annually."
                 series={internationalStudentsSeries}
                 yLabel="Students (thousands)"
                 source={{
@@ -222,26 +222,26 @@ export default function UniversityFundingPage() {
         <ScrollReveal>
           <PositiveCallout
             title="Graduate Earnings Premium"
-            value="&pound;100K+"
+            value="£100K+"
             unit="lifetime earnings advantage over non-graduates"
-            description="Despite rising debt, the average graduate still earns around &pound;100,000&ndash;&pound;300,000 more over their lifetime than a non-graduate &mdash; with medicine, law, and engineering at the top. The graduate premium remains positive across most subjects. The Office for Students registers and regulates 400+ providers. From 2025/26, tuition fees will rise to &pound;9,535 (the first increase since 2017) &mdash; partially restoring real-terms university income. The Higher Education (Freedom of Speech) Act 2023 places new duties on universities to protect lawful free expression."
-            source="Source: IFS &mdash; The graduate premium, 2024; Student Loans Company &mdash; 2022/23 statistics."
+            description="Despite rising debt, the average graduate still earns around £100,000–£300,000 more over their lifetime than a non-graduate — with medicine, law, and engineering at the top. The graduate premium remains positive across most subjects. The Office for Students registers and regulates 400+ providers. From 2025/26, tuition fees will rise to £9,535 (the first increase since 2017) — partially restoring real-terms university income. The Higher Education (Freedom of Speech) Act 2023 places new duties on universities to protect lawful free expression."
+            source="Source: IFS — The graduate premium, 2024; Student Loans Company — 2022/23 statistics."
           />
         </ScrollReveal>
 
         {/* Context Section */}
         <ScrollReveal>
           <section className="mt-20 pt-12 border-t border-wiah-border">
-            <h2 className="font-sans text-2xl font-bold text-wiah-black mb-6">What&apos;s driving these trends?</h2>
+            <h2 className="font-sans text-2xl font-bold text-wiah-black mb-6">What's driving these trends?</h2>
             <div className="font-sans text-base text-wiah-black leading-relaxed space-y-4">
               <p>
-                England&apos;s tuition fee has risen from &pound;1,000 when Labour introduced it in 1998 to &pound;3,000 in 2006 and &pound;9,000 in 2012, reaching &pound;9,250 in 2017 where it froze until a rise to &pound;9,535 in 2025/26. Average debt at graduation nearly tripled in a decade: &pound;16,200 in 2011/12 under &pound;3,000 fees, &pound;45,800 in 2022/23 under &pound;9,250 fees. Under Plan 5, introduced for the 2023 entry cohort, the repayment term extends to 40 years at a threshold of &pound;25,000 and interest capped at RPI (Bank Rate plus 1%). Under Plan 2, 72% of graduates never fully repay &mdash; far above original Treasury modelling.
+                England's tuition fee has risen from £1,000 when Labour introduced it in 1998 to £3,000 in 2006 and £9,000 in 2012, reaching £9,250 in 2017 where it froze until a rise to £9,535 in 2025/26. Average debt at graduation nearly tripled in a decade: £16,200 in 2011/12 under £3,000 fees, £45,800 in 2022/23 under £9,250 fees. Under Plan 5, introduced for the 2023 entry cohort, the repayment term extends to 40 years at a threshold of £25,000 and interest capped at RPI (Bank Rate plus 1%). Under Plan 2, 72% of graduates never fully repay — far above original Treasury modelling.
               </p>
               <p>
-                Despite the debt, access has not collapsed: 76% of young people who left school after the 2012 fee increase went on to higher education. The IFS estimated in 2024 that the average graduate earns &pound;100,000&ndash;&pound;300,000 more over a lifetime than a non-graduate, though creative arts, social care, and some humanities degrees produce negative returns for many. The OfS Graduate Outcomes Survey shows three in ten graduates working in non-graduate roles five years after leaving. Subject-level variation is stark: medicine and engineering deliver strong returns while other fields leave graduates no better off financially than peers who skipped university entirely.
+                Despite the debt, access has not collapsed: 76% of young people who left school after the 2012 fee increase went on to higher education. The IFS estimated in 2024 that the average graduate earns £100,000–£300,000 more over a lifetime than a non-graduate, though creative arts, social care, and some humanities degrees produce negative returns for many. The OfS Graduate Outcomes Survey shows three in ten graduates working in non-graduate roles five years after leaving. Subject-level variation is stark: medicine and engineering deliver strong returns while other fields leave graduates no better off financially than peers who skipped university entirely.
               </p>
               <p>
-                Universities themselves face a funding crisis. The &pound;9,250 fee cap, frozen from 2017 to 2025, lost over &pound;2,450 per student in real terms. The Office for Students&apos; 2023 financial sustainability assessment found 40% of English higher education providers in difficulty; 40 universities ran deficits in 2022/23, with several &mdash; including Coventry &mdash; announcing restructuring. Total sector income was &pound;41.9 billion in 2021/22, of which &pound;19.2 billion came from tuition fees. International students, numbering 680,000 in 2022/23 and generating &pound;25 billion in economic activity, have become the financial lifeline &mdash; making government moves from 2023 to restrict the Graduate Route visa a direct threat to institutional solvency.
+                Universities themselves face a funding crisis. The £9,250 fee cap, frozen from 2017 to 2025, lost over £2,450 per student in real terms. The Office for Students' 2023 financial sustainability assessment found 40% of English higher education providers in difficulty; 40 universities ran deficits in 2022/23, with several — including Coventry — announcing restructuring. Total sector income was £41.9 billion in 2021/22, of which £19.2 billion came from tuition fees. International students, numbering 680,000 in 2022/23 and generating £25 billion in economic activity, have become the financial lifeline — making government moves from 2023 to restrict the Graduate Route visa a direct threat to institutional solvency.
               </p>
             </div>
           </section>
@@ -258,11 +258,11 @@ export default function UniversityFundingPage() {
                   <ul className="space-y-2">
                     {data.metadata.sources.map((src, idx) => (
                       <li key={idx} className="text-wiah-mid">
-                        <strong className="text-wiah-black">{src.name}:</strong>&nbsp;
+                        <strong className="text-wiah-black">{src.name}:</strong> 
                         <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue">
                           {src.dataset}
                         </a>
-                        &nbsp;({src.frequency})
+                         ({src.frequency})
                       </li>
                     ))}
                   </ul>

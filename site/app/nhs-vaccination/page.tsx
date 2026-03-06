@@ -99,15 +99,15 @@ export default function NHSVaccinationPage() {
         <TopicHeader
           topic="NHS Vaccination"
           question="Are Vaccine Uptake Rates High Enough to Prevent Outbreaks?"
-          finding="MMR (measles, mumps, rubella) vaccine uptake in 2-year-olds fell to 89% in 2023 &mdash; below the 95% herd immunity threshold for the first time since 2011. The UK lost its WHO measles-free status in 2019. Childhood immunisation rates have fallen across all vaccines since 2013. A measles outbreak in Birmingham in early 2024 infected over 300 children."
+          finding="MMR (measles, mumps, rubella) vaccine uptake in 2-year-olds fell to 89% in 2023 — below the 95% herd immunity threshold for the first time since 2011. The UK lost its WHO measles-free status in 2019. Childhood immunisation rates have fallen across all vaccines since 2013. A measles outbreak in Birmingham in early 2024 infected over 300 children."
           colour="#2A9D8F"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England&apos;s MMR vaccination rate stood at 89.3% for two doses by age 5 in 2022/23 &mdash; more than five percentage points below the 95% threshold required for herd immunity against measles. The gap has consequences: the UK lost its WHO measles-free status in 2019, and in the year to October 2024 England notified 2,978 measles cases, the highest annual total in three decades. A concentrated outbreak in Birmingham in early 2024 infected over 300 children. Whooping cough (pertussis) is also resurgent: more than 15,000 cases were confirmed in 2024, with at least 10 infant deaths &mdash; a disease that a functioning vaccination programme should render vanishingly rare.</p>
-            <p>The roots of the current shortfall run back to 1998, when Andrew Wakefield published a since-retracted and fraudulent paper claiming a link between MMR and autism. Vaccination rates collapsed during the following decade and never fully recovered in the cohorts affected. London, where vaccine hesitancy is most concentrated and communities most diverse, records just 84.1% MMR coverage &mdash; 11 percentage points below the herd immunity threshold, with some boroughs below 80%. The problem was compounded by COVID-19: research shows that areas with high refusal of COVID vaccines saw correlated declines in routine childhood immunisation, a spillover effect that affected the 2020 and 2021 birth cohorts in particular. DTaP coverage (diphtheria, tetanus and pertussis) has fallen to 91.7%, down from 95.2% in 2016/17.</p>
+            <p>England's MMR vaccination rate stood at 89.3% for two doses by age 5 in 2022/23 — more than five percentage points below the 95% threshold required for herd immunity against measles. The gap has consequences: the UK lost its WHO measles-free status in 2019, and in the year to October 2024 England notified 2,978 measles cases, the highest annual total in three decades. A concentrated outbreak in Birmingham in early 2024 infected over 300 children. Whooping cough (pertussis) is also resurgent: more than 15,000 cases were confirmed in 2024, with at least 10 infant deaths — a disease that a functioning vaccination programme should render vanishingly rare.</p>
+            <p>The roots of the current shortfall run back to 1998, when Andrew Wakefield published a since-retracted and fraudulent paper claiming a link between MMR and autism. Vaccination rates collapsed during the following decade and never fully recovered in the cohorts affected. London, where vaccine hesitancy is most concentrated and communities most diverse, records just 84.1% MMR coverage — 11 percentage points below the herd immunity threshold, with some boroughs below 80%. The problem was compounded by COVID-19: research shows that areas with high refusal of COVID vaccines saw correlated declines in routine childhood immunisation, a spillover effect that affected the 2020 and 2021 birth cohorts in particular. DTaP coverage (diphtheria, tetanus and pertussis) has fallen to 91.7%, down from 95.2% in 2016/17.</p>
             </div>
         </section>
 
@@ -125,7 +125,7 @@ export default function NHSVaccinationPage() {
               value="89.3%"
               direction="down"
               polarity="up-is-good"
-              changeText="2022/23 &middot; Below 95% herd immunity threshold &middot; Down from 92.3% in 2012/13 &middot; UK lost measles-free status 2019"
+              changeText="2022/23 · Below 95% herd immunity threshold · Down from 92.3% in 2012/13 · UK lost measles-free status 2019"
               sparklineData={[92.3, 92.7, 92.3, 91.9, 91.6, 91.2, 90.3, 89.8, 89.2, 89.0, 89.3]}
               onExpand={() => {}}
             />
@@ -134,7 +134,7 @@ export default function NHSVaccinationPage() {
               value="84.1%"
               direction="down"
               polarity="up-is-good"
-              changeText="2022/23 &middot; 11pp below herd immunity threshold &middot; Some boroughs below 80% &middot; Birmingham outbreak 2024: 300+ cases"
+              changeText="2022/23 · 11pp below herd immunity threshold · Some boroughs below 80% · Birmingham outbreak 2024: 300+ cases"
               sparklineData={[88, 87, 86, 85, 84, 83, 82, 81, 80, 81, 84.1]}
               onExpand={() => {}}
             />
@@ -143,7 +143,7 @@ export default function NHSVaccinationPage() {
               value="91.7%"
               direction="down"
               polarity="up-is-good"
-              changeText="2022/23 &middot; Down from 95.2% in 2016/17 &middot; Pertussis (whooping cough) cases rising &middot; COVID disrupted infant vaccination schedules"
+              changeText="2022/23 · Down from 95.2% in 2016/17 · Pertussis (whooping cough) cases rising · COVID disrupted infant vaccination schedules"
               sparklineData={[95.2, 94.8, 94.3, 93.7, 91.8, 91.5, 91.7]}
               onExpand={() => {}}
             />
@@ -153,7 +153,7 @@ export default function NHSVaccinationPage() {
         <ScrollReveal>
           <section id="sec-mmr" className="mb-12">
             <LineChart
-              title="MMR vaccine uptake at age 2, England, 2012/13&ndash;2022/23"
+              title="MMR vaccine uptake at age 2, England, 2012/13–2022/23"
               subtitle="Percentage of children turning 2 in the financial year who had received MMR1 by their second birthday."
               series={mmrSeries}
               targetLine={mmrTargetLine}
@@ -170,7 +170,7 @@ export default function NHSVaccinationPage() {
         <ScrollReveal>
           <section id="sec-other" className="mb-12">
             <LineChart
-              title="DTaP and MenB vaccine uptake, England, 2016/17&ndash;2022/23"
+              title="DTaP and MenB vaccine uptake, England, 2016/17–2022/23"
               subtitle="Percentage of children completing primary course by 12 months: diphtheria, tetanus, acellular pertussis (DTaP) and meningococcal B (MenB)."
               series={dtapSeries}
               yLabel="Uptake (%)"
@@ -203,17 +203,17 @@ export default function NHSVaccinationPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS Digital &mdash; Childhood Vaccination Coverage Statistics 2022/23</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS Digital — Childhood Vaccination Coverage Statistics 2022/23</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="95%"
-            unit="MMR uptake target &mdash; achievable through targeted catch-up campaigns in low-uptake areas"
-            description="UKHSA&apos;s MMR Vaccine Equity Programme, launched in 2024, is targeting the 3.4 million children and young people estimated to have missed MMR doses since 2019. NHS England has deployed vaccine buses and pop-up clinics across London, the West Midlands, and other low-uptake areas. The Birmingham measles outbreak (January&ndash;March 2024) accelerated a targeted vaccination push that achieved a 40% increase in MMR uptake in affected areas within six weeks. School entry checks, where children&apos;s vaccination records are reviewed, are being strengthened. The COVID-19 vaccination programme demonstrated that when logistical barriers are removed, uptake can reach 95%+ rapidly."
-            source="Source: NHS Digital &mdash; Childhood Vaccination Coverage Statistics 2022/23; UKHSA &mdash; Measles Outbreak Update 2024."
+            unit="MMR uptake target — achievable through targeted catch-up campaigns in low-uptake areas"
+            description="UKHSA's MMR Vaccine Equity Programme, launched in 2024, is targeting the 3.4 million children and young people estimated to have missed MMR doses since 2019. NHS England has deployed vaccine buses and pop-up clinics across London, the West Midlands, and other low-uptake areas. The Birmingham measles outbreak (January–March 2024) accelerated a targeted vaccination push that achieved a 40% increase in MMR uptake in affected areas within six weeks. School entry checks, where children's vaccination records are reviewed, are being strengthened. The COVID-19 vaccination programme demonstrated that when logistical barriers are removed, uptake can reach 95%+ rapidly."
+            source="Source: NHS Digital — Childhood Vaccination Coverage Statistics 2022/23; UKHSA — Measles Outbreak Update 2024."
           />
         </ScrollReveal>
 
@@ -223,7 +223,7 @@ export default function NHSVaccinationPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

@@ -62,15 +62,15 @@ export default function UrbanHeatPage() {
         <TopicHeader
           topic="Urban Heat"
           question="Are British Cities Becoming Dangerously Hot?"
-          finding="The summer of 2022 saw UK temperatures exceed 40&deg;C for the first time, with over 2,800 excess deaths attributed to the heatwave. Urban areas are significantly hotter than surrounding countryside &mdash; London is on average 4&deg;C warmer &mdash; and as the climate warms, this &lsquo;heat island&rsquo; effect is intensifying. The UK has no mandatory standards for indoor temperatures in workplaces or homes."
+          finding="The summer of 2022 saw UK temperatures exceed 40&deg;C for the first time, with over 2,800 excess deaths attributed to the heatwave. Urban areas are significantly hotter than surrounding countryside — London is on average 4&deg;C warmer — and as the climate warms, this &lsquo;heat island&rsquo; effect is intensifying. The UK has no mandatory standards for indoor temperatures in workplaces or homes."
           colour="#F4A261"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>On 19 July 2022, the UK recorded temperatures above 40&deg;C for the first time, and UKHSA attributed 2,803 excess deaths to that summer&apos;s heatwave &mdash; the highest on record. The Met Office estimates days above 28&deg;C in England have risen from roughly 8 per year in 2010 to 21 in 2022. Central London runs on average 4&deg;C warmer than surrounding countryside due to the urban heat island effect. An estimated 95% of UK homes have no air conditioning &mdash; one of the lowest rates in Europe &mdash; and there is no mandatory maximum indoor workplace temperature, only an advisory threshold of 30&deg;C. Housing stock built for heat retention, non-ventilating windows, and dark absorptive rooftops are legacies of a different climate assumption.</p>
-            <p>The risks fall hardest on those least able to adapt. Over-75s face 5.4 times the heat mortality risk of the general population; those with cardiovascular or respiratory conditions face 3.8 times the risk. Top-floor flat residents, outdoor workers, and care home residents face the sharpest exposure with the least capacity to adapt. People in deprived neighbourhoods are simultaneously least likely to have air conditioning and least likely to live near cooling green space. Urban greening &mdash; street trees, green roofs, pocket parks &mdash; reduces surface temperatures by 8&ndash;12&deg;C in studies, but deployment lags far behind what the Climate Change Committee says is needed for adequate adaptation.</p>
+            <p>On 19 July 2022, the UK recorded temperatures above 40&deg;C for the first time, and UKHSA attributed 2,803 excess deaths to that summer's heatwave — the highest on record. The Met Office estimates days above 28&deg;C in England have risen from roughly 8 per year in 2010 to 21 in 2022. Central London runs on average 4&deg;C warmer than surrounding countryside due to the urban heat island effect. An estimated 95% of UK homes have no air conditioning — one of the lowest rates in Europe — and there is no mandatory maximum indoor workplace temperature, only an advisory threshold of 30&deg;C. Housing stock built for heat retention, non-ventilating windows, and dark absorptive rooftops are legacies of a different climate assumption.</p>
+            <p>The risks fall hardest on those least able to adapt. Over-75s face 5.4 times the heat mortality risk of the general population; those with cardiovascular or respiratory conditions face 3.8 times the risk. Top-floor flat residents, outdoor workers, and care home residents face the sharpest exposure with the least capacity to adapt. People in deprived neighbourhoods are simultaneously least likely to have air conditioning and least likely to live near cooling green space. Urban greening — street trees, green roofs, pocket parks — reduces surface temperatures by 8–12&deg;C in studies, but deployment lags far behind what the Climate Change Committee says is needed for adequate adaptation.</p>
           </div>
         </section>
 
@@ -189,7 +189,7 @@ export default function UrbanHeatPage() {
               <strong className="text-wiah-black">Hot days:</strong> Met Office data records daily maximum temperatures across England. Days exceeding 28&deg;C represent sustained heat stress and correlate with increased mortality, hospital admissions, and public health alerts.
             </p>
             <p>
-              <strong className="text-wiah-black">Urban heat islands:</strong> Temperature differential between urban and rural areas is well-established in climate science. London&apos;s urban heat island effect is documented in Environment Agency and Royal Meteorological Society studies.
+              <strong className="text-wiah-black">Urban heat islands:</strong> Temperature differential between urban and rural areas is well-established in climate science. London's urban heat island effect is documented in Environment Agency and Royal Meteorological Society studies.
             </p>
             <p>
               <strong className="text-wiah-black">Building standards:</strong> The UK Building Regulations do not mandate indoor temperature maxima for residential or workplace settings, unlike many EU jurisdictions which enforce maximum indoor temperatures (e.g. 26&deg;C in France, 30&deg;C in some EU states).

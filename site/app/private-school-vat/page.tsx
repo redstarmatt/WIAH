@@ -133,10 +133,10 @@ export default function PrivateSchoolVatPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The removal of VAT exemption from private school fees in January 2025 was the most significant structural change to the independent education sector in decades. The government projected that 40,000 pupils would transfer to state schools as a consequence, generating revenue of approximately &pound;1.5 billion per year to fund 6,500 new state school teachers. Early data suggests the actual transfer was somewhat lower &mdash; around 35,000 by May 2025 &mdash; partly because larger, more financially resilient schools absorbed much of the VAT cost internally through fee restructuring, bursary adjustments, and cost efficiency, passing through an average of 6.5% to parents rather than the full 20%.
+              The removal of VAT exemption from private school fees in January 2025 was the most significant structural change to the independent education sector in decades. The government projected that 40,000 pupils would transfer to state schools as a consequence, generating revenue of approximately £1.5 billion per year to fund 6,500 new state school teachers. Early data suggests the actual transfer was somewhat lower — around 35,000 by May 2025 — partly because larger, more financially resilient schools absorbed much of the VAT cost internally through fee restructuring, bursary adjustments, and cost efficiency, passing through an average of 6.5% to parents rather than the full 20%.
             </p>
             <p>
-              The distributional effects have been uneven. Smaller prep schools &mdash; many of which operated on thin margins serving middle-income families with annual household incomes of &pound;60,000&ndash;&pound;100,000 &mdash; have faced the sharpest squeeze. Nine schools closed or merged in the first year of VAT. London&apos;s most elite schools, with termly fees exceeding &pound;10,000, have been least affected in relative terms: their clientele has the least price sensitivity and the schools have the largest endowment buffers. The policy has effectively been regressive within the independent sector, falling hardest on the schools serving the borderline family that could just about afford private education.
+              The distributional effects have been uneven. Smaller prep schools — many of which operated on thin margins serving middle-income families with annual household incomes of £60,000–£100,000 — have faced the sharpest squeeze. Nine schools closed or merged in the first year of VAT. London's most elite schools, with termly fees exceeding £10,000, have been least affected in relative terms: their clientele has the least price sensitivity and the schools have the largest endowment buffers. The policy has effectively been regressive within the independent sector, falling hardest on the schools serving the borderline family that could just about afford private education.
             </p>
           </div>
         </section>
@@ -157,7 +157,7 @@ export default function PrivateSchoolVatPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up 21% since 2022 &middot; VAT pass-through + pre-existing inflation"
+              changeText="Up 21% since 2022 · VAT pass-through + pre-existing inflation"
               sparklineData={[5.2, 5.5, 5.9, 6.3]}
               onExpand={() => {}}
             />
@@ -167,7 +167,7 @@ export default function PrivateSchoolVatPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Below government 40,000 projection &middot; Larger schools absorbed cost"
+              changeText="Below government 40,000 projection · Larger schools absorbed cost"
               sparklineData={[5, 12, 21, 28, 35]}
               onExpand={() => {}}
             />
@@ -177,7 +177,7 @@ export default function PrivateSchoolVatPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Mainly smaller prep schools &middot; More at risk in 2026"
+              changeText="Mainly smaller prep schools · More at risk in 2026"
               sparklineData={[0, 4, 9]}
               onExpand={() => {}}
             />
@@ -188,7 +188,7 @@ export default function PrivateSchoolVatPage() {
         <ScrollReveal>
           <section id="sec-fees" className="mb-12">
             <LineChart
-              title="Average private school termly fee, UK, 2022&ndash;2025"
+              title="Average private school termly fee, UK, 2022–2025"
               subtitle="Average termly day-pupil fee across ISC member schools (£ thousands). Fees have risen 21% since 2022, driven by pre-existing cost inflation and then VAT introduction in January 2025."
               series={feesSeries}
               annotations={feesAnnotations}
@@ -200,7 +200,7 @@ export default function PrivateSchoolVatPage() {
         <ScrollReveal>
           <section id="sec-transfers" className="mb-12">
             <LineChart
-              title="Cumulative pupils transferred from private to state schools, Jan&ndash;May 2025"
+              title="Cumulative pupils transferred from private to state schools, Jan–May 2025"
               subtitle="Estimated cumulative number of pupils moving from independent schools to state sector following VAT introduction. The government projected 40,000 transfers; 35,000 had occurred by May 2025."
               series={transferSeries}
               annotations={transferAnnotations}
@@ -212,11 +212,11 @@ export default function PrivateSchoolVatPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="6,500 new teachers funded"
             unit=""
-            description="VAT revenue is earmarked for state school investment, funding 6,500 new teachers. Schools in the most deprived areas receive extra funding from the VAT receipts. The government&apos;s Opportunity Mission commits to improving GCSE outcomes for pupils from disadvantaged backgrounds. Some private schools are expanding bursary provision to retain pupils from families who cannot afford the full VAT-inclusive fee."
-            source="Source: DfE &mdash; VAT on private schools: impact assessment 2025; HM Treasury &mdash; VAT education receipts Q1 2025."
+            description="VAT revenue is earmarked for state school investment, funding 6,500 new teachers. Schools in the most deprived areas receive extra funding from the VAT receipts. The government's Opportunity Mission commits to improving GCSE outcomes for pupils from disadvantaged backgrounds. Some private schools are expanding bursary provision to retain pupils from families who cannot afford the full VAT-inclusive fee."
+            source="Source: DfE — VAT on private schools: impact assessment 2025; HM Treasury — VAT education receipts Q1 2025."
           />
         </ScrollReveal>
 
@@ -227,7 +227,7 @@ export default function PrivateSchoolVatPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

@@ -137,10 +137,10 @@ export default function GrassrootsSportPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England lost 1,200 public sports and leisure facilities between 2010 and 2024 &mdash; an average of 86 per year, sustained across 14 years of local government financial pressure. Swimming pools account for the largest share: over 400 public pools closed in this period, with many more reducing operating hours. The pattern is geographically uneven. Facilities closed fastest in deprived areas where councils faced the most severe funding pressure and commercial replacement providers saw the least commercial opportunity. The result is that access to sport and physical activity has become more stratified by income and geography.
+              England lost 1,200 public sports and leisure facilities between 2010 and 2024 — an average of 86 per year, sustained across 14 years of local government financial pressure. Swimming pools account for the largest share: over 400 public pools closed in this period, with many more reducing operating hours. The pattern is geographically uneven. Facilities closed fastest in deprived areas where councils faced the most severe funding pressure and commercial replacement providers saw the least commercial opportunity. The result is that access to sport and physical activity has become more stratified by income and geography.
             </p>
             <p>
-              The participation data tells a story of stagnation. The adult weekly sport participation rate reached 63% in 2019, then fell to 60.4% during the pandemic, and has recovered only to 61.3% by 2024 &mdash; below the pre-pandemic peak. Child activity is particularly concerning: only 46% of children meet the Chief Medical Officer&apos;s guideline of 60 minutes of moderate-to-vigorous activity per day. The income gradient is steep &mdash; Sport England data consistently shows children from families in the lowest income quintile are 50% less likely to meet activity guidelines than those in the highest quintile. The closure of free or low-cost council facilities, and the reduction of school sport in the curriculum since 2010, are the structural drivers of this gap.
+              The participation data tells a story of stagnation. The adult weekly sport participation rate reached 63% in 2019, then fell to 60.4% during the pandemic, and has recovered only to 61.3% by 2024 — below the pre-pandemic peak. Child activity is particularly concerning: only 46% of children meet the Chief Medical Officer's guideline of 60 minutes of moderate-to-vigorous activity per day. The income gradient is steep — Sport England data consistently shows children from families in the lowest income quintile are 50% less likely to meet activity guidelines than those in the highest quintile. The closure of free or low-cost council facilities, and the reduction of school sport in the curriculum since 2010, are the structural drivers of this gap.
             </p>
           </div>
         </section>
@@ -161,7 +161,7 @@ export default function GrassrootsSportPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Austerity-era council cuts &middot; Swimming pools hardest hit"
+              changeText="Austerity-era council cuts · Swimming pools hardest hit"
               sparklineData={[0, 100, 200, 320, 440, 560, 640, 720, 800, 860, 920, 980, 1050, 1120, 1200]}
               onExpand={() => {}}
             />
@@ -171,7 +171,7 @@ export default function GrassrootsSportPage() {
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="Stagnant since 2019 &middot; Pre-pandemic peak was 63%"
+              changeText="Stagnant since 2019 · Pre-pandemic peak was 63%"
               sparklineData={[59.1, 60.3, 61.1, 62.2, 63.0, 60.4, 62.2, 62.8, 61.5, 61.3]}
               onExpand={() => {}}
             />
@@ -181,7 +181,7 @@ export default function GrassrootsSportPage() {
               unit=""
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 47% pre-pandemic &middot; Free school sport provision cut"
+              changeText="Down from 47% pre-pandemic · Free school sport provision cut"
               sparklineData={[47, 47, 43, 40, 44, 47, 46]}
               onExpand={() => {}}
             />
@@ -192,7 +192,7 @@ export default function GrassrootsSportPage() {
         <ScrollReveal>
           <section id="sec-facilities" className="mb-12">
             <LineChart
-              title="Cumulative sports and leisure facility closures, UK, 2010&ndash;2024"
+              title="Cumulative sports and leisure facility closures, UK, 2010–2024"
               subtitle="Cumulative total of public sports and leisure facilities closed since 2010. Includes swimming pools, leisure centres, public courts, and sports halls. Closures accelerated during 2022 energy crisis."
               series={facilitiesSeries}
               annotations={facilitiesAnnotations}
@@ -204,7 +204,7 @@ export default function GrassrootsSportPage() {
         <ScrollReveal>
           <section id="sec-participation" className="mb-12">
             <LineChart
-              title="Sport participation rates: adults and children, England, 2015/18&ndash;2024"
+              title="Sport participation rates: adults and children, England, 2015/18–2024"
               subtitle="Adults doing sport at least weekly (Sport England Active Lives survey) and children meeting CMO daily activity guidelines (60+ minutes MVPA). Both stagnant or declining since 2019."
               series={participationSeries}
               annotations={participationAnnotations}
@@ -216,11 +216,11 @@ export default function GrassrootsSportPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="£300m Multi-Sport Grassroots Facilities Programme"
             unit=""
-            description="Sport England&apos;s Uniting the Movement strategy targets halving physical inactivity by 2030. The &pound;300 million Multi-Sport Grassroots Facilities Programme is upgrading 8,000 facilities. Swimming England&apos;s Swim England blueprint aims to protect the remaining public pool estate. The Government&apos;s School Sport and Activity Action Plan seeks to reverse the decline in school sport. Active Travel England is investing in walking and cycling infrastructure as a route to daily activity."
-            source="Source: Sport England &mdash; Active Lives 2024; Swim England &mdash; Facilities review 2024."
+            description="Sport England's Uniting the Movement strategy targets halving physical inactivity by 2030. The £300 million Multi-Sport Grassroots Facilities Programme is upgrading 8,000 facilities. Swimming England's Swim England blueprint aims to protect the remaining public pool estate. The Government's School Sport and Activity Action Plan seeks to reverse the decline in school sport. Active Travel England is investing in walking and cycling infrastructure as a route to daily activity."
+            source="Source: Sport England — Active Lives 2024; Swim England — Facilities review 2024."
           />
         </ScrollReveal>
 
@@ -231,7 +231,7 @@ export default function GrassrootsSportPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

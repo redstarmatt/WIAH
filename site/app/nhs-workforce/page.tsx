@@ -82,12 +82,14 @@ export default function NHSWorkforcePage() {
     <main>
       <TopicNav topic="NHS Workforce" />
 
-      <TopicHeader
-        topic="NHS Workforce"
-        colour="#E63946"
-        question="Does the NHS have enough staff?"
-        finding="The NHS in England has over 112,000 vacancies &mdash; a vacancy rate of 8.4% &mdash; with nursing and mental health the most acute shortfalls, underpinned by a decade of underinvestment in training and poor workforce retention."
-      />
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <TopicHeader
+          topic="NHS Workforce"
+          colour="#E63946"
+          question="Does the NHS have enough staff?"
+          finding="The NHS in England has over 112,000 vacancies — a vacancy rate of 8.4% — with nursing and mental health the most acute shortfalls, underpinned by a decade of underinvestment in training and poor workforce retention."
+        />
+      </div>
 
       {/* Metric cards */}
       <section className="max-w-5xl mx-auto px-6 py-10">
@@ -151,7 +153,7 @@ export default function NHSWorkforcePage() {
           <section className="max-w-5xl mx-auto px-6 py-16">
             <LineChart
               title="Registered nurses working in NHS, England"
-              subtitle="Headcount of registered nurses on NHS payroll. More nurses than ever &mdash; but demand has grown faster."
+              subtitle="Headcount of registered nurses on NHS payroll. More nurses than ever — but demand has grown faster."
               series={nursingSeries}
               yLabel="Registered nurses"
               source={{
@@ -198,8 +200,8 @@ export default function NHSWorkforcePage() {
       {/* Context section */}
       <section id="sec-context" className="max-w-2xl mx-auto px-6 py-16">
         <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-          <p>The NHS in England carried more than 112,000 vacancies in 2023 &mdash; an 8.4% vacancy rate, up from around 64,000 unfilled posts in 2015. Nursing accounts for the largest single shortfall: 47,500 vacancies, meaning roughly one in nine nursing posts is empty. The departure of EU workers after Brexit removed a ready source of trained staff, and the NHS now recruits heavily from India, Nigeria, and the Philippines. Around one in three new nursing registrants trained abroad &mdash; a dependency that raises ethical questions about drawing healthcare workers from countries with their own acute shortages.</p>
-          <p>The vacancy problem is as much about retention as recruitment. Around 65,000 NHS staff leave every year; the NHS Staff Survey consistently identifies burnout, weak line management, and pay as the primary reasons. Nurse pay fell roughly 12% in real terms between 2010 and 2023. Junior doctors took industrial action in 2022&ndash;23 &mdash; the first such strikes in NHS history &mdash; citing pay erosion of over 26% since 2008. The disputes were settled with rises of 5&ndash;8%, restoring some ground but leaving total remuneration well below the levels that attracted staff a decade ago.</p>
+          <p>The NHS in England carried more than 112,000 vacancies in 2023 — an 8.4% vacancy rate, up from around 64,000 unfilled posts in 2015. Nursing accounts for the largest single shortfall: 47,500 vacancies, meaning roughly one in nine nursing posts is empty. The departure of EU workers after Brexit removed a ready source of trained staff, and the NHS now recruits heavily from India, Nigeria, and the Philippines. Around one in three new nursing registrants trained abroad — a dependency that raises ethical questions about drawing healthcare workers from countries with their own acute shortages.</p>
+          <p>The vacancy problem is as much about retention as recruitment. Around 65,000 NHS staff leave every year; the NHS Staff Survey consistently identifies burnout, weak line management, and pay as the primary reasons. Nurse pay fell roughly 12% in real terms between 2010 and 2023. Junior doctors took industrial action in 2022–23 — the first such strikes in NHS history — citing pay erosion of over 26% since 2008. The disputes were settled with rises of 5–8%, restoring some ground but leaving total remuneration well below the levels that attracted staff a decade ago.</p>
             </div>
       </section>
 
@@ -207,11 +209,11 @@ export default function NHSWorkforcePage() {
       <ScrollReveal>
         <section className="max-w-5xl mx-auto px-6 py-12">
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Long Term Workforce Plan"
             unit="committed to doubling medical school places, +92% nursing training over 15 years"
-            description="The NHS Long Term Workforce Plan (June 2023) committed to doubling medical school places and increasing nursing training by 92% over 15 years, at a cost of &pound;2.4bn. Independent analysts cautiously welcomed the ambition but noted that domestic training alone cannot fill near-term gaps &mdash; international recruitment remains essential for the next decade."
-            source="Source: NHS England &mdash; Long Term Workforce Plan 2023."
+            description="The NHS Long Term Workforce Plan (June 2023) committed to doubling medical school places and increasing nursing training by 92% over 15 years, at a cost of £2.4bn. Independent analysts cautiously welcomed the ambition but noted that domestic training alone cannot fill near-term gaps — international recruitment remains essential for the next decade."
+            source="Source: NHS England — Long Term Workforce Plan 2023."
           />
         </section>
       </ScrollReveal>

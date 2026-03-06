@@ -110,13 +110,13 @@ export default function YouthGamblingPage() {
     : [];
 
   const prevalenceAnnotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: '2020: COVID lockdown &mdash; online gambling spike' },
+    { date: new Date(2020, 5, 1), label: '2020: COVID lockdown — online gambling spike' },
     { date: new Date(2023, 5, 1), label: '2023: Gambling Act Review stake limits' },
   ];
 
   const onlineAnnotations: Annotation[] = [
     { date: new Date(2021, 5, 1), label: '2021: Loot box review published' },
-    { date: new Date(2023, 5, 1), label: '2023: Online slot stake limit &pound;5' },
+    { date: new Date(2023, 5, 1), label: '2023: Online slot stake limit £5' },
   ];
 
   // ── Render ────────────────────────────────────────────────────────────────
@@ -129,14 +129,14 @@ export default function YouthGamblingPage() {
         <TopicHeader
           topic="Social Issues"
           question="How Many Young People Are Problem Gamblers?"
-          finding="An estimated 55,000 children aged 11&ndash;16 are classified as problem gamblers. Online gambling among 16&ndash;24 year olds has doubled since 2018. Gambling harm treatment services for under-18s are minimal."
+          finding="An estimated 55,000 children aged 11–16 are classified as problem gamblers. Online gambling among 16–24 year olds has doubled since 2018. Gambling harm treatment services for under-18s are minimal."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Children and young people are being exposed to gambling at unprecedented levels. Video game mechanics &mdash; particularly loot boxes &mdash; normalise chance-based spending. Gambling advertising saturates live sport. Online gambling is accessible via smartphones at all hours. The Gambling Commission&apos;s Young People and Gambling Survey consistently finds around 70% of 11&ndash;16 year olds have gambled in some form in the past year.
+              Children and young people are being exposed to gambling at unprecedented levels. Video game mechanics — particularly loot boxes — normalise chance-based spending. Gambling advertising saturates live sport. Online gambling is accessible via smartphones at all hours. The Gambling Commission's Young People and Gambling Survey consistently finds around 70% of 11–16 year olds have gambled in some form in the past year.
             </p>
             <p>
               The treatment infrastructure for young people with gambling problems is essentially non-existent at scale. NHS treatment services are adult-focused; only the National Problem Gambling Clinic accepts under-18 referrals, and it is a single London-based service. The 900 children treated in 2024 represents a small fraction of the estimated 55,000 with a problem. Waiting times for those who do access help are long, and GPs rarely recognise or ask about gambling harm in young people.
@@ -190,7 +190,7 @@ export default function YouthGamblingPage() {
         <ScrollReveal>
           <section id="sec-prevalence" className="mb-12">
             <LineChart
-              title="Problem gambling prevalence among 11&ndash;16 year olds, England, 2018&ndash;2024"
+              title="Problem gambling prevalence among 11–16 year olds, England, 2018–2024"
               subtitle="Percentage of children aged 11-16 classified as problem gamblers using the DSM-IV Problem Gambling Scale. Prevalence has risen steadily, with a spike during 2020-21 lockdowns when online gambling increased."
               series={prevalenceSeries}
               annotations={prevalenceAnnotations}
@@ -202,7 +202,7 @@ export default function YouthGamblingPage() {
         <ScrollReveal>
           <section id="sec-online" className="mb-12">
             <LineChart
-              title="Online gambling among 16&ndash;24 year olds and children in treatment, 2018&ndash;2024"
+              title="Online gambling among 16–24 year olds and children in treatment, 2018–2024"
               subtitle="Percentage of 16-24 year olds who gambled online in the past month, alongside children (under 18) treated for gambling harm. Treatment numbers shown in hundreds for comparability."
               series={onlineSeries}
               annotations={onlineAnnotations}
@@ -214,11 +214,11 @@ export default function YouthGamblingPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Gambling Act"
             unit="Review 2023"
-            description="The Gambling Act Review 2023 introduced a &pound;5 maximum stake for online slots and mandatory affordability checks for high-spending customers. The National Gambling Treatment Service now accepts under-18 referrals. GamCare&apos;s Young People&apos;s Service provides free counselling for under-18s. The Gambling Commission has tightened rules on advertising near schools and banned cartoon characters in gambling promotions."
-            source="Source: Gambling Commission &mdash; Young People and Gambling Survey, 2024. NHS National Problem Gambling Clinic, 2024."
+            description="The Gambling Act Review 2023 introduced a £5 maximum stake for online slots and mandatory affordability checks for high-spending customers. The National Gambling Treatment Service now accepts under-18 referrals. GamCare's Young People's Service provides free counselling for under-18s. The Gambling Commission has tightened rules on advertising near schools and banned cartoon characters in gambling promotions."
+            source="Source: Gambling Commission — Young People and Gambling Survey, 2024. NHS National Problem Gambling Clinic, 2024."
           />
         </ScrollReveal>
 
@@ -229,7 +229,7 @@ export default function YouthGamblingPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

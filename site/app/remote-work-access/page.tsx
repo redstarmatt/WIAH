@@ -126,10 +126,10 @@ export default function RemoteWorkAccessPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The pandemic created what economists call a &lsquo;bifurcated&rsquo; labour market: those whose work can be done from a laptop, and those whose work cannot. A warehouse operative, a nurse, a delivery driver, a care worker, a chef &mdash; none of these roles is compatible with homeworking. A management consultant, a software engineer, a policy analyst, a finance professional &mdash; all can be done from anywhere with good broadband. The income correlation is stark: 68% of workers in the top income quintile worked from home at least once a week in 2024, compared with just 12% in the bottom quintile.
+              The pandemic created what economists call a &lsquo;bifurcated&rsquo; labour market: those whose work can be done from a laptop, and those whose work cannot. A warehouse operative, a nurse, a delivery driver, a care worker, a chef — none of these roles is compatible with homeworking. A management consultant, a software engineer, a policy analyst, a finance professional — all can be done from anywhere with good broadband. The income correlation is stark: 68% of workers in the top income quintile worked from home at least once a week in 2024, compared with just 12% in the bottom quintile.
             </p>
             <p>
-              This is not simply an inconvenience gap. Remote working has compounding economic advantages: eliminated commuting costs (averaging &pound;3,200 per year for London commuters), greater control over working hours, lower incidence of workplace illness, and access to the wider national job market rather than only local roles. Office workers who can negotiate hybrid working gain all of these benefits; workers in face-to-face roles receive none. The regional dimension reinforces the inequality: London gained disproportionately from the homeworking revolution because its high-skilled, high-pay workforce is the most homeworking-compatible, widening its productivity gap over other English regions.
+              This is not simply an inconvenience gap. Remote working has compounding economic advantages: eliminated commuting costs (averaging £3,200 per year for London commuters), greater control over working hours, lower incidence of workplace illness, and access to the wider national job market rather than only local roles. Office workers who can negotiate hybrid working gain all of these benefits; workers in face-to-face roles receive none. The regional dimension reinforces the inequality: London gained disproportionately from the homeworking revolution because its high-skilled, high-pay workforce is the most homeworking-compatible, widening its productivity gap over other English regions.
             </p>
           </div>
         </section>
@@ -150,7 +150,7 @@ export default function RemoteWorkAccessPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="vs 68% top quintile &middot; 56pp gap &middot; Largest class divide in work"
+              changeText="vs 68% top quintile · 56pp gap · Largest class divide in work"
               sparklineData={[12, 18, 28, 45, 68]}
               onExpand={() => {}}
             />
@@ -160,7 +160,7 @@ export default function RemoteWorkAccessPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="Up from 5.7% pre-pandemic &middot; Settled at post-pandemic norm"
+              changeText="Up from 5.7% pre-pandemic · Settled at post-pandemic norm"
               sparklineData={[5.7, 25.9, 22.1, 20.4, 21.8, 22.4]}
               onExpand={() => {}}
             />
@@ -170,7 +170,7 @@ export default function RemoteWorkAccessPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="Up from 42% in 2022 &middot; Flexibility now a key retention factor"
+              changeText="Up from 42% in 2022 · Flexibility now a key retention factor"
               sparklineData={[42, 45, 48]}
               onExpand={() => {}}
             />
@@ -181,8 +181,8 @@ export default function RemoteWorkAccessPage() {
         <ScrollReveal>
           <section id="sec-rate" className="mb-12">
             <LineChart
-              title="National homeworking rate, UK, 2019&ndash;2024"
-              subtitle="Percentage of employed people working from home at least once per week. Spiked to 26% during 2020 lockdowns, then settled at 22% &mdash; four times the pre-pandemic baseline."
+              title="National homeworking rate, UK, 2019–2024"
+              subtitle="Percentage of employed people working from home at least once per week. Spiked to 26% during 2020 lockdowns, then settled at 22% — four times the pre-pandemic baseline."
               series={nationalRateSeries}
               annotations={rateAnnotations}
               yLabel="% working from home"
@@ -193,7 +193,7 @@ export default function RemoteWorkAccessPage() {
         <ScrollReveal>
           <section id="sec-retention" className="mb-12">
             <LineChart
-              title="Workers who would seek a new job if flexibility removed, UK, 2022&ndash;2024"
+              title="Workers who would seek a new job if flexibility removed, UK, 2022–2024"
               subtitle="Proportion of homeworking-eligible employees who say they would look for a new employer if their current employer mandated full-time office attendance. Rising year-on-year."
               series={retentionSeries}
               annotations={retentionAnnotations}
@@ -205,11 +205,11 @@ export default function RemoteWorkAccessPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Day-one right to flexible working"
             unit=""
-            description="The Employment Rights Bill 2024 introduces a day-one right to request flexible working. The government&apos;s Flexible Working Taskforce is working with employers on hybrid implementation. Some employers are trialling &lsquo;compressed hours&rsquo; and job sharing to extend flexibility benefits to roles not compatible with homeworking. Digital skills programmes aim to expand the proportion of the workforce in roles that can benefit from location flexibility."
-            source="Source: ONS &mdash; Homeworking in the UK 2024; CIPD &mdash; Flexible and hybrid working practices 2024."
+            description="The Employment Rights Bill 2024 introduces a day-one right to request flexible working. The government's Flexible Working Taskforce is working with employers on hybrid implementation. Some employers are trialling &lsquo;compressed hours&rsquo; and job sharing to extend flexibility benefits to roles not compatible with homeworking. Digital skills programmes aim to expand the proportion of the workforce in roles that can benefit from location flexibility."
+            source="Source: ONS — Homeworking in the UK 2024; CIPD — Flexible and hybrid working practices 2024."
           />
         </ScrollReveal>
 
@@ -220,7 +220,7 @@ export default function RemoteWorkAccessPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

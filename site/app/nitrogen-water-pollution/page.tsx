@@ -60,8 +60,8 @@ export default function NitrogenWaterPollutionPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Eighty-three percent of English rivers fail nitrate water quality standards &mdash; a figure stubbornly static for years despite Nitrate Vulnerable Zone designations covering 60% of England&rsquo;s agricultural land. Agriculture accounts for approximately 70% of nitrate pollution in UK rivers, primarily synthetic fertiliser runoff after rainfall. Excess nitrogen fuels algal blooms that deplete oxygen and create dead zones, driving eutrophication that has collapsed fish and invertebrate populations. The Environment Agency estimates no English river currently achieves good ecological status across all Water Framework Directive measures. Post-Brexit Environmental Land Management schemes &mdash; particularly Sustainable Farming Incentive &mdash; aim to redirect subsidies toward reduced fertiliser use, but uptake has been slower than hoped and the scheme has undergone multiple revisions amid farming sector protests.</p>
-            <p>The costs fall on the public, not the polluters. Water companies remove nitrates from abstracted water in the most affected catchments &mdash; east England and the East Midlands &mdash; at tens of millions of pounds per year, costs passed on through bills. Nitrates in drinking water above safe thresholds cause infant methaemoglobinaemia and are linked to colorectal cancer at sustained elevated exposures. Enforcement of NVZ rules is under-resourced: the Environment Agency completes far fewer farm inspections than target, a direct consequence of the sustained budget cuts that reduced its staff and capacity through the 2010s. The incentive to pollute has historically been stronger than the incentive to comply.</p>
+            <p>Eighty-three percent of English rivers fail nitrate water quality standards — a figure stubbornly static for years despite Nitrate Vulnerable Zone designations covering 60% of England&rsquo;s agricultural land. Agriculture accounts for approximately 70% of nitrate pollution in UK rivers, primarily synthetic fertiliser runoff after rainfall. Excess nitrogen fuels algal blooms that deplete oxygen and create dead zones, driving eutrophication that has collapsed fish and invertebrate populations. The Environment Agency estimates no English river currently achieves good ecological status across all Water Framework Directive measures. Post-Brexit Environmental Land Management schemes — particularly Sustainable Farming Incentive — aim to redirect subsidies toward reduced fertiliser use, but uptake has been slower than hoped and the scheme has undergone multiple revisions amid farming sector protests.</p>
+            <p>The costs fall on the public, not the polluters. Water companies remove nitrates from abstracted water in the most affected catchments — east England and the East Midlands — at tens of millions of pounds per year, costs passed on through bills. Nitrates in drinking water above safe thresholds cause infant methaemoglobinaemia and are linked to colorectal cancer at sustained elevated exposures. Enforcement of NVZ rules is under-resourced: the Environment Agency completes far fewer farm inspections than target, a direct consequence of the sustained budget cuts that reduced its staff and capacity through the 2010s. The incentive to pollute has historically been stronger than the incentive to comply.</p>
           </div>
         </section>
 
@@ -79,9 +79,9 @@ export default function NitrogenWaterPollutionPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Of English rivers &middot; unchanged for years"
+              changeText="Of English rivers · unchanged for years"
               sparklineData={[78, 79, 80, 81, 82, 83]}
-              href="#sec-chart"source="Environment Agency &middot; Water Framework Directive 2023"
+              href="#sec-chart"source="Environment Agency · Water Framework Directive 2023"
             />
             <MetricCard
               label="NVZ coverage"
@@ -91,7 +91,7 @@ export default function NitrogenWaterPollutionPage() {
               polarity="up-is-bad"
               changeText="Of England now in nitrate vulnerable zones"
               sparklineData={[55, 55, 56, 58, 59, 60]}
-              href="#sec-chart"source="Defra &middot; NVZ Designation Review 2022"
+              href="#sec-chart"source="Defra · NVZ Designation Review 2022"
             />
             <MetricCard
               label="N leaching rate"
@@ -101,7 +101,7 @@ export default function NitrogenWaterPollutionPage() {
               polarity="up-is-bad"
               changeText="Agricultural runoff from fertiliser application"
               sparklineData={[380, 378, 381, 379, 380, 380]}
-              href="#sec-chart"source="Defra &middot; Fertiliser Usage Survey 2023"
+              href="#sec-chart"source="Defra · Fertiliser Usage Survey 2023"
             />
           </div>
         </ScrollReveal>
@@ -109,7 +109,7 @@ export default function NitrogenWaterPollutionPage() {
         <ScrollReveal>
           <section id="sec-chart" className="mb-12">
             <LineChart
-              title="English rivers failing nitrate water quality standards, 2015&ndash;2023"
+              title="English rivers failing nitrate water quality standards, 2015–2023"
               subtitle="Percentage of monitored river bodies failing Good Ecological Status on nitrate criteria under the Water Framework Directive."
               series={riverSeries}
               yLabel="Rivers failing (%)"
@@ -125,9 +125,9 @@ export default function NitrogenWaterPollutionPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Environment Agency &mdash; Water Framework Directive Classification Reports. Published annually. environment-data.gov.uk</p>
-            <p>Defra &mdash; Nitrate Vulnerable Zone designations and Fertiliser Usage Survey. gov.uk/government/collections/fertiliser-usage</p>
-            <p>Environment Agency &mdash; River quality and pollution statistics. environment.data.gov.uk/water-quality</p>
+            <p>Environment Agency — Water Framework Directive Classification Reports. Published annually. environment-data.gov.uk</p>
+            <p>Defra — Nitrate Vulnerable Zone designations and Fertiliser Usage Survey. gov.uk/government/collections/fertiliser-usage</p>
+            <p>Environment Agency — River quality and pollution statistics. environment.data.gov.uk/water-quality</p>
             <p>River failure rates are based on Environment Agency classification of water bodies against the Nitrates Directive and UK Water Framework Directive standards. NVZ coverage represents the percentage of England&rsquo;s agricultural land designated as nitrate vulnerable. Nitrogen leaching estimates are from Defra agricultural emissions inventory data. Not all rivers are monitored at the same frequency; figures represent monitored water bodies only.</p>
           </div>
         </section>

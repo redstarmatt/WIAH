@@ -102,7 +102,7 @@ export default function EarlyYearsPage() {
             topic="Early Years &amp; Childcare"
             colour="#2A9D8F"
             question="Can families afford childcare?"
-            finding="The UK has some of the highest childcare costs in the developed world relative to wages, with a full-time nursery place for a child under two costing &pound;14,800 a year &mdash; more than university tuition fees."
+            finding="The UK has some of the highest childcare costs in the developed world relative to wages, with a full-time nursery place for a child under two costing £14,800 a year — more than university tuition fees."
           />
         </div>
       </section>
@@ -113,7 +113,7 @@ export default function EarlyYearsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <MetricCard
               label="Average full-time nursery cost (under 2)"
-              value="&pound;14,800"
+              value="£14,800"
               unit="/yr"
               direction="up"
               polarity="up-is-bad"
@@ -152,7 +152,7 @@ export default function EarlyYearsPage() {
                     title="Average annual cost of full-time nursery place (under 2), England"
                     subtitle="Pounds per year, 50 hours per week. Coram Family &amp; Childcare survey data."
                     series={childcareCostSeries}
-                    yLabel="Cost (&pound;)"
+                    yLabel="Cost (£)"
                     source={{
                       name: 'Coram Family &amp; Childcare',
                       dataset: 'UK Childcare Survey',
@@ -227,7 +227,7 @@ export default function EarlyYearsPage() {
       <section id="sec-context" className="border-b border-wiah-border">
         <div className="max-w-2xl mx-auto px-6 py-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has some of the highest childcare costs in the developed world. Full-time care for a child under two averaged around &pound;14,000 a year in 2023 &mdash; more than the median full-time salary after tax in many parts of the country. The government&apos;s 30-hour free childcare entitlement was extended in 2024 to cover children from nine months in staged rollout at an annual cost of &pound;4&ndash;5 billion, but hourly rates paid to providers have consistently been below delivery cost: over 40% of nurseries reported operating at a loss on funded places in 2023, and more than 4,000 childcare providers closed between 2021 and 2023. At age five, 72% of children reach the Good Level of Development &mdash; but only 57% of those eligible for free school meals do so. Speech and language delays worsened after the pandemic: before 2020, around one in six children entered school with communication difficulties; recent data puts the figure closer to one in four. Sure Start children&apos;s centres, which at their peak in 2010 numbered 3,500 and delivered proven long-run benefits, have fallen to under 2,600 after a decade of local authority cuts, with losses concentrated in the most deprived areas.</p>
+            <p>The UK has some of the highest childcare costs in the developed world. Full-time care for a child under two averaged around £14,000 a year in 2023 — more than the median full-time salary after tax in many parts of the country. The government's 30-hour free childcare entitlement was extended in 2024 to cover children from nine months in staged rollout at an annual cost of £4–5 billion, but hourly rates paid to providers have consistently been below delivery cost: over 40% of nurseries reported operating at a loss on funded places in 2023, and more than 4,000 childcare providers closed between 2021 and 2023. At age five, 72% of children reach the Good Level of Development — but only 57% of those eligible for free school meals do so. Speech and language delays worsened after the pandemic: before 2020, around one in six children entered school with communication difficulties; recent data puts the figure closer to one in four. Sure Start children's centres, which at their peak in 2010 numbered 3,500 and delivered proven long-run benefits, have fallen to under 2,600 after a decade of local authority cuts, with losses concentrated in the most deprived areas.</p>
             <p>The childcare access gap and the early development gap reinforce each other along the same fault lines. The families least able to afford market-rate childcare are the same families whose children stand to gain most from quality early years provision, yet they are least served by a funding model that depends on cross-subsidy from fee-paying parents. The sector workforce compounds the problem: with around 40,000 vacancies and average pay close to the national living wage floor, turnover is high and the continuity of care that underpins secure attachment in young children is difficult to maintain. The long-run evidence base for early years investment is robust; the political commitment to fund it adequately has consistently fallen short.</p>
           </div>
         </div>
@@ -240,7 +240,7 @@ export default function EarlyYearsPage() {
             title="30-hour expansion rolling out from April 2024"
             value="September"
             unit="2025"
-            description="From April 2024, the government began extending free childcare to children from 9 months old. The full rollout (30 hours for all under-5s of working parents) reaches completion in September 2025. Providers warn the government funding rate &mdash; &pound;5.97/hour &mdash; is below actual costs, threatening supply at the point of expanded demand."
+            description="From April 2024, the government began extending free childcare to children from 9 months old. The full rollout (30 hours for all under-5s of working parents) reaches completion in September 2025. Providers warn the government funding rate — £5.97/hour — is below actual costs, threatening supply at the point of expanded demand."
             source="Department for Education, 2024"
           />
         </div>

@@ -115,7 +115,7 @@ export default function RoughSleepingPage() {
         <TopicHeader
           topic="Rough Sleeping"
           question="How Many People Are Sleeping Rough in Britain?"
-          finding="3,898 people were counted sleeping rough in England on a single autumn night in 2023 &mdash; up 27% in a year. The real figure is estimated to be three to five times higher. Rough sleeping rose 120% between 2010 and 2017 and, despite a brief COVID-era fall, is rising again. Around 270,000 households are recognised as homeless by councils each year."
+          finding="3,898 people were counted sleeping rough in England on a single autumn night in 2023 — up 27% in a year. The real figure is estimated to be three to five times higher. Rough sleeping rose 120% between 2010 and 2017 and, despite a brief COVID-era fall, is rising again. Around 270,000 households are recognised as homeless by councils each year."
           colour="#E63946"
           preposition="with"
         />
@@ -124,8 +124,8 @@ export default function RoughSleepingPage() {
 
           <section id="sec-context" className="max-w-2xl mt-4 mb-12">
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The autumn 2023 rough sleeping snapshot recorded 3,898 people sleeping rough in England &mdash; a 27% increase in a single year and the highest figure since the pandemic interrupted the series. The &ldquo;Everyone In&rdquo; scheme of March 2020 housed approximately 14,600 people within six weeks, demonstrating that rough sleeping is a policy problem rather than an intractable social condition &mdash; a lesson that housing charities argue has not been built upon. Section 21 no-fault evictions, which account for around a quarter of homelessness presentations to local authorities, continued at scale until the Renters Rights Act passed in spring 2025. Beyond rough sleeping, around 109,000 households &mdash; including approximately 140,000 children &mdash; were in statutory temporary accommodation in late 2023, many in bed-and-breakfast hotels where families share a single room for months.</p>
-              <p>The burden falls most heavily on people with the fewest options: those with mental illness, drug or alcohol dependency, histories in care, or recent release from prison. Hidden homelessness &mdash; sofa-surfing, overcrowded households, cars and tents &mdash; is several times larger than the visible rough sleeping count but not systematically measured. Temporary accommodation spending has consumed housing budgets that might otherwise fund prevention, and the children placed in B&amp;Bs experience disrupted schooling and instability whose long-term costs do not appear in any official homelessness statistic.</p>
+              <p>The autumn 2023 rough sleeping snapshot recorded 3,898 people sleeping rough in England — a 27% increase in a single year and the highest figure since the pandemic interrupted the series. The &ldquo;Everyone In&rdquo; scheme of March 2020 housed approximately 14,600 people within six weeks, demonstrating that rough sleeping is a policy problem rather than an intractable social condition — a lesson that housing charities argue has not been built upon. Section 21 no-fault evictions, which account for around a quarter of homelessness presentations to local authorities, continued at scale until the Renters Rights Act passed in spring 2025. Beyond rough sleeping, around 109,000 households — including approximately 140,000 children — were in statutory temporary accommodation in late 2023, many in bed-and-breakfast hotels where families share a single room for months.</p>
+              <p>The burden falls most heavily on people with the fewest options: those with mental illness, drug or alcohol dependency, histories in care, or recent release from prison. Hidden homelessness — sofa-surfing, overcrowded households, cars and tents — is several times larger than the visible rough sleeping count but not systematically measured. Temporary accommodation spending has consumed housing budgets that might otherwise fund prevention, and the children placed in B&amp;Bs experience disrupted schooling and instability whose long-term costs do not appear in any official homelessness statistic.</p>
             </div>
           </section>
 
@@ -144,7 +144,7 @@ export default function RoughSleepingPage() {
               value={data?.national.roughSleeping.latestCount.toLocaleString() || '—'}
               direction="up"
               polarity="up-is-bad"
-              changeText="Autumn 2023 &middot; Up 27% in a year &middot; Up 120% since 2010 &middot; Real figure est. 3&ndash;5x higher"
+              changeText="Autumn 2023 · Up 27% in a year · Up 120% since 2010 · Real figure est. 3–5x higher"
               sparklineData={
                 data
                   ? sparkFrom(data.national.roughSleeping.timeSeries.map(d => d.count))
@@ -157,7 +157,7 @@ export default function RoughSleepingPage() {
               value={data?.national.homelessnessDecisions.latestThousands ? `${data.national.homelessnessDecisions.latestThousands}K` : '—'}
               direction="up"
               polarity="up-is-bad"
-              changeText="2022/23 &middot; Up from 203K in 2019/20 &middot; Owed &apos;prevention duty&apos; under Homelessness Reduction Act 2017 &middot; Rising rents primary cause"
+              changeText="2022/23 · Up from 203K in 2019/20 · Owed 'prevention duty' under Homelessness Reduction Act 2017 · Rising rents primary cause"
               sparklineData={
                 data
                   ? sparkFrom(data.national.homelessnessDecisions.timeSeries.map(d => d.householdsThousands), 5)
@@ -170,7 +170,7 @@ export default function RoughSleepingPage() {
               value={data?.national.temporaryAccommodation.latestHouseholds ? `${(data.national.temporaryAccommodation.latestHouseholds / 1000).toFixed(0)}K` : '—'}
               direction="up"
               polarity="up-is-bad"
-              changeText="March 2023 &middot; Record high &middot; 131K children in temp accommodation &middot; Cost to councils: &pound;1.74bn/year"
+              changeText="March 2023 · Record high · 131K children in temp accommodation · Cost to councils: £1.74bn/year"
               sparklineData={[70, 72, 74, 76, 78, 79, 80, 82, 88, 95, 104]}
               source="MHCLG · Homelessness Statistics"
               href="#sec-homeless"/>
@@ -181,8 +181,8 @@ export default function RoughSleepingPage() {
           <div id="sec-rough">
           {roughSleepingSeries.length > 0 ? (
             <LineChart
-              title="People sleeping rough, England (autumn count), 2010&ndash;2023"
-              subtitle="Single-night estimate by local authorities. Fell during COVID-19 &apos;Everyone In&apos; scheme; now rising again."
+              title="People sleeping rough, England (autumn count), 2010–2023"
+              subtitle="Single-night estimate by local authorities. Fell during COVID-19 'Everyone In' scheme; now rising again."
               series={roughSleepingSeries}
               annotations={roughSleepingAnnotations}
               yLabel="Rough sleepers counted"
@@ -201,7 +201,7 @@ export default function RoughSleepingPage() {
           <div id="sec-homeless">
           {homelessnessSeries.length > 0 ? (
             <LineChart
-              title="Households recognised as homeless, 2019&ndash;2023"
+              title="Households recognised as homeless, 2019–2023"
               subtitle="Households owed a prevention or relief duty under the Homelessness Reduction Act 2017, England."
               series={homelessnessSeries}
               yLabel="Households (thousands)"
@@ -247,11 +247,11 @@ export default function RoughSleepingPage() {
 
           {/* Editorial context */}
           <section className="mb-12 bg-wiah-light p-6 rounded">
-            <h2 className="text-lg font-bold text-wiah-black mb-4">What&apos;s happening</h2>
+            <h2 className="text-lg font-bold text-wiah-black mb-4">What's happening</h2>
             <div className="space-y-4 text-base leading-relaxed text-wiah-black">
-              <p>Rough sleeping in England rose 120% between 2010 and 2017, from 1,768 to 4,751 people counted on a single autumn night. The COVID-19 &ldquo;Everyone In&rdquo; scheme briefly reversed the trend, housing most rough sleepers within days and driving the count down to 2,440 by 2021 &mdash; but the reprieve was short-lived. By 2023 the figure had climbed back to 3,898, a 27% surge in a single year. The official count is widely recognised as a severe underestimate: Crisis and academic researchers put the true number at three to five times higher. The primary drivers are structural &mdash; the end of private sector tenancies accounts for 25% of homelessness presentations, fuelled by rents rising far faster than housing benefit, which was frozen in cash terms from 2016 to 2020 and only partially unfrozen thereafter. The Vagrancy Act 1824, which criminalised rough sleeping, was repealed in 2022 but remains in effect pending replacement legislation.</p>
-              <p>Behind the rough sleeping figures sits a homelessness system under extraordinary pressure. As of March 2023 a record 104,000 households &mdash; including 131,000 children &mdash; are living in temporary accommodation such as B&amp;Bs, hostels and emergency placements, up 49% from 70,000 in 2014. The annual cost to councils has soared to &pound;1.74 billion from under &pound;500 million in 2010. The Homelessness Reduction Act 2017 created a statutory &ldquo;prevention duty&rdquo; requiring councils to help anyone at risk of homelessness within 56 days, but 271,000 households were owed a duty in 2022/23 &mdash; 34% above pre-pandemic levels. &ldquo;No-fault&rdquo; Section 21 evictions accounted for a quarter of all homelessness presentations before their planned abolition under the Renters (Reform) Act 2024.</p>
-              <p>Policy interventions have shown what works &mdash; and what is missing. The Rough Sleeping Initiative, funded at &pound;300 million since 2018, provided outreach workers and rapid-access accommodation and is credited with halting the pre-2018 rise. Housing First, backed by randomised evidence from Finland and Canada showing 80%-plus housing retention for complex-needs individuals, has been piloted in Greater Manchester, Liverpool and the West Midlands with broadly positive but underfunded results. The &ldquo;Everyone In&rdquo; scheme demonstrated that rough sleeping can effectively be ended in days when political will and emergency resources are mobilised. The critical gap remains affordable housing supply: England builds roughly 220,000 homes a year against a government target of 300,000, and social housing stock has fallen by 1.5 million since 1980 owing to Right to Buy.</p>
+              <p>Rough sleeping in England rose 120% between 2010 and 2017, from 1,768 to 4,751 people counted on a single autumn night. The COVID-19 &ldquo;Everyone In&rdquo; scheme briefly reversed the trend, housing most rough sleepers within days and driving the count down to 2,440 by 2021 — but the reprieve was short-lived. By 2023 the figure had climbed back to 3,898, a 27% surge in a single year. The official count is widely recognised as a severe underestimate: Crisis and academic researchers put the true number at three to five times higher. The primary drivers are structural — the end of private sector tenancies accounts for 25% of homelessness presentations, fuelled by rents rising far faster than housing benefit, which was frozen in cash terms from 2016 to 2020 and only partially unfrozen thereafter. The Vagrancy Act 1824, which criminalised rough sleeping, was repealed in 2022 but remains in effect pending replacement legislation.</p>
+              <p>Behind the rough sleeping figures sits a homelessness system under extraordinary pressure. As of March 2023 a record 104,000 households — including 131,000 children — are living in temporary accommodation such as B&amp;Bs, hostels and emergency placements, up 49% from 70,000 in 2014. The annual cost to councils has soared to £1.74 billion from under £500 million in 2010. The Homelessness Reduction Act 2017 created a statutory &ldquo;prevention duty&rdquo; requiring councils to help anyone at risk of homelessness within 56 days, but 271,000 households were owed a duty in 2022/23 — 34% above pre-pandemic levels. &ldquo;No-fault&rdquo; Section 21 evictions accounted for a quarter of all homelessness presentations before their planned abolition under the Renters (Reform) Act 2024.</p>
+              <p>Policy interventions have shown what works — and what is missing. The Rough Sleeping Initiative, funded at £300 million since 2018, provided outreach workers and rapid-access accommodation and is credited with halting the pre-2018 rise. Housing First, backed by randomised evidence from Finland and Canada showing 80%-plus housing retention for complex-needs individuals, has been piloted in Greater Manchester, Liverpool and the West Midlands with broadly positive but underfunded results. The &ldquo;Everyone In&rdquo; scheme demonstrated that rough sleeping can effectively be ended in days when political will and emergency resources are mobilised. The critical gap remains affordable housing supply: England builds roughly 220,000 homes a year against a government target of 300,000, and social housing stock has fallen by 1.5 million since 1980 owing to Right to Buy.</p>
             </div>
           </section>
 
@@ -260,9 +260,9 @@ export default function RoughSleepingPage() {
           <PositiveCallout
             title="What helped"
             value="2,688"
-            unit="people sleeping rough in 2020 &mdash; lowest since 2010, thanks to &apos;Everyone In&apos;"
-            description="The COVID-19 &lsquo;Everyone In&apos; scheme, launched in March 2020, housed virtually every rough sleeper in England within weeks &mdash; achieving in days what a decade of policy had failed to do. The count fell from 4,266 to 2,440 by 2021. The success showed that rough sleeping can be ended when emergency political will and resources are applied. The Rough Sleeping Initiative, providing dedicated outreach workers and specialist housing, has been funded at &pound;300 million since 2018 and is credited with preventing thousands of first-time rough sleeping episodes. Housing First pilots in Greater Manchester, Liverpool, and West Midlands are showing promising outcomes for people with complex needs."
-            source="Source: MHCLG &mdash; Rough Sleeping Snapshot 2023; MHCLG &mdash; Statutory Homelessness Statistics 2022/23."
+            unit="people sleeping rough in 2020 — lowest since 2010, thanks to 'Everyone In'"
+            description="The COVID-19 &lsquo;Everyone In' scheme, launched in March 2020, housed virtually every rough sleeper in England within weeks — achieving in days what a decade of policy had failed to do. The count fell from 4,266 to 2,440 by 2021. The success showed that rough sleeping can be ended when emergency political will and resources are applied. The Rough Sleeping Initiative, providing dedicated outreach workers and specialist housing, has been funded at £300 million since 2018 and is credited with preventing thousands of first-time rough sleeping episodes. Housing First pilots in Greater Manchester, Liverpool, and West Midlands are showing promising outcomes for people with complex needs."
+            source="Source: MHCLG — Rough Sleeping Snapshot 2023; MHCLG — Statutory Homelessness Statistics 2022/23."
           />
           </ScrollReveal>
 
@@ -278,7 +278,7 @@ export default function RoughSleepingPage() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {src.name} &mdash; {src.dataset} ({src.frequency})
+                    {src.name} — {src.dataset} ({src.frequency})
                   </a>
                 </li>
               ))}

@@ -121,17 +121,17 @@ export default function EquityReleaseMarketPage() {
         <TopicHeader
           topic="Equity Release"
           question="Are Older Homeowners Eating Their Houses?"
-          finding="&pound;2.6 billion was released from homes through equity release plans in 2024. The typical interest rate compounds to double the debt in 12 years. Critics warn vulnerable older homeowners are being sold unsuitable products."
+          finding="£2.6 billion was released from homes through equity release plans in 2024. The typical interest rate compounds to double the debt in 12 years. Critics warn vulnerable older homeowners are being sold unsuitable products."
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Equity release &mdash; predominantly through lifetime mortgages that allow homeowners over 55 to borrow against their property without making monthly repayments &mdash; has grown from a fringe financial product to a &pound;2.6 billion annual market. For older homeowners who are &lsquo;asset rich, cash poor&rsquo;: who own their home outright but cannot meet care costs, home adaptations, or living expenses from pension income alone, it can be a legitimate solution. The 415,000 active plans as of 2024 represent a significant cohort of older people who have chosen to unlock housing wealth.
+              Equity release — predominantly through lifetime mortgages that allow homeowners over 55 to borrow against their property without making monthly repayments — has grown from a fringe financial product to a £2.6 billion annual market. For older homeowners who are &lsquo;asset rich, cash poor&rsquo;: who own their home outright but cannot meet care costs, home adaptations, or living expenses from pension income alone, it can be a legitimate solution. The 415,000 active plans as of 2024 represent a significant cohort of older people who have chosen to unlock housing wealth.
             </p>
             <p>
-              The compound interest risk is the defining concern. At an average rate of 6.8%, a &pound;100,000 equity release loan doubles to &pound;200,000 in approximately 12 years without any additional drawdown. For a homeowner who takes a plan at 65 and lives to 85, the initial loan may have quadrupled. No-negative-equity guarantees (required by Equity Release Council members) mean borrowers cannot owe more than the property is worth, but in a housing market that does not consistently outperform the compound interest rate, heirs may inherit nothing. The FCA&apos;s Consumer Duty has tightened suitability obligations, and evidence from redress schemes suggests a meaningful minority of past sales were inappropriate for the customer.
+              The compound interest risk is the defining concern. At an average rate of 6.8%, a £100,000 equity release loan doubles to £200,000 in approximately 12 years without any additional drawdown. For a homeowner who takes a plan at 65 and lives to 85, the initial loan may have quadrupled. No-negative-equity guarantees (required by Equity Release Council members) mean borrowers cannot owe more than the property is worth, but in a housing market that does not consistently outperform the compound interest rate, heirs may inherit nothing. The FCA's Consumer Duty has tightened suitability obligations, and evidence from redress schemes suggests a meaningful minority of past sales were inappropriate for the customer.
             </p>
           </div>
         </section>
@@ -152,7 +152,7 @@ export default function EquityReleaseMarketPage() {
               unit=""
               direction="down"
               polarity="up-is-bad"
-              changeText="Down from &pound;6.2bn peak in 2022 &middot; Rate rise knocked market"
+              changeText="Down from £6.2bn peak in 2022 · Rate rise knocked market"
               sparklineData={[1.8, 2.1, 2.6, 3.4, 3.9, 3.1, 4.8, 6.2, 3.8, 2.6]}
               onExpand={() => {}}
             />
@@ -162,7 +162,7 @@ export default function EquityReleaseMarketPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Debt doubles in ~12 years &middot; Compound interest main risk"
+              changeText="Debt doubles in ~12 years · Compound interest main risk"
               sparklineData={[5.1, 5.2, 5.4, 5.6, 6.8, 7.2, 6.8]}
               onExpand={() => {}}
             />
@@ -172,7 +172,7 @@ export default function EquityReleaseMarketPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 280,000 in 2018 &middot; Mostly used for debt repayment"
+              changeText="Up from 280,000 in 2018 · Mostly used for debt repayment"
               sparklineData={[280, 310, 340, 360, 390, 400, 415]}
               onExpand={() => {}}
             />
@@ -183,7 +183,7 @@ export default function EquityReleaseMarketPage() {
         <ScrollReveal>
           <section id="sec-lending" className="mb-12">
             <LineChart
-              title="Total equity release lending, UK, 2015&ndash;2024"
+              title="Total equity release lending, UK, 2015–2024"
               subtitle="Annual value of new equity release plans (£ billions). Rose sharply to £6.2bn in 2022 as house prices peaked, then fell sharply as interest rates rose, making compound borrowing more costly."
               series={lendingSeries}
               annotations={lendingAnnotations}
@@ -195,7 +195,7 @@ export default function EquityReleaseMarketPage() {
         <ScrollReveal>
           <section id="sec-rates" className="mb-12">
             <LineChart
-              title="Average lifetime mortgage interest rate, UK, 2018&ndash;2024"
+              title="Average lifetime mortgage interest rate, UK, 2018–2024"
               subtitle="Average fixed rate on new lifetime mortgage plans. At 6.8%, a £100,000 loan doubles in approximately 12 years without additional drawdown. The no-negative-equity guarantee protects against owing more than the property value."
               series={rateAndPlansSeries}
               annotations={rateAnnotations}
@@ -207,11 +207,11 @@ export default function EquityReleaseMarketPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="FCA Consumer Duty 2023"
             unit=""
-            description="The FCA&apos;s Consumer Duty rules (2023) require equity release advisers to prove suitability in detail and document their reasoning. Equity Release Council members adhere to a product code including no-negative-equity guarantees, independent legal advice requirements, and the right to make voluntary payments. Inheritance protection options allow customers to ringfence a proportion of the property&apos;s value for their estate. The market has consolidated around higher-quality providers since the 2022 market correction."
-            source="Source: Equity Release Council &mdash; Market statistics Q4 2024; FCA &mdash; Retirement income market data 2024."
+            description="The FCA's Consumer Duty rules (2023) require equity release advisers to prove suitability in detail and document their reasoning. Equity Release Council members adhere to a product code including no-negative-equity guarantees, independent legal advice requirements, and the right to make voluntary payments. Inheritance protection options allow customers to ringfence a proportion of the property's value for their estate. The market has consolidated around higher-quality providers since the 2022 market correction."
+            source="Source: Equity Release Council — Market statistics Q4 2024; FCA — Retirement income market data 2024."
           />
         </ScrollReveal>
 
@@ -222,7 +222,7 @@ export default function EquityReleaseMarketPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

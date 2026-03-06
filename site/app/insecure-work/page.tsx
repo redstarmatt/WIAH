@@ -99,8 +99,8 @@ export default function InsecureWorkPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>More than 1 million workers &mdash; 3.1% of the UK workforce &mdash; are on zero-hours contracts, up from 250,000 in 2013; counting temporary, agency, and low-paid self-employed workers, the total in insecure employment reaches 4.4 million. The pay penalty is substantial: insecure workers earn on average 14% less per hour and are three times more likely to fall below the poverty line. The accommodation and food sector is most exposed (22% zero-hours), social care highly dependent (18%), and the gig economy &mdash; Uber, Deliveroo, Amazon Flex &mdash; added further workers excluded from most statutory protections until the Supreme Court&apos;s landmark Uber ruling in February 2021. The Employment Rights Bill, introduced October 2024, grants zero-hours workers the right to request guaranteed hours after 12 weeks, introduces day-one protections against unfair dismissal and for statutory sick pay, and restricts &ldquo;fire and rehire.&rdquo;</p>
-            <p>Insecure work is not evenly distributed. Women account for 55% of zero-hours workers despite representing 48% of the workforce; young workers aged 16&ndash;24 are six times more likely to be on such contracts than those aged 35&ndash;49; ethnic minority workers are disproportionately concentrated in gig and agency work; disabled workers are twice as likely to be in low-paid insecure employment. Geographically, insecure work clusters in the East Midlands, Yorkshire, and parts of the North West &mdash; regional economies dependent on hospitality, logistics, and social care. Employment tribunal backlogs exceeding 40,000 cases in 2024, with waits over 18 months, mean that legal rights have limited practical value for workers who fear losing future shifts by complaining.</p>
+            <p>More than 1 million workers — 3.1% of the UK workforce — are on zero-hours contracts, up from 250,000 in 2013; counting temporary, agency, and low-paid self-employed workers, the total in insecure employment reaches 4.4 million. The pay penalty is substantial: insecure workers earn on average 14% less per hour and are three times more likely to fall below the poverty line. The accommodation and food sector is most exposed (22% zero-hours), social care highly dependent (18%), and the gig economy — Uber, Deliveroo, Amazon Flex — added further workers excluded from most statutory protections until the Supreme Court's landmark Uber ruling in February 2021. The Employment Rights Bill, introduced October 2024, grants zero-hours workers the right to request guaranteed hours after 12 weeks, introduces day-one protections against unfair dismissal and for statutory sick pay, and restricts &ldquo;fire and rehire.&rdquo;</p>
+            <p>Insecure work is not evenly distributed. Women account for 55% of zero-hours workers despite representing 48% of the workforce; young workers aged 16–24 are six times more likely to be on such contracts than those aged 35–49; ethnic minority workers are disproportionately concentrated in gig and agency work; disabled workers are twice as likely to be in low-paid insecure employment. Geographically, insecure work clusters in the East Midlands, Yorkshire, and parts of the North West — regional economies dependent on hospitality, logistics, and social care. Employment tribunal backlogs exceeding 40,000 cases in 2024, with waits over 18 months, mean that legal rights have limited practical value for workers who fear losing future shifts by complaining.</p>
           </div>
         </section>
 
@@ -118,7 +118,7 @@ export default function InsecureWorkPage() {
               value="1.04M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; 3.1% of workforce &middot; Up from 250K in 2013 &middot; 22% of accommodation &amp; food sector"
+              changeText="2023 · 3.1% of workforce · Up from 250K in 2013 · 22% of accommodation &amp; food sector"
               sparklineData={[250, 580, 747, 903, 883, 789, 974, 886, 920, 1022, 1040]}
               href="#sec-overview"/>
             <MetricCard
@@ -126,15 +126,15 @@ export default function InsecureWorkPage() {
               value="4.4M"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 &middot; Zero-hours, temp &amp; agency &middot; 14% hourly pay penalty &middot; 3x more likely to be in poverty"
+              changeText="2023 · Zero-hours, temp &amp; agency · 14% hourly pay penalty · 3x more likely to be in poverty"
               sparklineData={[3.8, 3.9, 4.0, 4.1, 3.7, 3.9, 4.2, 4.4]}
               href="#sec-zerohours"/>
             <MetricCard
               label="National Living Wage (April 2024)"
-              value="&pound;11.44"
+              value="£11.44"
               direction="up"
               polarity="up-is-good"
-              changeText="Per hour &middot; Largest ever increase &middot; Employment Rights Bill: day-one rights for all workers &middot; Fire-and-rehire restrictions"
+              changeText="Per hour · Largest ever increase · Employment Rights Bill: day-one rights for all workers · Fire-and-rehire restrictions"
               sparklineData={[6.70, 7.20, 7.50, 7.83, 8.21, 8.72, 8.91, 9.50, 10.42, 11.44]}
               href="#sec-insecure"/>
           </div>
@@ -143,7 +143,7 @@ export default function InsecureWorkPage() {
         <ScrollReveal>
           <section id="sec-zerohours" className="mb-12">
             <LineChart
-              title="Workers on zero-hours contracts, 2013&ndash;2023"
+              title="Workers on zero-hours contracts, 2013–2023"
               subtitle="Thousands of workers on zero-hours contracts, UK, from Labour Force Survey."
               series={zeroHoursSeries}
               annotations={zeroHoursAnnotations}
@@ -160,7 +160,7 @@ export default function InsecureWorkPage() {
         <ScrollReveal>
           <section id="sec-insecure" className="mb-12">
             <LineChart
-              title="Workers in insecure employment, 2016&ndash;2023"
+              title="Workers in insecure employment, 2016–2023"
               subtitle="Millions of workers in insecure employment (zero-hours, temporary, agency, low-paid self-employed)."
               series={insecureWorkSeries}
               yLabel="Insecure workers (millions)"
@@ -193,17 +193,17 @@ export default function InsecureWorkPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS &mdash; Labour Force Survey 2023</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS — Labour Force Survey 2023</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Day 1"
-            unit="employment rights for all workers from the Employment Rights Bill 2024 &mdash; ending the 2-year qualifying period"
-            description="The Employment Rights Bill, introduced in October 2024, is the most significant expansion of worker rights in 30 years. It grants day-one rights to statutory sick pay and protection from unfair dismissal, removing the 2-year qualifying period. Workers on zero-hours contracts gain the right to request guaranteed hours after 12 weeks. The &apos;fire and rehire&apos; tactic &mdash; used by P&amp;O Ferries in 2022 to dismiss 800 workers &mdash; will be severely restricted. The National Living Wage rose to &pound;11.44/hour in April 2024. The government&apos;s Fair Work Agency will consolidate enforcement of employment rights."
-            source="Source: ONS &mdash; Zero-Hours Contracts 2023; TUC &mdash; Insecure Work Report 2024."
+            unit="employment rights for all workers from the Employment Rights Bill 2024 — ending the 2-year qualifying period"
+            description="The Employment Rights Bill, introduced in October 2024, is the most significant expansion of worker rights in 30 years. It grants day-one rights to statutory sick pay and protection from unfair dismissal, removing the 2-year qualifying period. Workers on zero-hours contracts gain the right to request guaranteed hours after 12 weeks. The 'fire and rehire' tactic — used by P&amp;O Ferries in 2022 to dismiss 800 workers — will be severely restricted. The National Living Wage rose to £11.44/hour in April 2024. The government's Fair Work Agency will consolidate enforcement of employment rights."
+            source="Source: ONS — Zero-Hours Contracts 2023; TUC — Insecure Work Report 2024."
           />
         </ScrollReveal>
 
@@ -213,7 +213,7 @@ export default function InsecureWorkPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

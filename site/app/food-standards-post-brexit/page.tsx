@@ -141,18 +141,18 @@ export default function FoodStandardsPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Post-Brexit Food Standards"
-          question="Has Brexit Changed What&apos;s on Our Plates?"
-          finding="UK food import checks that were planned for 2021 were delayed until 2024. 87 food safety incidents involving imported food were detected in 2025, up from 62 in 2020. The UK&ndash;US trade deal could allow chlorinated chicken; the UK&ndash;EU TCA restricts divergence."
+          question="Has Brexit Changed What's on Our Plates?"
+          finding="UK food import checks that were planned for 2021 were delayed until 2024. 87 food safety incidents involving imported food were detected in 2025, up from 62 in 2020. The UK–US trade deal could allow chlorinated chicken; the UK–EU TCA restricts divergence."
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Brexit removed the UK from the EU&apos;s Rapid Alert System for Food and Feed (RASFF) &mdash; the network through which member states share food safety alerts in real time. The UK created its own Food and Feed Safety and Incidents Network but operates it with fewer resources and without the automatic information sharing that RASFF provides. More consequentially, the government repeatedly delayed implementing import border checks on EU food and feed imports after Brexit. Full checks were promised for January 2021, delayed to January 2022, delayed to July 2022, then to November 2023, before physical checks finally began at major ports in April 2024. During this three-year period, UK import checks on EU food products ran at single-digit percentages.
+              Brexit removed the UK from the EU's Rapid Alert System for Food and Feed (RASFF) — the network through which member states share food safety alerts in real time. The UK created its own Food and Feed Safety and Incidents Network but operates it with fewer resources and without the automatic information sharing that RASFF provides. More consequentially, the government repeatedly delayed implementing import border checks on EU food and feed imports after Brexit. Full checks were promised for January 2021, delayed to January 2022, delayed to July 2022, then to November 2023, before physical checks finally began at major ports in April 2024. During this three-year period, UK import checks on EU food products ran at single-digit percentages.
             </p>
             <p>
-              Food safety incidents involving imported products rose to 87 in 2025 &mdash; a combination of more imports entering with less scrutiny and the UK&apos;s improved border systems finally detecting more. It is unclear how much of the increase reflects a genuine deterioration in safety versus improved detection. More concerning for the longer term is the question of standards divergence. The UK&ndash;US trade deal negotiations remain live, with the American agricultural sector seeking access for products banned in the UK under EU-inherited regulations &mdash; hormone-treated beef, ractopamine-treated pork, chlorine-washed chicken. The Food Standards Agency has stated it will not recommend standards reductions in trade deals. The political and commercial pressures are real. The Trade and Agriculture Commission scrutinises each agreement, but its reports are advisory rather than binding.
+              Food safety incidents involving imported products rose to 87 in 2025 — a combination of more imports entering with less scrutiny and the UK's improved border systems finally detecting more. It is unclear how much of the increase reflects a genuine deterioration in safety versus improved detection. More concerning for the longer term is the question of standards divergence. The UK–US trade deal negotiations remain live, with the American agricultural sector seeking access for products banned in the UK under EU-inherited regulations — hormone-treated beef, ractopamine-treated pork, chlorine-washed chicken. The Food Standards Agency has stated it will not recommend standards reductions in trade deals. The political and commercial pressures are real. The Trade and Agriculture Commission scrutinises each agreement, but its reports are advisory rather than binding.
             </p>
           </div>
         </section>
@@ -204,7 +204,7 @@ export default function FoodStandardsPage() {
         <ScrollReveal>
           <section id="sec-incidents" className="mb-12">
             <LineChart
-              title="Food safety incidents involving imported food, UK, 2019&ndash;2025"
+              title="Food safety incidents involving imported food, UK, 2019–2025"
               subtitle="Food safety incidents involving imported food and feed detected by FSA and FSS, UK. Dip in 2021 reflects transition period — UK not yet checking imports. Rise from 2022 onwards combines more imports entering and improved detection once the Border Target Operating Model was implemented."
               series={incidentsSeries}
               annotations={incidentsAnnotations}
@@ -217,7 +217,7 @@ export default function FoodStandardsPage() {
         <ScrollReveal>
           <section id="sec-border" className="mb-12">
             <LineChart
-              title="Import border checks and cumulative standards divergences, 2021&ndash;2025"
+              title="Import border checks and cumulative standards divergences, 2021–2025"
               subtitle="Percentage of food and feed import shipments physically checked at UK borders (green) and cumulative documented divergences from EU food standards (red). Border checks rose from 8% to 85% after the Border Target Operating Model was implemented in 2024."
               series={borderAndDivergenceSeries}
               annotations={borderAnnotations}
@@ -229,11 +229,11 @@ export default function FoodStandardsPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="FSA"
             unit="Committed to no standards reduction"
-            description="The Food Standards Agency maintains its statutory commitment to no lowering of standards in international trade deals &mdash; a formal legal obligation introduced via the Agriculture Act 2020. The Trade and Agriculture Commission scrutinises all FTAs for food standard implications before parliamentary ratification. The Border Target Operating Model, now fully operational, delivers physical checks at 85% of risk-rated imports. The UK&ndash;EU TCA veterinary and sanitary provisions provide a floor on divergence for products traded between the UK and EU. Continued alignment with EU Codex Alimentarius standards means the UK maintains internationally comparable baseline protections."
-            source="Source: FSA &mdash; Food Standards Agency position on trade and food standards 2024. TAC &mdash; Trade and Agriculture Commission scrutiny reports."
+            description="The Food Standards Agency maintains its statutory commitment to no lowering of standards in international trade deals — a formal legal obligation introduced via the Agriculture Act 2020. The Trade and Agriculture Commission scrutinises all FTAs for food standard implications before parliamentary ratification. The Border Target Operating Model, now fully operational, delivers physical checks at 85% of risk-rated imports. The UK–EU TCA veterinary and sanitary provisions provide a floor on divergence for products traded between the UK and EU. Continued alignment with EU Codex Alimentarius standards means the UK maintains internationally comparable baseline protections."
+            source="Source: FSA — Food Standards Agency position on trade and food standards 2024. TAC — Trade and Agriculture Commission scrutiny reports."
           />
         </ScrollReveal>
 
@@ -244,7 +244,7 @@ export default function FoodStandardsPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

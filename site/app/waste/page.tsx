@@ -140,26 +140,26 @@ export default function WastePage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England&apos;s recycling rate stands at 43.8% &mdash; virtually unchanged since it
+              England's recycling rate stands at 43.8% — virtually unchanged since it
               stalled at roughly 44% in 2011. The government target is 65% by 2035, a gap of
               more than 20 percentage points with no credible trajectory to close it. What has
               changed, dramatically, is where the rest goes. Landfill collapsed from 81% of
               household waste in 2000 to just 5.5% today, but recycling did not fill the void.
               Incineration did. Energy-from-waste capacity more than doubled since 2014 to
               17.3 million tonnes a year, and EfW plants now handle nearly half of all collected
-              household waste. Councils have swapped one end-of-pipe solution for another &mdash;
+              household waste. Councils have swapped one end-of-pipe solution for another —
               cleaner than landfill, but neither circular nor cheap to unwind once 25-year
               burn contracts are signed.
             </p>
             <p>
               The recycling rate masks sharp material-by-material variation. Paper and card recover
-              at 86%, glass and metal at around 80%, but plastic manages just 51% &mdash; and much of
-              that is downcycled rather than remade. The UK is the world&apos;s second-largest
+              at 86%, glass and metal at around 80%, but plastic manages just 51% — and much of
+              that is downcycled rather than remade. The UK is the world's second-largest
               exporter of plastic waste; after China banned imports in 2018, shipments shifted to
               Turkey, Malaysia and Vietnam, where oversight is weaker. At home, contamination
               undermines what collection achieves: 82% of households put wrong items in recycling
               bins, and 525,000 tonnes are rejected at sorting facilities each year. Public
-              willingness is not the bottleneck &mdash; infrastructure and end-markets are.
+              willingness is not the bottleneck — infrastructure and end-markets are.
             </p>
             </div>
         </section>
@@ -313,7 +313,7 @@ export default function WastePage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s changing"
+            title="What's changing"
             value="47"
             unit="% incinerated"
             description="Incineration (Energy from Waste) replaces landfill — better for methane emissions, but not circular. The real win is the shift to producer responsibility: from April 2024, producers bear the full cost of managing their packaging, creating incentives for lighter designs, refillable systems, and genuinely recyclable materials. Early signs show companies investing in reuse schemes (e.g. deposit returns for drinks bottles) and material innovation. If EPR works, plastic design will change first."
@@ -328,7 +328,7 @@ export default function WastePage() {
             {data?.metadata.sources.map((src, i) => (
               <li key={i}>
                 <a href={src.url} className="underline hover:text-wiah-blue" target="_blank" rel="noreferrer">
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}

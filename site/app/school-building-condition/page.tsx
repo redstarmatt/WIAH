@@ -133,17 +133,17 @@ export default function SchoolBuildingConditionPage() {
         <TopicHeader
           topic="School Building Condition"
           question="Are Children Learning in Crumbling Schools?"
-          finding="RAAC (Reinforced Autoclaved Aerated Concrete) was found in 235 schools, forcing emergency closures in September 2023. The DfE estimates one in five school buildings needs major repairs, with a &pound;6.7 billion maintenance backlog."
+          finding="RAAC (Reinforced Autoclaved Aerated Concrete) was found in 235 schools, forcing emergency closures in September 2023. The DfE estimates one in five school buildings needs major repairs, with a £6.7 billion maintenance backlog."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The RAAC crisis of September 2023 brought England&apos;s school estate into sharp focus, but the structural concrete problem was the visible tip of a much larger iceberg. RAAC &mdash; a lightweight aerated concrete used in flat roofs and floors between roughly 1950 and 1990 &mdash; was identified in 235 schools following emergency surveys, causing hundreds of classrooms to be closed at the start of term. Several schools were entirely shut for weeks. The immediate cost was &pound;1 billion in emergency remediation funding, but this addresses only the most acute structural risk.
+              The RAAC crisis of September 2023 brought England's school estate into sharp focus, but the structural concrete problem was the visible tip of a much larger iceberg. RAAC — a lightweight aerated concrete used in flat roofs and floors between roughly 1950 and 1990 — was identified in 235 schools following emergency surveys, causing hundreds of classrooms to be closed at the start of term. Several schools were entirely shut for weeks. The immediate cost was £1 billion in emergency remediation funding, but this addresses only the most acute structural risk.
             </p>
             <p>
-              The broader picture is a maintenance backlog estimated at &pound;6.7 billion by the DfE&apos;s own condition surveys, accumulated over decades of under-investment. One in five school buildings &mdash; approximately 4,000 schools &mdash; is now rated in poor or very poor condition. The Priority Schools Building Programme, later renamed the School Rebuilding Programme, was targeting 500 rebuilds over 10 years at completion rates of 20&ndash;28 per year. At that pace, it would take over 140 years to address the backlog. The programme covers only the most structurally dangerous buildings; it does not address the wider stock of leaking roofs, inadequate heating, poor ventilation, and outdated facilities that affect teaching and learning every day.
+              The broader picture is a maintenance backlog estimated at £6.7 billion by the DfE's own condition surveys, accumulated over decades of under-investment. One in five school buildings — approximately 4,000 schools — is now rated in poor or very poor condition. The Priority Schools Building Programme, later renamed the School Rebuilding Programme, was targeting 500 rebuilds over 10 years at completion rates of 20–28 per year. At that pace, it would take over 140 years to address the backlog. The programme covers only the most structurally dangerous buildings; it does not address the wider stock of leaking roofs, inadequate heating, poor ventilation, and outdated facilities that affect teaching and learning every day.
             </p>
           </div>
         </section>
@@ -165,7 +165,7 @@ export default function SchoolBuildingConditionPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="235 schools across England &middot; Emergency closures Sep 2023 &middot; &pound;1bn remediation"
+              changeText="235 schools across England · Emergency closures Sep 2023 · £1bn remediation"
               sparklineData={[52, 114, 156, 200, 220, 235]}
               onExpand={() => {}}
             />
@@ -175,7 +175,7 @@ export default function SchoolBuildingConditionPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 15% in 2019 &middot; &pound;6.7bn maintenance backlog"
+              changeText="Up from 15% in 2019 · £6.7bn maintenance backlog"
               sparklineData={[15, 15, 17, 18, 19, 21]}
               onExpand={() => {}}
             />
@@ -185,7 +185,7 @@ export default function SchoolBuildingConditionPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="Priority School Building Programme &middot; But 500 schools over 10 years is far short of need"
+              changeText="Priority School Building Programme · But 500 schools over 10 years is far short of need"
               sparklineData={[18, 20, 22, 24, 26, 28]}
               onExpand={() => {}}
             />
@@ -196,7 +196,7 @@ export default function SchoolBuildingConditionPage() {
         <ScrollReveal>
           <section id="sec-raac" className="mb-12">
             <LineChart
-              title="Schools with RAAC concrete confirmed, England, 2023&ndash;2024"
+              title="Schools with RAAC concrete confirmed, England, 2023–2024"
               subtitle="Cumulative schools confirmed as containing Reinforced Autoclaved Aerated Concrete following emergency DfE survey. Emergency closures were announced in September 2023 after structural failures accelerated."
               series={raacSeries}
               annotations={raacAnnotations}
@@ -208,7 +208,7 @@ export default function SchoolBuildingConditionPage() {
         <ScrollReveal>
           <section id="sec-condition" className="mb-12">
             <LineChart
-              title="School buildings in poor or very poor condition, England, 2019&ndash;2024"
+              title="School buildings in poor or very poor condition, England, 2019–2024"
               subtitle="Percentage of school buildings rated poor or very poor in DfE condition surveys. Underlying deterioration accelerating as buildings age and maintenance budgets remain constrained."
               series={conditionSeries}
               annotations={conditionAnnotations}
@@ -220,7 +220,7 @@ export default function SchoolBuildingConditionPage() {
         <ScrollReveal>
           <section id="sec-rebuilds" className="mb-12">
             <LineChart
-              title="School Rebuilding Programme completions per year, 2019&ndash;2024"
+              title="School Rebuilding Programme completions per year, 2019–2024"
               subtitle="Schools fully rebuilt under the Priority School Building Programme and School Rebuilding Programme. At current rates, the programme addresses a fraction of the estate requiring major work."
               series={rebuildSeries}
               annotations={[]}
@@ -232,11 +232,11 @@ export default function SchoolBuildingConditionPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
-            value="&pound;1bn"
+            title="What's improving"
+            value="£1bn"
             unit="RAAC remediation fund 2023"
-            description="The government announced a &pound;1 billion fund for RAAC remediation in 2023, providing funding for affected schools to make classrooms safe. The School Rebuilding Programme will rebuild or refurbish 500 schools over 10 years, prioritising the worst structural cases. Condition surveys are being updated more frequently following the RAAC crisis. Some schools have used capital receipts and MAT reserves to accelerate maintenance independently of central funding."
-            source="Source: DfE School Rebuilding Programme statistics &middot; DfE Condition of School Buildings Survey."
+            description="The government announced a £1 billion fund for RAAC remediation in 2023, providing funding for affected schools to make classrooms safe. The School Rebuilding Programme will rebuild or refurbish 500 schools over 10 years, prioritising the worst structural cases. Condition surveys are being updated more frequently following the RAAC crisis. Some schools have used capital receipts and MAT reserves to accelerate maintenance independently of central funding."
+            source="Source: DfE School Rebuilding Programme statistics · DfE Condition of School Buildings Survey."
           />
         </ScrollReveal>
 
@@ -247,7 +247,7 @@ export default function SchoolBuildingConditionPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

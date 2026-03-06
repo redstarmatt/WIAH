@@ -138,10 +138,10 @@ export default function GreenSkillsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Net zero requires the UK to deploy 600,000 heat pumps per year by 2028, retrofit 19 million homes by 2035, install 300,000 EV charging points by 2030, and build a workforce for 50 GW of offshore wind. Each of these transitions is workforce-constrained. MCS Certification records show approximately 3,200 heat pump installers trained in 2025 &mdash; 2.4% of the 130,000 needed by 2028. The Boiler Upgrade Scheme and building regulations requiring heat pumps in new homes are driving demand, but the training supply is nowhere near keeping pace. Existing gas engineers can retrain in 12&ndash;18 months, but the Gas Safe Register has 130,000 registered engineers versus around 5,000 heat pump certified ones.
+              Net zero requires the UK to deploy 600,000 heat pumps per year by 2028, retrofit 19 million homes by 2035, install 300,000 EV charging points by 2030, and build a workforce for 50 GW of offshore wind. Each of these transitions is workforce-constrained. MCS Certification records show approximately 3,200 heat pump installers trained in 2025 — 2.4% of the 130,000 needed by 2028. The Boiler Upgrade Scheme and building regulations requiring heat pumps in new homes are driving demand, but the training supply is nowhere near keeping pace. Existing gas engineers can retrain in 12–18 months, but the Gas Safe Register has 130,000 registered engineers versus around 5,000 heat pump certified ones.
             </p>
             <p>
-              Green job vacancies have grown fivefold since 2020, reaching an estimated 215,000 per quarter by 2025. Offshore wind alone requires 100,000 workers by 2030, against a current workforce of around 20,000. Ports, turbine manufacturing, subsea cable installation, and operations and maintenance are all skills-constrained. The Green Jobs Taskforce report identified 30 priority green occupations where skills gaps are most acute. Regional concentration compounds the problem: offshore wind jobs cluster in Scotland, Yorkshire and the Humber, and East Anglia, but the workers who need retraining &mdash; former oil and gas workers, automotive workers, steel workers &mdash; are concentrated in different geographies. Without active labour mobility and retraining investment, the net zero transition risks creating regional inequality rather than resolving it.
+              Green job vacancies have grown fivefold since 2020, reaching an estimated 215,000 per quarter by 2025. Offshore wind alone requires 100,000 workers by 2030, against a current workforce of around 20,000. Ports, turbine manufacturing, subsea cable installation, and operations and maintenance are all skills-constrained. The Green Jobs Taskforce report identified 30 priority green occupations where skills gaps are most acute. Regional concentration compounds the problem: offshore wind jobs cluster in Scotland, Yorkshire and the Humber, and East Anglia, but the workers who need retraining — former oil and gas workers, automotive workers, steel workers — are concentrated in different geographies. Without active labour mobility and retraining investment, the net zero transition risks creating regional inequality rather than resolving it.
             </p>
           </div>
         </section>
@@ -162,7 +162,7 @@ export default function GreenSkillsPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="vs 130,000 needed by 2028 &middot; Gap widening, not closing"
+              changeText="vs 130,000 needed by 2028 · Gap widening, not closing"
               sparklineData={heatPumpSparkline}
               onExpand={() => {}}
             />
@@ -172,7 +172,7 @@ export default function GreenSkillsPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="+514% since 2020 &middot; But not enough workers to fill them"
+              changeText="+514% since 2020 · But not enough workers to fill them"
               sparklineData={vacanciesSparkline}
               onExpand={() => {}}
             />
@@ -182,7 +182,7 @@ export default function GreenSkillsPage() {
               unit=""
               direction="flat"
               polarity="up-is-bad"
-              changeText="Current workforce ~20,000 &middot; 80,000 gap in 5 years"
+              changeText="Current workforce ~20,000 · 80,000 gap in 5 years"
               sparklineData={[20, 28, 38, 52, 68, 80, 100]}
               onExpand={() => {}}
             />
@@ -193,7 +193,7 @@ export default function GreenSkillsPage() {
         <ScrollReveal>
           <section id="sec-heatpumps" className="mb-12">
             <LineChart
-              title="Heat pump installers trained per year, UK, 2019&ndash;2025"
+              title="Heat pump installers trained per year, UK, 2019–2025"
               subtitle="Annual MCS-certified heat pump installer training completions in the UK (thousands). Training has more than tripled since 2019 but remains at 3,200 per year against a government target requiring 130,000 qualified installers by 2028."
               series={heatPumpVsRequiredSeries}
               annotations={heatPumpAnnotations}
@@ -206,7 +206,7 @@ export default function GreenSkillsPage() {
         <ScrollReveal>
           <section id="sec-vacancies" className="mb-12">
             <LineChart
-              title="UK green job vacancies per quarter, 2020&ndash;2025"
+              title="UK green job vacancies per quarter, 2020–2025"
               subtitle="Estimated quarterly green job vacancies in the UK (thousands), based on job postings analysis against BEIS green skills taxonomy. Fivefold increase since 2020 reflects rapid growth in clean energy, retrofit, and sustainable transport sectors."
               series={vacanciesSeries}
               annotations={vacanciesAnnotations}
@@ -218,11 +218,11 @@ export default function GreenSkillsPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="SkillsEngland"
             unit="Coordinating green apprenticeships"
-            description="The Green Jobs Taskforce roadmap identifies 30 priority green occupations and pathways to address each gap. The British Energy Security Strategy commits to 10 Clean Energy Skills Bootcamps annually, providing rapid retraining for workers from fossil fuel industries. SkillsEngland will coordinate green apprenticeship standards across the technical education system. The North Sea Transition Deal includes &pound;16 billion for skills to support oil and gas workers retraining for offshore wind. Colleges in coastal communities are developing dedicated offshore wind engineering programmes."
-            source="Source: DESNZ &mdash; Green Jobs Taskforce final report. DESNZ &mdash; British Energy Security Strategy 2022 skills chapter."
+            description="The Green Jobs Taskforce roadmap identifies 30 priority green occupations and pathways to address each gap. The British Energy Security Strategy commits to 10 Clean Energy Skills Bootcamps annually, providing rapid retraining for workers from fossil fuel industries. SkillsEngland will coordinate green apprenticeship standards across the technical education system. The North Sea Transition Deal includes £16 billion for skills to support oil and gas workers retraining for offshore wind. Colleges in coastal communities are developing dedicated offshore wind engineering programmes."
+            source="Source: DESNZ — Green Jobs Taskforce final report. DESNZ — British Energy Security Strategy 2022 skills chapter."
           />
         </ScrollReveal>
 
@@ -233,7 +233,7 @@ export default function GreenSkillsPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

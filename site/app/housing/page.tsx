@@ -571,8 +571,8 @@ export default function HousingPage() {
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
               In 1997, the average house in England cost 3.5 times the median salary. By
-              2024 the ratio had reached 7.7&times; &mdash; and in London it peaks above
-              11&times;, meaning a typical home costs more than a decade&apos;s gross pay.
+              2024 the ratio had reached 7.7&times; — and in London it peaks above
+              11&times;, meaning a typical home costs more than a decade's gross pay.
               The raw numbers are stark: house prices have risen roughly 390% since 1997
               while earnings have risen about 90%. In the North East the ratio sits closer
               to 5&times;, but even that would have been considered unaffordable a generation
@@ -581,10 +581,10 @@ export default function HousingPage() {
             </p>
             <p>
               For the growing share of the population who rent, the squeeze has intensified
-              sharply. Average monthly rent in England reached £1,380 in 2025 &mdash; up 78%
+              sharply. Average monthly rent in England reached £1,380 in 2025 — up 78%
               since 2005. In London it exceeds £2,200. Private renters now spend more than
               a third of their income on rent; in London, over 40%. The ONS private rent
-              index (IPHRP) shows rents rising at close to 10% a year in 2024 &mdash; the
+              index (IPHRP) shows rents rising at close to 10% a year in 2024 — the
               fastest pace since records began in 2011, with London at 11%. A post-pandemic
               surge that began in 2021 shows no sign of abating.
             </p>
@@ -682,7 +682,7 @@ export default function HousingPage() {
             <div className="mb-16 p-6 bg-wiah-light rounded-lg">
               <h2 className="text-lg font-bold text-wiah-black mb-2">How affordable is your area?</h2>
               <p className="text-sm text-wiah-mid mb-4">
-                Enter your postcode to see your local authority&apos;s house price to earnings ratio and your region&apos;s rent affordability.
+                Enter your postcode to see your local authority's house price to earnings ratio and your region's rent affordability.
               </p>
               <AreaLookup
                 metrics={[
@@ -1040,7 +1040,7 @@ export default function HousingPage() {
         <div id="sec-statutory-homelessness">
           <ScrollReveal>
             <section className="mb-12">
-              <h3 className="text-lg font-bold text-gray-900 mb-1">
+              <h3 className="text-lg font-bold text-wiah-black mb-1">
                 Households in temporary accommodation, 2013–2024
               </h3>
               <p className="text-sm text-[#6B7280] mb-4">
@@ -1071,7 +1071,7 @@ export default function HousingPage() {
         <div id="sec-housebuilding">
           <ScrollReveal>
             <section className="mb-12">
-              <h3 className="text-lg font-bold text-gray-900 mb-1">
+              <h3 className="text-lg font-bold text-wiah-black mb-1">
                 New homes built vs planning permissions granted, 2012–2023
               </h3>
               <p className="text-sm text-[#6B7280] mb-4">
@@ -1102,7 +1102,7 @@ export default function HousingPage() {
         <div id="sec-energy">
           <ScrollReveal>
             <section className="mb-12">
-              <h3 className="text-lg font-bold text-gray-900 mb-1">
+              <h3 className="text-lg font-bold text-wiah-black mb-1">
                 Share of homes meeting EPC Band C or above, 2012–2024
               </h3>
               <p className="text-sm text-[#6B7280] mb-4">
@@ -1151,7 +1151,7 @@ export default function HousingPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}
@@ -1163,7 +1163,7 @@ export default function HousingPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  DLUHC &mdash; Live Tables 104 &amp; 213: Dwelling stock &amp; new build completions by tenure (annual)
+                  DLUHC — Live Tables 104 &amp; 213: Dwelling stock &amp; new build completions by tenure (annual)
                 </a>
               </li>
             )}
@@ -1175,7 +1175,7 @@ export default function HousingPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}

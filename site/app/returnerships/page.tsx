@@ -126,17 +126,17 @@ export default function ReturnershipsPage() {
         <TopicHeader
           topic="Returnerships"
           question="Can the UK Bring Older Workers Back?"
-          finding="1.1 million people aged 50&ndash;64 left the labour market during and after the pandemic. The government&apos;s Returnership scheme has helped 15,000 people return to work &mdash; a fraction of those who left."
+          finding="1.1 million people aged 50–64 left the labour market during and after the pandemic. The government's Returnership scheme has helped 15,000 people return to work — a fraction of those who left."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Economic inactivity among people aged 50&ndash;64 rose sharply during the pandemic and has not fully recovered. The stock of inactive 50&ndash;64 year olds grew from 3.2 million pre-pandemic to 3.8 million at peak &mdash; a rise of 600,000. By 2024, it had fallen to 3.5 million, still 300,000 above the 2019 level. The Bank of England and OBR have consistently identified this cohort as a key constraint on labour supply, contributing to elevated wage growth and persistent inflation.
+              Economic inactivity among people aged 50–64 rose sharply during the pandemic and has not fully recovered. The stock of inactive 50–64 year olds grew from 3.2 million pre-pandemic to 3.8 million at peak — a rise of 600,000. By 2024, it had fallen to 3.5 million, still 300,000 above the 2019 level. The Bank of England and OBR have consistently identified this cohort as a key constraint on labour supply, contributing to elevated wage growth and persistent inflation.
             </p>
             <p>
-              The drivers are primarily health rather than preference. The percentage of inactive 50&ndash;64 year olds citing long-term illness or disability as their main reason rose from 34% in 2019 to 45% in 2024 &mdash; reflecting both the direct health impacts of COVID-19 (including long COVID, which affects approximately 1.8 million people) and a deterioration in NHS access that has prolonged recovery times. The government&apos;s Returnership scheme &mdash; launched in Spring 2023 and combining apprenticeships, Skills Bootcamps, and Sector-based Work Academy Programmes targeted at over-50s &mdash; had supported 15,000 placements by 2024, against a stated ambition of 100,000. The gap between rhetoric and delivery reflects both the scheme&apos;s modest scale and the fundamental barrier that many non-returners face: health problems that paid work cannot easily accommodate.
+              The drivers are primarily health rather than preference. The percentage of inactive 50–64 year olds citing long-term illness or disability as their main reason rose from 34% in 2019 to 45% in 2024 — reflecting both the direct health impacts of COVID-19 (including long COVID, which affects approximately 1.8 million people) and a deterioration in NHS access that has prolonged recovery times. The government's Returnership scheme — launched in Spring 2023 and combining apprenticeships, Skills Bootcamps, and Sector-based Work Academy Programmes targeted at over-50s — had supported 15,000 placements by 2024, against a stated ambition of 100,000. The gap between rhetoric and delivery reflects both the scheme's modest scale and the fundamental barrier that many non-returners face: health problems that paid work cannot easily accommodate.
             </p>
           </div>
         </section>
@@ -158,7 +158,7 @@ export default function ReturnershipsPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up 300,000 since pre-pandemic &middot; Long-term illness main driver"
+              changeText="Up 300,000 since pre-pandemic · Long-term illness main driver"
               sparklineData={[3.2, 3.3, 3.6, 3.8, 3.7, 3.5]}
               onExpand={() => {}}
             />
@@ -168,7 +168,7 @@ export default function ReturnershipsPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="Since 2022 &middot; Target: 100,000 &middot; Significant under-delivery"
+              changeText="Since 2022 · Target: 100,000 · Significant under-delivery"
               sparklineData={[0, 6, 15]}
               onExpand={() => {}}
             />
@@ -178,7 +178,7 @@ export default function ReturnershipsPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 34% in 2019 &middot; Post-pandemic health deterioration"
+              changeText="Up from 34% in 2019 · Post-pandemic health deterioration"
               sparklineData={[34, 33, 38, 42, 44, 45]}
               onExpand={() => {}}
             />
@@ -189,7 +189,7 @@ export default function ReturnershipsPage() {
         <ScrollReveal>
           <section id="sec-inactivity" className="mb-12">
             <LineChart
-              title="Economic inactivity, aged 50&ndash;64, UK, 2019&ndash;2024"
+              title="Economic inactivity, aged 50–64, UK, 2019–2024"
               subtitle="Millions of people aged 50\u201364 who are neither in work nor seeking work. Rose by 600,000 at pandemic peak; fallen since but remains 300,000 above 2019 level."
               series={inactivitySeries}
               annotations={inactivityAnnotations}
@@ -201,7 +201,7 @@ export default function ReturnershipsPage() {
         <ScrollReveal>
           <section id="sec-ill-health" className="mb-12">
             <LineChart
-              title="Ill health as reason for inactivity, aged 50&ndash;64, 2019&ndash;2024"
+              title="Ill health as reason for inactivity, aged 50–64, 2019–2024"
               subtitle="Percentage of economically inactive 50\u201364 year olds citing long-term illness or disability as their main reason for not working. Structural barrier to returnership policy."
               series={illHealthSeries}
               annotations={[{ date: new Date(2020, 5, 1), label: '2020: COVID impact' }]}
@@ -213,8 +213,8 @@ export default function ReturnershipsPage() {
         <ScrollReveal>
           <section id="sec-scheme" className="mb-12">
             <LineChart
-              title="Returnership scheme placements (cumulative), 2022&ndash;2024"
-              subtitle="Cumulative placements through apprenticeships, Skills Bootcamps, and SWAPs targeted at over-50s. 15,000 achieved against a 100,000 target &mdash; a 15% delivery rate."
+              title="Returnership scheme placements (cumulative), 2022–2024"
+              subtitle="Cumulative placements through apprenticeships, Skills Bootcamps, and SWAPs targeted at over-50s. 15,000 achieved against a 100,000 target — a 15% delivery rate."
               series={placementsSeries}
               annotations={[]}
               yLabel="Thousands (cumulative)"
@@ -225,11 +225,11 @@ export default function ReturnershipsPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="100,000"
             unit="Returnership target by scheme close"
-            description="The Spring Budget 2023 launched Returnerships alongside pension changes that removed the lifetime allowance, reducing the financial incentive for early retirement among higher earners. Work coaches in Jobcentres now have dedicated resource for clients aged 50 and over. The DWP&apos;s 50 Plus Champions in every Jobcentre Plus district provide specialist support. Skills Bootcamp completions for over-50s rose 40% in 2024, showing the demand is there when provision is accessible and health barriers are accommodated."
-            source="Source: DWP Returnership programme evaluation 2024 &middot; ONS Labour Force Survey Q4 2024."
+            description="The Spring Budget 2023 launched Returnerships alongside pension changes that removed the lifetime allowance, reducing the financial incentive for early retirement among higher earners. Work coaches in Jobcentres now have dedicated resource for clients aged 50 and over. The DWP's 50 Plus Champions in every Jobcentre Plus district provide specialist support. Skills Bootcamp completions for over-50s rose 40% in 2024, showing the demand is there when provision is accessible and health barriers are accommodated."
+            source="Source: DWP Returnership programme evaluation 2024 · ONS Labour Force Survey Q4 2024."
           />
         </ScrollReveal>
 
@@ -240,7 +240,7 @@ export default function ReturnershipsPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

@@ -94,7 +94,7 @@ export default function NhsDentistryPage() {
           <TopicHeader
             topic="Health"
             question="Can you still get an NHS dentist?"
-            finding="NHS dental treatment has collapsed since the pandemic, with 42% of adults unable to access an NHS dentist and children&apos;s tooth extractions becoming the most common childhood hospital procedure."
+            finding="NHS dental treatment has collapsed since the pandemic, with 42% of adults unable to access an NHS dentist and children's tooth extractions becoming the most common childhood hospital procedure."
           />
         </div>
       </section>
@@ -115,7 +115,7 @@ export default function NhsDentistryPage() {
               onExpand={() => {}}
             />
             <MetricCard
-              label="Children&apos;s tooth extractions (hospital)"
+              label="Children's tooth extractions (hospital)"
               value="35,000"
               unit=""
               direction="up"
@@ -142,8 +142,8 @@ export default function NhsDentistryPage() {
 
       <section id="sec-context" className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
         <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-          <p>NHS dentistry in England has been in accelerating decline since the pandemic, but the pressures pre-date COVID-19 by years. In 2023, 42% of adults reported being unable to get an NHS dentist appointment when they needed one &mdash; up from roughly 25% in 2019. The consequences are not merely inconvenient. Tooth decay, untreated without access to routine care, has become the leading cause of hospital admissions for children aged 6 to 10 in England. In 2022&ndash;23, 35,000 children had teeth removed under general anaesthetic in hospital settings &mdash; a costly, avoidable intervention that carries real clinical risk. Oral disease that elsewhere would be caught and filled has instead progressed to extraction.</p>
-          <p>The structural cause is a contract that has not worked since it was introduced in 2006. NHS dentists are paid per &ldquo;unit of dental activity&rdquo; (UDA) &mdash; a system that values a single filling identically to a full course of complex restorative treatment. As inflation has eroded the real value of UDA rates, many practices have concluded that NHS work no longer covers its costs. Between 2019 and 2023, 1,100 dentists stopped providing NHS services in England and moved to private practice, which can pay several times more for equivalent clinical time. The inequality this creates is severe: children in the most deprived areas of England are three times more likely to need teeth extracted than those in the least deprived, reflecting both dietary factors and a near-complete collapse of NHS dental access in some communities.</p>
+          <p>NHS dentistry in England has been in accelerating decline since the pandemic, but the pressures pre-date COVID-19 by years. In 2023, 42% of adults reported being unable to get an NHS dentist appointment when they needed one — up from roughly 25% in 2019. The consequences are not merely inconvenient. Tooth decay, untreated without access to routine care, has become the leading cause of hospital admissions for children aged 6 to 10 in England. In 2022–23, 35,000 children had teeth removed under general anaesthetic in hospital settings — a costly, avoidable intervention that carries real clinical risk. Oral disease that elsewhere would be caught and filled has instead progressed to extraction.</p>
+          <p>The structural cause is a contract that has not worked since it was introduced in 2006. NHS dentists are paid per &ldquo;unit of dental activity&rdquo; (UDA) — a system that values a single filling identically to a full course of complex restorative treatment. As inflation has eroded the real value of UDA rates, many practices have concluded that NHS work no longer covers its costs. Between 2019 and 2023, 1,100 dentists stopped providing NHS services in England and moved to private practice, which can pay several times more for equivalent clinical time. The inequality this creates is severe: children in the most deprived areas of England are three times more likely to need teeth extracted than those in the least deprived, reflecting both dietary factors and a near-complete collapse of NHS dental access in some communities.</p>
             </div>
       </section>
 
@@ -152,7 +152,7 @@ export default function NhsDentistryPage() {
       <PositiveCallout
         title="NHS dentistry reform announced 2023"
         value=""
-        description="NHS England announced a new dental recovery plan in February 2024, offering &pound;20 per additional course of treatment to incentivise dentists to take on more NHS patients. Early results suggest modest increases in patient numbers, but critics argue the underlying contract must be fundamentally renegotiated."
+        description="NHS England announced a new dental recovery plan in February 2024, offering £20 per additional course of treatment to incentivise dentists to take on more NHS patients. Early results suggest modest increases in patient numbers, but critics argue the underlying contract must be fundamentally renegotiated."
         source=""
       />
 

@@ -93,15 +93,15 @@ export default function InequalityPage() {
         <TopicHeader
           topic="Inequality"
           question="Is Britain Actually Getting More Unequal?"
-          finding="The UK&apos;s Gini coefficient for income is 0.35 &mdash; above the OECD average of 0.32 and higher than Germany (0.29) and France (0.30). The richest 10% receive 29% of all income. Wealth inequality is far more extreme: the top 10% hold 43% of all wealth. Income inequality has been broadly stable since 2010 but wealth inequality is rising."
+          finding="The UK's Gini coefficient for income is 0.35 — above the OECD average of 0.32 and higher than Germany (0.29) and France (0.30). The richest 10% receive 29% of all income. Wealth inequality is far more extreme: the top 10% hold 43% of all wealth. Income inequality has been broadly stable since 2010 but wealth inequality is rising."
           colour="#264653"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK&apos;s income Gini coefficient stands at 0.35 in 2022/23 &mdash; above the OECD average of 0.32 and significantly higher than Germany (0.29), France (0.30), and Sweden (0.27), though below the United States (0.39). The figure peaked at around 0.38 in the early 1990s, when Thatcher-era de-industrialisation, the decline of trade unions, and rapid financial-sector growth drove sharp income polarisation. Since 2010, income inequality has been broadly stable: the top 10% of earners receive 29% of all income while the bottom 50% receive 23%. COVID-19 temporarily compressed measured inequality in 2020/21 as the furlough scheme and the &pound;20-a-week Universal Credit uplift boosted lower incomes; the effect reversed when support was withdrawn.</p>
-            <p>Wealth inequality in Britain is substantially more extreme than income inequality. The wealth Gini stands at approximately 0.63 &mdash; nearly double the income figure of 0.35. The wealthiest 10% of households hold 43% of total household net wealth; the top 20% hold 59%; the bottom 30% hold just 5%. The primary driver is property: home ownership has fallen from 71% in 2003 to 63% in 2022, concentrating housing wealth among existing owners whose assets have appreciated sharply. Private pension wealth adds further concentration at the top, with defined-benefit pots heavily skewed towards public-sector workers &mdash; teachers, NHS staff, civil servants &mdash; in higher-income deciles. Total household wealth in Great Britain was estimated at &pound;15.2 trillion in the ONS Wealth and Assets Survey covering 2018&ndash;2020.</p>
+            <p>The UK's income Gini coefficient stands at 0.35 in 2022/23 — above the OECD average of 0.32 and significantly higher than Germany (0.29), France (0.30), and Sweden (0.27), though below the United States (0.39). The figure peaked at around 0.38 in the early 1990s, when Thatcher-era de-industrialisation, the decline of trade unions, and rapid financial-sector growth drove sharp income polarisation. Since 2010, income inequality has been broadly stable: the top 10% of earners receive 29% of all income while the bottom 50% receive 23%. COVID-19 temporarily compressed measured inequality in 2020/21 as the furlough scheme and the £20-a-week Universal Credit uplift boosted lower incomes; the effect reversed when support was withdrawn.</p>
+            <p>Wealth inequality in Britain is substantially more extreme than income inequality. The wealth Gini stands at approximately 0.63 — nearly double the income figure of 0.35. The wealthiest 10% of households hold 43% of total household net wealth; the top 20% hold 59%; the bottom 30% hold just 5%. The primary driver is property: home ownership has fallen from 71% in 2003 to 63% in 2022, concentrating housing wealth among existing owners whose assets have appreciated sharply. Private pension wealth adds further concentration at the top, with defined-benefit pots heavily skewed towards public-sector workers — teachers, NHS staff, civil servants — in higher-income deciles. Total household wealth in Great Britain was estimated at £15.2 trillion in the ONS Wealth and Assets Survey covering 2018–2020.</p>
             </div>
         </section>
 
@@ -119,7 +119,7 @@ export default function InequalityPage() {
               value="0.35"
               direction="flat"
               polarity="up-is-bad"
-              changeText="2022/23 &middot; OECD average: 0.32 &middot; Germany: 0.29, France: 0.30 &middot; USA: 0.39 &middot; Broadly stable since 2010"
+              changeText="2022/23 · OECD average: 0.32 · Germany: 0.29, France: 0.30 · USA: 0.39 · Broadly stable since 2010"
               sparklineData={[0.36, 0.35, 0.34, 0.34, 0.34, 0.34, 0.35, 0.35, 0.36, 0.35, 0.34, 0.35, 0.35]}
               onExpand={() => {}}
             />
@@ -128,7 +128,7 @@ export default function InequalityPage() {
               value="29%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="2022/23 &middot; Bottom 50% receive 23% &middot; Ratio has been stable &middot; COVID temporarily compressed inequality in 2020/21"
+              changeText="2022/23 · Bottom 50% receive 23% · Ratio has been stable · COVID temporarily compressed inequality in 2020/21"
               sparklineData={[30, 29, 29, 29, 30, 28, 29]}
               onExpand={() => {}}
             />
@@ -137,7 +137,7 @@ export default function InequalityPage() {
               value="43%"
               direction="up"
               polarity="up-is-bad"
-              changeText="2020 &middot; Bottom 30% hold 5% &middot; Housing wealth main driver &middot; Wealth Gini: 0.63 (far more unequal than income)"
+              changeText="2020 · Bottom 30% hold 5% · Housing wealth main driver · Wealth Gini: 0.63 (far more unequal than income)"
               sparklineData={[39, 40, 41, 42, 43]}
               onExpand={() => {}}
             />
@@ -147,7 +147,7 @@ export default function InequalityPage() {
         <ScrollReveal>
           <section id="sec-income" className="mb-12">
             <LineChart
-              title="UK income inequality: Gini, top 10% share and bottom 50% share, 2010&ndash;2023"
+              title="UK income inequality: Gini, top 10% share and bottom 50% share, 2010–2023"
               subtitle="Gini coefficient (0 = equality, 1 = inequality). Income shares divided by 100 to share the same axis."
               series={giniAndShareSeries}
               yLabel="Value"
@@ -180,7 +180,7 @@ export default function InequalityPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS &mdash; Wealth and Assets Survey 2020</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS — Wealth and Assets Survey 2020</p>
           </section>
         </ScrollReveal>
 
@@ -204,17 +204,17 @@ export default function InequalityPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: OECD &mdash; Income Distribution Database</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: OECD — Income Distribution Database</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
-            value="&ndash;4pp"
-            unit="fall in income inequality since 1990 peak &mdash; redistribution and benefits have contained further rises"
-            description="The UK&apos;s income Gini reached 0.38 in the early 1990s, its post-war peak, driven by deregulation, trade union decline, and labour market polarisation. It has since fallen to 0.35. The tax and benefit system is highly redistributive: the UK reduces its market income Gini by 0.12 points through taxes and transfers, more than Germany (0.10) and comparable to Scandinavia. Universal Credit rolls in six working-age benefits; the Resolution Foundation estimates it has modestly reduced inequality at the bottom of the distribution. The National Living Wage, raised to &pound;11.44 in April 2024, has disproportionately benefited low-paid workers, narrowing earnings inequality."
-            source="Source: ONS &mdash; Effects of Taxes and Benefits on UK Household Income 2022/23; Resolution Foundation &mdash; Inequality Dynamics 2024."
+            title="What's improving"
+            value="–4pp"
+            unit="fall in income inequality since 1990 peak — redistribution and benefits have contained further rises"
+            description="The UK's income Gini reached 0.38 in the early 1990s, its post-war peak, driven by deregulation, trade union decline, and labour market polarisation. It has since fallen to 0.35. The tax and benefit system is highly redistributive: the UK reduces its market income Gini by 0.12 points through taxes and transfers, more than Germany (0.10) and comparable to Scandinavia. Universal Credit rolls in six working-age benefits; the Resolution Foundation estimates it has modestly reduced inequality at the bottom of the distribution. The National Living Wage, raised to £11.44 in April 2024, has disproportionately benefited low-paid workers, narrowing earnings inequality."
+            source="Source: ONS — Effects of Taxes and Benefits on UK Household Income 2022/23; Resolution Foundation — Inequality Dynamics 2024."
           />
         </ScrollReveal>
 
@@ -224,7 +224,7 @@ export default function InequalityPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

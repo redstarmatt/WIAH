@@ -69,7 +69,7 @@ export default function CouncilFinancesPage() {
   const spendingSeries: Series[] = data
     ? [{
         id: 'spending',
-        label: 'Service spending (&pound;bn)',
+        label: 'Service spending (£bn)',
         colour: '#6B7280',
         data: data.national.serviceSpending.timeSeries.map(d => ({
           date: fyToDate(d.year),
@@ -87,16 +87,16 @@ export default function CouncilFinancesPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Council Finances"
-          question="Are Britain&apos;s Local Councils Going Bankrupt?"
-          finding="12 English councils have issued Section 114 notices (effective bankruptcy) since 2018, including Birmingham, Thurrock, and Woking. The local government funding gap is &pound;4 billion per year. Council tax has risen 40% in real terms since 2010 while services have been cut by 25%. 1 in 6 councils are at risk of financial failure."
+          question="Are Britain's Local Councils Going Bankrupt?"
+          finding="12 English councils have issued Section 114 notices (effective bankruptcy) since 2018, including Birmingham, Thurrock, and Woking. The local government funding gap is £4 billion per year. Council tax has risen 40% in real terms since 2010 while services have been cut by 25%. 1 in 6 councils are at risk of financial failure."
           colour="#6B7280"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>English councils have lost &pound;14 billion a year in government grant since 2010 &mdash; a 37% real-terms reduction, from &pound;39 billion to &pound;25 billion. The consequences have been acute. Twelve councils have issued Section 114 notices since 2018, the statutory declaration that a council cannot balance its budget &mdash; the local government equivalent of insolvency. Birmingham accumulated a &pound;760 million deficit, largely from an equal pay liability ignored for years. Thurrock borrowed &pound;500 million to invest in commercial property through a specialist vehicle, then watched rising interest rates and falling asset values collapse the strategy. Woking ran up &pound;1.2 billion in debt financing an ambitious town-centre regeneration programme on cheap borrowing that turned expensive. The Chartered Institute of Public Finance and Accountancy (CIPFA) assessed one in six English councils as at risk of financial failure.</p>
-            <p>The structural problem is the collision of rising demand with revenues constrained by statute and austerity. Adult social care &mdash; the statutory duty to fund care for elderly and disabled residents &mdash; now consumes 36% of council budgets, up from 29% in 2010, as an ageing population drives both volume and complexity of need. Children&apos;s services costs rose 20% in real terms between 2019 and 2023 as placement costs soared and complex cases increased. Council tax, the principal locally-controlled revenue stream, is capped at 5% annual growth without triggering a local referendum &mdash; a constraint introduced in 2012. It has risen 40% in real terms since 2010 but cannot keep pace with demand. Business rates income &mdash; the other major local tax &mdash; has stagnated as high streets hollowed out and large online retailers optimised their physical footprints.</p>
+            <p>English councils have lost £14 billion a year in government grant since 2010 — a 37% real-terms reduction, from £39 billion to £25 billion. The consequences have been acute. Twelve councils have issued Section 114 notices since 2018, the statutory declaration that a council cannot balance its budget — the local government equivalent of insolvency. Birmingham accumulated a £760 million deficit, largely from an equal pay liability ignored for years. Thurrock borrowed £500 million to invest in commercial property through a specialist vehicle, then watched rising interest rates and falling asset values collapse the strategy. Woking ran up £1.2 billion in debt financing an ambitious town-centre regeneration programme on cheap borrowing that turned expensive. The Chartered Institute of Public Finance and Accountancy (CIPFA) assessed one in six English councils as at risk of financial failure.</p>
+            <p>The structural problem is the collision of rising demand with revenues constrained by statute and austerity. Adult social care — the statutory duty to fund care for elderly and disabled residents — now consumes 36% of council budgets, up from 29% in 2010, as an ageing population drives both volume and complexity of need. Children's services costs rose 20% in real terms between 2019 and 2023 as placement costs soared and complex cases increased. Council tax, the principal locally-controlled revenue stream, is capped at 5% annual growth without triggering a local referendum — a constraint introduced in 2012. It has risen 40% in real terms since 2010 but cannot keep pace with demand. Business rates income — the other major local tax — has stagnated as high streets hollowed out and large online retailers optimised their physical footprints.</p>
             </div>
         </section>
 
@@ -114,7 +114,7 @@ export default function CouncilFinancesPage() {
               value="37%"
               direction="down"
               polarity="up-is-good"
-              changeText="2022/23 &middot; From &pound;39bn to &pound;25bn &middot; Council tax raised 40% to compensate &middot; Poorer areas hit hardest"
+              changeText="2022/23 · From £39bn to £25bn · Council tax raised 40% to compensate · Poorer areas hit hardest"
               sparklineData={[100, 92, 83, 76, 73, 68, 65, 63, 62, 63, 63]}
               onExpand={() => {}}
             />
@@ -123,16 +123,16 @@ export default function CouncilFinancesPage() {
               value="12"
               direction="up"
               polarity="up-is-bad"
-              changeText="2024 &middot; Birmingham: &pound;760M deficit &middot; Thurrock: &pound;500M &middot; Woking: &pound;1.2bn &middot; 1 in 6 at risk"
+              changeText="2024 · Birmingham: £760M deficit · Thurrock: £500M · Woking: £1.2bn · 1 in 6 at risk"
               sparklineData={[0, 0, 1, 2, 3, 4, 6, 9, 12]}
               onExpand={() => {}}
             />
             <MetricCard
               label="Annual local government funding gap"
-              value="&pound;4bn"
+              value="£4bn"
               direction="up"
               polarity="up-is-bad"
-              changeText="2024 &middot; LGA estimate &middot; Adult social care main pressure &middot; Libraries, parks, buses cut"
+              changeText="2024 · LGA estimate · Adult social care main pressure · Libraries, parks, buses cut"
               sparklineData={[1, 1.5, 2, 2.5, 3, 3, 3.5, 3.5, 4]}
               onExpand={() => {}}
             />
@@ -158,10 +158,10 @@ export default function CouncilFinancesPage() {
         <ScrollReveal>
           <section id="sec-spending" className="mb-12">
             <LineChart
-              title="English council service spending, &pound; billion"
-              subtitle="Total English council expenditure on services (2010/11 &ndash; 2022/23), current prices."
+              title="English council service spending, £ billion"
+              subtitle="Total English council expenditure on services (2010/11 – 2022/23), current prices."
               series={spendingSeries}
-              yLabel="&pound; billion"
+              yLabel="£ billion"
               source={{
                 name: 'DLUHC',
                 dataset: 'Local Authority Revenue Expenditure and Financing',
@@ -191,17 +191,17 @@ export default function CouncilFinancesPage() {
                 ))}
               </div>
             )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: DLUHC &mdash; Local Authority Revenue Expenditure and Financing</p>
+            <p className="font-mono text-xs text-wiah-mid mt-4">Source: DLUHC — Local Authority Revenue Expenditure and Financing</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
-            value="&pound;64bn"
-            unit="Local Government Finance Settlement for 2024/25 &mdash; the largest cash increase in a decade"
-            description="The 2024/25 Local Government Finance Settlement provided &pound;64 billion, including a &pound;4 billion increase for adult social care and &pound;1.5 billion for children&apos;s services &mdash; the largest cash increase in a decade. The Spending Review 2025 is expected to provide multi-year settlements allowing longer-term planning. CIPFA&apos;s Financial Resilience Index now monitors 120 financial indicators across all councils, providing early warning of impending distress. The government is reviewing business rates, which have created distortions favouring out-of-town retail over high streets. Council tax referendum limits &mdash; requiring a local vote for rises above 5% &mdash; remain in place."
-            source="Source: DLUHC &mdash; Local Authority Revenue Expenditure 2022/23; LGA &mdash; Local Government Funding 2024."
+            title="What's improving"
+            value="£64bn"
+            unit="Local Government Finance Settlement for 2024/25 — the largest cash increase in a decade"
+            description="The 2024/25 Local Government Finance Settlement provided £64 billion, including a £4 billion increase for adult social care and £1.5 billion for children's services — the largest cash increase in a decade. The Spending Review 2025 is expected to provide multi-year settlements allowing longer-term planning. CIPFA's Financial Resilience Index now monitors 120 financial indicators across all councils, providing early warning of impending distress. The government is reviewing business rates, which have created distortions favouring out-of-town retail over high streets. Council tax referendum limits — requiring a local vote for rises above 5% — remain in place."
+            source="Source: DLUHC — Local Authority Revenue Expenditure 2022/23; LGA — Local Government Funding 2024."
           />
         </ScrollReveal>
 
@@ -211,7 +211,7 @@ export default function CouncilFinancesPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

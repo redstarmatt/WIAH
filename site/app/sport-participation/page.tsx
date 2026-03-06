@@ -70,17 +70,17 @@ export default function SportParticipationPage() {
         <TopicHeader
           topic="Sport Participation"
           question="Is Britain Getting Off the Sofa?"
-          finding="One in four adults in England does fewer than 30 minutes of physical activity per week &mdash; classified as &ldquo;inactive&rdquo; by the Chief Medical Officer&apos;s guidelines. Activity levels have barely shifted since Sport England began measuring them in 2016, and the gap between the most and least deprived areas is widening."
+          finding="One in four adults in England does fewer than 30 minutes of physical activity per week — classified as &ldquo;inactive&rdquo; by the Chief Medical Officer's guidelines. Activity levels have barely shifted since Sport England began measuring them in 2016, and the gap between the most and least deprived areas is widening."
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Physical inactivity costs the NHS an estimated &pound;1.2 billion per year and is linked to one in six deaths in the UK, making it a public health issue of comparable scale to smoking. Sport England&apos;s Active Lives Adult Survey &mdash; the most comprehensive measure of activity in England &mdash; shows that 63.5% of adults meet the Chief Medical Officer&apos;s guideline of 150 minutes of moderate-intensity activity per week. But 25.4% of adults are classified as &ldquo;inactive,&rdquo; doing fewer than 30 minutes per week &mdash; a figure that has barely moved since the survey began in 2016. The pandemic caused a sharp dip, with inactivity peaking at 27.5% in 2020/21, but the recovery to pre-pandemic levels has stalled rather than improved.
+              Physical inactivity costs the NHS an estimated £1.2 billion per year and is linked to one in six deaths in the UK, making it a public health issue of comparable scale to smoking. Sport England's Active Lives Adult Survey — the most comprehensive measure of activity in England — shows that 63.5% of adults meet the Chief Medical Officer's guideline of 150 minutes of moderate-intensity activity per week. But 25.4% of adults are classified as &ldquo;inactive,&rdquo; doing fewer than 30 minutes per week — a figure that has barely moved since the survey began in 2016. The pandemic caused a sharp dip, with inactivity peaking at 27.5% in 2020/21, but the recovery to pre-pandemic levels has stalled rather than improved.
             </p>
             <p>
-              The government&apos;s Sporting Future strategy (2015) and its successor, Get Active (2023), both set ambitions to reduce inactivity by 500,000 people. Progress has been marginal. Sport England has invested &pound;2.3 billion of National Lottery and government funding since 2017 through its strategy Uniting the Movement, with a deliberate shift from funding elite and traditional sport toward community programmes targeting underactive populations. Early evidence suggests some success in reaching older adults and women through programmes like This Girl Can, which generated measurable increases in awareness but more modest changes in sustained behaviour. Swimming pool and leisure centre closures &mdash; 400 public pools have closed since 2010 &mdash; have eroded the infrastructure on which many activity programmes depend, particularly in deprived areas.
+              The government's Sporting Future strategy (2015) and its successor, Get Active (2023), both set ambitions to reduce inactivity by 500,000 people. Progress has been marginal. Sport England has invested £2.3 billion of National Lottery and government funding since 2017 through its strategy Uniting the Movement, with a deliberate shift from funding elite and traditional sport toward community programmes targeting underactive populations. Early evidence suggests some success in reaching older adults and women through programmes like This Girl Can, which generated measurable increases in awareness but more modest changes in sustained behaviour. Swimming pool and leisure centre closures — 400 public pools have closed since 2010 — have eroded the infrastructure on which many activity programmes depend, particularly in deprived areas.
             </p>
             </div>
         </section>
@@ -98,9 +98,9 @@ export default function SportParticipationPage() {
               value="63.5%"
               direction="flat"
               polarity="up-is-good"
-              changeText="150+ min/week &middot; Barely changed since 2016 (61.8%)"
+              changeText="150+ min/week · Barely changed since 2016 (61.8%)"
               sparklineData={[61.8, 62.3, 62.6, 63.3, 61.4, 60.9, 63.1, 63.7, 63.5]}
-              source="Sport England &middot; Active Lives 2024"
+              source="Sport England · Active Lives 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -108,9 +108,9 @@ export default function SportParticipationPage() {
               value="25.4%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Fewer than 30 min/week &middot; Peaked at 27.5% in 2021"
+              changeText="Fewer than 30 min/week · Peaked at 27.5% in 2021"
               sparklineData={[25.7, 25.2, 25.0, 24.6, 27.1, 27.5, 25.6, 25.0, 25.4]}
-              source="Sport England &middot; Active Lives 2024"
+              source="Sport England · Active Lives 2024"
               onExpand={() => {}}
             />
             <MetricCard
@@ -118,9 +118,9 @@ export default function SportParticipationPage() {
               value="400"
               direction="up"
               polarity="up-is-bad"
-              changeText="Since 2010 &middot; Disproportionately in deprived areas"
+              changeText="Since 2010 · Disproportionately in deprived areas"
               sparklineData={[180, 220, 260, 290, 320, 350, 375, 390, 400]}
-              source="Swim England &middot; Facilities Report 2023"
+              source="Swim England · Facilities Report 2023"
               onExpand={() => {}}
             />
           </div>
@@ -130,7 +130,7 @@ export default function SportParticipationPage() {
           <section id="sec-active" className="mb-12">
             {activeSeries.length > 0 ? (
               <LineChart
-                title="Active adults in England, 2016&ndash;2024"
+                title="Active adults in England, 2016–2024"
                 subtitle="Percentage of adults (16+) achieving 150+ minutes of moderate-intensity activity per week."
                 series={activeSeries}
                 yLabel="Percentage (%)"
@@ -151,7 +151,7 @@ export default function SportParticipationPage() {
           <section id="sec-inactive" className="mb-12">
             {inactiveSeries.length > 0 ? (
               <LineChart
-                title="Inactive adults in England, 2016&ndash;2024"
+                title="Inactive adults in England, 2016–2024"
                 subtitle="Percentage of adults doing fewer than 30 minutes of physical activity per week. The pandemic caused a sharp rise."
                 series={inactiveSeries}
                 yLabel="Percentage (%)"
@@ -174,7 +174,7 @@ export default function SportParticipationPage() {
           <div className="text-sm text-wiah-mid space-y-2">
             {data?.metadata.sources.map((src, i) => (
               <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} &mdash;&nbsp;
+                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
                   {src.url}
                 </a>

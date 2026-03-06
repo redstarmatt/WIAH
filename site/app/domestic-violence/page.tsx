@@ -149,12 +149,14 @@ export default function DomesticViolencePage() {
     <main>
       <TopicNav topic="Domestic Violence" />
 
-      <TopicHeader
-        topic="Domestic Violence"
-        question="How Many People Experience Domestic Abuse in Britain?"
-        finding="2.4 million adults experienced domestic abuse in England and Wales in the year to March 2023. 76 women were killed by a partner or ex-partner in 2022. Only 6% of domestic abuse crimes result in a charge. 3,700 refuge spaces serve a population with 2× the estimated need."
-        colour="#E63946"
-      />
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <TopicHeader
+          topic="Domestic Violence"
+          question="How Many People Experience Domestic Abuse in Britain?"
+          finding="2.4 million adults experienced domestic abuse in England and Wales in the year to March 2023. 76 women were killed by a partner or ex-partner in 2022. Only 6% of domestic abuse crimes result in a charge. 3,700 refuge spaces serve a population with 2× the estimated need."
+          colour="#E63946"
+        />
+      </div>
 
       {/* Metrics row */}
       <section className="max-w-5xl mx-auto px-6 py-10 border-b border-wiah-border">
@@ -170,7 +172,7 @@ export default function DomesticViolencePage() {
         <section className="max-w-4xl mx-auto px-6 py-12 border-b border-wiah-border">
           {data && crimesSeries.length > 0 && (
             <LineChart
-              title="Domestic abuse recorded by police, England &amp; Wales, 2013&ndash;2023"
+              title="Domestic abuse recorded by police, England &amp; Wales, 2013–2023"
               subtitle="Police recorded crime with domestic abuse flag. Figures include crimes, not just incidents."
               series={crimesSeries}
               annotations={crimeAnnotations}
@@ -216,11 +218,11 @@ export default function DomesticViolencePage() {
       {/* Positive callout */}
       <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="2021"
-          unit="Domestic Abuse Act &mdash; landmark legislation creating a statutory definition and strengthening protections"
-          description="The Domestic Abuse Act 2021 created a statutory definition of domestic abuse for the first time, including economic abuse and post-separation abuse. It established the Domestic Abuse Commissioner role (currently Nicole Jacobs), created new Domestic Abuse Protection Orders (DAPOs), extended stalking protection, and placed local authorities under a duty to provide accommodation-based support. The Act also made it illegal to cross-examine victims directly in court. Coercive and controlling behaviour had been criminalised under the Serious Crime Act 2015 &mdash; now an offence carrying up to 5 years in prison."
-          source="Source: ONS &mdash; Domestic abuse in England and Wales overview, November 2023; Home Office &mdash; Crime outcomes 2022/23."
+          unit="Domestic Abuse Act — landmark legislation creating a statutory definition and strengthening protections"
+          description="The Domestic Abuse Act 2021 created a statutory definition of domestic abuse for the first time, including economic abuse and post-separation abuse. It established the Domestic Abuse Commissioner role (currently Nicole Jacobs), created new Domestic Abuse Protection Orders (DAPOs), extended stalking protection, and placed local authorities under a duty to provide accommodation-based support. The Act also made it illegal to cross-examine victims directly in court. Coercive and controlling behaviour had been criminalised under the Serious Crime Act 2015 — now an offence carrying up to 5 years in prison."
+          source="Source: ONS — Domestic abuse in England and Wales overview, November 2023; Home Office — Crime outcomes 2022/23."
         />
       </ScrollReveal>
 
@@ -228,11 +230,11 @@ export default function DomesticViolencePage() {
       <section className="max-w-2xl mx-auto px-6 py-12 border-b border-wiah-border text-wiah-black">
         <div className="text-base leading-[1.7] space-y-4">
           <p>
-            The Crime Survey for England and Wales found 2.4 million adults experienced domestic abuse in the year to March 2023 &mdash; yet only 18% of incidents are reported to police. The Femicide Census recorded 76 women killed by a male partner or ex-partner in 2022, with an average of 12 prior police contacts before the fatal incident. Of over 900,000 domestic abuse crimes recorded in 2022/23, only 6% resulted in a charge &mdash; down from 14% in 2015. Victim withdrawal accounts for 48% of discontinued cases.
+            The Crime Survey for England and Wales found 2.4 million adults experienced domestic abuse in the year to March 2023 — yet only 18% of incidents are reported to police. The Femicide Census recorded 76 women killed by a male partner or ex-partner in 2022, with an average of 12 prior police contacts before the fatal incident. Of over 900,000 domestic abuse crimes recorded in 2022/23, only 6% resulted in a charge — down from 14% in 2015. Victim withdrawal accounts for 48% of discontinued cases.
           </p>
 
           <p>
-            The Domestic Abuse Act 2021 introduced new protections, but infrastructure lags far behind. England has roughly 3,700 refuge beds &mdash; half the 7,400 the Istanbul Convention requires. Women&apos;s Aid reports 18,000 refuge requests were declined in 2022/23. Multi-Agency Risk Assessment Conferences (MARACs) handled 88,000 high-risk referrals, 70% involving repeat victims &mdash; evidence that intervention is coming too late.
+            The Domestic Abuse Act 2021 introduced new protections, but infrastructure lags far behind. England has roughly 3,700 refuge beds — half the 7,400 the Istanbul Convention requires. Women's Aid reports 18,000 refuge requests were declined in 2022/23. Multi-Agency Risk Assessment Conferences (MARACs) handled 88,000 high-risk referrals, 70% involving repeat victims — evidence that intervention is coming too late.
           </p>
         </div>
       </section>

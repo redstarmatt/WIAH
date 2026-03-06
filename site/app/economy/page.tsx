@@ -438,11 +438,11 @@ export default function EconomyPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Real wages took 16 years to recover their 2008 peak &mdash; the longest squeeze
+              Real wages took 16 years to recover their 2008 peak — the longest squeeze
               on living standards since records began. At the root is a productivity crisis:
               output per hour grew at roughly 2% a year before the financial crisis, then
               flatlined. Without productivity growth, wages cannot sustainably rise. The
-              2022&ndash;23 cost-of-living shock &mdash; CPI hitting 11.1% in October 2022 &mdash;
+              2022–23 cost-of-living shock — CPI hitting 11.1% in October 2022 —
               compounded the damage, though inflation has since fallen to around 3%. Meanwhile,
               over a fifth of working-age adults remain economically inactive, elevated since
               COVID and driven largely by long-term sickness. The economy is growing again,
@@ -453,7 +453,7 @@ export default function EconomyPage() {
               National Living Wage, introduced in 2015, compressed the bottom: P10 weekly
               earnings (£227) grew faster than the median through the late 2010s. But the top
               kept pulling away. At P90 (£1,336 per week), earners take home nearly six times
-              as much as those at P10 &mdash; a ratio that has barely moved in a decade. The
+              as much as those at P10 — a ratio that has barely moved in a decade. The
               fan chart of earnings tells a story of a floor being raised while the ceiling
               lifts further out of reach.
             </p>
@@ -944,7 +944,7 @@ export default function EconomyPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {src.name} &mdash; {src.dataset} ({src.frequency})
+                  {src.name} — {src.dataset} ({src.frequency})
                 </a>
               </li>
             ))}
@@ -955,7 +955,7 @@ export default function EconomyPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                ONS &mdash; Annual Survey of Hours and Earnings (ASHE), Table 1.1a (annual)
+                ONS — Annual Survey of Hours and Earnings (ASHE), Table 1.1a (annual)
               </a>
             </li>
             <li>
@@ -965,7 +965,7 @@ export default function EconomyPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                ONS &mdash; Regional Gross Value Added (Income Approach) (annual)
+                ONS — Regional Gross Value Added (Income Approach) (annual)
               </a>
             </li>
           </ul>

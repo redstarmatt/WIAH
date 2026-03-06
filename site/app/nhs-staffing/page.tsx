@@ -187,10 +187,10 @@ export default function NHSStaffingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The NHS employs 1.278 million full-time-equivalent staff, with a further 360,000 in the independent sector delivering NHS-funded services. It is the UK&apos;s largest employer by a wide margin. As of September 2024, 104,300 posts were vacant &mdash; a rate of roughly 8% &mdash; down from the record 133,500 in 2022. Nursing accounts for the largest single deficit: 43,553 unfilled nursing posts. International recruitment filled the gap temporarily &mdash; 40,123 overseas nurses joined the NMC register in 2023, outnumbering domestic UK-trained joiners &mdash; but that figure fell to 26,841 in 2024 after visa rule changes and WHO ethical recruitment constraints affecting India, the Philippines, and Nigeria.
+              The NHS employs 1.278 million full-time-equivalent staff, with a further 360,000 in the independent sector delivering NHS-funded services. It is the UK's largest employer by a wide margin. As of September 2024, 104,300 posts were vacant — a rate of roughly 8% — down from the record 133,500 in 2022. Nursing accounts for the largest single deficit: 43,553 unfilled nursing posts. International recruitment filled the gap temporarily — 40,123 overseas nurses joined the NMC register in 2023, outnumbering domestic UK-trained joiners — but that figure fell to 26,841 in 2024 after visa rule changes and WHO ethical recruitment constraints affecting India, the Philippines, and Nigeria.
             </p>
             <p>
-              The workforce is under severe strain. NHS sickness absence runs at 5.57% &mdash; nearly three times the 2.0% private-sector rate &mdash; with staff averaging 13.8 sick days per year. Stress, anxiety, and depression account for 34.6% of those absences. The 2024 NHS Staff Survey found 44% of employees reporting illness caused by work-related stress, and 29.5% intending to leave their current NHS role within 12 months. In 2023, roughly 40,000 nurses left the NMC register without another UK employer &mdash; around 9,000 of them emigrating, primarily to Australia, New Zealand, and Canada. The RCN won a 5% pay award in 2023 after the first nursing strike in NHS history, but cumulative pay over five years remained below inflation.
+              The workforce is under severe strain. NHS sickness absence runs at 5.57% — nearly three times the 2.0% private-sector rate — with staff averaging 13.8 sick days per year. Stress, anxiety, and depression account for 34.6% of those absences. The 2024 NHS Staff Survey found 44% of employees reporting illness caused by work-related stress, and 29.5% intending to leave their current NHS role within 12 months. In 2023, roughly 40,000 nurses left the NMC register without another UK employer — around 9,000 of them emigrating, primarily to Australia, New Zealand, and Canada. The RCN won a 5% pay award in 2023 after the first nursing strike in NHS history, but cumulative pay over five years remained below inflation.
             </p>
             </div>
         </section>
@@ -278,11 +278,11 @@ export default function NHSStaffingPage() {
         {/* Positive callout */}
         <ScrollReveal>
         <PositiveCallout
-          title="What&apos;s improving"
+          title="What's improving"
           value="1.278M"
           unit="NHS FTE — the largest in history"
           description="Despite the staffing crisis, the total NHS workforce has grown every year since 2016 — from 1.121 million FTE to 1.278 million, an increase of 157,000. The workforce is bigger than it has ever been. The challenge is that demand has grown even faster, and that international recruitment is not a sustainable long-term strategy. The NHS Long Term Workforce Plan (2023) is the first attempt to project and plan supply 15 years ahead."
-          source="Source: NHS England &mdash; NHS Workforce Statistics, September 2024."
+          source="Source: NHS England — NHS Workforce Statistics, September 2024."
         />
         </ScrollReveal>
 
@@ -293,7 +293,7 @@ export default function NHSStaffingPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>

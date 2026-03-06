@@ -119,17 +119,17 @@ export default function ChildToothDecayPage() {
         <TopicHeader
           topic="Child Tooth Decay"
           question="Why Is Tooth Decay the Number One Reason Children Go to Hospital?"
-          finding="Tooth decay is the most common reason for hospital admissions in children aged 5&ndash;9. In 2023, 34,000 children had teeth extracted under general anaesthetic &mdash; almost all preventable. Decay rates are 3&times; higher in deprived areas."
+          finding="Tooth decay is the most common reason for hospital admissions in children aged 5–9. In 2023, 34,000 children had teeth extracted under general anaesthetic — almost all preventable. Decay rates are 3&times; higher in deprived areas."
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Dental caries &mdash; tooth decay caused by acid-producing bacteria feeding on dietary sugar &mdash; is the most entirely preventable disease that nonetheless sends more children to hospital under general anaesthetic than any other condition. In 2024, 34,000 children under 18 had teeth extracted in hospital, almost all as a direct consequence of decay that could have been prevented by fluoride toothpaste, diet, routine dental check-ups, and water fluoridation. The NHS dental crisis that has left an estimated 12 million adults unable to access an NHS dentist is amplifying the problem: children who do not see a dentist routinely are diagnosed later, by which point extraction is often the only option.
+              Dental caries — tooth decay caused by acid-producing bacteria feeding on dietary sugar — is the most entirely preventable disease that nonetheless sends more children to hospital under general anaesthetic than any other condition. In 2024, 34,000 children under 18 had teeth extracted in hospital, almost all as a direct consequence of decay that could have been prevented by fluoride toothpaste, diet, routine dental check-ups, and water fluoridation. The NHS dental crisis that has left an estimated 12 million adults unable to access an NHS dentist is amplifying the problem: children who do not see a dentist routinely are diagnosed later, by which point extraction is often the only option.
             </p>
             <p>
-              The social gradient is the starkest expression of health inequality in England. Children aged five in the most deprived areas have a 42% prevalence of visible tooth decay &mdash; three times the 14% rate in the least deprived areas. The gap has not narrowed materially in a decade. Sugar consumption correlates strongly with deprivation, NHS dental access is worst in deprived areas, and fluoridated water supply covers only a minority of England&apos;s population. The public health tools to address child tooth decay are well-understood and cost-effective. The barrier is political will and structural investment in NHS dentistry and preventive oral health programmes.
+              The social gradient is the starkest expression of health inequality in England. Children aged five in the most deprived areas have a 42% prevalence of visible tooth decay — three times the 14% rate in the least deprived areas. The gap has not narrowed materially in a decade. Sugar consumption correlates strongly with deprivation, NHS dental access is worst in deprived areas, and fluoridated water supply covers only a minority of England's population. The public health tools to address child tooth decay are well-understood and cost-effective. The barrier is political will and structural investment in NHS dentistry and preventive oral health programmes.
             </p>
           </div>
         </section>
@@ -150,7 +150,7 @@ export default function ChildToothDecayPage() {
               unit=""
               direction="flat"
               polarity="up-is-bad"
-              changeText="Down from 33% in 2015 but stalling since 2021 &middot; Pandemic regression"
+              changeText="Down from 33% in 2015 but stalling since 2021 · Pandemic regression"
               sparklineData={[33, 31, 28, 24, 23, 20, 22, 24, 26, 26]}
               onExpand={() => {}}
             />
@@ -160,7 +160,7 @@ export default function ChildToothDecayPage() {
               unit=""
               direction="flat"
               polarity="up-is-bad"
-              changeText="Almost entirely preventable &middot; #1 reason for child hospital admission"
+              changeText="Almost entirely preventable · #1 reason for child hospital admission"
               sparklineData={[42, 40, 37, 34, 33, 22, 28, 31, 33, 34]}
               onExpand={() => {}}
             />
@@ -170,7 +170,7 @@ export default function ChildToothDecayPage() {
               unit=""
               direction="flat"
               polarity="up-is-bad"
-              changeText="42% most deprived vs 14% least &middot; Starkest health inequality"
+              changeText="42% most deprived vs 14% least · Starkest health inequality"
               sparklineData={[42, 33, 26, 18, 14]}
               onExpand={() => {}}
             />
@@ -181,7 +181,7 @@ export default function ChildToothDecayPage() {
         <ScrollReveal>
           <section id="sec-decay" className="mb-12">
             <LineChart
-              title="Tooth decay in 5-year-olds, England, 2015&ndash;2024"
+              title="Tooth decay in 5-year-olds, England, 2015–2024"
               subtitle="Percentage of 5-year-old children with obvious dental decay experience. Long-run improvement stalled after the pandemic as dental services were disrupted and sugar consumption rose in lower-income households."
               series={decaySeries}
               annotations={decayAnnotations}
@@ -193,8 +193,8 @@ export default function ChildToothDecayPage() {
         <ScrollReveal>
           <section id="sec-admissions" className="mb-12">
             <LineChart
-              title="Hospital admissions for tooth extractions under GA, under-18s, England, 2015&ndash;2024"
-              subtitle="Children admitted to hospital for dental extraction under general anaesthetic. Fell 2015&ndash;2019 due to preventive improvements, then rose again post-pandemic as dental access deteriorated."
+              title="Hospital admissions for tooth extractions under GA, under-18s, England, 2015–2024"
+              subtitle="Children admitted to hospital for dental extraction under general anaesthetic. Fell 2015–2019 due to preventive improvements, then rose again post-pandemic as dental access deteriorated."
               series={admissionsSeries}
               annotations={admissionsAnnotations}
               yLabel="Thousands per year"
@@ -205,11 +205,11 @@ export default function ChildToothDecayPage() {
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What&apos;s improving"
+            title="What's improving"
             value="Water fluoridation expansion"
             unit=""
-            description="The NHS Start4Life programme promotes tooth brushing from the first tooth. Water fluoridation expansion is planned under the Health and Care Act 2022, with the government taking direct powers to extend fluoridation schemes. Some councils fund free toothbrush packs for children in deprived areas. NHS England&apos;s dental recovery plan has increased the number of new NHS dental contracts. The Healthy Start voucher scheme provides nutritional support to low-income families with young children."
-            source="Source: OHID &mdash; Oral health survey of 5-year-old children 2023; NHS England &mdash; Dental statistics 2024."
+            description="The NHS Start4Life programme promotes tooth brushing from the first tooth. Water fluoridation expansion is planned under the Health and Care Act 2022, with the government taking direct powers to extend fluoridation schemes. Some councils fund free toothbrush packs for children in deprived areas. NHS England's dental recovery plan has increased the number of new NHS dental contracts. The Healthy Start voucher scheme provides nutritional support to low-income families with young children."
+            source="Source: OHID — Oral health survey of 5-year-old children 2023; NHS England — Dental statistics 2024."
           />
         </ScrollReveal>
 
@@ -220,7 +220,7 @@ export default function ChildToothDecayPage() {
             {data?.metadata.sources.map((src, i) => (
               <div key={i}>
                 <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
+                  {src.name} — {src.dataset}
                 </a>
                 <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
               </div>
