@@ -1,8 +1,22 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Stalking',
-  description: 'Police recorded 131,000 stalking offences in 2024 a 33-fold increase from 2015 but the charge rate has fallen to just 2.5%. Stalking remains one of the most und',
+  title: 'Why Is Stalking So Rarely Prosecuted?',
+  description: 'Police recorded 131,000 stalking offences in 2024 &mdash; a 33-fold increase from 2015 &mdash; but the charge rate has fallen to just 2.5&percnt;. Stalking remains one of the most under-enforced crimes in England and Wales, with victims routinely reporting that their cases are not taken seriously.',
+  openGraph: {
+    title: 'Why Is Stalking So Rarely Prosecuted?',
+    description: 'Police recorded 131,000 stalking offences in 2024 &mdash; a 33-fold increase from 2015 &mdash; but the charge rate has fallen to just 2.5&percnt;. Stalking remains one of the most under-enforced crimes in England and Wales, with victims routinely reporting that their cases are not taken seriously.',
+    type: 'article',
+    url: 'https://whatisactuallyhappening.uk/stalking',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Why Is Stalking So Rarely Prosecuted?',
+    description: 'Police recorded 131,000 stalking offences in 2024 &mdash; a 33-fold increase from 2015 &mdash; but the charge rate has fallen to just 2.5&percnt;. Stalking remains one of the most under-enforced crimes in England and Wales, with victims routinely reporting that their cases are not taken seriously.',
+  },
+  alternates: {
+    canonical: 'https://whatisactuallyhappening.uk/stalking',
+  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

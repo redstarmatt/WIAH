@@ -22,18 +22,40 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.wiah.uk'),
+  metadataBase: new URL('https://whatisactuallyhappening.uk'),
   title: {
     default: 'What is actually happening?',
-    template: '%s — What is actually happening?',
+    template: '%s | What is actually happening?',
   },
-  description: 'A curated national data platform that makes the real state of the UK visible, understandable, and shareable.',
+  description: 'A curated national data platform that makes the real state of the UK visible, understandable, and shareable. Public data on health, housing, water, justice, and education.',
+  keywords: ['UK statistics', 'public data', 'NHS', 'housing crisis', 'water quality', 'crime statistics', 'education data', 'UK government data'],
   openGraph: {
     title: 'What is actually happening?',
     description: 'The real state of the UK — visible, understandable, shareable.',
     siteName: 'What is actually happening?',
     url: 'https://www.wiah.uk',
     type: 'website',
+    locale: 'en_GB',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'What is actually happening?',
+    description: 'The real state of the UK — visible, understandable, shareable.',
+    site: '@WIAHuk',
+  },
+  alternates: {
+    canonical: 'https://whatisactuallyhappening.uk',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
   },
 };
 
