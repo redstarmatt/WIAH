@@ -1,0 +1,54 @@
+{
+  "topic": "nhs-app-usage",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "registeredUsers": {
+      "timeSeries": [
+        {"year": 2020, "usersMillions": 3.2},
+        {"year": 2021, "usersMillions": 8.5},
+        {"year": 2022, "usersMillions": 18.2},
+        {"year": 2023, "usersMillions": 26.4},
+        {"year": 2024, "usersMillions": 30.8},
+        {"year": 2025, "usersMillions": 35.1}
+      ],
+      "latestYear": 2025,
+      "latestMillions": 35.1,
+      "note": "Cumulative NHS App registered users in England"
+    },
+    "digitalBookings": {
+      "timeSeries": [
+        {"year": 2020, "percentDigital": 14},
+        {"year": 2021, "percentDigital": 22},
+        {"year": 2022, "percentDigital": 31},
+        {"year": 2023, "percentDigital": 40},
+        {"year": 2024, "percentDigital": 48},
+        {"year": 2025, "percentDigital": 54}
+      ],
+      "latestYear": 2025,
+      "latestPercent": 54,
+      "note": "Proportion of GP appointments booked digitally (online or via NHS App)"
+    },
+    "digitalExclusion": {
+      "timeSeries": [
+        {"year": 2020, "percentExcluded": 22},
+        {"year": 2021, "percentExcluded": 20},
+        {"year": 2022, "percentExcluded": 18},
+        {"year": 2023, "percentExcluded": 16},
+        {"year": 2024, "percentExcluded": 15},
+        {"year": 2025, "percentExcluded": 14}
+      ],
+      "latestYear": 2025,
+      "latestPercent": 14,
+      "note": "Estimated percentage of population unable to access online health services (digital exclusion)"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS Digital", "dataset": "NHS App performance statistics", "url": "https://digital.nhs.uk/services/nhs-app/nhs-app-analytics", "frequency": "monthly"},
+      {"name": "NHS England", "dataset": "Primary care appointment booking data", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/appointment-in-general-practice/", "frequency": "monthly"},
+      {"name": "Good Things Foundation / Lloyds Bank", "dataset": "UK Consumer Digital Index — digital exclusion estimates", "url": "https://www.lloydsbank.com/assets/media/pdfs/banking_with_us/whats-happening/231122-lloyds-consumer-digital-index-2023-report.pdf", "frequency": "annual"}
+    ],
+    "methodology": "NHS App registered users from NHS Digital performance dashboard. Digital booking percentage calculated from NHS appointment data comparing online/app vs. phone/walk-in booking methods. Digital exclusion estimates from Lloyds Bank UK Consumer Digital Index and Good Things Foundation Essential Digital Skills framework.",
+    "knownIssues": ["Registered users includes accounts created but not actively used", "Digital booking definition varies — some systems count repeat prescription requests as digital appointments", "Digital exclusion estimates are modelled and subject to considerable uncertainty"]
+  }
+}

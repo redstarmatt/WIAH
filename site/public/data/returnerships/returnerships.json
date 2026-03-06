@@ -1,0 +1,56 @@
+{
+  "topic": "returnerships",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "economicInactivity5064": {
+      "timeSeries": [
+        {"year": 2019, "millionsInactive": 3.2},
+        {"year": 2020, "millionsInactive": 3.3},
+        {"year": 2021, "millionsInactive": 3.6},
+        {"year": 2022, "millionsInactive": 3.8},
+        {"year": 2023, "millionsInactive": 3.7},
+        {"year": 2024, "millionsInactive": 3.5}
+      ],
+      "latestYear": 2024,
+      "latestMillions": 3.5,
+      "note": "Economically inactive people aged 50-64, UK. Excludes those seeking work."
+    },
+    "returnershipPlacements": {
+      "timeSeries": [
+        {"year": 2022, "cumulativePlacements": 0},
+        {"year": 2023, "cumulativePlacements": 6000},
+        {"year": 2024, "cumulativePlacements": 15000}
+      ],
+      "latestYear": 2024,
+      "latestPlacements": 15000,
+      "target": 100000,
+      "note": "Cumulative placements through the government Returnership scheme (apprenticeships, Skills Bootcamps, Sector-based Work Academy Programmes for over-50s)."
+    },
+    "illHealthInactivity": {
+      "timeSeries": [
+        {"year": 2019, "percentCitingIllHealth": 34},
+        {"year": 2020, "percentCitingIllHealth": 33},
+        {"year": 2021, "percentCitingIllHealth": 38},
+        {"year": 2022, "percentCitingIllHealth": 42},
+        {"year": 2023, "percentCitingIllHealth": 44},
+        {"year": 2024, "percentCitingIllHealth": 45}
+      ],
+      "latestYear": 2024,
+      "latestPercent": 45,
+      "note": "Percentage of economically inactive 50-64 year olds citing long-term illness or disability as main reason."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Labour Force Survey — Economic Inactivity by Age and Reason", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/economicactivitystatisticsseasona", "frequency": "quarterly"},
+      {"name": "DWP", "dataset": "Returnership scheme statistics", "url": "https://www.gov.uk/government/collections/returnerships-evaluation", "frequency": "annual"},
+      {"name": "ONS", "dataset": "UK Labour Market Overview", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/latest", "frequency": "monthly"}
+    ],
+    "methodology": "Economic inactivity figures from LFS quarterly survey, April-June quarters for annual comparisons. Returnership placements are cumulative since scheme launch in spring 2022, as reported by DWP. Ill health reason from LFS reason for inactivity module.",
+    "knownIssues": [
+      "Returnership scheme encompasses multiple existing programmes rebranded — true additionality is disputed",
+      "LFS reason for inactivity is self-reported and may conflate voluntary early retirement with health-driven exits",
+      "Pandemic disruption to LFS sampling affects 2020-2021 data quality"
+    ]
+  }
+}

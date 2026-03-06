@@ -1,0 +1,51 @@
+{
+  "topic": "water-lead-pipes",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "homesEstimate": {
+      "centralEstimateMillions": 6.0,
+      "rangeLowMillions": 5.5,
+      "rangeHighMillions": 8.0,
+      "note": "Estimated number of UK homes still served by lead supply pipes (either the service pipe or internal plumbing). Predominantly pre-1970 properties. Soft water areas have higher risk of leaching."
+    },
+    "replacementRate": {
+      "timeSeries": [
+        {"year": 2020, "replacementsThousands": 45},
+        {"year": 2021, "replacementsThousands": 52},
+        {"year": 2022, "replacementsThousands": 58},
+        {"year": 2023, "replacementsThousands": 65},
+        {"year": 2024, "replacementsThousands": 72}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 72,
+      "pr24Target": 600,
+      "note": "Lead service pipes replaced per year by water companies across England and Wales. Includes full and partial replacements."
+    },
+    "yearsToComplete": {
+      "timeSeries": [
+        {"year": 2020, "yearsAtCurrentRate": 130},
+        {"year": 2021, "yearsAtCurrentRate": 115},
+        {"year": 2022, "yearsAtCurrentRate": 103},
+        {"year": 2023, "yearsAtCurrentRate": 92},
+        {"year": 2024, "yearsAtCurrentRate": 83}
+      ],
+      "latestYear": 2024,
+      "latestYears": 83,
+      "note": "Estimated years to replace all lead service pipes at the current annual replacement rate. Falls as rate accelerates."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Water UK", "dataset": "Water UK Lead Pipe Survey", "url": "https://www.water.org.uk/news-item/water-companies-accelerating-lead-pipe-replacement/", "frequency": "annual"},
+      {"name": "Ofwat", "dataset": "PR24 Final Determinations — Lead Pipe Replacement Targets", "url": "https://www.ofwat.gov.uk/regulated-companies/price-review/2024-price-review/", "frequency": "5-yearly"},
+      {"name": "Drinking Water Inspectorate", "dataset": "Drinking Water Quality in England and Wales", "url": "https://www.dwi.gov.uk/drinking-water-quality-in-england/", "frequency": "annual"}
+    ],
+    "methodology": "Home estimate from Water UK survey of company records and property age data. Replacement rates from Ofwat annual performance reporting. Years-to-complete calculated as (central estimate of 6 million homes) / (current annual replacement rate). PR24 target of 600,000/year from Ofwat final determinations.",
+    "knownIssues": [
+      "The 6 million figure is an estimate — there is no national register of lead pipes and actual extent is uncertain",
+      "Partial lead pipe replacement (company-side only) may worsen lead leaching — WHO guidance recommends full replacement",
+      "Lead exposure risk varies greatly by water chemistry — soft water areas (Scotland, north-west England) have higher leaching rates",
+      "WHO revised lead guidelines in 2022 to state no safe level — UK standards under review"
+    ]
+  }
+}

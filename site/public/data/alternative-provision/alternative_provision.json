@@ -1,0 +1,52 @@
+{
+  "topic": "alternative-provision",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "pupilNumbers": {
+      "timeSeries": [
+        {"year": 2015, "pupilsThousands": 16.3},
+        {"year": 2016, "pupilsThousands": 16.8},
+        {"year": 2017, "pupilsThousands": 17.4},
+        {"year": 2018, "pupilsThousands": 18.1},
+        {"year": 2019, "pupilsThousands": 18.9},
+        {"year": 2020, "pupilsThousands": 19.2},
+        {"year": 2021, "pupilsThousands": 18.8},
+        {"year": 2022, "pupilsThousands": 19.6},
+        {"year": 2023, "pupilsThousands": 21.2},
+        {"year": 2024, "pupilsThousands": 22.4}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 22.4,
+      "note": "Pupils in state-funded alternative provision in England (pupil referral units, AP academies, AP free schools)"
+    },
+    "ofstedRatings": {
+      "timeSeries": [
+        {"year": 2018, "inadequatePlusRiPct": 38},
+        {"year": 2019, "inadequatePlusRiPct": 40},
+        {"year": 2020, "inadequatePlusRiPct": 41},
+        {"year": 2021, "inadequatePlusRiPct": 42},
+        {"year": 2022, "inadequatePlusRiPct": 43},
+        {"year": 2023, "inadequatePlusRiPct": 44},
+        {"year": 2024, "inadequatePlusRiPct": 44}
+      ],
+      "latestYear": 2024,
+      "latestPct": 44,
+      "note": "Percentage of AP schools rated Inadequate or Requires Improvement by Ofsted"
+    },
+    "attainment": {
+      "year": 2024,
+      "apGcse94PassPct": 11,
+      "mainstreamGcse94PassPct": 65,
+      "note": "GCSE grade 9-4 in both English and Maths"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "DfE", "dataset": "Alternative Provision in England", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/alternative-provision-in-england", "frequency": "annual"},
+      {"name": "Ofsted", "dataset": "State of Education — Alternative Provision", "url": "https://www.gov.uk/government/organisations/ofsted", "frequency": "annual"},
+      {"name": "DfE", "dataset": "Key Stage 4 Performance", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance", "frequency": "annual"}
+    ],
+    "methodology": "AP pupil numbers from DfE January school census, state-funded AP settings only. Ofsted ratings from published inspection outcomes. Attainment figures from DfE KS4 performance tables, comparing pupils in AP settings with all mainstream school pupils.",
+    "knownIssues": ["AP pupil numbers exclude pupils in unregistered provision — true numbers likely higher", "Ofsted rating comparison with mainstream schools partly reflects pupil complexity, not solely provision quality", "2020 figures affected by COVID-19 school closures"]
+  }
+}

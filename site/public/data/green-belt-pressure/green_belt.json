@@ -1,0 +1,59 @@
+{
+  "topic": "green-belt-pressure",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "homesBuiltOnGreenBelt": {
+      "timeSeries": [
+        {"year": 2018, "homesThousands": 10.6},
+        {"year": 2019, "homesThousands": 11.2},
+        {"year": 2020, "homesThousands": 10.8},
+        {"year": 2021, "homesThousands": 12.4},
+        {"year": 2022, "homesThousands": 13.1},
+        {"year": 2023, "homesThousands": 14.9}
+      ],
+      "latestYear": 2023,
+      "latestThousands": 14.9,
+      "note": "Homes completed on green belt land in England"
+    },
+    "greenBeltLandArea": {
+      "timeSeries": [
+        {"year": 2013, "areaMillionHa": 1.64},
+        {"year": 2014, "areaMillionHa": 1.63},
+        {"year": 2015, "areaMillionHa": 1.63},
+        {"year": 2016, "areaMillionHa": 1.62},
+        {"year": 2017, "areaMillionHa": 1.62},
+        {"year": 2018, "areaMillionHa": 1.61},
+        {"year": 2019, "areaMillionHa": 1.61},
+        {"year": 2020, "areaMillionHa": 1.60},
+        {"year": 2021, "areaMillionHa": 1.60},
+        {"year": 2022, "areaMillionHa": 1.60},
+        {"year": 2023, "areaMillionHa": 1.59}
+      ],
+      "latestYear": 2023,
+      "latestMillionHa": 1.59,
+      "note": "Total designated green belt land area in England, millions of hectares"
+    },
+    "applicationsRefused": {
+      "timeSeries": [
+        {"year": 2019, "refusalRatePct": 77},
+        {"year": 2020, "refusalRatePct": 75},
+        {"year": 2021, "refusalRatePct": 73},
+        {"year": 2022, "refusalRatePct": 71},
+        {"year": 2023, "refusalRatePct": 68},
+        {"year": 2024, "refusalRatePct": 65}
+      ],
+      "latestYear": 2024,
+      "latestPct": 65,
+      "note": "Percentage of major planning applications on green belt land refused by local planning authorities"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "MHCLG", "dataset": "Land Use Change Statistics", "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-land-use-change-statistics", "frequency": "annual"},
+      {"name": "MHCLG", "dataset": "Green Belt Statistics England", "url": "https://www.gov.uk/government/statistics/green-belt-statistics-england", "frequency": "annual"},
+      {"name": "MHCLG", "dataset": "Planning Applications in England", "url": "https://www.gov.uk/government/collections/planning-applications-statistics", "frequency": "quarterly"}
+    ],
+    "methodology": "Homes on green belt from MHCLG Land Use Change Statistics, which tracks development on previously designated green belt. Green belt area from annual MHCLG Green Belt Statistics returns from local authorities. Planning application refusal rates from MHCLG quarterly returns, filtered to applications on green belt land.",
+    "knownIssues": ["Green belt boundaries set by local authorities; some changes reflect boundary reviews rather than development", "Land use change statistics may lag by 1-2 years due to completion delays", "Labour's 'grey belt' policy may change how green belt releases are classified from 2025"]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "topic": "community-energy",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "installedCapacity": {
+      "timeSeries": [
+        {"year": 2015, "capacityMW": 72},
+        {"year": 2016, "capacityMW": 88},
+        {"year": 2017, "capacityMW": 115},
+        {"year": 2018, "capacityMW": 142},
+        {"year": 2019, "capacityMW": 168},
+        {"year": 2020, "capacityMW": 190},
+        {"year": 2021, "capacityMW": 210},
+        {"year": 2022, "capacityMW": 240},
+        {"year": 2023, "capacityMW": 280},
+        {"year": 2024, "capacityMW": 320},
+        {"year": 2025, "capacityMW": 350}
+      ],
+      "latestYear": 2025,
+      "latestMW": 350,
+      "note": "Total installed community energy capacity in the UK (solar, wind, hydro)"
+    },
+    "projectCount": {
+      "timeSeries": [
+        {"year": 2018, "projectCount": 320},
+        {"year": 2019, "projectCount": 340},
+        {"year": 2020, "projectCount": 360},
+        {"year": 2021, "projectCount": 385},
+        {"year": 2022, "projectCount": 400},
+        {"year": 2023, "projectCount": 420},
+        {"year": 2024, "projectCount": 450},
+        {"year": 2025, "projectCount": 480}
+      ],
+      "latestYear": 2025,
+      "latestCount": 480,
+      "note": "Number of active community energy organisations in the UK"
+    },
+    "investment": {
+      "timeSeries": [
+        {"year": 2018, "investmentMillions": 85},
+        {"year": 2019, "investmentMillions": 92},
+        {"year": 2020, "investmentMillions": 78},
+        {"year": 2021, "investmentMillions": 105},
+        {"year": 2022, "investmentMillions": 132},
+        {"year": 2023, "investmentMillions": 158},
+        {"year": 2024, "investmentMillions": 182},
+        {"year": 2025, "investmentMillions": 215}
+      ],
+      "latestYear": 2025,
+      "latestMillions": 215,
+      "note": "Annual investment in UK community energy projects (£ millions)"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Community Energy England", "dataset": "State of the Sector Report", "url": "https://communityenergyengland.org/pages/state-of-the-sector", "frequency": "annual"},
+      {"name": "DESNZ", "dataset": "Community Energy Contact Group statistics", "url": "https://www.gov.uk/government/groups/community-energy-contact-group", "frequency": "annual"},
+      {"name": "Nesta / Community Energy Scotland", "dataset": "Community energy capacity tracking", "url": "https://communityenergyscotland.org.uk/", "frequency": "annual"}
+    ],
+    "methodology": "Installed capacity from Community Energy England State of the Sector survey, covering registered community benefit societies and cooperatives with energy generation assets. Investment figures include equity and loan finance raised by community organisations. Project count from CEE and Community Energy Scotland membership and registration data.",
+    "knownIssues": ["Investment dip in 2020 reflects COVID-19 project delays", "Capacity figures may undercount embedded small solar installations not registered with OFGEM", "Grid connection costs not reflected in investment figures but represent a major barrier"]
+  }
+}

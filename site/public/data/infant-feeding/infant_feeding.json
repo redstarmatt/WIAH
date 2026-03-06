@@ -1,0 +1,59 @@
+{
+  "topic": "infant-feeding",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "breastfeedingAt6Weeks": {
+      "timeSeries": [
+        {"year": 2015, "percentBreastfed": 47.2},
+        {"year": 2016, "percentBreastfed": 47.8},
+        {"year": 2017, "percentBreastfed": 48.1},
+        {"year": 2018, "percentBreastfed": 48.4},
+        {"year": 2019, "percentBreastfed": 48.5},
+        {"year": 2020, "percentBreastfed": 44.3},
+        {"year": 2021, "percentBreastfed": 46.2},
+        {"year": 2022, "percentBreastfed": 47.4},
+        {"year": 2023, "percentBreastfed": 47.0},
+        {"year": 2024, "percentBreastfed": 46.8}
+      ],
+      "latestYear": 2024,
+      "latestPercent": 46.8,
+      "note": "Percentage of babies breastfed at their 6-8 week review, England"
+    },
+    "breastfeedingAt6Months": {
+      "timeSeries": [
+        {"year": 2018, "percentBreastfed": 28.0},
+        {"year": 2019, "percentBreastfed": 27.0},
+        {"year": 2020, "percentBreastfed": 26.5},
+        {"year": 2021, "percentBreastfed": 24.0},
+        {"year": 2022, "percentBreastfed": 25.0},
+        {"year": 2023, "percentBreastfed": 26.0},
+        {"year": 2024, "percentBreastfed": 26.0}
+      ],
+      "latestYear": 2024,
+      "latestPercent": 26.0,
+      "note": "Estimated percentage of babies receiving any breastmilk at 6 months, England"
+    },
+    "formulaCostMonthly": {
+      "timeSeries": [
+        {"year": 2020, "costGBP": 38},
+        {"year": 2021, "costGBP": 39},
+        {"year": 2022, "costGBP": 40},
+        {"year": 2023, "costGBP": 44},
+        {"year": 2024, "costGBP": 48},
+        {"year": 2025, "costGBP": 50}
+      ],
+      "latestYear": 2025,
+      "latestCostGBP": 50,
+      "note": "Average monthly cost of infant formula per baby (first stage), England"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS Digital", "dataset": "Child Health Information Service — breastfeeding at 6-8 weeks", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/breastfeeding-at-6-to-8-weeks-after-birth", "frequency": "annual"},
+      {"name": "UNICEF UK Baby Friendly Initiative", "dataset": "UK breastfeeding rates and international comparisons", "url": "https://www.unicef.org.uk/babyfriendly/", "frequency": "annual"},
+      {"name": "Which? / The Grocer", "dataset": "Infant formula price tracking, UK retailers", "url": "https://www.which.co.uk/", "frequency": "quarterly"}
+    ],
+    "methodology": "Breastfeeding at 6-8 weeks from CHIS returns submitted by NHS trusts to NHS Digital — covers health visitor contacts in England. Six-month breastfeeding rates estimated from Infant Feeding Survey (last full survey 2010) updated with modelling from academic sources. Formula costs from retail price tracking of leading brands across major UK supermarkets.",
+    "knownIssues": ["Full Infant Feeding Survey last conducted in 2010 — six-month figures are estimates", "2020 figures affected by COVID-19 disruption to health visitor services", "Formula cost tracking covers standard first-stage formula only — specialist formulas considerably more expensive"]
+  }
+}

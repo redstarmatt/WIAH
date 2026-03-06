@@ -1,0 +1,55 @@
+{
+  "topic": "care-home-staffing",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "vacancies": {
+      "timeSeries": [
+        {"year": 2019, "vacanciesThousands": 95},
+        {"year": 2020, "vacanciesThousands": 85},
+        {"year": 2021, "vacanciesThousands": 105},
+        {"year": 2022, "vacanciesThousands": 165},
+        {"year": 2023, "vacanciesThousands": 170},
+        {"year": 2024, "vacanciesThousands": 150},
+        {"year": 2025, "vacanciesThousands": 165}
+      ],
+      "latestYear": 2025,
+      "latestThousands": 165,
+      "note": "Vacancies in adult social care (care homes and home care), England"
+    },
+    "internationalVisas": {
+      "timeSeries": [
+        {"year": 2021, "visasThousands": 0},
+        {"year": 2022, "visasThousands": 25},
+        {"year": 2023, "visasThousands": 68},
+        {"year": 2024, "visasThousands": 101},
+        {"year": 2025, "visasThousands": 82}
+      ],
+      "latestYear": 2025,
+      "latestThousands": 82,
+      "note": "International care worker visas granted under Health and Care Worker visa route"
+    },
+    "hourlyPay": {
+      "timeSeries": [
+        {"year": 2019, "payGBP": 8.8},
+        {"year": 2020, "payGBP": 9.0},
+        {"year": 2021, "payGBP": 9.3},
+        {"year": 2022, "payGBP": 9.8},
+        {"year": 2023, "payGBP": 10.5},
+        {"year": 2024, "payGBP": 11.0},
+        {"year": 2025, "payGBP": 11.2}
+      ],
+      "latestYear": 2025,
+      "latestPayGBP": 11.2,
+      "note": "Average hourly pay for care home workers in England (£)"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Skills for Care", "dataset": "The State of the Adult Social Care Sector and Workforce in England", "url": "https://www.skillsforcare.org.uk/adult-social-care-workforce-data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx", "frequency": "annual"},
+      {"name": "Home Office", "dataset": "Health and Care Worker visa statistics", "url": "https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables", "frequency": "quarterly"},
+      {"name": "Skills for Care", "dataset": "Adult social care workforce pay analysis", "url": "https://www.skillsforcare.org.uk/adult-social-care-workforce-data/Workforce-intelligence/publications/Topics/Pay-and-benefits/Pay-in-the-adult-social-care-sector.aspx", "frequency": "annual"}
+    ],
+    "methodology": "Vacancy figures from Skills for Care workforce estimates based on CQC-registered provider data. Health and Care Worker visa grants from Home Office immigration statistics. Hourly pay from Skills for Care workforce survey of registered providers — mean hourly wage for care workers (Band 2 equivalent).",
+    "knownIssues": ["2020 vacancies lower due to furlough reducing reported vacancies", "Health and Care Worker visa figures include both care homes and domiciliary care", "30% turnover rate estimated from Skills for Care leavers data — actual churn may be higher in small providers"]
+  }
+}

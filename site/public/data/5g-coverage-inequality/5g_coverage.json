@@ -1,0 +1,57 @@
+{
+  "topic": "5g-coverage-inequality",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "coverageByAreaType": {
+      "timeSeries": [
+        {"year": 2021, "urbanPct": 38, "suburbanPct": 20, "ruralPct": 4},
+        {"year": 2022, "urbanPct": 52, "suburbanPct": 28, "ruralPct": 6},
+        {"year": 2023, "urbanPct": 61, "suburbanPct": 35, "ruralPct": 8},
+        {"year": 2024, "urbanPct": 68, "suburbanPct": 41, "ruralPct": 10},
+        {"year": 2025, "urbanPct": 70, "suburbanPct": 45, "ruralPct": 11}
+      ],
+      "latestYear": 2025,
+      "note": "Percentage of premises with outdoor 5G signal from at least one operator"
+    },
+    "fourGNotspots": {
+      "timeSeries": [
+        {"year": 2019, "householdsMillions": 14.2},
+        {"year": 2020, "householdsMillions": 13.8},
+        {"year": 2021, "householdsMillions": 13.1},
+        {"year": 2022, "householdsMillions": 12.4},
+        {"year": 2023, "householdsMillions": 11.8},
+        {"year": 2024, "householdsMillions": 10.3}
+      ],
+      "latestYear": 2024,
+      "latestMillions": 10.3,
+      "note": "Premises without reliable 4G signal from any operator indoors"
+    },
+    "investmentByRegion": {
+      "data": [
+        {"region": "London", "index": 100},
+        {"region": "South East", "index": 85},
+        {"region": "East of England", "index": 78},
+        {"region": "South West", "index": 70},
+        {"region": "West Midlands", "index": 68},
+        {"region": "East Midlands", "index": 60},
+        {"region": "Yorkshire", "index": 65},
+        {"region": "North West", "index": 72},
+        {"region": "North East", "index": 62},
+        {"region": "Wales", "index": 55},
+        {"region": "Scotland", "index": 65},
+        {"region": "Northern Ireland", "index": 52}
+      ],
+      "year": 2024,
+      "note": "Broadband and mobile infrastructure investment per premises, indexed to London = 100"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Ofcom", "dataset": "Connected Nations Report", "url": "https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations", "frequency": "annual"},
+      {"name": "DSIT", "dataset": "UK Telecoms Lab — 5G Observatory", "url": "https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology", "frequency": "annual"},
+      {"name": "Ofcom", "dataset": "Home Broadband and Mobile Performance", "url": "https://www.ofcom.org.uk/research-and-data/telecoms-research/broadband-research", "frequency": "annual"}
+    ],
+    "methodology": "5G coverage figures from Ofcom Connected Nations using operator-submitted data verified by Ofcom drive and walk testing. Coverage defined as outdoor signal at premises level. Investment index derived from DSIT capital expenditure disclosures and Ofcom infrastructure reports, indexed to London.",
+    "knownIssues": ["Coverage figures reflect outdoor signal; indoor penetration is lower, particularly in older rural buildings", "Operator data may overstate coverage in borderline areas", "Investment index is modelled from partial disclosure data and should be treated as indicative"]
+  }
+}

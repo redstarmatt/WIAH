@@ -1,0 +1,58 @@
+{
+  "topic": "obesity-treatment-access",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "glp1Prescriptions": {
+      "timeSeries": [
+        {"year": 2022, "prescriptionsThousands": 8},
+        {"year": 2023, "prescriptionsThousands": 22},
+        {"year": 2024, "prescriptionsThousands": 52},
+        {"year": 2025, "prescriptionsThousands": 145}
+      ],
+      "latestYear": 2025,
+      "latestThousands": 145,
+      "note": "NHS prescriptions for GLP-1 weight loss drugs (Ozempic/Wegovy/Mounjaro) in England"
+    },
+    "bariatricWaitTime": {
+      "timeSeries": [
+        {"year": 2018, "waitMonths": 8},
+        {"year": 2019, "waitMonths": 9},
+        {"year": 2020, "waitMonths": 11},
+        {"year": 2021, "waitMonths": 18},
+        {"year": 2022, "waitMonths": 24},
+        {"year": 2023, "waitMonths": 28},
+        {"year": 2024, "waitMonths": 30},
+        {"year": 2025, "waitMonths": 28}
+      ],
+      "latestYear": 2025,
+      "latestMonths": 28,
+      "note": "Average wait time for NHS bariatric surgery from referral to operation"
+    },
+    "obesityPrevalence": {
+      "timeSeries": [
+        {"year": 2015, "percentAdults": 26.9},
+        {"year": 2016, "percentAdults": 27.0},
+        {"year": 2017, "percentAdults": 28.0},
+        {"year": 2018, "percentAdults": 28.7},
+        {"year": 2019, "percentAdults": 29.2},
+        {"year": 2020, "percentAdults": 28.0},
+        {"year": 2021, "percentAdults": 28.5},
+        {"year": 2022, "percentAdults": 29.0},
+        {"year": 2023, "percentAdults": 26.0},
+        {"year": 2024, "percentAdults": 29.5}
+      ],
+      "latestYear": 2024,
+      "latestPercent": 29.5,
+      "note": "Adult obesity prevalence (BMI 30+), England"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS Business Services Authority", "dataset": "Prescription Cost Analysis — GLP-1 agonists", "url": "https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england", "frequency": "annual"},
+      {"name": "NHS England", "dataset": "Referral to Treatment statistics — bariatric surgery", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/", "frequency": "monthly"},
+      {"name": "NHS Digital", "dataset": "Health Survey for England — adult obesity", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england", "frequency": "annual"}
+    ],
+    "methodology": "GLP-1 prescriptions counted from NHSBSA Prescription Cost Analysis data for semaglutide, liraglutide and tirzepatide weight-management licensed preparations. Bariatric surgery wait times from NHS RTT incomplete pathways data. Obesity prevalence from Health Survey for England self-reported height and weight measurements.",
+    "knownIssues": ["GLP-1 prescriptions include both diabetes and weight-loss indications prior to 2023 licensing changes — figures adjusted where possible", "2020 obesity prevalence affected by Health Survey suspension during COVID-19", "Bariatric surgery volumes fell sharply in 2020–21 due to theatre cancellations"]
+  }
+}

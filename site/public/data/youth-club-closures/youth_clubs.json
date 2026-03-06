@@ -1,0 +1,81 @@
+{
+  "topic": "youth-club-closures",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "closures": {
+      "timeSeries": [
+        {"year": 2010, "cumulativeClosures": 0},
+        {"year": 2011, "cumulativeClosures": 400},
+        {"year": 2012, "cumulativeClosures": 800},
+        {"year": 2013, "cumulativeClosures": 1200},
+        {"year": 2014, "cumulativeClosures": 1600},
+        {"year": 2015, "cumulativeClosures": 2000},
+        {"year": 2016, "cumulativeClosures": 2400},
+        {"year": 2017, "cumulativeClosures": 2800},
+        {"year": 2018, "cumulativeClosures": 3200},
+        {"year": 2019, "cumulativeClosures": 3600},
+        {"year": 2020, "cumulativeClosures": 3900},
+        {"year": 2021, "cumulativeClosures": 4100},
+        {"year": 2022, "cumulativeClosures": 4200},
+        {"year": 2023, "cumulativeClosures": 4350},
+        {"year": 2024, "cumulativeClosures": 4500}
+      ],
+      "latestYear": 2024,
+      "latestCumulativeClosures": 4500,
+      "note": "Cumulative youth club and service closures since 2010, England"
+    },
+    "youthWorkers": {
+      "timeSeries": [
+        {"year": 2010, "workersThousands": 6.8},
+        {"year": 2011, "workersThousands": 6.2},
+        {"year": 2012, "workersThousands": 5.8},
+        {"year": 2013, "workersThousands": 5.4},
+        {"year": 2014, "workersThousands": 5.0},
+        {"year": 2015, "workersThousands": 4.6},
+        {"year": 2016, "workersThousands": 4.2},
+        {"year": 2017, "workersThousands": 3.8},
+        {"year": 2018, "workersThousands": 3.4},
+        {"year": 2019, "workersThousands": 3.0},
+        {"year": 2020, "workersThousands": 2.8},
+        {"year": 2021, "workersThousands": 2.6},
+        {"year": 2022, "workersThousands": 2.5},
+        {"year": 2023, "workersThousands": 2.2},
+        {"year": 2024, "workersThousands": 2.0}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 2.0,
+      "note": "Qualified youth workers in England (thousands)"
+    },
+    "localAuthoritySpend": {
+      "timeSeries": [
+        {"year": 2010, "spendMillions": 1030},
+        {"year": 2011, "spendMillions": 920},
+        {"year": 2012, "spendMillions": 820},
+        {"year": 2013, "spendMillions": 750},
+        {"year": 2014, "spendMillions": 690},
+        {"year": 2015, "spendMillions": 650},
+        {"year": 2016, "spendMillions": 610},
+        {"year": 2017, "spendMillions": 580},
+        {"year": 2018, "spendMillions": 560},
+        {"year": 2019, "spendMillions": 545},
+        {"year": 2020, "spendMillions": 530},
+        {"year": 2021, "spendMillions": 515},
+        {"year": 2022, "spendMillions": 510},
+        {"year": 2023, "spendMillions": 510},
+        {"year": 2024, "spendMillions": 512}
+      ],
+      "latestYear": 2024,
+      "latestMillions": 512,
+      "note": "Local authority youth service expenditure, England (£ millions, nominal)"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NYA / NCVO", "dataset": "State of the Youth Sector survey — closures and workforce", "url": "https://nya.org.uk/resources/state-of-the-youth-sector/", "frequency": "biennial"},
+      {"name": "CIPD / JMU", "dataset": "Youth work workforce analysis — qualified workers", "url": "https://nya.org.uk/professional-development/", "frequency": "biennial"},
+      {"name": "Ministry of Housing Communities and Local Government", "dataset": "Local authority revenue expenditure — youth services outturn", "url": "https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing", "frequency": "annual"}
+    ],
+    "methodology": "Closure figures from NYA State of the Youth Sector surveys and NCVO civil society almanac — counts loss of youth clubs, centres and services. Qualified youth worker numbers from NYA and JMU analysis of local authority and VCS workforce. Local authority expenditure from MHCLG Section 251 outturn tables — youth services line (RS/RA categories).",
+    "knownIssues": ["Closure figures are estimates from periodic surveys — not a comprehensive register", "Youth worker qualification is not legally required — unqualified workers not counted consistently", "Expenditure figures not adjusted for inflation — real-terms reduction substantially larger than nominal figures suggest"]
+  }
+}

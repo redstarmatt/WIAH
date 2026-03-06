@@ -1,0 +1,68 @@
+{
+  "topic": "remote-work-access",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "homeworkingByQuintile": {
+      "data": [
+        {"quintile": "Q1 (lowest income)", "quintileShort": "Q1", "pctHomeworking": 12},
+        {"quintile": "Q2", "quintileShort": "Q2", "pctHomeworking": 18},
+        {"quintile": "Q3 (middle income)", "quintileShort": "Q3", "pctHomeworking": 28},
+        {"quintile": "Q4", "quintileShort": "Q4", "pctHomeworking": 45},
+        {"quintile": "Q5 (highest income)", "quintileShort": "Q5", "pctHomeworking": 68}
+      ],
+      "year": 2024,
+      "note": "Percentage working from home at least one day per week by household income quintile, UK, 2024. ONS HTUS."
+    },
+    "nationalHomeworkingRate": {
+      "timeSeries": [
+        {"year": 2019, "pctHomeworking": 5.7},
+        {"year": 2020, "pctHomeworking": 25.9},
+        {"year": 2021, "pctHomeworking": 22.1},
+        {"year": 2022, "pctHomeworking": 20.4},
+        {"year": 2023, "pctHomeworking": 21.8},
+        {"year": 2024, "pctHomeworking": 22.4}
+      ],
+      "latestYear": 2024,
+      "latestPct": 22.4,
+      "note": "Percentage of employed people who worked from home at least once per week, UK. ONS Labour Force Survey."
+    },
+    "flexibilityRetention": {
+      "timeSeries": [
+        {"year": 2022, "wouldQuitPct": 42},
+        {"year": 2023, "wouldQuitPct": 45},
+        {"year": 2024, "wouldQuitPct": 48}
+      ],
+      "latestYear": 2024,
+      "latestPct": 48,
+      "note": "Proportion of workers who say they would look for a new job if their employer removed flexible or remote working options."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Homeworking and employer-employee working arrangements, UK",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/homeworkingintheuk/previousReleases",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Labour Force Survey — place of work",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/labourmarketsummary",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "CIPD",
+        "dataset": "Flexible and hybrid working practices survey",
+        "url": "https://www.cipd.org/uk/knowledge/reports/flexible-hybrid-working-practices/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Homeworking by quintile from ONS Homeworking and Employer-Employee Working Arrangements survey. National homeworking rate from LFS. Retention survey data from CIPD / YouGov employer pulse surveys.",
+    "knownIssues": [
+      "Quintile analysis reflects income rather than occupation — the two are correlated but not identical",
+      "2020 figures reflect mandatory lockdown homeworking rather than employer policy",
+      "Would-quit figures from survey data may overstate actual quit intentions"
+    ]
+  }
+}

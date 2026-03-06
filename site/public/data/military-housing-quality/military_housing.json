@@ -1,0 +1,57 @@
+{
+  "topic": "military-housing-quality",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "belowStandard": {
+      "timeSeries": [
+        {"year": 2018, "percentBelowStandard": 32},
+        {"year": 2019, "percentBelowStandard": 33},
+        {"year": 2020, "percentBelowStandard": 35},
+        {"year": 2021, "percentBelowStandard": 38},
+        {"year": 2022, "percentBelowStandard": 39},
+        {"year": 2023, "percentBelowStandard": 40},
+        {"year": 2024, "percentBelowStandard": 40}
+      ],
+      "latestYear": 2024,
+      "latestPercent": 40,
+      "note": "Percentage of service family accommodation rated below the MOD standard (Decent Homes equivalent)"
+    },
+    "maintenanceBacklog": {
+      "timeSeries": [
+        {"year": 2018, "backlogMillions": 480},
+        {"year": 2019, "backlogMillions": 510},
+        {"year": 2020, "backlogMillions": 560},
+        {"year": 2021, "backlogMillions": 600},
+        {"year": 2022, "backlogMillions": 640},
+        {"year": 2023, "backlogMillions": 700},
+        {"year": 2024, "backlogMillions": 750}
+      ],
+      "latestYear": 2024,
+      "latestMillions": 750,
+      "note": "Cumulative MOD service family housing maintenance backlog (£ millions)"
+    },
+    "housingComplaints": {
+      "timeSeries": [
+        {"year": 2018, "complaints": 8200},
+        {"year": 2019, "complaints": 8500},
+        {"year": 2020, "complaints": 9000},
+        {"year": 2021, "complaints": 9800},
+        {"year": 2022, "complaints": 10200},
+        {"year": 2023, "complaints": 10800},
+        {"year": 2024, "complaints": 11000}
+      ],
+      "latestYear": 2024,
+      "latestComplaints": 11000,
+      "note": "Annual complaints about housing quality from service families to the MOD"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Ministry of Defence", "dataset": "Annual Report and Accounts — Service Family Accommodation", "url": "https://www.gov.uk/government/collections/mod-annual-report-and-accounts", "frequency": "annual"},
+      {"name": "Defence Infrastructure Organisation", "dataset": "Service Family Accommodation condition data", "url": "https://www.gov.uk/government/organisations/defence-infrastructure-organisation", "frequency": "annual"},
+      {"name": "Public Accounts Committee", "dataset": "MOD housing provision inquiry evidence", "url": "https://committees.parliament.uk/work/6648/the-mods-provision-of-accommodation/", "frequency": "ad hoc"}
+    ],
+    "methodology": "Accommodation standards from DIO condition surveys using MOD Standard for Condition (MSfC) ratings. Maintenance backlog from DIO capital planning and Annington Homes contract performance data. Complaints data from MOD Single Living Accommodation and Service Family Accommodation management systems.",
+    "knownIssues": ["Condition ratings methodology updated in 2021 which may affect pre/post comparability", "Annington Homes contract restricts MOD ability to publish detailed property-level data", "Complaints data excludes informal complaints to commanding officers"]
+  }
+}

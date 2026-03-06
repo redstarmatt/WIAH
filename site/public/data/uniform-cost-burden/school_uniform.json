@@ -1,0 +1,56 @@
+{
+  "topic": "uniform-cost-burden",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "primaryCost": {
+      "timeSeries": [
+        {"year": 2019, "averageCostPounds": 289},
+        {"year": 2020, "averageCostPounds": 298},
+        {"year": 2021, "averageCostPounds": 310},
+        {"year": 2022, "averageCostPounds": 325},
+        {"year": 2023, "averageCostPounds": 337},
+        {"year": 2024, "averageCostPounds": 337}
+      ],
+      "latestYear": 2024,
+      "latestCostPounds": 337,
+      "note": "Average annual cost of a primary school uniform in England, including PE kit, bag and all required items."
+    },
+    "secondaryCost": {
+      "timeSeries": [
+        {"year": 2019, "averageCostPounds": 372},
+        {"year": 2020, "averageCostPounds": 380},
+        {"year": 2021, "averageCostPounds": 398},
+        {"year": 2022, "averageCostPounds": 418},
+        {"year": 2023, "averageCostPounds": 435},
+        {"year": 2024, "averageCostPounds": 442}
+      ],
+      "latestYear": 2024,
+      "latestCostPounds": 442,
+      "note": "Average annual cost of a secondary school uniform in England, including all required items and specialist kit."
+    },
+    "parentDebt": {
+      "timeSeries": [
+        {"year": 2021, "percentInDebt": 22},
+        {"year": 2022, "percentInDebt": 25},
+        {"year": 2023, "percentInDebt": 28},
+        {"year": 2024, "percentInDebt": 30}
+      ],
+      "latestYear": 2024,
+      "latestPercent": 30,
+      "note": "Percentage of parents who report going into debt (credit card, overdraft, buy-now-pay-later) to buy school uniform."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Child Poverty Action Group", "dataset": "The Cost of a Child Survey — School Costs Chapter", "url": "https://cpag.org.uk/policy-and-campaigns/report/cost-child", "frequency": "annual"},
+      {"name": "DfE", "dataset": "School Uniform Guidance — Cost Monitoring", "url": "https://www.gov.uk/government/publications/school-uniform", "frequency": "annual"},
+      {"name": "Citizens Advice", "dataset": "Back to School Costs Survey", "url": "https://www.citizensadvice.org.uk/about-us/our-work/research/", "frequency": "annual"}
+    ],
+    "methodology": "Primary and secondary uniform costs from CPAG annual cost of a child survey, England sample. Includes all school-required items: uniform garments, PE kit, bags, and where required, specialist equipment. Parent debt figures from Citizens Advice back-to-school survey. Costs are averages and conceal significant variation by school policy.",
+    "knownIssues": [
+      "Average costs conceal huge school-level variation — some schools with mandatory branded items cost significantly more",
+      "The School Uniform Regulations 2022 require schools to limit branded items, but compliance monitoring is light",
+      "Second-hand uniform schemes reduce actual expenditure for some families — surveys capture intended rather than actual spend"
+    ]
+  }
+}

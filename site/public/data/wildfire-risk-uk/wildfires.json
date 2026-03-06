@@ -1,0 +1,64 @@
+{
+  "topic": "wildfire-risk-uk",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "hectaresBurned": {
+      "timeSeries": [
+        {"year": 2015, "hectaresThousands": 2.1},
+        {"year": 2016, "hectaresThousands": 1.8},
+        {"year": 2017, "hectaresThousands": 2.3},
+        {"year": 2018, "hectaresThousands": 17.4},
+        {"year": 2019, "hectaresThousands": 2.8},
+        {"year": 2020, "hectaresThousands": 3.2},
+        {"year": 2021, "hectaresThousands": 12.1},
+        {"year": 2022, "hectaresThousands": 4.5},
+        {"year": 2023, "hectaresThousands": 9.8}
+      ],
+      "latestYear": 2023,
+      "latestHectares": 9756,
+      "decadalAverage": 3200,
+      "note": "Estimated hectares burned by wildfires, UK. 2018 peak includes Saddleworth Moor and Llanbadoc fires. 2021 peak driven by Scotland spring fires."
+    },
+    "incidents": {
+      "timeSeries": [
+        {"year": 2015, "incidents": 1200},
+        {"year": 2016, "incidents": 1100},
+        {"year": 2017, "incidents": 1300},
+        {"year": 2018, "incidents": 2200},
+        {"year": 2019, "incidents": 1400},
+        {"year": 2020, "incidents": 1500},
+        {"year": 2021, "incidents": 3400},
+        {"year": 2022, "incidents": 1600},
+        {"year": 2023, "incidents": 2100}
+      ],
+      "latestYear": 2023,
+      "latestCount": 2100,
+      "note": "Number of wildfire incidents attended by fire and rescue services, UK. Includes moorland, heath and forestry fires."
+    },
+    "fireRiskDays": {
+      "historical": [
+        {"period": "2010-2020 average", "highRiskDays": 12},
+        {"period": "2020-2024 average", "highRiskDays": 16}
+      ],
+      "projected": [
+        {"period": "2030-2040 projection", "highRiskDays": 20},
+        {"period": "2040-2050 projection", "highRiskDays": 24}
+      ],
+      "note": "Days per year meeting Met Office fire weather index threshold for high wildfire risk. Projected under RCP4.5 mid-range climate scenario."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NFCC", "dataset": "National Fire Chiefs Council — Wildfire Risk Register and Incident Data", "url": "https://nfcc.org.uk/our-work/wildfire/", "frequency": "annual"},
+      {"name": "Met Office", "dataset": "UK Climate Projections (UKCP18) — Fire Weather", "url": "https://www.metoffice.gov.uk/research/approach/collaboration/ukcp", "frequency": "periodic"},
+      {"name": "Scottish Fire and Rescue Service", "dataset": "Wildfire Statistics Scotland", "url": "https://www.firescotland.gov.uk/about-us/statistics/", "frequency": "annual"}
+    ],
+    "methodology": "Hectares burned from NFCC national incident data, supplemented by satellite analysis for major events. Incident counts from Fire and Rescue Service returns to Home Office and SFRS. Fire risk days from Met Office fire weather index analysis. Climate projections from UKCP18 under RCP4.5 scenario.",
+    "knownIssues": [
+      "Wildfire incident recording is inconsistent across fire services — some small fires are not recorded as separate incidents",
+      "Satellite estimates of area burned differ from ground-truth surveys — figures for major events may be revised",
+      "Climate projections are scenario-dependent — actual risk days by 2050 depend heavily on emissions trajectories",
+      "2018 data includes prolonged Saddleworth fire which distorts that year significantly"
+    ]
+  }
+}

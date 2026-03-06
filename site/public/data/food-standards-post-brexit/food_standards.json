@@ -1,0 +1,53 @@
+{
+  "topic": "food-standards-post-brexit",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "foodSafetyIncidents": {
+      "timeSeries": [
+        {"year": 2019, "incidents": 58},
+        {"year": 2020, "incidents": 62},
+        {"year": 2021, "incidents": 54},
+        {"year": 2022, "incidents": 60},
+        {"year": 2023, "incidents": 68},
+        {"year": 2024, "incidents": 78},
+        {"year": 2025, "incidents": 87}
+      ],
+      "latestYear": 2025,
+      "latestIncidents": 87,
+      "note": "Food safety incidents involving imported food detected by FSA/FSS, UK"
+    },
+    "borderChecks": {
+      "timeSeries": [
+        {"year": 2021, "percentChecked": 8},
+        {"year": 2022, "percentChecked": 12},
+        {"year": 2023, "percentChecked": 24},
+        {"year": 2024, "percentChecked": 68},
+        {"year": 2025, "percentChecked": 85}
+      ],
+      "latestYear": 2025,
+      "latestPercent": 85,
+      "note": "Import border checks completed as percentage of declared food and feed shipments"
+    },
+    "divergenceIncidents": {
+      "timeSeries": [
+        {"year": 2021, "cumulativeDivergences": 0},
+        {"year": 2022, "cumulativeDivergences": 2},
+        {"year": 2023, "cumulativeDivergences": 4},
+        {"year": 2024, "cumulativeDivergences": 8},
+        {"year": 2025, "cumulativeDivergences": 14}
+      ],
+      "latestYear": 2025,
+      "latestCumulativeDivergences": 14,
+      "note": "Cumulative documented divergences in UK food standards from EU baseline"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Food Standards Agency", "dataset": "Incidents, and Allergy and Intolerance Alerts", "url": "https://www.food.gov.uk/research-and-surveillance/food-incidents", "frequency": "monthly"},
+      {"name": "HMRC / DEFRA", "dataset": "Border Target Operating Model — import check statistics", "url": "https://www.gov.uk/government/publications/the-border-target-operating-model-august-2023", "frequency": "quarterly"},
+      {"name": "Trade and Agriculture Commission", "dataset": "Scrutiny reports on trade agreements and food standards", "url": "https://www.gov.uk/government/organisations/trade-and-agriculture-commission", "frequency": "ad hoc"}
+    ],
+    "methodology": "Food safety incidents from FSA and Food Standards Scotland incident reporting database — covers recalls, withdrawals and contamination alerts linked to imported products. Border check completion rates from DEFRA/HMRC Border Target Operating Model implementation statistics. Standards divergence incidents identified through Trade and Agriculture Commission reviews and FSA regulatory horizon-scanning.",
+    "knownIssues": ["Food safety incidents data covers reported and detected incidents — undetected incidents are by definition not captured", "Border check figures for 2021-2023 represent very low check rates due to government delays in implementing controls", "Divergence incidents is a novel category with no established counting methodology — figures are researcher estimates"]
+  }
+}

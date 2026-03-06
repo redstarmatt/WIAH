@@ -1,0 +1,59 @@
+{
+  "topic": "hospital-parking",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "parkingRevenue": {
+      "timeSeries": [
+        {"year": 2018, "revenueMillion": 188},
+        {"year": 2019, "revenueMillion": 175},
+        {"year": 2020, "revenueMillion": 82},
+        {"year": 2021, "revenueMillion": 155},
+        {"year": 2022, "revenueMillion": 175},
+        {"year": 2023, "revenueMillion": 190},
+        {"year": 2024, "revenueMillion": 214}
+      ],
+      "latestYear": 2024,
+      "latestMillion": 214,
+      "note": "Total NHS hospital car parking revenue in England. 2020 dip reflects free parking during pandemic. 2024 figure is 2022/23 financial year."
+    },
+    "trustsCharging": {
+      "timeSeries": [
+        {"year": 2020, "percentChargingQualifyingPatients": 78},
+        {"year": 2021, "percentChargingQualifyingPatients": 74},
+        {"year": 2022, "percentChargingQualifyingPatients": 76},
+        {"year": 2023, "percentChargingQualifyingPatients": 78},
+        {"year": 2024, "percentChargingQualifyingPatients": 80}
+      ],
+      "latestYear": 2024,
+      "latestPercent": 80,
+      "note": "Percentage of NHS Trusts that charge for parking despite the 2019 pledge to provide free parking for qualifying patients (frequent attendees, disabled patients)."
+    },
+    "hourlyCharge": {
+      "timeSeries": [
+        {"year": 2019, "averageChargePounds": 1.80},
+        {"year": 2020, "averageChargePounds": 1.85},
+        {"year": 2021, "averageChargePounds": 1.90},
+        {"year": 2022, "averageChargePounds": 2.00},
+        {"year": 2023, "averageChargePounds": 2.10},
+        {"year": 2024, "averageChargePounds": 2.20}
+      ],
+      "latestYear": 2024,
+      "latestChargePounds": 2.20,
+      "note": "Average hourly car parking charge at NHS hospitals in England. Free in Scotland, Wales, and Northern Ireland."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England", "dataset": "Annual Report on Hospital Car Parking Charges", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/hospital-car-parking-charges/", "frequency": "annual"},
+      {"name": "NHS England", "dataset": "Car Parking Charges in the NHS — Monitoring Implementation", "url": "https://www.england.nhs.uk/non-clinical-support/car-parking/", "frequency": "annual"},
+      {"name": "Which?", "dataset": "NHS Hospital Parking Charges Survey", "url": "https://www.which.co.uk/campaigns/nhs-parking", "frequency": "annual"}
+    ],
+    "methodology": "Revenue data from NHS England annual report based on trust returns. Trusts-charging figure from NHS England compliance monitoring of the 2019 parking pledge. Average hourly charge from NHS England survey of trust tariffs, simple average across surveyed hospitals. Devolved nations comparison from respective health department reports.",
+    "knownIssues": [
+      "Not all trusts report parking data — revenue figure is an estimate based on partial returns",
+      "The 2019 pledge required trusts to provide free parking for qualifying patients, not all parking — compliance definitions vary",
+      "Some trusts charge for parking but provide reimbursement for qualifying patients — this may be counted as 'charging' in monitoring",
+      "2020 figure reflects temporary free parking during COVID-19 pandemic which was then discontinued"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "topic": "school-building-condition",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "raacSchools": {
+      "timeSeries": [
+        {"month": "2023-03", "cumulativeConfirmed": 52},
+        {"month": "2023-06", "cumulativeConfirmed": 114},
+        {"month": "2023-09", "cumulativeConfirmed": 156},
+        {"month": "2023-12", "cumulativeConfirmed": 200},
+        {"month": "2024-03", "cumulativeConfirmed": 220},
+        {"month": "2024-06", "cumulativeConfirmed": 235}
+      ],
+      "latestCount": 235,
+      "note": "Schools with RAAC (Reinforced Autoclaved Aerated Concrete) confirmed following emergency surveys, England."
+    },
+    "poorCondition": {
+      "timeSeries": [
+        {"year": 2019, "percentPoorOrVeryPoor": 15},
+        {"year": 2020, "percentPoorOrVeryPoor": 15},
+        {"year": 2021, "percentPoorOrVeryPoor": 17},
+        {"year": 2022, "percentPoorOrVeryPoor": 18},
+        {"year": 2023, "percentPoorOrVeryPoor": 19},
+        {"year": 2024, "percentPoorOrVeryPoor": 21}
+      ],
+      "latestYear": 2024,
+      "latestPercent": 21,
+      "maintenanceBacklogBillions": 6.7,
+      "note": "Percentage of school buildings rated poor or very poor condition in DfE condition surveys."
+    },
+    "rebuildCompletions": {
+      "timeSeries": [
+        {"year": 2019, "completions": 18},
+        {"year": 2020, "completions": 20},
+        {"year": 2021, "completions": 22},
+        {"year": 2022, "completions": 24},
+        {"year": 2023, "completions": 26},
+        {"year": 2024, "completions": 28}
+      ],
+      "latestYear": 2024,
+      "latestCompletions": 28,
+      "note": "Priority Schools/School Rebuilding Programme annual completions."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "DfE", "dataset": "Condition of School Buildings Survey", "url": "https://www.gov.uk/government/publications/condition-of-school-buildings-survey", "frequency": "periodic"},
+      {"name": "DfE", "dataset": "RAAC in Schools — Management Information", "url": "https://www.gov.uk/government/publications/reinforced-autoclaved-aerated-concrete-raac-in-schools", "frequency": "monthly"},
+      {"name": "DfE", "dataset": "School Rebuilding Programme Statistics", "url": "https://www.gov.uk/government/collections/school-rebuilding-programme", "frequency": "annual"}
+    ],
+    "methodology": "RAAC figures from DfE management information releases following September 2023 emergency survey. Condition ratings from DfE condition survey (most recent large-scale survey 2017-19, updated estimates). Rebuild completions from Priority School Building Programme and School Rebuilding Programme quarterly updates.",
+    "knownIssues": [
+      "Full condition survey not conducted since 2017-19 — current figures are estimates and projections",
+      "RAAC survey was rapid response — some schools may still have unidentified issues",
+      "School Rebuilding Programme target of 500 schools over 10 years represents a fraction of total need"
+    ]
+  }
+}

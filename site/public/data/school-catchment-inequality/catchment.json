@@ -1,0 +1,77 @@
+{
+  "topic": "school-catchment-inequality",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "housePricePremium": {
+      "timeSeries": [
+        {"year": 2015, "premiumThousands": 28},
+        {"year": 2016, "premiumThousands": 30},
+        {"year": 2017, "premiumThousands": 31},
+        {"year": 2018, "premiumThousands": 33},
+        {"year": 2019, "premiumThousands": 34},
+        {"year": 2020, "premiumThousands": 35},
+        {"year": 2021, "premiumThousands": 36},
+        {"year": 2022, "premiumThousands": 38},
+        {"year": 2023, "premiumThousands": 39},
+        {"year": 2024, "premiumThousands": 40}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 40,
+      "note": "Average house price premium (£ thousands) within catchment areas of top-rated state schools vs surrounding neighbourhood. England."
+    },
+    "fsmRatio": {
+      "timeSeries": [
+        {"year": 2018, "fsmRatioVsAreaAvg": 0.62},
+        {"year": 2019, "fsmRatioVsAreaAvg": 0.61},
+        {"year": 2020, "fsmRatioVsAreaAvg": 0.60},
+        {"year": 2021, "fsmRatioVsAreaAvg": 0.59},
+        {"year": 2022, "fsmRatioVsAreaAvg": 0.61},
+        {"year": 2023, "fsmRatioVsAreaAvg": 0.60}
+      ],
+      "latestYear": 2023,
+      "latestRatio": 0.60,
+      "note": "Ratio of FSM-eligible pupils at oversubscribed outstanding/good schools vs local area FSM average. A ratio of 0.60 means these schools have 40% fewer FSM pupils than their locality."
+    },
+    "admissionsAppeals": {
+      "timeSeries": [
+        {"year": 2019, "appealsUpheldThousands": 3.2},
+        {"year": 2020, "appealsUpheldThousands": 2.9},
+        {"year": 2021, "appealsUpheldThousands": 3.1},
+        {"year": 2022, "appealsUpheldThousands": 3.4},
+        {"year": 2023, "appealsUpheldThousands": 3.6},
+        {"year": 2024, "appealsUpheldThousands": 3.8}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 3.8,
+      "note": "School admissions appeals upheld in favour of parents, England. Includes all state school types."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Nationwide / Lloyds Banking Group",
+        "dataset": "School catchment area house price analysis",
+        "url": "https://www.nationwidehousepriceindex.co.uk/reports/do-schools-affect-house-prices",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Education",
+        "dataset": "School characteristics data — FSM eligibility by school",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Education",
+        "dataset": "School admissions appeals — annual statistics",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/school-admissions-appeals",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "House price premium calculated by comparing median sold prices within 200m of rated Outstanding/Good schools vs median for the surrounding LSOA. FSM ratio compares proportion of FSM-eligible pupils on roll at oversubscribed schools vs FSM rate in the school's local authority. Appeals data from DfE statutory returns.",
+    "knownIssues": [
+      "House price premium analysis does not control for other neighbourhood characteristics — schools and premium may both reflect underlying area quality",
+      "FSM ratio data affected by free school meal universal infant expansion which changed FSM take-up patterns",
+      "School admissions appeals data understates total disputes as many families do not appeal formally"
+    ]
+  }
+}

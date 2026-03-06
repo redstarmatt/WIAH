@@ -1,0 +1,57 @@
+{
+  "topic": "second-job-holders",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "secondJobHolders": {
+      "timeSeries": [
+        {"year": 2015, "holdersMillions": 1.02},
+        {"year": 2016, "holdersMillions": 1.04},
+        {"year": 2017, "holdersMillions": 1.05},
+        {"year": 2018, "holdersMillions": 1.06},
+        {"year": 2019, "holdersMillions": 1.07},
+        {"year": 2020, "holdersMillions": 1.06},
+        {"year": 2021, "holdersMillions": 1.10},
+        {"year": 2022, "holdersMillions": 1.15},
+        {"year": 2023, "holdersMillions": 1.22},
+        {"year": 2024, "holdersMillions": 1.28},
+        {"year": 2025, "holdersMillions": 1.30}
+      ],
+      "latestYear": 2025,
+      "latestMillions": 1.30,
+      "note": "Number of UK employees holding a second job (Labour Force Survey)"
+    },
+    "nhsSecondJobs": {
+      "timeSeries": [
+        {"year": 2019, "percentNHS": 7.0},
+        {"year": 2020, "percentNHS": 7.5},
+        {"year": 2021, "percentNHS": 9.0},
+        {"year": 2022, "percentNHS": 11.0},
+        {"year": 2023, "percentNHS": 12.5},
+        {"year": 2024, "percentNHS": 13.0}
+      ],
+      "latestYear": 2024,
+      "latestPercent": 13.0,
+      "note": "Percentage of NHS staff in England reported to hold a second job"
+    },
+    "financialNecessity": {
+      "timeSeries": [
+        {"year": 2022, "percentFinancialNecessity": 44},
+        {"year": 2023, "percentFinancialNecessity": 48},
+        {"year": 2024, "percentFinancialNecessity": 52},
+        {"year": 2025, "percentFinancialNecessity": 55}
+      ],
+      "latestYear": 2025,
+      "latestPercent": 55,
+      "note": "Percentage of second job holders citing financial necessity as primary reason"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Office for National Statistics", "dataset": "Labour Force Survey — employees with second jobs", "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/secondjobholding", "frequency": "quarterly"},
+      {"name": "NHS Staff Survey / Health Foundation", "dataset": "Analysis of NHS staff secondary employment", "url": "https://www.nhsstaffsurveys.com/results/", "frequency": "annual"},
+      {"name": "CIPD", "dataset": "Good Work Index — reasons for second employment", "url": "https://www.cipd.org/uk/knowledge/reports/goodwork/", "frequency": "annual"}
+    ],
+    "methodology": "Second job holders from ONS Labour Force Survey employment data — seasonally adjusted estimates. NHS second job rate from analysis of NHS Staff Survey responses and Health Foundation secondary analysis. Financial necessity figures from CIPD Good Work Index survey of employees holding multiple jobs.",
+    "knownIssues": ["LFS definition of second job may exclude some gig economy and platform work", "NHS figures are self-reported and may underestimate due to social desirability bias", "Financial necessity classification is subjective — some blend financial need with career development motives"]
+  }
+}

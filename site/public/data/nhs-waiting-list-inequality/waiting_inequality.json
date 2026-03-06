@@ -1,0 +1,52 @@
+{
+  "topic": "nhs-waiting-list-inequality",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "waitByDeprivation": {
+      "year": 2024,
+      "data": [
+        {"quintile": 1, "label": "Most deprived", "medianWaitWeeks": 18.4, "over52WeeksPct": 8.2},
+        {"quintile": 2, "label": "Second most deprived", "medianWaitWeeks": 17.1, "over52WeeksPct": 7.5},
+        {"quintile": 3, "label": "Middle", "medianWaitWeeks": 15.8, "over52WeeksPct": 6.8},
+        {"quintile": 4, "label": "Second least deprived", "medianWaitWeeks": 14.2, "over52WeeksPct": 6.1},
+        {"quintile": 5, "label": "Least deprived", "medianWaitWeeks": 14.2, "over52WeeksPct": 5.1}
+      ],
+      "note": "Median elective referral-to-treatment wait by patient deprivation quintile (IMD)"
+    },
+    "deprivationGap": {
+      "timeSeries": [
+        {"year": 2019, "gapWeeks": 2.1},
+        {"year": 2020, "gapWeeks": 2.4},
+        {"year": 2021, "gapWeeks": 3.1},
+        {"year": 2022, "gapWeeks": 3.8},
+        {"year": 2023, "gapWeeks": 4.0},
+        {"year": 2024, "gapWeeks": 4.2}
+      ],
+      "latestYear": 2024,
+      "latestGapWeeks": 4.2,
+      "note": "Gap in median wait between most and least deprived quintile patients"
+    },
+    "totalWaitingList": {
+      "timeSeries": [
+        {"year": 2019, "waitingMillions": 4.4},
+        {"year": 2020, "waitingMillions": 4.6},
+        {"year": 2021, "waitingMillions": 5.8},
+        {"year": 2022, "waitingMillions": 6.8},
+        {"year": 2023, "waitingMillions": 7.8},
+        {"year": 2024, "waitingMillions": 7.4}
+      ],
+      "latestYear": 2024,
+      "latestMillions": 7.4,
+      "note": "Total NHS England elective referral-to-treatment waiting list"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "NHS England", "dataset": "Referral-to-Treatment Waiting Times Statistics", "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/", "frequency": "monthly"},
+      {"name": "NHS England", "dataset": "RTT Inequality Analysis — CORE20PLUS5", "url": "https://www.england.nhs.uk/about/equality/equality-hub/core20plus5/", "frequency": "annual"},
+      {"name": "NHSE", "dataset": "Statistical Process Control — Elective Inequalities Dashboard", "url": "https://www.england.nhs.uk/statistics/", "frequency": "quarterly"}
+    ],
+    "methodology": "RTT waiting times linked to patient IMD quintile using LSOA of patient residence. Median wait and over-52-week percentages calculated by deprivation quintile from NHS England elective inequalities analysis. Total waiting list from monthly RTT statistical release.",
+    "knownIssues": ["IMD linkage uses home postcode which may not reflect current deprivation accurately for mobile populations", "Deprivation gap analysis covers England only — comparable data not available for devolved nations", "2020-21 waiting list spike reflects COVID-19 elective pause, not underlying demand change"]
+  }
+}

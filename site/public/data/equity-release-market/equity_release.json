@@ -1,0 +1,79 @@
+{
+  "topic": "equity-release-market",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "totalLending": {
+      "timeSeries": [
+        {"year": 2015, "lendingBillions": 1.8},
+        {"year": 2016, "lendingBillions": 2.1},
+        {"year": 2017, "lendingBillions": 2.6},
+        {"year": 2018, "lendingBillions": 3.4},
+        {"year": 2019, "lendingBillions": 3.9},
+        {"year": 2020, "lendingBillions": 3.1},
+        {"year": 2021, "lendingBillions": 4.8},
+        {"year": 2022, "lendingBillions": 6.2},
+        {"year": 2023, "lendingBillions": 3.8},
+        {"year": 2024, "lendingBillions": 2.6}
+      ],
+      "latestYear": 2024,
+      "latestBillions": 2.6,
+      "note": "Total equity release lending (lifetime mortgages and home reversion), UK. Equity Release Council."
+    },
+    "interestRate": {
+      "timeSeries": [
+        {"year": 2018, "avgRatePct": 5.1},
+        {"year": 2019, "avgRatePct": 5.2},
+        {"year": 2020, "avgRatePct": 5.4},
+        {"year": 2021, "avgRatePct": 5.6},
+        {"year": 2022, "avgRatePct": 6.8},
+        {"year": 2023, "avgRatePct": 7.2},
+        {"year": 2024, "avgRatePct": 6.8}
+      ],
+      "latestYear": 2024,
+      "latestRatePct": 6.8,
+      "note": "Average lifetime mortgage interest rate (fixed for life), UK. Equity Release Council market data."
+    },
+    "plansInForce": {
+      "timeSeries": [
+        {"year": 2018, "plansThousands": 280},
+        {"year": 2019, "plansThousands": 310},
+        {"year": 2020, "plansThousands": 340},
+        {"year": 2021, "plansThousands": 360},
+        {"year": 2022, "plansThousands": 390},
+        {"year": 2023, "plansThousands": 400},
+        {"year": 2024, "plansThousands": 415}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 415,
+      "note": "Total equity release plans in force (cumulative active plans), UK."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Equity Release Council",
+        "dataset": "Equity release market statistics",
+        "url": "https://www.equityreleasecouncil.com/market-data/",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "FCA",
+        "dataset": "Retirement income market data",
+        "url": "https://www.fca.org.uk/data/retirement-income-market-data",
+        "frequency": "annual"
+      },
+      {
+        "name": "Which?",
+        "dataset": "Equity release — rates and product analysis",
+        "url": "https://www.which.co.uk/money/mortgages-and-property/equity-release",
+        "frequency": "ongoing"
+      }
+    ],
+    "methodology": "Total lending and plans in force from Equity Release Council member data, representing approximately 95% of the market. Average interest rate is the market-average fixed rate for new lifetime mortgage plans as published quarterly by ERC. Compound doubling time calculated as ln(2)/ln(1+rate).",
+    "knownIssues": [
+      "2022 peak coincided with house price peak and low fixed rates locked in before rate rises — market has since corrected",
+      "Plans in force figure is cumulative and includes plans with drawdown facilities not fully drawn — total outstanding debt is higher per plan",
+      "FCA Consumer Duty implementation 2023 has changed suitability assessment practices — pre/post comparison limited"
+    ]
+  }
+}

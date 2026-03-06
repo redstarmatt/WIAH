@@ -1,0 +1,66 @@
+{
+  "topic": "shoplifting-surge",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "recordedOffences": {
+      "timeSeries": [
+        {"year": 2015, "offencesThousands": 321},
+        {"year": 2016, "offencesThousands": 330},
+        {"year": 2017, "offencesThousands": 342},
+        {"year": 2018, "offencesThousands": 356},
+        {"year": 2019, "offencesThousands": 362},
+        {"year": 2020, "offencesThousands": 342},
+        {"year": 2021, "offencesThousands": 330},
+        {"year": 2022, "offencesThousands": 348},
+        {"year": 2023, "offencesThousands": 360},
+        {"year": 2024, "offencesThousands": 469}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 469,
+      "note": "Police recorded shoplifting offences, England and Wales, year ending March. 2024 is highest since records began."
+    },
+    "chargeRate": {
+      "timeSeries": [
+        {"year": 2015, "chargeRatePercent": 18},
+        {"year": 2016, "chargeRatePercent": 17},
+        {"year": 2017, "chargeRatePercent": 16},
+        {"year": 2018, "chargeRatePercent": 15},
+        {"year": 2019, "chargeRatePercent": 15},
+        {"year": 2020, "chargeRatePercent": 14},
+        {"year": 2021, "chargeRatePercent": 13},
+        {"year": 2022, "chargeRatePercent": 13},
+        {"year": 2023, "chargeRatePercent": 12},
+        {"year": 2024, "chargeRatePercent": 12}
+      ],
+      "latestYear": 2024,
+      "latestPercent": 12,
+      "note": "Percentage of recorded shoplifting offences resulting in a charge or summons. Falling despite rising volumes."
+    },
+    "retailCrimeCost": {
+      "timeSeries": [
+        {"year": 2019, "costBillions": 1.0},
+        {"year": 2020, "costBillions": 1.1},
+        {"year": 2021, "costBillions": 0.9},
+        {"year": 2022, "costBillions": 1.1},
+        {"year": 2023, "costBillions": 1.4},
+        {"year": 2024, "costBillions": 1.8}
+      ],
+      "latestYear": 2024,
+      "latestBillions": 1.8,
+      "note": "Annual cost of retail crime including theft, criminal damage, and violence against staff. British Retail Consortium estimate."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Home Office", "dataset": "Police Recorded Crime, England and Wales — Crime Outcomes", "url": "https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-statistics", "frequency": "annual"},
+      {"name": "BRC", "dataset": "Retail Crime Survey", "url": "https://brc.org.uk/retail-insights/crime-surveys/", "frequency": "annual"},
+      {"name": "ONS", "dataset": "Crime in England and Wales", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/crimeinenglandandwales/latest", "frequency": "quarterly"}
+    ],
+    "methodology": "Offences from Home Office police recorded crime data, shoplifting subcategory of theft offences. Charge rates from Home Office crime outcomes data. Retail crime cost from British Retail Consortium annual crime survey, which covers member retailers representing ~60% of UK retail turnover.",
+    "knownIssues": [
+      "Police recorded crime is sensitive to reporting rates and police recording practices — some forces actively encourage retail crime reporting, inflating apparent local figures",
+      "The £200 de facto threshold (lifted in Criminal Justice Bill 2024) led to systematic under-recording for lower-value thefts",
+      "BRC figures are industry self-reported estimates — methodology differs from official crime statistics"
+    ]
+  }
+}
