@@ -45,9 +45,15 @@ interface WealthByAge {
   medianWealth: number;
 }
 
+interface WealthGiniPoint {
+  wave: string;
+  gini: number;
+}
+
 interface WealthData {
   wealthByDecile: WealthDecile[];
   wealthByAge: WealthByAge[];
+  wealthGiniTimeSeries?: WealthGiniPoint[];
   metadata: {
     sources: { name: string; dataset: string; url: string; frequency: string }[];
   };
@@ -139,6 +145,19 @@ export default function PovertyPage() {
   const latestPoverty = data?.national.relativePoverty.latest;
   const latestChild = data?.national.childPoverty.latest;
   const latestFoodBank = data?.national.foodBanks.latest;
+
+  // 5. Wealth Gini over time
+  const wealthGiniSeries: Series[] = wealthData?.wealthGiniTimeSeries
+    ? [{
+        id: 'wealth-gini',
+        label: 'Wealth Gini coefficient',
+        colour: '#E63946',
+        data: wealthData.wealthGiniTimeSeries.map(d => ({
+          date: new Date(parseInt(d.wave.split('-')[0]), 0, 1),
+          value: d.gini,
+        })),
+      }]
+    : [];
 
   // ── Wealth decile bar chart helpers ──────────────────────────────────────
   const maxWealthShare = 43.0; // richest decile share
@@ -392,6 +411,23 @@ export default function PovertyPage() {
 
         {/* ── Section: Wealth Inequality ────────────────────────────────────── */}
         <div id="sec-wealth-inequality" className="mb-16">
+          {wealthGiniSeries.length > 0 && (
+            <ScrollReveal>
+              <LineChart
+                title="Wealth inequality, 2006–2022"
+                subtitle="Gini coefficient for total household wealth (property, pensions, financial, physical), Great Britain. Higher = more unequal. Wealth is far more unequal than income."
+                series={wealthGiniSeries}
+                yLabel="Gini coefficient"
+                source={{
+                  name: 'ONS',
+                  dataset: 'Wealth and Assets Survey (WAS), Waves 1–7',
+                  frequency: 'biennial',
+                  url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/wealthingreatbritain/wave7april2018tomarch2020',
+                }}
+              />
+            </ScrollReveal>
+          )}
+
           <h3 className="text-lg font-bold text-wiah-black mb-1">
             Wealth share by household decile, Great Britain, 2018–2020
           </h3>

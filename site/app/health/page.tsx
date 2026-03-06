@@ -166,6 +166,31 @@ interface TalkingTherapiesData {
   };
 }
 
+interface WaitDeprivationPoint {
+  quintile: number;
+  label: string;
+  medianWaitWeeks: number;
+  over52WeeksPct: number;
+}
+
+interface WaitGapPoint {
+  year: number;
+  gapWeeks: number;
+}
+
+interface WaitTotalPoint {
+  year: number;
+  waitingMillions: number;
+}
+
+interface WaitingInequalityData {
+  national: {
+    waitByDeprivation: { data: WaitDeprivationPoint[] };
+    deprivationGap: { timeSeries: WaitGapPoint[] };
+    totalWaitingList: { timeSeries: WaitTotalPoint[] };
+  };
+}
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function isoToDate(s: string): Date {
@@ -189,6 +214,7 @@ export default function HealthPage() {
   const [aeData, setAeData] = useState<AeData | null>(null);
   const [dentalData, setDentalData] = useState<DentalData | null>(null);
   const [talkingTherapiesData, setTalkingTherapiesData] = useState<TalkingTherapiesData | null>(null);
+  const [inequalityData, setInequalityData] = useState<WaitingInequalityData | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
@@ -227,6 +253,10 @@ export default function HealthPage() {
     fetch('/data/talking-therapies/talking_therapies.json')
       .then(r => r.json())
       .then(setTalkingTherapiesData)
+      .catch(console.error);
+    fetch('/data/nhs-waiting-list-inequality/waiting_inequality.json')
+      .then(r => r.json())
+      .then(setInequalityData)
       .catch(console.error);
   }, []);
 
@@ -549,6 +579,32 @@ export default function HealthPage() {
       }]
     : [];
 
+  // ── Waiting list inequality series ──────────────────────────────────────
+
+  const deprivationGapSeries: Series[] = inequalityData
+    ? [{
+        id: 'deprivation-gap',
+        label: 'Gap in median wait (most vs least deprived, weeks)',
+        colour: '#E63946',
+        data: inequalityData.national.deprivationGap.timeSeries.map(d => ({
+          date: new Date(d.year, 0, 1),
+          value: d.gapWeeks,
+        })),
+      }]
+    : [];
+
+  const totalWaitingListSeries: Series[] = inequalityData
+    ? [{
+        id: 'total-waiting',
+        label: 'Total waiting list (millions)',
+        colour: '#0D1117',
+        data: inequalityData.national.totalWaitingList.timeSeries.map(d => ({
+          date: new Date(d.year, 0, 1),
+          value: d.waitingMillions,
+        })),
+      }]
+    : [];
+
   // ── Metric values ────────────────────────────────────────────────────────
 
   const latestGp = gpData?.national.timeSeries.at(-1);
@@ -621,6 +677,7 @@ export default function HealthPage() {
           { id: 'sec-ae', label: 'A&E' },
           { id: 'sec-dental', label: 'Dentistry' },
           { id: 'sec-talking-therapies', label: 'Mental Health' },
+          { id: 'sec-inequality', label: 'Inequality' },
         ]} />
 
         {/* Metric cards */}
@@ -1378,6 +1435,70 @@ export default function HealthPage() {
             />
           ) : (
             <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
+          )}
+          </ScrollReveal>
+        </section>
+
+        {/* ── Waiting List Inequality ────────────────────────────────────── */}
+        <section id="sec-inequality" className="mb-12">
+          <ScrollReveal>
+          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Waiting List Inequality</h2>
+          <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl mb-6">
+            The NHS waiting list is not experienced equally. People in the most deprived areas wait
+            around 4 weeks longer than those in the least deprived — a gap that has doubled since
+            2019 as the backlog grew. The inequality is structural: more deprived areas have higher
+            rates of complex conditions and fewer alternatives to NHS care.
+          </p>
+
+          {inequalityData && inequalityData.national.waitByDeprivation.data.length > 0 && (
+            <div className="mb-12">
+              <h3 className="text-lg font-bold text-wiah-black mb-1">
+                Median wait by deprivation quintile, 2024
+              </h3>
+              <p className="text-sm text-wiah-mid font-mono mb-6">
+                Weeks from referral to treatment. England. 1 = most deprived, 5 = least deprived.
+              </p>
+              <div className="space-y-2">
+                {inequalityData.national.waitByDeprivation.data.map(q => {
+                  const max = Math.max(...inequalityData.national.waitByDeprivation.data.map(d => d.medianWaitWeeks));
+                  const colour = q.quintile <= 2 ? '#E63946' : q.quintile === 3 ? '#F4A261' : '#2A9D8F';
+                  return (
+                    <div key={q.quintile} className="flex items-center gap-3">
+                      <span className="text-xs text-wiah-black w-36 shrink-0">{q.label}</span>
+                      <div className="flex-1 bg-wiah-light rounded h-3">
+                        <div className="h-3 rounded" style={{ width: `${(q.medianWaitWeeks / max) * 100}%`, backgroundColor: colour }} />
+                      </div>
+                      <span className="font-mono text-xs font-bold w-16 text-right" style={{ color: colour }}>
+                        {q.medianWaitWeeks}wks
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="font-mono text-[11px] text-wiah-mid mt-3">
+                Source: NHS England, Waiting List Inequality Analysis, 2024. IMD quintile by patient residence.
+              </p>
+            </div>
+          )}
+
+          {deprivationGapSeries.length > 0 ? (
+            <LineChart
+              title="Deprivation gap in NHS waiting times, 2019–2024"
+              subtitle="Difference in median wait weeks between most and least deprived quintiles, England."
+              series={deprivationGapSeries}
+              annotations={[
+                { date: new Date(2020, 2), label: '2020: COVID-19' },
+              ]}
+              yLabel="Weeks"
+              source={{
+                name: 'NHS England',
+                dataset: 'Waiting List Inequality Analysis',
+                frequency: 'annual',
+                url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/',
+              }}
+            />
+          ) : (
+            <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
           )}
           </ScrollReveal>
         </section>
