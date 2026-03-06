@@ -108,7 +108,7 @@ export default function TaxEvasionPage() {
               polarity="up-is-bad"
               changeText="2022/23 · 4.8% of tax liabilities · Exceeds entire policing budget · Rising in absolute terms since 2020"
               sparklineData={[33, 33, 33, 35, 35, 32, 36, 36, 39.8]}
-              onExpand={() => {}}
+              href="#sec-gap"
             />
             <MetricCard
               label="Criminal prosecutions for tax fraud"
@@ -117,7 +117,7 @@ export default function TaxEvasionPage() {
               polarity="up-is-good"
               changeText="2023/24 · Down 70%+ from 1,165 in 2014/15 · HMRC enforcement capacity reduced"
               sparklineData={[1165, 1020, 870, 730, 620, 510, 420, 380, 320]}
-              onExpand={() => {}}
+              href="#sec-gap"
             />
             <MetricCard
               label="HMRC compliance yield"
@@ -126,7 +126,7 @@ export default function TaxEvasionPage() {
               polarity="up-is-good"
               changeText="2023/24 · £18 returned per £1 spent · Self-financing investment case · Staff cuts limit expansion"
               sparklineData={[28, 29, 30, 30, 31, 30, 32, 33, 34]}
-              onExpand={() => {}}
+              href="#sec-gap"
             />
           </div>
         </ScrollReveal>

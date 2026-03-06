@@ -106,7 +106,7 @@ export default function ArtsFundingPage() {
               changeText="£700m in 2010 &rarr; £520m in 2024 · 14 years of decline"
               sparklineData={[700, 680, 650, 620, 595, 570, 545, 530]}
               source="Arts Council England · Annual Reports 2010–2024"
-              onExpand={() => {}}
+              href="#sec-ace"
             />
             <MetricCard
               label="Local authority arts spending (real terms vs 2010)"
@@ -116,7 +116,7 @@ export default function ArtsFundingPage() {
               changeText="£1.4bn in 2010/11 &rarr; £630m in 2023/24 · 800+ libraries closed"
               sparklineData={[1.4, 1.3, 1.2, 1.1, 1.0, 0.9, 0.75, 0.65]}
               source="MHCLG · Revenue Outturn (RO) Returns 2024"
-              onExpand={() => {}}
+              href="#sec-ace"
             />
             <MetricCard
               label="Arts organisations losing all ACE funding 2023"
@@ -126,7 +126,7 @@ export default function ArtsFundingPage() {
               changeText="Portfolio rebalancing · English Touring Opera, LPO among those affected"
               sparklineData={[5, 8, 12, 20, 35, 40, 80, 140]}
               source="Arts Council England · National Portfolio 2023–2026"
-              onExpand={() => {}}
+              href="#sec-ace"
             />
           </div>
         </ScrollReveal>

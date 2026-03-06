@@ -131,7 +131,7 @@ export default function InfantMortalityPage() {
               polarity="up-is-bad"
               changeText="Per 1,000 live births · 2022 · Rate stalled since 2014 · Worse than France, Germany &amp; Sweden"
               sparklineData={[4.1, 4.0, 3.9, 3.9, 3.8, 3.8, 3.8, 3.7, 3.6, 3.6, 3.6]}
-              onExpand={() => {}}
+              href="#sec-trend"
             />
             <MetricCard
               label="Stillbirths (England &amp; Wales)"
@@ -140,7 +140,7 @@ export default function InfantMortalityPage() {
               polarity="up-is-bad"
               changeText="Per year · 2022 · Down from 4,100 in 2012 · Halve by 2025 target — on track"
               sparklineData={[4100, 4000, 3900, 3800, 3700, 3600, 3500, 3400, 3200, 3100, 3000]}
-              onExpand={() => {}}
+              href="#sec-trend"
             />
             <MetricCard
               label="Deprivation gap (most vs least deprived)"
@@ -149,7 +149,7 @@ export default function InfantMortalityPage() {
               polarity="up-is-bad"
               changeText="2022 · Most deprived: 5.4 per 1,000 · Least deprived: 2.2 per 1,000 · Ethnic disparities also significant"
               sparklineData={[2.5, 2.5, 2.5, 2.5, 2.4, 2.4, 2.5, 2.5, 2.5, 2.5, 2.5]}
-              onExpand={() => {}}
+              href="#sec-trend"
             />
           </div>
         </ScrollReveal>

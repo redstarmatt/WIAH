@@ -105,7 +105,7 @@ export default function BorderSecurityPage() {
               changeText="Up 25% on 2023 · 70+ deaths since 2018"
               sparklineData={[299, 1843, 8466, 28526, 45755, 29437, 36816]}
               source="Home Office · Irregular Migration Statistics, 2025"
-              onExpand={() => {}}
+              href="#sec-crossings"
             />
             <MetricCard
               label="Asylum decision backlog"
@@ -115,7 +115,7 @@ export default function BorderSecurityPage() {
               changeText="Down from 175K peak · still 2x pre-pandemic levels"
               sparklineData={[38200, 42100, 52400, 76900, 132400, 175400, 118300, 98600]}
               source="Home Office · Immigration Statistics, 2025"
-              onExpand={() => {}}
+              href="#sec-crossings"
             />
             <MetricCard
               label="Enforced returns"
@@ -126,7 +126,7 @@ export default function BorderSecurityPage() {
               changeText="Down from 12,000+ a decade ago · historic low"
               sparklineData={[12400, 10800, 8200, 6100, 4800, 3600, 3200, 2950]}
               source="Home Office · Returns Statistics, 2025"
-              onExpand={() => {}}
+              href="#sec-crossings"
             />
           </div>
         </ScrollReveal>

@@ -150,7 +150,7 @@ export default function AmbulanceRuralPage() {
               polarity="up-is-bad"
               changeText="vs 22 min urban · 18-min target missed"
               sparklineData={[35, 36, 40, 45, 48, 45]}
-              onExpand={() => {}}
+              href="#sec-response"
             />
             <MetricCard
               label="Rural Cat 1 target achievement"
@@ -160,7 +160,7 @@ export default function AmbulanceRuralPage() {
               polarity="up-is-good"
               changeText="Target: 90% within 7 mins · Down from 74% in 2019"
               sparklineData={[74, 71, 65, 58, 60, 63]}
-              onExpand={() => {}}
+              href="#sec-response"
             />
             <MetricCard
               label="Longest rural trust Cat 2 average"
@@ -170,7 +170,7 @@ export default function AmbulanceRuralPage() {
               polarity="up-is-bad"
               changeText="South Western Ambulance Service · 2024"
               sparklineData={[38, 40, 43, 47, 50, 48]}
-              onExpand={() => {}}
+              href="#sec-response"
             />
           </div>
         </ScrollReveal>

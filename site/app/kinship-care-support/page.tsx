@@ -151,7 +151,7 @@ export default function KinshipCareSupportPage() {
               polarity="up-is-good"
               changeText="+18% since 2015 · Three times as many as in foster care"
               sparklineData={[152, 155, 158, 161, 165, 168, 170, 174, 177, 180]}
-              onExpand={() => {}}
+              href="#sec-numbers"
             />
             <MetricCard
               label="Kinship carers in poverty"
@@ -161,7 +161,7 @@ export default function KinshipCareSupportPage() {
               polarity="up-is-bad"
               changeText="Up from 35% in 2019 · Most receive no financial support"
               sparklineData={[35, 37, 38, 40, 42, 44]}
-              onExpand={() => {}}
+              href="#sec-numbers"
             />
             <MetricCard
               label="Special Guardianship Orders (annual)"
@@ -171,7 +171,7 @@ export default function KinshipCareSupportPage() {
               polarity="up-is-good"
               changeText="Record high · Courts increasingly using SGOs over adoption"
               sparklineData={[4200, 4400, 4600, 4800, 5000, 5100, 5200, 5300, 5400, 5500]}
-              onExpand={() => {}}
+              href="#sec-numbers"
             />
           </div>
         </ScrollReveal>

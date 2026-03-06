@@ -174,7 +174,7 @@ export default function MilitaryHousingPage() {
               polarity="up-is-bad"
               changeText="Up from 32% in 2018 · Annington Homes contract blamed"
               sparklineData={standardSparkline}
-              onExpand={() => {}}
+              href="#sec-standard"
             />
             <MetricCard
               label="MOD housing maintenance backlog"
@@ -184,7 +184,7 @@ export default function MilitaryHousingPage() {
               polarity="up-is-bad"
               changeText="Up from £480M in 2018 · Annington rents absorb maintenance funds"
               sparklineData={backlogSparkline}
-              onExpand={() => {}}
+              href="#sec-standard"
             />
             <MetricCard
               label="Annual housing complaints from families"
@@ -194,7 +194,7 @@ export default function MilitaryHousingPage() {
               polarity="up-is-bad"
               changeText="Record high · Mould, damp, heating failures most common"
               sparklineData={complaintsSparkline}
-              onExpand={() => {}}
+              href="#sec-standard"
             />
           </div>
         </ScrollReveal>

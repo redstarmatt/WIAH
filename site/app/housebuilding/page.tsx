@@ -120,7 +120,7 @@ export default function HousebuildingPage() {
               polarity="up-is-good"
               changeText="2022/23 · Target: 300K/year · Not met since 1960s · Labour target: 1.5M homes in 5 years"
               sparklineData={[135, 142, 155, 163, 183, 195, 213, 244, 211, 232, 234]}
-              onExpand={() => {}}
+              href="#sec-completions"
             />
             <MetricCard
               label="Planning permissions granted (residential)"
@@ -129,7 +129,7 @@ export default function HousebuildingPage() {
               polarity="up-is-good"
               changeText="2022/23 · Down 14% from 2018/19 peak · NIMBY objections · Viability assessments blocking delivery"
               sparklineData={[299, 323, 325, 317, 269, 298, 256]}
-              onExpand={() => {}}
+              href="#sec-completions"
             />
             <MetricCard
               label="New social/council homes built"
@@ -138,7 +138,7 @@ export default function HousebuildingPage() {
               polarity="up-is-good"
               changeText="2022/23 share · Down from 40% in 1970s · Right to Buy sold 2M council homes since 1980 · Housing associations filling gap slowly"
               sparklineData={[15, 14, 12, 11, 10, 9, 8, 8, 7, 7, 7]}
-              onExpand={() => {}}
+              href="#sec-completions"
             />
           </div>
         </ScrollReveal>

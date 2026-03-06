@@ -93,7 +93,7 @@ export default function SocialMobilityPage() {
               polarity="up-is-good"
               changeText="vs 60% of population from WC backgrounds"
               sparklineData={[43, 42, 41, 40, 40, 39, 39, 39, 39]}
-              onExpand={() => {}}
+              href="#sec-professional"
             />
             <MetricCard
               label="FSM pupils reaching higher education"
@@ -102,7 +102,7 @@ export default function SocialMobilityPage() {
               polarity="up-is-good"
               changeText="vs 50% for non-FSM peers"
               sparklineData={[22, 24, 25, 26, 27, 27, 28, 28, 29]}
-              onExpand={() => {}}
+              href="#sec-professional"
             />
             <MetricCard
               label="Class pay gap (professional roles)"
@@ -112,7 +112,7 @@ export default function SocialMobilityPage() {
               polarity="up-is-bad"
               changeText="People from WC backgrounds earn £6.8K less in same role"
               sparklineData={[4000, 4500, 5000, 5500, 6000, 6400, 6800]}
-              onExpand={() => {}}
+              href="#sec-professional"
             />
           </div>
         </ScrollReveal>

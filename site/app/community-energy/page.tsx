@@ -175,7 +175,7 @@ export default function CommunityEnergyPage() {
               polarity="up-is-good"
               changeText="+80% since 2020 · Could reach 2,000 MW by 2030 with policy support"
               sparklineData={capacitySparkline}
-              onExpand={() => {}}
+              href="#sec-capacity"
             />
             <MetricCard
               label="Community energy projects (UK)"
@@ -185,7 +185,7 @@ export default function CommunityEnergyPage() {
               polarity="up-is-good"
               changeText="Up from 320 in 2018 · Solar dominant · Wind growing"
               sparklineData={projectSparkline}
-              onExpand={() => {}}
+              href="#sec-capacity"
             />
             <MetricCard
               label="Annual community energy investment"
@@ -195,7 +195,7 @@ export default function CommunityEnergyPage() {
               polarity="up-is-good"
               changeText="Record investment in 2025 · But grid connection costs rising"
               sparklineData={investmentSparkline}
-              onExpand={() => {}}
+              href="#sec-capacity"
             />
           </div>
         </ScrollReveal>

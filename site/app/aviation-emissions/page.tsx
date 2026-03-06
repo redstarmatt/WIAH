@@ -88,7 +88,7 @@ export default function AviationEmissionsPage() {
               changeText="Includes contrail and NOx effects — CO2 alone is around 4%"
               sparklineData={[7.1, 7.2, 7.3, 7.4, 7.5, 2.9, 3.8, 6.8, 7.5]}
               source="DESNZ — UK GHG national statistics (with radiative forcing)"
-              onExpand={() => {}}
+              href="#sec-emissions"
             />
             <MetricCard
               label="Annual aviation tax exemption"
@@ -98,7 +98,7 @@ export default function AviationEmissionsPage() {
               changeText="No fuel duty, no VAT on international flights — APD raises £3.7bn"
               sparklineData={[5.5, 5.8, 6.0, 6.3, 6.5, 6.7, 6.9, 7.0]}
               source="HMRC — Tax expenditures and ready reckoners 2024"
-              onExpand={() => {}}
+              href="#sec-emissions"
             />
             <MetricCard
               label="UK airport passengers (2023)"
@@ -108,7 +108,7 @@ export default function AviationEmissionsPage() {
               changeText="Fully recovered from COVID — projected 370M by 2050"
               sparklineData={[240, 253, 265, 280, 175, 120, 200, 230]}
               source="CAA — UK aviation activity statistics 2024"
-              onExpand={() => {}}
+              href="#sec-emissions"
             />
           </div>
         </ScrollReveal>

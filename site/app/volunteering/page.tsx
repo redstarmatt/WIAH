@@ -101,7 +101,7 @@ export default function VolunteeringPage() {
               changeText="Down from 27% in 2015 · Pandemic accelerated pre-existing decline"
               sparklineData={[27.0, 26.1, 24.8, 23.3, 23.1, 17.2, 16.3, 19.4, 20.1]}
               source="DCMS · Community Life Survey 2023"
-              onExpand={() => {}}
+              href="#sec-volunteering"
             />
             <MetricCard
               label="Charity sector income (real terms)"
@@ -111,7 +111,7 @@ export default function VolunteeringPage() {
               changeText="Stagnated in real terms · Demand for services surging"
               sparklineData={[54.2, 55.1, 55.8, 56.4, 57.0, 51.3, 53.8, 55.2, 54.8]}
               source="NCVO · UK Civil Society Almanac 2023"
-              onExpand={() => {}}
+              href="#sec-volunteering"
             />
             <MetricCard
               label="Charities reporting volunteer decline"
@@ -121,7 +121,7 @@ export default function VolunteeringPage() {
               changeText="2019–2023 · Older volunteers disproportionately not returning"
               sparklineData={[15, 18, 22, 28, 35, 40]}
               source="NCVO · Charity Tracker Survey 2023"
-              onExpand={() => {}}
+              href="#sec-volunteering"
             />
           </div>
         </ScrollReveal>

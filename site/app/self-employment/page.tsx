@@ -113,7 +113,7 @@ export default function SelfEmploymentPage() {
               polarity="up-is-good"
               changeText="2024 · Down from 4.93M peak in 2019 · 700K left during COVID · Most have not returned"
               sparklineData={[4.77, 4.80, 4.86, 4.85, 4.93, 4.31, 4.25, 4.24, 4.26, 4.29]}
-              onExpand={() => {}}
+              href="#sec-count"
             />
             <MetricCard
               label="Median weekly earnings (self-employed)"
@@ -122,7 +122,7 @@ export default function SelfEmploymentPage() {
               polarity="up-is-good"
               changeText="2024 · Employees: £535/wk · 42% earnings gap · 1 in 3 below Living Wage hourly"
               sparklineData={[280, 275, 285, 290, 300, 256, 275, 290, 300, 310]}
-              onExpand={() => {}}
+              href="#sec-count"
             />
             <MetricCard
               label="Self-employed with a pension"
@@ -131,7 +131,7 @@ export default function SelfEmploymentPage() {
               polarity="up-is-good"
               changeText="2024 · Employees: 79% · Auto-enrolment does not apply · Major retirement income risk"
               sparklineData={[14, 14, 15, 15, 15, 15, 16, 16]}
-              onExpand={() => {}}
+              href="#sec-count"
             />
           </div>
         </ScrollReveal>

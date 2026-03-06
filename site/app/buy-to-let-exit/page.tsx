@@ -140,7 +140,7 @@ export default function BuyToLetExitPage() {
               polarity="up-is-bad"
               changeText="Selling faster than entering · Section 24 tax change main driver"
               sparklineData={[2.66, 2.68, 2.69, 2.64, 2.58, 2.54, 2.53, 2.52]}
-              onExpand={() => {}}
+              href="#sec-landlords"
             />
             <MetricCard
               label="Buy-to-let mortgage deals available"
@@ -150,7 +150,7 @@ export default function BuyToLetExitPage() {
               polarity="up-is-good"
               changeText="Down from 6,200 at peak 2022 · Higher rates forcing exits"
               sparklineData={[2.1, 3.2, 4.8, 6.2, 5.4, 4.8, 4.2, 3.8, 3.5]}
-              onExpand={() => {}}
+              href="#sec-landlords"
             />
             <MetricCard
               label="Private rental listings vs 2020"
@@ -160,7 +160,7 @@ export default function BuyToLetExitPage() {
               polarity="up-is-bad"
               changeText="Fewer properties to rent · Rents rising as supply shrinks"
               sparklineData={[100, 92, 84, 78, 71]}
-              onExpand={() => {}}
+              href="#sec-landlords"
             />
           </div>
         </ScrollReveal>

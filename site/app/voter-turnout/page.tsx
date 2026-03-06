@@ -103,7 +103,7 @@ export default function VoterTurnoutPage() {
               polarity="up-is-good"
               changeText="Lowest since 2001 (59.4%)"
               sparklineData={[59.4, 61.4, 65.1, 66.1, 68.8, 67.3, 59.7]}
-              onExpand={() => {}}
+              href="#sec-charts"
             />
             <MetricCard
               label="18–24 year old turnout (2024)"
@@ -113,7 +113,7 @@ export default function VoterTurnoutPage() {
               polarity="up-is-good"
               changeText="vs 71% for 65&plus; voters"
               sparklineData={[30, 34, 38, 40, 42, 43]}
-              onExpand={() => {}}
+              href="#sec-charts"
             />
             <MetricCard
               label="Local election turnout (England avg)"
@@ -123,7 +123,7 @@ export default function VoterTurnoutPage() {
               polarity="up-is-good"
               changeText="Down from 42% in 2000"
               sparklineData={[42, 34, 37, 37, 35, 42, 32, 36, 33, 34, 35, 31, 32]}
-              onExpand={() => {}}
+              href="#sec-charts"
             />
           </div>
         </div>

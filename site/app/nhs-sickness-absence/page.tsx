@@ -137,7 +137,7 @@ export default function NHSSicknessAbsencePage() {
               polarity={'up-is-bad' as const}
               changeText="2022/23 · Up from 4.2% in 2015 · Target: 3.5%"
               sparklineData={[4.23, 4.16, 4.22, 4.19, 4.58, 4.86, 5.22, 5.64, 5.28]}
-              onExpand={() => {}}
+              href="#sec-absence-rate"
             />
             <MetricCard
               label="Days lost per year"
@@ -146,7 +146,7 @@ export default function NHSSicknessAbsencePage() {
               polarity={'up-is-bad' as const}
               changeText="2022/23 · Up from 22M in 2015"
               sparklineData={[22.0, 21.8, 22.4, 22.9, 23.8, 25.1, 26.4, 27.8, 26.9]}
-              onExpand={() => {}}
+              href="#sec-absence-rate"
             />
             <MetricCard
               label="Estimated annual cost"
@@ -156,7 +156,7 @@ export default function NHSSicknessAbsencePage() {
               polarity={'up-is-bad' as const}
               changeText="2022/23 · Direct cost to NHS England"
               sparklineData={[2.1, 2.2, 2.3, 2.4, 2.6, 2.8, 3.0, 3.3, 3.1]}
-              onExpand={() => {}}
+              href="#sec-absence-rate"
             />
           </div>
         </ScrollReveal>

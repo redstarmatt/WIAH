@@ -109,7 +109,7 @@ export default function PensionDeficitsPage() {
               polarity="up-is-bad"
               changeText="Down from 22M in 2012 · Auto-enrolment works · Self-employed still excluded"
               sparklineData={[22, 20, 18, 16, 14, 13, 13, 14]}
-              onExpand={() => {}}
+              href="#sec-db-funding"
             />
             <MetricCard
               label="State pension as % of earnings"
@@ -118,7 +118,7 @@ export default function PensionDeficitsPage() {
               polarity="up-is-good"
               changeText="OECD average is 50% · One of the lowest replacement rates in the developed world"
               sparklineData={[26, 26, 27, 27, 28, 28, 28, 28]}
-              onExpand={() => {}}
+              href="#sec-db-funding"
             />
             <MetricCard
               label="Pension participation (auto-enrolled)"
@@ -127,7 +127,7 @@ export default function PensionDeficitsPage() {
               polarity="up-is-good"
               changeText="Up from 47% in 2012 · 11 million newly saving · Historic achievement"
               sparklineData={[47, 58, 68, 74, 79, 83, 86, 88]}
-              onExpand={() => {}}
+              href="#sec-db-funding"
             />
           </div>
         </ScrollReveal>

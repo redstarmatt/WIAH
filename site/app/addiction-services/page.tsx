@@ -111,7 +111,7 @@ export default function AddictionServicesPage() {
               polarity={'up-is-bad' as const}
               changeText="2022 · Highest ever recorded · Highest rate in Europe"
               sparklineData={[3346, 3674, 3756, 4359, 4359, 2996, 4561, 4907]}
-              onExpand={() => {}}
+              href="#sec-deaths"
             />
             <MetricCard
               label="People in drug/alcohol treatment"
@@ -120,7 +120,7 @@ export default function AddictionServicesPage() {
               polarity={'up-is-good' as const}
               changeText="2022/23 · Down from 311K in 2010/11"
               sparklineData={[311, 309, 299, 293, 289, 279, 282, 289]}
-              onExpand={() => {}}
+              href="#sec-deaths"
             />
             <MetricCard
               label="Treatment funding cut (real terms)"
@@ -130,7 +130,7 @@ export default function AddictionServicesPage() {
               polarity={'up-is-good' as const}
               changeText="2013–2020 · Local authority public health"
               sparklineData={[100, 96, 92, 88, 82, 76, 70, 64]}
-              onExpand={() => {}}
+              href="#sec-deaths"
             />
           </div>
         </ScrollReveal>

@@ -143,7 +143,7 @@ export default function WaterLeadPipesPage() {
               polarity="up-is-bad"
               changeText="Estimate · Pre-1970 properties · Soft water areas worst · No safe level (WHO 2022)"
               sparklineData={[6.0, 5.9, 5.8, 5.7, 5.6]}
-              onExpand={() => {}}
+              href="#sec-replacement"
             />
             <MetricCard
               label="Lead pipes replaced per year"
@@ -153,7 +153,7 @@ export default function WaterLeadPipesPage() {
               polarity="up-is-good"
               changeText="+60% since 2020 · But 83 years to complete at this rate · Target: 600,000/year"
               sparklineData={[45, 52, 58, 65, 72]}
-              onExpand={() => {}}
+              href="#sec-replacement"
             />
             <MetricCard
               label="Years to complete replacement"
@@ -163,7 +163,7 @@ export default function WaterLeadPipesPage() {
               polarity="up-is-bad"
               changeText="At current pace · Down from 130 years in 2020 · Still decades away"
               sparklineData={[130, 115, 103, 92, 83]}
-              onExpand={() => {}}
+              href="#sec-replacement"
             />
           </div>
         </ScrollReveal>

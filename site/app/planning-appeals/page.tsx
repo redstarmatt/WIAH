@@ -163,7 +163,7 @@ export default function PlanningAppealsPage() {
               polarity="up-is-bad"
               changeText="Up from 33% in 2015 · Developers win £1bn in permissions pa"
               sparklineData={[33, 34, 35, 36, 36, 37, 38, 40, 42, 43]}
-              onExpand={() => {}}
+              href="#sec-appeals"
             />
             <MetricCard
               label="Permitted homes unbuilt"
@@ -173,7 +173,7 @@ export default function PlanningAppealsPage() {
               polarity="up-is-bad"
               changeText="Planning permission granted but not built · Land banking debate"
               sparklineData={[180, 200, 220, 240, 250, 255, 260]}
-              onExpand={() => {}}
+              href="#sec-appeals"
             />
             <MetricCard
               label="Average planning decision time"
@@ -183,7 +183,7 @@ export default function PlanningAppealsPage() {
               polarity="up-is-bad"
               changeText="Up from 9.2 weeks in 2018 · LPA capacity shortfall"
               sparklineData={[9.2, 9.5, 10.1, 10.8, 11.2, 11.5, 11.8]}
-              onExpand={() => {}}
+              href="#sec-appeals"
             />
           </div>
         </ScrollReveal>

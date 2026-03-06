@@ -162,7 +162,7 @@ export default function VoterIDImpactPage() {
               polarity="up-is-bad"
               changeText="First elections with mandatory photo ID · ~4,000 unable to vote · Disproportionate impact on young"
               sparklineData={[14000, 8000]}
-              onExpand={() => {}}
+              href="#sec-turned-away"
             />
             <MetricCard
               label="18\u201324s without accepted ID"
@@ -172,7 +172,7 @@ export default function VoterIDImpactPage() {
               polarity="up-is-bad"
               changeText="vs 5% of older voters · Passport and driving licence ownership lowest among young"
               sparklineData={[14, 11, 12, 9, 5]}
-              onExpand={() => {}}
+              href="#sec-turned-away"
             />
             <MetricCard
               label="Aware of which ID accepted"
@@ -182,7 +182,7 @@ export default function VoterIDImpactPage() {
               polarity="up-is-good"
               changeText="Up from 48% at 2023 locals · Electoral Commission communications improved"
               sparklineData={[48, 62]}
-              onExpand={() => {}}
+              href="#sec-turned-away"
             />
           </div>
         </ScrollReveal>
