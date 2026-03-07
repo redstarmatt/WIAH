@@ -6,8 +6,8 @@ import { TOPICS, getNextTopic, getMetricStatus, STATUS_COLOUR } from '@/lib/topi
 
 const SHOW_THRESHOLD = 0.90;
 const HIDE_THRESHOLD = 0.84;
-const AUTO_ADVANCE_MS = 6000;
-const SCROLL_IDLE_MS = 1500;
+const AUTO_ADVANCE_MS = 3000;
+const SCROLL_IDLE_MS = 800;
 
 export default function NextTopicBar() {
   const pathname = usePathname();
