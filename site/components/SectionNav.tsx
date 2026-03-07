@@ -12,9 +12,40 @@ interface SectionNavProps {
 }
 
 export default function SectionNav({ sections }: SectionNavProps) {
-  const [active, setActive] = useState(sections[0]?.id ?? '');
+  const [active, setActive] = useState(() => {
+    // Initialise from URL hash if it matches a known section
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.slice(1);
+      if (hash && sections.some(s => s.id === hash)) return hash;
+    }
+    return sections[0]?.id ?? '';
+  });
   const pillRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const navRef = useRef<HTMLDivElement>(null);
+
+  // On mount: if the URL contains a hash matching a section, scroll to it.
+  // Retry multiple times because the page may still be loading async content
+  // when this component first mounts, causing the element to have no height yet.
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (!hash || !sections.some(s => s.id === hash)) return;
+
+    setActive(hash);
+
+    const scrollToHash = () => {
+      const el = document.getElementById(hash);
+      if (!el) return;
+      const offset = el.getBoundingClientRect().top + window.scrollY - 96;
+      window.scrollTo({ top: offset, behavior: 'instant' });
+    };
+
+    // Attempt at 0, 200ms, 500ms, 1000ms to cover progressive data-loading
+    const t0 = setTimeout(scrollToHash, 0);
+    const t1 = setTimeout(scrollToHash, 200);
+    const t2 = setTimeout(scrollToHash, 500);
+    const t3 = setTimeout(scrollToHash, 1000);
+    return () => { clearTimeout(t0); clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Scrollspy: find whichever section's top is closest to (but above) the 30% viewport mark.
   const onScroll = useCallback(() => {
