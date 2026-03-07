@@ -62,7 +62,9 @@ export default function NextTopicBar() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    // Do NOT call handleScroll() on mount — if the page loaded at the bottom
+    // (e.g. via a hash link from search), we must not auto-advance immediately.
+    // The bar only appears after the user actively scrolls to the bottom.
     return () => {
       window.removeEventListener('scroll', handleScroll);
       if (scrollIdleTimerRef.current) clearTimeout(scrollIdleTimerRef.current);
