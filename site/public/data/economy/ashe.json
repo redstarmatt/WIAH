@@ -1,6 +1,6 @@
 {
   "topic": "ashe",
-  "lastUpdated": "2026-03-03",
+  "lastUpdated": "2026-03-09",
   "national": [
     {
       "year": 2002,
@@ -251,7 +251,7 @@
         "name": "ONS",
         "dataset": "Annual Survey of Hours and Earnings (ASHE), Table 1.1a",
         "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/allemployeesashetable1",
-        "retrieved": "2026-03-03",
+        "retrieved": "2026-03-09",
         "frequency": "annual"
       }
     ],

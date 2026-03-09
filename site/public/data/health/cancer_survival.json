@@ -471,7 +471,7 @@
         "dataset": "Cancer survival in England \u2014 adults diagnosed 2013\u20132017",
         "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/cancersurvivalratescancersurvivalinenglandadultsdiagnosed",
         "frequency": "annual (with ~2yr publication lag)",
-        "retrieved": "2026-03-03T07:34:00.740120"
+        "retrieved": "2026-03-09T07:57:12.602272"
       }
     ],
     "methodology": "Net survival (age-standardised) using the Pohar Perme estimator. 5-year rolling cohort periods. Persons where available; sex-specific for Breast (Women), Prostate (Men), etc.",

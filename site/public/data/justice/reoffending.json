@@ -197,7 +197,7 @@
         "dataset": "Proven Reoffending Statistics",
         "url": "https://www.gov.uk/government/collections/proven-reoffending-statistics",
         "frequency": "quarterly (annual cohorts)",
-        "retrieved": "2026-03-03T07:35:58.002470"
+        "retrieved": "2026-03-09T07:57:25.640292"
       }
     ],
     "methodology": "A proven reoffence is any offence committed in a one-year follow-up period that results in a court conviction, caution, reprimand or warning within a further six-month waiting period. Rate = reoffenders / offenders \u00d7 100.",

@@ -319,7 +319,7 @@
         "dataset": "LEO Graduate and Postgraduate Outcomes (Tax year 2022-23)",
         "url": "https://explore-education-statistics.service.gov.uk/find-statistics/leo-graduate-and-postgraduate-outcomes",
         "frequency": "annual (by tax year)",
-        "retrieved": "2026-03-03T07:38:21.245115"
+        "retrieved": "2026-03-09T07:57:31.472117"
       }
     ],
     "methodology": "Longitudinal Education Outcomes (LEO) data links education records to HMRC tax and DWP benefits data. Sustained employment = employed/self-employed for at least 1 day in 5 of 6 months. Earnings are median annualised gross pay.",

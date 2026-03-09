@@ -1,7 +1,7 @@
 {
   "topic": "housing",
   "subtopic": "social-housing",
-  "lastUpdated": "2026-03-03",
+  "lastUpdated": "2026-03-09",
   "summary": {
     "latestYear": 2024,
     "socialRentedStock": 4205365,
@@ -588,14 +588,14 @@
         "name": "DLUHC",
         "dataset": "Live Table 104: Dwelling stock by tenure, England",
         "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-dwelling-stock-including-vacants",
-        "retrieved": "2026-03-03",
+        "retrieved": "2026-03-09",
         "frequency": "annual"
       },
       {
         "name": "DLUHC",
         "dataset": "Live Table 213: House building completions by tenure, England",
         "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-house-building",
-        "retrieved": "2026-03-03",
+        "retrieved": "2026-03-09",
         "frequency": "quarterly"
       }
     ],

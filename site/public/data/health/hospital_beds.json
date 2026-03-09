@@ -638,7 +638,7 @@
         "dataset": "KH03 Bed Availability and Occupancy",
         "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/bed-availability-and-occupancy-kh03/",
         "frequency": "quarterly",
-        "retrieved": "2026-03-03T07:30:50.618158"
+        "retrieved": "2026-03-09T07:57:13.564011"
       }
     ],
     "methodology": "Average daily number of available and occupied overnight beds. Occupancy = occupied/available \u00d7 100. General & Acute beds are the primary measure."
