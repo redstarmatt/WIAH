@@ -24,6 +24,7 @@ export default function SectionNav({ sections }: SectionNavProps) {
   const [canScrollRight, setCanScrollRight] = useState(false);
   const pillRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const navRef = useRef<HTMLDivElement>(null);
+  const outerRef = useRef<HTMLDivElement>(null);
 
   // On mount: if the URL contains a hash matching a section, scroll to it.
   useEffect(() => {
@@ -35,7 +36,10 @@ export default function SectionNav({ sections }: SectionNavProps) {
     const scrollToHash = () => {
       const el = document.getElementById(hash);
       if (!el) return;
-      const offset = el.getBoundingClientRect().top + window.scrollY - 96;
+      // Measure the actual nav height dynamically; fall back to 96px
+      const navBottom = outerRef.current?.getBoundingClientRect().bottom ?? 96;
+      const clearance = navBottom > 10 ? navBottom + 8 : 96;
+      const offset = el.getBoundingClientRect().top + window.scrollY - clearance;
       window.scrollTo({ top: offset, behavior: 'instant' });
     };
 
@@ -69,7 +73,7 @@ export default function SectionNav({ sections }: SectionNavProps) {
   // Scrollspy: find whichever section's top is closest to (but above) the
   // sticky nav height. This activates a section only once it has scrolled
   // past the nav bar, preventing premature tab switching.
-  const THRESHOLD = 100; // px — matches the combined sticky nav height
+  const THRESHOLD = 110; // px — matches the combined sticky nav height (53-59 + 41 + 8 buffer)
   const onScroll = useCallback(() => {
     let best: string | null = null;
     let bestDist = Infinity;
@@ -112,7 +116,10 @@ export default function SectionNav({ sections }: SectionNavProps) {
     e.stopPropagation();
     const el = document.getElementById(id);
     if (!el) return;
-    const target = el.getBoundingClientRect().top + window.scrollY - 96;
+    // Dynamically measure the full sticky nav height (TopicNav + SectionNav)
+    const navBottom = outerRef.current?.getBoundingClientRect().bottom ?? 96;
+    const clearance = navBottom + 8;
+    const target = el.getBoundingClientRect().top + window.scrollY - clearance;
     const start = window.scrollY;
     const delta = target - start;
     const duration = 300;
@@ -127,7 +134,7 @@ export default function SectionNav({ sections }: SectionNavProps) {
   };
 
   return (
-    <div className="sticky top-[48px] z-40 bg-white border-b border-wiah-border">
+    <div ref={outerRef} className="sticky top-[53px] sm:top-[59px] z-40 bg-white border-b border-wiah-border">
       {/* Left fade */}
       {canScrollLeft && (
         <div
