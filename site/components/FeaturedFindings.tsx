@@ -84,10 +84,10 @@ export default function FeaturedFindings() {
               <Link
                 key={f.topicSlug}
                 href={topic.href}
-                className="group block"
+                className="group block border-t-2 border-wiah-border pt-4 hover:border-wiah-blue transition-colors"
               >
                 <p
-                  className="font-mono text-4xl md:text-5xl font-bold leading-none"
+                  className="font-mono text-4xl md:text-5xl font-bold leading-none transition-opacity group-hover:opacity-80"
                   style={{ color: colour }}
                 >
                   {f.headline}
