@@ -1,0 +1,94 @@
+'use client';
+
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+
+  const sparkData = [80.4,79.1,77.5,75,72.9,71.4,69.9];
+  const chartSeries: Series[] = [
+    {
+      id: 'main',
+      label: 'Cervical screening coverage (England, 5-year)',
+      colour: '#E63946',
+      data: sparkData.map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'secondary',
+      label: 'HPV detected needing treatment',
+      colour: '#6B7280',
+      data: ([3.6,3.5,3.4,3.4,3.4,3.4,3.4]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+    },
+  ];
+
+export default function CervicalScreeningPage() {
+  return (
+    <>
+      <TopicNav topic="Cervical Screening" />
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Cervical Screening"
+          question="Why Has Cervical Screening Fallen to a 25-Year Low?"
+          finding="Cervical screening coverage is at its lowest since records began — 69.9% against a 75% target. Stigma, access barriers and appointment shortages are d..."
+          colour="#E63946"
+          preposition="with"
+        />
+
+        <section className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <MetricCard
+              label="Cervical screening coverage (England, 5-year)"
+              value="69.9%"
+              direction="down"
+              polarity="up-is-good"
+              changeText="25-year low · down from 80.4% in 2012"
+              sparklineData=[80.4,79.1,77.5,75,72.9,71.4,69.9]
+            />
+            <MetricCard
+              label="HPV detected needing treatment"
+              value="3.4%"
+              direction="flat"
+              polarity="up-is-bad"
+              changeText="stable · younger cohorts better protected by vaccination"
+              sparklineData=[3.6,3.5,3.4,3.4,3.4,3.4,3.4]
+            />
+          </div>
+        </section>
+
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Cervical screening coverage (England, 5-year), UK"
+              subtitle="UK data. Annotations mark key policy changes."
+              series={chartSeries}
+              yLabel="Cervical screening coverage (England, 5-year)"
+              source={{
+                name: 'ONS / NHS England / Government Statistical Service',
+                dataset: 'Cervical Screening statistics',
+                frequency: 'annual',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on Cervical Screening</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Cervical Screening in the United Kingdom: the numbers show a complex picture. Cervical screening coverage is at its lowest since records began — 69.9% against a 75% target. Stigma, access barriers and appointment shortages are driving the decline. The headline figure — 69.9% for cervical screening coverage (england, 5-year) — 25-year low · down from 80.4% in 2012.</p>
+              <p>The secondary metric tells an equally important story: hpv detected needing treatment stands at 3.4%, where stable · younger cohorts better protected by vaccination. Policy responses have been mixed, and the structural drivers of these trends require sustained attention beyond short-term interventions.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}

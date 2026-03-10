@@ -1,18 +1,18 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'How Much Wage Theft Goes Unpunished?',
-  description: '355,000 workers are paid below the National Living Wage each year, but prosecutions average just 9 per year — leaving billions in stolen wages unrecovered.',
+  title: "How Widespread Is Wage Theft in Britain?",
+  description: "An estimated 400,000 workers are paid below the National Minimum Wage each year. HMRC enforcement identifies only a fraction of violations. Named employers repaid £16.8 million in 2023 — a small fraction of estimated underpayments.",
   openGraph: {
-    title: 'How Much Wage Theft Goes Unpunished?',
-    description: '355,000 workers are paid below the National Living Wage each year, but prosecutions average just 9 per year — leaving billions in stolen wages unrecovered.',
+    title: "How Widespread Is Wage Theft in Britain?",
+    description: "An estimated 400,000 workers are paid below the National Minimum Wage each year. HMRC enforcement identifies only a fraction of violations. Named employers repaid £16.8 million in 2023 — a small fraction of estimated underpayments.",
     type: 'article',
     url: 'https://whatisactuallyhappening.uk/wage-theft',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How Much Wage Theft Goes Unpunished?',
-    description: '355,000 workers are paid below the National Living Wage each year, but prosecutions average just 9 per year — leaving billions in stolen wages unrecovered.',
+    title: "How Widespread Is Wage Theft in Britain?",
+    description: "An estimated 400,000 workers are paid below the National Minimum Wage each year. HMRC enforcement identifies only a fraction of violations. Named employers repaid £16.8 million in 2023 — a small fraction of estimated underpayments.",
   },
   alternates: {
     canonical: 'https://whatisactuallyhappening.uk/wage-theft',
