@@ -118,7 +118,6 @@ export default function ModernSlaveryPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="NRM referrals (potential victims)"
@@ -158,7 +157,7 @@ export default function ModernSlaveryPage() {
             href="#sec-trend"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: NRM referrals trend */}
         <ScrollReveal>

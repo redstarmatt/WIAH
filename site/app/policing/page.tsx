@@ -154,7 +154,6 @@ export default function PolicingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Police officers (E&W)"
@@ -187,7 +186,7 @@ export default function PolicingPage() {
             href="#sec-officers"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

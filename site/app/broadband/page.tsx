@@ -165,7 +165,6 @@ export default function BroadbandPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Median download speed"
@@ -225,7 +224,7 @@ export default function BroadbandPage() {
             baseline="6.5% of rural homes can't get 30 Mbps — six times worse than urban areas (1%)"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Speeds */}
         <div id="sec-speeds">

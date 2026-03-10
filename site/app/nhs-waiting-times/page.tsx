@@ -131,7 +131,6 @@ export default function NhsWaitingTimesPage() {
           ]} />
 
           {/* Metric cards */}
-          <ScrollReveal>
           <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="People on NHS elective waiting list"
@@ -141,7 +140,7 @@ export default function NhsWaitingTimesPage() {
               changeText="January 2024 · Up from 4.4M pre-COVID · Record high · Target: reduce significantly by March 2025"
               sparklineData={[4400, 4500, 4600, 4400, 4500, 7200, 7500, 7540]}
               source="NHS England · Referral to Treatment Statistics"
-              href="#sec-overview"/>
+              href="#sec-list"/>
             <MetricCard
               label="Waiting over 18 weeks (% meeting standard)"
               value={data?.national.standardCompliance.latestPct ? `${data.national.standardCompliance.latestPct}%` : '—'}
@@ -150,7 +149,7 @@ export default function NhsWaitingTimesPage() {
               changeText="January 2024 · Standard: 92% within 18 weeks · Last met: 2016 · 300K+ waiting over a year"
               sparklineData={[93, 92, 90, 88, 85, 61, 58, 58]}
               source="NHS England · Referral to Treatment Statistics"
-              href="#sec-list"/>
+              href="#sec-standard"/>
             <MetricCard
               label="Longest waits: over 2 years"
               value={data?.national.longWaits.over104WeeksCount === 0 ? '0' : data?.national.longWaits.over104WeeksCount.toLocaleString() || '—'}
@@ -159,9 +158,9 @@ export default function NhsWaitingTimesPage() {
               changeText="January 2024 · 2-year waits eliminated by target deadline · But 300K still over 1 year · 18-week standard remains far off"
               sparklineData={[0, 0, 0, 22000, 18000, 6000, 1000, 0]}
               source="NHS England · Referral to Treatment Statistics"
-              href="#sec-standard"/>
+              href="#sec-specialty"/>
           </div>
-          </ScrollReveal>
+          
 
           {/* Chart 1: Waiting list size */}
           <div id="sec-list">

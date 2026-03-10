@@ -149,8 +149,7 @@ export default function PrivateSchoolVatPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Average private school termly fee"
               value="£6,300"
@@ -182,7 +181,7 @@ export default function PrivateSchoolVatPage() {
               href="#sec-fees"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

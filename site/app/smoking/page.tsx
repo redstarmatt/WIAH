@@ -149,8 +149,7 @@ export default function SmokingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Adults who smoke"
               value={latest ? latest.latestPct.toString() : '10.6'}
@@ -160,7 +159,7 @@ export default function SmokingPage() {
               changeText={latest ? `Down from ${latest.baselinePct}% in ${latest.baselineYear} · Lowest ever recorded` : 'Lowest ever recorded'}
               sparklineData={data ? data.national.prevalence.timeSeries.map(d => d.pct) : [20.2, 19.5, 18.7, 17.2, 15.5, 14.9, 14.4, 13.9, 12.7, 13.3, 12.7, 11.6, 10.6]}
               source="ONS · Adult Smoking Habits in the UK: 2024"
-              href="#sec-overview"/>
+              href="#sec-prevalence"/>
             <MetricCard
               label="18–24 year olds smoking"
               value="8.1"
@@ -170,7 +169,7 @@ export default function SmokingPage() {
               changeText="Down from 25.7% in 2011 · −17.6 percentage points in 13 years"
               sparklineData={data ? data.national.youngAdultsTimeSeries.map(d => d.pct18to24) : [25.7, 24.8, 23.6, 20.5, 18.4, 17.1, 15.8, 14.4, 13.1, 12.7, 11.3, 10.2, 8.1]}
               source="ONS · Annual Population Survey, 2024"
-              href="#sec-prevalence"/>
+              href="#sec-young"/>
             <MetricCard
               label="Ex-smokers who have quit"
               value={quitRatio ? quitRatio.exSmokersPct.toString() : '74.2'}
@@ -180,9 +179,9 @@ export default function SmokingPage() {
               changeText={quitRatio ? `${quitRatio.vapingMillions}M adults now vape vs ${quitRatio.smokingMillions}M who smoke` : '5.4M adults now vape vs 4.9M who smoke'}
               sparklineData={[55, 58, 61, 64, 66, 68, 70, 71, 72, 73, 74, 74.2]}
               source="ONS · Adult Smoking Habits in the UK: 2024"
-              href="#sec-young"/>
+              href="#sec-age"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Overall prevalence */}
         <ScrollReveal>

@@ -104,8 +104,7 @@ export default function SelfEmploymentPage() {
           { id: 'sec-income', label: 'Income' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Self-employed workers"
               value="4.29M"
@@ -134,7 +133,7 @@ export default function SelfEmploymentPage() {
               href="#sec-count"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-count" className="mb-12">

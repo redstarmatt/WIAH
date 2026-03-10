@@ -83,8 +83,7 @@ export default function RdInvestmentPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="UK R&D as % of GDP"
               value={latest ? latest.percentGDP.toFixed(2) : '1.73'}
@@ -94,7 +93,7 @@ export default function RdInvestmentPage() {
               changeText="Barely changed since 2010 · OECD target is 2.4%"
               sparklineData={[1.62, 1.61, 1.67, 1.67, 1.71, 1.73, 1.73]}
               source="ONS GERD · 2021"
-              href="#sec-overview"/>
+              href="#sec-trend"/>
             <MetricCard
               label="Rank among G7"
               value="6th"
@@ -104,7 +103,7 @@ export default function RdInvestmentPage() {
               changeText="Only Italy (1.51%) spends less · US 3.46%, Germany 3.14%"
               sparklineData={[7, 6, 6, 6, 6, 6, 6]}
               source="OECD Main S&T Indicators · 2021"
-              href="#sec-trend"/>
+              href="#sec-international"/>
             <MetricCard
               label="Gap to OECD target"
               value="−0.67"
@@ -116,7 +115,7 @@ export default function RdInvestmentPage() {
               source="OECD / ONS"
               href="#sec-international"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: UK R&D trend */}
         <ScrollReveal>

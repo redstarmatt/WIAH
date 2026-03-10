@@ -94,8 +94,7 @@ export default function RiverBathingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Rivers in good ecological status"
               value={latestEcological ? latestEcological.goodOrAbove.toString() : '14'}
@@ -105,7 +104,7 @@ export default function RiverBathingPage() {
               changeText="Target was 60% by 2015 · EA has missed every deadline"
               sparklineData={[25.5, 17.3, 15.7, 14.1, 14.0]}
               source="Environment Agency · 2022"
-              href="#sec-overview"/>
+              href="#sec-ecological"/>
             <MetricCard
               label="River bathing sites classified 'poor'"
               value={latestBathing ? latestBathing.poor.toString() : '24'}
@@ -115,7 +114,7 @@ export default function RiverBathingPage() {
               changeText="Worsening in 2023 · E. coli and sewage discharge failing sites"
               sparklineData={[23, 22, 22, 21, 22, 24]}
               source="EA Bathing Water Quality · 2023"
-              href="#sec-ecological"/>
+              href="#sec-bathing"/>
             <MetricCard
               label="Designated river bathing sites"
               value={latestSites ? latestSites.riverSites.toString() : '70'}
@@ -127,7 +126,7 @@ export default function RiverBathingPage() {
               source="Environment Agency · 2023"
               href="#sec-bathing"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: ecological status */}
         <ScrollReveal>

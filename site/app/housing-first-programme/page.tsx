@@ -165,8 +165,7 @@ export default function HousingFirstPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Housing First placements (England)"
               value="1,400"
@@ -198,7 +197,7 @@ export default function HousingFirstPage() {
               href="#sec-placements"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Placements */}
         <ScrollReveal>

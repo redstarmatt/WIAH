@@ -165,8 +165,7 @@ export default function CareHomeStaffingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Care home vacancies"
               value="165,000"
@@ -198,7 +197,7 @@ export default function CareHomeStaffingPage() {
               href="#sec-vacancies"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Vacancies */}
         <ScrollReveal>

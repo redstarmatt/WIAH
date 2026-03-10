@@ -136,7 +136,6 @@ export default function EconomicInactivityPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Economically inactive (working age)"
@@ -151,7 +150,7 @@ export default function EconomicInactivityPage() {
             }
             sparklineData={[8.6, 8.5, 8.4, 8.4, 8.4, 8.4, 8.7, 9.2, 9.4, 9.4]}
             source="ONS — Labour Force Survey"
-            href="#sec-overview"/>
+            href="#sec-inactivity"/>
           <MetricCard
             label="Inactive due to long-term sickness"
             value={latestSick ? latestSick.latestMillions.toFixed(1) : '—'}
@@ -165,7 +164,7 @@ export default function EconomicInactivityPage() {
             }
             sparklineData={[2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.1, 2.2, 2.6, 2.8]}
             source="ONS — Labour Force Survey"
-            href="#sec-inactivity"/>
+            href="#sec-sickness"/>
           <MetricCard
             label="Working days lost to sickness absence"
             value="185"
@@ -177,9 +176,9 @@ export default function EconomicInactivityPage() {
             }
             sparklineData={[141, 137, 131, 131, 131, 137, 170, 185, 185]}
             source="ONS — Sickness Absence Survey"
-            href="#sec-sickness"/>
+            href="#sec-reasons"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Inactivity trend chart */}
         <ScrollReveal>

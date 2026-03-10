@@ -86,8 +86,7 @@ export default function HousingCostsWorkersPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="London rent as % of take-home pay"
               value={latestLondon ? latestLondon.ratio.toString() : '71'}
@@ -97,7 +96,7 @@ export default function HousingCostsWorkersPage() {
               changeText="Up from 32% in 2000 · doubled in a generation"
               sparklineData={[32, 38, 45, 54, 62, 65, 68, 71]}
               source="ONS ASHE + Rightmove rental data · 2023"
-              href="#sec-overview"/>
+              href="#sec-london-trend"/>
             <MetricCard
               label="Bristol rent/pay ratio"
               value="55"
@@ -107,7 +106,7 @@ export default function HousingCostsWorkersPage() {
               changeText="Second highest city · Oxford 57%, Cambridge 54%"
               sparklineData={[28, 32, 38, 42, 48, 52, 55]}
               source="ONS/Rightmove · 2023"
-              href="#sec-london-trend"/>
+              href="#sec-cities"/>
             <MetricCard
               label="Manchester rent/pay ratio"
               value="48"
@@ -119,7 +118,7 @@ export default function HousingCostsWorkersPage() {
               source="ONS/Rightmove · 2023"
               href="#sec-cities"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: London ratio over time */}
         <ScrollReveal>

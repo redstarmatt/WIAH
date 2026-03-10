@@ -325,7 +325,6 @@ export default function TransportPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Rail punctuality"
@@ -345,7 +344,7 @@ export default function TransportPage() {
                 : []
             }
             source="ORR · Passenger rail performance"
-            href="#sec-overview"/>
+            href="#sec-rail"/>
           <MetricCard
             label="Bus journeys"
             value={busBillions ? `${busBillions}bn` : '—'}
@@ -364,7 +363,7 @@ export default function TransportPage() {
                 : []
             }
             source="DfT · Bus statistics BUS01"
-            href="#sec-rail"/>
+            href="#sec-bus"/>
           <MetricCard
             label="Rail cancellations"
             value={latestRail ? latestRail.cancelledPct.toFixed(1) : '—'}
@@ -385,7 +384,7 @@ export default function TransportPage() {
             source="ORR · Passenger rail performance"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Rail punctuality (PPM) */}
         <div id="sec-rail">

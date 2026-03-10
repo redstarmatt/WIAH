@@ -100,8 +100,7 @@ export default function NorthSouthDividePage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="London GVA per head"
               value={maxRegion ? `£${maxRegion.gva.toLocaleString()}` : '£56,378'}
@@ -111,7 +110,7 @@ export default function NorthSouthDividePage() {
               changeText="181% of UK average · up from 151% in 1997"
               sparklineData={[151, 158, 162, 167, 172, 179, 181]}
               source="ONS Regional GVA · 2022"
-              href="#sec-overview"/>
+              href="#sec-gap"/>
             <MetricCard
               label="North East GVA per head"
               value={minRegion ? `£${minRegion.gva.toLocaleString()}` : '£22,843'}
@@ -121,7 +120,7 @@ export default function NorthSouthDividePage() {
               changeText="74% of UK average · gap with London at record high"
               sparklineData={[86, 84, 82, 79, 76, 74, 74]}
               source="ONS Regional GVA · 2022"
-              href="#sec-gap"/>
+              href="#sec-regions"/>
             <MetricCard
               label="Gap widened since 1997"
               value="30"
@@ -133,7 +132,7 @@ export default function NorthSouthDividePage() {
               source="ONS · 2022"
               href="#sec-regions"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: divergence over time */}
         <ScrollReveal>

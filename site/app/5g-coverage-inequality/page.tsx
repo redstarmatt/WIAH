@@ -149,8 +149,7 @@ export default function FiveGCoveragePage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="5G premises coverage (UK)"
               value="42%"
@@ -182,7 +181,7 @@ export default function FiveGCoveragePage() {
               href="#sec-coverage"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

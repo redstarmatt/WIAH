@@ -141,8 +141,7 @@ export default function KinshipCareSupportPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Children in kinship care (England)"
               value="180,000"
@@ -174,7 +173,7 @@ export default function KinshipCareSupportPage() {
               href="#sec-numbers"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

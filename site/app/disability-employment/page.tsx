@@ -115,8 +115,7 @@ export default function DisabilityEmploymentPage() {
           { id: 'sec-types', label: 'By Disability Type' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Disability employment gap (percentage points)"
               value="28.4pp"
@@ -145,7 +144,7 @@ export default function DisabilityEmploymentPage() {
               href="#sec-gap"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-gap" className="mb-12">

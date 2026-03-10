@@ -115,7 +115,6 @@ export default function SchoolBuildingsPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Capital maintenance backlog"
@@ -135,7 +134,7 @@ export default function SchoolBuildingsPage() {
             }
             source="DfE School Condition Survey 2023"
             baseline="Deferred maintenance now exceeds annual school capital spending by 2.4x"
-            href="#sec-overview"/>
+            href="#sec-context"/>
           <MetricCard
             label="Schools with RAAC concrete (risk of collapse)"
             value="174"
@@ -146,7 +145,7 @@ export default function SchoolBuildingsPage() {
             sparklineData={[174]}
             source="DfE RAAC survey"
             baseline="RAAC can collapse without warning. Schools had emergency building surveys."
-            href="#sec-charts"/>
+            href="#sec-sources"/>
           <MetricCard
             label="School buildings pre-1976"
             value="1 in 3"
@@ -157,9 +156,9 @@ export default function SchoolBuildingsPage() {
             sparklineData={[33]}
             source="DfE School Condition Survey"
             baseline="Schools older than 50 years incur exponentially higher maintenance costs"
-            href="#sec-charts"/>
+            href="#sec-sources"/>
         </div>
-        </ScrollReveal>
+        
 
         <div id="sec-charts" className="space-y-12">
           {backlogSeries.length > 0 ? (

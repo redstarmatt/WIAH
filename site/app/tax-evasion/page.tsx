@@ -99,8 +99,7 @@ export default function TaxEvasionPage() {
           { id: 'sec-enforcement', label: 'HMRC Capacity' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="UK tax gap"
               value="£39.8bn"
@@ -129,7 +128,7 @@ export default function TaxEvasionPage() {
               href="#sec-gap"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-gap" className="mb-12">

@@ -100,8 +100,7 @@ export default function PupilPremiumPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="GCSE attainment gap (FSM vs non-FSM)"
               value="18.0"
@@ -133,7 +132,7 @@ export default function PupilPremiumPage() {
               source="DfE Pupil Premium Allocations · 2024"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <div id="sec-gap" className="mb-12">

@@ -147,7 +147,6 @@ export default function SocialHousingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Social homes built (England)"
@@ -180,7 +179,7 @@ export default function SocialHousingPage() {
             href="#sec-completions"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

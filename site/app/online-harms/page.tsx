@@ -106,8 +106,7 @@ export default function OnlineHarmsPage() {
           { id: 'sec-types', label: 'By Crime Type' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Online fraud incidents per year (England &amp; Wales)"
               value="3.8M"
@@ -136,7 +135,7 @@ export default function OnlineHarmsPage() {
               href="#sec-fraud"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-fraud" className="mb-12">

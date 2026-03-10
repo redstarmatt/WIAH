@@ -101,8 +101,7 @@ export default function GraduateOutcomesPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="In professional/managerial roles (15 months)"
               value="76.9"
@@ -134,7 +133,7 @@ export default function GraduateOutcomesPage() {
               source="IFS / DfE · 2023"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <div id="sec-premium" className="mb-12">

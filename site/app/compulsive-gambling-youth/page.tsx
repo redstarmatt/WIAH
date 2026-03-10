@@ -151,8 +151,7 @@ export default function YouthGamblingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Child problem gamblers (age 11-16)"
               value="55,000"
@@ -184,7 +183,7 @@ export default function YouthGamblingPage() {
               href="#sec-prevalence"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

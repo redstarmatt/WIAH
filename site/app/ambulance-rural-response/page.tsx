@@ -140,8 +140,7 @@ export default function AmbulanceRuralPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Rural Cat 2 mean response time"
               value="45 min"
@@ -173,7 +172,7 @@ export default function AmbulanceRuralPage() {
               href="#sec-response"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

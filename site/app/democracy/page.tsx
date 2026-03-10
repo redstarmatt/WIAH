@@ -204,7 +204,6 @@ export default function DemocracyPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="2024 general election turnout"
@@ -249,7 +248,7 @@ export default function DemocracyPage() {
             source="Electoral Commission · UK electoral registration statistics 2024"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Turnout */}
         <div id="sec-turnout">

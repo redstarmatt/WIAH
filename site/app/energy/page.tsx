@@ -327,8 +327,7 @@ export default function EnergyPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Renewable share"
               value={latestRenewable ? latestRenewable.pct.toFixed(1) : '\u2014'}
@@ -347,7 +346,7 @@ export default function EnergyPage() {
                   : []
               }
               source="DESNZ \u00b7 Energy Trends Section 6"
-              href="#sec-overview"/>
+              href="#sec-prices"/>
             <MetricCard
               label="Electricity price"
               value={latestElecPrice ? latestElecPrice.index.toFixed(0) : '\u2014'}
@@ -366,7 +365,7 @@ export default function EnergyPage() {
                   : []
               }
               source="ONS \u00b7 CPI electricity index (D7DT)"
-              href="#sec-prices"/>
+              href="#sec-generation-mix"/>
             <MetricCard
               label="Fuel poverty"
               value={latestFuelPoverty ? latestFuelPoverty.pct.toFixed(1) : '\u2014'}
@@ -387,7 +386,7 @@ export default function EnergyPage() {
               source="DESNZ \u00b7 Fuel poverty statistics"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Renewable electricity by source */}
         <div id="sec-renewables">

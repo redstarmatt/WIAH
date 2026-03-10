@@ -164,7 +164,6 @@ export default function RailPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Train punctuality (On-Time)"
@@ -197,7 +196,7 @@ export default function RailPage() {
             href="#sec-punctuality"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

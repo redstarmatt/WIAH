@@ -117,8 +117,7 @@ export default function DiabetesPage() {
           { id: 'sec-complications', label: 'Complications' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="People with diagnosed diabetes"
               value="4.4M"
@@ -126,7 +125,7 @@ export default function DiabetesPage() {
               polarity="up-is-bad"
               changeText="2023 · Up from 1.4M in 1998 · 1.2M estimated undiagnosed · 5M at risk of Type 2 · NHS cost: £10bn/year"
               sparklineData={[1.4, 1.6, 1.8, 2.0, 2.3, 2.6, 2.9, 3.2, 3.5, 3.7, 3.9, 4.1, 4.3, 4.4]}
-              href="#sec-overview"/>
+              href="#sec-prevalence"/>
             <MetricCard
               label="NHS Diabetes Prevention Programme enrolments"
               value="680K"
@@ -134,7 +133,7 @@ export default function DiabetesPage() {
               polarity="up-is-good"
               changeText="2023 cumulative · Programme launched 2016 · Targets high-risk prediabetes · Reduces Type 2 onset by 37%"
               sparklineData={[10, 60, 150, 250, 310, 420, 550, 680]}
-              href="#sec-prevalence"/>
+              href="#sec-prevention"/>
             <MetricCard
               label="Diabetes-related amputations (annual)"
               value="8,000"
@@ -142,9 +141,9 @@ export default function DiabetesPage() {
               polarity="up-is-bad"
               changeText="2023 · Down from 10,000 in 2018 · Still 20% higher than European average · Preventable with good glucose control"
               sparklineData={[9800, 9500, 9200, 8800, 8500, 8200, 8000, 8000]}
-              href="#sec-prevention"/>
+              href="#sec-complications"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-prevalence" className="mb-12">

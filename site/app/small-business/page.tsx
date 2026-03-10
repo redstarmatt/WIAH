@@ -103,8 +103,7 @@ export default function SmallBusinessPage() {
           { id: 'sec-survival', label: 'Survival Rate' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Company insolvencies (England &amp; Wales)"
               value="27,500"
@@ -133,7 +132,7 @@ export default function SmallBusinessPage() {
               href="#sec-insolvencies"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-insolvencies" className="mb-12">

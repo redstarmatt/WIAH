@@ -151,8 +151,7 @@ export default function VeteransPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Regular armed forces strength"
               value="148K"
@@ -184,7 +183,7 @@ export default function VeteransPage() {
               href="#sec-recruitment"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <div id="sec-recruitment" className="mb-12">

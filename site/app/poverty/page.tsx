@@ -235,7 +235,6 @@ export default function PovertyPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="People in relative poverty"
@@ -295,7 +294,7 @@ export default function PovertyPage() {
             baseline="3.1M parcels last year — up from 350,000 in 2013, a ninefold rise in a decade"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Relative poverty */}
         <div id="sec-poverty-rates">

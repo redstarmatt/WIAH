@@ -99,8 +99,7 @@ export default function EmptyHomesPage() {
           { id: 'sec-all-empty', label: 'All Vacancies' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Total empty homes in England"
               value="700K"
@@ -129,7 +128,7 @@ export default function EmptyHomesPage() {
               href="#sec-long-term"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-long-term" className="mb-12">

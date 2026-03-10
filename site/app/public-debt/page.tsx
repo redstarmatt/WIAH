@@ -142,7 +142,7 @@ export default function PublicDebtPage() {
                 polarity="up-is-bad"
                 changeText="2023/24 · Up from 35% in 2007/08 · Highest since early 1960s · £2.65 trillion nominal"
                 sparklineData={sparkFrom([35, 43, 52, 62, 69, 74, 79, 82, 83, 84, 86, 96, 97])}
-                href="#sec-overview"/>
+                href="#sec-debt"/>
               <MetricCard
                 label="Annual debt interest payments"
                 value="£111bn"
@@ -150,7 +150,7 @@ export default function PublicDebtPage() {
                 polarity="up-is-bad"
                 changeText="2022/23 · More than defence budget · Peaked at £116bn in 2022/23 · Highest since records began"
                 sparklineData={sparkFrom([43, 45, 49, 53, 52, 51, 50, 50, 48, 47, 60, 116, 111])}
-                href="#sec-debt"/>
+                href="#sec-interest"/>
               <MetricCard
                 label="Structural deficit (cyclically adjusted borrowing)"
                 value="3.1%"
@@ -158,7 +158,7 @@ export default function PublicDebtPage() {
                 polarity="up-is-bad"
                 changeText="2023/24 (% GDP) · Down from 10.2% in 2009/10 · Fiscal rules require below 3% by 2028/29"
                 sparklineData={sparkFrom([10.2, 8.4, 6.8, 5.5, 4.4, 3.5, 2.9, 2.6, 3.0, 4.1, 5.4, 4.2, 3.1])}
-                href="#sec-interest"/>
+                href="#sec-type"/>
             </div>
           </ScrollReveal>
         </div>

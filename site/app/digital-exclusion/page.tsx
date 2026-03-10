@@ -90,8 +90,7 @@ export default function DigitalExclusionPage() {
           { id: 'sec-non-users', label: 'Non-Users Profile' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Adults lacking basic digital skills"
               value="7.5M"
@@ -99,7 +98,7 @@ export default function DigitalExclusionPage() {
               polarity="up-is-bad"
               changeText="11% of UK adults; disproportionately elderly"
               sparklineData={[7.0, 7.2, 7.5, 7.3, 7.1, 7.0, 6.9, 6.7, 6.5]}
-              href="#sec-overview"/>
+              href="#sec-internet-users"/>
             <MetricCard
               label="Households without home internet"
               value="6%"
@@ -107,7 +106,7 @@ export default function DigitalExclusionPage() {
               polarity="up-is-bad"
               changeText="1.5M households; up from 5% post-COVID"
               sparklineData={[5, 5.2, 5.5, 5.8, 5.2, 5.5, 5.8, 6.0, 6]}
-              href="#sec-internet-users"/>
+              href="#sec-basic-skills"/>
             <MetricCard
               label="Adults who have never used internet"
               value="3.9M"
@@ -115,9 +114,9 @@ export default function DigitalExclusionPage() {
               polarity="up-is-bad"
               changeText="6% of UK adults; 90%+ are over 65"
               sparklineData={[5.0, 5.2, 5.1, 5.0, 4.8, 4.5, 4.2, 4.0, 3.9]}
-              href="#sec-basic-skills"/>
+              href="#sec-non-users"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-internet-users" className="mb-12">

@@ -137,8 +137,7 @@ export default function LibrariesPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Library branches (England)"
               value="3,000"
@@ -147,7 +146,7 @@ export default function LibrariesPage() {
               polarity="up-is-good"
               changeText="2022/23 · Down from 3,583 in 2010 · 770+ closures · Volunteers now run 600+ branches"
               sparklineData={[3583, 3509, 3450, 3392, 3341, 3268, 3210, 3150, 3100, 3050, 3100, 3050, 3000]}
-              href="#sec-overview"/>
+              href="#sec-branches"/>
             <MetricCard
               label="Library visits (England, millions)"
               value="247M"
@@ -156,7 +155,7 @@ export default function LibrariesPage() {
               polarity="up-is-good"
               changeText="2022/23 · Down from 338M in 2010 · COVID caused 170M low in 2020/21 · Partial recovery underway"
               sparklineData={[338, 312, 296, 280, 268, 253, 247, 220, 170, 190, 247]}
-              href="#sec-branches"/>
+              href="#sec-visits"/>
             <MetricCard
               label="Books issued (millions)"
               value="175M"
@@ -165,9 +164,9 @@ export default function LibrariesPage() {
               polarity="up-is-good"
               changeText="2022/23 · Down 42% from 302M in 2010 · E-book loans and audiobooks growing · Digital now 22% of issues"
               sparklineData={[302, 278, 251, 233, 219, 206, 197, 185, 162, 168, 175]}
-              href="#sec-visits"/>
+              href="#sec-improvement"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <div id="sec-branches" className="mb-12">

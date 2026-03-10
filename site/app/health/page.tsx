@@ -748,7 +748,6 @@ export default function HealthPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           <MetricCard
             label="NHS waiting list"
@@ -768,7 +767,7 @@ export default function HealthPage() {
             }
             source="NHS England · RTT Waiting Times"
             baseline="More than 1 in 8 people in England waiting for hospital treatment"
-            href="#sec-overview"/>
+            href="#sec-waiting"/>
           <MetricCard
             label="Avg GP wait"
             value={latestGp ? latestGp.avgWaitDays.toFixed(1) : '—'}
@@ -787,7 +786,7 @@ export default function HealthPage() {
             }
             source="NHS England · Appointments in General Practice"
             baseline="21 days to see a GP now — was under 7 days in 2013"
-            href="#sec-waiting"/>
+            href="#sec-ambulance"/>
           <MetricCard
             label="Cat 2 ambulance wait"
             value={latestAmb ? latestAmb.cat2MeanMins?.toFixed(0) ?? '—' : '—'}
@@ -810,7 +809,7 @@ export default function HealthPage() {
             }
             source="NHS England · Ambulance Quality Indicators"
             baseline="Ambulances now take 34 minutes on average — nearly twice the 18-minute target set in 2017"
-            href="#sec-ambulance"/>
+            href="#sec-life-expectancy"/>
           <MetricCard
             label="Cat 1 ambulance wait"
             value={latestAmb ? latestAmb.cat1MeanMins?.toFixed(1) ?? '—' : '—'}
@@ -828,9 +827,9 @@ export default function HealthPage() {
                 : []
             }
             source="NHS England · Ambulance Quality Indicators"
-            href="#sec-life-expectancy"/>
+            href="#sec-gp"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Postcode lookup */}
         <ScrollReveal>

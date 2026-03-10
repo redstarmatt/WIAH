@@ -110,8 +110,7 @@ export default function GigEconomyPage() {
           { id: 'sec-pay', label: 'Pay Comparison' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Estimated gig workers"
               value="4.4M"
@@ -140,7 +139,7 @@ export default function GigEconomyPage() {
               href="#sec-workers"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-workers" className="mb-12">

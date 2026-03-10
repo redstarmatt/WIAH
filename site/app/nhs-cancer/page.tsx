@@ -111,8 +111,7 @@ export default function NHSCancerPage() {
           { id: 'sec-types', label: 'By Cancer Type' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Patients beginning cancer treatment within 62 days"
               value="67.4%"
@@ -141,7 +140,7 @@ export default function NHSCancerPage() {
               href="#sec-waits"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-waits" className="mb-12">

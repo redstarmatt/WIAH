@@ -103,8 +103,7 @@ export default function CarerPovertyPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Carers Allowance weekly rate"
               value="£76.75"
@@ -136,7 +135,7 @@ export default function CarerPovertyPage() {
               source="Carers UK / 2021 Census"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <div id="sec-allowance" className="mb-12">

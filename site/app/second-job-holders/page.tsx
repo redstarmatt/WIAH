@@ -164,8 +164,7 @@ export default function SecondJobHoldersPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="People in second jobs (UK)"
               value="1.3M"
@@ -197,7 +196,7 @@ export default function SecondJobHoldersPage() {
               href="#sec-total"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Total second job holders */}
         <ScrollReveal>

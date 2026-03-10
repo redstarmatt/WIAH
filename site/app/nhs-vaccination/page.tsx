@@ -118,8 +118,7 @@ export default function NHSVaccinationPage() {
           { id: 'sec-regions', label: 'By Region' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="MMR vaccine uptake at age 2 (England)"
               value="89.3%"
@@ -148,7 +147,7 @@ export default function NHSVaccinationPage() {
               href="#sec-mmr"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-mmr" className="mb-12">

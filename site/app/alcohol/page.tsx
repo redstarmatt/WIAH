@@ -110,8 +110,7 @@ export default function AlcoholPage() {
           { id: 'sec-consumption', label: 'Consumption' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Alcohol-specific deaths (England &amp; Wales)"
               value="8,274"
@@ -140,7 +139,7 @@ export default function AlcoholPage() {
               href="#sec-admissions"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-admissions" className="mb-12">

@@ -16,6 +16,8 @@ export default function ShareButton({ title, text }: ShareButtonProps) {
     if (navigator.share) {
       try {
         await navigator.share({ title, text, url });
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
       } catch {
         // User cancelled or share failed — do nothing
       }

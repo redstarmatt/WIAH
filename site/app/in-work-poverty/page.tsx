@@ -94,8 +94,7 @@ export default function InWorkPovertyPage() {
           { id: 'sec-share', label: 'Share of Poor' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="People in working poverty"
               value="8.1M"
@@ -124,7 +123,7 @@ export default function InWorkPovertyPage() {
               href="#sec-poverty"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-poverty" className="mb-12">

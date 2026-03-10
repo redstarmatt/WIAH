@@ -111,8 +111,7 @@ export default function ADHDAutismPage() {
           { id: 'sec-age', label: 'By Age Group' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Children waiting for autism assessment"
               value="187K"
@@ -120,7 +119,7 @@ export default function ADHDAutismPage() {
               polarity="up-is-bad"
               changeText="2023 · Up from 65K in 2016 · Average wait: 36 months · 13-week standard abandoned in 2019"
               sparklineData={[65, 72, 81, 92, 98, 128, 158, 187]}
-              href="#sec-overview"/>
+              href="#sec-autism"/>
             <MetricCard
               label="ADHD referrals to NHS services (annual)"
               value="200K"
@@ -128,7 +127,7 @@ export default function ADHDAutismPage() {
               polarity="up-is-bad"
               changeText="2023 · Up 400% since 2020 · Average wait: 3.5 years · Many turning to £800–£1,500 private assessments"
               sparklineData={[40, 45, 52, 85, 140, 200]}
-              href="#sec-autism"/>
+              href="#sec-adhd"/>
             <MetricCard
               label="Average adult wait for ADHD diagnosis"
               value="3.5 yrs"
@@ -136,9 +135,9 @@ export default function ADHDAutismPage() {
               polarity="up-is-bad"
               changeText="2023 · Some areas: 5–7 years · NHS Right to Choose: patients can request provider · Shared care prescribing gaps after private diagnosis"
               sparklineData={[12, 15, 18, 24, 36, 42]}
-              href="#sec-adhd"/>
+              href="#sec-age"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-autism" className="mb-12">

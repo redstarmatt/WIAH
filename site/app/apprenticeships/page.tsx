@@ -113,7 +113,7 @@ export default function ApprenticeshipsPage() {
               direction="down"
               polarity="up-is-good"
               sparklineData={startsSparkline}
-              href="#sec-overview"/>
+              href="#sec-context"/>
             <MetricCard
               label="Under-19 apprenticeship starts"
               value="125,000"
@@ -122,7 +122,7 @@ export default function ApprenticeshipsPage() {
               direction="down"
               polarity="up-is-good"
               sparklineData={under19Sparkline}
-              href="#sec-charts"/>
+              href="#sec-sources"/>
             <MetricCard
               label="Degree apprenticeships (Level 6-7)"
               value="28"
@@ -131,7 +131,7 @@ export default function ApprenticeshipsPage() {
               direction="up"
               polarity="up-is-bad"
               sparklineData={degreeSparkline}
-              href="#sec-charts"/>
+              href="#sec-sources"/>
           </div>
         </div>
       </section>

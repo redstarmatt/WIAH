@@ -165,8 +165,7 @@ export default function CommunityEnergyPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Community energy installed capacity"
               value="350 MW"
@@ -198,7 +197,7 @@ export default function CommunityEnergyPage() {
               href="#sec-capacity"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Capacity growth */}
         <ScrollReveal>

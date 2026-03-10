@@ -139,8 +139,7 @@ export default function LongCovidPage() {
           { id: 'sec-response', label: 'NHS Response' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="People with long COVID (estimated)"
               value="1.5M"
@@ -149,7 +148,7 @@ export default function LongCovidPage() {
               polarity="up-is-bad"
               changeText="2024 · Down from 2.1M peak (2022) · 800K with daily limitations · 50K unable to work"
               sparklineData={[1.3, 2.1, 1.8, 1.5]}
-              href="#sec-overview"/>
+              href="#sec-prevalence"/>
             <MetricCard
               label="NHS Long COVID clinics"
               value="85"
@@ -158,7 +157,7 @@ export default function LongCovidPage() {
               polarity="up-is-good"
               changeText="2024 · Down from 91 peak · 12-week average wait · 91 clinics at peak in 2022-23"
               sparklineData={[60, 91, 91, 85]}
-              href="#sec-prevalence"/>
+              href="#sec-symptoms"/>
             <MetricCard
               label="Estimated economic cost"
               value="£5bn"
@@ -167,9 +166,9 @@ export default function LongCovidPage() {
               polarity="up-is-bad"
               changeText="2024 · Down from £5.7bn peak · Lost output from work absence · Still one of UK's largest pandemic legacies"
               sparklineData={[1.5, 3.8, 5.7, 5.0]}
-              href="#sec-symptoms"/>
+              href="#sec-response"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-symptoms" className="max-w-2xl mb-12">

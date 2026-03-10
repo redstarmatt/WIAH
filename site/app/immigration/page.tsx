@@ -113,8 +113,7 @@ export default function ImmigrationPage() {
           { id: 'sec-asylum', label: 'Asylum Backlog' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Net migration (UK)"
               value="685K"
@@ -122,7 +121,7 @@ export default function ImmigrationPage() {
               polarity="up-is-bad"
               changeText="Year to Dec 2023 · Down from record 745K in 2022 · Pre-Brexit average was ~250K · ONS revised upwards significantly in 2023"
               sparklineData={[177, 209, 249, 322, 273, 282, 270, 271, 184, 488, 745, 685]}
-              href="#sec-overview"/>
+              href="#sec-migration"/>
             <MetricCard
               label="Asylum backlog (cases awaiting decision)"
               value="133K"
@@ -130,7 +129,7 @@ export default function ImmigrationPage() {
               polarity="up-is-bad"
               changeText="2023 · Down from peak but still 3x pre-pandemic · Rwanda policy blocked by courts · Average wait: 2+ years"
               sparklineData={[30, 28, 24, 29, 38, 52, 76, 120, 133]}
-              href="#sec-migration"/>
+              href="#sec-visas"/>
             <MetricCard
               label="Student visas granted"
               value="486K"
@@ -138,9 +137,9 @@ export default function ImmigrationPage() {
               polarity="up-is-bad"
               changeText="2022/23 · Up 3x since 2019 · Dependent visa changes Jan 2024 expected to cut numbers · Universities warn of financial risk"
               sparklineData={[175, 228, 297, 289, 179, 379, 486, 460]}
-              href="#sec-visas"/>
+              href="#sec-asylum"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-migration" className="mb-12">

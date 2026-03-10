@@ -152,7 +152,6 @@ export default function PensionsPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="State pension (full new rate)"
@@ -185,7 +184,7 @@ export default function PensionsPage() {
             href="#sec-state-pension"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

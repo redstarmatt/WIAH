@@ -91,8 +91,7 @@ export default function HeatMortalityPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Excess deaths in 2022 heatwaves"
               value={latest ? latest.excessDeaths.toLocaleString() : '2,985'}
@@ -102,7 +101,7 @@ export default function HeatMortalityPage() {
               changeText="Record England temperature 40.3°C reached July 2022 · most deaths in over-65s"
               sparklineData={[2139, 680, 622, 760, 863, 892, 1062, 2985]}
               source="UKHSA / ONS · 2022"
-              href="#sec-overview"/>
+              href="#sec-deaths"/>
             <MetricCard
               label="First time UK exceeded 40°C"
               value={latestTemp ? latestTemp.year.toString() : '2022'}
@@ -112,7 +111,7 @@ export default function HeatMortalityPage() {
               changeText={`${latestTemp?.maxTempEngland ?? 40.3}°C at Coningsby, Lincolnshire on 19 July 2022`}
               sparklineData={[38.1, 38.7, 40.3]}
               source="Met Office · 2022"
-              href="#sec-deaths"/>
+              href="#sec-projections"/>
             <MetricCard
               label="Projected annual heat deaths by 2050 (2°C)"
               value={moderateScenario ? moderateScenario.annualDeathsBy2050.toLocaleString() : '7,000'}
@@ -124,7 +123,7 @@ export default function HeatMortalityPage() {
               source="UKHSA Climate Change Risk Assessment"
               href="#sec-projections"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: historical excess deaths */}
         <ScrollReveal>

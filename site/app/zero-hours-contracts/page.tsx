@@ -134,8 +134,7 @@ export default function ZeroHoursContractsPage() {
           { id: 'sec-sectors', label: 'By Sector' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Workers on zero-hours contracts"
               value="1.1M"
@@ -164,7 +163,7 @@ export default function ZeroHoursContractsPage() {
               href="#sec-workers"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-workers" className="mb-12">

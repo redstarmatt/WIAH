@@ -142,8 +142,7 @@ export default function ChildToothDecayPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Children aged 5 with tooth decay"
               value="26%"
@@ -175,7 +174,7 @@ export default function ChildToothDecayPage() {
               href="#sec-decay"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

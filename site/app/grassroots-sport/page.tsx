@@ -153,8 +153,7 @@ export default function GrassrootsSportPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Sports/leisure facilities closed since 2010"
               value="1,200"
@@ -186,7 +185,7 @@ export default function GrassrootsSportPage() {
               href="#sec-facilities"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

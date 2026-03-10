@@ -165,8 +165,7 @@ export default function FoodStandardsPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Food safety incidents (imports)"
               value="87"
@@ -198,7 +197,7 @@ export default function FoodStandardsPage() {
               href="#sec-incidents"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Safety incidents */}
         <ScrollReveal>

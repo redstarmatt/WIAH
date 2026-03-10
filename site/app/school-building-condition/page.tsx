@@ -157,8 +157,7 @@ export default function SchoolBuildingConditionPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Schools with RAAC concrete"
               value="235"
@@ -190,7 +189,7 @@ export default function SchoolBuildingConditionPage() {
               href="#sec-raac"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

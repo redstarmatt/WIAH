@@ -146,8 +146,7 @@ export default function TradePage() {
           { id: 'sec-eu-share', label: 'EU Share' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="UK goods trade deficit"
               value="£157bn"
@@ -179,7 +178,7 @@ export default function TradePage() {
               href="#sec-goods"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-goods" className="mb-12">

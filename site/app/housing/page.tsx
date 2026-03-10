@@ -605,7 +605,6 @@ export default function HousingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="House price to earnings"
@@ -625,7 +624,7 @@ export default function HousingPage() {
             }
             source="ONS · Housing affordability, 2024"
             baseline="A typical home costs nearly 8 years of full median salary — was 4 years in 1997"
-            href="#sec-overview"/>
+            href="#sec-prices"/>
           <MetricCard
             label="Average house price"
             value={latestHpi ? `£${Math.round(latestHpi.averagePrice / 1000)}K` : '—'}
@@ -648,7 +647,7 @@ export default function HousingPage() {
                 : []
             }
             source="Land Registry · UK HPI"
-            href="#sec-prices"/>
+            href="#sec-rent"/>
           <MetricCard
             label="Average monthly rent"
             value={latestRent ? `£${latestRent.avgMonthlyRent.toLocaleString()}` : '—'}
@@ -672,9 +671,9 @@ export default function HousingPage() {
             }
             source="ONS · PIPR historical series"
             baseline="Average rent now takes up nearly half of take-home pay on a median salary"
-            href="#sec-rent"/>
+            href="#sec-rent-index"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Postcode lookup */}
         {data && (

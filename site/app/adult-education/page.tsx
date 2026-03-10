@@ -99,8 +99,7 @@ export default function AdultEducationPage() {
           { id: 'sec-enrolments', label: 'FE Enrolments' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Adult learning participation rate"
               value="15.4%"
@@ -129,7 +128,7 @@ export default function AdultEducationPage() {
               href="#sec-participation"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-participation" className="mb-12">

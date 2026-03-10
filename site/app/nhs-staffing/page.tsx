@@ -203,7 +203,6 @@ export default function NHSStaffingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="NHS vacancies"
@@ -236,7 +235,7 @@ export default function NHSStaffingPage() {
             href="#sec-vacancies"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

@@ -165,8 +165,7 @@ export default function CourtFeesPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Civil court fee income"
               value="£780M"
@@ -198,7 +197,7 @@ export default function CourtFeesPage() {
               href="#sec-income"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Fee income */}
         <ScrollReveal>

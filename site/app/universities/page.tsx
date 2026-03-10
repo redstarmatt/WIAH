@@ -385,7 +385,6 @@ export default function UniversitiesPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Avg. debt at graduation"
@@ -456,7 +455,7 @@ export default function UniversitiesPage() {
             onExpand={degreeFirstSeries.length > 0 ? () => setExpanded('degrees') : undefined}
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* ── Section: Student Debt ───────────────────────────────────────────── */}
         <div id="sec-debt">

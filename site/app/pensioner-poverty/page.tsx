@@ -116,7 +116,6 @@ export default function PensionerPovertyPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Pensioners in poverty"
@@ -135,7 +134,7 @@ export default function PensionerPovertyPage() {
             }
             source="DWP HBAI"
             baseline="Below 60% median income, after housing costs"
-            href="#sec-overview"/>
+            href="#sec-trends"/>
           <MetricCard
             label="Single female pensioners in poverty"
             value="25%"
@@ -145,7 +144,7 @@ export default function PensionerPovertyPage() {
             sparklineData={[19, 20, 21, 22, 23, 24, 24, 25]}
             source="DWP HBAI"
             baseline="Women live longer; savings depleted"
-            href="#sec-trends"/>
+            href="#sec-bygroup"/>
           <MetricCard
             label="Pensioner renters in poverty"
             value="37%"
@@ -157,7 +156,7 @@ export default function PensionerPovertyPage() {
             baseline="After housing costs"
             href="#sec-bygroup"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Pensioner poverty rate */}
         <div id="sec-trends">

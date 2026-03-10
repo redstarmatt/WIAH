@@ -142,8 +142,7 @@ export default function WaitingInequalityPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Deprivation gap in waiting times"
               value="4.2 weeks"
@@ -175,7 +174,7 @@ export default function WaitingInequalityPage() {
               href="#sec-gap"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

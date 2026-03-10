@@ -110,8 +110,7 @@ export default function LivingWagePage() {
           { id: 'sec-workers', label: 'Workers Below' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Workers below Real Living Wage"
               value="3.8M"
@@ -140,7 +139,7 @@ export default function LivingWagePage() {
               href="#sec-wages"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-wages" className="mb-12">

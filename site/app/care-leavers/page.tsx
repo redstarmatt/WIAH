@@ -108,8 +108,7 @@ export default function CareLeaversPage() {
           { id: 'sec-breakdown', label: 'Outcome Breakdown' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Children in care (England)"
               value="95,000"
@@ -117,7 +116,7 @@ export default function CareLeaversPage() {
               polarity="up-is-bad"
               changeText="2023 · Up from 67K in 2012 · 10,000 leave care annually aged 16–21 · Neglect or abuse main reason for entry"
               sparklineData={[67050, 68060, 68840, 69540, 70440, 72670, 75420, 78150, 80850, 82170, 84010, 95000]}
-              href="#sec-overview"/>
+              href="#sec-care"/>
             <MetricCard
               label="Care leavers who are NEET (aged 17–21)"
               value="37%"
@@ -125,7 +124,7 @@ export default function CareLeaversPage() {
               polarity="up-is-bad"
               changeText="2023 · General population NEET rate: 11% · 3x higher · Young people leaving care at 16 most at risk"
               sparklineData={[38, 38, 39, 37, 41, 38, 37, 37]}
-              href="#sec-care"/>
+              href="#sec-outcomes"/>
             <MetricCard
               label="Care leavers going to university"
               value="13%"
@@ -133,9 +132,9 @@ export default function CareLeaversPage() {
               polarity="up-is-good"
               changeText="2023 · General population: 43% · Gap narrowing slowly · Bursaries and guaranteed university accommodation helping"
               sparklineData={[6, 7, 8, 9, 10, 11, 12, 13]}
-              href="#sec-outcomes"/>
+              href="#sec-breakdown"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-care" className="mb-12">

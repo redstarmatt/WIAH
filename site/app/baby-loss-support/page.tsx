@@ -145,8 +145,7 @@ export default function BabyLossSupportPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Stillbirths per year (England)"
               value="3,300"
@@ -178,7 +177,7 @@ export default function BabyLossSupportPage() {
               href="#sec-mortality"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

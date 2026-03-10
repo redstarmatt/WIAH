@@ -114,8 +114,7 @@ export default function ChildPovertyRegionsPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Children in poverty (UK)"
               value="4.3m"
@@ -147,7 +146,7 @@ export default function ChildPovertyRegionsPage() {
               source="DWP HBAI / JRF · 2023"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <div id="sec-national" className="mb-12">

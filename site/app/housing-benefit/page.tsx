@@ -99,8 +99,7 @@ export default function HousingBenefitPage() {
           { id: 'sec-recipients', label: 'Recipients' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Average LHA-to-rent shortfall (pre-2024)"
               value="£190/mo"
@@ -129,7 +128,7 @@ export default function HousingBenefitPage() {
               href="#sec-shortfall"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-shortfall" className="mb-12">

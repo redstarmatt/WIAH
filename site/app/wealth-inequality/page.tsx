@@ -89,8 +89,7 @@ export default function WealthInequalityPage() {
           { id: 'sec-by-type', label: 'By Wealth Type' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Wealth share of top 10%"
               value="43%"
@@ -119,7 +118,7 @@ export default function WealthInequalityPage() {
               href="#sec-wealth-share"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-wealth-share" className="mb-12">

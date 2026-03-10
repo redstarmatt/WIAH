@@ -114,7 +114,6 @@ export default function PeriodPovertyPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Girls who struggled to afford period products (last year)"
@@ -130,7 +129,7 @@ export default function PeriodPovertyPage() {
             }
             source="Plan International UK"
             baseline="Cost of living crisis has pushed more students into period poverty"
-            href="#sec-overview"/>
+            href="#sec-context"/>
           <MetricCard
             label="Girls who missed school due to period poverty"
             value="137,000"
@@ -141,7 +140,7 @@ export default function PeriodPovertyPage() {
             sparklineData={[137]}
             source="Plan International UK"
             baseline="Absence due to periods damages educational outcomes and life chances"
-            href="#sec-charts"/>
+            href="#sec-sources"/>
           <MetricCard
             label="Schools participating in Period Products Scheme"
             value={latestSchools ? `${latestSchools.pct}%` : '—'}
@@ -160,9 +159,9 @@ export default function PeriodPovertyPage() {
             }
             source="Menstrual Products Access Scheme monitoring"
             baseline="Scotland: 100% coverage. England uptake remains incomplete."
-            href="#sec-charts"/>
+            href="#sec-sources"/>
         </div>
-        </ScrollReveal>
+        
 
         <div id="sec-charts" className="space-y-12">
           {affectedSeries.length > 0 ? (

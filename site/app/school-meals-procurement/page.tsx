@@ -153,8 +153,7 @@ export default function SchoolMealsProcurementPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Annual school meals market value"
               value="£1.2bn"
@@ -186,7 +185,7 @@ export default function SchoolMealsProcurementPage() {
               href="#sec-market"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

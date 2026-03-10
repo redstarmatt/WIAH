@@ -111,8 +111,7 @@ export default function PhysicalInactivityPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Adults meeting 150–min activity guidelines"
               value={latestAdult ? latestAdult.pctMeetingGuidelines.toString() : '—'}
@@ -122,7 +121,7 @@ export default function PhysicalInactivityPage() {
               changeText="2022 · Was 66% pre-pandemic; recovered slowly"
               sparklineData={[66, 67, 67, 67, 59, 61, 62]}
               source="Sport England — Active Lives Survey"
-              href="#sec-overview"/>
+              href="#sec-context"/>
             <MetricCard
               label="Physically inactive adults (under 30 min/week)"
               value="11.5"
@@ -132,7 +131,7 @@ export default function PhysicalInactivityPage() {
               changeText="24% of adults; highest in most deprived areas"
               sparklineData={[10.2, 10.5, 10.8, 11.2, 11.5]}
               source="Sport England — Active Lives Survey"
-              href="#sec-charts"/>
+              href="#sec-sources"/>
             <MetricCard
               label="NHS cost of physical inactivity (annual)"
               value="7.4"
@@ -142,9 +141,9 @@ export default function PhysicalInactivityPage() {
               changeText="+£5.5bn in wider economy costs"
               sparklineData={[5.2, 5.8, 6.4, 6.9, 7.4]}
               source="Sport England — Sport England Insight"
-              href="#sec-charts"/>
+              href="#sec-sources"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Context section */}
         <section id="sec-context" className="py-12 border-t border-wiah-border">

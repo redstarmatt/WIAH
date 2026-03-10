@@ -147,8 +147,7 @@ export default function DomesticAbusePage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Adults experiencing domestic abuse (annual)"
               value={latestPrevalence ? latestPrevalence.latestMillions.toFixed(1) : '—'}
@@ -158,7 +157,7 @@ export default function DomesticAbusePage() {
               changeText="2022/23 · 1.4M women, 700K men · Down from 2.4M peak (2016/17) · Under-reporting endemic"
               sparklineData={[2.4, 2.3, 2.2, 2.1, 2.1, 2.0, 2.0, 2.1]}
               source="ONS — Crime Survey for England and Wales"
-              href="#sec-overview"/>
+              href="#sec-recorded"/>
             <MetricCard
               label="Domestic abuse-related crimes recorded by police"
               value={latestRecorded ? latestRecorded.latestThousands.toLocaleString('en-GB') : '—'}
@@ -168,7 +167,7 @@ export default function DomesticAbusePage() {
               changeText="2022/23 · Up from 596K in 2014/15 · Better recording, not just rising incidents · Charge rate only 7.1%"
               sparklineData={[596, 663, 730, 800, 858, 880, 862, 870, 906]}
               source="ONS — Crime in England and Wales"
-              href="#sec-recorded"/>
+              href="#sec-prevalence"/>
             <MetricCard
               label="Women killed by partner or ex-partner (annual)"
               value={femicides ? femicides.latestAnnualCount.toString() : '—'}
@@ -177,9 +176,9 @@ export default function DomesticAbusePage() {
               changeText="2022 · 2 per week · 60% of femicides · Often preceded by coercive control · DA = 38% of all homicides"
               sparklineData={[110, 105, 98, 102, 112, 100, 105, 103]}
               source="ONS — Homicide Index; Femicide Census"
-              href="#sec-prevalence"/>
+              href="#sec-services"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Recorded crime section */}
         <div id="sec-recorded">

@@ -141,8 +141,7 @@ export default function WorkerMonitoringPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Employers using productivity monitoring"
               value="72%"
@@ -174,7 +173,7 @@ export default function WorkerMonitoringPage() {
               href="#sec-adoption"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

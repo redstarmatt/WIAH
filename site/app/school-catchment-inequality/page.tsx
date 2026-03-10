@@ -141,8 +141,7 @@ export default function SchoolCatchmentInequalityPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="House price premium near top schools"
               value="£40,000"
@@ -174,7 +173,7 @@ export default function SchoolCatchmentInequalityPage() {
               href="#sec-premium"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

@@ -140,8 +140,7 @@ export default function PavementParkingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Annual pavement parking incidents"
               value="28M"
@@ -173,7 +172,7 @@ export default function PavementParkingPage() {
               href="#sec-enforcement"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

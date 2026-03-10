@@ -643,7 +643,6 @@ export default function JusticePage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Crimes leading to charge"
@@ -663,7 +662,7 @@ export default function JusticePage() {
             }
             source="Home Office · Crime Outcomes YE Mar 2025"
             baseline="Only 7 in 100 recorded crimes end in a charge — down from 15 in 100 a decade ago"
-            href="#sec-overview"/>
+            href="#sec-crime"/>
           <MetricCard
             label="Crown Court backlog"
             value={latestBacklog ? `${(latestBacklog.outstanding / 1000).toFixed(1)}K` : '—'}
@@ -682,7 +681,7 @@ export default function JusticePage() {
             }
             source="MOJ · Criminal Court Statistics Q3 2025"
             baseline="At current court throughput, many defendants wait over 2 years for trial"
-            href="#sec-crime"/>
+            href="#sec-crime-trends"/>
           <MetricCard
             label="Prison population"
             value={currentPop ? `${(currentPop / 1000).toFixed(1)}K` : '—'}
@@ -701,9 +700,9 @@ export default function JusticePage() {
             }
             source="MOJ · Prison Population Dec 2025"
             baseline="7 in 10 released prisoners are convicted of a new offence within 9 years"
-            href="#sec-crime-trends"/>
+            href="#sec-outcomes"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Justice Funnel */}
         <div id="sec-outcomes">

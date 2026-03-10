@@ -153,8 +153,7 @@ export default function HospitalParkingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="NHS parking revenue"
               value="£214M"
@@ -186,7 +185,7 @@ export default function HospitalParkingPage() {
               href="#sec-revenue"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

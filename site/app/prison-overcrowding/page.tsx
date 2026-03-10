@@ -107,8 +107,7 @@ export default function PrisonOvercrowdingPage() {
           { id: 'sec-offences', label: 'By Offence' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Prison population (England &amp; Wales)"
               value="88,225"
@@ -137,7 +136,7 @@ export default function PrisonOvercrowdingPage() {
               href="#sec-population"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-population" className="mb-12">

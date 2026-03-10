@@ -103,8 +103,7 @@ export default function TradeUnionsPage() {
           { id: 'sec-strikes', label: 'Strike Action' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Trade union members"
               value="6.73M"
@@ -133,7 +132,7 @@ export default function TradeUnionsPage() {
               href="#sec-membership"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-membership" className="mb-12">

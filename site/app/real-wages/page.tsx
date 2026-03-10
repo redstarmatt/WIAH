@@ -84,8 +84,7 @@ export default function RealWagesPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Real wages vs 2008 peak"
               value={latest ? `${(latest.index - 100).toFixed(1)}` : '−1'}
@@ -95,7 +94,7 @@ export default function RealWagesPage() {
               changeText="16-year stagnation · worst performance since Napoleonic era"
               sparklineData={[100, 99.2, 96.8, 93.4, 91.7, 91.2, 93.4, 95.2, 97.4, 96.3, 99.1]}
               source="ONS ASHE, adjusted for CPI · 2024"
-              href="#sec-overview"/>
+              href="#sec-wage-index"/>
             <MetricCard
               label="Average real wage growth per year since 2008"
               value="0.06"
@@ -105,7 +104,7 @@ export default function RealWagesPage() {
               changeText="Effectively zero real growth for 16 years · vs 2.5%/yr pre-2008"
               sparklineData={[2.5, 2.4, 2.3, 0.5, 0.1, 0.1, 0.0, 0.2, 0.4, 0.06]}
               source="ONS historical"
-              href="#sec-wage-index"/>
+              href="#sec-deciles"/>
             <MetricCard
               label="Bottom 20% real wage change 2008–2024"
               value="+5.1"
@@ -117,7 +116,7 @@ export default function RealWagesPage() {
               source="Resolution Foundation · 2024"
               href="#sec-deciles"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: Real wage index */}
         <ScrollReveal>

@@ -190,8 +190,7 @@ export default function RecyclingPage() {
         ]} />
 
         {/* ── Metric Cards ──────────────────────────────────────────────────────── */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="England recycling rate"
               value={latest ? latest.rate.toString() : '43.8'}
@@ -222,7 +221,7 @@ export default function RecyclingPage() {
               source="DEFRA — National Packaging Waste Database, 2023"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* ── Section: Recycling Rate ───────────────────────────────────────────── */}
         <ScrollReveal>

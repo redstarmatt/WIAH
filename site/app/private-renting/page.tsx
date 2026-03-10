@@ -137,7 +137,6 @@ export default function PrivateRentingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Average monthly private rent (England)"
@@ -181,7 +180,7 @@ export default function PrivateRentingPage() {
             href="#sec-rents"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Average rent chart */}
         <ScrollReveal>

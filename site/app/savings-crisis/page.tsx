@@ -91,8 +91,7 @@ export default function SavingsCrisisPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Adults with less than £100 in savings"
               value={latest ? latest.percentWithLessThan100.toString() : '25'}
@@ -102,7 +101,7 @@ export default function SavingsCrisisPage() {
               changeText="Up from 22% in 2020 · cost-of-living crisis eroding buffers"
               sparklineData={[22, 20, 24, 25]}
               source="Money & Pensions Service · 2023"
-              href="#sec-overview"/>
+              href="#sec-savings-rate"/>
             <MetricCard
               label="Median savings: bottom quintile"
               value={bottomQuintile ? `£${bottomQuintile.medianSavings}` : '£170'}
@@ -112,7 +111,7 @@ export default function SavingsCrisisPage() {
               changeText="Half of lowest earners have less than £170 saved"
               sparklineData={[250, 230, 210, 190, 180, 170]}
               source="ONS Wealth & Assets Survey · 2022"
-              href="#sec-savings-rate"/>
+              href="#sec-distribution"/>
             <MetricCard
               label="Household savings rate (2022)"
               value={latestRate ? latestRate.householdSavingsRate.toString() : '5.9'}
@@ -124,7 +123,7 @@ export default function SavingsCrisisPage() {
               source="ONS · 2023"
               href="#sec-distribution"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: savings rate over time */}
         <ScrollReveal>
