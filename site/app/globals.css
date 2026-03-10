@@ -23,3 +23,29 @@ body {
 main, article {
   animation: wiah-page-in 250ms ease-out both;
 }
+
+/* ── Scroll anchors ───────────────────────────────────────────────────────────
+   All "sec-*" anchors need a top margin equal to the combined height of the
+   two stacked sticky bars:
+     TopicNav  ≈ 48px  (sticky top-0)
+     SectionNav ≈ 40px  (sticky top-[48px])
+   Using 96px gives comfortable clearance so the section heading is fully
+   visible — not hidden behind — the nav when hash-navigating (MetricCard
+   "View chart →" links, SectionNav pills, and direct URL hashes).          */
+[id^="sec-"] {
+  scroll-margin-top: 96px;
+}
+
+/* ── Target flash ─────────────────────────────────────────────────────────────
+   When a section becomes the URL target (e.g. clicking "View chart →" on a
+   MetricCard), briefly pulse a subtle highlight so the user can immediately
+   see "I've arrived at the right chart". Fades out in 1.2s.                */
+@keyframes wiah-target-flash {
+  0%   { background-color: #EFF6FF; }
+  100% { background-color: transparent; }
+}
+
+[id^="sec-"]:target {
+  animation: wiah-target-flash 1.2s ease-out both;
+  border-radius: 8px;
+}
