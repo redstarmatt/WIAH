@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -185,6 +186,7 @@ export default function GenderClinicPage() {
             <p>Waiting list size from NHS England quarterly returns. Average wait data from NHS England and Gendered Intelligence surveys combined. Under-18 figures from former GIDS annual reports. Service redesign timeline from NHS England programme communications. Data covers England unless stated.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

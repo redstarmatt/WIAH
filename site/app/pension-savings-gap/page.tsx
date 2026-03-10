@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -134,6 +135,7 @@ export default function PensionSavingsGapPage() {
             <p>Median pension pot is estimated from the Wealth and Assets Survey and Pensions Policy Institute modelling. The savings gap is a modelled estimate of the difference between projected pension wealth and the wealth required to fund a moderate retirement income (as defined by the PLSA Retirement Living Standards). Self-employed pension participation is from the Family Resources Survey; self-employed includes both sole traders and directors of owner-managed companies.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

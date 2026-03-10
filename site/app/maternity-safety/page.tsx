@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -168,6 +169,7 @@ export default function MaternitySafetyPage() {
             <p>Ethnic disparity risk ratios are age-standardised and drawn from MBRRACE-UK confidential enquiry data covering 2019–21. The three-year rolling average methodology is used to ensure sufficient case numbers for meaningful analysis.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

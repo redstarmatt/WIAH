@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -147,6 +148,7 @@ export default function CommunityCohesionSurveyPage() {
             <p>Community belonging measure: percentage agreeing or strongly agreeing that &ldquo;people in this area belong together.&rdquo; Trust across backgrounds: percentage agreeing or strongly agreeing that &ldquo;people in this area can be trusted.&rdquo; Deprivation gap derived from Index of Multiple Deprivation quintile analysis of Community Life Survey microdata.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface PrisonMentalHealthData {
   selfHarmIncidents: Array<{ year: number; incidents: number }>
@@ -125,6 +126,7 @@ export default function PrisonMentalHealthPage() {
             <p>Self-harm incident counts include all incidents requiring a formal record. They do not equate to individual prisoners — one person may self-harm multiple times. Deaths in custody are categorised as 'apparent self-inflicted' pending coroner determination.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

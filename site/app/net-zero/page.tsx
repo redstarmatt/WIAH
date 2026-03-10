@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -198,6 +199,7 @@ export default function NetZeroPage() {
           source="National Grid ESO · Data Explorer; UK Government · Energy White Paper"
         />
         </ScrollReveal>
+              <RelatedTopics />
       </main>
     </>
   )

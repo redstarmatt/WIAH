@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface SchoolOvercrowdingDataPoint {
   year: number
@@ -121,6 +122,7 @@ export default function SchoolOvercrowdingPage() {
             <p>Note: Net capacity is a DfE-defined measure based on usable teaching space. Temporary buildings count toward net capacity if approved, which may understate true overcrowding in some schools.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

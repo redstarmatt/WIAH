@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface AirportCapacityUtilisationData {
   topic: string
@@ -139,6 +140,7 @@ export default function AirportCapacityUtilisationPage() {
             <p>Heathrow capacity utilisation is passengers as a percentage of declared operational capacity. UK airport passengers is total passengers handled at all UK airports. 2020–21 data reflects pandemic disruption. Trade cost estimate is from Airports Commission economic modelling updated to 2024 prices.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

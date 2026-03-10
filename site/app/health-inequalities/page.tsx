@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -166,6 +167,7 @@ export default function HealthInequalitiesPage() {
             <p>Healthy life expectancy uses self-reported general health from the Annual Population Survey to classify years as &ldquo;in good health&rdquo;. Deprivation deciles are based on the Index of Multiple Deprivation 2019, applied at Lower Super Output Area level. Life expectancy uses the Sullivan method.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

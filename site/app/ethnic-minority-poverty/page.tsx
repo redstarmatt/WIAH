@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -142,6 +143,7 @@ export default function EthnicMinorityPovertyPage() {
             <p>Poverty defined as below 60% of median household income after housing costs (AHC). Data drawn from Understanding Society (UKHLS) and the Family Resources Survey (FRS). Ethnicity classifications follow the ONS 2021 Census categories. Year-to-year variation in estimates for smaller ethnic groups reflects sample size constraints and should be interpreted with caution.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

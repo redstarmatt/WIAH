@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -235,6 +236,7 @@ export default function FoodInsecurityPage() {
             <p>Referral Reasons — Food Bank Referral Reasons Analysis, Trussell Trust, 2023.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   );

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -134,6 +135,7 @@ export default function InheritanceInequalityPage() {
             <p>Total inherited wealth estimates combine HMRC administrative data on estates passing through probate with ONS Wealth and Assets Survey estimates of total household wealth transfers. Top decile share derived from ONS WAS wave 7 (2018–2020). Median inheritance figures reflect conditional median among those receiving any inheritance.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

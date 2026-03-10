@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -135,6 +136,7 @@ export default function MortgageAffordabilityShockPage() {
             <p>Mortgage as % of take-home pay is calculated using average new mortgage approvals, the prevailing average mortgage rate for the period, a 25-year repayment term, and median full-time worker take-home pay after tax and NI. Payment shock figures are median estimates from industry analysis and FCA survey data; individual experiences vary substantially. Remortgaging household counts are Bank of England estimates of fixed-rate deals expiring in 2023–24.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

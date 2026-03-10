@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface PoliceMisconductData {
   misconductHearings: Array<{ year: number; hearings: number; dismissed: number }>
@@ -125,6 +126,7 @@ export default function PoliceMisconductPage() {
             <p>Stop and search ratios are calculated as the rate per 1,000 population for each ethnic group. The Black to white ratio shown is England and Wales combined. Individual force ratios vary significantly.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

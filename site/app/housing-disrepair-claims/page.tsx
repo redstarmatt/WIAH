@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface HousingDisrepairClaimsData {
   topic: string
@@ -129,6 +130,7 @@ export default function HousingDisrepairClaimsPage() {
             <p>Claims figures are county court housing disrepair claims under the Landlord and Tenant Act 1985 and Homes (Fitness for Human Habitation) Act 2018. Category 1 hazard data from English Housing Survey. Compensation figures are mean awards in settled and judged cases.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

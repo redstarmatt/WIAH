@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -133,6 +134,7 @@ export default function DisabilityHateCrimePage() {
             <p>ONS — Crime Survey for England and Wales. Estimated incidents are self-reported hate crime from CSEW interviews and represent a substantially higher figure than police-recorded data. Charge rate calculated from Home Office crime outcomes data as charges/summons as a proportion of all recorded disability hate crime offences.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

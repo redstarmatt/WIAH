@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface SocialHousingWaitingListsData {
   topic: string
@@ -131,6 +132,7 @@ export default function SocialHousingWaitingListsPage() {
             <p>Waiting list figures represent households accepted onto social housing registers. Many councils apply eligibility criteria — the number in housing need but not on a register is substantially higher. Social homes built figures include all social rent and affordable rent completions.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -247,6 +248,7 @@ export default function TeacherShortagePage() {
           source="Source: DfE — School Workforce Census 2023; DfE — Initial Teacher Training Census 2022/23."
         />
         </ScrollReveal>
+              <RelatedTopics />
       </main>
     </>
   );

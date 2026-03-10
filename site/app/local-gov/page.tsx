@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -356,6 +357,7 @@ export default function LocalGovPage() {
         )}
       </section>
 
-    </main>
+            <RelatedTopics />
+      </main>
   );
 }

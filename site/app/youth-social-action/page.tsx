@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface YouthSocialActionDataPoint {
   year: number
@@ -122,6 +123,7 @@ export default function YouthSocialActionPage() {
             <p>Note: The Community Life Survey methodology changed in 2018, creating a slight discontinuity. 2020 and 2021 pandemic years saw reduced formal volunteering but increased informal mutual aid not fully captured in survey data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

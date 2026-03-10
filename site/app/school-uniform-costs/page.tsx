@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -134,6 +135,7 @@ export default function SchoolUniformCostsPage() {
             <p>Cost data reflects average spend on required uniform items for a secondary school child, based on survey of parents. Estimates for branded items assume school-specified suppliers. Income proportion calculated using DWP Households Below Average Income data. Schools with grant schemes figure from Children&rsquo;s Society survey of maintained schools and academies.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

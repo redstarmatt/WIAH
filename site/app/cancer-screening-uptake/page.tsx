@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -162,6 +163,7 @@ export default function CancerScreeningUptakePage() {
             <p>Uptake figures represent the percentage of eligible individuals who completed screening within the programme recall period. COVID-19 disruption in 2020 resulted in significantly reduced activity across all three programmes. Figures have been rounded to one decimal place.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

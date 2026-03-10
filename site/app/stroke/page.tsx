@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -193,6 +194,7 @@ export default function StrokePage() {
             <p>Mortality rates are age-standardised to the 2013 European Standard Population. Thrombolysis rate measures the proportion of confirmed ischaemic stroke patients receiving alteplase. Thrombectomy rate measures the proportion receiving mechanical clot retrieval. Both figures cover England only.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

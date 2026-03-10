@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -127,6 +128,7 @@ export default function NhsDentistryAccessPage() {
             <p>Courses of treatment represent a period of NHS dental care, from the first appointment to when the dentist certifies the treatment is complete. One course may include multiple appointments. Adult access is measured as the percentage of adults (aged 18+) who have received at least one course of NHS dental treatment in the preceding 24-month period.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

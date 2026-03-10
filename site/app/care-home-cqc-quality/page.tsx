@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -144,6 +145,7 @@ export default function CareHomeCqcQualityPage() {
             <p>Rating percentages drawn from CQC published inspection data. Homes rated Inadequate or Requires Improvement calculated as proportion of all registered care homes with a published rating. Closure figures from LaingBuisson market analysis and CQC de-registrations data. Figures cover residential and nursing care homes for older people and adults with disabilities in England.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

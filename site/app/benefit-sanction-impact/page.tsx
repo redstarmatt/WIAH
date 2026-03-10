@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -133,6 +134,7 @@ export default function BenefitSanctionImpactPage() {
             <p>Sanctions figures cover Universal Credit standard conditionality sanctions. Pre-2016 figures include legacy benefit sanctions on JSA and ESA converted to UC-equivalent for comparability. 2020 data reflects April–December enforcement suspension. Food bank referral percentage derived from Trussell Trust case outcome data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface EnergyDisconnectionsData {
   topic: string
@@ -119,6 +120,7 @@ export default function EnergyDisconnectionsPage() {
             <p>Self-disconnection estimates from Ofgem Consumer Vulnerability Report, supplemented by Citizens Advice case data. Forced PPM installation figures from Ofgem supplier licence compliance reporting. Fuel debt data from Ofgem Supplier Financial Resilience reporting and Citizens Advice quarterly energy statistics. Energy Price Guarantee impact from BEIS energy security analysis.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -136,6 +137,7 @@ export default function ConstructionHousebuildingPage() {
             <p>Net additions include new build completions, conversions from other uses, changes of use within residential, and minus demolitions. Data is for England only; Scotland, Wales, and Northern Ireland have separate housing statistics. The 300,000 target was set by the Conservative government in 2019; the current government has maintained this target. Financial year data (April-March) is used.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

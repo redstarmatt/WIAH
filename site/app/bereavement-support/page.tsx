@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -146,6 +147,7 @@ export default function BereavementSupportPage() {
             <p>Bereaved annually figure is the annual death count in England. Specialist support access is estimated from Cruse referral volumes and NHS IAPT grief-related contacts as a proportion of total bereaved. Wait time is average referral-to-assessment gap. 2020 figure reflects COVID-19 excess mortality.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

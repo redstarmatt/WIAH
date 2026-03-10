@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface SupplyChainData {
   foodImportDependency: Array<{ year: number; percent: number }>
@@ -131,6 +132,7 @@ export default function SupplyChainPage() {
             <p>Food import dependency is measured as imports as a share of total food supply (domestic production plus imports minus exports). The goods trade deficit is measured in current prices. UK-EU trade share uses HMRC trade data and covers goods only; services are excluded.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

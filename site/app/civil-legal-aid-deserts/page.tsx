@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -146,6 +147,7 @@ export default function CivilLegalAidDesertsPage() {
             <p>Legal aid desert classification is based on absence of a registered legal aid provider under the Legal Aid Agency framework for that area of law within the local authority boundary. The large reduction in total cases in 2013 reflects the LASPO Act removing categories of civil law from scope. Litigants in person data is from HMCTS family court quarterly statistics.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

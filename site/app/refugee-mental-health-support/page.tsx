@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -147,6 +148,7 @@ export default function RefugeeMentalHealthSupportPage() {
             <p>Trauma history prevalence is derived from a systematic review of clinical and community research on refugees in the UK. Specialist support access includes NHS IAPT, CMHT contacts, and voluntary sector specialist services. Administrative recording of refugee status in NHS systems is incomplete; figures should be treated as estimates.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

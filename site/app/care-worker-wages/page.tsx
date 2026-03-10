@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface CareWorkerWagesData {
   medianHourlyPay: Array<{ year: number; pay: number }>
@@ -125,6 +126,7 @@ export default function CareWorkerWagesPage() {
             <p>Median pay figures are for directly employed care workers in independent sector roles and exclude management and non-care functions. The Real Living Wage is set annually by the Living Wage Foundation based on cost of living research. Vacancy rate is calculated as unfilled posts as a proportion of all posts (filled and unfilled).</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

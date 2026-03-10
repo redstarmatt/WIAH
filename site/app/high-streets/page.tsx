@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SourceAttribution from '@/components/SourceAttribution'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface VacancyPoint {
   year: string
@@ -336,6 +337,7 @@ export default function HighStreetsPage() {
             </div>
           </section>
         </ScrollReveal>
+              <RelatedTopics />
       </main>
     </div>
   )

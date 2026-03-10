@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface CivicParticipationData {
   formalVolunteering: Array<{ year: number; percent: number }>
@@ -136,6 +137,7 @@ export default function CivicParticipationPage() {
             <p>Formal volunteering is defined as giving unpaid time through an organisation at least once in the past 12 months. Informal helping covers unpaid help to individuals outside the household. COVID-19 significantly disrupted 2020 data collection, and year-on-year comparisons around 2020 should be treated with caution.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

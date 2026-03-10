@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -146,6 +147,7 @@ export default function PesticideReductionPage() {
             <p>Pesticide application figures are measured in thousands of hectare-treatments (standardised applications per area). Figures cover arable, horticultural, soft fruit and other agricultural uses. Organic area covers certified and in-conversion land registered under approved organic certification bodies.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -237,6 +238,7 @@ export default function SchoolCatchmentInequalityPage() {
             </ul>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   );

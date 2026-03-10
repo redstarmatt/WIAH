@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -145,6 +146,7 @@ export default function DisabledChildrenCarePage() {
             <p>Estimates of total disabled children needing support are modelled from population prevalence studies and disability benefit claimant data. Children receiving support counts those with an active EHCP or receiving a social care service. EHCP wait time is calculated from EHC needs assessment request to final plan issue date.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

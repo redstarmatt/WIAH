@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface AirQualitySchoolsData {
   topic: string
@@ -112,6 +113,7 @@ export default function AirQualitySchoolsPage() {
             <p>ClientEarth / Greater London Authority. Air Quality and Schools Analysis. 2024. Children estimates based on school roll data and local authority NO2 monitoring. King's College London. London Air Quality Network. Continuous monitoring data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

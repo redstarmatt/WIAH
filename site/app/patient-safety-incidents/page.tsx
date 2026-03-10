@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -141,6 +142,7 @@ export default function PatientSafetyIncidentsPage() {
             <p>Never events are defined under the NHS England Never Events Policy and Framework. Serious incidents are reported to the Patient Safety Incident Management System and include all events meeting the Serious Incident criteria under PSIRF (from 2022) or the previous Serious Incident Framework. Maternity incidents are a subset of serious incidents classified under the Maternity Incentive Scheme reporting criteria.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

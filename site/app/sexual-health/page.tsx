@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -205,6 +206,7 @@ export default function SexualHealthPage() {
             <p>STI diagnoses cover all infections reported through sexual health clinics in England. Online testing services increasingly captured in GUMCAD from 2020 onwards. Clinic counts reflect specialist sexual health services (GUM clinics and integrated services); some GP-based testing not included. The 2020 dip reflects COVID-related clinic closures and reduced testing, not a genuine decline in STI incidence.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

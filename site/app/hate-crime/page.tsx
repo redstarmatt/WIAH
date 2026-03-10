@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -209,6 +210,7 @@ export default function HateCrimePage() {
           { id: 'sec-context', label: 'Context' },
         ]}
       />
-    </main>
+            <RelatedTopics />
+      </main>
   );
 }

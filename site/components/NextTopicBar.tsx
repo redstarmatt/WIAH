@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import { TOPICS, getNextTopic, getMetricStatus, STATUS_COLOUR } from '@/lib/topics';
+import { TOPICS, getNextTopicInCategory, getRandomTopic, getCategoryForTopic, getMetricStatus, STATUS_COLOUR } from '@/lib/topics';
 
 const SHOW_THRESHOLD = 0.98;
 const HIDE_THRESHOLD = 0.94;
@@ -26,7 +26,19 @@ export default function NextTopicBar() {
 
   const currentSlug = pathname.replace(/^\//, '').split('/')[0];
   const isTopicPage = Boolean(currentSlug && currentSlug in TOPICS);
-  const nextTopic = isTopicPage ? getNextTopic(currentSlug) : null;
+  const nextTopic = isTopicPage ? getNextTopicInCategory(currentSlug) : null;
+  const category = isTopicPage ? getCategoryForTopic(currentSlug) : null;
+  const isEndOfCategory = isTopicPage && !nextTopic;
+
+  // Stable random topic for end-of-category (recalculated on page change)
+  const randomTopic = useMemo(
+    () => (isEndOfCategory ? getRandomTopic(currentSlug) : null),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [currentSlug, isEndOfCategory],
+  );
+
+  // The topic to show — either next in category, or a random one
+  const displayTopic = nextTopic ?? randomTopic;
 
   // Reset on navigation
   useEffect(() => {
@@ -42,7 +54,7 @@ export default function NextTopicBar() {
 
   // Scroll listener — also tracks idle state so countdown only starts after user stops scrolling
   useEffect(() => {
-    if (!nextTopic || isDismissed) return;
+    if (!displayTopic || isDismissed) return;
 
     const handleScroll = () => {
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -62,14 +74,11 @@ export default function NextTopicBar() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    // Do NOT call handleScroll() on mount — if the page loaded at the bottom
-    // (e.g. via a hash link from search), we must not auto-advance immediately.
-    // The bar only appears after the user actively scrolls to the bottom.
     return () => {
       window.removeEventListener('scroll', handleScroll);
       if (scrollIdleTimerRef.current) clearTimeout(scrollIdleTimerRef.current);
     };
-  }, [nextTopic, isDismissed, currentSlug]);
+  }, [displayTopic, isDismissed, currentSlug]);
 
   const navigateTo = useCallback((href: string) => {
     setIsFadingOut(true);
@@ -77,8 +86,9 @@ export default function NextTopicBar() {
   }, [router]);
 
   // Progress timer — only counts down once the user has stopped scrolling
+  // No auto-advance for end-of-category random suggestions
   useEffect(() => {
-    if (isVisible && nextTopic && !isDismissed && isScrollIdle) {
+    if (isVisible && displayTopic && !isDismissed && isScrollIdle && !isEndOfCategory) {
       startTimeRef.current = Date.now();
 
       intervalRef.current = setInterval(() => {
@@ -88,7 +98,7 @@ export default function NextTopicBar() {
 
         if (pct >= 100) {
           clearInterval(intervalRef.current!);
-          navigateTo(nextTopic.href);
+          navigateTo(displayTopic.href);
         }
       }, 50);
 
@@ -100,23 +110,28 @@ export default function NextTopicBar() {
       setProgress(0);
       startTimeRef.current = null;
     }
-  }, [isVisible, nextTopic, isDismissed, navigateTo, isScrollIdle]);
+  }, [isVisible, displayTopic, isDismissed, navigateTo, isScrollIdle, isEndOfCategory]);
 
   const handleContinue = useCallback(() => {
-    if (nextTopic) navigateTo(nextTopic.href);
-  }, [nextTopic, navigateTo]);
+    if (displayTopic) navigateTo(displayTopic.href);
+  }, [displayTopic, navigateTo]);
+
+  const handleShuffle = useCallback(() => {
+    const random = getRandomTopic(currentSlug);
+    if (random) navigateTo(random.href);
+  }, [currentSlug, navigateTo]);
 
   const handleDismiss = useCallback(() => {
     setIsDismissed(true);
     setIsVisible(false);
   }, []);
 
-  if (!nextTopic) return null;
+  if (!displayTopic) return null;
 
-  const firstMetric = nextTopic.metrics[0];
+  const firstMetric = displayTopic.metrics[0];
   const status = getMetricStatus(firstMetric.direction, firstMetric.polarity);
   const metricColour = STATUS_COLOUR[status];
-  const preposition = nextTopic.preposition ? ` ${nextTopic.preposition}` : ' in';
+  const preposition = displayTopic.preposition ? ` ${displayTopic.preposition}` : ' in';
 
   return (
     <>
@@ -136,17 +151,19 @@ export default function NextTopicBar() {
         }`}
         aria-hidden={!isVisible || isDismissed}
       >
-        {/* Progress bar */}
-        <div className="h-[3px] bg-wiah-border overflow-hidden">
-          <div
-            className="h-full"
-            style={{
-              width: `${progress}%`,
-              backgroundColor: nextTopic.colour,
-              transition: progress === 0 ? 'none' : 'width 50ms linear',
-            }}
-          />
-        </div>
+        {/* Progress bar — only shown for category-aware next (not random) */}
+        {!isEndOfCategory && (
+          <div className="h-[3px] bg-wiah-border overflow-hidden">
+            <div
+              className="h-full"
+              style={{
+                width: `${progress}%`,
+                backgroundColor: displayTopic.colour,
+                transition: progress === 0 ? 'none' : 'width 50ms linear',
+              }}
+            />
+          </div>
+        )}
 
         {/* Panel */}
         <div className="bg-white/95 backdrop-blur border-t border-wiah-border">
@@ -154,17 +171,20 @@ export default function NextTopicBar() {
 
             <div
               className="w-[3px] h-10 rounded-full shrink-0"
-              style={{ backgroundColor: nextTopic.colour }}
+              style={{ backgroundColor: displayTopic.colour }}
             />
 
             <div className="flex-1 min-w-0">
               <p className="text-[10px] font-mono text-wiah-mid uppercase tracking-widest mb-0.5">
-                Next up
+                {isEndOfCategory
+                  ? `You\u2019ve explored all of ${category?.name ?? 'this category'}`
+                  : `Next in ${category?.name ?? 'this category'}`
+                }
               </p>
               <p className="text-sm font-semibold text-wiah-black truncate leading-tight">
                 <span style={{ fontFamily: 'var(--font-editorial), Georgia, serif' }}>
                   What is <em><strong>actually</strong></em> happening{preposition}{' '}
-                  {nextTopic.topic}
+                  {displayTopic.topic}
                 </span>
               </p>
               <p className="text-[11px] font-mono text-wiah-mid truncate mt-0.5">
@@ -177,12 +197,28 @@ export default function NextTopicBar() {
               </p>
             </div>
 
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex items-center gap-2 shrink-0">
+              {/* Shuffle button — always available */}
+              <button
+                onClick={handleShuffle}
+                className="text-wiah-mid hover:text-wiah-black transition-colors p-1.5 rounded-md hover:bg-wiah-light"
+                aria-label="Go to a random topic"
+                title="Surprise me"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M1 4h2.5a4 4 0 0 1 3.2 1.6L8 7.5l1.3 1.9A4 4 0 0 0 12.5 11H15" />
+                  <path d="M1 11h2.5a4 4 0 0 0 3.2-1.6" />
+                  <path d="M12.5 4H15" />
+                  <path d="M13 2l2 2-2 2" />
+                  <path d="M13 9l2 2-2 2" />
+                </svg>
+              </button>
+
               <button
                 onClick={handleContinue}
                 className="text-sm font-medium text-wiah-blue hover:text-wiah-black transition-colors flex items-center gap-1"
               >
-                Continue <span aria-hidden>→</span>
+                {isEndOfCategory ? 'Explore' : 'Continue'} <span aria-hidden>→</span>
               </button>
               <button
                 onClick={handleDismiss}

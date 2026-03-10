@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -145,6 +146,7 @@ export default function CarerMentalHealthPage() {
             <p>Mental health figures are self-reported by survey respondents. Professional support access includes any contact with a GP, IAPT service, or community mental health team in the past twelve months. Survey methodology changed slightly in 2020; pre/post figures are broadly comparable.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

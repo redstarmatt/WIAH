@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -133,6 +134,7 @@ export default function GpListSizePage() {
             <p>List size figures are calculated by dividing total registered patients (from the Patients Registered at a GP Practice dataset, October snapshot) by total GP FTE (from General Practice Workforce Statistics, same month). GP FTE includes all GP partners, salaried GPs, and GP locums in regular positions. The 1,500 recommended maximum is the BMA General Practitioners Committee guidance. The 25-contact safety threshold is referenced in GMC and RCGP workload guidance. Daily consultation average from BMA GP workload survey 2024.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

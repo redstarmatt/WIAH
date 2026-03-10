@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -146,6 +147,7 @@ export default function FacialRecognitionPolicingPage() {
             <p>Deployments cover Metropolitan Police Service only. Other forces publish data inconsistently. False positive rate is self-reported by the Met using its own methodology; independent academic assessments may differ. Data pre-2019 not included as the technology was in pilot phase.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

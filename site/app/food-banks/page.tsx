@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface FoodBanksData {
   national: {
@@ -237,6 +238,7 @@ export default function FoodBanksPage() {
           <p className="font-mono text-xs">Open data. No agenda.</p>
         </div>
       </footer>
-    </main>
+            <RelatedTopics />
+      </main>
   );
 }

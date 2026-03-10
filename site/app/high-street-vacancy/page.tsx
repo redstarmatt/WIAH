@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -135,6 +136,7 @@ export default function HighStreetVacancyPage() {
             <p>Vacancy rate covers GB high streets, retail parks, and shopping centres sampled by the Local Data Company. A unit is classified as vacant if it has been unoccupied for 6+ weeks. Footfall index covers approximately 3,000 locations nationally and is rebased to 2019=100. Retail insolvencies cover company insolvencies with SIC codes in retail trade.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

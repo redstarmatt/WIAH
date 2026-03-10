@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -174,6 +175,7 @@ export default function LongTermConditionsPage() {
             <p>Multimorbidity is defined as the presence of two or more long-term conditions. Prevalence estimates are modelled from QOF disease registers and primary care records. Projections to 2035 use demographic projections from ONS combined with observed trends in condition incidence and prevalence.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

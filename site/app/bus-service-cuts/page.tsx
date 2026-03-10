@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface BusServiceCutsData {
   topic: string
@@ -130,6 +131,7 @@ export default function BusServiceCutsPage() {
             <p>Bus miles index uses 2010 as baseline of 100, excluding London. Passenger journeys in billions from DfT Bus Statistics Table BUS0101. Route cut figures are cumulative estimates from Campaign for Better Transport monitoring of service registrations. 2021 data reflects pandemic disruption in passenger journeys.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

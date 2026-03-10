@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface OnshoreWindData {
   national: {
@@ -195,6 +196,7 @@ export default function OnshoreWindPage() {
             )}
           </section>
         </ScrollReveal>
+              <RelatedTopics />
       </main>
     </>
   );

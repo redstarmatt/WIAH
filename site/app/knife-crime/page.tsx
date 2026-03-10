@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -282,6 +283,7 @@ export default function KnifeCrimePage() {
             source="Source: Home Office — Violence Reduction Unit evaluations, 2024. NHS England — Hospital Episode Statistics 2024/25."
           />
         </ScrollReveal>
+              <RelatedTopics />
       </main>
     </>
   );

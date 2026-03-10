@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -146,6 +147,7 @@ export default function FraudProsecutionGapPage() {
             <p>Fraud is significantly under-reported. The 40% share of crime figure is based on Crime Survey estimates and reflects a much larger true volume than police recorded figures suggest.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1)
@@ -191,6 +192,7 @@ export default function ChildMentalHealthPage() {
             <p>All data relates to England only. CAMHS includes community-based assessment, brief intervention, and specialist treatment services. Waiting list figures reflect point-in-time snapshots at end of reporting period. Self-harm admission rates per 100,000 population standardised to 2013 mid-year estimates.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

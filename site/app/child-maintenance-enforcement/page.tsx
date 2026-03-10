@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -146,6 +147,7 @@ export default function ChildMaintenanceEnforcementPage() {
             <p>CMS cases include all cases on the Direct Pay and Collect and Pay services at the end of each quarter. Annual figures represent end-Q4 (March) snapshots. Non-compliance rate is percentage of paying parents not fully compliant with payment schedule. Arrears are total outstanding debt accumulated across all open and closed cases. Arrears data are only available for selected years as full series is not published.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

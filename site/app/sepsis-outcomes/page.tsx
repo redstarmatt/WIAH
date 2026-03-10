@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader'
 import MetricCard from '@/components/MetricCard'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 export default function SepsisOutcomesPage() {
   return (
@@ -52,6 +53,7 @@ export default function SepsisOutcomesPage() {
             <p>Official data sources. See individual metric cards for specific attributions. Updated periodically as new data is published.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

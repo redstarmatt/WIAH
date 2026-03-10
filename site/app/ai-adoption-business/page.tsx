@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface AiAdoptionBusinessData {
   topic: string
@@ -133,6 +134,7 @@ export default function AiAdoptionBusinessPage() {
             <p>Large business adoption figures are for businesses with 250 or more employees. SME figures cover businesses with fewer than 250 employees. AI adoption is defined as using at least one AI application in core business operations. Investment per worker figures are purchasing-power-parity adjusted.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

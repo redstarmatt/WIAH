@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface MilitaryRecruitmentData {
   armyStrength: Array<{ year: number; trained: number }>
@@ -131,6 +132,7 @@ export default function MilitaryRecruitmentPage() {
             <p>Trained strength excludes untrained recruits, officers in initial training, and those on long-term sick or absent. Establishment targets are set by the MOD and revised periodically. The 73,000 Army target applies from FY2023.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

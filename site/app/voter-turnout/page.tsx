@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -214,6 +215,7 @@ export default function VoterTurnoutPage() {
           <p>House of Commons Library. Voter turnout by age group. Research Briefing CBP 7501. 2024.</p>
         </div>
       </section>
+        <RelatedTopics />
     </div>
   );
 }

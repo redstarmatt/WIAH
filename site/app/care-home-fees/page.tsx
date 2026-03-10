@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface CareHomeFeesData {
   averageWeeklyFee: Array<{ year: number; residential: number; nursing: number }>
@@ -136,6 +137,7 @@ export default function CareHomeFessPage() {
             <p>Fee data represents average weekly charges inclusive of all personal care, accommodation, and meals. Nursing care fees include provision of registered nursing. Fees vary substantially by region, with London and the South East typically 20–30% above the national average.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1)
@@ -199,6 +200,7 @@ export default function CareHomesPage() {
             <p>CQC ratings reflect the most recent inspection rating as of year-end. Ratings categories: Outstanding, Good, Requires Improvement, and Inadequate. Staff vacancy data collected via annual survey; represents full-time equivalent positions unfilled at time of survey. Funding type data derived from CQC inspection reports and includes estimated distribution based on local authority commissioning and private &amp; self-funded placements.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface PostgraduateFundingDataPoint {
   year: number
@@ -122,6 +123,7 @@ export default function PostgraduateFundingPage() {
             <p>Note: Postgraduate loan scheme launched in 2016 for master's and 2018 for doctoral. Combined marginal tax rate calculation assumes Plan 2 undergraduate loan combined with postgraduate master's loan at standard rates for a graduate earning £40,000.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

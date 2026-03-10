@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -184,6 +185,7 @@ export default function HospitalInfectionsPage() {
             <p>C.difficile cases include both hospital-onset (more than 48 hours after admission) and community-onset healthcare-associated cases. MRSA cases are bloodstream infections only; colonisation is not included. Figures cover England. Cost estimates from PHE Healthcare-Associated Infections report, 2018.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

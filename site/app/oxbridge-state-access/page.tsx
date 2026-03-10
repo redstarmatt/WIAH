@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -159,6 +160,7 @@ export default function OxbridgeStateAccessPage() {
             <p>State school percentage defined as proportion of UK-domiciled undergraduate entrants who attended a state-maintained school or college (including grammar schools, academies, free schools, and further education colleges). Excludes overseas students and postgraduates.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

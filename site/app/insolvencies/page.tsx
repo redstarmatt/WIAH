@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -156,6 +157,7 @@ export default function InsolvenciesPage() {
             <p>Company insolvencies include compulsory liquidations (court-ordered), creditors&rsquo; voluntary liquidations (directors-initiated), administrations, receiverships, and company voluntary arrangements. Personal insolvencies include bankruptcies, debt relief orders (DROs), and individual voluntary arrangements (IVAs). Sector data is based on Standard Industrial Classification (SIC) codes.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

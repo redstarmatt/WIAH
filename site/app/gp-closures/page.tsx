@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -128,6 +129,7 @@ export default function GpClosuresPage() {
             <p>Practice count reflects NHS organisations with a registered GMS, PMS, or APMS contract providing primary medical services. Practices that merge into a single entity count as one closure. List size data is derived from the NHS Digital Patient Registered at a GP Practice dataset, divided by active practice count at the same date.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

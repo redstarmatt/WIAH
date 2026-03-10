@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import PositiveCallout from '@/components/PositiveCallout'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface DementiaData {
   prevalence: Array<{ year: number; estimated: number; diagnosed: number }>
@@ -216,6 +217,7 @@ export default function DementiaPage() {
           </div>
         </section>
       </div>
-    </main>
+            <RelatedTopics />
+      </main>
   )
 }

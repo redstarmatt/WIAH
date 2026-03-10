@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface TravellerSiteProvisionData {
   topic: string
@@ -131,6 +132,7 @@ export default function TravellerSiteProvisionPage() {
             <p>Pitch shortfall estimates are modelled from Gypsy and Traveller Accommodation Needs Assessments versus allocated supply. Refusal rates compare Traveller site applications to all other residential applications. Unauthorised encampment figures from biannual Traveller Caravan Count.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

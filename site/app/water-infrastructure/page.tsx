@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface WaterInfraData {
   national: {
@@ -129,6 +130,7 @@ export default function WaterInfrastructurePage() {
             />
           </section>
         </ScrollReveal>
+              <RelatedTopics />
       </main>
     </>
   )

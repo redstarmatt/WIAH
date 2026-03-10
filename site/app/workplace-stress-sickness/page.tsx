@@ -8,6 +8,7 @@ import LineChart from '@/components/charts/LineChart'
 import type { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -135,6 +136,7 @@ export default function WorkplaceStressSicknessPage() {
             <p>Data derived from the Labour Force Survey self-reported module. Figures cover cases where the worker believed their condition was caused or made worse by their work. Days lost are estimated from average absence durations. Data covers Great Britain; Northern Ireland reported separately.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -142,6 +143,7 @@ export default function Nhs111PressuresPage() {
             <p>Call volume figures are total calls offered to the service. Abandoned calls are those where the caller disconnected before speaking to a call handler or clinical advisor. ED referral rate is calls resulting in an 'Attend A&amp;E' disposition as a proportion of total calls completed. Data for 2015–2019 sourced from published NHS 111 MDS annual summaries; 2020 onwards from monthly data releases aggregated to annual totals.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

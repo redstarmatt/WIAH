@@ -1,9 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import SiteName from './SiteName';
 import SearchTrigger from './SearchTrigger';
 import ShareButton from './ShareButton';
+import { getCategoryForTopic } from '@/lib/topics';
 
 interface TopicNavProps {
   topic: string;
@@ -12,6 +14,12 @@ interface TopicNavProps {
 }
 
 export default function TopicNav({ topic, shareTitle, shareText }: TopicNavProps) {
+  const pathname = usePathname();
+  const slug = pathname.replace(/^\//, '').split('/')[0];
+  const category = getCategoryForTopic(slug);
+  const backHref = category ? `/?cat=${category.slug}` : '/';
+  const backLabel = category ? `\u2190 ${category.name}` : '\u2190 All topics';
+
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-wiah-border px-4 sm:px-6 py-3">
       <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
@@ -27,8 +35,8 @@ export default function TopicNav({ topic, shareTitle, shareText }: TopicNavProps
         <div className="flex items-center gap-3 shrink-0">
           <SearchTrigger variant="dark" />
           <ShareButton title={shareTitle} text={shareText} />
-          <Link href="/" className="text-sm text-wiah-blue hover:underline whitespace-nowrap">
-            ← All topics
+          <Link href={backHref} className="text-sm text-wiah-blue hover:underline whitespace-nowrap">
+            {backLabel}
           </Link>
         </div>
       </div>

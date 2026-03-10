@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -213,6 +214,7 @@ export default function BloodPressurePage() {
             <p>The &ldquo;detection gap&rdquo; is calculated as estimated total prevalence minus GP QOF register count. Prevalence estimates rely on survey data and modelling; actual undiagnosed figures are uncertain. Blood pressure control target is 140/90 mmHg per NICE CG136 (or 150/90 for those aged 80+). NHS Health Check figures reflect completed checks, not invitations sent.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

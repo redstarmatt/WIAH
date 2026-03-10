@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -149,6 +150,7 @@ export default function TeenConceptionRatesPage() {
             <p>Conception rate is conceptions per 1,000 women aged 15–17. Includes both maternities (live births and stillbirths) and legal abortions. Excludes miscarriages. Data for the most recent years are provisional and subject to revision. Deprivation gap is the ratio of the conception rate in the most deprived quintile to the least deprived quintile of LSOAs.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

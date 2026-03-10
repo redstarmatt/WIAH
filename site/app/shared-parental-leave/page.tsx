@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -135,6 +136,7 @@ export default function SharedParentalLeavePage() {
             <p>Take-up is defined as the percentage of eligible fathers (those whose partner took maternity leave or pay) who made any claim for shared parental leave. &ldquo;Fathers taking nothing&rdquo; refers to fathers taking no leave beyond the statutory 2-week paternity entitlement. Statutory pay rate for 2024 is £184.03 per week (or 90% of average weekly earnings if lower). Rate data are nominal and not adjusted for inflation.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

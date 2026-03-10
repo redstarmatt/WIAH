@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -150,6 +151,7 @@ export default function SickLeaveCostsPage() {
             <p>Days lost figures cover all employed workers. Long-term sick figures are ONS LFS estimates of economically inactive working-age people (16–64) who give long-term sickness as their main reason for inactivity. Economic cost estimates combine employer direct costs and output loss.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -140,6 +141,7 @@ export default function AntiSocialBehaviourCrisisPage() {
             <p>ASB incidents are recorded where police log an incident as primarily involving anti-social behaviour. This includes personal, nuisance, and environmental ASB sub-categories. Recording practices vary between forces, limiting direct cross-force comparison.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

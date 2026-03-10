@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -199,6 +200,7 @@ export default function NhsCapitalPage() {
             <p>Maintenance backlog represents the estimated cost of returning buildings to condition B (sound, operationally safe, exhibits minor deterioration). High-risk infrastructure rated condition D (serious risk of imminent breakdown) or E (already failed). ERIC data quality is variable; the NAO has noted that trusts may underreport backlog. Capital spending figures include Nightingale hospital construction in 2020–2021, which distorts the time series.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -139,6 +140,7 @@ export default function KnifeCrimeGeographyPage() {
             <p>Knife offences include homicide with a sharp instrument, attempted murder, GBH, robbery, and possession offences involving a knife or sharp instrument. Rate calculations use ONS mid-year population estimates. London rate uses MPS data; national rate excludes GMP in years where data quality was flagged.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

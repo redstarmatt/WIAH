@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -150,6 +151,7 @@ export default function WorkplaceFatalitiesPage() {
             <p>Fatal injuries include employees and self-employed workers killed as a result of a work-related accident. Road traffic incidents are excluded unless the fatality occurred in a workplace. Rates are calculated per 100,000 workers using ONS Labour Force Survey employment figures. Construction sector breakdown uses SIC codes 41–43.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

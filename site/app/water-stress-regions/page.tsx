@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -138,6 +139,7 @@ export default function WaterStressRegionsPage() {
             <p>Water stress classifications use Environment Agency methodology assessing current and projected supply-demand balance in each water resource zone, accounting for population growth, climate change and environmental flow requirements. Supply-demand gap projections are from central scenarios in Water Resources Management Plans submitted by water companies to the Secretary of State.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

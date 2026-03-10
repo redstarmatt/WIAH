@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -157,6 +158,7 @@ export default function UkCarbonBudgetPage() {
             <p>Emissions figures are territorial greenhouse gas emissions in CO2-equivalent (using GWP100 conversion factors). The 1990 baseline reflects the internationally agreed reference year for UK commitments. Carbon Budget limits are five-year totals set by the Committee on Climate Change and approved by Parliament.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

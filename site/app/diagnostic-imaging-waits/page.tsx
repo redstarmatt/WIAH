@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -133,6 +134,7 @@ export default function DiagnosticImagingWaitsPage() {
             <p>The six-week diagnostic standard applies to 15 key diagnostic tests as defined in the NHS Constitution. Figures represent the proportion of patients waiting beyond six weeks at month-end. Annual figures are derived by averaging monthly snapshots. The 380,000 absolute waiting figure is based on the most recent published month within the 2024 reporting period.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

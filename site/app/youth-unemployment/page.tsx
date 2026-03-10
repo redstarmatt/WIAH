@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -255,6 +256,7 @@ export default function YouthUnemploymentPage() {
           description="Before the pandemic, youth unemployment in the UK had fallen to an historic low of 11.2% in 2019 — the result of sustained economic growth, apprenticeship expansion, and minimum wage increases. The progress made between 2012 and 2019 demonstrates that youth unemployment is not inevitable."
           source="Source: ONS — Labour Force Survey, 2019."
         />
+              <RelatedTopics />
       </main>
     </>
   );

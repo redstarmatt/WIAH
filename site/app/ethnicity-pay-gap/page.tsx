@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -167,6 +168,7 @@ export default function EthnicityPayGapPage() {
             <p>Pay gaps are calculated from ASHE and represent median gross hourly earnings, excluding overtime, for employees. Comparisons are to White British workers. Some ethnic minority groups have small sample sizes in ASHE, leading to wider confidence intervals; Black African and Indian figures are available only for some years. The analysis controls for hours worked but not for occupation, sector, qualifications, or experience — which are themselves subject to inequalities that cannot be treated as neutral controls.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

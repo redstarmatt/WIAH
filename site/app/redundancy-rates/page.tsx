@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface RedundancyRatesData {
   topic: string
@@ -127,6 +128,7 @@ export default function RedundancyRatesPage() {
             <p>Notification figures are total proposed redundancies from HR1 forms submitted by employers proposing 20 or more redundancies. Not all proposed redundancies result in actual job losses. Redundancy rate is LFS-measured redundancies per 1,000 employees, seasonally adjusted, annual average. Sector share is proportion of 2024 HR1 notifications by industry classification.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -189,6 +190,7 @@ export default function CancerDiagnosisPage() {
             <p>Stage at diagnosis calculated as proportion of cancers with known stage diagnosed at stage 1 or 2. Approximately 15–20% of cancers have unknown stage and are excluded from denominator. 62-day clock starts at date of urgent GP referral. Faster Diagnosis Standard clock starts at point of referral and ends at date of cancer diagnosis or ruling out. Data covers England.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

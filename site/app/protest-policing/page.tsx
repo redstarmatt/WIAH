@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -137,6 +138,7 @@ export default function ProtestPolicingPage() {
             <p>Protest arrest figures are drawn from Home Office police powers data and include arrests under public order, obstruction, and trespass legislation. Not all arrests result in charge or conviction. The definition of &ldquo;protest-related&rdquo; follows the Home Office classification. SDPO figures are from Ministry of Justice civil orders data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

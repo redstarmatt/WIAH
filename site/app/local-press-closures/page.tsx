@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -148,6 +149,7 @@ export default function LocalPressClosuresPage() {
             <p>News desert count reflects communities (typically defined as local authority district level) where no newspaper, local news website, or BBC local station provides regular coverage of local government affairs. BBC station merger data reflects 2024 restructuring announcement.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

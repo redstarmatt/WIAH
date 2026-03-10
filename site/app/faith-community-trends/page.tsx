@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -149,6 +150,7 @@ export default function FaithCommunityTrendsPage() {
             <p>No religion percentage is from ONS Census for 2001 and 2021 data points; intermediate years and 2023 from British Social Attitudes interpolation. Weekly attendance from BSA self-reported religious practice data. Faith charity social value estimate from Church Urban Fund / NCVO modelling of volunteer time, buildings use, and direct service provision.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

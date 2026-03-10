@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -153,6 +154,7 @@ export default function PharmacyFirstServicePage() {
             <p>Pharmacy First launched 31 January 2024. Consultation figures are cumulative across the first year of operation. Resolution rate is defined as the proportion of consultations where the patient did not require onward referral to a GP or emergency department within 7 days. GP wait time comparison derived from NHS Appointments in General Practice data (average days from booking to appointment for routine appointments, October 2024).</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface NurseryCostYear {
   year: number;
@@ -365,6 +366,7 @@ export default function ChildcarePage() {
             Data updated automatically via GitHub Actions. Last pipeline run: {new Date().toISOString().slice(0, 10)}.
           </p>
         </section>
+              <RelatedTopics />
       </main>
     </>
   );

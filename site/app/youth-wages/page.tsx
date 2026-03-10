@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -146,6 +147,7 @@ export default function YouthWagesPage() {
             <p>Youth wage figures cover employees aged 18–24 in full-time and part-time employment. Median gross annual earnings used throughout. Real-terms comparisons use ONS CPI all items index, rebased to 2010. Gap percentage calculated as (adult median minus youth median) divided by adult median, expressed as a percentage.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

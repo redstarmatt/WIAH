@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface HeatNetworkData {
   topic: string
@@ -112,6 +113,7 @@ export default function HeatNetworkRolloutPage() {
             <p>Heat Network Regulation Act 2023. Ofgem regulatory framework coming into force 2024–25. Market share calculated as percentage of total final energy consumption for heating and hot water.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

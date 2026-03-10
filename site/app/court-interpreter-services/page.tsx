@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -145,6 +146,7 @@ export default function CourtInterpreterServicesPage() {
             <p>Booking failure is defined as a requested interpreter not provided at the time required. Delayed cases are hearings adjourned or delayed directly due to interpreter unavailability, as a proportion of all hearings requiring interpretation. Cost per failure is an NAO-derived estimate including court time, legal representation, and rescheduling costs. 2020 figures reduced due to COVID-19 court closures.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

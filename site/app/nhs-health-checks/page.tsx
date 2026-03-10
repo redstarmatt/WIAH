@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -133,6 +134,7 @@ export default function NhsHealthChecksPage() {
             <p>Uptake is defined as the number completing a valid NHS Health Check divided by the number eligible and invited within the financial year. Eligible population is adults aged 40–74 not currently under treatment for cardiovascular disease, diabetes, chronic kidney disease, hypertension, atrial fibrillation, or familial hypercholesterolaemia. Deprivation gap figures are from PHE analysis using Index of Multiple Deprivation quintiles.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

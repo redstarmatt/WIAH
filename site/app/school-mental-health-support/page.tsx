@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface SchoolMentalHealthDataPoint {
   year: number
@@ -122,6 +123,7 @@ export default function SchoolMentalHealthSupportPage() {
             <p>Note: MHST coverage figures for 2016–2018 are estimates based on pilot data prior to national programme rollout.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

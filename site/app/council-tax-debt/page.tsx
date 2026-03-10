@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface CouncilTaxDebtData {
   topic: string
@@ -119,6 +120,7 @@ export default function CouncilTaxDebtPage() {
             <p>Outstanding council tax debt from DLUHC Local Authority Revenue Outturn (RA) returns (England only). Bailiff visit data from Civil Enforcement Association and CDER Network annual statistics. Household in debt estimates from StepChange Statistics Yearbook and Citizens Advice energy and debt case data. Council tax support statistics from DLUHC Council Tax Statistical Release.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

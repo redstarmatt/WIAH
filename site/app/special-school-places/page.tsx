@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface SpecialSchoolDataPoint {
   year: number
@@ -122,6 +123,7 @@ export default function SpecialSchoolPlacesPage() {
             <p>Note: The waiting list figure is an FoI-based estimate and may not capture all children waiting across all local authorities. DfE does not publish a single national metric for this figure.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -151,6 +152,7 @@ export default function HybridWorkGeographyPage() {
             <p>Homeworking figures cover employed workers who report working from home as their main or one of their work locations in the reference week. London figure covers workers in London region. Occupation breakdown uses ONS SOC major groups. Pre-pandemic baseline is 2019 annual average.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

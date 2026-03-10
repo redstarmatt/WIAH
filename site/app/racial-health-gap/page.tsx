@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -201,6 +202,7 @@ export default function RacialHealthGapPage() {
             <p>Ethnic group comparisons are age-standardised where data permits. Maternal mortality risk ratios are adjusted for age. Mental Health Act detention rates are per million population by ethnic group. Diabetes risk multipliers are from population-based studies and may not reflect current clinical population characteristics.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

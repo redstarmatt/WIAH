@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -192,6 +193,7 @@ export default function MenopaureCarePage() {
             <p>Menopause Charity and Fawcett Society — Annual patient and workforce surveys. Self-selected online samples; results may not be nationally representative. CPRD consultation estimates derived from clinical research database of approximately 4 million active patients. HRT prescriptions cover NHS-funded dispensing only; private prescriptions excluded.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

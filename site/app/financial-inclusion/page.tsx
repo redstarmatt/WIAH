@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface FinancialInclusionData {
   topic: string
@@ -127,6 +128,7 @@ export default function FinancialInclusionPage() {
             <p>Branch closure figures are cumulative from January 2015. Unbanked adult estimates are derived from FCA survey data. Debt distress is defined as missing a bill or credit repayment in 3 or more of the previous 6 months or finding keeping up with bills a heavy burden.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

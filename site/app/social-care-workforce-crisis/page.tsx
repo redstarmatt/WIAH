@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -143,6 +144,7 @@ export default function SocialCareWorkforceCrisisPage() {
             <p>Vacancy rate calculated as number of vacant posts as percentage of total posts (filled and vacant). Turnover rate is the number of leavers in the year as percentage of average employment. International recruitment figures from Home Office Health and Care visa data. Figures cover independent sector adult social care providers in England; NHS-provided adult social care excluded.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

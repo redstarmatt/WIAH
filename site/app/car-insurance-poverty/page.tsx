@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface CarInsuranceData {
   topic: string
@@ -119,6 +120,7 @@ export default function CarInsurancePovertyPage() {
             <p>Average premium data from ABI Motor Insurance Premium Tracker (comprehensive cover, annual average). Young driver premium data from price comparison site composite (Confused.com, Compare the Market, MoneySupermarket). Uninsured driver estimates from Motor Insurers Bureau annual report. FCA GIPP reform impact from FCA general insurance pricing practices evaluation.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

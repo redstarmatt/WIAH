@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -131,6 +132,7 @@ export default function PrivateRentedConditionsPage() {
             <p>Decent Homes Standard assessments in the private rented sector are based on English Housing Survey field inspections by trained assessors, not self-reporting by landlords or tenants. The Decent Homes Standard is formally applicable to social housing; private rented sector figures are calculated on the same criteria for comparability. Category 1 HHSRS hazard rates are from the same survey. Damp and mould figures include self-reported and surveyor-assessed incidences in the private rented sector only.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

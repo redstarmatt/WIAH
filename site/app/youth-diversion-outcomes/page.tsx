@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -156,6 +157,7 @@ export default function YouthDiversionOutcomesPage() {
             <p>First-time entrants are young people aged 10–17 receiving their first reprimand, warning, caution, or conviction. Custody figures are average daily population in all youth custody settings. Reoffending rate is one-year proven reoffending rate. COVID-19 affected court throughput and first-time entrant figures in 2020–2021.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

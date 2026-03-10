@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -204,6 +205,7 @@ export default function LearningDisabilitiesPage() {
             <p>Inpatient figures are a point-in-time census and include both learning disability and autism diagnoses. Health check uptake based on GP LD registers, which are known to undercount — particularly for people with mild or moderate learning disabilities. The mortality gap widened significantly during COVID (2020) due to disproportionate death rates in this population, including the use of inappropriate DNACPR decisions.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

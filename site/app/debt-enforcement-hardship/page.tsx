@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -134,6 +135,7 @@ export default function DebtEnforcementHardshipPage() {
             <p>Bailiff visits data drawn from Ministry of Justice quarterly enforcement statistics. Average fees reflect statutory schedule under Taking Control of Goods regulations. Vulnerability figures drawn from Money Advice Trust and StepChange research surveys. COVID-19 period data reflects enforcement suspension from March to June 2020.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

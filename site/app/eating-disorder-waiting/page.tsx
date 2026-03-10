@@ -8,6 +8,7 @@ import LineChart from '@/components/charts/LineChart'
 import type { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -143,6 +144,7 @@ export default function EatingDisorderWaitingPage() {
             <p>Waiting time standards apply to specialist community eating disorder services. Urgent cases are those judged to require treatment within one week; routine cases within four weeks. Inpatient bed data covers adult and adolescent specialist eating disorder wards in England, normalised per million population.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

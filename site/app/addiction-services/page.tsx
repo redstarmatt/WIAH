@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -185,6 +186,7 @@ export default function AddictionServicesPage() {
             <p>Drug poisoning deaths are based on death registration year; complex cases involving inquest may be registered 12–18 months after death. Treatment numbers cover structured treatment only, excluding brief interventions, harm reduction services, and mutual aid. Data covers England and Wales (deaths) and England only (treatment).</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

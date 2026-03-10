@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -161,6 +162,7 @@ export default function SocialEnterpriseGrowthPage() {
             <p>Social enterprise count is based on SEUK survey extrapolation to the broader population of organisations meeting the social enterprise definition: trading for a social purpose, reinvesting surpluses, and having an asset lock. Turnover figures are SEUK estimates. Figures interpolated between survey years. Intermediate years use linear interpolation.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

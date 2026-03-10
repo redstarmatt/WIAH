@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -191,6 +192,7 @@ export default function PalliativeCarePage() {
             <p>The COVID period (2020–2021) saw a temporary increase in both NHS hospice funding and proportion of deaths at home, reflecting emergency government support and hospital avoidance. Neither shift was sustained. Referral data reflects specialist palliative care only; generalist palliative care provided by GPs, district nurses, and care home staff is not captured.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

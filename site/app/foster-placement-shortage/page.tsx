@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -145,6 +146,7 @@ export default function FosterPlacementShortagePage() {
             <p>Shortfall figures are The Fostering Network estimates based on number of children requiring fostering minus available approved carer households. Emergency placement data from DfE placement type breakdowns.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

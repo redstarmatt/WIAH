@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface StudentDebtData {
   timeSeries: { year: number; averageDebtThousandsGBP: number }[];
@@ -287,6 +288,7 @@ export default function UniversityFundingPage() {
         </ScrollReveal>
 
       </div>
+        <RelatedTopics />
     </div>
   );
 }

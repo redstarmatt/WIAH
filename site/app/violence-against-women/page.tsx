@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -157,6 +158,7 @@ export default function ViolenceAgainstWomenPage() {
             <p>Charge rate is calculated as CPS rape charges as a proportion of police-recorded rape offences in the same reporting year. Days to charge is the mean elapsed time from date of offence to date of first charge decision for rape cases, as reported in Home Office Rape Review monitoring data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

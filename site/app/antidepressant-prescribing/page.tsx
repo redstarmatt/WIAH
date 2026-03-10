@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -126,6 +127,7 @@ export default function AntidepressantPrescribingPage() {
             <p>Prescription counts reflect items dispensed in primary care in England. Antidepressants are defined by BNF chapter 4.3. Long-term user estimates are derived from linked prescription records; individuals with 60+ months of continuous prescribing are classified as long-term users. Treatment gap figure is derived from the Adult Psychiatric Morbidity Survey and IAPT throughput data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

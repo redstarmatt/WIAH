@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -277,6 +278,7 @@ export default function ChildProtectionPage() {
         { id: 'sec-positive', label: "What's improving" },
         { id: 'sec-sources', label: 'Sources' },
       ]} />
-    </main>
+            <RelatedTopics />
+      </main>
   );
 }

@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -213,6 +214,7 @@ export default function LandBankingPage() {
             </div>
           )}
         </section>
+              <RelatedTopics />
       </main>
     </>
   );

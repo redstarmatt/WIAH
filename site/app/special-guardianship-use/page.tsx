@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -158,6 +159,7 @@ export default function SpecialGuardianshipUsePage() {
             <p>Special guardianship orders are granted by the family court under section 14A of the Children Act 1989. &ldquo;In force&rdquo; figures are cumulative and include all SGOs that have not been revoked. Annual adoption figures are adoptions from care only. Kinship carer support figures from Kinship (formerly Grandparents Plus) survey data, not official statistics.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

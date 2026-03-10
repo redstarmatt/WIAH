@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface NatureRecoveryData {
   lnrsProgress: Array<{ year: number; published: number; total: number }>
@@ -143,6 +144,7 @@ export default function NatureRecoveryPage() {
             <p>Protected land percentage uses statutory designations and may overlap with some areas counted in multiple categories. The 2030 data point represents the 30&times;30 target rather than an observed figure. SSSI condition data from Natural England SSSI condition assessments, updated annually.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

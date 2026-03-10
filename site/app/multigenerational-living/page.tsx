@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -138,6 +139,7 @@ export default function MultigenerationalLivingPage() {
             <p>Multigenerational household defined as two or more adult generations (18+) sharing a dwelling as primary residence. Care arrangements and student living situations included. Figures are England and Wales unless otherwise stated.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

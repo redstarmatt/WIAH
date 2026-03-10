@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface AeData {
   national: {
@@ -272,6 +273,7 @@ export default function NhsAePage() {
             ← Back to all topics
           </a>
         </div>
+              <RelatedTopics />
       </main>
 
     </div>

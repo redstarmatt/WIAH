@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -157,6 +158,7 @@ export default function DomesticAbuseOutcomesPage() {
             <p>Call volumes are estimated from police recorded domestic abuse incidents. Prosecution rate is calculated as CPS domestic abuse prosecutions as a proportion of police recorded domestic abuse incidents in the same period. Some calls do not result in a recorded crime, meaning the prosecution rate is a conservative estimate of cases reaching court.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

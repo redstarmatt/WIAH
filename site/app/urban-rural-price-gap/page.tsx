@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -145,6 +146,7 @@ export default function UrbanRuralPriceGapPage() {
             <p>Affordability ratio defined as median house price divided by median gross annual earnings for full-time workers in the same local authority. Rural/urban split uses DEFRA Rural-Urban Classification of Local Authority Districts.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

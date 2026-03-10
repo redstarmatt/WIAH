@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface OTCMedicineData {
   topic: string
@@ -119,6 +120,7 @@ export default function OverTheCounterMedicineCostsPage() {
             <p>OTC medicine price data from PAGB (Proprietary Association of Great Britain) price monitoring and ONS Consumer Price Index health sub-components. NHS prescription charge history from NHS Business Services Authority. Patients forgoing treatment estimated from Healthwatch England survey data and Health Foundation analysis of medicines access inequality. Pharmacy First scheme data from NHS England primary care statistics.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

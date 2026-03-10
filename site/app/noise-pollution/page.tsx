@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface NoiseData {
   national: {
@@ -128,6 +129,7 @@ export default function NoisePollutionPage() {
             />
           </section>
         </ScrollReveal>
+              <RelatedTopics />
       </main>
     </>
   )

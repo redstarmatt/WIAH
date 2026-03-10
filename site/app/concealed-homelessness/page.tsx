@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -140,6 +141,7 @@ export default function ConcealedHomelessnessPage() {
             <p>Rough sleeping counts are based on a single-night snapshot using a methodology agreed between local authorities and Defra. The method is known to undercount; estimates of actual rough sleeping populations are typically 1.5–3x the snapshot count. Hidden homeless estimates are modelled from household surveys and homelessness charity assessments; they carry significant uncertainty. Temporary accommodation figures are from statutory returns by local authorities and exclude households managed by housing associations or the private sector.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )
