@@ -246,7 +246,7 @@ Dark hero section with the editorial serif name. Below: a grid of CategoryCards,
 8. **Sources & Methodology:** Full transparency. Every dataset listed and linked.
 
 ### Sticky Nav Bar
-On topic pages: `What is actually happening | Health` on the left, `← All topics` on the right. Sticky at top on scroll.
+On topic pages: `What is actually happening | Health` on the left, `← [Category Name]` on the right. The back link is category-aware — it links to `/?cat={category-slug}` to pre-select the right tab on the homepage. Falls back to `← All topics` if the topic isn't in any category.
 
 ---
 
@@ -514,6 +514,75 @@ Start here:
 Auto-generate OG images for every page. Dark background (#0D1117), editorial serif name top-left, headline metric in centre, URL bottom-right. 1200×630px standard, 1200×1200px square. Use `@vercel/og` or Satori.
 
 Postcode results generate shareable cards: "GP access in [area] is X% below the national average. See the full picture at whatisactuallyhappening.uk"
+
+---
+
+## Adding a New Topic — Checklist
+
+When creating a new topic page, **all three steps are required** for it to integrate with the site's category-aware navigation:
+
+### 1. Add the topic to `lib/topics.ts`
+
+**a) Add a `TopicEntry` to the `TOPICS` object:**
+```ts
+'my-new-topic': {
+  topic: 'My New Topic',
+  slug: 'my-new-topic',
+  href: '/my-new-topic',
+  colour: '#E63946',           // Use the category's colour
+  preposition: 'in',           // Optional — defaults to "in" (e.g., "happening in Health")
+  metrics: [{
+    label: 'Headline metric',
+    value: '42',
+    unit: '%',
+    direction: 'up',
+    polarity: 'up-is-bad',
+    context: 'since 2019',
+  }],
+},
+```
+
+**b) Add the slug to the appropriate `CATEGORIES` entry's `topics` array:**
+```ts
+{
+  name: 'NHS & Healthcare',
+  slug: 'nhs-healthcare',
+  featured: ['health', 'nhs-waiting-lists', 'nhs-ae'],
+  topics: ['health', ..., 'my-new-topic'],  // ← add here
+},
+```
+
+This is **critical** — without a category assignment:
+- `TopicNav` will show "← All topics" instead of "← NHS & Healthcare"
+- `NextTopicBar` won't suggest it as the next topic
+- `RelatedTopics` won't show it as a sibling
+- It won't appear in the homepage `TopicBrowser`
+
+### 2. Create the page at `app/my-new-topic/page.tsx`
+
+Follow the standard topic page structure. **Must include:**
+- `import RelatedTopics from '@/components/RelatedTopics';`
+- `<RelatedTopics />` before the closing `</main>` tag
+- `<TopicNav topic="My New Topic" />` at the top
+
+### 3. Verify navigation works
+
+After creating the topic:
+- [ ] Topic appears in the correct category tab on the homepage
+- [ ] `TopicNav` shows "← [Category Name]" (not "← All topics")
+- [ ] Scrolling to the bottom triggers `NextTopicBar` showing the next topic **in the same category**
+- [ ] "More in [Category]" strip at page bottom shows 3-4 sibling topics
+- [ ] Clicking "← [Category Name]" goes to homepage with the right tab pre-selected
+
+### Navigation helpers available in `lib/topics.ts`
+
+| Function | Purpose |
+|----------|---------|
+| `getCategoryForTopic(slug)` | Returns the Category a topic belongs to |
+| `getNextTopicInCategory(slug)` | Next topic in same category (null at end) |
+| `getRandomTopic(excludeSlug?)` | Random topic from any category |
+| `getSiblingTopics(slug, max?)` | Up to `max` sibling topics in same category |
+| `getOrderedTopicSlugs()` | All topic slugs in category-then-topic order |
 
 ---
 
