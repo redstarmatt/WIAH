@@ -4,8 +4,8 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { TOPICS, getNextTopic, getMetricStatus, STATUS_COLOUR } from '@/lib/topics';
 
-const SHOW_THRESHOLD = 0.90;
-const HIDE_THRESHOLD = 0.84;
+const SHOW_THRESHOLD = 0.98;
+const HIDE_THRESHOLD = 0.94;
 const AUTO_ADVANCE_MS = 3000;
 const SCROLL_IDLE_MS = 800;
 
