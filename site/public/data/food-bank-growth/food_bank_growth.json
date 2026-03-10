@@ -1,0 +1,106 @@
+{
+  "topic": "food-bank-growth",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "parcelsThousands": 913,
+        "childParcelsThousands": 330,
+        "benefitDelayPct": 41,
+        "lowIncomePct": 23
+      },
+      {
+        "year": 2016,
+        "parcelsThousands": 1085,
+        "childParcelsThousands": 390,
+        "benefitDelayPct": 42,
+        "lowIncomePct": 24
+      },
+      {
+        "year": 2017,
+        "parcelsThousands": 1109,
+        "childParcelsThousands": 400,
+        "benefitDelayPct": 39,
+        "lowIncomePct": 25
+      },
+      {
+        "year": 2018,
+        "parcelsThousands": 1183,
+        "childParcelsThousands": 426,
+        "benefitDelayPct": 38,
+        "lowIncomePct": 26
+      },
+      {
+        "year": 2019,
+        "parcelsThousands": 1333,
+        "childParcelsThousands": 479,
+        "benefitDelayPct": 37,
+        "lowIncomePct": 28
+      },
+      {
+        "year": 2020,
+        "parcelsThousands": 1597,
+        "childParcelsThousands": 574,
+        "benefitDelayPct": 34,
+        "lowIncomePct": 32
+      },
+      {
+        "year": 2021,
+        "parcelsThousands": 2035,
+        "childParcelsThousands": 732,
+        "benefitDelayPct": 32,
+        "lowIncomePct": 35
+      },
+      {
+        "year": 2022,
+        "parcelsThousands": 2499,
+        "childParcelsThousands": 899,
+        "benefitDelayPct": 30,
+        "lowIncomePct": 38
+      },
+      {
+        "year": 2023,
+        "parcelsThousands": 2985,
+        "childParcelsThousands": 1074,
+        "benefitDelayPct": 29,
+        "lowIncomePct": 40
+      },
+      {
+        "year": 2024,
+        "parcelsThousands": 2920,
+        "childParcelsThousands": 1010,
+        "benefitDelayPct": 29,
+        "lowIncomePct": 41
+      },
+      {
+        "year": 2025,
+        "parcelsThousands": 2900,
+        "childParcelsThousands": 1000,
+        "benefitDelayPct": 28,
+        "lowIncomePct": 42
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Trussell Trust",
+        "dataset": "Food bank statistics",
+        "url": "https://www.trusselltrust.org/news-and-blog/latest-stats/end-year-stats/",
+        "frequency": "annual"
+      },
+      {
+        "name": "IFAN",
+        "dataset": "UK independent food bank survey",
+        "url": "https://www.ifan.org.uk/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Trussell Trust figures count food parcel distributions from their network of around 1,400 food banks. Each parcel provides 3 days of food for one person. Independent food bank figures are estimates from the Independent Food Aid Network survey.",
+    "knownIssues": [
+      "Trussell Trust data covers only their network \u2014 total UK food bank use is significantly higher",
+      "Referral reason categories have changed over the period"
+    ]
+  }
+}

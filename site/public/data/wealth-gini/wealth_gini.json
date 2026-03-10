@@ -1,0 +1,106 @@
+{
+  "topic": "wealth-gini",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "top10WealthShare": 53,
+        "bottom50WealthShare": 4,
+        "ownerOccupierWealth": 320,
+        "privateRenterWealth": 12
+      },
+      {
+        "year": 2016,
+        "top10WealthShare": 53,
+        "bottom50WealthShare": 4,
+        "ownerOccupierWealth": 340,
+        "privateRenterWealth": 11
+      },
+      {
+        "year": 2017,
+        "top10WealthShare": 54,
+        "bottom50WealthShare": 4,
+        "ownerOccupierWealth": 360,
+        "privateRenterWealth": 11
+      },
+      {
+        "year": 2018,
+        "top10WealthShare": 54,
+        "bottom50WealthShare": 4,
+        "ownerOccupierWealth": 375,
+        "privateRenterWealth": 10
+      },
+      {
+        "year": 2019,
+        "top10WealthShare": 55,
+        "bottom50WealthShare": 4,
+        "ownerOccupierWealth": 395,
+        "privateRenterWealth": 10
+      },
+      {
+        "year": 2020,
+        "top10WealthShare": 55,
+        "bottom50WealthShare": 4,
+        "ownerOccupierWealth": 420,
+        "privateRenterWealth": 9
+      },
+      {
+        "year": 2021,
+        "top10WealthShare": 55,
+        "bottom50WealthShare": 4,
+        "ownerOccupierWealth": 460,
+        "privateRenterWealth": 9
+      },
+      {
+        "year": 2022,
+        "top10WealthShare": 56,
+        "bottom50WealthShare": 4,
+        "ownerOccupierWealth": 490,
+        "privateRenterWealth": 9
+      },
+      {
+        "year": 2023,
+        "top10WealthShare": 56,
+        "bottom50WealthShare": 4,
+        "ownerOccupierWealth": 470,
+        "privateRenterWealth": 8
+      },
+      {
+        "year": 2024,
+        "top10WealthShare": 57,
+        "bottom50WealthShare": 4,
+        "ownerOccupierWealth": 485,
+        "privateRenterWealth": 8
+      },
+      {
+        "year": 2025,
+        "top10WealthShare": 57,
+        "bottom50WealthShare": 4,
+        "ownerOccupierWealth": 495,
+        "privateRenterWealth": 8
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Wealth and Assets Survey",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/wealthingreatbritainwave7/",
+        "frequency": "biennial"
+      },
+      {
+        "name": "Resolution Foundation",
+        "dataset": "Wealth inequality in the UK",
+        "url": "https://www.resolutionfoundation.org/research/wealth-inequality/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Wealth shares from ONS Wealth and Assets Survey, covering property, financial, pension and physical assets net of liabilities. Financial wealth Gini from WAS Wave 7 calculations. Tenure analysis uses WAS respondent housing tenure at time of interview.",
+    "knownIssues": [
+      "WAS excludes the very wealthiest \u2014 richest individuals under-represented",
+      "Pension wealth projections include future entitlements which may not materialise"
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "topic": "fly-tipping",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "totalIncidentsThousands": 900,
+        "highwayIncidentsThousands": 540,
+        "fpnThousands": 62,
+        "prosecutionsThousands": 2.8
+      },
+      {
+        "year": 2016,
+        "totalIncidentsThousands": 920,
+        "highwayIncidentsThousands": 552,
+        "fpnThousands": 67,
+        "prosecutionsThousands": 2.9
+      },
+      {
+        "year": 2017,
+        "totalIncidentsThousands": 930,
+        "highwayIncidentsThousands": 558,
+        "fpnThousands": 72,
+        "prosecutionsThousands": 2.7
+      },
+      {
+        "year": 2018,
+        "totalIncidentsThousands": 950,
+        "highwayIncidentsThousands": 570,
+        "fpnThousands": 78,
+        "prosecutionsThousands": 2.6
+      },
+      {
+        "year": 2019,
+        "totalIncidentsThousands": 990,
+        "highwayIncidentsThousands": 594,
+        "fpnThousands": 88,
+        "prosecutionsThousands": 2.5
+      },
+      {
+        "year": 2020,
+        "totalIncidentsThousands": 980,
+        "highwayIncidentsThousands": 588,
+        "fpnThousands": 82,
+        "prosecutionsThousands": 2.2
+      },
+      {
+        "year": 2021,
+        "totalIncidentsThousands": 1010,
+        "highwayIncidentsThousands": 606,
+        "fpnThousands": 75,
+        "prosecutionsThousands": 2.0
+      },
+      {
+        "year": 2022,
+        "totalIncidentsThousands": 1050,
+        "highwayIncidentsThousands": 630,
+        "fpnThousands": 73,
+        "prosecutionsThousands": 1.9
+      },
+      {
+        "year": 2023,
+        "totalIncidentsThousands": 1030,
+        "highwayIncidentsThousands": 618,
+        "fpnThousands": 72,
+        "prosecutionsThousands": 1.9
+      },
+      {
+        "year": 2024,
+        "totalIncidentsThousands": 1050,
+        "highwayIncidentsThousands": 630,
+        "fpnThousands": 72,
+        "prosecutionsThousands": 2.0
+      },
+      {
+        "year": 2025,
+        "totalIncidentsThousands": 1070,
+        "highwayIncidentsThousands": 642,
+        "fpnThousands": 72,
+        "prosecutionsThousands": 2.1
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DEFRA",
+        "dataset": "Fly-tipping statistics for England",
+        "url": "https://www.gov.uk/government/statistical-data-sets/env24-fly-tipping-incidents-and-actions-taken-in-england",
+        "frequency": "annual"
+      },
+      {
+        "name": "LGA",
+        "dataset": "Local authority waste management survey",
+        "url": "https://www.local.gov.uk/topics/environment/waste-and-recycling",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Fly-tipping incidents reported by English local authorities via WasteDataFlow. Includes incidents on public land reported to or discovered by councils; private land incidents are significantly under-counted. Cost figures cover clearance only, not enforcement costs.",
+    "knownIssues": [
+      "Private land fly-tipping is not captured \u2014 total problem is likely 2-3\u00d7 official figures",
+      "Incident definition varies slightly between councils"
+    ]
+  }
+}

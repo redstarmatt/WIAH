@@ -1,0 +1,106 @@
+{
+  "topic": "flooding-risk",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "propertiesAtRiskM": 4.9,
+        "defenceConditionPct": 67,
+        "capitalInvestmentM": 860,
+        "maintenanceM": 175
+      },
+      {
+        "year": 2016,
+        "propertiesAtRiskM": 4.9,
+        "defenceConditionPct": 66,
+        "capitalInvestmentM": 880,
+        "maintenanceM": 178
+      },
+      {
+        "year": 2017,
+        "propertiesAtRiskM": 5.0,
+        "defenceConditionPct": 65,
+        "capitalInvestmentM": 900,
+        "maintenanceM": 175
+      },
+      {
+        "year": 2018,
+        "propertiesAtRiskM": 5.0,
+        "defenceConditionPct": 63,
+        "capitalInvestmentM": 950,
+        "maintenanceM": 170
+      },
+      {
+        "year": 2019,
+        "propertiesAtRiskM": 5.0,
+        "defenceConditionPct": 62,
+        "capitalInvestmentM": 1000,
+        "maintenanceM": 168
+      },
+      {
+        "year": 2020,
+        "propertiesAtRiskM": 5.1,
+        "defenceConditionPct": 60,
+        "capitalInvestmentM": 1100,
+        "maintenanceM": 162
+      },
+      {
+        "year": 2021,
+        "propertiesAtRiskM": 5.2,
+        "defenceConditionPct": 59,
+        "capitalInvestmentM": 1200,
+        "maintenanceM": 160
+      },
+      {
+        "year": 2022,
+        "propertiesAtRiskM": 5.2,
+        "defenceConditionPct": 58,
+        "capitalInvestmentM": 1300,
+        "maintenanceM": 160
+      },
+      {
+        "year": 2023,
+        "propertiesAtRiskM": 5.3,
+        "defenceConditionPct": 57,
+        "capitalInvestmentM": 1350,
+        "maintenanceM": 158
+      },
+      {
+        "year": 2024,
+        "propertiesAtRiskM": 5.3,
+        "defenceConditionPct": 55,
+        "capitalInvestmentM": 1400,
+        "maintenanceM": 155
+      },
+      {
+        "year": 2025,
+        "propertiesAtRiskM": 5.4,
+        "defenceConditionPct": 54,
+        "capitalInvestmentM": 1450,
+        "maintenanceM": 152
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Environment Agency",
+        "dataset": "Flood and coastal erosion risk management \u2014 annual report",
+        "url": "https://www.gov.uk/government/collections/flood-risk-management-planning-and-delivery",
+        "frequency": "annual"
+      },
+      {
+        "name": "DESNZ",
+        "dataset": "Flood insurance data",
+        "url": "https://www.gov.uk/government/collections/flood-re-statistics",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Property at-risk figures from Environment Agency National Flood Risk Assessment (NaFRA). Includes properties in areas with greater than 1% annual probability (rivers/sea) or greater than 3.3% (surface water) of flooding. Defence condition from annual asset management returns.",
+    "knownIssues": [
+      "At-risk figures are modelled and may not capture all surface water risks",
+      "Climate change scenarios not yet integrated into headline at-risk figures"
+    ]
+  }
+}

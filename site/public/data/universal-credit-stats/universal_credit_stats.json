@@ -1,0 +1,106 @@
+{
+  "topic": "universal-credit-stats",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "claimantsM": 1.8,
+        "inWorkPct": 28,
+        "paidOnTimePct": 88,
+        "withDeductionsPct": 28
+      },
+      {
+        "year": 2016,
+        "claimantsM": 2.2,
+        "inWorkPct": 30,
+        "paidOnTimePct": 87,
+        "withDeductionsPct": 28
+      },
+      {
+        "year": 2017,
+        "claimantsM": 2.5,
+        "inWorkPct": 31,
+        "paidOnTimePct": 86,
+        "withDeductionsPct": 27
+      },
+      {
+        "year": 2018,
+        "claimantsM": 2.9,
+        "inWorkPct": 33,
+        "paidOnTimePct": 85,
+        "withDeductionsPct": 26
+      },
+      {
+        "year": 2019,
+        "claimantsM": 3.1,
+        "inWorkPct": 35,
+        "paidOnTimePct": 85,
+        "withDeductionsPct": 26
+      },
+      {
+        "year": 2020,
+        "claimantsM": 5.8,
+        "inWorkPct": 22,
+        "paidOnTimePct": 84,
+        "withDeductionsPct": 27
+      },
+      {
+        "year": 2021,
+        "claimantsM": 5.9,
+        "inWorkPct": 28,
+        "paidOnTimePct": 83,
+        "withDeductionsPct": 26
+      },
+      {
+        "year": 2022,
+        "claimantsM": 6.0,
+        "inWorkPct": 33,
+        "paidOnTimePct": 82,
+        "withDeductionsPct": 26
+      },
+      {
+        "year": 2023,
+        "claimantsM": 6.5,
+        "inWorkPct": 36,
+        "paidOnTimePct": 82,
+        "withDeductionsPct": 26
+      },
+      {
+        "year": 2024,
+        "claimantsM": 7.0,
+        "inWorkPct": 38,
+        "paidOnTimePct": 82,
+        "withDeductionsPct": 26
+      },
+      {
+        "year": 2025,
+        "claimantsM": 7.5,
+        "inWorkPct": 39,
+        "paidOnTimePct": 82,
+        "withDeductionsPct": 26
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DWP",
+        "dataset": "Universal Credit statistics",
+        "url": "https://www.gov.uk/government/collections/universal-credit-statistics",
+        "frequency": "monthly"
+      },
+      {
+        "name": "DWP",
+        "dataset": "Stat-Xplore \u2014 UC management information",
+        "url": "https://stat-xplore.dwp.gov.uk/",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "UC caseload is number of households (claims), not individuals. In-work percentage from management information, counting those with earnings in the assessment period. Payment timeliness is percentage of new claims paid in full by end of first payment date. Deduction figures from quarterly management information.",
+    "knownIssues": [
+      "Deduction rate methodology changed in 2022 \u2014 pre-2022 figures not fully comparable",
+      "Northern Ireland has its own UC system (similar but not identical)"
+    ]
+  }
+}

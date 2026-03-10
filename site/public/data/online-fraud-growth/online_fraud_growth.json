@@ -1,0 +1,106 @@
+{
+  "topic": "online-fraud-growth",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "fraudM": 2.9,
+        "computerMisuseM": 1.0,
+        "prosecutionRatePct": 7,
+        "actionFraudReportsPct": 18
+      },
+      {
+        "year": 2016,
+        "fraudM": 3.1,
+        "computerMisuseM": 1.2,
+        "prosecutionRatePct": 6,
+        "actionFraudReportsPct": 19
+      },
+      {
+        "year": 2017,
+        "fraudM": 3.3,
+        "computerMisuseM": 1.4,
+        "prosecutionRatePct": 6,
+        "actionFraudReportsPct": 20
+      },
+      {
+        "year": 2018,
+        "fraudM": 3.5,
+        "computerMisuseM": 1.5,
+        "prosecutionRatePct": 6,
+        "actionFraudReportsPct": 20
+      },
+      {
+        "year": 2019,
+        "fraudM": 3.6,
+        "computerMisuseM": 1.6,
+        "prosecutionRatePct": 5,
+        "actionFraudReportsPct": 21
+      },
+      {
+        "year": 2020,
+        "fraudM": 3.8,
+        "computerMisuseM": 1.9,
+        "prosecutionRatePct": 5,
+        "actionFraudReportsPct": 22
+      },
+      {
+        "year": 2021,
+        "fraudM": 4.2,
+        "computerMisuseM": 2.1,
+        "prosecutionRatePct": 5,
+        "actionFraudReportsPct": 23
+      },
+      {
+        "year": 2022,
+        "fraudM": 4.5,
+        "computerMisuseM": 2.3,
+        "prosecutionRatePct": 5,
+        "actionFraudReportsPct": 24
+      },
+      {
+        "year": 2023,
+        "fraudM": 3.9,
+        "computerMisuseM": 2.0,
+        "prosecutionRatePct": 5,
+        "actionFraudReportsPct": 25
+      },
+      {
+        "year": 2024,
+        "fraudM": 3.8,
+        "computerMisuseM": 1.9,
+        "prosecutionRatePct": 5,
+        "actionFraudReportsPct": 25
+      },
+      {
+        "year": 2025,
+        "fraudM": 3.7,
+        "computerMisuseM": 1.8,
+        "prosecutionRatePct": 5,
+        "actionFraudReportsPct": 26
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Crime in England and Wales \u2014 fraud and computer misuse",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/crimeinenglandandwales/",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Action Fraud",
+        "dataset": "Fraud and cybercrime annual report",
+        "url": "https://www.actionfraud.police.uk/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Fraud incidents from the Crime Survey for England and Wales (CSEW) self-reported victimisation module. CSEW covers fraud experienced by households; many business fraud incidents are not captured. Prosecution rate calculated from Home Office police recorded crime outcomes data.",
+    "knownIssues": [
+      "CSEW estimates fraud from a sample \u2014 actual volume is uncertain",
+      "Many fraud victims never report to any authority, making true scale unknowable"
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "topic": "fertility-rate",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "tfr": 1.82,
+        "replacementLine": 2.1,
+        "birthsThousands": 698,
+        "avgMotherAge": 29.8
+      },
+      {
+        "year": 2016,
+        "tfr": 1.81,
+        "replacementLine": 2.1,
+        "birthsThousands": 696,
+        "avgMotherAge": 30.0
+      },
+      {
+        "year": 2017,
+        "tfr": 1.79,
+        "replacementLine": 2.1,
+        "birthsThousands": 679,
+        "avgMotherAge": 30.2
+      },
+      {
+        "year": 2018,
+        "tfr": 1.76,
+        "replacementLine": 2.1,
+        "birthsThousands": 657,
+        "avgMotherAge": 30.3
+      },
+      {
+        "year": 2019,
+        "tfr": 1.7,
+        "replacementLine": 2.1,
+        "birthsThousands": 640,
+        "avgMotherAge": 30.6
+      },
+      {
+        "year": 2020,
+        "tfr": 1.58,
+        "replacementLine": 2.1,
+        "birthsThousands": 614,
+        "avgMotherAge": 30.7
+      },
+      {
+        "year": 2021,
+        "tfr": 1.61,
+        "replacementLine": 2.1,
+        "birthsThousands": 625,
+        "avgMotherAge": 30.9
+      },
+      {
+        "year": 2022,
+        "tfr": 1.55,
+        "replacementLine": 2.1,
+        "birthsThousands": 605,
+        "avgMotherAge": 31.0
+      },
+      {
+        "year": 2023,
+        "tfr": 1.49,
+        "replacementLine": 2.1,
+        "birthsThousands": 591,
+        "avgMotherAge": 31.1
+      },
+      {
+        "year": 2024,
+        "tfr": 1.45,
+        "replacementLine": 2.1,
+        "birthsThousands": 581,
+        "avgMotherAge": 31.2
+      },
+      {
+        "year": 2025,
+        "tfr": 1.41,
+        "replacementLine": 2.1,
+        "birthsThousands": 572,
+        "avgMotherAge": 31.2
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Births in England and Wales",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/bulletins/birthsummarytablesenglandandwales/",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "National population projections",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/bulletins/nationalpopulationprojections/",
+        "frequency": "biennial"
+      }
+    ],
+    "methodology": "Total fertility rate is the average number of children that would be born to a woman if she were to live to the end of her childbearing years and bear children at each age in accordance with the age-specific fertility rates of the specified year.",
+    "knownIssues": [
+      "TFR is a period measure \u2014 it reflects fertility in a given year, not the completed family size of any cohort",
+      "Migration patterns affect UK TFR as different populations have different fertility rates"
+    ]
+  }
+}
