@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface TradeDeficitData {
   topic: string
@@ -132,6 +133,7 @@ export default function TradeDeficitPage() {
             <p>Goods deficit is the value of goods imports minus goods exports (Balance of Payments basis). Services surplus is the value of services exports minus services imports. Net trade balance is the sum of goods and services balances. All figures in current prices. Historical series revised in line with ONS Blue Book methodology updates.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

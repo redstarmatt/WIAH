@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -234,6 +235,7 @@ export default function CancerSurvivalPage() {
             <p>Five-year survival estimates are net survival: the probability of surviving at least five years after diagnosis, accounting for background mortality. COVID disrupted screening and referral pathways in 2020–2021, creating a measurable dip in survival that reflects delayed diagnosis rather than deteriorating treatment quality.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

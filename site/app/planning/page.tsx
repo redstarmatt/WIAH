@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation, TargetLine } from '@/components/charts/L
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -227,6 +228,7 @@ export default function PlanningPage() {
             </ul>
           </div>
         </section>
+              <RelatedTopics />
       </main>
 
     </>

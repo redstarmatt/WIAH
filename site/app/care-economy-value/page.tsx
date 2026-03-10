@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface CareEconomyValueData {
   topic: string
@@ -127,6 +128,7 @@ export default function CareEconomyValuePage() {
             <p>Unpaid care value is calculated by applying the median hourly rate for professional care workers to estimated hours of informal care provided, using ONS Time Use Survey data. Carer's Allowance claimant figures are actual DWP administrative data. Employment exit estimates are from Carers UK surveys combined with ONS Labour Force Survey analysis.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

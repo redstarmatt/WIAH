@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -146,6 +147,7 @@ export default function GridBatteryStoragePage() {
             <p>Capacity figures represent total connected operational grid-scale battery storage (BESS) in Great Britain, excluding Northern Ireland. Curtailment figures include wind constraint payments and solar curtailment; not all curtailment is directly substitutable by storage. 2035 target is from NESO&rsquo;s Clean Power 2030 pathway; the actual requirement will depend on the future generation mix. Pipeline projections are based on pre-application and consented capacity in the REPD as of late 2024.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

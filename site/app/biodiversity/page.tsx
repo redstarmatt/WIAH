@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface FarmlandBirdData {
   timeSeries: { year: number; index: number }[];
@@ -314,6 +315,7 @@ export default function BiodiversityPage() {
         </ScrollReveal>
 
       </div>
+        <RelatedTopics />
     </div>
   );
 }

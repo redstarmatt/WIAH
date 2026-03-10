@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface PackagingWasteData {
   topic: string
@@ -120,6 +121,7 @@ export default function PackagingWasteRecyclingPage() {
             <p>Extended Producer Responsibility regulations came into effect October 2025. Deposit Return Scheme launching 2027 (England, Wales, Northern Ireland). Scotland DRS operational from 2023.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

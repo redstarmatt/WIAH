@@ -9,6 +9,7 @@ import type { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -157,6 +158,7 @@ export default function SocialPrescribingPage() {
             <p>Referral counts include referrals made through link workers employed by or contracted to Primary Care Networks. GP demand reduction figures are drawn from NHS England evaluation studies using retrospective appointment data for referred patients. Outcomes data covers wellbeing, loneliness, and health service use.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

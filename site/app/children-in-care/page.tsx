@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -132,6 +133,7 @@ export default function ChildrenInCarePage() {
             <p>Children looked after (CLA) are defined as children under the care of a local authority, including those on care orders, accommodated under section 20 of the Children Act 1989, and those on remand. Figures are a snapshot at 31 March each year. Residential care figures include children&rsquo;s homes and other residential settings.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -202,6 +203,7 @@ export default function OrganDonationPage() {
             <p>Waiting list figures are UK-wide snapshot at 31 March each year. Transplant counts include deceased donor (DBD and DCD) and living donor transplants. Consent rate is the proportion of families approached by specialist nurses who agreed to donation proceeding. Max and Keira&rsquo;s Law (opt-out) came into effect in England on 20 May 2020.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

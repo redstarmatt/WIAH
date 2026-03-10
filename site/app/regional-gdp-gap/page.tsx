@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface RegionalGdpGapData {
   topic: string
@@ -132,6 +133,7 @@ export default function RegionalGdpGapPage() {
             <p>GDP per head is Gross Value Added (balanced) divided by ONS mid-year population estimates. London figures include all NUTS1 London region. North East figures are the NUTS1 North East region. Figures are current price estimates and not adjusted for regional price variation. International comparisons use OECD TL2 regional statistics on purchasing-power-parity adjusted GDP per capita.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

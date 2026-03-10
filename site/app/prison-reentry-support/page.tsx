@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -145,6 +146,7 @@ export default function PrisonReentrySupportPage() {
             <p>Proven reoffending is defined as a caution or conviction in the 12 months following release, excluding reoffences from the index period. Discharge grant figure is the standard rate for adult prisoners with no other financial support. Accommodation figure is recorded at point of release. Data covers England and Wales.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -147,6 +148,7 @@ export default function StartupInvestmentPage() {
             <p>VC investment figures cover equity investment into UK-headquartered companies across all stages. Unicorn count reflects companies that have reached $1bn+ valuation; once a company achieves unicorn status it is counted in all subsequent years unless it has been acquired, dissolved, or listed. London share based on company registered address at time of deal.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

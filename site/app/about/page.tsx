@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import SiteName from '@/components/SiteName';
 import ContactForm from '@/components/ContactForm';
+import RelatedTopics from '@/components/RelatedTopics';
 
 export default function AboutPage() {
   return (
@@ -33,6 +34,7 @@ export default function AboutPage() {
           </p>
           <ContactForm />
         </div>
+              <RelatedTopics />
       </main>
     </>
   );

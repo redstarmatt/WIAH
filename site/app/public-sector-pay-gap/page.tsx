@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface PublicSectorPayGapData {
   topic: string
@@ -128,6 +129,7 @@ export default function PublicSectorPayGapPage() {
             <p>Public-private pay differential is estimated using regression analysis controlling for occupation, qualification level, experience, and region. Positive values indicate public sector premium; negative values indicate public sector discount. Teacher pay change uses ASHE median weekly earnings for primary and secondary teachers deflated by CPI. Strike days are working days lost to labour disputes, annual total.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

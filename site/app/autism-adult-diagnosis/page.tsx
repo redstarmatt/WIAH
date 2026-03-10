@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -157,6 +158,7 @@ export default function AutismAdultDiagnosisPage() {
             <p>Waiting list figures are those awaiting first appointment with an autism assessment service. Average wait is calculated from referral date to first assessment. Data collection began systematically in 2018; earlier figures are not available on a comparable basis. New diagnoses figure is an estimate based on clinical and prescribing data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

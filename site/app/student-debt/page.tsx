@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import PositiveCallout from '@/components/PositiveCallout'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface StudentDebtData {
   averageDebt: Array<{ year: number; avgDebt: number }>
@@ -210,6 +211,7 @@ export default function StudentDebtPage() {
           </div>
         </section>
       </div>
-    </main>
+            <RelatedTopics />
+      </main>
   )
 }

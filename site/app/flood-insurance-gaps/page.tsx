@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -132,6 +133,7 @@ export default function FloodInsuranceGapsPage() {
             <p>Properties at flood risk represent those in areas with a 1 in 75 chance or greater of flooding per year from rivers, sea, or surface water, based on Environment Agency modelling. Flood Re covers residential properties only built before 2009. The 200,000 figure represents properties actively ceded into the Flood Re pool; the wider pool of potentially eligible properties is larger. Government contingent liability is an illustrative estimate and depends on the severity of flood years during the scheme&rsquo;s operation.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

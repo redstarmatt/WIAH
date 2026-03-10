@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface ToiletData {
   national: {
@@ -129,6 +130,7 @@ export default function PublicToiletsPage() {
             />
           </section>
         </ScrollReveal>
+              <RelatedTopics />
       </main>
     </>
   )

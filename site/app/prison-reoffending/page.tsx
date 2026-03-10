@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface ReoffendingRatePoint {
   year: number;
@@ -243,6 +244,7 @@ export default function PrisonReoffendingPage() {
           />
         </ScrollReveal>
       </section>
-    </main>
+            <RelatedTopics />
+      </main>
   );
 }

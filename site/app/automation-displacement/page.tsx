@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -133,6 +134,7 @@ export default function AutomationDisplacementPage() {
             <p>Automation risk is assessed by matching occupation-level task descriptions (SOC 2020) to a taxonomy of automatable tasks, based on the methodology developed by Frey and Osborne (2013) and extended by ONS to reflect current AI capabilities. High risk is defined as &gt;70% of tasks being technically automatable. Green jobs forecast is a central scenario from Climate Change Committee modelling. Actual outcomes will depend on policy, investment, and pace of net-zero transition.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface SocialCareWaitingData {
   waitingForCare: Array<{ year: number; thousands: number }>
@@ -125,6 +126,7 @@ export default function SocialCareWaitingPage() {
             <p>Waiting figures represent a point-in-time count at the time of ADASS survey, typically October. Unmet need estimates are modelled from population survey data and care receipt records; they are indicative rather than exact counts. ADASS response rates are above 90% but full participation is not guaranteed in all years.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

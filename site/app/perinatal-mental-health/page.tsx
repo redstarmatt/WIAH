@@ -9,6 +9,7 @@ import type { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -147,6 +148,7 @@ export default function PerinatalMentalHealthPage() {
             <p>MBU bed counts include all commissioned specialist Mother and Baby Unit beds in England. 'Women receiving specialist care' includes both inpatient MBU placements and community perinatal mental health team contacts. Prevalence estimate of 1 in 5 covers all perinatal mental health conditions including postnatal depression, anxiety and PTSD.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

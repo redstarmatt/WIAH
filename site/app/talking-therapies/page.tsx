@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -207,6 +208,7 @@ export default function TalkingTherapiesPage() {
             <p>Waiting times measure calendar days from referral date to first treatment session date. Provider-level recovery rates from NHS England published data tables. Self-referral rates from programme annual reports. Data covers England only; Wales, Scotland, and Northern Ireland operate separate programmes.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

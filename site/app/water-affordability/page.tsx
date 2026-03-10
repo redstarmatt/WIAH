@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -148,6 +149,7 @@ export default function WaterAffordabilityPage() {
             <p>Average annual bill is Ofwat published average for combined water and sewerage services. Water poverty definition: household spending more than 3% of disposable income on water bills. Social tariff coverage: percentage of households receiving a discounted tariff from their water company. Figures for 2024 reflect April 2024 price increases.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

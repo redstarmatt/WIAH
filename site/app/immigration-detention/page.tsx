@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -146,6 +147,7 @@ export default function ImmigrationDetentionPage() {
             <p>Daily population is the average number of people held in immigration removal centres and short-term holding facilities. The 28-day threshold is used as a reform benchmark. Released without removal includes bail grants, leave grants, and removal direction cancellations. 2020 figures reflect COVID-19 operational restrictions.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

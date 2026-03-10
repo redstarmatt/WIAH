@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -158,6 +159,7 @@ export default function ExportGoodsServicesPage() {
             <p>Trade figures are current prices, not adjusted for inflation. The goods/services breakdown follows the Balance of Payments framework (BPM6). Trade deficit refers to the total trade in goods and services balance. Energy trade includes both crude oil, natural gas, and refined petroleum products. Post-Brexit effects are estimated; the counterfactual is modelled not observed.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

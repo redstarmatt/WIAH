@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -147,6 +148,7 @@ export default function MisogynyPolicingPage() {
             <p>Reports are police recorded rape offences. Charge rate is charges as a proportion of recorded offences. Cases reaching court is the proportion of recorded offences resulting in a Crown Court hearing. Months to trial is from offence date to first Crown Court listing. Rape is severely under-reported; approximately 1 in 6 rapes are estimated to be reported to police.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

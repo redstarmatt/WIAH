@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface UniversityDropoutDataPoint {
   year: number
@@ -127,6 +128,7 @@ export default function UniversityDropoutRatesPage() {
             <p>Note: POLAR4 deprivation quintile methodology may slightly undercount disadvantage in urban areas compared with IMD-based measures.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

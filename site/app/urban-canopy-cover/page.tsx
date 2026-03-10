@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -135,6 +136,7 @@ export default function UrbanCanopyCoverPage() {
             <p>Canopy cover figures are for Greater London only. Deprivation gap compares top and bottom quintile of Index of Multiple Deprivation. Street tree loss is estimated from council survey responses and Forestry Commission data; figures include removals due to disease, development, and storm damage.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

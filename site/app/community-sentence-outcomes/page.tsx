@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -155,6 +156,7 @@ export default function CommunitySentenceOutcomesPage() {
             <p>Reoffending rate is the proportion of offenders committing at least one proven reoffence within a one-year follow-up period. Proven reoffending captures only recorded offences — actual reoffending is higher. Comparison between community and custodial groups does not constitute a randomised trial; selection effects apply as judges assign sentence type partly based on risk assessment.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -147,6 +148,7 @@ export default function EarlyYearsQualityPage() {
             <p>Quality ratings apply to all Ofsted-registered early years providers at their most recent inspection, including day nurseries, pre-schools, childminders, and school-based provision. Childcare desert definition follows the Coram methodology: areas where the number of childcare places is less than one-third of the child population aged 0–4.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

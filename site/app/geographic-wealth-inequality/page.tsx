@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -143,6 +144,7 @@ export default function GeographicWealthInequalityPage() {
             <p>Median wealth figures from ONS WAS waves 1–7 (2006–2020). Regional classifications use ONS Government Office Regions. Total wealth includes property wealth (net of mortgage), financial wealth, physical wealth, and private pension wealth. Figures in 2023 prices using CPI deflator. Intermediate years estimated by linear interpolation between survey waves.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

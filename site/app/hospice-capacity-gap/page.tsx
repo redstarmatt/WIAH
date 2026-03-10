@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -145,6 +146,7 @@ export default function HospiceCapacityGapPage() {
             <p>Bed count includes specialist palliative care inpatient beds in NHS and voluntary sector hospices. Beds per 100,000 calculated against ONS mid-year population estimates. Estimated shortfall modelled from ONS mortality projections and national palliative care needs assessment. Dying without palliative care figures are estimates derived from death registration data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface YoungPeopleCareData {
   childrenInCare: Array<{ year: number; children: number }>
@@ -125,6 +126,7 @@ export default function YoungPeopleCarePage() {
             <p>Children in care figures represent a point-in-time count at 31 March. They include children accommodated under Section 20 (voluntary arrangements) and those subject to care orders. EET status covers education, employment, and training including part-time study and apprenticeships. University participation draws on UCAS matched data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

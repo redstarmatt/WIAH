@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -157,6 +158,7 @@ export default function AdultLiteracyLevelsPage() {
             <p>Level 1 literacy corresponds to NQF Level 1 (GCSE grades 3–1, former grade D–G). Adults at this level can read simple texts but struggle with complex or multi-page documents. Level 2 numeracy corresponds to GCSE grade 4 (former grade C) mathematics. All figures refer to England unless otherwise stated.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

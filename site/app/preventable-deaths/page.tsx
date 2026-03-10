@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -165,6 +166,7 @@ export default function PreventableDeathsPage() {
             <p>Avoidable mortality is defined using the ONS/Eurostat list of avoidable causes of death. It comprises &ldquo;preventable&rdquo; mortality (deaths amenable to primary prevention, such as lung cancer or road injuries) and &ldquo;amenable&rdquo; mortality (deaths amenable to healthcare, such as appendicitis or certain cancers). Rates are directly age-standardised to the European Standard Population 2013. Regional breakdown uses the nine Government Office Regions of England.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -197,6 +198,7 @@ export default function NhsProductivityPage() {
             <p>Productivity index set to 2014 = 100 for consistency. Output per worker calculated by dividing total output index by FTE headcount index. Quality adjustment partially captures improved survival and patient experience but is imperfect. The COVID drop reflects genuine reduction in activity, not merely a measurement artefact. Some post-COVID recovery may reflect coding and counting changes rather than real efficiency gains.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

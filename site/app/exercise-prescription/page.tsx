@@ -9,6 +9,7 @@ import type { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -149,6 +150,7 @@ export default function ExercisePrescriptionPage() {
             <p>Referral counts include all referrals to NHS-commissioned or local-authority-commissioned physical activity referral schemes in England. Completion rate measures participants who attend the full prescribed programme. Cost comparison uses average scheme cost per participant against defined daily dose cost for common antidepressant prescriptions.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface AncientWoodlandData {
   topic: string
@@ -112,6 +113,7 @@ export default function AncientWoodlandLossPage() {
             <p>Natural England. Ancient Woodland Inventory for England. <a href="https://www.data.gov.uk/dataset/9461f463-c363-4309-ae77-fdcd7e9df7d3/ancient-woodland-england" className="underline" target="_blank" rel="noopener noreferrer">data.gov.uk</a>. HS2 loss estimates from HS2 Ltd Environmental Impact Assessments and Woodland Trust monitoring.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface DigitalSkillsDataPoint {
   year: number
@@ -122,6 +123,7 @@ export default function DigitalSkillsGapPage() {
             <p>Note: The Essential Digital Skills framework was updated in 2021, creating a slight discontinuity in the time series.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

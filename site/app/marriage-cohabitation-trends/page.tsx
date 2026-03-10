@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -145,6 +146,7 @@ export default function MarriageCohabitationTrendsPage() {
             <p>Marriage count is total opposite-sex and same-sex marriages registered in England and Wales. Cohabiting couples figure is from LFS household estimates. The 2020 figure is affected by COVID-19 closure of registry offices; 2021 figures include backlog registrations.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

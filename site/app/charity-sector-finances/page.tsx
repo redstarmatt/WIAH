@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -148,6 +149,7 @@ export default function CharitySectorFinancesPage() {
             <p>Charity closure figures reflect organisations removed from the Charity Commission register in the calendar year, excluding those removed for administrative reasons (duplicate registration, dormancy). Government income share is NCVO analysis of charity accounts, covering grants and contracts from central and local government.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

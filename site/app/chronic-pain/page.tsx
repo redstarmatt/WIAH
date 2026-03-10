@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -192,6 +193,7 @@ export default function ChronicPainPage() {
             <p>Prevalence estimates vary substantially by definition: 28 million uses the broadest measure (any pain 3+ months); severe and disabling chronic pain is estimated at 8 million. Work impact data combines HSE figures for musculoskeletal conditions with DWP data on health-related economic inactivity. Pain clinic wait data is incomplete as some ICBs do not commission standalone pain services.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

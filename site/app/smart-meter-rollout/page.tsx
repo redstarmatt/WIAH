@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface SmartMeterRolloutData {
   topic: string
@@ -139,6 +140,7 @@ export default function SmartMeterRolloutPage() {
             <p>Installed meters are cumulative smart and advanced meters in operation. Dumb mode meters are SMETS1 installations not communicating via DCC network — ongoing remote enrolment means this figure changes quarterly. Annual saving estimate is mean household saving from DESNZ randomised control trial and econometric analysis.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -132,6 +133,7 @@ export default function FishingCatchQuotasPage() {
             <p>Catch figures represent landings by UK-registered vessels from all waters, including UK, EU, and international waters. Quota value estimates are based on MMO allocation data and published market prices; they are indicative rather than exact. Foreign vessel quota share is based on NEF analysis of publicly available quota ownership data; the figure is contested by some industry bodies. COVID-19 reduced catches significantly in 2020.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

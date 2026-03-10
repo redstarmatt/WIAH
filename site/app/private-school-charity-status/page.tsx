@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface PrivateSchoolDataPoint {
   year: number
@@ -122,6 +123,7 @@ export default function PrivateSchoolCharityStatusPage() {
             <p>Note: VAT on independent school fees was introduced from January 2025 — data reflects the pre-VAT position for the 2024 financial year.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

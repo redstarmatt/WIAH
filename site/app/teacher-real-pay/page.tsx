@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -144,6 +145,7 @@ export default function TeacherRealPayPage() {
             <p>Real pay calculated using HM Treasury GDP deflator. Experienced teacher pay reflects the top of the main pay range / lower leadership range. Starting salary reflects the minimum of the main pay range (Outside London). OECD ranking based on teacher pay relative to other tertiary-educated workers, 25–64 age group.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface FinancialAbuseElderlyData {
   topic: string
@@ -119,6 +120,7 @@ export default function FinancialAbuseElderlyPage() {
             <p>Victim estimates from Age UK Later Life in the UK factsheet and Action on Elder Abuse survey research. Financial loss estimates from UK Finance Annual Fraud Report supplemented by academic survey estimates to account for unreported cases. OPG referral data from Ministry of Justice Office of the Public Guardian annual report. Safeguarding Adults data from NHS Digital Adult Social Care Statistics: Safeguarding Adults annual collection.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

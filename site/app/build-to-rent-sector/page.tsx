@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -145,6 +146,7 @@ export default function BuildToRentSectorPage() {
             <p>BTR defined as purpose-built private rental developments of 20 or more units retained in single institutional ownership. Excludes single-family BTR (houses rather than flats) unless specified. Pipeline includes units with planning permission, under construction, or in pre-application stage.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface TrainPunctualityData {
   topic: string
@@ -129,6 +130,7 @@ export default function TrainPunctualityPage() {
             <p>On-time arrival measured by Public Performance Measure (PPM): within 5 minutes of scheduled arrival for regional and commuter services, within 10 minutes for long-distance services. Cancellation rate is percentage of planned services that did not run. Delay Repay claims are compensation applications made by passengers for qualifying delays.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

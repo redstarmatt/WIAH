@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -140,6 +141,7 @@ export default function VocationalPathwaysPage() {
             <p>Earnings gap calculated as median annual earnings at age 25-29 for level 3 vocational completers minus median earnings for A-level completers entering comparable occupation groups, controlling for prior attainment. Figures are in nominal terms; the real gap has grown more slowly but remains substantial.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

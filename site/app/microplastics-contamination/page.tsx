@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -140,6 +141,7 @@ export default function MicroplasticsContaminationPage() {
             <p>Drinking water particle estimates are indicative ranges derived from multiple peer-reviewed studies and WHO synthesis data. Seabed density figures represent North Sea estimates from trawl and sediment core surveys. Particle counts vary substantially by measurement methodology; comparisons across studies should be treated with caution. Blood detection figures are from a single Dutch study; UK-specific blood prevalence data are not yet available.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

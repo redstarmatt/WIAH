@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -143,6 +144,7 @@ export default function AmbulanceResponseTimesPage() {
             <p>Response time targets set under the Ambulance Response Programme (ARP) 2017. Category 1: mean 7 minutes, 90th percentile 15 minutes. Category 2: mean 18 minutes, 90th percentile 40 minutes. Data represents annual means derived from monthly trust-level publications. Trust variation figures are the best and worst annual mean Cat 1 response time across the 10 NHS ambulance trusts in England in 2024.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

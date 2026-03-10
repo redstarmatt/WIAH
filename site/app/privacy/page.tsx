@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteName from '@/components/SiteName';
+import RelatedTopics from '@/components/RelatedTopics';
 
 export const metadata: Metadata = {
   title: 'Privacy',
@@ -31,6 +32,7 @@ export default function PrivacyPage() {
             We use Google Analytics 4 to understand how the site is used in aggregate — which topics are read, how visitors navigate, and where they come from. Google Analytics uses cookies to collect anonymised usage data. We do not use it to identify individual users or build behavioural profiles.
           </p>
             </div>
+              <RelatedTopics />
       </main>
       <footer className="border-t border-wiah-border py-5 px-6 mt-12">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-wiah-mid">

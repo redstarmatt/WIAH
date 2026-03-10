@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface InflationByIncomeData {
   topic: string
@@ -133,6 +134,7 @@ export default function InflationByIncomePage() {
             <p>Income quintile inflation rates are estimated by re-weighting the CPI basket to match the expenditure patterns of each income quintile as measured by the ONS Living Costs and Food Survey. Food and energy expenditure shares are taken from the LCF; prices applied are national CPI component indices. Annual figures are calendar year averages. Peak figures refer to October 2022, the highest point for both series.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface PensionCreditData {
   topic: string
@@ -119,6 +120,7 @@ export default function PensionCreditTakeUpPage() {
             <p>Take-up rates from DWP Pension Credit Take-Up Statistics (annual publication). Non-claiming estimates based on DWP Pensioners' Incomes Series modelling of eligible population versus actual claimants. Pension Credit benefit value from DWP Pension Credit Statistics quarterly bulletin. Winter Fuel Payment policy impact from DWP Housing Benefit and Council Tax Benefit analysis.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -163,6 +164,7 @@ export default function EndOfLifePage() {
             <p>Place of death is taken from death certificate data. The &lsquo;home&rsquo; category includes private residences. Hospice funding data is from the Hospice UK annual sector analysis, which surveys member hospices on income sources. The NHS funding percentage varies by region and hospice type; 34% is a national average.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

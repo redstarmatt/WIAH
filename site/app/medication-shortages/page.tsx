@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -132,6 +133,7 @@ export default function MedicationShortagesPage() {
             <p>A medicine is classified as in shortage when the DHSC issues a Medicine Supply Notification (MSN) indicating that a product or formulation is not available or in critically low supply. Shortage count represents the number of distinct MSNs active at any point during the calendar year. Patient complaints figure is derived from NHSBSA patient experience reporting and pharmacy feedback mechanisms.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

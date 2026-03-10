@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -201,6 +202,7 @@ export default function AmbulanceHandoversPage() {
             <p>Handover delay hours are estimated from ambulance trust returns measuring time from arrival at hospital to clinical handover. Definitions of handover completion vary between trusts. Category 2 response time is the mean time from 999 call to arrival of an emergency response. Data covers England only.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

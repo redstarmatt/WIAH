@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -139,6 +140,7 @@ export default function ClinicalNegligenceCostsPage() {
             <p>Annual cost represents total claims payments made by NHS Resolution in the financial year. Outstanding liability is the actuarially assessed present value of all known and estimated future claims. Figures are at nominal prices. The change in Ogden discount rate (from &minus;0.75% to &minus;0.25% in 2019) increased headline liability figures independently of underlying claim volumes.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

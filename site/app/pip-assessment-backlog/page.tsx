@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -143,6 +144,7 @@ export default function PipAssessmentBacklogPage() {
             <p>Average wait weeks calculated from DWP administrative data as median time from claim registration to clearance decision. Appeal overturn rate from HMCTS Social Security and Child Support tribunal outcomes, measuring proportion of PIP appeals decided in appellant&rsquo;s favour. Backlog figure represents total PIP claims awaiting clearance at quarter end.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

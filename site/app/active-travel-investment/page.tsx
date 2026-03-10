@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface ActiveTravelInvestmentData {
   topic: string
@@ -148,6 +149,7 @@ export default function ActiveTravelInvestmentPage() {
             <p>Investment figures cover walking, cycling and wheeling infrastructure combined. Cycling trips from National Travel Survey diary data. Mode share percentage is cycling as proportion of all trips by all modes. E-bike sales data from Bicycle Association.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

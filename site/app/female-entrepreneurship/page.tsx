@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface FemaleEntrepreneurshipData {
   topic: string
@@ -135,6 +136,7 @@ export default function FemaleEntrepreneurshipPage() {
             <p>Female-founded percentage is share of new Companies House registrations with at least one female director as primary founder. VC share is proportion of total UK venture capital deal value going to all-female or majority-female founding teams. Turnover figures from ONS Business Register and Employment Survey combined with HMRC data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

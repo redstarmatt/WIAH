@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -184,6 +185,7 @@ export default function EyeCarePage() {
             <p>Waiting list figures from NHS England RTT data. Preventable sight loss estimate from RCOphth clinical audit. Workforce vacancy data from NHS England workforce statistics. Follow-up wait data not systematically collected nationally; estimates from trust-level clinical audits. Data covers England.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

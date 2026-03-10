@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface ChildcareCostData {
   topic: string
@@ -119,6 +120,7 @@ export default function ChildcareCostBarrierPage() {
             <p>Average childcare costs from Coram Family and Childcare Childcare Survey (annual). Parental employment impact data from Pregnant Then Screwed Cost of Childcare Survey (2023, 2024). Government policy data from Department for Education childcare entitlement publications. Provider closure data from Ofsted childcare provider statistics.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -156,6 +157,7 @@ export default function DrinkDriveDeathsPage() {
             <p>Drink-drive casualties are estimated figures, not exact counts. Police record whether drink driving was a contributory factor at the scene. The DfT applies a statistical model to adjust for underreporting and non-breathalysted casualties, producing annual estimates. These estimates carry uncertainty and are revised on a rolling 3-year basis. The legal limit of 80mg/100ml of blood (equivalent to 35 micrograms per 100ml of breath) has applied in England and Wales since 1967.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

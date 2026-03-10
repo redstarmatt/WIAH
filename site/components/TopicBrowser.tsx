@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import DirectionArrow from './DirectionArrow';
 import {
@@ -62,10 +62,23 @@ function CategoryTopics({ category }: { category: Category }) {
 export default function TopicBrowser() {
   const [activeSlug, setActiveSlug] = useState<string>(CATEGORIES[0].slug);
 
+  // Read ?cat= query param on mount to pre-select a category tab
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat');
+    if (cat && CATEGORIES.some(c => c.slug === cat)) {
+      setActiveSlug(cat);
+      // Scroll the browser section into view after a tick
+      setTimeout(() => {
+        document.getElementById('topic-browser')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, []);
+
   const activeCategory = CATEGORIES.find((c) => c.slug === activeSlug) || CATEGORIES[0];
 
   return (
-    <section className="px-6 py-10 md:py-14 bg-wiah-light">
+    <section id="topic-browser" className="px-6 py-10 md:py-14 bg-wiah-light">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-2xl font-bold text-wiah-black mb-2">
           Browse all topics

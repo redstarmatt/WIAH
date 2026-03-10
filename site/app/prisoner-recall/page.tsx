@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -138,6 +139,7 @@ export default function PrisonerRecallPage() {
             <p>Recalled prisoner count is the snapshot count of prisoners held in custody whose most recent reason for custody is recall under licence. Includes standard determinate sentence recalls, IPP recalls, and extended determinate sentence recalls. Average duration calculated from HMPPS time-in-custody data for recall completions in each calendar year.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

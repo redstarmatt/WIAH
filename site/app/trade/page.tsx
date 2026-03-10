@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface TradeBalancePoint {
   year: number;
@@ -239,6 +240,7 @@ export default function TradePage() {
             </ul>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   );

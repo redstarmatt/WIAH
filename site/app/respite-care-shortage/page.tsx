@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -137,6 +138,7 @@ export default function RespiteCareShortage() {
             <p>Respite access rate is from Carers UK survey. Unpaid carer total is estimated using DWP Carer's Allowance claimant counts uplifted from census-based estimates. Annual replacement value uses home care agency hourly rates applied to estimated hours of care provided.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

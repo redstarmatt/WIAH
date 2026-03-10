@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -145,6 +146,7 @@ export default function FreeSchoolMealsGapPage() {
             <p>FSM eligibility is determined by whether a child&rsquo;s family receives qualifying benefits or has earned income below £7,400 per year (net, excluding benefits) under universal credit. Poverty gap estimate uses DWP poverty statistics combined with FSM eligibility data to identify children below 60% median income who do not meet FSM criteria. Receiving figures exclude universal infant free school meals (all reception to Year 2 pupils).</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

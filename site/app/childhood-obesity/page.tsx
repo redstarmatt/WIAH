@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -167,6 +168,7 @@ export default function ChildhoodObesityPage() {
             <p>Deprivation quintiles are based on the Index of Multiple Deprivation (IMD) 2019, assigned to children using their school&rsquo;s Lower Super Output Area.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

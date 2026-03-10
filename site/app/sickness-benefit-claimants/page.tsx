@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -143,6 +144,7 @@ export default function SicknessBenefitClaimantsPage() {
             <p>Claimant figures represent unduplicated headcount of working-age people (16–64) whose primary benefit relates to a health condition or disability. Pre-2020 figures use DLA award data adjusted for PIP migration. Cost estimates are central DWP/OBR projections including both benefit payments and associated administrative costs.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

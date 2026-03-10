@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -135,6 +136,7 @@ export default function WinterFuelPaymentReformPage() {
             <p>Recipient figures drawn from DWP administrative data. 2019–2023 figures reflect universal payment to all state pension age households. 2024 figure reflects first year of means-tested payment restricted to Pension Credit recipients. Poverty projections represent central estimates from IFS/JRF modelling published prior to the reform implementation.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

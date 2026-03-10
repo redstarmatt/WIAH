@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface HolidayHungerData {
   topic: string
@@ -119,6 +120,7 @@ export default function HolidayHungerPage() {
             <p>Children at risk figures from Food Foundation Child Food Insecurity Tracker, cross-referenced with DfE free school meal eligibility statistics. HAF programme reach from DfE programme monitoring returns. Food bank data from Trussell Trust End of Year Statistics. Holiday period food bank uplift from Trussell Trust monthly distribution analysis.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

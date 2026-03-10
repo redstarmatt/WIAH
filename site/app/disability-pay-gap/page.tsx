@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -144,6 +145,7 @@ export default function DisabilityPayGapPage() {
             <p>Disability is defined using the Equality Act 2010 definition: a physical or mental impairment that has a substantial and long-term adverse effect on the ability to carry out normal day-to-day activities. Pay gap is the difference in median hourly earnings (excluding overtime) between disabled and non-disabled employees in ASHE. Employment gap is calculated from the Labour Force Survey quarterly data. Severe disability is a sub-analysis of those reporting that their condition substantially limits day-to-day activities a lot.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

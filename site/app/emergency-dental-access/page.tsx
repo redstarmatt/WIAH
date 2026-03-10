@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface EmergencyDentalData {
   topic: string
@@ -119,6 +120,7 @@ export default function EmergencyDentalAccessPage() {
             <p>Access estimates from Healthwatch England dental access survey and British Dental Association workforce analysis. A&E visit data from NHS England Hospital Episode Statistics (primary diagnosis codes for dental conditions). NHS dental treatment volumes from NHS Business Services Authority NHS Dental Statistics (annual). NHS Dental Recovery Plan from NHS England, February 2024. UDA contract analysis from British Dental Association policy research.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

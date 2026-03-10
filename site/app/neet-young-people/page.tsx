@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -135,6 +136,7 @@ export default function NeetYoungPeoplePage() {
             <p>NEET defined as young people aged 16–24 who are not engaged in education (including part-time), employment (including self-employment, part-time, and zero-hours contracts), or government-funded training programmes. Estimates are seasonally adjusted annual averages unless otherwise stated.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

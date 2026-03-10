@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -146,6 +147,7 @@ export default function ElectoralRegistrationGapPage() {
             <p>Missing from roll estimates are derived from Electoral Commission modelling comparing registered voters against ONS population estimates for eligible citizens. The methodology is subject to revision as census data updates. Under-25 unregistered figure is from Electoral Commission survey research and attitudinal studies.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -8,6 +8,7 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -264,6 +265,7 @@ export default function DrugMisusePage() {
           description="The government's 2021 drug strategy committed £780M over three years to treatment and recovery services — reversing a decade of cuts. New funding has increased treatment places and the number of naloxone (overdose-reversal drug) kits distributed."
           source="Source: Home Office — 10-year drug strategy, 2021."
         />
+              <RelatedTopics />
       </main>
     </>
   );

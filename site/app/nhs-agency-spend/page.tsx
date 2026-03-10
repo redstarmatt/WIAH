@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -131,6 +132,7 @@ export default function NhsAgencySpendPage() {
             <p>Agency spend figures cover all NHS trusts and foundation trusts in England including agency nurses, agency doctors, locum doctors, and other agency clinical staff. Figures are at outturn prices and include on-costs. The 3.5% pay bill target was set by NHS Improvement in 2015. &ldquo;Could employ 55,000 nurses&rdquo; calculated using average Band 5 nurse salary at mid-point £33,706 including 30% on-costs.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

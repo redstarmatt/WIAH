@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -148,6 +149,7 @@ export default function WeightLossDrugAccessPage() {
             <p>Prescription figures cover all GLP-1 receptor agonist prescriptions dispensed in primary and secondary care through NHS channels. The eligible population estimate is based on NICE TA875 criteria applied to Health Survey for England BMI distribution data. Not all prescriptions are for obesity treatment; a proportion relate to established type 2 diabetes therapy.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

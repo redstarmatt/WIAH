@@ -12,6 +12,7 @@ import RegionalMap from '@/components/charts/RegionalMap';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -1758,6 +1759,7 @@ export default function HealthPage() {
             {new Date().toISOString().slice(0, 10)}.
           </p>
         </section>
+              <RelatedTopics />
       </main>
 
       {/* Expanded metric modal */}

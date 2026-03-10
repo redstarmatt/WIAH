@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -136,6 +137,7 @@ export default function LearningDisabilityInpatientPage() {
             <p>Inpatient count is snapshot figure at end of reference period. Average length of stay is median for those discharged in the reference year. Restraint figures include all recorded incidents under the Mental Health Units (Use of Force) Act 2018 reporting requirements from April 2021; prior years are estimated from CQC inspection data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

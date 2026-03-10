@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteName from '@/components/SiteName';
+import RelatedTopics from '@/components/RelatedTopics';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -30,6 +31,7 @@ export default function ContactPage() {
             the specific figure, and the correct source if you have it.
           </p>
             </div>
+              <RelatedTopics />
       </main>
       <footer className="border-t border-wiah-border py-5 px-6 mt-12">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-wiah-mid">

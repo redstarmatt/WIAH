@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -274,6 +275,7 @@ export default function PeriodPovertyPage() {
             {new Date().toISOString().slice(0, 10)}.
           </p>
         </section>
+              <RelatedTopics />
       </main>
     </>
   );

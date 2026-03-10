@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -162,6 +163,7 @@ export default function FlexibleWorkingAccessPage() {
             <p>Request approval rates derived from employer surveys. Flex jobs advertised percentage based on analysis of advertised vacancies containing explicit flexible working offers. Low-income access data from LFS cross-tabulation by earnings quartile.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

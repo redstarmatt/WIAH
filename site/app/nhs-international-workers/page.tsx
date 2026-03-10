@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -140,6 +141,7 @@ export default function NhsInternationalWorkersPage() {
             <p>International trained staff figures are based on country of nationality as recorded in the Electronic Staff Record (ESR). Country of nationality is used as a proxy for country of training as direct country-of-training data is not consistently available. Red-list country data from WHO Health Workforce Support and Safeguards List, updated 2024. NHS recruitment figures from NHS England international recruitment reporting.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

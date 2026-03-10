@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface CohabitationRightsGapData {
   topic: string
@@ -131,6 +132,7 @@ export default function CohabitationRightsGapPage() {
             <p>Cohabiting couple figures from ONS Labour Force Survey. Common law marriage belief from periodic public attitude surveys. Separation figures are ONS estimates modelled from survey data on cohabitation duration and relationship dissolution rates.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

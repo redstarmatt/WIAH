@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -148,6 +149,7 @@ export default function TransportCostPovertyPage() {
             <p>Train fare index uses ORR regulated fares data indexed to 2010=100. Wage index uses ONS AWE total pay (including bonuses) indexed to 2010=100. Rural bus route count from DfT supported and commercial routes combined; rural defined as areas outside urban settlements of 10,000+ population. Transport poverty rate from CBT research into expenditure patterns of car-free households in rural local authorities.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

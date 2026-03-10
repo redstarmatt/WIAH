@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -146,6 +147,7 @@ export default function LonelinessElderlyPage() {
             <p>Chronic loneliness defined as often or always lonely for 3+ months. Figures derived from ELSA biennial surveys and ONS Community Life Survey with interpolation between survey years. Risk increase figure from Holt-Lunstad et al meta-analysis. Family contact frequency from ONS Community Life Survey.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

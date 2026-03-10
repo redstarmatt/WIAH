@@ -9,6 +9,7 @@ import type { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -157,6 +158,7 @@ export default function CleanEnergyInvestmentPage() {
             <p>Clean energy investment includes capital expenditure on renewable electricity generation (wind, solar, marine), energy storage (batteries, pumped hydro), hydrogen production, and transmission and distribution upgrades attributable to clean energy. Fossil fuel investment includes upstream oil and gas exploration and production, refining, and fossil-fuelled power generation. Figures are current-price £bn and include both domestic and internationally-sourced capital deployed in UK projects.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

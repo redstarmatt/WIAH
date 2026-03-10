@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -147,6 +148,7 @@ export default function SupportedHousinShortage() {
             <p>Supported housing defined as housing where housing, care, and support are provided together to help vulnerable people live as independently as possible. Includes sheltered housing, extra care, and specialist supported accommodation.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

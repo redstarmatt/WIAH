@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface ShortTermLetsImpactData {
   topic: string
@@ -130,6 +131,7 @@ export default function ShortTermLetsImpactPage() {
             <p>STL property figures are estimated active listings across all platforms. Coastal hotspot percentages are local authority estimates based on planning and licensing data. Rent premium figures are from econometric analysis of rental prices in high versus low STL concentration areas.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

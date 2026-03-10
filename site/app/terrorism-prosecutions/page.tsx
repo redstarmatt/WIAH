@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -157,6 +158,7 @@ export default function TerrorismProsecutionsPage() {
             <p>Conviction rate is convictions as a proportion of completed trials; it excludes cases still awaiting trial. Arrest figures include all terrorism-related arrests under relevant legislation regardless of outcome. Licence population is HMPPS monthly average for terrorism-classified offenders.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

@@ -5441,3 +5441,47 @@ export function getNextTopic(currentSlug: string): TopicEntry | null {
   if (idx === -1 || idx >= order.length - 1) return null;
   return TOPICS[order[idx + 1]] ?? null;
 }
+
+// ── Category-aware navigation ─────────────────────────────────────────────────
+
+/** Get the first category a topic belongs to */
+export function getCategoryForTopic(slug: string): Category | null {
+  for (const cat of CATEGORIES) {
+    if (cat.topics.includes(slug)) return cat;
+  }
+  return null;
+}
+
+/** Get the next topic within the same category (returns null at end of category) */
+export function getNextTopicInCategory(currentSlug: string): TopicEntry | null {
+  const cat = getCategoryForTopic(currentSlug);
+  if (!cat) return null;
+  const idx = cat.topics.indexOf(currentSlug);
+  if (idx === -1 || idx >= cat.topics.length - 1) return null;
+  return TOPICS[cat.topics[idx + 1]] ?? null;
+}
+
+/** Get a random topic, excluding the current one */
+export function getRandomTopic(excludeSlug?: string): TopicEntry {
+  const slugs = getOrderedTopicSlugs().filter(s => s !== excludeSlug);
+  const randomSlug = slugs[Math.floor(Math.random() * slugs.length)];
+  return TOPICS[randomSlug];
+}
+
+/** Get sibling topics in the same category (excluding the current topic) */
+export function getSiblingTopics(currentSlug: string, max = 4): TopicEntry[] {
+  const cat = getCategoryForTopic(currentSlug);
+  if (!cat) return [];
+  const siblings = cat.topics
+    .filter(s => s !== currentSlug && s in TOPICS)
+    .map(s => TOPICS[s]);
+  // Deterministic shuffle based on current slug to avoid layout shift on re-renders
+  // but still show different topics for different pages
+  const seed = currentSlug.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  const shuffled = [...siblings].sort((a, b) => {
+    const ha = (a.slug.charCodeAt(0) * 31 + seed) % 997;
+    const hb = (b.slug.charCodeAt(0) * 31 + seed) % 997;
+    return ha - hb;
+  });
+  return shuffled.slice(0, max);
+}

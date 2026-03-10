@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -212,6 +213,7 @@ export default function NHSSicknessAbsencePage() {
             <p>Cost estimates based on NHS Employers methodology: direct salary costs of absent staff plus estimated agency and bank cover costs. Does not include productivity losses or delayed treatment impacts. Absence data excludes primary care, social care, and non-directly employed staff (bank, agency, locum).</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

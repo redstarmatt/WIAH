@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -132,6 +133,7 @@ export default function RetrofitInsulationPage() {
             <p>EPC data is based on lodged certificates from the national EPC register. Not all homes have a current valid EPC; the dataset therefore covers only homes where a certificate has been issued, typically those sold or let recently. The proportion of EPC A-C homes may be slightly higher in the total stock if energy-efficient owner-occupied homes without recent EPCs are included. Retrofit rate estimates are from industry analysis combining ECO scheme data, local authority returns, and energy efficiency survey data. The 2 million/year target is from Climate Change Committee Net Zero pathway modelling.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

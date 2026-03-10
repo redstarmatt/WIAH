@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface PaydayLoanData {
   topic: string
@@ -125,6 +126,7 @@ export default function PaydayLoanDeclinePage() {
             <p>Payday loan volumes from FCA Consumer Credit Market Study and regulatory returns data. BNPL arrears from FCA Financial Lives Survey 2024 and provider data. Illegal lending estimates from Illegal Money Lending Teams annual reports and Centre for Responsible Credit research. Credit union membership from Bank of England regulatory data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

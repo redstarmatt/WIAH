@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -139,6 +140,7 @@ export default function DementiaSupportGapsPage() {
             <p>Diagnosis rate calculated as number of people with a recorded dementia diagnosis on GP registers divided by estimated total dementia prevalence (from CPRD/Alzheimer&rsquo;s Society modelling). Post-diagnostic support figure from APPG survey of CCGs/ICBs. Cost of delayed diagnosis from LSE modelling of avoidable acute admissions and earlier care home entry attributable to late diagnosis.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

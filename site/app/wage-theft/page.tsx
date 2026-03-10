@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface WageTheftData {
   topic: string
@@ -126,6 +127,7 @@ export default function WageTheftPage() {
             <p>Worker underpayment estimates are based on HMRC survey evidence and employer compliance data. Arrears recovered are total wages identified for repayment through HMRC enforcement activity. Criminal prosecution figures are from CPS and HMRC joint reporting. The 2019 figure reflects pre-pandemic baseline. Annual prosecution figures are approximate averages due to case timing variation.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

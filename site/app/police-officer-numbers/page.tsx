@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -151,6 +152,7 @@ export default function PoliceOfficerNumbersPage() {
             <p>Officer count is full-time equivalent designated police officers. Excludes designated police staff, police community support officers, special constables, and contracted staff. Response time data is sourced from HMICFRS force-level PEEL inspection data and varies in methodology across forces; the figure cited is an approximate national mean for Grade 1 (emergency) responses.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

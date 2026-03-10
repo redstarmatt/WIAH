@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface StemGenderDataPoint {
   year: number
@@ -128,6 +129,7 @@ export default function StemGenderGapPage() {
             <p>Note: 2020 data was affected by teacher-assessed grades replacing exams — gender share figures for 2020 are estimated from provisional data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

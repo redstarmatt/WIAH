@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface CarbonCaptureData {
   topic: string
@@ -112,6 +113,7 @@ export default function CarbonCaptureProgressPage() {
             <p>Climate Change Committee. 2024 Progress Report to Parliament. Track-1 cluster timeline from DESNZ HyNet and East Coast Cluster project documentation. CCS capture target from Net Zero Strategy 2021 and Powering Up Britain 2023.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

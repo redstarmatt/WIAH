@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface AgriculturalEmissionsData {
   topic: string
@@ -112,6 +113,7 @@ export default function AgriculturalEmissionsPage() {
             <p>Agriculture's share covers IPCC category Agriculture: enteric fermentation, manure management, agricultural soils, and other agricultural sources. Livestock methane covers enteric fermentation and manure management combined, expressed as MtCO2e using GWP100.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

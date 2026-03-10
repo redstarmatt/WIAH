@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -131,6 +132,7 @@ export default function NitrogenWaterPollutionPage() {
             <p>River failure rates are based on Environment Agency classification of water bodies against the Nitrates Directive and UK Water Framework Directive standards. NVZ coverage represents the percentage of England&rsquo;s agricultural land designated as nitrate vulnerable. Nitrogen leaching estimates are from Defra agricultural emissions inventory data. Not all rivers are monitored at the same frequency; figures represent monitored water bodies only.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

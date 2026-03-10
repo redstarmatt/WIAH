@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -198,6 +199,7 @@ export default function HousingCostsWorkersPage() {
             <p className="font-mono text-xs text-wiah-mid mt-4">Methodology: rent-to-income ratio calculated as median monthly rent divided by median monthly net pay (estimated from ONS gross pay using standard income tax and NI deductions for a single person).</p>
           </div>
         </ScrollReveal>
+              <RelatedTopics />
       </main>
     </>
   );

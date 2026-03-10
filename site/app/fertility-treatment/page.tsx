@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -204,6 +205,7 @@ export default function FertilityTreatmentPage() {
             <p>NHS cycle counts and private cycle counts from HFEA register. Wait time data from Fertility Network UK patient surveys. ICS compliance rates from annual Fertility Network UK NHS commissioning survey. Data covers England unless otherwise stated.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

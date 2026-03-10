@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -156,6 +157,7 @@ export default function SchoolMealsStandardsPage() {
             <p>School food standards apply to all maintained schools in England. Academies were brought under the standards in 2014. Compliance assessed through Ofsted inspections and local authority monitoring. FSM uptake calculated as percentage of children registered for FSM among those eligible under DWP Universal Credit / qualifying benefit criteria.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

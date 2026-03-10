@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import MetricDetailModal from '@/components/MetricDetailModal'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -172,6 +173,7 @@ export default function SchoolAbsenceTrendsPage() {
             <p>Persistent absence is defined as missing 10% or more of possible sessions. Each school day comprises two sessions (morning and afternoon). Severe absence is defined as missing 50% or more. Data covers all state-funded schools in England. The 2020/21 academic year is excluded due to COVID-19 school closures making comparison invalid.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
 
       {openModal === 'persistent' && (

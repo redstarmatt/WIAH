@@ -8,6 +8,7 @@ import LineChart from '@/components/charts/LineChart'
 import type { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -144,6 +145,7 @@ export default function UkEuTradePage() {
             <p>Goods trade figures include all merchandise trade between the UK and EU-27 member states. Trade deficit is calculated as imports minus exports for goods only; services are excluded. Monthly form estimate derived from HMRC customs declaration data and British Chambers of Commerce survey evidence. Pre-Brexit trend estimated using OLS regression on 2010–2019 trade data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

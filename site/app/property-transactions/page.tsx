@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -145,6 +146,7 @@ export default function PropertyTransactionsPage() {
             <p>Transaction data covers residential property transactions (including new build) completing with stamp duty land tax. Scotland, Wales, and Northern Ireland use separate land transaction taxes; UK total combines all four nations. Mortgage approvals are Bank of England seasonally-adjusted data covering all lenders.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

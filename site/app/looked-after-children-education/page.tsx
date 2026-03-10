@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface LookedAfterDataPoint {
   year: number
@@ -121,6 +122,7 @@ export default function LookedAfterChildrenEducationPage() {
             <p>Note: 2020 GCSE data was affected by teacher-assessed grades — year-on-year comparison with 2019 and 2021 requires caution. The looked-after population changes composition each year.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

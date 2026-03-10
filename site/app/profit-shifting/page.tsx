@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -144,6 +145,7 @@ export default function ProfitShiftingPage() {
             <p>The tax gap represents HMRC&rsquo;s central estimate of the theoretical tax liability that is not collected. It does not represent tax that is definitively owed, as some arrangements may be legal. Large business yield reflects additional tax secured through enquiries, risk reviews, and litigation, not including tax paid voluntarily or at filing. Profit-shifting estimates are modelled and subject to methodological uncertainty.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

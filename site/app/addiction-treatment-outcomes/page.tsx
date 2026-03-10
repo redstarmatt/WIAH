@@ -8,6 +8,7 @@ import LineChart from '@/components/charts/LineChart'
 import type { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -139,6 +140,7 @@ export default function AddictionTreatmentOutcomesPage() {
             <p>Drug misuse deaths include deaths where the underlying cause was drug dependence, non-dependent drug use, or accidental drug poisoning. Successful completion rate measures episodes where the person was discharged as free of dependency after completing a structured treatment programme.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

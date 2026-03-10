@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -155,6 +156,7 @@ export default function DrugSupplyOperationsPage() {
             <p>A county line disruption is defined as an operation that closes down or significantly degrades a drug supply line, typically measured through NCA and regional organised crime unit (ROCU) reporting. Definitions have been refined over time and figures should not be compared directly across all years. Drug deaths are defined as deaths where the underlying cause is drug poisoning, including both accidental and intentional poisoning.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

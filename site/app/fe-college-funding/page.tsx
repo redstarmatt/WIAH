@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -133,6 +134,7 @@ export default function FeCollegeFundingPage() {
             <p>Real terms funding deflated using HM Treasury GDP deflator series. Per-student funding calculated by dividing total ESFA allocation to FE colleges by total FE student enrolments (16–18 and adult). Excludes higher education provision within FE colleges and apprenticeship funding.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

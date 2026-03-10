@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -146,6 +147,7 @@ export default function AssetRecoveryRatesPage() {
             <p>Recovered assets figure includes confiscation orders, civil recovery orders, cash seizures under POCA 2002, and account freezing orders under Criminal Finances Act 2017. Estimated laundered figure is the HM Treasury / NCA midpoint estimate and is inherently uncertain.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

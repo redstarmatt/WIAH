@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -134,6 +135,7 @@ export default function InfantFoodPovertyPage() {
             <p>Baby bank family figures drawn from National Baby Bank Network affiliated organisation reporting. Formula affordability data from First Steps Nutrition Trust survey of low-income parents (n=1,200+). Breastfeeding rates from NHS Digital/OHID annual collection. UK breastfeeding rates are among the lowest in Europe according to WHO/UNICEF tracking data.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

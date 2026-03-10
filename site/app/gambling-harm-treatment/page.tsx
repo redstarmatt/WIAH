@@ -9,6 +9,7 @@ import type { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -147,6 +148,7 @@ export default function GamblingHarmTreatmentPage() {
             <p>NHS gambling clinic count includes all NHS-commissioned specialist gambling disorder treatment clinics in England. Treatment capacity reflects annual treatment slots. Problem gambling prevalence estimate drawn from the Health Survey for England and Gambling Commission surveys using the Problem Gambling Severity Index.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

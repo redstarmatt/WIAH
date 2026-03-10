@@ -7,6 +7,7 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -138,6 +139,7 @@ export default function CoastalErosionRiskPage() {
             <p>Properties at risk figures are drawn from Shoreline Management Plan assessments of properties within coastal erosion risk zones over 20–50 year horizons. Properties lost figures are estimates from local authority coastal monitoring programmes. Projections incorporate UKCP18 sea level rise scenarios under intermediate emissions pathways.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

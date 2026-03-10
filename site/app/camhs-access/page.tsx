@@ -8,6 +8,7 @@ import LineChart from '@/components/charts/LineChart'
 import type { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
 
@@ -139,6 +140,7 @@ export default function CamhsAccessPage() {
             <p>Referral counts include first contact referrals to CAMHS Tier 2 and Tier 3 services. Rejected referrals are those closed before first appointment or assessment. Wait times measure weeks from referral receipt to start of treatment. Data covers England only.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )

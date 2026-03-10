@@ -8,6 +8,7 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import RelatedTopics from '@/components/RelatedTopics';
 
 interface NatureBasedSolutionsData {
   topic: string
@@ -120,6 +121,7 @@ export default function NatureBasedSolutionsPage() {
             <p>Forestry Commission. Woodland Statistics. Annual. <a href="https://www.forestresearch.gov.uk/tools-and-resources/statistics/statistics-by-topic/woodland-statistics/" className="underline" target="_blank" rel="noopener noreferrer">forestresearch.gov.uk</a>. Woodland creation covers England only. Climate Change Committee. Sixth Carbon Budget and 2024 Progress Report.</p>
           </div>
         </section>
+              <RelatedTopics />
       </main>
     </>
   )
