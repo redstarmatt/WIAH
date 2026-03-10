@@ -27,13 +27,17 @@ main, article {
 /* ── Scroll anchors ───────────────────────────────────────────────────────────
    All "sec-*" anchors need a top margin equal to the combined height of the
    two stacked sticky bars:
-     TopicNav  ≈ 48px  (sticky top-0)
-     SectionNav ≈ 40px  (sticky top-[48px])
-   Using 96px gives comfortable clearance so the section heading is fully
-   visible — not hidden behind — the nav when hash-navigating (MetricCard
-   "View chart →" links, SectionNav pills, and direct URL hashes).          */
+     TopicNav   ≈ 53px mobile / 59px sm+ (sticky top-0)
+     SectionNav ≈ 41px            (sticky top-[53px] / top-[59px])
+   8px breathing room is added on top of the measured nav bottom.
+   These values must match SectionNav's dynamic clearance calculation.       */
 [id^="sec-"] {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 102px; /* mobile: 53 + 41 + 8 */
+}
+@media (min-width: 640px) {
+  [id^="sec-"] {
+    scroll-margin-top: 108px; /* sm+: 59 + 41 + 8 */
+  }
 }
 
 /* ── Target flash ─────────────────────────────────────────────────────────────
