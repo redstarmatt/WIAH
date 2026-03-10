@@ -122,8 +122,7 @@ export default function InfantMortalityPage() {
           { id: 'sec-deprivation', label: 'By Deprivation' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Infant mortality rate (England &amp; Wales)"
               value="3.6"
@@ -152,7 +151,7 @@ export default function InfantMortalityPage() {
               href="#sec-trend"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-trend" className="mb-12">

@@ -116,7 +116,6 @@ export default function MentalHealthWaitsPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="People on waiting lists"
@@ -157,7 +156,7 @@ export default function MentalHealthWaitsPage() {
             source="NHS England · IAPT Performance, 2023"
             href="#sec-by-service"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Waiting list size */}
         <ScrollReveal>

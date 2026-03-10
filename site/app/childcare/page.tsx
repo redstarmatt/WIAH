@@ -137,7 +137,6 @@ export default function ChildcarePage() {
           { id: 'sec-free-hours', label: 'Free Hours' },
         ]} />
 
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Average full-time nursery cost"
@@ -180,7 +179,7 @@ export default function ChildcarePage() {
             source="DfE · Education provision census"
             href="#sec-free-hours"/>
         </div>
-        </ScrollReveal>
+        
 
         <div id="sec-costs">
 

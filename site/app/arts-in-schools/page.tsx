@@ -126,8 +126,7 @@ export default function ArtsInSchoolsPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Art & Design GCSE entries since 2010"
               value="−41"
@@ -159,7 +158,7 @@ export default function ArtsInSchoolsPage() {
               source="JCQ · 2023"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <div id="sec-gcse" className="mb-12">

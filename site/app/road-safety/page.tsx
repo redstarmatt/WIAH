@@ -113,7 +113,6 @@ export default function RoadSafetyPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Road deaths per year"
@@ -157,7 +156,7 @@ export default function RoadSafetyPage() {
             href="#sec-trends"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Road deaths long-term trend */}
         <div id="sec-trends">

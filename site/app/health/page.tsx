@@ -748,7 +748,6 @@ export default function HealthPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           <MetricCard
             label="NHS waiting list"
@@ -830,7 +829,7 @@ export default function HealthPage() {
             source="NHS England · Ambulance Quality Indicators"
             href="#sec-gp"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Postcode lookup */}
         <ScrollReveal>

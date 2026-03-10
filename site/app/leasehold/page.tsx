@@ -99,8 +99,7 @@ export default function LeaseholdPage() {
           { id: 'sec-complaints', label: 'Complaints' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Leasehold homes in England &amp; Wales"
               value="4.98M"
@@ -129,7 +128,7 @@ export default function LeaseholdPage() {
               href="#sec-properties"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-properties" className="mb-12">

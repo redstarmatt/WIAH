@@ -152,8 +152,7 @@ export default function VoterIDImpactPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Turned away at 2023 elections"
               value="14,000"
@@ -185,7 +184,7 @@ export default function VoterIDImpactPage() {
               href="#sec-turned-away"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

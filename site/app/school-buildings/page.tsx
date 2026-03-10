@@ -115,7 +115,6 @@ export default function SchoolBuildingsPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Capital maintenance backlog"
@@ -159,7 +158,7 @@ export default function SchoolBuildingsPage() {
             baseline="Schools older than 50 years incur exponentially higher maintenance costs"
             href="#sec-sources"/>
         </div>
-        </ScrollReveal>
+        
 
         <div id="sec-charts" className="space-y-12">
           {backlogSeries.length > 0 ? (

@@ -155,8 +155,7 @@ export default function NightTimeEconomyPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Pub closures since 2016"
               value="7,000"
@@ -188,7 +187,7 @@ export default function NightTimeEconomyPage() {
               href="#sec-pubs"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

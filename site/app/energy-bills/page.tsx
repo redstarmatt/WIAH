@@ -164,7 +164,6 @@ export default function EnergyBillsPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Typical annual energy bill"
@@ -194,7 +193,7 @@ export default function EnergyBillsPage() {
             sparklineData={[24.1, 25.3, 27.2, 38.7, 53.4, 61.0]}
             href="#sec-standing-charges"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

@@ -113,8 +113,7 @@ export default function NHSBedsPage() {
           { id: 'sec-types', label: 'Bed Types' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="NHS hospital beds, England"
               value="99K"
@@ -143,7 +142,7 @@ export default function NHSBedsPage() {
               href="#sec-beds"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-beds" className="mb-12">

@@ -107,8 +107,7 @@ export default function HousingQualityPage() {
           { id: 'sec-tenure', label: 'By Tenure' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Homes not meeting Decent Homes Standard"
               value="4.3M"
@@ -134,7 +133,7 @@ export default function HousingQualityPage() {
               sparklineData={[1.1, 1.1, 1.2, 1.2, 1.3, 1.3, 1.4, 1.4, 1.4]}
               href="#sec-tenure"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-decent" className="mb-12">

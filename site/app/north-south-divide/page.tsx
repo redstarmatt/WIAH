@@ -100,8 +100,7 @@ export default function NorthSouthDividePage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="London GVA per head"
               value={maxRegion ? `£${maxRegion.gva.toLocaleString()}` : '£56,378'}
@@ -133,7 +132,7 @@ export default function NorthSouthDividePage() {
               source="ONS · 2022"
               href="#sec-regions"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: divergence over time */}
         <ScrollReveal>

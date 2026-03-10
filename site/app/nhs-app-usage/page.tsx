@@ -165,8 +165,7 @@ export default function NHSAppPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="NHS App registered users"
               value="35.1M"
@@ -198,7 +197,7 @@ export default function NHSAppPage() {
               href="#sec-users"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: User growth */}
         <ScrollReveal>

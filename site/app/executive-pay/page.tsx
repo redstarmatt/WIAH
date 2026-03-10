@@ -94,8 +94,7 @@ export default function ExecutivePayPage() {
           { id: 'sec-ratio', label: 'Pay Ratio' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="FTSE 100 CEO average pay"
               value="£3.9M"
@@ -124,7 +123,7 @@ export default function ExecutivePayPage() {
               href="#sec-ceo-pay"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-ceo-pay" className="mb-12">

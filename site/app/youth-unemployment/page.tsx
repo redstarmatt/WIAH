@@ -129,7 +129,6 @@ export default function YouthUnemploymentPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="NEET rate (16-24)"
@@ -180,7 +179,7 @@ export default function YouthUnemploymentPage() {
             href="#sec-neet"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: NEET rate */}
         <div id="sec-neet">

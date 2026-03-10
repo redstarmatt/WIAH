@@ -111,8 +111,7 @@ export default function PhysicalInactivityPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Adults meeting 150–min activity guidelines"
               value={latestAdult ? latestAdult.pctMeetingGuidelines.toString() : '—'}
@@ -144,7 +143,7 @@ export default function PhysicalInactivityPage() {
               source="Sport England — Sport England Insight"
               href="#sec-sources"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Context section */}
         <section id="sec-context" className="py-12 border-t border-wiah-border">

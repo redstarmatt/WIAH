@@ -110,8 +110,7 @@ export default function ObesityPage() {
           { id: 'sec-deprivation', label: 'By Deprivation' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Adults classified as obese (England)"
               value="28%"
@@ -137,7 +136,7 @@ export default function ObesityPage() {
               sparklineData={[4.5, 4.8, 5.0, 5.2, 5.4, 5.6, 5.7, 5.8, 5.9, 6.0, 6.1]}
               href="#sec-deprivation"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-adults" className="mb-12">

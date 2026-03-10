@@ -144,8 +144,7 @@ export default function ModularHousingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Modular homes completed (UK, 2024)"
               value="12,000"
@@ -177,7 +176,7 @@ export default function ModularHousingPage() {
               href="#sec-completions"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

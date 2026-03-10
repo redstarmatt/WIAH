@@ -147,8 +147,7 @@ export default function DomesticAbusePage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Adults experiencing domestic abuse (annual)"
               value={latestPrevalence ? latestPrevalence.latestMillions.toFixed(1) : '—'}
@@ -179,7 +178,7 @@ export default function DomesticAbusePage() {
               source="ONS — Homicide Index; Femicide Census"
               href="#sec-services"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Recorded crime section */}
         <div id="sec-recorded">

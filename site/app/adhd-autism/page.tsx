@@ -111,8 +111,7 @@ export default function ADHDAutismPage() {
           { id: 'sec-age', label: 'By Age Group' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Children waiting for autism assessment"
               value="187K"
@@ -138,7 +137,7 @@ export default function ADHDAutismPage() {
               sparklineData={[12, 15, 18, 24, 36, 42]}
               href="#sec-age"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-autism" className="mb-12">

@@ -150,8 +150,7 @@ export default function ReturnershipsPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Economically inactive aged 50\u201364"
               value="3.5M"
@@ -183,7 +182,7 @@ export default function ReturnershipsPage() {
               href="#sec-inactivity"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

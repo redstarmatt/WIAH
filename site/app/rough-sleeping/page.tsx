@@ -137,7 +137,6 @@ export default function RoughSleepingPage() {
           ]} />
 
           {/* Metric cards */}
-          <ScrollReveal>
           <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="People counted sleeping rough (single night)"
@@ -175,7 +174,7 @@ export default function RoughSleepingPage() {
               source="MHCLG · Homelessness Statistics"
               href="#sec-causes"/>
           </div>
-          </ScrollReveal>
+          
 
           {/* Chart 1: Rough sleeping trend */}
           <div id="sec-rough">

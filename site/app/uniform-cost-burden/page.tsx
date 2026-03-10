@@ -147,8 +147,7 @@ export default function UniformCostBurdenPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Average primary school uniform cost"
               value="£337"
@@ -180,7 +179,7 @@ export default function UniformCostBurdenPage() {
               href="#sec-costs"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

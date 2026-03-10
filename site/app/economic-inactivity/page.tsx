@@ -136,7 +136,6 @@ export default function EconomicInactivityPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Economically inactive (working age)"
@@ -179,7 +178,7 @@ export default function EconomicInactivityPage() {
             source="ONS — Sickness Absence Survey"
             href="#sec-reasons"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Inactivity trend chart */}
         <ScrollReveal>

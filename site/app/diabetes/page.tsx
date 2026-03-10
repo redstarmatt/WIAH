@@ -117,8 +117,7 @@ export default function DiabetesPage() {
           { id: 'sec-complications', label: 'Complications' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="People with diagnosed diabetes"
               value="4.4M"
@@ -144,7 +143,7 @@ export default function DiabetesPage() {
               sparklineData={[9800, 9500, 9200, 8800, 8500, 8200, 8000, 8000]}
               href="#sec-complications"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-prevalence" className="mb-12">

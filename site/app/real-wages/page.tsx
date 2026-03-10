@@ -84,8 +84,7 @@ export default function RealWagesPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Real wages vs 2008 peak"
               value={latest ? `${(latest.index - 100).toFixed(1)}` : '−1'}
@@ -117,7 +116,7 @@ export default function RealWagesPage() {
               source="Resolution Foundation · 2024"
               href="#sec-deciles"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: Real wage index */}
         <ScrollReveal>

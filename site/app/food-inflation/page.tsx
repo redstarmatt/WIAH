@@ -112,8 +112,7 @@ export default function FoodInflationPage() {
           { id: 'sec-categories', label: 'By Category' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Peak food inflation (March 2023)"
               value="19.2%"
@@ -142,7 +141,7 @@ export default function FoodInflationPage() {
               href="#sec-cpi"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-cpi" className="mb-12">

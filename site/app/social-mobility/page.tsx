@@ -84,8 +84,7 @@ export default function SocialMobilityPage() {
           { id: 'sec-profession', label: 'By Profession' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Professional jobs filled by working-class background"
               value="39%"
@@ -115,7 +114,7 @@ export default function SocialMobilityPage() {
               href="#sec-professional"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-professional" className="mb-12">

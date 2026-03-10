@@ -467,7 +467,6 @@ export default function WaterPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Sewage discharge hours"
@@ -527,7 +526,7 @@ export default function WaterPage() {
             baseline="Beaches declared 'excellent' have fallen from 55% in 2015 to 45% today"
             href="#sec-financials"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* ── Sewage ────────────────────────────────────────────────────── */}
         <div id="sec-sewage">

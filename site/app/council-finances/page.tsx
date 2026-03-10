@@ -107,8 +107,7 @@ export default function CouncilFinancesPage() {
           { id: 'sec-services', label: 'By Service Area' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Cut to government grants since 2010 (real terms)"
               value="37%"
@@ -137,7 +136,7 @@ export default function CouncilFinancesPage() {
               href="#sec-grants"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-grants" className="mb-12">

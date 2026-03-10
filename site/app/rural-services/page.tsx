@@ -111,8 +111,7 @@ export default function RuralServicesPage() {
           { id: 'sec-services', label: 'Service Decline' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Rural bus routes cut since 2010"
               value="1,000+"
@@ -141,7 +140,7 @@ export default function RuralServicesPage() {
               href="#sec-buses"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-buses" className="mb-12">

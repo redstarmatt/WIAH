@@ -86,8 +86,7 @@ export default function FuneralPovertyPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Average UK funeral cost"
               value="£4,141"
@@ -113,7 +112,7 @@ export default function FuneralPovertyPage() {
               sparklineData={[75000, 82000, 88000, 93000, 98000, 105000, 110000]}
               href="#sec-sources"/>
           </div>
-        </ScrollReveal>
+        
 
         <div id="sec-charts" className="space-y-12 mb-12">
           <ScrollReveal>

@@ -143,8 +143,7 @@ export default function KnifeCrimePage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Hospital admissions (knife assault)"
               value={latestAdmissions ? latestAdmissions.admissions.toLocaleString() : '3,494'}
@@ -190,7 +189,7 @@ export default function KnifeCrimePage() {
               source="Home Office · Police Recorded Crime, year to Jun 2025"
               href="#sec-hospital"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Total knife crime */}
         <ScrollReveal>

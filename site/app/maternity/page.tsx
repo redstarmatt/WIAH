@@ -110,8 +110,7 @@ export default function MaternityPage() {
           { id: 'sec-ratings', label: 'CQC Ratings' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Maternal mortality rate (per 100,000 maternities)"
               value="9.7"
@@ -140,7 +139,7 @@ export default function MaternityPage() {
               href="#sec-mortality"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-mortality" className="mb-12">

@@ -86,8 +86,7 @@ export default function HousingCostsWorkersPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="London rent as % of take-home pay"
               value={latestLondon ? latestLondon.ratio.toString() : '71'}
@@ -119,7 +118,7 @@ export default function HousingCostsWorkersPage() {
               source="ONS/Rightmove · 2023"
               href="#sec-cities"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: London ratio over time */}
         <ScrollReveal>

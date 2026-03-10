@@ -325,7 +325,6 @@ export default function TransportPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Rail punctuality"
@@ -385,7 +384,7 @@ export default function TransportPage() {
             source="ORR · Passenger rail performance"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Rail punctuality (PPM) */}
         <div id="sec-rail">

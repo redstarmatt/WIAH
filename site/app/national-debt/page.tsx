@@ -99,8 +99,7 @@ export default function NationalDebtPage() {
           { id: 'sec-interest', label: 'Interest Payments' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Debt as % of GDP"
               value="98.8%"
@@ -129,7 +128,7 @@ export default function NationalDebtPage() {
               href="#sec-debt"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-debt" className="mb-12">

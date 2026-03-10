@@ -139,8 +139,7 @@ export default function LongCovidPage() {
           { id: 'sec-response', label: 'NHS Response' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="People with long COVID (estimated)"
               value="1.5M"
@@ -169,7 +168,7 @@ export default function LongCovidPage() {
               sparklineData={[1.5, 3.8, 5.7, 5.0]}
               href="#sec-response"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-symptoms" className="max-w-2xl mb-12">

@@ -140,8 +140,7 @@ export default function WildfireRiskUKPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Hectares burned (2023)"
               value="9,756 ha"
@@ -173,7 +172,7 @@ export default function WildfireRiskUKPage() {
               href="#sec-area"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

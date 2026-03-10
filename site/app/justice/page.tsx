@@ -643,7 +643,6 @@ export default function JusticePage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Crimes leading to charge"
@@ -703,7 +702,7 @@ export default function JusticePage() {
             baseline="7 in 10 released prisoners are convicted of a new offence within 9 years"
             href="#sec-outcomes"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Justice Funnel */}
         <div id="sec-outcomes">

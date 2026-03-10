@@ -141,8 +141,7 @@ export default function GreenBeltPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Homes built on green belt (England)"
               value="14,860"
@@ -174,7 +173,7 @@ export default function GreenBeltPage() {
               href="#sec-homes"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

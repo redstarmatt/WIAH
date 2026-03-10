@@ -120,8 +120,7 @@ export default function FloodingPage() {
           { id: 'sec-regions', label: 'By Region' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Properties at risk of flooding (England)"
               value="6.3M"
@@ -150,7 +149,7 @@ export default function FloodingPage() {
               href="#sec-floods"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-floods" className="mb-12">

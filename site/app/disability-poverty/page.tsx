@@ -111,8 +111,7 @@ export default function DisabilityPovertyPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Disabled household poverty rate"
               value="29"
@@ -144,7 +143,7 @@ export default function DisabilityPovertyPage() {
               source="Scope Extra Costs Commission · 2023"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <div id="sec-rates" className="mb-12">

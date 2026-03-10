@@ -135,7 +135,6 @@ export default function TeacherShortagePage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Secondary teacher vacancy rate"
@@ -176,7 +175,7 @@ export default function TeacherShortagePage() {
             source="DfE · School Workforce Census"
             href="#sec-subjects"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Vacancy rate */}
         <ScrollReveal>

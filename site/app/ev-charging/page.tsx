@@ -107,8 +107,7 @@ export default function EvChargingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Public charge points installed"
               value={latest ? latest.total.toLocaleString() : '65,000'}
@@ -140,7 +139,7 @@ export default function EvChargingPage() {
               source="RAC Foundation · 2023"
               href="#sec-rural-urban"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Positive callout */}
         <ScrollReveal>

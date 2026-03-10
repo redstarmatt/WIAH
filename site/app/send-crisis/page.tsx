@@ -97,8 +97,7 @@ export default function SendCrisisPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Children with EHCPs"
               value="576k"
@@ -130,7 +129,7 @@ export default function SendCrisisPage() {
               source="MOJ Tribunal Statistics · 2022/23"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <div id="sec-ehcp" className="mb-12">

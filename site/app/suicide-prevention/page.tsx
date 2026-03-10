@@ -109,8 +109,7 @@ export default function SuicidePreventionPage() {
           { id: 'sec-age', label: 'By Age Group' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Deaths by suicide registered (England &amp; Wales)"
               value="5,642"
@@ -136,7 +135,7 @@ export default function SuicidePreventionPage() {
               sparklineData={[115, 120, 128, 138, 152, 165, 185, 200, 172, 210, 225]}
               href="#sec-age"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-rate" className="mb-12">

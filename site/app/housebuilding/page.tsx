@@ -111,8 +111,7 @@ export default function HousebuildingPage() {
           { id: 'sec-tenure', label: 'By Builder Type' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="New homes completed (England)"
               value="234K"
@@ -141,7 +140,7 @@ export default function HousebuildingPage() {
               href="#sec-completions"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-completions" className="mb-12">

@@ -131,7 +131,6 @@ export default function NhsWaitingTimesPage() {
           ]} />
 
           {/* Metric cards */}
-          <ScrollReveal>
           <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="People on NHS elective waiting list"
@@ -161,7 +160,7 @@ export default function NhsWaitingTimesPage() {
               source="NHS England · Referral to Treatment Statistics"
               href="#sec-specialty"/>
           </div>
-          </ScrollReveal>
+          
 
           {/* Chart 1: Waiting list size */}
           <div id="sec-list">

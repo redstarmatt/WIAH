@@ -102,8 +102,7 @@ export default function SocialCarePage() {
           { id: 'sec-types', label: 'By Care Type' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="People requesting adult social care (annual)"
               value="1.9M"
@@ -129,7 +128,7 @@ export default function SocialCarePage() {
               sparklineData={[3, 4, 5, 5.5, 6, 6.5, 7, 7.5, 8]}
               href="#sec-types"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-requests" className="mb-12">

@@ -84,8 +84,7 @@ export default function NHSWaitingListsPage() {
           { id: 'sec-specialty', label: 'By Specialty' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Total on elective waiting list"
               value="7.54M"
@@ -112,7 +111,7 @@ export default function NHSWaitingListsPage() {
               sparklineData={[8.4, 9.2, 10.1, 11.5, 13.2, 14.5]}
               href="#sec-specialty"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-list-size" className="mb-12">

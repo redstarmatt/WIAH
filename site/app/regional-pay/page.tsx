@@ -86,8 +86,7 @@ export default function RegionalPayPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="London median full-time pay"
               value={londonPay ? `£${londonPay.medianPay.toLocaleString()}` : '£46,100'}
@@ -119,7 +118,7 @@ export default function RegionalPayPage() {
               source="ONS ASHE historical"
               href="#sec-regions"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: gap over time */}
         <ScrollReveal>

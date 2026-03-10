@@ -605,7 +605,6 @@ export default function HousingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="House price to earnings"
@@ -674,7 +673,7 @@ export default function HousingPage() {
             baseline="Average rent now takes up nearly half of take-home pay on a median salary"
             href="#sec-rent-index"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Postcode lookup */}
         {data && (

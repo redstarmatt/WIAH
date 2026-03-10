@@ -164,8 +164,7 @@ export default function MilitaryHousingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Service accommodation below standard"
               value="40%"
@@ -197,7 +196,7 @@ export default function MilitaryHousingPage() {
               href="#sec-standard"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Below standard */}
         <ScrollReveal>

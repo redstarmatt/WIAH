@@ -176,7 +176,6 @@ export default function DemographicsPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="UK population"
@@ -236,7 +235,7 @@ export default function DemographicsPage() {
             baseline="Rising share of retirees strains pensions, health, and social care"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Fertility rate */}
         <div id="sec-fertility">

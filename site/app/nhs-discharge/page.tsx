@@ -111,8 +111,7 @@ export default function NHSDischargePagePage() {
           { id: 'sec-reasons', label: 'By Reason' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Patients stranded in hospital daily (medically fit for discharge)"
               value="13,500"
@@ -141,7 +140,7 @@ export default function NHSDischargePagePage() {
               href="#sec-delays"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-delays" className="mb-12">

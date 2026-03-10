@@ -85,8 +85,7 @@ export default function EconomicGrowthPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="UK GDP growth 2023"
               value={latest ? latest.growth.toFixed(1) : '0.1'}
@@ -118,7 +117,7 @@ export default function EconomicGrowthPage() {
               source="ONS International Productivity Comparisons"
               href="#sec-g7"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: GDP growth over time */}
         <ScrollReveal>

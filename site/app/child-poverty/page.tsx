@@ -105,8 +105,7 @@ export default function ChildPovertyPage() {
           { id: 'sec-regions', label: 'By Region' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Children living in poverty (after housing costs)"
               value="4.3M"
@@ -135,7 +134,7 @@ export default function ChildPovertyPage() {
               href="#sec-poverty"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-poverty" className="mb-12">

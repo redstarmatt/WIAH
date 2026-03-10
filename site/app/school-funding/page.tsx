@@ -98,8 +98,7 @@ export default function SchoolFundingPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Real per-pupil funding vs 2009 peak"
               value="−9"
@@ -131,7 +130,7 @@ export default function SchoolFundingPage() {
               source="IFS School Spending · 2023"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <div id="sec-funding" className="mb-12">

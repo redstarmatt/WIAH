@@ -141,8 +141,7 @@ export default function PetFoodBanksPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Pet food bank organisations (UK)"
               value="280"
@@ -174,7 +173,7 @@ export default function PetFoodBanksPage() {
               href="#sec-foodbanks"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

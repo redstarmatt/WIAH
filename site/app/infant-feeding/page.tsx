@@ -165,8 +165,7 @@ export default function InfantFeedingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Breastfeeding at 6 months"
               value="26%"
@@ -198,7 +197,7 @@ export default function InfantFeedingPage() {
               href="#sec-breastfeeding"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Breastfeeding rates */}
         <ScrollReveal>

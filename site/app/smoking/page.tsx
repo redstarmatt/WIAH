@@ -149,8 +149,7 @@ export default function SmokingPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Adults who smoke"
               value={latest ? latest.latestPct.toString() : '10.6'}
@@ -182,7 +181,7 @@ export default function SmokingPage() {
               source="ONS · Adult Smoking Habits in the UK: 2024"
               href="#sec-age"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Overall prevalence */}
         <ScrollReveal>

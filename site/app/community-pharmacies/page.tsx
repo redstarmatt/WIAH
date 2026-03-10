@@ -121,7 +121,6 @@ export default function CommunityPharmaciesPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Community pharmacies in England"
@@ -170,7 +169,7 @@ export default function CommunityPharmaciesPage() {
             baseline="Prescription volumes have risen while pharmacy numbers have fallen"
             href="#sec-sources"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Charts section */}
         <section id="sec-charts" className="mt-16">

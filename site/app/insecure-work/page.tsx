@@ -111,8 +111,7 @@ export default function InsecureWorkPage() {
           { id: 'sec-sectors', label: 'By Sector' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Workers on zero-hours contracts"
               value="1.04M"
@@ -138,7 +137,7 @@ export default function InsecureWorkPage() {
               sparklineData={[6.70, 7.20, 7.50, 7.83, 8.21, 8.72, 8.91, 9.50, 10.42, 11.44]}
               href="#sec-sectors"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-zerohours" className="mb-12">

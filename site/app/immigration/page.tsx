@@ -113,8 +113,7 @@ export default function ImmigrationPage() {
           { id: 'sec-asylum', label: 'Asylum Backlog' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Net migration (UK)"
               value="685K"
@@ -140,7 +139,7 @@ export default function ImmigrationPage() {
               sparklineData={[175, 228, 297, 289, 179, 379, 486, 460]}
               href="#sec-asylum"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-migration" className="mb-12">

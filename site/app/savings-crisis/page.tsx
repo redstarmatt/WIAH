@@ -91,8 +91,7 @@ export default function SavingsCrisisPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Adults with less than £100 in savings"
               value={latest ? latest.percentWithLessThan100.toString() : '25'}
@@ -124,7 +123,7 @@ export default function SavingsCrisisPage() {
               source="ONS · 2023"
               href="#sec-distribution"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: savings rate over time */}
         <ScrollReveal>

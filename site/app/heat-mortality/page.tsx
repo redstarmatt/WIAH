@@ -91,8 +91,7 @@ export default function HeatMortalityPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Excess deaths in 2022 heatwaves"
               value={latest ? latest.excessDeaths.toLocaleString() : '2,985'}
@@ -124,7 +123,7 @@ export default function HeatMortalityPage() {
               source="UKHSA Climate Change Risk Assessment"
               href="#sec-projections"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: historical excess deaths */}
         <ScrollReveal>

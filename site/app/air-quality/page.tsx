@@ -106,8 +106,7 @@ export default function AirQualityPage() {
           { id: 'sec-sources', label: 'Emission Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Premature deaths from air pollution"
               value="36,000"
@@ -133,7 +132,7 @@ export default function AirQualityPage() {
               sparklineData={[48.2, 46.8, 45.5, 44.2, 43.0, 41.5, 40.0, 38.5, 37.0, 35.5, 28.0, 31.0, 30.5, 27.8]}
               href="#sec-sources"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-pollutants" className="mb-12">

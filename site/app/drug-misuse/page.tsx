@@ -133,7 +133,6 @@ export default function DrugMisusePage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Drug poisoning deaths (2022)"
@@ -189,7 +188,7 @@ export default function DrugMisusePage() {
             baseline="2022 figure. Includes both drug and alcohol treatment."
             href="#sec-substances"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Drug deaths over time */}
         <div id="sec-deaths">

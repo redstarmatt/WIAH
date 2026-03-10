@@ -100,8 +100,7 @@ export default function PensionDeficitsPage() {
           { id: 'sec-participation', label: 'Participation' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Workers without workplace pension"
               value="14M"
@@ -130,7 +129,7 @@ export default function PensionDeficitsPage() {
               href="#sec-db-funding"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-db-funding" className="mb-12">

@@ -650,7 +650,6 @@ export default function EducationPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Persistent absence"
@@ -710,7 +709,7 @@ export default function EducationPage() {
             baseline="By age 16, children from poorer families are 18 months behind their better-off peers"
             href="#sec-absence"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Persistent absence */}
         <div id="sec-absence">

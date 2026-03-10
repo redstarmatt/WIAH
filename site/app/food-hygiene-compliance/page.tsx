@@ -142,8 +142,7 @@ export default function FoodHygieneCompliancePage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Food businesses rated 4–5 (FSA)"
               value="65%"
@@ -175,7 +174,7 @@ export default function FoodHygieneCompliancePage() {
               href="#sec-compliance"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

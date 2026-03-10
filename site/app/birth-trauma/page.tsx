@@ -150,8 +150,7 @@ export default function BirthTraumaPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Women developing birth-related PTSD/year"
               value="30,000"
@@ -183,7 +182,7 @@ export default function BirthTraumaPage() {
               href="#sec-ptsd"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

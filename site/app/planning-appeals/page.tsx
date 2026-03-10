@@ -153,8 +153,7 @@ export default function PlanningAppealsPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Housing appeal success rate"
               value="43%"
@@ -186,7 +185,7 @@ export default function PlanningAppealsPage() {
               href="#sec-appeals"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Charts */}
         <ScrollReveal>

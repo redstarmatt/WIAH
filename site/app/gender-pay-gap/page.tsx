@@ -106,8 +106,7 @@ export default function GenderPayGapPage() {
           { id: 'sec-sectors', label: 'By Sector' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Gender pay gap (full-time workers)"
               value="14.3%"
@@ -133,7 +132,7 @@ export default function GenderPayGapPage() {
               sparklineData={[13.0, 19.6, 24.9, 28.0, 33.0, 38.5, 40.0]}
               href="#sec-sectors"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-gap" className="mb-12">

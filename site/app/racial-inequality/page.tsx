@@ -99,8 +99,7 @@ export default function RacialInequalityPage() {
           { id: 'sec-employment', label: 'Employment' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Aggregate ethnic pay gap"
               value="5.1%"
@@ -129,7 +128,7 @@ export default function RacialInequalityPage() {
               href="#sec-pay"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-pay" className="mb-12">

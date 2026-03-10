@@ -327,8 +327,7 @@ export default function EnergyPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Renewable share"
               value={latestRenewable ? latestRenewable.pct.toFixed(1) : '\u2014'}
@@ -387,7 +386,7 @@ export default function EnergyPage() {
               source="DESNZ \u00b7 Fuel poverty statistics"
             />
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Renewable electricity by source */}
         <div id="sec-renewables">

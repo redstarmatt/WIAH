@@ -121,8 +121,7 @@ export default function RegionalInequalityPage() {
           { id: 'sec-health', label: 'Healthy Life' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="London GVA per head (UK = 100)"
               value="178"
@@ -151,7 +150,7 @@ export default function RegionalInequalityPage() {
               href="#sec-gva"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-gva" className="mb-12">

@@ -83,8 +83,7 @@ export default function RdInvestmentPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="UK R&D as % of GDP"
               value={latest ? latest.percentGDP.toFixed(2) : '1.73'}
@@ -116,7 +115,7 @@ export default function RdInvestmentPage() {
               source="OECD / ONS"
               href="#sec-international"/>
           </div>
-        </ScrollReveal>
+        
 
         {/* Chart: UK R&D trend */}
         <ScrollReveal>

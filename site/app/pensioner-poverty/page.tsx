@@ -116,7 +116,6 @@ export default function PensionerPovertyPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Pensioners in poverty"
@@ -157,7 +156,7 @@ export default function PensionerPovertyPage() {
             baseline="After housing costs"
             href="#sec-bygroup"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Pensioner poverty rate */}
         <div id="sec-trends">

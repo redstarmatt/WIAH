@@ -154,8 +154,7 @@ export default function SkillsShortagesPage() {
           { id: 'sec-sectors', label: 'By Sector' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Hard-to-fill vacancies"
               value="2.4M"
@@ -184,7 +183,7 @@ export default function SkillsShortagesPage() {
               href="#sec-vacancies"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-vacancies" className="mb-12">

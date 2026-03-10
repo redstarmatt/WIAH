@@ -114,7 +114,6 @@ export default function PeriodPovertyPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Girls who struggled to afford period products (last year)"
@@ -162,7 +161,7 @@ export default function PeriodPovertyPage() {
             baseline="Scotland: 100% coverage. England uptake remains incomplete."
             href="#sec-sources"/>
         </div>
-        </ScrollReveal>
+        
 
         <div id="sec-charts" className="space-y-12">
           {affectedSeries.length > 0 ? (

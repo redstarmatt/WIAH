@@ -267,7 +267,6 @@ export default function EnvironmentPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="GHG emissions"
@@ -323,7 +322,7 @@ export default function EnvironmentPage() {
             baseline="8.4 µg/m³ today — still nearly double the WHO safe limit of 5 µg/m³"
           />
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: GHG with net-zero pathway */}
         <div id="sec-emissions">

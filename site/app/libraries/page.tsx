@@ -137,8 +137,7 @@ export default function LibrariesPage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Library branches (England)"
               value="3,000"
@@ -167,7 +166,7 @@ export default function LibrariesPage() {
               sparklineData={[302, 278, 251, 233, 219, 206, 197, 185, 162, 168, 175]}
               href="#sec-improvement"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <div id="sec-branches" className="mb-12">

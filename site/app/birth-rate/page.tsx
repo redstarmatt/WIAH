@@ -107,8 +107,7 @@ export default function BirthRatePage() {
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="UK total fertility rate (2023)"
               value="1.44"
@@ -140,7 +139,7 @@ export default function BirthRatePage() {
               source="ONS / demographic standard"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <div id="sec-trend" className="mb-12">

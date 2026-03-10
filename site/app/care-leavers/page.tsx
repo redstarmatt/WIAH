@@ -108,8 +108,7 @@ export default function CareLeaversPage() {
           { id: 'sec-breakdown', label: 'Outcome Breakdown' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Children in care (England)"
               value="95,000"
@@ -135,7 +134,7 @@ export default function CareLeaversPage() {
               sparklineData={[6, 7, 8, 9, 10, 11, 12, 13]}
               href="#sec-breakdown"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-care" className="mb-12">

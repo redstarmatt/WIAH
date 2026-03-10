@@ -107,8 +107,7 @@ export default function PrescriptionsPage() {
           { id: 'sec-exemptions', label: 'Who Pays' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Prescriptions dispensed annually (England)"
               value="1.1bn"
@@ -137,7 +136,7 @@ export default function PrescriptionsPage() {
               href="#sec-volume"
             />
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-volume" className="mb-12">

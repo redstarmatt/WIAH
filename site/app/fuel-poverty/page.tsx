@@ -115,8 +115,7 @@ export default function FuelPovertyPage() {
           { id: 'sec-tenure', label: 'By Tenure' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
               label="Households in fuel poverty (England)"
               value="3.3M"
@@ -142,7 +141,7 @@ export default function FuelPovertyPage() {
               sparklineData={[9200, 9300, 9400, 9500, 9600, 9700, 9700, 9700, 9700]}
               href="#sec-tenure"/>
           </div>
-        </ScrollReveal>
+        
 
         <ScrollReveal>
           <section id="sec-fuelpoverty" className="mb-12">

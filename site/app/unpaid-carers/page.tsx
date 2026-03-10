@@ -127,7 +127,6 @@ export default function UnpaidCarersPage() {
         ]} />
 
         {/* Metric cards */}
-        <ScrollReveal>
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Unpaid carers (England &amp; Wales)"
@@ -163,7 +162,7 @@ export default function UnpaidCarersPage() {
             baseline="Young carers are significantly less likely to achieve good GCSEs"
             href="#sec-impact"/>
         </div>
-        </ScrollReveal>
+        
 
         {/* Chart 1: Carer population */}
         <div id="sec-population">
