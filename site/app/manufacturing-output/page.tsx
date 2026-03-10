@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function ManufacturingOutputPage() {
 
   const sparkData = [103,101,100,88,93,95,96.2];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function ManufacturingOutputPage() {
   return (
     <>
       <TopicNav topic="Manufacturing Output" />
@@ -43,7 +43,7 @@ export default function ManufacturingOutputPage() {
               direction="down"
               polarity="up-is-good"
               changeText="below pre-pandemic level · Brexit supply chain disruption"
-              sparklineData=[103,101,100,88,93,95,96.2]
+              sparklineData={[103,101,100,88,93,95,96.2]}
             />
             <MetricCard
               label="Manufacturing share of UK GDP (%)"
@@ -51,7 +51,7 @@ export default function ManufacturingOutputPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 10.4% in 2010 · long-run deindustrialisation"
-              sparklineData=[10.4,10,9.5,9.2,9,8.9,8.8]
+              sparklineData={[10.4,10,9.5,9.2,9,8.9,8.8]}
             />
           </div>
         </section>

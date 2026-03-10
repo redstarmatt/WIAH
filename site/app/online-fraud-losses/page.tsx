@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function OnlineFraudLossesPage() {
 
   const sparkData = [620,720,820,940,1040,1110,1170];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function OnlineFraudLossesPage() {
   return (
     <>
       <TopicNav topic="Online Fraud Losses" />
@@ -43,7 +43,7 @@ export default function OnlineFraudLossesPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="record high · investment fraud fastest growing"
-              sparklineData=[620,720,820,940,1040,1110,1170]
+              sparklineData={[620,720,820,940,1040,1110,1170]}
             />
             <MetricCard
               label="Online shopping fraud reports (annual)"
@@ -51,7 +51,7 @@ export default function OnlineFraudLossesPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 56,000 in 2018"
-              sparklineData=[56000,68000,82000,95000,108000,118000,125000]
+              sparklineData={[56000,68000,82000,95000,108000,118000,125000]}
             />
           </div>
         </section>

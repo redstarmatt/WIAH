@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function DementiaDiagnosisRatePage() {
 
   const sparkData = [60,63,67.4,66,65,63,62.2];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function DementiaDiagnosisRatePage() {
   return (
     <>
       <TopicNav topic="Dementia Diagnosis Rate" />
@@ -43,7 +43,7 @@ export default function DementiaDiagnosisRatePage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 67.4% peak in 2016 · NHS target is 66.7%"
-              sparklineData=[60,63,67.4,66,65,63,62.2]
+              sparklineData={[60,63,67.4,66,65,63,62.2]}
             />
             <MetricCard
               label="People living with undiagnosed dementia (est.)"
@@ -51,7 +51,7 @@ export default function DementiaDiagnosisRatePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="rising as population ages · London worst for diagnosis gap"
-              sparklineData=[300000,310000,310000,325000,345000,360000,370000]
+              sparklineData={[300000,310000,310000,325000,345000,360000,370000]}
             />
           </div>
         </section>

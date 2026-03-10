@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function HeritageAtRiskPage() {
 
   const sparkData = [5889,5700,5500,5300,5100,4950,4848];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function HeritageAtRiskPage() {
   return (
     <>
       <TopicNav topic="Heritage at Risk" />
@@ -43,7 +43,7 @@ export default function HeritageAtRiskPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 5,889 in 2009 but pace of improvement slowing"
-              sparklineData=[5889,5700,5500,5300,5100,4950,4848]
+              sparklineData={[5889,5700,5500,5300,5100,4950,4848]}
             />
             <MetricCard
               label="Listed buildings at risk (England)"
@@ -51,7 +51,7 @@ export default function HeritageAtRiskPage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 4,189 in 2000 · grants and tax incentives working"
-              sparklineData=[4189,3800,3400,3200,3000,2900,2780]
+              sparklineData={[4189,3800,3400,3200,3000,2900,2780]}
             />
           </div>
         </section>

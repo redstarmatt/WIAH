@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function CervicalScreeningPage() {
 
   const sparkData = [80.4,79.1,77.5,75,72.9,71.4,69.9];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function CervicalScreeningPage() {
   return (
     <>
       <TopicNav topic="Cervical Screening" />
@@ -43,7 +43,7 @@ export default function CervicalScreeningPage() {
               direction="down"
               polarity="up-is-good"
               changeText="25-year low · down from 80.4% in 2012"
-              sparklineData=[80.4,79.1,77.5,75,72.9,71.4,69.9]
+              sparklineData={[80.4,79.1,77.5,75,72.9,71.4,69.9]}
             />
             <MetricCard
               label="HPV detected needing treatment"
@@ -51,7 +51,7 @@ export default function CervicalScreeningPage() {
               direction="flat"
               polarity="up-is-bad"
               changeText="stable · younger cohorts better protected by vaccination"
-              sparklineData=[3.6,3.5,3.4,3.4,3.4,3.4,3.4]
+              sparklineData={[3.6,3.5,3.4,3.4,3.4,3.4,3.4]}
             />
           </div>
         </section>

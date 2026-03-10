@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function CareHomeSupplyPage() {
 
   const sparkData = [0,3000,5000,7000,9000,12000,15000];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function CareHomeSupplyPage() {
   return (
     <>
       <TopicNav topic="Care Home Supply" />
@@ -43,7 +43,7 @@ export default function CareHomeSupplyPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="net loss · new beds not replacing closures"
-              sparklineData=[0,3000,5000,7000,9000,12000,15000]
+              sparklineData={[0,3000,5000,7000,9000,12000,15000]}
             />
             <MetricCard
               label="Care home vacancy rate"
@@ -51,7 +51,7 @@ export default function CareHomeSupplyPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 12% in 2021 · high occupancy masks fragility"
-              sparklineData=[10,12,11,9,8,7.9,7.8]
+              sparklineData={[10,12,11,9,8,7.9,7.8]}
             />
           </div>
         </section>

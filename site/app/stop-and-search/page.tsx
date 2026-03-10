@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function StopAndSearchPage() {
 
   const sparkData = [380000,420000,530000,680000,780000,940000,1060000];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function StopAndSearchPage() {
   return (
     <>
       <TopicNav topic="Stop and Search" />
@@ -43,7 +43,7 @@ export default function StopAndSearchPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up 72% since 2016 · knife crime response"
-              sparklineData=[380000,420000,530000,680000,780000,940000,1060000]
+              sparklineData={[380000,420000,530000,680000,780000,940000,1060000]}
             />
             <MetricCard
               label="Black people stopped vs white (ratio)"
@@ -51,7 +51,7 @@ export default function StopAndSearchPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 5:1 in 2018 · disproportionality highest in London"
-              sparklineData=[4,4.5,5,5.5,6,6.5,7]
+              sparklineData={[4,4.5,5,5.5,6,6.5,7]}
             />
           </div>
         </section>

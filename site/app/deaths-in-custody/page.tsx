@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function DeathsInCustodyPage() {
 
   const sparkData = [233,240,250,269,280,295,312];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function DeathsInCustodyPage() {
   return (
     <>
       <TopicNav topic="Deaths in Custody" />
@@ -43,7 +43,7 @@ export default function DeathsInCustodyPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="record high · self-inflicted deaths at 89"
-              sparklineData=[233,240,250,269,280,295,312]
+              sparklineData={[233,240,250,269,280,295,312]}
             />
             <MetricCard
               label="Deaths following police contact (annual)"
@@ -51,7 +51,7 @@ export default function DeathsInCustodyPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 55 in 2019 · restraint-related scrutiny increasing"
-              sparklineData=[55,56,57,58,60,63,65]
+              sparklineData={[55,56,57,58,60,63,65]}
             />
           </div>
         </section>

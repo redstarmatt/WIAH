@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function CommunityAssetOwnershipPage() {
 
   const sparkData = [6200,6800,7200,7800,8400,9100,9800];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function CommunityAssetOwnershipPage() {
   return (
     <>
       <TopicNav topic="Community Asset Ownership" />
@@ -43,7 +43,7 @@ export default function CommunityAssetOwnershipPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from 6,200 in 2015 · pubs, shops, halls"
-              sparklineData=[6200,6800,7200,7800,8400,9100,9800]
+              sparklineData={[6200,6800,7200,7800,8400,9100,9800]}
             />
             <MetricCard
               label="Assets of Community Value registrations (annual)"
@@ -51,7 +51,7 @@ export default function CommunityAssetOwnershipPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from 320 in 2013 · Localism Act 2011 enabling tool"
-              sparklineData=[320,480,620,780,950,1100,1250]
+              sparklineData={[320,480,620,780,950,1100,1250]}
             />
           </div>
         </section>

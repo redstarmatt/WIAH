@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function OnlineGroomingPage() {
 
   const sparkData = [3500,3800,4200,4900,5600,6100,6350];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function OnlineGroomingPage() {
   return (
     <>
       <TopicNav topic="Online Grooming" />
@@ -43,7 +43,7 @@ export default function OnlineGroomingPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up 80% in 5 years · under-reporting still significant"
-              sparklineData=[3500,3800,4200,4900,5600,6100,6350]
+              sparklineData={[3500,3800,4200,4900,5600,6100,6350]}
             />
             <MetricCard
               label="Cases involving under-13s"
@@ -51,7 +51,7 @@ export default function OnlineGroomingPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 29% in 2018 · younger children increasingly targeted"
-              sparklineData=[29,30,32,33,35,36,37]
+              sparklineData={[29,30,32,33,35,36,37]}
             />
           </div>
         </section>

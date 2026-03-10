@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function FixedOddsBettingReformPage() {
 
   const sparkData = [35000,35000,18000,18000,18000,18000,18000];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function FixedOddsBettingReformPage() {
   return (
     <>
       <TopicNav topic="Fixed-Odds Betting Reform" />
@@ -43,7 +43,7 @@ export default function FixedOddsBettingReformPage() {
               direction="down"
               polarity="up-is-good"
               changeText="stake cut Apr 2019 · 4,700 betting shops closed within 2 years"
-              sparklineData=[35000,35000,18000,18000,18000,18000,18000]
+              sparklineData={[35000,35000,18000,18000,18000,18000,18000]}
             />
             <MetricCard
               label="Betting shop closures since 2019 FOBTs reform"
@@ -51,7 +51,7 @@ export default function FixedOddsBettingReformPage() {
               direction="up"
               polarity="up-is-good"
               changeText="shops closed as FOBT revenues collapsed"
-              sparklineData=[0,0,1500,3000,3800,4300,4700]
+              sparklineData={[0,0,1500,3000,3800,4300,4700]}
             />
           </div>
         </section>

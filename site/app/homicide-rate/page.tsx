@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function HomicideRatePage() {
 
   const sparkData = [545,550,560,571,580,593,602];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function HomicideRatePage() {
   return (
     <>
       <TopicNav topic="Homicide Rate" />
@@ -43,7 +43,7 @@ export default function HomicideRatePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 571 in 2020 · knife crime driving increase"
-              sparklineData=[545,550,560,571,580,593,602]
+              sparklineData={[545,550,560,571,580,593,602]}
             />
             <MetricCard
               label="Knife homicides as share of total"
@@ -51,7 +51,7 @@ export default function HomicideRatePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 30% in 2010"
-              sparklineData=[30,32,34,36,37,39,40]
+              sparklineData={[30,32,34,36,37,39,40]}
             />
           </div>
         </section>

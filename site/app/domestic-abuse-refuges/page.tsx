@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function DomesticAbuseRefugesPage() {
 
   const sparkData = [43,43,42,40,38,36,35];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function DomesticAbuseRefugesPage() {
   return (
     <>
       <TopicNav topic="Domestic Abuse Refuges" />
@@ -43,7 +43,7 @@ export default function DomesticAbuseRefugesPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 43% in 2019 · DA Act 2021 driving investment"
-              sparklineData=[43,43,42,40,38,36,35]
+              sparklineData={[43,43,42,40,38,36,35]}
             />
             <MetricCard
               label="Women referred but not accommodated (daily average)"
@@ -51,7 +51,7 @@ export default function DomesticAbuseRefugesPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="still nearly 100 women per day unable to access refuge"
-              sparklineData=[120,118,115,110,105,100,97]
+              sparklineData={[120,118,115,110,105,100,97]}
             />
           </div>
         </section>

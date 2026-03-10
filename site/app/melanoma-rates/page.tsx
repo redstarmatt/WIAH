@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function MelanomaRatesPage() {
 
   const sparkData = [14,16,17,18,19,21,22.4];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function MelanomaRatesPage() {
   return (
     <>
       <TopicNav topic="Melanoma Rates" />
@@ -43,7 +43,7 @@ export default function MelanomaRatesPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up 135% in 40 years · sunbed use and holiday patterns"
-              sparklineData=[14,16,17,18,19,21,22.4]
+              sparklineData={[14,16,17,18,19,21,22.4]}
             />
             <MetricCard
               label="Melanoma 5-year survival rate"
@@ -51,7 +51,7 @@ export default function MelanomaRatesPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from 76% in 2000 · stage IV still only 20%"
-              sparklineData=[76,80,84,87,90,92,93]
+              sparklineData={[76,80,84,87,90,92,93]}
             />
           </div>
         </section>

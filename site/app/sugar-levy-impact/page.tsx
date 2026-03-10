@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function SugarLevyImpactPage() {
 
   const sparkData = [100,90,80,72,67,66,65];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function SugarLevyImpactPage() {
   return (
     <>
       <TopicNav topic="Sugar Levy Impact" />
@@ -43,7 +43,7 @@ export default function SugarLevyImpactPage() {
               direction="down"
               polarity="up-is-good"
               changeText="reformulation before levy took effect · most impact pre-2018"
-              sparklineData=[100,90,80,72,67,66,65]
+              sparklineData={[100,90,80,72,67,66,65]}
             />
             <MetricCard
               label="Childhood obesity rate (reception age)"
@@ -51,7 +51,7 @@ export default function SugarLevyImpactPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 9.1% pre-levy · levy effect outpaced by wider diet trends"
-              sparklineData=[9.1,9.2,9.3,9.4,9.3,9.4,9.5]
+              sparklineData={[9.1,9.2,9.3,9.4,9.3,9.4,9.5]}
             />
           </div>
         </section>

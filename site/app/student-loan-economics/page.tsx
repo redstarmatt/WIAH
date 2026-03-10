@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function StudentLoanEconomicsPage() {
 
   const sparkData = [26100,29000,33000,37000,41000,43500,45800];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function StudentLoanEconomicsPage() {
   return (
     <>
       <TopicNav topic="Student Loan Economics" />
@@ -43,7 +43,7 @@ export default function StudentLoanEconomicsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from £26,100 in 2012 · 6.25% interest rate in 2024"
-              sparklineData=[26100,29000,33000,37000,41000,43500,45800]
+              sparklineData={[26100,29000,33000,37000,41000,43500,45800]}
             />
             <MetricCard
               label="Government expects to write off (% of loan value)"
@@ -51,7 +51,7 @@ export default function StudentLoanEconomicsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 35% in 2015 · majority of graduates will never repay in full"
-              sparklineData=[35,36,38,40,41,42,43]
+              sparklineData={[35,36,38,40,41,42,43]}
             />
           </div>
         </section>

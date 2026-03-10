@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function AirQualityDeathsPage() {
 
   const sparkData = [52000,50000,48000,46000,45000,44000,43000];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function AirQualityDeathsPage() {
   return (
     <>
       <TopicNav topic="Air Quality Deaths" />
@@ -43,7 +43,7 @@ export default function AirQualityDeathsPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 52,000 in 2010 · still 7th worst in Europe"
-              sparklineData=[52000,50000,48000,46000,45000,44000,43000]
+              sparklineData={[52000,50000,48000,46000,45000,44000,43000]}
             />
             <MetricCard
               label="Local authorities breaching NO₂ limits"
@@ -51,7 +51,7 @@ export default function AirQualityDeathsPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 61% in 2019 · ULEZ expansion main driver"
-              sparklineData=[61,58,55,52,49,46,43]
+              sparklineData={[61,58,55,52,49,46,43]}
             />
           </div>
         </section>

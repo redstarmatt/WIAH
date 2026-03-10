@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function RoadCasualtiesPage() {
 
   const sparkData = [1730,1710,1685,1584,1472,1695,1695];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function RoadCasualtiesPage() {
   return (
     <>
       <TopicNav topic="Road Casualties" />
@@ -43,7 +43,7 @@ export default function RoadCasualtiesPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 1,472 in 2022 · long decline stalled"
-              sparklineData=[1730,1710,1685,1584,1472,1695,1695]
+              sparklineData={[1730,1710,1685,1584,1472,1695,1695]}
             />
             <MetricCard
               label="Serious injuries in road collisions (UK, annual)"
@@ -51,7 +51,7 @@ export default function RoadCasualtiesPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="long-run decline but pace slowing"
-              sparklineData=[34000,32000,30000,29000,28700,28700,28700]
+              sparklineData={[34000,32000,30000,29000,28700,28700,28700]}
             />
           </div>
         </section>

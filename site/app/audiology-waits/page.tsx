@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function AudiologyWaitsPage() {
 
   const sparkData = [800000,900000,1100000,1300000,1450000,1550000,1600000];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function AudiologyWaitsPage() {
   return (
     <>
       <TopicNav topic="Audiology Waits" />
@@ -43,7 +43,7 @@ export default function AudiologyWaitsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 0.8M in 2020 · longest backlog in NHS"
-              sparklineData=[800000,900000,1100000,1300000,1450000,1550000,1600000]
+              sparklineData={[800000,900000,1100000,1300000,1450000,1550000,1600000]}
             />
             <MetricCard
               label="Average wait for hearing aid fitting (weeks)"
@@ -51,7 +51,7 @@ export default function AudiologyWaitsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 18 weeks in 2019 · 6-week standard long abandoned"
-              sparklineData=[18,20,24,27,29,31,32]
+              sparklineData={[18,20,24,27,29,31,32]}
             />
           </div>
         </section>

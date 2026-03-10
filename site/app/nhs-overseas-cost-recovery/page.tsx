@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function NhsOverseasCostRecoveryPage() {
 
   const sparkData = [295,350,390,430,490,550,600];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function NhsOverseasCostRecoveryPage() {
   return (
     <>
       <TopicNav topic="NHS Overseas Cost Recovery" />
@@ -43,7 +43,7 @@ export default function NhsOverseasCostRecoveryPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from £295M in 2017 · target is £500M minimum"
-              sparklineData=[295,350,390,430,490,550,600]
+              sparklineData={[295,350,390,430,490,550,600]}
             />
             <MetricCard
               label="Overseas visitor debts written off (annual)"
@@ -51,7 +51,7 @@ export default function NhsOverseasCostRecoveryPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from £42M in 2018 · better upfront identification"
-              sparklineData=[42,38,34,30,27,26,25]
+              sparklineData={[42,38,34,30,27,26,25]}
             />
           </div>
         </section>

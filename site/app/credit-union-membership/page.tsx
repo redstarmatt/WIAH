@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function CreditUnionMembershipPage() {
 
   const sparkData = [1.4,1.5,1.6,1.7,1.8,1.9,2.1];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function CreditUnionMembershipPage() {
   return (
     <>
       <TopicNav topic="Credit Union Membership" />
@@ -43,7 +43,7 @@ export default function CreditUnionMembershipPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from 1.4M in 2015 · still tiny vs Ireland (75% membership)"
-              sparklineData=[1.4,1.5,1.6,1.7,1.8,1.9,2.1]
+              sparklineData={[1.4,1.5,1.6,1.7,1.8,1.9,2.1]}
             />
             <MetricCard
               label="Credit union assets (£ billions)"
@@ -51,7 +51,7 @@ export default function CreditUnionMembershipPage() {
               direction="up"
               polarity="up-is-good"
               changeText="growing but still <0.1% of UK banking assets"
-              sparklineData=[2,2.2,2.5,2.8,3.1,3.5,3.8]
+              sparklineData={[2,2.2,2.5,2.8,3.1,3.5,3.8]}
             />
           </div>
         </section>

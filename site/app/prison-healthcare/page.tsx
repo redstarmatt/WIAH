@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function PrisonHealthcarePage() {
 
   const sparkData = [21,22,24,27,29,31,33];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function PrisonHealthcarePage() {
   return (
     <>
       <TopicNav topic="Prison Healthcare" />
@@ -43,7 +43,7 @@ export default function PrisonHealthcarePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="HMIP inspections 2023/24 · primary care vacancy crisis"
-              sparklineData=[21,22,24,27,29,31,33]
+              sparklineData={[21,22,24,27,29,31,33]}
             />
             <MetricCard
               label="Mental illness prevalence in prison (estimated)"
@@ -51,7 +51,7 @@ export default function PrisonHealthcarePage() {
               direction="flat"
               polarity="up-is-bad"
               changeText="9x community rate · personality disorder or substance misuse"
-              sparklineData=[65,67,68,70,70,70,70]
+              sparklineData={[65,67,68,70,70,70,70]}
             />
           </div>
         </section>

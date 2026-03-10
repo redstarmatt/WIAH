@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function GamblingAdvertisingPage() {
 
   const sparkData = [2.3,2.7,3,3.5,4,4.4,4.7];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function GamblingAdvertisingPage() {
   return (
     <>
       <TopicNav topic="Gambling Advertising" />
@@ -43,7 +43,7 @@ export default function GamblingAdvertisingPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 2.3 in 2014 · online and social media surge"
-              sparklineData=[2.3,2.7,3,3.5,4,4.4,4.7]
+              sparklineData={[2.3,2.7,3,3.5,4,4.4,4.7]}
             />
             <MetricCard
               label="Problem gamblers recognising ads as targeted (%)"
@@ -51,7 +51,7 @@ export default function GamblingAdvertisingPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="personalised gambling ads exploit vulnerability"
-              sparklineData=[40,44,48,53,57,59,61]
+              sparklineData={[40,44,48,53,57,59,61]}
             />
           </div>
         </section>

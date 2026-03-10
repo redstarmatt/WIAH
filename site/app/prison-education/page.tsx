@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function PrisonEducationPage() {
 
   const sparkData = [34,33,31,30,29,28,28];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function PrisonEducationPage() {
   return (
     <>
       <TopicNav topic="Prison Education" />
@@ -43,7 +43,7 @@ export default function PrisonEducationPage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 34% in 2013 · education budget cut 40% since 2010"
-              sparklineData=[34,33,31,30,29,28,28]
+              sparklineData={[34,33,31,30,29,28,28]}
             />
             <MetricCard
               label="Prisoners with no formal qualifications (%)"
@@ -51,7 +51,7 @@ export default function PrisonEducationPage() {
               direction="flat"
               polarity="up-is-bad"
               changeText="persistently high · poor literacy common on entry"
-              sparklineData=[56,57,57,56,57,57,57]
+              sparklineData={[56,57,57,56,57,57,57]}
             />
           </div>
         </section>

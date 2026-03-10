@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function OralHealthInequalitiesPage() {
 
   const sparkData = [3,3,3,3,3,3,3];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function OralHealthInequalitiesPage() {
   return (
     <>
       <TopicNav topic="Oral Health Inequalities" />
@@ -43,7 +43,7 @@ export default function OralHealthInequalitiesPage() {
               direction="flat"
               polarity="up-is-bad"
               changeText="persistent gap · fluoridation coverage still under 10% of England"
-              sparklineData=[3,3,3,3,3,3,3]
+              sparklineData={[3,3,3,3,3,3,3]}
             />
             <MetricCard
               label="Adults unable to access NHS dentist when needed"
@@ -51,7 +51,7 @@ export default function OralHealthInequalitiesPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 26% in 2019 · NHS dentistry in systemic decline"
-              sparklineData=[26,28,30,33,37,40,42]
+              sparklineData={[26,28,30,33,37,40,42]}
             />
           </div>
         </section>

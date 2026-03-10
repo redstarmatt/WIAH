@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function AdultObesityPage() {
 
   const sparkData = [26.9,27.2,27.5,28,28.5,29,29.5];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function AdultObesityPage() {
   return (
     <>
       <TopicNav topic="Adult Obesity" />
@@ -43,7 +43,7 @@ export default function AdultObesityPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 26.9% in 2015 · highest rate on record"
-              sparklineData=[26.9,27.2,27.5,28,28.5,29,29.5]
+              sparklineData={[26.9,27.2,27.5,28,28.5,29,29.5]}
             />
             <MetricCard
               label="Severe obesity (BMI 40+)"
@@ -51,7 +51,7 @@ export default function AdultObesityPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 2.4% in 2010 · highest deprivation quintile twice more affected"
-              sparklineData=[2.4,2.6,2.8,3.2,3.6,3.9,4.1]
+              sparklineData={[2.4,2.6,2.8,3.2,3.6,3.9,4.1]}
             />
           </div>
         </section>

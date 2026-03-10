@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function HepatitisCTreatmentPage() {
 
   const sparkData = [21800,19000,14000,10000,10500,11000,11200];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function HepatitisCTreatmentPage() {
   return (
     <>
       <TopicNav topic="Hepatitis C Treatment" />
@@ -43,7 +43,7 @@ export default function HepatitisCTreatmentPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 21,800 in 2019 · pandemic disrupted testing pathways"
-              sparklineData=[21800,19000,14000,10000,10500,11000,11200]
+              sparklineData={[21800,19000,14000,10000,10500,11000,11200]}
             />
             <MetricCard
               label="Estimated undiagnosed HCV cases"
@@ -51,7 +51,7 @@ export default function HepatitisCTreatmentPage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 160,000 in 2015 · direct-acting antivirals transformative"
-              sparklineData=[160000,140000,120000,105000,93000,86000,82000]
+              sparklineData={[160000,140000,120000,105000,93000,86000,82000]}
             />
           </div>
         </section>

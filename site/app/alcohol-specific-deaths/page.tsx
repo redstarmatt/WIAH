@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function AlcoholSpecificDeathsPage() {
 
   const sparkData = [7300,7500,7700,8100,8600,9100,9641];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function AlcoholSpecificDeathsPage() {
   return (
     <>
       <TopicNav topic="Alcohol-Specific Deaths" />
@@ -43,7 +43,7 @@ export default function AlcoholSpecificDeathsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="record high · up 32% since 2019"
-              sparklineData=[7300,7500,7700,8100,8600,9100,9641]
+              sparklineData={[7300,7500,7700,8100,8600,9100,9641]}
             />
             <MetricCard
               label="Alcohol-related hospital admissions (millions)"
@@ -51,7 +51,7 @@ export default function AlcoholSpecificDeathsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 0.93M in 2015"
-              sparklineData=[0.93,0.96,0.99,1.01,1.03,1.05,1.07]
+              sparklineData={[0.93,0.96,0.99,1.01,1.03,1.05,1.07]}
             />
           </div>
         </section>

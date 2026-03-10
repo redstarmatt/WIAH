@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function OnlineGamblingGrowthPage() {
 
   const sparkData = [4.4,4.9,5.5,6,6.3,6.7,7];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function OnlineGamblingGrowthPage() {
   return (
     <>
       <TopicNav topic="Online Gambling Growth" />
@@ -43,7 +43,7 @@ export default function OnlineGamblingGrowthPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from £4.4B in 2018 · now 46% of total gambling market"
-              sparklineData=[4.4,4.9,5.5,6,6.3,6.7,7]
+              sparklineData={[4.4,4.9,5.5,6,6.3,6.7,7]}
             />
             <MetricCard
               label="Online slots players at highest intensity (millions)"
@@ -51,7 +51,7 @@ export default function OnlineGamblingGrowthPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="daily or near-daily · 430,000 problem gamblers"
-              sparklineData=[0.7,0.8,0.9,1,1.1,1.2,1.3]
+              sparklineData={[0.7,0.8,0.9,1,1.1,1.2,1.3]}
             />
           </div>
         </section>

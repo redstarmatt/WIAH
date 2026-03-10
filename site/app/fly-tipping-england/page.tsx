@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function FlyTippingEnglandPage() {
 
   const sparkData = [900000,940000,980000,1010000,1040000,1060000,1080000];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function FlyTippingEnglandPage() {
   return (
     <>
       <TopicNav topic="Fly-Tipping" />
@@ -43,7 +43,7 @@ export default function FlyTippingEnglandPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="record high · household waste 59% of incidents"
-              sparklineData=[900000,940000,980000,1010000,1040000,1060000,1080000]
+              sparklineData={[900000,940000,980000,1010000,1040000,1060000,1080000]}
             />
             <MetricCard
               label="Cost of clearance to local authorities (£ millions)"
@@ -51,7 +51,7 @@ export default function FlyTippingEnglandPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from £329M in 2018"
-              sparklineData=[329,340,351,362,374,383,392]
+              sparklineData={[329,340,351,362,374,383,392]}
             />
           </div>
         </section>

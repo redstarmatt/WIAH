@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function UrbanGreenSpacePage() {
 
   const sparkData = [52,51,50,49,47,46,45];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function UrbanGreenSpacePage() {
   return (
     <>
       <TopicNav topic="Urban Green Space" />
@@ -43,7 +43,7 @@ export default function UrbanGreenSpacePage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 52% in 2010 · development pressure on parks"
-              sparklineData=[52,51,50,49,47,46,45]
+              sparklineData={[52,51,50,49,47,46,45]}
             />
             <MetricCard
               label="Public parks budget cuts since 2010 (England, %)"
@@ -51,7 +51,7 @@ export default function UrbanGreenSpacePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="real-terms cut · park rangers and maintenance hit hardest"
-              sparklineData=[0,-8,-15,-22,-30,-37,-42]
+              sparklineData={[0,-8,-15,-22,-30,-37,-42]}
             />
           </div>
         </section>

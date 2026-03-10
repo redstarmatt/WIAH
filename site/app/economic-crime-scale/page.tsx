@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function EconomicCrimeScalePage() {
 
   const sparkData = [5,5.8,6.3,7,7.5,8,8.3];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function EconomicCrimeScalePage() {
   return (
     <>
       <TopicNav topic="Economic Crime Scale" />
@@ -43,7 +43,7 @@ export default function EconomicCrimeScalePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="estimate · fraud largest component at 57%"
-              sparklineData=[5,5.8,6.3,7,7.5,8,8.3]
+              sparklineData={[5,5.8,6.3,7,7.5,8,8.3]}
             />
             <MetricCard
               label="Fraud as share of all crime (England & Wales)"
@@ -51,7 +51,7 @@ export default function EconomicCrimeScalePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="fraud now largest single crime type"
-              sparklineData=[36,37,38,39,40,40,41]
+              sparklineData={[36,37,38,39,40,40,41]}
             />
           </div>
         </section>

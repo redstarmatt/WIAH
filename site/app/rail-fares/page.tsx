@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function RailFaresPage() {
 
   const sparkData = [100,102,104,105,106,107,108];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function RailFaresPage() {
   return (
     <>
       <TopicNav topic="Rail Fares" />
@@ -43,7 +43,7 @@ export default function RailFaresPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up 8% in real terms since 2010 · fares rise RPI annually"
-              sparklineData=[100,102,104,105,106,107,108]
+              sparklineData={[100,102,104,105,106,107,108]}
             />
             <MetricCard
               label="Average cost per mile by train vs car (pence)"
@@ -51,7 +51,7 @@ export default function RailFaresPage() {
               direction="flat"
               polarity="up-is-bad"
               changeText="rail nearly twice as expensive as car per mile"
-              sparklineData=[28,29,29,30,30,31,31]
+              sparklineData={[28,29,29,30,30,31,31]}
             />
           </div>
         </section>

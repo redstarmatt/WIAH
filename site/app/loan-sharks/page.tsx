@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function LoanSharksPage() {
 
   const sparkData = [680000,720000,780000,860000,960000,1020000,1080000];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function LoanSharksPage() {
   return (
     <>
       <TopicNav topic="Loan Sharks" />
@@ -43,7 +43,7 @@ export default function LoanSharksPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="rising as credit tightens · avg debt £4,500 at 1,000%+ APR"
-              sparklineData=[680000,720000,780000,860000,960000,1020000,1080000]
+              sparklineData={[680000,720000,780000,860000,960000,1020000,1080000]}
             />
             <MetricCard
               label="Illegal money lending prosecutions (annual)"
@@ -51,7 +51,7 @@ export default function LoanSharksPage() {
               direction="flat"
               polarity="up-is-bad"
               changeText="vastly underprosecuted vs scale of problem"
-              sparklineData=[75,80,82,85,83,84,84]
+              sparklineData={[75,80,82,85,83,84,84]}
             />
           </div>
         </section>

@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function HpvVaccinationPage() {
 
   const sparkData = [87,86,78,81,82,83,84];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function HpvVaccinationPage() {
   return (
     <>
       <TopicNav topic="HPV Vaccination" />
@@ -43,7 +43,7 @@ export default function HpvVaccinationPage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 87% in 2019 · pandemic catch-up ongoing"
-              sparklineData=[87,86,78,81,82,83,84]
+              sparklineData={[87,86,78,81,82,83,84]}
             />
             <MetricCard
               label="Boys completing HPV vaccination course"
@@ -51,7 +51,7 @@ export default function HpvVaccinationPage() {
               direction="up"
               polarity="up-is-good"
               changeText="programme extended to boys in 2019 · uptake climbing"
-              sparklineData=[0,0,65,70,72,74,75]
+              sparklineData={[0,0,65,70,72,74,75]}
             />
           </div>
         </section>

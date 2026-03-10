@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function FamilyHubsPage() {
 
   const sparkData = [0,0,50,150,280,360,399];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function FamilyHubsPage() {
   return (
     <>
       <TopicNav topic="Family Hubs" />
@@ -43,7 +43,7 @@ export default function FamilyHubsPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from 0 in 2021 · government target 400 by end 2024"
-              sparklineData=[0,0,50,150,280,360,399]
+              sparklineData={[0,0,50,150,280,360,399]}
             />
             <MetricCard
               label="Children's centres closed since 2010 (England)"
@@ -51,7 +51,7 @@ export default function FamilyHubsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="over half closed · family hubs not replacing all lost capacity"
-              sparklineData=[0,200,500,800,1050,1200,1350]
+              sparklineData={[0,200,500,800,1050,1200,1350]}
             />
           </div>
         </section>

@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function HomeEducationPage() {
 
   const sparkData = [53000,57000,60000,65000,75000,84000,92000];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function HomeEducationPage() {
   return (
     <>
       <TopicNav topic="Home Education" />
@@ -43,7 +43,7 @@ export default function HomeEducationPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="record high · up 75% since 2019 · school anxiety main driver"
-              sparklineData=[53000,57000,60000,65000,75000,84000,92000]
+              sparklineData={[53000,57000,60000,65000,75000,84000,92000]}
             />
             <MetricCard
               label="Local authorities with register of home educators (%)"
@@ -51,7 +51,7 @@ export default function HomeEducationPage() {
               direction="up"
               polarity="up-is-good"
               changeText="still majority lack registers · safeguarding gap"
-              sparklineData=[25,28,31,35,38,41,43]
+              sparklineData={[25,28,31,35,38,41,43]}
             />
           </div>
         </section>

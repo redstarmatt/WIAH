@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function RapeReportingRatePage() {
 
   const sparkData = [35600,40000,52000,58000,63000,68000,70633];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function RapeReportingRatePage() {
   return (
     <>
       <TopicNav topic="Rape Reporting Rate" />
@@ -43,7 +43,7 @@ export default function RapeReportingRatePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="record high · charge rate still only 4%"
-              sparklineData=[35600,40000,52000,58000,63000,68000,70633]
+              sparklineData={[35600,40000,52000,58000,63000,68000,70633]}
             />
             <MetricCard
               label="Rape charge rate (%)"
@@ -51,7 +51,7 @@ export default function RapeReportingRatePage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 5.7% in 2016 · most cases NFA'd"
-              sparklineData=[5.7,5.5,5,4.5,4.2,4.1,4]
+              sparklineData={[5.7,5.5,5,4.5,4.2,4.1,4]}
             />
           </div>
         </section>

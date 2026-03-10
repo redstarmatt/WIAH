@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function HipKneeWaitsPage() {
 
   const sparkData = [170000,200000,400000,580000,700000,750000,780000];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function HipKneeWaitsPage() {
   return (
     <>
       <TopicNav topic="Hip & Knee Replacement Waits" />
@@ -43,7 +43,7 @@ export default function HipKneeWaitsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 170K in 2019 · both joints combined"
-              sparklineData=[170000,200000,400000,580000,700000,750000,780000]
+              sparklineData={[170000,200000,400000,580000,700000,750000,780000]}
             />
             <MetricCard
               label="Median wait for elective orthopaedic surgery (weeks)"
@@ -51,7 +51,7 @@ export default function HipKneeWaitsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 12 weeks in 2019"
-              sparklineData=[12,15,30,43,50,51,52]
+              sparklineData={[12,15,30,43,50,51,52]}
             />
           </div>
         </section>

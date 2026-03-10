@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function BridgeMaintenanceBacklogPage() {
 
   const sparkData = [1.2,1.3,1.4,1.5,1.6,1.7,1.9];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function BridgeMaintenanceBacklogPage() {
   return (
     <>
       <TopicNav topic="Bridge Maintenance Backlog" />
@@ -43,7 +43,7 @@ export default function BridgeMaintenanceBacklogPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from £1.2B in 2018 · 28% of bridges need repair"
-              sparklineData=[1.2,1.3,1.4,1.5,1.6,1.7,1.9]
+              sparklineData={[1.2,1.3,1.4,1.5,1.6,1.7,1.9]}
             />
             <MetricCard
               label="Bridges with weight restrictions (England)"
@@ -51,7 +51,7 @@ export default function BridgeMaintenanceBacklogPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up 35% since 2015 · HGV diversions increasing"
-              sparklineData=[1520,1600,1700,1800,1900,1980,2050]
+              sparklineData={[1520,1600,1700,1800,1900,1980,2050]}
             />
           </div>
         </section>

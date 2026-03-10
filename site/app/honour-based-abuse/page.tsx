@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function HonourBasedAbusePage() {
 
   const sparkData = [2160,2400,2700,2900,3200,3600,3908];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function HonourBasedAbusePage() {
   return (
     <>
       <TopicNav topic="Honour-Based Abuse" />
@@ -43,7 +43,7 @@ export default function HonourBasedAbusePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up 81% since 2016 · better recording plus real increase"
-              sparklineData=[2160,2400,2700,2900,3200,3600,3908]
+              sparklineData={[2160,2400,2700,2900,3200,3600,3908]}
             />
             <MetricCard
               label="Prosecutions for honour-based abuse"
@@ -51,7 +51,7 @@ export default function HonourBasedAbusePage() {
               direction="flat"
               polarity="up-is-bad"
               changeText="prosecution rate low relative to recorded crime"
-              sparklineData=[65,68,70,72,71,73,72]
+              sparklineData={[65,68,70,72,71,73,72]}
             />
           </div>
         </section>

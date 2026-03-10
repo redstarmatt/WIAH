@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function PensionAutoEnrolmentPage() {
 
   const sparkData = [55,65,72,78,83,86,88];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function PensionAutoEnrolmentPage() {
   return (
     <>
       <TopicNav topic="Pension Auto-Enrolment" />
@@ -43,7 +43,7 @@ export default function PensionAutoEnrolmentPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from 55% in 2012 · auto-enrolment transformative"
-              sparklineData=[55,65,72,78,83,86,88]
+              sparklineData={[55,65,72,78,83,86,88]}
             />
             <MetricCard
               label="Workers below adequate savings threshold (%)"
@@ -51,7 +51,7 @@ export default function PensionAutoEnrolmentPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 52% in 2012 · but minimum contributions still too low"
-              sparklineData=[52,50,46,43,41,39,37]
+              sparklineData={[52,50,46,43,41,39,37]}
             />
           </div>
         </section>

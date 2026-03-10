@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function SingleUsePlasticReductionPage() {
 
   const sparkData = [7.6,6,4,2.8,2.3,2,1.7];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function SingleUsePlasticReductionPage() {
   return (
     <>
       <TopicNav topic="Single-Use Plastic Reduction" />
@@ -43,7 +43,7 @@ export default function SingleUsePlasticReductionPage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 7.6B in 2014 · 5p/10p charge transformative"
-              sparklineData=[7.6,6,4,2.8,2.3,2,1.7]
+              sparklineData={[7.6,6,4,2.8,2.3,2,1.7]}
             />
             <MetricCard
               label="Single-use plastic items in scope of ban (England)"
@@ -51,7 +51,7 @@ export default function SingleUsePlasticReductionPage() {
               direction="up"
               polarity="up-is-good"
               changeText="plates, cutlery, polystyrene cups banned Oct 2023"
-              sparklineData=[0,0,0,0,0,0,9]
+              sparklineData={[0,0,0,0,0,0,9]}
             />
           </div>
         </section>

@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function UcDeductionsPage() {
 
   const sparkData = [52,52,50,48,47,46,45];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function UcDeductionsPage() {
   return (
     <>
       <TopicNav topic="Universal Credit Deductions" />
@@ -43,7 +43,7 @@ export default function UcDeductionsPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 52% in 2019 · still affects 2.2M people"
-              sparklineData=[52,52,50,48,47,46,45]
+              sparklineData={[52,52,50,48,47,46,45]}
             />
             <MetricCard
               label="Average UC deduction per claimant (£/month)"
@@ -51,7 +51,7 @@ export default function UcDeductionsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from £52 in 2019 · advance payment loans main cause"
-              sparklineData=[52,54,56,58,59,60,61]
+              sparklineData={[52,54,56,58,59,60,61]}
             />
           </div>
         </section>

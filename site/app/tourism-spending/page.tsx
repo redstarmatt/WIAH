@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function TourismSpendingPage() {
 
   const sparkData = [25.2,26.3,27,7,20,27,31.1];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function TourismSpendingPage() {
   return (
     <>
       <TopicNav topic="Tourism Spending" />
@@ -43,7 +43,7 @@ export default function TourismSpendingPage() {
               direction="up"
               polarity="up-is-good"
               changeText="recovering to near pre-pandemic levels"
-              sparklineData=[25.2,26.3,27,7,20,27,31.1]
+              sparklineData={[25.2,26.3,27,7,20,27,31.1]}
             />
             <MetricCard
               label="UK domestic tourism spending (£ billions)"
@@ -51,7 +51,7 @@ export default function TourismSpendingPage() {
               direction="flat"
               polarity="up-is-good"
               changeText="stable · staycation boom reversed as outbound travel recovered"
-              sparklineData=[76,78,80,52,82,75,73]
+              sparklineData={[76,78,80,52,82,75,73]}
             />
           </div>
         </section>

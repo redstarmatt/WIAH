@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function NaloxoneProvisionPage() {
 
   const sparkData = [26000,35000,50000,65000,80000,95000,108000];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function NaloxoneProvisionPage() {
   return (
     <>
       <TopicNav topic="Naloxone Provision" />
@@ -43,7 +43,7 @@ export default function NaloxoneProvisionPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from 26,000 in 2016 · each dose can reverse an overdose"
-              sparklineData=[26000,35000,50000,65000,80000,95000,108000]
+              sparklineData={[26000,35000,50000,65000,80000,95000,108000]}
             />
             <MetricCard
               label="Drug overdose deaths (England & Wales)"
@@ -51,7 +51,7 @@ export default function NaloxoneProvisionPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="record high in 2022 · naloxone distribution still insufficient"
-              sparklineData=[3700,3800,4000,4200,4500,4700,4907]
+              sparklineData={[3700,3800,4000,4200,4500,4700,4907]}
             />
           </div>
         </section>

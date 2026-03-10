@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function HouseholdSavingsRatePage() {
 
   const sparkData = [6.5,7,25.9,12,10,9.5,8.9];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function HouseholdSavingsRatePage() {
   return (
     <>
       <TopicNav topic="Household Savings Rate" />
@@ -43,7 +43,7 @@ export default function HouseholdSavingsRatePage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 25.9% COVID peak · below pre-pandemic 6.5% norm"
-              sparklineData=[6.5,7,25.9,12,10,9.5,8.9]
+              sparklineData={[6.5,7,25.9,12,10,9.5,8.9]}
             />
             <MetricCard
               label="Households with no savings (%)"
@@ -51,7 +51,7 @@ export default function HouseholdSavingsRatePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 20% in 2019 · cost-of-living driven"
-              sparklineData=[20,20,21,22,22,23,24]
+              sparklineData={[20,20,21,22,22,23,24]}
             />
           </div>
         </section>

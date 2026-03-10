@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function TextileWastePage() {
 
   const sparkData = [23,23.5,24,24.8,25.5,26.2,26.8];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function TextileWastePage() {
   return (
     <>
       <TopicNav topic="Textile Waste" />
@@ -43,7 +43,7 @@ export default function TextileWastePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="highest in Europe · fast fashion acceleration"
-              sparklineData=[23,23.5,24,24.8,25.5,26.2,26.8]
+              sparklineData={[23,23.5,24,24.8,25.5,26.2,26.8]}
             />
             <MetricCard
               label="Clothing recycled or donated (%)"
@@ -51,7 +51,7 @@ export default function TextileWastePage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 42% in 2018 · quality of clothing too poor to resell"
-              sparklineData=[42,42,41,39,37,36,35]
+              sparklineData={[42,42,41,39,37,36,35]}
             />
           </div>
         </section>

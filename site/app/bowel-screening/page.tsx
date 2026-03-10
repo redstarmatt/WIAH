@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function BowelScreeningPage() {
 
   const sparkData = [56,58,61,63,65,66,67];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function BowelScreeningPage() {
   return (
     <>
       <TopicNav topic="Bowel Cancer Screening" />
@@ -43,7 +43,7 @@ export default function BowelScreeningPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from 56% pre-FIT test · FIT more acceptable than FOB"
-              sparklineData=[56,58,61,63,65,66,67]
+              sparklineData={[56,58,61,63,65,66,67]}
             />
             <MetricCard
               label="Cancers caught at Stage 1–2 via screening"
@@ -51,7 +51,7 @@ export default function BowelScreeningPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from 45% in 2015 · early detection saves lives"
-              sparklineData=[45,47,48,49,50,51,53]
+              sparklineData={[45,47,48,49,50,51,53]}
             />
           </div>
         </section>

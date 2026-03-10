@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function UltraProcessedFoodPage() {
 
   const sparkData = [45,47,49,51,53,55,57];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function UltraProcessedFoodPage() {
   return (
     <>
       <TopicNav topic="Ultra-Processed Food" />
@@ -43,7 +43,7 @@ export default function UltraProcessedFoodPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="highest in Europe · up from 45% in 2000"
-              sparklineData=[45,47,49,51,53,55,57]
+              sparklineData={[45,47,49,51,53,55,57]}
             />
             <MetricCard
               label="Children's diet from ultra-processed foods (%)"
@@ -51,7 +51,7 @@ export default function UltraProcessedFoodPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="even higher in children · linked to ADHD, obesity, anxiety"
-              sparklineData=[55,57,59,61,62,64,65]
+              sparklineData={[55,57,59,61,62,64,65]}
             />
           </div>
         </section>

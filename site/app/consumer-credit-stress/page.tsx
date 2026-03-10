@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function ConsumerCreditStressPage() {
 
   const sparkData = [6.1,6.3,6.5,7,7.8,8.4,8.9];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function ConsumerCreditStressPage() {
   return (
     <>
       <TopicNav topic="Consumer Credit Stress" />
@@ -43,7 +43,7 @@ export default function ConsumerCreditStressPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 6.1% in 2019 · cost-of-living pressure"
-              sparklineData=[6.1,6.3,6.5,7,7.8,8.4,8.9]
+              sparklineData={[6.1,6.3,6.5,7,7.8,8.4,8.9]}
             />
             <MetricCard
               label="Credit card balances (England, £ billions)"
@@ -51,7 +51,7 @@ export default function ConsumerCreditStressPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from £58B in 2021 · real cost rising with high rates"
-              sparklineData=[65,62,58,60,65,69,72]
+              sparklineData={[65,62,58,60,65,69,72]}
             />
           </div>
         </section>

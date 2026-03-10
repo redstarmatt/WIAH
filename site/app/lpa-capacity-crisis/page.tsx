@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function LpaCapacityCrisisPage() {
 
   const sparkData = [16200,15000,13500,12500,11800,11200,10700];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function LpaCapacityCrisisPage() {
   return (
     <>
       <TopicNav topic="Planning Authority Capacity" />
@@ -43,7 +43,7 @@ export default function LpaCapacityCrisisPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 16,200 in 2010 · 34% cut in 15 years"
-              sparklineData=[16200,15000,13500,12500,11800,11200,10700]
+              sparklineData={[16200,15000,13500,12500,11800,11200,10700]}
             />
             <MetricCard
               label="Major planning applications decided on time (%)"
@@ -51,7 +51,7 @@ export default function LpaCapacityCrisisPage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 85% in 2016 · underfunded departments"
-              sparklineData=[85,83,81,79,77,76,75]
+              sparklineData={[85,83,81,79,77,76,75]}
             />
           </div>
         </section>

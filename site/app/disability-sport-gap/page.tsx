@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function DisabilitySportGapPage() {
 
   const sparkData = [48,47,46,45,44,43,43];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function DisabilitySportGapPage() {
   return (
     <>
       <TopicNav topic="Disability Sport Gap" />
@@ -43,7 +43,7 @@ export default function DisabilitySportGapPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 48% in 2017 · still 15pp more than non-disabled"
-              sparklineData=[48,47,46,45,44,43,43]
+              sparklineData={[48,47,46,45,44,43,43]}
             />
             <MetricCard
               label="Gap between disabled and non-disabled sport participation (pp)"
@@ -51,7 +51,7 @@ export default function DisabilitySportGapPage() {
               direction="flat"
               polarity="up-is-bad"
               changeText="persistent 21-point gap · accessible facilities funding stalled"
-              sparklineData=[22,22,22,21,21,21,21]
+              sparklineData={[22,22,22,21,21,21,21]}
             />
           </div>
         </section>

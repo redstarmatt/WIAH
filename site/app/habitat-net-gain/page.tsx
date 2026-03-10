@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function HabitatNetGainPage() {
 
   const sparkData = [0,0,0,1200,8000,10500,12400];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function HabitatNetGainPage() {
   return (
     <>
       <TopicNav topic="Biodiversity Net Gain" />
@@ -43,7 +43,7 @@ export default function HabitatNetGainPage() {
               direction="up"
               polarity="up-is-good"
               changeText="statutory BNG commenced Feb 2024 · small sites Feb 2025"
-              sparklineData=[0,0,0,1200,8000,10500,12400]
+              sparklineData={[0,0,0,1200,8000,10500,12400]}
             />
             <MetricCard
               label="Biodiversity units traded in market (annual)"
@@ -51,7 +51,7 @@ export default function HabitatNetGainPage() {
               direction="up"
               polarity="up-is-good"
               changeText="new market emerging · quality verification challenges remain"
-              sparklineData=[0,0,0,5000,18000,30000,38000]
+              sparklineData={[0,0,0,5000,18000,30000,38000]}
             />
           </div>
         </section>

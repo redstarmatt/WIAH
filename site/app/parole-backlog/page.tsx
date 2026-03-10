@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function ParoleBacklogPage() {
 
   const sparkData = [6200,6800,7500,8500,9800,11000,11800];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function ParoleBacklogPage() {
   return (
     <>
       <TopicNav topic="Parole Backlog" />
@@ -43,7 +43,7 @@ export default function ParoleBacklogPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 6,200 in 2019 · prisoners held beyond minimum tariff"
-              sparklineData=[6200,6800,7500,8500,9800,11000,11800]
+              sparklineData={[6200,6800,7500,8500,9800,11000,11800]}
             />
             <MetricCard
               label="Average wait for parole hearing (months)"
@@ -51,7 +51,7 @@ export default function ParoleBacklogPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 11 months in 2019"
-              sparklineData=[11,12,13,14,15,16,18]
+              sparklineData={[11,12,13,14,15,16,18]}
             />
           </div>
         </section>

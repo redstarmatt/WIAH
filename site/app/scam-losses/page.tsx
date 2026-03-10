@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function ScamLossesPage() {
 
   const sparkData = [381,455,479,524,510,485,459];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function ScamLossesPage() {
   return (
     <>
       <TopicNav topic="Scam Losses" />
@@ -43,7 +43,7 @@ export default function ScamLossesPage() {
               direction="down"
               polarity="up-is-good"
               changeText="down 12% from £524M peak · mandatory reimbursement now in force"
-              sparklineData=[381,455,479,524,510,485,459]
+              sparklineData={[381,455,479,524,510,485,459]}
             />
             <MetricCard
               label="UK adults falling victim to scams (annual)"
@@ -51,7 +51,7 @@ export default function ScamLossesPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 1.9M in 2018 · phone and online scams dominating"
-              sparklineData=[1.9,2,2.2,2.4,2.5,2.6,2.7]
+              sparklineData={[1.9,2,2.2,2.4,2.5,2.6,2.7]}
             />
           </div>
         </section>

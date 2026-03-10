@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function SameDayEmergencyCarePage() {
 
   const sparkData = [1.2,1.4,1.8,2.2,2.6,2.9,3.1];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function SameDayEmergencyCarePage() {
   return (
     <>
       <TopicNav topic="Same-Day Emergency Care" />
@@ -43,7 +43,7 @@ export default function SameDayEmergencyCarePage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from 1.2M in 2019 · diverts A&E pressure"
-              sparklineData=[1.2,1.4,1.8,2.2,2.6,2.9,3.1]
+              sparklineData={[1.2,1.4,1.8,2.2,2.6,2.9,3.1]}
             />
             <MetricCard
               label="A&E 4-hour performance"
@@ -51,7 +51,7 @@ export default function SameDayEmergencyCarePage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 91.3% in 2015 · 95% target not met since 2013"
-              sparklineData=[91.3,88,83.5,78,76,74,73]
+              sparklineData={[91.3,88,83.5,78,76,74,73]}
             />
           </div>
         </section>

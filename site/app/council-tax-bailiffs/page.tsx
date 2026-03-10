@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function CouncilTaxBailiffsPage() {
 
   const sparkData = [1.6,1.7,1.8,1.9,2,2.2,2.3];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function CouncilTaxBailiffsPage() {
   return (
     <>
       <TopicNav topic="Council Tax Bailiffs" />
@@ -43,7 +43,7 @@ export default function CouncilTaxBailiffsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="record · bailiff referrals up 45% since 2019"
-              sparklineData=[1.6,1.7,1.8,1.9,2,2.2,2.3]
+              sparklineData={[1.6,1.7,1.8,1.9,2,2.2,2.3]}
             />
             <MetricCard
               label="Council tax debt outstanding (England, £ billions)"
@@ -51,7 +51,7 @@ export default function CouncilTaxBailiffsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from £3.6B in 2019"
-              sparklineData=[3.6,3.8,4.1,4.5,5,5.6,6.1]
+              sparklineData={[3.6,3.8,4.1,4.5,5,5.6,6.1]}
             />
           </div>
         </section>

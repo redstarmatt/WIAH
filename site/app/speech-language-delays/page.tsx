@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function SpeechLanguageDelaysPage() {
 
   const sparkData = [14,14,14,15,16.5,17,17.5];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function SpeechLanguageDelaysPage() {
   return (
     <>
       <TopicNav topic="Speech & Language Delays" />
@@ -43,7 +43,7 @@ export default function SpeechLanguageDelaysPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 14% in 2019 · post-lockdown language development affected"
-              sparklineData=[14,14,14,15,16.5,17,17.5]
+              sparklineData={[14,14,14,15,16.5,17,17.5]}
             />
             <MetricCard
               label="Children referred for speech therapy waiting >18 weeks (%)"
@@ -51,7 +51,7 @@ export default function SpeechLanguageDelaysPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 18% in 2019 · SLT workforce shortfall"
-              sparklineData=[18,19,21,28,34,37,38]
+              sparklineData={[18,19,21,28,34,37,38]}
             />
           </div>
         </section>

@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function BreastScreeningPage() {
 
   const sparkData = [76.8,75.9,74.8,73.2,72,71.5,71.1];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function BreastScreeningPage() {
   return (
     <>
       <TopicNav topic="Breast Cancer Screening" />
@@ -43,7 +43,7 @@ export default function BreastScreeningPage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 76.8% in 2012 · pandemic gap not recovered"
-              sparklineData=[76.8,75.9,74.8,73.2,72,71.5,71.1]
+              sparklineData={[76.8,75.9,74.8,73.2,72,71.5,71.1]}
             />
             <MetricCard
               label="Cancers detected per 1,000 screened"
@@ -51,7 +51,7 @@ export default function BreastScreeningPage() {
               direction="flat"
               polarity="up-is-good"
               changeText="stable · increasing sensitivity of mammography"
-              sparklineData=[8,8.1,8.2,8.3,8.2,8.3,8.3]
+              sparklineData={[8,8.1,8.2,8.3,8.2,8.3,8.3]}
             />
           </div>
         </section>

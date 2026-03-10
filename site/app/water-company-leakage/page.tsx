@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function WaterCompanyLeakagePage() {
 
   const sparkData = [3400,3350,3300,3250,3150,3100,3060];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function WaterCompanyLeakagePage() {
   return (
     <>
       <TopicNav topic="Water Company Leakage" />
@@ -43,7 +43,7 @@ export default function WaterCompanyLeakagePage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 3,400 in 2017 but still above 2020 target of 2,800"
-              sparklineData=[3400,3350,3300,3250,3150,3100,3060]
+              sparklineData={[3400,3350,3300,3250,3150,3100,3060]}
             />
             <MetricCard
               label="Water companies meeting leakage targets (%)"
@@ -51,7 +51,7 @@ export default function WaterCompanyLeakagePage() {
               direction="down"
               polarity="up-is-good"
               changeText="majority missing their own targets"
-              sparklineData=[75,70,65,58,50,45,43]
+              sparklineData={[75,70,65,58,50,45,43]}
             />
           </div>
         </section>

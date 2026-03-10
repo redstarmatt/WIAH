@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function SchoolReadinessPage() {
 
   const sparkData = [53,57,62,66,69,67,67.7];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function SchoolReadinessPage() {
   return (
     <>
       <TopicNav topic="School Readiness" />
@@ -43,7 +43,7 @@ export default function SchoolReadinessPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from 53% in 2012 · but gap widened post-COVID"
-              sparklineData=[53,57,62,66,69,67,67.7]
+              sparklineData={[53,57,62,66,69,67,67.7]}
             />
             <MetricCard
               label="Disadvantaged children at expected level vs peers (gap, pp)"
@@ -51,7 +51,7 @@ export default function SchoolReadinessPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 17pp in 2019 · pandemic erased decade of progress"
-              sparklineData=[24,22,20,17,17,19,19]
+              sparklineData={[24,22,20,17,17,19,19]}
             />
           </div>
         </section>

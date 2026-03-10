@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function PhonicsOutcomesPage() {
 
   const sparkData = [58,64,69,73,76,77,79];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function PhonicsOutcomesPage() {
   return (
     <>
       <TopicNav topic="Phonics Outcomes" />
@@ -43,7 +43,7 @@ export default function PhonicsOutcomesPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from 58% in 2012 · phonics-first approach effective"
-              sparklineData=[58,64,69,73,76,77,79]
+              sparklineData={[58,64,69,73,76,77,79]}
             />
             <MetricCard
               label="Disadvantaged pupils meeting standard (gap vs peers, pp)"
@@ -51,7 +51,7 @@ export default function PhonicsOutcomesPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 21pp in 2012 · gap persisting but narrowing"
-              sparklineData=[21,19,18,17,16,15,14]
+              sparklineData={[21,19,18,17,16,15,14]}
             />
           </div>
         </section>

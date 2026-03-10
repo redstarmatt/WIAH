@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function OccupationalDiseasePage() {
 
   const sparkData = [1.3,1.4,1.5,1.6,1.7,1.75,1.8];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function OccupationalDiseasePage() {
   return (
     <>
       <TopicNav topic="Occupational Disease" />
@@ -43,7 +43,7 @@ export default function OccupationalDiseasePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="record high · stress, depression, anxiety account for 50%"
-              sparklineData=[1.3,1.4,1.5,1.6,1.7,1.75,1.8]
+              sparklineData={[1.3,1.4,1.5,1.6,1.7,1.75,1.8]}
             />
             <MetricCard
               label="Days lost to work-related illness (millions)"
@@ -51,7 +51,7 @@ export default function OccupationalDiseasePage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 31.8M in 2019 · mental health main cause"
-              sparklineData=[31.8,33,34,34.5,35,35.1,35.2]
+              sparklineData={[31.8,33,34,34.5,35,35.1,35.2]}
             />
           </div>
         </section>

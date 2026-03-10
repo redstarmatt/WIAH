@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function RightToBuyPage() {
 
   const sparkData = [2000,5000,11000,12000,10000,9500,8900];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function RightToBuyPage() {
   return (
     <>
       <TopicNav topic="Right to Buy" />
@@ -43,7 +43,7 @@ export default function RightToBuyPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 68,000 peak in 1980s · discount increased 2012 reversed some decline"
-              sparklineData=[2000,5000,11000,12000,10000,9500,8900]
+              sparklineData={[2000,5000,11000,12000,10000,9500,8900]}
             />
             <MetricCard
               label="Social homes replaced for each sold via RTB"
@@ -51,7 +51,7 @@ export default function RightToBuyPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 1:1 target · net depletion of social stock"
-              sparklineData=[0.5,0.4,0.4,0.4,0.3,0.3,0.3]
+              sparklineData={[0.5,0.4,0.4,0.4,0.3,0.3,0.3]}
             />
           </div>
         </section>

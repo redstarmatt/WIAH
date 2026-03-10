@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function ForcedMarriagePage() {
 
   const sparkData = [1100,1267,1735,1800,1409,1800,2068];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function ForcedMarriagePage() {
   return (
     <>
       <TopicNav topic="Forced Marriage" />
@@ -43,7 +43,7 @@ export default function ForcedMarriagePage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down from 1,735 in 2012 · COVID dip followed by rise"
-              sparklineData=[1100,1267,1735,1800,1409,1800,2068]
+              sparklineData={[1100,1267,1735,1800,1409,1800,2068]}
             />
             <MetricCard
               label="Under-18s in forced marriage cases"
@@ -51,7 +51,7 @@ export default function ForcedMarriagePage() {
               direction="flat"
               polarity="up-is-bad"
               changeText="persistent proportion · 11 reported cases involved under-16s"
-              sparklineData=[26,25,26,24,25,25,25]
+              sparklineData={[26,25,26,24,25,25,25]}
             />
           </div>
         </section>

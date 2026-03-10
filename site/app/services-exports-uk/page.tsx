@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function ServicesExportsUkPage() {
 
   const sparkData = [280,295,300,275,330,370,398];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function ServicesExportsUkPage() {
   return (
     <>
       <TopicNav topic="Services Exports" />
@@ -43,7 +43,7 @@ export default function ServicesExportsUkPage() {
               direction="up"
               polarity="up-is-good"
               changeText="record high · financial services largest component"
-              sparklineData=[280,295,300,275,330,370,398]
+              sparklineData={[280,295,300,275,330,370,398]}
             />
             <MetricCard
               label="Services trade surplus (£ billions)"
@@ -51,7 +51,7 @@ export default function ServicesExportsUkPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from £94B in 2016 · offset goods trade deficit"
-              sparklineData=[94,98,102,90,110,125,136]
+              sparklineData={[94,98,102,90,110,125,136]}
             />
           </div>
         </section>

@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function MeatConsumptionTrendPage() {
 
   const sparkData = [93,92,90,88,87,85,84];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function MeatConsumptionTrendPage() {
   return (
     <>
       <TopicNav topic="Meat Consumption Trend" />
@@ -43,7 +43,7 @@ export default function MeatConsumptionTrendPage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 93kg in 2010 · flexitarianism growing"
-              sparklineData=[93,92,90,88,87,85,84]
+              sparklineData={[93,92,90,88,87,85,84]}
             />
             <MetricCard
               label="Plant-based product sales (£ billions, annual)"
@@ -51,7 +51,7 @@ export default function MeatConsumptionTrendPage() {
               direction="up"
               polarity="up-is-good"
               changeText="up from £0.4B in 2018 · market growth slowing from peak"
-              sparklineData=[0.4,0.6,0.8,1,1.3,1.4,1.4]
+              sparklineData={[0.4,0.6,0.8,1,1.3,1.4,1.4]}
             />
           </div>
         </section>

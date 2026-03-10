@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function CyclingFatalitiesPage() {
 
   const sparkData = [109,105,99,102,99,104,104];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function CyclingFatalitiesPage() {
   return (
     <>
       <TopicNav topic="Cycling Fatalities" />
@@ -43,7 +43,7 @@ export default function CyclingFatalitiesPage() {
               direction="flat"
               polarity="up-is-bad"
               changeText="broadly flat · 16 killed per billion miles vs 2.5 in Netherlands"
-              sparklineData=[109,105,99,102,99,104,104]
+              sparklineData={[109,105,99,102,99,104,104]}
             />
             <MetricCard
               label="Cyclists seriously injured (annual)"
@@ -51,7 +51,7 @@ export default function CyclingFatalitiesPage() {
               direction="down"
               polarity="up-is-bad"
               changeText="down 9% since 2018 but absolute numbers still high"
-              sparklineData=[5000,4900,4800,4700,4650,4600,4560]
+              sparklineData={[5000,4900,4800,4700,4650,4600,4560]}
             />
           </div>
         </section>

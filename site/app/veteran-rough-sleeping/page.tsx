@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function VeteranRoughSleepingPage() {
 
   const sparkData = [400,380,360,345,335,325,320];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function VeteranRoughSleepingPage() {
   return (
     <>
       <TopicNav topic="Veteran Rough Sleeping" />
@@ -43,7 +43,7 @@ export default function VeteranRoughSleepingPage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 400 in 2018 · Op FORTITUDE and specialist services"
-              sparklineData=[400,380,360,345,335,325,320]
+              sparklineData={[400,380,360,345,335,325,320]}
             />
             <MetricCard
               label="Veterans assessed as homeless by local authorities (annual)"
@@ -51,7 +51,7 @@ export default function VeteranRoughSleepingPage() {
               direction="down"
               polarity="up-is-good"
               changeText="down from 8,700 in 2012 · Armed Forces Covenant housing duty"
-              sparklineData=[8700,8000,7200,6800,6400,6100,5900]
+              sparklineData={[8700,8000,7200,6800,6400,6100,5900]}
             />
           </div>
         </section>

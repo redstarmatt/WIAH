@@ -5,6 +5,7 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+export default function CataractWaitsPage() {
 
   const sparkData = [120000,150000,280000,430000,560000,620000,650000];
   const chartSeries: Series[] = [
@@ -22,7 +23,6 @@ import ScrollReveal from '@/components/ScrollReveal';
     },
   ];
 
-export default function CataractWaitsPage() {
   return (
     <>
       <TopicNav topic="Cataract Waits" />
@@ -43,7 +43,7 @@ export default function CataractWaitsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 120K in 2019 · most common elective surgery"
-              sparklineData=[120000,150000,280000,430000,560000,620000,650000]
+              sparklineData={[120000,150000,280000,430000,560000,620000,650000]}
             />
             <MetricCard
               label="Median wait for first cataract (weeks)"
@@ -51,7 +51,7 @@ export default function CataractWaitsPage() {
               direction="up"
               polarity="up-is-bad"
               changeText="up from 9 weeks in 2019"
-              sparklineData=[9,12,22,31,37,40,41]
+              sparklineData={[9,12,22,31,37,40,41]}
             />
           </div>
         </section>
