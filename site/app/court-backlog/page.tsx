@@ -136,7 +136,7 @@ export default function CourtBacklogPage() {
                 polarity="up-is-bad"
                 changeText="March 2024 · Up from 41K pre-COVID · Target: 62K · Never met since pandemic began"
                 sparklineData={sparkFrom([35000, 37000, 39000, 41000, 40000, 38000, 56000, 58000, 60000, 61000, 65000, 67573])}
-                href="#sec-overview"/>
+                href="#sec-backlog"/>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <MetricCard
@@ -146,7 +146,7 @@ export default function CourtBacklogPage() {
                 polarity="up-is-bad"
                 changeText="2023 · Up from 350 days in 2015 · Doubled since pre-COVID · Victims waiting 2+ years for trial"
                 sparklineData={sparkFrom([350, 370, 390, 400, 410, 420, 560, 600, 650, 680, 700, 718])}
-                href="#sec-backlog"/>
+                href="#sec-completion"/>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <MetricCard
@@ -156,7 +156,7 @@ export default function CourtBacklogPage() {
                 polarity="up-is-bad"
                 changeText="2024 · 24% of prison population · Some held 2+ years pre-trial · Record remand numbers"
                 sparklineData={sparkFrom([9000, 9500, 10000, 10500, 11000, 12000, 14000, 15000, 15500, 16000, 16200, 16400])}
-                href="#sec-completion"/>
+                href="#sec-offences"/>
             </ScrollReveal>
           </div>
         </section>

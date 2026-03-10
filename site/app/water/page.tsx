@@ -487,7 +487,7 @@ export default function WaterPage() {
             }
             source="Environment Agency · EDM Annual Returns"
             baseline="That's 410 years' worth of sewage flowing into rivers and seas annually"
-            href="#sec-overview"/>
+            href="#sec-sewage"/>
           <MetricCard
             label="Rivers in good health"
             value={latestRiver ? String(latestRiver.goodOrBetterPct) : '—'}
@@ -506,7 +506,7 @@ export default function WaterPage() {
             }
             source="Defra · WFD classification (B3)"
             baseline="Only 16% of rivers meet ecological standards today — the target was 75% by 2027"
-            href="#sec-sewage"/>
+            href="#sec-rivers"/>
           <MetricCard
             label="Bathing waters at excellent"
             value={latestBathing ? latestBathing.excellentPct.toFixed(1) : '—'}
@@ -525,7 +525,7 @@ export default function WaterPage() {
             }
             source="Environment Agency · Bathing water quality (ENV17)"
             baseline="Beaches declared 'excellent' have fallen from 55% in 2015 to 45% today"
-            href="#sec-rivers"/>
+            href="#sec-financials"/>
         </div>
         </ScrollReveal>
 

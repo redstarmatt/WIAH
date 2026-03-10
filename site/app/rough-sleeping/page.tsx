@@ -151,7 +151,7 @@ export default function RoughSleepingPage() {
                   : []
               }
               source="MHCLG · Rough Sleeping Snapshot"
-              href="#sec-overview"/>
+              href="#sec-rough"/>
             <MetricCard
               label="Households recognised as homeless (annual)"
               value={data?.national.homelessnessDecisions.latestThousands ? `${data.national.homelessnessDecisions.latestThousands}K` : '—'}
@@ -164,7 +164,7 @@ export default function RoughSleepingPage() {
                   : []
               }
               source="MHCLG · Statutory Homelessness Statistics"
-              href="#sec-rough"/>
+              href="#sec-homeless"/>
             <MetricCard
               label="Households in temporary accommodation"
               value={data?.national.temporaryAccommodation.latestHouseholds ? `${(data.national.temporaryAccommodation.latestHouseholds / 1000).toFixed(0)}K` : '—'}
@@ -173,7 +173,7 @@ export default function RoughSleepingPage() {
               changeText="March 2023 · Record high · 131K children in temp accommodation · Cost to councils: £1.74bn/year"
               sparklineData={[70, 72, 74, 76, 78, 79, 80, 82, 88, 95, 104]}
               source="MHCLG · Homelessness Statistics"
-              href="#sec-homeless"/>
+              href="#sec-causes"/>
           </div>
           </ScrollReveal>
 

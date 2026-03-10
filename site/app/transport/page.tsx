@@ -345,7 +345,7 @@ export default function TransportPage() {
                 : []
             }
             source="ORR · Passenger rail performance"
-            href="#sec-overview"/>
+            href="#sec-rail"/>
           <MetricCard
             label="Bus journeys"
             value={busBillions ? `${busBillions}bn` : '—'}
@@ -364,7 +364,7 @@ export default function TransportPage() {
                 : []
             }
             source="DfT · Bus statistics BUS01"
-            href="#sec-rail"/>
+            href="#sec-bus"/>
           <MetricCard
             label="Rail cancellations"
             value={latestRail ? latestRail.cancelledPct.toFixed(1) : '—'}

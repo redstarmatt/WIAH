@@ -96,7 +96,7 @@ export default function EconomicGrowthPage() {
               changeText="Near-stagnation · only avoided technical recession"
               sparklineData={[1.9, 1.6, 2.1, 3.0, 2.4, 1.8, 1.9, 1.3, 1.6, -11.0, 8.7, 4.1, 0.1]}
               source="ONS GDP · 2023"
-              href="#sec-overview"/>
+              href="#sec-gdp-trend"/>
             <MetricCard
               label="Average growth 2010–2023"
               value={ukG7 ? ukG7.avgGrowth2010_2023.toFixed(1) : '1.1'}
@@ -106,7 +106,7 @@ export default function EconomicGrowthPage() {
               changeText="vs G7 average 1.3% · underperformance accelerating post-Brexit"
               sparklineData={[1.9, 1.8, 1.5, 1.3, 1.2, 1.1, 1.1]}
               source="ONS / IMF"
-              href="#sec-gdp-trend"/>
+              href="#sec-g7"/>
             <MetricCard
               label="UK productivity vs Germany"
               value="−20"

@@ -111,7 +111,7 @@ export default function NorthSouthDividePage() {
               changeText="181% of UK average · up from 151% in 1997"
               sparklineData={[151, 158, 162, 167, 172, 179, 181]}
               source="ONS Regional GVA · 2022"
-              href="#sec-overview"/>
+              href="#sec-gap"/>
             <MetricCard
               label="North East GVA per head"
               value={minRegion ? `£${minRegion.gva.toLocaleString()}` : '£22,843'}
@@ -121,7 +121,7 @@ export default function NorthSouthDividePage() {
               changeText="74% of UK average · gap with London at record high"
               sparklineData={[86, 84, 82, 79, 76, 74, 74]}
               source="ONS Regional GVA · 2022"
-              href="#sec-gap"/>
+              href="#sec-regions"/>
             <MetricCard
               label="Gap widened since 1997"
               value="30"

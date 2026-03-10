@@ -116,7 +116,7 @@ export default function HousingQualityPage() {
               polarity="up-is-bad"
               changeText="2022 · 17% of housing stock · Down from 7.5M in 2010 · Private rented sector worst: 24% non-decent"
               sparklineData={[7.5, 6.5, 5.7, 5.0, 4.7, 4.5, 4.3]}
-              href="#sec-overview"/>
+              href="#sec-decent"/>
             <MetricCard
               label="Homes with damp or mould problem"
               value="1M"
@@ -124,7 +124,7 @@ export default function HousingQualityPage() {
               polarity="up-is-bad"
               changeText="2022 · 4.5% of all dwellings · Private renters 3x more likely to have damp · Awaab's Law: new social housing regulations 2024"
               sparklineData={[3.8, 3.7, 3.9, 4.0, 4.3, 4.2, 4.5]}
-              href="#sec-decent"/>
+              href="#sec-damp"/>
             <MetricCard
               label="Cost of cold and damp homes to NHS"
               value="£1.4bn"
@@ -132,7 +132,7 @@ export default function HousingQualityPage() {
               polarity="up-is-bad"
               changeText="Per year · BRE estimate · Respiratory &amp; cardiovascular conditions · Children in damp homes 3x more likely to get asthma"
               sparklineData={[1.1, 1.1, 1.2, 1.2, 1.3, 1.3, 1.4, 1.4, 1.4]}
-              href="#sec-damp"/>
+              href="#sec-tenure"/>
           </div>
         </ScrollReveal>
 

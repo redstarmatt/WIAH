@@ -93,7 +93,7 @@ export default function NHSWaitingListsPage() {
               polarity="up-is-bad"
               changeText="Record high; 4.4M pre-pandemic"
               sparklineData={[3.68, 3.9, 4.14, 4.38, 4.08, 5.45, 6.86, 7.54]}
-              href="#sec-overview"/>
+              href="#sec-list-size"/>
             <MetricCard
               label="Waiting more than 52 weeks"
               value="312K"
@@ -101,7 +101,7 @@ export default function NHSWaitingListsPage() {
               polarity="up-is-bad"
               changeText="Was under 1,000 before COVID"
               sparklineData={[1.4, 2.8, 387, 400, 312]}
-              href="#sec-list-size"/>
+              href="#sec-long-waiters"/>
             <MetricCard
               label="Median wait for elective treatment"
               value="14.5"
@@ -110,7 +110,7 @@ export default function NHSWaitingListsPage() {
               polarity="up-is-bad"
               changeText="Was 8.4 weeks in 2019"
               sparklineData={[8.4, 9.2, 10.1, 11.5, 13.2, 14.5]}
-              href="#sec-long-waiters"/>
+              href="#sec-specialty"/>
           </div>
         </ScrollReveal>
 

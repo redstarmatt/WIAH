@@ -139,7 +139,7 @@ export default function UnpaidCarersPage() {
             sparklineData={[6100, 6300, 6500, 6800, 7200, 7500, 8000, 8500, 9000, 9500, 10600]}
             source="ONS · Census 2021"
             baseline="1 in 5 people in the UK provides unpaid care"
-            href="#sec-overview"/>
+            href="#sec-population"/>
           <MetricCard
             label="Carer's Allowance (weekly rate)"
             value="£81.90"
@@ -150,7 +150,7 @@ export default function UnpaidCarersPage() {
             sparklineData={[53, 55, 58, 61, 64, 67, 69, 72, 76, 81.90]}
             source="DWP · Benefit Rates 2023/24"
             baseline="Carers can earn only £151/week before Allowance is reduced"
-            href="#sec-population"/>
+            href="#sec-allowance"/>
           <MetricCard
             label="Young carers (under 18)"
             value="600K"
@@ -161,7 +161,7 @@ export default function UnpaidCarersPage() {
             sparklineData={[300, 350, 400, 450, 500, 550, 600]}
             source="ONS · Census 2021"
             baseline="Young carers are significantly less likely to achieve good GCSEs"
-            href="#sec-allowance"/>
+            href="#sec-impact"/>
         </div>
         </ScrollReveal>
 

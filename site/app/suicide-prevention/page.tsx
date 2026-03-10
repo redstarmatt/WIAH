@@ -118,7 +118,7 @@ export default function SuicidePreventionPage() {
               polarity="up-is-bad"
               changeText="2022 · Highest since 1999 · 75% male · Leading cause of death aged 20–34"
               sparklineData={[4800, 4900, 5000, 5100, 5200, 5400, 5250, 5300, 4912, 5224, 5642]}
-              href="#sec-overview"/>
+              href="#sec-rate"/>
             <MetricCard
               label="Suicide rate (per 100,000 population)"
               value="10.7"
@@ -126,7 +126,7 @@ export default function SuicidePreventionPage() {
               polarity="up-is-bad"
               changeText="2022 · Above EU average · Men: 16.3 per 100,000 · Women: 5.1 per 100,000"
               sparklineData={[10.1, 10.1, 10.0, 10.0, 10.1, 10.1, 11.2, 11.0, 10.0, 10.4, 10.7]}
-              href="#sec-rate"/>
+              href="#sec-selfharm"/>
             <MetricCard
               label="A&amp;E self-harm presentations (annual)"
               value="225K"
@@ -134,7 +134,7 @@ export default function SuicidePreventionPage() {
               polarity="up-is-bad"
               changeText="2022 · Doubled since 2010 · Young women worst affected · Waits for crisis beds average 24 hours"
               sparklineData={[115, 120, 128, 138, 152, 165, 185, 200, 172, 210, 225]}
-              href="#sec-selfharm"/>
+              href="#sec-age"/>
           </div>
         </ScrollReveal>
 

@@ -140,7 +140,7 @@ export default function CommunityPharmaciesPage() {
             }
             source="NHS Business Services Authority · 2023"
             baseline="10,575 community pharmacies as of 2023"
-            href="#sec-overview"/>
+            href="#sec-context"/>
           <MetricCard
             label="Pharmacies in financial difficulty"
             value="90%"
@@ -150,7 +150,7 @@ export default function CommunityPharmaciesPage() {
             sparklineData={[85, 87, 88, 89, 90, 90, 90, 90, 90]}
             source="Company Chemists' Association · Annual survey 2023"
             baseline="Around 9 in 10 independent pharmacies report financial stress"
-            href="#sec-charts"/>
+            href="#sec-sources"/>
           <MetricCard
             label="Prescriptions dispensed annually"
             value={latestPrescription?.millions ? `${latestPrescription.millions}m` : '—'}
@@ -168,7 +168,7 @@ export default function CommunityPharmaciesPage() {
             }
             source="NHS Business Services Authority · 2023"
             baseline="Prescription volumes have risen while pharmacy numbers have fallen"
-            href="#sec-charts"/>
+            href="#sec-sources"/>
         </div>
         </ScrollReveal>
 

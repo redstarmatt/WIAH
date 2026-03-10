@@ -133,7 +133,7 @@ export default function MentalHealthWaitsPage() {
               data ? sparkFrom(data.waitingList.map(d => d.waiting / 1000000)) : []
             }
             source="NHS England · Mental Health Services Data, 2023"
-            href="#sec-overview"/>
+            href="#sec-waiting-list"/>
           <MetricCard
             label="Average CAMHS wait (children)"
             value="18"
@@ -143,7 +143,7 @@ export default function MentalHealthWaitsPage() {
             changeText="Some areas 3+ years"
             sparklineData={[18, 17, 16, 15, 14, 13, 12, 13, 14, 18]}
             source="NHS England · CAMHS Waiting Times, 2023"
-            href="#sec-waiting-list"/>
+            href="#sec-iapt"/>
           <MetricCard
             label="IAPT 18-week target met"
             value={latestIAPT ? latestIAPT.pct18wk.toString() : '—'}
@@ -155,7 +155,7 @@ export default function MentalHealthWaitsPage() {
               data ? sparkFrom(data.iaptCompliance.map(d => d.pct18wk)) : []
             }
             source="NHS England · IAPT Performance, 2023"
-            href="#sec-iapt"/>
+            href="#sec-by-service"/>
         </div>
         </ScrollReveal>
 

@@ -107,7 +107,7 @@ export default function CareHomesPage() {
                 sparklineData={data?.national.staffVacancies.map(d => d.thousands) || []}
                 changeText="2023 · Down from 152K record in 2022 · 9.9% vacancy rate"
                 source="Skills for Care, Workforce data."
-                href="#sec-overview"/>
+                href="#sec-charts"/>
             </ScrollReveal>
 
             <ScrollReveal>
@@ -120,7 +120,7 @@ export default function CareHomesPage() {
                 sparklineData={data?.national.cqcRatings.map(d => 100 - (d.good + d.outstanding)) || []}
                 changeText="2023 · CQC ratings · 1 in 4 homes below standard"
                 source="CQC, Adult social care ratings"
-                href="#sec-charts"/>
+                href="#sec-sources"/>
             </ScrollReveal>
 
             <ScrollReveal>
@@ -132,7 +132,7 @@ export default function CareHomesPage() {
                 polarity="up-is-bad"
                 changeText="England, 2023 · Flat since 2010 · 340K residential, 70K nursing"
                 source="CQC, Annual ratings reports"
-                href="#sec-charts"/>
+                href="#sec-sources"/>
             </ScrollReveal>
           </div>
         </section>

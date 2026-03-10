@@ -670,7 +670,7 @@ export default function EducationPage() {
             }
             source="DfE · Pupil absence 2023/24"
             baseline="20% of pupils now persistently absent — double the 10.5% rate before the pandemic"
-            href="#sec-overview"/>
+            href="#sec-attainment"/>
           <MetricCard
             label="EHCPs maintained"
             value={latestEhcp ? `${(latestEhcp.total / 1000).toFixed(0)}K` : '—'}
@@ -689,7 +689,7 @@ export default function EducationPage() {
             }
             source="DfE · SEN2 return, Jan 2025"
             baseline="Families wait an average of 38 weeks — nearly 10 months — for an EHCP assessment"
-            href="#sec-attainment"/>
+            href="#sec-send"/>
           <MetricCard
             label="Disadvantage gap index"
             value={latestGap ? latestGap.index.toFixed(2) : '—'}
@@ -708,7 +708,7 @@ export default function EducationPage() {
             }
             source="DfE · KS4 performance 2024/25"
             baseline="By age 16, children from poorer families are 18 months behind their better-off peers"
-            href="#sec-send"/>
+            href="#sec-absence"/>
         </div>
         </ScrollReveal>
 

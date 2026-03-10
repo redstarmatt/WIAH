@@ -118,7 +118,7 @@ export default function EvChargingPage() {
               changeText={earliest ? `Up from ${earliest.total.toLocaleString()} in ${earliest.year} · growing at 35%/year` : 'Up from 8,400 in 2017 · growing at 35%/year'}
               sparklineData={[8400, 13700, 20000, 25400, 31000, 47000, 65000]}
               source="OZEV / Zap-Map · Jan 2024"
-              href="#sec-overview"/>
+              href="#sec-growth"/>
             <MetricCard
               label="Rapid chargers per 10 EVs on road"
               value="0.45"
@@ -128,7 +128,7 @@ export default function EvChargingPage() {
               changeText="Government target is 1.0 · falling behind as EV fleet grows faster"
               sparklineData={[1.8, 1.5, 1.2, 0.9, 0.7, 0.5, 0.45]}
               source="OZEV · 2023"
-              href="#sec-growth"/>
+              href="#sec-rural-urban"/>
             <MetricCard
               label="Rural vs urban charge point gap"
               value={gapMultiple.toString()}

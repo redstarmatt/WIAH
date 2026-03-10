@@ -141,7 +141,7 @@ export default function ProductivityPage() {
                 polarity="up-is-good"
                 changeText="2023 · G7 average: 114 · USA: 118 · Germany: 111 · France: 118 · UK lags all peers"
                 sparklineData={sparkFrom([95, 96, 96, 97, 97, 97, 97, 98, 98, 99, 97, 99, 100, 100])}
-                href="#sec-overview"/>
+                href="#sec-trend"/>
               <MetricCard
                 label="Annual productivity growth (output per hour)"
                 value="0.4%"
@@ -149,7 +149,7 @@ export default function ProductivityPage() {
                 polarity="up-is-good"
                 changeText="2022/23 · Pre-2008: avg 2.1%/yr · Post-2008: avg 0.3%/yr · &lsquo;Productivity puzzle&rsquo; not solved"
                 sparklineData={sparkFrom([2.4, 2.8, 1.6, -1.2, 0.5, 0.8, 0.2, 0.1, 0.3, 0.4, -0.8, 1.2, 0.4, 0.4])}
-                href="#sec-trend"/>
+                href="#sec-investment"/>
               <MetricCard
                 label="Business investment as % of GDP"
                 value="9.8%"
@@ -157,7 +157,7 @@ export default function ProductivityPage() {
                 polarity="up-is-good"
                 changeText="2023 · One of lowest in G7 · Post-Brexit uncertainty a factor · G7 average: 14% · Japan: 17%"
                 sparklineData={sparkFrom([11.2, 11.0, 10.8, 10.5, 10.2, 10.0, 9.8, 9.6, 9.5, 9.8, 9.4, 9.8, 9.8])}
-                href="#sec-investment"/>
+                href="#sec-regions"/>
             </div>
           </ScrollReveal>
         </div>

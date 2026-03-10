@@ -115,7 +115,7 @@ export default function GenderPayGapPage() {
               polarity="up-is-bad"
               changeText="2023 · Women earn 86p per £1 · Down from 19.7% in 2012 · All workers (incl. part-time): 19.7%"
               sparklineData={[19.7, 19.7, 19.1, 18.4, 18.1, 17.4, 17.1, 17.3, 15.5, 15.4, 14.9, 14.3]}
-              href="#sec-overview"/>
+              href="#sec-gap"/>
             <MetricCard
               label="Gender pay gap in financial services"
               value="28.1%"
@@ -123,7 +123,7 @@ export default function GenderPayGapPage() {
               polarity="up-is-bad"
               changeText="2023 · Highest sector gap · Bonus gap even larger at 40% · Pay gap widens sharply after maternity leave"
               sparklineData={[35, 34, 33, 32, 31, 30, 29, 29, 28.5, 28.3, 28.2, 28.1]}
-              href="#sec-gap"/>
+              href="#sec-boardroom"/>
             <MetricCard
               label="Women on FTSE 350 boards"
               value="40%"
@@ -131,7 +131,7 @@ export default function GenderPayGapPage() {
               polarity="up-is-good"
               changeText="2023 · Up from 13% in 2012 · FTSE Women Leaders target met · But only 9% are executive directors"
               sparklineData={[13.0, 19.6, 24.9, 28.0, 33.0, 38.5, 40.0]}
-              href="#sec-boardroom"/>
+              href="#sec-sectors"/>
           </div>
         </ScrollReveal>
 

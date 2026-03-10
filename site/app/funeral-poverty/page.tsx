@@ -95,7 +95,7 @@ export default function FuneralPovertyPage() {
               polarity="up-is-bad"
               changeText="2023 · Up 130% since 2004 · UK average · Sun Life Cost of Dying Report 2023"
               sparklineData={[1835, 2050, 2400, 2900, 3284, 3590, 3693, 3916, 4184, 4056, 4141]}
-              href="#sec-overview"/>
+              href="#sec-context"/>
             <MetricCard
               label="Funeral Expenses Payment (average award)"
               value="£1,593"
@@ -103,7 +103,7 @@ export default function FuneralPovertyPage() {
               polarity="up-is-good"
               changeText="2023 · Government benefit for low-income households · Covers &lt;40% of average funeral cost · Max £700 for burial costs"
               sparklineData={[1268, 1316, 1404, 1498, 1568, 1593]}
-              href="#sec-charts"/>
+              href="#sec-sources"/>
             <MetricCard
               label="Families in funeral poverty"
               value="110,000"
@@ -111,7 +111,7 @@ export default function FuneralPovertyPage() {
               polarity="up-is-bad"
               changeText="Per year · Cannot afford funeral without financial help · SunLife estimate · Burial costs rising fastest"
               sparklineData={[75000, 82000, 88000, 93000, 98000, 105000, 110000]}
-              href="#sec-charts"/>
+              href="#sec-sources"/>
           </div>
         </ScrollReveal>
 

@@ -124,7 +124,7 @@ export default function FuelPovertyPage() {
               polarity="up-is-bad"
               changeText="2022/23 · 13.4% of households · Private renters worst affected (18.8%) · 9,700 excess winter deaths from cold homes"
               sparklineData={[11.1, 11.0, 10.4, 10.6, 11.1, 10.9, 13.4, 13.2, 13.2, 13.0, 13.4]}
-              href="#sec-overview"/>
+              href="#sec-fuelpoverty"/>
             <MetricCard
               label="Ofgem energy price cap (typical annual bill)"
               value="£1,928"
@@ -132,7 +132,7 @@ export default function FuelPovertyPage() {
               polarity="up-is-bad"
               changeText="2024 Q1 · Down from £3,549 peak (Jan 2023) · Still 54% above pre-crisis 2019 level · Energy Support Scheme ended April 2023"
               sparklineData={[1254, 1162, 1277, 2500, 3000, 1928]}
-              href="#sec-fuelpoverty"/>
+              href="#sec-prices"/>
             <MetricCard
               label="Excess winter deaths from cold homes"
               value="9,700"
@@ -140,7 +140,7 @@ export default function FuelPovertyPage() {
               polarity="up-is-bad"
               changeText="Annual average · Cold homes cost NHS £1.4bn per year · 14% of England's housing stock has EPC below E · Retrofit gap: 14M homes need upgrading"
               sparklineData={[9200, 9300, 9400, 9500, 9600, 9700, 9700, 9700, 9700]}
-              href="#sec-prices"/>
+              href="#sec-tenure"/>
           </div>
         </ScrollReveal>
 

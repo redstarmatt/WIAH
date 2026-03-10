@@ -119,7 +119,7 @@ export default function ObesityPage() {
               polarity="up-is-bad"
               changeText="2023 · Up from 13% in the 1990s · A further 38% overweight · Highest in Western Europe"
               sparklineData={[23.1, 24.2, 22.0, 24.8, 26.0, 27.0, 28.7, 28.0, 25.9, 26.9, 28.0]}
-              href="#sec-overview"/>
+              href="#sec-adults"/>
             <MetricCard
               label="Year 6 children classified as obese"
               value="23%"
@@ -127,7 +127,7 @@ export default function ObesityPage() {
               polarity="up-is-bad"
               changeText="2023 · Up from 19% in 2012 · Surged to 25.5% during COVID lockdowns · Deprivation gap: most deprived 2x more likely"
               sparklineData={[18.9, 19.1, 18.9, 19.1, 19.8, 20.1, 20.2, 20.6, 25.5, 23.4, 22.7, 23.0]}
-              href="#sec-adults"/>
+              href="#sec-children"/>
             <MetricCard
               label="Annual NHS cost of obesity-related conditions"
               value="£6.1bn"
@@ -135,7 +135,7 @@ export default function ObesityPage() {
               polarity="up-is-bad"
               changeText="Per year · Forecast £9.7bn by 2050 · Diabetes, cardiovascular disease, cancers · 30,000 premature deaths per year"
               sparklineData={[4.5, 4.8, 5.0, 5.2, 5.4, 5.6, 5.7, 5.8, 5.9, 6.0, 6.1]}
-              href="#sec-children"/>
+              href="#sec-deprivation"/>
           </div>
         </ScrollReveal>
 

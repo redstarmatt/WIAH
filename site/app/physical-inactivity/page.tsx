@@ -122,7 +122,7 @@ export default function PhysicalInactivityPage() {
               changeText="2022 · Was 66% pre-pandemic; recovered slowly"
               sparklineData={[66, 67, 67, 67, 59, 61, 62]}
               source="Sport England — Active Lives Survey"
-              href="#sec-overview"/>
+              href="#sec-context"/>
             <MetricCard
               label="Physically inactive adults (under 30 min/week)"
               value="11.5"
@@ -132,7 +132,7 @@ export default function PhysicalInactivityPage() {
               changeText="24% of adults; highest in most deprived areas"
               sparklineData={[10.2, 10.5, 10.8, 11.2, 11.5]}
               source="Sport England — Active Lives Survey"
-              href="#sec-charts"/>
+              href="#sec-sources"/>
             <MetricCard
               label="NHS cost of physical inactivity (annual)"
               value="7.4"
@@ -142,7 +142,7 @@ export default function PhysicalInactivityPage() {
               changeText="+£5.5bn in wider economy costs"
               sparklineData={[5.2, 5.8, 6.4, 6.9, 7.4]}
               source="Sport England — Sport England Insight"
-              href="#sec-charts"/>
+              href="#sec-sources"/>
           </div>
         </ScrollReveal>
 

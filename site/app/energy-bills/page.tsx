@@ -174,7 +174,7 @@ export default function EnergyBillsPage() {
             polarity="up-is-bad"
             changeText="Q1 2025 · Down from peak £3,549 (Oct 2022) · Still 53% above pre-crisis £1,137"
             sparklineData={[1137, 1179, 1162, 1042, 1138, 1277, 1971, 3549, 2500, 2500, 2074, 1834, 1928, 1690, 1568, 1717, 1738]}
-            href="#sec-overview"/>
+            href="#sec-price-cap"/>
           <MetricCard
             label="Fuel poor households"
             value="3.44M"
@@ -183,7 +183,7 @@ export default function EnergyBillsPage() {
             polarity="up-is-bad"
             changeText="2023 · 13.1% of homes · Up from 2.5M pre-crisis · Elderly and renters worst affected"
             sparklineData={[2.38, 2.50, 2.55, 2.52, 2.53, 2.51, 2.55, 2.67, 3.24, 3.44]}
-            href="#sec-price-cap"/>
+            href="#sec-fuel-poverty"/>
           <MetricCard
             label="Electricity standing charge"
             value="61p/day"
@@ -192,7 +192,7 @@ export default function EnergyBillsPage() {
             polarity="up-is-bad"
             changeText="2024 · Up from 24p/day in 2019 · 153% rise · Hits low-consumption households hardest"
             sparklineData={[24.1, 25.3, 27.2, 38.7, 53.4, 61.0]}
-            href="#sec-fuel-poverty"/>
+            href="#sec-standing-charges"/>
         </div>
         </ScrollReveal>
 

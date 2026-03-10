@@ -120,7 +120,7 @@ export default function InsecureWorkPage() {
               polarity="up-is-bad"
               changeText="2023 · 3.1% of workforce · Up from 250K in 2013 · 22% of accommodation &amp; food sector"
               sparklineData={[250, 580, 747, 903, 883, 789, 974, 886, 920, 1022, 1040]}
-              href="#sec-overview"/>
+              href="#sec-zerohours"/>
             <MetricCard
               label="Workers in insecure employment (total)"
               value="4.4M"
@@ -128,7 +128,7 @@ export default function InsecureWorkPage() {
               polarity="up-is-bad"
               changeText="2023 · Zero-hours, temp &amp; agency · 14% hourly pay penalty · 3x more likely to be in poverty"
               sparklineData={[3.8, 3.9, 4.0, 4.1, 3.7, 3.9, 4.2, 4.4]}
-              href="#sec-zerohours"/>
+              href="#sec-insecure"/>
             <MetricCard
               label="National Living Wage (April 2024)"
               value="£11.44"
@@ -136,7 +136,7 @@ export default function InsecureWorkPage() {
               polarity="up-is-good"
               changeText="Per hour · Largest ever increase · Employment Rights Bill: day-one rights for all workers · Fire-and-rehire restrictions"
               sparklineData={[6.70, 7.20, 7.50, 7.83, 8.21, 8.72, 8.91, 9.50, 10.42, 11.44]}
-              href="#sec-insecure"/>
+              href="#sec-sectors"/>
           </div>
         </ScrollReveal>
 
