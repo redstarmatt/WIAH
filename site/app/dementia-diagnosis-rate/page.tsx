@@ -22,6 +22,10 @@ export default function DementiaDiagnosisRatePage() {
       data: ([300000,310000,310000,325000,345000,360000,370000]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: COVID · GP access restricted' },
+  ];
+  const chartTargetLine = { value: 66.7, label: 'NHS 66.7% diagnosis target' };
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function DementiaDiagnosisRatePage() {
         <TopicHeader
           topic="Dementia Diagnosis Rate"
           question="Why Are 370,000 People Living with Undiagnosed Dementia?"
-          finding="The dementia diagnosis rate has fallen below the NHS 66.7% target to 62.2%. An estimated 370,000 people are living with undiagnosed dementia — missing..."
+          finding="The dementia diagnosis rate has fallen below the NHS 66.7% target to 62.2%. An estimated 370,000 people are living with undiagnosed dementia — missing out on treatment, support and legal planning."
           colour="#E63946"
           preposition="in"
         />
@@ -44,6 +48,7 @@ export default function DementiaDiagnosisRatePage() {
               polarity="up-is-good"
               changeText="down from 67.4% peak in 2016 · NHS target is 66.7%"
               sparklineData={[60,63,67.4,66,65,63,62.2]}
+              source="NHS England — Jan 2024"
             />
             <MetricCard
               label="People living with undiagnosed dementia (est.)"
@@ -52,6 +57,7 @@ export default function DementiaDiagnosisRatePage() {
               polarity="up-is-bad"
               changeText="rising as population ages · London worst for diagnosis gap"
               sparklineData={[300000,310000,310000,325000,345000,360000,370000]}
+              source="NHS England — Jan 2024"
             />
           </div>
         </section>
@@ -62,6 +68,8 @@ export default function DementiaDiagnosisRatePage() {
               title="Dementia diagnosis rate (of estimated cases), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              targetLine={chartTargetLine}
+              annotations={chartAnnotations}
               yLabel="Dementia diagnosis rate (of estimated cases)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +79,29 @@ export default function DementiaDiagnosisRatePage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="People living with undiagnosed dementia (est.), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'People living with undiagnosed dementia (est.)',
+                colour: '#6B7280',
+                data: ([300000,310000,310000,325000,345000,360000,370000]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="People living with undiagnosed dementia (est.)"
+              source={{
+                name: 'NHS England',
+                dataset: 'People living with undiagnosed dementia (est.)',
+                frequency: 'annual',
+                url: 'https://www.england.nhs.uk/publication/dementia-diagnosis-rates-monthly-data/',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +116,7 @@ export default function DementiaDiagnosisRatePage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.england.nhs.uk/publication/dementia-diagnosis-rates-monthly-data/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England</a> — primary data source. Retrieved Jan 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

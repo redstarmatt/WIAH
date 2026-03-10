@@ -22,6 +22,11 @@ export default function BreastScreeningPage() {
       data: ([8,8.1,8.2,8.3,8.2,8.3,8.3]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2018, 0, 1), label: '2018: IT failure · 450K women missed' },
+    { date: new Date(2020, 0, 1), label: '2020: COVID pause' },
+  ];
+  const chartTargetLine = { value: 75.0, label: 'NHS 75% coverage target' };
 
   return (
     <>
@@ -44,6 +49,7 @@ export default function BreastScreeningPage() {
               polarity="up-is-good"
               changeText="down from 76.8% in 2012 · pandemic gap not recovered"
               sparklineData={[76.8,75.9,74.8,73.2,72,71.5,71.1]}
+              source="NHS England — Sep 2023"
             />
             <MetricCard
               label="Cancers detected per 1,000 screened"
@@ -52,6 +58,7 @@ export default function BreastScreeningPage() {
               polarity="up-is-good"
               changeText="stable · increasing sensitivity of mammography"
               sparklineData={[8,8.1,8.2,8.3,8.2,8.3,8.3]}
+              source="NHS England — Sep 2023"
             />
           </div>
         </section>
@@ -62,6 +69,8 @@ export default function BreastScreeningPage() {
               title="Breast screening coverage (3-year rate), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              targetLine={chartTargetLine}
+              annotations={chartAnnotations}
               yLabel="Breast screening coverage (3-year rate)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +80,29 @@ export default function BreastScreeningPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Cancers detected per 1,000 screened, UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Cancers detected per 1,000 screened',
+                colour: '#6B7280',
+                data: ([8,8.1,8.2,8.3,8.2,8.3,8.3]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Cancers detected per 1,000 screened"
+              source={{
+                name: 'NHS England',
+                dataset: 'Cancers detected per 1,000 screened',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/breast-screening-programme-england',
+                date: 'Sep 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +117,7 @@ export default function BreastScreeningPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/statistics/breast-screening-programme-england" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England</a> — primary data source. Retrieved Sep 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

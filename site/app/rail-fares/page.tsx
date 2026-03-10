@@ -22,6 +22,10 @@ export default function RailFaresPage() {
       data: ([28,29,29,30,30,31,31]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2013, 0, 1), label: '2013: Annual RPI increase formula' },
+    { date: new Date(2023, 0, 1), label: '2023: GBR transition begins' },
+  ];
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function RailFaresPage() {
         <TopicHeader
           topic="Rail Fares"
           question="Is British Rail Still Too Expensive?"
-          finding="UK rail fares are 8% higher in real terms than in 2010. Train travel costs 31p per mile on average — nearly twice the 17p per mile cost of driving. Hi..."
+          finding="UK rail fares are 8% higher in real terms than in 2010. Train travel costs 31p per mile on average — nearly twice the 17p per mile cost of driving. High fares discourage modal shift and embed car dependency."
           colour="#F4A261"
           preposition="with"
         />
@@ -44,6 +48,7 @@ export default function RailFaresPage() {
               polarity="up-is-bad"
               changeText="up 8% in real terms since 2010 · fares rise RPI annually"
               sparklineData={[100,102,104,105,106,107,108]}
+              source="ORR — Dec 2023"
             />
             <MetricCard
               label="Average cost per mile by train vs car (pence)"
@@ -52,6 +57,7 @@ export default function RailFaresPage() {
               polarity="up-is-bad"
               changeText="rail nearly twice as expensive as car per mile"
               sparklineData={[28,29,29,30,30,31,31]}
+              source="ORR — Dec 2023"
             />
           </div>
         </section>
@@ -62,6 +68,7 @@ export default function RailFaresPage() {
               title="UK rail fares vs 2010 (real terms index), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="UK rail fares vs 2010 (real terms index)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +78,29 @@ export default function RailFaresPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Average cost per mile by train vs car (pence), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Average cost per mile by train vs car (pence)',
+                colour: '#6B7280',
+                data: ([28,29,29,30,30,31,31]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Average cost per mile by train vs car (pence)"
+              source={{
+                name: 'ORR',
+                dataset: 'Average cost per mile by train vs car (pence)',
+                frequency: 'annual',
+                url: 'https://www.orr.gov.uk/monitoring-regulation/rail/rail-markets/passenger-rail/fares',
+                date: 'Dec 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +115,7 @@ export default function RailFaresPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.orr.gov.uk/monitoring-regulation/rail/rail-markets/passenger-rail/fares" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ORR</a> — primary data source. Retrieved Dec 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

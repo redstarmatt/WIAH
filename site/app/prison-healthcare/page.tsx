@@ -22,6 +22,9 @@ export default function PrisonHealthcarePage() {
       data: ([65,67,68,70,70,70,70]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: COVID restrictions exacerbate failures' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function PrisonHealthcarePage() {
         <TopicHeader
           topic="Prison Healthcare"
           question="Is Prison Healthcare Adequate?"
-          finding="A third of prisons are rated poor or inadequate for healthcare by inspectors. An estimated 70% of prisoners have a diagnosable mental illness — nine t..."
+          finding="A third of prisons are rated poor or inadequate for healthcare by inspectors. An estimated 70% of prisoners have a diagnosable mental illness — nine times the community rate. Primary care vacancies inside prisons drive most of the failures."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function PrisonHealthcarePage() {
               polarity="up-is-bad"
               changeText="HMIP inspections 2023/24 · primary care vacancy crisis"
               sparklineData={[21,22,24,27,29,31,33]}
+              source="HMIP — Nov 2023"
             />
             <MetricCard
               label="Mental illness prevalence in prison (estimated)"
@@ -52,6 +56,7 @@ export default function PrisonHealthcarePage() {
               polarity="up-is-bad"
               changeText="9x community rate · personality disorder or substance misuse"
               sparklineData={[65,67,68,70,70,70,70]}
+              source="HMIP — Nov 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function PrisonHealthcarePage() {
               title="Prisons rated poor or inadequate for healthcare, UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Prisons rated poor or inadequate for healthcare"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function PrisonHealthcarePage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Mental illness prevalence in prison (estimated), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Mental illness prevalence in prison (estimated)',
+                colour: '#6B7280',
+                data: ([65,67,68,70,70,70,70]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Mental illness prevalence in prison (estimated)"
+              source={{
+                name: 'HMIP',
+                dataset: 'Mental illness prevalence in prison (estimated)',
+                frequency: 'annual',
+                url: 'https://www.justiceinspectorates.gov.uk/hmiprisons/our-work/annual-report/',
+                date: 'Nov 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function PrisonHealthcarePage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.justiceinspectorates.gov.uk/hmiprisons/our-work/annual-report/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">HMIP</a> — primary data source. Retrieved Nov 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

@@ -22,6 +22,10 @@ export default function HpvVaccinationPage() {
       data: ([0,0,65,70,72,74,75]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2019, 0, 1), label: '2019: Programme extended to boys' },
+    { date: new Date(2020, 0, 1), label: '2020: COVID · catch-up needed' },
+  ];
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function HpvVaccinationPage() {
         <TopicHeader
           topic="HPV Vaccination"
           question="Is HPV Vaccination Protecting Britain's Young People?"
-          finding="84% of girls and 75% of boys complete the HPV vaccination course in England. The programme, extended to boys in 2019, is expected to eliminate most ce..."
+          finding="84% of girls and 75% of boys complete the HPV vaccination course in England. The programme, extended to boys in 2019, is expected to eliminate most cervical cancers in vaccinated cohorts by the 2040s."
           colour="#2A9D8F"
           preposition="with"
         />
@@ -44,6 +48,7 @@ export default function HpvVaccinationPage() {
               polarity="up-is-good"
               changeText="down from 87% in 2019 · pandemic catch-up ongoing"
               sparklineData={[87,86,78,81,82,83,84]}
+              source="UKHSA — Nov 2023"
             />
             <MetricCard
               label="Boys completing HPV vaccination course"
@@ -52,6 +57,7 @@ export default function HpvVaccinationPage() {
               polarity="up-is-good"
               changeText="programme extended to boys in 2019 · uptake climbing"
               sparklineData={[0,0,65,70,72,74,75]}
+              source="UKHSA — Nov 2023"
             />
           </div>
         </section>
@@ -62,6 +68,7 @@ export default function HpvVaccinationPage() {
               title="Girls completing HPV vaccination course, UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Girls completing HPV vaccination course"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +78,29 @@ export default function HpvVaccinationPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Boys completing HPV vaccination course, UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Boys completing HPV vaccination course',
+                colour: '#6B7280',
+                data: ([0,0,65,70,72,74,75]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Boys completing HPV vaccination course"
+              source={{
+                name: 'UKHSA',
+                dataset: 'Boys completing HPV vaccination course',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/publications/hpv-vaccine-coverage-in-england',
+                date: 'Nov 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +115,7 @@ export default function HpvVaccinationPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/publications/hpv-vaccine-coverage-in-england" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">UKHSA</a> — primary data source. Retrieved Nov 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

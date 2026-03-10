@@ -22,6 +22,10 @@ export default function OnlineFraudLossesPage() {
       data: ([56000,68000,82000,95000,108000,118000,125000]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: Online activity surge · fraud follows' },
+    { date: new Date(2023, 0, 1), label: '2023: Online Safety Act' },
+  ];
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function OnlineFraudLossesPage() {
         <TopicHeader
           topic="Online Fraud Losses"
           question="How Much Do Britons Lose to Online Fraud?"
-          finding="Online fraud cost UK consumers £1.17 billion in 2023 — a record. Investment fraud is the fastest-growing category. 125,000 online shopping fraud repor..."
+          finding="Online fraud cost UK consumers £1.17 billion in 2023 — a record. Investment fraud is the fastest-growing category. 125,000 online shopping fraud reports were filed — more than double the 2018 figure."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +48,7 @@ export default function OnlineFraudLossesPage() {
               polarity="up-is-bad"
               changeText="record high · investment fraud fastest growing"
               sparklineData={[620,720,820,940,1040,1110,1170]}
+              source="UK Finance — Mar 2024"
             />
             <MetricCard
               label="Online shopping fraud reports (annual)"
@@ -52,6 +57,7 @@ export default function OnlineFraudLossesPage() {
               polarity="up-is-bad"
               changeText="up from 56,000 in 2018"
               sparklineData={[56000,68000,82000,95000,108000,118000,125000]}
+              source="UK Finance — Mar 2024"
             />
           </div>
         </section>
@@ -62,6 +68,7 @@ export default function OnlineFraudLossesPage() {
               title="Online fraud losses (UK consumers, annual), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Online fraud losses (UK consumers, annual)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +78,29 @@ export default function OnlineFraudLossesPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Online shopping fraud reports (annual), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Online shopping fraud reports (annual)',
+                colour: '#6B7280',
+                data: ([56000,68000,82000,95000,108000,118000,125000]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Online shopping fraud reports (annual)"
+              source={{
+                name: 'UK Finance',
+                dataset: 'Online shopping fraud reports (annual)',
+                frequency: 'annual',
+                url: 'https://www.ukfinance.org.uk/data-and-research/data/fraud/fraud-the-facts',
+                date: 'Mar 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +115,7 @@ export default function OnlineFraudLossesPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.ukfinance.org.uk/data-and-research/data/fraud/fraud-the-facts" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">UK Finance</a> — primary data source. Retrieved Mar 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

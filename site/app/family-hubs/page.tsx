@@ -22,6 +22,9 @@ export default function FamilyHubsPage() {
       data: ([0,200,500,800,1050,1200,1350]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2021, 0, 1), label: '2021: Family Hubs programme announced' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function FamilyHubsPage() {
         <TopicHeader
           topic="Family Hubs"
           question="Are Family Hubs Replacing Children's Centres?"
-          finding="399 family hubs have opened across England since 2021, but 1,350 children's centres have closed since 2010. Family hubs are not replacing the full ran..."
+          finding="399 family hubs have opened across England since 2021, but 1,350 children's centres have closed since 2010. Family hubs are not replacing the full range of services that Sure Start provided."
           colour="#2A9D8F"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function FamilyHubsPage() {
               polarity="up-is-good"
               changeText="up from 0 in 2021 · government target 400 by end 2024"
               sparklineData={[0,0,50,150,280,360,399]}
+              source="DfE — Dec 2023"
             />
             <MetricCard
               label="Children's centres closed since 2010 (England)"
@@ -52,6 +56,7 @@ export default function FamilyHubsPage() {
               polarity="up-is-bad"
               changeText="over half closed · family hubs not replacing all lost capacity"
               sparklineData={[0,200,500,800,1050,1200,1350]}
+              source="DfE — Dec 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function FamilyHubsPage() {
               title="Family hubs open across England, UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Family hubs open across England"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -85,7 +91,7 @@ export default function FamilyHubsPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/publications/family-hubs-and-start-for-life-programme" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DfE</a> — primary data source. Retrieved Dec 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

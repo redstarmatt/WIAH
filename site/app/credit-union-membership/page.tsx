@@ -22,6 +22,9 @@ export default function CreditUnionMembershipPage() {
       data: ([2,2.2,2.5,2.8,3.1,3.5,3.8]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2012, 0, 1), label: '2012: Coalition growth strategy' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function CreditUnionMembershipPage() {
         <TopicHeader
           topic="Credit Union Membership"
           question="Why Does Britain Have So Few Credit Union Members?"
-          finding="Only 2.1 million people — 3% of the adult population — belong to a credit union, compared to 75% in Ireland. Credit unions offer affordable loans and ..."
+          finding="Only 2.1 million people — 3% of the adult population — belong to a credit union, compared to 75% in Ireland. Credit unions offer affordable loans and savings to people excluded from mainstream banking."
           colour="#2A9D8F"
           preposition="in"
         />
@@ -44,6 +47,7 @@ export default function CreditUnionMembershipPage() {
               polarity="up-is-good"
               changeText="up from 1.4M in 2015 · still tiny vs Ireland (75% membership)"
               sparklineData={[1.4,1.5,1.6,1.7,1.8,1.9,2.1]}
+              source="Bank of England / ABCUL — Dec 2023"
             />
             <MetricCard
               label="Credit union assets (£ billions)"
@@ -52,6 +56,7 @@ export default function CreditUnionMembershipPage() {
               polarity="up-is-good"
               changeText="growing but still <0.1% of UK banking assets"
               sparklineData={[2,2.2,2.5,2.8,3.1,3.5,3.8]}
+              source="Bank of England / ABCUL — Dec 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function CreditUnionMembershipPage() {
               title="Credit union members (Great Britain, millions), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Credit union members (Great Britain, millions)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function CreditUnionMembershipPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Credit union assets (£ billions), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Credit union assets (£ billions)',
+                colour: '#6B7280',
+                data: ([2,2.2,2.5,2.8,3.1,3.5,3.8]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Credit union assets (£ billions)"
+              source={{
+                name: 'Bank of England / ABCUL',
+                dataset: 'Credit union assets (£ billions)',
+                frequency: 'annual',
+                url: 'https://www.bankofengland.co.uk/prudential-regulation/credit-unions',
+                date: 'Dec 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function CreditUnionMembershipPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.bankofengland.co.uk/prudential-regulation/credit-unions" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Bank of England / ABCUL</a> — primary data source. Retrieved Dec 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

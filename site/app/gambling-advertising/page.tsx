@@ -22,6 +22,10 @@ export default function GamblingAdvertisingPage() {
       data: ([40,44,48,53,57,59,61]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2018, 0, 1), label: '2018: Gambling Act review begins' },
+    { date: new Date(2023, 0, 1), label: '2023: White Paper · ad restrictions' },
+  ];
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function GamblingAdvertisingPage() {
         <TopicHeader
           topic="Gambling Advertising"
           question="Is Gambling Advertising Out of Control?"
-          finding="The average person sees 4.7 gambling adverts per week — double the 2014 rate. 61% of problem gamblers say they receive personalised gambling advertisi..."
+          finding="The average person sees 4.7 gambling adverts per week — double the 2014 rate. 61% of problem gamblers say they receive personalised gambling advertising, exploiting their vulnerability."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +48,7 @@ export default function GamblingAdvertisingPage() {
               polarity="up-is-bad"
               changeText="up from 2.3 in 2014 · online and social media surge"
               sparklineData={[2.3,2.7,3,3.5,4,4.4,4.7]}
+              source="Gambling Commission — Nov 2023"
             />
             <MetricCard
               label="Problem gamblers recognising ads as targeted (%)"
@@ -52,6 +57,7 @@ export default function GamblingAdvertisingPage() {
               polarity="up-is-bad"
               changeText="personalised gambling ads exploit vulnerability"
               sparklineData={[40,44,48,53,57,59,61]}
+              source="Gambling Commission — Nov 2023"
             />
           </div>
         </section>
@@ -62,6 +68,7 @@ export default function GamblingAdvertisingPage() {
               title="Gambling adverts seen (average per person per week), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Gambling adverts seen (average per person per week)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +78,29 @@ export default function GamblingAdvertisingPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Problem gamblers recognising ads as targeted (%), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Problem gamblers recognising ads as targeted (%)',
+                colour: '#6B7280',
+                data: ([40,44,48,53,57,59,61]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Problem gamblers recognising ads as targeted (%)"
+              source={{
+                name: 'Gambling Commission',
+                dataset: 'Problem gamblers recognising ads as targeted (%)',
+                frequency: 'annual',
+                url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-behaviour-in-great-britain',
+                date: 'Nov 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +115,7 @@ export default function GamblingAdvertisingPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-behaviour-in-great-britain" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Gambling Commission</a> — primary data source. Retrieved Nov 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

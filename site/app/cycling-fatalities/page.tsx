@@ -22,6 +22,9 @@ export default function CyclingFatalitiesPage() {
       data: ([5000,4900,4800,4700,4650,4600,4560]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: Cycling boom · more on roads' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function CyclingFatalitiesPage() {
         <TopicHeader
           topic="Cycling Fatalities"
           question="Why Are Cyclists Still Being Killed on British Roads?"
-          finding="104 cyclists were killed on UK roads in 2023 — a rate of 16 per billion miles, compared to 2.5 in the Netherlands. Physical separation of cyclists fro..."
+          finding="104 cyclists were killed on UK roads in 2023 — a rate of 16 per billion miles, compared to 2.5 in the Netherlands. Physical separation of cyclists from motor traffic remains rare in British towns."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function CyclingFatalitiesPage() {
               polarity="up-is-bad"
               changeText="broadly flat · 16 killed per billion miles vs 2.5 in Netherlands"
               sparklineData={[109,105,99,102,99,104,104]}
+              source="DfT — Sep 2023"
             />
             <MetricCard
               label="Cyclists seriously injured (annual)"
@@ -52,6 +56,7 @@ export default function CyclingFatalitiesPage() {
               polarity="up-is-bad"
               changeText="down 9% since 2018 but absolute numbers still high"
               sparklineData={[5000,4900,4800,4700,4650,4600,4560]}
+              source="DfT — Sep 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function CyclingFatalitiesPage() {
               title="Cyclists killed on UK roads (annual), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Cyclists killed on UK roads (annual)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function CyclingFatalitiesPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Cyclists seriously injured (annual), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Cyclists seriously injured (annual)',
+                colour: '#6B7280',
+                data: ([5000,4900,4800,4700,4650,4600,4560]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Cyclists seriously injured (annual)"
+              source={{
+                name: 'DfT',
+                dataset: 'Cyclists seriously injured (annual)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2022',
+                date: 'Sep 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function CyclingFatalitiesPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2022" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DfT</a> — primary data source. Retrieved Sep 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

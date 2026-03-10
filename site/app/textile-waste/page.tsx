@@ -22,6 +22,9 @@ export default function TextileWastePage() {
       data: ([42,42,41,39,37,36,35]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2019, 0, 1), label: '2019: Fast fashion peak' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function TextileWastePage() {
         <TopicHeader
           topic="Textile Waste"
           question="Is Britain's Throwaway Fashion Culture Getting Worse?"
-          finding="The UK generates 26.8 kg of textile waste per person per year — the highest rate in Europe. Only 35% of clothing is recycled or donated, down from 42%..."
+          finding="The UK generates 26.8 kg of textile waste per person per year — the highest rate in Europe. Only 35% of clothing is recycled or donated, down from 42% in 2018, as fast fashion produces garments too poor quality to resell."
           colour="#6B7280"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function TextileWastePage() {
               polarity="up-is-bad"
               changeText="highest in Europe · fast fashion acceleration"
               sparklineData={[23,23.5,24,24.8,25.5,26.2,26.8]}
+              source="WRAP — Jul 2023"
             />
             <MetricCard
               label="Clothing recycled or donated (%)"
@@ -52,6 +56,7 @@ export default function TextileWastePage() {
               polarity="up-is-good"
               changeText="down from 42% in 2018 · quality of clothing too poor to resell"
               sparklineData={[42,42,41,39,37,36,35]}
+              source="WRAP — Jul 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function TextileWastePage() {
               title="Textile waste per person (UK, kg/year), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Textile waste per person (UK, kg/year)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function TextileWastePage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Clothing recycled or donated (%), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Clothing recycled or donated (%)',
+                colour: '#6B7280',
+                data: ([42,42,41,39,37,36,35]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Clothing recycled or donated (%)"
+              source={{
+                name: 'WRAP',
+                dataset: 'Clothing recycled or donated (%)',
+                frequency: 'annual',
+                url: 'https://www.wrap.ngo/resources/report/valuing-our-clothes-true-cost-uk-fashion',
+                date: 'Jul 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function TextileWastePage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.wrap.ngo/resources/report/valuing-our-clothes-true-cost-uk-fashion" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">WRAP</a> — primary data source. Retrieved Jul 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

@@ -22,6 +22,10 @@ export default function LpaCapacityCrisisPage() {
       data: ([85,83,81,79,77,76,75]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2010, 0, 1), label: '2010: Planning cuts begin' },
+  ];
+  const chartTargetLine = { value: 90.0, label: 'MHCLG 90% on-time target' };
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function LpaCapacityCrisisPage() {
         <TopicHeader
           topic="Planning Authority Capacity"
           question="Are Local Planning Departments Overwhelmed?"
-          finding="Local planning authority staffing in England has fallen 34% since 2010 — from 16,200 to 10,700. Only 75% of major planning applications are decided on..."
+          finding="Local planning authority staffing in England has fallen 34% since 2010 — from 16,200 to 10,700. Only 75% of major planning applications are decided on time, frustrating housebuilding and economic development."
           colour="#F4A261"
           preposition="in"
         />
@@ -44,6 +48,7 @@ export default function LpaCapacityCrisisPage() {
               polarity="up-is-bad"
               changeText="down from 16,200 in 2010 · 34% cut in 15 years"
               sparklineData={[16200,15000,13500,12500,11800,11200,10700]}
+              source="MHCLG — Dec 2023"
             />
             <MetricCard
               label="Major planning applications decided on time (%)"
@@ -52,6 +57,7 @@ export default function LpaCapacityCrisisPage() {
               polarity="up-is-good"
               changeText="down from 85% in 2016 · underfunded departments"
               sparklineData={[85,83,81,79,77,76,75]}
+              source="MHCLG — Dec 2023"
             />
           </div>
         </section>
@@ -62,6 +68,8 @@ export default function LpaCapacityCrisisPage() {
               title="Local planning authority staff (England, FTE), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              targetLine={chartTargetLine}
+              annotations={chartAnnotations}
               yLabel="Local planning authority staff (England, FTE)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +79,29 @@ export default function LpaCapacityCrisisPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Major planning applications decided on time (%), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Major planning applications decided on time (%)',
+                colour: '#6B7280',
+                data: ([85,83,81,79,77,76,75]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Major planning applications decided on time (%)"
+              source={{
+                name: 'MHCLG',
+                dataset: 'Major planning applications decided on time (%)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/planning-applications-in-england',
+                date: 'Dec 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +116,7 @@ export default function LpaCapacityCrisisPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/statistics/planning-applications-in-england" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">MHCLG</a> — primary data source. Retrieved Dec 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

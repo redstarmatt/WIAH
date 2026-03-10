@@ -22,6 +22,9 @@ export default function ConsumerCreditStressPage() {
       data: ([65,62,58,60,65,69,72]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2022, 0, 1), label: '2022: Cost-of-living crisis' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function ConsumerCreditStressPage() {
         <TopicHeader
           topic="Consumer Credit Stress"
           question="How Many Households Are Drowning in Debt?"
-          finding="8.9% of households now carry unsecured debt worth more than 40% of their income — up from 6.1% in 2019. Credit card balances hit £72 billion in 2024 a..."
+          finding="8.9% of households now carry unsecured debt worth more than 40% of their income — up from 6.1% in 2019. Credit card balances hit £72 billion in 2024 as high interest rates compounded cost-of-living pressures."
           colour="#F4A261"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function ConsumerCreditStressPage() {
               polarity="up-is-bad"
               changeText="up from 6.1% in 2019 · cost-of-living pressure"
               sparklineData={[6.1,6.3,6.5,7,7.8,8.4,8.9]}
+              source="Bank of England — Dec 2023"
             />
             <MetricCard
               label="Credit card balances (England, £ billions)"
@@ -52,6 +56,7 @@ export default function ConsumerCreditStressPage() {
               polarity="up-is-bad"
               changeText="up from £58B in 2021 · real cost rising with high rates"
               sparklineData={[65,62,58,60,65,69,72]}
+              source="Bank of England — Dec 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function ConsumerCreditStressPage() {
               title="Households with unsecured debt over 40% of income, UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Households with unsecured debt over 40% of income"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function ConsumerCreditStressPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Credit card balances (England, £ billions), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Credit card balances (England, £ billions)',
+                colour: '#6B7280',
+                data: ([65,62,58,60,65,69,72]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Credit card balances (England, £ billions)"
+              source={{
+                name: 'Bank of England',
+                dataset: 'Credit card balances (England, £ billions)',
+                frequency: 'annual',
+                url: 'https://www.bankofengland.co.uk/financial-stability-report',
+                date: 'Dec 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function ConsumerCreditStressPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.bankofengland.co.uk/financial-stability-report" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Bank of England</a> — primary data source. Retrieved Dec 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

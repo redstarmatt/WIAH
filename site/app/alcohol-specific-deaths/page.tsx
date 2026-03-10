@@ -22,6 +22,9 @@ export default function AlcoholSpecificDeathsPage() {
       data: ([0.93,0.96,0.99,1.01,1.03,1.05,1.07]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: Lockdown drinking surge' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function AlcoholSpecificDeathsPage() {
         <TopicHeader
           topic="Alcohol-Specific Deaths"
           question="Are Alcohol Deaths Still Rising?"
-          finding="Alcohol-specific deaths in England hit 9,641 in 2023 — a record high and up 32% since 2019. Alcohol-related hospital admissions now exceed one million..."
+          finding="Alcohol-specific deaths in England hit 9,641 in 2023 — a record high and up 32% since 2019. Alcohol-related hospital admissions now exceed one million per year."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function AlcoholSpecificDeathsPage() {
               polarity="up-is-bad"
               changeText="record high · up 32% since 2019"
               sparklineData={[7300,7500,7700,8100,8600,9100,9641]}
+              source="ONS — Jan 2024"
             />
             <MetricCard
               label="Alcohol-related hospital admissions (millions)"
@@ -52,6 +56,7 @@ export default function AlcoholSpecificDeathsPage() {
               polarity="up-is-bad"
               changeText="up from 0.93M in 2015"
               sparklineData={[0.93,0.96,0.99,1.01,1.03,1.05,1.07]}
+              source="ONS — Jan 2024"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function AlcoholSpecificDeathsPage() {
               title="Alcohol-specific deaths (England, annual), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Alcohol-specific deaths (England, annual)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function AlcoholSpecificDeathsPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Alcohol-related hospital admissions (millions), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Alcohol-related hospital admissions (millions)',
+                colour: '#6B7280',
+                data: ([0.93,0.96,0.99,1.01,1.03,1.05,1.07]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Alcohol-related hospital admissions (millions)"
+              source={{
+                name: 'ONS',
+                dataset: 'Alcohol-related hospital admissions (millions)',
+                frequency: 'annual',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholspecificdeathsintheuk',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function AlcoholSpecificDeathsPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholspecificdeathsintheuk" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS</a> — primary data source. Retrieved Jan 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

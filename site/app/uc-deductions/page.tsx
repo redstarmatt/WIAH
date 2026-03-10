@@ -22,6 +22,10 @@ export default function UcDeductionsPage() {
       data: ([52,54,56,58,59,60,61]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2013, 0, 1), label: '2013: UC launched' },
+    { date: new Date(2021, 0, 1), label: '2021: Advance loan repayment surge' },
+  ];
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function UcDeductionsPage() {
         <TopicHeader
           topic="Universal Credit Deductions"
           question="Are Universal Credit Deductions Pushing People Further Into Poverty?"
-          finding="45% of Universal Credit claimants — 2.2 million people — have deductions taken from their payments each month. The average deduction is £61, mainly to..."
+          finding="45% of Universal Credit claimants — 2.2 million people — have deductions taken from their payments each month. The average deduction is £61, mainly to repay advance loans that claimants needed to survive the five-week wait."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +48,7 @@ export default function UcDeductionsPage() {
               polarity="up-is-bad"
               changeText="down from 52% in 2019 · still affects 2.2M people"
               sparklineData={[52,52,50,48,47,46,45]}
+              source="DWP — Jan 2024"
             />
             <MetricCard
               label="Average UC deduction per claimant (£/month)"
@@ -52,6 +57,7 @@ export default function UcDeductionsPage() {
               polarity="up-is-bad"
               changeText="up from £52 in 2019 · advance payment loans main cause"
               sparklineData={[52,54,56,58,59,60,61]}
+              source="DWP — Jan 2024"
             />
           </div>
         </section>
@@ -62,6 +68,7 @@ export default function UcDeductionsPage() {
               title="UC claimants with deductions (%), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="UC claimants with deductions (%)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +78,29 @@ export default function UcDeductionsPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Average UC deduction per claimant (£/month), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Average UC deduction per claimant (£/month)',
+                colour: '#6B7280',
+                data: ([52,54,56,58,59,60,61]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Average UC deduction per claimant (£/month)"
+              source={{
+                name: 'DWP',
+                dataset: 'Average UC deduction per claimant (£/month)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/universal-credit-statistics-29-april-2013-to-11-january-2024',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +115,7 @@ export default function UcDeductionsPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/statistics/universal-credit-statistics-29-april-2013-to-11-january-2024" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DWP</a> — primary data source. Retrieved Jan 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

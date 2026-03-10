@@ -22,6 +22,10 @@ export default function HepatitisCTreatmentPage() {
       data: ([160000,140000,120000,105000,93000,86000,82000]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2015, 0, 1), label: '2015: DAA drugs available' },
+    { date: new Date(2020, 0, 1), label: '2020: Testing disrupted' },
+  ];
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function HepatitisCTreatmentPage() {
         <TopicHeader
           topic="Hepatitis C Treatment"
           question="Has the NHS Eliminated Hepatitis C?"
-          finding="82,000 people in the UK are estimated to be living with undiagnosed hepatitis C — down from 160,000 in 2015. Direct-acting antivirals have transformed..."
+          finding="82,000 people in the UK are estimated to be living with undiagnosed hepatitis C — down from 160,000 in 2015. Direct-acting antivirals have transformed the disease from chronic to curable, but the testing pathway needs rebuilding after COVID."
           colour="#2A9D8F"
           preposition="with"
         />
@@ -44,6 +48,7 @@ export default function HepatitisCTreatmentPage() {
               polarity="up-is-bad"
               changeText="down from 21,800 in 2019 · pandemic disrupted testing pathways"
               sparklineData={[21800,19000,14000,10000,10500,11000,11200]}
+              source="NHS England / UKHSA — Aug 2023"
             />
             <MetricCard
               label="Estimated undiagnosed HCV cases"
@@ -52,6 +57,7 @@ export default function HepatitisCTreatmentPage() {
               polarity="up-is-good"
               changeText="down from 160,000 in 2015 · direct-acting antivirals transformative"
               sparklineData={[160000,140000,120000,105000,93000,86000,82000]}
+              source="NHS England / UKHSA — Aug 2023"
             />
           </div>
         </section>
@@ -62,6 +68,7 @@ export default function HepatitisCTreatmentPage() {
               title="People starting HCV treatment (annual), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="People starting HCV treatment (annual)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +78,29 @@ export default function HepatitisCTreatmentPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Estimated undiagnosed HCV cases, UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Estimated undiagnosed HCV cases',
+                colour: '#6B7280',
+                data: ([160000,140000,120000,105000,93000,86000,82000]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Estimated undiagnosed HCV cases"
+              source={{
+                name: 'NHS England / UKHSA',
+                dataset: 'Estimated undiagnosed HCV cases',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/publications/hepatitis-c-in-the-uk',
+                date: 'Aug 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +115,7 @@ export default function HepatitisCTreatmentPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/publications/hepatitis-c-in-the-uk" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England / UKHSA</a> — primary data source. Retrieved Aug 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

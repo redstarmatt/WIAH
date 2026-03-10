@@ -22,6 +22,10 @@ export default function CataractWaitsPage() {
       data: ([9,12,22,31,37,40,41]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: COVID cancellations' },
+  ];
+  const chartTargetLine = { value: 18.0, label: '18-week RTT standard' };
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function CataractWaitsPage() {
         <TopicHeader
           topic="Cataract Waits"
           question="Why Are 650,000 People Waiting for Cataract Surgery?"
-          finding="The cataract backlog is 650,000 — up from 120,000 before the pandemic. The median wait is now 41 weeks. Cataracts are the most common elective surgery..."
+          finding="The cataract backlog is 650,000 — up from 120,000 before the pandemic. The median wait is now 41 weeks. Cataracts are the most common elective surgery and blindness is preventable."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +48,7 @@ export default function CataractWaitsPage() {
               polarity="up-is-bad"
               changeText="up from 120K in 2019 · most common elective surgery"
               sparklineData={[120000,150000,280000,430000,560000,620000,650000]}
+              source="NHS England — Feb 2024"
             />
             <MetricCard
               label="Median wait for first cataract (weeks)"
@@ -52,6 +57,7 @@ export default function CataractWaitsPage() {
               polarity="up-is-bad"
               changeText="up from 9 weeks in 2019"
               sparklineData={[9,12,22,31,37,40,41]}
+              source="NHS England — Feb 2024"
             />
           </div>
         </section>
@@ -62,6 +68,8 @@ export default function CataractWaitsPage() {
               title="People waiting for cataract surgery (England), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              targetLine={chartTargetLine}
+              annotations={chartAnnotations}
               yLabel="People waiting for cataract surgery (England)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +79,29 @@ export default function CataractWaitsPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Median wait for first cataract (weeks), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Median wait for first cataract (weeks)',
+                colour: '#6B7280',
+                data: ([9,12,22,31,37,40,41]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Median wait for first cataract (weeks)"
+              source={{
+                name: 'NHS England',
+                dataset: 'Median wait for first cataract (weeks)',
+                frequency: 'annual',
+                url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/referral-to-treatment-waiting-times/',
+                date: 'Feb 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +116,7 @@ export default function CataractWaitsPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.england.nhs.uk/statistics/statistical-work-areas/referral-to-treatment-waiting-times/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England</a> — primary data source. Retrieved Feb 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

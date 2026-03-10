@@ -22,6 +22,9 @@ export default function CommunityAssetOwnershipPage() {
       data: ([320,480,620,780,950,1100,1250]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2011, 0, 1), label: '2011: Localism Act · ACV register' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function CommunityAssetOwnershipPage() {
         <TopicHeader
           topic="Community Asset Ownership"
           question="How Many Communities Own Their Own Buildings?"
-          finding="England now has 9,800 community-owned assets — pubs, shops, village halls — up from 6,200 in 2015. The Assets of Community Value register is enabling ..."
+          finding="England now has 9,800 community-owned assets — pubs, shops, village halls — up from 6,200 in 2015. The Assets of Community Value register is enabling a quiet revolution in local ownership."
           colour="#2A9D8F"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function CommunityAssetOwnershipPage() {
               polarity="up-is-good"
               changeText="up from 6,200 in 2015 · pubs, shops, halls"
               sparklineData={[6200,6800,7200,7800,8400,9100,9800]}
+              source="Locality — Nov 2023"
             />
             <MetricCard
               label="Assets of Community Value registrations (annual)"
@@ -52,6 +56,7 @@ export default function CommunityAssetOwnershipPage() {
               polarity="up-is-good"
               changeText="up from 320 in 2013 · Localism Act 2011 enabling tool"
               sparklineData={[320,480,620,780,950,1100,1250]}
+              source="Locality — Nov 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function CommunityAssetOwnershipPage() {
               title="Community-owned assets (England, number), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Community-owned assets (England, number)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function CommunityAssetOwnershipPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Assets of Community Value registrations (annual), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Assets of Community Value registrations (annual)',
+                colour: '#6B7280',
+                data: ([320,480,620,780,950,1100,1250]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Assets of Community Value registrations (annual)"
+              source={{
+                name: 'Locality',
+                dataset: 'Assets of Community Value registrations (annual)',
+                frequency: 'annual',
+                url: 'https://locality.org.uk/policy-campaigns/community-ownership/',
+                date: 'Nov 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function CommunityAssetOwnershipPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://locality.org.uk/policy-campaigns/community-ownership/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Locality</a> — primary data source. Retrieved Nov 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

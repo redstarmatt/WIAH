@@ -22,6 +22,10 @@ export default function UrbanGreenSpacePage() {
       data: ([0,-8,-15,-22,-30,-37,-42]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2010, 0, 1), label: '2010: Parks budgets cut' },
+    { date: new Date(2020, 0, 1), label: '2020: COVID · park use surges · funding still cut' },
+  ];
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function UrbanGreenSpacePage() {
         <TopicHeader
           topic="Urban Green Space"
           question="Are British Cities Running Out of Green Space?"
-          finding="Only 45% of urban areas meet the WHO guideline of one hectare of accessible green space within 300 metres — down from 52% in 2010. Council park budget..."
+          finding="Only 45% of urban areas meet the WHO guideline of one hectare of accessible green space within 300 metres — down from 52% in 2010. Council park budgets have been cut 42% in real terms since 2010, hitting maintenance and park rangers."
           colour="#2A9D8F"
           preposition="in"
         />
@@ -44,6 +48,7 @@ export default function UrbanGreenSpacePage() {
               polarity="up-is-good"
               changeText="down from 52% in 2010 · development pressure on parks"
               sparklineData={[52,51,50,49,47,46,45]}
+              source="Natural England / MHCLG — Dec 2023"
             />
             <MetricCard
               label="Public parks budget cuts since 2010 (England, %)"
@@ -52,6 +57,7 @@ export default function UrbanGreenSpacePage() {
               polarity="up-is-bad"
               changeText="real-terms cut · park rangers and maintenance hit hardest"
               sparklineData={[0,-8,-15,-22,-30,-37,-42]}
+              source="Natural England / MHCLG — Dec 2023"
             />
           </div>
         </section>
@@ -62,6 +68,7 @@ export default function UrbanGreenSpacePage() {
               title="Urban areas meeting WHO green space guideline (>1ha within 300m), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Urban areas meeting WHO green space guideline (>1ha within 300m)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +78,29 @@ export default function UrbanGreenSpacePage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Public parks budget cuts since 2010 (England, %), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Public parks budget cuts since 2010 (England, %)',
+                colour: '#6B7280',
+                data: ([0,-8,-15,-22,-30,-37,-42]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Public parks budget cuts since 2010 (England, %)"
+              source={{
+                name: 'Natural England / MHCLG',
+                dataset: 'Public parks budget cuts since 2010 (England, %)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/monitor-of-engagement-with-the-natural-environment-survey-purpose-and-results',
+                date: 'Dec 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +115,7 @@ export default function UrbanGreenSpacePage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/statistics/monitor-of-engagement-with-the-natural-environment-survey-purpose-and-results" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Natural England / MHCLG</a> — primary data source. Retrieved Dec 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

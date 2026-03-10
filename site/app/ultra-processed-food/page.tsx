@@ -22,6 +22,9 @@ export default function UltraProcessedFoodPage() {
       data: ([55,57,59,61,62,64,65]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2019, 0, 1), label: '2019: NOVA classification raises alarm' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function UltraProcessedFoodPage() {
         <TopicHeader
           topic="Ultra-Processed Food"
           question="Is Ultra-Processed Food Taking Over the British Diet?"
-          finding="57% of the UK diet now comes from ultra-processed foods — the highest share in Europe. Children's diets are even more dominated at 65%. Research links..."
+          finding="57% of the UK diet now comes from ultra-processed foods — the highest share in Europe. Children's diets are even more dominated at 65%. Research links UPF consumption to obesity, ADHD, anxiety and reduced life expectancy."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function UltraProcessedFoodPage() {
               polarity="up-is-bad"
               changeText="highest in Europe · up from 45% in 2000"
               sparklineData={[45,47,49,51,53,55,57]}
+              source="BMJ / NOVA classification research — May 2023"
             />
             <MetricCard
               label="Children's diet from ultra-processed foods (%)"
@@ -52,6 +56,7 @@ export default function UltraProcessedFoodPage() {
               polarity="up-is-bad"
               changeText="even higher in children · linked to ADHD, obesity, anxiety"
               sparklineData={[55,57,59,61,62,64,65]}
+              source="BMJ / NOVA classification research — May 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function UltraProcessedFoodPage() {
               title="Share of UK diet from ultra-processed foods (%), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Share of UK diet from ultra-processed foods (%)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -85,7 +91,7 @@ export default function UltraProcessedFoodPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.bmj.com/content/381/bmj-2023-075294" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">BMJ / NOVA classification research</a> — primary data source. Retrieved May 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

@@ -22,6 +22,9 @@ export default function MeatConsumptionTrendPage() {
       data: ([0.4,0.6,0.8,1,1.3,1.4,1.4]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2019, 0, 1), label: '2019: Plant-based boom' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function MeatConsumptionTrendPage() {
         <TopicHeader
           topic="Meat Consumption Trend"
           question="Is Britain Eating Less Meat?"
-          finding="UK per capita meat consumption has fallen from 93kg per year in 2010 to 84kg, driven by flexitarianism and rising meat prices. Plant-based product sal..."
+          finding="UK per capita meat consumption has fallen from 93kg per year in 2010 to 84kg, driven by flexitarianism and rising meat prices. Plant-based product sales have reached £1.4 billion per year, though growth is now slowing."
           colour="#6B7280"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function MeatConsumptionTrendPage() {
               polarity="up-is-good"
               changeText="down from 93kg in 2010 · flexitarianism growing"
               sparklineData={[93,92,90,88,87,85,84]}
+              source="DEFRA — Nov 2023"
             />
             <MetricCard
               label="Plant-based product sales (£ billions, annual)"
@@ -52,6 +56,7 @@ export default function MeatConsumptionTrendPage() {
               polarity="up-is-good"
               changeText="up from £0.4B in 2018 · market growth slowing from peak"
               sparklineData={[0.4,0.6,0.8,1,1.3,1.4,1.4]}
+              source="DEFRA — Nov 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function MeatConsumptionTrendPage() {
               title="UK per capita meat consumption (kg/year), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="UK per capita meat consumption (kg/year)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function MeatConsumptionTrendPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Plant-based product sales (£ billions, annual), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Plant-based product sales (£ billions, annual)',
+                colour: '#6B7280',
+                data: ([0.4,0.6,0.8,1,1.3,1.4,1.4]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Plant-based product sales (£ billions, annual)"
+              source={{
+                name: 'DEFRA',
+                dataset: 'Plant-based product sales (£ billions, annual)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/food-statistics-pocketbook',
+                date: 'Nov 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function MeatConsumptionTrendPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/statistics/food-statistics-pocketbook" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DEFRA</a> — primary data source. Retrieved Nov 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

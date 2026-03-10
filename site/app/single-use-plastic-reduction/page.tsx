@@ -22,6 +22,11 @@ export default function SingleUsePlasticReductionPage() {
       data: ([0,0,0,0,0,0,9]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2015, 0, 1), label: '2015: 5p carrier bag charge' },
+    { date: new Date(2023, 0, 1), label: '2023: Single-use plastic ban' },
+  ];
+  const chartTargetLine = { value: 1.0, label: 'Government 1B bag target' };
 
   return (
     <>
@@ -30,7 +35,7 @@ export default function SingleUsePlasticReductionPage() {
         <TopicHeader
           topic="Single-Use Plastic Reduction"
           question="Is Britain Winning the War on Single-Use Plastic?"
-          finding="Single-use carrier bag sales fell from 7.6 billion in 2014 to 1.7 billion following the introduction of the carrier bag charge. Nine types of single-u..."
+          finding="Single-use carrier bag sales fell from 7.6 billion in 2014 to 1.7 billion following the introduction of the carrier bag charge. Nine types of single-use plastic items were banned in England from October 2023."
           colour="#2A9D8F"
           preposition="with"
         />
@@ -44,6 +49,7 @@ export default function SingleUsePlasticReductionPage() {
               polarity="up-is-good"
               changeText="down from 7.6B in 2014 · 5p/10p charge transformative"
               sparklineData={[7.6,6,4,2.8,2.3,2,1.7]}
+              source="DEFRA — Nov 2023"
             />
             <MetricCard
               label="Single-use plastic items in scope of ban (England)"
@@ -52,6 +58,7 @@ export default function SingleUsePlasticReductionPage() {
               polarity="up-is-good"
               changeText="plates, cutlery, polystyrene cups banned Oct 2023"
               sparklineData={[0,0,0,0,0,0,9]}
+              source="DEFRA — Nov 2023"
             />
           </div>
         </section>
@@ -62,6 +69,8 @@ export default function SingleUsePlasticReductionPage() {
               title="Single-use carrier bags sold (England, billions), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              targetLine={chartTargetLine}
+              annotations={chartAnnotations}
               yLabel="Single-use carrier bags sold (England, billions)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +80,29 @@ export default function SingleUsePlasticReductionPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Single-use plastic items in scope of ban (England), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Single-use plastic items in scope of ban (England)',
+                colour: '#6B7280',
+                data: ([0,0,0,0,0,0,9]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Single-use plastic items in scope of ban (England)"
+              source={{
+                name: 'DEFRA',
+                dataset: 'Single-use plastic items in scope of ban (England)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/news/carrier-bag-sales-down-since-5p-charge',
+                date: 'Nov 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +117,7 @@ export default function SingleUsePlasticReductionPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/news/carrier-bag-sales-down-since-5p-charge" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DEFRA</a> — primary data source. Retrieved Nov 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

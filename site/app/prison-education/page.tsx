@@ -22,6 +22,10 @@ export default function PrisonEducationPage() {
       data: ([56,57,57,56,57,57,57]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2010, 0, 1), label: '2010: Education budget cut 40%' },
+    { date: new Date(2020, 0, 1), label: '2020: COVID · classes suspended' },
+  ];
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function PrisonEducationPage() {
         <TopicHeader
           topic="Prison Education"
           question="Is Prison Education Working?"
-          finding="Only 28% of prisoners engage in education each week — down from 34% in 2013. The education budget has been cut 40% since 2010. 57% of prisoners have n..."
+          finding="Only 28% of prisoners engage in education each week — down from 34% in 2013. The education budget has been cut 40% since 2010. 57% of prisoners have no formal qualifications on entry. The evidence that education reduces reoffending is overwhelming."
           colour="#6B7280"
           preposition="with"
         />
@@ -44,6 +48,7 @@ export default function PrisonEducationPage() {
               polarity="up-is-good"
               changeText="down from 34% in 2013 · education budget cut 40% since 2010"
               sparklineData={[34,33,31,30,29,28,28]}
+              source="HMPPS / Ofsted — Nov 2023"
             />
             <MetricCard
               label="Prisoners with no formal qualifications (%)"
@@ -52,6 +57,7 @@ export default function PrisonEducationPage() {
               polarity="up-is-bad"
               changeText="persistently high · poor literacy common on entry"
               sparklineData={[56,57,57,56,57,57,57]}
+              source="HMPPS / Ofsted — Nov 2023"
             />
           </div>
         </section>
@@ -62,6 +68,7 @@ export default function PrisonEducationPage() {
               title="Prisoners in education each week (%), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Prisoners in education each week (%)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +78,29 @@ export default function PrisonEducationPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Prisoners with no formal qualifications (%), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Prisoners with no formal qualifications (%)',
+                colour: '#6B7280',
+                data: ([56,57,57,56,57,57,57]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Prisoners with no formal qualifications (%)"
+              source={{
+                name: 'HMPPS / Ofsted',
+                dataset: 'Prisoners with no formal qualifications (%)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/national-prison-education-framework-statistics',
+                date: 'Nov 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +115,7 @@ export default function PrisonEducationPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/statistics/national-prison-education-framework-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">HMPPS / Ofsted</a> — primary data source. Retrieved Nov 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

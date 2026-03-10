@@ -22,6 +22,9 @@ export default function HonourBasedAbusePage() {
       data: ([65,68,70,72,71,73,72]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2014, 0, 1), label: '2014: Honour-based abuse criminalised' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function HonourBasedAbusePage() {
         <TopicHeader
           topic="Honour-Based Abuse"
           question="How Common Is Honour-Based Abuse in Britain?"
-          finding="3,908 honour-based abuse crimes were recorded in 2023 — up 81% since 2016, driven partly by better recording but also a real increase. The majority of..."
+          finding="3,908 honour-based abuse crimes were recorded in 2023 — up 81% since 2016, driven partly by better recording but also a real increase. The majority of victims are women and girls."
           colour="#6B7280"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function HonourBasedAbusePage() {
               polarity="up-is-bad"
               changeText="up 81% since 2016 · better recording plus real increase"
               sparklineData={[2160,2400,2700,2900,3200,3600,3908]}
+              source="Home Office — Nov 2023"
             />
             <MetricCard
               label="Prosecutions for honour-based abuse"
@@ -52,6 +56,7 @@ export default function HonourBasedAbusePage() {
               polarity="up-is-bad"
               changeText="prosecution rate low relative to recorded crime"
               sparklineData={[65,68,70,72,71,73,72]}
+              source="Home Office — Nov 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function HonourBasedAbusePage() {
               title="Honour-based abuse crimes recorded (England & Wales), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Honour-based abuse crimes recorded (England & Wales)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function HonourBasedAbusePage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Prosecutions for honour-based abuse, UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Prosecutions for honour-based abuse',
+                colour: '#6B7280',
+                data: ([65,68,70,72,71,73,72]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Prosecutions for honour-based abuse"
+              source={{
+                name: 'Home Office',
+                dataset: 'Prosecutions for honour-based abuse',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/collections/honour-based-abuse-and-forced-marriage-data',
+                date: 'Nov 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function HonourBasedAbusePage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/collections/honour-based-abuse-and-forced-marriage-data" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Home Office</a> — primary data source. Retrieved Nov 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

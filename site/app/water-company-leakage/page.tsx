@@ -22,6 +22,11 @@ export default function WaterCompanyLeakagePage() {
       data: ([75,70,65,58,50,45,43]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: Ofwat 2019 price review targets missed' },
+    { date: new Date(2021, 0, 1), label: '2021: Environment Act · legal duty' },
+  ];
+  const chartTargetLine = { value: 2800.0, label: 'Ofwat 2020 leakage target' };
 
   return (
     <>
@@ -30,7 +35,7 @@ export default function WaterCompanyLeakagePage() {
         <TopicHeader
           topic="Water Company Leakage"
           question="How Much Water Are the Companies Leaking?"
-          finding="England and Wales loses 3,060 million litres of water per day to leakage — above the regulator's 2020 target of 2,800 million litres. Only 43% of wate..."
+          finding="England and Wales loses 3,060 million litres of water per day to leakage — above the regulator's 2020 target of 2,800 million litres. Only 43% of water companies are meeting their own leakage reduction targets."
           colour="#264653"
           preposition="with"
         />
@@ -44,6 +49,7 @@ export default function WaterCompanyLeakagePage() {
               polarity="up-is-bad"
               changeText="down from 3,400 in 2017 but still above 2020 target of 2,800"
               sparklineData={[3400,3350,3300,3250,3150,3100,3060]}
+              source="Ofwat — Jan 2024"
             />
             <MetricCard
               label="Water companies meeting leakage targets (%)"
@@ -52,6 +58,7 @@ export default function WaterCompanyLeakagePage() {
               polarity="up-is-good"
               changeText="majority missing their own targets"
               sparklineData={[75,70,65,58,50,45,43]}
+              source="Ofwat — Jan 2024"
             />
           </div>
         </section>
@@ -62,15 +69,40 @@ export default function WaterCompanyLeakagePage() {
               title="Water lost to leakage daily (England & Wales, million litres), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              targetLine={chartTargetLine}
+              annotations={chartAnnotations}
               yLabel="Water lost to leakage daily (England & Wales, million litres)"
               source={{
-                name: 'ONS / NHS England / Government Statistical Service',
+                name: 'Ofwat',
                 dataset: 'Water Company Leakage statistics',
                 frequency: 'annual',
               }}
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Water companies meeting leakage targets (%), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Water companies meeting leakage targets (%)',
+                colour: '#6B7280',
+                data: ([75,70,65,58,50,45,43]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Water companies meeting leakage targets (%)"
+              source={{
+                name: 'Ofwat',
+                dataset: 'Water companies meeting leakage targets (%)',
+                frequency: 'annual',
+                url: 'https://www.ofwat.gov.uk/regulated-companies/performance/comparative-performance-of-the-water-companies/',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +117,7 @@ export default function WaterCompanyLeakagePage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.ofwat.gov.uk/regulated-companies/performance/comparative-performance-of-the-water-companies/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ofwat</a> — primary data source. Retrieved Jan 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

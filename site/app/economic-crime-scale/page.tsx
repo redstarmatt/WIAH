@@ -22,6 +22,9 @@ export default function EconomicCrimeScalePage() {
       data: ([36,37,38,39,40,40,41]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2022, 0, 1), label: '2022: Economic Crime Act' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function EconomicCrimeScalePage() {
         <TopicHeader
           topic="Economic Crime Scale"
           question="How Much Does Economic Crime Cost Britain?"
-          finding="Economic crime costs the UK an estimated £8.3 billion a year — fraud alone accounts for 57% of that, and 41% of all crime reported in England and Wale..."
+          finding="Economic crime costs the UK an estimated £8.3 billion a year — fraud alone accounts for 57% of that, and 41% of all crime reported in England and Wales. Prosecution rates remain negligible relative to scale."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function EconomicCrimeScalePage() {
               polarity="up-is-bad"
               changeText="estimate · fraud largest component at 57%"
               sparklineData={[5,5.8,6.3,7,7.5,8,8.3]}
+              source="NCA / Home Office — Nov 2023"
             />
             <MetricCard
               label="Fraud as share of all crime (England & Wales)"
@@ -52,6 +56,7 @@ export default function EconomicCrimeScalePage() {
               polarity="up-is-bad"
               changeText="fraud now largest single crime type"
               sparklineData={[36,37,38,39,40,40,41]}
+              source="NCA / Home Office — Nov 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function EconomicCrimeScalePage() {
               title="Total economic crime losses (UK, annual), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Total economic crime losses (UK, annual)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function EconomicCrimeScalePage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Fraud as share of all crime (England & Wales), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Fraud as share of all crime (England & Wales)',
+                colour: '#6B7280',
+                data: ([36,37,38,39,40,40,41]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Fraud as share of all crime (England & Wales)"
+              source={{
+                name: 'NCA / Home Office',
+                dataset: 'Fraud as share of all crime (England & Wales)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/publications/serious-and-organised-crime-strategy',
+                date: 'Nov 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function EconomicCrimeScalePage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/publications/serious-and-organised-crime-strategy" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NCA / Home Office</a> — primary data source. Retrieved Nov 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

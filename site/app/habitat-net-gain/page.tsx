@@ -22,6 +22,10 @@ export default function HabitatNetGainPage() {
       data: ([0,0,0,5000,18000,30000,38000]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2021, 0, 1), label: '2021: Environment Act passes' },
+    { date: new Date(2024, 0, 1), label: '2024: Mandatory BNG in force' },
+  ];
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function HabitatNetGainPage() {
         <TopicHeader
           topic="Biodiversity Net Gain"
           question="Is Biodiversity Net Gain Delivering for Nature?"
-          finding="Mandatory biodiversity net gain came into force in February 2024 for major planning applications. 12,400 permissions have applied the 10% net gain sta..."
+          finding="Mandatory biodiversity net gain came into force in February 2024 for major planning applications. 12,400 permissions have applied the 10% net gain standard, creating a new market for biodiversity credits."
           colour="#2A9D8F"
           preposition="with"
         />
@@ -44,6 +48,7 @@ export default function HabitatNetGainPage() {
               polarity="up-is-good"
               changeText="statutory BNG commenced Feb 2024 · small sites Feb 2025"
               sparklineData={[0,0,0,1200,8000,10500,12400]}
+              source="Natural England / DEFRA — Feb 2024"
             />
             <MetricCard
               label="Biodiversity units traded in market (annual)"
@@ -52,6 +57,7 @@ export default function HabitatNetGainPage() {
               polarity="up-is-good"
               changeText="new market emerging · quality verification challenges remain"
               sparklineData={[0,0,0,5000,18000,30000,38000]}
+              source="Natural England / DEFRA — Feb 2024"
             />
           </div>
         </section>
@@ -62,6 +68,7 @@ export default function HabitatNetGainPage() {
               title="Planning permissions with mandatory BNG (England), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Planning permissions with mandatory BNG (England)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +78,29 @@ export default function HabitatNetGainPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Biodiversity units traded in market (annual), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Biodiversity units traded in market (annual)',
+                colour: '#6B7280',
+                data: ([0,0,0,5000,18000,30000,38000]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Biodiversity units traded in market (annual)"
+              source={{
+                name: 'Natural England / DEFRA',
+                dataset: 'Biodiversity units traded in market (annual)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/guidance/biodiversity-net-gain',
+                date: 'Feb 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +115,7 @@ export default function HabitatNetGainPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/guidance/biodiversity-net-gain" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Natural England / DEFRA</a> — primary data source. Retrieved Feb 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

@@ -22,6 +22,11 @@ export default function ScamLossesPage() {
       data: ([1.9,2,2.2,2.4,2.5,2.6,2.7]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2019, 0, 1), label: '2019: PSR code launched' },
+    { date: new Date(2024, 0, 1), label: '2024: Mandatory reimbursement' },
+  ];
+  const chartTargetLine = { value: 300.0, label: 'PSR loss reduction target' };
 
   return (
     <>
@@ -30,7 +35,7 @@ export default function ScamLossesPage() {
         <TopicHeader
           topic="Scam Losses"
           question="How Much Are Britons Losing to Scams?"
-          finding="Authorised push payment fraud losses fell 12% to £459 million following the introduction of mandatory bank reimbursement. But 2.7 million adults still..."
+          finding="Authorised push payment fraud losses fell 12% to £459 million following the introduction of mandatory bank reimbursement. But 2.7 million adults still fall victim to scams each year — phone and online scams are dominant."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +49,7 @@ export default function ScamLossesPage() {
               polarity="up-is-good"
               changeText="down 12% from £524M peak · mandatory reimbursement now in force"
               sparklineData={[381,455,479,524,510,485,459]}
+              source="UK Finance / PSR — Mar 2024"
             />
             <MetricCard
               label="UK adults falling victim to scams (annual)"
@@ -52,6 +58,7 @@ export default function ScamLossesPage() {
               polarity="up-is-bad"
               changeText="up from 1.9M in 2018 · phone and online scams dominating"
               sparklineData={[1.9,2,2.2,2.4,2.5,2.6,2.7]}
+              source="UK Finance / PSR — Mar 2024"
             />
           </div>
         </section>
@@ -62,6 +69,8 @@ export default function ScamLossesPage() {
               title="Authorised push payment fraud losses, UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              targetLine={chartTargetLine}
+              annotations={chartAnnotations}
               yLabel="Authorised push payment fraud losses"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +80,29 @@ export default function ScamLossesPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="UK adults falling victim to scams (annual), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'UK adults falling victim to scams (annual)',
+                colour: '#6B7280',
+                data: ([1.9,2,2.2,2.4,2.5,2.6,2.7]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="UK adults falling victim to scams (annual)"
+              source={{
+                name: 'UK Finance / PSR',
+                dataset: 'UK adults falling victim to scams (annual)',
+                frequency: 'annual',
+                url: 'https://www.ukfinance.org.uk/data-and-research/data/fraud/fraud-the-facts',
+                date: 'Mar 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +117,7 @@ export default function ScamLossesPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.ukfinance.org.uk/data-and-research/data/fraud/fraud-the-facts" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">UK Finance / PSR</a> — primary data source. Retrieved Mar 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

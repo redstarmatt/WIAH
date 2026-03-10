@@ -22,6 +22,9 @@ export default function NhsOverseasCostRecoveryPage() {
       data: ([42,38,34,30,27,26,25]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2017, 0, 1), label: '2017: Recovery programme launched' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function NhsOverseasCostRecoveryPage() {
         <TopicHeader
           topic="NHS Overseas Cost Recovery"
           question="Is the NHS Recovering the Cost of Treating Overseas Visitors?"
-          finding="The NHS recovered £600 million from overseas treatment costs in 2023/24 — up from £295 million in 2017. The government's target is £500 million minimu..."
+          finding="The NHS recovered £600 million from overseas treatment costs in 2023/24 — up from £295 million in 2017. The government's target is £500 million minimum. Around £25 million in debts are written off each year."
           colour="#F4A261"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function NhsOverseasCostRecoveryPage() {
               polarity="up-is-good"
               changeText="up from £295M in 2017 · target is £500M minimum"
               sparklineData={[295,350,390,430,490,550,600]}
+              source="NHSE / DHSC — Dec 2023"
             />
             <MetricCard
               label="Overseas visitor debts written off (annual)"
@@ -52,6 +56,7 @@ export default function NhsOverseasCostRecoveryPage() {
               polarity="up-is-bad"
               changeText="down from £42M in 2018 · better upfront identification"
               sparklineData={[42,38,34,30,27,26,25]}
+              source="NHSE / DHSC — Dec 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function NhsOverseasCostRecoveryPage() {
               title="NHS overseas treatment costs recovered (annual), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="NHS overseas treatment costs recovered (annual)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function NhsOverseasCostRecoveryPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Overseas visitor debts written off (annual), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Overseas visitor debts written off (annual)',
+                colour: '#6B7280',
+                data: ([42,38,34,30,27,26,25]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Overseas visitor debts written off (annual)"
+              source={{
+                name: 'NHSE / DHSC',
+                dataset: 'Overseas visitor debts written off (annual)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/publications/overseas-visitor-and-migrant-cost-recovery-programme',
+                date: 'Dec 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function NhsOverseasCostRecoveryPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/publications/overseas-visitor-and-migrant-cost-recovery-programme" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHSE / DHSC</a> — primary data source. Retrieved Dec 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

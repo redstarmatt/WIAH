@@ -22,6 +22,9 @@ export default function SameDayEmergencyCarePage() {
       data: ([91.3,88,83.5,78,76,74,73]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2019, 0, 1), label: '2019: NHS Long Term Plan · SDEC expansion' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function SameDayEmergencyCarePage() {
         <TopicHeader
           topic="Same-Day Emergency Care"
           question="Is Same-Day Emergency Care Reducing A&E Pressure?"
-          finding="Same-day emergency care attendances have grown to 3.1 million per year — diverting significant demand from emergency departments. A&E four-hour perfor..."
+          finding="Same-day emergency care attendances have grown to 3.1 million per year — diverting significant demand from emergency departments. A&E four-hour performance remains stuck at 73%, well below the 95% standard not met since 2013."
           colour="#2A9D8F"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function SameDayEmergencyCarePage() {
               polarity="up-is-good"
               changeText="up from 1.2M in 2019 · diverts A&E pressure"
               sparklineData={[1.2,1.4,1.8,2.2,2.6,2.9,3.1]}
+              source="NHS England — Feb 2024"
             />
             <MetricCard
               label="A&E 4-hour performance"
@@ -52,6 +56,7 @@ export default function SameDayEmergencyCarePage() {
               polarity="up-is-good"
               changeText="down from 91.3% in 2015 · 95% target not met since 2013"
               sparklineData={[91.3,88,83.5,78,76,74,73]}
+              source="NHS England — Feb 2024"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function SameDayEmergencyCarePage() {
               title="SDEC attendances (England, annual, millions), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="SDEC attendances (England, annual, millions)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function SameDayEmergencyCarePage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="A&E 4-hour performance, UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'A&E 4-hour performance',
+                colour: '#6B7280',
+                data: ([91.3,88,83.5,78,76,74,73]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="A&E 4-hour performance"
+              source={{
+                name: 'NHS England',
+                dataset: 'A&E 4-hour performance',
+                frequency: 'annual',
+                url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/',
+                date: 'Feb 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function SameDayEmergencyCarePage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England</a> — primary data source. Retrieved Feb 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

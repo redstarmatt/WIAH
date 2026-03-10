@@ -22,6 +22,11 @@ export default function AirQualityDeathsPage() {
       data: ([61,58,55,52,49,46,43]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2015, 0, 1), label: '2015: VW dieselgate' },
+    { date: new Date(2023, 0, 1), label: '2023: ULEZ expanded' },
+  ];
+  const chartTargetLine = { value: 5.0, label: 'WHO PM2.5 guideline (μg/m³)' };
 
   return (
     <>
@@ -30,7 +35,7 @@ export default function AirQualityDeathsPage() {
         <TopicHeader
           topic="Air Quality Deaths"
           question="How Many People Die from Air Pollution in Britain?"
-          finding="Air pollution causes an estimated 43,000 premature deaths in the UK each year — still placing Britain among the worst in Europe. 43% of English local ..."
+          finding="Air pollution causes an estimated 43,000 premature deaths in the UK each year — still placing Britain among the worst in Europe. 43% of English local authorities breach legal nitrogen dioxide limits."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +49,7 @@ export default function AirQualityDeathsPage() {
               polarity="up-is-bad"
               changeText="down from 52,000 in 2010 · still 7th worst in Europe"
               sparklineData={[52000,50000,48000,46000,45000,44000,43000]}
+              source="UK Health Security Agency — Mar 2024"
             />
             <MetricCard
               label="Local authorities breaching NO₂ limits"
@@ -52,6 +58,7 @@ export default function AirQualityDeathsPage() {
               polarity="up-is-bad"
               changeText="down from 61% in 2019 · ULEZ expansion main driver"
               sparklineData={[61,58,55,52,49,46,43]}
+              source="UK Health Security Agency — Mar 2024"
             />
           </div>
         </section>
@@ -62,6 +69,8 @@ export default function AirQualityDeathsPage() {
               title="Premature deaths from air pollution (annual), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              targetLine={chartTargetLine}
+              annotations={chartAnnotations}
               yLabel="Premature deaths from air pollution (annual)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +80,29 @@ export default function AirQualityDeathsPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Local authorities breaching NO₂ limits, UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Local authorities breaching NO₂ limits',
+                colour: '#6B7280',
+                data: ([61,58,55,52,49,46,43]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Local authorities breaching NO₂ limits"
+              source={{
+                name: 'UK Health Security Agency',
+                dataset: 'Local authorities breaching NO₂ limits',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/publications/air-quality-and-health',
+                date: 'Mar 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +117,7 @@ export default function AirQualityDeathsPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/publications/air-quality-and-health" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">UK Health Security Agency</a> — primary data source. Retrieved Mar 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

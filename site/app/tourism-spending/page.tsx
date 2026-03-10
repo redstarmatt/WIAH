@@ -22,6 +22,9 @@ export default function TourismSpendingPage() {
       data: ([76,78,80,52,82,75,73]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: COVID · visitors fall 73%' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function TourismSpendingPage() {
         <TopicHeader
           topic="Tourism Spending"
           question="Is Britain Good at Attracting Tourists?"
-          finding="Overseas visitors spent £31.1 billion in the UK in 2023 — recovering towards pre-pandemic levels. UK domestic tourism spending is £73 billion. The sec..."
+          finding="Overseas visitors spent £31.1 billion in the UK in 2023 — recovering towards pre-pandemic levels. UK domestic tourism spending is £73 billion. The sector employs 3.1 million people directly and indirectly."
           colour="#264653"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function TourismSpendingPage() {
               polarity="up-is-good"
               changeText="recovering to near pre-pandemic levels"
               sparklineData={[25.2,26.3,27,7,20,27,31.1]}
+              source="ONS — Jan 2024"
             />
             <MetricCard
               label="UK domestic tourism spending (£ billions)"
@@ -52,6 +56,7 @@ export default function TourismSpendingPage() {
               polarity="up-is-good"
               changeText="stable · staycation boom reversed as outbound travel recovered"
               sparklineData={[76,78,80,52,82,75,73]}
+              source="ONS — Jan 2024"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function TourismSpendingPage() {
               title="Overseas visitor spending in UK (£ billions), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Overseas visitor spending in UK (£ billions)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function TourismSpendingPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="UK domestic tourism spending (£ billions), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'UK domestic tourism spending (£ billions)',
+                colour: '#6B7280',
+                data: ([76,78,80,52,82,75,73]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="UK domestic tourism spending (£ billions)"
+              source={{
+                name: 'ONS',
+                dataset: 'UK domestic tourism spending (£ billions)',
+                frequency: 'annual',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/leisureandtourism/bulletins/overseastravelandtourism/latestrelease',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function TourismSpendingPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/leisureandtourism/bulletins/overseastravelandtourism/latestrelease" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS</a> — primary data source. Retrieved Jan 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

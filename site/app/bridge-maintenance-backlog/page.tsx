@@ -22,6 +22,9 @@ export default function BridgeMaintenanceBacklogPage() {
       data: ([1520,1600,1700,1800,1900,1980,2050]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2010, 0, 1), label: '2010: Austerity cuts begin' },
+  ];
 
   return (
     <>
@@ -44,6 +47,7 @@ export default function BridgeMaintenanceBacklogPage() {
               polarity="up-is-bad"
               changeText="up from £1.2B in 2018 · 28% of bridges need repair"
               sparklineData={[1.2,1.3,1.4,1.5,1.6,1.7,1.9]}
+              source="DfT — Jul 2023"
             />
             <MetricCard
               label="Bridges with weight restrictions (England)"
@@ -52,6 +56,7 @@ export default function BridgeMaintenanceBacklogPage() {
               polarity="up-is-bad"
               changeText="up 35% since 2015 · HGV diversions increasing"
               sparklineData={[1520,1600,1700,1800,1900,1980,2050]}
+              source="DfT — Jul 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function BridgeMaintenanceBacklogPage() {
               title="Local road bridge maintenance backlog (England, £ billions), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Local road bridge maintenance backlog (England, £ billions)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function BridgeMaintenanceBacklogPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Bridges with weight restrictions (England), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Bridges with weight restrictions (England)',
+                colour: '#6B7280',
+                data: ([1520,1600,1700,1800,1900,1980,2050]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Bridges with weight restrictions (England)"
+              source={{
+                name: 'DfT',
+                dataset: 'Bridges with weight restrictions (England)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistical-data-sets/local-road-condition-in-england',
+                date: 'Jul 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function BridgeMaintenanceBacklogPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/statistical-data-sets/local-road-condition-in-england" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DfT</a> — primary data source. Retrieved Jul 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

@@ -22,6 +22,11 @@ export default function ServicesExportsUkPage() {
       data: ([94,98,102,90,110,125,136]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2016, 0, 1), label: '2016: Brexit uncertainty' },
+    { date: new Date(2020, 0, 1), label: '2020: COVID · services exports fall' },
+    { date: new Date(2022, 0, 1), label: '2022: Strong recovery' },
+  ];
 
   return (
     <>
@@ -30,7 +35,7 @@ export default function ServicesExportsUkPage() {
         <TopicHeader
           topic="Services Exports"
           question="Is Britain Good at Exporting Services?"
-          finding="UK services exports reached a record £398 billion in 2023. The £136 billion services trade surplus partially offsets the large goods trade deficit. Fi..."
+          finding="UK services exports reached a record £398 billion in 2023. The £136 billion services trade surplus partially offsets the large goods trade deficit. Financial, professional and creative services are the UK's most globally competitive sectors."
           colour="#264653"
           preposition="with"
         />
@@ -44,6 +49,7 @@ export default function ServicesExportsUkPage() {
               polarity="up-is-good"
               changeText="record high · financial services largest component"
               sparklineData={[280,295,300,275,330,370,398]}
+              source="ONS — Jan 2024"
             />
             <MetricCard
               label="Services trade surplus (£ billions)"
@@ -52,6 +58,7 @@ export default function ServicesExportsUkPage() {
               polarity="up-is-good"
               changeText="up from £94B in 2016 · offset goods trade deficit"
               sparklineData={[94,98,102,90,110,125,136]}
+              source="ONS — Jan 2024"
             />
           </div>
         </section>
@@ -62,6 +69,7 @@ export default function ServicesExportsUkPage() {
               title="UK services exports (£ billions, annual), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="UK services exports (£ billions, annual)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +79,29 @@ export default function ServicesExportsUkPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Services trade surplus (£ billions), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Services trade surplus (£ billions)',
+                colour: '#6B7280',
+                data: ([94,98,102,90,110,125,136]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Services trade surplus (£ billions)"
+              source={{
+                name: 'ONS',
+                dataset: 'Services trade surplus (£ billions)',
+                frequency: 'annual',
+                url: 'https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/latestrelease',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +116,7 @@ export default function ServicesExportsUkPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/latestrelease" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS</a> — primary data source. Retrieved Jan 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

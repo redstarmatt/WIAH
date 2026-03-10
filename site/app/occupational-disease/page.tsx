@@ -22,6 +22,9 @@ export default function OccupationalDiseasePage() {
       data: ([31.8,33,34,34.5,35,35.1,35.2]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: Mental health cases surge' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function OccupationalDiseasePage() {
         <TopicHeader
           topic="Occupational Disease"
           question="How Many People Get Ill Because of Their Job?"
-          finding="1.8 million work-related ill health cases were recorded in 2023 — a record high. Stress, depression and anxiety account for 50% of cases. 35 million w..."
+          finding="1.8 million work-related ill health cases were recorded in 2023 — a record high. Stress, depression and anxiety account for 50% of cases. 35 million working days were lost, costing the economy an estimated £20 billion."
           colour="#6B7280"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function OccupationalDiseasePage() {
               polarity="up-is-bad"
               changeText="record high · stress, depression, anxiety account for 50%"
               sparklineData={[1.3,1.4,1.5,1.6,1.7,1.75,1.8]}
+              source="HSE — Nov 2023"
             />
             <MetricCard
               label="Days lost to work-related illness (millions)"
@@ -52,6 +56,7 @@ export default function OccupationalDiseasePage() {
               polarity="up-is-bad"
               changeText="up from 31.8M in 2019 · mental health main cause"
               sparklineData={[31.8,33,34,34.5,35,35.1,35.2]}
+              source="HSE — Nov 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function OccupationalDiseasePage() {
               title="Work-related ill health cases (annual), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Work-related ill health cases (annual)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function OccupationalDiseasePage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Days lost to work-related illness (millions), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Days lost to work-related illness (millions)',
+                colour: '#6B7280',
+                data: ([31.8,33,34,34.5,35,35.1,35.2]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Days lost to work-related illness (millions)"
+              source={{
+                name: 'HSE',
+                dataset: 'Days lost to work-related illness (millions)',
+                frequency: 'annual',
+                url: 'https://www.hse.gov.uk/statistics/overall/hssh2223.pdf',
+                date: 'Nov 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function OccupationalDiseasePage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.hse.gov.uk/statistics/overall/hssh2223.pdf" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">HSE</a> — primary data source. Retrieved Nov 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

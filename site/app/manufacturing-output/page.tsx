@@ -22,6 +22,10 @@ export default function ManufacturingOutputPage() {
       data: ([10.4,10,9.5,9.2,9,8.9,8.8]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2016, 0, 1), label: '2016: Brexit uncertainty' },
+    { date: new Date(2020, 0, 1), label: '2020: COVID supply shock' },
+  ];
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function ManufacturingOutputPage() {
         <TopicHeader
           topic="Manufacturing Output"
           question="Why Is British Manufacturing Still Below Pre-Pandemic Levels?"
-          finding="UK manufacturing output remains at 96.2 on a 2019=100 index — still below pre-pandemic levels and declining as a share of GDP. Brexit supply chain dis..."
+          finding="UK manufacturing output remains at 96.2 on a 2019=100 index — still below pre-pandemic levels and declining as a share of GDP. Brexit supply chain disruption and energy costs have been compounding factors."
           colour="#6B7280"
           preposition="with"
         />
@@ -44,6 +48,7 @@ export default function ManufacturingOutputPage() {
               polarity="up-is-good"
               changeText="below pre-pandemic level · Brexit supply chain disruption"
               sparklineData={[103,101,100,88,93,95,96.2]}
+              source="ONS — Jan 2024"
             />
             <MetricCard
               label="Manufacturing share of UK GDP (%)"
@@ -52,6 +57,7 @@ export default function ManufacturingOutputPage() {
               polarity="up-is-bad"
               changeText="down from 10.4% in 2010 · long-run deindustrialisation"
               sparklineData={[10.4,10,9.5,9.2,9,8.9,8.8]}
+              source="ONS — Jan 2024"
             />
           </div>
         </section>
@@ -62,6 +68,7 @@ export default function ManufacturingOutputPage() {
               title="Manufacturing output index (2019=100), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Manufacturing output index (2019=100)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +78,29 @@ export default function ManufacturingOutputPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Manufacturing share of UK GDP (%), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Manufacturing share of UK GDP (%)',
+                colour: '#6B7280',
+                data: ([10.4,10,9.5,9.2,9,8.9,8.8]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Manufacturing share of UK GDP (%)"
+              source={{
+                name: 'ONS',
+                dataset: 'Manufacturing share of UK GDP (%)',
+                frequency: 'annual',
+                url: 'https://www.ons.gov.uk/economy/economicoutputandproductivity/output/bulletins/indexofproduction/latestrelease',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +115,7 @@ export default function ManufacturingOutputPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.ons.gov.uk/economy/economicoutputandproductivity/output/bulletins/indexofproduction/latestrelease" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS</a> — primary data source. Retrieved Jan 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

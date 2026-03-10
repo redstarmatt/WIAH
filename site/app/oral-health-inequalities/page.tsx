@@ -22,6 +22,9 @@ export default function OralHealthInequalitiesPage() {
       data: ([26,28,30,33,37,40,42]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: NHS dental access collapsed' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function OralHealthInequalitiesPage() {
         <TopicHeader
           topic="Oral Health Inequalities"
           question="Is Oral Health Still Determined by Your Postcode?"
-          finding="Children in the most deprived areas are three times as likely to have tooth decay as those in the most affluent. 42% of adults were unable to access a..."
+          finding="Children in the most deprived areas are three times as likely to have tooth decay as those in the most affluent. 42% of adults were unable to access an NHS dentist when they needed one — up from 26% in 2019."
           colour="#E63946"
           preposition="in"
         />
@@ -44,6 +47,7 @@ export default function OralHealthInequalitiesPage() {
               polarity="up-is-bad"
               changeText="persistent gap · fluoridation coverage still under 10% of England"
               sparklineData={[3,3,3,3,3,3,3]}
+              source="OHID — Sep 2023"
             />
             <MetricCard
               label="Adults unable to access NHS dentist when needed"
@@ -52,6 +56,7 @@ export default function OralHealthInequalitiesPage() {
               polarity="up-is-bad"
               changeText="up from 26% in 2019 · NHS dentistry in systemic decline"
               sparklineData={[26,28,30,33,37,40,42]}
+              source="OHID — Sep 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function OralHealthInequalitiesPage() {
               title="Children in deprived areas with tooth decay vs affluent (ratio), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Children in deprived areas with tooth decay vs affluent (ratio)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function OralHealthInequalitiesPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Adults unable to access NHS dentist when needed, UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Adults unable to access NHS dentist when needed',
+                colour: '#6B7280',
+                data: ([26,28,30,33,37,40,42]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Adults unable to access NHS dentist when needed"
+              source={{
+                name: 'OHID',
+                dataset: 'Adults unable to access NHS dentist when needed',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/oral-health-survey-of-5-year-old-children',
+                date: 'Sep 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function OralHealthInequalitiesPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/statistics/oral-health-survey-of-5-year-old-children" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">OHID</a> — primary data source. Retrieved Sep 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

@@ -22,6 +22,9 @@ export default function DisabilitySportGapPage() {
       data: ([22,22,22,21,21,21,21]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2012, 0, 1), label: '2012: Paralympic legacy' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function DisabilitySportGapPage() {
         <TopicHeader
           topic="Disability Sport Gap"
           question="Why Are Disabled People So Much Less Active?"
-          finding="43% of disabled adults do no physical activity — a 21-percentage-point gap versus non-disabled adults that has persisted for over a decade. Accessible..."
+          finding="43% of disabled adults do no physical activity — a 21-percentage-point gap versus non-disabled adults that has persisted for over a decade. Accessible facilities funding has stalled since 2010."
           colour="#6B7280"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function DisabilitySportGapPage() {
               polarity="up-is-bad"
               changeText="down from 48% in 2017 · still 15pp more than non-disabled"
               sparklineData={[48,47,46,45,44,43,43]}
+              source="Sport England — Jan 2024"
             />
             <MetricCard
               label="Gap between disabled and non-disabled sport participation (pp)"
@@ -52,6 +56,7 @@ export default function DisabilitySportGapPage() {
               polarity="up-is-bad"
               changeText="persistent 21-point gap · accessible facilities funding stalled"
               sparklineData={[22,22,22,21,21,21,21]}
+              source="Sport England — Jan 2024"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function DisabilitySportGapPage() {
               title="Disabled adults inactive (% doing no activity), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Disabled adults inactive (% doing no activity)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function DisabilitySportGapPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Gap between disabled and non-disabled sport participation (pp), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Gap between disabled and non-disabled sport participation (pp)',
+                colour: '#6B7280',
+                data: ([22,22,22,21,21,21,21]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Gap between disabled and non-disabled sport participation (pp)"
+              source={{
+                name: 'Sport England',
+                dataset: 'Gap between disabled and non-disabled sport participation (pp)',
+                frequency: 'annual',
+                url: 'https://www.sportengland.org/research-and-data/data/active-lives',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function DisabilitySportGapPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.sportengland.org/research-and-data/data/active-lives" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Sport England</a> — primary data source. Retrieved Jan 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

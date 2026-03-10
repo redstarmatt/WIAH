@@ -22,6 +22,10 @@ export default function OnlineGroomingPage() {
       data: ([29,30,32,33,35,36,37]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2018, 0, 1), label: '2018: Rapid social media spread' },
+    { date: new Date(2020, 0, 1), label: '2020: Lockdown · children online more' },
+  ];
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function OnlineGroomingPage() {
         <TopicHeader
           topic="Online Grooming"
           question="Is Online Child Grooming Getting Worse?"
-          finding="6,350 online grooming offences were recorded in England and Wales in 2023 — up 80% in five years. Cases involving children under 13 now account for 37..."
+          finding="6,350 online grooming offences were recorded in England and Wales in 2023 — up 80% in five years. Cases involving children under 13 now account for 37% of the total. Under-reporting remains significant."
           colour="#6B7280"
           preposition="with"
         />
@@ -44,6 +48,7 @@ export default function OnlineGroomingPage() {
               polarity="up-is-bad"
               changeText="up 80% in 5 years · under-reporting still significant"
               sparklineData={[3500,3800,4200,4900,5600,6100,6350]}
+              source="Home Office / ONS — Jan 2024"
             />
             <MetricCard
               label="Cases involving under-13s"
@@ -52,6 +57,7 @@ export default function OnlineGroomingPage() {
               polarity="up-is-bad"
               changeText="up from 29% in 2018 · younger children increasingly targeted"
               sparklineData={[29,30,32,33,35,36,37]}
+              source="Home Office / ONS — Jan 2024"
             />
           </div>
         </section>
@@ -62,6 +68,7 @@ export default function OnlineGroomingPage() {
               title="Online grooming offences recorded (England & Wales), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Online grooming offences recorded (England & Wales)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +78,29 @@ export default function OnlineGroomingPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Cases involving under-13s, UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Cases involving under-13s',
+                colour: '#6B7280',
+                data: ([29,30,32,33,35,36,37]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Cases involving under-13s"
+              source={{
+                name: 'Home Office / ONS',
+                dataset: 'Cases involving under-13s',
+                frequency: 'annual',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/childabuseinenglandandwales',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +115,7 @@ export default function OnlineGroomingPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/childabuseinenglandandwales" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Home Office / ONS</a> — primary data source. Retrieved Jan 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

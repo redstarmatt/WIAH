@@ -22,6 +22,9 @@ export default function LoanSharksPage() {
       data: ([75,80,82,85,83,84,84]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2022, 0, 1), label: '2022: Credit tightens · illegal lending rises' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function LoanSharksPage() {
         <TopicHeader
           topic="Loan Sharks"
           question="How Many People Are Borrowing from Illegal Lenders?"
-          finding="An estimated 1.08 million people in England are borrowing from illegal money lenders — up as credit tightens. Average debt stands at £4,500 at APRs of..."
+          finding="An estimated 1.08 million people in England are borrowing from illegal money lenders — up as credit tightens. Average debt stands at £4,500 at APRs of 1,000% or more. Only 84 prosecutions were brought last year."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function LoanSharksPage() {
               polarity="up-is-bad"
               changeText="rising as credit tightens · avg debt £4,500 at 1,000%+ APR"
               sparklineData={[680000,720000,780000,860000,960000,1020000,1080000]}
+              source="HMRC Illegal Money Lending Team — Dec 2023"
             />
             <MetricCard
               label="Illegal money lending prosecutions (annual)"
@@ -52,6 +56,7 @@ export default function LoanSharksPage() {
               polarity="up-is-bad"
               changeText="vastly underprosecuted vs scale of problem"
               sparklineData={[75,80,82,85,83,84,84]}
+              source="HMRC Illegal Money Lending Team — Dec 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function LoanSharksPage() {
               title="Illegal lending victims (England, estimate), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Illegal lending victims (England, estimate)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function LoanSharksPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Illegal money lending prosecutions (annual), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Illegal money lending prosecutions (annual)',
+                colour: '#6B7280',
+                data: ([75,80,82,85,83,84,84]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Illegal money lending prosecutions (annual)"
+              source={{
+                name: 'HMRC Illegal Money Lending Team',
+                dataset: 'Illegal money lending prosecutions (annual)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/publications/illegal-money-lending-team-annual-report',
+                date: 'Dec 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function LoanSharksPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/publications/illegal-money-lending-team-annual-report" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">HMRC Illegal Money Lending Team</a> — primary data source. Retrieved Dec 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

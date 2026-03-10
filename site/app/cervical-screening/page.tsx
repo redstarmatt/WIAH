@@ -22,6 +22,11 @@ export default function CervicalScreeningPage() {
       data: ([3.6,3.5,3.4,3.4,3.4,3.4,3.4]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2018, 0, 1), label: '2018: Jade Goody effect reverses' },
+    { date: new Date(2020, 0, 1), label: '2020: COVID pause' },
+  ];
+  const chartTargetLine = { value: 75.0, label: 'NHS 75% coverage target' };
 
   return (
     <>
@@ -30,7 +35,7 @@ export default function CervicalScreeningPage() {
         <TopicHeader
           topic="Cervical Screening"
           question="Why Has Cervical Screening Fallen to a 25-Year Low?"
-          finding="Cervical screening coverage is at its lowest since records began — 69.9% against a 75% target. Stigma, access barriers and appointment shortages are d..."
+          finding="Cervical screening coverage is at its lowest since records began — 69.9% against a 75% target. Stigma, access barriers and appointment shortages are driving the decline."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +49,7 @@ export default function CervicalScreeningPage() {
               polarity="up-is-good"
               changeText="25-year low · down from 80.4% in 2012"
               sparklineData={[80.4,79.1,77.5,75,72.9,71.4,69.9]}
+              source="NHS Digital — Aug 2023"
             />
             <MetricCard
               label="HPV detected needing treatment"
@@ -52,6 +58,7 @@ export default function CervicalScreeningPage() {
               polarity="up-is-bad"
               changeText="stable · younger cohorts better protected by vaccination"
               sparklineData={[3.6,3.5,3.4,3.4,3.4,3.4,3.4]}
+              source="NHS Digital — Aug 2023"
             />
           </div>
         </section>
@@ -62,6 +69,8 @@ export default function CervicalScreeningPage() {
               title="Cervical screening coverage (England, 5-year), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              targetLine={chartTargetLine}
+              annotations={chartAnnotations}
               yLabel="Cervical screening coverage (England, 5-year)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +80,29 @@ export default function CervicalScreeningPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="HPV detected needing treatment, UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'HPV detected needing treatment',
+                colour: '#6B7280',
+                data: ([3.6,3.5,3.4,3.4,3.4,3.4,3.4]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="HPV detected needing treatment"
+              source={{
+                name: 'NHS Digital',
+                dataset: 'HPV detected needing treatment',
+                frequency: 'annual',
+                url: 'https://digital.nhs.uk/data-and-information/publications/statistical/cervical-screening-programme',
+                date: 'Aug 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +117,7 @@ export default function CervicalScreeningPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://digital.nhs.uk/data-and-information/publications/statistical/cervical-screening-programme" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS Digital</a> — primary data source. Retrieved Aug 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

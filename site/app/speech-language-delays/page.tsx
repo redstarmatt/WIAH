@@ -22,6 +22,9 @@ export default function SpeechLanguageDelaysPage() {
       data: ([18,19,21,28,34,37,38]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: Lockdown · language exposure cut' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function SpeechLanguageDelaysPage() {
         <TopicHeader
           topic="Speech & Language Delays"
           question="Why Are So Many Children Starting School Unable to Talk Properly?"
-          finding="17.5% of children in England now start school with speech and language delays — up from 14% before the pandemic. 38% of children referred for speech t..."
+          finding="17.5% of children in England now start school with speech and language delays — up from 14% before the pandemic. 38% of children referred for speech therapy wait more than 18 weeks. The speech and language therapy workforce is chronically short."
           colour="#E63946"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function SpeechLanguageDelaysPage() {
               polarity="up-is-bad"
               changeText="up from 14% in 2019 · post-lockdown language development affected"
               sparklineData={[14,14,14,15,16.5,17,17.5]}
+              source="RCSLT / NHS England — Nov 2023"
             />
             <MetricCard
               label="Children referred for speech therapy waiting >18 weeks (%)"
@@ -52,6 +56,7 @@ export default function SpeechLanguageDelaysPage() {
               polarity="up-is-bad"
               changeText="up from 18% in 2019 · SLT workforce shortfall"
               sparklineData={[18,19,21,28,34,37,38]}
+              source="RCSLT / NHS England — Nov 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function SpeechLanguageDelaysPage() {
               title="Children starting school with speech/language delays (%), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Children starting school with speech/language delays (%)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function SpeechLanguageDelaysPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Children referred for speech therapy waiting >18 weeks (%), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Children referred for speech therapy waiting >18 weeks (%)',
+                colour: '#6B7280',
+                data: ([18,19,21,28,34,37,38]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Children referred for speech therapy waiting >18 weeks (%)"
+              source={{
+                name: 'RCSLT / NHS England',
+                dataset: 'Children referred for speech therapy waiting >18 weeks (%)',
+                frequency: 'annual',
+                url: 'https://www.rcslt.org/learning/why-speech-and-language-therapy-matters/children/',
+                date: 'Nov 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function SpeechLanguageDelaysPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.rcslt.org/learning/why-speech-and-language-therapy-matters/children/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">RCSLT / NHS England</a> — primary data source. Retrieved Nov 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

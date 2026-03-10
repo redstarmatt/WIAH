@@ -22,6 +22,9 @@ export default function ForcedMarriagePage() {
       data: ([26,25,26,24,25,25,25]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2014, 0, 1), label: '2014: Criminalised in England & Wales' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function ForcedMarriagePage() {
         <TopicHeader
           topic="Forced Marriage"
           question="How Many People Are Forced Into Marriage in Britain?"
-          finding="The Forced Marriage Unit handled 2,068 cases in 2023 — a record. One in four involved under-18s. Experts believe the true figure is many times higher,..."
+          finding="The Forced Marriage Unit handled 2,068 cases in 2023 — a record. One in four involved under-18s. Experts believe the true figure is many times higher, as cases go unreported within communities."
           colour="#6B7280"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function ForcedMarriagePage() {
               polarity="up-is-bad"
               changeText="down from 1,735 in 2012 · COVID dip followed by rise"
               sparklineData={[1100,1267,1735,1800,1409,1800,2068]}
+              source="FCDO Forced Marriage Unit — Nov 2023"
             />
             <MetricCard
               label="Under-18s in forced marriage cases"
@@ -52,6 +56,7 @@ export default function ForcedMarriagePage() {
               polarity="up-is-bad"
               changeText="persistent proportion · 11 reported cases involved under-16s"
               sparklineData={[26,25,26,24,25,25,25]}
+              source="FCDO Forced Marriage Unit — Nov 2023"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function ForcedMarriagePage() {
               title="Forced marriage cases handled by FMU (annual), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Forced marriage cases handled by FMU (annual)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function ForcedMarriagePage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Under-18s in forced marriage cases, UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Under-18s in forced marriage cases',
+                colour: '#6B7280',
+                data: ([26,25,26,24,25,25,25]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Under-18s in forced marriage cases"
+              source={{
+                name: 'FCDO Forced Marriage Unit',
+                dataset: 'Under-18s in forced marriage cases',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/collections/forced-marriage-unit-statistics',
+                date: 'Nov 2023',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function ForcedMarriagePage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/collections/forced-marriage-unit-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">FCDO Forced Marriage Unit</a> — primary data source. Retrieved Nov 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

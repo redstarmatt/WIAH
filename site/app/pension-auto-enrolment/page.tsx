@@ -22,6 +22,10 @@ export default function PensionAutoEnrolmentPage() {
       data: ([52,50,46,43,41,39,37]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2012, 0, 1), label: '2012: Auto-enrolment begins' },
+  ];
+  const chartTargetLine = { value: 90.0, label: '90% participation ambition' };
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function PensionAutoEnrolmentPage() {
         <TopicHeader
           topic="Pension Auto-Enrolment"
           question="Has Pension Auto-Enrolment Worked?"
-          finding="88% of eligible workers are now enrolled in a workplace pension — up from 55% in 2012. Auto-enrolment is one of the most successful British social pol..."
+          finding="88% of eligible workers are now enrolled in a workplace pension — up from 55% in 2012. Auto-enrolment is one of the most successful British social policy reforms of recent decades, though minimum contribution rates remain too low for most to retire comfortably."
           colour="#2A9D8F"
           preposition="with"
         />
@@ -44,6 +48,7 @@ export default function PensionAutoEnrolmentPage() {
               polarity="up-is-good"
               changeText="up from 55% in 2012 · auto-enrolment transformative"
               sparklineData={[55,65,72,78,83,86,88]}
+              source="The Pensions Regulator — Jan 2024"
             />
             <MetricCard
               label="Workers below adequate savings threshold (%)"
@@ -52,6 +57,7 @@ export default function PensionAutoEnrolmentPage() {
               polarity="up-is-bad"
               changeText="down from 52% in 2012 · but minimum contributions still too low"
               sparklineData={[52,50,46,43,41,39,37]}
+              source="The Pensions Regulator — Jan 2024"
             />
           </div>
         </section>
@@ -62,6 +68,8 @@ export default function PensionAutoEnrolmentPage() {
               title="Workers enrolled in workplace pension (%), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              targetLine={chartTargetLine}
+              annotations={chartAnnotations}
               yLabel="Workers enrolled in workplace pension (%)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +79,29 @@ export default function PensionAutoEnrolmentPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Workers below adequate savings threshold (%), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Workers below adequate savings threshold (%)',
+                colour: '#6B7280',
+                data: ([52,50,46,43,41,39,37]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Workers below adequate savings threshold (%)"
+              source={{
+                name: 'The Pensions Regulator',
+                dataset: 'Workers below adequate savings threshold (%)',
+                frequency: 'annual',
+                url: 'https://www.thepensionsregulator.gov.uk/en/document-library/research-and-analysis/automatic-enrolment-declaration-of-compliance-report',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +116,7 @@ export default function PensionAutoEnrolmentPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.thepensionsregulator.gov.uk/en/document-library/research-and-analysis/automatic-enrolment-declaration-of-compliance-report" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">The Pensions Regulator</a> — primary data source. Retrieved Jan 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>

@@ -22,6 +22,9 @@ export default function VeteranRoughSleepingPage() {
       data: ([8700,8000,7200,6800,6400,6100,5900]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
   ];
+  const chartAnnotations: Annotation[] = [
+    { date: new Date(2021, 0, 1), label: '2021: Op FORTITUDE launched' },
+  ];
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function VeteranRoughSleepingPage() {
         <TopicHeader
           topic="Veteran Rough Sleeping"
           question="Are Veterans Still Sleeping Rough?"
-          finding="320 veterans were found sleeping rough in England on any given night in 2023 — down from 400 in 2018. Op FORTITUDE and specialist veteran housing path..."
+          finding="320 veterans were found sleeping rough in England on any given night in 2023 — down from 400 in 2018. Op FORTITUDE and specialist veteran housing pathways are making progress, but hidden homelessness among veterans is thought to be much higher."
           colour="#6B7280"
           preposition="with"
         />
@@ -44,6 +47,7 @@ export default function VeteranRoughSleepingPage() {
               polarity="up-is-good"
               changeText="down from 400 in 2018 · Op FORTITUDE and specialist services"
               sparklineData={[400,380,360,345,335,325,320]}
+              source="MHCLG / Office for Veterans Affairs — Feb 2024"
             />
             <MetricCard
               label="Veterans assessed as homeless by local authorities (annual)"
@@ -52,6 +56,7 @@ export default function VeteranRoughSleepingPage() {
               polarity="up-is-good"
               changeText="down from 8,700 in 2012 · Armed Forces Covenant housing duty"
               sparklineData={[8700,8000,7200,6800,6400,6100,5900]}
+              source="MHCLG / Office for Veterans Affairs — Feb 2024"
             />
           </div>
         </section>
@@ -62,6 +67,7 @@ export default function VeteranRoughSleepingPage() {
               title="Veterans sleeping rough on any given night (England), UK"
               subtitle="UK data. Annotations mark key policy changes."
               series={chartSeries}
+              annotations={chartAnnotations}
               yLabel="Veterans sleeping rough on any given night (England)"
               source={{
                 name: 'ONS / NHS England / Government Statistical Service',
@@ -71,6 +77,29 @@ export default function VeteranRoughSleepingPage() {
             />
           </section>
         </ScrollReveal>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Veterans assessed as homeless by local authorities (annual), UK"
+              subtitle="UK data. Source: official government statistics."
+              series={[{
+                id: 'sec',
+                label: 'Veterans assessed as homeless by local authorities (annual)',
+                colour: '#6B7280',
+                data: ([8700,8000,7200,6800,6400,6100,5900]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+              }]}
+              yLabel="Veterans assessed as homeless by local authorities (annual)"
+              source={{
+                name: 'MHCLG / Office for Veterans Affairs',
+                dataset: 'Veterans assessed as homeless by local authorities (annual)',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/rough-sleeping-snapshot-in-england-autumn-2023',
+                date: 'Feb 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
 
         <ScrollReveal>
           <section className="max-w-2xl mb-12">
@@ -85,7 +114,7 @@ export default function VeteranRoughSleepingPage() {
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <p>Data is sourced from official UK government statistics including ONS, NHS England, Home Office, DfE and devolved equivalents. All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication. See individual metric sources for full methodology notes.</p>
+            <div className="space-y-2"><p><a href="https://www.gov.uk/government/statistics/rough-sleeping-snapshot-in-england-autumn-2023" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">MHCLG / Office for Veterans Affairs</a> — primary data source. Retrieved Feb 2024.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
           </div>
         </section>
       </main>
