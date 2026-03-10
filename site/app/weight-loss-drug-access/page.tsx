@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import TopicNav from '@/components/TopicNav'
 import TopicHeader from '@/components/TopicHeader'
 import MetricCard from '@/components/MetricCard'
+import MetricDetailModal from '@/components/MetricDetailModal'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
@@ -28,6 +29,7 @@ function yearToDate(y: number): Date {
 
 export default function WeightLossDrugAccessPage() {
   const [data, setData] = useState<WeightLossDrugAccessData | null>(null)
+  const [expanded, setExpanded] = useState<string | null>(null)
 
   useEffect(() => {
     fetch('/data/weight-loss-drug-access/weight_loss_drug_access.json')
@@ -49,6 +51,50 @@ export default function WeightLossDrugAccessPage() {
         },
       ]
     : []
+
+  // Series for eligible-but-not-treated modal
+  const eligibleSeries: Series[] = [
+    {
+      id: 'eligible',
+      label: 'Estimated eligible population (millions)',
+      colour: '#F4A261',
+      data: [
+        { date: new Date(2021, 0, 1), value: 3.1 },
+        { date: new Date(2022, 0, 1), value: 3.2 },
+        { date: new Date(2023, 0, 1), value: 3.3 },
+        { date: new Date(2024, 0, 1), value: 3.4 },
+      ],
+    },
+    {
+      id: 'treated',
+      label: 'Receiving NHS GLP-1 for obesity (thousands)',
+      colour: '#2A9D8F',
+      data: [
+        { date: new Date(2021, 0, 1), value: 0.002 },
+        { date: new Date(2022, 0, 1), value: 0.005 },
+        { date: new Date(2023, 0, 1), value: 0.015 },
+        { date: new Date(2024, 0, 1), value: 0.035 },
+      ],
+    },
+  ]
+
+  // Series for NHS cost modal
+  const costSeries: Series[] = [
+    {
+      id: 'cost',
+      label: 'Obesity-related NHS cost (£ billions)',
+      colour: '#E63946',
+      data: [
+        { date: new Date(2018, 0, 1), value: 5.1 },
+        { date: new Date(2019, 0, 1), value: 5.3 },
+        { date: new Date(2020, 0, 1), value: 5.6 },
+        { date: new Date(2021, 0, 1), value: 5.9 },
+        { date: new Date(2022, 0, 1), value: 6.1 },
+        { date: new Date(2023, 0, 1), value: 6.3 },
+        { date: new Date(2024, 0, 1), value: 6.5 },
+      ],
+    },
+  ]
 
   return (
     <>
@@ -86,7 +132,8 @@ export default function WeightLossDrugAccessPage() {
               polarity={'up-is-good' as const}
               changeText="rapid growth but demand far outstrips supply"
               sparklineData={[12, 45, 180, 420]}
-              href="#sec-chart"source="NHS Business Services Authority · Prescription Cost Analysis"
+              onExpand={() => setExpanded('prescriptions')}
+              source="NHS Business Services Authority · Prescription Cost Analysis"
             />
             <MetricCard
               label="Eligible but not treated"
@@ -96,7 +143,8 @@ export default function WeightLossDrugAccessPage() {
               polarity={'up-is-bad' as const}
               changeText="NICE eligible · NHS capacity absent"
               sparklineData={[3.4, 3.4, 3.4, 3.4]}
-              href="#sec-callout"source="NICE TA875 · NHS England estimates"
+              onExpand={() => setExpanded('eligible')}
+              source="NICE TA875 · NHS England estimates"
             />
             <MetricCard
               label="Weight-related NHS cost"
@@ -106,7 +154,8 @@ export default function WeightLossDrugAccessPage() {
               polarity={'up-is-bad' as const}
               changeText="obesity-related treatment costs"
               sparklineData={[5.1, 5.3, 5.6, 5.9, 6.1, 6.3, 6.5]}
-              href="#sec-callout"source="NHS England · Health Economics"
+              onExpand={() => setExpanded('cost')}
+              source="NHS England · Health Economics"
             />
           </div>
         </ScrollReveal>
@@ -149,6 +198,52 @@ export default function WeightLossDrugAccessPage() {
           </div>
         </section>
       </main>
+
+      {/* Expanded metric modals */}
+      {expanded === 'prescriptions' && (
+        <MetricDetailModal
+          title="NHS GLP-1 weight-loss drug prescriptions, 2021–2024"
+          subtitle="Total GLP-1 receptor agonist prescriptions dispensed through NHS channels (thousands), including primary care and specialist weight management pathways."
+          series={prescriptionSeries}
+          yLabel="Prescriptions (thousands)"
+          source={{
+            name: 'NHS Business Services Authority',
+            dataset: 'Prescription Cost Analysis',
+            url: 'https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis',
+            frequency: 'annual',
+          }}
+          onClose={() => setExpanded(null)}
+        />
+      )}
+      {expanded === 'eligible' && (
+        <MetricDetailModal
+          title="NICE-eligible population vs NHS treatment, 2021–2024"
+          subtitle="Estimated adults meeting NICE TA875 criteria (BMI ≥35 + weight-related condition) versus those actually receiving GLP-1 drugs for obesity on the NHS. Treated numbers shown in millions for scale comparison."
+          series={eligibleSeries}
+          yLabel="Population (millions)"
+          source={{
+            name: 'NICE / NHS England',
+            dataset: 'TA875 eligible population estimates',
+            url: 'https://www.nice.org.uk/guidance/ta875',
+            frequency: 'annual',
+          }}
+          onClose={() => setExpanded(null)}
+        />
+      )}
+      {expanded === 'cost' && (
+        <MetricDetailModal
+          title="Obesity-related NHS costs, 2018–2024"
+          subtitle="Estimated annual cost to the NHS of treating obesity-related conditions including type 2 diabetes, cardiovascular disease, and musculoskeletal disorders."
+          series={costSeries}
+          yLabel="Cost (£ billions)"
+          source={{
+            name: 'NHS England',
+            dataset: 'Health Economics — Obesity cost estimates',
+            frequency: 'annual',
+          }}
+          onClose={() => setExpanded(null)}
+        />
+      )}
     </>
   )
 }
