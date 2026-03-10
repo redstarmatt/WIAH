@@ -65,7 +65,7 @@ export const CATEGORIES: Category[] = [
     name: 'Mental Health & Wellbeing',
     slug: 'mental-health-wellbeing',
     featured: ['mental-health', 'mental-health-waits', 'suicide-prevention'],
-    topics: ['mental-health', 'mental-health-waits', 'suicide-prevention', 'adhd-autism', 'wellbeing', 'loneliness', 'gambling', 'gambling-harm', 'eating-disorders', 'drugs', 'drug-misuse', 'alcohol', 'drug-deaths', 'obesity', 'physical-inactivity', 'child-mental-health', 'sport-participation', 'student-mental-health', 'addiction-services', 'talking-therapies', 'camhs-access', 'eating-disorder-waiting', 'workplace-stress-sickness', 'perinatal-mental-health', 'addiction-treatment-outcomes', 'social-prescribing', 'exercise-prescription', 'gambling-harm-treatment', 'antidepressant-prescribing', 'mental-health-crisis-beds', 'self-harm-hospital-admissions', 'men-mental-health-gap', 'screen-time-wellbeing', 'postnatal-depression-care', 'sleep-disorder-prevalence', 'adhd-waiting-times', 'loneliness-young-people', 'compulsive-gambling-youth'],
+    topics: ['mental-health', 'mental-health-waits', 'suicide-prevention', 'adhd-autism', 'wellbeing', 'loneliness', 'gambling', 'gambling-harm', 'eating-disorders', 'drugs', 'drug-misuse', 'alcohol', 'drug-deaths', 'obesity', 'physical-inactivity', 'child-mental-health', 'sport-participation', 'student-mental-health', 'addiction-services', 'talking-therapies', 'camhs-access', 'eating-disorder-waiting', 'workplace-stress-sickness', 'perinatal-mental-health', 'addiction-treatment-outcomes', 'social-prescribing', 'exercise-prescription', 'gambling-harm-treatment', 'antidepressant-prescribing', 'mental-health-crisis-beds', 'self-harm-hospital-admissions', 'men-mental-health-gap', 'screen-time-wellbeing', 'postnatal-depression-care', 'sleep-disorder-prevalence', 'adhd-waiting-times', 'loneliness-young-people', 'compulsive-gambling-youth', 'vaping-youth', 'adult-obesity', 'melanoma-rates', 'occupational-disease', 'sugar-levy-impact', 'alcohol-specific-deaths', 'gambling-advertising', 'online-gambling-growth', 'fixed-odds-betting-reform'],
   },
   {
     name: 'Crime & Justice',
@@ -95,7 +95,7 @@ export const CATEGORIES: Category[] = [
     name: 'Poverty & Cost of Living',
     slug: 'poverty-cost-of-living',
     featured: ['child-poverty', 'food-banks', 'energy-bills'],
-    topics: ['child-poverty', 'food-banks', 'energy-bills', 'poverty', 'inequality', 'fuel-poverty', 'personal-debt', 'benefits', 'universal-credit', 'pensions', 'pensioner-poverty', 'food-insecurity', 'wealth-inequality', 'food-deserts', 'funeral-poverty', 'period-poverty', 'rent-arrears', 'in-work-poverty', 'housing-benefit', 'council-tax', 'child-poverty-regions', 'disability-poverty', 'carer-poverty', 'water-affordability', 'transport-cost-poverty', 'debt-enforcement-hardship', 'inheritance-inequality', 'benefit-sanction-impact', 'winter-fuel-payment-reform', 'geographic-wealth-inequality', 'childcare-cost-barrier', 'holiday-hunger', 'payday-loan-decline', 'energy-disconnections', 'council-tax-debt', 'pension-credit-take-up', 'car-insurance-poverty', 'emergency-dental-access', 'financial-abuse-elderly', 'over-the-counter-medicine-costs', 'pet-food-banks', 'uniform-cost-burden'],
+    topics: ['child-poverty', 'food-banks', 'energy-bills', 'poverty', 'inequality', 'fuel-poverty', 'personal-debt', 'benefits', 'universal-credit', 'pensions', 'pensioner-poverty', 'food-insecurity', 'wealth-inequality', 'food-deserts', 'funeral-poverty', 'period-poverty', 'rent-arrears', 'in-work-poverty', 'housing-benefit', 'council-tax', 'child-poverty-regions', 'disability-poverty', 'carer-poverty', 'water-affordability', 'transport-cost-poverty', 'debt-enforcement-hardship', 'inheritance-inequality', 'benefit-sanction-impact', 'winter-fuel-payment-reform', 'geographic-wealth-inequality', 'childcare-cost-barrier', 'holiday-hunger', 'payday-loan-decline', 'energy-disconnections', 'council-tax-debt', 'pension-credit-take-up', 'car-insurance-poverty', 'emergency-dental-access', 'financial-abuse-elderly', 'over-the-counter-medicine-costs', 'pet-food-banks', 'uniform-cost-burden', 'council-tax-bailiffs', 'uc-deductions', 'pension-auto-enrolment', 'credit-union-membership', 'equity-release-market'],
   },
   {
     name: 'Environment & Climate',
@@ -125,7 +125,7 @@ export const CATEGORIES: Category[] = [
     name: 'Children & Families',
     slug: 'children-families',
     featured: ['children-in-care', 'free-school-meals-gap', 'early-years-quality'],
-    topics: ['children-in-care', 'foster-placement-shortage', 'child-criminal-exploitation', 'special-guardianship-use', 'teen-conception-rates', 'school-uniform-costs', 'free-school-meals-gap', 'shared-parental-leave', 'child-maintenance-enforcement', 'early-years-quality', 'school-meals-standards', 'infant-food-poverty', 'baby-loss-support'],
+    topics: ['children-in-care', 'foster-placement-shortage', 'child-criminal-exploitation', 'special-guardianship-use', 'teen-conception-rates', 'school-uniform-costs', 'free-school-meals-gap', 'shared-parental-leave', 'child-maintenance-enforcement', 'early-years-quality', 'school-meals-standards', 'infant-food-poverty', 'baby-loss-support', 'phonics-outcomes', 'school-readiness', 'speech-language-delays', 'home-education', 'infant-feeding', 'child-tooth-decay'],
   },
   {
     name: 'Food & Farming',
