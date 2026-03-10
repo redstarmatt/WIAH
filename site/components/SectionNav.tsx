@@ -20,12 +20,12 @@ export default function SectionNav({ sections }: SectionNavProps) {
     }
     return sections[0]?.id ?? '';
   });
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
   const pillRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const navRef = useRef<HTMLDivElement>(null);
 
   // On mount: if the URL contains a hash matching a section, scroll to it.
-  // Retry multiple times because the page may still be loading async content
-  // when this component first mounts, causing the element to have no height yet.
   useEffect(() => {
     const hash = window.location.hash.slice(1);
     if (!hash || !sections.some(s => s.id === hash)) return;
@@ -39,7 +39,6 @@ export default function SectionNav({ sections }: SectionNavProps) {
       window.scrollTo({ top: offset, behavior: 'instant' });
     };
 
-    // Attempt at 0, 200ms, 500ms, 1000ms to cover progressive data-loading
     const t0 = setTimeout(scrollToHash, 0);
     const t1 = setTimeout(scrollToHash, 200);
     const t2 = setTimeout(scrollToHash, 500);
@@ -47,9 +46,31 @@ export default function SectionNav({ sections }: SectionNavProps) {
     return () => { clearTimeout(t0); clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Scrollspy: find whichever section's top is closest to (but above) the 30% viewport mark.
+  // Track nav scroll position to show/hide fade indicators
+  const updateFades = useCallback(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    setCanScrollLeft(nav.scrollLeft > 4);
+    setCanScrollRight(nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    updateFades();
+    nav.addEventListener('scroll', updateFades, { passive: true });
+    window.addEventListener('resize', updateFades, { passive: true });
+    return () => {
+      nav.removeEventListener('scroll', updateFades);
+      window.removeEventListener('resize', updateFades);
+    };
+  }, [updateFades]);
+
+  // Scrollspy: find whichever section's top is closest to (but above) the
+  // sticky nav height. This activates a section only once it has scrolled
+  // past the nav bar, preventing premature tab switching.
+  const THRESHOLD = 100; // px — matches the combined sticky nav height
   const onScroll = useCallback(() => {
-    const threshold = window.innerHeight * 0.3;
     let best: string | null = null;
     let bestDist = Infinity;
 
@@ -57,9 +78,8 @@ export default function SectionNav({ sections }: SectionNavProps) {
       const el = document.getElementById(id);
       if (!el) return;
       const top = el.getBoundingClientRect().top;
-      // Section is above the threshold or just entering view
-      if (top <= threshold) {
-        const dist = threshold - top;
+      if (top <= THRESHOLD) {
+        const dist = THRESHOLD - top;
         if (dist < bestDist) {
           bestDist = dist;
           best = id;
@@ -72,7 +92,7 @@ export default function SectionNav({ sections }: SectionNavProps) {
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // run once on mount
+    onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, [onScroll]);
 
@@ -107,27 +127,43 @@ export default function SectionNav({ sections }: SectionNavProps) {
   };
 
   return (
-    <div
-      ref={navRef}
-      className="sticky top-[48px] z-40 bg-white border-b border-wiah-border overflow-x-auto"
-      style={{ scrollbarWidth: 'none' }}
-    >
-      <div className="flex gap-1 px-4 py-2 min-w-max">
-        {sections.map(({ id, label }) => (
-          <button
-            key={id}
-            ref={el => { pillRefs.current[id] = el; }}
-            onClick={(e) => scrollTo(id, e)}
-            className={`
-              px-3 py-1 text-[11px] font-mono rounded-full whitespace-nowrap transition-colors
-              ${active === id
-                ? 'bg-wiah-dark text-white'
-                : 'text-wiah-mid hover:text-wiah-black hover:bg-wiah-light'}
-            `}
-          >
-            {label}
-          </button>
-        ))}
+    <div className="sticky top-[48px] z-40 bg-white border-b border-wiah-border">
+      {/* Left fade */}
+      {canScrollLeft && (
+        <div
+          className="absolute left-0 top-0 bottom-0 w-8 z-10 pointer-events-none"
+          style={{ background: 'linear-gradient(to right, white, transparent)' }}
+        />
+      )}
+      {/* Right fade */}
+      {canScrollRight && (
+        <div
+          className="absolute right-0 top-0 bottom-0 w-8 z-10 pointer-events-none"
+          style={{ background: 'linear-gradient(to left, white, transparent)' }}
+        />
+      )}
+      <div
+        ref={navRef}
+        className="overflow-x-auto"
+        style={{ scrollbarWidth: 'none' }}
+      >
+        <div className="flex gap-1 px-4 py-2 min-w-max">
+          {sections.map(({ id, label }) => (
+            <button
+              key={id}
+              ref={el => { pillRefs.current[id] = el; }}
+              onClick={(e) => scrollTo(id, e)}
+              className={`
+                px-3 py-1 text-[11px] font-mono rounded-full whitespace-nowrap transition-colors
+                ${active === id
+                  ? 'bg-wiah-dark text-white'
+                  : 'text-wiah-mid hover:text-wiah-black hover:bg-wiah-light'}
+              `}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
