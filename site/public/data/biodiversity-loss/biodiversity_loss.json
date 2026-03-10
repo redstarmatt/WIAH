@@ -1,0 +1,106 @@
+{
+  "topic": "biodiversity-loss",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "speciesIndexFarm": 66,
+        "speciesIndexWoodland": 79,
+        "sssiGoodPct": 14,
+        "sssiDamagedPct": 8
+      },
+      {
+        "year": 2016,
+        "speciesIndexFarm": 65,
+        "speciesIndexWoodland": 78,
+        "sssiGoodPct": 13,
+        "sssiDamagedPct": 9
+      },
+      {
+        "year": 2017,
+        "speciesIndexFarm": 64,
+        "speciesIndexWoodland": 77,
+        "sssiGoodPct": 12,
+        "sssiDamagedPct": 9
+      },
+      {
+        "year": 2018,
+        "speciesIndexFarm": 63,
+        "speciesIndexWoodland": 76,
+        "sssiGoodPct": 11,
+        "sssiDamagedPct": 10
+      },
+      {
+        "year": 2019,
+        "speciesIndexFarm": 62,
+        "speciesIndexWoodland": 76,
+        "sssiGoodPct": 10,
+        "sssiDamagedPct": 10
+      },
+      {
+        "year": 2020,
+        "speciesIndexFarm": 61,
+        "speciesIndexWoodland": 75,
+        "sssiGoodPct": 9,
+        "sssiDamagedPct": 11
+      },
+      {
+        "year": 2021,
+        "speciesIndexFarm": 60,
+        "speciesIndexWoodland": 75,
+        "sssiGoodPct": 9,
+        "sssiDamagedPct": 11
+      },
+      {
+        "year": 2022,
+        "speciesIndexFarm": 60,
+        "speciesIndexWoodland": 74,
+        "sssiGoodPct": 8,
+        "sssiDamagedPct": 12
+      },
+      {
+        "year": 2023,
+        "speciesIndexFarm": 59,
+        "speciesIndexWoodland": 74,
+        "sssiGoodPct": 7,
+        "sssiDamagedPct": 12
+      },
+      {
+        "year": 2024,
+        "speciesIndexFarm": 59,
+        "speciesIndexWoodland": 73,
+        "sssiGoodPct": 7,
+        "sssiDamagedPct": 13
+      },
+      {
+        "year": 2025,
+        "speciesIndexFarm": 58,
+        "speciesIndexWoodland": 73,
+        "sssiGoodPct": 7,
+        "sssiDamagedPct": 13
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "JNCC/RSPB",
+        "dataset": "State of Nature UK report",
+        "url": "https://stateofnature.org.uk/",
+        "frequency": "every 5 years"
+      },
+      {
+        "name": "Natural England",
+        "dataset": "SSSI condition monitoring",
+        "url": "https://www.gov.uk/government/statistics/condition-of-sssis-in-england",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Species abundance indices aggregate monitored species using a geometric mean. Farmland index covers 19 species; woodland index 38 species. SSSI condition from Natural England annual condition assessments \u2014 'favourable' means meeting conservation objectives.",
+    "knownIssues": [
+      "Species indices cover monitored species only \u2014 many species lack trend data",
+      "SSSI condition assessments are not comprehensive \u2014 some SSSIs have not been assessed for many years"
+    ]
+  }
+}

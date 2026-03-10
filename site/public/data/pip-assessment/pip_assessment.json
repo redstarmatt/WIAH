@@ -1,0 +1,106 @@
+{
+  "topic": "pip-assessment",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "totalClaimantsM": 1.6,
+        "newAwardsThousands": 380,
+        "mrSuccessPct": 18,
+        "tribunalSuccessPct": 55
+      },
+      {
+        "year": 2016,
+        "totalClaimantsM": 1.9,
+        "newAwardsThousands": 420,
+        "mrSuccessPct": 19,
+        "tribunalSuccessPct": 58
+      },
+      {
+        "year": 2017,
+        "totalClaimantsM": 2.2,
+        "newAwardsThousands": 450,
+        "mrSuccessPct": 20,
+        "tribunalSuccessPct": 60
+      },
+      {
+        "year": 2018,
+        "totalClaimantsM": 2.5,
+        "newAwardsThousands": 480,
+        "mrSuccessPct": 21,
+        "tribunalSuccessPct": 62
+      },
+      {
+        "year": 2019,
+        "totalClaimantsM": 2.8,
+        "newAwardsThousands": 500,
+        "mrSuccessPct": 22,
+        "tribunalSuccessPct": 64
+      },
+      {
+        "year": 2020,
+        "totalClaimantsM": 3.0,
+        "newAwardsThousands": 420,
+        "mrSuccessPct": 22,
+        "tribunalSuccessPct": 67
+      },
+      {
+        "year": 2021,
+        "totalClaimantsM": 3.1,
+        "newAwardsThousands": 510,
+        "mrSuccessPct": 23,
+        "tribunalSuccessPct": 68
+      },
+      {
+        "year": 2022,
+        "totalClaimantsM": 3.2,
+        "newAwardsThousands": 560,
+        "mrSuccessPct": 23,
+        "tribunalSuccessPct": 70
+      },
+      {
+        "year": 2023,
+        "totalClaimantsM": 3.4,
+        "newAwardsThousands": 600,
+        "mrSuccessPct": 24,
+        "tribunalSuccessPct": 72
+      },
+      {
+        "year": 2024,
+        "totalClaimantsM": 3.6,
+        "newAwardsThousands": 620,
+        "mrSuccessPct": 24,
+        "tribunalSuccessPct": 73
+      },
+      {
+        "year": 2025,
+        "totalClaimantsM": 3.7,
+        "newAwardsThousands": 640,
+        "mrSuccessPct": 25,
+        "tribunalSuccessPct": 73
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DWP",
+        "dataset": "Personal Independence Payment statistics",
+        "url": "https://www.gov.uk/government/collections/personal-independence-payment-statistics",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "HMCTS",
+        "dataset": "Tribunal statistics quarterly",
+        "url": "https://www.gov.uk/government/collections/tribunals-statistics",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "PIP caseload from DWP administrative data. Appeal success rates calculated from HMCTS social security and child support tribunal statistics \u2014 'claimant success' includes both full and partial awards. Wait times from DWP internal management information.",
+    "knownIssues": [
+      "Not all rejected claimants appeal \u2014 appeal success rate applies only to those who pursue appeals",
+      "DLA to PIP reassessment cases distort early years of caseload data"
+    ]
+  }
+}

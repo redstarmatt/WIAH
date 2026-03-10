@@ -1,0 +1,106 @@
+{
+  "topic": "regional-unemployment",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "northEastRate": 8.5,
+        "londonRate": 6.1,
+        "youthNational": 14.2,
+        "youthNorthEast": 22.4
+      },
+      {
+        "year": 2016,
+        "northEastRate": 7.8,
+        "londonRate": 5.8,
+        "youthNational": 13.8,
+        "youthNorthEast": 21.2
+      },
+      {
+        "year": 2017,
+        "northEastRate": 7.2,
+        "londonRate": 5.2,
+        "youthNational": 12.9,
+        "youthNorthEast": 19.8
+      },
+      {
+        "year": 2018,
+        "northEastRate": 6.5,
+        "londonRate": 4.8,
+        "youthNational": 11.8,
+        "youthNorthEast": 18.4
+      },
+      {
+        "year": 2019,
+        "northEastRate": 6.0,
+        "londonRate": 4.2,
+        "youthNational": 11.2,
+        "youthNorthEast": 17.2
+      },
+      {
+        "year": 2020,
+        "northEastRate": 8.2,
+        "londonRate": 6.5,
+        "youthNational": 16.4,
+        "youthNorthEast": 24.8
+      },
+      {
+        "year": 2021,
+        "northEastRate": 7.5,
+        "londonRate": 5.8,
+        "youthNational": 14.8,
+        "youthNorthEast": 22.1
+      },
+      {
+        "year": 2022,
+        "northEastRate": 6.2,
+        "londonRate": 4.5,
+        "youthNational": 12.2,
+        "youthNorthEast": 18.8
+      },
+      {
+        "year": 2023,
+        "northEastRate": 7.0,
+        "londonRate": 4.4,
+        "youthNational": 12.8,
+        "youthNorthEast": 20.1
+      },
+      {
+        "year": 2024,
+        "northEastRate": 7.5,
+        "londonRate": 4.3,
+        "youthNational": 12.6,
+        "youthNorthEast": 20.8
+      },
+      {
+        "year": 2025,
+        "northEastRate": 7.8,
+        "londonRate": 4.2,
+        "youthNational": 12.4,
+        "youthNorthEast": 21.2
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS/NOMIS",
+        "dataset": "Labour Force Survey regional unemployment",
+        "url": "https://www.nomisweb.co.uk/datasets/lmsregion",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Regional labour market statistics",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/regionallabourmarket/",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Unemployment rates from Labour Force Survey (LFS) via NOMIS API. Quarterly data, 3-month rolling average. Youth unemployment uses ILO definition: 18-24 year olds without work, available and seeking work. Small sample sizes mean regional youth figures have wide confidence intervals.",
+    "knownIssues": [
+      "Small LFS sample for some regions gives wide confidence intervals",
+      "Furlough scheme 2020-21 meant true unemployment was masked \u2014 figures are not comparable across that period"
+    ]
+  }
+}

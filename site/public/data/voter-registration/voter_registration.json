@@ -1,0 +1,106 @@
+{
+  "topic": "voter-registration",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "under25Pct": 45,
+        "over65Pct": 96,
+        "youngPeopleM": 1.8,
+        "bameM": 1.5
+      },
+      {
+        "year": 2016,
+        "under25Pct": 47,
+        "over65Pct": 96,
+        "youngPeopleM": 1.7,
+        "bameM": 1.5
+      },
+      {
+        "year": 2017,
+        "under25Pct": 49,
+        "over65Pct": 97,
+        "youngPeopleM": 1.6,
+        "bameM": 1.5
+      },
+      {
+        "year": 2018,
+        "under25Pct": 52,
+        "over65Pct": 97,
+        "youngPeopleM": 1.6,
+        "bameM": 1.5
+      },
+      {
+        "year": 2019,
+        "under25Pct": 54,
+        "over65Pct": 97,
+        "youngPeopleM": 1.5,
+        "bameM": 1.6
+      },
+      {
+        "year": 2020,
+        "under25Pct": 56,
+        "over65Pct": 97,
+        "youngPeopleM": 1.5,
+        "bameM": 1.6
+      },
+      {
+        "year": 2021,
+        "under25Pct": 57,
+        "over65Pct": 97,
+        "youngPeopleM": 1.5,
+        "bameM": 1.6
+      },
+      {
+        "year": 2022,
+        "under25Pct": 57,
+        "over65Pct": 97,
+        "youngPeopleM": 1.5,
+        "bameM": 1.7
+      },
+      {
+        "year": 2023,
+        "under25Pct": 57,
+        "over65Pct": 97,
+        "youngPeopleM": 1.5,
+        "bameM": 1.7
+      },
+      {
+        "year": 2024,
+        "under25Pct": 57,
+        "over65Pct": 97,
+        "youngPeopleM": 1.5,
+        "bameM": 1.7
+      },
+      {
+        "year": 2025,
+        "under25Pct": 57,
+        "over65Pct": 97,
+        "youngPeopleM": 1.5,
+        "bameM": 1.7
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Electoral Commission",
+        "dataset": "Electoral registration statistics",
+        "url": "https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/our-views-and-research/our-research/electoral-registers",
+        "frequency": "annual"
+      },
+      {
+        "name": "Electoral Commission",
+        "dataset": "Accuracy and completeness of the electoral registers",
+        "url": "https://www.electoralcommission.org.uk/research-reports-and-data/our-reports-and-data-electoral-data/accuracy-and-completeness-electoral-registers",
+        "frequency": "biennial"
+      }
+    ],
+    "methodology": "Electoral register completeness from Electoral Commission biennial survey comparing register entries to ONS population estimates. Age and ethnicity breakdowns from Electoral Commission polling commissioned from Ipsos. Under-registration estimates derived from population estimates minus registered electors.",
+    "knownIssues": [
+      "Completeness estimates have a margin of error of \u00b12\u20133 percentage points",
+      "Automatic Voter Registration pilot data not yet incorporated into national estimates"
+    ]
+  }
+}
