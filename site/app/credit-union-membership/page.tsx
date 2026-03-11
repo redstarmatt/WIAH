@@ -106,7 +106,7 @@ export default function CreditUnionMembershipPage() {
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on Credit Union Membership</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
               <p>Credit Union Membership in the United Kingdom: the numbers show a complex picture. Only 2.1 million people — 3% of the adult population — belong to a credit union, compared to 75% in Ireland. Credit unions offer affordable loans and savings to people excluded from mainstream banking. The headline figure — 2.1 for credit union members (great britain, millions) — up from 1.4M in 2015 · still tiny vs Ireland (75% membership).</p>
-              <p>The secondary metric tells an equally important story: credit union assets (£ billions) stands at 3.8, where growing but still <0.1% of UK banking assets. Policy responses have been mixed, and the structural drivers of these trends require sustained attention beyond short-term interventions.</p>
+              <p>The secondary metric tells an equally important story: credit union assets (£ billions) stands at 3.8, where growing but still &lt;0.1% of UK banking assets. Policy responses have been mixed, and the structural drivers of these trends require sustained attention beyond short-term interventions.</p>
             </div>
           </section>
         </ScrollReveal>
