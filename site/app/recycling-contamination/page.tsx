@@ -97,7 +97,7 @@ export default function TopicPage() {
     : [];
 
   const chart1Annotations: Annotation[] = [
-    { date: new Date(2019, 5, 1), label: '2019: WRAP 'Do Your Bit' campaign' },
+    { date: new Date(2019, 5, 1), label: "2019: WRAP 'Do Your Bit" campaign' },
     { date: new Date(2022, 5, 1), label: '2022: Confusion increases with new food waste collections' },
   ];
 

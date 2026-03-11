@@ -17,7 +17,7 @@ export default function FamilyHubsPage() {
     },
     {
       id: 'secondary',
-      label: 'Children's centres closed since 2010 (England)',
+      label: "Children\u2019s centres closed since 2010 (England)",
       colour: '#6B7280',
       data: ([0,200,500,800,1050,1200,1350]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
