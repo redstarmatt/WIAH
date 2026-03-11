@@ -102,7 +102,7 @@ export default function TopicPage() {
   ];
 
   const chart2Annotations: Annotation[] = [
-    { date: new Date(2023, 5, 1), label: '2023: Dogger Bank A begins operation — world's largest' },
+    { date: new Date(2023, 5, 1), label: "2023: Dogger Bank A begins operation — world's largest" },
   ];
 
   // ── Render ────────────────────────────────────────────────────────────────

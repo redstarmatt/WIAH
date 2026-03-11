@@ -5532,7 +5532,7 @@ export const TOPICS: Record<string, TopicEntry> = {
   ] },
   'rape-reporting-rate': { topic: 'Rape Reporting Rate', slug: 'rape-reporting-rate', href: '/rape-reporting-rate', colour: '#6B7280', preposition: 'with', metrics: [
     { label: 'Rapes reported to police (England & Wales, annual)', value: '70,633', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'record high · charge rate still only 4%', sparklineData: [35600,40000,52000,58000,63000,68000,70633] },
-    { label: 'Rape charge rate (%)', value: '4.0', direction: 'down' as const, polarity: 'up-is-good' as const, context: 'down from 5.7% in 2016 · most cases NFA'd', sparklineData: [5.7,5.5,5,4.5,4.2,4.1,4] },
+    { label: 'Rape charge rate (%)', value: '4.0', direction: 'down' as const, polarity: 'up-is-good' as const, context: "down from 5.7% in 2016 · most cases NFA\u2019d", sparklineData: [5.7,5.5,5,4.5,4.2,4.1,4] },
   ] },
   'scam-losses': { topic: 'Scam Losses', slug: 'scam-losses', href: '/scam-losses', colour: '#E63946', preposition: 'with', metrics: [
     { label: 'Authorised push payment fraud losses', value: '£459M', direction: 'down' as const, polarity: 'up-is-good' as const, context: 'down 12% from £524M peak · mandatory reimbursement now in force', sparklineData: [381,455,479,524,510,485,459] },
@@ -5672,7 +5672,7 @@ export const TOPICS: Record<string, TopicEntry> = {
   ] },
   'family-hubs': { topic: 'Family Hubs', slug: 'family-hubs', href: '/family-hubs', colour: '#2A9D8F', preposition: 'with', metrics: [
     { label: 'Family hubs open across England', value: '399', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'up from 0 in 2021 · government target 400 by end 2024', sparklineData: [0,0,50,150,280,360,399] },
-    { label: 'Children's centres closed since 2010 (England)', value: '1,350', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'over half closed · family hubs not replacing all lost capacity', sparklineData: [0,200,500,800,1050,1200,1350] },
+    { label: "Children\u2019s centres closed since 2010 (England)", value: '1,350', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'over half closed · family hubs not replacing all lost capacity', sparklineData: [0,200,500,800,1050,1200,1350] },
   ] },
   'grassroots-sport': { topic: 'Grassroots Sport', slug: 'grassroots-sport', href: '/grassroots-sport', colour: '#2A9D8F', preposition: 'with', metrics: [
     { label: 'Amateur sports club closures since 2010 (England)', value: '4,800', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'rising costs, ageing volunteers, lost pitches', sparklineData: [0,800,1600,2400,3400,4200,4800] },
@@ -5784,7 +5784,7 @@ export const TOPICS: Record<string, TopicEntry> = {
   ] },
   'ultra-processed-food': { topic: 'Ultra-Processed Food', slug: 'ultra-processed-food', href: '/ultra-processed-food', colour: '#E63946', preposition: 'with', metrics: [
     { label: 'Share of UK diet from ultra-processed foods (%)', value: '57', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'highest in Europe · up from 45% in 2000', sparklineData: [45,47,49,51,53,55,57] },
-    { label: 'Children's diet from ultra-processed foods (%)', value: '65', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'even higher in children · linked to ADHD, obesity, anxiety', sparklineData: [55,57,59,61,62,64,65] },
+    { label: "Children\u2019s diet from ultra-processed foods (%)", value: '65', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'even higher in children · linked to ADHD, obesity, anxiety', sparklineData: [55,57,59,61,62,64,65] },
   ] },
   'meat-consumption-trend': { topic: 'Meat Consumption Trend', slug: 'meat-consumption-trend', href: '/meat-consumption-trend', colour: '#6B7280', preposition: 'with', metrics: [
     { label: 'UK per capita meat consumption (kg/year)', value: '84', direction: 'down' as const, polarity: 'up-is-good' as const, context: 'down from 93kg in 2010 · flexitarianism growing', sparklineData: [93,92,90,88,87,85,84] },

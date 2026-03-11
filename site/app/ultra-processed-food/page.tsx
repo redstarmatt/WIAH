@@ -17,7 +17,7 @@ export default function UltraProcessedFoodPage() {
     },
     {
       id: 'secondary',
-      label: 'Children's diet from ultra-processed foods (%)',
+      label: "Children\u2019s diet from ultra-processed foods (%)",
       colour: '#6B7280',
       data: ([55,57,59,61,62,64,65]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
     },
