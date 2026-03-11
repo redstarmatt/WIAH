@@ -1,0 +1,100 @@
+{
+  "topic": "packaging-recycling",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "plasticPct": 40,
+        "glassRecyclingPct": 67,
+        "plasticConsumed": 990,
+        "plasticRecycled": 396
+      },
+      {
+        "year": 2016,
+        "plasticPct": 42,
+        "glassRecyclingPct": 68,
+        "plasticConsumed": 985,
+        "plasticRecycled": 414
+      },
+      {
+        "year": 2017,
+        "plasticPct": 44,
+        "glassRecyclingPct": 69,
+        "plasticConsumed": 980,
+        "plasticRecycled": 431
+      },
+      {
+        "year": 2018,
+        "plasticPct": 45,
+        "glassRecyclingPct": 70,
+        "plasticConsumed": 975,
+        "plasticRecycled": 439
+      },
+      {
+        "year": 2019,
+        "plasticPct": 46,
+        "glassRecyclingPct": 70,
+        "plasticConsumed": 970,
+        "plasticRecycled": 446
+      },
+      {
+        "year": 2020,
+        "plasticPct": 46,
+        "glassRecyclingPct": 72,
+        "plasticConsumed": 960,
+        "plasticRecycled": 442
+      },
+      {
+        "year": 2021,
+        "plasticPct": 47,
+        "glassRecyclingPct": 73,
+        "plasticConsumed": 955,
+        "plasticRecycled": 449
+      },
+      {
+        "year": 2022,
+        "plasticPct": 49,
+        "glassRecyclingPct": 73,
+        "plasticConsumed": 950,
+        "plasticRecycled": 466
+      },
+      {
+        "year": 2023,
+        "plasticPct": 50,
+        "glassRecyclingPct": 74,
+        "plasticConsumed": 950,
+        "plasticRecycled": 475
+      },
+      {
+        "year": 2024,
+        "plasticPct": 51,
+        "glassRecyclingPct": 74,
+        "plasticConsumed": 950,
+        "plasticRecycled": 485
+      },
+      {
+        "year": 2025,
+        "plasticPct": 51,
+        "glassRecyclingPct": 74,
+        "plasticConsumed": 950,
+        "plasticRecycled": 485
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Defra",
+        "dataset": "UK statistics on waste \u2014 packaging recovery and recycling",
+        "url": "https://www.gov.uk/government/statistical-data-sets/env18-uk-waste-data-and-management",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Packaging recycling rates from Defra packaging waste data. Recycling defined as material successfully reprocessed into new materials. Excludes energy recovery.",
+    "knownIssues": [
+      "Some reprocessing facilities export material with unverified final fate",
+      "PET bottle recycling significantly better than overall plastic figure suggests"
+    ]
+  }
+}

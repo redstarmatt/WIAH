@@ -1,0 +1,100 @@
+{
+  "topic": "business-survival",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "survivalRate": 48,
+        "hospitalitySurvival": 40,
+        "births": 381,
+        "deaths": 280
+      },
+      {
+        "year": 2016,
+        "survivalRate": 47,
+        "hospitalitySurvival": 39,
+        "births": 390,
+        "deaths": 295
+      },
+      {
+        "year": 2017,
+        "survivalRate": 47,
+        "hospitalitySurvival": 38,
+        "births": 395,
+        "deaths": 305
+      },
+      {
+        "year": 2018,
+        "survivalRate": 46,
+        "hospitalitySurvival": 37,
+        "births": 400,
+        "deaths": 320
+      },
+      {
+        "year": 2019,
+        "survivalRate": 46,
+        "hospitalitySurvival": 36,
+        "births": 405,
+        "deaths": 330
+      },
+      {
+        "year": 2020,
+        "survivalRate": 45,
+        "hospitalitySurvival": 35,
+        "births": 360,
+        "deaths": 400
+      },
+      {
+        "year": 2021,
+        "survivalRate": 44,
+        "hospitalitySurvival": 34,
+        "births": 410,
+        "deaths": 380
+      },
+      {
+        "year": 2022,
+        "survivalRate": 43,
+        "hospitalitySurvival": 33,
+        "births": 395,
+        "deaths": 405
+      },
+      {
+        "year": 2023,
+        "survivalRate": 43,
+        "hospitalitySurvival": 33,
+        "births": 385,
+        "deaths": 420
+      },
+      {
+        "year": 2024,
+        "survivalRate": 44,
+        "hospitalitySurvival": 32,
+        "births": 390,
+        "deaths": 430
+      },
+      {
+        "year": 2025,
+        "survivalRate": 44,
+        "hospitalitySurvival": 32,
+        "births": 392,
+        "deaths": 436
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Business demography, UK",
+        "url": "https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Business survival rates from ONS Business Demography based on UK register of businesses. Survival is defined as remaining active five years after birth year cohort.",
+    "knownIssues": [
+      "Dormant companies may remain registered, overstating survival",
+      "Self-employed sole traders not captured in company registration data"
+    ]
+  }
+}

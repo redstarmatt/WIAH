@@ -1,0 +1,106 @@
+{
+  "topic": "digital-skills-adults",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "withoutBasicMillions": 12.6,
+        "withoutEssentialMillions": 16.0,
+        "skillsShortageEmployerPct": 35,
+        "bootcampCompletionsThousands": 0
+      },
+      {
+        "year": 2016,
+        "withoutBasicMillions": 12.0,
+        "withoutEssentialMillions": 15.4,
+        "skillsShortageEmployerPct": 36,
+        "bootcampCompletionsThousands": 0
+      },
+      {
+        "year": 2017,
+        "withoutBasicMillions": 11.4,
+        "withoutEssentialMillions": 14.8,
+        "skillsShortageEmployerPct": 37,
+        "bootcampCompletionsThousands": 0
+      },
+      {
+        "year": 2018,
+        "withoutBasicMillions": 10.8,
+        "withoutEssentialMillions": 14.2,
+        "skillsShortageEmployerPct": 38,
+        "bootcampCompletionsThousands": 0
+      },
+      {
+        "year": 2019,
+        "withoutBasicMillions": 10.2,
+        "withoutEssentialMillions": 13.6,
+        "skillsShortageEmployerPct": 39,
+        "bootcampCompletionsThousands": 0
+      },
+      {
+        "year": 2020,
+        "withoutBasicMillions": 9.6,
+        "withoutEssentialMillions": 13.0,
+        "skillsShortageEmployerPct": 41,
+        "bootcampCompletionsThousands": 0
+      },
+      {
+        "year": 2021,
+        "withoutBasicMillions": 9.1,
+        "withoutEssentialMillions": 12.5,
+        "skillsShortageEmployerPct": 43,
+        "bootcampCompletionsThousands": 3
+      },
+      {
+        "year": 2022,
+        "withoutBasicMillions": 8.7,
+        "withoutEssentialMillions": 12.0,
+        "skillsShortageEmployerPct": 46,
+        "bootcampCompletionsThousands": 8
+      },
+      {
+        "year": 2023,
+        "withoutBasicMillions": 8.4,
+        "withoutEssentialMillions": 11.6,
+        "skillsShortageEmployerPct": 48,
+        "bootcampCompletionsThousands": 14
+      },
+      {
+        "year": 2024,
+        "withoutBasicMillions": 8.2,
+        "withoutEssentialMillions": 11.3,
+        "skillsShortageEmployerPct": 50,
+        "bootcampCompletionsThousands": 19
+      },
+      {
+        "year": 2025,
+        "withoutBasicMillions": 8.0,
+        "withoutEssentialMillions": 11.0,
+        "skillsShortageEmployerPct": 52,
+        "bootcampCompletionsThousands": 24
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "UKCF / Lloyds",
+        "dataset": "Essential Digital Skills Report",
+        "url": "https://www.lloydsbankinggroup.com/assets/pdfs/helping-britain-prosper/2025-consumer-digital-index.pdf",
+        "frequency": "Annual"
+      },
+      {
+        "name": "DfE",
+        "dataset": "Digital skills bootcamp outcomes",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/further-education-skills-index",
+        "frequency": "Annual"
+      }
+    ],
+    "methodology": "Basic digital skills measured using UKCF Essential Digital Skills framework. Employer shortage data from employer skills surveys. Bootcamp completions from DfE administrative data.",
+    "knownIssues": [
+      "Definition of 'basic digital skills' has evolved over the period",
+      "Pre-2019 figures use older framework and may not be fully comparable"
+    ]
+  }
+}

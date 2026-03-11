@@ -1,0 +1,100 @@
+{
+  "topic": "nature-connection",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "weeklyVisitPct": 58,
+        "notVisitingPct": 14,
+        "leastDeprivedAccessPct": 68,
+        "mostDeprivedAccessPct": 41
+      },
+      {
+        "year": 2016,
+        "weeklyVisitPct": 59,
+        "notVisitingPct": 13,
+        "leastDeprivedAccessPct": 69,
+        "mostDeprivedAccessPct": 42
+      },
+      {
+        "year": 2017,
+        "weeklyVisitPct": 60,
+        "notVisitingPct": 13,
+        "leastDeprivedAccessPct": 70,
+        "mostDeprivedAccessPct": 42
+      },
+      {
+        "year": 2018,
+        "weeklyVisitPct": 62,
+        "notVisitingPct": 13,
+        "leastDeprivedAccessPct": 70,
+        "mostDeprivedAccessPct": 43
+      },
+      {
+        "year": 2019,
+        "weeklyVisitPct": 63,
+        "notVisitingPct": 12,
+        "leastDeprivedAccessPct": 71,
+        "mostDeprivedAccessPct": 44
+      },
+      {
+        "year": 2020,
+        "weeklyVisitPct": 61,
+        "notVisitingPct": 16,
+        "leastDeprivedAccessPct": 71,
+        "mostDeprivedAccessPct": 44
+      },
+      {
+        "year": 2021,
+        "weeklyVisitPct": 60,
+        "notVisitingPct": 14,
+        "leastDeprivedAccessPct": 72,
+        "mostDeprivedAccessPct": 45
+      },
+      {
+        "year": 2022,
+        "weeklyVisitPct": 58,
+        "notVisitingPct": 15,
+        "leastDeprivedAccessPct": 72,
+        "mostDeprivedAccessPct": 46
+      },
+      {
+        "year": 2023,
+        "weeklyVisitPct": 57,
+        "notVisitingPct": 15,
+        "leastDeprivedAccessPct": 73,
+        "mostDeprivedAccessPct": 47
+      },
+      {
+        "year": 2024,
+        "weeklyVisitPct": 57,
+        "notVisitingPct": 15,
+        "leastDeprivedAccessPct": 73,
+        "mostDeprivedAccessPct": 48
+      },
+      {
+        "year": 2025,
+        "weeklyVisitPct": 57,
+        "notVisitingPct": 15,
+        "leastDeprivedAccessPct": 73,
+        "mostDeprivedAccessPct": 48
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Natural England",
+        "dataset": "People and Nature Survey",
+        "url": "https://www.gov.uk/government/collections/people-and-nature-survey-for-england",
+        "frequency": "Annual"
+      }
+    ],
+    "methodology": "Weekly nature visit data from Natural England People and Nature Survey. Green space access calculated using DLUHC green space accessibility indicators. Deprivation quintiles from IMD.",
+    "knownIssues": [
+      "COVID 2020 disrupted normal patterns \u2014 elevated outdoor visits due to restrictions on other activities",
+      "Green space quality definition varies across datasets"
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "topic": "tax-burden",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "taxGdpPct": 33.0,
+        "incTaxGdpPct": 9.8,
+        "personalAllowance": 10600,
+        "avgEarnings": 27000
+      },
+      {
+        "year": 2016,
+        "taxGdpPct": 33.1,
+        "incTaxGdpPct": 9.9,
+        "personalAllowance": 11000,
+        "avgEarnings": 27800
+      },
+      {
+        "year": 2017,
+        "taxGdpPct": 33.3,
+        "incTaxGdpPct": 10.0,
+        "personalAllowance": 11500,
+        "avgEarnings": 28600
+      },
+      {
+        "year": 2018,
+        "taxGdpPct": 33.5,
+        "incTaxGdpPct": 10.1,
+        "personalAllowance": 11850,
+        "avgEarnings": 29500
+      },
+      {
+        "year": 2019,
+        "taxGdpPct": 33.6,
+        "incTaxGdpPct": 10.2,
+        "personalAllowance": 12500,
+        "avgEarnings": 30400
+      },
+      {
+        "year": 2020,
+        "taxGdpPct": 34.0,
+        "incTaxGdpPct": 9.8,
+        "personalAllowance": 12500,
+        "avgEarnings": 30200
+      },
+      {
+        "year": 2021,
+        "taxGdpPct": 33.8,
+        "incTaxGdpPct": 10.0,
+        "personalAllowance": 12570,
+        "avgEarnings": 31500
+      },
+      {
+        "year": 2022,
+        "taxGdpPct": 35.0,
+        "incTaxGdpPct": 10.6,
+        "personalAllowance": 12570,
+        "avgEarnings": 33100
+      },
+      {
+        "year": 2023,
+        "taxGdpPct": 36.2,
+        "incTaxGdpPct": 11.1,
+        "personalAllowance": 12570,
+        "avgEarnings": 35400
+      },
+      {
+        "year": 2024,
+        "taxGdpPct": 36.8,
+        "incTaxGdpPct": 11.4,
+        "personalAllowance": 12570,
+        "avgEarnings": 37200
+      },
+      {
+        "year": 2025,
+        "taxGdpPct": 37.1,
+        "incTaxGdpPct": 11.6,
+        "personalAllowance": 12570,
+        "avgEarnings": 38800
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "OBR",
+        "dataset": "Economic and fiscal outlook",
+        "url": "https://obr.uk/efo/economic-and-fiscal-outlook-march-2025/",
+        "frequency": "biannual"
+      },
+      {
+        "name": "HMRC",
+        "dataset": "Annual tax receipts",
+        "url": "https://www.gov.uk/government/statistics/hmrc-tax-and-nics-receipts-for-the-uk",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Tax/GDP ratio from OBR Economic and Fiscal Outlook, using HM Treasury definitions. Fiscal drag calculations model taxpayers pulled into higher bands by earnings growth with frozen thresholds.",
+    "knownIssues": [
+      "GDP is subject to revision so the ratio changes retroactively",
+      "Fiscal drag estimates depend on earnings distribution assumptions"
+    ]
+  }
+}

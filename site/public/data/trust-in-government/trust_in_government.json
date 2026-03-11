@@ -1,0 +1,106 @@
+{
+  "topic": "trust-in-government",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "govtTrust": 42,
+        "nhsTrust": 72,
+        "parliamentTrust": 35,
+        "mediaTrust": 34
+      },
+      {
+        "year": 2016,
+        "govtTrust": 44,
+        "nhsTrust": 74,
+        "parliamentTrust": 34,
+        "mediaTrust": 33
+      },
+      {
+        "year": 2017,
+        "govtTrust": 40,
+        "nhsTrust": 73,
+        "parliamentTrust": 33,
+        "mediaTrust": 30
+      },
+      {
+        "year": 2018,
+        "govtTrust": 38,
+        "nhsTrust": 71,
+        "parliamentTrust": 31,
+        "mediaTrust": 28
+      },
+      {
+        "year": 2019,
+        "govtTrust": 46,
+        "nhsTrust": 78,
+        "parliamentTrust": 29,
+        "mediaTrust": 29
+      },
+      {
+        "year": 2020,
+        "govtTrust": 38,
+        "nhsTrust": 76,
+        "parliamentTrust": 30,
+        "mediaTrust": 27
+      },
+      {
+        "year": 2021,
+        "govtTrust": 30,
+        "nhsTrust": 70,
+        "parliamentTrust": 28,
+        "mediaTrust": 27
+      },
+      {
+        "year": 2022,
+        "govtTrust": 26,
+        "nhsTrust": 67,
+        "parliamentTrust": 25,
+        "mediaTrust": 25
+      },
+      {
+        "year": 2023,
+        "govtTrust": 24,
+        "nhsTrust": 65,
+        "parliamentTrust": 24,
+        "mediaTrust": 24
+      },
+      {
+        "year": 2024,
+        "govtTrust": 24,
+        "nhsTrust": 65,
+        "parliamentTrust": 24,
+        "mediaTrust": 24
+      },
+      {
+        "year": 2025,
+        "govtTrust": 24,
+        "nhsTrust": 65,
+        "parliamentTrust": 24,
+        "mediaTrust": 24
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "NatCen",
+        "dataset": "British Social Attitudes Survey",
+        "url": "https://natcen.ac.uk/our-research/research/british-social-attitudes/",
+        "frequency": "annual"
+      },
+      {
+        "name": "Ipsos",
+        "dataset": "Political Monitor \u2014 trust in politicians",
+        "url": "https://www.ipsos.com/en-uk/political-monitor",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Trust figures from NatCen British Social Attitudes Survey annual wave. Question: 'How much do you trust [institution] to work in the best interests of the public?' Figures show % responding 'a lot' or 'quite a lot'.",
+    "knownIssues": [
+      "Question wording has changed slightly over the series \u2014 pre-2010 data is not directly comparable",
+      "Survey conducted annually so is a snapshot, not a continuous tracker"
+    ]
+  }
+}

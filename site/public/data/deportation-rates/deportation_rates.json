@@ -1,0 +1,100 @@
+{
+  "topic": "deportation-rates",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "totalReturns": 32885,
+        "enforcedRemovals": 12800,
+        "failedRemovalPct": 32,
+        "voluntaryDeparturePct": 61
+      },
+      {
+        "year": 2016,
+        "totalReturns": 28644,
+        "enforcedRemovals": 12200,
+        "failedRemovalPct": 33,
+        "voluntaryDeparturePct": 57
+      },
+      {
+        "year": 2017,
+        "totalReturns": 27094,
+        "enforcedRemovals": 11900,
+        "failedRemovalPct": 34,
+        "voluntaryDeparturePct": 56
+      },
+      {
+        "year": 2018,
+        "totalReturns": 24580,
+        "enforcedRemovals": 10800,
+        "failedRemovalPct": 36,
+        "voluntaryDeparturePct": 56
+      },
+      {
+        "year": 2019,
+        "totalReturns": 20261,
+        "enforcedRemovals": 9600,
+        "failedRemovalPct": 38,
+        "voluntaryDeparturePct": 53
+      },
+      {
+        "year": 2020,
+        "totalReturns": 14313,
+        "enforcedRemovals": 5200,
+        "failedRemovalPct": 48,
+        "voluntaryDeparturePct": 64
+      },
+      {
+        "year": 2021,
+        "totalReturns": 17274,
+        "enforcedRemovals": 7100,
+        "failedRemovalPct": 46,
+        "voluntaryDeparturePct": 59
+      },
+      {
+        "year": 2022,
+        "totalReturns": 14259,
+        "enforcedRemovals": 6000,
+        "failedRemovalPct": 44,
+        "voluntaryDeparturePct": 58
+      },
+      {
+        "year": 2023,
+        "totalReturns": 16479,
+        "enforcedRemovals": 7200,
+        "failedRemovalPct": 43,
+        "voluntaryDeparturePct": 56
+      },
+      {
+        "year": 2024,
+        "totalReturns": 19212,
+        "enforcedRemovals": 8500,
+        "failedRemovalPct": 42,
+        "voluntaryDeparturePct": 56
+      },
+      {
+        "year": 2025,
+        "totalReturns": 21000,
+        "enforcedRemovals": 9000,
+        "failedRemovalPct": 41,
+        "voluntaryDeparturePct": 57
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Home Office",
+        "dataset": "Immigration statistics \u2014 returns",
+        "url": "https://www.gov.uk/government/collections/immigration-statistics-quarterly-release",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Returns data from Home Office immigration statistics. Total returns includes voluntary departures, enforced removals and deportations. Failed attempts from Home Office enforcement data.",
+    "knownIssues": [
+      "'Failed' removals may include cases stayed pending appeal, not all definitively failed",
+      "Returns target is not officially published \u2014 comparisons to targets are based on ministerial statements"
+    ]
+  }
+}

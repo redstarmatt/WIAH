@@ -1,0 +1,106 @@
+{
+  "topic": "tech-sector-employment",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "totalEmployees": 1.18,
+        "outsideLondonPct": 38,
+        "redundanciesThousands": 5,
+        "vacanciesThousands": 45
+      },
+      {
+        "year": 2016,
+        "totalEmployees": 1.24,
+        "outsideLondonPct": 38,
+        "redundanciesThousands": 6,
+        "vacanciesThousands": 52
+      },
+      {
+        "year": 2017,
+        "totalEmployees": 1.3,
+        "outsideLondonPct": 39,
+        "redundanciesThousands": 7,
+        "vacanciesThousands": 58
+      },
+      {
+        "year": 2018,
+        "totalEmployees": 1.38,
+        "outsideLondonPct": 39,
+        "redundanciesThousands": 8,
+        "vacanciesThousands": 65
+      },
+      {
+        "year": 2019,
+        "totalEmployees": 1.45,
+        "outsideLondonPct": 40,
+        "redundanciesThousands": 9,
+        "vacanciesThousands": 72
+      },
+      {
+        "year": 2020,
+        "totalEmployees": 1.52,
+        "outsideLondonPct": 41,
+        "redundanciesThousands": 10,
+        "vacanciesThousands": 62
+      },
+      {
+        "year": 2021,
+        "totalEmployees": 1.62,
+        "outsideLondonPct": 42,
+        "redundanciesThousands": 12,
+        "vacanciesThousands": 95
+      },
+      {
+        "year": 2022,
+        "totalEmployees": 1.74,
+        "outsideLondonPct": 43,
+        "redundanciesThousands": 15,
+        "vacanciesThousands": 110
+      },
+      {
+        "year": 2023,
+        "totalEmployees": 1.8,
+        "outsideLondonPct": 43,
+        "redundanciesThousands": 52,
+        "vacanciesThousands": 78
+      },
+      {
+        "year": 2024,
+        "totalEmployees": 1.82,
+        "outsideLondonPct": 44,
+        "redundanciesThousands": 28,
+        "vacanciesThousands": 88
+      },
+      {
+        "year": 2025,
+        "totalEmployees": 1.84,
+        "outsideLondonPct": 44,
+        "redundanciesThousands": 18,
+        "vacanciesThousands": 95
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Technation",
+        "dataset": "UK Tech Nation Report",
+        "url": "https://technation.io/report/",
+        "frequency": "Annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Business Register and Employment Survey",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/businessregisterandemploymentsurveybresprovisionalresults/2024",
+        "frequency": "Annual"
+      }
+    ],
+    "methodology": "Employment figures from BRES using SIC codes 58-63 (publishing, telecoms, IT, internet). Includes employees and agency workers; excludes contractors counted separately.",
+    "knownIssues": [
+      "Boundary between tech and non-tech roles is blurred",
+      "Redundancy data from multiple sources with different methodologies"
+    ]
+  }
+}

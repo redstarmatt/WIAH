@@ -1,0 +1,100 @@
+{
+  "topic": "household-income-inequality",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "giniCoeff": 0.34,
+        "top1PctShare": 8.4,
+        "topBottomRatio": 8.5,
+        "bottom20PctShare": 5.8
+      },
+      {
+        "year": 2016,
+        "giniCoeff": 0.34,
+        "top1PctShare": 8.5,
+        "topBottomRatio": 8.6,
+        "bottom20PctShare": 5.8
+      },
+      {
+        "year": 2017,
+        "giniCoeff": 0.33,
+        "top1PctShare": 8.4,
+        "topBottomRatio": 8.7,
+        "bottom20PctShare": 5.8
+      },
+      {
+        "year": 2018,
+        "giniCoeff": 0.33,
+        "top1PctShare": 8.5,
+        "topBottomRatio": 8.8,
+        "bottom20PctShare": 5.7
+      },
+      {
+        "year": 2019,
+        "giniCoeff": 0.34,
+        "top1PctShare": 8.6,
+        "topBottomRatio": 8.9,
+        "bottom20PctShare": 5.7
+      },
+      {
+        "year": 2020,
+        "giniCoeff": 0.33,
+        "top1PctShare": 8.2,
+        "topBottomRatio": 8.8,
+        "bottom20PctShare": 5.9
+      },
+      {
+        "year": 2021,
+        "giniCoeff": 0.33,
+        "top1PctShare": 8.3,
+        "topBottomRatio": 8.9,
+        "bottom20PctShare": 5.9
+      },
+      {
+        "year": 2022,
+        "giniCoeff": 0.33,
+        "top1PctShare": 8.4,
+        "topBottomRatio": 9.0,
+        "bottom20PctShare": 5.8
+      },
+      {
+        "year": 2023,
+        "giniCoeff": 0.33,
+        "top1PctShare": 8.4,
+        "topBottomRatio": 9.0,
+        "bottom20PctShare": 5.8
+      },
+      {
+        "year": 2024,
+        "giniCoeff": 0.33,
+        "top1PctShare": 8.4,
+        "topBottomRatio": 9.0,
+        "bottom20PctShare": 5.8
+      },
+      {
+        "year": 2025,
+        "giniCoeff": 0.33,
+        "top1PctShare": 8.5,
+        "topBottomRatio": 9.0,
+        "bottom20PctShare": 5.8
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DWP",
+        "dataset": "Households below average income \u2014 inequality measures",
+        "url": "https://www.gov.uk/government/collections/households-below-average-income-hbai--2",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Gini coefficient from HBAI using equivalised household disposable income (before and after housing costs). Top 1% share from HMRC Survey of Personal Incomes.",
+    "knownIssues": [
+      "Gini coefficient is sensitive to top-end estimates which are based on small samples",
+      "HBAI is self-reported and may undercount top incomes"
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "topic": "household-inflation",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "lowIncomeInflation": 1.8,
+        "highIncomeInflation": 1.6,
+        "foodInflation": 1.2,
+        "energyInflation": -6.2
+      },
+      {
+        "year": 2016,
+        "lowIncomeInflation": 2.0,
+        "highIncomeInflation": 1.8,
+        "foodInflation": 0.8,
+        "energyInflation": -1.4
+      },
+      {
+        "year": 2017,
+        "lowIncomeInflation": 2.2,
+        "highIncomeInflation": 2.0,
+        "foodInflation": 4.1,
+        "energyInflation": 5.2
+      },
+      {
+        "year": 2018,
+        "lowIncomeInflation": 2.1,
+        "highIncomeInflation": 2.0,
+        "foodInflation": 2.7,
+        "energyInflation": 5.7
+      },
+      {
+        "year": 2019,
+        "lowIncomeInflation": 2.4,
+        "highIncomeInflation": 2.1,
+        "foodInflation": 1.8,
+        "energyInflation": 1.9
+      },
+      {
+        "year": 2020,
+        "lowIncomeInflation": 1.9,
+        "highIncomeInflation": 1.8,
+        "foodInflation": 0.7,
+        "energyInflation": -6.0
+      },
+      {
+        "year": 2021,
+        "lowIncomeInflation": 3.1,
+        "highIncomeInflation": 2.8,
+        "foodInflation": 2.5,
+        "energyInflation": 18.6
+      },
+      {
+        "year": 2022,
+        "lowIncomeInflation": 6.8,
+        "highIncomeInflation": 5.4,
+        "foodInflation": 11.4,
+        "energyInflation": 78.3
+      },
+      {
+        "year": 2023,
+        "lowIncomeInflation": 9.4,
+        "highIncomeInflation": 7.9,
+        "foodInflation": 19.2,
+        "energyInflation": 44.1
+      },
+      {
+        "year": 2024,
+        "lowIncomeInflation": 9.1,
+        "highIncomeInflation": 7.2,
+        "foodInflation": 7.3,
+        "energyInflation": -8.4
+      },
+      {
+        "year": 2025,
+        "lowIncomeInflation": 8.2,
+        "highIncomeInflation": 5.9,
+        "foodInflation": 4.1,
+        "energyInflation": -3.2
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Household Costs Indices",
+        "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/householdcostsindices/",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Consumer price inflation",
+        "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Household Costs Indices measure inflation as experienced by households at different income levels, weighting price changes by actual spending patterns. Low-income quintile weights are derived from the Living Costs and Food Survey.",
+    "knownIssues": [
+      "HCI series only begins 2005 \u2014 pre-2005 comparisons use modelled estimates",
+      "Quintile boundaries shift each year as income distribution changes"
+    ]
+  }
+}

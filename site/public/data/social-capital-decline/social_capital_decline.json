@@ -1,0 +1,106 @@
+{
+  "topic": "social-capital-decline",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "neighbourTrustPct": 47,
+        "belongingPct": 56,
+        "govTrustPct": 32,
+        "volunteeringPct": 28
+      },
+      {
+        "year": 2016,
+        "neighbourTrustPct": 46,
+        "belongingPct": 55,
+        "govTrustPct": 30,
+        "volunteeringPct": 27
+      },
+      {
+        "year": 2017,
+        "neighbourTrustPct": 44,
+        "belongingPct": 54,
+        "govTrustPct": 28,
+        "volunteeringPct": 27
+      },
+      {
+        "year": 2018,
+        "neighbourTrustPct": 43,
+        "belongingPct": 53,
+        "govTrustPct": 26,
+        "volunteeringPct": 26
+      },
+      {
+        "year": 2019,
+        "neighbourTrustPct": 41,
+        "belongingPct": 52,
+        "govTrustPct": 24,
+        "volunteeringPct": 25
+      },
+      {
+        "year": 2020,
+        "neighbourTrustPct": 39,
+        "belongingPct": 51,
+        "govTrustPct": 25,
+        "volunteeringPct": 22
+      },
+      {
+        "year": 2021,
+        "neighbourTrustPct": 36,
+        "belongingPct": 48,
+        "govTrustPct": 22,
+        "volunteeringPct": 21
+      },
+      {
+        "year": 2022,
+        "neighbourTrustPct": 35,
+        "belongingPct": 46,
+        "govTrustPct": 20,
+        "volunteeringPct": 21
+      },
+      {
+        "year": 2023,
+        "neighbourTrustPct": 34,
+        "belongingPct": 44,
+        "govTrustPct": 19,
+        "volunteeringPct": 22
+      },
+      {
+        "year": 2024,
+        "neighbourTrustPct": 34,
+        "belongingPct": 43,
+        "govTrustPct": 18,
+        "volunteeringPct": 22
+      },
+      {
+        "year": 2025,
+        "neighbourTrustPct": 34,
+        "belongingPct": 43,
+        "govTrustPct": 18,
+        "volunteeringPct": 22
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Community Wellbeing Survey \u2014 social capital indicators",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/datasets/socialcapitalheadlineindicators",
+        "frequency": "annual"
+      },
+      {
+        "name": "Ipsos / King's College London",
+        "dataset": "Trust in institutions tracker",
+        "url": "https://www.ipsos.com/en-uk/trust-in-professions",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Neighbourhood trust and belonging from ONS Community Wellbeing Survey. Volunteering rates from Community Life Survey (DCMS). Trust in government from Ipsos/KCL annual poll, question: 'I generally trust the government to do what is right'. All England or UK as noted.",
+    "knownIssues": [
+      "COVID-19 temporarily boosted some community metrics in 2020 before sharper decline in 2021-22",
+      "Different survey instruments track trust differently \u2014 Edelman Trust Barometer and BES show somewhat different trajectories"
+    ]
+  }
+}

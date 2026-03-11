@@ -1,0 +1,100 @@
+{
+  "topic": "startup-survival",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "threeYearSurvival": 63,
+        "fiveYearSurvival": 48,
+        "hospitalitySurvival": 38,
+        "professionalServicesSurvival": 62
+      },
+      {
+        "year": 2016,
+        "threeYearSurvival": 62,
+        "fiveYearSurvival": 47,
+        "hospitalitySurvival": 37,
+        "professionalServicesSurvival": 63
+      },
+      {
+        "year": 2017,
+        "threeYearSurvival": 61,
+        "fiveYearSurvival": 46,
+        "hospitalitySurvival": 36,
+        "professionalServicesSurvival": 63
+      },
+      {
+        "year": 2018,
+        "threeYearSurvival": 60,
+        "fiveYearSurvival": 45,
+        "hospitalitySurvival": 35,
+        "professionalServicesSurvival": 62
+      },
+      {
+        "year": 2019,
+        "threeYearSurvival": 59,
+        "fiveYearSurvival": 44,
+        "hospitalitySurvival": 34,
+        "professionalServicesSurvival": 61
+      },
+      {
+        "year": 2020,
+        "threeYearSurvival": 58,
+        "fiveYearSurvival": 43,
+        "hospitalitySurvival": 31,
+        "professionalServicesSurvival": 60
+      },
+      {
+        "year": 2021,
+        "threeYearSurvival": 57,
+        "fiveYearSurvival": 42,
+        "hospitalitySurvival": 30,
+        "professionalServicesSurvival": 60
+      },
+      {
+        "year": 2022,
+        "threeYearSurvival": 56,
+        "fiveYearSurvival": 41,
+        "hospitalitySurvival": 30,
+        "professionalServicesSurvival": 61
+      },
+      {
+        "year": 2023,
+        "threeYearSurvival": 57,
+        "fiveYearSurvival": 41,
+        "hospitalitySurvival": 31,
+        "professionalServicesSurvival": 61
+      },
+      {
+        "year": 2024,
+        "threeYearSurvival": 58,
+        "fiveYearSurvival": 42,
+        "hospitalitySurvival": 32,
+        "professionalServicesSurvival": 62
+      },
+      {
+        "year": 2025,
+        "threeYearSurvival": 58,
+        "fiveYearSurvival": 44,
+        "hospitalitySurvival": 32,
+        "professionalServicesSurvival": 62
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Business demography, UK",
+        "url": "https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Survival rates from ONS Business Demography based on IDBR business register.",
+    "knownIssues": [
+      "ONS survival data lags 2-3 years",
+      "Pandemic support may have kept non-viable businesses alive in 2020-21"
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "topic": "air-pollution-hotspots",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "pm25Exceedances": 61,
+        "no2Exceedances": 102,
+        "avgPM25Exposure": 10.2,
+        "prematureDeathsK": 50
+      },
+      {
+        "year": 2016,
+        "pm25Exceedances": 58,
+        "no2Exceedances": 103,
+        "avgPM25Exposure": 10.0,
+        "prematureDeathsK": 48
+      },
+      {
+        "year": 2017,
+        "pm25Exceedances": 55,
+        "no2Exceedances": 101,
+        "avgPM25Exposure": 9.8,
+        "prematureDeathsK": 46
+      },
+      {
+        "year": 2018,
+        "pm25Exceedances": 52,
+        "no2Exceedances": 100,
+        "avgPM25Exposure": 9.6,
+        "prematureDeathsK": 44
+      },
+      {
+        "year": 2019,
+        "pm25Exceedances": 50,
+        "no2Exceedances": 103,
+        "avgPM25Exposure": 9.4,
+        "prematureDeathsK": 42
+      },
+      {
+        "year": 2020,
+        "pm25Exceedances": 46,
+        "no2Exceedances": 98,
+        "avgPM25Exposure": 8.8,
+        "prematureDeathsK": 40
+      },
+      {
+        "year": 2021,
+        "pm25Exceedances": 44,
+        "no2Exceedances": 95,
+        "avgPM25Exposure": 9.0,
+        "prematureDeathsK": 39
+      },
+      {
+        "year": 2022,
+        "pm25Exceedances": 43,
+        "no2Exceedances": 93,
+        "avgPM25Exposure": 9.1,
+        "prematureDeathsK": 39.5
+      },
+      {
+        "year": 2023,
+        "pm25Exceedances": 44,
+        "no2Exceedances": 91,
+        "avgPM25Exposure": 9.0,
+        "prematureDeathsK": 40
+      },
+      {
+        "year": 2024,
+        "pm25Exceedances": 44,
+        "no2Exceedances": 90,
+        "avgPM25Exposure": 9.0,
+        "prematureDeathsK": 40
+      },
+      {
+        "year": 2025,
+        "pm25Exceedances": 44,
+        "no2Exceedances": 89,
+        "avgPM25Exposure": 8.9,
+        "prematureDeathsK": 40
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DEFRA",
+        "dataset": "Ambient air quality statistics",
+        "url": "https://www.gov.uk/government/statistics/air-quality-statistics",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Air quality exceedances from DEFRA automated monitoring network. Premature deaths from UK Health Security Agency health effects modelling.",
+    "knownIssues": [
+      "Monitoring network not evenly distributed \u2014 gaps in rural and poorer urban areas",
+      "WHO PM2.5 guideline value tightened in 2021 to 5 ug/m3; compliance worse under new guidance"
+    ]
+  }
+}

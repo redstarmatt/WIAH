@@ -1,0 +1,106 @@
+{
+  "topic": "physical-activity",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "activePct": 56,
+        "inactivePct": 26,
+        "leastDeprivedPct": 66,
+        "mostDeprivedPct": 49
+      },
+      {
+        "year": 2016,
+        "activePct": 57,
+        "inactivePct": 25,
+        "leastDeprivedPct": 67,
+        "mostDeprivedPct": 50
+      },
+      {
+        "year": 2017,
+        "activePct": 58,
+        "inactivePct": 25,
+        "leastDeprivedPct": 68,
+        "mostDeprivedPct": 50
+      },
+      {
+        "year": 2018,
+        "activePct": 59,
+        "inactivePct": 24,
+        "leastDeprivedPct": 68,
+        "mostDeprivedPct": 51
+      },
+      {
+        "year": 2019,
+        "activePct": 60,
+        "inactivePct": 24,
+        "leastDeprivedPct": 69,
+        "mostDeprivedPct": 51
+      },
+      {
+        "year": 2020,
+        "activePct": 55,
+        "inactivePct": 27,
+        "leastDeprivedPct": 65,
+        "mostDeprivedPct": 45
+      },
+      {
+        "year": 2021,
+        "activePct": 59,
+        "inactivePct": 25,
+        "leastDeprivedPct": 69,
+        "mostDeprivedPct": 49
+      },
+      {
+        "year": 2022,
+        "activePct": 60,
+        "inactivePct": 24,
+        "leastDeprivedPct": 69,
+        "mostDeprivedPct": 50
+      },
+      {
+        "year": 2023,
+        "activePct": 61,
+        "inactivePct": 23,
+        "leastDeprivedPct": 70,
+        "mostDeprivedPct": 51
+      },
+      {
+        "year": 2024,
+        "activePct": 61.5,
+        "inactivePct": 23,
+        "leastDeprivedPct": 70,
+        "mostDeprivedPct": 51
+      },
+      {
+        "year": 2025,
+        "activePct": 61.7,
+        "inactivePct": 23,
+        "leastDeprivedPct": 70,
+        "mostDeprivedPct": 51
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Sport England",
+        "dataset": "Active Lives Adult Survey",
+        "url": "https://www.sportengland.org/research-and-data/data/active-lives",
+        "frequency": "biannual"
+      },
+      {
+        "name": "Sport England",
+        "dataset": "Active Lives Children and Young People Survey",
+        "url": "https://www.sportengland.org/research-and-data/data/active-lives",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Active Lives Survey measures activity over a rolling 28-day period. 150 minutes per week guideline from CMO physical activity guidelines. Deprivation quintiles from Index of Multiple Deprivation matched to survey respondent postcodes.",
+    "knownIssues": [
+      "Self-reported activity may overestimate actual levels",
+      "Accelerometer-measured activity (a subset of the survey) consistently shows lower levels than self-report"
+    ]
+  }
+}

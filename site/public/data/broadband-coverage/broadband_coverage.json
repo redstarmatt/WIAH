@@ -1,0 +1,106 @@
+{
+  "topic": "broadband-coverage",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "superfastPct": 91.0,
+        "fullFibrePct": 0.5,
+        "belowTargetM": 8.0,
+        "ruralCoveragePct": 62
+      },
+      {
+        "year": 2016,
+        "superfastPct": 92.0,
+        "fullFibrePct": 1.0,
+        "belowTargetM": 7.5,
+        "ruralCoveragePct": 67
+      },
+      {
+        "year": 2017,
+        "superfastPct": 93.0,
+        "fullFibrePct": 2.0,
+        "belowTargetM": 7.0,
+        "ruralCoveragePct": 72
+      },
+      {
+        "year": 2018,
+        "superfastPct": 94.0,
+        "fullFibrePct": 5.0,
+        "belowTargetM": 6.5,
+        "ruralCoveragePct": 77
+      },
+      {
+        "year": 2019,
+        "superfastPct": 95.0,
+        "fullFibrePct": 10.0,
+        "belowTargetM": 6.0,
+        "ruralCoveragePct": 81
+      },
+      {
+        "year": 2020,
+        "superfastPct": 96.0,
+        "fullFibrePct": 18.0,
+        "belowTargetM": 5.5,
+        "ruralCoveragePct": 84
+      },
+      {
+        "year": 2021,
+        "superfastPct": 96.8,
+        "fullFibrePct": 35.0,
+        "belowTargetM": 5.0,
+        "ruralCoveragePct": 86
+      },
+      {
+        "year": 2022,
+        "superfastPct": 97.1,
+        "fullFibrePct": 47.0,
+        "belowTargetM": 4.5,
+        "ruralCoveragePct": 88
+      },
+      {
+        "year": 2023,
+        "superfastPct": 97.4,
+        "fullFibrePct": 55.0,
+        "belowTargetM": 4.2,
+        "ruralCoveragePct": 90
+      },
+      {
+        "year": 2024,
+        "superfastPct": 97.6,
+        "fullFibrePct": 62.0,
+        "belowTargetM": 3.8,
+        "ruralCoveragePct": 92
+      },
+      {
+        "year": 2025,
+        "superfastPct": 97.8,
+        "fullFibrePct": 70.0,
+        "belowTargetM": 3.5,
+        "ruralCoveragePct": 93
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ofcom",
+        "dataset": "Connected Nations UK report",
+        "url": "https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations",
+        "frequency": "annual"
+      },
+      {
+        "name": "DSIT",
+        "dataset": "Project Gigabit programme statistics",
+        "url": "https://www.gov.uk/government/collections/project-gigabit-programme-statistics",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Coverage figures from Ofcom Connected Nations, based on operator-reported data for premises capable of receiving each speed tier. 'Rural' defined as Ofcom's rural classification (settlements under 10,000). Below-target figures are premises unable to access 10Mbps download/1Mbps upload.",
+    "knownIssues": [
+      "Operator-reported coverage may overstate actual speeds achievable",
+      "Full-fibre coverage does not guarantee gigabit speeds if internal wiring is poor"
+    ]
+  }
+}

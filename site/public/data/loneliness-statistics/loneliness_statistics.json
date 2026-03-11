@@ -1,0 +1,106 @@
+{
+  "topic": "loneliness-statistics",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "youngAdultPct": 6.8,
+        "over65Pct": 7.2,
+        "chronicallyLonelyM": 2.6,
+        "socialPrescribingReferrals": 50
+      },
+      {
+        "year": 2016,
+        "youngAdultPct": 7.0,
+        "over65Pct": 7.1,
+        "chronicallyLonelyM": 2.6,
+        "socialPrescribingReferrals": 80
+      },
+      {
+        "year": 2017,
+        "youngAdultPct": 7.4,
+        "over65Pct": 7.3,
+        "chronicallyLonelyM": 2.7,
+        "socialPrescribingReferrals": 120
+      },
+      {
+        "year": 2018,
+        "youngAdultPct": 7.8,
+        "over65Pct": 7.4,
+        "chronicallyLonelyM": 2.8,
+        "socialPrescribingReferrals": 200
+      },
+      {
+        "year": 2019,
+        "youngAdultPct": 8.2,
+        "over65Pct": 7.5,
+        "chronicallyLonelyM": 2.9,
+        "socialPrescribingReferrals": 350
+      },
+      {
+        "year": 2020,
+        "youngAdultPct": 11.2,
+        "over65Pct": 9.1,
+        "chronicallyLonelyM": 3.7,
+        "socialPrescribingReferrals": 420
+      },
+      {
+        "year": 2021,
+        "youngAdultPct": 10.8,
+        "over65Pct": 8.6,
+        "chronicallyLonelyM": 3.6,
+        "socialPrescribingReferrals": 560
+      },
+      {
+        "year": 2022,
+        "youngAdultPct": 10.1,
+        "over65Pct": 8.0,
+        "chronicallyLonelyM": 3.5,
+        "socialPrescribingReferrals": 680
+      },
+      {
+        "year": 2023,
+        "youngAdultPct": 10.3,
+        "over65Pct": 7.6,
+        "chronicallyLonelyM": 3.7,
+        "socialPrescribingReferrals": 800
+      },
+      {
+        "year": 2024,
+        "youngAdultPct": 10.4,
+        "over65Pct": 7.4,
+        "chronicallyLonelyM": 3.8,
+        "socialPrescribingReferrals": 870
+      },
+      {
+        "year": 2025,
+        "youngAdultPct": 10.5,
+        "over65Pct": 7.4,
+        "chronicallyLonelyM": 3.83,
+        "socialPrescribingReferrals": 920
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Loneliness \u2014 what characteristics and circumstances are associated with feeling lonely",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/articles/lonelinesswhatcharacteristicsandcircumstancesareassociatedwithfeelinglonely/",
+        "frequency": "annual"
+      },
+      {
+        "name": "DCMS",
+        "dataset": "Community Life Survey",
+        "url": "https://www.gov.uk/government/collections/community-life-survey",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Loneliness measured using the ONS harmonised loneliness question 'How often do you feel lonely?' on a 5-point scale. 'Chronic' loneliness defined as responding 'often' or 'always'. Age-group breakdowns from Community Life Survey and APS supplementary modules.",
+    "knownIssues": [
+      "Different surveys use different loneliness scales \u2014 cross-study comparison is difficult",
+      "Loneliness may be under-reported due to stigma, particularly among older men"
+    ]
+  }
+}

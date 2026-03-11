@@ -1,0 +1,100 @@
+{
+  "topic": "rail-fares-increase",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "realFaresIndex": 100,
+        "realWagesIndex": 100,
+        "fareIncreasePct": 2.6,
+        "rpiPct": 1.2
+      },
+      {
+        "year": 2016,
+        "realFaresIndex": 101,
+        "realWagesIndex": 101,
+        "fareIncreasePct": 2.2,
+        "rpiPct": 2.5
+      },
+      {
+        "year": 2017,
+        "realFaresIndex": 103,
+        "realWagesIndex": 100,
+        "fareIncreasePct": 3.4,
+        "rpiPct": 3.6
+      },
+      {
+        "year": 2018,
+        "realFaresIndex": 105,
+        "realWagesIndex": 100,
+        "fareIncreasePct": 3.1,
+        "rpiPct": 3.6
+      },
+      {
+        "year": 2019,
+        "realFaresIndex": 107,
+        "realWagesIndex": 102,
+        "fareIncreasePct": 2.8,
+        "rpiPct": 2.8
+      },
+      {
+        "year": 2020,
+        "realFaresIndex": 108,
+        "realWagesIndex": 103,
+        "fareIncreasePct": 2.6,
+        "rpiPct": 2.5
+      },
+      {
+        "year": 2021,
+        "realFaresIndex": 108,
+        "realWagesIndex": 104,
+        "fareIncreasePct": 2.6,
+        "rpiPct": 3.8
+      },
+      {
+        "year": 2022,
+        "realFaresIndex": 110,
+        "realWagesIndex": 100,
+        "fareIncreasePct": 3.8,
+        "rpiPct": 11.8
+      },
+      {
+        "year": 2023,
+        "realFaresIndex": 113,
+        "realWagesIndex": 101,
+        "fareIncreasePct": 5.9,
+        "rpiPct": 13.4
+      },
+      {
+        "year": 2024,
+        "realFaresIndex": 116,
+        "realWagesIndex": 104,
+        "fareIncreasePct": 4.9,
+        "rpiPct": 4.9
+      },
+      {
+        "year": 2025,
+        "realFaresIndex": 120,
+        "realWagesIndex": 105,
+        "fareIncreasePct": 4.9,
+        "rpiPct": 3.5
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ORR",
+        "dataset": "Rail fares index",
+        "url": "https://www.orr.gov.uk/monitoring-regulation/rail/markets/prices/rail-fares",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Regulated fare increases from DfT annual announcement. Real terms deflated using CPI. Wages from ONS ASHE. EU comparison from European Commission rail fares benchmarking.",
+    "knownIssues": [
+      "Regulated fares are only part of total fares; advance and off-peak unregulated fares can be much cheaper",
+      "Commuter routes from London are the most expensive per km"
+    ]
+  }
+}

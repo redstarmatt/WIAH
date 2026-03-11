@@ -1,0 +1,106 @@
+{
+  "topic": "parking-costs",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "dayParkingCost": 13,
+        "hourlyRate": 1.8,
+        "parkingRevenueBn": 1.2,
+        "parkingSurplusBn": 0.55
+      },
+      {
+        "year": 2016,
+        "dayParkingCost": 14,
+        "hourlyRate": 1.9,
+        "parkingRevenueBn": 1.25,
+        "parkingSurplusBn": 0.58
+      },
+      {
+        "year": 2017,
+        "dayParkingCost": 15,
+        "hourlyRate": 2.0,
+        "parkingRevenueBn": 1.3,
+        "parkingSurplusBn": 0.6
+      },
+      {
+        "year": 2018,
+        "dayParkingCost": 16,
+        "hourlyRate": 2.1,
+        "parkingRevenueBn": 1.35,
+        "parkingSurplusBn": 0.62
+      },
+      {
+        "year": 2019,
+        "dayParkingCost": 17,
+        "hourlyRate": 2.2,
+        "parkingRevenueBn": 1.4,
+        "parkingSurplusBn": 0.65
+      },
+      {
+        "year": 2020,
+        "dayParkingCost": 18,
+        "hourlyRate": 2.2,
+        "parkingRevenueBn": 1.2,
+        "parkingSurplusBn": 0.5
+      },
+      {
+        "year": 2021,
+        "dayParkingCost": 17,
+        "hourlyRate": 2.3,
+        "parkingRevenueBn": 1.4,
+        "parkingSurplusBn": 0.62
+      },
+      {
+        "year": 2022,
+        "dayParkingCost": 20,
+        "hourlyRate": 2.5,
+        "parkingRevenueBn": 1.55,
+        "parkingSurplusBn": 0.7
+      },
+      {
+        "year": 2023,
+        "dayParkingCost": 22,
+        "hourlyRate": 2.7,
+        "parkingRevenueBn": 1.65,
+        "parkingSurplusBn": 0.75
+      },
+      {
+        "year": 2024,
+        "dayParkingCost": 23,
+        "hourlyRate": 2.9,
+        "parkingRevenueBn": 1.75,
+        "parkingSurplusBn": 0.82
+      },
+      {
+        "year": 2025,
+        "dayParkingCost": 24,
+        "hourlyRate": 3.0,
+        "parkingRevenueBn": 1.8,
+        "parkingSurplusBn": 0.86
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DLUHC",
+        "dataset": "Local authority parking revenues in England",
+        "url": "https://www.gov.uk/government/collections/local-authority-parking-revenues-in-england",
+        "frequency": "annual"
+      },
+      {
+        "name": "RAC Foundation",
+        "dataset": "Parking survey",
+        "url": "https://www.racfoundation.org/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Parking revenue from DLUHC statutory returns. Average parking costs from RAC Foundation annual survey of local authority charges.",
+    "knownIssues": [
+      "Parking costs vary enormously by location \u2014 averages obscure wide range",
+      "Private parking not included in council revenue data"
+    ]
+  }
+}

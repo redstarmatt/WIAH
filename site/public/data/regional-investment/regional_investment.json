@@ -1,0 +1,100 @@
+{
+  "topic": "regional-investment",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "londonInvestment": 2543,
+        "northEastInvestment": 1544,
+        "investmentGap": 999,
+        "privateSectorGap": 1200
+      },
+      {
+        "year": 2016,
+        "londonInvestment": 2600,
+        "northEastInvestment": 1560,
+        "investmentGap": 1040,
+        "privateSectorGap": 1250
+      },
+      {
+        "year": 2017,
+        "londonInvestment": 2650,
+        "northEastInvestment": 1570,
+        "investmentGap": 1080,
+        "privateSectorGap": 1280
+      },
+      {
+        "year": 2018,
+        "londonInvestment": 2700,
+        "northEastInvestment": 1580,
+        "investmentGap": 1120,
+        "privateSectorGap": 1300
+      },
+      {
+        "year": 2019,
+        "londonInvestment": 2750,
+        "northEastInvestment": 1590,
+        "investmentGap": 1160,
+        "privateSectorGap": 1320
+      },
+      {
+        "year": 2020,
+        "londonInvestment": 2650,
+        "northEastInvestment": 1560,
+        "investmentGap": 1090,
+        "privateSectorGap": 1280
+      },
+      {
+        "year": 2021,
+        "londonInvestment": 2750,
+        "northEastInvestment": 1600,
+        "investmentGap": 1150,
+        "privateSectorGap": 1310
+      },
+      {
+        "year": 2022,
+        "londonInvestment": 2820,
+        "northEastInvestment": 1620,
+        "investmentGap": 1200,
+        "privateSectorGap": 1350
+      },
+      {
+        "year": 2023,
+        "londonInvestment": 2880,
+        "northEastInvestment": 1630,
+        "investmentGap": 1250,
+        "privateSectorGap": 1400
+      },
+      {
+        "year": 2024,
+        "londonInvestment": 2920,
+        "northEastInvestment": 1640,
+        "investmentGap": 1280,
+        "privateSectorGap": 1430
+      },
+      {
+        "year": 2025,
+        "londonInvestment": 2943,
+        "northEastInvestment": 1644,
+        "investmentGap": 1299,
+        "privateSectorGap": 1450
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "HMT",
+        "dataset": "Public Expenditure Statistical Analyses (PESA)",
+        "url": "https://www.gov.uk/government/collections/public-expenditure-statistical-analyses-pesa",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Identifiable public expenditure from HMT PESA Table 9.2. Per-head calculations use ONS mid-year population estimates.",
+    "knownIssues": [
+      "Some public investment is not regionally identifiable",
+      "Transport investment in London partly serves national connectivity"
+    ]
+  }
+}

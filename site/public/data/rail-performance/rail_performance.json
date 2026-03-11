@@ -1,0 +1,106 @@
+{
+  "topic": "rail-performance",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "ppmPct": 88.1,
+        "cancelledPct": 1.8,
+        "fareIncreasePct": 2.5,
+        "wageGrowthPct": 3.4
+      },
+      {
+        "year": 2016,
+        "ppmPct": 87.5,
+        "cancelledPct": 1.9,
+        "fareIncreasePct": 2.4,
+        "wageGrowthPct": 3.0
+      },
+      {
+        "year": 2017,
+        "ppmPct": 87.3,
+        "cancelledPct": 2.0,
+        "fareIncreasePct": 3.4,
+        "wageGrowthPct": 2.9
+      },
+      {
+        "year": 2018,
+        "ppmPct": 86.7,
+        "cancelledPct": 2.1,
+        "fareIncreasePct": 3.1,
+        "wageGrowthPct": 3.5
+      },
+      {
+        "year": 2019,
+        "ppmPct": 85.8,
+        "cancelledPct": 2.3,
+        "fareIncreasePct": 2.8,
+        "wageGrowthPct": 3.7
+      },
+      {
+        "year": 2020,
+        "ppmPct": 65.2,
+        "cancelledPct": 4.8,
+        "fareIncreasePct": 0.0,
+        "wageGrowthPct": 2.2
+      },
+      {
+        "year": 2021,
+        "ppmPct": 72.4,
+        "cancelledPct": 3.5,
+        "fareIncreasePct": 3.8,
+        "wageGrowthPct": 5.1
+      },
+      {
+        "year": 2022,
+        "ppmPct": 74.3,
+        "cancelledPct": 3.2,
+        "fareIncreasePct": 5.9,
+        "wageGrowthPct": 6.5
+      },
+      {
+        "year": 2023,
+        "ppmPct": 68.1,
+        "cancelledPct": 3.8,
+        "fareIncreasePct": 4.9,
+        "wageGrowthPct": 7.0
+      },
+      {
+        "year": 2024,
+        "ppmPct": 62.4,
+        "cancelledPct": 3.9,
+        "fareIncreasePct": 4.9,
+        "wageGrowthPct": 5.8
+      },
+      {
+        "year": 2025,
+        "ppmPct": 59.2,
+        "cancelledPct": 4.0,
+        "fareIncreasePct": 3.1,
+        "wageGrowthPct": 4.5
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ORR",
+        "dataset": "Rail performance statistics \u2014 PPM",
+        "url": "https://dataportal.orr.gov.uk/statistics/performance/passenger-rail-performance/",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "DfT",
+        "dataset": "Regulated rail fares",
+        "url": "https://www.gov.uk/government/statistics/rail-fares-index",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Public Performance Measure (PPM) counts trains arriving within 5 minutes of schedule (long-distance: 10 minutes). Cancellation rate is the percentage of planned services that did not run. Fare increase applies to regulated fares (season tickets and off-peak returns); unregulated fares vary by operator.",
+    "knownIssues": [
+      "2020-21 PPM is distorted by very low passenger numbers during COVID when fewer trains ran",
+      "PPM was replaced by Delay Attribution metric for some operators from 2023"
+    ]
+  }
+}

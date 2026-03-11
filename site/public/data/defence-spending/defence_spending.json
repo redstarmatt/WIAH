@@ -1,0 +1,106 @@
+{
+  "topic": "defence-spending",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "defenceGDPPct": 2.2,
+        "natoTarget": 2.0,
+        "defenceSpendBn": 42,
+        "equipmentBudgetBn": 19
+      },
+      {
+        "year": 2016,
+        "defenceGDPPct": 2.2,
+        "natoTarget": 2.0,
+        "defenceSpendBn": 43,
+        "equipmentBudgetBn": 19
+      },
+      {
+        "year": 2017,
+        "defenceGDPPct": 2.1,
+        "natoTarget": 2.0,
+        "defenceSpendBn": 43,
+        "equipmentBudgetBn": 19
+      },
+      {
+        "year": 2018,
+        "defenceGDPPct": 2.1,
+        "natoTarget": 2.0,
+        "defenceSpendBn": 44,
+        "equipmentBudgetBn": 20
+      },
+      {
+        "year": 2019,
+        "defenceGDPPct": 2.1,
+        "natoTarget": 2.0,
+        "defenceSpendBn": 45,
+        "equipmentBudgetBn": 20
+      },
+      {
+        "year": 2020,
+        "defenceGDPPct": 2.1,
+        "natoTarget": 2.0,
+        "defenceSpendBn": 46,
+        "equipmentBudgetBn": 21
+      },
+      {
+        "year": 2021,
+        "defenceGDPPct": 2.2,
+        "natoTarget": 2.0,
+        "defenceSpendBn": 48,
+        "equipmentBudgetBn": 22
+      },
+      {
+        "year": 2022,
+        "defenceGDPPct": 2.25,
+        "natoTarget": 2.0,
+        "defenceSpendBn": 50,
+        "equipmentBudgetBn": 23
+      },
+      {
+        "year": 2023,
+        "defenceGDPPct": 2.3,
+        "natoTarget": 2.0,
+        "defenceSpendBn": 52,
+        "equipmentBudgetBn": 24
+      },
+      {
+        "year": 2024,
+        "defenceGDPPct": 2.3,
+        "natoTarget": 2.0,
+        "defenceSpendBn": 54,
+        "equipmentBudgetBn": 25
+      },
+      {
+        "year": 2025,
+        "defenceGDPPct": 2.3,
+        "natoTarget": 2.0,
+        "defenceSpendBn": 56,
+        "equipmentBudgetBn": 26
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "MOD",
+        "dataset": "UK defence statistics",
+        "url": "https://www.gov.uk/government/collections/uk-defence-statistics-compendium",
+        "frequency": "annual"
+      },
+      {
+        "name": "NATO",
+        "dataset": "Defence expenditure of NATO countries",
+        "url": "https://www.nato.int/cps/en/natohq/news.htm",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Defence expenditure as NATO definition (broader than government accounts definition). GDP from ONS. Equipment spending from MOD annual report and accounts.",
+    "knownIssues": [
+      "NATO and HMT definitions of defence spending differ slightly",
+      "Some development and counter-terrorism spending excluded from NATO definition"
+    ]
+  }
+}

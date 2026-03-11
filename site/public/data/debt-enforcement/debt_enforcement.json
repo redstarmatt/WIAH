@@ -1,0 +1,105 @@
+{
+  "topic": "debt-enforcement",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "ccjCount": 520,
+        "ccjAvgDebt": 1100,
+        "highCostCreditM": 3.5,
+        "councilTaxEnforcementM": 2.2
+      },
+      {
+        "year": 2016,
+        "ccjCount": 540,
+        "ccjAvgDebt": 1150,
+        "highCostCreditM": 3.4,
+        "councilTaxEnforcementM": 2.3
+      },
+      {
+        "year": 2017,
+        "ccjCount": 555,
+        "ccjAvgDebt": 1180,
+        "highCostCreditM": 3.3,
+        "councilTaxEnforcementM": 2.3
+      },
+      {
+        "year": 2018,
+        "ccjCount": 570,
+        "ccjAvgDebt": 1210,
+        "highCostCreditM": 3.2,
+        "councilTaxEnforcementM": 2.4
+      },
+      {
+        "year": 2019,
+        "ccjCount": 581,
+        "ccjAvgDebt": 1250,
+        "highCostCreditM": 3.1,
+        "councilTaxEnforcementM": 2.5
+      },
+      {
+        "year": 2020,
+        "ccjCount": 532,
+        "ccjAvgDebt": 1100,
+        "highCostCreditM": 2.9,
+        "councilTaxEnforcementM": 2.3
+      },
+      {
+        "year": 2021,
+        "ccjCount": 570,
+        "ccjAvgDebt": 1180,
+        "highCostCreditM": 2.9,
+        "councilTaxEnforcementM": 2.4
+      },
+      {
+        "year": 2022,
+        "ccjCount": 598,
+        "ccjAvgDebt": 1300,
+        "highCostCreditM": 2.9,
+        "councilTaxEnforcementM": 2.5
+      },
+      {
+        "year": 2023,
+        "ccjCount": 642,
+        "ccjAvgDebt": 1380,
+        "highCostCreditM": 3.0,
+        "councilTaxEnforcementM": 2.6
+      },
+      {
+        "year": 2024,
+        "ccjCount": 680,
+        "ccjAvgDebt": 1420,
+        "highCostCreditM": 3.1,
+        "councilTaxEnforcementM": 2.7
+      },
+      {
+        "year": 2025,
+        "ccjCount": 706,
+        "ccjAvgDebt": 1442,
+        "highCostCreditM": 3.1,
+        "councilTaxEnforcementM": 2.8
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Registry Trust",
+        "dataset": "County Court Judgment statistics",
+        "url": "https://www.registrytrust.org.uk/",
+        "frequency": "annual"
+      },
+      {
+        "name": "FCA",
+        "dataset": "Consumer credit data",
+        "url": "https://www.fca.org.uk/data/consumer-credit-data",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "CCJ data from Registry Trust. High-cost credit borrowers from FCA financial lives survey. Council tax enforcement from DLUHC council tax collection statistics.",
+    "knownIssues": [
+      "High-cost credit market contracted after FCA payday loan caps in 2015; demand may have shifted to unregulated lenders"
+    ]
+  }
+}

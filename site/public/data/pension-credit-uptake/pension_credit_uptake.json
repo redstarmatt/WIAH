@@ -1,0 +1,100 @@
+{
+  "topic": "pension-credit-uptake",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "takeUpRate": 63,
+        "unclaimedBn": 1.8,
+        "eligibleNonClaimants": 850,
+        "awareOfEntitlement": 24
+      },
+      {
+        "year": 2016,
+        "takeUpRate": 63,
+        "unclaimedBn": 1.9,
+        "eligibleNonClaimants": 860,
+        "awareOfEntitlement": 24
+      },
+      {
+        "year": 2017,
+        "takeUpRate": 63,
+        "unclaimedBn": 2.0,
+        "eligibleNonClaimants": 870,
+        "awareOfEntitlement": 24
+      },
+      {
+        "year": 2018,
+        "takeUpRate": 63,
+        "unclaimedBn": 2.1,
+        "eligibleNonClaimants": 875,
+        "awareOfEntitlement": 24
+      },
+      {
+        "year": 2019,
+        "takeUpRate": 63,
+        "unclaimedBn": 2.1,
+        "eligibleNonClaimants": 880,
+        "awareOfEntitlement": 24
+      },
+      {
+        "year": 2020,
+        "takeUpRate": 63,
+        "unclaimedBn": 2.1,
+        "eligibleNonClaimants": 875,
+        "awareOfEntitlement": 24
+      },
+      {
+        "year": 2021,
+        "takeUpRate": 63,
+        "unclaimedBn": 2.2,
+        "eligibleNonClaimants": 875,
+        "awareOfEntitlement": 25
+      },
+      {
+        "year": 2022,
+        "takeUpRate": 63,
+        "unclaimedBn": 2.2,
+        "eligibleNonClaimants": 880,
+        "awareOfEntitlement": 25
+      },
+      {
+        "year": 2023,
+        "takeUpRate": 63,
+        "unclaimedBn": 2.2,
+        "eligibleNonClaimants": 880,
+        "awareOfEntitlement": 24
+      },
+      {
+        "year": 2024,
+        "takeUpRate": 63,
+        "unclaimedBn": 2.2,
+        "eligibleNonClaimants": 880,
+        "awareOfEntitlement": 25
+      },
+      {
+        "year": 2025,
+        "takeUpRate": 63,
+        "unclaimedBn": 2.2,
+        "eligibleNonClaimants": 880,
+        "awareOfEntitlement": 28
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DWP",
+        "dataset": "Income-related benefits: estimates of take-up",
+        "url": "https://www.gov.uk/government/collections/income-related-benefits-estimates-of-take-up",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Take-up and non-claimants from DWP estimates of take-up of income-related benefits using FRS and administrative data. Unclaimed amount calculated from non-claimant numbers and average entitlement.",
+    "knownIssues": [
+      "Take-up estimation methodology has not changed substantially since 2010 \u2014 estimates may not capture recent eligibility changes",
+      "Non-take-up barriers are complex and not fully captured in official data"
+    ]
+  }
+}

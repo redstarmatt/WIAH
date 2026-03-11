@@ -1,0 +1,100 @@
+{
+  "topic": "gig-worker-rights",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "gigWorkers": 2.8,
+        "platformOnly": 0.8,
+        "withoutSickPay": 75,
+        "withoutPension": 72
+      },
+      {
+        "year": 2016,
+        "gigWorkers": 3.0,
+        "platformOnly": 0.9,
+        "withoutSickPay": 75,
+        "withoutPension": 72
+      },
+      {
+        "year": 2017,
+        "gigWorkers": 3.2,
+        "platformOnly": 1.0,
+        "withoutSickPay": 74,
+        "withoutPension": 71
+      },
+      {
+        "year": 2018,
+        "gigWorkers": 3.5,
+        "platformOnly": 1.1,
+        "withoutSickPay": 73,
+        "withoutPension": 70
+      },
+      {
+        "year": 2019,
+        "gigWorkers": 3.8,
+        "platformOnly": 1.2,
+        "withoutSickPay": 73,
+        "withoutPension": 70
+      },
+      {
+        "year": 2020,
+        "gigWorkers": 3.9,
+        "platformOnly": 1.3,
+        "withoutSickPay": 72,
+        "withoutPension": 69
+      },
+      {
+        "year": 2021,
+        "gigWorkers": 4.0,
+        "platformOnly": 1.4,
+        "withoutSickPay": 72,
+        "withoutPension": 68
+      },
+      {
+        "year": 2022,
+        "gigWorkers": 4.1,
+        "platformOnly": 1.5,
+        "withoutSickPay": 72,
+        "withoutPension": 68
+      },
+      {
+        "year": 2023,
+        "gigWorkers": 4.2,
+        "platformOnly": 1.6,
+        "withoutSickPay": 72,
+        "withoutPension": 68
+      },
+      {
+        "year": 2024,
+        "gigWorkers": 4.3,
+        "platformOnly": 1.7,
+        "withoutSickPay": 72,
+        "withoutPension": 68
+      },
+      {
+        "year": 2025,
+        "gigWorkers": 4.4,
+        "platformOnly": 1.8,
+        "withoutSickPay": 72,
+        "withoutPension": 68
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "CIPD",
+        "dataset": "UK Working Lives survey",
+        "url": "https://www.cipd.org/uk/knowledge/reports/uk-working-lives/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Gig economy workforce estimates from CIPD and TUC surveys. Worker rights coverage from ONS ASHE and DWP pension auto-enrolment data.",
+    "knownIssues": [
+      "No single official definition of 'gig worker' \u2014 estimates vary by methodology",
+      "Self-classification of employment status creates measurement challenges"
+    ]
+  }
+}

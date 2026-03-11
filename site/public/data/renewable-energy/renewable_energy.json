@@ -1,0 +1,100 @@
+{
+  "topic": "renewable-energy",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "renewablesPct": 24.6,
+        "gasPct": 44,
+        "offshoreWindPct": 5,
+        "onshoreWindPct": 9
+      },
+      {
+        "year": 2016,
+        "renewablesPct": 29.3,
+        "gasPct": 42,
+        "offshoreWindPct": 7,
+        "onshoreWindPct": 10
+      },
+      {
+        "year": 2017,
+        "renewablesPct": 33.1,
+        "gasPct": 41,
+        "offshoreWindPct": 9,
+        "onshoreWindPct": 11
+      },
+      {
+        "year": 2018,
+        "renewablesPct": 37.1,
+        "gasPct": 39,
+        "offshoreWindPct": 11,
+        "onshoreWindPct": 12
+      },
+      {
+        "year": 2019,
+        "renewablesPct": 43.1,
+        "gasPct": 37,
+        "offshoreWindPct": 14,
+        "onshoreWindPct": 12
+      },
+      {
+        "year": 2020,
+        "renewablesPct": 40.2,
+        "gasPct": 36,
+        "offshoreWindPct": 13,
+        "onshoreWindPct": 12
+      },
+      {
+        "year": 2021,
+        "renewablesPct": 41.5,
+        "gasPct": 38,
+        "offshoreWindPct": 14,
+        "onshoreWindPct": 12
+      },
+      {
+        "year": 2022,
+        "renewablesPct": 47.0,
+        "gasPct": 35,
+        "offshoreWindPct": 17,
+        "onshoreWindPct": 13
+      },
+      {
+        "year": 2023,
+        "renewablesPct": 45.5,
+        "gasPct": 36,
+        "offshoreWindPct": 18,
+        "onshoreWindPct": 14
+      },
+      {
+        "year": 2024,
+        "renewablesPct": 45.5,
+        "gasPct": 36,
+        "offshoreWindPct": 18,
+        "onshoreWindPct": 12
+      },
+      {
+        "year": 2025,
+        "renewablesPct": 46,
+        "gasPct": 34,
+        "offshoreWindPct": 20,
+        "onshoreWindPct": 12
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DESNZ",
+        "dataset": "Energy trends",
+        "url": "https://www.gov.uk/government/collections/energy-trends",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Generation shares from DESNZ Energy Trends Table 5.1. Renewables include wind, solar PV, hydropower and bioenergy.",
+    "knownIssues": [
+      "Renewable share varies significantly by year due to wind and hydro weather dependence",
+      "Bioenergy sustainability is contested; it is counted as renewable in official statistics"
+    ]
+  }
+}

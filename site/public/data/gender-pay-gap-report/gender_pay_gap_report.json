@@ -1,0 +1,100 @@
+{
+  "topic": "gender-pay-gap-report",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "fullTimeGap": 10.0,
+        "allWorkersGap": 19.2,
+        "financialSectorGap": 24.2,
+        "educationGap": 5.2
+      },
+      {
+        "year": 2016,
+        "fullTimeGap": 9.4,
+        "allWorkersGap": 18.1,
+        "financialSectorGap": 24.0,
+        "educationGap": 5.0
+      },
+      {
+        "year": 2017,
+        "fullTimeGap": 9.0,
+        "allWorkersGap": 17.4,
+        "financialSectorGap": 23.8,
+        "educationGap": 4.8
+      },
+      {
+        "year": 2018,
+        "fullTimeGap": 8.6,
+        "allWorkersGap": 17.3,
+        "financialSectorGap": 23.6,
+        "educationGap": 4.7
+      },
+      {
+        "year": 2019,
+        "fullTimeGap": 8.3,
+        "allWorkersGap": 17.3,
+        "financialSectorGap": 23.4,
+        "educationGap": 4.5
+      },
+      {
+        "year": 2020,
+        "fullTimeGap": 7.9,
+        "allWorkersGap": 15.5,
+        "financialSectorGap": 23.2,
+        "educationGap": 4.3
+      },
+      {
+        "year": 2021,
+        "fullTimeGap": 7.9,
+        "allWorkersGap": 15.4,
+        "financialSectorGap": 23.1,
+        "educationGap": 4.2
+      },
+      {
+        "year": 2022,
+        "fullTimeGap": 7.7,
+        "allWorkersGap": 14.9,
+        "financialSectorGap": 23.0,
+        "educationGap": 4.1
+      },
+      {
+        "year": 2023,
+        "fullTimeGap": 7.7,
+        "allWorkersGap": 14.3,
+        "financialSectorGap": 23.2,
+        "educationGap": 4.0
+      },
+      {
+        "year": 2024,
+        "fullTimeGap": 7.8,
+        "allWorkersGap": 14.1,
+        "financialSectorGap": 23.1,
+        "educationGap": 3.9
+      },
+      {
+        "year": 2025,
+        "fullTimeGap": 7.7,
+        "allWorkersGap": 13.9,
+        "financialSectorGap": 23.1,
+        "educationGap": 3.8
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Annual Survey of Hours and Earnings (ASHE)",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Gender pay gap measured as difference in median hourly earnings between male and female employees as a percentage of male earnings. Full-time defined as 30+ hours per week.",
+    "knownIssues": [
+      "ASHE excludes self-employed; self-employment gap may differ",
+      "Industry-level gaps affected by compositional differences within sectors"
+    ]
+  }
+}

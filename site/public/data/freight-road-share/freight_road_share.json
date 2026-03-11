@@ -1,0 +1,100 @@
+{
+  "topic": "freight-road-share",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "roadSharePct": 77,
+        "railSharePct": 10,
+        "lorryVMT": 21,
+        "roadFreightBtKm": 154
+      },
+      {
+        "year": 2016,
+        "roadSharePct": 77,
+        "railSharePct": 10,
+        "lorryVMT": 22,
+        "roadFreightBtKm": 157
+      },
+      {
+        "year": 2017,
+        "roadSharePct": 77,
+        "railSharePct": 9,
+        "lorryVMT": 22,
+        "roadFreightBtKm": 158
+      },
+      {
+        "year": 2018,
+        "roadSharePct": 77,
+        "railSharePct": 9,
+        "lorryVMT": 23,
+        "roadFreightBtKm": 160
+      },
+      {
+        "year": 2019,
+        "roadSharePct": 77,
+        "railSharePct": 9,
+        "lorryVMT": 24,
+        "roadFreightBtKm": 162
+      },
+      {
+        "year": 2020,
+        "roadSharePct": 78,
+        "railSharePct": 9,
+        "lorryVMT": 22,
+        "roadFreightBtKm": 152
+      },
+      {
+        "year": 2021,
+        "roadSharePct": 79,
+        "railSharePct": 8,
+        "lorryVMT": 22,
+        "roadFreightBtKm": 155
+      },
+      {
+        "year": 2022,
+        "roadSharePct": 78,
+        "railSharePct": 9,
+        "lorryVMT": 23,
+        "roadFreightBtKm": 158
+      },
+      {
+        "year": 2023,
+        "roadSharePct": 78,
+        "railSharePct": 9,
+        "lorryVMT": 23,
+        "roadFreightBtKm": 159
+      },
+      {
+        "year": 2024,
+        "roadSharePct": 78,
+        "railSharePct": 9,
+        "lorryVMT": 24,
+        "roadFreightBtKm": 161
+      },
+      {
+        "year": 2025,
+        "roadSharePct": 78,
+        "railSharePct": 9,
+        "lorryVMT": 24,
+        "roadFreightBtKm": 163
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DfT",
+        "dataset": "Transport statistics Great Britain",
+        "url": "https://www.gov.uk/government/collections/transport-statistics-great-britain",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Freight mode shares from DfT Transport Statistics Great Britain, using tonnes and tonne-km. Road freight from HMRC road freight data. Rail freight from ORR Network Rail freight data.",
+    "knownIssues": [
+      "Tonne-km and tonne measures give different mode share pictures \u2014 road advantages over shorter distances",
+      "Post-Brexit data on EU-origin road freight less complete"
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "topic": "incineration-growth",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "efwCapacity": 6.5,
+        "efwCO2": 5.0,
+        "plantsOperational": 30,
+        "wasteProcessedM": 6.0
+      },
+      {
+        "year": 2016,
+        "efwCapacity": 7.5,
+        "efwCO2": 5.8,
+        "plantsOperational": 32,
+        "wasteProcessedM": 7.0
+      },
+      {
+        "year": 2017,
+        "efwCapacity": 8.5,
+        "efwCO2": 6.5,
+        "plantsOperational": 35,
+        "wasteProcessedM": 8.0
+      },
+      {
+        "year": 2018,
+        "efwCapacity": 9.5,
+        "efwCO2": 7.2,
+        "plantsOperational": 38,
+        "wasteProcessedM": 9.0
+      },
+      {
+        "year": 2019,
+        "efwCapacity": 10.5,
+        "efwCO2": 7.9,
+        "plantsOperational": 41,
+        "wasteProcessedM": 10.0
+      },
+      {
+        "year": 2020,
+        "efwCapacity": 11.5,
+        "efwCO2": 8.5,
+        "plantsOperational": 44,
+        "wasteProcessedM": 11.0
+      },
+      {
+        "year": 2021,
+        "efwCapacity": 12.5,
+        "efwCO2": 9.2,
+        "plantsOperational": 46,
+        "wasteProcessedM": 12.0
+      },
+      {
+        "year": 2022,
+        "efwCapacity": 13.5,
+        "efwCO2": 10.0,
+        "plantsOperational": 49,
+        "wasteProcessedM": 13.0
+      },
+      {
+        "year": 2023,
+        "efwCapacity": 14.2,
+        "efwCO2": 10.8,
+        "plantsOperational": 51,
+        "wasteProcessedM": 13.8
+      },
+      {
+        "year": 2024,
+        "efwCapacity": 14.9,
+        "efwCO2": 11.2,
+        "plantsOperational": 53,
+        "wasteProcessedM": 14.5
+      },
+      {
+        "year": 2025,
+        "efwCapacity": 15.4,
+        "efwCO2": 11.6,
+        "plantsOperational": 54,
+        "wasteProcessedM": 15.0
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Eunomia",
+        "dataset": "UK energy from waste statistics",
+        "url": "https://www.eunomia.co.uk/",
+        "frequency": "annual"
+      },
+      {
+        "name": "Environment Agency",
+        "dataset": "Permits data \u2014 energy from waste",
+        "url": "https://environment.data.gov.uk/",
+        "frequency": "continuous"
+      }
+    ],
+    "methodology": "EfW capacity from EA permits data and Eunomia industry database. CO2 emissions from DESNZ greenhouse gas inventory using IPCC waste sector methodology.",
+    "knownIssues": [
+      "Some EfW CO2 is biogenic (from organic waste) and counted differently under different methodologies",
+      "Capacity does not always equal actual throughput"
+    ]
+  }
+}

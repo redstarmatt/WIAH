@@ -1,0 +1,106 @@
+{
+  "topic": "bathing-water-quality",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "excellentPct": 73,
+        "poorPct": 4,
+        "dischargeEvents": 200,
+        "durationHours": 1400
+      },
+      {
+        "year": 2016,
+        "excellentPct": 71,
+        "poorPct": 5,
+        "dischargeEvents": 210,
+        "durationHours": 1500
+      },
+      {
+        "year": 2017,
+        "excellentPct": 69,
+        "poorPct": 6,
+        "dischargeEvents": 225,
+        "durationHours": 1600
+      },
+      {
+        "year": 2018,
+        "excellentPct": 67,
+        "poorPct": 6,
+        "dischargeEvents": 240,
+        "durationHours": 1750
+      },
+      {
+        "year": 2019,
+        "excellentPct": 65,
+        "poorPct": 7,
+        "dischargeEvents": 260,
+        "durationHours": 1900
+      },
+      {
+        "year": 2020,
+        "excellentPct": 62,
+        "poorPct": 8,
+        "dischargeEvents": 280,
+        "durationHours": 2100
+      },
+      {
+        "year": 2021,
+        "excellentPct": 60,
+        "poorPct": 9,
+        "dischargeEvents": 310,
+        "durationHours": 2400
+      },
+      {
+        "year": 2022,
+        "excellentPct": 58,
+        "poorPct": 10,
+        "dischargeEvents": 370,
+        "durationHours": 3000
+      },
+      {
+        "year": 2023,
+        "excellentPct": 56,
+        "poorPct": 12,
+        "dischargeEvents": 420,
+        "durationHours": 3600
+      },
+      {
+        "year": 2024,
+        "excellentPct": 54,
+        "poorPct": 13,
+        "dischargeEvents": 450,
+        "durationHours": 3900
+      },
+      {
+        "year": 2025,
+        "excellentPct": 52,
+        "poorPct": 14,
+        "dischargeEvents": 464,
+        "durationHours": 4100
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Environment Agency",
+        "dataset": "Bathing water quality classifications",
+        "url": "https://environment.data.gov.uk/bwq/profiles/",
+        "frequency": "annual"
+      },
+      {
+        "name": "Environment Agency",
+        "dataset": "Event Duration Monitoring data",
+        "url": "https://www.gov.uk/government/collections/storm-overflows-data",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Bathing water classifications use 4-year rolling average of E. coli and intestinal enterococci samples. Poor bathing water is that failing to meet 'sufficient' minimum standard. Discharge events from water company EDM sensors.",
+    "knownIssues": [
+      "EDM monitoring coverage was incomplete before 2023 \u2014 earlier figures may undercount",
+      "Bathing water classification methodology changed slightly in 2020"
+    ]
+  }
+}

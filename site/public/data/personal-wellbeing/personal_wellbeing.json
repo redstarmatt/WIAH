@@ -1,0 +1,106 @@
+{
+  "topic": "personal-wellbeing",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "lifeSatisfaction": 7.65,
+        "anxietyMean": 2.81,
+        "leastDeprived": 8.1,
+        "mostDeprived": 7.1
+      },
+      {
+        "year": 2016,
+        "lifeSatisfaction": 7.68,
+        "anxietyMean": 2.79,
+        "leastDeprived": 8.12,
+        "mostDeprived": 7.12
+      },
+      {
+        "year": 2017,
+        "lifeSatisfaction": 7.7,
+        "anxietyMean": 2.77,
+        "leastDeprived": 8.14,
+        "mostDeprived": 7.14
+      },
+      {
+        "year": 2018,
+        "lifeSatisfaction": 7.67,
+        "anxietyMean": 2.8,
+        "leastDeprived": 8.11,
+        "mostDeprived": 7.09
+      },
+      {
+        "year": 2019,
+        "lifeSatisfaction": 7.72,
+        "anxietyMean": 2.75,
+        "leastDeprived": 8.15,
+        "mostDeprived": 7.15
+      },
+      {
+        "year": 2020,
+        "lifeSatisfaction": 7.48,
+        "anxietyMean": 3.1,
+        "leastDeprived": 7.9,
+        "mostDeprived": 6.85
+      },
+      {
+        "year": 2021,
+        "lifeSatisfaction": 7.46,
+        "anxietyMean": 3.05,
+        "leastDeprived": 7.88,
+        "mostDeprived": 6.82
+      },
+      {
+        "year": 2022,
+        "lifeSatisfaction": 7.51,
+        "anxietyMean": 2.95,
+        "leastDeprived": 7.95,
+        "mostDeprived": 6.9
+      },
+      {
+        "year": 2023,
+        "lifeSatisfaction": 7.43,
+        "anxietyMean": 3.0,
+        "leastDeprived": 7.87,
+        "mostDeprived": 6.78
+      },
+      {
+        "year": 2024,
+        "lifeSatisfaction": 7.4,
+        "anxietyMean": 3.02,
+        "leastDeprived": 7.85,
+        "mostDeprived": 6.75
+      },
+      {
+        "year": 2025,
+        "lifeSatisfaction": 7.4,
+        "anxietyMean": 3.02,
+        "leastDeprived": 7.85,
+        "mostDeprived": 6.75
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Personal well-being in the UK",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/bulletins/measuringnationalwellbeing/",
+        "frequency": "annual"
+      },
+      {
+        "name": "OHID Fingertips",
+        "dataset": "Wellbeing indicators by area",
+        "url": "https://fingertips.phe.org.uk/profile/wider-determinants",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Wellbeing scores from ONS Annual Population Survey (APS), which asks four subjective wellbeing questions on a 0-10 scale. Around 150,000 adults are surveyed each year. Deprivation breakdown uses English Indices of Multiple Deprivation quintiles matched to survey local areas.",
+    "knownIssues": [
+      "Survey methodology changed in 2016 \u2014 some discontinuity in series",
+      "2020 figure represents April-March survey year covering the pandemic period"
+    ]
+  }
+}

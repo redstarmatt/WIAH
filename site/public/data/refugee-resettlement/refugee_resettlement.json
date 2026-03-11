@@ -1,0 +1,100 @@
+{
+  "topic": "refugee-resettlement",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "formalResettlement": 1000,
+        "ukrainianArrivals": 0,
+        "homesSecuredPct": 60,
+        "stillInEmergencyAccom": 25
+      },
+      {
+        "year": 2016,
+        "formalResettlement": 2500,
+        "ukrainianArrivals": 0,
+        "homesSecuredPct": 62,
+        "stillInEmergencyAccom": 24
+      },
+      {
+        "year": 2017,
+        "formalResettlement": 3000,
+        "ukrainianArrivals": 0,
+        "homesSecuredPct": 65,
+        "stillInEmergencyAccom": 22
+      },
+      {
+        "year": 2018,
+        "formalResettlement": 4500,
+        "ukrainianArrivals": 0,
+        "homesSecuredPct": 67,
+        "stillInEmergencyAccom": 21
+      },
+      {
+        "year": 2019,
+        "formalResettlement": 5000,
+        "ukrainianArrivals": 0,
+        "homesSecuredPct": 68,
+        "stillInEmergencyAccom": 20
+      },
+      {
+        "year": 2020,
+        "formalResettlement": 2500,
+        "ukrainianArrivals": 0,
+        "homesSecuredPct": 58,
+        "stillInEmergencyAccom": 28
+      },
+      {
+        "year": 2021,
+        "formalResettlement": 2500,
+        "ukrainianArrivals": 0,
+        "homesSecuredPct": 62,
+        "stillInEmergencyAccom": 26
+      },
+      {
+        "year": 2022,
+        "formalResettlement": 5000,
+        "ukrainianArrivals": 150000,
+        "homesSecuredPct": 68,
+        "stillInEmergencyAccom": 22
+      },
+      {
+        "year": 2023,
+        "formalResettlement": 5000,
+        "ukrainianArrivals": 45000,
+        "homesSecuredPct": 70,
+        "stillInEmergencyAccom": 20
+      },
+      {
+        "year": 2024,
+        "formalResettlement": 5000,
+        "ukrainianArrivals": 24000,
+        "homesSecuredPct": 71,
+        "stillInEmergencyAccom": 19
+      },
+      {
+        "year": 2025,
+        "formalResettlement": 5000,
+        "ukrainianArrivals": 10000,
+        "homesSecuredPct": 72,
+        "stillInEmergencyAccom": 18
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Home Office",
+        "dataset": "Resettlement statistics",
+        "url": "https://www.gov.uk/government/collections/immigration-statistics-quarterly-release",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Formal resettlement arrivals from Home Office statistics (VPRS, UKRS, ACRS). Ukrainian arrivals from Homes for Ukraine and Ukraine Family Schemes. Housing outcomes from DLUHC.",
+    "knownIssues": [
+      "Ukrainian data is especially uncertain as some returned and re-entered multiple times",
+      "Homes for Ukraine is a visa scheme not a formal resettlement programme"
+    ]
+  }
+}

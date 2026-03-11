@@ -1,0 +1,100 @@
+{
+  "topic": "transport-poverty",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "transportPovertyM": 1.8,
+        "ruralDeprivationPct": 20,
+        "lowIncomeTransportIndex": 113,
+        "generalInflationIndex": 110
+      },
+      {
+        "year": 2016,
+        "transportPovertyM": 1.9,
+        "ruralDeprivationPct": 20,
+        "lowIncomeTransportIndex": 116,
+        "generalInflationIndex": 112
+      },
+      {
+        "year": 2017,
+        "transportPovertyM": 2.0,
+        "ruralDeprivationPct": 21,
+        "lowIncomeTransportIndex": 119,
+        "generalInflationIndex": 115
+      },
+      {
+        "year": 2018,
+        "transportPovertyM": 2.0,
+        "ruralDeprivationPct": 21,
+        "lowIncomeTransportIndex": 122,
+        "generalInflationIndex": 117
+      },
+      {
+        "year": 2019,
+        "transportPovertyM": 2.1,
+        "ruralDeprivationPct": 21,
+        "lowIncomeTransportIndex": 125,
+        "generalInflationIndex": 119
+      },
+      {
+        "year": 2020,
+        "transportPovertyM": 2.1,
+        "ruralDeprivationPct": 22,
+        "lowIncomeTransportIndex": 124,
+        "generalInflationIndex": 120
+      },
+      {
+        "year": 2021,
+        "transportPovertyM": 2.1,
+        "ruralDeprivationPct": 22,
+        "lowIncomeTransportIndex": 127,
+        "generalInflationIndex": 122
+      },
+      {
+        "year": 2022,
+        "transportPovertyM": 2.1,
+        "ruralDeprivationPct": 22,
+        "lowIncomeTransportIndex": 133,
+        "generalInflationIndex": 130
+      },
+      {
+        "year": 2023,
+        "transportPovertyM": 2.2,
+        "ruralDeprivationPct": 23,
+        "lowIncomeTransportIndex": 138,
+        "generalInflationIndex": 143
+      },
+      {
+        "year": 2024,
+        "transportPovertyM": 2.3,
+        "ruralDeprivationPct": 23,
+        "lowIncomeTransportIndex": 141,
+        "generalInflationIndex": 149
+      },
+      {
+        "year": 2025,
+        "transportPovertyM": 2.3,
+        "ruralDeprivationPct": 23,
+        "lowIncomeTransportIndex": 143,
+        "generalInflationIndex": 152
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DfT",
+        "dataset": "National Travel Survey",
+        "url": "https://www.gov.uk/government/collections/national-travel-survey-statistics",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Transport poverty threshold defined as households spending 10%+ of income on transport (including public transport fares, fuel and vehicle costs). Low-income transport index from Living Costs and Food Survey.",
+    "knownIssues": [
+      "Transport poverty definition varies \u2014 some studies use 10% threshold, others use accessibility-based definition",
+      "Vehicle ownership data from DVLA; actual usage estimated from NTS"
+    ]
+  }
+}

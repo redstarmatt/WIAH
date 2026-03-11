@@ -1,0 +1,100 @@
+{
+  "topic": "bathing-water",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "excellentPct": 72,
+        "poorSufficientPct": 5,
+        "sewerOverflowHours": 0.1,
+        "monitoredCSOsPct": 12
+      },
+      {
+        "year": 2016,
+        "excellentPct": 70,
+        "poorSufficientPct": 5,
+        "sewerOverflowHours": 0.17,
+        "monitoredCSOsPct": 18
+      },
+      {
+        "year": 2017,
+        "excellentPct": 68,
+        "poorSufficientPct": 6,
+        "sewerOverflowHours": 0.9,
+        "monitoredCSOsPct": 25
+      },
+      {
+        "year": 2018,
+        "excellentPct": 67,
+        "poorSufficientPct": 6,
+        "sewerOverflowHours": 2.5,
+        "monitoredCSOsPct": 35
+      },
+      {
+        "year": 2019,
+        "excellentPct": 66,
+        "poorSufficientPct": 7,
+        "sewerOverflowHours": 3.1,
+        "monitoredCSOsPct": 48
+      },
+      {
+        "year": 2020,
+        "excellentPct": 65,
+        "poorSufficientPct": 7,
+        "sewerOverflowHours": 2.7,
+        "monitoredCSOsPct": 62
+      },
+      {
+        "year": 2021,
+        "excellentPct": 63,
+        "poorSufficientPct": 8,
+        "sewerOverflowHours": 1.8,
+        "monitoredCSOsPct": 75
+      },
+      {
+        "year": 2022,
+        "excellentPct": 62,
+        "poorSufficientPct": 9,
+        "sewerOverflowHours": 3.6,
+        "monitoredCSOsPct": 88
+      },
+      {
+        "year": 2023,
+        "excellentPct": 61,
+        "poorSufficientPct": 10,
+        "sewerOverflowHours": 3.6,
+        "monitoredCSOsPct": 96
+      },
+      {
+        "year": 2024,
+        "excellentPct": 60,
+        "poorSufficientPct": 11,
+        "sewerOverflowHours": 3.6,
+        "monitoredCSOsPct": 100
+      },
+      {
+        "year": 2025,
+        "excellentPct": 60,
+        "poorSufficientPct": 11,
+        "sewerOverflowHours": 3.4,
+        "monitoredCSOsPct": 100
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Environment Agency",
+        "dataset": "Bathing water quality \u2014 UK",
+        "url": "https://environment.data.gov.uk/bwq/profiles/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Bathing water quality classified under Bathing Water Regulations 2013. Excellent/Good/Sufficient/Poor based on 4-year rolling average of E. coli and intestinal enterococci concentrations.",
+    "knownIssues": [
+      "Designated bathing waters cover only a fraction of water bodies where people actually swim",
+      "CSO monitoring data only complete for England; Wales, Scotland have separate reporting"
+    ]
+  }
+}

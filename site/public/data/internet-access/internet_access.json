@@ -1,0 +1,106 @@
+{
+  "topic": "internet-access",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "offlineMillions": 7.4,
+        "neverUsedMillions": 6.3,
+        "highIncomePct": 97,
+        "lowIncomePct": 62
+      },
+      {
+        "year": 2016,
+        "offlineMillions": 7.1,
+        "neverUsedMillions": 5.9,
+        "highIncomePct": 97,
+        "lowIncomePct": 65
+      },
+      {
+        "year": 2017,
+        "offlineMillions": 6.8,
+        "neverUsedMillions": 5.5,
+        "highIncomePct": 98,
+        "lowIncomePct": 67
+      },
+      {
+        "year": 2018,
+        "offlineMillions": 6.5,
+        "neverUsedMillions": 5.1,
+        "highIncomePct": 98,
+        "lowIncomePct": 69
+      },
+      {
+        "year": 2019,
+        "offlineMillions": 6.2,
+        "neverUsedMillions": 4.8,
+        "highIncomePct": 98,
+        "lowIncomePct": 71
+      },
+      {
+        "year": 2020,
+        "offlineMillions": 6.0,
+        "neverUsedMillions": 4.5,
+        "highIncomePct": 99,
+        "lowIncomePct": 73
+      },
+      {
+        "year": 2021,
+        "offlineMillions": 5.8,
+        "neverUsedMillions": 4.3,
+        "highIncomePct": 99,
+        "lowIncomePct": 74
+      },
+      {
+        "year": 2022,
+        "offlineMillions": 5.6,
+        "neverUsedMillions": 4.1,
+        "highIncomePct": 99,
+        "lowIncomePct": 75
+      },
+      {
+        "year": 2023,
+        "offlineMillions": 5.4,
+        "neverUsedMillions": 4.0,
+        "highIncomePct": 99,
+        "lowIncomePct": 76
+      },
+      {
+        "year": 2024,
+        "offlineMillions": 5.3,
+        "neverUsedMillions": 3.9,
+        "highIncomePct": 99,
+        "lowIncomePct": 77
+      },
+      {
+        "year": 2025,
+        "offlineMillions": 5.2,
+        "neverUsedMillions": 3.8,
+        "highIncomePct": 99,
+        "lowIncomePct": 78
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ofcom",
+        "dataset": "Adults' Media Use and Attitudes",
+        "url": "https://www.ofcom.org.uk/research-and-data/telecoms-research/adults-media-use-and-attitudes",
+        "frequency": "Annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Internet users, UK",
+        "url": "https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers/2024",
+        "frequency": "Annual"
+      }
+    ],
+    "methodology": "Internet non-use figures from ONS Internet users bulletin and Ofcom media tracker. Low income defined as bottom household income quintile.",
+    "knownIssues": [
+      "Smartphone-only access counted as 'online' but may not enable full digital participation",
+      "Survey methodology changed in 2021"
+    ]
+  }
+}

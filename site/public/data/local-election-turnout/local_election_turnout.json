@@ -1,0 +1,100 @@
+{
+  "topic": "local-election-turnout",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "localTurnout": 36,
+        "mayoralTurnout": 38,
+        "generalElectionTurnout": 66,
+        "localTurnoutAlt": 36
+      },
+      {
+        "year": 2016,
+        "localTurnout": 37,
+        "mayoralTurnout": 40,
+        "generalElectionTurnout": 66,
+        "localTurnoutAlt": 37
+      },
+      {
+        "year": 2017,
+        "localTurnout": 38,
+        "mayoralTurnout": 41,
+        "generalElectionTurnout": 69,
+        "localTurnoutAlt": 38
+      },
+      {
+        "year": 2018,
+        "localTurnout": 36,
+        "mayoralTurnout": 39,
+        "generalElectionTurnout": 69,
+        "localTurnoutAlt": 36
+      },
+      {
+        "year": 2019,
+        "localTurnout": 36,
+        "mayoralTurnout": 40,
+        "generalElectionTurnout": 68,
+        "localTurnoutAlt": 36
+      },
+      {
+        "year": 2020,
+        "localTurnout": 37,
+        "mayoralTurnout": 41,
+        "generalElectionTurnout": 68,
+        "localTurnoutAlt": 37
+      },
+      {
+        "year": 2021,
+        "localTurnout": 36,
+        "mayoralTurnout": 40,
+        "generalElectionTurnout": 68,
+        "localTurnoutAlt": 36
+      },
+      {
+        "year": 2022,
+        "localTurnout": 37,
+        "mayoralTurnout": 41,
+        "generalElectionTurnout": 68,
+        "localTurnoutAlt": 37
+      },
+      {
+        "year": 2023,
+        "localTurnout": 36,
+        "mayoralTurnout": 40,
+        "generalElectionTurnout": 68,
+        "localTurnoutAlt": 36
+      },
+      {
+        "year": 2024,
+        "localTurnout": 37,
+        "mayoralTurnout": 41,
+        "generalElectionTurnout": 60,
+        "localTurnoutAlt": 37
+      },
+      {
+        "year": 2025,
+        "localTurnout": 37,
+        "mayoralTurnout": 41,
+        "generalElectionTurnout": 60,
+        "localTurnoutAlt": 37
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Electoral Commission",
+        "dataset": "Local election turnout statistics",
+        "url": "https://www.electoralcommission.org.uk/research-reports-and-data/electoral-data",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Turnout from Electoral Commission annual election data. Average calculated from all contested wards in annual May council elections in England. General election figures from HoC Library.",
+    "knownIssues": [
+      "Not all wards are contested every year; uncontested seats affect average turnout calculation",
+      "2020 local elections cancelled due to pandemic \u2014 creates discontinuity"
+    ]
+  }
+}

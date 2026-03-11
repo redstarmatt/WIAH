@@ -1,0 +1,106 @@
+{
+  "topic": "council-funding",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "spendingPowerRealTerms": 2850,
+        "adultSocialCareSpend": 14.4,
+        "s114Cumulative": 0,
+        "atRiskCouncils": 8
+      },
+      {
+        "year": 2016,
+        "spendingPowerRealTerms": 2780,
+        "adultSocialCareSpend": 14.6,
+        "s114Cumulative": 0,
+        "atRiskCouncils": 10
+      },
+      {
+        "year": 2017,
+        "spendingPowerRealTerms": 2720,
+        "adultSocialCareSpend": 14.9,
+        "s114Cumulative": 0,
+        "atRiskCouncils": 12
+      },
+      {
+        "year": 2018,
+        "spendingPowerRealTerms": 2660,
+        "adultSocialCareSpend": 15.2,
+        "s114Cumulative": 1,
+        "atRiskCouncils": 15
+      },
+      {
+        "year": 2019,
+        "spendingPowerRealTerms": 2610,
+        "adultSocialCareSpend": 15.6,
+        "s114Cumulative": 2,
+        "atRiskCouncils": 18
+      },
+      {
+        "year": 2020,
+        "spendingPowerRealTerms": 2580,
+        "adultSocialCareSpend": 15.8,
+        "s114Cumulative": 3,
+        "atRiskCouncils": 22
+      },
+      {
+        "year": 2021,
+        "spendingPowerRealTerms": 2570,
+        "adultSocialCareSpend": 16.1,
+        "s114Cumulative": 4,
+        "atRiskCouncils": 25
+      },
+      {
+        "year": 2022,
+        "spendingPowerRealTerms": 2540,
+        "adultSocialCareSpend": 16.8,
+        "s114Cumulative": 6,
+        "atRiskCouncils": 30
+      },
+      {
+        "year": 2023,
+        "spendingPowerRealTerms": 2490,
+        "adultSocialCareSpend": 17.4,
+        "s114Cumulative": 9,
+        "atRiskCouncils": 35
+      },
+      {
+        "year": 2024,
+        "spendingPowerRealTerms": 2460,
+        "adultSocialCareSpend": 17.9,
+        "s114Cumulative": 12,
+        "atRiskCouncils": 38
+      },
+      {
+        "year": 2025,
+        "spendingPowerRealTerms": 2440,
+        "adultSocialCareSpend": 18.4,
+        "s114Cumulative": 14,
+        "atRiskCouncils": 40
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DLUHC",
+        "dataset": "Local authority revenue expenditure and financing",
+        "url": "https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing",
+        "frequency": "annual"
+      },
+      {
+        "name": "LGA",
+        "dataset": "Local government finance settlement analysis",
+        "url": "https://www.local.gov.uk/topics/finance/local-government-funding",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Spending power defined as the total resources available to local authorities including formula grant, council tax and business rates retention. Real terms deflated using GDP deflator. s114 notices from public announcements and DLUHC records.",
+    "knownIssues": [
+      "Some at-risk councils receive emergency government loans which forestall formal s114",
+      "Spending power comparisons are complex \u2014 different councils have very different needs"
+    ]
+  }
+}

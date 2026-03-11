@@ -1,0 +1,100 @@
+{
+  "topic": "cycling-safety",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "fatalities": 107,
+        "seriousInjuries": 3652,
+        "fatalRate": 4.2,
+        "seriousRate": 143
+      },
+      {
+        "year": 2016,
+        "fatalities": 104,
+        "seriousInjuries": 3598,
+        "fatalRate": 4.0,
+        "seriousRate": 138
+      },
+      {
+        "year": 2017,
+        "fatalities": 101,
+        "seriousInjuries": 3615,
+        "fatalRate": 3.8,
+        "seriousRate": 136
+      },
+      {
+        "year": 2018,
+        "fatalities": 99,
+        "seriousInjuries": 3645,
+        "fatalRate": 3.7,
+        "seriousRate": 136
+      },
+      {
+        "year": 2019,
+        "fatalities": 100,
+        "seriousInjuries": 3710,
+        "fatalRate": 3.6,
+        "seriousRate": 134
+      },
+      {
+        "year": 2020,
+        "fatalities": 95,
+        "seriousInjuries": 3480,
+        "fatalRate": 3.2,
+        "seriousRate": 118
+      },
+      {
+        "year": 2021,
+        "fatalities": 93,
+        "seriousInjuries": 3600,
+        "fatalRate": 3.1,
+        "seriousRate": 120
+      },
+      {
+        "year": 2022,
+        "fatalities": 91,
+        "seriousInjuries": 3800,
+        "fatalRate": 3.0,
+        "seriousRate": 125
+      },
+      {
+        "year": 2023,
+        "fatalities": 95,
+        "seriousInjuries": 4100,
+        "fatalRate": 3.1,
+        "seriousRate": 134
+      },
+      {
+        "year": 2024,
+        "fatalities": 97,
+        "seriousInjuries": 4200,
+        "fatalRate": 3.1,
+        "seriousRate": 135
+      },
+      {
+        "year": 2025,
+        "fatalities": 97,
+        "seriousInjuries": 4286,
+        "fatalRate": 3.1,
+        "seriousRate": 137
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DfT",
+        "dataset": "Reported road casualties in Great Britain",
+        "url": "https://www.gov.uk/government/collections/road-accidents-and-safety-statistics",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Cyclist casualties from police-reported STATS19 data. Rate per km from DfT vehicle kilometres estimates for cycling.",
+    "knownIssues": [
+      "STATS19 under-reports cyclist injuries \u2014 hospital data suggests true serious injury figure is 5-7x higher",
+      "Casualty rate improvement partly reflects fewer cyclists in some areas where no safe routes exist"
+    ]
+  }
+}

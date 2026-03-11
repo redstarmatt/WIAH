@@ -1,0 +1,100 @@
+{
+  "topic": "carbon-budget-progress",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "actualEmissions": 503,
+        "budgetCeiling": 520,
+        "evSalesPct": 1.1,
+        "heatPumpInstalls": 35
+      },
+      {
+        "year": 2016,
+        "actualEmissions": 492,
+        "budgetCeiling": 520,
+        "evSalesPct": 1.4,
+        "heatPumpInstalls": 42
+      },
+      {
+        "year": 2017,
+        "actualEmissions": 489,
+        "budgetCeiling": 520,
+        "evSalesPct": 1.9,
+        "heatPumpInstalls": 48
+      },
+      {
+        "year": 2018,
+        "actualEmissions": 485,
+        "budgetCeiling": 520,
+        "evSalesPct": 2.6,
+        "heatPumpInstalls": 56
+      },
+      {
+        "year": 2019,
+        "actualEmissions": 480,
+        "budgetCeiling": 520,
+        "evSalesPct": 3.2,
+        "heatPumpInstalls": 60
+      },
+      {
+        "year": 2020,
+        "actualEmissions": 440,
+        "budgetCeiling": 520,
+        "evSalesPct": 6.6,
+        "heatPumpInstalls": 62
+      },
+      {
+        "year": 2021,
+        "actualEmissions": 460,
+        "budgetCeiling": 520,
+        "evSalesPct": 11.6,
+        "heatPumpInstalls": 72
+      },
+      {
+        "year": 2022,
+        "actualEmissions": 448,
+        "budgetCeiling": 520,
+        "evSalesPct": 16.6,
+        "heatPumpInstalls": 72
+      },
+      {
+        "year": 2023,
+        "actualEmissions": 432,
+        "budgetCeiling": 520,
+        "evSalesPct": 16.5,
+        "heatPumpInstalls": 77
+      },
+      {
+        "year": 2024,
+        "actualEmissions": 415,
+        "budgetCeiling": 520,
+        "evSalesPct": 19.0,
+        "heatPumpInstalls": 80
+      },
+      {
+        "year": 2025,
+        "actualEmissions": 400,
+        "budgetCeiling": 520,
+        "evSalesPct": 20.0,
+        "heatPumpInstalls": 82
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DESNZ",
+        "dataset": "UK greenhouse gas emissions statistics",
+        "url": "https://www.gov.uk/government/collections/uk-greenhouse-gas-emissions-statistics",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "UK territorial emissions from DESNZ National Atmospheric Emissions Inventory (NAEI). Carbon budgets from Climate Change Act 2008 and subsequent orders. EV data from SMMT.",
+    "knownIssues": [
+      "Territorial emissions exclude international aviation and shipping, which add ~15% to UK's climate impact",
+      "Carbon budget projected miss is a modelling estimate and uncertain"
+    ]
+  }
+}

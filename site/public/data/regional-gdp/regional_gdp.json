@@ -1,0 +1,106 @@
+{
+  "topic": "regional-gdp",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "londonGVA": 45900,
+        "northEastGVA": 20900,
+        "londonPct": 179,
+        "northEastPct": 82
+      },
+      {
+        "year": 2016,
+        "londonGVA": 47200,
+        "northEastGVA": 21100,
+        "londonPct": 181,
+        "northEastPct": 81
+      },
+      {
+        "year": 2017,
+        "londonGVA": 48800,
+        "northEastGVA": 21300,
+        "londonPct": 183,
+        "northEastPct": 80
+      },
+      {
+        "year": 2018,
+        "londonGVA": 50100,
+        "northEastGVA": 21500,
+        "londonPct": 184,
+        "northEastPct": 79
+      },
+      {
+        "year": 2019,
+        "londonGVA": 51400,
+        "northEastGVA": 21700,
+        "londonPct": 185,
+        "northEastPct": 78
+      },
+      {
+        "year": 2020,
+        "londonGVA": 49800,
+        "northEastGVA": 21400,
+        "londonPct": 182,
+        "northEastPct": 78
+      },
+      {
+        "year": 2021,
+        "londonGVA": 52100,
+        "northEastGVA": 21700,
+        "londonPct": 186,
+        "northEastPct": 77
+      },
+      {
+        "year": 2022,
+        "londonGVA": 54200,
+        "northEastGVA": 21800,
+        "londonPct": 187,
+        "northEastPct": 75
+      },
+      {
+        "year": 2023,
+        "londonGVA": 56300,
+        "northEastGVA": 21900,
+        "londonPct": 188,
+        "northEastPct": 73
+      },
+      {
+        "year": 2024,
+        "londonGVA": 57500,
+        "northEastGVA": 22000,
+        "londonPct": 188,
+        "northEastPct": 72
+      },
+      {
+        "year": 2025,
+        "londonGVA": 58700,
+        "northEastGVA": 22100,
+        "londonPct": 188,
+        "northEastPct": 71
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Regional gross value added (balanced) by industry",
+        "url": "https://www.ons.gov.uk/economy/grossvalueaddedgva/bulletins/regionalgrossvalueaddedbalanceduk/",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Sub-regional productivity",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/regionalandsubregionalproductivityintheuk/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "GVA per head calculated by dividing regional balanced GVA by ONS mid-year population estimates. London figure includes City of London. North East is the standard ONS Government Office Region.",
+    "knownIssues": [
+      "GVA is a production measure and can overstate London's 'income' \u2014 commuters produce GVA in London but live elsewhere",
+      "Data for 2024\u201325 is provisional"
+    ]
+  }
+}

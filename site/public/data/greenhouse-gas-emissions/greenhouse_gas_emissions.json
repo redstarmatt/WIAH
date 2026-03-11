@@ -1,0 +1,106 @@
+{
+  "topic": "greenhouse-gas-emissions",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "totalMtCO2e": 497,
+        "powerSector": 120,
+        "renewableShare": 24.6,
+        "windShare": 11.2
+      },
+      {
+        "year": 2016,
+        "totalMtCO2e": 468,
+        "powerSector": 101,
+        "renewableShare": 25.1,
+        "windShare": 11.4
+      },
+      {
+        "year": 2017,
+        "totalMtCO2e": 456,
+        "powerSector": 90,
+        "renewableShare": 29.4,
+        "windShare": 14.8
+      },
+      {
+        "year": 2018,
+        "totalMtCO2e": 451,
+        "powerSector": 79,
+        "renewableShare": 33.1,
+        "windShare": 17.4
+      },
+      {
+        "year": 2019,
+        "totalMtCO2e": 435,
+        "powerSector": 67,
+        "renewableShare": 36.9,
+        "windShare": 20.1
+      },
+      {
+        "year": 2020,
+        "totalMtCO2e": 405,
+        "powerSector": 56,
+        "renewableShare": 43.1,
+        "windShare": 24.2
+      },
+      {
+        "year": 2021,
+        "totalMtCO2e": 422,
+        "powerSector": 60,
+        "renewableShare": 39.4,
+        "windShare": 21.6
+      },
+      {
+        "year": 2022,
+        "totalMtCO2e": 413,
+        "powerSector": 55,
+        "renewableShare": 40.1,
+        "windShare": 22.8
+      },
+      {
+        "year": 2023,
+        "totalMtCO2e": 396,
+        "powerSector": 46,
+        "renewableShare": 42.2,
+        "windShare": 24.9
+      },
+      {
+        "year": 2024,
+        "totalMtCO2e": 381,
+        "powerSector": 38,
+        "renewableShare": 44.4,
+        "windShare": 27.8
+      },
+      {
+        "year": 2025,
+        "totalMtCO2e": 363,
+        "powerSector": 30,
+        "renewableShare": 45.5,
+        "windShare": 30.1
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DESNZ",
+        "dataset": "UK greenhouse gas emissions: provisional figures",
+        "url": "https://www.gov.uk/government/statistics/provisional-uk-greenhouse-gas-emissions-national-statistics",
+        "frequency": "annual"
+      },
+      {
+        "name": "NESO",
+        "dataset": "Electricity generation by fuel type",
+        "url": "https://www.neso.energy/data-portal/",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Territorial greenhouse gas emissions cover emissions from UK sources only; consumption-based figures include imported goods and services. Values in MtCO2 equivalent using 100-year global warming potentials. Renewable electricity includes wind, solar, hydro, landfill gas and biomass.",
+    "knownIssues": [
+      "Consumption-based emissions are estimated and not directly measured \u2014 uncertainty is higher than territorial figures",
+      "Biomass counting methodology is contested"
+    ]
+  }
+}

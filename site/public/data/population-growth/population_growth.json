@@ -1,0 +1,100 @@
+{
+  "topic": "population-growth",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "netMigration": 330,
+        "naturalChange": 180,
+        "totalPopulation": 65.1,
+        "workingAgePop": 41.8
+      },
+      {
+        "year": 2016,
+        "netMigration": 320,
+        "naturalChange": 160,
+        "totalPopulation": 65.6,
+        "workingAgePop": 41.9
+      },
+      {
+        "year": 2017,
+        "netMigration": 280,
+        "naturalChange": 145,
+        "totalPopulation": 66.0,
+        "workingAgePop": 42.1
+      },
+      {
+        "year": 2018,
+        "netMigration": 270,
+        "naturalChange": 130,
+        "totalPopulation": 66.4,
+        "workingAgePop": 42.3
+      },
+      {
+        "year": 2019,
+        "netMigration": 240,
+        "naturalChange": 120,
+        "totalPopulation": 66.8,
+        "workingAgePop": 42.5
+      },
+      {
+        "year": 2020,
+        "netMigration": 185,
+        "naturalChange": 90,
+        "totalPopulation": 67.1,
+        "workingAgePop": 42.6
+      },
+      {
+        "year": 2021,
+        "netMigration": 490,
+        "naturalChange": 65,
+        "totalPopulation": 67.6,
+        "workingAgePop": 43.0
+      },
+      {
+        "year": 2022,
+        "netMigration": 745,
+        "naturalChange": 40,
+        "totalPopulation": 68.4,
+        "workingAgePop": 43.4
+      },
+      {
+        "year": 2023,
+        "netMigration": 906,
+        "naturalChange": 18,
+        "totalPopulation": 69.3,
+        "workingAgePop": 43.9
+      },
+      {
+        "year": 2024,
+        "netMigration": 728,
+        "naturalChange": 15,
+        "totalPopulation": 70.0,
+        "workingAgePop": 44.2
+      },
+      {
+        "year": 2025,
+        "netMigration": 600,
+        "naturalChange": 12,
+        "totalPopulation": 70.6,
+        "workingAgePop": 44.4
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Population estimates for the UK",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/annualmidyearpopulationestimates/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Population estimates from ONS mid-year estimates using census base. Components of change from ONS vital statistics and Home Office migration data.",
+    "knownIssues": [
+      "International migration is difficult to measure precisely and estimates are revised substantially",
+      "2021 Census revealed previous estimates were undercounts"
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "topic": "arts-attendance",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "attendancePct": 63,
+        "participationPct": 38,
+        "londonFundingPerHead": 31.2,
+        "northEastFundingPerHead": 6.8
+      },
+      {
+        "year": 2016,
+        "attendancePct": 64,
+        "participationPct": 39,
+        "londonFundingPerHead": 31.8,
+        "northEastFundingPerHead": 6.5
+      },
+      {
+        "year": 2017,
+        "attendancePct": 65,
+        "participationPct": 39,
+        "londonFundingPerHead": 32.0,
+        "northEastFundingPerHead": 6.2
+      },
+      {
+        "year": 2018,
+        "attendancePct": 65,
+        "participationPct": 40,
+        "londonFundingPerHead": 32.5,
+        "northEastFundingPerHead": 6.4
+      },
+      {
+        "year": 2019,
+        "attendancePct": 65,
+        "participationPct": 40,
+        "londonFundingPerHead": 33.0,
+        "northEastFundingPerHead": 6.3
+      },
+      {
+        "year": 2020,
+        "attendancePct": 40,
+        "participationPct": 28,
+        "londonFundingPerHead": 28.0,
+        "northEastFundingPerHead": 5.8
+      },
+      {
+        "year": 2021,
+        "attendancePct": 50,
+        "participationPct": 32,
+        "londonFundingPerHead": 30.0,
+        "northEastFundingPerHead": 6.0
+      },
+      {
+        "year": 2022,
+        "attendancePct": 54,
+        "participationPct": 34,
+        "londonFundingPerHead": 31.5,
+        "northEastFundingPerHead": 5.9
+      },
+      {
+        "year": 2023,
+        "attendancePct": 55,
+        "participationPct": 35,
+        "londonFundingPerHead": 32.8,
+        "northEastFundingPerHead": 5.8
+      },
+      {
+        "year": 2024,
+        "attendancePct": 56,
+        "participationPct": 36,
+        "londonFundingPerHead": 33.0,
+        "northEastFundingPerHead": 5.6
+      },
+      {
+        "year": 2025,
+        "attendancePct": 57,
+        "participationPct": 37,
+        "londonFundingPerHead": 33.2,
+        "northEastFundingPerHead": 5.1
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Arts Council England",
+        "dataset": "Taking Part survey \u2014 arts engagement",
+        "url": "https://www.artscouncil.org.uk/research-and-data/taking-part-survey",
+        "frequency": "annual"
+      },
+      {
+        "name": "Arts Council England",
+        "dataset": "Investment and funding data",
+        "url": "https://www.artscouncil.org.uk/research-and-data/our-data",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Attendance rate: percentage of adults (16+) who attended an arts event or cultural experience at least once in past 12 months. Taking Part survey sample ~10,000 per year. Funding per head uses ONS mid-year population estimates.",
+    "knownIssues": [
+      "2020 and 2021 figures are not comparable to other years due to COVID venue closures",
+      "London funding concentration partly reflects that national touring productions originate from London-based organisations"
+    ]
+  }
+}

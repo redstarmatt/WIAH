@@ -1,0 +1,106 @@
+{
+  "topic": "library-usage",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "libraryCount": 3166,
+        "visitsMillions": 252,
+        "physicalLoansMillions": 168,
+        "digitalLoansMillions": 3.2
+      },
+      {
+        "year": 2016,
+        "libraryCount": 3118,
+        "visitsMillions": 242,
+        "physicalLoansMillions": 158,
+        "digitalLoansMillions": 4.8
+      },
+      {
+        "year": 2017,
+        "libraryCount": 3070,
+        "visitsMillions": 232,
+        "physicalLoansMillions": 149,
+        "digitalLoansMillions": 6.5
+      },
+      {
+        "year": 2018,
+        "libraryCount": 3022,
+        "visitsMillions": 225,
+        "physicalLoansMillions": 140,
+        "digitalLoansMillions": 8.4
+      },
+      {
+        "year": 2019,
+        "libraryCount": 2976,
+        "visitsMillions": 218,
+        "physicalLoansMillions": 131,
+        "digitalLoansMillions": 10.8
+      },
+      {
+        "year": 2020,
+        "libraryCount": 2910,
+        "visitsMillions": 110,
+        "physicalLoansMillions": 72,
+        "digitalLoansMillions": 18.6
+      },
+      {
+        "year": 2021,
+        "libraryCount": 2843,
+        "visitsMillions": 168,
+        "physicalLoansMillions": 100,
+        "digitalLoansMillions": 20.1
+      },
+      {
+        "year": 2022,
+        "libraryCount": 2780,
+        "visitsMillions": 188,
+        "physicalLoansMillions": 115,
+        "digitalLoansMillions": 18.8
+      },
+      {
+        "year": 2023,
+        "libraryCount": 2693,
+        "visitsMillions": 194,
+        "physicalLoansMillions": 118,
+        "digitalLoansMillions": 19.6
+      },
+      {
+        "year": 2024,
+        "libraryCount": 2560,
+        "visitsMillions": 192,
+        "physicalLoansMillions": 115,
+        "digitalLoansMillions": 20.4
+      },
+      {
+        "year": 2025,
+        "libraryCount": 2427,
+        "visitsMillions": 191,
+        "physicalLoansMillions": 113,
+        "digitalLoansMillions": 21.2
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "CIPFA",
+        "dataset": "Public library statistics",
+        "url": "https://www.cipfa.org/policy-and-guidance/benchmarking/cipfastats-library-profiles-england",
+        "frequency": "annual"
+      },
+      {
+        "name": "Arts Council England",
+        "dataset": "Libraries \u2014 envisioning the library of the future",
+        "url": "https://www.artscouncil.org.uk/research-and-data/libraries",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Library count from CIPFA annual returns \u2014 includes only statutory public libraries, not community-run or trust-operated venues that no longer receive council funding. Visits from electronic door counts. Digital loans from OverDrive/BorrowBox platform data.",
+    "knownIssues": [
+      "Some transferred libraries still provide good services but are not counted in statutory figures",
+      "COVID years (2020-21) not comparable to normal operations"
+    ]
+  }
+}

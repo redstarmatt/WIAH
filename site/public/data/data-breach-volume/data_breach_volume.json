@@ -1,0 +1,100 @@
+{
+  "topic": "data-breach-volume",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "totalBreaches": 1100,
+        "cyberBreaches": 264,
+        "healthBreaches": 320,
+        "financeBreaches": 180
+      },
+      {
+        "year": 2016,
+        "totalBreaches": 1400,
+        "cyberBreaches": 336,
+        "healthBreaches": 410,
+        "financeBreaches": 220
+      },
+      {
+        "year": 2017,
+        "totalBreaches": 1800,
+        "cyberBreaches": 432,
+        "healthBreaches": 520,
+        "financeBreaches": 290
+      },
+      {
+        "year": 2018,
+        "totalBreaches": 2159,
+        "cyberBreaches": 648,
+        "healthBreaches": 620,
+        "financeBreaches": 350
+      },
+      {
+        "year": 2019,
+        "totalBreaches": 2400,
+        "cyberBreaches": 720,
+        "healthBreaches": 700,
+        "financeBreaches": 400
+      },
+      {
+        "year": 2020,
+        "totalBreaches": 2750,
+        "cyberBreaches": 880,
+        "healthBreaches": 800,
+        "financeBreaches": 460
+      },
+      {
+        "year": 2021,
+        "totalBreaches": 2900,
+        "cyberBreaches": 986,
+        "healthBreaches": 840,
+        "financeBreaches": 490
+      },
+      {
+        "year": 2022,
+        "totalBreaches": 3100,
+        "cyberBreaches": 1054,
+        "healthBreaches": 900,
+        "financeBreaches": 520
+      },
+      {
+        "year": 2023,
+        "totalBreaches": 3250,
+        "cyberBreaches": 1170,
+        "healthBreaches": 950,
+        "financeBreaches": 545
+      },
+      {
+        "year": 2024,
+        "totalBreaches": 3400,
+        "cyberBreaches": 1258,
+        "healthBreaches": 990,
+        "financeBreaches": 568
+      },
+      {
+        "year": 2025,
+        "totalBreaches": 3520,
+        "cyberBreaches": 1373,
+        "healthBreaches": 1020,
+        "financeBreaches": 590
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ICO",
+        "dataset": "Data Security Incident Trends",
+        "url": "https://ico.org.uk/action-weve-taken/data-security-incident-trends/",
+        "frequency": "Quarterly"
+      }
+    ],
+    "methodology": "Breach figures from ICO mandatory notification data. Cyber attack category includes phishing, ransomware and unauthorised access. Pre-GDPR figures are voluntary reports and undercount actual incidents.",
+    "knownIssues": [
+      "Pre-2018 figures undercount breaches as reporting was not mandatory",
+      "SME underreporting likely persists"
+    ]
+  }
+}

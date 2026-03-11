@@ -1,0 +1,100 @@
+{
+  "topic": "self-employment-earnings",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "selfEmployedMedian": 14200,
+        "employedMedian": 25800,
+        "belowLivingWage": 35,
+        "noPension": 68
+      },
+      {
+        "year": 2016,
+        "selfEmployedMedian": 14400,
+        "employedMedian": 26300,
+        "belowLivingWage": 34,
+        "noPension": 68
+      },
+      {
+        "year": 2017,
+        "selfEmployedMedian": 14600,
+        "employedMedian": 27000,
+        "belowLivingWage": 34,
+        "noPension": 67
+      },
+      {
+        "year": 2018,
+        "selfEmployedMedian": 14800,
+        "employedMedian": 27800,
+        "belowLivingWage": 33,
+        "noPension": 66
+      },
+      {
+        "year": 2019,
+        "selfEmployedMedian": 15100,
+        "employedMedian": 28600,
+        "belowLivingWage": 33,
+        "noPension": 66
+      },
+      {
+        "year": 2020,
+        "selfEmployedMedian": 14500,
+        "employedMedian": 29200,
+        "belowLivingWage": 36,
+        "noPension": 65
+      },
+      {
+        "year": 2021,
+        "selfEmployedMedian": 15200,
+        "employedMedian": 29800,
+        "belowLivingWage": 34,
+        "noPension": 65
+      },
+      {
+        "year": 2022,
+        "selfEmployedMedian": 15800,
+        "employedMedian": 30500,
+        "belowLivingWage": 33,
+        "noPension": 65
+      },
+      {
+        "year": 2023,
+        "selfEmployedMedian": 16000,
+        "employedMedian": 31200,
+        "belowLivingWage": 32,
+        "noPension": 65
+      },
+      {
+        "year": 2024,
+        "selfEmployedMedian": 16200,
+        "employedMedian": 32000,
+        "belowLivingWage": 31,
+        "noPension": 65
+      },
+      {
+        "year": 2025,
+        "selfEmployedMedian": 16300,
+        "employedMedian": 32800,
+        "belowLivingWage": 31,
+        "noPension": 65
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Trends in self-employment in the UK",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/articles/trendsinselfemploymentintheuk/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Self-employed earnings from SPI (Survey of Personal Incomes) and ONS LFS. Pension savings from DWP Wealth and Assets Survey.",
+    "knownIssues": [
+      "Self-employed earnings are harder to measure due to variable income and profit extraction",
+      "Some self-employed have pension savings through ISAs or property not captured here"
+    ]
+  }
+}

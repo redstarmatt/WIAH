@@ -1,0 +1,106 @@
+{
+  "topic": "asylum-backlog",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "pendingCasesThousands": 25,
+        "quarterlyDecisionsThousands": 5,
+        "overallGrantRate": 38,
+        "afgSyrGrantRate": 85
+      },
+      {
+        "year": 2016,
+        "pendingCasesThousands": 30,
+        "quarterlyDecisionsThousands": 6,
+        "overallGrantRate": 41,
+        "afgSyrGrantRate": 87
+      },
+      {
+        "year": 2017,
+        "pendingCasesThousands": 38,
+        "quarterlyDecisionsThousands": 7,
+        "overallGrantRate": 43,
+        "afgSyrGrantRate": 86
+      },
+      {
+        "year": 2018,
+        "pendingCasesThousands": 48,
+        "quarterlyDecisionsThousands": 7,
+        "overallGrantRate": 44,
+        "afgSyrGrantRate": 87
+      },
+      {
+        "year": 2019,
+        "pendingCasesThousands": 72,
+        "quarterlyDecisionsThousands": 6,
+        "overallGrantRate": 47,
+        "afgSyrGrantRate": 88
+      },
+      {
+        "year": 2020,
+        "pendingCasesThousands": 95,
+        "quarterlyDecisionsThousands": 4,
+        "overallGrantRate": 50,
+        "afgSyrGrantRate": 89
+      },
+      {
+        "year": 2021,
+        "pendingCasesThousands": 134,
+        "quarterlyDecisionsThousands": 5,
+        "overallGrantRate": 60,
+        "afgSyrGrantRate": 94
+      },
+      {
+        "year": 2022,
+        "pendingCasesThousands": 115,
+        "quarterlyDecisionsThousands": 12,
+        "overallGrantRate": 65,
+        "afgSyrGrantRate": 93
+      },
+      {
+        "year": 2023,
+        "pendingCasesThousands": 82,
+        "quarterlyDecisionsThousands": 22,
+        "overallGrantRate": 68,
+        "afgSyrGrantRate": 92
+      },
+      {
+        "year": 2024,
+        "pendingCasesThousands": 62,
+        "quarterlyDecisionsThousands": 25,
+        "overallGrantRate": 70,
+        "afgSyrGrantRate": 91
+      },
+      {
+        "year": 2025,
+        "pendingCasesThousands": 48.7,
+        "quarterlyDecisionsThousands": 24,
+        "overallGrantRate": 70,
+        "afgSyrGrantRate": 91
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Home Office",
+        "dataset": "Asylum and resettlement datasets",
+        "url": "https://www.gov.uk/government/statistical-data-sets/asylum-and-resettlement-datasets",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "How many people do we grant asylum or protection to?",
+        "url": "https://www.gov.uk/government/statistics/immigration-statistics-year-ending-march-2025",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Pending cases figure is the number of individuals awaiting an initial asylum decision at end of quarter. Does not include appeals or fresh claims. Grant rates are initial decisions only \u2014 appeals success rates are significantly higher.",
+    "knownIssues": [
+      "Grant rates at appeal are much higher (73%) \u2014 initial refusal does not mean ultimate refusal",
+      "Case figures are individuals, not families \u2014 household size varies significantly"
+    ]
+  }
+}

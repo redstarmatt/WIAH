@@ -1,0 +1,100 @@
+{
+  "topic": "mobile-coverage",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "allFourPct": 61,
+        "noReliablePct": 9,
+        "englandPct": 83,
+        "scotlandPct": 58
+      },
+      {
+        "year": 2016,
+        "allFourPct": 64,
+        "noReliablePct": 8.5,
+        "englandPct": 84,
+        "scotlandPct": 60
+      },
+      {
+        "year": 2017,
+        "allFourPct": 67,
+        "noReliablePct": 8.0,
+        "englandPct": 86,
+        "scotlandPct": 62
+      },
+      {
+        "year": 2018,
+        "allFourPct": 70,
+        "noReliablePct": 7.5,
+        "englandPct": 87,
+        "scotlandPct": 64
+      },
+      {
+        "year": 2019,
+        "allFourPct": 73,
+        "noReliablePct": 7.0,
+        "englandPct": 88,
+        "scotlandPct": 66
+      },
+      {
+        "year": 2020,
+        "allFourPct": 76,
+        "noReliablePct": 6.5,
+        "englandPct": 89,
+        "scotlandPct": 68
+      },
+      {
+        "year": 2021,
+        "allFourPct": 78,
+        "noReliablePct": 5.8,
+        "englandPct": 90,
+        "scotlandPct": 70
+      },
+      {
+        "year": 2022,
+        "allFourPct": 80,
+        "noReliablePct": 5.2,
+        "englandPct": 91,
+        "scotlandPct": 72
+      },
+      {
+        "year": 2023,
+        "allFourPct": 82,
+        "noReliablePct": 4.7,
+        "englandPct": 92,
+        "scotlandPct": 74
+      },
+      {
+        "year": 2024,
+        "allFourPct": 83,
+        "noReliablePct": 4.3,
+        "englandPct": 93,
+        "scotlandPct": 76
+      },
+      {
+        "year": 2025,
+        "allFourPct": 84,
+        "noReliablePct": 4.0,
+        "englandPct": 94,
+        "scotlandPct": 78
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ofcom",
+        "dataset": "Connected Nations Report",
+        "url": "https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations",
+        "frequency": "Annual"
+      }
+    ],
+    "methodology": "Coverage figures from Ofcom's Connected Nations Report using operator-submitted propagation data validated by field testing. Indoor coverage uses a penetration loss model.",
+    "knownIssues": [
+      "Operator-submitted coverage data may overstate actual coverage",
+      "Indoor coverage models vary by building type"
+    ]
+  }
+}

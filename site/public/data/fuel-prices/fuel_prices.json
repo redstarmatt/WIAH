@@ -1,0 +1,106 @@
+{
+  "topic": "fuel-prices",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "petrolPPL": 109,
+        "dieselPPL": 113,
+        "dutyAndVat": 78,
+        "wholesaleAndRetail": 31
+      },
+      {
+        "year": 2016,
+        "petrolPPL": 115,
+        "dieselPPL": 118,
+        "dutyAndVat": 78,
+        "wholesaleAndRetail": 37
+      },
+      {
+        "year": 2017,
+        "petrolPPL": 120,
+        "dieselPPL": 122,
+        "dutyAndVat": 78,
+        "wholesaleAndRetail": 42
+      },
+      {
+        "year": 2018,
+        "petrolPPL": 128,
+        "dieselPPL": 132,
+        "dutyAndVat": 78,
+        "wholesaleAndRetail": 50
+      },
+      {
+        "year": 2019,
+        "petrolPPL": 131,
+        "dieselPPL": 135,
+        "dutyAndVat": 78,
+        "wholesaleAndRetail": 53
+      },
+      {
+        "year": 2020,
+        "petrolPPL": 112,
+        "dieselPPL": 116,
+        "dutyAndVat": 78,
+        "wholesaleAndRetail": 34
+      },
+      {
+        "year": 2021,
+        "petrolPPL": 141,
+        "dieselPPL": 145,
+        "dutyAndVat": 78,
+        "wholesaleAndRetail": 63
+      },
+      {
+        "year": 2022,
+        "petrolPPL": 192,
+        "dieselPPL": 199,
+        "dutyAndVat": 78,
+        "wholesaleAndRetail": 114
+      },
+      {
+        "year": 2023,
+        "petrolPPL": 178,
+        "dieselPPL": 184,
+        "dutyAndVat": 78,
+        "wholesaleAndRetail": 100
+      },
+      {
+        "year": 2024,
+        "petrolPPL": 160,
+        "dieselPPL": 165,
+        "dutyAndVat": 78,
+        "wholesaleAndRetail": 82
+      },
+      {
+        "year": 2025,
+        "petrolPPL": 146,
+        "dieselPPL": 151,
+        "dutyAndVat": 78,
+        "wholesaleAndRetail": 68
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DESNZ",
+        "dataset": "Weekly road fuel prices",
+        "url": "https://www.gov.uk/government/statistical-data-sets/oil-and-petroleum-products-weekly-statistics",
+        "frequency": "weekly"
+      },
+      {
+        "name": "RAC Foundation",
+        "dataset": "Petrol and diesel price analysis",
+        "url": "https://www.racfoundation.org/data/uk-pump-prices-over-time",
+        "frequency": "weekly"
+      }
+    ],
+    "methodology": "Weekly average pump prices from DESNZ survey of filling stations. Annual figures are calendar year averages. Price components from DESNZ breakdown including duty (57.95p/litre), VAT (20% of total price) and wholesale/retail margin.",
+    "knownIssues": [
+      "Prices vary between regions and between supermarkets and motorway services",
+      "Duty has been frozen at 57.95p since 2011 \u2014 the real-terms value has fallen by a third"
+    ]
+  }
+}

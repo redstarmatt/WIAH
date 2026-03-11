@@ -1,0 +1,100 @@
+{
+  "topic": "child-poverty-local",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "childrenInPoverty": 3.7,
+        "childrenInWorkPoverty": 2.5,
+        "worstLAPct": 41,
+        "bestLAPct": 6
+      },
+      {
+        "year": 2016,
+        "childrenInPoverty": 3.8,
+        "childrenInWorkPoverty": 2.6,
+        "worstLAPct": 42,
+        "bestLAPct": 6
+      },
+      {
+        "year": 2017,
+        "childrenInPoverty": 4.0,
+        "childrenInWorkPoverty": 2.7,
+        "worstLAPct": 43,
+        "bestLAPct": 6
+      },
+      {
+        "year": 2018,
+        "childrenInPoverty": 4.1,
+        "childrenInWorkPoverty": 2.8,
+        "worstLAPct": 44,
+        "bestLAPct": 6
+      },
+      {
+        "year": 2019,
+        "childrenInPoverty": 4.1,
+        "childrenInWorkPoverty": 2.8,
+        "worstLAPct": 45,
+        "bestLAPct": 6
+      },
+      {
+        "year": 2020,
+        "childrenInPoverty": 4.1,
+        "childrenInWorkPoverty": 2.7,
+        "worstLAPct": 44,
+        "bestLAPct": 6
+      },
+      {
+        "year": 2021,
+        "childrenInPoverty": 4.2,
+        "childrenInWorkPoverty": 2.8,
+        "worstLAPct": 44,
+        "bestLAPct": 6
+      },
+      {
+        "year": 2022,
+        "childrenInPoverty": 4.2,
+        "childrenInWorkPoverty": 2.8,
+        "worstLAPct": 44,
+        "bestLAPct": 6
+      },
+      {
+        "year": 2023,
+        "childrenInPoverty": 4.3,
+        "childrenInWorkPoverty": 2.9,
+        "worstLAPct": 45,
+        "bestLAPct": 6
+      },
+      {
+        "year": 2024,
+        "childrenInPoverty": 4.3,
+        "childrenInWorkPoverty": 2.9,
+        "worstLAPct": 45,
+        "bestLAPct": 6
+      },
+      {
+        "year": 2025,
+        "childrenInPoverty": 4.3,
+        "childrenInWorkPoverty": 2.9,
+        "worstLAPct": 45,
+        "bestLAPct": 6
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DWP",
+        "dataset": "Households below average income (HBAI)",
+        "url": "https://www.gov.uk/government/collections/households-below-average-income-hbai--2",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Child poverty measured as children in households below 60% of median income after housing costs. Local authority data from End Child Poverty Coalition Small Area Income Estimates.",
+    "knownIssues": [
+      "Relative poverty measure moves with median income; during recessions measured poverty can fall even as living standards decline",
+      "Small area estimates have wider confidence intervals"
+    ]
+  }
+}

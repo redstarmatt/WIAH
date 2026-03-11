@@ -1,0 +1,106 @@
+{
+  "topic": "recycling-rates",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "englandRate": 44.8,
+        "walesRate": 56.0,
+        "bestCouncil": 61.0,
+        "worstCouncil": 24.0
+      },
+      {
+        "year": 2016,
+        "englandRate": 44.1,
+        "walesRate": 57.0,
+        "bestCouncil": 62.0,
+        "worstCouncil": 23.0
+      },
+      {
+        "year": 2017,
+        "englandRate": 43.5,
+        "walesRate": 58.1,
+        "bestCouncil": 63.0,
+        "worstCouncil": 23.0
+      },
+      {
+        "year": 2018,
+        "englandRate": 44.7,
+        "walesRate": 58.9,
+        "bestCouncil": 64.0,
+        "worstCouncil": 22.0
+      },
+      {
+        "year": 2019,
+        "englandRate": 45.2,
+        "walesRate": 60.0,
+        "bestCouncil": 65.0,
+        "worstCouncil": 22.0
+      },
+      {
+        "year": 2020,
+        "englandRate": 44.9,
+        "walesRate": 57.0,
+        "bestCouncil": 65.0,
+        "worstCouncil": 21.0
+      },
+      {
+        "year": 2021,
+        "englandRate": 43.9,
+        "walesRate": 57.5,
+        "bestCouncil": 65.0,
+        "worstCouncil": 21.0
+      },
+      {
+        "year": 2022,
+        "englandRate": 44.1,
+        "walesRate": 58.0,
+        "bestCouncil": 66.0,
+        "worstCouncil": 20.0
+      },
+      {
+        "year": 2023,
+        "englandRate": 44.2,
+        "walesRate": 58.5,
+        "bestCouncil": 66.0,
+        "worstCouncil": 20.0
+      },
+      {
+        "year": 2024,
+        "englandRate": 43.9,
+        "walesRate": 58.7,
+        "bestCouncil": 66.0,
+        "worstCouncil": 19.0
+      },
+      {
+        "year": 2025,
+        "englandRate": 43.8,
+        "walesRate": 59.0,
+        "bestCouncil": 66.0,
+        "worstCouncil": 19.0
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DEFRA",
+        "dataset": "Local authority collected waste management statistics",
+        "url": "https://www.gov.uk/government/statistical-data-sets/env18-local-authority-collected-waste-annual-results-tables",
+        "frequency": "annual"
+      },
+      {
+        "name": "WRAP",
+        "dataset": "Recycling tracker",
+        "url": "https://www.wrap.ngo/resources/report/recycling-tracker",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Recycling rate is the percentage of local authority collected waste sent for recycling, composting or reuse, as reported by councils via WasteDataFlow. Wales uses a different measurement methodology and is not directly comparable.",
+    "knownIssues": [
+      "Definition of 'recycling' has changed slightly over the period \u2014 older figures may slightly overstate performance",
+      "Council-level figures include composting, which some councils report differently"
+    ]
+  }
+}

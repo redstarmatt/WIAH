@@ -1,0 +1,99 @@
+{
+  "topic": "cost-of-borrowing",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "twoYearFixed": 2.8,
+        "fiveYearFixed": 3.2,
+        "avgMonthlyPayment": 820,
+        "affordabilityRatio": 22
+      },
+      {
+        "year": 2016,
+        "twoYearFixed": 2.5,
+        "fiveYearFixed": 3.0,
+        "avgMonthlyPayment": 800,
+        "affordabilityRatio": 21
+      },
+      {
+        "year": 2017,
+        "twoYearFixed": 2.3,
+        "fiveYearFixed": 2.8,
+        "avgMonthlyPayment": 810,
+        "affordabilityRatio": 21
+      },
+      {
+        "year": 2018,
+        "twoYearFixed": 2.1,
+        "fiveYearFixed": 2.6,
+        "avgMonthlyPayment": 840,
+        "affordabilityRatio": 22
+      },
+      {
+        "year": 2019,
+        "twoYearFixed": 2.3,
+        "fiveYearFixed": 2.7,
+        "avgMonthlyPayment": 870,
+        "affordabilityRatio": 22
+      },
+      {
+        "year": 2020,
+        "twoYearFixed": 2.3,
+        "fiveYearFixed": 2.6,
+        "avgMonthlyPayment": 900,
+        "affordabilityRatio": 23
+      },
+      {
+        "year": 2021,
+        "twoYearFixed": 2.3,
+        "fiveYearFixed": 2.5,
+        "avgMonthlyPayment": 949,
+        "affordabilityRatio": 23
+      },
+      {
+        "year": 2022,
+        "twoYearFixed": 4.2,
+        "fiveYearFixed": 4.0,
+        "avgMonthlyPayment": 1100,
+        "affordabilityRatio": 27
+      },
+      {
+        "year": 2023,
+        "twoYearFixed": 5.8,
+        "fiveYearFixed": 5.2,
+        "avgMonthlyPayment": 1380,
+        "affordabilityRatio": 33
+      },
+      {
+        "year": 2024,
+        "twoYearFixed": 4.9,
+        "fiveYearFixed": 4.6,
+        "avgMonthlyPayment": 1527,
+        "affordabilityRatio": 36
+      },
+      {
+        "year": 2025,
+        "twoYearFixed": 4.8,
+        "fiveYearFixed": 4.5,
+        "avgMonthlyPayment": 1490,
+        "affordabilityRatio": 35
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Bank of England",
+        "dataset": "Mortgage Lenders and Administrators Statistics",
+        "url": "https://www.bankofengland.co.uk/statistics/mortgage-lenders-and-administrators",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Average mortgage rates from Bank of England effective interest rate statistics for new agreements.",
+    "knownIssues": [
+      "Average rates mask wide variation by loan-to-value and borrower credit profile"
+    ]
+  }
+}

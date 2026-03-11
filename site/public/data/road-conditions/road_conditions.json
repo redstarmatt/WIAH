@@ -1,0 +1,106 @@
+{
+  "topic": "road-conditions",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "backlogBn": 9.8,
+        "annualSpendingBn": 3.5,
+        "potholeReportsM": 1.3,
+        "potholeRepairsM": 1.1
+      },
+      {
+        "year": 2016,
+        "backlogBn": 10.1,
+        "annualSpendingBn": 3.4,
+        "potholeReportsM": 1.4,
+        "potholeRepairsM": 1.2
+      },
+      {
+        "year": 2017,
+        "backlogBn": 10.6,
+        "annualSpendingBn": 3.3,
+        "potholeReportsM": 1.5,
+        "potholeRepairsM": 1.2
+      },
+      {
+        "year": 2018,
+        "backlogBn": 11.2,
+        "annualSpendingBn": 3.3,
+        "potholeReportsM": 1.6,
+        "potholeRepairsM": 1.3
+      },
+      {
+        "year": 2019,
+        "backlogBn": 11.8,
+        "annualSpendingBn": 3.2,
+        "potholeReportsM": 1.7,
+        "potholeRepairsM": 1.3
+      },
+      {
+        "year": 2020,
+        "backlogBn": 12.4,
+        "annualSpendingBn": 3.1,
+        "potholeReportsM": 1.7,
+        "potholeRepairsM": 1.4
+      },
+      {
+        "year": 2021,
+        "backlogBn": 13.1,
+        "annualSpendingBn": 3.2,
+        "potholeReportsM": 1.8,
+        "potholeRepairsM": 1.4
+      },
+      {
+        "year": 2022,
+        "backlogBn": 14.2,
+        "annualSpendingBn": 3.3,
+        "potholeReportsM": 1.9,
+        "potholeRepairsM": 1.5
+      },
+      {
+        "year": 2023,
+        "backlogBn": 15.1,
+        "annualSpendingBn": 3.4,
+        "potholeReportsM": 1.9,
+        "potholeRepairsM": 1.5
+      },
+      {
+        "year": 2024,
+        "backlogBn": 15.7,
+        "annualSpendingBn": 3.5,
+        "potholeReportsM": 2.0,
+        "potholeRepairsM": 1.6
+      },
+      {
+        "year": 2025,
+        "backlogBn": 16.3,
+        "annualSpendingBn": 3.6,
+        "potholeReportsM": 2.0,
+        "potholeRepairsM": 1.7
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ADEPT/Asphalt Industry Alliance",
+        "dataset": "Annual Local Authority Road Maintenance (ALARM) survey",
+        "url": "https://www.asphaltuk.org/alarm-survey-page/",
+        "frequency": "annual"
+      },
+      {
+        "name": "DfT",
+        "dataset": "Local road conditions and maintenance statistics",
+        "url": "https://www.gov.uk/government/statistical-data-sets/ras30-reported-road-casualties-in-great-britain",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Backlog figure from ADEPT/AIA ALARM survey of English highway authorities \u2014 estimated cost to bring all roads to a satisfactory standard. Pothole reports from FixMyStreet and council data.",
+    "knownIssues": [
+      "ALARM survey is self-reported by councils \u2014 some variation in methodology",
+      "Pothole figures vary significantly by definition \u2014 some councils count individual defects, others count incidents"
+    ]
+  }
+}

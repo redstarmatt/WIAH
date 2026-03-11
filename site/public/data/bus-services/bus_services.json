@@ -1,0 +1,106 @@
+{
+  "topic": "bus-services",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "outsideLondonBn": 3.3,
+        "londonBn": 2.4,
+        "laSpendingM": 1100,
+        "routesCut": 900
+      },
+      {
+        "year": 2016,
+        "outsideLondonBn": 3.2,
+        "londonBn": 2.4,
+        "laSpendingM": 1050,
+        "routesCut": 1100
+      },
+      {
+        "year": 2017,
+        "outsideLondonBn": 3.2,
+        "londonBn": 2.4,
+        "laSpendingM": 1000,
+        "routesCut": 1300
+      },
+      {
+        "year": 2018,
+        "outsideLondonBn": 3.1,
+        "londonBn": 2.4,
+        "laSpendingM": 970,
+        "routesCut": 1500
+      },
+      {
+        "year": 2019,
+        "outsideLondonBn": 3.1,
+        "londonBn": 2.4,
+        "laSpendingM": 950,
+        "routesCut": 1700
+      },
+      {
+        "year": 2020,
+        "outsideLondonBn": 2.5,
+        "londonBn": 1.5,
+        "laSpendingM": 910,
+        "routesCut": 1900
+      },
+      {
+        "year": 2021,
+        "outsideLondonBn": 2.6,
+        "londonBn": 1.8,
+        "laSpendingM": 880,
+        "routesCut": 2100
+      },
+      {
+        "year": 2022,
+        "outsideLondonBn": 2.7,
+        "londonBn": 2.1,
+        "laSpendingM": 850,
+        "routesCut": 2400
+      },
+      {
+        "year": 2023,
+        "outsideLondonBn": 2.7,
+        "londonBn": 2.2,
+        "laSpendingM": 820,
+        "routesCut": 2700
+      },
+      {
+        "year": 2024,
+        "outsideLondonBn": 2.6,
+        "londonBn": 2.3,
+        "laSpendingM": 790,
+        "routesCut": 2900
+      },
+      {
+        "year": 2025,
+        "outsideLondonBn": 2.6,
+        "londonBn": 2.3,
+        "laSpendingM": 760,
+        "routesCut": 3000
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DfT",
+        "dataset": "Bus statistics (BUS01\u2013BUS09)",
+        "url": "https://www.gov.uk/government/collections/bus-statistics",
+        "frequency": "annual"
+      },
+      {
+        "name": "Campaign for Better Transport",
+        "dataset": "Bus cuts tracker",
+        "url": "https://bettertransport.org.uk/bus-cuts-tracker/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Passenger journey estimates from DfT BUS statistics, derived from operator surveys. Local authority spending figures are deflated to 2024 prices using GDP deflators. Route cut figures are cumulative counts of subsidised routes withdrawn since 2010.",
+    "knownIssues": [
+      "COVID pandemic makes 2020\u201321 comparisons difficult",
+      "Some councils have restored routes since 2021 using BSIP funding \u2014 net figure may be lower than stated"
+    ]
+  }
+}
