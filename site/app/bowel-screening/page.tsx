@@ -3,7 +3,7 @@
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 export default function BowelScreeningPage() {
 
