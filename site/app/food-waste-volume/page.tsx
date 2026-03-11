@@ -102,7 +102,7 @@ export default function TopicPage() {
   ];
 
   const chart2Annotations: Annotation[] = [
-    { date: new Date(2019, 5, 1), label: "2019: 'Fresher for Longer" campaign launched' },
+    { date: new Date(2019, 5, 1), label: `2019: 'Fresher for Longer' campaign launched` },
   ];
 
   // ── Render ────────────────────────────────────────────────────────────────
