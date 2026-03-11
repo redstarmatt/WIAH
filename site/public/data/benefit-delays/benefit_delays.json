@@ -1,0 +1,100 @@
+{
+  "topic": "benefit-delays",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "ucOnTimePct": 90,
+        "newClaimsOnTime": 85,
+        "overpaymentBn": 5.2,
+        "underpaymentBn": 1.8
+      },
+      {
+        "year": 2016,
+        "ucOnTimePct": 89,
+        "newClaimsOnTime": 84,
+        "overpaymentBn": 5.5,
+        "underpaymentBn": 1.9
+      },
+      {
+        "year": 2017,
+        "ucOnTimePct": 88,
+        "newClaimsOnTime": 83,
+        "overpaymentBn": 5.8,
+        "underpaymentBn": 2.0
+      },
+      {
+        "year": 2018,
+        "ucOnTimePct": 87,
+        "newClaimsOnTime": 82,
+        "overpaymentBn": 6.1,
+        "underpaymentBn": 2.1
+      },
+      {
+        "year": 2019,
+        "ucOnTimePct": 87,
+        "newClaimsOnTime": 82,
+        "overpaymentBn": 6.4,
+        "underpaymentBn": 2.2
+      },
+      {
+        "year": 2020,
+        "ucOnTimePct": 84,
+        "newClaimsOnTime": 78,
+        "overpaymentBn": 6.8,
+        "underpaymentBn": 2.3
+      },
+      {
+        "year": 2021,
+        "ucOnTimePct": 83,
+        "newClaimsOnTime": 79,
+        "overpaymentBn": 7.5,
+        "underpaymentBn": 2.4
+      },
+      {
+        "year": 2022,
+        "ucOnTimePct": 82,
+        "newClaimsOnTime": 80,
+        "overpaymentBn": 8.5,
+        "underpaymentBn": 2.5
+      },
+      {
+        "year": 2023,
+        "ucOnTimePct": 82,
+        "newClaimsOnTime": 80,
+        "overpaymentBn": 9.1,
+        "underpaymentBn": 2.6
+      },
+      {
+        "year": 2024,
+        "ucOnTimePct": 82,
+        "newClaimsOnTime": 81,
+        "overpaymentBn": 9.4,
+        "underpaymentBn": 2.6
+      },
+      {
+        "year": 2025,
+        "ucOnTimePct": 82,
+        "newClaimsOnTime": 81,
+        "overpaymentBn": 9.7,
+        "underpaymentBn": 2.6
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DWP",
+        "dataset": "Fraud and error in the benefit system",
+        "url": "https://www.gov.uk/government/collections/fraud-and-error-in-the-benefit-system",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Timeliness from DWP management information. Overpayments include fraud and claimant/official error. Underpayments from DWP annual fraud and error statistics.",
+    "knownIssues": [
+      "Overpayments due to claimant error are recovered by DWP but cause hardship to recipients",
+      "UC on-time rate definition changed in 2020"
+    ]
+  }
+}

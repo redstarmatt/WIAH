@@ -1,0 +1,99 @@
+{
+  "topic": "economic-inactivity-sickness",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "sicknessInactive": 2.1,
+        "mentalHealthShare": 26,
+        "inactivityRate": 20.8,
+        "sicknessRate": 5.4
+      },
+      {
+        "year": 2016,
+        "sicknessInactive": 2.1,
+        "mentalHealthShare": 27,
+        "inactivityRate": 20.7,
+        "sicknessRate": 5.4
+      },
+      {
+        "year": 2017,
+        "sicknessInactive": 2.1,
+        "mentalHealthShare": 27,
+        "inactivityRate": 20.5,
+        "sicknessRate": 5.4
+      },
+      {
+        "year": 2018,
+        "sicknessInactive": 2.1,
+        "mentalHealthShare": 28,
+        "inactivityRate": 20.5,
+        "sicknessRate": 5.4
+      },
+      {
+        "year": 2019,
+        "sicknessInactive": 2.1,
+        "mentalHealthShare": 28,
+        "inactivityRate": 20.7,
+        "sicknessRate": 5.3
+      },
+      {
+        "year": 2020,
+        "sicknessInactive": 2.2,
+        "mentalHealthShare": 30,
+        "inactivityRate": 21.0,
+        "sicknessRate": 5.6
+      },
+      {
+        "year": 2021,
+        "sicknessInactive": 2.5,
+        "mentalHealthShare": 34,
+        "inactivityRate": 21.8,
+        "sicknessRate": 6.3
+      },
+      {
+        "year": 2022,
+        "sicknessInactive": 2.7,
+        "mentalHealthShare": 36,
+        "inactivityRate": 22.1,
+        "sicknessRate": 6.8
+      },
+      {
+        "year": 2023,
+        "sicknessInactive": 2.8,
+        "mentalHealthShare": 37,
+        "inactivityRate": 22.0,
+        "sicknessRate": 7.0
+      },
+      {
+        "year": 2024,
+        "sicknessInactive": 2.8,
+        "mentalHealthShare": 38,
+        "inactivityRate": 22.1,
+        "sicknessRate": 7.1
+      },
+      {
+        "year": 2025,
+        "sicknessInactive": 2.8,
+        "mentalHealthShare": 38,
+        "inactivityRate": 22.0,
+        "sicknessRate": 7.1
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Labour Force Survey \u2014 economic inactivity",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity/bulletins/economicinactivity/",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Economic inactivity from ONS LFS. Long-term sickness defined as inactive for 12+ months due to ill-health. Mental health share from Annual Population Survey.",
+    "knownIssues": [
+      "Self-reported reason for inactivity may not capture full complexity of health conditions"
+    ]
+  }
+}

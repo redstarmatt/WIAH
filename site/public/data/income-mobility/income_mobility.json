@@ -1,0 +1,100 @@
+{
+  "topic": "income-mobility",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "bottomQuintilePersistence": 39,
+        "topQuintilePersistence": 37,
+        "degreePoorPct": 27,
+        "degreewealthyPct": 58
+      },
+      {
+        "year": 2016,
+        "bottomQuintilePersistence": 39,
+        "topQuintilePersistence": 37,
+        "degreePoorPct": 28,
+        "degreewealthyPct": 59
+      },
+      {
+        "year": 2017,
+        "bottomQuintilePersistence": 39,
+        "topQuintilePersistence": 37,
+        "degreePoorPct": 29,
+        "degreewealthyPct": 59
+      },
+      {
+        "year": 2018,
+        "bottomQuintilePersistence": 38,
+        "topQuintilePersistence": 37,
+        "degreePoorPct": 30,
+        "degreewealthyPct": 60
+      },
+      {
+        "year": 2019,
+        "bottomQuintilePersistence": 38,
+        "topQuintilePersistence": 37,
+        "degreePoorPct": 31,
+        "degreewealthyPct": 60
+      },
+      {
+        "year": 2020,
+        "bottomQuintilePersistence": 38,
+        "topQuintilePersistence": 37,
+        "degreePoorPct": 30,
+        "degreewealthyPct": 62
+      },
+      {
+        "year": 2021,
+        "bottomQuintilePersistence": 38,
+        "topQuintilePersistence": 37,
+        "degreePoorPct": 31,
+        "degreewealthyPct": 62
+      },
+      {
+        "year": 2022,
+        "bottomQuintilePersistence": 38,
+        "topQuintilePersistence": 37,
+        "degreePoorPct": 32,
+        "degreewealthyPct": 62
+      },
+      {
+        "year": 2023,
+        "bottomQuintilePersistence": 38,
+        "topQuintilePersistence": 37,
+        "degreePoorPct": 33,
+        "degreewealthyPct": 63
+      },
+      {
+        "year": 2024,
+        "bottomQuintilePersistence": 38,
+        "topQuintilePersistence": 37,
+        "degreePoorPct": 33,
+        "degreewealthyPct": 63
+      },
+      {
+        "year": 2025,
+        "bottomQuintilePersistence": 38,
+        "topQuintilePersistence": 37,
+        "degreePoorPct": 34,
+        "degreewealthyPct": 63
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Social Mobility Commission",
+        "dataset": "State of the Nation",
+        "url": "https://socialmobilitycommission.independent.gov.uk/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Intergenerational income persistence from LSE and Institute for Fiscal Studies research using BHPS and Understanding Society data. Rankings from OECD Education at a Glance.",
+    "knownIssues": [
+      "Intergenerational earnings elasticity estimates have wide confidence intervals",
+      "Some analyses use father-son pairs only; gender differences in mobility are not fully captured"
+    ]
+  }
+}

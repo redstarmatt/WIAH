@@ -1,0 +1,100 @@
+{
+  "topic": "national-travel-survey",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "carShare": 62,
+        "ptShare": 10,
+        "cyclingShare": 1.0,
+        "walkingShare": 25
+      },
+      {
+        "year": 2016,
+        "carShare": 62,
+        "ptShare": 10,
+        "cyclingShare": 1.1,
+        "walkingShare": 25
+      },
+      {
+        "year": 2017,
+        "carShare": 62,
+        "ptShare": 10,
+        "cyclingShare": 1.1,
+        "walkingShare": 25
+      },
+      {
+        "year": 2018,
+        "carShare": 62,
+        "ptShare": 10,
+        "cyclingShare": 1.2,
+        "walkingShare": 25
+      },
+      {
+        "year": 2019,
+        "carShare": 62,
+        "ptShare": 10,
+        "cyclingShare": 1.2,
+        "walkingShare": 25
+      },
+      {
+        "year": 2020,
+        "carShare": 62,
+        "ptShare": 8,
+        "cyclingShare": 1.3,
+        "walkingShare": 26
+      },
+      {
+        "year": 2021,
+        "carShare": 55,
+        "ptShare": 3,
+        "cyclingShare": 2.0,
+        "walkingShare": 38
+      },
+      {
+        "year": 2022,
+        "carShare": 62,
+        "ptShare": 6,
+        "cyclingShare": 1.8,
+        "walkingShare": 28
+      },
+      {
+        "year": 2023,
+        "carShare": 63,
+        "ptShare": 7,
+        "cyclingShare": 1.5,
+        "walkingShare": 26
+      },
+      {
+        "year": 2024,
+        "carShare": 63,
+        "ptShare": 7,
+        "cyclingShare": 1.5,
+        "walkingShare": 26
+      },
+      {
+        "year": 2025,
+        "carShare": 63,
+        "ptShare": 7,
+        "cyclingShare": 1.5,
+        "walkingShare": 26
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DfT",
+        "dataset": "National Travel Survey",
+        "url": "https://www.gov.uk/government/collections/national-travel-survey-statistics",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Mode shares from DfT National Travel Survey using travel diary approach. Trips defined as one-way journey of any distance.",
+    "knownIssues": [
+      "NTS methodology changed in 2020; direct comparisons with pre-2020 are cautious",
+      "E-scooter trips not fully captured in official statistics"
+    ]
+  }
+}

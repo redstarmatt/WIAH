@@ -1,0 +1,100 @@
+{
+  "topic": "tree-planting",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "ukPlanted": 8800,
+        "englandPlanted": 2100,
+        "actualPlanted": 8800,
+        "cccTarget": 30000
+      },
+      {
+        "year": 2016,
+        "ukPlanted": 9200,
+        "englandPlanted": 2200,
+        "actualPlanted": 9200,
+        "cccTarget": 30000
+      },
+      {
+        "year": 2017,
+        "ukPlanted": 9600,
+        "englandPlanted": 2300,
+        "actualPlanted": 9600,
+        "cccTarget": 30000
+      },
+      {
+        "year": 2018,
+        "ukPlanted": 10000,
+        "englandPlanted": 2400,
+        "actualPlanted": 10000,
+        "cccTarget": 30000
+      },
+      {
+        "year": 2019,
+        "ukPlanted": 10500,
+        "englandPlanted": 2500,
+        "actualPlanted": 10500,
+        "cccTarget": 30000
+      },
+      {
+        "year": 2020,
+        "ukPlanted": 10800,
+        "englandPlanted": 2600,
+        "actualPlanted": 10800,
+        "cccTarget": 30000
+      },
+      {
+        "year": 2021,
+        "ukPlanted": 10500,
+        "englandPlanted": 2800,
+        "actualPlanted": 10500,
+        "cccTarget": 30000
+      },
+      {
+        "year": 2022,
+        "ukPlanted": 12000,
+        "englandPlanted": 3200,
+        "actualPlanted": 12000,
+        "cccTarget": 30000
+      },
+      {
+        "year": 2023,
+        "ukPlanted": 13000,
+        "englandPlanted": 4000,
+        "actualPlanted": 13000,
+        "cccTarget": 30000
+      },
+      {
+        "year": 2024,
+        "ukPlanted": 13500,
+        "englandPlanted": 4400,
+        "actualPlanted": 13500,
+        "cccTarget": 30000
+      },
+      {
+        "year": 2025,
+        "ukPlanted": 13700,
+        "englandPlanted": 4600,
+        "actualPlanted": 13700,
+        "cccTarget": 30000
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Forestry Commission",
+        "dataset": "UK and England woodland statistics",
+        "url": "https://www.forestresearch.gov.uk/tools-and-resources/statistics/statistics-by-topic/woodland-statistics/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Woodland creation from Forestry Commission England Woodland Creation Evidence Base and Forestry Statistics. Includes new planting and natural regeneration where verified.",
+    "knownIssues": [
+      "Woodland creation figures based on grant schemes \u2014 actual tree survival rates are lower than hectares planted",
+      "Natural regeneration measurement is uncertain"
+    ]
+  }
+}

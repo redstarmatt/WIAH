@@ -1,0 +1,100 @@
+{
+  "topic": "plastic-pollution-rivers",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "plasticTonnes": 55,
+        "goodEcologicalStatus": 17,
+        "goodChemicalPct": 21,
+        "goodEcologicalPct": 17
+      },
+      {
+        "year": 2016,
+        "plasticTonnes": 58,
+        "goodEcologicalStatus": 16,
+        "goodChemicalPct": 20,
+        "goodEcologicalPct": 16
+      },
+      {
+        "year": 2017,
+        "plasticTonnes": 61,
+        "goodEcologicalStatus": 16,
+        "goodChemicalPct": 19,
+        "goodEcologicalPct": 16
+      },
+      {
+        "year": 2018,
+        "plasticTonnes": 63,
+        "goodEcologicalStatus": 15,
+        "goodChemicalPct": 18,
+        "goodEcologicalPct": 15
+      },
+      {
+        "year": 2019,
+        "plasticTonnes": 65,
+        "goodEcologicalStatus": 15,
+        "goodChemicalPct": 17,
+        "goodEcologicalPct": 15
+      },
+      {
+        "year": 2020,
+        "plasticTonnes": 64,
+        "goodEcologicalStatus": 15,
+        "goodChemicalPct": 16,
+        "goodEcologicalPct": 15
+      },
+      {
+        "year": 2021,
+        "plasticTonnes": 66,
+        "goodEcologicalStatus": 14,
+        "goodChemicalPct": 15,
+        "goodEcologicalPct": 14
+      },
+      {
+        "year": 2022,
+        "plasticTonnes": 68,
+        "goodEcologicalStatus": 14,
+        "goodChemicalPct": 14,
+        "goodEcologicalPct": 14
+      },
+      {
+        "year": 2023,
+        "plasticTonnes": 69,
+        "goodEcologicalStatus": 14,
+        "goodChemicalPct": 13,
+        "goodEcologicalPct": 14
+      },
+      {
+        "year": 2024,
+        "plasticTonnes": 70,
+        "goodEcologicalStatus": 14,
+        "goodChemicalPct": 13,
+        "goodEcologicalPct": 14
+      },
+      {
+        "year": 2025,
+        "plasticTonnes": 70,
+        "goodEcologicalStatus": 14,
+        "goodChemicalPct": 13,
+        "goodEcologicalPct": 14
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Environment Agency",
+        "dataset": "Catchment Data Explorer \u2014 river quality",
+        "url": "https://environment.data.gov.uk/catchment-planning/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "River quality from EA Water Framework Directive assessments. Plastic estimates from EA and CEFAS research combining litter survey data with hydrological modelling.",
+    "knownIssues": [
+      "Plastic pollution estimates are highly uncertain \u2014 based on monitoring transects scaled up to national level",
+      "Many pollutants assessed under WFD are not plastic-specific"
+    ]
+  }
+}

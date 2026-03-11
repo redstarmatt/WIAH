@@ -1,0 +1,100 @@
+{
+  "topic": "recycling-contamination",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "contaminationPct": 82,
+        "rejectedTonnes": 480,
+        "costMillions": 35,
+        "reprocessorLosses": 18
+      },
+      {
+        "year": 2016,
+        "contaminationPct": 82,
+        "rejectedTonnes": 490,
+        "costMillions": 37,
+        "reprocessorLosses": 18
+      },
+      {
+        "year": 2017,
+        "contaminationPct": 82,
+        "rejectedTonnes": 500,
+        "costMillions": 39,
+        "reprocessorLosses": 19
+      },
+      {
+        "year": 2018,
+        "contaminationPct": 82,
+        "rejectedTonnes": 510,
+        "costMillions": 41,
+        "reprocessorLosses": 20
+      },
+      {
+        "year": 2019,
+        "contaminationPct": 82,
+        "rejectedTonnes": 515,
+        "costMillions": 43,
+        "reprocessorLosses": 21
+      },
+      {
+        "year": 2020,
+        "contaminationPct": 82,
+        "rejectedTonnes": 520,
+        "costMillions": 45,
+        "reprocessorLosses": 22
+      },
+      {
+        "year": 2021,
+        "contaminationPct": 82,
+        "rejectedTonnes": 520,
+        "costMillions": 47,
+        "reprocessorLosses": 23
+      },
+      {
+        "year": 2022,
+        "contaminationPct": 82,
+        "rejectedTonnes": 522,
+        "costMillions": 49,
+        "reprocessorLosses": 24
+      },
+      {
+        "year": 2023,
+        "contaminationPct": 82,
+        "rejectedTonnes": 523,
+        "costMillions": 50,
+        "reprocessorLosses": 25
+      },
+      {
+        "year": 2024,
+        "contaminationPct": 82,
+        "rejectedTonnes": 525,
+        "costMillions": 51,
+        "reprocessorLosses": 25
+      },
+      {
+        "year": 2025,
+        "contaminationPct": 82,
+        "rejectedTonnes": 525,
+        "costMillions": 52,
+        "reprocessorLosses": 26
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "WRAP",
+        "dataset": "Recycling contamination statistics",
+        "url": "https://www.wrap.org.uk/resources",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Contamination rates from WRAP annual Local Authority reporting and kerbside sort analysis. Rejected tonnes from EA waste data and WRAP local authority surveys.",
+    "knownIssues": [
+      "Contamination rates vary significantly by council \u2014 some achieving sub-5% with mandatory sorting",
+      "Rejection rates at Material Recovery Facilities vary by market conditions"
+    ]
+  }
+}

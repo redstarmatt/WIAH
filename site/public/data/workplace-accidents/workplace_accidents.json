@@ -1,0 +1,100 @@
+{
+  "topic": "workplace-accidents",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "fatalInjuries": 175,
+        "constructionFatalities": 58,
+        "nonFatalLFS": 621,
+        "nonFatalRIDDOR": 175
+      },
+      {
+        "year": 2016,
+        "fatalInjuries": 168,
+        "constructionFatalities": 55,
+        "nonFatalLFS": 619,
+        "nonFatalRIDDOR": 172
+      },
+      {
+        "year": 2017,
+        "fatalInjuries": 162,
+        "constructionFatalities": 52,
+        "nonFatalLFS": 609,
+        "nonFatalRIDDOR": 168
+      },
+      {
+        "year": 2018,
+        "fatalInjuries": 157,
+        "constructionFatalities": 50,
+        "nonFatalLFS": 599,
+        "nonFatalRIDDOR": 165
+      },
+      {
+        "year": 2019,
+        "fatalInjuries": 149,
+        "constructionFatalities": 48,
+        "nonFatalLFS": 581,
+        "nonFatalRIDDOR": 162
+      },
+      {
+        "year": 2020,
+        "fatalInjuries": 142,
+        "constructionFatalities": 45,
+        "nonFatalLFS": 565,
+        "nonFatalRIDDOR": 155
+      },
+      {
+        "year": 2021,
+        "fatalInjuries": 141,
+        "constructionFatalities": 44,
+        "nonFatalLFS": 549,
+        "nonFatalRIDDOR": 152
+      },
+      {
+        "year": 2022,
+        "fatalInjuries": 123,
+        "constructionFatalities": 40,
+        "nonFatalLFS": 531,
+        "nonFatalRIDDOR": 148
+      },
+      {
+        "year": 2023,
+        "fatalInjuries": 135,
+        "constructionFatalities": 42,
+        "nonFatalLFS": 543,
+        "nonFatalRIDDOR": 150
+      },
+      {
+        "year": 2024,
+        "fatalInjuries": 141,
+        "constructionFatalities": 45,
+        "nonFatalLFS": 558,
+        "nonFatalRIDDOR": 152
+      },
+      {
+        "year": 2025,
+        "fatalInjuries": 138,
+        "constructionFatalities": 44,
+        "nonFatalLFS": 561,
+        "nonFatalRIDDOR": 151
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "HSE",
+        "dataset": "Statistics on fatal injuries in the workplace",
+        "url": "https://www.hse.gov.uk/statistics/fatals.htm",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Fatal injuries from HSE RIDDOR (Reporting of Injuries, Diseases and Dangerous Occurrences Regulations) data. Non-fatal injuries from LFS self-report survey.",
+    "knownIssues": [
+      "RIDDOR significantly under-counts non-fatal injuries; LFS self-report provides fuller picture",
+      "Covid-related deaths at work excluded from main statistics"
+    ]
+  }
+}

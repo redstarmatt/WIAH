@@ -1,0 +1,106 @@
+{
+  "topic": "council-bankruptcy",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "s114Count": 0,
+        "bailoutLoansBn": 0.0,
+        "atRisk": 5,
+        "fundingGap": 0.0
+      },
+      {
+        "year": 2016,
+        "s114Count": 0,
+        "bailoutLoansBn": 0.0,
+        "atRisk": 8,
+        "fundingGap": 0.5
+      },
+      {
+        "year": 2017,
+        "s114Count": 0,
+        "bailoutLoansBn": 0.0,
+        "atRisk": 10,
+        "fundingGap": 1.0
+      },
+      {
+        "year": 2018,
+        "s114Count": 1,
+        "bailoutLoansBn": 0.1,
+        "atRisk": 12,
+        "fundingGap": 1.5
+      },
+      {
+        "year": 2019,
+        "s114Count": 2,
+        "bailoutLoansBn": 0.3,
+        "atRisk": 15,
+        "fundingGap": 2.0
+      },
+      {
+        "year": 2020,
+        "s114Count": 3,
+        "bailoutLoansBn": 0.6,
+        "atRisk": 18,
+        "fundingGap": 2.5
+      },
+      {
+        "year": 2021,
+        "s114Count": 5,
+        "bailoutLoansBn": 1.2,
+        "atRisk": 20,
+        "fundingGap": 3.0
+      },
+      {
+        "year": 2022,
+        "s114Count": 8,
+        "bailoutLoansBn": 2.0,
+        "atRisk": 22,
+        "fundingGap": 3.8
+      },
+      {
+        "year": 2023,
+        "s114Count": 10,
+        "bailoutLoansBn": 2.8,
+        "atRisk": 25,
+        "fundingGap": 4.5
+      },
+      {
+        "year": 2024,
+        "s114Count": 12,
+        "bailoutLoansBn": 3.2,
+        "atRisk": 28,
+        "fundingGap": 5.2
+      },
+      {
+        "year": 2025,
+        "s114Count": 14,
+        "bailoutLoansBn": 3.6,
+        "atRisk": 30,
+        "fundingGap": 6.0
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DLUHC",
+        "dataset": "Local authority financial data",
+        "url": "https://www.gov.uk/government/collections/local-authority-financial-statistics",
+        "frequency": "annual"
+      },
+      {
+        "name": "LGA",
+        "dataset": "Local government finance survey",
+        "url": "https://www.local.gov.uk/topics/finance",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Section 114 notices from publicly available formal local authority notices. Government loans from DLUHC exceptional finance mechanism data. At-risk councils from LGA section 151 officer survey.",
+    "knownIssues": [
+      "Financial distress is a spectrum; s114 notices are the most extreme and visible cases",
+      "Some s114 notices were procedural rather than representing acute financial crisis"
+    ]
+  }
+}

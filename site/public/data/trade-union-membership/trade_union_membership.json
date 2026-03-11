@@ -1,0 +1,100 @@
+{
+  "topic": "trade-union-membership",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "overallRate": 25.0,
+        "publicSectorRate": 54.0,
+        "strikesDays": 0.17,
+        "privateSectorRate": 13.9
+      },
+      {
+        "year": 2016,
+        "overallRate": 24.7,
+        "publicSectorRate": 53.7,
+        "strikesDays": 0.11,
+        "privateSectorRate": 13.7
+      },
+      {
+        "year": 2017,
+        "overallRate": 24.0,
+        "publicSectorRate": 52.9,
+        "strikesDays": 0.22,
+        "privateSectorRate": 13.4
+      },
+      {
+        "year": 2018,
+        "overallRate": 23.4,
+        "publicSectorRate": 52.5,
+        "strikesDays": 0.27,
+        "privateSectorRate": 13.2
+      },
+      {
+        "year": 2019,
+        "overallRate": 23.5,
+        "publicSectorRate": 52.3,
+        "strikesDays": 0.23,
+        "privateSectorRate": 13.0
+      },
+      {
+        "year": 2020,
+        "overallRate": 23.7,
+        "publicSectorRate": 52.1,
+        "strikesDays": 0.18,
+        "privateSectorRate": 12.9
+      },
+      {
+        "year": 2021,
+        "overallRate": 23.3,
+        "publicSectorRate": 51.8,
+        "strikesDays": 0.19,
+        "privateSectorRate": 12.8
+      },
+      {
+        "year": 2022,
+        "overallRate": 23.0,
+        "publicSectorRate": 51.4,
+        "strikesDays": 2.47,
+        "privateSectorRate": 12.7
+      },
+      {
+        "year": 2023,
+        "overallRate": 22.7,
+        "publicSectorRate": 50.8,
+        "strikesDays": 2.72,
+        "privateSectorRate": 12.7
+      },
+      {
+        "year": 2024,
+        "overallRate": 22.3,
+        "publicSectorRate": 50.3,
+        "strikesDays": 1.5,
+        "privateSectorRate": 12.8
+      },
+      {
+        "year": 2025,
+        "overallRate": 22.3,
+        "publicSectorRate": 50.0,
+        "strikesDays": 0.8,
+        "privateSectorRate": 12.8
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "BEIS",
+        "dataset": "Trade union statistics",
+        "url": "https://www.gov.uk/government/collections/trade-union-statistics",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Union membership from BEIS annual trade union statistics, drawing on LFS. Strikes data from ONS Labour Disputes Survey.",
+    "knownIssues": [
+      "LFS data self-reported; actual membership may differ",
+      "Gig workers classified as self-employed are excluded from employee membership statistics"
+    ]
+  }
+}

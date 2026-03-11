@@ -1,0 +1,100 @@
+{
+  "topic": "public-private-finance",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "outstandingPFI": 58,
+        "annualPFICharge": 10.1,
+        "nhsPFISharePct": 18,
+        "educationPFISharePct": 15
+      },
+      {
+        "year": 2016,
+        "outstandingPFI": 55,
+        "annualPFICharge": 10.0,
+        "nhsPFISharePct": 17,
+        "educationPFISharePct": 15
+      },
+      {
+        "year": 2017,
+        "outstandingPFI": 52,
+        "annualPFICharge": 9.9,
+        "nhsPFISharePct": 17,
+        "educationPFISharePct": 14
+      },
+      {
+        "year": 2018,
+        "outstandingPFI": 50,
+        "annualPFICharge": 9.8,
+        "nhsPFISharePct": 16,
+        "educationPFISharePct": 14
+      },
+      {
+        "year": 2019,
+        "outstandingPFI": 48,
+        "annualPFICharge": 9.7,
+        "nhsPFISharePct": 16,
+        "educationPFISharePct": 13
+      },
+      {
+        "year": 2020,
+        "outstandingPFI": 46,
+        "annualPFICharge": 9.5,
+        "nhsPFISharePct": 15,
+        "educationPFISharePct": 13
+      },
+      {
+        "year": 2021,
+        "outstandingPFI": 44,
+        "annualPFICharge": 9.3,
+        "nhsPFISharePct": 15,
+        "educationPFISharePct": 12
+      },
+      {
+        "year": 2022,
+        "outstandingPFI": 43,
+        "annualPFICharge": 9.1,
+        "nhsPFISharePct": 14,
+        "educationPFISharePct": 12
+      },
+      {
+        "year": 2023,
+        "outstandingPFI": 42,
+        "annualPFICharge": 9.0,
+        "nhsPFISharePct": 14,
+        "educationPFISharePct": 11
+      },
+      {
+        "year": 2024,
+        "outstandingPFI": 42,
+        "annualPFICharge": 8.8,
+        "nhsPFISharePct": 13,
+        "educationPFISharePct": 11
+      },
+      {
+        "year": 2025,
+        "outstandingPFI": 42,
+        "annualPFICharge": 8.6,
+        "nhsPFISharePct": 13,
+        "educationPFISharePct": 10
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "HMT",
+        "dataset": "PFI and PF2 annual data",
+        "url": "https://www.gov.uk/government/collections/pfi-pf2-projects-database",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "PFI data from HMT Infrastructure & Projects Authority database. Outstanding payments represent total remaining unitary charges committed. Capital cost from original contract values.",
+    "knownIssues": [
+      "Outstanding payment figures may differ from accounts figures due to timing of contract variations",
+      "Some data withheld on commercial confidentiality grounds"
+    ]
+  }
+}

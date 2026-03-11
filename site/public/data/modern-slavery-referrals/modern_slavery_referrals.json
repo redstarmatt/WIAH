@@ -1,0 +1,100 @@
+{
+  "topic": "modern-slavery-referrals",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "nrmReferrals": 3266,
+        "conclusivePositive": 1400,
+        "labourExploitation": 28,
+        "sexualExploitation": 35
+      },
+      {
+        "year": 2016,
+        "nrmReferrals": 3805,
+        "conclusivePositive": 1800,
+        "labourExploitation": 30,
+        "sexualExploitation": 34
+      },
+      {
+        "year": 2017,
+        "nrmReferrals": 5145,
+        "conclusivePositive": 2500,
+        "labourExploitation": 32,
+        "sexualExploitation": 33
+      },
+      {
+        "year": 2018,
+        "nrmReferrals": 6985,
+        "conclusivePositive": 3600,
+        "labourExploitation": 34,
+        "sexualExploitation": 32
+      },
+      {
+        "year": 2019,
+        "nrmReferrals": 10627,
+        "conclusivePositive": 5100,
+        "labourExploitation": 36,
+        "sexualExploitation": 30
+      },
+      {
+        "year": 2020,
+        "nrmReferrals": 10613,
+        "conclusivePositive": 5200,
+        "labourExploitation": 38,
+        "sexualExploitation": 29
+      },
+      {
+        "year": 2021,
+        "nrmReferrals": 12727,
+        "conclusivePositive": 6100,
+        "labourExploitation": 39,
+        "sexualExploitation": 28
+      },
+      {
+        "year": 2022,
+        "nrmReferrals": 14670,
+        "conclusivePositive": 7200,
+        "labourExploitation": 40,
+        "sexualExploitation": 27
+      },
+      {
+        "year": 2023,
+        "nrmReferrals": 16938,
+        "conclusivePositive": 8100,
+        "labourExploitation": 41,
+        "sexualExploitation": 26
+      },
+      {
+        "year": 2024,
+        "nrmReferrals": 17004,
+        "conclusivePositive": 8400,
+        "labourExploitation": 42,
+        "sexualExploitation": 25
+      },
+      {
+        "year": 2025,
+        "nrmReferrals": 16800,
+        "conclusivePositive": 8200,
+        "labourExploitation": 42,
+        "sexualExploitation": 25
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Home Office",
+        "dataset": "Modern slavery: National Referral Mechanism and Duty to Notify statistics",
+        "url": "https://www.gov.uk/government/collections/modern-slavery-national-referral-mechanism-statistics",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "NRM referrals from Home Office Modern Slavery statistics. Referrals made by First Responders. Conclusive grounds decisions indicate reasonable belief victim was trafficked.",
+    "knownIssues": [
+      "Rising referrals may reflect better identification rather than increased prevalence",
+      "Many victims never enter the NRM"
+    ]
+  }
+}

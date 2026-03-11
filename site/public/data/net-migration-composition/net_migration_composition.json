@@ -1,0 +1,100 @@
+{
+  "topic": "net-migration-composition",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "studentVisaNet": 105,
+        "workVisaNet": 90,
+        "ukNationalEmigration": 125,
+        "foreignNationalEmigration": 90
+      },
+      {
+        "year": 2016,
+        "studentVisaNet": 110,
+        "workVisaNet": 88,
+        "ukNationalEmigration": 130,
+        "foreignNationalEmigration": 95
+      },
+      {
+        "year": 2017,
+        "studentVisaNet": 112,
+        "workVisaNet": 85,
+        "ukNationalEmigration": 128,
+        "foreignNationalEmigration": 92
+      },
+      {
+        "year": 2018,
+        "studentVisaNet": 115,
+        "workVisaNet": 88,
+        "ukNationalEmigration": 126,
+        "foreignNationalEmigration": 88
+      },
+      {
+        "year": 2019,
+        "studentVisaNet": 110,
+        "workVisaNet": 88,
+        "ukNationalEmigration": 124,
+        "foreignNationalEmigration": 85
+      },
+      {
+        "year": 2020,
+        "studentVisaNet": 80,
+        "workVisaNet": 60,
+        "ukNationalEmigration": 100,
+        "foreignNationalEmigration": 75
+      },
+      {
+        "year": 2021,
+        "studentVisaNet": 200,
+        "workVisaNet": 130,
+        "ukNationalEmigration": 112,
+        "foreignNationalEmigration": 80
+      },
+      {
+        "year": 2022,
+        "studentVisaNet": 370,
+        "workVisaNet": 220,
+        "ukNationalEmigration": 130,
+        "foreignNationalEmigration": 95
+      },
+      {
+        "year": 2023,
+        "studentVisaNet": 430,
+        "workVisaNet": 280,
+        "ukNationalEmigration": 140,
+        "foreignNationalEmigration": 100
+      },
+      {
+        "year": 2024,
+        "studentVisaNet": 360,
+        "workVisaNet": 240,
+        "ukNationalEmigration": 138,
+        "foreignNationalEmigration": 98
+      },
+      {
+        "year": 2025,
+        "studentVisaNet": 300,
+        "workVisaNet": 200,
+        "ukNationalEmigration": 135,
+        "foreignNationalEmigration": 95
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Long-term international migration",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/internationalmigrationpreliminaryestimatesbulletin/",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Net migration from ONS Long-Term International Migration estimates. Visa types mapped to ONS categories using Home Office administrative data.",
+    "knownIssues": [
+      "ONS methodology changed in 2021 to use administrative data \u2014 not directly comparable to earlier estimates",
+      "Student migrant numbers include dependants who are economically active"
+    ]
+  }
+}

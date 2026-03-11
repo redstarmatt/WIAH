@@ -1,0 +1,100 @@
+{
+  "topic": "landfill-capacity",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "remainingCapacity": 500,
+        "yearsRemaining": 30,
+        "countiesWithNoLandfill": 1,
+        "avgWasteTransportKm": 45
+      },
+      {
+        "year": 2016,
+        "remainingCapacity": 480,
+        "yearsRemaining": 28,
+        "countiesWithNoLandfill": 1,
+        "avgWasteTransportKm": 47
+      },
+      {
+        "year": 2017,
+        "remainingCapacity": 460,
+        "yearsRemaining": 26,
+        "countiesWithNoLandfill": 2,
+        "avgWasteTransportKm": 50
+      },
+      {
+        "year": 2018,
+        "remainingCapacity": 440,
+        "yearsRemaining": 24,
+        "countiesWithNoLandfill": 2,
+        "avgWasteTransportKm": 52
+      },
+      {
+        "year": 2019,
+        "remainingCapacity": 420,
+        "yearsRemaining": 22,
+        "countiesWithNoLandfill": 2,
+        "avgWasteTransportKm": 55
+      },
+      {
+        "year": 2020,
+        "remainingCapacity": 400,
+        "yearsRemaining": 20,
+        "countiesWithNoLandfill": 3,
+        "avgWasteTransportKm": 58
+      },
+      {
+        "year": 2021,
+        "remainingCapacity": 380,
+        "yearsRemaining": 18,
+        "countiesWithNoLandfill": 3,
+        "avgWasteTransportKm": 62
+      },
+      {
+        "year": 2022,
+        "remainingCapacity": 360,
+        "yearsRemaining": 16,
+        "countiesWithNoLandfill": 4,
+        "avgWasteTransportKm": 66
+      },
+      {
+        "year": 2023,
+        "remainingCapacity": 340,
+        "yearsRemaining": 15,
+        "countiesWithNoLandfill": 5,
+        "avgWasteTransportKm": 70
+      },
+      {
+        "year": 2024,
+        "remainingCapacity": 320,
+        "yearsRemaining": 14,
+        "countiesWithNoLandfill": 5,
+        "avgWasteTransportKm": 73
+      },
+      {
+        "year": 2025,
+        "remainingCapacity": 300,
+        "yearsRemaining": 12,
+        "countiesWithNoLandfill": 5,
+        "avgWasteTransportKm": 76
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Environment Agency",
+        "dataset": "Waste data interrogator",
+        "url": "https://www.data.gov.uk/dataset/ea-waste-data-interrogator",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Landfill capacity from EA permitted site data. Remaining capacity estimated from permitted volume minus cumulative waste accepted. Years remaining based on current annual landfill intake.",
+    "knownIssues": [
+      "Capacity figures are estimates; actual lifetimes of sites vary with operational decisions",
+      "Future EfW expansion could extend landfill runway by diverting waste"
+    ]
+  }
+}

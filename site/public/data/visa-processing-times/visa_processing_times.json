@@ -1,0 +1,100 @@
+{
+  "topic": "visa-processing-times",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "skilledWorkerDays": 18,
+        "familyVisaDays": 45,
+        "withinTargetPct": 78,
+        "backlongThousands": 80
+      },
+      {
+        "year": 2016,
+        "skilledWorkerDays": 17,
+        "familyVisaDays": 48,
+        "withinTargetPct": 76,
+        "backlongThousands": 85
+      },
+      {
+        "year": 2017,
+        "skilledWorkerDays": 16,
+        "familyVisaDays": 50,
+        "withinTargetPct": 75,
+        "backlongThousands": 90
+      },
+      {
+        "year": 2018,
+        "skilledWorkerDays": 15,
+        "familyVisaDays": 52,
+        "withinTargetPct": 74,
+        "backlongThousands": 95
+      },
+      {
+        "year": 2019,
+        "skilledWorkerDays": 14,
+        "familyVisaDays": 48,
+        "withinTargetPct": 77,
+        "backlongThousands": 88
+      },
+      {
+        "year": 2020,
+        "skilledWorkerDays": 19,
+        "familyVisaDays": 65,
+        "withinTargetPct": 62,
+        "backlongThousands": 120
+      },
+      {
+        "year": 2021,
+        "skilledWorkerDays": 21,
+        "familyVisaDays": 72,
+        "withinTargetPct": 55,
+        "backlongThousands": 160
+      },
+      {
+        "year": 2022,
+        "skilledWorkerDays": 18,
+        "familyVisaDays": 68,
+        "withinTargetPct": 60,
+        "backlongThousands": 145
+      },
+      {
+        "year": 2023,
+        "skilledWorkerDays": 15,
+        "familyVisaDays": 65,
+        "withinTargetPct": 64,
+        "backlongThousands": 120
+      },
+      {
+        "year": 2024,
+        "skilledWorkerDays": 13,
+        "familyVisaDays": 62,
+        "withinTargetPct": 66,
+        "backlongThousands": 105
+      },
+      {
+        "year": 2025,
+        "skilledWorkerDays": 12,
+        "familyVisaDays": 60,
+        "withinTargetPct": 68,
+        "backlongThousands": 95
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Home Office",
+        "dataset": "Immigration statistics",
+        "url": "https://www.gov.uk/government/collections/immigration-statistics-quarterly-release",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Processing times from Home Office immigration statistics. Median processing days calculated from application to decision. Backlog defined as applications older than published processing time targets.",
+    "knownIssues": [
+      "Priority services skew median processing time downward",
+      "Covid period saw fundamental changes to processing capacity"
+    ]
+  }
+}

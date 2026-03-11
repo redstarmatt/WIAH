@@ -1,0 +1,100 @@
+{
+  "topic": "trade-balance",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "goodsDeficit": 165,
+        "servicesSurplus": 126,
+        "overallBalance": -38,
+        "currentAccount": -82
+      },
+      {
+        "year": 2016,
+        "goodsDeficit": 170,
+        "servicesSurplus": 132,
+        "overallBalance": -38,
+        "currentAccount": -86
+      },
+      {
+        "year": 2017,
+        "goodsDeficit": 175,
+        "servicesSurplus": 140,
+        "overallBalance": -35,
+        "currentAccount": -80
+      },
+      {
+        "year": 2018,
+        "goodsDeficit": 180,
+        "servicesSurplus": 146,
+        "overallBalance": -34,
+        "currentAccount": -74
+      },
+      {
+        "year": 2019,
+        "goodsDeficit": 182,
+        "servicesSurplus": 152,
+        "overallBalance": -30,
+        "currentAccount": -68
+      },
+      {
+        "year": 2020,
+        "goodsDeficit": 185,
+        "servicesSurplus": 145,
+        "overallBalance": -40,
+        "currentAccount": -90
+      },
+      {
+        "year": 2021,
+        "goodsDeficit": 190,
+        "servicesSurplus": 155,
+        "overallBalance": -35,
+        "currentAccount": -70
+      },
+      {
+        "year": 2022,
+        "goodsDeficit": 210,
+        "servicesSurplus": 165,
+        "overallBalance": -45,
+        "currentAccount": -95
+      },
+      {
+        "year": 2023,
+        "goodsDeficit": 225,
+        "servicesSurplus": 180,
+        "overallBalance": -45,
+        "currentAccount": -85
+      },
+      {
+        "year": 2024,
+        "goodsDeficit": 228,
+        "servicesSurplus": 190,
+        "overallBalance": -38,
+        "currentAccount": -78
+      },
+      {
+        "year": 2025,
+        "goodsDeficit": 233,
+        "servicesSurplus": 196,
+        "overallBalance": -37,
+        "currentAccount": -75
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "UK trade in goods and services",
+        "url": "https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Trade figures from ONS balance of payments statistics. Goods trade measured on a balance of payments basis.",
+    "knownIssues": [
+      "Trade data is subject to significant revision",
+      "Post-Brexit re-routing complicates measurement"
+    ]
+  }
+}

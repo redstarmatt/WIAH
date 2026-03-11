@@ -1,0 +1,100 @@
+{
+  "topic": "immigration-detention-length",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "enteringDetention": 27993,
+        "avgStayDays": 25,
+        "over28DaysPct": 16,
+        "over56DaysPct": 8
+      },
+      {
+        "year": 2016,
+        "enteringDetention": 29899,
+        "avgStayDays": 26,
+        "over28DaysPct": 16,
+        "over56DaysPct": 8
+      },
+      {
+        "year": 2017,
+        "enteringDetention": 32559,
+        "avgStayDays": 27,
+        "over28DaysPct": 17,
+        "over56DaysPct": 9
+      },
+      {
+        "year": 2018,
+        "enteringDetention": 28919,
+        "avgStayDays": 28,
+        "over28DaysPct": 17,
+        "over56DaysPct": 9
+      },
+      {
+        "year": 2019,
+        "enteringDetention": 27849,
+        "avgStayDays": 29,
+        "over28DaysPct": 18,
+        "over56DaysPct": 10
+      },
+      {
+        "year": 2020,
+        "enteringDetention": 11356,
+        "avgStayDays": 32,
+        "over28DaysPct": 20,
+        "over56DaysPct": 11
+      },
+      {
+        "year": 2021,
+        "enteringDetention": 19374,
+        "avgStayDays": 35,
+        "over28DaysPct": 21,
+        "over56DaysPct": 12
+      },
+      {
+        "year": 2022,
+        "enteringDetention": 24426,
+        "avgStayDays": 37,
+        "over28DaysPct": 22,
+        "over56DaysPct": 13
+      },
+      {
+        "year": 2023,
+        "enteringDetention": 26009,
+        "avgStayDays": 38,
+        "over28DaysPct": 23,
+        "over56DaysPct": 13
+      },
+      {
+        "year": 2024,
+        "enteringDetention": 26297,
+        "avgStayDays": 38,
+        "over28DaysPct": 24,
+        "over56DaysPct": 14
+      },
+      {
+        "year": 2025,
+        "enteringDetention": 25000,
+        "avgStayDays": 38,
+        "over28DaysPct": 24,
+        "over56DaysPct": 14
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Home Office",
+        "dataset": "Immigration statistics \u2014 detention",
+        "url": "https://www.gov.uk/government/collections/immigration-statistics-quarterly-release",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Detention statistics from Home Office Immigration Statistics. Average stay calculated from entry and exit dates. Length categories from official statistics tables.",
+    "knownIssues": [
+      "Detention capacity constraints affect who is detained, not only policy changes",
+      "People may enter detention multiple times in the same year"
+    ]
+  }
+}

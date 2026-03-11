@@ -1,0 +1,100 @@
+{
+  "topic": "public-sector-productivity",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "publicSectorIndex": 98,
+        "nhsProductivityIndex": 98,
+        "nhsActivityIndex": 95,
+        "nhsCostIndex": 93
+      },
+      {
+        "year": 2016,
+        "publicSectorIndex": 99,
+        "nhsProductivityIndex": 99,
+        "nhsActivityIndex": 97,
+        "nhsCostIndex": 95
+      },
+      {
+        "year": 2017,
+        "publicSectorIndex": 100,
+        "nhsProductivityIndex": 99,
+        "nhsActivityIndex": 98,
+        "nhsCostIndex": 96
+      },
+      {
+        "year": 2018,
+        "publicSectorIndex": 100,
+        "nhsProductivityIndex": 100,
+        "nhsActivityIndex": 99,
+        "nhsCostIndex": 98
+      },
+      {
+        "year": 2019,
+        "publicSectorIndex": 100,
+        "nhsProductivityIndex": 100,
+        "nhsActivityIndex": 100,
+        "nhsCostIndex": 100
+      },
+      {
+        "year": 2020,
+        "publicSectorIndex": 88,
+        "nhsProductivityIndex": 78,
+        "nhsActivityIndex": 75,
+        "nhsCostIndex": 110
+      },
+      {
+        "year": 2021,
+        "publicSectorIndex": 90,
+        "nhsProductivityIndex": 82,
+        "nhsActivityIndex": 82,
+        "nhsCostIndex": 115
+      },
+      {
+        "year": 2022,
+        "publicSectorIndex": 93,
+        "nhsProductivityIndex": 86,
+        "nhsActivityIndex": 88,
+        "nhsCostIndex": 118
+      },
+      {
+        "year": 2023,
+        "publicSectorIndex": 95,
+        "nhsProductivityIndex": 89,
+        "nhsActivityIndex": 92,
+        "nhsCostIndex": 120
+      },
+      {
+        "year": 2024,
+        "publicSectorIndex": 96,
+        "nhsProductivityIndex": 91,
+        "nhsActivityIndex": 95,
+        "nhsCostIndex": 121
+      },
+      {
+        "year": 2025,
+        "publicSectorIndex": 97,
+        "nhsProductivityIndex": 92,
+        "nhsActivityIndex": 97,
+        "nhsCostIndex": 122
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Public service productivity",
+        "url": "https://www.ons.gov.uk/economy/economicoutputandproductivity/publicservicesproductivity/articles/publicservicesproductivityestimateshealthcare/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Public sector productivity from ONS public service productivity estimates. Output measured by weighted activity index; input by employment and real spending.",
+    "knownIssues": [
+      "Measuring public sector output quality is inherently difficult \u2014 activity may not equal quality",
+      "NHS pandemic period data heavily affected by treatment substitution and non-Covid care delays"
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "topic": "waste-flows",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "incinerationPct": 22,
+        "recyclingPct": 40,
+        "landfillPct": 28,
+        "otherPct": 10
+      },
+      {
+        "year": 2016,
+        "incinerationPct": 24,
+        "recyclingPct": 41,
+        "landfillPct": 24,
+        "otherPct": 11
+      },
+      {
+        "year": 2017,
+        "incinerationPct": 26,
+        "recyclingPct": 42,
+        "landfillPct": 20,
+        "otherPct": 12
+      },
+      {
+        "year": 2018,
+        "incinerationPct": 28,
+        "recyclingPct": 43,
+        "landfillPct": 17,
+        "otherPct": 12
+      },
+      {
+        "year": 2019,
+        "incinerationPct": 31,
+        "recyclingPct": 43,
+        "landfillPct": 14,
+        "otherPct": 12
+      },
+      {
+        "year": 2020,
+        "incinerationPct": 34,
+        "recyclingPct": 43,
+        "landfillPct": 11,
+        "otherPct": 12
+      },
+      {
+        "year": 2021,
+        "incinerationPct": 38,
+        "recyclingPct": 43,
+        "landfillPct": 8.5,
+        "otherPct": 10.5
+      },
+      {
+        "year": 2022,
+        "incinerationPct": 42,
+        "recyclingPct": 44,
+        "landfillPct": 7,
+        "otherPct": 7
+      },
+      {
+        "year": 2023,
+        "incinerationPct": 45,
+        "recyclingPct": 44,
+        "landfillPct": 6.5,
+        "otherPct": 4.5
+      },
+      {
+        "year": 2024,
+        "incinerationPct": 47,
+        "recyclingPct": 44,
+        "landfillPct": 6,
+        "otherPct": 3
+      },
+      {
+        "year": 2025,
+        "incinerationPct": 49,
+        "recyclingPct": 43.8,
+        "landfillPct": 5.5,
+        "otherPct": 1.7
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Defra",
+        "dataset": "UK statistics on waste",
+        "url": "https://www.gov.uk/government/statistical-data-sets/env18-uk-waste-data-and-management",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Waste treatment data from Defra UK Statistics on Waste. Municipal waste defined as waste collected by local authorities. EfW includes all energy-from-waste including refuse-derived fuel.",
+    "knownIssues": [
+      "EfW data may include imports of waste from other countries",
+      "Some waste passes through multiple treatment routes making categorisation complex"
+    ]
+  }
+}

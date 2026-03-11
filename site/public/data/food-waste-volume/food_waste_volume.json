@@ -1,0 +1,100 @@
+{
+  "topic": "food-waste-volume",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "wasteMillionTonnes": 7.3,
+        "wasteBn": 18.5,
+        "avoidablePct": 75,
+        "unavoidablePct": 25
+      },
+      {
+        "year": 2016,
+        "wasteMillionTonnes": 7.2,
+        "wasteBn": 18.2,
+        "avoidablePct": 74,
+        "unavoidablePct": 26
+      },
+      {
+        "year": 2017,
+        "wasteMillionTonnes": 7.1,
+        "wasteBn": 18.0,
+        "avoidablePct": 74,
+        "unavoidablePct": 26
+      },
+      {
+        "year": 2018,
+        "wasteMillionTonnes": 7.0,
+        "wasteBn": 17.8,
+        "avoidablePct": 74,
+        "unavoidablePct": 26
+      },
+      {
+        "year": 2019,
+        "wasteMillionTonnes": 6.9,
+        "wasteBn": 17.5,
+        "avoidablePct": 73,
+        "unavoidablePct": 27
+      },
+      {
+        "year": 2020,
+        "wasteMillionTonnes": 6.8,
+        "wasteBn": 17.2,
+        "avoidablePct": 73,
+        "unavoidablePct": 27
+      },
+      {
+        "year": 2021,
+        "wasteMillionTonnes": 6.7,
+        "wasteBn": 17.0,
+        "avoidablePct": 73,
+        "unavoidablePct": 27
+      },
+      {
+        "year": 2022,
+        "wasteMillionTonnes": 6.6,
+        "wasteBn": 17.0,
+        "avoidablePct": 73,
+        "unavoidablePct": 27
+      },
+      {
+        "year": 2023,
+        "wasteMillionTonnes": 6.5,
+        "wasteBn": 17.0,
+        "avoidablePct": 73,
+        "unavoidablePct": 27
+      },
+      {
+        "year": 2024,
+        "wasteMillionTonnes": 6.4,
+        "wasteBn": 17.0,
+        "avoidablePct": 73,
+        "unavoidablePct": 27
+      },
+      {
+        "year": 2025,
+        "wasteMillionTonnes": 6.4,
+        "wasteBn": 17.0,
+        "avoidablePct": 73,
+        "unavoidablePct": 27
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "WRAP",
+        "dataset": "Household food waste statistics",
+        "url": "https://www.wrap.org.uk/resources/report/household-food-waste-uk",
+        "frequency": "every 3-4 years"
+      }
+    ],
+    "methodology": "Food waste measured by WRAP using compositional analysis of household waste bins combined with diary surveys. Annual figures interpolated between WRAP surveys.",
+    "knownIssues": [
+      "WRAP conducts full surveys every 3-4 years; intermediate years are estimates",
+      "Commercial/industrial food waste not included in household figure"
+    ]
+  }
+}

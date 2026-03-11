@@ -1,0 +1,227 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
+
+// ── Types ────────────────────────────────────────────────────────────────────
+
+interface DataPoint {
+  year: number;
+  incinerationPct: number;
+  recyclingPct: number;
+  landfillPct: number;
+  otherPct: number;
+}
+
+interface TopicData {
+  national: {
+    timeSeries: DataPoint[];
+  };
+  metadata: {
+    sources: { name: string; dataset: string; url: string; frequency: string }[];
+    methodology: string;
+    knownIssues: string[];
+  };
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+
+function yearToDate(y: number): Date {
+  return new Date(y, 5, 1);
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
+
+export default function TopicPage() {
+  const [data, setData] = useState<TopicData | null>(null);
+
+  useEffect(() => {
+    fetch('/data/waste-flows/waste_flows.json')
+      .then(r => r.json())
+      .then(setData)
+      .catch(console.error);
+  }, []);
+
+  // ── Derived series ──────────────────────────────────────────────────────
+
+  const chart1Series: Series[] = data
+    ? [
+        {
+          id: 'incinerationPct',
+          label: 'Energy from waste (%)',
+          colour: '#E63946',
+          data: data.national.timeSeries.map(d => ({
+            date: yearToDate(d.year),
+            value: d.incinerationPct,
+          })),
+        },
+        {
+          id: 'recyclingPct',
+          label: 'Recycling (%)',
+          colour: '#2A9D8F',
+          data: data.national.timeSeries.map(d => ({
+            date: yearToDate(d.year),
+            value: d.recyclingPct,
+          })),
+        },
+      ]
+    : [];
+
+  const chart2Series: Series[] = data
+    ? [
+        {
+          id: 'landfillPct',
+          label: 'Landfill share (%)',
+          colour: '#F4A261',
+          data: data.national.timeSeries.map(d => ({
+            date: yearToDate(d.year),
+            value: d.landfillPct,
+          })),
+        },
+        {
+          id: 'otherPct',
+          label: 'Other treatment (%)',
+          colour: '#6B7280',
+          data: data.national.timeSeries.map(d => ({
+            date: yearToDate(d.year),
+            value: d.otherPct,
+          })),
+        },
+      ]
+    : [];
+
+  const chart1Annotations: Annotation[] = [
+    { date: new Date(2017, 5, 1), label: '2017: Landfill Tax increased to £88/tonne' },
+    { date: new Date(2021, 5, 1), label: '2021: Incineration overtakes recycling as main route' },
+  ];
+
+  const chart2Annotations: Annotation[] = [
+    { date: new Date(2018, 5, 1), label: '2018: Landfill tax freeze removed' },
+  ];
+
+  // ── Render ────────────────────────────────────────────────────────────────
+
+  return (
+    <>
+      <TopicNav topic="Waste Flows" />
+
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Environment & Climate"
+          question="Where Does Britain's Rubbish Actually Go?"
+          finding="Landfill now accounts for just 5.5% of waste treatment, down from 80% in 2000. Incineration handles 49%, but recycling stagnated while burning accelerated."
+          colour="#2A9D8F"
+        />
+
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-chart1', label: 'Chart 1' },
+          { id: 'sec-chart2', label: 'Chart 2' },
+        ]} />
+
+        {/* Metric cards */}
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <MetricCard
+            label="Landfill share"
+            value="5.5%"
+            unit=""
+            direction="down"
+            polarity="up-is-good"
+            changeText="Down from 80% in 2000 · nearly eliminated in England"
+            sparklineData={[28, 24, 20, 17, 14, 11, 8.5, 7, 6.5, 6, 5.5]}
+            href="#sec-coverage"
+          />
+          <MetricCard
+            label="Incineration/EfW share"
+            value="49%"
+            unit=""
+            direction="up"
+            polarity="up-is-bad"
+            changeText="Doubled since 2014 · now greater than landfill and recycling"
+            sparklineData={[22, 24, 26, 28, 31, 34, 38, 42, 45, 47, 49]}
+            href="#sec-coverage"
+          />
+          <MetricCard
+            label="Recycling share"
+            value="43.8%"
+            unit=""
+            direction="flat"
+            polarity="up-is-good"
+            changeText="Stagnant for a decade · target 65% by 2035"
+            sparklineData={[40, 41, 42, 43, 43, 43, 43, 44, 44, 44, 43.8]}
+            href="#sec-coverage"
+          />
+        </div>
+
+        {/* Charts */}
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="England waste treatment routes, 2015-2025"
+              subtitle="Percentage of municipal waste sent to landfill, recycling and energy from waste (incineration)."
+              series={chart1Series}
+              annotations={chart1Annotations}
+              yLabel="Value"
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Landfill waste treated, England, 2015-2025"
+              subtitle="Percentage of municipal waste sent to landfill. UK Landfill Directive targets drove the dramatic reduction from 2000 levels."
+              series={chart2Series}
+              annotations={chart2Annotations}
+              yLabel="Value"
+            />
+          </section>
+        </ScrollReveal>
+
+        {/* Positive callout */}
+        <ScrollReveal>
+          <PositiveCallout
+            title="Landfill nearly eliminated"
+            value="5.5%"
+            unit="landfill share in 2025"
+            description="England has reduced landfill from 80% of waste treatment in 2000 to 5.5% in 2025 — one of the fastest declines in Europe. The UK will introduce a Consistent Collection service for all English councils from 2026, mandating collection of the same recyclables, which is projected to increase recycling rates by 4-6 percentage points."
+            source="Source: Defra — UK statistics on waste, 2025."
+          />
+        </ScrollReveal>
+
+        {/* Sources */}
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid space-y-3 font-mono">
+            {data?.metadata.sources.map((src, i) => (
+              <div key={i}>
+                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
+                  {src.name} — {src.dataset}
+                </a>
+                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
+              </div>
+            ))}
+          </div>
+          <div className="text-sm text-wiah-mid mt-6 space-y-2">
+            <h3 className="font-bold">Methodology</h3>
+            <p>{data?.metadata.methodology}</p>
+          </div>
+          <div className="text-sm text-wiah-mid mt-6 space-y-2">
+            <h3 className="font-bold">Known issues</h3>
+            <ul className="list-disc list-inside space-y-1">
+              {data?.metadata.knownIssues.map((issue, i) => (
+                <li key={i}>{issue}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}

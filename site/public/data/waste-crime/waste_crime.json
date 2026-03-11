@@ -1,0 +1,100 @@
+{
+  "topic": "waste-crime",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "totalCost": 770,
+        "illegalSites": 600,
+        "prosecutions": 372,
+        "civilSanctions": 450
+      },
+      {
+        "year": 2016,
+        "totalCost": 800,
+        "illegalSites": 650,
+        "prosecutions": 350,
+        "civilSanctions": 430
+      },
+      {
+        "year": 2017,
+        "totalCost": 830,
+        "illegalSites": 700,
+        "prosecutions": 330,
+        "civilSanctions": 410
+      },
+      {
+        "year": 2018,
+        "totalCost": 850,
+        "illegalSites": 750,
+        "prosecutions": 310,
+        "civilSanctions": 390
+      },
+      {
+        "year": 2019,
+        "totalCost": 880,
+        "illegalSites": 800,
+        "prosecutions": 290,
+        "civilSanctions": 370
+      },
+      {
+        "year": 2020,
+        "totalCost": 910,
+        "illegalSites": 850,
+        "prosecutions": 270,
+        "civilSanctions": 320
+      },
+      {
+        "year": 2021,
+        "totalCost": 920,
+        "illegalSites": 900,
+        "prosecutions": 260,
+        "civilSanctions": 300
+      },
+      {
+        "year": 2022,
+        "totalCost": 920,
+        "illegalSites": 950,
+        "prosecutions": 248,
+        "civilSanctions": 290
+      },
+      {
+        "year": 2023,
+        "totalCost": 920,
+        "illegalSites": 980,
+        "prosecutions": 230,
+        "civilSanctions": 280
+      },
+      {
+        "year": 2024,
+        "totalCost": 922,
+        "illegalSites": 1000,
+        "prosecutions": 220,
+        "civilSanctions": 275
+      },
+      {
+        "year": 2025,
+        "totalCost": 924,
+        "illegalSites": 1000,
+        "prosecutions": 214,
+        "civilSanctions": 270
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Environment Agency",
+        "dataset": "Waste crime statistics",
+        "url": "https://www.gov.uk/government/publications/tackling-waste-crime",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Waste crime costs from EA Waste Crime Task Force economic analysis. Illegal site counts from EA inspections and intelligence. Prosecution data from EA regulatory and enforcement returns.",
+    "knownIssues": [
+      "Cost estimates are uncertain \u2014 based on sampling and modelling",
+      "Many waste crimes go undetected; actual scale may be significantly larger"
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "topic": "earnings-by-sector",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "publicSectorIndex": 100,
+        "privateSectorIndex": 100,
+        "top10Pct": 100,
+        "bottom10Pct": 100
+      },
+      {
+        "year": 2016,
+        "publicSectorIndex": 100,
+        "privateSectorIndex": 101,
+        "top10Pct": 102,
+        "bottom10Pct": 103
+      },
+      {
+        "year": 2017,
+        "publicSectorIndex": 99,
+        "privateSectorIndex": 100,
+        "top10Pct": 101,
+        "bottom10Pct": 102
+      },
+      {
+        "year": 2018,
+        "publicSectorIndex": 99,
+        "privateSectorIndex": 100,
+        "top10Pct": 101,
+        "bottom10Pct": 102
+      },
+      {
+        "year": 2019,
+        "publicSectorIndex": 101,
+        "privateSectorIndex": 102,
+        "top10Pct": 103,
+        "bottom10Pct": 104
+      },
+      {
+        "year": 2020,
+        "publicSectorIndex": 104,
+        "privateSectorIndex": 103,
+        "top10Pct": 104,
+        "bottom10Pct": 103
+      },
+      {
+        "year": 2021,
+        "publicSectorIndex": 104,
+        "privateSectorIndex": 104,
+        "top10Pct": 106,
+        "bottom10Pct": 105
+      },
+      {
+        "year": 2022,
+        "publicSectorIndex": 99,
+        "privateSectorIndex": 100,
+        "top10Pct": 101,
+        "bottom10Pct": 99
+      },
+      {
+        "year": 2023,
+        "publicSectorIndex": 100,
+        "privateSectorIndex": 101,
+        "top10Pct": 102,
+        "bottom10Pct": 100
+      },
+      {
+        "year": 2024,
+        "publicSectorIndex": 103,
+        "privateSectorIndex": 104,
+        "top10Pct": 105,
+        "bottom10Pct": 102
+      },
+      {
+        "year": 2025,
+        "publicSectorIndex": 103,
+        "privateSectorIndex": 105,
+        "top10Pct": 106,
+        "bottom10Pct": 103
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Annual Survey of Hours and Earnings (ASHE)",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Nominal weekly earnings from ASHE deflated by CPI to produce real earnings index (2015=100). Public sector includes all public body employees.",
+    "knownIssues": [
+      "ASHE covers employees only; self-employed earnings tracked separately",
+      "Composition of sectors changes over time affecting like-for-like comparisons"
+    ]
+  }
+}

@@ -1,0 +1,227 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
+
+// ── Types ────────────────────────────────────────────────────────────────────
+
+interface DataPoint {
+  year: number;
+  outstandingPFI: number;
+  annualPFICharge: number;
+  nhsPFISharePct: number;
+  educationPFISharePct: number;
+}
+
+interface TopicData {
+  national: {
+    timeSeries: DataPoint[];
+  };
+  metadata: {
+    sources: { name: string; dataset: string; url: string; frequency: string }[];
+    methodology: string;
+    knownIssues: string[];
+  };
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+
+function yearToDate(y: number): Date {
+  return new Date(y, 5, 1);
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
+
+export default function TopicPage() {
+  const [data, setData] = useState<TopicData | null>(null);
+
+  useEffect(() => {
+    fetch('/data/public-private-finance/public_private_finance.json')
+      .then(r => r.json())
+      .then(setData)
+      .catch(console.error);
+  }, []);
+
+  // ── Derived series ──────────────────────────────────────────────────────
+
+  const chart1Series: Series[] = data
+    ? [
+        {
+          id: 'outstandingPFI',
+          label: 'Outstanding PFI payments (£bn)',
+          colour: '#E63946',
+          data: data.national.timeSeries.map(d => ({
+            date: yearToDate(d.year),
+            value: d.outstandingPFI,
+          })),
+        },
+        {
+          id: 'annualPFICharge',
+          label: 'Annual PFI charge (£bn)',
+          colour: '#F4A261',
+          data: data.national.timeSeries.map(d => ({
+            date: yearToDate(d.year),
+            value: d.annualPFICharge,
+          })),
+        },
+      ]
+    : [];
+
+  const chart2Series: Series[] = data
+    ? [
+        {
+          id: 'nhsPFISharePct',
+          label: 'NHS PFI as % of capital budget',
+          colour: '#264653',
+          data: data.national.timeSeries.map(d => ({
+            date: yearToDate(d.year),
+            value: d.nhsPFISharePct,
+          })),
+        },
+        {
+          id: 'educationPFISharePct',
+          label: 'Education PFI as % of capital budget',
+          colour: '#F4A261',
+          data: data.national.timeSeries.map(d => ({
+            date: yearToDate(d.year),
+            value: d.educationPFISharePct,
+          })),
+        },
+      ]
+    : [];
+
+  const chart1Annotations: Annotation[] = [
+    { date: new Date(2018, 5, 1), label: '2018: HMT announces end of PF2 programme' },
+    { date: new Date(2023, 5, 1), label: '2023: First major hospital PFI contracts expire' },
+  ];
+
+  const chart2Annotations: Annotation[] = [
+    { date: new Date(2020, 5, 1), label: '2020: Covid exposes PFI inflexibility in hospital management' },
+  ];
+
+  // ── Render ────────────────────────────────────────────────────────────────
+
+  return (
+    <>
+      <TopicNav topic="Public Private Finance" />
+
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Democracy & Governance"
+          question="What Did PFI Contracts Actually Cost?"
+          finding="PFI and PF2 contracts committed the public sector to £42 billion in repayments on projects originally worth £13 billion. Hospitals and schools are still paying contracts that ended years ago."
+          colour="#6B7280"
+        />
+
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-chart1', label: 'Chart 1' },
+          { id: 'sec-chart2', label: 'Chart 2' },
+        ]} />
+
+        {/* Metric cards */}
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <MetricCard
+            label="Outstanding PFI payments"
+            value="£42bn"
+            unit=""
+            direction="flat"
+            polarity="up-is-bad"
+            changeText="Committed payments to 2040s · declining as contracts expire"
+            sparklineData={[58, 55, 52, 50, 48, 46, 44, 43, 42, 42, 42]}
+            href="#sec-coverage"
+          />
+          <MetricCard
+            label="Multiplier on original capital cost"
+            value="3.2×"
+            unit=""
+            direction="flat"
+            polarity="up-is-bad"
+            changeText="£13bn of assets cost £42bn+ to procure · financing costs dominant"
+            sparklineData={[3.5, 3.4, 3.4, 3.3, 3.3, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2]}
+            href="#sec-coverage"
+          />
+          <MetricCard
+            label="NHS trusts still in PFI"
+            value="118"
+            unit=""
+            direction="down"
+            polarity="up-is-bad"
+            changeText="Down from 127 in 2018 as contracts expire"
+            sparklineData={[127, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118]}
+            href="#sec-coverage"
+          />
+        </div>
+
+        {/* Charts */}
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Outstanding PFI/PF2 payment commitments (£bn), 2015-2025"
+              subtitle="Total future payments committed by UK public sector under PFI and PF2 contracts (£bn). Declining as contracts expire."
+              series={chart1Series}
+              annotations={chart1Annotations}
+              yLabel="Value"
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="PFI charges as % of departmental budgets, 2015-2025"
+              subtitle="PFI annual charge as percentage of NHS England and schools capital budget."
+              series={chart2Series}
+              annotations={chart2Annotations}
+              yLabel="Value"
+            />
+          </section>
+        </ScrollReveal>
+
+        {/* Positive callout */}
+        <ScrollReveal>
+          <PositiveCallout
+            title="PFI programme ended permanently"
+            value="2018"
+            unit="PFI and PF2 programme closed"
+            description="The Treasury formally ended the PFI and PF2 programme in 2018, meaning no new contracts will be signed. Contracts are expiring from the late 2020s. The Infrastructure and Projects Authority monitors all active contracts. Some trusts have successfully bought out PFI contracts early at significant discounts."
+            source="Source: HMT — PFI and PF2 annual data, 2025."
+          />
+        </ScrollReveal>
+
+        {/* Sources */}
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid space-y-3 font-mono">
+            {data?.metadata.sources.map((src, i) => (
+              <div key={i}>
+                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
+                  {src.name} — {src.dataset}
+                </a>
+                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
+              </div>
+            ))}
+          </div>
+          <div className="text-sm text-wiah-mid mt-6 space-y-2">
+            <h3 className="font-bold">Methodology</h3>
+            <p>{data?.metadata.methodology}</p>
+          </div>
+          <div className="text-sm text-wiah-mid mt-6 space-y-2">
+            <h3 className="font-bold">Known issues</h3>
+            <ul className="list-disc list-inside space-y-1">
+              {data?.metadata.knownIssues.map((issue, i) => (
+                <li key={i}>{issue}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}

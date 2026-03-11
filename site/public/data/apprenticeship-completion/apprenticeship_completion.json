@@ -1,0 +1,100 @@
+{
+  "topic": "apprenticeship-completion",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "overallCompletion": 62,
+        "level2Completion": 56,
+        "starts": 505,
+        "completions": 313
+      },
+      {
+        "year": 2016,
+        "overallCompletion": 61,
+        "level2Completion": 55,
+        "starts": 510,
+        "completions": 311
+      },
+      {
+        "year": 2017,
+        "overallCompletion": 60,
+        "level2Completion": 54,
+        "starts": 491,
+        "completions": 295
+      },
+      {
+        "year": 2018,
+        "overallCompletion": 59,
+        "level2Completion": 52,
+        "starts": 480,
+        "completions": 283
+      },
+      {
+        "year": 2019,
+        "overallCompletion": 58,
+        "level2Completion": 51,
+        "starts": 476,
+        "completions": 276
+      },
+      {
+        "year": 2020,
+        "overallCompletion": 54,
+        "level2Completion": 48,
+        "starts": 430,
+        "completions": 232
+      },
+      {
+        "year": 2021,
+        "overallCompletion": 52,
+        "level2Completion": 47,
+        "starts": 461,
+        "completions": 240
+      },
+      {
+        "year": 2022,
+        "overallCompletion": 50,
+        "level2Completion": 45,
+        "starts": 480,
+        "completions": 240
+      },
+      {
+        "year": 2023,
+        "overallCompletion": 51,
+        "level2Completion": 46,
+        "starts": 490,
+        "completions": 250
+      },
+      {
+        "year": 2024,
+        "overallCompletion": 52,
+        "level2Completion": 47,
+        "starts": 495,
+        "completions": 257
+      },
+      {
+        "year": 2025,
+        "overallCompletion": 52,
+        "level2Completion": 47,
+        "starts": 498,
+        "completions": 259
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DfE",
+        "dataset": "Apprenticeships and traineeships statistics",
+        "url": "https://www.gov.uk/government/collections/statistics-apprenticeships",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Completion rates from DfE Individualised Learner Record. Completion defined as achieving all components of the apprenticeship framework or standard within the planned duration.",
+    "knownIssues": [
+      "Some learners counted as non-completions transfer to employment before completing \u2014 capturing genuine success",
+      "Levy-funded vs non-levy funded completion rates differ significantly"
+    ]
+  }
+}

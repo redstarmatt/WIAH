@@ -1,0 +1,100 @@
+{
+  "topic": "foi-response-times",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "overallCompliance": 73,
+        "cabinetOfficeCompliance": 55,
+        "refusalRate": 28,
+        "requestsReceived": 45
+      },
+      {
+        "year": 2016,
+        "overallCompliance": 71,
+        "cabinetOfficeCompliance": 52,
+        "refusalRate": 29,
+        "requestsReceived": 47
+      },
+      {
+        "year": 2017,
+        "overallCompliance": 68,
+        "cabinetOfficeCompliance": 48,
+        "refusalRate": 30,
+        "requestsReceived": 50
+      },
+      {
+        "year": 2018,
+        "overallCompliance": 65,
+        "cabinetOfficeCompliance": 44,
+        "refusalRate": 31,
+        "requestsReceived": 52
+      },
+      {
+        "year": 2019,
+        "overallCompliance": 62,
+        "cabinetOfficeCompliance": 40,
+        "refusalRate": 32,
+        "requestsReceived": 55
+      },
+      {
+        "year": 2020,
+        "overallCompliance": 55,
+        "cabinetOfficeCompliance": 35,
+        "refusalRate": 33,
+        "requestsReceived": 50
+      },
+      {
+        "year": 2021,
+        "overallCompliance": 50,
+        "cabinetOfficeCompliance": 30,
+        "refusalRate": 34,
+        "requestsReceived": 58
+      },
+      {
+        "year": 2022,
+        "overallCompliance": 45,
+        "cabinetOfficeCompliance": 27,
+        "refusalRate": 35,
+        "requestsReceived": 65
+      },
+      {
+        "year": 2023,
+        "overallCompliance": 42,
+        "cabinetOfficeCompliance": 23,
+        "refusalRate": 36,
+        "requestsReceived": 68
+      },
+      {
+        "year": 2024,
+        "overallCompliance": 39,
+        "cabinetOfficeCompliance": 20,
+        "refusalRate": 37,
+        "requestsReceived": 70
+      },
+      {
+        "year": 2025,
+        "overallCompliance": 37,
+        "cabinetOfficeCompliance": 18,
+        "refusalRate": 38,
+        "requestsReceived": 72
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Cabinet Office",
+        "dataset": "FOI statistics for central government",
+        "url": "https://www.gov.uk/government/collections/government-foi-statistics",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "FOI compliance data from quarterly Cabinet Office statistical returns. Requests include all those made under the Freedom of Information Act 2000 to monitored central government bodies.",
+    "knownIssues": [
+      "Some departments include environmental information requests (EIR) in FOI figures; coverage is not fully consistent",
+      "Requests answered within deadline may still have substantive errors or omissions"
+    ]
+  }
+}

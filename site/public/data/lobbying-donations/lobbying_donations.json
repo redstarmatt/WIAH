@@ -1,0 +1,100 @@
+{
+  "topic": "lobbying-donations",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "declarationsMillions": 12.0,
+        "donorConcentration": 55,
+        "registeredLobbyists": 392,
+        "ministerMeetingsPct": 60
+      },
+      {
+        "year": 2016,
+        "declarationsMillions": 10.0,
+        "donorConcentration": 56,
+        "registeredLobbyists": 450,
+        "ministerMeetingsPct": 62
+      },
+      {
+        "year": 2017,
+        "declarationsMillions": 11.0,
+        "donorConcentration": 57,
+        "registeredLobbyists": 510,
+        "ministerMeetingsPct": 65
+      },
+      {
+        "year": 2018,
+        "declarationsMillions": 13.0,
+        "donorConcentration": 58,
+        "registeredLobbyists": 580,
+        "ministerMeetingsPct": 68
+      },
+      {
+        "year": 2019,
+        "declarationsMillions": 14.0,
+        "donorConcentration": 60,
+        "registeredLobbyists": 640,
+        "ministerMeetingsPct": 70
+      },
+      {
+        "year": 2020,
+        "declarationsMillions": 9.0,
+        "donorConcentration": 58,
+        "registeredLobbyists": 700,
+        "ministerMeetingsPct": 72
+      },
+      {
+        "year": 2021,
+        "declarationsMillions": 10.0,
+        "donorConcentration": 60,
+        "registeredLobbyists": 750,
+        "ministerMeetingsPct": 74
+      },
+      {
+        "year": 2022,
+        "declarationsMillions": 14.0,
+        "donorConcentration": 61,
+        "registeredLobbyists": 800,
+        "ministerMeetingsPct": 78
+      },
+      {
+        "year": 2023,
+        "declarationsMillions": 16.0,
+        "donorConcentration": 62,
+        "registeredLobbyists": 870,
+        "ministerMeetingsPct": 82
+      },
+      {
+        "year": 2024,
+        "declarationsMillions": 18.0,
+        "donorConcentration": 63,
+        "registeredLobbyists": 940,
+        "ministerMeetingsPct": 83
+      },
+      {
+        "year": 2025,
+        "declarationsMillions": 20.3,
+        "donorConcentration": 64,
+        "registeredLobbyists": 984,
+        "ministerMeetingsPct": 85
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Electoral Commission",
+        "dataset": "Political donations and loans",
+        "url": "https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/financial-reporting/donations-and-loans",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Political donations from Electoral Commission statutory declarations. Lobbying contacts from Cabinet Office ministerial meetings returns and Transparency International UK analysis.",
+    "knownIssues": [
+      "Register of consultant lobbyists covers only a fraction of lobbying activity \u2014 in-house lobbyists excluded",
+      "Small donations below thresholds not declared"
+    ]
+  }
+}

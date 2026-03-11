@@ -1,0 +1,106 @@
+{
+  "topic": "platform-economy-gig",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "gigWorkersMillions": 1.2,
+        "primaryIncomeMillions": 0.4,
+        "sickPayPct": 2,
+        "pensionPct": 3
+      },
+      {
+        "year": 2016,
+        "gigWorkersMillions": 1.5,
+        "primaryIncomeMillions": 0.5,
+        "sickPayPct": 2,
+        "pensionPct": 3
+      },
+      {
+        "year": 2017,
+        "gigWorkersMillions": 1.9,
+        "primaryIncomeMillions": 0.7,
+        "sickPayPct": 2,
+        "pensionPct": 4
+      },
+      {
+        "year": 2018,
+        "gigWorkersMillions": 2.4,
+        "primaryIncomeMillions": 0.9,
+        "sickPayPct": 3,
+        "pensionPct": 4
+      },
+      {
+        "year": 2019,
+        "gigWorkersMillions": 2.9,
+        "primaryIncomeMillions": 1.1,
+        "sickPayPct": 3,
+        "pensionPct": 5
+      },
+      {
+        "year": 2020,
+        "gigWorkersMillions": 3.5,
+        "primaryIncomeMillions": 1.4,
+        "sickPayPct": 3,
+        "pensionPct": 5
+      },
+      {
+        "year": 2021,
+        "gigWorkersMillions": 3.8,
+        "primaryIncomeMillions": 1.5,
+        "sickPayPct": 5,
+        "pensionPct": 8
+      },
+      {
+        "year": 2022,
+        "gigWorkersMillions": 4.0,
+        "primaryIncomeMillions": 1.6,
+        "sickPayPct": 5,
+        "pensionPct": 10
+      },
+      {
+        "year": 2023,
+        "gigWorkersMillions": 4.2,
+        "primaryIncomeMillions": 1.7,
+        "sickPayPct": 6,
+        "pensionPct": 12
+      },
+      {
+        "year": 2024,
+        "gigWorkersMillions": 4.3,
+        "primaryIncomeMillions": 1.7,
+        "sickPayPct": 6,
+        "pensionPct": 13
+      },
+      {
+        "year": 2025,
+        "gigWorkersMillions": 4.4,
+        "primaryIncomeMillions": 1.8,
+        "sickPayPct": 6,
+        "pensionPct": 14
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "TUC",
+        "dataset": "Living on the Margins: Gig Economy Report",
+        "url": "https://www.tuc.org.uk/research-analysis/reports/living-margins",
+        "frequency": "Annual"
+      },
+      {
+        "name": "CIPD",
+        "dataset": "UK Working Lives Survey",
+        "url": "https://www.cipd.org/uk/knowledge/reports/uk-working-lives/",
+        "frequency": "Annual"
+      }
+    ],
+    "methodology": "Gig worker estimates from TUC and CIPD survey data, supplemented by DWP administrative data. Employment conditions data from worker surveys; sick pay figures from platform operator disclosures post-Uber ruling.",
+    "knownIssues": [
+      "Definition of gig worker varies across surveys",
+      "Undercount likely as some workers do not self-identify as gig workers"
+    ]
+  }
+}

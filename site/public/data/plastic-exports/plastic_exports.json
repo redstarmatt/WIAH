@@ -1,0 +1,106 @@
+{
+  "topic": "plastic-exports",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "timeSeries": [
+      {
+        "year": 2015,
+        "totalExports": 610,
+        "turkeyExports": 30,
+        "verifiedRecyclingPct": 90,
+        "unverifiedPct": 10
+      },
+      {
+        "year": 2016,
+        "totalExports": 700,
+        "turkeyExports": 35,
+        "verifiedRecyclingPct": 88,
+        "unverifiedPct": 12
+      },
+      {
+        "year": 2017,
+        "totalExports": 800,
+        "turkeyExports": 64,
+        "verifiedRecyclingPct": 85,
+        "unverifiedPct": 15
+      },
+      {
+        "year": 2018,
+        "totalExports": 770,
+        "turkeyExports": 92,
+        "verifiedRecyclingPct": 82,
+        "unverifiedPct": 18
+      },
+      {
+        "year": 2019,
+        "totalExports": 720,
+        "turkeyExports": 158,
+        "verifiedRecyclingPct": 78,
+        "unverifiedPct": 22
+      },
+      {
+        "year": 2020,
+        "totalExports": 580,
+        "turkeyExports": 203,
+        "verifiedRecyclingPct": 72,
+        "unverifiedPct": 28
+      },
+      {
+        "year": 2021,
+        "totalExports": 520,
+        "turkeyExports": 198,
+        "verifiedRecyclingPct": 70,
+        "unverifiedPct": 30
+      },
+      {
+        "year": 2022,
+        "totalExports": 580,
+        "turkeyExports": 232,
+        "verifiedRecyclingPct": 69,
+        "unverifiedPct": 31
+      },
+      {
+        "year": 2023,
+        "totalExports": 620,
+        "turkeyExports": 235,
+        "verifiedRecyclingPct": 69,
+        "unverifiedPct": 31
+      },
+      {
+        "year": 2024,
+        "totalExports": 615,
+        "turkeyExports": 234,
+        "verifiedRecyclingPct": 69,
+        "unverifiedPct": 31
+      },
+      {
+        "year": 2025,
+        "totalExports": 615,
+        "turkeyExports": 233,
+        "verifiedRecyclingPct": 69,
+        "unverifiedPct": 31
+      }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "UK environmental accounts \u2014 material flows",
+        "url": "https://www.ons.gov.uk/economy/environmentalaccounts/datasets/ukenvironmentalaccounts",
+        "frequency": "annual"
+      },
+      {
+        "name": "HMRC",
+        "dataset": "Overseas trade statistics",
+        "url": "https://www.uktradeinfo.com/",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Plastic waste export data from HMRC overseas trade statistics and ONS UK Environmental Accounts. Verification of recycling destination from EA compliance sampling of export consignments.",
+    "knownIssues": [
+      "Verifying the actual fate of exported waste is extremely difficult \u2014 many estimates based on sampling",
+      "Plastic waste is often mixed with other materials, complicating classification"
+    ]
+  }
+}
