@@ -5614,10 +5614,6 @@ export const TOPICS: Record<string, TopicEntry> = {
     { label: 'UC claimants with deductions (%)', value: '45', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'down from 52% in 2019 · still affects 2.2M people', sparklineData: [52,52,50,48,47,46,45] },
     { label: 'Average UC deduction per claimant (£/month)', value: '61', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up from £52 in 2019 · advance payment loans main cause', sparklineData: [52,54,56,58,59,60,61] },
   ] },
-  'wage-theft': { topic: 'Wage Theft', slug: 'wage-theft', href: '/wage-theft', colour: '#E63946', preposition: 'with', metrics: [
-    { label: 'Workers underpaid National Minimum Wage (annual estimate)', value: '400,000', direction: 'flat' as const, polarity: 'up-is-bad' as const, context: 'HMRC enforcement catches small fraction', sparklineData: [370000,380000,390000,400000,400000,400000,400000] },
-    { label: 'HMRC minimum wage arrears identified (£ millions)', value: '16.8', direction: 'down' as const, polarity: 'up-is-bad' as const, context: 'down from £20M in 2019 · enforcement resources cut', sparklineData: [14,18,20,19,18,17,16.8] },
-  ] },
   'worker-monitoring': { topic: 'Worker Monitoring', slug: 'worker-monitoring', href: '/worker-monitoring', colour: '#6B7280', preposition: 'with', metrics: [
     { label: 'Workers subject to automated monitoring (%)', value: '60', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'up from 34% pre-pandemic · remote work accelerated surveillance', sparklineData: [34,36,38,55,58,59,60] },
     { label: 'Tribunal cases citing algorithmic management', value: '312', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'new legal frontier · ICO guidance lagging behind practice', sparklineData: [12,25,60,140,220,280,312] },
