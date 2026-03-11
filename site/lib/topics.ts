@@ -6583,15 +6583,6 @@ export const TOPICS: Record<string, TopicEntry> = {
       { label: 'Deprived areas: accessible green space', value: '48%', unit: '', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'Up from 41% · But still well below 72% in affluent areas', sparklineData: [41, 42, 42, 43, 44, 44, 45, 46, 47, 48, 48] },
     ],
   },
-  '5g-coverage-inequality': {
-    topic: '5g Coverage Inequality',
-    slug: '5g-coverage-inequality',
-    href: '/5g-coverage-inequality',
-    colour: '#264653',
-    metrics: [
-      { label: '5g Coverage Inequality', value: 'See data', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'Tracking 5g coverage inequality nationally', sparklineData: [10,10,11,11,12,12,13,13,14] },
-    ],
-  },
   'asylum-backlog': {
     topic: 'Asylum Backlog',
     slug: 'asylum-backlog',
