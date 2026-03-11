@@ -106,7 +106,7 @@ export default function SpeechLanguageDelaysPage() {
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on Speech & Language Delays</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
               <p>Speech & Language Delays in the United Kingdom: the numbers show a complex picture. 17.5% of children in England now start school with speech and language delays — up from 14% before the pandemic. 38% of children referred for speech therapy wait more than 18 weeks. The speech and language therapy workforce is chronically short. The headline figure — 17.5 for children starting school with speech/language delays (%) — up from 14% in 2019 · post-lockdown language development affected.</p>
-              <p>The secondary metric tells an equally important story: children referred for speech therapy waiting >18 weeks (%) stands at 38, where up from 18% in 2019 · SLT workforce shortfall. Policy responses have been mixed, and the structural drivers of these trends require sustained attention beyond short-term interventions.</p>
+              <p>The secondary metric tells an equally important story: children referred for speech therapy waiting &gt;18 weeks (%) stands at 38, where up from 18% in 2019 · SLT workforce shortfall. Policy responses have been mixed, and the structural drivers of these trends require sustained attention beyond short-term interventions.</p>
             </div>
           </section>
         </ScrollReveal>
