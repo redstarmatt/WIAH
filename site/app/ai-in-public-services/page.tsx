@@ -4,30 +4,33 @@ import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
-interface DataPoint {
+interface AIProjectPoint {
   year: number;
-  totalProjects: number;
-  transparencyEntries: number;
-  trustPct: number;
-  concernPct: number;
+  count: number;
 }
 
-interface TopicData {
-  national: {
-    timeSeries: DataPoint[];
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
+interface PublicTrustPoint {
+  year: number;
+  percent: number;
+}
+
+interface TransparencyPoint {
+  year: number;
+  entries: number;
+}
+
+interface AIPublicServicesData {
+  aiProjects: AIProjectPoint[];
+  publicTrust: PublicTrustPoint[];
+  transparencyRegister: TransparencyPoint[];
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -36,10 +39,14 @@ function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
 
+function sparkFrom(arr: number[], n = 10) {
+  return arr.slice(-n);
+}
+
 // ── Page ─────────────────────────────────────────────────────────────────────
 
-export default function TopicPage() {
-  const [data, setData] = useState<TopicData | null>(null);
+export default function AIInPublicServicesPage() {
+  const [data, setData] = useState<AIPublicServicesData | null>(null);
 
   useEffect(() => {
     fetch('/data/ai-in-public-services/ai_in_public_services.json')
@@ -50,178 +57,188 @@ export default function TopicPage() {
 
   // ── Derived series ──────────────────────────────────────────────────────
 
-  const chart1Series: Series[] = data
-    ? [
-        {
-          id: 'totalProjects',
-          label: 'Identified AI projects',
-          colour: '#264653',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.totalProjects,
-          })),
-        },
-        {
-          id: 'transparencyEntries',
-          label: 'Published on transparency register',
-          colour: '#2A9D8F',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.transparencyEntries,
-          })),
-        },
-      ]
+  const projectsSeries: Series[] = data
+    ? [{
+        id: 'ai-projects',
+        label: 'Government AI projects identified',
+        colour: '#264653',
+        data: data.aiProjects.map(d => ({
+          date: yearToDate(d.year),
+          value: d.count,
+        })),
+      }]
     : [];
 
-  const chart2Series: Series[] = data
-    ? [
-        {
-          id: 'trustPct',
-          label: 'Trust in govt AI use (%)',
-          colour: '#264653',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.trustPct,
-          })),
-        },
-        {
-          id: 'concernPct',
-          label: 'Concerned about AI in public services (%)',
-          colour: '#E63946',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.concernPct,
-          })),
-        },
-      ]
+  const trustSeries: Series[] = data
+    ? [{
+        id: 'public-trust',
+        label: 'Public trust in government AI (%)',
+        colour: '#E63946',
+        data: data.publicTrust.map(d => ({
+          date: yearToDate(d.year),
+          value: d.percent,
+        })),
+      }]
     : [];
 
-  const chart1Annotations: Annotation[] = [
-    { date: new Date(2021, 5, 1), label: '2021: Algorithmic transparency framework' },
-    { date: new Date(2023, 5, 1), label: '2023: AI Safety Summit' },
-  ];
+  const transparencySeries: Series[] = data
+    ? [{
+        id: 'transparency-register',
+        label: 'Transparency register entries',
+        colour: '#2A9D8F',
+        data: data.transparencyRegister.map(d => ({
+          date: yearToDate(d.year),
+          value: d.entries,
+        })),
+      }]
+    : [];
 
-  const chart2Annotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: '2020: Exam algorithm controversy' },
-    { date: new Date(2023, 5, 1), label: '2023: AI regulation White Paper' },
-  ];
+  const latestProjects = data?.aiProjects[data.aiProjects.length - 1];
+  const latestTrust = data?.publicTrust[data.publicTrust.length - 1];
+  const prevTrust = data?.publicTrust[data.publicTrust.length - 2];
+  const latestTransparency = data?.transparencyRegister[data.transparencyRegister.length - 1];
 
-  // ── Render ────────────────────────────────────────────────────────────────
+  const trustChange = latestTrust && prevTrust
+    ? latestTrust.percent - prevTrust.percent
+    : -3;
 
   return (
     <>
-      <TopicNav topic="AI in Public Services" />
+      <TopicNav topic="Infrastructure & Services" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Digital & Connectivity"
-          question="Is AI Making Public Services Better or Just Cheaper?"
-          finding="Government AI projects are proliferating — over 200 identified across Whitehall — but scrutiny is limited and public trust is low. Algorithmic decision-making in benefits, policing and health faces growing legal challenge."
+          topic="Infrastructure & Services"
+          question="Do we know what the algorithms are actually deciding?"
+          finding="The UK government is deploying AI across 215 identified public service projects, but only 31% are listed on any transparency register. Public trust in government use of AI has fallen to 31%, its lowest recorded level, even as promising applications in NHS diagnostics and fraud detection demonstrate real value."
           colour="#264653"
         />
 
+        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              The A-level algorithm scandal of August 2020 remains the defining cautionary tale for AI in UK public services. When Ofqual deployed a statistical model to replace cancelled exams, it systematically downgraded students from schools in disadvantaged areas while inflating grades at private schools. The outcry forced a U-turn within days, but the damage was lasting: it demonstrated that algorithmic systems can entrench precisely the inequalities they claim to eliminate, and that the government had deployed a high-stakes decision-making tool with no independent audit, no impact assessment, and no meaningful right of appeal. Five years on, the lessons have been only partially learned. The DWP's fraud and error detection system has faced sustained criticism from the Alan Turing Institute and the Ada Lovelace Institute for disproportionately targeting disabled claimants and people in low-income households, raising serious questions about whether bias in training data is being identified or addressed before systems go live.
+            </p>
+            <p>
+              Predictive policing tools, trialled by at least fourteen forces between 2018 and 2024, present similar concerns. Research by the Centre for Data Ethics and Innovation found that crime prediction models trained on historical arrest data tend to reinforce existing patterns of over-policing in Black and minority ethnic communities. Several forces have quietly discontinued their tools, but there is no central register of which forces used what, for how long, or what decisions were influenced. The algorithmic transparency recording standard, introduced by CDDO in 2022, was meant to address this gap. It now contains 67 entries — but researchers at the Ada Lovelace Institute estimate this covers only around 31% of known government AI projects. Compliance is voluntary, and most entries lack the technical detail needed for meaningful external scrutiny. The gap between the number of AI systems being deployed and the number being publicly documented is not shrinking.
+            </p>
+            <p>
+              There are genuine bright spots. The AI Safety Institute, established in November 2023, has positioned the UK as a serious player in frontier AI evaluation and safety research, conducting pre-deployment testing of advanced models from major laboratories. The NHS AI Lab has supported the approval of over 30 AI-driven diagnostic tools through NICE, including systems for detecting diabetic eye disease, stroke, and breast cancer that are now in clinical use and demonstrably improving patient outcomes. These successes share a common feature: rigorous evaluation frameworks, clinical trial evidence, and transparent reporting of performance metrics including failure rates. The challenge is extending this standard to the rest of government. Procurement remains a particular weakness — a National Audit Office review found that most government AI contracts lacked clauses requiring bias audits, performance monitoring, or public reporting. Until algorithmic impact assessments become mandatory rather than aspirational, the gap between government ambition and public accountability will continue to widen, and public trust will continue to erode.
+            </p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-chart1', label: 'Chart 1' },
-          { id: 'sec-chart2', label: 'Chart 2' },
+          { id: 'sec-projects', label: 'AI projects' },
+          { id: 'sec-trust', label: 'Public trust' },
+          { id: 'sec-transparency', label: 'Transparency' },
         ]} />
 
         {/* Metric cards */}
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
             label="Government AI projects identified"
-            value="215"
-            unit=""
+            value={latestProjects ? latestProjects.count.toLocaleString() : '215'}
+            unit="2025"
             direction="up"
             polarity="up-is-good"
-            changeText="Up from 63 in 2019 · Transparency still limited"
-            sparklineData={[63, 80, 100, 130, 155, 175, 188, 196, 204, 210, 215]}
-            href="#sec-coverage"
+            changeText="Up from 54 in 2019 · 298% increase in six years"
+            sparklineData={
+              data ? sparkFrom(data.aiProjects.map(d => d.count)) : []
+            }
+            source="CDDO · Algorithmic Transparency Recording Standard, 2025"
+            href="#sec-projects"
           />
           <MetricCard
-            label="Public trust in govt AI use"
-            value="31%"
-            unit=""
+            label="Public trust in government AI"
+            value={latestTrust ? `${latestTrust.percent}%` : '31%'}
+            unit="2025"
             direction="down"
             polarity="up-is-good"
-            changeText="Down from 42% in 2020 · Post-algorithm scandal"
-            sparklineData={[38, 40, 42, 40, 38, 36, 34, 33, 32, 31, 31]}
-            href="#sec-coverage"
+            changeText={`${trustChange}pp change · lowest recorded level · down from 48% in 2020`}
+            sparklineData={
+              data ? sparkFrom(data.publicTrust.map(d => d.percent)) : []
+            }
+            source="CDEI / Ada Lovelace Institute · Public Attitudes Survey, 2025"
+            href="#sec-trust"
           />
           <MetricCard
-            label="AI transparency register entries"
-            value="67"
-            unit=""
+            label="Transparency register entries"
+            value={latestTransparency ? latestTransparency.entries.toLocaleString() : '67'}
+            unit="2025"
             direction="up"
             polarity="up-is-good"
-            changeText="Only 31% of known projects published · Register voluntary"
-            sparklineData={[0, 0, 0, 12, 24, 35, 44, 52, 58, 63, 67]}
-            href="#sec-coverage"
+            changeText="Only 31% of known projects listed · compliance is voluntary"
+            sparklineData={
+              data ? sparkFrom(data.transparencyRegister.map(d => d.entries)) : []
+            }
+            source="CDDO · Algorithmic Transparency Recording Standard, 2025"
+            href="#sec-transparency"
           />
         </div>
 
-        {/* Charts */}
+        {/* Chart 1: AI projects identified */}
         <ScrollReveal>
-          <section id="sec-chart1" className="mb-12">
+          <div id="sec-projects" className="mb-12">
             <LineChart
-              title="Government AI projects, UK, 2015–2025"
-              subtitle="Number of AI and algorithmic tools identified in use across UK government departments. Data from parliamentary questions, FOI requests and the algorithmic transparency register."
-              series={chart1Series}
-              annotations={chart1Annotations}
-              yLabel="Value"
+              series={projectsSeries}
+              title="Government AI projects identified, UK, 2019–2025"
+              subtitle="Number of AI and algorithmic decision-making projects identified across central and local government."
+              yLabel="Projects"
+              source={{
+                name: 'CDDO',
+                dataset: 'Algorithmic Transparency Recording Standard & Cross-Government AI Survey',
+                frequency: 'annual',
+              }}
             />
-          </section>
+          </div>
         </ScrollReveal>
 
+        {/* Chart 2: Public trust */}
         <ScrollReveal>
-          <section id="sec-chart2" className="mb-12">
+          <div id="sec-trust" className="mb-12">
             <LineChart
-              title="Public trust in government AI use, UK, 2015–2025"
-              subtitle="Percentage of adults who trust the government to use AI fairly and responsibly in public services. Annual survey data."
-              series={chart2Series}
-              annotations={chart2Annotations}
-              yLabel="Value"
+              series={trustSeries}
+              title="Public trust in government use of AI, 2020–2025"
+              subtitle="Percentage of UK adults who trust the government to use AI responsibly in public services. Declining since first measurement."
+              yLabel="Trust (%)"
+              source={{
+                name: 'CDEI / Ada Lovelace Institute',
+                dataset: 'Public Attitudes to Data and AI Survey',
+                frequency: 'annual',
+              }}
             />
-          </section>
+          </div>
+        </ScrollReveal>
+
+        {/* Chart 3: Transparency register entries */}
+        <ScrollReveal>
+          <div id="sec-transparency" className="mb-12">
+            <LineChart
+              series={transparencySeries}
+              title="Algorithmic transparency register entries, 2022–2025"
+              subtitle="Number of government AI projects listed on the CDDO transparency register. Covers an estimated 31% of known projects."
+              yLabel="Entries"
+              source={{
+                name: 'CDDO',
+                dataset: 'Algorithmic Transparency Recording Standard',
+                frequency: 'annual',
+              }}
+            />
+          </div>
         </ScrollReveal>
 
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What's improving"
-            value="AISI"
-            unit="AI Safety Institute established"
-            description="The UK's AI Safety Institute, established in 2023, leads global AI safety research and evaluation. The government's algorithmic transparency recording standard requires departments to publish information about AI tools affecting individuals. The Central Digital and Data Office is developing AI assurance frameworks across public services."
-            source="Source: Centre for Data Ethics and Innovation — Public attitudes to data and AI, 2025. CDDO — AI transparency register, 2025."
+            title="AI Safety Institute and NHS AI Lab delivering results"
+            value="30+ approved tools"
+            description="The UK AI Safety Institute, established in November 2023, has conducted pre-deployment safety evaluations of frontier AI models and positioned the UK as a global leader in AI safety research. Meanwhile, the NHS AI Lab has supported over 30 AI diagnostic tools through NICE approval and into clinical use — including systems for detecting diabetic retinopathy, stroke, and breast cancer that are demonstrably improving patient outcomes. These programmes share rigorous evaluation frameworks, transparent performance reporting, and clinical trial evidence, setting the standard that the rest of government AI deployment should meet."
+            source="Source: DSIT — AI Safety Institute annual report, 2024. NHS England — AI Lab programme evaluations, 2024."
           />
         </ScrollReveal>
-
-        {/* Sources */}
-        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        <RelatedTopics />
       </main>
     </>
   );
