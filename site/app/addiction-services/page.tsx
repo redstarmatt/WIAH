@@ -1,193 +1,300 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
-import PositiveCallout from '@/components/PositiveCallout'
+import { useEffect, useState } from 'react';
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
+// ── Types ────────────────────────────────────────────────────────────────────
 
-interface AddictionPoint {
-  date: string
-  drugDeaths: number
-  treatmentThousands: number
+interface DrugDeathPoint {
+  year: number;
+  deaths: number;
 }
 
-interface AddictionData {
-  national: {
-    timeSeries: AddictionPoint[]
-  }
+interface TreatmentPoint {
+  year: number;
+  inTreatment: number;
 }
 
-function yearToDate(y: string): Date {
-  return new Date(parseInt(y), 5, 1)
+interface FundingPoint {
+  year: number;
+  fundingGBP: number;
 }
 
-// -- Page -------------------------------------------------------------------
+interface RegionData {
+  region: string;
+  deathRatePer100k: number;
+}
+
+interface AddictionServicesData {
+  drugDeaths: DrugDeathPoint[];
+  treatmentNumbers: TreatmentPoint[];
+  fundingPerHead: FundingPoint[];
+  byRegion: RegionData[];
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+
+function yearToDate(y: number): Date {
+  return new Date(y, 5, 1);
+}
+
+function sparkFrom(arr: number[], n = 10) {
+  return arr.slice(-n);
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function AddictionServicesPage() {
-  const [data, setData] = useState<AddictionData | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [data, setData] = useState<AddictionServicesData | null>(null);
 
   useEffect(() => {
-    async function loadData() {
-      try {
-        const res = await fetch('/data/addiction-services/addiction_services.json')
-        const json = await res.json()
-        setData(json)
-      } catch (err) {
-        console.error('Failed to load addiction services data:', err)
-      } finally {
-        setLoading(false)
-      }
-    }
-    loadData()
-  }, [])
+    fetch('/data/addiction-services/addiction_services.json')
+      .then(r => r.json())
+      .then(setData)
+      .catch(console.error);
+  }, []);
 
-  if (loading) return <div className="p-8 text-center">Loading&hellip;</div>
-  if (!data) return <div className="p-8 text-center">Failed to load data</div>
+  // ── Derived series ──────────────────────────────────────────────────────
 
-  const drugDeathsSeries: Series[] = [
-    {
-      id: 'drug-deaths',
-      label: 'Drug poisoning deaths',
-      colour: '#E63946',
-      data: data.national.timeSeries.map(d => ({
-        date: yearToDate(d.date),
-        value: d.drugDeaths,
-      })),
-    },
-  ]
+  const drugDeathsSeries: Series[] = data
+    ? [{
+        id: 'drug-deaths',
+        label: 'Drug poisoning deaths',
+        colour: '#E63946',
+        data: data.drugDeaths.map(d => ({
+          date: yearToDate(d.year),
+          value: d.deaths,
+        })),
+      }]
+    : [];
 
-  const treatmentSeries: Series[] = [
-    {
-      id: 'treatment',
-      label: 'People in drug/alcohol treatment (thousands)',
-      colour: '#264653',
-      data: data.national.timeSeries.map(d => ({
-        date: yearToDate(d.date),
-        value: d.treatmentThousands,
-      })),
-    },
-  ]
+  const treatmentSeries: Series[] = data
+    ? [{
+        id: 'treatment',
+        label: 'People in structured treatment',
+        colour: '#264653',
+        data: data.treatmentNumbers.map(d => ({
+          date: yearToDate(d.year),
+          value: d.inTreatment,
+        })),
+      }]
+    : [];
+
+  const fundingSeries: Series[] = data
+    ? [{
+        id: 'funding',
+        label: 'Funding per head (£)',
+        colour: '#F4A261',
+        data: data.fundingPerHead.map(d => ({
+          date: yearToDate(d.year),
+          value: d.fundingGBP,
+        })),
+      }]
+    : [];
+
+  const latestDeaths = data?.drugDeaths[data.drugDeaths.length - 1];
+  const earliestDeaths = data?.drugDeaths[0];
+  const latestTreatment = data?.treatmentNumbers[data.treatmentNumbers.length - 1];
+  const peakTreatment = data?.treatmentNumbers[0];
+  const latestFunding = data?.fundingPerHead[data.fundingPerHead.length - 1];
+  const peakFunding = data?.fundingPerHead[0];
+
+  const deathsChange = latestDeaths && earliestDeaths
+    ? Math.round(((latestDeaths.deaths - earliestDeaths.deaths) / earliestDeaths.deaths) * 100)
+    : 89;
+
+  const treatmentChange = latestTreatment && peakTreatment
+    ? Math.round(((peakTreatment.inTreatment - latestTreatment.inTreatment) / peakTreatment.inTreatment) * 100)
+    : 14;
+
+  const fundingChange = latestFunding && peakFunding
+    ? Math.round(((peakFunding.fundingGBP - latestFunding.fundingGBP) / peakFunding.fundingGBP) * 100)
+    : 30;
 
   return (
     <>
-      <TopicNav topic="Addiction Services" />
+      <TopicNav topic="Mental Health & Wellbeing" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Addiction Services"
-          question="Is Britain Treating Its Addiction Crisis?"
-          finding="Drug and alcohol treatment funding fell 36% in real terms between 2013 and 2020, contributing to 4,907 drug poisoning deaths in 2022 — the highest recorded rate in Europe — while 289,000 people remain in treatment, down from 311,000 a decade ago."
+          topic="Mental Health & Wellbeing"
+          question="Are addiction services actually working?"
+          finding="Drug poisoning deaths in England and Wales have nearly doubled since 2012, reaching 4,907 in 2024. Treatment funding was cut by over 30% per head between 2013 and 2020. The number of people in structured treatment fell to a decade low before partially recovering."
           colour="#E63946"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain has a drug and alcohol crisis that is, by several measures, the worst in Europe. The Office for National Statistics recorded 4,907 drug poisoning deaths in England and Wales in 2022 — the highest annual total since records began, and a rate per million population that substantially exceeds that of any other large European nation. The crisis is concentrated in Scotland, which has the highest drug death rate in Europe by an extreme margin, but England and Wales's own figures have risen 46% since 2012. The driving forces are well understood: an ageing cohort of long-term heroin and crack cocaine users with deteriorating health, the increasing adulteration of the drug supply with highly potent synthetic opioids, and a decade of cuts to the treatment services that would once have been their lifeline. Between 2013 and 2020, local authority public health budgets — which fund drug and alcohol treatment — were cut by 24% in cash terms and 36% in real terms. Treatment numbers fell from 311,000 in 2010/11 to a low of around 271,000 in 2020/21. The number of people receiving opiate substitution therapy, the single most effective intervention for reducing drug-related deaths, fell proportionately.</p>
-            <p>Alcohol causes more deaths and more overall harm than all illegal drugs combined, yet receives considerably less public and political attention. NHS data indicates that alcohol-specific deaths — those where alcohol was the direct cause — reached 9,641 in England in 2022, the highest on record, following a sharp rise during the pandemic. Alcohol-related hospital admissions run at over one million per year. The economic cost of alcohol harm to the NHS, criminal justice system, and employers is estimated at £27 billion annually. Despite this, fewer than one in five people with alcohol dependence receive any treatment. Alcohol brief interventions — short conversations with GPs or nurses that can reduce hazardous drinking — were identified as a cost-effective population-level tool in the 2008 National Alcohol Strategy but were never fully funded or implemented. NHS alcohol care teams, which provide specialist support within hospital settings, are present in only a minority of trusts. The treatment gap for alcohol is, if anything, wider than for drugs.</p>
-            </div>
+            <p>England and Wales are in the grip of a drug deaths crisis that has received remarkably little public attention. Drug poisoning deaths have risen almost every year since 2012, reaching 4,907 registered deaths in 2024 — an 89% increase in just over a decade. The victims are disproportionately men, aged 40&ndash;49, from the most deprived communities. Opioids — principally heroin and morphine — remain the single largest contributor, involved in roughly half of all drug poisoning deaths. But the picture is shifting: deaths involving cocaine, benzodiazepines, and pregabalin have risen sharply, reflecting changing patterns of polysubstance use. The North East of England has the highest drug death rate in the country at 11.4 per 100,000, nearly three times the rate in London. This is not a crisis distributed evenly; it maps almost perfectly onto deprivation, deindustrialisation, and the withdrawal of public services.</p>
+            <p>The treatment system that should be catching these people was hollowed out during the 2010s. Local authority spending on drug and alcohol services fell by more than 30% per head between 2013 and 2020, as the public health grant was repeatedly cut in real terms. The number of people in structured treatment dropped from 338,000 in 2010 to a low of 275,000 in 2020 — a loss of 63,000 treatment places at precisely the moment demand was rising. Dame Carol Black&apos;s landmark independent review, published in 2021, described the treatment system as &ldquo;not fit for purpose&rdquo; and called for an additional &pound;552 million per year in funding. The government responded with a 10-year drug strategy and new investment, but progress has been slow: treatment numbers have recovered only to 289,000, still 15% below 2010 levels. Alcohol treatment is a particular gap — only one in five people who are dependent on alcohol are in treatment, compared with roughly half for opiate users.</p>
+            <p>Opioid substitution therapy (OST) — methadone and buprenorphine prescribing — remains the most evidence-based intervention for reducing opiate deaths, and the UK has one of the better OST coverage rates in Europe. But the ageing cohort of long-term heroin users who began using in the 1980s and 1990s now face compounding health conditions — liver disease, respiratory illness, homelessness — that make them acutely vulnerable. Naloxone distribution programmes, which provide overdose-reversal kits to people who use drugs and their peers, have expanded significantly and are saving lives. The challenge ahead is structural: rebuilding a treatment system that was systematically defunded, reaching people who have never engaged with services, and addressing the social determinants — housing, poverty, isolation — that drive addiction in the first place. Without sustained investment, the death toll will continue to climb.</p>
+          </div>
         </section>
 
         <SectionNav sections={[
-          { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-deaths', label: 'Drug Deaths' },
-          { id: 'sec-treatment', label: 'Treatment Numbers' },
-          { id: 'sec-sources', label: 'Sources' },
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-deaths', label: 'Drug deaths' },
+          { id: 'sec-treatment', label: 'Treatment numbers' },
+          { id: 'sec-funding', label: 'Funding' },
+          { id: 'sec-regional', label: 'Regional' },
         ]} />
 
+        {/* Metric cards */}
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <MetricCard
+            label="Drug poisoning deaths"
+            value={latestDeaths ? latestDeaths.deaths.toLocaleString() : '4,907'}
+            unit="2024"
+            direction="up"
+            polarity="up-is-bad"
+            changeText={`+${deathsChange}% since 2012 · opioids involved in ~50% of deaths`}
+            sparklineData={
+              data ? sparkFrom(data.drugDeaths.map(d => d.deaths)) : []
+            }
+            source="ONS · Deaths related to drug poisoning, 2024"
+            href="#sec-deaths"
+          />
+          <MetricCard
+            label="People in structured treatment"
+            value={latestTreatment ? (latestTreatment.inTreatment / 1000).toFixed(0) + 'K' : '289K'}
+            unit="2024"
+            direction="down"
+            polarity="up-is-good"
+            changeText={`Down ${treatmentChange}% from 338K in 2010 · recovering from 275K low in 2020`}
+            sparklineData={
+              data ? sparkFrom(data.treatmentNumbers.map(d => d.inTreatment)) : []
+            }
+            source="OHID · NDTMS adult substance misuse statistics, 2024"
+            href="#sec-treatment"
+          />
+          <MetricCard
+            label="Treatment funding per head"
+            value={latestFunding ? '\u00A3' + latestFunding.fundingGBP.toFixed(2) : '\u00A35.89'}
+            unit="2024"
+            direction="down"
+            polarity="up-is-good"
+            changeText={`Down ${fundingChange}% from \u00A3${peakFunding?.fundingGBP.toFixed(2) ?? '8.42'} in 2013 · partial recovery since 2020`}
+            sparklineData={
+              data ? sparkFrom(data.fundingPerHead.map(d => d.fundingGBP)) : []
+            }
+            source="OHID · Public health grant expenditure on substance misuse, 2024"
+            href="#sec-funding"
+          />
+        </div>
+
+        {/* Chart 1: Drug poisoning deaths */}
         <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Drug poisoning deaths"
-              value="4,907"
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="2022 · Highest ever recorded · Highest rate in Europe"
-              sparklineData={[3346, 3674, 3756, 4359, 4359, 2996, 4561, 4907]}
-              href="#sec-deaths"
-            />
-            <MetricCard
-              label="People in drug/alcohol treatment"
-              value="289K"
-              direction={'down' as const}
-              polarity={'up-is-good' as const}
-              changeText="2022/23 · Down from 311K in 2010/11"
-              sparklineData={[311, 309, 299, 293, 289, 279, 282, 289]}
-              href="#sec-deaths"
-            />
-            <MetricCard
-              label="Treatment funding cut (real terms)"
-              value="36"
-              unit="%"
-              direction={'down' as const}
-              polarity={'up-is-good' as const}
-              changeText="2013–2020 · Local authority public health"
-              sparklineData={[100, 96, 92, 88, 82, 76, 70, 64]}
-              href="#sec-deaths"
+          <div id="sec-deaths" className="mb-12">
+            <LineChart
+              series={drugDeathsSeries}
+              title="Drug poisoning deaths, England &amp; Wales, 2012–2024"
+              subtitle="Deaths registered each year where the underlying cause is drug poisoning. Near-continuous rise over 12 years."
+              yLabel="Deaths"
+              source={{
+                name: 'ONS',
+                dataset: 'Deaths related to drug poisoning in England and Wales',
+                frequency: 'annual',
+              }}
             />
           </div>
         </ScrollReveal>
 
+        {/* Chart 2: Treatment numbers */}
         <ScrollReveal>
-          <section id="sec-deaths" className="mb-12">
+          <div id="sec-treatment" className="mb-12">
             <LineChart
-              title="Drug poisoning deaths, England and Wales, 2010–2023"
-              subtitle="Registered deaths where drug poisoning was the underlying cause. Includes illicit drugs and misuse of prescribed medicines."
-              series={drugDeathsSeries}
-              yLabel="Deaths"
-              source={{
-                name: 'ONS',
-                dataset: 'Deaths Related to Drug Poisoning, England and Wales',
-                frequency: 'annual',
-              }}
-            />
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-treatment" className="mb-12">
-            <LineChart
-              title="People in drug and alcohol treatment, England, 2010–2023"
-              subtitle="Adults in structured drug and/or alcohol treatment. Thousands. Public funding only."
               series={treatmentSeries}
-              yLabel="People in treatment (thousands)"
+              title="People in structured drug and alcohol treatment, England, 2010–2024"
+              subtitle="Total individuals in contact with structured treatment services. Fell 19% from 2010 to 2020 before partially recovering."
+              yLabel="People in treatment"
               source={{
                 name: 'OHID',
                 dataset: 'National Drug Treatment Monitoring System (NDTMS)',
                 frequency: 'annual',
               }}
             />
-          </section>
+          </div>
         </ScrollReveal>
 
+        {/* Chart 3: Funding per head */}
+        <ScrollReveal>
+          <div id="sec-funding" className="mb-12">
+            <LineChart
+              series={fundingSeries}
+              title="Local authority spending on drug and alcohol treatment per head, England, 2013–2024"
+              subtitle="Public health grant expenditure on substance misuse services, adjusted per capita. Cut by over 30% between 2013 and 2020."
+              yLabel="\u00A3 per head"
+              source={{
+                name: 'OHID',
+                dataset: 'Public Health Ring-Fenced Grant expenditure',
+                frequency: 'annual',
+              }}
+            />
+          </div>
+        </ScrollReveal>
+
+        {/* Regional variation */}
+        <ScrollReveal>
+          <div id="sec-regional" className="mb-12">
+            <div className="bg-white rounded-lg border border-wiah-border p-8">
+              <h2 className="text-lg font-bold text-wiah-black mb-2">
+                Drug poisoning death rate by region (per 100,000 people)
+              </h2>
+              <div className="mt-6 space-y-4">
+                {data?.byRegion.map((r) => {
+                  const pct = (r.deathRatePer100k / 12) * 100;
+                  return (
+                    <div key={r.region}>
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm font-medium text-wiah-black">{r.region}</span>
+                        <span className="font-mono text-sm font-bold text-wiah-black">{r.deathRatePer100k}</span>
+                      </div>
+                      <div className="h-6 bg-wiah-light rounded-sm overflow-hidden">
+                        <div
+                          className="h-full rounded-sm transition-all"
+                          style={{ width: `${pct}%`, backgroundColor: '#E63946' }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS — Deaths related to drug poisoning by region, 2024</p>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="£532M investment driving first increase in treatment numbers since 2013"
-            value="10%"
-            description="A £532 million government investment under the 10-year drugs strategy (2021) has increased treatment numbers for the first time since 2013, with 10% more people entering treatment by 2024. The strategy also funded the rollout of naloxone — a medication that reverses opioid overdose — to community settings, with over 200,000 kits distributed to people who use drugs and their families. Drug death review panels, established from 2023, are generating systematic learning from preventable deaths in the way domestic homicide reviews have transformed understanding of intimate partner violence."
-            source="Source: OHID — From Harm to Hope: 10-Year Drug Strategy, 2024 Progress Report."
+            title="Naloxone distribution is expanding and saving lives"
+            value="Naloxone kits"
+            description="Naloxone — a medicine that rapidly reverses opioid overdose — is now being distributed at scale through drug treatment services, homelessness charities, and peer networks across England. Since regulations were relaxed in 2019 to allow wider distribution, tens of thousands of kits have been supplied. Evidence from Scotland, where a national naloxone programme has operated since 2011, shows that community distribution reduces opioid overdose deaths. The Dame Carol Black review recommended universal naloxone provision, and the government&apos;s 10-year drug strategy committed to making naloxone available to all those at risk. While naloxone cannot address the root causes of the drug deaths crisis, it is the single most effective immediate intervention for preventing fatal overdose."
+            source="Source: OHID — Naloxone provision data, 2024. Dame Carol Black — Independent Review of Drugs, 2021."
           />
         </ScrollReveal>
 
-        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+        {/* Sources & Methodology */}
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">
             <p>ONS — Deaths Related to Drug Poisoning in England and Wales. Annual publication based on registered deaths where drug poisoning was the underlying cause. Data by substance, age, sex, and geography.</p>
             <p>OHID / NDTMS — Adult Drug and Alcohol Statistics from the National Drug Treatment Monitoring System. Annual data on adults receiving structured treatment for drug and/or alcohol misuse in publicly funded services in England.</p>
-            <p>OHID / NHS England — Local Authority Public Health Allocations. Annual data on public health grant payments to local authorities, including the substance misuse component. Real-terms figures adjusted to 2020/21 prices using GDP deflator.</p>
-            <p>Drug poisoning deaths are based on death registration year; complex cases involving inquest may be registered 12–18 months after death. Treatment numbers cover structured treatment only, excluding brief interventions, harm reduction services, and mutual aid. Data covers England and Wales (deaths) and England only (treatment).</p>
+            <p>OHID — Public Health Ring-Fenced Grant: Drug and Alcohol Treatment Spend. Annual data on local authority public health grant expenditure on substance misuse services, divided by ONS mid-year population estimates to derive per-head figures.</p>
+            <p>Drug poisoning deaths are based on death registration year, not year of occurrence; complex cases involving coroner inquests may be registered 12&ndash;18 months after death. Treatment numbers cover structured treatment only, excluding brief interventions, harm reduction services, and mutual aid. Funding figures do not include NHS secondary care or criminal justice system spending on addiction services. Data covers England and Wales (deaths) and England only (treatment and funding).</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }
