@@ -1,0 +1,105 @@
+{
+  "totalHomicides": [
+    {"year": 2003, "count": 1047},
+    {"year": 2004, "count": 904},
+    {"year": 2005, "count": 858},
+    {"year": 2006, "count": 795},
+    {"year": 2007, "count": 784},
+    {"year": 2008, "count": 749},
+    {"year": 2009, "count": 668},
+    {"year": 2010, "count": 636},
+    {"year": 2011, "count": 619},
+    {"year": 2012, "count": 577},
+    {"year": 2013, "count": 551},
+    {"year": 2014, "count": 534},
+    {"year": 2015, "count": 571},
+    {"year": 2016, "count": 695},
+    {"year": 2017, "count": 739},
+    {"year": 2018, "count": 714},
+    {"year": 2019, "count": 683},
+    {"year": 2020, "count": 571},
+    {"year": 2021, "count": 594},
+    {"year": 2022, "count": 607},
+    {"year": 2023, "count": 602},
+    {"year": 2024, "count": 590}
+  ],
+  "homicidesByMethod": [
+    {"year": 2010, "knife": 199, "firearm": 41, "bluntInstrument": 49, "other": 347},
+    {"year": 2011, "knife": 208, "firearm": 38, "bluntInstrument": 42, "other": 331},
+    {"year": 2012, "knife": 195, "firearm": 30, "bluntInstrument": 45, "other": 307},
+    {"year": 2013, "knife": 187, "firearm": 24, "bluntInstrument": 39, "other": 301},
+    {"year": 2014, "knife": 186, "firearm": 21, "bluntInstrument": 36, "other": 291},
+    {"year": 2015, "knife": 210, "firearm": 27, "bluntInstrument": 38, "other": 296},
+    {"year": 2016, "knife": 215, "firearm": 26, "bluntInstrument": 46, "other": 408},
+    {"year": 2017, "knife": 264, "firearm": 32, "bluntInstrument": 51, "other": 392},
+    {"year": 2018, "knife": 259, "firearm": 30, "bluntInstrument": 48, "other": 377},
+    {"year": 2019, "knife": 261, "firearm": 33, "bluntInstrument": 40, "other": 349},
+    {"year": 2020, "knife": 218, "firearm": 25, "bluntInstrument": 34, "other": 294},
+    {"year": 2021, "knife": 224, "firearm": 30, "bluntInstrument": 37, "other": 303},
+    {"year": 2022, "knife": 232, "firearm": 28, "bluntInstrument": 39, "other": 308},
+    {"year": 2023, "knife": 244, "firearm": 26, "bluntInstrument": 35, "other": 297},
+    {"year": 2024, "knife": 231, "firearm": 22, "bluntInstrument": 33, "other": 304}
+  ],
+  "homicideRate": [
+    {"year": 2003, "ratePerMillion": 19.7},
+    {"year": 2004, "ratePerMillion": 16.9},
+    {"year": 2005, "ratePerMillion": 15.9},
+    {"year": 2006, "ratePerMillion": 14.7},
+    {"year": 2007, "ratePerMillion": 14.3},
+    {"year": 2008, "ratePerMillion": 13.5},
+    {"year": 2009, "ratePerMillion": 12.0},
+    {"year": 2010, "ratePerMillion": 11.3},
+    {"year": 2011, "ratePerMillion": 10.9},
+    {"year": 2012, "ratePerMillion": 10.1},
+    {"year": 2013, "ratePerMillion": 9.6},
+    {"year": 2014, "ratePerMillion": 9.2},
+    {"year": 2015, "ratePerMillion": 9.7},
+    {"year": 2016, "ratePerMillion": 11.8},
+    {"year": 2017, "ratePerMillion": 12.4},
+    {"year": 2018, "ratePerMillion": 11.9},
+    {"year": 2019, "ratePerMillion": 11.3},
+    {"year": 2020, "ratePerMillion": 9.5},
+    {"year": 2021, "ratePerMillion": 9.9},
+    {"year": 2022, "ratePerMillion": 10.1},
+    {"year": 2023, "ratePerMillion": 10.0},
+    {"year": 2024, "ratePerMillion": 9.8}
+  ],
+  "byRegion": [
+    {"region": "London", "ratePerMillion": 14.2, "count": 128},
+    {"region": "West Midlands", "ratePerMillion": 12.8, "count": 76},
+    {"region": "North West", "ratePerMillion": 11.5, "count": 84},
+    {"region": "Yorkshire & Humber", "ratePerMillion": 10.9, "count": 60},
+    {"region": "East Midlands", "ratePerMillion": 9.4, "count": 46},
+    {"region": "North East", "ratePerMillion": 9.1, "count": 24},
+    {"region": "South East", "ratePerMillion": 8.3, "count": 76},
+    {"region": "South West", "ratePerMillion": 7.8, "count": 44},
+    {"region": "East of England", "ratePerMillion": 7.5, "count": 47},
+    {"region": "Wales", "ratePerMillion": 7.2, "count": 23}
+  ],
+  "metadata": {
+    "lastUpdated": "2025-11-14",
+    "sources": [
+      {
+        "name": "Office for National Statistics",
+        "dataset": "Homicide in England and Wales",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/articles/homicideinenglandandwales/latest",
+        "retrieved": "2025-11-14",
+        "frequency": "annual"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Homicide Index",
+        "url": "https://www.gov.uk/government/statistics/homicide-in-england-and-wales",
+        "retrieved": "2025-11-14",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Homicide figures are for offences initially recorded as homicide by police in England and Wales, based on the Home Office Homicide Index. Figures for the latest year are provisional and subject to revision as investigations conclude. The per-million rate uses ONS mid-year population estimates. Method breakdowns may not sum to total due to rounding and classification of cases where method is unknown.",
+    "knownIssues": [
+      "2016 figure includes 96 victims of the Hillsborough disaster reclassified as unlawful killings",
+      "2017 figure includes 31 victims of the London Bridge and Manchester Arena terror attacks",
+      "Latest year figures are provisional and typically revised downward by 5-10%",
+      "COVID-19 lockdowns in 2020 produced an artificial dip not representative of underlying trend"
+    ]
+  }
+}

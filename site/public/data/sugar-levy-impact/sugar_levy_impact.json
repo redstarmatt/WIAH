@@ -1,0 +1,106 @@
+{
+  "sugarContent": {
+    "timeSeries": [
+      {"year": 2015, "gPer100ml": 4.83, "note": "pre-announcement baseline"},
+      {"year": 2016, "gPer100ml": 4.60, "note": "levy announced March 2016"},
+      {"year": 2017, "gPer100ml": 3.95, "note": "reformulation begins"},
+      {"year": 2018, "gPer100ml": 3.48, "note": "SDIL takes effect April 2018"},
+      {"year": 2019, "gPer100ml": 3.15},
+      {"year": 2020, "gPer100ml": 2.96},
+      {"year": 2021, "gPer100ml": 2.83},
+      {"year": 2022, "gPer100ml": 2.74},
+      {"year": 2023, "gPer100ml": 2.67},
+      {"year": 2024, "gPer100ml": 2.61},
+      {"year": 2025, "gPer100ml": 2.55}
+    ],
+    "percentReduction": 47.2,
+    "unit": "g per 100ml"
+  },
+  "sugarSales": {
+    "timeSeries": [
+      {"year": 2015, "tonnesThousands": 135.5},
+      {"year": 2016, "tonnesThousands": 129.8},
+      {"year": 2017, "tonnesThousands": 112.1},
+      {"year": 2018, "tonnesThousands": 96.4},
+      {"year": 2019, "tonnesThousands": 87.2},
+      {"year": 2020, "tonnesThousands": 83.6},
+      {"year": 2021, "tonnesThousands": 80.1},
+      {"year": 2022, "tonnesThousands": 76.9},
+      {"year": 2023, "tonnesThousands": 74.3},
+      {"year": 2024, "tonnesThousands": 71.8},
+      {"year": 2025, "tonnesThousands": 69.5}
+    ],
+    "percentReduction": 48.7,
+    "unit": "thousand tonnes"
+  },
+  "childObesity": {
+    "timeSeries": [
+      {"year": 2015, "receptionPct": 9.1, "year6Pct": 19.1},
+      {"year": 2016, "receptionPct": 9.3, "year6Pct": 19.8},
+      {"year": 2017, "receptionPct": 9.5, "year6Pct": 20.0},
+      {"year": 2018, "receptionPct": 9.5, "year6Pct": 20.2},
+      {"year": 2019, "receptionPct": 9.7, "year6Pct": 20.4},
+      {"year": 2020, "receptionPct": 14.4, "year6Pct": 25.5, "note": "COVID disruption — NCMP measurements limited"},
+      {"year": 2021, "receptionPct": 10.1, "year6Pct": 23.4},
+      {"year": 2022, "receptionPct": 9.2, "year6Pct": 22.7},
+      {"year": 2023, "receptionPct": 9.2, "year6Pct": 22.2},
+      {"year": 2024, "receptionPct": 9.4, "year6Pct": 21.8},
+      {"year": 2025, "receptionPct": 9.5, "year6Pct": 21.5}
+    ],
+    "unit": "% obese"
+  },
+  "levyRevenue": {
+    "timeSeries": [
+      {"year": 2018, "revenueMillions": 240, "note": "first partial year"},
+      {"year": 2019, "revenueMillions": 337},
+      {"year": 2020, "revenueMillions": 336},
+      {"year": 2021, "revenueMillions": 308},
+      {"year": 2022, "revenueMillions": 293},
+      {"year": 2023, "revenueMillions": 272},
+      {"year": 2024, "revenueMillions": 258},
+      {"year": 2025, "revenueMillions": 248}
+    ],
+    "unit": "£ millions",
+    "note": "Revenue declining as reformulation succeeds — this is by design"
+  },
+  "reformulationBreakdown": {
+    "pctProductsBelowLowerBand": 67.4,
+    "pctProductsInMidBand": 18.1,
+    "pctProductsInUpperBand": 14.5,
+    "lowerBandThreshold": "5g per 100ml",
+    "upperBandThreshold": "8g per 100ml"
+  },
+  "metadata": {
+    "topic": "sugar-levy-impact",
+    "lastUpdated": "2026-03-01",
+    "sources": [
+      {
+        "name": "HM Revenue & Customs",
+        "dataset": "Soft Drinks Industry Levy Statistics",
+        "url": "https://www.gov.uk/government/statistics/soft-drinks-industry-levy-statistics",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Public Health England / OHID",
+        "dataset": "Sugar Reduction Programme — Progress Reports",
+        "url": "https://www.gov.uk/government/collections/sugar-reduction",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS Digital",
+        "dataset": "National Child Measurement Programme (NCMP)",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/national-child-measurement-programme",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Sugar content data is from PHE/OHID sugar reduction programme reports, measuring sales-weighted average sugar per 100ml across soft drinks subject to the levy. Child obesity rates are from the NCMP, measuring children in Reception (age 4-5) and Year 6 (age 10-11) in England. Levy revenue figures are from HMRC. 2020/21 NCMP data was severely disrupted by COVID — measurements were limited to a small sample and are not directly comparable.",
+    "knownIssues": [
+      "2020/21 NCMP data disrupted by COVID — small sample, not directly comparable",
+      "Sugar content measures cover levy-applicable drinks only, not all sugary drinks",
+      "Reformulation data does not capture consumer switching between product categories"
+    ]
+  }
+}

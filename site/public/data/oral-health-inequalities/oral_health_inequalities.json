@@ -1,0 +1,107 @@
+{
+  "decayDisparity": [
+    {"year": 2012, "deprivedPct": 40.2, "affluentPct": 14.1, "ratio": 2.85},
+    {"year": 2015, "deprivedPct": 38.4, "affluentPct": 12.8, "ratio": 3.00},
+    {"year": 2017, "deprivedPct": 35.0, "affluentPct": 11.7, "ratio": 2.99},
+    {"year": 2019, "deprivedPct": 33.8, "affluentPct": 11.2, "ratio": 3.02},
+    {"year": 2022, "deprivedPct": 37.5, "affluentPct": 12.0, "ratio": 3.13},
+    {"year": 2023, "deprivedPct": 38.1, "affluentPct": 12.4, "ratio": 3.07}
+  ],
+  "nhsDentistAccess": [
+    {"year": 2012, "unablePct": 14},
+    {"year": 2013, "unablePct": 15},
+    {"year": 2014, "unablePct": 16},
+    {"year": 2015, "unablePct": 18},
+    {"year": 2016, "unablePct": 19},
+    {"year": 2017, "unablePct": 21},
+    {"year": 2018, "unablePct": 24},
+    {"year": 2019, "unablePct": 26},
+    {"year": 2020, "unablePct": 35},
+    {"year": 2021, "unablePct": 37},
+    {"year": 2022, "unablePct": 39},
+    {"year": 2023, "unablePct": 40},
+    {"year": 2024, "unablePct": 42},
+    {"year": 2025, "unablePct": 43}
+  ],
+  "nhsDentistWorkforce": [
+    {"year": 2012, "dentists": 24500, "udaDeliveryPct": 95.2},
+    {"year": 2013, "dentists": 24200, "udaDeliveryPct": 94.8},
+    {"year": 2014, "dentists": 23900, "udaDeliveryPct": 93.1},
+    {"year": 2015, "dentists": 23700, "udaDeliveryPct": 91.4},
+    {"year": 2016, "dentists": 23500, "udaDeliveryPct": 90.2},
+    {"year": 2017, "dentists": 23200, "udaDeliveryPct": 88.0},
+    {"year": 2018, "dentists": 23100, "udaDeliveryPct": 86.5},
+    {"year": 2019, "dentists": 22800, "udaDeliveryPct": 84.9},
+    {"year": 2020, "dentists": 21400, "udaDeliveryPct": 52.3},
+    {"year": 2021, "dentists": 21100, "udaDeliveryPct": 65.1},
+    {"year": 2022, "dentists": 20800, "udaDeliveryPct": 73.2},
+    {"year": 2023, "dentists": 20500, "udaDeliveryPct": 76.4},
+    {"year": 2024, "dentists": 20100, "udaDeliveryPct": 78.0},
+    {"year": 2025, "dentists": 19800, "udaDeliveryPct": 79.3}
+  ],
+  "fluoridationCoverage": [
+    {"year": 2012, "pctPopulation": 10.1},
+    {"year": 2015, "pctPopulation": 9.8},
+    {"year": 2017, "pctPopulation": 9.6},
+    {"year": 2019, "pctPopulation": 9.4},
+    {"year": 2022, "pctPopulation": 9.2},
+    {"year": 2023, "pctPopulation": 9.0},
+    {"year": 2025, "pctPopulation": 9.1}
+  ],
+  "childHospitalExtractions": [
+    {"year": 2012, "admissions": 40970},
+    {"year": 2013, "admissions": 42110},
+    {"year": 2014, "admissions": 43540},
+    {"year": 2015, "admissions": 44580},
+    {"year": 2016, "admissions": 44010},
+    {"year": 2017, "admissions": 43650},
+    {"year": 2018, "admissions": 44730},
+    {"year": 2019, "admissions": 45080},
+    {"year": 2020, "admissions": 23510},
+    {"year": 2021, "admissions": 29830},
+    {"year": 2022, "admissions": 36410},
+    {"year": 2023, "admissions": 38790},
+    {"year": 2024, "admissions": 40200},
+    {"year": 2025, "admissions": 41500}
+  ],
+  "metadata": {
+    "topic": "oral-health-inequalities",
+    "lastUpdated": "2025-11-01",
+    "sources": [
+      {
+        "name": "Office for Health Improvement and Disparities (OHID)",
+        "dataset": "National Dental Epidemiology Programme — Oral Health Survey of 5-year-old children",
+        "url": "https://www.gov.uk/government/statistics/oral-health-survey-of-5-year-old-children",
+        "retrieved": "2025-11-01",
+        "frequency": "biennial"
+      },
+      {
+        "name": "NHS Business Services Authority",
+        "dataset": "NHS Dental Statistics for England",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-dental-statistics",
+        "retrieved": "2025-11-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Hospital Episode Statistics — Tooth Extractions in Children",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity",
+        "retrieved": "2025-11-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Public Health England / OHID",
+        "dataset": "Water Fluoridation — Health Monitoring Report",
+        "url": "https://www.gov.uk/government/publications/water-fluoridation-health-monitoring-report-for-england-2022",
+        "retrieved": "2025-11-01",
+        "frequency": "periodic"
+      }
+    ],
+    "methodology": "Child tooth decay data from the National Dental Epidemiology Programme surveys of 5-year-olds, conducted biennially. Deprivation measured using Index of Multiple Deprivation (IMD) quintiles. NHS dental access data from the GP Patient Survey and OHID adult dental health surveys. Workforce data from NHS BSA annual reports. Hospital extraction figures from Hospital Episode Statistics (HES). Fluoridation coverage from PHE/OHID monitoring reports.",
+    "knownIssues": [
+      "COVID-19 pandemic severely disrupted dental services 2020–2021; data for those years reflects reduced activity rather than reduced need",
+      "NHS dental contract reform in 2022 changed UDA targets, making pre/post comparisons of delivery rates approximate",
+      "Child survey methodology changed slightly in 2022 — results broadly comparable but not directly equivalent to earlier rounds"
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "topic": "parole-backlog",
+  "lastUpdated": "2026-03-01",
+  "casesAwaitingHearing": [
+    { "year": 2015, "cases": 4800 },
+    { "year": 2016, "cases": 5200 },
+    { "year": 2017, "cases": 5600 },
+    { "year": 2018, "cases": 6000 },
+    { "year": 2019, "cases": 6200 },
+    { "year": 2020, "cases": 7500 },
+    { "year": 2021, "cases": 8900 },
+    { "year": 2022, "cases": 9800 },
+    { "year": 2023, "cases": 11000 },
+    { "year": 2024, "cases": 11800 },
+    { "year": 2025, "cases": 12400 }
+  ],
+  "averageWaitMonths": [
+    { "year": 2015, "months": 8.2 },
+    { "year": 2016, "months": 9.1 },
+    { "year": 2017, "months": 10.5 },
+    { "year": 2018, "months": 11.0 },
+    { "year": 2019, "months": 11.4 },
+    { "year": 2020, "months": 14.2 },
+    { "year": 2021, "months": 15.8 },
+    { "year": 2022, "months": 16.3 },
+    { "year": 2023, "months": 17.1 },
+    { "year": 2024, "months": 18.0 },
+    { "year": 2025, "months": 19.4 }
+  ],
+  "oralHearingsCompleted": [
+    { "year": 2015, "hearings": 7200 },
+    { "year": 2016, "hearings": 7500 },
+    { "year": 2017, "hearings": 7800 },
+    { "year": 2018, "hearings": 8100 },
+    { "year": 2019, "hearings": 8400 },
+    { "year": 2020, "hearings": 5200 },
+    { "year": 2021, "hearings": 6800 },
+    { "year": 2022, "hearings": 7100 },
+    { "year": 2023, "hearings": 7600 },
+    { "year": 2024, "hearings": 7900 },
+    { "year": 2025, "hearings": 8200 }
+  ],
+  "prisonersHeldBeyondTariff": [
+    { "year": 2015, "count": 2100 },
+    { "year": 2016, "count": 2400 },
+    { "year": 2017, "count": 2700 },
+    { "year": 2018, "count": 3000 },
+    { "year": 2019, "count": 3200 },
+    { "year": 2020, "count": 4100 },
+    { "year": 2021, "count": 4800 },
+    { "year": 2022, "count": 5400 },
+    { "year": 2023, "count": 6100 },
+    { "year": 2024, "count": 6700 },
+    { "year": 2025, "count": 7200 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Parole Board for England and Wales",
+        "dataset": "Parole Board Annual Report and Accounts",
+        "url": "https://www.gov.uk/government/organisations/parole-board/about/statistics",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Ministry of Justice",
+        "dataset": "Offender Management Statistics",
+        "url": "https://www.gov.uk/government/statistics/offender-management-statistics-quarterly",
+        "retrieved": "2026-03-01",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "HM Inspectorate of Prisons",
+        "dataset": "Annual Report",
+        "url": "https://www.justiceinspectorates.gov.uk/hmiprisons/",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Cases awaiting hearing counts are taken from Parole Board annual reports and represent the outstanding caseload at year end. Average wait is measured from date of referral to date of oral hearing. Prisoners held beyond tariff are those past their minimum term who have not yet received a Parole Board decision. Oral hearings completed includes both paper-to-oral conversions and scheduled oral hearings. All figures are for England and Wales.",
+    "knownIssues": [
+      "COVID-19 caused widespread hearing cancellations in 2020-21, inflating the backlog",
+      "The Worboys decision in 2018 led to a temporary moratorium on releases and additional procedural requirements",
+      "Changes to recall policy from 2022 increased the volume of cases referred to the Board",
+      "Pre-2017 data uses slightly different counting methodology"
+    ]
+  }
+}

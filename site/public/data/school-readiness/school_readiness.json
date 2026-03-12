@@ -1,0 +1,82 @@
+{
+  "gldAchievement": [
+    {"year": 2013, "percent": 51.7},
+    {"year": 2014, "percent": 60.4},
+    {"year": 2015, "percent": 66.3},
+    {"year": 2016, "percent": 69.3},
+    {"year": 2017, "percent": 70.7},
+    {"year": 2018, "percent": 71.5},
+    {"year": 2019, "percent": 71.8},
+    {"year": 2022, "percent": 65.2, "note": "No data 2020–2021 due to COVID cancellations"},
+    {"year": 2023, "percent": 67.2},
+    {"year": 2024, "percent": 67.7}
+  ],
+  "disadvantageGap": [
+    {"year": 2013, "gapPP": 18.9},
+    {"year": 2014, "gapPP": 17.7},
+    {"year": 2015, "gapPP": 17.0},
+    {"year": 2016, "gapPP": 16.8},
+    {"year": 2017, "gapPP": 17.0},
+    {"year": 2018, "gapPP": 16.8},
+    {"year": 2019, "gapPP": 17.0},
+    {"year": 2022, "gapPP": 19.2, "note": "Post-COVID return"},
+    {"year": 2023, "gapPP": 19.0},
+    {"year": 2024, "gapPP": 18.8}
+  ],
+  "communicationLanguage": [
+    {"year": 2013, "percent": 55.4},
+    {"year": 2014, "percent": 64.2},
+    {"year": 2015, "percent": 69.7},
+    {"year": 2016, "percent": 72.1},
+    {"year": 2017, "percent": 73.3},
+    {"year": 2018, "percent": 73.8},
+    {"year": 2019, "percent": 74.0},
+    {"year": 2022, "percent": 68.3, "note": "Post-COVID return"},
+    {"year": 2023, "percent": 70.1},
+    {"year": 2024, "percent": 70.8}
+  ],
+  "byRegion": [
+    {"region": "London", "gldPercent": 71.2},
+    {"region": "South East", "gldPercent": 69.4},
+    {"region": "South West", "gldPercent": 68.8},
+    {"region": "East of England", "gldPercent": 68.1},
+    {"region": "East Midlands", "gldPercent": 66.3},
+    {"region": "West Midlands", "gldPercent": 65.1},
+    {"region": "North West", "gldPercent": 65.8},
+    {"region": "Yorkshire and the Humber", "gldPercent": 64.7},
+    {"region": "North East", "gldPercent": 64.2}
+  ],
+  "metadata": {
+    "topic": "school-readiness",
+    "lastUpdated": "2024-11-21",
+    "sources": [
+      {
+        "name": "Department for Education",
+        "dataset": "Early Years Foundation Stage Profile results",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/early-years-foundation-stage-profile-results",
+        "retrieved": "2024-11-21",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Education",
+        "dataset": "EYFSP additional tables — disadvantage gap",
+        "url": "https://www.gov.uk/government/statistics/early-years-foundation-stage-profile-results-2023-to-2024",
+        "retrieved": "2024-11-21",
+        "frequency": "annual"
+      },
+      {
+        "name": "Education Policy Institute",
+        "dataset": "Annual Report on Education in England",
+        "url": "https://epi.org.uk/research-area/annual-report/",
+        "retrieved": "2024-11-21",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Good Level of Development (GLD) is the headline measure from the Early Years Foundation Stage Profile (EYFSP), assessed by teachers at the end of Reception (age 5). A child achieves GLD if they reach at least the expected level in all 17 Early Learning Goals across communication and language, physical development, personal/social/emotional development, literacy and mathematics. No assessments took place in 2020 or 2021 due to COVID-19 school closures. The framework was revised in 2021/22, making direct comparisons with pre-2022 data approximate. The disadvantage gap uses free school meal (FSM) eligibility as the deprivation indicator.",
+    "knownIssues": [
+      "No EYFSP data for 2020 or 2021 academic years due to COVID-19 cancellations",
+      "Revised EYFSP framework from 2021/22 means pre- and post-2022 figures are not directly comparable",
+      "FSM eligibility as a deprivation proxy may undercount some disadvantaged children"
+    ]
+  }
+}

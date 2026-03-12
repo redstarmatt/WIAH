@@ -1,0 +1,101 @@
+{
+  "topic": "manufacturing-output",
+  "lastUpdated": "2026-02-15",
+  "outputIndex": [
+    { "year": 2010, "index": 95.2 },
+    { "year": 2011, "index": 97.1 },
+    { "year": 2012, "index": 96.0 },
+    { "year": 2013, "index": 96.8 },
+    { "year": 2014, "index": 99.1 },
+    { "year": 2015, "index": 100.3 },
+    { "year": 2016, "index": 100.8 },
+    { "year": 2017, "index": 103.0 },
+    { "year": 2018, "index": 102.4 },
+    { "year": 2019, "index": 100.0 },
+    { "year": 2020, "index": 88.2 },
+    { "year": 2021, "index": 93.1 },
+    { "year": 2022, "index": 95.4 },
+    { "year": 2023, "index": 95.8 },
+    { "year": 2024, "index": 96.2 },
+    { "year": 2025, "index": 95.7 }
+  ],
+  "gdpShare": [
+    { "year": 2010, "share": 10.4 },
+    { "year": 2011, "share": 10.2 },
+    { "year": 2012, "share": 10.0 },
+    { "year": 2013, "share": 9.8 },
+    { "year": 2014, "share": 9.7 },
+    { "year": 2015, "share": 9.5 },
+    { "year": 2016, "share": 9.4 },
+    { "year": 2017, "share": 9.3 },
+    { "year": 2018, "share": 9.2 },
+    { "year": 2019, "share": 9.0 },
+    { "year": 2020, "share": 8.7 },
+    { "year": 2021, "share": 9.1 },
+    { "year": 2022, "share": 9.0 },
+    { "year": 2023, "share": 8.9 },
+    { "year": 2024, "share": 8.8 },
+    { "year": 2025, "share": 8.6 }
+  ],
+  "employmentThousands": [
+    { "year": 2010, "employment": 2540 },
+    { "year": 2011, "employment": 2510 },
+    { "year": 2012, "employment": 2490 },
+    { "year": 2013, "employment": 2485 },
+    { "year": 2014, "employment": 2520 },
+    { "year": 2015, "employment": 2560 },
+    { "year": 2016, "employment": 2570 },
+    { "year": 2017, "employment": 2590 },
+    { "year": 2018, "employment": 2610 },
+    { "year": 2019, "employment": 2620 },
+    { "year": 2020, "employment": 2430 },
+    { "year": 2021, "employment": 2480 },
+    { "year": 2022, "employment": 2530 },
+    { "year": 2023, "employment": 2490 },
+    { "year": 2024, "employment": 2460 },
+    { "year": 2025, "employment": 2420 }
+  ],
+  "bySubsector": [
+    { "subsector": "Food, beverages & tobacco", "indexChange2019to2025": 2.1 },
+    { "subsector": "Pharmaceuticals", "indexChange2019to2025": 8.3 },
+    { "subsector": "Motor vehicles", "indexChange2019to2025": -14.2 },
+    { "subsector": "Metals & metal products", "indexChange2019to2025": -9.7 },
+    { "subsector": "Chemicals", "indexChange2019to2025": -6.1 },
+    { "subsector": "Machinery & equipment", "indexChange2019to2025": -4.3 },
+    { "subsector": "Electrical equipment", "indexChange2019to2025": -2.8 },
+    { "subsector": "Textiles & clothing", "indexChange2019to2025": -18.4 },
+    { "subsector": "Aerospace & defence", "indexChange2019to2025": 5.6 },
+    { "subsector": "Rubber & plastics", "indexChange2019to2025": -7.3 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Index of Production",
+        "url": "https://www.ons.gov.uk/economy/economicoutputandproductivity/output/bulletins/indexofproduction/latestrelease",
+        "retrieved": "2026-02-15",
+        "frequency": "monthly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "GDP output approach — low-level aggregates",
+        "url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/datasets/ukgdpolowlevelaggregates",
+        "retrieved": "2026-02-15",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Workforce Jobs by Industry",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/workforcejobsbyindustryjobs02",
+        "retrieved": "2026-02-15",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Output index is rebased to 2019=100 using the ONS Index of Production. GDP share is calculated from ONS gross value added data in current basic prices. Employment figures are from ONS Workforce Jobs by Industry. Subsector changes are calculated from ONS disaggregated Index of Production series. All data relates to the UK.",
+    "knownIssues": [
+      "2020 figures reflect COVID-19 lockdown effects on production",
+      "SIC 2007 classification revision may affect comparability for some subsectors",
+      "Brexit-related supply chain disruption effects are difficult to isolate from other factors"
+    ]
+  }
+}

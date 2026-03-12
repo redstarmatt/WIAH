@@ -1,0 +1,82 @@
+{
+  "schoolReadiness": [
+    {"year": 2015, "pct": 12.8},
+    {"year": 2016, "pct": 13.1},
+    {"year": 2017, "pct": 13.5},
+    {"year": 2018, "pct": 14.0},
+    {"year": 2019, "pct": 14.2},
+    {"year": 2020, "pct": 15.1},
+    {"year": 2021, "pct": 16.4},
+    {"year": 2022, "pct": 16.9},
+    {"year": 2023, "pct": 17.3},
+    {"year": 2024, "pct": 17.5}
+  ],
+  "waitingTimes": [
+    {"year": 2015, "pct": 12.0},
+    {"year": 2016, "pct": 14.5},
+    {"year": 2017, "pct": 16.0},
+    {"year": 2018, "pct": 18.0},
+    {"year": 2019, "pct": 19.0},
+    {"year": 2020, "pct": 21.0},
+    {"year": 2021, "pct": 28.0},
+    {"year": 2022, "pct": 34.0},
+    {"year": 2023, "pct": 37.0},
+    {"year": 2024, "pct": 38.0}
+  ],
+  "sltWorkforce": [
+    {"year": 2015, "fte": 16800},
+    {"year": 2016, "fte": 16650},
+    {"year": 2017, "fte": 16400},
+    {"year": 2018, "fte": 16200},
+    {"year": 2019, "fte": 15900},
+    {"year": 2020, "fte": 15700},
+    {"year": 2021, "fte": 15300},
+    {"year": 2022, "fte": 15100},
+    {"year": 2023, "fte": 14800},
+    {"year": 2024, "fte": 14500}
+  ],
+  "referrals": [
+    {"year": 2015, "count": 142000},
+    {"year": 2016, "count": 148000},
+    {"year": 2017, "count": 155000},
+    {"year": 2018, "count": 162000},
+    {"year": 2019, "count": 170000},
+    {"year": 2020, "count": 158000},
+    {"year": 2021, "count": 195000},
+    {"year": 2022, "count": 218000},
+    {"year": 2023, "count": 232000},
+    {"year": 2024, "count": 245000}
+  ],
+  "metadata": {
+    "lastUpdated": "2025-11-15",
+    "sources": [
+      {
+        "name": "Department for Education",
+        "dataset": "Early Years Foundation Stage Profile Results",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/early-years-foundation-stage-profile-results",
+        "retrieved": "2025-11-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Royal College of Speech and Language Therapists",
+        "dataset": "RCSLT Workforce Data",
+        "url": "https://www.rcslt.org/speech-and-language-therapy/",
+        "retrieved": "2025-11-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Community Services Statistics — SLT Referrals and Waiting Times",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/community-services-statistics",
+        "retrieved": "2025-11-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "School readiness figures are derived from EYFSP assessments at age 5 in England. Children are considered to have speech and language delays if they are rated as 'emerging' or below expected level in the Communication and Language Early Learning Goals. Waiting time data covers children on NHS SLT caseloads in England. Workforce FTE figures are from RCSLT membership data and NHS workforce statistics. Referral counts include all new referrals to NHS community speech and language therapy services in England.",
+    "knownIssues": [
+      "EYFSP assessments were not conducted in 2020 due to COVID-19; the 2020 figure is interpolated from 2019 and 2021 data",
+      "Waiting time methodology changed slightly in 2020 when some services moved to remote triage, which may undercount waits",
+      "Workforce FTE figures combine NHS and independent sector data and may include some double-counting of part-time therapists working across both"
+    ]
+  }
+}

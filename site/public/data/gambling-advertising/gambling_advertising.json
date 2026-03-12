@@ -1,0 +1,92 @@
+{
+  "topic": "gambling-advertising",
+  "lastUpdated": "2026-03-01",
+  "advertsPerWeek": [
+    { "year": 2014, "value": 2.3 },
+    { "year": 2015, "value": 2.7 },
+    { "year": 2016, "value": 3.0 },
+    { "year": 2017, "value": 3.5 },
+    { "year": 2018, "value": 4.0 },
+    { "year": 2019, "value": 4.2 },
+    { "year": 2020, "value": 3.8 },
+    { "year": 2021, "value": 4.1 },
+    { "year": 2022, "value": 4.4 },
+    { "year": 2023, "value": 4.7 },
+    { "year": 2024, "value": 4.5 },
+    { "year": 2025, "value": 4.3 }
+  ],
+  "targetedAdsRecognised": [
+    { "year": 2017, "value": 40 },
+    { "year": 2018, "value": 44 },
+    { "year": 2019, "value": 48 },
+    { "year": 2020, "value": 51 },
+    { "year": 2021, "value": 53 },
+    { "year": 2022, "value": 57 },
+    { "year": 2023, "value": 59 },
+    { "year": 2024, "value": 61 },
+    { "year": 2025, "value": 63 }
+  ],
+  "adSpendMillions": [
+    { "year": 2014, "value": 312 },
+    { "year": 2015, "value": 348 },
+    { "year": 2016, "value": 391 },
+    { "year": 2017, "value": 437 },
+    { "year": 2018, "value": 469 },
+    { "year": 2019, "value": 495 },
+    { "year": 2020, "value": 388 },
+    { "year": 2021, "value": 452 },
+    { "year": 2022, "value": 523 },
+    { "year": 2023, "value": 561 },
+    { "year": 2024, "value": 498 },
+    { "year": 2025, "value": 472 }
+  ],
+  "childExposureIndex": [
+    { "year": 2017, "value": 100 },
+    { "year": 2018, "value": 118 },
+    { "year": 2019, "value": 132 },
+    { "year": 2020, "value": 127 },
+    { "year": 2021, "value": 141 },
+    { "year": 2022, "value": 155 },
+    { "year": 2023, "value": 149 },
+    { "year": 2024, "value": 131 },
+    { "year": 2025, "value": 112 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Gambling Commission",
+        "dataset": "Gambling Participation and Advertising Statistics",
+        "url": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-behaviour-in-great-britain",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Advertising Standards Authority",
+        "dataset": "Gambling Advertising Monitoring Reports",
+        "url": "https://www.asa.org.uk/codes-and-rulings/advertising-codes.html",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Culture, Media and Sport",
+        "dataset": "Gambling Act Review: White Paper Evidence Pack",
+        "url": "https://www.gov.uk/government/publications/high-stakes-gambling-reform-for-the-digital-age",
+        "retrieved": "2026-01-20",
+        "frequency": "one-off (2023)"
+      },
+      {
+        "name": "Ofcom",
+        "dataset": "Children's Media Use and Attitudes Report",
+        "url": "https://www.ofcom.org.uk/research-and-data/media-literacy-research/childrens",
+        "retrieved": "2026-02-28",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Adverts per person per week is based on Gambling Commission survey data measuring self-reported exposure across TV, online, social media and outdoor advertising. Targeted ad recognition is from problem gambler cohort surveys. Ad spend figures are industry-reported to the Gambling Commission. Child exposure index is indexed to 2017=100 based on Ofcom monitoring of children's exposure to gambling advertising across all media.",
+    "knownIssues": [
+      "Self-reported ad exposure may undercount actual exposure, particularly for embedded social media advertising",
+      "Methodology for measuring online ad exposure changed in 2020, introducing a partial series break",
+      "Ad spend figures do not include affiliate marketing or sponsorship deals, which may account for 20-30% of total gambling marketing expenditure"
+    ]
+  }
+}

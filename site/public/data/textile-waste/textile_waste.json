@@ -1,0 +1,104 @@
+{
+  "topic": "textile-waste",
+  "lastUpdated": "2026-02-15",
+  "wastePerPerson": [
+    { "year": 2010, "kg": 18.2 },
+    { "year": 2011, "kg": 18.8 },
+    { "year": 2012, "kg": 19.3 },
+    { "year": 2013, "kg": 19.9 },
+    { "year": 2014, "kg": 20.4 },
+    { "year": 2015, "kg": 21.1 },
+    { "year": 2016, "kg": 22.0 },
+    { "year": 2017, "kg": 23.0 },
+    { "year": 2018, "kg": 23.5 },
+    { "year": 2019, "kg": 24.0 },
+    { "year": 2020, "kg": 22.8 },
+    { "year": 2021, "kg": 24.8 },
+    { "year": 2022, "kg": 25.5 },
+    { "year": 2023, "kg": 26.2 },
+    { "year": 2024, "kg": 26.8 }
+  ],
+  "recyclingRate": [
+    { "year": 2010, "pct": 48 },
+    { "year": 2011, "pct": 47 },
+    { "year": 2012, "pct": 46 },
+    { "year": 2013, "pct": 45 },
+    { "year": 2014, "pct": 44 },
+    { "year": 2015, "pct": 43 },
+    { "year": 2016, "pct": 42.5 },
+    { "year": 2017, "pct": 42 },
+    { "year": 2018, "pct": 42 },
+    { "year": 2019, "pct": 41 },
+    { "year": 2020, "pct": 38 },
+    { "year": 2021, "pct": 39 },
+    { "year": 2022, "pct": 37 },
+    { "year": 2023, "pct": 36 },
+    { "year": 2024, "pct": 35 }
+  ],
+  "landfillVsIncineration": [
+    { "year": 2010, "landfillPct": 62, "incinerationPct": 18, "exportPct": 20 },
+    { "year": 2011, "landfillPct": 59, "incinerationPct": 20, "exportPct": 21 },
+    { "year": 2012, "landfillPct": 56, "incinerationPct": 22, "exportPct": 22 },
+    { "year": 2013, "landfillPct": 52, "incinerationPct": 24, "exportPct": 24 },
+    { "year": 2014, "landfillPct": 48, "incinerationPct": 26, "exportPct": 26 },
+    { "year": 2015, "landfillPct": 44, "incinerationPct": 29, "exportPct": 27 },
+    { "year": 2016, "landfillPct": 40, "incinerationPct": 32, "exportPct": 28 },
+    { "year": 2017, "landfillPct": 37, "incinerationPct": 34, "exportPct": 29 },
+    { "year": 2018, "landfillPct": 34, "incinerationPct": 37, "exportPct": 29 },
+    { "year": 2019, "landfillPct": 31, "incinerationPct": 40, "exportPct": 29 },
+    { "year": 2020, "landfillPct": 30, "incinerationPct": 44, "exportPct": 26 },
+    { "year": 2021, "landfillPct": 28, "incinerationPct": 46, "exportPct": 26 },
+    { "year": 2022, "landfillPct": 26, "incinerationPct": 48, "exportPct": 26 },
+    { "year": 2023, "landfillPct": 24, "incinerationPct": 50, "exportPct": 26 },
+    { "year": 2024, "landfillPct": 22, "incinerationPct": 52, "exportPct": 26 }
+  ],
+  "fastFashionItems": [
+    { "year": 2010, "billionItems": 1.8 },
+    { "year": 2011, "billionItems": 1.9 },
+    { "year": 2012, "billionItems": 2.0 },
+    { "year": 2013, "billionItems": 2.1 },
+    { "year": 2014, "billionItems": 2.2 },
+    { "year": 2015, "billionItems": 2.4 },
+    { "year": 2016, "billionItems": 2.6 },
+    { "year": 2017, "billionItems": 2.8 },
+    { "year": 2018, "billionItems": 3.0 },
+    { "year": 2019, "billionItems": 3.2 },
+    { "year": 2020, "billionItems": 2.7 },
+    { "year": 2021, "billionItems": 3.4 },
+    { "year": 2022, "billionItems": 3.6 },
+    { "year": 2023, "billionItems": 3.8 },
+    { "year": 2024, "billionItems": 3.9 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "WRAP",
+        "dataset": "Textiles Market Situation Report",
+        "url": "https://wrap.org.uk/resources/report/textiles-market-situation-report-2024",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Defra",
+        "dataset": "UK Statistics on Waste",
+        "url": "https://www.gov.uk/government/statistics/uk-waste-data",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Environmental Audit Committee",
+        "dataset": "Fixing Fashion: Clothing Consumption and Sustainability",
+        "url": "https://publications.parliament.uk/pa/cm201719/cmselect/cmenvaud/1952/1952.pdf",
+        "retrieved": "2026-02-15",
+        "frequency": "one-off (2019)"
+      }
+    ],
+    "methodology": "Textile waste per person is estimated by WRAP using production, import/export, and waste composition data. Recycling rates include both charity donations and kerbside textile collection. Landfill vs incineration vs export splits are derived from Defra UK Statistics on Waste. Fast fashion items purchased is estimated from HMRC import data and UK retail sales figures compiled by WRAP. The 2020 dip in waste per person and items purchased reflects reduced retail activity during COVID-19 lockdowns.",
+    "knownIssues": [
+      "Textile waste estimates rely on waste composition analysis which is conducted infrequently — annual figures are partly modelled",
+      "Export data may undercount textiles shipped as 'mixed rags' or 'second-hand goods' to non-OECD countries",
+      "Recycling rate includes charity shop donations, many of which are re-exported rather than reused domestically",
+      "COVID-19 disrupted waste streams in 2020–2021 — direct year-on-year comparisons should be treated with caution"
+    ]
+  }
+}

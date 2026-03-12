@@ -1,0 +1,88 @@
+{
+  "girlsUptake": [
+    {"year": 2010, "percentage": 84.2},
+    {"year": 2011, "percentage": 86.1},
+    {"year": 2012, "percentage": 86.7},
+    {"year": 2013, "percentage": 86.0},
+    {"year": 2014, "percentage": 85.9},
+    {"year": 2015, "percentage": 87.4},
+    {"year": 2016, "percentage": 87.2},
+    {"year": 2017, "percentage": 86.9},
+    {"year": 2018, "percentage": 83.9},
+    {"year": 2019, "percentage": 79.8, "note": "COVID-19 disruption"},
+    {"year": 2020, "percentage": 76.7},
+    {"year": 2021, "percentage": 80.9},
+    {"year": 2022, "percentage": 82.6},
+    {"year": 2023, "percentage": 83.4},
+    {"year": 2024, "percentage": 84.1}
+  ],
+  "boysUptake": [
+    {"year": 2019, "percentage": 54.4, "note": "First year of boys programme"},
+    {"year": 2020, "percentage": 62.4},
+    {"year": 2021, "percentage": 69.7},
+    {"year": 2022, "percentage": 72.3},
+    {"year": 2023, "percentage": 74.1},
+    {"year": 2024, "percentage": 76.8}
+  ],
+  "cervicalCancerIncidence": [
+    {"year": 2010, "ratePer100k": 12.4},
+    {"year": 2011, "ratePer100k": 12.1},
+    {"year": 2012, "ratePer100k": 11.8},
+    {"year": 2013, "ratePer100k": 11.5},
+    {"year": 2014, "ratePer100k": 11.2},
+    {"year": 2015, "ratePer100k": 10.7},
+    {"year": 2016, "ratePer100k": 10.3},
+    {"year": 2017, "ratePer100k": 9.6},
+    {"year": 2018, "ratePer100k": 9.1},
+    {"year": 2019, "ratePer100k": 8.4},
+    {"year": 2020, "ratePer100k": 7.8},
+    {"year": 2021, "ratePer100k": 7.5},
+    {"year": 2022, "ratePer100k": 6.9},
+    {"year": 2023, "ratePer100k": 6.4},
+    {"year": 2024, "ratePer100k": 5.8}
+  ],
+  "byRegion": [
+    {"region": "North East", "girlsUptake": 88.2, "boysUptake": 80.1},
+    {"region": "North West", "girlsUptake": 86.5, "boysUptake": 78.4},
+    {"region": "Yorkshire & Humber", "girlsUptake": 85.9, "boysUptake": 77.8},
+    {"region": "East Midlands", "girlsUptake": 85.1, "boysUptake": 76.9},
+    {"region": "West Midlands", "girlsUptake": 83.7, "boysUptake": 75.2},
+    {"region": "East of England", "girlsUptake": 84.6, "boysUptake": 76.1},
+    {"region": "South East", "girlsUptake": 83.2, "boysUptake": 75.8},
+    {"region": "South West", "girlsUptake": 85.4, "boysUptake": 77.3},
+    {"region": "London", "girlsUptake": 78.9, "boysUptake": 70.4}
+  ],
+  "metadata": {
+    "topic": "hpv-vaccination",
+    "lastUpdated": "2025-11-15",
+    "sources": [
+      {
+        "name": "UK Health Security Agency (UKHSA)",
+        "dataset": "HPV Vaccination Coverage in Adolescents in England",
+        "url": "https://www.gov.uk/government/publications/hpv-vaccine-coverage-in-england",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Cancer Research UK / Office for National Statistics",
+        "dataset": "Cervical Cancer Incidence Statistics",
+        "url": "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/cervical-cancer/incidence",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "National Immunisation Programme Statistics",
+        "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/child-vaccinations/",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Girls uptake is measured as the proportion of Year 9 females who have completed the full HPV vaccination course (one dose since September 2023, previously two doses) by the end of the academic year. Boys uptake is measured on the same basis since the programme was extended to boys in September 2019. Cervical cancer incidence is age-standardised per 100,000 female population. Regional data is based on NHS England regional team boundaries.",
+    "knownIssues": [
+      "COVID-19 disrupted the school-based vaccination programme from March 2020; catch-up campaigns are ongoing",
+      "The move from a two-dose to one-dose schedule in September 2023 affects comparability with earlier years",
+      "London has persistently lower uptake, partly due to population mobility, school diversity, and consent return rates"
+    ]
+  }
+}

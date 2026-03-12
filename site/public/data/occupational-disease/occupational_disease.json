@@ -1,0 +1,143 @@
+{
+  "illHealthCases": [
+    {"year": 2010, "cases": 1200000},
+    {"year": 2011, "cases": 1150000},
+    {"year": 2012, "cases": 1100000},
+    {"year": 2013, "cases": 1050000},
+    {"year": 2014, "cases": 1200000},
+    {"year": 2015, "cases": 1300000},
+    {"year": 2016, "cases": 1300000},
+    {"year": 2017, "cases": 1400000},
+    {"year": 2018, "cases": 1400000},
+    {"year": 2019, "cases": 1440000},
+    {"year": 2020, "cases": 1590000},
+    {"year": 2021, "cases": 1700000},
+    {"year": 2022, "cases": 1750000},
+    {"year": 2023, "cases": 1800000}
+  ],
+  "daysLost": [
+    {"year": 2010, "days": 26800000},
+    {"year": 2011, "days": 27400000},
+    {"year": 2012, "days": 27000000},
+    {"year": 2013, "days": 27100000},
+    {"year": 2014, "days": 28200000},
+    {"year": 2015, "days": 30400000},
+    {"year": 2016, "days": 30700000},
+    {"year": 2017, "days": 31800000},
+    {"year": 2018, "days": 32700000},
+    {"year": 2019, "days": 32800000},
+    {"year": 2020, "days": 38800000},
+    {"year": 2021, "days": 36800000},
+    {"year": 2022, "days": 35200000},
+    {"year": 2023, "days": 35200000}
+  ],
+  "stressAnxietyDepression": [
+    {"year": 2010, "cases": 415000},
+    {"year": 2011, "cases": 400000},
+    {"year": 2012, "cases": 428000},
+    {"year": 2013, "cases": 440000},
+    {"year": 2014, "cases": 487000},
+    {"year": 2015, "cases": 488000},
+    {"year": 2016, "cases": 526000},
+    {"year": 2017, "cases": 595000},
+    {"year": 2018, "cases": 602000},
+    {"year": 2019, "cases": 614000},
+    {"year": 2020, "cases": 822000},
+    {"year": 2021, "cases": 914000},
+    {"year": 2022, "cases": 875000},
+    {"year": 2023, "cases": 900000}
+  ],
+  "musculoskeletalCases": [
+    {"year": 2010, "cases": 502000},
+    {"year": 2011, "cases": 481000},
+    {"year": 2012, "cases": 439000},
+    {"year": 2013, "cases": 421000},
+    {"year": 2014, "cases": 526000},
+    {"year": 2015, "cases": 539000},
+    {"year": 2016, "cases": 507000},
+    {"year": 2017, "cases": 469000},
+    {"year": 2018, "cases": 480000},
+    {"year": 2019, "cases": 498000},
+    {"year": 2020, "cases": 470000},
+    {"year": 2021, "cases": 473000},
+    {"year": 2022, "cases": 473000},
+    {"year": 2023, "cases": 473000}
+  ],
+  "fatalInjuries": [
+    {"year": 2010, "count": 152},
+    {"year": 2011, "count": 171},
+    {"year": 2012, "count": 148},
+    {"year": 2013, "count": 133},
+    {"year": 2014, "count": 142},
+    {"year": 2015, "count": 144},
+    {"year": 2016, "count": 137},
+    {"year": 2017, "count": 144},
+    {"year": 2018, "count": 147},
+    {"year": 2019, "count": 111},
+    {"year": 2020, "count": 142},
+    {"year": 2021, "count": 123},
+    {"year": 2022, "count": 135},
+    {"year": 2023, "count": 138}
+  ],
+  "costToEconomy": [
+    {"year": 2014, "billionGBP": 14.1},
+    {"year": 2015, "billionGBP": 14.9},
+    {"year": 2016, "billionGBP": 15.0},
+    {"year": 2017, "billionGBP": 15.6},
+    {"year": 2018, "billionGBP": 16.2},
+    {"year": 2019, "billionGBP": 16.2},
+    {"year": 2020, "billionGBP": 18.8},
+    {"year": 2021, "billionGBP": 20.7},
+    {"year": 2022, "billionGBP": 20.0},
+    {"year": 2023, "billionGBP": 20.7}
+  ],
+  "bySector": [
+    {"sector": "Human health & social work", "ratePerHundredThousand": 3240},
+    {"sector": "Education", "ratePerHundredThousand": 2830},
+    {"sector": "Public administration & defence", "ratePerHundredThousand": 2990},
+    {"sector": "Agriculture, forestry & fishing", "ratePerHundredThousand": 1810},
+    {"sector": "Construction", "ratePerHundredThousand": 1640},
+    {"sector": "Transportation & storage", "ratePerHundredThousand": 1520},
+    {"sector": "Manufacturing", "ratePerHundredThousand": 1230},
+    {"sector": "Accommodation & food services", "ratePerHundredThousand": 980}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Health and Safety Executive",
+        "dataset": "Health and safety at work: Summary statistics for Great Britain",
+        "url": "https://www.hse.gov.uk/statistics/overall/hssh2223.pdf",
+        "retrieved": "2025-11-30",
+        "frequency": "annual"
+      },
+      {
+        "name": "Health and Safety Executive",
+        "dataset": "Labour Force Survey — Self-reported work-related ill health",
+        "url": "https://www.hse.gov.uk/statistics/lfs/index.htm",
+        "retrieved": "2025-11-30",
+        "frequency": "annual"
+      },
+      {
+        "name": "Health and Safety Executive",
+        "dataset": "Costs to Great Britain of workplace injuries and new cases of work-related ill health",
+        "url": "https://www.hse.gov.uk/statistics/cost.htm",
+        "retrieved": "2025-11-30",
+        "frequency": "annual"
+      },
+      {
+        "name": "Health and Safety Executive",
+        "dataset": "RIDDOR — Reporting of Injuries, Diseases and Dangerous Occurrences",
+        "url": "https://www.hse.gov.uk/statistics/tables/ridind.xlsx",
+        "retrieved": "2025-11-30",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Self-reported work-related ill health data comes from the Labour Force Survey (LFS), a household survey of approximately 80,000 individuals per quarter. Cases are self-reported, which means they depend on respondents attributing illness to work. Days lost figures are also LFS-based. Fatal injury data comes from RIDDOR mandatory employer reports and is considered highly reliable. Cost estimates are modelled by HSE economists using a combination of direct costs (healthcare, lost output) and human costs (quality-adjusted life years lost). Sector rates are age-standardised to account for differing workforce demographics.",
+    "knownIssues": [
+      "LFS methodology changed in 2020 — move from face-to-face to telephone interviews may affect comparability",
+      "COVID-19 pandemic disrupted workplace patterns from 2020–2022; sharp rise in stress/anxiety cases partly reflects pandemic working conditions",
+      "Self-reported data may undercount occupational disease in sectors with high migrant worker populations",
+      "Cost estimates lag by approximately two years"
+    ]
+  }
+}

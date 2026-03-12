@@ -1,0 +1,75 @@
+{
+  "bngPermissions": [
+    {"year": 2019, "permissions": 0},
+    {"year": 2020, "permissions": 0},
+    {"year": 2021, "permissions": 0},
+    {"year": 2022, "permissions": 340},
+    {"year": 2023, "permissions": 1850},
+    {"year": 2024, "permissions": 8720},
+    {"year": 2025, "permissions": 12400}
+  ],
+  "biodiversityUnitsTraded": [
+    {"year": 2019, "units": 0},
+    {"year": 2020, "units": 0},
+    {"year": 2021, "units": 1200},
+    {"year": 2022, "units": 5400},
+    {"year": 2023, "units": 14800},
+    {"year": 2024, "units": 30200},
+    {"year": 2025, "units": 38000}
+  ],
+  "habitatCreatedHectares": [
+    {"year": 2019, "hectares": 0},
+    {"year": 2020, "hectares": 120},
+    {"year": 2021, "hectares": 480},
+    {"year": 2022, "hectares": 1350},
+    {"year": 2023, "hectares": 3200},
+    {"year": 2024, "hectares": 5870},
+    {"year": 2025, "hectares": 8450}
+  ],
+  "localAuthorityReadiness": [
+    {"year": 2022, "percentReady": 12},
+    {"year": 2023, "percentReady": 38},
+    {"year": 2024, "percentReady": 64},
+    {"year": 2025, "percentReady": 78}
+  ],
+  "creditPricePerUnit": [
+    {"year": 2021, "priceGBP": 15000},
+    {"year": 2022, "priceGBP": 22000},
+    {"year": 2023, "priceGBP": 28500},
+    {"year": 2024, "priceGBP": 35000},
+    {"year": 2025, "priceGBP": 42000}
+  ],
+  "metadata": {
+    "lastUpdated": "2026-02-15",
+    "sources": [
+      {
+        "name": "Natural England",
+        "dataset": "Biodiversity Net Gain statistics",
+        "url": "https://www.gov.uk/government/collections/biodiversity-net-gain",
+        "retrieved": "2026-02-15",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "DEFRA",
+        "dataset": "Biodiversity Metric outcomes monitoring",
+        "url": "https://www.gov.uk/guidance/biodiversity-net-gain",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Environment Bank / Habitat Bank Registry",
+        "dataset": "Biodiversity unit market transactions",
+        "url": "https://www.environmentbank.com",
+        "retrieved": "2026-01-20",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "BNG permission counts reflect planning applications with mandatory or voluntary biodiversity net gain conditions in England. Biodiversity units traded includes both statutory and voluntary market transactions recorded through the Natural England register and major habitat banks. Habitat hectares created covers new or restored habitat secured through BNG obligations with 30-year management plans. Local authority readiness is based on DEFRA survey of planning authorities. Credit prices are median transaction prices from Environment Bank and comparable registries.",
+    "knownIssues": [
+      "Pre-2024 data includes voluntary BNG adoptions only — mandatory requirement commenced February 2024 for major developments, February 2025 for small sites",
+      "Biodiversity unit quality and additionality remain contested — traded units may not compensate for locally irreplaceable habitats",
+      "30-year management obligation monitoring is not yet systematically tracked",
+      "Credit price data is indicative — market is illiquid and prices vary significantly by habitat type and geography"
+    ]
+  }
+}

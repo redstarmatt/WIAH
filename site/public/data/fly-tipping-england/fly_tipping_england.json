@@ -1,0 +1,87 @@
+{
+  "incidents": [
+    {"year": 2013, "total": 711000, "householdWastePct": 52},
+    {"year": 2014, "total": 852000, "householdWastePct": 53},
+    {"year": 2015, "total": 900000, "householdWastePct": 54},
+    {"year": 2016, "total": 936090, "householdWastePct": 55},
+    {"year": 2017, "total": 998000, "householdWastePct": 56},
+    {"year": 2018, "total": 1072000, "householdWastePct": 57},
+    {"year": 2019, "total": 1095000, "householdWastePct": 58},
+    {"year": 2020, "total": 1134000, "householdWastePct": 61},
+    {"year": 2021, "total": 1094000, "householdWastePct": 60},
+    {"year": 2022, "total": 1076000, "householdWastePct": 59},
+    {"year": 2023, "total": 1082000, "householdWastePct": 59}
+  ],
+  "clearanceCosts": [
+    {"year": 2013, "costMillions": 45.2},
+    {"year": 2014, "costMillions": 49.8},
+    {"year": 2015, "costMillions": 50.0},
+    {"year": 2016, "costMillions": 51.3},
+    {"year": 2017, "costMillions": 57.7},
+    {"year": 2018, "costMillions": 58.0},
+    {"year": 2019, "costMillions": 58.9},
+    {"year": 2020, "costMillions": 63.2},
+    {"year": 2021, "costMillions": 61.5},
+    {"year": 2022, "costMillions": 14.8},
+    {"year": 2023, "costMillions": 15.2}
+  ],
+  "enforcementActions": [
+    {"year": 2013, "fixedPenalties": 26300, "prosecutions": 2171},
+    {"year": 2014, "fixedPenalties": 33800, "prosecutions": 2215},
+    {"year": 2015, "fixedPenalties": 38000, "prosecutions": 1997},
+    {"year": 2016, "fixedPenalties": 46000, "prosecutions": 1823},
+    {"year": 2017, "fixedPenalties": 56000, "prosecutions": 1607},
+    {"year": 2018, "fixedPenalties": 65600, "prosecutions": 1450},
+    {"year": 2019, "fixedPenalties": 73000, "prosecutions": 1400},
+    {"year": 2020, "fixedPenalties": 58000, "prosecutions": 880},
+    {"year": 2021, "fixedPenalties": 72000, "prosecutions": 1020},
+    {"year": 2022, "fixedPenalties": 76000, "prosecutions": 1062},
+    {"year": 2023, "fixedPenalties": 78500, "prosecutions": 1085}
+  ],
+  "byWasteType": [
+    {"type": "Household waste", "pct": 59},
+    {"type": "Construction / demolition", "pct": 13},
+    {"type": "Commercial waste", "pct": 9},
+    {"type": "Black bags of waste", "pct": 7},
+    {"type": "Green waste", "pct": 5},
+    {"type": "White goods / electrical", "pct": 4},
+    {"type": "Vehicle parts / tyres", "pct": 2},
+    {"type": "Other", "pct": 1}
+  ],
+  "byRegion": [
+    {"region": "London", "incidentsPerThousand": 5.8},
+    {"region": "North West", "incidentsPerThousand": 4.6},
+    {"region": "West Midlands", "incidentsPerThousand": 4.3},
+    {"region": "Yorkshire and the Humber", "incidentsPerThousand": 3.9},
+    {"region": "North East", "incidentsPerThousand": 3.7},
+    {"region": "East Midlands", "incidentsPerThousand": 3.2},
+    {"region": "South East", "incidentsPerThousand": 2.8},
+    {"region": "South West", "incidentsPerThousand": 2.4},
+    {"region": "East of England", "incidentsPerThousand": 2.1}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "DEFRA",
+        "dataset": "Fly-tipping incidents and actions taken in England",
+        "url": "https://www.gov.uk/government/statistics/fly-tipping-in-england",
+        "retrieved": "2026-02-15",
+        "frequency": "annual",
+        "notes": "Figures cover local-authority-collected fly-tipping incidents in England only. Data for 2023/24 published October 2024."
+      },
+      {
+        "name": "Environment Agency",
+        "dataset": "Waste crime data",
+        "url": "https://www.gov.uk/government/publications/environment-agency-enforcement-and-sanctions-statement",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Incident counts are based on reports by local authorities in England. The definition of fly-tipping covers illegal deposit of waste on land. Clearance cost methodology changed in 2021/22 to measure direct clearance costs only, excluding investigation and enforcement costs — figures before and after 2021/22 are not directly comparable. Fixed penalty notice figures include those issued under Section 33 of the Environmental Protection Act 1990.",
+    "knownIssues": [
+      "Clearance cost methodology changed in 2021/22 — pre and post figures not directly comparable",
+      "Some local authorities have improved recording, inflating apparent increases",
+      "Private land fly-tipping is not systematically recorded"
+    ]
+  }
+}

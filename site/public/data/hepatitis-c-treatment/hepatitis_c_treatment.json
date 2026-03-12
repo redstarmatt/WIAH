@@ -1,0 +1,74 @@
+{
+  "treatmentStarts": [
+    {"year": 2015, "count": 7800},
+    {"year": 2016, "count": 12400},
+    {"year": 2017, "count": 21800},
+    {"year": 2018, "count": 19000},
+    {"year": 2019, "count": 14000},
+    {"year": 2020, "count": 10000},
+    {"year": 2021, "count": 10500},
+    {"year": 2022, "count": 11000},
+    {"year": 2023, "count": 11200},
+    {"year": 2024, "count": 12100},
+    {"year": 2025, "count": 12800}
+  ],
+  "undiagnosedEstimate": [
+    {"year": 2015, "count": 160000},
+    {"year": 2016, "count": 148000},
+    {"year": 2017, "count": 140000},
+    {"year": 2018, "count": 128000},
+    {"year": 2019, "count": 120000},
+    {"year": 2020, "count": 115000},
+    {"year": 2021, "count": 105000},
+    {"year": 2022, "count": 93000},
+    {"year": 2023, "count": 86000},
+    {"year": 2024, "count": 82000},
+    {"year": 2025, "count": 78000}
+  ],
+  "cureRate": [
+    {"year": 2015, "percent": 85},
+    {"year": 2016, "percent": 90},
+    {"year": 2017, "percent": 93},
+    {"year": 2018, "percent": 95},
+    {"year": 2019, "percent": 95},
+    {"year": 2020, "percent": 95},
+    {"year": 2021, "percent": 96},
+    {"year": 2022, "percent": 96},
+    {"year": 2023, "percent": 97},
+    {"year": 2024, "percent": 97},
+    {"year": 2025, "percent": 97}
+  ],
+  "metadata": {
+    "topic": "hepatitis-c-treatment",
+    "lastUpdated": "2026-02-15",
+    "sources": [
+      {
+        "name": "UK Health Security Agency (UKHSA)",
+        "dataset": "Hepatitis C in England and the UK",
+        "url": "https://www.gov.uk/government/publications/hepatitis-c-in-the-uk",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Hepatitis C Virus (HCV) Elimination Programme",
+        "url": "https://www.england.nhs.uk/publication/hepatitis-c-elimination/",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "World Health Organization",
+        "dataset": "Global Health Sector Strategy on Viral Hepatitis",
+        "url": "https://www.who.int/publications/i/item/9789241210003",
+        "retrieved": "2026-02-15",
+        "frequency": "periodic"
+      }
+    ],
+    "methodology": "Treatment starts are counted as the number of people commencing direct-acting antiviral (DAA) therapy in a given calendar year, as reported by NHS England's Hepatitis C Elimination Programme. Undiagnosed estimates are modelled by UKHSA using prevalence surveys, treatment data, and mortality adjustments. Cure rate reflects sustained virological response at 12 weeks (SVR12) from clinical audits.",
+    "knownIssues": [
+      "Treatment start figures for 2020-2021 were significantly affected by COVID-19 service disruptions",
+      "Undiagnosed estimates carry substantial uncertainty (±15%) due to reliance on modelling assumptions",
+      "Pre-2017 treatment data includes some interferon-based regimens with lower cure rates"
+    ]
+  }
+}
