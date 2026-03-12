@@ -1,1 +1,59 @@
-{"topic":"addiction-treatment-outcomes","lastUpdated":"2026-01-01","timeSeries":[{"year":2016,"successfulCompletionsPct":49.2,"drugDeaths":3744,"avgWaitWeeks":3.1},{"year":2017,"successfulCompletionsPct":48.6,"drugDeaths":3756,"avgWaitWeeks":3.3},{"year":2018,"successfulCompletionsPct":48.1,"drugDeaths":4359,"avgWaitWeeks":3.6},{"year":2019,"successfulCompletionsPct":47.9,"drugDeaths":4393,"avgWaitWeeks":3.8},{"year":2020,"successfulCompletionsPct":46.3,"drugDeaths":4561,"avgWaitWeeks":4.2},{"year":2021,"successfulCompletionsPct":46.0,"drugDeaths":4859,"avgWaitWeeks":4.0},{"year":2022,"successfulCompletionsPct":47.1,"drugDeaths":4907,"avgWaitWeeks":4.3},{"year":2023,"successfulCompletionsPct":47.4,"drugDeaths":4800,"avgWaitWeeks":4.1}]}
+{
+  "completionRates": [
+    {"year": 2014, "opiate": 28.1, "nonOpiate": 55.3, "alcohol": 61.2},
+    {"year": 2015, "opiate": 27.4, "nonOpiate": 54.8, "alcohol": 60.7},
+    {"year": 2016, "opiate": 26.8, "nonOpiate": 53.1, "alcohol": 59.3},
+    {"year": 2017, "opiate": 25.9, "nonOpiate": 51.7, "alcohol": 58.1},
+    {"year": 2018, "opiate": 25.1, "nonOpiate": 50.9, "alcohol": 57.6},
+    {"year": 2019, "opiate": 24.7, "nonOpiate": 50.2, "alcohol": 56.8},
+    {"year": 2020, "opiate": 23.8, "nonOpiate": 48.6, "alcohol": 54.1},
+    {"year": 2021, "opiate": 24.2, "nonOpiate": 49.8, "alcohol": 55.9},
+    {"year": 2022, "opiate": 24.9, "nonOpiate": 51.4, "alcohol": 57.2},
+    {"year": 2023, "opiate": 25.6, "nonOpiate": 52.7, "alcohol": 58.4},
+    {"year": 2024, "opiate": 26.3, "nonOpiate": 53.9, "alcohol": 59.1}
+  ],
+  "rePresentationRates": [
+    {"year": 2014, "opiate": 18.2, "nonOpiate": 22.7, "alcohol": 25.1},
+    {"year": 2015, "opiate": 19.1, "nonOpiate": 23.4, "alcohol": 25.8},
+    {"year": 2016, "opiate": 20.3, "nonOpiate": 24.1, "alcohol": 26.9},
+    {"year": 2017, "opiate": 21.6, "nonOpiate": 25.3, "alcohol": 27.4},
+    {"year": 2018, "opiate": 22.8, "nonOpiate": 26.7, "alcohol": 28.6},
+    {"year": 2019, "opiate": 23.4, "nonOpiate": 27.1, "alcohol": 29.2},
+    {"year": 2020, "opiate": 24.9, "nonOpiate": 28.8, "alcohol": 31.5},
+    {"year": 2021, "opiate": 24.1, "nonOpiate": 27.6, "alcohol": 30.1},
+    {"year": 2022, "opiate": 23.3, "nonOpiate": 26.2, "alcohol": 28.7},
+    {"year": 2023, "opiate": 22.1, "nonOpiate": 25.1, "alcohol": 27.3},
+    {"year": 2024, "opiate": 21.4, "nonOpiate": 24.3, "alcohol": 26.1}
+  ],
+  "housingOutcomes": [
+    {"year": 2014, "stableHousing": 72.3, "nfa": 8.1, "housingNeed": 19.6},
+    {"year": 2015, "stableHousing": 71.8, "nfa": 8.4, "housingNeed": 19.8},
+    {"year": 2016, "stableHousing": 70.2, "nfa": 9.1, "housingNeed": 20.7},
+    {"year": 2017, "stableHousing": 68.7, "nfa": 9.8, "housingNeed": 21.5},
+    {"year": 2018, "stableHousing": 67.1, "nfa": 10.6, "housingNeed": 22.3},
+    {"year": 2019, "stableHousing": 65.9, "nfa": 11.2, "housingNeed": 22.9},
+    {"year": 2020, "stableHousing": 63.4, "nfa": 12.8, "housingNeed": 23.8},
+    {"year": 2021, "stableHousing": 64.7, "nfa": 12.1, "housingNeed": 23.2},
+    {"year": 2022, "stableHousing": 66.3, "nfa": 11.3, "housingNeed": 22.4},
+    {"year": 2023, "stableHousing": 67.8, "nfa": 10.7, "housingNeed": 21.5},
+    {"year": 2024, "stableHousing": 69.1, "nfa": 10.2, "housingNeed": 20.7}
+  ],
+  "drugDeaths": [
+    {"year": 2014, "count": 3346},
+    {"year": 2015, "count": 3674},
+    {"year": 2016, "count": 3744},
+    {"year": 2017, "count": 3756},
+    {"year": 2018, "count": 4359},
+    {"year": 2019, "count": 4393},
+    {"year": 2020, "count": 4561},
+    {"year": 2021, "count": 4859},
+    {"year": 2022, "count": 4907},
+    {"year": 2023, "count": 4832},
+    {"year": 2024, "count": 4907}
+  ],
+  "overallCompletion": {
+    "latest": 48.2,
+    "previous": 46.8,
+    "year": 2024
+  }
+}

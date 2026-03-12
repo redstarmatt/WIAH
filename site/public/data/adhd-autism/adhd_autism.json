@@ -1,50 +1,98 @@
 {
-  "national": {
-    "autismWaiting": {
-      "timeSeries": [
-        {"year": 2016, "waitingThousands": 65},
-        {"year": 2017, "waitingThousands": 72},
-        {"year": 2018, "waitingThousands": 81},
-        {"year": 2019, "waitingThousands": 92},
-        {"year": 2020, "waitingThousands": 98},
-        {"year": 2021, "waitingThousands": 128},
-        {"year": 2022, "waitingThousands": 158},
-        {"year": 2023, "waitingThousands": 187}
-      ],
-      "latestYear": 2023,
-      "latestThousands": 187,
-      "avgWaitMonths": 36
-    },
-    "adhdReferrals": {
-      "timeSeries": [
-        {"year": 2018, "referralsThousands": 40},
-        {"year": 2019, "referralsThousands": 45},
-        {"year": 2020, "referralsThousands": 52},
-        {"year": 2021, "referralsThousands": 85},
-        {"year": 2022, "referralsThousands": 140},
-        {"year": 2023, "referralsThousands": 200}
-      ],
-      "latestYear": 2023,
-      "latestThousands": 200,
-      "avgWaitMonths": 42
-    },
-    "byAgeGroup": [
-      {"ageGroup": "Children (CAMHS)", "avgWaitMonths": 24},
-      {"ageGroup": "Young adults (18-25)", "avgWaitMonths": 42},
-      {"ageGroup": "Adults (25-49)", "avgWaitMonths": 54},
-      {"ageGroup": "Adults (50+)", "avgWaitMonths": 60}
-    ]
-  },
+  "autismWaitingList": [
+    {"year": 2016, "waiting": 54000},
+    {"year": 2017, "waiting": 66000},
+    {"year": 2018, "waiting": 79000},
+    {"year": 2019, "waiting": 96000},
+    {"year": 2020, "waiting": 107000},
+    {"year": 2021, "waiting": 125000},
+    {"year": 2022, "waiting": 143000},
+    {"year": 2023, "waiting": 172000},
+    {"year": 2024, "waiting": 187000}
+  ],
+  "adhdReferrals": [
+    {"year": 2018, "referrals": 80000},
+    {"year": 2019, "referrals": 97000},
+    {"year": 2020, "referrals": 85000, "note": "COVID-19 disruption"},
+    {"year": 2021, "referrals": 118000},
+    {"year": 2022, "referrals": 148000},
+    {"year": 2023, "referrals": 179000},
+    {"year": 2024, "referrals": 200000}
+  ],
+  "averageWaitByRegion": [
+    {"year": 2018, "region": "London", "months": 14},
+    {"year": 2019, "region": "London", "months": 17},
+    {"year": 2020, "region": "London", "months": 19},
+    {"year": 2021, "region": "London", "months": 22},
+    {"year": 2022, "region": "London", "months": 26},
+    {"year": 2023, "region": "London", "months": 30},
+    {"year": 2024, "region": "London", "months": 33},
+    {"year": 2018, "region": "North West", "months": 18},
+    {"year": 2019, "region": "North West", "months": 21},
+    {"year": 2020, "region": "North West", "months": 24},
+    {"year": 2021, "region": "North West", "months": 28},
+    {"year": 2022, "region": "North West", "months": 33},
+    {"year": 2023, "region": "North West", "months": 38},
+    {"year": 2024, "region": "North West", "months": 42},
+    {"year": 2018, "region": "South East", "months": 12},
+    {"year": 2019, "region": "South East", "months": 15},
+    {"year": 2020, "region": "South East", "months": 17},
+    {"year": 2021, "region": "South East", "months": 20},
+    {"year": 2022, "region": "South East", "months": 23},
+    {"year": 2023, "region": "South East", "months": 27},
+    {"year": 2024, "region": "South East", "months": 30},
+    {"year": 2018, "region": "West Midlands", "months": 16},
+    {"year": 2019, "region": "West Midlands", "months": 19},
+    {"year": 2020, "region": "West Midlands", "months": 22},
+    {"year": 2021, "region": "West Midlands", "months": 26},
+    {"year": 2022, "region": "West Midlands", "months": 31},
+    {"year": 2023, "region": "West Midlands", "months": 36},
+    {"year": 2024, "region": "West Midlands", "months": 40},
+    {"year": 2018, "region": "North East", "months": 20},
+    {"year": 2019, "region": "North East", "months": 24},
+    {"year": 2020, "region": "North East", "months": 27},
+    {"year": 2021, "region": "North East", "months": 31},
+    {"year": 2022, "region": "North East", "months": 36},
+    {"year": 2023, "region": "North East", "months": 42},
+    {"year": 2024, "region": "North East", "months": 46},
+    {"year": 2018, "region": "National average", "months": 16},
+    {"year": 2019, "region": "National average", "months": 19},
+    {"year": 2020, "region": "National average", "months": 22},
+    {"year": 2021, "region": "National average", "months": 25},
+    {"year": 2022, "region": "National average", "months": 29},
+    {"year": 2023, "region": "National average", "months": 34},
+    {"year": 2024, "region": "National average", "months": 37}
+  ],
   "metadata": {
     "sources": [
-      {"name": "NHS England", "dataset": "Autism Waiting Times Statistics", "url": "https://www.england.nhs.uk/learning-disabilities/improving-health/autism/autism-waiting-times/", "frequency": "quarterly"},
-      {"name": "NHS Digital", "dataset": "Mental Health Services Dataset", "url": "https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/mental-health-data-hub/mental-health-services-dataset", "frequency": "monthly"}
+      {
+        "name": "NHS Digital",
+        "dataset": "Mental Health Services Dataset (MHSDS)",
+        "url": "https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/mental-health-data-hub/mental-health-services-dataset",
+        "retrieved": "2026-03-01",
+        "frequency": "monthly"
+      },
+      {
+        "name": "NICE",
+        "dataset": "Autism spectrum disorder in adults: diagnosis and management (CG142)",
+        "url": "https://www.nice.org.uk/guidance/cg142",
+        "retrieved": "2026-03-01",
+        "frequency": "as updated"
+      },
+      {
+        "name": "National Audit Office",
+        "dataset": "Services for people with autism",
+        "url": "https://www.nao.org.uk/reports/services-for-people-with-autism/",
+        "retrieved": "2026-03-01",
+        "frequency": "ad hoc"
+      }
     ],
-    "methodology": "Autism waiting time data from NHS England Autism Waiting Times collection, measuring those waiting for an autism diagnostic assessment by NHS-commissioned services. ADHD referral data is estimated from NHS Digital Mental Health Services Dataset and is approximate, as ADHD is not separately reported in all pathways. Average wait times are illustrative estimates based on ICS reporting.",
+    "methodology": "Autism waiting list figures derived from NHS Digital MHSDS referral-to-treatment data. ADHD referral counts based on MHSDS new referrals with suspected ADHD recorded as primary reason. Regional wait times represent median months from referral to first diagnostic appointment across NHS trusts. Some trusts do not report consistently; figures are best estimates from available returns.",
     "knownIssues": [
-      "ADHD waiting times are not formally collected nationally — figures are estimates from regional data and freedom of information requests",
-      "The autism waiting times standard (under 13 weeks) was abolished in 2019, so comparison over time is complex",
-      "Private diagnosis figures are not included — an estimated 300,000 private ADHD assessments took place in 2023"
+      "MHSDS data completeness varies by trust — some ICBs underreport",
+      "Private diagnosis numbers are not captured in NHS data",
+      "ADHD was not consistently coded as a primary referral reason before 2018",
+      "COVID-19 disrupted both referral volumes and diagnostic capacity in 2020-21"
     ]
   }
 }

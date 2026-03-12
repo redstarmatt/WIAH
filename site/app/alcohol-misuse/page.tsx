@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
@@ -22,15 +22,16 @@ interface HospitalAdmissionPoint {
   admissions: number;
 }
 
-interface ByCauseItem {
-  cause: string;
-  pct: number;
+interface TreatmentPoint {
+  year: number;
+  inTreatment: number;
+  estimatedDependent: number;
 }
 
-interface AlcoholData {
+interface AlcoholMisuseData {
   alcoholDeaths: AlcoholDeathPoint[];
   hospitalAdmissions: HospitalAdmissionPoint[];
-  byCause: ByCauseItem[];
+  treatmentVsNeed: TreatmentPoint[];
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -39,10 +40,14 @@ function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
 
+function sparkFrom(arr: number[], n = 10) {
+  return arr.slice(-n);
+}
+
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function AlcoholMisusePage() {
-  const [data, setData] = useState<AlcoholData | null>(null);
+  const [data, setData] = useState<AlcoholMisuseData | null>(null);
 
   useEffect(() => {
     fetch('/data/alcohol-misuse/alcohol_misuse.json')
@@ -55,237 +60,207 @@ export default function AlcoholMisusePage() {
 
   const deathsSeries: Series[] = data
     ? [{
-        id: 'deaths',
+        id: 'alcohol-deaths',
         label: 'Alcohol-specific deaths',
+        colour: '#E63946',
         data: data.alcoholDeaths.map(d => ({
           date: yearToDate(d.year),
           value: d.deaths,
         })),
-        colour: '#6B7280',
       }]
     : [];
 
-  const deathsAnnotations: Annotation[] = [
-    { date: yearToDate(2021), label: 'Record: 9,641' },
-  ];
-
   const admissionsSeries: Series[] = data
     ? [{
-        id: 'admissions',
-        label: 'Hospital admissions',
+        id: 'hospital-admissions',
+        label: 'Hospital admissions (alcohol-related)',
+        colour: '#E63946',
         data: data.hospitalAdmissions.map(d => ({
           date: yearToDate(d.year),
           value: d.admissions,
         })),
-        colour: '#6B7280',
       }]
     : [];
 
-  // Sparkline data for metrics
-  const deathsSparkline = data
-    ? data.alcoholDeaths.map(d => d.deaths)
+  const treatmentSeries: Series[] = data
+    ? [
+        {
+          id: 'in-treatment',
+          label: 'In treatment',
+          colour: '#2A9D8F',
+          data: data.treatmentVsNeed.map(d => ({
+            date: yearToDate(d.year),
+            value: d.inTreatment,
+          })),
+        },
+        {
+          id: 'estimated-dependent',
+          label: 'Estimated dependent drinkers',
+          colour: '#E63946',
+          data: data.treatmentVsNeed.map(d => ({
+            date: yearToDate(d.year),
+            value: d.estimatedDependent,
+          })),
+        },
+      ]
     : [];
 
-  const admissionsSparkline = data
-    ? data.hospitalAdmissions.map(d => d.admissions / 100000)
-    : [];
+  const latestDeaths = data?.alcoholDeaths[data.alcoholDeaths.length - 1];
+  const preCovidDeaths = data?.alcoholDeaths.find(d => d.year === 2019);
+  const latestAdmissions = data?.hospitalAdmissions[data.hospitalAdmissions.length - 1];
+  const latestTreatment = data?.treatmentVsNeed[data.treatmentVsNeed.length - 1];
+
+  const deathsChangeFromPreCovid = latestDeaths && preCovidDeaths
+    ? Math.round(((latestDeaths.deaths - preCovidDeaths.deaths) / preCovidDeaths.deaths) * 100)
+    : 20;
+
+  const treatmentPct = latestTreatment
+    ? Math.round((latestTreatment.inTreatment / latestTreatment.estimatedDependent) * 100)
+    : 18;
 
   return (
-    <main>
-      <TopicNav topic="Alcohol Misuse" />
-      <SectionNav sections={[
-        { id: 'sec-overview', label: 'Overview' },
-        { id: 'sec-context', label: 'Context' },
+    <>
+      <TopicNav topic="Mental Health" />
 
-        { id: 'sec-charts', label: 'Charts' },
-        { id: 'sec-sources', label: 'Sources' },
-      ]} />
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Mental Health"
+          question="How bad is Britain's drinking problem?"
+          finding="Alcohol-specific deaths surged 20% during the pandemic and have barely fallen back. Around 900,000 hospital admissions each year are linked to alcohol, yet only 18% of dependent drinkers are in treatment — a gap that has widened as local authority budgets were cut."
+          colour="#6B7280"
+        />
 
-      {/* Hero section */}
-      <section className="bg-white px-6 pt-6 pb-12 md:pb-16">
-        <div className="max-w-3xl mx-auto">
-          <TopicHeader
-            topic="Alcohol Misuse"
-            colour="#6B7280"
-            question="How much is alcohol actually killing us?"
-            finding="Alcohol-specific deaths in the UK reached a record 9,641 in 2021 and hospital admissions have risen to over 900,000 a year, costing the NHS £3.5 billion — yet alcohol duty has fallen in real terms for a decade."
+        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>
+              The COVID-19 pandemic did not create Britain&apos;s alcohol problem, but it accelerated it dramatically. Between 2019 and 2021, alcohol-specific deaths in England and Wales jumped from 7,565 to 9,641 — a 27% increase in just two years. The pattern was stark: those who were already heavy drinkers drank more, while moderate drinkers generally cut back. Lockdowns removed the social scaffolding — work routines, pub closing times, the presence of colleagues — that had previously kept consumption in check for many people. Three years on, deaths have barely retreated from their pandemic peak. In 2024, 9,048 people died from causes wholly attributable to alcohol — still 20% above pre-pandemic levels. Most of these deaths are from alcoholic liver disease, a condition that typically takes 10–20 years of heavy drinking to develop, meaning today&apos;s death toll reflects drinking patterns established a decade or more ago. The surge in deaths during COVID suggests an even grimmer toll is coming.
+            </p>
+            <p>
+              The treatment gap is the most damning statistic. An estimated 615,000 adults in England are dependent drinkers — people for whom alcohol has become a physiological need, not a lifestyle choice. Of those, only around 113,200 (roughly 18%) are currently in structured treatment. This is not because treatment does not work: NICE estimates that every pound spent on alcohol treatment saves five pounds in NHS, criminal justice and welfare costs. The gap exists because local authority public health budgets, which fund alcohol services, were cut by 24% in real terms between 2015 and 2021. Many areas now have waiting lists of three months or more for community alcohol services. The deprivation gradient is brutal: alcohol-specific death rates in the most deprived areas of England are 3.5 times higher than in the least deprived. People in poorer areas do not necessarily drink more, but they die more — a phenomenon researchers call the &ldquo;alcohol harm paradox,&rdquo; driven by co-occurring poverty, poor diet, smoking, and reduced access to healthcare.
+            </p>
+            <p>
+              Scotland&apos;s introduction of minimum unit pricing (MUP) at 50p per unit in May 2018 — raised to 65p in September 2024 — offers the clearest natural experiment in UK alcohol policy. Public Health Scotland&apos;s evaluation found that MUP reduced alcohol-specific deaths by an estimated 13.4% and alcohol-related hospital admissions by 4.1% in its first three years, with the largest reductions among men and people living in the most deprived areas. The affordability of alcohol in England, by contrast, has improved: alcohol is 74% more affordable today than it was in 1987, measured against average earnings. The Dry January movement, now in its eleventh year, saw 8.9 million participants in 2025 — evidence of widespread public appetite for cultural change even in the absence of policy action. But individual willpower cannot substitute for population-level measures. The evidence from Scotland is clear: price floors save lives, and they save the most lives in the communities with the least.
+            </p>
+          </div>
+        </section>
+
+        <SectionNav sections={[
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-deaths', label: 'Alcohol deaths' },
+          { id: 'sec-admissions', label: 'Hospital admissions' },
+          { id: 'sec-treatment', label: 'Treatment gap' },
+        ]} />
+
+        {/* Metric cards */}
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <MetricCard
+            label="Alcohol-specific deaths"
+            value={latestDeaths ? latestDeaths.deaths.toLocaleString() : '9,048'}
+            unit="2024"
+            direction="up"
+            polarity="up-is-bad"
+            changeText={`+${deathsChangeFromPreCovid}% vs pre-COVID · surged during pandemic · alcoholic liver disease leading cause`}
+            sparklineData={
+              data ? sparkFrom(data.alcoholDeaths.map(d => d.deaths)) : []
+            }
+            source="ONS · Alcohol-specific deaths, England and Wales, 2024"
+            href="#sec-deaths"
+          />
+          <MetricCard
+            label="Hospital admissions (alcohol-related)"
+            value={latestAdmissions ? (latestAdmissions.admissions / 1000).toFixed(0) + 'K' : '900K'}
+            unit="per year"
+            direction="up"
+            polarity="up-is-bad"
+            changeText="Broad measure · up 31% since 2012 · includes A&E attendances, liver disease, mental health"
+            sparklineData={
+              data ? sparkFrom(data.hospitalAdmissions.map(d => d.admissions)) : []
+            }
+            source="NHS Digital · Statistics on Alcohol, England, 2024"
+            href="#sec-admissions"
+          />
+          <MetricCard
+            label="Dependent drinkers in treatment"
+            value={`${treatmentPct}%`}
+            unit="of estimated need"
+            direction="down"
+            polarity="down-is-bad"
+            changeText={
+              latestTreatment
+                ? `${latestTreatment.inTreatment.toLocaleString()} in treatment of ~${(latestTreatment.estimatedDependent / 1000).toFixed(0)}K dependent · funding cuts drove decline`
+                : '113,200 in treatment of ~615K dependent'
+            }
+            sparklineData={
+              data ? sparkFrom(data.treatmentVsNeed.map(d => Math.round((d.inTreatment / d.estimatedDependent) * 100))) : []
+            }
+            source="OHID · Adult substance misuse treatment statistics, 2024"
+            href="#sec-treatment"
           />
         </div>
-      </section>
 
-      {/* Metrics row */}
-      <section id="sec-overview" className="bg-wiah-light px-6 py-12">
-        <div className="max-w-3xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <MetricCard
-              label="Alcohol-specific deaths (2022)"
-              value="9,048"
-              unit=""
-              changeText="Near record; 75% from liver disease"
-              direction="up"
-              polarity="up-is-bad"
-              sparklineData={deathsSparkline}
-              href="#sec-context"/>
-            <MetricCard
-              label="Alcohol-related hospital admissions"
-              value="900,000"
-              unit="/yr"
-              changeText="1 in 14 emergency admissions"
-              direction="up"
-              polarity="up-is-bad"
-              sparklineData={admissionsSparkline}
-              href="#sec-sources"/>
-            <MetricCard
-              label="Economic cost of alcohol harm"
-              value="£27.4bn"
-              unit="/yr"
-              changeText="Includes NHS, crime, lost productivity"
-              direction="up"
-              polarity="up-is-bad"
-              sparklineData={[20, 21, 22, 23, 24, 25, 26, 27.4]}
-              href="#sec-sources"/>
+        {/* Chart 1: Alcohol-specific deaths */}
+        <ScrollReveal>
+          <div id="sec-deaths" className="mb-12">
+            <LineChart
+              series={deathsSeries}
+              title="Alcohol-specific deaths, England and Wales, 2012–2024"
+              subtitle="Deaths from causes wholly attributable to alcohol. Pandemic surge has barely retreated."
+              yLabel="Deaths"
+              source={{
+                name: 'ONS',
+                dataset: 'Alcohol-specific deaths in the UK',
+                frequency: 'annual',
+              }}
+            />
           </div>
-        </div>
-      </section>
+        </ScrollReveal>
 
-      {/* Charts section */}
-      <section id="sec-context" className="bg-wiah-light px-6 py-12">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-wiah-black mb-6">The Context</h2>
-          <div className="max-w-2xl mt-4 mb-12">
-            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Alcohol-specific deaths reached a record 9,641 in 2021, driven by a sharp rise during COVID-19 lockdowns when disrupted treatment services and increased home drinking combined to lethal effect. The figure fell to 9,048 in 2022 but remains well above pre-pandemic levels; three-quarters of these deaths are attributable to alcoholic liver disease, almost entirely preventable. Hospital admissions attributed to alcohol run at approximately one million per year, alcohol duty was frozen or cut between 2012 and 2022, and England has no minimum unit pricing. Scotland introduced a 50p minimum unit price in May 2018 — Public Health Scotland's evaluation found a 13.4% reduction in alcohol-specific deaths relative to a synthetic control, with the mechanism targeting cheap, strong products disproportionately consumed by hazardous drinkers. Wales followed in 2020. England has not.</p>
-              <p>The burden falls hardest on the most deprived. People in the most deprived areas of England die from alcohol-specific causes at roughly twice the rate of those in the least deprived; men are twice as likely to die as women. These patterns reflect stress, access to treatment, and the accumulated disadvantage of communities with hollowed-out public health infrastructure. The total economic cost of alcohol harm — NHS, criminal justice, lost productivity — is estimated at £27.4 billion annually. England's refusal to adopt minimum unit pricing while Scotland's five-year evaluation data accumulates represents an explicit policy choice to accept preventable deaths rather than constrain the drinks industry's pricing freedom.</p>
-            </div>
+        {/* Chart 2: Hospital admissions */}
+        <ScrollReveal>
+          <div id="sec-admissions" className="mb-12">
+            <LineChart
+              series={admissionsSeries}
+              title="Alcohol-related hospital admissions, England, 2012–2024"
+              subtitle="Broad measure including all admissions where an alcohol-related condition was recorded."
+              yLabel="Admissions"
+              source={{
+                name: 'NHS Digital',
+                dataset: 'Statistics on Alcohol, England',
+                frequency: 'annual',
+              }}
+            />
           </div>
+        </ScrollReveal>
 
-          {/* Positive callout */}
+        {/* Chart 3: Treatment gap */}
+        <ScrollReveal>
+          <div id="sec-treatment" className="mb-12">
+            <LineChart
+              series={treatmentSeries}
+              title="Alcohol treatment numbers vs estimated dependent drinkers, England, 2012–2024"
+              subtitle="Only ~18% of dependent drinkers receive structured treatment. The gap widened as budgets were cut."
+              yLabel="People"
+              source={{
+                name: 'OHID',
+                dataset: 'Adult substance misuse treatment statistics',
+                frequency: 'annual',
+              }}
+            />
+          </div>
+        </ScrollReveal>
+
+        {/* Positive callout */}
+        <ScrollReveal>
           <PositiveCallout
-            title="Scotland's minimum unit pricing cut alcohol deaths"
-            value="13.4%"
-            unit="reduction"
-            description="Scotland introduced a minimum unit price for alcohol of 50p/unit in May 2018 — the first such policy in the world. Five-year evaluation data shows alcohol-specific deaths fell 13.4% in Scotland compared to a 4.3% rise in England and Wales over the same period. Wales introduced MUP in 2020. The UK government has not adopted it for England."
-            source="Public Health Scotland, Scottish National Drinking Survey. Retrieved 2025-03-04."
+            title="Scotland's minimum unit pricing is saving lives"
+            value="13.4% fewer deaths"
+            description="Scotland introduced minimum unit pricing (MUP) at 50p per unit in May 2018, raised to 65p in September 2024. Public Health Scotland's evaluation found MUP reduced alcohol-specific deaths by an estimated 13.4% and hospital admissions by 4.1% in its first three years, with the greatest impact in the most deprived communities. Meanwhile, the Dry January campaign has grown from a niche initiative to 8.9 million participants in 2025 — evidence that public appetite for change is running ahead of policy in England, where no equivalent pricing measure has been introduced."
+            source="Source: Public Health Scotland — Evaluating the impact of MUP, 2023. Alcohol Change UK — Dry January 2025 report."
           />
-        </div>
-      </section>
+        </ScrollReveal>
 
-      {/* Sources section */}
-      <section id="sec-charts" className="bg-white px-6 py-12">
-        <div className="max-w-3xl mx-auto">
-          {/* Chart 1: Deaths */}
-          <ScrollReveal>
-            <div className="h-72 mb-12">
-              {deathsSeries.length > 0 ? (
-                <LineChart
-                  title="Alcohol-specific deaths, UK"
-                  subtitle="Deaths directly attributable to alcohol consumption. ONS Alcohol-specific Deaths data."
-                  series={deathsSeries}
-                  annotations={deathsAnnotations}
-                  yLabel="Deaths"
-                  source={{
-                    name: 'Office for National Statistics',
-                    dataset: 'Deaths involving alcohol',
-                    frequency: 'annual',
-                    url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies/datasets/deathsinvolvingalcoholregisteredineachcountyandenglandandwales',
-                  }}
-                />
-              ) : (
-                <div className="h-full bg-wiah-light rounded animate-pulse" />
-              )}
-            </div>
-          </ScrollReveal>
-
-          {/* Chart 2: Admissions */}
-          <ScrollReveal>
-            <div className="h-72 mb-12">
-              {admissionsSeries.length > 0 ? (
-                <LineChart
-                  title="Alcohol-related hospital admissions, England"
-                  subtitle="Annual admissions where alcohol is the primary cause. NHS Digital."
-                  series={admissionsSeries}
-                  yLabel="Admissions"
-                  source={{
-                    name: 'NHS Digital',
-                    dataset: 'Hospital Admitted Patient Care Activity',
-                    frequency: 'annual',
-                    url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity',
-                  }}
-                />
-              ) : (
-                <div className="h-full bg-wiah-light rounded animate-pulse" />
-              )}
-            </div>
-          </ScrollReveal>
-
-          {/* Chart 3: Deaths by cause */}
-          {data && data.byCause.length > 0 && (
-            <ScrollReveal>
-              <div className="mb-12">
-                <h3 className="text-lg font-bold text-wiah-black mb-1">
-                  Alcohol-specific deaths by cause
-                </h3>
-                <p className="text-sm text-wiah-mid font-mono mb-6">
-                  Percentage of alcohol-specific deaths by primary cause, 2022.
-                </p>
-                <div className="space-y-4">
-                  {data.byCause.map((item) => {
-                    const barWidth = (item.pct / 80) * 100;
-                    return (
-                      <div key={item.cause}>
-                        <div className="flex justify-between items-baseline mb-1">
-                          <span className="text-sm text-wiah-black font-medium">{item.cause}</span>
-                          <span className="text-sm font-mono text-wiah-mid">{item.pct}%</span>
-                        </div>
-                        <div className="h-2 bg-wiah-light rounded overflow-hidden">
-                          <div
-                            className="h-full rounded"
-                            style={{
-                              width: `${barWidth}%`,
-                              backgroundColor: '#6B7280',
-                            }}
-                          />
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                <p className="font-mono text-[11px] text-wiah-mid mt-6">
-                  Source: Office for National Statistics, Deaths involving alcohol. Retrieved 2025-03-04.
-                </p>
-              </div>
-            </ScrollReveal>
-          )}
-        </div>
-      </section>
-
-      {/* Context section */}
-      <section id="sec-sources" className="bg-white px-6 py-12">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-wiah-black mb-6">Sources &amp; Methodology</h2>
-          <div className="space-y-4 text-sm">
-            <div>
-              <h3 className="font-bold text-wiah-black mb-1">Deaths involving alcohol</h3>
-              <p className="text-wiah-mid font-mono text-xs mb-2">
-                Office for National Statistics, Annual data, Retrieved 2025-03-04
-              </p>
-              <p className="text-wiah-black">
-                Annual count of deaths registered in the UK where alcohol is the underlying cause. Includes ICD-10 codes F10, K70, K73, K74, K86, X45, X65, Y15.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-bold text-wiah-black mb-1">Hospital admissions</h3>
-              <p className="text-wiah-mid font-mono text-xs mb-2">
-                NHS Digital, Hospital Admitted Patient Care Activity, Annual data, Retrieved 2025-03-04
-              </p>
-              <p className="text-wiah-black">
-                Count of admissions with a primary diagnosis of alcohol-related condition. Includes alcohol-specific diagnoses and mental/behavioural disorders due to alcohol use.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-            <RelatedTopics />
+        <RelatedTopics />
       </main>
+    </>
   );
 }

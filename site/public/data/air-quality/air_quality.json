@@ -1,68 +1,53 @@
 {
-  "national": {
-    "pm25": {
-      "timeSeries": [
-        {"year": 2010, "annualMeanUgM3": 12.1},
-        {"year": 2011, "annualMeanUgM3": 11.8},
-        {"year": 2012, "annualMeanUgM3": 11.2},
-        {"year": 2013, "annualMeanUgM3": 11.5},
-        {"year": 2014, "annualMeanUgM3": 10.8},
-        {"year": 2015, "annualMeanUgM3": 10.5},
-        {"year": 2016, "annualMeanUgM3": 10.2},
-        {"year": 2017, "annualMeanUgM3": 9.8},
-        {"year": 2018, "annualMeanUgM3": 9.6},
-        {"year": 2019, "annualMeanUgM3": 9.2},
-        {"year": 2020, "annualMeanUgM3": 8.1},
-        {"year": 2021, "annualMeanUgM3": 8.8},
-        {"year": 2022, "annualMeanUgM3": 8.5},
-        {"year": 2023, "annualMeanUgM3": 8.2},
-        {"year": 2024, "annualMeanUgM3": 7.2}
-      ],
-      "latestYear": 2024,
-      "latestMean": 7.2,
-      "whoLimit": 5,
-      "ukLimit": 12
-    },
-    "no2": {
-      "timeSeries": [
-        {"year": 2010, "annualMeanUgM3": 48.2},
-        {"year": 2011, "annualMeanUgM3": 46.8},
-        {"year": 2012, "annualMeanUgM3": 45.5},
-        {"year": 2013, "annualMeanUgM3": 44.2},
-        {"year": 2014, "annualMeanUgM3": 43.0},
-        {"year": 2015, "annualMeanUgM3": 41.5},
-        {"year": 2016, "annualMeanUgM3": 40.0},
-        {"year": 2017, "annualMeanUgM3": 38.5},
-        {"year": 2018, "annualMeanUgM3": 37.0},
-        {"year": 2019, "annualMeanUgM3": 35.5},
-        {"year": 2020, "annualMeanUgM3": 28.0},
-        {"year": 2021, "annualMeanUgM3": 31.0},
-        {"year": 2022, "annualMeanUgM3": 30.5},
-        {"year": 2023, "annualMeanUgM3": 27.8},
-        {"year": 2024, "annualMeanUgM3": 26.1}
-      ],
-      "latestYear": 2024,
-      "latestMean": 26.1,
-      "legalLimit": 40
-    },
-    "prematureDeaths": {
-      "annualEstimate": 36000
-    },
-    "emissionsBySource": [
-      {"source": "Road transport", "contributionPct": 34},
-      {"source": "Domestic heating", "contributionPct": 28},
-      {"source": "Industry", "contributionPct": 18},
-      {"source": "Agriculture", "contributionPct": 12},
-      {"source": "Other", "contributionPct": 8}
-    ]
-  },
-  "metadata": {
-    "sources": [
-      {"name": "DEFRA", "dataset": "Ambient Air Quality Statistics", "url": "https://www.gov.uk/government/statistics/air-quality-statistics", "frequency": "annual"},
-      {"name": "UKHSA", "dataset": "Air pollution: health matters", "url": "https://ukhsa.blog.gov.uk/2022/04/06/health-matters-air-pollution/", "frequency": "ad hoc"},
-      {"name": "AQEG", "dataset": "Fine Particulate Matter (PM2.5) in the UK", "url": "https://uk-air.defra.gov.uk/library/reports.php?report_id=836", "frequency": "ad hoc"}
-    ],
-    "methodology": "PM2.5 and NO2 levels from DEFRA AURN (Automatic Urban and Rural Network) monitoring stations. Annual mean concentrations from urban background sites (PM2.5) and urban roadside sites (NO2). Premature deaths estimate from COMEAP (Committee on the Medical Effects of Air Pollutants) methodology attributing mortality fractions to PM2.5 and NO2 exposure.",
-    "knownIssues": ["Monitoring network coverage is uneven — rural and coastal areas underrepresented", "WHO guidelines revised down to 5μg/m³ for PM2.5 in 2021 — UK legal limit remains 12μg/m³", "Premature deaths estimate is central estimate with wide confidence interval (28,000–43,000)"]
-  }
+  "pm25": [
+    {"year": 2010, "ugm3": 11.4},
+    {"year": 2011, "ugm3": 11.1},
+    {"year": 2012, "ugm3": 10.6},
+    {"year": 2013, "ugm3": 10.8},
+    {"year": 2014, "ugm3": 10.2},
+    {"year": 2015, "ugm3": 9.8},
+    {"year": 2016, "ugm3": 9.5},
+    {"year": 2017, "ugm3": 9.1},
+    {"year": 2018, "ugm3": 9.3},
+    {"year": 2019, "ugm3": 8.8},
+    {"year": 2020, "ugm3": 7.9},
+    {"year": 2021, "ugm3": 8.3},
+    {"year": 2022, "ugm3": 8.1},
+    {"year": 2023, "ugm3": 7.6},
+    {"year": 2024, "ugm3": 7.2}
+  ],
+  "no2Roadside": [
+    {"year": 2010, "ugm3": 48.2},
+    {"year": 2011, "ugm3": 46.7},
+    {"year": 2012, "ugm3": 44.9},
+    {"year": 2013, "ugm3": 43.1},
+    {"year": 2014, "ugm3": 41.6},
+    {"year": 2015, "ugm3": 39.8},
+    {"year": 2016, "ugm3": 37.4},
+    {"year": 2017, "ugm3": 35.1},
+    {"year": 2018, "ugm3": 33.6},
+    {"year": 2019, "ugm3": 31.2},
+    {"year": 2020, "ugm3": 24.8},
+    {"year": 2021, "ugm3": 27.3},
+    {"year": 2022, "ugm3": 26.1},
+    {"year": 2023, "ugm3": 24.4},
+    {"year": 2024, "ugm3": 23.1}
+  ],
+  "prematureDeaths": [
+    {"year": 2010, "count": 39200},
+    {"year": 2011, "count": 38600},
+    {"year": 2012, "count": 37800},
+    {"year": 2013, "count": 37100},
+    {"year": 2014, "count": 36400},
+    {"year": 2015, "count": 35800},
+    {"year": 2016, "count": 35100},
+    {"year": 2017, "count": 34200},
+    {"year": 2018, "count": 33800},
+    {"year": 2019, "count": 33100},
+    {"year": 2020, "count": 30600},
+    {"year": 2021, "count": 31200},
+    {"year": 2022, "count": 30400},
+    {"year": 2023, "count": 29800},
+    {"year": 2024, "count": 29000}
+  ]
 }

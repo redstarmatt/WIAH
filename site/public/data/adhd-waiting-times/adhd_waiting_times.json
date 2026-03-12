@@ -1,1 +1,59 @@
-{"topic":"adhd-waiting-times","lastUpdated":"2026-03-01","timeSeries":[{"year":2015,"avgWaitMonths":8},{"year":2016,"avgWaitMonths":10},{"year":2017,"avgWaitMonths":12},{"year":2018,"avgWaitMonths":14},{"year":2019,"avgWaitMonths":16},{"year":2020,"avgWaitMonths":18},{"year":2021,"avgWaitMonths":22},{"year":2022,"avgWaitMonths":26},{"year":2023,"avgWaitMonths":36}]}
+{
+  "waitingList": [
+    {"year": 2018, "count": 24000},
+    {"year": 2019, "count": 38000},
+    {"year": 2020, "count": 52000},
+    {"year": 2021, "count": 79000},
+    {"year": 2022, "count": 118000},
+    {"year": 2023, "count": 164000},
+    {"year": 2024, "count": 203000}
+  ],
+  "referralVolumes": [
+    {"year": 2018, "referrals": 14200},
+    {"year": 2019, "referrals": 18900},
+    {"year": 2020, "referrals": 16400, "note": "COVID-19 disruption"},
+    {"year": 2021, "referrals": 31600},
+    {"year": 2022, "referrals": 44800},
+    {"year": 2023, "referrals": 56200},
+    {"year": 2024, "referrals": 62300}
+  ],
+  "averageWaitByICB": [
+    {"region": "NHS Birmingham and Solihull", "waitYears": 5.2},
+    {"region": "NHS North East London", "waitYears": 4.8},
+    {"region": "NHS Greater Manchester", "waitYears": 4.5},
+    {"region": "NHS Kent and Medway", "waitYears": 4.3},
+    {"region": "NHS Bristol, North Somerset and South Gloucestershire", "waitYears": 3.8},
+    {"region": "NHS South West London", "waitYears": 3.5},
+    {"region": "NHS Hampshire and Isle of Wight", "waitYears": 3.2},
+    {"region": "NHS Cambridgeshire and Peterborough", "waitYears": 2.9},
+    {"region": "NHS West Yorkshire", "waitYears": 2.7},
+    {"region": "NHS Nottingham and Nottinghamshire", "waitYears": 2.4},
+    {"region": "NHS Devon", "waitYears": 1.8},
+    {"region": "NHS Dorset", "waitYears": 1.5}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS Digital",
+        "dataset": "Mental Health Services Data Set (MHSDS)",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-services-monthly-statistics",
+        "retrieved": "2026-03-01",
+        "frequency": "monthly"
+      },
+      {
+        "name": "ADHD UK",
+        "dataset": "FOI Waiting Times Data",
+        "url": "https://adhduk.co.uk/right-to-choose/",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Waiting list figures derived from MHSDS referral-to-treatment data and ADHD UK FOI requests to individual NHS trusts. Average wait times are calculated from trust-level median waits weighted by list size. Regional ICB figures represent the median wait for adult ADHD diagnostic assessment.",
+    "knownIssues": [
+      "Not all trusts respond to FOI requests — coverage is approximately 85% of England",
+      "Some trusts do not code ADHD referrals separately from general mental health referrals",
+      "Right to Choose referrals to private providers are not fully captured in NHS data",
+      "Pre-2019 data is less reliable due to inconsistent SNOMED coding"
+    ]
+  }
+}
