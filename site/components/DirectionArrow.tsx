@@ -1,6 +1,6 @@
 'use client';
 
-export type Polarity = 'up-is-bad' | 'up-is-good' | 'neutral';
+export type Polarity = 'up-is-bad' | 'up-is-good' | 'down-is-bad' | 'neutral';
 export type Direction = 'up' | 'down' | 'flat';
 
 interface DirectionArrowProps {
@@ -14,7 +14,7 @@ function getSignalColour(direction: Direction, polarity: Polarity): string {
   if (direction === 'flat') return 'text-wiah-amber';
   const isBad =
     (direction === 'up' && polarity === 'up-is-bad') ||
-    (direction === 'down' && polarity === 'up-is-good');
+    (direction === 'down' && (polarity === 'up-is-good' || polarity === 'down-is-bad'));
   return isBad ? 'text-wiah-red' : 'text-wiah-green';
 }
 

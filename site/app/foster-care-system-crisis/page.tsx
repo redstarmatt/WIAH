@@ -241,7 +241,7 @@ export default function FosterCareSystemCrisisPage() {
               yLabel="Weekly cost (£)"
               source={{
                 name: 'Competition and Markets Authority / DfE',
-                dataset: 'Children's social care market study',
+                dataset: "Children's social care market study",
                 frequency: 'annual',
               }}
             />

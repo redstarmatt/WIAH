@@ -223,7 +223,7 @@ export default function BirthRateDeclinePage() {
               yLabel="Age (years)"
               source={{
                 name: 'ONS',
-                dataset: 'Births by mothers' age',
+                dataset: "Births by mothers' age",
                 frequency: 'annual',
               }}
             />
