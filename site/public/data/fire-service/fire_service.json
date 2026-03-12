@@ -1,0 +1,108 @@
+{
+  "national": {
+    "workforce": {
+      "timeSeries": [
+        { "year": 2010, "fte": 42050 },
+        { "year": 2011, "fte": 40750 },
+        { "year": 2012, "fte": 39300 },
+        { "year": 2013, "fte": 37950 },
+        { "year": 2014, "fte": 36200 },
+        { "year": 2015, "fte": 35100 },
+        { "year": 2016, "fte": 34250 },
+        { "year": 2017, "fte": 33400 },
+        { "year": 2018, "fte": 32700 },
+        { "year": 2019, "fte": 32050 },
+        { "year": 2020, "fte": 31600 },
+        { "year": 2021, "fte": 31200 },
+        { "year": 2022, "fte": 30900 },
+        { "year": 2023, "fte": 30500 },
+        { "year": 2024, "fte": 30100 }
+      ]
+    },
+    "responseTimes": {
+      "timeSeries": [
+        { "year": 2010, "avgMinutes": 7.1 },
+        { "year": 2011, "avgMinutes": 7.2 },
+        { "year": 2012, "avgMinutes": 7.4 },
+        { "year": 2013, "avgMinutes": 7.5 },
+        { "year": 2014, "avgMinutes": 7.7 },
+        { "year": 2015, "avgMinutes": 7.8 },
+        { "year": 2016, "avgMinutes": 8.0 },
+        { "year": 2017, "avgMinutes": 8.1 },
+        { "year": 2018, "avgMinutes": 8.2 },
+        { "year": 2019, "avgMinutes": 8.3 },
+        { "year": 2020, "avgMinutes": 8.4 },
+        { "year": 2021, "avgMinutes": 8.5 },
+        { "year": 2022, "avgMinutes": 8.6 },
+        { "year": 2023, "avgMinutes": 8.8 },
+        { "year": 2024, "avgMinutes": 8.9 }
+      ]
+    },
+    "fatalities": {
+      "timeSeries": [
+        { "year": 2010, "deaths": 380 },
+        { "year": 2011, "deaths": 365 },
+        { "year": 2012, "deaths": 350 },
+        { "year": 2013, "deaths": 322 },
+        { "year": 2014, "deaths": 303 },
+        { "year": 2015, "deaths": 295 },
+        { "year": 2016, "deaths": 280 },
+        { "year": 2017, "deaths": 327 },
+        { "year": 2018, "deaths": 275 },
+        { "year": 2019, "deaths": 253 },
+        { "year": 2020, "deaths": 212 },
+        { "year": 2021, "deaths": 245 },
+        { "year": 2022, "deaths": 268 },
+        { "year": 2023, "deaths": 290 },
+        { "year": 2024, "deaths": 310 }
+      ]
+    },
+    "safetyVisits": {
+      "timeSeries": [
+        { "year": 2010, "visits": 670000 },
+        { "year": 2011, "visits": 645000 },
+        { "year": 2012, "visits": 620000 },
+        { "year": 2013, "visits": 580000 },
+        { "year": 2014, "visits": 540000 },
+        { "year": 2015, "visits": 500000 },
+        { "year": 2016, "visits": 475000 },
+        { "year": 2017, "visits": 450000 },
+        { "year": 2018, "visits": 420000 },
+        { "year": 2019, "visits": 400000 },
+        { "year": 2020, "visits": 280000 },
+        { "year": 2021, "visits": 420000 },
+        { "year": 2022, "visits": 520000 },
+        { "year": 2023, "visits": 580000 },
+        { "year": 2024, "visits": 610000 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Home Office",
+        "dataset": "Fire and rescue incident statistics",
+        "url": "https://www.gov.uk/government/statistical-data-sets/fire-statistics-data-tables",
+        "frequency": "annual"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Fire and rescue authority operational statistics",
+        "url": "https://www.gov.uk/government/statistical-data-sets/fire-statistics-data-tables",
+        "frequency": "annual"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Fire and rescue workforce and pensions statistics",
+        "url": "https://www.gov.uk/government/statistical-data-sets/fire-statistics-data-tables",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Workforce figures are full-time equivalent (FTE) firefighters employed by fire and rescue authorities in England. Response times are the average time from emergency call to arrival at dwelling fires. Fatalities are fire-related deaths recorded in Home Office incident statistics for England. Safety visits are Home Fire Safety Checks carried out by fire and rescue services.",
+    "knownIssues": [
+      "COVID-19 disrupted fire safety visit programmes in 2020/21, causing a sharp temporary decline",
+      "The 2017 fatalities figure includes 72 Grenfell Tower deaths which significantly affects that year's total",
+      "Response time recording methodology was updated in 2009; pre-2010 figures are not directly comparable"
+    ]
+  }
+}

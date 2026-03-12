@@ -71,7 +71,7 @@ export const CATEGORIES: Category[] = [
     name: 'Crime & Justice',
     slug: 'crime-justice',
     featured: ['justice', 'knife-crime', 'prisons'],
-    topics: ['justice', 'knife-crime', 'prisons', 'prison-reoffending', 'court-backlog', 'policing', 'prison-overcrowding', 'domestic-abuse', 'domestic-violence', 'hate-crime', 'modern-slavery', 'online-harms', 'youth-justice', 'fraud', 'rape-prosecution', 'county-lines', 'stalking', 'family-courts', 'youth-violence', 'cybercrime', 'miscarriages-of-justice', 'victims-support', 'border-security', 'probation', 'legal-aid', 'prison-mental-health', 'police-misconduct', 'domestic-abuse-outcomes', 'anti-social-behaviour-crisis', 'knife-crime-geography', 'violence-against-women', 'police-officer-numbers', 'prisoner-recall', 'drug-supply-operations', 'drink-drive-deaths', 'fraud-prosecution-gap', 'terrorism-prosecutions', 'asset-recovery-rates', 'facial-recognition-policing', 'community-sentence-outcomes', 'youth-diversion-outcomes', 'court-interpreter-services', 'immigration-detention', 'civil-legal-aid-deserts', 'misogyny-policing', 'spiking-reports', 'shoplifting-surge', 'deaths-in-custody', 'employment-tribunal-backlog', 'forced-marriage', 'homicide-rate', 'honour-based-abuse', 'online-grooming', 'parole-backlog', 'prison-education', 'prison-healthcare', 'rape-reporting-rate', 'scam-losses', 'stop-and-search', 'court-fees-access', 'economic-crime-scale', 'loan-sharks', 'online-fraud-losses', 'online-fraud-growth'],
+    topics: ['justice', 'knife-crime', 'prisons', 'prison-reoffending', 'court-backlog', 'policing', 'prison-overcrowding', 'domestic-abuse', 'domestic-violence', 'hate-crime', 'modern-slavery', 'online-harms', 'youth-justice', 'fraud', 'rape-prosecution', 'county-lines', 'stalking', 'family-courts', 'youth-violence', 'cybercrime', 'miscarriages-of-justice', 'victims-support', 'border-security', 'probation', 'legal-aid', 'prison-mental-health', 'police-misconduct', 'domestic-abuse-outcomes', 'anti-social-behaviour-crisis', 'knife-crime-geography', 'violence-against-women', 'police-officer-numbers', 'prisoner-recall', 'drug-supply-operations', 'drink-drive-deaths', 'fraud-prosecution-gap', 'terrorism-prosecutions', 'asset-recovery-rates', 'facial-recognition-policing', 'community-sentence-outcomes', 'youth-diversion-outcomes', 'court-interpreter-services', 'immigration-detention', 'civil-legal-aid-deserts', 'misogyny-policing', 'spiking-reports', 'shoplifting-surge', 'deaths-in-custody', 'employment-tribunal-backlog', 'forced-marriage', 'homicide-rate', 'honour-based-abuse', 'online-grooming', 'parole-backlog', 'prison-education', 'prison-healthcare', 'rape-reporting-rate', 'scam-losses', 'stop-and-search', 'court-fees-access', 'economic-crime-scale', 'loan-sharks', 'online-fraud-losses', 'online-fraud-growth', 'police-response-times'],
   },
   {
     name: 'Economy & Work',
@@ -6680,6 +6680,17 @@ export const TOPICS: Record<string, TopicEntry> = {
     colour: '#6B7280',
     metrics: [
       { label: 'Online Fraud Growth', value: 'See data', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'Tracking online fraud growth nationally', sparklineData: [10,10,11,11,12,12,13,13,14] },
+    ],
+  },
+  'police-response-times': {
+    topic: 'Police Response Times',
+    slug: 'police-response-times',
+    href: '/police-response-times',
+    colour: '#E63946',
+    metrics: [
+      { label: '999 answer time', value: '13.5s', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'target: 10s · missed 14 of last 24 months', sparklineData: [8.2, 8.5, 9.1, 9.8, 10.4, 11.7, 12.3, 13.1, 14.2, 13.8, 13.5] },
+      { label: 'Grade 1 target met', value: '84.6%', unit: '', direction: 'down' as const, polarity: 'up-is-good' as const, context: 'was 92.1% in 2015', sparklineData: [92.1, 91.4, 90.2, 88.7, 87.1, 88.0, 86.3, 85.8, 84.9, 84.6] },
+      { label: 'PCSOs in post', value: '8,387', unit: '', direction: 'down' as const, polarity: 'up-is-good' as const, context: '-8,531 since 2010', sparklineData: [16918, 15820, 14393, 13066, 12331, 11904, 10943, 10213, 9547, 9284, 9114, 8810, 8672, 8491, 8387] },
     ],
   },
   'personal-wellbeing': {

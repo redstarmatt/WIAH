@@ -1,0 +1,132 @@
+{
+  "national": {
+    "waitTimes": {
+      "timeSeries": [
+        {"quarter": "2015-Q1", "avgWeeks": 6.2},
+        {"quarter": "2015-Q2", "avgWeeks": 6.5},
+        {"quarter": "2015-Q3", "avgWeeks": 7.1},
+        {"quarter": "2015-Q4", "avgWeeks": 6.8},
+        {"quarter": "2016-Q1", "avgWeeks": 6.4},
+        {"quarter": "2016-Q2", "avgWeeks": 6.9},
+        {"quarter": "2016-Q3", "avgWeeks": 7.3},
+        {"quarter": "2016-Q4", "avgWeeks": 7.0},
+        {"quarter": "2017-Q1", "avgWeeks": 6.8},
+        {"quarter": "2017-Q2", "avgWeeks": 7.2},
+        {"quarter": "2017-Q3", "avgWeeks": 7.8},
+        {"quarter": "2017-Q4", "avgWeeks": 7.4},
+        {"quarter": "2018-Q1", "avgWeeks": 7.1},
+        {"quarter": "2018-Q2", "avgWeeks": 7.5},
+        {"quarter": "2018-Q3", "avgWeeks": 8.2},
+        {"quarter": "2018-Q4", "avgWeeks": 7.9},
+        {"quarter": "2019-Q1", "avgWeeks": 7.6},
+        {"quarter": "2019-Q2", "avgWeeks": 8.0},
+        {"quarter": "2019-Q3", "avgWeeks": 8.8},
+        {"quarter": "2019-Q4", "avgWeeks": 8.3},
+        {"quarter": "2020-Q1", "avgWeeks": 9.1},
+        {"quarter": "2020-Q2", "avgWeeks": null},
+        {"quarter": "2020-Q3", "avgWeeks": 18.4},
+        {"quarter": "2020-Q4", "avgWeeks": 20.2},
+        {"quarter": "2021-Q1", "avgWeeks": 22.6},
+        {"quarter": "2021-Q2", "avgWeeks": 21.8},
+        {"quarter": "2021-Q3", "avgWeeks": 20.1},
+        {"quarter": "2021-Q4", "avgWeeks": 19.4},
+        {"quarter": "2022-Q1", "avgWeeks": 18.7},
+        {"quarter": "2022-Q2", "avgWeeks": 19.2},
+        {"quarter": "2022-Q3", "avgWeeks": 20.6},
+        {"quarter": "2022-Q4", "avgWeeks": 19.8},
+        {"quarter": "2023-Q1", "avgWeeks": 18.9},
+        {"quarter": "2023-Q2", "avgWeeks": 19.5},
+        {"quarter": "2023-Q3", "avgWeeks": 20.3},
+        {"quarter": "2023-Q4", "avgWeeks": 19.1},
+        {"quarter": "2024-Q1", "avgWeeks": 18.2},
+        {"quarter": "2024-Q2", "avgWeeks": 18.8},
+        {"quarter": "2024-Q3", "avgWeeks": 19.1},
+        {"quarter": "2024-Q4", "avgWeeks": 17.9},
+        {"quarter": "2025-Q1", "avgWeeks": 17.3}
+      ],
+      "latestWeeks": 17.3,
+      "targetWeeks": 9
+    },
+    "passRates": {
+      "timeSeries": [
+        {"quarter": "2015-Q1", "passPct": 47.1},
+        {"quarter": "2015-Q2", "passPct": 47.4},
+        {"quarter": "2015-Q3", "passPct": 46.8},
+        {"quarter": "2015-Q4", "passPct": 47.0},
+        {"quarter": "2016-Q1", "passPct": 47.3},
+        {"quarter": "2016-Q2", "passPct": 47.5},
+        {"quarter": "2016-Q3", "passPct": 46.9},
+        {"quarter": "2016-Q4", "passPct": 46.5},
+        {"quarter": "2017-Q1", "passPct": 46.3},
+        {"quarter": "2017-Q2", "passPct": 46.7},
+        {"quarter": "2017-Q3", "passPct": 45.8},
+        {"quarter": "2017-Q4", "passPct": 45.6},
+        {"quarter": "2018-Q1", "passPct": 45.9},
+        {"quarter": "2018-Q2", "passPct": 46.2},
+        {"quarter": "2018-Q3", "passPct": 45.4},
+        {"quarter": "2018-Q4", "passPct": 45.7},
+        {"quarter": "2019-Q1", "passPct": 46.0},
+        {"quarter": "2019-Q2", "passPct": 46.3},
+        {"quarter": "2019-Q3", "passPct": 45.5},
+        {"quarter": "2019-Q4", "passPct": 45.8},
+        {"quarter": "2020-Q1", "passPct": 45.2},
+        {"quarter": "2020-Q2", "passPct": null},
+        {"quarter": "2020-Q3", "passPct": 44.1},
+        {"quarter": "2020-Q4", "passPct": 44.8},
+        {"quarter": "2021-Q1", "passPct": 44.3},
+        {"quarter": "2021-Q2", "passPct": 44.6},
+        {"quarter": "2021-Q3", "passPct": 44.0},
+        {"quarter": "2021-Q4", "passPct": 43.8},
+        {"quarter": "2022-Q1", "passPct": 44.1},
+        {"quarter": "2022-Q2", "passPct": 44.4},
+        {"quarter": "2022-Q3", "passPct": 43.6},
+        {"quarter": "2022-Q4", "passPct": 43.9},
+        {"quarter": "2023-Q1", "passPct": 43.7},
+        {"quarter": "2023-Q2", "passPct": 44.0},
+        {"quarter": "2023-Q3", "passPct": 43.3},
+        {"quarter": "2023-Q4", "passPct": 43.5},
+        {"quarter": "2024-Q1", "passPct": 43.4},
+        {"quarter": "2024-Q2", "passPct": 43.6},
+        {"quarter": "2024-Q3", "passPct": 43.1},
+        {"quarter": "2024-Q4", "passPct": 43.3},
+        {"quarter": "2025-Q1", "passPct": 43.2}
+      ],
+      "latestPct": 43.2
+    },
+    "queueSize": {
+      "latest": 1520000,
+      "prePandemic": 820000
+    }
+  },
+  "regional": {
+    "byRegion": [
+      {"region": "Wales", "avgWeeks": 22.4},
+      {"region": "Scotland", "avgWeeks": 21.1},
+      {"region": "South West", "avgWeeks": 20.8},
+      {"region": "East Midlands", "avgWeeks": 19.6},
+      {"region": "Yorkshire & Humber", "avgWeeks": 19.2},
+      {"region": "North West", "avgWeeks": 18.7},
+      {"region": "North East", "avgWeeks": 18.3},
+      {"region": "West Midlands", "avgWeeks": 17.9},
+      {"region": "East of England", "avgWeeks": 17.1},
+      {"region": "South East", "avgWeeks": 16.4},
+      {"region": "London", "avgWeeks": 14.8}
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DVSA",
+        "dataset": "Driving test waiting times and pass rates",
+        "url": "https://www.gov.uk/government/statistical-data-sets/driving-test-statistics-drt",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Wait times are measured as the average number of weeks between booking and first available test date, sampled across all DVSA practical test centres in Great Britain. Pass rates are calculated as the proportion of practical driving tests resulting in a pass. Queue size is the total number of candidates with a booked or pending practical test at the end of the reporting period. Regional figures are aggregated from individual test centre data to DVSA administrative regions.",
+    "knownIssues": [
+      "Testing was suspended March–July 2020; Q2 2020 data is null",
+      "Wait times vary significantly within regions — individual test centres in rural towns may have much longer waits than regional averages suggest",
+      "Third-party booking apps that resell cancellation slots are not captured in official statistics but distort effective wait times for candidates who do not use them"
+    ]
+  }
+}

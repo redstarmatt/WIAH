@@ -1,0 +1,76 @@
+{
+  "national": {
+    "caseloads": {
+      "timeSeries": [
+        {"year": 2014, "avgCaseload": 15.2},
+        {"year": 2015, "avgCaseload": 15.8},
+        {"year": 2016, "avgCaseload": 16.1},
+        {"year": 2017, "avgCaseload": 16.4},
+        {"year": 2018, "avgCaseload": 16.9},
+        {"year": 2019, "avgCaseload": 17.2},
+        {"year": 2020, "avgCaseload": 16.8},
+        {"year": 2021, "avgCaseload": 17.5},
+        {"year": 2022, "avgCaseload": 17.8},
+        {"year": 2023, "avgCaseload": 18.1},
+        {"year": 2024, "avgCaseload": 18.0}
+      ],
+      "recommendedMax": 15,
+      "latestYear": 2024,
+      "latestValue": 18.0
+    },
+    "vacancyAndTurnover": {
+      "timeSeries": [
+        {"year": 2014, "vacancyRatePct": 14.2, "turnoverRatePct": 15.1},
+        {"year": 2015, "vacancyRatePct": 15.8, "turnoverRatePct": 16.3},
+        {"year": 2016, "vacancyRatePct": 16.4, "turnoverRatePct": 17.0},
+        {"year": 2017, "vacancyRatePct": 16.7, "turnoverRatePct": 15.8},
+        {"year": 2018, "vacancyRatePct": 16.0, "turnoverRatePct": 15.6},
+        {"year": 2019, "vacancyRatePct": 17.3, "turnoverRatePct": 15.9},
+        {"year": 2020, "vacancyRatePct": 16.9, "turnoverRatePct": 14.2},
+        {"year": 2021, "vacancyRatePct": 18.1, "turnoverRatePct": 16.0},
+        {"year": 2022, "vacancyRatePct": 19.4, "turnoverRatePct": 17.8},
+        {"year": 2023, "vacancyRatePct": 19.1, "turnoverRatePct": 16.5},
+        {"year": 2024, "vacancyRatePct": 18.6, "turnoverRatePct": 16.1}
+      ],
+      "latestVacancyPct": 18.6,
+      "totalVacancies": 6600,
+      "agencyPct": 17.0
+    },
+    "childProtectionPlans": {
+      "timeSeries": [
+        {"year": 2014, "count": 48300},
+        {"year": 2015, "count": 49700},
+        {"year": 2016, "count": 50310},
+        {"year": 2017, "count": 51080},
+        {"year": 2018, "count": 52590},
+        {"year": 2019, "count": 52260},
+        {"year": 2020, "count": 50890},
+        {"year": 2021, "count": 50210},
+        {"year": 2022, "count": 51510},
+        {"year": 2023, "count": 52470},
+        {"year": 2024, "count": 53100}
+      ],
+      "latestCount": 53100,
+      "latestYear": 2024
+    },
+    "referrals": {
+      "annualCount": 650000,
+      "latestYear": 2024
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "Department for Education", "dataset": "Children's Social Work Workforce", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/children-s-social-work-workforce", "frequency": "annual"},
+      {"name": "Department for Education", "dataset": "Characteristics of Children in Need", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/characteristics-of-children-in-need", "frequency": "annual"},
+      {"name": "Ofsted", "dataset": "Social Care Annual Report", "url": "https://www.gov.uk/government/collections/ofsted-annual-report", "frequency": "annual"},
+      {"name": "Department for Education", "dataset": "Independent Review of Children's Social Care (MacAlister Review)", "url": "https://www.gov.uk/government/groups/independent-review-of-childrens-social-care", "frequency": "one-off (2022)"}
+    ],
+    "methodology": "Caseload data from the DfE Children's Social Work Workforce census, collected annually from local authorities in England. Average caseload calculated as ratio of open cases to FTE social workers. Vacancy rate is unfilled posts as a percentage of total establishment. Turnover rate is leavers as a percentage of headcount. Agency worker proportion is agency FTE as a percentage of total FTE (employed plus agency). Children on child protection plans from DfE Characteristics of Children in Need return. Recommended maximum caseload of 12–15 from Community Care research and the Social Work Task Force (2009).",
+    "knownIssues": [
+      "Caseload figures are averages — some social workers carry 25+ cases while others carry fewer than 10",
+      "Agency worker data collection methodology changed in 2017, limiting direct pre/post comparison",
+      "COVID-19 suppressed referrals in 2020, creating an artificial dip followed by a surge in 2021–22",
+      "Some local authorities with highest vacancy rates also have the weakest data returns"
+    ]
+  }
+}

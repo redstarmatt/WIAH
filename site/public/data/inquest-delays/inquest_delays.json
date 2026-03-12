@@ -1,0 +1,74 @@
+{
+  "national": {
+    "duration": {
+      "timeSeries": [
+        { "year": 2014, "avgWeeks": 20.1 },
+        { "year": 2015, "avgWeeks": 22.4 },
+        { "year": 2016, "avgWeeks": 24.8 },
+        { "year": 2017, "avgWeeks": 27.3 },
+        { "year": 2018, "avgWeeks": 30.6 },
+        { "year": 2019, "avgWeeks": 34.2 },
+        { "year": 2020, "avgWeeks": 41.7 },
+        { "year": 2021, "avgWeeks": 47.3 },
+        { "year": 2022, "avgWeeks": 50.1 },
+        { "year": 2023, "avgWeeks": 54.6 },
+        { "year": 2024, "avgWeeks": 57.2 }
+      ]
+    },
+    "caseload": {
+      "timeSeries": [
+        { "year": 2014, "opened": 30200, "concluded": 29800 },
+        { "year": 2015, "opened": 30600, "concluded": 29500 },
+        { "year": 2016, "opened": 31100, "concluded": 30200 },
+        { "year": 2017, "opened": 31800, "concluded": 30400 },
+        { "year": 2018, "opened": 32100, "concluded": 30900 },
+        { "year": 2019, "opened": 32400, "concluded": 31100 },
+        { "year": 2020, "opened": 38900, "concluded": 28400 },
+        { "year": 2021, "opened": 34200, "concluded": 30800 },
+        { "year": 2022, "opened": 33100, "concluded": 31500 },
+        { "year": 2023, "opened": 33600, "concluded": 31200 },
+        { "year": 2024, "opened": 33900, "concluded": 31800 }
+      ]
+    },
+    "overOneYear": {
+      "timeSeries": [
+        { "year": 2014, "pct": 8.2 },
+        { "year": 2015, "pct": 9.7 },
+        { "year": 2016, "pct": 11.4 },
+        { "year": 2017, "pct": 13.1 },
+        { "year": 2018, "pct": 15.6 },
+        { "year": 2019, "pct": 18.3 },
+        { "year": 2020, "pct": 24.1 },
+        { "year": 2021, "pct": 27.8 },
+        { "year": 2022, "pct": 29.4 },
+        { "year": 2023, "pct": 31.7 },
+        { "year": 2024, "pct": 33.2 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ministry of Justice",
+        "dataset": "Coroners Statistics Annual",
+        "url": "https://www.gov.uk/government/collections/coroners-statistics",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Chief Coroner",
+        "dataset": "Annual Report to the Lord Chancellor",
+        "url": "https://www.judiciary.uk/related-offices-and-bodies/office-chief-coroner/",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Duration data is based on the average number of weeks from death to inquest conclusion as reported in MoJ Coroners Statistics. Caseload figures count inquests opened and concluded per calendar year. The proportion taking over one year is derived from the same dataset. Figures cover England and Wales. COVID-19 caused a spike in deaths referred to coroners in 2020 and severely disrupted court sittings, creating a compounding backlog effect visible from 2020 onwards.",
+    "knownIssues": [
+      "Pre-2019 duration data uses a slightly different calculation method — comparisons should note this methodological break",
+      "Some coroner areas report on a financial year basis, requiring alignment to calendar year",
+      "Complex Article 2 inquests and jury inquests are included in averages but take significantly longer, skewing upward",
+      "The 2020 spike in opened cases reflects excess deaths during COVID-19, not a change in referral policy"
+    ]
+  }
+}

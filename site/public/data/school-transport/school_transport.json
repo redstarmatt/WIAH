@@ -1,0 +1,89 @@
+{
+  "topic": "school-transport",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "sendTransportSpend": {
+      "timeSeries": [
+        {"year": 2015, "spendBn": 0.75},
+        {"year": 2016, "spendBn": 0.82},
+        {"year": 2017, "spendBn": 0.91},
+        {"year": 2018, "spendBn": 1.01},
+        {"year": 2019, "spendBn": 1.12},
+        {"year": 2020, "spendBn": 1.08},
+        {"year": 2021, "spendBn": 1.18},
+        {"year": 2022, "spendBn": 1.29},
+        {"year": 2023, "spendBn": 1.41},
+        {"year": 2024, "spendBn": 1.52}
+      ],
+      "latestYear": 2024,
+      "latestBn": 1.52,
+      "note": "Total local authority expenditure on SEND home-to-school transport, England"
+    },
+    "eligibleChildren": {
+      "timeSeries": [
+        {"year": 2015, "childrenThousands": 98},
+        {"year": 2016, "childrenThousands": 104},
+        {"year": 2017, "childrenThousands": 111},
+        {"year": 2018, "childrenThousands": 119},
+        {"year": 2019, "childrenThousands": 126},
+        {"year": 2020, "childrenThousands": 124},
+        {"year": 2021, "childrenThousands": 131},
+        {"year": 2022, "childrenThousands": 139},
+        {"year": 2023, "childrenThousands": 147},
+        {"year": 2024, "childrenThousands": 155}
+      ],
+      "latestYear": 2024,
+      "latestThousands": 155,
+      "note": "Children with EHCPs entitled to free home-to-school transport, England"
+    },
+    "averageJourneyTimeSEND": {
+      "timeSeries": [
+        {"year": 2015, "minutes": 42},
+        {"year": 2016, "minutes": 44},
+        {"year": 2017, "minutes": 47},
+        {"year": 2018, "minutes": 50},
+        {"year": 2019, "minutes": 53},
+        {"year": 2020, "minutes": 48},
+        {"year": 2021, "minutes": 52},
+        {"year": 2022, "minutes": 56},
+        {"year": 2023, "minutes": 59},
+        {"year": 2024, "minutes": 62}
+      ],
+      "latestYear": 2024,
+      "latestMinutes": 62,
+      "note": "Average one-way journey time for SEND pupils receiving LA-funded transport, England"
+    },
+    "post16SpendPerStudent": {
+      "timeSeries": [
+        {"year": 2015, "spendGBP": 1180},
+        {"year": 2016, "spendGBP": 1220},
+        {"year": 2017, "spendGBP": 1290},
+        {"year": 2018, "spendGBP": 1350},
+        {"year": 2019, "spendGBP": 1420},
+        {"year": 2020, "spendGBP": 1380},
+        {"year": 2021, "spendGBP": 1460},
+        {"year": 2022, "spendGBP": 1580},
+        {"year": 2023, "spendGBP": 1690},
+        {"year": 2024, "spendGBP": 1810}
+      ],
+      "latestYear": 2024,
+      "latestGBP": 1810,
+      "note": "Average post-16 transport spend per student receiving LA-funded transport, England. Post-16 transport is not free — costs fall on families or discretionary LA budgets."
+    }
+  },
+  "metadata": {
+    "sources": [
+      {"name": "DLUHC", "dataset": "Section 251 — Local Authority Education Expenditure", "url": "https://www.gov.uk/government/collections/section-251-materials", "frequency": "annual"},
+      {"name": "DfE", "dataset": "SEND Statistics — Education, Health and Care Plans", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans", "frequency": "annual"},
+      {"name": "DfE", "dataset": "Home-to-School Travel and Transport — Statutory Guidance", "url": "https://www.gov.uk/government/publications/home-to-school-travel-and-transport-guidance", "frequency": "as updated"},
+      {"name": "National Audit Office", "dataset": "Support for Pupils with Special Educational Needs and Disabilities in England", "url": "https://www.nao.org.uk/reports/support-for-pupils-with-send/", "frequency": "periodic"}
+    ],
+    "methodology": "SEND transport spending from Section 251 local authority outturn data, covering all 152 upper-tier LAs in England. Eligible children count derived from DfE SEND statistics (children with EHCPs for whom transport is specified in Section H of the plan). Journey times from DfE survey of local authority transport managers. Post-16 spend per student calculated from total post-16 transport expenditure divided by number of students receiving LA-funded transport.",
+    "knownIssues": [
+      "Journey time figures are self-reported by local authorities — methodology varies between LAs",
+      "2020 figures depressed by COVID-19 school closures and reduced transport provision",
+      "Post-16 transport data excludes students who self-fund or use public transport independently",
+      "Some LAs report SEND transport under different budget lines, making cross-authority comparison approximate"
+    ]
+  }
+}

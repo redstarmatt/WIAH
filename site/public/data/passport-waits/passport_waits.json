@@ -1,0 +1,104 @@
+{
+  "national": {
+    "processingTime": {
+      "timeSeries": [
+        {"year": 2015, "avgWeeks": 2.8},
+        {"year": 2016, "avgWeeks": 2.9},
+        {"year": 2017, "avgWeeks": 3.0},
+        {"year": 2018, "avgWeeks": 3.1},
+        {"year": 2019, "avgWeeks": 3.0},
+        {"year": 2020, "avgWeeks": 5.4},
+        {"year": 2021, "avgWeeks": 10.2},
+        {"year": 2022, "avgWeeks": 14.8},
+        {"year": 2023, "avgWeeks": 8.6},
+        {"year": 2024, "avgWeeks": 7.1},
+        {"year": 2025, "avgWeeks": 6.4}
+      ],
+      "latestWeeks": 6.4,
+      "targetWeeks": 3,
+      "fastTrackWeeks": 1,
+      "peakWeeks2022": 15.0
+    },
+    "applications": {
+      "timeSeries": [
+        {"year": 2015, "applicationsM": 4.8},
+        {"year": 2016, "applicationsM": 5.0},
+        {"year": 2017, "applicationsM": 4.9},
+        {"year": 2018, "applicationsM": 5.1},
+        {"year": 2019, "applicationsM": 5.0},
+        {"year": 2020, "applicationsM": 2.1},
+        {"year": 2021, "applicationsM": 3.6},
+        {"year": 2022, "applicationsM": 7.0},
+        {"year": 2023, "applicationsM": 5.8},
+        {"year": 2024, "applicationsM": 5.3},
+        {"year": 2025, "applicationsM": 5.1}
+      ],
+      "latestM": 5.1,
+      "peak2022M": 7.0,
+      "prePandemicAvgM": 5.0
+    },
+    "fastTrack": {
+      "timeSeries": [
+        {"year": 2019, "availabilityPct": 96},
+        {"year": 2020, "availabilityPct": 42},
+        {"year": 2021, "availabilityPct": 58},
+        {"year": 2022, "availabilityPct": 35},
+        {"year": 2023, "availabilityPct": 61},
+        {"year": 2024, "availabilityPct": 72},
+        {"year": 2025, "availabilityPct": 78}
+      ],
+      "latestPct": 78,
+      "prePandemicPct": 96
+    },
+    "cost": {
+      "standardAdult": 88.50,
+      "fastTrack": 177.00,
+      "premium": 212.00,
+      "prePandemic": 72.50
+    },
+    "backlog": {
+      "peak2022": 550000,
+      "latest": 85000
+    },
+    "staffing": {
+      "prePandemic": 4000,
+      "current": 5800
+    },
+    "digitalPct": {
+      "prePandemic": 20,
+      "current": 75
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "HM Passport Office",
+        "dataset": "Passport application processing times",
+        "url": "https://www.gov.uk/government/organisations/hm-passport-office",
+        "retrieved": "2025-12-01",
+        "frequency": "monthly"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Immigration and passport statistics",
+        "url": "https://www.gov.uk/government/collections/migration-statistics",
+        "retrieved": "2025-12-01",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "National Audit Office",
+        "dataset": "HM Passport Office: responding to the surge in demand",
+        "url": "https://www.nao.org.uk/reports/hm-passport-office/",
+        "retrieved": "2025-12-01",
+        "frequency": "one-off"
+      }
+    ],
+    "methodology": "Processing time is measured as the average number of weeks from receipt of a complete application to dispatch of the passport, for standard adult applications. Applications volume is the total number of passport applications received in the calendar year. Fast-track availability is the percentage of summer weeks (June-September) in which the 1-week fast-track service was accepting new bookings. Backlog is the number of applications older than 10 weeks that had not been processed at the reporting date.",
+    "knownIssues": [
+      "2020-21 data reflects pandemic disruption — Passport Office was closed for several months",
+      "Processing time averages mask significant variation: children's passports and first-time applications take materially longer than straightforward adult renewals",
+      "Fast-track and premium services are capacity-constrained and periodically withdrawn without notice during peak demand",
+      "PCS union industrial action in spring/summer 2023 affected processing capacity for several months"
+    ]
+  }
+}
