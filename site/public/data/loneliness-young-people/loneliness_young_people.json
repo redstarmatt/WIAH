@@ -1,35 +1,60 @@
 {
-  "topic": "loneliness-young-people",
-  "lastUpdated": "2024-09-01",
-  "timeSeries": [
-    { "year": 2016, "oftenLonelyPct": 22, "hasCloseFriendsPct": 79 },
-    { "year": 2017, "oftenLonelyPct": 23, "hasCloseFriendsPct": 78 },
-    { "year": 2018, "oftenLonelyPct": 24, "hasCloseFriendsPct": 76 },
-    { "year": 2019, "oftenLonelyPct": 25, "hasCloseFriendsPct": 75 },
-    { "year": 2020, "oftenLonelyPct": 26, "hasCloseFriendsPct": 74 },
-    { "year": 2021, "oftenLonelyPct": 30, "hasCloseFriendsPct": 70 },
-    { "year": 2022, "oftenLonelyPct": 29, "hasCloseFriendsPct": 69 },
-    { "year": 2023, "oftenLonelyPct": 31, "hasCloseFriendsPct": 68 },
-    { "year": 2024, "oftenLonelyPct": 34, "hasCloseFriendsPct": 68 }
+  "chronicLoneliness": [
+    {"year": 2015, "pct16to24": 9.8, "pctAllAdults": 5.4},
+    {"year": 2016, "pct16to24": 10.3, "pctAllAdults": 5.6},
+    {"year": 2017, "pct16to24": 11.2, "pctAllAdults": 5.9},
+    {"year": 2018, "pct16to24": 12.4, "pctAllAdults": 6.1},
+    {"year": 2019, "pct16to24": 13.1, "pctAllAdults": 6.4},
+    {"year": 2020, "pct16to24": 17.8, "pctAllAdults": 8.5},
+    {"year": 2021, "pct16to24": 16.4, "pctAllAdults": 7.9},
+    {"year": 2022, "pct16to24": 15.2, "pctAllAdults": 7.1},
+    {"year": 2023, "pct16to24": 15.8, "pctAllAdults": 7.3},
+    {"year": 2024, "pct16to24": 16.1, "pctAllAdults": 7.2},
+    {"year": 2025, "pct16to24": 16.4, "pctAllAdults": 7.4}
   ],
-  "metadata": {
-    "sources": [
-      {
-        "name": "DCMS",
-        "dataset": "Community Life Survey",
-        "url": "https://www.gov.uk/government/collections/community-life-survey--2",
-        "retrieved": "2024-09-01",
-        "frequency": "annual"
-      },
-      {
-        "name": "British Red Cross",
-        "dataset": "Loneliness Research",
-        "url": "https://www.redcross.org.uk/get-help/get-help-with-loneliness",
-        "retrieved": "2024-09-01",
-        "frequency": "annual"
-      }
-    ],
-    "methodology": "Often lonely defined as reporting feeling lonely often or always. Close friends data from British Red Cross YouGov polling.",
-    "knownIssues": ["Survey methodology changes in 2020 may affect comparability with earlier years"]
-  }
+  "closeFriends": [
+    {"year": 2015, "pctLacking": 11.2},
+    {"year": 2016, "pctLacking": 12.1},
+    {"year": 2017, "pctLacking": 13.0},
+    {"year": 2018, "pctLacking": 14.8},
+    {"year": 2019, "pctLacking": 15.6},
+    {"year": 2020, "pctLacking": 20.3},
+    {"year": 2021, "pctLacking": 19.1},
+    {"year": 2022, "pctLacking": 18.4},
+    {"year": 2023, "pctLacking": 19.7},
+    {"year": 2024, "pctLacking": 21.2},
+    {"year": 2025, "pctLacking": 22.1}
+  ],
+  "socialMediaHours": [
+    {"year": 2015, "avgHoursPerDay": 1.8, "pctOver3hrs": 14},
+    {"year": 2016, "avgHoursPerDay": 2.1, "pctOver3hrs": 18},
+    {"year": 2017, "avgHoursPerDay": 2.4, "pctOver3hrs": 22},
+    {"year": 2018, "avgHoursPerDay": 2.7, "pctOver3hrs": 26},
+    {"year": 2019, "avgHoursPerDay": 3.0, "pctOver3hrs": 31},
+    {"year": 2020, "avgHoursPerDay": 3.6, "pctOver3hrs": 42},
+    {"year": 2021, "avgHoursPerDay": 3.4, "pctOver3hrs": 39},
+    {"year": 2022, "avgHoursPerDay": 3.3, "pctOver3hrs": 37},
+    {"year": 2023, "avgHoursPerDay": 3.5, "pctOver3hrs": 40},
+    {"year": 2024, "avgHoursPerDay": 3.6, "pctOver3hrs": 43},
+    {"year": 2025, "avgHoursPerDay": 3.7, "pctOver3hrs": 45}
+  ],
+  "byAgeGroup": [
+    {"ageGroup": "16-24", "chronicPct": 16.4},
+    {"ageGroup": "25-34", "chronicPct": 10.2},
+    {"ageGroup": "35-49", "chronicPct": 7.8},
+    {"ageGroup": "50-64", "chronicPct": 6.1},
+    {"ageGroup": "65-74", "chronicPct": 5.3},
+    {"ageGroup": "75+", "chronicPct": 8.9}
+  ],
+  "byRegion": [
+    {"region": "North East", "chronicPct16to24": 19.2},
+    {"region": "North West", "chronicPct16to24": 17.8},
+    {"region": "Yorkshire & Humber", "chronicPct16to24": 17.1},
+    {"region": "West Midlands", "chronicPct16to24": 16.9},
+    {"region": "East Midlands", "chronicPct16to24": 16.3},
+    {"region": "London", "chronicPct16to24": 15.8},
+    {"region": "South West", "chronicPct16to24": 15.4},
+    {"region": "East of England", "chronicPct16to24": 14.9},
+    {"region": "South East", "chronicPct16to24": 14.2}
+  ]
 }

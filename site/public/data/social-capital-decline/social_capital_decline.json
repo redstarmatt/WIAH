@@ -3,85 +3,43 @@
   "lastUpdated": "2026-03-01",
   "national": {
     "timeSeries": [
-      {
-        "year": 2015,
-        "neighbourTrustPct": 47,
-        "belongingPct": 56,
-        "govTrustPct": 32,
-        "volunteeringPct": 28
-      },
-      {
-        "year": 2016,
-        "neighbourTrustPct": 46,
-        "belongingPct": 55,
-        "govTrustPct": 30,
-        "volunteeringPct": 27
-      },
-      {
-        "year": 2017,
-        "neighbourTrustPct": 44,
-        "belongingPct": 54,
-        "govTrustPct": 28,
-        "volunteeringPct": 27
-      },
-      {
-        "year": 2018,
-        "neighbourTrustPct": 43,
-        "belongingPct": 53,
-        "govTrustPct": 26,
-        "volunteeringPct": 26
-      },
-      {
-        "year": 2019,
-        "neighbourTrustPct": 41,
-        "belongingPct": 52,
-        "govTrustPct": 24,
-        "volunteeringPct": 25
-      },
-      {
-        "year": 2020,
-        "neighbourTrustPct": 39,
-        "belongingPct": 51,
-        "govTrustPct": 25,
-        "volunteeringPct": 22
-      },
-      {
-        "year": 2021,
-        "neighbourTrustPct": 36,
-        "belongingPct": 48,
-        "govTrustPct": 22,
-        "volunteeringPct": 21
-      },
-      {
-        "year": 2022,
-        "neighbourTrustPct": 35,
-        "belongingPct": 46,
-        "govTrustPct": 20,
-        "volunteeringPct": 21
-      },
-      {
-        "year": 2023,
-        "neighbourTrustPct": 34,
-        "belongingPct": 44,
-        "govTrustPct": 19,
-        "volunteeringPct": 22
-      },
-      {
-        "year": 2024,
-        "neighbourTrustPct": 34,
-        "belongingPct": 43,
-        "govTrustPct": 18,
-        "volunteeringPct": 22
-      },
-      {
-        "year": 2025,
-        "neighbourTrustPct": 34,
-        "belongingPct": 43,
-        "govTrustPct": 18,
-        "volunteeringPct": 22
-      }
+      { "year": 2015, "neighbourTrustPct": 47, "belongingPct": 56, "govTrustPct": 32, "volunteeringPct": 28 },
+      { "year": 2016, "neighbourTrustPct": 46, "belongingPct": 55, "govTrustPct": 30, "volunteeringPct": 27 },
+      { "year": 2017, "neighbourTrustPct": 44, "belongingPct": 54, "govTrustPct": 28, "volunteeringPct": 27 },
+      { "year": 2018, "neighbourTrustPct": 43, "belongingPct": 53, "govTrustPct": 26, "volunteeringPct": 26 },
+      { "year": 2019, "neighbourTrustPct": 41, "belongingPct": 52, "govTrustPct": 24, "volunteeringPct": 25 },
+      { "year": 2020, "neighbourTrustPct": 39, "belongingPct": 51, "govTrustPct": 25, "volunteeringPct": 22 },
+      { "year": 2021, "neighbourTrustPct": 36, "belongingPct": 48, "govTrustPct": 22, "volunteeringPct": 21 },
+      { "year": 2022, "neighbourTrustPct": 35, "belongingPct": 46, "govTrustPct": 20, "volunteeringPct": 21 },
+      { "year": 2023, "neighbourTrustPct": 34, "belongingPct": 44, "govTrustPct": 19, "volunteeringPct": 22 },
+      { "year": 2024, "neighbourTrustPct": 34, "belongingPct": 43, "govTrustPct": 18, "volunteeringPct": 22 },
+      { "year": 2025, "neighbourTrustPct": 34, "belongingPct": 43, "govTrustPct": 18, "volunteeringPct": 22 }
     ]
   },
+  "loneliness": [
+    { "year": 2015, "chronicLonelyPct": 5.4, "sometimesLonelyPct": 19.2 },
+    { "year": 2016, "chronicLonelyPct": 5.6, "sometimesLonelyPct": 19.8 },
+    { "year": 2017, "chronicLonelyPct": 5.9, "sometimesLonelyPct": 20.5 },
+    { "year": 2018, "chronicLonelyPct": 6.1, "sometimesLonelyPct": 21.0 },
+    { "year": 2019, "chronicLonelyPct": 6.5, "sometimesLonelyPct": 22.3 },
+    { "year": 2020, "chronicLonelyPct": 7.2, "sometimesLonelyPct": 25.1 },
+    { "year": 2021, "chronicLonelyPct": 8.5, "sometimesLonelyPct": 27.4 },
+    { "year": 2022, "chronicLonelyPct": 8.1, "sometimesLonelyPct": 26.2 },
+    { "year": 2023, "chronicLonelyPct": 7.9, "sometimesLonelyPct": 25.8 },
+    { "year": 2024, "chronicLonelyPct": 7.8, "sometimesLonelyPct": 25.5 },
+    { "year": 2025, "chronicLonelyPct": 7.7, "sometimesLonelyPct": 25.3 }
+  ],
+  "byRegion": [
+    { "region": "London", "neighbourTrustPct": 28, "belongingPct": 36 },
+    { "region": "South East", "neighbourTrustPct": 38, "belongingPct": 48 },
+    { "region": "South West", "neighbourTrustPct": 41, "belongingPct": 51 },
+    { "region": "East of England", "neighbourTrustPct": 37, "belongingPct": 47 },
+    { "region": "West Midlands", "neighbourTrustPct": 31, "belongingPct": 40 },
+    { "region": "East Midlands", "neighbourTrustPct": 35, "belongingPct": 45 },
+    { "region": "Yorkshire & Humber", "neighbourTrustPct": 33, "belongingPct": 42 },
+    { "region": "North West", "neighbourTrustPct": 32, "belongingPct": 41 },
+    { "region": "North East", "neighbourTrustPct": 36, "belongingPct": 44 }
+  ],
   "metadata": {
     "sources": [
       {
@@ -95,12 +53,26 @@
         "dataset": "Trust in institutions tracker",
         "url": "https://www.ipsos.com/en-uk/trust-in-professions",
         "frequency": "annual"
+      },
+      {
+        "name": "DCMS",
+        "dataset": "Community Life Survey 2024-25",
+        "url": "https://www.gov.uk/government/collections/community-life-survey",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Loneliness in England \u2014 Community Life Survey",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/datasets/lonelinessrates",
+        "frequency": "annual"
       }
     ],
-    "methodology": "Neighbourhood trust and belonging from ONS Community Wellbeing Survey. Volunteering rates from Community Life Survey (DCMS). Trust in government from Ipsos/KCL annual poll, question: 'I generally trust the government to do what is right'. All England or UK as noted.",
+    "methodology": "Neighbourhood trust and belonging from ONS Community Wellbeing Survey. Volunteering rates from Community Life Survey (DCMS). Trust in government from Ipsos/KCL annual poll, question: 'I generally trust the government to do what is right'. Loneliness measured using the UCLA 3-item loneliness scale via Community Life Survey. 'Chronic' = 'often or always lonely'; 'Sometimes' = 'some of the time'. All England or UK as noted. Regional figures from ONS Community Wellbeing Survey 2024.",
     "knownIssues": [
       "COVID-19 temporarily boosted some community metrics in 2020 before sharper decline in 2021-22",
-      "Different survey instruments track trust differently \u2014 Edelman Trust Barometer and BES show somewhat different trajectories"
+      "Different survey instruments track trust differently \u2014 Edelman Trust Barometer and BES show somewhat different trajectories",
+      "Loneliness measurement methodology changed slightly in 2020 when surveys moved online \u2014 pre/post not perfectly comparable",
+      "Regional figures are single-year estimates and carry wider confidence intervals than national series"
     ]
   }
 }

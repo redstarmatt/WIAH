@@ -1,106 +1,78 @@
 {
-  "topic": "tax-burden",
-  "lastUpdated": "2026-03-01",
-  "national": {
-    "timeSeries": [
-      {
-        "year": 2015,
-        "taxGdpPct": 33.0,
-        "incTaxGdpPct": 9.8,
-        "personalAllowance": 10600,
-        "avgEarnings": 27000
-      },
-      {
-        "year": 2016,
-        "taxGdpPct": 33.1,
-        "incTaxGdpPct": 9.9,
-        "personalAllowance": 11000,
-        "avgEarnings": 27800
-      },
-      {
-        "year": 2017,
-        "taxGdpPct": 33.3,
-        "incTaxGdpPct": 10.0,
-        "personalAllowance": 11500,
-        "avgEarnings": 28600
-      },
-      {
-        "year": 2018,
-        "taxGdpPct": 33.5,
-        "incTaxGdpPct": 10.1,
-        "personalAllowance": 11850,
-        "avgEarnings": 29500
-      },
-      {
-        "year": 2019,
-        "taxGdpPct": 33.6,
-        "incTaxGdpPct": 10.2,
-        "personalAllowance": 12500,
-        "avgEarnings": 30400
-      },
-      {
-        "year": 2020,
-        "taxGdpPct": 34.0,
-        "incTaxGdpPct": 9.8,
-        "personalAllowance": 12500,
-        "avgEarnings": 30200
-      },
-      {
-        "year": 2021,
-        "taxGdpPct": 33.8,
-        "incTaxGdpPct": 10.0,
-        "personalAllowance": 12570,
-        "avgEarnings": 31500
-      },
-      {
-        "year": 2022,
-        "taxGdpPct": 35.0,
-        "incTaxGdpPct": 10.6,
-        "personalAllowance": 12570,
-        "avgEarnings": 33100
-      },
-      {
-        "year": 2023,
-        "taxGdpPct": 36.2,
-        "incTaxGdpPct": 11.1,
-        "personalAllowance": 12570,
-        "avgEarnings": 35400
-      },
-      {
-        "year": 2024,
-        "taxGdpPct": 36.8,
-        "incTaxGdpPct": 11.4,
-        "personalAllowance": 12570,
-        "avgEarnings": 37200
-      },
-      {
-        "year": 2025,
-        "taxGdpPct": 37.1,
-        "incTaxGdpPct": 11.6,
-        "personalAllowance": 12570,
-        "avgEarnings": 38800
-      }
-    ]
-  },
-  "metadata": {
-    "sources": [
-      {
-        "name": "OBR",
-        "dataset": "Economic and fiscal outlook",
-        "url": "https://obr.uk/efo/economic-and-fiscal-outlook-march-2025/",
-        "frequency": "biannual"
-      },
-      {
-        "name": "HMRC",
-        "dataset": "Annual tax receipts",
-        "url": "https://www.gov.uk/government/statistics/hmrc-tax-and-nics-receipts-for-the-uk",
-        "frequency": "monthly"
-      }
-    ],
-    "methodology": "Tax/GDP ratio from OBR Economic and Fiscal Outlook, using HM Treasury definitions. Fiscal drag calculations model taxpayers pulled into higher bands by earnings growth with frozen thresholds.",
-    "knownIssues": [
-      "GDP is subject to revision so the ratio changes retroactively",
-      "Fiscal drag estimates depend on earnings distribution assumptions"
-    ]
-  }
+  "taxToGdp": [
+    {"year": 2010, "pct": 32.3},
+    {"year": 2011, "pct": 32.8},
+    {"year": 2012, "pct": 32.6},
+    {"year": 2013, "pct": 32.4},
+    {"year": 2014, "pct": 32.5},
+    {"year": 2015, "pct": 33.0},
+    {"year": 2016, "pct": 33.1},
+    {"year": 2017, "pct": 33.3},
+    {"year": 2018, "pct": 33.5},
+    {"year": 2019, "pct": 33.6},
+    {"year": 2020, "pct": 34.0},
+    {"year": 2021, "pct": 33.8},
+    {"year": 2022, "pct": 35.0},
+    {"year": 2023, "pct": 36.2},
+    {"year": 2024, "pct": 36.8},
+    {"year": 2025, "pct": 37.1}
+  ],
+  "incomeTaxReceipts": [
+    {"year": 2010, "billionGBP": 148.8},
+    {"year": 2011, "billionGBP": 155.3},
+    {"year": 2012, "billionGBP": 152.0},
+    {"year": 2013, "billionGBP": 155.5},
+    {"year": 2014, "billionGBP": 163.1},
+    {"year": 2015, "billionGBP": 170.8},
+    {"year": 2016, "billionGBP": 176.4},
+    {"year": 2017, "billionGBP": 181.2},
+    {"year": 2018, "billionGBP": 191.2},
+    {"year": 2019, "billionGBP": 194.4},
+    {"year": 2020, "billionGBP": 187.6},
+    {"year": 2021, "billionGBP": 198.2},
+    {"year": 2022, "billionGBP": 224.7},
+    {"year": 2023, "billionGBP": 248.3},
+    {"year": 2024, "billionGBP": 268.5},
+    {"year": 2025, "billionGBP": 282.1}
+  ],
+  "fiscalDrag": [
+    {"year": 2021, "extraHigherRatePayers": 0, "personalAllowance": 12570, "avgEarnings": 31500},
+    {"year": 2022, "extraHigherRatePayers": 500000, "personalAllowance": 12570, "avgEarnings": 33100},
+    {"year": 2023, "extraHigherRatePayers": 1500000, "personalAllowance": 12570, "avgEarnings": 35400},
+    {"year": 2024, "extraHigherRatePayers": 2500000, "personalAllowance": 12570, "avgEarnings": 37200},
+    {"year": 2025, "extraHigherRatePayers": 3200000, "personalAllowance": 12570, "avgEarnings": 38800},
+    {"year": 2026, "extraHigherRatePayers": 3800000, "personalAllowance": 12570, "avgEarnings": 40200}
+  ],
+  "councilTax": [
+    {"year": 2010, "avgBandD": 1187},
+    {"year": 2011, "avgBandD": 1196},
+    {"year": 2012, "avgBandD": 1196},
+    {"year": 2013, "avgBandD": 1214},
+    {"year": 2014, "avgBandD": 1218},
+    {"year": 2015, "avgBandD": 1234},
+    {"year": 2016, "avgBandD": 1272},
+    {"year": 2017, "avgBandD": 1326},
+    {"year": 2018, "avgBandD": 1398},
+    {"year": 2019, "avgBandD": 1464},
+    {"year": 2020, "avgBandD": 1530},
+    {"year": 2021, "avgBandD": 1568},
+    {"year": 2022, "avgBandD": 1614},
+    {"year": 2023, "avgBandD": 1698},
+    {"year": 2024, "avgBandD": 1784},
+    {"year": 2025, "avgBandD": 1874}
+  ],
+  "byRegion": [
+    {"region": "London", "taxGdpPct": 39.2},
+    {"region": "South East", "taxGdpPct": 38.1},
+    {"region": "East of England", "taxGdpPct": 37.6},
+    {"region": "South West", "taxGdpPct": 36.8},
+    {"region": "West Midlands", "taxGdpPct": 36.2},
+    {"region": "North West", "taxGdpPct": 35.9},
+    {"region": "Yorkshire & Humber", "taxGdpPct": 35.5},
+    {"region": "East Midlands", "taxGdpPct": 35.4},
+    {"region": "North East", "taxGdpPct": 34.8},
+    {"region": "Wales", "taxGdpPct": 34.2},
+    {"region": "Scotland", "taxGdpPct": 35.1},
+    {"region": "Northern Ireland", "taxGdpPct": 33.9}
+  ]
 }

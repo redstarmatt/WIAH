@@ -7,81 +7,170 @@
         "year": 2015,
         "northEastRate": 8.5,
         "londonRate": 6.1,
+        "southEastRate": 3.8,
+        "westMidlandsRate": 6.4,
+        "nationalRate": 5.4,
         "youthNational": 14.2,
-        "youthNorthEast": 22.4
+        "youthNorthEast": 22.4,
+        "youthLondon": 16.8,
+        "economicInactivityNational": 22.1,
+        "economicInactivityNE": 26.8,
+        "economicInactivityLondon": 23.5
       },
       {
         "year": 2016,
         "northEastRate": 7.8,
         "londonRate": 5.8,
+        "southEastRate": 3.5,
+        "westMidlandsRate": 6.0,
+        "nationalRate": 5.0,
         "youthNational": 13.8,
-        "youthNorthEast": 21.2
+        "youthNorthEast": 21.2,
+        "youthLondon": 15.9,
+        "economicInactivityNational": 21.8,
+        "economicInactivityNE": 26.2,
+        "economicInactivityLondon": 23.1
       },
       {
         "year": 2017,
         "northEastRate": 7.2,
         "londonRate": 5.2,
+        "southEastRate": 3.2,
+        "westMidlandsRate": 5.5,
+        "nationalRate": 4.4,
         "youthNational": 12.9,
-        "youthNorthEast": 19.8
+        "youthNorthEast": 19.8,
+        "youthLondon": 14.4,
+        "economicInactivityNational": 21.5,
+        "economicInactivityNE": 25.7,
+        "economicInactivityLondon": 22.4
       },
       {
         "year": 2018,
         "northEastRate": 6.5,
         "londonRate": 4.8,
+        "southEastRate": 3.0,
+        "westMidlandsRate": 5.2,
+        "nationalRate": 4.1,
         "youthNational": 11.8,
-        "youthNorthEast": 18.4
+        "youthNorthEast": 18.4,
+        "youthLondon": 13.2,
+        "economicInactivityNational": 21.2,
+        "economicInactivityNE": 25.3,
+        "economicInactivityLondon": 21.9
       },
       {
         "year": 2019,
         "northEastRate": 6.0,
         "londonRate": 4.2,
+        "southEastRate": 2.8,
+        "westMidlandsRate": 4.9,
+        "nationalRate": 3.8,
         "youthNational": 11.2,
-        "youthNorthEast": 17.2
+        "youthNorthEast": 17.2,
+        "youthLondon": 12.5,
+        "economicInactivityNational": 20.8,
+        "economicInactivityNE": 24.9,
+        "economicInactivityLondon": 21.3
       },
       {
         "year": 2020,
         "northEastRate": 8.2,
         "londonRate": 6.5,
+        "southEastRate": 4.3,
+        "westMidlandsRate": 6.8,
+        "nationalRate": 4.9,
         "youthNational": 16.4,
-        "youthNorthEast": 24.8
+        "youthNorthEast": 24.8,
+        "youthLondon": 18.1,
+        "economicInactivityNational": 21.4,
+        "economicInactivityNE": 26.5,
+        "economicInactivityLondon": 22.8
       },
       {
         "year": 2021,
         "northEastRate": 7.5,
         "londonRate": 5.8,
+        "southEastRate": 3.9,
+        "westMidlandsRate": 6.2,
+        "nationalRate": 4.5,
         "youthNational": 14.8,
-        "youthNorthEast": 22.1
+        "youthNorthEast": 22.1,
+        "youthLondon": 16.2,
+        "economicInactivityNational": 21.6,
+        "economicInactivityNE": 27.1,
+        "economicInactivityLondon": 22.5
       },
       {
         "year": 2022,
         "northEastRate": 6.2,
         "londonRate": 4.5,
+        "southEastRate": 3.1,
+        "westMidlandsRate": 5.1,
+        "nationalRate": 3.8,
         "youthNational": 12.2,
-        "youthNorthEast": 18.8
+        "youthNorthEast": 18.8,
+        "youthLondon": 13.6,
+        "economicInactivityNational": 21.7,
+        "economicInactivityNE": 27.4,
+        "economicInactivityLondon": 22.1
       },
       {
         "year": 2023,
         "northEastRate": 7.0,
         "londonRate": 4.4,
+        "southEastRate": 3.0,
+        "westMidlandsRate": 5.4,
+        "nationalRate": 4.1,
         "youthNational": 12.8,
-        "youthNorthEast": 20.1
+        "youthNorthEast": 20.1,
+        "youthLondon": 14.1,
+        "economicInactivityNational": 21.9,
+        "economicInactivityNE": 27.8,
+        "economicInactivityLondon": 22.3
       },
       {
         "year": 2024,
         "northEastRate": 7.5,
         "londonRate": 4.3,
+        "southEastRate": 3.0,
+        "westMidlandsRate": 5.3,
+        "nationalRate": 4.3,
         "youthNational": 12.6,
-        "youthNorthEast": 20.8
+        "youthNorthEast": 20.8,
+        "youthLondon": 14.5,
+        "economicInactivityNational": 22.1,
+        "economicInactivityNE": 28.2,
+        "economicInactivityLondon": 22.6
       },
       {
         "year": 2025,
         "northEastRate": 7.8,
         "londonRate": 4.2,
+        "southEastRate": 2.9,
+        "westMidlandsRate": 5.5,
+        "nationalRate": 4.2,
         "youthNational": 12.4,
-        "youthNorthEast": 21.2
+        "youthNorthEast": 21.2,
+        "youthLondon": 14.2,
+        "economicInactivityNational": 22.3,
+        "economicInactivityNE": 28.6,
+        "economicInactivityLondon": 22.9
       }
     ]
   },
+  "byRegion": [
+    { "region": "North East", "rate": 7.8, "youthRate": 21.2, "inactivityRate": 28.6 },
+    { "region": "West Midlands", "rate": 5.5, "youthRate": 15.8, "inactivityRate": 24.8 },
+    { "region": "Yorkshire & Humber", "rate": 5.2, "youthRate": 15.1, "inactivityRate": 24.2 },
+    { "region": "North West", "rate": 4.8, "youthRate": 14.4, "inactivityRate": 23.6 },
+    { "region": "London", "rate": 4.2, "youthRate": 14.2, "inactivityRate": 22.9 },
+    { "region": "East Midlands", "rate": 4.0, "youthRate": 12.8, "inactivityRate": 22.4 },
+    { "region": "Wales", "rate": 3.9, "youthRate": 13.5, "inactivityRate": 25.1 },
+    { "region": "South West", "rate": 3.4, "youthRate": 10.8, "inactivityRate": 20.2 },
+    { "region": "East of England", "rate": 3.2, "youthRate": 10.4, "inactivityRate": 19.8 },
+    { "region": "South East", "rate": 2.9, "youthRate": 9.6, "inactivityRate": 18.5 }
+  ],
   "metadata": {
     "sources": [
       {
@@ -95,12 +184,20 @@
         "dataset": "Regional labour market statistics",
         "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/regionallabourmarket/",
         "frequency": "monthly"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Young people not in education, employment or training (NEET)",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/bulletins/youngpeoplenotineducationemploymentortrainingneet/",
+        "frequency": "quarterly"
       }
     ],
-    "methodology": "Unemployment rates from Labour Force Survey (LFS) via NOMIS API. Quarterly data, 3-month rolling average. Youth unemployment uses ILO definition: 18-24 year olds without work, available and seeking work. Small sample sizes mean regional youth figures have wide confidence intervals.",
+    "methodology": "Unemployment rates from Labour Force Survey (LFS) via NOMIS API. Quarterly data, 3-month rolling average. Youth unemployment uses ILO definition: 18-24 year olds without work, available and seeking work. Economic inactivity covers those not in employment and not seeking work, including long-term sick, carers, students and early retirees. Small sample sizes mean regional youth figures have wide confidence intervals.",
     "knownIssues": [
       "Small LFS sample for some regions gives wide confidence intervals",
-      "Furlough scheme 2020-21 meant true unemployment was masked \u2014 figures are not comparable across that period"
+      "Furlough scheme 2020-21 meant true unemployment was masked — figures are not comparable across that period",
+      "Economic inactivity has risen post-pandemic partly due to long-term sickness — a structural shift not captured by headline unemployment",
+      "LFS response rates have declined since 2020, reducing data reliability for smaller regions"
     ]
   }
 }

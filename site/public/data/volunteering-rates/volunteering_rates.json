@@ -1,106 +1,57 @@
 {
-  "topic": "volunteering-rates",
-  "lastUpdated": "2026-03-01",
   "national": {
     "timeSeries": [
-      {
-        "year": 2015,
-        "formalPct": 43,
-        "informalPct": 62,
-        "age25to44": 43,
-        "age65plus": 44
-      },
-      {
-        "year": 2016,
-        "formalPct": 43,
-        "informalPct": 61,
-        "age25to44": 42,
-        "age65plus": 45
-      },
-      {
-        "year": 2017,
-        "formalPct": 42,
-        "informalPct": 60,
-        "age25to44": 41,
-        "age65plus": 45
-      },
-      {
-        "year": 2018,
-        "formalPct": 42,
-        "informalPct": 59,
-        "age25to44": 40,
-        "age65plus": 44
-      },
-      {
-        "year": 2019,
-        "formalPct": 41,
-        "informalPct": 58,
-        "age25to44": 40,
-        "age65plus": 44
-      },
-      {
-        "year": 2020,
-        "formalPct": 40,
-        "informalPct": 57,
-        "age25to44": 38,
-        "age65plus": 38
-      },
-      {
-        "year": 2021,
-        "formalPct": 38,
-        "informalPct": 52,
-        "age25to44": 36,
-        "age65plus": 40
-      },
-      {
-        "year": 2022,
-        "formalPct": 38,
-        "informalPct": 50,
-        "age25to44": 36,
-        "age65plus": 42
-      },
-      {
-        "year": 2023,
-        "formalPct": 39,
-        "informalPct": 51,
-        "age25to44": 37,
-        "age65plus": 43
-      },
-      {
-        "year": 2024,
-        "formalPct": 39,
-        "informalPct": 51,
-        "age25to44": 37,
-        "age65plus": 43
-      },
-      {
-        "year": 2025,
-        "formalPct": 39,
-        "informalPct": 51,
-        "age25to44": 37,
-        "age65plus": 43
-      }
+      { "year": 2013, "formalPct": 44, "informalPct": 63, "regularWeeklyPct": 18, "age25to44": 38, "age65plus": 46 },
+      { "year": 2014, "formalPct": 44, "informalPct": 62, "regularWeeklyPct": 18, "age25to44": 37, "age65plus": 46 },
+      { "year": 2015, "formalPct": 43, "informalPct": 61, "regularWeeklyPct": 17, "age25to44": 36, "age65plus": 45 },
+      { "year": 2016, "formalPct": 42, "informalPct": 60, "regularWeeklyPct": 17, "age25to44": 34, "age65plus": 45 },
+      { "year": 2017, "formalPct": 41, "informalPct": 59, "regularWeeklyPct": 17, "age25to44": 33, "age65plus": 44 },
+      { "year": 2018, "formalPct": 40, "informalPct": 57, "regularWeeklyPct": 16, "age25to44": 31, "age65plus": 44 },
+      { "year": 2019, "formalPct": 40, "informalPct": 56, "regularWeeklyPct": 16, "age25to44": 30, "age65plus": 43 },
+      { "year": 2020, "formalPct": 38, "informalPct": 52, "regularWeeklyPct": 15, "age25to44": 27, "age65plus": 38 },
+      { "year": 2021, "formalPct": 38, "informalPct": 50, "regularWeeklyPct": 14, "age25to44": 27, "age65plus": 40 },
+      { "year": 2022, "formalPct": 39, "informalPct": 51, "regularWeeklyPct": 15, "age25to44": 28, "age65plus": 42 },
+      { "year": 2023, "formalPct": 39, "informalPct": 51, "regularWeeklyPct": 15, "age25to44": 28, "age65plus": 42 },
+      { "year": 2024, "formalPct": 39, "informalPct": 51, "regularWeeklyPct": 15, "age25to44": 27, "age65plus": 43 }
     ]
   },
+  "byType": [
+    { "type": "Sports and exercise", "pct2014": 14, "pct2024": 12 },
+    { "type": "Education", "pct2014": 10, "pct2024": 8 },
+    { "type": "Religion", "pct2014": 9, "pct2024": 8 },
+    { "type": "Health, disability, social welfare", "pct2014": 8, "pct2024": 7 },
+    { "type": "Hobbies, recreation, arts", "pct2014": 7, "pct2024": 5 },
+    { "type": "Local community or neighbourhood", "pct2014": 6, "pct2024": 4 },
+    { "type": "Children and young people", "pct2014": 6, "pct2024": 5 },
+    { "type": "Environmental or animal welfare", "pct2014": 3, "pct2024": 4 }
+  ],
   "metadata": {
     "sources": [
       {
         "name": "DCMS",
-        "dataset": "Community Life Survey",
+        "dataset": "Community Life Survey 2023-24",
         "url": "https://www.gov.uk/government/statistics/community-life-survey-202324",
         "frequency": "annual"
       },
       {
         "name": "NCVO",
-        "dataset": "UK Civil Society Almanac",
-        "url": "https://www.ncvo.org.uk/news-and-insights/news-index/uk-civil-society-almanac/",
+        "dataset": "Time Well Spent Survey 2023",
+        "url": "https://www.ncvo.org.uk/news-and-insights/news-index/time-well-spent/",
+        "frequency": "biennial"
+      },
+      {
+        "name": "DCMS",
+        "dataset": "Community Life Survey 2024-25 (interim)",
+        "url": "https://www.gov.uk/government/statistics/community-life-survey-202425",
         "frequency": "annual"
       }
     ],
-    "methodology": "Volunteering figures from DCMS Community Life Survey, a nationally representative sample of ~10,000 adults per year. Formal volunteering defined as giving unpaid help through an organisation. Informal volunteering defined as giving unpaid help to individuals directly.",
+    "methodology": "Formal volunteering is defined as unpaid help given through groups, clubs or organisations at least once in the last 12 months. Informal volunteering is unpaid help given as an individual to people who are not relatives at least once in the last 12 months. Regular volunteering is at least once a week. The Community Life Survey is a household survey of adults aged 16+ in England with a sample of approximately 10,000 respondents. Age-group breakdowns are drawn from published cross-tabulations. The survey moved to mixed-mode (online and telephone) in 2020-21, which may affect comparability with earlier face-to-face fieldwork.",
     "knownIssues": [
-      "Survey methodology changed in 2020 \u2014 online collection may affect comparability",
-      "COVID-19 vaccination volunteer figures not included \u2014 would have boosted 2021 formal rate significantly"
+      "Mode change in 2020-21 from face-to-face to mixed-mode may affect comparability with earlier years",
+      "COVID-19 disrupted both volunteering activity and survey fieldwork in 2020 and 2021",
+      "Informal volunteering is harder to measure consistently as respondents may not recognise informal help as volunteering",
+      "Age-group breakdowns for 2024 are based on interim Community Life Survey data and may be revised"
     ]
   }
 }

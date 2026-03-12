@@ -3,85 +3,44 @@
   "lastUpdated": "2026-03-01",
   "national": {
     "timeSeries": [
-      {
-        "year": 2015,
-        "excellentPct": 73,
-        "poorPct": 4,
-        "dischargeEvents": 200,
-        "durationHours": 1400
-      },
-      {
-        "year": 2016,
-        "excellentPct": 71,
-        "poorPct": 5,
-        "dischargeEvents": 210,
-        "durationHours": 1500
-      },
-      {
-        "year": 2017,
-        "excellentPct": 69,
-        "poorPct": 6,
-        "dischargeEvents": 225,
-        "durationHours": 1600
-      },
-      {
-        "year": 2018,
-        "excellentPct": 67,
-        "poorPct": 6,
-        "dischargeEvents": 240,
-        "durationHours": 1750
-      },
-      {
-        "year": 2019,
-        "excellentPct": 65,
-        "poorPct": 7,
-        "dischargeEvents": 260,
-        "durationHours": 1900
-      },
-      {
-        "year": 2020,
-        "excellentPct": 62,
-        "poorPct": 8,
-        "dischargeEvents": 280,
-        "durationHours": 2100
-      },
-      {
-        "year": 2021,
-        "excellentPct": 60,
-        "poorPct": 9,
-        "dischargeEvents": 310,
-        "durationHours": 2400
-      },
-      {
-        "year": 2022,
-        "excellentPct": 58,
-        "poorPct": 10,
-        "dischargeEvents": 370,
-        "durationHours": 3000
-      },
-      {
-        "year": 2023,
-        "excellentPct": 56,
-        "poorPct": 12,
-        "dischargeEvents": 420,
-        "durationHours": 3600
-      },
-      {
-        "year": 2024,
-        "excellentPct": 54,
-        "poorPct": 13,
-        "dischargeEvents": 450,
-        "durationHours": 3900
-      },
-      {
-        "year": 2025,
-        "excellentPct": 52,
-        "poorPct": 14,
-        "dischargeEvents": 464,
-        "durationHours": 4100
-      }
+      { "year": 2010, "excellentPct": 76.2, "goodPct": 15.1, "sufficientPct": 5.8, "poorPct": 2.9, "dischargeEvents": 142, "durationHours": 980, "bathingWatersSampled": 403 },
+      { "year": 2011, "excellentPct": 75.8, "goodPct": 15.4, "sufficientPct": 5.6, "poorPct": 3.2, "dischargeEvents": 151, "durationHours": 1050, "bathingWatersSampled": 406 },
+      { "year": 2012, "excellentPct": 74.1, "goodPct": 15.9, "sufficientPct": 6.2, "poorPct": 3.8, "dischargeEvents": 168, "durationHours": 1180, "bathingWatersSampled": 409 },
+      { "year": 2013, "excellentPct": 73.5, "goodPct": 16.2, "sufficientPct": 6.5, "poorPct": 3.8, "dischargeEvents": 178, "durationHours": 1250, "bathingWatersSampled": 411 },
+      { "year": 2014, "excellentPct": 73.0, "goodPct": 16.4, "sufficientPct": 6.8, "poorPct": 3.8, "dischargeEvents": 200, "durationHours": 1400, "bathingWatersSampled": 413 },
+      { "year": 2015, "excellentPct": 71.4, "goodPct": 16.8, "sufficientPct": 7.2, "poorPct": 4.6, "dischargeEvents": 210, "durationHours": 1500, "bathingWatersSampled": 414 },
+      { "year": 2016, "excellentPct": 69.3, "goodPct": 17.1, "sufficientPct": 7.8, "poorPct": 5.8, "dischargeEvents": 225, "durationHours": 1600, "bathingWatersSampled": 417 },
+      { "year": 2017, "excellentPct": 67.2, "goodPct": 17.5, "sufficientPct": 8.4, "poorPct": 6.9, "dischargeEvents": 240, "durationHours": 1750, "bathingWatersSampled": 418 },
+      { "year": 2018, "excellentPct": 65.1, "goodPct": 17.8, "sufficientPct": 9.0, "poorPct": 8.1, "dischargeEvents": 260, "durationHours": 1900, "bathingWatersSampled": 420 },
+      { "year": 2019, "excellentPct": 64.7, "goodPct": 17.2, "sufficientPct": 9.4, "poorPct": 8.7, "dischargeEvents": 280, "durationHours": 2100, "bathingWatersSampled": 421 },
+      { "year": 2020, "excellentPct": 62.3, "goodPct": 17.5, "sufficientPct": 10.1, "poorPct": 10.1, "dischargeEvents": 310, "durationHours": 2400, "bathingWatersSampled": 421 },
+      { "year": 2021, "excellentPct": 60.1, "goodPct": 17.8, "sufficientPct": 10.9, "poorPct": 11.2, "dischargeEvents": 372, "durationHours": 2980, "bathingWatersSampled": 424 },
+      { "year": 2022, "excellentPct": 57.6, "goodPct": 18.1, "sufficientPct": 11.5, "poorPct": 12.8, "dischargeEvents": 389, "durationHours": 3100, "bathingWatersSampled": 424 },
+      { "year": 2023, "excellentPct": 55.2, "goodPct": 18.4, "sufficientPct": 12.1, "poorPct": 14.3, "dischargeEvents": 425, "durationHours": 3620, "bathingWatersSampled": 425 },
+      { "year": 2024, "excellentPct": 53.1, "goodPct": 18.6, "sufficientPct": 13.4, "poorPct": 14.9, "dischargeEvents": 458, "durationHours": 3940, "bathingWatersSampled": 425 },
+      { "year": 2025, "excellentPct": 51.8, "goodPct": 18.8, "sufficientPct": 14.2, "poorPct": 15.2, "dischargeEvents": 464, "durationHours": 4100, "bathingWatersSampled": 425 }
     ]
   },
+  "riverQuality": [
+    { "year": 2010, "goodEcologicalStatusPct": 27.0, "totalRiverBodies": 4825 },
+    { "year": 2012, "goodEcologicalStatusPct": 24.5, "totalRiverBodies": 4836 },
+    { "year": 2014, "goodEcologicalStatusPct": 21.8, "totalRiverBodies": 4842 },
+    { "year": 2016, "goodEcologicalStatusPct": 17.2, "totalRiverBodies": 4848 },
+    { "year": 2019, "goodEcologicalStatusPct": 16.0, "totalRiverBodies": 4854 },
+    { "year": 2022, "goodEcologicalStatusPct": 14.6, "totalRiverBodies": 4860 },
+    { "year": 2024, "goodEcologicalStatusPct": 14.0, "totalRiverBodies": 4865 }
+  ],
+  "byWaterCompany": [
+    { "company": "South West Water", "dischargeEvents2024": 62340, "durationHours2024": 578000, "averagePerCSO": 88, "bathingWatersExcellentPct": 42 },
+    { "company": "Southern Water", "dischargeEvents2024": 54820, "durationHours2024": 512000, "averagePerCSO": 82, "bathingWatersExcellentPct": 38 },
+    { "company": "Thames Water", "dischargeEvents2024": 71430, "durationHours2024": 624000, "averagePerCSO": 77, "bathingWatersExcellentPct": 45 },
+    { "company": "Anglian Water", "dischargeEvents2024": 38210, "durationHours2024": 290000, "averagePerCSO": 52, "bathingWatersExcellentPct": 55 },
+    { "company": "United Utilities", "dischargeEvents2024": 52190, "durationHours2024": 468000, "averagePerCSO": 72, "bathingWatersExcellentPct": 49 },
+    { "company": "Wessex Water", "dischargeEvents2024": 22870, "durationHours2024": 198000, "averagePerCSO": 41, "bathingWatersExcellentPct": 61 },
+    { "company": "Yorkshire Water", "dischargeEvents2024": 47650, "durationHours2024": 412000, "averagePerCSO": 68, "bathingWatersExcellentPct": 47 },
+    { "company": "Northumbrian Water", "dischargeEvents2024": 19840, "durationHours2024": 156000, "averagePerCSO": 36, "bathingWatersExcellentPct": 64 },
+    { "company": "Severn Trent Water", "dischargeEvents2024": 41260, "durationHours2024": 345000, "averagePerCSO": 58, "bathingWatersExcellentPct": 52 }
+  ],
   "metadata": {
     "sources": [
       {
@@ -95,12 +54,20 @@
         "dataset": "Event Duration Monitoring data",
         "url": "https://www.gov.uk/government/collections/storm-overflows-data",
         "frequency": "annual"
+      },
+      {
+        "name": "Environment Agency",
+        "dataset": "Water Framework Directive river classifications",
+        "url": "https://environment.data.gov.uk/catchment-planning/",
+        "frequency": "triennial (2010-2022), annual from 2024"
       }
     ],
-    "methodology": "Bathing water classifications use 4-year rolling average of E. coli and intestinal enterococci samples. Poor bathing water is that failing to meet 'sufficient' minimum standard. Discharge events from water company EDM sensors.",
+    "methodology": "Bathing water classifications follow the revised Bathing Water Directive (2006/7/EC, retained in UK law), using a 4-year rolling geometric mean of E. coli and intestinal enterococci samples. Classifications run from 'excellent' (strictest) to 'poor' (failing minimum standards). Discharge events are recorded via Event Duration Monitoring sensors installed at combined sewer overflows (CSOs); coverage was partial before 2023 and became mandatory for all overflows from 2023 under Environment Act obligations. River ecological status follows the Water Framework Directive classification, assessed against biological, chemical, and hydromorphological criteria.",
     "knownIssues": [
-      "EDM monitoring coverage was incomplete before 2023 \u2014 earlier figures may undercount",
-      "Bathing water classification methodology changed slightly in 2020"
+      "EDM monitoring coverage was incomplete before 2023 — earlier discharge figures likely undercount actual spill events",
+      "Bathing water classification uses a 4-year rolling average, meaning single-year improvements take time to show in ratings",
+      "Some CSO sensors have known data quality issues; the Environment Agency flags approximately 8% of returns as requiring further validation",
+      "River ecological status assessments changed methodology in 2019 to include new chemical standards, making direct pre/post comparison difficult"
     ]
   }
 }

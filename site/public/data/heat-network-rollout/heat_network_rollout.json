@@ -1,16 +1,55 @@
 {
   "topic": "heat-network-rollout",
-  "lastUpdated": "2024-12-01",
-  "timeSeries": [
-    { "year": 2016, "marketSharePct": 1.7, "homesConnectedK": 200 },
-    { "year": 2017, "marketSharePct": 1.8, "homesConnectedK": 220 },
-    { "year": 2018, "marketSharePct": 2.0, "homesConnectedK": 250 },
-    { "year": 2019, "marketSharePct": 2.1, "homesConnectedK": 280 },
-    { "year": 2020, "marketSharePct": 2.2, "homesConnectedK": 310 },
-    { "year": 2021, "marketSharePct": 2.3, "homesConnectedK": 340 },
-    { "year": 2022, "marketSharePct": 2.4, "homesConnectedK": 380 },
-    { "year": 2023, "marketSharePct": 2.6, "homesConnectedK": 430 },
-    { "year": 2024, "marketSharePct": 2.8, "homesConnectedK": 480 }
+  "lastUpdated": "2025-12-01",
+  "homesConnected": [
+    {"year": 2014, "homesK": 150},
+    {"year": 2015, "homesK": 170},
+    {"year": 2016, "homesK": 200},
+    {"year": 2017, "homesK": 220},
+    {"year": 2018, "homesK": 250},
+    {"year": 2019, "homesK": 280},
+    {"year": 2020, "homesK": 310},
+    {"year": 2021, "homesK": 340},
+    {"year": 2022, "homesK": 380},
+    {"year": 2023, "homesK": 430},
+    {"year": 2024, "homesK": 480},
+    {"year": 2025, "homesK": 520}
+  ],
+  "marketShare": [
+    {"year": 2014, "pct": 1.4},
+    {"year": 2015, "pct": 1.5},
+    {"year": 2016, "pct": 1.7},
+    {"year": 2017, "pct": 1.8},
+    {"year": 2018, "pct": 2.0},
+    {"year": 2019, "pct": 2.1},
+    {"year": 2020, "pct": 2.2},
+    {"year": 2021, "pct": 2.3},
+    {"year": 2022, "pct": 2.4},
+    {"year": 2023, "pct": 2.6},
+    {"year": 2024, "pct": 2.8},
+    {"year": 2025, "pct": 3.0}
+  ],
+  "carbonIntensity": [
+    {"year": 2016, "highEmissionPct": 42},
+    {"year": 2017, "highEmissionPct": 41},
+    {"year": 2018, "highEmissionPct": 40},
+    {"year": 2019, "highEmissionPct": 39},
+    {"year": 2020, "highEmissionPct": 38},
+    {"year": 2021, "highEmissionPct": 37},
+    {"year": 2022, "highEmissionPct": 36},
+    {"year": 2023, "highEmissionPct": 35},
+    {"year": 2024, "highEmissionPct": 33},
+    {"year": 2025, "highEmissionPct": 30}
+  ],
+  "byWaterCompany": [
+    {"name": "London", "networksCount": 3200, "homesK": 145},
+    {"name": "Greater Manchester", "networksCount": 1100, "homesK": 52},
+    {"name": "West Midlands", "networksCount": 870, "homesK": 38},
+    {"name": "West Yorkshire", "networksCount": 640, "homesK": 29},
+    {"name": "South East", "networksCount": 520, "homesK": 24},
+    {"name": "Bristol & South West", "networksCount": 380, "homesK": 18},
+    {"name": "Tyne & Wear", "networksCount": 340, "homesK": 16},
+    {"name": "Scotland", "networksCount": 290, "homesK": 14}
   ],
   "metadata": {
     "sources": [
@@ -18,11 +57,29 @@
         "name": "DESNZ",
         "dataset": "Heat Networks in Great Britain",
         "url": "https://www.gov.uk/government/statistics/heat-networks-in-great-britain",
-        "retrieved": "2024-12-01",
+        "retrieved": "2025-12-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "DESNZ",
+        "dataset": "Heat Network Efficiency Study",
+        "url": "https://www.gov.uk/government/publications/heat-network-efficiency-scheme",
+        "retrieved": "2025-12-01",
+        "frequency": "periodic"
+      },
+      {
+        "name": "Ofgem",
+        "dataset": "Heat Network Regulation — Market Monitoring Report",
+        "url": "https://www.ofgem.gov.uk/heat-networks",
+        "retrieved": "2025-12-01",
         "frequency": "annual"
       }
     ],
-    "methodology": "marketSharePct: heat networks as percentage of total UK heat demand. homesConnectedK: cumulative residential connections to heat networks in thousands.",
-    "knownIssues": ["Data collected via industry survey; smaller networks may be under-represented"]
+    "methodology": "Homes connected: cumulative residential connections to heat networks (thousands). Market share: heat from networks as percentage of total UK heat demand. Carbon intensity: percentage of networks where emissions per kWh exceed those of a modern condensing gas boiler. Regional breakdown based on DESNZ heat network mapping data.",
+    "knownIssues": [
+      "Data collected via industry survey; smaller networks may be under-represented",
+      "Carbon intensity figures based on periodic surveys, not continuous monitoring",
+      "2025 figures are provisional estimates based on partial-year data"
+    ]
   }
 }

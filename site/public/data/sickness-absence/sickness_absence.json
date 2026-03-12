@@ -3,85 +3,35 @@
   "lastUpdated": "2026-03-01",
   "national": {
     "timeSeries": [
-      {
-        "year": 2015,
-        "daysLostM": 137,
-        "avgDaysPerWorker": 4.3,
-        "mentalHealthPct": 13,
-        "mskPct": 24
-      },
-      {
-        "year": 2016,
-        "daysLostM": 141,
-        "avgDaysPerWorker": 4.3,
-        "mentalHealthPct": 14,
-        "mskPct": 23
-      },
-      {
-        "year": 2017,
-        "daysLostM": 145,
-        "avgDaysPerWorker": 4.4,
-        "mentalHealthPct": 15,
-        "mskPct": 23
-      },
-      {
-        "year": 2018,
-        "daysLostM": 149,
-        "avgDaysPerWorker": 4.4,
-        "mentalHealthPct": 16,
-        "mskPct": 22
-      },
-      {
-        "year": 2019,
-        "daysLostM": 148,
-        "avgDaysPerWorker": 4.4,
-        "mentalHealthPct": 17,
-        "mskPct": 22
-      },
-      {
-        "year": 2020,
-        "daysLostM": 175,
-        "avgDaysPerWorker": 5.2,
-        "mentalHealthPct": 20,
-        "mskPct": 20
-      },
-      {
-        "year": 2021,
-        "daysLostM": 168,
-        "avgDaysPerWorker": 5.0,
-        "mentalHealthPct": 21,
-        "mskPct": 20
-      },
-      {
-        "year": 2022,
-        "daysLostM": 158,
-        "avgDaysPerWorker": 4.7,
-        "mentalHealthPct": 21,
-        "mskPct": 21
-      },
-      {
-        "year": 2023,
-        "daysLostM": 172,
-        "avgDaysPerWorker": 5.1,
-        "mentalHealthPct": 22,
-        "mskPct": 21
-      },
-      {
-        "year": 2024,
-        "daysLostM": 180,
-        "avgDaysPerWorker": 5.3,
-        "mentalHealthPct": 23,
-        "mskPct": 20
-      },
-      {
-        "year": 2025,
-        "daysLostM": 185,
-        "avgDaysPerWorker": 5.5,
-        "mentalHealthPct": 23,
-        "mskPct": 20
-      }
+      { "year": 2010, "daysLostM": 131, "avgDaysPerWorker": 4.5, "mentalHealthPct": 10, "mskPct": 27, "absenceRate": 2.5 },
+      { "year": 2011, "daysLostM": 131, "avgDaysPerWorker": 4.5, "mentalHealthPct": 10, "mskPct": 27, "absenceRate": 2.5 },
+      { "year": 2012, "daysLostM": 131, "avgDaysPerWorker": 4.4, "mentalHealthPct": 11, "mskPct": 26, "absenceRate": 2.4 },
+      { "year": 2013, "daysLostM": 131, "avgDaysPerWorker": 4.4, "mentalHealthPct": 11, "mskPct": 26, "absenceRate": 2.4 },
+      { "year": 2014, "daysLostM": 131, "avgDaysPerWorker": 4.3, "mentalHealthPct": 12, "mskPct": 25, "absenceRate": 2.3 },
+      { "year": 2015, "daysLostM": 137, "avgDaysPerWorker": 4.3, "mentalHealthPct": 13, "mskPct": 24, "absenceRate": 2.3 },
+      { "year": 2016, "daysLostM": 137, "avgDaysPerWorker": 4.3, "mentalHealthPct": 14, "mskPct": 23, "absenceRate": 2.2 },
+      { "year": 2017, "daysLostM": 141, "avgDaysPerWorker": 4.1, "mentalHealthPct": 15, "mskPct": 23, "absenceRate": 2.1 },
+      { "year": 2018, "daysLostM": 141, "avgDaysPerWorker": 4.4, "mentalHealthPct": 16, "mskPct": 22, "absenceRate": 2.0 },
+      { "year": 2019, "daysLostM": 149, "avgDaysPerWorker": 4.4, "mentalHealthPct": 17, "mskPct": 22, "absenceRate": 2.0 },
+      { "year": 2020, "daysLostM": 118, "avgDaysPerWorker": 3.6, "mentalHealthPct": 20, "mskPct": 20, "absenceRate": 1.8 },
+      { "year": 2021, "daysLostM": 150, "avgDaysPerWorker": 4.6, "mentalHealthPct": 21, "mskPct": 20, "absenceRate": 2.2 },
+      { "year": 2022, "daysLostM": 186, "avgDaysPerWorker": 5.7, "mentalHealthPct": 21, "mskPct": 19, "absenceRate": 2.6 },
+      { "year": 2023, "daysLostM": 185, "avgDaysPerWorker": 5.5, "mentalHealthPct": 22, "mskPct": 19, "absenceRate": 2.6 },
+      { "year": 2024, "daysLostM": 190, "avgDaysPerWorker": 5.7, "mentalHealthPct": 23, "mskPct": 18, "absenceRate": 2.7 },
+      { "year": 2025, "daysLostM": 192, "avgDaysPerWorker": 5.7, "mentalHealthPct": 24, "mskPct": 18, "absenceRate": 2.7 }
     ]
   },
+  "bySector": [
+    { "sector": "Health & social work", "avgDaysPerWorker": 8.2, "absenceRate": 3.9 },
+    { "sector": "Public administration", "avgDaysPerWorker": 7.9, "absenceRate": 3.6 },
+    { "sector": "Education", "avgDaysPerWorker": 6.4, "absenceRate": 3.1 },
+    { "sector": "Transport & storage", "avgDaysPerWorker": 5.8, "absenceRate": 2.8 },
+    { "sector": "Manufacturing", "avgDaysPerWorker": 5.3, "absenceRate": 2.5 },
+    { "sector": "Wholesale & retail", "avgDaysPerWorker": 4.1, "absenceRate": 2.0 },
+    { "sector": "Construction", "avgDaysPerWorker": 3.9, "absenceRate": 1.8 },
+    { "sector": "Professional services", "avgDaysPerWorker": 3.2, "absenceRate": 1.4 },
+    { "sector": "Information & comms", "avgDaysPerWorker": 2.8, "absenceRate": 1.2 }
+  ],
   "metadata": {
     "sources": [
       {
@@ -95,12 +45,20 @@
         "dataset": "Health and wellbeing at work survey",
         "url": "https://www.cipd.org/uk/knowledge/reports/health-wellbeing-work/",
         "frequency": "annual"
+      },
+      {
+        "name": "Health Foundation",
+        "dataset": "Trends in sickness absence and economic inactivity",
+        "url": "https://www.health.org.uk/publications/long-reads/trends-in-sickness-absence",
+        "frequency": "periodic"
       }
     ],
-    "methodology": "Days lost estimate from ONS Labour Force Survey self-reported sickness absence, extrapolated to full workforce. Cause breakdown from CIPD survey of HR practitioners. Mental health includes stress, anxiety and depression.",
+    "methodology": "Days lost estimate from ONS Labour Force Survey self-reported sickness absence, extrapolated to full workforce. Cause breakdown from CIPD survey of HR practitioners. Mental health includes stress, anxiety and depression. Sector breakdown from Labour Force Survey, annual averages. 2020 figures are distorted by furlough — many who would have been absent were instead furloughed, so the drop that year is artificial.",
     "knownIssues": [
       "LFS sickness absence is self-reported and may under-estimate actual absence",
-      "Cause breakdown from employer surveys \u2014 definition of 'mental health' varies"
+      "Cause breakdown from employer surveys — definition of 'mental health' varies across years",
+      "2020 data distorted by furlough scheme — does not reflect true absence levels",
+      "Sector breakdown uses broad SIC categories — variation within sectors can be significant"
     ]
   }
 }

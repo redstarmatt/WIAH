@@ -3,85 +3,37 @@
   "lastUpdated": "2026-03-01",
   "national": {
     "timeSeries": [
-      {
-        "year": 2015,
-        "under25Pct": 45,
-        "over65Pct": 96,
-        "youngPeopleM": 1.8,
-        "bameM": 1.5
-      },
-      {
-        "year": 2016,
-        "under25Pct": 47,
-        "over65Pct": 96,
-        "youngPeopleM": 1.7,
-        "bameM": 1.5
-      },
-      {
-        "year": 2017,
-        "under25Pct": 49,
-        "over65Pct": 97,
-        "youngPeopleM": 1.6,
-        "bameM": 1.5
-      },
-      {
-        "year": 2018,
-        "under25Pct": 52,
-        "over65Pct": 97,
-        "youngPeopleM": 1.6,
-        "bameM": 1.5
-      },
-      {
-        "year": 2019,
-        "under25Pct": 54,
-        "over65Pct": 97,
-        "youngPeopleM": 1.5,
-        "bameM": 1.6
-      },
-      {
-        "year": 2020,
-        "under25Pct": 56,
-        "over65Pct": 97,
-        "youngPeopleM": 1.5,
-        "bameM": 1.6
-      },
-      {
-        "year": 2021,
-        "under25Pct": 57,
-        "over65Pct": 97,
-        "youngPeopleM": 1.5,
-        "bameM": 1.6
-      },
-      {
-        "year": 2022,
-        "under25Pct": 57,
-        "over65Pct": 97,
-        "youngPeopleM": 1.5,
-        "bameM": 1.7
-      },
-      {
-        "year": 2023,
-        "under25Pct": 57,
-        "over65Pct": 97,
-        "youngPeopleM": 1.5,
-        "bameM": 1.7
-      },
-      {
-        "year": 2024,
-        "under25Pct": 57,
-        "over65Pct": 97,
-        "youngPeopleM": 1.5,
-        "bameM": 1.7
-      },
-      {
-        "year": 2025,
-        "under25Pct": 57,
-        "over65Pct": 97,
-        "youngPeopleM": 1.5,
-        "bameM": 1.7
-      }
+      { "year": 2015, "under25Pct": 45, "over65Pct": 96, "completeness": 84, "youngPeopleM": 1.8, "bameM": 1.5, "totalUnregisteredM": 8.1 },
+      { "year": 2016, "under25Pct": 47, "over65Pct": 96, "completeness": 84, "youngPeopleM": 1.7, "bameM": 1.5, "totalUnregisteredM": 8.1 },
+      { "year": 2017, "under25Pct": 49, "over65Pct": 97, "completeness": 85, "youngPeopleM": 1.6, "bameM": 1.5, "totalUnregisteredM": 8.2 },
+      { "year": 2018, "under25Pct": 52, "over65Pct": 97, "completeness": 85, "youngPeopleM": 1.6, "bameM": 1.5, "totalUnregisteredM": 8.3 },
+      { "year": 2019, "under25Pct": 54, "over65Pct": 97, "completeness": 86, "youngPeopleM": 1.5, "bameM": 1.6, "totalUnregisteredM": 8.5 },
+      { "year": 2020, "under25Pct": 56, "over65Pct": 97, "completeness": 86, "youngPeopleM": 1.5, "bameM": 1.6, "totalUnregisteredM": 8.4 },
+      { "year": 2021, "under25Pct": 57, "over65Pct": 97, "completeness": 86, "youngPeopleM": 1.5, "bameM": 1.6, "totalUnregisteredM": 8.3 },
+      { "year": 2022, "under25Pct": 57, "over65Pct": 97, "completeness": 85, "youngPeopleM": 1.5, "bameM": 1.7, "totalUnregisteredM": 8.3 },
+      { "year": 2023, "under25Pct": 57, "over65Pct": 97, "completeness": 84, "youngPeopleM": 1.5, "bameM": 1.7, "totalUnregisteredM": 8.3 },
+      { "year": 2024, "under25Pct": 57, "over65Pct": 97, "completeness": 84, "youngPeopleM": 1.5, "bameM": 1.7, "totalUnregisteredM": 8.3 },
+      { "year": 2025, "under25Pct": 57, "over65Pct": 97, "completeness": 83, "youngPeopleM": 1.5, "bameM": 1.7, "totalUnregisteredM": 8.3 }
     ]
   },
+  "voterIdImpact": [
+    { "year": 2023, "localElectionTurnedAwayPct": 0.25, "localElectionWithoutIdPct": 0.7, "generalElectionTurnedAwayPct": null, "generalElectionWithoutIdPct": null },
+    { "year": 2024, "localElectionTurnedAwayPct": 0.19, "localElectionWithoutIdPct": 0.5, "generalElectionTurnedAwayPct": 0.07, "generalElectionWithoutIdPct": 0.3 },
+    { "year": 2025, "localElectionTurnedAwayPct": 0.16, "localElectionWithoutIdPct": 0.4, "generalElectionTurnedAwayPct": null, "generalElectionWithoutIdPct": null }
+  ],
+  "byRegion": [
+    { "region": "London", "completeness": 78, "under25Pct": 49 },
+    { "region": "East Midlands", "completeness": 85, "under25Pct": 56 },
+    { "region": "West Midlands", "completeness": 82, "under25Pct": 53 },
+    { "region": "North West", "completeness": 84, "under25Pct": 55 },
+    { "region": "South East", "completeness": 87, "under25Pct": 59 },
+    { "region": "South West", "completeness": 88, "under25Pct": 61 },
+    { "region": "Yorkshire & Humber", "completeness": 83, "under25Pct": 54 },
+    { "region": "North East", "completeness": 86, "under25Pct": 58 },
+    { "region": "East of England", "completeness": 87, "under25Pct": 60 },
+    { "region": "Wales", "completeness": 89, "under25Pct": 62 },
+    { "region": "Scotland", "completeness": 90, "under25Pct": 64 }
+  ],
   "metadata": {
     "sources": [
       {
@@ -95,12 +47,26 @@
         "dataset": "Accuracy and completeness of the electoral registers",
         "url": "https://www.electoralcommission.org.uk/research-reports-and-data/our-reports-and-data-electoral-data/accuracy-and-completeness-electoral-registers",
         "frequency": "biennial"
+      },
+      {
+        "name": "Electoral Commission",
+        "dataset": "Voter identification at elections",
+        "url": "https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/our-views-and-research/our-research/voter-identification",
+        "frequency": "per election"
+      },
+      {
+        "name": "Cabinet Office",
+        "dataset": "Voter ID evaluation reports",
+        "url": "https://www.gov.uk/government/publications/voter-identification-evaluation",
+        "frequency": "per election"
       }
     ],
-    "methodology": "Electoral register completeness from Electoral Commission biennial survey comparing register entries to ONS population estimates. Age and ethnicity breakdowns from Electoral Commission polling commissioned from Ipsos. Under-registration estimates derived from population estimates minus registered electors.",
+    "methodology": "Electoral register completeness estimated from Electoral Commission biennial surveys comparing register entries to ONS population estimates. Age and ethnicity breakdowns from Electoral Commission polling commissioned from Ipsos. Under-registration estimates derived from population estimates minus registered electors. Voter ID impact data from Electoral Commission post-election monitoring reports at polling stations across England.",
     "knownIssues": [
       "Completeness estimates have a margin of error of \u00b12\u20133 percentage points",
-      "Automatic Voter Registration pilot data not yet incorporated into national estimates"
+      "Automatic Voter Registration pilot data not yet incorporated into national estimates",
+      "Voter ID impact figures capture only those who attended polling stations, not those deterred from attending at all",
+      "Regional completeness estimates are modelled from household survey data and may not capture localised variation"
     ]
   }
 }

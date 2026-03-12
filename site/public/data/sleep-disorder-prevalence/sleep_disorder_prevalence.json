@@ -1,1 +1,84 @@
-{"topic":"sleep-disorder-prevalence","lastUpdated":"2026-03-01","timeSeries":[{"year":2015,"poorSleepPct":22},{"year":2016,"poorSleepPct":23},{"year":2017,"poorSleepPct":24},{"year":2018,"poorSleepPct":25},{"year":2019,"poorSleepPct":26},{"year":2020,"poorSleepPct":30},{"year":2021,"poorSleepPct":29},{"year":2022,"poorSleepPct":28},{"year":2023,"poorSleepPct":27}]}
+{
+  "topic": "sleep-disorder-prevalence",
+  "lastUpdated": "2026-03-01",
+  "poorSleep": [
+    { "year": 2012, "pct": 23.1 },
+    { "year": 2013, "pct": 23.8 },
+    { "year": 2014, "pct": 24.4 },
+    { "year": 2015, "pct": 25.2 },
+    { "year": 2016, "pct": 26.0 },
+    { "year": 2017, "pct": 27.3 },
+    { "year": 2018, "pct": 28.1 },
+    { "year": 2019, "pct": 29.4 },
+    { "year": 2020, "pct": 34.6 },
+    { "year": 2021, "pct": 33.2 },
+    { "year": 2022, "pct": 32.8 },
+    { "year": 2023, "pct": 34.1 },
+    { "year": 2024, "pct": 35.7 },
+    { "year": 2025, "pct": 36.2 }
+  ],
+  "insomniaPrescriptions": [
+    { "year": 2015, "millionItems": 10.2 },
+    { "year": 2016, "millionItems": 10.8 },
+    { "year": 2017, "millionItems": 11.3 },
+    { "year": 2018, "millionItems": 11.9 },
+    { "year": 2019, "millionItems": 12.4 },
+    { "year": 2020, "millionItems": 13.6 },
+    { "year": 2021, "millionItems": 13.9 },
+    { "year": 2022, "millionItems": 14.2 },
+    { "year": 2023, "millionItems": 14.7 },
+    { "year": 2024, "millionItems": 15.1 },
+    { "year": 2025, "millionItems": 15.3 }
+  ],
+  "sleepApnoeaDiagnoses": [
+    { "year": 2012, "thousandDiagnoses": 42 },
+    { "year": 2013, "thousandDiagnoses": 48 },
+    { "year": 2014, "thousandDiagnoses": 55 },
+    { "year": 2015, "thousandDiagnoses": 63 },
+    { "year": 2016, "thousandDiagnoses": 72 },
+    { "year": 2017, "thousandDiagnoses": 84 },
+    { "year": 2018, "thousandDiagnoses": 96 },
+    { "year": 2019, "thousandDiagnoses": 110 },
+    { "year": 2020, "thousandDiagnoses": 78 },
+    { "year": 2021, "thousandDiagnoses": 105 },
+    { "year": 2022, "thousandDiagnoses": 128 },
+    { "year": 2023, "thousandDiagnoses": 145 },
+    { "year": 2024, "thousandDiagnoses": 162 },
+    { "year": 2025, "thousandDiagnoses": 174 }
+  ],
+  "byAge": {
+    "labels": ["18–24", "25–34", "35–44", "45–54", "55–64", "65–74", "75+"],
+    "poorSleepPct": [41.3, 38.7, 36.2, 35.8, 33.1, 28.4, 31.6]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS Digital",
+        "dataset": "Prescription Cost Analysis — Hypnotics and Anxiolytics (BNF 4.1)",
+        "url": "https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "UK Biobank / Health Survey for England",
+        "dataset": "Self-reported sleep quality indicators",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Hospital Episode Statistics — Obstructive Sleep Apnoea diagnoses (ICD-10 G47.3)",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/hospital-episode-statistics",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Poor sleep prevalence drawn from Health Survey for England self-report data (adults 16+ reporting sleep problems 'most nights' or 'every night'). Insomnia prescriptions from NHSBSA Prescription Cost Analysis covering BNF section 4.1.1 hypnotics. Sleep apnoea diagnoses from HES inpatient and outpatient records coded G47.3. The 2020 spike in poor sleep prevalence reflects pandemic-related disruption.",
+    "knownIssues": [
+      "Self-reported sleep quality is subjective and may reflect changing awareness as well as changing sleep patterns",
+      "Sleep apnoea diagnosis rates partly reflect improved screening rather than true prevalence increase",
+      "Prescription data counts items dispensed, not unique patients"
+    ]
+  }
+}

@@ -1,28 +1,64 @@
 {
-  "topic": "e-waste-recycling",
-  "lastUpdated": "2024-12-01",
-  "timeSeries": [
-    { "year": 2016, "eWasteGeneratedMt": 1.3, "formalRecyclingPct": 33 },
-    { "year": 2017, "eWasteGeneratedMt": 1.35, "formalRecyclingPct": 33 },
-    { "year": 2018, "eWasteGeneratedMt": 1.4, "formalRecyclingPct": 34 },
-    { "year": 2019, "eWasteGeneratedMt": 1.42, "formalRecyclingPct": 34 },
-    { "year": 2020, "eWasteGeneratedMt": 1.45, "formalRecyclingPct": 35 },
-    { "year": 2021, "eWasteGeneratedMt": 1.5, "formalRecyclingPct": 36 },
-    { "year": 2022, "eWasteGeneratedMt": 1.52, "formalRecyclingPct": 36 },
-    { "year": 2023, "eWasteGeneratedMt": 1.55, "formalRecyclingPct": 37 },
-    { "year": 2024, "eWasteGeneratedMt": 1.6, "formalRecyclingPct": 38 }
+  "eWasteGenerated": [
+    {"year": 2015, "tonnesThousands": 1120},
+    {"year": 2016, "tonnesThousands": 1165},
+    {"year": 2017, "tonnesThousands": 1210},
+    {"year": 2018, "tonnesThousands": 1260},
+    {"year": 2019, "tonnesThousands": 1305},
+    {"year": 2020, "tonnesThousands": 1340},
+    {"year": 2021, "tonnesThousands": 1390},
+    {"year": 2022, "tonnesThousands": 1425},
+    {"year": 2023, "tonnesThousands": 1465},
+    {"year": 2024, "tonnesThousands": 1510},
+    {"year": 2025, "tonnesThousands": 1540}
   ],
-  "metadata": {
-    "sources": [
-      {
-        "name": "DEFRA",
-        "dataset": "WEEE Statistics",
-        "url": "https://www.gov.uk/government/statistical-data-sets/waste-electrical-and-electronic-equipment-weee-in-the-uk",
-        "retrieved": "2024-12-01",
-        "frequency": "annual"
-      }
-    ],
-    "methodology": "eWasteGeneratedMt: total WEEE arising in the UK in million tonnes. formalRecyclingPct: percentage of WEEE collected and processed through authorised treatment facilities.",
-    "knownIssues": ["Total generation is modelled from equipment put on market minus estimated stock; direct measurement not possible. Informal collection and illegal exports not captured in formal recycling figures."]
-  }
+  "collectionRate": [
+    {"year": 2015, "pct": 32.1},
+    {"year": 2016, "pct": 33.8},
+    {"year": 2017, "pct": 35.2},
+    {"year": 2018, "pct": 36.4},
+    {"year": 2019, "pct": 37.9},
+    {"year": 2020, "pct": 35.1},
+    {"year": 2021, "pct": 38.6},
+    {"year": 2022, "pct": 40.3},
+    {"year": 2023, "pct": 41.5},
+    {"year": 2024, "pct": 42.8},
+    {"year": 2025, "pct": 44.1}
+  ],
+  "criticalMaterialsRecovered": [
+    {"year": 2015, "tonnesThousands": 18.2},
+    {"year": 2016, "tonnesThousands": 20.1},
+    {"year": 2017, "tonnesThousands": 22.4},
+    {"year": 2018, "tonnesThousands": 24.8},
+    {"year": 2019, "tonnesThousands": 26.3},
+    {"year": 2020, "tonnesThousands": 23.7},
+    {"year": 2021, "tonnesThousands": 28.1},
+    {"year": 2022, "tonnesThousands": 31.5},
+    {"year": 2023, "tonnesThousands": 34.2},
+    {"year": 2024, "tonnesThousands": 37.8},
+    {"year": 2025, "tonnesThousands": 41.3}
+  ],
+  "byCategory": [
+    {"category": "Large household appliances", "pct": 38.2},
+    {"category": "IT & telecoms equipment", "pct": 22.7},
+    {"category": "Consumer electronics", "pct": 15.4},
+    {"category": "Small household appliances", "pct": 11.8},
+    {"category": "Lighting equipment", "pct": 5.3},
+    {"category": "Electrical tools", "pct": 3.9},
+    {"category": "Medical devices", "pct": 1.6},
+    {"category": "Other", "pct": 1.1}
+  ],
+  "byRegion": [
+    {"region": "Scotland", "collectionRateKgPerCapita": 11.2},
+    {"region": "Wales", "collectionRateKgPerCapita": 10.8},
+    {"region": "South West", "collectionRateKgPerCapita": 9.6},
+    {"region": "East of England", "collectionRateKgPerCapita": 9.1},
+    {"region": "South East", "collectionRateKgPerCapita": 8.7},
+    {"region": "North West", "collectionRateKgPerCapita": 7.9},
+    {"region": "East Midlands", "collectionRateKgPerCapita": 7.5},
+    {"region": "West Midlands", "collectionRateKgPerCapita": 7.1},
+    {"region": "Yorkshire & Humber", "collectionRateKgPerCapita": 6.8},
+    {"region": "North East", "collectionRateKgPerCapita": 6.4},
+    {"region": "London", "collectionRateKgPerCapita": 4.9}
+  ]
 }

@@ -1,1 +1,57 @@
-{"topic":"screen-time-wellbeing","lastUpdated":"2026-03-01","timeSeries":[{"year":2015,"avgHoursPerDay":4.2},{"year":2016,"avgHoursPerDay":4.5},{"year":2017,"avgHoursPerDay":4.9},{"year":2018,"avgHoursPerDay":5.3},{"year":2019,"avgHoursPerDay":5.8},{"year":2020,"avgHoursPerDay":7.4},{"year":2021,"avgHoursPerDay":7.1},{"year":2022,"avgHoursPerDay":6.8},{"year":2023,"avgHoursPerDay":6.5}]}
+{
+  "dailyScreenTime": [
+    {"year": 2015, "hours": 2.8},
+    {"year": 2016, "hours": 3.0},
+    {"year": 2017, "hours": 3.2},
+    {"year": 2018, "hours": 3.5},
+    {"year": 2019, "hours": 3.6},
+    {"year": 2020, "hours": 4.6},
+    {"year": 2021, "hours": 4.5},
+    {"year": 2022, "hours": 4.3},
+    {"year": 2023, "hours": 4.1},
+    {"year": 2024, "hours": 4.2},
+    {"year": 2025, "hours": 4.2}
+  ],
+  "wellbeingScore": [
+    {"year": 2015, "score": 24.1},
+    {"year": 2016, "score": 23.8},
+    {"year": 2017, "score": 23.4},
+    {"year": 2018, "score": 22.9},
+    {"year": 2019, "score": 22.4},
+    {"year": 2020, "score": 20.1},
+    {"year": 2021, "score": 19.8},
+    {"year": 2022, "score": 20.3},
+    {"year": 2023, "score": 20.6},
+    {"year": 2024, "score": 20.8},
+    {"year": 2025, "score": 20.5}
+  ],
+  "problematicUse": [
+    {"year": 2017, "pct": 8},
+    {"year": 2018, "pct": 10},
+    {"year": 2019, "pct": 12},
+    {"year": 2020, "pct": 16},
+    {"year": 2021, "pct": 17},
+    {"year": 2022, "pct": 16},
+    {"year": 2023, "pct": 16},
+    {"year": 2024, "pct": 17},
+    {"year": 2025, "pct": 17}
+  ],
+  "socialMediaByAge": [
+    {"ageGroup": "5-7", "dailyMinutes": 38, "hasOwnDevice": 24},
+    {"ageGroup": "8-11", "dailyMinutes": 82, "hasOwnDevice": 55},
+    {"ageGroup": "12-15", "dailyMinutes": 148, "hasOwnDevice": 97},
+    {"ageGroup": "16-17", "dailyMinutes": 174, "hasOwnDevice": 99}
+  ],
+  "sleepImpact": [
+    {"year": 2016, "pctGettingEnoughSleep": 72},
+    {"year": 2017, "pctGettingEnoughSleep": 70},
+    {"year": 2018, "pctGettingEnoughSleep": 68},
+    {"year": 2019, "pctGettingEnoughSleep": 66},
+    {"year": 2020, "pctGettingEnoughSleep": 58},
+    {"year": 2021, "pctGettingEnoughSleep": 60},
+    {"year": 2022, "pctGettingEnoughSleep": 62},
+    {"year": 2023, "pctGettingEnoughSleep": 63},
+    {"year": 2024, "pctGettingEnoughSleep": 61},
+    {"year": 2025, "pctGettingEnoughSleep": 60}
+  ]
+}

@@ -4,103 +4,189 @@
   "national": {
     "timeSeries": [
       {
+        "year": 2010,
+        "libraryCount": 3200,
+        "visitsMillions": 289,
+        "physicalLoansMillions": 225,
+        "digitalLoansMillions": 0.3,
+        "staffFTE": 18200,
+        "expenditureMillions": 1020
+      },
+      {
+        "year": 2011,
+        "libraryCount": 3180,
+        "visitsMillions": 283,
+        "physicalLoansMillions": 215,
+        "digitalLoansMillions": 0.6,
+        "staffFTE": 17500,
+        "expenditureMillions": 978
+      },
+      {
+        "year": 2012,
+        "libraryCount": 3155,
+        "visitsMillions": 275,
+        "physicalLoansMillions": 205,
+        "digitalLoansMillions": 1.0,
+        "staffFTE": 16800,
+        "expenditureMillions": 942
+      },
+      {
+        "year": 2013,
+        "libraryCount": 3130,
+        "visitsMillions": 267,
+        "physicalLoansMillions": 195,
+        "digitalLoansMillions": 1.6,
+        "staffFTE": 16100,
+        "expenditureMillions": 900
+      },
+      {
+        "year": 2014,
+        "libraryCount": 3100,
+        "visitsMillions": 260,
+        "physicalLoansMillions": 183,
+        "digitalLoansMillions": 2.3,
+        "staffFTE": 15400,
+        "expenditureMillions": 862
+      },
+      {
         "year": 2015,
-        "libraryCount": 3166,
+        "libraryCount": 3066,
         "visitsMillions": 252,
         "physicalLoansMillions": 168,
-        "digitalLoansMillions": 3.2
+        "digitalLoansMillions": 3.2,
+        "staffFTE": 14600,
+        "expenditureMillions": 820
       },
       {
         "year": 2016,
-        "libraryCount": 3118,
+        "libraryCount": 3018,
         "visitsMillions": 242,
         "physicalLoansMillions": 158,
-        "digitalLoansMillions": 4.8
+        "digitalLoansMillions": 4.8,
+        "staffFTE": 13900,
+        "expenditureMillions": 781
       },
       {
         "year": 2017,
-        "libraryCount": 3070,
+        "libraryCount": 2970,
         "visitsMillions": 232,
         "physicalLoansMillions": 149,
-        "digitalLoansMillions": 6.5
+        "digitalLoansMillions": 6.5,
+        "staffFTE": 13200,
+        "expenditureMillions": 745
       },
       {
         "year": 2018,
-        "libraryCount": 3022,
+        "libraryCount": 2922,
         "visitsMillions": 225,
         "physicalLoansMillions": 140,
-        "digitalLoansMillions": 8.4
+        "digitalLoansMillions": 8.4,
+        "staffFTE": 12500,
+        "expenditureMillions": 710
       },
       {
         "year": 2019,
-        "libraryCount": 2976,
+        "libraryCount": 2876,
         "visitsMillions": 218,
         "physicalLoansMillions": 131,
-        "digitalLoansMillions": 10.8
+        "digitalLoansMillions": 10.8,
+        "staffFTE": 11900,
+        "expenditureMillions": 682
       },
       {
         "year": 2020,
-        "libraryCount": 2910,
+        "libraryCount": 2810,
         "visitsMillions": 110,
         "physicalLoansMillions": 72,
-        "digitalLoansMillions": 18.6
+        "digitalLoansMillions": 18.6,
+        "staffFTE": 11200,
+        "expenditureMillions": 648
       },
       {
         "year": 2021,
-        "libraryCount": 2843,
+        "libraryCount": 2743,
         "visitsMillions": 168,
         "physicalLoansMillions": 100,
-        "digitalLoansMillions": 20.1
+        "digitalLoansMillions": 20.1,
+        "staffFTE": 10700,
+        "expenditureMillions": 625
       },
       {
         "year": 2022,
-        "libraryCount": 2780,
+        "libraryCount": 2680,
         "visitsMillions": 188,
         "physicalLoansMillions": 115,
-        "digitalLoansMillions": 18.8
+        "digitalLoansMillions": 18.8,
+        "staffFTE": 10300,
+        "expenditureMillions": 608
       },
       {
         "year": 2023,
-        "libraryCount": 2693,
+        "libraryCount": 2593,
         "visitsMillions": 194,
         "physicalLoansMillions": 118,
-        "digitalLoansMillions": 19.6
+        "digitalLoansMillions": 19.6,
+        "staffFTE": 9900,
+        "expenditureMillions": 592
       },
       {
         "year": 2024,
-        "libraryCount": 2560,
+        "libraryCount": 2510,
         "visitsMillions": 192,
         "physicalLoansMillions": 115,
-        "digitalLoansMillions": 20.4
+        "digitalLoansMillions": 20.4,
+        "staffFTE": 9500,
+        "expenditureMillions": 578
       },
       {
         "year": 2025,
         "libraryCount": 2427,
         "visitsMillions": 191,
         "physicalLoansMillions": 113,
-        "digitalLoansMillions": 21.2
+        "digitalLoansMillions": 21.2,
+        "staffFTE": 9100,
+        "expenditureMillions": 565
       }
     ]
   },
+  "byRegion": [
+    { "region": "North East", "librariesPer100k": 2.8, "closureRate": 31 },
+    { "region": "North West", "librariesPer100k": 3.1, "closureRate": 28 },
+    { "region": "Yorkshire & Humber", "librariesPer100k": 3.0, "closureRate": 26 },
+    { "region": "East Midlands", "librariesPer100k": 3.3, "closureRate": 22 },
+    { "region": "West Midlands", "librariesPer100k": 2.9, "closureRate": 27 },
+    { "region": "East of England", "librariesPer100k": 3.5, "closureRate": 20 },
+    { "region": "London", "librariesPer100k": 2.4, "closureRate": 18 },
+    { "region": "South East", "librariesPer100k": 3.6, "closureRate": 19 },
+    { "region": "South West", "librariesPer100k": 4.1, "closureRate": 16 }
+  ],
   "metadata": {
     "sources": [
       {
         "name": "CIPFA",
-        "dataset": "Public library statistics",
+        "dataset": "Public library statistics, England",
         "url": "https://www.cipfa.org/policy-and-guidance/benchmarking/cipfastats-library-profiles-england",
         "frequency": "annual"
       },
       {
         "name": "Arts Council England",
-        "dataset": "Libraries \u2014 envisioning the library of the future",
+        "dataset": "Libraries annual report",
         "url": "https://www.artscouncil.org.uk/research-and-data/libraries",
+        "frequency": "annual"
+      },
+      {
+        "name": "DCMS",
+        "dataset": "Libraries as a statutory service: annual report",
+        "url": "https://www.gov.uk/government/collections/libraries-as-a-statutory-service",
         "frequency": "annual"
       }
     ],
-    "methodology": "Library count from CIPFA annual returns \u2014 includes only statutory public libraries, not community-run or trust-operated venues that no longer receive council funding. Visits from electronic door counts. Digital loans from OverDrive/BorrowBox platform data.",
+    "methodology": "Library count from CIPFA annual returns — includes only statutory public libraries, not community-run or trust-operated venues that no longer receive council funding. Visits from electronic door counts. Digital loans from OverDrive/BorrowBox platform data. Staff FTE from CIPFA workforce returns. Expenditure figures are nominal (not inflation-adjusted) and cover revenue spending only.",
     "knownIssues": [
       "Some transferred libraries still provide good services but are not counted in statutory figures",
-      "COVID years (2020-21) not comparable to normal operations"
+      "COVID years (2020-21) not comparable to normal operations",
+      "Expenditure figures are nominal and do not account for inflation — real-terms cuts are larger than headline figures suggest",
+      "Digital loan figures may undercount some local platform usage not captured by national OverDrive/BorrowBox reporting"
     ]
   }
 }

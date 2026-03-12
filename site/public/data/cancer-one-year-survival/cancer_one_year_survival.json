@@ -1,17 +1,99 @@
 {
   "topic": "cancer-one-year-survival",
   "lastUpdated": "2026-03-01",
-  "timeSeries": [
-    {"year": 2000, "oneYearSurvivalPct": 61.2},
-    {"year": 2005, "oneYearSurvivalPct": 63.8},
-    {"year": 2010, "oneYearSurvivalPct": 67.1},
-    {"year": 2015, "oneYearSurvivalPct": 70.3},
-    {"year": 2016, "oneYearSurvivalPct": 71.2},
-    {"year": 2017, "oneYearSurvivalPct": 72.0},
-    {"year": 2018, "oneYearSurvivalPct": 72.8},
-    {"year": 2019, "oneYearSurvivalPct": 73.5},
-    {"year": 2020, "oneYearSurvivalPct": 71.0},
-    {"year": 2021, "oneYearSurvivalPct": 72.4},
-    {"year": 2022, "oneYearSurvivalPct": 73.2}
-  ]
+  "oneYearSurvival": [
+    {"year": 2001, "pct": 59.8},
+    {"year": 2002, "pct": 60.4},
+    {"year": 2003, "pct": 61.2},
+    {"year": 2004, "pct": 62.0},
+    {"year": 2005, "pct": 63.1},
+    {"year": 2006, "pct": 64.0},
+    {"year": 2007, "pct": 65.1},
+    {"year": 2008, "pct": 66.0},
+    {"year": 2009, "pct": 66.8},
+    {"year": 2010, "pct": 67.5},
+    {"year": 2011, "pct": 68.3},
+    {"year": 2012, "pct": 69.0},
+    {"year": 2013, "pct": 69.7},
+    {"year": 2014, "pct": 70.2},
+    {"year": 2015, "pct": 70.8},
+    {"year": 2016, "pct": 71.4},
+    {"year": 2017, "pct": 72.0},
+    {"year": 2018, "pct": 72.6},
+    {"year": 2019, "pct": 73.1},
+    {"year": 2020, "pct": 70.8, "note": "COVID-19 diagnostic disruption"},
+    {"year": 2021, "pct": 72.0},
+    {"year": 2022, "pct": 73.0},
+    {"year": 2023, "pct": 73.7}
+  ],
+  "lateDiagnosis": [
+    {"year": 2013, "pct": 27.2},
+    {"year": 2014, "pct": 26.8},
+    {"year": 2015, "pct": 26.1},
+    {"year": 2016, "pct": 25.5},
+    {"year": 2017, "pct": 25.0},
+    {"year": 2018, "pct": 24.6},
+    {"year": 2019, "pct": 24.2},
+    {"year": 2020, "pct": 26.8, "note": "COVID-19 screening paused"},
+    {"year": 2021, "pct": 25.9},
+    {"year": 2022, "pct": 24.8},
+    {"year": 2023, "pct": 24.0}
+  ],
+  "screeningUptake": [
+    {"year": 2010, "breast": 76.9, "bowel": 53.4, "cervical": 73.7},
+    {"year": 2011, "breast": 76.4, "bowel": 55.2, "cervical": 73.5},
+    {"year": 2012, "breast": 75.9, "bowel": 57.0, "cervical": 73.3},
+    {"year": 2013, "breast": 75.4, "bowel": 58.1, "cervical": 72.8},
+    {"year": 2014, "breast": 75.0, "bowel": 58.8, "cervical": 72.4},
+    {"year": 2015, "breast": 74.5, "bowel": 59.4, "cervical": 71.8},
+    {"year": 2016, "breast": 74.1, "bowel": 60.0, "cervical": 71.4},
+    {"year": 2017, "breast": 73.6, "bowel": 60.3, "cervical": 71.0},
+    {"year": 2018, "breast": 72.9, "bowel": 60.8, "cervical": 70.2},
+    {"year": 2019, "breast": 72.3, "bowel": 62.0, "cervical": 69.9},
+    {"year": 2020, "breast": 64.1, "bowel": 56.8, "cervical": 65.3, "note": "COVID-19 screening pause"},
+    {"year": 2021, "breast": 68.4, "bowel": 61.2, "cervical": 67.8},
+    {"year": 2022, "breast": 70.1, "bowel": 65.2, "cervical": 69.0},
+    {"year": 2023, "breast": 71.3, "bowel": 66.8, "cervical": 69.6}
+  ],
+  "byCancerType": [
+    {"type": "Breast", "oneYearSurvivalPct": 95.8, "change5yr": 1.2},
+    {"type": "Prostate", "oneYearSurvivalPct": 95.2, "change5yr": 0.8},
+    {"type": "Melanoma", "oneYearSurvivalPct": 96.9, "change5yr": 1.5},
+    {"type": "Bowel", "oneYearSurvivalPct": 77.8, "change5yr": 2.4},
+    {"type": "Lung", "oneYearSurvivalPct": 44.6, "change5yr": 6.1},
+    {"type": "Ovarian", "oneYearSurvivalPct": 72.1, "change5yr": 3.0},
+    {"type": "Pancreatic", "oneYearSurvivalPct": 26.8, "change5yr": 4.2},
+    {"type": "Liver", "oneYearSurvivalPct": 38.4, "change5yr": 5.8}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Office for National Statistics",
+        "dataset": "Cancer survival in England — adults diagnosed",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/cancersurvivalratescancersurvivalinenglandadultsdiagnosed",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Cancer Waiting Times Statistics",
+        "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/cancer-waiting-times/",
+        "retrieved": "2026-03-01",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "NHS Digital",
+        "dataset": "Cancer screening programme uptake statistics",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/cancer-screening",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "One-year survival is measured as the proportion of adults diagnosed with cancer who survive at least one year after diagnosis, age-standardised. Late-stage diagnosis refers to cancers diagnosed at stage III or IV. Screening uptake is measured as the proportion of eligible individuals screened within the target period.",
+    "knownIssues": [
+      "COVID-19 caused major diagnostic disruption in 2020 — fewer cancers were diagnosed, and those that were tended to be more advanced, temporarily depressing survival figures",
+      "Staging completeness has improved over time, meaning apparent increases in late-stage diagnosis may partly reflect better recording",
+      "International comparisons use ICBP data which may differ slightly from ONS national figures due to methodology differences"
+    ]
+  }
 }

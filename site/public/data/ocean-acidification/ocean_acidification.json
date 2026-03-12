@@ -1,28 +1,85 @@
 {
-  "topic": "ocean-acidification",
-  "lastUpdated": "2024-12-01",
-  "timeSeries": [
-    { "year": 2016, "pHChangeFromPreIndustrial": -0.03, "ratePHPerYear": 0.001 },
-    { "year": 2017, "pHChangeFromPreIndustrial": -0.04, "ratePHPerYear": 0.001 },
-    { "year": 2018, "pHChangeFromPreIndustrial": -0.05, "ratePHPerYear": 0.001 },
-    { "year": 2019, "pHChangeFromPreIndustrial": -0.06, "ratePHPerYear": 0.0015 },
-    { "year": 2020, "pHChangeFromPreIndustrial": -0.07, "ratePHPerYear": 0.0015 },
-    { "year": 2021, "pHChangeFromPreIndustrial": -0.07, "ratePHPerYear": 0.002 },
-    { "year": 2022, "pHChangeFromPreIndustrial": -0.08, "ratePHPerYear": 0.002 },
-    { "year": 2023, "pHChangeFromPreIndustrial": -0.09, "ratePHPerYear": 0.002 },
-    { "year": 2024, "pHChangeFromPreIndustrial": -0.1, "ratePHPerYear": 0.002 }
+  "surfacePH": [
+    {"year": 1990, "ph": 8.110},
+    {"year": 1993, "ph": 8.107},
+    {"year": 1996, "ph": 8.103},
+    {"year": 1999, "ph": 8.099},
+    {"year": 2002, "ph": 8.095},
+    {"year": 2005, "ph": 8.090},
+    {"year": 2008, "ph": 8.085},
+    {"year": 2010, "ph": 8.081},
+    {"year": 2012, "ph": 8.077},
+    {"year": 2014, "ph": 8.073},
+    {"year": 2016, "ph": 8.069},
+    {"year": 2018, "ph": 8.065},
+    {"year": 2020, "ph": 8.061},
+    {"year": 2022, "ph": 8.057},
+    {"year": 2024, "ph": 8.054},
+    {"year": 2025, "ph": 8.053}
+  ],
+  "aragoniteSaturation": [
+    {"year": 1990, "omega": 2.95},
+    {"year": 1993, "omega": 2.91},
+    {"year": 1996, "omega": 2.87},
+    {"year": 1999, "omega": 2.83},
+    {"year": 2002, "omega": 2.78},
+    {"year": 2005, "omega": 2.73},
+    {"year": 2008, "omega": 2.68},
+    {"year": 2010, "omega": 2.64},
+    {"year": 2012, "omega": 2.60},
+    {"year": 2014, "omega": 2.56},
+    {"year": 2016, "omega": 2.52},
+    {"year": 2018, "omega": 2.48},
+    {"year": 2020, "omega": 2.44},
+    {"year": 2022, "omega": 2.40},
+    {"year": 2024, "omega": 2.37},
+    {"year": 2025, "omega": 2.35}
+  ],
+  "dissolvedCO2": [
+    {"year": 1990, "ppm": 355},
+    {"year": 1993, "ppm": 360},
+    {"year": 1996, "ppm": 365},
+    {"year": 1999, "ppm": 371},
+    {"year": 2002, "ppm": 377},
+    {"year": 2005, "ppm": 384},
+    {"year": 2008, "ppm": 391},
+    {"year": 2010, "ppm": 396},
+    {"year": 2012, "ppm": 401},
+    {"year": 2014, "ppm": 407},
+    {"year": 2016, "ppm": 413},
+    {"year": 2018, "ppm": 419},
+    {"year": 2020, "ppm": 424},
+    {"year": 2022, "ppm": 430},
+    {"year": 2024, "ppm": 436},
+    {"year": 2025, "ppm": 439}
+  ],
+  "shellfishImpact": [
+    {"year": 2005, "indexScore": 100},
+    {"year": 2008, "indexScore": 96},
+    {"year": 2010, "indexScore": 93},
+    {"year": 2012, "indexScore": 89},
+    {"year": 2014, "indexScore": 86},
+    {"year": 2016, "indexScore": 83},
+    {"year": 2018, "indexScore": 79},
+    {"year": 2020, "indexScore": 76},
+    {"year": 2022, "indexScore": 73},
+    {"year": 2024, "indexScore": 71},
+    {"year": 2025, "indexScore": 70}
+  ],
+  "byRegion": [
+    {"region": "North Sea (northern)", "ph": 8.048, "changePerDecade": -0.023},
+    {"region": "North Sea (southern)", "ph": 8.051, "changePerDecade": -0.021},
+    {"region": "English Channel", "ph": 8.059, "changePerDecade": -0.019},
+    {"region": "Celtic Sea", "ph": 8.055, "changePerDecade": -0.020},
+    {"region": "Irish Sea", "ph": 8.057, "changePerDecade": -0.019},
+    {"region": "Scottish Atlantic", "ph": 8.045, "changePerDecade": -0.024}
   ],
   "metadata": {
     "sources": [
-      {
-        "name": "CEFAS",
-        "dataset": "Ocean Acidification Monitoring Programme",
-        "url": "https://www.cefas.co.uk/cefas-data-hub/ocean-acidification/",
-        "retrieved": "2024-12-01",
-        "frequency": "annual"
-      }
-    ],
-    "methodology": "pHChangeFromPreIndustrial: change in UK coastal seawater pH from estimated pre-industrial baseline of 8.2. ratePHPerYear: average annual rate of pH decline in UK waters.",
-    "knownIssues": ["Pre-industrial baseline is modelled estimate with uncertainty range of +/- 0.02 pH units. Spatial variability between monitoring sites is significant."]
+      {"name": "Copernicus Marine Service", "dataset": "North-West European Shelf Seas pH", "url": "https://marine.copernicus.eu", "retrieved": "2026-02-15", "frequency": "annual"},
+      {"name": "ICES", "dataset": "North Sea carbon chemistry observations", "url": "https://ices.dk", "retrieved": "2026-02-15", "frequency": "annual"},
+      {"name": "Cefas", "dataset": "UK Clean Seas Environment Monitoring Programme", "url": "https://www.cefas.co.uk", "retrieved": "2026-02-15", "frequency": "annual"},
+      {"name": "NOAA", "dataset": "Global Ocean Acidification Observing Network", "url": "https://goa-on.org", "retrieved": "2026-02-15", "frequency": "annual"}
+    ]
   }
 }

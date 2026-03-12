@@ -8,80 +8,113 @@
         "totalClaimantsM": 1.6,
         "newAwardsThousands": 380,
         "mrSuccessPct": 18,
-        "tribunalSuccessPct": 55
+        "tribunalSuccessPct": 55,
+        "avgWaitWeeks": 8,
+        "clearanceTimeDays": 52
       },
       {
         "year": 2016,
         "totalClaimantsM": 1.9,
         "newAwardsThousands": 420,
         "mrSuccessPct": 19,
-        "tribunalSuccessPct": 58
+        "tribunalSuccessPct": 58,
+        "avgWaitWeeks": 9,
+        "clearanceTimeDays": 58
       },
       {
         "year": 2017,
         "totalClaimantsM": 2.2,
         "newAwardsThousands": 450,
         "mrSuccessPct": 20,
-        "tribunalSuccessPct": 60
+        "tribunalSuccessPct": 60,
+        "avgWaitWeeks": 10,
+        "clearanceTimeDays": 65
       },
       {
         "year": 2018,
         "totalClaimantsM": 2.5,
         "newAwardsThousands": 480,
         "mrSuccessPct": 21,
-        "tribunalSuccessPct": 62
+        "tribunalSuccessPct": 62,
+        "avgWaitWeeks": 12,
+        "clearanceTimeDays": 72
       },
       {
         "year": 2019,
         "totalClaimantsM": 2.8,
         "newAwardsThousands": 500,
         "mrSuccessPct": 22,
-        "tribunalSuccessPct": 64
+        "tribunalSuccessPct": 64,
+        "avgWaitWeeks": 12,
+        "clearanceTimeDays": 78
       },
       {
         "year": 2020,
         "totalClaimantsM": 3.0,
         "newAwardsThousands": 420,
         "mrSuccessPct": 22,
-        "tribunalSuccessPct": 67
+        "tribunalSuccessPct": 67,
+        "avgWaitWeeks": 15,
+        "clearanceTimeDays": 98
       },
       {
         "year": 2021,
         "totalClaimantsM": 3.1,
         "newAwardsThousands": 510,
         "mrSuccessPct": 23,
-        "tribunalSuccessPct": 68
+        "tribunalSuccessPct": 68,
+        "avgWaitWeeks": 16,
+        "clearanceTimeDays": 105
       },
       {
         "year": 2022,
         "totalClaimantsM": 3.2,
         "newAwardsThousands": 560,
         "mrSuccessPct": 23,
-        "tribunalSuccessPct": 70
+        "tribunalSuccessPct": 70,
+        "avgWaitWeeks": 17,
+        "clearanceTimeDays": 112
       },
       {
         "year": 2023,
         "totalClaimantsM": 3.4,
         "newAwardsThousands": 600,
         "mrSuccessPct": 24,
-        "tribunalSuccessPct": 72
+        "tribunalSuccessPct": 72,
+        "avgWaitWeeks": 18,
+        "clearanceTimeDays": 118
       },
       {
         "year": 2024,
         "totalClaimantsM": 3.6,
         "newAwardsThousands": 620,
         "mrSuccessPct": 24,
-        "tribunalSuccessPct": 73
+        "tribunalSuccessPct": 73,
+        "avgWaitWeeks": 20,
+        "clearanceTimeDays": 125
       },
       {
         "year": 2025,
         "totalClaimantsM": 3.7,
         "newAwardsThousands": 640,
         "mrSuccessPct": 25,
-        "tribunalSuccessPct": 73
+        "tribunalSuccessPct": 73,
+        "avgWaitWeeks": 21,
+        "clearanceTimeDays": 130
       }
     ]
   },
+  "byRegion": [
+    { "region": "North East", "avgWaitWeeks": 26, "tribunalSuccessPct": 76 },
+    { "region": "North West", "avgWaitWeeks": 24, "tribunalSuccessPct": 75 },
+    { "region": "Yorkshire & Humber", "avgWaitWeeks": 23, "tribunalSuccessPct": 74 },
+    { "region": "West Midlands", "avgWaitWeeks": 22, "tribunalSuccessPct": 73 },
+    { "region": "East Midlands", "avgWaitWeeks": 20, "tribunalSuccessPct": 72 },
+    { "region": "East of England", "avgWaitWeeks": 19, "tribunalSuccessPct": 71 },
+    { "region": "London", "avgWaitWeeks": 21, "tribunalSuccessPct": 74 },
+    { "region": "South East", "avgWaitWeeks": 18, "tribunalSuccessPct": 70 },
+    { "region": "South West", "avgWaitWeeks": 17, "tribunalSuccessPct": 69 }
+  ],
   "metadata": {
     "sources": [
       {
@@ -95,12 +128,20 @@
         "dataset": "Tribunal statistics quarterly",
         "url": "https://www.gov.uk/government/collections/tribunals-statistics",
         "frequency": "quarterly"
+      },
+      {
+        "name": "NAO",
+        "dataset": "PIP and ESA assessments report",
+        "url": "https://www.nao.org.uk/reports/pip-and-esa-assessments/",
+        "frequency": "periodic"
       }
     ],
-    "methodology": "PIP caseload from DWP administrative data. Appeal success rates calculated from HMCTS social security and child support tribunal statistics \u2014 'claimant success' includes both full and partial awards. Wait times from DWP internal management information.",
+    "methodology": "PIP caseload from DWP administrative data. Appeal success rates calculated from HMCTS social security and child support tribunal statistics — 'claimant success' includes both full and partial awards. Wait times from DWP internal management information. Clearance time measures median days from initial claim registration to assessment decision. Regional breakdowns from DWP Stat-Xplore.",
     "knownIssues": [
-      "Not all rejected claimants appeal \u2014 appeal success rate applies only to those who pursue appeals",
-      "DLA to PIP reassessment cases distort early years of caseload data"
+      "Not all rejected claimants appeal — appeal success rate applies only to those who pursue appeals",
+      "DLA to PIP reassessment cases distort early years of caseload data",
+      "COVID-19 pandemic caused telephone/paper-based assessments in 2020–21, which may affect wait time comparability",
+      "Regional wait time data subject to revision; some assessment centres serve multiple regions"
     ]
   }
 }

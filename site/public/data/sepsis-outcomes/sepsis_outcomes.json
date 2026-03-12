@@ -1,15 +1,65 @@
 {
-  "topic": "sepsis-outcomes",
-  "lastUpdated": "2026-03-01",
-  "timeSeries": [
-    {"year": 2015, "sepsisDeathsK": 37},
-    {"year": 2016, "sepsisDeathsK": 37},
-    {"year": 2017, "sepsisDeathsK": 36},
-    {"year": 2018, "sepsisDeathsK": 36},
-    {"year": 2019, "sepsisDeathsK": 35},
-    {"year": 2020, "sepsisDeathsK": 48},
-    {"year": 2021, "sepsisDeathsK": 44},
-    {"year": 2022, "sepsisDeathsK": 40},
-    {"year": 2023, "sepsisDeathsK": 38}
+  "sepsisDeaths": [
+    { "year": 2014, "deaths": 44200 },
+    { "year": 2015, "deaths": 45800 },
+    { "year": 2016, "deaths": 47100 },
+    { "year": 2017, "deaths": 48900 },
+    { "year": 2018, "deaths": 52000 },
+    { "year": 2019, "deaths": 51200 },
+    { "year": 2020, "deaths": 54800 },
+    { "year": 2021, "deaths": 53100 },
+    { "year": 2022, "deaths": 50600 },
+    { "year": 2023, "deaths": 49200 },
+    { "year": 2024, "deaths": 48500 },
+    { "year": 2025, "deaths": 48000 }
+  ],
+  "bundleCompliance": [
+    { "year": 2016, "percent": 42 },
+    { "year": 2017, "percent": 48 },
+    { "year": 2018, "percent": 52 },
+    { "year": 2019, "percent": 58 },
+    { "year": 2020, "percent": 55 },
+    { "year": 2021, "percent": 60 },
+    { "year": 2022, "percent": 64 },
+    { "year": 2023, "percent": 67 },
+    { "year": 2024, "percent": 70 },
+    { "year": 2025, "percent": 72 }
+  ],
+  "survivalRate": [
+    { "year": 2014, "percent": 73.2 },
+    { "year": 2015, "percent": 74.0 },
+    { "year": 2016, "percent": 74.8 },
+    { "year": 2017, "percent": 75.5 },
+    { "year": 2018, "percent": 76.1 },
+    { "year": 2019, "percent": 77.3 },
+    { "year": 2020, "percent": 75.8 },
+    { "year": 2021, "percent": 76.9 },
+    { "year": 2022, "percent": 78.2 },
+    { "year": 2023, "percent": 79.1 },
+    { "year": 2024, "percent": 80.4 },
+    { "year": 2025, "percent": 81.2 }
+  ],
+  "timeToAntibiotics": [
+    { "year": 2016, "minutes": 92 },
+    { "year": 2017, "minutes": 84 },
+    { "year": 2018, "minutes": 78 },
+    { "year": 2019, "minutes": 68 },
+    { "year": 2020, "minutes": 74 },
+    { "year": 2021, "minutes": 65 },
+    { "year": 2022, "minutes": 58 },
+    { "year": 2023, "minutes": 52 },
+    { "year": 2024, "minutes": 48 },
+    { "year": 2025, "minutes": 44 }
+  ],
+  "byRegion": [
+    { "region": "South West", "survivalPercent": 84.1 },
+    { "region": "South East", "survivalPercent": 83.2 },
+    { "region": "East of England", "survivalPercent": 82.0 },
+    { "region": "London", "survivalPercent": 81.5 },
+    { "region": "West Midlands", "survivalPercent": 80.1 },
+    { "region": "East Midlands", "survivalPercent": 79.6 },
+    { "region": "Yorkshire & Humber", "survivalPercent": 78.9 },
+    { "region": "North West", "survivalPercent": 78.2 },
+    { "region": "North East", "survivalPercent": 77.4 }
   ]
 }

@@ -1,15 +1,90 @@
 {
   "topic": "violence-against-nhs-staff",
   "lastUpdated": "2026-03-01",
-  "timeSeries": [
-    {"year": 2015, "physicalAssaultsK": 56.4},
-    {"year": 2016, "physicalAssaultsK": 57.9},
-    {"year": 2017, "physicalAssaultsK": 60.0},
-    {"year": 2018, "physicalAssaultsK": 62.9},
-    {"year": 2019, "physicalAssaultsK": 63.6},
-    {"year": 2020, "physicalAssaultsK": 67.9},
-    {"year": 2021, "physicalAssaultsK": 72.3},
-    {"year": 2022, "physicalAssaultsK": 77.1},
-    {"year": 2023, "physicalAssaultsK": 83.6}
-  ]
+  "physicalAssaults": [
+    {"year": 2015, "incidents": 56400},
+    {"year": 2016, "incidents": 57900},
+    {"year": 2017, "incidents": 60000},
+    {"year": 2018, "incidents": 62900},
+    {"year": 2019, "incidents": 63600},
+    {"year": 2020, "incidents": 67900},
+    {"year": 2021, "incidents": 72300},
+    {"year": 2022, "incidents": 77100},
+    {"year": 2023, "incidents": 83600},
+    {"year": 2024, "incidents": 87200}
+  ],
+  "staffFeelingUnsafe": [
+    {"year": 2015, "pct": 8.2},
+    {"year": 2016, "pct": 8.7},
+    {"year": 2017, "pct": 9.1},
+    {"year": 2018, "pct": 9.8},
+    {"year": 2019, "pct": 10.4},
+    {"year": 2020, "pct": 11.2},
+    {"year": 2021, "pct": 12.6},
+    {"year": 2022, "pct": 13.9},
+    {"year": 2023, "pct": 15.1},
+    {"year": 2024, "pct": 15.8}
+  ],
+  "verbalAbuse": [
+    {"year": 2015, "incidents": 123400},
+    {"year": 2016, "incidents": 128700},
+    {"year": 2017, "incidents": 135200},
+    {"year": 2018, "incidents": 142800},
+    {"year": 2019, "incidents": 149500},
+    {"year": 2020, "incidents": 167300},
+    {"year": 2021, "incidents": 178900},
+    {"year": 2022, "incidents": 189400},
+    {"year": 2023, "incidents": 201600},
+    {"year": 2024, "incidents": 210800}
+  ],
+  "byTrustType": [
+    {"type": "Acute hospital trusts", "ratePerThousandStaff": 42.1},
+    {"type": "Mental health trusts", "ratePerThousandStaff": 127.4},
+    {"type": "Ambulance trusts", "ratePerThousandStaff": 98.6},
+    {"type": "Community trusts", "ratePerThousandStaff": 31.2},
+    {"type": "Primary care", "ratePerThousandStaff": 18.7}
+  ],
+  "prosecutions": [
+    {"year": 2015, "referrals": 2840, "prosecutions": 1120},
+    {"year": 2016, "referrals": 3100, "prosecutions": 1240},
+    {"year": 2017, "referrals": 3380, "prosecutions": 1310},
+    {"year": 2018, "referrals": 3620, "prosecutions": 1380},
+    {"year": 2019, "referrals": 3890, "prosecutions": 1290},
+    {"year": 2020, "referrals": 4210, "prosecutions": 980},
+    {"year": 2021, "referrals": 4640, "prosecutions": 1050},
+    {"year": 2022, "referrals": 5120, "prosecutions": 1180},
+    {"year": 2023, "referrals": 5580, "prosecutions": 1260},
+    {"year": 2024, "referrals": 5940, "prosecutions": 1340}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "NHS Staff Survey",
+        "url": "https://www.nhsstaffsurveys.com/results/",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS Protect / NHS Business Services Authority",
+        "dataset": "Reported Physical Assaults on NHS Staff",
+        "url": "https://www.nhsbsa.nhs.uk/",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Health and Safety Executive",
+        "dataset": "Violence at Work statistics",
+        "url": "https://www.hse.gov.uk/statistics/causinj/violence/",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Physical assault figures are self-reported by NHS trusts in England. Staff Survey data covers all NHS organisations in England with a response rate of approximately 46%. Verbal abuse figures are derived from the NHS Staff Survey question on experiencing harassment, bullying or abuse from patients/public. Prosecution figures are from NHS counter-fraud authority referrals.",
+    "knownIssues": [
+      "Reporting methodology changed in 2017 — pre/post figures may not be directly comparable",
+      "COVID-19 significantly altered working patterns in 2020/21 and may affect reported incident rates",
+      "Under-reporting is estimated at 40-60% based on Staff Survey cross-referencing"
+    ]
+  }
 }
