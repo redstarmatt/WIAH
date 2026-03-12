@@ -1,25 +1,41 @@
 {
-  "topic": "asset-recovery-rates",
-  "lastUpdated": "2024-10-01",
-  "timeSeries": [
-    { "year": 2015, "recoveredMillions": 142, "estimatedLaunderedBillions": 10, "recoveryRatePct": 1.4 },
-    { "year": 2016, "recoveredMillions": 168, "estimatedLaunderedBillions": 10, "recoveryRatePct": 1.7 },
-    { "year": 2017, "recoveredMillions": 199, "estimatedLaunderedBillions": 11, "recoveryRatePct": 1.8 },
-    { "year": 2018, "recoveredMillions": 226, "estimatedLaunderedBillions": 11, "recoveryRatePct": 2.1 },
-    { "year": 2019, "recoveredMillions": 264, "estimatedLaunderedBillions": 12, "recoveryRatePct": 2.2 },
-    { "year": 2020, "recoveredMillions": 298, "estimatedLaunderedBillions": 12, "recoveryRatePct": 2.5 },
-    { "year": 2021, "recoveredMillions": 312, "estimatedLaunderedBillions": 12, "recoveryRatePct": 2.6 },
-    { "year": 2022, "recoveredMillions": 341, "estimatedLaunderedBillions": 12, "recoveryRatePct": 2.8 },
-    { "year": 2023, "recoveredMillions": 378, "estimatedLaunderedBillions": 12, "recoveryRatePct": 3.1 },
-    { "year": 2024, "recoveredMillions": 390, "estimatedLaunderedBillions": 12, "recoveryRatePct": 3.2 }
+  "assetsRecovered": [
+    {"year": 2012, "valueMillions": 154},
+    {"year": 2013, "valueMillions": 178},
+    {"year": 2014, "valueMillions": 196},
+    {"year": 2015, "valueMillions": 210},
+    {"year": 2016, "valueMillions": 245},
+    {"year": 2017, "valueMillions": 264},
+    {"year": 2018, "valueMillions": 288},
+    {"year": 2019, "valueMillions": 310},
+    {"year": 2020, "valueMillions": 267},
+    {"year": 2021, "valueMillions": 302},
+    {"year": 2022, "valueMillions": 341},
+    {"year": 2023, "valueMillions": 362},
+    {"year": 2024, "valueMillions": 378}
   ],
-  "metadata": {
-    "sources": [
-      { "name": "Home Office", "dataset": "Asset recovery statistics", "url": "https://www.gov.uk/government/statistics/asset-recovery-statistical-bulletin", "retrieved": "2024-10-01", "frequency": "annual" },
-      { "name": "National Crime Agency", "dataset": "UK Financial Intelligence Unit annual report", "url": "https://www.nationalcrimeagency.gov.uk/", "retrieved": "2024-10-01", "frequency": "annual" },
-      { "name": "HMCTS", "dataset": "Confiscation order data", "url": "https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service", "retrieved": "2024-10-01", "frequency": "annual" }
-    ],
-    "methodology": "Recovered assets include confiscation orders, civil recovery orders, cash seizures, and account freezing orders. Estimated laundered figure is the HM Treasury / NCA midpoint estimate; the true figure is inherently uncertain. Recovery rate is recovered amounts as a share of estimated laundered amounts.",
-    "knownIssues": ["Laundering estimate is highly uncertain — actual figure could be higher or lower", "Confiscation order enforcement gap: many orders remain unenforced due to hidden assets"]
-  }
+  "confiscationOrders": [
+    {"year": 2012, "ordersMade": 6540, "ordersEnforced": 3820},
+    {"year": 2013, "ordersMade": 6710, "ordersEnforced": 3640},
+    {"year": 2014, "ordersMade": 6980, "ordersEnforced": 3510},
+    {"year": 2015, "ordersMade": 7120, "ordersEnforced": 3690},
+    {"year": 2016, "ordersMade": 7340, "ordersEnforced": 3470},
+    {"year": 2017, "ordersMade": 7480, "ordersEnforced": 3580},
+    {"year": 2018, "ordersMade": 7650, "ordersEnforced": 3820},
+    {"year": 2019, "ordersMade": 7810, "ordersEnforced": 4010},
+    {"year": 2020, "ordersMade": 6190, "ordersEnforced": 3280},
+    {"year": 2021, "ordersMade": 6870, "ordersEnforced": 3540},
+    {"year": 2022, "ordersMade": 7420, "ordersEnforced": 3890},
+    {"year": 2023, "ordersMade": 7680, "ordersEnforced": 4120},
+    {"year": 2024, "ordersMade": 7950, "ordersEnforced": 4280}
+  ],
+  "uwosAndFreezingOrders": [
+    {"year": 2018, "uwos": 4, "accountFreezingOrders": 252},
+    {"year": 2019, "uwos": 2, "accountFreezingOrders": 378},
+    {"year": 2020, "uwos": 1, "accountFreezingOrders": 415},
+    {"year": 2021, "uwos": 0, "accountFreezingOrders": 487},
+    {"year": 2022, "uwos": 1, "accountFreezingOrders": 568},
+    {"year": 2023, "uwos": 0, "accountFreezingOrders": 642},
+    {"year": 2024, "uwos": 1, "accountFreezingOrders": 718}
+  ]
 }

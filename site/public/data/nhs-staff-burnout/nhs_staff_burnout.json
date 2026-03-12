@@ -1,0 +1,88 @@
+{
+  "national": {
+    "burnout": {
+      "timeSeries": [
+        { "year": 2016, "pct": 24.1 },
+        { "year": 2017, "pct": 25.3 },
+        { "year": 2018, "pct": 26.7 },
+        { "year": 2019, "pct": 28.0 },
+        { "year": 2020, "pct": 30.4 },
+        { "year": 2021, "pct": 33.8 },
+        { "year": 2022, "pct": 34.6 },
+        { "year": 2023, "pct": 34.0 }
+      ]
+    },
+    "vacancies": {
+      "timeSeries": [
+        { "year": 2016, "ratePct": 5.8, "unfilled": 78000 },
+        { "year": 2017, "ratePct": 6.2, "unfilled": 84000 },
+        { "year": 2018, "ratePct": 6.9, "unfilled": 93000 },
+        { "year": 2019, "ratePct": 7.4, "unfilled": 100000 },
+        { "year": 2020, "ratePct": 7.0, "unfilled": 94000 },
+        { "year": 2021, "ratePct": 8.4, "unfilled": 110000 },
+        { "year": 2022, "ratePct": 9.7, "unfilled": 133000 },
+        { "year": 2023, "ratePct": 8.4, "unfilled": 112000 },
+        { "year": 2024, "ratePct": 8.0, "unfilled": 107000 }
+      ]
+    },
+    "recommend": {
+      "timeSeries": [
+        { "year": 2016, "pct": 65.2 },
+        { "year": 2017, "pct": 67.0 },
+        { "year": 2018, "pct": 63.4 },
+        { "year": 2019, "pct": 62.8 },
+        { "year": 2020, "pct": 66.5 },
+        { "year": 2021, "pct": 58.4 },
+        { "year": 2022, "pct": 56.4 },
+        { "year": 2023, "pct": 57.0 }
+      ]
+    },
+    "agencySpend": {
+      "timeSeries": [
+        { "year": 2016, "billionGBP": 1.8 },
+        { "year": 2017, "billionGBP": 2.2 },
+        { "year": 2018, "billionGBP": 2.4 },
+        { "year": 2019, "billionGBP": 2.4 },
+        { "year": 2020, "billionGBP": 2.6 },
+        { "year": 2021, "billionGBP": 2.9 },
+        { "year": 2022, "billionGBP": 3.2 },
+        { "year": 2023, "billionGBP": 3.0 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "NHS Staff Survey",
+        "url": "https://www.nhsstaffsurveys.com/results/",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS Digital",
+        "dataset": "NHS Vacancy Statistics",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-vacancies-survey",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Agency Spending Data",
+        "url": "https://www.england.nhs.uk/financial-accounting-and-reporting/",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS Digital",
+        "dataset": "NHS Sickness Absence Rates",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-sickness-absence-rates",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "Burnout and recommendation data are drawn from the annual NHS Staff Survey, which covers approximately 600,000 respondents across all NHS trusts in England — the largest workforce survey in the world. Vacancy rate is calculated as unfilled posts as a percentage of total establishment posts, published quarterly by NHS Digital. Agency spending figures are drawn from NHS trust annual accounts and NHS England financial reporting. All time series represent England only. The Staff Survey methodology was substantially redesigned in 2021, with a shift to online-first distribution and revised question wording for some items; pre- and post-2021 results should be compared with caution.",
+    "knownIssues": [
+      "The Staff Survey changed from paper-first to online-first in 2021, which may affect response patterns and comparability with earlier years.",
+      "Vacancy data methodology was revised in 2018; earlier figures may not be directly comparable.",
+      "The 2020 Staff Survey was conducted during the COVID-19 pandemic with higher-than-usual response rates, which may reflect selection effects.",
+      "Agency spending figures include both bank and agency staff in some trust reporting, making precise comparisons across years difficult."
+    ]
+  }
+}

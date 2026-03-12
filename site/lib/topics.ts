@@ -71,7 +71,7 @@ export const CATEGORIES: Category[] = [
     name: 'Crime & Justice',
     slug: 'crime-justice',
     featured: ['justice', 'knife-crime', 'prisons'],
-    topics: ['justice', 'knife-crime', 'prisons', 'prison-reoffending', 'court-backlog', 'policing', 'prison-overcrowding', 'domestic-abuse', 'domestic-violence', 'hate-crime', 'modern-slavery', 'online-harms', 'youth-justice', 'fraud', 'rape-prosecution', 'county-lines', 'stalking', 'family-courts', 'youth-violence', 'cybercrime', 'miscarriages-of-justice', 'victims-support', 'border-security', 'probation', 'legal-aid', 'prison-mental-health', 'police-misconduct', 'domestic-abuse-outcomes', 'anti-social-behaviour-crisis', 'knife-crime-geography', 'violence-against-women', 'police-officer-numbers', 'prisoner-recall', 'drug-supply-operations', 'drink-drive-deaths', 'fraud-prosecution-gap', 'terrorism-prosecutions', 'asset-recovery-rates', 'facial-recognition-policing', 'community-sentence-outcomes', 'youth-diversion-outcomes', 'court-interpreter-services', 'immigration-detention', 'civil-legal-aid-deserts', 'misogyny-policing', 'spiking-reports', 'shoplifting-surge', 'deaths-in-custody', 'employment-tribunal-backlog', 'forced-marriage', 'homicide-rate', 'honour-based-abuse', 'online-grooming', 'parole-backlog', 'prison-education', 'prison-healthcare', 'rape-reporting-rate', 'scam-losses', 'stop-and-search', 'court-fees-access', 'economic-crime-scale', 'loan-sharks', 'online-fraud-losses', 'online-fraud-growth'],
+    topics: ['justice', 'knife-crime', 'prisons', 'prison-reoffending', 'court-backlog', 'policing', 'prison-overcrowding', 'domestic-abuse', 'domestic-violence', 'hate-crime', 'modern-slavery', 'online-harms', 'youth-justice', 'fraud', 'rape-prosecution', 'county-lines', 'stalking', 'family-courts', 'youth-violence', 'cybercrime', 'miscarriages-of-justice', 'victims-support', 'border-security', 'probation', 'legal-aid', 'prison-mental-health', 'police-misconduct', 'domestic-abuse-outcomes', 'anti-social-behaviour-crisis', 'knife-crime-geography', 'violence-against-women', 'police-officer-numbers', 'prisoner-recall', 'drug-supply-operations', 'drink-drive-deaths', 'fraud-prosecution-gap', 'terrorism-prosecutions', 'asset-recovery-rates', 'facial-recognition-policing', 'community-sentence-outcomes', 'youth-diversion-outcomes', 'court-interpreter-services', 'immigration-detention', 'civil-legal-aid-deserts', 'misogyny-policing', 'spiking-reports', 'shoplifting-surge', 'deaths-in-custody', 'employment-tribunal-backlog', 'forced-marriage', 'homicide-rate', 'honour-based-abuse', 'online-grooming', 'parole-backlog', 'prison-education', 'prison-healthcare', 'rape-reporting-rate', 'scam-losses', 'stop-and-search', 'court-fees-access', 'economic-crime-scale', 'loan-sharks', 'online-fraud-losses', 'online-fraud-growth', 'police-response-times'],
   },
   {
     name: 'Economy & Work',
@@ -83,7 +83,7 @@ export const CATEGORIES: Category[] = [
     name: 'Housing',
     slug: 'housing',
     featured: ['housing', 'homelessness', 'housebuilding'],
-    topics: ['housing', 'homelessness', 'housebuilding', 'housing-quality', 'private-renting', 'social-housing', 'rough-sleeping', 'planning', 'empty-homes', 'leasehold', 'building-safety', 'second-homes', 'evictions', 'land-banking', 'planning-permission', 'housing-costs-workers', 'cladding-crisis', 'holiday-lets', 'renters-reform', 'net-housing-supply', 'social-rent', 'property-transactions', 'construction-housebuilding', 'flood-insurance-gaps', 'concealed-homelessness', 'mortgage-affordability-shock', 'private-rented-conditions', 'multigenerational-living', 'supported-housing-shortage', 'urban-rural-price-gap', 'build-to-rent-sector', 'social-housing-waiting-lists', 'housing-disrepair-claims', 'short-term-lets-impact', 'traveller-site-provision', 'cohabitation-rights-gap', 'modular-housing', 'green-belt-pressure', 'buy-to-let-exit', 'care-home-supply', 'community-asset-ownership', 'domestic-abuse-refuges', 'equity-release-market', 'housing-first-programme', 'lpa-capacity-crisis', 'military-housing-quality', 'planning-appeals', 'right-to-buy', 'veteran-rough-sleeping'],
+    topics: ['housing', 'homelessness', 'housebuilding', 'housing-quality', 'private-renting', 'social-housing', 'rough-sleeping', 'planning', 'empty-homes', 'leasehold', 'building-safety', 'fire-safety-buildings', 'second-homes', 'evictions', 'land-banking', 'planning-permission', 'housing-costs-workers', 'cladding-crisis', 'holiday-lets', 'renters-reform', 'net-housing-supply', 'social-rent', 'property-transactions', 'construction-housebuilding', 'flood-insurance-gaps', 'concealed-homelessness', 'mortgage-affordability-shock', 'private-rented-conditions', 'multigenerational-living', 'supported-housing-shortage', 'urban-rural-price-gap', 'build-to-rent-sector', 'social-housing-waiting-lists', 'housing-disrepair-claims', 'short-term-lets-impact', 'traveller-site-provision', 'cohabitation-rights-gap', 'modular-housing', 'green-belt-pressure', 'buy-to-let-exit', 'care-home-supply', 'community-asset-ownership', 'domestic-abuse-refuges', 'equity-release-market', 'housing-first-programme', 'lpa-capacity-crisis', 'military-housing-quality', 'planning-appeals', 'right-to-buy', 'veteran-rough-sleeping'],
   },
   {
     name: 'Education & Skills',
@@ -1810,6 +1810,18 @@ export const TOPICS: Record<string, TopicEntry> = {
     metrics: [
       { label: 'Buildings with unsafe cladding identified', value: '5,412', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'True total likely higher; 40% in London', sparklineData: [457, 1650, 3120, 4630, 5120, 5340, 5412] },
       { label: 'Remediation completed', value: '1,780', direction: 'up' as const, polarity: 'up-is-good' as const, context: '33% completion rate; ~300K households affected', sparklineData: [15, 128, 340, 612, 1015, 1420, 1780] },
+    ],
+  },
+  'fire-safety-buildings': {
+    topic: 'Fire Safety in Buildings',
+    slug: 'fire-safety-buildings',
+    href: '/fire-safety-buildings',
+    colour: '#E63946',
+    preposition: 'with',
+    metrics: [
+      { label: 'Buildings awaiting remediation', value: '2,738', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '8 years after Grenfell; ~300K leaseholders affected', sparklineData: [2662, 2608, 2560, 2510, 2740, 2738] },
+      { label: 'Remediation complete', value: '40.9%', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'Pace accelerating since 2024', sparklineData: [5.3, 10.4, 14.6, 22.0, 29.8, 40.9] },
+      { label: 'Estimated total cost', value: '\u00A316.4bn', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'BSF: \u00A35.1bn allocated, \u00A33.4bn spent', sparklineData: [12.2, 13.1, 14.0, 14.8, 15.4, 16.4] },
     ],
   },
   'regional-inequality': {
@@ -6680,6 +6692,17 @@ export const TOPICS: Record<string, TopicEntry> = {
     colour: '#6B7280',
     metrics: [
       { label: 'Online Fraud Growth', value: 'See data', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'Tracking online fraud growth nationally', sparklineData: [10,10,11,11,12,12,13,13,14] },
+    ],
+  },
+  'police-response-times': {
+    topic: 'Police Response Times',
+    slug: 'police-response-times',
+    href: '/police-response-times',
+    colour: '#E63946',
+    metrics: [
+      { label: '999 answer time', value: '13.5s', unit: '', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'target: 10s · missed 14 of last 24 months', sparklineData: [8.2, 8.5, 9.1, 9.8, 10.4, 11.7, 12.3, 13.1, 14.2, 13.8, 13.5] },
+      { label: 'Grade 1 target met', value: '84.6%', unit: '', direction: 'down' as const, polarity: 'up-is-good' as const, context: 'was 92.1% in 2015', sparklineData: [92.1, 91.4, 90.2, 88.7, 87.1, 88.0, 86.3, 85.8, 84.9, 84.6] },
+      { label: 'PCSOs in post', value: '8,387', unit: '', direction: 'down' as const, polarity: 'up-is-good' as const, context: '-8,531 since 2010', sparklineData: [16918, 15820, 14393, 13066, 12331, 11904, 10943, 10213, 9547, 9284, 9114, 8810, 8672, 8491, 8387] },
     ],
   },
   'personal-wellbeing': {

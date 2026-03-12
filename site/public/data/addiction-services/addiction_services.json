@@ -1,30 +1,91 @@
 {
-  "topic": "addiction-services",
-  "lastUpdated": "2026-03-01",
-  "national": {
-    "timeSeries": [
-      { "date": "2010", "drugDeaths": 2747, "treatmentThousands": 311 },
-      { "date": "2011", "drugDeaths": 2652, "treatmentThousands": 309 },
-      { "date": "2012", "drugDeaths": 2597, "treatmentThousands": 305 },
-      { "date": "2013", "drugDeaths": 2955, "treatmentThousands": 299 },
-      { "date": "2014", "drugDeaths": 3346, "treatmentThousands": 295 },
-      { "date": "2015", "drugDeaths": 3674, "treatmentThousands": 293 },
-      { "date": "2016", "drugDeaths": 3756, "treatmentThousands": 289 },
-      { "date": "2017", "drugDeaths": 3756, "treatmentThousands": 282 },
-      { "date": "2018", "drugDeaths": 4359, "treatmentThousands": 279 },
-      { "date": "2019", "drugDeaths": 4393, "treatmentThousands": 275 },
-      { "date": "2020", "drugDeaths": 4561, "treatmentThousands": 271 },
-      { "date": "2021", "drugDeaths": 3996, "treatmentThousands": 275 },
-      { "date": "2022", "drugDeaths": 4907, "treatmentThousands": 282 },
-      { "date": "2023", "drugDeaths": 4800, "treatmentThousands": 289 }
-    ]
-  },
+  "drugDeaths": [
+    {"year": 2012, "deaths": 2597},
+    {"year": 2013, "deaths": 2955},
+    {"year": 2014, "deaths": 3346},
+    {"year": 2015, "deaths": 3674},
+    {"year": 2016, "deaths": 3744},
+    {"year": 2017, "deaths": 3756},
+    {"year": 2018, "deaths": 4359},
+    {"year": 2019, "deaths": 4393},
+    {"year": 2020, "deaths": 4561},
+    {"year": 2021, "deaths": 4859},
+    {"year": 2022, "deaths": 4907},
+    {"year": 2023, "deaths": 4832},
+    {"year": 2024, "deaths": 4907}
+  ],
+  "treatmentNumbers": [
+    {"year": 2010, "inTreatment": 338000},
+    {"year": 2011, "inTreatment": 332000},
+    {"year": 2012, "inTreatment": 325000},
+    {"year": 2013, "inTreatment": 318000},
+    {"year": 2014, "inTreatment": 311000},
+    {"year": 2015, "inTreatment": 305000},
+    {"year": 2016, "inTreatment": 298000},
+    {"year": 2017, "inTreatment": 293000},
+    {"year": 2018, "inTreatment": 289000},
+    {"year": 2019, "inTreatment": 286000},
+    {"year": 2020, "inTreatment": 275000},
+    {"year": 2021, "inTreatment": 279000},
+    {"year": 2022, "inTreatment": 284000},
+    {"year": 2023, "inTreatment": 289000},
+    {"year": 2024, "inTreatment": 289000}
+  ],
+  "fundingPerHead": [
+    {"year": 2013, "fundingGBP": 8.42},
+    {"year": 2014, "fundingGBP": 7.92},
+    {"year": 2015, "fundingGBP": 7.23},
+    {"year": 2016, "fundingGBP": 6.58},
+    {"year": 2017, "fundingGBP": 6.12},
+    {"year": 2018, "fundingGBP": 5.87},
+    {"year": 2019, "fundingGBP": 5.63},
+    {"year": 2020, "fundingGBP": 5.41},
+    {"year": 2021, "fundingGBP": 5.52},
+    {"year": 2022, "fundingGBP": 5.78},
+    {"year": 2023, "fundingGBP": 5.94},
+    {"year": 2024, "fundingGBP": 5.89}
+  ],
+  "byRegion": [
+    {"region": "North East", "deathRatePer100k": 11.4},
+    {"region": "North West", "deathRatePer100k": 8.7},
+    {"region": "Yorkshire & Humber", "deathRatePer100k": 7.9},
+    {"region": "West Midlands", "deathRatePer100k": 6.8},
+    {"region": "East Midlands", "deathRatePer100k": 6.3},
+    {"region": "South West", "deathRatePer100k": 6.1},
+    {"region": "East of England", "deathRatePer100k": 5.2},
+    {"region": "London", "deathRatePer100k": 4.1},
+    {"region": "South East", "deathRatePer100k": 5.0}
+  ],
   "metadata": {
+    "lastUpdated": "2026-03-01",
     "sources": [
-      { "name": "ONS", "dataset": "Deaths Related to Drug Poisoning, England and Wales", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoninginenglandandwales/", "retrieved": "2026-03-01", "frequency": "annual" },
-      { "name": "OHID / NDTMS", "dataset": "Adult Drug and Alcohol Statistics from the National Drug Treatment Monitoring System", "url": "https://www.gov.uk/government/collections/alcohol-and-drug-misuse-and-treatment-statistics", "retrieved": "2026-03-01", "frequency": "annual" }
+      {
+        "name": "ONS",
+        "dataset": "Deaths related to drug poisoning in England and Wales",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoninginenglandandwales/latest",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "OHID",
+        "dataset": "Adult substance misuse treatment statistics (NDTMS)",
+        "url": "https://www.gov.uk/government/collections/alcohol-and-drug-misuse-prevention-and-treatment-guidance",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "OHID",
+        "dataset": "Public Health Ring-Fenced Grant — Drug and Alcohol Treatment Spend",
+        "url": "https://www.gov.uk/government/publications/public-health-grants-to-local-authorities-ring-fenced-allocations",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      }
     ],
-    "methodology": "Drug poisoning deaths from ONS registration data, covering deaths where drug poisoning was the underlying cause. Treatment numbers from NDTMS, covering adults in structured treatment for drug and/or alcohol misuse. Funding figures from OHID local authority public health allocations.",
-    "knownIssues": ["Drug poisoning death counts are based on registration year not occurrence year; some delay in recording", "Treatment numbers may include some double-counting where individuals enter multiple treatment episodes in same year", "2021 figure affected by pandemic-related disruption to treatment services and death registration delays"]
+    "methodology": "Drug poisoning deaths are based on ONS registrations using ICD-10 codes for drug-related deaths, covering both legal and illegal substances. Treatment numbers are drawn from the National Drug Treatment Monitoring System (NDTMS), published by OHID. Funding per head is calculated from local authority public health grant expenditure on substance misuse services, divided by mid-year population estimates.",
+    "knownIssues": [
+      "Drug death registrations can be delayed due to coroner inquests; figures may be revised upward in subsequent years.",
+      "NDTMS treatment figures capture individuals in structured treatment only — many people with substance misuse issues never enter the treatment system.",
+      "Funding figures do not include NHS secondary care or criminal justice system spending on addiction services."
+    ]
   }
 }

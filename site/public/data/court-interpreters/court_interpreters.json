@@ -1,0 +1,143 @@
+{
+  "national": {
+    "interpreterFailures": {
+      "timeSeries": [
+        { "year": 2014, "complaints": 680 },
+        { "year": 2015, "complaints": 740 },
+        { "year": 2016, "complaints": 810 },
+        { "year": 2017, "complaints": 870 },
+        { "year": 2018, "complaints": 920 },
+        { "year": 2019, "complaints": 1060 },
+        { "year": 2020, "complaints": 890 },
+        { "year": 2021, "complaints": 1240 },
+        { "year": 2022, "complaints": 1510 },
+        { "year": 2023, "complaints": 1780 },
+        { "year": 2024, "complaints": 1940 }
+      ],
+      "latestYear": 2024,
+      "latestComplaints": 1940
+    },
+    "noShowsCancellations": {
+      "timeSeries": [
+        { "quarter": "2018-Q1", "count": 210 },
+        { "quarter": "2018-Q2", "count": 195 },
+        { "quarter": "2018-Q3", "count": 225 },
+        { "quarter": "2018-Q4", "count": 240 },
+        { "quarter": "2019-Q1", "count": 260 },
+        { "quarter": "2019-Q2", "count": 275 },
+        { "quarter": "2019-Q3", "count": 290 },
+        { "quarter": "2019-Q4", "count": 310 },
+        { "quarter": "2020-Q1", "count": 280 },
+        { "quarter": "2020-Q2", "count": 150 },
+        { "quarter": "2020-Q3", "count": 320 },
+        { "quarter": "2020-Q4", "count": 370 },
+        { "quarter": "2021-Q1", "count": 390 },
+        { "quarter": "2021-Q2", "count": 410 },
+        { "quarter": "2021-Q3", "count": 430 },
+        { "quarter": "2021-Q4", "count": 460 },
+        { "quarter": "2022-Q1", "count": 480 },
+        { "quarter": "2022-Q2", "count": 495 },
+        { "quarter": "2022-Q3", "count": 510 },
+        { "quarter": "2022-Q4", "count": 530 },
+        { "quarter": "2023-Q1", "count": 540 },
+        { "quarter": "2023-Q2", "count": 560 },
+        { "quarter": "2023-Q3", "count": 575 },
+        { "quarter": "2023-Q4", "count": 590 },
+        { "quarter": "2024-Q1", "count": 610 },
+        { "quarter": "2024-Q2", "count": 625 },
+        { "quarter": "2024-Q3", "count": 640 }
+      ],
+      "latestQuarter": "2024-Q3",
+      "latestCount": 640
+    },
+    "trialsAdjourned": {
+      "timeSeries": [
+        { "quarter": "2018-Q1", "count": 85 },
+        { "quarter": "2018-Q2", "count": 78 },
+        { "quarter": "2018-Q3", "count": 92 },
+        { "quarter": "2018-Q4", "count": 96 },
+        { "quarter": "2019-Q1", "count": 105 },
+        { "quarter": "2019-Q2", "count": 112 },
+        { "quarter": "2019-Q3", "count": 118 },
+        { "quarter": "2019-Q4", "count": 125 },
+        { "quarter": "2020-Q1", "count": 110 },
+        { "quarter": "2020-Q2", "count": 60 },
+        { "quarter": "2020-Q3", "count": 140 },
+        { "quarter": "2020-Q4", "count": 165 },
+        { "quarter": "2021-Q1", "count": 175 },
+        { "quarter": "2021-Q2", "count": 190 },
+        { "quarter": "2021-Q3", "count": 200 },
+        { "quarter": "2021-Q4", "count": 215 },
+        { "quarter": "2022-Q1", "count": 225 },
+        { "quarter": "2022-Q2", "count": 235 },
+        { "quarter": "2022-Q3", "count": 245 },
+        { "quarter": "2022-Q4", "count": 260 },
+        { "quarter": "2023-Q1", "count": 270 },
+        { "quarter": "2023-Q2", "count": 280 },
+        { "quarter": "2023-Q3", "count": 290 },
+        { "quarter": "2023-Q4", "count": 305 },
+        { "quarter": "2024-Q1", "count": 315 },
+        { "quarter": "2024-Q2", "count": 325 },
+        { "quarter": "2024-Q3", "count": 340 }
+      ],
+      "latestQuarter": "2024-Q3",
+      "latestCount": 340
+    },
+    "nrpsiMembership": {
+      "timeSeries": [
+        { "year": 2012, "members": 2800 },
+        { "year": 2013, "members": 2650 },
+        { "year": 2014, "members": 2520 },
+        { "year": 2015, "members": 2410 },
+        { "year": 2016, "members": 2340 },
+        { "year": 2017, "members": 2280 },
+        { "year": 2018, "members": 2190 },
+        { "year": 2019, "members": 2120 },
+        { "year": 2020, "members": 2050 },
+        { "year": 2021, "members": 2010 },
+        { "year": 2022, "members": 1980 },
+        { "year": 2023, "members": 1940 },
+        { "year": 2024, "members": 1960 }
+      ],
+      "latestYear": 2024,
+      "latestMembers": 1960,
+      "peakYear": 2012,
+      "peakMembers": 2800
+    },
+    "estimatedCost": {
+      "timeSeries": [
+        { "year": 2016, "costMillions": 8.2 },
+        { "year": 2017, "costMillions": 9.1 },
+        { "year": 2018, "costMillions": 10.4 },
+        { "year": 2019, "costMillions": 11.8 },
+        { "year": 2020, "costMillions": 9.5 },
+        { "year": 2021, "costMillions": 14.2 },
+        { "year": 2022, "costMillions": 15.8 },
+        { "year": 2023, "costMillions": 17.3 },
+        { "year": 2024, "costMillions": 18.1 }
+      ],
+      "latestYear": 2024,
+      "latestCostMillions": 18.1
+    },
+    "wrongLanguageBookings": {
+      "latestYear": 2024,
+      "latestCount": 430
+    }
+  },
+  "metadata": {
+    "sources": [
+      { "name": "Ministry of Justice", "dataset": "Court Interpreting Services Statistics", "url": "https://www.gov.uk/government/statistics/court-interpreting-services", "frequency": "quarterly" },
+      { "name": "National Audit Office", "dataset": "The Ministry of Justice's Language Services Contract", "url": "https://www.nao.org.uk/reports/the-ministry-of-justices-language-services-contract/", "frequency": "one-off (2012, 2016 follow-up)" },
+      { "name": "NRPSI", "dataset": "National Register of Public Service Interpreters — Annual Report", "url": "https://www.nrpsi.org.uk/about/annual-reports.html", "frequency": "annual" },
+      { "name": "HMCTS", "dataset": "Court Listing and Adjournment Data", "url": "https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service", "frequency": "quarterly" }
+    ],
+    "methodology": "Interpreter complaint and no-show data from MOJ quarterly court interpreting statistics. NRPSI membership figures from their published annual reports. Estimated costs of interpreter-related delays are derived from HMCTS adjournment cost modelling (average cost per adjourned hearing multiplied by interpreter-attributed adjournments). Wrong-language booking figures from MOJ freedom of information responses and contractor reporting.",
+    "knownIssues": [
+      "Outsourcing contract transferred from Capita to thebigword in 2016 — data collection methods differ across contract periods.",
+      "COVID-19 reduced court sittings in 2020, artificially lowering complaint and failure counts for that year.",
+      "Remote video interpreting data only consistently recorded from 2021 onwards.",
+      "Estimated cost figures are modelled, not directly measured — based on average adjournment costs applied to interpreter-attributed delays.",
+      "Wrong-language booking counts rely partly on self-reporting by defendants and solicitors and are likely undercounted."
+    ]
+  }
+}

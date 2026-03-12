@@ -1,0 +1,59 @@
+{
+  "populationCoverage": [
+    {"year": 2019, "percent": 0},
+    {"year": 2020, "percent": 6},
+    {"year": 2021, "percent": 16},
+    {"year": 2022, "percent": 28},
+    {"year": 2023, "percent": 38},
+    {"year": 2024, "percent": 45},
+    {"year": 2025, "percent": 50}
+  ],
+  "ruralVsUrban": [
+    {"year": 2020, "rural": 0, "urban": 8},
+    {"year": 2021, "rural": 1, "urban": 22},
+    {"year": 2022, "rural": 3, "urban": 38},
+    {"year": 2023, "rural": 6, "urban": 49},
+    {"year": 2024, "rural": 9, "urban": 59},
+    {"year": 2025, "rural": 12, "urban": 65}
+  ],
+  "gigabitPremises": [
+    {"year": 2019, "percent": 8},
+    {"year": 2020, "percent": 18},
+    {"year": 2021, "percent": 33},
+    {"year": 2022, "percent": 50},
+    {"year": 2023, "percent": 62},
+    {"year": 2024, "percent": 73},
+    {"year": 2025, "percent": 79}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ofcom",
+        "dataset": "Connected Nations Report",
+        "url": "https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "DSIT",
+        "dataset": "UK Wireless Infrastructure Strategy",
+        "url": "https://www.gov.uk/government/publications/uk-wireless-infrastructure-strategy",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Ookla",
+        "dataset": "Speedtest Global Index — UK 5G Performance",
+        "url": "https://www.speedtest.net/global-index",
+        "retrieved": "2026-03-01",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Population coverage percentages reflect the proportion of the UK population living within modelled 5G signal range from at least one operator, based on Ofcom Connected Nations data. Rural and urban classifications follow ONS rural-urban definitions. Gigabit broadband premises data reflects premises able to receive 1Gbps+ download speeds via full-fibre or upgraded cable networks.",
+    "knownIssues": [
+      "5G coverage definitions vary by operator — some count outdoor-only coverage, others include indoor.",
+      "Rural coverage figures may overstate real-world availability due to terrain and building penetration losses.",
+      "Pre-2020 5G data is limited as commercial services launched mid-2019."
+    ]
+  }
+}

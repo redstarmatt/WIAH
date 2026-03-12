@@ -1,46 +1,62 @@
 {
-  "national": {
-    "participationRate": {
-      "timeSeries": [
-        { "year": 2015, "pctAdults": 20.1 },
-        { "year": 2016, "pctAdults": 19.4 },
-        { "year": 2017, "pctAdults": 18.7 },
-        { "year": 2018, "pctAdults": 17.3 },
-        { "year": 2019, "pctAdults": 17.0 },
-        { "year": 2020, "pctAdults": 14.2 },
-        { "year": 2021, "pctAdults": 15.5 },
-        { "year": 2022, "pctAdults": 16.1 },
-        { "year": 2023, "pctAdults": 15.8 },
-        { "year": 2024, "pctAdults": 15.4 }
-      ]
-    },
-    "feEnrolments": {
-      "timeSeries": [
-        { "year": 2015, "millionsEnrolments": 3.3 },
-        { "year": 2016, "millionsEnrolments": 3.1 },
-        { "year": 2017, "millionsEnrolments": 2.9 },
-        { "year": 2018, "millionsEnrolments": 2.8 },
-        { "year": 2019, "millionsEnrolments": 2.7 },
-        { "year": 2020, "millionsEnrolments": 2.4 },
-        { "year": 2021, "millionsEnrolments": 2.5 },
-        { "year": 2022, "millionsEnrolments": 2.5 },
-        { "year": 2023, "millionsEnrolments": 2.4 },
-        { "year": 2024, "millionsEnrolments": 2.3 }
-      ]
-    }
-  },
+  "participation": [
+    {"year": 2010, "rate": 20.1},
+    {"year": 2011, "rate": 19.4},
+    {"year": 2012, "rate": 18.8},
+    {"year": 2013, "rate": 18.2},
+    {"year": 2014, "rate": 17.6},
+    {"year": 2015, "rate": 17.1},
+    {"year": 2016, "rate": 16.8},
+    {"year": 2017, "rate": 16.4},
+    {"year": 2018, "rate": 16.1},
+    {"year": 2019, "rate": 15.9},
+    {"year": 2020, "rate": 14.8},
+    {"year": 2021, "rate": 14.6},
+    {"year": 2022, "rate": 15.2},
+    {"year": 2023, "rate": 15.6},
+    {"year": 2024, "rate": 15.4}
+  ],
+  "aebFunding": [
+    {"year": 2010, "realTermsBn": 4.3},
+    {"year": 2011, "realTermsBn": 3.9},
+    {"year": 2012, "realTermsBn": 3.6},
+    {"year": 2013, "realTermsBn": 3.3},
+    {"year": 2014, "realTermsBn": 3.1},
+    {"year": 2015, "realTermsBn": 2.9},
+    {"year": 2016, "realTermsBn": 2.7},
+    {"year": 2017, "realTermsBn": 2.5},
+    {"year": 2018, "realTermsBn": 2.4},
+    {"year": 2019, "realTermsBn": 2.3},
+    {"year": 2020, "realTermsBn": 2.2},
+    {"year": 2021, "realTermsBn": 2.2},
+    {"year": 2022, "realTermsBn": 2.1},
+    {"year": 2023, "realTermsBn": 2.1},
+    {"year": 2024, "realTermsBn": 2.1}
+  ],
+  "enrolmentsByLevel": [
+    {"year": 2015, "entryAndLevel1": 1450000, "level2": 980000, "level3": 470000, "level4Plus": 210000},
+    {"year": 2016, "entryAndLevel1": 1380000, "level2": 940000, "level3": 450000, "level4Plus": 200000},
+    {"year": 2017, "entryAndLevel1": 1310000, "level2": 890000, "level3": 420000, "level4Plus": 195000},
+    {"year": 2018, "entryAndLevel1": 1260000, "level2": 850000, "level3": 400000, "level4Plus": 190000},
+    {"year": 2019, "entryAndLevel1": 1220000, "level2": 820000, "level3": 390000, "level4Plus": 185000},
+    {"year": 2020, "entryAndLevel1": 1050000, "level2": 710000, "level3": 340000, "level4Plus": 160000},
+    {"year": 2021, "entryAndLevel1": 1100000, "level2": 740000, "level3": 370000, "level4Plus": 170000},
+    {"year": 2022, "entryAndLevel1": 1080000, "level2": 720000, "level3": 380000, "level4Plus": 175000},
+    {"year": 2023, "entryAndLevel1": 1040000, "level2": 700000, "level3": 390000, "level4Plus": 180000},
+    {"year": 2024, "entryAndLevel1": 1010000, "level2": 680000, "level3": 400000, "level4Plus": 185000}
+  ],
   "metadata": {
     "sources": [
-      { "name": "DfE", "dataset": "Further Education and Skills Statistics", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/further-education-and-skills", "frequency": "annual" },
-      { "name": "DfE", "dataset": "Adult Education Budget Monitoring", "url": "https://www.gov.uk/government/collections/further-education-and-skills-statistical-first-release-sfr", "frequency": "annual" },
-      { "name": "OECD", "dataset": "Education at a Glance — Adult Learning", "url": "https://www.oecd.org/education/education-at-a-glance/", "frequency": "annual" }
+      {"name": "Learning and Work Institute", "dataset": "Adult Participation in Learning Survey", "url": "https://learningandwork.org.uk/resources/research-and-reports/adult-participation-in-learning-survey/", "frequency": "annual"},
+      {"name": "DfE", "dataset": "Individualised Learner Record (ILR)", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/further-education-and-skills", "frequency": "annual"},
+      {"name": "ESFA", "dataset": "Adult Education Budget allocations", "url": "https://www.gov.uk/government/publications/adult-education-budget-funding-rates-and-formula", "frequency": "annual"}
     ],
-    "methodology": "Adult participation is the proportion of adults aged 19+ who have participated in learning in the past three years, from the National Adult Learning Survey. FE enrolments count all learner starts in further education and skills programmes funded through the Adult Education Budget, advanced learner loans, and apprenticeships.",
+    "methodology": "Adult participation rate is the proportion of adults aged 17+ who report participating in learning in the past three years, from the Learning and Work Institute's annual survey. AEB funding is adjusted to 2024 prices using the GDP deflator. Enrolments are counted from the Individualised Learner Record and include all funded learner aims in further education and skills programmes.",
     "knownIssues": [
-      "The National Adult Learning Survey was discontinued after 2010 — recent participation estimates rely on the Annual Population Survey which uses a different methodology",
-      "FE enrolment counts include multiple enrolments by the same learner",
-      "COVID-19 caused a sharp fall in classroom-based learning in 2020 that may be only partially reflected in data",
-      "Adult Education Budget underspend may reflect suppressed demand, not reduced need"
+      "Participation survey methodology changed in 2018 — pre/post figures not directly comparable",
+      "COVID-19 caused a sharp fall in classroom-based provision in 2020 that distorts trend lines",
+      "Enrolment counts include multiple aims per learner — the number of individual learners is lower",
+      "AEB real-terms calculations depend on the deflator used; different sources produce slightly different figures"
     ]
   }
 }

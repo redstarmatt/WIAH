@@ -1,23 +1,72 @@
 {
-  "topic": "active-travel-investment",
-  "lastUpdated": "2024-12-01",
-  "timeSeries": [
-    { "year": 2016, "investmentBn": 0.20, "cyclingTripsBn": 1.9 },
-    { "year": 2017, "investmentBn": 0.25, "cyclingTripsBn": 2.0 },
-    { "year": 2018, "investmentBn": 0.35, "cyclingTripsBn": 2.1 },
-    { "year": 2019, "investmentBn": 0.45, "cyclingTripsBn": 2.3 },
-    { "year": 2020, "investmentBn": 0.48, "cyclingTripsBn": 2.3 },
-    { "year": 2021, "investmentBn": 0.50, "cyclingTripsBn": 2.5 },
-    { "year": 2022, "investmentBn": 0.70, "cyclingTripsBn": 2.8 },
-    { "year": 2023, "investmentBn": 0.90, "cyclingTripsBn": 3.1 },
-    { "year": 2024, "investmentBn": 1.10, "cyclingTripsBn": 3.4 }
+  "investmentSpend": [
+    {"year": 2015, "spendMillions": 264},
+    {"year": 2016, "spendMillions": 312},
+    {"year": 2017, "spendMillions": 329},
+    {"year": 2018, "spendMillions": 348},
+    {"year": 2019, "spendMillions": 382},
+    {"year": 2020, "spendMillions": 541},
+    {"year": 2021, "spendMillions": 476},
+    {"year": 2022, "spendMillions": 308},
+    {"year": 2023, "spendMillions": 219},
+    {"year": 2024, "spendMillions": 200}
+  ],
+  "cyclingTrips": [
+    {"year": 2015, "tripsMillions": 820},
+    {"year": 2016, "tripsMillions": 850},
+    {"year": 2017, "tripsMillions": 870},
+    {"year": 2018, "tripsMillions": 880},
+    {"year": 2019, "tripsMillions": 910},
+    {"year": 2020, "tripsMillions": 1180},
+    {"year": 2021, "tripsMillions": 1050},
+    {"year": 2022, "tripsMillions": 1010},
+    {"year": 2023, "tripsMillions": 1060},
+    {"year": 2024, "tripsMillions": 1100}
+  ],
+  "cyclistKSI": [
+    {"year": 2015, "killed": 100, "seriouslyInjured": 3196, "total": 3296},
+    {"year": 2016, "killed": 102, "seriouslyInjured": 3397, "total": 3499},
+    {"year": 2017, "killed": 101, "seriouslyInjured": 3698, "total": 3799},
+    {"year": 2018, "killed": 99, "seriouslyInjured": 3881, "total": 3980},
+    {"year": 2019, "killed": 100, "seriouslyInjured": 4047, "total": 4147},
+    {"year": 2020, "killed": 141, "seriouslyInjured": 3438, "total": 3579},
+    {"year": 2021, "killed": 111, "seriouslyInjured": 3890, "total": 4001},
+    {"year": 2022, "killed": 91, "seriouslyInjured": 4221, "total": 4312},
+    {"year": 2023, "killed": 84, "seriouslyInjured": 4053, "total": 4137},
+    {"year": 2024, "killed": 78, "seriouslyInjured": 3922, "total": 4000}
   ],
   "metadata": {
     "sources": [
-      { "name": "Active Travel England", "dataset": "Investment Report", "url": "https://www.gov.uk/government/organisations/active-travel-england", "retrieved": "2024-12-01", "frequency": "annual" },
-      { "name": "Department for Transport", "dataset": "Cycling and Walking Investment Strategy Metrics", "url": "https://www.gov.uk/government/publications/cycling-and-walking-investment-strategy", "retrieved": "2024-12-01", "frequency": "annual" }
+      {
+        "name": "Department for Transport",
+        "dataset": "Walking and Cycling Statistics",
+        "url": "https://www.gov.uk/government/collections/walking-and-cycling-statistics",
+        "frequency": "annual"
+      },
+      {
+        "name": "Active Travel England",
+        "dataset": "ATE Annual Report and Scheme Ratings",
+        "url": "https://www.gov.uk/government/organisations/active-travel-england",
+        "frequency": "annual"
+      },
+      {
+        "name": "Cycling UK",
+        "dataset": "Cycling Statistics and Road Safety Data",
+        "url": "https://www.cyclinguk.org/statistics",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Transport",
+        "dataset": "Reported Road Casualties Great Britain",
+        "url": "https://www.gov.uk/government/collections/road-accidents-and-safety-statistics",
+        "frequency": "annual"
+      }
     ],
-    "methodology": "Investment figures cover walking, cycling and wheeling infrastructure combined. Cycling trips from National Travel Survey.",
-    "knownIssues": ["Cycling trips may be undercounted in survey data as short trips and e-bike journeys are less reliably captured"]
+    "methodology": "Investment figures reflect total central and local government capital and revenue spend on walking and cycling infrastructure in England, as reported in DfT annual returns. Cycling trips are estimated from the National Travel Survey and DfT cycle traffic counts. KSI (killed or seriously injured) figures are from STATS19 police-reported road casualty data for Great Britain. Serious injury figures were adjusted in 2016 following adoption of the CRASH reporting system, which increased the count of 'serious' injuries; pre-2016 figures are not directly comparable.",
+    "knownIssues": [
+      "2020 cycling trip spike reflects pandemic modal shift — not sustained infrastructure investment",
+      "Investment figures include one-off Emergency Active Travel Fund (2020-21) which inflates the 2020 figure",
+      "STATS19 serious injury definition changed in 2016 with CRASH system adoption"
+    ]
   }
 }

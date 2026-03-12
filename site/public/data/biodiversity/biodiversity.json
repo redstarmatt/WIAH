@@ -1,66 +1,117 @@
 {
-  "topic": "biodiversity",
-  "lastUpdated": "2026-03-04",
-  "national": {
-    "farmlandBirds": {
-      "timeSeries": [
-        {"year": 1970, "index": 100},
-        {"year": 1975, "index": 88},
-        {"year": 1980, "index": 78},
-        {"year": 1985, "index": 70},
-        {"year": 1990, "index": 62},
-        {"year": 1995, "index": 55},
-        {"year": 2000, "index": 49},
-        {"year": 2005, "index": 47},
-        {"year": 2010, "index": 45},
-        {"year": 2015, "index": 44},
-        {"year": 2020, "index": 43},
-        {"year": 2021, "index": 43}
-      ],
-      "latestYear": 2021,
-      "latestIndex": 43,
-      "note": "Species population trends composite index. 1970 = 100."
-    },
-    "speciesStatus": [
-      {"status": "Stable or increasing", "pct": 59},
-      {"status": "Moderate decline", "pct": 26},
-      {"status": "Strong decline", "pct": 15}
-    ],
-    "riverQuality": {
-      "timeSeries": [
-        {"year": 2016, "goodStatusPct": 26},
-        {"year": 2017, "goodStatusPct": 22},
-        {"year": 2018, "goodStatusPct": 19},
-        {"year": 2019, "goodStatusPct": 17},
-        {"year": 2020, "goodStatusPct": 16},
-        {"year": 2022, "goodStatusPct": 14}
-      ],
-      "latestYear": 2022,
-      "latestPct": 14,
-      "wfdTarget": 100,
-      "note": "Water Framework Directive good ecological status. England only."
-    },
-    "landProtection": {
-      "protectedLandPct": 8.5,
-      "protectedSeasPct": 26,
-      "target30x30LandPct": 30,
-      "target30x30SeasPct": 30,
-      "note": "UK committed to 30x30 target at COP15 (2022). Currently 8.5% land, 26% seas."
-    },
-    "sssisCondition": {
-      "favourablePct": 38,
-      "unfavourablePct": 62,
-      "totalSSSIs": 4100,
-      "note": "Sites of Special Scientific Interest. Natural England assessment 2022."
-    }
+  "speciesAbundance": [
+    {"year": 1970, "index": 100},
+    {"year": 1972, "index": 98.2},
+    {"year": 1974, "index": 95.8},
+    {"year": 1976, "index": 93.1},
+    {"year": 1978, "index": 90.7},
+    {"year": 1980, "index": 87.4},
+    {"year": 1982, "index": 85.1},
+    {"year": 1984, "index": 82.6},
+    {"year": 1986, "index": 80.3},
+    {"year": 1988, "index": 77.8},
+    {"year": 1990, "index": 75.2},
+    {"year": 1992, "index": 73.4},
+    {"year": 1994, "index": 71.0},
+    {"year": 1996, "index": 69.5},
+    {"year": 1998, "index": 67.8},
+    {"year": 2000, "index": 66.1},
+    {"year": 2002, "index": 64.9},
+    {"year": 2004, "index": 63.2},
+    {"year": 2006, "index": 62.0},
+    {"year": 2008, "index": 61.3},
+    {"year": 2010, "index": 60.8},
+    {"year": 2012, "index": 60.1},
+    {"year": 2014, "index": 59.6},
+    {"year": 2016, "index": 59.2},
+    {"year": 2018, "index": 58.9},
+    {"year": 2020, "index": 58.5},
+    {"year": 2022, "index": 58.1},
+    {"year": 2024, "index": 59.0}
+  ],
+  "farmlandBirdIndex": [
+    {"year": 1970, "index": 100},
+    {"year": 1972, "index": 97.5},
+    {"year": 1974, "index": 94.3},
+    {"year": 1976, "index": 90.8},
+    {"year": 1978, "index": 86.1},
+    {"year": 1980, "index": 80.4},
+    {"year": 1982, "index": 75.6},
+    {"year": 1984, "index": 71.2},
+    {"year": 1986, "index": 67.8},
+    {"year": 1988, "index": 64.3},
+    {"year": 1990, "index": 60.9},
+    {"year": 1992, "index": 58.1},
+    {"year": 1994, "index": 56.4},
+    {"year": 1996, "index": 54.7},
+    {"year": 1998, "index": 52.1},
+    {"year": 2000, "index": 50.8},
+    {"year": 2002, "index": 49.3},
+    {"year": 2004, "index": 48.1},
+    {"year": 2006, "index": 47.6},
+    {"year": 2008, "index": 46.9},
+    {"year": 2010, "index": 46.2},
+    {"year": 2012, "index": 45.8},
+    {"year": 2014, "index": 44.7},
+    {"year": 2016, "index": 43.9},
+    {"year": 2018, "index": 43.2},
+    {"year": 2020, "index": 42.8},
+    {"year": 2022, "index": 42.1},
+    {"year": 2024, "index": 41.6}
+  ],
+  "bngCredits": [
+    {"quarter": "2024-Q1", "creditsRegistered": 142, "habitatHectares": 87},
+    {"quarter": "2024-Q2", "creditsRegistered": 318, "habitatHectares": 205},
+    {"quarter": "2024-Q3", "creditsRegistered": 527, "habitatHectares": 348},
+    {"quarter": "2024-Q4", "creditsRegistered": 891, "habitatHectares": 562},
+    {"quarter": "2025-Q1", "creditsRegistered": 1204, "habitatHectares": 773},
+    {"quarter": "2025-Q2", "creditsRegistered": 1587, "habitatHectares": 1018},
+    {"quarter": "2025-Q3", "creditsRegistered": 1943, "habitatHectares": 1247},
+    {"quarter": "2025-Q4", "creditsRegistered": 2310, "habitatHectares": 1482}
+  ],
+  "keySpecies": {
+    "hedgehogDeclineSince2000Pct": 50,
+    "redKiteBreedingPairs": 10000,
+    "beaverColonies": 450,
+    "speciesInDeclinePct": 41,
+    "speciesAtRiskOfExtinctionPct": 16
   },
   "metadata": {
     "sources": [
-      {"name": "JNCC / RSPB", "dataset": "State of Nature Report 2023", "url": "https://stateofnature.org.uk/", "frequency": "triennial"},
-      {"name": "DEFRA", "dataset": "Wild bird populations, UK", "url": "https://www.gov.uk/government/statistics/wild-bird-populations-in-the-uk", "frequency": "annual"},
-      {"name": "Environment Agency", "dataset": "Water Framework Directive river classification", "url": "https://environment.data.gov.uk/catchment-planning/", "frequency": "annual"}
+      {
+        "name": "JNCC / State of Nature Partnership",
+        "dataset": "State of Nature 2023",
+        "url": "https://stateofnature.org.uk",
+        "retrieved": "2026-03-01",
+        "frequency": "triennial"
+      },
+      {
+        "name": "DEFRA",
+        "dataset": "UK Biodiversity Indicators — Farmland Bird Index (C5)",
+        "url": "https://www.gov.uk/government/statistics/biodiversity-indicators",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "BTO (British Trust for Ornithology)",
+        "dataset": "Breeding Bird Survey",
+        "url": "https://www.bto.org/our-science/projects/breeding-bird-survey",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Natural England",
+        "dataset": "Biodiversity Net Gain: Credit Sales and Habitat Register",
+        "url": "https://www.gov.uk/government/collections/biodiversity-net-gain",
+        "retrieved": "2026-03-01",
+        "frequency": "quarterly"
+      }
     ],
-    "methodology": "State of Nature uses population trend data for over 10,000 species to calculate percentage declining, stable, or increasing. Farmland bird index is a composite of 19 farmland specialist species, indexed to 1970=100. River quality assessed under Water Framework Directive ecological status classifications.",
-    "knownIssues": ["Species trend data has different baseline years for different taxa", "SSSI condition assessments are periodic — not all sites assessed in same year", "River classification methodology updated — pre/post 2016 data not fully comparable"]
+    "methodology": "Species abundance index is based on the UK Biodiversity Indicators composite species abundance measure, rebased to 1970=100. Farmland bird index uses the DEFRA C5 indicator covering 19 farmland-specialist bird species. BNG credit and habitat data from Natural England's statutory register since mandatory BNG commenced in February 2024.",
+    "knownIssues": [
+      "Species abundance index methodology revised in 2019 — minor recalculations to pre-2019 figures",
+      "BNG data only available from February 2024; early quarters may underrepresent activity due to transition period",
+      "Insect population estimates carry wide confidence intervals due to limited long-term monitoring"
+    ]
   }
 }

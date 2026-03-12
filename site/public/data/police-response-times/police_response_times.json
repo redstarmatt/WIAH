@@ -1,0 +1,77 @@
+{
+  "topic": "police-response-times",
+  "lastUpdated": "2026-03-01",
+  "timeSeries999": [
+    { "year": 2015, "avgAnswerSeconds": 8.2, "pctWithin10s": 91.4 },
+    { "year": 2016, "avgAnswerSeconds": 8.5, "pctWithin10s": 90.1 },
+    { "year": 2017, "avgAnswerSeconds": 9.1, "pctWithin10s": 88.3 },
+    { "year": 2018, "avgAnswerSeconds": 9.8, "pctWithin10s": 85.7 },
+    { "year": 2019, "avgAnswerSeconds": 10.4, "pctWithin10s": 82.1 },
+    { "year": 2020, "avgAnswerSeconds": 11.7, "pctWithin10s": 78.9 },
+    { "year": 2021, "avgAnswerSeconds": 12.3, "pctWithin10s": 76.2 },
+    { "year": 2022, "avgAnswerSeconds": 13.1, "pctWithin10s": 72.5 },
+    { "year": 2023, "avgAnswerSeconds": 14.2, "pctWithin10s": 68.3 },
+    { "year": 2024, "avgAnswerSeconds": 13.8, "pctWithin10s": 69.1 },
+    { "year": 2025, "avgAnswerSeconds": 13.5, "pctWithin10s": 70.4 }
+  ],
+  "timeSeriesGrade1": [
+    { "year": 2015, "medianMinutes": 10.2, "pctTargetMet": 92.1 },
+    { "year": 2016, "medianMinutes": 10.5, "pctTargetMet": 91.4 },
+    { "year": 2017, "medianMinutes": 11.0, "pctTargetMet": 90.2 },
+    { "year": 2018, "medianMinutes": 11.8, "pctTargetMet": 88.7 },
+    { "year": 2019, "medianMinutes": 12.4, "pctTargetMet": 87.1 },
+    { "year": 2020, "medianMinutes": 11.9, "pctTargetMet": 88.0 },
+    { "year": 2021, "medianMinutes": 12.7, "pctTargetMet": 86.3 },
+    { "year": 2022, "medianMinutes": 13.5, "pctTargetMet": 85.8 },
+    { "year": 2023, "medianMinutes": 14.1, "pctTargetMet": 84.9 },
+    { "year": 2024, "medianMinutes": 14.4, "pctTargetMet": 84.6 }
+  ],
+  "timeSeriesPCSO": [
+    { "year": 2010, "pcsoCount": 16918 },
+    { "year": 2011, "pcsoCount": 15820 },
+    { "year": 2012, "pcsoCount": 14393 },
+    { "year": 2013, "pcsoCount": 13066 },
+    { "year": 2014, "pcsoCount": 12331 },
+    { "year": 2015, "pcsoCount": 11904 },
+    { "year": 2016, "pcsoCount": 10943 },
+    { "year": 2017, "pcsoCount": 10213 },
+    { "year": 2018, "pcsoCount": 9547 },
+    { "year": 2019, "pcsoCount": 9284 },
+    { "year": 2020, "pcsoCount": 9114 },
+    { "year": 2021, "pcsoCount": 8810 },
+    { "year": 2022, "pcsoCount": 8672 },
+    { "year": 2023, "pcsoCount": 8491 },
+    { "year": 2024, "pcsoCount": 8387 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Home Office",
+        "dataset": "999 Call Handling Statistics",
+        "url": "https://www.gov.uk/government/collections/999-call-handling-statistics",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "HMICFRS",
+        "dataset": "PEEL Assessments — Police Effectiveness, Efficiency and Legitimacy",
+        "url": "https://hmicfrs.justiceinspectorates.gov.uk/peel-assessments/",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Police Workforce Statistics",
+        "url": "https://www.gov.uk/government/collections/police-workforce-england-and-wales",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "999 call answer times are measured from the moment the call connects to the BT operator to the point it is answered by force control room staff. The 10-second target is a service-level agreement. Grade 1 response data is drawn from HMICFRS PEEL inspections and force-level performance reporting; targets vary (15 minutes urban, 20 minutes rural) but national aggregates use a blended 15-minute benchmark. PCSO headcount is full-time equivalent from Home Office Police Workforce Statistics, measured at 31 March each year.",
+    "knownIssues": [
+      "Grade 1 response time definitions vary slightly between forces — some measure from point of dispatch, others from point of call.",
+      "999 call handling statistics changed methodology in 2020 to include abandoned calls in wait time calculations.",
+      "PCSO figures include both funded and locally funded PCSOs; the split is not always consistent across years."
+    ]
+  }
+}

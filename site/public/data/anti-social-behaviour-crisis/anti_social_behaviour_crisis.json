@@ -1,1 +1,72 @@
-{"topic":"anti-social-behaviour-crisis","lastUpdated":"2026-01-01","timeSeries":[{"year":2015,"asbRecordedM":1.72,"policeResponseWithin1hrPct":41,"cbnOrdersIssued":3240},{"year":2016,"asbRecordedM":1.65},{"year":2017,"asbRecordedM":1.59},{"year":2018,"asbRecordedM":1.57},{"year":2019,"asbRecordedM":1.53,"policeResponseWithin1hrPct":38,"cbnOrdersIssued":2190},{"year":2020,"asbRecordedM":1.75},{"year":2021,"asbRecordedM":1.74},{"year":2022,"asbRecordedM":1.68,"policeResponseWithin1hrPct":30},{"year":2023,"asbRecordedM":1.60,"policeResponseWithin1hrPct":28,"cbnOrdersIssued":1850}]}
+{
+  "asbIncidents": [
+    {"year": 2014, "incidents": 2029000},
+    {"year": 2015, "incidents": 1905000},
+    {"year": 2016, "incidents": 1762000},
+    {"year": 2017, "incidents": 1653000},
+    {"year": 2018, "incidents": 1491000},
+    {"year": 2019, "incidents": 1378000},
+    {"year": 2020, "incidents": 1412000},
+    {"year": 2021, "incidents": 1341000},
+    {"year": 2022, "incidents": 1283000},
+    {"year": 2023, "incidents": 1246000},
+    {"year": 2024, "incidents": 1201000}
+  ],
+  "enforcementActions": [
+    {"year": 2014, "actions": 26430, "note": "ASBOs + other enforcement orders"},
+    {"year": 2015, "actions": 22810},
+    {"year": 2016, "actions": 20150, "note": "CPNs replace ASBOs from Oct 2014 — transition period"},
+    {"year": 2017, "actions": 19200},
+    {"year": 2018, "actions": 18470},
+    {"year": 2019, "actions": 17320},
+    {"year": 2020, "actions": 14860},
+    {"year": 2021, "actions": 15110},
+    {"year": 2022, "actions": 14980},
+    {"year": 2023, "actions": 14520},
+    {"year": 2024, "actions": 14200}
+  ],
+  "satisfactionWithPolice": [
+    {"year": 2014, "pctSatisfied": 59.2},
+    {"year": 2015, "pctSatisfied": 57.8},
+    {"year": 2016, "pctSatisfied": 55.1},
+    {"year": 2017, "pctSatisfied": 52.6},
+    {"year": 2018, "pctSatisfied": 50.3},
+    {"year": 2019, "pctSatisfied": 48.7},
+    {"year": 2020, "pctSatisfied": 47.1},
+    {"year": 2021, "pctSatisfied": 44.9},
+    {"year": 2022, "pctSatisfied": 43.2},
+    {"year": 2023, "pctSatisfied": 41.8},
+    {"year": 2024, "pctSatisfied": 40.5}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Crime Survey for England and Wales — Anti-Social Behaviour Estimates",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Anti-Social Behaviour Statistics — Enforcement Actions",
+        "url": "https://www.gov.uk/government/statistics/anti-social-behaviour-order-statistics-england-and-wales",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "HMICFRS",
+        "dataset": "Public Perceptions of Policing — Satisfaction with ASB Handling",
+        "url": "https://www.justiceinspectorates.gov.uk/hmicfrs/",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "ASB incidents from CSEW self-reported experience. Enforcement actions combine ASBOs (pre-2015), CPNs, Criminal Behaviour Orders, and dispersal orders. Satisfaction from CSEW follow-up module for ASB victims. All figures England & Wales.",
+    "knownIssues": [
+      "ASB is widely underreported — CSEW estimates are significantly higher than police-recorded ASB",
+      "Transition from ASBOs to CPNs in 2014 makes enforcement time series not perfectly comparable pre/post 2015",
+      "COVID-19 lockdowns in 2020–21 affected both incidence patterns and reporting behaviour"
+    ]
+  }
+}

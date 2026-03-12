@@ -1,0 +1,112 @@
+{
+  "topic": "postal-service",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "firstClassPerformance": [
+      { "quarter": "2015-Q1", "pctNextDay": 93.1 },
+      { "quarter": "2015-Q2", "pctNextDay": 93.4 },
+      { "quarter": "2015-Q3", "pctNextDay": 93.0 },
+      { "quarter": "2015-Q4", "pctNextDay": 92.6 },
+      { "quarter": "2016-Q1", "pctNextDay": 92.8 },
+      { "quarter": "2016-Q2", "pctNextDay": 93.2 },
+      { "quarter": "2016-Q3", "pctNextDay": 92.5 },
+      { "quarter": "2016-Q4", "pctNextDay": 91.9 },
+      { "quarter": "2017-Q1", "pctNextDay": 92.3 },
+      { "quarter": "2017-Q2", "pctNextDay": 92.7 },
+      { "quarter": "2017-Q3", "pctNextDay": 91.8 },
+      { "quarter": "2017-Q4", "pctNextDay": 91.2 },
+      { "quarter": "2018-Q1", "pctNextDay": 91.5 },
+      { "quarter": "2018-Q2", "pctNextDay": 91.9 },
+      { "quarter": "2018-Q3", "pctNextDay": 91.0 },
+      { "quarter": "2018-Q4", "pctNextDay": 90.4 },
+      { "quarter": "2019-Q1", "pctNextDay": 90.8 },
+      { "quarter": "2019-Q2", "pctNextDay": 91.2 },
+      { "quarter": "2019-Q3", "pctNextDay": 90.1 },
+      { "quarter": "2019-Q4", "pctNextDay": 89.5 },
+      { "quarter": "2020-Q1", "pctNextDay": 89.0 },
+      { "quarter": "2020-Q2", "pctNextDay": 82.3 },
+      { "quarter": "2020-Q3", "pctNextDay": 86.7 },
+      { "quarter": "2020-Q4", "pctNextDay": 85.1 },
+      { "quarter": "2021-Q1", "pctNextDay": 87.2 },
+      { "quarter": "2021-Q2", "pctNextDay": 88.6 },
+      { "quarter": "2021-Q3", "pctNextDay": 87.1 },
+      { "quarter": "2021-Q4", "pctNextDay": 85.8 },
+      { "quarter": "2022-Q1", "pctNextDay": 86.2 },
+      { "quarter": "2022-Q2", "pctNextDay": 85.9 },
+      { "quarter": "2022-Q3", "pctNextDay": 74.8 },
+      { "quarter": "2022-Q4", "pctNextDay": 81.3 },
+      { "quarter": "2023-Q1", "pctNextDay": 84.7 },
+      { "quarter": "2023-Q2", "pctNextDay": 85.3 },
+      { "quarter": "2023-Q3", "pctNextDay": 84.1 },
+      { "quarter": "2023-Q4", "pctNextDay": 83.6 },
+      { "quarter": "2024-Q1", "pctNextDay": 84.9 },
+      { "quarter": "2024-Q2", "pctNextDay": 85.2 },
+      { "quarter": "2024-Q3", "pctNextDay": 84.3 },
+      { "quarter": "2024-Q4", "pctNextDay": 83.8 },
+      { "quarter": "2025-Q1", "pctNextDay": 84.6 },
+      { "quarter": "2025-Q2", "pctNextDay": 85.0 },
+      { "quarter": "2025-Q3", "pctNextDay": 84.2 },
+      { "quarter": "2025-Q4", "pctNextDay": 83.5 }
+    ],
+    "volumes": [
+      { "year": 2010, "lettersBillions": 15.1, "parcelsMillions": 1620 },
+      { "year": 2011, "lettersBillions": 14.2, "parcelsMillions": 1690 },
+      { "year": 2012, "lettersBillions": 13.3, "parcelsMillions": 1780 },
+      { "year": 2013, "lettersBillions": 12.6, "parcelsMillions": 1850 },
+      { "year": 2014, "lettersBillions": 12.0, "parcelsMillions": 1920 },
+      { "year": 2015, "lettersBillions": 11.4, "parcelsMillions": 1980 },
+      { "year": 2016, "lettersBillions": 10.8, "parcelsMillions": 2070 },
+      { "year": 2017, "lettersBillions": 10.1, "parcelsMillions": 2130 },
+      { "year": 2018, "lettersBillions": 9.5, "parcelsMillions": 2210 },
+      { "year": 2019, "lettersBillions": 9.0, "parcelsMillions": 2280 },
+      { "year": 2020, "lettersBillions": 7.4, "parcelsMillions": 2710 },
+      { "year": 2021, "lettersBillions": 7.1, "parcelsMillions": 2630 },
+      { "year": 2022, "lettersBillions": 6.8, "parcelsMillions": 2520 },
+      { "year": 2023, "lettersBillions": 6.4, "parcelsMillions": 2480 },
+      { "year": 2024, "lettersBillions": 6.1, "parcelsMillions": 2450 },
+      { "year": 2025, "lettersBillions": 5.9, "parcelsMillions": 2430 }
+    ],
+    "deliveryOffices": [
+      { "year": 2015, "count": 1212 },
+      { "year": 2016, "count": 1195 },
+      { "year": 2017, "count": 1178 },
+      { "year": 2018, "count": 1154 },
+      { "year": 2019, "count": 1136 },
+      { "year": 2020, "count": 1120 },
+      { "year": 2021, "count": 1105 },
+      { "year": 2022, "count": 1082 },
+      { "year": 2023, "count": 1058 },
+      { "year": 2024, "count": 1031 },
+      { "year": 2025, "count": 1008 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ofcom",
+        "dataset": "Annual Monitoring Report on the Postal Market",
+        "url": "https://www.ofcom.org.uk/research-and-data/post-research/annual-monitoring-update-on-the-postal-market",
+        "frequency": "annual"
+      },
+      {
+        "name": "Ofcom",
+        "dataset": "Quarterly Quality of Service Report — Royal Mail",
+        "url": "https://www.ofcom.org.uk/research-and-data/post-research/quality-of-service",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Royal Mail",
+        "dataset": "Annual Report and Accounts",
+        "url": "https://www.internationaldistributionsservices.com/en/investors/annual-reports/",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "First-class delivery performance is measured by Ofcom's quarterly quality-of-service reports, based on independent sampling by Kantar. Letter and parcel volumes are from Ofcom's Annual Monitoring Report on the Postal Market, supplemented by Royal Mail annual results. Delivery office counts are from Royal Mail's regulatory filings and annual reports. All figures relate to Royal Mail's regulated UK domestic services only and exclude International Distributions Services (GLS) parcel operations.",
+    "knownIssues": [
+      "Q3 2022 figures heavily affected by 18 days of CWU strike action — not representative of underlying performance",
+      "Parcel volume figures from 2020–2021 reflect pandemic-driven e-commerce surge, not structural growth",
+      "Delivery office consolidations sometimes involve merging two offices into one larger site, not a net loss of capacity",
+      "Ofcom sampling methodology changed in 2019 — pre/post figures not perfectly comparable"
+    ]
+  }
+}

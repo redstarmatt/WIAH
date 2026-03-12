@@ -1,0 +1,143 @@
+{
+  "topic": "land-ownership",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "landRegistryRegistrations": {
+      "timeSeries": [
+        {"year": 2000, "registeredPct": 58.2},
+        {"year": 2001, "registeredPct": 59.1},
+        {"year": 2002, "registeredPct": 60.4},
+        {"year": 2003, "registeredPct": 61.7},
+        {"year": 2004, "registeredPct": 63.0},
+        {"year": 2005, "registeredPct": 64.2},
+        {"year": 2006, "registeredPct": 65.5},
+        {"year": 2007, "registeredPct": 66.9},
+        {"year": 2008, "registeredPct": 67.8},
+        {"year": 2009, "registeredPct": 68.4},
+        {"year": 2010, "registeredPct": 69.3},
+        {"year": 2011, "registeredPct": 70.1},
+        {"year": 2012, "registeredPct": 71.2},
+        {"year": 2013, "registeredPct": 72.0},
+        {"year": 2014, "registeredPct": 73.1},
+        {"year": 2015, "registeredPct": 74.3},
+        {"year": 2016, "registeredPct": 75.4},
+        {"year": 2017, "registeredPct": 76.5},
+        {"year": 2018, "registeredPct": 77.8},
+        {"year": 2019, "registeredPct": 78.9},
+        {"year": 2020, "registeredPct": 79.6},
+        {"year": 2021, "registeredPct": 80.4},
+        {"year": 2022, "registeredPct": 81.3},
+        {"year": 2023, "registeredPct": 82.1},
+        {"year": 2024, "registeredPct": 83.0}
+      ],
+      "latestYear": 2024,
+      "latestPct": 83.0,
+      "note": "Percentage of land in England and Wales with registered title at HM Land Registry. Despite compulsory registration since 1990, an estimated 17% of land remains unregistered — largely historic estates, church land and Crown land exempt from trigger events."
+    },
+    "overseasEntities": {
+      "timeSeries": [
+        {"date": "2022-08", "registeredEntities": 0, "propertiesHeld": 0},
+        {"date": "2022-09", "registeredEntities": 4200, "propertiesHeld": 12600},
+        {"date": "2022-12", "registeredEntities": 11800, "propertiesHeld": 34100},
+        {"date": "2023-03", "registeredEntities": 18400, "propertiesHeld": 52800},
+        {"date": "2023-06", "registeredEntities": 22100, "propertiesHeld": 63700},
+        {"date": "2023-09", "registeredEntities": 25300, "propertiesHeld": 72400},
+        {"date": "2023-12", "registeredEntities": 27600, "propertiesHeld": 79900},
+        {"date": "2024-03", "registeredEntities": 29200, "propertiesHeld": 85100},
+        {"date": "2024-06", "registeredEntities": 30400, "propertiesHeld": 89300},
+        {"date": "2024-09", "registeredEntities": 31200, "propertiesHeld": 93600},
+        {"date": "2024-12", "registeredEntities": 31800, "propertiesHeld": 96200},
+        {"date": "2025-03", "registeredEntities": 32400, "propertiesHeld": 99800}
+      ],
+      "latestDate": "2025-03",
+      "latestEntities": 32400,
+      "latestProperties": 99800,
+      "note": "Overseas entities registered under the Register of Overseas Entities (Economic Crime Act 2022). Entities must disclose beneficial owners of UK property. Coverage includes all overseas companies, trusts and similar structures owning UK land."
+    },
+    "agriculturalLandPrices": {
+      "timeSeries": [
+        {"year": 2000, "avgPricePerAcre": 2450},
+        {"year": 2001, "avgPricePerAcre": 2380},
+        {"year": 2002, "avgPricePerAcre": 2520},
+        {"year": 2003, "avgPricePerAcre": 2710},
+        {"year": 2004, "avgPricePerAcre": 2980},
+        {"year": 2005, "avgPricePerAcre": 3240},
+        {"year": 2006, "avgPricePerAcre": 3580},
+        {"year": 2007, "avgPricePerAcre": 4120},
+        {"year": 2008, "avgPricePerAcre": 4680},
+        {"year": 2009, "avgPricePerAcre": 4510},
+        {"year": 2010, "avgPricePerAcre": 5340},
+        {"year": 2011, "avgPricePerAcre": 5980},
+        {"year": 2012, "avgPricePerAcre": 6420},
+        {"year": 2013, "avgPricePerAcre": 7150},
+        {"year": 2014, "avgPricePerAcre": 7940},
+        {"year": 2015, "avgPricePerAcre": 8130},
+        {"year": 2016, "avgPricePerAcre": 7680},
+        {"year": 2017, "avgPricePerAcre": 7290},
+        {"year": 2018, "avgPricePerAcre": 7050},
+        {"year": 2019, "avgPricePerAcre": 7180},
+        {"year": 2020, "avgPricePerAcre": 7420},
+        {"year": 2021, "avgPricePerAcre": 7890},
+        {"year": 2022, "avgPricePerAcre": 8540},
+        {"year": 2023, "avgPricePerAcre": 9210},
+        {"year": 2024, "avgPricePerAcre": 9680}
+      ],
+      "latestYear": 2024,
+      "latestPrice": 9680,
+      "note": "Average price per acre of agricultural land in England, combining arable and pasture. Prices surged post-2007 driven by food security concerns, subsidy capitalisation and institutional investor interest. The 2015–2018 dip reflected Brexit uncertainty."
+    }
+  },
+  "summary": {
+    "unregisteredLandPct": 17,
+    "landBankPlots": 1100000,
+    "publicAccessPct": 8,
+    "overseasProperties": 99800,
+    "latestAgLandPrice": 9680,
+    "aristocracyOwnershipPct": 30,
+    "corporateOwnedProperties": 100000,
+    "churchAcres": 105000,
+    "scotlandAccessPct": 97
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "HM Land Registry",
+        "dataset": "Annual report and accounts — registration coverage",
+        "url": "https://www.gov.uk/government/organisations/land-registry",
+        "frequency": "annual"
+      },
+      {
+        "name": "Companies House",
+        "dataset": "Register of Overseas Entities",
+        "url": "https://www.gov.uk/government/organisations/companies-house",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Savills",
+        "dataset": "Agricultural land market survey",
+        "url": "https://www.savills.co.uk/research_articles/229130/331109-0",
+        "frequency": "biannual"
+      },
+      {
+        "name": "DLUHC",
+        "dataset": "Land use statistics — England",
+        "url": "https://www.gov.uk/government/statistics/land-use-in-england",
+        "frequency": "annual"
+      },
+      {
+        "name": "Guy Shrubsole — Who Owns England",
+        "dataset": "Land ownership analysis",
+        "url": "https://whoownsengland.org/",
+        "frequency": "periodic research"
+      }
+    ],
+    "methodology": "Land registration coverage is derived from HM Land Registry annual reports comparing registered title area against total land area of England and Wales. Overseas entity data comes from the Register of Overseas Entities established under the Economic Crime (Transparency and Enforcement) Act 2022. Agricultural land prices are Savills market survey averages combining arable and pasture land across England. Land bank estimates are from DLUHC housing land availability assessments and major housebuilder annual reports. Public access percentage is from Natural England open access mapping — covering CRoW Act 2000 access land and registered common land only.",
+    "knownIssues": [
+      "Unregistered land percentage is an estimate — no complete cadastral survey of England exists",
+      "Overseas entity register captures ownership structure but beneficial ownership declarations have not been independently verified for all entries",
+      "Agricultural land prices vary significantly by region, soil quality, and whether land has 'hope value' for development — national average masks wide distribution",
+      "Land bank estimates are contested — developers argue planning-permission-held land is not the same as deliberately banked land",
+      "Public access figure excludes permissive paths, de facto access, and urban parks — the effective accessible area is larger than the statutory 8%"
+    ]
+  }
+}

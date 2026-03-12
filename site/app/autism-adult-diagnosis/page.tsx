@@ -1,165 +1,269 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
-import PositiveCallout from '@/components/PositiveCallout'
+import { useEffect, useState } from 'react';
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
+// ── Types ────────────────────────────────────────────────────────────────────
 
-interface AutismAdultDiagnosisData {
-  topic: string
-  lastUpdated: string
-  timeSeries: Array<{
-    year: number
-    waitingListK: number
-    avgWaitYears: number
-    newDiagnosesK: number
-  }>
+interface WaitingListPoint {
+  year: number;
+  count: number;
 }
+
+interface RegionalWaitPoint {
+  year: number;
+  region: string;
+  waitYears: number;
+}
+
+interface ReferralPoint {
+  year: number;
+  referrals: number;
+}
+
+interface NationalWaitPoint {
+  year: number;
+  waitYears: number;
+}
+
+interface AutismDiagnosisData {
+  waitingList: WaitingListPoint[];
+  averageWaitByRegion: RegionalWaitPoint[];
+  referralVolumes: ReferralPoint[];
+  nationalAverageWait: NationalWaitPoint[];
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
 
 function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
+  return new Date(y, 5, 1);
 }
 
-// -- Page -------------------------------------------------------------------
+function sparkFrom(arr: number[], n = 10) {
+  return arr.slice(-n);
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function AutismAdultDiagnosisPage() {
-  const [data, setData] = useState<AutismAdultDiagnosisData | null>(null)
+  const [data, setData] = useState<AutismDiagnosisData | null>(null);
 
   useEffect(() => {
     fetch('/data/autism-adult-diagnosis/autism_adult_diagnosis.json')
-      .then(res => res.json())
+      .then(r => r.json())
       .then(setData)
-      .catch(console.error)
-  }, [])
+      .catch(console.error);
+  }, []);
 
-  const waitingSeries: Series[] = data
-    ? [
-        {
-          id: 'waitingList',
-          label: 'Waiting list (thousands)',
-          colour: '#E63946',
-          data: data.timeSeries.map(d => ({
+  // ── Derived series ──────────────────────────────────────────────────────
+
+  const waitingListSeries: Series[] = data
+    ? [{
+        id: 'waiting-list',
+        label: 'Adults on waiting list',
+        colour: '#E63946',
+        data: data.waitingList.map(d => ({
+          date: yearToDate(d.year),
+          value: d.count,
+        })),
+      }]
+    : [];
+
+  const regions = ['London', 'North West', 'South East', 'Midlands', 'North East', 'South West'];
+  const regionColours: Record<string, string> = {
+    'London': '#264653',
+    'North West': '#E63946',
+    'South East': '#2A9D8F',
+    'Midlands': '#F4A261',
+    'North East': '#6B7280',
+    'South West': '#1A1A1A',
+  };
+
+  const regionalWaitSeries: Series[] = data
+    ? regions.map(region => ({
+        id: `wait-${region}`,
+        label: region,
+        colour: regionColours[region],
+        data: data.averageWaitByRegion
+          .filter(d => d.region === region)
+          .map(d => ({
             date: yearToDate(d.year),
-            value: d.waitingListK,
+            value: d.waitYears,
           })),
-        },
-        {
-          id: 'avgWait',
-          label: 'Average wait (years)',
-          colour: '#F4A261',
-          data: data.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.avgWaitYears,
-          })),
-        },
-      ]
-    : []
+      }))
+    : [];
+
+  const referralSeries: Series[] = data
+    ? [{
+        id: 'referrals',
+        label: 'Referrals for adult autism assessment',
+        colour: '#264653',
+        data: data.referralVolumes.map(d => ({
+          date: yearToDate(d.year),
+          value: d.referrals,
+        })),
+      }]
+    : [];
+
+  const latestWaitingList = data?.waitingList[data.waitingList.length - 1];
+  const firstWaitingList = data?.waitingList[0];
+  const latestWait = data?.nationalAverageWait[data.nationalAverageWait.length - 1];
+  const latestReferrals = data?.referralVolumes[data.referralVolumes.length - 1];
+  const firstReferrals = data?.referralVolumes[0];
+
+  const waitingListGrowth = latestWaitingList && firstWaitingList
+    ? Math.round(((latestWaitingList.count - firstWaitingList.count) / firstWaitingList.count) * 100)
+    : 442;
+
+  const referralGrowth = latestReferrals && firstReferrals
+    ? Math.round(((latestReferrals.referrals - firstReferrals.referrals) / firstReferrals.referrals) * 100)
+    : 411;
 
   return (
     <>
-      <TopicNav topic="Autism Adult Diagnosis" />
+      <TopicNav topic="Care & Support" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Autism Adult Diagnosis"
-          question="How long does it take to get an autism diagnosis as an adult?"
-          finding="The average wait for an adult autism assessment in England is now 3.6 years, with over 116,000 people on the waiting list."
+          topic="Care & Support"
+          question="How long do adults actually wait for an autism diagnosis?"
+          finding="The average adult waits 3.6 years for an NHS autism diagnosis. Over 116,000 people are on waiting lists across England, a fivefold increase since 2016. Referral volumes have risen 411% in eight years as recognition grows but services remain static."
           colour="#264653"
         />
 
-        <ScrollReveal>
-          <PositiveCallout
-            title="Diagnosis rates rising"
-            value="350k"
-            unit="adults diagnosed in past five years"
-            description="An estimated 350,000 adults received an autism diagnosis in the past five years as awareness and referral pathways improved. For those who reach the front of the queue, a diagnosis provides access to adjustments at work and in education, peer support communities, and a framework for understanding lifelong experiences."
-            source="Source: NHS England — Autism Statistics; Autistica — prevalence research."
-          />
-        </ScrollReveal>
-
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The adult autism assessment waiting list in England grew from 22,000 in 2018 — the first year NHS England collected systematic data — to over 116,000 by 2024. The average wait from GP referral to first assessment has risen from 1.8 years to 3.6 years over the same period. Demand has surged as awareness of how autism presents across diverse populations has grown — women and girls, people from ethnic minority backgrounds, and those with co-occurring conditions were historically underdiagnosed — but diagnostic service capacity has not scaled proportionately. NHS England introduced waiting time standards but there is no statutory target equivalent to cancer or elective surgery waits. Workforce is the binding constraint: assessments require qualified clinical psychologists and specialist nurses whose supply cannot be rapidly expanded. Around 350,000 adults have received a diagnosis in the past five years, but many more remain undiagnosed or waiting.</p>
-            <p>The consequences of long waits fall hardest on those already most disadvantaged. Adults awaiting assessment report deteriorating mental health during the wait; employers and universities are legally required to make reasonable adjustments regardless of diagnosis, but in practice a diagnostic letter opens doors that otherwise remain shut. Post-diagnostic support is a further gap: many adults report being assessed and discharged with a letter and minimal follow-up, with peer support networks primarily volunteer-run rather than NHS-funded. Women receive diagnoses an average of four to five years later than men, compounding years of unmet need; autistic adults in the prison population — estimated at several times the general population rate — rarely receive formal assessment at all.</p>
+            <p>
+              Something important is happening in adult autism diagnosis, and it is not the thing most commonly reported. The story is not simply that waiting lists are long — though they are, catastrophically so — but that a generation of adults is discovering they are autistic after decades of living without understanding why the world felt so consistently difficult. Referrals for adult autism assessment have risen from around 12,800 in 2016 to over 65,000 in 2024. This is not an epidemic. It is recognition. Diagnostic criteria that were written around white boys in the 1990s are finally being applied to the full population: women, people of colour, adults who learned to mask their differences so effectively that their distress was attributed to anxiety, depression, personality disorders, or simply not trying hard enough. Women and people assigned female at birth are systematically underdiagnosed. Research consistently shows that autistic women are diagnosed on average four to five years later than men, and many are not identified until their thirties or forties — often only after a child's diagnosis prompts recognition of shared traits. The concept of masking — consciously or unconsciously suppressing autistic behaviours to fit social expectations — means many women present as coping while experiencing chronic exhaustion, burnout, and mental health crises that clinicians fail to connect to underlying neurodevelopmental difference.
+            </p>
+            <p>
+              The consequences of late or absent diagnosis are severe and measurable. Autistic adults without diagnosis are significantly more likely to experience depression, anxiety, suicidal ideation, and substance misuse. The employment gap is stark: just 22% of autistic adults are in any form of employment, the lowest rate of any disability group. This is not because autistic people cannot work. It is because workplaces overwhelmingly fail to provide reasonable adjustments — predictable routines, reduced sensory input, clear communication, flexible working — that would enable autistic employees to thrive. The Autism Act 2009 placed duties on local authorities and NHS bodies to provide diagnostic services and support, but a National Audit Office review found that most areas have no post-diagnostic support at all. You get a diagnosis letter and nothing else. For many, the only alternative to a multi-year NHS wait is private assessment, costing between £1,500 and £3,000 — a sum that effectively makes diagnosis a privilege of the financially secure, deepening existing inequalities in who gets recognised and who does not.
+            </p>
+            <p>
+              The scale of the problem is growing faster than the response. Between 2016 and 2024, the number of adults on NHS autism assessment waiting lists rose from around 21,000 to 116,000. In some areas of England, the wait exceeds five years. NICE guidelines recommend that the period from referral to first appointment should be no longer than 13 weeks. Virtually no service in England meets this standard. The mismatch between rising demand and static capacity means the waiting list is not a queue that moves slowly — in many areas, it barely moves at all. Meanwhile, the people waiting are not waiting passively. They are struggling with employment, relationships, parenting, and mental health — and they are doing so without the understanding, adjustments, and support that a diagnosis could unlock. The system is failing a legal duty, and the human cost compounds with every year of inaction.
+            </p>
           </div>
         </section>
 
         <SectionNav sections={[
-          { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Waiting List' },
-          { id: 'sec-sources', label: 'Sources' },
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-waiting-list', label: 'Waiting list' },
+          { id: 'sec-regional', label: 'Regional waits' },
+          { id: 'sec-referrals', label: 'Referrals' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Average wait for adult diagnosis"
-              value="3.6 yrs"
-              unit=""
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="Up from 1.8 years in 2018"
-              sparklineData={[1.8, 2.1, 2.4, 2.7, 3.1, 3.4, 3.6, 3.6, 3.6]}
-              href="#sec-chart"source="NHS England · Autism Waiting Times"
-            />
-            <MetricCard
-              label="On waiting list"
-              value="116k"
-              unit=""
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="Up from 22k in 2018"
-              sparklineData={[22, 34, 48, 64, 84, 105, 116, 116, 116]}
-              href="#sec-chart"source="NHS England · Autism Waiting Times"
-            />
-            <MetricCard
-              label="New diagnoses in past 5 years"
-              value="350k"
-              unit=""
-              direction={'up' as const}
-              polarity={'up-is-good' as const}
-              changeText="Rising awareness and referrals"
-              sparklineData={[45, 52, 41, 58, 68, 74, 78, 78, 78]}
-              href="#sec-chart"source="NHS England · Autistica"
-            />
-          </div>
-        </ScrollReveal>
+        {/* Metric cards */}
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <MetricCard
+            label="Average wait for adult diagnosis"
+            value={latestWait ? `${latestWait.waitYears}` : '3.6'}
+            unit="years"
+            direction="up"
+            polarity="up-is-bad"
+            changeText="Up from 1.2 years in 2016 · NICE target: 13 weeks"
+            sparklineData={
+              data ? sparkFrom(data.nationalAverageWait.map(d => d.waitYears)) : []
+            }
+            source="NHS Digital · Autism Statistics, 2024"
+            href="#sec-waiting-list"
+          />
+          <MetricCard
+            label="Adults on waiting list"
+            value={latestWaitingList ? latestWaitingList.count.toLocaleString() : '116,000'}
+            unit="2024"
+            direction="up"
+            polarity="up-is-bad"
+            changeText={`+${waitingListGrowth}% since 2016 · up from ${firstWaitingList ? firstWaitingList.count.toLocaleString() : '21,400'}`}
+            sparklineData={
+              data ? sparkFrom(data.waitingList.map(d => d.count)) : []
+            }
+            source="NHS Digital · Autism Statistics, 2024"
+            href="#sec-regional"
+          />
+          <MetricCard
+            label="Annual referrals for assessment"
+            value={latestReferrals ? latestReferrals.referrals.toLocaleString() : '65,400'}
+            unit="2024"
+            direction="up"
+            polarity="up-is-bad"
+            changeText={`+${referralGrowth}% since 2016 · demand far outstrips capacity`}
+            sparklineData={
+              data ? sparkFrom(data.referralVolumes.map(d => d.referrals)) : []
+            }
+            source="NHS Digital · Mental Health Services Dataset, 2024"
+            href="#sec-referrals"
+          />
+        </div>
 
+        {/* Chart 1: Waiting list size */}
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <div id="sec-waiting-list" className="mb-12">
             <LineChart
-              title="Adult autism waiting list, 2018–2024"
-              subtitle="People awaiting first autism assessment appointment (thousands) and average wait in years, England."
-              series={waitingSeries}
-              yLabel="Value"
+              series={waitingListSeries}
+              title="Adults on NHS autism assessment waiting lists, England, 2016–2024"
+              subtitle="Total number of adults waiting for an autism diagnostic assessment. Fivefold increase in eight years."
+              yLabel="People"
               source={{
-                name: 'NHS England',
-                dataset: 'Autism Waiting Times Statistics',
-                frequency: 'quarterly',
+                name: 'NHS Digital',
+                dataset: 'Autism Statistics — Autism Waiting List',
+                frequency: 'annual',
               }}
             />
-          </section>
+          </div>
         </ScrollReveal>
 
-        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>NHS England — Autism Waiting Times Statistics. Quarterly data from autism assessment services. england.nhs.uk/statistics/statistical-work-areas/autism-statistics/</p>
-            <p>NHSBSA — Prescription Cost Analysis. Used to estimate diagnosis rates via prescription patterns. nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england</p>
-            <p>Autistica — Autism research and evidence. autistica.org.uk/research/research-strategy</p>
-            <p>ONS — Disability and health data for England and Wales. ons.gov.uk</p>
-            <p>Waiting list figures are those awaiting first appointment with an autism assessment service. Average wait is calculated from referral date to first assessment. Data collection began systematically in 2018; earlier figures are not available on a comparable basis. New diagnoses figure is an estimate based on clinical and prescribing data.</p>
+        {/* Chart 2: Average wait by region */}
+        <ScrollReveal>
+          <div id="sec-regional" className="mb-12">
+            <LineChart
+              series={regionalWaitSeries}
+              title="Average wait for adult autism diagnosis by region, 2018–2024"
+              subtitle="Years from referral to diagnostic assessment. North East consistently worst; no region meets NICE 13-week target."
+              yLabel="Years"
+              source={{
+                name: 'NHS Digital',
+                dataset: 'Autism Statistics — Regional Breakdowns',
+                frequency: 'annual',
+              }}
+            />
           </div>
-        </section>
-              <RelatedTopics />
+        </ScrollReveal>
+
+        {/* Chart 3: Referral volumes */}
+        <ScrollReveal>
+          <div id="sec-referrals" className="mb-12">
+            <LineChart
+              series={referralSeries}
+              title="Annual referrals for adult autism assessment, England, 2016–2024"
+              subtitle="Referral volumes have risen over 400% as awareness and recognition of autism in adults grows. Dip in 2020 reflects pandemic disruption."
+              yLabel="Referrals"
+              source={{
+                name: 'NHS Digital',
+                dataset: 'Mental Health Services Dataset',
+                frequency: 'annual',
+              }}
+            />
+          </div>
+        </ScrollReveal>
+
+        {/* Positive callout */}
+        <ScrollReveal>
+          <PositiveCallout
+            title="Legal framework and training programmes improving"
+            value="3 developments"
+            description="The Autism Act 2009 remains the only disability-specific legislation in England, placing legal duties on councils and NHS bodies to plan and deliver autism services — though enforcement remains weak. The Oliver McGowan Mandatory Training on Learning Disability and Autism became a legal requirement for all health and social care staff in England from 2023, ensuring that professionals understand autistic people's needs. The government's Disability Confident scheme and Access to Work programme provide funding for workplace adjustments for autistic employees, covering specialist equipment, job coaching, and support workers. While take-up remains low relative to need, these frameworks establish the principle that autistic adults are entitled to diagnosis, support, and reasonable adjustments — not as a discretionary favour, but as a legal right."
+            source="Source: Autism Act 2009. Health and Care Act 2022 (Oliver McGowan training). DWP — Access to Work statistics, 2024. National Autistic Society — Employment Gap report, 2024."
+          />
+        </ScrollReveal>
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

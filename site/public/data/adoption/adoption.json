@@ -1,5 +1,10 @@
 {
   "adoptionOrders": [
+    {"year": 2010, "orders": 3200},
+    {"year": 2011, "orders": 3100},
+    {"year": 2012, "orders": 3450},
+    {"year": 2013, "orders": 4010},
+    {"year": 2014, "orders": 5050},
     {"year": 2015, "orders": 5360},
     {"year": 2016, "orders": 4690},
     {"year": 2017, "orders": 4350},
@@ -8,31 +13,52 @@
     {"year": 2020, "orders": 3440},
     {"year": 2021, "orders": 2870},
     {"year": 2022, "orders": 2960},
-    {"year": 2023, "orders": 2950}
+    {"year": 2023, "orders": 2990},
+    {"year": 2024, "orders": 2950}
   ],
   "averageWaitDays": [
-    {"year": 2015, "days": 487},
-    {"year": 2016, "days": 498},
-    {"year": 2017, "days": 506},
+    {"year": 2010, "days": 639},
+    {"year": 2011, "days": 625},
+    {"year": 2012, "days": 594},
+    {"year": 2013, "days": 558},
+    {"year": 2014, "days": 487},
+    {"year": 2015, "days": 460},
+    {"year": 2016, "days": 486},
+    {"year": 2017, "days": 498},
     {"year": 2018, "days": 512},
     {"year": 2019, "days": 520},
-    {"year": 2020, "days": 558},
-    {"year": 2021, "days": 574},
+    {"year": 2020, "days": 532},
+    {"year": 2021, "days": 558},
     {"year": 2022, "days": 546},
-    {"year": 2023, "days": 538}
+    {"year": 2023, "days": 531},
+    {"year": 2024, "days": 538}
+  ],
+  "waitingVsApproved": [
+    {"year": 2014, "childrenWaiting": 3060, "approvedAdopters": 4410},
+    {"year": 2015, "childrenWaiting": 3000, "approvedAdopters": 4230},
+    {"year": 2016, "childrenWaiting": 2740, "approvedAdopters": 3440},
+    {"year": 2017, "childrenWaiting": 2730, "approvedAdopters": 3100},
+    {"year": 2018, "childrenWaiting": 2790, "approvedAdopters": 2820},
+    {"year": 2019, "childrenWaiting": 2900, "approvedAdopters": 2630},
+    {"year": 2020, "childrenWaiting": 3060, "approvedAdopters": 2440},
+    {"year": 2021, "childrenWaiting": 3170, "approvedAdopters": 2360},
+    {"year": 2022, "childrenWaiting": 3220, "approvedAdopters": 2400},
+    {"year": 2023, "childrenWaiting": 3280, "approvedAdopters": 2370},
+    {"year": 2024, "childrenWaiting": 3310, "approvedAdopters": 2340}
   ],
   "metadata": {
     "sources": [
-      {"name": "Department for Education", "dataset": "Children Looked After in England — Adoptions", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions", "frequency": "annual"},
-      {"name": "Adoption and Special Guardianship Leadership Board", "dataset": "Adoption Scorecard", "url": "https://www.gov.uk/government/publications/adoption-scorecard", "frequency": "annual"},
-      {"name": "Ofsted", "dataset": "Adoption Agency Inspection Data", "url": "https://www.gov.uk/government/statistics/adoption-in-england", "frequency": "annual"}
+      {"name": "Department for Education", "dataset": "SSDA903 Children Looked After in England including Adoptions", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions", "frequency": "annual"},
+      {"name": "Adoption & Special Guardianship Leadership Board", "dataset": "Adoption Scorecard and Annual Report", "url": "https://www.gov.uk/government/publications/adoption-scorecard", "frequency": "annual"},
+      {"name": "CoramBAAF", "dataset": "Adoption and Fostering Statistics", "url": "https://corambaaf.org.uk/fostering-adoption/looked-after-children-adoption-fostering-statistics", "frequency": "annual"}
     ],
-    "methodology": "Adoption orders data is drawn from DfE Children Looked After statistics, counting Adoption Orders granted in England in each reporting year ending 31 March. Average wait is measured from the date a child enters local authority care to the date of the Adoption Order, as published in the Adoption Scorecard. The metric captures the median for all children adopted in the year.",
+    "methodology": "Adoption orders data is drawn from the DfE SSDA903 statistical return, counting Adoption Orders granted in England in each reporting year ending 31 March. Average wait is measured as the median number of days from a child entering local authority care to the date of the Adoption Order, as published in the Adoption Scorecard. Children waiting and approved adopters figures are drawn from the Adoption & Special Guardianship Leadership Board annual datasets, capturing a snapshot at 31 March each year.",
     "knownIssues": [
       "Court delays in 2020-21 artificially depressed adoption numbers due to COVID-19 hearing backlogs",
       "The shift toward Special Guardianship Orders (SGOs) partially explains the fall in adoption numbers — some children who would have been adopted are now placed under SGOs",
-      "Adoption from care is distinct from intercountry adoption, which is not included in these figures",
-      "Wait time data does not distinguish between children placed quickly and those who waited significantly longer, masking wide variation"
+      "Adoption from care is distinct from inter-country adoption, which is not included in these figures",
+      "Wait time data does not distinguish between children placed quickly and those who waited significantly longer, masking wide variation",
+      "Pre-2012 data on children waiting vs approved adopters is not available on a consistent basis"
     ]
   }
 }

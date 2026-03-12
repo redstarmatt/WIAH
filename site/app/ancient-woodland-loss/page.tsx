@@ -1,120 +1,259 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import { useEffect, useState } from 'react';
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface AncientWoodlandData {
-  topic: string
-  lastUpdated: string
-  timeSeries: Array<{ year: number; sitesAtRisk: number; hs2LossHa: number }>
+// ── Types ────────────────────────────────────────────────────────────────────
+
+interface PlanningThreatPoint {
+  year: number;
+  sites: number;
 }
+
+interface AreaLostPoint {
+  year: number;
+  hectares: number;
+}
+
+interface PlantingPoint {
+  year: number;
+  target: number;
+  actual: number;
+}
+
+interface AncientWoodlandData {
+  planningThreats: PlanningThreatPoint[];
+  areaLost: AreaLostPoint[];
+  plantingTargetVsActual: PlantingPoint[];
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
 
 function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
+  return new Date(y, 5, 1);
 }
 
+function sparkFrom(arr: number[], n = 10) {
+  return arr.slice(-n);
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
+
 export default function AncientWoodlandLossPage() {
-  const [data, setData] = useState<AncientWoodlandData | null>(null)
+  const [data, setData] = useState<AncientWoodlandData | null>(null);
 
   useEffect(() => {
     fetch('/data/ancient-woodland-loss/ancient_woodland_loss.json')
       .then(r => r.json())
       .then(setData)
-      .catch(console.error)
-  }, [])
+      .catch(console.error);
+  }, []);
 
-  const series: Series[] = data
+  // ── Derived series ──────────────────────────────────────────────────────
+
+  const threatsSeries: Series[] = data
     ? [{
-        id: 'sitesAtRisk',
-        label: 'Ancient woodland sites at risk',
-        colour: '#2A9D8F',
-        data: data.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.sitesAtRisk })),
+        id: 'planning-threats',
+        label: 'Sites under planning threat',
+        colour: '#E63946',
+        data: data.planningThreats.map(d => ({
+          date: yearToDate(d.year),
+          value: d.sites,
+        })),
       }]
-    : []
+    : [];
+
+  const areaLostSeries: Series[] = data
+    ? [{
+        id: 'area-lost',
+        label: 'Hectares lost',
+        colour: '#E63946',
+        data: data.areaLost.map(d => ({
+          date: yearToDate(d.year),
+          value: d.hectares,
+        })),
+      }]
+    : [];
+
+  const plantingSeries: Series[] = data
+    ? [
+        {
+          id: 'planting-target',
+          label: 'Government target (ha)',
+          colour: '#2A9D8F',
+          data: data.plantingTargetVsActual.map(d => ({
+            date: yearToDate(d.year),
+            value: d.target,
+          })),
+        },
+        {
+          id: 'planting-actual',
+          label: 'Actual new planting (ha)',
+          colour: '#264653',
+          data: data.plantingTargetVsActual.map(d => ({
+            date: yearToDate(d.year),
+            value: d.actual,
+          })),
+        },
+      ]
+    : [];
+
+  const latestThreats = data?.planningThreats[data.planningThreats.length - 1];
+  const earliestThreats = data?.planningThreats[0];
+  const latestAreaLost = data?.areaLost[data.areaLost.length - 1];
+  const peakAreaLost = data?.areaLost.reduce((a, b) => a.hectares > b.hectares ? a : b);
+  const latestPlanting = data?.plantingTargetVsActual[data.plantingTargetVsActual.length - 1];
+
+  const threatsChange = latestThreats && earliestThreats
+    ? Math.round(((latestThreats.sites - earliestThreats.sites) / earliestThreats.sites) * 100)
+    : 260;
+
+  const plantingGapPct = latestPlanting
+    ? Math.round(((latestPlanting.target - latestPlanting.actual) / latestPlanting.target) * 100)
+    : 55;
 
   return (
     <>
-      <TopicNav topic="Ancient Woodland Loss" />
+      <TopicNav topic="Environment & Climate" />
+
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Ancient Woodland Loss"
-          question="How Much Ancient Woodland Is Being Destroyed?"
-          finding="Over 1,000 ancient woodland sites are under threat from development, and 700 hectares were lost to HS2 alone — irreplaceable ecosystem lost for good."
-          colour="#2A9D8F"
+          topic="Environment & Climate"
+          question="Are we losing England's ancient woodlands?"
+          finding="Ancient woodland covers just 2.5% of England's land area. These irreplaceable habitats, many over 400 years old, face mounting pressure from housing development and infrastructure projects. 742 ancient woodland sites are currently under threat from planning applications, a figure that has more than tripled since 2010."
+          colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Ancient woodland — woodland in continuous existence since at least 1600 AD — covers approximately 340,000 hectares in England, around 2% of total land area. It takes over 400 years for the complex soil fungi networks, invertebrate communities, and specialist plant species to develop; once destroyed, it cannot be recreated. The National Planning Policy Framework treats ancient woodland as 'irreplaceable habitat' that should be refused unless there are wholly exceptional reasons, yet the Woodland Trust consistently records over 1,000 active planning threats at any one time. HS2 became the most high-profile single case: approximately 108 ancient woodland sites were affected, with an estimated 700 hectares lost to the London-Birmingham section despite mitigation commitments including soil translocation. Motorway widening schemes and the Roads Investment Strategy have accounted for additional losses, with nationally significant infrastructure projects assessed under a different and generally less protective planning regime than local applications.</p>
-            <p>The England Trees Action Plan commits to adding 400,000 hectares of woodland by 2050, and the Nature Recovery Network framework identifies ancient woodland expansion areas as among the highest-value uses of new planting. But the gap between protection policy and planning outcomes persists. Successful objection to ancient woodland loss depends on the quality of ecological assessments, local authority planning capacity, and in contested cases the outcome of appeals — all of which are unequally distributed. The Woodland Trust's Treeconomics programme is building the economic case for ancient woodland ecosystem services — flood attenuation, carbon storage, air quality — to make retention more compelling in cost-benefit analyses that currently value development above heritage habitat.</p>
+            <p>Ancient woodland is defined as land that has been continuously wooded since at least 1600 AD, though many sites are far older — some date to the last ice age, making them among the most ecologically complex habitats in the British Isles. These woodlands cannot be recreated. Unlike a plantation, which can be grown in decades, the soil biology, fungal networks, invertebrate communities, and plant assemblages of an ancient woodland take centuries to develop. The presence of bluebell carpets, a signature indicator species, signals centuries of unbroken canopy cover and undisturbed soil. When an ancient woodland is destroyed, that biological continuity is severed permanently. The Woodland Trust's Ancient Woodland Inventory identifies approximately 52,000 sites in England, covering around 340,000 hectares — just 2.5% of the country's land area. Of these, roughly half are classified as Plantations on Ancient Woodland Sites (PAWS), where the original woodland was cleared and replanted with non-native conifers but the ancient soil and seed bank remain, offering restoration potential.</p>
+            <p>HS2 has become the most prominent single threat to ancient woodland in modern British history. The rail project's Phase 1 route alone affects 108 ancient woodlands between London and Birmingham. The developer's mitigation strategy — translocation, in which ancient woodland soil is excavated and moved to a new location — has been widely criticised by ecologists as scientifically unsupported. Monitoring of translocated woodland from earlier infrastructure projects shows that most fail to establish functioning ecosystems, with dramatic losses of specialist species within the first decade. The National Planning Policy Framework (NPPF) states that development resulting in the loss of ancient woodland should be refused unless there are "wholly exceptional reasons," but planning authorities have interpreted this inconsistently. Between 2010 and 2024, the Woodland Trust recorded over 1,200 planning cases threatening ancient woodland sites, and the approval rate on contested applications remains above 70%. Local authorities, under intense pressure to meet housing targets, frequently treat the NPPF's protection as a factor to weigh rather than a firm prohibition.</p>
+            <p>Meanwhile, new woodland creation is falling far short of government ambitions. England's target of planting 16,500 hectares of new woodland per year by the mid-2020s remains unmet — actual planting in 2024 reached 7,420 hectares, less than half the target. Even this figure flatters the picture: the vast majority of new planting is commercial conifer or fast-growing broadleaf, not the native species mix that characterises ancient woodland. The Woodland Trust's campaign for stronger legal protection — moving from policy guidance to statutory protection equivalent to that afforded to listed buildings — has gained cross-party support but has not yet been legislated. The UK's commitment to the 30x30 target, protecting 30% of land for nature by 2030, creates a political framework in which the continued loss of ancient woodland is increasingly difficult to justify. Urban development pressure, particularly in southern England, remains the primary driver of loss. Every hectare of ancient woodland destroyed represents a habitat that predates the Industrial Revolution, the Tudor monarchy, and in many cases the Norman Conquest — and that no amount of compensatory planting can replace.</p>
           </div>
         </section>
 
         <SectionNav sections={[
-          { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Chart' },
-          { id: 'sec-sources', label: 'Sources' },
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-threats', label: 'Planning threats' },
+          { id: 'sec-area-lost', label: 'Area lost' },
+          { id: 'sec-planting', label: 'Planting gap' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Ancient woodland sites under threat"
-              value="1,000+"
-              direction={'flat' as const}
-              polarity={'up-is-bad' as const}
-              changeText="1,000+ sites at risk in planning system"
-              sparklineData={[850, 900, 950, 1000, 1050, 1080, 1050, 1020, 1000]}
-              source="Woodland Trust · Ancient Woodland Threat Register 2024"
-              href="#sec-chart"/>
-            <MetricCard
-              label="Hectares lost to HS2"
-              value="700ha"
-              direction={'flat' as const}
-              polarity={'up-is-bad' as const}
-              changeText="700ha ancient woodland lost to HS2"
-              sparklineData={[0, 0, 50, 150, 300, 450, 550, 650, 700]}
-              source="Woodland Trust / HS2 Ltd Environmental Assessment 2024"
-              href="#sec-chart"/>
-            <MetricCard
-              label="Total ancient woodland (England)"
-              value="340,000ha"
-              direction={'flat' as const}
-              polarity={'up-is-bad' as const}
-              changeText="340,000ha total · 2% of land area · centuries to form"
-              sparklineData={[340500, 340400, 340300, 340200, 340100, 340000, 339900, 339800, 340000]}
-              source="Natural England · Ancient Woodland Inventory 2024"
-              href="#sec-chart"/>
-          </div>
-        </ScrollReveal>
+        {/* Metric cards */}
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <MetricCard
+            label="Ancient woodland remaining"
+            value="2.5%"
+            unit="of England"
+            direction="flat"
+            polarity="up-is-good"
+            changeText="~340,000 hectares · unchanged since records began · irreplaceable habitat"
+            sparklineData={[2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5]}
+            source="Natural England · Ancient Woodland Inventory, 2024"
+            href="#sec-threats"
+          />
+          <MetricCard
+            label="Sites under planning threat"
+            value={latestThreats ? latestThreats.sites.toLocaleString() : '742'}
+            unit="2024"
+            direction="up"
+            polarity="up-is-bad"
+            changeText={`+${threatsChange}% since 2010 · driven by housing and infrastructure`}
+            sparklineData={
+              data ? sparkFrom(data.planningThreats.map(d => d.sites)) : []
+            }
+            source="Woodland Trust · Planning Threats Register, 2024"
+            href="#sec-area-lost"
+          />
+          <MetricCard
+            label="Area lost annually"
+            value={latestAreaLost ? latestAreaLost.hectares.toLocaleString() : '67'}
+            unit="hectares · 2024"
+            direction="down"
+            polarity="up-is-bad"
+            changeText={
+              peakAreaLost
+                ? `Down from ${peakAreaLost.hectares}ha peak in ${peakAreaLost.year} · still above 2010 baseline`
+                : 'Down from 92ha peak in 2018 · still above 2010 baseline'
+            }
+            sparklineData={
+              data ? sparkFrom(data.areaLost.map(d => d.hectares)) : []
+            }
+            source="Natural England · Ancient Woodland Inventory, 2024"
+            href="#sec-planting"
+          />
+        </div>
 
+        {/* Chart 1: Planning threats */}
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <div id="sec-threats" className="mb-12">
             <LineChart
-              title="Ancient woodland sites under planning threat, 2016–2024"
-              subtitle="Number of ancient woodland sites in England with active planning applications affecting them."
-              series={series}
-              yLabel="Sites at risk"
-              source={{ name: 'Woodland Trust', dataset: 'Ancient Woodland Threat Register', frequency: 'annual' }}
+              series={threatsSeries}
+              title="Ancient woodland sites under planning threat, England, 2010–2024"
+              subtitle="Number of ancient woodland sites with active planning applications within 500m. More than tripled since 2010."
+              yLabel="Sites"
+              source={{
+                name: 'Woodland Trust',
+                dataset: 'Planning Threats Register',
+                frequency: 'annual',
+              }}
             />
-          </section>
+          </div>
         </ScrollReveal>
 
-        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Woodland Trust. Ancient Woodland Threat Register. Updated continuously. <a href="https://www.woodlandtrust.org.uk/protecting-trees-and-woods/ancient-woodland-inventory/" className="underline" target="_blank" rel="noopener noreferrer">woodlandtrust.org.uk</a>. Sites at risk reflects active planning applications only.</p>
-            <p>Natural England. Ancient Woodland Inventory for England. <a href="https://www.data.gov.uk/dataset/9461f463-c363-4309-ae77-fdcd7e9df7d3/ancient-woodland-england" className="underline" target="_blank" rel="noopener noreferrer">data.gov.uk</a>. HS2 loss estimates from HS2 Ltd Environmental Impact Assessments and Woodland Trust monitoring.</p>
+        {/* Chart 2: Area of ancient woodland lost */}
+        <ScrollReveal>
+          <div id="sec-area-lost" className="mb-12">
+            <LineChart
+              series={areaLostSeries}
+              title="Area of ancient woodland lost annually, England, 2010–2024"
+              subtitle="Hectares of ancient woodland destroyed or degraded each year. Peaked during HS2 Phase 1 construction."
+              yLabel="Hectares"
+              source={{
+                name: 'Natural England',
+                dataset: 'Ancient Woodland Inventory',
+                frequency: 'annual',
+              }}
+            />
           </div>
-        </section>
-              <RelatedTopics />
+        </ScrollReveal>
+
+        {/* Chart 3: Planting targets vs actual */}
+        <ScrollReveal>
+          <div id="sec-planting" className="mb-12">
+            <LineChart
+              series={plantingSeries}
+              title="New woodland planting: government targets vs actual, England, 2015–2024"
+              subtitle={`England consistently misses its own planting targets. In 2024, actual planting was ${plantingGapPct}% below target.`}
+              yLabel="Hectares"
+              source={{
+                name: 'Forestry Commission',
+                dataset: 'Forestry Statistics — Woodland Area and Planting',
+                frequency: 'annual',
+              }}
+            />
+          </div>
+        </ScrollReveal>
+
+        {/* Positive callout */}
+        <ScrollReveal>
+          <PositiveCallout
+            title="Strengthened protection and the 30x30 commitment"
+            value="30% by 2030"
+            description="The UK's commitment to the Global Biodiversity Framework target of protecting 30% of land and sea for nature by 2030 creates a stronger political framework for ancient woodland protection. The 2023 revision of the National Planning Policy Framework strengthened the language around ancient woodland, making it harder for local authorities to approve damaging developments. The Woodland Trust's campaign for statutory protection — equivalent to that afforded to scheduled monuments — has gained cross-party parliamentary support. Several local authorities have adopted Ancient Woodland Protection Zones in their local plans, and Natural England has begun a comprehensive update of the Ancient Woodland Inventory to include sites under 2 hectares for the first time, which will extend formal recognition to thousands of small but ecologically vital fragments."
+            source="Source: NPPF 2023 revision, DEFRA — Environmental Improvement Plan 2023, Woodland Trust — State of the UK's Woods and Trees 2024."
+          />
+        </ScrollReveal>
+
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

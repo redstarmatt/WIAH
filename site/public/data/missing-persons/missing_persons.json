@@ -1,0 +1,81 @@
+{
+  "topic": "missing-persons",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "reports": {
+      "timeSeries": [
+        { "year": 2014, "total": 146000, "repeatPct": 68 },
+        { "year": 2015, "total": 151000, "repeatPct": 69 },
+        { "year": 2016, "total": 155000, "repeatPct": 70 },
+        { "year": 2017, "total": 158000, "repeatPct": 71 },
+        { "year": 2018, "total": 161000, "repeatPct": 72 },
+        { "year": 2019, "total": 164000, "repeatPct": 73 },
+        { "year": 2020, "total": 152000, "repeatPct": 72 },
+        { "year": 2021, "total": 159000, "repeatPct": 73 },
+        { "year": 2022, "total": 166000, "repeatPct": 74 },
+        { "year": 2023, "total": 170000, "repeatPct": 75 },
+        { "year": 2024, "total": 173000, "repeatPct": 75 }
+      ]
+    },
+    "childrenInCare": {
+      "timeSeries": [
+        { "year": 2014, "episodes": 9100 },
+        { "year": 2015, "episodes": 9800 },
+        { "year": 2016, "episodes": 10500 },
+        { "year": 2017, "episodes": 11200 },
+        { "year": 2018, "episodes": 12100 },
+        { "year": 2019, "episodes": 13000 },
+        { "year": 2020, "episodes": 11400 },
+        { "year": 2021, "episodes": 12800 },
+        { "year": 2022, "episodes": 14200 },
+        { "year": 2023, "episodes": 15300 },
+        { "year": 2024, "episodes": 16100 }
+      ]
+    },
+    "outcomes": {
+      "timeSeries": [
+        { "year": 2014, "foundWithin48hrsPct": 85, "longTermMissing": 1800 },
+        { "year": 2015, "foundWithin48hrsPct": 85, "longTermMissing": 1850 },
+        { "year": 2016, "foundWithin48hrsPct": 86, "longTermMissing": 1820 },
+        { "year": 2017, "foundWithin48hrsPct": 86, "longTermMissing": 1900 },
+        { "year": 2018, "foundWithin48hrsPct": 85, "longTermMissing": 1950 },
+        { "year": 2019, "foundWithin48hrsPct": 84, "longTermMissing": 1980 },
+        { "year": 2020, "foundWithin48hrsPct": 85, "longTermMissing": 1900 },
+        { "year": 2021, "foundWithin48hrsPct": 84, "longTermMissing": 2000 },
+        { "year": 2022, "foundWithin48hrsPct": 83, "longTermMissing": 2050 },
+        { "year": 2023, "foundWithin48hrsPct": 83, "longTermMissing": 2100 },
+        { "year": 2024, "foundWithin48hrsPct": 82, "longTermMissing": 2150 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "NCA",
+        "dataset": "UK Missing Persons Unit Data Report",
+        "url": "https://missingpersons.police.uk/en-gb/resources/downloads/missing-persons-statistical-bulletins",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Education",
+        "dataset": "Children Looked After in England",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions",
+        "frequency": "annual"
+      },
+      {
+        "name": "Missing People",
+        "dataset": "Key Information on Missing People",
+        "url": "https://www.missingpeople.org.uk/about-us/about-the-issue",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Missing person reports data from the NCA UK Missing Persons Unit annual statistical bulletins. A missing person incident is defined as any report to police of a person whose whereabouts are unknown and where the circumstances are out of character or the context suggests they may be subject to crime or at risk. Repeat cases refer to individuals with more than one missing episode in the reporting year. Children in care missing episodes from DfE Children Looked After statistics, covering England only. Outcomes data combines NCA reporting on resolution timescales with Missing People charity estimates for long-term unresolved cases.",
+    "knownIssues": [
+      "Recording practices vary between police forces, particularly for repeat missing episodes",
+      "COVID-19 lockdowns in 2020 reduced reported missing incidents but may have masked hidden harm",
+      "Children in care data covers England only; NCA data covers England and Wales",
+      "Long-term missing figures include cases where the individual may have left the UK or assumed a new identity",
+      "Mental health as a factor is likely underreported due to inconsistent flagging in police records"
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "topic": "sewage-health",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "illnessReports": {
+      "timeSeries": [
+        { "year": 2018, "reports": 847, "bathingSitesMonitored": 420 },
+        { "year": 2019, "reports": 936, "bathingSitesMonitored": 420 },
+        { "year": 2020, "reports": 612, "bathingSitesMonitored": 403 },
+        { "year": 2021, "reports": 1247, "bathingSitesMonitored": 424 },
+        { "year": 2022, "reports": 1482, "bathingSitesMonitored": 424 },
+        { "year": 2023, "reports": 1711, "bathingSitesMonitored": 427 },
+        { "year": 2024, "reports": 1924, "bathingSitesMonitored": 430 }
+      ]
+    },
+    "bathingWaterFailures": {
+      "timeSeries": [
+        { "year": 2015, "failingSitesAfterRain": 21, "totalDesignatedSites": 413, "failPct": 5.1 },
+        { "year": 2016, "failingSitesAfterRain": 24, "totalDesignatedSites": 414, "failPct": 5.8 },
+        { "year": 2017, "failingSitesAfterRain": 28, "totalDesignatedSites": 418, "failPct": 6.7 },
+        { "year": 2018, "failingSitesAfterRain": 31, "totalDesignatedSites": 420, "failPct": 7.4 },
+        { "year": 2019, "failingSitesAfterRain": 34, "totalDesignatedSites": 420, "failPct": 8.1 },
+        { "year": 2020, "failingSitesAfterRain": 29, "totalDesignatedSites": 403, "failPct": 7.2 },
+        { "year": 2021, "failingSitesAfterRain": 42, "totalDesignatedSites": 424, "failPct": 9.9 },
+        { "year": 2022, "failingSitesAfterRain": 48, "totalDesignatedSites": 424, "failPct": 11.3 },
+        { "year": 2023, "failingSitesAfterRain": 53, "totalDesignatedSites": 427, "failPct": 12.4 },
+        { "year": 2024, "failingSitesAfterRain": 56, "totalDesignatedSites": 430, "failPct": 13.0 },
+        { "year": 2025, "failingSitesAfterRain": 54, "totalDesignatedSites": 432, "failPct": 12.5 }
+      ]
+    },
+    "dischargeVsIllness": {
+      "timeSeries": [
+        { "year": 2020, "dischargeEvents": 403171, "illnessReports": 612, "openWaterSwimmersMln": 4.1 },
+        { "year": 2021, "dischargeEvents": 372533, "illnessReports": 1247, "openWaterSwimmersMln": 5.8 },
+        { "year": 2022, "dischargeEvents": 301091, "illnessReports": 1482, "openWaterSwimmersMln": 6.4 },
+        { "year": 2023, "dischargeEvents": 464056, "illnessReports": 1711, "openWaterSwimmersMln": 7.1 },
+        { "year": 2024, "dischargeEvents": 487219, "illnessReports": 1924, "openWaterSwimmersMln": 7.5 }
+      ]
+    },
+    "openWaterSwimmers": {
+      "timeSeries": [
+        { "year": 2019, "swimmersMln": 4.1 },
+        { "year": 2020, "swimmersMln": 4.7 },
+        { "year": 2021, "swimmersMln": 5.8 },
+        { "year": 2022, "swimmersMln": 6.4 },
+        { "year": 2023, "swimmersMln": 7.1 },
+        { "year": 2024, "swimmersMln": 7.5 }
+      ]
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Surfers Against Sewage",
+        "dataset": "Water quality report — illness tracker",
+        "url": "https://www.sas.org.uk/water-quality/water-quality-report/",
+        "frequency": "annual"
+      },
+      {
+        "name": "Environment Agency",
+        "dataset": "Event Duration Monitoring (EDM) returns",
+        "url": "https://environment.data.gov.uk/dataset/21e15f12-0df8-4bfc-b763-45226c16a8ac",
+        "frequency": "annual"
+      },
+      {
+        "name": "Environment Agency",
+        "dataset": "Bathing water quality — classifications",
+        "url": "https://environment.data.gov.uk/bwq/profiles/",
+        "frequency": "annual"
+      },
+      {
+        "name": "Sport England",
+        "dataset": "Active Lives survey — open water swimming",
+        "url": "https://www.sportengland.org/research-and-data/data/active-lives",
+        "frequency": "annual"
+      },
+      {
+        "name": "Universities of Exeter and Bangor",
+        "dataset": "Epidemiological studies on bathing water illness",
+        "url": "https://doi.org/10.1016/j.envint.2018.05.001",
+        "frequency": "peer-reviewed research"
+      }
+    ],
+    "methodology": "Illness reports sourced from Surfers Against Sewage crowd-sourced tracker, which records self-reported symptoms (gastroenteritis, ear/nose/throat infection, skin rash) within 72 hours of bathing at monitored sites. Bathing water failures counted as sites where E. coli or intestinal enterococci samples exceeded 'Sufficient' thresholds within 48 hours of recorded rainfall events. Discharge events from Environment Agency EDM data. Open water swimmer estimates from Sport England Active Lives survey.",
+    "knownIssues": [
+      "SAS illness reports are self-reported and likely undercount total cases — many people do not attribute illness to bathing exposure",
+      "Bathing water regulations only cover designated sites — the majority of rivers and wild swimming spots are unmonitored",
+      "EDM data quality improved significantly from 2020 as monitoring coverage expanded — earlier figures understate true discharge volumes",
+      "COVID-19 pandemic affected 2020 data: reduced bathing visits but increased open water swimming participation from mid-summer",
+      "No systematic NHS data exists linking waterborne illness to specific bathing locations — the £140M/year NHS cost estimate is modelled, not directly measured"
+    ]
+  }
+}

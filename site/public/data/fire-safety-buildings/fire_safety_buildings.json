@@ -1,0 +1,97 @@
+{
+  "topic": "fire-safety-buildings",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "remediationProgress": {
+      "timeSeries": [
+        { "date": "2020-06", "identified": 2810, "started": 420, "completed": 148, "completedPct": 5.3 },
+        { "date": "2020-12", "identified": 3240, "started": 680, "completed": 236, "completedPct": 7.3 },
+        { "date": "2021-06", "identified": 3780, "started": 1040, "completed": 394, "completedPct": 10.4 },
+        { "date": "2021-12", "identified": 4120, "started": 1380, "completed": 512, "completedPct": 12.4 },
+        { "date": "2022-06", "identified": 4410, "started": 1720, "completed": 642, "completedPct": 14.6 },
+        { "date": "2022-12", "identified": 4560, "started": 2050, "completed": 810, "completedPct": 17.8 },
+        { "date": "2023-06", "identified": 4603, "started": 2410, "completed": 1013, "completedPct": 22.0 },
+        { "date": "2023-12", "identified": 4618, "started": 2780, "completed": 1198, "completedPct": 25.9 },
+        { "date": "2024-06", "identified": 4630, "started": 3140, "completed": 1380, "completedPct": 29.8 },
+        { "date": "2024-12", "identified": 4630, "started": 3420, "completed": 1562, "completedPct": 33.7 },
+        { "date": "2025-06", "identified": 4632, "started": 3610, "completed": 1724, "completedPct": 37.2 },
+        { "date": "2025-12", "identified": 4634, "started": 3780, "completed": 1896, "completedPct": 40.9 }
+      ]
+    },
+    "buildingsByStatus": {
+      "data": [
+        { "date": "2020-12", "fullyRemediated": 236, "inProgress": 444, "notStarted": 2560 },
+        { "date": "2021-12", "fullyRemediated": 512, "inProgress": 868, "notStarted": 2740 },
+        { "date": "2022-12", "fullyRemediated": 810, "inProgress": 1240, "notStarted": 2510 },
+        { "date": "2023-12", "fullyRemediated": 1198, "inProgress": 1582, "notStarted": 1838 },
+        { "date": "2024-12", "fullyRemediated": 1562, "inProgress": 1858, "notStarted": 1210 },
+        { "date": "2025-12", "fullyRemediated": 1896, "inProgress": 1884, "notStarted": 854 }
+      ]
+    },
+    "fundingAllocatedVsSpent": {
+      "timeSeries": [
+        { "date": "2020-06", "allocatedBn": 1.0, "spentBn": 0.08 },
+        { "date": "2020-12", "allocatedBn": 1.6, "spentBn": 0.22 },
+        { "date": "2021-06", "allocatedBn": 3.5, "spentBn": 0.48 },
+        { "date": "2021-12", "allocatedBn": 5.1, "spentBn": 0.82 },
+        { "date": "2022-06", "allocatedBn": 5.1, "spentBn": 1.18 },
+        { "date": "2022-12", "allocatedBn": 5.1, "spentBn": 1.54 },
+        { "date": "2023-06", "allocatedBn": 5.1, "spentBn": 1.92 },
+        { "date": "2023-12", "allocatedBn": 5.1, "spentBn": 2.14 },
+        { "date": "2024-06", "allocatedBn": 5.1, "spentBn": 2.52 },
+        { "date": "2024-12", "allocatedBn": 5.1, "spentBn": 2.84 },
+        { "date": "2025-06", "allocatedBn": 5.1, "spentBn": 3.12 },
+        { "date": "2025-12", "allocatedBn": 5.1, "spentBn": 3.38 }
+      ]
+    },
+    "summary": {
+      "buildingsAwaiting": 4634,
+      "remediationCompletePct": 40.9,
+      "estimatedTotalCostBn": 16.4,
+      "bsfAllocatedBn": 5.1,
+      "bsfSpentBn": 3.38,
+      "developerPledgeBn": 5.5,
+      "developersSignedContract": 49,
+      "leaseholdersAffected": 300000,
+      "wakingWatchMonthlyCostRange": "10000-50000"
+    }
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "DLUHC",
+        "dataset": "Building Safety Remediation Monthly Data Release",
+        "url": "https://www.gov.uk/government/publications/building-safety-remediation-monthly-data-release",
+        "frequency": "monthly"
+      },
+      {
+        "name": "DLUHC",
+        "dataset": "Building Safety Programme: Monthly Data Release",
+        "url": "https://www.gov.uk/government/collections/building-safety-programme",
+        "frequency": "monthly"
+      },
+      {
+        "name": "National Audit Office",
+        "dataset": "Investigation into remediating dangerous cladding on high-rise buildings",
+        "url": "https://www.nao.org.uk/reports/investigation-into-remediating-dangerous-cladding-on-high-rise-buildings/",
+        "frequency": "periodic"
+      },
+      {
+        "name": "House of Commons Library",
+        "dataset": "Cladding remediation: progress update",
+        "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-9700/",
+        "frequency": "periodic"
+      }
+    ],
+    "methodology": "Building counts include all residential buildings over 11 metres identified through the Building Safety Programme and successor Cladding Safety Scheme as having unsafe cladding (ACM, HPL, or other combustible materials) or fire safety defects. 'Completed' means external wall remediation works have been signed off by the relevant building control body. Funding figures reflect the Building Safety Fund and Cladding Safety Scheme combined allocation and verified expenditure. The estimated total remediation cost of 16bn+ includes non-government-funded buildings and non-cladding fire safety defects, drawing on industry and NAO estimates. Buildings below 11 metres are largely excluded from government-funded remediation programmes and are not fully reflected in these figures.",
+    "knownIssues": [
+      "The total number of affected buildings is not fully known — identification is ongoing, particularly for mid-rise buildings (11-18m)",
+      "Remediation 'complete' refers to external wall systems only and may not include internal fire safety defects such as compartmentation failures or defective fire doors",
+      "Buildings below 11m are largely excluded from government-funded remediation programmes",
+      "Self-reported data from building owners may understate the true number of affected buildings",
+      "Waking watch and interim safety costs borne by leaseholders are not centrally tracked",
+      "Some building owners are overseas entities beyond effective regulatory reach",
+      "Non-cladding defects discovered during cladding inspections add to costs but are tracked separately"
+    ]
+  }
+}
