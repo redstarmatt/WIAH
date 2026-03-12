@@ -1,0 +1,63 @@
+{
+  "greenSpaceAccess": [
+    {"year": 2010, "pct": 52.1},
+    {"year": 2011, "pct": 51.6},
+    {"year": 2012, "pct": 51.0},
+    {"year": 2013, "pct": 50.3},
+    {"year": 2014, "pct": 49.8},
+    {"year": 2015, "pct": 49.2},
+    {"year": 2016, "pct": 48.5},
+    {"year": 2017, "pct": 47.9},
+    {"year": 2018, "pct": 47.3},
+    {"year": 2019, "pct": 46.8},
+    {"year": 2020, "pct": 46.5},
+    {"year": 2021, "pct": 46.1},
+    {"year": 2022, "pct": 45.7},
+    {"year": 2023, "pct": 45.2},
+    {"year": 2024, "pct": 44.8}
+  ],
+  "parksBudget": [
+    {"year": 2010, "realTermsChangePct": 0},
+    {"year": 2011, "realTermsChangePct": -5.2},
+    {"year": 2012, "realTermsChangePct": -10.8},
+    {"year": 2013, "realTermsChangePct": -15.1},
+    {"year": 2014, "realTermsChangePct": -19.7},
+    {"year": 2015, "realTermsChangePct": -23.4},
+    {"year": 2016, "realTermsChangePct": -27.8},
+    {"year": 2017, "realTermsChangePct": -31.5},
+    {"year": 2018, "realTermsChangePct": -34.2},
+    {"year": 2019, "realTermsChangePct": -36.9},
+    {"year": 2020, "realTermsChangePct": -38.1},
+    {"year": 2021, "realTermsChangePct": -39.4},
+    {"year": 2022, "realTermsChangePct": -40.6},
+    {"year": 2023, "realTermsChangePct": -41.3},
+    {"year": 2024, "realTermsChangePct": -42.0}
+  ],
+  "treeCanopyCover": [
+    {"year": 2010, "pct": 16.8},
+    {"year": 2011, "pct": 16.7},
+    {"year": 2012, "pct": 16.5},
+    {"year": 2013, "pct": 16.4},
+    {"year": 2014, "pct": 16.2},
+    {"year": 2015, "pct": 16.1},
+    {"year": 2016, "pct": 15.9},
+    {"year": 2017, "pct": 15.8},
+    {"year": 2018, "pct": 15.6},
+    {"year": 2019, "pct": 15.4},
+    {"year": 2020, "pct": 15.3},
+    {"year": 2021, "pct": 15.2},
+    {"year": 2022, "pct": 15.0},
+    {"year": 2023, "pct": 14.9},
+    {"year": 2024, "pct": 14.7}
+  ],
+  "byRegion": [
+    {"region": "London", "greenSpacePct": 38.2, "canopyPct": 21.3},
+    {"region": "West Midlands", "greenSpacePct": 41.5, "canopyPct": 13.8},
+    {"region": "Greater Manchester", "greenSpacePct": 43.1, "canopyPct": 14.2},
+    {"region": "West Yorkshire", "greenSpacePct": 44.7, "canopyPct": 12.9},
+    {"region": "South Yorkshire", "greenSpacePct": 46.3, "canopyPct": 13.1},
+    {"region": "Merseyside", "greenSpacePct": 42.8, "canopyPct": 12.4},
+    {"region": "Tyne and Wear", "greenSpacePct": 47.9, "canopyPct": 14.6},
+    {"region": "Bristol", "greenSpacePct": 49.2, "canopyPct": 17.1}
+  ]
+}

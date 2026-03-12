@@ -1,0 +1,52 @@
+{
+  "waitingList": [
+    {"year": 2015, "patients": 98000},
+    {"year": 2016, "patients": 105000},
+    {"year": 2017, "patients": 112000},
+    {"year": 2018, "patients": 118000},
+    {"year": 2019, "patients": 122000},
+    {"year": 2020, "patients": 195000},
+    {"year": 2021, "patients": 348000},
+    {"year": 2022, "patients": 472000},
+    {"year": 2023, "patients": 578000},
+    {"year": 2024, "patients": 625000},
+    {"year": 2025, "patients": 650000}
+  ],
+  "medianWaitWeeks": [
+    {"year": 2015, "weeks": 7.2},
+    {"year": 2016, "weeks": 7.8},
+    {"year": 2017, "weeks": 8.5},
+    {"year": 2018, "weeks": 9.1},
+    {"year": 2019, "weeks": 9.4},
+    {"year": 2020, "weeks": 18.3},
+    {"year": 2021, "weeks": 27.6},
+    {"year": 2022, "weeks": 33.1},
+    {"year": 2023, "weeks": 37.8},
+    {"year": 2024, "weeks": 40.2},
+    {"year": 2025, "weeks": 41.0}
+  ],
+  "surgeryVolume": [
+    {"year": 2015, "operations": 412000},
+    {"year": 2016, "operations": 420000},
+    {"year": 2017, "operations": 428000},
+    {"year": 2018, "operations": 435000},
+    {"year": 2019, "operations": 441000},
+    {"year": 2020, "operations": 198000},
+    {"year": 2021, "operations": 287000},
+    {"year": 2022, "operations": 365000},
+    {"year": 2023, "operations": 402000},
+    {"year": 2024, "operations": 425000},
+    {"year": 2025, "operations": 438000}
+  ],
+  "byRegion": [
+    {"region": "South West", "medianWaitWeeks": 52.1},
+    {"region": "East of England", "medianWaitWeeks": 48.3},
+    {"region": "North West", "medianWaitWeeks": 46.7},
+    {"region": "Yorkshire & Humber", "medianWaitWeeks": 44.2},
+    {"region": "West Midlands", "medianWaitWeeks": 42.8},
+    {"region": "East Midlands", "medianWaitWeeks": 40.1},
+    {"region": "South East", "medianWaitWeeks": 38.6},
+    {"region": "North East", "medianWaitWeeks": 36.4},
+    {"region": "London", "medianWaitWeeks": 34.9}
+  ]
+}

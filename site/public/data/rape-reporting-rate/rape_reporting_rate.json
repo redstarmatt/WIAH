@@ -1,0 +1,67 @@
+{
+  "reportedRapes": [
+    {"year": 2015, "count": 34292},
+    {"year": 2016, "count": 39110},
+    {"year": 2017, "count": 48773},
+    {"year": 2018, "count": 54250},
+    {"year": 2019, "count": 58657},
+    {"year": 2020, "count": 55130},
+    {"year": 2021, "count": 63136},
+    {"year": 2022, "count": 67125},
+    {"year": 2023, "count": 70633}
+  ],
+  "chargeRate": [
+    {"year": 2015, "rate": 7.5},
+    {"year": 2016, "rate": 5.7},
+    {"year": 2017, "rate": 5.5},
+    {"year": 2018, "rate": 3.1},
+    {"year": 2019, "rate": 1.4},
+    {"year": 2020, "rate": 1.6},
+    {"year": 2021, "rate": 2.6},
+    {"year": 2022, "rate": 3.5},
+    {"year": 2023, "rate": 4.0}
+  ],
+  "victimWithdrawal": [
+    {"year": 2015, "pct": 28},
+    {"year": 2016, "pct": 32},
+    {"year": 2017, "pct": 38},
+    {"year": 2018, "pct": 43},
+    {"year": 2019, "pct": 48},
+    {"year": 2020, "pct": 50},
+    {"year": 2021, "pct": 52},
+    {"year": 2022, "pct": 54},
+    {"year": 2023, "pct": 57}
+  ],
+  "averageDaysToCharge": [
+    {"year": 2015, "days": 178},
+    {"year": 2016, "days": 204},
+    {"year": 2017, "days": 256},
+    {"year": 2018, "days": 345},
+    {"year": 2019, "days": 412},
+    {"year": 2020, "days": 498},
+    {"year": 2021, "days": 564},
+    {"year": 2022, "days": 542},
+    {"year": 2023, "days": 510}
+  ],
+  "convictionRate": [
+    {"year": 2015, "rate": 57.9},
+    {"year": 2016, "rate": 56.2},
+    {"year": 2017, "rate": 52.1},
+    {"year": 2018, "rate": 47.6},
+    {"year": 2019, "rate": 51.8},
+    {"year": 2020, "rate": 55.4},
+    {"year": 2021, "rate": 63.1},
+    {"year": 2022, "rate": 66.9},
+    {"year": 2023, "rate": 68.2}
+  ],
+  "byPoliceForce": [
+    {"force": "Metropolitan Police", "reports": 12840, "chargeRate": 3.2},
+    {"force": "Greater Manchester", "reports": 5120, "chargeRate": 4.8},
+    {"force": "West Midlands", "reports": 4210, "chargeRate": 3.6},
+    {"force": "West Yorkshire", "reports": 3870, "chargeRate": 4.1},
+    {"force": "Thames Valley", "reports": 2980, "chargeRate": 5.2},
+    {"force": "Merseyside", "reports": 2450, "chargeRate": 5.7},
+    {"force": "Avon & Somerset", "reports": 2180, "chargeRate": 6.1},
+    {"force": "Durham", "reports": 1050, "chargeRate": 7.4}
+  ]
+}
