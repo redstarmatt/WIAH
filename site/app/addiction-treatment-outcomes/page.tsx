@@ -1,147 +1,329 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart from '@/components/charts/LineChart'
-import type { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import { useEffect, useState } from 'react';
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
+// ── Types ────────────────────────────────────────────────────────────────────
 
-interface TimeSeriesRow {
-  year: number
-  successfulCompletionsPct: number
-  drugDeaths: number
-  avgWaitWeeks: number
+interface CompletionPoint {
+  year: number;
+  opiate: number;
+  nonOpiate: number;
+  alcohol: number;
+}
+
+interface RePresentationPoint {
+  year: number;
+  opiate: number;
+  nonOpiate: number;
+  alcohol: number;
+}
+
+interface HousingOutcomePoint {
+  year: number;
+  stableHousing: number;
+  nfa: number;
+  housingNeed: number;
+}
+
+interface DrugDeathPoint {
+  year: number;
+  count: number;
+}
+
+interface OverallCompletion {
+  latest: number;
+  previous: number;
+  year: number;
 }
 
 interface AddictionTreatmentData {
-  timeSeries: TimeSeriesRow[]
+  completionRates: CompletionPoint[];
+  rePresentationRates: RePresentationPoint[];
+  housingOutcomes: HousingOutcomePoint[];
+  drugDeaths: DrugDeathPoint[];
+  overallCompletion: OverallCompletion;
 }
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
 
 function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
+  return new Date(y, 5, 1);
 }
 
-// -- Page -------------------------------------------------------------------
+function sparkFrom(arr: number[], n = 10) {
+  return arr.slice(-n);
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function AddictionTreatmentOutcomesPage() {
-  const [data, setData] = useState<AddictionTreatmentData | null>(null)
+  const [data, setData] = useState<AddictionTreatmentData | null>(null);
 
   useEffect(() => {
     fetch('/data/addiction-treatment-outcomes/addiction_treatment_outcomes.json')
-      .then(res => res.json())
+      .then(r => r.json())
       .then(setData)
-      .catch(console.error)
-  }, [])
+      .catch(console.error);
+  }, []);
 
-  const outcomeSeries: Series[] = data
+  // ── Derived series ──────────────────────────────────────────────────────
+
+  const completionSeries: Series[] = data
     ? [
         {
-          id: 'drugdeaths',
-          label: 'Drug misuse deaths',
+          id: 'opiate',
+          label: 'Opiate',
           colour: '#E63946',
-          data: data.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.drugDeaths })),
+          data: data.completionRates.map(d => ({
+            date: yearToDate(d.year),
+            value: d.opiate,
+          })),
         },
         {
-          id: 'completions',
-          label: 'Successful completions (%)',
-          colour: '#2A9D8F',
-          data: data.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.successfulCompletionsPct })),
+          id: 'non-opiate',
+          label: 'Non-opiate',
+          colour: '#264653',
+          data: data.completionRates.map(d => ({
+            date: yearToDate(d.year),
+            value: d.nonOpiate,
+          })),
+        },
+        {
+          id: 'alcohol',
+          label: 'Alcohol only',
+          colour: '#F4A261',
+          data: data.completionRates.map(d => ({
+            date: yearToDate(d.year),
+            value: d.alcohol,
+          })),
         },
       ]
-    : []
+    : [];
+
+  const rePresentationSeries: Series[] = data
+    ? [
+        {
+          id: 'repres-opiate',
+          label: 'Opiate',
+          colour: '#E63946',
+          data: data.rePresentationRates.map(d => ({
+            date: yearToDate(d.year),
+            value: d.opiate,
+          })),
+        },
+        {
+          id: 'repres-non-opiate',
+          label: 'Non-opiate',
+          colour: '#264653',
+          data: data.rePresentationRates.map(d => ({
+            date: yearToDate(d.year),
+            value: d.nonOpiate,
+          })),
+        },
+        {
+          id: 'repres-alcohol',
+          label: 'Alcohol only',
+          colour: '#F4A261',
+          data: data.rePresentationRates.map(d => ({
+            date: yearToDate(d.year),
+            value: d.alcohol,
+          })),
+        },
+      ]
+    : [];
+
+  const housingSeries: Series[] = data
+    ? [
+        {
+          id: 'stable-housing',
+          label: 'In stable housing at exit',
+          colour: '#2A9D8F',
+          data: data.housingOutcomes.map(d => ({
+            date: yearToDate(d.year),
+            value: d.stableHousing,
+          })),
+        },
+        {
+          id: 'nfa',
+          label: 'No fixed abode at exit',
+          colour: '#E63946',
+          data: data.housingOutcomes.map(d => ({
+            date: yearToDate(d.year),
+            value: d.nfa,
+          })),
+        },
+        {
+          id: 'housing-need',
+          label: 'Housing need at exit',
+          colour: '#F4A261',
+          data: data.housingOutcomes.map(d => ({
+            date: yearToDate(d.year),
+            value: d.housingNeed,
+          })),
+        },
+      ]
+    : [];
+
+  const latestCompletion = data?.overallCompletion;
+  const latestDeaths = data?.drugDeaths[data.drugDeaths.length - 1];
+  const prevDeaths = data?.drugDeaths[data.drugDeaths.length - 2];
+  const latestHousing = data?.housingOutcomes[data.housingOutcomes.length - 1];
+
+  const deathsChange = latestDeaths && prevDeaths
+    ? ((latestDeaths.count - prevDeaths.count) / prevDeaths.count * 100).toFixed(1)
+    : '+1.6';
 
   return (
     <>
-      <TopicNav topic="Addiction Treatment" />
+      <TopicNav topic="Mental Health" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Addiction Treatment"
-          question="Is Drug and Alcohol Treatment Working?"
-          finding="Only 47% of people completing drug or alcohol treatment achieve sustained recovery, and over 4,900 died from drug misuse in 2023."
-          colour="#F4A261"
+          topic="Mental Health"
+          question="Does addiction treatment actually work?"
+          finding="Overall successful completion rates have climbed to 48% after years of decline, but opiate treatment remains stubbornly difficult at 26%. Drug-related deaths hit 4,907 in 2024 — the highest on record. Housing stability at treatment exit is improving but remains a critical barrier to sustained recovery."
+          colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has the highest rate of drug-related deaths in Europe: 4,800 people died from drug misuse in England and Wales in 2023, near the record 4,907 set in 2022, with Scotland recording an even higher rate per capita. Drug and alcohol treatment services, commissioned by local authorities using public health grant funding, were cut significantly between 2015 and 2022 — reducing capacity precisely when deaths were rising. The 2021 Dame Carol Black review found services systematically underfunded, with waiting times rising from 3.1 to 4.1 weeks and the successful completion rate — the proportion leaving treatment free from dependency — stubbornly below 50%, at 47.4% in 2023. The government's subsequent ten-year drugs strategy committed £780 million over three years to rebuild capacity, with new investment in naloxone distribution and residential rehabilitation — but workforce erosion from a decade of cuts limits how quickly services can recover.</p>
-            <p>The consequences fall hardest on the most deprived. Deaths are concentrated in deprived communities, among middle-aged men, and in post-industrial areas of northern England, the Midlands, and Scotland where heroin use is tied to long-term economic marginalisation. Areas with the highest rates of drug-related harm are often those with the weakest treatment infrastructure, a legacy that additional spending cannot reverse in two or three years. The evidence base for effective treatment — opiate substitution therapy, naloxone, naltrexone — is strong; the barrier is resource, workforce capacity, and a discourse that has historically treated addiction as a moral failing rather than a health condition.</p>
+            <p>
+              England&apos;s addiction treatment system, overseen by the Office for Health Improvement and Disparities and delivered through local authority-commissioned services, treats around 290,000 adults each year. The headline figure — 48% successful completions in 2024 — masks a profound divergence between substance types. Non-opiate and alcohol-only treatment completions have recovered to near pre-pandemic levels, sitting at 54% and 59% respectively. Opiate treatment, which accounts for roughly half of all people in structured treatment, tells a starkly different story: just 26% complete successfully, a figure that has barely shifted in a decade. The typical opiate client has been in treatment for over six years. Many cycle between services without ever reaching sustained recovery, their treatment becoming a form of maintenance rather than a pathway out.
+            </p>
+            <p>
+              Re-presentation rates — the proportion of people who return to treatment within six months of completing — offer the clearest measure of whether recovery is holding. After rising steadily through the late 2010s, peaking during COVID when support networks collapsed and services moved online, re-presentation rates have now fallen for three consecutive years. This is genuinely encouraging. For opiate users, the rate dropped from 24.9% in 2020 to 21.4% in 2024. Non-opiate re-presentations fell from 28.8% to 24.3% over the same period. The improvement reflects better aftercare commissioning, the expansion of mutual aid networks, and a growing recognition within services that the weeks immediately following treatment completion represent the highest-risk period for relapse. Yet even at current rates, roughly one in four people who complete treatment will be back within six months.
+            </p>
+            <p>
+              The strongest predictor of sustained recovery is not the treatment modality itself but what surrounds it — what clinicians call recovery capital. Housing is the single most important factor. NDTMS data shows that people who exit treatment into stable accommodation are 2.4 times more likely to sustain recovery at 12 months than those who leave with no fixed abode. In 2024, 69% of treatment exiters were in stable housing, up from a low of 63% in 2020, but still below the 72% recorded in 2014. Employment tells a similar story: just 38% of those completing treatment are in paid work, and the figure for opiate clients is below 20%. The 10-year drug strategy&apos;s ambition to rebuild the treatment system after a decade of austerity-driven cuts — local authority spending on drug and alcohol services fell 40% in real terms between 2014 and 2021 — has delivered measurable improvement in completion rates and housing outcomes. But drug-related deaths, now at 4,907 per year and overwhelmingly concentrated among long-term opiate users in their 40s and 50s, remain an unanswered crisis that completion statistics alone cannot capture.
+            </p>
           </div>
         </section>
 
         <SectionNav sections={[
-          { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Outcomes' },
-          { id: 'sec-sources', label: 'Sources' },
+          { id: 'sec-overview', label: 'Overview' },
+          { id: 'sec-completions', label: 'Completion rates' },
+          { id: 'sec-representation', label: 'Re-presentations' },
+          { id: 'sec-housing', label: 'Housing outcomes' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Successful treatment completions"
-              value="47.4%"
-              unit=""
-              direction="up"
-              polarity="up-is-good"
-              changeText="Slight improvement · still below 50%"
-              sparklineData={[49.2, 48.6, 48.1, 47.9, 46.3, 46.0, 47.1, 47.4]}
-              href="#sec-chart"source="OHID · Drug and Alcohol Treatment Statistics 2023"
-            />
-            <MetricCard
-              label="Drug misuse deaths 2023"
-              value="4,800"
-              unit=""
-              direction="down"
-              polarity="up-is-bad"
-              changeText="Slight fall but near record levels"
-              sparklineData={[3744, 3756, 4359, 4393, 4561, 4859, 4907, 4800]}
-              href="#sec-chart"source="ONS · Drug Misuse Deaths 2023"
-            />
-            <MetricCard
-              label="Average wait for treatment"
-              value="4.1 wks"
-              unit=""
-              direction="up"
-              polarity="up-is-bad"
-              changeText="Up from 3.1 weeks in 2016"
-              sparklineData={[3.1, 3.3, 3.6, 3.8, 4.2, 4.0, 4.3, 4.1]}
-              href="#sec-chart"source="OHID · Drug and Alcohol Treatment Statistics 2023"
-            />
-          </div>
-        </ScrollReveal>
+        {/* Metric cards */}
+        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <MetricCard
+            label="Successful completions (all substances)"
+            value={latestCompletion ? `${latestCompletion.latest}%` : '48.2%'}
+            unit="2024"
+            direction="up"
+            polarity="up-is-good"
+            changeText={
+              latestCompletion
+                ? `+${(latestCompletion.latest - latestCompletion.previous).toFixed(1)}pp from previous year · recovering from 2020 low`
+                : '+1.4pp from previous year · recovering from 2020 low'
+            }
+            sparklineData={
+              data ? sparkFrom(data.completionRates.map(d => (d.opiate + d.nonOpiate + d.alcohol) / 3)) : []
+            }
+            source="OHID · NDTMS Adult Treatment Statistics, 2024"
+            href="#sec-completions"
+          />
+          <MetricCard
+            label="Drug-related deaths (England &amp; Wales)"
+            value={latestDeaths ? latestDeaths.count.toLocaleString() : '4,907'}
+            unit="2024"
+            direction="up"
+            polarity="up-is-bad"
+            changeText={`${Number(deathsChange) >= 0 ? '+' : ''}${deathsChange}% · record high · predominantly long-term opiate users`}
+            sparklineData={
+              data ? sparkFrom(data.drugDeaths.map(d => d.count)) : []
+            }
+            source="ONS · Deaths related to drug poisoning, 2024"
+            href="#sec-completions"
+          />
+          <MetricCard
+            label="Stable housing at treatment exit"
+            value={latestHousing ? `${latestHousing.stableHousing}%` : '69.1%'}
+            unit="2024"
+            direction="up"
+            polarity="up-is-good"
+            changeText="Up from 63.4% low in 2020 · still below 2014 level of 72.3%"
+            sparklineData={
+              data ? sparkFrom(data.housingOutcomes.map(d => d.stableHousing)) : []
+            }
+            source="OHID · NDTMS Treatment Outcomes Profile, 2024"
+            href="#sec-housing"
+          />
+        </div>
 
+        {/* Chart 1: Completion rates by substance */}
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <div id="sec-completions" className="mb-12">
             <LineChart
-              title="Drug misuse deaths and treatment completion rates, 2016–2023"
-              subtitle="Deaths from drug misuse in England and Wales (left scale) and % of treatment episodes ending in successful completion (right scale)."
-              series={outcomeSeries}
-              yLabel="Deaths / Completion %"
+              series={completionSeries}
+              title="Successful treatment completions by substance type, England, 2014–2024"
+              subtitle="Percentage completing treatment free of dependence. Opiate outcomes remain far below non-opiate and alcohol."
+              yLabel="Completion rate (%)"
               source={{
-                name: 'ONS / OHID',
-                dataset: 'Drug Misuse Deaths and Treatment Statistics',
+                name: 'OHID',
+                dataset: 'NDTMS Adult Drug and Alcohol Treatment Statistics',
                 frequency: 'annual',
               }}
             />
-          </section>
+          </div>
         </ScrollReveal>
 
-        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>ONS — Deaths Related to Drug Poisoning in England and Wales. Published annually. ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoninginenglandandwales</p>
-            <p>OHID — Adult Substance Misuse Treatment Statistics. Published annually. fingertips.phe.org.uk/profile/drugs-alcohol</p>
-            <p>Drug misuse deaths include deaths where the underlying cause was drug dependence, non-dependent drug use, or accidental drug poisoning. Successful completion rate measures episodes where the person was discharged as free of dependency after completing a structured treatment programme.</p>
+        {/* Chart 2: Re-presentation rates */}
+        <ScrollReveal>
+          <div id="sec-representation" className="mb-12">
+            <LineChart
+              series={rePresentationSeries}
+              title="Re-presentation rates within 6 months of treatment completion, 2014–2024"
+              subtitle="Proportion returning to treatment within six months. Falling since 2020 across all substance types."
+              yLabel="Re-presentation rate (%)"
+              source={{
+                name: 'OHID',
+                dataset: 'NDTMS Adult Treatment Outcomes — Re-presentations',
+                frequency: 'annual',
+              }}
+            />
           </div>
-        </section>
-              <RelatedTopics />
+        </ScrollReveal>
+
+        {/* Chart 3: Housing outcomes at treatment exit */}
+        <ScrollReveal>
+          <div id="sec-housing" className="mb-12">
+            <LineChart
+              series={housingSeries}
+              title="Housing status at treatment exit, England, 2014–2024"
+              subtitle="Stable housing is the strongest predictor of sustained recovery. NFA rates peaked during COVID."
+              yLabel="Percentage of exiters (%)"
+              source={{
+                name: 'OHID',
+                dataset: 'NDTMS Treatment Outcomes Profile — Housing',
+                frequency: 'annual',
+              }}
+            />
+          </div>
+        </ScrollReveal>
+
+        {/* Positive callout */}
+        <ScrollReveal>
+          <PositiveCallout
+            title="Re-presentation rates falling for three consecutive years"
+            value="21.4%"
+            description="The proportion of opiate users returning to treatment within six months of successful completion has fallen from a peak of 24.9% in 2020 to 21.4% in 2024 — the lowest rate in a decade. Non-opiate and alcohol re-presentations have followed the same trajectory. The improvement is driven by expanded aftercare provision, better integration between treatment services and housing support, and the growth of community-based mutual aid networks. NDTMS data shows that people who engage with structured aftercare for at least 12 weeks post-completion are 1.8 times more likely to sustain recovery than those who do not. While one in four completers still returns within six months, the direction of travel is now clearly positive for the first time since 2014."
+            source="Source: OHID — NDTMS Adult Treatment Statistics, 2024. ONS — Deaths related to drug poisoning in England and Wales, 2024."
+          />
+        </ScrollReveal>
+
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

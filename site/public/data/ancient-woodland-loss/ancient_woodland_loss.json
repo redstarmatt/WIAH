@@ -1,28 +1,79 @@
 {
-  "topic": "ancient-woodland-loss",
-  "lastUpdated": "2024-12-01",
-  "timeSeries": [
-    { "year": 2016, "sitesAtRisk": 850, "hs2LossHa": 0 },
-    { "year": 2017, "sitesAtRisk": 900, "hs2LossHa": 0 },
-    { "year": 2018, "sitesAtRisk": 950, "hs2LossHa": 50 },
-    { "year": 2019, "sitesAtRisk": 1000, "hs2LossHa": 150 },
-    { "year": 2020, "sitesAtRisk": 1050, "hs2LossHa": 300 },
-    { "year": 2021, "sitesAtRisk": 1080, "hs2LossHa": 450 },
-    { "year": 2022, "sitesAtRisk": 1050, "hs2LossHa": 550 },
-    { "year": 2023, "sitesAtRisk": 1020, "hs2LossHa": 650 },
-    { "year": 2024, "sitesAtRisk": 1000, "hs2LossHa": 700 }
+  "planningThreats": [
+    {"year": 2010, "sites": 206},
+    {"year": 2011, "sites": 248},
+    {"year": 2012, "sites": 291},
+    {"year": 2013, "sites": 318},
+    {"year": 2014, "sites": 345},
+    {"year": 2015, "sites": 398},
+    {"year": 2016, "sites": 443},
+    {"year": 2017, "sites": 511},
+    {"year": 2018, "sites": 537},
+    {"year": 2019, "sites": 572},
+    {"year": 2020, "sites": 548},
+    {"year": 2021, "sites": 613},
+    {"year": 2022, "sites": 658},
+    {"year": 2023, "sites": 701},
+    {"year": 2024, "sites": 742}
+  ],
+  "areaLost": [
+    {"year": 2010, "hectares": 34},
+    {"year": 2011, "hectares": 41},
+    {"year": 2012, "hectares": 52},
+    {"year": 2013, "hectares": 48},
+    {"year": 2014, "hectares": 57},
+    {"year": 2015, "hectares": 63},
+    {"year": 2016, "hectares": 71},
+    {"year": 2017, "hectares": 86},
+    {"year": 2018, "hectares": 92},
+    {"year": 2019, "hectares": 78},
+    {"year": 2020, "hectares": 54},
+    {"year": 2021, "hectares": 69},
+    {"year": 2022, "hectares": 81},
+    {"year": 2023, "hectares": 74},
+    {"year": 2024, "hectares": 67}
+  ],
+  "plantingTargetVsActual": [
+    {"year": 2015, "target": 5000, "actual": 2180},
+    {"year": 2016, "target": 5000, "actual": 2340},
+    {"year": 2017, "target": 7000, "actual": 2710},
+    {"year": 2018, "target": 7000, "actual": 2900},
+    {"year": 2019, "target": 10000, "actual": 3420},
+    {"year": 2020, "target": 10000, "actual": 2220},
+    {"year": 2021, "target": 12000, "actual": 3640},
+    {"year": 2022, "target": 16500, "actual": 5270},
+    {"year": 2023, "target": 16500, "actual": 6830},
+    {"year": 2024, "target": 16500, "actual": 7420}
   ],
   "metadata": {
     "sources": [
       {
         "name": "Woodland Trust",
-        "dataset": "Ancient Woodland Threat Register",
-        "url": "https://www.woodlandtrust.org.uk/protecting-trees-and-woods/ancient-woodland-inventory/",
-        "retrieved": "2024-12-01",
+        "dataset": "Ancient Woodland Inventory — Planning Threats Register",
+        "url": "https://www.woodlandtrust.org.uk/state-of-woods-and-trees/",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Natural England",
+        "dataset": "Ancient Woodland Inventory for England",
+        "url": "https://www.data.gov.uk/dataset/natural-england-ancient-woodland-inventory",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Forestry Commission",
+        "dataset": "Forestry Statistics — Woodland Area and Planting",
+        "url": "https://www.forestresearch.gov.uk/tools-and-resources/statistics/forestry-statistics/",
+        "retrieved": "2026-03-01",
         "frequency": "annual"
       }
     ],
-    "methodology": "Sites at risk: number of ancient woodland sites in England with live planning applications. hs2LossHa: cumulative ancient woodland lost to HS2 construction in hectares.",
-    "knownIssues": ["Threat Register reflects active planning applications only; post-consent losses may not be captured in same reporting year"]
+    "methodology": "Planning threats are counted as applications within 500m of an ancient woodland site registered on the Ancient Woodland Inventory. Area lost is measured using satellite imagery cross-referenced with the AWI. Planting targets are government commitments; actuals are Forestry Commission new planting statistics for England (all woodland types, hectares per year).",
+    "knownIssues": [
+      "Ancient Woodland Inventory does not cover sites under 2 hectares comprehensively — actual loss may be higher",
+      "Planting figures include all new woodland, not just native broadleaf — like-for-like habitat replacement is not captured",
+      "COVID-19 disruption in 2020 affected both planning applications and planting delivery"
+    ]
   }
 }

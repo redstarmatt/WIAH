@@ -1,52 +1,93 @@
 {
-  "topic": "alternative-provision",
-  "lastUpdated": "2026-03-01",
-  "national": {
-    "pupilNumbers": {
-      "timeSeries": [
-        {"year": 2015, "pupilsThousands": 16.3},
-        {"year": 2016, "pupilsThousands": 16.8},
-        {"year": 2017, "pupilsThousands": 17.4},
-        {"year": 2018, "pupilsThousands": 18.1},
-        {"year": 2019, "pupilsThousands": 18.9},
-        {"year": 2020, "pupilsThousands": 19.2},
-        {"year": 2021, "pupilsThousands": 18.8},
-        {"year": 2022, "pupilsThousands": 19.6},
-        {"year": 2023, "pupilsThousands": 21.2},
-        {"year": 2024, "pupilsThousands": 22.4}
-      ],
-      "latestYear": 2024,
-      "latestThousands": 22.4,
-      "note": "Pupils in state-funded alternative provision in England (pupil referral units, AP academies, AP free schools)"
-    },
-    "ofstedRatings": {
-      "timeSeries": [
-        {"year": 2018, "inadequatePlusRiPct": 38},
-        {"year": 2019, "inadequatePlusRiPct": 40},
-        {"year": 2020, "inadequatePlusRiPct": 41},
-        {"year": 2021, "inadequatePlusRiPct": 42},
-        {"year": 2022, "inadequatePlusRiPct": 43},
-        {"year": 2023, "inadequatePlusRiPct": 44},
-        {"year": 2024, "inadequatePlusRiPct": 44}
-      ],
-      "latestYear": 2024,
-      "latestPct": 44,
-      "note": "Percentage of AP schools rated Inadequate or Requires Improvement by Ofsted"
-    },
-    "attainment": {
-      "year": 2024,
-      "apGcse94PassPct": 11,
-      "mainstreamGcse94PassPct": 65,
-      "note": "GCSE grade 9-4 in both English and Maths"
-    }
+  "apPupilNumbers": [
+    {"year": 2014, "count": 24050},
+    {"year": 2015, "count": 25510},
+    {"year": 2016, "count": 27180},
+    {"year": 2017, "count": 29340},
+    {"year": 2018, "count": 32425},
+    {"year": 2019, "count": 34760},
+    {"year": 2020, "count": 35890},
+    {"year": 2021, "count": 36410},
+    {"year": 2022, "count": 37820},
+    {"year": 2023, "count": 39670},
+    {"year": 2024, "count": 41000}
+  ],
+  "attainmentGap": [
+    {"year": 2014, "apPct": 6.2, "mainstreamPct": 56.8},
+    {"year": 2015, "apPct": 5.8, "mainstreamPct": 57.1},
+    {"year": 2016, "apPct": 4.9, "mainstreamPct": 59.3},
+    {"year": 2017, "apPct": 4.5, "mainstreamPct": 59.1},
+    {"year": 2018, "apPct": 4.1, "mainstreamPct": 59.8},
+    {"year": 2019, "apPct": 3.9, "mainstreamPct": 60.9},
+    {"year": 2020, "apPct": 4.3, "mainstreamPct": 65.2, "note": "Centre-assessed grades"},
+    {"year": 2021, "apPct": 4.7, "mainstreamPct": 67.1, "note": "Teacher-assessed grades"},
+    {"year": 2022, "apPct": 3.8, "mainstreamPct": 63.4},
+    {"year": 2023, "apPct": 3.9, "mainstreamPct": 64.7},
+    {"year": 2024, "apPct": 4.0, "mainstreamPct": 65.0}
+  ],
+  "exclusionRates": [
+    {"year": 2014, "permanentExclusions": 4950, "managedMoves": 7800, "suspensions": 302980},
+    {"year": 2015, "permanentExclusions": 5790, "managedMoves": 8200, "suspensions": 339360},
+    {"year": 2016, "permanentExclusions": 6685, "managedMoves": 8950, "suspensions": 381865},
+    {"year": 2017, "permanentExclusions": 7720, "managedMoves": 9600, "suspensions": 410753},
+    {"year": 2018, "permanentExclusions": 7894, "managedMoves": 10450, "suspensions": 438265},
+    {"year": 2019, "permanentExclusions": 7894, "managedMoves": 11200, "suspensions": 440896},
+    {"year": 2020, "permanentExclusions": 5057, "managedMoves": 8100, "suspensions": 310732, "note": "COVID-affected"},
+    {"year": 2021, "permanentExclusions": 6495, "managedMoves": 9800, "suspensions": 429295},
+    {"year": 2022, "permanentExclusions": 6637, "managedMoves": 11500, "suspensions": 578584},
+    {"year": 2023, "permanentExclusions": 6927, "managedMoves": 12100, "suspensions": 620508},
+    {"year": 2024, "permanentExclusions": 7140, "managedMoves": 12800, "suspensions": 658270}
+  ],
+  "demographics": {
+    "sendRate": 82,
+    "fsmRate": 64,
+    "blackCaribbeanOverrepresentation": 3.0,
+    "note": "Black Caribbean pupils are 3x more likely to be in AP than White British peers"
   },
   "metadata": {
     "sources": [
-      {"name": "DfE", "dataset": "Alternative Provision in England", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/alternative-provision-in-england", "frequency": "annual"},
-      {"name": "Ofsted", "dataset": "State of Education — Alternative Provision", "url": "https://www.gov.uk/government/organisations/ofsted", "frequency": "annual"},
-      {"name": "DfE", "dataset": "Key Stage 4 Performance", "url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance", "frequency": "annual"}
+      {
+        "name": "Department for Education",
+        "dataset": "Schools, Pupils and their Characteristics",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Education",
+        "dataset": "Permanent exclusions and suspensions in England",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/permanent-and-fixed-period-exclusions-in-england",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Education",
+        "dataset": "Key Stage 4 Performance",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Timpson Review of School Exclusion",
+        "dataset": "Timpson Review",
+        "url": "https://www.gov.uk/government/publications/timpson-review-of-school-exclusion",
+        "retrieved": "2026-03-01",
+        "frequency": "one-off (2019)"
+      },
+      {
+        "name": "ISOS Partnership",
+        "dataset": "Alternative Provision Market Analysis",
+        "url": "https://www.isospartnership.com/alternative-provision",
+        "retrieved": "2026-03-01",
+        "frequency": "periodic"
+      }
     ],
-    "methodology": "AP pupil numbers from DfE January school census, state-funded AP settings only. Ofsted ratings from published inspection outcomes. Attainment figures from DfE KS4 performance tables, comparing pupils in AP settings with all mainstream school pupils.",
-    "knownIssues": ["AP pupil numbers exclude pupils in unregistered provision — true numbers likely higher", "Ofsted rating comparison with mainstream schools partly reflects pupil complexity, not solely provision quality", "2020 figures affected by COVID-19 school closures"]
+    "methodology": "AP pupil numbers from DfE school census. Attainment data from KS4 performance tables. Exclusion data from DfE suspensions and permanent exclusions statistical releases. 2020-2021 attainment figures reflect centre/teacher-assessed grades and are not directly comparable.",
+    "knownIssues": [
+      "Managed move numbers are estimates — no national mandatory reporting exists",
+      "2020 and 2021 attainment data affected by COVID grading changes",
+      "Off-rolling is by definition unrecorded; estimates vary widely",
+      "Unregistered AP settings are not captured in DfE data"
+    ]
   }
 }

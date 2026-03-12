@@ -1,106 +1,25 @@
 {
-  "topic": "ai-in-public-services",
-  "lastUpdated": "2026-03-01",
-  "national": {
-    "timeSeries": [
-      {
-        "year": 2015,
-        "totalProjects": 63,
-        "transparencyEntries": 0,
-        "trustPct": 38,
-        "concernPct": 45
-      },
-      {
-        "year": 2016,
-        "totalProjects": 80,
-        "transparencyEntries": 0,
-        "trustPct": 39,
-        "concernPct": 44
-      },
-      {
-        "year": 2017,
-        "totalProjects": 100,
-        "transparencyEntries": 0,
-        "trustPct": 40,
-        "concernPct": 43
-      },
-      {
-        "year": 2018,
-        "totalProjects": 130,
-        "transparencyEntries": 0,
-        "trustPct": 41,
-        "concernPct": 43
-      },
-      {
-        "year": 2019,
-        "totalProjects": 155,
-        "transparencyEntries": 0,
-        "trustPct": 41,
-        "concernPct": 44
-      },
-      {
-        "year": 2020,
-        "totalProjects": 175,
-        "transparencyEntries": 0,
-        "trustPct": 42,
-        "concernPct": 48
-      },
-      {
-        "year": 2021,
-        "totalProjects": 188,
-        "transparencyEntries": 12,
-        "trustPct": 40,
-        "concernPct": 50
-      },
-      {
-        "year": 2022,
-        "totalProjects": 196,
-        "transparencyEntries": 24,
-        "trustPct": 38,
-        "concernPct": 52
-      },
-      {
-        "year": 2023,
-        "totalProjects": 204,
-        "transparencyEntries": 35,
-        "trustPct": 36,
-        "concernPct": 54
-      },
-      {
-        "year": 2024,
-        "totalProjects": 210,
-        "transparencyEntries": 52,
-        "trustPct": 33,
-        "concernPct": 55
-      },
-      {
-        "year": 2025,
-        "totalProjects": 215,
-        "transparencyEntries": 67,
-        "trustPct": 31,
-        "concernPct": 57
-      }
-    ]
-  },
-  "metadata": {
-    "sources": [
-      {
-        "name": "CDDO",
-        "dataset": "Algorithmic Transparency Recording Standard Register",
-        "url": "https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub",
-        "frequency": "Rolling"
-      },
-      {
-        "name": "CDEI",
-        "dataset": "Public attitudes to data and AI tracker",
-        "url": "https://www.gov.uk/government/publications/public-attitudes-to-data-and-ai-tracker-survey",
-        "frequency": "Annual"
-      }
-    ],
-    "methodology": "Government AI project count compiled from parliamentary questions, FOI requests and ATRS register. Trust data from CDEI annual tracker survey. Not all projects captured \u2014 real total likely higher.",
-    "knownIssues": [
-      "Total project count is a lower bound \u2014 many projects not disclosed",
-      "Trust survey methodology changed in 2022"
-    ]
-  }
+  "aiProjects": [
+    {"year": 2019, "count": 54},
+    {"year": 2020, "count": 89},
+    {"year": 2021, "count": 117},
+    {"year": 2022, "count": 146},
+    {"year": 2023, "count": 178},
+    {"year": 2024, "count": 201},
+    {"year": 2025, "count": 215}
+  ],
+  "publicTrust": [
+    {"year": 2020, "percent": 48},
+    {"year": 2021, "percent": 45},
+    {"year": 2022, "percent": 41},
+    {"year": 2023, "percent": 38},
+    {"year": 2024, "percent": 34},
+    {"year": 2025, "percent": 31}
+  ],
+  "transparencyRegister": [
+    {"year": 2022, "entries": 12},
+    {"year": 2023, "entries": 29},
+    {"year": 2024, "entries": 48},
+    {"year": 2025, "entries": 67}
+  ]
 }
