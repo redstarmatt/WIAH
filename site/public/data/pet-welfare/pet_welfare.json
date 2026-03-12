@@ -1,0 +1,55 @@
+{
+  "rspcaReports": [
+    {"year": 2014, "reports": 89420},
+    {"year": 2015, "reports": 94310},
+    {"year": 2016, "reports": 97560},
+    {"year": 2017, "reports": 101200},
+    {"year": 2018, "reports": 103750},
+    {"year": 2019, "reports": 109800},
+    {"year": 2020, "reports": 98400},
+    {"year": 2021, "reports": 117650},
+    {"year": 2022, "reports": 128300},
+    {"year": 2023, "reports": 137200},
+    {"year": 2024, "reports": 141500}
+  ],
+  "dogAttackAdmissions": [
+    {"year": 2014, "admissions": 5970},
+    {"year": 2015, "admissions": 6280},
+    {"year": 2016, "admissions": 6510},
+    {"year": 2017, "admissions": 6830},
+    {"year": 2018, "admissions": 7040},
+    {"year": 2019, "admissions": 7150},
+    {"year": 2020, "admissions": 6420},
+    {"year": 2021, "admissions": 7380},
+    {"year": 2022, "admissions": 7890},
+    {"year": 2023, "admissions": 8210},
+    {"year": 2024, "admissions": 8450}
+  ],
+  "rescueCentreOccupancy": [
+    {"year": 2018, "occupancyPct": 78},
+    {"year": 2019, "occupancyPct": 82},
+    {"year": 2020, "occupancyPct": 71},
+    {"year": 2021, "occupancyPct": 84},
+    {"year": 2022, "occupancyPct": 93},
+    {"year": 2023, "occupancyPct": 102},
+    {"year": 2024, "occupancyPct": 108},
+    {"year": 2025, "occupancyPct": 105}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "RSPCA", "dataset": "Annual Cruelty and Neglect Reports", "url": "https://www.rspca.org.uk/whatwedo/latest/facts", "frequency": "annual"},
+      {"name": "NHS Digital", "dataset": "Hospital Admitted Patient Care — Dog Bites and Strikes (ICD-10 W54)", "url": "https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity", "frequency": "annual"},
+      {"name": "Association of Dogs and Cats Homes (ADCH)", "dataset": "Annual Sector Report — Rescue Centre Capacity", "url": "https://www.adch.org.uk/sector-report", "frequency": "annual"},
+      {"name": "PDSA", "dataset": "PDSA Animal Wellbeing (PAW) Report", "url": "https://www.pdsa.org.uk/what-we-do/pdsa-animal-wellbeing-report", "frequency": "annual"},
+      {"name": "DEFRA", "dataset": "XL Bully Registration and Exemption Statistics", "url": "https://www.gov.uk/government/publications/xl-bully-dogs-statistics", "frequency": "quarterly"}
+    ],
+    "methodology": "RSPCA cruelty reports represent total complaints received by the charity's national cruelty line, covering both cruelty and neglect. Dog attack hospital admissions are drawn from NHS Hospital Episode Statistics using ICD-10 code W54 (bitten or struck by dog), counting finished admission episodes in England. Rescue centre occupancy is aggregated from ADCH sector surveys covering approximately 350 member organisations across the UK. An occupancy rate above 100% indicates centres operating beyond intended capacity using overflow or temporary housing.",
+    "knownIssues": [
+      "RSPCA reports reflect calls received, not verified incidents — reporting rates may have risen independently of actual cruelty levels",
+      "NHS dog attack data covers England only; UK-wide figures are estimated to be 20-25% higher",
+      "Rescue centre occupancy figures are self-reported by ADCH member organisations and may not capture all rescue operations, particularly smaller breed-specific rescues",
+      "The COVID-19 lockdown period (2020) artificially depressed both RSPCA reports and hospital admissions due to reduced contact and healthcare avoidance",
+      "XL Bully registration data from DEFRA is provisional and subject to revision as the exemption scheme is still being processed"
+    ]
+  }
+}

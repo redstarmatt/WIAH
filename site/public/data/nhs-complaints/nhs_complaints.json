@@ -1,0 +1,56 @@
+{
+  "topic": "nhs-complaints",
+  "lastUpdated": "2026-02-01",
+  "timeSeries": [
+    {"year": 2014, "writtenComplaints": 174872, "satisfiedPct": 38, "phsoReceived": 4264, "phsoCompleted": 3980},
+    {"year": 2015, "writtenComplaints": 188270, "satisfiedPct": 37, "phsoReceived": 4812, "phsoCompleted": 4350},
+    {"year": 2016, "writtenComplaints": 199540, "satisfiedPct": 36, "phsoReceived": 5104, "phsoCompleted": 4620},
+    {"year": 2017, "writtenComplaints": 208735, "satisfiedPct": 35, "phsoReceived": 5380, "phsoCompleted": 4890},
+    {"year": 2018, "writtenComplaints": 218210, "satisfiedPct": 34, "phsoReceived": 5640, "phsoCompleted": 5010},
+    {"year": 2019, "writtenComplaints": 229458, "satisfiedPct": 33, "phsoReceived": 5920, "phsoCompleted": 5210},
+    {"year": 2020, "writtenComplaints": 194630, "satisfiedPct": 34, "phsoReceived": 4280, "phsoCompleted": 3650},
+    {"year": 2021, "writtenComplaints": 211840, "satisfiedPct": 32, "phsoReceived": 5150, "phsoCompleted": 4120},
+    {"year": 2022, "writtenComplaints": 234510, "satisfiedPct": 31, "phsoReceived": 5840, "phsoCompleted": 4680},
+    {"year": 2023, "writtenComplaints": 245320, "satisfiedPct": 30, "phsoReceived": 6210, "phsoCompleted": 4950},
+    {"year": 2024, "writtenComplaints": 251480, "satisfiedPct": 30, "phsoReceived": 6580, "phsoCompleted": 5120}
+  ],
+  "categoryBreakdown2024": [
+    {"category": "Clinical treatment", "pct": 40},
+    {"category": "Communication & information", "pct": 20},
+    {"category": "Values & behaviours (staff)", "pct": 15},
+    {"category": "Appointments & waiting", "pct": 10},
+    {"category": "Admissions & discharge", "pct": 8},
+    {"category": "Other", "pct": 7}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS Digital",
+        "dataset": "Data on Written Complaints in the NHS",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/data-on-written-complaints-in-the-nhs",
+        "retrieved": "2026-02-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Parliamentary and Health Service Ombudsman",
+        "dataset": "Annual Report and Accounts",
+        "url": "https://www.ombudsman.org.uk/publications",
+        "retrieved": "2026-02-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Care Quality Commission",
+        "dataset": "Community Mental Health Survey / Complaints Handling",
+        "url": "https://www.cqc.org.uk/publications/surveys",
+        "retrieved": "2026-02-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Written complaints data covers all NHS organisations in England including hospital trusts, GP practices, dental practices, and ambulance services. Satisfaction figures are drawn from CQC complainant surveys. PHSO figures cover cases formally received and completed (fully or partly upheld, or not upheld) in each financial year. The 2020 dip reflects reduced NHS activity and complaint submission during COVID-19 restrictions.",
+    "knownIssues": [
+      "COVID-19 caused a significant dip in 2020 complaints — not a genuine improvement",
+      "Complaint categorisation methodology changed slightly in 2019 — minor impact on category breakdown",
+      "PHSO backlog reflects cases carried over between years, not just annual intake vs completion"
+    ]
+  }
+}
