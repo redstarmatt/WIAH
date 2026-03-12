@@ -1,0 +1,110 @@
+{
+  "fatalities": [
+    {"year": 2010, "killed": 111},
+    {"year": 2011, "killed": 107},
+    {"year": 2012, "killed": 118},
+    {"year": 2013, "killed": 109},
+    {"year": 2014, "killed": 113},
+    {"year": 2015, "killed": 100},
+    {"year": 2016, "killed": 102},
+    {"year": 2017, "killed": 109},
+    {"year": 2018, "killed": 105},
+    {"year": 2019, "killed": 99},
+    {"year": 2020, "killed": 102},
+    {"year": 2021, "killed": 99},
+    {"year": 2022, "killed": 104},
+    {"year": 2023, "killed": 104}
+  ],
+  "seriousInjuries": [
+    {"year": 2010, "injuries": 2660},
+    {"year": 2011, "injuries": 3085},
+    {"year": 2012, "injuries": 3222},
+    {"year": 2013, "injuries": 3143},
+    {"year": 2014, "injuries": 3401},
+    {"year": 2015, "injuries": 3339},
+    {"year": 2016, "injuries": 3499},
+    {"year": 2017, "injuries": 4703},
+    {"year": 2018, "injuries": 4950},
+    {"year": 2019, "injuries": 4433},
+    {"year": 2020, "injuries": 4080},
+    {"year": 2021, "injuries": 4353},
+    {"year": 2022, "injuries": 4537},
+    {"year": 2023, "injuries": 4560}
+  ],
+  "ksiPerBillionMiles": [
+    {"year": 2010, "rate": 1060},
+    {"year": 2011, "rate": 1015},
+    {"year": 2012, "rate": 1070},
+    {"year": 2013, "rate": 990},
+    {"year": 2014, "rate": 1020},
+    {"year": 2015, "rate": 945},
+    {"year": 2016, "rate": 930},
+    {"year": 2017, "rate": 980},
+    {"year": 2018, "rate": 960},
+    {"year": 2019, "rate": 920},
+    {"year": 2020, "rate": 870},
+    {"year": 2021, "rate": 840},
+    {"year": 2022, "rate": 860},
+    {"year": 2023, "rate": 850}
+  ],
+  "infrastructureSpend": [
+    {"year": 2015, "spendMillions": 196},
+    {"year": 2016, "spendMillions": 214},
+    {"year": 2017, "spendMillions": 251},
+    {"year": 2018, "spendMillions": 222},
+    {"year": 2019, "spendMillions": 264},
+    {"year": 2020, "spendMillions": 312},
+    {"year": 2021, "spendMillions": 357},
+    {"year": 2022, "spendMillions": 289},
+    {"year": 2023, "spendMillions": 244}
+  ],
+  "byRegion": [
+    {"region": "London", "fatalitiesPerBillionMiles": 8.2},
+    {"region": "South East", "fatalitiesPerBillionMiles": 14.1},
+    {"region": "East of England", "fatalitiesPerBillionMiles": 18.7},
+    {"region": "South West", "fatalitiesPerBillionMiles": 16.9},
+    {"region": "West Midlands", "fatalitiesPerBillionMiles": 15.4},
+    {"region": "East Midlands", "fatalitiesPerBillionMiles": 19.2},
+    {"region": "North West", "fatalitiesPerBillionMiles": 17.8},
+    {"region": "Yorkshire & Humber", "fatalitiesPerBillionMiles": 20.1},
+    {"region": "North East", "fatalitiesPerBillionMiles": 22.3}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Department for Transport",
+        "dataset": "Reported road casualties Great Britain: annual report",
+        "url": "https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Transport",
+        "dataset": "Road traffic estimates: Great Britain",
+        "url": "https://www.gov.uk/government/statistics/road-traffic-estimates-in-great-britain-2023",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Transport",
+        "dataset": "Walking and cycling statistics",
+        "url": "https://www.gov.uk/government/collections/walking-and-cycling-statistics",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Active Travel England",
+        "dataset": "Active travel fund monitoring data",
+        "url": "https://www.gov.uk/government/organisations/active-travel-england",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Fatality and serious injury figures are from DfT STATS19 police-reported data. KSI rates use DfT traffic estimates for cycling miles. Infrastructure spend covers central government cycling and walking investment only; local authority co-funding is excluded. Regional rates use three-year rolling averages to smooth volatility from small numbers. Serious injury figures from 2017 onward use the revised CRASH severity adjustment and are not directly comparable with pre-2017 figures.",
+    "knownIssues": [
+      "CRASH severity adjustment introduced in 2016/17 means pre-2017 serious injury figures are not directly comparable",
+      "Cycling miles estimates have wide confidence intervals due to small sample sizes in the National Travel Survey",
+      "Some regions have very small fatality numbers, making year-on-year rate comparisons volatile"
+    ]
+  }
+}

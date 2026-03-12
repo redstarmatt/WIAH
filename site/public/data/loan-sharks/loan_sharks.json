@@ -1,0 +1,85 @@
+{
+  "illegalLendingVictims": [
+    {"year": 2015, "estimate": 310000},
+    {"year": 2016, "estimate": 360000},
+    {"year": 2017, "estimate": 480000},
+    {"year": 2018, "estimate": 520000},
+    {"year": 2019, "estimate": 580000},
+    {"year": 2020, "estimate": 690000},
+    {"year": 2021, "estimate": 760000},
+    {"year": 2022, "estimate": 860000},
+    {"year": 2023, "estimate": 960000},
+    {"year": 2024, "estimate": 1080000},
+    {"year": 2025, "estimate": 1140000}
+  ],
+  "prosecutions": [
+    {"year": 2015, "count": 98},
+    {"year": 2016, "count": 92},
+    {"year": 2017, "count": 75},
+    {"year": 2018, "count": 80},
+    {"year": 2019, "count": 82},
+    {"year": 2020, "count": 44},
+    {"year": 2021, "count": 62},
+    {"year": 2022, "count": 85},
+    {"year": 2023, "count": 83},
+    {"year": 2024, "count": 84},
+    {"year": 2025, "count": 79}
+  ],
+  "averageDebt": [
+    {"year": 2015, "amount": 1800},
+    {"year": 2016, "amount": 2100},
+    {"year": 2017, "amount": 2400},
+    {"year": 2018, "amount": 2700},
+    {"year": 2019, "amount": 3000},
+    {"year": 2020, "amount": 3400},
+    {"year": 2021, "amount": 3600},
+    {"year": 2022, "amount": 3900},
+    {"year": 2023, "amount": 4200},
+    {"year": 2024, "amount": 4500},
+    {"year": 2025, "amount": 4800}
+  ],
+  "victimsByRegion": [
+    {"region": "North West", "estimatePerMillion": 210},
+    {"region": "West Midlands", "estimatePerMillion": 195},
+    {"region": "Yorkshire & Humber", "estimatePerMillion": 182},
+    {"region": "North East", "estimatePerMillion": 178},
+    {"region": "East Midlands", "estimatePerMillion": 155},
+    {"region": "London", "estimatePerMillion": 148},
+    {"region": "South West", "estimatePerMillion": 112},
+    {"region": "South East", "estimatePerMillion": 98}
+  ],
+  "metadata": {
+    "topic": "loan-sharks",
+    "lastUpdated": "2025-12-01",
+    "sources": [
+      {
+        "name": "England Illegal Money Lending Team (IMLT)",
+        "dataset": "Annual Report — Illegal Money Lending",
+        "url": "https://www.gov.uk/government/publications/illegal-money-lending-team-annual-report",
+        "retrieved": "2025-12-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Centre for Social Justice",
+        "dataset": "Swimming with Sharks — Lending in the shadows",
+        "url": "https://www.centreforsocialjustice.org.uk/library/swimming-with-sharks",
+        "retrieved": "2025-12-01",
+        "frequency": "one-off report"
+      },
+      {
+        "name": "Financial Conduct Authority",
+        "dataset": "Financial Lives Survey",
+        "url": "https://www.fca.org.uk/publications/research/financial-lives",
+        "retrieved": "2025-12-01",
+        "frequency": "biennial"
+      }
+    ],
+    "methodology": "Victim estimates are modelled by the IMLT using intelligence reports, local authority referrals, and survey data. The true figure may be higher due to underreporting — many victims do not identify as victims or fear reprisal. Prosecution figures reflect IMLT-led cases only and do not include broader fraud or harassment charges brought by police forces independently. Average debt figures are derived from IMLT casework data. Regional estimates are based on IMLT intelligence mapping and FCA Financial Lives survey weighting.",
+    "knownIssues": [
+      "Victim estimates are modelled, not directly measured — methodology changed in 2019 to include online lending",
+      "Prosecution figures reflect IMLT-led cases only — broader police action is not captured",
+      "COVID-19 suppressed prosecutions in 2020–21 due to court backlogs",
+      "Regional breakdowns are approximate and based on intelligence referrals, not census-grade data"
+    ]
+  }
+}

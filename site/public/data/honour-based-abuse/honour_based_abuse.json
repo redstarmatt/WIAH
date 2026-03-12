@@ -1,0 +1,88 @@
+{
+  "recordedCrimes": [
+    {"year": 2016, "offences": 2160},
+    {"year": 2017, "offences": 2430},
+    {"year": 2018, "offences": 2700},
+    {"year": 2019, "offences": 2920},
+    {"year": 2020, "offences": 2640},
+    {"year": 2021, "offences": 3180},
+    {"year": 2022, "offences": 3470},
+    {"year": 2023, "offences": 3908},
+    {"year": 2024, "offences": 3652}
+  ],
+  "protectionOrders": [
+    {"year": 2016, "orders": 68},
+    {"year": 2017, "orders": 74},
+    {"year": 2018, "orders": 89},
+    {"year": 2019, "orders": 104},
+    {"year": 2020, "orders": 82},
+    {"year": 2021, "orders": 117},
+    {"year": 2022, "orders": 142},
+    {"year": 2023, "orders": 167},
+    {"year": 2024, "orders": 189}
+  ],
+  "prosecutions": [
+    {"year": 2016, "count": 65},
+    {"year": 2017, "count": 68},
+    {"year": 2018, "count": 70},
+    {"year": 2019, "count": 72},
+    {"year": 2020, "count": 54},
+    {"year": 2021, "count": 61},
+    {"year": 2022, "count": 71},
+    {"year": 2023, "count": 73},
+    {"year": 2024, "count": 72}
+  ],
+  "forcedMarriageReferrals": [
+    {"year": 2016, "referrals": 1428},
+    {"year": 2017, "referrals": 1196},
+    {"year": 2018, "referrals": 1764},
+    {"year": 2019, "referrals": 1355},
+    {"year": 2020, "referrals": 759},
+    {"year": 2021, "referrals": 876},
+    {"year": 2022, "referrals": 971},
+    {"year": 2023, "referrals": 1032},
+    {"year": 2024, "referrals": 1108}
+  ],
+  "byPoliceForce": [
+    {"force": "Metropolitan Police", "offencesPerMillion": 142},
+    {"force": "West Midlands", "offencesPerMillion": 118},
+    {"force": "Greater Manchester", "offencesPerMillion": 96},
+    {"force": "West Yorkshire", "offencesPerMillion": 88},
+    {"force": "Thames Valley", "offencesPerMillion": 62},
+    {"force": "Bedfordshire", "offencesPerMillion": 58},
+    {"force": "Lancashire", "offencesPerMillion": 45},
+    {"force": "South Yorkshire", "offencesPerMillion": 41}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Home Office",
+        "dataset": "Honour Based Abuse Statistics",
+        "url": "https://www.gov.uk/government/collections/honour-based-abuse-and-forced-marriage-data",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Crown Prosecution Service",
+        "dataset": "Violence Against Women and Girls Report",
+        "url": "https://www.cps.gov.uk/publication/violence-against-women-and-girls",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Forced Marriage Unit",
+        "dataset": "Forced Marriage Unit Statistics",
+        "url": "https://www.gov.uk/government/collections/forced-marriage-unit-statistics",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Recorded crimes are police-recorded offences flagged as honour-based by forces in England and Wales. The Home Office began collecting these data in 2016/17. Protection orders refer to Forced Marriage Protection Orders (FMPOs) granted by courts. Prosecution figures are from CPS data on honour-based abuse flagged cases. Forced Marriage Unit referrals cover the joint Home Office/FCO unit. All figures are for England and Wales unless otherwise stated. Recording practices vary between forces, meaning some regional variation reflects differences in identification and flagging rather than true prevalence.",
+    "knownIssues": [
+      "Under-reporting is significant — estimates suggest recorded figures may represent 5–15% of actual prevalence",
+      "Police flagging of HBA varies by force; some forces have dedicated units, others do not",
+      "COVID-19 lockdowns (2020) suppressed reporting as victims had fewer opportunities to seek help",
+      "Methodology for flagging HBA offences was standardised in 2019, affecting pre/post comparability"
+    ]
+  }
+}

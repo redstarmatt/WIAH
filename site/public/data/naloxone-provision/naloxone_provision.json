@@ -1,0 +1,80 @@
+{
+  "packsDistributed": [
+    {"year": 2015, "packs": 12400},
+    {"year": 2016, "packs": 26000},
+    {"year": 2017, "packs": 35200},
+    {"year": 2018, "packs": 50100},
+    {"year": 2019, "packs": 65400},
+    {"year": 2020, "packs": 58700},
+    {"year": 2021, "packs": 80200},
+    {"year": 2022, "packs": 95300},
+    {"year": 2023, "packs": 108000},
+    {"year": 2024, "packs": 124500}
+  ],
+  "overdoseDeaths": [
+    {"year": 2015, "deaths": 3410},
+    {"year": 2016, "deaths": 3700},
+    {"year": 2017, "deaths": 3800},
+    {"year": 2018, "deaths": 4000},
+    {"year": 2019, "deaths": 4200},
+    {"year": 2020, "deaths": 4500},
+    {"year": 2021, "deaths": 4700},
+    {"year": 2022, "deaths": 4907},
+    {"year": 2023, "deaths": 4820},
+    {"year": 2024, "deaths": 4690}
+  ],
+  "communityNaloxoneRate": [
+    {"year": 2015, "ratePerThousandAtRisk": 18},
+    {"year": 2016, "ratePerThousandAtRisk": 34},
+    {"year": 2017, "ratePerThousandAtRisk": 47},
+    {"year": 2018, "ratePerThousandAtRisk": 66},
+    {"year": 2019, "ratePerThousandAtRisk": 86},
+    {"year": 2020, "ratePerThousandAtRisk": 77},
+    {"year": 2021, "ratePerThousandAtRisk": 105},
+    {"year": 2022, "ratePerThousandAtRisk": 125},
+    {"year": 2023, "ratePerThousandAtRisk": 142},
+    {"year": 2024, "ratePerThousandAtRisk": 163}
+  ],
+  "byRegion": [
+    {"region": "North East", "packsPerThousandAtRisk": 210, "deathRate": 10.2},
+    {"region": "North West", "packsPerThousandAtRisk": 185, "deathRate": 8.9},
+    {"region": "Yorkshire & Humber", "packsPerThousandAtRisk": 162, "deathRate": 7.5},
+    {"region": "West Midlands", "packsPerThousandAtRisk": 148, "deathRate": 7.1},
+    {"region": "East Midlands", "packsPerThousandAtRisk": 130, "deathRate": 6.8},
+    {"region": "London", "packsPerThousandAtRisk": 115, "deathRate": 5.4},
+    {"region": "South West", "packsPerThousandAtRisk": 142, "deathRate": 7.8},
+    {"region": "South East", "packsPerThousandAtRisk": 98, "deathRate": 5.1},
+    {"region": "East of England", "packsPerThousandAtRisk": 88, "deathRate": 4.9}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Office for Health Improvement and Disparities (OHID)",
+        "dataset": "Take-home naloxone provision from drug treatment services",
+        "url": "https://www.gov.uk/government/statistics/substance-misuse-treatment-for-adults-statistics-2023-to-2024",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Office for National Statistics (ONS)",
+        "dataset": "Deaths related to drug poisoning in England and Wales",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoninginenglandandwales",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Advisory Council on the Misuse of Drugs (ACMD)",
+        "dataset": "Naloxone availability and access review",
+        "url": "https://www.gov.uk/government/publications/acmd-naloxone-review",
+        "retrieved": "2025-11-15",
+        "frequency": "ad hoc"
+      }
+    ],
+    "methodology": "Packs distributed counts take-home naloxone kits supplied by drug treatment services in England. Overdose deaths use ONS registered deaths where the underlying cause is drug poisoning. Community naloxone rate is packs distributed per 1,000 people in opioid treatment. Regional rates use OHID regional breakdowns.",
+    "knownIssues": [
+      "COVID-19 disrupted treatment services in 2020, causing a temporary dip in naloxone distribution",
+      "2022 death figures include a revised ONS methodology for classifying drug-related deaths",
+      "Naloxone distributed outside drug treatment services (e.g. pharmacies, hostels) is not captured in OHID data"
+    ]
+  }
+}

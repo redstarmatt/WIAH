@@ -1,0 +1,109 @@
+{
+  "registerEntries": [
+    {"year": 2009, "entries": 5889},
+    {"year": 2010, "entries": 5764},
+    {"year": 2011, "entries": 5643},
+    {"year": 2012, "entries": 5531},
+    {"year": 2013, "entries": 5421},
+    {"year": 2014, "entries": 5315},
+    {"year": 2015, "entries": 5226},
+    {"year": 2016, "entries": 5141},
+    {"year": 2017, "entries": 5082},
+    {"year": 2018, "entries": 5017},
+    {"year": 2019, "entries": 4963},
+    {"year": 2020, "entries": 4919},
+    {"year": 2021, "entries": 4895},
+    {"year": 2022, "entries": 4870},
+    {"year": 2023, "entries": 4848}
+  ],
+  "listedBuildingsAtRisk": [
+    {"year": 2000, "count": 4189},
+    {"year": 2002, "count": 3980},
+    {"year": 2004, "count": 3740},
+    {"year": 2006, "count": 3520},
+    {"year": 2008, "count": 3310},
+    {"year": 2010, "count": 3190},
+    {"year": 2012, "count": 3080},
+    {"year": 2014, "count": 2990},
+    {"year": 2016, "count": 2920},
+    {"year": 2018, "count": 2870},
+    {"year": 2020, "count": 2830},
+    {"year": 2022, "count": 2800},
+    {"year": 2023, "count": 2780}
+  ],
+  "conservationAreasAtRisk": [
+    {"year": 2009, "count": 468},
+    {"year": 2010, "count": 470},
+    {"year": 2011, "count": 473},
+    {"year": 2012, "count": 482},
+    {"year": 2013, "count": 490},
+    {"year": 2014, "count": 496},
+    {"year": 2015, "count": 503},
+    {"year": 2016, "count": 512},
+    {"year": 2017, "count": 519},
+    {"year": 2018, "count": 527},
+    {"year": 2019, "count": 535},
+    {"year": 2020, "count": 541},
+    {"year": 2021, "count": 549},
+    {"year": 2022, "count": 556},
+    {"year": 2023, "count": 563}
+  ],
+  "heritageFunding": [
+    {"year": 2010, "fundingMillions": 128},
+    {"year": 2011, "fundingMillions": 119},
+    {"year": 2012, "fundingMillions": 108},
+    {"year": 2013, "fundingMillions": 98},
+    {"year": 2014, "fundingMillions": 93},
+    {"year": 2015, "fundingMillions": 87},
+    {"year": 2016, "fundingMillions": 82},
+    {"year": 2017, "fundingMillions": 79},
+    {"year": 2018, "fundingMillions": 76},
+    {"year": 2019, "fundingMillions": 73},
+    {"year": 2020, "fundingMillions": 68},
+    {"year": 2021, "fundingMillions": 65},
+    {"year": 2022, "fundingMillions": 63},
+    {"year": 2023, "fundingMillions": 61}
+  ],
+  "byRegion": [
+    {"region": "North West", "atRiskCount": 712},
+    {"region": "Yorkshire & Humber", "atRiskCount": 641},
+    {"region": "South West", "atRiskCount": 598},
+    {"region": "East Midlands", "atRiskCount": 487},
+    {"region": "West Midlands", "atRiskCount": 463},
+    {"region": "North East", "atRiskCount": 421},
+    {"region": "South East", "atRiskCount": 398},
+    {"region": "East of England", "atRiskCount": 356},
+    {"region": "London", "atRiskCount": 312}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Historic England",
+        "dataset": "Heritage at Risk Register",
+        "url": "https://historicengland.org.uk/advice/heritage-at-risk/search-register/",
+        "retrieved": "2025-10-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Historic England",
+        "dataset": "Heritage Counts — Listed Buildings at Risk",
+        "url": "https://historicengland.org.uk/research/heritage-counts/",
+        "retrieved": "2025-10-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "DCMS",
+        "dataset": "DCMS Sectors Economic Estimates — Heritage",
+        "url": "https://www.gov.uk/government/statistics/dcms-economic-estimates-2023",
+        "retrieved": "2025-11-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Register entries count includes Grade I and II* listed buildings, scheduled monuments, registered parks and gardens, registered battlefields, protected wreck sites, and conservation areas. Listed buildings at risk is a subset covering Grade I and II* listed buildings only. Conservation areas at risk are tracked separately since 2009. Heritage funding figures are DCMS grant-in-aid to Historic England in real terms (2023 prices).",
+    "knownIssues": [
+      "Register methodology expanded in 2008 to include conservation areas — pre/post totals not directly comparable",
+      "COVID-19 disrupted 2020 and 2021 survey fieldwork — some entries carried forward without re-inspection",
+      "Funding figures are approximate and exclude National Lottery Heritage Fund grants"
+    ]
+  }
+}

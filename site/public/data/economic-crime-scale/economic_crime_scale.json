@@ -1,0 +1,99 @@
+{
+  "totalLosses": [
+    {"year": 2015, "billionGBP": 3.6},
+    {"year": 2016, "billionGBP": 4.1},
+    {"year": 2017, "billionGBP": 5.0},
+    {"year": 2018, "billionGBP": 5.8},
+    {"year": 2019, "billionGBP": 6.3},
+    {"year": 2020, "billionGBP": 5.9},
+    {"year": 2021, "billionGBP": 7.0},
+    {"year": 2022, "billionGBP": 7.5},
+    {"year": 2023, "billionGBP": 8.0},
+    {"year": 2024, "billionGBP": 8.3},
+    {"year": 2025, "billionGBP": 8.7}
+  ],
+  "fraudShareOfCrime": [
+    {"year": 2015, "percent": 32},
+    {"year": 2016, "percent": 34},
+    {"year": 2017, "percent": 36},
+    {"year": 2018, "percent": 37},
+    {"year": 2019, "percent": 38},
+    {"year": 2020, "percent": 40},
+    {"year": 2021, "percent": 39},
+    {"year": 2022, "percent": 40},
+    {"year": 2023, "percent": 40},
+    {"year": 2024, "percent": 41},
+    {"year": 2025, "percent": 42}
+  ],
+  "prosecutionRate": [
+    {"year": 2015, "percent": 8.2},
+    {"year": 2016, "percent": 7.5},
+    {"year": 2017, "percent": 6.8},
+    {"year": 2018, "percent": 6.1},
+    {"year": 2019, "percent": 5.6},
+    {"year": 2020, "percent": 4.8},
+    {"year": 2021, "percent": 4.2},
+    {"year": 2022, "percent": 3.9},
+    {"year": 2023, "percent": 3.5},
+    {"year": 2024, "percent": 3.2},
+    {"year": 2025, "percent": 2.9}
+  ],
+  "authorisedPushPaymentFraud": [
+    {"year": 2017, "millionGBP": 236},
+    {"year": 2018, "millionGBP": 354},
+    {"year": 2019, "millionGBP": 456},
+    {"year": 2020, "millionGBP": 479},
+    {"year": 2021, "millionGBP": 583},
+    {"year": 2022, "millionGBP": 485},
+    {"year": 2023, "millionGBP": 460},
+    {"year": 2024, "millionGBP": 412},
+    {"year": 2025, "millionGBP": 374}
+  ],
+  "bySectorLosses": [
+    {"sector": "Fraud (individuals)", "billionGBP": 3.1},
+    {"sector": "Fraud (businesses)", "billionGBP": 1.6},
+    {"sector": "Money laundering", "billionGBP": 1.8},
+    {"sector": "Cyber-enabled crime", "billionGBP": 1.2},
+    {"sector": "Corruption & bribery", "billionGBP": 0.5},
+    {"sector": "Tax evasion", "billionGBP": 0.5}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "National Crime Agency",
+        "dataset": "National Strategic Assessment of Serious and Organised Crime",
+        "url": "https://www.nationalcrimeagency.gov.uk/what-we-do/crime-threats/fraud-and-economic-crime",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Serious and Organised Crime Strategy: Economic Crime",
+        "url": "https://www.gov.uk/government/publications/serious-and-organised-crime-strategy",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "UK Finance",
+        "dataset": "Annual Fraud Report — Authorised Push Payment Fraud",
+        "url": "https://www.ukfinance.org.uk/policy-and-guidance/reports-and-publications/annual-fraud-report",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Crime Survey for England and Wales — fraud and computer misuse",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice",
+        "retrieved": "2026-02-15",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Total economic crime losses are NCA estimates combining fraud losses to individuals and businesses, money laundering proceeds, cyber-enabled economic crime, corruption, and tax evasion. Fraud share of all crime is derived from the Crime Survey for England and Wales, which includes fraud and computer misuse not captured by police recording. Prosecution rates cover fraud and forgery offences charged as a percentage of recorded fraud offences. APP fraud data is from UK Finance member reporting.",
+    "knownIssues": [
+      "NCA total loss estimates are modelled figures and carry significant uncertainty — the true figure could be substantially higher",
+      "Crime Survey methodology changed in 2016 to include fraud and computer misuse, creating a break in the all-crime series",
+      "Prosecution rates are not directly comparable pre/post 2017 due to changes in Home Office counting rules",
+      "APP fraud figures cover UK Finance members only and likely undercount total APP losses"
+    ]
+  }
+}

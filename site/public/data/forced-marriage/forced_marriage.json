@@ -1,0 +1,87 @@
+{
+  "fmuCases": [
+    {"year": 2011, "cases": 1468},
+    {"year": 2012, "cases": 1485},
+    {"year": 2013, "cases": 1302},
+    {"year": 2014, "cases": 1267},
+    {"year": 2015, "cases": 1220},
+    {"year": 2016, "cases": 1428},
+    {"year": 2017, "cases": 1196},
+    {"year": 2018, "cases": 1764},
+    {"year": 2019, "cases": 1355},
+    {"year": 2020, "cases": 759},
+    {"year": 2021, "cases": 337},
+    {"year": 2022, "cases": 971},
+    {"year": 2023, "cases": 2068}
+  ],
+  "under18Proportion": [
+    {"year": 2011, "percent": 35},
+    {"year": 2012, "percent": 33},
+    {"year": 2013, "percent": 29},
+    {"year": 2014, "percent": 26},
+    {"year": 2015, "percent": 27},
+    {"year": 2016, "percent": 30},
+    {"year": 2017, "percent": 29},
+    {"year": 2018, "percent": 27},
+    {"year": 2019, "percent": 26},
+    {"year": 2020, "percent": 24},
+    {"year": 2021, "percent": 22},
+    {"year": 2022, "percent": 24},
+    {"year": 2023, "percent": 25}
+  ],
+  "protectionOrders": [
+    {"year": 2014, "orders": 62},
+    {"year": 2015, "orders": 101},
+    {"year": 2016, "orders": 136},
+    {"year": 2017, "orders": 119},
+    {"year": 2018, "orders": 121},
+    {"year": 2019, "orders": 139},
+    {"year": 2020, "orders": 82},
+    {"year": 2021, "orders": 97},
+    {"year": 2022, "orders": 158},
+    {"year": 2023, "orders": 203}
+  ],
+  "focusCountries": [
+    {"country": "Pakistan", "percent": 44},
+    {"country": "Bangladesh", "percent": 9},
+    {"country": "Somalia", "percent": 5},
+    {"country": "India", "percent": 4},
+    {"country": "Afghanistan", "percent": 3},
+    {"country": "Iraq", "percent": 3},
+    {"country": "UK (domestic)", "percent": 16},
+    {"country": "Other / unknown", "percent": 16}
+  ],
+  "metadata": {
+    "topic": "forced-marriage",
+    "lastUpdated": "2024-11-15",
+    "sources": [
+      {
+        "name": "Foreign, Commonwealth & Development Office",
+        "dataset": "Forced Marriage Unit Statistics",
+        "url": "https://www.gov.uk/government/collections/forced-marriage-unit-statistics",
+        "retrieved": "2024-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Ministry of Justice",
+        "dataset": "Forced Marriage Protection Orders, Family Court Statistics",
+        "url": "https://www.gov.uk/government/collections/family-court-statistics-quarterly",
+        "retrieved": "2024-11-15",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Home Office",
+        "dataset": "Forced Marriage Offences, Police Recorded Crime",
+        "url": "https://www.gov.uk/government/statistics/police-recorded-crime-open-data-tables",
+        "retrieved": "2024-11-15",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "FMU case figures represent advice and support cases handled by the Forced Marriage Unit, jointly operated by the Home Office and FCDO. They do not represent total prevalence, which is widely believed to be substantially higher. Under-18 proportions are calculated from FMU case data. Forced Marriage Protection Order counts come from Ministry of Justice family court statistics. The 2020-21 drop reflects reduced reporting during COVID-19, not a reduction in forced marriages.",
+    "knownIssues": [
+      "FMU figures capture only cases where victims or professionals contact the unit — true prevalence is unknown",
+      "COVID-19 lockdowns suppressed reporting in 2020-21, creating an artificial dip",
+      "Methodology for counting cases changed slightly in 2018 — minor discontinuity"
+    ]
+  }
+}

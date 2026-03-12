@@ -1,0 +1,92 @@
+{
+  "eheNumbers": [
+    {"year": 2015, "children": 37500},
+    {"year": 2016, "children": 42100},
+    {"year": 2017, "children": 53000},
+    {"year": 2018, "children": 57400},
+    {"year": 2019, "children": 60200},
+    {"year": 2020, "children": 75700},
+    {"year": 2021, "children": 81200},
+    {"year": 2022, "children": 84100},
+    {"year": 2023, "children": 88400},
+    {"year": 2024, "children": 92000},
+    {"year": 2025, "children": 96800}
+  ],
+  "registrationRate": [
+    {"year": 2015, "pct": 18},
+    {"year": 2016, "pct": 21},
+    {"year": 2017, "pct": 25},
+    {"year": 2018, "pct": 28},
+    {"year": 2019, "pct": 31},
+    {"year": 2020, "pct": 35},
+    {"year": 2021, "pct": 38},
+    {"year": 2022, "pct": 41},
+    {"year": 2023, "pct": 43},
+    {"year": 2024, "pct": 48},
+    {"year": 2025, "pct": 52}
+  ],
+  "reasonsForEHE": [
+    {"year": 2019, "schoolAnxiety": 22, "dissatisfactionSEN": 28, "philosophicalChoice": 18, "bullying": 14, "other": 18},
+    {"year": 2020, "schoolAnxiety": 31, "dissatisfactionSEN": 26, "philosophicalChoice": 15, "bullying": 12, "other": 16},
+    {"year": 2021, "schoolAnxiety": 34, "dissatisfactionSEN": 25, "philosophicalChoice": 14, "bullying": 12, "other": 15},
+    {"year": 2022, "schoolAnxiety": 36, "dissatisfactionSEN": 24, "philosophicalChoice": 13, "bullying": 13, "other": 14},
+    {"year": 2023, "schoolAnxiety": 38, "dissatisfactionSEN": 23, "philosophicalChoice": 13, "bullying": 13, "other": 13},
+    {"year": 2024, "schoolAnxiety": 40, "dissatisfactionSEN": 22, "philosophicalChoice": 12, "bullying": 13, "other": 13},
+    {"year": 2025, "schoolAnxiety": 41, "dissatisfactionSEN": 22, "philosophicalChoice": 12, "bullying": 13, "other": 12}
+  ],
+  "sendWithoutEHCP": [
+    {"year": 2017, "pct": 38},
+    {"year": 2018, "pct": 41},
+    {"year": 2019, "pct": 44},
+    {"year": 2020, "pct": 49},
+    {"year": 2021, "pct": 52},
+    {"year": 2022, "pct": 55},
+    {"year": 2023, "pct": 58},
+    {"year": 2024, "pct": 61},
+    {"year": 2025, "pct": 63}
+  ],
+  "byRegion": [
+    {"region": "South West", "ratePer10k": 72},
+    {"region": "East of England", "ratePer10k": 65},
+    {"region": "West Midlands", "ratePer10k": 61},
+    {"region": "North West", "ratePer10k": 58},
+    {"region": "Yorkshire & Humber", "ratePer10k": 55},
+    {"region": "South East", "ratePer10k": 53},
+    {"region": "East Midlands", "ratePer10k": 51},
+    {"region": "North East", "ratePer10k": 48},
+    {"region": "London", "ratePer10k": 34}
+  ],
+  "metadata": {
+    "lastUpdated": "2025-11-15",
+    "sources": [
+      {
+        "name": "Department for Education",
+        "dataset": "Elective Home Education Statistics",
+        "url": "https://www.gov.uk/government/statistics/elective-home-education",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Association of Directors of Children's Services",
+        "dataset": "Elective Home Education Survey",
+        "url": "https://adcs.org.uk/safeguarding/article/elective-home-education-survey",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Office of the Children's Commissioner",
+        "dataset": "Children Not in School",
+        "url": "https://www.childrenscommissioner.gov.uk/report/children-not-in-school/",
+        "retrieved": "2025-11-15",
+        "frequency": "periodic"
+      }
+    ],
+    "methodology": "EHE figures represent children known to local authorities as being electively home educated. The true figure is likely higher as there is no mandatory registration requirement in England. Registration rate represents the proportion of local authorities maintaining a voluntary register. SEND figures for home-educated children are based on ADCS annual surveys and DfE data linkage. Reasons for EHE are drawn from ADCS survey data where local authorities record the primary reason given at the point of deregistration.",
+    "knownIssues": [
+      "No mandatory registration means true EHE numbers are likely 20-40% higher than reported figures",
+      "Methodology for counting EHE children varies between local authorities",
+      "COVID-era surge includes families who later returned children to school — figures from 2020-2021 may overstate sustained EHE",
+      "Reasons data is only available where local authorities record it at point of deregistration — not all do"
+    ]
+  }
+}

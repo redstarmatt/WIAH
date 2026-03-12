@@ -1,0 +1,93 @@
+{
+  "membership": [
+    {"year": 2010, "members": 0.92},
+    {"year": 2011, "members": 0.97},
+    {"year": 2012, "members": 1.02},
+    {"year": 2013, "members": 1.08},
+    {"year": 2014, "members": 1.18},
+    {"year": 2015, "members": 1.35},
+    {"year": 2016, "members": 1.44},
+    {"year": 2017, "members": 1.53},
+    {"year": 2018, "members": 1.63},
+    {"year": 2019, "members": 1.72},
+    {"year": 2020, "members": 1.81},
+    {"year": 2021, "members": 1.89},
+    {"year": 2022, "members": 1.97},
+    {"year": 2023, "members": 2.05},
+    {"year": 2024, "members": 2.14}
+  ],
+  "assets": [
+    {"year": 2010, "billions": 0.9},
+    {"year": 2011, "billions": 1.0},
+    {"year": 2012, "billions": 1.15},
+    {"year": 2013, "billions": 1.3},
+    {"year": 2014, "billions": 1.5},
+    {"year": 2015, "billions": 1.7},
+    {"year": 2016, "billions": 1.9},
+    {"year": 2017, "billions": 2.1},
+    {"year": 2018, "billions": 2.35},
+    {"year": 2019, "billions": 2.6},
+    {"year": 2020, "billions": 2.9},
+    {"year": 2021, "billions": 3.2},
+    {"year": 2022, "billions": 3.5},
+    {"year": 2023, "billions": 3.8},
+    {"year": 2024, "billions": 4.2}
+  ],
+  "loansByPurpose": [
+    {"year": 2015, "consolidation": 38, "homeImprovement": 22, "vehicle": 18, "other": 22},
+    {"year": 2016, "consolidation": 37, "homeImprovement": 23, "vehicle": 18, "other": 22},
+    {"year": 2017, "consolidation": 36, "homeImprovement": 24, "vehicle": 17, "other": 23},
+    {"year": 2018, "consolidation": 35, "homeImprovement": 24, "vehicle": 17, "other": 24},
+    {"year": 2019, "consolidation": 34, "homeImprovement": 25, "vehicle": 16, "other": 25},
+    {"year": 2020, "consolidation": 36, "homeImprovement": 23, "vehicle": 14, "other": 27},
+    {"year": 2021, "consolidation": 37, "homeImprovement": 24, "vehicle": 14, "other": 25},
+    {"year": 2022, "consolidation": 38, "homeImprovement": 23, "vehicle": 15, "other": 24},
+    {"year": 2023, "consolidation": 39, "homeImprovement": 22, "vehicle": 15, "other": 24},
+    {"year": 2024, "consolidation": 40, "homeImprovement": 21, "vehicle": 15, "other": 24}
+  ],
+  "internationalComparison": [
+    {"country": "Ireland", "penetration": 75},
+    {"country": "Canada", "penetration": 33},
+    {"country": "Australia", "penetration": 22},
+    {"country": "USA", "penetration": 37},
+    {"country": "Great Britain", "penetration": 3.2}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Bank of England",
+        "dataset": "Credit Union Quarterly Statistics",
+        "url": "https://www.bankofengland.co.uk/prudential-regulation/credit-unions",
+        "retrieved": "2025-12-01",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Association of British Credit Unions (ABCUL)",
+        "dataset": "Annual Statistics and Trends",
+        "url": "https://www.abcul.org/media-and-research/facts-statistics",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Prudential Regulation Authority",
+        "dataset": "Credit Union Annual Report",
+        "url": "https://www.bankofengland.co.uk/prudential-regulation/publication/credit-union-annual-report",
+        "retrieved": "2025-12-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "World Council of Credit Unions",
+        "dataset": "Statistical Report",
+        "url": "https://www.woccu.org/documents/2024_Statistical_Report",
+        "retrieved": "2025-10-20",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Membership and asset figures are drawn from Bank of England regulatory returns and ABCUL voluntary reporting. Great Britain figures cover England, Scotland and Wales. Northern Ireland credit unions report separately to the PRA. International penetration rates are from the World Council of Credit Unions and use the economically active population as the denominator. Loan purpose breakdowns are estimated from ABCUL member surveys and may not be perfectly representative of all credit unions.",
+    "knownIssues": [
+      "Northern Ireland credit unions are excluded from Great Britain totals; NI has significantly higher penetration (~27%) due to the Irish credit union tradition",
+      "Some smaller credit unions do not report to ABCUL, so voluntary statistics may slightly undercount total membership",
+      "Pre-2012 data uses different reporting standards and is not directly comparable"
+    ]
+  }
+}
