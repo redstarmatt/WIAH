@@ -608,24 +608,29 @@ export default function JusticePage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The justice system has quietly hollowed out. Of an estimated 9.6 million crimes experienced
-              each year, just 388,000 result in a charge — roughly 4 in every 100. A decade ago,
-              about 1 in 6 recorded crimes led to a charge; today it is fewer than 1 in 14. The collapse
-              is steepest where it matters most: sexual offences and burglary both have charge rates below
-              5%, and fraud — now the most common crime type — is barely investigated at all.
-              Police forces cite growing complexity, digital evidence backlogs, and victim attrition, but
-              the scale of the decline points to something structural: a system that has not kept pace with
-              the volume and nature of modern crime.
+              The justice system has quietly hollowed out. Of an estimated 9.6 million crimes
+              experienced each year, just 388,000 result in a charge — roughly 4 in every 100.
+              A decade ago, about 1 in 6 recorded crimes led to a charge; today it is fewer than
+              1 in 14. The collapse is steepest where it matters most: sexual offences and burglary
+              both have charge rates below 5%, and fraud — now the most common crime type — is
+              barely investigated at all. England and Wales lost over 21,000 officers between 2010
+              and 2018; a government uplift programme added roughly 20,000 back by 2023, but numbers
+              have flatlined since. Real-terms legal aid spending has fallen by over 30%, and the
+              number of firms holding contracts has halved, reducing access to representation.
             </p>
             <p>
-              The institutions downstream are equally strained. The Crown Court backlog exceeds 70,000
-              cases, nearly 50% above the government's own target of 53,000. Courts were shuttered
-              for months in 2020, a barristers' strike in 2022 compounded delays, and the average
-              case now takes 18 months from offence to Crown Court completion. Meanwhile, the prison
-              population sits at around 88,000 — near operational capacity — despite overall
-              crime falling for decades. In September 2024, the government began releasing prisoners at
-              the 40% sentence mark under the emergency SDS40 scheme, freeing roughly 38,000 early. The
-              system is simultaneously too slow to process cases and too full to house the convicted.
+              The institutions downstream are equally strained. The Crown Court backlog exceeds
+              70,000 cases, nearly 50% above the government&rsquo;s own target. Courts were shuttered
+              for months in 2020, a barristers&rsquo; strike in 2022 compounded delays, and the
+              average case now takes 18 months from offence to completion. The prison population sits
+              at around 88,000 — near operational capacity — despite overall crime falling for
+              decades; in September 2024, the government began releasing prisoners at the 40% sentence
+              mark under the emergency SDS40 scheme. Knife offences have nearly doubled since 2010 to
+              over 51,000 a year. Around 1.7 million people experience domestic abuse annually; the
+              majority never report to police, and of those who do, only 5 in 100 incidents end in
+              a conviction. Different crime types have moved in very different directions — violence
+              and fraud have risen sharply while robbery has fallen — but the system&rsquo;s capacity
+              to respond has narrowed across the board.
             </p>
             </div>
         </section>
@@ -991,12 +996,7 @@ export default function JusticePage() {
         <div id="sec-domestic-abuse">
           <ScrollReveal>
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-wiah-black mb-2">Domestic Abuse</h2>
-              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-                Around 1.7 million people experience domestic abuse each year in England and Wales.
-                The majority never report to police — and of those that do, only 5 in every 100
-                incidents end in a conviction.
-              </p>
+              <h2 className="text-2xl font-bold text-wiah-black mb-6">Domestic Abuse</h2>
             </div>
           </ScrollReveal>
 
@@ -1032,10 +1032,7 @@ export default function JusticePage() {
         {/* ── Crime Trends by Type ─────────────────────────────────────── */}
         <div id="sec-crime-trends">
           <ScrollReveal>
-          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Crime Trends by Type</h2>
-          <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
-            Different crime types have moved in very different directions since 2002. Violence and fraud have risen sharply, while robbery has fallen. Recording practice changes in 2014 may have inflated some categories.
-          </p>
+          <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-8">Crime Trends by Type</h2>
           </ScrollReveal>
 
           {crimeTrendsByTypeSeries.length > 0 ? (
@@ -1145,12 +1142,7 @@ export default function JusticePage() {
         <div id="sec-police-numbers">
           <ScrollReveal>
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-wiah-black mb-2">Police Officer Numbers</h2>
-              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-                England and Wales lost over 21,000 officers between 2010 and 2018 as austerity cuts
-                reduced forces. A government uplift programme then added back roughly 20,000 officers
-                by 2023, but numbers remain broadly flat since the programme concluded.
-              </p>
+              <h2 className="text-2xl font-bold text-wiah-black mb-6">Police Officer Numbers</h2>
             </div>
           </ScrollReveal>
 
@@ -1179,12 +1171,7 @@ export default function JusticePage() {
         <div id="sec-legal-aid">
           <ScrollReveal>
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-wiah-black mb-2">Legal Aid</h2>
-              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-                Real-terms legal aid spending has fallen by over 30% since 2010, from around £2.1bn
-                to £1.4bn. The number of firms holding legal aid contracts has fallen by half, reducing
-                access to legal representation across England and Wales.
-              </p>
+              <h2 className="text-2xl font-bold text-wiah-black mb-6">Legal Aid</h2>
             </div>
           </ScrollReveal>
 
@@ -1213,13 +1200,7 @@ export default function JusticePage() {
         <div id="sec-knife-crime">
           <ScrollReveal>
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-wiah-black mb-2">Knife Crime</h2>
-              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-                Knife and offensive weapon offences have risen sharply since 2014, reaching over
-                51,000 in 2024 — nearly double the 2010 figure. Knife homicides have fluctuated
-                but remain persistently high. Youth knife crime has fallen somewhat from its 2019
-                peak but remains a serious concern.
-              </p>
+              <h2 className="text-2xl font-bold text-wiah-black mb-6">Knife Crime</h2>
             </div>
           </ScrollReveal>
 

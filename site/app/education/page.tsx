@@ -614,25 +614,30 @@ export default function EducationPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              COVID-19 broke something in school attendance that has not yet mended. Before the pandemic,
-              about 1 in 9 pupils were persistently absent — missing 10% or more of sessions. By
-              2023-24 it was 1 in 5, and the rate has barely improved since. Anxiety, disengagement, and
-              a cultural shift in attitudes to attendance all play a role, but the pattern is not evenly
-              distributed: disadvantaged pupils are absent at far higher rates, and absence feeds directly
-              into attainment. The disadvantage gap index has risen every year since 2020 and now stands
-              at its highest in over a decade. Just 25% of disadvantaged pupils achieve grade 5 or above
-              in English and maths, compared with 52% of their peers. The progress made through the 2010s
-              in narrowing that gap has been erased.
+              COVID-19 broke something in school attendance that has not yet mended. Before the
+              pandemic, about 1 in 9 pupils were persistently absent. By 2023-24 it was 1 in 5.
+              Disadvantaged pupils are absent at far higher rates, and absence feeds directly into
+              attainment: the disadvantage gap index has risen every year since 2020 to its highest
+              in over a decade. Just 25% of disadvantaged pupils achieve grade 5 or above in English
+              and maths, compared with 52% of their peers. The progress made through the 2010s in
+              narrowing that gap has been erased.
             </p>
             <p>
-              The SEND system has moved from strain to statutory failure. The number of children with
-              Education, Health and Care Plans has nearly tripled in a decade — from around 240,000
-              in 2015 to over 630,000 — driven by rising identification of autism, ADHD, and
-              speech and language needs. Local authorities cannot keep pace: fewer than half of new EHCPs
-              are issued within the 20-week legal deadline. Families who appeal to the SEND tribunal win
-              in almost every case, which suggests that initial refusals are routinely wrong rather than
-              borderline. The system is generating delay, conflict, and cost while failing the children
-              it was designed to protect.
+              The SEND system has moved from strain to statutory failure. Children with Education,
+              Health and Care Plans have nearly tripled from 240,000 in 2015 to over 630,000. Fewer
+              than half of new EHCPs are issued within the 20-week legal deadline, and families who
+              appeal win in almost every case — suggesting initial refusals are routinely wrong.
+              Teacher vacancies have tripled since 2010 and the pupil-teacher ratio has risen
+              steadily. Revenue funding per pupil fell 14% in real terms between 2009 and 2017
+              before recovering. CAMHS referrals have nearly doubled since 2016, with over a quarter
+              rejected at the gate and more than half of those accepted waiting over 18 weeks.
+            </p>
+            <p>
+              Not everything points downward. The share of schools rated Good or Outstanding by
+              Ofsted has risen from 65% in 2012 to around 89% in 2024, though many schools held
+              grades from inspections a decade old until a 2023 policy change brought them back into
+              the cycle. Internationally, the UK performs above the OECD average in PISA 2022
+              reading and science scores — a solid if unspectacular position.
             </p>
             </div>
         </section>
@@ -927,11 +932,7 @@ export default function EducationPage() {
         {/* Chart 6: Teacher vacancy rate */}
         <div id="sec-workforce">
         <ScrollReveal>
-        <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Teacher Workforce</h2>
-        <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
-          Teacher vacancies have tripled since 2010. The pupil-teacher ratio has risen steadily,
-          meaning fewer teachers serve more pupils. Workload and pay remain the primary barriers to recruitment.
-        </p>
+        <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-8">Teacher Workforce</h2>
         </ScrollReveal>
 
         <ScrollReveal>
@@ -1093,12 +1094,7 @@ export default function EducationPage() {
         <div id="sec-school-funding">
           <ScrollReveal>
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-wiah-black mb-2">School Funding</h2>
-              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-                Revenue funding per pupil fell 14% in real terms between 2009 and 2017 before
-                recovering. In nominal terms spending looks like it has risen substantially — but
-                inflation tells a different story.
-              </p>
+              <h2 className="text-2xl font-bold text-wiah-black mb-6">School Funding</h2>
             </div>
           </ScrollReveal>
 
@@ -1125,11 +1121,7 @@ export default function EducationPage() {
         <div id="sec-pisa">
           <ScrollReveal>
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-wiah-black mb-2">International Comparison</h2>
-              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-                How does the UK compare internationally? PISA 2022 tested 15-year-olds across
-                OECD member countries in reading, mathematics, and science.
-              </p>
+              <h2 className="text-2xl font-bold text-wiah-black mb-6">International Comparison</h2>
             </div>
           </ScrollReveal>
 
@@ -1267,13 +1259,7 @@ export default function EducationPage() {
         <div id="sec-camhs">
           <ScrollReveal>
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-wiah-black mb-2">Children&rsquo;s Mental Health Services</h2>
-              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-                Referrals to Child and Adolescent Mental Health Services have nearly doubled since 2016,
-                driven by rising rates of anxiety, depression, and eating disorders in young people.
-                The pandemic accelerated demand sharply. More than a quarter of referrals are rejected
-                at the gate, and of those accepted, over half wait more than 18 weeks for treatment.
-              </p>
+              <h2 className="text-2xl font-bold text-wiah-black mb-6">Children&rsquo;s Mental Health Services</h2>
             </div>
           </ScrollReveal>
 
@@ -1322,14 +1308,7 @@ export default function EducationPage() {
         <div id="sec-ofsted">
           <ScrollReveal>
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-wiah-black mb-2">Ofsted Inspection Grades</h2>
-              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-                The share of schools rated Good or Outstanding by Ofsted has risen steadily from 65%
-                in 2012 to around 89% in 2024. This is one of the clearest positive trends in English
-                education. Caution is warranted, however: many schools held Outstanding grades from
-                inspections a decade old, and a 2023 policy change finally brought them back into
-                the cycle.
-              </p>
+              <h2 className="text-2xl font-bold text-wiah-black mb-6">Ofsted Inspection Grades</h2>
             </div>
           </ScrollReveal>
 

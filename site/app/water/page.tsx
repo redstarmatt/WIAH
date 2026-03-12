@@ -435,24 +435,26 @@ export default function WaterPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The 3.6 million hours of sewage discharge recorded in 2024 demand careful reading. Monitor
-              coverage expanded from 862 overflows in 2016 to 14,182 (100%) in 2024, so much of the
-              headline increase reflects better measurement, not more sewage. The more telling metric
-              — average spills per overflow, which controls for that expansion — peaked at
-              35 in 2019 and sat at around 32 in 2024. Each overflow still discharges, on average, once
-              every 11 days. These were designed as emergency valves; the data shows they operate
-              routinely. Meanwhile, only 16% of English surface waters meet good ecological status,
+              The 3.6 million hours of sewage discharge recorded in 2024 demand careful reading.
+              Monitor coverage expanded from 862 overflows in 2016 to 14,182 (100%) in 2024, so much
+              of the headline increase reflects better measurement. The more telling metric — average
+              spills per overflow — peaked at 35 in 2019 and sat at around 32 in 2024. Each overflow
+              still discharges, on average, once every 11 days. These were designed as emergency valves;
+              they operate routinely. Only 16% of English surface waters meet good ecological status,
               down from 26% in 2009, and no full reclassification has been done since 2019 despite a
-              legal 2027 deadline.
+              legal 2027 deadline. Over 83% of rivers now fail nitrate standards, driven largely by
+              agricultural run-off that fuels algal blooms and depletes oxygen.
             </p>
             <p>
-              Bathing water tells a similar story of recent reversal. Sites rated &ldquo;excellent&rdquo;
-              peaked at 72% in 2022 but fell to 66% by 2025, while &ldquo;poor&rdquo; sites nearly
-              doubled from 3.8% to 7.1% over the past decade. Heavier rainfall from climate change is
-              part of the explanation, but the financial data points to something structural: water
-              companies paid out billions in dividends while infrastructure deteriorated. Ofwat has now
-              approved record investment plans for 2025–2030, but the gap between shareholder
-              returns and capital spending over the past three decades is difficult to overlook.
+              Bathing water tells a similar story. Sites rated &ldquo;excellent&rdquo; peaked at 72% in
+              2022 but fell to 66% by 2025, while &ldquo;poor&rdquo; sites nearly doubled from 3.8% to
+              7.1%. Heavier rainfall from climate change is part of the explanation, but the financial
+              data points to something structural: water companies have paid £52.8 billion in dividends
+              since privatisation in 1989 while infrastructure deteriorated. Ofwat has approved record
+              investment for 2025–2030, but the gap between shareholder returns and capital spending
+              over three decades is difficult to overlook. One genuine success: tap water quality
+              compliance remains at 99.9% or above every year — a testament to treatment
+              infrastructure, even as the rivers and coasts tell a different story.
             </p>
             </div>
         </section>
@@ -782,12 +784,7 @@ export default function WaterPage() {
 
         {/* ── Finance Section: Metric Cards & Context ────────────────── */}
         <ScrollReveal>
-        <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Company Finances & Investment</h2>
-        <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
-          Water companies have paid £52.8 billion in dividends since privatisation in 1989 —
-          while capital investment in infrastructure has often lagged behind need. The scale of this
-          imbalance, and its consequences for sewage and leakage, demands scrutiny.
-        </p>
+        <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-8">Company Finances &amp; Investment</h2>
         </ScrollReveal>
 
         <ScrollReveal>
@@ -918,14 +915,7 @@ export default function WaterPage() {
         <div id="sec-nitrogen">
 
         <ScrollReveal>
-          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Nitrogen Pollution in Rivers</h2>
-          <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
-            Agricultural run-off is the leading source of nitrate pollution in England's waterways.
-            Over 83% of rivers now fail nitrate standards — a steady rise from 78% in 2015. Designated
-            Nitrate Vulnerable Zones, covering 55–60% of England, are intended to restrict fertiliser use
-            near watercourses, but river quality continues to worsen. Nitrogen and phosphorus from farming
-            fuel algal blooms that deplete oxygen and destroy aquatic life.
-          </p>
+          <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-8">Nitrogen Pollution in Rivers</h2>
         </ScrollReveal>
 
         {nitrogenCombinedSeries.length > 0 ? (
@@ -953,14 +943,7 @@ export default function WaterPage() {
         <div id="sec-drinking-water">
 
         <ScrollReveal>
-          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Drinking Water Quality</h2>
-          <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
-            Tap water in England is among the cleanest in the world. The Drinking Water Inspectorate
-            reports compliance of 99.9% or above every year — meaning the vast majority of samples meet
-            all regulatory standards at the point of supply. This is a genuine success story of water
-            treatment infrastructure. Variation between companies is small, though South West Water
-            consistently performs below the national average.
-          </p>
+          <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-8">Drinking Water Quality</h2>
         </ScrollReveal>
 
         {drinkingWaterSeries.length > 0 ? (

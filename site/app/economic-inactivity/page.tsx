@@ -185,11 +185,7 @@ export default function EconomicInactivityPage() {
         <ScrollReveal>
         <div id="sec-inactivity" className="mb-12">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-wiah-black mb-2">Total Inactivity Trend</h2>
-            <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-              Economic inactivity remained broadly stable at 8.4 million for five years until 2020,
-              when the pandemic and lockdown triggered a sharp rise. Recovery has been slower than in other G7 nations.
-            </p>
+            <h2 className="text-2xl font-bold text-wiah-black mb-6">Total Inactivity Trend</h2>
           </div>
 
           {inactivitySeries.length > 0 ? (
@@ -215,11 +211,7 @@ export default function EconomicInactivityPage() {
         <ScrollReveal>
         <div id="sec-sickness" className="mb-12">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-wiah-black mb-2">Long-term Sickness</h2>
-            <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-              The number of working-age people out of work due to long-term illness has nearly doubled
-              since 2019, from 2.0 million to 2.8 million. This is now the single largest driver of economic inactivity.
-            </p>
+            <h2 className="text-2xl font-bold text-wiah-black mb-6">Long-term Sickness</h2>
           </div>
 
           {sickSeries.length > 0 ? (
@@ -244,11 +236,7 @@ export default function EconomicInactivityPage() {
         <ScrollReveal>
         <div id="sec-reasons" className="mb-12">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-wiah-black mb-2">Reasons for Inactivity</h2>
-            <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-              Working-age people are economically inactive for varied reasons. Long-term sickness is now the largest category,
-              but caring responsibilities and full-time study remain significant.
-            </p>
+            <h2 className="text-2xl font-bold text-wiah-black mb-6">Reasons for Inactivity</h2>
           </div>
 
           {data ? (

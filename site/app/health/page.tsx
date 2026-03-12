@@ -712,24 +712,34 @@ export default function HealthPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The NHS is caught in a system-wide capacity squeeze. The waiting list has grown from 4.4 million
-              before the pandemic to 7.64 million, with over 300,000 people waiting more than a year for
-              treatment. Behind that backlog lies a chain of bottlenecks: hospitals running at 92% bed
-              occupancy (above the 85% safe maximum) with roughly 100,000 beds — down from 145,000 in
-              2010 — which means ambulances queue outside full A&amp;E departments, pushing Cat 2 response
-              times to 35 minutes against an 18-minute target. At the front door of the system, average GP
-              waits have tripled from under 7 days in 2013 to 21 days, while each GP now covers around 2,300
-              patients. The NHS is delivering 76 million appointments a month. The problem is not effort but
-              arithmetic: demand has outgrown capacity at every stage.
+              The NHS waiting list has grown from 4.4 million before the pandemic to 7.6 million, with
+              over 300,000 people waiting more than a year. The 18-week treatment target has not been met
+              since 2016. Behind the backlog lies a chain of bottlenecks: hospitals at 92% bed occupancy
+              (above the 85% safe maximum), roughly 100,000 beds down from 145,000 in 2010, ambulances
+              queuing outside full A&amp;E departments. Cat 2 response times have doubled to 35 minutes
+              against an 18-minute target. The four-hour A&amp;E standard has not been met since 2015;
+              in 2024, only 70% of patients were seen within four hours. At the front door, average GP
+              waits have tripled to 21 days and each GP now covers around 2,300 patients. The problem is
+              not effort — 76 million appointments a month — but arithmetic: demand has outgrown
+              capacity at every stage.
             </p>
             <p>
-              Life expectancy reveals something deeper than an operational crisis. For decades, the UK added
-              roughly 0.2 years of life per year — steady, predictable progress. After 2011, that
-              improvement stalled almost completely. Male life expectancy sits at 79.0 years, female at
-              83.0. COVID caused a visible dip, but the flatlining began nearly a decade earlier and has not
-              recovered. The UK is not alone in this — similar slowdowns have appeared across wealthy
-              nations — but the stall coincided with a period of austerity-driven cuts to public health,
-              social care, and local government services. The causes remain debated; the trend does not.
+              The strain reaches well beyond hospitals. The proportion of adults seen by an NHS dentist
+              has fallen from 57% to 49% in seven years. Referrals to NHS talking therapies have grown
+              from 1.1 million to 1.6 million since 2016, with the recovery rate slowly improving from
+              45% to 52%. The waiting list is not experienced equally: people in the most deprived areas
+              wait around four weeks longer than those in the least deprived, a gap that has doubled
+              since 2019. And the UK lost its WHO measles elimination status in 2019 after MMR
+              vaccination rates fell below the 95% herd immunity threshold — a 2024 outbreak in the
+              West Midlands produced over 2,000 confirmed cases.
+            </p>
+            <p>
+              Life expectancy reveals something deeper than an operational crisis. For decades, the UK
+              added roughly 0.2 years of life per year. After 2011, that improvement stalled. Male life
+              expectancy sits at 79.0 years, female at 83.0. COVID caused a visible dip, but the
+              flatlining began nearly a decade earlier. The UK is not alone — similar slowdowns appeared
+              across wealthy nations — but the stall coincided with austerity-driven cuts to public
+              health, social care, and local government. The causes remain debated; the trend does not.
             </p>
             </div>
         </section>
@@ -851,11 +861,7 @@ export default function HealthPage() {
         {/* ── NHS Waiting Lists ─────────────────────────────────────────── */}
         <div id="sec-waiting">
           <ScrollReveal>
-          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">NHS Waiting Lists</h2>
-          <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
-            7.3 million people are waiting for NHS treatment. The 18-week target — that 92% of patients
-            should be seen within 18 weeks of referral — has not been met since 2016.
-          </p>
+          <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-8">NHS Waiting Lists</h2>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -996,23 +1002,6 @@ export default function HealthPage() {
         ) : (
           <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
         )}
-        <ScrollReveal>
-        <div className="max-w-2xl mb-16">
-          <p className="text-base text-wiah-black leading-[1.7] mb-4">
-            UK life expectancy at birth rose steadily throughout the twentieth century, driven by
-            improvements in infant and child mortality, better nutrition, and advances in medicine.
-            Male life expectancy increased from around 70 years in the early 1980s to nearly 80
-            by 2014.
-          </p>
-          <p className="text-base text-wiah-black leading-[1.7]">
-            Since 2011, progress has stalled. The rate of improvement slowed dramatically,
-            with some years recording slight falls. The COVID-19 pandemic caused a sharp drop
-            in 2020 — male life expectancy fell by 1.2 years in a single year. Recovery
-            since 2021 has been partial. The most recent data (2022–2024) shows male
-            life expectancy at 79.1 years and female at 83.0 years, below the pre-pandemic peak.
-          </p>
-        </div>
-        </ScrollReveal>
         </div>{/* end sec-life-expectancy */}
 
         {/* Chart 2: GP appointment wait */}
@@ -1336,12 +1325,7 @@ export default function HealthPage() {
         {/* ── A&E Performance ──────────────────────────────────────────────── */}
         <section id="sec-ae" className="mb-16">
           <ScrollReveal>
-            <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">A&amp;E Performance</h2>
-            <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
-              The four-hour A&amp;E standard — that 95% of patients should be seen, treated, and
-              discharged or admitted within four hours — has not been met since 2015. In 2024,
-              only 70% of patients were seen within four hours.
-            </p>
+            <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-8">A&amp;E Performance</h2>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -1394,11 +1378,7 @@ export default function HealthPage() {
         {/* ── NHS Dentistry ─────────────────────────────────────────────────── */}
         <section id="sec-dental" className="mb-16">
           <ScrollReveal>
-            <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">NHS Dentistry</h2>
-            <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
-              The proportion of adults seen by an NHS dentist has fallen from 57% in 2017/18 to 49%
-              in 2024/25. Access for children has also declined, from 73% to 65% over the same period.
-            </p>
+            <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-8">NHS Dentistry</h2>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -1427,13 +1407,7 @@ export default function HealthPage() {
         {/* ── NHS Talking Therapies ─────────────────────────────────────────── */}
         <section id="sec-talking-therapies" className="mb-16">
           <ScrollReveal>
-            <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">NHS Talking Therapies</h2>
-            <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
-              Referrals to NHS talking therapies (IAPT / NHS Talking Therapies for Anxiety and
-              Depression) have grown from 1.1 million in 2016 to 1.6 million in 2023. The recovery
-              rate — the share of patients who move from above to below clinical caseness — has
-              improved from 45% to 52%.
-            </p>
+            <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-8">NHS Talking Therapies</h2>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -1481,13 +1455,7 @@ export default function HealthPage() {
         {/* ── Waiting List Inequality ────────────────────────────────────── */}
         <section id="sec-inequality" className="mb-12">
           <ScrollReveal>
-          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Waiting List Inequality</h2>
-          <p className="text-base text-wiah-black leading-[1.7] max-w-2xl mb-6">
-            The NHS waiting list is not experienced equally. People in the most deprived areas wait
-            around 4 weeks longer than those in the least deprived — a gap that has doubled since
-            2019 as the backlog grew. The inequality is structural: more deprived areas have higher
-            rates of complex conditions and fewer alternatives to NHS care.
-          </p>
+          <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-8">Waiting List Inequality</h2>
 
           {inequalityData && inequalityData.national.waitByDeprivation.data.length > 0 && (
             <div className="mb-12">
@@ -1545,13 +1513,7 @@ export default function HealthPage() {
         {/* ── Measles & Vaccination ──────────────────────────────────────── */}
         <section id="sec-measles" className="mb-16">
           <ScrollReveal>
-            <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Measles &amp; Vaccination</h2>
-            <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
-              The UK lost its WHO measles elimination status in 2019 after vaccination rates fell
-              below the 95% herd immunity threshold. In 2024, a major outbreak centred on the West
-              Midlands produced over 2,000 confirmed cases — the highest annual total since the
-              pre-2015 outbreaks. MMR dose 2 coverage has never exceeded 88% nationally.
-            </p>
+            <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-8">Measles &amp; Vaccination</h2>
           </ScrollReveal>
 
           <ScrollReveal>
