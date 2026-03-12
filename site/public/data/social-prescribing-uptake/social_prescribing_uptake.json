@@ -1,0 +1,57 @@
+{
+  "referrals": [
+    {"year": 2019, "count": 234000, "note": "NHS Long Term Plan launch year"},
+    {"year": 2020, "count": 380000},
+    {"year": 2021, "count": 560000},
+    {"year": 2022, "count": 840000},
+    {"year": 2023, "count": 1100000},
+    {"year": 2024, "count": 1300000}
+  ],
+  "linkWorkers": [
+    {"year": 2019, "count": 1000, "note": "baseline at programme launch"},
+    {"year": 2020, "count": 1400},
+    {"year": 2021, "count": 1900},
+    {"year": 2022, "count": 2500},
+    {"year": 2023, "count": 2980},
+    {"year": 2024, "count": 3300}
+  ],
+  "gpAppointmentsSaved": [
+    {"year": 2020, "count": 120000},
+    {"year": 2021, "count": 310000},
+    {"year": 2022, "count": 520000},
+    {"year": 2023, "count": 740000},
+    {"year": 2024, "count": 930000}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "Social Prescribing Summary Data",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/social-prescribing",
+        "retrieved": "2026-03-01",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "National Academy for Social Prescribing (NASP)",
+        "dataset": "Annual Report and Workforce Data",
+        "url": "https://socialprescribingacademy.org.uk/",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "University College London (UCL)",
+        "dataset": "Social Prescribing Evidence Review",
+        "url": "https://www.ucl.ac.uk/epidemiology-health-care/research/behavioural-science-and-health/social-prescribing",
+        "retrieved": "2026-03-01",
+        "frequency": "periodic"
+      }
+    ],
+    "methodology": "Referral counts are based on NHS England quarterly social prescribing data collected via the NHS Community Referral System. Link worker headcount is sourced from NASP workforce surveys and NHS England returns. GP appointments saved are estimated using NHS England modelling based on reduced repeat attendance among referred patients. Figures for deprived areas use the Index of Multiple Deprivation (IMD) deciles 1-3.",
+    "knownIssues": [
+      "Referral data collection was inconsistent in 2019-2020 as PCNs established reporting processes",
+      "GP appointments saved is a modelled estimate, not a directly measured figure",
+      "Link worker headcount includes some part-time and voluntary roles",
+      "COVID-19 disrupted both referral pathways and community activities in 2020-2021"
+    ]
+  }
+}

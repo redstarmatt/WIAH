@@ -1,0 +1,79 @@
+{
+  "prevalence": [
+    {"year": 2016, "oftenAlwaysPct": 5.0, "sometimesPct": 16.2},
+    {"year": 2017, "oftenAlwaysPct": 5.0, "sometimesPct": 16.4},
+    {"year": 2018, "oftenAlwaysPct": 5.4, "sometimesPct": 16.8},
+    {"year": 2019, "oftenAlwaysPct": 5.6, "sometimesPct": 17.1},
+    {"year": 2020, "oftenAlwaysPct": 7.2, "sometimesPct": 22.3},
+    {"year": 2021, "oftenAlwaysPct": 7.8, "sometimesPct": 23.5},
+    {"year": 2022, "oftenAlwaysPct": 6.9, "sometimesPct": 20.1},
+    {"year": 2023, "oftenAlwaysPct": 6.8, "sometimesPct": 19.8},
+    {"year": 2024, "oftenAlwaysPct": 7.0, "sometimesPct": 19.5}
+  ],
+  "byAgeGroup": [
+    {"year": 2016, "age16to24": 6.1, "age25to34": 5.3, "age35to54": 4.8, "age55to69": 4.2, "age70plus": 5.8},
+    {"year": 2017, "age16to24": 6.3, "age25to34": 5.4, "age35to54": 4.7, "age55to69": 4.3, "age70plus": 5.9},
+    {"year": 2018, "age16to24": 7.0, "age25to34": 5.8, "age35to54": 5.1, "age55to69": 4.5, "age70plus": 6.1},
+    {"year": 2019, "age16to24": 7.4, "age25to34": 6.0, "age35to54": 5.3, "age55to69": 4.6, "age70plus": 6.3},
+    {"year": 2020, "age16to24": 11.8, "age25to34": 8.2, "age35to54": 6.4, "age55to69": 5.3, "age70plus": 7.1},
+    {"year": 2021, "age16to24": 12.6, "age25to34": 8.9, "age35to54": 7.0, "age55to69": 5.7, "age70plus": 7.5},
+    {"year": 2022, "age16to24": 10.8, "age25to34": 7.6, "age35to54": 6.1, "age55to69": 5.1, "age70plus": 6.8},
+    {"year": 2023, "age16to24": 10.4, "age25to34": 7.3, "age35to54": 6.0, "age55to69": 5.0, "age70plus": 6.6},
+    {"year": 2024, "age16to24": 10.0, "age25to34": 7.5, "age35to54": 6.2, "age55to69": 5.1, "age70plus": 6.9}
+  ],
+  "socialInfrastructure": [
+    {"year": 2010, "pubs": 52500, "libraries": 4290, "youthCentres": 2680, "communityCentres": 9200},
+    {"year": 2011, "pubs": 51900, "libraries": 4265, "youthCentres": 2580, "communityCentres": 9100},
+    {"year": 2012, "pubs": 51200, "libraries": 4180, "youthCentres": 2410, "communityCentres": 8950},
+    {"year": 2013, "pubs": 50600, "libraries": 4085, "youthCentres": 2220, "communityCentres": 8800},
+    {"year": 2014, "pubs": 49700, "libraries": 3976, "youthCentres": 2060, "communityCentres": 8650},
+    {"year": 2015, "pubs": 48800, "libraries": 3850, "youthCentres": 1910, "communityCentres": 8500},
+    {"year": 2016, "pubs": 47800, "libraries": 3700, "youthCentres": 1760, "communityCentres": 8320},
+    {"year": 2017, "pubs": 47200, "libraries": 3583, "youthCentres": 1630, "communityCentres": 8140},
+    {"year": 2018, "pubs": 46700, "libraries": 3480, "youthCentres": 1520, "communityCentres": 7970},
+    {"year": 2019, "pubs": 46100, "libraries": 3394, "youthCentres": 1410, "communityCentres": 7800},
+    {"year": 2020, "pubs": 44100, "libraries": 3300, "youthCentres": 1310, "communityCentres": 7500},
+    {"year": 2021, "pubs": 42800, "libraries": 3216, "youthCentres": 1220, "communityCentres": 7300},
+    {"year": 2022, "pubs": 41200, "libraries": 3140, "youthCentres": 1150, "communityCentres": 7100},
+    {"year": 2023, "pubs": 40000, "libraries": 3070, "youthCentres": 1090, "communityCentres": 6920},
+    {"year": 2024, "pubs": 39000, "libraries": 2960, "youthCentres": 1020, "communityCentres": 6750}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Opinions and Lifestyle Survey — Loneliness",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/datasets/lonelinessrates",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "DCMS",
+        "dataset": "Community Life Survey",
+        "url": "https://www.gov.uk/government/collections/community-life-survey",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "CIPFA",
+        "dataset": "Public Library Statistics",
+        "url": "https://www.cipfa.org/services/comparative-profiles/public-libraries",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "British Beer and Pub Association / ONS",
+        "dataset": "Pub closure statistics",
+        "url": "https://beerandpub.com/statistics/",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Loneliness prevalence from ONS direct measurement using the UCLA three-item loneliness scale, introduced to the Community Life Survey in 2016/17. Social infrastructure counts compiled from CIPFA library data, BBPA pub statistics, YMCA youth service reports, and NCVO community asset data.",
+    "knownIssues": [
+      "COVID-19 lockdowns in 2020-21 caused a structural break in loneliness measurement — survey mode shifted from face-to-face to telephone/online",
+      "Youth centre and community centre counts are estimates compiled from multiple sources and may undercount informal community spaces",
+      "The 2020 pub count includes temporary closures during lockdown; permanent closures are lower"
+    ]
+  }
+}

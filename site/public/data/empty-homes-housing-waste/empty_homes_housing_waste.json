@@ -1,0 +1,55 @@
+{
+  "emptyHomes": [
+    {"year": 2010, "total": 737049},
+    {"year": 2011, "total": 720178},
+    {"year": 2012, "total": 710350},
+    {"year": 2013, "total": 635127},
+    {"year": 2014, "total": 610123},
+    {"year": 2015, "total": 600894},
+    {"year": 2016, "total": 605891},
+    {"year": 2017, "total": 605928},
+    {"year": 2018, "total": 634453},
+    {"year": 2019, "total": 648114},
+    {"year": 2020, "total": 665265},
+    {"year": 2021, "total": 676304},
+    {"year": 2022, "total": 757693},
+    {"year": 2023, "total": 919563},
+    {"year": 2024, "total": 1022433}
+  ],
+  "longTermEmpty": [
+    {"year": 2010, "count": 303881},
+    {"year": 2011, "count": 279781},
+    {"year": 2012, "count": 259728},
+    {"year": 2013, "count": 232630},
+    {"year": 2014, "count": 216050},
+    {"year": 2015, "count": 205821},
+    {"year": 2016, "count": 200625},
+    {"year": 2017, "count": 205293},
+    {"year": 2018, "count": 216186},
+    {"year": 2019, "count": 225845},
+    {"year": 2020, "count": 238306},
+    {"year": 2021, "count": 248149},
+    {"year": 2022, "count": 261189},
+    {"year": 2023, "count": 284542},
+    {"year": 2024, "count": 309856}
+  ],
+  "councilTaxPremium": [
+    {"year": 2019, "properties": 71823},
+    {"year": 2020, "properties": 82419},
+    {"year": 2021, "properties": 95784},
+    {"year": 2022, "properties": 108326},
+    {"year": 2023, "properties": 124510},
+    {"year": 2024, "properties": 152932}
+  ],
+  "byRegion": [
+    {"region": "North West", "emptyRate": 4.2, "longTermEmpty": 42310},
+    {"region": "Yorkshire & Humber", "emptyRate": 3.9, "longTermEmpty": 34520},
+    {"region": "North East", "emptyRate": 3.7, "longTermEmpty": 21890},
+    {"region": "West Midlands", "emptyRate": 3.4, "longTermEmpty": 28760},
+    {"region": "East Midlands", "emptyRate": 2.9, "longTermEmpty": 22140},
+    {"region": "London", "emptyRate": 2.7, "longTermEmpty": 38450},
+    {"region": "South West", "emptyRate": 2.5, "longTermEmpty": 24680},
+    {"region": "South East", "emptyRate": 2.3, "longTermEmpty": 31240},
+    {"region": "East of England", "emptyRate": 2.1, "longTermEmpty": 19870}
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "childrenInCare": [
+    {"year": 2010, "count": 64400},
+    {"year": 2011, "count": 65520},
+    {"year": 2012, "count": 67050},
+    {"year": 2013, "count": 68060},
+    {"year": 2014, "count": 68840},
+    {"year": 2015, "count": 69540},
+    {"year": 2016, "count": 70440},
+    {"year": 2017, "count": 72670},
+    {"year": 2018, "count": 75420},
+    {"year": 2019, "count": 78150},
+    {"year": 2020, "count": 80080},
+    {"year": 2021, "count": 80850},
+    {"year": 2022, "count": 82170},
+    {"year": 2023, "count": 83840},
+    {"year": 2024, "count": 81770}
+  ],
+  "fosterCarers": [
+    {"year": 2010, "count": 44625},
+    {"year": 2011, "count": 45460},
+    {"year": 2012, "count": 46180},
+    {"year": 2013, "count": 47195},
+    {"year": 2014, "count": 48385},
+    {"year": 2015, "count": 49185},
+    {"year": 2016, "count": 49520},
+    {"year": 2017, "count": 49690},
+    {"year": 2018, "count": 49640},
+    {"year": 2019, "count": 49050},
+    {"year": 2020, "count": 48530},
+    {"year": 2021, "count": 47805},
+    {"year": 2022, "count": 46010},
+    {"year": 2023, "count": 44380},
+    {"year": 2024, "count": 42070}
+  ],
+  "placementCosts": [
+    {"year": 2015, "laWeeklyCost": 620, "privateWeeklyCost": 2150},
+    {"year": 2016, "laWeeklyCost": 640, "privateWeeklyCost": 2320},
+    {"year": 2017, "laWeeklyCost": 660, "privateWeeklyCost": 2540},
+    {"year": 2018, "laWeeklyCost": 680, "privateWeeklyCost": 2810},
+    {"year": 2019, "laWeeklyCost": 710, "privateWeeklyCost": 3140},
+    {"year": 2020, "laWeeklyCost": 730, "privateWeeklyCost": 3480},
+    {"year": 2021, "laWeeklyCost": 750, "privateWeeklyCost": 3850},
+    {"year": 2022, "laWeeklyCost": 780, "privateWeeklyCost": 4290},
+    {"year": 2023, "laWeeklyCost": 800, "privateWeeklyCost": 4720},
+    {"year": 2024, "laWeeklyCost": 820, "privateWeeklyCost": 5100}
+  ]
+}

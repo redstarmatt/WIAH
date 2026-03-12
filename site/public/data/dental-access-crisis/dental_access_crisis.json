@@ -1,0 +1,75 @@
+{
+  "patientsSeen": [
+    {"year": 2012, "patients": 30200000},
+    {"year": 2013, "patients": 29800000},
+    {"year": 2014, "patients": 29500000},
+    {"year": 2015, "patients": 29100000},
+    {"year": 2016, "patients": 28700000},
+    {"year": 2017, "patients": 28200000},
+    {"year": 2018, "patients": 27600000},
+    {"year": 2019, "patients": 27100000},
+    {"year": 2020, "patients": 16400000},
+    {"year": 2021, "patients": 19800000},
+    {"year": 2022, "patients": 23100000},
+    {"year": 2023, "patients": 22600000},
+    {"year": 2024, "patients": 21900000}
+  ],
+  "workforce": [
+    {"year": 2015, "nhs": 23700, "private": 5100},
+    {"year": 2016, "nhs": 23400, "private": 5400},
+    {"year": 2017, "nhs": 23100, "private": 5800},
+    {"year": 2018, "nhs": 22800, "private": 6200},
+    {"year": 2019, "nhs": 22400, "private": 6700},
+    {"year": 2020, "nhs": 21600, "private": 7200},
+    {"year": 2021, "nhs": 21100, "private": 7800},
+    {"year": 2022, "nhs": 20500, "private": 8400},
+    {"year": 2023, "nhs": 19800, "private": 9100},
+    {"year": 2024, "nhs": 19200, "private": 9800}
+  ],
+  "childExtractions": [
+    {"year": 2012, "extractions": 40970},
+    {"year": 2013, "extractions": 42110},
+    {"year": 2014, "extractions": 43580},
+    {"year": 2015, "extractions": 44810},
+    {"year": 2016, "extractions": 42910},
+    {"year": 2017, "extractions": 43290},
+    {"year": 2018, "extractions": 44690},
+    {"year": 2019, "extractions": 45080},
+    {"year": 2020, "extractions": 17520},
+    {"year": 2021, "extractions": 31260},
+    {"year": 2022, "extractions": 39040},
+    {"year": 2023, "extractions": 41500},
+    {"year": 2024, "extractions": 40260}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS Business Services Authority",
+        "dataset": "NHS Dental Statistics",
+        "url": "https://www.nhsbsa.nhs.uk/statistical-collections/dental-england",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "British Dental Association",
+        "dataset": "Dental Workforce Data",
+        "url": "https://bda.org/workforce",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS Digital",
+        "dataset": "Hospital Episode Statistics — Tooth Extractions",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Patients seen counts adults and children seen by an NHS dentist in the preceding 24 months (adults) or 12 months (children). Workforce data tracks dentists performing NHS activity vs exclusively private practice. Child extractions are hospital admissions for tooth extraction under general anaesthetic, ages 0-17.",
+    "knownIssues": [
+      "2020 data reflects COVID-19 practice closures — not comparable with other years",
+      "Workforce split between NHS and private is estimated from NHS BSA activity data and GDC registrations",
+      "Some dentists work in both NHS and private — counted once in their primary category"
+    ]
+  }
+}

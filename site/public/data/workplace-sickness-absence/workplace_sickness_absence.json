@@ -1,0 +1,48 @@
+{
+  "daysAbsent": [
+    {"year": 2010, "days": 6.4},
+    {"year": 2011, "days": 6.1},
+    {"year": 2012, "days": 5.9},
+    {"year": 2013, "days": 5.7},
+    {"year": 2014, "days": 5.6},
+    {"year": 2015, "days": 5.5},
+    {"year": 2016, "days": 5.6},
+    {"year": 2017, "days": 5.6},
+    {"year": 2018, "days": 5.8},
+    {"year": 2019, "days": 5.8},
+    {"year": 2020, "days": 5.5},
+    {"year": 2021, "days": 6.6},
+    {"year": 2022, "days": 7.8},
+    {"year": 2023, "days": 8.7},
+    {"year": 2024, "days": 9.4}
+  ],
+  "absenceByCause": [
+    {"year": 2015, "mentalHealth": 21, "musculoskeletal": 24, "minorIllness": 30, "longCovid": 0, "other": 25},
+    {"year": 2016, "mentalHealth": 22, "musculoskeletal": 23, "minorIllness": 29, "longCovid": 0, "other": 26},
+    {"year": 2017, "mentalHealth": 24, "musculoskeletal": 22, "minorIllness": 28, "longCovid": 0, "other": 26},
+    {"year": 2018, "mentalHealth": 26, "musculoskeletal": 21, "minorIllness": 27, "longCovid": 0, "other": 26},
+    {"year": 2019, "mentalHealth": 28, "musculoskeletal": 20, "minorIllness": 27, "longCovid": 0, "other": 25},
+    {"year": 2020, "mentalHealth": 30, "musculoskeletal": 19, "minorIllness": 22, "longCovid": 2, "other": 27},
+    {"year": 2021, "mentalHealth": 33, "musculoskeletal": 18, "minorIllness": 20, "longCovid": 6, "other": 23},
+    {"year": 2022, "mentalHealth": 37, "musculoskeletal": 17, "minorIllness": 18, "longCovid": 8, "other": 20},
+    {"year": 2023, "mentalHealth": 39, "musculoskeletal": 16, "minorIllness": 17, "longCovid": 7, "other": 21},
+    {"year": 2024, "mentalHealth": 41, "musculoskeletal": 15, "minorIllness": 16, "longCovid": 6, "other": 22}
+  ],
+  "publicVsPrivate": [
+    {"year": 2010, "public": 8.1, "private": 5.2},
+    {"year": 2011, "public": 7.9, "private": 4.9},
+    {"year": 2012, "public": 7.6, "private": 4.8},
+    {"year": 2013, "public": 7.4, "private": 4.6},
+    {"year": 2014, "public": 7.3, "private": 4.5},
+    {"year": 2015, "public": 7.2, "private": 4.4},
+    {"year": 2016, "public": 7.3, "private": 4.5},
+    {"year": 2017, "public": 7.4, "private": 4.5},
+    {"year": 2018, "public": 7.6, "private": 4.7},
+    {"year": 2019, "public": 7.5, "private": 4.7},
+    {"year": 2020, "public": 7.2, "private": 4.4},
+    {"year": 2021, "public": 8.8, "private": 5.3},
+    {"year": 2022, "public": 10.4, "private": 6.2},
+    {"year": 2023, "public": 11.6, "private": 7.0},
+    {"year": 2024, "public": 12.2, "private": 7.5}
+  ]
+}

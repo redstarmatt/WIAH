@@ -1,0 +1,48 @@
+{
+  "neetRate": [
+    {"year": 2010, "rate": 15.4, "total": 1088000},
+    {"year": 2011, "rate": 15.6, "total": 1096000},
+    {"year": 2012, "rate": 15.2, "total": 1063000},
+    {"year": 2013, "rate": 13.9, "total": 962000},
+    {"year": 2014, "rate": 13.1, "total": 903000},
+    {"year": 2015, "rate": 12.3, "total": 843000},
+    {"year": 2016, "rate": 11.7, "total": 800000},
+    {"year": 2017, "rate": 11.3, "total": 770000},
+    {"year": 2018, "rate": 11.0, "total": 748000},
+    {"year": 2019, "rate": 10.9, "total": 742000},
+    {"year": 2020, "rate": 12.4, "total": 847000},
+    {"year": 2021, "rate": 11.7, "total": 797000},
+    {"year": 2022, "rate": 11.6, "total": 789000},
+    {"year": 2023, "rate": 12.2, "total": 873000},
+    {"year": 2024, "rate": 12.8, "total": 957000}
+  ],
+  "neetByReason": [
+    {"year": 2015, "longTermSick": 24.1, "lookingForWork": 35.2, "caringResponsibilities": 14.8, "other": 25.9},
+    {"year": 2016, "longTermSick": 25.3, "lookingForWork": 33.8, "caringResponsibilities": 14.5, "other": 26.4},
+    {"year": 2017, "longTermSick": 26.8, "lookingForWork": 31.9, "caringResponsibilities": 14.2, "other": 27.1},
+    {"year": 2018, "longTermSick": 28.4, "lookingForWork": 30.1, "caringResponsibilities": 13.8, "other": 27.7},
+    {"year": 2019, "longTermSick": 30.2, "lookingForWork": 28.6, "caringResponsibilities": 13.5, "other": 27.7},
+    {"year": 2020, "longTermSick": 31.8, "lookingForWork": 32.4, "caringResponsibilities": 12.9, "other": 22.9},
+    {"year": 2021, "longTermSick": 34.1, "lookingForWork": 29.3, "caringResponsibilities": 13.1, "other": 23.5},
+    {"year": 2022, "longTermSick": 37.6, "lookingForWork": 26.8, "caringResponsibilities": 12.7, "other": 22.9},
+    {"year": 2023, "longTermSick": 42.3, "lookingForWork": 23.4, "caringResponsibilities": 12.1, "other": 22.2},
+    {"year": 2024, "longTermSick": 48.4, "lookingForWork": 19.8, "caringResponsibilities": 11.6, "other": 20.2}
+  ],
+  "neetByRegion": [
+    {"year": 2015, "northEast": 16.8, "northWest": 13.9, "yorkshireHumber": 13.5, "eastMidlands": 12.1, "westMidlands": 13.8, "london": 11.2, "southEast": 9.8, "southWest": 10.4},
+    {"year": 2016, "northEast": 16.2, "northWest": 13.4, "yorkshireHumber": 13.0, "eastMidlands": 11.7, "westMidlands": 13.3, "london": 10.8, "southEast": 9.5, "southWest": 10.1},
+    {"year": 2017, "northEast": 15.7, "northWest": 12.9, "yorkshireHumber": 12.6, "eastMidlands": 11.3, "westMidlands": 12.8, "london": 10.5, "southEast": 9.2, "southWest": 9.7},
+    {"year": 2018, "northEast": 15.3, "northWest": 12.5, "yorkshireHumber": 12.2, "eastMidlands": 10.9, "westMidlands": 12.4, "london": 10.2, "southEast": 8.9, "southWest": 9.4},
+    {"year": 2019, "northEast": 15.1, "northWest": 12.3, "yorkshireHumber": 12.0, "eastMidlands": 10.7, "westMidlands": 12.2, "london": 10.0, "southEast": 8.7, "southWest": 9.2},
+    {"year": 2020, "northEast": 17.8, "northWest": 14.2, "yorkshireHumber": 13.9, "eastMidlands": 12.4, "westMidlands": 14.1, "london": 11.5, "southEast": 10.1, "southWest": 10.8},
+    {"year": 2021, "northEast": 16.9, "northWest": 13.5, "yorkshireHumber": 13.2, "eastMidlands": 11.8, "westMidlands": 13.4, "london": 10.8, "southEast": 9.5, "southWest": 10.2},
+    {"year": 2022, "northEast": 16.5, "northWest": 13.2, "yorkshireHumber": 13.0, "eastMidlands": 11.6, "westMidlands": 13.2, "london": 10.6, "southEast": 9.3, "southWest": 10.0},
+    {"year": 2023, "northEast": 17.4, "northWest": 14.0, "yorkshireHumber": 13.8, "eastMidlands": 12.2, "westMidlands": 13.9, "london": 11.1, "southEast": 9.9, "southWest": 10.6},
+    {"year": 2024, "northEast": 18.3, "northWest": 14.8, "yorkshireHumber": 14.5, "eastMidlands": 12.9, "westMidlands": 14.6, "london": 11.6, "southEast": 10.4, "southWest": 11.1}
+  ],
+  "mentalHealthBreakdown": {
+    "mentalHealthAsMainIssue": 42.6,
+    "disabilityReported": 48.4,
+    "longTermCondition": 31.2
+  }
+}
