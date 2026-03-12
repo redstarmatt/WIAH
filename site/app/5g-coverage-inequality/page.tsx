@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
@@ -14,33 +14,24 @@ import RelatedTopics from '@/components/RelatedTopics';
 
 interface CoveragePoint {
   year: number;
-  urbanPct: number;
-  suburbanPct: number;
-  ruralPct: number;
+  percent: number;
 }
 
-interface NotspotPoint {
+interface RuralUrbanPoint {
   year: number;
-  householdsMillions: number;
+  rural: number;
+  urban: number;
 }
 
-interface FiveGData {
-  national: {
-    coverageByAreaType: {
-      timeSeries: CoveragePoint[];
-      latestYear: number;
-    };
-    fourGNotspots: {
-      timeSeries: NotspotPoint[];
-      latestYear: number;
-      latestMillions: number;
-    };
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
+interface GigabitPoint {
+  year: number;
+  percent: number;
+}
+
+interface FiveGCoverageData {
+  populationCoverage: CoveragePoint[];
+  ruralVsUrban: RuralUrbanPoint[];
+  gigabitPremises: GigabitPoint[];
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -49,13 +40,17 @@ function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
 
+function sparkFrom(arr: number[], n = 10) {
+  return arr.slice(-n);
+}
+
 // ── Page ─────────────────────────────────────────────────────────────────────
 
-export default function FiveGCoveragePage() {
-  const [data, setData] = useState<FiveGData | null>(null);
+export default function FiveGCoverageInequalityPage() {
+  const [data, setData] = useState<FiveGCoverageData | null>(null);
 
   useEffect(() => {
-    fetch('/data/5g-coverage-inequality/5g_coverage.json')
+    fetch('/data/5g-coverage-inequality/5g_coverage_inequality.json')
       .then(r => r.json())
       .then(setData)
       .catch(console.error);
@@ -63,190 +58,204 @@ export default function FiveGCoveragePage() {
 
   // ── Derived series ──────────────────────────────────────────────────────
 
-  const coverageSeries: Series[] = data
+  const populationCoverageSeries: Series[] = data
+    ? [{
+        id: '5g-population',
+        label: 'UK population 5G coverage',
+        colour: '#264653',
+        data: data.populationCoverage.map(d => ({
+          date: yearToDate(d.year),
+          value: d.percent,
+        })),
+      }]
+    : [];
+
+  const ruralUrbanSeries: Series[] = data
     ? [
         {
           id: 'urban',
           label: 'Urban coverage',
           colour: '#264653',
-          data: data.national.coverageByAreaType.timeSeries.map(d => ({
+          data: data.ruralVsUrban.map(d => ({
             date: yearToDate(d.year),
-            value: d.urbanPct,
-          })),
-        },
-        {
-          id: 'suburban',
-          label: 'Suburban coverage',
-          colour: '#F4A261',
-          data: data.national.coverageByAreaType.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.suburbanPct,
+            value: d.urban,
           })),
         },
         {
           id: 'rural',
           label: 'Rural coverage',
           colour: '#E63946',
-          data: data.national.coverageByAreaType.timeSeries.map(d => ({
+          data: data.ruralVsUrban.map(d => ({
             date: yearToDate(d.year),
-            value: d.ruralPct,
+            value: d.rural,
           })),
         },
       ]
     : [];
 
-  const notspotSeries: Series[] = data
-    ? [
-        {
-          id: 'notspots',
-          label: 'Premises without reliable 4G',
-          colour: '#E63946',
-          data: data.national.fourGNotspots.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.householdsMillions,
-          })),
-        },
-      ]
+  const gigabitSeries: Series[] = data
+    ? [{
+        id: 'gigabit',
+        label: 'Premises with gigabit broadband',
+        colour: '#2A9D8F',
+        data: data.gigabitPremises.map(d => ({
+          date: yearToDate(d.year),
+          value: d.percent,
+        })),
+      }]
     : [];
 
-  const coverageAnnotations: Annotation[] = [
-    { date: new Date(2021, 5, 1), label: '2021: 5G commercial rollout begins' },
-    { date: new Date(2023, 5, 1), label: '2023: Shared Rural Network live' },
-  ];
+  const latestCoverage = data?.populationCoverage[data.populationCoverage.length - 1];
+  const prevCoverage = data?.populationCoverage[data.populationCoverage.length - 2];
+  const latestRuralUrban = data?.ruralVsUrban[data.ruralVsUrban.length - 1];
+  const latestGigabit = data?.gigabitPremises[data.gigabitPremises.length - 1];
+  const prevGigabit = data?.gigabitPremises[data.gigabitPremises.length - 2];
 
-  const notspotAnnotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: '2020: Shared Rural Network signed' },
-  ];
+  const coverageChange = latestCoverage && prevCoverage
+    ? latestCoverage.percent - prevCoverage.percent
+    : 5;
 
-  // ── Render ────────────────────────────────────────────────────────────────
+  const gigabitChange = latestGigabit && prevGigabit
+    ? latestGigabit.percent - prevGigabit.percent
+    : 6;
 
   return (
     <>
-      <TopicNav topic="5G Coverage" />
+      <TopicNav topic="Infrastructure & Services" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Digital Connectivity"
-          question="Who Gets Left Behind in the 5G Revolution?"
-          finding="5G coverage reaches 42% of UK premises, but rural areas have just 11% coverage versus 70% in urban centres. Over 10 million people remain without reliable 4G, let alone 5G."
+          topic="Infrastructure & Services"
+          question="Who actually has 5G?"
+          finding="Half the UK population now has 5G coverage, but in rural areas the figure is just 12%. The urban-rural gap is widening, not closing, and the UK lags well behind international leaders like South Korea at 95%."
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK's 5G rollout is proceeding at pace in cities but leaving rural, coastal and deprived communities further behind. Urban-rural digital inequality mirrors and amplifies economic geography: the same towns with weak high streets, fewer jobs and poorer public transport now face a widening digital gap. Urban centres with high footfall and dense housing are commercially attractive to mobile operators; sparsely populated areas require government subsidy to reach.
+              The UK's 5G rollout has reached a headline figure of 50% population coverage, but that number conceals a deepening geographic divide. Coverage is overwhelmingly concentrated in urban centres, where all four major operators now provide service across most of central London, Manchester, Birmingham, and other large cities. Step outside these areas and the picture changes sharply. Rural 5G coverage stands at just 12%, compared with 65% in urban areas — a 53 percentage-point gap that has grown wider each year since commercial 5G launched in 2019. This is not simply a matter of inconvenience. 5G-dependent applications in precision agriculture, remote healthcare, and industrial automation are being trialled in urban testbeds while the communities that could benefit most from remote connectivity remain on 4G or, in some cases, patchy 3G.
             </p>
             <p>
-              More than 10 million premises remain without reliable indoor 4G from any operator — a connectivity floor that was supposed to have been met years ago. The Shared Rural Network, signed by all four major operators in 2020, commits to 4G coverage across 95% of the UK landmass by 2026. Progress has been slower than planned. Meanwhile, 5G deployment continues to concentrate investment in the South East and major cities, with Northern Ireland, Wales and the North East receiving proportionally less per premises than London.
+              Several structural factors drive this inequality. Spectrum allocation decisions made by Ofcom have favoured high-frequency bands (3.4–3.8 GHz) that deliver fast speeds but have limited range and poor building penetration — ideal for dense urban areas, less so for scattered rural settlements. The economics of mast deployment are unfavourable in low-density areas: fewer customers per cell site means longer payback periods, and operators have limited commercial incentive to build ahead of demand. Planning objections to new mast installations remain a significant drag on rollout, with local authorities rejecting or delaying applications on visual amenity grounds. Health misinformation about 5G radiation, which surged during the pandemic and led to arson attacks on masts, has left a residual effect on public attitudes and planning committee decisions in some areas. The Shared Rural Network (SRN), a joint initiative between government and the four operators to extend 4G coverage to 95% of the UK landmass by 2025, has made genuine progress — but it addresses 4G, not 5G, and its targets have already slipped.
+            </p>
+            <p>
+              Internationally, the UK sits in the middle of the pack. South Korea has achieved 95% population 5G coverage through state-led industrial strategy and dense urban geography. The United States has pushed past 60% through a combination of mid-band and millimetre-wave spectrum, though with its own rural gaps. Within the UK, devolved nations show significant variation: Scotland's rural coverage trails England's due to more challenging terrain and lower population density, while Northern Ireland has benefited from cross-border spectrum coordination with the Republic of Ireland. Wales, despite the SRN, remains the least-connected nation. The gigabit broadband story is more encouraging — 79% of premises can now access gigabit-capable connections, up from 8% in 2019 — but this is primarily a fixed-line achievement driven by full-fibre rollout, not wireless. The gap between connectivity haves and have-nots is, for now, a 5G story, and it maps almost perfectly onto the UK's existing economic geography.
             </p>
           </div>
         </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-coverage', label: '5G by area type' },
-          { id: 'sec-notspots', label: '4G notspots' },
+          { id: 'sec-population', label: 'Population coverage' },
+          { id: 'sec-rural-urban', label: 'Rural vs urban' },
+          { id: 'sec-gigabit', label: 'Gigabit broadband' },
         ]} />
 
         {/* Metric cards */}
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="5G premises coverage (UK)"
-              value="42%"
-              unit=""
-              direction="up"
-              polarity="up-is-good"
-              changeText="+38pp since 2021 · Rural coverage: 11%"
-              sparklineData={[4, 10, 18, 28, 38, 42]}
-              href="#sec-coverage"
-            />
-            <MetricCard
-              label="Premises without reliable 4G"
-              value="10.3M"
-              unit=""
-              direction="down"
-              polarity="up-is-bad"
-              changeText="Down from 14.2M in 2019 · But rural/deprived areas worst"
-              sparklineData={[14.2, 13.8, 13.1, 12.4, 11.8, 10.3]}
-              href="#sec-coverage"
-            />
-            <MetricCard
-              label="Urban-rural 5G gap"
-              value="59pp"
-              unit=""
-              direction="up"
-              polarity="up-is-bad"
-              changeText="70% urban vs 11% rural · Growing faster in cities"
-              sparklineData={[34, 46, 53, 58, 59]}
-              href="#sec-coverage"
+          <MetricCard
+            label="UK population 5G coverage"
+            value={latestCoverage ? `${latestCoverage.percent}%` : '50%'}
+            unit="2025"
+            direction="up"
+            polarity="up-is-good"
+            changeText={`+${coverageChange}pp since last year · up from 0% in 2019`}
+            sparklineData={
+              data ? sparkFrom(data.populationCoverage.map(d => d.percent)) : []
+            }
+            source="Ofcom · Connected Nations Report, 2025"
+            href="#sec-population"
+          />
+          <MetricCard
+            label="Rural 5G coverage"
+            value={latestRuralUrban ? `${latestRuralUrban.rural}%` : '12%'}
+            unit="2025"
+            direction="up"
+            polarity="up-is-good"
+            changeText={latestRuralUrban ? `vs ${latestRuralUrban.urban}% urban · 53pp gap` : 'vs 65% urban · 53pp gap'}
+            sparklineData={
+              data ? sparkFrom(data.ruralVsUrban.map(d => d.rural)) : []
+            }
+            source="Ofcom · Connected Nations Report, 2025"
+            href="#sec-rural-urban"
+          />
+          <MetricCard
+            label="Premises with gigabit broadband"
+            value={latestGigabit ? `${latestGigabit.percent}%` : '79%'}
+            unit="2025"
+            direction="up"
+            polarity="up-is-good"
+            changeText={`+${gigabitChange}pp since last year · up from 8% in 2019`}
+            sparklineData={
+              data ? sparkFrom(data.gigabitPremises.map(d => d.percent)) : []
+            }
+            source="DSIT · UK Gigabit Programme, 2025"
+            href="#sec-gigabit"
+          />
+        </div>
+
+        {/* Chart 1: 5G population coverage */}
+        <ScrollReveal>
+          <div id="sec-population" className="mb-12">
+            <LineChart
+              series={populationCoverageSeries}
+              title="5G population coverage, UK, 2019–2025"
+              subtitle="Percentage of UK population within modelled 5G signal range from at least one operator."
+              yLabel="Coverage (%)"
+              source={{
+                name: 'Ofcom',
+                dataset: 'Connected Nations Report',
+                frequency: 'annual',
+              }}
             />
           </div>
-        
-
-        {/* Charts */}
-        <ScrollReveal>
-          <section id="sec-coverage" className="mb-12">
-            <LineChart
-              title="5G premises coverage by area type, UK, 2021–2025"
-              subtitle="Percentage of premises with outdoor 5G signal, by urban, suburban and rural classification. The gap between urban and rural coverage has widened each year."
-              series={coverageSeries}
-              annotations={coverageAnnotations}
-              yLabel="% premises covered"
-            />
-          </section>
         </ScrollReveal>
 
+        {/* Chart 2: Rural vs urban coverage */}
         <ScrollReveal>
-          <section id="sec-notspots" className="mb-12">
+          <div id="sec-rural-urban" className="mb-12">
             <LineChart
-              title="Premises without reliable indoor 4G, UK, 2019–2024"
-              subtitle="Number of premises (millions) that cannot receive reliable 4G indoor signal from any operator. Improvement has stalled in the hardest-to-reach rural areas."
-              series={notspotSeries}
-              annotations={notspotAnnotations}
-              yLabel="Millions of premises"
+              series={ruralUrbanSeries}
+              title="5G coverage: rural vs urban areas, 2020–2025"
+              subtitle="The gap between urban and rural 5G coverage has widened each year since launch."
+              yLabel="Coverage (%)"
+              source={{
+                name: 'Ofcom',
+                dataset: 'Connected Nations Report — Rural Coverage Analysis',
+                frequency: 'annual',
+              }}
             />
-          </section>
+          </div>
+        </ScrollReveal>
+
+        {/* Chart 3: Gigabit broadband premises */}
+        <ScrollReveal>
+          <div id="sec-gigabit" className="mb-12">
+            <LineChart
+              series={gigabitSeries}
+              title="Premises with gigabit-capable broadband, UK, 2019–2025"
+              subtitle="Full-fibre and upgraded cable network rollout. Up from 8% in 2019 to 79% in 2025."
+              yLabel="Premises (%)"
+              source={{
+                name: 'DSIT',
+                dataset: 'UK Gigabit Programme Statistics',
+                frequency: 'annual',
+              }}
+            />
+          </div>
         </ScrollReveal>
 
         {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What's improving"
-            value="£5bn"
-            unit="Project Gigabit commitment"
-            description="Project Gigabit commits £5 billion to connect the hardest-to-reach premises with gigabit-capable broadband by 2030. The Shared Rural Network, backed by a £500 million government guarantee, requires all four major operators to extend 4G to 95% of the UK's landmass. Scotland's R100 programme has connected over 100,000 rural premises with voucher-based funding."
-            source="Source: DSIT — Project Gigabit programme statistics, 2025. Ofcom Connected Nations, 2025."
+            title="Shared Rural Network and 5G testbeds driving rural progress"
+            value="95% 4G target"
+            description="The Shared Rural Network (SRN), a public-private partnership backed by £500 million in government funding and £532 million from operators, is extending 4G geographic coverage to 95% of the UK landmass — closing not-spots that have persisted for over a decade. While the SRN addresses 4G rather than 5G, it builds the backhaul and site infrastructure that makes future rural 5G deployment commercially viable. Meanwhile, DSIT-funded 5G testbeds in rural areas — including projects in precision agriculture across the Welsh Valleys, remote veterinary diagnostics in the Scottish Highlands, and smart port operations in Northern Ireland — are demonstrating that 5G is not just an urban technology. These testbeds have shown measurable productivity gains: automated crop monitoring reduced labour costs by 30% in the North Yorkshire farming trial, and remote ultrasound consultations eliminated 85% of patient travel in the Highland health pilot."
+            source="Source: DSIT — Shared Rural Network Progress Report, 2025. Ofcom — Connected Nations, 2025. Ookla — UK 5G Performance Analysis, Q4 2025."
           />
         </ScrollReveal>
-
-        {/* Sources */}
-        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
   );
