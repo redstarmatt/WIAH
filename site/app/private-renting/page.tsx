@@ -187,11 +187,7 @@ export default function PrivateRentingPage() {
         <ScrollReveal>
         <div id="sec-rents" className="mb-12">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-wiah-black mb-2">Rent Levels</h2>
-            <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
-              Average private rents have risen steadily, but the pace accelerated sharply from 2021 onwards.
-              A single year (2022–2023) saw a 10% increase, the largest annual jump since records began.
-            </p>
+            <h2 className="text-2xl font-bold text-wiah-black mb-6">Rent Levels</h2>
           </div>
 
           {rentSeries.length > 0 ? (
@@ -217,11 +213,7 @@ export default function PrivateRentingPage() {
         <ScrollReveal>
         <div id="sec-afford" className="mb-12">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-wiah-black mb-2">Affordability</h2>
-            <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
-              The median private renter now spends 34% of gross income on rent, up from 28% in 2011.
-              The traditional affordability threshold is 30% — renters in England are now consistently above it.
-            </p>
+            <h2 className="text-2xl font-bold text-wiah-black mb-6">Affordability</h2>
           </div>
 
           {affordabilitySeries.length > 0 ? (
@@ -246,11 +238,7 @@ export default function PrivateRentingPage() {
         <ScrollReveal>
         <div id="sec-regions" className="mb-12">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-wiah-black mb-2">By Region</h2>
-            <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
-              Rent varies dramatically by region. London averages £2,121 per month, more than three times
-              the North East average of £685. Outside London, the average is just £1,076.
-            </p>
+            <h2 className="text-2xl font-bold text-wiah-black mb-6">By Region</h2>
           </div>
 
           {data ? (

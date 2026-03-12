@@ -303,16 +303,11 @@ export default function TransportPage() {
               attempt to reverse this model.
             </p>
             <p>
-              Road safety is one of British public policy's genuine long-run
-              successes. Fatalities fell 73% between 1979 and 2023 — from 6,352
-              killed to 1,695 — driven by compulsory seat belts in 1983, tougher
-              drink-drive enforcement, and successive improvements to vehicle safety
-              standards. But the improvement has stalled. Since 2010, deaths have
-              plateaued at around 1,700 a year, and the seriously injured count has edged
-              upward from a 2013 low of 21,657 to 30,124 in 2023 — partly a result
-              of better recording, but enough to raise questions about whether further
-              gains require new interventions such as lower urban speed limits and
-              better-designed junctions.
+              Road safety is one of British public policy&rsquo;s genuine long-run successes:
+              fatalities fell 73% between 1979 and 2023, from 6,352 killed to 1,695. But
+              progress has stalled since 2010, with deaths plateaued at around 1,700 a year.
+              Battery electric vehicles now account for nearly 1 in 5 new car sales, with over
+              1.4 million EVs on UK roads — a tenfold increase since 2019.
             </p>
             </div>
         </section>
@@ -537,11 +532,7 @@ export default function TransportPage() {
         {/* ── Road Safety ───────────────────────────────────────────────────── */}
         <div id="sec-road-safety">
           <ScrollReveal>
-          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Road Safety</h2>
-          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
-            Britain's roads are dramatically safer than they were four decades ago — but the
-            improvement has stalled since 2010, with around 1,700 people killed each year.
-          </p>
+          <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-8">Road Safety</h2>
           </ScrollReveal>
 
           {ksiSeries.length > 0 ? (
@@ -589,11 +580,7 @@ export default function TransportPage() {
         {/* ── Electric Vehicles ─────────────────────────────────────────────── */}
         <div id="sec-ev">
           <ScrollReveal>
-          <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-4">Electric Vehicles</h2>
-          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
-            Battery electric vehicles now account for nearly 1 in 5 new car sales. Over 1.4 million
-            EVs are already on UK roads — a tenfold increase since 2019.
-          </p>
+          <h2 className="text-2xl font-bold text-wiah-black mb-6 mt-4">Electric Vehicles</h2>
           </ScrollReveal>
 
           {/* EV metric cards */}
