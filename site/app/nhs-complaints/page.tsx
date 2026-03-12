@@ -61,8 +61,8 @@ export default function NhsComplaintsPage() {
     : []
 
   const complaintsAnnotations: Annotation[] = [
-    { date: new Date(2020, 2, 1), label: 'COVID-19 pandemic', colour: '#6B7280' },
-    { date: new Date(2023, 0, 1), label: 'PSIRF introduced', colour: '#2A9D8F' },
+    { date: new Date(2020, 2, 1), label: 'COVID-19 pandemic' },
+    { date: new Date(2023, 0, 1), label: 'PSIRF introduced' },
   ]
 
   /* Chart 3: PHSO received vs completed */
@@ -91,7 +91,7 @@ export default function NhsComplaintsPage() {
 
   return (
     <>
-      <TopicNav topic="NHS Complaints" parentTopic="Health" parentHref="/health" />
+      <TopicNav topic="NHS Complaints" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
@@ -136,7 +136,7 @@ export default function NhsComplaintsPage() {
               value="30"
               unit="%"
               direction="down"
-              polarity="down-is-bad"
+              polarity="up-is-good"
               changeText="down from 38% in 2014 · CQC complainant survey"
               sparklineData={[38, 37, 36, 35, 34, 33, 34, 32, 31, 30, 30]}
               href="#sec-categories"

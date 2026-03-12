@@ -87,9 +87,7 @@ export default function PostalServicePage() {
     { date: new Date(2024, 9, 15), label: 'IDS/Kretinsky takeover' },
   ];
 
-  const performanceTargetLines = [
-    { value: 93, label: 'Target: 93%', colour: '#2A9D8F' },
-  ];
+  const performanceTargetLine = { value: 93, label: 'Target: 93%' };
 
   const letterSeries: Series[] = data
     ? [{
@@ -207,7 +205,7 @@ export default function PostalServicePage() {
               subtitle="Percentage of first-class letters delivered next working day. Ofcom quarterly quality of service data."
               series={performanceSeries}
               annotations={performanceAnnotations}
-              targetLines={performanceTargetLines}
+              targetLine={performanceTargetLine}
               yLabel="% next-day delivery"
             />
           </section>

@@ -83,7 +83,7 @@ export const CATEGORIES: Category[] = [
     name: 'Housing',
     slug: 'housing',
     featured: ['housing', 'homelessness', 'housebuilding'],
-    topics: ['housing', 'homelessness', 'housebuilding', 'housing-quality', 'private-renting', 'social-housing', 'rough-sleeping', 'planning', 'empty-homes', 'leasehold', 'building-safety', 'second-homes', 'evictions', 'land-banking', 'planning-permission', 'housing-costs-workers', 'cladding-crisis', 'holiday-lets', 'renters-reform', 'net-housing-supply', 'social-rent', 'property-transactions', 'construction-housebuilding', 'flood-insurance-gaps', 'concealed-homelessness', 'mortgage-affordability-shock', 'private-rented-conditions', 'multigenerational-living', 'supported-housing-shortage', 'urban-rural-price-gap', 'build-to-rent-sector', 'social-housing-waiting-lists', 'housing-disrepair-claims', 'short-term-lets-impact', 'traveller-site-provision', 'cohabitation-rights-gap', 'modular-housing', 'green-belt-pressure', 'buy-to-let-exit', 'care-home-supply', 'community-asset-ownership', 'domestic-abuse-refuges', 'equity-release-market', 'housing-first-programme', 'lpa-capacity-crisis', 'military-housing-quality', 'planning-appeals', 'right-to-buy', 'veteran-rough-sleeping'],
+    topics: ['housing', 'homelessness', 'housebuilding', 'housing-quality', 'private-renting', 'social-housing', 'rough-sleeping', 'planning', 'empty-homes', 'leasehold', 'building-safety', 'fire-safety-buildings', 'second-homes', 'evictions', 'land-banking', 'planning-permission', 'housing-costs-workers', 'cladding-crisis', 'holiday-lets', 'renters-reform', 'net-housing-supply', 'social-rent', 'property-transactions', 'construction-housebuilding', 'flood-insurance-gaps', 'concealed-homelessness', 'mortgage-affordability-shock', 'private-rented-conditions', 'multigenerational-living', 'supported-housing-shortage', 'urban-rural-price-gap', 'build-to-rent-sector', 'social-housing-waiting-lists', 'housing-disrepair-claims', 'short-term-lets-impact', 'traveller-site-provision', 'cohabitation-rights-gap', 'modular-housing', 'green-belt-pressure', 'buy-to-let-exit', 'care-home-supply', 'community-asset-ownership', 'domestic-abuse-refuges', 'equity-release-market', 'housing-first-programme', 'lpa-capacity-crisis', 'military-housing-quality', 'planning-appeals', 'right-to-buy', 'veteran-rough-sleeping'],
   },
   {
     name: 'Education & Skills',
@@ -1810,6 +1810,18 @@ export const TOPICS: Record<string, TopicEntry> = {
     metrics: [
       { label: 'Buildings with unsafe cladding identified', value: '5,412', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'True total likely higher; 40% in London', sparklineData: [457, 1650, 3120, 4630, 5120, 5340, 5412] },
       { label: 'Remediation completed', value: '1,780', direction: 'up' as const, polarity: 'up-is-good' as const, context: '33% completion rate; ~300K households affected', sparklineData: [15, 128, 340, 612, 1015, 1420, 1780] },
+    ],
+  },
+  'fire-safety-buildings': {
+    topic: 'Fire Safety in Buildings',
+    slug: 'fire-safety-buildings',
+    href: '/fire-safety-buildings',
+    colour: '#E63946',
+    preposition: 'with',
+    metrics: [
+      { label: 'Buildings awaiting remediation', value: '2,738', direction: 'up' as const, polarity: 'up-is-bad' as const, context: '8 years after Grenfell; ~300K leaseholders affected', sparklineData: [2662, 2608, 2560, 2510, 2740, 2738] },
+      { label: 'Remediation complete', value: '40.9%', direction: 'up' as const, polarity: 'up-is-good' as const, context: 'Pace accelerating since 2024', sparklineData: [5.3, 10.4, 14.6, 22.0, 29.8, 40.9] },
+      { label: 'Estimated total cost', value: '\u00A316.4bn', direction: 'up' as const, polarity: 'up-is-bad' as const, context: 'BSF: \u00A35.1bn allocated, \u00A33.4bn spent', sparklineData: [12.2, 13.1, 14.0, 14.8, 15.4, 16.4] },
     ],
   },
   'regional-inequality': {
