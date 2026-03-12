@@ -1,0 +1,77 @@
+{
+  "hleVsLe": [
+    {"year": 2000, "hle": 68.2, "le": 77.9},
+    {"year": 2001, "hle": 68.0, "le": 78.1},
+    {"year": 2002, "hle": 67.9, "le": 78.3},
+    {"year": 2003, "hle": 68.1, "le": 78.5},
+    {"year": 2004, "hle": 68.3, "le": 78.8},
+    {"year": 2005, "hle": 68.5, "le": 79.0},
+    {"year": 2006, "hle": 68.4, "le": 79.2},
+    {"year": 2007, "hle": 68.2, "le": 79.4},
+    {"year": 2008, "hle": 68.0, "le": 79.5},
+    {"year": 2009, "hle": 67.8, "le": 79.7},
+    {"year": 2010, "hle": 65.8, "le": 79.9},
+    {"year": 2011, "hle": 65.6, "le": 80.1},
+    {"year": 2012, "hle": 65.2, "le": 80.2},
+    {"year": 2013, "hle": 65.0, "le": 80.4},
+    {"year": 2014, "hle": 64.8, "le": 80.6},
+    {"year": 2015, "hle": 64.6, "le": 80.7},
+    {"year": 2016, "hle": 64.3, "le": 80.8},
+    {"year": 2017, "hle": 64.1, "le": 80.9},
+    {"year": 2018, "hle": 63.9, "le": 80.9},
+    {"year": 2019, "hle": 63.7, "le": 81.0},
+    {"year": 2020, "hle": 63.1, "le": 79.8},
+    {"year": 2021, "hle": 63.3, "le": 80.3},
+    {"year": 2022, "hle": 63.6, "le": 80.6},
+    {"year": 2023, "hle": 63.9, "le": 80.8},
+    {"year": 2024, "hle": 64.1, "le": 80.9}
+  ],
+  "hleByRegion": [
+    {"year": 2010, "bestRegion": 71.2, "englandAvg": 65.8, "worstRegion": 56.5, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2011, "bestRegion": 71.0, "englandAvg": 65.6, "worstRegion": 56.2, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2012, "bestRegion": 70.8, "englandAvg": 65.2, "worstRegion": 55.8, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2013, "bestRegion": 70.9, "englandAvg": 65.0, "worstRegion": 55.4, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2014, "bestRegion": 71.1, "englandAvg": 64.8, "worstRegion": 55.1, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2015, "bestRegion": 71.3, "englandAvg": 64.6, "worstRegion": 54.8, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2016, "bestRegion": 71.5, "englandAvg": 64.3, "worstRegion": 54.6, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2017, "bestRegion": 71.7, "englandAvg": 64.1, "worstRegion": 54.3, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2018, "bestRegion": 71.9, "englandAvg": 63.9, "worstRegion": 54.1, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2019, "bestRegion": 72.1, "englandAvg": 63.7, "worstRegion": 53.9, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2020, "bestRegion": 71.4, "englandAvg": 63.1, "worstRegion": 52.8, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2021, "bestRegion": 71.6, "englandAvg": 63.3, "worstRegion": 53.1, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2022, "bestRegion": 71.8, "englandAvg": 63.6, "worstRegion": 53.4, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2023, "bestRegion": 72.0, "englandAvg": 63.9, "worstRegion": 53.7, "bestName": "Richmond upon Thames", "worstName": "Blackpool"},
+    {"year": 2024, "bestRegion": 72.2, "englandAvg": 64.1, "worstRegion": 54.0, "bestName": "Richmond upon Thames", "worstName": "Blackpool"}
+  ],
+  "deprivationGap": [
+    {"year": 2010, "leastDeprived": 70.5, "mostDeprived": 52.1, "gap": 18.4},
+    {"year": 2011, "leastDeprived": 70.6, "mostDeprived": 52.0, "gap": 18.6},
+    {"year": 2012, "leastDeprived": 70.7, "mostDeprived": 51.8, "gap": 18.9},
+    {"year": 2013, "leastDeprived": 70.8, "mostDeprived": 51.6, "gap": 19.2},
+    {"year": 2014, "leastDeprived": 70.9, "mostDeprived": 51.4, "gap": 19.5},
+    {"year": 2015, "leastDeprived": 71.0, "mostDeprived": 51.3, "gap": 19.7},
+    {"year": 2016, "leastDeprived": 71.1, "mostDeprived": 51.1, "gap": 20.0},
+    {"year": 2017, "leastDeprived": 71.2, "mostDeprived": 51.0, "gap": 20.2},
+    {"year": 2018, "leastDeprived": 71.3, "mostDeprived": 50.8, "gap": 20.5},
+    {"year": 2019, "leastDeprived": 71.4, "mostDeprived": 50.7, "gap": 20.7},
+    {"year": 2020, "leastDeprived": 70.8, "mostDeprived": 49.5, "gap": 21.3},
+    {"year": 2021, "leastDeprived": 71.0, "mostDeprived": 49.8, "gap": 21.2},
+    {"year": 2022, "leastDeprived": 71.2, "mostDeprived": 50.1, "gap": 21.1},
+    {"year": 2023, "leastDeprived": 71.3, "mostDeprived": 50.3, "gap": 21.0},
+    {"year": 2024, "leastDeprived": 71.4, "mostDeprived": 50.5, "gap": 20.9}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "ONS", "dataset": "Health State Life Expectancies, UK", "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies", "retrieved": "2026-03-01", "frequency": "annual"},
+      {"name": "Health Foundation", "dataset": "Healthy Life Expectancy Analysis", "url": "https://www.health.org.uk/evidence-hub/health-inequalities/healthy-life-expectancy", "retrieved": "2026-03-01", "frequency": "periodic"},
+      {"name": "Institute of Health Equity", "dataset": "Marmot Review 10 Years On", "url": "https://www.instituteofhealthequity.org/resources-reports/marmot-review-10-years-on", "retrieved": "2026-03-01", "frequency": "one-off"}
+    ],
+    "methodology": "Healthy life expectancy (HLE) estimates the average number of years a person would expect to live in 'good' health based on contemporary mortality rates and prevalence of self-reported good health. ONS calculates HLE using data from the Annual Population Survey and mortality data. Regional and deprivation breakdowns use IMD 2019 deciles. Methodology changed in 2010 to align with the EU-SILC measure, creating a discontinuity in the time series.",
+    "knownIssues": [
+      "Methodology change in 2010 means pre-2010 and post-2010 figures are not directly comparable",
+      "Self-reported health is subjective and culturally influenced",
+      "COVID-19 caused significant disruption to 2020-2021 estimates",
+      "Small area estimates have wide confidence intervals"
+    ]
+  }
+}
