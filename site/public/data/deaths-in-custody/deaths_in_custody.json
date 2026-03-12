@@ -1,0 +1,103 @@
+{
+  "prisonDeaths": [
+    {"year": 2010, "deaths": 198},
+    {"year": 2011, "deaths": 192},
+    {"year": 2012, "deaths": 193},
+    {"year": 2013, "deaths": 207},
+    {"year": 2014, "deaths": 243},
+    {"year": 2015, "deaths": 257},
+    {"year": 2016, "deaths": 354},
+    {"year": 2017, "deaths": 315},
+    {"year": 2018, "deaths": 325},
+    {"year": 2019, "deaths": 296},
+    {"year": 2020, "deaths": 277},
+    {"year": 2021, "deaths": 299},
+    {"year": 2022, "deaths": 303},
+    {"year": 2023, "deaths": 312},
+    {"year": 2024, "deaths": 321}
+  ],
+  "selfInflicted": [
+    {"year": 2010, "deaths": 58},
+    {"year": 2011, "deaths": 57},
+    {"year": 2012, "deaths": 60},
+    {"year": 2013, "deaths": 74},
+    {"year": 2014, "deaths": 82},
+    {"year": 2015, "deaths": 89},
+    {"year": 2016, "deaths": 120},
+    {"year": 2017, "deaths": 70},
+    {"year": 2018, "deaths": 92},
+    {"year": 2019, "deaths": 80},
+    {"year": 2020, "deaths": 75},
+    {"year": 2021, "deaths": 78},
+    {"year": 2022, "deaths": 82},
+    {"year": 2023, "deaths": 89},
+    {"year": 2024, "deaths": 84}
+  ],
+  "policeContactDeaths": [
+    {"year": 2010, "deaths": 40},
+    {"year": 2011, "deaths": 38},
+    {"year": 2012, "deaths": 36},
+    {"year": 2013, "deaths": 42},
+    {"year": 2014, "deaths": 45},
+    {"year": 2015, "deaths": 47},
+    {"year": 2016, "deaths": 50},
+    {"year": 2017, "deaths": 52},
+    {"year": 2018, "deaths": 55},
+    {"year": 2019, "deaths": 55},
+    {"year": 2020, "deaths": 48},
+    {"year": 2021, "deaths": 56},
+    {"year": 2022, "deaths": 58},
+    {"year": 2023, "deaths": 60},
+    {"year": 2024, "deaths": 65}
+  ],
+  "selfHarmIncidents": [
+    {"year": 2010, "incidents": 26983},
+    {"year": 2011, "incidents": 24623},
+    {"year": 2012, "incidents": 23158},
+    {"year": 2013, "incidents": 23492},
+    {"year": 2014, "incidents": 25775},
+    {"year": 2015, "incidents": 32313},
+    {"year": 2016, "incidents": 40161},
+    {"year": 2017, "incidents": 44651},
+    {"year": 2018, "incidents": 55598},
+    {"year": 2019, "incidents": 63328},
+    {"year": 2020, "incidents": 52446},
+    {"year": 2021, "incidents": 57618},
+    {"year": 2022, "incidents": 62124},
+    {"year": 2023, "incidents": 66896},
+    {"year": 2024, "incidents": 69012}
+  ],
+  "metadata": {
+    "lastUpdated": "2025-11-15",
+    "sources": [
+      {
+        "name": "Ministry of Justice",
+        "dataset": "Safety in Custody quarterly statistics",
+        "url": "https://www.gov.uk/government/collections/safety-in-custody-statistics",
+        "retrieved": "2025-11-15",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Prisons and Probation Ombudsman (PPO)",
+        "dataset": "Annual Report — Fatal Incidents Investigations",
+        "url": "https://www.ppo.gov.uk/research/annual-reports/",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Independent Office for Police Conduct (IOPC)",
+        "dataset": "Deaths during or following police contact statistics",
+        "url": "https://www.policeconduct.gov.uk/research-and-learning/statistics/annual-deaths-during-or-following-police-contact-statistics",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Prison deaths data covers all deaths in prison custody in England and Wales, including natural causes, self-inflicted, and homicide. Self-inflicted deaths are classified by the PPO following investigation. Deaths following police contact are recorded by the IOPC and include deaths in or following police custody, pursuit-related deaths, road traffic fatalities involving police, and deaths following other police contact. Self-harm incidents count individual episodes, not individuals — one person may account for multiple incidents.",
+    "knownIssues": [
+      "Classification of cause of death can change following inquest — figures may be revised",
+      "Self-harm recording practices vary between prisons and have been standardised over time",
+      "COVID-19 restrictions in 2020 reduced self-harm incidents but may have worsened mental health outcomes not captured in these statistics",
+      "IOPC methodology for counting deaths following police contact was revised in 2016/17 — pre-2016 figures are not directly comparable"
+    ]
+  }
+}
