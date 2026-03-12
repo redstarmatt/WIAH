@@ -7,6 +7,36 @@ const BASE_URL = 'https://whatisactuallyhappening.uk';
 // Directories that are Next.js internals, not public routes
 const SKIP_DIRS = new Set(['api', 'fonts', '_next', '(auth)', '(main)']);
 
+/**
+ * Reads the most recent `lastUpdated` date from any JSON file in
+ * public/data/{topic}/, falling back to the current build time.
+ */
+function getTopicLastModified(topicSlug: string): Date {
+  const dataDir = path.join(process.cwd(), 'public', 'data', topicSlug);
+  try {
+    const files = fs.readdirSync(dataDir).filter(f => f.endsWith('.json'));
+    let latest: Date | null = null;
+    for (const file of files) {
+      try {
+        const raw = fs.readFileSync(path.join(dataDir, file), 'utf8');
+        const json = JSON.parse(raw);
+        if (json.lastUpdated) {
+          const d = new Date(json.lastUpdated);
+          if (!isNaN(d.getTime()) && (!latest || d > latest)) {
+            latest = d;
+          }
+        }
+      } catch {
+        // skip unreadable files
+      }
+    }
+    if (latest) return latest;
+  } catch {
+    // data dir doesn't exist for this topic
+  }
+  return new Date();
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const appDir = path.join(process.cwd(), 'app');
 
@@ -34,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     entries.push({
       url: `${BASE_URL}/${dir.name}`,
-      lastModified: new Date(),
+      lastModified: getTopicLastModified(dir.name),
       changeFrequency: isMainTopic ? 'weekly' : 'monthly',
       priority: isMainTopic ? 0.9 : isAbout ? 0.8 : 0.6,
     });
