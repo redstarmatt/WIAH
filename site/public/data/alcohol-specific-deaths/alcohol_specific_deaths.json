@@ -1,0 +1,86 @@
+{
+  "alcoholDeaths": {
+    "timeSeries": [
+      {"year": 2012, "deaths": 6490},
+      {"year": 2013, "deaths": 6592},
+      {"year": 2014, "deaths": 6831},
+      {"year": 2015, "deaths": 7327},
+      {"year": 2016, "deaths": 7366},
+      {"year": 2017, "deaths": 7697},
+      {"year": 2018, "deaths": 7551},
+      {"year": 2019, "deaths": 7565},
+      {"year": 2020, "deaths": 8974},
+      {"year": 2021, "deaths": 9641},
+      {"year": 2022, "deaths": 9138},
+      {"year": 2023, "deaths": 9780},
+      {"year": 2024, "deaths": 10048}
+    ]
+  },
+  "hospitalAdmissions": {
+    "timeSeries": [
+      {"year": 2012, "admissions": 835000},
+      {"year": 2013, "admissions": 856000},
+      {"year": 2014, "admissions": 878000},
+      {"year": 2015, "admissions": 930000},
+      {"year": 2016, "admissions": 958000},
+      {"year": 2017, "admissions": 976000},
+      {"year": 2018, "admissions": 992000},
+      {"year": 2019, "admissions": 1011000},
+      {"year": 2020, "admissions": 894000},
+      {"year": 2021, "admissions": 982000},
+      {"year": 2022, "admissions": 1036000},
+      {"year": 2023, "admissions": 1062000},
+      {"year": 2024, "admissions": 1078000}
+    ]
+  },
+  "liverDisease": {
+    "timeSeries": [
+      {"year": 2012, "deaths": 4570},
+      {"year": 2013, "deaths": 4650},
+      {"year": 2014, "deaths": 4800},
+      {"year": 2015, "deaths": 5100},
+      {"year": 2016, "deaths": 5180},
+      {"year": 2017, "deaths": 5340},
+      {"year": 2018, "deaths": 5280},
+      {"year": 2019, "deaths": 5310},
+      {"year": 2020, "deaths": 6340},
+      {"year": 2021, "deaths": 6870},
+      {"year": 2022, "deaths": 6520},
+      {"year": 2023, "deaths": 6980},
+      {"year": 2024, "deaths": 7236}
+    ]
+  },
+  "metadata": {
+    "topic": "alcohol-specific-deaths",
+    "lastUpdated": "2026-02-14",
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Alcohol-specific deaths in the UK",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholspecificdeathsintheuk",
+        "retrieved": "2026-02-14",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS Digital",
+        "dataset": "Statistics on Alcohol, England",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/statistics-on-alcohol",
+        "retrieved": "2026-02-14",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Deaths from liver disease: implications for alcohol policy",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath",
+        "retrieved": "2026-02-14",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Alcohol-specific deaths are those caused by conditions wholly attributable to alcohol, classified using ICD-10 codes. The ONS definition includes alcoholic liver disease, mental and behavioural disorders due to alcohol, and accidental poisoning by alcohol. Hospital admissions data covers all episodes where an alcohol-related condition was the primary or secondary diagnosis. Liver disease mortality is a subset of alcohol-specific deaths where alcoholic liver disease (K70) was the underlying cause.",
+    "knownIssues": [
+      "COVID-19 pandemic disrupted both drinking patterns and healthcare access in 2020-2021, creating a step change in the data",
+      "Hospital admissions figures for 2020 are artificially suppressed due to reduced healthcare access during lockdowns",
+      "Methodology for counting alcohol-related hospital admissions changed in 2021 — pre/post figures not directly comparable for the broader measure"
+    ]
+  }
+}
