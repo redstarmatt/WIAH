@@ -1,0 +1,83 @@
+{
+  "topic": "rural-connectivity",
+  "lastUpdated": "2026-03-01",
+  "national": {
+    "broadband": [
+      { "year": 2015, "ruralDecentPct": 55, "urbanDecentPct": 89 },
+      { "year": 2016, "ruralDecentPct": 61, "urbanDecentPct": 92 },
+      { "year": 2017, "ruralDecentPct": 67, "urbanDecentPct": 94 },
+      { "year": 2018, "ruralDecentPct": 72, "urbanDecentPct": 95 },
+      { "year": 2019, "ruralDecentPct": 78, "urbanDecentPct": 96 },
+      { "year": 2020, "ruralDecentPct": 81, "urbanDecentPct": 97 },
+      { "year": 2021, "ruralDecentPct": 83, "urbanDecentPct": 97 },
+      { "year": 2022, "ruralDecentPct": 85, "urbanDecentPct": 98 },
+      { "year": 2023, "ruralDecentPct": 87, "urbanDecentPct": 98 },
+      { "year": 2024, "ruralDecentPct": 89, "urbanDecentPct": 99 },
+      { "year": 2025, "ruralDecentPct": 90, "urbanDecentPct": 99 }
+    ],
+    "busJourneys": [
+      { "year": 2010, "ruralIndex": 100, "urbanIndex": 100 },
+      { "year": 2011, "ruralIndex": 95, "urbanIndex": 99 },
+      { "year": 2012, "ruralIndex": 90, "urbanIndex": 97 },
+      { "year": 2013, "ruralIndex": 85, "urbanIndex": 96 },
+      { "year": 2014, "ruralIndex": 80, "urbanIndex": 95 },
+      { "year": 2015, "ruralIndex": 74, "urbanIndex": 94 },
+      { "year": 2016, "ruralIndex": 69, "urbanIndex": 93 },
+      { "year": 2017, "ruralIndex": 65, "urbanIndex": 92 },
+      { "year": 2018, "ruralIndex": 61, "urbanIndex": 91 },
+      { "year": 2019, "ruralIndex": 58, "urbanIndex": 90 },
+      { "year": 2020, "ruralIndex": 32, "urbanIndex": 48 },
+      { "year": 2021, "ruralIndex": 38, "urbanIndex": 62 },
+      { "year": 2022, "ruralIndex": 44, "urbanIndex": 78 },
+      { "year": 2023, "ruralIndex": 48, "urbanIndex": 84 },
+      { "year": 2024, "ruralIndex": 50, "urbanIndex": 87 },
+      { "year": 2025, "ruralIndex": 51, "urbanIndex": 89 }
+    ],
+    "mobileCoverage": [
+      { "year": 2017, "rural4GPct": 41, "urban4GPct": 88 },
+      { "year": 2018, "rural4GPct": 48, "urban4GPct": 91 },
+      { "year": 2019, "rural4GPct": 55, "urban4GPct": 93 },
+      { "year": 2020, "rural4GPct": 60, "urban4GPct": 95 },
+      { "year": 2021, "rural4GPct": 64, "urban4GPct": 96 },
+      { "year": 2022, "rural4GPct": 68, "urban4GPct": 97 },
+      { "year": 2023, "rural4GPct": 72, "urban4GPct": 98 },
+      { "year": 2024, "rural4GPct": 76, "urban4GPct": 99 },
+      { "year": 2025, "rural4GPct": 79, "urban4GPct": 99 }
+    ]
+  },
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ofcom",
+        "dataset": "Connected Nations Report",
+        "url": "https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations",
+        "frequency": "Annual"
+      },
+      {
+        "name": "Department for Transport",
+        "dataset": "Bus Statistics Table BUS0110",
+        "url": "https://www.gov.uk/government/collections/bus-statistics",
+        "frequency": "Annual"
+      },
+      {
+        "name": "DCMS / DSIT",
+        "dataset": "Project Gigabit Progress Report",
+        "url": "https://www.gov.uk/guidance/project-gigabit-uk-gigabit-programme",
+        "frequency": "Quarterly"
+      },
+      {
+        "name": "Ofcom",
+        "dataset": "Connected Nations — Mobile Coverage Data",
+        "url": "https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations",
+        "frequency": "Annual"
+      }
+    ],
+    "methodology": "Broadband: 'decent' defined as 10 Mbps+ download per Ofcom USO threshold. Rural/urban classification follows ONS Rural-Urban Classification (2011). Bus journeys indexed to 2010=100 using DfT BUS0110 rural/urban split. Mobile coverage: outdoor 4G geographic coverage from Ofcom operator-submitted data, rural classification per ONS boundaries.",
+    "knownIssues": [
+      "2020–2021 bus data reflects pandemic disruption — anomaly in both series",
+      "Rural broadband figures include fixed wireless and satellite, which may not deliver consistent speeds",
+      "Mobile coverage is outdoor geographic coverage — indoor coverage is significantly lower in rural areas",
+      "ONS rural-urban classification last updated 2011; some reclassification may affect trend consistency"
+    ]
+  }
+}
