@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
-const BASE_URL = 'https://www.wiah.uk';
+const BASE_URL = 'https://whatisactuallyhappening.uk';
 
 export default function CanonicalTag() {
   const pathname = usePathname();
