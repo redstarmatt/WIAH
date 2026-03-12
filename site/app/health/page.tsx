@@ -852,7 +852,7 @@ export default function HealthPage() {
         <div id="sec-waiting">
           <ScrollReveal>
           <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">NHS Waiting Lists</h2>
-          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+          <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
             7.3 million people are waiting for NHS treatment. The 18-week target — that 92% of patients
             should be seen within 18 weeks of referral — has not been met since 2016.
           </p>
@@ -1337,7 +1337,7 @@ export default function HealthPage() {
         <section id="sec-ae" className="mb-16">
           <ScrollReveal>
             <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">A&amp;E Performance</h2>
-            <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+            <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
               The four-hour A&amp;E standard — that 95% of patients should be seen, treated, and
               discharged or admitted within four hours — has not been met since 2015. In 2024,
               only 70% of patients were seen within four hours.
@@ -1395,7 +1395,7 @@ export default function HealthPage() {
         <section id="sec-dental" className="mb-16">
           <ScrollReveal>
             <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">NHS Dentistry</h2>
-            <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+            <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
               The proportion of adults seen by an NHS dentist has fallen from 57% in 2017/18 to 49%
               in 2024/25. Access for children has also declined, from 73% to 65% over the same period.
             </p>
@@ -1428,7 +1428,7 @@ export default function HealthPage() {
         <section id="sec-talking-therapies" className="mb-16">
           <ScrollReveal>
             <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">NHS Talking Therapies</h2>
-            <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+            <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
               Referrals to NHS talking therapies (IAPT / NHS Talking Therapies for Anxiety and
               Depression) have grown from 1.1 million in 2016 to 1.6 million in 2023. The recovery
               rate — the share of patients who move from above to below clinical caseness — has
@@ -1482,7 +1482,7 @@ export default function HealthPage() {
         <section id="sec-inequality" className="mb-12">
           <ScrollReveal>
           <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Waiting List Inequality</h2>
-          <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl mb-6">
+          <p className="text-base text-wiah-black leading-[1.7] max-w-2xl mb-6">
             The NHS waiting list is not experienced equally. People in the most deprived areas wait
             around 4 weeks longer than those in the least deprived — a gap that has doubled since
             2019 as the backlog grew. The inequality is structural: more deprived areas have higher
@@ -1546,7 +1546,7 @@ export default function HealthPage() {
         <section id="sec-measles" className="mb-16">
           <ScrollReveal>
             <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Measles &amp; Vaccination</h2>
-            <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+            <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
               The UK lost its WHO measles elimination status in 2019 after vaccination rates fell
               below the 95% herd immunity threshold. In 2024, a major outbreak centred on the West
               Midlands produced over 2,000 confirmed cases — the highest annual total since the

@@ -538,7 +538,7 @@ export default function TransportPage() {
         <div id="sec-road-safety">
           <ScrollReveal>
           <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Road Safety</h2>
-          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+          <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
             Britain's roads are dramatically safer than they were four decades ago — but the
             improvement has stalled since 2010, with around 1,700 people killed each year.
           </p>
@@ -590,7 +590,7 @@ export default function TransportPage() {
         <div id="sec-ev">
           <ScrollReveal>
           <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-4">Electric Vehicles</h2>
-          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+          <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
             Battery electric vehicles now account for nearly 1 in 5 new car sales. Over 1.4 million
             EVs are already on UK roads — a tenfold increase since 2019.
           </p>

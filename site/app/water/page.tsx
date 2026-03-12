@@ -783,7 +783,7 @@ export default function WaterPage() {
         {/* ── Finance Section: Metric Cards & Context ────────────────── */}
         <ScrollReveal>
         <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Company Finances & Investment</h2>
-        <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+        <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
           Water companies have paid £52.8 billion in dividends since privatisation in 1989 —
           while capital investment in infrastructure has often lagged behind need. The scale of this
           imbalance, and its consequences for sewage and leakage, demands scrutiny.
@@ -919,7 +919,7 @@ export default function WaterPage() {
 
         <ScrollReveal>
           <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Nitrogen Pollution in Rivers</h2>
-          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+          <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
             Agricultural run-off is the leading source of nitrate pollution in England's waterways.
             Over 83% of rivers now fail nitrate standards — a steady rise from 78% in 2015. Designated
             Nitrate Vulnerable Zones, covering 55–60% of England, are intended to restrict fertiliser use
@@ -954,7 +954,7 @@ export default function WaterPage() {
 
         <ScrollReveal>
           <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Drinking Water Quality</h2>
-          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+          <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
             Tap water in England is among the cleanest in the world. The Drinking Water Inspectorate
             reports compliance of 99.9% or above every year — meaning the vast majority of samples meet
             all regulatory standards at the point of supply. This is a genuine success story of water

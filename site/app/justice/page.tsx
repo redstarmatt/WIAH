@@ -992,7 +992,7 @@ export default function JusticePage() {
           <ScrollReveal>
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-wiah-black mb-2">Domestic Abuse</h2>
-              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 Around 1.7 million people experience domestic abuse each year in England and Wales.
                 The majority never report to police — and of those that do, only 5 in every 100
                 incidents end in a conviction.
@@ -1033,7 +1033,7 @@ export default function JusticePage() {
         <div id="sec-crime-trends">
           <ScrollReveal>
           <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Crime Trends by Type</h2>
-          <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+          <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
             Different crime types have moved in very different directions since 2002. Violence and fraud have risen sharply, while robbery has fallen. Recording practice changes in 2014 may have inflated some categories.
           </p>
           </ScrollReveal>
@@ -1146,7 +1146,7 @@ export default function JusticePage() {
           <ScrollReveal>
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-wiah-black mb-2">Police Officer Numbers</h2>
-              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 England and Wales lost over 21,000 officers between 2010 and 2018 as austerity cuts
                 reduced forces. A government uplift programme then added back roughly 20,000 officers
                 by 2023, but numbers remain broadly flat since the programme concluded.
@@ -1180,7 +1180,7 @@ export default function JusticePage() {
           <ScrollReveal>
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-wiah-black mb-2">Legal Aid</h2>
-              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 Real-terms legal aid spending has fallen by over 30% since 2010, from around £2.1bn
                 to £1.4bn. The number of firms holding legal aid contracts has fallen by half, reducing
                 access to legal representation across England and Wales.
@@ -1214,7 +1214,7 @@ export default function JusticePage() {
           <ScrollReveal>
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-wiah-black mb-2">Knife Crime</h2>
-              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 Knife and offensive weapon offences have risen sharply since 2014, reaching over
                 51,000 in 2024 — nearly double the 2010 figure. Knife homicides have fluctuated
                 but remain persistently high. Youth knife crime has fallen somewhat from its 2019

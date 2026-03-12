@@ -928,7 +928,7 @@ export default function EducationPage() {
         <div id="sec-workforce">
         <ScrollReveal>
         <h2 className="text-2xl font-bold text-wiah-black mb-2 mt-8">Teacher Workforce</h2>
-        <p className="text-base text-wiah-mid mb-8 max-w-2xl">
+        <p className="text-base text-wiah-black leading-[1.7] mb-8 max-w-2xl">
           Teacher vacancies have tripled since 2010. The pupil-teacher ratio has risen steadily,
           meaning fewer teachers serve more pupils. Workload and pay remain the primary barriers to recruitment.
         </p>
@@ -1094,7 +1094,7 @@ export default function EducationPage() {
           <ScrollReveal>
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-wiah-black mb-2">School Funding</h2>
-              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 Revenue funding per pupil fell 14% in real terms between 2009 and 2017 before
                 recovering. In nominal terms spending looks like it has risen substantially — but
                 inflation tells a different story.
@@ -1126,7 +1126,7 @@ export default function EducationPage() {
           <ScrollReveal>
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-wiah-black mb-2">International Comparison</h2>
-              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 How does the UK compare internationally? PISA 2022 tested 15-year-olds across
                 OECD member countries in reading, mathematics, and science.
               </p>
@@ -1214,7 +1214,7 @@ export default function EducationPage() {
           <ScrollReveal>
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-wiah-black mb-2">School Funding per Pupil</h2>
-              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 Funding per pupil fell steadily through the austerity years, reaching a trough around
                 2017 before partial recovery. In 2023 prices, each pupil now receives less than they
                 did in 2009 — a real-terms cut that has reshaped staffing, curriculum breadth, and
@@ -1268,7 +1268,7 @@ export default function EducationPage() {
           <ScrollReveal>
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-wiah-black mb-2">Children&rsquo;s Mental Health Services</h2>
-              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 Referrals to Child and Adolescent Mental Health Services have nearly doubled since 2016,
                 driven by rising rates of anxiety, depression, and eating disorders in young people.
                 The pandemic accelerated demand sharply. More than a quarter of referrals are rejected
@@ -1323,7 +1323,7 @@ export default function EducationPage() {
           <ScrollReveal>
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-wiah-black mb-2">Ofsted Inspection Grades</h2>
-              <p className="text-base text-wiah-mid leading-[1.7] max-w-2xl">
+              <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 The share of schools rated Good or Outstanding by Ofsted has risen steadily from 65%
                 in 2012 to around 89% in 2024. This is one of the clearest positive trends in English
                 education. Caution is warranted, however: many schools held Outstanding grades from

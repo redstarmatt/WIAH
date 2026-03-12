@@ -15,7 +15,7 @@ export default function NotFound() {
         <h1 className="text-4xl font-extrabold text-wiah-black mb-4">
           Page not found
         </h1>
-        <p className="text-base text-wiah-mid leading-[1.7] max-w-md mx-auto mb-10">
+        <p className="text-base text-wiah-black leading-[1.7] max-w-md mx-auto mb-10">
           This page doesn't exist. The topic may have moved or the URL may be incorrect.
         </p>
         <Link

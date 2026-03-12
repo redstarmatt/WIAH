@@ -28,7 +28,7 @@ export default function AboutPage() {
 
         <div className="border-t border-wiah-border pt-10 mt-10 max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-2">Comments &amp; corrections</h2>
-          <p className="text-base text-wiah-mid leading-[1.7] mb-6">
+          <p className="text-base text-wiah-black leading-[1.7] mb-6">
             If you spot an error, a data source that has moved, or a figure that looks wrong,
             please let us know. We also welcome general feedback and suggestions for topics to cover.
           </p>
