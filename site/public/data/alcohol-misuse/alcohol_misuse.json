@@ -1,34 +1,47 @@
 {
   "alcoholDeaths": [
-    {"year": 2010, "deaths": 8790},
-    {"year": 2011, "deaths": 8748},
-    {"year": 2012, "deaths": 8367},
-    {"year": 2013, "deaths": 8416},
-    {"year": 2014, "deaths": 8697},
-    {"year": 2015, "deaths": 9014},
-    {"year": 2016, "deaths": 9214},
-    {"year": 2017, "deaths": 9069},
-    {"year": 2018, "deaths": 9028},
-    {"year": 2019, "deaths": 9183},
-    {"year": 2020, "deaths": 9223},
+    {"year": 2012, "deaths": 6490},
+    {"year": 2013, "deaths": 6592},
+    {"year": 2014, "deaths": 6831},
+    {"year": 2015, "deaths": 7053},
+    {"year": 2016, "deaths": 7327},
+    {"year": 2017, "deaths": 7504},
+    {"year": 2018, "deaths": 7551},
+    {"year": 2019, "deaths": 7565},
+    {"year": 2020, "deaths": 8974},
     {"year": 2021, "deaths": 9641},
-    {"year": 2022, "deaths": 9048}
+    {"year": 2022, "deaths": 9461},
+    {"year": 2023, "deaths": 9218},
+    {"year": 2024, "deaths": 9048}
   ],
   "hospitalAdmissions": [
-    {"year": 2010, "admissions": 720000},
-    {"year": 2012, "admissions": 760000},
-    {"year": 2014, "admissions": 800000},
-    {"year": 2016, "admissions": 820000},
-    {"year": 2018, "admissions": 850000},
-    {"year": 2020, "admissions": 810000},
-    {"year": 2021, "admissions": 870000},
-    {"year": 2022, "admissions": 900000}
+    {"year": 2012, "admissions": 688000},
+    {"year": 2013, "admissions": 704000},
+    {"year": 2014, "admissions": 726000},
+    {"year": 2015, "admissions": 745000},
+    {"year": 2016, "admissions": 764000},
+    {"year": 2017, "admissions": 783000},
+    {"year": 2018, "admissions": 798000},
+    {"year": 2019, "admissions": 810000},
+    {"year": 2020, "admissions": 772000},
+    {"year": 2021, "admissions": 854000},
+    {"year": 2022, "admissions": 879000},
+    {"year": 2023, "admissions": 890000},
+    {"year": 2024, "admissions": 900000}
   ],
-  "byCause": [
-    {"cause": "Alcoholic liver disease", "pct": 75},
-    {"cause": "Mental & behavioural (alcohol)", "pct": 10},
-    {"cause": "Accidental poisoning (alcohol)", "pct": 6},
-    {"cause": "Alcoholic cardiomyopathy", "pct": 5},
-    {"cause": "Other", "pct": 4}
+  "treatmentVsNeed": [
+    {"year": 2012, "inTreatment": 108900, "estimatedDependent": 586000},
+    {"year": 2013, "inTreatment": 103000, "estimatedDependent": 589000},
+    {"year": 2014, "inTreatment": 97800, "estimatedDependent": 592000},
+    {"year": 2015, "inTreatment": 91700, "estimatedDependent": 595000},
+    {"year": 2016, "inTreatment": 85000, "estimatedDependent": 598000},
+    {"year": 2017, "inTreatment": 80400, "estimatedDependent": 602000},
+    {"year": 2018, "inTreatment": 76100, "estimatedDependent": 604000},
+    {"year": 2019, "inTreatment": 75000, "estimatedDependent": 602000},
+    {"year": 2020, "inTreatment": 72900, "estimatedDependent": 610000},
+    {"year": 2021, "inTreatment": 109000, "estimatedDependent": 625000},
+    {"year": 2022, "inTreatment": 110400, "estimatedDependent": 620000},
+    {"year": 2023, "inTreatment": 112500, "estimatedDependent": 618000},
+    {"year": 2024, "inTreatment": 113200, "estimatedDependent": 615000}
   ]
 }
