@@ -42,6 +42,13 @@ const activeAnnotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID lockdowns' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Sport England', dataset: 'Active Lives Survey', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Social prescribing referral data', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', date: '2024' },
+  { num: 3, name: 'Public Health England', dataset: 'Everybody Active, Every Day — inactivity cost estimate', date: '2023' },
+  { num: 4, name: 'NICE', dataset: 'Physical activity: exercise referral schemes (PH54)', url: 'https://www.nice.org.uk/guidance/ph54', date: '2014' },
+];
+
 export default function ExercisePrescriptionPage() {
   return (
     <>
@@ -56,7 +63,7 @@ export default function ExercisePrescriptionPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Physical inactivity is among the most significant modifiable risk factors for chronic disease in the UK. Around 38% of adults do not meet the Chief Medical Officers' guidelines of 150 minutes of moderate activity per week, contributing to high rates of type 2 diabetes, cardiovascular disease, depression, and musculoskeletal conditions. Public Health England estimated the economic cost of physical inactivity at £7.4 billion per year in direct NHS costs and productivity losses — a figure that has risen annually since. Despite this, exercise prescription — the formal referral of patients to structured physical activity programmes — remains inconsistently delivered, underfunded, and poorly integrated with primary care.</p>
+            <p>Physical inactivity is among the most significant modifiable risk factors for chronic disease in the UK. Around 38% of adults do not meet the Chief Medical Officers' guidelines of 150 minutes of moderate activity per week<Cite nums={1} />, contributing to high rates of type 2 diabetes, cardiovascular disease, depression, and musculoskeletal conditions. Public Health England estimated the economic cost of physical inactivity at £7.4 billion per year in direct NHS costs and productivity losses<Cite nums={3} /> — a figure that has risen annually since. Despite this, exercise prescription — the formal referral of patients to structured physical activity programmes — remains inconsistently delivered, underfunded, and poorly integrated with primary care.</p>
             <p>Social prescribing — the referral of patients with non-clinical needs (including inactivity, loneliness, and mild mental health problems) to community-based programmes rather than medical interventions — has grown rapidly since the NHS Long Term Plan committed to 1,000 social prescribing link workers by 2020. By 2024, over 340,000 referrals were made annually, with evidence suggesting a 20% reduction in GP appointment demand among recipients. Exercise referral schemes — where GPs refer patients to supervised activity programmes — operate in most areas but vary enormously in capacity, evidence base, and follow-up. The National Institute for Health and Care Excellence (NICE) recommends exercise on prescription for depression, type 2 diabetes management, and cardiovascular risk reduction, but uptake in primary care remains below guideline levels.</p>
           </div>
         </section>

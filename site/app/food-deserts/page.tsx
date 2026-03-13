@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // % population with limited food access, 2012–2024
 const limitedAccessPct = [7.1, 7.2, 7.3, 7.5, 7.6, 7.7, 7.8, 7.9, 7.8, 7.9, 8.0, 8.0, 8.0];
