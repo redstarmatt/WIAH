@@ -263,7 +263,7 @@ export default function HomelessnessPage() {
                 The private rented sector drives the crisis. End of tenancy accounts for 22.3% of accepted cases — the single largest cause for seven consecutive years.<Cite nums={1} /> Section 21 no-fault evictions were finally abolished in October 2025 under the Renters' Rights Bill, but landlords served a wave of notices before the deadline, fuelling a surge in 2023/24 presentations. The deeper problem is affordability: Local Housing Allowance, the benefit that caps rent support at the 30th percentile of local rents, has been repeatedly frozen. In London the gap between LHA and an average one-bedroom rent is £500–£800 per month. Benefits no longer cover the cheapest third of the market they were designed to reach.
               </p>
               <p>
-                The Everyone In programme proved what speed and political will can achieve: 37,000 rough sleepers were housed in hotels within weeks of the March 2020 lockdown, and the annual count fell from 4,266 to 2,440 by 2021. But the hotel programme wound down without adequate move-on housing, and by 2024 rough sleeping had climbed back to 4,255 — almost exactly the 2018 level. The structural deficit is social housing. One million council homes have been sold under Right to Buy since 1980, replaced at a ratio of roughly 1:8. Some 1.3 million households sit on social housing waiting lists in 2024. Until supply catches up, temporary accommodation will continue to function as England's de facto social housing system — at far greater cost.
+                The Everyone In programme proved what speed and political will can achieve: 37,000 rough sleepers were housed in hotels within weeks of the March 2020 lockdown, and the annual count fell from 4,266 to 2,440 by 2021.<Cite nums={2} /> But the hotel programme wound down without adequate move-on housing, and by 2024 rough sleeping had climbed back to 4,255 — almost exactly the 2018 level.<Cite nums={2} /> The structural deficit is social housing. One million council homes have been sold under Right to Buy since 1980, replaced at a ratio of roughly 1:8. Some 1.3 million households sit on social housing waiting lists in 2024. Until supply catches up, temporary accommodation will continue to function as England's de facto social housing system — at far greater cost.
               </p>
             </div>
           </div>
@@ -282,6 +282,10 @@ export default function HomelessnessPage() {
         </ScrollReveal>
 
         <ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
           <div className="mt-16 border-t border-wiah-border pt-12">
             <h3 className="text-xl font-bold text-wiah-black mb-6">Sources &amp; Methodology</h3>
             <div className="space-y-4 text-sm text-wiah-mid font-mono">

@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // FTSE 100 median CEO pay (£m), 2015–2023 — CIPD / High Pay Centre
 const ceoPayValues = [3.5, 3.7, 3.9, 3.8, 4.0, 3.2, 3.8, 4.1, 4.4];
@@ -39,6 +41,12 @@ const ratioSeries: Series[] = [
 const payAnnotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID — some CEO pay cuts' },
   { date: new Date(2019, 0, 1), label: '2019: Pay ratio reporting begins' },
+];
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'High Pay Centre', dataset: 'FTSE 100 CEO pay analysis', url: 'https://highpaycentre.org/ftse-100-ceo-pay-analysis/', date: '2023' },
+  { num: 2, name: 'High Pay Centre / CIPD', dataset: 'Executive pay and the workforce', url: 'https://highpaycentre.org/', date: '2023' },
+  { num: 3, name: 'Investment Association', dataset: 'Shareholder voting analysis', date: '2023' },
 ];
 
 export default function ExecutivePayPage() {
