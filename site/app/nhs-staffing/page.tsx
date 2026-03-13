@@ -11,6 +11,13 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'NHS Vacancy Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-vacancies-survey', date: 'Jan 2024', note: '112,000 vacancies (1 in 10 posts); down from 133,000 peak in 2022; 34,200 nursing vacancies' },
+  { num: 2, name: 'NHS England', dataset: 'NHS Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics', date: 'Jan 2024', note: '32,400 internationally recruited nurses joined in 2024; up from 4,100 in 2015' },
+  { num: 3, name: 'NHS Digital', dataset: 'NHS Sickness Absence Rates', date: '2023', note: '5.6% absence rate; agency/bank staff filled 8% of shifts at £3.2bn cost' },
+  { num: 4, name: 'NHS England', dataset: 'NHS Long Term Workforce Plan', url: 'https://www.england.nhs.uk/long-read/nhs-long-term-workforce-plan-2/', date: '2023', note: '10,000 additional nursing places funded since 2019; 24,000 more promised by 2031' },
+];
+
 export default function NhsStaffingPage() {
   const colour = '#E63946';
 
