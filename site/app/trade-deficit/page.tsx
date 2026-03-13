@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'UK Trade Statistical Bulletin 2024', url: 'https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/latest', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'UK manufacturing as share of GDP', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp', date: '2024', note: 'Manufacturing fell from 28% of GDP in 1970 to 9% in 2023' },
+  { num: 3, name: 'UK Trade Policy Observatory', dataset: 'UK goods exports to the EU post-Brexit', url: 'https://blogs.sussex.ac.uk/uktpo/', date: '2024', note: 'UK goods exports to EU 15-25% below trend' },
+];
 
 interface TradeDeficitData {
   topic: string
@@ -64,8 +72,8 @@ export default function TradeDeficitPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK goods trade deficit stood at £165 billion in 2023 — the largest in peacetime history — while the services surplus reached £125 billion, producing a net trade deficit of approximately £40 billion. The goods deficit reflects four decades of manufacturing decline: UK manufacturing fell from 28% of GDP in 1970 to 9% in 2023, meaning a higher share of physical goods are imported than produced. Energy is an increasingly important component: the UK became a net energy importer in 2004, and Russia's invasion of Ukraine drove the 2022 goods deficit to a record £186 billion before moderating as energy prices fell. The UK is the world's second-largest exporter of financial services after the US, and the services surplus has proved resilient post-Brexit despite some wholesale banking activity relocating to EU financial centres.</p>
-            <p>The trade balance's structural vulnerabilities fall on specific sectors and regions. Post-Brexit non-tariff barriers have added administrative friction to goods exports — academic evidence consistently finds UK goods exports to the EU are 15–25% below trend — while agricultural and small business exporters bear the highest per-transaction costs. Post-Brexit bilateral free trade agreements with Australia, New Zealand, and the CPTPP bloc are too small individually to materially affect the aggregate deficit; the combined GDP of Australia and New Zealand is smaller than the Netherlands. A veterinary and SPS agreement with the EU would have greater trade balance impact than any other available policy lever, but requires navigating the political constraints of the current Brexit settlement.</p>
+            <p>The UK goods trade deficit stood at £165 billion in 2023 — the largest in peacetime history — while the services surplus reached £125 billion, producing a net trade deficit of approximately £40 billion.<Cite nums={1} /> The goods deficit reflects four decades of manufacturing decline: UK manufacturing fell from 28% of GDP in 1970 to 9% in 2023, meaning a higher share of physical goods are imported than produced.<Cite nums={2} /> Energy is an increasingly important component: the UK became a net energy importer in 2004, and Russia's invasion of Ukraine drove the 2022 goods deficit to a record £186 billion before moderating as energy prices fell. The UK is the world's second-largest exporter of financial services after the US, and the services surplus has proved resilient post-Brexit despite some wholesale banking activity relocating to EU financial centres.</p>
+            <p>The trade balance's structural vulnerabilities fall on specific sectors and regions. Post-Brexit non-tariff barriers have added administrative friction to goods exports — academic evidence consistently finds UK goods exports to the EU are 15–25% below trend<Cite nums={3} /> — while agricultural and small business exporters bear the highest per-transaction costs. Post-Brexit bilateral free trade agreements with Australia, New Zealand, and the CPTPP bloc are too small individually to materially affect the aggregate deficit; the combined GDP of Australia and New Zealand is smaller than the Netherlands. A veterinary and SPS agreement with the EU would have greater trade balance impact than any other available policy lever, but requires navigating the political constraints of the current Brexit settlement.</p>
           </div>
         </section>
 

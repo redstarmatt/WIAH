@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'UKHSA', dataset: 'Heat Mortality Monitoring Report', url: 'https://www.ukhsa.gov.uk/our-work/health-protection/heat-health', date: '2024' },
+  { num: 2, name: 'Met Office', dataset: 'UK Climate Observations & National Climate Information Centre', url: 'https://www.metoffice.gov.uk/', date: '2024' },
+  { num: 3, name: 'Climate Change Committee', dataset: 'Independent Assessment of UK Climate Risk', url: 'https://www.theccc.org.uk/', date: '2024' },
+];
 
 interface HeatData {
   national: {
@@ -70,8 +78,8 @@ export default function UrbanHeatPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>On 19 July 2022, the UK recorded temperatures above 40&deg;C for the first time, and UKHSA attributed 2,803 excess deaths to that summer's heatwave — the highest on record. The Met Office estimates days above 28&deg;C in England have risen from roughly 8 per year in 2010 to 21 in 2022. Central London runs on average 4&deg;C warmer than surrounding countryside due to the urban heat island effect. An estimated 95% of UK homes have no air conditioning — one of the lowest rates in Europe — and there is no mandatory maximum indoor workplace temperature, only an advisory threshold of 30&deg;C. Housing stock built for heat retention, non-ventilating windows, and dark absorptive rooftops are legacies of a different climate assumption.</p>
-            <p>The risks fall hardest on those least able to adapt. Over-75s face 5.4 times the heat mortality risk of the general population; those with cardiovascular or respiratory conditions face 3.8 times the risk. Top-floor flat residents, outdoor workers, and care home residents face the sharpest exposure with the least capacity to adapt. People in deprived neighbourhoods are simultaneously least likely to have air conditioning and least likely to live near cooling green space. Urban greening — street trees, green roofs, pocket parks — reduces surface temperatures by 8–12&deg;C in studies, but deployment lags far behind what the Climate Change Committee says is needed for adequate adaptation.</p>
+            <p>On 19 July 2022, the UK recorded temperatures above 40&deg;C for the first time, and UKHSA attributed 2,803 excess deaths to that summer's heatwave — the highest on record.<Cite nums={1} /> The Met Office estimates days above 28&deg;C in England have risen from roughly 8 per year in 2010 to 21 in 2022.<Cite nums={2} /> Central London runs on average 4&deg;C warmer than surrounding countryside due to the urban heat island effect. An estimated 95% of UK homes have no air conditioning — one of the lowest rates in Europe — and there is no mandatory maximum indoor workplace temperature, only an advisory threshold of 30&deg;C. Housing stock built for heat retention, non-ventilating windows, and dark absorptive rooftops are legacies of a different climate assumption.</p>
+            <p>The risks fall hardest on those least able to adapt. Over-75s face 5.4 times the heat mortality risk of the general population; those with cardiovascular or respiratory conditions face 3.8 times the risk.<Cite nums={1} /> Top-floor flat residents, outdoor workers, and care home residents face the sharpest exposure with the least capacity to adapt. People in deprived neighbourhoods are simultaneously least likely to have air conditioning and least likely to live near cooling green space. Urban greening — street trees, green roofs, pocket parks — reduces surface temperatures by 8–12&deg;C in studies, but deployment lags far behind what the Climate Change Committee says is needed for adequate adaptation.<Cite nums={3} /></p>
           </div>
         </section>
 

@@ -164,6 +164,10 @@ export default function YouthViolencePage() {
             />
           </section>
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>

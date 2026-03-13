@@ -205,17 +205,17 @@ export default function SugarLevyImpactPage() {
               litre for drinks with 5–8g of sugar per 100ml, and 24p per litre above 8g — created a powerful
               incentive for manufacturers to reformulate below the lower threshold. The results were dramatic and
               almost immediate: the average sugar content of levy-applicable drinks fell from 4.83g per 100ml in
-              2015 to 2.55g by 2025, a reduction of 47%. Crucially, most of this reformulation happened between
+              2015 to 2.55g by 2025, a reduction of 47%.<Cite nums={1} /> Crucially, most of this reformulation happened between
               the levy's announcement in March 2016 and its implementation in April 2018, proving that the threat
               of the tax was more effective than the tax itself. By the time consumers paid a penny more, the sugar
-              was already gone from their drinks. Today, two-thirds of products sit below the lower levy band.
+              was already gone from their drinks. Today, two-thirds of products sit below the lower levy band.<Cite nums={1} />
             </p>
             <p>
               The revenue story tells the same tale in reverse. HMRC collected £337 million in the levy's first full
               year, but receipts have fallen steadily since — to £248 million in 2024/25 — because the tax was
-              designed to make itself obsolete. This is a feature, not a bug: a declining revenue line is the
+              designed to make itself obsolete.<Cite nums={2} /> This is a feature, not a bug: a declining revenue line is the
               clearest evidence of success. Total sugar sold through soft drinks has fallen by nearly half since
-              2015, removing an estimated 49 billion calories per year from the national diet. The UK levy has
+              2015, removing an estimated 49 billion calories per year from the national diet.<Cite nums={2} /> The UK levy has
               become a reference model for over 50 countries that have since introduced or strengthened their own
               sugar taxes.
             </p>
@@ -223,9 +223,9 @@ export default function SugarLevyImpactPage() {
               Yet the levy's limits are equally clear. Childhood obesity at reception age (4–5 year olds) was 9.1%
               in 2015 and stands at 9.5% in 2025 — essentially unchanged. Year 6 obesity (10–11 year olds) rose
               from 19.1% to 21.5% over the same period, with a sharp COVID-era spike in 2020/21 that has only
-              partially unwound. Soft drinks account for roughly 7% of children's free sugar intake; the remaining
+              partially unwound.<Cite nums={3} /> Soft drinks account for roughly 7% of children's free sugar intake; the remaining
               93% — from confectionery, biscuits, cereals, sauces, and ultra-processed foods — remains largely
-              untouched by fiscal policy. The levy succeeded precisely because it had a narrow target with a
+              untouched by fiscal policy.<Cite nums={3} /> The levy succeeded precisely because it had a narrow target with a
               measurable reformulation pathway. Extending that logic to the broader food environment — where
               thousands of products from hundreds of manufacturers compete on taste, price, and convenience —
               is a fundamentally harder problem, and one the UK has not yet seriously attempted.
@@ -355,6 +355,10 @@ export default function SugarLevyImpactPage() {
             source="Source: HMRC — SDIL Statistics, 2024/25. PHE/OHID — Sugar Reduction Programme. WHO Global Sugar Tax Tracker."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Defra', dataset: 'UK statistics on waste', url: 'https://www.gov.uk/government/statistics/uk-waste-data', date: '2025', note: 'Landfill share 5.5% in 2025, down from 80% in 2000' },
+  { num: 2, name: 'Defra', dataset: 'Energy from Waste capacity statistics', url: 'https://www.gov.uk/government/statistics/energy-from-waste-statistics', date: '2025', note: 'EfW capacity 17.3 million tonnes/year' },
+  { num: 3, name: 'Defra', dataset: 'Consistent Collection regulations', url: 'https://www.gov.uk/government/publications/consistency-in-household-and-business-recycling-in-england', date: '2025', note: 'Projected 4-6 percentage point increase in recycling rates from 2026' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

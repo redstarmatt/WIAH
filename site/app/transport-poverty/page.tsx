@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfT', dataset: 'Transport statistics — household transport costs', url: 'https://www.gov.uk/government/statistical-data-sets/transport-statistics-great-britain', date: '2025', note: 'Transport poverty and low-income transport cost indices' },
+  { num: 2, name: 'Campaign for Better Transport', dataset: 'The Future of Rural Bus Services', url: 'https://bettertransport.org.uk', date: '2024', note: 'Bus route reductions since 2010' },
+  { num: 3, name: 'DfT', dataset: 'Bus statistics — BUS01', url: 'https://www.gov.uk/government/statistical-data-sets/bus-statistics-data-tables-bus01', date: '2025', note: 'Bus Back Better national strategy funding' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -116,6 +124,7 @@ export default function TopicPage() {
           topic="Transport & Infrastructure"
           question="Can Low-Income Households Afford to Get Around?"
           finding="Transport costs for low-income households have risen 40% since 2010. 2.3 million households are in transport poverty — unable to afford reliable access to work, healthcare and education."
+          preposition="with"
           colour="#264653"
         />
 
@@ -194,6 +203,8 @@ export default function TopicPage() {
             source="Source: DfT — Bus statistics, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6"><References items={editorialRefs} /></div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

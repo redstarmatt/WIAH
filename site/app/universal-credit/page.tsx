@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Universal Credit Statistics', url: 'https://www.gov.uk/government/collections/universal-credit-statistics', date: '2024', note: 'Monthly. Claimant numbers, deductions, conditionality' },
+  { num: 2, name: 'National Audit Office', dataset: 'Universal Credit evaluations', url: 'https://www.nao.org.uk/reports/universal-credit/', date: '2023' },
+  { num: 3, name: 'Institute for Fiscal Studies', dataset: 'Two-child limit analysis', url: 'https://ifs.org.uk', date: '2024' },
+  { num: 4, name: 'Joseph Rowntree Foundation', dataset: 'Minimum Income Standard', url: 'https://www.jrf.org.uk/data/minimum-income-standard', date: '2024' },
+];
 
 export default function UniversalCreditPage() {
   const colour = '#F4A261';
@@ -154,9 +163,9 @@ export default function UniversalCreditPage() {
           <section className="max-w-2xl mb-12 mt-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Universal Credit now supports 6 million people — around 1 in 8 adults of working age. The system consolidated six legacy benefits into one monthly payment with the stated aim of making work pay and reducing complexity. In broad terms, work incentives have improved: the taper rate cut of 2021 means claimants keep more of every pound they earn. But the structural problems identified when the system was designed have not been resolved. The five-week wait — a deliberate design choice to shift the benefit from a weekly to a monthly cycle — continues to push new claimants into debt before they receive a penny.</p>
-              <p>Around 2.1 million claimants — 35% of the total — have their monthly payment reduced by deductions. These deductions repay advance payment loans (taken out to bridge the five-week wait), legacy benefit overpayments, tax credit debts, and in some cases rent arrears paid directly to landlords. The maximum deduction rate is now capped at 25% of the standard allowance — down from 40% — but for a single adult over 25 receiving £368.74 per month, a 25% deduction reduces their UC award to £276. After housing costs, this can leave nothing for food.</p>
-              <p>The two-child limit — introduced in 2017, restricting child element payments to the first two children — affects around 1.5 million families and is estimated by the Institute for Fiscal Studies to be keeping 250,000 children in poverty. The benefit cap, which limits total UC payments to £442 per week for families with children in London, affects around 130,000 families and has not been uprated in line with inflation. The Joseph Rowntree Foundation's Minimum Income Standard calculates that UC payments fall between 20% and 40% below what is required for a basic standard of living.</p>
+              <p>Universal Credit now supports 6 million people — around 1 in 8 adults of working age.<Cite nums={1} /> The system consolidated six legacy benefits into one monthly payment with the stated aim of making work pay and reducing complexity. In broad terms, work incentives have improved: the taper rate cut of 2021 means claimants keep more of every pound they earn. But the structural problems identified when the system was designed have not been resolved. The five-week wait — a deliberate design choice to shift the benefit from a weekly to a monthly cycle — continues to push new claimants into debt before they receive a penny.<Cite nums={2} /></p>
+              <p>Around 2.1 million claimants — 35% of the total — have their monthly payment reduced by deductions.<Cite nums={1} /> These deductions repay advance payment loans (taken out to bridge the five-week wait), legacy benefit overpayments, tax credit debts, and in some cases rent arrears paid directly to landlords. The maximum deduction rate is now capped at 25% of the standard allowance — down from 40% — but for a single adult over 25 receiving £368.74 per month, a 25% deduction reduces their UC award to £276. After housing costs, this can leave nothing for food.</p>
+              <p>The two-child limit — introduced in 2017, restricting child element payments to the first two children — affects around 1.5 million families and is estimated by the Institute for Fiscal Studies to be keeping 250,000 children in poverty.<Cite nums={3} /> The benefit cap, which limits total UC payments to £442 per week for families with children in London, affects around 130,000 families and has not been uprated in line with inflation. The Joseph Rowntree Foundation's Minimum Income Standard calculates that UC payments fall between 20% and 40% below what is required for a basic standard of living.<Cite nums={4} /></p>
             </div>
           </section>
         </ScrollReveal>
