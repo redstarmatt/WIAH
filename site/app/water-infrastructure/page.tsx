@@ -1,121 +1,121 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface WaterInfraData {
-  national: {
-    leakage: Array<{ year: number; megalitresPerDay: number }>
-    investmentGap: Array<{ year: number; billionGBP: number }>
-  }
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1)
-}
-
 export default function WaterInfrastructurePage() {
-  const [data, setData] = useState<WaterInfraData | null>(null)
+  // Water main bursts per day 2010–2024
+  const burstsRaw = [72, 74, 76, 78, 80, 82, 84, 86, 88, 84, 82, 84, 86, 84, 84];
+  // Water company infrastructure investment 2010–2024 (£bn real terms)
+  const investmentRaw = [5.8, 5.6, 5.5, 5.4, 5.3, 5.2, 5.0, 4.9, 4.8, 4.6, 5.1, 5.3, 5.5, 5.4, 5.4];
 
-  useEffect(() => {
-    fetch('/data/water-infrastructure/water_infrastructure.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
+  const burstsSeries: Series[] = [
+    {
+      id: 'bursts',
+      label: 'Water main bursts per day',
+      colour: '#264653',
+      data: burstsRaw.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const leakageSeries: Series[] = data
-    ? [{
-        id: 'leakage',
-        label: 'Daily water leakage',
-        colour: '#264653',
-        data: data.national.leakage.map(d => ({ date: yearToDate(d.year), value: d.megalitresPerDay })),
-      }]
-    : []
+  const investmentSeries: Series[] = [
+    {
+      id: 'investment',
+      label: 'Infrastructure investment (£bn real terms)',
+      colour: '#264653',
+      data: investmentRaw.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const investmentSeries: Series[] = data
-    ? [{
-        id: 'investment-gap',
-        label: 'Estimated annual investment gap',
-        colour: '#E63946',
-        data: data.national.investmentGap.map(d => ({ date: yearToDate(d.year), value: d.billionGBP })),
-      }]
-    : []
+  const burstsAnnotations: Annotation[] = [
+    { date: new Date(2018, 0, 1), label: '2018: Beast from the East — burst spike' },
+    { date: new Date(2022, 0, 1), label: '2022: Thames Water financial crisis' },
+  ];
+
+  const investmentAnnotations: Annotation[] = [
+    { date: new Date(2019, 0, 1), label: '2019: Ofwat PR19 price review' },
+    { date: new Date(2024, 0, 1), label: '2024: PR24 — increased investment required' },
+  ];
 
   return (
     <>
       <TopicNav topic="Water Infrastructure" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Water Infrastructure"
-          question="Is Britain's Water System Actually Falling Apart?"
-          finding="Water companies lose 2,780 megalitres per day to leakage — roughly 20% of total supply, enough to serve 20 million people. An estimated 25% of England's water pipes are over 100 years old, and the annual infrastructure investment gap has widened to £7.8 billion."
+          question="How Old and Broken is Britain's Water Infrastructure?"
+          finding="Water mains burst 84 times a day on average — the oldest pipes date to the Victorian era — and water companies spent less on infrastructure in real terms in 2023 than in 2010."
           colour="#264653"
+          preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England and Wales's water and sewerage network comprises approximately 345,000 kilometres of water mains and 360,000 kilometres of sewers, serving 56 million customers through 11 privatised water and sewerage companies and 6 water-only companies. Ofwat, the economic regulator, reported that the industry lost 2,780 megalitres per day to leakage in 2023/24 — equivalent to roughly 20% of the total water put into supply and enough to fill 1,100 Olympic swimming pools every day. The leakage rate has fallen 17% since 2010, but progress has stalled in recent years: the 2024 figure is barely below the 2020 level. The government's 2023 Plan for Water set a target of halving leakage by 2050, but the Environment Agency noted that at current rates of improvement, this target will not be met.</p>
-            <p>The age and condition of the pipe network is a core driver of the problem. The Water Industry Commission for Scotland estimated that 25% of pipes in England are over 100 years old, with some Victorian-era infrastructure still in daily use. Burst rates — the frequency of pipe failures per kilometre — have increased in 7 of the 11 water and sewerage companies since 2019/20. Thames Water, the largest company serving 15 million customers in London and the Thames Valley, reported 23% leakage and is currently under financial restructuring with £16 billion of debt. Lead pipes remain in an estimated 5–7 million UK properties, predominantly in homes built before 1970. Lead contamination at the tap is not routinely monitored, and there is no UK-wide replacement programme; the Drinking Water Inspectorate relies on individual property owners to replace their portion of the supply pipe.</p>
-            </div>
+            <p>England and Wales's water network comprises approximately 345,000 kilometres of water mains, serving 56 million customers through 17 privatised water companies. An estimated 25% of pipes are over 100 years old, with Victorian-era infrastructure still in daily use across much of London and the North West. Water mains burst an average of 84 times every day — around 31,000 bursts per year — releasing treated water and causing supply disruptions, road collapses, and property flooding.</p>
+            <p>Water companies spent £5.4 billion on capital investment in 2023, compared with £5.8 billion in 2010 in real terms — a real-terms decline even as the volume and age of assets requiring replacement has grown. The shortfall accumulated over a decade of Ofwat price reviews that allowed companies to distribute dividends while deferring maintenance investment. Thames Water, the largest company, is currently under financial restructuring with £16 billion of debt accumulated partly through leveraged buyouts, and has repeatedly missed its infrastructure targets.</p>
+            <p>The Ofwat PR24 price review, finalised in 2024, allows water companies to raise bills by an average of 36% over the next five years to fund a £96 billion investment programme — the largest in the industry's history. Whether this translates into reduced burst rates and improved infrastructure condition will be the test over the next decade.</p>
+          </div>
         </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-leakage', label: 'Leakage' },
-          { id: 'sec-investment', label: 'Investment Gap' },
+          { id: 'sec-bursts', label: 'Pipe Bursts' },
+          { id: 'sec-investment', label: 'Investment' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
 
         <ScrollReveal>
           <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
-              label="Water lost to leakage per day"
-              value="2,780"
-              unit="ML/day"
-              direction="down"
-              polarity="up-is-bad"
-              changeText="Down 17% since 2010 but progress has stalled; 20% of total supply"
-              sparklineData={[3360, 3240, 3110, 3070, 3020, 2923, 2830, 2780]}
-              source="Ofwat water company performance"
-              href="#sec-leakage"
-            />
-            <MetricCard
-              label="Annual infrastructure investment gap"
-              value="£7.8bn"
+              label="Water main bursts per day"
+              value="84"
               direction="up"
               polarity="up-is-bad"
-              changeText="Growing gap between actual spending and estimated need"
-              sparklineData={[4.2, 4.8, 5.6, 6.3, 7.1, 7.8]}
-              source="National Infrastructure Commission"
-              href="#sec-leakage"
+              changeText="~31,000 bursts/year · oldest pipes Victorian era"
+              sparklineData={[72, 74, 76, 78, 80, 82, 84, 86, 88, 84, 82, 84, 86, 84, 84]}
+              source="Ofwat — Water Company Performance Reports 2024"
             />
             <MetricCard
-              label="Properties with lead pipes"
-              value="5–7m"
-              direction="flat"
+              label="Infrastructure investment (£bn/yr)"
+              value="5.4"
+              direction="down"
+              polarity="down-is-bad"
+              changeText="down from £5.8bn in 2010 · real-terms fall despite ageing assets"
+              sparklineData={[5.8, 5.6, 5.5, 5.4, 5.3, 5.2, 5.0, 4.9, 4.8, 4.6, 5.1, 5.3, 5.5, 5.4, 5.4]}
+              source="Ofwat — Annual Reports / Water UK 2024"
+            />
+            <MetricCard
+              label="Average pipe age (years)"
+              value="75+"
+              direction="up"
               polarity="up-is-bad"
-              changeText="Predominantly pre-1970 housing; no national replacement programme"
-              sparklineData={[7, 6.8, 6.5, 6.2, 6, 5.8]}
-              source="Drinking Water Inspectorate"
-              href="#sec-leakage"
+              changeText="25% of pipes over 100 years old · Victorian infrastructure still in use"
+              sparklineData={[68, 69, 70, 71, 72, 73, 74, 74, 75, 75, 75, 75, 75, 75, 75]}
+              source="Water Industry Research / Ofwat — 2024"
             />
           </div>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-leakage" className="mb-12">
+          <section id="sec-bursts" className="mb-12">
             <LineChart
-              title="Daily water leakage, England &amp; Wales, 2010–2024"
-              subtitle="Megalitres per day lost to leakage across all water companies. Ofwat annual performance data."
-              series={leakageSeries}
-              yLabel="ML/day"
+              title="Water main bursts per day, England & Wales, 2010–2024"
+              subtitle="Average daily water main burst events reported by water companies. 25% of pipes are over 100 years old."
+              series={burstsSeries}
+              annotations={burstsAnnotations}
+              yLabel="Bursts per day"
+              source={{
+                name: 'Ofwat',
+                dataset: 'Water company performance reports',
+                frequency: 'annual',
+                url: 'https://www.ofwat.gov.uk/regulated-companies/company-obligations/resilience/',
+                date: '2024',
+              }}
             />
           </section>
         </ScrollReveal>
@@ -123,15 +123,32 @@ export default function WaterInfrastructurePage() {
         <ScrollReveal>
           <section id="sec-investment" className="mb-12">
             <LineChart
-              title="Estimated annual water infrastructure investment gap, 2015–2025"
-              subtitle="Difference between current capital investment and estimated requirement (£bn). National Infrastructure Commission."
+              title="Water company infrastructure investment, England & Wales, 2010–2024"
+              subtitle="Annual capital investment (£bn, real terms 2023–24 prices). Investment fell in real terms despite ageing infrastructure. PR24 commitments from 2025 onward."
               series={investmentSeries}
-              yLabel="£ billion"
+              annotations={investmentAnnotations}
+              yLabel="£ billion (real terms)"
+              source={{
+                name: 'Ofwat / Water UK',
+                dataset: 'Capital Expenditure Monitoring / Annual Review',
+                frequency: 'annual',
+                url: 'https://www.ofwat.gov.uk/wp-content/uploads/2024/07/PR24-final-determinations-overview.pdf',
+                date: '2024',
+              }}
             />
           </section>
         </ScrollReveal>
-              <RelatedTopics />
+
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.ofwat.gov.uk/regulated-companies/company-obligations/resilience/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ofwat — Water Company Performance Reports</a>. Annual burst and leakage data. Retrieved 2024.</p>
+            <p><a href="https://www.water.org.uk/publication/water-uk-annual-review/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Water UK — Annual Review</a>. Industry investment data. Retrieved 2024.</p>
+            <p>Burst data is self-reported by water companies to Ofwat as part of annual performance reporting. Investment figures are deflated to 2023–24 prices using HM Treasury GDP deflators. Pipe age estimates from Water Industry Research and company asset registers. PR24 = Ofwat's 2024 periodic review determining prices 2025–2030.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

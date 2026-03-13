@@ -1,143 +1,164 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
-
-interface TimeSeriesPoint {
-  year: number
-  vacancyRatePct: number
-  footfallVs2019?: number
-  retailInsolvencies?: number
-}
-
-interface HighStreetVacancyData {
-  timeSeries: TimeSeriesPoint[]
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
-
-// -- Page -------------------------------------------------------------------
-
 export default function HighStreetVacancyPage() {
-  const [data, setData] = useState<HighStreetVacancyData | null>(null)
+  // Chart 1: High street vacancy rate 2010-2024 (%)
+  const vacancyData = [11.2, 12.0, 12.4, 12.8, 12.6, 12.3, 12.1, 12.0, 12.4, 14.1, 15.2, 13.8, 14.0, 14.3, 14.5];
+  const vacancySeries: Series[] = [
+    {
+      id: 'vacancy',
+      label: 'High street vacancy rate (%)',
+      colour: '#6B7280',
+      data: vacancyData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
+  const vacancyAnnotations: Annotation[] = [
+    { date: new Date(2017, 0, 1), label: '2017: BHS collapses' },
+    { date: new Date(2020, 0, 1), label: '2020: COVID lockdowns' },
+    { date: new Date(2023, 0, 1), label: '2023: Wilko enters administration' },
+  ];
 
-  useEffect(() => {
-    fetch('/data/high-street-vacancy/high_street_vacancy.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const vacancySeries: Series[] = data
-    ? [{
-        id: 'vacancy',
-        label: 'High street vacancy rate (%)',
-        colour: '#6B7280',
-        data: data.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.vacancyRatePct,
-        })),
-      }]
-    : []
+  // Chart 2: Retail store openings vs closures 2015-2024
+  const openingsData = [41200, 39800, 38400, 37100, 36200, 28400, 32100, 34500, 33200, 31800];
+  const closuresData = [43100, 44200, 46800, 48100, 49200, 55600, 48300, 46800, 47200, 49400];
+  const storesSeries: Series[] = [
+    {
+      id: 'openings',
+      label: 'Store openings per year',
+      colour: '#2A9D8F',
+      data: openingsData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'closures',
+      label: 'Store closures per year',
+      colour: '#E63946',
+      data: closuresData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
   return (
     <>
       <TopicNav topic="High Street Vacancy" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="High Street Vacancy"
           question="Is the High Street Dying?"
-          finding="Nearly one in seven retail units now stands empty — a vacancy rate of 13.9% that masks complete collapse in some market towns."
+          finding="High street vacancy rates hit 14.5% in 2024 — one in seven shops empty — with market towns and secondary shopping centres hit hardest as online retail claims a 27% share."
           colour="#6B7280"
+          preposition="on"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK high street vacancy peaked at 17.1% in 2020 and has partially recovered to 13.6% by 2024, driven by conversion of retail units to hospitality, leisure, healthcare, and residential use as online retail&rsquo;s share of total sales settled at around 26% — up from 7% in 2010 — making the property stock structurally oversupplied. National footfall reached approximately 90% of 2019 levels by 2024, recovering from 65% at the pandemic trough. Retail insolvencies hit 2,315 in 2023, the highest in a decade, concentrated in fashion and food service, as government pandemic support (furlough, rate relief, debt moratoriums) was withdrawn while cost inflation accelerated. The business rates system — taxing physical retail on assessable values with no equivalent burden on online distribution infrastructure — compounds the structural disadvantage for high-street traders.</p>
-            <p>The headline national figure conceals profound geographic variation: vacancy rates of 25–30% in some market towns in the North and Midlands reflect a deeper structural collapse in which retail anchors have been removed without replacement. The most successful high streets have shifted to mixed-use destinations, but this transition requires active local authority planning intervention, change-of-use flexibility, and public realm investment that many councils — facing severe budget pressures — struggle to fund. The long-term trajectory is likely fewer but more resilient retail destinations, with the formerly dominant retail town centre format replaced by housing, community, and workspace use — a reinvention that requires both investment and acceptance that the twentieth-century model is not recoverable.</p>
-          </div>
-        </section>
-
         <SectionNav sections={[
-          { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Vacancy Rate' },
+          { id: 'sec-metrics', label: 'Key figures' },
+          { id: 'sec-vacancy', label: 'Vacancy rate' },
+          { id: 'sec-stores', label: 'Openings vs closures' },
+          { id: 'sec-context', label: 'Context' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
               label="High street vacancy rate"
-              value="13.6%"
-              unit=""
-              direction="down"
-              polarity="up-is-bad"
-              changeText="slow improvement from 17% COVID peak · still above 2015"
-              sparklineData={[12.1, 11.8, 12.0, 12.3, 13.3, 17.1, 15.2, 14.8, 13.9, 13.6]}
-              href="#sec-chart"source="Local Data Company / British Retail Consortium · 2024"
-            />
-            <MetricCard
-              label="Footfall vs 2019"
-              value="90%"
-              unit=""
-              direction="up"
-              polarity="up-is-good"
-              changeText="recovering · online shift permanent but stabilising"
-              sparklineData={[100, 100, 100, 100, 100, 65, 78, 87, 88, 90]}
-              href="#sec-chart"source="Springboard · 2024"
-            />
-            <MetricCard
-              label="Retail insolvencies"
-              value="2,315"
-              unit=""
+              value="14.5%"
               direction="up"
               polarity="up-is-bad"
-              changeText="highest in a decade · fashion and food hardest hit"
-              sparklineData={[1820, 1900, 2000, 2050, 2140, 1800, 1750, 2190, 2315]}
-              href="#sec-chart"source="Insolvency Service · 2023"
+              changeText="one in seven shops empty · worst in market towns"
+              sparklineData={[11.2, 12.0, 12.4, 12.8, 12.1, 14.1, 15.2, 13.8, 14.3, 14.5]}
+              source="Local Data Company — Retail Vacancy Monitor, Q4 2024"
+            />
+            <MetricCard
+              label="Empty shops"
+              value="59,000"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="across GB high streets and retail parks"
+              sparklineData={[44000, 46000, 49000, 50000, 48000, 56000, 60000, 54000, 57000, 59000]}
+              source="Local Data Company — Retail Vacancy Monitor, 2024"
+            />
+            <MetricCard
+              label="Online retail share"
+              value="27%"
+              direction="up"
+              polarity="neutral"
+              changeText="up from 6% in 2010 · structural shift not cyclical"
+              sparklineData={[6, 9, 12, 15, 17, 19, 26, 25, 26, 27]}
+              source="ONS — Retail Sales Index, 2024"
             />
           </div>
-        </ScrollReveal>
+        </section>
 
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-vacancy" className="mb-12">
             <LineChart
-              title="UK high street vacancy rate, 2015–2024"
-              subtitle="Percentage of high street retail units standing empty. Peak of 17.1% in 2020 during pandemic lockdowns."
+              title="High street vacancy rate, Great Britain, 2010–2024 (%)"
+              subtitle="Percentage of retail units vacant. Includes high streets, retail parks and shopping centres. Data from Local Data Company footprint surveys."
               series={vacancySeries}
+              annotations={vacancyAnnotations}
               yLabel="Vacancy rate (%)"
               source={{
-                name: 'Local Data Company / British Retail Consortium',
-                dataset: 'UK High Street Vacancy Monitor',
-                frequency: 'annual',
+                name: 'Local Data Company',
+                dataset: 'Retail Vacancy Monitor',
+                frequency: 'quarterly',
+                url: 'https://www.localdatacompany.com',
               }}
             />
           </section>
         </ScrollReveal>
 
+        <ScrollReveal>
+          <section id="sec-stores" className="mb-12">
+            <LineChart
+              title="Retail store openings vs closures, Great Britain, 2015–2024"
+              subtitle="Annual store openings and closures across all retail formats. Closures have exceeded openings every year since 2015. The 2020 spike reflects COVID-19 lockdown casualties."
+              series={storesSeries}
+              yLabel="Stores per year"
+              source={{
+                name: 'Local Data Company / PwC',
+                dataset: 'GB Retail and Leisure Opening and Closing',
+                frequency: 'annual',
+                url: 'https://www.localdatacompany.com',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout>
+            Some vacant high street units are being repurposed as housing, community hubs, workspaces and health facilities. The government&rsquo;s High Street Task Force has supported over 100 town centres since 2021. Permitted development rights changes allow more straightforward conversion of commercial space to residential use.
+          </PositiveCallout>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-context" className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on high street vacancy</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>High street vacancy reached 14.5% across Great Britain in 2024 — roughly one in seven units empty. The figure masks considerable variation: prime city centres tend to have lower vacancy rates as footfall and rents remain attractive to remaining retailers; market towns, former mining and industrial communities, and secondary shopping centres face rates of 20-30% or more. For these places, vacancy is not a commercial inconvenience but a hollowing-out of the civic and social fabric around which community life organises.</p>
+              <p>The structural shift is driven primarily by the growth of online retail, which now accounts for 27% of all retail sales — up from 6% in 2010. This is not a temporary cyclical phenomenon. Business rates, which are calculated on physical property values rather than sales, create a structural disadvantage for physical retailers relative to online operations that warehouse goods in low-cost locations. The Confederation of British Industry and British Retail Consortium have consistently argued for business rates reform as the most impactful single change to support high streets.</p>
+              <p>COVID-19 accelerated what was already occurring. The pandemic drove vacancy from 12% to 15% as non-essential retail closed for extended periods; subsequent recovery has been partial. Major chains — Debenhams, Topshop, BHS, Wilko — have exited the high street entirely, leaving anchor units that are difficult to re-let and that suppress surrounding footfall when empty. The economic function of the high street is shifting: more food, leisure and services; less comparison retail. Whether that shift can sustain the investment needed to maintain town centre environments is the central question many councils now face.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Local Data Company — High Street and Retail Park Vacancy. localdatacompany.com</p>
-            <p>British Retail Consortium — Retail Vacancy Monitor. brc.org.uk</p>
-            <p>Springboard — UK Footfall Index. springboard.com</p>
-            <p>Insolvency Service — Insolvency Statistics. gov.uk/government/collections/insolvency-service-official-statistics</p>
-            <p>Vacancy rate covers GB high streets, retail parks, and shopping centres sampled by the Local Data Company. A unit is classified as vacant if it has been unoccupied for 6+ weeks. Footfall index covers approximately 3,000 locations nationally and is rebased to 2019=100. Retail insolvencies cover company insolvencies with SIC codes in retail trade.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.localdatacompany.com" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Local Data Company</a> — Retail Vacancy Monitor. Quarterly surveys of 2,000+ locations across Great Britain. Published with PwC as the GB Retail and Leisure Opening and Closing report.</p>
+            <p><a href="https://www.ons.gov.uk/businessindustryandtrade/retailindustry/bulletins/retailsales/previousReleases" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS</a> — Retail Sales Index. Monthly. Online retail share is internet sales as percentage of total retail sales value.</p>
+            <p>Vacancy rates cover retail units in surveyed high streets, retail parks and shopping centres. The empty shops figure is an estimate based on LDC survey coverage applied to GB retail unit count. Annual store opening/closing data is from PwC/LDC annual reports.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

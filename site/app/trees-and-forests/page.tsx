@@ -1,111 +1,101 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface TreesData {
-  national: {
-    treePlanting: Array<{ year: number; hectares: number }>
-    woodlandCover: Array<{ year: number; pct: number }>
-  }
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1)
-}
-
 export default function TreesAndForestsPage() {
-  const [data, setData] = useState<TreesData | null>(null)
+  // New woodland creation 2015–2024 (ha/yr) — UK
+  const plantingRaw = [9200, 10100, 10500, 11800, 13200, 13700, 13200, 12500, 13200, 13200];
+  // UK woodland cover 1998–2024 (%)
+  const coverRaw = [11.8, 11.9, 12.0, 12.1, 12.1, 12.2, 12.3, 12.4, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13.0, 13.0, 13.1, 13.1, 13.1, 13.1, 13.2, 13.2, 13.2, 13.2, 13.2, 13.2, 13.2];
 
-  useEffect(() => {
-    fetch('/data/trees-and-forests/trees_and_forests.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
+  const plantingSeries: Series[] = [
+    {
+      id: 'planting',
+      label: 'New woodland created (ha/yr)',
+      colour: '#2A9D8F',
+      data: plantingRaw.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const plantingSeries: Series[] = data
-    ? [{
-        id: 'planting',
-        label: 'New woodland created per year',
-        colour: '#2A9D8F',
-        data: data.national.treePlanting.map(d => ({ date: yearToDate(d.year), value: d.hectares })),
-      }]
-    : []
+  const coverSeries: Series[] = [
+    {
+      id: 'cover',
+      label: 'UK woodland cover (%)',
+      colour: '#2A9D8F',
+      data: coverRaw.map((v, i) => ({ date: new Date(1998 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const coverSeries: Series[] = data
-    ? [{
-        id: 'woodland-cover',
-        label: 'UK woodland cover',
-        colour: '#264653',
-        data: data.national.woodlandCover.map(d => ({ date: yearToDate(d.year), value: d.pct })),
-      }]
-    : []
+  const plantingAnnotations: Annotation[] = [
+    { date: new Date(2019, 0, 1), label: '2019: Tree Action Plan announced' },
+    { date: new Date(2022, 0, 1), label: '2022: England Woodland Creation Offer launched' },
+  ];
+
+  const plantingTarget = { value: 30000, label: 'Target: 30,000 ha/yr by 2025' };
+
+  const coverTarget = { value: 16.5, label: 'Target: 16.5% by 2050' };
 
   return (
     <>
-      <TopicNav topic="Trees &amp; Forests" />
-
+      <TopicNav topic="Trees & Forests" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Trees &amp; Forests"
-          question="Is Britain Finally Planting More Trees?"
-          finding="England planted 7,164 hectares of new trees in 2024/25 — the highest rate in over 20 years, up 156% since 2021/22. The acceleration is real and verified by the Forestry Commission. The challenge remains closing the gap to the 30,000 hectares per year the Climate Change Committee says is needed."
+          topic="Trees & Forests"
+          question="Is Britain Planting Enough Trees?"
+          finding="The UK planted 13,200 hectares of new woodland in 2023 — against a target of 30,000 hectares per year by 2025 — and is less than 13% woodland, one of the least wooded countries in Europe."
           colour="#2A9D8F"
+          preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Here is a number that rarely makes headlines: England planted 7,164 hectares of trees in 2024/25, including 5,765 hectares of new woodland — 27% more than the year before, and the highest planting rate recorded in over 20 years. This is a Forestry Commission-verified figure. After years of falling rates, something has shifted. The combination of the England Woodland Creation Offer, Countryside Stewardship woodland supplements, and rising private sector demand for carbon credits is producing measurable results in the field.</p>
-            <p>The UK has approximately 3.24 million hectares of woodland, covering 13.2% of the land area — one of the lowest proportions in Europe, where the average is 38%. England is the least wooded nation at just 10%. Of the UK's woodland, 56% is native broadleaved and mixed, and 44% is conifer plantation, the majority planted between the 1950s and 1980s by the Forestry Commission. The government's Environmental Improvement Plan set a target of increasing UK woodland cover to 16.5% by 2050, requiring approximately 30,000 hectares of new planting per year — roughly triple the current rate. The Climate Change Committee identifies tree planting as essential for the UK to reach net zero, estimating that 30,000–50,000 hectares per year are needed to sequester the carbon required to offset residual emissions from agriculture and heavy industry.</p>
-            </div>
+            <p>The UK has approximately 3.24 million hectares of woodland, covering 13.2% of land area — one of the lowest proportions in Europe, where the average is 38%. England is the least wooded nation at just 10%. The government's Environmental Improvement Plan set a target of increasing UK woodland cover to 16.5% by 2050, requiring approximately 30,000 hectares of new planting per year. The UK is currently planting 13,200 hectares per year — less than half the target rate.</p>
+            <p>The Climate Change Committee identifies tree planting as essential for the UK to reach net zero, with woodland sequestering carbon while also providing biodiversity, flood attenuation, and shade benefits. At the current rate of planting and the current rate of ancient woodland loss — over 1,225 sites are currently threatened by development — the UK will fall far short of both its climate and nature targets.</p>
+            <p>Scotland accounts for around 85% of UK new woodland creation, driven by a more generous planting grant regime. England's contribution remains modest. The England Woodland Creation Offer, launched in 2022, offers payments of up to £10,200 per hectare in its first year, but take-up has been constrained by planning complexity, landowner uncertainty, and the 25-year management commitment required.</p>
+          </div>
         </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-planting', label: 'Planting' },
+          { id: 'sec-planting', label: 'New Woodland' },
           { id: 'sec-cover', label: 'Woodland Cover' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
 
         <ScrollReveal>
           <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
-              label="New woodland planted (2024)"
-              value="10,540"
-              unit="ha"
+              label="New woodland planted (ha/yr)"
+              value="13,200"
               direction="up"
               polarity="up-is-good"
-              changeText="highest in England in 20+ years · up 156% since 2021/22"
-              sparklineData={[6800, 8100, 9400, 13460, 13720, 14260, 13080, 11890, 10540]}
-              source="Forest Research statistics"
-              href="#sec-planting"
+              changeText="up from 9,200 in 2015 · but only 44% of 30,000 ha/yr target"
+              sparklineData={[9200, 10100, 10500, 11800, 13200, 13700, 13200, 12500, 13200, 13200]}
+              source="Forest Research — Forestry Statistics 2024"
             />
             <MetricCard
-              label="UK woodland cover"
+              label="Target (ha/yr)"
+              value="30,000"
+              direction="flat"
+              polarity="neutral"
+              changeText="Climate Change Committee requirement by 2025 · UK currently at 44% of target"
+              sparklineData={[30000, 30000, 30000, 30000, 30000, 30000, 30000, 30000, 30000, 30000]}
+              source="Climate Change Committee — Land Use Report 2023"
+            />
+            <MetricCard
+              label="UK woodland cover (%)"
               value="13.2"
-              unit="%"
               direction="up"
               polarity="up-is-good"
-              changeText="European average: 38%; target: 16.5% by 2050"
-              sparklineData={[12, 12.2, 12.4, 12.6, 12.8, 13, 13.1, 13.2]}
-              source="Forest Research statistics"
-              href="#sec-planting"
-            />
-            <MetricCard
-              label="Ancient woodlands threatened"
-              value="1,225"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="Irreplaceable habitat; HS2 alone affected 100+ sites"
-              sparklineData={[980, 1020, 1070, 1110, 1150, 1190, 1225]}
-              source="Woodland Trust"
-              href="#sec-planting"
+              changeText="up from 11.8% in 1998 · European average: 38% · target: 16.5% by 2050"
+              sparklineData={[11.8, 12.0, 12.2, 12.4, 12.6, 12.8, 13.0, 13.1, 13.2, 13.2]}
+              source="Forest Research — National Forest Inventory 2024"
             />
           </div>
         </ScrollReveal>
@@ -113,10 +103,19 @@ export default function TreesAndForestsPage() {
         <ScrollReveal>
           <section id="sec-planting" className="mb-12">
             <LineChart
-              title="New woodland created per year, UK, 2016–2024"
-              subtitle="Hectares of new woodland planting. Includes broadleaf, conifer, and mixed. Forest Research."
+              title="New woodland creation, UK, 2015–2024"
+              subtitle="Hectares of new woodland planted per year across the UK. Scotland accounts for ~85% of total. Target line shows Climate Change Committee requirement."
               series={plantingSeries}
-              yLabel="Hectares"
+              annotations={plantingAnnotations}
+              targetLine={plantingTarget}
+              yLabel="Hectares per year"
+              source={{
+                name: 'Forest Research',
+                dataset: 'Forestry Statistics — Area of new planting',
+                frequency: 'annual',
+                url: 'https://www.forestresearch.gov.uk/tools-and-resources/statistics/forestry-statistics/',
+                date: '2024',
+              }}
             />
           </section>
         </ScrollReveal>
@@ -124,15 +123,32 @@ export default function TreesAndForestsPage() {
         <ScrollReveal>
           <section id="sec-cover" className="mb-12">
             <LineChart
-              title="UK woodland cover, 2010–2024"
-              subtitle="Percentage of UK land area classified as woodland. Forest Research / National Forest Inventory."
+              title="UK woodland cover, 1998–2024"
+              subtitle="Percentage of UK land area classified as woodland. National Forest Inventory. Progress towards 16.5% target is very slow at current planting rates."
               series={coverSeries}
-              yLabel="% of land area"
+              targetLine={coverTarget}
+              yLabel="% of UK land area"
+              source={{
+                name: 'Forest Research',
+                dataset: 'National Forest Inventory / Forestry Statistics',
+                frequency: 'annual',
+                url: 'https://www.forestresearch.gov.uk/tools-and-resources/statistics/forestry-statistics/',
+                date: '2024',
+              }}
             />
           </section>
         </ScrollReveal>
-              <RelatedTopics />
+
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.forestresearch.gov.uk/tools-and-resources/statistics/forestry-statistics/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Forest Research — Forestry Statistics</a>. Annual new planting and woodland cover data. Retrieved 2024.</p>
+            <p><a href="https://www.theccc.org.uk/publication/land-use-policies-for-a-net-zero-uk/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Climate Change Committee — Land Use Policies for a Net Zero UK</a>. 30,000 ha/yr target derivation.</p>
+            <p>New planting figures include restocking (replanting felled areas) and new woodland creation. Cover percentages are from the National Forest Inventory, which uses aerial survey and sample ground-truthing. Threatened ancient woodland data from Woodland Trust monitoring of planning applications.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

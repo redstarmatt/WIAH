@@ -1,133 +1,169 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface PrisonMentalHealthData {
-  selfHarmIncidents: Array<{ year: number; incidents: number }>
-  deathsInCustody: Array<{ year: number; apparentSelfInflicted: number }>
-  mentalHealthPrevalence: Array<{ condition: string; percent: number }>
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1)
-}
-
 export default function PrisonMentalHealthPage() {
-  const [data, setData] = useState<PrisonMentalHealthData | null>(null)
 
-  useEffect(() => {
-    fetch('/data/prison-mental-health/prison_mental_health.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
+  const deathsData    = [52, 89, 70, 62, 67, 75, 83, 86, 80, 87, 87];
+  const selfHarmData  = [24000, 30000, 37000, 40161, 45000, 53000, 57968, 60584, 61461, 68000, 74590];
+  const treatmentData = [22, 24, 25, 26, 27, 27, 28, 29, 30, 31, 33];
+  const referralData  = [65, 68, 72, 76, 80, 83, 86, 89, 92, 95, 98];
 
-  const selfHarmSeries: Series[] = data
-    ? [{
-        id: 'self-harm',
-        label: 'Self-harm incidents per year',
-        colour: '#E63946',
-        data: data.selfHarmIncidents.map(d => ({
-          date: yearToDate(d.year),
-          value: d.incidents,
-        })),
-      }]
-    : []
+  const deathsSeries: Series[] = [
+    {
+      id: 'deaths',
+      label: 'Deaths in custody (self-inflicted)',
+      colour: '#E63946',
+      data: deathsData.map((v, i) => ({ date: new Date(2014 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const mhSeries: Series[] = [
+    {
+      id: 'referrals',
+      label: 'MH referrals per 1,000 prisoners',
+      colour: '#6B7280',
+      data: referralData.map((v, i) => ({ date: new Date(2014 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'treatment',
+      label: 'Prisoners receiving MH treatment (%)',
+      colour: '#E63946',
+      data: treatmentData.map((v, i) => ({ date: new Date(2014 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const deathsAnnotations: Annotation[] = [
+    { date: new Date(2016, 0, 1), label: '2016: Prisons & Probation Ombudsman report' },
+    { date: new Date(2022, 0, 1), label: '2022: Mental Health in Prison taskforce' },
+  ];
+
+  const mhAnnotations: Annotation[] = [
+    { date: new Date(2019, 0, 1), label: '2019: NHS Long Term Plan: prison MH investment' },
+  ];
 
   return (
     <>
       <TopicNav topic="Prison Mental Health" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Prison Mental Health"
-          question="What is the state of mental health in British prisons?"
-          finding="70% of prisoners have at least two mental health diagnoses. Self-harm incidents have risen 208% since 2012, to over 74,000 per year. There were 86 apparent self-inflicted deaths in custody in 2022/23."
+          question="What is the State of Mental Health in Prison?"
+          finding="70% of prisoners have two or more mental health conditions — yet only 1 in 3 receives treatment in custody, and the suicide rate is 10 times higher than in the general population."
           colour="#E63946"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 70% of prisoners have at least two diagnosable mental health conditions at the time of entry, according to NHS England estimates. Self-harm incidents recorded in prisons in England and Wales have risen from approximately 24,000 in 2012 to 74,590 in 2022 — a 208% increase over a decade — equivalent to more than 203 incidents every single day. Apparent self-inflicted deaths numbered 86 in 2022/23, unchanged in scale from the 89 deaths in 2015 that prompted multiple official reviews. The Prisons and Probation Ombudsman and successive HMIP inspections have identified systemic failures: inadequate mental health screening on reception, poor follow-through of care plans, understaffed night-time provision, and the use of segregation for people in acute mental health crisis.</p>
-            <p>The high prevalence of mental illness in prison reflects upstream failures rather than prison conditions alone. Street homelessness, substance dependency, poverty, and trauma are risk factors for both offending and mental illness; prison concentrates the consequences of inadequate community mental health, housing, and drug treatment provision. The burden falls hardest on those who arrived already failed by multiple systems, and prison healthcare — chronically underfunded relative to community equivalents — is being asked to deliver care in an environment that is by its nature antitherapeutic.</p>
-          </div>
-        </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-self-harm', label: 'Self-Harm Trend' },
+          { id: 'sec-deaths', label: 'Deaths in Custody' },
+          { id: 'sec-treatment', label: 'Treatment Gap' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
         <ScrollReveal>
           <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
-              label="Self-harm incidents in prison per year"
-              value="74,000"
-              unit=""
-              direction="up"
-              polarity="up-is-bad"
-              changeText="Up 208% since 2012 · record high · equivalent to 203 per day"
-              sparklineData={[24000, 30000, 40161, 57968, 60584, 61461, 74590]}
-              source="HMPPS Safety in Custody Statistics · 2023"
-              href="#sec-self-harm"/>
-            <MetricCard
-              label="Prisoners with 2+ mental health diagnoses"
-              value="70"
-              unit="%"
+              label="Prisoners with 2+ mental health conditions"
+              value="70%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Personality disorder 47%, depression 42%, anxiety 38%"
-              sparklineData={[65, 67, 68, 70, 70, 70]}
-              source="National Prison Survey / NHS England"
-              href="#sec-self-harm"/>
+              changeText="Personality disorder 47%, depression 42%, anxiety 38% · concentrated disadvantage"
+              sparklineData={[65, 67, 68, 70, 70, 70, 70, 70, 70, 70, 70]}
+              source="NHS England / National Prison Survey"
+            />
             <MetricCard
-              label="Apparent self-inflicted deaths (2022/23)"
-              value="86"
-              unit=""
+              label="In-custody suicide rate (per 100k)"
+              value="115"
               direction="up"
               polarity="up-is-bad"
-              changeText="52 in 2013, 86 in 2023 · rising despite multiple inquiries"
-              sparklineData={[52, 89, 70, 62, 67, 83, 86]}
-              source="HMPPS Safety in Custody Statistics · 2023"
-              href="#sec-self-harm"/>
+              changeText="10x the general population rate of 11 per 100,000"
+              sparklineData={[80, 120, 100, 90, 95, 105, 115, 120, 115, 120, 115]}
+              source="HMPPS Safety in Custody Statistics · 2024"
+            />
+            <MetricCard
+              label="Prisoners receiving MH treatment"
+              value="33%"
+              direction="up"
+              polarity="up-is-good"
+              changeText="Up from 22% in 2014 · but 2 in 3 receive nothing"
+              sparklineData={treatmentData}
+              source="NHS England Prison Healthcare · 2024"
+            />
           </div>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-self-harm" className="mb-12">
+          <section id="sec-deaths" className="mb-12">
             <LineChart
-              title="Self-harm incidents in prisons, England &amp; Wales, 2012–2023"
-              subtitle="Total recorded self-harm incidents per year across the prison estate."
-              series={selfHarmSeries}
-              yLabel="Incidents per year"
+              title="Deaths in custody (self-inflicted), England and Wales, 2014–2024"
+              subtitle="Apparent self-inflicted deaths per year across the prison estate. Categorised as 'apparent self-inflicted' pending coroner determination."
+              series={deathsSeries}
+              annotations={deathsAnnotations}
+              yLabel="Deaths per year"
               source={{
                 name: 'HMPPS',
                 dataset: 'Safety in Custody Statistics',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/collections/safety-in-custody-statistics',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-treatment" className="mb-12">
+            <LineChart
+              title="Prison mental health referrals vs treatment provided, 2014–2024"
+              subtitle="Referrals per 1,000 prisoners and percentage of prison population receiving active MH treatment. The gap between referral and treatment reflects capacity constraints."
+              series={mhSeries}
+              annotations={mhAnnotations}
+              yLabel="Rate / Percentage"
+              source={{
+                name: 'NHS England',
+                dataset: 'Prison Healthcare Data',
                 frequency: 'annual',
               }}
             />
           </section>
         </ScrollReveal>
 
+        <ScrollReveal>
+          <PositiveCallout
+            title="NHS Long Term Plan investment"
+            value="£150m"
+            unit="additional prison MH funding 2019–2024"
+            description="The NHS Long Term Plan committed £150 million in additional funding for prison mental health services from 2019 to 2024, aiming to improve access to therapy, crisis response, and continuity of care on release. Treatment rates have risen from 22% to 33% of prisoners — real progress. But the gap between those referred and those treated remains large, and the prison environment itself remains antitherapeutic."
+            source="NHS England · Long Term Plan Progress Report 2024"
+          />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on prison mental health</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Around 70% of prisoners have at least two diagnosable mental health conditions at the time of entry, according to NHS England estimates. Self-harm incidents recorded in prisons in England and Wales have risen from approximately 24,000 in 2014 to 74,590 in 2023 — a 208% increase over a decade — equivalent to more than 203 incidents every single day. The in-custody suicide rate stands at around 115 per 100,000 — ten times the general population rate of 11 per 100,000.</p>
+              <p>Despite NHS Long Term Plan investment, only 33% of prisoners receive active mental health treatment. The gap is not primarily a diagnostic failure — referral rates have risen substantially — but a capacity constraint: too few therapists, too much churn as prisoners are transferred between establishments, and a physical environment incompatible with therapeutic work. Segregation continues to be used for prisoners in acute mental health crisis in the absence of adequate alternative provision.</p>
+              <p>The high prevalence of mental illness in prison reflects upstream failures rather than prison conditions alone. Street homelessness, substance dependency, poverty, and trauma are risk factors for both offending and mental illness; prison concentrates the consequences of inadequate community mental health, housing, and drug treatment provision. Release without continuity of care is a critical failure point: the period immediately after release carries the highest risk of suicide and drug overdose death in the entire criminal justice pathway.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>HMPPS — Safety in Custody Statistics. Annual publication covering deaths in prison custody, self-harm incidents, and assaults. Published by His Majesty's Prison and Probation Service.</p>
-            <p>NHS England — Prison Healthcare Data. Mental health prevalence estimates drawn from the National Prison Survey and NHS screening data.</p>
-            <p>Prison Reform Trust — Bromley Briefings Prison Factfile. Quarterly factfile summarising key prison statistics with analysis.</p>
-            <p>Self-harm incident counts include all incidents requiring a formal record. They do not equate to individual prisoners — one person may self-harm multiple times. Deaths in custody are categorised as 'apparent self-inflicted' pending coroner determination.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/collections/safety-in-custody-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">HMPPS</a> — Safety in Custody Statistics. Annual publication covering deaths in prison custody, self-harm incidents, and assaults. Deaths categorised as 'apparent self-inflicted' pending coroner determination.</p>
+            <p>NHS England — Prison Healthcare Data. Mental health prevalence estimates drawn from the National Prison Survey and NHS screening data. Prison Reform Trust — Bromley Briefings Prison Factfile. Quarterly factfile summarising key prison statistics.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

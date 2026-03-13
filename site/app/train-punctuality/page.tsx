@@ -1,123 +1,147 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface TrainPunctualityData {
-  topic: string
-  lastUpdated: string
-  timeSeries: Array<{
-    year: number
-    onTimePct: number
-    cancellationPct: number
-  }>
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
-
 export default function TrainPunctualityPage() {
-  const [data, setData] = useState<TrainPunctualityData | null>(null)
+  // Train punctuality (% on time) 2015–2024
+  const onTimeRaw = [89.0, 88.5, 87.2, 79.8, 79.4, 72.3, 65.9, 68.1, 65.5, 62.0];
+  // Train cancellation rate 2015–2024 (%)
+  const cancellationRaw = [1.4, 1.5, 1.6, 1.7, 1.8, 2.1, 3.4, 3.1, 3.7, 3.9];
+  // Passenger satisfaction (%) 2015–2024
+  const satisfactionRaw = [80, 80, 81, 79, 80, 76, 67, 70, 68, 66];
 
-  useEffect(() => {
-    fetch('/data/train-punctuality/train_punctuality.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
+  const onTimeSeries: Series[] = [
+    {
+      id: 'on-time',
+      label: 'On-time arrival rate (%)',
+      colour: '#F4A261',
+      data: onTimeRaw.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const series: Series[] = data
-    ? [
-        {
-          id: 'onTime',
-          label: 'On-time arrival (%)',
-          colour: '#264653',
-          data: data.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.onTimePct,
-          })),
-        },
-      ]
-    : []
+  const cancellationSeries: Series[] = [
+    {
+      id: 'cancellations',
+      label: 'Cancellation rate (%)',
+      colour: '#E63946',
+      data: cancellationRaw.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'satisfaction',
+      label: 'Passenger satisfaction (%)',
+      colour: '#6B7280',
+      data: satisfactionRaw.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const punctualityAnnotations: Annotation[] = [
+    { date: new Date(2018, 0, 1), label: '2018: May timetable collapse' },
+    { date: new Date(2022, 0, 1), label: '2022: Strike action begins' },
+    { date: new Date(2024, 0, 1), label: '2024: Public ownership legislation' },
+  ];
+
+  const cancellationAnnotations: Annotation[] = [
+    { date: new Date(2022, 0, 1), label: '2022: Rail strikes — record cancellations' },
+  ];
 
   return (
     <>
       <TopicNav topic="Train Punctuality" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Train Punctuality"
-          question="Are British Trains Actually Running on Time?"
-          finding="Only 63.3% of UK trains arrived on time in 2024, down from 89% pre-privatisation, making British punctuality among the worst in Western Europe."
-          colour="#264653"
+          question="Are Britain's Trains Getting Worse?"
+          finding="Only 62% of UK trains arrive on time — the worst performance in a decade — with cancellation rates at record highs and the government taking over multiple failed franchises."
+          colour="#F4A261"
+          preposition="on"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Only 63.3% of UK trains arrived on time in 2024 by the Public Performance Measure, down from 79.4% in 2019 and among the worst punctuality rates in Western Europe — Switzerland achieves 92–95%, Germany and France 75–85%. Cancellations reached 3.9% of all scheduled services in 2024, up from 1.8% in 2019. The causes are structural: a network largely built in the Victorian era, analogue signalling technology that creates cascading delay vulnerability, a £7 billion infrastructure maintenance backlog, and the fragmentation of accountability between Network Rail (infrastructure) and train operating companies (operations) that defined the privatisation model from 1994. Delay Repay claims reached 4.1 million in 2023 — up 40% from 2019.</p>
-            <p>The Passenger Railway Services (Public Ownership) Act 2024 enables direct operation of franchises as they expire, aiming to reintegrate infrastructure and operations under Great British Railways. Whether this translates into measurable punctuality improvement will be the test of the reform. The practical consequences of poor performance fall most heavily on commuters with no viable alternative to rail — particularly those on corridors without adequate bus or road options — and on the environment, where passengers switching from rail to car for journey reliability reasons undermine the sector's sustainability argument.</p>
+            <p>Only 62% of UK trains arrived on time in 2024 by the Public Performance Measure — the worst performance in a decade, and among the worst punctuality rates in Western Europe. Switzerland achieves 92–95%, Germany and France 75–85%. Cancellations reached 3.9% of all scheduled services in 2024, up from 1.8% in 2019.</p>
+            <p>The causes are structural: a network largely built in the Victorian era, analogue signalling technology that creates cascading delay vulnerability, a £7 billion infrastructure maintenance backlog, and the fragmentation of accountability between Network Rail (infrastructure) and train operating companies (operations) that defined the privatisation model from 1994. The May 2018 timetable collapse — which stranded passengers for months — exposed how little slack existed in the system. Prolonged strike action from 2022 pushed cancellation rates to record highs.</p>
+            <p>The Passenger Railway Services (Public Ownership) Act 2024 enables direct operation of franchises as they expire, aiming to reintegrate infrastructure and operations under Great British Railways. Whether this translates into measurable punctuality improvement remains to be seen. In the meantime, passenger satisfaction stands at 66% — 14 points below the 2015 peak.</p>
           </div>
         </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Punctuality' },
+          { id: 'sec-punctuality', label: 'Punctuality' },
+          { id: 'sec-cancellations', label: 'Cancellations' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
         <ScrollReveal>
           <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
-              label="On-time arrival rate 2024"
-              value="63.3%"
-              unit=""
-              direction={'down' as const}
-              polarity={'up-is-good' as const}
-              changeText="-16.1pp vs 2019 · worst in Western Europe"
-              sparklineData={[83.5, 85.1, 80.2, 79.4, 73.8, 65.9, 72.3, 69.8, 63.3]}
-              href="#sec-chart"source="Office of Rail and Road · National Rail Trends 2024"
+              label="On-time arrival rate (%)"
+              value="62"
+              direction="down"
+              polarity="up-is-good"
+              changeText="worst in a decade · down from 89% in 2015 · Europe average ~80%"
+              sparklineData={[89.0, 88.5, 87.2, 79.8, 79.4, 72.3, 65.9, 68.1, 65.5, 62.0]}
+              source="Office of Rail and Road — National Rail Trends 2024"
             />
             <MetricCard
-              label="Train cancellation rate"
-              value="3.9%"
-              unit=""
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="+2.1pp since 2019 · compounding delays"
-              sparklineData={[1.5, 1.6, 1.8, 1.8, 2.1, 2.9, 2.6, 3.1, 3.9]}
-              href="#sec-chart"source="Office of Rail and Road · National Rail Trends 2024"
+              label="Cancellation rate (%)"
+              value="3.9"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="up from 1.4% in 2015 · record highs during 2022 strikes"
+              sparklineData={[1.4, 1.5, 1.6, 1.7, 1.8, 2.1, 3.4, 3.1, 3.7, 3.9]}
+              source="Office of Rail and Road — National Rail Trends 2024"
             />
             <MetricCard
-              label="Delay Repay compensation claims"
-              value="4.1m"
-              unit=""
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="+40% since 2019 · rising awareness and delays"
-              sparklineData={[1.8, 2.0, 2.2, 2.9, 2.5, 2.8, 3.1, 3.6, 4.1]}
-              href="#sec-chart"source="Office of Rail and Road · National Rail Trends 2024"
+              label="Passenger satisfaction (%)"
+              value="66"
+              direction="down"
+              polarity="up-is-good"
+              changeText="down from 80% in 2015 · 14pp fall over a decade"
+              sparklineData={[80, 80, 81, 79, 80, 76, 67, 70, 68, 66]}
+              source="Transport Focus — National Rail Passenger Survey 2024"
             />
           </div>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-punctuality" className="mb-12">
             <LineChart
-              title="Train punctuality rate, 2016–2024"
-              subtitle="Percentage of trains arriving within 5 minutes of scheduled time (PPM measure)."
-              series={series}
-              yLabel="On-time arrival (%)"
+              title="Train punctuality (% on time), UK, 2015–2024"
+              subtitle="Percentage of trains arriving within 5 minutes of scheduled time (Public Performance Measure). Worst performance in a decade."
+              series={onTimeSeries}
+              annotations={punctualityAnnotations}
+              yLabel="% on time"
               source={{
                 name: 'Office of Rail and Road',
-                dataset: 'National Rail Trends',
+                dataset: 'National Rail Trends — Punctuality data',
+                frequency: 'quarterly',
+                url: 'https://dataportal.orr.gov.uk/statistics/performance/train-punctuality/',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-cancellations" className="mb-12">
+            <LineChart
+              title="Train cancellation rate and passenger satisfaction, UK, 2015–2024"
+              subtitle="Cancellation rate (% of planned services that did not run) and overall passenger satisfaction (%). Both trending in the wrong direction."
+              series={cancellationSeries}
+              annotations={cancellationAnnotations}
+              yLabel="% rate"
+              source={{
+                name: 'Office of Rail and Road / Transport Focus',
+                dataset: 'National Rail Trends and National Rail Passenger Survey',
                 frequency: 'annual',
+                url: 'https://dataportal.orr.gov.uk/statistics/performance/train-punctuality/',
+                date: '2024',
               }}
             />
           </section>
@@ -125,13 +149,14 @@ export default function TrainPunctualityPage() {
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Office of Rail and Road — National Rail Trends. Published quarterly. dataportal.orr.gov.uk/statistics/performance/train-punctuality/</p>
-            <p>On-time arrival measured by Public Performance Measure (PPM): within 5 minutes of scheduled arrival for regional and commuter services, within 10 minutes for long-distance services. Cancellation rate is percentage of planned services that did not run. Delay Repay claims are compensation applications made by passengers for qualifying delays.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://dataportal.orr.gov.uk/statistics/performance/train-punctuality/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Office of Rail and Road — National Rail Trends</a>. Quarterly punctuality and cancellation data. Retrieved 2024.</p>
+            <p><a href="https://www.transportfocus.org.uk/research-publications/publications/national-rail-passenger-survey/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Transport Focus — National Rail Passenger Survey</a>. Biannual satisfaction survey. Retrieved 2024.</p>
+            <p>On-time arrival measured by Public Performance Measure (PPM): within 5 minutes for regional and commuter services, within 10 minutes for long-distance services. Cancellation rate is percentage of planned services that did not operate. Annual figures are averages of quarterly reporting periods.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

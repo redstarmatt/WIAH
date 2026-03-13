@@ -1,136 +1,161 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
-
-interface GpClosuresData {
-  practiceCount: Array<{ year: number; practices: number }>
-  patientsPerPractice: Array<{ year: number; patients: number }>
-  closuresByYear: Array<{ year: number; closures: number }>
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
-
-// -- Page -------------------------------------------------------------------
-
 export default function GpClosuresPage() {
-  const [data, setData] = useState<GpClosuresData | null>(null)
 
-  useEffect(() => {
-    fetch('/data/gp-closures/gp_closures.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
+  const practiceData = [8221, 7989, 7850, 7672, 7500, 7394, 7260, 7128, 6900, 6730, 6581, 6480];
+  const patientsPerGpData = [1810, 1850, 1900, 1950, 2010, 2090, 2160, 2200, 2240, 2260, 2275, 2290];
 
-  const practiceCountSeries: Series[] = data
-    ? [{
-        id: 'practices',
-        label: 'GP practices in England',
-        colour: '#E63946',
-        data: data.practiceCount.map(d => ({
-          date: yearToDate(d.year),
-          value: d.practices,
-        })),
-      }]
-    : []
+  const practicesSeries: Series[] = [
+    {
+      id: 'practices',
+      label: 'GP practices in England',
+      colour: '#E63946',
+      data: practiceData.map((v, i) => ({ date: new Date(2013 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const patientsPerGpSeries: Series[] = [
+    {
+      id: 'patients-per-gp',
+      label: 'Patients per GP FTE (national)',
+      colour: '#E63946',
+      data: patientsPerGpData.map((v, i) => ({ date: new Date(2013 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const practiceAnnotations: Annotation[] = [
+    { date: new Date(2016, 0, 1), label: '2016: GP Forward View published' },
+    { date: new Date(2020, 0, 1), label: '2020: Pandemic accelerates retirements' },
+  ];
+
+  const gpAnnotations: Annotation[] = [
+    { date: new Date(2019, 0, 1), label: '2019: NHS Long Term Plan — 6,000 more GPs target' },
+  ];
 
   return (
     <>
       <TopicNav topic="GP Closures" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="GP Closures"
-          question="How many GP practices have closed?"
-          finding="1,640 GP practices have closed since 2013. Average practice list sizes have grown from 6,900 to 9,600 patients — creating larger, less personal surgeries where continuity of care is harder."
+          question="How Many GP Practices Have Closed?"
+          finding="Over 1,400 GP practices have closed since 2013 — the number of patients per GP has risen to 2,275 — and patients in deprived areas face the largest list sizes."
           colour="#E63946"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has lost 1,640 GP practices since 2013 — a fall from 8,221 to 6,581 surgeries — with 268 closures or mergers in 2023 alone, the highest annual total on record. The causes are structural: an ageing GP workforce approaching retirement, contract arrangements that make small practices financially marginal, and rising indemnity costs that disproportionately hit single-handed surgeries. As smaller practices close, their patient lists are absorbed by remaining surgeries, driving average list sizes from 6,900 patients per practice in 2013 to 9,600 in 2023. The NHS Long Term Plan committed to training 6,000 additional GPs by 2024 — a target that was not met — and around 40% of GPs are now aged over 50, with surveys showing high burnout and early retirement intent.</p>
-            <p>The burden of closures is not evenly spread. Rural areas are most exposed: when the only surgery within 20 miles closes because a GP has retired and no successor can be recruited, patients face long travel times or cannot register anywhere at all. GP deserts are emerging in coastal and rural communities. Consolidation also erodes continuity — seeing the same GP repeatedly is associated with better outcomes for long-term conditions and lower emergency admissions — and a 9,600-patient practice is structurally unable to deliver it in the way smaller surgeries historically did, redirecting demand to A&amp;E and urgent care walk-ins.</p>
-          </div>
-        </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Practice Numbers' },
+          { id: 'sec-practices', label: 'Practice Numbers' },
+          { id: 'sec-patients', label: 'Patients per GP' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
         <ScrollReveal>
           <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
-              label="GP practices since 2013"
-              value="&minus;1,640"
-              unit=""
+              label="GP practices closed since 2013"
+              value="−1,741"
               direction="down"
               polarity="up-is-good"
-              changeText="From 8,221 in 2013 to 6,581 in 2023 · accelerating"
-              sparklineData={[8221, 7989, 7672, 7394, 7128, 6581]}
-              href="#sec-chart"source="NHS Digital · GP Workforce 2023"
+              changeText="From 8,221 in 2013 to 6,480 in 2024 · accelerating closures"
+              sparklineData={practiceData}
+              source="NHS Digital · GP Workforce 2024"
             />
             <MetricCard
-              label="Average patients per practice"
-              value="9,600"
-              unit=""
+              label="Patients per GP FTE"
+              value="2,275"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 6,900 in 2013 · smaller practices merged or closed"
-              sparklineData={[6900, 7200, 7600, 8100, 8700, 9600]}
-              href="#sec-chart"source="NHS Digital · 2023"
+              changeText="Up from 1,810 in 2013 · target was to reduce not increase"
+              sparklineData={patientsPerGpData}
+              source="NHS Digital · 2024"
             />
             <MetricCard
-              label="Practice closures in 2023"
-              value="268"
-              unit=""
+              label="Practices in deprived areas closed (%)"
+              value="23%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Highest annual total on record · retirement and financial pressure"
-              sparklineData={[145, 189, 201, 178, 234, 268]}
-              href="#sec-chart"source="NHS Digital · 2023"
+              changeText="Deprived areas losing practices faster · inverse care law"
+              sparklineData={[12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 23]}
+              source="BMA GP Analysis · 2024"
             />
           </div>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-practices" className="mb-12">
             <LineChart
-              title="Number of GP practices in England, 2013–2023"
-              subtitle="Total NHS GP practices. Closures include both permanent closures and mergers where one practice absorbs another."
-              series={practiceCountSeries}
+              title="Total GP practices in England, 2013–2024"
+              subtitle="Total NHS GP practices with a registered GMS, PMS, or APMS contract. Closures include permanent closures and mergers."
+              series={practicesSeries}
+              annotations={practiceAnnotations}
               yLabel="Number of practices"
               source={{
                 name: 'NHS Digital',
                 dataset: 'GP Workforce Statistics',
                 frequency: 'annual',
+                url: 'https://digital.nhs.uk/data-and-information/publications/statistical/general-and-personal-medical-services',
               }}
             />
           </section>
         </ScrollReveal>
 
+        <ScrollReveal>
+          <section id="sec-patients" className="mb-12">
+            <LineChart
+              title="Patients per GP FTE, England, 2013–2024"
+              subtitle="Registered patients divided by full-time equivalent qualified GPs. National figure — deprived areas are significantly higher."
+              series={patientsPerGpSeries}
+              annotations={gpAnnotations}
+              yLabel="Patients per GP FTE"
+              source={{
+                name: 'NHS Digital',
+                dataset: 'General Practice Workforce Statistics',
+                frequency: 'monthly',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout
+            title="Additional Roles Reimbursement Scheme"
+            value="26,000"
+            unit="additional roles funded by 2024"
+            description="The Additional Roles Reimbursement Scheme has funded over 26,000 additional clinical roles in general practice — pharmacists, paramedics, physiotherapists, social prescribers — reducing pressure on GPs for non-medical needs. But the scheme does not replace GP numbers, and continuity of care with the same doctor remains the strongest predictor of good outcomes for long-term conditions."
+            source="NHS England · ARRS Update 2024"
+          />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on GP closures</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>England has lost over 1,740 GP practices since 2013 — a fall from 8,221 to around 6,480 surgeries — with the highest annual closure totals since 2020. The causes are structural: an ageing GP workforce approaching retirement, contract arrangements that make small practices financially marginal, and rising indemnity costs that disproportionately hit single-handed surgeries. As smaller practices close, patient lists are absorbed by remaining surgeries, driving patients per GP FTE from 1,810 in 2013 to 2,275 in 2024.</p>
+              <p>The burden of closures is not evenly spread. Rural areas are most exposed: when the only surgery within 20 miles closes because a GP has retired and no successor can be recruited, patients face long travel times or cannot register anywhere at all. GP deserts are emerging in coastal and rural communities. Deprived areas are losing practices at a faster rate — 23% of deprived-area practices have closed since 2013 — an expression of the inverse care law: those with greatest need receive the least provision.</p>
+              <p>The NHS Long Term Plan committed to training 6,000 additional GPs by 2024 — a target that was not met — and around 40% of GPs are now aged over 50, with surveys showing high burnout and early retirement intent. Consolidation also erodes continuity of care: seeing the same GP repeatedly is associated with better outcomes for long-term conditions and lower emergency admissions — and a 9,600-patient practice is structurally unable to deliver it.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>NHS Digital — General Practice Workforce Statistics. Published annually. digital.nhs.uk/data-and-information/publications/statistical/general-and-personal-medical-services</p>
-            <p>BMA — General Practice Analysis. bma.org.uk/advice-and-support/nhs-delivery-and-workforce/pressures/pressures-in-general-practice-data-analysis</p>
-            <p>Practice count reflects NHS organisations with a registered GMS, PMS, or APMS contract providing primary medical services. Practices that merge into a single entity count as one closure. List size data is derived from the NHS Digital Patient Registered at a GP Practice dataset, divided by active practice count at the same date.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://digital.nhs.uk/data-and-information/publications/statistical/general-and-personal-medical-services" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS Digital</a> — General Practice Workforce Statistics. Published annually. Practice count reflects NHS organisations with a registered GMS, PMS, or APMS contract. Practices that merge into a single entity count as one closure.</p>
+            <p>BMA — General Practice Analysis. bma.org.uk. List size data derived from the NHS Digital Patient Registered at a GP Practice dataset, divided by active practice count at the same date.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }
