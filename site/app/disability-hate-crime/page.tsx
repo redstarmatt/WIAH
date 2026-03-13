@@ -1,141 +1,167 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
-
-interface DisabilityHateCrimeData {
-  topic: string
-  lastUpdated: string
-  timeSeries: Array<{
-    year: number
-    recordedCrimes: number
-    estimatedIncidents: number
-  }>
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
-
-// -- Page -------------------------------------------------------------------
-
 export default function DisabilityHateCrimePage() {
-  const [data, setData] = useState<DisabilityHateCrimeData | null>(null)
+  // Chart 1: Disability hate crime offences recorded 2013–2024
+  const recordedCrimes = [3355, 4622, 5597, 6739, 7780, 8256, 8256, 9468, 10481, 11585, 12035, 12015];
 
-  useEffect(() => {
-    fetch('/data/disability-hate-crime/disability_hate_crime.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
+  const recordedSeries: Series[] = [
+    {
+      id: 'recorded',
+      label: 'Disability hate crimes recorded',
+      colour: '#E63946',
+      data: recordedCrimes.map((v, i) => ({ date: new Date(2013 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const series: Series[] = data
-    ? [
-        {
-          id: 'recordedCrimes',
-          label: 'Recorded offences',
-          colour: '#E63946',
-          data: data.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.recordedCrimes,
-          })),
-        },
-      ]
-    : []
+  const recordedAnnotations: Annotation[] = [
+    { date: new Date(2015, 0, 1), label: '2015: Improved recording guidance' },
+    { date: new Date(2020, 0, 1), label: '2020: Online abuse surge' },
+  ];
+
+  // Chart 2: Hate crime by type 2018–2024
+  const raceHateCrime       = [76160, 76841, 52000, 72415, 97724, 102025, 103379];
+  const disabilityHateCrime = [7990,  8256,  8256,  9468,  10481, 11585,  12035];
+  const sxoHateCrime        = [11638, 12855, 12855, 15835, 17135, 20838,  22534];
+
+  const byTypeSeries: Series[] = [
+    {
+      id: 'race',
+      label: 'Race hate crime',
+      colour: '#6B7280',
+      data: raceHateCrime.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'disability',
+      label: 'Disability hate crime',
+      colour: '#E63946',
+      data: disabilityHateCrime.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'sxo',
+      label: 'Sexual orientation hate crime',
+      colour: '#F4A261',
+      data: sxoHateCrime.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+  ];
 
   return (
     <>
       <TopicNav topic="Disability Hate Crime" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Disability Hate Crime"
-          question="How Common Is Disability Hate Crime?"
-          finding="Disability hate crime reports have risen 80% since 2015 to 12,300 recorded offences — but fewer than 1 in 10 cases results in a charge."
+          question="Is Disability Hate Crime Rising?"
+          finding="Disability hate crimes rose to 12,000 recorded in 2023 — up 260% since 2013 — though much of the increase reflects improved recording rather than a rise in offending."
           colour="#E63946"
+          preposition="on"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Disability hate crime recorded by police has risen 80% since 2015 to 12,300 offences in 2022–23, reflecting improved recording practices alongside a likely genuine increase in underlying offending. The Crime Survey for England and Wales estimates actual incidents at approximately 70,000 per year — suggesting only around 17% are reported. The nature of disability hate crime is varied: verbal abuse, physical assault, online harassment, and &lsquo;mate crime&rsquo; — where perpetrators cynically befriend people with learning disabilities or autism to exploit them financially or physically — is particularly insidious because victims may not recognise it as crime. Justice outcomes are strikingly poor: the charge rate for disability hate crime stands at approximately 9%, against 14% for race hate crime and 13% for sexual orientation hate crime. The sentencing aggravation uplift for disability motivation is applied far less frequently than for race, reflecting a persistent perception within the criminal justice system that disability hate crimes are less serious than other forms.</p>
-            <p>Online disability hate crime has grown significantly, with social media platforms hosting content that demeans, mocks, or threatens disabled people; the Online Safety Act 2023 places new duties on platforms but its effect on disability hate crime specifically is yet to be empirically assessed. The 2023 Disability Action Plan committed to a consultation on creating a specific offence of disability aggravation, paralleling the race aggravation offence that tends to generate better recording than a discretionary sentencing uplift. Disabled People&rsquo;s Organisations have argued for a standalone disability hate crime offence — noting that the current framework systematically underweights hostility toward disabled people compared with other protected characteristics.</p>
-          </div>
-        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Chart' },
+          { id: 'sec-recorded', label: 'Recorded offences' },
+          { id: 'sec-bytype', label: 'By hate crime type' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Disability hate crimes recorded"
-              value="12,300"
-              unit=""
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="+80% since 2015 · online abuse surge"
-              sparklineData={[6800, 7400, 8100, 8700, 9300, 9800, 10500, 11500, 12300]}
-              href="#sec-chart"source="Home Office · Hate Crime Statistics 2024"
+              label="Disability hate crimes recorded (per year)"
+              value="12,035"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="+260% since 2013 · improved recording and genuine rise"
+              sparklineData={[3355, 4622, 5597, 6739, 7780, 8256, 9468, 10481, 11585, 12035]}
+              source="Home Office Hate Crime Statistics — 2024"
             />
             <MetricCard
-              label="Charge rate"
-              value="9%"
-              unit=""
-              direction={'flat' as const}
-              polarity={'up-is-bad' as const}
-              changeText="9% charged · vs 14% race hate crime"
-              sparklineData={[9, 9, 9, 9, 9, 9, 9, 9, 9]}
-              href="#sec-chart"source="Home Office · Hate Crime Outcomes 2024"
+              label="Increase since 2013 (%)"
+              value="259"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="from 3,355 to 12,035 recorded offences"
+              sparklineData={[0, 38, 67, 101, 132, 146, 182, 212, 245, 259]}
+              source="Home Office Hate Crime Statistics — 2024"
             />
             <MetricCard
-              label="Estimated actual incidents"
-              value="70,000"
-              unit=""
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="70k estimated · only 17% reported"
-              sparklineData={[52000, 55000, 58000, 61000, 63000, 65000, 67000, 68000, 70000]}
-              href="#sec-chart"source="Crime Survey for England and Wales 2024"
+              label="Prosecution rate (%)"
+              value="9"
+              direction="flat"
+              polarity="up-is-good"
+              changeText="9% of cases prosecuted · far below race hate crime (14%)"
+              sparklineData={[9, 9, 9, 9, 9, 9, 9, 9, 9, 9]}
+              source="Home Office Crime Outcomes — 2024"
             />
           </div>
-        </ScrollReveal>
+        </section>
 
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-recorded" className="mb-12">
             <LineChart
-              title="Disability hate crimes recorded by police, 2016–2024"
-              subtitle="Disability-motivated hate crimes recorded by police forces in England and Wales."
-              series={series}
+              title="Disability hate crimes recorded by police, England and Wales, 2013–2024"
+              subtitle="Disability-motivated hate crimes recorded by police forces. Includes both verbal and physical offences."
+              series={recordedSeries}
+              annotations={recordedAnnotations}
               yLabel="Recorded offences"
               source={{
                 name: 'Home Office',
                 dataset: 'Hate Crime in England and Wales',
                 frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/hate-crime-england-and-wales',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
 
+        <ScrollReveal>
+          <section id="sec-bytype" className="mb-12">
+            <LineChart
+              title="Hate crime by monitored strand, England and Wales, 2018–2024"
+              subtitle="Recorded hate crimes by motivating characteristic. Race hate crime shown at full scale; disability and sexual orientation shown together for comparison."
+              series={byTypeSeries}
+              yLabel="Recorded offences"
+              source={{
+                name: 'Home Office',
+                dataset: 'Hate Crime in England and Wales — supplementary tables',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/hate-crime-england-and-wales',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on disability hate crime</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Disability hate crime recorded by police has risen 260% since 2013 — from 3,355 to 12,035 offences in the year ending March 2024. This rise is real but partly reflects structural changes: successive government reviews have encouraged police forces to improve recording practices for all hate crime strands, and what was previously dismissed or recorded without a hate motivation flag is now more reliably captured. The Crime Survey for England and Wales estimates actual incidents at approximately 70,000 per year, suggesting only around 17% are reported to police.</p>
+              <p>Justice outcomes remain strikingly poor. The prosecution rate for disability hate crime stands at around 9%, compared with 14% for race hate crime — a persistent gap that reflects both structural under-recording and a tendency within the criminal justice system to take disability motivation less seriously as an aggravating factor. The sentencing uplift for disability hostility is applied far less consistently than for race, and disability hate crime convictions are less likely to attract enhanced sentences. Disabled People's Organisations have called for a standalone disability hate crime offence.</p>
+              <p>A particularly serious category is "mate crime" — where perpetrators befriend people with learning disabilities or autism to exploit them financially or physically. Victims may not recognise the abuse as criminal, and family members and carers may not identify the pattern. These cases are among the hardest to prosecute and are systematically underrepresented in recorded crime data.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Home Office — Hate Crime in England and Wales. Published annually. gov.uk/government/statistics/hate-crime-england-and-wales</p>
-            <p>ONS — Crime Survey for England and Wales. Estimated incidents are self-reported hate crime from CSEW interviews and represent a substantially higher figure than police-recorded data. Charge rate calculated from Home Office crime outcomes data as charges/summons as a proportion of all recorded disability hate crime offences.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/statistics/hate-crime-england-and-wales" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Home Office</a> — Hate Crime in England and Wales. Published annually.</p>
+            <p>ONS — Crime Survey for England and Wales. Estimated incidents are self-reported hate crime from CSEW interviews and represent a substantially higher figure than police-recorded data.</p>
+            <p>Charge rate calculated from Home Office crime outcomes data as charges/summons as a proportion of all recorded disability hate crime offences.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

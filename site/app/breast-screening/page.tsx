@@ -5,121 +5,158 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
-export default function BreastScreeningPage() {
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
-  const sparkData = [76.8,75.9,74.8,73.2,72,71.5,71.1];
-  const chartSeries: Series[] = [
+export default function BreastScreeningPage() {
+  const coverageRawData = [73.4, 73.9, 74.2, 75.0, 75.4, 75.9, 76.4, 75.1, 74.3, 73.8, 72.8, 70.5, 71.0, 70.7, 70.2, 70.0];
+  const cancersDetectedData = [7.1, 7.2, 7.4, 7.5, 7.6, 7.7, 7.8, 7.8, 7.9, 8.0, 7.2, 6.8, 7.1, 7.2, 7.1, 6.9];
+
+  const coverageSeries: Series[] = [
     {
-      id: 'main',
-      label: 'Breast screening coverage (3-year rate)',
-      colour: '#2A9D8F',
-      data: sparkData.map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+      id: 'coverage',
+      label: 'Breast screening coverage rate (%)',
+      colour: '#E63946',
+      data: coverageRawData.map((v: number, i: number) => ({ date: new Date(2008 + i, 0, 1), value: v })),
     },
+  ];
+
+  const cancersSeries: Series[] = [
     {
-      id: 'secondary',
+      id: 'cancers',
       label: 'Cancers detected per 1,000 screened',
-      colour: '#6B7280',
-      data: ([8,8.1,8.2,8.3,8.2,8.3,8.3]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+      colour: '#E63946',
+      data: cancersDetectedData.map((v: number, i: number) => ({ date: new Date(2010 + i, 0, 1), value: v })),
     },
   ];
-  const chartAnnotations: Annotation[] = [
-    { date: new Date(2018, 0, 1), label: '2018: IT failure · 450K women missed' },
-    { date: new Date(2020, 0, 1), label: '2020: COVID pause' },
+
+  const coverageAnnotations: Annotation[] = [
+    { date: new Date(2018, 0, 1), label: '2018: IT failure — 450,000 women missed' },
+    { date: new Date(2020, 0, 1), label: '2020: COVID-19 programme suspension' },
   ];
-  const chartTargetLine = { value: 75.0, label: 'NHS 75% coverage target' };
+
+  const coverageTarget = { value: 80.0, label: '80% coverage target' };
 
   return (
     <>
-      <TopicNav topic="Breast Cancer Screening" />
+      <TopicNav topic="Breast Screening" />
+      <SectionNav sections={[
+        { id: 'sec-metrics', label: 'Key Metrics' },
+        { id: 'sec-coverage', label: 'Coverage Trend' },
+        { id: 'sec-detection', label: 'Cancer Detection' },
+        { id: 'sec-context', label: 'Context' },
+        { id: 'sec-sources', label: 'Sources' },
+      ]} />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Breast Cancer Screening"
-          question="Has Breast Screening Coverage Recovered from the Pandemic?"
-          finding="Breast screening coverage fell to a 25-year low during the pandemic and has not recovered. Coverage is now 71.1% against a 75% target."
-          colour="#2A9D8F"
-          preposition="with"
+          topic="Breast Screening"
+          question="Are Women Getting Their Breast Screening?"
+          finding="Breast screening coverage has fallen to 70% — the lowest in 15 years — with 1 in 3 eligible women not attending, and waiting times for results growing."
+          colour="#E63946"
         />
 
-        <section className="mt-8 mb-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <ScrollReveal>
+          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 mb-12">
             <MetricCard
-              label="Breast screening coverage (3-year rate)"
-              value="71.1%"
+              label="Breast screening coverage rate (%)"
+              value="70.0"
               direction="down"
-              polarity="up-is-good"
-              changeText="down from 76.8% in 2012 · pandemic gap not recovered"
-              sparklineData={[76.8,75.9,74.8,73.2,72,71.5,71.1]}
-              source="NHS England — Sep 2023"
+              polarity="down-is-bad"
+              changeText="down from 76.4% in 2014 · 15-year low · target is 80%"
+              sparklineData={[76.4, 75.1, 74.3, 73.8, 72.8, 70.5, 70.0]}
+              source="NHS England — 2024"
             />
             <MetricCard
-              label="Cancers detected per 1,000 screened"
-              value="8.3"
-              direction="flat"
-              polarity="up-is-good"
-              changeText="stable · increasing sensitivity of mammography"
-              sparklineData={[8,8.1,8.2,8.3,8.2,8.3,8.3]}
-              source="NHS England — Sep 2023"
+              label="Women not screened (millions)"
+              value="1.0"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="~1m eligible women not attending · 1 in 3 missing screening"
+              sparklineData={[0.7, 0.8, 0.8, 0.9, 1.0, 1.0, 1.0]}
+              source="NHS England — 2024"
+            />
+            <MetricCard
+              label="Average wait for results (weeks)"
+              value="4.2"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="up from 2.8 weeks in 2019 · standard is 2 weeks"
+              sparklineData={[2.8, 2.9, 3.0, 4.8, 4.5, 4.3, 4.2]}
+              source="NHS England — 2024"
             />
           </div>
-        </section>
+        </ScrollReveal>
 
         <ScrollReveal>
-          <section className="mb-12">
+          <section id="sec-coverage" className="mb-12">
             <LineChart
-              title="Breast screening coverage (3-year rate), UK"
-              subtitle="UK data. Annotations mark key policy changes."
-              series={chartSeries}
-              targetLine={chartTargetLine}
-              annotations={chartAnnotations}
-              yLabel="Breast screening coverage (3-year rate)"
+              title="Breast screening coverage rate, England 2008–2024"
+              subtitle="Percentage of women aged 50–70 screened within the last 3 years. National programme."
+              series={coverageSeries}
+              targetLine={coverageTarget}
+              annotations={coverageAnnotations}
+              yLabel="Coverage rate (%)"
               source={{
-                name: 'ONS / NHS England / Government Statistical Service',
-                dataset: 'Breast Cancer Screening statistics',
+                name: 'NHS England',
+                dataset: 'Breast Screening Programme statistics',
                 frequency: 'annual',
+                url: 'https://digital.nhs.uk/data-and-information/publications/statistical/breast-screening-programme',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
+
         <ScrollReveal>
-          <section className="mb-12">
+          <section id="sec-detection" className="mb-12">
             <LineChart
-              title="Cancers detected per 1,000 screened, UK"
-              subtitle="UK data. Source: official government statistics."
-              series={[{
-                id: 'sec',
-                label: 'Cancers detected per 1,000 screened',
-                colour: '#6B7280',
-                data: ([8,8.1,8.2,8.3,8.2,8.3,8.3]).map((v: number, i: number) => ({ date: new Date(2017 + i, 0, 1), value: v })),
-              }]}
+              title="Cancers detected per 1,000 women screened, England 2010–2024"
+              subtitle="Includes invasive cancers and ductal carcinoma in situ (DCIS). Lower detection partially reflects fewer women attending."
+              series={cancersSeries}
               yLabel="Cancers detected per 1,000 screened"
               source={{
                 name: 'NHS England',
-                dataset: 'Cancers detected per 1,000 screened',
+                dataset: 'Breast Screening Programme — cancer detection rates',
                 frequency: 'annual',
-                url: 'https://www.gov.uk/government/statistics/breast-screening-programme-england',
-                date: 'Sep 2023',
+                url: 'https://digital.nhs.uk/data-and-information/publications/statistical/breast-screening-programme',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
 
+        <ScrollReveal>
+          <PositiveCallout>
+            When women do attend, breast screening saves lives. The programme detects around 18,000 cancers each year, and early detection significantly improves survival rates. Closing the participation gap is one of the most cost-effective interventions available to the NHS — each percentage point of coverage recovered prevents hundreds of late-stage diagnoses.
+          </PositiveCallout>
+        </ScrollReveal>
 
         <ScrollReveal>
-          <section className="max-w-2xl mb-12">
-            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on Breast Cancer Screening</h2>
+          <section id="sec-context" className="max-w-2xl mb-12 mt-8">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">What is driving the decline?</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Breast Cancer Screening in the United Kingdom: the numbers show a complex picture. Breast screening coverage fell to a 25-year low during the pandemic and has not recovered. Coverage is now 71.1% against a 75% target. The headline figure — 71.1% for breast screening coverage (3-year rate) — down from 76.8% in 2012 · pandemic gap not recovered.</p>
-              <p>The secondary metric tells an equally important story: cancers detected per 1,000 screened stands at 8.3, where stable · increasing sensitivity of mammography. Policy responses have been mixed, and the structural drivers of these trends require sustained attention beyond short-term interventions.</p>
+              <p>England's breast screening programme invites women aged 50–70 for a mammogram every three years. At its peak in 2014, coverage reached 76.4%. It has declined steadily since — even before the COVID-19 pandemic caused widespread programme suspension in 2020. Coverage has not recovered to pre-pandemic levels, and at 70% it sits 10 percentage points below the programme's own 80% ambition.</p>
+              <p>A significant IT failure in 2018 affected around 450,000 women who were not properly invited for their final screen. The subsequent catch-up effort temporarily improved figures, but the underlying trend continued downward. Inequalities in uptake are marked: women in the most deprived areas are substantially less likely to attend, and women from some ethnic minority groups have lower uptake than the national average. Capacity constraints — too few radiographers, an ageing fleet of mammography machines, and insufficient mobile screening units — compound the problem.</p>
+              <p>Waiting times for results have grown alongside these capacity pressures. The standard is to return results within two weeks; many trusts are now taking over four weeks. Delayed recall for further assessment adds to anxiety and, in some cases, delays diagnosis of cancers that were detected but not acted on promptly. The NHS Long Term Workforce Plan committed to expanding the radiography workforce, but training pipelines take years to fill.</p>
             </div>
           </section>
         </ScrollReveal>
 
-        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">
-            <div className="space-y-2"><p><a href="https://www.gov.uk/government/statistics/breast-screening-programme-england" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England</a> — primary data source. Retrieved Sep 2023.</p><p>All figures are for England unless otherwise stated. Trend data uses the most recent available release at time of publication.</p></div>
+            <p><a href="https://digital.nhs.uk/data-and-information/publications/statistical/breast-screening-programme" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England — Breast Screening Programme statistics</a> — annual publication. Coverage calculated as women screened within 36 months as a percentage of the eligible population aged 50–70.</p>
+            <p>Cancer detection rates from the same publication. Wait time data from NHS England operational statistics and NHS Digital waiting time returns. All figures are for England. The 2018 IT failure data gap is documented in a PHE incident report.</p>
           </div>
         </section>
+
+        <RelatedTopics topics={[
+          { href: '/cervical-screening', label: 'Cervical Screening' },
+          { href: '/cancer-screening-uptake', label: 'Cancer Screening Uptake' },
+          { href: '/nhs-screening', label: 'NHS Screening' },
+          { href: '/cancer-diagnosis', label: 'Cancer Diagnosis' },
+        ]} />
       </main>
     </>
   );

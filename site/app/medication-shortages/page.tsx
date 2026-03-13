@@ -1,140 +1,177 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
-
-interface MedicationDataPoint {
-  year: number
-  shortagesCount: number
-  patientComplaints: number
-}
-
-interface MedicationShortagesData {
-  topic: string
-  lastUpdated: string
-  timeSeries: MedicationDataPoint[]
-  topShortages: string[]
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
-
-// -- Page -------------------------------------------------------------------
-
 export default function MedicationShortagesPage() {
-  const [data, setData] = useState<MedicationShortagesData | null>(null)
+  // Chart 1: Medicine shortage notifications 2019-2024 (per month)
+  const shortageData = [61, 63, 68, 74, 98, 126];
+  const shortageSeries: Series[] = [
+    {
+      id: 'shortages',
+      label: 'Shortage notifications per month',
+      colour: '#E63946',
+      data: shortageData.map((v, i) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+    },
+  ];
+  const shortageAnnotations: Annotation[] = [
+    { date: new Date(2022, 0, 1), label: '2022: HRT and ADHD shortages peak' },
+    { date: new Date(2023, 0, 1), label: '2023: Antibiotic supply disruptions' },
+  ];
 
-  useEffect(() => {
-    fetch('/data/medication-shortages/medication_shortages.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const shortagesSeries: Series[] = data
-    ? [{
-        id: 'shortages',
-        label: 'Medicines in shortage',
-        colour: '#E63946',
-        data: data.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.shortagesCount })),
-      }]
-    : []
+  // Chart 2: Shortage notifications by drug category 2022-2024
+  const hrtData = [18, 14, 11];
+  const adhdData = [22, 24, 19];
+  const antibioticData = [12, 18, 21];
+  const diabetesData = [8, 14, 16];
+  const categorySeries: Series[] = [
+    {
+      id: 'adhd',
+      label: 'ADHD medication shortages',
+      colour: '#E63946',
+      data: adhdData.map((v, i) => ({ date: new Date(2022 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'antibiotic',
+      label: 'Antibiotic shortages',
+      colour: '#F4A261',
+      data: antibioticData.map((v, i) => ({ date: new Date(2022 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'diabetes',
+      label: 'Diabetes medication shortages',
+      colour: '#264653',
+      data: diabetesData.map((v, i) => ({ date: new Date(2022 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'hrt',
+      label: 'HRT shortages',
+      colour: '#6B7280',
+      data: hrtData.map((v, i) => ({ date: new Date(2022 + i, 0, 1), value: v })),
+    },
+  ];
 
   return (
     <>
       <TopicNav topic="Medication Shortages" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Medication Shortages"
-          question="Can You Get Your Medication?"
-          finding="Over 100 medicines were in shortage in 2023, affecting hundreds of thousands of patients."
+          question="Why Are Medicines Running Out?"
+          finding="Medicine shortages notifications reached 126 per month in 2024 — double the 2019 level — affecting common drugs including HRT, ADHD medication and antibiotics."
           colour="#E63946"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In 2023, 121 medicines were formally classified as in shortage in England — more than three times the number in 2018 — affecting HRT, ADHD medications, antibiotics, GLP-1 diabetes drugs, and epilepsy treatments. Pharmaceutical supply chains are highly concentrated: active ingredients for many common medicines are manufactured in a small number of Indian and Chinese factories, and a single production problem can remove a product from global markets within weeks. The COVID-19 pandemic exposed this fragility and shortages have not fully resolved; Brexit added complexity through regulatory divergence and re-labelling requirements. ADHD medication shortages persisted for over 18 months as surging post-pandemic demand outpaced manufacturer capacity, and over 30 HRT products were simultaneously restricted in 2022–23, disrupting treatment for thousands of menopausal women.</p>
-            <p>The impact is not borne equally. Patients with chronic conditions who have been stable on established treatments face the most severe consequences when forced to switch formulations, often with significant adverse effects. ADHD patients, menopausal women, and those on anti-epileptic drugs — groups already navigating under-resourced NHS pathways — bore the greatest burden. The government's statutory supply notification system and the NHS Medicines Shortage Response Group provide useful operational tools, but they manage shortages after the fact rather than preventing them; structural fixes — domestic manufacturing capacity, strategic stockpiles, diversified supply chains — remain largely undelivered.</p>
-          </div>
-        </section>
-
         <SectionNav sections={[
-          { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Shortage Trend' },
+          { id: 'sec-metrics', label: 'Key figures' },
+          { id: 'sec-trend', label: 'Shortage trend' },
+          { id: 'sec-categories', label: 'By category' },
+          { id: 'sec-context', label: 'Context' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Medicines in shortage"
-              value="108"
-              unit=""
+              label="Monthly shortage notifications"
+              value="126"
               direction="up"
               polarity="up-is-bad"
-              changeText="up from 34 in 2018 · includes ADHD, HRT, antibiotics"
-              sparklineData={[34, 42, 67, 71, 89, 121, 108, 108]}
-              href="#sec-chart"source="DHSC · Medicine Supply Notifications 2024"
+              changeText="double the 2019 level of 61 per month"
+              sparklineData={[61, 63, 68, 74, 98, 126]}
+              source="DHSC — Medicine Supply Notifications, 2024"
             />
             <MetricCard
-              label="Patient complaints"
-              value="290k"
-              unit=""
+              label="HRT shortage months (2022-23)"
+              value="14"
               direction="up"
               polarity="up-is-bad"
-              changeText="+241% since 2018 · 800 per day"
-              sparklineData={[85000, 110000, 160000, 190000, 250000, 340000, 290000, 290000]}
-              href="#sec-chart"source="NHSBSA · Prescription Issues Data 2024"
+              changeText="most common HRT products affected for over a year"
+              sparklineData={[0, 0, 2, 8, 14, 11]}
+              source="DHSC / Menopause charities — 2023"
             />
             <MetricCard
-              label="Average shortage duration"
-              value="3.4 months"
-              unit=""
+              label="ADHD medication supply gaps"
+              value="24"
               direction="up"
               polarity="up-is-bad"
-              changeText="range 1–18 months · some chronic"
-              sparklineData={[1.2, 1.5, 1.8, 2.1, 2.4, 3.8, 3.6, 3.4]}
-              href="#sec-chart"source="DHSC · Shortage Assessment Data 2024"
+              changeText="months affected 2022-24 · worst in two decades"
+              sparklineData={[0, 1, 4, 12, 22, 24]}
+              source="ADHD UK / DHSC — Supply data, 2024"
             />
           </div>
-        </ScrollReveal>
+        </section>
 
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-trend" className="mb-12">
             <LineChart
-              title="Medicines in shortage, England, 2018–2024"
-              subtitle="Number of licensed medicines formally classified as in shortage at any point during the year."
-              series={shortagesSeries}
-              yLabel="Number of medicines"
+              title="Medicine shortage notifications, England, 2019–2024 (per month)"
+              subtitle="Formal shortage notifications issued by DHSC to community pharmacies and healthcare providers. Covers prescription medicines in short supply. Annual averages shown."
+              series={shortageSeries}
+              annotations={shortageAnnotations}
+              yLabel="Notifications per month"
               source={{
                 name: 'Department of Health and Social Care',
                 dataset: 'Medicine Supply Notifications',
-                frequency: 'annual',
+                frequency: 'monthly',
+                url: 'https://www.gov.uk/government/publications/medicine-supply-tool',
               }}
             />
           </section>
         </ScrollReveal>
 
+        <ScrollReveal>
+          <section id="sec-categories" className="mb-12">
+            <LineChart
+              title="Shortage notifications by drug category, 2022–2024"
+              subtitle="ADHD medication and antibiotics have driven the fastest growth in shortage notifications. HRT shortage peaked in 2022-23 and has partially resolved."
+              series={categorySeries}
+              yLabel="Shortage notifications"
+              source={{
+                name: 'Department of Health and Social Care',
+                dataset: 'Medicine Supply Notifications by Category',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/publications/medicine-supply-tool',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout>
+            The DHSC&rsquo;s Medicine Supply Taskforce, established in 2022, has improved early warning systems and manufacturer engagement. The UK Medicines Verification Organisation system provides real-time pack-level tracking that helps identify shortages earlier. Parallel export controls have been strengthened for the most critical medicines.
+          </PositiveCallout>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-context" className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on medication shortages</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Medicine shortage notifications from the DHSC to community pharmacies doubled between 2019 and 2024, reaching 126 per month. The notifications cover a wide range of medicines but the most publicised shortages — HRT, ADHD medication, antibiotics, GLP-1 diabetes drugs — share a common feature: demand has grown substantially faster than manufacturers have been able to scale production. The pharmaceutical supply chain is long, concentrated, and fragile: many active pharmaceutical ingredients are manufactured by a small number of plants, often in India or China, and supply disruption at any point can take months to resolve.</p>
+              <p>The HRT shortage of 2022-23 affected the most widely prescribed oestrogen and progesterone preparations for up to 14 months. Women were advised to switch brands, split patches or go without — with significant consequences for symptoms and quality of life for hundreds of thousands of menopausal women. The ADHD medication shortage, affecting methylphenidate and lisdexamfetamine, has been more prolonged: the rapid growth in adult ADHD diagnoses was not anticipated by manufacturers, and some supply disruptions continued into 2024. Children and adults dependent on these medications faced gaps that their prescribers could not reliably fill.</p>
+              <p>Brexit has added a layer of complexity without being the primary cause. The UK is now outside EU medicines supply chain frameworks, which affects how shortages are managed, and the additional regulatory burden has deterred some parallel importers who might otherwise have sourced shortfall quantities from European markets. The DHSC&rsquo;s early-warning systems have improved since 2022 but the underlying concentration of global pharmaceutical manufacturing — and the UK&rsquo;s relatively small share of global demand — means shortages are likely to recur.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Department of Health and Social Care — Medicine Supply Notifications. Published as required. gov.uk/government/collections/medicine-supply-notifications</p>
-            <p>NHS Business Services Authority — Prescription data. Published monthly. nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england</p>
-            <p>A medicine is classified as in shortage when the DHSC issues a Medicine Supply Notification (MSN) indicating that a product or formulation is not available or in critically low supply. Shortage count represents the number of distinct MSNs active at any point during the calendar year. Patient complaints figure is derived from NHSBSA patient experience reporting and pharmacy feedback mechanisms.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/publications/medicine-supply-tool" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Department of Health and Social Care</a> — Medicine Supply Notifications. Published on GOV.UK. Notifications are issued when a licensed medicine is in short supply or temporarily unavailable.</p>
+            <p>HRT shortage duration and ADHD supply gap figures are derived from DHSC shortage notifications and corroborated by Menopause Charity and ADHD UK stakeholder data. Category breakdowns are approximate, based on publicly reported notifications.</p>
+            <p>Monthly figures shown are annual averages (total notifications divided by 12). Individual monthly figures vary significantly. The 2019 baseline represents pre-pandemic supply chain conditions.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

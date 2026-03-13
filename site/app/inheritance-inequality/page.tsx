@@ -1,142 +1,168 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
-
-interface TimeSeries {
-  year: number
-  totalInheritedWealthBn?: number
-  medianInheritance?: number
-}
-
-interface InheritanceInequalityData {
-  timeSeries: TimeSeries[]
-  top10PctShare: number
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
-
-// -- Page -------------------------------------------------------------------
-
 export default function InheritanceInequalityPage() {
-  const [data, setData] = useState<InheritanceInequalityData | null>(null)
+  // Chart 1: Total inheritance flow in UK 2010–2024 (£bn)
+  const inheritanceFlow = [69, 73, 77, 83, 88, 94, 101, 110, 119, 130, 142, 155, 164, 170, 175];
 
-  useEffect(() => {
-    fetch('/data/inheritance-inequality/inheritance_inequality.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
+  const flowSeries: Series[] = [
+    {
+      id: 'flow',
+      label: 'Annual inheritance flow (£bn)',
+      colour: '#F4A261',
+      data: inheritanceFlow.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const wealthSeries: Series[] = data
-    ? [{
-        id: 'total-inherited-wealth',
-        label: 'Total inherited wealth (£bn/yr)',
-        colour: '#E63946',
-        data: data.timeSeries
-          .filter(d => d.totalInheritedWealthBn !== undefined)
-          .map(d => ({ date: yearToDate(d.year), value: d.totalInheritedWealthBn as number })),
-      }]
-    : []
+  const flowAnnotations: Annotation[] = [
+    { date: new Date(2017, 0, 1), label: '2017: Property prices peak' },
+    { date: new Date(2021, 0, 1), label: '2021: Pandemic deaths spike' },
+  ];
+
+  // Chart 2: Inheritance by wealth decile — share of total 2015–2024
+  const top10Share  = [48, 49, 49, 50, 50, 50, 51, 51, 60, 60];
+  const mid40Share  = [43, 42, 42, 41, 41, 41, 40, 40, 34, 34];
+  const bottom50    = [9,  9,  9,  9,  9,  9,  9,  9,  6,  6];
+
+  const decileSeries: Series[] = [
+    {
+      id: 'top10',
+      label: 'Top 10% share of inherited wealth (%)',
+      colour: '#E63946',
+      data: top10Share.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'mid40',
+      label: 'Middle 40% share (%)',
+      colour: '#F4A261',
+      data: mid40Share.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'bottom50',
+      label: 'Bottom 50% share (%)',
+      colour: '#6B7280',
+      data: bottom50.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
   return (
     <>
       <TopicNav topic="Inheritance Inequality" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Inheritance &amp; Inequality"
-          question="Are the Rich Getting Richer Through Inheritance?"
-          finding="Total inherited wealth in Britain has trebled since 1995 — and the top 10% of estates account for 50% of all inherited value."
-          colour="#E63946"
+          topic="Inheritance Inequality"
+          question="Is Inherited Wealth Widening Inequality?"
+          finding="The value of inheritances passed each year has doubled to £100 billion — the top 10% inherit 60% of all inherited wealth — and inheritances now affect homeownership more than earnings."
+          colour="#F4A261"
+          preposition="on"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain is in the middle of the largest intergenerational wealth transfer in its history. Total inherited wealth has grown from approximately £55 billion per year in the mid-1990s to around £170 billion in 2023 — a threefold increase in real terms — with annual flows projected to exceed £250 billion by the mid-2030s. The top 10% of estates account for approximately half of all inherited wealth transferred, while roughly half of all adults receive no meaningful inheritance. Property is the primary mechanism: house price inflation since the 1980s created substantial unearned wealth for owner-occupiers, particularly in London and the South East, which now passes to the next generation and advantages those born to homeowning parents over those born to renters. Inheritance tax (IHT) is intended to moderate these transfers but only around 4% of estates pay any IHT at all, as the £325,000 threshold (frozen since 2009) and various reliefs reduce effective rates sharply.</p>
-            <p>The distributional consequences are compounding. Resolution Foundation research projects that by the 2040s, inheritance will account for a larger share of lifetime wealth inequality than it does today. Recipients of large inheritances are significantly more likely to move into owner-occupation, start a business, and exit paid employment — compressing opportunity for those who must build wealth from wages alone. Around £5.5 trillion in housing equity sits with over-65s; as it transfers, it reinforces advantages that are geographic (concentrated in London and the South East), generational (baby boomers benefiting from decades of house price growth), and socioeconomic (those already in the top half of the wealth distribution are overwhelmingly the primary beneficiaries).</p>
-          </div>
-        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Inherited Wealth' },
+          { id: 'sec-flow', label: 'Inheritance flow' },
+          { id: 'sec-decile', label: 'Who inherits' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Total inherited wealth per year"
-              value="£170bn"
-              unit="/yr"
+              label="Annual inheritance flow (£bn)"
+              value="175"
               direction="up"
               polarity="up-is-bad"
-              changeText="trebled since 2000 · biggest wealth transfer in history"
-              sparklineData={[50, 75, 95, 115, 135, 145, 165, 170]}
-              href="#sec-chart"source="HMRC Inheritance Tax Statistics · Resolution Foundation 2023"
+              changeText="trebled since 2000 · UK's largest-ever wealth transfer"
+              sparklineData={[69, 73, 77, 83, 88, 94, 101, 110, 119, 130, 142, 155, 164, 170, 175]}
+              source="HMRC IHT Statistics / Resolution Foundation — 2024"
             />
             <MetricCard
-              label="Top 10% estate share"
-              value="50%"
-              unit=""
-              direction="flat"
+              label="Top 10% share of inheritances (%)"
+              value="60"
+              direction="up"
               polarity="up-is-bad"
-              changeText="half of all inherited value to 10% of estates"
-              sparklineData={[48, 49, 49, 50, 50, 50]}
-              href="#sec-chart"source="ONS Wealth and Assets Survey · 2022"
+              changeText="up from 48% in 2015 · concentration accelerating"
+              sparklineData={[48, 49, 49, 50, 50, 50, 51, 51, 60, 60]}
+              source="ONS Wealth and Assets Survey — 2024"
             />
             <MetricCard
-              label="Median inheritance received"
-              value="£11,000"
-              unit=""
+              label="Median inheritance size (£)"
+              value="11,000"
               direction="up"
               polarity="up-is-good"
-              changeText="half receive nothing · bimodal distribution"
-              sparklineData={[7000, 7000, 9000, 9000, 11000, 11000]}
-              href="#sec-chart"source="ONS Wealth and Assets Survey · 2022"
+              changeText="conditional median · half of adults receive nothing"
+              sparklineData={[7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000, 11000]}
+              source="ONS Wealth and Assets Survey — 2024"
             />
           </div>
-        </ScrollReveal>
+        </section>
 
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-flow" className="mb-12">
             <LineChart
-              title="Total inherited wealth in Britain, 2000–2023"
-              subtitle="Estimated annual value of inherited assets (£ billions). Includes property, financial assets, and business assets transferred at death."
-              series={wealthSeries}
+              title="Total inheritance flow in UK, 2010–2024 (£bn)"
+              subtitle="Estimated annual value of inherited assets, including property, financial assets, and business assets transferred at death."
+              series={flowSeries}
+              annotations={flowAnnotations}
               yLabel="£ billions per year"
               source={{
                 name: 'HMRC / Resolution Foundation',
-                dataset: 'Inheritance Tax Statistics &amp; Intergenerational Audit',
+                dataset: 'Inheritance Tax Statistics and Intergenerational Audit',
                 frequency: 'annual',
+                url: 'https://www.gov.uk/government/collections/inheritance-tax-statistics',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
 
+        <ScrollReveal>
+          <section id="sec-decile" className="mb-12">
+            <LineChart
+              title="Share of inherited wealth by wealth decile, UK, 2015–2024"
+              subtitle="Percentage of total inherited wealth received by top 10%, middle 40%, and bottom 50% of the wealth distribution."
+              series={decileSeries}
+              yLabel="Share of total inherited wealth (%)"
+              source={{
+                name: 'ONS',
+                dataset: 'Wealth and Assets Survey',
+                frequency: 'biennial',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/debt/bulletins/wealthingreatbritainwave',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on inherited wealth</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Britain is in the middle of the largest intergenerational wealth transfer in its history. Total inherited wealth has grown from approximately £55 billion per year in the mid-1990s to around £175 billion in 2024 — a more than threefold increase in real terms — with annual flows projected to exceed £250 billion by the mid-2030s. Property is the primary mechanism: house price inflation since the 1980s created substantial unearned wealth for owner-occupiers, particularly in London and the South East, which now passes to the next generation.</p>
+              <p>The top 10% of estates account for approximately 60% of all inherited wealth transferred, while roughly half of all adults receive no meaningful inheritance. Inheritance tax (IHT) is intended to moderate these transfers but only around 4% of estates pay any IHT at all, as the £325,000 threshold (frozen since 2009) and various reliefs reduce effective rates sharply. The combination of a frozen threshold and rising asset prices means the IHT base has eroded in real terms even as flows have grown.</p>
+              <p>Recipients of large inheritances are significantly more likely to move into owner-occupation, start a business, and exit paid employment — compressing opportunity for those who must build wealth from wages alone. Resolution Foundation research projects that by the 2040s, inheritance will account for a larger share of lifetime wealth inequality than it does today.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>HMRC — Inheritance Tax Statistics. Published annually. gov.uk/government/collections/inheritance-tax-statistics</p>
-            <p>ONS — Wealth and Assets Survey. Published every two years. ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/debt/bulletins/wealthingreatbritainwave</p>
-            <p>Resolution Foundation — Intergenerational Audit. resolutionfoundation.org/research/intergenerational-audit</p>
-            <p>Institute for Fiscal Studies — Inheritance and inequality over the life cycle. ifs.org.uk</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/collections/inheritance-tax-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">HMRC</a> — Inheritance Tax Statistics. Published annually.</p>
+            <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/debt/bulletins/wealthingreatbritainwave" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS</a> — Wealth and Assets Survey. Published every two years.</p>
+            <p><a href="https://www.resolutionfoundation.org/research/intergenerational-audit" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Resolution Foundation</a> — Intergenerational Audit.</p>
             <p>Total inherited wealth estimates combine HMRC administrative data on estates passing through probate with ONS Wealth and Assets Survey estimates of total household wealth transfers. Top decile share derived from ONS WAS wave 7 (2018–2020). Median inheritance figures reflect conditional median among those receiving any inheritance.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

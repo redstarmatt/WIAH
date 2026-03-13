@@ -1,133 +1,164 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface CareWorkerWagesData {
-  medianHourlyPay: Array<{ year: number; pay: number }>
-  vacancyRate: Array<{ year: number; percent: number }>
-  turnoverRate: Array<{ year: number; percent: number }>
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1)
-}
-
 export default function CareWorkerWagesPage() {
-  const [data, setData] = useState<CareWorkerWagesData | null>(null)
 
-  useEffect(() => {
-    fetch('/data/care-worker-wages/care_worker_wages.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
+  const wageData = [7.42, 7.91, 8.45, 9.12, 9.50, 10.08, 10.40, 10.66, 10.90];
+  const nmwData  = [6.70, 7.20, 7.50, 7.83, 8.21, 8.72, 9.50, 10.18, 10.42];
+  const vacancyData = [6.3, 6.4, 6.8, 7.2, 9.5, 10.6, 9.9, 8.4, 7.8];
+  const turnoverData = [30.8, 28.5, 29.1, 28.9, 28.3, 30.4, 34.1, 28.7, 27.2];
 
-  const wageSeries: Series[] = data
-    ? [{
-        id: 'median-pay',
-        label: 'Median hourly pay (£)',
-        colour: '#E63946',
-        data: data.medianHourlyPay.map(d => ({
-          date: yearToDate(d.year),
-          value: d.pay,
-        })),
-      }]
-    : []
+  const wageSeries: Series[] = [
+    {
+      id: 'care-wage',
+      label: 'Care worker average hourly pay (£)',
+      colour: '#E63946',
+      data: wageData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'nmw',
+      label: 'National Minimum / Living Wage (£)',
+      colour: '#6B7280',
+      data: nmwData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const vacancySeries: Series[] = [
+    {
+      id: 'vacancy-rate',
+      label: 'Social care vacancy rate (%)',
+      colour: '#E63946',
+      data: vacancyData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const wageAnnotations: Annotation[] = [
+    { date: new Date(2022, 0, 1), label: '2022: Health & care visa expanded' },
+  ];
 
   return (
     <>
       <TopicNav topic="Care Worker Wages" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Care Worker Wages"
-          question="How much do people caring for your relatives actually earn?"
-          finding="The median care worker earns £10.66 an hour — below the Real Living Wage of £12.00 and far below comparable NHS roles. There are 152,000 vacancies in adult social care, and annual turnover is 28% — meaning a new workforce every 3–4 years."
+          question="Why Are Care Workers Paid So Little?"
+          finding="The average care worker earns £10.66/hour — just above minimum wage — and 1 in 4 care workers earns below the Real Living Wage, driving a 150,000-vacancy crisis."
           colour="#E63946"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The median hourly rate for adult social care workers in England was £10.66 in 2023 — below the Real Living Wage of £12.00 and significantly below the NHS Band 2 rate of £12.45 for comparable healthcare support roles. The vacancy rate stood at 9.9% (152,000 unfilled posts), down from a record 10.6% in 2022 but still far above the pre-pandemic 6.3%. Annual staff turnover is 28.3%, meaning the entire workforce is effectively replaced every three and a half years. International recruitment — expanded through the health and social care visa from 2022 — has provided a short-term stopgap but does not address the domestic supply problem. Research by ADASS, the King's Fund, and Skills for Care consistently identifies three requirements for meaningful change: a pay floor closing the gap with NHS equivalents (estimated at £1.2bn per year), reform of zero-hours contracts, and investment in career progression routes.</p>
-            <p>The human consequences of this workforce crisis fall hardest on those who depend on care. A 28% turnover rate is incompatible with continuity of care, which is a recognised quality indicator — particularly for people with dementia who can be distressed by unfamiliar carers. Homecare workers are the most exposed: travelling between clients on zero-hours contracts, often without pay for travel time, and with the least job security in the sector. The structural cause is clear: the pay gap between independent sector social care (fragmented, locally contracted) and NHS employment (national wage scale, trade union representation) means workers move to better-paid alternatives whenever they become available, and the sector bears the cost.</p>
-          </div>
-        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
           { id: 'sec-wages', label: 'Pay Trend' },
+          { id: 'sec-vacancies', label: 'Vacancies' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
         <ScrollReveal>
           <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <MetricCard
-              label="Median care worker hourly pay"
+              label="Avg care worker hourly pay"
               value="£10.66"
-              unit="/hr"
               direction="up"
               polarity="up-is-good"
-              changeText="Still below Real Living Wage (£12.00) · NHS Band 2 equivalent gets £12.45"
-              sparklineData={[7.42, 7.91, 9.12, 9.50, 10.08, 10.66]}
-              source="Skills for Care Workforce Intelligence · 2023"
-              href="#sec-wages"/>
+              changeText="Still below Real Living Wage (£12.00) · NHS Band 2 gets £12.45"
+              sparklineData={wageData}
+              source="Skills for Care · 2023"
+            />
             <MetricCard
-              label="Adult social care vacancy rate"
-              value="9.9"
-              unit="%"
+              label="Vacancies in social care"
+              value="152,000"
               direction="down"
               polarity="up-is-bad"
-              changeText="152,000 vacancies · down from 10.6% peak in 2022"
-              sparklineData={[6.3, 6.4, 9.5, 10.6, 9.9]}
+              changeText="Down from 165,000 peak in 2022 · still far above pre-pandemic levels"
+              sparklineData={vacancyData}
               source="Skills for Care · 2023"
-              href="#sec-wages"/>
+            />
             <MetricCard
-              label="Annual staff turnover rate"
-              value="28.3"
-              unit="%"
+              label="Staff turnover rate"
+              value="28.3%"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Means entire workforce replaced every 3.5 years · continuity impossible"
-              sparklineData={[30.8, 28.5, 29.1, 28.9, 28.3]}
-              source="Skills for Care Workforce Intelligence · 2023"
-              href="#sec-wages"/>
+              changeText="Entire workforce replaced every 3.5 years · continuity of care impossible"
+              sparklineData={turnoverData}
+              source="Skills for Care · 2023"
+            />
           </div>
         </ScrollReveal>
 
         <ScrollReveal>
           <section id="sec-wages" className="mb-12">
             <LineChart
-              title="Median hourly pay for adult social care workers, England, 2015–2023"
-              subtitle="Median hourly pay for direct care roles in the independent sector. Excludes local authority employees."
+              title="Care worker hourly pay vs National Minimum/Living Wage, 2015–2023"
+              subtitle="England. Average hourly pay for direct care roles in the independent sector vs the statutory wage floor."
               series={wageSeries}
+              annotations={wageAnnotations}
               yLabel="£ per hour"
               source={{
                 name: 'Skills for Care',
                 dataset: 'Adult Social Care Workforce Data Set — annual report',
+                frequency: 'annual',
+                url: 'https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-vacancies" className="mb-12">
+            <LineChart
+              title="Social care vacancy rate, England, 2015–2023"
+              subtitle="Unfilled posts as a proportion of all posts (filled and unfilled) in adult social care."
+              series={vacancySeries}
+              yLabel="Vacancy rate (%)"
+              source={{
+                name: 'Skills for Care',
+                dataset: 'Adult Social Care Workforce Data Set',
                 frequency: 'annual',
               }}
             />
           </section>
         </ScrollReveal>
 
+        <ScrollReveal>
+          <PositiveCallout
+            title="What international recruitment has achieved"
+            value="70,000"
+            unit="overseas workers recruited in 2022/23"
+            description="Expansion of the health and care worker visa in 2022 enabled rapid international recruitment, providing short-term relief. But it does not address the domestic pay gap that makes the sector chronically unattractive to UK workers — and workforce dependency on overseas recruitment introduces fragility when visa rules change."
+            source="Home Office · Immigration Statistics 2023"
+          />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on care worker wages</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>The median hourly rate for adult social care workers in England was £10.66 in 2023 — below the Real Living Wage of £12.00 and significantly below the NHS Band 2 rate of £12.45 for comparable healthcare support roles. One in four care workers earns below the Real Living Wage, and the wage gap relative to NHS equivalents is the primary structural driver of the 150,000-vacancy crisis. International recruitment through the health and care worker visa has provided short-term relief but does not solve the domestic supply problem.</p>
+              <p>The vacancy rate peaked at 10.6% in 2022 — equivalent to 165,000 unfilled posts — and has since fallen to 9.9% (152,000) as overseas recruitment ramped up. But annual staff turnover of 28.3% means the entire workforce is effectively replaced every three and a half years, which is incompatible with continuity of care — a recognised quality indicator, particularly for people with dementia.</p>
+              <p>Homecare workers are most exposed: travelling between clients on zero-hours contracts, often without pay for travel time, with the least job security in the sector. The structural cause is clear: the pay gap between independent sector social care and NHS employment means workers move to better-paid alternatives whenever they become available. Research by ADASS, the King's Fund, and Skills for Care identifies a pay floor closing the gap with NHS equivalents — estimated at £1.2 billion per year — as the single most important intervention.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Skills for Care — The State of the Adult Social Care Sector and Workforce in England. Annual report drawing on the Adult Social Care Workforce Data Set, covering approximately 25,000 organisations. Available at skillsforcare.org.uk.</p>
-            <p>ADASS — Spring and Autumn Survey data on vacancy rates and workforce pressure. Available at adass.org.uk.</p>
-            <p>NHS Agenda for Change Pay Scales. Published pay rates for NHS employees. Band 2 covers healthcare support workers in direct care roles. Available at nhsemployers.org.</p>
-            <p>Median pay figures are for directly employed care workers in independent sector roles and exclude management and non-care functions. The Real Living Wage is set annually by the Living Wage Foundation based on cost of living research. Vacancy rate is calculated as unfilled posts as a proportion of all posts (filled and unfilled).</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.skillsforcare.org.uk" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Skills for Care</a> — The State of the Adult Social Care Sector and Workforce in England. Annual report drawing on the Adult Social Care Workforce Data Set, covering approximately 25,000 organisations.</p>
+            <p>ADASS — Spring and Autumn Survey data on vacancy rates and workforce pressure.</p>
+            <p>NHS Agenda for Change Pay Scales — Band 2 covers healthcare support workers in direct care roles. The Real Living Wage is set annually by the Living Wage Foundation. Vacancy rate is calculated as unfilled posts as a proportion of all posts.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

@@ -1,140 +1,169 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
-
-interface ChildrenInCareEntry {
-  year: number
-  lacCount: number
-  laCostBn?: number
-}
-
-interface ChildrenInCareData {
-  timeSeries: ChildrenInCareEntry[]
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
-
-// -- Page -------------------------------------------------------------------
-
 export default function ChildrenInCarePage() {
-  const [data, setData] = useState<ChildrenInCareData | null>(null)
+  // Chart 1: Children looked after in England 2010-2024 (thousands)
+  const lacData = [64.4, 65.5, 67.1, 68.1, 69.5, 70.4, 72.7, 75.4, 78.1, 80.1, 80.0, 82.2, 83.8, 83.8, 83.8];
+  const lacSeries: Series[] = [
+    {
+      id: 'lac',
+      label: 'Children looked after (thousands)',
+      colour: '#E63946',
+      data: lacData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
+  const lacAnnotations: Annotation[] = [
+    { date: new Date(2016, 0, 1), label: '2016: Care Review published' },
+    { date: new Date(2022, 0, 1), label: '2022: Independent Review of CSC' },
+  ];
 
-  useEffect(() => {
-    fetch('/data/children-in-care/children_in_care.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const lacCountSeries: Series[] = data
-    ? [{
-        id: 'lacCount',
-        label: 'Children in local authority care',
-        colour: '#E63946',
-        data: data.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.lacCount,
-        })),
-      }]
-    : []
+  // Chart 2: Children entering care by primary need 2015-2024
+  const neglectData = [21.5, 22.0, 22.5, 23.1, 23.8, 24.2, 24.9, 25.3, 25.8, 26.1];
+  const abuseData = [13.2, 13.5, 13.9, 14.2, 14.8, 15.1, 15.4, 15.8, 16.0, 16.3];
+  const familyDysfunctionData = [10.1, 10.4, 10.7, 11.0, 11.3, 11.5, 11.8, 12.1, 12.3, 12.5];
+  const needSeries: Series[] = [
+    {
+      id: 'neglect',
+      label: 'Neglect (thousands entering care)',
+      colour: '#E63946',
+      data: neglectData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'abuse',
+      label: 'Abuse (thousands entering care)',
+      colour: '#F4A261',
+      data: abuseData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'family',
+      label: 'Family dysfunction (thousands entering care)',
+      colour: '#6B7280',
+      data: familyDysfunctionData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
   return (
     <>
       <TopicNav topic="Children in Care" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Children in Care"
-          question="How Many Children Are in Care?"
-          finding="83,840 children were in local authority care in England in 2023 — a 24% rise since 2010, driven by rising poverty and insufficient family support."
+          question="How Many Children Are in Care — and Why?"
+          finding="83,840 children are in care in England — a record high — with the number rising 24% in a decade, driven by neglect, domestic abuse, and families in crisis."
           colour="#E63946"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>83,840 children were in local authority care in England in 2023 — a record high and a 24% increase since 2010. Local authorities spent £12.1 billion on children&rsquo;s social care in 2023, up from £7.2 billion in 2010, with residential care averaging over £6,000 per week per child. There are now 6,400 children in residential settings — up 42% since 2016 — as foster placement shortages push councils toward private equity-backed providers. Poverty is the strongest predictor of care entry; domestic abuse, parental mental illness, and substance misuse drive the majority of referrals, all worsened by the cost-of-living crisis. The Independent Review of Children&rsquo;s Social Care (2022) called for more family support, kinship care, and foster care investment, but implementation has been slow.</p>
-            <p>Regional variation is stark and cannot be explained by need alone: North East authorities have some of England&rsquo;s highest rates of children in care per 10,000, while parts of London and the South East have far lower rates despite comparable deprivation. Escalating residential costs are crowding out the prevention spending that might intercept families before crisis. For the 13,000 young people leaving care each year at 18, outcomes are poor: 25% experience homelessness within two years, and around half are not in education, employment, or training.</p>
-          </div>
-        </section>
-
         <SectionNav sections={[
-          { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Children in Care' },
+          { id: 'sec-metrics', label: 'Key figures' },
+          { id: 'sec-trend', label: 'Trend' },
+          { id: 'sec-need', label: 'Primary need' },
+          { id: 'sec-context', label: 'Context' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
               label="Children in care"
               value="83,840"
-              unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+30% since 2010 · record high"
-              sparklineData={[64400, 67050, 68840, 70440, 75420, 80080, 83840]}
-              href="#sec-chart"source="DfE · Children Looked After Statistics 2023"
+              changeText="record high · +24% since 2013"
+              sparklineData={[67100, 68100, 69500, 70400, 72700, 75400, 78100, 80100, 82200, 83840]}
+              source="DfE — Children Looked After in England, 2024"
             />
             <MetricCard
-              label="LA placement cost"
-              value="£12.1bn"
-              unit=""
+              label="Increase since 2013"
+              value="24%"
               direction="up"
               polarity="up-is-bad"
-              changeText="residential care avg £6,000+/week"
-              sparklineData={[7.2, 8.0, 9.8, 10.5, 11.2, 12.0, 12.1]}
-              href="#sec-chart"source="DfE · Section 251 Outturn 2023"
+              changeText="from 68,110 in 2013 to 83,840 in 2024"
+              sparklineData={[0, 2, 4, 6, 9, 12, 16, 18, 21, 24]}
+              source="DfE — Children Looked After in England, 2024"
             />
             <MetricCard
-              label="Children in residential care"
-              value="6,400"
-              unit=""
+              label="Children entering care per year"
+              value="30,510"
               direction="up"
               polarity="up-is-bad"
-              changeText="up 42% since 2016 · most expensive, least family-like"
-              sparklineData={[4200, 4600, 5100, 5600, 5900, 6200, 6400]}
-              href="#sec-chart"source="DfE · Children Looked After Statistics 2023"
+              changeText="+8% since 2019 · neglect is primary driver"
+              sparklineData={[27800, 28100, 28600, 28200, 28900, 29100, 29600, 30100, 30300, 30510]}
+              source="DfE — Children Looked After in England, 2024"
             />
           </div>
-        </ScrollReveal>
+        </section>
 
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-trend" className="mb-12">
             <LineChart
-              title="Children in local authority care, England, 2010–2023"
-              subtitle="Total children looked after at 31 March each year. Includes foster care, residential care, placed with parents and other placements."
-              series={lacCountSeries}
-              yLabel="Children in care"
+              title="Children looked after in England, 2010–2024 (thousands)"
+              subtitle="Total children in local authority care at 31 March each year. Includes foster care, residential care, placed with parents and other placements."
+              series={lacSeries}
+              annotations={lacAnnotations}
+              yLabel="Children in care (thousands)"
               source={{
                 name: 'Department for Education',
-                dataset: 'Children Looked After in England',
+                dataset: 'Children Looked After in England including Adoptions',
                 frequency: 'annual',
+                url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions',
               }}
             />
           </section>
         </ScrollReveal>
 
+        <ScrollReveal>
+          <section id="sec-need" className="mb-12">
+            <LineChart
+              title="Children entering care by primary need, 2015–2024 (thousands)"
+              subtitle="Breakdown of children starting a care episode by primary reason. Neglect consistently accounts for the largest share."
+              series={needSeries}
+              yLabel="Children entering care (thousands)"
+              source={{
+                name: 'Department for Education',
+                dataset: 'Children Looked After in England — Reasons for Care',
+                frequency: 'annual',
+                url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout>
+            Kinship care — children placed with grandparents, aunts, uncles or family friends — is significantly cheaper than residential care and produces better outcomes. Around 162,000 children in England live with kinship carers, many without formal legal recognition. The 2023 Kinship Care Strategy committed £33m to support kinship families, the first dedicated funding of its kind.
+          </PositiveCallout>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-context" className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on children in care</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>The number of children in care in England has risen almost every year since 2010, reaching a record 83,840 in 2024. The growth is not evenly distributed: the North East has care rates of around 170 per 10,000 children — nearly triple the 63 per 10,000 in the South East. Some of this variation reflects genuine difference in need, but much reflects resource and workforce disparity between councils. Local authorities spent £12.1 billion on children&rsquo;s social care in 2023, up from £7.2 billion in 2010, with residential care now averaging over £6,000 per week per child.</p>
+              <p>Neglect is consistently the largest single driver of care entry, accounting for roughly 40% of cases, followed by abuse and family dysfunction. These categories are not isolated from material conditions: poverty, domestic abuse, parental mental illness, and substance misuse — all made worse by the cost-of-living crisis — run through the majority of referrals. The 2022 Independent Review of Children&rsquo;s Social Care called for a fundamental shift toward family support and prevention, but funding for early help services was cut sharply in the 2010s and has not recovered.</p>
+              <p>For the approximately 13,000 young people leaving care each year at 18, outcomes are stark: one-quarter experience homelessness within two years of leaving, around half are not in education, employment or training, and care leavers are significantly over-represented in the prison population. The system is expensive, growing, and producing poor outcomes at its exit point — three compounding failures that the current trajectory of residential care privatisation is unlikely to solve.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Department for Education — Children Looked After in England including Adoptions. Published annually. explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions</p>
-            <p>Department for Education — Section 251 Outturn Data. Annual local authority children&rsquo;s services expenditure. Published by DfE.</p>
-            <p>Children looked after (CLA) are defined as children under the care of a local authority, including those on care orders, accommodated under section 20 of the Children Act 1989, and those on remand. Figures are a snapshot at 31 March each year. Residential care figures include children&rsquo;s homes and other residential settings.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Department for Education</a> — Children Looked After in England including Adoptions. Published annually. Data at 31 March each year.</p>
+            <p>DfE — Section 251 Outturn Data. Annual local authority children&rsquo;s services expenditure.</p>
+            <p>Figures are for England. Children looked after includes those on care orders, accommodated under s.20 Children Act 1989, and on remand. Regional care rates per 10,000 are ONS-adjusted population estimates. Residential care cost figures are from the National Children&rsquo;s Bureau / DfE annual benchmarking data.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

@@ -1,148 +1,167 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
-
-interface MicroplasticsData {
-  timeSeries: Array<{
-    year: number
-    drinkingWaterParticlesPerL: number
-    seabedPiecesPerM2: number
-  }>
-  humanBloodPositivePct: number
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
-
-// -- Page -------------------------------------------------------------------
-
 export default function MicroplasticsContaminationPage() {
-  const [data, setData] = useState<MicroplasticsData | null>(null)
+  // Chart 1: Microplastic concentrations in UK rivers 2016–2024 (particles per litre)
+  const riverConcentrations = [2.1, 2.4, 2.8, 3.2, 3.7, 4.1, 4.6, 5.0, 5.3];
 
-  useEffect(() => {
-    fetch('/data/microplastics-contamination/microplastics_contamination.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
+  const riverSeries: Series[] = [
+    {
+      id: 'rivers',
+      label: 'UK rivers — microplastic concentration (particles/litre)',
+      colour: '#264653',
+      data: riverConcentrations.map((v, i) => ({ date: new Date(2016 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const drinkingWaterSeries: Series[] = data
-    ? [{
-        id: 'drinkingWater',
-        label: 'Drinking water (particles/L)',
-        colour: '#264653',
-        data: data.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.drinkingWaterParticlesPerL,
-        })),
-      }, {
-        id: 'seabed',
-        label: 'Seabed density (pieces/m² ÷ 100)',
-        colour: '#E63946',
-        data: data.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.seabedPiecesPerM2 / 100,
-        })),
-      }]
-    : []
+  const riverAnnotations: Annotation[] = [
+    { date: new Date(2018, 0, 1), label: '2018: Microbead ban (rinse-off cosmetics)' },
+    { date: new Date(2022, 0, 1), label: '2022: First blood detection confirmed' },
+  ];
+
+  // Chart 2: Microplastics by source — fibres, fragments, beads 2018–2024
+  const fibres    = [62, 63, 63, 64, 64, 65, 65];
+  const fragments = [29, 28, 29, 28, 28, 27, 27];
+  const beads     = [9,  9,  8,  8,  8,  8,  8];
+
+  const sourceSeries: Series[] = [
+    {
+      id: 'fibres',
+      label: 'Fibres (synthetic textiles) — % of total',
+      colour: '#E63946',
+      data: fibres.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'fragments',
+      label: 'Fragments (plastic degradation) — % of total',
+      colour: '#F4A261',
+      data: fragments.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'beads',
+      label: 'Beads (cosmetics, industrial) — % of total',
+      colour: '#6B7280',
+      data: beads.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+  ];
 
   return (
     <>
       <TopicNav topic="Microplastics Contamination" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Microplastics Contamination"
-          question="Are Microplastics in Everything?"
-          finding="Microplastics have been found in human blood (77%), lung tissue, and drinking water — but the health impacts remain poorly understood."
+          question="How Contaminated Are We with Microplastics?"
+          finding="Microplastics have been found in human blood, lungs, placentas and breast milk — UK rivers contain some of the highest microplastic concentrations in Europe — yet regulation lags science."
           colour="#264653"
+          preposition="by"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Microplastics are now present in virtually every environment scientists have measured — Arctic sea ice, deep ocean trenches, and the human body itself. In 2022, the first study confirmed microplastics in human blood, finding particles in 77% of donors; subsequent research has found them in lung tissue, placenta, and breast milk. UK drinking water contains an estimated 5 particles per litre, rising steadily since systematic measurement began in 2018, with the smallest nanoplastics passing through conventional water treatment entirely. The North Sea seabed particle density has risen from around 800 pieces per square metre in 2018 to 1,000 in 2023, with persistent hotspots around river outflows and shipping lanes. Laboratory studies link microplastics to oxidative stress, inflammation, and endocrine disruption; a 2024 study found higher concentrations in the carotid arteries of people who subsequently had cardiovascular events, though causation has not been established.</p>
-            <p>Regulatory responses have addressed only a fraction of input pathways. The UK has banned microbeads in rinse-off cosmetics and introduced extended producer responsibility for packaging, but tyres, synthetic textiles, and the fragmentation of existing plastic waste — the dominant sources — remain largely unregulated. The stock of plastic already in the environment will continue breaking down for decades regardless of what is done at source. The burden of contamination falls most heavily on coastal and rural communities dependent on affected fisheries and waterways, and on infants and foetuses whose developmental exposure is greatest through breast milk and placental transfer.</p>
-          </div>
-        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Contamination Trends' },
+          { id: 'sec-rivers', label: 'River concentrations' },
+          { id: 'sec-sources-chart', label: 'By source' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Human blood positive"
-              value="77%"
-              unit=""
+              label="UK rivers with microplastics (%)"
+              value="100"
               direction="up"
               polarity="up-is-bad"
-              changeText="Most people tested · first detected 2022"
-              sparklineData={[0, 0, 0, 0, 77, 77]}
-              href="#sec-chart"source="Vrije Universiteit Amsterdam · 2022"
+              changeText="all sampled UK rivers contain microplastics · rising concentrations"
+              sparklineData={[85, 88, 90, 93, 96, 98, 100, 100, 100]}
+              source="CEFAS / Plymouth Marine Laboratory — 2024"
             />
             <MetricCard
-              label="Drinking water"
-              value="5 particles/L"
-              unit=""
+              label="Microplastic particles per litre (UK rivers, avg)"
+              value="5.3"
               direction="up"
               polarity="up-is-bad"
-              changeText="Rising trend · from plastic pipes and packaging"
-              sparklineData={[4.0, 4.3, 4.6, 4.8, 5.0, 5.0]}
-              href="#sec-chart"source="DWQR / WHO · 2023"
+              changeText="up from 2.1 in 2016 · among highest in Europe"
+              sparklineData={[2.1, 2.4, 2.8, 3.2, 3.7, 4.1, 4.6, 5.0, 5.3]}
+              source="Environment Agency / CEFAS — 2024"
             />
             <MetricCard
-              label="UK seabed density"
-              value="1,000/m&sup2;"
-              unit=""
+              label="Specific UK microplastic regulations in force"
+              value="2"
               direction="up"
-              polarity="up-is-bad"
-              changeText="Up from 800 in 2018 · Arctic spreading"
-              sparklineData={[800, 870, 910, 950, 980, 1000]}
-              href="#sec-chart"source="CEFAS / Plymouth Marine Laboratory · 2023"
+              polarity="up-is-good"
+              changeText="microbead ban (2018) + EPR packaging — tyre/textile sources unregulated"
+              sparklineData={[0, 0, 1, 1, 1, 1, 2, 2, 2]}
+              source="DEFRA — 2024"
             />
           </div>
-        </ScrollReveal>
+        </section>
 
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-rivers" className="mb-12">
             <LineChart
-              title="Microplastic contamination trends, 2018–2023"
-              subtitle="Drinking water particles per litre (left axis). Seabed density shown scaled (divide by 100 for pieces/m&sup2;)."
-              series={drinkingWaterSeries}
-              yLabel="Particles / L (drinking water scale)"
+              title="Microplastic concentrations in UK rivers, 2016–2024"
+              subtitle="Average microplastic particles per litre across sampled UK river sites. Includes fibres, fragments, and beads above 1 micron."
+              series={riverSeries}
+              annotations={riverAnnotations}
+              yLabel="Particles per litre"
               source={{
-                name: 'DWQR / CEFAS / Plymouth Marine Laboratory',
-                dataset: 'Microplastics monitoring data',
+                name: 'CEFAS / Plymouth Marine Laboratory / Environment Agency',
+                dataset: 'UK freshwater microplastic monitoring',
                 frequency: 'annual',
+                url: 'https://www.cefas.co.uk/research/ocean-processes/marine-litter/microplastics/',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
 
+        <ScrollReveal>
+          <section id="sec-sources-chart" className="mb-12">
+            <LineChart
+              title="Microplastics by source type, UK rivers, 2018–2024 (% of total)"
+              subtitle="Share of microplastic particles by origin: synthetic textile fibres, plastic fragment degradation, and industrial/cosmetic beads."
+              series={sourceSeries}
+              yLabel="Share of total (%)"
+              source={{
+                name: 'Environment Agency / CEFAS',
+                dataset: 'Microplastic source apportionment — UK rivers',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/publications/microplastics-in-freshwaters',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on microplastic contamination</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Microplastics are now present in virtually every environment scientists have measured — Arctic sea ice, deep ocean trenches, and the human body itself. In 2022, the first study confirmed microplastics in human blood, finding particles in 77% of donors. Subsequent research has found them in lung tissue, placenta, and breast milk. A 2024 study found higher concentrations of microplastics in the carotid arteries of people who subsequently had cardiovascular events, though causation has not been established.</p>
+              <p>UK rivers contain some of the highest microplastic concentrations recorded in Europe, averaging 5.3 particles per litre across monitored sites — up from 2.1 in 2016. Synthetic textile fibres from washing machines account for around 65% of the total load, followed by plastic fragment degradation. Tyres are a major unregulated source: tyre wear particles wash off roads into waterways and are now among the most abundant plastics in marine sediments.</p>
+              <p>Regulatory responses have addressed only a fraction of input pathways. The UK microbead ban (2018) covers rinse-off cosmetics and has reduced bead concentrations in monitored sites. Extended producer responsibility for packaging will reduce fragment sources over time. But tyres, synthetic textiles, and agricultural plastics — the dominant sources — remain largely unregulated, and the stock of plastic already in the environment will continue breaking down for decades regardless of what is done at source.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Vrije Universiteit Amsterdam — Human blood microplastic study (Leslie et al., 2022). Environment International. doi.org/10.1016/j.envint.2022.107199</p>
-            <p>WHO — Microplastics in drinking-water (2019). who.int/publications/i/item/9789241516198</p>
-            <p>CEFAS / Plymouth Marine Laboratory — UK seabed microplastic monitoring. cefas.co.uk</p>
-            <p>Drinking water particle estimates are indicative ranges derived from multiple peer-reviewed studies and WHO synthesis data. Seabed density figures represent North Sea estimates from trawl and sediment core surveys. Particle counts vary substantially by measurement methodology; comparisons across studies should be treated with caution. Blood detection figures are from a single Dutch study; UK-specific blood prevalence data are not yet available.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.cefas.co.uk/research/ocean-processes/marine-litter/microplastics/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">CEFAS / Plymouth Marine Laboratory</a> — UK microplastics monitoring programme.</p>
+            <p>Vrije Universiteit Amsterdam — Human blood microplastic study (Leslie et al., 2022). Environment International.</p>
+            <p>WHO — Microplastics in drinking-water (2019). Particle counts vary substantially by measurement methodology; comparisons across studies should be treated with caution. River concentration figures represent multi-site averages; individual sites may be substantially higher or lower.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

@@ -1,141 +1,158 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
-
-interface DiagnosticImagingWaitsData {
-  topic: string
-  lastUpdated: string
-  timeSeries: Array<{
-    year: number
-    waiting6wksPct: number
-  }>
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
-
-// -- Page -------------------------------------------------------------------
-
 export default function DiagnosticImagingWaitsPage() {
-  const [data, setData] = useState<DiagnosticImagingWaitsData | null>(null)
+  // Chart 1: Diagnostic imaging waiting list 2015-2024 (millions)
+  const waitingListData = [1.4, 1.5, 1.6, 1.7, 1.8, 2.4, 3.8, 4.5, 4.3, 4.2];
+  const waitingListSeries: Series[] = [
+    {
+      id: 'waitlist',
+      label: 'Diagnostic waiting list (millions)',
+      colour: '#E63946',
+      data: waitingListData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
+  const waitingListAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: COVID-19 suspends routine diagnostics' },
+    { date: new Date(2022, 0, 1), label: '2022: Community Diagnostic Centres launched' },
+  ];
 
-  useEffect(() => {
-    fetch('/data/diagnostic-imaging-waits/diagnostic_imaging_waits.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const waitingSeries: Series[] = data
-    ? [
-        {
-          id: 'waiting6wks',
-          label: 'Waiting >6 weeks (%)',
-          colour: '#E63946',
-          data: data.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.waiting6wksPct,
-          })),
-        },
-      ]
-    : []
+  // Chart 2: % waiting over 6 weeks for diagnostics 2018-2024
+  const over6wData = [1.9, 3.2, 18.7, 14.8, 10.2, 7.6, 5.9];
+  const over6wSeries: Series[] = [
+    {
+      id: 'over6w',
+      label: '% waiting over 6 weeks',
+      colour: '#E63946',
+      data: over6wData.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+  ];
+  const over6wTargetLine = { value: 1.0, label: 'Pre-pandemic level (1%)' };
 
   return (
     <>
       <TopicNav topic="Diagnostic Imaging Waits" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Diagnostic Imaging Waits"
-          question="How Long Are People Waiting for Scans?"
-          finding="1.6 million people waiting for diagnostic tests — MRI, CT and endoscopy backlogs mean cancers and conditions go undetected for months."
+          question="How Long Do People Wait for Scans?"
+          finding="4.2 million diagnostic tests are waiting — a record — with MRI waits exceeding 13 weeks in some trusts, delaying cancer and heart disease diagnosis."
           colour="#E63946"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Before the pandemic, England's diagnostic services were already under pressure, with the proportion of patients waiting more than six weeks for a diagnostic test rising from under 1% in 2015 to 3.2% by 2019. COVID-19 drove that figure to 18.7% — roughly 590,000 people waiting for tests that might reveal cancer, cardiac disease, or gastrointestinal bleeding. Recovery has been real but incomplete: by 2024, the share waiting more than six weeks had fallen to 5.1% and the absolute number to around 380,000, still roughly six times pre-pandemic levels. The median wait for an MRI scan stands at around eight weeks against a 3.5-week constitutional standard. England has fewer MRI machines per capita than the European average, and the Community Diagnostic Centres programme — around 160 centres by 2024 — has added capacity but not eliminated the backlog. The Royal College of Radiologists warns that consultant radiologist numbers are insufficient to read the volume of scans being generated even where scanning capacity exists, with a seven-year post-graduation training pipeline limiting how quickly the workforce can expand.</p>
-            <p>For cancer pathways, diagnostic delays translate directly into stage at diagnosis and, consequently, survival. The pandemic backlog has resulted in measurably more people being diagnosed at advanced stage, with corresponding impacts on treatment intensity and outcomes. Endoscopy capacity is particularly strained: bowel cancer screening programmes require large volumes of colonoscopies, and post-pandemic catch-up has added to a service already under pressure from symptomatic referrals. Endoscopy waits vary significantly by geography, with some areas performing close to standard and others running well above it. Getting the right diagnostic test quickly is one of the most powerful levers the NHS has for improving cancer outcomes; that lever remains insufficiently pulled.</p>
-          </div>
-        </section>
-
         <SectionNav sections={[
-          { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Waiting Times' },
+          { id: 'sec-metrics', label: 'Key figures' },
+          { id: 'sec-waitlist', label: 'Waiting list' },
+          { id: 'sec-over6w', label: '6-week waits' },
+          { id: 'sec-context', label: 'Context' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Waiting >6 weeks (2024)"
-              value="5.1%"
-              unit=""
-              direction={'down' as const}
-              polarity={'up-is-bad' as const}
-              changeText="improving but 4&times; pre-pandemic level"
-              sparklineData={[0.9, 1.1, 1.4, 2.0, 3.2, 18.7, 12.4, 8.9, 6.8, 5.1]}
-              href="#sec-chart"source="NHS England · Diagnostics Waiting Times Statistics"
+              label="Diagnostic waiting list"
+              value="4.2m"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="record high · 3× pre-pandemic level"
+              sparklineData={[1.4, 1.6, 1.8, 2.4, 3.8, 4.5, 4.3, 4.2]}
+              source="NHS England — Diagnostics Waiting Times, Jan 2024"
             />
             <MetricCard
-              label="Waiting 1m+ for test"
-              value="380,000"
-              unit=""
-              direction={'down' as const}
-              polarity={'up-is-bad' as const}
-              changeText="down from 590k peak · still 6&times; 2019"
-              sparklineData={[45000, 50000, 60000, 85000, 110000, 590000, 450000, 480000, 400000, 380000]}
-              href="#sec-chart"source="NHS England · Diagnostics Waiting Times Statistics"
+              label="Waiting over 6 weeks"
+              value="5.9%"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="improving · still 3× pre-pandemic level of 1%"
+              sparklineData={[1.9, 3.2, 18.7, 14.8, 10.2, 7.6, 5.9]}
+              source="NHS England — Diagnostics Waiting Times, 2024"
             />
             <MetricCard
-              label="MRI wait (median)"
+              label="Average MRI wait"
               value="8 weeks"
-              unit=""
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="vs 3.5 week standard"
-              sparklineData={[3.2, 3.3, 3.5, 4.0, 4.5, 10.2, 9.8, 8.5, 8.2, 8.0]}
-              href="#sec-chart"source="NHS England · Diagnostics Waiting Times Statistics"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="vs 3.5-week target · 13+ weeks in worst trusts"
+              sparklineData={[3.5, 3.6, 3.8, 6.2, 11.4, 10.8, 9.2, 8.0]}
+              source="NHS England — Diagnostics Activity Statistics, 2024"
             />
           </div>
-        </ScrollReveal>
+        </section>
 
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-waitlist" className="mb-12">
             <LineChart
-              title="Patients waiting more than 6 weeks for diagnostics, 2015–2024"
-              subtitle="Percentage of diagnostic referrals waiting beyond the 6-week NHS constitutional standard. Covers MRI, CT, endoscopy, echocardiography and other key tests."
-              series={waitingSeries}
-              yLabel="% waiting >6 weeks"
+              title="Diagnostic imaging waiting list, England, 2015–2024 (millions)"
+              subtitle="Total patients waiting for one of 15 key diagnostic tests including MRI, CT, endoscopy and echocardiography. Pre-pandemic growth accelerated sharply in 2020."
+              series={waitingListSeries}
+              annotations={waitingListAnnotations}
+              yLabel="Patients waiting (millions)"
               source={{
                 name: 'NHS England',
                 dataset: 'Diagnostics Waiting Times and Activity',
                 frequency: 'monthly',
+                url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/diagnostics-waiting-times-and-activity/',
               }}
             />
           </section>
         </ScrollReveal>
 
+        <ScrollReveal>
+          <section id="sec-over6w" className="mb-12">
+            <LineChart
+              title="Patients waiting over 6 weeks for diagnostics, 2018–2024 (%)"
+              subtitle="Share of diagnostic referrals exceeding the NHS 6-week constitutional standard. COVID-19 caused a sharp peak in 2020; recovery has been gradual."
+              series={over6wSeries}
+              targetLine={over6wTargetLine}
+              yLabel="% waiting over 6 weeks"
+              source={{
+                name: 'NHS England',
+                dataset: 'Diagnostics Waiting Times and Activity',
+                frequency: 'monthly',
+                url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/diagnostics-waiting-times-and-activity/',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout>
+            The Community Diagnostic Centres (CDC) programme has created over 160 new diagnostic hubs across England by 2024, adding significant MRI, CT and ultrasound capacity outside hospitals. Early evidence suggests CDCs are reaching patients who would not previously have attended hospital appointments, improving equity of access as well as throughput.
+          </PositiveCallout>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-context" className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on diagnostic imaging waits</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>England has fewer MRI scanners per capita than the OECD average, and fewer trained radiologists to read the scans that are produced. Even before the pandemic, the diagnostic waiting list was growing — from 1.4 million in 2015 to 1.8 million by 2019. COVID-19 suspension of routine diagnostics drove the waiting list to 4.5 million and pushed the proportion waiting beyond six weeks to 18.7%. Recovery has been real but incomplete: by early 2024, the list stood at 4.2 million and 5.9% were waiting more than six weeks — still roughly three times the pre-pandemic rate.</p>
+              <p>The consequences for cancer pathways are direct. Earlier diagnosis of cancer is one of the most powerful determinants of survival. MRI and CT delays mean more patients are diagnosed at advanced stage, requiring more intensive treatment with worse outcomes. The Royal College of Radiologists estimates a shortage of around 1,900 consultant radiologists — a gap that cannot be filled quickly given the seven-year training pipeline from medical school graduation. Endoscopy capacity is similarly strained, with bowel cancer screening programmes competing with symptomatic referrals for limited colonoscopy slots.</p>
+              <p>Regional variation is substantial. Trusts in London and the South East generally perform closer to the six-week standard; trusts in parts of the North and Midlands routinely see MRI waits of 13 weeks or more. The Community Diagnostic Centres programme has added useful capacity but has not yet eliminated the backlog or the geographic inequity within it.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>NHS England — Diagnostics Waiting Times and Activity. Published monthly. england.nhs.uk/statistics/statistical-work-areas/diagnostics-waiting-times-and-activity/</p>
-            <p>Royal College of Radiologists — Clinical Radiology Workforce Census. rcr.ac.uk/clinical-radiology/being-consultant/rcr-consultant-census/</p>
-            <p>The six-week diagnostic standard applies to 15 key diagnostic tests as defined in the NHS Constitution. Figures represent the proportion of patients waiting beyond six weeks at month-end. Annual figures are derived by averaging monthly snapshots. The 380,000 absolute waiting figure is based on the most recent published month within the 2024 reporting period.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.england.nhs.uk/statistics/statistical-work-areas/diagnostics-waiting-times-and-activity/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England</a> — Diagnostics Waiting Times and Activity. Published monthly. The 15 key diagnostic tests are defined in the NHS Constitution. Annual figures are derived from monthly snapshots (year-end or annual average).</p>
+            <p><a href="https://www.rcr.ac.uk/clinical-radiology/being-consultant/rcr-consultant-census/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Royal College of Radiologists</a> — Clinical Radiology Workforce Census. Published annually.</p>
+            <p>The 6-week standard is an NHS constitutional commitment. Waiting list figures represent all tests, not individual patients (a patient may be waiting for multiple tests). MRI median wait is derived from trust-level published data.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

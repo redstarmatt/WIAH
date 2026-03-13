@@ -1,127 +1,166 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface PensionCreditData {
-  topic: string
-  lastUpdated: string
-  timeSeries: Array<{
-    year: number
-    nonClaimingK: number
-    takeUpPct: number
-  }>
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
-
 export default function PensionCreditTakeUpPage() {
-  const [data, setData] = useState<PensionCreditData | null>(null)
+  const takeUpRateData = [62, 62, 63, 63, 63, 63, 63, 62, 62, 63, 63, 63, 63, 63, 63];
+  const caseloadData = [1.80, 1.79, 1.78, 1.78, 1.77, 1.76, 1.76, 1.75, 1.74, 1.73, 1.73, 1.72, 1.72, 1.71, 1.70];
 
-  useEffect(() => {
-    fetch('/data/pension-credit-take-up/pension_credit_take_up.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
+  const takeUpSeries: Series[] = [
+    {
+      id: 'takeup',
+      label: 'Pension Credit take-up rate (%)',
+      colour: '#F4A261',
+      data: takeUpRateData.map((v: number, i: number) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const series: Series[] = data
-    ? [
-        {
-          id: 'takeUpPct',
-          label: 'Take-up rate (%)',
-          colour: '#E63946',
-          data: data.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.takeUpPct })),
-        },
-      ]
-    : []
+  const caseloadSeries: Series[] = [
+    {
+      id: 'caseload',
+      label: 'Pension Credit caseload (millions of households)',
+      colour: '#F4A261',
+      data: caseloadData.map((v: number, i: number) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const takeUpAnnotations: Annotation[] = [
+    { date: new Date(2015, 0, 1), label: '2015: Digital by default — paper forms harder' },
+    { date: new Date(2024, 0, 1), label: '2024: Winter Fuel Payment linked to Pension Credit' },
+  ];
+
+  const caseloadAnnotations: Annotation[] = [
+    { date: new Date(2016, 0, 1), label: '2016: New State Pension reduces some entitlements' },
+    { date: new Date(2024, 0, 1), label: '2024: Post-Winter Fuel surge in applications' },
+  ];
 
   return (
     <>
       <TopicNav topic="Pension Credit" />
+      <SectionNav sections={[
+        { id: 'sec-metrics', label: 'Key Metrics' },
+        { id: 'sec-takeup', label: 'Take-Up Rate' },
+        { id: 'sec-caseload', label: 'Caseload' },
+        { id: 'sec-context', label: 'Context' },
+        { id: 'sec-sources', label: 'Sources' },
+      ]} />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Pensioner Poverty"
-          question="Who Is Missing Out on Pension Credit?"
-          finding="Around 800,000 eligible pensioners do not claim Pension Credit — worth up to £3,900 per year — leaving £1.5 billion unclaimed annually."
-          colour="#E63946"
-        />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Pension Credit provides a minimum weekly income of £218.15 for single pensioners and £332.95 for couples in 2024/25, and acts as a gateway benefit for Housing Benefit, Council Tax Reduction, free NHS dental treatment, and — from winter 2024/25 — the Winter Fuel Payment. Yet around 800,000 eligible households — 37% of those entitled — do not claim it, leaving an estimated £1.5–2 billion unclaimed annually. The 63% take-up rate is one of the lowest for any major means-tested benefit and has barely moved despite repeated government campaigns. The July 2024 decision to restrict Winter Fuel Payment to Pension Credit recipients raised the stakes sharply: non-claimants now lose up to £300 per year in heating support, in addition to the core credit itself.</p>
-            <p>Non-take-up concentrates among the hardest-to-reach groups: the very old, those without internet access, and those who did not grow up claiming benefits and carry strong stigma against means-testing. Single female pensioners — who face a 24% poverty rate versus 16% for all pensioners — are most exposed, combining income vulnerability with the least likelihood of having a partner or family member to assist with a complex application. Rural and coastal areas with high concentrations of older people and poor digital infrastructure show the weakest claim rates. Age UK estimates that the Trussell Trust recorded a 94% rise in pensioner emergency food parcel distribution between 2019 and 2024, a direct consequence of the gap between entitlement and receipt.</p>
-          </div>
-        </section>
-
-        <SectionNav
-          sections={[
-            { id: 'sec-metrics', label: 'Metrics' },
-            { id: 'sec-chart', label: 'Chart' },
-            { id: 'sec-sources', label: 'Sources' },
-          ]}
+          question="Why Aren't the Poorest Pensioners Claiming Pension Credit?"
+          finding="Around 850,000 eligible pensioners do not claim Pension Credit — leaving £1.7 billion of support unclaimed — with non-take-up concentrated among the oldest and most isolated."
+          colour="#F4A261"
         />
 
         <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 mb-12">
             <MetricCard
-              label="Eligible pensioners not claiming"
-              value="800,000"
-              direction={'flat' as const}
-              polarity={'up-is-bad' as const}
-              changeText="800k missing out · £1.5bn unclaimed annually"
-              sparklineData={[900, 900, 870, 860, 860, 850, 840, 820, 800]}
-              source="DWP · Pension Credit Take-Up Statistics 2024"
-              href="#sec-chart"/>
+              label="Eligible non-claimants (thousands)"
+              value="850"
+              direction="flat"
+              polarity="up-is-bad"
+              changeText="~850k eligible pensioners not claiming · barely changed in 10 years"
+              sparklineData={[920, 910, 890, 880, 870, 860, 850]}
+              source="DWP — Pension Credit Take-Up Statistics 2024"
+            />
             <MetricCard
-              label="Pension Credit take-up rate"
-              value="63%"
-              direction={'flat' as const}
-              polarity={'up-is-good' as const}
-              changeText="63% take-up · barely moved in 10 years"
-              sparklineData={[61, 61, 62, 62, 63, 63, 63, 63, 63]}
-              source="DWP · Pension Credit Take-Up Statistics 2024"
-              href="#sec-chart"/>
+              label="Unclaimed value (£bn/yr)"
+              value="1.7"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="£1.7bn unclaimed annually · now also includes Winter Fuel gateway"
+              sparklineData={[1.3, 1.4, 1.4, 1.5, 1.5, 1.6, 1.7]}
+              source="DWP — Pension Credit Take-Up Statistics 2024"
+            />
             <MetricCard
-              label="Average Pension Credit value"
-              value="£3,900/yr"
-              direction={'up' as const}
-              polarity={'up-is-good' as const}
-              changeText="+£400 since 2022 · includes Winter Fuel gateway"
-              sparklineData={[2800, 2900, 3000, 3100, 3200, 3400, 3600, 3800, 3900]}
-              source="DWP · Pension Credit Statistics 2024"
-              href="#sec-chart"/>
+              label="Take-up rate (%)"
+              value="63"
+              direction="flat"
+              polarity="up-is-good"
+              changeText="stuck at 63% · one of the lowest take-up rates for any benefit"
+              sparklineData={[62, 62, 63, 63, 63, 63, 63]}
+              source="DWP — Pension Credit Take-Up Statistics 2024"
+            />
           </div>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-takeup" className="mb-12">
             <LineChart
-              title="Pension Credit take-up rate, 2016–2024"
-              subtitle="Percentage of eligible pensioner households receiving Pension Credit."
-              series={series}
+              title="Pension Credit take-up rate, England 2010–2024 (%)"
+              subtitle="Percentage of eligible pensioner households receiving Pension Credit. The 63% take-up rate has barely moved despite repeated government campaigns."
+              series={takeUpSeries}
+              annotations={takeUpAnnotations}
               yLabel="Take-up rate (%)"
-              source={{ name: 'DWP', dataset: 'Pension Credit Take-Up Statistics', frequency: 'annual' }}
+              source={{
+                name: 'DWP',
+                dataset: 'Pension Credit Take-Up Statistics — annual publication',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/pension-credit-take-up',
+                date: '2024',
+              }}
             />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-caseload" className="mb-12">
+            <LineChart
+              title="Pension Credit caseload, England 2010–2024 (millions of households)"
+              subtitle="Number of households receiving Pension Credit. The caseload has gradually declined as the population of those with the lowest State Pension entitlements — predominantly older women — slowly reduces."
+              series={caseloadSeries}
+              annotations={caseloadAnnotations}
+              yLabel="Caseload (millions of households)"
+              source={{
+                name: 'DWP',
+                dataset: 'Pension Credit Statistics — quarterly bulletin',
+                frequency: 'quarterly',
+                url: 'https://www.gov.uk/government/collections/pension-credit-statistics',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout>
+            Following the July 2024 decision to restrict Winter Fuel Payment to Pension Credit recipients, applications for Pension Credit surged. DWP reported a 152% increase in applications in August 2024 versus August 2023. Whether this translates into sustained take-up gains — or a short burst followed by reversion — will be visible in the 2025 take-up statistics.
+          </PositiveCallout>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-context" className="max-w-2xl mb-12 mt-8">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">Why £1.7 billion goes unclaimed every year</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Pension Credit provides a minimum weekly income guarantee — £218.15 for single pensioners and £332.95 for couples in 2024/25 — and acts as a gateway benefit for Housing Benefit, Council Tax Reduction, free NHS dental treatment, and, since winter 2024/25, the Winter Fuel Payment. Yet around 850,000 eligible households — 37% of those entitled — do not claim it, leaving an estimated £1.7 billion unclaimed annually. The 63% take-up rate is one of the lowest for any major means-tested benefit and has barely moved despite repeated government awareness campaigns over more than a decade.</p>
+              <p>Non-take-up concentrates heavily among the hardest-to-reach groups. The very old — particularly those aged over 80 who were not accustomed to claiming benefits during their working lives — have strong stigma against means-testing. Those without internet access cannot use the online application portal; the telephone application process can take over an hour and require documents many older people struggle to locate. Single female pensioners are most exposed: they face a 24% poverty rate versus 16% for all pensioners, combining income vulnerability with the least likelihood of having a partner or family member to assist with a complex application.</p>
+              <p>Rural and coastal areas with high concentrations of older people show the weakest claim rates, compounding geographic isolation with financial deprivation. The benefit is worth on average £3,900 per year — more than enough to prevent poverty for most eligible households — but complexity, stigma, and lack of awareness together keep a third of those entitled from ever claiming it. The linking of Winter Fuel Payment to Pension Credit from autumn 2024 raised the stakes: non-claimants now lose an additional £300 per year in heating support.</p>
+            </div>
           </section>
         </ScrollReveal>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Take-up rates from DWP Pension Credit Take-Up Statistics (annual publication). Non-claiming estimates based on DWP Pensioners' Incomes Series modelling of eligible population versus actual claimants. Pension Credit benefit value from DWP Pension Credit Statistics quarterly bulletin. Winter Fuel Payment policy impact from DWP Housing Benefit and Council Tax Benefit analysis.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/statistics/pension-credit-take-up" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DWP — Pension Credit Take-Up Statistics</a> — annual publication modelling eligible population versus actual claimants. Methodology uses DWP Pensioners' Incomes Series and Family Resources Survey data.</p>
+            <p>Non-claiming population estimates and unclaimed value from the same publication. Caseload data from DWP Pension Credit Statistics quarterly bulletin. Poverty rate data from DWP Households Below Average Income. All figures are for Great Britain unless otherwise stated.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics topics={[
+          { href: '/pensioner-poverty', label: 'Pensioner Poverty' },
+          { href: '/pension-savings-gap', label: 'Pension Savings Gap' },
+          { href: '/benefit-delays', label: 'Benefit Delays' },
+          { href: '/winter-fuel-payment-reform', label: 'Winter Fuel Payment Reform' },
+        ]} />
       </main>
     </>
-  )
+  );
 }

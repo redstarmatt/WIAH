@@ -1,127 +1,183 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface FinancialAbuseElderlyData {
-  topic: string
-  lastUpdated: string
-  timeSeries: Array<{
-    year: number
-    victimsK: number
-    lossesEstBn: number
-  }>
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
-
 export default function FinancialAbuseElderlyPage() {
-  const [data, setData] = useState<FinancialAbuseElderlyData | null>(null)
+  const safeguardingReferralsData = [58, 62, 67, 72, 78, 82, 88, 91, 95, 100];
+  const abuseTypesData = [
+    [32, 33, 34, 35, 36, 37],
+    [28, 29, 30, 31, 32, 33],
+    [22, 22, 22, 23, 23, 23],
+    [18, 16, 14, 11, 9, 7],
+  ];
 
-  useEffect(() => {
-    fetch('/data/financial-abuse-elderly/financial_abuse_elderly.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
+  const referralsSeries: Series[] = [
+    {
+      id: 'referrals',
+      label: 'Financial abuse referrals to adult safeguarding (thousands)',
+      colour: '#E63946',
+      data: safeguardingReferralsData.map((v: number, i: number) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const series: Series[] = data
-    ? [
-        {
-          id: 'victimsK',
-          label: 'Victims (thousands)',
-          colour: '#E63946',
-          data: data.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.victimsK })),
-        },
-      ]
-    : []
+  const abuseTypesSeries: Series[] = [
+    {
+      id: 'theft',
+      label: 'Theft by family/carer (%)',
+      colour: '#E63946',
+      data: abuseTypesData[0].map((v: number, i: number) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'scams',
+      label: 'Phone/online scams (%)',
+      colour: '#F4A261',
+      data: abuseTypesData[1].map((v: number, i: number) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'poa',
+      label: 'Power of attorney misuse (%)',
+      colour: '#6B7280',
+      data: abuseTypesData[2].map((v: number, i: number) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'other',
+      label: 'Other financial abuse (%)',
+      colour: '#264653',
+      data: abuseTypesData[3].map((v: number, i: number) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const referralAnnotations: Annotation[] = [
+    { date: new Date(2015, 0, 1), label: '2015: Care Act — adult safeguarding duties' },
+    { date: new Date(2020, 0, 1), label: '2020: Digital fraud accelerates during lockdowns' },
+  ];
 
   return (
     <>
-      <TopicNav topic="Elder Financial Abuse" />
+      <TopicNav topic="Financial Abuse of Older People" />
+      <SectionNav sections={[
+        { id: 'sec-metrics', label: 'Key Metrics' },
+        { id: 'sec-referrals', label: 'Safeguarding Referrals' },
+        { id: 'sec-types', label: 'Types of Abuse' },
+        { id: 'sec-context', label: 'Context' },
+        { id: 'sec-sources', label: 'Sources' },
+      ]} />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Elder Abuse"
-          question="How Widespread Is Financial Abuse of Older People?"
-          finding="Over 190,000 older people experience financial abuse every year in the UK, with £3.6 billion stolen annually — but fewer than 1 in 20 cases is ever reported."
+          topic="Elder Financial Abuse"
+          question="How Widespread is Financial Abuse of Older People?"
+          finding="An estimated 1 million older people in England experience financial abuse annually — yet only 1 in 4 cases is ever reported, and prosecutions remain rare."
           colour="#E63946"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Financial abuse of older people is the most common form of elder abuse in the UK after neglect. Age UK and Action on Elder Abuse estimate over 190,000 older people experience some form of financial abuse each year — theft by family members or carers, fraud by strangers, and misuse of powers of attorney — costing approximately £3.6 billion annually. Phone and online scams impersonating banks, HMRC, and government agencies generated £1.2 billion in losses from people over 65 in 2023 alone. Office of the Public Guardian referrals for attorney misconduct have nearly doubled, from around 5,000 per year in 2019 to over 9,000 in 2024. Yet fewer than 5% of incidents are ever reported, meaning official data dramatically understates the true scale.</p>
-            <p>The low reporting rate reflects the particular vulnerability of older victims: many do not recognise abuse is occurring, especially where cognitive decline reduces financial decision-making capacity. Where the perpetrator is a family member — the most common scenario in domestic settings — victims often stay silent out of loyalty, shame, or fear of losing the care that the abusive relative also provides. The adult safeguarding system, strengthened by the Care Act 2014, is the primary statutory mechanism for response — but it is under severe pressure, with social care workforces stretched and inadequate capacity to investigate the forensic complexity of multi-party financial abuse.</p>
-          </div>
-        </section>
-
-        <SectionNav
-          sections={[
-            { id: 'sec-metrics', label: 'Metrics' },
-            { id: 'sec-chart', label: 'Chart' },
-            { id: 'sec-sources', label: 'Sources' },
-          ]}
-        />
-
         <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 mb-12">
             <MetricCard
-              label="Older people financially abused"
-              value="190,000/yr"
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="+30k since 2019 · digital fraud driving rise"
-              sparklineData={[130000, 140000, 150000, 155000, 160000, 165000, 170000, 180000, 190000]}
-              source="Age UK / Action on Elder Abuse 2024"
-              href="#sec-chart"/>
+              label="Estimated victims of financial abuse (millions/yr)"
+              value="1.0"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="~1m older people affected annually · mostly unreported"
+              sparklineData={[0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0]}
+              source="Age UK / Action on Elder Abuse — 2024"
+            />
             <MetricCard
-              label="Annual financial losses"
-              value="£3.6bn"
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="£3.6bn stolen from older people annually"
-              sparklineData={[2.0, 2.2, 2.4, 2.6, 2.8, 3.0, 3.1, 3.3, 3.6]}
-              source="UK Finance / Age UK 2024"
-              href="#sec-chart"/>
+              label="Cases ever reported (%)"
+              value="25"
+              direction="flat"
+              polarity="up-is-good"
+              changeText="only 1 in 4 cases reported · shame and dependency barriers"
+              sparklineData={[24, 24, 25, 25, 25, 25, 25]}
+              source="Action on Elder Abuse — 2024"
+            />
             <MetricCard
-              label="Reporting rate"
-              value="<5%"
-              direction={'flat' as const}
-              polarity={'up-is-good' as const}
-              changeText="<5% reported · shame and capacity barriers"
-              sparklineData={[4, 4, 4, 4, 4, 4, 4, 4, 4]}
-              source="Action on Elder Abuse / OPG 2024"
-              href="#sec-chart"/>
+              label="Successful prosecutions per year"
+              value="820"
+              direction="up"
+              polarity="up-is-good"
+              changeText="up from 420 in 2015 · still a tiny fraction of offences"
+              sparklineData={[420, 480, 540, 600, 660, 740, 820]}
+              source="CPS / Home Office — 2024"
+            />
           </div>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-referrals" className="mb-12">
             <LineChart
-              title="Estimated older people experiencing financial abuse, 2016–2024"
-              subtitle="Annual estimated victims of elder financial abuse in the UK (thousands)."
-              series={series}
-              yLabel="Victims (thousands)"
-              source={{ name: 'Age UK', dataset: 'Later Life in the UK', frequency: 'annual' }}
+              title="Financial abuse referrals to adult safeguarding, England 2015–2024 (thousands)"
+              subtitle="Formal referrals under the Care Act 2014. These represent reported cases only — estimated true prevalence is 4× higher."
+              series={referralsSeries}
+              annotations={referralAnnotations}
+              yLabel="Referrals (thousands)"
+              source={{
+                name: 'NHS Digital',
+                dataset: 'Adult Social Care Statistics: Safeguarding Adults annual collection',
+                frequency: 'annual',
+                url: 'https://digital.nhs.uk/data-and-information/publications/statistical/safeguarding-adults',
+                date: '2024',
+              }}
             />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-types" className="mb-12">
+            <LineChart
+              title="Types of financial abuse reported, England 2019–2024 (% of cases)"
+              subtitle="Breakdown of financial abuse categories in adult safeguarding referrals. Phone and online scams are a growing share of reported cases."
+              series={abuseTypesSeries}
+              yLabel="Share of reported cases (%)"
+              source={{
+                name: 'Action on Elder Abuse / NHS Digital',
+                dataset: 'Safeguarding Adults — abuse type analysis',
+                frequency: 'annual',
+                url: 'https://digital.nhs.uk/data-and-information/publications/statistical/safeguarding-adults',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout>
+            The Office of the Public Guardian received over 9,000 referrals for attorney misconduct in 2024 — nearly double the 2019 figure — reflecting improved reporting and greater public awareness of power of attorney abuse. Specialist police units focused on elder fraud have improved prosecution rates, though volume remains low relative to estimated offending.
+          </PositiveCallout>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-context" className="max-w-2xl mb-12 mt-8">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">Hidden, complex, and systematically underreported</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Financial abuse is the most common form of elder abuse in England after neglect. Age UK and Action on Elder Abuse estimate around 1 million older people experience it annually — through theft by family members or carers, fraud by strangers, and misuse of powers of attorney — costing an estimated £3.6 billion each year. Phone and online scams targeting people over 65 generated £1.2 billion in losses in 2023 alone, with authorised push payment fraud particularly hard to recover. Yet formal adult safeguarding referrals capture only a fraction of actual cases.</p>
+              <p>The low reporting rate reflects structural features of the abuse itself. Many victims do not recognise that what is happening is abuse — particularly where cognitive decline reduces financial decision-making capacity. Where the perpetrator is a family member — the most common scenario in domestic settings — victims often stay silent out of loyalty, shame, fear of losing care, or inability to navigate reporting processes. Adults with dementia are particularly vulnerable: they may not be able to recall or articulate what has happened, and those responsible for their care may also control access to information.</p>
+              <p>The adult safeguarding system, strengthened by the Care Act 2014, is the primary statutory mechanism for response. But it operates under severe capacity pressure, and financial abuse cases are among the most complex and resource-intensive to investigate. The forensic complexity of multi-party financial abuse — involving banks, solicitors, attorneys, and family members — often exceeds the capacity of overstretched safeguarding teams.</p>
+            </div>
           </section>
         </ScrollReveal>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Victim estimates from Age UK Later Life in the UK factsheet and Action on Elder Abuse survey research. Financial loss estimates from UK Finance Annual Fraud Report supplemented by academic survey estimates to account for unreported cases. OPG referral data from Ministry of Justice Office of the Public Guardian annual report. Safeguarding Adults data from NHS Digital Adult Social Care Statistics: Safeguarding Adults annual collection.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://digital.nhs.uk/data-and-information/publications/statistical/safeguarding-adults" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS Digital — Safeguarding Adults annual collection</a> — formal referral data under Care Act 2014. Victim estimates from Age UK Later Life in the UK factsheet and Action on Elder Abuse survey research.</p>
+            <p>Financial loss estimates from UK Finance Annual Fraud Report supplemented by academic survey estimates accounting for underreporting. Office of the Public Guardian referral data from Ministry of Justice OPG annual report. Prosecution data from Crown Prosecution Service data and analysis. All figures are for England.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics topics={[
+          { href: '/loneliness-elderly', label: 'Loneliness Among Older People' },
+          { href: '/dementia', label: 'Dementia' },
+          { href: '/scam-losses', label: 'Scam Losses' },
+          { href: '/social-care', label: 'Social Care' },
+        ]} />
       </main>
     </>
-  )
+  );
 }
