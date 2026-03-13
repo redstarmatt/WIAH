@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Adults meeting physical activity guidelines (%), 2015–2024 — Sport England / NHSE
 const activeAdultValues = [57, 57, 58, 58, 59, 54, 55, 60, 61, 62];
