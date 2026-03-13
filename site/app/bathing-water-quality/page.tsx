@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -57,6 +59,13 @@ function yearToDate(y: number): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'Bathing water quality classifications', url: 'https://environment.data.gov.uk/bwq/profiles/', date: '2025' },
+  { num: 2, name: 'Environment Agency', dataset: 'Event Duration Monitoring data', url: 'https://environment.data.gov.uk/dataset/21e15f12-0df8-4bfc-b763-45226c16a8ac', date: '2025' },
+  { num: 3, name: 'Environment Agency', dataset: 'Water Framework Directive river classifications', url: 'https://environment.data.gov.uk/catchment-planning/', date: '2024' },
+  { num: 4, name: 'Defra', dataset: 'Storm Overflows Discharge Reduction Plan', url: 'https://www.gov.uk/government/publications/storm-overflows-discharge-reduction-plan', date: '2022' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
