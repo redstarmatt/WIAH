@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Coram Family and Childcare', dataset: 'Childcare Survey', url: 'https://www.coram.org.uk/resource/childcare-survey-2024', date: '2024' },
+  { num: 2, name: 'OECD', dataset: 'Family Database — childcare costs', url: 'https://www.oecd.org/els/family/database.htm', date: '2024' },
+  { num: 3, name: 'DfE', dataset: 'Education provision: children under 5', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/education-provision-children-under-5', date: '2023' },
+  { num: 4, name: 'NDNA', dataset: 'Nursery funding gap analysis', date: '2024' },
+];
 
 interface NurseryCostYear {
   year: number;
@@ -124,10 +133,10 @@ export default function ChildcarePage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              A full-time nursery place in England costs £15,000 per year on average (Coram 2024) and £29,000 in London — absorbing 33% of median household income. Only Switzerland is more expensive in the OECD. The UK spends just 0.1% of GDP on childcare subsidies against an OECD average of 0.7%; Denmark and Iceland invest 1.5–2%. Free entitlements have expanded — 15 hours for all three- and four-year-olds since 2010, 30 hours for working parents since 2017, and a phased rollout from April 2024 extending 15 hours to two-year-olds, then to children from nine months by September 2025.
+              A full-time nursery place in England costs £15,000 per year on average (Coram 2024) and £29,000 in London — absorbing 33% of median household income.<Cite nums={1} /> Only Switzerland is more expensive in the OECD. The UK spends just 0.1% of GDP on childcare subsidies against an OECD average of 0.7%; Denmark and Iceland invest 1.5–2%.<Cite nums={2} /> Free entitlements have expanded — 15 hours for all three- and four-year-olds since 2010, 30 hours for working parents since 2017, and a phased rollout from April 2024 extending 15 hours to two-year-olds, then to children from nine months by September 2025.
             </p>
             <p>
-              The expansion is colliding with a collapsing provider base. Over 4,500 nursery settings — 14% of all providers — have closed since 2015, with closures concentrated in deprived areas. The core problem is a £2.24-per-hour funding gap: the DfE pays £8.28 per hour for free entitlement places, but the NDNA estimates actual delivery costs at £10.52. Providers subsidise the shortfall from fee-paying parents or run deficits. The workforce crisis compounds this: 50,000 vacancies remain unfilled, average pay is £10.50 per hour (below the 2024 National Living Wage of £11.44), and annual staff turnover runs at 26% — the highest of any care sector.
+              The expansion is colliding with a collapsing provider base. Over 4,500 nursery settings — 14% of all providers — have closed since 2015, with closures concentrated in deprived areas.<Cite nums={3} /> The core problem is a £2.24-per-hour funding gap: the DfE pays £8.28 per hour for free entitlement places, but the NDNA estimates actual delivery costs at £10.52.<Cite nums={4} /> Providers subsidise the shortfall from fee-paying parents or run deficits. The workforce crisis compounds this: 50,000 vacancies remain unfilled, average pay is £10.50 per hour (below the 2024 National Living Wage of £11.44), and annual staff turnover runs at 26% — the highest of any care sector.<Cite nums={3} />
             </p>
             </div>
         </section>
@@ -333,6 +342,9 @@ export default function ChildcarePage() {
         />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="border-t border-wiah-border pt-8">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>
           <ul className="space-y-2 font-mono text-xs text-wiah-mid">

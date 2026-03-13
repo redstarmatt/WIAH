@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Community pharmacies in England, 2015–2023 (NHS BSA)
 const pharmacyCountValues = [11673, 11559, 11423, 11276, 11148, 11020, 10870, 10720, 10575];
@@ -48,6 +50,13 @@ const annotations2: Annotation[] = [
   { date: new Date(2020, 2, 1), label: '2020: COVID-19 demand spike' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Business Services Authority', dataset: 'Community Pharmacy Network', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/community-pharmacy-dispensing-cost-analysis-report', date: '2023' },
+  { num: 2, name: 'NHS Business Services Authority', dataset: 'Prescription Volume Report', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis', date: '2023' },
+  { num: 3, name: 'Company Chemists\' Association', dataset: 'Annual Survey — Pharmacy Financial Viability', url: 'https://www.thecompanychemists.com/', date: '2023' },
+  { num: 4, name: 'NHS England', dataset: 'Pharmacy First Service Specification', date: '2024' },
+];
+
 export default function CommunityPharmaciesPage() {
   return (
     <>
@@ -62,8 +71,8 @@ export default function CommunityPharmaciesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England lost more than 1,100 community pharmacies between 2015 and 2023 — roughly one in ten of the network. Closures have been fastest in deprived high-street locations, the pharmacies most used by people who cannot easily travel or go online. The structural cause is clear: NHS dispensing fees have been frozen in real terms since 2015, a £113 million funding cut in 2016 was never restored, and the average pharmacy now runs at an annual loss of around £50,000. Over the same period, prescriptions dispensed rose from 1.02 billion to 1.19 billion — more work, less money, fewer outlets. The Pharmacy First scheme, launched in January 2024, authorises pharmacists to treat seven common conditions without GP referral, which in theory could absorb up to 10% of GP appointments; in practice, pharmacists report that reimbursement rates do not cover the additional clinical time.</p>
-            <p>Large multiples and supermarket pharmacies have proved more resilient; it is independent, family-run pharmacies that have closed. The walk-in consultation — free, no appointment, five minutes — is one of the most cost-effective primary care interventions, and its erosion shifts demand onto GP surgeries already under acute pressure. Scotland has integrated pharmacies more formally into primary care, with pharmacists salaried through NHS boards; England's commercially exposed model remains most vulnerable. When a pharmacy closes, patients may delay prescriptions or seek care later at greater cost — unmet need the NHS has no systematic way of measuring.</p>
+            <p>England lost more than 1,100 community pharmacies between 2015 and 2023 — roughly one in ten of the network.<Cite nums={1} /> Closures have been fastest in deprived high-street locations, the pharmacies most used by people who cannot easily travel or go online. The structural cause is clear: NHS dispensing fees have been frozen in real terms since 2015, a £113 million funding cut in 2016 was never restored, and the average pharmacy now runs at an annual loss of around £50,000.<Cite nums={3} /> Over the same period, prescriptions dispensed rose from 1.02 billion to 1.19 billion — more work, less money, fewer outlets.<Cite nums={2} /> The Pharmacy First scheme, launched in January 2024, authorises pharmacists to treat seven common conditions without GP referral, which in theory could absorb up to 10% of GP appointments; in practice, pharmacists report that reimbursement rates do not cover the additional clinical time.<Cite nums={4} /></p>
+            <p>Large multiples and supermarket pharmacies have proved more resilient; it is independent, family-run pharmacies that have closed.<Cite nums={1} /> The walk-in consultation — free, no appointment, five minutes — is one of the most cost-effective primary care interventions, and its erosion shifts demand onto GP surgeries already under acute pressure. Scotland has integrated pharmacies more formally into primary care, with pharmacists salaried through NHS boards; England's commercially exposed model remains most vulnerable. When a pharmacy closes, patients may delay prescriptions or seek care later at greater cost — unmet need the NHS has no systematic way of measuring.<Cite nums={[1, 3]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +151,10 @@ export default function CommunityPharmaciesPage() {
             source="Source: NHS England — Pharmacy First Service Specification, 2024. Scottish Government — Community Pharmacy Contractual Framework, 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

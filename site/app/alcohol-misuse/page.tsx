@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Alcohol-specific deaths, 2012–2024 — ONS
 const alcoholDeathsValues = [6490, 6592, 6831, 7366, 7327, 7697, 7551, 7565, 8974, 9641, 8209, 8274, 9048];
@@ -48,6 +50,13 @@ const annotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID-19 pandemic — deaths surge' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Alcohol-specific deaths in the UK', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholspecificdeathsintheuk', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Statistics on Alcohol, England', date: '2024' },
+  { num: 3, name: 'OHID / NDTMS', dataset: 'Adult substance misuse treatment statistics', url: 'https://www.gov.uk/government/collections/statistics-from-the-national-drug-treatment-monitoring-system-ndtms', date: '2024' },
+  { num: 4, name: 'Public Health Scotland', dataset: 'Evaluating the impact of minimum unit pricing', date: '2023' },
+];
+
 export default function AlcoholMisusePage() {
   return (
     <>
@@ -62,8 +71,8 @@ export default function AlcoholMisusePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The COVID-19 pandemic did not create Britain's alcohol problem, but it accelerated it dramatically. Between 2019 and 2021, alcohol-specific deaths in England and Wales jumped from 7,565 to 9,641 — a 27% increase in just two years. Lockdowns removed the social scaffolding — work routines, pub closing times, the presence of colleagues — that had previously kept consumption in check for many people. Three years on, deaths have barely retreated from their pandemic peak. In 2024, 9,048 people died from causes wholly attributable to alcohol — still 20% above pre-pandemic levels. Most of these deaths are from alcoholic liver disease, a condition that typically takes 10–20 years of heavy drinking to develop, meaning today's death toll reflects drinking patterns established a decade ago. The surge in deaths during COVID suggests an even grimmer toll is coming.</p>
-            <p>The treatment gap is the most damning statistic. An estimated 615,000 adults in England are dependent drinkers. Of those, only around 113,200 — roughly 18% — are currently in structured treatment. This gap exists because local authority public health budgets, which fund alcohol services, were cut by 24% in real terms between 2015 and 2021. Many areas now have waiting lists of three months or more for community alcohol services. The deprivation gradient is brutal: alcohol-specific death rates in the most deprived areas of England are 3.5 times higher than in the least deprived. Scotland's minimum unit pricing, introduced in 2018 and raised to 65p per unit in 2024, has demonstrably reduced deaths — particularly among the most deprived communities. England has not introduced equivalent measures.</p>
+            <p>The COVID-19 pandemic did not create Britain's alcohol problem, but it accelerated it dramatically. Between 2019 and 2021, alcohol-specific deaths in England and Wales jumped from 7,565 to 9,641 — a 27% increase in just two years.<Cite nums={1} /> Lockdowns removed the social scaffolding — work routines, pub closing times, the presence of colleagues — that had previously kept consumption in check for many people. Three years on, deaths have barely retreated from their pandemic peak. In 2024, 9,048 people died from causes wholly attributable to alcohol — still 20% above pre-pandemic levels.<Cite nums={1} /> Most of these deaths are from alcoholic liver disease, a condition that typically takes 10–20 years of heavy drinking to develop, meaning today's death toll reflects drinking patterns established a decade ago. The surge in deaths during COVID suggests an even grimmer toll is coming.</p>
+            <p>The treatment gap is the most damning statistic. An estimated 615,000 adults in England are dependent drinkers. Of those, only around 113,200 — roughly 18% — are currently in structured treatment.<Cite nums={3} /> This gap exists because local authority public health budgets, which fund alcohol services, were cut by 24% in real terms between 2015 and 2021. Many areas now have waiting lists of three months or more for community alcohol services. The deprivation gradient is brutal: alcohol-specific death rates in the most deprived areas of England are 3.5 times higher than in the least deprived.<Cite nums={1} /> Scotland's minimum unit pricing, introduced in 2018 and raised to 65p per unit in 2024, has demonstrably reduced deaths — particularly among the most deprived communities.<Cite nums={4} /> England has not introduced equivalent measures.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +151,9 @@ export default function AlcoholMisusePage() {
             source="Source: Public Health Scotland — Evaluating the impact of MUP 2023. Alcohol Change UK — Dry January 2025 report."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

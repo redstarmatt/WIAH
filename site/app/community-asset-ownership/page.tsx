@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Community-owned assets in England, 2012–2025 (Locality Census)
 const assetValues = [3800, 4400, 5100, 5900, 6700, 7400, 7900, 8500, 9100, 8800, 9300, 9800, 10100, 10240];
@@ -47,6 +49,13 @@ const annotations2: Annotation[] = [
   { date: new Date(2020, 2, 1), label: '2020: COVID-19 disruption' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Locality', dataset: 'Community Ownership and Management of Assets Census', url: 'https://locality.org.uk/policy-campaigns/community-ownership/', date: '2025' },
+  { num: 2, name: 'DLUHC', dataset: 'Assets of Community Value Registrations', url: 'https://www.gov.uk/government/publications/community-right-to-bid-assess-whether-land-or-buildings-are-of-community-value', date: '2025' },
+  { num: 3, name: 'Plunkett Foundation', dataset: 'Community Business Market Report', url: 'https://plunkett.co.uk/community-business-market/', date: '2025' },
+  { num: 4, name: 'DLUHC', dataset: 'Community Ownership Fund Evaluation', date: '2024' },
+];
+
 export default function CommunityAssetOwnershipPage() {
   return (
     <>
@@ -61,8 +70,8 @@ export default function CommunityAssetOwnershipPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Community asset ownership in England has grown steadily for over a decade, driven by the Localism Act 2011, which introduced the Community Right to Bid. This allows communities to nominate local buildings as Assets of Community Value and gives them a six-month moratorium period to raise funds if the asset comes up for sale. Since the register opened in 2012, over 1,340 nominations are now made annually, up from just 180 in the first year. The conversion rate from nomination to purchase sits at around 15–20%, but the register itself has had a chilling effect on speculative sales, keeping pubs, post offices, and community centres in community hands even when not formally purchased.</p>
-            <p>The most visible success story is community pubs. England now has over 200 community-owned pubs, up from just 38 in 2014, with a 96% survival rate compared to roughly 400 pub closures per year nationally. The Community Ownership Fund, launched in 2018 with £150 million of government backing and covering up to 50% of acquisition costs, has accelerated purchases. Community ownership remains heavily concentrated in affluent rural and semi-rural areas; deprived urban communities, where the need is arguably greatest, are underrepresented due to the administrative burden and requirement for upfront capital.</p>
+            <p>Community asset ownership in England has grown steadily for over a decade, driven by the Localism Act 2011, which introduced the Community Right to Bid.<Cite nums={2} /> This allows communities to nominate local buildings as Assets of Community Value and gives them a six-month moratorium period to raise funds if the asset comes up for sale. Since the register opened in 2012, over 1,340 nominations are now made annually, up from just 180 in the first year.<Cite nums={2} /> The conversion rate from nomination to purchase sits at around 15–20%, but the register itself has had a chilling effect on speculative sales, keeping pubs, post offices, and community centres in community hands even when not formally purchased.<Cite nums={1} /></p>
+            <p>The most visible success story is community pubs. England now has over 200 community-owned pubs, up from just 38 in 2014, with a 96% survival rate compared to roughly 400 pub closures per year nationally.<Cite nums={3} /> The Community Ownership Fund, launched in 2018 with £150 million of government backing and covering up to 50% of acquisition costs, has accelerated purchases.<Cite nums={4} /> Community ownership remains heavily concentrated in affluent rural and semi-rural areas; deprived urban communities, where the need is arguably greatest, are underrepresented due to the administrative burden and requirement for upfront capital.<Cite nums={[1, 4]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -141,6 +150,10 @@ export default function CommunityAssetOwnershipPage() {
             source="Source: Plunkett Foundation — Community Business Market Report, 2025. DLUHC — Community Ownership Fund evaluation, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

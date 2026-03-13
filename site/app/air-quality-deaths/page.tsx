@@ -5,6 +5,15 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'UK Health Security Agency', dataset: 'Air quality and health statistics', url: 'https://www.gov.uk/government/publications/air-quality-and-health', date: 'Mar 2024' },
+  { num: 2, name: 'ONS / NHS England', dataset: 'Air Quality Deaths statistics' },
+  { num: 3, name: 'WHO', dataset: 'Global Air Quality Guidelines', date: '2021' },
+];
+
 export default function AirQualityDeathsPage() {
 
   const sparkData = [52000,50000,48000,46000,45000,44000,43000];
@@ -108,12 +117,15 @@ export default function AirQualityDeathsPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">Air Pollution Is Britain's Biggest Environmental Killer</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Air pollution causes an estimated 43,000 premature deaths in the UK each year — more than alcohol and obesity combined, and still placing Britain among the worst in Europe. The long-run decline in PM2.5 concentrations driven by industrial emissions controls and the decline of coal has stalled, largely because domestic wood-burning now contributes 29% of UK PM2.5 emissions — the single largest source, and one that policy has been slow to address.</p>
-              <p>The WHO tightened its annual PM2.5 guideline from 10 to 5 μg/m³ in 2021, a threshold now exceeded virtually everywhere in urban Britain. The Environment Act 2021 sets a legally binding target of 10 μg/m³ by 2040 — still twice the WHO guideline. The 2020 inquest ruling that air pollution contributed to Ella Adoo-Kissi-Debrah's death was a landmark moment, but progress on the most effective interventions — urban clean air zones, restrictions on domestic solid fuel burning, and reducing road traffic — remains slow.</p>
+              <p>Air pollution causes an estimated 43,000 premature deaths in the UK each year — more than alcohol and obesity combined, and still placing Britain among the worst in Europe.<Cite nums={1} /> The long-run decline in PM2.5 concentrations driven by industrial emissions controls and the decline of coal has stalled, largely because domestic wood-burning now contributes 29% of UK PM2.5 emissions — the single largest source, and one that policy has been slow to address.<Cite nums={1} /></p>
+              <p>The WHO tightened its annual PM2.5 guideline from 10 to 5 μg/m³ in 2021, a threshold now exceeded virtually everywhere in urban Britain.<Cite nums={3} /> The Environment Act 2021 sets a legally binding target of 10 μg/m³ by 2040 — still twice the WHO guideline.<Cite nums={3} /> The 2020 inquest ruling that air pollution contributed to Ella Adoo-Kissi-Debrah's death was a landmark moment, but progress on the most effective interventions — urban clean air zones, restrictions on domestic solid fuel burning, and reducing road traffic — remains slow.<Cite nums={1} /></p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

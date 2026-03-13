@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'State of Nature Partnership', dataset: 'State of Nature 2023', url: 'https://stateofnature.org.uk/', date: '2023' },
+  { num: 2, name: 'DEFRA', dataset: 'UK Biodiversity Indicators — species population trends', url: 'https://www.gov.uk/government/statistics/biodiversity-indicators-for-the-uk', date: '2024' },
+  { num: 3, name: 'DEFRA', dataset: '30x30 Progress Report', url: 'https://www.gov.uk/government/publications/30by30-on-land-in-england', date: '2024' },
+  { num: 4, name: 'Environment Agency', dataset: 'Water Framework Directive — river ecological status', url: 'https://environment.data.gov.uk/catchment-planning/', date: '2024' },
+];
 
 export default function BiodiversityLossPage() {
   // UK wildlife abundance index 1970–2024 (% of 1970 baseline = 100)
@@ -85,9 +94,9 @@ export default function BiodiversityLossPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has lost 19% of its wildlife abundance since 1970, according to the State of Nature report — a comprehensive assessment of over 10,000 species compiled by more than 50 organisations. That figure places the UK in the bottom quartile of nations globally for biodiversity intactness, and among the most nature-depleted countries in the developed world. Only 7% of the UK's land area and 8% of its seas are under effective conservation management. The intensive agriculture that covers most of the English lowlands — characterised by large field sizes, chemical inputs, and minimal hedgerow cover — is the single largest driver.</p>
-            <p>Farmland birds have seen the sharpest declines: populations of lapwing, skylark, yellowhammer and linnet have fallen by 50–80% since the 1970s. Pollinators — bees and hoverflies — have declined markedly since 2000, with significant consequences for food production. Around 15% of UK species are threatened with extinction from Great Britain, including 41% of species assessed among bees and wasps. The rivers that should support freshwater biodiversity are in poor condition: only 16% of rivers in England meet the EU Water Framework Directive standard for good ecological status.</p>
-            <p>Marine species represent a partial bright spot. Some fish populations have recovered where quotas have been enforced, seabird colonies in northern Scotland remain large, and marine protected areas have allowed some reef habitats to recover. But marine mammals including harbour porpoise face pressure from bycatch and noise pollution, and kelp forests have declined substantially around the English coast.</p>
+            <p>The UK has lost 19% of its wildlife abundance since 1970, according to the State of Nature report — a comprehensive assessment of over 10,000 species compiled by more than 50 organisations.<Cite nums={1} /> That figure places the UK in the bottom quartile of nations globally for biodiversity intactness, and among the most nature-depleted countries in the developed world.<Cite nums={1} /> Only 7% of the UK's land area and 8% of its seas are under effective conservation management.<Cite nums={3} /> The intensive agriculture that covers most of the English lowlands — characterised by large field sizes, chemical inputs, and minimal hedgerow cover — is the single largest driver.<Cite nums={1} /></p>
+            <p>Farmland birds have seen the sharpest declines: populations of lapwing, skylark, yellowhammer and linnet have fallen by 50–80% since the 1970s.<Cite nums={2} /> Pollinators — bees and hoverflies — have declined markedly since 2000, with significant consequences for food production.<Cite nums={2} /> Around 15% of UK species are threatened with extinction from Great Britain, including 41% of species assessed among bees and wasps.<Cite nums={1} /> The rivers that should support freshwater biodiversity are in poor condition: only 16% of rivers in England meet the EU Water Framework Directive standard for good ecological status.<Cite nums={4} /></p>
+            <p>Marine species represent a partial bright spot. Some fish populations have recovered where quotas have been enforced, seabird colonies in northern Scotland remain large, and marine protected areas have allowed some reef habitats to recover.<Cite nums={2} /> But marine mammals including harbour porpoise face pressure from bycatch and noise pollution, and kelp forests have declined substantially around the English coast.</p>
           </div>
         </section>
 
@@ -172,6 +181,10 @@ export default function BiodiversityLossPage() {
             source="Source: DEFRA — Environmental Land Management scheme guidance 2024; State of Nature 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

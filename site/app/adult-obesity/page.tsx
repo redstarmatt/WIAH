@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Adult obesity prevalence (%) and severe obesity (BMI 40+), 2005–2023 — Health Survey for England
 const obesityValues = [22.1, 22.8, 23.5, 24.1, 24.8, 25.5, 26.1, 26.4, 26.9, 27.2, 27.5, 28.0, 28.5, 28.7, 28.0, 29.0, 29.3, 29.5, 29.5];
@@ -52,6 +54,11 @@ const annotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID-19 pandemic' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'Health Survey for England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england', date: '2023' },
+  { num: 2, name: 'NHS England', dataset: 'Obesity-related NHS cost estimates', url: 'https://www.england.nhs.uk/', date: '2023' },
+];
+
 export default function AdultObesityPage() {
   return (
     <>
@@ -66,8 +73,8 @@ export default function AdultObesityPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The proportion of English adults classified as obese has risen steadily for two decades, reaching 29.5% in 2023 according to the Health Survey for England — the highest rate ever recorded. Severe obesity, defined as a BMI of 40 or above, has nearly tripled from 1.4% in 2005 to 4.1% today. The health consequences are not distributed equally: obesity prevalence in the most deprived quintile of neighbourhoods stands at 39.0%, compared with 22.2% in the least deprived. That gap of almost 17 percentage points has widened from 14.4 points in 2010. Geography follows the same gradient, with the North East recording the highest regional rate at 32.8% and London the lowest at 24.2%.</p>
-            <p>The economic burden is equally stark. NHS England estimates the direct healthcare cost of obesity-related conditions at approximately £7.2 billion per year, up from £5.1 billion in 2015. Policy responses have been piecemeal. The Soft Drinks Industry Levy, introduced in 2018, successfully reduced sugar content in drinks but did not bend the prevalence curve. Restrictions on high fat, sugar and salt food advertising and promotions were repeatedly delayed. GLP-1 receptor agonist drugs — semaglutide and tirzepatide — offer clinically significant weight loss for individuals, but NHS specialist obesity services face waiting times of two years or more. The fundamental structural drivers — the ubiquity of ultra-processed food, built environments that discourage walking and cycling, food poverty, and long working hours — remain largely unaddressed.</p>
+            <p>The proportion of English adults classified as obese has risen steadily for two decades, reaching 29.5% in 2023 according to the Health Survey for England — the highest rate ever recorded.<Cite nums={1} /> Severe obesity, defined as a BMI of 40 or above, has nearly tripled from 1.4% in 2005 to 4.1% today.<Cite nums={1} /> The health consequences are not distributed equally: obesity prevalence in the most deprived quintile of neighbourhoods stands at 39.0%, compared with 22.2% in the least deprived.<Cite nums={1} /> That gap of almost 17 percentage points has widened from 14.4 points in 2010. Geography follows the same gradient, with the North East recording the highest regional rate at 32.8% and London the lowest at 24.2%.<Cite nums={1} /></p>
+            <p>The economic burden is equally stark. NHS England estimates the direct healthcare cost of obesity-related conditions at approximately £7.2 billion per year, up from £5.1 billion in 2015.<Cite nums={2} /> Policy responses have been piecemeal. The Soft Drinks Industry Levy, introduced in 2018, successfully reduced sugar content in drinks but did not bend the prevalence curve. Restrictions on high fat, sugar and salt food advertising and promotions were repeatedly delayed. GLP-1 receptor agonist drugs — semaglutide and tirzepatide — offer clinically significant weight loss for individuals, but NHS specialist obesity services face waiting times of two years or more. The fundamental structural drivers — the ubiquity of ultra-processed food, built environments that discourage walking and cycling, food poverty, and long working hours — remain largely unaddressed.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +153,9 @@ export default function AdultObesityPage() {
             source="Source: HM Revenue & Customs — SDIL receipts data 2024. University of Cambridge evaluation, The Lancet Public Health."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

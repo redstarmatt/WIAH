@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // % of chalk streams in good ecological status (WFD), 2015–2024
 const goodEcologyData = [8, 7.5, 7, 6.5, 6, 5.5, 5.5, 5, 5, 5];
@@ -61,6 +63,12 @@ const sewageAnnotations: Annotation[] = [
   { date: new Date(2022, 6, 1), label: '2022: Environment Act storm overflow duties commence' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'Water Framework Directive Classification', url: 'https://www.gov.uk/guidance/water-framework-directive-wfd-classification-status', date: '2024' },
+  { num: 2, name: 'Environment Agency', dataset: 'Event Duration Monitoring', url: 'https://www.gov.uk/government/collections/water-quality-statistics', date: '2024' },
+  { num: 3, name: 'Chalk Stream Restoration Group', dataset: 'Blueprint for Chalk Streams', url: 'https://chalkstreams.org/', date: '2021' },
+];
+
 export default function ChalkStreamsPage() {
   return (
     <>
@@ -75,8 +83,8 @@ export default function ChalkStreamsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Chalk streams are among the rarest and most ecologically valuable freshwater habitats on Earth. They form where rainwater percolates through chalk downland, emerging as crystal-clear, mineral-rich springs with a remarkably stable temperature of around 10–11°C year-round. There are approximately 200 chalk rivers in the world, of which around 85% — roughly 160 rivers covering 4,000 kilometres — are in England, concentrated in Hampshire, Wiltshire, Dorset, Berkshire, Hertfordshire, and East Anglia. The Test, Itchen, Kennet, Avon, Ver, and Misbourne are among the best known. These rivers support unique communities of wildlife: water crowfoot meadows, wild brown trout and Atlantic salmon, white-clawed crayfish, water voles, otters, kingfishers, and rare invertebrates. The Chalk Stream Restoration Group estimated in 2021 that 95% of England's chalk streams are in poor condition, failing Water Framework Directive ecological standards.</p>
-            <p>Over-abstraction of groundwater is the most fundamental and chronic threat. Chalk aquifers feed chalk streams and are among the UK's most important water sources — Southern Water, Thames Water, and others abstract billions of litres daily to supply homes and industry in south-east England. When abstraction exceeds natural recharge, water tables fall, springs cease to flow, and rivers become intermittent. The Environment Agency classified 60% of chalk stream catchments as over-licensed or over-abstracted in 2023. The Misbourne in Buckinghamshire, once a perennial chalk stream, now runs dry in its upper reaches for most of the year. Reforming abstraction licences has been a policy commitment for over two decades, but the EA's own assessment shows less than 20% of problematic licences had been reformed by 2024. Meanwhile, sewage discharge events on chalk catchments — measured by the EA's Event Duration Monitoring programme from 2016 — reached over 12,000 per year by 2022.</p>
+            <p>Chalk streams are among the rarest and most ecologically valuable freshwater habitats on Earth. They form where rainwater percolates through chalk downland, emerging as crystal-clear, mineral-rich springs with a remarkably stable temperature of around 10–11°C year-round. There are approximately 200 chalk rivers in the world, of which around 85% — roughly 160 rivers covering 4,000 kilometres — are in England, concentrated in Hampshire, Wiltshire, Dorset, Berkshire, Hertfordshire, and East Anglia. The Test, Itchen, Kennet, Avon, Ver, and Misbourne are among the best known. These rivers support unique communities of wildlife: water crowfoot meadows, wild brown trout and Atlantic salmon, white-clawed crayfish, water voles, otters, kingfishers, and rare invertebrates. The Chalk Stream Restoration Group estimated in 2021 that 95% of England's chalk streams are in poor condition, failing Water Framework Directive ecological standards.<Cite nums={[1, 3]} /></p>
+            <p>Over-abstraction of groundwater is the most fundamental and chronic threat. Chalk aquifers feed chalk streams and are among the UK's most important water sources — Southern Water, Thames Water, and others abstract billions of litres daily to supply homes and industry in south-east England. When abstraction exceeds natural recharge, water tables fall, springs cease to flow, and rivers become intermittent. The Environment Agency classified 60% of chalk stream catchments as over-licensed or over-abstracted in 2023.<Cite nums={1} /> The Misbourne in Buckinghamshire, once a perennial chalk stream, now runs dry in its upper reaches for most of the year. Reforming abstraction licences has been a policy commitment for over two decades, but the EA's own assessment shows less than 20% of problematic licences had been reformed by 2024. Meanwhile, sewage discharge events on chalk catchments — measured by the EA's Event Duration Monitoring programme from 2016 — reached over 12,000 per year by 2022.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -155,6 +163,10 @@ export default function ChalkStreamsPage() {
             source="Source: Wild Trout Trust — chalk stream restoration monitoring 2024. Environment Agency — fish count surveys 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

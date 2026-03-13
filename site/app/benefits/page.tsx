@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -85,6 +87,17 @@ function fyToDate(fy: string): Date {
   const start = parseInt(fy.split('/')[0]);
   return new Date(start, 3, 1);
 }
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Universal Credit statistics', url: 'https://www.gov.uk/government/collections/universal-credit-statistics', date: 'January 2025' },
+  { num: 2, name: 'DWP', dataset: 'Personal Independence Payment statistics', url: 'https://www.gov.uk/government/collections/personal-independence-payment-statistics', date: '2024' },
+  { num: 3, name: 'Trussell Trust', dataset: 'End of Year Stats', url: 'https://www.trusselltrust.org/news-and-blog/latest-stats/end-year-stats/', date: '2023/24' },
+  { num: 4, name: 'DWP', dataset: 'Benefit sanctions statistics', url: 'https://www.gov.uk/government/collections/benefit-sanctions-statistics', date: '2024' },
+  { num: 5, name: 'Joseph Rowntree Foundation', dataset: 'Destitution in the UK 2023', url: 'https://www.jrf.org.uk/report/destitution-in-the-uk-2023', date: '2023' },
+  { num: 6, name: 'DWP', dataset: 'Welfare reform white paper', url: 'https://www.gov.uk/government/publications/reforming-the-welfare-system', date: '2025' },
+];
 
 // ── Component ────────────────────────────────────────────────────────────────
 
@@ -295,11 +308,11 @@ export default function BenefitsPage() {
       {/* Context */}
       <section id="sec-context" className="max-w-4xl mx-auto px-6 py-16 space-y-6 text-wiah-black leading-relaxed">
         <p>
-          Universal Credit covers 6.78 million claimants as of January 2025, nearly triple the 2018 level. Its design embeds specific policy choices with measurable consequences: the five-week wait for a first payment sent over 100,000 people to food banks; the two-child limit affects roughly 500,000 families and saves the Treasury an estimated £3.6 billion a year; the benefit cap constrains a further 150,000 households. Personal Independence Payment has grown even faster — 3.66 million recipients in 2024, up 93% since 2019, with DWP spending £26 billion on PIP in 2024/25. The government's 2025 welfare reform white paper proposes cutting 1.2 million people from PIP by 2030, targeting £5 billion in savings through stricter eligibility criteria.
+          Universal Credit covers 6.78 million claimants as of January 2025, nearly triple the 2018 level.<Cite nums={1} /> Its design embeds specific policy choices with measurable consequences: the five-week wait for a first payment sent over 100,000 people to food banks; the two-child limit affects roughly 500,000 families and saves the Treasury an estimated £3.6 billion a year; the benefit cap constrains a further 150,000 households.<Cite nums={1} /> Personal Independence Payment has grown even faster — 3.66 million recipients in 2024, up 93% since 2019, with DWP spending £26 billion on PIP in 2024/25.<Cite nums={2} /> The government's 2025 welfare reform white paper proposes cutting 1.2 million people from PIP by 2030, targeting £5 billion in savings through stricter eligibility criteria.<Cite nums={6} />
         </p>
 
         <p>
-          The downstream indicators tell a consistent story of a safety net under strain. The Trussell Trust distributed 3.1 million emergency food parcels in 2023/24 — one million to children, one in three to first-time users. Benefit sanctions returned to 612,000 decisions in 2024 after the COVID suspension, with an average sanction length of four weeks. The Joseph Rowntree Foundation counted 3.8 million people in destitution in 2023, unable to afford food or shelter on two or more days in a month. The safety net is large; whether it is adequate is a different question.
+          The downstream indicators tell a consistent story of a safety net under strain. The Trussell Trust distributed 3.1 million emergency food parcels in 2023/24 — one million to children, one in three to first-time users.<Cite nums={3} /> Benefit sanctions returned to 612,000 decisions in 2024 after the COVID suspension, with an average sanction length of four weeks.<Cite nums={4} /> The Joseph Rowntree Foundation counted 3.8 million people in destitution in 2023, unable to afford food or shelter on two or more days in a month.<Cite nums={5} /> The safety net is large; whether it is adequate is a different question.
         </p>
       </section>
 
@@ -313,6 +326,10 @@ export default function BenefitsPage() {
           source="Source: DWP — Universal Credit statistics, January 2025."
         />
       </section>
+
+      <div className="mt-6">
+        <References items={editorialRefs} />
+      </div>
 
       {/* Sources */}
       <section id="sec-sources" className="max-w-4xl mx-auto px-6 py-16 border-t border-wiah-border">

@@ -10,6 +10,8 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -27,6 +29,15 @@ interface CleanEnergyInvestmentData {
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'BloombergNEF', dataset: 'Energy Transition Investment Trends', url: 'https://about.bnef.com/energy-transition-investment/', date: '2024' },
+  { num: 2, name: 'DESNZ', dataset: 'Energy Trends', url: 'https://www.gov.uk/government/collections/energy-trends', date: '2024' },
+  { num: 3, name: 'US Government', dataset: 'Inflation Reduction Act', url: 'https://www.whitehouse.gov/cleanenergy/inflation-reduction-act-guidebook/', date: '2022' },
+  { num: 4, name: 'HM Government', dataset: 'Great British Energy Policy', date: '2024' },
+];
 
 // -- Page -------------------------------------------------------------------
 
@@ -71,8 +82,8 @@ export default function CleanEnergyInvestmentPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK clean energy investment reached a record £50.3 billion in 2023 — up 162% from £19.2 billion in 2015 — and now accounts for 88% of all UK energy investment. The Contract for Difference auction mechanism drove offshore wind costs to levels unimaginable a decade ago, making the UK host to the world's largest offshore wind capacity, with new North Sea and Scottish projects continuing to come online. Battery storage deployment has accelerated sharply. Fossil fuel investment fell from £11.3 billion in 2015 to £6.9 billion in 2023. The Great British Energy policy, announced in 2024, aims to reach clean power by 2030 through a new state-owned energy company, a target independent analysis considers physically achievable but requiring sustained acceleration of planning approvals, grid connections, and supply chain development.</p>
-            <p>The international comparison is sobering. The US Inflation Reduction Act commits approximately $150 billion per year to clean energy and climate programmes — against which UK investment of £50 billion looks modest, and UK projects face competition for equipment, components, and investors from a market offering more generous subsidy terms. Grid connection queues, planning delays for onshore wind, and supply chain constraints are the practical bottlenecks now limiting UK deployment. The government's continued North Sea oil and gas licensing has been contested by environmental groups as inconsistent with the UK's legally binding net zero commitments.</p>
+            <p>UK clean energy investment reached a record £50.3 billion in 2023 — up 162% from £19.2 billion in 2015 — and now accounts for 88% of all UK energy investment.<Cite nums={[1, 2]} /> The Contract for Difference auction mechanism drove offshore wind costs to levels unimaginable a decade ago, making the UK host to the world's largest offshore wind capacity, with new North Sea and Scottish projects continuing to come online.<Cite nums={2} /> Battery storage deployment has accelerated sharply. Fossil fuel investment fell from £11.3 billion in 2015 to £6.9 billion in 2023.<Cite nums={1} /> The Great British Energy policy, announced in 2024, aims to reach clean power by 2030 through a new state-owned energy company, a target independent analysis considers physically achievable but requiring sustained acceleration of planning approvals, grid connections, and supply chain development.<Cite nums={4} /></p>
+            <p>The international comparison is sobering. The US Inflation Reduction Act commits approximately $150 billion per year to clean energy and climate programmes — against which UK investment of £50 billion looks modest, and UK projects face competition for equipment, components, and investors from a market offering more generous subsidy terms.<Cite nums={3} /> Grid connection queues, planning delays for onshore wind, and supply chain constraints are the practical bottlenecks now limiting UK deployment.<Cite nums={2} /> The government's continued North Sea oil and gas licensing has been contested by environmental groups as inconsistent with the UK's legally binding net zero commitments.<Cite nums={2} /></p>
           </div>
         </section>
 
@@ -149,6 +160,10 @@ export default function CleanEnergyInvestmentPage() {
             />
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

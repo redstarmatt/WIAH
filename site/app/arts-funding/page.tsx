@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Arts Council England grant-in-aid (£m, real terms 2010 prices), 2010–2024 — ACE
 const aceValues = [700, 680, 658, 635, 610, 590, 568, 550, 535, 520, 540, 545, 528, 522, 520];
@@ -39,6 +41,14 @@ const annotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: ACE portfolio rebalancing — 140 organisations lose funding' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Arts Council England', dataset: 'Annual Report and Accounts', url: 'https://www.artscouncil.org.uk/publication-types/annual-report', date: '2024' },
+  { num: 2, name: 'MHCLG', dataset: 'Revenue Outturn (RO) Returns — Culture and Recreation', url: 'https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing', date: '2024' },
+  { num: 3, name: 'Arts Council England', dataset: 'National Portfolio 2023–2026', url: 'https://www.artscouncil.org.uk/national-portfolio-2023-26', date: '2023' },
+  { num: 4, name: 'DCMS', dataset: 'Creative Industries Economic Estimates', url: 'https://www.gov.uk/government/collections/dcms-sectors-economic-estimates', date: '2024' },
+  { num: 5, name: 'Music Venue Trust', dataset: 'Annual Report on Grassroots Music Venues', date: '2024' },
+];
+
 export default function ArtsFundingPage() {
   return (
     <>
@@ -53,8 +63,8 @@ export default function ArtsFundingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The decade of austerity that followed the 2010 Spending Review fell heavily on culture. Arts Council England's grant-in-aid from DCMS was £700 million in 2010 in real terms. By 2024 it had fallen to approximately £520 million — a 36% real-terms reduction over 14 years. This decline translated directly into reduced support for symphony orchestras, touring theatre companies, contemporary dance, visual arts organisations, and the literary sector. Local authorities have made even deeper cuts: MHCLG Revenue Outturn data shows local authority spending on culture, sport, and recreation in England fell from £1.4 billion in 2010/11 to approximately £630 million by 2023/24 — a 57% reduction. More than 800 library branches have closed since 2010. The Music Venue Trust estimates that England had approximately 960 small music venues in 2010 and fewer than 600 by 2024.</p>
-            <p>The 2023 ACE portfolio rebalancing — intended to direct more funding outside London and the South East — resulted in 140 organisations losing all their funding, including several with decades of continuous support. English Touring Opera, which had provided affordable opera to regional theatres across England for years, initially lost its entire grant before a partial reversal after a public campaign. Critics noted that the shift gave grants to newer organisations in underserved areas without the infrastructure or track record to absorb and deploy funding effectively, while dismantling networks of touring provision that took years to build. The creative industries, meanwhile, contribute £116 billion to the UK economy. The cultural sector's economic multiplier — every £1 invested generating £4–5 in broader activity — is among the highest of any public investment, but this case has struggled to translate into protected funding given the intensity of competition for public spending.</p>
+            <p>The decade of austerity that followed the 2010 Spending Review fell heavily on culture. Arts Council England's grant-in-aid from DCMS was £700 million in 2010 in real terms. By 2024 it had fallen to approximately £520 million — a 36% real-terms reduction over 14 years.<Cite nums={1} /> This decline translated directly into reduced support for symphony orchestras, touring theatre companies, contemporary dance, visual arts organisations, and the literary sector. Local authorities have made even deeper cuts: MHCLG Revenue Outturn data shows local authority spending on culture, sport, and recreation in England fell from £1.4 billion in 2010/11 to approximately £630 million by 2023/24 — a 57% reduction.<Cite nums={2} /> More than 800 library branches have closed since 2010.<Cite nums={2} /> The Music Venue Trust estimates that England had approximately 960 small music venues in 2010 and fewer than 600 by 2024.<Cite nums={5} /></p>
+            <p>The 2023 ACE portfolio rebalancing — intended to direct more funding outside London and the South East — resulted in 140 organisations losing all their funding, including several with decades of continuous support.<Cite nums={3} /> English Touring Opera, which had provided affordable opera to regional theatres across England for years, initially lost its entire grant before a partial reversal after a public campaign.<Cite nums={3} /> Critics noted that the shift gave grants to newer organisations in underserved areas without the infrastructure or track record to absorb and deploy funding effectively, while dismantling networks of touring provision that took years to build. The creative industries, meanwhile, contribute £116 billion to the UK economy.<Cite nums={4} /> The cultural sector's economic multiplier — every £1 invested generating £4–5 in broader activity — is among the highest of any public investment, but this case has struggled to translate into protected funding given the intensity of competition for public spending.<Cite nums={4} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -133,6 +143,9 @@ export default function ArtsFundingPage() {
             source="Source: DCMS — Creative Industries Economic Estimates 2024. Arts Council England — Investment Principles 2023–2026."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

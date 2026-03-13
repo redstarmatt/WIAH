@@ -5,6 +5,13 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Households Below Average Income (HBAI)', url: 'https://www.gov.uk/government/collections/households-below-average-income-hbai--2', date: '2024' },
+  { num: 2, name: 'Institute for Fiscal Studies', dataset: 'Two-child limit impact analysis', url: 'https://ifs.org.uk/', date: '2024' },
+];
 
 export default function ChildPovertyPage() {
   // Child poverty rate before housing costs (%) 2010–2024
@@ -132,13 +139,16 @@ export default function ChildPovertyPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The UK's child poverty rate — measured as households below 60% of median income — stands at 31% after housing costs. That is 4.3 million children. The rate has not fallen significantly in over a decade, despite several policy interventions and a sustained period of employment growth.</p>
-              <p>The most striking shift is within poverty: the majority of children in poverty now live in working families. In-work poverty has risen from 2 million children in 2015 to 2.6 million in 2024. Wages at the bottom of the distribution have not kept pace with housing and childcare costs, meaning employment alone no longer insulates families from poverty.</p>
-              <p>Geographic concentration is stark. London has the highest child poverty rate of any region — over 40% after housing costs in some boroughs — driven by high housing costs. Rates are also elevated across the North of England and in former industrial communities. The two-child benefit limit, introduced in 2017, has had a measurable poverty impact on larger families, estimated by the IFS to affect over 1.5 million children.</p>
+              <p>The UK's child poverty rate — measured as households below 60% of median income — stands at 31% after housing costs. That is 4.3 million children.<Cite nums={1} /> The rate has not fallen significantly in over a decade, despite several policy interventions and a sustained period of employment growth.</p>
+              <p>The most striking shift is within poverty: the majority of children in poverty now live in working families. In-work poverty has risen from 2 million children in 2015 to 2.6 million in 2024.<Cite nums={1} /> Wages at the bottom of the distribution have not kept pace with housing and childcare costs, meaning employment alone no longer insulates families from poverty.</p>
+              <p>Geographic concentration is stark. London has the highest child poverty rate of any region — over 40% after housing costs in some boroughs — driven by high housing costs.<Cite nums={1} /> Rates are also elevated across the North of England and in former industrial communities. The two-child benefit limit, introduced in 2017, has had a measurable poverty impact on larger families, estimated by the IFS to affect over 1.5 million children.<Cite nums={2} /></p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

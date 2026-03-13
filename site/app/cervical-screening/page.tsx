@@ -8,6 +8,12 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Cervical Screening Programme Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/cervical-screening-programme', date: '2024' },
+];
 
 export default function CervicalScreeningPage() {
   const coverageData = [80.4, 79.8, 79.1, 78.4, 77.5, 76.3, 75.0, 73.5, 72.9, 71.7, 71.4, 70.1, 69.9, 69.8, 68.7, 68.4, 68.5, 68.7, 68.9, 69.1, 69.2, 69.4, 69.6, 69.8, 68.4];
@@ -156,12 +162,16 @@ export default function CervicalScreeningPage() {
           <section id="sec-context" className="max-w-2xl mb-12 mt-8">
             <h2 className="text-xl font-bold text-wiah-black mb-4">Why are fewer women attending?</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Cervical screening coverage in England peaked in the early 2000s and has fallen almost continuously since. The 2009 "Jade Goody effect" — a temporary surge in attendance following extensive media coverage of the celebrity's cervical cancer diagnosis and death — demonstrated that awareness drives uptake, but the effect dissipated within 18 months as the normal downward trend resumed. Coverage is now at 68.4%, the lowest since the programme began in its current form.</p>
-              <p>The youngest women — aged 25 to 34 — have the lowest coverage of any age group, at around 55%. Barriers include embarrassment, previous negative experiences, fear of abnormal results, difficulty booking convenient appointments, and cultural factors that are particularly pronounced among women from some South Asian and Black African backgrounds. The move to longer screening intervals under the HPV primary screening programme has caused confusion — some women believe they no longer need to attend as frequently.</p>
+              <p>Cervical screening coverage in England peaked in the early 2000s and has fallen almost continuously since. The 2009 "Jade Goody effect" — a temporary surge in attendance following extensive media coverage of the celebrity's cervical cancer diagnosis and death — demonstrated that awareness drives uptake, but the effect dissipated within 18 months as the normal downward trend resumed.<Cite nums={1} /> Coverage is now at 68.4%, the lowest since the programme began in its current form.<Cite nums={1} /></p>
+              <p>The youngest women — aged 25 to 34 — have the lowest coverage of any age group, at around 55%.<Cite nums={1} /> Barriers include embarrassment, previous negative experiences, fear of abnormal results, difficulty booking convenient appointments, and cultural factors that are particularly pronounced among women from some South Asian and Black African backgrounds. The move to longer screening intervals under the HPV primary screening programme has caused confusion — some women believe they no longer need to attend as frequently.</p>
               <p>Access barriers are structural as well as psychological. Most smear tests are performed in GP surgeries during standard hours, making attendance difficult for women in inflexible employment. Evening and weekend appointments remain limited. The national campaign "Help Us Help You" has raised awareness but not systematically shifted behaviour. Academic evidence consistently shows that personal invitation from a named GP and simplified booking significantly improve attendance, but implementation is patchy.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

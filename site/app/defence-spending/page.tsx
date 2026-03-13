@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Defence spending as % GDP, 2015–2024
 const gdpPctValues = [2.2, 2.2, 2.1, 2.1, 2.1, 2.1, 2.2, 2.25, 2.3, 2.3];
@@ -57,6 +59,11 @@ const annotations2: Annotation[] = [
   { date: new Date(2023, 5, 1), label: '2023: £2.3bn Ukraine military aid' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'UK Defence Statistics', url: 'https://www.gov.uk/government/collections/uk-defence-statistics', date: '2024' },
+  { num: 2, name: 'NATO', dataset: 'Defence Expenditure of NATO Countries', url: 'https://www.nato.int/cps/en/natohq/topics_49198.htm', date: '2024' },
+];
+
 export default function DefenceSpendingPage() {
   return (
     <>
@@ -71,8 +78,8 @@ export default function DefenceSpendingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>For most of the period from 2010 to 2022, the UK technically met NATO's 2% of GDP spending target, but only through accounting adjustments that included pension contributions and intelligence spending not counted by other NATO members. The 2.3% figure reported in 2024–25 is the highest genuine defence spending level since the post-Cold War drawdown began. Russia's full-scale invasion of Ukraine in February 2022 transformed the political calculus: what had been an abstract commitment to allied burden-sharing became an immediate question of European security. The UK has provided over £7 billion in military assistance to Ukraine since 2022, including Storm Shadow missiles, artillery, and air defence systems.</p>
-            <p>The commitment to 2.5% of GDP by 2027 would require an additional £10 billion per year in real terms — a significant uplift for an armed forces that has faced persistent capability gaps, recruitment crises, and equipment procurement delays. The army is at its smallest since the Napoleonic era; the navy has fewer than 20 destroyers and frigates; and the RAF's fast jet fleet has been reduced to around 120 aircraft. Increasing the budget without addressing institutional inefficiency in the defence procurement system — where major programmes routinely run billions over budget and years late — risks the extra money being absorbed without proportionate capability gain.</p>
+            <p>For most of the period from 2010 to 2022, the UK technically met NATO's 2% of GDP spending target, but only through accounting adjustments that included pension contributions and intelligence spending not counted by other NATO members.<Cite nums={2} /> The 2.3% figure reported in 2024–25 is the highest genuine defence spending level since the post-Cold War drawdown began.<Cite nums={1} /> Russia's full-scale invasion of Ukraine in February 2022 transformed the political calculus: what had been an abstract commitment to allied burden-sharing became an immediate question of European security. The UK has provided over £7 billion in military assistance to Ukraine since 2022, including Storm Shadow missiles, artillery, and air defence systems.<Cite nums={1} /></p>
+            <p>The commitment to 2.5% of GDP by 2027 would require an additional £10 billion per year in real terms — a significant uplift for an armed forces that has faced persistent capability gaps, recruitment crises, and equipment procurement delays.<Cite nums={1} /> The army is at its smallest since the Napoleonic era; the navy has fewer than 20 destroyers and frigates; and the RAF's fast jet fleet has been reduced to around 120 aircraft.<Cite nums={1} /> Increasing the budget without addressing institutional inefficiency in the defence procurement system — where major programmes routinely run billions over budget and years late — risks the extra money being absorbed without proportionate capability gain.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +158,9 @@ export default function DefenceSpendingPage() {
             source="Source: DESNZ — UK Defence Statistics 2024. NATO — Defence Expenditure of NATO Countries 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Autism assessment waiting list (thousands), 2016–2024 — NHS Digital MHSDS
 const autismWaitingValues = [54, 62, 75, 91, 105, 128, 155, 172, 187];
@@ -48,6 +50,12 @@ const annotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: NICE ADHD guidelines updated' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'Mental Health Services Dataset (MHSDS)', url: 'https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/mental-health-services-data-set', date: '2024' },
+  { num: 2, name: 'NICE', dataset: 'Autism spectrum disorder in adults: diagnosis and management (NG142)', url: 'https://www.nice.org.uk/guidance/ng142', date: '2021' },
+  { num: 3, name: 'NICE', dataset: 'Attention deficit hyperactivity disorder: diagnosis and management (NG87)', url: 'https://www.nice.org.uk/guidance/ng87', date: '2023' },
+];
+
 export default function AdhdAutismPage() {
   return (
     <>
@@ -62,8 +70,8 @@ export default function AdhdAutismPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England is in the middle of a diagnostic waiting crisis for ADHD and autism that shows no sign of resolving. As of 2024, approximately 187,000 people are waiting for an autism assessment through the NHS — a figure that has more than tripled since 2016 — while ADHD referral volumes have risen from around 80,000 per year in 2018 to over 200,000 in 2024. NICE guidelines state that autism assessments should begin within three months of referral. In practice, the national average wait is now 37 months, and in some areas of the North East it exceeds three and a half years. Several forces are driving this surge simultaneously: greater public awareness accelerated by social media, the Right to Choose policy opening new pathways, and systematic underdiagnosis of women and girls whose presentations differ from the male-calibrated screening tools.</p>
-            <p>The consequences are not abstract. Adults waiting years for an ADHD assessment report deteriorating mental health, job loss, and relationship breakdown. Children waiting for autism diagnosis miss the window for early intervention that evidence shows is most effective. Schools are legally required to support children with special educational needs regardless of diagnosis, but in practice many refuse to make adjustments without a formal assessment — creating a circular trap. NICE guidelines on ADHD management, updated in 2023 for the first time since 2008, recommend a whole-life-course approach, yet most adult services were commissioned for a fraction of current demand. Without dedicated investment in diagnostic capacity, the waiting list will continue to grow.</p>
+            <p>England is in the middle of a diagnostic waiting crisis for ADHD and autism that shows no sign of resolving. As of 2024, approximately 187,000 people are waiting for an autism assessment through the NHS — a figure that has more than tripled since 2016 — while ADHD referral volumes have risen from around 80,000 per year in 2018 to over 200,000 in 2024.<Cite nums={1} /> NICE guidelines state that autism assessments should begin within three months of referral.<Cite nums={2} /> In practice, the national average wait is now 37 months, and in some areas of the North East it exceeds three and a half years.<Cite nums={1} /> Several forces are driving this surge simultaneously: greater public awareness accelerated by social media, the Right to Choose policy opening new pathways, and systematic underdiagnosis of women and girls whose presentations differ from the male-calibrated screening tools.</p>
+            <p>The consequences are not abstract. Adults waiting years for an ADHD assessment report deteriorating mental health, job loss, and relationship breakdown. Children waiting for autism diagnosis miss the window for early intervention that evidence shows is most effective. Schools are legally required to support children with special educational needs regardless of diagnosis, but in practice many refuse to make adjustments without a formal assessment — creating a circular trap. NICE guidelines on ADHD management, updated in 2023 for the first time since 2008, recommend a whole-life-course approach, yet most adult services were commissioned for a fraction of current demand.<Cite nums={3} /> Without dedicated investment in diagnostic capacity, the waiting list will continue to grow.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +150,9 @@ export default function AdhdAutismPage() {
             source="Source: NHS England — Right to Choose guidance 2023. Health Education England — Oliver McGowan Mandatory Training 2026."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

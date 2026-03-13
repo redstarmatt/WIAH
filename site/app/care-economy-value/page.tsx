@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Estimated value of unpaid care (£ billions), 2016–2024
 const unpaidCareValueData = [57, 60, 64, 68, 72, 74, 80, 87, 93];
@@ -51,6 +53,12 @@ const allowanceAnnotations: Annotation[] = [
   { date: new Date(2024, 0, 1), label: '2024: Earnings threshold raised to £195/week' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Carers UK', dataset: 'State of Caring Report 2024', url: 'https://www.carersuk.org/media-centre/press-releases/state-of-caring-report', date: '2024' },
+  { num: 2, name: 'DWP', dataset: "Carer's Allowance Statistics", url: 'https://www.gov.uk/government/collections/carers-allowance-statistics', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Social care statistics — Labour Force Survey', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/socialcare', date: '2024' },
+];
+
 export default function CareEconomyValuePage() {
   return (
     <>
@@ -65,8 +73,8 @@ export default function CareEconomyValuePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Carers UK estimates 10.6 million people provide unpaid care in the UK — looking after a family member, partner, or friend who is ill, elderly, disabled, or has a mental health condition. If that care were provided commercially at professional carer rates, it would cost £93 billion per year — comparable to the entire NHS England budget and representing around 4% of GDP. Carer's Allowance — the main financial support for carers providing 35 or more hours per week — is £81.90 per week, the lowest of all means-tested benefits. The earnings threshold of £151 per week (raised to £195 in the 2024 Autumn Budget) has trapped carers attempting to combine part-time work with caring, often losing the allowance entirely if they earn just above the limit. Only 900,000 carers claim Carer's Allowance from an eligible population of 10.6 million.</p>
-            <p>Women bear a disproportionate share of the burden: they are significantly more likely to reduce employment when caring responsibilities arise, contributing to gender pay gaps and pension gaps that compound across decades. An estimated 600 carers leave paid employment every day, at an ONS-estimated annual cost of £1.3 billion in lost output. Population ageing will intensify pressure on unpaid carers as the workforce gap in paid social care — already 150,000 vacancies — grows. The Carer's Leave Act 2022 gave carers the right to 5 days of unpaid leave from employment, and the NHS Long Term Plan committed to identifying carers registered with GP practices, but these are incremental steps against a structural gap between the economic value of unpaid care and the support provided to those who provide it.</p>
+            <p>Carers UK estimates 10.6 million people provide unpaid care in the UK — looking after a family member, partner, or friend who is ill, elderly, disabled, or has a mental health condition.<Cite nums={1} /> If that care were provided commercially at professional carer rates, it would cost £93 billion per year — comparable to the entire NHS England budget and representing around 4% of GDP.<Cite nums={1} /> Carer's Allowance — the main financial support for carers providing 35 or more hours per week — is £81.90 per week, the lowest of all means-tested benefits.<Cite nums={2} /> The earnings threshold of £151 per week (raised to £195 in the 2024 Autumn Budget) has trapped carers attempting to combine part-time work with caring, often losing the allowance entirely if they earn just above the limit.<Cite nums={2} /> Only 900,000 carers claim Carer's Allowance from an eligible population of 10.6 million.<Cite nums={2} /></p>
+            <p>Women bear a disproportionate share of the burden: they are significantly more likely to reduce employment when caring responsibilities arise, contributing to gender pay gaps and pension gaps that compound across decades.<Cite nums={1} /> An estimated 600 carers leave paid employment every day, at an ONS-estimated annual cost of £1.3 billion in lost output.<Cite nums={3} /> Population ageing will intensify pressure on unpaid carers as the workforce gap in paid social care — already 150,000 vacancies — grows. The Carer's Leave Act 2022 gave carers the right to 5 days of unpaid leave from employment, and the NHS Long Term Plan committed to identifying carers registered with GP practices, but these are incremental steps against a structural gap between the economic value of unpaid care and the support provided to those who provide it.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -145,6 +153,10 @@ export default function CareEconomyValuePage() {
             source="Source: Carers UK — Carer's Leave Act impact survey 2024. DWP — Carer's Allowance earnings threshold reform 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

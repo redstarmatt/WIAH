@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Average 2-year and 5-year fixed mortgage rates %, 2015–2025 (Bank of England)
 const twoYearFixed = [2.8, 2.5, 2.3, 2.3, 2.1, 2.3, 2.2, 4.2, 5.8, 6.8, 5.5];
@@ -59,6 +61,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2023, 5, 1), label: '2023: Payments +61% vs 2021' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Bank of England', dataset: 'Mortgage Lenders and Administrators Statistics', url: 'https://www.bankofengland.co.uk/statistics/mortgage-lenders-and-administrators', date: '2025' },
+  { num: 2, name: 'UK Finance', dataset: 'Mortgage Market Tracker', url: 'https://www.ukfinance.org.uk/data-and-research/data/mortgages', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2024', date: '2024' },
+];
+
 export default function CostOfBorrowingPage() {
   return (
     <>
@@ -73,8 +81,8 @@ export default function CostOfBorrowingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Bank of England raised its base rate 14 consecutive times between December 2021 and August 2023, taking it from a record low of 0.1% to a 15-year high of 5.25%. For households on fixed-rate mortgages that came up for renewal during this period, the impact was severe. Around 1.8 million households remortgaged in 2023–24, moving from average rates of around 2.3% to rates above 5%, adding an average of £580 per month to their mortgage payments. Average mortgage payments for new borrowers rose from £947 per month in 2021 to £1,527 in 2024 — a 61% increase in three years. For first-time buyers, who typically borrow at higher loan-to-value ratios and face higher rates, the affordability hit was even more severe.</p>
-            <p>Not everyone was affected equally. Households that locked into 5-year fixes before 2022 were insulated through to 2027. Owner-occupiers with significant equity paid lower rates than those with small deposits. Renters faced a different but parallel squeeze: landlords passing on higher mortgage costs pushed average rents up 8–10% per year in 2022–24. The Bank of England began cutting rates in August 2024, reducing the base rate to 4.5% by February 2025. Mortgage rates have begun to fall, but remain well above pre-pandemic levels, and millions of households still face their first remortgage at materially higher rates in 2025–26.</p>
+            <p>The Bank of England raised its base rate 14 consecutive times between December 2021 and August 2023, taking it from a record low of 0.1% to a 15-year high of 5.25%.<Cite nums={1} /> Around 1.8 million households remortgaged in 2023–24, moving from average rates of around 2.3% to rates above 5%, adding an average of £580 per month to their mortgage payments.<Cite nums={2} /> Average mortgage payments for new borrowers rose from £947 per month in 2021 to £1,527 in 2024 — a 61% increase in three years.<Cite nums={1} /></p>
+            <p>Not everyone was affected equally. Households that locked into 5-year fixes before 2022 were insulated through to 2027. Owner-occupiers with significant equity paid lower rates than those with small deposits.<Cite nums={1} /> Renters faced a different but parallel squeeze: landlords passing on higher mortgage costs pushed average rents up 8–10% per year in 2022–24.<Cite nums={3} /> The Bank of England began cutting rates in August 2024, reducing the base rate to 4.5% by February 2025.<Cite nums={1} /> Mortgage rates have begun to fall, but remain well above pre-pandemic levels, and millions of households still face their first remortgage at materially higher rates in 2025–26.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -153,6 +161,9 @@ export default function CostOfBorrowingPage() {
             source="Source: Bank of England — Monetary Policy Summary, February 2025. FCA — Mortgage Charter implementation update, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

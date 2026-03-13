@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Adoption orders granted, England, 2010–2024 — DfE SSDA903
 const adoptionOrdersValues = [3200, 3450, 3900, 4800, 5360, 5100, 4690, 4350, 4020, 3680, 3210, 2980, 2900, 2920, 2950];
@@ -49,6 +51,11 @@ const annotations: Annotation[] = [
   { date: new Date(2021, 0, 1), label: '2021: Regional Adoption Agencies fully operational' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'SSDA903 Children Looked After in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2024' },
+  { num: 2, name: 'Adoption & Special Guardianship Leadership Board', dataset: 'Annual Report — Adopter Recruitment and Matching', url: 'https://www.gov.uk/government/collections/adoption-data-and-reports', date: '2024' },
+];
+
 export default function AdoptionPage() {
   return (
     <>
@@ -63,8 +70,8 @@ export default function AdoptionPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The story of adoption in England is fundamentally shaped by a single court ruling. In September 2013, the Court of Appeal handed down Re B-S (Children), which required courts to consider adoption only when "nothing else will do" and to carry out a proper analysis of all realistic options for a child's future. The ruling was a necessary corrective, but its effect on the system was seismic. Local authorities became markedly more cautious about applying for placement orders. The number granted fell from over 6,200 in 2013/14 to under 3,300 by 2017/18. By 2024, annual adoption orders had dropped to 2,950 — less than half the 2015 peak of 5,360.</p>
-            <p>The adopter pipeline has contracted in parallel. The number of approved adopters fell from over 4,400 in 2014 to around 2,340 in 2024, while the number of children with a placement order waiting for a match has risen past 3,300. The hardest-to-place children wait longest: sibling groups of three or more, children over five, those with foetal alcohol spectrum disorder or attachment trauma, and children from minority ethnic backgrounds. Special guardianship orders have grown significantly as an alternative permanence route, rising from around 2,000 per year in 2010 to over 4,500 by 2024, often with far less post-order support. The Adoption Support Fund, introduced in 2015, has provided therapeutic interventions for over 50,000 adopted children, but faces annual funding uncertainty that makes long-term planning difficult.</p>
+            <p>The story of adoption in England is fundamentally shaped by a single court ruling. In September 2013, the Court of Appeal handed down Re B-S (Children), which required courts to consider adoption only when "nothing else will do" and to carry out a proper analysis of all realistic options for a child's future. The ruling was a necessary corrective, but its effect on the system was seismic. Local authorities became markedly more cautious about applying for placement orders. The number granted fell from over 6,200 in 2013/14 to under 3,300 by 2017/18.<Cite nums={1} /> By 2024, annual adoption orders had dropped to 2,950 — less than half the 2015 peak of 5,360.<Cite nums={1} /></p>
+            <p>The adopter pipeline has contracted in parallel. The number of approved adopters fell from over 4,400 in 2014 to around 2,340 in 2024, while the number of children with a placement order waiting for a match has risen past 3,300.<Cite nums={2} /> The hardest-to-place children wait longest: sibling groups of three or more, children over five, those with foetal alcohol spectrum disorder or attachment trauma, and children from minority ethnic backgrounds.<Cite nums={1} /> Special guardianship orders have grown significantly as an alternative permanence route, rising from around 2,000 per year in 2010 to over 4,500 by 2024, often with far less post-order support.<Cite nums={1} /> The Adoption Support Fund, introduced in 2015, has provided therapeutic interventions for over 50,000 adopted children, but faces annual funding uncertainty that makes long-term planning difficult.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +150,9 @@ export default function AdoptionPage() {
             source="Source: DfE — Regional Adoption Agency Programme Evaluation 2023. Adoption Support Fund Annual Report, CoramBAAF."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

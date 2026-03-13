@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Children in care (thousands) and annual entrants to care, 2015–2024
 const childrenInCareData = [69.5, 70.4, 72.7, 75.4, 78.1, 80.0, 82.2, 83.8, 83.0, 84.5];
@@ -57,6 +59,12 @@ const neetAnnotations: Annotation[] = [
   { date: new Date(2023, 5, 1), label: '2023: Staying Close support extended to 25' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Education', dataset: 'Children Looked After in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2024' },
+  { num: 2, name: 'Department for Education', dataset: 'Care Leavers in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/care-leavers-in-england', date: '2024' },
+  { num: 3, name: 'DHSC', dataset: 'Independent Review of Children\'s Social Care (MacAlister Review)', url: 'https://www.gov.uk/government/publications/independent-review-of-childrens-social-care-final-report', date: '2022' },
+];
+
 export default function CareLeaversPage() {
   return (
     <>
@@ -71,8 +79,8 @@ export default function CareLeaversPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England had 84,500 children in local authority care in 2024 — a record high and an 18% increase since 2015 — reflecting rising rates of domestic abuse, parental substance misuse, and mental health crises, alongside a family support system that has been cut by nearly 50% in real terms since 2010. Around 13,900 young people leave care each year, transitioning abruptly at age 18 from a supported environment into independent living. The outcomes for care leavers are among the starkest in social policy: 37% are not in education, employment, or training (NEET) at age 17–21, compared to 11% of all young people. Around 25% experience homelessness within two years of leaving care. Only 13% go to university, compared to 43% of their peers.</p>
-            <p>The 2022 Independent Review of Children's Social Care — led by Josh MacAlister — found that the system is under severe strain at every stage: not enough family support to prevent children entering care, insufficient foster carers and residential placements causing children to be placed far from home, and an inadequate transition to adulthood. Local authorities are legally required to provide leaving care support until age 25, but the quality and intensity of support varies dramatically. The Staying Close programme — which provides floating support for care leavers moving into independent accommodation — has been extended, and the government has committed to a "care experience" protected characteristic under the Equality Act to address discrimination in employment and housing that care leavers frequently face.</p>
+            <p>England had 84,500 children in local authority care in 2024 — a record high and an 18% increase since 2015 — reflecting rising rates of domestic abuse, parental substance misuse, and mental health crises, alongside a family support system that has been cut by nearly 50% in real terms since 2010.<Cite nums={1} /> Around 13,900 young people leave care each year, transitioning abruptly at age 18 from a supported environment into independent living.<Cite nums={1} /> The outcomes for care leavers are among the starkest in social policy: 37% are not in education, employment, or training (NEET) at age 17–21, compared to 11% of all young people.<Cite nums={2} /> Around 25% experience homelessness within two years of leaving care. Only 13% go to university, compared to 43% of their peers.<Cite nums={2} /></p>
+            <p>The 2022 Independent Review of Children's Social Care — led by Josh MacAlister — found that the system is under severe strain at every stage: not enough family support to prevent children entering care, insufficient foster carers and residential placements causing children to be placed far from home, and an inadequate transition to adulthood.<Cite nums={3} /> Local authorities are legally required to provide leaving care support until age 25, but the quality and intensity of support varies dramatically.<Cite nums={2} /> The Staying Close programme — which provides floating support for care leavers moving into independent accommodation — has been extended, and the government has committed to a "care experience" protected characteristic under the Equality Act to address discrimination in employment and housing that care leavers frequently face.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,10 @@ export default function CareLeaversPage() {
             source="Source: DfE — Care Leavers in England 2024. UCAS — Undergraduate widening participation data 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

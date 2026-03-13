@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Government active travel spend £m, 2015–2024 — DfT Walking and Cycling Statistics
 const investmentValues = [148, 162, 175, 210, 541, 310, 238, 205, 198, 202];
@@ -48,6 +50,13 @@ const annotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Active Travel England established' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Transport', dataset: 'Walking and Cycling Statistics', url: 'https://www.gov.uk/government/collections/walking-and-cycling-statistics', date: '2024' },
+  { num: 2, name: 'Department for Transport', dataset: 'Reported Road Casualties Great Britain (STATS19)', url: 'https://www.gov.uk/government/collections/road-accidents-and-safety-statistics', date: '2024' },
+  { num: 3, name: 'Department for Transport', dataset: 'National Travel Survey', url: 'https://www.gov.uk/government/collections/national-travel-survey-statistics', date: '2024' },
+  { num: 4, name: 'Active Travel England', dataset: 'Annual Report 2023/24', date: '2024' },
+];
+
 export default function ActiveTravelInvestmentPage() {
   return (
     <>
@@ -62,8 +71,8 @@ export default function ActiveTravelInvestmentPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In July 2020, the UK government published Gear Change, its bold vision for cycling and walking. The ambition was transformative: half of all journeys in towns and cities to be walked or cycled by 2030, protected cycle lanes on every main road in city centres, and a new inspectorate — Active Travel England — to ensure local authorities built infrastructure to proper standards. The document explicitly cited the Netherlands and Denmark, where per-capita spending on cycling infrastructure runs at roughly ten times UK levels. The promise was to close that gap. Four years on, the gap has barely narrowed. At around £200m per year, total government spending amounts to roughly £3.50 per person — compared to £30–36 per person in the Netherlands.</p>
-            <p>Cyclist safety remains a critical concern. While the number of cyclists killed on British roads has fallen from around 100 per year in the mid-2010s to 76 in 2024, serious injuries remain elevated, driven by increased cycling volumes on roads that remain fundamentally designed for motor vehicles. Protected cycle lanes, the proven solution, cover fewer than 200 km nationally. E-bike sales are the brightest spot, growing roughly 30% year-on-year since 2020 and extending the practical range and demographic reach of cycling — but without safe infrastructure, new riders face the same hostile road environment. Walking trips have quietly declined: the National Travel Survey shows a sustained drop from 252 stages per person per year in 2015 to 224 in 2024.</p>
+            <p>In July 2020, the UK government published Gear Change, its bold vision for cycling and walking. The ambition was transformative: half of all journeys in towns and cities to be walked or cycled by 2030, protected cycle lanes on every main road in city centres, and a new inspectorate — Active Travel England — to ensure local authorities built infrastructure to proper standards. The document explicitly cited the Netherlands and Denmark, where per-capita spending on cycling infrastructure runs at roughly ten times UK levels. The promise was to close that gap. Four years on, the gap has barely narrowed. At around £200m per year, total government spending amounts to roughly £3.50 per person — compared to £30–36 per person in the Netherlands.<Cite nums={1} /></p>
+            <p>Cyclist safety remains a critical concern. While the number of cyclists killed on British roads has fallen from around 100 per year in the mid-2010s to 76 in 2024, serious injuries remain elevated, driven by increased cycling volumes on roads that remain fundamentally designed for motor vehicles.<Cite nums={2} /> Protected cycle lanes, the proven solution, cover fewer than 200 km nationally.<Cite nums={4} /> E-bike sales are the brightest spot, growing roughly 30% year-on-year since 2020 and extending the practical range and demographic reach of cycling — but without safe infrastructure, new riders face the same hostile road environment. Walking trips have quietly declined: the National Travel Survey shows a sustained drop from 252 stages per person per year in 2015 to 224 in 2024.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +151,9 @@ export default function ActiveTravelInvestmentPage() {
             source="Source: Active Travel England — Annual Report 2023/24. Bicycle Association — UK E-Bike Market Data 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

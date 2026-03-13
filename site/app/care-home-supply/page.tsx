@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Total care home beds (thousands) and annual closures, 2015–2024
 const totalBedsData = [452, 448, 443, 438, 432, 425, 420, 415, 412, 436];
@@ -57,6 +59,12 @@ const feeAnnotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: CMA finds 33% average underfunding gap' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'CQC', dataset: 'State of Care Annual Report', url: 'https://www.cqc.org.uk/publications/major-report/state-care', date: '2024' },
+  { num: 2, name: 'LaingBuisson', dataset: 'Care Homes for Older People UK Market Report', url: 'https://www.laingbuisson.com/', date: '2024' },
+  { num: 3, name: 'CMA', dataset: 'Care Homes Market Study', url: 'https://www.gov.uk/cma-cases/care-homes-market-study', date: '2023' },
+];
+
 export default function CareHomeSupplyPage() {
   return (
     <>
@@ -71,8 +79,8 @@ export default function CareHomeSupplyPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England had approximately 436,000 care home beds in 2024, down from 452,000 in 2015 — a net loss of over 15,000 places despite rising demand. Annual closures have run at 400–540 homes per year throughout the decade, driven by a structural funding gap between what local authorities pay for care and what care actually costs to provide. The CMA estimated in 2023 that local authority commissioning rates are on average 33% below the cost of providing adequate care, meaning homes serving high proportions of state-funded residents operate at a systematic loss, cross-subsidised — where possible — by self-funders who pay full market rates. Homes that cannot sustain this cross-subsidy close or reduce capacity.</p>
-            <p>The concentration of ownership in the sector creates systemic risk. Following the near-collapse of Four Seasons Healthcare in 2017 and the collapse of Southern Cross in 2011, large provider failure now represents a risk to thousands of residents simultaneously. Bed capacity is not evenly distributed: rural and deprived areas — where self-funder demand is lowest — are the hardest hit by closures. The Care Quality Commission estimates that an additional 70,000 beds will be required by 2035 to meet projected demand from an ageing population. Against a backdrop of continued closures, the development pipeline falls far short of this figure. Without a sustainable funding settlement that closes the fee gap, supply will continue to contract as demand grows.</p>
+            <p>England had approximately 436,000 care home beds in 2024, down from 452,000 in 2015 — a net loss of over 15,000 places despite rising demand.<Cite nums={1} /> Annual closures have run at 400–540 homes per year throughout the decade, driven by a structural funding gap between what local authorities pay for care and what care actually costs to provide.<Cite nums={[1, 2]} /> The CMA estimated in 2023 that local authority commissioning rates are on average 33% below the cost of providing adequate care, meaning homes serving high proportions of state-funded residents operate at a systematic loss, cross-subsidised — where possible — by self-funders who pay full market rates.<Cite nums={3} /> Homes that cannot sustain this cross-subsidy close or reduce capacity.</p>
+            <p>The concentration of ownership in the sector creates systemic risk. Following the near-collapse of Four Seasons Healthcare in 2017 and the collapse of Southern Cross in 2011, large provider failure now represents a risk to thousands of residents simultaneously.<Cite nums={2} /> Bed capacity is not evenly distributed: rural and deprived areas — where self-funder demand is lowest — are the hardest hit by closures.<Cite nums={1} /> The Care Quality Commission estimates that an additional 70,000 beds will be required by 2035 to meet projected demand from an ageing population.<Cite nums={1} /> Against a backdrop of continued closures, the development pipeline falls far short of this figure. Without a sustainable funding settlement that closes the fee gap, supply will continue to contract as demand grows.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,10 @@ export default function CareHomeSupplyPage() {
             source="Source: DHSC — People at the Heart of Care White Paper 2021. Local Government Association — Housing with Care analysis 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Audiology waiting list (thousands), 2015–2025 — NHS England RTT
 const waitingListValues = [420, 480, 550, 620, 690, 760, 540, 980, 1340, 1520, 1600];
@@ -47,6 +49,13 @@ const annotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID suspends routine audiology referrals' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Referral to Treatment Waiting Times — Audiology', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/referral-to-treatment-waiting-times/', date: 'Feb 2025' },
+  { num: 2, name: 'RNID', dataset: 'Hearing Matters Report', url: 'https://rnid.org.uk/about-us/research-and-policy/hearing-loss-statistics/', date: '2025' },
+  { num: 3, name: 'The Lancet', dataset: 'Commission on Dementia Prevention, Intervention, and Care', url: 'https://www.thelancet.com/commissions/dementia', date: '2020' },
+  { num: 4, name: 'NHS England', dataset: 'Newborn Hearing Screening Programme Annual Report', date: '2024/25' },
+];
+
 export default function AudiologyWaitsPage() {
   return (
     <>
@@ -61,8 +70,8 @@ export default function AudiologyWaitsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Hearing is one of those things most people do not think about until it fails. But 12 million people in England now live with some degree of hearing loss, and for the 1.6 million stuck on NHS audiology waiting lists, the consequences are not abstract. Untreated hearing loss is linked to social isolation, depression, cognitive decline, and a significantly elevated risk of dementia. The Lancet Commission on Dementia identified hearing loss as the single largest modifiable risk factor for the disease, accounting for more attributable cases than smoking, physical inactivity, or hypertension. Yet audiology remains one of the most under-resourced specialties in the NHS, with waits that would be considered scandalous in almost any other clinical area. In 2015, the average wait from GP referral to first audiology appointment was 8.2 weeks. By 2025 that figure has reached 32 weeks — nearly quadrupling in a decade.</p>
-            <p>COVID accelerated an existing trajectory rather than creating it: routine referrals were suspended in early 2020, and the backlog that built up during the pandemic was layered on top of a system already struggling with chronic underinvestment in audiology workforce and equipment. The old six-week access standard, once the benchmark for diagnostic audiology, has not been formally revoked but is met by almost no trust in England. The South West has average waits of 42 weeks; even London — the best-performing region — averages 26 weeks, which would have been considered a crisis a decade ago. There is one genuinely positive story: the Newborn Hearing Screening Programme, which screens babies within weeks of birth for congenital hearing loss, has maintained coverage above 98%. Early identification transforms outcomes — but the contrast is telling: the system that finds hearing problems works well; the system that is supposed to treat them does not.</p>
+            <p>Hearing is one of those things most people do not think about until it fails. But 12 million people in England now live with some degree of hearing loss, and for the 1.6 million stuck on NHS audiology waiting lists, the consequences are not abstract.<Cite nums={[1, 2]} /> Untreated hearing loss is linked to social isolation, depression, cognitive decline, and a significantly elevated risk of dementia. The Lancet Commission on Dementia identified hearing loss as the single largest modifiable risk factor for the disease, accounting for more attributable cases than smoking, physical inactivity, or hypertension.<Cite nums={3} /> Yet audiology remains one of the most under-resourced specialties in the NHS, with waits that would be considered scandalous in almost any other clinical area. In 2015, the average wait from GP referral to first audiology appointment was 8.2 weeks. By 2025 that figure has reached 32 weeks — nearly quadrupling in a decade.<Cite nums={1} /></p>
+            <p>COVID accelerated an existing trajectory rather than creating it: routine referrals were suspended in early 2020, and the backlog that built up during the pandemic was layered on top of a system already struggling with chronic underinvestment in audiology workforce and equipment.<Cite nums={1} /> The old six-week access standard, once the benchmark for diagnostic audiology, has not been formally revoked but is met by almost no trust in England. The South West has average waits of 42 weeks; even London — the best-performing region — averages 26 weeks, which would have been considered a crisis a decade ago.<Cite nums={1} /> There is one genuinely positive story: the Newborn Hearing Screening Programme, which screens babies within weeks of birth for congenital hearing loss, has maintained coverage above 98%.<Cite nums={4} /> Early identification transforms outcomes — but the contrast is telling: the system that finds hearing problems works well; the system that is supposed to treat them does not.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -141,6 +150,9 @@ export default function AudiologyWaitsPage() {
             source="Source: NHS England — Newborn Hearing Screening Programme Annual Report 2024/25. RNID — Hearing Matters 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

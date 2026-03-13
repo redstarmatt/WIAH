@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // CMS cases (thousands) and accumulated arrears (£ millions), 2015–2024
 const cmsCasesData = [620, 680, 740, 800, 860, 900, 930, 960, 975, 990];
@@ -57,6 +59,12 @@ const complianceAnnotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: Domestic abuse victims given fee exemption' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Child Maintenance Service Statistics', url: 'https://www.gov.uk/government/collections/child-maintenance-service-statistics', date: '2024' },
+  { num: 2, name: 'Gingerbread', dataset: 'Child Maintenance Policy Analysis', url: 'https://www.gingerbread.org.uk/policy-campaigns/', date: '2026' },
+  { num: 3, name: 'House of Commons Work and Pensions Committee', dataset: 'Child Maintenance Reports', url: 'https://committees.parliament.uk/committee/164/work-and-pensions-committee/', date: '2026' },
+];
+
 export default function ChildMaintenanceEnforcementPage() {
   return (
     <>
@@ -71,8 +79,8 @@ export default function ChildMaintenanceEnforcementPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Child Maintenance Service managed 990,000 cases in 2024 — up from 620,000 in 2015, reflecting rising demand and the migration from the old Child Support Agency. Around 31% of paying parents are non-compliant: behind on payments, underpaying, or not paying at all. This proportion has barely moved in eight years. The result is £410 million in accumulated arrears, up 71% since 2015. The fees structure introduced in 2014 — where receiving parents pay 4% of maintenance collected and paying parents pay 20% on top of their assessment on the Collect and Pay service — has been widely criticised as a further disincentive for families already failed by private arrangements, and has been shown to deter victims of domestic abuse from seeking enforcement.</p>
-            <p>Lone-parent families — more than 90% headed by women — are the family type most likely to be in poverty, and reliable maintenance payments can materially affect nutrition, housing stability, and educational outcomes for children. Enforcement powers including earnings deductions, bank account deductions, curfew orders, and driving disqualification are deployed inconsistently and slowly, while self-employed paying parents can structure income to minimise assessable earnings. The 2022 power to deduct directly from bank accounts was a meaningful improvement, but requires court authorisation in most cases, limiting its use. A system non-compliant in nearly a third of cases, with over £400 million in outstanding arrears, and fees charged to the very parents seeking enforcement, remains structurally misaligned with the children it exists to protect.</p>
+            <p>The Child Maintenance Service managed 990,000 cases in 2024 — up from 620,000 in 2015, reflecting rising demand and the migration from the old Child Support Agency.<Cite nums={1} /> Around 31% of paying parents are non-compliant: behind on payments, underpaying, or not paying at all.<Cite nums={1} /> This proportion has barely moved in eight years. The result is £410 million in accumulated arrears, up 71% since 2015.<Cite nums={1} /> The fees structure introduced in 2014 — where receiving parents pay 4% of maintenance collected and paying parents pay 20% on top of their assessment on the Collect and Pay service — has been widely criticised as a further disincentive for families already failed by private arrangements, and has been shown to deter victims of domestic abuse from seeking enforcement.<Cite nums={[2, 3]} /></p>
+            <p>Lone-parent families — more than 90% headed by women — are the family type most likely to be in poverty, and reliable maintenance payments can materially affect nutrition, housing stability, and educational outcomes for children.<Cite nums={2} /> Enforcement powers including earnings deductions, bank account deductions, curfew orders, and driving disqualification are deployed inconsistently and slowly, while self-employed paying parents can structure income to minimise assessable earnings.<Cite nums={3} /> The 2022 power to deduct directly from bank accounts was a meaningful improvement, but requires court authorisation in most cases, limiting its use.<Cite nums={1} /> A system non-compliant in nearly a third of cases, with over £400 million in outstanding arrears, and fees charged to the very parents seeking enforcement, remains structurally misaligned with the children it exists to protect.<Cite nums={[1, 3]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,9 @@ export default function ChildMaintenanceEnforcementPage() {
             source="Source: DWP — CMS domestic abuse fee exemption 2023. Work and Pensions Committee — Child maintenance enforcement 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

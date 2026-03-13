@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Civil court fee income £M, 2015–2024 (HMCTS)
 const feeIncomeValues = [520, 570, 610, 650, 690, 700, 640, 680, 730, 780];
@@ -51,6 +53,12 @@ const annotations1: Annotation[] = [
 const annotations2: Annotation[] = [
   { date: new Date(2013, 5, 1), label: '2013: Fee increases — claims begin falling' },
   { date: new Date(2020, 5, 1), label: '2020: COVID-19 court closures' },
+];
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HMCTS', dataset: 'Annual Report and Accounts', url: 'https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service', date: '2024' },
+  { num: 2, name: 'HMCTS', dataset: 'Court Statistics Quarterly', url: 'https://www.gov.uk/government/collections/court-statistics-quarterly', date: '2024' },
+  { num: 3, name: 'Supreme Court', dataset: 'R (UNISON) v Lord Chancellor [2017] UKSC 51', date: '2017' },
 ];
 
 export default function CourtFeesAccessPage() {

@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'Children Looked After in England including Adoptions', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'Section 251 Outturn Data — local authority children\'s services expenditure', date: '2023' },
+  { num: 3, name: 'Independent Review of Children\'s Social Care', dataset: 'Final Report', date: '2022' },
+];
 
 export default function ChildrenInCarePage() {
   // Chart 1: Children looked after in England 2010-2024 (thousands)
@@ -149,13 +157,16 @@ export default function ChildrenInCarePage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on children in care</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The number of children in care in England has risen almost every year since 2010, reaching a record 83,840 in 2024. The growth is not evenly distributed: the North East has care rates of around 170 per 10,000 children — nearly triple the 63 per 10,000 in the South East. Some of this variation reflects genuine difference in need, but much reflects resource and workforce disparity between councils. Local authorities spent £12.1 billion on children&rsquo;s social care in 2023, up from £7.2 billion in 2010, with residential care now averaging over £6,000 per week per child.</p>
-              <p>Neglect is consistently the largest single driver of care entry, accounting for roughly 40% of cases, followed by abuse and family dysfunction. These categories are not isolated from material conditions: poverty, domestic abuse, parental mental illness, and substance misuse — all made worse by the cost-of-living crisis — run through the majority of referrals. The 2022 Independent Review of Children&rsquo;s Social Care called for a fundamental shift toward family support and prevention, but funding for early help services was cut sharply in the 2010s and has not recovered.</p>
-              <p>For the approximately 13,000 young people leaving care each year at 18, outcomes are stark: one-quarter experience homelessness within two years of leaving, around half are not in education, employment or training, and care leavers are significantly over-represented in the prison population. The system is expensive, growing, and producing poor outcomes at its exit point — three compounding failures that the current trajectory of residential care privatisation is unlikely to solve.</p>
+              <p>The number of children in care in England has risen almost every year since 2010, reaching a record 83,840 in 2024.<Cite nums={1} /> The growth is not evenly distributed: the North East has care rates of around 170 per 10,000 children — nearly triple the 63 per 10,000 in the South East.<Cite nums={1} /> Some of this variation reflects genuine difference in need, but much reflects resource and workforce disparity between councils. Local authorities spent £12.1 billion on children&rsquo;s social care in 2023, up from £7.2 billion in 2010, with residential care now averaging over £6,000 per week per child.<Cite nums={2} /></p>
+              <p>Neglect is consistently the largest single driver of care entry, accounting for roughly 40% of cases, followed by abuse and family dysfunction.<Cite nums={1} /> These categories are not isolated from material conditions: poverty, domestic abuse, parental mental illness, and substance misuse — all made worse by the cost-of-living crisis — run through the majority of referrals. The 2022 Independent Review of Children&rsquo;s Social Care called for a fundamental shift toward family support and prevention, but funding for early help services was cut sharply in the 2010s and has not recovered.<Cite nums={3} /></p>
+              <p>For the approximately 13,000 young people leaving care each year at 18, outcomes are stark: one-quarter experience homelessness within two years of leaving, around half are not in education, employment or training, and care leavers are significantly over-represented in the prison population.<Cite nums={1} /> The system is expensive, growing, and producing poor outcomes at its exit point — three compounding failures that the current trajectory of residential care privatisation is unlikely to solve.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

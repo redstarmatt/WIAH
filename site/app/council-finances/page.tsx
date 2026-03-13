@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Government grant real-terms index (2010=100), 2010–2024
 const grantIndexValues = [100, 92, 83, 76, 73, 68, 65, 63, 62, 63, 63, 63, 63, 63, 63];
@@ -55,6 +57,13 @@ const annotations2: Annotation[] = [
   { date: new Date(2022, 3, 1), label: '2022: Residential care cost spike' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Local Authority Revenue Expenditure and Financing', url: 'https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing', date: '2024' },
+  { num: 2, name: 'Local Government Association', dataset: 'Funding Gap Analysis', url: 'https://www.local.gov.uk/topics/finance/local-government-finance-and-spending', date: '2024' },
+  { num: 3, name: 'National Audit Office', dataset: 'Financial Sustainability of Local Authorities', url: 'https://www.nao.org.uk/reports/financial-sustainability-of-local-authorities-2018/', date: '2024' },
+  { num: 4, name: 'CIPFA', dataset: 'Financial Resilience Index', url: 'https://www.cipfa.org/services/financial-resilience-index', date: '2024' },
+];
+
 export default function CouncilFinancesPage() {
   return (
     <>
@@ -69,8 +78,8 @@ export default function CouncilFinancesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>English councils have lost £14 billion a year in government grant since 2010 — a 37% real-terms reduction from £39 billion to £25 billion. The consequences have been acute: twelve councils have issued Section 114 notices since 2018, the statutory declaration that a council cannot balance its budget. Birmingham accumulated a £760 million deficit from an equal pay liability. Thurrock borrowed £500 million to invest in commercial property, which collapsed when interest rates rose. Woking ran up £1.2 billion in debt on town-centre regeneration. CIPFA assessed one in six English councils as at risk of financial failure.</p>
-            <p>The structural problem is the collision of rising demand with revenues constrained by statute and austerity. Adult social care now consumes 36% of council budgets, up from 29% in 2010, driven by an ageing population and rising provider costs. Children's services costs rose 20% in real terms between 2019 and 2023 as placement costs soared. Together, these two services consume around 60% of upper-tier council budgets, crowding out spending on parks, libraries, roads, and planning. Council tax has risen 54% since 2010 but cannot keep pace with demand.</p>
+            <p>English councils have lost £14 billion a year in government grant since 2010 — a 37% real-terms reduction from £39 billion to £25 billion.<Cite nums={1} /> The consequences have been acute: twelve councils have issued Section 114 notices since 2018, the statutory declaration that a council cannot balance its budget.<Cite nums={3} /> Birmingham accumulated a £760 million deficit from an equal pay liability. Thurrock borrowed £500 million to invest in commercial property, which collapsed when interest rates rose. Woking ran up £1.2 billion in debt on town-centre regeneration. CIPFA assessed one in six English councils as at risk of financial failure.<Cite nums={4} /></p>
+            <p>The structural problem is the collision of rising demand with revenues constrained by statute and austerity. Adult social care now consumes 36% of council budgets, up from 29% in 2010, driven by an ageing population and rising provider costs.<Cite nums={1} /> Children's services costs rose 20% in real terms between 2019 and 2023 as placement costs soared.<Cite nums={1} /> Together, these two services consume around 60% of upper-tier council budgets, crowding out spending on parks, libraries, roads, and planning. Council tax has risen 54% since 2010 but cannot keep pace with demand.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -149,6 +158,9 @@ export default function CouncilFinancesPage() {
             source="Source: DLUHC — Local Government Finance Settlement 2025–26. LGA — Funding gap analysis, 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

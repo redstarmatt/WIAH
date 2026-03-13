@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Estimated private landlords (millions), 2018–2025
 const landlordData = [2.66, 2.68, 2.69, 2.67, 2.64, 2.58, 2.54, 2.52];
@@ -52,6 +54,13 @@ const listingsAnnotations: Annotation[] = [
   { date: new Date(2024, 5, 1), label: "2024: Renters' Rights Bill introduced" },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NRLA', dataset: 'National Residential Landlords Association research', url: 'https://www.nrla.org.uk/research', date: 'March 2026' },
+  { num: 2, name: 'Savills', dataset: 'Private Rented Sector analysis', url: 'https://www.savills.co.uk/research_articles/229130', date: 'March 2026' },
+  { num: 3, name: 'Rightmove / Zoopla', dataset: 'Rental Market Index', url: 'https://www.rightmove.co.uk/news/articles/property-news/rental-market/', date: '2025' },
+  { num: 4, name: 'DLUHC', dataset: 'Private Rented Sector statistics', url: 'https://www.gov.uk/government/collections/private-rented-sector', date: 'March 2026' },
+];
+
 export default function BuyToLetExitPage() {
   return (
     <>
@@ -66,8 +75,8 @@ export default function BuyToLetExitPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The private rented sector has contracted sharply since 2022. The convergence of three forces — the phased removal of mortgage interest tax relief under Section 24 (complete from 2020), the sharp rise in Bank Rate from 0.1% to 5.25%, and the regulatory burden of proposed and enacted tenancy reforms — has made the economics of small-scale residential landlordism significantly less attractive. Net landlord numbers fell from a peak of 2.69 million in 2020 to an estimated 2.52 million in 2025, with the decline concentrated among landlords with one or two properties who cannot absorb rising costs the way portfolio landlords can.</p>
-            <p>The consequence for tenants has been immediate. Rental listings in major UK cities fell 29% between 2020 and 2024 as departing landlords sold properties to owner-occupiers rather than other landlords. Average asking rents rose 9.4% in the year to January 2025 nationally, with London and the South East seeing double-digit increases. The paradox is acute: regulatory changes designed to improve tenant security may, in the short term, be accelerating the supply contraction that makes renting more expensive and competitive. Build-to-rent institutional development is growing, but its scale remains far below that of exiting small landlords, and its geography is concentrated in major cities rather than the suburban and rural areas where small landlords are departing.</p>
+            <p>The private rented sector has contracted sharply since 2022. The convergence of three forces — the phased removal of mortgage interest tax relief under Section 24 (complete from 2020), the sharp rise in Bank Rate from 0.1% to 5.25%, and the regulatory burden of proposed and enacted tenancy reforms — has made the economics of small-scale residential landlordism significantly less attractive.<Cite nums={[1, 2]} /> Net landlord numbers fell from a peak of 2.69 million in 2020 to an estimated 2.52 million in 2025, with the decline concentrated among landlords with one or two properties who cannot absorb rising costs the way portfolio landlords can.<Cite nums={1} /></p>
+            <p>The consequence for tenants has been immediate. Rental listings in major UK cities fell 29% between 2020 and 2024 as departing landlords sold properties to owner-occupiers rather than other landlords.<Cite nums={3} /> Average asking rents rose 9.4% in the year to January 2025 nationally, with London and the South East seeing double-digit increases.<Cite nums={3} /> The paradox is acute: regulatory changes designed to improve tenant security may, in the short term, be accelerating the supply contraction that makes renting more expensive and competitive. Build-to-rent institutional development is growing, but its scale remains far below that of exiting small landlords, and its geography is concentrated in major cities rather than the suburban and rural areas where small landlords are departing.<Cite nums={4} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +155,9 @@ export default function BuyToLetExitPage() {
             source="Source: British Property Federation — Build to Rent census 2024; NRLA landlord confidence survey Q4 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

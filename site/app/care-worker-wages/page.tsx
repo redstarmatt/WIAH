@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Skills for Care', dataset: 'The State of the Adult Social Care Sector and Workforce in England', url: 'https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx', date: '2023' },
+  { num: 2, name: 'ADASS', dataset: 'Spring and Autumn Survey — vacancy rates and workforce pressure', date: '2023' },
+  { num: 3, name: 'Home Office', dataset: 'Immigration Statistics — Health and Care Worker visa', url: 'https://www.gov.uk/government/collections/immigration-statistics', date: '2023' },
+];
 
 export default function CareWorkerWagesPage() {
 
@@ -142,12 +150,16 @@ export default function CareWorkerWagesPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on care worker wages</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The median hourly rate for adult social care workers in England was £10.66 in 2023 — below the Real Living Wage of £12.00 and significantly below the NHS Band 2 rate of £12.45 for comparable healthcare support roles. One in four care workers earns below the Real Living Wage, and the wage gap relative to NHS equivalents is the primary structural driver of the 150,000-vacancy crisis. International recruitment through the health and care worker visa has provided short-term relief but does not solve the domestic supply problem.</p>
-              <p>The vacancy rate peaked at 10.6% in 2022 — equivalent to 165,000 unfilled posts — and has since fallen to 9.9% (152,000) as overseas recruitment ramped up. But annual staff turnover of 28.3% means the entire workforce is effectively replaced every three and a half years, which is incompatible with continuity of care — a recognised quality indicator, particularly for people with dementia.</p>
-              <p>Homecare workers are most exposed: travelling between clients on zero-hours contracts, often without pay for travel time, with the least job security in the sector. The structural cause is clear: the pay gap between independent sector social care and NHS employment means workers move to better-paid alternatives whenever they become available. Research by ADASS, the King's Fund, and Skills for Care identifies a pay floor closing the gap with NHS equivalents — estimated at £1.2 billion per year — as the single most important intervention.</p>
+              <p>The median hourly rate for adult social care workers in England was £10.66 in 2023 — below the Real Living Wage of £12.00 and significantly below the NHS Band 2 rate of £12.45 for comparable healthcare support roles.<Cite nums={1} /> One in four care workers earns below the Real Living Wage, and the wage gap relative to NHS equivalents is the primary structural driver of the 150,000-vacancy crisis.<Cite nums={1} /> International recruitment through the health and care worker visa has provided short-term relief but does not solve the domestic supply problem.<Cite nums={3} /></p>
+              <p>The vacancy rate peaked at 10.6% in 2022 — equivalent to 165,000 unfilled posts — and has since fallen to 9.9% (152,000) as overseas recruitment ramped up.<Cite nums={[1, 3]} /> But annual staff turnover of 28.3% means the entire workforce is effectively replaced every three and a half years, which is incompatible with continuity of care — a recognised quality indicator, particularly for people with dementia.<Cite nums={1} /></p>
+              <p>Homecare workers are most exposed: travelling between clients on zero-hours contracts, often without pay for travel time, with the least job security in the sector.<Cite nums={1} /> The structural cause is clear: the pay gap between independent sector social care and NHS employment means workers move to better-paid alternatives whenever they become available. Research by ADASS, the King's Fund, and Skills for Care identifies a pay floor closing the gap with NHS equivalents — estimated at £1.2 billion per year — as the single most important intervention.<Cite nums={2} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

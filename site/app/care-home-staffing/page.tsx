@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Care home vacancy rate (%) and annual turnover rate (%), 2016–2024
 const vacancyRateData = [10.2, 10.8, 11.3, 11.9, 12.4, 16.0, 17.3, 10.5, 9.8];
@@ -57,6 +59,12 @@ const recruitmentAnnotations: Annotation[] = [
   { date: new Date(2024, 0, 1), label: '2024: Dependant visa restrictions cut inflows' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Skills for Care', dataset: 'State of the Adult Social Care Sector and Workforce', url: 'https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'Immigration Statistics — Health and Care Worker visas', url: 'https://www.gov.uk/government/collections/immigration-statistics', date: '2024' },
+  { num: 3, name: 'CQC', dataset: 'State of Care Annual Report', url: 'https://www.cqc.org.uk/publications/major-report/state-care', date: '2023' },
+];
+
 export default function CareHomeStaffingPage() {
   return (
     <>
@@ -71,8 +79,8 @@ export default function CareHomeStaffingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The adult social care workforce in England — around 1.52 million jobs — is characterised by high vacancy rates, chronically high turnover, and pay that has historically lagged behind comparable sectors. As of 2024, the care home sector carries approximately 165,000 vacancies, a vacancy rate of around 9–10%. Annual staff turnover reached a pandemic peak of 32.5% in 2022 and has since edged down but remains above 28% — meaning that on average, more than one in four care workers leaves their employer each year. This instability is directly harmful to residents, for whom consistent relationships with familiar carers are fundamental to wellbeing, particularly for the 70% of care home residents with dementia.</p>
-            <p>Average hourly pay in the care sector is £11.20 — above the National Living Wage floor but below rates offered by logistics, retail, and hospitality employers competing for the same workers. In response to the vacancy crisis, the government expanded the Health and Care Worker visa pathway to include care workers in 2022, leading to a surge in international recruitment that peaked at around 101,000 visas in 2022–23. However, widespread sponsorship abuse prompted the Home Office to restrict dependant visas in 2024, sharply reducing inflows to around 70,000. The international pipeline cannot substitute for a sustainable domestic recruitment and retention strategy rooted in competitive pay and career progression.</p>
+            <p>The adult social care workforce in England — around 1.52 million jobs — is characterised by high vacancy rates, chronically high turnover, and pay that has historically lagged behind comparable sectors.<Cite nums={1} /> As of 2024, the care home sector carries approximately 165,000 vacancies, a vacancy rate of around 9–10%.<Cite nums={1} /> Annual staff turnover reached a pandemic peak of 32.5% in 2022 and has since edged down but remains above 28% — meaning that on average, more than one in four care workers leaves their employer each year.<Cite nums={1} /> This instability is directly harmful to residents, for whom consistent relationships with familiar carers are fundamental to wellbeing, particularly for the 70% of care home residents with dementia.<Cite nums={3} /></p>
+            <p>Average hourly pay in the care sector is £11.20 — above the National Living Wage floor but below rates offered by logistics, retail, and hospitality employers competing for the same workers.<Cite nums={1} /> In response to the vacancy crisis, the government expanded the Health and Care Worker visa pathway to include care workers in 2022, leading to a surge in international recruitment that peaked at around 101,000 visas in 2022–23.<Cite nums={2} /> However, widespread sponsorship abuse prompted the Home Office to restrict dependant visas in 2024, sharply reducing inflows to around 70,000.<Cite nums={2} /> The international pipeline cannot substitute for a sustainable domestic recruitment and retention strategy rooted in competitive pay and career progression.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,10 @@ export default function CareHomeStaffingPage() {
             source="Source: DHSC — Care Workforce Pathway 2023. Skills for Care — State of the Adult Social Care Sector 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

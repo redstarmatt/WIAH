@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // UK business investment as % of GDP, 2000–2025
 const investmentShareData = [10.8, 11.0, 10.7, 10.5, 10.8, 11.1, 11.4, 11.6, 11.2, 10.0, 9.6, 9.8, 10.0, 10.2, 10.3, 10.4, 10.2, 9.8, 9.7, 9.5, 8.4, 9.0, 9.6, 10.0, 10.2, 10.2];
@@ -53,6 +55,12 @@ const rdAnnotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: Full expensing boosts R&D incentives' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Business Investment — Quarterly National Accounts', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp/datasets/businessinvestment', date: '2025' },
+  { num: 2, name: 'ONS', dataset: 'Gross Domestic Expenditure on R&D', url: 'https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/researchanddevelopmentexpenditure', date: '2025' },
+  { num: 3, name: 'OECD', dataset: 'Main Science and Technology Indicators', url: 'https://www.oecd.org/sti/msti.htm', date: 'March 2026' },
+];
+
 export default function BusinessInvestmentRatePage() {
   return (
     <>
@@ -67,8 +75,8 @@ export default function BusinessInvestmentRatePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Business investment measures what the private sector spends on buildings, machinery, vehicles, software, and intellectual property. When firms invest, they create capacity for future growth. When they hold back, productivity stagnates and the economy runs on inertia. The UK has had a business investment problem for decades, but the post-2016 period made it materially worse. Between the 2016 referendum and the onset of COVID-19, business investment flatlined while comparable economies continued to grow theirs. The Office for Budget Responsibility estimated the UK lost roughly 25% of potential business investment due to Brexit-related uncertainty alone. The pandemic then caused a historic 12.5% collapse in 2020. Recovery has been real but uneven: spending on IT and intangibles bounced back quickly, while investment in structures and machinery remains subdued.</p>
-            <p>R&D spending tells a slightly more encouraging story. The UK now spends 1.83% of GDP on research and development, up from 1.56% in 2010 and approaching but still below the OECD average of 2.7%. Private sector R&D has been the main driver, concentrated in pharmaceuticals, aerospace, and technology. The full expensing capital allowance introduced in 2023 offers permanent tax incentives for plant and machinery investment — the most generous in the G7 — and early data suggests it is beginning to change investment decisions. Whether this translates into broader productivity gains depends on commercialisation: turning ideas into products, which remains a persistent UK weakness.</p>
+            <p>Business investment measures what the private sector spends on buildings, machinery, vehicles, software, and intellectual property. When firms invest, they create capacity for future growth. When they hold back, productivity stagnates and the economy runs on inertia. The UK has had a business investment problem for decades, but the post-2016 period made it materially worse. Between the 2016 referendum and the onset of COVID-19, business investment flatlined while comparable economies continued to grow theirs.<Cite nums={1} /> The Office for Budget Responsibility estimated the UK lost roughly 25% of potential business investment due to Brexit-related uncertainty alone. The pandemic then caused a historic 12.5% collapse in 2020.<Cite nums={1} /> Recovery has been real but uneven: spending on IT and intangibles bounced back quickly, while investment in structures and machinery remains subdued.</p>
+            <p>R&D spending tells a slightly more encouraging story. The UK now spends 1.83% of GDP on research and development, up from 1.56% in 2010 and approaching but still below the OECD average of 2.7%.<Cite nums={[2, 3]} /> Private sector R&D has been the main driver, concentrated in pharmaceuticals, aerospace, and technology. The full expensing capital allowance introduced in 2023 offers permanent tax incentives for plant and machinery investment — the most generous in the G7 — and early data suggests it is beginning to change investment decisions. Whether this translates into broader productivity gains depends on commercialisation: turning ideas into products, which remains a persistent UK weakness.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -147,6 +155,9 @@ export default function BusinessInvestmentRatePage() {
             source="Source: HMRC — Capital Allowances Statistics 2025. OBR — Economic and Fiscal Outlook March 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

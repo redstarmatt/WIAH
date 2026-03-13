@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // LGSCO complaints received, 2014–2024
 const complaintsValues = [18870, 19210, 19850, 20340, 20910, 21500, 17200, 22650, 25100, 27400, 27950];
@@ -52,6 +54,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: first multi-year settlement in sight' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'LGSCO', dataset: 'Annual Review of Complaints', url: 'https://www.lgo.org.uk/information-centre/reports/annual-review-reports', date: '2024' },
+  { num: 2, name: 'DLUHC', dataset: 'Local Authority Revenue Expenditure and Financing', url: 'https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing', date: '2024' },
+  { num: 3, name: 'CIPFA', dataset: 'Financial Resilience Index', url: 'https://www.cipfa.org/services/financial-resilience-index', date: '2024' },
+];
+
 export default function CouncilComplaintsPage() {
   return (
     <>
@@ -66,8 +74,8 @@ export default function CouncilComplaintsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Complaints to the Local Government and Social Care Ombudsman have surged 30% since 2019, reaching nearly 28,000 in 2024 — and the proportion the Ombudsman upholds has climbed to 67%, a sustained rise from 52% a decade ago. The most common complaint categories are housing (repairs and disrepair, where maintenance backlogs run into billions), planning (average decision time now 16 weeks against an 8-week target), adult social care, and education and SEND provision. Average council complaint response times have stretched to 28 working days, well beyond the 10–20 day target most authorities set themselves.</p>
-            <p>Behind the numbers sits a structural funding crisis: central government funding per person fell 40% in real terms between 2010 and 2024, while demand-led services — adult social care, children's services, homelessness support — have grown relentlessly. Council tax rose 5% in 2024/25, the tenth consecutive above-inflation increase, yet the additional revenue has not kept pace with spending pressures. When a council closes a library, extends pothole repair times, or fails to process a planning application within statutory timescales, the Ombudsman is where residents end up — and they are increasingly finding that their complaint is justified.</p>
+            <p>Complaints to the Local Government and Social Care Ombudsman have surged 30% since 2019, reaching nearly 28,000 in 2024 — and the proportion the Ombudsman upholds has climbed to 67%, a sustained rise from 52% a decade ago.<Cite nums={1} /> The most common complaint categories are housing (repairs and disrepair, where maintenance backlogs run into billions), planning (average decision time now 16 weeks against an 8-week target), adult social care, and education and SEND provision.<Cite nums={1} /> Average council complaint response times have stretched to 28 working days, well beyond the 10–20 day target most authorities set themselves.<Cite nums={1} /></p>
+            <p>Behind the numbers sits a structural funding crisis: central government funding per person fell 40% in real terms between 2010 and 2024, while demand-led services — adult social care, children's services, homelessness support — have grown relentlessly.<Cite nums={2} /> Council tax rose 5% in 2024/25, the tenth consecutive above-inflation increase, yet the additional revenue has not kept pace with spending pressures.<Cite nums={[2, 3]} /> When a council closes a library, extends pothole repair times, or fails to process a planning application within statutory timescales, the Ombudsman is where residents end up — and they are increasingly finding that their complaint is justified.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +154,9 @@ export default function CouncilComplaintsPage() {
             source="Source: LGSCO — Annual Review 2023/24. LGA — Digital transformation in local government, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

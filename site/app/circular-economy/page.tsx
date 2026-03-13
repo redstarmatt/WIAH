@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA', dataset: 'UK Waste Statistics', url: 'https://www.gov.uk/government/statistics/uk-waste-data', date: '2022' },
+  { num: 2, name: 'Eurostat', dataset: 'Waste Statistics — municipal waste recycling rates', url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php/Waste_statistics', date: '2021' },
+  { num: 3, name: 'WRAP', dataset: 'Extended Producer Responsibility analysis', url: 'https://wrap.ngo', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -62,8 +70,8 @@ export default function CircularEconomyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's household recycling rate peaked at around 45.7% in 2016, stalled, and stood at 43.5% in 2022 — below the EU average of 48% and far short of the 2035 target of 65%. China's 2018 National Sword policy, which banned imports of contaminated recyclate, partly explains the post-2017 drift: materials previously counted as recycled via export were no longer counted, exposing a genuine domestic processing capacity gap. The counter-narrative is landfill: driven by the Landfill Tax, the share of waste going to landfill fell from 38% in 2010 to just 6% in 2022, replaced largely by energy-from-waste incineration. The UK's Extended Producer Responsibility system, legislated in 2021 and entering phased implementation from 2024, could generate £1.7 billion per year for local authority recycling services.</p>
-            <p>England's 317 local authorities operate incompatible recycling collection systems, creating confusion that drives contamination: a resident may be able to recycle plastic film in one borough and not the neighbouring one. Simpler Recycling reforms aim to standardise this by 2026, and Deposit Return Schemes for bottles and cans are planned following Scotland's 2023 implementation. Germany achieves 66.7% through deep producer responsibility and standardised collection — a model England has the legislative tools to approach but not yet the delivery infrastructure to match.</p>
+            <p>England's household recycling rate peaked at around 45.7% in 2016, stalled, and stood at 43.5% in 2022 — below the EU average of 48% and far short of the 2035 target of 65%.<Cite nums={[1, 2]} /> China's 2018 National Sword policy, which banned imports of contaminated recyclate, partly explains the post-2017 drift: materials previously counted as recycled via export were no longer counted, exposing a genuine domestic processing capacity gap. The counter-narrative is landfill: driven by the Landfill Tax, the share of waste going to landfill fell from 38% in 2010 to just 6% in 2022, replaced largely by energy-from-waste incineration.<Cite nums={1} /> The UK's Extended Producer Responsibility system, legislated in 2021 and entering phased implementation from 2024, could generate £1.7 billion per year for local authority recycling services.<Cite nums={3} /></p>
+            <p>England's 317 local authorities operate incompatible recycling collection systems, creating confusion that drives contamination: a resident may be able to recycle plastic film in one borough and not the neighbouring one. Simpler Recycling reforms aim to standardise this by 2026, and Deposit Return Schemes for bottles and cans are planned following Scotland's 2023 implementation. Germany achieves 66.7% through deep producer responsibility and standardised collection<Cite nums={2} /> — a model England has the legislative tools to approach but not yet the delivery infrastructure to match.</p>
           </div>
         </section>
 
@@ -173,6 +181,9 @@ export default function CircularEconomyPage() {
           </p>
         </section>
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
               <RelatedTopics />
       </main>
     </>

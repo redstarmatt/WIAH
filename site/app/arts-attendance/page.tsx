@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Arts Council England', dataset: 'Taking Part / Active Lives Survey', url: 'https://www.artscouncil.org.uk/research-and-data/taking-part-survey', date: '2024' },
+  { num: 2, name: 'Arts Council England', dataset: 'Investment and funding data', url: 'https://www.artscouncil.org.uk/research-and-data/our-data', date: '2024' },
+  { num: 3, name: 'DCMS', dataset: 'Creative Industries Sector Economic Estimates', url: 'https://www.gov.uk/government/collections/dcms-sectors-economic-estimates', date: '2024' },
+];
 
 export default function ArtsAttendancePage() {
   // Arts attendance (%) — 2015–2024 (10 points), England, Taking Part / Active Lives survey
@@ -165,13 +173,16 @@ export default function ArtsAttendancePage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Arts attendance in England reached 65% before the pandemic — the highest recorded level — and collapsed to 40% in 2020 when all venues closed. The recovery has been partial: by 2024, attendance had reached 57%, still eight percentage points below pre-pandemic levels. The cost of living crisis from 2022 onwards has complicated the recovery, with ticket prices, transport costs and household budgets all acting as barriers. Real-terms arts funding per head has fallen by 32% since 2015 as Arts Council England budgets have been squeezed.</p>
-              <p>The most persistent structural feature is the class gap. Adults in higher managerial and professional occupations are consistently around 27 percentage points more likely to attend arts events than those in routine or semi-routine work. This gap did not close during the pandemic — it merely compressed temporarily when no one could attend — and has widened since 2022. Cost is a primary barrier, but research also points to cultural familiarity, proximity of venues, and representation within programmes as significant factors.</p>
-              <p>The regional funding concentration amplifies inequality. London receives around £33 per head in Arts Council investment against £5.60 in the North East. This partly reflects the genuine concentration of national portfolio organisations in the capital, but it also means that the pipeline for new talent and new audiences in less-served areas is systematically under-resourced. The Creative People and Places programme, which specifically targets areas of low cultural engagement, reaches around 600,000 people annually — significant in scale but marginal relative to the structural funding gap.</p>
+              <p>Arts attendance in England reached 65% before the pandemic — the highest recorded level — and collapsed to 40% in 2020 when all venues closed.<Cite nums={1} /> The recovery has been partial: by 2024, attendance had reached 57%, still eight percentage points below pre-pandemic levels.<Cite nums={1} /> The cost of living crisis from 2022 onwards has complicated the recovery, with ticket prices, transport costs and household budgets all acting as barriers. Real-terms arts funding per head has fallen by 32% since 2015 as Arts Council England budgets have been squeezed.<Cite nums={2} /></p>
+              <p>The most persistent structural feature is the class gap. Adults in higher managerial and professional occupations are consistently around 27 percentage points more likely to attend arts events than those in routine or semi-routine work.<Cite nums={1} /> This gap did not close during the pandemic — it merely compressed temporarily when no one could attend — and has widened since 2022.<Cite nums={1} /> Cost is a primary barrier, but research also points to cultural familiarity, proximity of venues, and representation within programmes as significant factors.</p>
+              <p>The regional funding concentration amplifies inequality. London receives around £33 per head in Arts Council investment against £5.60 in the North East.<Cite nums={2} /> This partly reflects the genuine concentration of national portfolio organisations in the capital, but it also means that the pipeline for new talent and new audiences in less-served areas is systematically under-resourced. The Creative People and Places programme, which specifically targets areas of low cultural engagement, reaches around 600,000 people annually — significant in scale but marginal relative to the structural funding gap.<Cite nums={2} /></p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

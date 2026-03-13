@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Prison deaths (total and self-inflicted), 2010–2024
 const prisonDeathValues = [198, 211, 224, 232, 248, 257, 305, 354, 324, 295, 312, 290, 278, 310, 321];
@@ -49,6 +51,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2017, 0, 1), label: '2017: IOPC methodology revised' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Safety in Custody quarterly statistics', url: 'https://www.gov.uk/government/collections/safety-in-custody-statistics', date: '2024' },
+  { num: 2, name: 'IOPC', dataset: 'Deaths during or following police contact', url: 'https://www.policeconduct.gov.uk/research-and-learning/statistics/annual-deaths-during-or-following-police-contact-statistics', date: '2024' },
+  { num: 3, name: 'Prisons and Probation Ombudsman', dataset: 'Annual Report', url: 'https://www.ppo.gov.uk/research/annual-reports/', date: '2024' },
+];
+
 export default function DeathsInCustodyPage() {
   return (
     <>
@@ -63,8 +71,8 @@ export default function DeathsInCustodyPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>When someone is held in custody — whether in a prison cell or a police station — the state has an absolute duty to keep them alive. That duty is being failed at scale. In 2024, 321 people died in prison custody in England and Wales, the second-highest annual total ever recorded, just below the 354 who died in 2016. Self-inflicted deaths accounted for 84 of those, though the true toll of despair is better measured by the self-harm figures: 69,012 recorded incidents in 2024, a 156% increase from 2010. That means roughly 190 acts of self-harm every single day across the prison estate. Deaths following police contact — recorded by the Independent Office for Police Conduct — reached 65, continuing a steady upward trend from 40 in 2010.</p>
-            <p>The drivers are structural and well documented. Prison overcrowding has pushed the population past 87,000, against a certified capacity designed for far fewer. Staff shortages mean fewer experienced officers are available to recognise vulnerability, intervene during mental health crises, or maintain the basic human contact that prevents isolation from becoming lethal. The Prisons and Probation Ombudsman has repeatedly found the same failures in fatal incident investigations: missed ACCT reviews, inadequate mental health screening on reception, and cell-sharing risk assessments that exist on paper but not in practice. The introduction of psychoactive substances, particularly synthetic cannabinoids, has created acute medical emergencies that prison healthcare is not resourced to manage.</p>
+            <p>When someone is held in custody — whether in a prison cell or a police station — the state has an absolute duty to keep them alive. That duty is being failed at scale. In 2024, 321 people died in prison custody in England and Wales, the second-highest annual total ever recorded, just below the 354 who died in 2016.<Cite nums={1} /> Self-inflicted deaths accounted for 84 of those, though the true toll of despair is better measured by the self-harm figures: 69,012 recorded incidents in 2024, a 156% increase from 2010.<Cite nums={1} /> That means roughly 190 acts of self-harm every single day across the prison estate. Deaths following police contact — recorded by the Independent Office for Police Conduct — reached 65, continuing a steady upward trend from 40 in 2010.<Cite nums={2} /></p>
+            <p>The drivers are structural and well documented. Prison overcrowding has pushed the population past 87,000, against a certified capacity designed for far fewer.<Cite nums={1} /> Staff shortages mean fewer experienced officers are available to recognise vulnerability, intervene during mental health crises, or maintain the basic human contact that prevents isolation from becoming lethal. The Prisons and Probation Ombudsman has repeatedly found the same failures in fatal incident investigations: missed ACCT reviews, inadequate mental health screening on reception, and cell-sharing risk assessments that exist on paper but not in practice.<Cite nums={3} /> The introduction of psychoactive substances, particularly synthetic cannabinoids, has created acute medical emergencies that prison healthcare is not resourced to manage.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +151,9 @@ export default function DeathsInCustodyPage() {
             source="Source: Samaritans — Listener scheme evaluation 2024. PPO — Annual Report 2023/24. MoJ — Safety in Custody Statistics."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

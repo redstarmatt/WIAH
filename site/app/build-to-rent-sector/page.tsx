@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // BTR stock (thousands of completed units), 2016–2024
 const btrStockData = [26, 34, 43, 54, 63, 73, 83, 97, 105];
@@ -49,6 +51,12 @@ const btrAnnotations: Annotation[] = [
 
 const premiumAnnotations: Annotation[] = [];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'British Property Federation', dataset: 'Build to Rent Report', url: 'https://bpf.org.uk/what-we-do/residential/build-to-rent/', date: '2024' },
+  { num: 2, name: 'Savills', dataset: 'UK Build to Rent Market Update', url: 'https://www.savills.co.uk/research_articles/229130/358001-0', date: '2024' },
+  { num: 3, name: 'DLUHC', dataset: 'Private Rented Sector Survey', url: 'https://www.gov.uk/government/collections/private-rented-sector', date: 'March 2026' },
+];
+
 export default function BuildToRentSectorPage() {
   return (
     <>
@@ -63,8 +71,8 @@ export default function BuildToRentSectorPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Build-to-rent is the fastest-growing segment of the UK housing market, expanding from around 26,000 purpose-built units in 2016 to approximately 105,000 operational units by 2024, with a further 268,000 in the development pipeline. Backed by institutional capital from pension funds and real estate investment trusts, BTR developments offer features the fragmented private rental market cannot match — professional management, longer tenancies, in-house maintenance. But analysis consistently finds rents running approximately 7% above comparable market-rate properties in the same postcode. In cities where BTR has concentrated, notably Manchester and Birmingham, institutional landlords now account for a significant share of all rental supply. The planning policy debate turns on whether BTR adds net supply or displaces mixed-tenure developments that would have included a higher proportion of affordable homes.</p>
-            <p>The distributional consequences are emerging but not yet fully understood. Evidence from the United States and Germany — where institutional rental housing has a longer history — suggests professional management standards improve, but rents in landlord-concentrated cities tend to rise faster than in comparable markets. BTR development is heavily urban and city-centre focused, meaning its supply benefits primarily reach higher-income renters while mid-market and family-sized rental supply in suburban areas remains dominated by small private landlords whose numbers are shrinking as buy-to-let becomes less financially viable. The decisions now being made on planning obligations, rent regulation, and permitted development rights will shape the character of Britain's rental market for decades.</p>
+            <p>Build-to-rent is the fastest-growing segment of the UK housing market, expanding from around 26,000 purpose-built units in 2016 to approximately 105,000 operational units by 2024, with a further 268,000 in the development pipeline.<Cite nums={1} /> Backed by institutional capital from pension funds and real estate investment trusts, BTR developments offer features the fragmented private rental market cannot match — professional management, longer tenancies, in-house maintenance. But analysis consistently finds rents running approximately 7% above comparable market-rate properties in the same postcode.<Cite nums={2} /> In cities where BTR has concentrated, notably Manchester and Birmingham, institutional landlords now account for a significant share of all rental supply.<Cite nums={1} /> The planning policy debate turns on whether BTR adds net supply or displaces mixed-tenure developments that would have included a higher proportion of affordable homes.</p>
+            <p>The distributional consequences are emerging but not yet fully understood. Evidence from the United States and Germany — where institutional rental housing has a longer history — suggests professional management standards improve, but rents in landlord-concentrated cities tend to rise faster than in comparable markets. BTR development is heavily urban and city-centre focused, meaning its supply benefits primarily reach higher-income renters while mid-market and family-sized rental supply in suburban areas remains dominated by small private landlords whose numbers are shrinking as buy-to-let becomes less financially viable.<Cite nums={3} /> The decisions now being made on planning obligations, rent regulation, and permitted development rights will shape the character of Britain's rental market for decades.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +151,9 @@ export default function BuildToRentSectorPage() {
             source="Source: British Property Federation — BTR Resident Survey 2024. Savills — UK Build to Rent Market Update 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

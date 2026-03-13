@@ -7,6 +7,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Employment by Occupation', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes', date: '2024' },
+  { num: 2, name: 'OECD', dataset: 'Automation risk classification (Arntz, Gregory & Zierahn)', url: 'https://www.oecd.org/employment/automation.htm', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Labour Market Statistics — Routine task employment', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/labourmarketstatistics', date: '2024' },
+];
 
 export default function AutomationDisplacementPage() {
   // Chart 1: Automation risk by occupation 2018–2024
@@ -157,13 +165,16 @@ export default function AutomationDisplacementPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on automation and jobs</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Around 7.4 million UK jobs — roughly 22% of the workforce — are classified as at high risk of automation according to OECD methodology. These are jobs where most tasks could, in principle, be performed by current or near-future automated systems. Transport and logistics, retail, and administrative and secretarial occupations account for the largest share. The pattern is not random: automation risk correlates strongly with lower wages, fewer qualifications required, and limited union representation.</p>
-              <p>The story of routine task employment since 2010 shows a structural shift already underway. Roughly 1.8 million jobs classified as routine — those following predictable, codifiable procedures — have disappeared from the UK economy over the past 14 years, while non-routine employment has grown by around 4.5 million. This hollowing out of middle-skill routine work is well-established in labour economics and predates the current wave of generative AI.</p>
+              <p>Around 7.4 million UK jobs — roughly 22% of the workforce — are classified as at high risk of automation according to OECD methodology.<Cite nums={[1, 2]} /> These are jobs where most tasks could, in principle, be performed by current or near-future automated systems. Transport and logistics, retail, and administrative and secretarial occupations account for the largest share.<Cite nums={2} /> The pattern is not random: automation risk correlates strongly with lower wages, fewer qualifications required, and limited union representation.</p>
+              <p>The story of routine task employment since 2010 shows a structural shift already underway. Roughly 1.8 million jobs classified as routine — those following predictable, codifiable procedures — have disappeared from the UK economy over the past 14 years, while non-routine employment has grown by around 4.5 million.<Cite nums={3} /> This hollowing out of middle-skill routine work is well-established in labour economics and predates the current wave of generative AI.</p>
               <p>The arrival of large language models and general-purpose AI tools from 2022 onwards has extended automation risk upward into cognitive and professional roles previously considered safe. Legal research, coding, financial analysis, and customer service work now sit in scope. The distributional question — who absorbs these transitions and who is left behind — remains inadequately addressed by current policy.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

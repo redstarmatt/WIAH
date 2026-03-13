@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Cases awaiting initial decision (thousands), 2015–2025 — Home Office
 const pendingCasesValues = [25, 29, 33, 37, 44, 52, 72, 95, 134, 115, 82];
@@ -56,6 +58,12 @@ const annotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: 2,500 new caseworkers recruited' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Immigration System Statistics', url: 'https://www.gov.uk/government/collections/immigration-statistics-quarterly-release', date: 'Q1 2025' },
+  { num: 2, name: 'HMCTS', dataset: 'Tribunal Statistics Quarterly', url: 'https://www.gov.uk/government/collections/tribunals-statistics', date: 'Q4 2025' },
+  { num: 3, name: 'Home Office', dataset: 'New Plan for Immigration: Progress Update', url: 'https://www.gov.uk/government/publications/new-plan-for-immigration', date: '2024' },
+];
+
 export default function AsylumBacklogPage() {
   return (
     <>
@@ -70,8 +78,8 @@ export default function AsylumBacklogPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's asylum backlog reached a record 134,000 cases in early 2023 — the product of years of underinvestment in caseworker capacity, the disruption of COVID-19 which halted decision-making for months, and a sustained increase in applications driven by conflict and displacement in Afghanistan, Syria, Eritrea, and Iran. People waiting for an asylum decision cannot work, face severe restrictions on their movement, and are housed in emergency accommodation at a cost to the taxpayer that grew to over £8 million per day at the backlog's peak. The system is structured so that the longer a decision takes, the more expensive it becomes and the harder it is for applicants to rebuild their lives regardless of the outcome.</p>
-            <p>The government's response — recruiting 2,500 additional caseworkers and running a 'turbo' clearance programme for legacy cases — delivered the highest annual decision output on record in 2024: over 100,000 initial decisions. This reduced the main backlog from 134,000 to around 82,000 by early 2025. But the appeals backlog — cases where an initial refusal has been challenged at the First-tier Tribunal — has grown to 42,000 and is the fastest-growing component of the system. Grant rates have risen significantly since 2020: roughly 70% of all asylum applicants now receive protection at initial decision or appeal, reflecting the nationality composition of arrivals. For Afghan and Syrian nationals, the grant rate exceeds 94%, meaning the system is spending significant time and money adjudicating cases where the outcome is highly predictable.</p>
+            <p>The UK's asylum backlog reached a record 134,000 cases in early 2023 — the product of years of underinvestment in caseworker capacity, the disruption of COVID-19 which halted decision-making for months, and a sustained increase in applications driven by conflict and displacement in Afghanistan, Syria, Eritrea, and Iran.<Cite nums={1} /> People waiting for an asylum decision cannot work, face severe restrictions on their movement, and are housed in emergency accommodation at a cost to the taxpayer that grew to over £8 million per day at the backlog's peak.<Cite nums={1} /> The system is structured so that the longer a decision takes, the more expensive it becomes and the harder it is for applicants to rebuild their lives regardless of the outcome.</p>
+            <p>The government's response — recruiting 2,500 additional caseworkers and running a 'turbo' clearance programme for legacy cases — delivered the highest annual decision output on record in 2024: over 100,000 initial decisions.<Cite nums={[1, 3]} /> This reduced the main backlog from 134,000 to around 82,000 by early 2025.<Cite nums={1} /> But the appeals backlog — cases where an initial refusal has been challenged at the First-tier Tribunal — has grown to 42,000 and is the fastest-growing component of the system.<Cite nums={2} /> Grant rates have risen significantly since 2020: roughly 70% of all asylum applicants now receive protection at initial decision or appeal, reflecting the nationality composition of arrivals.<Cite nums={1} /> For Afghan and Syrian nationals, the grant rate exceeds 94%, meaning the system is spending significant time and money adjudicating cases where the outcome is highly predictable.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -150,6 +158,9 @@ export default function AsylumBacklogPage() {
             source="Source: Home Office — Immigration System Statistics Q1 2025. Home Office — New Plan for Immigration: Progress Update 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

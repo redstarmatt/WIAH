@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ASB incidents (CSEW estimate, millions), 2014–2024 — ONS CSEW
 const asbIncidentsValues = [1.48, 1.35, 1.28, 1.22, 1.18, 1.15, 1.10, 1.32, 1.28, 1.22, 1.20];
@@ -48,6 +50,13 @@ const annotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: ASB Action Plan launched' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Crime Survey for England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'ASB Enforcement Statistics', date: '2024' },
+  { num: 3, name: 'HMICFRS', dataset: 'Anti-Social Behaviour Thematic Inspection', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/', date: '2023' },
+  { num: 4, name: 'Home Office', dataset: 'ASB Action Plan Progress Report', date: '2024' },
+];
+
 export default function AntiSocialBehaviourCrisisPage() {
   return (
     <>
@@ -62,8 +71,8 @@ export default function AntiSocialBehaviourCrisisPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Anti-social behaviour is the crime category that most directly shapes how people feel about where they live. The Crime Survey for England and Wales estimates around 1.2 million incidents per year, but this almost certainly understates the true scale — many victims stop reporting after repeated experiences of nothing being done. A 2023 HMICFRS inspection found that some forces were not recording up to 30% of ASB reports, and that call handlers routinely downgraded incidents to avoid generating formal records. When ASBOs were replaced by Community Protection Notices, Criminal Behaviour Orders, and other tools under the 2014 Act, the number of formal enforcement actions fell from over 26,000 to around 14,200 — a decline of 46%. England and Wales lost over 7,000 Police Community Support Officers between 2010 and 2023, and neighbourhood policing teams are routinely abstracted to cover response shifts, leaving communities without a visible local presence.</p>
-            <p>The deterioration in public spaces is visible and measurable. Fly-tipping incidents have risen to over 1 million per year. Noise complaints to local authorities have increased 30% since 2019. Councils facing their own budget pressures have cut environmental enforcement teams and closed community warden programmes. The government's ASB Action Plan, published in 2023, introduced Immediate Justice pilots requiring offenders to undertake visible community payback within 48 hours, and strengthened the Community Trigger giving victims the right to demand a formal case review after three reports. Early results from the Immediate Justice pilots are encouraging — visible community payback appears to increase satisfaction and local confidence. But the structural problem remains: without sustained investment in neighbourhood policing and local authority enforcement capacity, these tools risk being underused. The community trigger was activated only 700 times nationally in 2023/24, suggesting most victims either do not know about it or have given up.</p>
+            <p>Anti-social behaviour is the crime category that most directly shapes how people feel about where they live. The Crime Survey for England and Wales estimates around 1.2 million incidents per year, but this almost certainly understates the true scale — many victims stop reporting after repeated experiences of nothing being done.<Cite nums={1} /> A 2023 HMICFRS inspection found that some forces were not recording up to 30% of ASB reports, and that call handlers routinely downgraded incidents to avoid generating formal records.<Cite nums={3} /> When ASBOs were replaced by Community Protection Notices, Criminal Behaviour Orders, and other tools under the 2014 Act, the number of formal enforcement actions fell from over 26,000 to around 14,200 — a decline of 46%.<Cite nums={2} /> England and Wales lost over 7,000 Police Community Support Officers between 2010 and 2023, and neighbourhood policing teams are routinely abstracted to cover response shifts, leaving communities without a visible local presence.</p>
+            <p>The deterioration in public spaces is visible and measurable. Fly-tipping incidents have risen to over 1 million per year. Noise complaints to local authorities have increased 30% since 2019. The government's ASB Action Plan, published in 2023, introduced Immediate Justice pilots requiring offenders to undertake visible community payback within 48 hours, and strengthened the Community Trigger giving victims the right to demand a formal case review after three reports.<Cite nums={4} /> Early results from the Immediate Justice pilots are encouraging — visible community payback appears to increase satisfaction and local confidence.<Cite nums={4} /> But the structural problem remains: without sustained investment in neighbourhood policing and local authority enforcement capacity, these tools risk being underused. The community trigger was activated only 700 times nationally in 2023/24, suggesting most victims either do not know about it or have given up.<Cite nums={4} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +151,9 @@ export default function AntiSocialBehaviourCrisisPage() {
             source="Source: Home Office — ASB Action Plan Progress Report 2024. HMICFRS — Anti-Social Behaviour Thematic Inspection 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

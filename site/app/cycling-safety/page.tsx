@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Fatalities and serious injuries, 2015–2024
 const fatalityValues = [100, 102, 101, 99, 100, 95, 93, 91, 95, 97];
@@ -56,6 +58,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2021, 5, 1), label: '2021: Active Travel England established' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Transport', dataset: 'Reported Road Casualties Great Britain', url: 'https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023', date: '2024' },
+  { num: 2, name: 'Department for Transport', dataset: 'Road Traffic Estimates', url: 'https://www.gov.uk/government/statistics/road-traffic-estimates-in-great-britain-2023', date: '2024' },
+  { num: 3, name: 'Active Travel England', dataset: 'Infrastructure Audit and Annual Report', url: 'https://www.activetravel.gov.uk', date: '2024' },
+];
+
 export default function CyclingSafetyPage() {
   return (
     <>
@@ -70,8 +78,8 @@ export default function CyclingSafetyPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain's cycling safety statistics tell a story of stubbornly slow improvement against a backdrop of clear evidence about what works. Around 97 cyclists were killed on British roads in 2024 — a figure that has moved little in a decade despite increased cycling participation. Serious injuries have risen sharply since 2022 as cycling levels recovered post-pandemic: more cyclists on roads designed for cars means more collisions. The fatality rate per billion kilometres cycled — around 15–16 deaths — is more than six times higher than in the Netherlands, where decades of investment in physical separation have made cycling genuinely safe.</p>
-            <p>The problem is infrastructure. Less than 5% of main roads have protected cycle lanes that physically separate cyclists from motor traffic. The majority of cycle infrastructure in England consists of painted lanes, shared footways, and advisory routes that provide no protection in a collision with a vehicle. Twenty mph zones have reduced cyclist injury rates in covered areas by 20–30%, but coverage remains patchy outside major cities. Active Travel England, created in 2022, has begun requiring higher design standards for new schemes, but the pace of infrastructure improvement is far below what the evidence base — or the casualty statistics — demands.</p>
+            <p>Britain's cycling safety statistics tell a story of stubbornly slow improvement against a backdrop of clear evidence about what works. Around 97 cyclists were killed on British roads in 2024 — a figure that has moved little in a decade despite increased cycling participation.<Cite nums={1} /> Serious injuries have risen sharply since 2022 as cycling levels recovered post-pandemic: more cyclists on roads designed for cars means more collisions. The fatality rate per billion kilometres cycled — around 15–16 deaths — is more than six times higher than in the Netherlands, where decades of investment in physical separation have made cycling genuinely safe.<Cite nums={[1, 2]} /></p>
+            <p>The problem is infrastructure. Less than 5% of main roads have protected cycle lanes that physically separate cyclists from motor traffic.<Cite nums={3} /> The majority of cycle infrastructure in England consists of painted lanes, shared footways, and advisory routes that provide no protection in a collision with a vehicle. Twenty mph zones have reduced cyclist injury rates in covered areas by 20–30%, but coverage remains patchy outside major cities. Active Travel England, created in 2022, has begun requiring higher design standards for new schemes, but the pace of infrastructure improvement is far below what the evidence base — or the casualty statistics — demands.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -150,6 +158,9 @@ export default function CyclingSafetyPage() {
             source="Source: DfT — Reported Road Casualties statistics 2024. TfL — Cycling Data 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

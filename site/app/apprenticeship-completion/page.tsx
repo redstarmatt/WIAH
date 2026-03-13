@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Overall and Level 2 completion rates (%), 2015–2024 — DfE
 const overallCompletionValues = [58, 57, 54, 52, 51, 50, 53, 52, 52, 52];
@@ -54,6 +56,12 @@ const annotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID-19 disrupts delivery' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Education', dataset: 'Apprenticeships and Traineeships', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/apprenticeships-and-traineeships', date: '2024' },
+  { num: 2, name: 'Ofsted', dataset: 'Annual Report: Education, children\'s services and skills', url: 'https://www.gov.uk/government/collections/ofsted-annual-report', date: '2024' },
+  { num: 3, name: 'DfE', dataset: 'Skills England: driving growth and widening opportunities', url: 'https://www.gov.uk/government/publications/skills-england', date: '2024' },
+];
+
 export default function ApprenticeshipCompletionPage() {
   return (
     <>
@@ -68,8 +76,8 @@ export default function ApprenticeshipCompletionPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The completion rate for apprenticeships in England has remained stubbornly around 52% for the past decade — meaning roughly half of all apprenticeships begun are never finished. This is not a new problem: rates were similar in the early 2010s, and despite numerous policy interventions, no sustained improvement has been achieved. The Apprenticeship Levy, introduced in May 2017, was designed to increase employer investment and apprenticeship quality. Instead, it caused an immediate 26% fall in starts as employers, confused by the new funding system, withdrew from the market or shifted training budgets away from apprenticeships. The fall was particularly sharp at Level 2 — the entry-level qualification most relevant to young people without prior qualifications — where starts dropped by over 40% and have never recovered to pre-Levy levels.</p>
-            <p>The reasons for non-completion are well-documented. A significant proportion of leavers cite the quality of training as inadequate — particularly where employers use the Levy to fund existing employees' professional development rather than genuine apprenticeship programmes. Ofsted inspections of apprenticeship providers have consistently found issues with off-the-job training requirements not being met, with some employers delivering as little as 10% of the required 20% off-the-job training. Degree apprenticeships — Level 6 and 7 — have grown rapidly and show completion rates above 70%, attracting significant employer interest in financial services, healthcare, and law. But these higher-level programmes, funded overwhelmingly by large employers drawing on Levy accounts, have come at the cost of entry-level provision that serves those who need vocational routes most.</p>
+            <p>The completion rate for apprenticeships in England has remained stubbornly around 52% for the past decade — meaning roughly half of all apprenticeships begun are never finished.<Cite nums={1} /> This is not a new problem: rates were similar in the early 2010s, and despite numerous policy interventions, no sustained improvement has been achieved.<Cite nums={1} /> The Apprenticeship Levy, introduced in May 2017, was designed to increase employer investment and apprenticeship quality. Instead, it caused an immediate 26% fall in starts as employers, confused by the new funding system, withdrew from the market or shifted training budgets away from apprenticeships.<Cite nums={1} /> The fall was particularly sharp at Level 2 — the entry-level qualification most relevant to young people without prior qualifications — where starts dropped by over 40% and have never recovered to pre-Levy levels.<Cite nums={1} /></p>
+            <p>The reasons for non-completion are well-documented. A significant proportion of leavers cite the quality of training as inadequate — particularly where employers use the Levy to fund existing employees' professional development rather than genuine apprenticeship programmes.<Cite nums={2} /> Ofsted inspections of apprenticeship providers have consistently found issues with off-the-job training requirements not being met, with some employers delivering as little as 10% of the required 20% off-the-job training.<Cite nums={2} /> Degree apprenticeships — Level 6 and 7 — have grown rapidly and show completion rates above 70%, attracting significant employer interest in financial services, healthcare, and law.<Cite nums={1} /> But these higher-level programmes, funded overwhelmingly by large employers drawing on Levy accounts, have come at the cost of entry-level provision that serves those who need vocational routes most.<Cite nums={[1, 3]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -148,6 +156,9 @@ export default function ApprenticeshipCompletionPage() {
             source="Source: DfE — Apprenticeships and Traineeships 2024. DfE — Skills England: driving growth and widening opportunities 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

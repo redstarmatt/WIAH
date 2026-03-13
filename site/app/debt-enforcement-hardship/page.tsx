@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Bailiff visits (millions), 2015–2023
 const bailiffVisitValues = [1.9, 2.0, 2.0, 2.1, 2.2, 1.4, 1.0, 1.8, 2.4];
@@ -42,6 +44,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2014, 0, 1), label: '2014: Taking Control of Goods Regulations' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Enforcement Statistics Quarterly', url: 'https://www.gov.uk/government/collections/enforcement-statistics-quarterly', date: '2023' },
+  { num: 2, name: 'Money Advice Trust', dataset: 'Personal Debt Statistics', url: 'https://www.moneyadvicetrust.org', date: '2023' },
+  { num: 3, name: 'StepChange Debt Charity', dataset: 'Statistics Yearbook', url: 'https://www.stepchange.org/policy-and-research/statistics-yearbook.aspx', date: '2023' },
+];
+
 export default function DebtEnforcementHardshipPage() {
   return (
     <>
@@ -56,8 +64,8 @@ export default function DebtEnforcementHardshipPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>When people fall behind on bills, the enforcement system can transform a manageable debt into an unmanageable one. Bailiffs — officially called enforcement agents — add a compliance fee of £75 immediately on instruction, followed by an enforcement fee of £235 if they attend the property; these fees are statutory and non-discretionary. The 2.4 million bailiff visits recorded in 2023 are the highest since before COVID-19 suspended enforcement in 2020, with council tax accounting for around half of all referrals. Local authorities routinely refer debt earlier and for smaller amounts than commercial creditors, because council tax carries automatic priority status. The government introduced a Breathing Space scheme in 2021 providing temporary enforcement protection for people seeking debt advice, but uptake has been lower than projected.</p>
-            <p>The vulnerability problem is systemic and largely invisible to the creditors initiating enforcement. Research by the Money Advice Trust finds that 44% of visited debtors show signs of vulnerability — mental health problems, disability, or crisis circumstances — that were not identified before enforcement began. The consequences fall hardest on people already in the most precarious financial positions: those in deprived areas, single-parent households, and renters disproportionately face bailiff action for council tax and rent arrears, and the additional fees can push debts beyond any realistic capacity to repay. StepChange estimates that early debt advice, before enforcement is initiated, would improve outcomes for both debtors and creditors.</p>
+            <p>When people fall behind on bills, the enforcement system can transform a manageable debt into an unmanageable one. Bailiffs — officially called enforcement agents — add a compliance fee of £75 immediately on instruction, followed by an enforcement fee of £235 if they attend the property; these fees are statutory and non-discretionary. The 2.4 million bailiff visits recorded in 2023 are the highest since before COVID-19 suspended enforcement in 2020, with council tax accounting for around half of all referrals.<Cite nums={1} /> Local authorities routinely refer debt earlier and for smaller amounts than commercial creditors, because council tax carries automatic priority status. The government introduced a Breathing Space scheme in 2021 providing temporary enforcement protection for people seeking debt advice, but uptake has been lower than projected.</p>
+            <p>The vulnerability problem is systemic and largely invisible to the creditors initiating enforcement. Research by the Money Advice Trust finds that 44% of visited debtors show signs of vulnerability — mental health problems, disability, or crisis circumstances — that were not identified before enforcement began.<Cite nums={2} /> The consequences fall hardest on people already in the most precarious financial positions: those in deprived areas, single-parent households, and renters disproportionately face bailiff action for council tax and rent arrears, and the additional fees can push debts beyond any realistic capacity to repay. StepChange estimates that early debt advice, before enforcement is initiated, would improve outcomes for both debtors and creditors.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -136,6 +144,9 @@ export default function DebtEnforcementHardshipPage() {
             source="Source: Insolvency Service — Breathing Space Statistics 2023. Welsh Government — Council Tax Collection Act 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

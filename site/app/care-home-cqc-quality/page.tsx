@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // % rated Inadequate, 2015–2023
 const inadequateData = [2.1, 2.3, 2.5, 2.8, 3.0, 3.2, 3.5, 3.6, 3.7];
@@ -52,6 +54,12 @@ const closureAnnotations: Annotation[] = [
   { date: new Date(2019, 0, 1), label: '2019: HC-One consolidation drive' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Care Quality Commission', dataset: 'State of Care Annual Report', url: 'https://www.cqc.org.uk/publications/major-report/state-care', date: '2023' },
+  { num: 2, name: 'LaingBuisson', dataset: 'Care Homes for Older People UK Market Report', url: 'https://www.laingbuisson.com/', date: '2023' },
+  { num: 3, name: 'Skills for Care', dataset: 'State of the Adult Social Care Sector and Workforce', url: 'https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data', date: '2024' },
+];
+
 export default function CareHomeCqcQualityPage() {
   return (
     <>
@@ -66,8 +74,8 @@ export default function CareHomeCqcQualityPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>As of 2023, 3.7% of care homes in England are rated Inadequate by the CQC — up from 2.1% in 2015 — and a further 25.4% Require Improvement, meaning nearly one in three homes is not meeting the standard. Financial pressure is the primary driver: local authority funding rates have historically been below the cost of care provision, forcing homes to cross-subsidise state-funded residents through higher charges to self-payers. Over 1,400 care homes have closed since 2010, reducing capacity as an ageing population increases demand. Workforce turnover runs at 28% annually, limiting the continuity of relationships central to good care. Around 70% of care home residents have dementia, yet CQC inspections repeatedly identify inadequate dementia training and inappropriate use of antipsychotic medication as chemical restraint.</p>
-            <p>The quality gap falls most heavily on residents funded by local authorities, who are concentrated in homes operating on the tightest margins. Each home closure disrupts residents facing distressing moves at a deeply vulnerable point in their lives, often into accommodation further from family. The market structure — in which commercial operators serve a client group that cannot easily exercise consumer choice — creates incentives misaligned with quality. Large provider financial crises, such as the near-collapse of Four Seasons Healthcare in 2017, demonstrated the systemic risk of concentrated ownership in a provider market dependent on public funding. The CQC inspection backlog created by COVID-19 means some homes have not been assessed for over three years, creating a transparency gap in a market where families are making irreversible decisions.</p>
+            <p>As of 2023, 3.7% of care homes in England are rated Inadequate by the CQC — up from 2.1% in 2015 — and a further 25.4% Require Improvement, meaning nearly one in three homes is not meeting the standard.<Cite nums={1} /> Financial pressure is the primary driver: local authority funding rates have historically been below the cost of care provision, forcing homes to cross-subsidise state-funded residents through higher charges to self-payers.<Cite nums={2} /> Over 1,400 care homes have closed since 2010, reducing capacity as an ageing population increases demand.<Cite nums={2} /> Workforce turnover runs at 28% annually, limiting the continuity of relationships central to good care.<Cite nums={3} /> Around 70% of care home residents have dementia, yet CQC inspections repeatedly identify inadequate dementia training and inappropriate use of antipsychotic medication as chemical restraint.<Cite nums={1} /></p>
+            <p>The quality gap falls most heavily on residents funded by local authorities, who are concentrated in homes operating on the tightest margins.<Cite nums={2} /> Each home closure disrupts residents facing distressing moves at a deeply vulnerable point in their lives, often into accommodation further from family. The market structure — in which commercial operators serve a client group that cannot easily exercise consumer choice — creates incentives misaligned with quality. Large provider financial crises, such as the near-collapse of Four Seasons Healthcare in 2017, demonstrated the systemic risk of concentrated ownership in a provider market dependent on public funding. The CQC inspection backlog created by COVID-19 means some homes have not been assessed for over three years, creating a transparency gap in a market where families are making irreversible decisions.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +154,10 @@ export default function CareHomeCqcQualityPage() {
             source="Source: CQC — State of Care 2023. Skills for Care — State of the Adult Social Care Workforce 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

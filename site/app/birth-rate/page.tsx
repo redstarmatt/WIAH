@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -31,6 +33,14 @@ interface BirthRateData {
   byNation2023: NationTfr[];
   internationalComparison: CountryTfr[];
 }
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Births in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths', date: '2023' },
+  { num: 2, name: 'NRS Scotland', dataset: 'Vital Events: Births', url: 'https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/births', date: '2023' },
+  { num: 3, name: 'OBR', dataset: 'Fiscal sustainability report', url: 'https://obr.uk/fsr/fiscal-sustainability-report-2024/', date: '2024' },
+];
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
@@ -85,10 +95,10 @@ export default function BirthRatePage() {
               The UK total fertility rate (TFR) — the average number of children a woman
               would have if she experienced the current age-specific fertility rates throughout
               her reproductive life — fell to 1.44 in 2023, a record low since ONS began
-              reliable records in 1938. The replacement-level TFR is 2.1, the rate at which
+              reliable records in 1938.<Cite nums={1} /> The replacement-level TFR is 2.1, the rate at which
               each generation replaces itself without net migration. The UK has been below
               replacement level every year since 1975. The current level is the furthest
-              below replacement in recorded history.
+              below replacement in recorded history.<Cite nums={1} />
             </p>
             <p>
               This matters because of what it means for the age structure of the population.
@@ -97,7 +107,7 @@ export default function BirthRatePage() {
               OBR's long-term fiscal projections show that without either rising birth rates
               or sustained immigration, the working-age population supporting each retiree
               will fall significantly over the next half-century, creating structural pressures
-              on pension, NHS, and care funding.
+              on pension, NHS, and care funding.<Cite nums={3} />
             </p>
             </div>
         </section>
@@ -172,6 +182,10 @@ export default function BirthRatePage() {
         </ScrollReveal>
 
         <ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
           <div id="sec-sources" className="border-t border-wiah-border pt-8 mt-8">
             <h2 className="text-base font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
             <ul className="font-mono text-[11px] text-wiah-mid space-y-2">

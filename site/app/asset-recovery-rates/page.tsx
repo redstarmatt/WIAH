@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Criminal assets recovered (£m), 2012–2024 — Home Office
 const assetsRecoveredValues = [154, 168, 179, 194, 218, 235, 248, 265, 290, 310, 318, 355, 378];
@@ -48,6 +50,13 @@ const annotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Economic Crime Act — crypto seizure powers' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Asset Recovery Statistical Bulletin', url: 'https://www.gov.uk/government/statistics/asset-recovery-statistical-bulletin-financial-years-ending-2015-to-2024', date: '2024' },
+  { num: 2, name: 'NAO', dataset: 'Criminal Confiscation Order Enforcement', url: 'https://www.nao.org.uk/reports/criminal-confiscation/', date: '2024' },
+  { num: 3, name: 'NCA', dataset: 'National Strategic Assessment of Serious and Organised Crime', url: 'https://www.nationalcrimeagency.gov.uk/what-we-do/crime-threats/national-strategic-assessment', date: '2024' },
+  { num: 4, name: 'NCA', dataset: 'Annual Report and Accounts', url: 'https://www.nationalcrimeagency.gov.uk/who-we-are/publications', date: '2024' },
+];
+
 export default function AssetRecoveryRatesPage() {
   return (
     <>
@@ -62,8 +71,8 @@ export default function AssetRecoveryRatesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Proceeds of Crime Act 2002 gave UK law enforcement sweeping powers to strip criminals of their assets. In theory, crime should not pay. In practice, the enforcement gap is vast. Courts impose roughly 7,900 confiscation orders per year, but only around 54% are ever enforced — meaning nearly half of all court-ordered asset seizures go uncollected. The total amount recovered, £378 million in 2023/24, sounds significant until set against the National Crime Agency's own estimate that £12 billion is laundered through the UK every year. That 3% recovery rate has barely shifted in a decade. The NAO has repeatedly criticised HMCTS and enforcement agencies for failing to collect debts owed under confiscation orders, with over £1.8 billion in outstanding unpaid orders accumulating on the books.</p>
-            <p>Unexplained Wealth Orders, introduced under the Criminal Finances Act 2017, were supposed to change the calculus. They allow the NCA to compel politically exposed persons and suspected criminals to explain the source of assets worth over £50,000 — reversing the burden of proof for assets that appeared far beyond legitimate means. But in practice, UWOs have been used only 9 times since their introduction in 2018. The NCA's failed attempt to use a UWO against the family of a Kazakh banker cost the agency over £1.5 million in legal fees and had a chilling effect on further applications. By contrast, Account Freezing Orders — a lower-threshold tool — have surged to over 750 per year, proving more practical. The Economic Crime and Corporate Transparency Act 2022 introduced new crypto asset seizure powers, and the NCA has reported several successful crypto seizures — including a £3.4 billion Bitcoin haul linked to a Chinese money laundering network.</p>
+            <p>The Proceeds of Crime Act 2002 gave UK law enforcement sweeping powers to strip criminals of their assets. In theory, crime should not pay. In practice, the enforcement gap is vast. Courts impose roughly 7,900 confiscation orders per year, but only around 54% are ever enforced — meaning nearly half of all court-ordered asset seizures go uncollected.<Cite nums={2} /> The total amount recovered, £378 million in 2023/24, sounds significant until set against the National Crime Agency's own estimate that £12 billion is laundered through the UK every year.<Cite nums={[1, 3]} /> That 3% recovery rate has barely shifted in a decade. The NAO has repeatedly criticised HMCTS and enforcement agencies for failing to collect debts owed under confiscation orders, with over £1.8 billion in outstanding unpaid orders accumulating on the books.<Cite nums={2} /></p>
+            <p>Unexplained Wealth Orders, introduced under the Criminal Finances Act 2017, were supposed to change the calculus. They allow the NCA to compel politically exposed persons and suspected criminals to explain the source of assets worth over £50,000 — reversing the burden of proof for assets that appeared far beyond legitimate means. But in practice, UWOs have been used only 9 times since their introduction in 2018.<Cite nums={4} /> The NCA's failed attempt to use a UWO against the family of a Kazakh banker cost the agency over £1.5 million in legal fees and had a chilling effect on further applications.<Cite nums={4} /> By contrast, Account Freezing Orders — a lower-threshold tool — have surged to over 750 per year, proving more practical.<Cite nums={1} /> The Economic Crime and Corporate Transparency Act 2022 introduced new crypto asset seizure powers, and the NCA has reported several successful crypto seizures — including a £3.4 billion Bitcoin haul linked to a Chinese money laundering network.<Cite nums={4} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +151,9 @@ export default function AssetRecoveryRatesPage() {
             source="Source: NCA Annual Report 2024. Home Office — Economic Crime and Corporate Transparency Act 2022 Impact Assessment."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

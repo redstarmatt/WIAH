@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Average weekly fee for residential care (£), 2015–2023
 const residentialData = [635, 665, 705, 760, 840, 870, 950, 1050, 1100];
@@ -57,6 +59,12 @@ const crossSubsidyAnnotations: Annotation[] = [
   { date: new Date(2017, 0, 1), label: '2017: CMA market study finds 41% premium' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'LaingBuisson', dataset: 'Care of Older People UK Market Report', url: 'https://www.laingbuisson.com/', date: '2023' },
+  { num: 2, name: 'CMA', dataset: 'Care Homes Market Study', url: 'https://www.gov.uk/cma-cases/care-homes-market-study', date: '2017' },
+  { num: 3, name: 'CQC', dataset: 'State of Care Annual Report', url: 'https://www.cqc.org.uk/publications/major-report/state-care', date: '2023' },
+];
+
 export default function CareHomeFeesPage() {
   return (
     <>
@@ -71,8 +79,8 @@ export default function CareHomeFeesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The average residential care home in England costs approximately £1,100 per week in 2023, with nursing care at £1,300 per week — equivalent to £57,200 and £67,600 per year. The means-testing threshold requiring full self-funding above £23,250 in capital (including housing wealth) has not been significantly uprated since 2010, meaning far more people now qualify as self-funders than Parliament originally intended. The CMA's 2017 market study found self-funders pay approximately 41% more than council-funded residents for equivalent provision, with the cross-subsidy estimated at £8,600 per person per year — a reflection of the structural power imbalance between large providers and families making decisions under acute time pressure.</p>
-            <p>Care home bed capacity has fallen from 452,000 in 2012 to 412,000 in 2023, as council-funded rates below the cost of provision, rising wage bills, and inflationary cost pressures have made viability unsustainable for many operators. The consequences for families are reduced choice, longer waits, and older people occupying hospital beds while suitable placements are sought. The £86,000 lifetime care cost cap — derived from the Dilnot Commission's 2011 recommendations and originally planned for October 2025 — has been delayed further with its future uncertain. Even if implemented, the cap addresses personal care costs only; the hotel costs of accommodation, food, and utilities — which constitute the majority of most bills — remain uncapped.</p>
+            <p>The average residential care home in England costs approximately £1,100 per week in 2023, with nursing care at £1,300 per week — equivalent to £57,200 and £67,600 per year.<Cite nums={1} /> The means-testing threshold requiring full self-funding above £23,250 in capital (including housing wealth) has not been significantly uprated since 2010, meaning far more people now qualify as self-funders than Parliament originally intended. The CMA's 2017 market study found self-funders pay approximately 41% more than council-funded residents for equivalent provision, with the cross-subsidy estimated at £8,600 per person per year — a reflection of the structural power imbalance between large providers and families making decisions under acute time pressure.<Cite nums={2} /></p>
+            <p>Care home bed capacity has fallen from 452,000 in 2012 to 412,000 in 2023, as council-funded rates below the cost of provision, rising wage bills, and inflationary cost pressures have made viability unsustainable for many operators.<Cite nums={[1, 3]} /> The consequences for families are reduced choice, longer waits, and older people occupying hospital beds while suitable placements are sought. The £86,000 lifetime care cost cap — derived from the Dilnot Commission's 2011 recommendations and originally planned for October 2025 — has been delayed further with its future uncertain. Even if implemented, the cap addresses personal care costs only; the hotel costs of accommodation, food, and utilities — which constitute the majority of most bills — remain uncapped.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,10 @@ export default function CareHomeFeesPage() {
             source="Source: DHSC — Social care charging reform implementation update 2025. Dilnot Commission — Fairer Care Funding 2011."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

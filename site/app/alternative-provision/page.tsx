@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Children in alternative provision, England, 2014–2024 — DfE
 const apPupilsValues = [24100, 25300, 26800, 28400, 30200, 32100, 34500, 36200, 33800, 38400, 41000];
@@ -51,6 +53,15 @@ const annotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID-19 — exclusions temporarily fall' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Education', dataset: 'Schools, Pupils and their Characteristics', url: 'https://www.gov.uk/government/collections/statistics-school-and-pupil-numbers', date: '2024' },
+  { num: 2, name: 'Department for Education', dataset: 'Permanent Exclusions and Suspensions in England', url: 'https://www.gov.uk/government/collections/statistics-exclusions', date: '2024' },
+  { num: 3, name: 'Timpson Review', dataset: 'Review of School Exclusion', date: '2019' },
+  { num: 4, name: 'Department for Education', dataset: 'Key Stage 4 Performance', date: '2024' },
+  { num: 5, name: 'Ministry of Justice', dataset: 'Prisoner education background data', date: '2024' },
+  { num: 6, name: 'ISOS Partnership', dataset: 'SAFE Programme Evaluation', date: '2025' },
+];
+
 export default function AlternativeProvisionPage() {
   return (
     <>
@@ -65,8 +76,8 @@ export default function AlternativeProvisionPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Alternative provision is where children go when mainstream school has given up on them — or, more accurately, when the system around them has failed to provide what they need. Around 41,000 children in England now attend AP settings: pupil referral units, hospital schools, and a patchwork of registered and unregistered providers. That number has risen 70% since 2014, driven by a sustained increase in permanent exclusions and the harder-to-track practice of managed moves, where schools remove pupils from their rolls without formal exclusion. The Timpson Review in 2019 found that exclusion is not random. Children with special educational needs are six times more likely to be permanently excluded than their peers. Those eligible for free school meals are four times more likely. Black Caribbean pupils are excluded at three times the rate of White British pupils. These disparities have persisted for over a decade and have not meaningfully narrowed.</p>
-            <p>The quality of alternative provision varies enormously. Some AP settings deliver exceptional pastoral care and tailored curricula. Others operate in substandard buildings with high staff turnover and weak safeguarding. The attainment gap tells the starkest story: just 4% of AP pupils achieve grade 4 or above in both English and Maths at Key Stage 4, compared with 66% in mainstream schools. For most children who enter AP, the pathway leads to NEET status, involvement in the criminal justice system, or both. Ministry of Justice data shows that 42% of prisoners attended AP or a pupil referral unit as children. The SAFE (Support, Attend, Fulfil, Exceed) programme, piloted in 12 local authorities, takes an early-intervention approach — embedding specialist staff in mainstream schools to prevent exclusions before they happen. Early results show a 23% reduction in permanent exclusions in pilot areas.</p>
+            <p>Alternative provision is where children go when mainstream school has given up on them — or, more accurately, when the system around them has failed to provide what they need. Around 41,000 children in England now attend AP settings: pupil referral units, hospital schools, and a patchwork of registered and unregistered providers.<Cite nums={1} /> That number has risen 70% since 2014, driven by a sustained increase in permanent exclusions and the harder-to-track practice of managed moves, where schools remove pupils from their rolls without formal exclusion.<Cite nums={2} /> The Timpson Review in 2019 found that exclusion is not random. Children with special educational needs are six times more likely to be permanently excluded than their peers. Those eligible for free school meals are four times more likely. Black Caribbean pupils are excluded at three times the rate of White British pupils.<Cite nums={3} /> These disparities have persisted for over a decade and have not meaningfully narrowed.</p>
+            <p>The quality of alternative provision varies enormously. Some AP settings deliver exceptional pastoral care and tailored curricula. Others operate in substandard buildings with high staff turnover and weak safeguarding. The attainment gap tells the starkest story: just 4% of AP pupils achieve grade 4 or above in both English and Maths at Key Stage 4, compared with 66% in mainstream schools.<Cite nums={4} /> For most children who enter AP, the pathway leads to NEET status, involvement in the criminal justice system, or both. Ministry of Justice data shows that 42% of prisoners attended AP or a pupil referral unit as children.<Cite nums={5} /> The SAFE (Support, Attend, Fulfil, Exceed) programme, piloted in 12 local authorities, takes an early-intervention approach — embedding specialist staff in mainstream schools to prevent exclusions before they happen. Early results show a 23% reduction in permanent exclusions in pilot areas.<Cite nums={6} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -145,6 +156,9 @@ export default function AlternativeProvisionPage() {
             source="Source: DfE — AP Taskforce Terms of Reference 2024. ISOS Partnership — SAFE Programme Evaluation 2025. Timpson Review of School Exclusion 2019."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Asylum applications, UK, 2017–2024 — Home Office
 const applicationsValues = [26547, 35566, 35099, 56040, 74751, 84425, 98519, 84000];
@@ -42,6 +44,12 @@ const annotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: 2,500 new caseworkers recruited' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Immigration System Statistics — Asylum and Resettlement', url: 'https://www.gov.uk/government/collections/immigration-statistics-quarterly-release', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'Asylum Accommodation Statistics', url: 'https://www.gov.uk/government/collections/immigration-statistics-quarterly-release', date: '2024' },
+  { num: 3, name: 'NAO', dataset: 'Investigation into the costs of the Rwanda policy', url: 'https://www.nao.org.uk/reports/investigation-into-the-costs-of-the-rwanda-policy/', date: '2024' },
+];
+
 export default function AsylumSystemPage() {
   return (
     <>
@@ -56,8 +64,8 @@ export default function AsylumSystemPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain's asylum system is processing more claims than at any point since records began. The 98,519 applications lodged in 2023 surpassed the previous record of 74,751 set in 2022, driven by 45,756 small boat crossings and continuing displacement from Afghanistan, Iran, and Syria. At the end of 2023, more than 220,000 people were awaiting an initial decision — a backlog that leaves applicants in legal limbo for an average of 26 months. The UK nonetheless receives fewer asylum seekers per capita than France, Germany, or Austria. The backlog is primarily an administrative failure: Home Office caseworker numbers were cut by more than a third during the 2010s austerity programme, hollowing out decision-making capacity just as global displacement accelerated. The resulting accommodation crisis cost £4 billion in 2022/23, housing 56,000 asylum seekers in hotels at roughly £150 per person per night.</p>
-            <p>Policy responses have focused on deterrence rather than processing speed. The Rwanda deportation scheme, struck down by the Supreme Court as unlawful in November 2023, cost over £590 million before a single flight departed. Meanwhile, the data on outcomes tells a different story: 61% of initial decisions in 2023 granted protection, with grant rates of 98% for Afghans, 95% for Syrians, and 86% for Eritreans. Some 40% of refusals are overturned on appeal. The people waiting in the system are overwhelmingly from countries where the UK has historically recognised the need for protection. Faster processing would save money, allow those with valid claims to work and contribute sooner, and deter those without viable claims from applying. A major caseworker recruitment drive in 2023 has since reduced the backlog significantly, with over 100,000 decisions made in 2024 alone.</p>
+            <p>Britain's asylum system is processing more claims than at any point since records began. The 98,519 applications lodged in 2023 surpassed the previous record of 74,751 set in 2022, driven by 45,756 small boat crossings and continuing displacement from Afghanistan, Iran, and Syria.<Cite nums={1} /> At the end of 2023, more than 220,000 people were awaiting an initial decision — a backlog that leaves applicants in legal limbo for an average of 26 months.<Cite nums={1} /> The UK nonetheless receives fewer asylum seekers per capita than France, Germany, or Austria. The backlog is primarily an administrative failure: Home Office caseworker numbers were cut by more than a third during the 2010s austerity programme, hollowing out decision-making capacity just as global displacement accelerated. The resulting accommodation crisis cost £4 billion in 2022/23, housing 56,000 asylum seekers in hotels at roughly £150 per person per night.<Cite nums={2} /></p>
+            <p>Policy responses have focused on deterrence rather than processing speed. The Rwanda deportation scheme, struck down by the Supreme Court as unlawful in November 2023, cost over £590 million before a single flight departed.<Cite nums={3} /> Meanwhile, the data on outcomes tells a different story: 61% of initial decisions in 2023 granted protection, with grant rates of 98% for Afghans, 95% for Syrians, and 86% for Eritreans.<Cite nums={1} /> Some 40% of refusals are overturned on appeal.<Cite nums={1} /> The people waiting in the system are overwhelmingly from countries where the UK has historically recognised the need for protection. Faster processing would save money, allow those with valid claims to work and contribute sooner, and deter those without viable claims from applying. A major caseworker recruitment drive in 2023 has since reduced the backlog significantly, with over 100,000 decisions made in 2024 alone.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -136,6 +144,9 @@ export default function AsylumSystemPage() {
             source="Source: Home Office — Immigration Statistics Year Ending December 2023. IPPR — The Cost of the Asylum Backlog 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

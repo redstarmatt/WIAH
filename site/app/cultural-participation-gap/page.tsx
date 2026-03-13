@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Museum/gallery attendance — upper/middle socioeconomic group %, 2015–2024
 const upperMiddleValues = [65, 64, 65, 64, 63, 62, 40, 55, 62, 63];
@@ -52,6 +54,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2020, 2, 1), label: '2020: Emergency COVID arts fund' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DCMS', dataset: 'Taking Part Survey', url: 'https://www.gov.uk/government/collections/dcms-taking-part-survey', date: '2024' },
+  { num: 2, name: 'Arts Council England', dataset: 'Annual Report and Grant-in-Aid', url: 'https://www.artscouncil.org.uk/publication-types/annual-report', date: '2024' },
+  { num: 3, name: 'DCMS', dataset: 'Sponsored Museums Performance Indicators', url: 'https://www.gov.uk/government/statistics/sponsored-museums-performance-indicators', date: '2024' },
+];
+
 export default function CulturalParticipationGapPage() {
   return (
     <>
@@ -66,8 +74,8 @@ export default function CulturalParticipationGapPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain has one of the world's great free museum policies. Since 2001, national museums have offered free entry, and the result has been impressive headline numbers — nearly 50 million visits a year to DCMS-sponsored institutions alone. But those headline figures mask a structural inequality that has barely shifted in a generation. The DCMS Taking Part Survey consistently shows that adults from higher socioeconomic groups attend museums, galleries, and heritage sites at roughly twice the rate of those from lower socioeconomic groups. In 2024, 63% of upper and middle socioeconomic adults had visited a museum or gallery in the past year, compared with just 36% of lower and working socioeconomic adults. Free entry removes the ticket price but not the transport cost, the geographic distance, the time off work, or the sense that these spaces are "not for people like us."</p>
-            <p>Funding cuts have made things worse. Arts Council England's grant-in-aid has fallen roughly 30% in real terms since 2010, forcing regional theatres, galleries, and community arts organisations to cut programmes, reduce opening hours, or close entirely. Local authority spending on culture has fallen even further — by more than 40% in real terms in the most deprived areas. School arts provision has also narrowed: entries for GCSE arts subjects have fallen 47% since 2010, removing a key pipeline through which young people from all backgrounds encounter the arts. The pattern is clear: access to culture in Britain is increasingly shaped by where you live, what your parents earn, and whether anyone in your life ever took you to a gallery.</p>
+            <p>Britain has one of the world's great free museum policies. Since 2001, national museums have offered free entry, and the result has been impressive headline numbers — nearly 50 million visits a year to DCMS-sponsored institutions alone.<Cite nums={3} /> But those headline figures mask a structural inequality that has barely shifted in a generation. The DCMS Taking Part Survey consistently shows that adults from higher socioeconomic groups attend museums, galleries, and heritage sites at roughly twice the rate of those from lower socioeconomic groups.<Cite nums={1} /> In 2024, 63% of upper and middle socioeconomic adults had visited a museum or gallery in the past year, compared with just 36% of lower and working socioeconomic adults.<Cite nums={1} /> Free entry removes the ticket price but not the transport cost, the geographic distance, the time off work, or the sense that these spaces are "not for people like us."</p>
+            <p>Funding cuts have made things worse. Arts Council England's grant-in-aid has fallen roughly 30% in real terms since 2010, forcing regional theatres, galleries, and community arts organisations to cut programmes, reduce opening hours, or close entirely.<Cite nums={2} /> Local authority spending on culture has fallen even further — by more than 40% in real terms in the most deprived areas. School arts provision has also narrowed: entries for GCSE arts subjects have fallen 47% since 2010, removing a key pipeline through which young people from all backgrounds encounter the arts. The pattern is clear: access to culture in Britain is increasingly shaped by where you live, what your parents earn, and whether anyone in your life ever took you to a gallery.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +154,9 @@ export default function CulturalParticipationGapPage() {
             source="Source: DCMS — Sponsored Museums Performance Indicators 2024. Arts Council England — Levelling Up for Culture Places 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

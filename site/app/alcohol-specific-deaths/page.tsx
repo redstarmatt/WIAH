@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Alcohol-specific deaths, England, 2012–2024 — ONS
 const alcoholDeathsValues = [6490, 6592, 6831, 7366, 7327, 7697, 7551, 7565, 8974, 9641, 8209, 8274, 10048];
@@ -48,6 +50,12 @@ const annotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID-19 lockdowns begin' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Alcohol-specific deaths in the UK', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholspecificdeathsintheuk', date: 'Feb 2026' },
+  { num: 2, name: 'NHS Digital', dataset: 'Statistics on Alcohol, England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/statistics-on-alcohol', date: 'Feb 2026' },
+  { num: 3, name: 'Public Health Scotland', dataset: 'Evaluating the impact of minimum unit pricing', date: '2023' },
+];
+
 export default function AlcoholSpecificDeathsPage() {
   return (
     <>
@@ -62,8 +70,8 @@ export default function AlcoholSpecificDeathsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Alcohol-specific deaths in England have reached their highest level since records began. In 2024, 10,048 people died from conditions wholly caused by alcohol — up 33% from 7,565 in 2019. The pandemic was the inflection point: lockdowns, isolation, and the closure of support services drove a surge in heavy drinking among those already dependent, and the trajectory has not reversed. The people dying are overwhelmingly middle-aged men in the most deprived areas of England: the death rate in the most deprived decile is more than five times higher than in the least deprived. Alcoholic liver disease accounts for roughly 72% of these deaths and has followed the same upward curve. Liver disease is unusual among major killers in that it disproportionately affects working-age adults — the average age of death is significantly lower than for cancer or heart disease.</p>
-            <p>The policy gap is stark. Scotland introduced minimum unit pricing in 2018, and Public Health Scotland reported a 13% reduction in alcohol-specific deaths in the years that followed. England shelved its own MUP plans in 2013 after industry lobbying, and has not revisited the policy since. The evidence base for what works — minimum pricing, restrictions on marketing, brief interventions in primary care, investment in community alcohol treatment — is robust and repeatedly endorsed by NICE, the Chief Medical Officer, and the WHO. The challenge is not a lack of evidence but a lack of political will. Meanwhile, alcohol treatment services in England have seen real-terms funding cuts of over 30% since 2013/14, and waiting times for specialist support have grown. The data makes the case plainly: this is a public health emergency being met with policy silence.</p>
+            <p>Alcohol-specific deaths in England have reached their highest level since records began. In 2024, 10,048 people died from conditions wholly caused by alcohol — up 33% from 7,565 in 2019.<Cite nums={1} /> The pandemic was the inflection point: lockdowns, isolation, and the closure of support services drove a surge in heavy drinking among those already dependent, and the trajectory has not reversed. The people dying are overwhelmingly middle-aged men in the most deprived areas of England: the death rate in the most deprived decile is more than five times higher than in the least deprived.<Cite nums={1} /> Alcoholic liver disease accounts for roughly 72% of these deaths and has followed the same upward curve.<Cite nums={1} /> Liver disease is unusual among major killers in that it disproportionately affects working-age adults — the average age of death is significantly lower than for cancer or heart disease.</p>
+            <p>The policy gap is stark. Scotland introduced minimum unit pricing in 2018, and Public Health Scotland reported a 13% reduction in alcohol-specific deaths in the years that followed.<Cite nums={3} /> England shelved its own MUP plans in 2013 after industry lobbying, and has not revisited the policy since. The evidence base for what works — minimum pricing, restrictions on marketing, brief interventions in primary care, investment in community alcohol treatment — is robust and repeatedly endorsed by NICE, the Chief Medical Officer, and the WHO. The challenge is not a lack of evidence but a lack of political will. Meanwhile, alcohol treatment services in England have seen real-terms funding cuts of over 30% since 2013/14, and waiting times for specialist support have grown.<Cite nums={2} /> The data makes the case plainly: this is a public health emergency being met with policy silence.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +150,9 @@ export default function AlcoholSpecificDeathsPage() {
             source="Source: Public Health Scotland — Evaluating the impact of minimum unit pricing 2023. Scottish Government — MUP evaluation framework."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

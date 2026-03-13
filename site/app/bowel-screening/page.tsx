@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Screening uptake, England, 2010–2024
 const uptakeData = [52.1, 53.0, 53.8, 54.2, 54.9, 55.3, 56.1, 57.0, 57.4, 61.2, 63.8, 64.5, 65.9, 66.7, 67.3];
@@ -52,6 +54,12 @@ const detectionAnnotations: Annotation[] = [
   { date: new Date(2020, 2, 1), label: '2020: COVID pauses screening' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Bowel Cancer Screening Programme Statistics', url: 'https://www.gov.uk/government/statistics/bowel-cancer-screening-programme-statistics', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Cancer Registration Statistics', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases', date: '2024' },
+  { num: 3, name: 'Cancer Research UK', dataset: 'Bowel Cancer Statistics', url: 'https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/bowel-cancer', date: '2024' },
+];
+
 export default function BowelScreeningPage() {
   return (
     <>
@@ -66,8 +74,8 @@ export default function BowelScreeningPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Bowel cancer is the fourth most common cancer in the UK and the second biggest cancer killer, claiming around 16,800 lives each year. When caught at Stage 1, the five-year survival rate is over 90%. By Stage 4, it collapses to around 10%. The NHS Bowel Cancer Screening Programme, launched in 2006, invites eligible adults to complete a home testing kit every two years. For its first thirteen years it used the guaiac faecal occult blood test — a kit requiring six separate samples with an uptake rate stubbornly stuck in the mid-50s. The switch to the faecal immunochemical test in June 2019 was transformative: FIT requires a single sample and is markedly easier to use. Uptake jumped from 57% to over 60% within a year and has continued climbing to 67.3% by 2024.</p>
-            <p>Simultaneously, NHS England began lowering the eligible age from 60 to 50 — a phased expansion that is already sending 6.3 million invitations per year. The combination of a better test and a wider eligible population means more cancers are being caught at early, treatable stages: 53.1% of screen-detected bowel cancers were diagnosed at Stage 1 or 2 in 2024, up from 38% in 2010. Age-standardised bowel cancer mortality has fallen 24% over the same period. The remaining challenge is inequality: screening uptake in the most deprived areas stands at just 51%, compared with 76% in the least deprived — a 25-percentage-point gap that has barely narrowed since the programme began.</p>
+            <p>Bowel cancer is the fourth most common cancer in the UK and the second biggest cancer killer, claiming around 16,800 lives each year.<Cite nums={3} /> When caught at Stage 1, the five-year survival rate is over 90%. By Stage 4, it collapses to around 10%.<Cite nums={3} /> The NHS Bowel Cancer Screening Programme, launched in 2006, invites eligible adults to complete a home testing kit every two years. For its first thirteen years it used the guaiac faecal occult blood test — a kit requiring six separate samples with an uptake rate stubbornly stuck in the mid-50s. The switch to the faecal immunochemical test in June 2019 was transformative: FIT requires a single sample and is markedly easier to use. Uptake jumped from 57% to over 60% within a year and has continued climbing to 67.3% by 2024.<Cite nums={1} /></p>
+            <p>Simultaneously, NHS England began lowering the eligible age from 60 to 50 — a phased expansion that is already sending 6.3 million invitations per year.<Cite nums={1} /> The combination of a better test and a wider eligible population means more cancers are being caught at early, treatable stages: 53.1% of screen-detected bowel cancers were diagnosed at Stage 1 or 2 in 2024, up from 38% in 2010.<Cite nums={2} /> Age-standardised bowel cancer mortality has fallen 24% over the same period.<Cite nums={2} /> The remaining challenge is inequality: screening uptake in the most deprived areas stands at just 51%, compared with 76% in the least deprived — a 25-percentage-point gap that has barely narrowed since the programme began.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -147,6 +155,10 @@ export default function BowelScreeningPage() {
             source="Source: NHS England — Bowel Cancer Screening Programme Statistics, 2024. ONS — Cancer Registration Statistics, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

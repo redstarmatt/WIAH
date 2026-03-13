@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 interface CohabitationRightsGapData {
   topic: string
@@ -22,6 +24,12 @@ interface CohabitationRightsGapData {
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Families and Households', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/datasets/familiesandhouseholds', date: '2022' },
+  { num: 2, name: 'Resolution Foundation / Citizens Advice', dataset: 'Cohabitation Survey', url: 'https://www.resolutionfoundation.org', date: '2023' },
+  { num: 3, name: 'Law Commission', dataset: 'Cohabitation: The Financial Consequences of Relationship Breakdown', url: 'https://www.lawcom.gov.uk', date: '2007' },
+];
 
 export default function CohabitationRightsGapPage() {
   const [data, setData] = useState<CohabitationRightsGapData | null>(null)
@@ -61,8 +69,8 @@ export default function CohabitationRightsGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Cohabiting couples are the fastest-growing family type in England and Wales, rising from 2.6 million in 2002 to 3.6 million in 2022, yet they have almost none of the automatic legal protections afforded to married couples or civil partners. On separation, there is no right to share property, no right to pension wealth, and no maintenance obligation beyond child support. Around 51% of the population believe in &ldquo;common law marriage&rdquo; — a myth: no such legal status exists in England and Wales. This persistent misconception means that couples who believe they are protected are less likely to take independent steps — cohabitation agreements, joint ownership, updated wills — that would actually protect them. Approximately 250,000 cohabiting couple separations occur each year with no equivalent of divorce law to govern them.</p>
-            <p>The Law Commission recommended reform in 2007, proposing an opt-out scheme giving qualifying couples similar financial remedies to those available on divorce. Scotland implemented such a scheme in 2006 with positive results. Successive UK governments have declined to legislate for England and Wales. The burden falls disproportionately on women who have contributed to mortgages, cared for children, and foregone career advancement, but emerge from long relationships with minimal financial security. A Law Commission review commenced in 2023; until reform is enacted, awareness campaigns cannot substitute for the legal rights that 3.6 million households currently lack.</p>
+            <p>Cohabiting couples are the fastest-growing family type in England and Wales, rising from 2.6 million in 2002 to 3.6 million in 2022, yet they have almost none of the automatic legal protections afforded to married couples or civil partners.<Cite nums={1} /> On separation, there is no right to share property, no right to pension wealth, and no maintenance obligation beyond child support. Around 51% of the population believe in &ldquo;common law marriage&rdquo; — a myth: no such legal status exists in England and Wales.<Cite nums={2} /> This persistent misconception means that couples who believe they are protected are less likely to take independent steps — cohabitation agreements, joint ownership, updated wills — that would actually protect them. Approximately 250,000 cohabiting couple separations occur each year with no equivalent of divorce law to govern them.<Cite nums={1} /></p>
+            <p>The Law Commission recommended reform in 2007, proposing an opt-out scheme giving qualifying couples similar financial remedies to those available on divorce.<Cite nums={3} /> Scotland implemented such a scheme in 2006 with positive results. Successive UK governments have declined to legislate for England and Wales. The burden falls disproportionately on women who have contributed to mortgages, cared for children, and foregone career advancement, but emerge from long relationships with minimal financial security. A Law Commission review commenced in 2023; until reform is enacted, awareness campaigns cannot substitute for the legal rights that 3.6 million households currently lack.<Cite nums={[1, 3]} /></p>
           </div>
         </section>
 
@@ -122,6 +130,10 @@ export default function CohabitationRightsGapPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

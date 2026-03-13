@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Credit union membership (millions), 2010–2024
 const membershipValues = [0.92, 1.02, 1.12, 1.24, 1.38, 1.52, 1.64, 1.74, 1.84, 1.94, 1.98, 2.02, 2.08, 2.12, 2.14];
@@ -53,6 +55,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Cost-of-living crisis drives demand' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Bank of England', dataset: 'Credit Union Quarterly Statistics', url: 'https://www.bankofengland.co.uk/prudential-regulation/credit-unions', date: 'Dec 2024' },
+  { num: 2, name: 'ABCUL', dataset: 'Annual Statistics and Trends', url: 'https://www.abcul.org/media-and-research/facts-statistics', date: 'Nov 2024' },
+  { num: 3, name: 'World Council of Credit Unions', dataset: 'Statistical Report 2024', url: 'https://www.woccu.org', date: '2024' },
+];
+
 export default function CreditUnionMembershipPage() {
   return (
     <>
@@ -67,8 +75,8 @@ export default function CreditUnionMembershipPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain's credit union sector has been growing steadily for over a decade. Membership has more than doubled since 2010, rising from 920,000 to 2.14 million by the end of 2024, while total assets have grown from under £1 billion to £4.2 billion over the same period. These are genuine signs of progress. But context matters: credit unions still hold less than 0.1% of UK banking assets, and the penetration rate of around 3% is dwarfed by Ireland (75%), the United States (37%), and Canada (33%). The gap is not explained by demand. Around 1.1 million adults in the UK have no bank account at all, and millions more rely on high-cost credit — precisely the people credit unions exist to serve.</p>
-            <p>The roots of this gap are structural. Britain's credit union movement was legally recognised only in 1979, decades after Ireland, the US, and Canada had built mature cooperative finance networks embedded in workplaces, parishes, and communities. Regulatory constraints limited what British credit unions could offer until reforms in 2012 and 2014 expanded their lending powers. The cost-of-living crisis has sharpened both the need and the opportunity. Demand for affordable small loans surged in 2022 and 2023, with debt consolidation now accounting for 40% of credit union lending. Payroll partnerships — where employers deduct savings and loan repayments directly from wages — have driven much of the recent membership growth.</p>
+            <p>Britain's credit union sector has been growing steadily for over a decade. Membership has more than doubled since 2010, rising from 920,000 to 2.14 million by the end of 2024, while total assets have grown from under £1 billion to £4.2 billion over the same period.<Cite nums={1} /> These are genuine signs of progress. But context matters: credit unions still hold less than 0.1% of UK banking assets, and the penetration rate of around 3% is dwarfed by Ireland (75%), the United States (37%), and Canada (33%).<Cite nums={3} /> The gap is not explained by demand. Around 1.1 million adults in the UK have no bank account at all, and millions more rely on high-cost credit — precisely the people credit unions exist to serve.</p>
+            <p>The roots of this gap are structural. Britain's credit union movement was legally recognised only in 1979, decades after Ireland, the US, and Canada had built mature cooperative finance networks embedded in workplaces, parishes, and communities. Regulatory constraints limited what British credit unions could offer until reforms in 2012 and 2014 expanded their lending powers. The cost-of-living crisis has sharpened both the need and the opportunity. Demand for affordable small loans surged in 2022 and 2023, with debt consolidation now accounting for 40% of credit union lending.<Cite nums={2} /> Payroll partnerships — where employers deduct savings and loan repayments directly from wages — have driven much of the recent membership growth.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -147,6 +155,9 @@ export default function CreditUnionMembershipPage() {
             source="Source: ABCUL Annual Statistics 2024. Fair4All Finance — Impact Report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

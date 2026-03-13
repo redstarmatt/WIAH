@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Adults below Level 2 literacy (% of working-age), 2003–2024 — NLT / OECD PIAAC
 const literacyPctValues = [19.5, 19.3, 19.2, 19.0, 18.9, 18.8, 18.7, 18.6, 18.5, 18.4, 18.3, 18.2, 18.1, 18.0, 18.0, 17.9, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0];
@@ -47,6 +49,12 @@ const annotations: Annotation[] = [
   { date: new Date(2012, 0, 1), label: '2012: OECD PIAAC survey' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'OECD', dataset: 'PIAAC Survey of Adult Skills', url: 'https://www.oecd.org/skills/piaac/', date: '2024' },
+  { num: 2, name: 'National Literacy Trust', dataset: 'Adult Literacy Statistics', date: '2024' },
+  { num: 3, name: 'Learning and Work Institute', dataset: 'Adult Education Budget Analysis; ESOL Provision Survey', url: 'https://learningandwork.org.uk', date: '2024' },
+];
+
 export default function AdultLiteracyGapPage() {
   return (
     <>
@@ -61,8 +69,8 @@ export default function AdultLiteracyGapPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain has a hidden literacy crisis. The OECD's Survey of Adult Skills found that England's adults perform below the international average in literacy — and the problem has barely improved in two decades. Around 8.5 million working-age adults read at or below Level 1, meaning they can understand short, simple texts but struggle with anything more complex: a tenancy agreement, a medicine leaflet, a letter from their child's school. The economic cost is estimated at over £40 billion per year in lost productivity, higher welfare spending, and increased demand on health and justice services. Adults with poor literacy are twice as likely to be unemployed, three times more likely to suffer from depression, and significantly more likely to report poor physical health.</p>
-            <p>The damage is intergenerational. Children whose parents have low literacy are themselves far more likely to fall behind at school. Meanwhile, the infrastructure that might break this cycle has been systematically dismantled. Real-terms adult education funding has fallen from £4.3 billion in 2010 to £1.7 billion in 2024 — a 60% cut. ESOL (English for Speakers of Other Languages) provision has been hit particularly hard: waiting lists have tripled since 2015, with an estimated 97,000 people now waiting for a place. In some London boroughs and northern cities, the wait exceeds two years. For refugees and recent migrants, the inability to access language support creates cascading barriers — to employment, to healthcare, to their children's schooling, and to any meaningful integration.</p>
+            <p>Britain has a hidden literacy crisis. The OECD's Survey of Adult Skills found that England's adults perform below the international average in literacy — and the problem has barely improved in two decades.<Cite nums={1} /> Around 8.5 million working-age adults read at or below Level 1, meaning they can understand short, simple texts but struggle with anything more complex: a tenancy agreement, a medicine leaflet, a letter from their child's school.<Cite nums={2} /> The economic cost is estimated at over £40 billion per year in lost productivity, higher welfare spending, and increased demand on health and justice services.<Cite nums={3} /> Adults with poor literacy are twice as likely to be unemployed, three times more likely to suffer from depression, and significantly more likely to report poor physical health.<Cite nums={1} /></p>
+            <p>The damage is intergenerational. Children whose parents have low literacy are themselves far more likely to fall behind at school. Meanwhile, the infrastructure that might break this cycle has been systematically dismantled. Real-terms adult education funding has fallen from £4.3 billion in 2010 to £1.7 billion in 2024 — a 60% cut.<Cite nums={3} /> ESOL (English for Speakers of Other Languages) provision has been hit particularly hard: waiting lists have tripled since 2015, with an estimated 97,000 people now waiting for a place.<Cite nums={3} /> In some London boroughs and northern cities, the wait exceeds two years. For refugees and recent migrants, the inability to access language support creates cascading barriers — to employment, to healthcare, to their children's schooling, and to any meaningful integration.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -141,6 +149,9 @@ export default function AdultLiteracyGapPage() {
             source="Source: Read Easy Annual Report 2024. National Literacy Trust — Literacy Hubs Impact Report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

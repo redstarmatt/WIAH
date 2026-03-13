@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Versus Arthritis / NICE', dataset: 'Chronic pain prevalence estimates', date: '2024' },
+  { num: 2, name: 'Faculty of Pain Medicine', dataset: 'National pain audit and workforce survey', date: '2024' },
+  { num: 3, name: 'Health and Safety Executive', dataset: 'Working days lost statistics', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -91,8 +99,8 @@ export default function ChronicPainPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Chronic pain — pain persisting for three months or more — affects an estimated 28 million adults in the UK, up from 18 million in 2012, of whom around 8 million have severely disabling pain. It is the leading reason people visit their GP, the largest single cause of work disability, and a primary driver of opioid prescribing and economic inactivity, yet receives a fraction of the research funding of conditions with comparable burden. The average wait for a specialist NHS pain clinic appointment is 28 weeks — down from a post-COVID peak of 38 weeks but still nearly seven months. The Faculty of Pain Medicine estimates England needs 1,200 pain medicine consultants; it has around 450. Some integrated care boards commission no standalone pain service at all.</p>
-            <p>Chronic pain accounts for 36.8 million lost working days per year — more than any other health condition — and costs the economy an estimated £12–14 billion annually in lost productivity. It is a major driver of the post-COVID rise in economic inactivity, with musculoskeletal and pain conditions the most commonly cited reason for long-term sickness. Prevalence is highest in the most deprived communities, mirroring almost every other health inequality, and women are disproportionately affected. Community pain management programmes with a strong evidence base are patchily available and often have their own waiting lists.</p>
+            <p>Chronic pain — pain persisting for three months or more — affects an estimated 28 million adults in the UK, up from 18 million in 2012, of whom around 8 million have severely disabling pain.<Cite nums={1} /> It is the leading reason people visit their GP, the largest single cause of work disability, and a primary driver of opioid prescribing and economic inactivity, yet receives a fraction of the research funding of conditions with comparable burden. The average wait for a specialist NHS pain clinic appointment is 28 weeks — down from a post-COVID peak of 38 weeks but still nearly seven months.<Cite nums={2} /> The Faculty of Pain Medicine estimates England needs 1,200 pain medicine consultants; it has around 450.<Cite nums={2} /> Some integrated care boards commission no standalone pain service at all.</p>
+            <p>Chronic pain accounts for 36.8 million lost working days per year — more than any other health condition — and costs the economy an estimated £12–14 billion annually in lost productivity.<Cite nums={3} /> It is a major driver of the post-COVID rise in economic inactivity, with musculoskeletal and pain conditions the most commonly cited reason for long-term sickness. Prevalence is highest in the most deprived communities, mirroring almost every other health inequality, and women are disproportionately affected.<Cite nums={1} /> Community pain management programmes with a strong evidence base are patchily available and often have their own waiting lists.</p>
           </div>
         </section>
 
@@ -184,6 +192,9 @@ export default function ChronicPainPage() {
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

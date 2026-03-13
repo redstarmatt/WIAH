@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Breast Screening Programme statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/breast-screening-programme', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Breast Screening Programme — cancer detection rates', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/breast-screening-programme', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'Long Term Workforce Plan', url: 'https://www.england.nhs.uk/publication/nhs-long-term-workforce-plan/', date: '2023' },
+];
 
 export default function BreastScreeningPage() {
   const coverageRawData = [73.4, 73.9, 74.2, 75.0, 75.4, 75.9, 76.4, 75.1, 74.3, 73.8, 72.8, 70.5, 71.0, 70.7, 70.2, 70.0];
@@ -140,12 +148,16 @@ export default function BreastScreeningPage() {
           <section id="sec-context" className="max-w-2xl mb-12 mt-8">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What is driving the decline?</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England's breast screening programme invites women aged 50–70 for a mammogram every three years. At its peak in 2014, coverage reached 76.4%. It has declined steadily since — even before the COVID-19 pandemic caused widespread programme suspension in 2020. Coverage has not recovered to pre-pandemic levels, and at 70% it sits 10 percentage points below the programme's own 80% ambition.</p>
-              <p>A significant IT failure in 2018 affected around 450,000 women who were not properly invited for their final screen. The subsequent catch-up effort temporarily improved figures, but the underlying trend continued downward. Inequalities in uptake are marked: women in the most deprived areas are substantially less likely to attend, and women from some ethnic minority groups have lower uptake than the national average. Capacity constraints — too few radiographers, an ageing fleet of mammography machines, and insufficient mobile screening units — compound the problem.</p>
-              <p>Waiting times for results have grown alongside these capacity pressures. The standard is to return results within two weeks; many trusts are now taking over four weeks. Delayed recall for further assessment adds to anxiety and, in some cases, delays diagnosis of cancers that were detected but not acted on promptly. The NHS Long Term Workforce Plan committed to expanding the radiography workforce, but training pipelines take years to fill.</p>
+              <p>England's breast screening programme invites women aged 50–70 for a mammogram every three years. At its peak in 2014, coverage reached 76.4%.<Cite nums={1} /> It has declined steadily since — even before the COVID-19 pandemic caused widespread programme suspension in 2020. Coverage has not recovered to pre-pandemic levels, and at 70% it sits 10 percentage points below the programme's own 80% ambition.<Cite nums={1} /></p>
+              <p>A significant IT failure in 2018 affected around 450,000 women who were not properly invited for their final screen.<Cite nums={1} /> The subsequent catch-up effort temporarily improved figures, but the underlying trend continued downward. Inequalities in uptake are marked: women in the most deprived areas are substantially less likely to attend, and women from some ethnic minority groups have lower uptake than the national average.<Cite nums={1} /> Capacity constraints — too few radiographers, an ageing fleet of mammography machines, and insufficient mobile screening units — compound the problem.</p>
+              <p>Waiting times for results have grown alongside these capacity pressures. The standard is to return results within two weeks; many trusts are now taking over four weeks.<Cite nums={1} /> Delayed recall for further assessment adds to anxiety and, in some cases, delays diagnosis of cancers that were detected but not acted on promptly. The NHS Long Term Workforce Plan committed to expanding the radiography workforce, but training pipelines take years to fill.<Cite nums={3} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

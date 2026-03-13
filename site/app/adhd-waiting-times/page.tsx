@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // People on ADHD waiting list (thousands), 2018–2024 — NHS Digital MHSDS
 const waitingListValues = [24, 30, 28, 62, 110, 162, 203];
@@ -49,6 +51,12 @@ const annotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: NICE guidelines updated' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'Mental Health Services Data Set (MHSDS)', url: 'https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/mental-health-services-data-set', date: '2024' },
+  { num: 2, name: 'ADHD UK', dataset: 'FOI Waiting Times Data', url: 'https://adhduk.co.uk/waiting-times/', date: '2024' },
+  { num: 3, name: 'NICE', dataset: 'Attention deficit hyperactivity disorder: diagnosis and management (NG87)', url: 'https://www.nice.org.uk/guidance/ng87', date: '2023' },
+];
+
 export default function ADHDWaitingTimesPage() {
   return (
     <>
@@ -63,8 +71,8 @@ export default function ADHDWaitingTimesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Adult ADHD has gone from a condition most GPs were trained to dismiss to one generating more referrals than the system can absorb. The recognition explosion is real and welcome: research consistently shows ADHD affects 3–4% of adults in the UK, yet until recently most were never diagnosed. Referral volumes have increased by over 400% since 2018, driven by greater public awareness, social media destigmatisation, and updated NICE guidelines that explicitly recognise adult ADHD as a valid and treatable condition. The average wait for a diagnostic assessment now stands at approximately 3.5 years nationally, with enormous regional variation. In Birmingham and Solihull, waits exceed five years.</p>
-            <p>The workplace impact is substantial and largely invisible. Undiagnosed ADHD is associated with higher rates of job loss, underemployment, and workplace conflict. Adults with untreated ADHD are significantly more likely to experience anxiety, depression, and substance misuse. A 2024 analysis estimated that untreated adult ADHD costs the UK economy over £4 billion annually in lost productivity, higher welfare spending, and downstream mental health treatment. Even after diagnosis, Elvanse (lisdexamfetamine), the most commonly prescribed ADHD medication in the UK, has been subject to recurring supply disruptions since 2023, leaving diagnosed patients unable to access treatment. Without dedicated investment in assessment capacity, the waiting list will continue to grow by around 40,000 people per year.</p>
+            <p>Adult ADHD has gone from a condition most GPs were trained to dismiss to one generating more referrals than the system can absorb. The recognition explosion is real and welcome: research consistently shows ADHD affects 3–4% of adults in the UK, yet until recently most were never diagnosed. Referral volumes have increased by over 400% since 2018, driven by greater public awareness, social media destigmatisation, and updated NICE guidelines that explicitly recognise adult ADHD as a valid and treatable condition.<Cite nums={[1, 3]} /> The average wait for a diagnostic assessment now stands at approximately 3.5 years nationally, with enormous regional variation.<Cite nums={2} /> In Birmingham and Solihull, waits exceed five years.<Cite nums={2} /></p>
+            <p>The workplace impact is substantial and largely invisible. Undiagnosed ADHD is associated with higher rates of job loss, underemployment, and workplace conflict. Adults with untreated ADHD are significantly more likely to experience anxiety, depression, and substance misuse. A 2024 analysis estimated that untreated adult ADHD costs the UK economy over £4 billion annually in lost productivity, higher welfare spending, and downstream mental health treatment. Even after diagnosis, Elvanse (lisdexamfetamine), the most commonly prescribed ADHD medication in the UK, has been subject to recurring supply disruptions since 2023, leaving diagnosed patients unable to access treatment. Without dedicated investment in assessment capacity, the waiting list will continue to grow by around 40,000 people per year.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +151,9 @@ export default function ADHDWaitingTimesPage() {
             source="Source: NHS England — Right to Choose guidance 2024. NHS England — Adult ADHD Hub Pilot announcement 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

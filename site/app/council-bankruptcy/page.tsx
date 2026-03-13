@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Cumulative S114 notices, 2018–2025
 const s114Values = [1, 2, 3, 4, 6, 9, 12, 14];
@@ -60,6 +62,13 @@ const annotations2: Annotation[] = [
   { date: new Date(2021, 5, 1), label: '2021: Adult social care and SEND demand spikes' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Local Government Finance Statistics — Section 114 Notices', url: 'https://www.gov.uk/government/collections/local-government-finance-statistics', date: '2025' },
+  { num: 2, name: 'Local Government Association', dataset: 'Funding Gap Analysis', url: 'https://www.local.gov.uk/topics/finance/local-government-finance-and-spending', date: '2025' },
+  { num: 3, name: 'CIPFA', dataset: 'Financial Resilience Index', url: 'https://www.cipfa.org/services/financial-resilience-index', date: '2025' },
+  { num: 4, name: 'National Audit Office', dataset: 'Financial Sustainability of Local Authorities', url: 'https://www.nao.org.uk/reports/financial-sustainability-of-local-authorities/', date: '2024' },
+];
+
 export default function CouncilBankruptcyPage() {
   return (
     <>
@@ -74,8 +83,8 @@ export default function CouncilBankruptcyPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Before 2018, only one English council had issued a Section 114 notice in two decades. Between 2018 and 2025, fourteen did so, including Northamptonshire, Croydon, Slough, Thurrock, Woking, Nottingham, and Birmingham — the largest local authority in Europe, with a £760 million deficit largely from an equal pay liability. Thurrock borrowed £500 million to invest in commercial property, then watched rising interest rates collapse the strategy. Woking ran up £1.2 billion in debt financing town-centre regeneration on cheap borrowing that turned expensive. Each failure required exceptional government finance — loans repaid over decades — and imposed harsh service cuts on residents.</p>
-            <p>The structural cause is the collision of rising statutory demand with constrained revenues. Central government grants to English councils were cut by over 40% in real terms since 2010. Adult social care now consumes 36% of council budgets, up from 29% in 2010. Children's services costs rose 20% in real terms between 2019 and 2023. Council tax, the principal locally-controlled revenue, is capped at 5% annual growth without a local referendum. The LGA estimates the funding gap will reach £6.2 billion by 2026, and the National Audit Office has warned the sector's financial position is unsustainable without structural reform.</p>
+            <p>Before 2018, only one English council had issued a Section 114 notice in two decades. Between 2018 and 2025, fourteen did so, including Northamptonshire, Croydon, Slough, Thurrock, Woking, Nottingham, and Birmingham — the largest local authority in Europe, with a £760 million deficit largely from an equal pay liability.<Cite nums={1} /> Thurrock borrowed £500 million to invest in commercial property, then watched rising interest rates collapse the strategy. Woking ran up £1.2 billion in debt financing town-centre regeneration on cheap borrowing that turned expensive.<Cite nums={1} /> Each failure required exceptional government finance — loans repaid over decades — and imposed harsh service cuts on residents.</p>
+            <p>The structural cause is the collision of rising statutory demand with constrained revenues. Central government grants to English councils were cut by over 40% in real terms since 2010.<Cite nums={2} /> Adult social care now consumes 36% of council budgets, up from 29% in 2010. Children's services costs rose 20% in real terms between 2019 and 2023.<Cite nums={3} /> Council tax, the principal locally-controlled revenue, is capped at 5% annual growth without a local referendum. The LGA estimates the funding gap will reach £6.2 billion by 2026, and the National Audit Office has warned the sector's financial position is unsustainable without structural reform.<Cite nums={[2, 4]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -154,6 +163,9 @@ export default function CouncilBankruptcyPage() {
             source="Source: DLUHC — Local Government Finance Settlement 2025–26. LGA — Funding gap analysis, 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

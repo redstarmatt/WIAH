@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'National Disease Registration Service — cancer survival and stage at diagnosis', url: 'https://www.cancerdata.nhs.uk/', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Cancer statistics — incidence, mortality, and survival trends', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases', date: '2024' },
+  { num: 3, name: 'EUROCARE', dataset: 'European comparative cancer survival data', url: 'https://www.eurocare.it', date: '2024' },
+];
 
 export default function CancerSurvivalPage() {
   const oneYearSurvival  = [69.5, 70.2, 71.0, 71.8, 72.5, 73.1, 73.8, 74.3, 74.9, 75.3, 75.8, 76.2, 76.5, 76.8];
@@ -160,13 +168,16 @@ export default function CancerSurvivalPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on cancer survival</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>UK cancer survival rates have improved significantly since the 1990s but continue to trail comparable European countries. Five-year survival for all cancers combined stands at around 57% in England — behind Sweden (65%), Norway (62%), and Germany (61%). For breast cancer specifically, the UK 5-year survival rate of around 87% compares to 91% in Sweden. These gaps are not explained by differences in cancer incidence, age structure, or risk factors: they primarily reflect differences in diagnostic speed and treatment access.</p>
-              <p>The most important driver of survival is stage at diagnosis. A patient diagnosed with stage 1 bowel cancer has a 90% chance of surviving five years; diagnosed at stage 4, that falls to under 10%. England has historically had higher rates of late-stage diagnosis than comparable countries, partly because GP access constraints slow the referral pathway, partly because of lower uptake of screening, and partly because some symptoms are normalised rather than investigated. The 2020 pandemic significantly worsened this, with screening paused for months and urgent referrals falling sharply — creating a cohort of cancers that were diagnosed later and at more advanced stages than would otherwise have been the case.</p>
-              <p>Diagnostic waits are the most measurable system failure. The 62-day target from urgent GP referral to first treatment is now missed for nearly half of all patients, up from around 12% in 2012. The endoscopy and imaging backlogs built during Covid have proved slow to clear, with workforce shortages in radiology and gastroenterology acting as persistent bottlenecks.</p>
+              <p>UK cancer survival rates have improved significantly since the 1990s but continue to trail comparable European countries. Five-year survival for all cancers combined stands at around 57% in England — behind Sweden (65%), Norway (62%), and Germany (61%).<Cite nums={3} /> For breast cancer specifically, the UK 5-year survival rate of around 87% compares to 91% in Sweden.<Cite nums={3} /> These gaps are not explained by differences in cancer incidence, age structure, or risk factors: they primarily reflect differences in diagnostic speed and treatment access.</p>
+              <p>The most important driver of survival is stage at diagnosis. A patient diagnosed with stage 1 bowel cancer has a 90% chance of surviving five years; diagnosed at stage 4, that falls to under 10%.<Cite nums={1} /> England has historically had higher rates of late-stage diagnosis than comparable countries, partly because GP access constraints slow the referral pathway, partly because of lower uptake of screening, and partly because some symptoms are normalised rather than investigated.<Cite nums={1} /> The 2020 pandemic significantly worsened this, with screening paused for months and urgent referrals falling sharply — creating a cohort of cancers that were diagnosed later and at more advanced stages than would otherwise have been the case.</p>
+              <p>Diagnostic waits are the most measurable system failure. The 62-day target from urgent GP referral to first treatment is now missed for nearly half of all patients, up from around 12% in 2012.<Cite nums={1} /> The endoscopy and imaging backlogs built during Covid have proved slow to clear, with workforce shortages in radiology and gastroenterology acting as persistent bottlenecks.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

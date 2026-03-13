@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -58,6 +60,17 @@ function quarterToDate(q: string): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'JNCC / State of Nature Partnership', dataset: 'State of Nature 2023', url: 'https://stateofnature.org.uk/', date: '2023' },
+  { num: 2, name: 'DEFRA', dataset: 'UK Biodiversity Indicators — C5 Birds of the wider countryside and at sea', url: 'https://www.gov.uk/government/statistics/biodiversity-indicators-for-the-uk', date: '2024' },
+  { num: 3, name: 'Natural England', dataset: 'Biodiversity Net Gain — Credit Sales and Habitat Register', url: 'https://www.gov.uk/government/collections/biodiversity-net-gain', date: '2025' },
+  { num: 4, name: 'BTO', dataset: 'Breeding Bird Survey', url: 'https://www.bto.org/our-science/projects/breeding-bird-survey', date: '2024' },
+  { num: 5, name: 'Environment Agency', dataset: 'Water Framework Directive — river ecological status', url: 'https://environment.data.gov.uk/catchment-planning/', date: '2024' },
+  { num: 6, name: 'Beaver Trust', dataset: 'Colony Census', url: 'https://beavertrust.org/', date: '2025' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -139,13 +152,13 @@ export default function BiodiversityPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The State of Nature 2023 report, compiled by more than 60 conservation organisations, delivered a stark assessment: the UK is one of the most nature-depleted countries in the world, ranking in the bottom 10% globally for biodiversity intactness. Since systematic monitoring began in 1970, average species abundance across the UK has fallen by 41%. One in six species is now threatened with extinction from Britain. The decline is not evenly distributed — farmland species have been hit hardest, with the farmland bird index collapsing to just 42% of its 1970 level. Turtle doves, once common across southern England, have declined by 98%. Corn buntings, yellowhammers, and grey partridges have all suffered losses exceeding 90% in some regions. The cause is not mysterious: the intensification of agriculture since the 1970s — the removal of hedgerows, the drainage of wet meadows, the shift to autumn-sown cereals, and the widespread use of neonicotinoid pesticides — has systematically dismantled the habitats these species depend on.
+              The State of Nature 2023 report, compiled by more than 60 conservation organisations, delivered a stark assessment: the UK is one of the most nature-depleted countries in the world, ranking in the bottom 10% globally for biodiversity intactness.<Cite nums={1} /> Since systematic monitoring began in 1970, average species abundance across the UK has fallen by 41%.<Cite nums={1} /> One in six species is now threatened with extinction from Britain.<Cite nums={1} /> The decline is not evenly distributed — farmland species have been hit hardest, with the farmland bird index collapsing to just 42% of its 1970 level.<Cite nums={2} /> Turtle doves, once common across southern England, have declined by 98%.<Cite nums={2} /> Corn buntings, yellowhammers, and grey partridges have all suffered losses exceeding 90% in some regions. The cause is not mysterious: the intensification of agriculture since the 1970s — the removal of hedgerows, the drainage of wet meadows, the shift to autumn-sown cereals, and the widespread use of neonicotinoid pesticides — has systematically dismantled the habitats these species depend on.<Cite nums={1} />
             </p>
             <p>
-              Insect populations tell a parallel story. Though long-term UK data is patchier than for birds, the evidence points to serious decline. Studies of moth populations show a 33% reduction in abundance since 1968. Flying insect biomass surveys in parts of Europe suggest losses of 75% or more over three decades. Hedgehog numbers have halved since 2000, driven by habitat fragmentation, road mortality, and the loss of connected garden and hedgerow networks. River biodiversity has suffered from agricultural run-off, sewage discharges, and water abstraction — only 16% of English rivers achieve good ecological status, and invertebrate diversity in many lowland rivers has deteriorated markedly since 2010. The overall picture is of a country whose natural systems are under sustained, multi-directional pressure.
+              Insect populations tell a parallel story. Though long-term UK data is patchier than for birds, the evidence points to serious decline. Studies of moth populations show a 33% reduction in abundance since 1968.<Cite nums={1} /> Flying insect biomass surveys in parts of Europe suggest losses of 75% or more over three decades. Hedgehog numbers have halved since 2000, driven by habitat fragmentation, road mortality, and the loss of connected garden and hedgerow networks.<Cite nums={1} /> River biodiversity has suffered from agricultural run-off, sewage discharges, and water abstraction — only 16% of English rivers achieve good ecological status, and invertebrate diversity in many lowland rivers has deteriorated markedly since 2010.<Cite nums={5} /> The overall picture is of a country whose natural systems are under sustained, multi-directional pressure.
             </p>
             <p>
-              Yet the picture is not uniformly bleak, and some of the brightest spots demonstrate what is possible with political will and sustained effort. The red kite, reduced to a handful of breeding pairs in mid-Wales by the 1980s, now numbers around 10,000 birds across the UK following one of the world's most successful reintroduction programmes. Beavers, extinct in Britain for 400 years, are now established in multiple river catchments after licensed reintroductions, delivering measurable benefits for flood management and wetland biodiversity. The Knepp Estate in Sussex has become an internationally recognised example of rewilding, with turtle doves, nightingales, and purple emperor butterflies returning to land that was previously intensive farmland. In February 2024, biodiversity net gain (BNG) became mandatory for all major planning applications in England, requiring developers to deliver a minimum 10% increase in habitat value. By end of 2025, over 2,300 BNG credits had been registered and nearly 1,500 hectares of new habitat created or enhanced. The UK government's commitment to the 30x30 target — protecting 30% of land and sea for nature by 2030 — provides a framework, though delivery remains well behind the pace required.
+              Yet the picture is not uniformly bleak, and some of the brightest spots demonstrate what is possible with political will and sustained effort. The red kite, reduced to a handful of breeding pairs in mid-Wales by the 1980s, now numbers around 10,000 birds across the UK following one of the world's most successful reintroduction programmes.<Cite nums={4} /> Beavers, extinct in Britain for 400 years, are now established in multiple river catchments after licensed reintroductions, delivering measurable benefits for flood management and wetland biodiversity.<Cite nums={6} /> The Knepp Estate in Sussex has become an internationally recognised example of rewilding, with turtle doves, nightingales, and purple emperor butterflies returning to land that was previously intensive farmland. In February 2024, biodiversity net gain (BNG) became mandatory for all major planning applications in England, requiring developers to deliver a minimum 10% increase in habitat value.<Cite nums={3} /> By end of 2025, over 2,300 BNG credits had been registered and nearly 1,500 hectares of new habitat created or enhanced.<Cite nums={3} /> The UK government's commitment to the 30x30 target — protecting 30% of land and sea for nature by 2030 — provides a framework, though delivery remains well behind the pace required.
             </p>
           </div>
         </section>
@@ -258,6 +271,10 @@ export default function BiodiversityPage() {
             source="Source: Natural England — BNG Register, 2025. BTO — Breeding Bird Survey, 2024. Beaver Trust — Colony Census, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <RelatedTopics />
       </main>

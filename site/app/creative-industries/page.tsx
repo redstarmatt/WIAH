@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Creative industries GVA £bn, 2010–2024
 const creativeGvaValues = [84, 87, 91, 95, 99, 104, 109, 111, 115, 119, 115, 106, 116, 124, 131];
@@ -53,6 +55,13 @@ const annotations2: Annotation[] = [
   { date: new Date(2020, 2, 1), label: '2020: COVID closures — 400 venues lost' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DCMS', dataset: 'Creative Industries Economic Estimates', url: 'https://www.gov.uk/government/collections/creative-industries-economic-estimates', date: '2024' },
+  { num: 2, name: 'Music Venue Trust', dataset: 'Venue Census 2024', url: 'https://musicvenuetrust.com', date: '2024' },
+  { num: 3, name: 'Ukie', dataset: 'UK Video Games Industry Statistics', url: 'https://ukie.org.uk', date: '2024' },
+  { num: 4, name: 'DCMS', dataset: 'Creative Industries Sector Vision 2023', url: 'https://www.gov.uk/government/collections/creative-industries-economic-estimates', date: '2023' },
+];
+
 export default function CreativeIndustriesPage() {
   return (
     <>
@@ -67,8 +76,8 @@ export default function CreativeIndustriesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK creative industries — film, television, music, games, advertising, fashion, architecture, publishing — generated £131 billion in GVA in 2024, making Britain one of the world's leading creative economies. Yet the sector's foundations are cracking. Grassroots music venues, where tomorrow's artists develop, have fallen from over 1,050 in 2012 to under 700 today — a 33% collapse driven by rising rents, business rates, and the long tail of COVID closures. In London alone, 35% of grassroots venues have closed since 2010. Without affordable rehearsal rooms and small venues, the pipeline of talent that feeds major labels, touring artists, and the festival economy disappears.</p>
-            <p>The freelance workforce — 47% of all creative sector workers — was hit hardest by the pandemic. Many left permanently for more stable employment. The explosion of generative AI in 2023–24 now threatens the illustration, copywriting, music composition, and voice acting roles that sustained the mid-tier. The government's Creative Industries Sector Vision (2023) set ambitious growth targets but provides limited protection for the grassroots ecosystem or freelance workforce. Tax relief schemes for film, animation, and games have driven genuine inward investment but do not reach the self-employed musician or the community arts organisation.</p>
+            <p>The UK creative industries — film, television, music, games, advertising, fashion, architecture, publishing — generated £131 billion in GVA in 2024, making Britain one of the world's leading creative economies.<Cite nums={1} /> Yet the sector's foundations are cracking. Grassroots music venues, where tomorrow's artists develop, have fallen from over 1,050 in 2012 to under 700 today — a 33% collapse driven by rising rents, business rates, and the long tail of COVID closures.<Cite nums={2} /> In London alone, 35% of grassroots venues have closed since 2010.<Cite nums={2} /> Without affordable rehearsal rooms and small venues, the pipeline of talent that feeds major labels, touring artists, and the festival economy disappears.</p>
+            <p>The freelance workforce — 47% of all creative sector workers — was hit hardest by the pandemic.<Cite nums={1} /> Many left permanently for more stable employment. The explosion of generative AI in 2023–24 now threatens the illustration, copywriting, music composition, and voice acting roles that sustained the mid-tier. The government's Creative Industries Sector Vision (2023) set ambitious growth targets but provides limited protection for the grassroots ecosystem or freelance workforce.<Cite nums={4} /> Tax relief schemes for film, animation, and games have driven genuine inward investment but do not reach the self-employed musician or the community arts organisation.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -147,6 +156,9 @@ export default function CreativeIndustriesPage() {
             source="Source: Ukie — UK Video Games Industry Statistics 2024. DCMS — Creative Industries Sector Vision 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

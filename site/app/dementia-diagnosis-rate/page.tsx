@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Dementia diagnosis rate (%), 2012–2025
 const diagnosisRateValues = [58.6, 60.2, 63.1, 67.4, 67.6, 67.2, 66.8, 65.4, 63.1, 61.6, 62.0, 62.9, 62.2, 61.4];
@@ -47,6 +49,12 @@ const annotations2: Annotation[] = [
 ];
 
 const targetLine = { value: 66.7, label: 'NHS 66.7% target' };
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Recorded Dementia Diagnoses', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/recorded-dementia-diagnoses', date: 'Feb 2026' },
+  { num: 2, name: 'Alzheimer\'s Society', dataset: 'Dementia UK Update — prevalence estimates', url: 'https://www.alzheimers.org.uk/about-us/policy-and-influencing/dementia-uk-report', date: '2024' },
+  { num: 3, name: 'Royal College of Psychiatrists', dataset: 'Memory Services National Accreditation Programme (MSNAP)', url: 'https://www.rcpsych.ac.uk/improving-care/ccqi/national-clinical-audits/memory-services-national-accreditation-programme', date: '2025' },
+];
 
 export default function DementiaDiagnosisRatePage() {
   return (

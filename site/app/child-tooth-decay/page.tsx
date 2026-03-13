@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // % of 5-year-olds with tooth decay and hospital admissions (thousands), 2015–2024
 const decayPrevalenceData = [33, 31, 28, 24, 23, 20, 22, 24, 26, 26];
@@ -58,6 +60,12 @@ const deprivationAnnotations: Annotation[] = [
   { date: new Date(2023, 5, 1), label: '2023: NHS dental recovery plan announced' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'OHID', dataset: 'Oral Health Survey of 5-year-old Children', url: 'https://www.gov.uk/government/statistics/oral-health-survey-of-5-year-old-children', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Hospital Episode Statistics — dental admissions', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity', date: '2024' },
+  { num: 3, name: 'UKHSA', dataset: 'Water Fluoridation Health Monitoring Report', url: 'https://www.gov.uk/government/publications/water-fluoridation-health-monitoring-report-for-england', date: '2024' },
+];
+
 export default function ChildToothDecayPage() {
   return (
     <>
@@ -72,8 +80,8 @@ export default function ChildToothDecayPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Dental caries — tooth decay caused by acid-producing bacteria feeding on dietary sugar — is the most entirely preventable disease that nonetheless sends more children to hospital under general anaesthetic than any other condition. In 2024, 34,000 children under 18 had teeth extracted in hospital, almost all as a direct consequence of decay that could have been prevented by fluoride toothpaste, diet, routine dental check-ups, and water fluoridation. The NHS dental crisis that has left an estimated 12 million adults unable to access an NHS dentist is amplifying the problem: children who do not see a dentist routinely are diagnosed later, by which point extraction is often the only option.</p>
-            <p>The social gradient is the starkest expression of health inequality in England. Children aged five in the most deprived areas have a 42% prevalence of visible tooth decay — three times the 14% rate in the least deprived areas. The gap has not narrowed materially in a decade. Sugar consumption correlates strongly with deprivation, NHS dental access is worst in deprived areas, and fluoridated water supply covers only a minority of England's population. The public health tools to address child tooth decay are well-understood and cost-effective: water fluoridation schemes reduce decay prevalence by 25–30% at population level, and supervised toothbrushing in schools reduces it by a further 30% in high-risk populations. The barrier is structural investment in NHS dentistry and preventive oral health programmes.</p>
+            <p>Dental caries — tooth decay caused by acid-producing bacteria feeding on dietary sugar — is the most entirely preventable disease that nonetheless sends more children to hospital under general anaesthetic than any other condition. In 2024, 34,000 children under 18 had teeth extracted in hospital, almost all as a direct consequence of decay that could have been prevented by fluoride toothpaste, diet, routine dental check-ups, and water fluoridation.<Cite nums={2} /> The NHS dental crisis that has left an estimated 12 million adults unable to access an NHS dentist is amplifying the problem: children who do not see a dentist routinely are diagnosed later, by which point extraction is often the only option.</p>
+            <p>The social gradient is the starkest expression of health inequality in England. Children aged five in the most deprived areas have a 42% prevalence of visible tooth decay — three times the 14% rate in the least deprived areas.<Cite nums={1} /> The gap has not narrowed materially in a decade. Sugar consumption correlates strongly with deprivation, NHS dental access is worst in deprived areas, and fluoridated water supply covers only a minority of England's population. The public health tools to address child tooth decay are well-understood and cost-effective: water fluoridation schemes reduce decay prevalence by 25–30% at population level, and supervised toothbrushing in schools reduces it by a further 30% in high-risk populations.<Cite nums={3} /> The barrier is structural investment in NHS dentistry and preventive oral health programmes.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -152,6 +160,9 @@ export default function ChildToothDecayPage() {
             source="Source: OHID — Oral health survey of 5-year-old children 2023. NHS England — Dental recovery plan 2023. Public Health England — Water fluoridation evidence review."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Hospital admissions (thousands), 2010–2023 — NHS Digital
 const admissionsValues = [839, 865, 884, 904, 916, 925, 930, 940, 950, 955, 890, 960, 975, 980];
@@ -47,6 +49,12 @@ const annotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID-19 — off-trade surge' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Alcohol-specific deaths in the UK', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholspecificdeathsintheuk', date: '2023' },
+  { num: 2, name: 'NHS Digital', dataset: 'Statistics on Alcohol, England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/statistics-on-alcohol', date: '2023' },
+  { num: 3, name: 'Public Health Scotland', dataset: 'Evaluating the impact of minimum unit pricing', date: '2023' },
+];
+
 export default function AlcoholPage() {
   return (
     <>
@@ -61,8 +69,8 @@ export default function AlcoholPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain is consuming less alcohol than it did in 2004, when per-capita consumption peaked, yet the health toll keeps rising. Alcohol-specific deaths in England and Wales reached 8,274 in 2023 — up 24% since 2010 — driven by alcoholic liver disease, which has a long latency: the drinkers dying today were drinking heavily in the 2000s. Hospital admissions where alcohol was the primary or secondary diagnosis reached 980,000 in 2022/23, up 17% from 839,000 in 2010, and now cost the NHS an estimated £3.5 billion a year. The heaviest 10% of drinkers consume more than 60% of all alcohol sold; it is their ill-health that dominates the statistics even as moderate drinkers cut back.</p>
-            <p>The COVID-19 pandemic produced a sharp spike in alcohol mortality: deaths peaked at 9,641 in 2021 as off-licence sales surged, hospital services were constrained, and previously dependent drinkers went without clinical support. Deaths have since fallen back to 8,274 but remain well above pre-pandemic levels. There are marked socioeconomic gradients: alcohol-specific death rates in the most deprived areas of England are more than twice those in the least deprived, a disparity that has widened since 2010. Scotland's introduction of minimum unit pricing (MUP) at 50p per unit in 2018 — raised to 65p in 2024 — provides the clearest evidence that price-based interventions reduce harm. Public Health Scotland's evaluation found a 13% reduction in alcohol-specific deaths in the first three years. England has not introduced equivalent measures.</p>
+            <p>Britain is consuming less alcohol than it did in 2004, when per-capita consumption peaked, yet the health toll keeps rising. Alcohol-specific deaths in England and Wales reached 8,274 in 2023 — up 24% since 2010 — driven by alcoholic liver disease, which has a long latency: the drinkers dying today were drinking heavily in the 2000s.<Cite nums={1} /> Hospital admissions where alcohol was the primary or secondary diagnosis reached 980,000 in 2022/23, up 17% from 839,000 in 2010, and now cost the NHS an estimated £3.5 billion a year.<Cite nums={2} /> The heaviest 10% of drinkers consume more than 60% of all alcohol sold; it is their ill-health that dominates the statistics even as moderate drinkers cut back.<Cite nums={2} /></p>
+            <p>The COVID-19 pandemic produced a sharp spike in alcohol mortality: deaths peaked at 9,641 in 2021 as off-licence sales surged, hospital services were constrained, and previously dependent drinkers went without clinical support.<Cite nums={1} /> Deaths have since fallen back to 8,274 but remain well above pre-pandemic levels.<Cite nums={1} /> There are marked socioeconomic gradients: alcohol-specific death rates in the most deprived areas of England are more than twice those in the least deprived, a disparity that has widened since 2010.<Cite nums={1} /> Scotland's introduction of minimum unit pricing (MUP) at 50p per unit in 2018 — raised to 65p in 2024 — provides the clearest evidence that price-based interventions reduce harm. Public Health Scotland's evaluation found a 13% reduction in alcohol-specific deaths in the first three years.<Cite nums={3} /> England has not introduced equivalent measures.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +154,9 @@ export default function AlcoholPage() {
             source="Source: ONS — Alcohol-specific deaths in the UK 2023. NHS Digital — Statistics on Alcohol 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Premature deaths attributed to air pollution, England, 2003–2024 — COMEAP
 const prematureDeathsValues = [39200, 38500, 37800, 37000, 36200, 35500, 34800, 34000, 33200, 32500, 31800, 31100, 30500, 29900, 29400, 29000, 28800, 28700, 28500, 28400, 28300, 28900];

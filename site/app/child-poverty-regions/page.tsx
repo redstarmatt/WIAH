@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // National child poverty rate (%, AHC) and North East rate, 2010–2024
 const nationalPovertyData = [27, 27, 28, 28, 29, 28, 29, 30, 30, 30, 31, 31, 30, 31, 31];
@@ -58,6 +60,13 @@ const workingAnnotations: Annotation[] = [
   { date: new Date(2021, 0, 1), label: '2021: UC £20 uplift briefly reduces working poverty' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Households Below Average Income', url: 'https://www.gov.uk/government/collections/households-below-average-income-hbai--2', date: '2024' },
+  { num: 2, name: 'Joseph Rowntree Foundation', dataset: 'Poverty Statistics', url: 'https://www.jrf.org.uk/poverty-statistics', date: '2024' },
+  { num: 3, name: 'End Child Poverty Coalition', dataset: 'Local area child poverty data', url: 'https://www.endchildpoverty.org.uk/', date: '2024' },
+  { num: 4, name: 'Child Poverty Action Group', dataset: 'Two-child limit impact analysis', url: 'https://cpag.org.uk/', date: '2024' },
+];
+
 export default function ChildPovertyRegionsPage() {
   return (
     <>
@@ -72,8 +81,8 @@ export default function ChildPovertyRegionsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>One in three children in the UK lives in poverty. The standard measure — households below average income after housing costs — puts the figure at around 4.3 million children, or 30–31% of all children, a rate that has remained stubbornly high for over a decade despite government spending on tax credits, child benefit, and the National Living Wage. Geography matters enormously: the North East has a child poverty rate of 34%, against 20% in the South East and 22% in the South West. In Inner London, the rate reaches 37% — where high housing costs push many working families below the poverty line even on relatively high nominal incomes. This 14–17 percentage point gap between regions reflects deep structural inequalities in wages, housing costs, economic opportunity, and local authority capacity to provide supplementary services.</p>
-            <p>The most important structural shift of the past 20 years is the rise of in-work poverty. In 2010, 57% of children in poverty lived in working households; by 2024, this had risen to 69%. The National Living Wage has increased the floor for adult pay significantly — but not fast enough to prevent poverty in families with multiple children, high housing costs, and hours restricted by caring responsibilities. The two-child benefit limit — which prevents families from claiming child tax credit or the child element of Universal Credit for a third or subsequent child — is estimated to have pushed 360,000 additional children into poverty since its introduction in 2017. Abolition, announced in the 2024 Budget and scheduled from 2026, is projected to lift 540,000 children out of poverty.</p>
+            <p>One in three children in the UK lives in poverty. The standard measure — households below average income after housing costs — puts the figure at around 4.3 million children, or 30–31% of all children, a rate that has remained stubbornly high for over a decade despite government spending on tax credits, child benefit, and the National Living Wage.<Cite nums={1} /> Geography matters enormously: the North East has a child poverty rate of 34%, against 20% in the South East and 22% in the South West.<Cite nums={[1, 3]} /> In Inner London, the rate reaches 37% — where high housing costs push many working families below the poverty line even on relatively high nominal incomes.<Cite nums={3} /> This 14–17 percentage point gap between regions reflects deep structural inequalities in wages, housing costs, economic opportunity, and local authority capacity to provide supplementary services.<Cite nums={2} /></p>
+            <p>The most important structural shift of the past 20 years is the rise of in-work poverty. In 2010, 57% of children in poverty lived in working households; by 2024, this had risen to 69%.<Cite nums={[1, 2]} /> The National Living Wage has increased the floor for adult pay significantly — but not fast enough to prevent poverty in families with multiple children, high housing costs, and hours restricted by caring responsibilities.<Cite nums={2} /> The two-child benefit limit — which prevents families from claiming child tax credit or the child element of Universal Credit for a third or subsequent child — is estimated to have pushed 360,000 additional children into poverty since its introduction in 2017.<Cite nums={4} /> Abolition, announced in the 2024 Budget and scheduled from 2026, is projected to lift 540,000 children out of poverty.<Cite nums={4} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -152,6 +161,9 @@ export default function ChildPovertyRegionsPage() {
             source="Source: DWP — Households Below Average Income 2024. Child Poverty Action Group — Two-child limit analysis 2024. JRF — UK Poverty Report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

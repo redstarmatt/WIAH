@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // 4-hour performance (%), 2010–2024 — NHS England A&E Statistics
 const fourHourValues = [97.5, 97.2, 96.8, 96.1, 95.6, 94.9, 91.2, 89.1, 87.5, 85.2, 70.0, 78.1, 76.0, 72.4, 40.4];
@@ -48,6 +50,11 @@ const annotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: Target revised down to 76%' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'A&E Attendances and Emergency Admissions', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/', date: '2024' },
+  { num: 2, name: 'Royal College of Emergency Medicine', dataset: 'Corridor Care Position Statement', date: '2024' },
+];
+
 export default function AEWaitingTimesCrisisPage() {
   return (
     <>
@@ -62,8 +69,8 @@ export default function AEWaitingTimesCrisisPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The 4-hour A&E standard was introduced in 2004 and rapidly became the defining metric of NHS emergency performance. For a decade it worked: the target of seeing, treating, admitting, or discharging 95% of patients within four hours was routinely met. That standard has not been met nationally since July 2015. By 2024, performance had fallen to 40.4% — meaning the majority of patients attending a Type 1 emergency department now wait longer than four hours. The decline is structural, and it reflects a system under pressure at every link in the chain.</p>
-            <p>The proximate cause is exit block: patients cannot leave A&E because there are no beds on the wards, and patients cannot leave the wards because there is nowhere safe to discharge them. Social care capacity in England has contracted by an estimated 120,000 beds since 2010. In 2023/24, an estimated 13,000 acute beds per day were occupied by patients who no longer needed to be there. This cascades backwards: wards are full, A&E patients on trolleys cannot be admitted, ambulances queue outside, and 999 response times lengthen. Corridor care has become normalised. The Royal College of Emergency Medicine describes this as the most dangerous situation in the NHS because patients awaiting assessment in crowded corridors are at measurably higher risk of harm and death. The 12-hour wait figure — once so rare it was a never-event — reached 71,517 in a single month in late 2024, an 87-fold increase from 2015.</p>
+            <p>The 4-hour A&E standard was introduced in 2004 and rapidly became the defining metric of NHS emergency performance. For a decade it worked: the target of seeing, treating, admitting, or discharging 95% of patients within four hours was routinely met. That standard has not been met nationally since July 2015.<Cite nums={1} /> By 2024, performance had fallen to 40.4% — meaning the majority of patients attending a Type 1 emergency department now wait longer than four hours.<Cite nums={1} /> The decline is structural, and it reflects a system under pressure at every link in the chain.</p>
+            <p>The proximate cause is exit block: patients cannot leave A&E because there are no beds on the wards, and patients cannot leave the wards because there is nowhere safe to discharge them. Social care capacity in England has contracted by an estimated 120,000 beds since 2010. In 2023/24, an estimated 13,000 acute beds per day were occupied by patients who no longer needed to be there.<Cite nums={1} /> This cascades backwards: wards are full, A&E patients on trolleys cannot be admitted, ambulances queue outside, and 999 response times lengthen. Corridor care has become normalised. The Royal College of Emergency Medicine describes this as the most dangerous situation in the NHS because patients awaiting assessment in crowded corridors are at measurably higher risk of harm and death.<Cite nums={2} /> The 12-hour wait figure — once so rare it was a never-event — reached 71,517 in a single month in late 2024, an 87-fold increase from 2015.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -147,6 +154,9 @@ export default function AEWaitingTimesCrisisPage() {
             source="Source: NHS England — Same Day Emergency Care data 2024. NHS England — Virtual Ward programme dashboard 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

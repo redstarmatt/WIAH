@@ -8,6 +8,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Sport England', dataset: 'Active Lives Adult Survey', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2024' },
+  { num: 2, name: 'Swim England', dataset: 'National Pool and Leisure Facility Audit', url: 'https://www.swimming.org/swimengland/pool-and-facility-reports/', date: '2024' },
+  { num: 3, name: 'Sport England', dataset: 'Active Places Power Database', url: 'https://www.activeplacespower.com/', date: '2024' },
+  { num: 4, name: 'DCMS', dataset: 'Multi-Sport Grassroots Facilities Programme', date: '2024' },
+];
 
 export default function CommunitySportFacilitiesPage() {
   // Publicly accessible swimming pools count — 2010–2024 (15 points)
@@ -176,12 +185,16 @@ export default function CommunitySportFacilitiesPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>More than 400 public leisure centres have closed in England since 2010, with the losses concentrated in the most deprived areas where council budgets were cut deepest. The Swim England National Pool and Leisure Audit identifies a 26% fall in publicly accessible swimming pools since 2010. Unlike commercial gyms, which have expanded in wealthier areas, public leisure facilities serve as the primary point of access for low-income families, older adults, and children. Their loss is not replaced by the market.</p>
-              <p>The 2022 energy crisis was the most acute recent shock. Leisure centres, which run pools, wet-change facilities and large heating systems, are energy-intensive operations. Before the government's £60 million rescue fund was announced in late 2022, Swim England estimated that over 40% of public pools were at risk of closure due to energy costs. The fund stabilised immediate closures but did not address the underlying financial model: many leisure trusts — the arm's-length operators that run council facilities — remain financially precarious and structurally dependent on public subsidy that councils can no longer reliably provide.</p>
-              <p>The participation gap between rich and poor has widened despite government targets. Adults in the most affluent quintile are now 24 percentage points more likely to meet the Chief Medical Officers' physical activity guidelines than those in the least affluent — up from 18 points in 2015. The government's target of 70% adult activity by 2030 requires the overall rate to rise by seven percentage points in six years. At current trajectory, that is not achievable without specific interventions that reach the lowest-income groups — and those interventions depend on the public facilities whose existence is most at risk.</p>
+              <p>More than 400 public leisure centres have closed in England since 2010, with the losses concentrated in the most deprived areas where council budgets were cut deepest.<Cite nums={3} /> The Swim England National Pool and Leisure Audit identifies a 26% fall in publicly accessible swimming pools since 2010.<Cite nums={2} /> Unlike commercial gyms, which have expanded in wealthier areas, public leisure facilities serve as the primary point of access for low-income families, older adults, and children. Their loss is not replaced by the market.</p>
+              <p>The 2022 energy crisis was the most acute recent shock. Leisure centres, which run pools, wet-change facilities and large heating systems, are energy-intensive operations. Before the government's £60 million rescue fund was announced in late 2022, Swim England estimated that over 40% of public pools were at risk of closure due to energy costs.<Cite nums={2} /> The fund stabilised immediate closures but did not address the underlying financial model: many leisure trusts — the arm's-length operators that run council facilities — remain financially precarious and structurally dependent on public subsidy that councils can no longer reliably provide.<Cite nums={4} /></p>
+              <p>The participation gap between rich and poor has widened despite government targets. Adults in the most affluent quintile are now 24 percentage points more likely to meet the Chief Medical Officers' physical activity guidelines than those in the least affluent — up from 18 points in 2015.<Cite nums={1} /> The government's target of 70% adult activity by 2030 requires the overall rate to rise by seven percentage points in six years. At current trajectory, that is not achievable without specific interventions that reach the lowest-income groups — and those interventions depend on the public facilities whose existence is most at risk.<Cite nums={[1, 3]} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

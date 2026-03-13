@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // UK aviation CO2 emissions (MtCO2), 2010–2024 — DESNZ
 const emissionsValues = [31.2, 32.4, 33.1, 33.8, 34.2, 34.9, 35.2, 35.8, 36.1, 36.4, 12.8, 17.2, 29.4, 33.8, 35.0];
