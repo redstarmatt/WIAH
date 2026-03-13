@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: "Children's Social Work Workforce — Caseloads and Vacancies", url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-s-social-work-workforce', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'Characteristics of Children in Need — Referrals and Protection Plans', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/characteristics-of-children-in-need', date: '2024' },
+  { num: 3, name: 'Independent Review of Children\'s Social Care (MacAlister)', dataset: 'Final Report and Recommendations', url: 'https://childrenssocialcare.independent-review.uk', date: '2022' },
+  { num: 4, name: 'Ofsted', dataset: 'Inspection Outcomes for Local Authority Children\'s Services', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

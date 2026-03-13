@@ -82,7 +82,7 @@ export default function WildfireRiskPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>Wildfire has historically been seen as a problem for southern Europe or Australia — not Britain. That perception changed in 2022. Record temperatures of 40.3&deg;C on 19 July created conditions previously unmodelled in risk assessments: fires broke out simultaneously in Lincolnshire, Essex, and Suffolk; homes burned in Wennington within the M25; the London Fire Brigade declared a major incident. The national total — 26,000 hectares burned — was 570% above the previous decade's average and overwhelmed fire services across England.<Cite nums={1} /> The decade-long trend beneath this shock is itself significant: wildfires burned around 1,800 hectares annually in 2010, rising to 5,200 hectares by 2019 — a near-trebling before the extreme year. Drained peatlands in upland northern England, Wales, and Scotland are particularly flammable; when peat burns it releases centuries of stored carbon, creating a climate feedback loop. The National Fire Chiefs Council published a wildfire strategy in 2023 recommending dedicated response capacity and cross-boundary coordination, and most English services have since established specialist wildfire teams.<Cite nums={2} /></p>
-            <p>UK fire services are not resourced on the assumption of wildfire at scale: equipment, training, and operational frameworks were designed primarily for structure fires. The 2022 events exposed gaps in specialist PPE, aerial suppression capacity, and land manager coordination that have only partially been closed. Rewetting drained peatlands is the highest-impact available intervention — wet peat does not burn — and Natural England's England Peat Action Plan has increased investment in restoration, but approximately 80% of England's upland peat remains in degraded condition. Climate change means the UK will experience more extreme fire years regardless of mitigation; adapting land management and fire service capacity is not optional.</p>
+            <p>UK fire services are not resourced on the assumption of wildfire at scale: equipment, training, and operational frameworks were designed primarily for structure fires. The 2022 events exposed gaps in specialist PPE, aerial suppression capacity, and land manager coordination that have only partially been closed. Rewetting drained peatlands is the highest-impact available intervention — wet peat does not burn — and Natural England's England Peat Action Plan has increased investment in restoration, but approximately 80% of England's upland peat remains in degraded condition.<Cite nums={3} /> Climate change means the UK will experience more extreme fire years regardless of mitigation; adapting land management and fire service capacity is not optional.</p>
           </div>
         </section>
 
@@ -184,6 +184,10 @@ export default function WildfireRiskPage() {
           </p>
         </section>
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>

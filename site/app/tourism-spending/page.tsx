@@ -170,7 +170,7 @@ export default function TourismSpendingPage() {
               Domestic tourism tells a more complicated story. The 2021 staycation boom pushed UK residents' holiday spending to a record £82 billion as international travel remained restricted.<Cite nums={3} /> That figure has since fallen back to around £74.5 billion as outbound travel recovered — British tourists are once again spending more abroad than foreign visitors spend here, maintaining the UK's persistent tourism trade deficit. The structural challenge is geographic concentration: London captures 54% of all overseas visitor spending, while the entire north of England — from Liverpool to Newcastle — accounts for roughly 12%.<Cite nums={2} /> VisitBritain's "Discover England" fund and the devolved tourism agencies have made incremental progress, but the capital's dominance remains largely unchanged over two decades.
             </p>
             <p>
-              Employment recovery has been uneven. The sector lost 44% of its workforce during the pandemic, and many experienced hospitality workers moved permanently into other industries. Recruitment difficulties persist, compounded by post-Brexit restrictions on EU workers who previously filled a significant share of seasonal and entry-level tourism roles. The ONS estimates 3.2 million people now work in tourism-related roles — back to pre-pandemic levels in headcount terms, though the proportion of part-time and zero-hours contracts has increased. Tourism contributes roughly 10% of UK GDP when indirect effects are included, making it the country's third-largest export sector behind financial services and advanced manufacturing.
+              Employment recovery has been uneven. The sector lost 44% of its workforce during the pandemic, and many experienced hospitality workers moved permanently into other industries.<Cite nums={4} /> Recruitment difficulties persist, compounded by post-Brexit restrictions on EU workers who previously filled a significant share of seasonal and entry-level tourism roles. The ONS estimates 3.2 million people now work in tourism-related roles — back to pre-pandemic levels in headcount terms, though the proportion of part-time and zero-hours contracts has increased.<Cite nums={4} /> Tourism contributes roughly 10% of UK GDP when indirect effects are included, making it the country's third-largest export sector behind financial services and advanced manufacturing.
             </p>
           </div>
         </section>
@@ -338,6 +338,10 @@ export default function TourismSpendingPage() {
             source="Source: ONS — Overseas Travel and Tourism, Q4 2025. VisitBritain inbound statistics 2025. DCMS Tourism Satellite Account 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

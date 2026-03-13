@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Natural England / MHCLG', dataset: 'Green Infrastructure Standards', url: 'https://www.gov.uk/government/statistics/green-infrastructure-standards', date: '2024' },
+  { num: 2, name: 'MHCLG', dataset: 'Local Authority Revenue Expenditure and Financing', url: 'https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing', date: '2024' },
+  { num: 3, name: 'Forest Research / Forestry Commission', dataset: 'National Forest Inventory', url: 'https://www.forestresearch.gov.uk/tools-and-resources/national-forest-inventory/', date: '2024' },
+  { num: 4, name: 'DEFRA', dataset: 'Biodiversity Net Gain guidance (Environment Act 2021)', url: 'https://www.gov.uk/government/publications/biodiversity-net-gain', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -144,9 +153,9 @@ export default function UrbanGreenSpacePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The numbers describe a slow, quiet loss. Since 2010, the proportion of urban areas in England meeting the World Health Organization guideline for accessible green space has fallen by more than seven percentage points. That guideline is modest: at least one hectare of public green space within 300 metres of every home. A decade and a half ago, roughly half of urban England met it. Now fewer than 45% do. The decline is driven by three forces acting simultaneously: development pressure converting parks, allotments and playing fields into housing; sustained cuts to council parks budgets that have left maintenance, ranger services and community gardening programmes gutted; and a planning system that has consistently failed to require meaningful green space provision in new developments.</p>
+            <p>The numbers describe a slow, quiet loss. Since 2010, the proportion of urban areas in England meeting the World Health Organization guideline for accessible green space has fallen by more than seven percentage points.<Cite nums={1} /> That guideline is modest: at least one hectare of public green space within 300 metres of every home. A decade and a half ago, roughly half of urban England met it. Now fewer than 45% do. The decline is driven by three forces acting simultaneously: development pressure converting parks, allotments and playing fields into housing; sustained cuts to council parks budgets that have left maintenance, ranger services and community gardening programmes gutted;<Cite nums={2} /> and a planning system that has consistently failed to require meaningful green space provision in new developments.</p>
             <p>The health case for urban green space is not speculative. A substantial body of evidence links access to parks and green areas with reduced rates of depression, cardiovascular disease, and childhood obesity. Green spaces moderate urban heat island effects, which are responsible for hundreds of excess deaths during summer heatwaves. Natural play environments support child development. And the benefits are not distributed equally. Communities in the most deprived 20% of neighbourhoods have access to 40% less green space per person than those in the least deprived 20%, and are least likely to have private gardens. When public parks are degraded or lost, the burden falls hardest on those with fewest alternatives.</p>
-            <p>Urban tree canopy cover tells a related but distinct story. England currently manages around 14.7% urban canopy coverage, down from 16.8% in 2010. The government committed to planting 30,000 hectares of new woodland per year by 2025, but annual planting has never exceeded a third of that target. Ash dieback, now present across the entire country, is expected to kill 80% of the United Kingdom"s ash trees over the coming decades, further reducing urban canopy. The Environment Act 2021 introduced biodiversity net gain requirements for new developments, and some councils have adopted ambitious urban greening strategies. But without a statutory duty to maintain public parks at a minimum standard, the overall trajectory remains one of managed decline.</p>
+            <p>Urban tree canopy cover tells a related but distinct story. England currently manages around 14.7% urban canopy coverage, down from 16.8% in 2010.<Cite nums={3} /> The government committed to planting 30,000 hectares of new woodland per year by 2025, but annual planting has never exceeded a third of that target. Ash dieback, now present across the entire country, is expected to kill 80% of the United Kingdom"s ash trees over the coming decades, further reducing urban canopy. The Environment Act 2021 introduced biodiversity net gain requirements for new developments,<Cite nums={4} /> and some councils have adopted ambitious urban greening strategies. But without a statutory duty to maintain public parks at a minimum standard, the overall trajectory remains one of managed decline.</p>
           </div>
         </section>
 
@@ -296,6 +305,10 @@ export default function UrbanGreenSpacePage() {
             </div>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Positive callout */}
         <ScrollReveal>
