@@ -199,7 +199,7 @@ export default function BathingWaterQualityPage() {
             <p>
               England&apos;s rivers tell a similar story. Only 14% of river water bodies
               currently meet &apos;good ecological status&apos; under Water Framework Directive
-              criteria -- down from 27% in 2010. Agricultural run-off, sewage
+              criteria -- down from 27% in 2010.<Cite nums={3} /> Agricultural run-off, sewage
               pollution, and road drainage all contribute. The data below tracks
               these trends across bathing water quality, sewage discharges, and river
               health, with a breakdown by water company.
@@ -411,6 +411,9 @@ export default function BathingWaterQualityPage() {
 
         <RelatedTopics />
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         {/* Sources & methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">
