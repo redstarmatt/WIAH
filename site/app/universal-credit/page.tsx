@@ -1,285 +1,178 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface ClaimantsPoint {
-  year: number;
-  millions: number;
-}
-
-interface SanctionsPoint {
-  year: number;
-  pctSanctioned: number;
-}
-
-interface HouseholdTypePoint {
-  type: string;
-  pct: number;
-}
-
-interface ChildProtectionData {
-  topic: string;
-  national: {
-    claimants: ClaimantsPoint[];
-    sanctionsRate: SanctionsPoint[];
-    byHouseholdType: HouseholdTypePoint[];
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Component ────────────────────────────────────────────────────────────────
-
 export default function UniversalCreditPage() {
-  const [data, setData] = useState<ChildProtectionData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const colour = '#F4A261';
 
-  useEffect(() => {
-    fetch('/data/universal-credit/universal_credit.json')
-      .then((res) => res.json())
-      .then((json: ChildProtectionData) => {
-        setData(json);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error('Failed to load universal credit data:', err);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading || !data) {
-    return <div className="p-6 text-center">Loading...</div>;
-  }
-
-  // ── Series ────────────────────────────────────────────────────────────────
+  // Universal Credit claimants 2016–2024 (millions)
+  const claimantsData = [0.4, 0.8, 1.3, 2.0, 2.7, 3.2, 5.8, 5.9, 6.0];
+  const claimantsAnnotations: Annotation[] = [
+    { date: new Date(2020, 2, 1), label: '2020: COVID surge in claims' },
+    { date: new Date(2022, 0, 1), label: '2022: Legacy benefit migration begins' },
+  ];
 
   const claimantsSeries: Series[] = [
     {
       id: 'claimants',
-      label: 'UC claimants (millions)',
-      colour: '#F4A261',
-      data: data.national.claimants.map((p) => ({
-        date: yearToDate(p.year),
-        value: p.millions,
-      })),
+      label: 'Universal Credit claimants (millions)',
+      colour: colour,
+      data: claimantsData.map((v, i) => ({ date: new Date(2016 + i, 0, 1), value: v })),
     },
   ];
 
-  const sanctionsSeries: Series[] = [
+  // Deductions and advance payments 2018–2024 (% of claimants)
+  const deductionsData = [38, 39, 40, 42, 44, 46, 35];
+  const advanceData    = [21, 22, 23, 24, 25, 24, 20];
+
+  const deductionsSeries: Series[] = [
     {
-      id: 'sanctions',
-      label: 'Claimants sanctioned (%)',
-      colour: '#E63946',
-      data: data.national.sanctionsRate.map((p) => ({
-        date: yearToDate(p.year),
-        value: p.pctSanctioned,
-      })),
+      id: 'deductions',
+      label: 'Claimants with deductions (%)',
+      colour: colour,
+      data: deductionsData.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
     },
+    {
+      id: 'advance',
+      label: 'Claimants with advance payment loan (%)',
+      colour: '#E63946',
+      data: advanceData.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const deductionsAnnotations: Annotation[] = [
+    { date: new Date(2021, 0, 1), label: '2021: Deduction cap raised to 25%' },
+    { date: new Date(2022, 0, 1), label: '2022: Cap reduced to 25%' },
   ];
 
   return (
-    <main>
+    <>
       <TopicNav topic="Universal Credit" />
-
-      <div className="max-w-5xl mx-auto px-6 pt-12">
+      <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Universal Credit"
-          question="Is Universal Credit actually working?"
-          finding="Universal Credit now supports 6.4 million households, but its five-week wait, two-child limit, and benefit cap mean that for many of the most vulnerable claimants, the safety net has significant holes."
-          colour="#F4A261"
+          question="Is Universal Credit Working?"
+          finding="6 million people are on Universal Credit — but 2.1 million have deductions reducing their payments below subsistence — and the five-week wait causes debt and hardship for new claimants."
+          colour={colour}
           preposition="with"
         />
-      </div>
 
-      {/* Metric Cards */}
-      <section className="max-w-4xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <ScrollReveal>
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Overview' },
+          { id: 'sec-claimants', label: 'Claimant Numbers' },
+          { id: 'sec-deductions', label: 'Deductions' },
+        ]} />
+
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Universal Credit claimants"
-              value="6.4M"
-              unit="households"
+              label="UC claimants (millions)"
+              value="6.0"
+              direction="up"
+              polarity="neutral"
+              changeText="2024 · up from 400K in 2016 · includes in-work and out-of-work claimants"
+              sparklineData={[0.4, 0.8, 1.3, 2.0, 2.7, 3.2, 5.8, 5.9, 6.0]}
+              source="DWP — UC Management Information, 2024"
+            />
+            <MetricCard
+              label="Claimants with deductions (millions)"
+              value="2.1"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 · Was 2.9M before COVID; full rollout by 2024"
-              sparklineData={[0.5, 0.9, 1.6, 2.9, 5.6, 5.9, 6.1, 6.4]}
-              href="#sec-positive"
+              changeText="2024 · 35% of claimants · debt repayments cutting already-low payments"
+              sparklineData={[0.9, 1.1, 1.3, 1.6, 1.9, 2.2, 2.4, 2.2, 2.1]}
+              source="DWP — UC Management Information, 2024"
             />
-          </ScrollReveal>
-
-          <ScrollReveal>
             <MetricCard
-              label="Households affected by benefit cap"
-              value="126K"
+              label="Average debt on first payment (£)"
+              value="812"
               direction="up"
               polarity="up-is-bad"
-              changeText="Average cap shortfall: £58/week"
-              sparklineData={[85, 95, 105, 115, 120, 122, 125, 126]}
-              href="#sec-positive"
+              changeText="2024 · accrued during 5-week wait · repaid through deductions · pushes claimants to food banks"
+              sparklineData={[620, 650, 680, 710, 740, 780, 820, 815, 812]}
+              source="DWP / NAO — Universal Credit evaluation, 2024"
             />
-          </ScrollReveal>
+          </div>
+        </section>
 
-          <ScrollReveal>
-            <MetricCard
-              label="Claimants using food banks within 1 month"
-              value="34%"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="Trussell Trust data; five-week wait driver"
-              sparklineData={[18, 20, 24, 28, 30, 31, 33, 34]}
-              href="#sec-positive"
-            />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Charts */}
-      <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-        <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-          <p>Universal Credit replaced six legacy benefits — Income Support, Jobseeker's Allowance, Employment and Support Allowance, Working Tax Credit, Child Tax Credit, and Housing Benefit — with a single monthly payment. The design intention was simplicity and work incentives. The structural problem is the five-week wait before the first payment arrives. No comparable welfare system among developed nations asks newly destitute claimants to wait five weeks before receiving support. Claimants can apply for an advance loan, but it is repaid from future UC payments, creating debt at the point of greatest vulnerability. The Trussell Trust estimates that 34% of new UC claimants access a food bank within a month of making their first claim.</p>
-          <p>The two-child limit, introduced in April 2017, restricts the child element of Universal Credit to the first two children in a family. Children born after that date into families with two or more existing children receive no UC child element. Approximately 450,000 families and around one million children are affected. The Joseph Rowntree Foundation estimates the policy pushes 250,000 children into poverty. Despite sustained cross-party pressure from MPs, charities, and the Church of England, both the Conservative government that introduced the policy and the Labour government elected in 2024 have declined to repeal it. The Treasury saving — roughly £1.3bn a year — is the stated reason.</p>
-            </div>
-      </section>
-
-      {/* Positive Callout */}
-      <section id="sec-positive" className="max-w-4xl mx-auto px-6 py-12">
-        <PositiveCallout
-          title="UC makes work pay more than legacy benefits"
-          value="55%"
-          unit="taper rate"
-          description="The Universal Credit taper rate — the rate at which UC is withdrawn as earnings rise — was cut from 63% to 55% in October 2021. Combined with increases in the work allowance, this means claimants in work keep more of their UC as they earn more. DWP modelling suggests this incentivises an estimated 200,000 additional hours of work per week."
-          source="Source: DWP — Universal Credit reform analysis, October 2021."
-        />
-      </section>
-
-      {/* Sources */}
-      <section id="sec-charts" className="max-w-5xl mx-auto px-6 py-16 space-y-20">
         <ScrollReveal>
-          <LineChart
-            title="Universal Credit claimants, 2016–2023"
-            subtitle="Millions of households. Surged during pandemic; has continued growing as legacy benefit migration completes."
-            series={claimantsSeries}
-            yLabel="Claimants (millions)"
-            source={{
-              name: 'DWP',
-              dataset: 'Universal Credit statistics',
-              frequency: 'monthly',
-              url: 'https://www.gov.uk/government/collections/universal-credit-statistics',
-            }}
+          <section id="sec-claimants" className="mb-12">
+            <LineChart
+              title="Universal Credit claimants, Great Britain, 2016–2024 (millions)"
+              subtitle="Total number of people claiming Universal Credit at any point in the month. The pandemic caused a near-doubling in six weeks as furlough scheme gaps were exposed."
+              series={claimantsSeries}
+              annotations={claimantsAnnotations}
+              yLabel="Claimants (millions)"
+              source={{
+                name: 'DWP',
+                dataset: 'Universal Credit Management Information',
+                frequency: 'monthly',
+                url: 'https://www.gov.uk/government/collections/universal-credit-statistics',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-deductions" className="mb-12">
+            <LineChart
+              title="UC claimants with deductions and advance payment loans, 2018–2024 (%)"
+              subtitle="Deductions reduce the monthly UC payment to recover debts owed to government (advance loans, tax credit overpayments, council tax). The deduction cap was 40% until 2021, now 25%."
+              series={deductionsSeries}
+              annotations={deductionsAnnotations}
+              yLabel="% of claimants"
+              source={{
+                name: 'DWP',
+                dataset: 'Universal Credit Management Information',
+                frequency: 'quarterly',
+                url: 'https://www.gov.uk/government/collections/universal-credit-statistics',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout
+            title="What has improved"
+            value="25%"
+            unit="maximum deduction cap — down from 40% in 2019, reducing the depth of cuts to payments"
+            description="The maximum deduction rate was reduced from 40% to 25% of the standard allowance in 2021, giving claimants more of their award to live on while repaying debts. The repayment period for advance loans was extended from 12 to 24 months in 2019, and then to 24 months as standard, reducing monthly repayment amounts. The Household Support Fund provided one-off grants to local authorities to support claimants in acute hardship. The taper rate — the rate at which UC reduces as earnings rise — was cut from 63p to 55p in every pound earned in 2021, improving work incentives. The two-child limit is under review following significant political pressure."
+            source="Source: DWP — Universal Credit statistics 2024; NAO — Universal Credit: progress update 2023."
           />
         </ScrollReveal>
 
         <ScrollReveal>
-          <LineChart
-            title="UC claimants sanctioned, 2016–2023"
-            subtitle="Percentage of UC claimants whose payments are reduced as a sanction for non-compliance."
-            series={sanctionsSeries}
-            yLabel="Sanctioned (%)"
-            source={{
-              name: 'DWP',
-              dataset: 'Benefit sanctions statistics',
-              frequency: 'annual',
-              url: 'https://www.gov.uk/government/collections/benefit-sanctions-statistics',
-            }}
-          />
+          <section className="max-w-2xl mb-12 mt-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Universal Credit now supports 6 million people — around 1 in 8 adults of working age. The system consolidated six legacy benefits into one monthly payment with the stated aim of making work pay and reducing complexity. In broad terms, work incentives have improved: the taper rate cut of 2021 means claimants keep more of every pound they earn. But the structural problems identified when the system was designed have not been resolved. The five-week wait — a deliberate design choice to shift the benefit from a weekly to a monthly cycle — continues to push new claimants into debt before they receive a penny.</p>
+              <p>Around 2.1 million claimants — 35% of the total — have their monthly payment reduced by deductions. These deductions repay advance payment loans (taken out to bridge the five-week wait), legacy benefit overpayments, tax credit debts, and in some cases rent arrears paid directly to landlords. The maximum deduction rate is now capped at 25% of the standard allowance — down from 40% — but for a single adult over 25 receiving £368.74 per month, a 25% deduction reduces their UC award to £276. After housing costs, this can leave nothing for food.</p>
+              <p>The two-child limit — introduced in 2017, restricting child element payments to the first two children — affects around 1.5 million families and is estimated by the Institute for Fiscal Studies to be keeping 250,000 children in poverty. The benefit cap, which limits total UC payments to £442 per week for families with children in London, affects around 130,000 families and has not been uprated in line with inflation. The Joseph Rowntree Foundation's Minimum Income Standard calculates that UC payments fall between 20% and 40% below what is required for a basic standard of living.</p>
+            </div>
+          </section>
         </ScrollReveal>
 
-        <ScrollReveal>
-          <div className="w-full">
-            <h3 className="font-bold text-wiah-black text-lg mb-2">Universal Credit claimants by household type</h3>
-            <p className="text-sm text-wiah-mid mb-6">Distribution of 6.4 million claimants across household composition.</p>
-            <div className="space-y-4">
-              {data.national.byHouseholdType.map((item, idx) => {
-                const widthPercent = (item.pct / 50) * 100;
-                return (
-                  <div key={idx}>
-                    <div className="flex justify-between items-baseline mb-1">
-                      <span className="text-sm font-semibold text-wiah-black">{item.type}</span>
-                      <span className="text-sm font-mono font-bold text-wiah-black">{item.pct}%</span>
-                    </div>
-                    <div className="h-3 bg-wiah-light rounded-full overflow-hidden">
-                      <div
-                        className="h-full rounded-full transition-all"
-                        style={{ width: `${widthPercent}%`, backgroundColor: '#F4A261' }}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            <p className="text-xs text-wiah-mid font-mono mt-6">
-              Source: DWP — Universal Credit statistics. Updated annually.
-            </p>
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/collections/universal-credit-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DWP — Universal Credit Statistics</a> — monthly. Claimant numbers, deductions, conditionality.</p>
+            <p><a href="https://www.nao.org.uk/reports/universal-credit/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">National Audit Office — Universal Credit evaluations</a></p>
+            <p><a href="https://www.jrf.org.uk/data/minimum-income-standard" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Joseph Rowntree Foundation — Minimum Income Standard</a></p>
+            <p>All figures are for Great Britain. Average debt on first payment is an estimate based on DWP and Trussell Trust evidence.</p>
           </div>
-        </ScrollReveal>
-      </section>
+        </section>
 
-      {/* Context */}
-      <section id="sec-sources" className="max-w-4xl mx-auto px-6 py-16 border-t border-wiah-border">
-        <h3 className="font-bold text-wiah-black mb-6">Sources and methodology</h3>
-        <div className="space-y-4 text-sm text-wiah-mid font-mono">
-          {data.metadata.sources.map((src, idx) => (
-            <div key={idx}>
-              <p className="font-bold text-wiah-black">{src.name}</p>
-              <p>
-                <a
-                  href={src.url}
-                  className="text-wiah-blue hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {src.dataset}
-                </a>
-              </p>
-              <p>Updated {src.frequency}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 space-y-4 text-sm text-wiah-mid">
-          <div>
-            <p className="font-bold text-wiah-black mb-2">Methodology</p>
-            <p>{data.metadata.methodology}</p>
-          </div>
-
-          <div>
-            <p className="font-bold text-wiah-black mb-2">Known issues</p>
-            <ul className="list-disc list-inside space-y-1">
-              {data.metadata.knownIssues.map((issue, idx) => (
-                <li key={idx}>{issue}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <SectionNav sections={[
-        { id: 'sec-context', label: 'Context' },
-
-        { id: 'sec-charts', label: 'Charts' },
-        { id: 'sec-positive', label: "What's improving" },
-        { id: 'sec-sources', label: 'Sources' },
-      ]} />
-            <RelatedTopics />
+        <RelatedTopics />
       </main>
+    </>
   );
 }

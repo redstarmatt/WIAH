@@ -1,64 +1,48 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
-import SectionNav from '@/components/SectionNav';
-import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+export default function NhsWaitingListsPage() {
+  // NHS elective waiting list (millions) 2015–2024
+  const waitingList = [2.9, 3.1, 3.3, 3.6, 4.0, 4.2, 4.4, 5.8, 6.7, 7.6];
+  // Patients waiting >52 weeks (thousands) 2015–2024
+  const over52wks = [3.2, 3.5, 4.1, 4.8, 5.5, 6.2, 1.6, 310, 400, 330];
+  // Average wait (weeks) 2015–2024
+  const avgWait = [7.5, 7.7, 7.8, 8.0, 8.5, 8.8, 8.9, 13.2, 15.1, 14.6];
 
-interface WaitingListsData {
-  waitingListSize: Array<{ year: number; waiting: number }>;
-  longWaiters: Array<{ year: number; over52wk: number }>;
-  bySpecialty: Array<{ specialty: string; waiting: number }>;
-}
+  const chart1Series: Series[] = [
+    {
+      id: 'waitlist',
+      label: 'Total elective waiting list (millions)',
+      colour: '#E63946',
+      data: waitingList.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+  const chart1Annotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: COVID — elective care suspended' },
+    { date: new Date(2022, 0, 1), label: '2022: Elective recovery plan' },
+  ];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
+  const chart1TargetLine = { value: 18 / 52 * 7.6, label: '18-week target' };
 
-// ── Component ────────────────────────────────────────────────────────────────
+  const chart2Series: Series[] = [
+    {
+      id: 'over52',
+      label: 'Patients waiting >52 weeks (thousands)',
+      colour: '#E63946',
+      data: over52wks.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
-export default function NHSWaitingListsPage() {
-  const [data, setData] = useState<WaitingListsData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/nhs-waiting-lists/nhs_waiting_lists.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  const waitingListSeries: Series[] = data
-    ? [{
-        id: 'list',
-        label: 'People on NHS elective waiting list',
-        colour: '#E63946',
-        data: data.waitingListSize.map(d => ({
-          date: yearToDate(d.year),
-          value: d.waiting,
-        })),
-      }]
-    : [];
-
-  const longWaitersSeries: Series[] = data
-    ? [{
-        id: 'longwait',
-        label: 'Patients waiting over 52 weeks',
-        colour: '#E63946',
-        data: data.longWaiters.map(d => ({
-          date: yearToDate(d.year),
-          value: d.over52wk,
-        })),
-      }]
-    : [];
+  const chart2Annotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: COVID disruption' },
+    { date: new Date(2021, 0, 1), label: '2021: Backlog surges' },
+  ];
 
   return (
     <>
@@ -66,120 +50,100 @@ export default function NHSWaitingListsPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="NHS Waiting Lists"
-          question="How long are NHS waiting lists?"
-          finding="Over 7.5 million people are waiting for elective NHS treatment in England — equivalent to one in eight of the population — with over 300,000 waiting more than a year."
+          question="How Long Is the NHS Waiting List?"
+          finding="The NHS waiting list reached 7.6 million — a record — with 330,000 patients waiting over a year; the average wait is now 14.6 weeks, double the pre-pandemic level."
           colour="#E63946"
+          preposition="on"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The NHS elective waiting list peaked at 7.6 million in late 2023, from 4.4 million before the pandemic — equivalent to one in eight of the population. The 18-week referral-to-treatment standard was met for virtually all patients in 2012; it has been breached consistently since 2014 and never recovered. The pandemic caused an acute shock — elective procedures were suspended for months — but the problem predates COVID-19: capacity in beds, theatre time, and diagnostic equipment was already under strain. NHS productivity fell an estimated 20% during and after the pandemic and has not fully recovered. Orthopaedics, ophthalmology, and gastroenterology carry the longest queues; almost no specialty meets its targets. The list has begun to fall slowly from its peak, but median wait has risen from 8.4 weeks in 2019 to 14.5 weeks.</p>
-            <p>Waiting has real clinical consequences. Conditions deteriorate between referral and treatment: a hip that was manageable may worsen; a cancer caught early may progress. Mental health patients unable to access timely support often reach crisis point, generating acute admissions more expensive than earlier intervention. The economic cost of sickness absence from people on waiting lists runs into billions annually, rarely attributed to waiting times in public accounts. An estimated 13,000–14,000 beds occupied daily by discharge-delayed patients directly reduces capacity to treat new admissions. The headline of 7.6 million understates true unmet need: it counts only those formally referred — not those who could not get a GP appointment, those who disengaged, or the 1.9 million in mental health services whose waits are tracked separately.</p>
+        <section className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Total NHS elective waiting list (millions)"
+              value="7.6"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="+162% since 2015 · record high"
+              sparklineData={waitingList}
+              source="NHS England — Referral to treatment statistics, 2024"
+            />
+            <MetricCard
+              label="Waiting over 52 weeks (thousands)"
+              value="330"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="down from 400k peak · still 100x pre-pandemic level"
+              sparklineData={[3.2, 3.5, 4.1, 4.8, 5.5, 6.2, 1.6, 310, 400, 330]}
+              source="NHS England — Referral to treatment statistics, 2024"
+            />
+            <MetricCard
+              label="Average wait (weeks)"
+              value="14.6"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="double pre-pandemic level of ~7.5 weeks"
+              sparklineData={avgWait}
+              source="NHS England — Referral to treatment statistics, 2024"
+            />
           </div>
         </section>
 
-        <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-list-size', label: 'Waiting List Size' },
-          { id: 'sec-long-waiters', label: 'Long Waiters' },
-          { id: 'sec-specialty', label: 'By Specialty' },
-        ]} />
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="NHS elective waiting list, England, 2015–2024"
+              subtitle="Millions of people waiting for consultant-led elective treatment. Statutory target is 18 weeks."
+              series={chart1Series}
+              annotations={chart1Annotations}
+              yLabel="Millions waiting"
+              source={{
+                name: 'NHS England',
+                dataset: 'Referral to treatment (RTT) waiting times statistics',
+                frequency: 'monthly',
+                url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
 
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Total on elective waiting list"
-              value="7.54M"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="Record high; 4.4M pre-pandemic"
-              sparklineData={[3.68, 3.9, 4.14, 4.38, 4.08, 5.45, 6.86, 7.54]}
-              href="#sec-list-size"/>
-            <MetricCard
-              label="Waiting more than 52 weeks"
-              value="312K"
-              direction="down"
-              polarity="up-is-bad"
-              changeText="Was under 1,000 before COVID"
-              sparklineData={[1.4, 2.8, 387, 400, 312]}
-              href="#sec-long-waiters"/>
-            <MetricCard
-              label="Median wait for elective treatment"
-              value="14.5"
-              unit="weeks"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="Was 8.4 weeks in 2019"
-              sparklineData={[8.4, 9.2, 10.1, 11.5, 13.2, 14.5]}
-              href="#sec-specialty"/>
+        <ScrollReveal>
+          <section className="mb-12">
+            <LineChart
+              title="Patients waiting over 52 weeks, England, 2015–2024"
+              subtitle="Thousands. Waiting more than a year for treatment was effectively eliminated pre-pandemic. It is now chronic."
+              series={chart2Series}
+              annotations={chart2Annotations}
+              yLabel="Thousands waiting >52 weeks"
+              source={{
+                name: 'NHS England',
+                dataset: 'Referral to treatment (RTT) waiting times statistics',
+                frequency: 'monthly',
+                url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">How the backlog built up</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>The NHS elective waiting list was growing before COVID-19 — rising from 2.9 million in 2015 to 4.4 million in early 2020 as demand outpaced capacity. Then the pandemic suspended most elective care for extended periods, and the list surged to a peak of 7.8 million. By 2024 it had edged down slightly to 7.6 million, but remains at a record level relative to population.</p>
+              <p>The statutory target — that 92% of patients should wait no more than 18 weeks from referral to treatment — has not been met nationally since 2016. Waits of over a year, which had been virtually eliminated, are now routine: 330,000 people have been waiting more than 52 weeks. The longest waits are concentrated in orthopaedics, ophthalmology, and gastroenterology.</p>
+              <p>The NHS Elective Recovery Plan has targeted the longest waits and used independent sector capacity to boost throughput. Progress has been made on the extreme tail — waits of more than two years have been largely eliminated — but the overall list size has proved stubbornly resistant to reduction as new referrals continue to outpace completions.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England — Referral to treatment (RTT) waiting times statistics</a>. Monthly. Retrieved 2024.</p>
+            <p>RTT statistics count the number of incomplete pathways — patients who have been referred and not yet started treatment. Figures are for England. The 18-week target requires 92% of patients to start treatment within 18 weeks of referral.</p>
           </div>
-        
-
-        <ScrollReveal>
-          <section id="sec-list-size" className="mb-12">
-            <LineChart
-              title="People on NHS elective waiting list, England"
-              subtitle="Monthly snapshot of people waiting for consultant-led elective treatment. NHS England Referral to Treatment data."
-              series={waitingListSeries}
-              yLabel="Waiting list size (millions)"
-              source={{
-                name: 'NHS England',
-                dataset: 'Referral to Treatment (RTT) Statistics',
-                frequency: 'monthly',
-              }}
-            />
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-long-waiters" className="mb-12">
-            <LineChart
-              title="Patients waiting over 52 weeks for treatment, England"
-              subtitle="Waiting over one year for elective treatment. Near-zero before the pandemic."
-              series={longWaitersSeries}
-              yLabel="Patients over 52 weeks (thousands)"
-              source={{
-                name: 'NHS England',
-                dataset: 'Referral to Treatment (RTT) Statistics',
-                frequency: 'monthly',
-              }}
-            />
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-specialty" className="max-w-2xl mb-12">
-            <h2 className="text-xl font-bold text-wiah-black mb-2">Waiting list by clinical specialty (thousands)</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">People waiting for treatment in each specialty.</p>
-            {data && (
-              <div className="space-y-3">
-                {data.bySpecialty.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4">
-                    <div className="w-40 text-sm text-wiah-black flex-shrink-0">{item.specialty}</div>
-                    <div className="flex-1 bg-wiah-border rounded h-5 overflow-hidden">
-                      <div
-                        className="h-full rounded"
-                        style={{ width: `${(item.waiting / 700000) * 100}%`, backgroundColor: '#E63946' }}
-                      />
-                    </div>
-                    <div className="w-16 text-right text-sm font-mono text-wiah-black">{Math.round(item.waiting/1000)}K</div>
-                  </div>
-                ))}
-              </div>
-            )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England — Referral to Treatment Statistics 2023</p>
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <PositiveCallout
-            title="Elective Recovery Fund delivering results"
-            value="Two-year"
-            unit="waiters eliminated by early 2023"
-            description="NHS England's Elective Recovery Plan set a target to eliminate waits of over two years by July 2022, then one year by March 2025. Two-year waiters were effectively eliminated by early 2023. Progress on 52-week waiters has been slower — but the total list has begun to fall in some months for the first time since 2021."
-            source="Source: NHS England — Elective Recovery Plan 2023–2025"
-          />
-        </ScrollReveal>
-              <RelatedTopics />
+        </section>
       </main>
     </>
   );

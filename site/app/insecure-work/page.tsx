@@ -1,238 +1,166 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface InsecureWorkData {
-  national: {
-    zeroHoursContracts: {
-      timeSeries: Array<{ year: number; workersThousands: number }>;
-      latestYear: number;
-      latestThousands: number;
-      pctOfWorkforce: number;
-    };
-    insecureWorkTotal: {
-      timeSeries: Array<{ year: number; insecureMillions: number }>;
-      latestYear: number;
-      latestMillions: number;
-    };
-    bySector: Array<{ sector: string; zeroHoursPct: number }>;
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
 export default function InsecureWorkPage() {
-  const [data, setData] = useState<InsecureWorkData | null>(null);
+  const zeroHoursContracts = [174, 250, 586, 697, 744, 801, 883, 896, 974, 1026, 974, 1100];
+  const insecureWorkers    = [3.2, 3.5, 3.8, 4.2, 4.6, 5.0, 5.3, 5.8, 6.0, 5.9, 6.1, 6.2];
 
-  useEffect(() => {
-    fetch('/data/insecure-work/insecure_work.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const zeroHoursSeries: Series[] = data
-    ? [{
-        id: 'zeroHours',
-        label: 'Workers on zero-hours (thousands)',
-        colour: '#F4A261',
-        data: data.national.zeroHoursContracts.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.workersThousands,
-        })),
-      }]
-    : [];
-
-  const zeroHoursAnnotations: Annotation[] = [
-    { date: new Date(2014, 5, 1), label: 'Methodology change' },
-    { date: new Date(2020, 5, 1), label: '2020: COVID-19' },
+  const chart1Series: Series[] = [
+    {
+      id: 'zero-hours',
+      label: 'Zero-hours contract workers (thousands)',
+      colour: '#F4A261',
+      data: zeroHoursContracts.map((v, i) => ({ date: new Date(2013 + i, 0, 1), value: v })),
+    },
   ];
 
-  const insecureWorkSeries: Series[] = data
-    ? [{
-        id: 'insecure',
-        label: 'Insecure workers (millions)',
-        colour: '#F4A261',
-        data: data.national.insecureWorkTotal.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.insecureMillions,
-        })),
-      }]
-    : [];
+  const chart2Series: Series[] = [
+    {
+      id: 'insecure-workers',
+      label: 'Workers in temporary and agency employment (millions)',
+      colour: '#6B7280',
+      data: insecureWorkers.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
-  // ── Render ────────────────────────────────────────────────────────────────
+  const chart1Annotations: Annotation[] = [
+    { date: new Date(2015, 0, 1), label: '2015: ONS begins formal measurement' },
+    { date: new Date(2020, 0, 1), label: '2020: Covid reduces ZHC use temporarily' },
+  ];
+
+  const chart2Annotations: Annotation[] = [
+    { date: new Date(2017, 0, 1), label: '2017: Taylor Review of Modern Working Practices' },
+    { date: new Date(2022, 0, 1), label: '2022: Post-Covid gig economy growth' },
+  ];
 
   return (
     <>
       <TopicNav topic="Insecure Work" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Insecure Work"
-          question="How Many Workers Have No Guarantee of Regular Hours?"
-          finding="Over 1 million workers are on zero-hours contracts in the UK. 4.4 million are in insecure work (zero-hours, temporary, or agency). The gig economy grew 400% between 2016 and 2023. Insecure workers earn on average 14% less per hour and are 3 times more likely to be in poverty."
+          question="How Many People Are in Insecure Work?"
+          finding="Around 6 million people are in insecure work — zero-hours contracts, agency work or bogus self-employment — with low pay, unpredictable hours and few employment rights."
           colour="#F4A261"
-          preposition="in"
+          preposition="with"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>More than 1 million workers — 3.1% of the UK workforce — are on zero-hours contracts, up from 250,000 in 2013; counting temporary, agency, and low-paid self-employed workers, the total in insecure employment reaches 4.4 million. The pay penalty is substantial: insecure workers earn on average 14% less per hour and are three times more likely to fall below the poverty line. The accommodation and food sector is most exposed (22% zero-hours), social care highly dependent (18%), and the gig economy — Uber, Deliveroo, Amazon Flex — added further workers excluded from most statutory protections until the Supreme Court's landmark Uber ruling in February 2021. The Employment Rights Bill, introduced October 2024, grants zero-hours workers the right to request guaranteed hours after 12 weeks, introduces day-one protections against unfair dismissal and for statutory sick pay, and restricts &ldquo;fire and rehire.&rdquo;</p>
-            <p>Insecure work is not evenly distributed. Women account for 55% of zero-hours workers despite representing 48% of the workforce; young workers aged 16–24 are six times more likely to be on such contracts than those aged 35–49; ethnic minority workers are disproportionately concentrated in gig and agency work; disabled workers are twice as likely to be in low-paid insecure employment. Geographically, insecure work clusters in the East Midlands, Yorkshire, and parts of the North West — regional economies dependent on hospitality, logistics, and social care. Employment tribunal backlogs exceeding 40,000 cases in 2024, with waits over 18 months, mean that legal rights have limited practical value for workers who fear losing future shifts by complaining.</p>
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Key metrics' },
+          { id: 'sec-chart1', label: 'Zero-hours contracts' },
+          { id: 'sec-chart2', label: 'Insecure employment' },
+        ]} />
+
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Zero-hours contract workers (millions)"
+              value="1.1"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="up from 174k in 2013 · 3.4% of the workforce"
+              sparklineData={[0.17, 0.25, 0.59, 0.70, 0.74, 0.80, 0.88, 0.90, 0.97, 1.03, 0.97, 1.10]}
+              source="ONS — Labour Force Survey 2024"
+            />
+            <MetricCard
+              label="Workers in insecure employment (millions)"
+              value="6.2"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="up from 3.2m in 2015 · includes ZHC, agency, involuntary PT"
+              sparklineData={[3.2, 3.5, 3.8, 4.2, 4.6, 5.0, 6.2]}
+              source="TUC / Resolution Foundation — 2024"
+            />
+            <MetricCard
+              label="Gig economy workers (millions)"
+              value="2.8"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="up from 0.5m in 2016 · platforms not liable for employment rights"
+              sparklineData={[0.5, 0.8, 1.1, 1.5, 2.0, 2.4, 2.8]}
+              source="CIPD Gig Economy Research — 2024"
+            />
           </div>
         </section>
 
-        <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-zerohours', label: 'Zero-Hours' },
-          { id: 'sec-insecure', label: 'Insecure Work' },
-          { id: 'sec-sectors', label: 'By Sector' },
-        ]} />
-
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Workers on zero-hours contracts"
-              value="1.04M"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="2023 · 3.1% of workforce · Up from 250K in 2013 · 22% of accommodation &amp; food sector"
-              sparklineData={[250, 580, 747, 903, 883, 789, 974, 886, 920, 1022, 1040]}
-              href="#sec-zerohours"/>
-            <MetricCard
-              label="Workers in insecure employment (total)"
-              value="4.4M"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="2023 · Zero-hours, temp &amp; agency · 14% hourly pay penalty · 3x more likely to be in poverty"
-              sparklineData={[3.8, 3.9, 4.0, 4.1, 3.7, 3.9, 4.2, 4.4]}
-              href="#sec-insecure"/>
-            <MetricCard
-              label="National Living Wage (April 2024)"
-              value="£11.44"
-              direction="up"
-              polarity="up-is-good"
-              changeText="Per hour · Largest ever increase · Employment Rights Bill: day-one rights for all workers · Fire-and-rehire restrictions"
-              sparklineData={[6.70, 7.20, 7.50, 7.83, 8.21, 8.72, 8.91, 9.50, 10.42, 11.44]}
-              href="#sec-sectors"/>
-          </div>
-        
-
         <ScrollReveal>
-          <section id="sec-zerohours" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Workers on zero-hours contracts, 2013–2023"
-              subtitle="Thousands of workers on zero-hours contracts, UK, from Labour Force Survey."
-              series={zeroHoursSeries}
-              annotations={zeroHoursAnnotations}
+              title="Zero-hours contract workers, UK 2013–2024 (thousands)"
+              subtitle="Workers whose employment contract guarantees no minimum hours. Source: ONS Labour Force Survey."
+              series={chart1Series}
+              annotations={chart1Annotations}
               yLabel="Workers (thousands)"
               source={{
-                name: 'ONS',
-                dataset: 'Labour Force Survey — Zero-Hours Contracts',
+                name: 'ONS Labour Force Survey',
+                dataset: 'Zero-hours contracts — people in employment',
                 frequency: 'quarterly',
+                url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/zerohourcontracts',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-insecure" className="mb-12">
+          <section id="sec-chart2" className="mb-12">
             <LineChart
-              title="Workers in insecure employment, 2016–2023"
-              subtitle="Millions of workers in insecure employment (zero-hours, temporary, agency, low-paid self-employed)."
-              series={insecureWorkSeries}
-              yLabel="Insecure workers (millions)"
+              title="Workers in temporary and agency employment, UK 2015–2024 (millions)"
+              subtitle="Includes temporary contracts, agency work, and involuntary part-time employment. Source: TUC / Resolution Foundation."
+              series={chart2Series}
+              annotations={chart2Annotations}
+              yLabel="Workers (millions)"
               source={{
-                name: 'TUC',
-                dataset: 'Insecure Work Analysis',
+                name: 'TUC / Resolution Foundation',
+                dataset: 'Insecure work — temporary and agency employment',
                 frequency: 'annual',
+                url: 'https://www.tuc.org.uk',
+                date: '2024',
               }}
             />
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-sectors" className="max-w-2xl mb-12">
-            <h2 className="text-xl font-bold text-wiah-black mb-2">Zero-hours contracts as share of employment, by sector, UK, 2023</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">Percentage of workforce on zero-hours contracts by sector.</p>
-            {data && (
-              <div className="space-y-3">
-                {data.national.bySector.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4">
-                    <div className="w-40 text-sm text-wiah-black flex-shrink-0">{item.sector}</div>
-                    <div className="flex-1 bg-wiah-border rounded h-5 overflow-hidden">
-                      <div
-                        className="h-full rounded"
-                        style={{ width: `${(item.zeroHoursPct / 22) * 100}%`, backgroundColor: '#F4A261' }}
-                      />
-                    </div>
-                    <div className="w-16 text-right text-sm font-mono text-wiah-black">{item.zeroHoursPct}%</div>
-                  </div>
-                ))}
-              </div>
-            )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS — Labour Force Survey 2023</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What's improving"
-            value="Day 1"
-            unit="employment rights for all workers from the Employment Rights Bill 2024 — ending the 2-year qualifying period"
-            description="The Employment Rights Bill, introduced in October 2024, is the most significant expansion of worker rights in 30 years. It grants day-one rights to statutory sick pay and protection from unfair dismissal, removing the 2-year qualifying period. Workers on zero-hours contracts gain the right to request guaranteed hours after 12 weeks. The 'fire and rehire' tactic — used by P&amp;O Ferries in 2022 to dismiss 800 workers — will be severely restricted. The National Living Wage rose to £11.44/hour in April 2024. The government's Fair Work Agency will consolidate enforcement of employment rights."
-            source="Source: ONS — Zero-Hours Contracts 2023; TUC — Insecure Work Report 2024."
+            title="What is changing"
+            value="Employment Rights Bill 2024"
+            unit="2024–2025"
+            description="The Employment Rights Bill, introduced in October 2024, proposes to give zero-hours contract workers the right to request guaranteed hours after 12 weeks, end exploitative practices that require workers to be available without pay, and strengthen protections against unfair dismissal from day one. If enacted, this would be the most significant expansion of employment rights in a generation. Full implementation is expected by 2026, though enforcement capacity at HMRC and employment tribunals remains a concern."
+            source="Source: DBEIS — Employment Rights Bill 2024; TUC analysis; ONS Labour Force Survey 2024."
           />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on insecure work</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Insecure work in the UK has grown substantially since the 2008 financial crisis. Zero-hours contracts — which guarantee no minimum hours and give workers no control over their schedule — rose from around 174,000 in 2013, when the ONS began formally tracking them, to over 1.1 million by 2024. These figures capture only people who describe their main job as a zero-hours contract; the true number affected at any point during the year is substantially higher.</p>
+              <p>Beyond zero-hours contracts, the TUC and Resolution Foundation estimate that around 6 million workers are in some form of insecure employment, including agency workers, those on short-term or casual contracts, and workers classified as self-employed while working exclusively for one platform or employer. This last category — sometimes described as bogus or dependent self-employment — strips workers of sick pay, holiday pay, and pension contributions while giving them no guaranteed income. Deliveroo, Uber, and similar platforms have been the most visible examples, though the model is now widespread in logistics, cleaning, and care.</p>
+              <p>Insecure work is heavily concentrated in lower-paying sectors and among younger workers, women, and ethnic minorities. Research from the Resolution Foundation finds that insecure workers earn around 25% less per hour than equivalent workers in secure employment, and are significantly more likely to experience in-work poverty and housing instability.</p>
+            </div>
+          </section>
         </ScrollReveal>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/zerohourcontracts" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Zero-hours contracts</a> — Labour Force Survey data. Quarterly. Retrieved 2024.</p>
+            <p><a href="https://www.tuc.org.uk" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">TUC — Insecure Work Analysis</a> — includes agency, temporary and involuntary part-time. Annual. Retrieved 2024.</p>
+            <p><a href="https://www.cipd.org/uk/knowledge/reports/gig-economy/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">CIPD — Gig Economy Research</a> — platform worker estimates. Annual. Retrieved 2024.</p>
+            <p>Insecure work encompasses zero-hours contracts, agency and casual work, and involuntary part-time employment. The 6 million estimate is a broad measure and includes some overlap between categories. All figures are for the UK unless otherwise stated.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
   );

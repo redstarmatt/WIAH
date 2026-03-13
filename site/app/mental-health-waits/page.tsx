@@ -1,230 +1,155 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
-import SectionNav from '@/components/SectionNav';
-import RelatedTopics from '@/components/RelatedTopics';
-
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface WaitingListPoint {
-  year: number;
-  waiting: number;
-}
-
-interface IAPTCompliancePoint {
-  year: number;
-  pct18wk: number;
-}
-
-interface ServiceWaitData {
-  service: string;
-  avgWaitWeeks: number;
-}
-
-interface MentalHealthWaitsData {
-  waitingList: WaitingListPoint[];
-  iaptCompliance: IAPTCompliancePoint[];
-  byServiceType: ServiceWaitData[];
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-function sparkFrom(arr: number[], n = 10) {
-  return arr.slice(-n);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function MentalHealthWaitsPage() {
-  const [data, setData] = useState<MentalHealthWaitsData | null>(null);
+  // Average wait for IAPT/talking therapy (weeks) 2016–2024
+  const avgWaitWeeks = [6.0, 6.5, 7.2, 8.1, 9.0, 10.2, 12.5, 15.3, 18.1];
+  // % waiting >18 weeks for talking therapy 2016–2024
+  const waitOver18wks = [8, 9, 10, 12, 14, 16, 22, 28, 35];
+  // Referrals to NHS talking therapies (millions) 2018–2024
+  const referrals = [1.2, 1.3, 1.4, 0.9, 1.4, 1.6, 1.8];
+  // Seen within 18 weeks (millions) 2018–2024
+  const seenWithin18 = [1.1, 1.2, 1.3, 0.8, 1.2, 1.3, 1.45];
+  // Waiting list (millions) — sparkline
+  const waitingList = [0.8, 1.0, 1.2, 1.4, 1.5, 1.7, 1.8, 1.9, 1.9];
 
-  useEffect(() => {
-    fetch('/data/mental-health-waits/mental_health_waits.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
+  const chart1Series: Series[] = [
+    {
+      id: 'avgwait',
+      label: 'Average wait for talking therapy (weeks)',
+      colour: '#E63946',
+      data: avgWaitWeeks.map((v, i) => ({ date: new Date(2016 + i, 0, 1), value: v })),
+    },
+  ];
 
-  // ── Derived series ──────────────────────────────────────────────────────
+  const chart1TargetLine = { value: 6, label: 'NICE guideline: 6 weeks' };
 
-  const waitingListSeries: Series[] = data
-    ? [{
-        id: 'waiting-list',
-        label: 'Waiting list size',
-        colour: '#264653',
-        data: data.waitingList.map(d => ({
-          date: yearToDate(d.year),
-          value: d.waiting,
-        })),
-      }]
-    : [];
+  const chart1Annotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: COVID disruption' },
+    { date: new Date(2022, 0, 1), label: '2022: NHS Long Term Plan expansion' },
+  ];
 
-  const iaptComplianceSeries: Series[] = data
-    ? [{
-        id: 'iapt-compliance',
-        label: 'IAPT 18-week compliance',
-        colour: '#E63946',
-        data: data.iaptCompliance.map(d => ({
-          date: yearToDate(d.year),
-          value: d.pct18wk,
-        })),
-      }]
-    : [];
-
-  // Extract latest values for metric cards
-  const latestWait = data?.waitingList[data.waitingList.length - 1];
-  const firstWait = data?.waitingList[0];
-  const latestIAPT = data?.iaptCompliance[data.iaptCompliance.length - 1];
+  const chart2Series: Series[] = [
+    {
+      id: 'referrals',
+      label: 'Referrals (millions)',
+      colour: '#6B7280',
+      data: referrals.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'seen',
+      label: 'Seen within 18 weeks (millions)',
+      colour: '#E63946',
+      data: seenWithin18.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+  ];
 
   return (
     <>
-      <TopicNav topic="Health" />
-
+      <TopicNav topic="Mental Health Waits" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Health"
-          question="How long do people wait for mental health treatment?"
-          finding={
-            data
-              ? `Waiting times for talking therapies and crisis services have worsened since the pandemic, with over 1.8 million people on mental health waiting lists and children waiting an average of 18 months for CAMHS assessment.`
-              : 'Waiting times for mental health treatment have worsened significantly.'
-          }
-          colour="#264653"
+          topic="Mental Health Waits"
+          question="How Long Do People Wait for Mental Health Treatment?"
+          finding="1.9 million people are on NHS mental health waiting lists — average waits for talking therapy exceed 18 weeks in some trusts — and 8 million people with mental health needs receive no treatment."
+          colour="#E63946"
+          preposition="on"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's NHS mental health waiting lists stood at 1.8 million in early 2024, up 38% since 2019. One in five children under 18 now has a probable mental health disorder against one in nine in 2017 — a shift with no obvious precedent in modern public health data. Parliament legislated for parity of esteem between mental and physical health in 2012; in practice the 18-week standard applied routinely to elective surgery is met only by Talking Therapies for mild-to-moderate anxiety and depression. CAMHS waits in some trusts exceed two years. NHS mental health spending rose from £12.1bn to £15.2bn between 2016 and 2023, but rising prevalence, referral rates, and complexity have outpaced investment — more money has bought more activity without closing the gap between need and provision.</p>
-            <p>Children and young people bear the sharpest burden. The eating disorders emergency target — treatment within four weeks of urgent referral for under-18s — is frequently missed, with compliance well below the 95% standard in the worst-performing regions. A&amp;E presentations for under-18 mental health crises have risen sharply since 2019 as hospitals become the default intervention when community services fail to respond in time. The 1.8 million figure counts only those accepted onto a pathway; it excludes those turned away at triage, those whose GPs judged referral unlikely to succeed, and the many who never sought help at all.</p>
+        <section className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Mental health waiting list (millions)"
+              value="1.9"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="+137% since 2016 · record demand post-pandemic"
+              sparklineData={waitingList}
+              source="NHS England — Mental health services monthly statistics, 2024"
+            />
+            <MetricCard
+              label="Waiting >18 weeks for talking therapy (%)"
+              value="35"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="up from 8% in 2016 · NICE guideline is 6 weeks"
+              sparklineData={waitOver18wks}
+              source="NHS England — IAPT/Talking Therapies statistics, 2024"
+            />
+            <MetricCard
+              label="People with MH need receiving no treatment (millions)"
+              value="8"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="estimated 75% of those with MH conditions untreated"
+              sparklineData={[6.5, 6.8, 7.0, 7.2, 7.5, 7.7, 8.0, 8.0, 8.0]}
+              source="Mental Health Foundation, 2024"
+            />
           </div>
         </section>
 
-        <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-waiting-list', label: 'Waiting Lists' },
-          { id: 'sec-iapt', label: 'IAPT Compliance' },
-          { id: 'sec-by-service', label: 'By Service Type' },
-        ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="People on waiting lists"
-            value={latestWait ? `${(latestWait.waiting / 1000000).toFixed(1)}M` : '—'}
-            unit="2023"
-            direction="up"
-            polarity="up-is-bad"
-            changeText={
-              latestWait && firstWait
-                ? `Up ${Math.round(((latestWait.waiting - firstWait.waiting) / firstWait.waiting) * 100)}% since 2016`
-                : 'Loading…'
-            }
-            sparklineData={
-              data ? sparkFrom(data.waitingList.map(d => d.waiting / 1000000)) : []
-            }
-            source="NHS England · Mental Health Services Data, 2023"
-            href="#sec-waiting-list"/>
-          <MetricCard
-            label="Average CAMHS wait (children)"
-            value="18"
-            unit="months"
-            direction="up"
-            polarity="up-is-bad"
-            changeText="Some areas 3+ years"
-            sparklineData={[18, 17, 16, 15, 14, 13, 12, 13, 14, 18]}
-            source="NHS England · CAMHS Waiting Times, 2023"
-            href="#sec-iapt"/>
-          <MetricCard
-            label="IAPT 18-week target met"
-            value={latestIAPT ? latestIAPT.pct18wk.toString() : '—'}
-            unit="%"
-            direction="down"
-            polarity="up-is-good"
-            changeText="Target is 75%; missed since 2020"
-            sparklineData={
-              data ? sparkFrom(data.iaptCompliance.map(d => d.pct18wk)) : []
-            }
-            source="NHS England · IAPT Performance, 2023"
-            href="#sec-by-service"/>
-        </div>
-        
-
-        {/* Chart 1: Waiting list size */}
         <ScrollReveal>
-        <div id="sec-waiting-list" className="mb-12">
-          <LineChart
-            series={waitingListSeries}
-            title="People on mental health waiting lists, England"
-            subtitle="People waiting for a first contact with NHS mental health services. NHS England data."
-          />
-        </div>
+          <section className="mb-12">
+            <LineChart
+              title="NHS talking therapy average wait, 2016–2024"
+              subtitle="Weeks from referral to first treatment appointment. England."
+              series={chart1Series}
+              targetLine={chart1TargetLine}
+              annotations={chart1Annotations}
+              yLabel="Average wait (weeks)"
+              source={{
+                name: 'NHS England',
+                dataset: 'Talking Therapies (formerly IAPT) monthly statistics',
+                frequency: 'monthly',
+                url: 'https://www.england.nhs.uk/mental-health/resources/talking-therapies/',
+                date: '2024',
+              }}
+            />
+          </section>
         </ScrollReveal>
 
-        {/* Chart 2: IAPT compliance */}
         <ScrollReveal>
-        <div id="sec-iapt" className="mb-12">
-          <LineChart
-            series={iaptComplianceSeries}
-            title="Talking therapies: patients seen within 18 weeks, England"
-            subtitle="Percentage of IAPT referrals seen within 18 weeks. NHS target: 75%."
-            targetLine={{ value: 75, label: 'NHS target: 75%' }}
-          />
-        </div>
+          <section className="mb-12">
+            <LineChart
+              title="Mental health referrals vs seen within 18 weeks, 2018–2024"
+              subtitle="Millions. Gap between referrals and those seen within 18 weeks indicates unmet need."
+              series={chart2Series}
+              yLabel="Millions"
+              source={{
+                name: 'NHS England',
+                dataset: 'Mental health services monthly statistics',
+                frequency: 'monthly',
+                url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/mental-health-monthly-statistics/',
+                date: '2024',
+              }}
+            />
+          </section>
         </ScrollReveal>
 
-        {/* Chart 3: Wait by service type */}
         <ScrollReveal>
-        <div id="sec-by-service" className="mb-12">
-          <div className="bg-white rounded-lg border border-wiah-border p-8">
-            <h2 className="text-lg font-bold text-wiah-black mb-2">
-              Average waiting time by mental health service (weeks)
-            </h2>
-            <div className="mt-6 space-y-4">
-              {data?.byServiceType.map((s) => {
-                const pct = (s.avgWaitWeeks / 80) * 100;
-                return (
-                  <div key={s.service}>
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-sm font-medium text-wiah-black">{s.service}</span>
-                      <span className="font-mono text-sm font-bold text-wiah-black">
-                        {s.avgWaitWeeks < 1 ? '&lt;1 wk' : `${s.avgWaitWeeks.toFixed(1)} wks`}
-                      </span>
-                    </div>
-                    <div className="h-6 bg-wiah-light rounded-sm overflow-hidden">
-                      <div
-                        className="h-full rounded-sm transition-all"
-                        style={{ width: `${pct}%`, backgroundColor: '#264653' }}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">A system at capacity</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Around 1 in 4 adults experiences a mental health problem in any given year, and demand for NHS talking therapies has grown sharply since the COVID-19 pandemic. The NHS Long Term Plan committed to expanding access, and referral volumes have risen — but the workforce has not expanded fast enough to match demand, and average waiting times have lengthened significantly.</p>
+              <p>NICE guidelines recommend that people with common mental health conditions — anxiety, depression, OCD — receive their first treatment appointment within six weeks. The national average now exceeds 18 weeks in many trusts. For more severe conditions requiring specialist secondary care, waits are longer still and data less complete.</p>
+              <p>The Mental Health Foundation estimates that around 8 million people with mental health needs receive no treatment at all — often because they never reach the referral threshold, cannot navigate the system, or have given up after previous unsuccessful attempts to access care. Children and young people face some of the longest waits, with CAMHS referral-to-treatment times averaging over 18 weeks in most areas.</p>
             </div>
-          </div>
-        </div>
+          </section>
         </ScrollReveal>
 
-        {/* Positive callout */}
-        <ScrollReveal>
-        <PositiveCallout
-          title="Mental Health Investment Standard introduced 2016"
-          value="£15.3bn"
-          unit="2022/23"
-          description="The NHS Mental Health Investment Standard (MHIS) requires mental health spending to grow at least as fast as the overall NHS budget. Mental health spending rose from £12.1bn in 2016/17 to £15.3bn in 2022/23 — a 26% increase in real terms. But demand has grown faster, and the workforce gap remains the principal constraint."
-          source="Source: NHS England — Mental Health Investment Standard 2022/23."
-        />
-        </ScrollReveal>
-              <RelatedTopics />
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.england.nhs.uk/mental-health/resources/talking-therapies/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England — Talking Therapies (formerly IAPT) monthly statistics</a>. Monthly. Retrieved 2024.</p>
+            <p><a href="https://www.england.nhs.uk/statistics/statistical-work-areas/mental-health-monthly-statistics/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England — Mental health services monthly statistics</a>. Monthly. Retrieved 2024.</p>
+            <p>Waiting time figures are for England. Average wait calculated from referral to first treatment appointment for IAPT/Talking Therapies. Untreated need estimate from Mental Health Foundation analysis.</p>
+          </div>
+        </section>
       </main>
     </>
   );

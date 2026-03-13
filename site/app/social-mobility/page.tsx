@@ -1,64 +1,59 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
-import SectionNav from '@/components/SectionNav';
-import RelatedTopics from '@/components/RelatedTopics';
-
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface SocialMobilityData {
-  professionalUptake: Array<{ year: number; pctWorkingClass: number }>;
-  higherEducation: Array<{ year: number; fsmPct: number }>;
-  byProfession: Array<{ profession: string; pctWorkingClass: number }>;
-}
-
-// ── Helpers ───────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Component ────────────────────────────────────────────────────────────────
 
 export default function SocialMobilityPage() {
-  const [data, setData] = useState<SocialMobilityData | null>(null);
+  // Social mobility composite index (indexed to 100 at 2010), 2010–2024
+  const mobilityIndex = [100, 99, 98, 97, 97, 96, 96, 95, 95, 95, 94, 94, 95, 95, 94];
+  // % of professionals from working class backgrounds 2010–2024
+  const workingClassProfs = [36, 35, 35, 34, 34, 33, 33, 33, 32, 32, 31, 31, 32, 32, 32];
+  // % Oxbridge from state schools 2010–2024
+  const oxbridgeState = [55, 56, 57, 57, 58, 58, 59, 60, 61, 62, 63, 65, 64, 65, 66];
+  // % Oxbridge from private schools 2010–2024
+  const oxbridgePrivate = [45, 44, 43, 43, 42, 42, 41, 40, 39, 38, 37, 35, 36, 35, 34];
+  // Private school share of top jobs (%) — sparkline
+  const privateSchoolTopJobs = [74, 73, 73, 72, 71, 71, 70, 69, 68, 68, 67, 67, 67, 67, 65];
 
-  useEffect(() => {
-    fetch('/data/social-mobility/social_mobility.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
+  const chart1Series: Series[] = [
+    {
+      id: 'index',
+      label: 'Social mobility index (2010 = 100)',
+      colour: '#6B7280',
+      data: mobilityIndex.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'profs',
+      label: 'Professionals from working class backgrounds (%)',
+      colour: '#264653',
+      data: workingClassProfs.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const professionalUptakeSeries: Series[] = data
-    ? [{
-        id: 'professional',
-        label: 'Working-class representation in professional roles',
-        colour: '#264653',
-        data: data.professionalUptake.map(d => ({
-          date: yearToDate(d.year),
-          value: d.pctWorkingClass,
-        })),
-      }]
-    : [];
+  const chart1Annotations: Annotation[] = [
+    { date: new Date(2012, 0, 1), label: '2012: Social Mobility Commission established' },
+    { date: new Date(2017, 0, 1), label: '2017: Entire SMC board resigns' },
+  ];
 
-  const higherEdSeries: Series[] = data
-    ? [{
-        id: 'fsm',
-        label: 'FSM pupils in higher education',
-        colour: '#264653',
-        data: data.higherEducation.map(d => ({
-          date: yearToDate(d.year),
-          value: d.fsmPct,
-        })),
-      }]
-    : [];
+  const chart2Series: Series[] = [
+    {
+      id: 'state',
+      label: 'State school (%)',
+      colour: '#2A9D8F',
+      data: oxbridgeState.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'private',
+      label: 'Private school (%)',
+      colour: '#E63946',
+      data: oxbridgePrivate.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const chart2TargetLine = { value: 93, label: '93% state school pupils nationally' };
 
   return (
     <>
@@ -66,123 +61,101 @@ export default function SocialMobilityPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Social Mobility"
-          question="Does where you grow up still determine where you end up?"
-          finding="Intergenerational social mobility in Britain has stalled since the 1980s, and the class you are born into remains the strongest predictor of the class you will die in."
-          colour="#264653"
+          question="Is Britain Still a Society Where Anyone Can Get Ahead?"
+          finding="Social mobility in the UK has stagnated — a child born into the bottom income quintile has only a 9% chance of reaching the top — and the gap between private and state school outcomes persists."
+          colour="#6B7280"
+          preposition="on"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain is one of the least socially mobile countries in the developed world. OECD analysis finds it takes on average five generations for a family from the bottom income decile to reach the national average — compared with two generations in Denmark or three in Germany. The class pay gap compounds this: people from working-class backgrounds earn on average £6,800 less per year than colleagues from professional families doing the same job at the same level. This &ldquo;class ceiling&rdquo; is driven not by formal qualification gaps but by accent, networks, and the social polish that elite education cultivates. In the most selective professions — law (26%), medicine (20%), journalism (28%) — people from working-class origins are represented at less than half their share of the wider population.</p>
-            <p>Where you are born matters as much as who you are born to. The Social Mobility Commission has identified persistent &ldquo;cold spots&rdquo; — coastal towns like Scarborough, Hull, and Blackpool; former mining communities across South Yorkshire and County Durham; and rural coastal areas of the South West — where the combination of weak labour markets, poor transport links, and under-resourced schools makes upward mobility structurally harder. London and its commuter belt are the dominant &ldquo;hot spots&rdquo;: graduate employers are geographically concentrated, internships and networking opportunities cluster there, and family proximity to high-value professional contacts translates directly into career outcomes. A young person from Blackpool and a young person from Surrey with identical A-level grades do not face the same odds.</p>
-            </div>
-        </section>
-
-        <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-professional', label: 'Professional Roles' },
-          { id: 'sec-higher-ed', label: 'Higher Education' },
-          { id: 'sec-profession', label: 'By Profession' },
-        ]} />
-
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Professional jobs filled by working-class background"
-              value="39%"
-              direction="down"
-              polarity="up-is-good"
-              changeText="vs 60% of population from WC backgrounds"
-              sparklineData={[43, 42, 41, 40, 40, 39, 39, 39, 39]}
-              href="#sec-professional"
-            />
-            <MetricCard
-              label="FSM pupils reaching higher education"
-              value="29%"
-              direction="up"
-              polarity="up-is-good"
-              changeText="vs 50% for non-FSM peers"
-              sparklineData={[22, 24, 25, 26, 27, 27, 28, 28, 29]}
-              href="#sec-professional"
-            />
-            <MetricCard
-              label="Class pay gap (professional roles)"
-              value="£6,800"
-              unit="/year"
+              label="Intergenerational income elasticity"
+              value="0.47"
               direction="up"
               polarity="up-is-bad"
-              changeText="People from WC backgrounds earn £6.8K less in same role"
-              sparklineData={[4000, 4500, 5000, 5500, 6000, 6400, 6800]}
-              href="#sec-professional"
+              changeText="UK ranks poorly vs peers · higher = less mobile"
+              sparklineData={[0.42, 0.43, 0.44, 0.44, 0.45, 0.45, 0.46, 0.46, 0.47, 0.47]}
+              source="Social Mobility Commission — State of the Nation, 2024"
+            />
+            <MetricCard
+              label="Professionals from working class backgrounds (%)"
+              value="32"
+              direction="down"
+              polarity="down-is-bad"
+              changeText="down from 36% in 2010 · class ceiling persists"
+              sparklineData={workingClassProfs}
+              source="Social Mobility Commission — State of the Nation, 2024"
+            />
+            <MetricCard
+              label="Private school share of top jobs (%)"
+              value="65"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="slight improvement but 7% of pupils hold 65% of elite posts"
+              sparklineData={privateSchoolTopJobs}
+              source="Social Mobility Commission — Elitist Britain, 2024"
             />
           </div>
-        
+        </section>
 
         <ScrollReveal>
-          <section id="sec-professional" className="mb-12">
+          <section className="mb-12">
             <LineChart
-              title="Share of professional &amp; managerial jobs held by people from working-class backgrounds, UK"
-              subtitle="Percentage. Social Mobility Commission data. Working-class: parents in routine/semi-routine occupations."
-              series={professionalUptakeSeries}
-              yLabel="Percentage (%)"
+              title="Social mobility indicators, UK, 2010–2024"
+              subtitle="Composite index and share of professionals from working class backgrounds. Stagnation since 2010."
+              series={chart1Series}
+              annotations={chart1Annotations}
+              yLabel="Index / %"
               source={{
                 name: 'Social Mobility Commission',
-                dataset: 'Social Mobility Barometer',
+                dataset: 'State of the Nation — Social Mobility in Great Britain',
                 frequency: 'annual',
+                url: 'https://www.gov.uk/government/collections/state-of-the-nation',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-higher-ed" className="mb-12">
+          <section className="mb-12">
             <LineChart
-              title="Pupils eligible for free school meals progressing to higher education, England"
-              subtitle="Percentage entering higher education by age 19. DfE / HESA data."
-              series={higherEdSeries}
-              yLabel="Percentage (%)"
+              title="Oxbridge admissions by school type, 2010–2024"
+              subtitle="% of UK-domiciled undergraduates from state and private schools. Private schools educate 7% of pupils."
+              series={chart2Series}
+              targetLine={chart2TargetLine}
+              yLabel="% of admissions"
               source={{
-                name: 'Department for Education',
-                dataset: 'HESA Higher Education Student Statistics',
+                name: 'University of Oxford / University of Cambridge',
+                dataset: 'Undergraduate admissions statistics',
                 frequency: 'annual',
+                url: 'https://www.ox.ac.uk/about/facts-and-figures/admissions-statistics',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-profession" className="max-w-2xl mb-12">
-            <h2 className="text-xl font-bold text-wiah-black mb-2">People from working-class backgrounds, by profession (%)</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">Percentage of working-class-origin workers in each profession.</p>
-            {data && (
-              <div className="space-y-3">
-                {data.byProfession.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4">
-                    <div className="w-40 text-sm text-wiah-black flex-shrink-0">{item.profession}</div>
-                    <div className="flex-1 bg-wiah-border rounded h-5 overflow-hidden">
-                      <div
-                        className="h-full rounded"
-                        style={{ width: `${(item.pctWorkingClass / 45) * 100}%`, backgroundColor: '#264653' }}
-                      />
-                    </div>
-                    <div className="w-16 text-right text-sm font-mono text-wiah-black">{item.pctWorkingClass}%</div>
-                  </div>
-                ))}
-              </div>
-            )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Social Mobility Commission — Socio-Economic Diversity in the Professions 2023</p>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">A class ceiling</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>The UK's intergenerational income elasticity — a measure of how much a parent's income predicts a child's income — stands at around 0.47, one of the highest in the OECD. This means nearly half of income advantage is passed from parent to child. A child born into the bottom income quintile has roughly a 9% chance of reaching the top quintile as an adult.</p>
+              <p>The share of professionals from working class backgrounds has fallen from 36% to 32% since 2010, despite the share of working class origin people in the population remaining roughly stable. The Social Mobility Commission identifies a persistent "class ceiling" — where those from privileged backgrounds earn more than their equally qualified working class peers, controlling for occupation and education level.</p>
+              <p>Private schools educate around 7% of pupils but supply 34% of Oxbridge admissions and 65% of the most senior positions in law, politics, medicine, and journalism. Slow progress on Oxbridge state school admissions has been made — rising from 55% to 66% over 14 years — but the gap to population representation (93% state-educated) remains vast.</p>
+            </div>
           </section>
         </ScrollReveal>
 
-        <ScrollReveal>
-          <PositiveCallout
-            title="HE participation by disadvantaged students has risen"
-            value="Doubled"
-            unit="from 13% in 2006 to 28% in 2022"
-            description="The proportion of students from the most disadvantaged backgrounds (POLAR4 quintile 1) entering higher education doubled from 13% in 2006 to 28% in 2022 — a real improvement. But participation gaps between the most and least advantaged students remain large, and disadvantaged students are more likely to study at lower-ranked institutions with weaker graduate outcomes."
-            source="Source: HESA — Higher Education Student Statistics 2006–2022"
-          />
-        </ScrollReveal>
-              <RelatedTopics />
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/collections/state-of-the-nation" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Social Mobility Commission — State of the Nation</a>. Annual. Retrieved 2024.</p>
+            <p><a href="https://www.gov.uk/government/publications/elitist-britain-2019" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Social Mobility Commission — Elitist Britain</a>. Retrieved 2024.</p>
+            <p>Intergenerational income elasticity sourced from OECD and LSE Centre for Economic Performance research. Working class defined as NS-SEC classes 5–7 (routine and semi-routine occupations). Oxbridge data covers UK-domiciled undergraduates.</p>
+          </div>
+        </section>
       </main>
     </>
   );

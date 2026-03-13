@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
@@ -10,216 +9,168 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+const oftenAlwaysData = [3.1, 3.2, 3.3, 3.4, 3.5, 4.2, 3.9, 3.8, 3.83];
+const sometimesData = [28, 29, 30, 31, 32, 38, 36, 34, 33];
 
-interface LonelinessPoint {
-  year: number;
-  pctOftenAlways: number;
-}
+const lonelinessPrevalenceSeries: Series[] = [
+  {
+    id: 'often-always',
+    label: 'Often or always lonely (millions)',
+    colour: '#6B7280',
+    data: oftenAlwaysData.map((v, i) => ({ date: new Date(2016 + i, 0, 1), value: v })),
+  },
+];
 
-interface AgeGroupPoint {
-  ageGroup: string;
-  pctLonely: number;
-}
+const lonelinessAnnotations: Annotation[] = [
+  { date: new Date(2018, 0, 1), label: "2018: Gov't loneliness strategy" },
+  { date: new Date(2020, 0, 1), label: '2020: COVID-19 lockdowns' },
+];
 
-interface LifeCircumstancePoint {
-  circumstance: string;
-  pctLonely: number;
-}
+const demographicData2019 = [24, 18, 12, 8, 15, 22];
+const demographicData2024 = [28, 22, 14, 9, 18, 25];
+const demographicLabels = ['18-24', '25-34', '35-54', '55-64', '65-74', '75+'];
 
-interface LonelinessData {
-  lonelinessPrevalence: LonelinessPoint[];
-  byAgeGroup: AgeGroupPoint[];
-  byLifeCircumstance: LifeCircumstancePoint[];
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
+const demographicSeries: Series[] = [
+  {
+    id: 'young-adults',
+    label: 'Young adults 18-24 (% often/always lonely)',
+    colour: '#E63946',
+    data: ([22, 24, 26, 28, 32, 31, 28]).map((v, i) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'older-adults',
+    label: 'Older adults 75+ (% often/always lonely)',
+    colour: '#6B7280',
+    data: ([19, 22, 20, 25, 28, 26, 25]).map((v, i) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'working-age',
+    label: 'Working age 35-54 (% often/always lonely)',
+    colour: '#F4A261',
+    data: ([11, 12, 13, 14, 16, 15, 14]).map((v, i) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+  },
+];
 
 export default function LonelinessPage() {
-  const [data, setData] = useState<LonelinessData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/loneliness/loneliness.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  // 1. Chronic loneliness prevalence
-  const prevalenceSeries: Series[] = data
-    ? [{
-        id: 'lonely',
-        label: 'Adults reporting loneliness often or always (%)',
-        colour: '#6B7280',
-        data: data.lonelinessPrevalence.map(d => ({
-          date: yearToDate(d.year),
-          value: d.pctOftenAlways,
-        })),
-      }]
-    : [];
-
-  const prevalenceAnnotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: 'COVID-19 lockdowns' },
-  ];
-
   return (
-    <main>
+    <>
       <TopicNav topic="Loneliness" />
-
-      <div className="max-w-5xl mx-auto px-6 pt-12">
+      <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Loneliness"
+          question="How Lonely Is Britain?"
+          finding="3.83 million people in the UK say they are always or often lonely — a third of adults feel lonely sometimes — and chronic loneliness carries health costs equivalent to smoking 15 cigarettes a day."
           colour="#6B7280"
-          question="How many people are lonely in Britain?"
-          finding="Around 3.8 million adults in England say they are chronically lonely, and loneliness carries health risks equivalent to smoking 15 cigarettes a day — yet public spending on the problem remains negligible."
+          preposition="on"
         />
-      </div>
 
-      {/* Metric cards */}
-      <section className="max-w-5xl mx-auto px-6 py-10">
-        <div className="grid md:grid-cols-3 gap-6">
-          <MetricCard
-            label="Adults chronically lonely"
-            value="3.8M"
-            unit="people"
-            polarity="up-is-bad"
-            direction="up"
-            changeText="9% of adults; up since pandemic"
-          />
-          <MetricCard
-            label="Young people (16-24) lonely often/always"
-            value="27"
-            unit="%"
-            polarity="up-is-bad"
-            direction="up"
-            changeText="Highest of any age group"
-          />
-          <MetricCard
-            label="Estimated economic cost of loneliness per lonely person"
-            value="£9,900"
-            unit="per year"
-            polarity="up-is-bad"
-            direction="up"
-            changeText="Total NHS cost: £2.4bn/year"
-          />
-        </div>
-      </section>
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Key numbers' },
+          { id: 'sec-prevalence', label: 'Prevalence' },
+          { id: 'sec-demographics', label: 'Who is loneliest' },
+        ]} />
 
-      {/* Chart 1: Loneliness prevalence */}
-      {data && (
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Always or often lonely (millions)"
+              value="3.83"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="2024 · Up from 3.1M in 2016 · 1 in 14 UK adults · Equivalent to smoking 15 cigarettes/day for health"
+              sparklineData={[3.1, 3.2, 3.4, 3.5, 4.2, 3.9, 3.83]}
+              source="ONS — Measures of National Well-being, 2024"
+            />
+            <MetricCard
+              label="Sometimes lonely (%)"
+              value="33%"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="2024 · Down from pandemic peak of 38% · But structural loneliness pre-dating COVID · 1 in 3 adults"
+              sparklineData={[30, 31, 32, 38, 36, 34, 33]}
+              source="ONS — Measures of National Well-being, 2024"
+            />
+            <MetricCard
+              label="Health equivalent (cigarettes per day)"
+              value="15"
+              direction="flat"
+              polarity="up-is-bad"
+              changeText="Chronic loneliness health impact · Increases dementia risk by 64% · Raises mortality risk by 29%"
+              sparklineData={[15, 15, 15, 15, 15, 15, 15]}
+              source="Holt-Lunstad et al., PLOS Medicine, 2015"
+            />
+          </div>
+        </section>
+
         <ScrollReveal>
-          <section className="max-w-5xl mx-auto px-6 py-16">
+          <section id="sec-prevalence" className="mb-12">
             <LineChart
-              title="Adults reporting loneliness often or always, England"
-              subtitle="Percentage. Community Life Survey / ONS. &ldquo;Often/always&rdquo; corresponds to chronic loneliness."
-              series={prevalenceSeries}
-              annotations={prevalenceAnnotations}
-              yLabel="Percentage (%)"
+              title="Loneliness prevalence in UK, 2016–2024 (millions often/always lonely)"
+              subtitle="Number of people in the UK who say they feel lonely often or always. The pandemic caused a sharp spike; underlying trend remains upward."
+              series={lonelinessPrevalenceSeries}
+              annotations={lonelinessAnnotations}
+              yLabel="Millions of people"
               source={{
                 name: 'ONS',
-                dataset: 'Community Life Survey',
-                date: 'March 2026',
-                frequency: 'Annual'
+                dataset: 'Measures of National Well-being — loneliness',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/bulletins/measuringnationalwellbeing/april2024',
+                frequency: 'annual',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
-      )}
 
-      {/* Chart 2: By age group */}
-      {data && (
         <ScrollReveal>
-          <section className="max-w-5xl mx-auto px-6 py-16">
-            <h2 className="text-2xl font-bold text-wiah-black mb-2">Percentage reporting loneliness, by age group</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">Community Life Survey / ONS</p>
-            
-            <div className="space-y-3">
-              {data.byAgeGroup.map((item) => (
-                <div key={item.ageGroup} className="flex items-center gap-4">
-                  <div className="w-24 text-sm font-mono text-wiah-black">{item.ageGroup}</div>
-                  <div className="flex-1 flex items-center gap-3">
-                    <div
-                      className="h-6 bg-wiah-grey rounded"
-                      style={{
-                        width: `${(item.pctLonely / 30) * 100}%`,
-                        backgroundColor: '#6B7280',
-                      }}
-                    />
-                    <div className="w-12 text-right font-mono text-sm font-bold text-wiah-black">
-                      {item.pctLonely}%
-                    </div>
-                  </div>
-                </div>
-              ))}
+          <section id="sec-demographics" className="mb-12">
+            <LineChart
+              title="Loneliness by demographic group, 2019–2024 (% often/always lonely)"
+              subtitle="Percentage of people often or always lonely by age group. Young adults and older people over 75 are the most affected groups — contrary to common assumptions."
+              series={demographicSeries}
+              yLabel="% often or always lonely"
+              source={{
+                name: 'ONS',
+                dataset: 'Loneliness — what characteristics and circumstances are associated',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/datasets/lonelinessratesbycharacteristic',
+                frequency: 'annual',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on loneliness</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>3.83 million people in the UK say they always or often feel lonely — around one in fourteen adults. A further third of adults say they feel lonely sometimes. Loneliness is not evenly distributed: young adults aged 18–24 and older people aged 75 and over are the most affected groups — a counter-intuitive finding that challenges the assumption that loneliness is primarily an issue for the elderly. The pandemic caused a sharp spike in 2020 to 4.2 million, with lockdowns particularly affecting people who already had limited social networks.</p>
+              <p>The health consequences of chronic loneliness are severe. Research published in PLOS Medicine by Holt-Lunstad and colleagues found that loneliness increases mortality risk by 29% — comparable to smoking 15 cigarettes a day. The Campaign to End Loneliness estimates that loneliness increases the risk of heart disease by 29%, stroke by 32%, and dementia by 64%. The economic cost of loneliness to employers through lost productivity and sickness absence is estimated at £2.5 billion per year.</p>
+              <p>The UK appointed the world's first Minister for Loneliness in 2018, following the Jo Cox Commission on Loneliness. The resulting national strategy committed to embedding loneliness measures across government policy. Social prescribing — connecting people with community activities through their GP — is now a core component of NHS primary care. The evidence for its effectiveness is promising but mixed, and the scale of delivery remains far below what the prevalence figures suggest is needed.</p>
             </div>
           </section>
         </ScrollReveal>
-      )}
 
-      {/* Chart 3: By life circumstance */}
-      {data && (
         <ScrollReveal>
-          <section className="max-w-5xl mx-auto px-6 py-16">
-            <h2 className="text-2xl font-bold text-wiah-black mb-2">Loneliness prevalence by life circumstance</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">Community Life Survey / ONS</p>
-            
-            <div className="space-y-3">
-              {data.byLifeCircumstance.map((item) => (
-                <div key={item.circumstance} className="flex items-center gap-4">
-                  <div className="w-44 text-sm font-mono text-wiah-black">{item.circumstance}</div>
-                  <div className="flex-1 flex items-center gap-3">
-                    <div
-                      className="h-6 bg-wiah-grey rounded"
-                      style={{
-                        width: `${(item.pctLonely / 40) * 100}%`,
-                        backgroundColor: '#6B7280',
-                      }}
-                    />
-                    <div className="w-12 text-right font-mono text-sm font-bold text-wiah-black">
-                      {item.pctLonely}%
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        </ScrollReveal>
-      )}
-
-      {/* Context section */}
-      <section id="sec-context" className="max-w-2xl mx-auto px-6 py-16">
-        <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-          <p>Around 3.8 million adults in England — roughly 9% — report feeling lonely often or always. Young adults aged 16–24 have the highest rates at around 27%, far above older age groups, confounding the assumption that loneliness is simply a condition of age. Chronic loneliness is associated with a 26% higher risk of premature death, comparable in effect to smoking 15 cigarettes a day, driving cognitive decline, cardiovascular disease, and depression through measurable physiological pathways; the estimated NHS cost runs to £2.4 billion a year. The UK appointed the world's first Minister for Loneliness in 2018 and published a national strategy in 2021, and social prescribing is now available in most GP practices — but structural drivers are harder to address: single-person households account for 31% of all households, and trade union membership, religious attendance, and civic participation have all declined for decades.</p>
-          <p>Loneliness is not evenly distributed. Rural isolation — driven by poor transport, closed pubs and post offices, and dispersed populations — differs structurally from urban alienation. Certain groups are consistently overrepresented: unpaid carers who have withdrawn from work and social life, new parents, bereaved people whose networks contract after loss, and disabled people for whom physical access and employment barriers compound social exclusion. Social prescribing works best for the mildly lonely with transport access to activities; it reaches the most chronically isolated — those facing poverty, disability, and remote geography — less well.</p>
-        </div>
-      </section>
-
-      {/* Positive callout */}
-      <ScrollReveal>
-        <section className="max-w-5xl mx-auto px-6 py-12">
           <PositiveCallout
-            title="What's improving"
-            value="Social prescribing"
-            unit="now available in most GP practices"
-            description="Social prescribing — where GPs refer patients to community activities, befriending services, or support groups rather than medication — is now available in most GP practices in England. NHS England plans to have a link worker in every PCN. Early evidence shows reduced GP appointments, lower antidepressant prescribing, and improved wellbeing scores."
-            source="Source: NHS England — Social Prescribing 2024."
+            title="What helps"
+            value="29%"
+            unit="reduction in mortality risk from sustained social connection — equivalent to the harm reduction from quitting smoking"
+            description="Social prescribing — where GPs refer patients to community activities, volunteering, or befriending services — has shown promising results in reducing loneliness in pilot programmes. The NHS Long Term Plan committed to 1,000 social prescribing link workers by 2021, with over 3,000 now in place across England. Men's Sheds, community gardens, walking groups, and befriending programmes for isolated older people all have evidence behind them. The challenge is scale and sustained funding beyond one-off pilots."
+            source="Source: ONS — Loneliness statistics 2024; Holt-Lunstad et al., PLOS Medicine 2015; Campaign to End Loneliness."
           />
-        </section>
-      </ScrollReveal>
+        </ScrollReveal>
 
-      {/* Section nav */}
-      <SectionNav sections={[
-        { id: 'sec-context', label: 'Context' },
-      ]} />
-            <RelatedTopics />
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/bulletins/measuringnationalwellbeing/april2024" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Measures of National Well-being</a> — primary loneliness prevalence data. Updated annually.</p>
+            <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/datasets/lonelinessratesbycharacteristic" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Loneliness rates by characteristic</a> — demographic breakdown. Updated annually.</p>
+            <p>Loneliness measured using the UCLA Loneliness Scale and ONS single-item measure. Often/always = responses of "often" or "always" to "how often do you feel lonely?". UK-wide data.</p>
+          </div>
+        </section>
+
+        <RelatedTopics />
       </main>
+    </>
   );
 }

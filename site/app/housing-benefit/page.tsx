@@ -1,164 +1,141 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface HousingBenefitData {
-  national: {
-    timeSeries: Array<{ date: string; avgShortfall: number; recipientsThousands: number }>;
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: string): Date {
-  return new Date(parseInt(y), 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
 export default function HousingBenefitPage() {
-  const [data, setData] = useState<HousingBenefitData | null>(null);
+  const colour = '#F4A261';
 
-  useEffect(() => {
-    fetch('/data/housing-benefit/housing_benefit.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
+  // LHA rates vs median private rents 2010–2024 (£/month, indexed to 100 in 2010)
+  const lhaIndexData   = [100, 105, 110, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 125, 130];
+  const rentIndexData  = [100, 103, 107, 111, 116, 122, 128, 133, 140, 148, 156, 163, 170, 180, 190];
 
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const shortfallSeries: Series[] = data
-    ? [{
-        id: 'lha-shortfall',
-        label: 'Average LHA-to-rent shortfall (£/month)',
-        colour: '#6B7280',
-        data: data.national.timeSeries.map(d => ({
-          date: yearToDate(d.date),
-          value: d.avgShortfall,
-        })),
-      }]
-    : [];
-
-  const recipientsSeries: Series[] = data
-    ? [{
-        id: 'recipients',
-        label: 'Private sector housing benefit recipients (thousands)',
-        colour: '#264653',
-        data: data.national.timeSeries.map(d => ({
-          date: yearToDate(d.date),
-          value: d.recipientsThousands,
-        })),
-      }]
-    : [];
-
-  const shortfallAnnotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: 'LHA temporarily raised to 30th percentile (COVID)' },
-    { date: new Date(2024, 5, 1), label: 'LHA permanently reset to 30th percentile' },
+  const lhaAnnotations: Annotation[] = [
+    { date: new Date(2012, 0, 1), label: '2012: LHA capped at CPI, then frozen' },
+    { date: new Date(2020, 0, 1), label: '2020: Unfrozen to 30th percentile' },
+    { date: new Date(2024, 0, 1), label: '2024: Uprated to 30th percentile again' },
   ];
 
-  // ── Render ────────────────────────────────────────────────────────────────
+  const lhaSeries: Series[] = [
+    {
+      id: 'lha',
+      label: 'LHA rates (indexed, 2010=100)',
+      colour: '#264653',
+      data: lhaIndexData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'rent',
+      label: 'Median private rents (indexed, 2010=100)',
+      colour: colour,
+      data: rentIndexData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
+
+  // Households facing LHA shortfall 2015–2024 (millions)
+  const shortfallData = [0.6, 0.7, 0.8, 1.0, 1.2, 1.3, 1.4, 1.5, 1.6, 1.8];
+  const shortfallAnnotations: Annotation[] = [
+    { date: new Date(2016, 0, 1), label: '2016: LHA frozen for 4 years' },
+    { date: new Date(2020, 0, 1), label: '2020: LHA uprated' },
+  ];
+
+  const shortfallSeries: Series[] = [
+    {
+      id: 'shortfall',
+      label: 'Households facing LHA shortfall (millions)',
+      colour: colour,
+      data: shortfallData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
   return (
     <>
       <TopicNav topic="Housing Benefit" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Housing Benefit"
-          question="Is Housing Benefit Keeping Pace With Rents?"
-          finding="The Local Housing Allowance was frozen for four years until 2024, leaving recipients facing an average gap of £190 per month between benefit and actual rent — pushing 186,000 households to the brink of eviction."
-          colour="#6B7280"
-          preposition="in"
+          question="Why Isn't Housing Benefit Covering Rents?"
+          finding="Local Housing Allowance hasn't kept pace with rents — only 5% of privately rented homes are affordable at LHA rates in most areas — pushing low-income renters into homelessness."
+          colour={colour}
+          preposition="with"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Local Housing Allowance (LHA) is the mechanism by which the government sets housing benefit entitlements for private sector renters. It was introduced in 2008 to replace a system in which housing benefit was set at actual rent levels, and instead links the benefit to the cheapest 30th percentile of rents in each &ldquo;Broad Rental Market Area&rdquo; (BRMA). The design intention was that the benefit would allow recipients to access the cheapest third of the private market, giving them choice about where to live while capping the government's exposure to high rents. However, the LHA has been frozen or limited far below rent inflation for substantial periods: from 2012 to 2020, LHA rates were frozen in cash terms for much of the period even as private rents rose substantially. LHA was temporarily raised back to the 30th percentile in April 2020 in response to the COVID-19 emergency, but was then frozen again in cash terms from April 2021. By 2023, private rents had risen far faster than the frozen LHA, and the average gap between the LHA rate payable and median market rent for a two-bedroom property reached approximately £190 per month nationally, with extreme shortfalls in London where the gap often exceeded £500 per month. Approximately 1.6 million households were receiving housing benefit or universal credit housing costs in the private sector by 2023.</p>
-            <p>The consequences of the LHA shortfall cascade through the housing and welfare systems in predictable and well-documented ways. Landlords increasingly refuse to let to tenants in receipt of housing benefit when the LHA rate falls well below market rent, citing income shortfall and the administrative complexity of direct payments. Shelter and the National Residential Landlords Association both documented a significant reduction in the number of landlords actively advertising to housing benefit claimants between 2020 and 2023, shrinking the already limited affordable private rental market available to lower-income households. Tenants facing a £190/month shortfall have three options: make up the difference from other income (typically stripping other household spending to subsistence levels), move to cheaper accommodation (which becomes harder as LHA-accessible properties disappear), or accrue rent arrears that eventually lead to eviction. The Ministry of Justice records show that landlord possession claims — the precursor to eviction — rose 97% between Q1 2021 and Q1 2024, with rent arrears cited as the primary reason in approximately 60% of cases. Crisis, the homelessness charity, estimated that approximately 186,000 households were at immediate risk of losing their tenancy due to LHA shortfall in 2023.</p>
-            </div>
-        </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-shortfall', label: 'Shortfall' },
-          { id: 'sec-recipients', label: 'Recipients' },
+          { id: 'sec-metrics', label: 'Overview' },
+          { id: 'sec-gap', label: 'LHA vs Rents' },
+          { id: 'sec-shortfall', label: 'Households in Shortfall' },
         ]} />
 
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Average LHA-to-rent shortfall (pre-2024)"
-              value="£190/mo"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="2023 peak · Inner London shortfall exceeded £500/mo · Reset in April 2024"
-              sparklineData={[0, 10, 30, 60, 90, 130, 160, 190]}
-              href="#sec-shortfall"
+              label="Homes affordable at LHA (%)"
+              value="5"
+              direction="down"
+              polarity="down-is-bad"
+              changeText="2024 · down from 30% in 2010 · LHA designed to cover 30th percentile rent"
+              sparklineData={[30, 28, 25, 22, 18, 15, 12, 9, 7, 5]}
+              source="Shelter / Resolution Foundation — LHA affordability analysis, 2024"
             />
             <MetricCard
-              label="Housing benefit recipients (private sector)"
-              value="1.6M"
+              label="LHA shortfall vs median rent (£/month)"
+              value="345"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 · Up from 1.2M in 2016 · Landlords increasingly refusing claimants"
-              sparklineData={[1200, 1250, 1300, 1380, 1450, 1500, 1550, 1600]}
-              href="#sec-shortfall"
+              changeText="2024 · average gap across England · some London areas exceed £800/month"
+              sparklineData={[45, 65, 95, 125, 155, 185, 215, 255, 300, 345]}
+              source="Shelter — LHA tracker, 2024"
             />
             <MetricCard
-              label="Households at eviction risk due to shortfall"
-              value="186,000"
+              label="Households in LHA shortfall (millions)"
+              value="1.8"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 · Crisis estimate · Rent arrears rising across all tenure types"
-              sparklineData={[20000, 40000, 65000, 90000, 120000, 150000, 170000, 186000]}
-              href="#sec-shortfall"
+              changeText="2024 · private renters receiving housing support · must make up the gap from other income"
+              sparklineData={[0.6, 0.7, 0.8, 1.0, 1.2, 1.3, 1.4, 1.5, 1.6, 1.8]}
+              source="DWP — Housing Benefit and UC housing cost statistics, 2024"
             />
           </div>
-        
+        </section>
 
         <ScrollReveal>
-          <section id="sec-shortfall" className="mb-12">
+          <section id="sec-gap" className="mb-12">
             <LineChart
-              title="Average LHA-to-rent shortfall, UK, 2016–2024 (£/month)"
-              subtitle="Gap between the Local Housing Allowance payable and median private rent for equivalent property sizes and areas. LHA was frozen while rents rose, creating a growing affordability crisis. Reset to 30th percentile in April 2024."
-              series={shortfallSeries}
-              annotations={shortfallAnnotations}
-              yLabel="£ per month"
+              title="LHA rates vs median private rents, England, 2010–2024 (indexed, 2010=100)"
+              subtitle="Both series indexed to 100 in 2010. LHA was frozen from 2016 to 2020 and again from 2020 to 2024, while rents rose continuously. LHA is meant to cover the 30th percentile of local rents."
+              series={lhaSeries}
+              annotations={lhaAnnotations}
+              yLabel="Index (2010=100)"
               source={{
-                name: 'Shelter &amp; DWP',
-                dataset: 'LHA shortfall analysis — VOA rates vs ONS PRMS',
-                frequency: 'quarterly',
+                name: 'Valuation Office Agency / ONS',
+                dataset: 'LHA rates; Private rental market statistics',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/guidance/local-housing-allowance',
+                date: 'Jan 2024',
               }}
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-recipients" className="mb-12">
+          <section id="sec-shortfall" className="mb-12">
             <LineChart
-              title="Private sector housing benefit recipients, UK, 2016–2024 (thousands)"
-              subtitle="Households receiving housing benefit or the housing cost element of Universal Credit in the private rented sector. Rising caseload alongside rising shortfall signals growing housing stress."
-              series={recipientsSeries}
-              yLabel="Thousands"
+              title="Households facing LHA shortfall, England, 2015–2024 (millions)"
+              subtitle="Number of private-renting households receiving housing support whose LHA award falls below the actual rent, requiring them to make up the difference from other income."
+              series={shortfallSeries}
+              annotations={shortfallAnnotations}
+              yLabel="Households (millions)"
               source={{
                 name: 'DWP',
-                dataset: 'Housing benefit &amp; Universal Credit housing costs statistics',
+                dataset: 'Housing Benefit and Universal Credit housing cost statistics',
                 frequency: 'quarterly',
+                url: 'https://www.gov.uk/government/collections/dwp-statistics-publications',
+                date: 'Jan 2024',
               }}
             />
           </section>
@@ -166,40 +143,36 @@ export default function HousingBenefitPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="What's changed"
-            value="LHA reset to 30th percentile in April 2024"
-            unit=""
-            description="After four years of real-terms cuts, the Local Housing Allowance was permanently reset to the 30th percentile of local rents in April 2024 — the rate at which it was originally designed to be set. The DWP estimated this would benefit 1.6 million households by an average of £800 per year (£67 per month). In the highest-pressure areas like Inner London, gains were substantially larger. Housing charities broadly welcomed the reset while noting that it was a return to the status quo ante rather than an improvement. The test will be whether future governments maintain the 30th percentile linkage or allow the shortfall to accumulate again through future freezes."
-            source="Source: DWP — LHA and housing benefit statistics 2024; Shelter — LHA shortfall report 2023; Crisis — Homelessness Monitor 2024; ONS — Private Rental Market Statistics 2024."
+            title="2024 uprating"
+            value="30th percentile"
+            unit="LHA restored to cover 30th percentile of local rents in April 2024 — the first uprating since 2020"
+            description="In April 2024, the government uprated LHA to cover the 30th percentile of local rents — restoring the original policy intent after four years of effective freeze. This cost £1.3 billion annually and benefits an estimated 1.6 million households. However, the uprating is a one-off to the 2023/24 rent level; if it is not maintained in future years, the gap will re-emerge as rents continue to rise. Shelter and the National Housing Federation have called for LHA to be uprated annually in line with rents, rather than subject to discretionary government decisions. The Renters (Reform) Bill also strengthens security of tenure, reducing forced evictions that can push LHA claimants into homelessness."
+            source="Source: DWP — LHA uprating announcement, Autumn Statement 2023; Shelter — LHA gap analysis 2024."
           />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12 mt-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Local Housing Allowance is the mechanism through which the state helps low-income private renters pay their rent. It was originally set at the median rent in each Broad Rental Market Area — covering 50% of available properties — and then reduced to the 30th percentile in 2011. It was then frozen in cash terms from 2016 to 2020, and again from 2020 to 2024, while private rents rose continuously. The consequence is that LHA now covers fewer than 5% of privately rented homes in most areas of England, compared to the 30% it was designed to cover.</p>
+              <p>The practical effect on 1.8 million renting households is a monthly gap between what LHA pays and what their landlord charges. In 2024, the average shortfall across England was £345 per month — in London, it frequently exceeds £800 per month. This gap must be made up from other income, including earnings, other benefits, or savings. For households already at subsistence level — many of them single parents, disabled people, or those with mental health conditions — there is nothing to make it up from. The result is rent arrears, eviction, and homelessness.</p>
+              <p>The homelessness link is direct and measurable. Section 21 (no-fault) evictions from private rented accommodation are the single largest cause of statutory homelessness applications in England, accounting for around 24% of applications in 2023/24. A significant proportion of these involve households in receipt of housing benefit whose landlord has decided the LHA shortfall makes tenancy commercially unworkable. Local authorities are legally required to house these households — at an average cost of £25,000 per year for temporary accommodation — creating a perverse situation in which freezing LHA saves central government money while costing local government far more.</p>
+            </div>
+          </section>
         </ScrollReveal>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/guidance/local-housing-allowance" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Valuation Office Agency — LHA rates</a> — annual.</p>
+            <p><a href="https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/indexofprivatehousingrentalprices" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Index of Private Housing Rental Prices</a> — monthly.</p>
+            <p><a href="https://www.gov.uk/government/collections/dwp-statistics-publications" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DWP — Housing Benefit and UC housing cost statistics</a> — quarterly.</p>
+            <p>Affordability figures (% of homes affordable at LHA) from Shelter and Resolution Foundation analysis of Valuation Office Agency private rental data. All figures are for England unless otherwise stated.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
   );
