@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Annual charity closures and government income share (%), 2016–2024
 const charitiesClosedData = [5200, 5100, 5100, 5200, 5300, 5800, 5600, 5900, 6200];
@@ -55,6 +57,11 @@ const closureAnnotations: Annotation[] = [
 const incomeAnnotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: Emergency government COVID grants boost income' },
   { date: new Date(2022, 0, 1), label: '2022: Inflation erodes real value of grants' },
+];
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Charity Commission', dataset: 'Register of Charities', url: 'https://register-of-charities.charitycommission.gov.uk/', date: '2023' },
+  { num: 2, name: 'NCVO', dataset: 'UK Civil Society Almanac', url: 'https://www.ncvo.org.uk/facts-and-stats/uk-civil-society-almanac', date: '2024' },
 ];
 
 export default function CharitySectorFinancesPage() {

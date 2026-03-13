@@ -74,7 +74,7 @@ export default function CarInsurancePovertyPage() {
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>Average UK car insurance premiums rose 58% in the year to December 2023, reaching £924 — the highest level since comparable data began.<Cite nums={1} /> The rise followed a period of below-inflation increases in 2020–22 and represents a sharp correction as claims costs caught up: vehicle repair costs surged due to complex electronics, supply chain disruption, and the high cost of EV battery replacements; legal claims management costs added further pressure; and reinsurance costs rose globally. For an 18-year-old in a major city, average premiums can exceed £3,500 per year — a sum larger than many young workers' annual after-tax income from part-time employment.</p>
-            <p>The insurance poverty trap is most acute for workers in areas with poor public transport who need a car to access employment. Delivery drivers, construction workers, and care workers in rural and suburban areas face a situation where legal insurance can exceed any realistic return from employment. The burden falls disproportionately on young drivers and those in high-risk postcode areas — typically deprived urban communities — creating a transport access penalty that compounds existing disadvantage. Over one million vehicles are estimated to be driven uninsured, with losses funded through the Motor Insurers' Bureau adding approximately £15–30 to every insured driver's premium. Telematics insurance offers some relief for safe young drivers, but premiums remain very high in actuarial risk categories regardless of individual driving behaviour.</p>
+            <p>The insurance poverty trap is most acute for workers in areas with poor public transport who need a car to access employment. Delivery drivers, construction workers, and care workers in rural and suburban areas face a situation where legal insurance can exceed any realistic return from employment. The burden falls disproportionately on young drivers and those in high-risk postcode areas — typically deprived urban communities — creating a transport access penalty that compounds existing disadvantage. Over one million vehicles are estimated to be driven uninsured, with losses funded through the Motor Insurers' Bureau adding approximately £15–30 to every insured driver's premium.<Cite nums={2} /> Telematics insurance offers some relief for safe young drivers, but premiums remain very high in actuarial risk categories regardless of individual driving behaviour.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -153,6 +153,9 @@ export default function CarInsurancePovertyPage() {
             source="Source: ABI — Telematics report 2024. FCA — General Insurance Pricing Practices reform impact assessment 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

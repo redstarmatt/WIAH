@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Problem gambling prevalence 11-16 year olds %, 2018–2024 (Gambling Commission)
 const prevalenceValues = [0.9, 1.0, 1.0, 1.1, 1.4, 1.3, 1.4];
@@ -50,6 +52,12 @@ const annotations1: Annotation[] = [
 const annotations2: Annotation[] = [
   { date: new Date(2021, 5, 1), label: '2021: Loot box review published' },
   { date: new Date(2023, 5, 1), label: '2023: Online slot stake limit £5' },
+];
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Gambling Commission', dataset: 'Young People and Gambling Survey', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/young-people-and-gambling-survey', date: '2024' },
+  { num: 2, name: 'Gambling Commission', dataset: 'Gambling Participation Survey', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-participation-survey', date: '2024' },
+  { num: 3, name: 'NHS', dataset: 'National Problem Gambling Clinic', url: 'https://www.cnwl.nhs.uk/services/mental-health/addictions/national-problem-gambling-clinic', date: '2024' },
 ];
 
 export default function YouthGamblingPage() {
