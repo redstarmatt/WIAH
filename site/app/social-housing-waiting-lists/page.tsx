@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Local Authority Housing Statistics — waiting lists', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-rents-lettings-and-tenancies', date: '2024' },
+  { num: 2, name: 'Shelter', dataset: 'Inadequate Housing Conditions Research', url: 'https://www.shelter.org.uk', date: '2024', note: 'Estimates 4 million people in inadequate housing' },
+  { num: 3, name: 'DLUHC', dataset: 'Live Tables on Social Housing Stock — Right to Buy sales', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-social-housing-sales', date: '2024' },
+  { num: 4, name: 'DLUHC', dataset: 'Local Authority Revenue Expenditure — Temporary Accommodation', url: 'https://www.gov.uk/government/statistical-data-sets/local-authority-revenue-expenditure-and-financing', date: '2024', note: '£2.3 billion spent on temporary accommodation in 2023-24' },
+];
 
 export default function SocialHousingWaitingListsPage() {
   // Chart 1: Social housing waiting list 2010-2024 (millions of households)
