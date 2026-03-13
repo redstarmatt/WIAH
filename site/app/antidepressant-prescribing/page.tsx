@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Antidepressant prescription items dispensed (millions), 2008–2024 — NHS BSA
 const prescriptionValues = [36, 39, 43, 46, 50, 53, 57, 61, 65, 68, 70, 73, 77, 82, 87, 88, 89];
@@ -49,6 +51,14 @@ const annotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: NICE publishes deprescribing guidance' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS BSA', dataset: 'Prescription Cost Analysis', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Medicines Used in Mental Health', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-bulletin', date: '2024' },
+  { num: 3, name: 'NICE', dataset: 'Medicines associated with dependence or withdrawal symptoms: safe prescribing', url: 'https://www.nice.org.uk/guidance/ng215', date: '2022' },
+  { num: 4, name: 'NHS England', dataset: 'NHS Talking Therapies Annual Report', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-bulletin', date: '2024' },
+  { num: 5, name: 'NHS BSA', dataset: 'Prescription Cost Analysis by Sub-ICB', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england', date: '2024' },
+];
+
 export default function AntidepressantPrescribingPage() {
   return (
     <>
@@ -63,8 +73,8 @@ export default function AntidepressantPrescribingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Antidepressant prescribing in England has more than doubled since 2008. Around 8.3 million people — roughly one in six adults — now receive at least one antidepressant prescription per year. The total number of items dispensed reached 89 million in 2023/24, making antidepressants one of the most commonly prescribed drug classes in the country. This growth has been steady and unbroken: there is no single year in the past sixteen in which prescribing fell. The pandemic accelerated an existing trend, with items rising 3.8% in 2020/21 as GP practices shifted to remote consultations and referral pathways into talking therapies were disrupted. Once started, antidepressants are difficult to stop: NICE published its first dedicated deprescribing guidance in 2022, acknowledging that withdrawal symptoms had been systematically underestimated. An estimated 40% of long-term users could safely taper with support, but structured programmes remain rare.</p>
-            <p>The NICE stepped care model recommends that mild to moderate depression should first be treated with guided self-help, cognitive behavioural therapy, or structured exercise — with antidepressants reserved for moderate to severe cases. In practice, the model is inverted. NHS Talking Therapies treated 1.2 million people in 2023/24, but average waits exceeded six weeks in many areas and completion rates remained below 50%. For a GP with a ten-minute appointment slot and a distressed patient, a prescription is often the only intervention immediately available. Regional variation is stark: the North East dispenses 198 antidepressant items per 1,000 population — nearly twice the rate of London at 104. This mirrors the geography of deprivation and limited access to alternatives. The question is not whether antidepressants work — for many people they are essential — but whether a health system that prescribes 89 million items a year is treating the right problem.</p>
+            <p>Antidepressant prescribing in England has more than doubled since 2008. Around 8.3 million people — roughly one in six adults — now receive at least one antidepressant prescription per year.<Cite nums={2} /> The total number of items dispensed reached 89 million in 2023/24, making antidepressants one of the most commonly prescribed drug classes in the country.<Cite nums={1} /> This growth has been steady and unbroken: there is no single year in the past sixteen in which prescribing fell.<Cite nums={1} /> The pandemic accelerated an existing trend, with items rising 3.8% in 2020/21 as GP practices shifted to remote consultations and referral pathways into talking therapies were disrupted.<Cite nums={1} /> Once started, antidepressants are difficult to stop: NICE published its first dedicated deprescribing guidance in 2022, acknowledging that withdrawal symptoms had been systematically underestimated.<Cite nums={3} /> An estimated 40% of long-term users could safely taper with support, but structured programmes remain rare.<Cite nums={3} /></p>
+            <p>The NICE stepped care model recommends that mild to moderate depression should first be treated with guided self-help, cognitive behavioural therapy, or structured exercise — with antidepressants reserved for moderate to severe cases.<Cite nums={3} /> In practice, the model is inverted. NHS Talking Therapies treated 1.2 million people in 2023/24, but average waits exceeded six weeks in many areas and completion rates remained below 50%.<Cite nums={4} /> For a GP with a ten-minute appointment slot and a distressed patient, a prescription is often the only intervention immediately available. Regional variation is stark: the North East dispenses 198 antidepressant items per 1,000 population — nearly twice the rate of London at 104.<Cite nums={5} /> This mirrors the geography of deprivation and limited access to alternatives. The question is not whether antidepressants work — for many people they are essential — but whether a health system that prescribes 89 million items a year is treating the right problem.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +153,9 @@ export default function AntidepressantPrescribingPage() {
             source="Source: NICE — Medicines associated with dependence or withdrawal symptoms 2022. NHS England — Social Prescribing Link Workers 2024. NHS Talking Therapies Annual Report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Areas exceeding WHO PM2.5 limits, 2015–2025 — DEFRA AURN
 const pm25ExceedanceValues = [61, 58, 55, 52, 50, 46, 44, 43, 44, 44, 44];
@@ -54,6 +56,12 @@ const annotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Clean Air Zones operating in Birmingham, Bath' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA', dataset: 'Air quality statistics (AURN)', url: 'https://www.gov.uk/government/collections/air-quality-statistics', date: '2025' },
+  { num: 2, name: 'COMEAP', dataset: 'Long-term exposure mortality estimates', url: 'https://www.gov.uk/government/groups/committee-on-the-medical-effects-of-air-pollutants-comeap', date: '2024' },
+  { num: 3, name: 'TfL', dataset: 'ULEZ impact assessment', date: '2024' },
+];
+
 export default function AirPollutionHotspotsPage() {
   return (
     <>
@@ -68,8 +76,8 @@ export default function AirPollutionHotspotsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Despite decades of regulation, 44 UK towns and cities still recorded annual PM2.5 concentrations above WHO guidelines in 2024, and 89 roadside monitoring sites still exceeded legal NO2 limits. The UK has repeatedly missed court-ordered deadlines for bringing all areas into compliance with EU-derived air quality limits — limits that themselves sit well above the WHO's tighter 2021 guidelines. Road traffic remains the primary source of roadside NO2, and industrial point sources remain a significant contributor to regional PM2.5. The deprivation gradient is stark: the most polluted areas in England are overwhelmingly the poorest, concentrating health harm on the communities least equipped to advocate for themselves.</p>
-            <p>The pandemic provided an inadvertent natural experiment: during the strictest 2020 lockdowns, NO2 concentrations in many urban centres fell by 40–60%, demonstrating that clean air is physically achievable — the barrier is political, not atmospheric. Clean Air Zones in Birmingham, Bath, Bristol, Bradford, and Portsmouth have accelerated improvements, with monitoring showing 10–20% NO2 reductions within the first year of operation. London's Ultra Low Emission Zone expansion to all boroughs in August 2023 has produced measurable improvements. But outside major cities, monitoring coverage is sparse, enforcement of vehicle emission standards is inconsistent, and domestic wood burning — now the largest source of UK PM2.5 — remains largely unregulated. Progress since 2021 has stalled: the number of areas exceeding PM2.5 limits has not fallen since 2022.</p>
+            <p>Despite decades of regulation, 44 UK towns and cities still recorded annual PM2.5 concentrations above WHO guidelines in 2024, and 89 roadside monitoring sites still exceeded legal NO2 limits.<Cite nums={1} /> The UK has repeatedly missed court-ordered deadlines for bringing all areas into compliance with EU-derived air quality limits — limits that themselves sit well above the WHO's tighter 2021 guidelines. Road traffic remains the primary source of roadside NO2, and industrial point sources remain a significant contributor to regional PM2.5.<Cite nums={1} /> The deprivation gradient is stark: the most polluted areas in England are overwhelmingly the poorest, concentrating health harm on the communities least equipped to advocate for themselves.</p>
+            <p>The pandemic provided an inadvertent natural experiment: during the strictest 2020 lockdowns, NO2 concentrations in many urban centres fell by 40–60%, demonstrating that clean air is physically achievable — the barrier is political, not atmospheric.<Cite nums={1} /> Clean Air Zones in Birmingham, Bath, Bristol, Bradford, and Portsmouth have accelerated improvements, with monitoring showing 10–20% NO2 reductions within the first year of operation.<Cite nums={1} /> London's Ultra Low Emission Zone expansion to all boroughs in August 2023 has produced measurable improvements.<Cite nums={3} /> But outside major cities, monitoring coverage is sparse, enforcement of vehicle emission standards is inconsistent, and domestic wood burning — now the largest source of UK PM2.5 — remains largely unregulated.<Cite nums={1} /> Progress since 2021 has stalled: the number of areas exceeding PM2.5 limits has not fallen since 2022.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -148,6 +156,9 @@ export default function AirPollutionHotspotsPage() {
             source="Source: DEFRA — Air quality statistics 2025. TfL — ULEZ impact assessment 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">
