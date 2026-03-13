@@ -150,7 +150,7 @@ export default function NaloxoneProvisionPage() {
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>Naloxone is a medication that reverses the effects of an opioid overdose. Administered as a nasal spray or injection, it can restore breathing within two to three minutes and has virtually no side effects. Since 2015, England has expanded a take-home naloxone programme through drug treatment services, hostels, and increasingly through community pharmacies. The trajectory is striking: from 12,400 packs in 2015 to 124,500 in 2024, distribution has grown tenfold.<Cite nums={1} /> Scotland, which runs a separate programme, has achieved even higher per-capita rates. The Advisory Council on the Misuse of Drugs has recommended that naloxone should be as available as defibrillators in public spaces, and several pilot schemes are now testing vending-machine distribution in areas of high need.<Cite nums={3} /></p>
             <p>Yet the context for this expansion is grim. Drug-related deaths in England and Wales reached a record 4,907 in 2022, driven by an ageing cohort of heroin users whose bodies are increasingly vulnerable after decades of use, the appearance of synthetic opioids including fentanyl in the illicit supply, and the compounding effects of homelessness, mental ill-health, and poverty.<Cite nums={2} /> The slight decline to 4,690 in 2024 is cautiously encouraging but too early to call a turning point.<Cite nums={2} /> The North East of England has the highest death rate and also the highest naloxone distribution rate, reflecting both the severity of the crisis and the intensity of the response.<Cite nums={1} /> Crucially, naloxone only works if someone is present to administer it. Many overdose deaths still occur alone, in temporary accommodation or on the street, where no witness is available. The gap is not just about supply, but about reach.</p>
-            <p>Community naloxone coverage, measured as packs distributed per 1,000 people in opioid treatment, has risen from 18 in 2015 to 163 in 2024. This is progress, but international evidence suggests coverage rates of 200 or more per 1,000 are needed to achieve measurable reductions in overdose mortality. The expansion of pharmacy-based supply in 2023, which allows anyone to collect naloxone without a prescription, is the most significant policy change in years. Early data suggests pharmacy supply is reaching people not in contact with treatment services, including family members and hostel staff, exactly the bystanders most likely to witness an overdose.</p>
+            <p>Community naloxone coverage, measured as packs distributed per 1,000 people in opioid treatment, has risen from 18 in 2015 to 163 in 2024.<Cite nums={1} /> This is progress, but international evidence suggests coverage rates of 200 or more per 1,000 are needed to achieve measurable reductions in overdose mortality.<Cite nums={3} /> The expansion of pharmacy-based supply in 2023, which allows anyone to collect naloxone without a prescription, is the most significant policy change in years. Early data suggests pharmacy supply is reaching people not in contact with treatment services, including family members and hostel staff, exactly the bystanders most likely to witness an overdose.<Cite nums={4} /></p>
           </div>
         </section>
 
@@ -325,6 +325,10 @@ export default function NaloxoneProvisionPage() {
             source="Source: OHID — Pharmacy naloxone pilot evaluation, 2024. ACMD — Reducing opioid-related deaths in the UK, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

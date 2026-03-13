@@ -9,6 +9,17 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'COVID Infection Survey — long COVID prevalence estimates', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/prevalenceofongoingsymptomsfollowingcoronaviruscovid19infectionintheuk', date: '2024' },
+  { num: 2, name: 'OBR', dataset: 'Economic and fiscal outlook — long-term sickness inactivity', url: 'https://obr.uk/', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'Long COVID assessment clinics data', url: 'https://www.england.nhs.uk/coronavirus/post-covid-syndrome-long-covid/', date: '2024' },
+  { num: 4, name: 'NIHR', dataset: 'PHOSP-COVID study — long COVID research funding', url: 'https://www.phosp.org/', date: '2024' },
+];
 
 interface PrevalencePoint {
   year: number;
@@ -125,7 +136,7 @@ export default function LongCovidPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Long COVID — defined by NICE as symptoms persisting four or more weeks after infection — peaked at 2.1 million sufferers across Great Britain in January 2022, with subsequent estimates putting the figure at approximately 1.5 million in 2024. Women are affected more than men, and prevalence concentrates heavily among working-age adults aged 35–69. Some 800,000 people report long COVID limits their daily activities; 50,000 are unable to work at all. OBR estimates attribute roughly 20% of the rise in long-term sickness inactivity (from 2.1 million to 3.2 million since 2019) to long COVID, with the estimated economic cost running to £5 billion per year. NHS England established 85 long COVID assessment clinics with a 12-week average wait; there is no licensed treatment, with care symptom-based. Vaccination reduces long COVID risk by around 50%, and the NIHR funded over £50 million of research through the PHOSP-COVID study.
+              Long COVID — defined by NICE as symptoms persisting four or more weeks after infection — peaked at 2.1 million sufferers across Great Britain in January 2022, with subsequent estimates putting the figure at approximately 1.5 million in 2024.<Cite nums={1} /> Women are affected more than men, and prevalence concentrates heavily among working-age adults aged 35–69. Some 800,000 people report long COVID limits their daily activities; 50,000 are unable to work at all.<Cite nums={1} /> OBR estimates attribute roughly 20% of the rise in long-term sickness inactivity (from 2.1 million to 3.2 million since 2019) to long COVID, with the estimated economic cost running to £5 billion per year.<Cite nums={2} /> NHS England established 85 long COVID assessment clinics with a 12-week average wait; there is no licensed treatment, with care symptom-based.<Cite nums={3} /> Vaccination reduces long COVID risk by around 50%, and the NIHR funded over £50 million of research through the PHOSP-COVID study.<Cite nums={4} />
             </p>
             <p>
               Healthcare workers, care home staff, and transport workers unable to work from home were disproportionately affected during the first two waves before vaccination — mirroring pandemic exposure patterns. Post-exertional malaise, where physical or cognitive effort triggers symptom relapse lasting days, makes conventional rehabilitation counterproductive and traps patients in enforced inactivity. Children were not spared: multisystem inflammatory syndrome (MIS-C and PIMS-TS) hospitalised hundreds, with some experiencing lasting cardiac and neurological effects. Clinical trials in 2024–25 are testing antivirals, low-dose naltrexone for neuroinflammation, and apheresis, though none has yet produced definitive results.
@@ -225,6 +236,10 @@ export default function LongCovidPage() {
             source="Source: ONS — COVID Infection Survey; NHS England — Long COVID assessment services 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

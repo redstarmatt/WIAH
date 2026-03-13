@@ -222,8 +222,8 @@ export default function OccupationalDiseasePage() {
             <p>
               Policy responses remain fragmented. The Health and Safety Executive&apos;s budget was cut
               by 50% in real terms between 2010 and 2020, reducing proactive inspections to a
-              fraction of their former level. The 2017 &ldquo;Thriving at Work&rdquo; review recommended
-              mental health core standards for all employers, but adoption is voluntary and patchy.
+              fraction of their former level.<Cite nums={4} /> The 2017 &ldquo;Thriving at Work&rdquo; review recommended
+              mental health core standards for all employers, but adoption is voluntary and patchy.<Cite nums={5} />
               Occupational health provision — workplace doctors and nurses who can intervene early —
               covers fewer than half of UK workers, with almost no coverage in small businesses and
               the gig economy. The government&apos;s 2023 consultation on an occupational health
@@ -393,6 +393,10 @@ export default function OccupationalDiseasePage() {
             source="Source: HSE — RIDDOR fatal injuries 2022/23. Eurostat — European Statistics on Accidents at Work."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

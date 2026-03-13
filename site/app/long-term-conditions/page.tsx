@@ -8,6 +8,16 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Long Term Plan — multimorbidity prevalence and projections', url: 'https://www.longtermplan.nhs.uk/', date: '2021' },
+  { num: 2, name: 'NHS Digital', dataset: 'Quality and Outcomes Framework (QOF) — disease registers', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/quality-and-outcomes-framework-achievement-prevalence-and-exceptions-data', date: '2023' },
+  { num: 3, name: 'The Health Foundation', dataset: 'Multimorbidity: understanding the challenge', url: 'https://www.health.org.uk/', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 

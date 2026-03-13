@@ -109,8 +109,8 @@ export default function NHSCancerPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Cancer is the second most common cause of death in the UK. Some 376,000 new cases are diagnosed each year and 167,000 people die from the disease — one in two people born after 1960 will receive a cancer diagnosis in their lifetime. The NHS Long-Term Plan committed to diagnosing 75% of cancers at stage 1 or 2 by 2028, yet the current figure sits at around 54%, well behind Denmark and Sweden where 60–65% are caught early. Late-stage diagnosis is the primary driver of the UK's survival gap: five-year bowel cancer survival is 57% here against 67% in Australia; ovarian cancer survival is 35% compared with 45%. Deprivation is the strongest predictor of late presentation — patients in the least deprived quintile are 30% more likely to be diagnosed at stage 1.</p>
-            <p>The 62-day urgent referral-to-treatment standard has not been met since 2015. By 2023 the compliance rate had fallen to 67.4% against an 85% target, while 16,200 patients were waiting more than 104 days for treatment to begin. COVID-19 inflicted catastrophic disruption: an estimated 350,000 fewer cancers were diagnosed in 2020, and the resulting diagnostic backlog has never fully cleared. GP referral rates vary threefold across practices, creating a postcode lottery at the point of entry, and one-year bowel cancer survival ranges from 89% to 93% across NHS regions — a gap that reflects systemic variation in access rather than biology.</p>
+            <p>Cancer is the second most common cause of death in the UK. Some 376,000 new cases are diagnosed each year and 167,000 people die from the disease — one in two people born after 1960 will receive a cancer diagnosis in their lifetime.<Cite nums={1} /> The NHS Long-Term Plan committed to diagnosing 75% of cancers at stage 1 or 2 by 2028, yet the current figure sits at around 54%, well behind Denmark and Sweden where 60–65% are caught early.<Cite nums={3} /> Late-stage diagnosis is the primary driver of the UK's survival gap: five-year bowel cancer survival is 57% here against 67% in Australia; ovarian cancer survival is 35% compared with 45%.<Cite nums={4} /> Deprivation is the strongest predictor of late presentation — patients in the least deprived quintile are 30% more likely to be diagnosed at stage 1.<Cite nums={1} /></p>
+            <p>The 62-day urgent referral-to-treatment standard has not been met since 2015. By 2023 the compliance rate had fallen to 67.4% against an 85% target, while 16,200 patients were waiting more than 104 days for treatment to begin.<Cite nums={2} /> COVID-19 inflicted catastrophic disruption: an estimated 350,000 fewer cancers were diagnosed in 2020, and the resulting diagnostic backlog has never fully cleared.<Cite nums={1} /> GP referral rates vary threefold across practices, creating a postcode lottery at the point of entry, and one-year bowel cancer survival ranges from 89% to 93% across NHS regions — a gap that reflects systemic variation in access rather than biology.<Cite nums={2} /></p>
             </div>
         </section>
 
@@ -218,6 +218,10 @@ export default function NHSCancerPage() {
             source="Source: NHS England — Cancer Waiting Times 2023; Cancer Research UK — Cancer Survival Statistics 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

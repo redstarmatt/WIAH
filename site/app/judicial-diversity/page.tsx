@@ -7,7 +7,16 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MOJ', dataset: 'Diversity of the Judiciary Statistics', url: 'https://www.gov.uk/government/statistics/diversity-of-the-judiciary-2023-statistics', date: '2023' },
+  { num: 2, name: 'Judicial Appointments Commission', dataset: 'Official Statistics', url: 'https://www.judicialappointments.gov.uk/', date: '2023' },
+  { num: 3, name: 'Bar Standards Board', dataset: 'Diversity at the Bar Report', url: 'https://www.barstandardsboard.org.uk/', date: '2023' },
+  { num: 4, name: 'Sutton Trust', dataset: 'Elitist Britain — Social Mobility in the Judiciary', url: 'https://www.suttontrust.com/our-research/elitist-britain/', date: '2019' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -79,10 +88,10 @@ export default function JudicialDiversityPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The judiciary of England and Wales has diversified slowly but unevenly. Women now constitute 35.4% of all judges, up from 25.2% in 2015 — a meaningful improvement driven partly by the Judicial Appointments Commission's (JAC) equal merit provision, which allows a candidate from an under-represented group to be appointed when two candidates are assessed as equally meritorious. Ethnic minority judges account for 9.8% of the bench, up from 6.1% in 2015. These aggregate figures, however, mask a stark pyramid: diversity is concentrated in the lower tiers. Tribunal judges are 46% female and 14% ethnic minority; at the Court of Appeal, those figures drop to 28% and 6% respectively. The Supreme Court has never had a non-white justice in its history.
+              The judiciary of England and Wales has diversified slowly but unevenly. Women now constitute 35.4% of all judges, up from 25.2% in 2015 — a meaningful improvement driven partly by the Judicial Appointments Commission's (JAC) equal merit provision, which allows a candidate from an under-represented group to be appointed when two candidates are assessed as equally meritorious.<Cite nums={[1, 2]} /> Ethnic minority judges account for 9.8% of the bench, up from 6.1% in 2015.<Cite nums={1} /> These aggregate figures, however, mask a stark pyramid: diversity is concentrated in the lower tiers. Tribunal judges are 46% female and 14% ethnic minority; at the Court of Appeal, those figures drop to 28% and 6% respectively. The Supreme Court has never had a non-white justice in its history.
             </p>
             <p>
-              The pipeline explains the pattern. Senior judicial appointments are drawn overwhelmingly from the barristers' branch of the legal profession, where women represent 39% of practising barristers and ethnic minorities 16%. But the problem compounds at each career stage: women leave the Bar at higher rates than men after 10–15 years of practice (the critical period for building a judicial-appointment profile), in large part because of the incompatibility between self-employed barristers' working patterns and caring responsibilities. Of the KC (King's Counsel) appointments in 2023, 37% were women and 14% ethnic minority — both record highs, but still below population parity. Since KC status is the primary gateway to the senior judiciary, the current composition of KCs predicts the composition of high court judges for the next 15–20 years.
+              The pipeline explains the pattern. Senior judicial appointments are drawn overwhelmingly from the barristers' branch of the legal profession, where women represent 39% of practising barristers and ethnic minorities 16%.<Cite nums={3} /> But the problem compounds at each career stage: women leave the Bar at higher rates than men after 10–15 years of practice (the critical period for building a judicial-appointment profile), in large part because of the incompatibility between self-employed barristers' working patterns and caring responsibilities. Of the KC (King's Counsel) appointments in 2023, 37% were women and 14% ethnic minority — both record highs, but still below population parity.<Cite nums={2} /> Since KC status is the primary gateway to the senior judiciary, the current composition of KCs predicts the composition of high court judges for the next 15–20 years.
             </p>
             </div>
         </section>
@@ -209,6 +218,10 @@ export default function JudicialDiversityPage() {
             <p className="font-mono text-xs text-wiah-mid mt-4">Source: MOJ — Diversity of the Judiciary 2023</p>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8 mt-12">

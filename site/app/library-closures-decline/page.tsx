@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'CIPFA', dataset: 'Public Library Statistics 2024', url: 'https://www.cipfa.org/services/benchmarking/profiles/public-library-profiles', date: '2024' },
+  { num: 2, name: 'Libraries Connected', dataset: 'Annual Survey 2024', url: 'https://www.librariesconnected.org.uk/resource/annual-library-survey', date: '2024' },
+  { num: 3, name: 'DCMS', dataset: 'Public Libraries in England — basic dataset', url: 'https://www.gov.uk/government/statistics/public-libraries-in-england-basic-dataset', date: '2024' },
+  { num: 4, name: 'The Reading Agency', dataset: 'Summer Reading Challenge Impact Report', url: 'https://readingagency.org.uk/children/quick-guides/summer-reading-challenge/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -126,9 +135,9 @@ export default function LibraryClosuresDeclinePage() {
               That understanding has been quietly dismantled. Since 2010, more than 1,100 public library
               service points have closed or been transferred out of council control, and total spending on
               library services has fallen from over £1 billion annually to around £640 million — a decline
-              of roughly 30% in real terms. The Chartered Institute of Public Finance and Accountancy
+              of roughly 30% in real terms.<Cite nums={1} /> The Chartered Institute of Public Finance and Accountancy
               (CIPFA), which tracks library statistics annually, shows that spending per head of population
-              has dropped from £21.40 in 2010 to £11.40 in 2024. These are not temporary cuts being
+              has dropped from £21.40 in 2010 to £11.40 in 2024.<Cite nums={1} /> These are not temporary cuts being
               reversed; they represent a structural reduction in what local authorities are willing or able
               to fund. The squeeze accelerated after 2015 when councils faced the deepest phase of central
               government grant reductions, and libraries — lacking the statutory ringfencing of services
@@ -136,7 +145,7 @@ export default function LibraryClosuresDeclinePage() {
             </p>
             <p>
               What has replaced council-run libraries is a patchwork. Around 800 service points now
-              operate as &quot;community-managed&quot; or volunteer-run libraries. Libraries Connected, the
+              operate as &quot;community-managed&quot; or volunteer-run libraries.<Cite nums={2} /> Libraries Connected, the
               sector body (formerly the Society of Chief Librarians), supports these transitions, but the
               evidence on sustainability is mixed. Volunteer-run branches typically offer fewer hours,
               narrower services, and less professional support — they cannot provide the structured reading
@@ -147,7 +156,7 @@ export default function LibraryClosuresDeclinePage() {
               who could not afford to heat their homes. Libraries now host universal credit application
               support, English language classes, health information services, and baby groups. Digital
               inclusion has become a core function: CIPFA data shows that adult engagement with library
-              digital services has risen by approximately 30% since 2019, driven partly by pandemic
+              digital services has risen by approximately 30% since 2019,<Cite nums={1} /> driven partly by pandemic
               acceleration and partly by the closure of other public-facing services like JobCentres and
               council offices. Libraries are, for many communities, the last remaining free public space
               with staff, warmth, Wi-Fi, and no expectation of purchase.
@@ -157,9 +166,9 @@ export default function LibraryClosuresDeclinePage() {
               successor body, UKHSA, have linked library access to reduced social isolation among
               older adults and improved early literacy outcomes for children in deprived areas. The
               Reading Agency&apos;s Summer Reading Challenge, delivered through public libraries, reaches
-              over 700,000 children annually — disproportionately from lower-income families. Losing
+              over 700,000 children annually — disproportionately from lower-income families.<Cite nums={4} /> Losing
               library branches means losing these touchpoints. The 1964 Act remains on the statute book,
-              but DCMS has intervened only once — against Wirral Council in 2009 — to enforce it. The
+              but DCMS has intervened only once — against Wirral Council in 2009 — to enforce it.<Cite nums={3} /> The
               statutory duty, in practice, has become a suggestion. What is actually happening is a slow,
               managed withdrawal from universal public library provision, softened by volunteer goodwill
               and masked by the growth in digital services that not everyone can access.
@@ -275,6 +284,10 @@ export default function LibraryClosuresDeclinePage() {
             source="Source: Libraries Connected Annual Report, 2024. CIPFA Public Library Statistics, 2024. DCMS Taking Part Survey."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <RelatedTopics />
       </main>
     </>

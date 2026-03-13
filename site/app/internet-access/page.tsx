@@ -7,7 +7,15 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import SectionNav from '@/components/SectionNav';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Internet Users, UK', url: 'https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers', date: '2025' },
+  { num: 2, name: 'Ofcom', dataset: 'Adults\' Media Use and Attitudes Report', url: 'https://www.ofcom.org.uk/research-and-data/media-literacy-research', date: '2025' },
+  { num: 3, name: 'BDUK', dataset: 'Gigabit Programme Progress', url: 'https://www.gov.uk/guidance/building-digital-uk', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -195,6 +203,10 @@ export default function TopicPage() {
             source="Source: Ofcom — Adults' Media Use and Attitudes, 2025. ONS — Internet users, UK, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

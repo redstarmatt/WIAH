@@ -7,7 +7,16 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MBRRACE-UK', dataset: "Saving Lives, Improving Mothers' Care", url: 'https://www.npeu.ox.ac.uk/mbrrace-uk/reports', date: '2023', note: 'Black women 3.4x more likely to die in pregnancy/childbirth than white women; down from 4.3x peak' },
+  { num: 2, name: 'NHS England', dataset: 'Workforce Race Equality Standard (WRES) Report', url: 'https://www.england.nhs.uk/about/equality/equality-hub/workforce-race-equality-standard/', date: '2023', note: '24.8% ethnic minority staff but only 10.5% in senior roles' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Staff Survey — Bullying and Harassment by Ethnicity', date: '2023', note: '31% of ethnic minority staff report bullying/harassment vs 24% for white staff' },
+  { num: 4, name: 'NHS Race and Health Observatory', dataset: 'Ethnic Inequalities in Healthcare Review', date: '2022', note: 'COVID-19 mortality 1.5–2x higher among Black, Pakistani and Bangladeshi groups after adjustment' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -100,10 +109,10 @@ export default function NhsRaceInequalityPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Ethnic disparities in NHS care and outcomes are extensive, well-documented, and persistent. The most stark example is maternal mortality: MBRRACE-UK's confidential enquiry consistently shows that Black women are 3–4 times more likely to die during pregnancy or within 42 days of giving birth than white women, and Asian women are approximately 1.6 times more likely. These ratios have not meaningfully improved in over a decade of monitoring. In 2023, the disparity ratio for Black women was 3.4 — down from a peak of 4.3 in 2017, but the level of excess risk remains among the worst in Europe. The NHS Race and Health Observatory, established in 2020, identified systemic factors including later booking for antenatal care, implicit bias in clinical decision-making, and lower rates of appropriate escalation when complications arise.
+              Ethnic disparities in NHS care and outcomes are extensive, well-documented, and persistent. The most stark example is maternal mortality: MBRRACE-UK's confidential enquiry consistently shows that Black women are 3–4 times more likely to die during pregnancy or within 42 days of giving birth than white women, and Asian women are approximately 1.6 times more likely. These ratios have not meaningfully improved in over a decade of monitoring. In 2023, the disparity ratio for Black women was 3.4 — down from a peak of 4.3 in 2017, but the level of excess risk remains among the worst in Europe.<Cite nums={1} /> The NHS Race and Health Observatory, established in 2020, identified systemic factors including later booking for antenatal care, implicit bias in clinical decision-making, and lower rates of appropriate escalation when complications arise.
             </p>
             <p>
-              Beyond maternity, ethnic disparities permeate the system. People from South Asian backgrounds are 2–4 times more likely to develop type 2 diabetes than the white British population, yet diabetes prevention programmes have lower take-up in South Asian communities. Black African and Black Caribbean men have a 3&times; higher rate of detention under the Mental Health Act compared with white men, reflecting decades of documented over-pathologisation. COVID-19 mortality was 1.5–2&times; higher among people from Black, Pakistani, and Bangladeshi backgrounds, even after adjusting for age, geography, and deprivation — a fact that prompted the NHS to commission reviews into its approach to health inequalities. The Sewell Commission (2021) contested the framing of institutional racism but acknowledged that ethnic disparities in health outcomes were real and required action.
+              Beyond maternity, ethnic disparities permeate the system. People from South Asian backgrounds are 2–4 times more likely to develop type 2 diabetes than the white British population, yet diabetes prevention programmes have lower take-up in South Asian communities. Black African and Black Caribbean men have a 3&times; higher rate of detention under the Mental Health Act compared with white men, reflecting decades of documented over-pathologisation. COVID-19 mortality was 1.5–2&times; higher among people from Black, Pakistani, and Bangladeshi backgrounds, even after adjusting for age, geography, and deprivation — a fact that prompted the NHS to commission reviews into its approach to health inequalities.<Cite nums={4} /> The Sewell Commission (2021) contested the framing of institutional racism but acknowledged that ethnic disparities in health outcomes were real and required action.
             </p>
             </div>
         </section>
@@ -191,6 +200,9 @@ export default function NhsRaceInequalityPage() {
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8 mt-12">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>

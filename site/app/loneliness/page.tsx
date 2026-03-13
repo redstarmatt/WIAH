@@ -8,6 +8,18 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Measures of National Well-being — loneliness prevalence', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/bulletins/measuringnationalwellbeing/april2024', date: '2024' },
+  { num: 2, name: 'Holt-Lunstad et al.', dataset: 'Meta-analysis — loneliness mortality risk (PLOS Medicine)', url: 'https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000316', date: '2015' },
+  { num: 3, name: 'Campaign to End Loneliness', dataset: 'Health impact estimates — heart disease, stroke, dementia risk', url: 'https://www.campaigntoendloneliness.org/', date: '2024' },
+  { num: 4, name: 'ONS', dataset: 'Loneliness rates by characteristic — demographic breakdown', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/datasets/lonelinessratesbycharacteristic', date: '2024' },
+  { num: 5, name: 'DCMS', dataset: 'National Strategy on Loneliness — A Connected Society', date: '2018' },
+];
 
 const oftenAlwaysData = [3.1, 3.2, 3.3, 3.4, 3.5, 4.2, 3.9, 3.8, 3.83];
 const sometimesData = [28, 29, 30, 31, 32, 38, 36, 34, 33];
@@ -143,9 +155,9 @@ export default function LonelinessPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on loneliness</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>3.83 million people in the UK say they always or often feel lonely — around one in fourteen adults. A further third of adults say they feel lonely sometimes. Loneliness is not evenly distributed: young adults aged 18–24 and older people aged 75 and over are the most affected groups — a counter-intuitive finding that challenges the assumption that loneliness is primarily an issue for the elderly. The pandemic caused a sharp spike in 2020 to 4.2 million, with lockdowns particularly affecting people who already had limited social networks.</p>
-              <p>The health consequences of chronic loneliness are severe. Research published in PLOS Medicine by Holt-Lunstad and colleagues found that loneliness increases mortality risk by 29% — comparable to smoking 15 cigarettes a day. The Campaign to End Loneliness estimates that loneliness increases the risk of heart disease by 29%, stroke by 32%, and dementia by 64%. The economic cost of loneliness to employers through lost productivity and sickness absence is estimated at £2.5 billion per year.</p>
-              <p>The UK appointed the world's first Minister for Loneliness in 2018, following the Jo Cox Commission on Loneliness. The resulting national strategy committed to embedding loneliness measures across government policy. Social prescribing — connecting people with community activities through their GP — is now a core component of NHS primary care. The evidence for its effectiveness is promising but mixed, and the scale of delivery remains far below what the prevalence figures suggest is needed.</p>
+              <p>3.83 million people in the UK say they always or often feel lonely — around one in fourteen adults.<Cite nums={1} /> A further third of adults say they feel lonely sometimes. Loneliness is not evenly distributed: young adults aged 18–24 and older people aged 75 and over are the most affected groups — a counter-intuitive finding that challenges the assumption that loneliness is primarily an issue for the elderly.<Cite nums={4} /> The pandemic caused a sharp spike in 2020 to 4.2 million, with lockdowns particularly affecting people who already had limited social networks.<Cite nums={1} /></p>
+              <p>The health consequences of chronic loneliness are severe. Research published in PLOS Medicine by Holt-Lunstad and colleagues found that loneliness increases mortality risk by 29% — comparable to smoking 15 cigarettes a day.<Cite nums={2} /> The Campaign to End Loneliness estimates that loneliness increases the risk of heart disease by 29%, stroke by 32%, and dementia by 64%.<Cite nums={3} /> The economic cost of loneliness to employers through lost productivity and sickness absence is estimated at £2.5 billion per year.</p>
+              <p>The UK appointed the world's first Minister for Loneliness in 2018, following the Jo Cox Commission on Loneliness. The resulting national strategy committed to embedding loneliness measures across government policy.<Cite nums={5} /> Social prescribing — connecting people with community activities through their GP — is now a core component of NHS primary care. The evidence for its effectiveness is promising but mixed, and the scale of delivery remains far below what the prevalence figures suggest is needed.</p>
             </div>
           </section>
         </ScrollReveal>
@@ -159,6 +171,10 @@ export default function LonelinessPage() {
             source="Source: ONS — Loneliness statistics 2024; Holt-Lunstad et al., PLOS Medicine 2015; Campaign to End Loneliness."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

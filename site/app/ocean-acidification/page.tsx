@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Cefas', dataset: 'UK Clean Seas Environment Monitoring Programme', url: 'https://www.cefas.co.uk/', date: '2025' },
+  { num: 2, name: 'Copernicus Marine Service', dataset: 'North-West European Shelf Seas pH & Carbonate', url: 'https://marine.copernicus.eu/', date: '2025' },
+  { num: 3, name: 'IPCC', dataset: 'AR6 Working Group I — Ocean chemistry', url: 'https://www.ipcc.ch/report/ar6/wg1/', date: '2021' },
+  { num: 4, name: 'GOA-ON', dataset: 'Global Ocean Acidification Observing Network', url: 'https://www.goa-on.org/', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -134,9 +143,9 @@ export default function OceanAcidificationPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The ocean absorbs roughly a quarter of all carbon dioxide emitted by human activity. That absorption has buffered the atmosphere from even more severe warming, but it comes at a cost: when CO2 dissolves in seawater it forms carbonic acid, lowering the pH. UK shelf seas have tracked this global trend closely. Continuous monitoring stations in the North Sea and Celtic Sea show a pH decline of approximately 0.02 units per decade since the early 1990s. That sounds small, but because the pH scale is logarithmic, it represents a roughly 30% increase in hydrogen ion concentration since pre-industrial times.</p>
-            <p>The practical consequences are already measurable. Aragonite saturation state -- the key indicator of whether shell-forming organisms can build and maintain their calcium carbonate structures -- has fallen by 20% in UK waters since 1990. Native oyster restoration projects in the Solent and Essex estuaries report thinner juvenile shells. Scottish mussel farms have documented slower growth rates in years with lower pH readings. Cold-water coral reefs along the UK continental shelf edge, already fragile, face dissolution risk as saturation drops toward critical thresholds.</p>
-            <p>There is no quick fix. Even if global emissions fell to zero tomorrow, ocean pH would continue declining for decades as the deep ocean equilibrates with atmospheric CO2 already present. The Cefas monitoring programme, expanded in 2019, now provides the most comprehensive UK-specific dataset. What it shows is a relentless, linear trend with no sign of stabilisation.</p>
+            <p>The ocean absorbs roughly a quarter of all carbon dioxide emitted by human activity.<Cite nums={3} /> That absorption has buffered the atmosphere from even more severe warming, but it comes at a cost: when CO2 dissolves in seawater it forms carbonic acid, lowering the pH. UK shelf seas have tracked this global trend closely. Continuous monitoring stations in the North Sea and Celtic Sea show a pH decline of approximately 0.02 units per decade since the early 1990s.<Cite nums={1} /> That sounds small, but because the pH scale is logarithmic, it represents a roughly 30% increase in hydrogen ion concentration since pre-industrial times.</p>
+            <p>The practical consequences are already measurable. Aragonite saturation state -- the key indicator of whether shell-forming organisms can build and maintain their calcium carbonate structures -- has fallen by 20% in UK waters since 1990.<Cite nums={2} /> Native oyster restoration projects in the Solent and Essex estuaries report thinner juvenile shells. Scottish mussel farms have documented slower growth rates in years with lower pH readings. Cold-water coral reefs along the UK continental shelf edge, already fragile, face dissolution risk as saturation drops toward critical thresholds.</p>
+            <p>There is no quick fix. Even if global emissions fell to zero tomorrow, ocean pH would continue declining for decades as the deep ocean equilibrates with atmospheric CO2 already present.<Cite nums={3} /> The Cefas monitoring programme, expanded in 2019, now provides the most comprehensive UK-specific dataset.<Cite nums={[1, 4]} /> What it shows is a relentless, linear trend with no sign of stabilisation.</p>
           </div>
         </section>
 
@@ -291,6 +300,10 @@ export default function OceanAcidificationPage() {
             source="Source: Cefas — UK Ocean Acidification Monitoring Programme, 2025. GOA-ON membership registry."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA / Environment Agency', dataset: 'Packaging Recycling Statistics', url: 'https://www.gov.uk/government/statistical-data-sets/env23-uk-waste-data-and-management', date: 'Dec 2024' },
+  { num: 2, name: 'Eurostat', dataset: 'Packaging Waste Statistics', url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php/Packaging_waste_statistics', date: 'Dec 2024' },
+  { num: 3, name: 'DEFRA', dataset: 'Extended Producer Responsibility for Packaging — regulations', date: '2025' },
+];
 
 export default function PackagingWasteRecyclingPage() {
   // Overall packaging recycling rates by material 2015–2024 (%)
@@ -177,9 +185,13 @@ export default function PackagingWasteRecyclingPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on packaging waste recycling</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The UK's overall packaging recycling rate reached 67% in 2024, meeting the EU-derived 65% target inherited from pre-Brexit EU Packaging Directive obligations and up from 62% in 2015. Beneath this headline figure, performance is sharply differentiated by material. Paper and cardboard packaging recycling stands at 84% — near the practical ceiling. Glass is at 74%. Plastic, however, sits at just 44%, well below the government's 2030 target of 55% and significantly behind the EU average of 52%, which has continued improving while UK rates stalled after 2022.</p>
-              <p>Contamination is the dominant operational constraint in plastic recycling. Household mixed dry recycling streams consistently show contamination rates of 10–20%, caused by incorrect sorting, co-mingling of incompatible polymers, and wishcycling. Unlike glass or paper — which can tolerate moderate contamination in reprocessing — plastic recycling requires near-pure polymer streams to produce high-quality secondary material. Where contamination is high, collected plastic is rejected or downcycled rather than genuinely recycled. Extended Producer Responsibility regulations, which came into force in October 2025, significantly increase industry's financial obligation for waste management costs, providing new funding for local authority collection infrastructure and creating incentives for producers to design for recyclability.</p>
+              <p>The UK's overall packaging recycling rate reached 67% in 2024, meeting the EU-derived 65% target<Cite nums={1} /> inherited from pre-Brexit EU Packaging Directive obligations and up from 62% in 2015. Beneath this headline figure, performance is sharply differentiated by material. Paper and cardboard packaging recycling stands at 84% — near the practical ceiling. Glass is at 74%. Plastic, however, sits at just 44%, well below the government's 2030 target of 55% and significantly behind the EU average of 52%<Cite nums={[1, 2]} />, which has continued improving while UK rates stalled after 2022.</p>
+              <p>Contamination is the dominant operational constraint in plastic recycling. Household mixed dry recycling streams consistently show contamination rates of 10–20%, caused by incorrect sorting, co-mingling of incompatible polymers, and wishcycling. Unlike glass or paper — which can tolerate moderate contamination in reprocessing — plastic recycling requires near-pure polymer streams to produce high-quality secondary material. Where contamination is high, collected plastic is rejected or downcycled rather than genuinely recycled. Extended Producer Responsibility regulations, which came into force in October 2025,<Cite nums={3} /> significantly increase industry's financial obligation for waste management costs, providing new funding for local authority collection infrastructure and creating incentives for producers to design for recyclability.</p>
               <p>The burden of inadequate recycling infrastructure falls unevenly. Councils in more deprived areas typically run simpler, co-mingled collection systems with higher contamination rates, while wealthier areas run source-separated streams achieving better material quality. A Deposit Return Scheme for drinks containers is due to launch in 2027 in England, Wales and Northern Ireland — which should substantially improve plastic bottle recycling rates — but flexible packaging, sachets, and multi-layer materials remain largely unrecyclable at scale through kerbside systems, regardless of collection quality.</p>
+            </div>
+
+            <div className="mt-6">
+              <References items={editorialRefs} />
             </div>
           </section>
         </ScrollReveal>

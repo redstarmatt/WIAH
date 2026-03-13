@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Public Sector Finances, UK', url: 'https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicsectorfinance', date: '2024' },
+  { num: 2, name: 'OBR', dataset: 'Economic and Fiscal Outlook', url: 'https://obr.uk/efo/economic-and-fiscal-outlook-march-2024/', date: 'March 2024' },
+  { num: 3, name: 'HM Treasury', dataset: 'Debt Management Report', url: 'https://www.gov.uk/government/publications/debt-management-report', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -89,8 +97,8 @@ export default function NationalDebtPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom's national debt — formally measured as Public Sector Net Debt excluding the Bank of England — stood at approximately 98.8% of GDP at the end of the 2023/24 financial year, the highest ratio since the early 1960s when the country was still paying off the costs of the Second World War. In cash terms, the outstanding debt is approximately £2.7 trillion. The ONS publishes monthly public sector finance statistics that track borrowing, debt, and interest costs in detail, and the Office for Budget Responsibility (OBR) provides independent forecasts and historical analysis. The debt-to-GDP ratio rose from around 36% before the 2008 financial crisis to over 80% by 2013 as recession and bank bailouts required substantial emergency borrowing, then remained elevated through a decade of austerity before surging again during the COVID-19 pandemic, when the government borrowed an additional £330 billion over two years to fund the furlough scheme, business loans, and emergency health spending. Unlike many European peers, the UK chose not to substantially reduce its debt-to-GDP ratio during the 2010s recovery; fiscal consolidation slowed growth in public spending without reducing the underlying debt stock.</p>
-            <p>The annual cost of servicing the debt has become a significant fiscal constraint. Net interest payments on government debt reached £112 billion in 2023/24 — up from around £42 billion in 2010 and £52 billion as recently as 2021. The surge was driven by two factors: the RPI-linkage on approximately 25% of the UK's outstanding gilts, which saw interest payments spike as inflation hit 11% in 2022, and the high base rate of interest at which new gilts have been issued since the Bank of England began tightening monetary policy from late 2021. Debt interest now exceeds the entire defence budget and is larger than the education budget. As a share of tax revenue, interest payments reached approximately 11.6% in 2023/24 — meaning that more than one pound in every nine collected in taxes went straight to bondholders rather than to public services. The OBR forecasts that interest payments will remain above £100 billion per year through the late 2020s even on optimistic assumptions about inflation and growth.</p>
+            <p>The United Kingdom's national debt — formally measured as Public Sector Net Debt excluding the Bank of England — stood at approximately 98.8% of GDP at the end of the 2023/24 financial year, the highest ratio since the early 1960s when the country was still paying off the costs of the Second World War.<Cite nums={1} /> In cash terms, the outstanding debt is approximately £2.7 trillion.<Cite nums={1} /> The ONS publishes monthly public sector finance statistics that track borrowing, debt, and interest costs in detail, and the Office for Budget Responsibility (OBR) provides independent forecasts and historical analysis. The debt-to-GDP ratio rose from around 36% before the 2008 financial crisis to over 80% by 2013 as recession and bank bailouts required substantial emergency borrowing, then remained elevated through a decade of austerity before surging again during the COVID-19 pandemic, when the government borrowed an additional £330 billion over two years to fund the furlough scheme, business loans, and emergency health spending.<Cite nums={2} /> Unlike many European peers, the UK chose not to substantially reduce its debt-to-GDP ratio during the 2010s recovery; fiscal consolidation slowed growth in public spending without reducing the underlying debt stock.</p>
+            <p>The annual cost of servicing the debt has become a significant fiscal constraint. Net interest payments on government debt reached £112 billion in 2023/24 — up from around £42 billion in 2010 and £52 billion as recently as 2021.<Cite nums={1} /> The surge was driven by two factors: the RPI-linkage on approximately 25% of the UK's outstanding gilts, which saw interest payments spike as inflation hit 11% in 2022, and the high base rate of interest at which new gilts have been issued since the Bank of England began tightening monetary policy from late 2021.<Cite nums={3} /> Debt interest now exceeds the entire defence budget and is larger than the education budget. As a share of tax revenue, interest payments reached approximately 11.6% in 2023/24 — meaning that more than one pound in every nine collected in taxes went straight to bondholders rather than to public services.<Cite nums={1} /> The OBR forecasts that interest payments will remain above £100 billion per year through the late 2020s even on optimistic assumptions about inflation and growth.<Cite nums={2} /></p>
             </div>
         </section>
 
@@ -173,6 +181,10 @@ export default function NationalDebtPage() {
             source="Source: ONS — Public Sector Finances 2024; OBR — Economic and Fiscal Outlook March 2024; HM Treasury — Debt Management Report 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

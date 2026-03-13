@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Climate Change Committee', dataset: 'Land Use: Policies for a Net Zero UK', url: 'https://www.theccc.org.uk/publication/land-use-policies-for-a-net-zero-uk/', date: '2023' },
+  { num: 2, name: 'Natural England / DESNZ', dataset: 'Peatland Action Programme', url: 'https://www.gov.uk/government/publications/peatland-grant-scheme', date: '2024' },
+  { num: 3, name: 'Forestry Commission', dataset: 'Woodland Creation Statistics', url: 'https://www.forestresearch.gov.uk/tools-and-resources/statistics/statistics-by-topic/woodland-statistics/', date: '2024' },
+  { num: 4, name: 'Defra', dataset: 'England Tree Strategy 2021', url: 'https://www.gov.uk/government/publications/england-trees-action-plan-2021-to-2024', date: '2021' },
+];
 
 export default function NatureBasedSolutionsPage() {
   // Tree planting rate 2015–2024 (million trees/year)

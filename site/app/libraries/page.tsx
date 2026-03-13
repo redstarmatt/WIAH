@@ -133,7 +133,7 @@ export default function LibrariesPage() {
             <p>
               England had 4,516 library branches in 2010; by 2022/23 roughly 3,000 remained — a 33% contraction in twelve years, with over 8,000 library jobs lost.<Cite nums={1} /> Real-terms local authority spending fell approximately 34% between 2009/10 and 2022/23. Total visits fell from 338 million in 2010 to a COVID-driven low of 170 million in 2020/21, recovering partially to 247 million by 2022/23; book issues dropped 42% from 302 million to 175 million, though e-books and audiobooks now account for 22% of loans.<Cite nums={1} /> Paid library staff fell from 24,000 in 2010 to 16,000 by 2022 while volunteer numbers tripled to over 60,000. In winter 2022–23, more than 2,200 libraries registered as warm spaces, illustrating how these institutions have evolved from lending rooms into front-line community infrastructure.
             </p>
-            <p>Library closures fall hardest on those with fewest alternatives. Older adults lose a social lifeline; children from low-income families lose their only access to books and quiet study space; homeless people lose daytime refuge. Volunteer-run libraries cannot replicate the professional services qualified librarians delivered — structured job search support, digital skills training, ESOL classes, and mental health signposting. Councils that closed libraries to save £30,000–£80,000 per branch per year now spend more commissioning fragmented outreach services that reach fewer people.</p>
+            <p>Library closures fall hardest on those with fewest alternatives. Older adults lose a social lifeline; children from low-income families lose their only access to books and quiet study space; homeless people lose daytime refuge.<Cite nums={2} /> Volunteer-run libraries cannot replicate the professional services qualified librarians delivered — structured job search support, digital skills training, ESOL classes, and mental health signposting. Councils that closed libraries to save £30,000–£80,000 per branch per year now spend more commissioning fragmented outreach services that reach fewer people.</p>
           </div>
         </section>
 
@@ -208,6 +208,10 @@ export default function LibrariesPage() {
             />
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-lg font-black text-wiah-black mb-4">Sources &amp; Methodology</h2>

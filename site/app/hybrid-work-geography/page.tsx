@@ -7,7 +7,14 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Homeworking in the UK Labour Market', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/homeworkingintheuk', date: '2024', note: '28% of UK workers work from home; jumped to 43% in April 2020; fewer than 6% before 2020' },
+  { num: 2, name: 'ONS', dataset: 'Labour Force Survey', url: 'https://www.ons.gov.uk/surveys/informationforhouseholdsandindividuals/householdandindividualsurveys/labourforcesurvey', date: '2024', note: '44% of London workers hybrid; 56% of professional workers; 4% of manual workers' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -82,7 +89,7 @@ export default function HybridWorkGeographyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The pandemic permanently reshaped where British workers do their jobs, but the new landscape is profoundly unequal. Fewer than 6% of workers regularly worked from home before 2020; by April 2020 that figure jumped to 43%; by 2024 it had settled at around 28% — workers who work from home all or part of the time. London is far more hybrid than anywhere else: around 44% of London workers work from home at least part of the time, more than twice the national average, reflecting its concentration of professional, financial, and tech sector employment. By occupation, 56% of professional workers work from home at least partly, managers 51%, and manual workers just 4%.</p>
+            <p>The pandemic permanently reshaped where British workers do their jobs, but the new landscape is profoundly unequal. Fewer than 6% of workers regularly worked from home before 2020; by April 2020 that figure jumped to 43%; by 2024 it had settled at around 28% — workers who work from home all or part of the time.<Cite nums={1} /> London is far more hybrid than anywhere else: around 44% of London workers work from home at least part of the time, more than twice the national average, reflecting its concentration of professional, financial, and tech sector employment. By occupation, 56% of professional workers work from home at least partly, managers 51%, and manual workers just 4%.<Cite nums={2} /></p>
             <p>The gap creates a structural divide in the working experience of the British population. Professional workers enjoy not only higher wages and greater job security but also freedom from daily commuting costs; manual workers, who are typically lower-paid, face those commuting costs with no option to avoid them. City centres whose economies depended on daily commuter trade have faced permanent structural change. For younger workers learning a profession through observation and osmosis, hybrid norms shaped by established workers may impose costs on the new entrants who are least equipped to push back.</p>
           </div>
         </section>
