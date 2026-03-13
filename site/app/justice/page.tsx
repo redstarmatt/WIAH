@@ -11,6 +11,18 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Crime Survey for England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/crimeinenglandandwales/latest', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'Crime outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-2023-to-2024', date: '2024' },
+  { num: 3, name: 'Home Office', dataset: 'Police officer uplift statistics', url: 'https://www.gov.uk/government/statistics/police-officer-uplift-quarterly-update-to-march-2023', date: '2023' },
+  { num: 4, name: 'Ministry of Justice', dataset: 'Legal aid statistics', url: 'https://www.gov.uk/government/statistics/legal-aid-statistics-quarterly', date: '2024' },
+  { num: 5, name: 'HMCTS', dataset: 'Crown Court outstanding caseload', url: 'https://www.gov.uk/government/statistics/criminal-court-statistics-quarterly', date: '2024' },
+  { num: 6, name: 'Ministry of Justice', dataset: 'Prison population statistics', url: 'https://www.gov.uk/government/statistics/prison-population-figures', date: '2024' },
+  { num: 7, name: 'ONS', dataset: 'Domestic abuse prevalence and trends', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwalesoverview/latest', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -609,30 +621,33 @@ export default function JusticePage() {
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
               The justice system has quietly hollowed out. Of an estimated 9.6 million crimes
-              experienced each year, just 388,000 result in a charge — roughly 4 in every 100.
+              experienced each year, just 388,000 result in a charge — roughly 4 in every 100.<Cite nums={[1, 2]} />
               A decade ago, about 1 in 6 recorded crimes led to a charge; today it is fewer than
-              1 in 14. The collapse is steepest where it matters most: sexual offences and burglary
+              1 in 14.<Cite nums={2} /> The collapse is steepest where it matters most: sexual offences and burglary
               both have charge rates below 5%, and fraud — now the most common crime type — is
-              barely investigated at all. England and Wales lost over 21,000 officers between 2010
+              barely investigated at all.<Cite nums={2} /> England and Wales lost over 21,000 officers between 2010
               and 2018; a government uplift programme added roughly 20,000 back by 2023, but numbers
-              have flatlined since. Real-terms legal aid spending has fallen by over 30%, and the
-              number of firms holding contracts has halved, reducing access to representation.
+              have flatlined since.<Cite nums={3} /> Real-terms legal aid spending has fallen by over 30%, and the
+              number of firms holding contracts has halved, reducing access to representation.<Cite nums={4} />
             </p>
             <p>
               The institutions downstream are equally strained. The Crown Court backlog exceeds
-              70,000 cases, nearly 50% above the government&rsquo;s own target. Courts were shuttered
+              70,000 cases, nearly 50% above the government&rsquo;s own target.<Cite nums={5} /> Courts were shuttered
               for months in 2020, a barristers&rsquo; strike in 2022 compounded delays, and the
-              average case now takes 18 months from offence to completion. The prison population sits
+              average case now takes 18 months from offence to completion.<Cite nums={5} /> The prison population sits
               at around 88,000 — near operational capacity — despite overall crime falling for
               decades; in September 2024, the government began releasing prisoners at the 40% sentence
-              mark under the emergency SDS40 scheme. Knife offences have nearly doubled since 2010 to
-              over 51,000 a year. Around 1.7 million people experience domestic abuse annually; the
+              mark under the emergency SDS40 scheme.<Cite nums={6} /> Knife offences have nearly doubled since 2010 to
+              over 51,000 a year.<Cite nums={1} /> Around 1.7 million people experience domestic abuse annually; the
               majority never report to police, and of those who do, only 5 in 100 incidents end in
-              a conviction. Different crime types have moved in very different directions — violence
+              a conviction.<Cite nums={7} /> Different crime types have moved in very different directions — violence
               and fraud have risen sharply while robbery has fallen — but the system&rsquo;s capacity
               to respond has narrowed across the board.
             </p>
             </div>
+          <div className="mt-6">
+            <References items={editorialRefs} />
+          </div>
         </section>
 
         <SectionNav sections={[
