@@ -9,6 +9,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import PositiveCallout from '@/components/PositiveCallout'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Student Loans Company', dataset: 'Student Loans in England — Statistical First Release', url: 'https://www.gov.uk/government/collections/student-loans-statistics', date: '2024', note: 'Average debt £45,600; tuition fees £9,535 from 2025; repayment threshold £25,000' },
+  { num: 2, name: 'Institute for Fiscal Studies', dataset: 'Student Finance Policy Evaluation', url: 'https://ifs.org.uk/publications/student-finance', date: '2023', note: '23% expected to repay in full (vs 40% pre-2012); 2023 reforms increased government subsidy per student' },
+  { num: 3, name: 'Department for Education', dataset: 'Student Loan Forecasts for England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/student-loan-forecasts-for-england', date: '2024', note: '£8.6bn unpaid debt written off per year; forecast to reach £12bn by 2040' },
+];
 
 interface StudentDebtData {
   averageDebt: Array<{ year: number; avgDebt: number }>

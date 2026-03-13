@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -48,6 +50,14 @@ interface YouthNeetData {
     longTermCondition: number;
   };
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Young people not in education, employment or training', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/neet', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Labour Force Survey — Reason for economic inactivity (16-24)', date: '2024' },
+  { num: 3, name: 'DfE', dataset: 'NEET and participation statistics', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/neet-statistics-annual-brief', date: '2024' },
+  { num: 4, name: 'DfE', dataset: 'Children looked after in England including adoptions — care leaver outcomes', date: '2024' },
+  { num: 5, name: 'Public Health England', dataset: 'Longitudinal evidence on NEET scarring effects and lifetime costs', date: '2023', note: 'Estimated fiscal cost exceeds £10bn per year' },
+];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -176,10 +186,10 @@ export default function YouthNeetCrisisPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Behind the headline unemployment figures lies a population that barely registers in political debate. Nearly a million young people aged 16 to 24 in England are classified as NEET — not in education, employment, or training. That is 12.8% of the age group, up from a post-2010 low of 10.9% in 2019. Unlike the unemployment count, which captures those actively seeking work, the NEET measure includes a large and growing group who are economically inactive — not looking for work at all, often because they are too unwell to do so. The composition of this group has shifted dramatically over the past decade. In 2015, over a third of young NEETs were actively job-seeking. By 2024, that share has halved to under 20%. The fastest-growing category is long-term sickness and disability, which now accounts for 48.4% of the NEET population. Mental health conditions are cited as the primary barrier by 42.6%, a figure that has roughly doubled since 2015 and reflects both the genuine rise in youth mental illness and the collapse of timely access to treatment through CAMHS and adult mental health services.
+              Behind the headline unemployment figures lies a population that barely registers in political debate. Nearly a million young people aged 16 to 24 in England are classified as NEET — not in education, employment, or training. That is 12.8% of the age group, up from a post-2010 low of 10.9% in 2019.<Cite nums={1} /> Unlike the unemployment count, which captures those actively seeking work, the NEET measure includes a large and growing group who are economically inactive — not looking for work at all, often because they are too unwell to do so. The composition of this group has shifted dramatically over the past decade. In 2015, over a third of young NEETs were actively job-seeking. By 2024, that share has halved to under 20%. The fastest-growing category is long-term sickness and disability, which now accounts for 48.4% of the NEET population.<Cite nums={2} /> Mental health conditions are cited as the primary barrier by 42.6%, a figure that has roughly doubled since 2015<Cite nums={3} /> and reflects both the genuine rise in youth mental illness and the collapse of timely access to treatment through CAMHS and adult mental health services.
             </p>
             <p>
-              The geography of NEET status mirrors the geography of deprivation. In the North East, 18.3% of 16-to-24-year-olds are NEET, nearly double the rate in the South East. Coastal towns, former industrial areas, and left-behind communities bear the heaviest burden. Care leavers are vastly overrepresented: around 39% of care leavers aged 19-21 are NEET, compared to 12.8% of the general youth population. These young people face compounding disadvantages — disrupted education, unstable housing, limited family networks, and higher rates of mental health difficulty — that standard employment programmes rarely address. The scarring effects of early NEET status are well-documented in longitudinal research: a young person who spends a year NEET between 16 and 21 can expect significantly lower lifetime earnings, higher rates of unemployment in their 30s and 40s, and worse physical and mental health outcomes decades later. The cost is not just individual but fiscal — estimated at over 10 billion pounds per year in lost productivity, welfare payments, and health spending.
+              The geography of NEET status mirrors the geography of deprivation. In the North East, 18.3% of 16-to-24-year-olds are NEET, nearly double the rate in the South East. Coastal towns, former industrial areas, and left-behind communities bear the heaviest burden. Care leavers are vastly overrepresented: around 39% of care leavers aged 19-21 are NEET, compared to 12.8% of the general youth population.<Cite nums={4} /> These young people face compounding disadvantages — disrupted education, unstable housing, limited family networks, and higher rates of mental health difficulty — that standard employment programmes rarely address. The scarring effects of early NEET status are well-documented in longitudinal research: a young person who spends a year NEET between 16 and 21 can expect significantly lower lifetime earnings, higher rates of unemployment in their 30s and 40s, and worse physical and mental health outcomes decades later. The cost is not just individual but fiscal — estimated at over 10 billion pounds per year in lost productivity, welfare payments, and health spending.<Cite nums={5} />
             </p>
             <p>
               What makes the current crisis different from previous youth unemployment peaks is its medical character. This is not primarily a story about a lack of jobs — vacancies remain historically high in many sectors — but about a generation whose capacity to work has been undermined by chronic ill health, particularly mental ill health, at a scale the welfare and education systems were not designed to handle. The pandemic accelerated trends that were already visible: rising rates of anxiety and depression among teenagers, longer CAMHS waiting lists, a school attendance crisis that has left hundreds of thousands of children persistently absent, and a benefits system that offers little by way of supported re-engagement. Without a fundamentally different approach — one that integrates health support with employment and education pathways — the numbers will continue to climb.
@@ -295,6 +305,11 @@ export default function YouthNeetCrisisPage() {
             source="Source: DfE — Kickstart Scheme evaluation, 2023. Youth Futures Foundation — Connected Futures programme report, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <RelatedTopics />
       </main>
     </>

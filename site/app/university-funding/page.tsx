@@ -8,6 +8,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Student Loans Company', dataset: 'Student Loans in England Statistics, 2022/23', url: 'https://www.gov.uk/government/collections/student-loans-company', date: '2023' },
+  { num: 2, name: 'IFS', dataset: 'The Graduate Premium, 2024', url: 'https://ifs.org.uk/publications/graduate-premium', date: '2024' },
+  { num: 3, name: 'Office for Students', dataset: 'Financial Sustainability of Higher Education Providers, 2023', url: 'https://www.officeforstudents.org.uk/', date: '2023' },
+  { num: 4, name: 'HESA', dataset: 'Higher Education Student Statistics, 2022/23', url: 'https://www.hesa.ac.uk/data-and-analysis', date: '2023' },
+  { num: 5, name: 'OfS', dataset: 'Graduate Outcomes Survey, 2022/23', url: 'https://www.officeforstudents.org.uk/', date: '2023' },
+];
 
 interface StudentDebtData {
   timeSeries: { year: number; averageDebtThousandsGBP: number }[];
@@ -236,17 +246,21 @@ export default function UniversityFundingPage() {
             <h2 className="font-sans text-2xl font-bold text-wiah-black mb-6">What's driving these trends?</h2>
             <div className="font-sans text-base text-wiah-black leading-relaxed space-y-4">
               <p>
-                England's tuition fee has risen from £1,000 when Labour introduced it in 1998 to £3,000 in 2006 and £9,000 in 2012, reaching £9,250 in 2017 where it froze until a rise to £9,535 in 2025/26. Average debt at graduation nearly tripled in a decade: £16,200 in 2011/12 under £3,000 fees, £45,800 in 2022/23 under £9,250 fees. Under Plan 5, introduced for the 2023 entry cohort, the repayment term extends to 40 years at a threshold of £25,000 and interest capped at RPI (Bank Rate plus 1%). Under Plan 2, 72% of graduates never fully repay — far above original Treasury modelling.
+                England's tuition fee has risen from £1,000 when Labour introduced it in 1998 to £3,000 in 2006 and £9,000 in 2012, reaching £9,250 in 2017 where it froze until a rise to £9,535 in 2025/26. Average debt at graduation nearly tripled in a decade: £16,200 in 2011/12 under £3,000 fees, £45,800 in 2022/23 under £9,250 fees.<Cite nums={1} /> Under Plan 5, introduced for the 2023 entry cohort, the repayment term extends to 40 years at a threshold of £25,000 and interest capped at RPI (Bank Rate plus 1%). Under Plan 2, 72% of graduates never fully repay — far above original Treasury modelling.<Cite nums={1} />
               </p>
               <p>
-                Despite the debt, access has not collapsed: 76% of young people who left school after the 2012 fee increase went on to higher education. The IFS estimated in 2024 that the average graduate earns £100,000–£300,000 more over a lifetime than a non-graduate, though creative arts, social care, and some humanities degrees produce negative returns for many. The OfS Graduate Outcomes Survey shows three in ten graduates working in non-graduate roles five years after leaving. Subject-level variation is stark: medicine and engineering deliver strong returns while other fields leave graduates no better off financially than peers who skipped university entirely.
+                Despite the debt, access has not collapsed: 76% of young people who left school after the 2012 fee increase went on to higher education. The IFS estimated in 2024 that the average graduate earns £100,000–£300,000 more over a lifetime than a non-graduate, though creative arts, social care, and some humanities degrees produce negative returns for many.<Cite nums={2} /> The OfS Graduate Outcomes Survey shows three in ten graduates working in non-graduate roles five years after leaving.<Cite nums={5} /> Subject-level variation is stark: medicine and engineering deliver strong returns while other fields leave graduates no better off financially than peers who skipped university entirely.
               </p>
               <p>
-                Universities themselves face a funding crisis. The £9,250 fee cap, frozen from 2017 to 2025, lost over £2,450 per student in real terms. The Office for Students' 2023 financial sustainability assessment found 40% of English higher education providers in difficulty; 40 universities ran deficits in 2022/23, with several — including Coventry — announcing restructuring. Total sector income was £41.9 billion in 2021/22, of which £19.2 billion came from tuition fees. International students, numbering 680,000 in 2022/23 and generating £25 billion in economic activity, have become the financial lifeline — making government moves from 2023 to restrict the Graduate Route visa a direct threat to institutional solvency.
+                Universities themselves face a funding crisis. The £9,250 fee cap, frozen from 2017 to 2025, lost over £2,450 per student in real terms. The Office for Students' 2023 financial sustainability assessment found 40% of English higher education providers in difficulty; 40 universities ran deficits in 2022/23, with several — including Coventry — announcing restructuring.<Cite nums={3} /> Total sector income was £41.9 billion in 2021/22, of which £19.2 billion came from tuition fees. International students, numbering 680,000 in 2022/23 and generating £25 billion in economic activity, have become the financial lifeline — making government moves from 2023 to restrict the Graduate Route visa a direct threat to institutional solvency.<Cite nums={4} />
               </p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <ScrollReveal>

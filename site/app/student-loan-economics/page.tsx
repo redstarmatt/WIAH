@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Student Loans Company', dataset: 'Statistical First Release', url: 'https://www.gov.uk/government/collections/student-loans-statistics', date: '2024/25', note: 'Average debt £46,900; loan book £268bn; interest peaked at 7.6%' },
+  { num: 2, name: 'DfE', dataset: 'Student Loan Forecasts for England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/student-loan-forecasts-for-england', date: '2024/25', note: '45% write-off rate (up from 32% in 2012); ~£10bn annual exchequer cost' },
+  { num: 3, name: 'Institute for Fiscal Studies', dataset: 'Student Finance Publications', url: 'https://ifs.org.uk/publications/student-finance', date: '2023', note: 'Transparent graduate contribution scheme would be cheaper and fairer; Plan 5 saves ~£10K per borrower vs Plan 2' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

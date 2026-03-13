@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'PHE / OHID', dataset: 'Sugar Reduction Programme — Progress Reports', url: 'https://www.gov.uk/government/collections/sugar-reduction', date: '2025', note: 'Sugar content fell 47% (4.83g to 2.55g per 100ml); two-thirds of products below lower levy band' },
+  { num: 2, name: 'HMRC', dataset: 'Soft Drinks Industry Levy Statistics', url: 'https://www.gov.uk/government/statistics/soft-drinks-industry-levy-statistics', date: '2024/25', note: 'Revenue fell from £337m peak to £248m; 49bn calories removed per year' },
+  { num: 3, name: 'NHS Digital', dataset: 'National Child Measurement Programme (NCMP)', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/national-child-measurement-programme', date: '2024/25', note: 'Reception obesity 9.5% (up from 9.1% in 2015); Year 6 21.5% (up from 19.1%); soft drinks ~7% of children\'s free sugar' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

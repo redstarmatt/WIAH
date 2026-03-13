@@ -7,6 +7,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'WISE Campaign', dataset: 'Women in STEM Workforce Statistics', url: 'https://www.wisecampaign.org.uk/statistics/', date: '2024', note: 'Women 24% of STEM workforce, up from 21% in 2013; computing ~19% female' },
+  { num: 2, name: 'JCQ', dataset: 'A-level Results by Subject and Gender', url: 'https://www.jcq.org.uk/examination-results/', date: '2024', note: 'Biology 62% female; physics 22%; computing 16%; gap opens at age 16-17' },
+  { num: 3, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE) — STEM Gender Pay Gap', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours', date: '2024', note: 'Women earn 19% less than men in STEM roles' },
+];
 
 export default function StemGenderGapPage() {
   // Chart 1: Women as % of STEM workforce 2013–2024

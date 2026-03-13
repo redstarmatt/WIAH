@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Stop and Search Statistics, England and Wales', url: 'https://www.gov.uk/government/statistics/police-powers-and-procedures-stop-and-search-and-arrests-england-and-wales', date: '2024', note: 'Black people 52 per 1,000; 6.5x white rate; 1.29M total searches in 2023/24' },
+  { num: 2, name: 'HMICFRS', dataset: 'PEEL Inspection — Stop and Search', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/', date: '2021', note: '28% of searches not based on reasonable grounds; arrest rate ~17%' },
+  { num: 3, name: 'College of Policing', dataset: 'Stop and Search Evidence Review', url: 'https://www.college.police.uk/', date: '2021', note: 'No consistent relationship between stop and search intensity and crime rates' },
+];
 
 const blackRateData = [38, 36, 34, 31, 29, 27, 26, 29, 35, 42, 52];
 const whiteRateData = [7, 6, 6, 5, 5, 4, 4, 5, 6, 7, 8];

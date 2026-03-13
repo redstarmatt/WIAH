@@ -9,6 +9,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'Mental Health of Children and Young People in England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england', date: '2023' },
+  { num: 2, name: 'Ditch the Label', dataset: 'Annual Bullying Survey 2023', url: 'https://www.ditchthelabel.org/research-papers/the-annual-bullying-survey-2023/', date: '2023' },
+  { num: 3, name: 'University College London', dataset: 'Cyberbullying and Self-Harm Study', date: '2022', note: 'Tracked 10,000 adolescents; cyberbullying victims 2.5x more likely to report self-harm' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -83,10 +91,10 @@ export default function SocialMediaHarmPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The correlation between mass smartphone adoption and deteriorating adolescent mental health is one of the most debated findings in contemporary social science. In 2012, fewer than half of UK teenagers owned a smartphone; by 2016, that proportion exceeded 80%. Over the same period, NHS Digital surveys using validated clinical tools found that the proportion of 11–16 year old girls meeting the threshold for probable depression or anxiety rose from approximately 7% to 14% — a doubling. Boys' rates also rose, but less sharply. Among 17–19 year old women, one-in-four now meets the clinical threshold for a probable mental disorder, compared with fewer than one-in-eight in 2004. The mechanism most consistently identified in academic literature is social comparison: platforms designed around image-sharing, likes, and follower counts create constant, inescapable status competitions that are experienced most intensely by adolescent girls during a developmentally vulnerable period.
+              The correlation between mass smartphone adoption and deteriorating adolescent mental health is one of the most debated findings in contemporary social science. In 2012, fewer than half of UK teenagers owned a smartphone; by 2016, that proportion exceeded 80%. Over the same period, NHS Digital surveys using validated clinical tools found that the proportion of 11–16 year old girls meeting the threshold for probable depression or anxiety rose from approximately 7% to 14% — a doubling.<Cite nums={1} /> Boys' rates also rose, but less sharply. Among 17–19 year old women, one-in-four now meets the clinical threshold for a probable mental disorder, compared with fewer than one-in-eight in 2004.<Cite nums={1} /> The mechanism most consistently identified in academic literature is social comparison: platforms designed around image-sharing, likes, and follower counts create constant, inescapable status competitions that are experienced most intensely by adolescent girls during a developmentally vulnerable period.
             </p>
             <p>
-              Cyberbullying has been transformed by the architecture of social platforms. Bullying that once ended at the school gate now follows children into their bedrooms. The Ditch the Label Annual Bullying Survey 2023 found that 40% of girls aged 11–15 had experienced cyberbullying — up from 22% in 2012. Instagram, Snapchat, and TikTok were the most commonly cited platforms. The 24-hour nature of online harassment, combined with the potential for content to be shared to indefinitely large audiences, means that the psychological impact of cyberbullying is typically more severe than traditional bullying. A 2022 study by University College London tracked 10,000 adolescents and found that those experiencing cyberbullying were 2.5 times more likely to report self-harm than those who had not. Children from lower-income households reported disproportionately higher rates, partly because they are less likely to have parental supervision of screen time.
+              Cyberbullying has been transformed by the architecture of social platforms. Bullying that once ended at the school gate now follows children into their bedrooms. The Ditch the Label Annual Bullying Survey 2023 found that 40% of girls aged 11–15 had experienced cyberbullying — up from 22% in 2012.<Cite nums={2} /> Instagram, Snapchat, and TikTok were the most commonly cited platforms. The 24-hour nature of online harassment, combined with the potential for content to be shared to indefinitely large audiences, means that the psychological impact of cyberbullying is typically more severe than traditional bullying. A 2022 study by University College London tracked 10,000 adolescents and found that those experiencing cyberbullying were 2.5 times more likely to report self-harm than those who had not.<Cite nums={3} /> Children from lower-income households reported disproportionately higher rates, partly because they are less likely to have parental supervision of screen time.
             </p>
             </div>
         </section>
@@ -183,6 +191,10 @@ export default function SocialMediaHarmPage() {
             )}
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="border-t border-wiah-border pt-8 mt-12">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>

@@ -9,6 +9,8 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -22,6 +24,13 @@ interface YouthDiversionOutcomesData {
     reoffendingPct: number
   }>
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Youth Justice Statistics', url: 'https://www.gov.uk/government/statistics/youth-justice-statistics', date: '2024' },
+  { num: 2, name: 'Youth Justice Board', dataset: 'Youth custody report', url: 'https://www.gov.uk/government/organisations/youth-justice-board-for-england-and-wales', date: '2024' },
+  { num: 3, name: 'NACRO', dataset: 'Youth crime briefings — labelling effect and diversion evidence', url: 'https://www.nacro.org.uk', date: '2023' },
+  { num: 4, name: 'Standing Committee for Youth Justice', dataset: 'Annual reporting on youth custody demographics', url: 'https://scyj.org.uk', date: '2024' },
+];
 
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
@@ -76,8 +85,8 @@ export default function YouthDiversionOutcomesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The transformation of youth justice in England and Wales over the past fifteen years is one of the most significant success stories in UK criminal justice. In 2010, 80,400 young people entered the criminal justice system for the first time; by 2024 that figure had fallen to around 7,800 — a 90% reduction. The number of children in custody fell from nearly 3,000 to around 430 over the same period, and reoffending rates dropped from 38% to around 25%. These changes reflect a deliberate policy shift toward diversion, driven by growing evidence that formal criminal justice contact — court appearances, records, cautions — increases rather than reduces future offending through the 'labelling effect'. Out-of-court disposals and youth triage arrangements, often run through Violence Reduction Units in cities with high youth violence rates, have become the primary response to first-time offending.</p>
-            <p>The remaining custody population of 430 is concentrated in serious violence, sexual offences, and weapons cases, and is disproportionately made up of Black and minority ethnic young people and those with care experience — around 50% of children in custody have been in local authority care. Violence Reduction Unit funding, which underpins much of the most effective diversion work, is short-term and grant-dependent. The knife crime crisis of the late 2010s and mid-2020s has created political pressure for more punitive responses that cuts against the diversion model, and sustaining the political consensus and community infrastructure that produced this decade of progress is the central challenge for the years ahead.</p>
+            <p>The transformation of youth justice in England and Wales over the past fifteen years is one of the most significant success stories in UK criminal justice. In 2010, 80,400 young people entered the criminal justice system for the first time; by 2024 that figure had fallen to around 7,800 — a 90% reduction.<Cite nums={1} /> The number of children in custody fell from nearly 3,000 to around 430 over the same period, and reoffending rates dropped from 38% to around 25%.<Cite nums={[1, 2]} /> These changes reflect a deliberate policy shift toward diversion, driven by growing evidence that formal criminal justice contact — court appearances, records, cautions — increases rather than reduces future offending through the 'labelling effect'.<Cite nums={3} /> Out-of-court disposals and youth triage arrangements, often run through Violence Reduction Units in cities with high youth violence rates, have become the primary response to first-time offending.</p>
+            <p>The remaining custody population of 430 is concentrated in serious violence, sexual offences, and weapons cases, and is disproportionately made up of Black and minority ethnic young people and those with care experience — around 50% of children in custody have been in local authority care.<Cite nums={4} /> Violence Reduction Unit funding, which underpins much of the most effective diversion work, is short-term and grant-dependent. The knife crime crisis of the late 2010s and mid-2020s has created political pressure for more punitive responses that cuts against the diversion model, and sustaining the political consensus and community infrastructure that produced this decade of progress is the central challenge for the years ahead.</p>
           </div>
         </section>
 
@@ -146,6 +155,10 @@ export default function YouthDiversionOutcomesPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

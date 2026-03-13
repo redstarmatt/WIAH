@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Wealth and Assets Survey 2020–22', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/totalwealthingreatbritain/latest', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Income inequality trends since 1990s', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Wealth and Assets Survey — age breakdowns', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/totalwealthingreatbritain/latest', date: '2024' },
+  { num: 4, name: 'Resolution Foundation', dataset: 'Homeownership trends by age cohort', url: 'https://www.resolutionfoundation.org/publications/', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -78,8 +87,8 @@ export default function WealthInequalityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The ONS Wealth and Assets Survey (2020–22) found that the richest 10% of households hold 43% of all household wealth in the UK, while the bottom 50% share just 9%. This is not a story about income inequality, which has been broadly stable since the mid-1990s. It is a story about the accumulation of assets — above all, property and pensions. Homeowners have seen values double or treble in many parts of England since 2000; private renters, who now account for around a fifth of households, accumulate nothing from that appreciation. Those in defined-benefit pension schemes — concentrated in public sector employment — hold substantial accrued wealth that is invisible in take-home pay comparisons.</p>
-            <p>The age dimension is stark. Median household wealth for the under-25s stands at around £12,000; for those aged 65–74, it reaches £462,000. Much of this reflects a natural lifecycle — people accumulate assets over time — but the gap between older and younger cohorts has grown significantly. Today's 30–35-year-olds hold considerably less wealth than people of the same age did 20 years ago, primarily because homeownership rates among that group have fallen sharply. A generation that bought in the 1990s has benefited from three decades of house price growth. One that could not get onto the ladder has not.</p>
+            <p>The ONS Wealth and Assets Survey (2020–22) found that the richest 10% of households hold 43% of all household wealth in the UK, while the bottom 50% share just 9%.<Cite nums={1} /> This is not a story about income inequality, which has been broadly stable since the mid-1990s.<Cite nums={2} /> It is a story about the accumulation of assets — above all, property and pensions. Homeowners have seen values double or treble in many parts of England since 2000; private renters, who now account for around a fifth of households, accumulate nothing from that appreciation. Those in defined-benefit pension schemes — concentrated in public sector employment — hold substantial accrued wealth that is invisible in take-home pay comparisons.</p>
+            <p>The age dimension is stark. Median household wealth for the under-25s stands at around £12,000; for those aged 65–74, it reaches £462,000.<Cite nums={3} /> Much of this reflects a natural lifecycle — people accumulate assets over time — but the gap between older and younger cohorts has grown significantly. Today's 30–35-year-olds hold considerably less wealth than people of the same age did 20 years ago, primarily because homeownership rates among that group have fallen sharply.<Cite nums={4} /> A generation that bought in the 1990s has benefited from three decades of house price growth. One that could not get onto the ladder has not.</p>
             </div>
         </section>
 
@@ -196,6 +205,10 @@ export default function WealthInequalityPage() {
             source="Source: Pensions Regulator"
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

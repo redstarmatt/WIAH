@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'School Workforce Census 2022/23', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england', date: '2023' },
+  { num: 2, name: 'DfE', dataset: 'Initial Teacher Training Census 2022/23', url: 'https://www.gov.uk/government/statistics/initial-teacher-training-census', date: '2023' },
+  { num: 3, name: 'DfE', dataset: 'School Workforce Census — teacher retention', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england', date: '2023', note: '40% of NQTs leave within five years' },
+  { num: 4, name: 'IFS', dataset: 'Teacher Pay and Spending per Pupil', url: 'https://ifs.org.uk/publications/teacher-pay-and-spending-pupil-england', date: '2023', note: 'Real-terms teacher pay fell ~10% since 2010' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -123,8 +132,8 @@ export default function TeacherShortagePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's secondary teacher vacancy rate reached 3.1% in 2022–23 — a record high, roughly three times the rate of a decade earlier, translating to around 4,600 empty posts on census day. The shortage is sharpest in maths, physics, chemistry, and computing: ITT recruitment against target ran at 60%, 39%, and 45% respectively for those subjects in 2022/23. Around 40% of newly qualified teachers leave within five years — up from 30% in 2010 — driven by average term-time working weeks exceeding 47 hours and real-terms pay falling roughly 10% since 2010. Ten consecutive years of missed recruitment targets in shortage subjects have created a structural pipeline problem that one-year bursaries cannot resolve.</p>
-            <p>The consequences fall hardest on pupils in the most deprived schools. Schools managing vacancies use unqualified supply teachers, merge classes, reduce subject options, and scale back intervention programmes — effects rarely visible in aggregate data but consistently reported by headteachers and inspectors. Geographic inequality sharpens every trend: vacancies concentrate in England's most deprived local authorities, coastal and rural communities where teacher salaries are inadequate against local housing costs, and parts of London where living costs compound the pay problem despite additional allowances. Better-resourced academy trusts poach candidates from neighbouring schools, dispersing rather than solving the shortage.</p>
+            <p>England's secondary teacher vacancy rate reached 3.1% in 2022–23 — a record high, roughly three times the rate of a decade earlier, translating to around 4,600 empty posts on census day.<Cite nums={1} /> The shortage is sharpest in maths, physics, chemistry, and computing: ITT recruitment against target ran at 60%, 39%, and 45% respectively for those subjects in 2022/23.<Cite nums={2} /> Around 40% of newly qualified teachers leave within five years — up from 30% in 2010 — driven by average term-time working weeks exceeding 47 hours and real-terms pay falling roughly 10% since 2010.<Cite nums={[3, 4]} /> Ten consecutive years of missed recruitment targets in shortage subjects have created a structural pipeline problem that one-year bursaries cannot resolve.</p>
+            <p>The consequences fall hardest on pupils in the most deprived schools.<Cite nums={1} /> Schools managing vacancies use unqualified supply teachers, merge classes, reduce subject options, and scale back intervention programmes — effects rarely visible in aggregate data but consistently reported by headteachers and inspectors. Geographic inequality sharpens every trend: vacancies concentrate in England's most deprived local authorities, coastal and rural communities where teacher salaries are inadequate against local housing costs, and parts of London where living costs compound the pay problem despite additional allowances. Better-resourced academy trusts poach candidates from neighbouring schools, dispersing rather than solving the shortage.</p>
           </div>
         </section>
 
@@ -248,6 +257,11 @@ export default function TeacherShortagePage() {
           source="Source: DfE — School Workforce Census 2023; DfE — Initial Teacher Training Census 2022/23."
         />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>

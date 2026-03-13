@@ -8,6 +8,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Forestry Commission', dataset: 'UK and England Woodland Statistics 2025', url: 'https://www.forestresearch.gov.uk/tools-and-resources/statistics/forestry-statistics/', date: '2025' },
+  { num: 2, name: 'Climate Change Committee', dataset: 'Land Use Report — 30,000 ha/yr target', url: 'https://www.theccc.org.uk/publication/land-use-policies-for-a-net-zero-uk/', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +201,10 @@ export default function TopicPage() {
             source="Source: Forestry Commission — UK and England woodland statistics, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
