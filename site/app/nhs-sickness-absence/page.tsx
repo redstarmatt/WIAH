@@ -33,6 +33,12 @@ interface SicknessData {
   }
 }
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'NHS Sickness Absence Rates', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-sickness-absence-rates', date: '2023', note: '5.6% absence rate in 2022/23, highest since records began in 2009; equivalent to 75,000 FTE staff absent daily' },
+  { num: 2, name: 'NHS Employers', dataset: 'Sickness Absence Cost Methodology', date: '2023', note: 'Estimated annual direct cost exceeding £3.3 billion' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Staff Survey', date: '2023', note: '44% of staff reported work-related stress; 33% said their organisation did not take positive action on wellbeing' },
+];
+
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1)
 }

@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'UK Finance', dataset: 'Fraud: The Facts', url: 'https://www.ukfinance.org.uk/data-and-research/data/fraud/fraud-the-facts', date: '2025' },
+  { num: 2, name: 'ONS', dataset: 'Crime Survey for England and Wales — fraud estimates', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
+  { num: 3, name: 'Action Fraud / NFIB', dataset: 'Annual Report', url: 'https://www.actionfraud.police.uk/', date: '2025' },
+  { num: 4, name: 'Payment Systems Regulator', dataset: 'APP Fraud Performance Data', url: 'https://www.psr.org.uk/our-work/app-scams/', date: '2025' },
+  { num: 5, name: 'Ofcom', dataset: 'Online Safety Act — fraudulent advertising enforcement powers', url: 'https://www.ofcom.org.uk/online-safety/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -168,7 +178,7 @@ export default function OnlineFraudLossesPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The scale of online fraud in the United Kingdom has grown relentlessly for the better part of a decade. In 2017, UK Finance estimated that consumers lost around \u00A3620 million to digitally-enabled fraud. By 2025, that figure has more than doubled to \u00A31.34 billion. The trajectory is not subtle: every year since records began in this format, total losses have increased. The pandemic accelerated what was already a steep trend \u2014 lockdowns pushed millions of transactions online, and fraudsters followed. Between 2019 and 2021 alone, reported fraud cases jumped 80 per cent. The Crime Survey for England and Wales now classifies fraud as the single most common crime type, ahead of theft, criminal damage, and violent offences combined.
+              The scale of online fraud in the United Kingdom has grown relentlessly for the better part of a decade. In 2017, UK Finance estimated that consumers lost around \u00A3620 million to digitally-enabled fraud. By 2025, that figure has more than doubled to \u00A31.34 billion.<Cite nums={1} /> The trajectory is not subtle: every year since records began in this format, total losses have increased. The pandemic accelerated what was already a steep trend \u2014 lockdowns pushed millions of transactions online, and fraudsters followed. Between 2019 and 2021 alone, reported fraud cases jumped 80 per cent.<Cite nums={3} /> The Crime Survey for England and Wales now classifies fraud as the single most common crime type, ahead of theft, criminal damage, and violent offences combined.<Cite nums={2} />
             </p>
             <p>
               What is perhaps most alarming is the shifting composition of fraud. Online shopping fraud \u2014 fake goods, non-delivery scams, counterfeit websites \u2014 dominated the early part of the period. But since 2022, investment fraud has overtaken it as the largest single category by value. This is driven overwhelmingly by cryptocurrency scams, which exploit social media advertising and, increasingly, AI-generated deepfake endorsements from public figures. The average loss per victim for investment fraud is now around \u00A314,600 \u2014 compared with \u00A3720 for a shopping scam. Romance fraud, while lower in volume, carries devastating personal consequences alongside an average loss exceeding \u00A37,000 per case. The emotional and psychological cost of fraud \u2014 shame, isolation, loss of trust \u2014 rarely appears in the statistics but is consistently highlighted in victim surveys.
