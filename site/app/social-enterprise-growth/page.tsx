@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Social Enterprise UK', dataset: 'State of Social Enterprise', url: 'https://www.socialenterprise.org.uk/state-of-social-enterprise', date: '2023' },
+  { num: 2, name: 'Big Society Capital', dataset: 'Market Sizing Research', url: 'https://bigsocietycapital.com/', date: '2023' },
+  { num: 3, name: 'HM Government', dataset: 'Social Value Act 2012 — guidance and impact', url: 'https://www.gov.uk/government/publications/social-value-act-information-and-resources', date: '2012' },
+];
 
 // -- Types ------------------------------------------------------------------
 

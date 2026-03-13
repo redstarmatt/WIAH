@@ -145,10 +145,10 @@ export default function ShopliftingSurgePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The surge in recorded shoplifting has multiple drivers operating simultaneously. Cost-of-living pressures have pushed more individuals into opportunistic theft for survival goods — supermarkets report significant increases in small-value food thefts that would previously have gone unrecorded. But organised retail crime — coordinated gangs systematically targeting stores for resale — has grown proportionally faster, accounting for an increasing share of total losses. The British Retail Consortium estimates organised crime now accounts for around 30% of total retail theft value, concentrated in high-value electronics, alcohol, and cosmetics.
+              The surge in recorded shoplifting has multiple drivers operating simultaneously. Cost-of-living pressures have pushed more individuals into opportunistic theft for survival goods — supermarkets report significant increases in small-value food thefts that would previously have gone unrecorded.<Cite nums={1} /> But organised retail crime — coordinated gangs systematically targeting stores for resale — has grown proportionally faster, accounting for an increasing share of total losses. The British Retail Consortium estimates organised crime now accounts for around 30% of total retail theft value, concentrated in high-value electronics, alcohol, and cosmetics.<Cite nums={2} />
             </p>
             <p>
-              The charge rate of 12% reflects both a policing prioritisation problem and structural evidentiary challenges. The de facto £200 threshold — an unofficial police policy under which lower-value thefts were rarely actively investigated — has now been formally abolished by the Criminal Justice Bill 2024. Whether this will translate into higher enforcement remains to be seen: police capacity is constrained, and retailers themselves often do not report thefts below certain values because the opportunity cost of staff time exceeds the benefit. The £1.8 billion annual cost to retailers — ultimately passed on in prices — falls disproportionately on smaller independent retailers who lack the security infrastructure of large chains.
+              The charge rate of 12% reflects both a policing prioritisation problem and structural evidentiary challenges. The de facto £200 threshold — an unofficial police policy under which lower-value thefts were rarely actively investigated — has now been formally abolished by the Criminal Justice Bill 2024.<Cite nums={3} /> Whether this will translate into higher enforcement remains to be seen: police capacity is constrained, and retailers themselves often do not report thefts below certain values because the opportunity cost of staff time exceeds the benefit. The £1.8 billion annual cost to retailers — ultimately passed on in prices — falls disproportionately on smaller independent retailers who lack the security infrastructure of large chains.<Cite nums={2} />
             </p>
           </div>
         </section>
@@ -243,6 +243,10 @@ export default function ShopliftingSurgePage() {
             source="Source: Home Office Police Recorded Crime 2023/24 · British Retail Consortium Retail Crime Survey 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

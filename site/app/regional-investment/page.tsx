@@ -38,6 +38,12 @@ function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HM Treasury', dataset: 'Public Expenditure Statistical Analyses (PESA)', url: 'https://www.gov.uk/government/collections/public-expenditure-statistical-analyses-pesa', date: '2024/25' },
+  { num: 2, name: 'DLUHC', dataset: 'Investment Zones and Freeports Progress Report', date: '2025' },
+  { num: 3, name: 'IFS', dataset: 'Regional public spending analysis', date: '2024' },
+];
+
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function TopicPage() {
@@ -196,6 +202,10 @@ export default function TopicPage() {
             source="Source: DLUHC Investment Zones and Freeports Progress Report, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
