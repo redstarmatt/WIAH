@@ -132,9 +132,13 @@ export default function SocialHousingWaitingListsPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            The government announced in 2024 a target to build 1.5 million homes over five years, with a renewed focus on affordable and social housing. Reforms to right-to-buy discounts — reducing the maximum discount — were introduced in 2024 to slow the rate at which council homes are removed from social stock. Housing associations have been expanding delivery under the Affordable Homes Programme.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Housing Target Set"
+            value="1.5"
+            unit="million homes"
+            description="The government announced in 2024 a target to build 1.5 million homes over five years, with a renewed focus on affordable and social housing. Reforms to right-to-buy discounts — reducing the maximum discount — were introduced in 2024 to slow the rate at which council homes are removed from social stock. Housing associations have been expanding delivery under the Affordable Homes Programme."
+            source="DLUHC, Affordable Homes Programme"
+          />
         </ScrollReveal>
 
         <ScrollReveal>

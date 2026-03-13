@@ -130,9 +130,13 @@ export default function PensionCreditTakeUpPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            Following the July 2024 decision to restrict Winter Fuel Payment to Pension Credit recipients, applications for Pension Credit surged. DWP reported a 152% increase in applications in August 2024 versus August 2023. Whether this translates into sustained take-up gains — or a short burst followed by reversion — will be visible in the 2025 take-up statistics.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Applications Surging"
+            value="152"
+            unit="%"
+            description="Following the July 2024 decision to restrict Winter Fuel Payment to Pension Credit recipients, applications for Pension Credit surged. DWP reported a 152% increase in applications in August 2024 versus August 2023. Whether this translates into sustained take-up gains — or a short burst followed by reversion — will be visible in the 2025 take-up statistics."
+            source="DWP, Pension Credit Statistics"
+          />
         </ScrollReveal>
 
         <ScrollReveal>
@@ -154,12 +158,7 @@ export default function PensionCreditTakeUpPage() {
           </div>
         </section>
 
-        <RelatedTopics topics={[
-          { href: '/pensioner-poverty', label: 'Pensioner Poverty' },
-          { href: '/pension-savings-gap', label: 'Pension Savings Gap' },
-          { href: '/benefit-delays', label: 'Benefit Delays' },
-          { href: '/winter-fuel-payment-reform', label: 'Winter Fuel Payment Reform' },
-        ]} />
+        <RelatedTopics />
       </main>
     </>
   );

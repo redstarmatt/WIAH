@@ -130,9 +130,12 @@ export default function EnergyDisconnectionsPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            Ofgem's 2023 ban on forcibly installing prepayment meters in homes with vulnerable occupants — including those with children, serious illness, or disability — marked a significant regulatory intervention. Energy suppliers must now complete welfare checks before any forced installation and cannot install PPMs in households where doing so would risk harm.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Vulnerable Households Protected"
+            value="2023"
+            description="Ofgem's 2023 ban on forcibly installing prepayment meters in homes with vulnerable occupants — including those with children, serious illness, or disability — marked a significant regulatory intervention. Energy suppliers must now complete welfare checks before any forced installation and cannot install PPMs in households where doing so would risk harm."
+            source="Ofgem, Involuntary Prepayment Meter Installation Code of Practice"
+          />
         </ScrollReveal>
 
         <ScrollReveal>
@@ -154,12 +157,7 @@ export default function EnergyDisconnectionsPage() {
           </div>
         </section>
 
-        <RelatedTopics topics={[
-          { href: '/fuel-poverty', label: 'Fuel Poverty' },
-          { href: '/energy-bills', label: 'Energy Bills' },
-          { href: '/energy-efficiency', label: 'Energy Efficiency' },
-          { href: '/household-income-inequality', label: 'Household Income Inequality' },
-        ]} />
+        <RelatedTopics />
       </main>
     </>
   );

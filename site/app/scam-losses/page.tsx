@@ -137,9 +137,12 @@ export default function ScamLossesPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            From October 2024, the Payment Systems Regulator's mandatory reimbursement regime requires banks to return money to victims of APP fraud within five business days, up to a maximum of £85,000 per claim. Banks on both the sending and receiving end of the fraud share the cost equally — changing incentives to invest in fraud prevention.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Fraud Victims Protected"
+            value="£85,000"
+            description="From October 2024, the Payment Systems Regulator's mandatory reimbursement regime requires banks to return money to victims of APP fraud within five business days, up to a maximum of £85,000 per claim. Banks on both the sending and receiving end of the fraud share the cost equally — changing incentives to invest in fraud prevention."
+            source="Payment Systems Regulator, APP Fraud Reimbursement"
+          />
         </ScrollReveal>
 
         <ScrollReveal>
@@ -161,12 +164,7 @@ export default function ScamLossesPage() {
           </div>
         </section>
 
-        <RelatedTopics topics={[
-          { href: '/financial-abuse-elderly', label: 'Financial Abuse of Older People' },
-          { href: '/online-fraud-losses', label: 'Online Fraud Losses' },
-          { href: '/cybercrime', label: 'Cybercrime' },
-          { href: '/online-fraud-growth', label: 'Online Fraud Growth' },
-        ]} />
+        <RelatedTopics />
       </main>
     </>
   );

@@ -158,9 +158,13 @@ export default function WaterCompanyLeakagePage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            Total leakage in England and Wales has fallen by 14% since 2010 — a genuine reduction driven by regulatory pressure and improved leak detection technology. Acoustic sensors, satellite monitoring, and district metering have all helped. The challenge is accelerating the pace of reduction while water companies face growing financial constraints.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Leakage Falling"
+            value="14"
+            unit="%"
+            description="Total leakage in England and Wales has fallen by 14% since 2010 — a genuine reduction driven by regulatory pressure and improved leak detection technology. Acoustic sensors, satellite monitoring, and district metering have all helped. The challenge is accelerating the pace of reduction while water companies face growing financial constraints."
+            source="Ofwat, Water Company Performance Data"
+          />
         </ScrollReveal>
 
         <ScrollReveal>
@@ -182,12 +186,7 @@ export default function WaterCompanyLeakagePage() {
           </div>
         </section>
 
-        <RelatedTopics topics={[
-          { href: '/water', label: 'Water Quality' },
-          { href: '/water-infrastructure', label: 'Water Infrastructure' },
-          { href: '/water-affordability', label: 'Water Affordability' },
-          { href: '/bathing-water-quality', label: 'Bathing Water Quality' },
-        ]} />
+        <RelatedTopics />
       </main>
     </>
   );

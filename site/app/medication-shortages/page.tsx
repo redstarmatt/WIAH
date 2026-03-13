@@ -145,9 +145,12 @@ export default function MedicationShortagesPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            The DHSC&rsquo;s Medicine Supply Taskforce, established in 2022, has improved early warning systems and manufacturer engagement. The UK Medicines Verification Organisation system provides real-time pack-level tracking that helps identify shortages earlier. Parallel export controls have been strengthened for the most critical medicines.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Supply Monitoring Improved"
+            value="2022"
+            description="The DHSC's Medicine Supply Taskforce, established in 2022, has improved early warning systems and manufacturer engagement. The UK Medicines Verification Organisation system provides real-time pack-level tracking that helps identify shortages earlier. Parallel export controls have been strengthened for the most critical medicines."
+            source="DHSC, Medicine Supply Taskforce"
+          />
         </ScrollReveal>
 
         <ScrollReveal>

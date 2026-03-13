@@ -133,9 +133,13 @@ export default function ChildcareCostBarrierPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            The 2024 expansion of funded hours — extending 30 hours per week to children from 9 months — is the largest single investment in childcare in England's history, at an estimated £4.1 billion per year. Early evidence shows demand is high. The critical question is whether the hourly funding rate is sufficient for providers to remain financially viable.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Historic Investment"
+            value="£4.1bn"
+            unit="per year"
+            description="The 2024 expansion of funded hours — extending 30 hours per week to children from 9 months — is the largest single investment in childcare in England's history, at an estimated £4.1 billion per year. Early evidence shows demand is high. The critical question is whether the hourly funding rate is sufficient for providers to remain financially viable."
+            source="Department for Education, Childcare Expansion Programme"
+          />
         </ScrollReveal>
 
         <ScrollReveal>
@@ -157,12 +161,7 @@ export default function ChildcareCostBarrierPage() {
           </div>
         </section>
 
-        <RelatedTopics topics={[
-          { href: '/childcare', label: 'Childcare' },
-          { href: '/early-years', label: 'Early Years' },
-          { href: '/gender-pay-gap', label: 'Gender Pay Gap' },
-          { href: '/in-work-poverty', label: 'In-Work Poverty' },
-        ]} />
+        <RelatedTopics />
       </main>
     </>
   );

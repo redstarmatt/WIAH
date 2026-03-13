@@ -134,9 +134,13 @@ export default function MortgageAffordabilityShockPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            Mortgage lenders introduced a range of forbearance measures in 2023, including interest-only switching and payment deferrals, following FCA guidance. The Mortgage Charter, agreed between the government and major lenders in June 2023, provided additional protections for borrowers in difficulty including a minimum 12-month period before repossession action.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Borrower Protections Added"
+            value="12"
+            unit="months"
+            description="Mortgage lenders introduced a range of forbearance measures in 2023, including interest-only switching and payment deferrals, following FCA guidance. The Mortgage Charter, agreed between the government and major lenders in June 2023, provided additional protections for borrowers in difficulty including a minimum 12-month period before repossession action."
+            source="HM Treasury, Mortgage Charter 2023"
+          />
         </ScrollReveal>
 
         <ScrollReveal>

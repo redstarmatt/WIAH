@@ -131,9 +131,13 @@ export default function EmergencyDentalAccessPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            The NHS Dental Recovery Plan (February 2024) committed to 2.5 million additional appointments and introduced new patient premium payments to incentivise dentists to take on patients who have not been seen recently. The "golden hello" scheme offers £20,000 to dentists relocating to underserved areas. Whether these measures can reverse two decades of structural decline in NHS dentistry remains to be seen.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Recovery Plan Launched"
+            value="2.5m"
+            unit="extra appointments"
+            description="The NHS Dental Recovery Plan (February 2024) committed to 2.5 million additional appointments and introduced new patient premium payments to incentivise dentists to take on patients who have not been seen recently. The 'golden hello' scheme offers £20,000 to dentists relocating to underserved areas. Whether these measures can reverse two decades of structural decline in NHS dentistry remains to be seen."
+            source="NHS England, Dental Recovery Plan 2024"
+          />
         </ScrollReveal>
 
         <ScrollReveal>
@@ -155,12 +159,7 @@ export default function EmergencyDentalAccessPage() {
           </div>
         </section>
 
-        <RelatedTopics topics={[
-          { href: '/dental', label: 'NHS Dentistry' },
-          { href: '/dental-access-crisis', label: 'Dental Access Crisis' },
-          { href: '/child-tooth-decay', label: 'Child Tooth Decay' },
-          { href: '/oral-health-inequalities', label: 'Oral Health Inequalities' },
-        ]} />
+        <RelatedTopics />
       </main>
     </>
   );

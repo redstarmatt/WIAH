@@ -140,9 +140,13 @@ export default function SchoolMentalHealthSupportPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            Mental Health Support Teams (MHSTs) — jointly staffed by NHS and school-based workers — deliver early intervention for mild to moderate mental health issues without requiring a CAMHS referral. Where they operate, they reduce the number of pupils reaching crisis point. The government committed to covering all schools by 2025, though that target is unlikely to be met on current rollout pace.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Early Intervention Expanding"
+            value="35"
+            unit="%"
+            description="Mental Health Support Teams (MHSTs) — jointly staffed by NHS and school-based workers — deliver early intervention for mild to moderate mental health issues without requiring a CAMHS referral. Where they operate, they reduce the number of pupils reaching crisis point. The government committed to covering all schools by 2025, though that target is unlikely to be met on current rollout pace."
+            source="NHS England, Mental Health Support Teams programme"
+          />
         </ScrollReveal>
 
         <ScrollReveal>

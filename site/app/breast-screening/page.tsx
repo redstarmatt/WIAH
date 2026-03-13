@@ -127,9 +127,13 @@ export default function BreastScreeningPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            When women do attend, breast screening saves lives. The programme detects around 18,000 cancers each year, and early detection significantly improves survival rates. Closing the participation gap is one of the most cost-effective interventions available to the NHS — each percentage point of coverage recovered prevents hundreds of late-stage diagnoses.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Screening saves lives"
+            value="18,000"
+            unit="cancers detected per year"
+            description="When women do attend, breast screening saves lives. The programme detects around 18,000 cancers each year, and early detection significantly improves survival rates. Closing the participation gap is one of the most cost-effective interventions available to the NHS — each percentage point of coverage recovered prevents hundreds of late-stage diagnoses."
+            source="NHS Digital, Breast Screening Programme Statistics, 2024"
+          />
         </ScrollReveal>
 
         <ScrollReveal>
@@ -151,12 +155,7 @@ export default function BreastScreeningPage() {
           </div>
         </section>
 
-        <RelatedTopics topics={[
-          { href: '/cervical-screening', label: 'Cervical Screening' },
-          { href: '/cancer-screening-uptake', label: 'Cancer Screening Uptake' },
-          { href: '/nhs-screening', label: 'NHS Screening' },
-          { href: '/cancer-diagnosis', label: 'Cancer Diagnosis' },
-        ]} />
+        <RelatedTopics />
       </main>
     </>
   );

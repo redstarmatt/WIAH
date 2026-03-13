@@ -117,7 +117,7 @@ export default function ForeignAidPage() {
               subtitle="UK overseas development assistance as a percentage of gross national income. 0.7% is the UN and statutory target, legislated in 2015 and cut in 2021."
               series={odaPctSeries}
               annotations={odaAnnotations}
-              targetLine={{ value: 0.7, label: '0.7% UN target', colour: '#2A9D8F' }}
+              targetLine={{ value: 0.7, label: '0.7% UN target' }}
               yLabel="% of GNI"
               source={{ name: 'FCDO / OECD DAC', dataset: 'UK Overseas Development Assistance Statistics', url: 'https://www.gov.uk/government/collections/statistics-on-international-development', frequency: 'annual', date: '2024' }}
             />
