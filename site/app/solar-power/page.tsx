@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'Solar Photovoltaics Deployment Statistics', url: 'https://www.gov.uk/government/statistics/solar-photovoltaics-deployment', date: '2024' },
+  { num: 2, name: 'DESNZ', dataset: 'Energy Trends — Renewable Electricity Generation', url: 'https://www.gov.uk/government/statistics/energy-trends', date: '2024' },
+  { num: 3, name: 'National Grid ESO', dataset: 'Historic Generation Mix and Grid Connection Queue', date: '2024', note: 'Over 700 GW of projects awaiting grid connection' },
+  { num: 4, name: 'Solar Trade Association', dataset: 'Land Requirements for 70 GW Solar Target', date: '2023', note: '250-400 km2 needed, approximately 0.1% of UK land area' },
+];
 
 interface SolarData {
   national: {
@@ -67,8 +76,8 @@ export default function SolarPowerPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's solar story is one of extraordinary early momentum followed by a slowdown in ambition. Between 2012 and 2016, the Feed-in Tariff scheme drove an installation boom, taking capacity from under 2 GW to over 11 GW in just four years — one of the fastest solar buildouts per capita in the world at the time. That growth was largely driven by rooftop domestic and commercial installations, with ground-mounted utility-scale farms concentrating in southern England, particularly the South West and South East. In 2016, the government sharply cut subsidies and effectively ended the Feed-in Tariff for large-scale solar, and annual capacity additions collapsed — dropping from around 3.5 GW in 2015 to under 0.5 GW in 2017 and 2018. The UK went from solar leader to solar laggard in a single policy cycle. Solar's share of annual electricity generation, averaging just 5%, understates its summer contribution: on long sunny days, solar can meet 30% or more of UK demand, and in summer 2024 solar generated more electricity than coal over the full season for the first time.</p>
-            <p>Since 2019, subsidy-free solar has begun to recover, with solar farms now competitive at under £40/MWh without government support — cheaper than gas peakers and comparable to onshore wind. The Contracts for Difference (CfD) auction mechanism, which replaced Feed-in Tariffs, has supported larger utility-scale farms through Allocation Rounds 4 and 5, awarding contracts for over 2 GW of new solar in 2023 alone. The government's British Energy Security Strategy (2022) set a target of 70 GW of solar by 2035, more than quadrupling current capacity. Reaching that target would require annual additions of around 5 GW per year — roughly three times the current deployment rate. The Solar Trade Association estimates that 250 to 400 km&sup2; of solar panels would be needed, equivalent to roughly 0.1% of UK land area. A key bottleneck is not land or technology but grid connection: National Grid Electricity System Operator has a queue of over 700 GW of generation projects awaiting connection, the majority of them solar, with wait times of 10 to 15 years in some areas.</p>
+            <p>The UK's solar story is one of extraordinary early momentum followed by a slowdown in ambition. Between 2012 and 2016, the Feed-in Tariff scheme drove an installation boom, taking capacity from under 2 GW to over 11 GW in just four years — one of the fastest solar buildouts per capita in the world at the time.<Cite nums={1} /> That growth was largely driven by rooftop domestic and commercial installations, with ground-mounted utility-scale farms concentrating in southern England, particularly the South West and South East. In 2016, the government sharply cut subsidies and effectively ended the Feed-in Tariff for large-scale solar, and annual capacity additions collapsed — dropping from around 3.5 GW in 2015 to under 0.5 GW in 2017 and 2018.<Cite nums={1} /> The UK went from solar leader to solar laggard in a single policy cycle. Solar's share of annual electricity generation, averaging just 5%, understates its summer contribution: on long sunny days, solar can meet 30% or more of UK demand, and in summer 2024 solar generated more electricity than coal over the full season for the first time.<Cite nums={2} /></p>
+            <p>Since 2019, subsidy-free solar has begun to recover, with solar farms now competitive at under £40/MWh without government support — cheaper than gas peakers and comparable to onshore wind. The Contracts for Difference (CfD) auction mechanism, which replaced Feed-in Tariffs, has supported larger utility-scale farms through Allocation Rounds 4 and 5, awarding contracts for over 2 GW of new solar in 2023 alone. The government's British Energy Security Strategy (2022) set a target of 70 GW of solar by 2035, more than quadrupling current capacity. Reaching that target would require annual additions of around 5 GW per year — roughly three times the current deployment rate. The Solar Trade Association estimates that 250 to 400 km&sup2; of solar panels would be needed, equivalent to roughly 0.1% of UK land area.<Cite nums={4} /> A key bottleneck is not land or technology but grid connection: National Grid Electricity System Operator has a queue of over 700 GW of generation projects awaiting connection, the majority of them solar, with wait times of 10 to 15 years in some areas.<Cite nums={3} /></p>
             </div>
         </section>
 
@@ -147,6 +156,10 @@ export default function SolarPowerPage() {
             source="Source: National Grid ESO — Historic generation mix data 2024; DESNZ energy statistics."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <ScrollReveal>
           <section className="mt-8 pt-12 border-t border-wiah-border">

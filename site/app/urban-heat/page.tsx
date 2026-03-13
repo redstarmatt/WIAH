@@ -188,6 +188,10 @@ export default function UrbanHeatPage() {
           </ScrollReveal>
         </section>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border">
           <h2 className="text-2xl font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3">

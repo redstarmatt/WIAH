@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Housing Affordability in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingaffordabilityinenglandandwales/latest', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE) — Regional Earnings', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/ashe', date: '2024' },
+  { num: 3, name: 'DEFRA', dataset: 'Rural-Urban Classification of Local Authority Districts', url: 'https://www.gov.uk/government/collections/rural-urban-classification', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 

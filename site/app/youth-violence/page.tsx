@@ -98,6 +98,8 @@ export default function YouthViolencePage() {
             </div>
         </section>
 
+        <div className="mt-6"><References items={editorialRefs} /></div>
+
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
           { id: 'sec-hospital', label: 'Hospital Admissions' },
@@ -164,10 +166,6 @@ export default function YouthViolencePage() {
             />
           </section>
         </ScrollReveal>
-        <div className="mt-6">
-          <References items={editorialRefs} />
-        </div>
-
               <RelatedTopics />
       </main>
     </>

@@ -11,6 +11,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Office of Rail and Road', dataset: 'Passenger rail performance', url: 'https://dataportal.orr.gov.uk/statistics/performance/passenger-rail-performance/', date: '2025', note: 'PPM quarterly data' },
+  { num: 2, name: 'DfT', dataset: 'Bus statistics — BUS01', url: 'https://www.gov.uk/government/statistical-data-sets/bus-statistics-data-tables-bus01', date: '2025', note: 'Annual bus passenger journeys and vehicle miles' },
+  { num: 3, name: 'DfT', dataset: 'Reported road casualties in Great Britain', url: 'https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023', date: '2023', note: 'KSI statistics 1979-2023' },
+  { num: 4, name: 'SMMT / DVLA', dataset: 'New car registrations and licensed vehicles', url: 'https://www.smmt.co.uk/vehicle-data/car-registrations/', date: '2024', note: 'EV share and fleet data' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
