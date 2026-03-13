@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Total fertility rate (TFR), UK, 2010–2023 — ONS
 const tfrValues = [1.98, 1.96, 1.94, 1.90, 1.83, 1.82, 1.81, 1.76, 1.70, 1.66, 1.60, 1.56, 1.56, 1.49];
@@ -41,6 +43,11 @@ const tfrAnnotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID — births fall further' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Birth characteristics in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/bulletins/birthcharacteristicsinenglandandwales/latest', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'National population projections', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections', date: '2023' },
+];
+
 export default function FertilityRatePage() {
   return (
     <>
@@ -55,8 +62,8 @@ export default function FertilityRatePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's total fertility rate (TFR) — the average number of children a woman is expected to have over her lifetime at current rates — fell to 1.49 in 2023, the lowest since ONS records began. This is well below the replacement rate of 2.1 children per woman needed to maintain a stable population without migration. The decline has been consistent since 2012, when the TFR reached 1.94. The most significant driver is delayed childbearing: the average age at first birth rose from 27.3 in 2010 to 29.6 in 2023, reflecting the financial and career pressures on younger adults — particularly housing costs, student debt, insecure employment, and the high cost of childcare.</p>
-            <p>Childlessness rates are also rising. ONS projections suggest that around 20% of women born in the 1990s will remain childless throughout their lives — up from 17% for those born in the 1970s. The fall in births from 724,000 in 2012 to 591,000 in 2023 — a 18% decline in eleven years — will feed through to school rolls (already falling), the working-age population (projected to shrink from the mid-2030s), and ultimately pension sustainability. The government has no explicit pronatalist policy, though improvements to childcare entitlement — 30 hours for 2-year-olds from September 2024 — may marginally reduce the cost barrier. International evidence suggests childcare expansion alone has limited effects on fertility; housing affordability and job security are more important determinants.</p>
+            <p>The UK's total fertility rate (TFR) — the average number of children a woman is expected to have over her lifetime at current rates — fell to 1.49 in 2023, the lowest since ONS records began.<Cite nums={[1]} /> This is well below the replacement rate of 2.1 children per woman needed to maintain a stable population without migration. The decline has been consistent since 2012, when the TFR reached 1.94.<Cite nums={[1]} /> The most significant driver is delayed childbearing: the average age at first birth rose from 27.3 in 2010 to 29.6 in 2023, reflecting the financial and career pressures on younger adults — particularly housing costs, student debt, insecure employment, and the high cost of childcare.<Cite nums={[1]} /></p>
+            <p>Childlessness rates are also rising. ONS projections suggest that around 20% of women born in the 1990s will remain childless throughout their lives — up from 17% for those born in the 1970s.<Cite nums={[2]} /> The fall in births from 724,000 in 2012 to 591,000 in 2023 — a 18% decline in eleven years — will feed through to school rolls (already falling), the working-age population (projected to shrink from the mid-2030s), and ultimately pension sustainability.<Cite nums={[1, 2]} /> The government has no explicit pronatalist policy, though improvements to childcare entitlement — 30 hours for 2-year-olds from September 2024 — may marginally reduce the cost barrier. International evidence suggests childcare expansion alone has limited effects on fertility; housing affordability and job security are more important determinants.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -134,6 +141,9 @@ export default function FertilityRatePage() {
             source="Source: DfE — Childcare expansion programme 2024. OECD — Family database: childcare costs and female employment."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

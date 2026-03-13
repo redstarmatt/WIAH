@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Private law children cases waiting over 26 weeks (thousands), 2015–2024 — MOJ
 const privateLawWaitValues = [25, 27, 30, 33, 36, 38, 32, 45, 55, 62];
@@ -47,6 +49,11 @@ const courtAnnotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Family court reform announced' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MOJ', dataset: 'Family court statistics quarterly', url: 'https://www.gov.uk/government/collections/family-court-statistics-quarterly', date: '2024' },
+  { num: 2, name: 'Cafcass', dataset: 'Research and data', url: 'https://www.cafcass.gov.uk/about-cafcass/research-and-data/', date: '2024' },
+];
+
 export default function FamilyCourtsPage() {
   return (
     <>
@@ -61,8 +68,8 @@ export default function FamilyCourtsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The family courts system — which deals with children's arrangements following separation, domestic abuse injunctions, and local authority care proceedings — has been in a state of sustained crisis for over a decade. Private law children cases, which cover parenting disputes between separating couples, now take an average of 51 weeks from first application to disposal — almost double the government's 26-week target. This means children spend, on average, nearly a year in legal limbo while their living arrangements and relationships with both parents are unresolved. The number of cases waiting over 26 weeks has grown from 25,000 in 2015 to 62,000 in 2024, representing a 150% increase.</p>
-            <p>Public law cases — where local authorities apply for care orders, emergency protection orders, or placement orders — are subject to a statutory 26-week time limit introduced by the Children and Families Act 2014. This limit has been consistently breached: 48% of public law cases exceeded 26 weeks in 2024. For children in these cases — typically at risk of abuse or neglect — each additional week in uncertainty has measurable developmental impact. A shortage of Cafcass (Children and Family Court Advisory and Support Service) officers, a chronic shortage of judges and courtrooms in the family jurisdiction, and the rise in lay litigants following legal aid cuts are the primary structural causes. The 2022 private law reform programme introduced 'Pathfinder' courts piloting early investigation and out-of-court resolution, but these cover only a small fraction of cases.</p>
+            <p>The family courts system — which deals with children's arrangements following separation, domestic abuse injunctions, and local authority care proceedings — has been in a state of sustained crisis for over a decade. Private law children cases, which cover parenting disputes between separating couples, now take an average of 51 weeks from first application to disposal — almost double the government's 26-week target.<Cite nums={[1]} /> This means children spend, on average, nearly a year in legal limbo while their living arrangements and relationships with both parents are unresolved. The number of cases waiting over 26 weeks has grown from 25,000 in 2015 to 62,000 in 2024, representing a 150% increase.<Cite nums={[1]} /></p>
+            <p>Public law cases — where local authorities apply for care orders, emergency protection orders, or placement orders — are subject to a statutory 26-week time limit introduced by the Children and Families Act 2014. This limit has been consistently breached: 48% of public law cases exceeded 26 weeks in 2024.<Cite nums={[1]} /> For children in these cases — typically at risk of abuse or neglect — each additional week in uncertainty has measurable developmental impact. A shortage of Cafcass (Children and Family Court Advisory and Support Service) officers, a chronic shortage of judges and courtrooms in the family jurisdiction, and the rise in lay litigants following legal aid cuts are the primary structural causes.<Cite nums={[2]} /> The 2022 private law reform programme introduced 'Pathfinder' courts piloting early investigation and out-of-court resolution, but these cover only a small fraction of cases.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -140,6 +147,9 @@ export default function FamilyCourtsPage() {
             source="Source: MOJ — Pathfinder pilot evaluation 2023. Cafcass — Annual report 2023/24."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

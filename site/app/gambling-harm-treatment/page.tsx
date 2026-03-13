@@ -8,6 +8,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Gambling Disorder Treatment Services', url: 'https://www.england.nhs.uk/mental-health/gambling/', date: '2024' },
+  { num: 2, name: 'Gambling Commission', dataset: 'Problem gambling prevalence data', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research', date: '2024' },
+  { num: 3, name: 'DCMS', dataset: 'Gambling Reform White Paper', url: 'https://www.gov.uk/government/publications/high-stakes-gambling-reform-for-the-digital-age', date: '2023' },
+  { num: 4, name: 'GamCare', dataset: 'Annual helpline statistics', date: '2023' },
+];
 
 // NHS gambling clinics in England, 2019–2024
 const nhsClinics = [2, 3, 7, 11, 15, 15];
@@ -71,8 +80,8 @@ export default function GamblingHarmTreatmentPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Gambling disorder affects approximately 290,000 to 340,000 people in England, with a further 1.5 million at moderate risk. The Gambling Commission estimates gambling-related harms cost the UK economy approximately £1.4 billion per year in health, social care, and criminal justice costs. Until 2019, the National Problem Gambling Clinic in London was the sole NHS provider. By 2024, 15 specialist clinics operate across England with a combined capacity of approximately 6,200 people per year — a 7.5-fold expansion in five years, funded initially from voluntary operator contributions and subsequently from a mandatory statutory levy introduced in 2023. Waiting times at many clinics still extend to six to eight weeks.</p>
-            <p>Despite this expansion, NHS capacity can treat approximately 2.1% of problem gamblers — fewer than one in 48. The gap between provision and need is most acute for those in areas without clinics, those whose gambling disorder coexists with other addictions or mental health conditions, and those who cannot access face-to-face services. Debt, family breakdown, domestic abuse, and suicide are all significantly elevated among problem gamblers. The suicide rate among problem gamblers is estimated at 15 times the national average. Harms extend well beyond the individual and fall hardest on households already in financial difficulty. GamCare's helpline received 47,000 contacts in 2023, and the Samaritans report that gambling harm is increasingly cited in crisis calls.</p>
+            <p>Gambling disorder affects approximately 290,000 to 340,000 people in England, with a further 1.5 million at moderate risk.<Cite nums={[2]} /> The Gambling Commission estimates gambling-related harms cost the UK economy approximately £1.4 billion per year in health, social care, and criminal justice costs.<Cite nums={[2]} /> Until 2019, the National Problem Gambling Clinic in London was the sole NHS provider. By 2024, 15 specialist clinics operate across England with a combined capacity of approximately 6,200 people per year — a 7.5-fold expansion in five years, funded initially from voluntary operator contributions and subsequently from a mandatory statutory levy introduced in 2023.<Cite nums={[1, 3]} /> Waiting times at many clinics still extend to six to eight weeks.<Cite nums={[1]} /></p>
+            <p>Despite this expansion, NHS capacity can treat approximately 2.1% of problem gamblers — fewer than one in 48.<Cite nums={[1, 2]} /> The gap between provision and need is most acute for those in areas without clinics, those whose gambling disorder coexists with other addictions or mental health conditions, and those who cannot access face-to-face services. Debt, family breakdown, domestic abuse, and suicide are all significantly elevated among problem gamblers. The suicide rate among problem gamblers is estimated at 15 times the national average.<Cite nums={[2]} /> Harms extend well beyond the individual and fall hardest on households already in financial difficulty. GamCare's helpline received 47,000 contacts in 2023, and the Samaritans report that gambling harm is increasingly cited in crisis calls.<Cite nums={[4]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +160,10 @@ export default function GamblingHarmTreatmentPage() {
             source="Source: NHS England — Gambling Disorder Treatment Services 2024. Gambling Commission — Annual Report 2024. DCMS — Gambling Reform White Paper 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

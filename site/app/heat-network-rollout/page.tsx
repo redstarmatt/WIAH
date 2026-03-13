@@ -7,6 +7,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'Heat Networks in Great Britain', url: 'https://www.gov.uk/government/statistics/heat-networks-in-great-britain', date: 'Dec 2024' },
+  { num: 2, name: 'CCC', dataset: 'Sixth Carbon Budget — Heat Networks', url: 'https://www.theccc.org.uk/publication/sixth-carbon-budget/', date: '2020' },
+  { num: 3, name: 'DESNZ', dataset: 'Heat Network Efficiency Study', url: 'https://www.gov.uk/government/publications/heat-network-efficiency-scheme', date: '2024' },
+  { num: 4, name: 'UK Parliament', dataset: 'Heat Network (Regulation) Act 2023', url: 'https://www.legislation.gov.uk/ukpga/2023/36', date: '2023' },
+  { num: 5, name: 'DESNZ', dataset: 'Heat Network Zoning Consultation', url: 'https://www.gov.uk/government/consultations/heat-network-zoning', date: '2024' },
+];
 
 export default function HeatNetworkRolloutPage() {
   // Homes connected to heat networks 2012–2024 (thousands)
@@ -149,12 +159,16 @@ export default function HeatNetworkRolloutPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on heat network rollout</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Heat networks — systems that distribute heat from a central source through insulated pipes to multiple buildings — currently supply 2.8% of UK heat demand across approximately 16,000 networks serving 480,000 homes. The Climate Change Committee's Sixth Carbon Budget requires that share to grow to around 20% by 2050, prioritising dense urban areas where building density makes individual heat pumps less economical. To reach even 10% by 2035 would require connecting several million additional homes. At the current rate of growth, the 2050 target is not reachable.</p>
-              <p>The quality of the existing estate is highly variable: a DESNZ efficiency study found 35% of heat networks had a higher carbon intensity than modern condensing gas boilers, typically because they are connected to gas combined heat and power plant rather than low-carbon sources. The Heat Network (Regulation) Act 2023 established a new Ofgem-overseen regime, requiring all networks to register and meet minimum performance standards — a significant consumer protection step, as heat network customers previously had fewer protections than gas or electricity customers.</p>
-              <p>The economics of expansion remain challenging. Distribution infrastructure in urban settings costs £1–3 million per kilometre before any revenue, and the merchant risk of building ahead of connections deters private investment. The government's Heat Network Zoning framework, advanced in 2024–25, would designate areas where heat networks are the preferred heating solution, creating market certainty for investors. Until that framework is in place, local authorities — the critical enabling actors — face prohibitive uncertainty in committing to multi-decade infrastructure programmes.</p>
+              <p>Heat networks — systems that distribute heat from a central source through insulated pipes to multiple buildings — currently supply 2.8% of UK heat demand across approximately 16,000 networks serving 480,000 homes.<Cite nums={1} /> The Climate Change Committee's Sixth Carbon Budget requires that share to grow to around 20% by 2050, prioritising dense urban areas where building density makes individual heat pumps less economical.<Cite nums={2} /> To reach even 10% by 2035 would require connecting several million additional homes. At the current rate of growth, the 2050 target is not reachable.<Cite nums={1} /></p>
+              <p>The quality of the existing estate is highly variable: a DESNZ efficiency study found 35% of heat networks had a higher carbon intensity than modern condensing gas boilers, typically because they are connected to gas combined heat and power plant rather than low-carbon sources.<Cite nums={3} /> The Heat Network (Regulation) Act 2023 established a new Ofgem-overseen regime, requiring all networks to register and meet minimum performance standards — a significant consumer protection step, as heat network customers previously had fewer protections than gas or electricity customers.<Cite nums={4} /></p>
+              <p>The economics of expansion remain challenging. Distribution infrastructure in urban settings costs £1–3 million per kilometre before any revenue, and the merchant risk of building ahead of connections deters private investment.<Cite nums={1} /> The government's Heat Network Zoning framework, advanced in 2024–25, would designate areas where heat networks are the preferred heating solution, creating market certainty for investors.<Cite nums={5} /> Until that framework is in place, local authorities — the critical enabling actors — face prohibitive uncertainty in committing to multi-decade infrastructure programmes.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

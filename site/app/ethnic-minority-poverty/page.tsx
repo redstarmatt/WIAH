@@ -7,6 +7,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'JRF / Runnymede Trust', dataset: 'Poverty and Ethnicity Analysis', url: 'https://www.jrf.org.uk/report/poverty-and-ethnicity-uk', date: '2024' },
+  { num: 2, name: 'JRF', dataset: 'In-work poverty analysis by ethnicity', url: 'https://www.jrf.org.uk/work/uk-poverty-2024', date: '2024' },
+];
 
 export default function EthnicMinorityPovertyPage() {
   // Chart 1: Poverty rate by ethnicity 2015–2024 (%)
@@ -150,12 +157,16 @@ export default function EthnicMinorityPovertyPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on ethnic minority poverty</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>46% of people from ethnic minority backgrounds live in poverty — more than double the 21% rate for white British people — a gap that has narrowed only slightly from 33 percentage points in 2015. Bangladeshi households experience poverty at approximately 58%, Pakistani households at 50%, Black African at 45%, Black Caribbean at 40%. Indian households are much closer to the white British average at around 22%, reflecting different educational and labour market outcomes. Child poverty is starker: 55% of children from ethnic minority backgrounds live in poverty versus 22% of white British children.</p>
-              <p>In-work poverty compounds the picture. Even among employed ethnic minority workers, the poverty rate stands at around 35% — nearly three times the white British in-work poverty rate of 14%. This reflects lower hourly wages, shorter hours, greater insecurity, and a concentration in sectors with worse conditions. CV studies consistently find that applicants with white British-sounding names are approximately 75% more likely to receive a callback than equally qualified ethnic minority applicants.</p>
+              <p>46% of people from ethnic minority backgrounds live in poverty — more than double the 21% rate for white British people — a gap that has narrowed only slightly from 33 percentage points in 2015.<Cite nums={1} /> Bangladeshi households experience poverty at approximately 58%, Pakistani households at 50%, Black African at 45%, Black Caribbean at 40%.<Cite nums={1} /> Indian households are much closer to the white British average at around 22%, reflecting different educational and labour market outcomes. Child poverty is starker: 55% of children from ethnic minority backgrounds live in poverty versus 22% of white British children.<Cite nums={1} /></p>
+              <p>In-work poverty compounds the picture. Even among employed ethnic minority workers, the poverty rate stands at around 35% — nearly three times the white British in-work poverty rate of 14%.<Cite nums={2} /> This reflects lower hourly wages, shorter hours, greater insecurity, and a concentration in sectors with worse conditions. CV studies consistently find that applicants with white British-sounding names are approximately 75% more likely to receive a callback than equally qualified ethnic minority applicants.</p>
               <p>The concentration of poverty in specific communities reflects compounding disadvantage. Larger average household sizes increase poverty risk under the two-child limit. Restricted benefit eligibility affects some recent migrants. Labour market discrimination at hiring and promotion levels compounds lower initial earnings. Ethnicity pay gap reporting remains voluntary, leaving employer incentives insufficient to drive structural change.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

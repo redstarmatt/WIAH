@@ -8,6 +8,13 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Electoral Commission', dataset: 'UK Electoral Registers', url: 'https://www.electoralcommission.org.uk/research-reports-and-data/our-reports-and-data-our-research/electoral-data-and-statistics', date: '2023' },
+  { num: 2, name: 'Electoral Commission', dataset: 'Diversity and barriers to registration', url: 'https://www.electoralcommission.org.uk/research-reports-and-data/our-reports-and-data-our-research/barriers-to-registration', date: '2023' },
+];
 
 // Missing from electoral roll (millions), 2015–2023 — Electoral Commission
 const missingValues = [7.5, 7.6, 7.7, 7.8, 8.0, 8.1, 8.0, 8.1, 8.0];
@@ -58,8 +65,8 @@ export default function ElectoralRegistrationGapPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 8 million people in the UK are eligible to vote but are not registered — a figure that has remained stubbornly high for over a decade despite the Individual Voter Registration system introduced in 2014. Voter ID requirements brought in for the 2023 local elections and 2024 general election added a further barrier: an estimated 2 million registered voters lack the required photographic ID. Scotland and Wales have moved toward more proactive registration models; England has not, and the Electoral Commission has repeatedly called for reform and more resources for Electoral Registration Officers.</p>
-            <p>The gap falls hardest on already-marginalised groups. Young people aged 18–24 are most likely to be unregistered (around 34%), private renters underregister because each move requires a new application, and people from ethnic minority backgrounds are around 11 percentage points less likely to be on the roll than white British voters. Unregistered citizens are also excluded from jury service and some credit checks; campaign resources follow registered voter data, meaning unregistered communities receive less political attention, compounding their disengagement from democratic life.</p>
+            <p>Around 8 million people in the UK are eligible to vote but are not registered — a figure that has remained stubbornly high for over a decade despite the Individual Voter Registration system introduced in 2014.<Cite nums={[1]} /> Voter ID requirements brought in for the 2023 local elections and 2024 general election added a further barrier: an estimated 2 million registered voters lack the required photographic ID.<Cite nums={[1]} /> Scotland and Wales have moved toward more proactive registration models; England has not, and the Electoral Commission has repeatedly called for reform and more resources for Electoral Registration Officers.</p>
+            <p>The gap falls hardest on already-marginalised groups. Young people aged 18–24 are most likely to be unregistered (around 34%), private renters underregister because each move requires a new application, and people from ethnic minority backgrounds are around 11 percentage points less likely to be on the roll than white British voters.<Cite nums={[2]} /> Unregistered citizens are also excluded from jury service and some credit checks; campaign resources follow registered voter data, meaning unregistered communities receive less political attention, compounding their disengagement from democratic life.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -137,6 +144,9 @@ export default function ElectoralRegistrationGapPage() {
             source="Source: Electoral Commission — Maintaining the integrity of the electoral register, 2023. IPPR — Democracy Unlocked, 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

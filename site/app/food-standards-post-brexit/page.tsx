@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'FSA / FSS', dataset: 'Food and Feed Safety Incidents Network', url: 'https://www.food.gov.uk/safety-hygiene/food-alerts', date: '2025' },
+  { num: 2, name: 'DEFRA', dataset: 'Border Target Operating Model', url: 'https://www.gov.uk/government/publications/the-border-target-operating-model', date: '2024' },
+  { num: 3, name: 'Trade and Agriculture Commission', dataset: 'Scrutiny reports', url: 'https://www.gov.uk/government/organisations/trade-and-agriculture-commission', date: '2025' },
+];
 
 // Food safety incidents involving imports, 2019–2025
 const safetyIncidents = [62, 58, 71, 78, 84, 87, 90];
@@ -65,8 +73,8 @@ export default function FoodStandardsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Brexit removed the UK from the EU's Rapid Alert System for Food and Feed (RASFF) — the network through which member states share food safety alerts in real time. The UK created its own Food and Feed Safety and Incidents Network but operates it with fewer resources and without the automatic information sharing that RASFF provides. More consequentially, the government repeatedly delayed implementing import border checks on EU food and feed imports after Brexit. Full checks were promised for January 2021, delayed to January 2022, delayed to July 2022, then to November 2023, before physical checks finally began at major ports in April 2024. During this three-year period, UK import checks on EU food products ran at single-digit percentages.</p>
-            <p>More concerning for the longer term is the question of standards divergence. The UK–US trade deal negotiations remain live, with the American agricultural sector seeking access for products banned in the UK under EU-inherited regulations — hormone-treated beef, ractopamine-treated pork, chlorine-washed chicken. The Food Standards Agency has stated it will not recommend standards reductions in trade deals. The Trade and Agriculture Commission scrutinises each agreement, but its reports are advisory rather than binding. The combination of reduced border surveillance and potential future trade pressures creates a genuine long-term risk to the food standards the UK has historically maintained.</p>
+            <p>Brexit removed the UK from the EU's Rapid Alert System for Food and Feed (RASFF) — the network through which member states share food safety alerts in real time. The UK created its own Food and Feed Safety and Incidents Network but operates it with fewer resources and without the automatic information sharing that RASFF provides.<Cite nums={[1]} /> More consequentially, the government repeatedly delayed implementing import border checks on EU food and feed imports after Brexit. Full checks were promised for January 2021, delayed to January 2022, delayed to July 2022, then to November 2023, before physical checks finally began at major ports in April 2024.<Cite nums={[2]} /> During this three-year period, UK import checks on EU food products ran at single-digit percentages.<Cite nums={[2]} /></p>
+            <p>More concerning for the longer term is the question of standards divergence. The UK–US trade deal negotiations remain live, with the American agricultural sector seeking access for products banned in the UK under EU-inherited regulations — hormone-treated beef, ractopamine-treated pork, chlorine-washed chicken. The Food Standards Agency has stated it will not recommend standards reductions in trade deals.<Cite nums={[1]} /> The Trade and Agriculture Commission scrutinises each agreement, but its reports are advisory rather than binding.<Cite nums={[3]} /> The combination of reduced border surveillance and potential future trade pressures creates a genuine long-term risk to the food standards the UK has historically maintained.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -145,6 +153,9 @@ export default function FoodStandardsPage() {
             source="Source: FSA — Food Standards Agency position on trade and food standards 2024. Trade and Agriculture Commission — scrutiny reports 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

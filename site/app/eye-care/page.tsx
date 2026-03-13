@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // NHS eye clinic waits over 18 weeks (thousands), 2018–2024 — NHS England
 const eyeWaitValues = [80, 100, 130, 120, 180, 250, 290];
@@ -46,6 +48,11 @@ const eyeAnnotations: Annotation[] = [
   { date: new Date(2020, 2, 1), label: '2020: COVID — services suspended' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Referral to treatment waiting times', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/', date: '2024' },
+  { num: 2, name: 'RNIB', dataset: 'Sight loss crisis in NHS eye care', url: 'https://www.rnib.org.uk/your-eyes/eye-health-resources-for-professionals/nhs-eye-care-crisis/', date: '2024' },
+];
+
 export default function EyeCarePage() {
   return (
     <>
@@ -60,8 +67,8 @@ export default function EyeCarePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Ophthalmology — the medical treatment of eye conditions — is the single largest outpatient speciality in the NHS, accounting for approximately 8% of all outpatient appointments. Waiting times have deteriorated severely since the pandemic: 290,000 patients were waiting more than 18 weeks in 2024, up from around 80,000 in 2018. Sight loss is often irreversible — delayed treatment for conditions like glaucoma, age-related macular degeneration (AMD), and diabetic retinopathy causes permanent vision loss that cannot be restored even when treatment eventually begins. The RNIB estimates that 16,000 people per year are losing preventable sight as a direct result of NHS waiting time failures.</p>
-            <p>Glaucoma — which affects around 700,000 people in the UK and causes gradual, irreversible damage to the optic nerve — is the condition most severely affected by delayed follow-up care. Patients can lose significant portions of their visual field in the weeks or months between a missed appointment and rescheduled treatment. Around 90,000 glaucoma patients were waiting more than six months for follow-up appointments in 2024. The NHS has piloted optometrist-led community glaucoma monitoring, where trained opticians conduct regular monitoring appointments in community settings instead of hospital clinics, freeing hospital capacity for complex cases. Evidence from these pilots shows they are safe, cost-effective, and acceptable to patients — but national roll-out has been slow.</p>
+            <p>Ophthalmology — the medical treatment of eye conditions — is the single largest outpatient speciality in the NHS, accounting for approximately 8% of all outpatient appointments.<Cite nums={[1]} /> Waiting times have deteriorated severely since the pandemic: 290,000 patients were waiting more than 18 weeks in 2024, up from around 80,000 in 2018.<Cite nums={[1]} /> Sight loss is often irreversible — delayed treatment for conditions like glaucoma, age-related macular degeneration (AMD), and diabetic retinopathy causes permanent vision loss that cannot be restored even when treatment eventually begins. The RNIB estimates that 16,000 people per year are losing preventable sight as a direct result of NHS waiting time failures.<Cite nums={[2]} /></p>
+            <p>Glaucoma — which affects around 700,000 people in the UK and causes gradual, irreversible damage to the optic nerve — is the condition most severely affected by delayed follow-up care.<Cite nums={[2]} /> Patients can lose significant portions of their visual field in the weeks or months between a missed appointment and rescheduled treatment. Around 90,000 glaucoma patients were waiting more than six months for follow-up appointments in 2024.<Cite nums={[2]} /> The NHS has piloted optometrist-led community glaucoma monitoring, where trained opticians conduct regular monitoring appointments in community settings instead of hospital clinics, freeing hospital capacity for complex cases. Evidence from these pilots shows they are safe, cost-effective, and acceptable to patients — but national roll-out has been slow.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -139,6 +146,9 @@ export default function EyeCarePage() {
             source="Source: RNIB — Sight loss crisis in NHS eye care 2024. NHS England — Community ophthalmology pathway review."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

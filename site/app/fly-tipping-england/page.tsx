@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Total incidents (thousands), 2013–2024
 const totalIncidents = [710, 810, 900, 930, 950, 990, 1000, 980, 1010, 1050, 1030, 1080];
@@ -52,6 +54,11 @@ const enforcementAnnotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: Courts suspended during COVID' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA', dataset: 'Fly-tipping incidents and actions taken in England', url: 'https://www.gov.uk/government/statistics/fly-tipping-in-england', date: 'Oct 2024' },
+  { num: 2, name: 'Oldham Council', dataset: 'Bulky waste collection pilot evaluation', date: '2020' },
+];
+
 export default function FlyTippingEnglandPage() {
   return (
     <>
@@ -66,8 +73,8 @@ export default function FlyTippingEnglandPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In 2023–24, local authorities dealt with an estimated 1.08 million fly-tipping incidents — a 52% increase on a decade earlier. The single biggest category is household waste, which accounts for 59% of all incidents. The connection to bulky waste charging policies is well established: as more councils introduced fees for bulky waste collection, illegal dumping rose in parallel. When Oldham Council scrapped its charges in a 2019 trial, fly-tipping fell by 48% in the affected area. Despite this evidence, fewer than a quarter of English councils currently offer free bulky waste collection.</p>
-            <p>The enforcement picture reveals a quiet transformation. Local authorities have shifted decisively from prosecutions to fixed penalty notices. In 2013–14, councils issued 26,300 FPNs and brought 2,171 prosecutions. By 2023–24, fixed penalties had tripled to 78,500, while prosecutions had halved to 1,085. This reflects both pragmatism — FPNs are cheaper and faster to administer — and the erosion of local authority legal capacity after a decade of funding cuts. DEFRA changed its clearance cost methodology in 2021–22 to measure direct clearance expenditure only, causing the headline figure to drop from around £63 million to £15 million. The reduction is statistical, not real.</p>
+            <p>In 2023–24, local authorities dealt with an estimated 1.08 million fly-tipping incidents — a 52% increase on a decade earlier<Cite nums={1} />. The single biggest category is household waste, which accounts for 59% of all incidents<Cite nums={1} />. The connection to bulky waste charging policies is well established: as more councils introduced fees for bulky waste collection, illegal dumping rose in parallel. When Oldham Council scrapped its charges in a 2019 trial, fly-tipping fell by 48% in the affected area<Cite nums={2} />. Despite this evidence, fewer than a quarter of English councils currently offer free bulky waste collection.</p>
+            <p>The enforcement picture reveals a quiet transformation. Local authorities have shifted decisively from prosecutions to fixed penalty notices. In 2013–14, councils issued 26,300 FPNs and brought 2,171 prosecutions. By 2023–24, fixed penalties had tripled to 78,500, while prosecutions had halved to 1,085<Cite nums={1} />. This reflects both pragmatism — FPNs are cheaper and faster to administer — and the erosion of local authority legal capacity after a decade of funding cuts. DEFRA changed its clearance cost methodology in 2021–22 to measure direct clearance expenditure only, causing the headline figure to drop from around £63 million to £15 million. The reduction is statistical, not real.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +153,9 @@ export default function FlyTippingEnglandPage() {
             source="Source: DEFRA — Fly-tipping statistics. Oldham Council pilot evaluation, 2020."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Female-led businesses as % of all businesses, 2015–2024 — Rose Review / BEIS
 const femaleLeadValues = [19, 20, 20, 21, 22, 22, 23, 24, 25, 26];
@@ -46,6 +48,12 @@ const entrepreneurAnnotations: Annotation[] = [
   { date: new Date(2019, 0, 1), label: '2019: Rose Review published' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Rose Review / BEIS', dataset: 'Review of female entrepreneurship', url: 'https://assets.publishing.service.gov.uk/media/5d8b87d2e5274a2e96f9e74d/The_Alison_Rose_Review_of_Female_Entrepreneurship.pdf', date: '2019' },
+  { num: 2, name: 'British Business Bank', dataset: 'Diversity in UK venture capital', url: 'https://www.british-business-bank.co.uk/research/diversity-in-uk-venture-capital/', date: '2023' },
+  { num: 3, name: 'ONS', dataset: 'Labour Force Survey — self-employment by sex', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/mgsr/lms', date: '2024' },
+];
+
 export default function FemaleEntrepreneurshipPage() {
   return (
     <>
@@ -60,8 +68,8 @@ export default function FemaleEntrepreneurshipPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Female entrepreneurship in the UK has grown steadily — women now lead approximately 26% of businesses, up from 19% in 2015, and the female self-employment rate has risen to 10% of female working-age adults. The Rose Review (2019) — commissioned by the government and led by Alison Rose, former CEO of NatWest — identified the UK's female entrepreneurship gap as costing the economy £250 billion in unrealised potential and set a target of halving the proportion of businesses founded and led by women within a decade. Progress has been made, but the structural barriers to scaling female-founded businesses remain largely intact.</p>
-            <p>The most striking gap is in venture capital funding. Despite improvements from a very low base, female-founded companies received only around 10% of UK VC deals in 2023, and female-only founding teams received just 3% — even though evidence from British Business Bank analysis shows that female-founded companies deliver 35% higher return on investment than male equivalents, controlling for sector and stage. The barriers include networks and relationships (VC partnerships remain predominantly male), risk framing (female founders receive more skeptical questioning in pitches), and sector concentration (female founders disproportionately start in sectors with lower VC interest). The British Business Bank's Invest in Women Taskforce has committed to increasing female-founded company VC investment, but progress has been incremental.</p>
+            <p>Female entrepreneurship in the UK has grown steadily — women now lead approximately 26% of businesses, up from 19% in 2015, and the female self-employment rate has risen to 10% of female working-age adults.<Cite nums={[1, 3]} /> The Rose Review (2019) — commissioned by the government and led by Alison Rose, former CEO of NatWest — identified the UK's female entrepreneurship gap as costing the economy £250 billion in unrealised potential and set a target of halving the proportion of businesses founded and led by women within a decade.<Cite nums={[1]} /> Progress has been made, but the structural barriers to scaling female-founded businesses remain largely intact.</p>
+            <p>The most striking gap is in venture capital funding. Despite improvements from a very low base, female-founded companies received only around 10% of UK VC deals in 2023, and female-only founding teams received just 3%<Cite nums={[2]} /> — even though evidence from British Business Bank analysis shows that female-founded companies deliver 35% higher return on investment than male equivalents, controlling for sector and stage.<Cite nums={[2]} /> The barriers include networks and relationships (VC partnerships remain predominantly male), risk framing (female founders receive more skeptical questioning in pitches), and sector concentration (female founders disproportionately start in sectors with lower VC interest). The British Business Bank's Invest in Women Taskforce has committed to increasing female-founded company VC investment, but progress has been incremental.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -139,6 +147,9 @@ export default function FemaleEntrepreneurshipPage() {
             source="Source: British Business Bank — Diversity in UK venture capital 2023. Rose Review — Aligning finance with ambition 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

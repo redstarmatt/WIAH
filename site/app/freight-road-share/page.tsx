@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfT', dataset: 'Transport Statistics Great Britain', url: 'https://www.gov.uk/government/statistics/transport-statistics-great-britain-2024', date: '2024' },
+  { num: 2, name: 'ORR', dataset: 'Freight rail usage statistics', url: 'https://www.orr.gov.uk/monitoring-regulation/rail/freight', date: '2024' },
+  { num: 3, name: 'Eurostat', dataset: 'Freight transport statistics', date: '2024' },
+];
 
 // Road freight share (%), 2015–2025
 const roadSharePct = [77, 77, 77, 77, 77, 78, 79, 76, 78, 78, 78];
@@ -71,8 +79,8 @@ export default function FreightRoadSharePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain's freight system is unusually road-dependent by European standards. Around 78% of domestic freight by tonne-kilometre travels by road — compared to 63% in Germany, 62% in France, and an EU average of around 74%. Rail freight in the UK carries only 9% of goods, roughly half the European average, despite a dense rail network. The imbalance matters for several reasons: road freight generates three to four times as much carbon per tonne-kilometre as rail; HGVs inflict disproportionate road wear (a 40-tonne lorry causes approximately 100,000 times the pavement damage of a car); and the UK's motorway network is already at capacity on key corridors. Lorry vehicle miles have plateaued at around 24 billion annually, but the overall growth in freight demand means road congestion continues to worsen.</p>
-            <p>The HGV driver shortage that peaked at an estimated 100,000 vacancies in 2021 exposed the vulnerability of road-dominated supply chains. Brexit reduced access to the European driver pool — around 14,000 EU drivers left the UK in 2020–21 — and an ageing domestic workforce created a structural gap that had been building for a decade. Short-term emergency licences partially addressed the acute crisis, but driver demographics remain challenging: the average UK HGV driver is 55 years old. Rail freight grew 8% between 2022 and 2025, driven by intermodal container traffic, but from a very low base. The government's freight strategy aims to increase rail freight's modal share, but without specific investment commitments the structural dependence on road is likely to persist.</p>
+            <p>Britain's freight system is unusually road-dependent by European standards. Around 78% of domestic freight by tonne-kilometre travels by road — compared to 63% in Germany, 62% in France, and an EU average of around 74%.<Cite nums={[1, 3]} /> Rail freight in the UK carries only 9% of goods, roughly half the European average, despite a dense rail network.<Cite nums={[2]} /> The imbalance matters for several reasons: road freight generates three to four times as much carbon per tonne-kilometre as rail; HGVs inflict disproportionate road wear (a 40-tonne lorry causes approximately 100,000 times the pavement damage of a car); and the UK's motorway network is already at capacity on key corridors.<Cite nums={[1]} /> Lorry vehicle miles have plateaued at around 24 billion annually, but the overall growth in freight demand means road congestion continues to worsen.<Cite nums={[1]} /></p>
+            <p>The HGV driver shortage that peaked at an estimated 100,000 vacancies in 2021 exposed the vulnerability of road-dominated supply chains.<Cite nums={[1]} /> Brexit reduced access to the European driver pool — around 14,000 EU drivers left the UK in 2020–21 — and an ageing domestic workforce created a structural gap that had been building for a decade. Short-term emergency licences partially addressed the acute crisis, but driver demographics remain challenging: the average UK HGV driver is 55 years old. Rail freight grew 8% between 2022 and 2025, driven by intermodal container traffic, but from a very low base.<Cite nums={[2]} /> The government's freight strategy aims to increase rail freight's modal share, but without specific investment commitments the structural dependence on road is likely to persist.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,9 @@ export default function FreightRoadSharePage() {
             source="Source: ORR — Freight rail usage statistics 2025. Network Rail — Freight growth strategy 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

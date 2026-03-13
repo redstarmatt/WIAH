@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Total UK farm subsidies (£bn), 2015–2024 — Defra
 const subsidyValues = [3.0, 3.0, 3.1, 3.1, 3.0, 3.1, 3.2, 3.1, 3.0, 2.8];
@@ -47,6 +49,12 @@ const subsidyAnnotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: BPS reductions begin; SFI launched' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Defra', dataset: 'Environmental Land Management statistics', url: 'https://www.gov.uk/government/collections/environmental-land-management-statistics', date: '2024' },
+  { num: 2, name: 'Defra', dataset: 'Farm Business Survey', url: 'https://www.gov.uk/government/statistics/farm-business-survey', date: '2024' },
+  { num: 3, name: 'NFU', dataset: 'Farm Business Survey', date: '2024' },
+];
+
 export default function FarmingSubsidiesPage() {
   return (
     <>
@@ -61,8 +69,8 @@ export default function FarmingSubsidiesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Brexit gave the UK the opportunity to redesign agricultural subsidies from scratch, replacing the EU's Common Agricultural Policy (CAP) — which paid farmers per hectare of land regardless of environmental outcomes — with a new system that pays for 'public goods' such as biodiversity, clean water, carbon sequestration, and animal welfare. The transition is being managed through a seven-year phase-out (2021–2027) of the Basic Payment Scheme (BPS), which paid around £2.1 billion per year. In parallel, three new schemes have been introduced: the Sustainable Farming Incentive (SFI), Countryside Stewardship (CS), and Landscape Recovery. Together these aim to replace BPS by 2028.</p>
-            <p>However, the transition is creating a serious funding gap. BPS has been cut from £2.1 billion to approximately £600 million in 2024, but SFI payments totalled only around £400 million — meaning total support for farmers fell. The NFU (National Farmers' Union) and farming charities have repeatedly warned that the pace of BPS reduction has outstripped the availability of SFI agreements, particularly for smaller farms that lack the capacity to navigate the complex application process. A series of proposed changes to inheritance tax for agricultural land (announced in the October 2024 Budget) — removing the 100% Agricultural Property Relief for assets above £1 million — triggered large-scale farmer protests and has been estimated to affect around 70,000 farming businesses.</p>
+            <p>Brexit gave the UK the opportunity to redesign agricultural subsidies from scratch, replacing the EU's Common Agricultural Policy (CAP) — which paid farmers per hectare of land regardless of environmental outcomes — with a new system that pays for 'public goods' such as biodiversity, clean water, carbon sequestration, and animal welfare. The transition is being managed through a seven-year phase-out (2021–2027) of the Basic Payment Scheme (BPS), which paid around £2.1 billion per year.<Cite nums={[2]} /> In parallel, three new schemes have been introduced: the Sustainable Farming Incentive (SFI), Countryside Stewardship (CS), and Landscape Recovery. Together these aim to replace BPS by 2028.<Cite nums={[1]} /></p>
+            <p>However, the transition is creating a serious funding gap. BPS has been cut from £2.1 billion to approximately £600 million in 2024, but SFI payments totalled only around £400 million — meaning total support for farmers fell.<Cite nums={[1, 2]} /> The NFU (National Farmers' Union) and farming charities have repeatedly warned that the pace of BPS reduction has outstripped the availability of SFI agreements, particularly for smaller farms that lack the capacity to navigate the complex application process.<Cite nums={[3]} /> A series of proposed changes to inheritance tax for agricultural land (announced in the October 2024 Budget) — removing the 100% Agricultural Property Relief for assets above £1 million — triggered large-scale farmer protests and has been estimated to affect around 70,000 farming businesses.<Cite nums={[3]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -140,6 +148,9 @@ export default function FarmingSubsidiesPage() {
             source="Source: Defra — Environmental Land Management statistics 2024. Climate Change Committee — Land use: Policies for a Net Zero UK."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

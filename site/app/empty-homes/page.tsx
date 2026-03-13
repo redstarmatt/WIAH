@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -33,6 +35,13 @@ interface EmptyHomesData {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Council Tax Base (CTB1)', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-council-tax', date: '2024' },
+  { num: 2, name: 'DLUHC', dataset: 'Local Authority Housing Statistics — Waiting Lists', url: 'https://www.gov.uk/government/collections/local-authority-housing-data', date: '2024' },
+  { num: 3, name: 'DLUHC', dataset: 'Rough Sleeping Snapshot', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2024' },
+  { num: 4, name: 'Homes England', dataset: 'Empty Homes Programme Evaluation', date: '2015' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -89,8 +98,8 @@ export default function EmptyHomesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has roughly 700,000 empty dwellings, of which approximately 261,000 have been vacant for over six months — the standard definition of &ldquo;long-term empty.&rdquo; The total figure is comparable to the entire housing stock of Greater Manchester. These properties span every region and tenure: derelict Victorian terraces in post-industrial towns, buy-to-leave investment flats in central London, probate properties awaiting sale, and homes abandoned after compulsory purchase orders stalled. DLUHC's council tax base data shows long-term empties rising from 205,000 in 2016 to 261,000 in 2024, a 27% increase over eight years. The broader count of all empty homes — including short-term vacancies between lettings and sales — exceeds 700,000, a figure that has climbed every year since 2017.</p>
-            <p>The trend is running in the wrong direction at precisely the wrong time. England's social housing waiting list stands at 1.3 million households, and the government's own assessment identifies a need for 300,000 new homes per year — a target consistently missed since it was first announced. Meanwhile, rough sleeping has risen 27% since 2022 and temporary accommodation costs local authorities over £1.7 billion per year. The Levelling Up and Regeneration Act 2023 gave councils the power to charge up to a 300% council tax premium on homes empty for more than one year, and up to 100% on second homes. However, implementation is patchy: many councils have not adopted the full premium, and enforcement relies on self-declaration through council tax records, a system widely acknowledged to undercount true vacancies.</p>
+            <p>England has roughly 700,000 empty dwellings, of which approximately 261,000 have been vacant for over six months — the standard definition of &ldquo;long-term empty.&rdquo;<Cite nums={1} /> The total figure is comparable to the entire housing stock of Greater Manchester. These properties span every region and tenure: derelict Victorian terraces in post-industrial towns, buy-to-leave investment flats in central London, probate properties awaiting sale, and homes abandoned after compulsory purchase orders stalled. DLUHC's council tax base data shows long-term empties rising from 205,000 in 2016 to 261,000 in 2024, a 27% increase over eight years.<Cite nums={1} /> The broader count of all empty homes — including short-term vacancies between lettings and sales — exceeds 700,000, a figure that has climbed every year since 2017.<Cite nums={1} /></p>
+            <p>The trend is running in the wrong direction at precisely the wrong time. England's social housing waiting list stands at 1.3 million households<Cite nums={2} />, and the government's own assessment identifies a need for 300,000 new homes per year — a target consistently missed since it was first announced. Meanwhile, rough sleeping has risen 27% since 2022<Cite nums={3} /> and temporary accommodation costs local authorities over £1.7 billion per year.<Cite nums={2} /> The Levelling Up and Regeneration Act 2023 gave councils the power to charge up to a 300% council tax premium on homes empty for more than one year, and up to 100% on second homes. However, implementation is patchy: many councils have not adopted the full premium, and enforcement relies on self-declaration through council tax records, a system widely acknowledged to undercount true vacancies.</p>
             </div>
         </section>
 
@@ -172,6 +181,10 @@ export default function EmptyHomesPage() {
             source="Source: DLUHC — Council Tax Base 2024; Homes England — Empty Homes Programme Evaluation 2015."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

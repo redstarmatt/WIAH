@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Consumer Price Inflation (MM23)', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/d7g7/mm23', date: '2025' },
+  { num: 2, name: 'ONS', dataset: 'Average Weekly Earnings (EARN01)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/timeseries/kab9/lms', date: '2025' },
+  { num: 3, name: 'ONS', dataset: 'Labour Market Statistics (LMS)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/lf24/lms', date: '2025' },
+  { num: 4, name: 'ONS', dataset: 'Household Income Inequality', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/householdincomeinequalityfinancial/financialyearending2024', date: '2024' },
+];
 
 // CPI annual rate (%), 2015–2025 — ONS
 const cpiValues = [0.0, 0.7, 2.7, 2.5, 1.8, 0.9, 2.5, 9.1, 11.1, 6.7, 2.6];
@@ -78,8 +87,8 @@ export default function EconomyPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Real wages took 16 years to recover their 2008 peak — the longest sustained squeeze on living standards since records began. At the root is a productivity crisis: output per hour grew at roughly 2% a year before the financial crisis, then flatlined. Without productivity growth, wages cannot sustainably rise. The 2022–23 cost-of-living shock — CPI hitting 11.1% in October 2022 — compounded the damage, though inflation has since fallen to around 2.6%. Meanwhile, over a fifth of working-age adults remain economically inactive, elevated since COVID and driven largely by long-term sickness. The economy is growing again, but the foundations remain brittle.</p>
-            <p>The National Living Wage, introduced in 2015, compressed the bottom of the earnings distribution: the lowest-paid workers saw faster nominal pay growth than the median through the late 2010s. The April 2024 rise to £11.44 per hour — a 10% increase — was the largest ever. But higher earners have retained a structural advantage, and the ratio between top and bottom decile earnings has barely shifted in a decade. London generates 174% of the UK average GVA per head; the North East generates 73%. This extreme regional concentration of economic activity means growth is unevenly shared and politically as well as economically significant.</p>
+            <p>Real wages took 16 years to recover their 2008 peak — the longest sustained squeeze on living standards since records began.<Cite nums={[2]} /> At the root is a productivity crisis: output per hour grew at roughly 2% a year before the financial crisis, then flatlined. Without productivity growth, wages cannot sustainably rise. The 2022–23 cost-of-living shock — CPI hitting 11.1% in October 2022 — compounded the damage, though inflation has since fallen to around 2.6%.<Cite nums={[1]} /> Meanwhile, over a fifth of working-age adults remain economically inactive, elevated since COVID and driven largely by long-term sickness.<Cite nums={[3]} /> The economy is growing again, but the foundations remain brittle.</p>
+            <p>The National Living Wage, introduced in 2015, compressed the bottom of the earnings distribution: the lowest-paid workers saw faster nominal pay growth than the median through the late 2010s. The April 2024 rise to £11.44 per hour — a 10% increase — was the largest ever.<Cite nums={[2]} /> But higher earners have retained a structural advantage, and the ratio between top and bottom decile earnings has barely shifted in a decade.<Cite nums={[4]} /> London generates 174% of the UK average GVA per head; the North East generates 73%.<Cite nums={[3]} /> This extreme regional concentration of economic activity means growth is unevenly shared and politically as well as economically significant.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -157,6 +166,9 @@ export default function EconomyPage() {
             source="Source: ONS — Household Income Inequality, Financial Year Ending 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

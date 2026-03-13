@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Education', dataset: 'Children looked after in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2024' },
+  { num: 2, name: 'Fostering Network', dataset: 'Foster Care Statistics 2024' },
+  { num: 3, name: 'CMA', dataset: "Children's social care market study", url: 'https://www.gov.uk/cma-cases/childrens-social-care-market-study', date: '2022' },
+];
 
 // Children in care, 2010–2024
 const childrenInCare = [64400, 65520, 67050, 68060, 69540, 70440, 72670, 74570, 75420, 78150, 80080, 82170, 83840, 83840, 81770];
@@ -78,8 +86,8 @@ export default function FosterCareSystemCrisisPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>There are now 81,770 children in local authority care in England, the highest sustained level since the Children Act 1989. The figure has risen almost every year since 2010, driven by a combination of rising child poverty, cuts to early-help and family support services, and a system that intervenes late rather than early. Meanwhile, the number of approved foster carers peaked at around 49,700 in 2017 and has fallen steadily since, dropping 12% to approximately 42,070 in 2024. The Fostering Network estimates England is short of at least 5,900 foster families at any given time.</p>
-            <p>When a local authority cannot find a foster placement through its own network, it turns to independent fostering agencies, where weekly fees now average over £5,000, compared to around £900 for an in-house placement. The Competition and Markets Authority found in 2022 that the largest private providers were making profit margins of 19–23%. Some councils now spend more than half their children's services budget on placements alone, crowding out the preventive work that might reduce the number of children entering care. Care leavers face some of the worst outcomes of any group in the country: by age 21, 39% are not in education, employment, or training, compared to 12% of all young people.</p>
+            <p>There are now 81,770 children in local authority care in England, the highest sustained level since the Children Act 1989.<Cite nums={[1]} /> The figure has risen almost every year since 2010, driven by a combination of rising child poverty, cuts to early-help and family support services, and a system that intervenes late rather than early. Meanwhile, the number of approved foster carers peaked at around 49,700 in 2017 and has fallen steadily since, dropping 12% to approximately 42,070 in 2024.<Cite nums={[2]} /> The Fostering Network estimates England is short of at least 5,900 foster families at any given time.<Cite nums={[2]} /></p>
+            <p>When a local authority cannot find a foster placement through its own network, it turns to independent fostering agencies, where weekly fees now average over £5,000, compared to around £900 for an in-house placement.<Cite nums={[3]} /> The Competition and Markets Authority found in 2022 that the largest private providers were making profit margins of 19–23%.<Cite nums={[3]} /> Some councils now spend more than half their children's services budget on placements alone, crowding out the preventive work that might reduce the number of children entering care. Care leavers face some of the worst outcomes of any group in the country: by age 21, 39% are not in education, employment, or training, compared to 12% of all young people.<Cite nums={[1]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -158,6 +166,9 @@ export default function FosterCareSystemCrisisPage() {
             source="Source: DfE — Mockingbird programme evaluation, 2023. DfE — Staying Put guidance and outcomes data, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofgem', dataset: 'Prepayment meter installation data — supplier compliance reporting', url: 'https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you', date: '2024' },
+  { num: 2, name: 'Ofgem', dataset: 'Consumer Vulnerability Report', url: 'https://www.ofgem.gov.uk/publications/consumer-vulnerability-strategy', date: '2024' },
+  { num: 3, name: 'Citizens Advice', dataset: 'Energy statistics and case evidence', date: '2024' },
+];
 
 export default function EnergyDisconnectionsPage() {
   const forcedPPMData = [80, 150, 200, 280, 380, 480, 600, 320, 120];
@@ -142,12 +150,16 @@ export default function EnergyDisconnectionsPage() {
           <section id="sec-context" className="max-w-2xl mb-12 mt-8">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The energy crisis exposed who bears the risk</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Around 7 million households in Great Britain use prepayment meters — disproportionately lower-income, in previous energy debt, or in rented accommodation where landlords have installed them. When prepayment credit runs out and the household cannot afford to top up, the supply stops. This "self-disconnection" is effectively involuntary — not a choice but a consequence of poverty. Self-disconnections peaked at 4.8 million in 2022 as wholesale energy prices spiked following Russia's invasion of Ukraine.</p>
-              <p>The forced installation scandal emerged in early 2023 when ITV and Citizens Advice documented energy suppliers using debt collection agents to force open doors and install prepayment meters in homes including those with young children, seriously ill occupants, and elderly people — often without any welfare check. At its 2022 peak, 600,000 forced installations were carried out in a single year. Ofgem's subsequent investigation found widespread non-compliance with existing vulnerability guidelines. A temporary ban was imposed in February 2023 and made permanent for vulnerable households later that year.</p>
-              <p>The underlying drivers persist. Fuel debt reached £2.6 billion in 2023, with 6.2 million households in arrears. The structural vulnerability — 19 million homes on gas central heating with poor insulation — means the exposure will recur with the next energy price shock. The Warm Homes Discount, Cold Weather Payment, and Winter Fuel Payment together total approximately £2.5 billion per year, far below what would bring all fuel-poor households to affordable energy at current market rates.</p>
+              <p>Around 7 million households in Great Britain use prepayment meters<Cite nums={2} /> — disproportionately lower-income, in previous energy debt, or in rented accommodation where landlords have installed them. When prepayment credit runs out and the household cannot afford to top up, the supply stops. This "self-disconnection" is effectively involuntary — not a choice but a consequence of poverty. Self-disconnections peaked at 4.8 million in 2022<Cite nums={2} /> as wholesale energy prices spiked following Russia's invasion of Ukraine.</p>
+              <p>The forced installation scandal emerged in early 2023 when ITV and Citizens Advice documented energy suppliers using debt collection agents to force open doors and install prepayment meters in homes including those with young children, seriously ill occupants, and elderly people — often without any welfare check.<Cite nums={3} /> At its 2022 peak, 600,000 forced installations were carried out in a single year.<Cite nums={1} /> Ofgem's subsequent investigation found widespread non-compliance with existing vulnerability guidelines. A temporary ban was imposed in February 2023 and made permanent for vulnerable households later that year.<Cite nums={1} /></p>
+              <p>The underlying drivers persist. Fuel debt reached £2.6 billion in 2023, with 6.2 million households in arrears.<Cite nums={[2, 3]} /> The structural vulnerability — 19 million homes on gas central heating with poor insulation — means the exposure will recur with the next energy price shock. The Warm Homes Discount, Cold Weather Payment, and Winter Fuel Payment together total approximately £2.5 billion per year, far below what would bring all fuel-poor households to affordable energy at current market rates.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

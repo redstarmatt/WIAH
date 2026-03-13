@@ -8,6 +8,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Crime Survey for England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
+  { num: 2, name: 'HMICFRS', dataset: 'State of Policing reports', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/', date: '2024' },
+  { num: 3, name: 'Home Office', dataset: 'Crime outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-statistics', date: '2024' },
+  { num: 4, name: 'NCA', dataset: 'National Strategic Assessment of Serious and Organised Crime' },
+];
 
 // Fraud as share of all crime (%), 2015–2024
 const fraudShareOfCrimePct = [32, 34, 35, 36, 37, 38, 39, 40, 41, 40];
@@ -63,8 +72,8 @@ export default function FraudProsecutionGapPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Fraud is the most common crime in England and Wales by volume, yet it receives a vanishingly small share of police resources. The Crime Survey estimates around 4.5 million fraud offences a year — roughly 40% of all crime — while a 2023 HMICFRS inspection found just 1% of police resources dedicated to fraud investigation. Action Fraud receives around 800,000 reports annually; most are closed without investigative action because the volume overwhelms the system and individual frauds fall below the threshold for which forces can justify allocating detective time. The charge rate for fraud was approximately 3% in 2023, against 6% for all crimes combined.</p>
-            <p>The National Crime Agency estimates money laundering facilitated by fraud costs the UK economy at least £12 billion a year. The Fraud Strategy published in 2023 committed to a 10% reduction in fraud by 2025, and mandatory bank reimbursement for authorised push payment fraud was introduced in October 2023. The burden falls disproportionately on older people, who are targeted by telephone and postal fraud at significantly higher rates and lose an average of £3,800 per incident. The structural gap between offending volume and investigative capacity means fraud has become effectively decriminalised in practice for most victims.</p>
+            <p>Fraud is the most common crime in England and Wales by volume, yet it receives a vanishingly small share of police resources. The Crime Survey estimates around 4.5 million fraud offences a year — roughly 40% of all crime — while a 2023 HMICFRS inspection found just 1% of police resources dedicated to fraud investigation.<Cite nums={[1, 2]} /> Action Fraud receives around 800,000 reports annually; most are closed without investigative action because the volume overwhelms the system and individual frauds fall below the threshold for which forces can justify allocating detective time. The charge rate for fraud was approximately 3% in 2023, against 6% for all crimes combined.<Cite nums={[3]} /></p>
+            <p>The National Crime Agency estimates money laundering facilitated by fraud costs the UK economy at least £12 billion a year.<Cite nums={[4]} /> The Fraud Strategy published in 2023 committed to a 10% reduction in fraud by 2025, and mandatory bank reimbursement for authorised push payment fraud was introduced in October 2023. The burden falls disproportionately on older people, who are targeted by telephone and postal fraud at significantly higher rates and lose an average of £3,800 per incident.<Cite nums={[1]} /> The structural gap between offending volume and investigative capacity means fraud has become effectively decriminalised in practice for most victims.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +152,9 @@ export default function FraudProsecutionGapPage() {
             source="Source: PSR — APP scam reimbursement data 2024; Home Office — Fraud Strategy progress report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

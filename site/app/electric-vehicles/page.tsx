@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'SMMT', dataset: 'New car registrations by fuel type', url: 'https://www.smmt.co.uk/data/ev-registrations/', date: '2023' },
+  { num: 2, name: 'DESNZ', dataset: 'EV charging infrastructure statistics', url: 'https://www.gov.uk/government/collections/electric-vehicle-charging-infrastructure-statistics', date: '2024' },
+  { num: 3, name: 'BloombergNEF', dataset: 'Battery Price Survey', url: 'https://about.bnef.com/electric-vehicle-outlook/', date: '2024' },
+];
 
 // BEV share of new car sales (%), 2018–2025 — SMMT
 const evShareValues = [0.5, 0.7, 1.6, 3.1, 7.4, 11.6, 14.8, 16.5];
@@ -66,8 +74,8 @@ export default function ElectricVehiclesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's electric vehicle transition has accelerated rapidly since 2020. Battery electric vehicles (BEVs) took just 0.5% of new car sales in 2018; by 2023 that figure had risen to 16.5%, driven by an expanding model range, falling battery costs, and the government's Zero Emission Vehicle (ZEV) mandate — which requires manufacturers to sell a rising proportion of zero-emission vehicles, starting at 22% in 2024 and rising to 80% by 2030. Battery costs have fallen from over £1,000 per kilowatt-hour in 2010 to around £100/kWh in 2024 — a 90% reduction — and are expected to reach £60–70/kWh by 2030, the level at which EVs become cost-competitive at point of purchase without subsidy.</p>
-            <p>The charging infrastructure gap is the most pressing barrier to mass adoption. The UK had around 58,000 public charge points at the start of 2024 — but with approximately 1.1 million BEVs on the road, that is one public charger per 54 EVs, well short of the government's target of one per ten. The distribution is uneven: London has the highest density, while rural areas and deprived urban communities have fewer chargers per EV than the national average. Reliability remains a concern: Which? mystery shopping found around 10% of charge point visits resulted in a failure to charge successfully.</p>
+            <p>The UK's electric vehicle transition has accelerated rapidly since 2020. Battery electric vehicles (BEVs) took just 0.5% of new car sales in 2018; by 2023 that figure had risen to 16.5%, driven by an expanding model range, falling battery costs, and the government's Zero Emission Vehicle (ZEV) mandate — which requires manufacturers to sell a rising proportion of zero-emission vehicles, starting at 22% in 2024 and rising to 80% by 2030.<Cite nums={[1]} /> Battery costs have fallen from over £1,000 per kilowatt-hour in 2010 to around £100/kWh in 2024 — a 90% reduction — and are expected to reach £60–70/kWh by 2030, the level at which EVs become cost-competitive at point of purchase without subsidy.<Cite nums={[3]} /></p>
+            <p>The charging infrastructure gap is the most pressing barrier to mass adoption. The UK had around 58,000 public charge points at the start of 2024 — but with approximately 1.1 million BEVs on the road, that is one public charger per 54 EVs, well short of the government's target of one per ten.<Cite nums={[2]} /> The distribution is uneven: London has the highest density, while rural areas and deprived urban communities have fewer chargers per EV than the national average.<Cite nums={[2]} /> Reliability remains a concern: Which? mystery shopping found around 10% of charge point visits resulted in a failure to charge successfully.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -145,6 +153,9 @@ export default function ElectricVehiclesPage() {
             source="Source: BloombergNEF — Battery Price Survey 2024. SMMT — EV registrations data 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

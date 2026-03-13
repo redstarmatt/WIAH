@@ -8,6 +8,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Natural England', dataset: 'SSSI Condition Monitoring', url: 'https://www.gov.uk/government/organisations/natural-england', date: '2023' },
+  { num: 2, name: 'Woodland Trust', dataset: 'National Inventory of Woodland and Trees', url: 'https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/habitats/ancient-woodland/', date: '2023' },
+  { num: 3, name: 'DEFRA', dataset: 'Countryside Survey / Agricultural Land Use', url: 'https://www.gov.uk/government/statistical-data-sets/agricultural-land-use-in-england', date: '2024' },
+  { num: 4, name: 'DEFRA', dataset: 'ELM scheme statistics', date: '2024' },
+];
 
 // SSSIs in favourable or recovering condition (%), 2003–2023
 const sssiFavourablePct = [58.2, 56.4, 54.8, 53.0, 52.4, 51.1, 52.6, 53.0, 53.2, 53.2, 53.4, 53.4, 53.5, 53.6, 53.6, 53.6, 53.6, 53.6, 53.6, 53.6, 53.6];
@@ -72,8 +81,8 @@ export default function HabitatConditionPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's 4,120 Sites of Special Scientific Interest cover 8% of the land area and represent the best-protected habitats in the country — yet only 53.6% are in favourable or recovering condition, well below the 70% government target, and the figure has barely moved since 2010. Lowland meadows have declined by 99.6% since 1940, from 3.7 million hectares to around 15,000 hectares, driven by fertiliser use, drainage, and conversion to intensive silage. Ancient woodland — woodland in continuous existence since 1600 — has fallen from around 2.5 million to 643,000 hectares, and cannot be recreated through new planting. Hedgerow length has roughly halved from 800,000 to around 390,000 kilometres since 1950, erasing the wildlife corridors on which species movement between fragmented habitats depends.</p>
-            <p>The mechanisms of decline are well understood; the question is whether the policy response can match the scale required. The Environmental Land Management schemes (ELMs) are designed to pay farmers to restore habitats, but in 2024 only 8% of farms had joined. At current uptake, the Environment Act 2021 targets — halting species decline and 30×30 protected area coverage by 2030 — will not be met. The loss of lowland meadows is directly connected to the collapse of insect abundance documented since the 1970s, with cascading effects on pollination, bird populations, and the broader food web that no amount of SSSI management can reverse without also transforming the surrounding agricultural landscape.</p>
+            <p>England's 4,120 Sites of Special Scientific Interest cover 8% of the land area and represent the best-protected habitats in the country — yet only 53.6% are in favourable or recovering condition, well below the 70% government target, and the figure has barely moved since 2010.<Cite nums={1} /> Lowland meadows have declined by 99.6% since 1940, from 3.7 million hectares to around 15,000 hectares, driven by fertiliser use, drainage, and conversion to intensive silage.<Cite nums={1} /> Ancient woodland — woodland in continuous existence since 1600 — has fallen from around 2.5 million to 643,000 hectares, and cannot be recreated through new planting.<Cite nums={2} /> Hedgerow length has roughly halved from 800,000 to around 390,000 kilometres since 1950, erasing the wildlife corridors on which species movement between fragmented habitats depends.<Cite nums={3} /></p>
+            <p>The mechanisms of decline are well understood; the question is whether the policy response can match the scale required. The Environmental Land Management schemes (ELMs) are designed to pay farmers to restore habitats, but in 2024 only 8% of farms had joined.<Cite nums={4} /> At current uptake, the Environment Act 2021 targets — halting species decline and 30×30 protected area coverage by 2030 — will not be met.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -152,6 +161,9 @@ export default function HabitatConditionPage() {
             source="Source: DEFRA — ELM scheme statistics 2024. Natural England — SSSI condition monitoring 2023. Environment Act 2021 progress report."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

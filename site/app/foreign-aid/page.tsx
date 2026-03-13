@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'FCDO', dataset: 'Statistics on International Development', url: 'https://www.gov.uk/government/collections/statistics-on-international-development', date: '2024' },
+  { num: 2, name: 'ICAI', dataset: 'Independent Commission for Aid Impact Annual Review', url: 'https://icai.independent.gov.uk/', date: '2024' },
+  { num: 3, name: 'House of Commons International Development Committee', dataset: 'Impact of 0.7% to 0.5% cut' },
+];
 
 // UK ODA as % of GNI, 2015–2024
 const odaPctGni = [0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.50, 0.50, 0.50, 0.50];
@@ -63,8 +71,8 @@ export default function ForeignAidPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom was one of the first countries in the world to legislate for the 0.7% of GNI aid target, passed into law in 2015. In April 2021, the then Chancellor announced a reduction to 0.5% of GNI, citing the fiscal pressures of the COVID-19 pandemic. The cut amounted to approximately £4 billion annually, with immediate impact: bilateral programmes in sub-Saharan Africa, South Asia, and fragile states were cut or closed. The House of Commons International Development Committee found that programmes addressing girls' education, malaria prevention, and food security were among the most severely affected.</p>
-            <p>The 0.5% figure obscures a second problem: a growing proportion of the aid budget is being spent in the UK rather than overseas. Under OECD DAC rules, expenditure on asylum seekers in the donor country during their first year of arrival can be classified as ODA. In 2023, approximately £3.5 billion of the £15.2 billion total ODA budget was classified as in-donor asylum costs — money spent on hotels, processing, and support for people awaiting asylum decisions in the UK. This means the overseas aid budget available for programmes in developing countries was approximately £11.7 billion, not £15.2 billion. The Independent Commission for Aid Impact found this reclassification had resulted in the termination or reduction of programmes with demonstrable life-saving impact.</p>
+            <p>The United Kingdom was one of the first countries in the world to legislate for the 0.7% of GNI aid target, passed into law in 2015. In April 2021, the then Chancellor announced a reduction to 0.5% of GNI, citing the fiscal pressures of the COVID-19 pandemic.<Cite nums={[1]} /> The cut amounted to approximately £4 billion annually, with immediate impact: bilateral programmes in sub-Saharan Africa, South Asia, and fragile states were cut or closed.<Cite nums={[1]} /> The House of Commons International Development Committee found that programmes addressing girls' education, malaria prevention, and food security were among the most severely affected.<Cite nums={[3]} /></p>
+            <p>The 0.5% figure obscures a second problem: a growing proportion of the aid budget is being spent in the UK rather than overseas. Under OECD DAC rules, expenditure on asylum seekers in the donor country during their first year of arrival can be classified as ODA. In 2023, approximately £3.5 billion of the £15.2 billion total ODA budget was classified as in-donor asylum costs — money spent on hotels, processing, and support for people awaiting asylum decisions in the UK.<Cite nums={[1]} /> This means the overseas aid budget available for programmes in developing countries was approximately £11.7 billion, not £15.2 billion.<Cite nums={[1]} /> The Independent Commission for Aid Impact found this reclassification had resulted in the termination or reduction of programmes with demonstrable life-saving impact.<Cite nums={[2]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -144,6 +152,9 @@ export default function ForeignAidPage() {
             source="OECD DAC · Official Aid Statistics 2023; FCDO · UK Aid Annual Review 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

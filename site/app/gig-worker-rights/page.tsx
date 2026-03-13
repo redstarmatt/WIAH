@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'TUC / University of Hertfordshire', dataset: 'Living on the Gig Economy Survey', url: 'https://www.tuc.org.uk/research-analysis/reports/gig-economy', date: '2024' },
+  { num: 2, name: 'Supreme Court', dataset: 'Uber BV v Aslam [2021] UKSC 5', date: '2021' },
+  { num: 3, name: 'BEIS', dataset: 'Employment Rights Bill / Taylor Review', url: 'https://assets.publishing.service.gov.uk/media/5f1b4a39e90e07480da19a72/good-work-plan.pdf', date: '2024' },
+];
 
 // Gig economy workers (millions), 2015–2025
 const gigWorkers = [2.5, 2.8, 3.0, 3.2, 3.5, 3.8, 3.9, 4.0, 4.1, 4.2, 4.4];

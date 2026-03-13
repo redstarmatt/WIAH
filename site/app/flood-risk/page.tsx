@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Properties newly protected by flood defences per year (thousands), 2015–2024 — EA
 const newlyProtectedValues = [28, 30, 35, 40, 42, 25, 38, 45, 50, 48];
@@ -50,6 +52,12 @@ const floodAnnotations: Annotation[] = [
   { date: new Date(2020, 1, 1), label: 'Feb 2020: Storm Dennis — record floods' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'National flood risk assessment', url: 'https://www.gov.uk/government/collections/national-flood-risk-assessment', date: '2024' },
+  { num: 2, name: 'Environment Agency', dataset: 'Flood defence investment tracker', url: 'https://www.gov.uk/government/publications/flood-and-coastal-defence-programme-tracker', date: '2024' },
+  { num: 3, name: 'Environment Agency', dataset: 'Asset performance indicators', date: '2024' },
+];
+
 export default function FloodRiskPage() {
   return (
     <>
@@ -64,8 +72,8 @@ export default function FloodRiskPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Environment Agency estimates that approximately 5.7 million properties in England are at some risk of flooding — from rivers, the sea, or surface water drainage failure. Of these, around 220,000 face a significant annual risk (greater than 1% per year from rivers and the sea), while surface water flooding — from blocked drains and overwhelmed sewers during intense rainfall — affects many more properties that do not appear on traditional flood maps. Climate projections indicate that flooding frequency and severity will increase significantly: winter rainfall is projected to increase 20–30% by 2050, and the number of properties at significant flood risk could more than double to half a million by the 2050s under high-emission scenarios.</p>
-            <p>The government's six-year flood defence investment programme (2021–2027) has committed £5.6 billion to build and improve flood defences, with a target of protecting 336,000 additional properties. Progress has been broadly on track in terms of new protection, with around 48,000 properties newly protected in 2024. However, the condition of the existing defence stock — around 250,000 flood defence assets including walls, embankments, pumping stations, and gates — is deteriorating. The Environment Agency's own assessment found that only 89% of flood defences are in the target condition category ('functional'), against an aspiration of 95%. Deferred maintenance has created a backlog estimated at over £1 billion. Without additional investment in maintenance, the effective protection offered by existing defences will decline even as new defences are built.</p>
+            <p>The Environment Agency estimates that approximately 5.7 million properties in England are at some risk of flooding — from rivers, the sea, or surface water drainage failure<Cite nums={1} />. Of these, around 220,000 face a significant annual risk (greater than 1% per year from rivers and the sea), while surface water flooding — from blocked drains and overwhelmed sewers during intense rainfall — affects many more properties that do not appear on traditional flood maps. Climate projections indicate that flooding frequency and severity will increase significantly: winter rainfall is projected to increase 20–30% by 2050, and the number of properties at significant flood risk could more than double to half a million by the 2050s under high-emission scenarios<Cite nums={1} />.</p>
+            <p>The government's six-year flood defence investment programme (2021–2027) has committed £5.6 billion to build and improve flood defences, with a target of protecting 336,000 additional properties<Cite nums={2} />. Progress has been broadly on track in terms of new protection, with around 48,000 properties newly protected in 2024<Cite nums={2} />. However, the condition of the existing defence stock — around 250,000 flood defence assets including walls, embankments, pumping stations, and gates — is deteriorating. The Environment Agency's own assessment found that only 89% of flood defences are in the target condition category ('functional'), against an aspiration of 95%<Cite nums={3} />. Deferred maintenance has created a backlog estimated at over £1 billion<Cite nums={3} />. Without additional investment in maintenance, the effective protection offered by existing defences will decline even as new defences are built.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +154,9 @@ export default function FloodRiskPage() {
             source="Source: Environment Agency — Flood and coastal erosion risk management investment 2024. HM Treasury — Green Book appraisal guidance."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

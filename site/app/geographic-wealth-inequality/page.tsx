@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Wealth and Assets Survey', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/debt/bulletins/wealthingreatbritainwave', date: '2022' },
+  { num: 2, name: 'ONS', dataset: 'Regional Gross Value Added', url: 'https://www.ons.gov.uk/economy/grossvalueaddedgva/bulletins/regionalgrossvalueaddedbalanceduk/1998to2022', date: '2023' },
+  { num: 3, name: 'UK2070 Commission', dataset: 'Make No Little Plans', date: '2020' },
+];
 
 // South East median household wealth (£k), 2010–2023
 const seWealthK = [280, 310, 360, 400, 440, 470, 490, 495, 503, 510, 512, 514, 516, 510];
@@ -71,8 +79,8 @@ export default function GeographicWealthInequalityPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain's regional wealth divide is not primarily about income — it is about property. Median total household wealth in the South East (approximately £510,000 in 2023) is roughly three times that in the North East (£168,000), a gap that has grown from 2.2× in 2010 to 3.0× today, driven almost entirely by differential house price growth. London and the South East saw the most dramatic house price inflation of the 2010s; the North East, parts of the Midlands, and the North West saw far more modest gains. The Levelling Up agenda, announced in 2020 and formalised in a 2022 White Paper, was the stated policy response; the UK2070 Commission found its commitments fell substantially short of the scale required, and the 2024 change of government brought a shift in framing but no resolution to the underlying structural gaps.</p>
-            <p>The wealth gap compounds in ways that earnings data does not capture. A household in the South East that owns a £500,000 home can borrow against it, weather financial shocks by releasing equity, and pass on substantial assets to children — while a household in the North East in equivalent rented accommodation accumulates nothing and is far more exposed to job loss or illness. The same income produces very different financial security depending on whether regional property markets have delivered wealth accumulation. London's GVA per head remains 175% of the UK average, while the North East sits at around 73% — a productivity gap that has persisted for decades. Remote working after COVID-19 offered a partial corrective, but gains accrued mainly to existing homeowners, not low-income local residents.</p>
+            <p>Britain's regional wealth divide is not primarily about income — it is about property. Median total household wealth in the South East (approximately £510,000 in 2023) is roughly three times that in the North East (£168,000), a gap that has grown from 2.2x in 2010 to 3.0x today, driven almost entirely by differential house price growth.<Cite nums={[1]} /> London and the South East saw the most dramatic house price inflation of the 2010s; the North East, parts of the Midlands, and the North West saw far more modest gains. The Levelling Up agenda, announced in 2020 and formalised in a 2022 White Paper, was the stated policy response; the UK2070 Commission found its commitments fell substantially short of the scale required, and the 2024 change of government brought a shift in framing but no resolution to the underlying structural gaps.<Cite nums={[3]} /></p>
+            <p>The wealth gap compounds in ways that earnings data does not capture. A household in the South East that owns a £500,000 home can borrow against it, weather financial shocks by releasing equity, and pass on substantial assets to children — while a household in the North East in equivalent rented accommodation accumulates nothing and is far more exposed to job loss or illness. The same income produces very different financial security depending on whether regional property markets have delivered wealth accumulation. London's GVA per head remains 175% of the UK average, while the North East sits at around 73% — a productivity gap that has persisted for decades.<Cite nums={[2]} /> Remote working after COVID-19 offered a partial corrective, but gains accrued mainly to existing homeowners, not low-income local residents.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,10 @@ export default function GeographicWealthInequalityPage() {
             source="Source: DLUHC — Levelling Up Fund progress report 2024. UK2070 Commission — Make No Little Plans 2020."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

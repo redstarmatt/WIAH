@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Coram Family & Childcare', dataset: 'UK Childcare Survey', url: 'https://www.coramfcc.org.uk/research-publications/uk-childcare-survey', date: '2023' },
+  { num: 2, name: 'Ofsted', dataset: 'Childcare Places Survey', url: 'https://www.gov.uk/government/collections/ofsted-annual-report', date: '2023' },
+  { num: 3, name: 'TUC', dataset: 'Childcare and Work Survey', date: '2023' },
+  { num: 4, name: 'DfE', dataset: 'Childcare and Early Years Survey', url: 'https://www.gov.uk/government/collections/statistics-childcare-and-early-years', date: '2023' },
+];
 
 // Average annual cost of full-time nursery under-2 (£), 2013–2023 — Coram
 const childcareCostValues = [9300, 9800, 10200, 10700, 11200, 11700, 12100, 12500, 13000, 13800, 14800];
@@ -55,8 +64,8 @@ export default function EarlyYearsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has some of the highest childcare costs in the developed world relative to wages. Full-time care for a child under two averaged around £14,800 a year in 2023 — more than the median full-time salary after tax in many parts of the country. The government's 30-hour free childcare entitlement was extended in 2024 to cover children from nine months in a staged rollout, but hourly rates paid to providers have consistently been below delivery cost: over 40% of nurseries reported operating at a loss on funded places in 2023, and more than 4,000 childcare providers closed between 2021 and 2023. The registered supply of childcare places has been falling since 2010, creating acute shortages in rural, coastal, and deprived urban areas.</p>
-            <p>The childcare access gap and the early development gap reinforce each other along the same fault lines. The families least able to afford market-rate childcare are the same families whose children stand to gain most from quality early years provision, yet they are least served by a funding model that depends on cross-subsidy from fee-paying parents. The sector workforce compounds the problem: with around 40,000 vacancies and average pay close to the national living wage floor, turnover is high and the continuity of care that underpins secure attachment in young children is difficult to maintain.</p>
+            <p>The UK has some of the highest childcare costs in the developed world relative to wages. Full-time care for a child under two averaged around £14,800 a year in 2023 — more than the median full-time salary after tax in many parts of the country.<Cite nums={[1]} /> The government's 30-hour free childcare entitlement was extended in 2024 to cover children from nine months in a staged rollout, but hourly rates paid to providers have consistently been below delivery cost: over 40% of nurseries reported operating at a loss on funded places in 2023, and more than 4,000 childcare providers closed between 2021 and 2023.<Cite nums={[1, 2]} /> The registered supply of childcare places has been falling since 2010, creating acute shortages in rural, coastal, and deprived urban areas.<Cite nums={[2]} /></p>
+            <p>The childcare access gap and the early development gap reinforce each other along the same fault lines. The families least able to afford market-rate childcare are the same families whose children stand to gain most from quality early years provision, yet they are least served by a funding model that depends on cross-subsidy from fee-paying parents. The sector workforce compounds the problem: with around 40,000 vacancies and average pay close to the national living wage floor, turnover is high and the continuity of care that underpins secure attachment in young children is difficult to maintain.<Cite nums={[1]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -134,6 +143,9 @@ export default function EarlyYearsPage() {
             source="Source: Department for Education — Childcare expansion policy, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

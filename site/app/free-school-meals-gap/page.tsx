@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'Schools, pupils and their characteristics', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics', date: '2024' },
+  { num: 2, name: 'CPAG', dataset: 'Free school meals eligibility analysis', url: 'https://cpag.org.uk/policy-and-research/policy-reports/free-school-meals', date: '2024' },
+  { num: 3, name: 'DfE', dataset: 'School census 2024' },
+];
 
 // Children eligible for FSM (thousands), 2017–2024
 const eligibleFsmK = [1380, 1390, 1540, 1790, 1970, 2080, 2200, 2210];
@@ -71,8 +79,8 @@ export default function FreeSchoolMealsGapPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The free school meals system in England has a significant structural problem: eligibility is determined by a binary threshold set when Universal Credit was introduced. A family with earned income below £7,400 per year (net, excluding benefits) qualifies; above that, they do not. The threshold has not been uprated with inflation, excluding more families in real terms each year. The number of children eligible has risen from 1.38 million in 2017 to 2.2 million in 2024, partly from threshold adjustments and partly from rising poverty rates. Uptake among eligible children is very high at 95%, meaning the programme works well for those it reaches. But an estimated 870,000 children live in poverty by standard measures yet do not qualify, sitting in classrooms where other children receive free meals they cannot access.</p>
-            <p>The threshold is also a poverty trap: because eligibility is lost when earned income exceeds £7,400, some parents face a disincentive to increase their working hours, losing FSM entitlement worth around £500 per child per year before their additional earnings compensate. Teachers increasingly report buying food for children who arrive hungry but are not on the FSM register — an informal safety net that depends on individual goodwill rather than policy design. The Greater London Authority introduced universal free school meals for all primary pupils in 2023; at national level the barrier to universalisation is cost, estimated at £1.5 billion annually to extend to all children on Universal Credit.</p>
+            <p>The free school meals system in England has a significant structural problem: eligibility is determined by a binary threshold set when Universal Credit was introduced. A family with earned income below £7,400 per year (net, excluding benefits) qualifies; above that, they do not. The threshold has not been uprated with inflation, excluding more families in real terms each year. The number of children eligible has risen from 1.38 million in 2017 to 2.2 million in 2024, partly from threshold adjustments and partly from rising poverty rates.<Cite nums={[1]} /> Uptake among eligible children is very high at 95%, meaning the programme works well for those it reaches.<Cite nums={[3]} /> But an estimated 870,000 children live in poverty by standard measures yet do not qualify, sitting in classrooms where other children receive free meals they cannot access.<Cite nums={[2]} /></p>
+            <p>The threshold is also a poverty trap: because eligibility is lost when earned income exceeds £7,400, some parents face a disincentive to increase their working hours, losing FSM entitlement worth around £500 per child per year before their additional earnings compensate.<Cite nums={[2]} /> Teachers increasingly report buying food for children who arrive hungry but are not on the FSM register — an informal safety net that depends on individual goodwill rather than policy design. The Greater London Authority introduced universal free school meals for all primary pupils in 2023; at national level the barrier to universalisation is cost, estimated at £1.5 billion annually to extend to all children on Universal Credit.<Cite nums={[2]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,9 @@ export default function FreeSchoolMealsGapPage() {
             source="Source: DfE — Universal infant free school meals data 2024. Scottish Government — Universal primary FSM evaluation 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

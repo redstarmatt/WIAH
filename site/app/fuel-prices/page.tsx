@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'Weekly road fuel prices', url: 'https://www.gov.uk/government/statistical-data-sets/oil-and-petroleum-products-weekly-statistics', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Consumer Price Index (CPI)', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Average Weekly Earnings (EARN01)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours', date: '2024' },
+  { num: 4, name: 'HM Treasury', dataset: 'Budget documents — fuel duty freeze', date: '2024' },
+];
 
 // Average UK petrol pump prices (pence/litre), 2010–2024
 const petrolPPL = [121, 133, 136, 132, 128, 116, 102, 119, 128, 131, 112, 141, 167, 155, 148];
@@ -83,8 +92,8 @@ export default function FuelPricesPage() {
 
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK fuel prices have been on a volatile upward trajectory since 2010. Petrol reached a record 191p/litre in summer 2022 as global oil markets reacted to Russia's invasion of Ukraine — a level that, even after subsequent falls, left pump prices structurally higher than the pre-pandemic baseline. In 2024, petrol averaged around 148p/litre: nominally lower than the 2022 peak but still 22% above 2019 levels when adjusted for inflation.</p>
-            <p>Fuel duty has been frozen at 52.95p/litre since March 2011 — the longest freeze in modern history, costing the Exchequer an estimated £4 billion a year in foregone revenue. The component of pump price that has driven increases is entirely the wholesale crude oil market and retail margin. For the 11 million UK households without access to a car, this is irrelevant; for the 7 million low-income households that are car-dependent but cannot afford an electric vehicle, it is a direct income shock.</p>
+            <p>UK fuel prices have been on a volatile upward trajectory since 2010. Petrol reached a record 191p/litre in summer 2022 as global oil markets reacted to Russia's invasion of Ukraine — a level that, even after subsequent falls, left pump prices structurally higher than the pre-pandemic baseline.<Cite nums={[1]} /> In 2024, petrol averaged around 148p/litre: nominally lower than the 2022 peak but still 22% above 2019 levels when adjusted for inflation.<Cite nums={[1, 2]} /></p>
+            <p>Fuel duty has been frozen at 52.95p/litre since March 2011 — the longest freeze in modern history, costing the Exchequer an estimated £4 billion a year in foregone revenue.<Cite nums={[4]} /> The component of pump price that has driven increases is entirely the wholesale crude oil market and retail margin.<Cite nums={[1]} /> For the 11 million UK households without access to a car, this is irrelevant; for the 7 million low-income households that are car-dependent but cannot afford an electric vehicle, it is a direct income shock.</p>
           </div>
         </section>
 
@@ -182,12 +191,16 @@ export default function FuelPricesPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The story of UK fuel prices since 2010 is not simply one of rising costs — it is a story of volatility and its unequal consequences. The 2016 dip to around 102p/litre provided temporary relief, particularly for rural households spending 10–15% of their income on transport. But the 2022 spike wiped out years of real-wage gains in a matter of months for low-income car-dependent households.</p>
-              <p>The frozen fuel duty creates an interesting policy paradox. Drivers benefit from prices around 15–20p/litre lower than they would be if duty had risen with inflation — but this benefit is regressive: it flows mainly to higher-income households who drive more and own multiple cars. The Exchequer forgoes roughly £4 billion a year in revenue that would otherwise fund public services.</p>
+              <p>The story of UK fuel prices since 2010 is not simply one of rising costs — it is a story of volatility and its unequal consequences. The 2016 dip to around 102p/litre provided temporary relief, particularly for rural households spending 10–15% of their income on transport.<Cite nums={[1]} /> But the 2022 spike wiped out years of real-wage gains in a matter of months for low-income car-dependent households.<Cite nums={[1, 3]} /></p>
+              <p>The frozen fuel duty creates an interesting policy paradox. Drivers benefit from prices around 15–20p/litre lower than they would be if duty had risen with inflation — but this benefit is regressive: it flows mainly to higher-income households who drive more and own multiple cars.<Cite nums={[4]} /> The Exchequer forgoes roughly £4 billion a year in revenue that would otherwise fund public services.<Cite nums={[4]} /></p>
               <p>The distributional impact is sharpest in rural areas and on the urban periphery, where car ownership is near-universal but incomes are often below average. These communities have no viable alternative to the car — bus services have been cut dramatically — making them price-takers with no ability to respond to cost increases by switching modes. The transition to electric vehicles will take the best part of a decade to reach these households; until then, pump prices remain a significant determinant of disposable income.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

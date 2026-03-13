@@ -7,6 +7,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'English Housing Survey', url: 'https://www.gov.uk/government/collections/english-housing-survey', date: '2024' },
+  { num: 2, name: 'BEIS / Climate Change Committee', dataset: 'Progress in reducing emissions', date: '2024' },
+  { num: 3, name: 'European Environment Agency', dataset: 'Residential heat loss and energy performance data', url: 'https://www.eea.europa.eu/en/topics/in-depth/energy-efficiency', date: '2024' },
+];
 
 export default function EnergyEfficiencyPage() {
   // EPC rating distribution 2015–2024: % of homes at EPC C or above
@@ -59,9 +67,9 @@ export default function EnergyEfficiencyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has 29.2 million homes, and heating them accounts for approximately 17% of national greenhouse gas emissions. Some 19 million of those homes have an EPC rating of D or below, including 3.2 million at the worst categories (E, F, or G). The government's stated ambition is for all homes to achieve EPC C or above by 2035, but as of 2024 only 49% meet this standard. At the current rate of improvement, the 2035 target will not be met.</p>
-            <p>The cost of living in a poorly insulated home is not abstract: a household in an EPC F or G rated property pays an average of £1,000–£1,400 more per year in energy bills than one in a comparable EPC C home. The gap falls hardest on older people, those in fuel poverty, and private renters — who have no power to compel their landlord to insulate.</p>
-            <p>Retrofit at scale requires sustained public investment. Annual government spending on residential energy efficiency stands at around £1.3 billion — roughly one-fiftieth of the estimated total needed to bring all homes to EPC C. The Green Homes Grant was cancelled after six months in 2021. Its successor, the Boiler Upgrade Scheme, offers a £7,500 grant for heat pump installation, but uptake remains far below what the Climate Change Committee says is necessary.</p>
+            <p>The UK has 29.2 million homes, and heating them accounts for approximately 17% of national greenhouse gas emissions.<Cite nums={2} /> Some 19 million of those homes have an EPC rating of D or below, including 3.2 million at the worst categories (E, F, or G).<Cite nums={1} /> The government's stated ambition is for all homes to achieve EPC C or above by 2035, but as of 2024 only 49% meet this standard.<Cite nums={1} /> At the current rate of improvement, the 2035 target will not be met.</p>
+            <p>The cost of living in a poorly insulated home is not abstract: a household in an EPC F or G rated property pays an average of £1,000–£1,400 more per year in energy bills than one in a comparable EPC C home.<Cite nums={1} /> The gap falls hardest on older people, those in fuel poverty, and private renters — who have no power to compel their landlord to insulate.</p>
+            <p>Retrofit at scale requires sustained public investment. Annual government spending on residential energy efficiency stands at around £1.3 billion<Cite nums={2} /> — roughly one-fiftieth of the estimated total needed to bring all homes to EPC C. The Green Homes Grant was cancelled after six months in 2021. Its successor, the Boiler Upgrade Scheme, offers a £7,500 grant for heat pump installation, but uptake remains far below what the Climate Change Committee says is necessary.<Cite nums={2} /></p>
           </div>
         </section>
 
@@ -141,6 +149,10 @@ export default function EnergyEfficiencyPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

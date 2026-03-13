@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HESA', dataset: 'Graduate Outcomes Survey', url: 'https://www.hesa.ac.uk/data-and-analysis/graduates', date: '2023' },
+  { num: 2, name: 'DfE', dataset: 'Longitudinal Education Outcomes (LEO)', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/graduate-outcomes-leo', date: '2023' },
+  { num: 3, name: 'IFS', dataset: 'Higher Education Finance research', url: 'https://ifs.org.uk/higher-education', date: '2023' },
+];
 
 // % in professional/managerial roles 15 months after graduation, 2018–2023
 const professionalManagerial = [72.1, 74.3, 73.8, 74.5, 75.2, 76.9];
@@ -70,8 +78,8 @@ export default function GraduateOutcomesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>On average, going to university significantly improves employment prospects and lifetime earnings. The Graduate Outcomes survey — which covers all UK graduates 15 months after completing their course — found that 76.9% were in professional or managerial employment in 2023, up from 72.1% in 2018. The graduate employment rate has outperformed the general labour market for most of the past decade. Graduates are more likely to be employed, earn more, and report greater job satisfaction than non-graduates. The IFS estimates the lifetime earnings premium at around £140,000 after accounting for tuition fees and foregone earnings during study.</p>
-            <p>But the aggregate masks enormous variation. Subject choice matters more than many prospective students realise. Medicine graduates earn a median of £55,000 five years after graduation; performing arts graduates earn around £24,000. The gap between the highest and lowest-earning subjects exceeds the gap between many Russell Group and post-92 institutions for the same subject. Economics, engineering, dentistry, and law all command significant premiums; humanities and creative arts do not, though they serve important cultural functions that raw salary data does not capture. Around 20% of graduates work in roles that do not require a degree 15 months after graduation — a figure that falls significantly by five years post-graduation as careers develop.</p>
+            <p>On average, going to university significantly improves employment prospects and lifetime earnings. The Graduate Outcomes survey — which covers all UK graduates 15 months after completing their course — found that 76.9% were in professional or managerial employment in 2023, up from 72.1% in 2018.<Cite nums={1} /> The graduate employment rate has outperformed the general labour market for most of the past decade. Graduates are more likely to be employed, earn more, and report greater job satisfaction than non-graduates. The IFS estimates the lifetime earnings premium at around £140,000 after accounting for tuition fees and foregone earnings during study.<Cite nums={3} /></p>
+            <p>But the aggregate masks enormous variation. Subject choice matters more than many prospective students realise. Medicine graduates earn a median of £55,000 five years after graduation; performing arts graduates earn around £24,000.<Cite nums={2} /> The gap between the highest and lowest-earning subjects exceeds the gap between many Russell Group and post-92 institutions for the same subject. Economics, engineering, dentistry, and law all command significant premiums; humanities and creative arts do not, though they serve important cultural functions that raw salary data does not capture. Around 20% of graduates work in roles that do not require a degree 15 months after graduation — a figure that falls significantly by five years post-graduation as careers develop.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -150,6 +158,9 @@ export default function GraduateOutcomesPage() {
             source="Source: HESA — Graduate Outcomes Survey 2023. DfE — Longitudinal Education Outcomes 2023. Office for Students — Teaching Excellence Framework 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

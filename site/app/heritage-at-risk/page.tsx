@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -54,6 +56,12 @@ function yearToDate(y: number): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Historic England', dataset: 'Heritage at Risk Register', url: 'https://historicengland.org.uk/advice/heritage-at-risk/search-register/', date: 'Oct 2023' },
+  { num: 2, name: 'Historic England', dataset: 'Heritage Counts — Listed Buildings at Risk', url: 'https://historicengland.org.uk/research/heritage-counts/', date: 'Oct 2023' },
+  { num: 3, name: 'DCMS', dataset: 'Sectors Economic Estimates — Heritage Funding', url: 'https://www.gov.uk/government/statistics/dcms-economic-estimates-2023', date: 'Nov 2025' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -153,17 +161,17 @@ export default function HeritageAtRiskPage() {
               covers Grade I and II* listed buildings, scheduled monuments, registered parks and
               gardens, battlefields, protected wreck sites, and conservation areas. The headline
               number — 4,848 entries in 2023 — is 18% lower than the 5,889 recorded in 2009, an
-              apparently encouraging trend. But the rate of removal from the register has slowed
+              apparently encouraging trend.<Cite nums={1} /> But the rate of removal from the register has slowed
               markedly: between 2009 and 2014, an average of 115 sites per year were saved or
               repaired sufficiently to leave the register. Between 2019 and 2023, that average fell
-              to just 29 per year. At the current pace, clearing the register would take over a
+              to just 29 per year.<Cite nums={1} /> At the current pace, clearing the register would take over a
               century and a half.
             </p>
             <p>
               The picture for listed buildings is more positive. The number of Grade I and II* listed
               buildings at risk has fallen from 4,189 in 2000 to 2,780 in 2023 — a 34% reduction
               driven by Heritage Lottery Fund grants, Section 106 agreements, and tax relief for
-              repairs to listed buildings. This is a genuine success story, reflecting decades of
+              repairs to listed buildings.<Cite nums={2} /> This is a genuine success story, reflecting decades of
               targeted investment and patient conservation work by local authorities, charities,
               and private owners. Many of the buildings saved were in the North of England, where
               the economics of repair are least favourable and public funding most critical.
@@ -171,12 +179,12 @@ export default function HeritageAtRiskPage() {
             <p>
               But the opposite trend is visible in conservation areas. The number of conservation
               areas at risk has risen every year since Historic England began tracking them in 2009,
-              from 468 to 563 — a 20% increase. Conservation areas are harder to protect: they
+              from 468 to 563 — a 20% increase.<Cite nums={1} /> Conservation areas are harder to protect: they
               depend on consistent local authority enforcement of planning controls, and local
               authority planning departments have lost around 40% of their specialist staff since
               2010. Meanwhile, the grant-in-aid funding to Historic England from DCMS has fallen
               from {'\u00A3'}128 million in 2010 to {'\u00A3'}61 million in 2023 in real terms — a cut of more than
-              half. The heritage sector increasingly depends on the National Lottery Heritage Fund,
+              half.<Cite nums={3} /> The heritage sector increasingly depends on the National Lottery Heritage Fund,
               charitable trusts, and volunteer labour to fill the gap. The risk is that a slow
               erosion of the historic environment continues beneath the surface of an apparently
               improving headline figure.
@@ -343,6 +351,10 @@ export default function HeritageAtRiskPage() {
             source="Source: Historic England — Heritage Counts, 2023. Heritage Lottery Fund annual reports."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <ScrollReveal>

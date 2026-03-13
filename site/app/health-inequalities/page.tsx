@@ -8,6 +8,13 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Health State Life Expectancies by national deprivation deciles', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthinequalities', date: '2022' },
+  { num: 2, name: 'The Health Foundation', dataset: 'Marmot Review 10 Years On', url: 'https://www.health.org.uk/publications/reports/the-marmot-review-10-years-on', date: '2020' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -69,8 +76,8 @@ export default function HealthInequalitiesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Healthy life expectancy — years lived without disability or chronic illness — varies by 18.4 years between England&rsquo;s most and least deprived areas, up from a 16.2-year gap in 2001. A woman born in Blackpool&rsquo;s most deprived neighbourhoods can expect just 52 years of good health; one born in Hart, Hampshire can expect 70.7. People in deprived areas are not just dying younger; they are suffering more for longer, spending a far higher proportion of shorter lives in poor health. The North-South divide reinforces this: men in the North East live 74.1 years against 81.8 in the South East — a 7.7-year gap that widened after the 2008 financial crisis as austerity disproportionately cut public services and welfare in already-deprived communities. The 2020 Marmot Review found that for the first time in over a century, life expectancy in England had stopped improving — and in the most deprived communities was actually declining.</p>
-            <p>The NHS can treat the consequences of inequality but cannot address its causes, which are material: income, housing quality, employment conditions, and early childhood environment. NHS England&rsquo;s Core20PLUS5 framework targets the most deprived 20% across five clinical areas, but the health gap took decades to widen and will take decades to close even under optimistic scenarios. Public health spending fell 24% in real terms between 2015 and 2023, reducing the investment in prevention that could compress morbidity and narrow the gap. The burden of poor health falls heaviest on those least able to bear it — lower-income households face higher rates of long-term illness, are less likely to be in work, and draw more heavily on NHS and social care services at exactly the point those services face the most pressure.</p>
+            <p>Healthy life expectancy — years lived without disability or chronic illness — varies by 18.4 years between England&rsquo;s most and least deprived areas, up from a 16.2-year gap in 2001.<Cite nums={1} /> A woman born in Blackpool&rsquo;s most deprived neighbourhoods can expect just 52 years of good health; one born in Hart, Hampshire can expect 70.7.<Cite nums={1} /> People in deprived areas are not just dying younger; they are suffering more for longer, spending a far higher proportion of shorter lives in poor health. The North-South divide reinforces this: men in the North East live 74.1 years against 81.8 in the South East — a 7.7-year gap that widened after the 2008 financial crisis as austerity disproportionately cut public services and welfare in already-deprived communities.<Cite nums={1} /> The 2020 Marmot Review found that for the first time in over a century, life expectancy in England had stopped improving — and in the most deprived communities was actually declining.<Cite nums={2} /></p>
+            <p>The NHS can treat the consequences of inequality but cannot address its causes, which are material: income, housing quality, employment conditions, and early childhood environment. NHS England&rsquo;s Core20PLUS5 framework targets the most deprived 20% across five clinical areas, but the health gap took decades to widen and will take decades to close even under optimistic scenarios. Public health spending fell 24% in real terms between 2015 and 2023, reducing the investment in prevention that could compress morbidity and narrow the gap.</p>
           </div>
         </section>
 
@@ -159,6 +166,9 @@ export default function HealthInequalitiesPage() {
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

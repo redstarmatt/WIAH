@@ -8,6 +8,13 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Children and Young People Eating Disorders (CYPED) waiting times', url: 'https://www.england.nhs.uk/mental-health/cypmh/eating-disorders/cyped-statistics/', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Hospital Episode Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity', date: '2024' },
+];
 
 const referralsData = [13200, 14100, 15800, 17600, 19400, 19100, 35200, 36100, 34800, 33200];
 const urgentTargetData = [85, 84, 83, 82, 80, 79, 72, 73, 74, 75];
@@ -140,8 +147,8 @@ export default function EatingDisordersPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on eating disorders</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Referrals for eating disorders to child and adolescent mental health services (CAMHS) rose 84% between 2019 and 2022, from 19,100 to 35,200 per year. Girls aged 10–19 account for the largest proportion of referrals, with anorexia nervosa carrying the highest mortality risk of any psychiatric condition — an estimated 5–10% lifetime mortality rate. The pandemic dramatically accelerated a pre-existing upward trend: school closures, social isolation, and increased social media use during lockdowns are all associated with the surge in cases.</p>
-              <p>NHS England's standard requires urgent eating disorder cases to be seen within one week and routine cases within four weeks. In 2023/24, only 72% of urgent cases met the one-week standard, against a target of 95%. Inpatient admissions have risen 35% since 2019, with many young people placed in units far from home — a consequence of a specialist bed shortage that has persisted despite successive government commitments to increase capacity.</p>
+              <p>Referrals for eating disorders to child and adolescent mental health services (CAMHS) rose 84% between 2019 and 2022, from 19,100 to 35,200 per year.<Cite nums={[1]} /> Girls aged 10–19 account for the largest proportion of referrals, with anorexia nervosa carrying the highest mortality risk of any psychiatric condition — an estimated 5–10% lifetime mortality rate. The pandemic dramatically accelerated a pre-existing upward trend: school closures, social isolation, and increased social media use during lockdowns are all associated with the surge in cases.</p>
+              <p>NHS England's standard requires urgent eating disorder cases to be seen within one week and routine cases within four weeks. In 2023/24, only 72% of urgent cases met the one-week standard, against a target of 95%.<Cite nums={[1]} /> Inpatient admissions have risen 35% since 2019, with many young people placed in units far from home — a consequence of a specialist bed shortage that has persisted despite successive government commitments to increase capacity.<Cite nums={[2]} /></p>
               <p>Eating disorders have the highest mortality rate of any mental health condition. Early intervention is strongly evidence-based: Family-Based Treatment (FBT) for adolescents has a good evidence base for full recovery if delivered promptly. The failure to meet waiting time targets means many young people deteriorate while waiting, increasing the likelihood of inpatient admission and longer recovery times.</p>
             </div>
           </section>
@@ -157,6 +164,9 @@ export default function EatingDisordersPage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Place of death (%), 2010–2022 — ONS
 const hospitalDeathValues = [53, 52, 51, 51, 50, 49, 48, 47, 47, 46, 45, 46, 46];
@@ -49,6 +51,12 @@ const placeAnnotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID-19 — hospital deaths spike' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Deaths registered by place of death', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathsregisteredbyareaofusualresidenceenglandandwales', date: '2022' },
+  { num: 2, name: 'Hospice UK', dataset: 'State of UK Hospice Services', url: 'https://www.hospiceuk.org/our-campaigns/state-of-hospice-services', date: '2023' },
+  { num: 3, name: 'Marie Curie', dataset: 'Palliative Care Research and Policy', url: 'https://www.mariecurie.org.uk/policy/publications', date: '2023' },
+];
+
 export default function EndOfLifePage() {
   return (
     <>
@@ -63,8 +71,8 @@ export default function EndOfLifePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The proportion of people dying in hospital has fallen steadily over the past decade, from 53% in 2010 to around 46% in 2022, as policy and preference have aligned around enabling more people to die at home or in community settings. Home deaths rose from 20% to 28% over the same period — the largest shift. This reflects both the expansion of community palliative care and the impact of the COVID pandemic, which accelerated movement away from hospitals in 2020. Surveys consistently show that around 70% of people would prefer to die at home or in a hospice, yet only around 34% do so. The gap between preference and reality reflects inadequate 24-hour community care, lack of carer support, and the crisis-driven default to hospital admission.</p>
-            <p>Hospices are the primary providers of specialist palliative care for the most complex cases, yet they receive only around 34% of their costs from NHS funding — a proportion that has not increased in over a decade despite rising demand and inflation. The remaining two-thirds is raised through charity: shops, legacies, and public fundraising. This creates a structurally fragile system where the quality of end-of-life care varies significantly by geography — postcode-dependent on the fundraising strength of local hospices. The Marie Curie annual report estimates that 100,000 people die each year without access to the palliative care they need. An ageing population will place further pressure on an already stretched system.</p>
+            <p>The proportion of people dying in hospital has fallen steadily over the past decade, from 53% in 2010 to around 46% in 2022<Cite nums={1} />, as policy and preference have aligned around enabling more people to die at home or in community settings. Home deaths rose from 20% to 28% over the same period — the largest shift.<Cite nums={1} /> This reflects both the expansion of community palliative care and the impact of the COVID pandemic, which accelerated movement away from hospitals in 2020. Surveys consistently show that around 70% of people would prefer to die at home or in a hospice, yet only around 34% do so.<Cite nums={2} /> The gap between preference and reality reflects inadequate 24-hour community care, lack of carer support, and the crisis-driven default to hospital admission.</p>
+            <p>Hospices are the primary providers of specialist palliative care for the most complex cases, yet they receive only around 34% of their costs from NHS funding<Cite nums={2} /> — a proportion that has not increased in over a decade despite rising demand and inflation. The remaining two-thirds is raised through charity: shops, legacies, and public fundraising. This creates a structurally fragile system where the quality of end-of-life care varies significantly by geography — postcode-dependent on the fundraising strength of local hospices. The Marie Curie annual report estimates that 100,000 people die each year without access to the palliative care they need.<Cite nums={3} /> An ageing population will place further pressure on an already stretched system.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +150,10 @@ export default function EndOfLifePage() {
             source="Source: Hospice UK — State of UK Hospice Services 2023. Marie Curie — The Palliative Care Funding Review 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

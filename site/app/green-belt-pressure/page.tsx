@@ -8,6 +8,13 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MHCLG', dataset: 'Green Belt Statistics England', url: 'https://www.gov.uk/government/statistics/green-belt-statistics-england', date: '2024' },
+  { num: 2, name: 'MHCLG', dataset: 'Development Management Statistics', url: 'https://www.gov.uk/government/statistics/planning-development-management-statistics-england', date: '2024' },
+];
 
 // Homes built on green belt (thousands), 2018–2023
 const homesOnGreenBeltK = [10.6, 11.2, 10.8, 12.4, 13.1, 14.9];
@@ -66,7 +73,7 @@ export default function GreenBeltPressurePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The green belt is both a planning policy tool and a cultural flashpoint. Designated to prevent urban sprawl around major cities, it covers 12.4% of England's land area. The number of homes built on green belt land has risen 40% since 2018, driven by planning appeals and exceptional circumstances releases where local plans are out of date. Meanwhile, the total designated area has shrunk from 1.64 million hectares in 2013 to 1.59 million — a loss of 130,000 hectares over a decade, mostly through local plan boundary reviews that release land to meet housing targets. The refusal rate for green belt planning applications has fallen from 77% in 2019 to 65% in 2024, reflecting increased pressure from housing targets on local planning authorities.</p>
+            <p>The green belt is both a planning policy tool and a cultural flashpoint. Designated to prevent urban sprawl around major cities, it covers 12.4% of England's land area.<Cite nums={1} /> The number of homes built on green belt land has risen 40% since 2018, driven by planning appeals and exceptional circumstances releases where local plans are out of date.<Cite nums={1} /> Meanwhile, the total designated area has shrunk from 1.64 million hectares in 2013 to 1.59 million — a loss of 130,000 hectares over a decade, mostly through local plan boundary reviews that release land to meet housing targets.<Cite nums={1} /> The refusal rate for green belt planning applications has fallen from 77% in 2019 to 65% in 2024, reflecting increased pressure from housing targets on local planning authorities.<Cite nums={2} /></p>
             <p>The relationship between green belt and housing delivery is contested. The Campaign to Protect Rural England argues that most green belt serves important environmental and recreational functions and that brownfield land could accommodate significantly more housing. Shelter, the CPRE's critics, and the Housing Studies Association argue the green belt artificially restricts housing supply in areas of highest demand, forcing house prices up and driving young people out of cities. Labour's 2024 NPPF reforms introduced grey belt — previously developed land within the green belt, and lower-quality green belt that does not fulfil the five core purposes — as a priority release zone, requiring 50% affordable housing on grey belt sites. Critics argue the definition is unclear and will generate litigation; supporters argue it allows necessary housing without touching high-quality land.</p>
           </div>
         </section>
@@ -146,6 +153,9 @@ export default function GreenBeltPressurePage() {
             source="Source: MHCLG — National Planning Policy Framework December 2024. MHCLG — Green Belt Statistics England 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

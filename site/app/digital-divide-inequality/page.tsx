@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -63,6 +65,13 @@ function sparkFrom(arr: number[], n = 10) {
 }
 
 // ── Page ─────────────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofcom', dataset: 'Adults\' Media Literacy Tracker', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Internet Access — Households and Individuals', date: '2024' },
+  { num: 3, name: 'Lloyds Bank', dataset: 'Consumer Digital Index', date: '2024' },
+  { num: 4, name: 'Ofcom', dataset: 'Affordability of Communications Services', date: '2024' },
+];
 
 export default function DigitalDivideInequalityPage() {
   const [data, setData] = useState<DigitalDivideData | null>(null);
@@ -183,13 +192,13 @@ export default function DigitalDivideInequalityPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK government has spent the last decade moving public services online. Universal Credit, tax self-assessment, GP appointment booking, school admissions, parking permits, voter registration — the list of services that now assume internet access is long and growing. The efficiency gains are real. But the assumption underpinning this shift — that everyone can get online — is wrong. Around 3.1 million households remain entirely offline, concentrated among older people, those on low incomes, people with disabilities, and rural communities where broadband infrastructure remains poor. The digital divide is not a technology problem. It is a poverty and inequality problem wearing a technology label.
+              The UK government has spent the last decade moving public services online. Universal Credit, tax self-assessment, GP appointment booking, school admissions, parking permits, voter registration — the list of services that now assume internet access is long and growing. The efficiency gains are real. But the assumption underpinning this shift — that everyone can get online — is wrong. Around 3.1 million households remain entirely offline, concentrated among older people, those on low incomes, people with disabilities, and rural communities where broadband infrastructure remains poor.<Cite nums={1} /> The digital divide is not a technology problem. It is a poverty and inequality problem wearing a technology label.
             </p>
             <p>
-              The correlation between income and internet access is stark and persistent. In 2024, virtually all households in the highest income quintile had internet access. In the lowest quintile, the figure was 87% — a gap that has narrowed but never closed. Among adults aged 75 and over, around 40% are still offline. COVID-19 accelerated digital adoption out of necessity — millions had no choice but to learn video calling, online shopping, and remote health services. But it also exposed who was being left behind. Children without devices or reliable broadband fell behind at school. Older people unable to book vaccine appointments online were dependent on family or neighbours. The pandemic did not create the digital divide; it made it dangerous. Meanwhile, 7.9 million adults still lack what Ofcom defines as basic digital skills — the ability to send an email, fill in an online form, or assess whether a website is trustworthy. These are not niche capabilities; they are prerequisites for participation in modern Britain.
+              The correlation between income and internet access is stark and persistent. In 2024, virtually all households in the highest income quintile had internet access. In the lowest quintile, the figure was 87% — a gap that has narrowed but never closed.<Cite nums={2} /> Among adults aged 75 and over, around 40% are still offline.<Cite nums={1} /> COVID-19 accelerated digital adoption out of necessity — millions had no choice but to learn video calling, online shopping, and remote health services. But it also exposed who was being left behind. Children without devices or reliable broadband fell behind at school. Older people unable to book vaccine appointments online were dependent on family or neighbours. The pandemic did not create the digital divide; it made it dangerous. Meanwhile, 7.9 million adults still lack what Ofcom defines as basic digital skills — the ability to send an email, fill in an online form, or assess whether a website is trustworthy.<Cite nums={3} /> These are not niche capabilities; they are prerequisites for participation in modern Britain.
             </p>
             <p>
-              One policy lever already exists but remains almost entirely unused. Social tariffs — discounted broadband packages for people on Universal Credit or Pension Credit — are offered by most major providers at around ten to fifteen pounds per month. Yet take-up sits at roughly 5%, with only 240,000 of the 4.8 million eligible households signed up. Awareness is low, the application process is often cumbersome, and some providers do not actively promote their social tariffs. There is also a growing cohort of smartphone-only internet users — people who access the web exclusively through a phone, without a laptop or home broadband. Smartphone-only access makes it significantly harder to complete complex tasks like benefit applications, job searches with CV uploads, or online learning. Digital inclusion hubs run by libraries and organisations like Good Things Foundation provide free access and skills training, and evidence suggests they work — but funding is inconsistent and demand far outstrips supply. Until connectivity and capability are treated as utilities rather than luxuries, millions of people will remain locked out of services designed for everyone.
+              One policy lever already exists but remains almost entirely unused. Social tariffs — discounted broadband packages for people on Universal Credit or Pension Credit — are offered by most major providers at around ten to fifteen pounds per month. Yet take-up sits at roughly 5%, with only 240,000 of the 4.8 million eligible households signed up.<Cite nums={4} /> Awareness is low, the application process is often cumbersome, and some providers do not actively promote their social tariffs. There is also a growing cohort of smartphone-only internet users — people who access the web exclusively through a phone, without a laptop or home broadband. Smartphone-only access makes it significantly harder to complete complex tasks like benefit applications, job searches with CV uploads, or online learning. Digital inclusion hubs run by libraries and organisations like Good Things Foundation provide free access and skills training, and evidence suggests they work — but funding is inconsistent and demand far outstrips supply. Until connectivity and capability are treated as utilities rather than luxuries, millions of people will remain locked out of services designed for everyone.
             </p>
           </div>
         </section>
@@ -304,6 +313,9 @@ export default function DigitalDivideInequalityPage() {
             source="Source: Ofcom — Affordability of Communications Services, 2024. Good Things Foundation — Digital Inclusion Impact Report, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <RelatedTopics />
       </main>
     </>

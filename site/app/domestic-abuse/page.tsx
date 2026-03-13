@@ -5,6 +5,14 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Domestic abuse in England and Wales overview', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwalesoverview/latest', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'Crime outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-statistics', date: '2024' },
+  { num: 3, name: "Women's Aid", dataset: 'Annual Survey', url: 'https://www.womensaid.org.uk/information-support/what-is-domestic-abuse/statistics/', date: '2024' },
+];
 
 export default function DomesticAbusePage() {
   // Domestic abuse crimes recorded (millions), 2015–2024
@@ -128,12 +136,16 @@ export default function DomesticAbusePage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The justice gap</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Police record around 1.5 million domestic abuse crimes each year in England and Wales. The true prevalence is higher — the Crime Survey for England and Wales estimates around 2.1 million adults experience domestic abuse annually, and many incidents are never reported. Women account for 74% of victims.</p>
-              <p>Of the crimes that are recorded, only around 7% lead to a charge. This has fallen from 9.5% in 2015, despite the Domestic Abuse Act 2021 introducing new offences and stronger protections. The reasons are complex: victims often withdraw support for prosecution, evidence gathering is difficult without victim testimony, and case complexity has grown as stalking and coercive control become more commonly recognised and charged.</p>
-              <p>Refuge capacity has been chronically underfunded. In any given year, Women's Aid surveys find that fewer than half of women seeking refuge can be accommodated. Local authority cuts to specialist domestic abuse services have compounded the shortage, with many councils relying on short-term grant funding rather than statutory provision.</p>
+              <p>Police record around 1.5 million domestic abuse crimes each year in England and Wales.<Cite nums={1} /> The true prevalence is higher — the Crime Survey for England and Wales estimates around 2.1 million adults experience domestic abuse annually, and many incidents are never reported.<Cite nums={1} /> Women account for 74% of victims.<Cite nums={1} /></p>
+              <p>Of the crimes that are recorded, only around 7% lead to a charge. This has fallen from 9.5% in 2015, despite the Domestic Abuse Act 2021 introducing new offences and stronger protections.<Cite nums={2} /> The reasons are complex: victims often withdraw support for prosecution, evidence gathering is difficult without victim testimony, and case complexity has grown as stalking and coercive control become more commonly recognised and charged.</p>
+              <p>Refuge capacity has been chronically underfunded. In any given year, Women&apos;s Aid surveys find that fewer than half of women seeking refuge can be accommodated.<Cite nums={3} /> Local authority cuts to specialist domestic abuse services have compounded the shortage, with many councils relying on short-term grant funding rather than statutory provision.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

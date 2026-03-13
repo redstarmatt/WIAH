@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -42,6 +44,13 @@ function yearToDate(y: number): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England / UKHSA', dataset: 'Hepatitis C Elimination Programme', url: 'https://www.england.nhs.uk/publication/hepatitis-c-elimination/', date: 'Feb 2026' },
+  { num: 2, name: 'NHS England', dataset: 'HCV Clinical Audit — SVR12 outcomes', url: 'https://www.england.nhs.uk/publication/hepatitis-c-elimination/', date: 'Feb 2026' },
+  { num: 3, name: 'UKHSA', dataset: 'Hepatitis C in England and the UK', url: 'https://www.gov.uk/government/publications/hepatitis-c-in-the-uk', date: 'Feb 2026' },
+  { num: 4, name: 'WHO', dataset: 'Global Health Sector Strategy on Viral Hepatitis', url: 'https://www.who.int/publications/i/item/9789241210003', date: '2024' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -140,13 +149,13 @@ export default function HepatitisCTreatmentPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              In 2015, the arrival of direct-acting antivirals on the NHS changed hepatitis C from a chronic, often fatal liver disease into something that could be cured in eight to twelve weeks with a short course of tablets. The transformation was extraordinary. Previous interferon-based treatments lasted up to a year, carried severe side effects, and cured barely half of patients. The new drugs achieve sustained virological response in 97% of cases. The NHS launched a dedicated elimination programme in 2017, setting a target to eliminate hepatitis C as a major public health threat in England by 2025 — five years ahead of the World Health Organization's global goal of 2030.
+              In 2015, the arrival of direct-acting antivirals on the NHS changed hepatitis C from a chronic, often fatal liver disease into something that could be cured in eight to twelve weeks with a short course of tablets. The transformation was extraordinary. Previous interferon-based treatments lasted up to a year, carried severe side effects, and cured barely half of patients. The new drugs achieve sustained virological response in 97% of cases.<Cite nums={2} /> The NHS launched a dedicated elimination programme in 2017, setting a target to eliminate hepatitis C as a major public health threat in England by 2025 — five years ahead of the World Health Organization's global goal of 2030.<Cite nums={[1, 4]} />
             </p>
             <p>
-              The programme made rapid early progress. Treatment numbers surged to 21,800 in 2017 as the backlog of known patients was worked through. Prisons became a key testing and treatment site, with opt-out testing identifying thousands of cases. Community pharmacies, drug treatment services, and mobile testing vans extended reach into marginalised populations where prevalence is highest — people who inject drugs, the homeless, and migrant communities with exposure in countries of high prevalence. Then COVID-19 struck. Testing services collapsed, outreach stopped, and treatment numbers fell to 10,000 in 2020. The pipeline of newly diagnosed patients dried up. Two years of momentum were lost.
+              The programme made rapid early progress. Treatment numbers surged to 21,800 in 2017 as the backlog of known patients was worked through.<Cite nums={1} /> Prisons became a key testing and treatment site, with opt-out testing identifying thousands of cases. Community pharmacies, drug treatment services, and mobile testing vans extended reach into marginalised populations where prevalence is highest — people who inject drugs, the homeless, and migrant communities with exposure in countries of high prevalence. Then COVID-19 struck. Testing services collapsed, outreach stopped, and treatment numbers fell to 10,000 in 2020.<Cite nums={1} /> The pipeline of newly diagnosed patients dried up. Two years of momentum were lost.
             </p>
             <p>
-              Recovery has been slow but steady. Treatment starts have climbed back to an estimated 12,800 in 2025, and undiagnosed cases have continued to fall — now estimated at 78,000, down from 160,000 a decade ago. But the remaining undiagnosed population is disproportionately hard to reach. They are people not engaged with health services, not in prison, not attending drug treatment. Finding them requires sustained investment in community outreach, peer-led testing, and the kind of patient, relationship-based work that does not scale easily or cheaply. The UK's elimination ambition is real and achievable, but the final stretch is the hardest. The data shows a public health success story still being written — one that depends on whether the unglamorous work of finding the last 78,000 people continues to be funded.
+              Recovery has been slow but steady. Treatment starts have climbed back to an estimated 12,800 in 2025, and undiagnosed cases have continued to fall — now estimated at 78,000, down from 160,000 a decade ago.<Cite nums={[1, 3]} /> But the remaining undiagnosed population is disproportionately hard to reach. They are people not engaged with health services, not in prison, not attending drug treatment. Finding them requires sustained investment in community outreach, peer-led testing, and the kind of patient, relationship-based work that does not scale easily or cheaply. The UK's elimination ambition is real and achievable, but the final stretch is the hardest. The data shows a public health success story still being written — one that depends on whether the unglamorous work of finding the last 78,000 people continues to be funded.<Cite nums={3} />
             </p>
           </div>
         </section>
@@ -275,6 +284,10 @@ export default function HepatitisCTreatmentPage() {
             source="Source: UKHSA — Hepatitis C in England, 2025. NHS England — HCV Elimination Programme, 2025. WHO — Global Hepatitis Report, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

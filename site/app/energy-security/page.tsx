@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Gas import dependency (%), 2010–2024 — DESNZ
 const gasImportValues = [43, 44, 46, 48, 50, 52, 52, 51, 50, 51, 53, 56, 58, 57, 55];
@@ -55,6 +57,12 @@ const gasAnnotations: Annotation[] = [
   { date: new Date(2022, 1, 1), label: '2022: Russia invades Ukraine' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'Energy Trends: UK gas', url: 'https://www.gov.uk/government/statistics/gas-section-4-energy-trends', date: '2024' },
+  { num: 2, name: 'NSTA', dataset: 'UKCS production data', url: 'https://www.nstauthority.co.uk/data-centre/nsta-open-data/', date: '2024' },
+  { num: 3, name: 'National Grid ESO', dataset: 'Interconnector capacity', url: 'https://www.nationalgrideso.com/future-energy/future-energy-scenarios', date: '2024' },
+];
+
 export default function EnergySecurityPage() {
   return (
     <>
@@ -69,8 +77,8 @@ export default function EnergySecurityPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's gas import dependency has risen steadily from 43% in 2010 to around 55% in 2024, as North Sea production continues its long-term structural decline. The North Sea produced approximately 280 TWh of gas in 2024, down from 550 TWh in 2010 — a 49% fall in fourteen years. Despite the government's controversial decision to grant new North Sea licences in 2023, production from new fields will not materially reverse this trend before the 2030s. Imports come primarily from Norway (via pipeline), liquefied natural gas (LNG) tankers from Qatar and the US, and interconnectors. The price of imported gas is set on global markets — meaning UK consumers have no insulation from geopolitical shocks.</p>
-            <p>The 2022 energy crisis demonstrated the systemic risk. Following Russia's reduction of gas supplies to Europe, UK wholesale gas prices rose by over 400% in 2022, feeding directly into household bills and industrial energy costs. The UK's position — more exposed to LNG spot prices than continental Europe due to limited pipeline storage — made the shock sharper here than in Germany or France. The strategic response has two tracks: accelerating renewable deployment to displace gas from electricity generation, and expanding interconnector capacity (now 7.2 GW) to allow greater European electricity trading. Neither fully resolves the 25 million homes still dependent on gas heating — a challenge that heat pumps and district heating must ultimately address.</p>
+            <p>The UK's gas import dependency has risen steadily from 43% in 2010 to around 55% in 2024<Cite nums={1} />, as North Sea production continues its long-term structural decline. The North Sea produced approximately 280 TWh of gas in 2024, down from 550 TWh in 2010 — a 49% fall in fourteen years.<Cite nums={2} /> Despite the government's controversial decision to grant new North Sea licences in 2023, production from new fields will not materially reverse this trend before the 2030s. Imports come primarily from Norway (via pipeline), liquefied natural gas (LNG) tankers from Qatar and the US, and interconnectors. The price of imported gas is set on global markets — meaning UK consumers have no insulation from geopolitical shocks.</p>
+            <p>The 2022 energy crisis demonstrated the systemic risk. Following Russia's reduction of gas supplies to Europe, UK wholesale gas prices rose by over 400% in 2022<Cite nums={1} />, feeding directly into household bills and industrial energy costs. The UK's position — more exposed to LNG spot prices than continental Europe due to limited pipeline storage — made the shock sharper here than in Germany or France. The strategic response has two tracks: accelerating renewable deployment to displace gas from electricity generation, and expanding interconnector capacity (now 7.2 GW)<Cite nums={3} /> to allow greater European electricity trading. Neither fully resolves the 25 million homes still dependent on gas heating — a challenge that heat pumps and district heating must ultimately address.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -148,6 +156,10 @@ export default function EnergySecurityPage() {
             source="Source: Climate Change Committee — Progress in reducing emissions 2024. DESNZ — Clean Power 2030 Action Plan."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

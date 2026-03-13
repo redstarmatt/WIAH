@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Equity release lending (£bn), 2015–2023 — Equity Release Council
 const lendingValues = [1.6, 2.2, 3.1, 3.9, 4.0, 3.9, 3.6, 4.8, 2.6];
@@ -46,6 +48,11 @@ const lendingAnnotations: Annotation[] = [
   { date: new Date(2022, 8, 1), label: 'Sep 2022: Mini-budget — rates spike' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Equity Release Council', dataset: 'Market data and statistics', url: 'https://www.equityreleasecouncil.com/market-data/', date: '2023' },
+  { num: 2, name: 'FCA', dataset: 'Equity release consumer information', url: 'https://www.fca.org.uk/consumers/equity-release', date: '2023' },
+];
+
 export default function EquityReleaseMarketPage() {
   return (
     <>
@@ -60,8 +67,8 @@ export default function EquityReleaseMarketPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Equity release — the range of financial products that allow homeowners aged 55 and over to access the value tied up in their property without selling — grew rapidly from 2015 to 2022, driven by rising house prices, low interest rates, and inadequate pension savings for many of those approaching retirement. The market grew from £1.6 billion in 2015 to a peak of £4.8 billion in 2022. The most common product is a lifetime mortgage, where compound interest rolls up over the life of the loan. With average rates of around 5–6% and typical loan durations of 15–20 years, an initial borrowing of £80,000 can grow to £250,000 or more before repayment.</p>
-            <p>The September 2022 mini-budget triggered a sharp repricing: equity release rates jumped from around 4.9% to 6.9% in months, and new plan numbers fell from 49,000 in 2022 to 27,000 in 2023 — a 45% drop. Consumer groups and the FCA have raised concerns about the complexity and long-term costs of equity release products, particularly for borrowers who later need care home funding or wish to leave property to children. The Equity Release Council introduced the no-negative-equity guarantee and the right to make partial repayments without penalty, reducing the worst outcomes. But the fundamental structural driver — insufficient private pension saving across the boomer generation — means demand will persist.</p>
+            <p>Equity release — the range of financial products that allow homeowners aged 55 and over to access the value tied up in their property without selling — grew rapidly from 2015 to 2022, driven by rising house prices, low interest rates, and inadequate pension savings for many of those approaching retirement. The market grew from £1.6 billion in 2015 to a peak of £4.8 billion in 2022.<Cite nums={1} /> The most common product is a lifetime mortgage, where compound interest rolls up over the life of the loan. With average rates of around 5–6% and typical loan durations of 15–20 years, an initial borrowing of £80,000 can grow to £250,000 or more before repayment.<Cite nums={1} /></p>
+            <p>The September 2022 mini-budget triggered a sharp repricing: equity release rates jumped from around 4.9% to 6.9% in months, and new plan numbers fell from 49,000 in 2022 to 27,000 in 2023 — a 45% drop.<Cite nums={1} /> Consumer groups and the FCA have raised concerns about the complexity and long-term costs of equity release products, particularly for borrowers who later need care home funding or wish to leave property to children.<Cite nums={2} /> The Equity Release Council introduced the no-negative-equity guarantee and the right to make partial repayments without penalty, reducing the worst outcomes. But the fundamental structural driver — insufficient private pension saving across the boomer generation — means demand will persist.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -139,6 +146,10 @@ export default function EquityReleaseMarketPage() {
             source="Source: Equity Release Council — Standards and product features 2023. FCA — Equity release regulation guidance."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

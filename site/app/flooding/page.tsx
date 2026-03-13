@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 const floodRiskData = [3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.5, 4.7, 4.9, 5.0, 5.1, 5.2];
 const floodRiskAnnotations: Annotation[] = [
@@ -39,6 +41,13 @@ const damageCostSeries: Series[] = [
     colour: '#264653',
     data: damageCostData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
   },
+];
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'National Flood Risk Assessment (NaFRA2)', url: 'https://www.gov.uk/flood-and-coastal-erosion-risk-management-research-reports/national-flood-and-coastal-erosion-risk-register', date: '2024' },
+  { num: 2, name: 'Environment Agency', dataset: 'Long-term investment scenarios for flood and coastal erosion risk management', url: 'https://www.gov.uk/government/publications/flood-and-coastal-erosion-risk-management-long-term-investment-scenarios', date: '2024' },
+  { num: 3, name: 'Environment Agency / DLUHC', dataset: 'Planning in flood risk areas analysis', date: '2023' },
+  { num: 4, name: 'Flood Re', dataset: 'Reinsurance scheme data', date: '2024' },
 ];
 
 export default function FloodingPage() {
@@ -134,9 +143,9 @@ export default function FloodingPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on flood risk</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>5.2 million properties in England are now at significant risk of flooding from rivers, sea, or surface water — up 37% from 3.8 million in 2013. The Environment Agency's latest National Flood Risk Assessment (NaFRA2) projects this will rise further as climate change intensifies rainfall events and sea levels rise. The Climate Change Committee estimates that without significant additional adaptation investment, flood damage costs could double by 2050.</p>
-              <p>Annual flood damage costs average £1.1 billion, but with enormous year-to-year variation: the 2015/16 winter floods in Cumbria, Lancashire and Yorkshire cost an estimated £1.6 billion; Storm Babet and Ciaran in autumn 2023 caused over £500 million of damage in a single week. The number of new homes being built in high flood risk areas continues to increase, with approximately 11,000 new homes granted planning permission in flood zones in 2022/23 despite Environment Agency objections.</p>
-              <p>Flood insurance is becoming harder to obtain in high-risk areas. The Flood Re reinsurance scheme, which subsidises insurance for high-risk properties, covers around 350,000 homes. But as risk increases, the scheme faces growing pressure — and properties built after 2009 are excluded entirely. The gap between insured and actual losses means many flood victims bear costs that are not covered.</p>
+              <p>5.2 million properties in England are now at significant risk of flooding from rivers, sea, or surface water — up 37% from 3.8 million in 2013<Cite nums={1} />. The Environment Agency's latest National Flood Risk Assessment (NaFRA2) projects this will rise further as climate change intensifies rainfall events and sea levels rise. The Climate Change Committee estimates that without significant additional adaptation investment, flood damage costs could double by 2050.</p>
+              <p>Annual flood damage costs average £1.1 billion<Cite nums={2} />, but with enormous year-to-year variation: the 2015/16 winter floods in Cumbria, Lancashire and Yorkshire cost an estimated £1.6 billion; Storm Babet and Ciaran in autumn 2023 caused over £500 million of damage in a single week. The number of new homes being built in high flood risk areas continues to increase, with approximately 11,000 new homes granted planning permission in flood zones in 2022/23 despite Environment Agency objections<Cite nums={3} />.</p>
+              <p>Flood insurance is becoming harder to obtain in high-risk areas. The Flood Re reinsurance scheme, which subsidises insurance for high-risk properties, covers around 350,000 homes<Cite nums={4} />. But as risk increases, the scheme faces growing pressure — and properties built after 2009 are excluded entirely. The gap between insured and actual losses means many flood victims bear costs that are not covered.</p>
             </div>
           </section>
         </ScrollReveal>
@@ -151,6 +160,9 @@ export default function FloodingPage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

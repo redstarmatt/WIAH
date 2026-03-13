@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Drug poisoning deaths, England & Wales, 2012–2022 — ONS
 const poisoningValues = [2652, 2732, 2952, 3346, 3744, 3756, 4359, 4393, 4561, 4859, 4907];
@@ -38,6 +40,12 @@ const poisoningAnnotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID lockdown surge' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Deaths related to drug poisoning in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoningenglandandwales/latest', date: '2022' },
+  { num: 2, name: 'National Records of Scotland', dataset: 'Drug-related deaths in Scotland', url: 'https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/deaths/drug-related-deaths-in-scotland', date: '2022' },
+  { num: 3, name: 'OHID / NDTMS', dataset: 'Adult substance misuse treatment statistics', url: 'https://www.ndtms.net/', date: '2022/23' },
+];
+
 export default function DrugDeathsPage() {
   return (
     <>
@@ -52,8 +60,8 @@ export default function DrugDeathsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Drug poisoning deaths in England and Wales rose from 2,652 in 2012 to a record 4,907 in 2022, climbing in nearly every intervening year. Opioids account for 48% of fatalities; cocaine for 18%; benzodiazepines — increasingly mixed into street heroin — for 12%. These are not deaths concentrated among young recreational users: the typical profile is a man in his 40s or 50s with a long history of opioid dependency, tracking back to the heroin epidemic that flooded post-industrial towns in the 1980s and 1990s. Scotland's rate of 22.4 deaths per 100,000 is the highest in Europe — three times England's — driven by concentrated poverty in post-industrial cities like Glasgow and Dundee. From 2023, nitazenes and other synthetic opioids were detected in the UK supply with increasing frequency, raising the risk of mass casualty events seen in North America.</p>
-            <p>Drug treatment funding fell by around 35% in real terms from 2013 to 2020, hollowing out the infrastructure needed to reach people at highest risk. The 2021 Ten-Year Drugs Plan committed £780 million over three years to rebuilding the treatment system. By 2022/23, 275,896 adults were in structured treatment, with 45% completing free from dependence. Community naloxone distribution reached 110,000 doses in 2022; in high-coverage areas it has been shown to reduce overdose deaths by 30%. The fundamental challenge remains: demand for treatment outstrips supply in many areas, and the cohort of long-term opioid users is ageing with compounding health needs.</p>
+            <p>Drug poisoning deaths in England and Wales rose from 2,652 in 2012 to a record 4,907 in 2022, climbing in nearly every intervening year.<Cite nums={1} /> Opioids account for 48% of fatalities; cocaine for 18%; benzodiazepines — increasingly mixed into street heroin — for 12%.<Cite nums={1} /> These are not deaths concentrated among young recreational users: the typical profile is a man in his 40s or 50s with a long history of opioid dependency, tracking back to the heroin epidemic that flooded post-industrial towns in the 1980s and 1990s. Scotland&apos;s rate of 22.4 deaths per 100,000 is the highest in Europe — three times England&apos;s — driven by concentrated poverty in post-industrial cities like Glasgow and Dundee.<Cite nums={2} /> From 2023, nitazenes and other synthetic opioids were detected in the UK supply with increasing frequency, raising the risk of mass casualty events seen in North America.</p>
+            <p>Drug treatment funding fell by around 35% in real terms from 2013 to 2020, hollowing out the infrastructure needed to reach people at highest risk. The 2021 Ten-Year Drugs Plan committed £780 million over three years to rebuilding the treatment system. By 2022/23, 275,896 adults were in structured treatment, with 45% completing free from dependence.<Cite nums={3} /> Community naloxone distribution reached 110,000 doses in 2022; in high-coverage areas it has been shown to reduce overdose deaths by 30%.<Cite nums={3} /> The fundamental challenge remains: demand for treatment outstrips supply in many areas, and the cohort of long-term opioid users is ageing with compounding health needs.</p>
           </div>
         </section>
         <SectionNav sections={[

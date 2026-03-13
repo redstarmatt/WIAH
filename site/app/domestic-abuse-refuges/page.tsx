@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -55,6 +57,15 @@ function yearToDate(y: number): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: "Women's Aid", dataset: 'Annual Audit of Domestic Abuse Services', url: 'https://www.womensaid.org.uk/research-and-publications/the-annual-audit/', date: '2024' },
+  { num: 2, name: 'SafeLives', dataset: 'Routes to Support vacancy monitoring', url: 'https://safelives.org.uk/research-evidence/safelives-insights/', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Domestic abuse in England and Wales overview', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwalesoverview/november2024', date: '2024' },
+  { num: 4, name: 'DLUHC', dataset: 'Domestic Abuse Act statutory duty funding returns', url: 'https://www.gov.uk/government/publications/domestic-abuse-safe-accommodation-funding', date: '2024' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -149,10 +160,10 @@ export default function DomesticAbuseRefugesPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England has roughly 3,710 refuge bedspaces for a population of 56 million. The Council of Europe recommends one family place per 10,000 people — which would mean at least 5,600 for England alone. The shortfall is not abstract. It means a woman fleeing violence, often with children, phones a national helpline and is told there is no room. In the worst cases she returns to her abuser. In 2024, 35% of all referrals to refuge services could not be accommodated — down from a peak of 43% in 2017-2019, but still meaning that on an average day, 97 women and their children are turned away from safety.
+              England has roughly 3,710 refuge bedspaces for a population of 56 million.<Cite nums={1} /> The Council of Europe recommends one family place per 10,000 people — which would mean at least 5,600 for England alone. The shortfall is not abstract. It means a woman fleeing violence, often with children, phones a national helpline and is told there is no room. In the worst cases she returns to her abuser. In 2024, 35% of all referrals to refuge services could not be accommodated — down from a peak of 43% in 2017-2019, but still meaning that on an average day, 97 women and their children are turned away from safety.<Cite nums={[1, 2]} />
             </p>
             <p>
-              The trajectory is complex. Between 2010 and 2017, austerity-era cuts to local authority budgets led to the closure of around 17% of specialist refuge services. Many of the lost services were run by women-led, by-and-for organisations serving Black, minoritised, and disabled women — communities already underserved. The Domestic Abuse Act 2021 was a landmark: it placed a statutory duty on tier-one local authorities to assess need and fund safe accommodation. That duty has driven real investment. Bedspace numbers have risen from a low of 3,028 in 2017 to 3,710 in 2024 — a 22% increase. Turnaway rates have fallen eight percentage points in the same period. But the gap between supply and need remains vast, because demand has been rising too. Police-recorded domestic abuse incidents have grown from under one million in 2015 to over 1.57 million in 2024 — reflecting both genuine prevalence increases and, critically, improved reporting and recording by police forces.
+              The trajectory is complex. Between 2010 and 2017, austerity-era cuts to local authority budgets led to the closure of around 17% of specialist refuge services.<Cite nums={1} /> Many of the lost services were run by women-led, by-and-for organisations serving Black, minoritised, and disabled women — communities already underserved. The Domestic Abuse Act 2021 was a landmark: it placed a statutory duty on tier-one local authorities to assess need and fund safe accommodation.<Cite nums={4} /> That duty has driven real investment. Bedspace numbers have risen from a low of 3,028 in 2017 to 3,710 in 2024 — a 22% increase.<Cite nums={1} /> Turnaway rates have fallen eight percentage points in the same period. But the gap between supply and need remains vast, because demand has been rising too. Police-recorded domestic abuse incidents have grown from under one million in 2015 to over 1.57 million in 2024 — reflecting both genuine prevalence increases and, critically, improved reporting and recording by police forces.<Cite nums={3} />
             </p>
             <p>
               The funding picture remains fragile. Much of the post-2021 investment comes through short-term grants rather than sustained core funding, leaving refuge providers unable to plan beyond annual cycles. Women with no recourse to public funds — often those on spousal visas — remain excluded from most statutory provision, a gap campaigners describe as a form of structural abandonment. The data tells a story of genuine progress driven by legislation and advocacy, but also of a system that remains chronically undersized for the scale of need.
@@ -334,6 +345,10 @@ export default function DomesticAbuseRefugesPage() {
             source="Source: Women's Aid — Annual Audit 2024. DLUHC — Domestic Abuse Act statutory duty returns, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

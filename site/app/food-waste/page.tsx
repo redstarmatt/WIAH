@@ -8,6 +8,13 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'WRAP', dataset: 'UK food surplus and waste estimates', url: 'https://wrap.org.uk/resources/report/food-surplus-and-waste-uk-key-facts', date: '2024' },
+  { num: 2, name: 'WRAP', dataset: 'Courtauld Commitment 2030 progress report', url: 'https://wrap.org.uk/taking-action/food-drink/initiatives/courtauld-commitment', date: '2024' },
+];
 
 // Total food waste (million tonnes), 2015–2023
 const totalWasteMt = [10.2, 10.0, 9.8, 9.7, 9.6, 9.5, 9.5, 9.5, 9.5];
@@ -71,8 +78,8 @@ export default function FoodWastePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK wastes approximately 9.5 million tonnes of food annually across the whole supply chain — from farm gate through manufacturing, retail, and hospitality, to the household bin. Households account for around 6.4 million tonnes, or roughly 70% by weight. WRAP estimates the household food waste bill at £19 billion per year, or around £700 per household. Critically, around 50% of household food waste is food that was still edible when discarded, including bread, salad, and fruit. Environmental impact compounds the economic cost: the embedded carbon in wasted food amounts to around 25 million tonnes of CO2-equivalent per year. Yet the scale of food waste coexists with acute food insecurity: approximately 7 million UK adults experienced food insecurity in 2023.</p>
-            <p>Progress on reducing food waste has been made but at a slow and insufficient rate. WRAP data shows total UK food waste fell from an estimated 11.5 million tonnes in 2007 to 9.5 million tonnes in 2023 — a reduction of around 18% over sixteen years. Over the more recent period 2015–2023, total waste has barely moved. The UN Sustainable Development Goal 12.3 requires a 50% reduction in food waste per capita at retail and consumer level by 2030 — an ambition that would require the UK to cut household waste from around 6.4 million tonnes to around 3.2 million tonnes in seven years. At current rates of progress, the UK will fall far short.</p>
+            <p>The UK wastes approximately 9.5 million tonnes of food annually across the whole supply chain — from farm gate through manufacturing, retail, and hospitality, to the household bin.<Cite nums={[1]} /> Households account for around 6.4 million tonnes, or roughly 70% by weight.<Cite nums={[1]} /> WRAP estimates the household food waste bill at £19 billion per year, or around £700 per household.<Cite nums={[1]} /> Critically, around 50% of household food waste is food that was still edible when discarded, including bread, salad, and fruit.<Cite nums={[1]} /> Environmental impact compounds the economic cost: the embedded carbon in wasted food amounts to around 25 million tonnes of CO2-equivalent per year.<Cite nums={[1]} /> Yet the scale of food waste coexists with acute food insecurity: approximately 7 million UK adults experienced food insecurity in 2023.</p>
+            <p>Progress on reducing food waste has been made but at a slow and insufficient rate. WRAP data shows total UK food waste fell from an estimated 11.5 million tonnes in 2007 to 9.5 million tonnes in 2023 — a reduction of around 18% over sixteen years.<Cite nums={[1]} /> Over the more recent period 2015–2023, total waste has barely moved.<Cite nums={[1]} /> The UN Sustainable Development Goal 12.3 requires a 50% reduction in food waste per capita at retail and consumer level by 2030 — an ambition that would require the UK to cut household waste from around 6.4 million tonnes to around 3.2 million tonnes in seven years. At current rates of progress, the UK will fall far short.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +158,9 @@ export default function FoodWastePage() {
             source="Source: WRAP — UK food waste estimates; Courtauld Commitment 2030 progress report."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

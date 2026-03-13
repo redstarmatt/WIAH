@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey: economic inactivity by reason', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity', date: '2023' },
+  { num: 2, name: 'DWP', dataset: 'Inactivity and health statistics', url: 'https://www.gov.uk/government/organisations/department-for-work-pensions', date: '2023' },
+  { num: 3, name: 'OBR', dataset: 'Economic and Fiscal Outlook', date: '2023' },
+  { num: 4, name: 'Resolution Foundation', dataset: 'Health and economic inactivity analysis', date: '2023' },
+];
 
 // Inactive due to long-term sickness (millions), 2015–2025 — ONS LFS
 const sicknessInactiveValues = [2.1, 2.1, 2.1, 2.1, 2.1, 2.2, 2.5, 2.7, 2.8, 2.8, 2.8];
@@ -74,8 +83,8 @@ export default function EconomicInactivitySicknessPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Long-term sickness is now the single largest reason why working-age people are economically inactive, overtaking caring responsibilities for the first time. At 2.8 million in 2023, the number inactive due to illness is up from 2.1 million in 2019 — a rise of 700,000 in four years with no precedent in modern records. Mental health conditions — anxiety, depression, and more severe conditions — account for 38% of the total, up from 26% in 2015. Musculoskeletal conditions account for a further 35%. The rise in mental health inactivity reflects not only the COVID pandemic's psychological toll but a long-running failure of NHS mental health services to treat people quickly enough to prevent deterioration into long-term incapacity.</p>
-            <p>The NHS waiting list — 7.5 million cases at its peak — is a significant driver: people waiting months or years for hip replacements, spinal surgery, or mental health treatment cannot work. Resolution Foundation modelling suggests eliminating the waiting list backlog could return 170,000 people to employment. The OBR has forecast that without intervention, sickness-related inactivity could reach 3.5 million by 2027. The economic cost is substantial: each additional 100,000 inactive people removes approximately 0.15% from potential GDP and increases benefit expenditure by around £300 million per year.</p>
+            <p>Long-term sickness is now the single largest reason why working-age people are economically inactive, overtaking caring responsibilities for the first time. At 2.8 million in 2023, the number inactive due to illness is up from 2.1 million in 2019 — a rise of 700,000 in four years with no precedent in modern records.<Cite nums={[1]} /> Mental health conditions — anxiety, depression, and more severe conditions — account for 38% of the total, up from 26% in 2015.<Cite nums={[1]} /> Musculoskeletal conditions account for a further 35%.<Cite nums={[1]} /> The rise in mental health inactivity reflects not only the COVID pandemic's psychological toll but a long-running failure of NHS mental health services to treat people quickly enough to prevent deterioration into long-term incapacity.</p>
+            <p>The NHS waiting list — 7.5 million cases at its peak — is a significant driver: people waiting months or years for hip replacements, spinal surgery, or mental health treatment cannot work. Resolution Foundation modelling suggests eliminating the waiting list backlog could return 170,000 people to employment.<Cite nums={[4]} /> The OBR has forecast that without intervention, sickness-related inactivity could reach 3.5 million by 2027.<Cite nums={[3]} /> The economic cost is substantial: each additional 100,000 inactive people removes approximately 0.15% from potential GDP and increases benefit expenditure by around £300 million per year.<Cite nums={[3]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -154,6 +163,9 @@ export default function EconomicInactivitySicknessPage() {
             source="Source: DWP — Work and Health Programme statistics 2025. NHS Talking Therapies Annual Report 2023/24."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

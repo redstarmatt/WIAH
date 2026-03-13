@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'GDP statistical bulletin', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/grossdomesticproductpreliminaryestimate/latest', date: '2023' },
+  { num: 2, name: 'IMF', dataset: 'World Economic Outlook', url: 'https://www.imf.org/en/Publications/WEO', date: '2023' },
+  { num: 3, name: 'ONS', dataset: 'International comparisons of productivity', url: 'https://www.ons.gov.uk/economy/economicoutputandproductivity/productivitymeasures/articles/internationalcomparisonsofproductivityfinalestimates/latest', date: '2023' },
+  { num: 4, name: 'OBR', dataset: 'Economic and Fiscal Outlook', date: '2025' },
+];
 
 // UK annual GDP growth (%), 2010–2023 — ONS
 const gdpGrowthValues = [1.9, 1.6, 2.1, 3.0, 2.4, 1.8, 1.9, 1.3, 1.6, -11.0, 8.7, 4.1, 0.1];
@@ -61,8 +70,8 @@ export default function EconomicGrowthPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK GDP grew by just 0.1% in 2023, the end of a 15-year sequence of underperformance. Averaging 2010 to 2023, the UK grew at 1.1% per year — sixth out of seven G7 nations, ahead only of Italy — compared to 2.3% for the United States and 2.1% for Canada. The 2020 contraction of 11%, the sharpest in three centuries, was followed by an incomplete rebound. The OBR estimates Brexit has reduced UK trade intensity by around 15%, compounding the structural drag from chronically low business investment. UK capital expenditure as a share of GDP has been below the OECD average for two decades, and output per worker grew more slowly through the 2010s than at almost any point since the Industrial Revolution.</p>
-            <p>The costs of stagnation fall unevenly. London's GVA per head sits at 174% of the UK average; the North East manages 67% — a gap that has widened every decade since the 1990s. High-productivity growth in the capital contributes to national GDP figures without generating broad-based income gains. The UK's combination of the lowest capital investment rate in the G7 and extreme regional concentration of economic activity means growth that does occur remains structurally fragile and geographically narrow.</p>
+            <p>UK GDP grew by just 0.1% in 2023, the end of a 15-year sequence of underperformance.<Cite nums={[1]} /> Averaging 2010 to 2023, the UK grew at 1.1% per year — sixth out of seven G7 nations, ahead only of Italy — compared to 2.3% for the United States and 2.1% for Canada.<Cite nums={[2]} /> The 2020 contraction of 11%, the sharpest in three centuries, was followed by an incomplete rebound.<Cite nums={[1]} /> The OBR estimates Brexit has reduced UK trade intensity by around 15%, compounding the structural drag from chronically low business investment.<Cite nums={[4]} /> UK capital expenditure as a share of GDP has been below the OECD average for two decades, and output per worker grew more slowly through the 2010s than at almost any point since the Industrial Revolution.<Cite nums={[3]} /></p>
+            <p>The costs of stagnation fall unevenly. London's GVA per head sits at 174% of the UK average; the North East manages 67% — a gap that has widened every decade since the 1990s.<Cite nums={[1]} /> High-productivity growth in the capital contributes to national GDP figures without generating broad-based income gains. The UK's combination of the lowest capital investment rate in the G7 and extreme regional concentration of economic activity means growth that does occur remains structurally fragile and geographically narrow.<Cite nums={[2]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -140,6 +149,9 @@ export default function EconomicGrowthPage() {
             source="Source: ONS — GDP statistical bulletin 2024. OBR — Economic and Fiscal Outlook, March 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

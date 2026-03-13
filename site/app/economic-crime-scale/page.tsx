@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'National Crime Agency', dataset: 'National Strategic Assessment of Serious and Organised Crime', url: 'https://www.nationalcrimeagency.gov.uk/what-we-do/crime-threats/fraud-and-economic-crime', date: '2025' },
+  { num: 2, name: 'ONS', dataset: 'Crime Survey for England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2025' },
+  { num: 3, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales', date: '2025' },
+  { num: 4, name: 'UK Finance', dataset: 'Annual Fraud Report', url: 'https://www.ukfinance.org.uk/policy-and-guidance/reports-and-publications/annual-fraud-report', date: '2025' },
+];
 
 // Total economic crime losses (£ billion), 2015–2025 — NCA
 const lossValues = [3.6, 4.1, 4.5, 5.0, 5.4, 5.8, 6.2, 7.0, 7.8, 8.4, 8.7];
@@ -66,8 +75,8 @@ export default function EconomicCrimeScalePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The National Crime Agency estimates that economic crime costs the United Kingdom approximately £8.7 billion per year — up from £3.6 billion a decade ago. Fraud is by far the largest component, accounting for roughly 57% of total losses. When the ONS expanded the Crime Survey for England and Wales to include fraud and computer misuse in 2017, the total volume of crime effectively doubled overnight — revealing a category of offending that had been statistically invisible for decades. Fraud now constitutes 42% of all crime experienced by adults in England and Wales, making it the single most common crime type. Yet it receives a fraction of the policing resource devoted to other offence categories: fewer than 1% of police officers work in dedicated fraud teams.</p>
-            <p>The prosecution gap is stark. In 2015, around 8% of recorded fraud offences resulted in a charge. By 2025, that figure had fallen to 2.9%. The decline reflects a combination of factors: the volume of fraud has grown far faster than enforcement capacity; much of it is cross-border and digitally enabled, making investigation complex; and Action Fraud — the national reporting centre — has been widely criticised for failing to refer viable cases for investigation. The government published a Fraud Strategy in 2023, pledging to replace Action Fraud and create a National Fraud Squad. Meanwhile, authorised push payment (APP) fraud — where victims are manipulated into transferring money directly to criminals — peaked at £583 million in 2021 before falling following new mandatory reimbursement rules introduced in October 2024.</p>
+            <p>The National Crime Agency estimates that economic crime costs the United Kingdom approximately £8.7 billion per year — up from £3.6 billion a decade ago.<Cite nums={[1]} /> Fraud is by far the largest component, accounting for roughly 57% of total losses.<Cite nums={[1]} /> When the ONS expanded the Crime Survey for England and Wales to include fraud and computer misuse in 2017, the total volume of crime effectively doubled overnight — revealing a category of offending that had been statistically invisible for decades.<Cite nums={[2]} /> Fraud now constitutes 42% of all crime experienced by adults in England and Wales, making it the single most common crime type.<Cite nums={[2]} /> Yet it receives a fraction of the policing resource devoted to other offence categories: fewer than 1% of police officers work in dedicated fraud teams.</p>
+            <p>The prosecution gap is stark. In 2015, around 8% of recorded fraud offences resulted in a charge. By 2025, that figure had fallen to 2.9%.<Cite nums={[3]} /> The decline reflects a combination of factors: the volume of fraud has grown far faster than enforcement capacity; much of it is cross-border and digitally enabled, making investigation complex; and Action Fraud — the national reporting centre — has been widely criticised for failing to refer viable cases for investigation. The government published a Fraud Strategy in 2023, pledging to replace Action Fraud and create a National Fraud Squad. Meanwhile, authorised push payment (APP) fraud — where victims are manipulated into transferring money directly to criminals — peaked at £583 million in 2021 before falling following new mandatory reimbursement rules introduced in October 2024.<Cite nums={[4]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -145,6 +154,9 @@ export default function EconomicCrimeScalePage() {
             source="Source: UK Finance — Annual Fraud Report 2025. Payment Systems Regulator — APP Fraud Performance Data 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

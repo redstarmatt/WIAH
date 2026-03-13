@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Defra', dataset: 'Agriculture in the United Kingdom', url: 'https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom', date: '2024' },
+  { num: 2, name: 'Defra', dataset: 'Horticulture Statistics', url: 'https://www.gov.uk/government/collections/defra-statistical-releases', date: '2024' },
+  { num: 3, name: 'Natural England', dataset: 'ELMS monitoring report', date: '2025' },
+];
 
 // UK food self-sufficiency (%), 2015–2024
 const selfSufficiency = [61.2, 60.8, 60.5, 61.0, 60.7, 60.2, 59.6, 58.8, 58.2, 57.8];
@@ -71,8 +79,8 @@ export default function FoodProductionPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK is one of the least food self-sufficient countries in Western Europe. Defra's annual Agriculture in the United Kingdom report shows that the ratio of domestic production to total food supply has fallen from around 78% in the mid-1980s to 57.8% in 2024. For indigenous-type food — products that can be grown or raised in the UK climate — self-sufficiency is higher at around 73%, but this still means that more than a quarter of food the UK could theoretically produce for itself is instead imported. The UK imports approximately 46% of its food by value, with the EU supplying around 42% of total food imports.</p>
-            <p>Agricultural output has been broadly flat in real terms for a decade, with year-to-year volatility driven primarily by weather and commodity prices. The farming workforce has shrunk by 30% since 2000, from 540,000 to 380,000, and the average age of a farm holder is 60. Post-Brexit agricultural policy has shifted from the EU's area-based Basic Payment Scheme to the Environmental Land Management scheme, which pays farmers for environmental outcomes. The transition has been difficult: BPS payments are being phased out by 2028, but ELMS uptake has been slower than expected, with only 35% of eligible farmland enrolled by 2024, creating a funding gap for many smaller farms.</p>
+            <p>The UK is one of the least food self-sufficient countries in Western Europe. Defra's annual Agriculture in the United Kingdom report shows that the ratio of domestic production to total food supply has fallen from around 78% in the mid-1980s to 57.8% in 2024.<Cite nums={[1]} /> For indigenous-type food — products that can be grown or raised in the UK climate — self-sufficiency is higher at around 73%, but this still means that more than a quarter of food the UK could theoretically produce for itself is instead imported.<Cite nums={[1]} /> The UK imports approximately 46% of its food by value, with the EU supplying around 42% of total food imports.<Cite nums={[1]} /></p>
+            <p>Agricultural output has been broadly flat in real terms for a decade, with year-to-year volatility driven primarily by weather and commodity prices.<Cite nums={[1]} /> The farming workforce has shrunk by 30% since 2000, from 540,000 to 380,000, and the average age of a farm holder is 60.<Cite nums={[1]} /> Post-Brexit agricultural policy has shifted from the EU's area-based Basic Payment Scheme to the Environmental Land Management scheme, which pays farmers for environmental outcomes. The transition has been difficult: BPS payments are being phased out by 2028, but ELMS uptake has been slower than expected, with only 35% of eligible farmland enrolled by 2024, creating a funding gap for many smaller farms.<Cite nums={[3]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,9 @@ export default function FoodProductionPage() {
             source="Source: Defra — Agriculture in the United Kingdom 2024; Natural England — ELMS monitoring report 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

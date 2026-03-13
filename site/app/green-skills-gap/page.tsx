@@ -8,6 +8,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MCS Certification', dataset: 'Heat pump installer statistics', url: 'https://mcscertified.com/mcs-data-insights/', date: '2025' },
+  { num: 2, name: 'DESNZ', dataset: 'Green Jobs Taskforce report', url: 'https://www.gov.uk/government/publications/green-jobs-taskforce-report', date: '2025' },
+  { num: 3, name: 'DESNZ / EMSI', dataset: 'Green job vacancies analysis', url: 'https://www.gov.uk/government/statistics/uk-low-carbon-economy-indicators', date: '2025' },
+  { num: 4, name: 'OWIC', dataset: 'Offshore Wind Sector Deal progress report', date: '2024' },
+];
 
 // Heat pump installers trained per year (thousands), 2019–2025
 const heatPumpTrainedK = [0.5, 0.8, 1.2, 1.8, 2.5, 3.0, 3.2];
@@ -72,8 +81,8 @@ export default function GreenSkillsGapPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Net zero requires the UK to deploy 600,000 heat pumps per year by 2028, retrofit 19 million homes by 2035, install 300,000 EV charging points by 2030, and build a workforce for 50 GW of offshore wind. Each of these transitions is workforce-constrained. MCS Certification records show approximately 3,200 heat pump installers trained in 2025 — 2.4% of the 130,000 needed by 2028. The Boiler Upgrade Scheme and building regulations requiring heat pumps in new homes are driving demand, but training supply is nowhere near keeping pace. Existing gas engineers can retrain in 12–18 months, but the Gas Safe Register has 130,000 registered engineers versus around 5,000 heat pump certified ones.</p>
-            <p>Green job vacancies have grown fivefold since 2020, reaching an estimated 215,000 per quarter by 2025. Offshore wind alone requires 100,000 workers by 2030, against a current workforce of around 32,000. Ports, turbine manufacturing, subsea cable installation, and operations and maintenance are all skills-constrained. The Green Jobs Taskforce report identified 30 priority green occupations where skills gaps are most acute. Regional concentration compounds the problem: offshore wind jobs cluster in Scotland, Yorkshire and the Humber, and East Anglia, but workers who need retraining — former oil and gas, automotive, and steel workers — are concentrated in different geographies. Without active labour mobility and retraining investment, the transition risks creating regional inequality rather than resolving it.</p>
+            <p>Net zero requires the UK to deploy 600,000 heat pumps per year by 2028, retrofit 19 million homes by 2035, install 300,000 EV charging points by 2030, and build a workforce for 50 GW of offshore wind. Each of these transitions is workforce-constrained. MCS Certification records show approximately 3,200 heat pump installers trained in 2025 — 2.4% of the 130,000 needed by 2028.<Cite nums={1} /> The Boiler Upgrade Scheme and building regulations requiring heat pumps in new homes are driving demand, but training supply is nowhere near keeping pace. Existing gas engineers can retrain in 12–18 months, but the Gas Safe Register has 130,000 registered engineers versus around 5,000 heat pump certified ones.<Cite nums={1} /></p>
+            <p>Green job vacancies have grown fivefold since 2020, reaching an estimated 215,000 per quarter by 2025.<Cite nums={3} /> Offshore wind alone requires 100,000 workers by 2030, against a current workforce of around 32,000.<Cite nums={4} /> Ports, turbine manufacturing, subsea cable installation, and operations and maintenance are all skills-constrained. The Green Jobs Taskforce report identified 30 priority green occupations where skills gaps are most acute.<Cite nums={2} /> Regional concentration compounds the problem: offshore wind jobs cluster in Scotland, Yorkshire and the Humber, and East Anglia, but workers who need retraining — former oil and gas, automotive, and steel workers — are concentrated in different geographies.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -152,6 +161,9 @@ export default function GreenSkillsGapPage() {
             source="Source: DESNZ — Green Jobs Taskforce final report 2021. DESNZ — British Energy Security Strategy 2022. North Sea Transition Authority 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

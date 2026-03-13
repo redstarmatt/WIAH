@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Education', dataset: 'School Census — Free School Meal Eligibility', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics', date: '2024' },
+  { num: 2, name: 'Trussell Trust', dataset: 'End of Year Statistics — Monthly Distribution Analysis', url: 'https://www.trusselltrust.org/news-and-blog/latest-stats/', date: '2024' },
+  { num: 3, name: 'Food Foundation / CPAG', dataset: 'Child Food Insecurity Tracker', date: '2024' },
+  { num: 4, name: 'DfE', dataset: 'Holiday Activities and Food Programme Monitoring', url: 'https://www.gov.uk/government/publications/holiday-activities-and-food-programme', date: '2024' },
+];
 
 export default function HolidayHungerPage() {
   const fsmEligibilityData = [1.42, 1.44, 1.46, 1.50, 1.60, 1.72, 1.82, 1.88, 1.90, 1.92, 1.95, 1.90, 1.85, 1.80, 1.82];
@@ -147,12 +156,16 @@ export default function HolidayHungerPage() {
           <section id="sec-context" className="max-w-2xl mb-12 mt-8">
             <h2 className="text-xl font-bold text-wiah-black mb-4">When schools close, a guaranteed meal disappears</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>During term time, approximately 1.9 million children in England receive free school meals. When schools close — for summer, half-term, Christmas, and Easter — that provision stops. For households in severe food insecurity, the loss of a guaranteed daily meal causes genuine nutritional deprivation. An estimated 3 million children are at risk: those on free school meals, plus those in families just above the eligibility threshold who are also food insecure. Food bank data provides the clearest evidence: the Trussell Trust records a systematic 40% spike in parcel distribution during school holidays, with summer generating the highest monthly totals of the year.</p>
-              <p>Marcus Rashford's 2020 campaign for holiday meal vouchers — and the government's initial rejection followed by rapid U-turn — demonstrated both the public salience of the issue and the administrative feasibility of targeted provision. The subsequent return to means-tested-only provision, with the HAF programme as the primary response, left the structural gap largely unaddressed. The FSM eligibility threshold of £7,400 household income after benefits has not been uprated for inflation since 2018, meaning many working poor families who would have qualified in real terms are now excluded.</p>
-              <p>The burden of holiday hunger falls overwhelmingly on families in the most deprived areas — where food bank reliance is already highest and HAF programme reach is most variable. Children experiencing food insecurity during holidays are more likely to arrive back at school in September underweight, behind on development, and less able to concentrate. The attainment gap between free school meal pupils and their peers widens during summer holidays — a pattern documented in every major study of educational inequality in England.</p>
+              <p>During term time, approximately 1.9 million children in England receive free school meals.<Cite nums={1} /> When schools close — for summer, half-term, Christmas, and Easter — that provision stops. For households in severe food insecurity, the loss of a guaranteed daily meal causes genuine nutritional deprivation. An estimated 3 million children are at risk: those on free school meals, plus those in families just above the eligibility threshold who are also food insecure.<Cite nums={3} /> Food bank data provides the clearest evidence: the Trussell Trust records a systematic 40% spike in parcel distribution during school holidays, with summer generating the highest monthly totals of the year.<Cite nums={2} /></p>
+              <p>Marcus Rashford's 2020 campaign for holiday meal vouchers — and the government's initial rejection followed by rapid U-turn — demonstrated both the public salience of the issue and the administrative feasibility of targeted provision. The subsequent return to means-tested-only provision, with the HAF programme as the primary response, left the structural gap largely unaddressed.<Cite nums={4} /> The FSM eligibility threshold of £7,400 household income after benefits has not been uprated for inflation since 2018, meaning many working poor families who would have qualified in real terms are now excluded.<Cite nums={1} /></p>
+              <p>The burden of holiday hunger falls overwhelmingly on families in the most deprived areas — where food bank reliance is already highest and HAF programme reach is most variable.<Cite nums={[2, 4]} /> Children experiencing food insecurity during holidays are more likely to arrive back at school in September underweight, behind on development, and less able to concentrate. The attainment gap between free school meal pupils and their peers widens during summer holidays — a pattern documented in every major study of educational inequality in England.<Cite nums={3} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

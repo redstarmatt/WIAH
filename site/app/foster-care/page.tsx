@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofsted', dataset: 'Fostering in England', url: 'https://www.gov.uk/government/statistics/fostering-in-england', date: '2023' },
+  { num: 2, name: 'DfE', dataset: 'Children Looked After in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2023' },
+  { num: 3, name: 'Rees Centre, University of Oxford', dataset: 'Placement stability and educational outcomes research' },
+];
 
 // Approved foster carer households (thousands), 2015–2023
 const fosterHouseholdsK = [45.5, 44.6, 44.2, 43.9, 43.5, 42.8, 42.1, 41.3, 40.5];
@@ -62,8 +70,8 @@ export default function FosterCarePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's foster care system is caught in a structural crisis of supply and demand. Around 72,000 children are looked after by local authorities, the highest number since the Children Act 1989 — yet the number of approved fostering households has fallen from 45,500 in 2015 to 40,500 in 2023. Ofsted reports that 9,200 new fostering households were approved in 2022–23 but 9,800 ceased fostering in the same year, meaning the system is losing carers faster than it recruits them. On any given night, approximately 8,700 children are waiting for a suitable placement.</p>
-            <p>The consequences of insufficient placements are measurable in placement instability. In 2023, 12.4% of looked-after children experienced three or more placement moves within the year, up from 9.2% in 2015. Research from the Rees Centre at Oxford demonstrates that each additional placement move reduces a child's GCSE attainment by the equivalent of half a grade. Councils are spending £1.6 billion annually on agency placements at two to three times the cost of in-house foster care, crowding out the preventive work that might reduce the number of children entering care in the first place.</p>
+            <p>England's foster care system is caught in a structural crisis of supply and demand. Around 72,000 children are looked after by local authorities, the highest number since the Children Act 1989 — yet the number of approved fostering households has fallen from 45,500 in 2015 to 40,500 in 2023.<Cite nums={[1]} /> Ofsted reports that 9,200 new fostering households were approved in 2022–23 but 9,800 ceased fostering in the same year, meaning the system is losing carers faster than it recruits them.<Cite nums={[1]} /> On any given night, approximately 8,700 children are waiting for a suitable placement.</p>
+            <p>The consequences of insufficient placements are measurable in placement instability. In 2023, 12.4% of looked-after children experienced three or more placement moves within the year, up from 9.2% in 2015.<Cite nums={[2]} /> Research from the Rees Centre at Oxford demonstrates that each additional placement move reduces a child's GCSE attainment by the equivalent of half a grade.<Cite nums={[3]} /> Councils are spending £1.6 billion annually on agency placements at two to three times the cost of in-house foster care, crowding out the preventive work that might reduce the number of children entering care in the first place.<Cite nums={[2]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +150,9 @@ export default function FosterCarePage() {
             source="Source: DfE — Mockingbird programme evaluation, 2023. DfE — Staying Put guidance and outcomes data, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

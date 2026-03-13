@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'FCDO Forced Marriage Unit', dataset: 'Forced Marriage Unit Statistics', url: 'https://www.gov.uk/government/collections/forced-marriage-unit-statistics', date: 'Nov 2024' },
+  { num: 2, name: 'Ministry of Justice', dataset: 'Family Court Statistics Quarterly', url: 'https://www.gov.uk/government/collections/family-court-statistics-quarterly', date: 'Nov 2024' },
+  { num: 3, name: 'Karma Nirvana', dataset: 'Annual report 2023' },
+];
 
 // FMU cases, 2011–2023
 const fmuCases = [1468, 1485, 1302, 1267, 1196, 1428, 1196, 1764, 1355, 971, 1080, 1416, 2068];
@@ -57,8 +65,8 @@ export default function ForcedMarriagePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Forced marriage was criminalised in England and Wales in 2014, carrying a maximum sentence of seven years. A decade on, the Forced Marriage Unit — jointly run by the Home Office and FCDO — handled 2,068 cases in 2023, the highest number since records began. That figure rose 113% from the post-lockdown low of 971 in 2022 and surpassed the previous peak of 1,764 in 2018. The sharp dip during 2020 and 2021 does not indicate that fewer forced marriages took place: lockdowns removed victims from schools, GPs, and other professionals who might have noticed warning signs. Many in the sector believe the pandemic created a hidden backlog of cases now surfacing.</p>
-            <p>Pakistan remains the most frequently reported focus country, linked to 44% of cases, followed by Bangladesh (9%), Somalia (5%), and India (4%). However, 16% of cases are now classed as entirely domestic — involving no overseas element — a proportion that has grown steadily. Victims are overwhelmingly female (around 80%), but male victims account for roughly one in five cases. The proportion of under-18s has gradually declined from 35% in 2011 to 25% in 2023, partly reflecting better safeguarding in schools. Charities such as Karma Nirvana estimate the true scale of forced marriage at 5,000–8,000 cases per year — meaning the FMU data captures perhaps only a quarter of the real picture.</p>
+            <p>Forced marriage was criminalised in England and Wales in 2014, carrying a maximum sentence of seven years. A decade on, the Forced Marriage Unit — jointly run by the Home Office and FCDO — handled 2,068 cases in 2023, the highest number since records began.<Cite nums={[1]} /> That figure rose 113% from the post-lockdown low of 971 in 2022 and surpassed the previous peak of 1,764 in 2018.<Cite nums={[1]} /> The sharp dip during 2020 and 2021 does not indicate that fewer forced marriages took place: lockdowns removed victims from schools, GPs, and other professionals who might have noticed warning signs. Many in the sector believe the pandemic created a hidden backlog of cases now surfacing.</p>
+            <p>Pakistan remains the most frequently reported focus country, linked to 44% of cases, followed by Bangladesh (9%), Somalia (5%), and India (4%).<Cite nums={[1]} /> However, 16% of cases are now classed as entirely domestic — involving no overseas element — a proportion that has grown steadily.<Cite nums={[1]} /> Victims are overwhelmingly female (around 80%), but male victims account for roughly one in five cases.<Cite nums={[1]} /> The proportion of under-18s has gradually declined from 35% in 2011 to 25% in 2023, partly reflecting better safeguarding in schools.<Cite nums={[1]} /> Charities such as Karma Nirvana estimate the true scale of forced marriage at 5,000–8,000 cases per year — meaning the FMU data captures perhaps only a quarter of the real picture.<Cite nums={[3]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -137,6 +145,9 @@ export default function ForcedMarriagePage() {
             source="Source: Ministry of Justice — Family Court Statistics Quarterly, 2023. Karma Nirvana annual report, 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

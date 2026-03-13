@@ -8,6 +8,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Gambling Commission', dataset: 'Gambling Participation and Advertising Statistics', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-behaviour-in-great-britain', date: '2025' },
+  { num: 2, name: 'Gambling Commission', dataset: 'Industry Statistics', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/industry-statistics', date: '2025' },
+  { num: 3, name: 'Ofcom', dataset: "Children's Media Use and Attitudes Report", url: 'https://www.ofcom.org.uk/research-and-data/media-literacy-research/childrens', date: '2025' },
+  { num: 4, name: 'DCMS', dataset: 'Gambling Act Review White Paper', url: 'https://www.gov.uk/government/publications/high-stakes-gambling-reform-for-the-digital-age', date: '2023' },
+];
 
 // Gambling adverts seen per person per week, 2014–2025
 const advertsPerWeek = [2.3, 2.7, 3.0, 3.5, 4.0, 4.2, 3.8, 4.1, 4.4, 4.7, 4.5, 4.3];
@@ -67,8 +76,8 @@ export default function GamblingAdvertisingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The gambling industry's advertising machine has been one of the defining features of British media over the past decade. Between 2014 and 2023, industry ad spend rose from £312 million to £561 million per year, flooding television, social media, and sports sponsorship with messages designed to normalise betting as entertainment. The average person now sees around 4.3 gambling adverts per week — nearly double the 2014 rate — with the figure peaking at 4.7 in 2023 before new restrictions began to take effect. These are not neutral messages. They are precision-targeted, algorithmically optimised, and disproportionately served to the people most vulnerable to harm.</p>
-            <p>The 2023 Gambling Act White Paper represented the most significant policy intervention in two decades, introducing restrictions on advertising content, timing, and targeting. A whistle-to-whistle ban on TV gambling adverts during live sport had been in place since 2019, but the White Paper went further: banning free bet incentives in advertising, restricting the use of sportspeople and celebrities, and requiring stronger age-gating on social media ads. Industry ad spend fell 16% between 2023 and 2025, children's exposure dropped from an index of 155 in 2022 to 112 in 2025, and the average number of adverts seen per person has begun to decline. The deeper problem is not volume but targeting: 63% of problem gamblers report receiving personalised gambling advertising, up from 40% in 2017, as social media platforms and operators share data to follow vulnerable users across the internet.</p>
+            <p>The gambling industry's advertising machine has been one of the defining features of British media over the past decade. Between 2014 and 2023, industry ad spend rose from £312 million to £561 million per year, flooding television, social media, and sports sponsorship with messages designed to normalise betting as entertainment.<Cite nums={[2]} /> The average person now sees around 4.3 gambling adverts per week — nearly double the 2014 rate — with the figure peaking at 4.7 in 2023 before new restrictions began to take effect.<Cite nums={[1]} /> These are not neutral messages. They are precision-targeted, algorithmically optimised, and disproportionately served to the people most vulnerable to harm.</p>
+            <p>The 2023 Gambling Act White Paper represented the most significant policy intervention in two decades, introducing restrictions on advertising content, timing, and targeting.<Cite nums={[4]} /> A whistle-to-whistle ban on TV gambling adverts during live sport had been in place since 2019, but the White Paper went further: banning free bet incentives in advertising, restricting the use of sportspeople and celebrities, and requiring stronger age-gating on social media ads. Industry ad spend fell 16% between 2023 and 2025, children's exposure dropped from an index of 155 in 2022 to 112 in 2025, and the average number of adverts seen per person has begun to decline.<Cite nums={[2, 3]} /> The deeper problem is not volume but targeting: 63% of problem gamblers report receiving personalised gambling advertising, up from 40% in 2017, as social media platforms and operators share data to follow vulnerable users across the internet.<Cite nums={[1]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -147,6 +156,10 @@ export default function GamblingAdvertisingPage() {
             source="Source: Gambling Commission — Industry Statistics 2025. Ofcom — Children's Media Use and Attitudes Report 2025. ASA — Gambling Advertising Compliance Review 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

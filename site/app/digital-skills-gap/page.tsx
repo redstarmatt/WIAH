@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Lloyds Bank / Good Things Foundation', dataset: 'UK Consumer Digital Index', url: 'https://www.lloydsbank.com/banking-with-us/whats-happening/consumer-digital-index.html', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Internet Access Survey', date: '2024' },
+  { num: 3, name: 'Good Things Foundation', dataset: 'Cost of Digital Exclusion Estimate', date: '2024' },
+  { num: 4, name: 'DCMS', dataset: 'Digital Skills Bootcamps Evaluation', date: '2024' },
+];
 
 export default function DigitalSkillsGapPage() {
 
@@ -141,8 +150,8 @@ export default function DigitalSkillsGapPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on the digital skills gap</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Approximately 11.8 million UK adults — roughly 22% of the adult population — lack one or more of the five essential digital skills defined by the Good Things Foundation: communicating, handling information, transacting, problem-solving, and being safe online. The gap has a clear demographic structure: 46% of over-75s have never used the internet, and digital exclusion rates are higher in coastal communities, post-industrial towns, and rural areas.</p>
-              <p>The proportion of job vacancies requiring some digital competency has risen from 67% in 2018 to over 80% in 2024, as even traditionally non-digital roles — care work, logistics, construction — increasingly require digital literacy for scheduling, reporting, and compliance. The 29% wage premium for high-digital roles is real, but it is inaccessible to those in the excluded 11.8 million.</p>
+              <p>Approximately 11.8 million UK adults — roughly 22% of the adult population — lack one or more of the five essential digital skills defined by the Good Things Foundation: communicating, handling information, transacting, problem-solving, and being safe online.<Cite nums={1} /> The gap has a clear demographic structure: 46% of over-75s have never used the internet, and digital exclusion rates are higher in coastal communities, post-industrial towns, and rural areas.<Cite nums={2} /></p>
+              <p>The proportion of job vacancies requiring some digital competency has risen from 67% in 2018 to over 80% in 2024, as even traditionally non-digital roles — care work, logistics, construction — increasingly require digital literacy for scheduling, reporting, and compliance.<Cite nums={3} /> The 29% wage premium for high-digital roles is real, but it is inaccessible to those in the excluded 11.8 million.<Cite nums={1} /></p>
               <p>Large employers in financial services and technology have invested substantially in upskilling, but SMEs — representing the majority of employment — typically lack the resource or HR infrastructure to run systematic skills programmes. The government's Digital Skills Bootcamps reached 43,000 learners by 2024, a fraction of what is needed, and education pipeline improvements take a decade or more to address an existing adult skills deficit that cannot wait.</p>
             </div>
           </section>
