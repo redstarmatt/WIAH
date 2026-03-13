@@ -178,9 +178,9 @@ export default function BathingWaterQualityPage() {
               England&apos;s bathing waters have been declining for over a decade. In 2010,
               more than three-quarters of designated bathing sites achieved the
               Environment Agency&apos;s &apos;excellent&apos; classification; by 2025, that
-              figure had fallen to just 52%. At the same time, the proportion rated
+              figure had fallen to just 52%.<Cite nums={1} /> At the same time, the proportion rated
               &apos;poor&apos; -- failing to meet even minimum microbiological standards -- has
-              risen from 3% to over 15%. The trend is being driven by a combination
+              risen from 3% to over 15%.<Cite nums={1} /> The trend is being driven by a combination
               of ageing sewage infrastructure, population growth in coastal catchment
               areas, and increasingly intense rainfall events linked to climate change.
             </p>
@@ -190,11 +190,11 @@ export default function BathingWaterQualityPage() {
               untreated sewage into rivers and the sea during heavy rainfall. Event
               Duration Monitoring data -- mandatory for all CSOs since 2023 -- shows
               that discharge events have more than tripled since 2010, reaching
-              464,000 events and over 4.1 million hours of spilling in 2025. Water
+              464,000 events and over 4.1 million hours of spilling in 2025.<Cite nums={2} /> Water
               companies have faced record fines, and public anger has driven
               significant policy commitments: the Storm Overflows Discharge Reduction
               Plan requires near-elimination of harmful discharges at designated
-              bathing waters by 2035, and at all sites by 2050.
+              bathing waters by 2035, and at all sites by 2050.<Cite nums={4} />
             </p>
             <p>
               England&apos;s rivers tell a similar story. Only 14% of river water bodies
