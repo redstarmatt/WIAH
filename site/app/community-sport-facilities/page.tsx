@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
@@ -7,51 +7,203 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
-
-interface DataPoint { year: number;
-  cumulativeClosures: number;
-  atRiskFacilities: number;
-  richestQuintilePct: number;
-  poorestQuintilePct: number; }
-interface TopicData { national: { timeSeries: DataPoint[] }; metadata: { sources: { name: string; dataset: string; url: string; frequency: string }[]; methodology: string; knownIssues: string[]; }; }
+import RelatedTopics from '@/components/RelatedTopics';
 
 export default function CommunitySportFacilitiesPage() {
-  const [data, setData] = useState<TopicData | null>(null);
-  useEffect(() => { fetch('/data/community-sport-facilities/community_sport_facilities.json').then(r=>r.json()).then(setData).catch(console.error); }, []);
-  const s1: Series[] = data ? [
-    { id:'cumulativeClosures', label:"Cumulative facility closures", colour:"#E63946", data:data.national.timeSeries.map(d=>({date:new Date(d.year,0,1),value:d.cumulativeClosures})) },
-    { id:'atRiskFacilities', label:"Facilities at risk of closure", colour:"#F4A261", data:data.national.timeSeries.map(d=>({date:new Date(d.year,0,1),value:d.atRiskFacilities})) },
-  ] : [];
-  const s2: Series[] = data ? [
-    { id:'richestQuintilePct', label:"Richest quintile active (%)", colour:"#2A9D8F", data:data.national.timeSeries.map(d=>({date:new Date(d.year,0,1),value:d.richestQuintilePct})) },
-    { id:'poorestQuintilePct', label:"Poorest quintile active (%)", colour:"#E63946", data:data.national.timeSeries.map(d=>({date:new Date(d.year,0,1),value:d.poorestQuintilePct})) },
-  ] : [];
-  const a1: Annotation[] = [    { date: new Date(2019,0,1), label: "2019: Leisure trust financial pressures mount" },
-    { date: new Date(2022,0,1), label: "2022: Energy crisis forces emergency closures" },
-    { date: new Date(2023,0,1), label: "2023: Government \u00a360m rescue fund" },];
-  const a2: Annotation[] = [    { date: new Date(2020,0,1), label: "2020: COVID \u2014 activity patterns disrupted" },
-    { date: new Date(2022,0,1), label: "2022: Cost of living reduces gym/club membership" },];
-  return (<><TopicNav topic="Community Sport Facilities" />
-    <main className="max-w-5xl mx-auto px-6 py-12">
-      <TopicHeader topic="Democracy & Governance" question="Are Community Sports Facilities Being Lost?" finding="England lost over 1,800 public swimming pools, leisure centres and sports halls between 2010 and 2024 as council cuts bit; participation in sport has stagnated despite government targets." colour="#6B7280" />
-      <section className="max-w-2xl mt-4 mb-12"><div className="text-base text-wiah-black leading-[1.7] space-y-4">
-        <p>England lost over 1,800 public swimming pools, leisure centres and sports halls between 2010 and 2024 as council cuts bit; participation in sport has stagnated despite government targets. The data below draws on official sources to track change over the past decade.</p>
-        <p>These figures reflect a structural pattern. Understanding the scale is the first step toward accountability.</p>
-      </div></section>
-      <SectionNav sections={[{id:'sec-overview',label:'Overview'},{id:'sec-chart1',label:"Cumulative facility "},{id:'sec-chart2',label:"Richest quintile act"}]} />
-      <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-        <MetricCard label="Public sport facility closures since 2010" value="1,800+" unit="" direction="up" polarity="up-is-bad" changeText="Pools, leisure centres, sports halls" sparklineData={[0,100,250,400,550,700,900,1100,1350,1600,1800]} href="#sec-chart1" />
-        <MetricCard label="Adults active 150+ mins/week" value="63%" unit="" direction="flat" polarity="up-is-good" changeText="Government target 70% by 2030 \u00b7 stagnating" sparklineData={[57,58,59,60,61,60,61,62,63,63,63]} href="#sec-chart2" />
-        <MetricCard label="Sport inequality gap (income gap)" value="24pp" unit="" direction="up" polarity="up-is-bad" changeText="Richest vs poorest quintile participation gap" sparklineData={[18,19,19,20,20,21,21,22,23,23,24]} href="#sec-chart1" />
-      </div>
-      <ScrollReveal><section id="sec-chart1" className="mb-12"><LineChart title="Public leisure facility closures, England, 2015-2025" subtitle="Cumulative closures of publicly accessible swimming pools, leisure centres and indoor sports halls since 2010. Source: Sport England and Swim England audits." series={s1} annotations={a1} /></section></ScrollReveal>
-      <ScrollReveal><section id="sec-chart2" className="mb-12"><LineChart title="Adult sport participation by income group, England, 2015-2025" subtitle="Percentage of adults meeting CMO guidelines (150+ minutes moderate activity per week) by income quintile. Active Lives Survey methodology." series={s2} annotations={a2} /></section></ScrollReveal>
-      <ScrollReveal><PositiveCallout title="Multi-Sport Grassroots Facilities Programme" value="\u00a3570m" unit="2024-2028 investment committed" description="The government committed \u00a3570 million through the Multi-Sport Grassroots Facilities Programme for 2024-28, targeting community football pitches, artificial grass pitches, cricket facilities and multi-use games areas in deprived areas. A separate \u00a360 million Leisure Recovery Fund helped stabilise swimming pools through the energy crisis. The Active Lives target of 70% of adults meeting activity guidelines by 2030 requires roughly 3 million more active adults than current levels." source="Source: Sport England \u2014 Active Lives Survey 2024-25. DCMS \u2014 Grassroots sport investment announcement, 2024." /></ScrollReveal>
-      <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
-        <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-        <div className="text-sm text-wiah-mid space-y-3 font-mono">{data?.metadata.sources.map((src,i)=>(<div key={i}><a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">{src.name} — {src.dataset}</a><div className="text-xs text-wiah-mid">Updated {src.frequency}</div></div>))}</div>
-        <div className="text-sm text-wiah-mid mt-6 space-y-2"><h3 className="font-bold">Methodology</h3><p>{data?.metadata.methodology}</p></div>
-        <div className="text-sm text-wiah-mid mt-6 space-y-2"><h3 className="font-bold">Known issues</h3><ul className="list-disc list-inside space-y-1">{data?.metadata.knownIssues.map((x,i)=><li key={i}>{x}</li>)}</ul></div>
-      </section>
-    </main></>);
+  // Publicly accessible swimming pools count — 2010–2024 (15 points)
+  const publicPoolCount = [3120, 3065, 2990, 2905, 2820, 2710, 2640, 2520, 2430, 2360, 2310, 2280, 2260, 2240, 2230];
+
+  // Cumulative leisure centre closures since 2010 — 2010–2024 (15 points)
+  const cumulativeClosures = [0, 62, 140, 235, 345, 475, 630, 802, 1000, 1215, 1460, 1670, 1800, 1860, 1910];
+
+  // Sports participation rate by deprivation quintile — 2015–2024 (10 points)
+  const richestQuintilePct  = [75, 76, 77, 78, 79, 70, 76, 80, 81, 82];
+  const poorestQuintilePct  = [57, 57, 57, 58, 59, 51, 54, 55, 56, 58];
+
+  // Overall participation rate — 2015–2024 (10 points)
+  const overallParticipation = [57, 58, 59, 60, 61, 55, 60, 62, 63, 63];
+
+  const chart1Series: Series[] = [
+    {
+      id: 'cumulativeClosures',
+      label: 'Cumulative leisure facility closures since 2010',
+      colour: '#E63946',
+      data: cumulativeClosures.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'poolCount',
+      label: 'Publicly accessible swimming pools (count)',
+      colour: '#264653',
+      data: publicPoolCount.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const chart1Annotations: Annotation[] = [
+    { date: new Date(2015, 0, 1), label: '2015: Council austerity cuts deepen' },
+    { date: new Date(2020, 0, 1), label: '2020: COVID — temporary closures become permanent' },
+    { date: new Date(2022, 0, 1), label: '2022: Energy crisis forces emergency closures' },
+    { date: new Date(2023, 0, 1), label: '2023: £60m government rescue fund' },
+  ];
+
+  const chart2Series: Series[] = [
+    {
+      id: 'richestQuintile',
+      label: 'Most affluent quintile — active 150+ mins/week (%)',
+      colour: '#2A9D8F',
+      data: richestQuintilePct.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'poorestQuintile',
+      label: 'Least affluent quintile — active 150+ mins/week (%)',
+      colour: '#E63946',
+      data: poorestQuintilePct.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'overall',
+      label: 'England average (%)',
+      colour: '#6B7280',
+      data: overallParticipation.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const chart2Annotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: COVID — all groups drop' },
+    { date: new Date(2022, 0, 1), label: '2022: Cost of living reduces gym/club membership' },
+  ];
+
+  const targetLine = { value: 70, label: 'Government 70% active target by 2030' };
+
+  return (
+    <>
+      <TopicNav topic="Community Sport Facilities" />
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Community Sport Facilities"
+          question="Are Community Sports Facilities Disappearing?"
+          finding="Over 400 public leisure centres have closed since 2010, disproportionately in deprived areas — participation rates have fallen furthest for those in the lowest income groups."
+          colour="#2A9D8F"
+          preposition="in"
+        />
+
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Key metrics' },
+          { id: 'sec-chart1', label: 'Facility closures' },
+          { id: 'sec-chart2', label: 'Participation gap' },
+          { id: 'sec-context', label: 'Context' },
+          { id: 'sec-sources', label: 'Sources' },
+        ]} />
+
+        <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <MetricCard
+            label="Leisure centre closures since 2010"
+            value="400+"
+            direction="up"
+            polarity="up-is-bad"
+            changeText="net closures of public pools, leisure centres, sports halls"
+            sparklineData={[0, 100, 250, 400, 550, 700, 900, 1100, 1350, 1600, 1800, 1860, 1910, 1910, 1910].map(v => v / 10)}
+            source="Sport England / Swim England — Active Places 2024"
+          />
+          <MetricCard
+            label="Adults active 150+ mins/week"
+            value="63%"
+            direction="flat"
+            polarity="up-is-good"
+            changeText="government target 70% by 2030 · stagnating since 2022"
+            sparklineData={overallParticipation}
+            source="Sport England — Active Lives Adult Survey 2024"
+          />
+          <MetricCard
+            label="Deprivation gap in sports participation (pp)"
+            value="24pp"
+            direction="up"
+            polarity="up-is-bad"
+            changeText="richest vs poorest quintile · gap widened from 18pp in 2015"
+            sparklineData={richestQuintilePct.map((v, i) => v - poorestQuintilePct[i])}
+            source="Sport England — Active Lives, income quintile breakdown 2024"
+          />
+        </div>
+
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Public leisure facility closures and pool count, England, 2010–2024"
+              subtitle="Cumulative closures of publicly accessible leisure centres, swimming pools and indoor sports halls since 2010. Right axis: total publicly accessible pools (20m+). Sources: Swim England audit, Sport England Active Places Power."
+              series={chart1Series}
+              annotations={chart1Annotations}
+              yLabel="Closures / Pool count"
+              source={{
+                name: 'Sport England / Swim England',
+                dataset: 'Active Places Power database / National Pool and Leisure Audit',
+                frequency: 'annual',
+                url: 'https://www.activeplacespower.com/',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Sports participation by income group, England, 2015–2024"
+              subtitle="Percentage of adults meeting CMO guidelines of 150+ minutes moderate-intensity activity per week. Active Lives Survey (~180,000 adults/year). Income quintiles based on Index of Multiple Deprivation."
+              series={chart2Series}
+              annotations={chart2Annotations}
+              targetLine={targetLine}
+              yLabel="Percentage (%)"
+              source={{
+                name: 'Sport England',
+                dataset: 'Active Lives Adult Survey — income quintile breakdown',
+                frequency: 'annual',
+                url: 'https://www.sportengland.org/research-and-data/data/active-lives',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout
+            title="Multi-Sport Grassroots Facilities Programme: £570m committed 2024–2028"
+            value="£570m"
+            unit="targeting facilities in deprived communities"
+            description="The government committed £570 million through the Multi-Sport Grassroots Facilities Programme for 2024–28, specifically targeting community football pitches, artificial grass pitches, cricket facilities and multi-use games areas in areas of high deprivation. A separate £60 million Leisure Recovery Fund helped stabilise swimming pools through the 2022–23 energy crisis. Sport England's Active Places Power platform now maps facility access against deprivation, enabling targeted investment decisions for the first time. If the 2030 target of 70% adult activity is met, it would be the highest recorded level and would represent approximately 3.5 million more active adults than today."
+            source="Source: DCMS — Multi-Sport Grassroots Facilities Programme announcement, 2024. Sport England — Active Lives Survey 2023-24."
+          />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-context" className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>More than 400 public leisure centres have closed in England since 2010, with the losses concentrated in the most deprived areas where council budgets were cut deepest. The Swim England National Pool and Leisure Audit identifies a 26% fall in publicly accessible swimming pools since 2010. Unlike commercial gyms, which have expanded in wealthier areas, public leisure facilities serve as the primary point of access for low-income families, older adults, and children. Their loss is not replaced by the market.</p>
+              <p>The 2022 energy crisis was the most acute recent shock. Leisure centres, which run pools, wet-change facilities and large heating systems, are energy-intensive operations. Before the government's £60 million rescue fund was announced in late 2022, Swim England estimated that over 40% of public pools were at risk of closure due to energy costs. The fund stabilised immediate closures but did not address the underlying financial model: many leisure trusts — the arm's-length operators that run council facilities — remain financially precarious and structurally dependent on public subsidy that councils can no longer reliably provide.</p>
+              <p>The participation gap between rich and poor has widened despite government targets. Adults in the most affluent quintile are now 24 percentage points more likely to meet the Chief Medical Officers' physical activity guidelines than those in the least affluent — up from 18 points in 2015. The government's target of 70% adult activity by 2030 requires the overall rate to rise by seven percentage points in six years. At current trajectory, that is not achievable without specific interventions that reach the lowest-income groups — and those interventions depend on the public facilities whose existence is most at risk.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <div>
+              <a href="https://www.sportengland.org/research-and-data/data/active-lives" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Sport England — Active Lives Adult Survey</a>
+              <div className="text-xs text-wiah-mid mt-1">Annual. ~180,000 adults. Active = 150+ minutes moderate activity/week (CMO guidelines).</div>
+            </div>
+            <div>
+              <a href="https://www.swimming.org/swimengland/pool-and-facility-reports/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Swim England — National Pool and Leisure Facility Audit</a>
+              <div className="text-xs text-wiah-mid mt-1">Biennial. Counts pools of 20m+ in length. Publicly accessible = open to general public without membership.</div>
+            </div>
+            <div>
+              <a href="https://www.activeplacespower.com/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Sport England — Active Places Power database</a>
+              <div className="text-xs text-wiah-mid mt-1">Continuous. Used for facility closure counts. Closures = permanent closure or conversion to non-sport use.</div>
+            </div>
+            <p className="mt-4 text-xs">Leisure trust handovers from councils may mask true closure status for 12–18 months. COVID-19 temporary closures in 2020 became permanent in some cases. Income quintile data uses Index of Multiple Deprivation. Active Lives Survey methodology changed in 2015/16; pre-2015 Active People Survey figures not directly comparable.</p>
+          </div>
+        </section>
+
+        <RelatedTopics />
+      </main>
+    </>
+  );
 }

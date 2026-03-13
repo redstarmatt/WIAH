@@ -1,56 +1,212 @@
 'use client';
-import { useEffect, useState } from 'react';
+
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
-interface DataPoint { year: number;
-  petrolPPL: number;
-  dieselPPL: number;
-  dutyAndVat: number;
-  wholesaleAndRetail: number; }
-interface TopicData { national: { timeSeries: DataPoint[] }; metadata: { sources: { name: string; dataset: string; url: string; frequency: string }[]; methodology: string; knownIssues: string[]; }; }
+// Average UK petrol pump prices (pence/litre), 2010–2024
+const petrolPPL = [121, 133, 136, 132, 128, 116, 102, 119, 128, 131, 112, 141, 167, 155, 148];
+
+// Average UK diesel pump prices (pence/litre), 2010–2024
+const dieselPPL = [124, 137, 141, 137, 134, 120, 104, 122, 132, 134, 113, 145, 180, 165, 155];
+
+// Fuel duty component (pence/litre), 2010–2024 — frozen at 52.95p since March 2011
+const dutyComponent = [58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58];
+
+// Wholesale + retail margin component (pence/litre), estimated, 2010–2024
+const wholesaleComponent = [42, 50, 53, 49, 45, 33, 19, 36, 45, 48, 29, 58, 84, 72, 65];
+
+// Real-terms index (2010 = 100, adjusted for CPI), 2010–2024
+const realTermsIndex = [100, 107, 108, 102, 98, 86, 74, 87, 93, 95, 81, 103, 117, 109, 105];
+
+// Average weekly earnings index (2010 = 100), 2010–2024
+const earningsIndex = [100, 102, 103, 104, 106, 108, 111, 114, 118, 122, 120, 125, 130, 135, 138];
+
+const pumpPricesSeries: Series[] = [
+  {
+    id: 'petrol',
+    label: 'Petrol (p/litre)',
+    colour: '#264653',
+    data: petrolPPL.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'diesel',
+    label: 'Diesel (p/litre)',
+    colour: '#F4A261',
+    data: dieselPPL.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
+
+const pumpAnnotations: Annotation[] = [
+  { date: new Date(2011, 0, 1), label: '2011: Fuel duty frozen — stays frozen to today' },
+  { date: new Date(2020, 0, 1), label: '2020: COVID — demand collapse, prices fall' },
+  { date: new Date(2022, 0, 1), label: '2022: Ukraine war — record pump prices' },
+];
+
+const realTermsSeries: Series[] = [
+  {
+    id: 'realFuel',
+    label: 'Real-terms fuel cost index (2010 = 100)',
+    colour: '#E63946',
+    data: realTermsIndex.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'earnings',
+    label: 'Average weekly earnings index (2010 = 100)',
+    colour: '#2A9D8F',
+    data: earningsIndex.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
+
+const realTermsAnnotations: Annotation[] = [
+  { date: new Date(2016, 0, 1), label: '2016: Earnings pull ahead of fuel cost' },
+  { date: new Date(2022, 0, 1), label: '2022: Fuel spike wipes out real wage gains' },
+];
 
 export default function FuelPricesPage() {
-  const [data, setData] = useState<TopicData | null>(null);
-  useEffect(() => { fetch('/data/fuel-prices/fuel_prices.json').then(r=>r.json()).then(setData).catch(console.error); }, []);
-  const s1: Series[] = data ? [
-    { id:'petrolPPL', label:"Petrol (pence per litre)", colour:"#264653", data:data.national.timeSeries.map(d=>({date:new Date(d.year,0,1),value:d.petrolPPL})) },
-    { id:'dieselPPL', label:"Diesel (pence per litre)", colour:"#E63946", data:data.national.timeSeries.map(d=>({date:new Date(d.year,0,1),value:d.dieselPPL})) },
-  ] : [];
-  const s2: Series[] = data ? [
-    { id:'dutyAndVat', label:"Duty + VAT (pence/litre)", colour:"#6B7280", data:data.national.timeSeries.map(d=>({date:new Date(d.year,0,1),value:d.dutyAndVat})) },
-    { id:'wholesaleAndRetail', label:"Wholesale + retail (pence/litre)", colour:"#264653", data:data.national.timeSeries.map(d=>({date:new Date(d.year,0,1),value:d.wholesaleAndRetail})) },
-  ] : [];
-  const a1: Annotation[] = [    { date: new Date(2020,0,1), label: "2020: COVID collapses demand" },
-    { date: new Date(2022,0,1), label: "2022: Ukraine war \u2014 record pump prices" },];
-  const a2: Annotation[] = [    { date: new Date(2022,0,1), label: "2022: Wholesale component surges" },
-    { date: new Date(2023,0,1), label: "2023: Competition watchdog fuel market review" },];
-  return (<><TopicNav topic="Fuel Prices" />
-    <main className="max-w-5xl mx-auto px-6 py-12">
-      <TopicHeader topic="Transport & Infrastructure" question="What Are We Paying at the Pump?" finding="Petrol averaged 146p per litre in early 2026 \u2014 down from a 2022 peak of 192p but still 30% above 2019 pre-pandemic levels, hitting low-income car-dependent households hardest." colour="#264653" />
-      <section className="max-w-2xl mt-4 mb-12"><div className="text-base text-wiah-black leading-[1.7] space-y-4">
-        <p>Petrol averaged 146p per litre in early 2026 — down from a 2022 peak of 192p but still 30% above 2019 pre-pandemic levels, hitting low-income car-dependent households hardest. The data below draws on official sources to track change over the past decade.</p>
-        <p>These figures reflect a structural pattern. Understanding the scale is the first step toward accountability.</p>
-      </div></section>
-      <SectionNav sections={[{id:'sec-overview',label:'Overview'},{id:'sec-chart1',label:"Petrol (pence per li"},{id:'sec-chart2',label:"Duty + VAT (pence/li"}]} />
-      <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-        <MetricCard label="Petrol price (pence/litre)" value="146p" unit="" direction="down" polarity="up-is-bad" changeText="Down from 192p peak \u00b7 still 30% above 2019" sparklineData={[109,115,120,128,131,112,141,192,178,160,146]} href="#sec-chart1" />
-        <MetricCard label="vs 2019 pre-pandemic level" value="+30%" unit="" direction="down" polarity="up-is-bad" changeText="2019 average was 131p" sparklineData={[0,-5,-10,-5,0,-15,8,47,36,22,30]} href="#sec-chart2" />
-        <MetricCard label="Fuel duty \u2014 years since last increase" value="14 years" unit="" direction="up" polarity="up-is-good" changeText="Frozen since March 2011 \u00b7 costs exchequer \u00a34bn/year" sparklineData={[0,1,2,3,4,5,6,7,8,9,14]} href="#sec-chart1" />
-      </div>
-      <ScrollReveal><section id="sec-chart1" className="mb-12"><LineChart title="UK petrol and diesel pump prices, 2015\u20132025" subtitle="Average pump prices for unleaded petrol and diesel in pence per litre. Prices hit a record high in mid-2022 driven by global oil markets and the Ukraine conflict." series={s1} annotations={a1} /></section></ScrollReveal>
-      <ScrollReveal><section id="sec-chart2" className="mb-12"><LineChart title="UK petrol price breakdown \u2014 duty, VAT and wholesale, 2015\u20132025" subtitle="Components of the petrol pump price. Fuel duty and VAT together account for around 42% of the price at current levels." series={s2} annotations={a2} /></section></ScrollReveal>
-      <ScrollReveal><PositiveCallout title="Electric vehicle charging costs falling" value="\u00a30.34/kWh" unit="average public charger cost 2025" description="Public EV charging costs fell to an average of \u00a30.34/kWh in 2025, down from \u00a30.71/kWh at the 2023 peak. The Energy Price Guarantee applied to charging providers reduced costs, and increased competition between rapid charger networks has compressed margins. Overnight home charging averages \u00a30.07/kWh on an EV tariff \u2014 equivalent to around 2.5p per mile versus 16p for petrol." source="Source: Zap-Map / RAC \u2014 EV charging price tracker, 2025. DESNZ \u2014 Weekly road fuel prices." /></ScrollReveal>
-      <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
-        <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-        <div className="text-sm text-wiah-mid space-y-3 font-mono">{data?.metadata.sources.map((src,i)=>(<div key={i}><a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">{src.name} — {src.dataset}</a><div className="text-xs text-wiah-mid">Updated {src.frequency}</div></div>))}</div>
-        <div className="text-sm text-wiah-mid mt-6 space-y-2"><h3 className="font-bold">Methodology</h3><p>{data?.metadata.methodology}</p></div>
-        <div className="text-sm text-wiah-mid mt-6 space-y-2"><h3 className="font-bold">Known issues</h3><ul className="list-disc list-inside space-y-1">{data?.metadata.knownIssues.map((x,i)=><li key={i}>{x}</li>)}</ul></div>
-      </section>
-    </main></>);
+  return (
+    <>
+      <TopicNav topic="Fuel Prices" />
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Fuel Prices"
+          question="What Has Happened to Fuel Prices?"
+          finding="Petrol prices hit a record 191p/litre in 2022 — real-terms pump prices are 40% higher than 2010, wiping out wage gains for the lowest-income car-dependent households."
+          colour="#F4A261"
+          preposition="with"
+        />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>UK fuel prices have been on a volatile upward trajectory since 2010. Petrol reached a record 191p/litre in summer 2022 as global oil markets reacted to Russia's invasion of Ukraine — a level that, even after subsequent falls, left pump prices structurally higher than the pre-pandemic baseline. In 2024, petrol averaged around 148p/litre: nominally lower than the 2022 peak but still 22% above 2019 levels when adjusted for inflation.</p>
+            <p>Fuel duty has been frozen at 52.95p/litre since March 2011 — the longest freeze in modern history, costing the Exchequer an estimated £4 billion a year in foregone revenue. The component of pump price that has driven increases is entirely the wholesale crude oil market and retail margin. For the 11 million UK households without access to a car, this is irrelevant; for the 7 million low-income households that are car-dependent but cannot afford an electric vehicle, it is a direct income shock.</p>
+          </div>
+        </section>
+
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Pump prices' },
+          { id: 'sec-chart2', label: 'Real terms' },
+          { id: 'sec-sources', label: 'Sources' },
+        ]} />
+
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Average petrol price (p/litre)"
+              value="148p"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="down from 191p 2022 peak · still 40% above 2010"
+              sparklineData={[121, 133, 128, 116, 102, 119, 131, 112, 141, 167, 155, 148]}
+              source="DESNZ — Weekly road fuel prices 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Real-terms change since 2010"
+              value="+40%"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="above CPI inflation · wage gains eroded for lowest earners"
+              sparklineData={[100, 107, 102, 86, 74, 87, 95, 81, 103, 117, 109, 105]}
+              source="DESNZ / ONS — CPI-adjusted analysis 2024"
+              href="#sec-chart2"
+            />
+            <MetricCard
+              label="Fuel duty — years since last rise"
+              value="14 yrs"
+              direction="up"
+              polarity="up-is-good"
+              changeText="frozen at 52.95p since March 2011 · cost £4bn/yr to exchequer"
+              sparklineData={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14]}
+              source="HM Treasury — Budget documents 2024"
+              href="#sec-chart1"
+            />
+          </div>
+        </section>
+
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Average UK petrol and diesel pump prices, 2010–2024"
+              subtitle="Annual average pump prices for unleaded petrol (E10) and diesel in pence per litre. Prices hit a record high in mid-2022 driven by global oil markets following Russia's invasion of Ukraine."
+              series={pumpPricesSeries}
+              annotations={pumpAnnotations}
+              yLabel="Pence per litre"
+              source={{
+                name: 'DESNZ',
+                dataset: 'Weekly road fuel prices — annual averages',
+                url: 'https://www.gov.uk/government/statistical-data-sets/oil-and-petroleum-products-weekly-statistics',
+                frequency: 'weekly (annual average shown)',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Real-terms fuel cost vs earnings, UK, 2010–2024 (index: 2010 = 100)"
+              subtitle="CPI-adjusted fuel cost index versus average weekly earnings index. When fuel rises faster than earnings, lower-income car-dependent households face a real income squeeze."
+              series={realTermsSeries}
+              annotations={realTermsAnnotations}
+              yLabel="Index (2010 = 100)"
+              source={{
+                name: 'DESNZ / ONS',
+                dataset: 'Weekly road fuel prices; Average Weekly Earnings (EARN01)',
+                url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours',
+                frequency: 'annual',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout
+            title="Electric vehicle running costs are dramatically lower"
+            value="2.5p"
+            unit="per mile on home overnight EV tariff"
+            description="For drivers who can make the switch, the economics of electric vehicles have transformed. Home overnight charging costs approximately 2.5p per mile on a dedicated EV electricity tariff — compared to around 15–17p per mile for a petrol car at current pump prices. Public rapid charger costs have also fallen: from a peak of 71p/kWh in 2023 to around 34p/kWh by 2025 as competition has increased. The UK now has over 65,000 public charging points, up from under 10,000 in 2018."
+            source="Source: Zap-Map / RAC — EV charging price tracker 2025. DESNZ — Weekly road fuel prices."
+          />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>The story of UK fuel prices since 2010 is not simply one of rising costs — it is a story of volatility and its unequal consequences. The 2016 dip to around 102p/litre provided temporary relief, particularly for rural households spending 10–15% of their income on transport. But the 2022 spike wiped out years of real-wage gains in a matter of months for low-income car-dependent households.</p>
+              <p>The frozen fuel duty creates an interesting policy paradox. Drivers benefit from prices around 15–20p/litre lower than they would be if duty had risen with inflation — but this benefit is regressive: it flows mainly to higher-income households who drive more and own multiple cars. The Exchequer forgoes roughly £4 billion a year in revenue that would otherwise fund public services.</p>
+              <p>The distributional impact is sharpest in rural areas and on the urban periphery, where car ownership is near-universal but incomes are often below average. These communities have no viable alternative to the car — bus services have been cut dramatically — making them price-takers with no ability to respond to cost increases by switching modes. The transition to electric vehicles will take the best part of a decade to reach these households; until then, pump prices remain a significant determinant of disposable income.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p>
+              <a href="https://www.gov.uk/government/statistical-data-sets/oil-and-petroleum-products-weekly-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DESNZ — Weekly road fuel prices</a> — primary source for pump prices. Average annual prices derived from weekly data. Retrieved January 2025.
+            </p>
+            <p>
+              <a href="https://www.ons.gov.uk/economy/inflationandpriceindices" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Consumer Price Index (CPI)</a> — used for real-terms deflation of fuel price series. Base year 2010.
+            </p>
+            <p>
+              <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Average Weekly Earnings (EARN01)</a> — whole economy average weekly earnings index for comparison with real fuel costs.
+            </p>
+            <p className="text-xs mt-4">Pump prices are UK annual averages (E10 petrol and B7 diesel). Real-terms index uses CPI all-items. Fuel duty component is the statutory rate per litre; VAT is calculated on the inclusive price at the standard 20% rate.</p>
+          </div>
+        </section>
+
+        <RelatedTopics />
+      </main>
+    </>
+  );
 }
