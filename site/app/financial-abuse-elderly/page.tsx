@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'Safeguarding Adults annual collection', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/safeguarding-adults', date: '2024' },
+  { num: 2, name: 'Age UK / Action on Elder Abuse', dataset: 'Elder financial abuse prevalence survey', date: '2024' },
+  { num: 3, name: 'UK Finance', dataset: 'Annual Fraud Report', date: '2023' },
+  { num: 4, name: 'CPS / Home Office', dataset: 'Prosecution data on elder financial abuse', date: '2024' },
+];
 
 export default function FinancialAbuseElderlyPage() {
   const safeguardingReferralsData = [58, 62, 67, 72, 78, 82, 88, 91, 95, 100];
@@ -160,7 +169,7 @@ export default function FinancialAbuseElderlyPage() {
           <section id="sec-context" className="max-w-2xl mb-12 mt-8">
             <h2 className="text-xl font-bold text-wiah-black mb-4">Hidden, complex, and systematically underreported</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Financial abuse is the most common form of elder abuse in England after neglect. Age UK and Action on Elder Abuse estimate around 1 million older people experience it annually — through theft by family members or carers, fraud by strangers, and misuse of powers of attorney — costing an estimated £3.6 billion each year. Phone and online scams targeting people over 65 generated £1.2 billion in losses in 2023 alone, with authorised push payment fraud particularly hard to recover. Yet formal adult safeguarding referrals capture only a fraction of actual cases.</p>
+              <p>Financial abuse is the most common form of elder abuse in England after neglect. Age UK and Action on Elder Abuse estimate around 1 million older people experience it annually — through theft by family members or carers, fraud by strangers, and misuse of powers of attorney — costing an estimated £3.6 billion each year.<Cite nums={[2]} /> Phone and online scams targeting people over 65 generated £1.2 billion in losses in 2023 alone, with authorised push payment fraud particularly hard to recover.<Cite nums={[3]} /> Yet formal adult safeguarding referrals capture only a fraction of actual cases.<Cite nums={[1]} /></p>
               <p>The low reporting rate reflects structural features of the abuse itself. Many victims do not recognise that what is happening is abuse — particularly where cognitive decline reduces financial decision-making capacity. Where the perpetrator is a family member — the most common scenario in domestic settings — victims often stay silent out of loyalty, shame, fear of losing care, or inability to navigate reporting processes. Adults with dementia are particularly vulnerable: they may not be able to recall or articulate what has happened, and those responsible for their care may also control access to information.</p>
               <p>The adult safeguarding system, strengthened by the Care Act 2014, is the primary statutory mechanism for response. But it operates under severe capacity pressure, and financial abuse cases are among the most complex and resource-intensive to investigate. The forensic complexity of multi-party financial abuse — involving banks, solicitors, attorneys, and family members — often exceeds the capacity of overstretched safeguarding teams.</p>
             </div>

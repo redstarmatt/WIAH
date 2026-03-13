@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Business Services Authority', dataset: 'NHS Dental Statistics for England', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/dental-statistics-england', date: '2024' },
+  { num: 2, name: 'Healthwatch England', dataset: 'Dental access survey', date: '2024' },
+  { num: 3, name: 'British Dental Association', dataset: 'Workforce analysis', date: '2024' },
+];
 
 export default function EmergencyDentalAccessPage() {
   const emergencyApptsData = [5.8, 5.9, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 3.2, 4.1, 4.8, 5.1, 5.3, 5.5, 5.7, 5.8, 5.9, 6.0, 6.0, 6.0];
@@ -144,13 +152,16 @@ export default function EmergencyDentalAccessPage() {
           <section id="sec-context" className="max-w-2xl mb-12 mt-8">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The 2006 dental contract created a crisis that has never been resolved</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>NHS dentistry has been in structural decline since the 2006 dental contract changed how dentists were paid. The Unit of Dental Activity (UDA) system pays the same flat rate for a check-up as for a complex restoration, effectively penalising dentists who take on patients with greater need. Between 2009 and 2024, the number of NHS dentists fell from around 23,500 to 20,800 while the population grew by 4 million. Many dentists moved to private-only practice when UDA rates made NHS work financially unrewarding.</p>
-              <p>The COVID-19 pandemic forced practices to close for months in 2020, generating a large backlog. Many mixed-practice dentists used the shutdown to complete the transition to private-only. NHS treatment volumes fell 24% between 2019–20 and 2022–23 and have not fully recovered. The result is an estimated 7 million adults who cannot access an NHS dentist — and approximately 180,000 people attending hospital A&amp;E each year for acute dental pain. Tooth extraction is now the most common reason for hospital admission among children under 10.</p>
-              <p>The access crisis falls hardest on those least able to afford private alternatives. Rural areas and deprived communities have the fewest NHS dental places. People on lower incomes are most exposed to the consequences of untreated decay progressing to extraction rather than restoration. Child tooth decay costs the NHS over £50 million per year in hospital admissions alone — preventable if regular NHS check-ups were accessible.</p>
+              <p>NHS dentistry has been in structural decline since the 2006 dental contract changed how dentists were paid. The Unit of Dental Activity (UDA) system pays the same flat rate for a check-up as for a complex restoration, effectively penalising dentists who take on patients with greater need. Between 2009 and 2024, the number of NHS dentists fell from around 23,500 to 20,800 while the population grew by 4 million.<Cite nums={[3]} /> Many dentists moved to private-only practice when UDA rates made NHS work financially unrewarding.</p>
+              <p>The COVID-19 pandemic forced practices to close for months in 2020, generating a large backlog. Many mixed-practice dentists used the shutdown to complete the transition to private-only. NHS treatment volumes fell 24% between 2019–20 and 2022–23 and have not fully recovered.<Cite nums={[1]} /> The result is an estimated 7 million adults who cannot access an NHS dentist — and approximately 180,000 people attending hospital A&amp;E each year for acute dental pain.<Cite nums={[2]} /> Tooth extraction is now the most common reason for hospital admission among children under 10.<Cite nums={[1]} /></p>
+              <p>The access crisis falls hardest on those least able to afford private alternatives. Rural areas and deprived communities have the fewest NHS dental places.<Cite nums={[2]} /> People on lower incomes are most exposed to the consequences of untreated decay progressing to extraction rather than restoration. Child tooth decay costs the NHS over £50 million per year in hospital admissions alone — preventable if regular NHS check-ups were accessible.<Cite nums={[1]} /></p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

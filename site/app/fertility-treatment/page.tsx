@@ -68,7 +68,7 @@ export default function FertilityTreatmentPage() {
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>IVF is one of the most significant medical advances of the past fifty years — around 1 in 60 children born in the UK are now conceived through in vitro fertilisation or other assisted reproduction.<Cite nums={[1]} /> But access through the NHS has declined steadily as ICBs (formerly CCGs) have restricted funding under financial pressure. NICE guidance recommends three full cycles of IVF for women under 40 who have not conceived after two years of trying<Cite nums={[2]} /> — but the majority of NHS areas now fund only one cycle, and some areas fund none. The proportion of IVF cycles funded by the NHS fell from 52% in 2013 to 36% in 2022, meaning the majority of treatments are now privately funded at an average cost of £5,000–£8,000 per cycle.<Cite nums={[1]} /></p>
-            <p>The result is a profound access inequality: the ability to pursue fertility treatment has become largely dependent on personal wealth. Average annual IVF treatment costs of £5,000–£8,000 — combined with the typical requirement for two to three cycles before success — mean total costs can reach £20,000 or more, which is inaccessible for most families. Women from deprived areas are significantly less likely to pursue treatment and significantly more likely to give up after a first failed cycle than women from wealthier areas, even when NHS funding is theoretically available. Success rates per embryo transfer have improved significantly — from around 25% in 2013 to 32% in 2022 — due to advances in laboratory techniques and genetic pre-screening. But these improvements benefit private patients more than NHS patients given the volume disparity.</p>
+            <p>The result is a profound access inequality: the ability to pursue fertility treatment has become largely dependent on personal wealth. Average annual IVF treatment costs of £5,000–£8,000 — combined with the typical requirement for two to three cycles before success — mean total costs can reach £20,000 or more, which is inaccessible for most families.<Cite nums={[1]} /> Women from deprived areas are significantly less likely to pursue treatment and significantly more likely to give up after a first failed cycle than women from wealthier areas, even when NHS funding is theoretically available. Success rates per embryo transfer have improved significantly — from around 25% in 2013 to 32% in 2022 — due to advances in laboratory techniques and genetic pre-screening.<Cite nums={[1]} /> But these improvements benefit private patients more than NHS patients given the volume disparity.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +146,9 @@ export default function FertilityTreatmentPage() {
             source="Source: HFEA — Fertility treatment trends 2022. NICE — Fertility: assessment and treatment (CG156) 2013, updated 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

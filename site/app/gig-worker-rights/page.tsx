@@ -80,8 +80,8 @@ export default function GigWorkerRightsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>British employment law distinguishes three categories: employees, workers, and the self-employed. Employees have the fullest rights — sick pay, parental leave, redundancy, unfair dismissal protection. Workers get minimum wage, holiday pay, and pension auto-enrolment, but not the rest. The self-employed get almost none of these. Most gig workers are classified as self-employed by the platforms that engage them, which means they receive none of the protections available even to workers, let alone employees. The 2017 Taylor Review of Modern Working Practices recommended extending rights to gig workers and creating a clearer classification system, but its recommendations were not implemented for years.</p>
-            <p>The 2021 Supreme Court ruling in Uber v Aslam established that Uber drivers are workers — not self-employed — entitling them to minimum wage, holiday pay, and pension auto-enrolment. Uber complied and settled with affected drivers. But the ruling applied only to Uber's specific contractual arrangements; other platforms argued their contracts were materially different, and litigation continues across the sector. Deliveroo successfully argued in 2021 that its riders are genuinely self-employed, a ruling upheld by the Court of Appeal. The Employment Rights Bill, introduced in 2024, proposes to extend worker status protections and create a single employment status, potentially affecting an estimated 1.5 million people. It also proposes to require platforms to offer predictable hours contracts to workers who request them.</p>
+            <p>British employment law distinguishes three categories: employees, workers, and the self-employed. Employees have the fullest rights — sick pay, parental leave, redundancy, unfair dismissal protection. Workers get minimum wage, holiday pay, and pension auto-enrolment, but not the rest. The self-employed get almost none of these. Most gig workers are classified as self-employed by the platforms that engage them, which means they receive none of the protections available even to workers, let alone employees.<Cite nums={[1]} /> The 2017 Taylor Review of Modern Working Practices recommended extending rights to gig workers and creating a clearer classification system, but its recommendations were not implemented for years.<Cite nums={[3]} /></p>
+            <p>The 2021 Supreme Court ruling in Uber v Aslam established that Uber drivers are workers — not self-employed — entitling them to minimum wage, holiday pay, and pension auto-enrolment.<Cite nums={[2]} /> Uber complied and settled with affected drivers. But the ruling applied only to Uber's specific contractual arrangements; other platforms argued their contracts were materially different, and litigation continues across the sector. Deliveroo successfully argued in 2021 that its riders are genuinely self-employed, a ruling upheld by the Court of Appeal. The Employment Rights Bill, introduced in 2024, proposes to extend worker status protections and create a single employment status, potentially affecting an estimated 1.5 million people.<Cite nums={[3]} /> It also proposes to require platforms to offer predictable hours contracts to workers who request them.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -160,6 +160,10 @@ export default function GigWorkerRightsPage() {
             source="Source: BEIS — Employment Rights Bill 2024. TUC — Analysis of Employment Rights Bill provisions 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

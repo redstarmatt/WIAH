@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Overall ethnicity pay gap (%), 2012–2023 — ONS ASHE
 // Median hourly pay: ethnic minority workers vs White British workers
@@ -45,6 +47,11 @@ const breakdownSeries: Series[] = [
 
 const gapAnnotations: Annotation[] = [
   { date: new Date(2017, 0, 1), label: '2017: Race Disparity Audit published' },
+];
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings — ethnicity pay gaps', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/articles/ethnicitypaygapsingreatbritain/2012to2022', date: '2023' },
+  { num: 2, name: 'EHRC', dataset: 'Pay gap reporting tracker', date: '2023' },
 ];
 
 export default function EthnicityPayGapPage() {
