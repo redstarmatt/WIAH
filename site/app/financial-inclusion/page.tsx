@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Unbanked adults (millions), 2015–2024 — FCA Financial Lives
 const unbankedValues = [1.7, 1.6, 1.5, 1.5, 1.4, 1.3, 1.2, 1.1, 1.0, 1.0];
@@ -50,6 +52,11 @@ const difficultyAnnotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Cost-of-living crisis' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'FCA', dataset: 'Financial Lives survey', url: 'https://www.fca.org.uk/publications/research/financial-lives', date: '2024' },
+  { num: 2, name: 'Citizens Advice', dataset: 'The poverty premium', url: 'https://www.citizensadvice.org.uk/about-us/our-work/policy/policy-research-topics/consumer-policy-research/consumer-policy-research/the-poverty-premium/', date: '2023' },
+];
+
 export default function FinancialInclusionPage() {
   return (
     <>
@@ -64,8 +71,8 @@ export default function FinancialInclusionPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Financial exclusion — the inability to access affordable, appropriate financial products — remains a significant problem in the UK despite years of policy focus. Around 1 million adults have no bank account at all, meaning they cannot receive wages electronically, pay bills by direct debit, or access online services. A further 6 million adults have a bank account but make limited use of other financial products. The 'poverty premium' — the additional cost paid by low-income households for insurance, energy, credit, and basic services due to exclusion from mainstream markets — is estimated at around £500 per year by Citizens Advice. Pay-as-you-go energy tariffs, door-step lending, and high-cost short-term credit each extract a premium from the most financially vulnerable.</p>
-            <p>The FCA's Financial Lives survey tracks the number of adults in financial difficulty — defined as missing bills or credit commitments in the previous six months, or finding keeping up with domestic bills a heavy burden. This figure rose sharply during the 2022 cost-of-living crisis, reaching approximately 11.5 million at the peak before falling back to 10.8 million in 2024. High-cost credit use — doorstep lending, payday loans, rent-to-own, and buy-now-pay-later products without FCA oversight — spiked in 2022 as households sought credit to cover rising energy and food bills. The FCA's Consumer Duty, introduced in July 2023, requires firms to demonstrate positive customer outcomes, which is expected to improve fair treatment of vulnerable customers.</p>
+            <p>Financial exclusion — the inability to access affordable, appropriate financial products — remains a significant problem in the UK despite years of policy focus. Around 1 million adults have no bank account at all, meaning they cannot receive wages electronically, pay bills by direct debit, or access online services.<Cite nums={[1]} /> A further 6 million adults have a bank account but make limited use of other financial products.<Cite nums={[1]} /> The 'poverty premium' — the additional cost paid by low-income households for insurance, energy, credit, and basic services due to exclusion from mainstream markets — is estimated at around £500 per year by Citizens Advice.<Cite nums={[2]} /> Pay-as-you-go energy tariffs, door-step lending, and high-cost short-term credit each extract a premium from the most financially vulnerable.</p>
+            <p>The FCA's Financial Lives survey tracks the number of adults in financial difficulty — defined as missing bills or credit commitments in the previous six months, or finding keeping up with domestic bills a heavy burden. This figure rose sharply during the 2022 cost-of-living crisis, reaching approximately 11.5 million at the peak before falling back to 10.8 million in 2024.<Cite nums={[1]} /> High-cost credit use — doorstep lending, payday loans, rent-to-own, and buy-now-pay-later products without FCA oversight — spiked in 2022 as households sought credit to cover rising energy and food bills.<Cite nums={[1]} /> The FCA's Consumer Duty, introduced in July 2023, requires firms to demonstrate positive customer outcomes, which is expected to improve fair treatment of vulnerable customers.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +150,9 @@ export default function FinancialInclusionPage() {
             source="Source: FCA — Consumer Duty: findings from year one 2024. Citizens Advice — The poverty premium 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

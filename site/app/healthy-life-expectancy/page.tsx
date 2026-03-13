@@ -8,6 +8,13 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Health State Life Expectancies', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies', date: '2024' },
+  { num: 2, name: 'OHID', dataset: 'Public Health Outcomes Framework', url: 'https://fingertips.phe.org.uk/profile/public-health-outcomes-framework', date: '2024' },
+];
 
 export default function HealthyLifeExpectancyPage() {
   const lifeExpectancy    = [80.2, 80.4, 80.5, 80.7, 80.9, 81.1, 81.2, 81.3, 81.3, 81.0, 80.8, 80.9, 81.0, 81.0];
@@ -156,13 +163,16 @@ export default function HealthyLifeExpectancyPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on healthy life expectancy</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Life expectancy in England is around 81 years for men and 83 for women. But healthy life expectancy — the years lived in good health — is only around 63. The average person spends the last 17–18 years of life in poor health or with a limiting condition. This is not a biological inevitability: it is a product of living conditions, diet, housing quality, employment conditions, social connection, and access to healthcare. Countries at similar overall wealth levels do better on healthy life expectancy, including Spain, Italy, and the Netherlands.</p>
-              <p>The most striking feature of the data is not the average but the gap. People in the most deprived tenth of areas have a healthy life expectancy of around 52 years — nearly 20 years less than those in the least deprived tenth. This is not a small difference: it means people in the poorest communities effectively age out of good health in their early 50s, decades before their better-off peers. The gap has not narrowed in over a decade. It actually widened during and after the Covid pandemic, as chronic disease burden fell disproportionately on deprived communities.</p>
-              <p>Progress on life expectancy itself has stalled. After decades of improvement, gains in life expectancy slowed sharply after 2011, particularly in the most deprived areas. Some analysts link this to austerity — cuts to local government services, social care, public health budgets, and welfare — though the causal pathway is disputed. What is not disputed is that the UK fell behind comparable countries in life expectancy improvement during the 2010s, and that the Covid pandemic reversed gains that had taken years to achieve.</p>
+              <p>Life expectancy in England is around 81 years for men and 83 for women. But healthy life expectancy — the years lived in good health — is only around 63.<Cite nums={1} /> The average person spends the last 17–18 years of life in poor health or with a limiting condition. This is not a biological inevitability: it is a product of living conditions, diet, housing quality, employment conditions, social connection, and access to healthcare. Countries at similar overall wealth levels do better on healthy life expectancy, including Spain, Italy, and the Netherlands.</p>
+              <p>The most striking feature of the data is not the average but the gap. People in the most deprived tenth of areas have a healthy life expectancy of around 52 years — nearly 20 years less than those in the least deprived tenth.<Cite nums={2} /> This is not a small difference: it means people in the poorest communities effectively age out of good health in their early 50s, decades before their better-off peers. The gap has not narrowed in over a decade. It actually widened during and after the Covid pandemic, as chronic disease burden fell disproportionately on deprived communities.<Cite nums={2} /></p>
+              <p>Progress on life expectancy itself has stalled. After decades of improvement, gains in life expectancy slowed sharply after 2011, particularly in the most deprived areas.<Cite nums={1} /> Some analysts link this to austerity — cuts to local government services, social care, public health budgets, and welfare — though the causal pathway is disputed. What is not disputed is that the UK fell behind comparable countries in life expectancy improvement during the 2010s, and that the Covid pandemic reversed gains that had taken years to achieve.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

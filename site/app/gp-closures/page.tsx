@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'GP Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/general-and-personal-medical-services', date: '2024' },
+  { num: 2, name: 'BMA', dataset: 'General Practice Analysis', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Long Term Plan', date: '2019' },
+];
 
 export default function GpClosuresPage() {
 
@@ -140,12 +148,16 @@ export default function GpClosuresPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on GP closures</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England has lost over 1,740 GP practices since 2013 — a fall from 8,221 to around 6,480 surgeries — with the highest annual closure totals since 2020. The causes are structural: an ageing GP workforce approaching retirement, contract arrangements that make small practices financially marginal, and rising indemnity costs that disproportionately hit single-handed surgeries. As smaller practices close, patient lists are absorbed by remaining surgeries, driving patients per GP FTE from 1,810 in 2013 to 2,275 in 2024.</p>
-              <p>The burden of closures is not evenly spread. Rural areas are most exposed: when the only surgery within 20 miles closes because a GP has retired and no successor can be recruited, patients face long travel times or cannot register anywhere at all. GP deserts are emerging in coastal and rural communities. Deprived areas are losing practices at a faster rate — 23% of deprived-area practices have closed since 2013 — an expression of the inverse care law: those with greatest need receive the least provision.</p>
-              <p>The NHS Long Term Plan committed to training 6,000 additional GPs by 2024 — a target that was not met — and around 40% of GPs are now aged over 50, with surveys showing high burnout and early retirement intent. Consolidation also erodes continuity of care: seeing the same GP repeatedly is associated with better outcomes for long-term conditions and lower emergency admissions — and a 9,600-patient practice is structurally unable to deliver it.</p>
+              <p>England has lost over 1,740 GP practices since 2013 — a fall from 8,221 to around 6,480 surgeries — with the highest annual closure totals since 2020.<Cite nums={[1]} /> The causes are structural: an ageing GP workforce approaching retirement, contract arrangements that make small practices financially marginal, and rising indemnity costs that disproportionately hit single-handed surgeries. As smaller practices close, patient lists are absorbed by remaining surgeries, driving patients per GP FTE from 1,810 in 2013 to 2,275 in 2024.<Cite nums={[1]} /></p>
+              <p>The burden of closures is not evenly spread. Rural areas are most exposed: when the only surgery within 20 miles closes because a GP has retired and no successor can be recruited, patients face long travel times or cannot register anywhere at all. GP deserts are emerging in coastal and rural communities. Deprived areas are losing practices at a faster rate — 23% of deprived-area practices have closed since 2013 — an expression of the inverse care law: those with greatest need receive the least provision.<Cite nums={[2]} /></p>
+              <p>The NHS Long Term Plan committed to training 6,000 additional GPs by 2024 — a target that was not met — and around 40% of GPs are now aged over 50, with surveys showing high burnout and early retirement intent.<Cite nums={[3, 2]} /> Consolidation also erodes continuity of care: seeing the same GP repeatedly is associated with better outcomes for long-term conditions and lower emergency admissions — and a 9,600-patient practice is structurally unable to deliver it.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Section 21 possession claims (thousands), 2015–2024 — MOJ
 const s21ClaimsValues = [38, 41, 44, 46, 48, 44, 12, 28, 38, 44];
@@ -45,6 +47,12 @@ const tempAccomSeries: Series[] = [
 const evictionAnnotations: Annotation[] = [
   { date: new Date(2020, 2, 1), label: '2020: COVID eviction ban' },
   { date: new Date(2021, 5, 1), label: '2021: Ban lifted' },
+];
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MOJ', dataset: 'Mortgage and landlord possession statistics', url: 'https://www.gov.uk/government/collections/mortgage-and-landlord-possession-statistics', date: '2024' },
+  { num: 2, name: 'DLUHC', dataset: 'Statutory homelessness in England', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2024' },
+  { num: 3, name: 'LGA', dataset: 'Local government finance analysis', date: '2024' },
 ];
 
 export default function EvictionsPage() {

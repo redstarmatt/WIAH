@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Health State Life Expectancies, UK', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Health State Life Expectancies by local authority', date: '2024' },
+  { num: 3, name: 'Institute of Health Equity', dataset: 'Marmot Review 10 Years On', url: 'https://www.health.org.uk/publications/reports/the-marmot-review-10-years-on', date: '2020' },
+  { num: 4, name: 'Health Foundation', dataset: 'Healthy Life Expectancy Analysis', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -165,13 +174,13 @@ export default function HealthyLifeExpectancyCrisisPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Life expectancy in England has risen steadily for decades, reaching 80.9 years by 2024. But healthy life expectancy -- the number of years a person can expect to live in good health -- tells a starkly different story. At 64.1 years, it has barely moved since 2010 and actually declined during the pandemic years. The gap between the two measures is now 16.8 years: nearly two decades of life spent in poor health, managing chronic conditions, disability, or dependence on care. This divergence is the quiet crisis buried inside the headline numbers. While medicine has become better at keeping people alive longer, it has not kept people well for longer. The implications are vast -- for the NHS, for social care, for the economy, and for the millions of people living those extra years in pain or limitation.
+              Life expectancy in England has risen steadily for decades, reaching 80.9 years by 2024. But healthy life expectancy -- the number of years a person can expect to live in good health -- tells a starkly different story. At 64.1 years, it has barely moved since 2010 and actually declined during the pandemic years.<Cite nums={1} /> The gap between the two measures is now 16.8 years: nearly two decades of life spent in poor health, managing chronic conditions, disability, or dependence on care.<Cite nums={1} /> This divergence is the quiet crisis buried inside the headline numbers. While medicine has become better at keeping people alive longer, it has not kept people well for longer. The implications are vast -- for the NHS, for social care, for the economy, and for the millions of people living those extra years in pain or limitation.
             </p>
             <p>
-              The regional picture is where the crisis becomes most acute. A man born in Richmond upon Thames can expect 72.2 years of good health. A man born in Blackpool can expect 54.0 -- a gap of 18.2 years that has widened every decade since measurement began. Women face similar disparities. The deprivation gradient is even steeper: the gap between the least and most deprived deciles now stands at 20.9 years. This is not a postcode lottery -- it is a predictable, structural outcome of poverty, poor housing, limited access to green space, food insecurity, and decades of unequal investment in public health. The Marmot Review documented this gradient in 2010 and warned it would worsen without intervention. Fourteen years later, the data confirms exactly that prediction. Austerity-era cuts to local authority public health budgets -- averaging 24% in real terms between 2015 and 2023 -- fell hardest on the most deprived areas, compounding existing disadvantage.
+              The regional picture is where the crisis becomes most acute. A man born in Richmond upon Thames can expect 72.2 years of good health. A man born in Blackpool can expect 54.0 -- a gap of 18.2 years that has widened every decade since measurement began.<Cite nums={2} /> Women face similar disparities. The deprivation gradient is even steeper: the gap between the least and most deprived deciles now stands at 20.9 years.<Cite nums={1} /> This is not a postcode lottery -- it is a predictable, structural outcome of poverty, poor housing, limited access to green space, food insecurity, and decades of unequal investment in public health. The Marmot Review documented this gradient in 2010 and warned it would worsen without intervention.<Cite nums={3} /> Fourteen years later, the data confirms exactly that prediction. Austerity-era cuts to local authority public health budgets -- averaging 24% in real terms between 2015 and 2023 -- fell hardest on the most deprived areas, compounding existing disadvantage.
             </p>
             <p>
-              The state pension age is set to rise to 67, and proposals exist to push it to 68. But healthy life expectancy in the most deprived areas is 50.5 years -- seventeen years before people in those communities will be able to draw a pension. For millions of workers in physically demanding jobs, the promise of retirement is a promise of years they will spend already unwell. Obesity, physical inactivity, smoking, and alcohol all play roles, but these are themselves patterned by deprivation: rates of obesity are twice as high in the most deprived areas compared to the least. The drivers are systemic. The Marmot Review recommended a national strategy of proportionate universalism -- giving every child the best start in life, enabling all to maximise capabilities, creating fair employment and good work, ensuring a healthy standard of living, and creating healthy and sustainable communities. Some areas have adopted elements of this approach. Greater Manchester and Coventry have embedded Marmot principles into local strategy. But nationally, the response has been piecemeal, and the data shows it.
+              The state pension age is set to rise to 67, and proposals exist to push it to 68. But healthy life expectancy in the most deprived areas is 50.5 years -- seventeen years before people in those communities will be able to draw a pension.<Cite nums={1} /> For millions of workers in physically demanding jobs, the promise of retirement is a promise of years they will spend already unwell. Obesity, physical inactivity, smoking, and alcohol all play roles, but these are themselves patterned by deprivation: rates of obesity are twice as high in the most deprived areas compared to the least. The drivers are systemic. The Marmot Review recommended a national strategy of proportionate universalism -- giving every child the best start in life, enabling all to maximise capabilities, creating fair employment and good work, ensuring a healthy standard of living, and creating healthy and sustainable communities.<Cite nums={3} /> Some areas have adopted elements of this approach. Greater Manchester and Coventry have embedded Marmot principles into local strategy. But nationally, the response has been piecemeal, and the data shows it.<Cite nums={4} />
             </p>
           </div>
         </section>
@@ -284,6 +293,9 @@ export default function HealthyLifeExpectancyCrisisPage() {
             source="Source: Institute of Health Equity — Marmot Review 10 Years On, 2020. Health Foundation — Healthy Life Expectancy Analysis, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <RelatedTopics />
       </main>
     </>

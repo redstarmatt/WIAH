@@ -8,6 +8,8 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 interface StatutoryPoint {
   year: string
@@ -78,6 +80,12 @@ function fyToDate(fy: string): Date {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1)
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MHCLG', dataset: 'Statutory Homelessness in England', url: 'https://www.gov.uk/government/statistics/statutory-homelessness-in-england', date: '2023/24' },
+  { num: 2, name: 'MHCLG', dataset: 'Rough Sleeping Statistics — Autumn Snapshot', url: 'https://www.gov.uk/government/statistics/rough-sleeping-snapshot-in-england', date: '2024' },
+  { num: 3, name: 'MHCLG', dataset: 'Local Authority Housing Statistics — Temporary Accommodation', date: '2024' },
+];
 
 export default function HomelessnessPage() {
   const [data, setData] = useState<HomelessnessData | null>(null)

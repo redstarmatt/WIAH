@@ -7,6 +7,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Hate Crime in England and Wales', url: 'https://www.gov.uk/government/statistics/hate-crime-england-and-wales', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Crime Survey for England and Wales', date: '2024' },
+  { num: 3, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', date: '2024' },
+];
 
 export default function DisabilityHateCrimePage() {
   // Chart 1: Disability hate crime offences recorded 2013–2024
@@ -144,13 +152,16 @@ export default function DisabilityHateCrimePage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on disability hate crime</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Disability hate crime recorded by police has risen 260% since 2013 — from 3,355 to 12,035 offences in the year ending March 2024. This rise is real but partly reflects structural changes: successive government reviews have encouraged police forces to improve recording practices for all hate crime strands, and what was previously dismissed or recorded without a hate motivation flag is now more reliably captured. The Crime Survey for England and Wales estimates actual incidents at approximately 70,000 per year, suggesting only around 17% are reported to police.</p>
-              <p>Justice outcomes remain strikingly poor. The prosecution rate for disability hate crime stands at around 9%, compared with 14% for race hate crime — a persistent gap that reflects both structural under-recording and a tendency within the criminal justice system to take disability motivation less seriously as an aggravating factor. The sentencing uplift for disability hostility is applied far less consistently than for race, and disability hate crime convictions are less likely to attract enhanced sentences. Disabled People's Organisations have called for a standalone disability hate crime offence.</p>
+              <p>Disability hate crime recorded by police has risen 260% since 2013 — from 3,355 to 12,035 offences in the year ending March 2024.<Cite nums={1} /> This rise is real but partly reflects structural changes: successive government reviews have encouraged police forces to improve recording practices for all hate crime strands, and what was previously dismissed or recorded without a hate motivation flag is now more reliably captured. The Crime Survey for England and Wales estimates actual incidents at approximately 70,000 per year, suggesting only around 17% are reported to police.<Cite nums={2} /></p>
+              <p>Justice outcomes remain strikingly poor. The prosecution rate for disability hate crime stands at around 9%, compared with 14% for race hate crime — a persistent gap that reflects both structural under-recording and a tendency within the criminal justice system to take disability motivation less seriously as an aggravating factor.<Cite nums={3} /> The sentencing uplift for disability hostility is applied far less consistently than for race, and disability hate crime convictions are less likely to attract enhanced sentences. Disabled People's Organisations have called for a standalone disability hate crime offence.</p>
               <p>A particularly serious category is "mate crime" — where perpetrators befriend people with learning disabilities or autism to exploit them financially or physically. Victims may not recognise the abuse as criminal, and family members and carers may not identify the pattern. These cases are among the hardest to prosecute and are systematically underrepresented in recorded crime data.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

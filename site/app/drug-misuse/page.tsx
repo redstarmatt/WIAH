@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Drug poisoning deaths England & Wales, 2013–2022 — ONS
 const deathValues = [2732, 2952, 3346, 3744, 3756, 4359, 4393, 4561, 4859, 4907];
@@ -41,6 +43,11 @@ const treatmentAnnotations: Annotation[] = [
   { date: new Date(2013, 5, 1), label: '2013–20: Real-terms funding cuts' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Deaths related to drug poisoning in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoningenglandandwales/latest', date: '2022' },
+  { num: 2, name: 'NDTMS', dataset: 'Adult drug and alcohol treatment activity', url: 'https://www.ndtms.net/', date: '2022' },
+];
+
 export default function DrugMisusePage() {
   return (
     <>
@@ -55,7 +62,7 @@ export default function DrugMisusePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>There were 4,907 drug poisoning deaths registered in England and Wales in 2022 — the highest annual total on record. The UK has the highest drug-related death rate in Europe by most measures. The typical profile is a man in his 40s or 50s with a long history of opioid dependency, tracking back to the heroin epidemic that flooded post-industrial towns in the 1980s and 1990s. Scotland's death rate is approximately three times that of England, concentrated in Glasgow, Dundee, and other post-industrial cities. An estimated 300,000 people in England have a dependency on heroin or crack cocaine, but only around 150,000 are in structured treatment at any one time. Drug treatment funding fell by around 35% in real terms between 2013 and 2020; the 2021 Ten-Year Drugs Strategy committed £780 million to rebuilding it.</p>
+            <p>There were 4,907 drug poisoning deaths registered in England and Wales in 2022 — the highest annual total on record.<Cite nums={1} /> The UK has the highest drug-related death rate in Europe by most measures. The typical profile is a man in his 40s or 50s with a long history of opioid dependency, tracking back to the heroin epidemic that flooded post-industrial towns in the 1980s and 1990s. Scotland&apos;s death rate is approximately three times that of England, concentrated in Glasgow, Dundee, and other post-industrial cities. An estimated 300,000 people in England have a dependency on heroin or crack cocaine, but only around 150,000 are in structured treatment at any one time.<Cite nums={2} /> Drug treatment funding fell by around 35% in real terms between 2013 and 2020; the 2021 Ten-Year Drugs Strategy committed £780 million to rebuilding it.</p>
             <p>The geography of drug deaths maps closely onto the geography of deindustrialisation: communities that lost industrial employment in the 1980s face the highest rates of drug mortality four decades later. Nitazenes — synthetic opioids far more potent than heroin — have been detected in the UK drug supply with increasing frequency since 2021, raising overdose risk at doses that would previously have been considered safe. Drug checking services, where people test substances before use, have demonstrated they can identify dangerous adulterants and change behaviour, but regulatory and political barriers to expanding them remain substantial.</p>
           </div>
         </section>
@@ -134,6 +141,10 @@ export default function DrugMisusePage() {
             source="Source: Home Office — 10-year drug strategy 'From Harm to Hope', 2021."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Trussell Trust total parcels (thousands), 2015–2025
 const parcelsThousands = [913, 1085, 1109, 1183, 1333, 1597, 2035, 2499, 2985, 2920, 2900];
@@ -58,6 +60,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: 5-week wait unchanged' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Trussell Trust', dataset: 'End of year food bank statistics', url: 'https://www.trusselltrust.org/news-and-blog/latest-stats/', date: '2025' },
+  { num: 2, name: 'Independent Food Aid Network', dataset: 'Independent food bank estimate', date: '2024' },
+  { num: 3, name: 'DWP / ONS', dataset: 'Households below average income and child poverty statistics', date: '2024' },
+];
+
 export default function FoodBankGrowthPage() {
   return (
     <>
@@ -72,8 +80,8 @@ export default function FoodBankGrowthPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Trussell Trust distributed 60,000 food parcels in 2010–11. In 2024–25, that figure reached 2.9 million — a 48-fold increase in fifteen years. More than one million of those parcels went to children. The Trussell Trust network represents roughly 60% of food bank provision in the UK; the remaining provision comes from independent food banks, community pantries, and mutual aid groups that are not systematically counted. The Trussell Trust itself says it does not want food banks to exist, and describes itself as a structural symptom of welfare system failure rather than a solution to poverty.</p>
-            <p>The benefits system is the single largest driver of food bank referrals. Around 27–28% of referrals cite benefit delays or changes as the primary reason. The five-week wait at the start of a Universal Credit claim — a deliberate policy design — leaves newly unemployed households without income precisely when they are most vulnerable. Benefit levels have also failed to keep pace with food costs: UK food prices rose 19% in the year to March 2023, but the benefits uprating formula lagged behind, pushing real-terms living standards down for those already at the bottom. Children are disproportionately affected: child poverty in the UK stood at 4.3 million in 2024, one of the highest rates in Western Europe.</p>
+            <p>The Trussell Trust distributed 60,000 food parcels in 2010–11. In 2024–25, that figure reached 2.9 million — a 48-fold increase in fifteen years<Cite nums={1} />. More than one million of those parcels went to children<Cite nums={1} />. The Trussell Trust network represents roughly 60% of food bank provision in the UK; the remaining provision comes from independent food banks, community pantries, and mutual aid groups that are not systematically counted. The Trussell Trust itself says it does not want food banks to exist, and describes itself as a structural symptom of welfare system failure rather than a solution to poverty.</p>
+            <p>The benefits system is the single largest driver of food bank referrals. Around 27–28% of referrals cite benefit delays or changes as the primary reason<Cite nums={1} />. The five-week wait at the start of a Universal Credit claim — a deliberate policy design — leaves newly unemployed households without income precisely when they are most vulnerable. Benefit levels have also failed to keep pace with food costs: UK food prices rose 19% in the year to March 2023, but the benefits uprating formula lagged behind, pushing real-terms living standards down for those already at the bottom. Children are disproportionately affected: child poverty in the UK stood at 4.3 million in 2024, one of the highest rates in Western Europe<Cite nums={3} />.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -152,6 +160,9 @@ export default function FoodBankGrowthPage() {
             source="Source: DLUHC — Household Support Fund evaluation, 2025. Trussell Trust — End of year statistics 2024–25."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">
