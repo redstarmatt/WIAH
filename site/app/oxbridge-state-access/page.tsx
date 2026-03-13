@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'University of Oxford', dataset: 'Access and Participation Plan — Admissions Statistics', url: 'https://www.ox.ac.uk/about/facts-and-figures/admissions-statistics', date: '2024' },
+  { num: 2, name: 'University of Cambridge', dataset: 'Access and Participation Plan — Undergraduate Admissions Statistics', url: 'https://www.cam.ac.uk/about-the-university/facts-and-figures', date: '2024' },
+  { num: 3, name: 'UCAS', dataset: 'Undergraduate End of Cycle Data Resources', url: 'https://www.ucas.com/data-and-analysis/undergraduate-statistics-and-reports', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -78,7 +86,7 @@ export default function OxbridgeStateAccessPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>State schools educate approximately 93% of all A-level pupils in England, yet in 2023 Oxford admitted just 61% state school students and Cambridge 70% — gaps of 32 and 23 percentage points respectively. Progress is real: Oxford's state school share has risen from 55.6% in 2015, Cambridge's from 61.8%. Both universities have invested in outreach programmes, contextual offers lowering grade requirements for students from underperforming schools, and bursary packages — and evidence shows contextually admitted students perform at least as well as standard-route entrants. But the structural advantages of independent schooling — smaller classes, specialist teaching, explicit admissions test coaching, alumni networks — persist and are not fully offset by outreach.</p>
+            <p>State schools educate approximately 93% of all A-level pupils in England, yet in 2023 Oxford admitted just 61% state school students and Cambridge 70% — gaps of 32 and 23 percentage points respectively.<Cite nums={[1, 2]} /> Progress is real: Oxford's state school share has risen from 55.6% in 2015, Cambridge's from 61.8%. Both universities have invested in outreach programmes, contextual offers lowering grade requirements for students from underperforming schools, and bursary packages — and evidence shows contextually admitted students perform at least as well as standard-route entrants. But the structural advantages of independent schooling — smaller classes, specialist teaching, explicit admissions test coaching, alumni networks — persist and are not fully offset by outreach.</p>
             <p>The question is not only educational but political. Oxbridge alumni disproportionately occupy senior positions across law, the civil service, media, and finance, meaning that persistent underrepresentation of state school students shapes who holds power in British society. The remaining gap will be harder to close than progress already made: it reflects deep inequalities in school quality and social capital that no university admissions process alone can fix.</p>
           </div>
         </section>

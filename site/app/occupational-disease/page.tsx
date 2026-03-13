@@ -199,25 +199,25 @@ export default function OccupationalDiseasePage() {
             <p>
               The scale of occupational ill health in Britain is enormous and growing. In 2022/23,
               an estimated 1.8 million workers reported suffering from a work-related illness — up
-              25% from 1.44 million in 2018/19. The dominant cause is no longer the industrial
+              25% from 1.44 million in 2018/19.<Cite nums={1} /> The dominant cause is no longer the industrial
               diseases of the twentieth century. Stress, depression and anxiety now account for
               approximately 900,000 cases annually, overtaking musculoskeletal disorders as the
-              leading cause in 2017 and accelerating sharply during the pandemic. Health and social
+              leading cause in 2017 and accelerating sharply during the pandemic.<Cite nums={1} /> Health and social
               care workers, teachers and public sector employees face the highest rates. These are
               not minor ailments: the average case of work-related stress results in 19.6 days off
-              work, and many cases become chronic, pushing people out of the labour market entirely.
+              work, and many cases become chronic, pushing people out of the labour market entirely.<Cite nums={1} />
             </p>
             <p>
               The economic cost is staggering. HSE economists estimate that workplace illness and
-              injury cost Britain £20.7 billion in 2021/22 — equivalent to roughly 1% of GDP. This
+              injury cost Britain £20.7 billion in 2021/22 — equivalent to roughly 1% of GDP.<Cite nums={2} /> This
               figure captures lost output, healthcare costs and the human cost of reduced quality of
               life. The largest component is the 35.2 million working days lost each year, a figure
               that peaked at 38.8 million in 2019/20 as the pandemic tore through frontline
-              workforces. Days lost to stress alone account for over half the total. Meanwhile,
+              workforces.<Cite nums={1} /> Days lost to stress alone account for over half the total. Meanwhile,
               physical workplace risks have not disappeared. An average of 135 workers are killed at
               work each year in Great Britain, with construction and agriculture consistently the
-              most dangerous sectors. Non-fatal injuries resulted in a further 561,000 cases in
-              2022/23.
+              most dangerous sectors.<Cite nums={3} /> Non-fatal injuries resulted in a further 561,000 cases in
+              2022/23.<Cite nums={1} />
             </p>
             <p>
               Policy responses remain fragmented. The Health and Safety Executive&apos;s budget was cut

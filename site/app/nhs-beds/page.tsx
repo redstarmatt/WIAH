@@ -111,8 +111,8 @@ export default function NHSBedsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England had 99,000 NHS hospital beds in 2022/23 — down from 135,000 in 2010 and from a post-war peak of 300,000 in 1987. At 2.1 beds per 1,000 population, England has the lowest density in western Europe: the EU average is 5.4 per 1,000, Germany runs at 8.0, and France at 5.9. The consequences of that gap are visible in the occupancy data. Average bed occupancy reached 94% in 2022/23, well above the 85% threshold above which infection-control protocols become hard to maintain and patient safety outcomes begin to deteriorate. That figure represents a structural condition, not a temporary surge: occupancy has not fallen below 88% since 2012/13.</p>
-            <p>The long-run reduction in beds was not an accident. It was a deliberate policy response to evidence — broadly correct — that shorter lengths of stay, day-case surgery, and community-based care produced better outcomes at lower cost than extended inpatient admission. The shift worked well where community infrastructure kept pace. It did not where social care failed to. England's social care system currently carries a 152,000-vacancy gap, and the result is measurable: 13,500 patients per day occupy acute hospital beds while being clinically fit for discharge, blocked by the absence of a care home place, domiciliary care package, or supported housing arrangement. That single cohort accounts for roughly 1 in 8 acute beds — de facto wasted capacity that drives the chronic occupancy crisis upstream.</p>
+            <p>England had 99,000 NHS hospital beds in 2022/23 — down from 135,000 in 2010 and from a post-war peak of 300,000 in 1987.<Cite nums={1} /> At 2.1 beds per 1,000 population, England has the lowest density in western Europe: the EU average is 5.4 per 1,000, Germany runs at 8.0, and France at 5.9.<Cite nums={3} /> The consequences of that gap are visible in the occupancy data. Average bed occupancy reached 94% in 2022/23, well above the 85% threshold above which infection-control protocols become hard to maintain and patient safety outcomes begin to deteriorate.<Cite nums={1} /> That figure represents a structural condition, not a temporary surge: occupancy has not fallen below 88% since 2012/13.<Cite nums={2} /></p>
+            <p>The long-run reduction in beds was not an accident. It was a deliberate policy response to evidence — broadly correct — that shorter lengths of stay, day-case surgery, and community-based care produced better outcomes at lower cost than extended inpatient admission. The shift worked well where community infrastructure kept pace. It did not where social care failed to. England's social care system currently carries a 152,000-vacancy gap<Cite nums={4} />, and the result is measurable: 13,500 patients per day occupy acute hospital beds while being clinically fit for discharge, blocked by the absence of a care home place, domiciliary care package, or supported housing arrangement.<Cite nums={1} /> That single cohort accounts for roughly 1 in 8 acute beds — de facto wasted capacity that drives the chronic occupancy crisis upstream.</p>
             </div>
         </section>
 
@@ -220,6 +220,10 @@ export default function NHSBedsPage() {
             source="Source: NHS England — Bed Availability and Occupancy Data 2022/23; The King's Fund — NHS Bed Numbers Analysis 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
