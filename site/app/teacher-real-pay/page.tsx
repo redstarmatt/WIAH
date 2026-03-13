@@ -7,6 +7,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'STRB', dataset: 'School Teachers Pay Review Body — Annual Report', url: 'https://www.gov.uk/government/collections/school-teachers-review-body-strb-reports', date: '2024', note: 'Experienced teacher real pay down ~15% since 2010; England ranked 21st of 28 OECD countries' },
+  { num: 2, name: 'DfE', dataset: 'School Workforce in England', url: 'https://www.gov.uk/government/collections/statistics-school-workforce', date: '2024', note: 'Vacancies tripled from ~600 FTE to 2,000+; unfilled posts 1,300; ~40% of new teachers leave within 5 years' },
+  { num: 3, name: 'OECD', dataset: 'Education at a Glance — Teacher Pay Indicators', url: 'https://www.oecd.org/education/education-at-a-glance/', date: '2023', note: 'UK teacher pay relative to other graduates below OECD average and falling' },
+];
 
 export default function TeacherRealPayPage() {
   // Chart 1: Teacher real pay indexed to 2010=100, 2010–2024

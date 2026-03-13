@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 interface YouthSocialActionDataPoint {
   year: number
@@ -20,6 +22,12 @@ interface YouthSocialActionData {
   lastUpdated: string
   timeSeries: YouthSocialActionDataPoint[]
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DCMS', dataset: 'Community Life Survey', url: 'https://www.gov.uk/government/statistics/community-life-survey', date: '2024' },
+  { num: 2, name: 'NCVO', dataset: 'UK Civil Society Almanac 2024', url: 'https://www.ncvo.org.uk/news-and-insights/news-index/uk-civil-society-almanac-2024/', date: '2024' },
+  { num: 3, name: 'Social Enterprise UK', dataset: 'State of Social Enterprise 2024', url: 'https://www.socialenterprise.org.uk/state-of-social-enterprise-reports/', date: '2024' },
+];
 
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
@@ -59,8 +67,8 @@ export default function YouthSocialActionPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Youth volunteering has been in sustained decline since 2010. Among 16–25 year olds, the proportion doing formal volunteering through an organisation fell from 46% in 2010 to 34% in 2024, according to the DCMS Community Life Survey, with regular volunteering — monthly or more — falling more sharply still. The pandemic delivered a sharp shock from which recovery has been partial: the brief mutual aid spike of 2020–21 did not translate into sustained rates. Structural causes run deep: the abolition of youth community programmes in 2010–12 (Connexions, Youth Opportunity Fund) removed volunteer development infrastructure, and the National Citizen Service — its successor — reached around 100,000 young people at peak before being discontinued in 2023. The cost-of-living crisis has added a time and financial barrier: young people working long hours in part-time employment to cover living costs have less discretionary time to volunteer, and travel costs present a real barrier for those on low incomes.</p>
-            <p>The picture is not uniformly negative. Youth social enterprises employ over 840,000 people across the UK, up 120,000 since 2019, providing a civic pathway for young people who prefer action to volunteerism. The Duke of Edinburgh's Award continued to involve approximately 400,000 young people per year in 2024 with record Silver and Gold participation. Employer-supported volunteering has grown in the corporate and tech sectors, providing new infrastructure for civic engagement as young people enter the workforce. Sports-based volunteering has been more resilient than other forms. But the headline trend — 12 percentage points down in 14 years — represents a significant erosion of civic participation that will compound over time.</p>
+            <p>Youth volunteering has been in sustained decline since 2010. Among 16–25 year olds, the proportion doing formal volunteering through an organisation fell from 46% in 2010 to 34% in 2024, according to the DCMS Community Life Survey, with regular volunteering — monthly or more — falling more sharply still.<Cite nums={1} /> The pandemic delivered a sharp shock from which recovery has been partial: the brief mutual aid spike of 2020–21 did not translate into sustained rates. Structural causes run deep: the abolition of youth community programmes in 2010–12 (Connexions, Youth Opportunity Fund) removed volunteer development infrastructure, and the National Citizen Service — its successor — reached around 100,000 young people at peak before being discontinued in 2023. The cost-of-living crisis has added a time and financial barrier: young people working long hours in part-time employment to cover living costs have less discretionary time to volunteer, and travel costs present a real barrier for those on low incomes.</p>
+            <p>The picture is not uniformly negative. Youth social enterprises employ over 840,000 people across the UK, up 120,000 since 2019, providing a civic pathway for young people who prefer action to volunteerism.<Cite nums={3} /> The Duke of Edinburgh's Award continued to involve approximately 400,000 young people per year in 2024 with record Silver and Gold participation. Employer-supported volunteering has grown in the corporate and tech sectors, providing new infrastructure for civic engagement as young people enter the workforce. Sports-based volunteering has been more resilient than other forms. But the headline trend — 12 percentage points down in 14 years — represents a significant erosion of civic participation that will compound over time.<Cite nums={[1, 2]} /></p>
           </div>
         </section>
 
@@ -113,6 +121,10 @@ export default function YouthSocialActionPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

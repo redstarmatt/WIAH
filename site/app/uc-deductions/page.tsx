@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Universal Credit statistics — deduction rates and amounts', url: 'https://www.gov.uk/government/statistics/universal-credit-statistics-29-april-2013-to-11-january-2024', date: 'January 2025' },
+  { num: 2, name: 'Work and Pensions Select Committee', dataset: 'Universal Credit: the wait for a first payment', url: 'https://committees.parliament.uk/work/6784/universal-credit-the-wait-for-a-first-payment/', date: '2024' },
+  { num: 3, name: 'DWP', dataset: 'Deduction cap policy — reduction from 40% to 25%', url: 'https://www.gov.uk/government/publications/universal-credit-deductions', date: '2021' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

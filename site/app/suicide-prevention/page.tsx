@@ -5,6 +5,13 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Suicides in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/suicidesintheunitedkingdom/latest', date: '2024', note: '~6,400 deaths in 2023; rate 11.0 per 100K; men 3x female rate; 25-44 cohort rising fastest' },
+  { num: 2, name: 'DHSC', dataset: 'National Suicide Prevention Strategy', url: 'https://www.gov.uk/government/publications/suicide-prevention-strategy-for-england-2023-to-2028', date: '2023', note: 'Refreshed 2023; ambitions but no binding targets or ring-fenced funding' },
+];
 
 export default function SuicidePreventionPage() {
   // UK suicide rate per 100,000 (age-standardised) 2010–2024

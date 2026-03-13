@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'OBR', dataset: 'Economic and Fiscal Outlook', url: 'https://obr.uk/efo/economic-and-fiscal-outlook-march-2025/', date: 'March 2025', note: 'Tax/GDP 37.1% in 2024-25 — highest since 1948; total HMRC receipts £282bn' },
+  { num: 2, name: 'HMRC', dataset: 'Income Tax Liabilities Statistics', url: 'https://www.gov.uk/government/statistics/income-tax-liabilities-statistics', date: '2025', note: '3.8M additional higher-rate taxpayers from threshold freeze; personal allowance frozen at £12,570 since 2021' },
+  { num: 3, name: 'DLUHC', dataset: 'Council Tax Levels Set by Local Authorities', url: 'https://www.gov.uk/government/collections/council-tax-statistics', date: '2024-25', note: 'Band D avg £1,874 (up 58% from £1,187 in 2010); 5% annual rises since 2022' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

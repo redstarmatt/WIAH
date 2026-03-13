@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Electoral Commission', dataset: 'Voter identification at the 2023 local elections', url: 'https://www.electoralcommission.org.uk/research-reports-and-data/our-reports-and-data-past-elections-and-referendums', date: '2023' },
+  { num: 2, name: 'Electoral Commission', dataset: '2024 General Election monitoring report', url: 'https://www.electoralcommission.org.uk/research-reports-and-data', date: '2024' },
+  { num: 3, name: 'Electoral Commission', dataset: 'Personation fraud cases 2010-2023', url: 'https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/our-views-and-research/electoral-fraud-data', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -136,11 +146,14 @@ export default function VoterIDImpactPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK introduced mandatory photo ID at polling stations with the Elections Act 2022, making England the only part of the United Kingdom to require photo ID to vote. The 2023 local elections — the first to use the new rules — resulted in 14,000 people being turned away. Approximately 4,000 did not return with the correct documentation and so were unable to vote. The Electoral Commission&rsquo;s post-election research found that awareness of the new rules was significantly lower among younger voters, people from ethnic minority backgrounds, social renters, and people on lower incomes.
+              The UK introduced mandatory photo ID at polling stations with the Elections Act 2022, making England the only part of the United Kingdom to require photo ID to vote. The 2023 local elections — the first to use the new rules — resulted in 14,000 people being turned away. Approximately 4,000 did not return with the correct documentation and so were unable to vote.<Cite nums={1} /> The Electoral Commission&rsquo;s post-election research found that awareness of the new rules was significantly lower among younger voters, people from ethnic minority backgrounds, social renters, and people on lower incomes.<Cite nums={1} />
             </p>
             <p>
-              The fundamental policy question is whether the problem the legislation addressed — electoral fraud through personation at polling stations — was proportionate to the remedy. The Electoral Commission had recorded only 13 cases of personation in the previous decade across all UK elections. The counter-argument — that any fraud undermines trust in democracy — has force, but sits awkwardly against evidence that the ID requirement has created a meaningful barrier for voters who are already less likely to participate. The free Voter Authority Certificate provides a mitigating mechanism, but its uptake has been limited by awareness gaps and the administrative burden of applying.
+              The fundamental policy question is whether the problem the legislation addressed — electoral fraud through personation at polling stations — was proportionate to the remedy. The Electoral Commission had recorded only 13 cases of personation in the previous decade across all UK elections.<Cite nums={3} /> The counter-argument — that any fraud undermines trust in democracy — has force, but sits awkwardly against evidence that the ID requirement has created a meaningful barrier for voters who are already less likely to participate. The free Voter Authority Certificate provides a mitigating mechanism, but its uptake has been limited by awareness gaps and the administrative burden of applying.
             </p>
+          </div>
+          <div className="mt-6">
+            <References items={editorialRefs} />
           </div>
         </section>
 

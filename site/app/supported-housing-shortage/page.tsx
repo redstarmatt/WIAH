@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Supported Housing Review', url: 'https://www.gov.uk/government/publications/supported-housing-review', date: '2024', note: 'Stock fell from 458K to 448K units; waiting list doubled to 58K; LHA rates lag actual rents' },
+  { num: 2, name: 'NHS England', dataset: 'Delayed Transfers of Care Statistics', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/delayed-transfers-of-care/', date: '2024', note: '~13K people stuck in hospital due to lack of supported housing; >£300/day unnecessary hospital cost' },
+  { num: 3, name: 'Housing LIN', dataset: 'Supported Housing Deficit Report', url: 'https://www.housinglin.org.uk/', date: '2024', note: '45K unit shortfall; gap growing annually' },
+];
 
 // -- Types ------------------------------------------------------------------
 

@@ -140,7 +140,7 @@ export default function UnpaidCareBurdenPage() {
               The economic contribution of unpaid carers is staggering. Carers UK&rsquo;s 2024 valuation puts the replacement cost of unpaid care at £184 billion per year — more than total annual NHS spending and nearly double the budget of the entire formal social care sector.<Cite nums={2} /> Yet the people providing this care pay a heavy personal price. Around 1.2 million carers live in poverty, a rate significantly higher than the general population.<Cite nums={3} /> The &ldquo;sandwich generation&rdquo; — those caring simultaneously for ageing parents and dependent children — faces particular strain, with women disproportionately bearing the burden: 58% of unpaid carers are female, and women are more likely to reduce working hours or leave employment entirely to provide care.<Cite nums={1} /> The earnings penalty is severe: carers who give up work lose an average of £12,000 per year in income, and many never recover their career trajectory. An estimated 800,000 young carers aged 5 to 17 provide care in the UK, often missing school, losing friendships, and experiencing anxiety and depression at rates far above their peers.<Cite nums={3} />
             </p>
             <p>
-              The mental health toll is well documented. Carers UK&rsquo;s annual State of Caring survey consistently finds that over 70% of carers report anxiety and stress, while more than 30% report depression. Many carers describe feeling invisible — performing work that society depends on but refuses to see or adequately value. The gap between the economic value of unpaid care and the support offered to carers represents one of the largest unacknowledged subsidies in British public life. As the population ages and the ratio of working-age adults to over-65s continues to narrow, the pressure on unpaid carers will only intensify. The question is not whether Britain can afford to support its carers properly, but whether it can afford not to.
+              The mental health toll is well documented. Carers UK&rsquo;s annual State of Caring survey consistently finds that over 70% of carers report anxiety and stress, while more than 30% report depression.<Cite nums={3} /> Many carers describe feeling invisible — performing work that society depends on but refuses to see or adequately value. The gap between the economic value of unpaid care and the support offered to carers represents one of the largest unacknowledged subsidies in British public life. As the population ages and the ratio of working-age adults to over-65s continues to narrow, the pressure on unpaid carers will only intensify. The question is not whether Britain can afford to support its carers properly, but whether it can afford not to.
             </p>
           </div>
         </section>
@@ -251,6 +251,10 @@ export default function UnpaidCareBurdenPage() {
             />
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Positive callout */}
         <ScrollReveal>

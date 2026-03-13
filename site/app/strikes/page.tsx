@@ -275,13 +275,13 @@ export default function StrikesPage() {
       {/* Editorial context */}
       <section className="max-w-3xl mx-auto px-6 py-12 space-y-6">
         <p className="text-base leading-relaxed text-wiah-black">
-          Working days lost to strikes reached 3.75 million in 2023—the highest annual total since 1989 and a near-tenfold increase from pre-pandemic levels of roughly 300,000. More than one million workers walked out across rail, the NHS, education, the civil service, and Royal Mail, making it the broadest wave of industrial action since the 1970s. The trigger was uniform: CPI inflation hit 11.1% in October 2022 while public sector pay offers stayed well below, leaving real wages down 4% in a single year. Workers who had accepted a decade of restraint found their living standards collapsing.
+          Working days lost to strikes reached 3.75 million in 2023—the highest annual total since 1989 and a near-tenfold increase from pre-pandemic levels of roughly 300,000.<Cite nums={1} /> More than one million workers walked out across rail, the NHS, education, the civil service, and Royal Mail, making it the broadest wave of industrial action since the 1970s. The trigger was uniform: CPI inflation hit 11.1% in October 2022 while public sector pay offers stayed well below, leaving real wages down 4% in a single year.<Cite nums={2} /> Workers who had accepted a decade of restraint found their living standards collapsing.
         </p>
         <p className="text-base leading-relaxed text-wiah-black">
-          The NHS accounted for more than 614,000 of those lost days. BMA junior doctors staged 11 separate stoppages—the longest sustained industrial action in NHS history—demanding a 35% pay restoration to reverse a decade of real-terms erosion. The Royal College of Nursing called its first-ever strike. Consultants, ambulance workers, and physiotherapists followed, paralysing services across 2022—23. Settlements arrived in 2024: multi-year awards averaging 5–6% for most NHS staff, enough to end the walkouts but well short of the BMA's original claim.
+          The NHS accounted for more than 614,000 of those lost days. BMA junior doctors staged 11 separate stoppages—the longest sustained industrial action in NHS history—demanding a 35% pay restoration to reverse a decade of real-terms erosion.<Cite nums={3} /> The Royal College of Nursing called its first-ever strike. Consultants, ambulance workers, and physiotherapists followed, paralysing services across 2022—23. Settlements arrived in 2024: multi-year awards averaging 5–6% for most NHS staff, enough to end the walkouts but well short of the BMA's original claim.<Cite nums={3} />
         </p>
         <p className="text-base leading-relaxed text-wiah-black">
-          The wave has subsided but not vanished. Days lost fell to 784,000 in 2024—an 80% drop from the peak yet still double to triple the 2015–20 baseline of 100,000–300,000. The price of settlement was high: an estimated £4–6 billion in additional public sector pay commitments. Government responded with the Minimum Service Levels Act 2023, imposing legal floors on staffing during strikes in transport, health, and education—legislation unions have challenged in the courts. Whether fiscal pressure forces another round of pay restraint remains the unresolved question.
+          The wave has subsided but not vanished. Days lost fell to 784,000 in 2024—an 80% drop from the peak yet still double to triple the 2015–20 baseline of 100,000–300,000.<Cite nums={1} /> The price of settlement was high: an estimated £4–6 billion in additional public sector pay commitments. Government responded with the Minimum Service Levels Act 2023, imposing legal floors on staffing during strikes in transport, health, and education—legislation unions have challenged in the courts. Whether fiscal pressure forces another round of pay restraint remains the unresolved question.
         </p>
       </section>
 
@@ -297,6 +297,10 @@ export default function StrikesPage() {
           />
         </section>
       </ScrollReveal>
+
+      <div className="mt-6 max-w-3xl mx-auto px-6">
+        <References items={editorialRefs} />
+      </div>
 
       {/* Sources */}
       <section className="max-w-3xl mx-auto px-6 py-12">

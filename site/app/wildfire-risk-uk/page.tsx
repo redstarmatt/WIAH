@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Fire and Rescue Services', dataset: 'Saddleworth Moor fire incident report', url: 'https://www.gov.uk/government/publications/saddleworth-moor-fire', date: '2018', note: 'Estimated cost £120 million' },
+  { num: 2, name: 'Met Office', dataset: 'UKCP18 fire weather index projections', url: 'https://www.metoffice.gov.uk/research/approach/collaboration/ukcp', date: '2024' },
+  { num: 3, name: 'NFCC', dataset: 'Wildfire Risk Register 2024', url: 'https://nfcc.org.uk', date: '2024', note: '112 high-risk areas identified' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -124,10 +132,10 @@ export default function WildfireRiskUKPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK is not typically associated with wildfire risk, but the combination of climate change, drought, land management practices, and moorland and peatland in close proximity to urban areas creates a risk profile that has materialised with increasing frequency. The 2018 Saddleworth Moor fire — which burned for weeks, required army assistance, and cost around £120 million in response and economic impact — was a turning point in UK fire service planning. The 2021 spring wildfire season in Scotland destroyed over 12,000 hectares across multiple incidents. In July 2022, following the UK&rsquo;s first-ever 40&deg;C temperature reading, wildfires broke out across London and southern England, destroying homes in Wennington and other villages.
+              The UK is not typically associated with wildfire risk, but the combination of climate change, drought, land management practices, and moorland and peatland in close proximity to urban areas creates a risk profile that has materialised with increasing frequency. The 2018 Saddleworth Moor fire — which burned for weeks, required army assistance, and cost around £120 million in response and economic impact — was a turning point in UK fire service planning.<Cite nums={1} /> The 2021 spring wildfire season in Scotland destroyed over 12,000 hectares across multiple incidents. In July 2022, following the UK&rsquo;s first-ever 40&deg;C temperature reading, wildfires broke out across London and southern England, destroying homes in Wennington and other villages.
             </p>
             <p>
-              The structural drivers are worsening. The number of days per year meeting Met Office criteria for high wildfire fire weather index has increased from an average of 12 in 2010–2020 to 16 in 2020–2024. Climate projections under mid-range scenarios suggest this could reach 24 by 2050 — a doubling from the pre-2020 baseline. Upland peatlands, which store centuries of carbon and act as natural fire breaks when wet, are degraded across large areas of England and Scotland, creating substantial fuel loads when dried by drought. The NFCC Wildfire Risk Register now covers 112 high-risk areas, but fire service capacity for large landscape fires — which require sustained multi-day responses — remains limited.
+              The structural drivers are worsening. The number of days per year meeting Met Office criteria for high wildfire fire weather index has increased from an average of 12 in 2010–2020 to 16 in 2020–2024. Climate projections under mid-range scenarios suggest this could reach 24 by 2050 — a doubling from the pre-2020 baseline.<Cite nums={2} /> Upland peatlands, which store centuries of carbon and act as natural fire breaks when wet, are degraded across large areas of England and Scotland, creating substantial fuel loads when dried by drought. The NFCC Wildfire Risk Register now covers 112 high-risk areas, but fire service capacity for large landscape fires — which require sustained multi-day responses — remains limited.<Cite nums={3} />
             </p>
           </div>
         </section>
@@ -247,6 +255,10 @@ export default function WildfireRiskUKPage() {
             source="Source: NFCC Wildfire Risk Register 2024 · Met Office UKCP18 projections · Natural England Peatland Programme."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

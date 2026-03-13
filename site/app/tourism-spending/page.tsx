@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Overseas Travel and Tourism', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/leisureandtourism/bulletins/overseastravelandtourism/latestrelease', date: 'Q4 2025' },
+  { num: 2, name: 'VisitBritain', dataset: 'Inbound Tourism Statistics', url: 'https://www.visitbritain.org/research-insights/inbound-tourism-trends', date: '2025' },
+  { num: 3, name: 'ONS', dataset: 'GB Tourism Survey / GB Day Visits Survey', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/leisureandtourism', date: '2025' },
+  { num: 4, name: 'DCMS', dataset: 'Tourism Satellite Account — Employment Estimates', url: 'https://www.gov.uk/government/collections/tourism-sector-deal', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -155,10 +164,10 @@ export default function TourismSpendingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK tourism sector has staged a remarkable recovery. Overseas visitor spending collapsed from £27 billion in 2019 to just £7 billion in 2020 — a 74% fall that wiped out a decade of growth in a single quarter. By 2024, spending had recovered to £31.1 billion, and provisional 2025 figures suggest it has reached £32.8 billion. Sterling's post-Brexit depreciation, which made the UK roughly 15% cheaper for dollar- and euro-denominated visitors, played an underappreciated role in accelerating the rebound. The UK now ranks fifth globally for inbound tourism receipts, behind the United States, Spain, France, and Turkey.
+              The UK tourism sector has staged a remarkable recovery. Overseas visitor spending collapsed from £27 billion in 2019 to just £7 billion in 2020 — a 74% fall that wiped out a decade of growth in a single quarter.<Cite nums={1} /> By 2024, spending had recovered to £31.1 billion, and provisional 2025 figures suggest it has reached £32.8 billion. Sterling's post-Brexit depreciation, which made the UK roughly 15% cheaper for dollar- and euro-denominated visitors, played an underappreciated role in accelerating the rebound. The UK now ranks fifth globally for inbound tourism receipts, behind the United States, Spain, France, and Turkey.<Cite nums={2} />
             </p>
             <p>
-              Domestic tourism tells a more complicated story. The 2021 staycation boom pushed UK residents' holiday spending to a record £82 billion as international travel remained restricted. That figure has since fallen back to around £74.5 billion as outbound travel recovered — British tourists are once again spending more abroad than foreign visitors spend here, maintaining the UK's persistent tourism trade deficit. The structural challenge is geographic concentration: London captures 54% of all overseas visitor spending, while the entire north of England — from Liverpool to Newcastle — accounts for roughly 12%. VisitBritain's "Discover England" fund and the devolved tourism agencies have made incremental progress, but the capital's dominance remains largely unchanged over two decades.
+              Domestic tourism tells a more complicated story. The 2021 staycation boom pushed UK residents' holiday spending to a record £82 billion as international travel remained restricted.<Cite nums={3} /> That figure has since fallen back to around £74.5 billion as outbound travel recovered — British tourists are once again spending more abroad than foreign visitors spend here, maintaining the UK's persistent tourism trade deficit. The structural challenge is geographic concentration: London captures 54% of all overseas visitor spending, while the entire north of England — from Liverpool to Newcastle — accounts for roughly 12%.<Cite nums={2} /> VisitBritain's "Discover England" fund and the devolved tourism agencies have made incremental progress, but the capital's dominance remains largely unchanged over two decades.
             </p>
             <p>
               Employment recovery has been uneven. The sector lost 44% of its workforce during the pandemic, and many experienced hospitality workers moved permanently into other industries. Recruitment difficulties persist, compounded by post-Brexit restrictions on EU workers who previously filled a significant share of seasonal and entry-level tourism roles. The ONS estimates 3.2 million people now work in tourism-related roles — back to pre-pandemic levels in headcount terms, though the proportion of part-time and zero-hours contracts has increased. Tourism contributes roughly 10% of UK GDP when indirect effects are included, making it the country's third-largest export sector behind financial services and advanced manufacturing.

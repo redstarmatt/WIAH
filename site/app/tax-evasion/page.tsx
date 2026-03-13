@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HMRC', dataset: 'Measuring Tax Gaps', url: 'https://www.gov.uk/government/statistics/measuring-tax-gaps', date: '2024', note: 'Tax gap £39.8bn (4.8% of liabilities); criminal evasion £5.5bn; small businesses largest category' },
+  { num: 2, name: 'HMRC', dataset: 'Annual Report and Accounts', url: 'https://www.gov.uk/government/collections/hmrcs-annual-report-and-accounts', date: '2024', note: 'Staff fell from 75K (2010) to 60.5K (2024); prosecutions down 70%+ (1,165 to ~320)' },
+  { num: 3, name: 'NAO', dataset: 'HMRC Performance Report', url: 'https://www.nao.org.uk/', date: '2024', note: 'Compliance yield £34bn; £18 returned per £1 spent; self-financing investment case' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

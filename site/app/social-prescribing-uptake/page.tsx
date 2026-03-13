@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Social Prescribing Summary Data', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', date: '2024' },
+  { num: 2, name: 'UCL', dataset: 'Social Prescribing Systematic Review', date: '2023', note: 'Consistent evidence of reduced GP consultations and improved wellbeing' },
+  { num: 3, name: 'The Lancet', dataset: 'Green Prescribing Outcomes Study', date: '2023', note: 'Measurable reductions in anxiety and depression scores after 12 weeks' },
+  { num: 4, name: 'NHS England', dataset: 'Social Prescribing Impact Modelling — GP Appointments Saved', date: '2024', note: 'Estimated 930,000 GP appointments saved in 2024' },
+  { num: 5, name: 'NHS England', dataset: 'Social Prescribing Demographic Data', date: '2024', note: '42% of referrals from most deprived areas (IMD deciles 1-3)' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -121,9 +131,9 @@ export default function SocialPrescribingUptakePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Social prescribing is one of the NHS Long Term Plan&apos;s most ambitious bets: the idea that a GP, instead of reaching for a prescription pad, can refer a patient to a link worker who connects them with community activities — walking groups, art classes, gardening projects, debt advice, befriending services. The NHS committed to embedding social prescribing link workers in every Primary Care Network by 2023/24, and the programme has exceeded that target. Over 3,300 link workers are now in post across England, handling 1.3 million referrals a year. The growth has been remarkable: from a patchwork of local pilots in 2018 to a nationwide infrastructure in under five years.</p>
-            <p>The evidence base is growing, though not yet definitive. A UCL systematic review found consistent evidence that social prescribing reduces GP consultations, improves self-reported wellbeing, and decreases loneliness — particularly among older adults and people with long-term conditions. Research published in The Lancet highlighted that &ldquo;green prescribing&rdquo; (nature-based activities) showed measurable reductions in anxiety and depression scores after 12 weeks, while arts-on-prescription programmes demonstrated improvements in mental health outcomes comparable to group cognitive behavioural therapy for mild-to-moderate depression. NHS England&apos;s own modelling estimates that social prescribing saved approximately 930,000 GP appointments in 2024 — capacity that was redirected to patients with clinical needs that only a doctor can address.</p>
-            <p>The challenges are real. Link worker turnover is high — the role is emotionally demanding, often poorly paid, and career progression is limited. Funding for the community activities that link workers refer into (the &ldquo;supply side&rdquo;) has been hollowed out by a decade of local authority cuts: there is little point referring someone to a walking group that no longer exists. The evidence base, while promising, still relies heavily on observational studies and self-reported outcomes; large-scale randomised controlled trials are underway but results are not yet available. Critics argue that social prescribing risks becoming a sticking plaster for underfunded mental health services, diverting attention from the need for more clinical psychologists, psychiatrists, and IAPT therapists. These are legitimate concerns. But the most striking finding is distributional: 42% of all social prescribing referrals come from the most deprived areas of England, suggesting the programme is reaching people who have historically been underserved by both clinical and community services.</p>
+            <p>Social prescribing is one of the NHS Long Term Plan&apos;s most ambitious bets: the idea that a GP, instead of reaching for a prescription pad, can refer a patient to a link worker who connects them with community activities — walking groups, art classes, gardening projects, debt advice, befriending services. The NHS committed to embedding social prescribing link workers in every Primary Care Network by 2023/24, and the programme has exceeded that target. Over 3,300 link workers are now in post across England, handling 1.3 million referrals a year.<Cite nums={1} /> The growth has been remarkable: from a patchwork of local pilots in 2018 to a nationwide infrastructure in under five years.</p>
+            <p>The evidence base is growing, though not yet definitive. A UCL systematic review found consistent evidence that social prescribing reduces GP consultations, improves self-reported wellbeing, and decreases loneliness — particularly among older adults and people with long-term conditions.<Cite nums={2} /> Research published in The Lancet highlighted that &ldquo;green prescribing&rdquo; (nature-based activities) showed measurable reductions in anxiety and depression scores after 12 weeks, while arts-on-prescription programmes demonstrated improvements in mental health outcomes comparable to group cognitive behavioural therapy for mild-to-moderate depression.<Cite nums={3} /> NHS England&apos;s own modelling estimates that social prescribing saved approximately 930,000 GP appointments in 2024 — capacity that was redirected to patients with clinical needs that only a doctor can address.<Cite nums={4} /></p>
+            <p>The challenges are real. Link worker turnover is high — the role is emotionally demanding, often poorly paid, and career progression is limited. Funding for the community activities that link workers refer into (the &ldquo;supply side&rdquo;) has been hollowed out by a decade of local authority cuts: there is little point referring someone to a walking group that no longer exists. The evidence base, while promising, still relies heavily on observational studies and self-reported outcomes; large-scale randomised controlled trials are underway but results are not yet available. Critics argue that social prescribing risks becoming a sticking plaster for underfunded mental health services, diverting attention from the need for more clinical psychologists, psychiatrists, and IAPT therapists. These are legitimate concerns. But the most striking finding is distributional: 42% of all social prescribing referrals come from the most deprived areas of England, suggesting the programme is reaching people who have historically been underserved by both clinical and community services.<Cite nums={5} /></p>
           </div>
         </section>
 
@@ -235,6 +245,10 @@ export default function SocialPrescribingUptakePage() {
             source="Source: NHS England — Social Prescribing Summary Data, 2024. NASP — Annual Report 2024. UCL — Social Prescribing Evidence Review, 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <RelatedTopics />
       </main>

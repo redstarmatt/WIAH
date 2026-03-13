@@ -10,6 +10,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Social Prescribing Link Worker Programme', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Social Prescribing Evaluation — GP Demand Reduction', date: '2024', note: '23% of referred patients reduce GP visits' },
+  { num: 3, name: 'NASP', dataset: 'Annual Workforce Survey — Social Prescribing Link Workers', url: 'https://socialprescribingacademy.org.uk/resources/evidence/', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -75,8 +83,8 @@ export default function SocialPrescribingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Social prescribing connects people with community activities, groups, and services that address the social, emotional, and practical needs driving a significant proportion of primary care demand. A person presenting to their GP with loneliness, financial stress, or low-level anxiety may not need medication — they may need a befriending service, a debt advice charity, or a community garden. Social prescribing link workers — non-clinical staff embedded within GP practices and Primary Care Networks — make these connections, taking time with patients that GPs rarely have. The programme has grown rapidly: from approximately 1,000 link workers and 85,000 referrals in 2020 to 4,500 link workers and 550,000 referrals in 2023/24 — a five-fold increase in four years. The NHS Long Term Plan targets 900,000 referrals a year by 2026; at current growth rates, that is achievable. Studies consistently show a 15–28% reduction in GP appointment demand in the three to six months following a social prescribing referral, with NHS England estimating that 23% of referred patients reduce their GP contact.</p>
-            <p>The quality and reach of social prescribing is uneven. Link worker capacity varies significantly between Primary Care Networks, and the community infrastructure that workers connect patients to is thinner in deprived and rural areas. A link worker in an affluent suburb can draw on a well-funded voluntary sector with diverse offerings; a link worker in a deprived coastal town may find few services still operating following years of charity sector funding cuts. The effectiveness of social prescribing is partly a function of local community assets, which are themselves products of economic geography. The programme is not a substitute for clinical care, but it addresses a real gap — the social and emotional needs that conventional general practice is poorly designed to meet.</p>
+            <p>Social prescribing connects people with community activities, groups, and services that address the social, emotional, and practical needs driving a significant proportion of primary care demand. A person presenting to their GP with loneliness, financial stress, or low-level anxiety may not need medication — they may need a befriending service, a debt advice charity, or a community garden. Social prescribing link workers — non-clinical staff embedded within GP practices and Primary Care Networks — make these connections, taking time with patients that GPs rarely have. The programme has grown rapidly: from approximately 1,000 link workers and 85,000 referrals in 2020 to 4,500 link workers and 550,000 referrals in 2023/24 — a five-fold increase in four years.<Cite nums={[1, 3]} /> The NHS Long Term Plan targets 900,000 referrals a year by 2026; at current growth rates, that is achievable. Studies consistently show a 15–28% reduction in GP appointment demand in the three to six months following a social prescribing referral, with NHS England estimating that 23% of referred patients reduce their GP contact.<Cite nums={2} /></p>
+            <p>The quality and reach of social prescribing is uneven. Link worker capacity varies significantly between Primary Care Networks, and the community infrastructure that workers connect patients to is thinner in deprived and rural areas.<Cite nums={3} /> A link worker in an affluent suburb can draw on a well-funded voluntary sector with diverse offerings; a link worker in a deprived coastal town may find few services still operating following years of charity sector funding cuts. The effectiveness of social prescribing is partly a function of local community assets, which are themselves products of economic geography. The programme is not a substitute for clinical care, but it addresses a real gap — the social and emotional needs that conventional general practice is poorly designed to meet.</p>
           </div>
         </section>
 
@@ -149,6 +157,10 @@ export default function SocialPrescribingPage() {
             />
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

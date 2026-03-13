@@ -8,6 +8,16 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DCMS', dataset: 'Community Life Survey 2023', url: 'https://www.gov.uk/government/collections/community-life-survey--2', date: '2023' },
+  { num: 2, name: 'NCVO', dataset: 'UK Civil Society Almanac 2023', url: 'https://www.ncvo.org.uk/research/almanac/', date: '2023' },
+  { num: 3, name: 'Charities Aid Foundation', dataset: 'UK Giving Report 2023', url: 'https://www.cafonline.org/about-us/publications', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -78,12 +88,15 @@ export default function VolunteeringPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Volunteering is a pillar of British civil society. An estimated 16.3 million adults volunteer formally at least once a year through charities, community groups, sports clubs, and religious organisations, contributing an economic value estimated at £23 billion annually. But the trend is downward. The DCMS Community Life Survey shows that regular formal volunteering — at least once a month — fell from 27% of adults in 2015 to 20% in 2023. Informal volunteering (helping neighbours, community mutual aid) spiked during the pandemic but has also settled below pre-COVID levels. The charity sector employs 920,000 people directly, making it larger than the agriculture, mining, and utilities sectors combined, yet its workforce and volunteer base are under simultaneous strain.
+              Volunteering is a pillar of British civil society. An estimated 16.3 million adults volunteer formally at least once a year through charities, community groups, sports clubs, and religious organisations, contributing an economic value estimated at £23 billion annually.<Cite nums={2} /> But the trend is downward. The DCMS Community Life Survey shows that regular formal volunteering — at least once a month — fell from 27% of adults in 2015 to 20% in 2023.<Cite nums={1} /> Informal volunteering (helping neighbours, community mutual aid) spiked during the pandemic but has also settled below pre-COVID levels. The charity sector employs 920,000 people directly, making it larger than the agriculture, mining, and utilities sectors combined, yet its workforce and volunteer base are under simultaneous strain.<Cite nums={2} />
             </p>
             <p>
-              The pandemic was a watershed. Lockdowns dismantled the routines and social connections that sustain volunteering — weekly sessions at food banks, youth groups, hospital visits — and many did not return. NCVO analysis found that 40% of charities reported a decline in volunteer numbers between 2019 and 2023, with older volunteers (the backbone of many organisations) disproportionately not returning due to health concerns and changed habits. The cost-of-living crisis compounded the problem: potential volunteers who previously gave time now need to prioritise paid work. The Charities Aid Foundation found that 34% of people who reduced or stopped volunteering cited financial pressures as the primary reason. Simultaneously, demand for charity services — food banks, debt advice, mental health support — has surged, creating a widening gap between what civil society is asked to provide and its capacity to deliver.
+              The pandemic was a watershed. Lockdowns dismantled the routines and social connections that sustain volunteering — weekly sessions at food banks, youth groups, hospital visits — and many did not return. NCVO analysis found that 40% of charities reported a decline in volunteer numbers between 2019 and 2023, with older volunteers (the backbone of many organisations) disproportionately not returning due to health concerns and changed habits.<Cite nums={2} /> The cost-of-living crisis compounded the problem: potential volunteers who previously gave time now need to prioritise paid work. The Charities Aid Foundation found that 34% of people who reduced or stopped volunteering cited financial pressures as the primary reason.<Cite nums={3} /> Simultaneously, demand for charity services — food banks, debt advice, mental health support — has surged, creating a widening gap between what civil society is asked to provide and its capacity to deliver.
             </p>
             </div>
+          <div className="mt-6">
+            <References items={editorialRefs} />
+          </div>
         </section>
 
         <SectionNav sections={[

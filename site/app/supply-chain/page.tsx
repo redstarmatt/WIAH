@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA', dataset: 'Food Statistics Pocketbook — Food Security Indicators', url: 'https://www.gov.uk/government/statistics/food-statistics-pocketbook', date: '2022', note: 'UK imports 46% of food (up from 37% in 2000); one of highest in G7' },
+  { num: 2, name: 'ONS', dataset: 'UK Trade Statistics', url: 'https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments', date: '2023', note: 'Goods trade deficit £186bn (2022 record); £162bn in 2023; 42% of exports to EU' },
+  { num: 3, name: 'House of Lords', dataset: 'Science and Technology Committee — Medicine Supply Chain Report', date: '2021', note: 'NHS relies on imports for ~86% of active pharmaceutical ingredients, predominantly India and China' },
+];
 
 interface SupplyChainData {
   foodImportDependency: Array<{ year: number; percent: number }>

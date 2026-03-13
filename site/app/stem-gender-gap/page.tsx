@@ -159,12 +159,16 @@ export default function StemGenderGapPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on women in STEM</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Women make up 24% of STEM workers in the UK — up from 21% in 2013, but a gain of less than 3 percentage points over a decade. At that rate of change, gender parity in the STEM workforce is more than 80 years away. Computing is the worst-performing major STEM sector, with women accounting for around 19% of tech professionals. Engineering is similarly poor. By contrast, life sciences have near-parity at entry level, though women remain underrepresented at senior levels.</p>
-              <p>The A-level pipeline reveals the divergence. Biology entries are 62% female — near parity. Maths entries are 40% female. Physics entries are just 22% female, and computing 16%. The gaps open not at GCSE but at the point of subject choice aged 16–17, shaped by subject self-concept, teacher influence, peer norms, and career awareness. Girls who do take physics or computing at A-level go on to STEM degrees and careers at similar rates to boys — the bottleneck is the subject choice itself.</p>
-              <p>The economic case for change is clear: the UK cannot meet demand for STEM skills while recruiting only from half the population. The structural change required involves teacher professional development, visible female role models in STEM careers, and challenging the curriculum contexts in which technical subjects are taught. These are solvable problems, but they require sustained investment rather than one-off initiatives.</p>
+              <p>Women make up 24% of STEM workers in the UK — up from 21% in 2013, but a gain of less than 3 percentage points over a decade.<Cite nums={1} /> At that rate of change, gender parity in the STEM workforce is more than 80 years away. Computing is the worst-performing major STEM sector, with women accounting for around 19% of tech professionals. Engineering is similarly poor. By contrast, life sciences have near-parity at entry level, though women remain underrepresented at senior levels.</p>
+              <p>The A-level pipeline reveals the divergence. Biology entries are 62% female — near parity. Maths entries are 40% female. Physics entries are just 22% female, and computing 16%.<Cite nums={2} /> The gaps open not at GCSE but at the point of subject choice aged 16–17, shaped by subject self-concept, teacher influence, peer norms, and career awareness. Girls who do take physics or computing at A-level go on to STEM degrees and careers at similar rates to boys — the bottleneck is the subject choice itself.</p>
+              <p>The economic case for change is clear: the UK cannot meet demand for STEM skills while recruiting only from half the population.<Cite nums={3} /> The structural change required involves teacher professional development, visible female role models in STEM careers, and challenging the curriculum contexts in which technical subjects are taught. These are solvable problems, but they require sustained investment rather than one-off initiatives.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

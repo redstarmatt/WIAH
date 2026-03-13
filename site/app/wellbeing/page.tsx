@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Personal well-being in the UK', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/bulletins/measuringnationalwellbeing/latest', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Cost of living and anxiety scores 2022–23', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing', date: '2024' },
+  { num: 3, name: 'DCMS', dataset: 'Community Life Survey — loneliness', url: 'https://www.gov.uk/government/statistics/community-life-survey-202223', date: '2024' },
+  { num: 4, name: 'Campaign to End Loneliness', dataset: 'Economic cost of loneliness estimate', url: 'https://www.campaigntoendloneliness.org/', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -285,11 +294,11 @@ export default function WellbeingPage() {
       {/* Context */}
       <section id="sec-context" className="max-w-4xl mx-auto px-6 py-16 space-y-6 text-wiah-black leading-relaxed">
         <p>
-          The ONS surveys roughly 300,000 adults each year across four dimensions scored on a 0–10 scale. Life satisfaction rose from 7.41 in 2011/12 to a peak of 7.56 in 2018/19, fell to 7.36 during COVID, and sat at 7.45 in 2023/24 — still below its pre-pandemic peak. Anxiety moved in the opposite direction: the share of adults classified as high anxiety rose from 20% before the pandemic to 30.4% at its COVID peak, and by 2023/24 had only eased to 26.5% — one in four adults. The 2022 cost-of-living crisis compounded the damage, pushing the average anxiety score from 3.08 in 2021/22 to 3.22 in 2023/24 as energy bills doubled.
+          The ONS surveys roughly 300,000 adults each year across four dimensions scored on a 0–10 scale. Life satisfaction rose from 7.41 in 2011/12 to a peak of 7.56 in 2018/19, fell to 7.36 during COVID, and sat at 7.45 in 2023/24 — still below its pre-pandemic peak.<Cite nums={1} /> Anxiety moved in the opposite direction: the share of adults classified as high anxiety rose from 20% before the pandemic to 30.4% at its COVID peak, and by 2023/24 had only eased to 26.5% — one in four adults. The 2022 cost-of-living crisis compounded the damage, pushing the average anxiety score from 3.08 in 2021/22 to 3.22 in 2023/24 as energy bills doubled.<Cite nums={2} />
         </p>
 
         <p>
-          Loneliness has worsened despite dedicated policy attention. The share of adults reporting they often or always feel lonely rose from 5% in 2016–2019 to 7.8% in 2024 — roughly 4 million people — with young adults aged 16–24 and those over 75 recording the highest rates. The government appointed a Minister for Loneliness in 2018 and expanded social prescribing, yet the trajectory has not changed; the Campaign to End Loneliness estimates the annual cost at £6.4 billion in lost productivity and NHS demand. The direction across all four wellbeing measures has been consistently downward since 2019.
+          Loneliness has worsened despite dedicated policy attention. The share of adults reporting they often or always feel lonely rose from 5% in 2016–2019 to 7.8% in 2024 — roughly 4 million people — with young adults aged 16–24 and those over 75 recording the highest rates.<Cite nums={3} /> The government appointed a Minister for Loneliness in 2018 and expanded social prescribing, yet the trajectory has not changed; the Campaign to End Loneliness estimates the annual cost at £6.4 billion in lost productivity and NHS demand.<Cite nums={4} /> The direction across all four wellbeing measures has been consistently downward since 2019.
         </p>
       </section>
 
@@ -303,6 +312,10 @@ export default function WellbeingPage() {
           source="Source: ONS — Personal well-being in the UK, Annual Population Survey 2023/24."
         />
       </section>
+
+      <div className="mt-6 max-w-4xl mx-auto px-6">
+        <References items={editorialRefs} />
+      </div>
 
       {/* Sources */}
       <section id="sec-sources" className="max-w-4xl mx-auto px-6 py-16 border-t border-wiah-border">

@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Housing Supply Statistics — Social Rented Completions', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-affordable-housing-supply', date: '2022' },
+  { num: 2, name: 'DLUHC / VOA', dataset: 'Rent Statistics — Average Weekly Rents by Tenure', date: '2023' },
+  { num: 3, name: 'DLUHC', dataset: 'Live Tables on Rents, Lettings and Tenancies — Waiting Lists', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-rents-lettings-and-tenancies', date: '2022' },
+  { num: 4, name: 'National Housing Federation', dataset: 'Capital Requirements for Social Housing', date: '2023', note: 'Estimated £10-15 billion per year needed for 90,000-100,000 homes' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -73,8 +82,8 @@ export default function SocialRentPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In 1975, England built 152,000 social rented homes. In 2021/22, it built 6,400 — a 96% collapse in supply that is one of the most consequential policy reversals in modern British history. Right to Buy, introduced in 1980, sold approximately 2 million council homes at discounts of up to 60% of market value, with receipts initially prohibited from funding replacement building. The replacements that were built were typically &ldquo;affordable rent&rdquo; at up to 80% of market rate rather than true social rent, which is linked to income levels. The difference matters enormously: average weekly social rent in 2023 was £100; affordable rent averaged £155; market rent averaged £230. With 1.2 million households on waiting lists — up from 1.85 million in 2012, a fall explained by methodology changes that excluded low-need applicants rather than any real improvement — the gap between supply and need has never been wider.</p>
-            <p>The distinction between &ldquo;social rent&rdquo; and &ldquo;affordable rent&rdquo; is critical and frequently elided in policy announcements. The Affordable Homes Programme 2021–2026's £11.5 billion budget earmarked only a small fraction for true social rent; most output is shared ownership, affordable rent, or market sale. Rebuilding supply at scale — the 90,000–100,000 genuinely affordable social rented homes per year needed to address household formation and reduce the backlog — would require an additional £10–15 billion per year of public investment above current commitments. The economic case is strong: preventing homelessness and its downstream costs in temporary accommodation, social care, healthcare, and criminal justice saves public money. The barrier is not technical but political will to prioritise people who cannot buy their way into the market.</p>
+            <p>In 1975, England built 152,000 social rented homes. In 2021/22, it built 6,400 — a 96% collapse in supply that is one of the most consequential policy reversals in modern British history.<Cite nums={1} /> Right to Buy, introduced in 1980, sold approximately 2 million council homes at discounts of up to 60% of market value, with receipts initially prohibited from funding replacement building. The replacements that were built were typically &ldquo;affordable rent&rdquo; at up to 80% of market rate rather than true social rent, which is linked to income levels. The difference matters enormously: average weekly social rent in 2023 was £100; affordable rent averaged £155; market rent averaged £230.<Cite nums={2} /> With 1.2 million households on waiting lists — up from 1.85 million in 2012, a fall explained by methodology changes that excluded low-need applicants rather than any real improvement — the gap between supply and need has never been wider.<Cite nums={3} /></p>
+            <p>The distinction between &ldquo;social rent&rdquo; and &ldquo;affordable rent&rdquo; is critical and frequently elided in policy announcements. The Affordable Homes Programme 2021–2026's £11.5 billion budget earmarked only a small fraction for true social rent; most output is shared ownership, affordable rent, or market sale. Rebuilding supply at scale — the 90,000–100,000 genuinely affordable social rented homes per year needed to address household formation and reduce the backlog — would require an additional £10–15 billion per year of public investment above current commitments.<Cite nums={4} /> The economic case is strong: preventing homelessness and its downstream costs in temporary accommodation, social care, healthcare, and criminal justice saves public money. The barrier is not technical but political will to prioritise people who cannot buy their way into the market.</p>
           </div>
         </section>
 
