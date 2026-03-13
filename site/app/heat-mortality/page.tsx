@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'UKHSA', dataset: 'Heat Mortality Monitoring', url: 'https://www.gov.uk/government/publications/heat-mortality-monitoring-england-report', date: '2022' },
+  { num: 2, name: 'Met Office', dataset: 'UK climate extremes', url: 'https://www.metoffice.gov.uk/research/climate/maps-and-data/uk-climate-extremes', date: '2022' },
+  { num: 3, name: 'UKHSA', dataset: 'Health Effects of Climate Change — heat mortality projections', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -80,7 +88,7 @@ export default function HeatMortalityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>On 19 July 2022, the temperature at Coningsby in Lincolnshire reached 40.3&deg;C — the first time in recorded history the UK had exceeded 40 degrees — and at least 2,985 excess deaths followed across the summer. This was not an aberration: the 2019 heatwave killed 892 people above baseline; the 2020 heatwave during COVID killed 1,062. Each year with a significant heat event has pushed the toll higher. Climate projections from UKHSA suggest annual heat deaths could reach 7,000 by 2050 under a moderate 2&deg;C warming scenario and 12,000 under 3&deg;C+ — figures that assume no adaptation. Urban heat islands amplify exposure: city centres can be 8–10&deg;C warmer than surrounding countryside on still, cloudless nights, when elderly people most need the temperature to fall.</p>
+            <p>On 19 July 2022, the temperature at Coningsby in Lincolnshire reached 40.3&deg;C — the first time in recorded history the UK had exceeded 40 degrees<Cite nums={2} /> — and at least 2,985 excess deaths followed across the summer.<Cite nums={1} /> This was not an aberration: the 2019 heatwave killed 892 people above baseline; the 2020 heatwave during COVID killed 1,062.<Cite nums={1} /> Each year with a significant heat event has pushed the toll higher. Climate projections from UKHSA suggest annual heat deaths could reach 7,000 by 2050 under a moderate 2&deg;C warming scenario and 12,000 under 3&deg;C+ — figures that assume no adaptation.<Cite nums={3} /> Urban heat islands amplify exposure: city centres can be 8–10&deg;C warmer than surrounding countryside on still, cloudless nights, when elderly people most need the temperature to fall.</p>
             <p>The populations most at risk are well-identified and overlap substantially with poverty: those over 75 living alone, people in social housing with poor ventilation, those with heart disease or diabetes, and people on medications that impair thermoregulation. Air conditioning is rare in UK homes; the housing stock was built to retain winter warmth, not shed summer heat, making retrofit for cooling structurally different from insulation programmes. The Future Homes Standard from 2025 does not yet comprehensively address overheating. Urban greening — street trees, green roofs, permeable surfaces — is among the most cost-effective adaptation measures available but requires local authority resources and planning changes that are currently moving slowly relative to the pace of warming.</p>
           </div>
         </section>
@@ -178,6 +186,9 @@ export default function HeatMortalityPage() {
           </div>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         {/* Sources */}
         <ScrollReveal>
           <div className="border-t border-wiah-border pt-8 mt-8">

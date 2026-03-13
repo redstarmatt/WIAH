@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA / Environment Agency', dataset: 'UK WEEE Statistics', url: 'https://www.gov.uk/government/statistical-data-sets/waste-electrical-and-electronic-equipment-weee-in-the-uk', date: '2024' },
+  { num: 2, name: 'Eurostat', dataset: 'WEEE statistics — EU average', url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php/Waste_statistics_-_electrical_and_electronic_equipment', date: '2024' },
+  { num: 3, name: 'Basel Convention / Environment Agency', dataset: 'Illegal export enforcement data', url: 'https://www.basel.int/', date: '2024' },
+];
 
 export default function EWasteRecyclingPage() {
   // E-waste generated (thousand tonnes) — 2015–2024 (10 points)

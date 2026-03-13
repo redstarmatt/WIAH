@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Firefighter numbers (thousands), 2010–2024 — NFCC / Home Office
 const firefighterValues = [48.0, 47.5, 46.5, 45.5, 44.5, 43.8, 43.0, 42.5, 42.0, 41.8, 42.0, 41.5, 41.0, 40.8, 41.0];
@@ -47,6 +49,12 @@ const responseSeries: Series[] = [
 
 const firefighterAnnotations: Annotation[] = [
   { date: new Date(2010, 0, 1), label: '2010: Austerity cuts begin' },
+];
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office / NFCC', dataset: 'Fire statistics and workforce data', url: 'https://www.gov.uk/government/collections/fire-statistics', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'Fire statistics: response times', url: 'https://www.gov.uk/government/statistics/fire-statistics-monitor', date: '2024' },
+  { num: 3, name: 'HMICFRS', dataset: 'Fire and rescue service inspections', date: '2024' },
 ];
 
 export default function FireServicePage() {
