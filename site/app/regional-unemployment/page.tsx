@@ -17,6 +17,11 @@ interface DataPoint { year: number;
   youthNorthEast: number; }
 interface TopicData { national: { timeSeries: DataPoint[] }; metadata: { sources: { name: string; dataset: string; url: string; frequency: string }[]; methodology: string; knownIssues: string[]; }; }
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Regional labour market statistics', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/regionallabourmarket/latest', date: '2025' },
+  { num: 2, name: 'DLUHC', dataset: 'Investment Zones progress report', date: '2025' },
+];
+
 export default function RegionalUnemploymentPage() {
   const [data, setData] = useState<TopicData | null>(null);
   useEffect(() => { fetch('/data/regional-unemployment/regional_unemployment.json').then(r=>r.json()).then(setData).catch(console.error); }, []);
@@ -35,7 +40,7 @@ export default function RegionalUnemploymentPage() {
     <main className="max-w-5xl mx-auto px-6 py-12">
       <TopicHeader topic="Economy & Work" question="Where in Britain Is Unemployment Worst?" finding="Unemployment in parts of the North East reaches 7.8% \u2014 nearly double the national rate of 4.2%; youth unemployment (18-24) exceeds 20% in several northern cities." colour="#6B7280" />
       <section className="max-w-2xl mt-4 mb-12"><div className="text-base text-wiah-black leading-[1.7] space-y-4">
-        <p>Unemployment in parts of the North East reaches 7.8% — nearly double the national rate of 4.2%; youth unemployment (18-24) exceeds 20% in several northern cities. The data below draws on official sources to track change over the past decade.</p>
+        <p>Unemployment in parts of the North East reaches 7.8% — nearly double the national rate of 4.2%; youth unemployment (18-24) exceeds 20% in several northern cities.<Cite nums={1} /> The data below draws on official sources to track change over the past decade.</p>
         <p>These figures reflect a structural pattern. Understanding the scale is the first step toward accountability.</p>
       </div></section>
       <SectionNav sections={[{id:'sec-overview',label:'Overview'},{id:'sec-chart1',label:"North East unemploym"},{id:'sec-chart2',label:"Youth unemployment \u2014"}]} />

@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Sickness Absence in the UK Labour Market', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/sicknessabsenceinthelabourmarket', date: '2023', note: '185 million working days lost; 35% increase on 2015; mental health conditions 17% of all days lost (up from 11%)' },
+  { num: 2, name: 'ONS', dataset: 'Labour Force Survey — Economic Inactivity', url: 'https://www.ons.gov.uk/surveys/informationforhouseholdsandindividuals/householdandindividualsurveys/labourforcesurvey', date: '2023', note: '2.8 million long-term sick (up from 1.9M in 2015; +47%); 200-400K substantially limited by long COVID' },
+  { num: 3, name: 'Deloitte', dataset: 'Mental Health and Employers', url: 'https://www.deloitte.com/uk/en/pages/consulting/articles/mental-health-and-employers.html', date: '2023', note: '£32 billion annual economic cost; combines employer direct costs and output loss' },
+];
 
 // -- Types ------------------------------------------------------------------
 
