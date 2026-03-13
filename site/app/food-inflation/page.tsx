@@ -81,7 +81,7 @@ export default function FoodInflationPage() {
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>The UK food price shock of 2022–23 was the most severe in living memory. ONS figures show that food and non-alcoholic drink prices rose 19.2% in the twelve months to March 2023, the highest annual rate since the mid-1970s<Cite nums={1} />. Over the same period, overall CPI inflation peaked at 11.1% in October 2022<Cite nums={1} /> — meaning food inflation was running significantly faster than general price rises, causing disproportionate hardship for lower-income households who spend a larger share of income on food. The cumulative impact was substantial: average household food bills rose by approximately £700 in 2022–23 compared with pre-crisis levels<Cite nums={2} />, concentrated in staple categories including bread, dairy, meat, eggs, and cooking oils.</p>
-            <p>The causes were multiple and interacting. Russia's invasion of Ukraine in February 2022 disrupted global markets for wheat, sunflower oil, and fertiliser. The 2021–22 energy price surge increased production costs throughout the food supply chain. Supply chain disruptions related to COVID-19 persisted through 2022. In the UK specifically, labour shortages in agriculture and food processing — partly attributable to reduced EU worker availability post-Brexit — created additional bottlenecks. The proportion of adults experiencing food insecurity rose from 7% in 2021 to 15% by mid-2023, representing approximately 7.3 million adults. Although inflation has since fallen back toward 2%, prices themselves remain cumulatively 25% higher than pre-crisis levels.</p>
+            <p>The causes were multiple and interacting. Russia's invasion of Ukraine in February 2022 disrupted global markets for wheat, sunflower oil, and fertiliser. The 2021–22 energy price surge increased production costs throughout the food supply chain. Supply chain disruptions related to COVID-19 persisted through 2022. In the UK specifically, labour shortages in agriculture and food processing — partly attributable to reduced EU worker availability post-Brexit — created additional bottlenecks. The proportion of adults experiencing food insecurity rose from 7% in 2021 to 15% by mid-2023, representing approximately 7.3 million adults<Cite nums={3} />. Although inflation has since fallen back toward 2%, prices themselves remain cumulatively 25% higher than pre-crisis levels.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -160,6 +160,9 @@ export default function FoodInflationPage() {
             source="Source: ONS — Consumer Price Index 2025; Food Foundation — Food Insecurity Tracker 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">
