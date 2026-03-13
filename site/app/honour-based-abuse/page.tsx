@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -54,6 +56,13 @@ function yearToDate(y: number): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Honour Based Abuse Statistics', url: 'https://www.gov.uk/government/collections/honour-based-abuse-and-forced-marriage-data', date: 'Feb 2026' },
+  { num: 2, name: 'Crown Prosecution Service', dataset: 'Violence Against Women and Girls Report', url: 'https://www.cps.gov.uk/publication/violence-against-women-and-girls', date: 'Feb 2026' },
+  { num: 3, name: 'Forced Marriage Unit', dataset: 'Referral Statistics', url: 'https://www.gov.uk/government/collections/forced-marriage-unit-statistics', date: 'Feb 2026' },
+  { num: 4, name: 'Ministry of Justice', dataset: 'Family Court Statistics Quarterly — FMPO Data', url: 'https://www.gov.uk/government/collections/family-court-statistics-quarterly', date: 'Feb 2026' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
