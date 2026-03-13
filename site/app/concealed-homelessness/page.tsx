@@ -60,6 +60,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Cost-of-living crisis' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MHCLG', dataset: 'Rough Sleeping Snapshot in England', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2023' },
+  { num: 2, name: 'MHCLG', dataset: 'Statutory Homelessness Statistics', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2023' },
+  { num: 3, name: 'Crisis', dataset: 'Homelessness Monitor: England', url: 'https://crisis.org.uk/ending-homelessness/homelessness-knowledge-hub/homelessness-monitor/', date: '2023' },
+];
+
 export default function ConcealedHomelessnessPage() {
   return (
     <>

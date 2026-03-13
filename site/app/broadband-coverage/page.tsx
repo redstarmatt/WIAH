@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Superfast (30Mbps+) and full fibre coverage, 2015–2025
 const superfastData = [91.0, 92.2, 93.4, 94.5, 95.5, 96.2, 96.8, 97.1, 97.4, 97.6, 97.8];

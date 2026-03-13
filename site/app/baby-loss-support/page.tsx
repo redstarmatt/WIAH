@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Stillbirth rate per 1,000 births, England & Wales, 2013–2023 — MBRRACE-UK
 const stillbirthRateValues = [4.2, 4.1, 4.1, 3.9, 3.8, 3.7, 3.6, 3.5, 3.4, 3.4, 3.3];
@@ -59,6 +61,14 @@ const annotations1: Annotation[] = [
 const annotations2: Annotation[] = [
   { date: new Date(2018, 0, 1), label: '2018: National Bereavement Care Pathway published' },
   { date: new Date(2022, 0, 1), label: '2022: NHS England bereavement support fund' },
+];
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MBRRACE-UK', dataset: 'Perinatal Mortality Surveillance Report', url: 'https://www.npeu.ox.ac.uk/mbrrace-uk/reports', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: "Saving Babies' Lives Care Bundle Version 3", date: '2023' },
+  { num: 3, name: 'Sands', dataset: 'Bereavement Care Survey', url: 'https://www.sands.org.uk/professionals/sands-professionals/bereavement-care-audit', date: '2024' },
+  { num: 4, name: 'National Bereavement Care Pathway', dataset: 'National Standards', url: 'https://nbcpathway.org.uk/', date: '2021' },
+  { num: 5, name: 'Miscarriage Association', dataset: 'Pregnancy Loss Statistics', url: 'https://www.miscarriageassociation.org.uk/', date: '2024' },
 ];
 
 export default function BabyLossSupportPage() {
