@@ -1,228 +1,182 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import MetricDetailModal from '@/components/MetricDetailModal'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
+const overallAbsenceData = [4.6, 4.6, 4.7, 4.8, 4.9, 5.0, 4.9, 7.5, 6.7, 6.5];
+const persistentAbsenceData = [10.9, 11.1, 11.2, 11.8, 13.1, 13.0, 12.1, 22.3, 21.2, 20.8];
 
-interface SchoolAbsenceRow {
-  year: number
-  persistentAbsentPct?: number
-  severeAbsent?: number
-  authorisedIllnessPct?: number
-}
+const absenceSeries: Series[] = [
+  {
+    id: 'overall',
+    label: 'Overall absence rate (%)',
+    colour: '#F4A261',
+    data: overallAbsenceData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'persistent',
+    label: 'Persistent absence rate (%)',
+    colour: '#E63946',
+    data: persistentAbsenceData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
 
-interface SchoolAbsenceTrendsData {
-  topic: string
-  lastUpdated: string
-  timeSeries: SchoolAbsenceRow[]
-}
+const absenceAnnotations: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: COVID school closures' },
+  { date: new Date(2022, 0, 1), label: '2022: Post-COVID absence surge' },
+];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
+const fsmNonFsmData = {
+  fsm: [20.0, 21.3, 22.5, 38.5, 37.2, 36.5],
+  nonFsm: [9.5, 10.1, 10.6, 18.3, 17.4, 17.0],
+};
 
-// Sparkline years (academic years, 2020 skipped due to COVID closures)
-const SPARKLINE_YEARS = [2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024]
+const fsmSeries: Series[] = [
+  {
+    id: 'fsm',
+    label: 'FSM-eligible pupils (% persistently absent)',
+    colour: '#E63946',
+    data: fsmNonFsmData.fsm.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'non-fsm',
+    label: 'Non-FSM pupils (% persistently absent)',
+    colour: '#6B7280',
+    data: fsmNonFsmData.nonFsm.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+  },
+];
 
-// -- Page -------------------------------------------------------------------
+const fsmAnnotations: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: Pandemic widened gap' },
+];
 
 export default function SchoolAbsenceTrendsPage() {
-  const [data, setData] = useState<SchoolAbsenceTrendsData | null>(null)
-  const [openModal, setOpenModal] = useState<'persistent' | 'severe' | 'illness' | null>(null)
-
-  useEffect(() => {
-    fetch('/data/school-absence-trends/school_absence_trends.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const persistentAbsentSeries: Series[] = data
-    ? [
-        {
-          id: 'persistentAbsent',
-          label: 'Persistent absentees (%)',
-          colour: '#E63946',
-          data: data.timeSeries
-            .filter(d => d.persistentAbsentPct !== undefined)
-            .map(d => ({
-              date: yearToDate(d.year),
-              value: d.persistentAbsentPct!,
-            })),
-        },
-      ]
-    : []
-
-  const severeAbsentSeries: Series[] = [
-    {
-      id: 'severeAbsent',
-      label: 'Severely absent pupils',
-      colour: '#E63946',
-      data: [35000, 40000, 40000, 40000, 50000, 96000, 136000, 124000].map((v, i) => ({
-        date: yearToDate(SPARKLINE_YEARS[i]),
-        value: v,
-      })),
-    },
-  ]
-
-  const illnessSeries: Series[] = [
-    {
-      id: 'illnessRate',
-      label: 'Authorised illness rate (%)',
-      colour: '#E63946',
-      data: [4.9, 5.0, 5.1, 5.1, 5.9, 7.2, 7.7, 7.5].map((v, i) => ({
-        date: yearToDate(SPARKLINE_YEARS[i]),
-        value: v,
-      })),
-    },
-  ]
-
-  const covidAnnotation = [
-    { date: new Date(2020, 0, 1), label: 'COVID-19 school closures' },
-  ]
-
   return (
     <>
-      <TopicNav topic="School Absence Trends" />
-
+      <TopicNav topic="School Absence" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="School Absence Trends"
-          question="Why Are Children Not Going to School?"
-          finding="One in five children missed more than 10% of school in 2022/23 — a persistent absence rate that has more than doubled since before the pandemic."
-          colour="#E63946"
+          topic="School Absence"
+          question="Why Are Children Missing So Much School?"
+          finding="Persistent absenteeism (missing 10%+ of school) hit 22.3% in 2022/23 — double pre-pandemic — with disadvantaged pupils and those with SEND absent at twice the rate of peers."
+          colour="#F4A261"
+          preposition="on"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Before the pandemic, persistent absence — missing 10% or more of school sessions — affected around one in ten pupils. By 2022/23 it affected more than one in five, peaking at 22.5% before edging back to 19.8% in 2024 — still more than double pre-COVID levels. The number of children classified as severely absent (missing at least 50% of school) has tripled from around 40,000 before the pandemic to 124,000 in 2024. Post-COVID anxiety and school avoidance are significant factors, CAMHS waiting lists mean children wait months for treatment while attendance deteriorates, and the proportion of sessions authorised as illness rose from 4.9% to 7.7%, suggesting a genuine increase in health-related non-attendance. Government responses — attendance guidance, attendance hubs, increased fines for unauthorised absence — address the visible symptom but not the underlying causes: inadequate mental health provision, SEND delays, poverty, and housing instability.</p>
-            <p>Absence is not evenly distributed. Pupils with SEND without an EHC Plan have the highest absence rates of any group; FSM children are absent at roughly twice the rate of non-FSM peers; children in care have the highest severe absence rates. Each additional week of school missed reduces GCSE attainment by around 0.3 grade points, persistent absence is strongly associated with becoming NEET at 16–18, and severe absence correlates with entry into the youth justice system — making the attendance crisis as much a welfare crisis as an education one.</p>
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Key numbers' },
+          { id: 'sec-trend', label: 'Absence trend' },
+          { id: 'sec-deprivation', label: 'Deprivation gap' },
+        ]} />
+
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Persistently absent pupils (%)"
+              value="20.8%"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="2023/24 · Down from 22.3% peak but double pre-pandemic · 1.44M children · Still the highest in modern records"
+              sparklineData={[11.2, 11.8, 13.0, 22.3, 21.2, 20.8, 20.8]}
+              source="DfE — Pupil absence in schools in England, 2024"
+            />
+            <MetricCard
+              label="Disadvantaged persistent absence (%)"
+              value="36.5%"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="2023/24 · FSM-eligible pupils · 2× rate of non-disadvantaged · Poverty drives absence through illness, transport, clothing"
+              sparklineData={[20.0, 21.3, 22.5, 38.5, 37.2, 36.5, 36.5]}
+              source="DfE — Pupil absence in schools in England, 2024"
+            />
+            <MetricCard
+              label="Overall absence rate (%)"
+              value="6.5%"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="2023/24 · Down from 7.5% post-COVID peak · Still 33% higher than 2019 pre-pandemic · 50M sessions lost/year"
+              sparklineData={[4.7, 4.8, 5.0, 7.5, 6.7, 6.5, 6.5]}
+              source="DfE — Pupil absence in schools in England, 2024"
+            />
           </div>
         </section>
 
-        <SectionNav sections={[
-          { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Absence Trends' },
-          { id: 'sec-sources', label: 'Sources' },
-        ]} />
-
         <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Persistent absentees"
-              value="19.8%"
-              unit=""
-              direction="down"
-              polarity="up-is-bad"
-              changeText="improving from 22.5% peak · still double pre-COVID"
-              sparklineData={[10.3, 10.8, 10.9, 10.9, 13.6, 22.5, 21.2, 19.8]}
-              href="#sec-chart"source="DfE · Pupil Absence in Schools 2024"
-            />
-            <MetricCard
-              label="Severe absentees (50%+ missed)"
-              value="124,000"
-              unit=""
-              direction="down"
-              polarity="up-is-bad"
-              changeText="falling but 3x pre-pandemic level"
-              sparklineData={[35000, 40000, 40000, 40000, 50000, 96000, 136000, 124000]}
-              href="#sec-chart"source="DfE · Attendance Data 2024"
-            />
-            <MetricCard
-              label="Authorised illness rate"
-              value="7.7%"
-              unit=""
-              direction="up"
-              polarity="up-is-bad"
-              changeText="illness as reason doubled · long-COVID, anxiety, post-viral"
-              sparklineData={[4.9, 5.0, 5.1, 5.1, 5.9, 7.2, 7.7, 7.5]}
-              href="#sec-chart"source="DfE · Pupil Absence Statistics 2023"
-            />
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-trend" className="mb-12">
             <LineChart
-              title="Persistent school absence rate, 2016–2024"
-              subtitle="Percentage of pupils missing 10% or more of school sessions. England, all state-funded schools."
-              series={persistentAbsentSeries}
-              yLabel="Persistent absence (%)"
+              title="Overall and persistent absence rate in England, 2015–2024 (%)"
+              subtitle="Overall absence rate (any sessions missed) and persistent absence rate (missing 10%+ of sessions) for state-funded schools, England. The pandemic created a step-change in absence that has not reversed."
+              series={absenceSeries}
+              annotations={absenceAnnotations}
+              yLabel="Absence rate (%)"
               source={{
-                name: 'Department for Education',
-                dataset: 'Pupil Absence in Schools in England',
+                name: 'DfE',
+                dataset: 'Pupil absence in schools in England',
+                url: 'https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england',
                 frequency: 'annual',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
 
-        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+        <ScrollReveal>
+          <section id="sec-deprivation" className="mb-12">
+            <LineChart
+              title="Persistent absence by free school meal eligibility, 2018–2024 (%)"
+              subtitle="Persistent absence rate for pupils eligible for free school meals (FSM) vs non-FSM pupils. The gap has doubled since the pandemic, reflecting the disproportionate impact on disadvantaged families."
+              series={fsmSeries}
+              annotations={fsmAnnotations}
+              yLabel="Persistently absent (%)"
+              source={{
+                name: 'DfE',
+                dataset: 'Pupil absence in schools — by characteristic',
+                url: 'https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england',
+                frequency: 'annual',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on school absence</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Persistent absenteeism — defined as missing 10% or more of school sessions — hit 22.3% of pupils in 2022/23, double the pre-pandemic rate of around 11%. In 2023/24 this fell slightly to 20.8%, but remains the highest rate in modern records and affects an estimated 1.44 million children. Overall absence — any sessions missed — stands at 6.5%, a third higher than in 2018/19. Collectively, pupils are missing around 50 million sessions per year.</p>
+              <p>The absence crisis is not evenly distributed. Pupils eligible for free school meals — a proxy for poverty — have persistent absence rates of 36.5%, more than double the 17% rate for non-disadvantaged pupils. Pupils with special educational needs and disabilities (SEND) are absent at similar elevated rates. The causes of disadvantaged pupils' higher absence are multiple: illness from poor housing, inability to afford transport or school uniform, caring responsibilities, and in some cases schools making it clear — directly or indirectly — that certain pupils are unwanted.</p>
+              <p>The pandemic's role was catalytic rather than causative: absence was already rising before COVID-19, and the pandemic appears to have disrupted the habit of attendance in ways that have proved persistent. Research by Education Endowment Foundation suggests each additional week of school missed is associated with lower attainment — and that the attainment gap between disadvantaged and non-disadvantaged pupils has widened significantly post-pandemic.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout
+            title="What the government is doing"
+            value="87 weeks"
+            unit="threshold at which fines for unauthorised absence were doubled in 2024 — from 10 to 160 sessions"
+            description="The government introduced new attendance guidance in 2022 requiring schools to have an attendance policy and work with families before issuing penalty notices. In 2024, fines for unauthorised term-time holidays were increased from £60 to £160 per child per parent. But most chronic absence is not unauthorised holidays — it is illness, mental health difficulties, and circumstances linked to poverty. Early intervention partnerships (local authorities, schools, NHS, social care working together) have the best evidence for reducing entrenched absence, particularly for SEND pupils and those with mental health needs."
+            source="Source: DfE — Pupil absence in schools in England 2023/24; EEF — COVID-19 and pupil attainment."
+          />
+        </ScrollReveal>
+
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Department for Education — Pupil Absence in Schools in England. Published termly and annually. explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england</p>
-            <p>DfE — Attendance in Schools. Weekly experimental statistics published in-year. explore-education-statistics.service.gov.uk</p>
-            <p>Persistent absence is defined as missing 10% or more of possible sessions. Each school day comprises two sessions (morning and afternoon). Severe absence is defined as missing 50% or more. Data covers all state-funded schools in England. The 2020/21 academic year is excluded due to COVID-19 school closures making comparison invalid.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DfE — Pupil absence in schools in England</a> — primary absence data. Updated annually.</p>
+            <p>Persistent absence = missing 10% or more of possible sessions. Data covers state-funded primary, secondary and special schools in England. Academic year data mapped to start year for charting.</p>
+            <p>Free school meals (FSM) eligibility used as indicator of disadvantage. SEND data from same annual statistical release.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
-
-      {openModal === 'persistent' && (
-        <MetricDetailModal
-          title="Persistent school absence rate, 2016–2024"
-          subtitle="Percentage of pupils missing 10% or more of sessions. England, all state-funded schools."
-          series={persistentAbsentSeries}
-          annotations={covidAnnotation}
-          yLabel="Persistent absence (%)"
-          source={{
-            name: 'Department for Education',
-            dataset: 'Pupil Absence in Schools in England',
-            frequency: 'annual',
-          }}
-          onClose={() => setOpenModal(null)}
-        />
-      )}
-
-      {openModal === 'severe' && (
-        <MetricDetailModal
-          title="Severely absent pupils, 2016–2024"
-          subtitle="Children missing 50% or more of school sessions. England, all state-funded schools."
-          series={severeAbsentSeries}
-          annotations={covidAnnotation}
-          yLabel="Pupils (thousands)"
-          source={{
-            name: 'Department for Education',
-            dataset: 'Attendance in Schools',
-            frequency: 'annual',
-          }}
-          onClose={() => setOpenModal(null)}
-        />
-      )}
-
-      {openModal === 'illness' && (
-        <MetricDetailModal
-          title="Authorised illness absence rate, 2016–2024"
-          subtitle="Sessions authorised as illness as a percentage of all possible sessions. England."
-          series={illnessSeries}
-          annotations={covidAnnotation}
-          yLabel="Illness absence (%)"
-          source={{
-            name: 'Department for Education',
-            dataset: 'Pupil Absence in Schools in England',
-            frequency: 'annual',
-          }}
-          onClose={() => setOpenModal(null)}
-        />
-      )}
     </>
-  )
+  );
 }

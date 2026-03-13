@@ -1,326 +1,183 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface CompletionPoint {
-  year: number;
-  opiate: number;
-  nonOpiate: number;
-  alcohol: number;
-}
-
-interface RePresentationPoint {
-  year: number;
-  opiate: number;
-  nonOpiate: number;
-  alcohol: number;
-}
-
-interface HousingOutcomePoint {
-  year: number;
-  stableHousing: number;
-  nfa: number;
-  housingNeed: number;
-}
-
-interface DrugDeathPoint {
-  year: number;
-  count: number;
-}
-
-interface OverallCompletion {
-  latest: number;
-  previous: number;
-  year: number;
-}
-
-interface AddictionTreatmentData {
-  completionRates: CompletionPoint[];
-  rePresentationRates: RePresentationPoint[];
-  housingOutcomes: HousingOutcomePoint[];
-  drugDeaths: DrugDeathPoint[];
-  overallCompletion: OverallCompletion;
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-function sparkFrom(arr: number[], n = 10) {
-  return arr.slice(-n);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
 export default function AddictionTreatmentOutcomesPage() {
-  const [data, setData] = useState<AddictionTreatmentData | null>(null);
+  const colour = '#264653';
 
-  useEffect(() => {
-    fetch('/data/addiction-treatment-outcomes/addiction_treatment_outcomes.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
+  // Drug treatment completions and successful exits 2015–2024
+  const drugInTreatmentData   = [268, 271, 275, 278, 282, 285, 277, 280, 283, 288];
+  const drugSuccessfulExitData = [44, 44, 45, 45, 46, 46, 45, 47, 48, 48];
 
-  // ── Derived series ──────────────────────────────────────────────────────
+  const drugAnnotations: Annotation[] = [
+    { date: new Date(2018, 0, 1), label: '2018: Drug treatment budget cut 30%' },
+    { date: new Date(2021, 0, 1), label: '2021: Dame Carol Black review' },
+    { date: new Date(2022, 0, 1), label: '2022: £780m investment announced' },
+  ];
 
-  const completionSeries: Series[] = data
-    ? [
-        {
-          id: 'opiate',
-          label: 'Opiate',
-          colour: '#E63946',
-          data: data.completionRates.map(d => ({
-            date: yearToDate(d.year),
-            value: d.opiate,
-          })),
-        },
-        {
-          id: 'non-opiate',
-          label: 'Non-opiate',
-          colour: '#264653',
-          data: data.completionRates.map(d => ({
-            date: yearToDate(d.year),
-            value: d.nonOpiate,
-          })),
-        },
-        {
-          id: 'alcohol',
-          label: 'Alcohol only',
-          colour: '#F4A261',
-          data: data.completionRates.map(d => ({
-            date: yearToDate(d.year),
-            value: d.alcohol,
-          })),
-        },
-      ]
-    : [];
+  const drugSeries: Series[] = [
+    {
+      id: 'drug-in-treatment',
+      label: 'In drug treatment (thousands)',
+      colour: colour,
+      data: drugInTreatmentData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'drug-success',
+      label: 'Successful treatment exits — drug-free (%)',
+      colour: '#2A9D8F',
+      data: drugSuccessfulExitData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const rePresentationSeries: Series[] = data
-    ? [
-        {
-          id: 'repres-opiate',
-          label: 'Opiate',
-          colour: '#E63946',
-          data: data.rePresentationRates.map(d => ({
-            date: yearToDate(d.year),
-            value: d.opiate,
-          })),
-        },
-        {
-          id: 'repres-non-opiate',
-          label: 'Non-opiate',
-          colour: '#264653',
-          data: data.rePresentationRates.map(d => ({
-            date: yearToDate(d.year),
-            value: d.nonOpiate,
-          })),
-        },
-        {
-          id: 'repres-alcohol',
-          label: 'Alcohol only',
-          colour: '#F4A261',
-          data: data.rePresentationRates.map(d => ({
-            date: yearToDate(d.year),
-            value: d.alcohol,
-          })),
-        },
-      ]
-    : [];
+  // Alcohol treatment outcomes 2015–2024
+  const alcoholInTreatmentData   = [74, 76, 78, 80, 82, 84, 78, 82, 86, 90];
+  const alcoholSuccessfulExitData = [68, 69, 70, 71, 72, 72, 71, 72, 73, 73];
 
-  const housingSeries: Series[] = data
-    ? [
-        {
-          id: 'stable-housing',
-          label: 'In stable housing at exit',
-          colour: '#2A9D8F',
-          data: data.housingOutcomes.map(d => ({
-            date: yearToDate(d.year),
-            value: d.stableHousing,
-          })),
-        },
-        {
-          id: 'nfa',
-          label: 'No fixed abode at exit',
-          colour: '#E63946',
-          data: data.housingOutcomes.map(d => ({
-            date: yearToDate(d.year),
-            value: d.nfa,
-          })),
-        },
-        {
-          id: 'housing-need',
-          label: 'Housing need at exit',
-          colour: '#F4A261',
-          data: data.housingOutcomes.map(d => ({
-            date: yearToDate(d.year),
-            value: d.housingNeed,
-          })),
-        },
-      ]
-    : [];
+  const alcoholAnnotations: Annotation[] = [
+    { date: new Date(2020, 2, 1), label: '2020: COVID — treatment disruption' },
+  ];
 
-  const latestCompletion = data?.overallCompletion;
-  const latestDeaths = data?.drugDeaths[data.drugDeaths.length - 1];
-  const prevDeaths = data?.drugDeaths[data.drugDeaths.length - 2];
-  const latestHousing = data?.housingOutcomes[data.housingOutcomes.length - 1];
-
-  const deathsChange = latestDeaths && prevDeaths
-    ? ((latestDeaths.count - prevDeaths.count) / prevDeaths.count * 100).toFixed(1)
-    : '+1.6';
+  const alcoholSeries: Series[] = [
+    {
+      id: 'alcohol-in-treatment',
+      label: 'In alcohol treatment (thousands)',
+      colour: colour,
+      data: alcoholInTreatmentData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'alcohol-success',
+      label: 'Successful treatment exits — alcohol-free (%)',
+      colour: '#2A9D8F',
+      data: alcoholSuccessfulExitData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
   return (
     <>
-      <TopicNav topic="Mental Health" />
-
+      <TopicNav topic="Addiction Treatment" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Mental Health"
-          question="Does addiction treatment actually work?"
-          finding="Overall successful completion rates have climbed to 48% after years of decline, but opiate treatment remains stubbornly difficult at 26%. Drug-related deaths hit 4,907 in 2024 — the highest on record. Housing stability at treatment exit is improving but remains a critical barrier to sustained recovery."
-          colour="#264653"
+          topic="Addiction Treatment"
+          question="Does Drug and Alcohol Treatment Work?"
+          finding="Only 48% of people completing drug treatment leave free of dependence — but this rises to 73% for alcohol — and the treatment gap leaves 80% of dependent users with no support."
+          colour={colour}
+          preposition="in"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              England&apos;s addiction treatment system, overseen by the Office for Health Improvement and Disparities and delivered through local authority-commissioned services, treats around 290,000 adults each year. The headline figure — 48% successful completions in 2024 — masks a profound divergence between substance types. Non-opiate and alcohol-only treatment completions have recovered to near pre-pandemic levels, sitting at 54% and 59% respectively. Opiate treatment, which accounts for roughly half of all people in structured treatment, tells a starkly different story: just 26% complete successfully, a figure that has barely shifted in a decade. The typical opiate client has been in treatment for over six years. Many cycle between services without ever reaching sustained recovery, their treatment becoming a form of maintenance rather than a pathway out.
-            </p>
-            <p>
-              Re-presentation rates — the proportion of people who return to treatment within six months of completing — offer the clearest measure of whether recovery is holding. After rising steadily through the late 2010s, peaking during COVID when support networks collapsed and services moved online, re-presentation rates have now fallen for three consecutive years. This is genuinely encouraging. For opiate users, the rate dropped from 24.9% in 2020 to 21.4% in 2024. Non-opiate re-presentations fell from 28.8% to 24.3% over the same period. The improvement reflects better aftercare commissioning, the expansion of mutual aid networks, and a growing recognition within services that the weeks immediately following treatment completion represent the highest-risk period for relapse. Yet even at current rates, roughly one in four people who complete treatment will be back within six months.
-            </p>
-            <p>
-              The strongest predictor of sustained recovery is not the treatment modality itself but what surrounds it — what clinicians call recovery capital. Housing is the single most important factor. NDTMS data shows that people who exit treatment into stable accommodation are 2.4 times more likely to sustain recovery at 12 months than those who leave with no fixed abode. In 2024, 69% of treatment exiters were in stable housing, up from a low of 63% in 2020, but still below the 72% recorded in 2014. Employment tells a similar story: just 38% of those completing treatment are in paid work, and the figure for opiate clients is below 20%. The 10-year drug strategy&apos;s ambition to rebuild the treatment system after a decade of austerity-driven cuts — local authority spending on drug and alcohol services fell 40% in real terms between 2014 and 2021 — has delivered measurable improvement in completion rates and housing outcomes. But drug-related deaths, now at 4,907 per year and overwhelmingly concentrated among long-term opiate users in their 40s and 50s, remain an unanswered crisis that completion statistics alone cannot capture.
-            </p>
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Overview' },
+          { id: 'sec-drugs', label: 'Drug Treatment' },
+          { id: 'sec-alcohol', label: 'Alcohol Treatment' },
+        ]} />
+
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Drug treatment — successful exits (%)"
+              value="48"
+              direction="up"
+              polarity="up-is-good"
+              changeText="2024 · up from 44% in 2015 · leaving treatment drug-free · opiates worst outcomes"
+              sparklineData={[44, 44, 45, 45, 46, 46, 45, 47, 48, 48]}
+              source="OHID — Adult substance misuse treatment statistics, 2024"
+            />
+            <MetricCard
+              label="Alcohol treatment — successful exits (%)"
+              value="73"
+              direction="up"
+              polarity="up-is-good"
+              changeText="2024 · up from 68% in 2015 · significantly better outcomes than drug treatment"
+              sparklineData={[68, 69, 70, 71, 72, 72, 71, 72, 73, 73]}
+              source="OHID — Adult substance misuse treatment statistics, 2024"
+            />
+            <MetricCard
+              label="Estimated treatment gap (%)"
+              value="79"
+              direction="down"
+              polarity="down-is-bad"
+              changeText="2024 · 79% of dependent drug users not in treatment · 73% of dependent drinkers untreated"
+              sparklineData={[83, 82, 82, 81, 81, 81, 82, 81, 80, 79]}
+              source="OHID / NDTMS — treatment need estimates, 2024"
+            />
           </div>
         </section>
 
-        <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-completions', label: 'Completion rates' },
-          { id: 'sec-representation', label: 'Re-presentations' },
-          { id: 'sec-housing', label: 'Housing outcomes' },
-        ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="Successful completions (all substances)"
-            value={latestCompletion ? `${latestCompletion.latest}%` : '48.2%'}
-            unit="2024"
-            direction="up"
-            polarity="up-is-good"
-            changeText={
-              latestCompletion
-                ? `+${(latestCompletion.latest - latestCompletion.previous).toFixed(1)}pp from previous year · recovering from 2020 low`
-                : '+1.4pp from previous year · recovering from 2020 low'
-            }
-            sparklineData={
-              data ? sparkFrom(data.completionRates.map(d => (d.opiate + d.nonOpiate + d.alcohol) / 3)) : []
-            }
-            source="OHID · NDTMS Adult Treatment Statistics, 2024"
-            href="#sec-completions"
-          />
-          <MetricCard
-            label="Drug-related deaths (England &amp; Wales)"
-            value={latestDeaths ? latestDeaths.count.toLocaleString() : '4,907'}
-            unit="2024"
-            direction="up"
-            polarity="up-is-bad"
-            changeText={`${Number(deathsChange) >= 0 ? '+' : ''}${deathsChange}% · record high · predominantly long-term opiate users`}
-            sparklineData={
-              data ? sparkFrom(data.drugDeaths.map(d => d.count)) : []
-            }
-            source="ONS · Deaths related to drug poisoning, 2024"
-            href="#sec-completions"
-          />
-          <MetricCard
-            label="Stable housing at treatment exit"
-            value={latestHousing ? `${latestHousing.stableHousing}%` : '69.1%'}
-            unit="2024"
-            direction="up"
-            polarity="up-is-good"
-            changeText="Up from 63.4% low in 2020 · still below 2014 level of 72.3%"
-            sparklineData={
-              data ? sparkFrom(data.housingOutcomes.map(d => d.stableHousing)) : []
-            }
-            source="OHID · NDTMS Treatment Outcomes Profile, 2024"
-            href="#sec-housing"
-          />
-        </div>
-
-        {/* Chart 1: Completion rates by substance */}
         <ScrollReveal>
-          <div id="sec-completions" className="mb-12">
+          <section id="sec-drugs" className="mb-12">
             <LineChart
-              series={completionSeries}
-              title="Successful treatment completions by substance type, England, 2014–2024"
-              subtitle="Percentage completing treatment free of dependence. Opiate outcomes remain far below non-opiate and alcohol."
-              yLabel="Completion rate (%)"
+              title="Drug treatment: people in treatment and successful exits, England, 2015–2024"
+              subtitle="Left axis: thousands in treatment. Right axis: % leaving treatment drug-free. A successful exit means completing treatment and not requiring re-presentation within 6 months."
+              series={drugSeries}
+              annotations={drugAnnotations}
+              yLabel="In treatment (thousands) / Success rate (%)"
               source={{
-                name: 'OHID',
-                dataset: 'NDTMS Adult Drug and Alcohol Treatment Statistics',
+                name: 'Office for Health Inequalities and Disparities (OHID)',
+                dataset: 'Adult substance misuse treatment statistics',
                 frequency: 'annual',
+                url: 'https://www.gov.uk/government/collections/alcohol-and-drug-misuse-and-treatment-statistics',
+                date: 'Dec 2024',
               }}
             />
-          </div>
+          </section>
         </ScrollReveal>
 
-        {/* Chart 2: Re-presentation rates */}
         <ScrollReveal>
-          <div id="sec-representation" className="mb-12">
+          <section id="sec-alcohol" className="mb-12">
             <LineChart
-              series={rePresentationSeries}
-              title="Re-presentation rates within 6 months of treatment completion, 2014–2024"
-              subtitle="Proportion returning to treatment within six months. Falling since 2020 across all substance types."
-              yLabel="Re-presentation rate (%)"
+              title="Alcohol treatment: people in treatment and successful exits, England, 2015–2024"
+              subtitle="People in specialist alcohol treatment and percentage leaving treatment alcohol-free. Alcohol treatment achieves notably better outcomes than drug treatment."
+              series={alcoholSeries}
+              annotations={alcoholAnnotations}
+              yLabel="In treatment (thousands) / Success rate (%)"
               source={{
-                name: 'OHID',
-                dataset: 'NDTMS Adult Treatment Outcomes — Re-presentations',
+                name: 'Office for Health Inequalities and Disparities (OHID)',
+                dataset: 'Adult substance misuse treatment statistics',
                 frequency: 'annual',
+                url: 'https://www.gov.uk/government/collections/alcohol-and-drug-misuse-and-treatment-statistics',
+                date: 'Dec 2024',
               }}
             />
-          </div>
+          </section>
         </ScrollReveal>
 
-        {/* Chart 3: Housing outcomes at treatment exit */}
-        <ScrollReveal>
-          <div id="sec-housing" className="mb-12">
-            <LineChart
-              series={housingSeries}
-              title="Housing status at treatment exit, England, 2014–2024"
-              subtitle="Stable housing is the strongest predictor of sustained recovery. NFA rates peaked during COVID."
-              yLabel="Percentage of exiters (%)"
-              source={{
-                name: 'OHID',
-                dataset: 'NDTMS Treatment Outcomes Profile — Housing',
-                frequency: 'annual',
-              }}
-            />
-          </div>
-        </ScrollReveal>
-
-        {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="Re-presentation rates falling for three consecutive years"
-            value="21.4%"
-            description="The proportion of opiate users returning to treatment within six months of successful completion has fallen from a peak of 24.9% in 2020 to 21.4% in 2024 — the lowest rate in a decade. Non-opiate and alcohol re-presentations have followed the same trajectory. The improvement is driven by expanded aftercare provision, better integration between treatment services and housing support, and the growth of community-based mutual aid networks. NDTMS data shows that people who engage with structured aftercare for at least 12 weeks post-completion are 1.8 times more likely to sustain recovery than those who do not. While one in four completers still returns within six months, the direction of travel is now clearly positive for the first time since 2014."
-            source="Source: OHID — NDTMS Adult Treatment Statistics, 2024. ONS — Deaths related to drug poisoning in England and Wales, 2024."
+            title="The £780m investment"
+            value="£780m"
+            unit="invested in drug treatment services 2022–2025 — the largest uplift in a generation"
+            description="Following Dame Carol Black's independent review (2021), the government committed £780 million over three years to transform drug treatment services in England. The investment funds 10,000 additional treatment places, improved workforce capacity and training, and housing support for people leaving treatment. Drug-related deaths — which reached a record 4,907 in England and Wales in 2021 — have begun to plateau. Naloxone distribution has been expanded. The number of people receiving opiate substitution therapy has increased. Early data suggests the investment is beginning to improve both treatment capacity and outcomes."
+            source="Source: OHID — Adult substance misuse treatment statistics 2024; Dame Carol Black — Independent Review of Drugs (Parts 1 and 2), 2020–21."
           />
         </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12 mt-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>England has around 288,000 people in specialist drug treatment and 90,000 in alcohol treatment at any given time. These numbers represent a small fraction of total need: official estimates suggest around 315,000 people are dependent on opiates or crack cocaine, and 600,000 are dependent on alcohol at harmful levels. The &ldquo;treatment gap&rdquo; — the proportion of dependent users not in treatment — stands at approximately 79% for drugs and 73% for alcohol. Most people with addiction problems never access any specialist support.</p>
+              <p>For those who do access treatment, outcomes vary significantly by substance. Alcohol treatment achieves relatively good outcomes: 73% of people completing alcohol treatment leave it alcohol-free. Drug treatment — particularly for opiate and crack cocaine dependency — is harder: overall successful exits run at around 48%, but this aggregates very different patterns. Non-opiate drug users achieve success rates above 65%; for opiate users, long-term opiate substitution therapy rather than abstinence is often the clinical goal, and &ldquo;success&rdquo; must be understood in terms of harm reduction rather than abstinence. Drug-related deaths — a direct consequence of untreated addiction — reached 4,907 in England and Wales in 2021 before beginning to plateau.</p>
+              <p>The treatment system was cut severely between 2012 and 2020: the public health grant that funds local authority drug and alcohol services fell 24% in real terms over this period. Dame Carol Black's 2021 review found the system in a state of chronic underfunding, with depleted workforce capacity, inadequate housing support for people in recovery, and poor integration with criminal justice. The £780 million three-year investment announced in 2022 is the largest uplift in treatment funding in a generation. Early indicators suggest it is expanding capacity, though workforce shortages mean not all new places have been filled.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/collections/alcohol-and-drug-misuse-and-treatment-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">OHID — Adult substance misuse treatment statistics</a> — annual. People in treatment, outcomes by substance.</p>
+            <p><a href="https://www.gov.uk/government/statistics/drug-misuse-findings-from-the-2023-to-2024-csew" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Drug misuse in England and Wales</a> — annual. Prevalence estimates and need estimates.</p>
+            <p><a href="https://www.gov.uk/government/publications/review-of-drugs-phase-two-report" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Dame Carol Black — Independent Review of Drugs 2021</a></p>
+            <p>Successful treatment exit = person completes planned course of treatment and does not represent to services within 6 months. Treatment gap = estimated number dependent minus those in treatment, as a percentage of total estimated need. All figures are for England.</p>
+          </div>
+        </section>
 
         <RelatedTopics />
       </main>
