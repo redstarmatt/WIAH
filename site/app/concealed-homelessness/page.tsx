@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Rough sleepers, 2015–2023 (MHCLG snapshot)
 const roughSleeperValues = [3569, 4134, 4751, 4677, 4266, 2688, 2597, 3069, 3898];

@@ -151,6 +151,9 @@ export default function DementiaDiagnosisRatePage() {
             source="Source: NHS England — Recorded Dementia Diagnoses by region 2025. Royal College of Psychiatrists — MSNAP Annual Report."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

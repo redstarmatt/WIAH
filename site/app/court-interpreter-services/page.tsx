@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Interpreter booking failures, 2015–2023 (MOJ)
 const bookingFailureValues = [14200, 13100, 12400, 11800, 11200, 8400, 9100, 9700, 10200];
@@ -48,6 +50,12 @@ const annotations1: Annotation[] = [
 ];
 
 const annotations2: Annotation[] = [];
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'HMCTS Interpreter Services Data', url: 'https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service', date: '2023' },
+  { num: 2, name: 'National Audit Office', dataset: 'Language Services in the Justice System', url: 'https://www.nao.org.uk', date: '2023' },
+  { num: 3, name: 'HMCTS', dataset: 'Court Statistics Quarterly', url: 'https://www.gov.uk/government/collections/court-statistics-quarterly', date: '2023' },
+];
 
 export default function CourtInterpreterServicesPage() {
   return (

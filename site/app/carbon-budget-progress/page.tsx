@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // UK greenhouse gas emissions (MtCO2e), 2015–2025
 const actualEmissionsData = [490, 475, 460, 451, 435, 380, 420, 415, 408, 400, 392];

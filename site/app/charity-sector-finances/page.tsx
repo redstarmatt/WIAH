@@ -78,8 +78,8 @@ export default function CharitySectorFinancesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK voluntary sector faces a simultaneous demand crisis and resource crisis. Local authority budgets have contracted by around 30% in real terms since 2010, shifting responsibility for social care, mental health support, debt advice, and food assistance onto charities operating with smaller grants and less predictable funding. 6,200 charities ceased operations in 2023 — a 19% increase since 2015 — as energy, staff, and premises costs rose sharply while grant income remained flat or fell. Government income now accounts for 37% of the sector's total revenue, but this dependency has transformed many charities into contracted public service delivery vehicles, eroding the independence to advocate or innovate beyond what commissioners will fund.</p>
-            <p>The National Council for Voluntary Organisations estimates that 70% of charities report unmet demand — a systematic shortfall most acute in mental health, homelessness, food poverty, and domestic abuse services, precisely the areas where statutory provision has been most comprehensively reduced. Smaller, specialist charities are disproportionately affected: donor concentration has shifted public giving toward large, well-known organisations, leaving community-level charities serving specific populations most vulnerable to closure. The total voluntary sector income has grown to approximately £64 billion per year, but public donations represent only £11.5 billion of this — the rest is grants, contracts, and trading income, all of which are harder to sustain through periods of economic pressure and rising costs.</p>
+            <p>The UK voluntary sector faces a simultaneous demand crisis and resource crisis. Local authority budgets have contracted by around 30% in real terms since 2010, shifting responsibility for social care, mental health support, debt advice, and food assistance onto charities operating with smaller grants and less predictable funding. 6,200 charities ceased operations in 2023 — a 19% increase since 2015 — as energy, staff, and premises costs rose sharply while grant income remained flat or fell.<Cite nums={1} /> Government income now accounts for 37% of the sector's total revenue, but this dependency has transformed many charities into contracted public service delivery vehicles, eroding the independence to advocate or innovate beyond what commissioners will fund.<Cite nums={2} /></p>
+            <p>The National Council for Voluntary Organisations estimates that 70% of charities report unmet demand — a systematic shortfall most acute in mental health, homelessness, food poverty, and domestic abuse services, precisely the areas where statutory provision has been most comprehensively reduced.<Cite nums={2} /> Smaller, specialist charities are disproportionately affected: donor concentration has shifted public giving toward large, well-known organisations, leaving community-level charities serving specific populations most vulnerable to closure. The total voluntary sector income has grown to approximately £64 billion per year, but public donations represent only £11.5 billion of this — the rest is grants, contracts, and trading income, all of which are harder to sustain through periods of economic pressure and rising costs.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -158,6 +158,10 @@ export default function CharitySectorFinancesPage() {
             source="Source: HMRC — Gift Aid Statistics 2024. Dormant Assets Commission — Annual Report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

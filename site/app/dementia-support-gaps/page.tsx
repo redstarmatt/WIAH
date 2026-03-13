@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Dementia diagnosis rate (%), 2015–2023
 const diagnosisRateValues = [61.4, 66.1, 67.6, 67.8, 67.4, 62.3, 62.7, 63.3, 64.1];

@@ -53,6 +53,12 @@ const conditionAnnotations: Annotation[] = [
   { date: new Date(2014, 0, 1), label: '2014: 44t HGV limit raised' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Transport', dataset: 'Road Condition and Maintenance Statistics', url: 'https://www.gov.uk/government/statistical-data-sets/road-condition-statistics-data-tables-rdc', date: '2025' },
+  { num: 2, name: 'RAC Foundation', dataset: 'Bridge Condition and Weight Restriction Analysis', url: 'https://www.racfoundation.org/research/economy/road-bridge-maintenance', date: '2025' },
+  { num: 3, name: 'National Audit Office', dataset: 'Local Road Condition and Maintenance', url: 'https://www.nao.org.uk/reports/local-road-condition-and-maintenance/', date: '2024' },
+];
+
 export default function BridgeMaintenanceBacklogPage() {
   return (
     <>
@@ -67,8 +73,8 @@ export default function BridgeMaintenanceBacklogPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's local highway authorities are responsible for roughly 72,000 road bridges, and the accumulated cost of bringing them all back to good repair has now passed £2.1 billion. That figure has more than doubled since 2010, when austerity-era cuts to local government capital funding began a sustained squeeze on maintenance budgets. The consequence is not dramatic collapse — though the 2019 partial failure of a bridge in Rochdale and the prolonged closure of Hammersmith Bridge in London offered vivid previews — but a slow, compounding degradation that makes the network progressively less reliable and more expensive to fix.</p>
-            <p>The most visible symptom is the rising number of weight-restricted bridges: over 2,140 in England now carry limits below the standard 40-tonne threshold, forcing HGVs onto longer diversions that add cost to haulage and concentrate wear on alternative routes. The RAC Foundation estimates each restricted bridge costs the surrounding economy £100,000–£500,000 annually in additional transport costs. Nearly 29% of local authority bridges are now rated substandard on principal inspection — not necessarily unsafe for current loads, but deteriorating faster than they are being repaired, and increasingly likely to require emergency intervention. A 2024 National Audit Office report found that councils would need to spend three to four times their current maintenance budgets simply to prevent the backlog from growing further.</p>
+            <p>England's local highway authorities are responsible for roughly 72,000 road bridges, and the accumulated cost of bringing them all back to good repair has now passed £2.1 billion.<Cite nums={1} /> That figure has more than doubled since 2010, when austerity-era cuts to local government capital funding began a sustained squeeze on maintenance budgets.<Cite nums={1} /> The consequence is not dramatic collapse — though the 2019 partial failure of a bridge in Rochdale and the prolonged closure of Hammersmith Bridge in London offered vivid previews — but a slow, compounding degradation that makes the network progressively less reliable and more expensive to fix.</p>
+            <p>The most visible symptom is the rising number of weight-restricted bridges: over 2,140 in England now carry limits below the standard 40-tonne threshold, forcing HGVs onto longer diversions that add cost to haulage and concentrate wear on alternative routes.<Cite nums={2} /> The RAC Foundation estimates each restricted bridge costs the surrounding economy £100,000–£500,000 annually in additional transport costs.<Cite nums={2} /> Nearly 29% of local authority bridges are now rated substandard on principal inspection — not necessarily unsafe for current loads, but deteriorating faster than they are being repaired, and increasingly likely to require emergency intervention.<Cite nums={1} /> A 2024 National Audit Office report found that councils would need to spend three to four times their current maintenance budgets simply to prevent the backlog from growing further.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -147,6 +153,10 @@ export default function BridgeMaintenanceBacklogPage() {
             source="Source: ADEPT / County Surveyors Society — ALARM Survey 2025. National Audit Office — Local Road Condition and Maintenance 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

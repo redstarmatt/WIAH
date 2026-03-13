@@ -151,6 +151,9 @@ export default function AirPollutionHealthBurdenPage() {
             source="Source: DEFRA — Air quality statistics 2024. COMEAP — Long-term exposure mortality estimates. PHE — Costs to NHS and social care."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">
