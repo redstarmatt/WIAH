@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Alzheimer\'s Research UK', dataset: 'Dementia Statistics — prevalence and projections', url: 'https://www.alzheimersresearchuk.org/dementia-statistics/', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Dementia diagnosis rate — monthly data', url: 'https://www.england.nhs.uk/mental-health/dementia/', date: '2024' },
+  { num: 3, name: 'Alzheimer\'s Society', dataset: 'Dementia UK Report — economic cost and unpaid carer analysis', url: 'https://www.alzheimers.org.uk/about-us/policy-and-influencing/dementia-uk-report', date: '2024' },
+];
 
 export default function DementiaPage() {
   const prevalence     = [670, 700, 720, 740, 760, 790, 820, 850, 876, 900, 920, 940, 944];

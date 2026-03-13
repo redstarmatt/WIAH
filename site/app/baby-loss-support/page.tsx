@@ -165,6 +165,9 @@ export default function BabyLossSupportPage() {
             source="Source: NHS England — Saving Babies' Lives Care Bundle Version 3, 2023. National Bereavement Care Pathway — Standards 2021. MBRRACE-UK — Perinatal Mortality Report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">
