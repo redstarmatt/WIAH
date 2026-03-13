@@ -80,8 +80,8 @@ export default function ConcealedHomelessnessPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The official rough sleeping count — a single autumn night snapshot — recorded 3,898 people sleeping rough in England in 2023, a 35% rise since the pandemic low of 2020. But rough sleeping measures only the most visible fraction of homelessness. Organisations working with homeless people estimate that for every rough sleeper there are around 100 people in hidden homelessness — sofa-surfing, staying in overcrowded or unsuitable accommodation — producing an estimate of around 400,000 people. The formal figure that tracks more precisely is temporary accommodation: 112,000 households, including over 150,000 children, were in local authority temporary accommodation in 2023, a record high and a 55% rise since 2015. Families with children are increasingly placed in bed-and-breakfast accommodation that is legally meant to house them for no more than six weeks but routinely does so for months or years.</p>
-            <p>The structural causes are well-documented. Social housing stock has declined by hundreds of thousands of units since Right to Buy began, and replacement construction has not come close to making up the losses. The Local Housing Allowance, which covers private rent for low-income tenants, has been repeatedly frozen in nominal terms while rents rose, creating an ever-widening gap. Housing waiting lists exceed one million households. Ending rough sleeping addresses only the most visible fraction of a homelessness system under sustained pressure that will continue without substantial expansion of social housing supply.</p>
+            <p>The official rough sleeping count — a single autumn night snapshot — recorded 3,898 people sleeping rough in England in 2023, a 35% rise since the pandemic low of 2020.<Cite nums={1} /> But rough sleeping measures only the most visible fraction of homelessness. Organisations working with homeless people estimate that for every rough sleeper there are around 100 people in hidden homelessness — sofa-surfing, staying in overcrowded or unsuitable accommodation — producing an estimate of around 400,000 people.<Cite nums={3} /> The formal figure that tracks more precisely is temporary accommodation: 112,000 households, including over 150,000 children, were in local authority temporary accommodation in 2023, a record high and a 55% rise since 2015.<Cite nums={2} /> Families with children are increasingly placed in bed-and-breakfast accommodation that is legally meant to house them for no more than six weeks but routinely does so for months or years.<Cite nums={2} /></p>
+            <p>The structural causes are well-documented. Social housing stock has declined by hundreds of thousands of units since Right to Buy began, and replacement construction has not come close to making up the losses.<Cite nums={3} /> The Local Housing Allowance, which covers private rent for low-income tenants, has been repeatedly frozen in nominal terms while rents rose, creating an ever-widening gap. Housing waiting lists exceed one million households.<Cite nums={2} /> Ending rough sleeping addresses only the most visible fraction of a homelessness system under sustained pressure that will continue without substantial expansion of social housing supply.<Cite nums={[1, 3]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -160,6 +160,10 @@ export default function ConcealedHomelessnessPage() {
             source="Source: MHCLG — Rough Sleeping Snapshot 2021. Crisis — Everyone In evaluation, 2021."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

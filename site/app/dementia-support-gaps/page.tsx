@@ -76,7 +76,7 @@ export default function DementiaSupportGapsPage() {
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>An estimated 944,000 people live with dementia in the UK, yet only around 64% have a formal diagnosis — below the NHS target of 67% and a figure that has barely moved in a decade despite successive Prime Ministers' Dementia Challenges.<Cite nums={[1, 2]} /> COVID-19 caused diagnosis rates to fall sharply as GP access contracted, and they have not fully recovered. Without a diagnosis, people with dementia cannot access specialist support, carers cannot access carer services, and the risk of avoidable hospital admissions and safeguarding incidents rises substantially.<Cite nums={3} /> Post-diagnostic support is equally patchy: in principle a diagnosis triggers a named care coordinator, personalised care plan, and regular review; in practice 40% of people with dementia report receiving no structured support after diagnosis.<Cite nums={1} /></p>
-            <p>Carers bear the invisible cost of these gaps. Around 700,000 people in the UK care for someone with dementia, providing an estimated 1.34 billion hours of unpaid care annually — more hours per person than carers of any other condition group. Carer support services — respite, Admiral Nurses, support groups — are inconsistently available and significantly underfunded. As dementia progresses, most people move into residential or nursing care funded through means-testing that depletes accumulated wealth before state support begins, while CQC inspections consistently identify inadequate dementia training and inappropriate antipsychotic use in care home settings.</p>
+            <p>Carers bear the invisible cost of these gaps. Around 700,000 people in the UK care for someone with dementia, providing an estimated 1.34 billion hours of unpaid care annually — more hours per person than carers of any other condition group.<Cite nums={2} /> Carer support services — respite, Admiral Nurses, support groups — are inconsistently available and significantly underfunded. As dementia progresses, most people move into residential or nursing care funded through means-testing that depletes accumulated wealth before state support begins, while CQC inspections consistently identify inadequate dementia training and inappropriate antipsychotic use in care home settings.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -156,6 +156,9 @@ export default function DementiaSupportGapsPage() {
             source="Source: Dementia UK — Admiral Nurse data 2023. NHS England — Memory Services National Accreditation Programme 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -84,7 +84,7 @@ export default function CarbonBudgetProgressPage() {
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>The UK has made genuine and substantial progress on reducing greenhouse gas emissions, cutting territorial emissions by 53% since 1990 — the fastest reduction of any major economy over that period.<Cite nums={1} /> Decarbonisation of the electricity grid has been the primary driver: coal has been virtually eliminated from power generation, and renewables now supply over 50% of electricity. But the easy gains are largely behind us. The remaining emissions are harder to cut: heating homes accounts for 14% of UK emissions, the vast majority from gas boilers; agriculture produces 11%; and transport — despite growing EV sales — remains the largest single sector.<Cite nums={1} /> The Climate Change Committee's 2025 progress report found the UK is on track to meet only 8 of its 50 key net zero policy milestones.<Cite nums={2} /></p>
-            <p>Heat pump installation is the most glaring gap. The government's Boiler Upgrade Scheme offers grants of £7,500 for heat pump installation, but uptake remains at around 90,000 per year — against the CCC's pathway requiring 600,000 per year by 2028. High upfront costs, planning restrictions, and public uncertainty about operating costs are all contributing factors. EV uptake has been more encouraging: the zero-emission vehicle mandate requires 22% of new car sales to be electric in 2024, rising to 80% by 2030, and is currently tracking roughly on target. But without a parallel acceleration in grid capacity and home charging infrastructure, the transport transition risks stalling at higher penetration rates where overnight home charging becomes the bottleneck.</p>
+            <p>Heat pump installation is the most glaring gap. The government's Boiler Upgrade Scheme offers grants of £7,500 for heat pump installation, but uptake remains at around 90,000 per year — against the CCC's pathway requiring 600,000 per year by 2028.<Cite nums={2} /> High upfront costs, planning restrictions, and public uncertainty about operating costs are all contributing factors. EV uptake has been more encouraging: the zero-emission vehicle mandate requires 22% of new car sales to be electric in 2024, rising to 80% by 2030, and is currently tracking roughly on target.<Cite nums={3} /> But without a parallel acceleration in grid capacity and home charging infrastructure, the transport transition risks stalling at higher penetration rates where overnight home charging becomes the bottleneck.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -163,6 +163,9 @@ export default function CarbonBudgetProgressPage() {
             source="Source: DESNZ — UK greenhouse gas emissions statistics 2025. Ofgem — Energy generation statistics 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">
