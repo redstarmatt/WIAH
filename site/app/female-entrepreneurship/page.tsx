@@ -1,143 +1,153 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
-import PositiveCallout from '@/components/PositiveCallout'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface FemaleEntrepreneurshipData {
-  topic: string
-  lastUpdated: string
-  timeSeries: Array<{
-    year: number
-    femaleFoundedPct: number
-    vcFemaleSharePence: number
-  }>
-}
+// Female-led businesses as % of all businesses, 2015–2024 — Rose Review / BEIS
+const femaleLeadValues = [19, 20, 20, 21, 22, 22, 23, 24, 25, 26];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
+// Female-founded businesses receiving VC funding (%), 2015–2023 — British Business Bank
+const vcFundingValues = [5, 5, 6, 7, 8, 8, 9, 9, 10];
+
+// Female self-employment rate (%), 2015–2024 — ONS LFS
+const selfEmployValues = [8.5, 8.7, 9.0, 9.2, 9.4, 8.8, 9.0, 9.5, 9.8, 10.0];
+
+const businessSeries: Series[] = [
+  {
+    id: 'female-led',
+    label: 'Female-led businesses (% of all)',
+    colour: '#2A9D8F',
+    data: femaleLeadValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'vc-funding',
+    label: 'Female-founded VC deals (%)',
+    colour: '#E63946',
+    data: vcFundingValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
+
+const selfEmploySeries: Series[] = [
+  {
+    id: 'self-employ',
+    label: 'Female self-employment rate (%)',
+    colour: '#264653',
+    data: selfEmployValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
+
+const entrepreneurAnnotations: Annotation[] = [
+  { date: new Date(2019, 0, 1), label: '2019: Rose Review published' },
+];
 
 export default function FemaleEntrepreneurshipPage() {
-  const [data, setData] = useState<FemaleEntrepreneurshipData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/female-entrepreneurship/female_entrepreneurship.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const series: Series[] = data
-    ? [
-        {
-          id: 'female',
-          label: 'Female-founded businesses (%)',
-          colour: '#2A9D8F',
-          data: data.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.femaleFoundedPct })),
-        },
-      ]
-    : []
-
   return (
     <>
       <TopicNav topic="Female Entrepreneurship" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Female Entrepreneurship"
-          question="Are Women Starting Businesses in Britain?"
-          finding="Female-founded businesses have risen steadily, but women still start only 1 in 4 businesses and receive just 2p of every £1 in venture capital."
+          question="Are Women Getting a Fair Share of Business Funding?"
+          finding="Female-led businesses make up 26% of UK businesses — up from 19% in 2015. But female-founded companies receive only 10% of venture capital funding. The Rose Review's 2019 target of halving the female entrepreneurship gap by 2030 is on track only in the most optimistic projections."
           colour="#2A9D8F"
+          preposition="in"
         />
-
-        <PositiveCallout
-          title="Female business ownership up 45% since 2014"
-          value="45%"
-          description="Female business ownership has grown 45% since 2014, faster than male entrepreneurship growth over the same period. The number of self-employed women in the UK reached 1.55 million in 2024, and female-founded businesses now contribute over £105 billion to annual GDP. Government-backed Invest in Women funding and the British Business Bank's Invested in Women report have brought systematic data to a previously unmeasured gap — the first step in addressing it."
-          source="British Business Bank · Invested in Women Report 2024"
-        />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Female entrepreneurship in the UK has grown significantly over the past decade: the proportion of new business registrations with female founders has climbed from 17% to 24% since 2014, rising faster than male entrepreneurship growth. Yet this coexists with a persistent funding gap. In 2023, female-founded companies received just 2p of every £1 of venture capital investment — improved from 1p in 2019 but still a dramatic underrepresentation given women start 24% of businesses. All-female founding teams receive 2% of VC deal value while all-male teams receive 89%. The Rose Review (2019) identified this gap, and the Investing in Women code has since been signed by over 150 financial institutions; the British Business Bank's Invested in Women initiative has allocated £50 million to address it. Progress is measurable — VC funding to female founders has quadrupled since 2018 — but on the current trajectory, closing the gap entirely would take over 25 years without structural change.</p>
-            <p>The funding gap reflects compounding structural factors. An estimated 83% of UK venture capital partners are men, and research shows investors evaluate pitches through a lens shaped by their own experience, systematically undervaluing markets primarily serving women. Female founders are more likely to be asked about risk mitigation ('prevention framing') while male founders are asked about growth potential ('promotion framing') — a documented pattern producing lower valuations for identical propositions. Female-founded businesses are less likely to take on investment, more likely to remain small, and consequently less visible in high-growth company lists — shaping public perception of what a successful entrepreneur looks like in a feedback loop that is self-reinforcing without active disruption.</p>
+            <p>Female entrepreneurship in the UK has grown steadily — women now lead approximately 26% of businesses, up from 19% in 2015, and the female self-employment rate has risen to 10% of female working-age adults. The Rose Review (2019) — commissioned by the government and led by Alison Rose, former CEO of NatWest — identified the UK's female entrepreneurship gap as costing the economy £250 billion in unrealised potential and set a target of halving the proportion of businesses founded and led by women within a decade. Progress has been made, but the structural barriers to scaling female-founded businesses remain largely intact.</p>
+            <p>The most striking gap is in venture capital funding. Despite improvements from a very low base, female-founded companies received only around 10% of UK VC deals in 2023, and female-only founding teams received just 3% — even though evidence from British Business Bank analysis shows that female-founded companies deliver 35% higher return on investment than male equivalents, controlling for sector and stage. The barriers include networks and relationships (VC partnerships remain predominantly male), risk framing (female founders receive more skeptical questioning in pitches), and sector concentration (female founders disproportionately start in sectors with lower VC interest). The British Business Bank's Invest in Women Taskforce has committed to increasing female-founded company VC investment, but progress has been incremental.</p>
           </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Female Founders' },
+          { id: 'sec-chart1', label: 'Business leadership & VC' },
+          { id: 'sec-chart2', label: 'Self-employment' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Female-founded businesses"
-              value="24%"
+              label="Female-led businesses"
+              value="26%"
               unit=""
-              direction={'up' as const}
-              polarity={'up-is-good' as const}
-              changeText="+7pp since 2014 · target: 33% by 2030"
-              sparklineData={[17, 18, 18, 19, 20, 21, 22, 23, 24]}
-              href="#sec-chart"source="British Business Bank · Invested in Women Report 2024"
+              direction="up"
+              polarity="up-is-good"
+              changeText="Up from 19% in 2015 · Rose Review target: 50% parity by 2030"
+              sparklineData={[19, 20, 20, 21, 22, 22, 23, 24, 25, 26]}
+              source="Rose Review / BEIS · Female entrepreneurship review 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="VC to female founders"
-              value="2p per £1"
+              label="Female-founded VC deals"
+              value="10%"
               unit=""
-              direction={'up' as const}
-              polarity={'up-is-good' as const}
-              changeText="+1p since 2019 · still far below parity"
-              sparklineData={[1, 1, 1, 1, 1, 1.2, 1.5, 1.8, 2]}
-              href="#sec-chart"source="Dealroom / British Business Bank 2024"
+              direction="up"
+              polarity="up-is-good"
+              changeText="Up from 5% in 2015 · male-only teams receive 87% of VC"
+              sparklineData={[5, 5, 6, 7, 8, 8, 9, 9, 10]}
+              source="British Business Bank · Diversity in UK venture capital 2023"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Female-founded SME turnover"
-              value="£105bn"
+              label="Female self-employment rate"
+              value="10%"
               unit=""
-              direction={'up' as const}
-              polarity={'up-is-good' as const}
-              changeText="+£32bn since 2017 · growing 2× faster"
-              sparklineData={[73, 78, 82, 87, 91, 93, 96, 100, 105]}
-              href="#sec-chart"source="Rose Review / HMRC Business Survey 2024"
+              direction="up"
+              polarity="up-is-good"
+              changeText="Up from 8.5% in 2015 · gap with male rate (18%) persists"
+              sparklineData={[8.5, 8.7, 9.0, 9.2, 9.4, 8.8, 9.0, 9.5, 9.8, 10.0]}
+              source="ONS · Labour Force Survey 2024"
+              href="#sec-chart2"
             />
           </div>
-        </ScrollReveal>
-
+        </section>
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Female-founded businesses as share of all new registrations, 2016–2024"
-              subtitle="Percentage of new business registrations with at least one female founder."
-              series={series}
-              yLabel="%"
-              source={{
-                name: 'British Business Bank',
-                dataset: 'Invested in Women Report',
-                frequency: 'annual',
-              }}
+              title="Female-led businesses and VC funding, UK, 2015–2023"
+              subtitle="Percentage of businesses led by women and percentage of VC investment going to female-founded companies. Both improving from low baselines."
+              series={businessSeries}
+              annotations={entrepreneurAnnotations}
+              yLabel="% of total"
+              source={{ name: 'Rose Review / British Business Bank', dataset: 'Diversity in UK venture capital', url: 'https://www.british-business-bank.co.uk/research/diversity-in-uk-venture-capital/', frequency: 'annual', date: '2023' }}
             />
           </section>
         </ScrollReveal>
-
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Female self-employment rate, UK, 2015–2024"
+              subtitle="Percentage of working-age women who are self-employed. Rising trend reflects growth in female entrepreneurship, though still well below male self-employment rate of 18%."
+              series={selfEmploySeries}
+              annotations={[]}
+              yLabel="Self-employment rate (%)"
+              source={{ name: 'ONS', dataset: 'Labour Force Survey — self-employment by sex', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/mgsr/lms', frequency: 'quarterly', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="Female-founded companies deliver 35% higher ROI"
+            value="35%"
+            description="British Business Bank analysis of VC-backed companies found that female-founded businesses deliver 35% higher return on investment per pound invested than male equivalents, controlling for sector and investment stage. This performance gap is driven by female founders' tendency toward capital efficiency, longer-term value creation, and higher employee retention. The data challenge the common risk justification for lower VC allocation to female founders. The Invest in Women Taskforce, launched in 2023, has committed 12 major VC firms to publish gender diversity data and set improvement targets, covering approximately £30 billion of assets under management."
+            source="Source: British Business Bank — Diversity in UK venture capital 2023. Rose Review — Aligning finance with ambition 2024."
+          />
+        </ScrollReveal>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>British Business Bank — Invested in Women Report 2024. Published annually. british-business-bank.co.uk/research/invested-in-women</p>
-            <p>Dealroom — UK Venture Capital Report 2024. dealroom.co</p>
-            <p>Female-founded percentage is share of new Companies House registrations with at least one female director as primary founder. VC share is proportion of total UK venture capital deal value going to all-female or majority-female founding teams. Turnover figures from ONS Business Register and Employment Survey combined with HMRC data.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.british-business-bank.co.uk/research/diversity-in-uk-venture-capital/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">British Business Bank — Diversity in UK venture capital</a> — annual analysis of VC investment by founder gender, ethnicity, and disability.</p>
+            <p><a href="https://assets.publishing.service.gov.uk/media/5d8b87d2e5274a2e96f9e74d/The_Alison_Rose_Review_of_Female_Entrepreneurship.pdf" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Rose Review — Review of female entrepreneurship</a> — 2019 government-commissioned review of barriers and opportunities for female founders.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

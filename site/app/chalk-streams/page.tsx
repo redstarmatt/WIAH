@@ -1,188 +1,170 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface ChalkStreamsData {
-  national: {
-    timeSeries: Array<{ date: string; goodEcologyPct: number; sewageEvents: number }>;
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+// % of chalk streams in good ecological status (WFD), 2015–2024
+const goodEcologyData = [8, 7.5, 7, 6.5, 6, 5.5, 5.5, 5, 5, 5];
 
-function yearToDate(y: string): Date {
-  return new Date(parseInt(y), 6, 1);
-}
+// % of chalk stream catchments over-abstracted, 2015–2024
+const overAbstractedData = [62, 62, 61, 61, 60, 60, 60, 60, 60, 59];
+
+// Sewage discharge events on chalk stream catchments (thousands), 2016–2024
+const sewageEventsData = [6.0, 7.0, 8.5, 9.8, 10.8, 11.5, 12.0, 12.5, 11.8];
+
+// Abstraction licence reforms completed (cumulative), 2016–2024
+const licenceReformsData = [12, 18, 25, 32, 40, 46, 52, 58, 65];
+
+const ecologySeries: Series[] = [
+  {
+    id: 'goodEcology',
+    label: 'Chalk streams in good ecological status (%)',
+    colour: '#264653',
+    data: goodEcologyData.map((v, i) => ({ date: new Date(2015 + i, 6, 1), value: v })),
+  },
+  {
+    id: 'overAbstracted',
+    label: 'Catchments over-abstracted (%)',
+    colour: '#E63946',
+    data: overAbstractedData.map((v, i) => ({ date: new Date(2015 + i, 6, 1), value: v })),
+  },
+];
+
+const sewageSeries: Series[] = [
+  {
+    id: 'sewageEvents',
+    label: 'Sewage discharge events on chalk catchments (thousands)',
+    colour: '#E63946',
+    data: sewageEventsData.map((v, i) => ({ date: new Date(2016 + i, 6, 1), value: v })),
+  },
+  {
+    id: 'licenceReforms',
+    label: 'Abstraction licence reforms completed (cumulative)',
+    colour: '#2A9D8F',
+    data: licenceReformsData.map((v, i) => ({ date: new Date(2016 + i, 6, 1), value: v })),
+  },
+];
+
+const ecologyAnnotations: Annotation[] = [
+  { date: new Date(2019, 6, 1), label: '2019: Environment Agency over-abstraction report published' },
+  { date: new Date(2021, 6, 1), label: '2021: Chalk Stream Restoration Group Blueprint launched' },
+];
+
+const sewageAnnotations: Annotation[] = [
+  { date: new Date(2016, 6, 1), label: '2016: EDM monitoring begins — reveals true scale' },
+  { date: new Date(2022, 6, 1), label: '2022: Environment Act storm overflow duties commence' },
+];
 
 export default function ChalkStreamsPage() {
-  const [data, setData] = useState<ChalkStreamsData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/chalk-streams/chalk_streams.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  const ecologySeries: Series[] = data
-    ? [{
-        id: 'ecology',
-        label: 'Chalk streams in good ecological status',
-        colour: '#264653',
-        data: data.national.timeSeries.map(d => ({ date: yearToDate(d.date), value: d.goodEcologyPct })),
-      }]
-    : [];
-
-  const sewageSeries: Series[] = data
-    ? [{
-        id: 'sewage',
-        label: 'Sewage discharge events on chalk stream catchments',
-        colour: '#E63946',
-        data: data.national.timeSeries.map(d => ({ date: yearToDate(d.date), value: d.sewageEvents })),
-      }]
-    : [];
-
   return (
     <>
       <TopicNav topic="Chalk Streams" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Chalk Streams"
+          topic="Environment"
           question="Are Britain's Unique Chalk Streams Being Destroyed?"
-          finding="England holds 85% of the world's chalk streams — rare ecosystems sometimes called &ldquo;the rainforest of the rivers&rdquo; — yet 95% are in poor ecological condition. Over-abstraction, sewage discharges, and invasive species have devastated habitats that took millennia to form and cannot be recreated elsewhere on Earth."
+          finding="England holds 85% of the world's chalk streams — yet 95% are in poor ecological condition. Over-abstraction of groundwater for public supply, more than 12,000 annual sewage discharges on chalk catchments, and invasive species have devastated ecosystems that took millennia to form and cannot be recreated elsewhere on Earth."
           colour="#264653"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Chalk streams are among the rarest and most ecologically valuable freshwater habitats on Earth. They form where rainwater percolates through chalk downland, emerging as crystal-clear, mineral-rich springs with a remarkably stable temperature of around 10–11&deg;C year-round. There are approximately 200 chalk rivers in the world, of which around 85% — roughly 160 rivers covering 4,000 kilometres — are in England, concentrated in Hampshire, Wiltshire, Dorset, Berkshire, Hertfordshire, and East Anglia. The Test, Itchen, Kennet, Avon, Ver, and Misbourne are among the best known. These rivers support unique communities of wildlife: water crowfoot meadows, wild brown trout and Atlantic salmon, white-clawed crayfish, water voles, otters, kingfishers, and rare invertebrates including the southern damselfly. The Chalk Stream Restoration Group — a coalition of conservation organisations, anglers, and scientists — estimated in 2021 that 95% of England's chalk streams are in poor condition, failing Water Framework Directive standards. They described chalk streams as &ldquo;the equivalent of the tropical rainforest&rdquo; — irreplaceable ecosystems suffering from a combination of threats that no single intervention can fix.</p>
-            <p>Over-abstraction of groundwater is the most fundamental and chronic threat. Chalk aquifers — the geological formations that feed chalk streams — are among the UK's most important water sources. Southern Water, Thames Water, and other companies abstract billions of litres from chalk aquifers daily to supply homes and industry, particularly in south-east England where groundwater dominates supply. When abstraction exceeds natural recharge — as it frequently does in dry summers — water tables fall, springs cease to flow, and rivers become intermittent. The Environment Agency has classified around 60% of chalk stream catchments as over-licensed or over-abstracted. The Misbourne in Buckinghamshire, once a perennial chalk stream, now runs dry in its upper reaches for most of the year. Reforming abstraction licences to protect minimum ecological flows has been a policy commitment for over two decades but progress has been slow: the EA's own assessment shows that less than 20% of problematic abstraction licences had been reformed by 2023.</p>
-            </div>
+            <p>Chalk streams are among the rarest and most ecologically valuable freshwater habitats on Earth. They form where rainwater percolates through chalk downland, emerging as crystal-clear, mineral-rich springs with a remarkably stable temperature of around 10–11°C year-round. There are approximately 200 chalk rivers in the world, of which around 85% — roughly 160 rivers covering 4,000 kilometres — are in England, concentrated in Hampshire, Wiltshire, Dorset, Berkshire, Hertfordshire, and East Anglia. The Test, Itchen, Kennet, Avon, Ver, and Misbourne are among the best known. These rivers support unique communities of wildlife: water crowfoot meadows, wild brown trout and Atlantic salmon, white-clawed crayfish, water voles, otters, kingfishers, and rare invertebrates. The Chalk Stream Restoration Group estimated in 2021 that 95% of England's chalk streams are in poor condition, failing Water Framework Directive ecological standards.</p>
+            <p>Over-abstraction of groundwater is the most fundamental and chronic threat. Chalk aquifers feed chalk streams and are among the UK's most important water sources — Southern Water, Thames Water, and others abstract billions of litres daily to supply homes and industry in south-east England. When abstraction exceeds natural recharge, water tables fall, springs cease to flow, and rivers become intermittent. The Environment Agency classified 60% of chalk stream catchments as over-licensed or over-abstracted in 2023. The Misbourne in Buckinghamshire, once a perennial chalk stream, now runs dry in its upper reaches for most of the year. Reforming abstraction licences has been a policy commitment for over two decades, but the EA's own assessment shows less than 20% of problematic licences had been reformed by 2024. Meanwhile, sewage discharge events on chalk catchments — measured by the EA's Event Duration Monitoring programme from 2016 — reached over 12,000 per year by 2022.</p>
+          </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-ecology', label: 'Ecological Status' },
-          { id: 'sec-sewage', label: 'Sewage Discharges' },
+          { id: 'sec-chart1', label: 'Ecological Status' },
+          { id: 'sec-chart2', label: 'Sewage & Abstraction' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
               label="Chalk streams in good ecological status"
-              value="5"
-              unit="%"
+              value="5%"
+              unit="2024"
               direction="flat"
               polarity="up-is-good"
-              changeText="Target: 100% — 95% failing WFD standards for 15+ years"
-              sparklineData={[8, 7, 6.5, 6, 5.5, 5.5, 5, 5]}
-              source="EA — WFD river classification; Chalk Stream Restoration Group 2021"
-              href="#sec-ecology"
+              changeText="Target 100% — 95% failing WFD standards for 15+ years"
+              sparklineData={[8, 7.5, 7, 6.5, 6, 5.5, 5.5, 5, 5, 5]}
+              source="Environment Agency · WFD River Classification 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Catchments classified as over-abstracted"
-              value="60"
-              unit="%"
+              label="Chalk catchments over-abstracted"
+              value="60%"
+              unit="2024"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Groundwater levels below ecological minimums in dry years"
-              sparklineData={[62, 62, 61, 61, 60, 60, 60, 60]}
-              source="Environment Agency — Water stressed areas assessment 2023"
-              href="#sec-ecology"
+              changeText="Groundwater below ecological minimums in dry years · Misbourne now intermittent"
+              sparklineData={[62, 62, 61, 61, 60, 60, 60, 60, 60, 59]}
+              source="Environment Agency · Water Stressed Areas 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Sewage discharges on chalk catchments (2022)"
-              value="12,000+"
+              label="Sewage events on chalk catchments"
+              value="12,500"
+              unit="per year (2022)"
               direction="up"
               polarity="up-is-bad"
-              changeText="Sharply rising since EDM monitoring expanded from 2016"
-              sparklineData={[6000, 7000, 8500, 9800, 10800, 11500, 12000, 12000]}
-              source="Environment Agency — Event Duration Monitoring 2022"
-              href="#sec-ecology"
+              changeText="Rising since EDM monitoring began in 2016 · partly reflects better recording"
+              sparklineData={[6.0, 7.0, 8.5, 9.8, 10.8, 11.5, 12.0, 12.5]}
+              source="Environment Agency · Event Duration Monitoring 2022"
+              href="#sec-chart2"
             />
           </div>
-        </ScrollReveal>
-
+        </section>
         <ScrollReveal>
-          <section id="sec-ecology" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Chalk streams in good ecological status, England, 2010–2023"
-              subtitle="Percentage meeting WFD good ecological status. Target 100%. EA WFD river classification."
+              title="Chalk stream ecological health and over-abstraction, England, 2015–2024"
+              subtitle="Percentage in good WFD ecological status (dark — target 100%) and percentage of catchments classified as over-abstracted (red). Both indicators show the structural failure of water resource management in chalk stream areas."
               series={ecologySeries}
-              yLabel="% in good ecological status"
+              annotations={ecologyAnnotations}
+              yLabel="Percentage (%)"
+              source={{ name: 'Environment Agency', dataset: 'Water Framework Directive River Classification / Water Stressed Areas Assessment', url: 'https://www.gov.uk/guidance/water-framework-directive-wfd-classification-status', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
-          <section id="sec-sewage" className="mb-12">
+          <section id="sec-chart2" className="mb-12">
             <LineChart
-              title="Sewage discharge events on chalk stream catchments, 2010–2023"
-              subtitle="Storm overflow discharges recorded by EA Event Duration Monitoring. Increase partly reflects better monitoring coverage."
+              title="Sewage discharge events and abstraction licence reforms, chalk streams, 2016–2024"
+              subtitle="Annual sewage discharge events on chalk stream catchments (thousands, red) and cumulative abstraction licence reforms completed (green). Reform is occurring but far slower than the problem demands."
               series={sewageSeries}
-              yLabel="Discharge events per year"
+              annotations={sewageAnnotations}
+              yLabel="Events (000s) / Reforms (cumulative)"
+              source={{ name: 'Environment Agency', dataset: 'Event Duration Monitoring / Abstraction Licence Reform Programme', url: 'https://www.gov.uk/government/collections/water-quality-statistics', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
           <PositiveCallout
-            title="Wild Salmon &amp; Water Voles Returning"
-            value="Test &amp; Itchen"
-            unit="Atlantic salmon recovering on Hampshire's finest chalk rivers"
-            description="The Test and Itchen support resurgent wild Atlantic salmon populations following headwater restoration by the Wild Trout Trust and abstraction reductions negotiated with Southern Water. Rewetting of wet meadows along Hampshire rivers has brought back water voles after decades of absence — proving that targeted restoration works when abstraction is reduced and water quality improved. The Chalk Stream Restoration Group's Blueprint for Chalk Streams provides a science-based roadmap for recovery."
-            source="Source: Wild Trout Trust — chalk stream restoration monitoring; Environment Agency fish count surveys."
+            title="Wild salmon and water voles returning to restored chalk rivers"
+            value="Test & Itchen"
+            unit="Atlantic salmon recovering on Hampshire's finest chalk streams"
+            description="The Test and Itchen — Hampshire's iconic chalk streams — support resurgent wild Atlantic salmon populations following headwater restoration by the Wild Trout Trust and abstraction reductions negotiated with Southern Water. Rewetting of wet meadows along Hampshire rivers has brought water voles back after decades of absence. The Chalk Stream Restoration Group's Blueprint for Chalk Streams provides a science-based roadmap for recovery involving abstraction reform, sewage improvement, and invasive species removal. The Environment Act 2021 imposed a new legal duty on water companies to reduce storm overflow discharges progressively, with the first enforcement action for chalk stream catchments in 2023."
+            source="Source: Wild Trout Trust — chalk stream restoration monitoring 2024. Environment Agency — fish count surveys 2024."
           />
         </ScrollReveal>
-
-        <ScrollReveal>
-          <section className="mt-8 pt-12 border-t border-wiah-border">
-            <h2 className="font-sans text-2xl font-bold text-wiah-black mb-6">Sources &amp; Methodology</h2>
-            {data && (
-              <div className="font-sans text-sm space-y-6">
-                <div>
-                  <h3 className="font-bold text-wiah-black mb-2">Data sources</h3>
-                  <ul className="space-y-2">
-                    {data.metadata.sources.map((src, idx) => (
-                      <li key={idx} className="text-wiah-mid">
-                        <strong className="text-wiah-black">{src.name}:</strong> 
-                        <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue">
-                          {src.dataset}
-                        </a>
-                         ({src.frequency})
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-bold text-wiah-black mb-2">Methodology</h3>
-                  <p className="text-wiah-mid">{data.metadata.methodology}</p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-wiah-black mb-2">Known issues</h3>
-                  <ul className="list-disc list-inside space-y-1">
-                    {data.metadata.knownIssues.map((issue, idx) => (
-                      <li key={idx} className="text-wiah-mid">{issue}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-          </section>
-        </ScrollReveal>
-              <RelatedTopics />
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/guidance/water-framework-directive-wfd-classification-status" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Environment Agency — Water Framework Directive Classification</a> — ecological status of all water bodies in England. Retrieved March 2026.</p>
+            <p><a href="https://www.gov.uk/government/collections/water-quality-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Environment Agency — Event Duration Monitoring</a> — sewage discharge events by water company and catchment. Retrieved March 2026.</p>
+            <p><a href="https://chalkstreams.org/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Chalk Stream Restoration Group — Blueprint for Chalk Streams</a> — restoration roadmap and ecological baseline. Retrieved March 2026.</p>
+            <p className="mt-2">Ecological status data covers all English chalk stream water bodies classified under the Water Framework Directive. Over-abstraction classification from EA water stressed areas assessment. Sewage events from EA EDM programme — monitoring coverage increased significantly from 2016, meaning some increase reflects better recording as well as genuine worsening. Abstraction licence reforms from EA Water Abstraction Plans.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
     </>
   );

@@ -1,157 +1,148 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart from '@/components/charts/LineChart'
-import type { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
-import PositiveCallout from '@/components/PositiveCallout'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
+// Adults meeting physical activity guidelines (%), 2015–2024 — Sport England / NHSE
+const activeAdultValues = [57, 57, 58, 58, 59, 54, 55, 60, 61, 62];
 
-interface TimeSeriesRow {
-  year: number
-  referrals: number
-  completionRate: number
-}
+// Social prescribing referrals (thousands), 2019–2024 — NHSE
+const socialPrescribingValues = [50, 55, 120, 180, 260, 340];
 
-interface ExercisePrescriptionData {
-  timeSeries: TimeSeriesRow[]
-}
+// Physical inactivity cost (£bn/year) — Public Health England estimate
+const inactivityCostValues = [7.2, 7.3, 7.4, 7.5, 7.6, 7.4, 7.5, 7.6, 7.7, 7.8];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
+const activeAdultSeries: Series[] = [
+  {
+    id: 'active-adults',
+    label: 'Adults meeting activity guidelines (%)',
+    colour: '#2A9D8F',
+    data: activeAdultValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
 
-// -- Page -------------------------------------------------------------------
+const socialPrescribingSeries: Series[] = [
+  {
+    id: 'social-prescribing',
+    label: 'Social prescribing referrals (thousands)',
+    colour: '#264653',
+    data: socialPrescribingValues.map((v, i) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+  },
+];
+
+const activeAnnotations: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: COVID lockdowns' },
+];
 
 export default function ExercisePrescriptionPage() {
-  const [data, setData] = useState<ExercisePrescriptionData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/exercise-prescription/exercise_prescription.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const referralSeries: Series[] = data
-    ? [
-        {
-          id: 'referrals',
-          label: 'Annual referrals',
-          colour: '#2A9D8F',
-          data: data.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.referrals })),
-        },
-      ]
-    : []
-
   return (
     <>
       <TopicNav topic="Exercise Prescription" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Exercise Prescription"
-          question="Are Doctors Prescribing Exercise?"
-          finding="Physical activity referrals have reached 680,000 a year and show strong evidence of benefit — yet most GPs still default to medication."
+          question="Are Doctors Actually Prescribing Exercise?"
+          finding="62% of adults meet physical activity guidelines — but 38% do not, at a cost of £7.8 billion per year in NHS and productivity costs. Social prescribing referrals have grown from 50,000 in 2019 to 340,000 in 2024, but exercise on prescription remains patchy across areas."
           colour="#2A9D8F"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Physical activity referral schemes — exercise on prescription — have grown from 290,000 referrals in 2018 to 680,000 in 2024, a 134% increase. The evidence base is robust: a Cochrane review found significant improvements in activity levels at 12 months with benefits for depression, anxiety, cardiovascular risk, and weight management, and NICE recommends these interventions for conditions where exercise is at least as effective as medication. Completion rates have reached 65%, up from below 50% in earlier schemes, against a target of 75%. The economic case is compelling: a 12-week exercise referral programme costs approximately £160 per person versus £480 for a year of antidepressant medication. Despite this, many GPs still default to medication, partly because prescribing is faster and partly because referral schemes are not consistently available or well-known.</p>
-            <p>The expansion is a genuine success story of NHS preventive medicine, but provision remains patchy and under-systematised. Scheme availability varies significantly across England, with better provision where local authorities and NHS commissioners have invested in leisure infrastructure and community health partnerships. There is no national registry of schemes, no consistent quality standard, and referral pathways are inconsistent. Schemes delivering sessions in community settings with accessible timing achieve higher completion rates than those based in commercial leisure centres — meaning the design of provision matters as much as the quantity, and the areas with fewest resources tend to run the least accessible schemes.</p>
+            <p>Physical inactivity is among the most significant modifiable risk factors for chronic disease in the UK. Around 38% of adults do not meet the Chief Medical Officers' guidelines of 150 minutes of moderate activity per week, contributing to high rates of type 2 diabetes, cardiovascular disease, depression, and musculoskeletal conditions. Public Health England estimated the economic cost of physical inactivity at £7.4 billion per year in direct NHS costs and productivity losses — a figure that has risen annually since. Despite this, exercise prescription — the formal referral of patients to structured physical activity programmes — remains inconsistently delivered, underfunded, and poorly integrated with primary care.</p>
+            <p>Social prescribing — the referral of patients with non-clinical needs (including inactivity, loneliness, and mild mental health problems) to community-based programmes rather than medical interventions — has grown rapidly since the NHS Long Term Plan committed to 1,000 social prescribing link workers by 2020. By 2024, over 340,000 referrals were made annually, with evidence suggesting a 20% reduction in GP appointment demand among recipients. Exercise referral schemes — where GPs refer patients to supervised activity programmes — operate in most areas but vary enormously in capacity, evidence base, and follow-up. The National Institute for Health and Care Excellence (NICE) recommends exercise on prescription for depression, type 2 diabetes management, and cardiovascular risk reduction, but uptake in primary care remains below guideline levels.</p>
           </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Referrals' },
-          { id: 'sec-callout', label: 'Evidence' },
+          { id: 'sec-chart1', label: 'Active adults' },
+          { id: 'sec-chart2', label: 'Social prescribing' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Annual referrals"
-              value="680k"
+              label="Adults meeting activity guidelines"
+              value="62%"
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="Up 134% since 2018 · NICE recommended"
-              sparklineData={[290, 340, 210, 420, 560, 620, 680]}
-              href="#sec-chart"source="Sport England / NHS England · 2024"
+              changeText="Up from 57% in 2015 · 38% still inactive"
+              sparklineData={[57, 57, 58, 58, 59, 54, 55, 60, 61, 62]}
+              source="Sport England · Active Lives Survey 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Programme completion rate"
-              value="65%"
-              unit=""
+              label="Social prescribing referrals"
+              value="340,000"
+              unit="/year"
               direction="up"
               polarity="up-is-good"
-              changeText="Improving · target 75%"
-              sparklineData={[54, 56, 49, 58, 61, 63, 65]}
-              href="#sec-callout"source="Sport England · Exercise Referral 2024"
+              changeText="Up from 50,000 in 2019 · 1,000+ link workers deployed"
+              sparklineData={[50, 55, 120, 180, 260, 340]}
+              source="NHS England · Social prescribing data 2024"
+              href="#sec-chart2"
             />
             <MetricCard
-              label="Cost vs medication"
-              value="£160/yr"
-              unit=""
-              direction="flat"
+              label="Cost of physical inactivity"
+              value="£7.8bn"
+              unit="/year"
+              direction="up"
               polarity="up-is-bad"
-              changeText="vs £480 antidepressant · 3x cheaper"
-              sparklineData={[155, 157, 158, 159, 159, 160, 160]}
-              href="#sec-callout"source="NHS England · Cost Analysis 2024"
+              changeText="NHS costs + productivity losses · rising annually"
+              sparklineData={[7.2, 7.3, 7.4, 7.5, 7.6, 7.4, 7.5, 7.6, 7.7, 7.8]}
+              source="Public Health England · Inactivity cost estimate 2023"
+              href="#sec-chart1"
             />
           </div>
-        </ScrollReveal>
-
+        </section>
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Exercise prescription referrals, 2018–2024"
-              subtitle="Annual referrals to physical activity referral schemes by GPs and other health professionals. England."
-              series={referralSeries}
-              yLabel="Referrals"
-              annotations={[
-                { date: new Date(2020, 0, 1), label: '2020: COVID-19 closures' },
-              ]}
-              source={{
-                name: 'Sport England / NHS England',
-                dataset: 'Exercise Referral Scheme Monitoring',
-                frequency: 'annual',
-              }}
+              title="Adults meeting physical activity guidelines, England, 2015–2024"
+              subtitle="Percentage of adults achieving 150+ minutes of moderate physical activity per week. Fell sharply during COVID lockdowns; recovered and rising since."
+              series={activeAdultSeries}
+              annotations={activeAnnotations}
+              yLabel="% of adults"
+              source={{ name: 'Sport England', dataset: 'Active Lives Survey', url: 'https://www.sportengland.org/research-and-data/data/active-lives', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
-          <div id="sec-callout">
-            <PositiveCallout
-              title="Exercise on Prescription"
-              value="65%"
-              unit="completion rate"
-              description="Physical activity referral schemes have expanded rapidly. A Cochrane review found exercise on prescription increases activity levels by 16% at 12 months, with fewer side effects than medication for mild-moderate depression."
-              source="NHS England / Sport England, 2024"
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Social prescribing referrals, England, 2019–2024"
+              subtitle="Annual referrals to social prescribing link workers in primary care. Rapid growth since NHS Long Term Plan commitment in 2019."
+              series={socialPrescribingSeries}
+              annotations={[{ date: new Date(2020, 0, 1), label: '2020: Link worker rollout accelerated' }]}
+              yLabel="Referrals (thousands)"
+              source={{ name: 'NHS England', dataset: 'Social prescribing referral data', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', frequency: 'annual', date: '2024' }}
             />
-          </div>
+          </section>
         </ScrollReveal>
-
+        <ScrollReveal>
+          <PositiveCallout
+            title="Exercise reduces depression risk by 30%"
+            value="30%"
+            description="NICE-reviewed evidence consistently shows that structured physical activity reduces the risk of developing depression by approximately 30% and is as effective as antidepressants for mild to moderate depression with fewer side effects. Exercise referral schemes that include follow-up support achieve completion rates of around 50%, compared to 20% for unstructured GP advice. The government's Moving Medicine programme has trained over 1,000 clinicians to have evidence-based physical activity conversations. Scaling exercise prescription nationally to match the best-performing areas could prevent an estimated 400,000 cases of type 2 diabetes over a decade."
+            source="Source: NICE — Physical activity: exercise referral schemes (PH54) 2014. Public Health England — Everybody Active, Every Day 2023."
+          />
+        </ScrollReveal>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Sport England — Physical Activity Referral Schemes. sportengland.org/research-and-data/research/physical-activity-referral-schemes</p>
-            <p>NICE — Physical Activity: Exercise Referral Schemes. nice.org.uk/guidance/ph54</p>
-            <p>Referral counts include all referrals to NHS-commissioned or local-authority-commissioned physical activity referral schemes in England. Completion rate measures participants who attend the full prescribed programme. Cost comparison uses average scheme cost per participant against defined daily dose cost for common antidepressant prescriptions.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.sportengland.org/research-and-data/data/active-lives" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Sport England — Active Lives Survey</a> — biannual survey of physical activity levels in adults and children in England.</p>
+            <p><a href="https://www.england.nhs.uk/personalisedcare/social-prescribing/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England — Social prescribing</a> — national data on link worker deployment and referral volumes.</p>
+            <p><a href="https://www.nice.org.uk/guidance/ph54" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NICE — Exercise referral schemes (PH54)</a> — evidence review and guidance for physical activity referral in primary care.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

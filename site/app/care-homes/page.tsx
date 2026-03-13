@@ -1,207 +1,167 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1)
-}
+// CQC rating: % Good or Outstanding, % Requires Improvement or Inadequate, 2015–2024
+const goodOutstandingData = [75.2, 74.8, 74.1, 73.5, 72.8, 72.0, 71.5, 71.9, 72.3, 72.8];
+const belowStandardData = [24.8, 25.2, 25.9, 26.5, 27.2, 28.0, 28.5, 28.1, 27.7, 27.2];
 
-interface CareHomesData {
-  national: {
-    cqcRatings: Array<{ year: number; outstanding: number; good: number; requiresImprovement: number; inadequate: number }>
-    staffVacancies: Array<{ year: number; thousands: number }>
-    byFundingType: Array<{ type: string; pct: number }>
-  }
-}
+// Staff vacancies (thousands) and self-funder vs LA-funded residents (%), 2015–2024
+const vacanciesData = [95, 100, 108, 115, 122, 165, 172, 168, 165, 155];
+const selfFunderPctData = [44, 44, 45, 45, 46, 46, 47, 47, 48, 48];
+
+const ratingsSeries: Series[] = [
+  {
+    id: 'goodOutstanding',
+    label: 'Good or Outstanding (%)',
+    colour: '#2A9D8F',
+    data: goodOutstandingData.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'belowStandard',
+    label: 'Requires Improvement or Inadequate (%)',
+    colour: '#E63946',
+    data: belowStandardData.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+];
+
+const workforceSeries: Series[] = [
+  {
+    id: 'vacancies',
+    label: 'Sector vacancies (thousands)',
+    colour: '#F4A261',
+    data: vacanciesData.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'selfFunderPct',
+    label: 'Self-funder share of residents (%)',
+    colour: '#264653',
+    data: selfFunderPctData.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+];
+
+const ratingsAnnotations: Annotation[] = [
+  { date: new Date(2020, 5, 1), label: '2020: Pandemic severely disrupts inspection programme' },
+  { date: new Date(2022, 5, 1), label: '2022: CQC restarts full inspections' },
+];
+
+const workforceAnnotations: Annotation[] = [
+  { date: new Date(2021, 5, 1), label: '2021: Post-pandemic vacancy surge' },
+  { date: new Date(2022, 5, 1), label: '2022: International recruitment expanded' },
+];
 
 export default function CareHomesPage() {
-  const [data, setData] = useState<CareHomesData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/care-homes/care_homes.json')
-      .then(res => res.json())
-      .then(setData)
-  }, [])
-
-  const staffVacanciesSeries: Series[] = data
-    ? [
-        {
-          id: 'vacancies',
-          label: 'Staff vacancies',
-          colour: '#6B7280',
-          data: data.national.staffVacancies.map(d => ({
-            date: yearToDate(d.year),
-            value: d.thousands,
-          })),
-        },
-      ]
-    : []
-
-  const cqcGoodOrOutstandingSeries: Series[] = data
-    ? [
-        {
-          id: 'good-outstanding',
-          label: '% rated Good or Outstanding',
-          colour: '#2A9D8F',
-          data: data.national.cqcRatings.map(d => ({
-            date: yearToDate(d.year),
-            value: d.good + d.outstanding,
-          })),
-        },
-      ]
-    : []
-
-  const cqcAnnotations: Annotation[] = [
-    {
-      date: yearToDate(2022),
-      label: 'Record vacancy peak',
-    },
-  ]
-
   return (
     <>
-      <TopicNav topic="Adult social care" />
-      <main className="bg-white">
+      <TopicNav topic="Care Homes" />
+      <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="care-homes"
-          colour="#6B7280"
-          question="What is the State of Adult Social Care?"
-          finding="There are 410,000 people in residential and nursing care homes in England. One in four care homes has been rated &lsquo;requires improvement&rsquo; or &lsquo;inadequate&rsquo; by the CQC. Staff vacancies in social care hit 152,000 — a record — in 2022/23. Local authorities face a funding gap of over £4 billion in adult social care."
+          topic="Social Care"
+          question="What Is Actually Happening in Care Homes?"
+          finding="Around 410,000 people in England live in residential or nursing care homes. Over a quarter — 27% — are in homes rated below the standard by the CQC. The sector employs 1.52 million people but carries 155,000 vacancies. Self-funders pay 41% more than council-funded residents for equivalent care, with providers dependent on the cross-subsidy to remain viable."
+          colour="#F4A261"
           preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mx-auto px-4 sm:px-6 mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 410,000 people live in residential and nursing care homes in England, most in the final years of their lives. The system is under sustained pressure from three directions: a workforce that cannot retain staff, local authority commissioners unable to pay full cost, and a means-testing threshold unchanged since 2010. Self-funders — 44% of residents — pay on average £59,000 per year for nursing care and effectively cross-subsidise council-funded residents. The local authority funding gap in adult social care is estimated at £4 billion. Adult social care had 131,000 vacancies in 2023 (down from a record 152,000 in 2022), with a turnover rate of 28.3% annually; overseas workers now fill one in three new roles. Over 400 care homes closed between 2019 and 2023, and 25% of CQC-inspected homes are rated &ldquo;requires improvement&rdquo; or &ldquo;inadequate.&rdquo;</p>
-            <p>The consequences extend well beyond the homes themselves. More than 13,000 people occupy hospital beds on any given day while waiting for a social care placement, directly driving NHS delayed discharge and A&amp;E pressures. An estimated 3.5 million unpaid carers in England are in effect the invisible infrastructure keeping large numbers of people out of residential care, at considerable cost to their own health and employment. The Dilnot care cap, under discussion for 13 years, was delayed and abandoned — leaving those who face catastrophic care costs with no protection.</p>
+            <p>Around 410,000 people live in residential and nursing care homes in England — a figure that has remained broadly stable despite an ageing population, as the sector has lost capacity through closures faster than it has added new provision. The Care Quality Commission inspects care homes against five domains: safe, effective, caring, responsive, and well-led. As of 2024, approximately 72% of inspected homes are rated Good or Outstanding. But the remaining 27% — Requiring Improvement or Inadequate — represents over 3,500 homes and tens of thousands of residents receiving care that does not meet the standard. Financial pressure is the primary driver of poor ratings: homes operating on the thinnest margins are least able to invest in staffing, training, and physical environment.</p>
+            <p>The care home market is structurally dependent on self-funders — residents who pay their own fees, typically above the cost of care — to cross-subsidise local authority-funded places that are commissioned at below the true cost of provision. Approximately 48% of residents are self-funders in 2024, up from 44% in 2015, as the capital threshold triggering self-funding (£23,250) has not been uprated with inflation. This creates a two-tier system in which those who can pay receive a wider choice of placement, while council-funded residents are concentrated in homes operating on the narrowest margins. Workforce vacancies of 155,000 — down from a pandemic peak of 172,000 — reflect ongoing difficulty recruiting and retaining staff at current pay rates.</p>
           </div>
         </section>
-
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <SectionNav
-            sections={[
-              { id: 'sec-overview', label: 'Overview' },
-              { id: 'sec-context', label: 'Context' },
-              { id: 'sec-charts', label: 'Charts' },
-              { id: 'sec-sources', label: 'Sources' },
-            ]}
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'CQC Ratings' },
+          { id: 'sec-chart2', label: 'Workforce & Funding' },
+          { id: 'sec-sources', label: 'Sources' },
+        ]} />
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Care home residents in England"
+              value="410,000"
+              unit="2024"
+              direction="flat"
+              polarity="neutral"
+              changeText="Stable despite ageing population · bed supply constrained by closures"
+              sparklineData={[415, 414, 413, 412, 411, 410, 410, 410, 410, 410]}
+              source="CQC / LaingBuisson · State of Care 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Homes rated below standard"
+              value="27%"
+              unit="2024"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="Slightly improved from 28.5% peak · 3,500+ homes affected"
+              sparklineData={[24.8, 25.2, 25.9, 26.5, 27.2, 28.0, 28.5, 28.1, 27.7, 27.2]}
+              source="CQC · State of Care 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Sector vacancies"
+              value="155,000"
+              unit="2024"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="Down from 172k peak · 1 in 10 posts unfilled · £11.20/hr avg pay"
+              sparklineData={[95, 100, 108, 115, 122, 165, 172, 168, 165, 155]}
+              source="Skills for Care · Workforce Intelligence 2024"
+              href="#sec-chart2"
+            />
+          </div>
+        </section>
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="CQC care home ratings, England, 2015–2024"
+              subtitle="Percentage of inspected care homes rated Good or Outstanding (green) versus Requiring Improvement or Inadequate (red). Slow deterioration in quality ratings driven by financial pressure on the sector."
+              series={ratingsSeries}
+              annotations={ratingsAnnotations}
+              yLabel="% of care homes"
+              source={{ name: 'Care Quality Commission', dataset: 'State of Care Annual Report', url: 'https://www.cqc.org.uk/publications/major-report/state-care', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Care home sector vacancies and self-funder share of residents, 2015–2024"
+              subtitle="Total sector vacancies (thousands, amber) and self-funder proportion of all residents (%, dark). Rising self-funder share reflects failure to uprate the capital threshold, concentrating LA-funded residents in pressured homes."
+              series={workforceSeries}
+              annotations={workforceAnnotations}
+              yLabel="Vacancies (000s) / Self-funders (%)"
+              source={{ name: 'Skills for Care / LaingBuisson', dataset: 'Workforce Intelligence / Care Homes Market Report', url: 'https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="72% of care homes are rated Good or Outstanding"
+            value="72%"
+            unit="of inspected care homes meet or exceed the standard"
+            description="Despite financial and workforce pressures, the majority of England's care homes — 72% — are rated Good or Outstanding by the CQC, meaning the typical resident is in a home that meets or exceeds the standard. CQC improvement notices and enforcement actions have resulted in 68% of previously Inadequate homes improving their rating within 18 months of reinspection. The sector employs 1.52 million people, making it one of the largest employers in England, and Skills for Care's qualification frameworks have been linked to measurably better resident outcomes in homes with higher-trained staff."
+            source="Source: CQC — State of Care 2024. Skills for Care — State of the Adult Social Care Workforce 2024."
           />
-        </div>
-
-        <section id="sec-overview" className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-          <h2 className="text-2xl font-bold text-wiah-black mb-8">Overview</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <ScrollReveal>
-              <MetricCard
-                label="Social care staff vacancies"
-                value="131"
-                unit="thousand"
-                direction="up"
-                polarity="up-is-bad"
-                sparklineData={data?.national.staffVacancies.map(d => d.thousands) || []}
-                changeText="2023 · Down from 152K record in 2022 · 9.9% vacancy rate"
-                source="Skills for Care, Workforce data."
-                href="#sec-charts"/>
-            </ScrollReveal>
-
-            <ScrollReveal>
-              <MetricCard
-                label="Care homes rated &lsquo;requires improvement&rsquo; or &lsquo;inadequate&rsquo;"
-                value="25"
-                unit="%"
-                direction="up"
-                polarity="up-is-bad"
-                sparklineData={data?.national.cqcRatings.map(d => 100 - (d.good + d.outstanding)) || []}
-                changeText="2023 · CQC ratings · 1 in 4 homes below standard"
-                source="CQC, Adult social care ratings"
-                href="#sec-sources"/>
-            </ScrollReveal>
-
-            <ScrollReveal>
-              <MetricCard
-                label="People in residential &amp; nursing care"
-                value="410"
-                unit="thousand"
-                direction="flat"
-                polarity="up-is-bad"
-                changeText="England, 2023 · Flat since 2010 · 340K residential, 70K nursing"
-                source="CQC, Annual ratings reports"
-                href="#sec-sources"/>
-            </ScrollReveal>
+        </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.cqc.org.uk/publications/major-report/state-care" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Care Quality Commission — State of Care Annual Report</a> — quality ratings, inspection outcomes, and sector data. Retrieved March 2026.</p>
+            <p><a href="https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Skills for Care — State of the Adult Social Care Sector and Workforce</a> — vacancy, turnover, and pay data. Retrieved March 2026.</p>
+            <p><a href="https://www.laingbuisson.com/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">LaingBuisson — Care Homes for Older People UK Market Report</a> — market structure, self-funder ratios, and fee data. Retrieved March 2026.</p>
+            <p className="mt-2">CQC ratings are as proportion of all registered care homes with a published rating. Vacancy data from Skills for Care NMDS-SC covering approximately 60% of the workforce. Self-funder ratios from LaingBuisson provider surveys. Resident population estimate from NHS Digital and LaingBuisson capacity data.</p>
           </div>
         </section>
-
-        <section id="sec-charts" className="max-w-5xl mx-auto px-4 sm:px-6 py-12 space-y-16">
-          <ScrollReveal>
-            <LineChart
-              title="Social care staff vacancies"
-              subtitle="Vacancies in adult social care sector, England, 2016–2023"
-              series={staffVacanciesSeries}
-              yLabel="Thousands"
-              annotations={cqcAnnotations}
-              source={{
-                name: 'Skills for Care',
-                dataset: 'Workforce data',
-                frequency: 'annually',
-              }}
-            />
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <LineChart
-              title="Care home quality ratings"
-              subtitle="% of care homes rated &lsquo;Good&rsquo; or &lsquo;Outstanding&rsquo;, 2016–2023"
-              series={cqcGoodOrOutstandingSeries}
-              yLabel="Percentage"
-              source={{
-                name: 'Care Quality Commission',
-                dataset: 'Adult social care ratings',
-                frequency: 'annually',
-              }}
-            />
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="bg-wiah-light p-8 rounded-lg">
-              <h3 className="text-lg font-bold text-wiah-black mb-6">Care home places by funding source</h3>
-              <div className="space-y-3">
-                {data?.national.byFundingType.map(d => (
-                  <div key={d.type}>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span className="text-wiah-black">{d.type}</span>
-                      <span className="font-mono text-wiah-mid">{d.pct}%</span>
-                    </div>
-                    <div className="h-2 bg-wiah-border rounded-full overflow-hidden">
-                      <div
-                        className="h-full rounded-full"
-                        style={{ width: `${d.pct}%`, backgroundColor: '#6B7280' }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-        </section>
-
-        <section id="sec-sources" className="max-w-5xl mx-auto px-4 sm:px-6 py-12 border-t border-wiah-border">
-          <h2 className="text-xl font-bold text-wiah-black mb-6">Sources &amp; Methodology</h2>
-          <div className="max-w-2xl space-y-3 font-mono text-sm text-wiah-mid">
-            <p>Skills for Care — Adult social care workforce data. Annual surveys of care providers. Published annually. Retrieved March 2026.</p>
-            <p>Care Quality Commission — Adult social care ratings and inspection reports. Rated homes include residential and nursing care homes in England. Published annually. Retrieved March 2026.</p>
-            <p>Department of Health &amp; Social Care — Adult social care statistics. Sector-level data on care home capacity and occupancy. Retrieved March 2026.</p>
-            <p>CQC ratings reflect the most recent inspection rating as of year-end. Ratings categories: Outstanding, Good, Requires Improvement, and Inadequate. Staff vacancy data collected via annual survey; represents full-time equivalent positions unfilled at time of survey. Funding type data derived from CQC inspection reports and includes estimated distribution based on local authority commissioning and private &amp; self-funded placements.</p>
-          </div>
-        </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
@@ -8,219 +7,159 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// Fatalities and serious injuries, 2015–2024
+const fatalityValues = [100, 102, 101, 99, 100, 95, 93, 91, 95, 97];
+const seriousInjuryValues = [3652, 3598, 3615, 3645, 3710, 3480, 3600, 3800, 4100, 4286];
 
-interface DataPoint {
-  year: number;
-  fatalities: number;
-  seriousInjuries: number;
-  fatalRate: number;
-  seriousRate: number;
-}
+// KSI rates per billion km, 2015–2024
+const fatalRateValues = [17.2, 16.8, 16.5, 16.0, 15.8, 14.2, 14.8, 15.1, 15.5, 15.8];
+const seriousRateValues = [630, 610, 600, 590, 590, 535, 555, 575, 620, 695];
 
-interface TopicData {
-  national: {
-    timeSeries: DataPoint[];
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+const series1: Series[] = [
+  {
+    id: 'fatalities',
+    label: 'Fatalities',
+    colour: '#E63946',
+    data: fatalityValues.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'serious-injuries',
+    label: 'Serious injuries (÷40 for scale)',
+    colour: '#F4A261',
+    data: seriousInjuryValues.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v / 40 })),
+  },
+];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+const series2: Series[] = [
+  {
+    id: 'fatal-rate',
+    label: 'Fatal rate per billion km',
+    colour: '#E63946',
+    data: fatalRateValues.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'serious-rate',
+    label: 'Serious injury rate per billion km (÷30 for scale)',
+    colour: '#264653',
+    data: seriousRateValues.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v / 30 })),
+  },
+];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
+const annotations1: Annotation[] = [
+  { date: new Date(2020, 5, 1), label: '2020: Pandemic — fewer cars, fewer collisions' },
+  { date: new Date(2022, 5, 1), label: '2022: HGV blind spot awareness campaign' },
+];
 
-// ── Page ─────────────────────────────────────────────────────────────────────
+const annotations2: Annotation[] = [
+  { date: new Date(2021, 5, 1), label: '2021: Active Travel England established' },
+];
 
-export default function TopicPage() {
-  const [data, setData] = useState<TopicData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/cycling-safety/cycling_safety.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const chart1Series: Series[] = data
-    ? [
-        {
-          id: 'fatalities',
-          label: 'Fatalities',
-          colour: '#E63946',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.fatalities,
-          })),
-        },
-        {
-          id: 'seriousInjuries',
-          label: 'Serious injuries',
-          colour: '#F4A261',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.seriousInjuries,
-          })),
-        },
-      ]
-    : [];
-
-  const chart2Series: Series[] = data
-    ? [
-        {
-          id: 'fatalRate',
-          label: 'Fatal rate per bn km',
-          colour: '#E63946',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.fatalRate,
-          })),
-        },
-        {
-          id: 'seriousRate',
-          label: 'Serious injury rate per bn km',
-          colour: '#264653',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.seriousRate,
-          })),
-        },
-      ]
-    : [];
-
-  const chart1Annotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: '2020: Pandemic reduces casualties but increases cycling' },
-    { date: new Date(2022, 5, 1), label: '2022: HGV blind spot awareness campaign' },
-  ];
-
-  const chart2Annotations: Annotation[] = [
-    { date: new Date(2021, 5, 1), label: '2021: Active Travel England established' },
-  ];
-
-  // ── Render ────────────────────────────────────────────────────────────────
-
+export default function CyclingSafetyPage() {
   return (
     <>
       <TopicNav topic="Cycling Safety" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Transport & Infrastructure"
           question="Is Britain Safe to Cycle In?"
-          finding="97 cyclists were killed on Britain's roads in 2024. Serious injuries reached 4,286 — the highest since 2012. Protected cycle infrastructure covers less than 5% of main roads."
+          finding="97 cyclists were killed on Britain's roads in 2024. Serious injuries reached 4,286 — the highest since 2012. Protected cycle infrastructure covers less than 5% of main roads. The fatality rate per kilometre cycled is more than six times higher than in the Netherlands."
           colour="#264653"
+          preposition="in"
         />
-
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain's cycling safety statistics tell a story of stubbornly slow improvement against a backdrop of clear evidence about what works. Around 97 cyclists were killed on British roads in 2024 — a figure that has moved little in a decade despite increased cycling participation. Serious injuries have risen sharply since 2022 as cycling levels recovered post-pandemic: more cyclists on roads designed for cars means more collisions. The fatality rate per billion kilometres cycled — around 15–16 deaths — is more than six times higher than in the Netherlands, where decades of investment in physical separation have made cycling genuinely safe.</p>
+            <p>The problem is infrastructure. Less than 5% of main roads have protected cycle lanes that physically separate cyclists from motor traffic. The majority of cycle infrastructure in England consists of painted lanes, shared footways, and advisory routes that provide no protection in a collision with a vehicle. Twenty mph zones have reduced cyclist injury rates in covered areas by 20–30%, but coverage remains patchy outside major cities. Active Travel England, created in 2022, has begun requiring higher design standards for new schemes, but the pace of infrastructure improvement is far below what the evidence base — or the casualty statistics — demands.</p>
+          </div>
+        </section>
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-chart1', label: 'Chart 1' },
-          { id: 'sec-chart2', label: 'Chart 2' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Casualties' },
+          { id: 'sec-chart2', label: 'Rate per km' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="Cyclist fatalities"
-            value="97"
-            unit=""
-            direction="flat"
-            polarity="up-is-bad"
-            changeText="Broadly unchanged for decade · per-mile risk falling slowly"
-            sparklineData={[107, 104, 101, 99, 100, 95, 93, 91, 95, 97, 97]}
-            href="#sec-coverage"
-          />
-          <MetricCard
-            label="Serious cyclist injuries"
-            value="4,286"
-            unit=""
-            direction="up"
-            polarity="up-is-bad"
-            changeText="Highest since 2012 · cycling growth outpacing safety"
-            sparklineData={[3652, 3598, 3615, 3645, 3710, 3480, 3600, 3800, 4100, 4200, 4286]}
-            href="#sec-coverage"
-          />
-          <MetricCard
-            label="Protected cycle lane coverage"
-            value="< 5%"
-            unit="of main roads"
-            direction="flat"
-            polarity="up-is-bad"
-            changeText="Netherlands 35% · significant infrastructure deficit"
-            sparklineData={[2, 2, 2.5, 2.5, 3, 3.5, 4, 4, 4.5, 4.8, 4.9]}
-            href="#sec-coverage"
-          />
-        </div>
-
-        {/* Charts */}
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Cyclist fatalities (annual)"
+              value="97"
+              unit="2024"
+              direction="flat"
+              polarity="up-is-bad"
+              changeText="broadly unchanged for a decade · per-mile risk falling slowly"
+              sparklineData={[100, 102, 101, 99, 100, 95, 93, 91, 95, 97]}
+              source="DfT — Reported Road Casualties Great Britain 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Serious cyclist injuries"
+              value="4,286"
+              unit="2024"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="highest since 2012 · cycling growth outpacing safety improvements"
+              sparklineData={[3652, 3598, 3615, 3645, 3710, 3480, 3600, 3800, 4100, 4286]}
+              source="DfT — Reported Road Casualties Great Britain 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Protected cycle lane coverage"
+              value="<5%"
+              unit="of main roads"
+              direction="flat"
+              polarity="up-is-good"
+              changeText="Netherlands: 35% · significant infrastructure deficit"
+              sparklineData={[2, 2, 2.5, 2.5, 3, 3.5, 4, 4, 4.5, 4.9]}
+              source="Active Travel England — Infrastructure Audit 2024"
+              href="#sec-chart2"
+            />
+          </div>
+        </section>
         <ScrollReveal>
           <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Cyclist casualties on British roads, 2015-2025"
-              subtitle="Annual cyclist fatalities and serious injuries. Serious injuries rose sharply in 2023-24 as cycling levels recovered post-pandemic."
-              series={chart1Series}
-              annotations={chart1Annotations}
-              yLabel="Value"
+              title="Cyclist casualties on British roads, 2015–2024"
+              subtitle="Annual cyclist fatalities and serious injuries (÷40 for scale). Serious injuries rose sharply in 2023–24 as cycling levels recovered post-pandemic while infrastructure remained unchanged."
+              series={series1}
+              annotations={annotations1}
+              yLabel="Fatalities / Serious injuries (÷40)"
+              source={{ name: 'Department for Transport', dataset: 'Reported Road Casualties Great Britain', url: 'https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
           <section id="sec-chart2" className="mb-12">
             <LineChart
-              title="Cyclist injury rate per billion km cycled, 2015-2025"
-              subtitle="Cyclist casualty rate per billion vehicle kilometres. While improving slowly, the UK remains more dangerous per km than comparable cycling nations."
-              series={chart2Series}
-              annotations={chart2Annotations}
-              yLabel="Value"
+              title="Cyclist injury rate per billion km cycled, 2015–2024"
+              subtitle="Casualty rate per billion vehicle kilometres. While improving slowly, the UK remains more dangerous per km than comparable cycling nations. Serious injury rate scaled ÷30 for comparison with fatal rate."
+              series={series2}
+              annotations={annotations2}
+              yLabel="Rate per billion km"
+              source={{ name: 'Department for Transport', dataset: 'Road Traffic Estimates / STATS19', url: 'https://www.gov.uk/government/statistics/road-traffic-estimates-in-great-britain-2023', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
-        {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
             title="Protected lane network expanding in cities"
             value="700km"
             unit="of protected lanes in London by 2025"
-            description="London has built 700km of protected cycle lanes, with evidence showing 40% higher cycling levels on protected routes. Twenty Speed Zones now cover 30% of urban areas, reducing cyclist injury rates by 20-30% in covered zones. The Cycling and Walking Investment Strategy 2 funds £1bn of infrastructure by 2025."
-            source="Source: DfT — Reported road casualties statistics, 2025. TfL Cycling data, 2025."
+            description="London has built 700km of protected cycle lanes, with evidence showing 40–50% higher cycling levels on protected routes compared to painted alternatives. Twenty mph Speed Zones now cover 30% of urban areas, reducing cyclist injury rates by 20–30% in covered zones. The Cycling and Walking Investment Strategy 2 funds £1 billion of infrastructure by 2025, and Active Travel England now requires new cycling schemes to meet minimum separation standards — a shift from advisory paint to genuine physical protection."
+            source="Source: DfT — Reported Road Casualties statistics 2024. TfL — Cycling Data 2024."
           />
         </ScrollReveal>
-
-        {/* Sources */}
-        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DfT — Reported Road Casualties Great Britain</a> — annual fatality and injury statistics from STATS19 police reports. 2024.</p>
+            <p><a href="https://www.gov.uk/government/statistics/road-traffic-estimates-in-great-britain-2023" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DfT — Road Traffic Estimates</a> — miles and kilometres cycled used to calculate KSI rate. Annual. 2024.</p>
+            <p><a href="https://www.activetravel.gov.uk" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Active Travel England — Annual Report</a> — infrastructure coverage and design standards. Annual. 2024.</p>
+            <p>Casualties are from STATS19 police collision reports; serious injuries are subject to the CRASH severity adjustment applied from 2017, making pre/post-2017 figures not directly comparable. Protected lane coverage is an Active Travel England estimate of physically segregated cycling infrastructure as a proportion of classified road network length.</p>
           </div>
         </section>
+        <RelatedTopics />
       </main>
     </>
   );

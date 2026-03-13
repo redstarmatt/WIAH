@@ -1,174 +1,164 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface FoodWasteData {
-  national: {
-    timeSeries: Array<{ date: string; totalWasteMt: number; householdWasteMt: number }>;
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+// Total food waste (million tonnes), 2015–2023
+const totalWasteMt = [10.2, 10.0, 9.8, 9.7, 9.6, 9.5, 9.5, 9.5, 9.5];
+// Household food waste (million tonnes), 2015–2023
+const householdWasteMt = [7.3, 7.2, 7.1, 7.0, 6.9, 6.8, 6.6, 6.5, 6.4];
+// Avoidable waste (%), 2015–2023
+const avoidablePct = [75, 75, 74, 74, 74, 73, 73, 73, 73];
+// Unavoidable waste (%), 2015–2023
+const unavoidablePct = [25, 25, 26, 26, 26, 27, 27, 27, 27];
 
-function yearToDate(y: string): Date {
-  return new Date(parseInt(y), 6, 1);
-}
+const totalSeries: Series[] = [
+  {
+    id: 'total-waste',
+    label: 'Total food waste (million tonnes)',
+    colour: '#F4A261',
+    data: totalWasteMt.map((v, i) => ({ date: new Date(2015 + i, 6, 1), value: v })),
+  },
+  {
+    id: 'household-waste',
+    label: 'Household food waste (million tonnes)',
+    colour: '#264653',
+    data: householdWasteMt.map((v, i) => ({ date: new Date(2015 + i, 6, 1), value: v })),
+  },
+];
+
+const avoidableSeries: Series[] = [
+  {
+    id: 'avoidable',
+    label: 'Avoidable waste (%)',
+    colour: '#E63946',
+    data: avoidablePct.map((v, i) => ({ date: new Date(2015 + i, 6, 1), value: v })),
+  },
+  {
+    id: 'unavoidable',
+    label: 'Unavoidable waste (%)',
+    colour: '#2A9D8F',
+    data: unavoidablePct.map((v, i) => ({ date: new Date(2015 + i, 6, 1), value: v })),
+  },
+];
+
+const wasteAnnotations: Annotation[] = [
+  { date: new Date(2015, 6, 1), label: '2015: Courtauld Commitment 2025 launched' },
+  { date: new Date(2021, 6, 1), label: '2021: WRAP targets — 50% reduction by 2030' },
+];
+
+const avoidableAnnotations: Annotation[] = [
+  { date: new Date(2019, 6, 1), label: "2019: 'Fresher for Longer' campaign launched" },
+];
 
 export default function FoodWastePage() {
-  const [data, setData] = useState<FoodWasteData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/food-waste/food_waste.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  const totalSeries: Series[] = data
-    ? [
-        {
-          id: 'total-waste',
-          label: 'Total food waste',
-          colour: '#F4A261',
-          data: data.national.timeSeries.map(d => ({ date: yearToDate(d.date), value: d.totalWasteMt })),
-        },
-        {
-          id: 'household-waste',
-          label: 'Household food waste',
-          colour: '#264653',
-          data: data.national.timeSeries.map(d => ({ date: yearToDate(d.date), value: d.householdWasteMt })),
-        },
-      ]
-    : [];
-
   return (
     <>
       <TopicNav topic="Food Waste" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Food Waste"
           question="How Much Food Does Britain Throw Away?"
-          finding="The UK wastes 9.5 million tonnes of food annually — worth £19bn — with households responsible for around 70% by weight. Simultaneously, 7 million people struggle to afford adequate food. The waste is declining slowly but is on track to miss the UN Sustainable Development Goal of halving food waste by 2030."
+          finding="The UK wastes 9.5 million tonnes of food annually — worth £19bn — with households responsible for around 70%. The waste is declining slowly but is on track to miss the UN goal of halving food waste by 2030."
           colour="#F4A261"
+          preposition="with"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK wastes approximately 9.5 million tonnes of food annually across the whole supply chain — from farm gate through manufacturing, retail, and hospitality, to the household bin. Of this, households account for around 6.4 million tonnes, or roughly 70% by weight. WRAP — the Waste and Resources Action Programme — estimates the household food waste bill at £19bn per year, or around £700 per household, making it among the most significant items in the average household budget after housing, transport, and energy. The food thrown away is not predominantly food past its use-by date: around 50% of household food waste is food that was still edible when discarded, including bread, salad, and fruit. Environmental impact compounds the economic cost: food waste is responsible for approximately 6% of global greenhouse gas emissions when production, transportation, and decomposition are all accounted for. In the UK, the embedded carbon in wasted food amounts to around 25 million tonnes of CO2-equivalent per year. Yet the scale of food waste coexists with acute food insecurity: the Food Foundation estimates that around 7 million UK adults live in households that experienced food insecurity in 2023 — sometimes going a whole day without eating.</p>
-            <p>Progress on reducing food waste has been made but at a slow and insufficient rate. WRAP data shows total UK food waste fell from an estimated 11.5 million tonnes in 2007 to 9.5 million tonnes in 2023 — a reduction of around 18% over sixteen years. The headline improvement is partly methodological: WRAP revised its measurement approach in 2018, making the comparison imperfect. Over the more recent period 2015–2023, total waste has barely moved. The UN Sustainable Development Goal 12.3 requires a 50% reduction in food waste per capita at retail and consumer level by 2030 — an ambition that would require the UK to cut household waste from around 6.4 million tonnes to around 3.2 million tonnes in seven years. At current rates of progress, the UK will fall far short. The Courtauld Commitment — a voluntary industry agreement led by WRAP — has engaged major retailers and food manufacturers in waste reduction targets, but voluntary action has inherent limits and progress has been slower than hoped.</p>
-            </div>
+            <p>The UK wastes approximately 9.5 million tonnes of food annually across the whole supply chain — from farm gate through manufacturing, retail, and hospitality, to the household bin. Households account for around 6.4 million tonnes, or roughly 70% by weight. WRAP estimates the household food waste bill at £19 billion per year, or around £700 per household. Critically, around 50% of household food waste is food that was still edible when discarded, including bread, salad, and fruit. Environmental impact compounds the economic cost: the embedded carbon in wasted food amounts to around 25 million tonnes of CO2-equivalent per year. Yet the scale of food waste coexists with acute food insecurity: approximately 7 million UK adults experienced food insecurity in 2023.</p>
+            <p>Progress on reducing food waste has been made but at a slow and insufficient rate. WRAP data shows total UK food waste fell from an estimated 11.5 million tonnes in 2007 to 9.5 million tonnes in 2023 — a reduction of around 18% over sixteen years. Over the more recent period 2015–2023, total waste has barely moved. The UN Sustainable Development Goal 12.3 requires a 50% reduction in food waste per capita at retail and consumer level by 2030 — an ambition that would require the UK to cut household waste from around 6.4 million tonnes to around 3.2 million tonnes in seven years. At current rates of progress, the UK will fall far short.</p>
+          </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
           { id: 'sec-waste', label: 'Waste Trends' },
+          { id: 'sec-avoidable', label: 'Avoidable Waste' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
               label="Total food waste per year"
-              value="9.5M"
+              value="9.5m"
               unit="tonnes"
               direction="down"
               polarity="up-is-bad"
               changeText="Down 18% since 2007 but progress has stalled — SDG target: 50% by 2030"
-              sparklineData={[10.2, 10.0, 9.8, 9.6, 9.4, 9.5, 9.5, 9.5]}
-              source="WRAP — UK food waste estimates 2024"
+              sparklineData={totalWasteMt.slice(-8)}
+              source="WRAP · UK food waste estimates 2024"
               href="#sec-waste"
             />
             <MetricCard
               label="Cost of household food waste"
               value="£19bn"
+              unit=""
               direction="down"
               polarity="up-is-bad"
-              changeText="Around £700 per household per year — 50% of wasted food was still edible"
+              changeText="Around £700 per household per year · 50% of wasted food was still edible"
               sparklineData={[21, 20, 20, 19, 19, 19, 19, 19]}
-              source="WRAP — Household food waste in the UK 2023"
+              source="WRAP · Household food waste in the UK 2023"
               href="#sec-waste"
             />
             <MetricCard
-              label="Food waste per household per year"
-              value="£700"
-              direction="down"
+              label="Avoidable food waste share"
+              value="73%"
+              unit=""
+              direction="flat"
               polarity="up-is-bad"
-              changeText="Equivalent to 20 meals per month per household thrown in the bin"
-              sparklineData={[760, 740, 720, 710, 700, 700, 700, 700]}
-              source="WRAP — Household food waste measurement 2023"
-              href="#sec-waste"
+              changeText="Could have been eaten · not out-of-date or inedible"
+              sparklineData={avoidablePct.slice(-8)}
+              source="WRAP · Household food waste measurement 2023"
+              href="#sec-avoidable"
             />
           </div>
-        </ScrollReveal>
-
+        </section>
         <ScrollReveal>
           <section id="sec-waste" className="mb-12">
             <LineChart
               title="UK food waste by source, 2015–2023"
-              subtitle="Total and household food waste in million tonnes. WRAP food surplus and waste estimates."
+              subtitle="Total and household food waste in million tonnes. Progress has been slow and the 2030 SDG target is likely to be missed at current rates."
               series={totalSeries}
+              annotations={wasteAnnotations}
               yLabel="Million tonnes"
+              source={{ name: 'WRAP', dataset: 'UK food surplus and waste estimates', url: 'https://wrap.org.uk/resources/report/food-surplus-and-waste-uk-key-facts', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
+        <ScrollReveal>
+          <section id="sec-avoidable" className="mb-12">
+            <LineChart
+              title="Avoidable vs unavoidable food waste, UK, 2015–2023"
+              subtitle="Percentage of food waste that was avoidable (could have been eaten) vs unavoidable (peel, bones, coffee grounds etc.)."
+              series={avoidableSeries}
+              annotations={avoidableAnnotations}
+              yLabel="Share (%)"
+              source={{ name: 'WRAP', dataset: 'Household food waste measurement methodology', url: 'https://wrap.org.uk/resources/report/food-surplus-and-waste-uk-key-facts', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
         <ScrollReveal>
           <PositiveCallout
-            title="18% Reduction Since 2007"
+            title="18% reduction since 2007 and food redistribution growing"
             value="9.5Mt"
             unit="down from 11.5Mt in 2007"
-            description="UK food waste has fallen 18% since 2007, among the better OECD performances. Too Good To Go, OLIO, and community fridges are redistributing food at scale. The Courtauld Commitment 2030 — signed by retailers accounting for over 80% of UK grocery sales — targets a further 50% reduction in food waste by 2030. Mandatory food waste reporting for large businesses, if enacted, would drive faster progress through transparency and accountability."
+            description="UK food waste has fallen 18% since 2007, among the better OECD performances. Too Good To Go, OLIO, and community fridges are redistributing food at scale. The Courtauld Commitment 2030 — signed by retailers accounting for over 80% of UK grocery sales — targets a further 50% reduction. Surplus food redistribution grew 30% in 2024, rescuing 250,000 tonnes for food banks and community groups. Mandatory food waste reporting for large businesses, if enacted, would drive faster progress through transparency."
             source="Source: WRAP — UK food waste estimates; Courtauld Commitment 2030 progress report."
           />
         </ScrollReveal>
-
-        <ScrollReveal>
-          <section className="mt-8 pt-12 border-t border-wiah-border">
-            <h2 className="font-sans text-2xl font-bold text-wiah-black mb-6">Sources &amp; Methodology</h2>
-            {data && (
-              <div className="font-sans text-sm space-y-6">
-                <div>
-                  <h3 className="font-bold text-wiah-black mb-2">Data sources</h3>
-                  <ul className="space-y-2">
-                    {data.metadata.sources.map((src, idx) => (
-                      <li key={idx} className="text-wiah-mid">
-                        <strong className="text-wiah-black">{src.name}:</strong> 
-                        <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue">
-                          {src.dataset}
-                        </a>
-                         ({src.frequency})
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-bold text-wiah-black mb-2">Methodology</h3>
-                  <p className="text-wiah-mid">{data.metadata.methodology}</p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-wiah-black mb-2">Known issues</h3>
-                  <ul className="list-disc list-inside space-y-1">
-                    {data.metadata.knownIssues.map((issue, idx) => (
-                      <li key={idx} className="text-wiah-mid">{issue}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-          </section>
-        </ScrollReveal>
-              <RelatedTopics />
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://wrap.org.uk/resources/report/food-surplus-and-waste-uk-key-facts" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">WRAP — UK food surplus and waste estimates</a> — Annual estimates covering all stages of the supply chain. Retrieved 2025.</p>
+            <p>WRAP revised its measurement approach in 2018, making comparison with pre-2018 figures imperfect. All figures shown use the consistent post-2018 methodology.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
     </>
   );

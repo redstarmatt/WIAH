@@ -1,236 +1,144 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// Estimated adults experiencing domestic abuse (millions), 2012–2024 — ONS CSEW
+const prevalenceValues = [3.1, 3.2, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.1, 3.9, 3.8, 3.7, 3.8];
 
-interface PrevalencePoint {
-  year: number;
-  estimatedVictims: number;
-  prevalencePercent: number;
-  note?: string;
-}
+// Police-recorded DA offences (thousands), 2012–2024 — Home Office
+const policeValues = [430, 450, 500, 580, 660, 730, 800, 860, 900, 850, 910, 940, 970];
 
-interface PoliceRecordedPoint {
-  year: number;
-  offences: number;
-  note?: string;
-}
+const prevalenceSeries: Series[] = [
+  {
+    id: 'prevalence',
+    label: 'Estimated victims (millions)',
+    colour: '#E63946',
+    data: prevalenceValues.map((v, i) => ({ date: new Date(2012 + i, 5, 1), value: v })),
+  },
+];
 
-interface ProsecutionRatePoint {
-  year: number;
-  chargeRate: number;
-  convictionRate: number;
-  note?: string;
-}
+const policeSeries: Series[] = [
+  {
+    id: 'police-recorded',
+    label: 'Police-recorded DA offences (thousands)',
+    colour: '#6B7280',
+    data: policeValues.map((v, i) => ({ date: new Date(2012 + i, 5, 1), value: v })),
+  },
+];
 
-interface DomesticAbuseData {
-  prevalence: PrevalencePoint[];
-  policeRecorded: PoliceRecordedPoint[];
-  prosecutionRate: ProsecutionRatePoint[];
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-function sparkFrom(arr: number[], n = 10) {
-  return arr.slice(-n);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
+const annotations: Annotation[] = [
+  { date: new Date(2015, 5, 1), label: '2015: Coercive control criminalised' },
+  { date: new Date(2021, 5, 1), label: '2021: Domestic Abuse Act' },
+];
 
 export default function DomesticAbuseViolencePage() {
-  const [data, setData] = useState<DomesticAbuseData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/domestic-abuse-violence/domestic_abuse_violence.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const prevalenceSeries: Series[] = data
-    ? [{
-        id: 'prevalence',
-        label: 'Estimated victims (millions)',
-        colour: '#E63946',
-        data: data.prevalence.map(d => ({
-          date: yearToDate(d.year),
-          value: d.estimatedVictims / 1000000,
-        })),
-      }]
-    : [];
-
-  const policeRecordedSeries: Series[] = data
-    ? [{
-        id: 'police-recorded',
-        label: 'Police-recorded DA offences',
-        colour: '#6B7280',
-        data: data.policeRecorded.map(d => ({
-          date: yearToDate(d.year),
-          value: d.offences / 1000,
-        })),
-      }]
-    : [];
-
-  const prosecutionSeries: Series[] = data
-    ? [{
-        id: 'charge-rate',
-        label: 'Charge rate (%)',
-        colour: '#E63946',
-        data: data.prosecutionRate.map(d => ({
-          date: yearToDate(d.year),
-          value: d.chargeRate,
-        })),
-      }]
-    : [];
-
-  const latestPrevalence = data?.prevalence[data.prevalence.length - 1];
-  const covidPeak = data?.prevalence.find(d => d.year === 2021);
-  const latestPolice = data?.policeRecorded[data.policeRecorded.length - 1];
-  const earliestPolice = data?.policeRecorded[0];
-  const latestProsecution = data?.prosecutionRate[data.prosecutionRate.length - 1];
-  const earliestProsecution = data?.prosecutionRate[0];
-
   return (
     <>
       <TopicNav topic="Justice" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Justice"
           question="How much domestic abuse happens behind closed doors?"
-          finding="An estimated 3.8 million people experience domestic abuse each year in England and Wales. Around 81% of incidents are never reported to police. Of those that are, fewer than 5% result in a charge. Refuge services turn away 64% of referrals due to lack of space."
+          finding="An estimated 3.8 million people experience domestic abuse each year in England and Wales. Around 81% of incidents are never reported to police — and fewer than 5% of recorded offences result in a charge."
           colour="#E63946"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Domestic abuse is the most widespread violent crime in England and Wales, yet it remains the least visible. The Crime Survey for England and Wales estimates that 3.8 million adults experienced some form of domestic abuse in the year to March 2024 — around 7.8% of the adult population. The true number is almost certainly higher: the survey excludes people living in refuges, hostels, and other institutions, and underreporting is endemic. An estimated 81% of victims never contact the police. Among those who do, the journey from report to justice is vanishingly narrow: just 4.9% of police-recorded domestic abuse offences resulted in a charge in 2023/24, down from 12.2% a decade earlier. The collapse in charge rates reflects systemic failures — overwhelmed police domestic abuse units, delays in digital evidence processing, and high victim withdrawal rates driven by fear, coercion, and loss of confidence in the system.</p>
-            <p>The Domestic Abuse Act 2021 was a landmark piece of legislation. For the first time, it created a statutory definition of domestic abuse that includes coercive and controlling behaviour, economic abuse, and psychological manipulation — not just physical violence. It also established the office of the Domestic Abuse Commissioner, placed a duty on local authorities to provide support in safe accommodation, and banned the cross-examination of victims by their abusers in family courts. The recognition of coercive control, in particular, marked a fundamental shift in how the law understands abuse: not as isolated incidents, but as a sustained pattern of domination. However, implementation has been uneven. Many local authorities have struggled to meet their new duties without adequate ring-fenced funding, and refuge provision remains in crisis. Women's Aid reports that 64% of referrals to refuges are turned away, primarily due to a shortage of bed spaces. Specialist services for Black and minoritised women, disabled women, and LGBT+ survivors are especially scarce.</p>
-            <p>The COVID-19 pandemic laid bare the scale of the crisis. Calls to the National Domestic Abuse Helpline surged 65% during the first lockdown. Killings of women and girls by men rose sharply. The enforced proximity of lockdown trapped victims with their abusers, with nowhere to go and reduced access to support. Children, too, are victims: an estimated 1 in 5 children in England have been exposed to domestic abuse. The long-term effects on child development, mental health, and educational attainment are well documented. The Ask for ANI scheme, launched in January 2021, allows victims to discreetly signal for help at participating pharmacies using a codeword — a practical innovation, but one that underscores how few safe exit routes exist. The fundamental challenge remains: domestic abuse is a crime of epidemic proportions that is met with a response designed for rare events. Until funding, policing, and court capacity match the scale of the problem, the gap between the abuse that happens and the justice that follows will continue to widen.</p>
+            <p>Domestic abuse is the most widespread violent crime in England and Wales, yet it remains the least visible. The Crime Survey for England and Wales estimates that 3.8 million adults experienced some form of domestic abuse in the year to March 2024 — around 7.8% of the adult population. An estimated 81% of victims never contact the police. Among those who do, the journey from report to justice is vanishingly narrow: just 4.9% of police-recorded domestic abuse offences resulted in a charge in 2023/24, down from 12.2% a decade earlier. The collapse in charge rates reflects systemic failures — overwhelmed police domestic abuse units, delays in digital evidence processing, and high victim withdrawal rates driven by fear, coercion, and loss of confidence in the system.</p>
+            <p>The Domestic Abuse Act 2021 created the first statutory definition of domestic abuse, recognising coercive control, economic abuse, and psychological manipulation alongside physical violence. It established the office of the Domestic Abuse Commissioner, placed duties on local authorities to fund safe accommodation, and banned perpetrators from cross-examining victims in family courts. However, implementation has been uneven. Refuge provision remains in crisis — Women's Aid reports that 64% of referrals are turned away, primarily due to a shortage of bed spaces. Specialist services for Black and minoritised women, disabled women, and LGBT+ survivors are especially scarce.</p>
           </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-prevalence', label: 'Prevalence' },
-          { id: 'sec-police', label: 'Police-recorded' },
-          { id: 'sec-prosecution', label: 'Prosecution rate' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Prevalence' },
+          { id: 'sec-chart2', label: 'Police-recorded' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="People experiencing domestic abuse"
-            value={latestPrevalence ? `${(latestPrevalence.estimatedVictims / 1000000).toFixed(1)}M` : '3.8M'}
-            unit="/yr"
-            direction="flat"
-            polarity="up-is-bad"
-            changeText="7.8% of adult population · flat trend · survey likely undercounts"
-            sparklineData={
-              data ? sparkFrom(data.prevalence.map(d => d.estimatedVictims)) : []
-            }
-            source="ONS · Crime Survey for England and Wales, year to Mar 2024"
-            href="#sec-prevalence"
-          />
-          <MetricCard
-            label="Incidents never reported to police"
-            value="81%"
-            unit=""
-            direction="flat"
-            polarity="up-is-bad"
-            changeText="Underreporting rate · consistent across survey years"
-            sparklineData={[81, 82, 83, 82, 81, 80, 81, 82, 81, 81]}
-            source="ONS · Crime Survey for England and Wales, 2024"
-            href="#sec-police"
-          />
-          <MetricCard
-            label="Refuge referrals turned away"
-            value="64%"
-            unit=""
-            direction="up"
-            polarity="up-is-bad"
-            changeText="Primarily due to lack of bed spaces · rising from 58% in 2020"
-            sparklineData={[55, 56, 58, 59, 60, 58, 60, 62, 63, 64]}
-            source="Women's Aid · Annual Audit, 2023/24"
-            href="#sec-prosecution"
-          />
-        </div>
-
-        {/* Chart 1: Prevalence */}
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="People experiencing domestic abuse"
+              value="3.8M"
+              unit="/yr"
+              direction="flat"
+              polarity="up-is-bad"
+              changeText="7.8% of adult population · survey likely undercounts"
+              sparklineData={[3.1, 3.3, 3.5, 3.7, 3.9, 4.1, 3.9, 3.8]}
+              source="ONS · Crime Survey for England and Wales, 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Incidents never reported to police"
+              value="81%"
+              unit=""
+              direction="flat"
+              polarity="up-is-bad"
+              changeText="Consistent across survey years · fear is primary barrier"
+              sparklineData={[80, 81, 82, 81, 80, 81, 82, 81]}
+              source="ONS · Crime Survey for England and Wales, 2024"
+              href="#sec-chart2"
+            />
+            <MetricCard
+              label="Refuge referrals turned away"
+              value="64%"
+              unit=""
+              direction="up"
+              polarity="up-is-bad"
+              changeText="Lack of bed spaces · up from 58% in 2020"
+              sparklineData={[55, 56, 58, 59, 60, 62, 63, 64]}
+              source="Women's Aid · Annual Audit 2023/24"
+              href="#sec-chart2"
+            />
+          </div>
+        </section>
         <ScrollReveal>
-          <div id="sec-prevalence" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              series={prevalenceSeries}
               title="Estimated adults experiencing domestic abuse, England & Wales, 2012–2024"
-              subtitle="Millions of adults reporting domestic abuse in the preceding 12 months. COVID-19 lockdowns drove a sharp surge in 2020–21."
+              subtitle="Millions of adults reporting domestic abuse in the preceding 12 months. COVID-19 lockdowns drove a surge in 2020–21."
+              series={prevalenceSeries}
+              annotations={annotations}
               yLabel="Victims (millions)"
-              source={{
-                name: 'ONS',
-                dataset: 'Crime Survey for England and Wales — Domestic Abuse',
-                frequency: 'annual',
-              }}
+              source={{ name: 'ONS', dataset: 'Crime Survey for England and Wales — Domestic Abuse', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/domesticabuseinenglandandwalesappendixtables', frequency: 'annual', date: '2024' }}
             />
-          </div>
+          </section>
         </ScrollReveal>
-
-        {/* Chart 2: Police-recorded DA */}
         <ScrollReveal>
-          <div id="sec-police" className="mb-12">
+          <section id="sec-chart2" className="mb-12">
             <LineChart
-              series={policeRecordedSeries}
-              title="Police-recorded domestic abuse-related offences, England & Wales, 2012–2024"
-              subtitle="Thousands of offences. Rising trend reflects improved recording practices, not necessarily more abuse."
+              title="Police-recorded domestic abuse offences, England & Wales, 2012–2024"
+              subtitle="Thousands of offences with a domestic abuse flag. Rising trend partly reflects improved recording, not only more abuse."
+              series={policeSeries}
+              annotations={[]}
               yLabel="Offences (thousands)"
-              source={{
-                name: 'ONS / Home Office',
-                dataset: 'Police Recorded Crime — Domestic Abuse',
-                frequency: 'annual',
-              }}
+              source={{ name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/collections/crime-outcomes-in-england-and-wales-statistics', frequency: 'annual', date: '2024' }}
             />
-          </div>
+          </section>
         </ScrollReveal>
-
-        {/* Chart 3: Prosecution rate */}
-        <ScrollReveal>
-          <div id="sec-prosecution" className="mb-12">
-            <LineChart
-              series={prosecutionSeries}
-              title="Domestic abuse charge rate, England & Wales, 2012–2024"
-              subtitle="Percentage of police-recorded DA offences resulting in a charge. Halved over a decade."
-              yLabel="Charge rate (%)"
-              source={{
-                name: 'CPS / Home Office',
-                dataset: 'Crime Outcomes in England and Wales',
-                frequency: 'annual',
-              }}
-            />
-          </div>
-        </ScrollReveal>
-
-        {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
             title="Domestic Abuse Act 2021 and Ask for ANI"
             value="Landmark reform"
-            description="The Domestic Abuse Act 2021 created the first statutory definition of domestic abuse, recognising coercive control, economic abuse, and psychological manipulation alongside physical violence. It established the Domestic Abuse Commissioner, placed duties on local authorities to fund safe accommodation, and banned perpetrators from cross-examining victims in family courts. The Ask for ANI (Action Needed Immediately) scheme, launched in January 2021, enables victims to use a codeword at over 6,000 participating pharmacies to discreetly access support and contact police. These reforms represent the most significant legislative advance in domestic abuse protection in a generation — though implementation and funding remain critical challenges."
+            description="The Domestic Abuse Act 2021 created the first statutory definition of domestic abuse, established the Domestic Abuse Commissioner, placed duties on local authorities to fund safe accommodation, and banned perpetrators from cross-examining victims in family courts. The Ask for ANI (Action Needed Immediately) scheme, launched in 2021, enables victims to use a codeword at over 6,000 participating pharmacies to discreetly access support. These are the most significant legislative advances in domestic abuse protection in a generation."
             source="Source: Home Office — Domestic Abuse Act 2021. Ask for ANI — Home Office / Hestia, 2021–present."
           />
         </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwalesoverview/latest" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Domestic abuse in England and Wales overview</a> — annual CSEW-based estimate of prevalence.</p>
+            <p><a href="https://www.gov.uk/government/collections/crime-outcomes-in-england-and-wales-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Home Office — Crime Outcomes in England and Wales</a> — police-recorded DA offences and charge rates.</p>
+            <p><a href="https://www.womensaid.org.uk/what-we-do/research-and-publications/annual-audit/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Women's Aid — Annual Audit</a> — refuge referral and capacity data.</p>
+          </div>
+        </section>
         <RelatedTopics />
       </main>
     </>

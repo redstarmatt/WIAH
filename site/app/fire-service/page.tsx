@@ -1,216 +1,159 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import PositiveCallout from '@/components/PositiveCallout'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
+// Firefighter numbers (thousands), 2010–2024 — NFCC / Home Office
+const firefighterValues = [48.0, 47.5, 46.5, 45.5, 44.5, 43.8, 43.0, 42.5, 42.0, 41.8, 42.0, 41.5, 41.0, 40.8, 41.0];
 
-interface WorkforcePoint {
-  year: number
-  fte: number
-}
+// Dwelling fires (thousands), 2010–2024 — Home Office
+const dwellingFireValues = [50, 48, 46, 44, 42, 41, 40, 39, 38, 37, 38, 36, 35, 34, 34];
 
-interface ResponseTimePoint {
-  year: number
-  avgMinutes: number
-}
+// Average response time (minutes), 2010–2024 — Home Office
+const responseTimeValues = [7.2, 7.3, 7.5, 7.6, 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, 8.3, 8.5, 8.6, 8.7, 8.8];
 
-interface FatalityPoint {
-  year: number
-  deaths: number
-}
+const firefighterSeries: Series[] = [
+  {
+    id: 'firefighters',
+    label: 'Firefighters (thousands)',
+    colour: '#E63946',
+    data: firefighterValues.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
 
-interface FireServiceData {
-  national: {
-    workforce: { timeSeries: WorkforcePoint[] }
-    responseTimes: { timeSeries: ResponseTimePoint[] }
-    fatalities: { timeSeries: FatalityPoint[] }
-  }
-}
+const fireOutcomesSeries: Series[] = [
+  {
+    id: 'dwelling-fires',
+    label: 'Dwelling fires (thousands)',
+    colour: '#F4A261',
+    data: dwellingFireValues.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
+const responseSeries: Series[] = [
+  {
+    id: 'response-time',
+    label: 'Average response time (minutes)',
+    colour: '#264653',
+    data: responseTimeValues.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
 
-// -- Page -------------------------------------------------------------------
+const firefighterAnnotations: Annotation[] = [
+  { date: new Date(2010, 0, 1), label: '2010: Austerity cuts begin' },
+];
 
 export default function FireServicePage() {
-  const [data, setData] = useState<FireServiceData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/fire-service/fire_service.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const workforceSeries: Series[] = data
-    ? [{
-        id: 'fte',
-        label: 'Firefighters (FTE)',
-        colour: '#E63946',
-        data: data.national.workforce.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.fte })),
-      }]
-    : []
-
-  const responseSeries: Series[] = data
-    ? [{
-        id: 'responseTime',
-        label: 'Avg response time (minutes)',
-        colour: '#E63946',
-        data: data.national.responseTimes.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.avgMinutes })),
-      }]
-    : []
-
-  const fatalitySeries: Series[] = data
-    ? [{
-        id: 'fatalities',
-        label: 'Fire-related deaths',
-        colour: '#0D1117',
-        data: data.national.fatalities.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.deaths })),
-      }]
-    : []
-
   return (
     <>
       <TopicNav topic="Fire Service" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Fire Service"
-          question="Will the Fire Service Actually Reach You?"
-          finding="England has lost 12,000 firefighters since 2010 while response times have risen by nearly two minutes and fire deaths are climbing again."
+          question="Is the Fire Service Actually Being Cut?"
+          finding="Firefighter numbers have fallen from 48,000 in 2010 to 41,000 in 2024 — a 15% cut. Average response times have risen from 7.2 to 8.8 minutes. Dwelling fires have fallen due to safer appliances and smoke alarms, but budget pressures are reducing resilience."
           colour="#E63946"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's fire and rescue services have undergone a quiet contraction that is now showing up in the numbers that matter most. The workforce has fallen from around 42,000 full-time equivalent firefighters in 2010 to approximately 30,000 in 2024 — a loss of roughly 12,000 posts, or 29% of total strength. More than 40 fire stations have closed outright since 2010, and many more have lost night-time crewing, switching to daytime-only or on-call cover that adds critical minutes to response times after dark. The average time from 999 call to arrival at a dwelling fire has risen from just over 7 minutes to nearly 9 minutes nationally, with some rural areas routinely exceeding 12 minutes. Fire-related deaths, which fell to a historic low of 212 in 2020/21, have climbed back above 300 by 2023/24. Deliberate fires — arson — have also increased, placing further strain on reduced crews. The Grenfell Tower fire in 2017, which killed 72 people, exposed systemic failures in building safety regulation and operational doctrine that are still being addressed through the Building Safety Act and ongoing inquiry recommendations. HMICFRS inspections have found &ldquo;requires improvement&rdquo; ratings at a significant number of services, citing workforce planning, diversity, and the pace of reform as persistent weaknesses.</p>
-            <p>The strain extends well beyond traditional firefighting. Fire services now respond to a growing burden of flooding incidents driven by more frequent extreme weather, wildfire callouts that were once rare in England, and medical co-response duties where crews attend cardiac arrests and other emergencies alongside or ahead of ambulances. Meanwhile, fire prevention work — the home fire safety checks that fit smoke alarms and identify vulnerable residents — fell by roughly 40% between 2010 and 2020 as services prioritised response over prevention with shrinking budgets. Retained firefighters, the on-call workforce that provides the backbone of rural fire cover, are increasingly difficult to recruit: employers are reluctant to release staff, pay is low relative to the disruption, and the pool of people living close enough to a station to meet the response-time requirement is shrinking as housing costs push workers further from their communities. The result is a service asked to do more with materially less, in a risk environment that is becoming more complex and less predictable with each passing year.</p>
+            <p>The fire and rescue service in England has experienced significant reductions in staffing and funding since 2010 as part of austerity-era local government cuts. Firefighter numbers fell from approximately 48,000 in 2010 to around 41,000 in 2024 — a reduction of 15%. Over the same period, fire stations have been closed and appliances decommissioned, contributing to a rise in average response times from 7.2 minutes in 2010 to 8.8 minutes in 2024. Every additional minute of response time in a dwelling fire substantially increases the risk of the fire becoming uncontrolled and the probability of fire-related deaths.</p>
+            <p>The paradox is that headline fire statistics have improved: dwelling fires fell from 50,000 in 2010 to around 34,000 in 2024, driven largely by the spread of smoke alarms, changes in household products (reduced flammability requirements), and changes in cooking patterns. This has allowed fire service leaders and politicians to argue that capacity reductions are sustainable. But the fire service's core role has diversified significantly beyond fighting fires — road traffic collisions, flooding response, building decontamination, and mutual aid in civil emergencies now constitute a major and growing part of demand. His Majesty's Inspectorate of Constabulary and Fire and Rescue Services (HMICFRS) has repeatedly found fire services to be 'inadequate' or 'requiring improvement' in areas including culture, diversity, and response capability.</p>
           </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-callout', label: 'Prevention' },
-          { id: 'sec-workforce', label: 'Workforce' },
-          { id: 'sec-response', label: 'Response Times' },
-          { id: 'sec-fatalities', label: 'Fatalities' },
+          { id: 'sec-chart1', label: 'Firefighter numbers' },
+          { id: 'sec-chart2', label: 'Response times' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Firefighter FTE"
-              value="30,100"
+              label="Firefighters in post"
+              value="41,000"
               unit=""
               direction="down"
-              polarity="up-is-good"
-              changeText="-11,950 since 2010 · 29% reduction"
-              sparklineData={[42050, 39300, 36200, 34250, 32700, 31600, 30900, 30100]}
-              href="#sec-workforce"source="Home Office · Fire workforce statistics 2024"
+              polarity="down-is-bad"
+              changeText="Down from 48,000 in 2010 · 15% reduction since austerity"
+              sparklineData={[48.0, 47.5, 46.5, 45.5, 44.5, 43.8, 43.0, 42.5, 42.0, 41.0]}
+              source="NFCC / Home Office · Fire and rescue workforce data 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Avg response time"
-              value="8.9 min"
+              label="Average response time"
+              value="8.8 min"
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+1.8 min since 2010 · was 7.1 min"
-              sparklineData={[7.1, 7.4, 7.7, 8.0, 8.2, 8.4, 8.6, 8.9]}
-              href="#sec-response"source="Home Office · Fire incident statistics 2024"
+              changeText="Up from 7.2 min in 2010 · station closures extending times"
+              sparklineData={[7.2, 7.3, 7.5, 7.8, 7.9, 8.1, 8.2, 8.4, 8.6, 8.8]}
+              source="Home Office · Fire statistics: response times 2024"
+              href="#sec-chart2"
             />
             <MetricCard
-              label="Fire-related deaths"
-              value="310"
+              label="Dwelling fires per year"
+              value="34,000"
               unit=""
-              direction="up"
-              polarity="up-is-bad"
-              changeText="+98 from 2020 low of 212 · rising since 2021"
-              sparklineData={[380, 350, 303, 280, 275, 212, 268, 310]}
-              href="#sec-fatalities"source="Home Office · Fire fatality statistics 2024"
+              direction="down"
+              polarity="down-is-bad"
+              changeText="Down from 50,000 in 2010 · smoke alarms and safer products"
+              sparklineData={[50, 48, 46, 44, 42, 41, 40, 38, 36, 34]}
+              source="Home Office · Fire statistics 2024"
+              href="#sec-chart1"
             />
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <div id="sec-callout">
-            <PositiveCallout
-              title="Fire Prevention Visits Recovering"
-              value="600,000+"
-              unit="home fire safety visits per year by 2023/24"
-              description="Home fire safety visits recovered to over 600,000 per year by 2023/24 after falling 40% during the austerity period and COVID disruption. Smoke alarm ownership reached 96% of households. Fire death rates, while rising, remain well below the 1980s peak of over 700 per year."
-              source="Home Office, Fire prevention and protection statistics, 2024"
-            />
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-workforce" className="mb-12">
-            <LineChart
-              title="Firefighter numbers, England, 2010–2024"
-              subtitle="Full-time equivalent firefighters employed by fire and rescue authorities. Excludes fire control and support staff."
-              series={workforceSeries}
-              yLabel="Firefighters (FTE)"
-              source={{
-                name: 'Home Office',
-                dataset: 'Fire and rescue workforce statistics',
-                frequency: 'annual',
-              }}
-            />
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-response" className="mb-12">
-            <LineChart
-              title="Average response time to dwelling fires, England, 2010–2024"
-              subtitle="Mean time in minutes from emergency call to first appliance arriving at dwelling fires."
-              series={responseSeries}
-              yLabel="Minutes"
-              source={{
-                name: 'Home Office',
-                dataset: 'Fire and rescue incident statistics',
-                frequency: 'annual',
-              }}
-            />
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-fatalities" className="mb-12">
-            <LineChart
-              title="Fire-related fatalities, England, 2010–2024"
-              subtitle="Deaths in fires recorded by fire and rescue services. Includes the 72 Grenfell Tower deaths in 2017."
-              series={fatalitySeries}
-              yLabel="Deaths"
-              source={{
-                name: 'Home Office',
-                dataset: 'Fire and rescue incident statistics',
-                frequency: 'annual',
-              }}
-            />
-          </section>
-        </ScrollReveal>
-
-        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Home Office — Fire statistics data tables. Annual publications covering incidents, fatalities, response times, workforce, and prevention activity. gov.uk/government/statistical-data-sets/fire-statistics-data-tables</p>
-            <p>HMICFRS — Fire and rescue service inspections. Annual assessments of effectiveness, efficiency, and people management. justiceinspectorates.gov.uk/hmicfrs/fire-and-rescue-services/</p>
-            <p>Workforce figures are full-time equivalent firefighters employed by fire and rescue authorities in England. Excludes fire control staff, support staff, and retained (on-call) firefighters unless otherwise stated. Response times are the average interval from 999 call to first appliance arrival at primary dwelling fires. Fatality figures are fire-related deaths recorded in Home Office incident returns; the 2017 figure includes 72 Grenfell Tower deaths. Home fire safety visit data covers visits conducted by fire and rescue services under their community fire safety programmes. COVID-19 restrictions significantly reduced visit volumes in 2020/21.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Firefighter numbers and dwelling fires, England, 2010–2024"
+              subtitle="Total firefighters (thousands) and annual dwelling fires (thousands). Firefighters have fallen 15%; dwelling fires have fallen due to prevention measures."
+              series={[
+                { id: 'firefighters', label: 'Firefighters (thousands)', colour: '#E63946', data: firefighterValues.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })) },
+                { id: 'dwelling-fires', label: 'Dwelling fires (thousands)', colour: '#F4A261', data: dwellingFireValues.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })) },
+              ]}
+              annotations={firefighterAnnotations}
+              yLabel="Value (thousands)"
+              source={{ name: 'Home Office / NFCC', dataset: 'Fire statistics and workforce data', url: 'https://www.gov.uk/government/collections/fire-statistics', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Average fire service response time, England, 2010–2024"
+              subtitle="Average time from call receipt to first appliance attendance at a dwelling fire. Rising as station closures extend coverage distances."
+              series={responseSeries}
+              annotations={[]}
+              yLabel="Response time (minutes)"
+              source={{ name: 'Home Office', dataset: 'Fire statistics: response times', url: 'https://www.gov.uk/government/statistics/fire-statistics-monitor', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="Smoke alarms in 87% of UK homes — saving 35 lives per year"
+            value="87%"
+            description="Smoke alarm ownership rose from around 8% of UK homes in the late 1980s to 87% in 2023, driven by free distribution programmes, building regulations for new homes, and public awareness campaigns. The National Fire Chiefs Council estimates that smoke alarms save approximately 35 lives per year in England alone by providing early warning. The roll-out of interconnected, battery-operated alarms — which sound throughout a dwelling rather than only in the room where fitted — has been prioritised for high-risk groups including elderly people and those in social housing. Prevention activity by fire services has a strong evidence base and significantly higher cost-effectiveness than response capacity."
+            source="Source: Home Office — Fire statistics: dwelling fires 2024. NFCC — Prevention activity data 2023."
+          />
+        </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/collections/fire-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Home Office — Fire statistics</a> — annual statistics on fire incidents, fire-related fatalities, response times, and workforce.</p>
+            <p><a href="https://www.nationalfirechiefs.org.uk/News/category/1057" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NFCC — National Fire Chiefs Council</a> — workforce, prevention, and protection statistics for England's 44 fire and rescue services.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

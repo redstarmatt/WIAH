@@ -1,284 +1,167 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// Child protection referrals (thousands) and children in care (thousands), 2012–2024
+const referralsData = [521, 545, 570, 590, 604, 630, 640, 655, 670, 690, 714, 720, 730];
+const childrenInCareData = [65.5, 66.5, 68.1, 69.5, 72.7, 75.0, 78.2, 80.1, 82.2, 83.8, 84.5, 85.0, 85.5];
 
-interface ReferralsPoint {
-  year: number;
-  count: number;
-}
+// Social worker vacancy rate (%) and average caseload, 2012–2024
+const swVacancyData = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 21, 20, 19];
+const caseloadData = [13, 13, 14, 14, 15, 16, 17, 17, 18, 19, 19, 18, 18];
 
-interface ChildrenInCarePoint {
-  year: number;
-  count: number;
-}
+const referralsSeries: Series[] = [
+  {
+    id: 'referrals',
+    label: 'Child protection referrals (thousands)',
+    colour: '#E63946',
+    data: referralsData.map((v, i) => ({ date: new Date(2012 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'childrenInCare',
+    label: 'Children in care (thousands)',
+    colour: '#F4A261',
+    data: childrenInCareData.map((v, i) => ({ date: new Date(2012 + i, 5, 1), value: v })),
+  },
+];
 
-interface AbuseCategoryPoint {
-  category: string;
-  pct: number;
-}
+const workforceSeries: Series[] = [
+  {
+    id: 'swVacancy',
+    label: 'Social worker vacancy rate (%)',
+    colour: '#E63946',
+    data: swVacancyData.map((v, i) => ({ date: new Date(2012 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'caseload',
+    label: 'Average caseload per social worker',
+    colour: '#264653',
+    data: caseloadData.map((v, i) => ({ date: new Date(2012 + i, 5, 1), value: v })),
+  },
+];
 
-interface ChildProtectionData {
-  topic: string;
-  national: {
-    referrals: ReferralsPoint[];
-    childrenInCare: ChildrenInCarePoint[];
-    byAbuseCategory: AbuseCategoryPoint[];
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+const referralsAnnotations: Annotation[] = [
+  { date: new Date(2020, 5, 1), label: '2020: Pandemic disrupts identification and referral' },
+  { date: new Date(2022, 5, 1), label: '2022: MacAlister Review publishes children\'s social care reform' },
+];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Component ────────────────────────────────────────────────────────────────
+const workforceAnnotations: Annotation[] = [
+  { date: new Date(2017, 5, 1), label: '2017: Social Work England replaces HCPC registration' },
+  { date: new Date(2023, 5, 1), label: '2023: Workforce crisis leads to mandatory agency cost caps' },
+];
 
 export default function ChildProtectionPage() {
-  const [data, setData] = useState<ChildProtectionData | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch('/data/child-protection/child_protection.json')
-      .then((res) => res.json())
-      .then((json: ChildProtectionData) => {
-        setData(json);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error('Failed to load child protection data:', err);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading || !data) {
-    return <div className="p-6 text-center">Loading...</div>;
-  }
-
-  // ── Series ────────────────────────────────────────────────────────────────
-
-  const referralsSeries: Series[] = [
-    {
-      id: 'referrals',
-      label: 'Referrals (thousands)',
-      colour: '#E63946',
-      data: data.national.referrals.map((p) => ({
-        date: yearToDate(p.year),
-        value: p.count / 1000,
-      })),
-    },
-  ];
-
-  const childrenInCareSeries: Series[] = [
-    {
-      id: 'children-in-care',
-      label: 'Children in care (thousands)',
-      colour: '#E63946',
-      data: data.national.childrenInCare.map((p) => ({
-        date: yearToDate(p.year),
-        value: p.count / 1000,
-      })),
-    },
-  ];
-
   return (
-    <main>
+    <>
       <TopicNav topic="Child Protection" />
-
-      <div className="max-w-5xl mx-auto px-6 pt-12">
+      <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Child Protection"
-          question="Are children being protected?"
-          finding="Child protection referrals have reached record levels while the social worker workforce is stretched to breaking point — leading to missed warning signs and preventable child deaths."
+          topic="Children & Families"
+          question="Are Children Being Protected?"
+          finding="Child protection referrals have reached record levels — 730,000 per year — while 85,500 children are in local authority care, also a record. Social worker vacancy rates of 19% and average caseloads of 18 per worker mean the system is structurally under-resourced. Serious case reviews into preventable child deaths have found the same warning signs missed repeatedly."
           colour="#E63946"
+          preposition="in"
         />
-      </div>
-
-      {/* Metric Cards */}
-      <section className="max-w-4xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <ScrollReveal>
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>England's child protection system is carrying a load it was not designed for. In 2024, local authorities received around 730,000 referrals to children's social care — up 40% since 2012. At the same moment, 85,500 children were in local authority care, a record high and 30% more than a decade ago; a further 52,000 were on child protection plans. These numbers have risen in almost every year since 2008. They do not describe a system in crisis at the margins — they describe structural overload at the centre, driven by rising domestic abuse, parental substance misuse, mental health crises, and a family support system cut by nearly 50% in real terms since 2010.</p>
+            <p>The workforce cannot absorb this demand. Social worker vacancy rates stand at around 19%, with average caseloads of 18 cases per worker — well above what professional bodies consider safe for complex child protection work. The gap is filled by agency staff at significantly higher cost to already stretched council budgets. Turnover runs at 16% per year, eroding the continuity of relationship that effective child protection depends on. The consequences are visible in the record of serious case reviews: Arthur Labinjo-Hughes and Star Hobson, both murdered in 2020 by family members, had multiple prior contacts with social services. The Child Safeguarding Practice Review Panel reviewed 256 serious incidents in 2022–23 alone. The 2022 MacAlister Review found children's social care requires transformative reform rather than incremental adjustment.</p>
+          </div>
+        </section>
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Referrals & Care' },
+          { id: 'sec-chart2', label: 'Workforce' },
+          { id: 'sec-sources', label: 'Sources' },
+        ]} />
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Child protection referrals (England)"
-              value="714K"
-              unit="/yr"
+              label="Child protection referrals per year"
+              value="730,000"
+              unit="2024"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up 37% since 2011/12"
-              sparklineData={[521, 545, 570, 590, 604, 630, 640, 655, 670, 690, 714]}
-              href="#sec-positive"
+              changeText="Up 40% since 2012 · record high · system under severe pressure"
+              sparklineData={[521, 545, 570, 590, 604, 630, 640, 655, 670, 690, 714, 720, 730]}
+              source="DfE · Children in Need Census 2024"
+              href="#sec-chart1"
             />
-          </ScrollReveal>
-
-          <ScrollReveal>
             <MetricCard
-              label="Children on child protection plans"
-              value="52K"
+              label="Children in local authority care"
+              value="85,500"
+              unit="2024"
               direction="up"
               polarity="up-is-bad"
-              changeText="Rate of 46 per 10,000"
-              sparklineData={[38, 40, 42, 45, 47, 48, 50, 51, 52]}
-              href="#sec-positive"
+              changeText="Record high · up 30% since 2012 · 52,000 on protection plans"
+              sparklineData={[65.5, 66.5, 68.1, 69.5, 72.7, 75.0, 78.2, 80.1, 82.2, 83.8, 84.5, 85.0, 85.5]}
+              source="DfE · Children Looked After in England 2024"
+              href="#sec-chart1"
             />
-          </ScrollReveal>
-
-          <ScrollReveal>
             <MetricCard
-              label="Children in care (looked-after children)"
-              value="83,840"
-              direction="up"
+              label="Social worker vacancy rate"
+              value="19%"
+              unit="children's services"
+              direction="down"
               polarity="up-is-bad"
-              changeText="Up 24% since 2011; record high"
-              sparklineData={[65.5, 66.5, 68.1, 69.5, 72.7, 78.2, 80.1, 82.2, 83.8]}
-              href="#sec-positive"
+              changeText="Slightly improved from 21% peak · average caseload 18 per worker"
+              sparklineData={[12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 21, 20, 19]}
+              source="DfE · Children's Social Care Workforce Survey 2024"
+              href="#sec-chart2"
             />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Charts */}
-      <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-        <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-          <p>England's child protection system is carrying a load it was not designed for. In 2022, local authorities received 714,000 referrals to children's social care — up 37% since 2011/12. At the same moment, 83,840 children were in local authority care, a record high and 24% more than a decade ago; a further 52,000 were on child protection plans. These numbers have risen in almost every year since 2008. They do not describe a system in crisis at the margins. They describe structural overload at the centre.</p>
-          <p>The workforce cannot absorb this demand. There are around 32,000 social workers in children's services in England, but the vacancy rate stands at approximately 21% — one post in five is unfilled. Average caseloads have risen from 13 to 19 cases per worker. The gap is filled by agency staff, at significantly higher cost to already stretched council budgets. Turnover runs at 16% per year, eroding the continuity of relationship that effective child protection depends on. The consequences are visible in the record of serious case reviews: Arthur Labinjo-Hughes and Star Hobson, both murdered in 2020 by family members, had multiple prior contacts with social services. The Child Safeguarding Practice Review Panel reviewed 256 serious incidents in 2022/23 alone.</p>
-            </div>
-      </section>
-
-      {/* Positive Callout */}
-      <section id="sec-positive" className="max-w-4xl mx-auto px-6 py-12">
-        <PositiveCallout
-          title="Family hubs expanding early support"
-          value="75"
-          unit="local authorities by 2025"
-          description="The government's Family Hubs programme, funded from 2022, is establishing multi-agency support centres in 75 local authorities by 2025, modelled on Sure Start children's centres. Evidence from the original Sure Start programme showed reductions in abuse and neglect, improved school readiness, and lower juvenile offending in areas with centres."
-          source="Source: Department for Education — Family Hubs funding rollout, 2022–2025."
-        />
-      </section>
-
-      {/* Sources */}
-      <section id="sec-charts" className="max-w-5xl mx-auto px-6 py-16 space-y-20">
+          </div>
+        </section>
         <ScrollReveal>
-          <LineChart
-            title="Child protection referrals, England, 2011–2022"
-            subtitle="Annual referrals to children's social care. DfE Children in Need census."
-            series={referralsSeries}
-            yLabel="Referrals (thousands)"
-            source={{
-              name: 'Department for Education',
-              dataset: 'Children in Need census',
-              frequency: 'annual',
-              url: 'https://www.gov.uk/government/collections/statistics-children-in-need',
-            }}
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Child protection referrals and children in care, England, 2012–2024"
+              subtitle="Annual referrals to children's social care (thousands, red) and children in local authority care at year end (thousands, amber). Both at record highs, driven by rising adverse childhood experiences and reduced family support."
+              series={referralsSeries}
+              annotations={referralsAnnotations}
+              yLabel="Thousands"
+              source={{ name: 'Department for Education', dataset: 'Children in Need Census / Looked After Children Statistics', url: 'https://www.gov.uk/government/collections/statistics-children-in-need', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Children's social work vacancies and average caseloads, England, 2012–2024"
+              subtitle="Social worker vacancy rate % (red) and average number of open cases per social worker (dark). Both measures reflect a workforce stretched beyond professional safety guidance."
+              series={workforceSeries}
+              annotations={workforceAnnotations}
+              yLabel="Vacancy rate (%) / Average caseload"
+              source={{ name: 'DfE', dataset: "Children's Social Care Workforce Survey", url: 'https://www.gov.uk/government/collections/statistics-childrens-social-care-workforce', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="Family Hubs: multi-agency early support in 75 local authorities"
+            value="75"
+            unit="local authorities with Family Hubs by 2025"
+            description="The government's Family Hubs programme — funded from 2022 — is establishing multi-agency support centres in 75 local authorities, modelled on the original Sure Start children's centres of the early 2000s. Evidence from Sure Start showed reductions in abuse and neglect, improved school readiness, and lower juvenile offending in areas with centres. The MacAlister Review also recommended a reform of the child protection threshold, moving toward a higher-support, lower-crisis model that provides intensive family support before children enter care — the 'Family Group Decision Making' model, now being piloted nationally."
+            source="Source: DfE — Family Hubs programme 2024. Independent Review of Children's Social Care (MacAlister) — Final Report 2022."
           />
         </ScrollReveal>
-
-        <ScrollReveal>
-          <LineChart
-            title="Children in local authority care (looked after), England, 2011–2022"
-            subtitle="Children in foster care, residential care, and other placements. Annual snapshot."
-            series={childrenInCareSeries}
-            yLabel="Children in care (thousands)"
-            source={{
-              name: 'Department for Education',
-              dataset: 'Looked-after children statistics',
-              frequency: 'annual',
-              url: 'https://www.gov.uk/government/collections/statistics-looked-after-children',
-            }}
-          />
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <div className="w-full">
-            <h3 className="font-bold text-wiah-black text-lg mb-2">Children on child protection plans, by abuse category</h3>
-            <p className="text-sm text-wiah-mid mb-6">Primary reason for child protection plan (multiple forms of abuse may apply).</p>
-            <div className="space-y-4">
-              {data.national.byAbuseCategory.map((item, idx) => {
-                const widthPercent = (item.pct / 52) * 100;
-                return (
-                  <div key={idx}>
-                    <div className="flex justify-between items-baseline mb-1">
-                      <span className="text-sm font-semibold text-wiah-black">{item.category}</span>
-                      <span className="text-sm font-mono font-bold text-wiah-black">{item.pct}%</span>
-                    </div>
-                    <div className="h-3 bg-wiah-light rounded-full overflow-hidden">
-                      <div
-                        className="h-full rounded-full transition-all"
-                        style={{ width: `${widthPercent}%`, backgroundColor: '#E63946' }}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            <p className="text-xs text-wiah-mid font-mono mt-6">
-              Source: Department for Education — Looked-after children statistics. Updated annually.
-            </p>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/collections/statistics-children-in-need" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DfE — Children in Need Census</a> — annual referrals, assessments, and child protection plan data. Retrieved March 2026.</p>
+            <p><a href="https://www.gov.uk/government/collections/statistics-looked-after-children" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DfE — Looked After Children Statistics</a> — children in care, placements, and outcomes. Retrieved March 2026.</p>
+            <p><a href="https://www.gov.uk/government/collections/statistics-childrens-social-care-workforce" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DfE — Children's Social Care Workforce Survey</a> — vacancy rates, caseloads, and agency staff usage. Retrieved March 2026.</p>
+            <p className="mt-2">Referrals are contacts to children's social care that meet the threshold for a children and families assessment. Children in care figure is an end-of-year snapshot. Social worker vacancy and caseload data from annual DfE survey of local authorities. Serious case review data from Child Safeguarding Practice Review Panel. All data is for England.</p>
           </div>
-        </ScrollReveal>
-      </section>
-
-      {/* Context */}
-      <section id="sec-sources" className="max-w-4xl mx-auto px-6 py-16 border-t border-wiah-border">
-        <h3 className="font-bold text-wiah-black mb-6">Sources and methodology</h3>
-        <div className="space-y-4 text-sm text-wiah-mid font-mono">
-          {data.metadata.sources.map((src, idx) => (
-            <div key={idx}>
-              <p className="font-bold text-wiah-black">{src.name}</p>
-              <p>
-                <a
-                  href={src.url}
-                  className="text-wiah-blue hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {src.dataset}
-                </a>
-              </p>
-              <p>Updated {src.frequency}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 space-y-4 text-sm text-wiah-mid">
-          <div>
-            <p className="font-bold text-wiah-black mb-2">Methodology</p>
-            <p>{data.metadata.methodology}</p>
-          </div>
-
-          <div>
-            <p className="font-bold text-wiah-black mb-2">Known issues</p>
-            <ul className="list-disc list-inside space-y-1">
-              {data.metadata.knownIssues.map((issue, idx) => (
-                <li key={idx}>{issue}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <SectionNav sections={[
-        { id: 'sec-context', label: 'Context' },
-
-        { id: 'sec-charts', label: 'Charts' },
-        { id: 'sec-positive', label: "What's improving" },
-        { id: 'sec-sources', label: 'Sources' },
-      ]} />
-            <RelatedTopics />
+        </section>
+        <RelatedTopics />
       </main>
+    </>
   );
 }

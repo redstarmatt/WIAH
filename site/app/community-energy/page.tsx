@@ -1,191 +1,103 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// Community energy installed capacity MW, 2015–2025 (Community Energy England)
+const capacityValues = [120, 145, 158, 162, 170, 178, 185, 195, 230, 280, 350];
 
-interface CapacityPoint {
-  year: number;
-  capacityMW: number;
-}
+// Annual investment £M, 2015–2025
+const investmentValues = [95, 105, 88, 72, 78, 105, 98, 120, 145, 180, 215];
 
-interface ProjectCountPoint {
-  year: number;
-  projectCount: number;
-}
+// Active project count, 2015–2025
+const projectValues = [290, 310, 315, 318, 320, 335, 355, 380, 410, 450, 480];
 
-interface InvestmentPoint {
-  year: number;
-  investmentMillions: number;
-}
+const series1: Series[] = [{
+  id: 'capacity',
+  label: 'Installed community energy capacity (MW)',
+  colour: '#2A9D8F',
+  data: capacityValues.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+}];
 
-interface CommunityEnergyData {
-  national: {
-    installedCapacity: {
-      timeSeries: CapacityPoint[];
-      latestYear: number;
-      latestMW: number;
-      note: string;
-    };
-    projectCount: {
-      timeSeries: ProjectCountPoint[];
-      latestYear: number;
-      latestCount: number;
-      note: string;
-    };
-    investment: {
-      timeSeries: InvestmentPoint[];
-      latestYear: number;
-      latestMillions: number;
-      note: string;
-    };
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+const series2: Series[] = [
+  {
+    id: 'investment',
+    label: 'Annual investment (£ millions)',
+    colour: '#2A9D8F',
+    data: investmentValues.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'projects',
+    label: 'Active projects (count)',
+    colour: '#264653',
+    data: projectValues.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+const annotations1: Annotation[] = [
+  { date: new Date(2015, 5, 1), label: '2015: Feed-in Tariff cuts' },
+  { date: new Date(2020, 5, 1), label: '2020: Smart Export Guarantee' },
+  { date: new Date(2024, 5, 1), label: '2024: Community Energy Fund' },
+];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
+const annotations2: Annotation[] = [
+  { date: new Date(2020, 5, 1), label: '2020: COVID delays' },
+  { date: new Date(2022, 5, 1), label: '2022: Energy crisis boost' },
+];
 
 export default function CommunityEnergyPage() {
-  const [data, setData] = useState<CommunityEnergyData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/community-energy/community_energy.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const capacitySeries: Series[] = data
-    ? [{
-        id: 'capacity',
-        label: 'Installed community energy capacity (MW)',
-        colour: '#2A9D8F',
-        data: data.national.installedCapacity.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.capacityMW,
-        })),
-      }]
-    : [];
-
-  const investmentSeries: Series[] = data
-    ? [
-        {
-          id: 'investment',
-          label: 'Annual investment (£ millions)',
-          colour: '#2A9D8F',
-          data: data.national.investment.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.investmentMillions,
-          })),
-        },
-        {
-          id: 'projects',
-          label: 'Active projects (count)',
-          colour: '#264653',
-          data: data.national.projectCount.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.projectCount,
-          })),
-        },
-      ]
-    : [];
-
-  const capacityAnnotations: Annotation[] = [
-    { date: new Date(2015, 5, 1), label: '2015: Feed-in Tariff cuts reduce viability' },
-    { date: new Date(2020, 5, 1), label: '2020: Smart Export Guarantee replaces FiT' },
-    { date: new Date(2024, 5, 1), label: '2024: Community Energy Fund launched' },
-  ];
-
-  const investmentAnnotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: '2020: COVID-19 delays — investment dips' },
-    { date: new Date(2022, 5, 1), label: '2022: Energy crisis — community interest surges' },
-  ];
-
-  // ── Sparkline helpers ────────────────────────────────────────────────────
-
-  const capacitySparkline = data
-    ? data.national.installedCapacity.timeSeries.map(d => d.capacityMW)
-    : [];
-  const projectSparkline = data
-    ? data.national.projectCount.timeSeries.map(d => d.projectCount)
-    : [];
-  const investmentSparkline = data
-    ? data.national.investment.timeSeries.map(d => d.investmentMillions)
-    : [];
-
-  // ── Render ────────────────────────────────────────────────────────────────
-
   return (
     <>
       <TopicNav topic="Community Energy" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Community Energy"
           question="Is Britain Building an Energy Democracy?"
-          finding="Community energy projects generate 350 MW across the UK — enough to power 350,000 homes. The sector has grown 80% since 2020 but faces barriers from grid connection costs and lack of local supply tariffs."
+          finding="Community energy projects generate 350 MW across the UK — enough to power 350,000 homes — but the sector faces major barriers from grid connection costs and the lack of local supply tariffs."
           colour="#2A9D8F"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              Community energy — electricity and heat generated by local cooperatives, community benefit societies, and social enterprises — has grown substantially since 2015 but remains a marginal part of the UK energy mix. The 480 organisations tracked by Community Energy England generate around 350 MW: significant in community terms but less than 0.2% of UK generation capacity. Solar dominates the technology mix, with a growing number of onshore wind and hydro projects. Scotland has been more supportive, with community energy embedded in national planning policy and dedicated ring-fenced funding.
-            </p>
-            <p>
-              The sector's fundamental obstacle is the electricity grid. Community generators cannot easily sell power directly to local customers — all generation must go through the national grid and back through licenced suppliers. Grid connection costs for new projects can be prohibitive, with waits of 7–10 years for connections in congested areas. The Feed-in Tariff cuts of 2015–2019 damaged viability, though the Smart Export Guarantee and rising wholesale prices have improved economics for new projects. Record investment of £215 million in 2025 reflects renewed confidence, but the structural barriers remain: without a local supply licence or community benefit tariff, most projects export cheaply and local residents pay full retail price.
-            </p>
+            <p>Community energy — electricity and heat generated by local cooperatives, community benefit societies, and social enterprises — has grown substantially since 2015 but remains a marginal part of the UK energy mix. The 480 organisations tracked by Community Energy England generate around 350 MW: significant in community terms but less than 0.2% of UK generation capacity. Solar dominates the technology mix, with a growing number of onshore wind and hydro projects. Scotland has been more supportive, with community energy embedded in national planning policy and dedicated ring-fenced funding through the Community and Renewable Energy Scheme.</p>
+            <p>The sector's fundamental obstacle is the electricity grid. Community generators cannot easily sell power directly to local customers — all generation must go through the national grid and back through licenced suppliers. Grid connection costs for new projects can be prohibitive, with waits of 7–10 years for connections in congested areas. The Feed-in Tariff cuts of 2015–2019 damaged viability, though the Smart Export Guarantee and rising wholesale prices have improved economics for new projects. Record investment of £215 million in 2025 reflects renewed confidence, but the structural barriers remain: without a local supply licence or community benefit tariff, most projects export cheaply while local residents pay full retail price.</p>
           </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-capacity', label: 'Capacity Growth' },
-          { id: 'sec-investment', label: 'Investment & Projects' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Capacity Growth' },
+          { id: 'sec-chart2', label: 'Investment & Projects' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Community energy installed capacity"
+              label="Community energy installed capacity (UK)"
               value="350 MW"
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="+80% since 2020 · Could reach 2,000 MW by 2030 with policy support"
-              sparklineData={capacitySparkline}
-              href="#sec-capacity"
+              changeText="+80% since 2020 · could reach 2,000 MW by 2030"
+              sparklineData={[170, 178, 185, 195, 230, 280, 350]}
+              source="Community Energy England — State of the Sector 2025"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Community energy projects (UK)"
+              label="Active community energy projects"
               value="480"
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="Up from 320 in 2018 · Solar dominant · Wind growing"
-              sparklineData={projectSparkline}
-              href="#sec-capacity"
+              changeText="up from 320 in 2018 · solar dominant · wind growing"
+              sparklineData={[320, 335, 355, 380, 410, 450, 480]}
+              source="Community Energy England — State of the Sector 2025"
+              href="#sec-chart1"
             />
             <MetricCard
               label="Annual community energy investment"
@@ -193,77 +105,56 @@ export default function CommunityEnergyPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="Record investment in 2025 · But grid connection costs rising"
-              sparklineData={investmentSparkline}
-              href="#sec-capacity"
+              changeText="record investment in 2025 · grid connection costs rising"
+              sparklineData={[78, 105, 98, 120, 145, 180, 215]}
+              source="Community Energy England — State of the Sector 2025"
+              href="#sec-chart2"
             />
-          </div>
-        
-
-        {/* Chart 1: Capacity growth */}
-        <ScrollReveal>
-          <section id="sec-capacity" className="mb-12">
-            <LineChart
-              title="Community energy installed capacity, UK, 2015–2025"
-              subtitle="Total installed generation capacity (MW) from community-owned energy projects in the UK. Includes solar, wind and hydro. Feed-in Tariff cuts slowed growth 2015–2019 before a recovery driven by the Smart Export Guarantee and rising energy prices."
-              series={capacitySeries}
-              annotations={capacityAnnotations}
-              yLabel="MW"
-            />
-          </section>
-        </ScrollReveal>
-
-        {/* Chart 2: Investment and project count */}
-        <ScrollReveal>
-          <section id="sec-investment" className="mb-12">
-            <LineChart
-              title="Annual investment and active project count, UK community energy, 2018–2025"
-              subtitle="Annual investment raised by community energy organisations (£ millions) and number of active community energy projects. 2020 dip reflects COVID-19 construction delays. Investment recovery to record levels in 2025."
-              series={investmentSeries}
-              annotations={investmentAnnotations}
-              yLabel="£M / Projects"
-            />
-          </section>
-        </ScrollReveal>
-
-        {/* Positive callout */}
-        <ScrollReveal>
-          <PositiveCallout
-            title="What's improving"
-            value="£10M"
-            unit="Community Energy Fund"
-            description="The Community Energy Fund launched in 2024 with £10 million to support new projects through development costs and grid connection. Local Electricity Bill campaigners secured an amendment requiring OFGEM to enable local energy tariffs — the first step towards allowing community generators to sell power directly to local customers. Scotland's Community and Renewable Energy Scheme (CARES) continues to fund feasibility, development and capital costs for community energy projects across Scotland, providing a model for English policy."
-            source="Source: DESNZ — Community Energy Fund prospectus 2024. OFGEM — Local Electricity Bill amendments."
-          />
-        </ScrollReveal>
-
-        {/* Sources */}
-        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
           </div>
         </section>
-              <RelatedTopics />
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Community energy installed capacity, UK, 2015–2025"
+              subtitle="Total installed generation capacity (MW) from community-owned energy projects. Feed-in Tariff cuts slowed growth 2015–2019; Smart Export Guarantee and energy prices drove recovery."
+              series={series1}
+              annotations={annotations1}
+              yLabel="MW"
+              source={{ name: 'Community Energy England', dataset: 'State of the Sector Report', url: 'https://communityenergyengland.org/pages/state-of-the-sector', frequency: 'annual', date: '2025' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Annual investment and active projects, UK community energy, 2015–2025"
+              subtitle="Annual investment raised (£ millions) and number of active community energy projects. 2020 dip reflects COVID-19 construction delays. Investment recovered to record levels in 2025."
+              series={series2}
+              annotations={annotations2}
+              yLabel="£M / Projects"
+              source={{ name: 'Community Energy England', dataset: 'State of the Sector Report', url: 'https://communityenergyengland.org/pages/state-of-the-sector', frequency: 'annual', date: '2025' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="Community Energy Fund and local supply reform"
+            value="£10M"
+            unit="Community Energy Fund launched 2024"
+            description="The Community Energy Fund launched in 2024 with £10 million to support new projects through development costs and grid connection. Local Electricity Bill campaigners secured an amendment requiring Ofgem to enable local energy tariffs — the first step towards allowing community generators to sell power directly to local customers. Scotland's Community and Renewable Energy Scheme (CARES) continues to provide a working model for English policy."
+            source="Source: DESNZ — Community Energy Fund prospectus 2024. Ofgem — Local Electricity Bill amendments."
+          />
+        </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://communityenergyengland.org/pages/state-of-the-sector" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Community Energy England — State of the Sector Report</a> — annual survey of UK community energy organisations. Updated annually.</p>
+            <p><a href="https://www.gov.uk/government/publications/community-energy-fund" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DESNZ — Community Energy Fund</a> — prospectus and programme data. Retrieved 2025.</p>
+            <p><a href="https://www.gov.scot/policies/renewable-and-low-carbon-energy/community-and-local-energy/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Scottish Government — Community and Renewable Energy Scheme (CARES)</a> — Scottish community energy support programme.</p>
+            <p>Capacity figures are for UK. Project count excludes projects under development. Investment figures include equity raised through community share offers and grant funding. Feed-in Tariff data is for England, Scotland, and Wales.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
     </>
   );

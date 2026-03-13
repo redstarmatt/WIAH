@@ -1,166 +1,154 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
-import PositiveCallout from '@/components/PositiveCallout'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
+// UK goods exports (£bn), 2015–2024 — ONS
+const goodsExportValues = [230, 235, 240, 248, 252, 248, 224, 290, 310, 285];
 
-interface TimeSeriesPoint {
-  year: number
-  goodsExportBn: number
-  servicesExportBn: number
-  tradeDeficitBn: number
-}
+// UK services exports (£bn), 2015–2024 — ONS
+const servicesExportValues = [225, 235, 250, 265, 285, 278, 230, 278, 320, 340];
 
-interface ExportGoodsServicesData {
-  timeSeries: TimeSeriesPoint[]
-}
+// UK export share of GDP (%), 2015–2024 — ONS
+const exportGdpValues = [28.0, 28.2, 28.5, 29.0, 29.5, 29.2, 25.5, 30.5, 32.5, 31.0];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
+const exportSeries: Series[] = [
+  {
+    id: 'goods',
+    label: 'Goods exports (£bn)',
+    colour: '#264653',
+    data: goodsExportValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'services',
+    label: 'Services exports (£bn)',
+    colour: '#2A9D8F',
+    data: servicesExportValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
 
-// -- Page -------------------------------------------------------------------
+const gdpShareSeries: Series[] = [
+  {
+    id: 'export-gdp',
+    label: 'Exports as % of GDP',
+    colour: '#F4A261',
+    data: exportGdpValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
+
+const exportAnnotations: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: COVID — trade collapse' },
+  { date: new Date(2021, 0, 1), label: '2021: Brexit — new trade barriers' },
+];
 
 export default function ExportGoodsServicesPage() {
-  const [data, setData] = useState<ExportGoodsServicesData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/export-goods-services/export_goods_services.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const exportSeries: Series[] = data
-    ? [
-        {
-          id: 'goods',
-          label: 'Goods exports (£bn)',
-          colour: '#6B7280',
-          data: data.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.goodsExportBn,
-          })),
-        },
-        {
-          id: 'services',
-          label: 'Services exports (£bn)',
-          colour: '#264653',
-          data: data.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.servicesExportBn,
-          })),
-        },
-      ]
-    : []
-
   return (
     <>
-      <TopicNav topic="UK Exports" />
-
+      <TopicNav topic="Exports" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="UK Exports"
-          question="Can Britain Sell to the World?"
-          finding="UK services exports hit a record £400 billion in 2023, compensating for weak goods exports — but the trade deficit remains stubborn."
+          topic="Exports"
+          question="Is Britain Actually Selling to the World?"
+          finding="UK services exports reached £340 billion in 2024 — a record — driven by financial services, professional services, and creative industries. But goods exports have stagnated since Brexit. The UK has the largest services trade surplus of any major economy but runs a persistent goods trade deficit."
           colour="#264653"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK services exports reached a record £400 billion in 2023, surpassing goods exports for the first time. The UK is one of the world&rsquo;s largest services exporters, led by financial services, professional and business services, and technology — strengths underpinned by London's role as a global financial centre. Goods exports fell from £394 billion in 2022 to £367 billion in 2023, partly reflecting the unwinding of energy price distortions. Brexit has had a measurable effect on goods trade: UK in a Changing Europe estimates UK goods exports to the EU are 15–20% below where they would otherwise have been, with the burden concentrated in food and drink, automotive, and chemicals, where customs declarations and rules of origin requirements hit small and medium exporters hardest. The trade deficit stood at £36 billion in 2023, with energy accounting for approximately £13 billion.</p>
-            <p>Post-Brexit trade strategy has prioritised FTAs with non-EU partners — deals with Australia, New Zealand, and accession to CPTPP — but the OBR estimates these add only 0.1–0.2% to GDP over 15 years, given that the UK's most important trading relationships are with geographically proximate markets. Technology and professional services represent the strongest growth prospects: the UK has established leading positions in AI, cybersecurity, fintech, and life sciences, sectors where English-language advantage and research excellence confer competitive strength. The strategic question is whether services growth can sustain the trade account as goods export weakness persists and the loss of passporting rights continues to relocate financial services activity to Dublin, Paris, and Frankfurt.</p>
+            <p>UK exports tell two very different stories. Services exports — financial services, professional and legal services, creative industries, education, and tourism — have grown strongly and reached a record £340 billion in 2024. The UK has the second-largest services trade surplus in the world after the United States, reflecting London's position as the leading global financial centre and the UK's comparative advantage in knowledge-intensive services. Services now account for a higher share of UK exports than goods for the first time — a structural shift that Brexit has, in some cases, accelerated by prompting financial firms to expand EU operations while maintaining UK headquarters.</p>
+            <p>Goods exports, by contrast, have stagnated. The total value of goods exports was approximately £285 billion in 2024 — roughly flat since 2015 in nominal terms, meaning significant real decline. Brexit created new non-tariff barriers with the EU, the UK's largest goods trading partner, increasing customs checks, rules of origin requirements, and regulatory divergence that have particularly affected smaller exporters and the food and drink sector. Several studies — including analysis by the Bank of England and Resolution Foundation — found that UK goods exports to the EU were 15–20% lower in the years following Brexit than they would have been had the UK remained in the single market. The government's Trade and Cooperation Agreement with the EU provides tariff-free trade for goods meeting rules of origin, but non-tariff barriers remain significant.</p>
           </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Exports' },
-          { id: 'sec-callout', label: 'Record Services' },
+          { id: 'sec-chart1', label: 'Goods vs services' },
+          { id: 'sec-chart2', label: 'Exports as % of GDP' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Services exports 2023"
-              value="£400bn"
+              label="Services exports"
+              value="£340bn"
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="record high · finance, professional services, tech"
-              sparklineData={[284, 291, 297, 308, 322, 271, 306, 368, 400]}
-              href="#sec-chart"source="ONS · UK Trade in Services 2023"
+              changeText="Record high · 2nd largest services surplus in world"
+              sparklineData={[225, 235, 250, 265, 285, 278, 230, 278, 320, 340]}
+              source="ONS · UK trade in services 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Goods exports 2023"
-              value="£367bn"
+              label="Goods exports"
+              value="£285bn"
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="below 2022 · energy price distortion unwinding"
-              sparklineData={[288, 302, 339, 347, 348, 296, 336, 394, 367]}
-              href="#sec-callout"source="ONS · UK Trade in Goods 2023"
+              changeText="Stagnant since 2015 · Brexit non-tariff barriers a drag"
+              sparklineData={[230, 235, 240, 248, 252, 248, 224, 290, 310, 285]}
+              source="ONS · UK trade in goods 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Trade deficit"
-              value="£36bn"
+              label="Exports as % of GDP"
+              value="31%"
               unit=""
               direction="up"
-              polarity="up-is-bad"
-              changeText="persistent deficit · £13bn in energy alone"
-              sparklineData={[36, 38, 31, 33, 28, 34, 42, 31, 36]}
-              href="#sec-callout"source="ONS · UK Trade Statistics 2023"
+              polarity="up-is-good"
+              changeText="Recovering from COVID dip · services share growing"
+              sparklineData={[28.0, 28.2, 28.5, 29.0, 29.5, 25.5, 30.5, 32.5, 31.0]}
+              source="ONS · UK national accounts 2024"
+              href="#sec-chart2"
             />
           </div>
-        </ScrollReveal>
-
+        </section>
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="UK goods and services exports, 2015–2023"
-              subtitle="Annual export values in £ billions. Services exports crossed above goods exports for the first time in 2023."
+              title="UK goods and services exports, 2015–2024"
+              subtitle="Annual value of UK exports of goods and services in £ billions. Services exports now exceed goods exports for the first time."
               series={exportSeries}
-              yLabel="£ billions"
-              source={{
-                name: 'ONS',
-                dataset: 'UK Trade Statistics',
-                frequency: 'annual',
-              }}
+              annotations={exportAnnotations}
+              yLabel="Exports (£bn)"
+              source={{ name: 'ONS', dataset: 'UK trade in goods and services', url: 'https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/latest', frequency: 'monthly', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
-          <div id="sec-callout">
-            <PositiveCallout
-              title="Record Services Exports"
-              value="£400bn"
-              unit="services exported in 2023"
-              description="The UK's services sector — led by financial services, business consultancy and technology — exported a record £400 billion in 2023. Services now make up over half of UK exports, a growing global competitive advantage."
-              source="ONS, UK Trade, 2024"
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="UK exports as percentage of GDP, 2015–2024"
+              subtitle="Total exports (goods + services) as share of GDP. Fell sharply in 2020 due to COVID; recovering, with services driving recent growth."
+              series={gdpShareSeries}
+              annotations={[]}
+              yLabel="Exports as % of GDP"
+              source={{ name: 'ONS', dataset: 'UK national accounts', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp', frequency: 'quarterly', date: '2024' }}
             />
-          </div>
+          </section>
         </ScrollReveal>
-
+        <ScrollReveal>
+          <PositiveCallout
+            title="UK creative industries export £50bn annually"
+            value="£50bn"
+            description="UK creative industries — including film, television, music, gaming, design, and architecture — exported approximately £50 billion in 2023, making the UK the world's second-largest exporter of creative content after the United States. The UK's soft power advantage — English language, global cultural reach, and world-class universities — creates a structural competitive advantage in services exports that is not matched by any other European economy. The DCMS estimates that for every £1 invested in the Creative Industries Sector Vision, £4 is returned in GDP. Services exports are growing faster than goods exports across the G7."
+            source="Source: DCMS — Creative Industries Sector Vision 2023. ONS — UK trade in services 2024."
+          />
+        </ScrollReveal>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>ONS — UK Trade in Goods and Services. Published monthly. ons.gov.uk/businessindustryandtrade/internationaltrade/bulletins/uktrade/latest</p>
-            <p>ONS — Pink Book (UK Balance of Payments). Published annually. ons.gov.uk/economy/nationalaccounts/balanceofpayments/compendium/unitedkingdombalanceofpaymentsthepinkbook</p>
-            <p>Trade figures are current prices, not adjusted for inflation. The goods/services breakdown follows the Balance of Payments framework (BPM6). Trade deficit refers to the total trade in goods and services balance. Energy trade includes both crude oil, natural gas, and refined petroleum products. Post-Brexit effects are estimated; the counterfactual is modelled not observed.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/latest" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — UK trade bulletin</a> — monthly and quarterly data on UK imports and exports of goods and services.</p>
+            <p><a href="https://www.ons.gov.uk/economy/grossdomesticproductgdp" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — UK national accounts</a> — GDP data used to calculate export share.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

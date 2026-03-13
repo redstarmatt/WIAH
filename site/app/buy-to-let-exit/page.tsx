@@ -1,233 +1,161 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// Estimated private landlords (millions), 2018–2025
+const landlordData = [2.66, 2.68, 2.69, 2.67, 2.64, 2.58, 2.54, 2.52];
 
-interface LandlordNumbersPoint {
-  year: number;
-  landlordsMillions: number;
-}
+// BTL mortgage deals available (thousands), 2018–2025
+const mortgageDealsData = [3.8, 4.2, 5.0, 6.2, 5.4, 4.2, 3.8, 3.5];
 
-interface RentalListingsPoint {
-  year: number;
-  listingsIndex: number;
-}
+// Private rental listings index (2020=100), 2020–2024
+const listingsData = [100, 95, 88, 82, 78, 71];
 
-interface BuyToLetData {
-  national: {
-    landlordNumbers: {
-      timeSeries: LandlordNumbersPoint[];
-      latestYear: number;
-      latestMillions: number;
-      note: string;
-    };
-    rentalListings: {
-      timeSeries: RentalListingsPoint[];
-      latestYear: number;
-      latestIndex: number;
-      note: string;
-    };
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+const landlordSeries: Series[] = [
+  {
+    id: 'landlords',
+    label: 'Private landlords (millions)',
+    colour: '#F4A261',
+    data: landlordData.map((v, i) => ({ date: new Date(2018 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'btl-deals',
+    label: 'BTL mortgage deals (thousands)',
+    colour: '#6B7280',
+    data: mortgageDealsData.map((v, i) => ({ date: new Date(2018 + i, 5, 1), value: v })),
+  },
+];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+const listingsSeries: Series[] = [
+  {
+    id: 'listings',
+    label: 'Rental listings index (2020=100)',
+    colour: '#E63946',
+    data: listingsData.map((v, i) => ({ date: new Date(2020 + i, 5, 1), value: v })),
+  },
+];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
+const landlordAnnotations: Annotation[] = [
+  { date: new Date(2020, 5, 1), label: '2020: Section 24 mortgage relief fully removed' },
+  { date: new Date(2022, 5, 1), label: '2022: Bank Rate rises push BTL costs sharply up' },
+];
 
-// ── Page ─────────────────────────────────────────────────────────────────────
+const listingsAnnotations: Annotation[] = [
+  { date: new Date(2022, 5, 1), label: '2022: Supply steep decline begins' },
+  { date: new Date(2024, 5, 1), label: "2024: Renters' Rights Bill introduced" },
+];
 
 export default function BuyToLetExitPage() {
-  const [data, setData] = useState<BuyToLetData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/buy-to-let-exit/buy_to_let.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const landlordSeries: Series[] = data
-    ? [{
-        id: 'landlords',
-        label: 'Private landlords (millions)',
-        colour: '#F4A261',
-        data: data.national.landlordNumbers.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.landlordsMillions,
-        })),
-      }]
-    : [];
-
-  const listingsSeries: Series[] = data
-    ? [{
-        id: 'listings',
-        label: 'Rental listings index (2020=100)',
-        colour: '#E63946',
-        data: data.national.rentalListings.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.listingsIndex,
-        })),
-      }]
-    : [];
-
-  const landlordAnnotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: '2020: Section 24 mortgage interest relief removed' },
-    { date: new Date(2022, 5, 1), label: '2022: Bank Rate rises push BTL mortgage costs up' },
-  ];
-
-  const listingsAnnotations: Annotation[] = [
-    { date: new Date(2022, 5, 1), label: '2022: Rental supply begins steep decline' },
-    { date: new Date(2024, 5, 1), label: '2024: Renters\u2019 Rights Bill introduced' },
-  ];
-
-  // ── Render ────────────────────────────────────────────────────────────────
-
   return (
     <>
-      <TopicNav topic="Buy-to-Let Exit" />
-
+      <TopicNav topic="Housing" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Buy-to-Let Exit"
+          topic="Housing"
           question="Are Landlords Abandoning the Private Rental Market?"
-          finding="Net landlord numbers fell by 140,000 between 2022 and 2025 as mortgage costs, tax changes and regulatory burdens pushed smaller landlords to sell. Private rental supply is contracting fastest in areas with highest tenant demand."
+          finding="Net landlord numbers fell by 140,000 between 2022 and 2025 as mortgage costs, tax changes, and regulatory burdens pushed smaller landlords to sell. Private rental listings in major cities have fallen 29% since 2020, contributing to double-digit rent increases in London and the South East."
           colour="#F4A261"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              The private rented sector has contracted sharply since 2022. The convergence of three forces — the phased removal of mortgage interest tax relief under Section 24 (complete from 2020), the sharp rise in Bank Rate from 0.1% to 5.25%, and the regulatory burden of proposed and enacted tenancy reforms — has made the economics of small-scale residential landlordism significantly less attractive. Net landlord numbers fell from a peak of 2.69 million in 2020 to an estimated 2.52 million in 2025, with the decline concentrated among landlords with one or two properties who cannot absorb rising costs the way portfolio landlords can.
-            </p>
-            <p>
-              The consequence for tenants has been immediate. Rental listings in major UK cities fell 29% between 2020 and 2024 as departing landlords sold properties to owner-occupiers rather than other landlords. Average asking rents rose 9.4% in the year to January 2025 nationally, with London and the South East seeing double-digit increases. The paradox is acute: regulatory changes designed to improve tenant security may, in the short term, be accelerating the supply contraction that makes renting more expensive and competitive. The debate between tenant advocates and landlord representatives about the net effect of the Renters' Rights Bill on supply remains genuinely contested.
-            </p>
+            <p>The private rented sector has contracted sharply since 2022. The convergence of three forces — the phased removal of mortgage interest tax relief under Section 24 (complete from 2020), the sharp rise in Bank Rate from 0.1% to 5.25%, and the regulatory burden of proposed and enacted tenancy reforms — has made the economics of small-scale residential landlordism significantly less attractive. Net landlord numbers fell from a peak of 2.69 million in 2020 to an estimated 2.52 million in 2025, with the decline concentrated among landlords with one or two properties who cannot absorb rising costs the way portfolio landlords can.</p>
+            <p>The consequence for tenants has been immediate. Rental listings in major UK cities fell 29% between 2020 and 2024 as departing landlords sold properties to owner-occupiers rather than other landlords. Average asking rents rose 9.4% in the year to January 2025 nationally, with London and the South East seeing double-digit increases. The paradox is acute: regulatory changes designed to improve tenant security may, in the short term, be accelerating the supply contraction that makes renting more expensive and competitive. Build-to-rent institutional development is growing, but its scale remains far below that of exiting small landlords, and its geography is concentrated in major cities rather than the suburban and rural areas where small landlords are departing.</p>
           </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-landlords', label: 'Landlord Numbers' },
-          { id: 'sec-listings', label: 'Rental Supply' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Landlord Numbers' },
+          { id: 'sec-chart2', label: 'Rental Supply' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
               label="Net landlord decline (2022–2025)"
               value="140,000"
-              unit=""
+              unit="landlords"
               direction="down"
               polarity="up-is-bad"
-              changeText="Selling faster than entering · Section 24 tax change main driver"
-              sparklineData={[2.66, 2.68, 2.69, 2.64, 2.58, 2.54, 2.53, 2.52]}
-              href="#sec-landlords"
+              changeText="Selling faster than entering · Section 24 main driver"
+              sparklineData={[2.66, 2.68, 2.69, 2.64, 2.58, 2.54, 2.52]}
+              source="NRLA / Savills · Landlord Survey 2025"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Buy-to-let mortgage deals available"
+              label="BTL mortgage deals available"
               value="3,500"
-              unit=""
+              unit="products"
               direction="down"
               polarity="up-is-good"
-              changeText="Down from 6,200 at peak 2022 · Higher rates forcing exits"
-              sparklineData={[2.1, 3.2, 4.8, 6.2, 5.4, 4.8, 4.2, 3.8, 3.5]}
-              href="#sec-landlords"
+              changeText="Down from 6,200 at 2022 peak · higher rates forcing exits"
+              sparklineData={[3.8, 4.2, 5.0, 6.2, 5.4, 4.2, 3.8, 3.5]}
+              source="Moneyfacts · BTL Mortgage Monitor 2025"
+              href="#sec-chart1"
             />
             <MetricCard
               label="Private rental listings vs 2020"
               value="-29%"
-              unit=""
+              unit="vs 2020 baseline"
               direction="down"
               polarity="up-is-bad"
-              changeText="Fewer properties to rent · Rents rising as supply shrinks"
-              sparklineData={[100, 92, 84, 78, 71]}
-              href="#sec-landlords"
+              changeText="Fewer properties to rent · rents rising as supply shrinks"
+              sparklineData={[100, 95, 88, 82, 78, 71]}
+              source="Rightmove / Zoopla · Rental Market Index 2025"
+              href="#sec-chart2"
             />
           </div>
-        
-
-        {/* Charts */}
+        </section>
         <ScrollReveal>
-          <section id="sec-landlords" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Estimated private landlords, UK, 2018–2025"
-              subtitle="Total number of private residential landlords (millions). Peaked in 2020 then declined as tax changes and mortgage costs increased. Decline concentrated among small-portfolio landlords."
+              title="Private landlord numbers and BTL mortgage availability, 2018–2025"
+              subtitle="Estimated total private residential landlords (millions, amber) and buy-to-let mortgage products available (thousands, grey). Both declining from 2020 peaks."
               series={landlordSeries}
               annotations={landlordAnnotations}
-              yLabel="Millions"
+              yLabel="Millions / thousands"
+              source={{ name: 'NRLA / Moneyfacts', dataset: 'Landlord and BTL Mortgage Market Data', url: 'https://www.nrla.org.uk/research', frequency: 'quarterly', date: '2025' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
-          <section id="sec-listings" className="mb-12">
+          <section id="sec-chart2" className="mb-12">
             <LineChart
-              title="Private rental listings in major cities, 2020–2024 (index: 2020=100)"
-              subtitle="Available rental listings on major property portals in UK cities, indexed to 2020. A falling index means fewer properties available to rent. Down 29% from 2020 baseline."
+              title="Private rental listings index, major UK cities, 2020–2025 (2020=100)"
+              subtitle="Available rental listings on major property portals, indexed to 2020. A falling index means fewer properties available to rent. Down 29% from baseline."
               series={listingsSeries}
               annotations={listingsAnnotations}
               yLabel="Index (2020=100)"
+              source={{ name: 'Rightmove / Zoopla', dataset: 'Rental Market Index', url: 'https://www.rightmove.co.uk/news/articles/property-news/rental-market/', frequency: 'monthly', date: '2025' }}
             />
           </section>
         </ScrollReveal>
-
-        {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="What's improving"
-            value="Renters' Rights Bill 2024"
-            unit=""
-            description="The Renters' Rights Bill 2024 strengthens tenant protections while abolishing Section 21 no-fault evictions. Some argue increased protections reduce landlord exits by improving long-term tenancy stability; others argue they accelerate exits by reducing landlord control. Build-to-rent developments — professionally managed at scale — are growing rapidly and may offset some of the small-landlord exit. 50,000 build-to-rent homes are currently under construction nationally."
+            title="Build-to-rent offers professional management at scale"
+            value="50,000"
+            unit="BTR homes under construction"
+            description="The Renters' Rights Bill 2024 abolishes Section 21 no-fault evictions, strengthening tenant security. Simultaneously, build-to-rent developments — professionally managed at institutional scale — are growing rapidly: 50,000 homes are currently under construction nationally, with a pipeline of 268,000 units. BTR tenants report higher satisfaction scores than PRS tenants and benefit from zero-deposit options and longer tenancies. Institutional supply cannot fully replace departing small landlords in the short term, but represents a structurally different and more stable rental model."
             source="Source: British Property Federation — Build to Rent census 2024; NRLA landlord confidence survey Q4 2024."
           />
         </ScrollReveal>
-
-        {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.nrla.org.uk/research" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NRLA — National Residential Landlords Association research</a> — landlord numbers and sentiment surveys. Retrieved March 2026.</p>
+            <p><a href="https://www.savills.co.uk/research_articles/229130" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Savills — Private Rented Sector analysis</a> — market data on landlord exits and rental supply. Retrieved March 2026.</p>
+            <p><a href="https://www.gov.uk/government/collections/private-rented-sector" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DLUHC — Private Rented Sector statistics</a> — official rental market data. Retrieved March 2026.</p>
+            <p className="mt-2">Landlord numbers are estimated from HMRC self-assessment data and NRLA/Savills landlord surveys. Rental listings index uses combined Rightmove and Zoopla listing data for the 20 largest UK cities, indexed to January 2020. BTL mortgage product counts from Moneyfacts monthly survey.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
   );

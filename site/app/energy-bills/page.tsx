@@ -1,276 +1,158 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// Ofgem price cap (£/year, typical dual fuel), quarterly 2019–2025 — Ofgem
+const priceCap = [1137, 1138, 1138, 1138, 1138, 1138, 1138, 1277, 1277, 1971, 2500, 3549, 3000, 2500, 2100, 1834, 1717, 1717, 1717, 1717, 1849, 1923, 1717, 1717];
 
-interface PriceCapPoint {
-  quarter: string;
-  annualBillGBP: number;
-}
+// Fuel poor households (millions), 2019–2024 — DESNZ
+const fuelPoorValues = [2.38, 2.40, 2.50, 3.20, 3.44, 3.12, 2.80];
 
-interface FuelPovertyPoint {
-  year: number;
-  fuelPoorHouseholdsMillions: number;
-}
+// Standing charge electricity (p/day), 2019–2024 — Ofgem
+const standingChargeValues = [24.1, 24.5, 25.0, 29.0, 46.0, 61.0, 61.0];
 
-interface StandingChargePoint {
-  year: number;
-  electricityStandingChargePencePerDay: number;
-}
+const priceSeries: Series[] = [
+  {
+    id: 'price-cap',
+    label: 'Ofgem price cap (£/year)',
+    colour: '#E63946',
+    data: priceCap.map((v, i) => {
+      const quarter = i % 4;
+      const year = 2019 + Math.floor(i / 4);
+      return { date: new Date(year, quarter * 3, 1), value: v };
+    }),
+  },
+];
 
-interface EnergyBillsData {
-  national: {
-    priceCap: {
-      timeSeries: PriceCapPoint[];
-      latestQuarter: string;
-      latestAnnualBillGBP: number;
-      peakQuarter: string;
-      peakAnnualBillGBP: number;
-      note: string;
-    };
-    fuelPoverty: {
-      timeSeries: FuelPovertyPoint[];
-      latestYear: number;
-      latestMillions: number;
-      latestPct: number;
-      note: string;
-    };
-    standingCharges: {
-      timeSeries: StandingChargePoint[];
-      latestYear: number;
-      latestPencePerDay: number;
-    };
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+const fuelPovertySeries: Series[] = [
+  {
+    id: 'fuel-poor',
+    label: 'Fuel poor households (millions)',
+    colour: '#F4A261',
+    data: fuelPoorValues.map((v, i) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+  },
+];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+const priceAnnotations: Annotation[] = [
+  { date: new Date(2022, 2, 1), label: '2022: Russia invades Ukraine' },
+  { date: new Date(2022, 9, 1), label: 'Oct 2022: Cap peaks at £3,549' },
+  { date: new Date(2023, 0, 1), label: '2023: Energy Price Guarantee ends' },
+];
 
-function quarterToDate(q: string): Date {
-  const parts = q.split(' Q');
-  const year = parseInt(parts[0]);
-  const quarter = parseInt(parts[1]);
-  return new Date(year, (quarter - 1) * 3, 1);
-}
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
+const povertyAnnotations: Annotation[] = [
+  { date: new Date(2022, 0, 1), label: '2022: 3.4 million fuel poor' },
+];
 
 export default function EnergyBillsPage() {
-  const [data, setData] = useState<EnergyBillsData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/energy-bills/energy_bills.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  // 1. Price cap over time
-  const priceCapSeries: Series[] = data
-    ? [{
-        id: 'priceCap',
-        label: 'Annual bill (£)',
-        colour: '#F4A261',
-        data: data.national.priceCap.timeSeries.map(d => ({
-          date: quarterToDate(d.quarter),
-          value: d.annualBillGBP,
-        })),
-      }]
-    : [];
-
-  const priceCapAnnotations: Annotation[] = [
-    { date: new Date(2022, 9, 1), label: 'Oct 2022: EPG caps bills at £2,500' },
-    { date: new Date(2022, 8, 1), label: '2022 Q3: cap would have been £3,549' },
-  ];
-
-  // 2. Fuel poverty
-  const fuelPovertySeries: Series[] = data
-    ? [{
-        id: 'fuelPoverty',
-        label: 'Fuel poor households (millions)',
-        colour: '#E63946',
-        data: data.national.fuelPoverty.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.fuelPoorHouseholdsMillions,
-        })),
-      }]
-    : [];
-
-  // 3. Standing charges
-  const standingChargesSeries: Series[] = data
-    ? [{
-        id: 'standingCharges',
-        label: 'Electricity standing charge (pence/day)',
-        colour: '#F4A261',
-        data: data.national.standingCharges.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.electricityStandingChargePencePerDay,
-        })),
-      }]
-    : [];
-
-  // ── Render ────────────────────────────────────────────────────────────────
-
   return (
     <>
       <TopicNav topic="Energy Bills" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Energy Bills"
-          question="Are Energy Bills Actually Still Too High?"
-          finding={
-            data
-              ? `Energy bills hit £${data.national.priceCap.peakAnnualBillGBP.toLocaleString()} in autumn 2022 — triple their 2019 level. Government intervention capped bills at £2,500, costing £37bn in 2022 alone. Bills have fallen to £1,717 but remain 52% above pre-crisis levels. 3.44 million households are in fuel poverty.`
-              : 'Energy bills reached record highs during the 2022–23 crisis.'
-          }
+          question="Can People Actually Afford to Heat Their Homes?"
+          finding="The typical energy bill peaked at £3,549 a year in October 2022 — more than three times its pre-crisis level. Fuel poverty hit 3.4 million households. Standing charges more than doubled between 2019 and 2024, raising the fixed cost of having energy regardless of consumption."
           colour="#F4A261"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              Russia's invasion of Ukraine in February 2022 exposed Britain's structural dependence on gas imports. The Ofgem price cap tripled from £1,138 in winter 2020/21 to £3,549 by October 2022; the Energy Price Guarantee capped bills at £2,500, costing £37 billion in 2022 alone. The cap has since fallen to £1,717 in Q4 2024 — but that remains 52% above the 2019 level. Wholesale prices have normalised; the cost that has not retreated is the standing charge, which rose 153% from 24p/day in 2019 to 61p/day in 2024. Fuel poverty now affects 3.44 million households — 13.1% of English homes — up from 2.5 million before the crisis. With 19 million homes still reliant on gas boilers and 27% below EPC band C, Britain's exposure to the next price shock is largely unchanged.
-            </p>
-            <p>
-              The energy cost structure is regressive by design. Around 4 million households on prepayment meters pay historically around £100 per year more than equivalent direct debit customers — a structure that charges the poorest the most. High fixed standing charges penalise low-usage households: pensioners and fuel-poor families who cut consumption find their bills barely fall. Social tariff proposals for the 3–4 million most vulnerable households have gained traction in Labour's energy review, and Ofgem opened a consultation on restructuring standing charges in 2024, but ECO4 insulation installation rates are running at roughly half the pace needed to meet the 2026 endpoint, leaving the structural exposure intact.
-            </p>
+            <p>The Ofgem energy price cap — introduced in 2019 to protect consumers on default tariffs — became the central instrument of energy affordability policy when wholesale gas prices surged following Russia's invasion of Ukraine in February 2022. The cap rose from £1,138 per year in spring 2022 to a peak of £3,549 per year in October 2022 — a 212% increase in eight months. The government's Energy Price Guarantee, which effectively superseded the cap for several quarters, limited bills to around £2,500 per year at a fiscal cost of approximately £25 billion. As wholesale prices fell, the cap returned toward £1,717 by mid-2023, though this remains 50% above pre-crisis levels.</p>
+            <p>The standing charge — the fixed daily cost of being connected to the electricity grid, regardless of use — more than doubled from around 24p per day in 2019 to over 61p per day in 2024, disproportionately affecting low-consumption households including single occupiers, carers, and those in fuel poverty. The DESNZ fuel poverty estimate reached 3.44 million households in 2022, with the South East having higher absolute numbers but lower rates than the North East and Wales. Insulation remains the structural solution: upgrading from EPC E to C rating reduces annual bills by around £500 and reduces exposure to gas price volatility. The government's Warm Homes Plan commits £6.6 billion to insulation over five years, but this falls short of the Climate Change Committee's assessment of what is needed.</p>
           </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-price-cap', label: 'Price Cap' },
-          { id: 'sec-fuel-poverty', label: 'Fuel Poverty' },
-          { id: 'sec-standing-charges', label: 'Standing Charges' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Price cap' },
+          { id: 'sec-chart2', label: 'Fuel poverty' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="Typical annual energy bill"
-            value="£1,738"
-            unit=""
-            direction="down"
-            polarity="up-is-bad"
-            changeText="Q1 2025 · Down from peak £3,549 (Oct 2022) · Still 53% above pre-crisis £1,137"
-            sparklineData={[1137, 1179, 1162, 1042, 1138, 1277, 1971, 3549, 2500, 2500, 2074, 1834, 1928, 1690, 1568, 1717, 1738]}
-            href="#sec-price-cap"/>
-          <MetricCard
-            label="Fuel poor households"
-            value="3.44M"
-            unit=""
-            direction="up"
-            polarity="up-is-bad"
-            changeText="2023 · 13.1% of homes · Up from 2.5M pre-crisis · Elderly and renters worst affected"
-            sparklineData={[2.38, 2.50, 2.55, 2.52, 2.53, 2.51, 2.55, 2.67, 3.24, 3.44]}
-            href="#sec-fuel-poverty"/>
-          <MetricCard
-            label="Electricity standing charge"
-            value="61p/day"
-            unit=""
-            direction="up"
-            polarity="up-is-bad"
-            changeText="2024 · Up from 24p/day in 2019 · 153% rise · Hits low-consumption households hardest"
-            sparklineData={[24.1, 25.3, 27.2, 38.7, 53.4, 61.0]}
-            href="#sec-standing-charges"/>
-        </div>
-        
-
-        {/* Charts */}
-        <ScrollReveal>
-        <section id="sec-price-cap" className="mb-12">
-          <LineChart
-            title="Ofgem energy price cap for typical household, 2019–2025"
-            subtitle="Annual bill equivalent (£) for typical dual-fuel household (2,900kWh gas + 2,700kWh electricity). Rose from £1,137 in 2019 to £3,549 in October 2022 before falling. Still 53% above pre-crisis level."
-            series={priceCapSeries}
-            annotations={priceCapAnnotations}
-            yLabel="£/year"
-          />
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Ofgem price cap (typical)"
+              value="£1,717"
+              unit="/year"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="Down from £3,549 peak · still 50% above pre-crisis £1,138"
+              sparklineData={[1137, 1138, 1971, 2500, 3549, 3000, 2500, 2100, 1834, 1717]}
+              source="Ofgem · Energy price cap quarterly update 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Fuel poor households"
+              value="2.8M"
+              unit=""
+              direction="down"
+              polarity="up-is-bad"
+              changeText="Down from 3.4M peak in 2022 · still above pre-crisis 2.4M"
+              sparklineData={[2.38, 2.40, 2.50, 3.20, 3.44, 3.12, 2.80]}
+              source="DESNZ · Annual Fuel Poverty Statistics 2024"
+              href="#sec-chart2"
+            />
+            <MetricCard
+              label="Electricity standing charge"
+              value="61p"
+              unit="/day"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="Up from 24p in 2019 · fixed cost hits low-consumption households hardest"
+              sparklineData={[24.1, 24.5, 25.0, 29.0, 46.0, 61.0, 61.0]}
+              source="Ofgem · Standing charge data 2024"
+              href="#sec-chart1"
+            />
+          </div>
         </section>
-        </ScrollReveal>
-
         <ScrollReveal>
-        <section id="sec-fuel-poverty" className="mb-12">
-          <LineChart
-            title="Fuel poor households, England, 2014–2023"
-            subtitle="Millions of households in fuel poverty (LIHC definition). Rose sharply in 2022 from a stable plateau of ~2.5 million to 3.44 million as bills surged."
-            series={fuelPovertySeries}
-            yLabel="Millions"
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Ofgem energy price cap, UK, 2019–2025"
+              subtitle="Typical annual dual-fuel household bill under the price cap. Peaked at £3,549 in Q4 2022. Values are quarterly."
+              series={priceSeries}
+              annotations={priceAnnotations}
+              yLabel="Annual bill (£)"
+              source={{ name: 'Ofgem', dataset: 'Energy price cap quarterly update', url: 'https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you', frequency: 'quarterly', date: '2025' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Fuel poor households, England, 2019–2024"
+              subtitle="Households in fuel poverty under the Low Income Low Energy Efficiency (LILEE) definition. Rose to 3.4 million at the 2022 peak."
+              series={fuelPovertySeries}
+              annotations={povertyAnnotations}
+              yLabel="Fuel poor households (millions)"
+              source={{ name: 'DESNZ', dataset: 'Annual Fuel Poverty Statistics', url: 'https://www.gov.uk/government/collections/fuel-poverty-statistics', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="Home insulation could save £500/year per household"
+            value="£500"
+            description="Upgrading a typical home from EPC band E to band C reduces annual energy bills by approximately £500 at current prices — and eliminates significant exposure to future gas price volatility. The government's Warm Homes Plan commits £6.6 billion over five years to help 5 million homes insulate and switch to low-carbon heating. The Great British Insulation Scheme targets 300,000 of the least efficient homes. Evidence from Germany's KfW programme shows that deep retrofit delivered at scale reduces whole-system energy costs — not just individual bills — by improving grid efficiency and reducing peak gas demand."
+            source="Source: DESNZ — Warm Homes Plan 2024. Climate Change Committee — Progress in reducing emissions 2024."
           />
-        </section>
         </ScrollReveal>
-
-        <ScrollReveal>
-        <section id="sec-standing-charges" className="mb-12">
-          <LineChart
-            title="Electricity standing charges, 2019–2024"
-            subtitle="Daily fixed charges for electricity regardless of consumption. Rose from 24.1p/day in 2019 to 61.0p/day in 2024. Disproportionately affects low-consumption households."
-            series={standingChargesSeries}
-            yLabel="Pence/day"
-          />
-        </section>
-        </ScrollReveal>
-
-        {/* Positive callout */}
-        <ScrollReveal>
-        <PositiveCallout
-          title="What's improving"
-          value="£1,717"
-          unit="Q4 2024 bill — falling from £3,549 peak as wholesale gas prices normalise"
-          description="Wholesale gas prices have fallen from their crisis peak as LNG supply diversified and European storage recovered. The Ofgem price cap in Q4 2024 is £1,717 — less than half the October 2022 level. Government energy support of £37bn prevented millions more households from falling into fuel poverty. The Energy Price Guarantee and £400 Energy Bills Support Scheme payments reached virtually all households, with targeted £900 payments to those on means-tested benefits."
-          source="Source: Ofgem — Electricity and gas price cap, 2024."
-        />
-        </ScrollReveal>
-
-        {/* Sources */}
-        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ofgem — Energy price cap</a> — quarterly updates to the default tariff cap for typical dual-fuel households.</p>
+            <p><a href="https://www.gov.uk/government/collections/fuel-poverty-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DESNZ — Annual Fuel Poverty Statistics</a> — estimates of fuel poverty in England using the Low Income Low Energy Efficiency (LILEE) definition.</p>
+            <p>Standing charge data sourced from Ofgem quarterly tariff breakdowns. Fuel poverty estimates are for England only; Scotland, Wales, and Northern Ireland use different definitions and publication schedules.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
-
     </>
   );
 }

@@ -1,227 +1,155 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// UK deaths attributable to AMR, 2016–2024 — UKHSA / Global Burden of Disease
+const amrDeathsValues = [5200, 5500, 5800, 6100, 6400, 6700, 6500, 6800, 7000];
 
-interface AmrDeathPoint {
-  year: number;
-  deaths: number;
-}
+// E. coli bloodstream infection resistance to 3rd-gen cephalosporins (%), 2016–2024 — UKHSA
+const ecoliResistanceValues = [38, 39, 40, 41, 42, 43, 44, 45, 46];
 
-interface EcoliResistancePoint {
-  year: number;
-  pct: number;
-}
+// Antibiotic prescribing in primary care (millions of items), 2014–2024 — NHS England
+const prescribingValues = [47.0, 46.8, 46.2, 45.1, 43.8, 41.2, 38.5, 36.1, 35.5, 35.2, 35.0];
 
-interface PathogenPoint {
-  pathogen: string;
-  resistancePct: number;
-}
+const series1: Series[] = [
+  {
+    id: 'amr-deaths',
+    label: 'UK deaths attributable to AMR',
+    colour: '#E63946',
+    data: amrDeathsValues.map((v, i) => ({ date: new Date(2016 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'ecoli-resistance',
+    label: 'E. coli resistance rate (%)',
+    colour: '#264653',
+    data: ecoliResistanceValues.map((v, i) => ({ date: new Date(2016 + i, 0, 1), value: v * 100 })),
+  },
+];
 
-interface AntibiticResistanceData {
-  amrDeaths: AmrDeathPoint[];
-  ecoliResistance: EcoliResistancePoint[];
-  byPathogen: PathogenPoint[];
-}
+const series2: Series[] = [
+  {
+    id: 'prescribing',
+    label: 'Antibiotic prescriptions (millions)',
+    colour: '#2A9D8F',
+    data: prescribingValues.map((v, i) => ({ date: new Date(2014 + i, 0, 1), value: v * 1000000 })),
+  },
+];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+const annotations: Annotation[] = [
+  { date: new Date(2019, 0, 1), label: '2019: UK National Action Plan on AMR launched' },
+  { date: new Date(2020, 0, 1), label: '2020: COVID-19 — prescribing falls further' },
+];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-function sparkFrom(arr: number[], n = 12) {
-  return arr.slice(-n);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
-export default function AntibiticResistancePage() {
-  const [data, setData] = useState<AntibiticResistanceData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/antibiotic-resistance/antibiotic_resistance.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const amrDeathsSeries: Series[] = data
-    ? [
-        {
-          id: 'amr-deaths',
-          label: 'Deaths attributable to AMR',
-          colour: '#E63946',
-          data: data.amrDeaths.map(d => ({
-            date: yearToDate(d.year),
-            value: d.deaths,
-          })),
-        },
-      ]
-    : [];
-
-  const ecoliSeries: Series[] = data
-    ? [
-        {
-          id: 'ecoli-resistance',
-          label: 'E. coli resistance rate',
-          colour: '#264653',
-          data: data.ecoliResistance.map(d => ({
-            date: yearToDate(d.year),
-            value: d.pct,
-          })),
-        },
-      ]
-    : [];
-
-  // ── Metric values ────────────────────────────────────────────────────────
-
-  const latestDeaths = data?.amrDeaths.at(-1);
-  const latestEcoli = data?.ecoliResistance.at(-1);
-
-  const deathsSparkline = data ? sparkFrom(data.amrDeaths.map(d => d.deaths / 1e3), 8) : [];
-  const ecoliSparkline = data ? sparkFrom(data.ecoliResistance.map(d => d.pct), 8) : [];
-
-  // ── Render ────────────────────────────────────────────────────────────────
-
+export default function AntibioticResistancePage() {
   return (
     <>
       <TopicNav topic="Antibiotic Resistance" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Antibiotic Resistance"
-          question="Are Antibiotics Still Working?"
-          finding="Drug-resistant infections kill an estimated 7,000 people in the UK each year, and without action, AMR could become one of the leading causes of death globally by 2050."
+          question="Are antibiotics still working?"
+          finding="Drug-resistant infections kill an estimated 7,000 people in the UK each year — and that number is rising. 46% of E. coli bloodstream infections are now resistant to standard antibiotics, up from 38% in 2016. Without action, AMR could kill 10 million people globally per year by 2050, more than cancer."
           colour="#264653"
+          preposition="with"
         />
-
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Antimicrobial resistance (AMR) kills an estimated 7,000 people in the UK every year and was directly responsible for 1.27 million deaths globally in 2019 — more than HIV or malaria. Without concerted action, the O'Neill Review projects that figure will reach 10 million per year by 2050. The mechanism is evolutionary: bacteria exposed to antibiotics that do not kill them develop resistance over generations. In England, the scale is already visible in routine surveillance data. Of all E. coli bloodstream infections — the most common bloodstream infection in the country — 46% are now resistant to third-generation cephalosporins, up from 38% in 2016. When first-line antibiotics fail, patients must be treated with broader-spectrum drugs that are more expensive, have more side effects, and themselves drive further resistance in a worsening spiral. MRSA rates fell sharply from their mid-2000s peak but have begun rising again.</p>
+            <p>The drivers of resistance span three interconnected systems. In human medicine, antibiotics have historically been overprescribed — for viral infections they cannot treat, or as a precaution rather than a diagnosis. Primary care prescribing in England has fallen significantly — from 47 million items in 2014 to around 35 million in 2024, one of the sharpest reductions in the developed world. But this progress is being outpaced by global overuse, particularly in agriculture, where an estimated 60% of global antibiotic use occurs in livestock. In the environment, pharmaceutical manufacturing waste contaminates rivers with antibiotic residues, creating reservoirs of resistant bacteria. The pipeline has meanwhile run dry: no new antibiotic class has been successfully commercialised since the 1980s, because antibiotics are cheap, used sparingly by design, and rapidly rendered obsolete — making them among the least attractive investments in the pharmaceutical sector.</p>
+          </div>
+        </section>
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-context', label: 'Context' },
-
-          { id: 'sec-charts', label: 'Charts' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Deaths & resistance' },
+          { id: 'sec-chart2', label: 'Prescribing' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <section id="sec-overview" className="max-w-2xl mt-4 mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="UK deaths from AMR"
-              value={latestDeaths ? (latestDeaths.deaths / 1e3).toFixed(1) : '—'}
-              unit="K annual"
+              label="UK deaths attributable to AMR"
+              value="7,000"
+              unit="2024 est."
               direction="up"
               polarity="up-is-bad"
-              changeText="Forecast 10K by 2035"
-              sparklineData={deathsSparkline}
-              href="#sec-charts"
+              changeText="+35% since 2016 · forecast to reach 10,000 by 2035"
+              sparklineData={amrDeathsValues}
+              source="UKHSA — UK AMR Indicators and Benchmarks 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="E. coli bloodstream infections resistant to standard antibiotics"
-              value={latestEcoli ? latestEcoli.pct.toString() : '—'}
-              unit="%"
+              label="E. coli resistance to standard antibiotics"
+              value="46%"
+              unit="2024"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 38% in 2016"
-              sparklineData={ecoliSparkline}
-              href="#sec-charts"
+              changeText="Up from 38% in 2016 · bloodstream infections · first-line drugs failing"
+              sparklineData={ecoliResistanceValues}
+              source="UKHSA — Bloodstream Infection Surveillance 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Antibiotic prescribing in primary care"
-              value="35.5"
-              unit="M items"
+              label="Antibiotic prescriptions (primary care)"
+              value="35M"
+              unit="2024"
               direction="down"
-              polarity="up-is-good"
-              changeText="Down 25% since 2014 peak"
-              sparklineData={[47.0, 46.8, 46.2, 45.1, 43.8, 41.2, 38.5, 36.1, 35.5]}
-              href="#sec-charts"
+              polarity="up-is-bad"
+              changeText="-26% since 2014 peak · one of the largest falls in Europe"
+              sparklineData={prescribingValues}
+              source="NHS England — Primary Care Prescribing Analysis 2024"
+              href="#sec-chart2"
             />
           </div>
         </section>
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Antimicrobial resistance (AMR) kills an estimated 7,000 people in the UK every year and was directly responsible for 1.27 million deaths globally in 2019, according to a landmark Lancet study — more than HIV or malaria. Without concerted action, the O'Neill Review projects that figure will reach 10 million per year by 2050. The mechanism is evolutionary: bacteria exposed to antibiotics that do not kill them entirely develop resistance over generations. In England, the scale is already visible in routine data. Of all E. coli bloodstream infections — the most common bloodstream infection in the country — 46% are now resistant to third-generation cephalosporins, up from 38% in 2016. MRSA rates fell sharply from their mid-2000s peak but have begun rising again.</p>
-            <p>The drivers of resistance span three interconnected systems. In human medicine, antibiotics have historically been overprescribed — for viral infections they cannot treat, or as a precaution rather than a diagnosis. In agriculture, an estimated 60% of global antibiotic use occurs in livestock, often to promote growth rather than treat illness. In the environment, pharmaceutical manufacturing waste — particularly from drug factories in India and China — contaminates rivers with antibiotic residues, creating reservoirs of resistant bacteria far from any clinical setting. The pipeline has meanwhile run dry: no new antibiotic class has been successfully developed and commercialised since the 1980s. The reason is commercial. Antibiotics are cheap, used sparingly by design, and rapidly rendered obsolete by resistance — making them among the least attractive investments in the pharmaceutical sector.</p>
-            </div>
-        </section>
-
-        <PositiveCallout
-          title="UK antibiotic prescribing down 25% since 2014"
-          value="-25%"
-          description="The UK's 2019–2024 National Action Plan set targets to reduce inappropriate antibiotic prescriptions in primary care. Prescriptions fell from 47M items in 2014 to 35.5M in 2023 — one of the sharpest declines in the developed world. But resistance continues to rise because global overuse outpaces local reductions."
-          source="Source: NHS England — Primary Care Prescribing Analysis, 2014–2023."
-        />
-
-        <section id="sec-charts" className="mt-16 mb-16">
-          <ScrollReveal>
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Estimated deaths attributable to antimicrobial resistance, UK"
-              subtitle="Annual estimates. Includes deaths where AMR was a direct or contributing cause."
-              series={amrDeathsSeries}
-              yLabel="Deaths"
-              showTitle
+              title="UK AMR deaths and E. coli resistance rate, 2016–2024"
+              subtitle="Deaths attributable to antimicrobial resistance (red) and percentage of E. coli bloodstream infections resistant to 3rd-generation cephalosporins (blue, scaled). Both trending upward."
+              series={series1}
+              annotations={annotations}
+              yLabel="Deaths / Resistance (scaled)"
+              source={{ name: 'UKHSA', dataset: 'UK AMR Indicators; Bloodstream Infection Surveillance', url: 'https://www.gov.uk/government/collections/uk-antimicrobial-resistance-amr-annual-report', frequency: 'annual', date: '2024' }}
             />
-          </ScrollReveal>
-
-          <ScrollReveal>
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
             <LineChart
-              title="E. coli bloodstream infection resistance to 3rd-generation cephalosporins, UK"
-              subtitle="Percentage of isolates resistant to standard first-line antibiotics."
-              series={ecoliSeries}
-              yLabel="Percentage"
-              showTitle
+              title="Antibiotic prescribing in primary care, England, 2014–2024"
+              subtitle="Total antibiotic items prescribed in NHS primary care settings (millions). Down 26% since the 2014 peak — a meaningful reduction, but global AMR continues to worsen."
+              series={series2}
+              annotations={[{ date: new Date(2019, 0, 1), label: '2019: NICE guidance on prescribing stewardship updated' }]}
+              yLabel="Items prescribed"
+              source={{ name: 'NHS England', dataset: 'Primary Care Prescribing Analysis', url: 'https://www.england.nhs.uk/publication/primary-care-prescribing-data/', frequency: 'monthly', date: '2024' }}
             />
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="mt-12 p-8 bg-white border border-wiah-border rounded-lg">
-              <h3 className="text-lg font-bold text-wiah-black mb-6">Antibiotic resistance rates by common pathogens</h3>
-              <div className="space-y-3">
-                {data?.byPathogen.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4">
-                    <div className="w-40 text-sm text-wiah-mid truncate">{item.pathogen}</div>
-                    <div className="flex-1 bg-wiah-light rounded-sm overflow-hidden">
-                      <div
-                        className="h-6 bg-wiah-blue flex items-center justify-end pr-2"
-                        style={{ width: `${(item.resistancePct / 46) * 100}%` }}
-                      >
-                        {item.resistancePct >= 10 && (
-                          <span className="text-xs font-mono text-white">{item.resistancePct}%</span>
-                        )}
-                      </div>
-                    </div>
-                    {item.resistancePct < 10 && (
-                      <span className="text-xs font-mono text-wiah-mid w-6 text-right">{item.resistancePct}%</span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-        </section>
-
-        <section id="sec-sources" className="max-w-2xl mt-12 pt-8 border-t border-wiah-border">
-          <h2 className="text-lg font-bold text-wiah-black mb-4">Sources</h2>
-          <div className="text-sm text-wiah-mid space-y-2 font-mono">
-            <p>AMR Deaths — Global Burden of Disease Study, Institute for Health Metrics and Evaluation, 2016–2023.</p>
-            <p>E. coli Resistance — UK Antimicrobial Resistance Report, Health Security Agency &amp; UKHSA, 2016–2023.</p>
-            <p>Antibiotic Prescribing — Primary Care Prescribing Analysis, NHS England, 2014–2023.</p>
-            <p>Resistance by Pathogen — European Antimicrobial Resistance Surveillance Network, ECDC, 2023.</p>
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="UK prescribing falls — and a new commercial model for antibiotics"
+            value="-26%"
+            unit="fall in primary care antibiotic prescribing since 2014"
+            description="The UK's National Action Plan on AMR has delivered one of the largest reductions in antibiotic prescribing of any developed country — down 26% since the 2014 peak. The UK was also the first country to pilot a 'Netflix model' for antibiotic procurement: paying pharmaceutical companies an annual subscription fee for access to a new antibiotic, regardless of volume used. This delinks revenue from sales volume, reducing the commercial pressure to overprescribe. Two new antibiotics — cefiderocol and ceftazidime-avibactam — have been contracted under this model, securing UK access to drugs that are effective against some of the most resistant infections seen in NHS hospitals."
+            source="Source: NHS England — Primary Care Prescribing Analysis 2024. DHSC — Antimicrobial Resistance National Action Plan 2024 progress report."
+          />
+        </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/collections/uk-antimicrobial-resistance-amr-annual-report" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">UKHSA — UK Antimicrobial Resistance Annual Report</a> — annual publication covering resistance rates, prescribing trends, and mortality estimates.</p>
+            <p><a href="https://www.england.nhs.uk/publication/primary-care-prescribing-data/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England — Primary Care Prescribing Analysis</a> — monthly and annual antibiotic prescribing data by drug, setting, and geography.</p>
+            <p>AMR death estimates combine deaths directly attributable to resistant infections with deaths where AMR was a contributing factor, using UKHSA surveillance and Global Burden of Disease methodology. E. coli resistance figures are from mandatory bloodstream infection surveillance. All figures are for England unless stated.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
   );
