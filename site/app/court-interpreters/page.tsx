@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Interpreter complaints/failures per year, 2014–2024 (MOJ)
 const failuresValues = [8200, 8800, 9100, 9500, 9800, 10200, 10500, 7800, 8400, 9700, 10200];
@@ -44,6 +46,12 @@ const annotations1: Annotation[] = [
 
 const annotations2: Annotation[] = [
   { date: new Date(2012, 5, 1), label: '2012: Outsourcing begins — pay cut 40%' },
+];
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Court Interpreting Services Statistics', url: 'https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service', date: '2024' },
+  { num: 2, name: 'NRPSI', dataset: 'Annual Report — Membership Statistics', url: 'https://www.nrpsi.org.uk', date: '2024' },
+  { num: 3, name: 'National Audit Office', dataset: 'Language Services in the Justice System', url: 'https://www.nao.org.uk', date: '2023' },
 ];
 
 export default function CourtInterpretersPage() {
