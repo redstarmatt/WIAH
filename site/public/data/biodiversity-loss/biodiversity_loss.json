@@ -1,106 +1,106 @@
 {
-  "topic": "biodiversity-loss",
-  "lastUpdated": "2026-03-01",
-  "national": {
-    "timeSeries": [
-      {
-        "year": 2015,
-        "speciesIndexFarm": 66,
-        "speciesIndexWoodland": 79,
-        "sssiGoodPct": 14,
-        "sssiDamagedPct": 8
-      },
-      {
-        "year": 2016,
-        "speciesIndexFarm": 65,
-        "speciesIndexWoodland": 78,
-        "sssiGoodPct": 13,
-        "sssiDamagedPct": 9
-      },
-      {
-        "year": 2017,
-        "speciesIndexFarm": 64,
-        "speciesIndexWoodland": 77,
-        "sssiGoodPct": 12,
-        "sssiDamagedPct": 9
-      },
-      {
-        "year": 2018,
-        "speciesIndexFarm": 63,
-        "speciesIndexWoodland": 76,
-        "sssiGoodPct": 11,
-        "sssiDamagedPct": 10
-      },
-      {
-        "year": 2019,
-        "speciesIndexFarm": 62,
-        "speciesIndexWoodland": 76,
-        "sssiGoodPct": 10,
-        "sssiDamagedPct": 10
-      },
-      {
-        "year": 2020,
-        "speciesIndexFarm": 61,
-        "speciesIndexWoodland": 75,
-        "sssiGoodPct": 9,
-        "sssiDamagedPct": 11
-      },
-      {
-        "year": 2021,
-        "speciesIndexFarm": 60,
-        "speciesIndexWoodland": 75,
-        "sssiGoodPct": 9,
-        "sssiDamagedPct": 11
-      },
-      {
-        "year": 2022,
-        "speciesIndexFarm": 60,
-        "speciesIndexWoodland": 74,
-        "sssiGoodPct": 8,
-        "sssiDamagedPct": 12
-      },
-      {
-        "year": 2023,
-        "speciesIndexFarm": 59,
-        "speciesIndexWoodland": 74,
-        "sssiGoodPct": 7,
-        "sssiDamagedPct": 12
-      },
-      {
-        "year": 2024,
-        "speciesIndexFarm": 59,
-        "speciesIndexWoodland": 73,
-        "sssiGoodPct": 7,
-        "sssiDamagedPct": 13
-      },
-      {
-        "year": 2025,
-        "speciesIndexFarm": 58,
-        "speciesIndexWoodland": 73,
-        "sssiGoodPct": 7,
-        "sssiDamagedPct": 13
-      }
-    ]
-  },
+  "speciesAbundance": [
+    {"year": 1970, "farmlandIndex": 100, "woodlandIndex": 100, "allSpeciesIndex": 100},
+    {"year": 1975, "farmlandIndex": 92, "woodlandIndex": 97, "allSpeciesIndex": 95},
+    {"year": 1980, "farmlandIndex": 84, "woodlandIndex": 93, "allSpeciesIndex": 90},
+    {"year": 1985, "farmlandIndex": 76, "woodlandIndex": 89, "allSpeciesIndex": 85},
+    {"year": 1990, "farmlandIndex": 68, "woodlandIndex": 85, "allSpeciesIndex": 80},
+    {"year": 1995, "farmlandIndex": 60, "woodlandIndex": 82, "allSpeciesIndex": 75},
+    {"year": 2000, "farmlandIndex": 55, "woodlandIndex": 79, "allSpeciesIndex": 71},
+    {"year": 2005, "farmlandIndex": 52, "woodlandIndex": 76, "allSpeciesIndex": 68},
+    {"year": 2010, "farmlandIndex": 49, "woodlandIndex": 74, "allSpeciesIndex": 65},
+    {"year": 2012, "farmlandIndex": 48, "woodlandIndex": 73, "allSpeciesIndex": 64},
+    {"year": 2014, "farmlandIndex": 47, "woodlandIndex": 72, "allSpeciesIndex": 63},
+    {"year": 2016, "farmlandIndex": 46, "woodlandIndex": 71, "allSpeciesIndex": 62},
+    {"year": 2018, "farmlandIndex": 45, "woodlandIndex": 70, "allSpeciesIndex": 61},
+    {"year": 2019, "farmlandIndex": 44, "woodlandIndex": 69, "allSpeciesIndex": 60},
+    {"year": 2020, "farmlandIndex": 44, "woodlandIndex": 69, "allSpeciesIndex": 60},
+    {"year": 2021, "farmlandIndex": 43, "woodlandIndex": 68, "allSpeciesIndex": 59},
+    {"year": 2022, "farmlandIndex": 42, "woodlandIndex": 68, "allSpeciesIndex": 59},
+    {"year": 2023, "farmlandIndex": 42, "woodlandIndex": 67, "allSpeciesIndex": 58},
+    {"year": 2024, "farmlandIndex": 41, "woodlandIndex": 67, "allSpeciesIndex": 58}
+  ],
+  "protectedSites": [
+    {"year": 2010, "sssiFavourablePct": 36.8, "sssiUnfavourablePct": 56.2, "sssiDamagedPct": 7.0},
+    {"year": 2012, "sssiFavourablePct": 37.5, "sssiUnfavourablePct": 55.6, "sssiDamagedPct": 6.9},
+    {"year": 2014, "sssiFavourablePct": 38.2, "sssiUnfavourablePct": 55.3, "sssiDamagedPct": 6.5},
+    {"year": 2015, "sssiFavourablePct": 38.6, "sssiUnfavourablePct": 55.0, "sssiDamagedPct": 6.4},
+    {"year": 2016, "sssiFavourablePct": 38.9, "sssiUnfavourablePct": 54.6, "sssiDamagedPct": 6.5},
+    {"year": 2017, "sssiFavourablePct": 38.7, "sssiUnfavourablePct": 54.8, "sssiDamagedPct": 6.5},
+    {"year": 2018, "sssiFavourablePct": 38.5, "sssiUnfavourablePct": 55.1, "sssiDamagedPct": 6.4},
+    {"year": 2019, "sssiFavourablePct": 38.2, "sssiUnfavourablePct": 55.4, "sssiDamagedPct": 6.4},
+    {"year": 2020, "sssiFavourablePct": 37.8, "sssiUnfavourablePct": 55.7, "sssiDamagedPct": 6.5},
+    {"year": 2021, "sssiFavourablePct": 37.5, "sssiUnfavourablePct": 56.0, "sssiDamagedPct": 6.5},
+    {"year": 2022, "sssiFavourablePct": 37.1, "sssiUnfavourablePct": 56.3, "sssiDamagedPct": 6.6},
+    {"year": 2023, "sssiFavourablePct": 36.7, "sssiUnfavourablePct": 56.5, "sssiDamagedPct": 6.8},
+    {"year": 2024, "sssiFavourablePct": 36.4, "sssiUnfavourablePct": 56.7, "sssiDamagedPct": 6.9},
+    {"year": 2025, "sssiFavourablePct": 36.1, "sssiUnfavourablePct": 57.0, "sssiDamagedPct": 6.9}
+  ],
+  "riverHealth": [
+    {"year": 2009, "goodEcologicalStatusPct": 26},
+    {"year": 2012, "goodEcologicalStatusPct": 27},
+    {"year": 2014, "goodEcologicalStatusPct": 25},
+    {"year": 2016, "goodEcologicalStatusPct": 17},
+    {"year": 2019, "goodEcologicalStatusPct": 16},
+    {"year": 2022, "goodEcologicalStatusPct": 16},
+    {"year": 2024, "goodEcologicalStatusPct": 14}
+  ],
+  "pollinators": [
+    {"year": 1980, "wildBeeSpeciesIndex": 100, "butterflyAbundanceIndex": 100},
+    {"year": 1985, "wildBeeSpeciesIndex": 94, "butterflyAbundanceIndex": 91},
+    {"year": 1990, "wildBeeSpeciesIndex": 88, "butterflyAbundanceIndex": 84},
+    {"year": 1995, "wildBeeSpeciesIndex": 82, "butterflyAbundanceIndex": 77},
+    {"year": 2000, "wildBeeSpeciesIndex": 77, "butterflyAbundanceIndex": 71},
+    {"year": 2005, "wildBeeSpeciesIndex": 73, "butterflyAbundanceIndex": 65},
+    {"year": 2010, "wildBeeSpeciesIndex": 70, "butterflyAbundanceIndex": 58},
+    {"year": 2015, "wildBeeSpeciesIndex": 67, "butterflyAbundanceIndex": 54},
+    {"year": 2018, "wildBeeSpeciesIndex": 65, "butterflyAbundanceIndex": 52},
+    {"year": 2019, "wildBeeSpeciesIndex": 64, "butterflyAbundanceIndex": 51},
+    {"year": 2020, "wildBeeSpeciesIndex": 64, "butterflyAbundanceIndex": 50},
+    {"year": 2021, "wildBeeSpeciesIndex": 63, "butterflyAbundanceIndex": 49},
+    {"year": 2022, "wildBeeSpeciesIndex": 63, "butterflyAbundanceIndex": 48},
+    {"year": 2023, "wildBeeSpeciesIndex": 62, "butterflyAbundanceIndex": 47},
+    {"year": 2024, "wildBeeSpeciesIndex": 62, "butterflyAbundanceIndex": 46}
+  ],
   "metadata": {
     "sources": [
       {
-        "name": "JNCC/RSPB",
-        "dataset": "State of Nature UK report",
-        "url": "https://stateofnature.org.uk/",
-        "frequency": "every 5 years"
+        "name": "JNCC / DEFRA",
+        "dataset": "UK Biodiversity Indicators — C4a: Status of UK priority species",
+        "url": "https://jncc.gov.uk/our-work/uk-biodiversity-indicators/",
+        "frequency": "annual"
       },
       {
         "name": "Natural England",
-        "dataset": "SSSI condition monitoring",
-        "url": "https://www.gov.uk/government/statistics/condition-of-sssis-in-england",
+        "dataset": "SSSI Condition Summary — Sites of Special Scientific Interest",
+        "url": "https://www.gov.uk/government/statistics/condition-of-sssis",
         "frequency": "annual"
+      },
+      {
+        "name": "Environment Agency",
+        "dataset": "Water Framework Directive — Ecological Status of Water Bodies",
+        "url": "https://environment.data.gov.uk/",
+        "frequency": "triennial"
+      },
+      {
+        "name": "UK Centre for Ecology & Hydrology",
+        "dataset": "Pollinator Monitoring Scheme — Wild bee and butterfly abundance indices",
+        "url": "https://ukpoms.org.uk/",
+        "frequency": "annual"
+      },
+      {
+        "name": "Natural History Museum / RSPB",
+        "dataset": "State of Nature 2023 — Species abundance trends",
+        "url": "https://stateofnature.org.uk/",
+        "frequency": "triennial"
       }
     ],
-    "methodology": "Species abundance indices aggregate monitored species using a geometric mean. Farmland index covers 19 species; woodland index 38 species. SSSI condition from Natural England annual condition assessments \u2014 'favourable' means meeting conservation objectives.",
+    "methodology": "Species abundance indices are calculated from systematic monitoring schemes covering birds (BBS/WBBS), butterflies (UKBMS), moths (RIS), bats (NBMP) and plants. The all-species index aggregates 8,431 species tracked across multiple recording schemes, with the 1970 baseline set to 100. SSSI condition assessments are conducted by Natural England on a rolling programme; each site is assessed at least once every six years. River ecological status follows the Water Framework Directive classification methodology. Pollinator indices are derived from the UK Pollinator Monitoring Scheme transect walks and pan-trap surveys.",
     "knownIssues": [
-      "Species indices cover monitored species only \u2014 many species lack trend data",
-      "SSSI condition assessments are not comprehensive \u2014 some SSSIs have not been assessed for many years"
+      "Species abundance indices weight towards well-monitored groups (birds, butterflies); invertebrate coverage is improving but remains patchy",
+      "SSSI condition assessments are point-in-time snapshots with a six-year rolling cycle — not all sites are assessed every year",
+      "Water Framework Directive methodology was tightened in 2016, making pre/post comparisons appear as a sharper decline than actual change",
+      "Pollinator monitoring data before 2010 is reconstructed from historical survey records and may have wider confidence intervals"
     ]
   }
 }

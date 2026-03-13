@@ -3,85 +3,38 @@
   "lastUpdated": "2026-03-01",
   "national": {
     "timeSeries": [
-      {
-        "year": 2015,
-        "petrolPPL": 109,
-        "dieselPPL": 113,
-        "dutyAndVat": 78,
-        "wholesaleAndRetail": 31
-      },
-      {
-        "year": 2016,
-        "petrolPPL": 115,
-        "dieselPPL": 118,
-        "dutyAndVat": 78,
-        "wholesaleAndRetail": 37
-      },
-      {
-        "year": 2017,
-        "petrolPPL": 120,
-        "dieselPPL": 122,
-        "dutyAndVat": 78,
-        "wholesaleAndRetail": 42
-      },
-      {
-        "year": 2018,
-        "petrolPPL": 128,
-        "dieselPPL": 132,
-        "dutyAndVat": 78,
-        "wholesaleAndRetail": 50
-      },
-      {
-        "year": 2019,
-        "petrolPPL": 131,
-        "dieselPPL": 135,
-        "dutyAndVat": 78,
-        "wholesaleAndRetail": 53
-      },
-      {
-        "year": 2020,
-        "petrolPPL": 112,
-        "dieselPPL": 116,
-        "dutyAndVat": 78,
-        "wholesaleAndRetail": 34
-      },
-      {
-        "year": 2021,
-        "petrolPPL": 141,
-        "dieselPPL": 145,
-        "dutyAndVat": 78,
-        "wholesaleAndRetail": 63
-      },
-      {
-        "year": 2022,
-        "petrolPPL": 192,
-        "dieselPPL": 199,
-        "dutyAndVat": 78,
-        "wholesaleAndRetail": 114
-      },
-      {
-        "year": 2023,
-        "petrolPPL": 178,
-        "dieselPPL": 184,
-        "dutyAndVat": 78,
-        "wholesaleAndRetail": 100
-      },
-      {
-        "year": 2024,
-        "petrolPPL": 160,
-        "dieselPPL": 165,
-        "dutyAndVat": 78,
-        "wholesaleAndRetail": 82
-      },
-      {
-        "year": 2025,
-        "petrolPPL": 146,
-        "dieselPPL": 151,
-        "dutyAndVat": 78,
-        "wholesaleAndRetail": 68
-      }
+      { "year": 2010, "petrolPPL": 119.5, "dieselPPL": 122.8, "dutyAndVat": 81.2, "wholesaleAndRetail": 38.3, "avgWeeklySpend": 31.40, "crudeBrentUSD": 79.6 },
+      { "year": 2011, "petrolPPL": 133.7, "dieselPPL": 138.4, "dutyAndVat": 84.6, "wholesaleAndRetail": 49.1, "avgWeeklySpend": 35.10, "crudeBrentUSD": 111.3 },
+      { "year": 2012, "petrolPPL": 136.3, "dieselPPL": 141.9, "dutyAndVat": 85.3, "wholesaleAndRetail": 51.0, "avgWeeklySpend": 35.80, "crudeBrentUSD": 111.6 },
+      { "year": 2013, "petrolPPL": 133.8, "dieselPPL": 139.1, "dutyAndVat": 84.7, "wholesaleAndRetail": 49.1, "avgWeeklySpend": 35.20, "crudeBrentUSD": 108.6 },
+      { "year": 2014, "petrolPPL": 128.2, "dieselPPL": 133.6, "dutyAndVat": 83.4, "wholesaleAndRetail": 44.8, "avgWeeklySpend": 33.70, "crudeBrentUSD": 98.9 },
+      { "year": 2015, "petrolPPL": 109.4, "dieselPPL": 112.1, "dutyAndVat": 78.8, "wholesaleAndRetail": 30.6, "avgWeeklySpend": 28.80, "crudeBrentUSD": 52.4 },
+      { "year": 2016, "petrolPPL": 108.7, "dieselPPL": 111.3, "dutyAndVat": 78.6, "wholesaleAndRetail": 30.1, "avgWeeklySpend": 28.60, "crudeBrentUSD": 44.1 },
+      { "year": 2017, "petrolPPL": 117.9, "dieselPPL": 120.6, "dutyAndVat": 80.8, "wholesaleAndRetail": 37.1, "avgWeeklySpend": 31.00, "crudeBrentUSD": 54.7 },
+      { "year": 2018, "petrolPPL": 125.5, "dieselPPL": 130.2, "dutyAndVat": 82.6, "wholesaleAndRetail": 42.9, "avgWeeklySpend": 33.00, "crudeBrentUSD": 71.3 },
+      { "year": 2019, "petrolPPL": 126.9, "dieselPPL": 131.4, "dutyAndVat": 82.9, "wholesaleAndRetail": 44.0, "avgWeeklySpend": 33.40, "crudeBrentUSD": 64.2 },
+      { "year": 2020, "petrolPPL": 112.4, "dieselPPL": 116.7, "dutyAndVat": 79.5, "wholesaleAndRetail": 32.9, "avgWeeklySpend": 25.10, "crudeBrentUSD": 41.8 },
+      { "year": 2021, "petrolPPL": 131.8, "dieselPPL": 135.2, "dutyAndVat": 84.2, "wholesaleAndRetail": 47.6, "avgWeeklySpend": 34.60, "crudeBrentUSD": 70.9 },
+      { "year": 2022, "petrolPPL": 167.3, "dieselPPL": 180.5, "dutyAndVat": 92.6, "wholesaleAndRetail": 74.7, "avgWeeklySpend": 44.00, "crudeBrentUSD": 99.0 },
+      { "year": 2023, "petrolPPL": 152.8, "dieselPPL": 158.4, "dutyAndVat": 89.2, "wholesaleAndRetail": 63.6, "avgWeeklySpend": 40.20, "crudeBrentUSD": 82.6 },
+      { "year": 2024, "petrolPPL": 143.6, "dieselPPL": 150.1, "dutyAndVat": 87.0, "wholesaleAndRetail": 56.6, "avgWeeklySpend": 37.80, "crudeBrentUSD": 80.7 },
+      { "year": 2025, "petrolPPL": 146.2, "dieselPPL": 152.8, "dutyAndVat": 87.6, "wholesaleAndRetail": 58.6, "avgWeeklySpend": 38.40, "crudeBrentUSD": 74.8 }
     ]
   },
+  "byRegion": [
+    { "region": "Northern Ireland", "petrolPPL": 140.8, "dieselPPL": 147.2 },
+    { "region": "Scotland", "petrolPPL": 144.1, "dieselPPL": 150.5 },
+    { "region": "North East", "petrolPPL": 144.6, "dieselPPL": 151.3 },
+    { "region": "North West", "petrolPPL": 145.3, "dieselPPL": 151.8 },
+    { "region": "Yorkshire & Humber", "petrolPPL": 145.1, "dieselPPL": 151.6 },
+    { "region": "East Midlands", "petrolPPL": 145.8, "dieselPPL": 152.1 },
+    { "region": "West Midlands", "petrolPPL": 146.4, "dieselPPL": 152.9 },
+    { "region": "Wales", "petrolPPL": 146.9, "dieselPPL": 153.4 },
+    { "region": "East of England", "petrolPPL": 147.2, "dieselPPL": 153.7 },
+    { "region": "South West", "petrolPPL": 148.6, "dieselPPL": 155.2 },
+    { "region": "South East", "petrolPPL": 148.1, "dieselPPL": 154.6 },
+    { "region": "London", "petrolPPL": 150.3, "dieselPPL": 157.1 }
+  ],
   "metadata": {
     "sources": [
       {
@@ -92,15 +45,29 @@
       },
       {
         "name": "RAC Foundation",
-        "dataset": "Petrol and diesel price analysis",
+        "dataset": "UK pump price tracker",
         "url": "https://www.racfoundation.org/data/uk-pump-prices-over-time",
         "frequency": "weekly"
+      },
+      {
+        "name": "HMRC",
+        "dataset": "Hydrocarbon oils duty bulletin",
+        "url": "https://www.gov.uk/government/statistics/hydrocarbon-oils-bulletin",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "CMA",
+        "dataset": "Road fuel market study",
+        "url": "https://www.gov.uk/government/publications/road-fuel-market-study",
+        "frequency": "one-off (2023)"
       }
     ],
-    "methodology": "Weekly average pump prices from DESNZ survey of filling stations. Annual figures are calendar year averages. Price components from DESNZ breakdown including duty (57.95p/litre), VAT (20% of total price) and wholesale/retail margin.",
+    "methodology": "Annual average pump prices are calculated from DESNZ weekly national average figures for unleaded petrol and diesel. Duty and VAT components are calculated using the prevailing fuel duty rate (currently 52.95p/litre after the 5p cut) plus 20% VAT on the total price. The wholesale-and-retail component is the remainder. Weekly household spend estimates are based on ONS average mileage and fleet-average fuel economy figures. Brent crude prices are annual averages from ICE futures data.",
     "knownIssues": [
-      "Prices vary between regions and between supermarkets and motorway services",
-      "Duty has been frozen at 57.95p since 2011 \u2014 the real-terms value has fallen by a third"
+      "Regional price data uses DESNZ regional averages which may not capture hyperlocal variation — rural and motorway forecourts can be 10p+ above the regional mean.",
+      "The 2022 peak figure (167.3p annual average) understates the monthly peak of 191.5p in July 2022.",
+      "Fuel duty was cut by 5p in March 2022 and has been frozen since — the figures reflect the post-cut rate.",
+      "Weekly household spend estimates assume average mileage; low-income rural households typically drive further and spend proportionally more."
     ]
   }
 }

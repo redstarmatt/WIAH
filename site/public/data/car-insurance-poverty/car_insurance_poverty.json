@@ -2,22 +2,87 @@
   "topic": "car-insurance-poverty",
   "lastUpdated": "2026-03-05",
   "timeSeries": [
-    { "year": 2016, "avgPremium": 465, "youngDriverPremium": 1500 },
-    { "year": 2017, "avgPremium": 470, "youngDriverPremium": 1550 },
-    { "year": 2018, "avgPremium": 475, "youngDriverPremium": 1600 },
-    { "year": 2019, "avgPremium": 490, "youngDriverPremium": 1650 },
-    { "year": 2020, "avgPremium": 515, "youngDriverPremium": 1700 },
-    { "year": 2021, "avgPremium": 500, "youngDriverPremium": 1700 },
-    { "year": 2022, "avgPremium": 520, "youngDriverPremium": 1800 },
-    { "year": 2023, "avgPremium": 585, "youngDriverPremium": 1900 },
-    { "year": 2024, "avgPremium": 924, "youngDriverPremium": 2800 }
+    { "year": 2014, "avgPremium": 438, "youngDriverPremium": 1420, "uninsuredVehiclesK": 780 },
+    { "year": 2015, "avgPremium": 452, "youngDriverPremium": 1480, "uninsuredVehiclesK": 790 },
+    { "year": 2016, "avgPremium": 465, "youngDriverPremium": 1500, "uninsuredVehiclesK": 800 },
+    { "year": 2017, "avgPremium": 470, "youngDriverPremium": 1550, "uninsuredVehiclesK": 800 },
+    { "year": 2018, "avgPremium": 475, "youngDriverPremium": 1600, "uninsuredVehiclesK": 820 },
+    { "year": 2019, "avgPremium": 490, "youngDriverPremium": 1650, "uninsuredVehiclesK": 830 },
+    { "year": 2020, "avgPremium": 460, "youngDriverPremium": 1580, "uninsuredVehiclesK": 840 },
+    { "year": 2021, "avgPremium": 500, "youngDriverPremium": 1700, "uninsuredVehiclesK": 850 },
+    { "year": 2022, "avgPremium": 520, "youngDriverPremium": 1800, "uninsuredVehiclesK": 870 },
+    { "year": 2023, "avgPremium": 585, "youngDriverPremium": 1900, "uninsuredVehiclesK": 900 },
+    { "year": 2024, "avgPremium": 924, "youngDriverPremium": 2800, "uninsuredVehiclesK": 1020 },
+    { "year": 2025, "avgPremium": 866, "youngDriverPremium": 2640, "uninsuredVehiclesK": 1050 }
+  ],
+  "premiumByAge": [
+    { "year": 2019, "age17to19": 1650, "age20to24": 980, "age25to29": 620, "age30to39": 430, "age40to59": 370, "age60plus": 320 },
+    { "year": 2020, "age17to19": 1580, "age20to24": 940, "age25to29": 590, "age30to39": 400, "age40to59": 350, "age60plus": 310 },
+    { "year": 2021, "age17to19": 1700, "age20to24": 1020, "age25to29": 640, "age30to39": 440, "age40to59": 380, "age60plus": 330 },
+    { "year": 2022, "age17to19": 1800, "age20to24": 1080, "age25to29": 680, "age30to39": 460, "age40to59": 400, "age60plus": 340 },
+    { "year": 2023, "age17to19": 1900, "age20to24": 1180, "age25to29": 750, "age30to39": 510, "age40to59": 440, "age60plus": 370 },
+    { "year": 2024, "age17to19": 2800, "age20to24": 1740, "age25to29": 1120, "age30to39": 790, "age40to59": 660, "age60plus": 540 },
+    { "year": 2025, "age17to19": 2640, "age20to24": 1620, "age25to29": 1040, "age30to39": 730, "age40to59": 610, "age60plus": 500 }
+  ],
+  "premiumAsPercentOfIncome": [
+    { "year": 2014, "medianDriver": 2.8, "youngWorker": 12.1 },
+    { "year": 2015, "medianDriver": 2.9, "youngWorker": 12.5 },
+    { "year": 2016, "medianDriver": 2.9, "youngWorker": 12.6 },
+    { "year": 2017, "medianDriver": 2.9, "youngWorker": 12.8 },
+    { "year": 2018, "medianDriver": 2.9, "youngWorker": 13.0 },
+    { "year": 2019, "medianDriver": 3.0, "youngWorker": 13.2 },
+    { "year": 2020, "medianDriver": 2.7, "youngWorker": 12.4 },
+    { "year": 2021, "medianDriver": 3.0, "youngWorker": 13.1 },
+    { "year": 2022, "medianDriver": 3.0, "youngWorker": 13.6 },
+    { "year": 2023, "medianDriver": 3.3, "youngWorker": 14.0 },
+    { "year": 2024, "medianDriver": 5.1, "youngWorker": 20.7 },
+    { "year": 2025, "medianDriver": 4.7, "youngWorker": 19.2 }
   ],
   "metadata": {
     "sources": [
-      { "name": "ABI", "dataset": "Motor Insurance Premium Tracker", "url": "https://www.abi.org.uk/data-and-research/reports-and-publications/motor-insurance-premium-tracker/", "retrieved": "2026-03-05", "frequency": "quarterly" },
-      { "name": "Confused.com", "dataset": "Car Insurance Price Index", "url": "https://www.confused.com/car-insurance/prices", "retrieved": "2026-03-05", "frequency": "quarterly" }
+      {
+        "name": "ABI",
+        "dataset": "Motor Insurance Premium Tracker",
+        "url": "https://www.abi.org.uk/data-and-research/reports-and-publications/motor-insurance-premium-tracker/",
+        "retrieved": "2026-03-05",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Confused.com",
+        "dataset": "Car Insurance Price Index",
+        "url": "https://www.confused.com/car-insurance/prices",
+        "retrieved": "2026-03-05",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "Motor Insurers Bureau",
+        "dataset": "Uninsured Driving Statistics",
+        "url": "https://www.mib.org.uk/",
+        "retrieved": "2026-03-05",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Annual Survey of Hours and Earnings",
+        "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings",
+        "retrieved": "2026-03-05",
+        "frequency": "annual"
+      },
+      {
+        "name": "FCA",
+        "dataset": "General Insurance Pricing Practices Review",
+        "url": "https://www.fca.org.uk/publications/policy-statements/ps21-5-general-insurance-pricing-practices-market-study",
+        "retrieved": "2026-03-05",
+        "frequency": "one-off"
+      }
     ],
-    "methodology": "Average premium from ABI Motor Insurance Premium Tracker (comprehensive cover, annual figure). Young driver premium from price comparison site composite data for 18-year-old male drivers.",
-    "knownIssues": ["Average premium masks significant variation by area, vehicle type, and driver profile", "Young driver figures are indicative — actual premiums vary widely"]
+    "methodology": "Average premium data from ABI Motor Insurance Premium Tracker (comprehensive cover, annual average). Young driver premium from price comparison site composite data for 18-year-old male drivers. Uninsured vehicle estimates from Motor Insurers Bureau continuous insurance enforcement data. Premium-to-income ratios calculated using ONS ASHE median full-time earnings for all workers and median earnings for 18-21 age band respectively.",
+    "knownIssues": [
+      "Average premium masks significant variation by postcode, vehicle type, and driver profile",
+      "Young driver figures are indicative composites — actual premiums vary widely by postcode and vehicle",
+      "Uninsured vehicle estimates have significant uncertainty margins (±200k)",
+      "2020 figures reflect reduced driving during pandemic lockdowns, not structural improvement",
+      "FCA GIPP reforms (Jan 2022) changed pricing practices — pre/post comparison requires caution"
+    ]
   }
 }

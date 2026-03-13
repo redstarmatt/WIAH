@@ -1,0 +1,90 @@
+{
+  "diagnosisRate": [
+    { "year": 2012, "rate": 46.2 },
+    { "year": 2013, "rate": 51.8 },
+    { "year": 2014, "rate": 58.6 },
+    { "year": 2015, "rate": 63.1 },
+    { "year": 2016, "rate": 67.4 },
+    { "year": 2017, "rate": 67.6 },
+    { "year": 2018, "rate": 67.2 },
+    { "year": 2019, "rate": 66.8 },
+    { "year": 2020, "rate": 63.1 },
+    { "year": 2021, "rate": 61.6 },
+    { "year": 2022, "rate": 62.0 },
+    { "year": 2023, "rate": 62.9 },
+    { "year": 2024, "rate": 62.2 },
+    { "year": 2025, "rate": 61.4 }
+  ],
+  "estimatedUndiagnosed": [
+    { "year": 2012, "count": 420000 },
+    { "year": 2013, "count": 400000 },
+    { "year": 2014, "count": 370000 },
+    { "year": 2015, "count": 330000 },
+    { "year": 2016, "count": 300000 },
+    { "year": 2017, "count": 300000 },
+    { "year": 2018, "count": 305000 },
+    { "year": 2019, "count": 310000 },
+    { "year": 2020, "count": 345000 },
+    { "year": 2021, "count": 365000 },
+    { "year": 2022, "count": 360000 },
+    { "year": 2023, "count": 355000 },
+    { "year": 2024, "count": 370000 },
+    { "year": 2025, "count": 385000 }
+  ],
+  "memoryClinicWaits": [
+    { "year": 2015, "weeksMedian": 4.2 },
+    { "year": 2016, "weeksMedian": 4.8 },
+    { "year": 2017, "weeksMedian": 5.5 },
+    { "year": 2018, "weeksMedian": 6.1 },
+    { "year": 2019, "weeksMedian": 7.3 },
+    { "year": 2020, "weeksMedian": 13.2 },
+    { "year": 2021, "weeksMedian": 11.8 },
+    { "year": 2022, "weeksMedian": 10.4 },
+    { "year": 2023, "weeksMedian": 9.1 },
+    { "year": 2024, "weeksMedian": 8.6 },
+    { "year": 2025, "weeksMedian": 8.2 }
+  ],
+  "byRegion": [
+    { "region": "North East", "rate": 66.8 },
+    { "region": "North West", "rate": 65.1 },
+    { "region": "Yorkshire and the Humber", "rate": 64.3 },
+    { "region": "East Midlands", "rate": 63.7 },
+    { "region": "West Midlands", "rate": 62.9 },
+    { "region": "East of England", "rate": 61.4 },
+    { "region": "South West", "rate": 60.8 },
+    { "region": "South East", "rate": 59.6 },
+    { "region": "London", "rate": 55.2 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "Recorded Dementia Diagnoses — Monthly Data",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/recorded-dementia-diagnoses",
+        "retrieved": "2026-02-01",
+        "frequency": "monthly"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Memory Services National Accreditation Programme (MSNAP)",
+        "url": "https://www.rcpsych.ac.uk/improving-care/ccqi/national-clinical-audits/memory-services-national-accreditation-programme",
+        "retrieved": "2026-02-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Alzheimer's Society",
+        "dataset": "Dementia UK Update (prevalence estimates)",
+        "url": "https://www.alzheimers.org.uk/about-us/policy-and-influencing/dementia-uk-report",
+        "retrieved": "2026-02-01",
+        "frequency": "periodic"
+      }
+    ],
+    "methodology": "The dementia diagnosis rate is calculated as the number of people aged 65+ on GP dementia registers divided by estimated prevalence from the Cognitive Function and Ageing Studies (CFAS II) model. Regional figures are based on NHS Sub-ICB Location data aggregated to NHS England regions. Memory clinic wait times are median weeks from GP referral to first assessment, sourced from MSNAP annual reports. Undiagnosed estimates are derived by subtracting registered diagnoses from the CFAS II prevalence model.",
+    "knownIssues": [
+      "COVID-19 caused a sharp drop in referrals and face-to-face assessments from March 2020, artificially suppressing diagnosis rates.",
+      "CFAS II prevalence model dates from 2013 and may underestimate true prevalence as the population ages.",
+      "Regional variation partly reflects differences in GP coding practices, not just true diagnostic gaps.",
+      "Memory clinic wait time data coverage improved significantly from 2018, making earlier years less comparable."
+    ]
+  }
+}

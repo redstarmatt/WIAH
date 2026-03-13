@@ -5,88 +5,132 @@
     "timeSeries": [
       {
         "year": 2015,
-        "attendancePct": 63,
-        "participationPct": 38,
+        "attendancePct": 63.0,
+        "participationPct": 38.0,
+        "digitalEngagementPct": 41.0,
         "londonFundingPerHead": 31.2,
-        "northEastFundingPerHead": 6.8
+        "northEastFundingPerHead": 6.8,
+        "nationalFundingPerHead": 12.8,
+        "museumVisitsMillions": 47.6
       },
       {
         "year": 2016,
-        "attendancePct": 64,
-        "participationPct": 39,
+        "attendancePct": 64.0,
+        "participationPct": 39.0,
+        "digitalEngagementPct": 43.0,
         "londonFundingPerHead": 31.8,
-        "northEastFundingPerHead": 6.5
+        "northEastFundingPerHead": 6.5,
+        "nationalFundingPerHead": 12.2,
+        "museumVisitsMillions": 48.1
       },
       {
         "year": 2017,
-        "attendancePct": 65,
-        "participationPct": 39,
+        "attendancePct": 65.0,
+        "participationPct": 39.0,
+        "digitalEngagementPct": 45.0,
         "londonFundingPerHead": 32.0,
-        "northEastFundingPerHead": 6.2
+        "northEastFundingPerHead": 6.2,
+        "nationalFundingPerHead": 11.6,
+        "museumVisitsMillions": 49.2
       },
       {
         "year": 2018,
-        "attendancePct": 65,
-        "participationPct": 40,
+        "attendancePct": 65.0,
+        "participationPct": 40.0,
+        "digitalEngagementPct": 47.0,
         "londonFundingPerHead": 32.5,
-        "northEastFundingPerHead": 6.4
+        "northEastFundingPerHead": 6.4,
+        "nationalFundingPerHead": 11.0,
+        "museumVisitsMillions": 50.1
       },
       {
         "year": 2019,
-        "attendancePct": 65,
-        "participationPct": 40,
+        "attendancePct": 65.0,
+        "participationPct": 40.0,
+        "digitalEngagementPct": 49.0,
         "londonFundingPerHead": 33.0,
-        "northEastFundingPerHead": 6.3
+        "northEastFundingPerHead": 6.3,
+        "nationalFundingPerHead": 10.5,
+        "museumVisitsMillions": 50.8
       },
       {
         "year": 2020,
-        "attendancePct": 40,
-        "participationPct": 28,
+        "attendancePct": 40.0,
+        "participationPct": 28.0,
+        "digitalEngagementPct": 62.0,
         "londonFundingPerHead": 28.0,
-        "northEastFundingPerHead": 5.8
+        "northEastFundingPerHead": 5.8,
+        "nationalFundingPerHead": 10.1,
+        "museumVisitsMillions": 11.2
       },
       {
         "year": 2021,
-        "attendancePct": 50,
-        "participationPct": 32,
+        "attendancePct": 50.0,
+        "participationPct": 32.0,
+        "digitalEngagementPct": 58.0,
         "londonFundingPerHead": 30.0,
-        "northEastFundingPerHead": 6.0
+        "northEastFundingPerHead": 6.0,
+        "nationalFundingPerHead": 9.8,
+        "museumVisitsMillions": 24.5
       },
       {
         "year": 2022,
-        "attendancePct": 54,
-        "participationPct": 34,
+        "attendancePct": 54.0,
+        "participationPct": 34.0,
+        "digitalEngagementPct": 55.0,
         "londonFundingPerHead": 31.5,
-        "northEastFundingPerHead": 5.9
+        "northEastFundingPerHead": 5.9,
+        "nationalFundingPerHead": 9.4,
+        "museumVisitsMillions": 38.7
       },
       {
         "year": 2023,
-        "attendancePct": 55,
-        "participationPct": 35,
+        "attendancePct": 55.0,
+        "participationPct": 35.0,
+        "digitalEngagementPct": 53.0,
         "londonFundingPerHead": 32.8,
-        "northEastFundingPerHead": 5.8
+        "northEastFundingPerHead": 5.8,
+        "nationalFundingPerHead": 9.1,
+        "museumVisitsMillions": 42.3
       },
       {
         "year": 2024,
-        "attendancePct": 56,
-        "participationPct": 36,
+        "attendancePct": 56.0,
+        "participationPct": 36.0,
+        "digitalEngagementPct": 52.0,
         "londonFundingPerHead": 33.0,
-        "northEastFundingPerHead": 5.6
+        "northEastFundingPerHead": 5.6,
+        "nationalFundingPerHead": 8.9,
+        "museumVisitsMillions": 45.1
       },
       {
         "year": 2025,
-        "attendancePct": 57,
-        "participationPct": 37,
+        "attendancePct": 57.0,
+        "participationPct": 37.0,
+        "digitalEngagementPct": 51.0,
         "londonFundingPerHead": 33.2,
-        "northEastFundingPerHead": 5.1
+        "northEastFundingPerHead": 5.1,
+        "nationalFundingPerHead": 8.7,
+        "museumVisitsMillions": 46.8
       }
     ]
   },
+  "byRegion": [
+    {"region": "London", "attendancePct": 68, "fundingPerHead": 33.2},
+    {"region": "South East", "attendancePct": 62, "fundingPerHead": 7.4},
+    {"region": "South West", "attendancePct": 60, "fundingPerHead": 8.1},
+    {"region": "East of England", "attendancePct": 58, "fundingPerHead": 6.2},
+    {"region": "West Midlands", "attendancePct": 54, "fundingPerHead": 7.8},
+    {"region": "East Midlands", "attendancePct": 52, "fundingPerHead": 5.3},
+    {"region": "Yorkshire & Humber", "attendancePct": 51, "fundingPerHead": 6.9},
+    {"region": "North West", "attendancePct": 50, "fundingPerHead": 8.5},
+    {"region": "North East", "attendancePct": 47, "fundingPerHead": 5.1}
+  ],
   "metadata": {
     "sources": [
       {
         "name": "Arts Council England",
-        "dataset": "Taking Part survey \u2014 arts engagement",
+        "dataset": "Taking Part survey — arts engagement",
         "url": "https://www.artscouncil.org.uk/research-and-data/taking-part-survey",
         "frequency": "annual"
       },
@@ -95,12 +139,20 @@
         "dataset": "Investment and funding data",
         "url": "https://www.artscouncil.org.uk/research-and-data/our-data",
         "frequency": "annual"
+      },
+      {
+        "name": "DCMS",
+        "dataset": "DCMS Sectors Economic Estimates — Creative Industries",
+        "url": "https://www.gov.uk/government/collections/dcms-sectors-economic-estimates",
+        "frequency": "annual"
       }
     ],
-    "methodology": "Attendance rate: percentage of adults (16+) who attended an arts event or cultural experience at least once in past 12 months. Taking Part survey sample ~10,000 per year. Funding per head uses ONS mid-year population estimates.",
+    "methodology": "Attendance rate: percentage of adults (16+) who attended an arts event or cultural experience at least once in past 12 months. Taking Part survey sample ~10,000 per year. Funding per head uses ONS mid-year population estimates and is adjusted to 2024 prices using the GDP deflator. Digital engagement measures adults who engaged with arts or cultural content online. Museum visits are total recorded visits to DCMS-sponsored museums and galleries.",
     "knownIssues": [
       "2020 and 2021 figures are not comparable to other years due to COVID venue closures",
-      "London funding concentration partly reflects that national touring productions originate from London-based organisations"
+      "London funding concentration partly reflects that national touring productions originate from London-based organisations",
+      "Digital engagement figures from 2020 are inflated by COVID lockdowns and not directly comparable to pre-pandemic survey methodology",
+      "Taking Part survey was replaced by the Active Lives survey in 2016; figures prior have been mapped to equivalent measures but are not perfectly comparable"
     ]
   }
 }

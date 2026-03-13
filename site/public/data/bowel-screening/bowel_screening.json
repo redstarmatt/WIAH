@@ -1,0 +1,99 @@
+{
+  "uptake": [
+    { "year": 2010, "percent": 52.1 },
+    { "year": 2011, "percent": 53.4 },
+    { "year": 2012, "percent": 54.2 },
+    { "year": 2013, "percent": 55.0 },
+    { "year": 2014, "percent": 55.8 },
+    { "year": 2015, "percent": 56.4 },
+    { "year": 2016, "percent": 57.0 },
+    { "year": 2017, "percent": 57.2 },
+    { "year": 2018, "percent": 56.8 },
+    { "year": 2019, "percent": 60.1 },
+    { "year": 2020, "percent": 63.8 },
+    { "year": 2021, "percent": 65.2 },
+    { "year": 2022, "percent": 66.0 },
+    { "year": 2023, "percent": 66.8 },
+    { "year": 2024, "percent": 67.3 }
+  ],
+  "earlyStageDetection": [
+    { "year": 2010, "percent": 38.2 },
+    { "year": 2011, "percent": 39.5 },
+    { "year": 2012, "percent": 41.0 },
+    { "year": 2013, "percent": 42.3 },
+    { "year": 2014, "percent": 43.8 },
+    { "year": 2015, "percent": 45.0 },
+    { "year": 2016, "percent": 45.9 },
+    { "year": 2017, "percent": 46.5 },
+    { "year": 2018, "percent": 47.1 },
+    { "year": 2019, "percent": 48.4 },
+    { "year": 2020, "percent": 49.2 },
+    { "year": 2021, "percent": 50.1 },
+    { "year": 2022, "percent": 51.4 },
+    { "year": 2023, "percent": 52.5 },
+    { "year": 2024, "percent": 53.1 }
+  ],
+  "mortalityRate": [
+    { "year": 2010, "ratePer100k": 17.4 },
+    { "year": 2011, "ratePer100k": 17.1 },
+    { "year": 2012, "ratePer100k": 16.8 },
+    { "year": 2013, "ratePer100k": 16.3 },
+    { "year": 2014, "ratePer100k": 15.9 },
+    { "year": 2015, "ratePer100k": 15.6 },
+    { "year": 2016, "ratePer100k": 15.3 },
+    { "year": 2017, "ratePer100k": 15.0 },
+    { "year": 2018, "ratePer100k": 14.7 },
+    { "year": 2019, "ratePer100k": 14.4 },
+    { "year": 2020, "ratePer100k": 14.6 },
+    { "year": 2021, "ratePer100k": 14.2 },
+    { "year": 2022, "ratePer100k": 13.8 },
+    { "year": 2023, "ratePer100k": 13.5 },
+    { "year": 2024, "ratePer100k": 13.2 }
+  ],
+  "ageExpansion": [
+    { "year": 2019, "lowerAge": 60, "invitationsSent": 4200000 },
+    { "year": 2020, "lowerAge": 58, "invitationsSent": 4500000 },
+    { "year": 2021, "lowerAge": 56, "invitationsSent": 4900000 },
+    { "year": 2022, "lowerAge": 54, "invitationsSent": 5400000 },
+    { "year": 2023, "lowerAge": 52, "invitationsSent": 5900000 },
+    { "year": 2024, "lowerAge": 50, "invitationsSent": 6300000 }
+  ],
+  "deprivationGap": [
+    { "quintile": "Most deprived", "uptakePercent": 51.2 },
+    { "quintile": "2nd", "uptakePercent": 59.4 },
+    { "quintile": "3rd", "uptakePercent": 66.1 },
+    { "quintile": "4th", "uptakePercent": 71.8 },
+    { "quintile": "Least deprived", "uptakePercent": 76.3 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "Bowel Cancer Screening Programme Statistics",
+        "url": "https://www.gov.uk/government/statistics/bowel-cancer-screening-programme-statistics",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Office for National Statistics",
+        "dataset": "Cancer Registration Statistics",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Cancer Research UK",
+        "dataset": "Bowel Cancer Statistics",
+        "url": "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/bowel-cancer",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Uptake is measured as the proportion of eligible people who completed a screening kit within six months of invitation. The programme transitioned from guaiac faecal occult blood test (gFOBt) to faecal immunochemical test (FIT) in June 2019. Age expansion from 60-74 to 50-74 began in April 2021 and is being phased in over several years. Mortality rates are age-standardised to the 2013 European Standard Population. Early stage detection refers to cancers diagnosed at Stage 1 or Stage 2 among screen-detected cases.",
+    "knownIssues": [
+      "COVID-19 caused screening pauses in 2020, creating an invitation backlog that inflated apparent uptake as paused invitations were re-sent",
+      "The switch from gFOBt to FIT in 2019 means pre- and post-2019 uptake figures are not directly comparable",
+      "Age expansion is ongoing — uptake among newly eligible younger cohorts is typically lower, which may depress headline rates as expansion completes"
+    ]
+  }
+}

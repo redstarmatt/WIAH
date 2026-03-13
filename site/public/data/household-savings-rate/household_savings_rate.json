@@ -1,0 +1,98 @@
+{
+  "savingsRatio": [
+    {"year": 2000, "rate": 5.2},
+    {"year": 2001, "rate": 5.8},
+    {"year": 2002, "rate": 4.9},
+    {"year": 2003, "rate": 4.5},
+    {"year": 2004, "rate": 3.8},
+    {"year": 2005, "rate": 3.7},
+    {"year": 2006, "rate": 3.2},
+    {"year": 2007, "rate": 2.4},
+    {"year": 2008, "rate": 4.8},
+    {"year": 2009, "rate": 7.6},
+    {"year": 2010, "rate": 8.5},
+    {"year": 2011, "rate": 7.2},
+    {"year": 2012, "rate": 6.8},
+    {"year": 2013, "rate": 5.1},
+    {"year": 2014, "rate": 6.3},
+    {"year": 2015, "rate": 6.9},
+    {"year": 2016, "rate": 6.7},
+    {"year": 2017, "rate": 5.1},
+    {"year": 2018, "rate": 6.0},
+    {"year": 2019, "rate": 6.5},
+    {"year": 2020, "rate": 25.9},
+    {"year": 2021, "rate": 12.0},
+    {"year": 2022, "rate": 10.0},
+    {"year": 2023, "rate": 9.5},
+    {"year": 2024, "rate": 8.9},
+    {"year": 2025, "rate": 8.4}
+  ],
+  "noSavingsHouseholds": [
+    {"year": 2010, "pct": 25},
+    {"year": 2011, "pct": 26},
+    {"year": 2012, "pct": 27},
+    {"year": 2013, "pct": 25},
+    {"year": 2014, "pct": 23},
+    {"year": 2015, "pct": 21},
+    {"year": 2016, "pct": 20},
+    {"year": 2017, "pct": 19},
+    {"year": 2018, "pct": 19},
+    {"year": 2019, "pct": 20},
+    {"year": 2020, "pct": 18},
+    {"year": 2021, "pct": 19},
+    {"year": 2022, "pct": 21},
+    {"year": 2023, "pct": 22},
+    {"year": 2024, "pct": 23},
+    {"year": 2025, "pct": 24}
+  ],
+  "medianSavingsBalance": [
+    {"year": 2010, "amount": 3200},
+    {"year": 2011, "amount": 3050},
+    {"year": 2012, "amount": 2900},
+    {"year": 2013, "amount": 3100},
+    {"year": 2014, "amount": 3400},
+    {"year": 2015, "amount": 3700},
+    {"year": 2016, "amount": 3900},
+    {"year": 2017, "amount": 4100},
+    {"year": 2018, "amount": 4200},
+    {"year": 2019, "amount": 4400},
+    {"year": 2020, "amount": 6100},
+    {"year": 2021, "amount": 5800},
+    {"year": 2022, "amount": 5200},
+    {"year": 2023, "amount": 4700},
+    {"year": 2024, "amount": 4300},
+    {"year": 2025, "amount": 4100}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "United Kingdom Economic Accounts — Household saving ratio",
+        "url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/datasets/unitedkingdomeconomicaccounts",
+        "retrieved": "2026-03-01",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "FCA",
+        "dataset": "Financial Lives Survey",
+        "url": "https://www.fca.org.uk/publications/research/financial-lives",
+        "retrieved": "2026-03-01",
+        "frequency": "biennial"
+      },
+      {
+        "name": "Bank of England",
+        "dataset": "Household deposit statistics",
+        "url": "https://www.bankofengland.co.uk/statistics/money-and-credit",
+        "retrieved": "2026-03-01",
+        "frequency": "monthly"
+      }
+    ],
+    "methodology": "The household savings ratio is defined as the percentage of total household disposable income that is saved rather than spent. It is derived from ONS National Accounts data. The 'no savings' measure comes from the FCA Financial Lives Survey and covers adults with less than £100 in accessible savings. Median savings balances are from Bank of England household deposit data, adjusted for inflation using CPIH.",
+    "knownIssues": [
+      "The savings ratio is a national aggregate and masks significant inequality between income quintiles",
+      "COVID-era savings were concentrated among higher-income households; lower-income households often dissaved",
+      "FCA Financial Lives Survey methodology changed in 2020, introducing a break in the no-savings series",
+      "Pension contributions are included in the national savings ratio but excluded from liquid savings figures"
+    ]
+  }
+}

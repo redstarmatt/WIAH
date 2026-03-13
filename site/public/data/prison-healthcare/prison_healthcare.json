@@ -1,0 +1,91 @@
+{
+  "healthcareRatings": [
+    {"year": 2015, "poorOrInadequatePct": 18},
+    {"year": 2016, "poorOrInadequatePct": 19},
+    {"year": 2017, "poorOrInadequatePct": 21},
+    {"year": 2018, "poorOrInadequatePct": 22},
+    {"year": 2019, "poorOrInadequatePct": 24},
+    {"year": 2020, "poorOrInadequatePct": 26},
+    {"year": 2021, "poorOrInadequatePct": 27},
+    {"year": 2022, "poorOrInadequatePct": 29},
+    {"year": 2023, "poorOrInadequatePct": 31},
+    {"year": 2024, "poorOrInadequatePct": 33}
+  ],
+  "selfHarm": [
+    {"year": 2015, "incidentsPer1000": 298},
+    {"year": 2016, "incidentsPer1000": 364},
+    {"year": 2017, "incidentsPer1000": 418},
+    {"year": 2018, "incidentsPer1000": 502},
+    {"year": 2019, "incidentsPer1000": 538},
+    {"year": 2020, "incidentsPer1000": 487},
+    {"year": 2021, "incidentsPer1000": 521},
+    {"year": 2022, "incidentsPer1000": 578},
+    {"year": 2023, "incidentsPer1000": 612},
+    {"year": 2024, "incidentsPer1000": 641}
+  ],
+  "mentalHealthPrevalence": [
+    {"year": 2015, "estimatedPct": 63},
+    {"year": 2016, "estimatedPct": 64},
+    {"year": 2017, "estimatedPct": 65},
+    {"year": 2018, "estimatedPct": 67},
+    {"year": 2019, "estimatedPct": 68},
+    {"year": 2020, "estimatedPct": 70},
+    {"year": 2021, "estimatedPct": 70},
+    {"year": 2022, "estimatedPct": 70},
+    {"year": 2023, "estimatedPct": 70},
+    {"year": 2024, "estimatedPct": 70}
+  ],
+  "gpVacancyRate": [
+    {"year": 2015, "vacancyPct": 12},
+    {"year": 2016, "vacancyPct": 14},
+    {"year": 2017, "vacancyPct": 17},
+    {"year": 2018, "vacancyPct": 21},
+    {"year": 2019, "vacancyPct": 24},
+    {"year": 2020, "vacancyPct": 28},
+    {"year": 2021, "vacancyPct": 31},
+    {"year": 2022, "vacancyPct": 33},
+    {"year": 2023, "vacancyPct": 35},
+    {"year": 2024, "vacancyPct": 37}
+  ],
+  "metadata": {
+    "topic": "prison-healthcare",
+    "lastUpdated": "2025-11-01",
+    "sources": [
+      {
+        "name": "HM Inspectorate of Prisons",
+        "dataset": "Annual Report — Healthcare ratings",
+        "url": "https://www.justiceinspectorates.gov.uk/hmiprisons/inspections/",
+        "retrieved": "2025-11-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Ministry of Justice",
+        "dataset": "Safety in Custody Statistics — Self-harm",
+        "url": "https://www.gov.uk/government/statistics/safety-in-custody-quarterly-update-to-june-2024",
+        "retrieved": "2025-11-01",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "HM Inspectorate of Prisons",
+        "dataset": "Mental health prevalence estimates",
+        "url": "https://www.justiceinspectorates.gov.uk/hmiprisons/our-work/annual-report/",
+        "retrieved": "2025-11-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Health and Justice workforce data",
+        "url": "https://www.england.nhs.uk/commissioning/health-just/",
+        "retrieved": "2025-11-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Healthcare ratings are drawn from HMIP inspection reports, which assess healthcare provision as part of a four-test healthy prison framework. Self-harm data comes from Ministry of Justice Safety in Custody statistics (incidents per 1,000 prisoners). Mental health prevalence is an estimate based on HMIP surveys and academic literature. GP vacancy rates reflect unfilled primary care positions across the prison estate as reported through NHS England Health and Justice commissioning data.",
+    "knownIssues": [
+      "HMIP inspections do not cover every prison every year; rolling inspection cycle means some years reflect a different subset of prisons.",
+      "Mental health prevalence figures are estimates — no comprehensive screening of the entire prison population exists.",
+      "COVID-19 disrupted inspections in 2020–2021, creating data gaps in healthcare ratings.",
+      "Self-harm recording practices vary between establishments and may undercount incidents."
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "maintenanceBacklog": [
+    {"year": 2010, "billions": 0.78},
+    {"year": 2011, "billions": 0.84},
+    {"year": 2012, "billions": 0.91},
+    {"year": 2013, "billions": 0.97},
+    {"year": 2014, "billions": 1.05},
+    {"year": 2015, "billions": 1.12},
+    {"year": 2016, "billions": 1.21},
+    {"year": 2017, "billions": 1.28},
+    {"year": 2018, "billions": 1.35},
+    {"year": 2019, "billions": 1.46},
+    {"year": 2020, "billions": 1.55},
+    {"year": 2021, "billions": 1.63},
+    {"year": 2022, "billions": 1.74},
+    {"year": 2023, "billions": 1.86},
+    {"year": 2024, "billions": 1.94},
+    {"year": 2025, "billions": 2.05}
+  ],
+  "weightRestrictedBridges": [
+    {"year": 2010, "count": 1180},
+    {"year": 2011, "count": 1220},
+    {"year": 2012, "count": 1280},
+    {"year": 2013, "count": 1340},
+    {"year": 2014, "count": 1410},
+    {"year": 2015, "count": 1480},
+    {"year": 2016, "count": 1540},
+    {"year": 2017, "count": 1610},
+    {"year": 2018, "count": 1680},
+    {"year": 2019, "count": 1760},
+    {"year": 2020, "count": 1830},
+    {"year": 2021, "count": 1900},
+    {"year": 2022, "count": 1960},
+    {"year": 2023, "count": 2020},
+    {"year": 2024, "count": 2080},
+    {"year": 2025, "count": 2140}
+  ],
+  "substandardBridges": [
+    {"year": 2010, "percent": 18.2},
+    {"year": 2011, "percent": 19.1},
+    {"year": 2012, "percent": 20.0},
+    {"year": 2013, "percent": 20.8},
+    {"year": 2014, "percent": 21.5},
+    {"year": 2015, "percent": 22.3},
+    {"year": 2016, "percent": 23.0},
+    {"year": 2017, "percent": 23.9},
+    {"year": 2018, "percent": 24.6},
+    {"year": 2019, "percent": 25.4},
+    {"year": 2020, "percent": 26.1},
+    {"year": 2021, "percent": 26.8},
+    {"year": 2022, "percent": 27.4},
+    {"year": 2023, "percent": 28.0},
+    {"year": 2024, "percent": 28.6},
+    {"year": 2025, "percent": 29.1}
+  ],
+  "byRegion": [
+    {"region": "North West", "backlogMillions": 312, "substandard": 34.2},
+    {"region": "Yorkshire & Humber", "backlogMillions": 278, "substandard": 31.8},
+    {"region": "North East", "backlogMillions": 195, "substandard": 30.5},
+    {"region": "West Midlands", "backlogMillions": 247, "substandard": 29.1},
+    {"region": "East Midlands", "backlogMillions": 198, "substandard": 27.6},
+    {"region": "South West", "backlogMillions": 224, "substandard": 26.3},
+    {"region": "East of England", "backlogMillions": 171, "substandard": 25.4},
+    {"region": "South East", "backlogMillions": 208, "substandard": 24.1},
+    {"region": "London", "backlogMillions": 172, "substandard": 22.8}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Department for Transport",
+        "dataset": "Local Authority Road Condition and Maintenance Statistics",
+        "url": "https://www.gov.uk/government/statistical-data-sets/road-condition-statistics-data-tables-rdc",
+        "retrieved": "2025-11-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "ADEPT / County Surveyors Society",
+        "dataset": "Annual Local Authority Road Maintenance Survey (ALARM)",
+        "url": "https://www.asphaltindustryalliance.com/alarm-survey.asp",
+        "retrieved": "2025-09-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "RAC Foundation",
+        "dataset": "Bridge Condition and Weight Restriction Analysis",
+        "url": "https://www.racfoundation.org/research/economy/road-bridge-maintenance",
+        "retrieved": "2025-10-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Maintenance backlog figures represent the estimated cost to return all local authority-maintained highway bridges in England to a state of good repair. Weight-restricted bridges are those with posted weight limits below the standard 40/44-tonne HGV limit. Substandard percentage represents bridges rated below Principal Inspection standard by local highway authorities. Regional breakdowns are based on local authority returns to DfT. Figures exclude Highways England (now National Highways) trunk road and motorway structures.",
+    "knownIssues": [
+      "Reporting methodology was updated in 2016 to include retaining walls and culverts in some authority returns — pre/post comparison should note this change",
+      "Not all local authorities return complete bridge condition data every year; DfT applies imputation for missing returns",
+      "COVID-19 disrupted inspection schedules in 2020–21, so condition data for those years may understate deterioration"
+    ]
+  }
+}

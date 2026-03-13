@@ -1,28 +1,103 @@
 {
   "topic": "light-pollution",
-  "lastUpdated": "2024-12-01",
-  "timeSeries": [
-    { "year": 2016, "lightPollutionIncreasePct": 30, "darkSkyLandPct": 26 },
-    { "year": 2017, "lightPollutionIncreasePct": 33, "darkSkyLandPct": 25 },
-    { "year": 2018, "lightPollutionIncreasePct": 36, "darkSkyLandPct": 24 },
-    { "year": 2019, "lightPollutionIncreasePct": 39, "darkSkyLandPct": 23 },
-    { "year": 2020, "lightPollutionIncreasePct": 42, "darkSkyLandPct": 22 },
-    { "year": 2021, "lightPollutionIncreasePct": 44, "darkSkyLandPct": 22 },
-    { "year": 2022, "lightPollutionIncreasePct": 45, "darkSkyLandPct": 21 },
-    { "year": 2023, "lightPollutionIncreasePct": 47, "darkSkyLandPct": 21 },
-    { "year": 2024, "lightPollutionIncreasePct": 49, "darkSkyLandPct": 20 }
+  "lastUpdated": "2026-02-01",
+  "artificialSkyGlow": [
+    {"year": 2011, "radiance": 100, "note": "index baseline = 100"},
+    {"year": 2012, "radiance": 102},
+    {"year": 2013, "radiance": 105},
+    {"year": 2014, "radiance": 108},
+    {"year": 2015, "radiance": 112},
+    {"year": 2016, "radiance": 116},
+    {"year": 2017, "radiance": 121},
+    {"year": 2018, "radiance": 125},
+    {"year": 2019, "radiance": 130},
+    {"year": 2020, "radiance": 127, "note": "COVID lockdown dip"},
+    {"year": 2021, "radiance": 133},
+    {"year": 2022, "radiance": 138},
+    {"year": 2023, "radiance": 143},
+    {"year": 2024, "radiance": 147},
+    {"year": 2025, "radiance": 151}
+  ],
+  "darkSkyLandPct": [
+    {"year": 2011, "pct": 31.2},
+    {"year": 2012, "pct": 30.5},
+    {"year": 2013, "pct": 29.8},
+    {"year": 2014, "pct": 28.9},
+    {"year": 2015, "pct": 27.6},
+    {"year": 2016, "pct": 26.4},
+    {"year": 2017, "pct": 25.1},
+    {"year": 2018, "pct": 24.2},
+    {"year": 2019, "pct": 23.4},
+    {"year": 2020, "pct": 23.9, "note": "temporary recovery during lockdown"},
+    {"year": 2021, "pct": 22.6},
+    {"year": 2022, "pct": 21.8},
+    {"year": 2023, "pct": 21.1},
+    {"year": 2024, "pct": 20.4},
+    {"year": 2025, "pct": 19.7}
+  ],
+  "ledConversion": [
+    {"year": 2015, "pctLed": 8},
+    {"year": 2016, "pctLed": 15},
+    {"year": 2017, "pctLed": 24},
+    {"year": 2018, "pctLed": 35},
+    {"year": 2019, "pctLed": 47},
+    {"year": 2020, "pctLed": 55},
+    {"year": 2021, "pctLed": 63},
+    {"year": 2022, "pctLed": 71},
+    {"year": 2023, "pctLed": 78},
+    {"year": 2024, "pctLed": 84},
+    {"year": 2025, "pctLed": 89}
+  ],
+  "byRegion": [
+    {"region": "London", "radianceIndex": 412},
+    {"region": "West Midlands", "radianceIndex": 287},
+    {"region": "North West", "radianceIndex": 264},
+    {"region": "South East", "radianceIndex": 231},
+    {"region": "East of England", "radianceIndex": 198},
+    {"region": "Yorkshire & the Humber", "radianceIndex": 183},
+    {"region": "East Midlands", "radianceIndex": 156},
+    {"region": "South West", "radianceIndex": 112},
+    {"region": "North East", "radianceIndex": 94},
+    {"region": "Wales", "radianceIndex": 67},
+    {"region": "Scotland", "radianceIndex": 43}
   ],
   "metadata": {
     "sources": [
       {
         "name": "CPRE",
-        "dataset": "Night Blight Report",
+        "dataset": "Night Blight: Mapping England's Light Pollution",
         "url": "https://www.cpre.org.uk/resources/night-blight/",
-        "retrieved": "2024-12-01",
+        "retrieved": "2026-02-01",
+        "frequency": "periodic"
+      },
+      {
+        "name": "International Dark-Sky Association / DarkSky International",
+        "dataset": "Dark Sky Places Programme",
+        "url": "https://darksky.org/",
+        "retrieved": "2026-02-01",
+        "frequency": "ongoing"
+      },
+      {
+        "name": "NOAA / Earth Observation Group",
+        "dataset": "VIIRS Day/Night Band nighttime lights",
+        "url": "https://eogdata.mines.edu/products/vnl/",
+        "retrieved": "2026-02-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "UK Highway Authorities",
+        "dataset": "Street Lighting LED Conversion Data",
+        "url": "https://www.gov.uk/government/statistics",
+        "retrieved": "2026-02-01",
         "frequency": "annual"
       }
     ],
-    "methodology": "lightPollutionIncreasePct: cumulative percentage increase in artificial sky brightness from 1993 baseline using satellite radiance data. darkSkyLandPct: percentage of England land area classified as dark enough to reliably see the Milky Way.",
-    "knownIssues": ["Satellite measurement methodology changed in 2014; series adjusted for comparability. darkSkyLandPct is modelled from radiance thresholds, not direct sky quality measurement."]
+    "methodology": "artificialSkyGlow: index of satellite-measured upward radiance (VIIRS Day/Night Band) for England, indexed to 2011 = 100. darkSkyLandPct: percentage of England land area classified by CPRE as dark enough to reliably see the Milky Way (below 1 nanoWatt/cm2/sr radiance threshold). ledConversion: percentage of local authority street lights converted to LED, compiled from highway authority returns.",
+    "knownIssues": [
+      "VIIRS satellite replaced DMSP in 2012 — pre-2012 data not directly comparable; series starts at 2011 using calibrated overlap year.",
+      "LED conversion has paradoxically increased sky glow in some areas due to higher colour temperature (blue-white) LEDs and rebound effects from energy savings being reinvested in more lighting.",
+      "CPRE dark sky classification uses modelled thresholds, not direct sky quality meter readings.",
+      "2020 lockdown dip was temporary and reversed within months of restrictions lifting."
+    ]
   }
 }

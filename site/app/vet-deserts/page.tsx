@@ -100,7 +100,7 @@ export default function VetDesertsPage() {
 
   return (
     <>
-      <TopicNav topic="Veterinary Access" parentTopic="Health" />
+      <TopicNav topic="Veterinary Access" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader

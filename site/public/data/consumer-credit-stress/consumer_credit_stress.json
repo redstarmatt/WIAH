@@ -1,0 +1,81 @@
+{
+  "highDebtHouseholds": [
+    {"year": 2012, "pct": 4.8},
+    {"year": 2013, "pct": 4.6},
+    {"year": 2014, "pct": 4.5},
+    {"year": 2015, "pct": 4.9},
+    {"year": 2016, "pct": 5.3},
+    {"year": 2017, "pct": 5.7},
+    {"year": 2018, "pct": 6.0},
+    {"year": 2019, "pct": 6.1},
+    {"year": 2020, "pct": 6.3},
+    {"year": 2021, "pct": 6.5},
+    {"year": 2022, "pct": 7.0},
+    {"year": 2023, "pct": 7.8},
+    {"year": 2024, "pct": 8.4},
+    {"year": 2025, "pct": 8.9}
+  ],
+  "creditCardBalances": [
+    {"year": 2012, "billions": 56.2},
+    {"year": 2013, "billions": 56.8},
+    {"year": 2014, "billions": 58.4},
+    {"year": 2015, "billions": 61.2},
+    {"year": 2016, "billions": 63.7},
+    {"year": 2017, "billions": 65.1},
+    {"year": 2018, "billions": 67.3},
+    {"year": 2019, "billions": 64.8},
+    {"year": 2020, "billions": 62.1},
+    {"year": 2021, "billions": 58.0},
+    {"year": 2022, "billions": 60.4},
+    {"year": 2023, "billions": 65.2},
+    {"year": 2024, "billions": 69.1},
+    {"year": 2025, "billions": 72.0}
+  ],
+  "insolvencies": [
+    {"year": 2012, "total": 109870},
+    {"year": 2013, "total": 102478},
+    {"year": 2014, "total": 99196},
+    {"year": 2015, "total": 80422},
+    {"year": 2016, "total": 86783},
+    {"year": 2017, "total": 99196},
+    {"year": 2018, "total": 113541},
+    {"year": 2019, "total": 122181},
+    {"year": 2020, "total": 94165},
+    {"year": 2021, "total": 114556},
+    {"year": 2022, "total": 123178},
+    {"year": 2023, "total": 128645},
+    {"year": 2024, "total": 136317},
+    {"year": 2025, "total": 141802}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Bank of England",
+        "dataset": "Financial Stability Report — Household Debt",
+        "url": "https://www.bankofengland.co.uk/financial-stability-report",
+        "retrieved": "2025-12-15",
+        "frequency": "biannual"
+      },
+      {
+        "name": "Bank of England",
+        "dataset": "Money and Credit Statistics (Table A5.2)",
+        "url": "https://www.bankofengland.co.uk/statistics/money-and-credit/2025/february",
+        "retrieved": "2025-12-15",
+        "frequency": "monthly"
+      },
+      {
+        "name": "Insolvency Service",
+        "dataset": "Individual Insolvencies — England and Wales",
+        "url": "https://www.gov.uk/government/statistics/individual-insolvency-statistics",
+        "retrieved": "2025-12-15",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "High-debt households defined as those with unsecured debt exceeding 40% of gross annual household income, per Bank of England Financial Stability Report methodology. Credit card balances are outstanding balances reported by UK monetary financial institutions. Individual insolvencies include bankruptcies, Individual Voluntary Arrangements (IVAs), and Debt Relief Orders (DROs) in England and Wales.",
+    "knownIssues": [
+      "2020 data reflects temporary suppression of collections activity and government income support during COVID-19.",
+      "IVA volumes rose sharply from 2017 due to aggressive marketing by debt management firms — this inflates the insolvency total relative to underlying financial distress.",
+      "Credit card balance figures are nominal and do not adjust for inflation."
+    ]
+  }
+}

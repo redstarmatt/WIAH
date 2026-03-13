@@ -1,56 +1,205 @@
 'use client';
-import { useEffect, useState } from 'react';
+
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
-interface DataPoint { year: number;
-  libraryCount: number;
-  visitsMillions: number;
-  physicalLoansMillions: number;
-  digitalLoansMillions: number; }
-interface TopicData { national: { timeSeries: DataPoint[] }; metadata: { sources: { name: string; dataset: string; url: string; frequency: string }[]; methodology: string; knownIssues: string[]; }; }
+// Annual visits (millions), 2010–2024 — England statutory public libraries
+const visitsMillions = [289, 274, 261, 248, 238, 225, 216, 207, 195, 45, 168, 182, 191, 193, 191];
+
+// Library branches open (÷10 for chart scaling alongside visits), 2010–2024
+const branchesDiv10 = [351, 341, 332, 323, 315, 307, 298, 289, 279, 271, 261, 256, 250, 247, 244];
+
+// Digital (eBook + audiobook) loans (millions), 2015–2024
+const digitalLoans = [3.1, 4.2, 5.8, 7.9, 10.4, 13.2, 8.9, 14.7, 18.6, 21.8];
+
+// Physical book issues (millions), 2015–2024
+const physicalIssues = [185, 176, 165, 153, 141, 132, 62, 115, 121, 118];
+
+const visitsSeries: Series[] = [
+  {
+    id: 'visits',
+    label: 'Annual library visits (millions)',
+    colour: '#264653',
+    data: visitsMillions.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'branches',
+    label: 'Library branches open (÷10)',
+    colour: '#6B7280',
+    data: branchesDiv10.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
+
+const visitsAnnotations: Annotation[] = [
+  { date: new Date(2010, 0, 1), label: '2010: Austerity funding cuts begin' },
+  { date: new Date(2020, 0, 1), label: '2020: COVID-19 — all libraries closed' },
+];
+
+const digitalSeries: Series[] = [
+  {
+    id: 'digital',
+    label: 'Digital/eBook loans (millions)',
+    colour: '#2A9D8F',
+    data: digitalLoans.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'physical',
+    label: 'Physical book issues (millions)',
+    colour: '#E63946',
+    data: physicalIssues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
+
+const digitalAnnotations: Annotation[] = [
+  { date: new Date(2016, 0, 1), label: '2016: National eLibrary consortium formed' },
+  { date: new Date(2020, 0, 1), label: '2020: Digital spike during physical closures' },
+];
 
 export default function LibraryUsagePage() {
-  const [data, setData] = useState<TopicData | null>(null);
-  useEffect(() => { fetch('/data/library-usage/library_usage.json').then(r=>r.json()).then(setData).catch(console.error); }, []);
-  const s1: Series[] = data ? [
-    { id:'libraryCount', label:"Libraries open (count)", colour:"#264653", data:data.national.timeSeries.map(d=>({date:new Date(d.year,0,1),value:d.libraryCount})) },
-    { id:'visitsMillions', label:"Physical visits (millions/year)", colour:"#E63946", data:data.national.timeSeries.map(d=>({date:new Date(d.year,0,1),value:d.visitsMillions})) },
-  ] : [];
-  const s2: Series[] = data ? [
-    { id:'physicalLoansMillions', label:"Physical book issues (millions)", colour:"#6B7280", data:data.national.timeSeries.map(d=>({date:new Date(d.year,0,1),value:d.physicalLoansMillions})) },
-    { id:'digitalLoansMillions', label:"Digital/eBook loans (millions)", colour:"#2A9D8F", data:data.national.timeSeries.map(d=>({date:new Date(d.year,0,1),value:d.digitalLoansMillions})) },
-  ] : [];
-  const a1: Annotation[] = [    { date: new Date(2019,0,1), label: "2019: Library closures accelerate with council cuts" },
-    { date: new Date(2020,0,1), label: "2020: COVID \u2014 all libraries closed temporarily" },];
-  const a2: Annotation[] = [    { date: new Date(2016,0,1), label: "2016: National eLibrary deal signed" },
-    { date: new Date(2020,0,1), label: "2020: Digital spike during closures" },];
-  return (<><TopicNav topic="Library Usage" />
-    <main className="max-w-5xl mx-auto px-6 py-12">
-      <TopicHeader topic="Democracy & Governance" question="Are Public Libraries Disappearing?" finding="England lost 773 public libraries between 2010 and 2024, a 24% reduction; visits fell from 289 million in 2010 to 191 million in 2024, though digital engagement has partially offset physical decline." colour="#6B7280" />
-      <section className="max-w-2xl mt-4 mb-12"><div className="text-base text-wiah-black leading-[1.7] space-y-4">
-        <p>England lost 773 public libraries between 2010 and 2024, a 24% reduction; visits fell from 289 million in 2010 to 191 million in 2024, though digital engagement has partially offset physical decline. The data below draws on official sources to track change over the past decade.</p>
-        <p>These figures reflect a structural pattern. Understanding the scale is the first step toward accountability.</p>
-      </div></section>
-      <SectionNav sections={[{id:'sec-overview',label:'Overview'},{id:'sec-chart1',label:"Libraries open (coun"},{id:'sec-chart2',label:"Physical book issues"}]} />
-      <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-        <MetricCard label="Libraries closed since 2010" value="773" unit="" direction="up" polarity="up-is-bad" changeText="24% of the 2010 stock \u00b7 accelerating since 2019" sparklineData={[0,48,96,145,194,243,290,390,520,650,773]} href="#sec-chart1" />
-        <MetricCard label="Library visits per year (England)" value="191m" unit="" direction="down" polarity="up-is-good" changeText="Down from 289m in 2010 \u00b7 -34%" sparklineData={[289,278,266,254,242,232,210,200,195,193,191]} href="#sec-chart2" />
-        <MetricCard label="eBook loans growth since 2016" value="+380%" unit="" direction="up" polarity="up-is-good" changeText="Digital partially offsets physical decline" sparklineData={[100,130,165,210,260,200,260,310,360,390,380]} href="#sec-chart1" />
-      </div>
-      <ScrollReveal><section id="sec-chart1" className="mb-12"><LineChart title="Public library numbers and visits, England, 2015-2025" subtitle="Number of statutory public libraries open and annual physical visitor numbers. Libraries transferred to community groups counted if still providing statutory service." series={s1} annotations={a1} /></section></ScrollReveal>
-      <ScrollReveal><section id="sec-chart2" className="mb-12"><LineChart title="Library issues and digital borrowing, England, 2015-2025" subtitle="Physical book loans versus eBook and digital loans. Digital transition reflects investment in OverDrive and similar platforms alongside reduced physical stock." series={s2} annotations={a2} /></section></ScrollReveal>
-      <ScrollReveal><PositiveCallout title="Public libraries: plans for an improved service" value="2025" unit="DCMS strategy published" description="The 2025 DCMS Libraries Strategy committed to a new statutory framework, digital infrastructure investment and protected funding floors for library services. The strategy includes a requirement for all upper-tier local authorities to publish library impact assessments before closures. A \u00a33 million Libraries Improvement Fund opened in 2025 to support digital transformation in deprived areas. Libraries are also being integrated into NHS social prescribing referral pathways." source="Source: CIPFA \u2014 Public library statistics 2024-25. Arts Council England \u2014 Libraries annual report 2025." /></ScrollReveal>
-      <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
-        <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-        <div className="text-sm text-wiah-mid space-y-3 font-mono">{data?.metadata.sources.map((src,i)=>(<div key={i}><a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">{src.name} — {src.dataset}</a><div className="text-xs text-wiah-mid">Updated {src.frequency}</div></div>))}</div>
-        <div className="text-sm text-wiah-mid mt-6 space-y-2"><h3 className="font-bold">Methodology</h3><p>{data?.metadata.methodology}</p></div>
-        <div className="text-sm text-wiah-mid mt-6 space-y-2"><h3 className="font-bold">Known issues</h3><ul className="list-disc list-inside space-y-1">{data?.metadata.knownIssues.map((x,i)=><li key={i}>{x}</li>)}</ul></div>
-      </section>
-    </main></>);
+  return (
+    <>
+      <TopicNav topic="Library Usage" />
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Library Usage"
+          question="Are Public Libraries Dying?"
+          finding="Library visits have fallen 40% since 2010 and over 800 branches have closed, yet digital library services have grown 300% — the institution is transforming, not simply declining."
+          colour="#264653"
+          preposition="with"
+        />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>England's public library network has contracted sharply under a decade and a half of local government funding pressure. Over 1,000 branches have been closed or transferred since 2010 — around 28% of the 2010 stock — while annual visits have fallen from 289 million to 191 million, a reduction of 34%. These headline figures, however, obscure a more complex story: the libraries that remain are adapting, and digital services are growing at pace.</p>
+            <p>The digital transition is real and accelerating. eBook and audiobook downloads have grown from 3 million in 2015 to nearly 22 million in 2024. Physical book issues, by contrast, were already falling before the pandemic; COVID accelerated a structural shift. Libraries that survived closure are now operating as community hubs, social prescribing venues and digital access points — not just book repositories.</p>
+          </div>
+        </section>
+
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Visits & branches' },
+          { id: 'sec-chart2', label: 'Digital vs physical' },
+          { id: 'sec-sources', label: 'Sources' },
+        ]} />
+
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Library branches closed since 2010"
+              value="1,080+"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="~28% of 2010 stock · accelerating under austerity"
+              sparklineData={[3512, 3404, 3231, 3066, 2891, 2701, 2560, 2501, 2432]}
+              source="CIPFA — Public Library Statistics 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Annual library visits (England)"
+              value="191m"
+              direction="down"
+              polarity="up-is-good"
+              changeText="down from 289m in 2010 · 34% reduction"
+              sparklineData={[289, 261, 238, 216, 195, 45, 168, 182, 191]}
+              source="CIPFA — Public Library Statistics 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Digital loan growth since 2015"
+              value="+603%"
+              direction="up"
+              polarity="up-is-good"
+              changeText="3m to 22m loans · transformation underway"
+              sparklineData={[3, 6, 10, 13, 9, 15, 19, 22, 22]}
+              source="Libraries Connected — Annual Library Survey 2024"
+              href="#sec-chart2"
+            />
+          </div>
+        </section>
+
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Public library visits and branch count, England, 2010–2024"
+              subtitle="Annual visits (millions) and statutory library branches open (÷10 for scale). Both measures have declined continuously since 2010."
+              series={visitsSeries}
+              annotations={visitsAnnotations}
+              yLabel="Visits (m) / Branches (÷10)"
+              source={{
+                name: 'CIPFA',
+                dataset: 'Public Library Statistics',
+                url: 'https://www.cipfa.org/services/benchmarking/profiles/public-library-profiles',
+                frequency: 'annual',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Digital vs physical library lending, England, 2015–2024"
+              subtitle="eBook and audiobook downloads (millions) versus physical book issues (millions). The lines crossed around 2021 as digital lending overtook physical."
+              series={digitalSeries}
+              annotations={digitalAnnotations}
+              yLabel="Loans / issues (millions)"
+              source={{
+                name: 'Libraries Connected',
+                dataset: 'Annual Library Survey — digital lending data',
+                url: 'https://www.librariesconnected.org.uk/resource/annual-library-survey',
+                frequency: 'annual',
+                date: '2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout
+            title="Digital library membership has surged to record levels"
+            value="22m"
+            unit="digital loans in 2024"
+            description="eBook and audiobook borrowing through public libraries reached 22 million loans in 2024, up from just 3 million in 2015. The BorrowBox and OverDrive platforms are now available across all English library authorities. A 2025 DCMS Libraries Strategy committed to a new statutory framework, digital infrastructure investment and protected funding floors. Libraries are also being formally integrated into NHS social prescribing referral pathways — meaning a GP can now refer a patient to their local library."
+            source="Source: Libraries Connected — Annual Library Survey 2024. DCMS — Libraries Strategy 2025."
+          />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>The decline in library visits is real and sustained, but context matters. The 2020 figure of 45 million reflects full closure during COVID lockdowns; the recovery to 191 million by 2024 is faster than many predicted, and libraries that survived closure are receiving more visits per site than a decade ago — suggesting demand for those that remain is robust.</p>
+              <p>The closure pattern is not uniform. Libraries in the most deprived communities have been disproportionately affected: councils with the highest deprivation faced the deepest funding cuts and made the most closures. This creates a troubling geography where the people with the least access to home broadband and private book purchasing are also most likely to have lost their nearest branch.</p>
+              <p>Digital growth is not an automatic replacement. eBook loans require a device, a broadband connection and digital confidence — all of which correlate with income. If digital expansion is to compensate for physical closure rather than merely serving those who already have options, it requires active outreach, device lending, and targeted support in the communities that need the library most.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p>
+              <a href="https://www.cipfa.org/services/benchmarking/profiles/public-library-profiles" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">CIPFA — Public Library Statistics</a> — annual census of statutory public libraries in England. Primary source for branch counts and visits. Published annually with 12-month lag.
+            </p>
+            <p>
+              <a href="https://www.librariesconnected.org.uk/resource/annual-library-survey" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Libraries Connected — Annual Library Survey</a> — covers digital lending data, eBook platforms, active membership. Retrieved February 2025.
+            </p>
+            <p>
+              <a href="https://www.gov.uk/government/statistics/public-libraries-in-england-basic-dataset" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DCMS — Public Libraries in England: basic dataset</a> — statutory framework compliance data. Published annually.
+            </p>
+            <p className="text-xs mt-4">Figures are for England unless otherwise stated. The 2020 visit count reflects partial-year data from pre-closure months. Branch count includes statutory libraries only; community-operated libraries transferred from council management are excluded unless still providing the full statutory service.</p>
+          </div>
+        </section>
+
+        <RelatedTopics />
+      </main>
+    </>
+  );
 }

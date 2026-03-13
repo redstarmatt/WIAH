@@ -1,0 +1,87 @@
+{
+  "enforcementActions": [
+    {"year": 2014, "actions": 1420000},
+    {"year": 2015, "actions": 1480000},
+    {"year": 2016, "actions": 1530000},
+    {"year": 2017, "actions": 1600000},
+    {"year": 2018, "actions": 1710000},
+    {"year": 2019, "actions": 1800000},
+    {"year": 2020, "actions": 980000, "note": "COVID moratorium on bailiff visits"},
+    {"year": 2021, "actions": 1450000},
+    {"year": 2022, "actions": 1900000},
+    {"year": 2023, "actions": 2200000},
+    {"year": 2024, "actions": 2300000}
+  ],
+  "outstandingDebt": [
+    {"year": 2014, "debtBillions": 2.8},
+    {"year": 2015, "debtBillions": 2.9},
+    {"year": 2016, "debtBillions": 3.1},
+    {"year": 2017, "debtBillions": 3.3},
+    {"year": 2018, "debtBillions": 3.6},
+    {"year": 2019, "debtBillions": 3.8},
+    {"year": 2020, "debtBillions": 4.1},
+    {"year": 2021, "debtBillions": 4.5},
+    {"year": 2022, "debtBillions": 5.0},
+    {"year": 2023, "debtBillions": 5.6},
+    {"year": 2024, "debtBillions": 6.1}
+  ],
+  "bailiffComplaints": [
+    {"year": 2016, "complaints": 28400},
+    {"year": 2017, "complaints": 32100},
+    {"year": 2018, "complaints": 35600},
+    {"year": 2019, "complaints": 38200},
+    {"year": 2020, "complaints": 14500, "note": "COVID moratorium reduced bailiff activity"},
+    {"year": 2021, "complaints": 29800},
+    {"year": 2022, "complaints": 41300},
+    {"year": 2023, "complaints": 48700},
+    {"year": 2024, "complaints": 52100}
+  ],
+  "vulnerabilityRate": [
+    {"year": 2017, "percentVulnerable": 28},
+    {"year": 2018, "percentVulnerable": 31},
+    {"year": 2019, "percentVulnerable": 33},
+    {"year": 2020, "percentVulnerable": 42},
+    {"year": 2021, "percentVulnerable": 39},
+    {"year": 2022, "percentVulnerable": 44},
+    {"year": 2023, "percentVulnerable": 47},
+    {"year": 2024, "percentVulnerable": 51}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Ministry of Justice",
+        "dataset": "Taking Control of Goods — National Standards Statistics",
+        "url": "https://www.gov.uk/government/statistics/taking-control-of-goods-national-standards",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Ministry of Housing, Communities and Local Government",
+        "dataset": "Council Taxbase and Council Tax Collection Rates",
+        "url": "https://www.gov.uk/government/collections/council-taxbase-statistics",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "StepChange Debt Charity",
+        "dataset": "Council Tax Debt Statistics — Annual Report",
+        "url": "https://www.stepchange.org/policy-and-research/council-tax-debt.aspx",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Money and Mental Health Policy Institute",
+        "dataset": "Bailiff Reform — Vulnerability Assessment",
+        "url": "https://www.moneyandmentalhealth.org/publications/",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Enforcement action counts include liability orders granted, bailiff referrals, and attachment of earnings orders. Outstanding debt figures represent cumulative arrears across all English billing authorities. Complaints data covers formal complaints to the Local Government Ombudsman and council complaints processes relating to bailiff conduct. Vulnerability rate represents the proportion of people referred to bailiffs who meet at least one vulnerability criterion under the Taking Control of Goods Regulations 2013.",
+    "knownIssues": [
+      "COVID-19 moratorium on bailiff visits (March 2020 to June 2021) suppressed enforcement actions artificially — post-moratorium surge reflects backlog, not necessarily increased non-payment",
+      "Not all councils report bailiff complaint data consistently — figures may undercount",
+      "Definition of vulnerability varies between councils and bailiff firms"
+    ]
+  }
+}

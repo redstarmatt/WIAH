@@ -1,15 +1,58 @@
 {
-  "topic": "personal-health-budgets",
-  "lastUpdated": "2026-03-01",
-  "timeSeries": [
-    {"year": 2015, "holdersK": 10},
-    {"year": 2016, "holdersK": 15},
-    {"year": 2017, "holdersK": 22},
-    {"year": 2018, "holdersK": 35},
-    {"year": 2019, "holdersK": 55},
-    {"year": 2020, "holdersK": 58},
-    {"year": 2021, "holdersK": 72},
-    {"year": 2022, "holdersK": 88},
-    {"year": 2023, "holdersK": 110}
+  "activeBudgets": [
+    { "year": 2015, "count": 7400 },
+    { "year": 2016, "count": 16800 },
+    { "year": 2017, "count": 25300 },
+    { "year": 2018, "count": 34100 },
+    { "year": 2019, "count": 46200 },
+    { "year": 2020, "count": 52700 },
+    { "year": 2021, "count": 61300 },
+    { "year": 2022, "count": 74800 },
+    { "year": 2023, "count": 89200 },
+    { "year": 2024, "count": 105400 },
+    { "year": 2025, "count": 118600 }
+  ],
+  "averageBudgetValue": [
+    { "year": 2015, "value": 12400 },
+    { "year": 2016, "value": 12800 },
+    { "year": 2017, "value": 13100 },
+    { "year": 2018, "value": 13600 },
+    { "year": 2019, "value": 14200 },
+    { "year": 2020, "value": 14800 },
+    { "year": 2021, "value": 15400 },
+    { "year": 2022, "value": 16100 },
+    { "year": 2023, "value": 17300 },
+    { "year": 2024, "value": 18200 },
+    { "year": 2025, "value": 19100 }
+  ],
+  "icbCoverage": [
+    { "year": 2017, "pctMeetingTarget": 8 },
+    { "year": 2018, "pctMeetingTarget": 14 },
+    { "year": 2019, "pctMeetingTarget": 19 },
+    { "year": 2020, "pctMeetingTarget": 22 },
+    { "year": 2021, "pctMeetingTarget": 26 },
+    { "year": 2022, "pctMeetingTarget": 30 },
+    { "year": 2023, "pctMeetingTarget": 35 },
+    { "year": 2024, "pctMeetingTarget": 38 },
+    { "year": 2025, "pctMeetingTarget": 43 }
+  ],
+  "conditionBreakdown": [
+    { "condition": "Continuing healthcare", "pct": 38 },
+    { "condition": "Mental health", "pct": 22 },
+    { "condition": "Learning disability", "pct": 18 },
+    { "condition": "Long-term conditions", "pct": 12 },
+    { "condition": "End of life", "pct": 6 },
+    { "condition": "Other", "pct": 4 }
+  ],
+  "byRegion": [
+    { "region": "South West", "budgetsPerCapita": 2.8 },
+    { "region": "North East", "budgetsPerCapita": 2.5 },
+    { "region": "East of England", "budgetsPerCapita": 2.3 },
+    { "region": "South East", "budgetsPerCapita": 2.1 },
+    { "region": "North West", "budgetsPerCapita": 1.9 },
+    { "region": "West Midlands", "budgetsPerCapita": 1.7 },
+    { "region": "Yorkshire & Humber", "budgetsPerCapita": 1.5 },
+    { "region": "East Midlands", "budgetsPerCapita": 1.3 },
+    { "region": "London", "budgetsPerCapita": 1.0 }
   ]
 }

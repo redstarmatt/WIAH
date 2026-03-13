@@ -1,0 +1,55 @@
+{
+  "emptyHomes": [
+    {"year": 2010, "total": 737049},
+    {"year": 2011, "total": 720178},
+    {"year": 2012, "total": 710403},
+    {"year": 2013, "total": 635127},
+    {"year": 2014, "total": 610123},
+    {"year": 2015, "total": 600894},
+    {"year": 2016, "total": 605891},
+    {"year": 2017, "total": 605928},
+    {"year": 2018, "total": 634453},
+    {"year": 2019, "total": 648114},
+    {"year": 2020, "total": 665989},
+    {"year": 2021, "total": 676304},
+    {"year": 2022, "total": 757090},
+    {"year": 2023, "total": 919846},
+    {"year": 2024, "total": 1022433}
+  ],
+  "longTermEmpty": [
+    {"year": 2010, "total": 303546},
+    {"year": 2011, "total": 279781},
+    {"year": 2012, "total": 259728},
+    {"year": 2013, "total": 232630},
+    {"year": 2014, "total": 216050},
+    {"year": 2015, "total": 205821},
+    {"year": 2016, "total": 200625},
+    {"year": 2017, "total": 205293},
+    {"year": 2018, "total": 216186},
+    {"year": 2019, "total": 225845},
+    {"year": 2020, "total": 238306},
+    {"year": 2021, "total": 248149},
+    {"year": 2022, "total": 261471},
+    {"year": 2023, "total": 284592},
+    {"year": 2024, "total": 309856}
+  ],
+  "councilTaxPremium": [
+    {"year": 2019, "properties": 71204},
+    {"year": 2020, "properties": 82361},
+    {"year": 2021, "properties": 96847},
+    {"year": 2022, "properties": 112508},
+    {"year": 2023, "properties": 128741},
+    {"year": 2024, "properties": 152932}
+  ],
+  "byRegion": [
+    {"region": "North West", "emptyPerThousand": 14.2},
+    {"region": "North East", "emptyPerThousand": 13.8},
+    {"region": "Yorkshire and the Humber", "emptyPerThousand": 12.1},
+    {"region": "West Midlands", "emptyPerThousand": 11.4},
+    {"region": "East Midlands", "emptyPerThousand": 9.7},
+    {"region": "London", "emptyPerThousand": 9.3},
+    {"region": "South West", "emptyPerThousand": 8.9},
+    {"region": "East of England", "emptyPerThousand": 7.6},
+    {"region": "South East", "emptyPerThousand": 7.1}
+  ]
+}

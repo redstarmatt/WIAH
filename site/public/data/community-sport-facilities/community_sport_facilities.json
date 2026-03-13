@@ -1,87 +1,59 @@
 {
-  "topic": "community-sport-facilities",
-  "lastUpdated": "2026-03-01",
-  "national": {
-    "timeSeries": [
-      {
-        "year": 2015,
-        "cumulativeClosures": 200,
-        "atRiskFacilities": 150,
-        "richestQuintilePct": 75,
-        "poorestQuintilePct": 57
-      },
-      {
-        "year": 2016,
-        "cumulativeClosures": 350,
-        "atRiskFacilities": 170,
-        "richestQuintilePct": 76,
-        "poorestQuintilePct": 57
-      },
-      {
-        "year": 2017,
-        "cumulativeClosures": 500,
-        "atRiskFacilities": 180,
-        "richestQuintilePct": 77,
-        "poorestQuintilePct": 57
-      },
-      {
-        "year": 2018,
-        "cumulativeClosures": 650,
-        "atRiskFacilities": 200,
-        "richestQuintilePct": 78,
-        "poorestQuintilePct": 58
-      },
-      {
-        "year": 2019,
-        "cumulativeClosures": 800,
-        "atRiskFacilities": 220,
-        "richestQuintilePct": 79,
-        "poorestQuintilePct": 59
-      },
-      {
-        "year": 2020,
-        "cumulativeClosures": 950,
-        "atRiskFacilities": 350,
-        "richestQuintilePct": 70,
-        "poorestQuintilePct": 51
-      },
-      {
-        "year": 2021,
-        "cumulativeClosures": 1100,
-        "atRiskFacilities": 280,
-        "richestQuintilePct": 76,
-        "poorestQuintilePct": 54
-      },
-      {
-        "year": 2022,
-        "cumulativeClosures": 1300,
-        "atRiskFacilities": 420,
-        "richestQuintilePct": 80,
-        "poorestQuintilePct": 55
-      },
-      {
-        "year": 2023,
-        "cumulativeClosures": 1520,
-        "atRiskFacilities": 380,
-        "richestQuintilePct": 81,
-        "poorestQuintilePct": 56
-      },
-      {
-        "year": 2024,
-        "cumulativeClosures": 1680,
-        "atRiskFacilities": 320,
-        "richestQuintilePct": 82,
-        "poorestQuintilePct": 58
-      },
-      {
-        "year": 2025,
-        "cumulativeClosures": 1800,
-        "atRiskFacilities": 290,
-        "richestQuintilePct": 83,
-        "poorestQuintilePct": 59
-      }
-    ]
-  },
+  "facilityClosures": [
+    {"year": 2010, "closures": 45},
+    {"year": 2011, "closures": 62},
+    {"year": 2012, "closures": 78},
+    {"year": 2013, "closures": 95},
+    {"year": 2014, "closures": 110},
+    {"year": 2015, "closures": 130},
+    {"year": 2016, "closures": 155},
+    {"year": 2017, "closures": 172},
+    {"year": 2018, "closures": 198},
+    {"year": 2019, "closures": 215},
+    {"year": 2020, "closures": 245},
+    {"year": 2021, "closures": 210},
+    {"year": 2022, "closures": 285},
+    {"year": 2023, "closures": 240},
+    {"year": 2024, "closures": 195},
+    {"year": 2025, "closures": 140}
+  ],
+  "participationGap": [
+    {"year": 2015, "richestQuintilePct": 75, "poorestQuintilePct": 57},
+    {"year": 2016, "richestQuintilePct": 76, "poorestQuintilePct": 57},
+    {"year": 2017, "richestQuintilePct": 77, "poorestQuintilePct": 57},
+    {"year": 2018, "richestQuintilePct": 78, "poorestQuintilePct": 58},
+    {"year": 2019, "richestQuintilePct": 79, "poorestQuintilePct": 59},
+    {"year": 2020, "richestQuintilePct": 70, "poorestQuintilePct": 51},
+    {"year": 2021, "richestQuintilePct": 76, "poorestQuintilePct": 54},
+    {"year": 2022, "richestQuintilePct": 80, "poorestQuintilePct": 55},
+    {"year": 2023, "richestQuintilePct": 81, "poorestQuintilePct": 56},
+    {"year": 2024, "richestQuintilePct": 82, "poorestQuintilePct": 58},
+    {"year": 2025, "richestQuintilePct": 83, "poorestQuintilePct": 59}
+  ],
+  "swimmingPools": [
+    {"year": 2015, "totalPools": 4340, "publiclyAccessible": 3120},
+    {"year": 2016, "totalPools": 4280, "publiclyAccessible": 3065},
+    {"year": 2017, "totalPools": 4210, "publiclyAccessible": 2990},
+    {"year": 2018, "totalPools": 4130, "publiclyAccessible": 2905},
+    {"year": 2019, "totalPools": 4050, "publiclyAccessible": 2820},
+    {"year": 2020, "totalPools": 3940, "publiclyAccessible": 2710},
+    {"year": 2021, "totalPools": 3860, "publiclyAccessible": 2640},
+    {"year": 2022, "totalPools": 3740, "publiclyAccessible": 2520},
+    {"year": 2023, "totalPools": 3650, "publiclyAccessible": 2430},
+    {"year": 2024, "totalPools": 3580, "publiclyAccessible": 2360},
+    {"year": 2025, "totalPools": 3520, "publiclyAccessible": 2310}
+  ],
+  "byRegion": [
+    {"region": "North East", "closuresPerCapita": 4.8, "participationPct": 56},
+    {"region": "North West", "closuresPerCapita": 4.2, "participationPct": 59},
+    {"region": "Yorkshire & Humber", "closuresPerCapita": 3.9, "participationPct": 60},
+    {"region": "West Midlands", "closuresPerCapita": 3.7, "participationPct": 58},
+    {"region": "East Midlands", "closuresPerCapita": 3.3, "participationPct": 62},
+    {"region": "East of England", "closuresPerCapita": 2.8, "participationPct": 65},
+    {"region": "London", "closuresPerCapita": 2.5, "participationPct": 64},
+    {"region": "South East", "closuresPerCapita": 2.1, "participationPct": 68},
+    {"region": "South West", "closuresPerCapita": 2.3, "participationPct": 67}
+  ],
   "metadata": {
     "sources": [
       {
@@ -92,15 +64,23 @@
       },
       {
         "name": "Swim England",
-        "dataset": "Swimming and leisure centre stock audit",
+        "dataset": "National Pool and Leisure Facility Audit",
         "url": "https://www.swimming.org/swimengland/pool-and-facility-reports/",
         "frequency": "biennial"
+      },
+      {
+        "name": "Sport England",
+        "dataset": "Active Places Power — facility database",
+        "url": "https://www.activeplacespower.com/",
+        "frequency": "continuous"
       }
     ],
-    "methodology": "Facility closures from Swim England National Pool and Leisure Audit combined with Sport England facility records. Closures include permanent closure and conversion to non-sport use; facilities under temporary closure not counted. Participation from Active Lives Survey (sample ~180,000 adults per year).",
+    "methodology": "Facility closures sourced from Swim England National Pool and Leisure Audit combined with Sport England Active Places Power database. Closures include permanent closure and conversion to non-sport use; facilities under temporary seasonal closure are not counted. Participation data from Active Lives Survey (sample approximately 180,000 adults per year). Income quintile breakdowns use Index of Multiple Deprivation linked to survey respondent areas. Swimming pool counts include pools of 20m+ only.",
     "knownIssues": [
-      "Leisure trust handovers from councils sometimes mask true closure status",
-      "Energy cost crisis of 2022-23 created unprecedented at-risk numbers which partially recovered after government support"
+      "Leisure trust handovers from councils sometimes mask true closure status for 12–18 months",
+      "COVID-19 created temporary closures in 2020 which became permanent in some cases — exact transition point is imprecise",
+      "Energy cost crisis of 2022–23 created unprecedented at-risk numbers which partially recovered after government support",
+      "Active Lives Survey methodology changed in 2015/16 — pre-2015 participation figures are from the separate Active People Survey and not directly comparable"
     ]
   }
 }

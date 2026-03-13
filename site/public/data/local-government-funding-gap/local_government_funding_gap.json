@@ -1,0 +1,63 @@
+{
+  "fundingGap": [
+    {"year": 2015, "gapBn": 0.5},
+    {"year": 2016, "gapBn": 0.8},
+    {"year": 2017, "gapBn": 1.2},
+    {"year": 2018, "gapBn": 1.5},
+    {"year": 2019, "gapBn": 1.9},
+    {"year": 2020, "gapBn": 2.2},
+    {"year": 2021, "gapBn": 2.5},
+    {"year": 2022, "gapBn": 2.8},
+    {"year": 2023, "gapBn": 3.2},
+    {"year": 2024, "gapBn": 3.6},
+    {"year": 2025, "gapBn": 4.1, "note": "LGA estimate"},
+    {"year": 2026, "gapBn": 4.5, "note": "projected"},
+    {"year": 2027, "gapBn": 4.8, "note": "projected"},
+    {"year": 2028, "gapBn": 5.2, "note": "projected"}
+  ],
+  "section114Notices": [
+    {"year": 2018, "notices": 1, "councils": ["Northamptonshire"]},
+    {"year": 2019, "notices": 0, "councils": []},
+    {"year": 2020, "notices": 1, "councils": ["Croydon"]},
+    {"year": 2021, "notices": 1, "councils": ["Croydon (2nd)"]},
+    {"year": 2022, "notices": 2, "councils": ["Thurrock", "Slough"]},
+    {"year": 2023, "notices": 3, "councils": ["Birmingham", "Woking", "Nottingham"]},
+    {"year": 2024, "notices": 2, "councils": ["Bradford (de facto)", "Somerset"]},
+    {"year": 2025, "notices": 1, "councils": ["ongoing risks identified"]},
+    {"year": 2026, "notices": 7, "councils": ["cumulative total at risk"], "note": "cumulative distinct councils issuing or at risk"}
+  ],
+  "spendingByService": [
+    {"year": 2010, "socialCare": 17.4, "housing": 4.2, "highways": 5.1, "culture": 3.8, "planning": 2.1, "waste": 3.3},
+    {"year": 2012, "socialCare": 16.8, "housing": 3.6, "highways": 4.3, "culture": 3.1, "planning": 1.7, "waste": 3.0},
+    {"year": 2014, "socialCare": 16.2, "housing": 3.1, "highways": 3.7, "culture": 2.5, "planning": 1.4, "waste": 2.7},
+    {"year": 2016, "socialCare": 16.5, "housing": 2.7, "highways": 3.2, "culture": 2.0, "planning": 1.2, "waste": 2.5},
+    {"year": 2018, "socialCare": 17.1, "housing": 2.5, "highways": 2.8, "culture": 1.6, "planning": 1.0, "waste": 2.4},
+    {"year": 2020, "socialCare": 18.3, "housing": 2.4, "highways": 2.6, "culture": 1.3, "planning": 0.9, "waste": 2.3},
+    {"year": 2022, "socialCare": 19.7, "housing": 2.3, "highways": 2.4, "culture": 1.1, "planning": 0.8, "waste": 2.2},
+    {"year": 2024, "socialCare": 21.2, "housing": 2.2, "highways": 2.2, "culture": 0.9, "planning": 0.7, "waste": 2.1}
+  ],
+  "coreSpendingPower": [
+    {"year": 2010, "realTermsBn": 49.1},
+    {"year": 2012, "realTermsBn": 44.3},
+    {"year": 2014, "realTermsBn": 40.7},
+    {"year": 2016, "realTermsBn": 37.9},
+    {"year": 2018, "realTermsBn": 36.2},
+    {"year": 2020, "realTermsBn": 37.0},
+    {"year": 2022, "realTermsBn": 36.5},
+    {"year": 2024, "realTermsBn": 35.8}
+  ],
+  "metadata": {
+    "sources": [
+      {"name": "Local Government Association", "dataset": "Local Government Funding Gap Analysis", "url": "https://www.local.gov.uk/about/campaigns/build-back-local/funding-gap", "retrieved": "2026-03-10", "frequency": "annual"},
+      {"name": "National Audit Office", "dataset": "Financial Sustainability of Local Authorities", "url": "https://www.nao.org.uk/reports/financial-sustainability-of-local-authorities/", "retrieved": "2026-03-10", "frequency": "periodic"},
+      {"name": "Institute for Fiscal Studies", "dataset": "Local Government Finance Analysis", "url": "https://ifs.org.uk/local-government", "retrieved": "2026-03-10", "frequency": "annual"},
+      {"name": "DLUHC", "dataset": "Core Spending Power data tables", "url": "https://www.gov.uk/government/publications/core-spending-power-final-local-government-finance-settlement", "retrieved": "2026-03-10", "frequency": "annual"}
+    ],
+    "methodology": "Funding gap figures are LGA estimates based on projected demand growth (demographic, statutory obligations) minus confirmed government funding streams and modelled council tax income. Real-terms spending power is adjusted to 2024 prices using GDP deflators. Section 114 notice counts reflect formal declarations of inability to balance budgets. Spending by service uses DLUHC Revenue Outturn data in real terms (2024 prices).",
+    "knownIssues": [
+      "Different methodologies used by LGA, NAO, and IFS produce slightly different gap estimates",
+      "Core spending power includes council tax — increases partly reflect local choices within referendum caps",
+      "COVID-era emergency grants temporarily masked structural deficits in 2020–2021"
+    ]
+  }
+}

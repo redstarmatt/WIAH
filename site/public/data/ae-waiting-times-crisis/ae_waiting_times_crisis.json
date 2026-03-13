@@ -1,0 +1,48 @@
+{
+  "fourHourPerformance": [
+    {"year": 2010, "pctWithin4Hours": 97.5},
+    {"year": 2011, "pctWithin4Hours": 96.2},
+    {"year": 2012, "pctWithin4Hours": 95.9},
+    {"year": 2013, "pctWithin4Hours": 95.7},
+    {"year": 2014, "pctWithin4Hours": 93.6},
+    {"year": 2015, "pctWithin4Hours": 91.4},
+    {"year": 2016, "pctWithin4Hours": 89.1},
+    {"year": 2017, "pctWithin4Hours": 88.4},
+    {"year": 2018, "pctWithin4Hours": 86.4},
+    {"year": 2019, "pctWithin4Hours": 84.2},
+    {"year": 2020, "pctWithin4Hours": 87.1, "note": "COVID-19 suppressed attendances"},
+    {"year": 2021, "pctWithin4Hours": 74.8},
+    {"year": 2022, "pctWithin4Hours": 71.6},
+    {"year": 2023, "pctWithin4Hours": 71.3},
+    {"year": 2024, "pctWithin4Hours": 40.4}
+  ],
+  "twelvePlusHourWaits": [
+    {"year": 2015, "waitsPerMonth": 820},
+    {"year": 2016, "waitsPerMonth": 1460},
+    {"year": 2017, "waitsPerMonth": 2380},
+    {"year": 2018, "waitsPerMonth": 3210},
+    {"year": 2019, "waitsPerMonth": 6370},
+    {"year": 2020, "waitsPerMonth": 3890, "note": "COVID-19 suppressed attendances"},
+    {"year": 2021, "waitsPerMonth": 16510},
+    {"year": 2022, "waitsPerMonth": 37840},
+    {"year": 2023, "waitsPerMonth": 54200},
+    {"year": 2024, "waitsPerMonth": 71517}
+  ],
+  "totalAttendances": [
+    {"year": 2010, "attendancesMillions": 21.5},
+    {"year": 2011, "attendancesMillions": 22.0},
+    {"year": 2012, "attendancesMillions": 22.3},
+    {"year": 2013, "attendancesMillions": 23.0},
+    {"year": 2014, "attendancesMillions": 23.6},
+    {"year": 2015, "attendancesMillions": 23.5},
+    {"year": 2016, "attendancesMillions": 23.9},
+    {"year": 2017, "attendancesMillions": 24.8},
+    {"year": 2018, "attendancesMillions": 25.0},
+    {"year": 2019, "attendancesMillions": 25.6},
+    {"year": 2020, "attendancesMillions": 17.4, "note": "COVID-19 suppressed attendances"},
+    {"year": 2021, "attendancesMillions": 24.1},
+    {"year": 2022, "attendancesMillions": 25.3},
+    {"year": 2023, "attendancesMillions": 26.1},
+    {"year": 2024, "attendancesMillions": 26.8}
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "carerNumbers": [
+    {"year": 2011, "millions": 5.43},
+    {"year": 2012, "millions": 5.48},
+    {"year": 2013, "millions": 5.51},
+    {"year": 2014, "millions": 5.55},
+    {"year": 2015, "millions": 5.58},
+    {"year": 2016, "millions": 5.62},
+    {"year": 2017, "millions": 5.65},
+    {"year": 2018, "millions": 5.70},
+    {"year": 2019, "millions": 5.73},
+    {"year": 2020, "millions": 5.78},
+    {"year": 2021, "millions": 5.00},
+    {"year": 2022, "millions": 5.68},
+    {"year": 2023, "millions": 5.74},
+    {"year": 2024, "millions": 5.80}
+  ],
+  "economicValue": [
+    {"year": 2011, "billionsGBP": 119},
+    {"year": 2012, "billionsGBP": 122},
+    {"year": 2013, "billionsGBP": 126},
+    {"year": 2014, "billionsGBP": 130},
+    {"year": 2015, "billionsGBP": 132},
+    {"year": 2016, "billionsGBP": 138},
+    {"year": 2017, "billionsGBP": 143},
+    {"year": 2018, "billionsGBP": 150},
+    {"year": 2019, "billionsGBP": 155},
+    {"year": 2020, "billionsGBP": 162},
+    {"year": 2021, "billionsGBP": 144},
+    {"year": 2022, "billionsGBP": 168},
+    {"year": 2023, "billionsGBP": 176},
+    {"year": 2024, "billionsGBP": 184}
+  ],
+  "carersAllowanceRealValue": [
+    {"year": 2011, "weeklyGBP": 55.55, "realTerms2024": 73.10},
+    {"year": 2012, "weeklyGBP": 58.45, "realTerms2024": 74.50},
+    {"year": 2013, "weeklyGBP": 59.75, "realTerms2024": 74.20},
+    {"year": 2014, "weeklyGBP": 61.35, "realTerms2024": 74.80},
+    {"year": 2015, "weeklyGBP": 62.10, "realTerms2024": 75.40},
+    {"year": 2016, "weeklyGBP": 62.70, "realTerms2024": 74.10},
+    {"year": 2017, "weeklyGBP": 63.35, "realTerms2024": 72.60},
+    {"year": 2018, "weeklyGBP": 64.60, "realTerms2024": 71.90},
+    {"year": 2019, "weeklyGBP": 66.15, "realTerms2024": 72.30},
+    {"year": 2020, "weeklyGBP": 67.60, "realTerms2024": 72.80},
+    {"year": 2021, "weeklyGBP": 67.60, "realTerms2024": 70.10},
+    {"year": 2022, "weeklyGBP": 69.70, "realTerms2024": 68.40},
+    {"year": 2023, "weeklyGBP": 76.75, "realTerms2024": 71.20},
+    {"year": 2024, "weeklyGBP": 81.90, "realTerms2024": 73.50}
+  ]
+}

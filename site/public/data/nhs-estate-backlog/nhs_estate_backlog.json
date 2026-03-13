@@ -1,15 +1,85 @@
 {
-  "topic": "nhs-estate-backlog",
-  "lastUpdated": "2026-03-01",
-  "timeSeries": [
-    {"year": 2015, "backlogBn": 4.8},
-    {"year": 2016, "backlogBn": 5.5},
-    {"year": 2017, "backlogBn": 6.1},
-    {"year": 2018, "backlogBn": 6.5},
-    {"year": 2019, "backlogBn": 6.5},
-    {"year": 2020, "backlogBn": 7.1},
-    {"year": 2021, "backlogBn": 7.6},
-    {"year": 2022, "backlogBn": 9.2},
-    {"year": 2023, "backlogBn": 11.6}
-  ]
+  "totalBacklog": [
+    { "year": 2012, "valueBn": 4.3 },
+    { "year": 2013, "valueBn": 4.7 },
+    { "year": 2014, "valueBn": 5.0 },
+    { "year": 2015, "valueBn": 5.4 },
+    { "year": 2016, "valueBn": 5.8 },
+    { "year": 2017, "valueBn": 6.0 },
+    { "year": 2018, "valueBn": 6.5 },
+    { "year": 2019, "valueBn": 7.2 },
+    { "year": 2020, "valueBn": 7.9 },
+    { "year": 2021, "valueBn": 8.6 },
+    { "year": 2022, "valueBn": 9.2 },
+    { "year": 2023, "valueBn": 10.2 },
+    { "year": 2024, "valueBn": 10.8 },
+    { "year": 2025, "valueBn": 11.6 }
+  ],
+  "highRiskShare": [
+    { "year": 2012, "pct": 8.4 },
+    { "year": 2013, "pct": 9.1 },
+    { "year": 2014, "pct": 9.8 },
+    { "year": 2015, "pct": 10.6 },
+    { "year": 2016, "pct": 11.3 },
+    { "year": 2017, "pct": 12.0 },
+    { "year": 2018, "pct": 13.2 },
+    { "year": 2019, "pct": 14.5 },
+    { "year": 2020, "pct": 15.1 },
+    { "year": 2021, "pct": 16.3 },
+    { "year": 2022, "pct": 17.5 },
+    { "year": 2023, "pct": 18.7 },
+    { "year": 2024, "pct": 19.4 },
+    { "year": 2025, "pct": 20.1 }
+  ],
+  "capitalSpending": [
+    { "year": 2012, "spendBn": 4.8 },
+    { "year": 2013, "spendBn": 4.5 },
+    { "year": 2014, "spendBn": 4.2 },
+    { "year": 2015, "spendBn": 4.0 },
+    { "year": 2016, "spendBn": 3.9 },
+    { "year": 2017, "spendBn": 3.7 },
+    { "year": 2018, "spendBn": 3.6 },
+    { "year": 2019, "spendBn": 3.8 },
+    { "year": 2020, "spendBn": 4.1 },
+    { "year": 2021, "spendBn": 4.4 },
+    { "year": 2022, "spendBn": 4.6 },
+    { "year": 2023, "spendBn": 4.9 },
+    { "year": 2024, "spendBn": 5.2 },
+    { "year": 2025, "spendBn": 5.5 }
+  ],
+  "byRegion": [
+    { "region": "London", "backlogPerBedGBP": 18200 },
+    { "region": "North West", "backlogPerBedGBP": 16800 },
+    { "region": "South East", "backlogPerBedGBP": 15400 },
+    { "region": "West Midlands", "backlogPerBedGBP": 14900 },
+    { "region": "Yorkshire & Humber", "backlogPerBedGBP": 14200 },
+    { "region": "North East", "backlogPerBedGBP": 13600 },
+    { "region": "East of England", "backlogPerBedGBP": 12800 },
+    { "region": "South West", "backlogPerBedGBP": 12100 },
+    { "region": "East Midlands", "backlogPerBedGBP": 11500 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "Estates Returns Information Collection (ERIC)",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/estates-returns-information-collection",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department of Health and Social Care",
+        "dataset": "NHS capital expenditure reports",
+        "url": "https://www.gov.uk/government/collections/nhs-capital-expenditure",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Maintenance backlog values are self-reported by NHS trusts via the Estates Returns Information Collection (ERIC). High-risk backlog is classified as work where deferral poses a significant or high risk to patient safety, staff safety, or statutory compliance. Capital spending figures are in real terms (2024/25 prices).",
+    "knownIssues": [
+      "Self-reported data may understate true backlog in some trusts",
+      "Risk classification methodology was revised in 2019 — pre/post figures not perfectly comparable",
+      "COVID-19 disrupted capital programmes in 2020/21"
+    ]
+  }
 }

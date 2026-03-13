@@ -1,0 +1,47 @@
+{
+  "prevalence": [
+    {"year": 2012, "estimatedVictims": 3200000, "prevalencePercent": 7.3},
+    {"year": 2013, "estimatedVictims": 3100000, "prevalencePercent": 7.1},
+    {"year": 2014, "estimatedVictims": 2900000, "prevalencePercent": 6.6},
+    {"year": 2015, "estimatedVictims": 2800000, "prevalencePercent": 6.4},
+    {"year": 2016, "estimatedVictims": 2700000, "prevalencePercent": 6.1},
+    {"year": 2017, "estimatedVictims": 2600000, "prevalencePercent": 5.9},
+    {"year": 2018, "estimatedVictims": 2400000, "prevalencePercent": 5.7},
+    {"year": 2019, "estimatedVictims": 2300000, "prevalencePercent": 5.5},
+    {"year": 2020, "estimatedVictims": 3100000, "prevalencePercent": 7.3, "note": "COVID-19 lockdowns"},
+    {"year": 2021, "estimatedVictims": 3600000, "prevalencePercent": 8.4, "note": "COVID-19 peak"},
+    {"year": 2022, "estimatedVictims": 3500000, "prevalencePercent": 8.1},
+    {"year": 2023, "estimatedVictims": 3700000, "prevalencePercent": 7.7},
+    {"year": 2024, "estimatedVictims": 3800000, "prevalencePercent": 7.8}
+  ],
+  "policeRecorded": [
+    {"year": 2012, "offences": 495000},
+    {"year": 2013, "offences": 537000},
+    {"year": 2014, "offences": 590000},
+    {"year": 2015, "offences": 677000},
+    {"year": 2016, "offences": 758000},
+    {"year": 2017, "offences": 848000},
+    {"year": 2018, "offences": 928000},
+    {"year": 2019, "offences": 1024000},
+    {"year": 2020, "offences": 1052000, "note": "COVID-19 lockdowns"},
+    {"year": 2021, "offences": 1184000},
+    {"year": 2022, "offences": 1278000},
+    {"year": 2023, "offences": 1350000},
+    {"year": 2024, "offences": 1416000}
+  ],
+  "prosecutionRate": [
+    {"year": 2012, "chargeRate": 12.2, "convictionRate": 74.5},
+    {"year": 2013, "chargeRate": 11.8, "convictionRate": 74.1},
+    {"year": 2014, "chargeRate": 10.9, "convictionRate": 73.8},
+    {"year": 2015, "chargeRate": 10.3, "convictionRate": 73.2},
+    {"year": 2016, "chargeRate": 9.7, "convictionRate": 72.4},
+    {"year": 2017, "chargeRate": 8.8, "convictionRate": 71.6},
+    {"year": 2018, "chargeRate": 8.1, "convictionRate": 70.2},
+    {"year": 2019, "chargeRate": 7.6, "convictionRate": 69.8},
+    {"year": 2020, "chargeRate": 6.3, "convictionRate": 68.1, "note": "COVID-19 court closures"},
+    {"year": 2021, "chargeRate": 5.8, "convictionRate": 67.4},
+    {"year": 2022, "chargeRate": 5.5, "convictionRate": 66.9},
+    {"year": 2023, "chargeRate": 5.2, "convictionRate": 66.3},
+    {"year": 2024, "chargeRate": 4.9, "convictionRate": 65.8}
+  ]
+}

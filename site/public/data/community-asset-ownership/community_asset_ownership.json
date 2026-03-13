@@ -1,0 +1,98 @@
+{
+  "communityAssets": [
+    {"year": 2012, "assets": 4820},
+    {"year": 2013, "assets": 5150},
+    {"year": 2014, "assets": 5640},
+    {"year": 2015, "assets": 6200},
+    {"year": 2016, "assets": 6580},
+    {"year": 2017, "assets": 6940},
+    {"year": 2018, "assets": 7280},
+    {"year": 2019, "assets": 7810},
+    {"year": 2020, "assets": 8050},
+    {"year": 2021, "assets": 8420},
+    {"year": 2022, "assets": 8890},
+    {"year": 2023, "assets": 9380},
+    {"year": 2024, "assets": 9800},
+    {"year": 2025, "assets": 10240}
+  ],
+  "acvRegistrations": [
+    {"year": 2012, "registrations": 180},
+    {"year": 2013, "registrations": 320},
+    {"year": 2014, "registrations": 480},
+    {"year": 2015, "registrations": 620},
+    {"year": 2016, "registrations": 710},
+    {"year": 2017, "registrations": 780},
+    {"year": 2018, "registrations": 830},
+    {"year": 2019, "registrations": 890},
+    {"year": 2020, "registrations": 760},
+    {"year": 2021, "registrations": 920},
+    {"year": 2022, "registrations": 1050},
+    {"year": 2023, "registrations": 1180},
+    {"year": 2024, "registrations": 1250},
+    {"year": 2025, "registrations": 1340}
+  ],
+  "communityPubs": [
+    {"year": 2014, "pubs": 38},
+    {"year": 2015, "pubs": 56},
+    {"year": 2016, "pubs": 72},
+    {"year": 2017, "pubs": 95},
+    {"year": 2018, "pubs": 108},
+    {"year": 2019, "pubs": 126},
+    {"year": 2020, "pubs": 131},
+    {"year": 2021, "pubs": 143},
+    {"year": 2022, "pubs": 158},
+    {"year": 2023, "pubs": 174},
+    {"year": 2024, "pubs": 192},
+    {"year": 2025, "pubs": 206}
+  ],
+  "byRegion": [
+    {"region": "South West", "assetsPerCapita": 3.8},
+    {"region": "North West", "assetsPerCapita": 3.2},
+    {"region": "Yorkshire & Humber", "assetsPerCapita": 2.9},
+    {"region": "East Midlands", "assetsPerCapita": 2.6},
+    {"region": "North East", "assetsPerCapita": 2.4},
+    {"region": "South East", "assetsPerCapita": 2.1},
+    {"region": "West Midlands", "assetsPerCapita": 1.9},
+    {"region": "East of England", "assetsPerCapita": 1.7},
+    {"region": "London", "assetsPerCapita": 0.8}
+  ],
+  "metadata": {
+    "lastUpdated": "2025-11-15",
+    "sources": [
+      {
+        "name": "Locality",
+        "dataset": "Community Ownership and Management of Assets",
+        "url": "https://locality.org.uk/policy-campaigns/community-ownership/",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Plunkett Foundation",
+        "dataset": "Community Business Market Report",
+        "url": "https://plunkett.co.uk/community-business-market/",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "DLUHC",
+        "dataset": "Assets of Community Value registrations",
+        "url": "https://www.gov.uk/government/publications/community-right-to-bid-assess-whether-land-or-buildings-are-of-community-value",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Power to Change",
+        "dataset": "Community Business Fund evaluation",
+        "url": "https://www.powertochange.org.uk/research/",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Community asset counts are drawn from Locality's annual census of community-owned assets in England, supplemented by Plunkett Foundation data on community pubs. ACV registration figures are collated from local authority returns to DLUHC. All figures are for England unless otherwise stated.",
+    "knownIssues": [
+      "Community asset definitions vary — some counts include community-managed assets on lease, others only freehold ownership",
+      "ACV registrations do not always result in community purchase — the conversion rate is estimated at 15–20%",
+      "COVID-19 disrupted ACV applications in 2020; the dip may partly reflect reduced local authority processing capacity"
+    ]
+  }
+}

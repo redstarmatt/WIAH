@@ -1,0 +1,96 @@
+{
+  "totalBeds": [
+    {"year": 2015, "beds": 462100},
+    {"year": 2016, "beds": 459200},
+    {"year": 2017, "beds": 456800},
+    {"year": 2018, "beds": 455100},
+    {"year": 2019, "beds": 453400},
+    {"year": 2020, "beds": 450200},
+    {"year": 2021, "beds": 448600},
+    {"year": 2022, "beds": 447900},
+    {"year": 2023, "beds": 447500},
+    {"year": 2024, "beds": 447100},
+    {"year": 2025, "beds": 446800}
+  ],
+  "vacancyRate": [
+    {"year": 2015, "rate": 6.2},
+    {"year": 2016, "rate": 7.1},
+    {"year": 2017, "rate": 8.4},
+    {"year": 2018, "rate": 9.2},
+    {"year": 2019, "rate": 10.1},
+    {"year": 2020, "rate": 12.0},
+    {"year": 2021, "rate": 11.3},
+    {"year": 2022, "rate": 9.4},
+    {"year": 2023, "rate": 8.1},
+    {"year": 2024, "rate": 7.8},
+    {"year": 2025, "rate": 7.5}
+  ],
+  "closures": [
+    {"year": 2015, "closures": 312},
+    {"year": 2016, "closures": 348},
+    {"year": 2017, "closures": 386},
+    {"year": 2018, "closures": 410},
+    {"year": 2019, "closures": 395},
+    {"year": 2020, "closures": 478},
+    {"year": 2021, "closures": 423},
+    {"year": 2022, "closures": 389},
+    {"year": 2023, "closures": 412},
+    {"year": 2024, "closures": 438},
+    {"year": 2025, "closures": 365}
+  ],
+  "localAuthorityFeeGap": [
+    {"year": 2015, "gapPercent": 8},
+    {"year": 2016, "gapPercent": 10},
+    {"year": 2017, "gapPercent": 12},
+    {"year": 2018, "gapPercent": 15},
+    {"year": 2019, "gapPercent": 18},
+    {"year": 2020, "gapPercent": 22},
+    {"year": 2021, "gapPercent": 25},
+    {"year": 2022, "gapPercent": 28},
+    {"year": 2023, "gapPercent": 30},
+    {"year": 2024, "gapPercent": 32},
+    {"year": 2025, "gapPercent": 33}
+  ],
+  "byRegion": [
+    {"region": "North East", "bedsPerThousandOver65": 52.1, "closureRate": 4.8},
+    {"region": "North West", "bedsPerThousandOver65": 48.3, "closureRate": 3.9},
+    {"region": "Yorkshire & Humber", "bedsPerThousandOver65": 46.7, "closureRate": 4.1},
+    {"region": "East Midlands", "bedsPerThousandOver65": 44.2, "closureRate": 3.5},
+    {"region": "West Midlands", "bedsPerThousandOver65": 43.8, "closureRate": 3.7},
+    {"region": "East of England", "bedsPerThousandOver65": 41.5, "closureRate": 3.2},
+    {"region": "London", "bedsPerThousandOver65": 36.4, "closureRate": 5.2},
+    {"region": "South East", "bedsPerThousandOver65": 42.9, "closureRate": 3.4},
+    {"region": "South West", "bedsPerThousandOver65": 47.1, "closureRate": 3.1}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Care Quality Commission",
+        "dataset": "The state of health care and adult social care in England",
+        "url": "https://www.cqc.org.uk/publications/major-reports/state-care",
+        "retrieved": "2025-12-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Competition and Markets Authority",
+        "dataset": "Care homes market study",
+        "url": "https://www.gov.uk/cma-cases/care-homes-market-study",
+        "retrieved": "2025-12-01",
+        "frequency": "one-off (2017), updated analysis"
+      },
+      {
+        "name": "LaingBuisson",
+        "dataset": "Care Homes for Older People — UK Market Report",
+        "url": "https://www.laingbuisson.com/",
+        "retrieved": "2025-12-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Bed counts from CQC registered locations data. Vacancy rates from CQC annual state of care reports and provider surveys. Closure counts from CQC provider directory changes. Fee gap calculated as difference between local authority standard rate and CQC/LaingBuisson estimated fair cost of care. Regional figures use ONS mid-year population estimates for over-65 denominators.",
+    "knownIssues": [
+      "COVID-19 caused abnormal closure and vacancy patterns in 2020-2021",
+      "Some closures are re-registrations under new ownership rather than genuine capacity loss",
+      "Fee gap estimates vary by methodology — CMA, LaingBuisson and ADASS produce different figures"
+    ]
+  }
+}

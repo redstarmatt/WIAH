@@ -1,1 +1,88 @@
-{"topic":"self-harm-hospital-admissions","lastUpdated":"2026-03-01","timeSeries":[{"year":2015,"admissionsK":220},{"year":2016,"admissionsK":225},{"year":2017,"admissionsK":232},{"year":2018,"admissionsK":240},{"year":2019,"admissionsK":243},{"year":2020,"admissionsK":218},{"year":2021,"admissionsK":235},{"year":2022,"admissionsK":248},{"year":2023,"admissionsK":255}]}
+{
+  "topic": "self-harm-hospital-admissions",
+  "lastUpdated": "2026-03-01",
+  "allAgeAdmissions": [
+    { "year": 2012, "admissions": 41200 },
+    { "year": 2013, "admissions": 42800 },
+    { "year": 2014, "admissions": 43500 },
+    { "year": 2015, "admissions": 44900 },
+    { "year": 2016, "admissions": 46300 },
+    { "year": 2017, "admissions": 47800 },
+    { "year": 2018, "admissions": 49600 },
+    { "year": 2019, "admissions": 50200 },
+    { "year": 2020, "admissions": 39800 },
+    { "year": 2021, "admissions": 46100 },
+    { "year": 2022, "admissions": 50800 },
+    { "year": 2023, "admissions": 52300 },
+    { "year": 2024, "admissions": 53100 },
+    { "year": 2025, "admissions": 52400 }
+  ],
+  "youngWomen15to19": [
+    { "year": 2012, "admissions": 8700 },
+    { "year": 2013, "admissions": 9500 },
+    { "year": 2014, "admissions": 10200 },
+    { "year": 2015, "admissions": 11000 },
+    { "year": 2016, "admissions": 11800 },
+    { "year": 2017, "admissions": 12900 },
+    { "year": 2018, "admissions": 13800 },
+    { "year": 2019, "admissions": 14200 },
+    { "year": 2020, "admissions": 11400 },
+    { "year": 2021, "admissions": 13600 },
+    { "year": 2022, "admissions": 15100 },
+    { "year": 2023, "admissions": 15400 },
+    { "year": 2024, "admissions": 14800 },
+    { "year": 2025, "admissions": 14200 }
+  ],
+  "rateByAgeGroup": [
+    { "year": 2012, "age10to14": 152, "age15to19": 418, "age20to24": 312, "age25to34": 185, "age35to49": 143, "age50plus": 68 },
+    { "year": 2013, "age10to14": 160, "age15to19": 436, "age20to24": 320, "age25to34": 190, "age35to49": 148, "age50plus": 71 },
+    { "year": 2014, "age10to14": 171, "age15to19": 462, "age20to24": 328, "age25to34": 194, "age35to49": 150, "age50plus": 73 },
+    { "year": 2015, "age10to14": 188, "age15to19": 498, "age20to24": 339, "age25to34": 199, "age35to49": 153, "age50plus": 76 },
+    { "year": 2016, "age10to14": 210, "age15to19": 536, "age20to24": 351, "age25to34": 204, "age35to49": 156, "age50plus": 78 },
+    { "year": 2017, "age10to14": 238, "age15to19": 578, "age20to24": 360, "age25to34": 210, "age35to49": 160, "age50plus": 81 },
+    { "year": 2018, "age10to14": 262, "age15to19": 612, "age20to24": 372, "age25to34": 215, "age35to49": 163, "age50plus": 84 },
+    { "year": 2019, "age10to14": 275, "age15to19": 630, "age20to24": 380, "age25to34": 218, "age35to49": 165, "age50plus": 86 },
+    { "year": 2020, "age10to14": 220, "age15to19": 505, "age20to24": 310, "age25to34": 178, "age35to49": 138, "age50plus": 72 },
+    { "year": 2021, "age10to14": 268, "age15to19": 595, "age20to24": 358, "age25to34": 205, "age35to49": 155, "age50plus": 80 },
+    { "year": 2022, "age10to14": 310, "age15to19": 648, "age20to24": 388, "age25to34": 222, "age35to49": 168, "age50plus": 88 },
+    { "year": 2023, "age10to14": 325, "age15to19": 662, "age20to24": 395, "age25to34": 228, "age35to49": 172, "age50plus": 91 },
+    { "year": 2024, "age10to14": 318, "age15to19": 645, "age20to24": 385, "age25to34": 224, "age35to49": 170, "age50plus": 90 },
+    { "year": 2025, "age10to14": 305, "age15to19": 620, "age20to24": 375, "age25to34": 220, "age35to49": 168, "age50plus": 89 }
+  ],
+  "byRegion": [
+    { "region": "North East", "ratePer100k": 245 },
+    { "region": "North West", "ratePer100k": 228 },
+    { "region": "Yorkshire & Humber", "ratePer100k": 215 },
+    { "region": "West Midlands", "ratePer100k": 192 },
+    { "region": "East Midlands", "ratePer100k": 186 },
+    { "region": "East of England", "ratePer100k": 168 },
+    { "region": "South West", "ratePer100k": 198 },
+    { "region": "South East", "ratePer100k": 155 },
+    { "region": "London", "ratePer100k": 132 },
+    { "region": "England", "ratePer100k": 185 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "Hospital Episode Statistics — Admissions for self-harm",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Office for Health Improvement and Disparities",
+        "dataset": "Public Health Profiles — Self-harm emergency admissions",
+        "url": "https://fingertips.phe.org.uk/profile/public-health-outcomes-framework",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Admissions data covers finished admission episodes (FAEs) in NHS hospitals in England where the primary or secondary diagnosis was coded as intentional self-harm (ICD-10 X60-X84). Rates per 100,000 are age-standardised using the European Standard Population 2013. The 2020 dip reflects reduced A&E attendance during COVID-19 lockdowns, not a genuine decline in self-harm.",
+    "knownIssues": [
+      "ICD-10 coding practices vary between trusts — some under-record self-harm as primary diagnosis",
+      "COVID-19 lockdowns in 2020 caused a temporary drop in admissions that does not reflect true prevalence",
+      "Hospital admissions capture only the most severe presentations — estimated to represent 10-15% of all self-harm episodes"
+    ]
+  }
+}

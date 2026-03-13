@@ -1,0 +1,119 @@
+{
+  "planningStaff": [
+    { "year": 2010, "fte": 16200 },
+    { "year": 2011, "fte": 15400 },
+    { "year": 2012, "fte": 14600 },
+    { "year": 2013, "fte": 13800 },
+    { "year": 2014, "fte": 13200 },
+    { "year": 2015, "fte": 12700 },
+    { "year": 2016, "fte": 12300 },
+    { "year": 2017, "fte": 11900 },
+    { "year": 2018, "fte": 11500 },
+    { "year": 2019, "fte": 11200 },
+    { "year": 2020, "fte": 10900 },
+    { "year": 2021, "fte": 10800 },
+    { "year": 2022, "fte": 10700 },
+    { "year": 2023, "fte": 10700 },
+    { "year": 2024, "fte": 10900 }
+  ],
+  "majorAppsOnTime": [
+    { "year": 2010, "pct": 61 },
+    { "year": 2011, "pct": 67 },
+    { "year": 2012, "pct": 72 },
+    { "year": 2013, "pct": 78 },
+    { "year": 2014, "pct": 82 },
+    { "year": 2015, "pct": 84 },
+    { "year": 2016, "pct": 85 },
+    { "year": 2017, "pct": 87 },
+    { "year": 2018, "pct": 88 },
+    { "year": 2019, "pct": 86 },
+    { "year": 2020, "pct": 84 },
+    { "year": 2021, "pct": 82 },
+    { "year": 2022, "pct": 79 },
+    { "year": 2023, "pct": 77 },
+    { "year": 2024, "pct": 75 }
+  ],
+  "planningFeeIncome": [
+    { "year": 2010, "millionGBP": 410 },
+    { "year": 2011, "millionGBP": 385 },
+    { "year": 2012, "millionGBP": 370 },
+    { "year": 2013, "millionGBP": 365 },
+    { "year": 2014, "millionGBP": 380 },
+    { "year": 2015, "millionGBP": 395 },
+    { "year": 2016, "millionGBP": 420 },
+    { "year": 2017, "millionGBP": 440 },
+    { "year": 2018, "millionGBP": 460 },
+    { "year": 2019, "millionGBP": 475 },
+    { "year": 2020, "millionGBP": 430 },
+    { "year": 2021, "millionGBP": 490 },
+    { "year": 2022, "millionGBP": 520 },
+    { "year": 2023, "millionGBP": 540 },
+    { "year": 2024, "millionGBP": 560 }
+  ],
+  "netAdditionalDwellings": [
+    { "year": 2010, "dwellings": 128160 },
+    { "year": 2011, "dwellings": 137280 },
+    { "year": 2012, "dwellings": 124720 },
+    { "year": 2013, "dwellings": 135500 },
+    { "year": 2014, "dwellings": 153370 },
+    { "year": 2015, "dwellings": 170690 },
+    { "year": 2016, "dwellings": 189650 },
+    { "year": 2017, "dwellings": 217350 },
+    { "year": 2018, "dwellings": 222940 },
+    { "year": 2019, "dwellings": 242700 },
+    { "year": 2020, "dwellings": 216490 },
+    { "year": 2021, "dwellings": 232820 },
+    { "year": 2022, "dwellings": 234400 },
+    { "year": 2023, "dwellings": 225200 },
+    { "year": 2024, "dwellings": 218000 }
+  ],
+  "byRegion": [
+    { "region": "London", "staffPer1000Apps": 3.2, "onTimePct": 69 },
+    { "region": "South East", "staffPer1000Apps": 4.1, "onTimePct": 74 },
+    { "region": "East of England", "staffPer1000Apps": 4.4, "onTimePct": 76 },
+    { "region": "South West", "staffPer1000Apps": 4.8, "onTimePct": 78 },
+    { "region": "West Midlands", "staffPer1000Apps": 5.0, "onTimePct": 77 },
+    { "region": "East Midlands", "staffPer1000Apps": 5.3, "onTimePct": 79 },
+    { "region": "North West", "staffPer1000Apps": 5.5, "onTimePct": 80 },
+    { "region": "Yorkshire & Humber", "staffPer1000Apps": 5.7, "onTimePct": 81 },
+    { "region": "North East", "staffPer1000Apps": 6.2, "onTimePct": 83 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "MHCLG",
+        "dataset": "Planning Applications in England",
+        "url": "https://www.gov.uk/government/statistics/planning-applications-in-england",
+        "retrieved": "2025-12-01",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "DLUHC",
+        "dataset": "Local Authority Revenue Expenditure and Financing (Planning)",
+        "url": "https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "MHCLG",
+        "dataset": "Net Additional Dwellings",
+        "url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-net-supply-of-housing",
+        "retrieved": "2025-12-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Royal Town Planning Institute",
+        "dataset": "Planning workforce survey",
+        "url": "https://www.rtpi.org.uk/research/",
+        "retrieved": "2025-10-20",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Planning staff FTE figures are sourced from MHCLG local authority staffing returns and RTPI workforce surveys. Major applications on-time performance uses the statutory 13-week deadline (or 16 weeks with EIA). Planning fee income is from DLUHC revenue outturn data in nominal terms. Net additional dwellings are from MHCLG live tables. Regional staffing ratios are RTPI estimates based on workforce survey and MHCLG application volume data.",
+    "knownIssues": [
+      "Pre-2013 staffing figures use a slightly different classification which may overcount by up to 5%",
+      "COVID-19 disrupted 2020 application volumes; on-time percentages for 2020 reflect extended statutory deadlines",
+      "Planning fee income is nominal and not adjusted for inflation"
+    ]
+  }
+}

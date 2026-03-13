@@ -156,7 +156,7 @@ export default function LandOwnershipPage() {
 
   return (
     <>
-      <TopicNav topic="Land Ownership" parentTopic="Housing" parentHref="/housing" />
+      <TopicNav topic="Land Ownership" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
@@ -212,7 +212,7 @@ export default function LandOwnershipPage() {
               label="England open to public access"
               value="8%"
               unit=""
-              direction="neutral"
+              direction="flat"
               polarity="down-is-bad"
               changeText="CRoW Act 2000 · Scotland: 97% · No expansion since 2000"
               sparklineData={[8, 8, 8, 8, 8, 8, 8, 8, 8]}

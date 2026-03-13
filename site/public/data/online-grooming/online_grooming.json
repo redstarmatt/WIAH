@@ -1,0 +1,52 @@
+{
+  "recordedOffences": [
+    {"year": 2017, "offences": 3172},
+    {"year": 2018, "offences": 4373},
+    {"year": 2019, "offences": 5108},
+    {"year": 2020, "offences": 5441},
+    {"year": 2021, "offences": 5217},
+    {"year": 2022, "offences": 5950},
+    {"year": 2023, "offences": 7062},
+    {"year": 2024, "offences": 7870},
+    {"year": 2025, "offences": 8420}
+  ],
+  "under13Share": [
+    {"year": 2017, "percent": 24},
+    {"year": 2018, "percent": 27},
+    {"year": 2019, "percent": 29},
+    {"year": 2020, "percent": 31},
+    {"year": 2021, "percent": 30},
+    {"year": 2022, "percent": 33},
+    {"year": 2023, "percent": 36},
+    {"year": 2024, "percent": 38},
+    {"year": 2025, "percent": 40}
+  ],
+  "chargeRate": [
+    {"year": 2017, "percent": 11.2},
+    {"year": 2018, "percent": 9.8},
+    {"year": 2019, "percent": 8.4},
+    {"year": 2020, "percent": 6.9},
+    {"year": 2021, "percent": 6.1},
+    {"year": 2022, "percent": 5.7},
+    {"year": 2023, "percent": 5.3},
+    {"year": 2024, "percent": 4.9},
+    {"year": 2025, "percent": 4.6}
+  ],
+  "byPlatformType": [
+    {"platform": "Social media", "percent": 48},
+    {"platform": "Messaging apps", "percent": 24},
+    {"platform": "Online gaming", "percent": 14},
+    {"platform": "Live streaming", "percent": 8},
+    {"platform": "Other / unknown", "percent": 6}
+  ],
+  "byPoliceForce": [
+    {"force": "Metropolitan Police", "offences": 1340},
+    {"force": "Greater Manchester", "offences": 612},
+    {"force": "West Midlands", "offences": 487},
+    {"force": "West Yorkshire", "offences": 395},
+    {"force": "Thames Valley", "offences": 341},
+    {"force": "Merseyside", "offences": 298},
+    {"force": "South Yorkshire", "offences": 274},
+    {"force": "Hampshire", "offences": 231}
+  ]
+}

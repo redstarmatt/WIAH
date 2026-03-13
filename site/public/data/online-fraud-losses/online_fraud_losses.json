@@ -1,0 +1,77 @@
+{
+  "totalLosses": [
+    { "year": 2017, "millionsGBP": 620 },
+    { "year": 2018, "millionsGBP": 720 },
+    { "year": 2019, "millionsGBP": 820 },
+    { "year": 2020, "millionsGBP": 940 },
+    { "year": 2021, "millionsGBP": 1040 },
+    { "year": 2022, "millionsGBP": 1110 },
+    { "year": 2023, "millionsGBP": 1170 },
+    { "year": 2024, "millionsGBP": 1290 },
+    { "year": 2025, "millionsGBP": 1340 }
+  ],
+  "fraudByType": [
+    { "year": 2017, "investmentFraud": 87, "shoppingFraud": 210, "romanceFraud": 41, "advanceFee": 148, "other": 134 },
+    { "year": 2018, "investmentFraud": 108, "shoppingFraud": 240, "romanceFraud": 52, "advanceFee": 162, "other": 158 },
+    { "year": 2019, "investmentFraud": 138, "shoppingFraud": 268, "romanceFraud": 64, "advanceFee": 175, "other": 175 },
+    { "year": 2020, "investmentFraud": 195, "shoppingFraud": 318, "romanceFraud": 78, "advanceFee": 186, "other": 163 },
+    { "year": 2021, "investmentFraud": 267, "shoppingFraud": 348, "romanceFraud": 92, "advanceFee": 178, "other": 155 },
+    { "year": 2022, "investmentFraud": 312, "shoppingFraud": 356, "romanceFraud": 98, "advanceFee": 172, "other": 172 },
+    { "year": 2023, "investmentFraud": 358, "shoppingFraud": 362, "romanceFraud": 105, "advanceFee": 168, "other": 177 },
+    { "year": 2024, "investmentFraud": 418, "shoppingFraud": 378, "romanceFraud": 118, "advanceFee": 185, "other": 191 },
+    { "year": 2025, "investmentFraud": 445, "shoppingFraud": 385, "romanceFraud": 126, "advanceFee": 190, "other": 194 }
+  ],
+  "reportVolumes": [
+    { "year": 2017, "reports": 56000 },
+    { "year": 2018, "reports": 68000 },
+    { "year": 2019, "reports": 82000 },
+    { "year": 2020, "reports": 118000 },
+    { "year": 2021, "reports": 148000 },
+    { "year": 2022, "reports": 162000 },
+    { "year": 2023, "reports": 175000 },
+    { "year": 2024, "reports": 198000 },
+    { "year": 2025, "reports": 212000 }
+  ],
+  "reimbursementRate": [
+    { "year": 2017, "pctReimbursed": 58 },
+    { "year": 2018, "pctReimbursed": 56 },
+    { "year": 2019, "pctReimbursed": 54 },
+    { "year": 2020, "pctReimbursed": 49 },
+    { "year": 2021, "pctReimbursed": 46 },
+    { "year": 2022, "pctReimbursed": 43 },
+    { "year": 2023, "pctReimbursed": 41 },
+    { "year": 2024, "pctReimbursed": 47 },
+    { "year": 2025, "pctReimbursed": 52 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "UK Finance",
+        "dataset": "Fraud — The Facts",
+        "url": "https://www.ukfinance.org.uk/data-and-research/data/fraud/fraud-the-facts",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Action Fraud / City of London Police",
+        "dataset": "National Fraud Intelligence Bureau Reports",
+        "url": "https://www.actionfraud.police.uk/reporting-fraud-and-cyber-crime",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Payment Systems Regulator",
+        "dataset": "APP Fraud Performance Data",
+        "url": "https://www.psr.org.uk/our-work/app-scams/",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Total losses cover authorised push payment (APP) fraud, unauthorised card fraud, and online banking fraud as reported by UK Finance member institutions. Report volumes are drawn from Action Fraud NFIB data. Reimbursement rates reflect the proportion of total losses returned to victims by banks and payment providers. Investment fraud includes cryptocurrency scams from 2020 onward.",
+    "knownIssues": [
+      "Significant under-reporting: estimated 85% of fraud goes unreported to Action Fraud",
+      "UK Finance methodology changed in 2020 to include cryptocurrency investment scams",
+      "Reimbursement data covers only UK Finance member institutions, not all payment providers"
+    ]
+  }
+}

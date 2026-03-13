@@ -1,0 +1,117 @@
+{
+  "refugeTurnawayRate": [
+    {"year": 2010, "pct": 31},
+    {"year": 2011, "pct": 33},
+    {"year": 2012, "pct": 35},
+    {"year": 2013, "pct": 37},
+    {"year": 2014, "pct": 38},
+    {"year": 2015, "pct": 40},
+    {"year": 2016, "pct": 41},
+    {"year": 2017, "pct": 43},
+    {"year": 2018, "pct": 43},
+    {"year": 2019, "pct": 43},
+    {"year": 2020, "pct": 42},
+    {"year": 2021, "pct": 40},
+    {"year": 2022, "pct": 38},
+    {"year": 2023, "pct": 36},
+    {"year": 2024, "pct": 35}
+  ],
+  "womenNotAccommodated": [
+    {"year": 2010, "dailyAverage": 78},
+    {"year": 2011, "dailyAverage": 84},
+    {"year": 2012, "dailyAverage": 90},
+    {"year": 2013, "dailyAverage": 96},
+    {"year": 2014, "dailyAverage": 103},
+    {"year": 2015, "dailyAverage": 109},
+    {"year": 2016, "dailyAverage": 115},
+    {"year": 2017, "dailyAverage": 120},
+    {"year": 2018, "dailyAverage": 118},
+    {"year": 2019, "dailyAverage": 121},
+    {"year": 2020, "dailyAverage": 115},
+    {"year": 2021, "dailyAverage": 110},
+    {"year": 2022, "dailyAverage": 105},
+    {"year": 2023, "dailyAverage": 100},
+    {"year": 2024, "dailyAverage": 97}
+  ],
+  "refugeBedspaces": [
+    {"year": 2010, "spaces": 3420},
+    {"year": 2011, "spaces": 3380},
+    {"year": 2012, "spaces": 3310},
+    {"year": 2013, "spaces": 3260},
+    {"year": 2014, "spaces": 3190},
+    {"year": 2015, "spaces": 3145},
+    {"year": 2016, "spaces": 3090},
+    {"year": 2017, "spaces": 3028},
+    {"year": 2018, "spaces": 3015},
+    {"year": 2019, "spaces": 3060},
+    {"year": 2020, "spaces": 3120},
+    {"year": 2021, "spaces": 3285},
+    {"year": 2022, "spaces": 3410},
+    {"year": 2023, "spaces": 3580},
+    {"year": 2024, "spaces": 3710}
+  ],
+  "daIncidentsReported": [
+    {"year": 2015, "incidents": 943628},
+    {"year": 2016, "incidents": 1032247},
+    {"year": 2017, "incidents": 1101481},
+    {"year": 2018, "incidents": 1198762},
+    {"year": 2019, "incidents": 1288018},
+    {"year": 2020, "incidents": 1391146},
+    {"year": 2021, "incidents": 1459663},
+    {"year": 2022, "incidents": 1500369},
+    {"year": 2023, "incidents": 1546017},
+    {"year": 2024, "incidents": 1574230}
+  ],
+  "byRegion": [
+    {"region": "London", "turnawayPct": 42, "bedspaces": 612},
+    {"region": "South East", "turnawayPct": 38, "bedspaces": 385},
+    {"region": "North West", "turnawayPct": 36, "bedspaces": 410},
+    {"region": "West Midlands", "turnawayPct": 34, "bedspaces": 295},
+    {"region": "Yorkshire & Humber", "turnawayPct": 33, "bedspaces": 280},
+    {"region": "East Midlands", "turnawayPct": 31, "bedspaces": 215},
+    {"region": "South West", "turnawayPct": 30, "bedspaces": 248},
+    {"region": "North East", "turnawayPct": 28, "bedspaces": 195},
+    {"region": "East of England", "turnawayPct": 29, "bedspaces": 230}
+  ],
+  "metadata": {
+    "topic": "domestic-abuse-refuges",
+    "lastUpdated": "2026-03-01",
+    "sources": [
+      {
+        "name": "Women's Aid",
+        "dataset": "Annual Audit of Domestic Abuse Services",
+        "url": "https://www.womensaid.org.uk/research-and-publications/the-annual-audit/",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "SafeLives",
+        "dataset": "Insights National Dataset",
+        "url": "https://safelives.org.uk/research-evidence/safelives-insights/",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Domestic abuse in England and Wales overview",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwalesoverview/november2024",
+        "retrieved": "2026-02-20",
+        "frequency": "annual"
+      },
+      {
+        "name": "DLUHC",
+        "dataset": "Domestic Abuse Act statutory duty funding returns",
+        "url": "https://www.gov.uk/government/publications/domestic-abuse-safe-accommodation-funding",
+        "retrieved": "2026-02-20",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Turnaway rate data reflects the proportion of referrals to refuge services that could not be accommodated on the day of request, as reported by Women's Aid member services through the Routes to Support system. The 'women not accommodated' daily average is derived from refuge vacancy monitoring. Bedspace counts include dedicated refuge bedspaces in England only. Police-recorded domestic abuse incidents cover England and Wales. Regional turnaway rates are from the latest Women's Aid Annual Audit. All time series are for financial years ending March.",
+    "knownIssues": [
+      "Turnaway rates may undercount demand — many survivors never contact a refuge due to awareness of shortages.",
+      "Methodology for counting bedspaces changed slightly in 2019 when dispersed accommodation was included alongside traditional refuges.",
+      "Police-recorded incident data includes improved recording practices from 2015 onwards, so the upward trend partly reflects better reporting rather than solely increased prevalence.",
+      "Regional data covers England only; Wales has a separate refuge commissioning system."
+    ]
+  }
+}

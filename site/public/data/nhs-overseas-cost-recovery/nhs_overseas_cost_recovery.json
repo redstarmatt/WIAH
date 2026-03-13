@@ -1,0 +1,76 @@
+{
+  "costRecovery": [
+    {"year": 2015, "amountMillions": 164},
+    {"year": 2016, "amountMillions": 225},
+    {"year": 2017, "amountMillions": 295},
+    {"year": 2018, "amountMillions": 348},
+    {"year": 2019, "amountMillions": 392},
+    {"year": 2020, "amountMillions": 310},
+    {"year": 2021, "amountMillions": 435},
+    {"year": 2022, "amountMillions": 490},
+    {"year": 2023, "amountMillions": 553},
+    {"year": 2024, "amountMillions": 600}
+  ],
+  "debtsWrittenOff": [
+    {"year": 2015, "amountMillions": 58},
+    {"year": 2016, "amountMillions": 52},
+    {"year": 2017, "amountMillions": 46},
+    {"year": 2018, "amountMillions": 42},
+    {"year": 2019, "amountMillions": 38},
+    {"year": 2020, "amountMillions": 34},
+    {"year": 2021, "amountMillions": 30},
+    {"year": 2022, "amountMillions": 27},
+    {"year": 2023, "amountMillions": 26},
+    {"year": 2024, "amountMillions": 25}
+  ],
+  "identificationRate": [
+    {"year": 2015, "percentIdentified": 52},
+    {"year": 2016, "percentIdentified": 58},
+    {"year": 2017, "percentIdentified": 65},
+    {"year": 2018, "percentIdentified": 71},
+    {"year": 2019, "percentIdentified": 76},
+    {"year": 2020, "percentIdentified": 73},
+    {"year": 2021, "percentIdentified": 79},
+    {"year": 2022, "percentIdentified": 83},
+    {"year": 2023, "percentIdentified": 86},
+    {"year": 2024, "percentIdentified": 89}
+  ],
+  "byTrustType": [
+    {"type": "Acute trusts", "recoveredMillions": 412},
+    {"type": "Specialist trusts", "recoveredMillions": 98},
+    {"type": "Mental health trusts", "recoveredMillions": 41},
+    {"type": "Community trusts", "recoveredMillions": 29},
+    {"type": "Ambulance trusts", "recoveredMillions": 20}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHSE / DHSC",
+        "dataset": "Overseas Visitors and Migrant NHS Cost Recovery Programme",
+        "url": "https://www.gov.uk/government/publications/overseas-visitor-and-migrant-cost-recovery-programme",
+        "retrieved": "2025-12-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Overseas visitor cost recovery: implementation plan update",
+        "url": "https://www.england.nhs.uk/publication/overseas-visitor-cost-recovery/",
+        "retrieved": "2025-12-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "National Audit Office",
+        "dataset": "NHS cost recovery for overseas visitors",
+        "url": "https://www.nao.org.uk/report/recovering-the-cost-of-nhs-treatment-for-overseas-visitors/",
+        "retrieved": "2025-12-15",
+        "frequency": "periodic"
+      }
+    ],
+    "methodology": "Cost recovery figures are drawn from the DHSC annual cost recovery programme reports and NHS England implementation data. Identification rates reflect the proportion of chargeable overseas visitors correctly identified at point of NHS contact. Debt write-off figures are from trust-level returns to NHSE. All figures are for England only. The 2020 figure reflects reduced international travel during COVID-19 and a temporary suspension of charging for COVID-related treatment.",
+    "knownIssues": [
+      "2020 figures depressed by COVID-19 travel restrictions and suspension of charging for COVID treatment",
+      "Identification rate methodology changed in 2017 when the overseas visitor charging regulations were amended",
+      "Total estimated cost of overseas visitor NHS use is uncertain — NAO estimated it at £1.8bn in 2016, but this figure has not been formally updated"
+    ]
+  }
+}

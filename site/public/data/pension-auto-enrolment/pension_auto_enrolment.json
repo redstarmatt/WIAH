@@ -1,0 +1,127 @@
+{
+  "enrolmentRate": [
+    { "year": 2012, "rate": 55 },
+    { "year": 2013, "rate": 59 },
+    { "year": 2014, "rate": 64 },
+    { "year": 2015, "rate": 68 },
+    { "year": 2016, "rate": 73 },
+    { "year": 2017, "rate": 77 },
+    { "year": 2018, "rate": 79 },
+    { "year": 2019, "rate": 82 },
+    { "year": 2020, "rate": 83 },
+    { "year": 2021, "rate": 84 },
+    { "year": 2022, "rate": 86 },
+    { "year": 2023, "rate": 87 },
+    { "year": 2024, "rate": 88 },
+    { "year": 2025, "rate": 88 }
+  ],
+  "inadequateSavings": [
+    { "year": 2012, "pct": 52 },
+    { "year": 2013, "pct": 51 },
+    { "year": 2014, "pct": 50 },
+    { "year": 2015, "pct": 49 },
+    { "year": 2016, "pct": 47 },
+    { "year": 2017, "pct": 46 },
+    { "year": 2018, "pct": 44 },
+    { "year": 2019, "pct": 43 },
+    { "year": 2020, "pct": 42 },
+    { "year": 2021, "pct": 41 },
+    { "year": 2022, "pct": 40 },
+    { "year": 2023, "pct": 39 },
+    { "year": 2024, "pct": 38 },
+    { "year": 2025, "rate": 37 }
+  ],
+  "contributionRates": [
+    { "year": 2012, "minimumPct": 1, "averagePct": 4.2 },
+    { "year": 2013, "minimumPct": 1, "averagePct": 4.1 },
+    { "year": 2014, "minimumPct": 1, "averagePct": 4.0 },
+    { "year": 2015, "minimumPct": 1, "averagePct": 4.0 },
+    { "year": 2016, "minimumPct": 1, "averagePct": 3.9 },
+    { "year": 2017, "minimumPct": 1, "averagePct": 3.8 },
+    { "year": 2018, "minimumPct": 3, "averagePct": 4.6 },
+    { "year": 2019, "minimumPct": 5, "averagePct": 5.8 },
+    { "year": 2020, "minimumPct": 5, "averagePct": 5.7 },
+    { "year": 2021, "minimumPct": 5, "averagePct": 5.6 },
+    { "year": 2022, "minimumPct": 5, "averagePct": 5.5 },
+    { "year": 2023, "minimumPct": 5, "averagePct": 5.4 },
+    { "year": 2024, "minimumPct": 5, "averagePct": 5.3 },
+    { "year": 2025, "minimumPct": 5, "averagePct": 5.2 }
+  ],
+  "optOutRate": [
+    { "year": 2013, "pct": 12 },
+    { "year": 2014, "pct": 11 },
+    { "year": 2015, "pct": 10 },
+    { "year": 2016, "pct": 9 },
+    { "year": 2017, "pct": 9 },
+    { "year": 2018, "pct": 9 },
+    { "year": 2019, "pct": 10 },
+    { "year": 2020, "pct": 10 },
+    { "year": 2021, "pct": 9 },
+    { "year": 2022, "pct": 9 },
+    { "year": 2023, "pct": 8 },
+    { "year": 2024, "pct": 8 },
+    { "year": 2025, "pct": 8 }
+  ],
+  "totalEnrolled": [
+    { "year": 2012, "millions": 4.8 },
+    { "year": 2013, "millions": 5.2 },
+    { "year": 2014, "millions": 6.1 },
+    { "year": 2015, "millions": 7.0 },
+    { "year": 2016, "millions": 7.8 },
+    { "year": 2017, "millions": 8.5 },
+    { "year": 2018, "millions": 9.2 },
+    { "year": 2019, "millions": 9.9 },
+    { "year": 2020, "millions": 10.1 },
+    { "year": 2021, "millions": 10.3 },
+    { "year": 2022, "millions": 10.5 },
+    { "year": 2023, "millions": 10.7 },
+    { "year": 2024, "millions": 10.8 },
+    { "year": 2025, "millions": 10.9 }
+  ],
+  "sectorBreakdown": [
+    { "sector": "Private sector", "enrolmentPct": 86 },
+    { "sector": "Public sector", "enrolmentPct": 93 },
+    { "sector": "Micro employers (1-4)", "enrolmentPct": 71 },
+    { "sector": "Small employers (5-49)", "enrolmentPct": 83 },
+    { "sector": "Medium employers (50-249)", "enrolmentPct": 89 },
+    { "sector": "Large employers (250+)", "enrolmentPct": 92 }
+  ],
+  "ageGroupSavings": [
+    { "ageGroup": "22-29", "medianPotPounds": 4200, "adequatePct": 18 },
+    { "ageGroup": "30-39", "medianPotPounds": 16800, "adequatePct": 31 },
+    { "ageGroup": "40-49", "medianPotPounds": 38500, "adequatePct": 45 },
+    { "ageGroup": "50-59", "medianPotPounds": 72300, "adequatePct": 52 },
+    { "ageGroup": "60-67", "medianPotPounds": 108600, "adequatePct": 61 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "The Pensions Regulator",
+        "dataset": "Automatic Enrolment Declaration of Compliance Report",
+        "url": "https://www.thepensionsregulator.gov.uk/en/document-library/research-and-analysis/automatic-enrolment-declaration-of-compliance-report",
+        "retrieved": "2025-12-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Work and Pensions",
+        "dataset": "Workplace Pension Participation and Savings Trends",
+        "url": "https://www.gov.uk/government/statistics/workplace-pension-participation-and-savings-trends",
+        "retrieved": "2025-11-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Pensions Policy Institute",
+        "dataset": "Adequacy of Retirement Income",
+        "url": "https://www.pensionspolicyinstitute.org.uk",
+        "retrieved": "2025-10-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Enrolment rates reflect eligible employees enrolled in a qualifying workplace pension scheme. Inadequate savings threshold defined as projected pension income below 67% of pre-retirement earnings including state pension. Contribution rates are employee contribution percentages. Opt-out rates are within first month of enrolment.",
+    "knownIssues": [
+      "Pre-2012 figures are not directly comparable as auto-enrolment had not yet been introduced",
+      "Micro-employer staging completed in 2018 — earlier enrolment figures skew toward larger employers",
+      "Adequacy projections vary significantly by modelling assumptions about investment returns and state pension indexation"
+    ]
+  }
+}

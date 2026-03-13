@@ -1,0 +1,65 @@
+{
+  "waitingList": [
+    {"year": 2015, "total": 152000, "hip": 68000, "knee": 84000},
+    {"year": 2016, "total": 161000, "hip": 72000, "knee": 89000},
+    {"year": 2017, "total": 170000, "hip": 76000, "knee": 94000},
+    {"year": 2018, "total": 183000, "hip": 82000, "knee": 101000},
+    {"year": 2019, "total": 197000, "hip": 88000, "knee": 109000},
+    {"year": 2020, "total": 398000, "hip": 178000, "knee": 220000},
+    {"year": 2021, "total": 576000, "hip": 258000, "knee": 318000},
+    {"year": 2022, "total": 698000, "hip": 313000, "knee": 385000},
+    {"year": 2023, "total": 745000, "hip": 334000, "knee": 411000},
+    {"year": 2024, "total": 762000, "hip": 342000, "knee": 420000},
+    {"year": 2025, "total": 780000, "hip": 350000, "knee": 430000}
+  ],
+  "medianWaitWeeks": [
+    {"year": 2015, "weeks": 11.2},
+    {"year": 2016, "weeks": 11.8},
+    {"year": 2017, "weeks": 12.4},
+    {"year": 2018, "weeks": 13.1},
+    {"year": 2019, "weeks": 14.6},
+    {"year": 2020, "weeks": 30.2},
+    {"year": 2021, "weeks": 42.8},
+    {"year": 2022, "weeks": 48.3},
+    {"year": 2023, "weeks": 50.1},
+    {"year": 2024, "weeks": 51.4},
+    {"year": 2025, "weeks": 52.0}
+  ],
+  "revisionRate": [
+    {"year": 2015, "ratePerThousand": 4.2},
+    {"year": 2016, "ratePerThousand": 4.4},
+    {"year": 2017, "ratePerThousand": 4.5},
+    {"year": 2018, "ratePerThousand": 4.7},
+    {"year": 2019, "ratePerThousand": 4.9},
+    {"year": 2020, "ratePerThousand": 5.8},
+    {"year": 2021, "ratePerThousand": 6.4},
+    {"year": 2022, "ratePerThousand": 6.9},
+    {"year": 2023, "ratePerThousand": 7.2},
+    {"year": 2024, "ratePerThousand": 7.5},
+    {"year": 2025, "ratePerThousand": 7.8}
+  ],
+  "proceduresPerformed": [
+    {"year": 2015, "total": 182000},
+    {"year": 2016, "total": 186000},
+    {"year": 2017, "total": 190000},
+    {"year": 2018, "total": 192000},
+    {"year": 2019, "total": 195000},
+    {"year": 2020, "total": 78000},
+    {"year": 2021, "total": 112000},
+    {"year": 2022, "total": 155000},
+    {"year": 2023, "total": 170000},
+    {"year": 2024, "total": 184000},
+    {"year": 2025, "total": 198000}
+  ],
+  "byRegion": [
+    {"region": "South West", "medianWeeks": 58.2},
+    {"region": "North East", "medianWeeks": 55.4},
+    {"region": "East of England", "medianWeeks": 54.1},
+    {"region": "North West", "medianWeeks": 52.8},
+    {"region": "West Midlands", "medianWeeks": 51.6},
+    {"region": "Yorkshire & Humber", "medianWeeks": 49.3},
+    {"region": "East Midlands", "medianWeeks": 48.7},
+    {"region": "South East", "medianWeeks": 47.2},
+    {"region": "London", "medianWeeks": 44.8}
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "internetAccessByIncome": [
+    {"year": 2012, "lowestQuintile": 54, "secondQuintile": 72, "thirdQuintile": 83, "fourthQuintile": 90, "highestQuintile": 96},
+    {"year": 2013, "lowestQuintile": 57, "secondQuintile": 74, "thirdQuintile": 85, "fourthQuintile": 91, "highestQuintile": 97},
+    {"year": 2014, "lowestQuintile": 60, "secondQuintile": 77, "thirdQuintile": 86, "fourthQuintile": 92, "highestQuintile": 97},
+    {"year": 2015, "lowestQuintile": 63, "secondQuintile": 79, "thirdQuintile": 88, "fourthQuintile": 93, "highestQuintile": 98},
+    {"year": 2016, "lowestQuintile": 66, "secondQuintile": 81, "thirdQuintile": 89, "fourthQuintile": 94, "highestQuintile": 98},
+    {"year": 2017, "lowestQuintile": 69, "secondQuintile": 83, "thirdQuintile": 91, "fourthQuintile": 95, "highestQuintile": 99},
+    {"year": 2018, "lowestQuintile": 72, "secondQuintile": 85, "thirdQuintile": 92, "fourthQuintile": 96, "highestQuintile": 99},
+    {"year": 2019, "lowestQuintile": 75, "secondQuintile": 87, "thirdQuintile": 93, "fourthQuintile": 96, "highestQuintile": 99},
+    {"year": 2020, "lowestQuintile": 79, "secondQuintile": 89, "thirdQuintile": 94, "fourthQuintile": 97, "highestQuintile": 99},
+    {"year": 2021, "lowestQuintile": 82, "secondQuintile": 91, "thirdQuintile": 95, "fourthQuintile": 97, "highestQuintile": 99},
+    {"year": 2022, "lowestQuintile": 84, "secondQuintile": 92, "thirdQuintile": 96, "fourthQuintile": 98, "highestQuintile": 99},
+    {"year": 2023, "lowestQuintile": 86, "secondQuintile": 93, "thirdQuintile": 96, "fourthQuintile": 98, "highestQuintile": 100},
+    {"year": 2024, "lowestQuintile": 87, "secondQuintile": 94, "thirdQuintile": 97, "fourthQuintile": 98, "highestQuintile": 100}
+  ],
+  "digitalSkillsGap": [
+    {"year": 2015, "lackingBasicSkills": 12.6, "zeroDigitalSkills": 5.3},
+    {"year": 2016, "lackingBasicSkills": 11.8, "zeroDigitalSkills": 4.8},
+    {"year": 2017, "lackingBasicSkills": 11.3, "zeroDigitalSkills": 4.5},
+    {"year": 2018, "lackingBasicSkills": 10.7, "zeroDigitalSkills": 4.2},
+    {"year": 2019, "lackingBasicSkills": 10.0, "zeroDigitalSkills": 3.9},
+    {"year": 2020, "lackingBasicSkills": 9.4, "zeroDigitalSkills": 3.5},
+    {"year": 2021, "lackingBasicSkills": 9.0, "zeroDigitalSkills": 3.2},
+    {"year": 2022, "lackingBasicSkills": 8.6, "zeroDigitalSkills": 2.9},
+    {"year": 2023, "lackingBasicSkills": 8.2, "zeroDigitalSkills": 2.6},
+    {"year": 2024, "lackingBasicSkills": 7.9, "zeroDigitalSkills": 2.4}
+  ],
+  "socialTariffTakeUp": [
+    {"year": 2021, "eligibleMillions": 4.2, "takeUpPercent": 1.2, "takeUpMillions": 0.05},
+    {"year": 2022, "eligibleMillions": 4.4, "takeUpPercent": 2.1, "takeUpMillions": 0.09},
+    {"year": 2023, "eligibleMillions": 4.6, "takeUpPercent": 3.7, "takeUpMillions": 0.17},
+    {"year": 2024, "eligibleMillions": 4.8, "takeUpPercent": 5.1, "takeUpMillions": 0.24}
+  ],
+  "householdsWithoutInternet": [
+    {"year": 2012, "millions": 7.1},
+    {"year": 2013, "millions": 6.4},
+    {"year": 2014, "millions": 5.9},
+    {"year": 2015, "millions": 5.3},
+    {"year": 2016, "millions": 4.8},
+    {"year": 2017, "millions": 4.4},
+    {"year": 2018, "millions": 4.0},
+    {"year": 2019, "millions": 3.7},
+    {"year": 2020, "millions": 3.5},
+    {"year": 2021, "millions": 3.4},
+    {"year": 2022, "millions": 3.3},
+    {"year": 2023, "millions": 3.2},
+    {"year": 2024, "millions": 3.1}
+  ],
+  "broadbandAffordability": [
+    {"year": 2019, "strugglingMillions": 1.1},
+    {"year": 2020, "strugglingMillions": 1.2},
+    {"year": 2021, "strugglingMillions": 1.5},
+    {"year": 2022, "strugglingMillions": 1.7},
+    {"year": 2023, "strugglingMillions": 1.8},
+    {"year": 2024, "strugglingMillions": 1.9}
+  ]
+}

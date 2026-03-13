@@ -1,0 +1,74 @@
+{
+  "topic": "online-gambling-growth",
+  "lastUpdated": "2026-03-01",
+  "grossYield": [
+    { "year": 2014, "valueBn": 3.1 },
+    { "year": 2015, "valueBn": 3.5 },
+    { "year": 2016, "valueBn": 3.9 },
+    { "year": 2017, "valueBn": 4.4 },
+    { "year": 2018, "valueBn": 4.9 },
+    { "year": 2019, "valueBn": 5.5 },
+    { "year": 2020, "valueBn": 6.0 },
+    { "year": 2021, "valueBn": 6.3 },
+    { "year": 2022, "valueBn": 6.7 },
+    { "year": 2023, "valueBn": 7.0 },
+    { "year": 2024, "valueBn": 7.4 },
+    { "year": 2025, "valueBn": 7.7 }
+  ],
+  "problemGamblers": [
+    { "year": 2014, "thousandsProblem": 280, "thousandsModerateRisk": 620 },
+    { "year": 2015, "thousandsProblem": 300, "thousandsModerateRisk": 650 },
+    { "year": 2016, "thousandsProblem": 310, "thousandsModerateRisk": 700 },
+    { "year": 2017, "thousandsProblem": 340, "thousandsModerateRisk": 730 },
+    { "year": 2018, "thousandsProblem": 370, "thousandsModerateRisk": 780 },
+    { "year": 2019, "thousandsProblem": 390, "thousandsModerateRisk": 810 },
+    { "year": 2020, "thousandsProblem": 410, "thousandsModerateRisk": 860 },
+    { "year": 2021, "thousandsProblem": 400, "thousandsModerateRisk": 840 },
+    { "year": 2022, "thousandsProblem": 420, "thousandsModerateRisk": 870 },
+    { "year": 2023, "thousandsProblem": 430, "thousandsModerateRisk": 900 },
+    { "year": 2024, "thousandsProblem": 440, "thousandsModerateRisk": 920 },
+    { "year": 2025, "thousandsProblem": 450, "thousandsModerateRisk": 940 }
+  ],
+  "onlineSlotIntensity": [
+    { "year": 2017, "millionsHighIntensity": 0.7 },
+    { "year": 2018, "millionsHighIntensity": 0.8 },
+    { "year": 2019, "millionsHighIntensity": 0.9 },
+    { "year": 2020, "millionsHighIntensity": 1.05 },
+    { "year": 2021, "millionsHighIntensity": 1.1 },
+    { "year": 2022, "millionsHighIntensity": 1.15 },
+    { "year": 2023, "millionsHighIntensity": 1.3 },
+    { "year": 2024, "millionsHighIntensity": 1.38 },
+    { "year": 2025, "millionsHighIntensity": 1.42 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Gambling Commission",
+        "dataset": "Industry Statistics",
+        "url": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/industry-statistics",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Gambling Commission",
+        "dataset": "Gambling participation and problem gambling — Statistics on participation and the prevalence of problem gambling",
+        "url": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/statistics-on-participation-and-problem-gambling",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "NHS Digital",
+        "dataset": "Health Survey for England — Gambling chapter",
+        "url": "https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Gross gambling yield (GGY) is the amount retained by gambling operators after payout of winnings. Problem gambling prevalence is estimated using the Problem Gambling Severity Index (PGSI) from the Gambling Commission's annual telephone and online survey of adults in Great Britain. High-intensity online slots play is defined as playing slots daily or near-daily (4+ days per week). Figures for 2024 and 2025 are provisional estimates based on the most recent Gambling Commission industry statistics release.",
+    "knownIssues": [
+      "Problem gambling prevalence methodology changed in 2018 from face-to-face Health Survey for England to a combined telephone/online survey, creating a partial break in the time series.",
+      "COVID-19 lockdowns in 2020–2021 caused temporary shifts from retail to online gambling, inflating online GGY figures relative to trend.",
+      "Self-reported gambling behaviour is subject to recall bias and social desirability effects; actual problem gambling rates are likely higher than survey estimates."
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "libraryNumbers": [
+    {"year": 2010, "count": 4482},
+    {"year": 2011, "count": 4406},
+    {"year": 2012, "count": 4290},
+    {"year": 2013, "count": 4145},
+    {"year": 2014, "count": 4042},
+    {"year": 2015, "count": 3917},
+    {"year": 2016, "count": 3765},
+    {"year": 2017, "count": 3660},
+    {"year": 2018, "count": 3583},
+    {"year": 2019, "count": 3510},
+    {"year": 2020, "count": 3470},
+    {"year": 2021, "count": 3440},
+    {"year": 2022, "count": 3407},
+    {"year": 2023, "count": 3382},
+    {"year": 2024, "count": 3350}
+  ],
+  "visits": [
+    {"year": 2010, "millions": 302.6},
+    {"year": 2011, "millions": 288.4},
+    {"year": 2012, "millions": 271.7},
+    {"year": 2013, "millions": 260.1},
+    {"year": 2014, "millions": 248.5},
+    {"year": 2015, "millions": 237.9},
+    {"year": 2016, "millions": 224.8},
+    {"year": 2017, "millions": 215.3},
+    {"year": 2018, "millions": 209.6},
+    {"year": 2019, "millions": 204.1},
+    {"year": 2020, "millions": 74.3},
+    {"year": 2021, "millions": 116.8},
+    {"year": 2022, "millions": 172.5},
+    {"year": 2023, "millions": 186.2},
+    {"year": 2024, "millions": 193.7}
+  ],
+  "spendingPerHead": [
+    {"year": 2010, "pounds": 21.40},
+    {"year": 2011, "pounds": 19.80},
+    {"year": 2012, "pounds": 18.10},
+    {"year": 2013, "pounds": 16.90},
+    {"year": 2014, "pounds": 16.20},
+    {"year": 2015, "pounds": 15.40},
+    {"year": 2016, "pounds": 14.40},
+    {"year": 2017, "pounds": 13.60},
+    {"year": 2018, "pounds": 13.10},
+    {"year": 2019, "pounds": 12.80},
+    {"year": 2020, "pounds": 12.30},
+    {"year": 2021, "pounds": 11.90},
+    {"year": 2022, "pounds": 12.10},
+    {"year": 2023, "pounds": 11.70},
+    {"year": 2024, "pounds": 11.40}
+  ]
+}

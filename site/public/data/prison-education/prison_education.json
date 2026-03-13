@@ -1,0 +1,113 @@
+{
+  "educationParticipation": [
+    { "year": 2010, "pct": 36.2 },
+    { "year": 2011, "pct": 35.8 },
+    { "year": 2012, "pct": 34.9 },
+    { "year": 2013, "pct": 34.1 },
+    { "year": 2014, "pct": 32.7 },
+    { "year": 2015, "pct": 31.4 },
+    { "year": 2016, "pct": 30.6 },
+    { "year": 2017, "pct": 30.1 },
+    { "year": 2018, "pct": 29.5 },
+    { "year": 2019, "pct": 29.0 },
+    { "year": 2020, "pct": 18.3 },
+    { "year": 2021, "pct": 22.7 },
+    { "year": 2022, "pct": 27.1 },
+    { "year": 2023, "pct": 27.8 },
+    { "year": 2024, "pct": 28.0 }
+  ],
+  "noQualifications": [
+    { "year": 2010, "pct": 52.1 },
+    { "year": 2011, "pct": 53.0 },
+    { "year": 2012, "pct": 53.8 },
+    { "year": 2013, "pct": 54.5 },
+    { "year": 2014, "pct": 55.2 },
+    { "year": 2015, "pct": 55.7 },
+    { "year": 2016, "pct": 56.0 },
+    { "year": 2017, "pct": 56.3 },
+    { "year": 2018, "pct": 56.8 },
+    { "year": 2019, "pct": 57.0 },
+    { "year": 2020, "pct": 57.2 },
+    { "year": 2021, "pct": 57.1 },
+    { "year": 2022, "pct": 57.0 },
+    { "year": 2023, "pct": 57.3 },
+    { "year": 2024, "pct": 57.0 }
+  ],
+  "reoffendingRate": [
+    { "year": 2010, "pct": 46.8 },
+    { "year": 2011, "pct": 46.5 },
+    { "year": 2012, "pct": 46.2 },
+    { "year": 2013, "pct": 45.9 },
+    { "year": 2014, "pct": 46.3 },
+    { "year": 2015, "pct": 47.1 },
+    { "year": 2016, "pct": 48.0 },
+    { "year": 2017, "pct": 48.4 },
+    { "year": 2018, "pct": 48.8 },
+    { "year": 2019, "pct": 49.2 },
+    { "year": 2020, "pct": 43.1 },
+    { "year": 2021, "pct": 45.7 },
+    { "year": 2022, "pct": 47.8 },
+    { "year": 2023, "pct": 48.5 },
+    { "year": 2024, "pct": 48.9 }
+  ],
+  "educationBudget": [
+    { "year": 2010, "millionGBP": 168 },
+    { "year": 2011, "millionGBP": 152 },
+    { "year": 2012, "millionGBP": 141 },
+    { "year": 2013, "millionGBP": 131 },
+    { "year": 2014, "millionGBP": 126 },
+    { "year": 2015, "millionGBP": 119 },
+    { "year": 2016, "millionGBP": 113 },
+    { "year": 2017, "millionGBP": 108 },
+    { "year": 2018, "millionGBP": 104 },
+    { "year": 2019, "millionGBP": 101 },
+    { "year": 2020, "millionGBP": 97 },
+    { "year": 2021, "millionGBP": 98 },
+    { "year": 2022, "millionGBP": 100 },
+    { "year": 2023, "millionGBP": 101 },
+    { "year": 2024, "millionGBP": 101 }
+  ],
+  "vocationalCompletions": [
+    { "year": 2015, "count": 48200 },
+    { "year": 2016, "count": 44100 },
+    { "year": 2017, "count": 41800 },
+    { "year": 2018, "count": 39200 },
+    { "year": 2019, "count": 37600 },
+    { "year": 2020, "count": 19100 },
+    { "year": 2021, "count": 25400 },
+    { "year": 2022, "count": 31200 },
+    { "year": 2023, "count": 33800 },
+    { "year": 2024, "count": 34500 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "HMPPS / Ofsted",
+        "dataset": "Prison Education Framework Annual Statistics",
+        "url": "https://www.gov.uk/government/statistics/prison-education-statistics",
+        "retrieved": "2025-11-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Ministry of Justice",
+        "dataset": "Proven Reoffending Statistics",
+        "url": "https://www.gov.uk/government/statistics/proven-reoffending-statistics",
+        "retrieved": "2025-10-01",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "HMPPS",
+        "dataset": "Prison Education Budget and Expenditure",
+        "url": "https://www.gov.uk/government/publications/prison-education-expenditure",
+        "retrieved": "2025-11-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Education participation is defined as the percentage of the prison population engaging in purposeful education activity in any given week, as recorded by HMPPS establishment returns and verified by Ofsted inspection data. No-qualifications figure is self-reported at reception screening. Reoffending is measured as proven reoffending within one year of release. Budget figures are nominal (not inflation-adjusted).",
+    "knownIssues": [
+      "COVID-19 suspended most prison education from March 2020 to mid-2021, creating a sharp dip in participation data",
+      "Self-reported qualifications at reception may undercount informal skills",
+      "Budget figures are nominal and do not account for inflation — real-terms cuts are larger than headline figures suggest"
+    ]
+  }
+}

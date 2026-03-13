@@ -3,104 +3,63 @@
   "lastUpdated": "2026-03-01",
   "national": {
     "timeSeries": [
-      {
-        "year": 2015,
-        "activePct": 56,
-        "inactivePct": 26,
-        "leastDeprivedPct": 66,
-        "mostDeprivedPct": 49
-      },
-      {
-        "year": 2016,
-        "activePct": 57,
-        "inactivePct": 25,
-        "leastDeprivedPct": 67,
-        "mostDeprivedPct": 50
-      },
-      {
-        "year": 2017,
-        "activePct": 58,
-        "inactivePct": 25,
-        "leastDeprivedPct": 68,
-        "mostDeprivedPct": 50
-      },
-      {
-        "year": 2018,
-        "activePct": 59,
-        "inactivePct": 24,
-        "leastDeprivedPct": 68,
-        "mostDeprivedPct": 51
-      },
-      {
-        "year": 2019,
-        "activePct": 60,
-        "inactivePct": 24,
-        "leastDeprivedPct": 69,
-        "mostDeprivedPct": 51
-      },
-      {
-        "year": 2020,
-        "activePct": 55,
-        "inactivePct": 27,
-        "leastDeprivedPct": 65,
-        "mostDeprivedPct": 45
-      },
-      {
-        "year": 2021,
-        "activePct": 59,
-        "inactivePct": 25,
-        "leastDeprivedPct": 69,
-        "mostDeprivedPct": 49
-      },
-      {
-        "year": 2022,
-        "activePct": 60,
-        "inactivePct": 24,
-        "leastDeprivedPct": 69,
-        "mostDeprivedPct": 50
-      },
-      {
-        "year": 2023,
-        "activePct": 61,
-        "inactivePct": 23,
-        "leastDeprivedPct": 70,
-        "mostDeprivedPct": 51
-      },
-      {
-        "year": 2024,
-        "activePct": 61.5,
-        "inactivePct": 23,
-        "leastDeprivedPct": 70,
-        "mostDeprivedPct": 51
-      },
-      {
-        "year": 2025,
-        "activePct": 61.7,
-        "inactivePct": 23,
-        "leastDeprivedPct": 70,
-        "mostDeprivedPct": 51
-      }
+      { "year": 2015, "activePct": 55.8, "inactivePct": 27.7, "leastDeprivedPct": 65.5, "mostDeprivedPct": 48.7, "childrenActivePct": 17.5, "walkCyclePct": 41.2 },
+      { "year": 2016, "activePct": 57.0, "inactivePct": 25.6, "leastDeprivedPct": 66.8, "mostDeprivedPct": 49.3, "childrenActivePct": 19.1, "walkCyclePct": 42.0 },
+      { "year": 2017, "activePct": 58.2, "inactivePct": 25.1, "leastDeprivedPct": 67.9, "mostDeprivedPct": 49.8, "childrenActivePct": 22.8, "walkCyclePct": 42.8 },
+      { "year": 2018, "activePct": 58.8, "inactivePct": 24.5, "leastDeprivedPct": 68.2, "mostDeprivedPct": 50.4, "childrenActivePct": 26.4, "walkCyclePct": 43.1 },
+      { "year": 2019, "activePct": 59.7, "inactivePct": 24.2, "leastDeprivedPct": 68.9, "mostDeprivedPct": 50.9, "childrenActivePct": 31.2, "walkCyclePct": 43.5 },
+      { "year": 2020, "activePct": 55.1, "inactivePct": 27.2, "leastDeprivedPct": 65.0, "mostDeprivedPct": 44.8, "childrenActivePct": 19.8, "walkCyclePct": 47.3 },
+      { "year": 2021, "activePct": 58.6, "inactivePct": 25.3, "leastDeprivedPct": 68.7, "mostDeprivedPct": 49.2, "childrenActivePct": 34.6, "walkCyclePct": 46.1 },
+      { "year": 2022, "activePct": 59.9, "inactivePct": 24.0, "leastDeprivedPct": 69.4, "mostDeprivedPct": 50.1, "childrenActivePct": 39.8, "walkCyclePct": 45.2 },
+      { "year": 2023, "activePct": 60.7, "inactivePct": 23.4, "leastDeprivedPct": 69.8, "mostDeprivedPct": 50.6, "childrenActivePct": 43.2, "walkCyclePct": 46.8 },
+      { "year": 2024, "activePct": 61.2, "inactivePct": 22.9, "leastDeprivedPct": 70.1, "mostDeprivedPct": 50.9, "childrenActivePct": 45.4, "walkCyclePct": 48.1 },
+      { "year": 2025, "activePct": 61.7, "inactivePct": 22.5, "leastDeprivedPct": 70.3, "mostDeprivedPct": 51.1, "childrenActivePct": 47.0, "walkCyclePct": 49.6 }
     ]
   },
+  "byRegion": [
+    { "region": "South West", "activePct": 66.8 },
+    { "region": "South East", "activePct": 65.2 },
+    { "region": "East of England", "activePct": 63.1 },
+    { "region": "London", "activePct": 61.4 },
+    { "region": "East Midlands", "activePct": 60.7 },
+    { "region": "West Midlands", "activePct": 57.3 },
+    { "region": "Yorkshire & Humber", "activePct": 56.9 },
+    { "region": "North West", "activePct": 55.8 },
+    { "region": "North East", "activePct": 54.2 }
+  ],
   "metadata": {
     "sources": [
       {
         "name": "Sport England",
-        "dataset": "Active Lives Adult Survey",
+        "dataset": "Active Lives Adult Survey 2024-25",
         "url": "https://www.sportengland.org/research-and-data/data/active-lives",
         "frequency": "biannual"
       },
       {
         "name": "Sport England",
-        "dataset": "Active Lives Children and Young People Survey",
+        "dataset": "Active Lives Children and Young People Survey 2024-25",
         "url": "https://www.sportengland.org/research-and-data/data/active-lives",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Transport",
+        "dataset": "Walking and Cycling Statistics, England",
+        "url": "https://www.gov.uk/government/statistical-data-sets/walking-and-cycling-statistics-cw",
+        "frequency": "annual"
+      },
+      {
+        "name": "Active Travel England",
+        "dataset": "Programme Statistics 2025",
+        "url": "https://www.gov.uk/government/organisations/active-travel-england",
         "frequency": "annual"
       }
     ],
-    "methodology": "Active Lives Survey measures activity over a rolling 28-day period. 150 minutes per week guideline from CMO physical activity guidelines. Deprivation quintiles from Index of Multiple Deprivation matched to survey respondent postcodes.",
+    "methodology": "Active Lives Survey measures activity over a rolling 28-day period using self-report questionnaire. The 150 minutes per week guideline derives from the UK Chief Medical Officers' physical activity guidelines (2019). Deprivation quintiles are assigned using the Index of Multiple Deprivation (2019) matched to survey respondent postcodes. Children's activity is measured against the CMO guideline of 60 minutes of moderate-to-vigorous physical activity per day. Walking and cycling rates are from the National Travel Survey and Active Lives combined.",
     "knownIssues": [
-      "Self-reported activity may overestimate actual levels",
-      "Accelerometer-measured activity (a subset of the survey) consistently shows lower levels than self-report"
+      "Self-reported activity may overestimate actual levels by 20-40% compared to accelerometer measurement",
+      "Accelerometer-measured activity (a subset of the survey) consistently shows lower levels than self-report",
+      "COVID-19 disrupted both activity patterns and survey fieldwork in 2020-21 — data from this period should be interpreted with caution",
+      "Walking and cycling methodology changed slightly in 2020 when Active Lives expanded its transport questions"
     ]
   }
 }

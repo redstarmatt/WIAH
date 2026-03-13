@@ -1,0 +1,86 @@
+{
+  "roughSleeping": [
+    {"year": 2010, "count": 580},
+    {"year": 2011, "count": 540},
+    {"year": 2012, "count": 510},
+    {"year": 2013, "count": 490},
+    {"year": 2014, "count": 470},
+    {"year": 2015, "count": 450},
+    {"year": 2016, "count": 430},
+    {"year": 2017, "count": 410},
+    {"year": 2018, "count": 400},
+    {"year": 2019, "count": 380},
+    {"year": 2020, "count": 310},
+    {"year": 2021, "count": 345},
+    {"year": 2022, "count": 335},
+    {"year": 2023, "count": 320}
+  ],
+  "homelessAssessments": [
+    {"year": 2012, "assessments": 8700},
+    {"year": 2013, "assessments": 8200},
+    {"year": 2014, "assessments": 7800},
+    {"year": 2015, "assessments": 7400},
+    {"year": 2016, "assessments": 7200},
+    {"year": 2017, "assessments": 7000},
+    {"year": 2018, "assessments": 6800},
+    {"year": 2019, "assessments": 6600},
+    {"year": 2020, "assessments": 6100},
+    {"year": 2021, "assessments": 6400},
+    {"year": 2022, "assessments": 6200},
+    {"year": 2023, "assessments": 5900}
+  ],
+  "supportedHousing": [
+    {"year": 2015, "units": 6200},
+    {"year": 2016, "units": 6800},
+    {"year": 2017, "units": 7400},
+    {"year": 2018, "units": 8100},
+    {"year": 2019, "units": 8900},
+    {"year": 2020, "units": 9400},
+    {"year": 2021, "units": 10200},
+    {"year": 2022, "units": 11100},
+    {"year": 2023, "units": 12300}
+  ],
+  "byRegion": [
+    {"region": "London", "veteransRoughSleeping": 68},
+    {"region": "South East", "veteransRoughSleeping": 42},
+    {"region": "North West", "veteransRoughSleeping": 38},
+    {"region": "West Midlands", "veteransRoughSleeping": 32},
+    {"region": "Yorkshire & Humber", "veteransRoughSleeping": 28},
+    {"region": "South West", "veteransRoughSleeping": 26},
+    {"region": "East of England", "veteransRoughSleeping": 24},
+    {"region": "East Midlands", "veteransRoughSleeping": 22},
+    {"region": "North East", "veteransRoughSleeping": 20}
+  ],
+  "metadata": {
+    "lastUpdated": "2024-02-29",
+    "sources": [
+      {
+        "name": "MHCLG",
+        "dataset": "Rough Sleeping Snapshot in England",
+        "url": "https://www.gov.uk/government/statistics/rough-sleeping-snapshot-in-england-autumn-2023",
+        "retrieved": "2024-02-29",
+        "frequency": "annual"
+      },
+      {
+        "name": "Office for Veterans' Affairs",
+        "dataset": "Veterans' Strategy Action Plan: Annual Progress Report",
+        "url": "https://www.gov.uk/government/publications/veterans-strategy-action-plan-2022-to-2024",
+        "retrieved": "2024-02-29",
+        "frequency": "annual"
+      },
+      {
+        "name": "DLUHC",
+        "dataset": "Statutory Homelessness Statistics — Armed Forces indicator",
+        "url": "https://www.gov.uk/government/collections/homelessness-statistics",
+        "retrieved": "2024-02-29",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Rough sleeping counts are drawn from the annual MHCLG autumn snapshot, which combines street counts with evidence-based estimates. The veteran identifier relies on self-declaration during outreach or local authority assessment and is known to undercount. Homelessness assessments reflect cases where the applicant's armed forces history was recorded under the Homelessness Reduction Act 2017 duty. Supported housing figures are compiled from the Office for Veterans' Affairs monitoring returns covering specialist veteran accommodation providers.",
+    "knownIssues": [
+      "Veteran status relies on self-declaration — true prevalence is likely higher",
+      "COVID-19 'Everyone In' policy in 2020 temporarily housed almost all rough sleepers, creating a discontinuity",
+      "Homelessness Reduction Act 2017 changed recording practices from April 2018, limiting direct pre/post comparison"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "perCapitaConsumption": [
+    {"year": 2007, "kg": 95.2},
+    {"year": 2008, "kg": 94.6},
+    {"year": 2009, "kg": 93.8},
+    {"year": 2010, "kg": 93.1},
+    {"year": 2011, "kg": 92.4},
+    {"year": 2012, "kg": 91.6},
+    {"year": 2013, "kg": 90.9},
+    {"year": 2014, "kg": 90.2},
+    {"year": 2015, "kg": 89.4},
+    {"year": 2016, "kg": 88.5},
+    {"year": 2017, "kg": 87.8},
+    {"year": 2018, "kg": 86.9},
+    {"year": 2019, "kg": 85.7},
+    {"year": 2020, "kg": 86.3, "note": "COVID — home cooking spike"},
+    {"year": 2021, "kg": 85.1},
+    {"year": 2022, "kg": 84.6},
+    {"year": 2023, "kg": 84.0},
+    {"year": 2024, "kg": 83.4},
+    {"year": 2025, "kg": 82.8}
+  ],
+  "meatTypeBreakdown": [
+    {"year": 2007, "poultry": 34.2, "beef": 22.1, "pork": 21.4, "lamb": 8.8, "other": 8.7},
+    {"year": 2008, "poultry": 34.6, "beef": 21.8, "pork": 21.0, "lamb": 8.6, "other": 8.6},
+    {"year": 2009, "poultry": 34.9, "beef": 21.4, "pork": 20.7, "lamb": 8.4, "other": 8.4},
+    {"year": 2010, "poultry": 35.3, "beef": 21.0, "pork": 20.3, "lamb": 8.2, "other": 8.3},
+    {"year": 2011, "poultry": 35.8, "beef": 20.7, "pork": 19.8, "lamb": 8.0, "other": 8.1},
+    {"year": 2012, "poultry": 36.2, "beef": 19.9, "pork": 19.5, "lamb": 7.9, "other": 8.1},
+    {"year": 2013, "poultry": 36.5, "beef": 18.8, "pork": 19.8, "lamb": 7.8, "other": 8.0},
+    {"year": 2014, "poultry": 37.0, "beef": 18.4, "pork": 19.2, "lamb": 7.6, "other": 8.0},
+    {"year": 2015, "poultry": 37.4, "beef": 18.0, "pork": 18.6, "lamb": 7.5, "other": 7.9},
+    {"year": 2016, "poultry": 37.8, "beef": 17.5, "pork": 18.1, "lamb": 7.4, "other": 7.7},
+    {"year": 2017, "poultry": 38.1, "beef": 17.2, "pork": 17.6, "lamb": 7.3, "other": 7.6},
+    {"year": 2018, "poultry": 38.4, "beef": 16.8, "pork": 17.0, "lamb": 7.2, "other": 7.5},
+    {"year": 2019, "poultry": 38.2, "beef": 16.3, "pork": 16.5, "lamb": 7.2, "other": 7.5},
+    {"year": 2020, "poultry": 39.0, "beef": 16.5, "pork": 16.4, "lamb": 7.0, "other": 7.4},
+    {"year": 2021, "poultry": 38.6, "beef": 16.0, "pork": 16.0, "lamb": 6.9, "other": 7.6},
+    {"year": 2022, "poultry": 38.8, "beef": 15.6, "pork": 15.8, "lamb": 6.8, "other": 7.6},
+    {"year": 2023, "poultry": 39.0, "beef": 15.2, "pork": 15.4, "lamb": 6.7, "other": 7.7},
+    {"year": 2024, "poultry": 39.1, "beef": 14.8, "pork": 15.0, "lamb": 6.5, "other": 8.0},
+    {"year": 2025, "poultry": 39.2, "beef": 14.5, "pork": 14.7, "lamb": 6.3, "other": 8.1}
+  ],
+  "plantBasedSales": [
+    {"year": 2018, "billionGBP": 0.44},
+    {"year": 2019, "billionGBP": 0.62},
+    {"year": 2020, "billionGBP": 0.81},
+    {"year": 2021, "billionGBP": 1.02},
+    {"year": 2022, "billionGBP": 1.28},
+    {"year": 2023, "billionGBP": 1.38},
+    {"year": 2024, "billionGBP": 1.41},
+    {"year": 2025, "billionGBP": 1.39}
+  ],
+  "metadata": {
+    "topic": "meat-consumption-trend",
+    "lastUpdated": "2026-02-15",
+    "sources": [
+      {
+        "name": "DEFRA",
+        "dataset": "Family Food Statistics — Food Statistics Pocketbook",
+        "url": "https://www.gov.uk/government/statistics/family-food-statistics",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "DEFRA",
+        "dataset": "Agriculture in the United Kingdom (AUK)",
+        "url": "https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Kantar / IGD",
+        "dataset": "UK Plant-Based Market Report",
+        "url": "https://www.kantar.com",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Per capita consumption is calculated from total UK supply data (production plus imports minus exports) divided by mid-year population estimates, expressed as carcase weight equivalent in kilograms per person per year. Plant-based sales data covers UK retail value across all categories (meat alternatives, dairy alternatives, ready meals). Meat type breakdown is derived from DEFRA supply balance sheets.",
+    "knownIssues": [
+      "Supply-based estimates slightly overstate actual consumption as they include waste and pet food use",
+      "COVID-19 disrupted eating patterns in 2020–2021; caution interpreting those years",
+      "Plant-based sales data methodology changed in 2022 when Kantar revised category definitions"
+    ]
+  }
+}

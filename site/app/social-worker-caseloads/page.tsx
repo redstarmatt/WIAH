@@ -118,7 +118,7 @@ export default function SocialWorkerCaseloadsPage() {
 
   return (
     <>
-      <TopicNav topic="Social Worker Caseloads" parentTopic="Education" />
+      <TopicNav topic="Social Worker Caseloads" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Social Worker Caseloads"

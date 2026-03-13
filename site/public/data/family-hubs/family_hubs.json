@@ -1,0 +1,64 @@
+{
+  "topic": "family-hubs",
+  "lastUpdated": "2026-03-01",
+  "rollout": [
+    { "year": 2022, "hubsOpen": 12, "cumulative": 12 },
+    { "year": 2023, "hubsOpen": 56, "cumulative": 68 },
+    { "year": 2024, "hubsOpen": 0, "cumulative": 68 },
+    { "year": 2025, "hubsOpen": 0, "cumulative": 68 }
+  ],
+  "visitsByDeprivation": [
+    { "quintile": 1, "label": "Most deprived", "visitsPerHub": 1820 },
+    { "quintile": 2, "label": "Deprived", "visitsPerHub": 2340 },
+    { "quintile": 3, "label": "Average", "visitsPerHub": 3210 },
+    { "quintile": 4, "label": "Less deprived", "visitsPerHub": 3870 },
+    { "quintile": 5, "label": "Least deprived", "visitsPerHub": 4290 }
+  ],
+  "familiesReached": [
+    { "year": 2022, "thousands": 18 },
+    { "year": 2023, "thousands": 112 },
+    { "year": 2024, "thousands": 148 },
+    { "year": 2025, "thousands": 165 }
+  ],
+  "childrensCentreClosures": [
+    { "year": 2010, "open": 3632 },
+    { "year": 2012, "open": 3393 },
+    { "year": 2014, "open": 3082 },
+    { "year": 2016, "open": 2766 },
+    { "year": 2018, "open": 2481 },
+    { "year": 2020, "open": 2153 },
+    { "year": 2022, "open": 1981 },
+    { "year": 2024, "open": 1852 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Department for Education",
+        "dataset": "Family Hubs and Start for Life programme evaluation",
+        "url": "https://www.gov.uk/government/publications/family-hubs-and-start-for-life-programme",
+        "retrieved": "2026-03-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Action for Children / Coram",
+        "dataset": "Children's Centre census",
+        "url": "https://www.actionforchildren.org.uk",
+        "retrieved": "2026-01-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "National Centre for Family Hubs",
+        "dataset": "Family Hub network data",
+        "url": "https://www.ncfh.org.uk",
+        "retrieved": "2026-02-01",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "Family hub counts cover all hubs receiving DfE Start for Life programme funding operating as named local network hubs. Visits by deprivation quintile are drawn from early evaluation data from 12 pathfinder local authorities. Children's centre figures are estimated from local authority surveys and Action for Children annual censuses; the 2010 baseline of 3,632 is the peak prior to austerity cuts.",
+    "knownIssues": [
+      "Deprivation visit data is from a small sample of pathfinder authorities and may not represent all 68 hub networks",
+      "Family hubs vary considerably in size and service offer — a 'visit' is not standardised across local authorities",
+      "Some children's centres transferred to community management and are excluded from the closed count but may offer reduced services"
+    ]
+  }
+}

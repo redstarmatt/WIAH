@@ -1,0 +1,121 @@
+{
+  "overseasSpending": [
+    {"year": 2010, "billions": 16.9},
+    {"year": 2011, "billions": 17.6},
+    {"year": 2012, "billions": 18.5},
+    {"year": 2013, "billions": 21.0},
+    {"year": 2014, "billions": 22.1},
+    {"year": 2015, "billions": 22.5},
+    {"year": 2016, "billions": 22.8},
+    {"year": 2017, "billions": 25.2},
+    {"year": 2018, "billions": 26.3},
+    {"year": 2019, "billions": 27.0},
+    {"year": 2020, "billions": 7.0},
+    {"year": 2021, "billions": 12.4},
+    {"year": 2022, "billions": 20.0},
+    {"year": 2023, "billions": 27.0},
+    {"year": 2024, "billions": 31.1},
+    {"year": 2025, "billions": 32.8}
+  ],
+  "domesticSpending": [
+    {"year": 2010, "billions": 56.0},
+    {"year": 2011, "billions": 58.0},
+    {"year": 2012, "billions": 60.0},
+    {"year": 2013, "billions": 63.0},
+    {"year": 2014, "billions": 66.0},
+    {"year": 2015, "billions": 69.0},
+    {"year": 2016, "billions": 72.0},
+    {"year": 2017, "billions": 76.0},
+    {"year": 2018, "billions": 78.0},
+    {"year": 2019, "billions": 80.0},
+    {"year": 2020, "billions": 28.0},
+    {"year": 2021, "billions": 52.0},
+    {"year": 2022, "billions": 82.0},
+    {"year": 2023, "billions": 75.0},
+    {"year": 2024, "billions": 73.0},
+    {"year": 2025, "billions": 74.5}
+  ],
+  "tourismEmployment": [
+    {"year": 2015, "millions": 2.6},
+    {"year": 2016, "millions": 2.7},
+    {"year": 2017, "millions": 2.8},
+    {"year": 2018, "millions": 2.9},
+    {"year": 2019, "millions": 3.2},
+    {"year": 2020, "millions": 1.8},
+    {"year": 2021, "millions": 2.3},
+    {"year": 2022, "millions": 2.7},
+    {"year": 2023, "millions": 2.9},
+    {"year": 2024, "millions": 3.1},
+    {"year": 2025, "millions": 3.2}
+  ],
+  "visitorNumbers": [
+    {"year": 2010, "millions": 29.8},
+    {"year": 2011, "millions": 30.8},
+    {"year": 2012, "millions": 31.1},
+    {"year": 2013, "millions": 32.8},
+    {"year": 2014, "millions": 34.4},
+    {"year": 2015, "millions": 36.1},
+    {"year": 2016, "millions": 37.6},
+    {"year": 2017, "millions": 39.2},
+    {"year": 2018, "millions": 37.9},
+    {"year": 2019, "millions": 40.9},
+    {"year": 2020, "millions": 11.1},
+    {"year": 2021, "millions": 19.7},
+    {"year": 2022, "millions": 31.2},
+    {"year": 2023, "millions": 38.1},
+    {"year": 2024, "millions": 40.4},
+    {"year": 2025, "billions": 41.2, "millions": 41.2}
+  ],
+  "byRegion": [
+    {"region": "London", "sharePercent": 54, "spendBillions": 16.8},
+    {"region": "South East", "sharePercent": 9, "spendBillions": 2.8},
+    {"region": "North West", "sharePercent": 7, "spendBillions": 2.2},
+    {"region": "Scotland", "sharePercent": 6, "spendBillions": 1.9},
+    {"region": "South West", "sharePercent": 5, "spendBillions": 1.6},
+    {"region": "East of England", "sharePercent": 4, "spendBillions": 1.2},
+    {"region": "West Midlands", "sharePercent": 4, "spendBillions": 1.2},
+    {"region": "Yorkshire & Humber", "sharePercent": 3, "spendBillions": 0.9},
+    {"region": "East Midlands", "sharePercent": 3, "spendBillions": 0.9},
+    {"region": "Wales", "sharePercent": 2, "spendBillions": 0.6},
+    {"region": "North East", "sharePercent": 2, "spendBillions": 0.6},
+    {"region": "Northern Ireland", "sharePercent": 1, "spendBillions": 0.3}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "ONS",
+        "dataset": "Overseas Travel and Tourism",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/leisureandtourism/bulletins/overseastravelandtourism/latestrelease",
+        "retrieved": "2026-02-15",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "VisitBritain",
+        "dataset": "Inbound Tourism Statistics",
+        "url": "https://www.visitbritain.org/research-insights/inbound-tourism-trends",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "ONS",
+        "dataset": "Great Britain Tourism Survey / Great Britain Day Visits Survey",
+        "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/leisureandtourism",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "DCMS",
+        "dataset": "Tourism Sector Deal — Employment Estimates",
+        "url": "https://www.gov.uk/government/collections/tourism-sector-deal",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Overseas visitor spending is from the ONS International Passenger Survey (IPS), which surveys passengers at UK air, sea, and tunnel ports. Domestic tourism spending combines the Great Britain Tourism Survey (overnight trips) and Great Britain Day Visits Survey. Employment figures include direct tourism roles and estimated indirect/induced employment from the Tourism Satellite Account methodology. All values are nominal (not inflation-adjusted). The COVID-19 pandemic caused unprecedented disruption to data collection in 2020-21; some figures for those years are estimates.",
+    "knownIssues": [
+      "IPS methodology was revised in 2019 — pre/post figures may not be directly comparable at regional level",
+      "Domestic tourism figures for 2020-21 are estimates due to survey disruption",
+      "Employment figures include part-time and seasonal roles counted as headcount, not FTE"
+    ]
+  }
+}

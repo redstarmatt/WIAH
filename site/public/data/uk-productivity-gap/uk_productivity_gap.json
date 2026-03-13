@@ -1,1 +1,97 @@
-{"topic":"uk-productivity-gap","lastUpdated":"2026-03-01","timeSeries":[{"year":2005,"gdpPerHourIndexed":85},{"year":2008,"gdpPerHourIndexed":87},{"year":2010,"gdpPerHourIndexed":85},{"year":2012,"gdpPerHourIndexed":84},{"year":2015,"gdpPerHourIndexed":84},{"year":2017,"gdpPerHourIndexed":84},{"year":2018,"gdpPerHourIndexed":84},{"year":2019,"gdpPerHourIndexed":85},{"year":2020,"gdpPerHourIndexed":87},{"year":2021,"gdpPerHourIndexed":86},{"year":2022,"gdpPerHourIndexed":85},{"year":2023,"gdpPerHourIndexed":85}]}
+{
+  "topic": "uk-productivity-gap",
+  "lastUpdated": "2026-03-01",
+  "outputPerHour": [
+    { "year": 2005, "uk": 82.3, "g7Avg": 92.1, "germany": 98.4, "france": 99.1, "usa": 100.0 },
+    { "year": 2006, "uk": 83.8, "g7Avg": 93.0, "germany": 99.6, "france": 99.8, "usa": 100.7 },
+    { "year": 2007, "uk": 85.1, "g7Avg": 94.2, "germany": 100.5, "france": 100.4, "usa": 101.5 },
+    { "year": 2008, "uk": 85.6, "g7Avg": 94.8, "germany": 100.2, "france": 100.6, "usa": 102.3 },
+    { "year": 2009, "uk": 83.4, "g7Avg": 93.5, "germany": 97.1, "france": 99.2, "usa": 103.8 },
+    { "year": 2010, "uk": 84.2, "g7Avg": 95.1, "germany": 100.0, "france": 100.0, "usa": 106.2 },
+    { "year": 2011, "uk": 84.8, "g7Avg": 95.9, "germany": 101.2, "france": 100.6, "usa": 106.8 },
+    { "year": 2012, "uk": 84.3, "g7Avg": 96.4, "germany": 101.0, "france": 100.9, "usa": 107.4 },
+    { "year": 2013, "uk": 84.7, "g7Avg": 97.1, "germany": 101.3, "france": 101.5, "usa": 107.9 },
+    { "year": 2014, "uk": 85.2, "g7Avg": 97.8, "germany": 101.8, "france": 101.7, "usa": 108.5 },
+    { "year": 2015, "uk": 86.0, "g7Avg": 98.6, "germany": 102.1, "france": 102.0, "usa": 109.3 },
+    { "year": 2016, "uk": 86.5, "g7Avg": 99.2, "germany": 102.7, "france": 102.4, "usa": 109.8 },
+    { "year": 2017, "uk": 87.3, "g7Avg": 100.3, "germany": 103.4, "france": 103.2, "usa": 110.6 },
+    { "year": 2018, "uk": 87.6, "g7Avg": 101.0, "germany": 103.7, "france": 103.8, "usa": 111.4 },
+    { "year": 2019, "uk": 88.1, "g7Avg": 101.5, "germany": 103.5, "france": 104.2, "usa": 112.5 },
+    { "year": 2020, "uk": 88.9, "g7Avg": 102.4, "germany": 103.8, "france": 105.1, "usa": 115.6 },
+    { "year": 2021, "uk": 89.5, "g7Avg": 103.6, "germany": 104.5, "france": 105.0, "usa": 117.2 },
+    { "year": 2022, "uk": 88.8, "g7Avg": 104.1, "germany": 104.2, "france": 104.9, "usa": 117.8 },
+    { "year": 2023, "uk": 88.5, "g7Avg": 104.5, "germany": 104.0, "france": 105.3, "usa": 118.6 },
+    { "year": 2024, "uk": 88.9, "g7Avg": 105.0, "germany": 104.3, "france": 105.6, "usa": 119.4 }
+  ],
+  "investmentShare": [
+    { "year": 2005, "uk": 16.8, "g7Avg": 21.2, "oecd": 21.8 },
+    { "year": 2006, "uk": 17.1, "g7Avg": 21.5, "oecd": 22.1 },
+    { "year": 2007, "uk": 17.5, "g7Avg": 21.8, "oecd": 22.3 },
+    { "year": 2008, "uk": 17.0, "g7Avg": 21.4, "oecd": 22.0 },
+    { "year": 2009, "uk": 15.2, "g7Avg": 19.6, "oecd": 20.1 },
+    { "year": 2010, "uk": 15.8, "g7Avg": 20.0, "oecd": 20.6 },
+    { "year": 2011, "uk": 15.5, "g7Avg": 20.2, "oecd": 20.8 },
+    { "year": 2012, "uk": 15.3, "g7Avg": 20.4, "oecd": 21.0 },
+    { "year": 2013, "uk": 15.6, "g7Avg": 20.5, "oecd": 21.1 },
+    { "year": 2014, "uk": 16.2, "g7Avg": 20.7, "oecd": 21.3 },
+    { "year": 2015, "uk": 16.5, "g7Avg": 20.9, "oecd": 21.4 },
+    { "year": 2016, "uk": 16.4, "g7Avg": 21.0, "oecd": 21.5 },
+    { "year": 2017, "uk": 16.6, "g7Avg": 21.2, "oecd": 21.7 },
+    { "year": 2018, "uk": 16.8, "g7Avg": 21.4, "oecd": 21.9 },
+    { "year": 2019, "uk": 17.0, "g7Avg": 21.6, "oecd": 22.0 },
+    { "year": 2020, "uk": 16.4, "g7Avg": 21.0, "oecd": 21.4 },
+    { "year": 2021, "uk": 17.1, "g7Avg": 21.8, "oecd": 22.2 },
+    { "year": 2022, "uk": 17.3, "g7Avg": 22.1, "oecd": 22.5 },
+    { "year": 2023, "uk": 17.0, "g7Avg": 22.0, "oecd": 22.4 },
+    { "year": 2024, "uk": 17.2, "g7Avg": 22.2, "oecd": 22.6 }
+  ],
+  "rdSpending": [
+    { "year": 2005, "uk": 1.63, "g7Avg": 2.28, "germany": 2.51, "usa": 2.57 },
+    { "year": 2006, "uk": 1.65, "g7Avg": 2.32, "germany": 2.54, "usa": 2.61 },
+    { "year": 2007, "uk": 1.69, "g7Avg": 2.35, "germany": 2.53, "usa": 2.63 },
+    { "year": 2008, "uk": 1.69, "g7Avg": 2.40, "germany": 2.69, "usa": 2.77 },
+    { "year": 2009, "uk": 1.71, "g7Avg": 2.43, "germany": 2.73, "usa": 2.82 },
+    { "year": 2010, "uk": 1.67, "g7Avg": 2.40, "germany": 2.71, "usa": 2.74 },
+    { "year": 2011, "uk": 1.66, "g7Avg": 2.41, "germany": 2.80, "usa": 2.76 },
+    { "year": 2012, "uk": 1.61, "g7Avg": 2.39, "germany": 2.87, "usa": 2.70 },
+    { "year": 2013, "uk": 1.63, "g7Avg": 2.41, "germany": 2.82, "usa": 2.73 },
+    { "year": 2014, "uk": 1.66, "g7Avg": 2.42, "germany": 2.87, "usa": 2.73 },
+    { "year": 2015, "uk": 1.67, "g7Avg": 2.43, "germany": 2.91, "usa": 2.79 },
+    { "year": 2016, "uk": 1.67, "g7Avg": 2.46, "germany": 2.93, "usa": 2.84 },
+    { "year": 2017, "uk": 1.72, "g7Avg": 2.51, "germany": 3.04, "usa": 2.86 },
+    { "year": 2018, "uk": 1.73, "g7Avg": 2.56, "germany": 3.09, "usa": 2.93 },
+    { "year": 2019, "uk": 1.76, "g7Avg": 2.60, "germany": 3.17, "usa": 3.07 },
+    { "year": 2020, "uk": 1.74, "g7Avg": 2.67, "germany": 3.13, "usa": 3.42 },
+    { "year": 2021, "uk": 1.71, "g7Avg": 2.70, "germany": 3.13, "usa": 3.46 },
+    { "year": 2022, "uk": 1.73, "g7Avg": 2.74, "germany": 3.13, "usa": 3.48 },
+    { "year": 2023, "uk": 1.75, "g7Avg": 2.78, "germany": 3.15, "usa": 3.52 },
+    { "year": 2024, "uk": 1.78, "g7Avg": 2.82, "germany": 3.18, "usa": 3.56 }
+  ],
+  "byRegion": [
+    { "region": "London", "outputPerHourIndex": 130.2 },
+    { "region": "South East", "outputPerHourIndex": 106.3 },
+    { "region": "Scotland", "outputPerHourIndex": 98.7 },
+    { "region": "East of England", "outputPerHourIndex": 97.1 },
+    { "region": "North West", "outputPerHourIndex": 92.4 },
+    { "region": "South West", "outputPerHourIndex": 91.8 },
+    { "region": "East Midlands", "outputPerHourIndex": 89.5 },
+    { "region": "West Midlands", "outputPerHourIndex": 88.1 },
+    { "region": "Yorkshire & Humber", "outputPerHourIndex": 87.3 },
+    { "region": "North East", "outputPerHourIndex": 85.6 },
+    { "region": "Wales", "outputPerHourIndex": 83.2 },
+    { "region": "Northern Ireland", "outputPerHourIndex": 80.4 }
+  ],
+  "metadata": {
+    "sources": [
+      { "name": "ONS", "dataset": "International comparisons of productivity", "url": "https://www.ons.gov.uk/economy/economicoutputandproductivity/productivitymeasures", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "ONS", "dataset": "Subregional productivity: labour productivity indices", "url": "https://www.ons.gov.uk/economy/economicoutputandproductivity/productivitymeasures/datasets/subregionalproductivitylabourproductivityindicesbyuknuts2andnuts3subregions", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "OECD", "dataset": "Gross domestic spending on R&D", "url": "https://data.oecd.org/rd/gross-domestic-spending-on-r-d.htm", "retrieved": "2026-03-01", "frequency": "annual" },
+      { "name": "OECD", "dataset": "Investment (GFCF) as % of GDP", "url": "https://data.oecd.org/gdp/investment-gfcf.htm", "retrieved": "2026-03-01", "frequency": "annual" }
+    ],
+    "methodology": "Output per hour indexed with USA 2005 = 100. Investment share is gross fixed capital formation as % of GDP. R&D spending is gross domestic expenditure on R&D as % of GDP.",
+    "knownIssues": [
+      "2020 data affected by COVID-19 compositional effects — low-productivity sectors contracted more, temporarily boosting measured output per hour",
+      "Regional data uses NUTS1 regions, which mask significant within-region variation"
+    ]
+  }
+}

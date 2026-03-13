@@ -1,0 +1,103 @@
+{
+  "waitingList": [
+    {"year": 2015, "patients": 420000},
+    {"year": 2016, "patients": 465000},
+    {"year": 2017, "patients": 510000},
+    {"year": 2018, "patients": 580000},
+    {"year": 2019, "patients": 640000},
+    {"year": 2020, "patients": 820000},
+    {"year": 2021, "patients": 1050000},
+    {"year": 2022, "patients": 1280000},
+    {"year": 2023, "patients": 1450000},
+    {"year": 2024, "patients": 1550000},
+    {"year": 2025, "patients": 1610000}
+  ],
+  "averageWaitWeeks": [
+    {"year": 2015, "weeks": 8.2},
+    {"year": 2016, "weeks": 9.1},
+    {"year": 2017, "weeks": 10.5},
+    {"year": 2018, "weeks": 12.8},
+    {"year": 2019, "weeks": 14.3},
+    {"year": 2020, "weeks": 19.6},
+    {"year": 2021, "weeks": 24.1},
+    {"year": 2022, "weeks": 27.4},
+    {"year": 2023, "weeks": 29.8},
+    {"year": 2024, "weeks": 31.2},
+    {"year": 2025, "weeks": 32.0}
+  ],
+  "hearingLossPrevalence": [
+    {"year": 2015, "millionsAffected": 9.8},
+    {"year": 2016, "millionsAffected": 10.0},
+    {"year": 2017, "millionsAffected": 10.2},
+    {"year": 2018, "millionsAffected": 10.5},
+    {"year": 2019, "millionsAffected": 10.8},
+    {"year": 2020, "millionsAffected": 11.0},
+    {"year": 2021, "millionsAffected": 11.2},
+    {"year": 2022, "millionsAffected": 11.4},
+    {"year": 2023, "millionsAffected": 11.6},
+    {"year": 2024, "millionsAffected": 11.8},
+    {"year": 2025, "millionsAffected": 12.0}
+  ],
+  "newbornScreening": [
+    {"year": 2015, "coveragePercent": 98.9, "referralRate": 2.1},
+    {"year": 2016, "coveragePercent": 98.7, "referralRate": 2.2},
+    {"year": 2017, "coveragePercent": 98.8, "referralRate": 2.3},
+    {"year": 2018, "coveragePercent": 98.6, "referralRate": 2.4},
+    {"year": 2019, "coveragePercent": 98.5, "referralRate": 2.5},
+    {"year": 2020, "coveragePercent": 96.2, "referralRate": 3.1},
+    {"year": 2021, "coveragePercent": 97.1, "referralRate": 2.9},
+    {"year": 2022, "coveragePercent": 97.8, "referralRate": 2.7},
+    {"year": 2023, "coveragePercent": 98.1, "referralRate": 2.6},
+    {"year": 2024, "coveragePercent": 98.3, "referralRate": 2.5},
+    {"year": 2025, "coveragePercent": 98.4, "referralRate": 2.5}
+  ],
+  "byRegion": [
+    {"region": "South West", "avgWaitWeeks": 42.1},
+    {"region": "East of England", "avgWaitWeeks": 38.7},
+    {"region": "North West", "avgWaitWeeks": 36.2},
+    {"region": "Yorkshire & Humber", "avgWaitWeeks": 34.8},
+    {"region": "West Midlands", "avgWaitWeeks": 33.1},
+    {"region": "East Midlands", "avgWaitWeeks": 31.5},
+    {"region": "South East", "avgWaitWeeks": 29.4},
+    {"region": "North East", "avgWaitWeeks": 28.6},
+    {"region": "London", "avgWaitWeeks": 26.3}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "Referral to Treatment Waiting Times — Audiology",
+        "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/referral-to-treatment-waiting-times/",
+        "retrieved": "2025-02-01",
+        "frequency": "monthly"
+      },
+      {
+        "name": "NHS Digital",
+        "dataset": "Diagnostic Waiting Times and Activity",
+        "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/diagnostics-waiting-times-and-activity/",
+        "retrieved": "2025-02-01",
+        "frequency": "monthly"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Newborn Hearing Screening Programme",
+        "url": "https://www.gov.uk/government/collections/newborn-hearing-screening-programme",
+        "retrieved": "2025-02-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Action on Hearing Loss (RNID)",
+        "dataset": "Hearing Matters Report",
+        "url": "https://rnid.org.uk/about-us/research-and-policy/hearing-loss-statistics/",
+        "retrieved": "2025-02-01",
+        "frequency": "biennial"
+      }
+    ],
+    "methodology": "Waiting list figures are drawn from NHS England RTT data, filtered to audiology specialties. Average wait is the mean weeks from referral to first definitive appointment. Hearing loss prevalence uses RNID population estimates. Newborn screening coverage and referral rates are from the NHS Newborn Hearing Screening Programme annual report. Regional breakdowns use NHS England commissioner-level data aggregated to NHS region.",
+    "knownIssues": [
+      "RTT methodology changed in April 2021 — clock-start rules were adjusted post-COVID, making pre- and post-2021 figures not directly comparable",
+      "Some trusts paused routine audiology referrals during 2020-21, artificially suppressing waiting list numbers before a surge in 2021-22",
+      "Private audiology providers are not captured in NHS waiting list data"
+    ]
+  }
+}

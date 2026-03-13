@@ -1,0 +1,110 @@
+{
+  "fobtMachines": [
+    {"year": 2012, "count": 33681},
+    {"year": 2013, "count": 34478},
+    {"year": 2014, "count": 34874},
+    {"year": 2015, "count": 34958},
+    {"year": 2016, "count": 33728},
+    {"year": 2017, "count": 33358},
+    {"year": 2018, "count": 32982},
+    {"year": 2019, "count": 30486},
+    {"year": 2020, "count": 22318},
+    {"year": 2021, "count": 19450},
+    {"year": 2022, "count": 18621},
+    {"year": 2023, "count": 18044},
+    {"year": 2024, "count": 17382},
+    {"year": 2025, "count": 16810}
+  ],
+  "fobtGrossYield": [
+    {"year": 2012, "yieldMillions": 1580},
+    {"year": 2013, "yieldMillions": 1680},
+    {"year": 2014, "yieldMillions": 1770},
+    {"year": 2015, "yieldMillions": 1820},
+    {"year": 2016, "yieldMillions": 1780},
+    {"year": 2017, "yieldMillions": 1810},
+    {"year": 2018, "yieldMillions": 1740},
+    {"year": 2019, "yieldMillions": 890},
+    {"year": 2020, "yieldMillions": 310},
+    {"year": 2021, "yieldMillions": 420},
+    {"year": 2022, "yieldMillions": 395},
+    {"year": 2023, "yieldMillions": 370},
+    {"year": 2024, "yieldMillions": 348},
+    {"year": 2025, "yieldMillions": 332}
+  ],
+  "bettingShops": [
+    {"year": 2012, "count": 8956},
+    {"year": 2013, "count": 9064},
+    {"year": 2014, "count": 8890},
+    {"year": 2015, "count": 8788},
+    {"year": 2016, "count": 8620},
+    {"year": 2017, "count": 8456},
+    {"year": 2018, "count": 8212},
+    {"year": 2019, "count": 7681},
+    {"year": 2020, "count": 5874},
+    {"year": 2021, "count": 5180},
+    {"year": 2022, "count": 4712},
+    {"year": 2023, "count": 4389},
+    {"year": 2024, "count": 4102},
+    {"year": 2025, "count": 3890}
+  ],
+  "onlineGamblingGrossYield": [
+    {"year": 2012, "yieldMillions": 2540},
+    {"year": 2013, "yieldMillions": 2890},
+    {"year": 2014, "yieldMillions": 3260},
+    {"year": 2015, "yieldMillions": 3680},
+    {"year": 2016, "yieldMillions": 4120},
+    {"year": 2017, "yieldMillions": 4720},
+    {"year": 2018, "yieldMillions": 5380},
+    {"year": 2019, "yieldMillions": 5740},
+    {"year": 2020, "yieldMillions": 6120},
+    {"year": 2021, "yieldMillions": 6510},
+    {"year": 2022, "yieldMillions": 6780},
+    {"year": 2023, "yieldMillions": 7020},
+    {"year": 2024, "yieldMillions": 7380},
+    {"year": 2025, "yieldMillions": 7650}
+  ],
+  "problemGamblingRate": [
+    {"year": 2012, "percent": 0.7},
+    {"year": 2015, "percent": 0.8},
+    {"year": 2016, "percent": 0.7},
+    {"year": 2018, "percent": 0.5},
+    {"year": 2019, "percent": 0.4},
+    {"year": 2020, "percent": 0.3},
+    {"year": 2021, "percent": 0.3},
+    {"year": 2022, "percent": 0.3},
+    {"year": 2023, "percent": 0.2},
+    {"year": 2024, "percent": 0.3},
+    {"year": 2025, "percent": 0.3}
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Gambling Commission",
+        "dataset": "Industry Statistics",
+        "url": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/industry-statistics",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Gambling Commission",
+        "dataset": "Gambling participation and problem gambling: annual report",
+        "url": "https://www.gamblingcommission.gov.uk/statistics-and-research/publication/statistics-on-participation-and-problem-gambling",
+        "retrieved": "2026-02-15",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Culture, Media and Sport",
+        "dataset": "Review of Gaming Machines and Social Responsibility Measures",
+        "url": "https://www.gov.uk/government/consultations/consultation-on-proposals-for-changes-to-gaming-machines-and-social-responsibility-measures",
+        "retrieved": "2026-02-15",
+        "frequency": "one-off"
+      }
+    ],
+    "methodology": "FOBT machine counts and gross gambling yield data are drawn from the Gambling Commission's annual industry statistics. Betting shop counts use licensed premises data. Online gambling yield is reported separately. Problem gambling prevalence uses the Problem Gambling Severity Index (PGSI) as measured in the annual health survey and Gambling Commission participation surveys. All figures cover Great Britain unless otherwise stated.",
+    "knownIssues": [
+      "COVID-19 closures in 2020-21 affected both FOBT revenue and betting shop numbers independently of the stake reduction",
+      "Problem gambling prevalence methodology changed in 2018 from the British Gambling Prevalence Survey to the combined health survey approach — pre/post figures are not directly comparable",
+      "Online gambling yield includes all remote gambling, not just displaced FOBT activity"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "sdecAttendances": [
+    {"year": 2017, "attendances": 1180000},
+    {"year": 2018, "attendances": 1420000},
+    {"year": 2019, "attendances": 1810000},
+    {"year": 2020, "attendances": 1540000, "note": "COVID-19 disruption"},
+    {"year": 2021, "attendances": 2210000},
+    {"year": 2022, "attendances": 2620000},
+    {"year": 2023, "attendances": 2930000},
+    {"year": 2024, "attendances": 3100000},
+    {"year": 2025, "attendances": 3340000}
+  ],
+  "aeFourHourPerformance": [
+    {"year": 2015, "percent": 91.3},
+    {"year": 2016, "percent": 89.1},
+    {"year": 2017, "percent": 88.0},
+    {"year": 2018, "percent": 85.2},
+    {"year": 2019, "percent": 83.5},
+    {"year": 2020, "percent": 84.8, "note": "lower A&E attendance during COVID"},
+    {"year": 2021, "percent": 78.0},
+    {"year": 2022, "percent": 76.0},
+    {"year": 2023, "percent": 74.2},
+    {"year": 2024, "percent": 73.0},
+    {"year": 2025, "percent": 74.3}
+  ],
+  "sdecConversionRate": [
+    {"year": 2017, "percent": 18.2},
+    {"year": 2018, "percent": 21.5},
+    {"year": 2019, "percent": 25.1},
+    {"year": 2020, "percent": 28.4, "note": "COVID accelerated adoption"},
+    {"year": 2021, "percent": 31.7},
+    {"year": 2022, "percent": 33.2},
+    {"year": 2023, "percent": 35.8},
+    {"year": 2024, "percent": 37.1},
+    {"year": 2025, "percent": 38.6}
+  ],
+  "averageLengthOfStay": [
+    {"year": 2017, "hours": 6.8},
+    {"year": 2018, "hours": 6.5},
+    {"year": 2019, "hours": 6.1},
+    {"year": 2020, "hours": 5.4},
+    {"year": 2021, "hours": 5.8},
+    {"year": 2022, "hours": 5.5},
+    {"year": 2023, "hours": 5.2},
+    {"year": 2024, "hours": 4.9},
+    {"year": 2025, "hours": 4.7}
+  ],
+  "metadata": {
+    "topic": "same-day-emergency-care",
+    "lastUpdated": "2026-02-01",
+    "sources": [
+      {
+        "name": "NHS England",
+        "dataset": "A&E Attendances and Emergency Admissions",
+        "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
+        "retrieved": "2026-02-01",
+        "frequency": "monthly"
+      },
+      {
+        "name": "NHS England",
+        "dataset": "Same Day Emergency Care Dashboard",
+        "url": "https://www.england.nhs.uk/same-day-emergency-care/",
+        "retrieved": "2026-02-01",
+        "frequency": "quarterly"
+      },
+      {
+        "name": "The King's Fund",
+        "dataset": "NHS Key Statistics — Emergency Care",
+        "url": "https://www.kingsfund.org.uk/insight-and-analysis/data-and-charts/key-facts-figures-nhs",
+        "retrieved": "2026-02-01",
+        "frequency": "quarterly"
+      }
+    ],
+    "methodology": "SDEC attendances count patients seen in same-day emergency care units — ambulatory care settings where patients can be assessed, diagnosed, and treated without overnight admission. The conversion rate is the proportion of emergency attendances handled via SDEC pathways rather than traditional overnight admission. A&E four-hour performance measures the percentage of patients spending four hours or less in A&E from arrival to admission, transfer, or discharge. Average length of stay is measured in hours for SDEC patients only. All figures are for England.",
+    "knownIssues": [
+      "2020 data reflects COVID-19 disruption — lower overall emergency attendances but accelerated SDEC adoption",
+      "SDEC definitions were standardised in 2019; pre-2019 figures use varied local definitions and may undercount",
+      "A&E four-hour standard was de facto relaxed in 2023 with introduction of intermediate targets — 76% by March 2024"
+    ]
+  }
+}

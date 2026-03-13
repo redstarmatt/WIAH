@@ -1,0 +1,79 @@
+{
+  "inactivityRate": [
+    {"year": 2012, "disabled": 52.1, "nonDisabled": 26.3},
+    {"year": 2013, "disabled": 51.4, "nonDisabled": 26.0},
+    {"year": 2014, "disabled": 50.8, "nonDisabled": 25.6},
+    {"year": 2015, "disabled": 50.2, "nonDisabled": 25.2},
+    {"year": 2016, "disabled": 49.5, "nonDisabled": 25.1},
+    {"year": 2017, "disabled": 48.0, "nonDisabled": 24.8},
+    {"year": 2018, "disabled": 47.2, "nonDisabled": 24.5},
+    {"year": 2019, "disabled": 46.3, "nonDisabled": 24.1},
+    {"year": 2020, "disabled": 47.8, "nonDisabled": 26.4},
+    {"year": 2021, "disabled": 46.9, "nonDisabled": 25.3},
+    {"year": 2022, "disabled": 45.1, "nonDisabled": 23.8},
+    {"year": 2023, "disabled": 43.8, "nonDisabled": 22.9},
+    {"year": 2024, "disabled": 43.0, "nonDisabled": 22.1}
+  ],
+  "participationGap": [
+    {"year": 2012, "gapPP": 25.8},
+    {"year": 2013, "gapPP": 25.4},
+    {"year": 2014, "gapPP": 25.2},
+    {"year": 2015, "gapPP": 25.0},
+    {"year": 2016, "gapPP": 24.4},
+    {"year": 2017, "gapPP": 23.2},
+    {"year": 2018, "gapPP": 22.7},
+    {"year": 2019, "gapPP": 22.2},
+    {"year": 2020, "gapPP": 21.4},
+    {"year": 2021, "gapPP": 21.6},
+    {"year": 2022, "gapPP": 21.3},
+    {"year": 2023, "gapPP": 20.9},
+    {"year": 2024, "gapPP": 20.9}
+  ],
+  "accessibleFacilities": [
+    {"year": 2012, "fundingMillions": 142},
+    {"year": 2013, "fundingMillions": 138},
+    {"year": 2014, "fundingMillions": 131},
+    {"year": 2015, "fundingMillions": 125},
+    {"year": 2016, "fundingMillions": 118},
+    {"year": 2017, "fundingMillions": 112},
+    {"year": 2018, "fundingMillions": 108},
+    {"year": 2019, "fundingMillions": 105},
+    {"year": 2020, "fundingMillions": 87},
+    {"year": 2021, "fundingMillions": 92},
+    {"year": 2022, "fundingMillions": 98},
+    {"year": 2023, "fundingMillions": 101},
+    {"year": 2024, "fundingMillions": 103}
+  ],
+  "metadata": {
+    "lastUpdated": "2024-12-01",
+    "sources": [
+      {
+        "name": "Sport England",
+        "dataset": "Active Lives Adult Survey",
+        "url": "https://www.sportengland.org/research-and-data/data/active-lives",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Activity Alliance",
+        "dataset": "Annual Disability and Activity Survey",
+        "url": "https://www.activityalliance.org.uk/how-we-help/research",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      },
+      {
+        "name": "Department for Culture, Media and Sport",
+        "dataset": "Local authority sport and leisure funding data",
+        "url": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing",
+        "retrieved": "2024-12-01",
+        "frequency": "annual"
+      }
+    ],
+    "methodology": "Inactivity is defined as fewer than 30 minutes of moderate-intensity physical activity per week. The participation gap is the difference in percentage points between disabled and non-disabled adults meeting the Chief Medical Officer's guideline of 150+ minutes per week. Accessible facilities funding is drawn from DCMS local authority expenditure data and covers capital and revenue grants for disability-inclusive sport infrastructure. All figures are for England unless otherwise stated.",
+    "knownIssues": [
+      "COVID-19 disrupted 2020 data collection — Active Lives used a shorter fieldwork window",
+      "Definition of disability changed slightly in 2016 to align with Equality Act 2010 categories",
+      "Accessible facilities funding figures combine capital and revenue streams which may not be directly comparable year-on-year"
+    ]
+  }
+}
