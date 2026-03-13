@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Crime Survey for England and Wales — fraud and computer misuse', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
+  { num: 2, name: 'Action Fraud / NFIB', dataset: 'Annual Report', url: 'https://www.actionfraud.police.uk/', date: '2025' },
+  { num: 3, name: 'PSR', dataset: 'Authorised Push Payment Fraud Statistics', url: 'https://www.psr.org.uk/our-work/app-scams/', date: '2024' },
+];
 
 interface DataPoint {
   year: number;
