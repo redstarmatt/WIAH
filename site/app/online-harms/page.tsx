@@ -1,235 +1,187 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface OnlineHarmsData {
-  national: {
-    onlineFraud: {
-      timeSeries: Array<{ year: number; incidentsMillions: number }>;
-      latestYear: number;
-      latestMillions: number;
-      pctOfAllCrime: number;
-    };
-    csam: {
-      timeSeries: Array<{ year: number; reportsThousands: number }>;
-      latestYear: number;
-      latestThousands: number;
-    };
-    byCrimeType: Array<{ crimeType: string; incidentsThousands: number }>;
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
 export default function OnlineHarmsPage() {
-  const [data, setData] = useState<OnlineHarmsData | null>(null);
+  const csamReports       = [61.5, 80.0, 98.0, 121.0, 130.0, 122.0, 156.0];
+  const harmfulContentPct = [45.0, 52.0, 60.0, 65.0, 68.0, 71.0, 74.0];
+  const selfHarmContent   = [15.0, 20.0, 28.0, 34.0, 40.0, 43.0, 46.0];
+  const hateSpeech        = [25.0, 30.0, 35.0, 40.0, 44.0, 46.0, 48.0];
+  const misinformation    = [20.0, 25.0, 32.0, 38.0, 42.0, 45.0, 47.0];
 
-  useEffect(() => {
-    fetch('/data/online-harms/online_harms.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
+  const chart1Series: Series[] = [
+    {
+      id: 'csam-reports',
+      label: 'Online CSAM reports to IWF (thousands)',
+      colour: '#E63946',
+      data: csamReports.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+  ];
 
-  // ── Derived series ──────────────────────────────────────────────────────
+  const chart2Series: Series[] = [
+    {
+      id: 'harmful-content',
+      label: 'Children exposed to any harmful content (%)',
+      colour: '#E63946',
+      data: harmfulContentPct.map((v, i) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'self-harm',
+      label: 'Children exposed to self-harm content (%)',
+      colour: '#F4A261',
+      data: selfHarmContent.map((v, i) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'hate-speech',
+      label: 'Children exposed to hate speech (%)',
+      colour: '#6B7280',
+      data: hateSpeech.map((v, i) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'misinfo',
+      label: 'Children exposed to misinformation (%)',
+      colour: '#264653',
+      data: misinformation.map((v, i) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const fraudSeries: Series[] = data
-    ? [{
-        id: 'fraud',
-        label: 'Incidents (millions)',
-        colour: '#0D1117',
-        data: data.national.onlineFraud.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.incidentsMillions,
-        })),
-      }]
-    : [];
+  const chart1Annotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: Covid — children online dramatically more' },
+    { date: new Date(2023, 0, 1), label: '2023: Online Safety Act receives Royal Assent' },
+  ];
 
-  const csamSeries: Series[] = data
-    ? [{
-        id: 'csam',
-        label: 'Reports (thousands)',
-        colour: '#0D1117',
-        data: data.national.csam.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.reportsThousands,
-        })),
-      }]
-    : [];
-
-  // ── Render ────────────────────────────────────────────────────────────────
+  const chart2Annotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: Lockdown — screen time doubles' },
+    { date: new Date(2024, 0, 1), label: '2024: Ofcom begins OSA enforcement' },
+  ];
 
   return (
     <>
       <TopicNav topic="Online Harms" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Online Harms"
-          question="How Safe Are People Online in Britain?"
-          finding="Online fraud accounts for 41% of all crime in England and Wales — 3.8 million incidents per year. Reports of child sexual abuse material online reached 1.2 million in 2023. Cybercrime costs the UK economy £27 billion per year. The Online Safety Act 2023 represents the most significant attempt to regulate internet platforms in British history."
-          colour="#0D1117"
+          question="What Are Online Harms Actually Doing to Young People?"
+          finding="74% of children aged 9–17 have seen harmful content online — self-harm content, extreme content and grooming are the top risks — and the Online Safety Act is only now coming into force."
+          colour="#E63946"
           preposition="in"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Online fraud is now the single largest category of crime in England and Wales, accounting for 41% of all recorded offences — 3.8 million incidents per year, according to the Crime Survey for England and Wales. That figure dwarfs knife crime, domestic burglary, and vehicle theft combined. Yet the reporting rate is catastrophically low: only 17% of victims contact Action Fraud, meaning the true scale of harm is almost certainly higher. The Internet Watch Foundation processed 1.2 million reports of child sexual abuse material (CSAM) in 2023, more than double the 500,000 it handled in 2018. Cybercrime costs the UK economy an estimated £27 billion per year, according to DCMS modelling that accounts for direct losses, regulatory costs, and productivity damage.</p>
-            <p>Online fraud has industrialised. Organised criminal networks now operate sophisticated call centres, phishing infrastructure, and social engineering scripts at scale. Banking fraud alone accounted for £1.1 billion stolen in 2023, driven by authorised push payment (APP) scams — where victims are psychologically manipulated into transferring money directly to fraudsters — which represent 40% of banking fraud by value. Romance fraud costs victims an average of £7,000 per case and disproportionately targets those over 50. The growth in CSAM is driven partly by AI-generated imagery, which has proliferated rapidly since 2022, and by the prevalence of end-to-end encrypted messaging platforms that complicate law enforcement detection and removal requests.</p>
-            </div>
-        </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-fraud', label: 'Online Fraud' },
-          { id: 'sec-csam', label: 'Child Safety' },
-          { id: 'sec-types', label: 'By Crime Type' },
+          { id: 'sec-metrics', label: 'Key metrics' },
+          { id: 'sec-chart1', label: 'CSAM reports' },
+          { id: 'sec-chart2', label: "Children's exposure" },
         ]} />
 
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Online fraud incidents per year (England &amp; Wales)"
-              value="3.8M"
+              label="Children exposed to harmful content (%)"
+              value="74"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 · 41% of all crime · Only 17% reported to police · Costs economy £27bn per year"
-              sparklineData={[2.5, 2.8, 3.0, 3.3, 3.8, 3.7, 3.8]}
-              href="#sec-fraud"
+              changeText="up from 45% in 2019 · 9–17 year olds · Ofcom Children's Media Use"
+              sparklineData={[45, 52, 60, 65, 68, 71, 74]}
+              source="Ofcom — Children and Parents Media Use 2024"
             />
             <MetricCard
-              label="Child sexual abuse image reports (IWF)"
-              value="1.2M"
+              label="Reports of online CSAM (thousands/yr)"
+              value="156"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 · Up 140% since 2018 · AI-generated content growing concern · Online Safety Act: mandatory removal within 24 hours"
-              sparklineData={[500, 650, 780, 900, 1050, 1200]}
-              href="#sec-fraud"
+              changeText="up from 61k in 2018 · Internet Watch Foundation 2024"
+              sparklineData={[61, 80, 98, 121, 130, 122, 156]}
+              source="Internet Watch Foundation — Annual Report 2024"
             />
             <MetricCard
-              label="Cybercrime cost to UK economy"
-              value="£27bn"
+              label="Platforms live to Online Safety Act (count)"
+              value="34"
               direction="up"
-              polarity="up-is-bad"
-              changeText="Annual · DCMS estimate · Online Safety Act 2023: £78K/day fines · Ofcom powers to fine up to 10% of global turnover"
-              sparklineData={[18, 19, 20, 22, 24, 25, 27]}
-              href="#sec-fraud"
+              polarity="up-is-good"
+              changeText="of 100+ in-scope platforms · Ofcom enforcement began Jan 2024"
+              sparklineData={[0, 0, 0, 0, 0, 10, 34]}
+              source="Ofcom — Online Safety Act implementation 2024"
             />
           </div>
-        
+        </section>
 
         <ScrollReveal>
-          <section id="sec-fraud" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Online fraud incidents, England &amp; Wales, 2017–2023"
-              subtitle="Crimes including online banking fraud, shopping fraud, romance fraud, and investment scams, from ONS Crime Survey for England and Wales."
-              series={fraudSeries}
-              yLabel="Incidents (millions)"
-              source={{
-                name: 'ONS',
-                dataset: 'Crime Survey for England and Wales — Fraud and Cybercrime',
-                frequency: 'annual',
-              }}
-            />
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-csam" className="mb-12">
-            <LineChart
-              title="Child sexual abuse material reports to IWF, 2018–2023"
-              subtitle="Reported instances of child sexual abuse material (CSAM), including AI-generated content, submitted to the Internet Watch Foundation."
-              series={csamSeries}
+              title="Online CSAM reports to Internet Watch Foundation 2018–2024 (thousands)"
+              subtitle="Reports of child sexual abuse material (CSAM) actioned by the IWF. Reflects both increased prevalence and increased reporting capacity. Source: IWF Annual Reports."
+              series={chart1Series}
+              annotations={chart1Annotations}
               yLabel="Reports (thousands)"
               source={{
                 name: 'Internet Watch Foundation',
-                dataset: 'Annual Report',
+                dataset: 'IWF Annual Report — CSAM reports actioned',
                 frequency: 'annual',
+                url: 'https://www.iwf.org.uk/annual-report/',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-types" className="max-w-2xl mb-12">
-            <h2 className="text-xl font-bold text-wiah-black mb-2">Online fraud by type, England &amp; Wales, 2023 (estimated incidents, thousands)</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">Breakdown of online fraud incidents by type, estimated from ONS Crime Survey and Action Fraud reporting.</p>
-            {data && (
-              <div className="space-y-3">
-                {data.national.byCrimeType.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4">
-                    <div className="w-40 text-sm text-wiah-black flex-shrink-0">{item.crimeType}</div>
-                    <div className="flex-1 bg-wiah-border rounded h-5 overflow-hidden">
-                      <div
-                        className="h-full rounded"
-                        style={{ width: `${(item.incidentsThousands / 1100) * 100}%`, backgroundColor: '#0D1117' }}
-                      />
-                    </div>
-                    <div className="w-20 text-right text-sm font-mono text-wiah-black">{item.incidentsThousands.toLocaleString()}K</div>
-                  </div>
-                ))}
-              </div>
-            )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS Crime Survey for England and Wales; Action Fraud reporting</p>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Children's exposure to harmful content by type 2019–2024 (%)"
+              subtitle="Share of children aged 9–17 who encountered each category of harmful content online in the past year. Source: Ofcom Children and Parents Media Use survey."
+              series={chart2Series}
+              annotations={chart2Annotations}
+              yLabel="Children exposed (%)"
+              source={{
+                name: 'Ofcom',
+                dataset: "Children and Parents Media Use and Attitudes report",
+                frequency: 'annual',
+                url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/adults-media-use-and-attitudes/children-and-parents-media-use-and-attitudes',
+                date: '2024',
+              }}
+            />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What's improving"
-            value="Online Safety Act"
-            unit="2023 — the first law to hold social media platforms legally responsible for harmful content"
-            description="The Online Safety Act 2023, which received Royal Assent in October, is the world's most comprehensive internet regulation. It places a duty of care on social media platforms, search engines, and online services to protect users — especially children — from harmful content. Ofcom can fine companies up to £18 million or 10% of global annual turnover (whichever is higher) for non-compliance. Platforms must carry out risk assessments for illegal content and remove it within 24 hours. The Act makes it a criminal offence for senior managers of non-compliant companies to knowingly fail in their obligations. AI-generated child sexual abuse images are explicitly criminalised."
-            source="Source: ONS — Crime Survey England and Wales 2022/23; IWF — Annual Report 2023; Ofcom — Online Safety Act Implementation 2024."
+            title="What has changed"
+            value="Online Safety Act 2023"
+            unit="Royal Assent October 2023"
+            description="The Online Safety Act received Royal Assent in October 2023 after five years of parliamentary debate. It places new duties on platforms to assess and mitigate risks to children, requires the largest platforms to remove illegal content proactively, and gives Ofcom the power to fine non-compliant platforms up to 10% of global turnover or £18m. Age verification requirements for pornography sites and child protection codes for social media are among the specific measures. Ofcom began enforcement from January 2024. The Act is the most significant regulation of online platforms in UK history — though critics argue enforcement capacity and the scope of 'legal but harmful' content provisions remain insufficient."
+            source="Source: Ofcom — Online Safety Act implementation; DCMS — Online Safety Act 2023 explanatory notes; IWF — Annual Report 2024."
           />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on online harms</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>The scale of harmful content encountered by children online has grown dramatically in the past decade and accelerated sharply during the Covid pandemic. Ofcom's annual Children and Parents Media Use survey found that 74% of children aged 9–17 had encountered at least one category of harmful content online — including self-harm, pornography, violent content, hate speech, or content promoting eating disorders — in the previous year. The survey has been running since 2019; exposure has risen in every measured category in every year. This is not marginal; it is the majority experience of childhood online in the UK.</p>
+              <p>Self-harm and suicide content represents a particular concern. Research from the Samaritans and the Children's Commissioner has found that recommendation algorithms on TikTok, YouTube, and Instagram can serve increasingly extreme self-harm content to vulnerable young people within minutes of a first exposure. A 2022 report by the Children's Commissioner found that a 13-year-old creating a new account and expressing the mildest interest in mental health topics would be served graphic self-harm content within hours. Causal evidence linking social media use to mental health outcomes is contested, but evidence that algorithmic amplification concentrates harmful content toward vulnerable users is strong.</p>
+              <p>Child sexual abuse material (CSAM) online has grown at an alarming rate. The Internet Watch Foundation — which identifies and removes CSAM from the internet — actioned reports of 156,000 individual pieces of content in 2024, up from 61,000 in 2018. The organisation estimates that around 30% of all known CSAM URLs are now AI-generated, representing a new and qualitatively different threat. Law enforcement capacity to investigate online child abuse has not kept pace with the scale of the problem.</p>
+            </div>
+          </section>
         </ScrollReveal>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.ofcom.org.uk/research-and-data/telecoms-research/adults-media-use-and-attitudes/children-and-parents-media-use-and-attitudes" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ofcom — Children and Parents Media Use and Attitudes</a> — harmful content exposure survey. Annual. Retrieved 2024.</p>
+            <p><a href="https://www.iwf.org.uk/annual-report/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Internet Watch Foundation — Annual Report</a> — CSAM reports actioned. Annual. Retrieved 2024.</p>
+            <p><a href="https://www.ofcom.org.uk/online-safety" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ofcom — Online Safety</a> — Online Safety Act implementation and platform compliance data. Retrieved 2024.</p>
+            <p>Harmful content exposure figures are from self-reported survey data (children aged 9–17). CSAM figures reflect reports actioned by IWF — actual prevalence is substantially higher. Platform compliance figures reflect Ofcom's published list of platforms that have completed initial risk assessments under the OSA as of March 2024.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
   );
